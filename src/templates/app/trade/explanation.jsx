@@ -49,9 +49,9 @@ const Explanation = () => (
 
             <div id='winning_risefall' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
-                <p>{it.L('If you select "Higher", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.')}</p>
-                <p>{it.L('If you select "Lower", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.')}</p>
-                <p>{it.L('If you select "Allow equals", you win the payout if exit spot is higher than or equal to entry spot for "Higher". Similarly, you win the payout if exit spot is lower than or equal to entry spot for "Lower".')}</p>
+                <p>{it.L('If you select "Rises", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>.')}</p>
+                <p>{it.L('If you select "Falls", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>.')}</p>
+                <p>{it.L('If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don\'t win the payout.')}</p>
             </div>
 
             <div id='winning_runbet-lucky10' className='invisible'>

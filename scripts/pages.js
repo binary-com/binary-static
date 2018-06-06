@@ -28,9 +28,9 @@ module.exports = [
     ['new_account/welcome',                'app/new_account/welcome_page',              'default',    'Welcome to Binary.com'],
 
     ['resources',                          'app/resources/index',                       'default',    'Resources'],
-    ['resources/asset_indexws',            'app/resources/asset_index',                 'full_width', 'Asset Index',                       'ja'],
+    ['resources/asset_indexws',            'app/resources/asset_index',                 'default',    'Asset Index', 'ja'],
     ['resources/market_timesws',           'app/resources/trading_times',               'default',    'Trading Times'],
-    ['resources/economic_calendar',        'app/resources/economic_calendar',           'default',    'Economic Calendar',                 'ja'],
+    ['resources/economic_calendar',        'app/resources/economic_calendar',           'default',    'Economic Calendar', 'ja'],
 
 
     ['user/accounts',                      'app/user/accounts',                         'default',    'Accounts',                          'ja'],
