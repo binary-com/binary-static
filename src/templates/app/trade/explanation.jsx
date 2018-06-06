@@ -111,15 +111,15 @@ const Explanation = () => (
                 <h3>{it.L('Winning the contract')}</h3>
                 <h4>{it.L('Call Spread')}</h4>
                 <ul className='bullet'>
-                    <li>{it.L('Win maximum payout if the exit spot is higher than or equal to the upper barrier')}</li>
-                    <li>{it.L('Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between exit spot and lower barrier')}</li>
-                    <li>{it.L('No payout if exit spot is below or equal to the lower barrier')}</li>
+                    <li>{it.L('Win maximum payout if the exit spot is higher than or equal to the upper barrier.')}</li>
+                    <li>{it.L('Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between exit spot and lower barrier.')}</li>
+                    <li>{it.L('No payout if exit spot is below or equal to the lower barrier.')}</li>
                 </ul>
                 <h4>{it.L('Put Spread')}</h4>
                 <ul className='bullet'>
-                    <li>{it.L('Win maximum payout if the exit spot is lower than or equal to the lower barrier')}</li>
-                    <li>{it.L('Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between upper barrier and exit spot')}</li>
-                    <li>{it.L('No payout if exit spot is above or equal to the upper barrier')}</li>
+                    <li>{it.L('Win maximum payout if the exit spot is lower than or equal to the lower barrier.')}</li>
+                    <li>{it.L('Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between upper barrier and exit spot.')}</li>
+                    <li>{it.L('No payout if exit spot is above or equal to the upper barrier.')}</li>
                 </ul>
             </div>
         </div>

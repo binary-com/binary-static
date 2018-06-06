@@ -1,5 +1,5 @@
-const addComma      = require('../../../common/currency').addComma;
-const localize      = require('../../../../_common/localize').localize;
+const addComma = require('../../../common/currency').addComma;
+const localize = require('../../../../_common/localize').localize;
 
 const HighchartUI = (() => {
     let common_time_style,
