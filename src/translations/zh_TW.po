@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-04 05:08-0400\n"
+"PO-Revision-Date: 2018-06-05 23:50-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -834,6 +834,9 @@ msgstr "適當地調整語調，以適應指定的目標受眾"
 msgid "Add"
 msgstr "新增"
 
+msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
+msgstr ""
+
 msgid "Add funds"
 msgstr "增加基金"
 
@@ -1030,7 +1033,7 @@ msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "允許客戶使用%1並不直接提供之電子貨幣"
 
 msgid "Allow equals"
-msgstr ""
+msgstr "允許等值"
 
 msgid "Also known as counter currency"
 msgstr "也稱為相對貨幣"
@@ -3174,9 +3177,6 @@ msgstr "確保Binary公司集團充分遵循相關法律和監管制度。"
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr "確保Binary公司集團充分遵循相關監管制度"
 
-msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr ""
-
 msgid "Enter your email"
 msgstr "請輸入您的電子郵件"
 
@@ -4381,7 +4381,7 @@ msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 f
 msgstr "如果您看到歐元/美元的買入價為1.05229，那麼您每賣出1歐元就買入1.05229美元。"
 
 msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
-msgstr ""
+msgstr "如果您選擇 「允許等值」, 如果退市現價高於或等於「高於」的入市現價, 您將獲得賠付。同樣, 如果退市現價低於或等於「低於」的入市現價, 您將獲得賠付。"
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "如果您選擇「亞洲下跌」期權，<strong>當</strong><strong>最新價格</strong>低於<strong>平均</strong>價格時，您將獲得賠付。"
@@ -4417,13 +4417,13 @@ msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</st
 msgstr "如果您選擇「高於」期權，只要<strong>退市現價</strong>嚴格高於<strong>障礙</strong>，您將獲得賠付。"
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
-msgstr ""
+msgstr "如果您選擇「高於」期權，只要<strong>退市現價</strong>嚴格高於<strong>入市現價</strong>，您將獲得賠付。"
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "如果您選擇「低於」期權，只要<strong>退市現價</strong>嚴格低於<strong>障礙</strong>，您將獲得賠付。"
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
-msgstr ""
+msgstr "如果您選擇「低於」期權，只要<strong>退市現價</strong>嚴格低於<strong>入市現價</strong>，您將獲得賠付。"
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "如果您選擇「符合」期權，只要<strong>最新價格的</strong>最後一個數字<strong>與您的</strong>預測<strong>相同，您將獲得賠付。</strong>"
@@ -5722,7 +5722,7 @@ msgid "Lower"
 msgstr "低於"
 
 msgid "Lower or equal"
-msgstr ""
+msgstr "低於或等值"
 
 msgid "M"
 msgstr "M"
@@ -10738,7 +10738,7 @@ msgid "Why you should trade precious metals with %1"
 msgstr "為什麼要用%1 進行貴重金屬交易"
 
 msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
-msgstr ""
+msgstr "除了高於或低於, 如果退市現價也等於入市現價, 也可贏取賠付。"
 
 msgid "Win the multiplier times the close minus low."
 msgstr "贏取倍數值乘以收盤值減去最低值。"
@@ -10893,8 +10893,8 @@ msgstr "您確認公司可以接受資金經理的任何僱員或代表為您的
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr "您確認本公司將自行決定將交易記錄保存在公司自己的記錄本（稱為B記錄本）或交給充當公司流動性提供商的主要經紀人保存（稱為A記錄本）。對於前者，本公司是交易中的另一方，客戶的盈虧和本公司的盈虧之間有相互關係。我們可能會隨時與大量客戶開始或已開始進行交易，每個客戶的利益都可能與其他客戶有分歧。因此，本公司可能持有與您作為本公司單一客戶的目標和利益不一致的未平倉頭寸。"
 
-msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
-msgstr "您確認, 資金經理有權收取20美元/每手交易的佣金作為收費。您也同意公司保留隨時修改收費的權利。您進一步確認公司須負責通過其自動化系統計算收費金額。因此, 公司已被授權可從帳戶中扣除被定義為佣金的金額, 並支付資金經理。"
+msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgstr ""
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
 msgstr "您確認資金經理不是公司的僱員或代表。因此, 您同意您有絕對的責任盡力監控您的帳戶的整體表現。"
