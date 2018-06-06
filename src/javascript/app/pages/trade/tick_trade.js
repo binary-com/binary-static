@@ -491,8 +491,6 @@ const TickDisplay = (() => {
         if (data.is_sold) {
             addSellSpot();
         } else if (proposal_open_contract) {
-            tick_init = '';
-
             if (data.id_render) {
                 id_render = data.id_render;
             }
@@ -511,6 +509,7 @@ const TickDisplay = (() => {
                 request.end = contract.date_expiry;
             }
             if (data.request_ticks) { // we shouldn't send this multiple times on every update
+                tick_init = '';
                 BinarySocket.send(request, { callback: dispatch });
             }
         } else {
