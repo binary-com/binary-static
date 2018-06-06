@@ -100,20 +100,14 @@ const Contract = (() => {
                     if (!getPropertyValue(barriers, symbol)) {
                         barriers[symbol] = {};
                     }
-                    if (!getPropertyValue(barriers[symbol], contract_category)) {
-                        barriers[symbol][contract_category] = {};
-                    }
-                    if (!getPropertyValue(barriers[symbol][contract_category], current_obj.expiry_type)) {
-                        barriers[symbol][contract_category][current_obj.expiry_type] = {};
-                    }
                     if (current_obj.barriers === 1) {
-                        barriers[symbol][contract_category][current_obj.expiry_type] = {
+                        barriers[symbol][contract_category] = {
                             count           : 1,
                             barrier         : current_obj.barrier,
                             barrier_category: current_obj.barrier_category,
                         };
                     } else if (current_obj.barriers === 2) {
-                        barriers[symbol][contract_category][current_obj.expiry_type] = {
+                        barriers[symbol][contract_category] = {
                             count           : 2,
                             barrier         : current_obj.high_barrier,
                             barrier1        : current_obj.low_barrier,
