@@ -1,9 +1,9 @@
 import React                from 'react';
 import moment               from 'moment';
 import PortfolioCard        from './portfolio_card.jsx';
-import DAO                  from '../../data/dao';
 import DataTable            from '../../components/elements/data_table.jsx';
 import Tooltip              from '../../components/elements/tooltip.jsx';
+import DAO                  from '../../data/dao';
 import { getAppId }         from '../../../config';
 import ClientBase           from '../../../_common/base/client_base';
 import { formatMoney }      from '../../../_common/base/currency_base';
@@ -13,8 +13,7 @@ import Loading              from '../../../../templates/_common/components/loadi
 
 const formatPortfolioData = (portfolio_arr) => {
     const formatted_portfolio = portfolio_arr.map((portfolio_item) => {
-        const date_obj        = new Date(portfolio_item.expiry_time* 1000);
-        const moment_obj      = moment.utc(date_obj);
+        const moment_obj      = moment.utc(portfolio_item.expiry_time * 1000);
         const remaining_time  = `${moment_obj.fromNow(true)} - ${moment_obj.format('h:mm:ss')}`;
         const purchase        = parseFloat(portfolio_item.buy_price);
         const payout          = parseFloat(portfolio_item.payout);
@@ -40,27 +39,27 @@ const formatPortfolioData = (portfolio_arr) => {
 
 // TODO: move to common
 const contract_type_display = {
-    ASIANU      : localize('Asian Up'),
-    ASIAND      : localize('Asian Down'),
-    CALL        : localize('Higher'),
-    CALLE       : localize('Higher or equal'),
-    PUT         : localize('Lower'),
-    DIGITMATCH  : localize('Digit Matches'),
-    DIGITDIFF   : localize('Digit Differs'),
-    DIGITODD    : localize('Digit Odd'),
-    DIGITEVEN   : localize('Digit Even'),
-    DIGITOVER   : localize('Digit Over'),
-    DIGITUNDER  : localize('Digit Under'),
-    EXPIRYMISS  : localize('Ends Outside'),
-    EXPIRYRANGE : localize('Ends Between'),
-    EXPIRYRANGEE: localize('Ends Between'),
-    LBFLOATCALL : localize('Close-Low'),
-    LBFLOATPUT  : localize('High-Close'),
-    LBHIGHLOW   : localize('High-Low'),
-    RANGE       : localize('Stays Between'),
-    UPORDOWN    : localize('Goes Outside'),
-    ONETOUCH    : localize('Touches'),
-    NOTOUCH     : localize('Does Not Touch'),
+    ASIANU      : 'Asian Up',
+    ASIAND      : 'Asian Down',
+    CALL        : 'Higher',
+    CALLE       : 'Higher or equal',
+    PUT         : 'Lower',
+    DIGITMATCH  : 'Digit Matches',
+    DIGITDIFF   : 'Digit Differs',
+    DIGITODD    : 'Digit Odd',
+    DIGITEVEN   : 'Digit Even',
+    DIGITOVER   : 'Digit Over',
+    DIGITUNDER  : 'Digit Under',
+    EXPIRYMISS  : 'Ends Outside',
+    EXPIRYRANGE : 'Ends Between',
+    EXPIRYRANGEE: 'Ends Between',
+    LBFLOATCALL : 'Close-Low',
+    LBFLOATPUT  : 'High-Close',
+    LBHIGHLOW   : 'High-Low',
+    RANGE       : 'Stays Between',
+    UPORDOWN    : 'Goes Outside',
+    ONETOUCH    : 'Touches',
+    NOTOUCH     : 'Does Not Touch',
 };
 
 // TODO: move to common
@@ -112,7 +111,7 @@ class Portfolio extends React.PureComponent  {
                             <td key={data_index}>
                                 <div className={`${data_index}_container`}>
                                     <i className={`trade_type_icon icon_${data.toLowerCase()}--light`} />
-                                    {contract_type_display[data]}
+                                    {localize(contract_type_display[data])}
                                 </div>
                             </td>);
                     }

@@ -86,8 +86,7 @@ class DataTable extends React.PureComponent {
 DataTable.propTypes = {
     columns         : PropTypes.array,
     data_source     : PropTypes.array,
-    // footer can be object || string
-    footer          : PropTypes.any,
+    footer          : PropTypes.any, // footer can be object || string
     has_fixed_header: PropTypes.bool,
     is_full_width   : PropTypes.bool,
 };
