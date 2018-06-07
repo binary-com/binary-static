@@ -157,6 +157,8 @@ const texts = [
     'Purchase',
     'Purchase request sent',
     'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.',
+    'contract wins if exit spot is equal to the entry spot',
+    'contract loses if exit spot is equal to the entry spot',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
