@@ -1,7 +1,6 @@
 const refreshDropdown   = require('@binary-com/binary-style').selectDropdown;
 const moment            = require('moment');
 const TradingAnalysis   = require('./analysis');
-const Callputspread     = require('./callputspread');
 const commonTrading     = require('./common');
 const Contract          = require('./contract');
 const Defaults          = require('./defaults');
