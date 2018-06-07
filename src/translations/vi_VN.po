@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-05 23:50-0400\n"
+"PO-Revision-Date: 2018-06-07 00:45-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -835,7 +835,7 @@ msgid "Add"
 msgstr "Thêm"
 
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
-msgstr ""
+msgstr "Thêm /-để xác định một độ lệch giới hạn. Ví dụ, +0.005 có nghĩa là một giới hạn mà cao hơn 0,005 so với điểm khởi đầu."
 
 msgid "Add funds"
 msgstr "Thêm quỹ"
@@ -1033,7 +1033,7 @@ msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Cho phép Khách hàng sử dụng ví điện tử, mà không có trực tiếp trên %1"
 
 msgid "Allow equals"
-msgstr ""
+msgstr "Cho phép bằng nhau"
 
 msgid "Also known as counter currency"
 msgstr "Còn được gọi là tiền tệ thứ hai"
@@ -3184,13 +3184,13 @@ msgid "Entry Spot"
 msgstr "Điểm khởi đầu"
 
 msgid "Entry spot"
-msgstr "Giá khởi điểm"
+msgstr "Điểm khởi đầu"
 
 msgid "Entry spot price"
 msgstr "Giá tại điểm khởi đầu"
 
 msgid "Equals"
-msgstr "Tương đương"
+msgstr "Bằng nhau"
 
 msgid "Equities"
 msgstr "Vốn sở hữu"
@@ -4382,7 +4382,7 @@ msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 f
 msgstr "Nếu bạn thấy EUR/USD có giá mua vào là 1.05229, bạn sẽ mua 1.05229 USD cho mỗi 1 EUR bạn bán."
 
 msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
-msgstr ""
+msgstr "Nếu bạn chọn \"Cho phép bằng nhau\", bạn sẽ giành chiến thắng các thanh toán nếu điểm khởi đầu cao hơn hoặc bằng điểm chốt cho \"Cao Hơn\". Tương tự, bạn giành chiến thắng các thanh toán nếu điểm chốt thấp hơn hoặc bằng điểm khởi đầu cho \"Thấp Hơn\"."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Nếu bạn chọn \"Châu Á Giảm\", bạn sẽ giành chiến thắng nếu <strong> giá ở tick cuối cùng </strong> là <strong>thấp hơn</strong> so với <strong>trung bình</strong> của giá trong suốt giao dịch."
@@ -4418,13 +4418,13 @@ msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</st
 msgstr "Nếu bạn chọn \"Cao hơn\", bạn sẽ giành chiến thắng nếu <strong> điểm chốt</strong> cao hơn <strong> giới hạn </strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
-msgstr ""
+msgstr "Nếu bạn chọn \"Cao Hơn\", bạn sẽ giành chiến thắng nếu <strong> điểm chốt</strong> cao hơn <strong>điểm khởi đầu</strong>."
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Nếu bạn chọn \"Thấp hơn\", bạn sẽ giành chiến thắng nếu <strong>điểm chốt</strong> thấp hơn <strong> giới hạn </strong>."
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
-msgstr ""
+msgstr "Nếu bạn chọn \"Thấp Hơn\", bạn sẽ giành chiến thắng nếu <strong>điểm chốt</strong> thấp hơn <strong>điểm khởi đầu</strong>."
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Nếu bạn chọn \"Khớp\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> của giá tại thời điểm kết thúc giao dịch <strong>same</strong> giống với <strong>dự đoán của bạn</strong>"
@@ -5724,7 +5724,7 @@ msgid "Lower"
 msgstr "Thấp hơn"
 
 msgid "Lower or equal"
-msgstr ""
+msgstr "Thấp hơn hoặc bằng"
 
 msgid "M"
 msgstr "M"
@@ -7959,7 +7959,7 @@ msgid "Self-employed"
 msgstr "Tự làm chủ"
 
 msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
-msgstr ""
+msgstr "Tự loại trừ trên trang web này chỉ áp dụng cho tài khoản %1 của bạn và không bao gồm các công ty hoặc trang web khác."
 
 msgid "Sell"
 msgstr "Bán"
@@ -8130,7 +8130,7 @@ msgid "Since we exclusively deal on own account in Financial Products this means
 msgstr "Từ khi chúng tôi mở tài khoản của mình vào Sản Phẩm Tài Chính, điều này có nghĩa là chúng tôi hoạt động như trung tâm thực hiện và theo đó tất cả các giao dịch được nhập vào với chúng tôi sẽ được thực hiện bên ngoài thị trường quy định (giao dịch chứng khoán) hoặc cơ sở thương mại đa phương."
 
 msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
-msgstr ""
+msgstr "Vì bạn cảm thấy cần tự loại trừ, chúng tôi thực sự khuyên bạn nên loại trừ bản thân khỏi các dịch vụ tương tự mà bạn có thể đã đăng ký."
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
 msgstr "Kích thước - kích thước của lệnh của bạn được xác định theo khối lượng (số lượng của các lô)."
@@ -9510,7 +9510,7 @@ msgid "To self-exclude from all online gambling companies licensed in Great Brit
 msgstr "Để tự loại trừ khỏi tất cả công ty cờ bạc trực tuyến có giấy phép trong Anh Quốc, đi tới %1."
 
 msgid "To self-exclude from all online gambling companies licensed in Great Britain, you may go to %1."
-msgstr ""
+msgstr "Để tự loại trừ khỏi tất cả công ty cờ bạc trực tuyến có giấy phép trong Anh Quốc, đi tới %1."
 
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "Để rút tiền từ MetaTrader 5 tài khoản tài chính xin vui lòng <a href=\"%1\">xác thực</a> tài khoản Binary của bạn."
@@ -10740,7 +10740,7 @@ msgid "Why you should trade precious metals with %1"
 msgstr "Tại sao bạn nên giao dịch kim loại quý với %1"
 
 msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
-msgstr ""
+msgstr "Giành chiến thắng thanh toán nếu điểm chốt cũng bằng điểm khởi đầu, ngoài việc là cao hơn hoặc thấp hơn."
 
 msgid "Win the multiplier times the close minus low."
 msgstr "Thắng hệ số lần đóng âm thấp."
@@ -10896,7 +10896,7 @@ msgid "You acknowledge that the Company will determine, at its discretion, the T
 msgstr "Bạn thừa nhận rằng Công Ty có quyền xác định, với ý kiến của mình, các giao dịch sẽ được lưu giữ trong sổ sách của Công Ty (được biết như B booking) và các giao dịch sẽ được chuyển qua cho môi giới chính, những người hoạt động như các nhà cung cấp thanh khoản cho Công Ty (được biết như A đặt trước). Cho vế sau, Công Ty đối tác trong các giao dịch và sự tương quan giữa lợi nhuận/tổn thất được thực hiện bởi khách hàng và lợi nhuận/tổn thất được thực hiện bởi Công Ty tồn tại. Tại bất kỳ điểm nào trong thời gian, chúng tôi có thể nhập vào hoặc có thể đã nhập vào các giao dịch với một số lượng lớn các khách hàng, mỗi người có quyền lợi có thể phân ra các khách hàng khác. Như vậy, Công Ty có thể giữ mở các vị trí có thể không được liên kết với lợi ích/mục tiêu của bạn là một khách hàng cá nhân của Công Ty."
 
 msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
-msgstr ""
+msgstr "Bạn thừa nhận rằng Nhà Quản Lý Tiền Bạc có quyền nhận được USD $20 Hoa Hồng như chi phí lệ phí cho mỗi lô. Bạn cũng đồng ý rằng công ty có quyền để sửa đổi những chi phí lệ phí theo thời gian. Bạn công nhận thêm rằng các Công Ty có trách nhiệm tính phí lệ phí, thông qua hệ thống tự động của mình. Vì vậy, Công Ty sẽ được hợp lệ được ủy quyền để khấu trừ số tiền, được xác định như Hoa Hồng, từ Tài Khoản và để trả cho Nhà Quản Lý Tiền Bạc."
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
 msgstr "Bạn thừa nhận rằng Nhà Quản Lý Tiền Bạc không phải là một nhân viên hoặc người đại diện của Công Ty. Vì thế, bạn đồng ý rằng bạn có một trách nhiệm tuyệt đối để siêng năng giám sát hiệu suất toàn bộ Tài Khoản của bạn."
