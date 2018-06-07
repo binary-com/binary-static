@@ -1,4 +1,4 @@
-const DocumentUploader    = require('binary-document-uploader');
+const DocumentUploader    = require('@binary-com/binary-document-uploader');
 const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
 const BinarySocket        = require('../../../base/socket');
