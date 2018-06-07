@@ -164,10 +164,7 @@ const Accounts = (() => {
         doneLoading('#new_accounts_wrapper');
 
         const el_select_currency = /select/i.test(getElementById('new_account_currency').nodeName);
-        FormManager.init(form_id, [
-            { request_field: 'new_account_real', value: 1 },
-            { selector: '#new_account_currency', request_field: 'currency', validations: [el_select_currency ? 'req' : ''], hide_asterisk: true },
-        ]);
+        FormManager.init(form_id, [{ selector: '#new_account_currency', request_field: 'currency', validations: [el_select_currency ? 'req' : ''], hide_asterisk: true }].concat(populateReq()));
 
         FormManager.handleSubmit({
             form_selector       : form_id,
@@ -199,6 +196,34 @@ const Accounts = (() => {
     const showError = (message) => {
         $('#new_account_error').remove();
         $('#new_account_opening').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localize(message) }));
+    };
+
+    const populateReq = () => {
+        const get_settings = State.getResponse('get_settings');
+        const dob          = moment.utc(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        const req          = [
+            { request_field: 'new_account_real',       value: 1 },
+            { request_field: 'date_of_birth',          value: dob },
+            { request_field: 'salutation',             value: get_settings.salutation },
+            { request_field: 'first_name',             value: get_settings.first_name },
+            { request_field: 'last_name',              value: get_settings.last_name },
+            { request_field: 'address_line_1',         value: get_settings.address_line_1 },
+            { request_field: 'address_line_2',         value: get_settings.address_line_2 },
+            { request_field: 'address_city',           value: get_settings.address_city },
+            { request_field: 'address_state',          value: get_settings.address_state },
+            { request_field: 'address_postcode',       value: get_settings.address_postcode },
+            { request_field: 'phone',                  value: get_settings.phone },
+            { request_field: 'account_opening_reason', value: get_settings.account_opening_reason },
+            { request_field: 'place_of_birth',         value: get_settings.place_of_birth },
+            { request_field: 'residence',              value: Client.get('residence') },
+        ];
+        if (get_settings.tax_identification_number) {
+            req.push({ request_field: 'tax_identification_number', value: get_settings.tax_identification_number });
+        }
+        if (get_settings.tax_residence) {
+            req.push({ request_field: 'tax_residence', value: get_settings.tax_residence });
+        }
+        return req;
     };
 
     return {
