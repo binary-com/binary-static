@@ -22,11 +22,11 @@ const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Purchase = (() => {
     let purchase_data = {};
+    let tick_config   = {};
 
     let payout_value,
         cost_value,
-        status,
-        winning_tick;
+        status;
 
     const display = (details) => {
         purchase_data = details;
@@ -75,7 +75,6 @@ const Purchase = (() => {
             container.style.display = 'table-row';
             message_container.show();
             confirmation_error.hide();
-            winning_tick = '';
 
             CommonFunctions.elementTextContent(heading, localize('Contract Confirmation'));
             CommonFunctions.elementTextContent(descr, receipt.longcode);
@@ -117,8 +116,18 @@ const Purchase = (() => {
                 spots.hide();
             } else {
                 CommonFunctions.elementTextContent(spots, '');
+                CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), '');
                 spots.className = '';
                 spots.show();
+
+                const arr_shortcode = purchase_data.buy.shortcode.split('_');
+                tick_config = {
+                    is_tick_high        : /^tickhigh$/i.test(contract_type),
+                    is_tick_low         : /^ticklow$/i.test(contract_type),
+                    selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
+                    winning_tick_quote  : '',
+                    winning_tick_number : '',
+                };
             }
 
             if (has_chart && !show_chart) {
@@ -209,6 +218,9 @@ const Purchase = (() => {
                 } else if (status === 'lost') {
                     updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
                 }
+                if (tick_config.is_tick_high || tick_config.is_tick_low) {
+                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), localize(`Tick [_1] is the ${tick_config.is_tick_high ? 'highest' : 'lowest'} tick`, [tick_config.winning_tick_number]));
+                }
             }
         }
 
@@ -221,16 +233,6 @@ const Purchase = (() => {
         const epoches = Object.keys(spots2).sort((a, b) => a - b);
         CommonFunctions.elementTextContent(spots, '');
 
-        const contract_type = purchase_data.echo_req.passthrough.contract_type;
-        const is_tick_high  = /^tickhigh$/i.test(contract_type);
-        const is_tick_low   = /^ticklow$/i.test(contract_type);
-
-        let selected_tick = '';
-        if (is_tick_high || is_tick_low) {
-            const arr_shortcode = purchase_data.buy.shortcode.split('_');
-            selected_tick = arr_shortcode[arr_shortcode.length - 1];
-        }
-
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
@@ -241,14 +243,15 @@ const Purchase = (() => {
                 const current_tick_count = spots.getElementsByClassName('row').length + 1;
 
                 let is_winning_tick = false;
-                if (is_tick_high || is_tick_low) {
+                if (tick_config.is_tick_high || tick_config.is_tick_low) {
                     const $winning_row  = $spots.find('.winning-tick-row');
-                    if (!winning_tick ||
-                        (winning_tick === tick_d.quote && !$winning_row.length) ||
-                        (is_tick_high && +tick_d.quote > winning_tick) ||
-                        (is_tick_low && +tick_d.quote < winning_tick)) {
+                    if (!tick_config.winning_tick_quote ||
+                        (tick_config.winning_tick_quote === tick_d.quote && !$winning_row.length) ||
+                        (tick_config.is_tick_high && +tick_d.quote > tick_config.winning_tick_quote) ||
+                        (tick_config.is_tick_low && +tick_d.quote < tick_config.winning_tick_quote)) {
                         is_winning_tick = true;
-                        winning_tick = tick_d.quote;
+                        tick_config.winning_tick_quote  = tick_d.quote;
+                        tick_config.winning_tick_number = current_tick_count;
                         $winning_row.removeClass('winning-tick-row');
                     }
                 }
@@ -266,7 +269,7 @@ const Purchase = (() => {
                 CommonFunctions.elementTextContent(el2, [hours, minutes, seconds].join(':'));
                 fragment.appendChild(el2);
 
-                const tick = (is_tick_high || is_tick_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
+                const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
@@ -276,9 +279,11 @@ const Purchase = (() => {
 
                 duration--;
 
-                if (is_tick_high || is_tick_low) {
-                    const lost_on_selected_tick    = !is_winning_tick && current_tick_count === +selected_tick;
-                    const lost_after_selected_tick = is_winning_tick && current_tick_count > +selected_tick;
+                if (tick_config.is_tick_high || tick_config.is_tick_low) {
+                    const lost_on_selected_tick = !is_winning_tick &&
+                        current_tick_count === +tick_config.selected_tick_number;
+                    const lost_after_selected_tick = is_winning_tick &&
+                        current_tick_count > +tick_config.selected_tick_number;
                     if (lost_on_selected_tick || lost_after_selected_tick) {
                         duration = 0; // no need to keep drawing ticks
                     }
