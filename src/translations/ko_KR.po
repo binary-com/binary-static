@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-05-31 06:18-0400\n"
+"PO-Revision-Date: 2018-06-05 23:49-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -836,6 +836,9 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
+msgstr ""
+
 msgid "Add funds"
 msgstr ""
 
@@ -1029,6 +1032,9 @@ msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr ""
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
+msgstr ""
+
+msgid "Allow equals"
 msgstr ""
 
 msgid "Also known as counter currency"
@@ -3173,9 +3179,6 @@ msgstr ""
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr ""
 
-msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr ""
-
 msgid "Enter your email"
 msgstr "귀하의 이메일 주소를 입력하세요"
 
@@ -4271,9 +4274,6 @@ msgstr ""
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr ""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr ""
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr ""
 
@@ -4382,6 +4382,9 @@ msgstr ""
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr ""
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr ""
 
@@ -4415,7 +4418,13 @@ msgstr ""
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr ""
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
+msgstr ""
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
 msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
@@ -4755,7 +4764,7 @@ msgid "Internal audit"
 msgstr "내부 감사"
 
 msgid "International currency, stock index or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
-msgstr ""
+msgstr "국제통화, 주가지수 또는 상품가격은 변동성이 높으며 예측하기 아주 어렵습니다. 이러한 변동성과 더불어 본 웹사이트 편향적인 가격 시스템에 따라(아래에 더 자세한 내용이 설명되어 있습니다), 저희의 시스템을 통해 구매되어진 어떤 금융 계약이라도(지불금액이 프리미엄 수준에 해당하더라도) 안전한 계약이라고 볼 수 없습니다."
 
 msgid "Internet Trading Risks"
 msgstr ""
@@ -5712,6 +5721,9 @@ msgid "Low minimum stakes"
 msgstr ""
 
 msgid "Lower"
+msgstr ""
+
+msgid "Lower or equal"
 msgstr ""
 
 msgid "M"
@@ -10086,7 +10098,7 @@ msgid "Verify new password"
 msgstr "새 비밀번호를 확인하세요"
 
 msgid "Version 45. Last modified 2018-05-21."
-msgstr ""
+msgstr "버전 45. 최근 수정날짜 2018-05-21."
 
 msgid "Version 5. Last modified 2018-04-10."
 msgstr ""
@@ -10257,7 +10269,7 @@ msgid "We are looking for energetic and enthusiastic individuals who love challe
 msgstr ""
 
 msgid "We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency. To learn more, please refer %1here%2."
-msgstr ""
+msgstr "저희는 저희의 라이센스에 따라 귀하를 위해 보관하는계좌의 자금에 행해어지는 행위와 파산시 보호되어지는 자금 수준에 대해 귀하께 공지해야 하는 의무가 있습니다. 더 많은 정보를 아시려면, %1here%2를 참고하세요."
 
 msgid "We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency %1."
 msgstr ""
@@ -10727,6 +10739,9 @@ msgstr "귀하께서 %1를 통해 바이너리 옵션거래를 해야 하는 이
 msgid "Why you should trade precious metals with %1"
 msgstr "귀하께서 %1를 통해 귀금속을 거래해야 하는 이유"
 
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
+
 msgid "Win the multiplier times the close minus low."
 msgstr "종가에서 저가를 뺀 금액에 승수를 곱한 금액을 획득하세요."
 
@@ -10880,7 +10895,7 @@ msgstr ""
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr ""
 
-msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
 msgstr ""
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."

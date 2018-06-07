@@ -9,6 +9,7 @@ const elementInnerHtml = require('../../../_common/common_functions').elementInn
 const getElementById   = require('../../../_common/common_functions').getElementById;
 const localize         = require('../../../_common/localize').localize;
 const urlFor           = require('../../../_common/url').urlFor;
+const cloneObject      = require('../../../_common/utility').cloneObject;
 
 /*
  * This contains common functions we need for processing the response
@@ -22,15 +23,19 @@ const commonTrading = (() => {
     const displayContractForms = (id, elements, selected) => {
         if (!id || !elements || !selected) return;
 
-        const contracts_tree = getContractCategoryTree(elements);
+        const all_contracts = cloneObject(elements);
+        delete all_contracts.callputequal; // don't include callputequal in contract drop-down
+
+        const contracts_tree   = getContractCategoryTree(all_contracts);
+        const contract_to_show = /^(callputequal)$/.test(selected) ? 'risefall' : selected;
 
         if (!contracts_element) {
-            contracts_element = contractsElement.init(elements, contracts_tree);
+            contracts_element = contractsElement.init(all_contracts, contracts_tree, contract_to_show);
         } else { // Update the component.
             contracts_element.updater.enqueueSetState(contracts_element, {
                 contracts_tree,
-                contracts: elements,
-                formname : Defaults.get('formname'),
+                contracts: all_contracts,
+                formname : contract_to_show || Defaults.get('formname'),
             });
         }
     };
@@ -50,6 +55,8 @@ const commonTrading = (() => {
         if (/higherlower/.test(form_name)) {
             name    = 'callput';
             barrier = 'euro_non_atm';
+        } else if (/callputequal/.test(form_name)) {
+            barrier = 'euro_atm';
         } else if (/risefall|callput/.test(form_name)) {
             name    = 'callput';
             barrier = 'euro_atm';
@@ -279,12 +286,12 @@ const commonTrading = (() => {
     /*
      * sort the duration in ascending order
      */
-    const duration_order = {
-        t: 1,
-        s: 2,
-        m: 3,
-        h: 4,
-        d: 5,
+    const duration_config = {
+        t: { order: 1, type: 'tick' },
+        s: { order: 2, type: 'intraday' },
+        m: { order: 3, type: 'intraday' },
+        h: { order: 4, type: 'intraday' },
+        d: { order: 5, type: 'daily' },
     };
 
     const displayTooltip = () => {
@@ -407,7 +414,8 @@ const commonTrading = (() => {
         hidePriceOverlay: () => { showHideOverlay('loading_container2', 'none'); },
         hideFormOverlay : () => { showHideOverlay('loading_container3', 'none'); },
         showFormOverlay : () => { showHideOverlay('loading_container3', 'block'); },
-        durationOrder   : duration => duration_order[duration],
+        durationOrder   : duration => duration_config[duration].order,
+        durationType    : duration => duration_config[duration].type,
         clean           : () => { $chart = null; contracts_element = null; },
     };
 })();
