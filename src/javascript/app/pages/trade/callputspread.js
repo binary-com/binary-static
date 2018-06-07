@@ -196,7 +196,7 @@ const Callputspread = (() => {
     };
 
     const isCallputspread = (contract_type) => (
-        /^(CALLSPREAD|PUTSPREAD)$/.test(contract_type)
+        /^(CALLSPREAD|PUTSPREAD)$/i.test(contract_type)
     );
 
     const getChartOptions = (contract) => ({
