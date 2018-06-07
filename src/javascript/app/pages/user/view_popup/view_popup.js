@@ -616,7 +616,6 @@ const ViewPopup = (() => {
     const showErrorPopup = (response, message) => {
         showMessagePopup(localize(message || 'Sorry, an error occurred while processing your request.'), 'There was an error', 'notice-msg');
         // eslint-disable-next-line no-console
-        console.log(response);
     };
 
     const sellSetVisibility = (show) => {

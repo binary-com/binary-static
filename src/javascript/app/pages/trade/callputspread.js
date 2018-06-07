@@ -124,7 +124,7 @@ const Callputspread = (() => {
     */
 
     const calcMarginRight = (contract) => {
-        const formatted_max_payout = formatMoney(null, contract.payout, true);
+        const formatted_max_payout = formatMoney(contract.currency, contract.payout, true);
         // margin size is based on max payout char length
         return 15 + 7.5 * formatted_max_payout.length;
     };
