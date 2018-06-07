@@ -82,7 +82,9 @@ class Portfolio extends React.PureComponent  {
                 title     : localize('Reference No.'),
                 data_index: 'reference',
                 renderCell: (data, data_index) => {
-                    const tooltip = data.app_id !== app_id && this.state.oauth_apps && this.state.oauth_apps[data.app_id]; // eslint-disable-line
+                    const tooltip =
+                        (data.app_id !== app_id) && this.state.oauth_apps && this.state.oauth_apps[data.app_id];
+
                     if (tooltip) {
                         return (
                             <td key={data_index} className={data_index}>

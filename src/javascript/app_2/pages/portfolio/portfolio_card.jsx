@@ -1,6 +1,6 @@
 import React     from 'react';
 import PropTypes from 'prop-types';
-
+// Mobile view for portfolio items
 const PortfolioCard = ({
         reference,
         details,
@@ -10,6 +10,7 @@ const PortfolioCard = ({
         purchase,
         currency,
     }) => (
+        // TODO: Update styling once UI is ready
         <div className='statement-card card-list__card'>
             <div className='statement-card__header'>
                 <span className='statement-card__refid'>{ reference.transaction_id }</span>
