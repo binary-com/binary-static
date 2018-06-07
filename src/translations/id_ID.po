@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-03 22:55-0400\n"
+"PO-Revision-Date: 2018-06-07 00:45-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -834,6 +834,9 @@ msgstr "Beradaptasi dengan nada suara yang sesuai untuk memenuhi sasaran tertent
 msgid "Add"
 msgstr "Tambah"
 
+msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
+msgstr "Tambahkan +/– untuk menentukan batasan offset. Contoh, +0,005 berarti batasan lebih tinggi 0,005 dari spot masuk."
+
 msgid "Add funds"
 msgstr "Menambah dana"
 
@@ -1028,6 +1031,9 @@ msgstr "Memberi Klien untuk mendeposit dengan jumlah lebih rendah (mata uang lok
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Memberi Klien menggunakan metode e-wallet yang tidak di sediakan di %1"
+
+msgid "Allow equals"
+msgstr "Pilih equal"
 
 msgid "Also known as counter currency"
 msgstr "Juga dikenal sebagai mata uang counter"
@@ -3171,9 +3177,6 @@ msgstr "Memastikan Grup Perusahaan Binary mematuhi secara menyeluruh wilayah huk
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr "Memastikan Grup Perusahaan Binary mematuhi secara menyeluruh peraturan rezim yang mereka harus patuhi"
 
-msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr "Masukan batasan yang merupakan selisih harga spot. Jika Anda memasukan +0.005, maka Anda akan membeli kontrak dengan batasan 0.005 lebih tinggi dari spot masuk. Spot masuk adalah tik setelah kontrak Anda diproses"
-
 msgid "Enter your email"
 msgstr "Masukkan email Anda"
 
@@ -4269,9 +4272,6 @@ msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong>, A
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr "Jika <strong>spot akhir</strong> adalah sama dengan <strong>batasan</strong>, Anda hanya akan memperoleh hasil pada kontrak \"Higher\""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>spot awal</strong>, Anda tidak akan memperoleh hasil."
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr "Jika <strong>tik akhir</strong> sama dengan tik rata-rata, Anda tidak akan memperoleh hasil."
 
@@ -4380,6 +4380,9 @@ msgstr "Jika hasil SATI Anda bagus, kami akan mengirimkan uji bakat. Lakukan uji
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "Jika Anda melihat EUR/USD memiliki harga bid 1,05229, Anda akan menjual USD 1,05229 untuk setiap 1 EUR yang Anda jual."
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr "Pilih \"Allow equal\", Anda memperoleh hasil jika spot akhir lebih tinggi atau sama dengan spot awal untuk \"Higher\". Begitu juga, dapatkan hasil jika spot akhir lebih rendah atau sama dengan spot awal untuk \"Lower\"."
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Pilih \"Asian Fall\", untuk memperoleh hasil jika <strong>tik terakhir</strong> <strong>lebih rendah</strong> dari <strong>jumlah rata rata</strong> tik."
 
@@ -4413,8 +4416,14 @@ msgstr "Pilih \"Higher\", Anda akan memperoleh hasil jika <strong>spot akhir</st
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr "Pilih \"Higher\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>batasan</strong>."
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr "Pilih \"Higher\", Anda memperoleh hasil jika <strong>spot akhir</strong> pasti lebih tinggi dari <strong>spot masuk</strong>."
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Pilih \"Lower\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih rendah dari <strong>batasan</strong>."
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
+msgstr "Pilih \"Lower\", Anda memperoleh hasil jika <strong>spot akhir</strong> pasti lebih rendah dari <strong>spot masuk</strong>."
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Pilih \"Matches\", Anda akan memperoleh hasil jika <strong>digit terakhir</strong> pada tik akhir adalah <strong>sama</strong> dengan <strong>analisa</strong> Anda."
@@ -5711,6 +5720,9 @@ msgstr "Modal minimal rendah"
 
 msgid "Lower"
 msgstr "Lower"
+
+msgid "Lower or equal"
+msgstr "Lower atau equal"
 
 msgid "M"
 msgstr "M"
@@ -10727,6 +10739,9 @@ msgstr "Mengapa Anda harus bertrading opsi binary dengan %1"
 msgid "Why you should trade precious metals with %1"
 msgstr "Mengapa Anda harus bertrading logam mulia dengan %1"
 
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr "Dapatkan hasil jika spot akhir sama dengan spot awal, selain menjadi lebih tinggi atau lebih rendah."
+
 msgid "Win the multiplier times the close minus low."
 msgstr "Hasil multiplier dikali close dikurangi low."
 
@@ -10880,8 +10895,8 @@ msgstr "Anda mengakui bahwa Perusahaan dapat menerima Pesanan dan melanjutkan tr
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr "Anda mengetahui bahwa Perusahaan akan menentukan, dengan keputusan sendiri, dimana Transaksi yang akan disimpan pada pembukuan Perusahaan (dikenal sebagai booking B) dan Transaksi yang akan dilanjutkan kepada broker utama yang berperan sebagai penyedia likuiditas Perusahaan (dikenal sebagai booking A). Untuk yang pertama, Perusahaan bertindak sebagai pihak ketiga bagi transaksi tersebut dan korelasi antara untung/rugi yang dihasilkan oleh klien serta profit/loss yang dihasilkan oleh Perusahaan. Kapan saja, kami dapat memasuki atau menjalankan transaksi bagi banyak klien, yang mungkin memiliki perbedaan dalam ketertarikan. Dalam hal tersebut, Perusahaan dapat menyimpan Posisi Berjalan yang mungkin tidak selaras dengan tujuan Anda/kepentingan sebagai klien individu dari Perusahaan."
 
-msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
-msgstr "Anda mengetahui bahwa Money Manager berhak untuk menerima USD $20/per lot sebagai biaya Komisi. Anda juga setuju bahwa Perusahaan berhak untuk merevisi biaya biaya tersebut dari waktu ke waktu. Anda lebih lanjut mengakui bahwa Perusahaan akan bertanggung jawab untuk menghitung biaya biaya, melalui sistem otomatisnya. Dengan demikian, Perusahaan akan diberi wewenang untuk mengurangi jumlah, yang didefinisikan sebagai Komisi, dari Akun dan untuk membayar biaya Money Manager."
+msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgstr "Anda mengetahui bahwa Money Manager berhak untuk menerima USD 20/per lot sebagai biaya Komisi. Anda juga setuju bahwa Perusahaan berhak untuk merevisi biaya biaya tersebut dari waktu ke waktu. Anda lebih lanjut mengakui bahwa Perusahaan akan bertanggung jawab untuk menghitung biaya biaya, melalui sistem otomatisnya. Dengan demikian, Perusahaan akan diberi wewenang untuk mengurangi jumlah, yang didefinisikan sebagai Komisi, dari Akun dan untuk membayar biaya Money Manager."
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
 msgstr "Anda mengakui bahwa Money Manager adalah bukan karyawan atau perwakilan Perusahaan. Dengan demikian, Anda setuju bahwa Anda memiliki tanggung jawab mutlak untuk secara tekun memantau seluruh kinerja Akun Anda."

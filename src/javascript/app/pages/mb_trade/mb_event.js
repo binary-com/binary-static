@@ -4,12 +4,14 @@ const MBNotifications       = require('./mb_notifications');
 const MBPrice               = require('./mb_price');
 const MBProcess             = require('./mb_process');
 const MBTick                = require('./mb_tick');
+const MBSymbols             = require('./mb_symbols');
 const TradingAnalysis       = require('../trade/analysis');
 const debounce              = require('../trade/common').debounce;
 const Client                = require('../../base/client');
 const Currency              = require('../../common/currency');
 const onlyNumericOnKeypress = require('../../common/event_handler');
 const localize              = require('../../../_common/localize').localize;
+const State                 = require('../../../_common/storage').State;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -106,10 +108,9 @@ const MBTradingEvents = (() => {
         }
 
         const validatePayout = (payout_amount, $error_wrapper) => {
-            const contract            = MBContract.getCurrentContracts();
-            const min_amount          = is_jp_client ? 1 : 0;
-            const max_contract_amount = Array.isArray(contract) && contract.length && contract[0].expiry_type !== 'intraday' ? 20000 : 5000;
-            const max_client_amount   = is_jp_client ? 100 : max_contract_amount;
+            const market              = MBSymbols.getAllSymbols()[MBDefaults.get('underlying')].market;
+            const selected_currency   = MBDefaults.get('currency');
+            const max_client_amount   = State.getResponse(`landing_company.financial_company.currency_config.${market}.${selected_currency}.max_payout`) || 5000;
 
             let is_valid  = true;
             let error_msg = '';
@@ -117,9 +118,9 @@ const MBTradingEvents = (() => {
             if (!payout_amount || isNaN(payout_amount)) {
                 is_valid  = false;
                 error_msg = localize('Should be a valid number.');
-            } else if (+payout_amount < min_amount || +payout_amount > max_client_amount) {
+            } else if (+payout_amount > max_client_amount) {
                 is_valid  = false;
-                error_msg = localize('Should be between [_1] and [_2]', [min_amount, max_client_amount]);
+                error_msg = localize('Should be less than [_1]', [max_client_amount]);
             }
 
             // if value has decimal places
