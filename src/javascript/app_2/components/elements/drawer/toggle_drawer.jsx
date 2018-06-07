@@ -20,7 +20,7 @@ class ToggleDrawer extends PureComponent {
     }
 
     render() {
-        const { icon_class, icon_link, alignment, footer, children } = this.props;
+        const { icon_class, icon_link, alignment, children } = this.props;
 
         const toggle_class = classNames('navbar-icons', icon_class, {
             'menu-toggle': !icon_class,
@@ -34,7 +34,6 @@ class ToggleDrawer extends PureComponent {
                 <Drawer
                     alignment={alignment}
                     closeBtn={this.closeDrawer}
-                    footer={footer}
                 >
                     {children}
                 </Drawer>
