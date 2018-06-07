@@ -239,10 +239,8 @@ const Explanation = () => (
             </div>
 
             <div id='explain_highlowticks' className='invisible'>
-                <h3>{it.L('Entry tick')}</h3>
-                <p>{it.L('The start time is when the contract is processed by our servers. The entry tick is the next tick after the start time.')}</p>
-                <h3>{it.L('Exit tick')}</h3>
-                <p>{it.L('The exit tick is the fifth tick from the entry tick.')}</p>
+                <h3>{it.L('The First Tick')}</h3>
+                <p>{it.L('The first tick is the first tick after the contract is processed by our servers.')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('High Tick/Low Tick contracts have a strict duration of five ticks.')}</p>
             </div>
         </div>
