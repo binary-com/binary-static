@@ -45,7 +45,7 @@ export const AccountBalance = connect(
                     className='primary green'
                     has_effect
                     text={localize('Login')}
-                    handleClick={redirectToLogin}
+                    onClick={redirectToLogin}
                 />
             }
         </div>
