@@ -4,14 +4,7 @@ import PropTypes    from 'prop-types';
 import { localize } from '../../../_common/localize';
 
 class PortfolioDrawer extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.handleVisibility = this.handleVisibility.bind(this);
-        this.state = {
-            is_open: true,
-            width  : window.innerWidth,
-        };
-    }
+    state = { is_open: true, width: window.innerWidth };
 
     componentWillMount() {
         window.addEventListener('resize', this.handleWindowSizeChange);
@@ -21,7 +14,7 @@ class PortfolioDrawer extends React.PureComponent {
         window.removeEventListener('resize', this.handleWindowSizeChange);
     }
 
-    handleVisibility() {
+    handleVisibility = () => {
         this.setState({ is_open: !this.state.is_open });
     }
 
@@ -45,7 +38,7 @@ class PortfolioDrawer extends React.PureComponent {
     };
 
     render() {
-        const { width } = this.state;
+        const { width, is_open } = this.state;
         const is_mobile = width <= 1024;
         const header = (
             is_mobile ?
@@ -55,7 +48,7 @@ class PortfolioDrawer extends React.PureComponent {
                 >
                     <span className='ic-portfolio' />
                     <p>{localize('Portfolio')}</p>
-                    <span className={`ic-close ${this.state.is_open ? 'open': '' }`} />
+                    <span className={`ic-close ${is_open ? 'open': '' }`} />
                 </div>
                 :
                 <div className='portfolio-drawer-header'>
@@ -72,7 +65,7 @@ class PortfolioDrawer extends React.PureComponent {
         return (
             <div className='portfolio-drawer'>
                 { header }
-                <div className={`portfolio-list ${this.state.is_open ? 'show': '' }`}>
+                <div className={`portfolio-list ${is_open ? 'show': '' }`}>
                     {
                         this.props.portfolios.map((portfolio, idx) => (
                             <div key={idx} className='portfolio'>
@@ -102,4 +95,4 @@ PortfolioDrawer.propTypes = {
     subtitle   : PropTypes.number,
 };
 
-module.exports = PortfolioDrawer;
+export default PortfolioDrawer;
