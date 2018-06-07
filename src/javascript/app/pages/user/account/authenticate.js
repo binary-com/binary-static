@@ -249,8 +249,8 @@ const Authenticate = (() => {
             if (!(file.documentFormat || '').match(/^(PNG|JPG|JPEG|GIF|PDF)$/i)) {
                 return localize('Invalid document format: "[_1]"', [file.documentFormat]);
             }
-            if (file.buffer && file.buffer.byteLength >= 3 * 1024 * 1024) {
-                return localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB', [file.filename]);
+            if (file.buffer && file.buffer.byteLength >= 8 * 1024 * 1024) {
+                return localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]', [file.filename, '8MB']);
             }
             if (!file.documentId && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
                 return localize('ID number is required for [_1].', [doc_name[file.documentType]]);
