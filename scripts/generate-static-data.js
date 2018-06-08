@@ -366,7 +366,6 @@ const texts = [
     'Ends Outside',
     'Stays Between',
     'Goes Outside',
-
     'All barriers in this trading window are expired',
     'Remaining time',
     'Market is closed. Please try again later.',
