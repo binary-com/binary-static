@@ -364,14 +364,15 @@ const ViewPopup = (() => {
     };
 
     const map_contract_type = {
-        'expiry'        : 'endsinout',
-        'asian'         : 'asian',
-        'even|odd'      : 'evenodd',
-        'over|under'    : 'overunder',
-        'digit'         : 'digits',
-        'upordown|range': 'staysinout',
-        'touch'         : 'touchnotouch',
-        'call|put'      : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
+        'expiry'          : 'endsinout',
+        'asian'           : 'asian',
+        'even|odd'        : 'evenodd',
+        'over|under'      : 'overunder',
+        'digit'           : 'digits',
+        'upordown|range'  : 'staysinout',
+        'touch'           : 'touchnotouch',
+        '(call|put)spread': 'callputspread',
+        'call|put'        : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
     };
 
     const showExplanation = (div) => {
