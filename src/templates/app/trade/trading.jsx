@@ -5,7 +5,7 @@ import Loading from '../../_common/components/loading.jsx';
 
 const Trading = () => (
     <React.Fragment>
-        <div id='trading_socket_container' className='tab-menu-wrap'>
+        <div id='trading_socket_container'>
             <div id='notifications_wrapper' />
             <div id='loading_container' className='overlay_container' />
             <a id='deposit_btn_trade' className='client_real invisible gr-hide-m button' href={it.url_for('cashier/forwardws?action=deposit')}>
