@@ -169,7 +169,7 @@ const Callputspread = (() => {
     const init = (chart, contract) => {
         // Adds invisible points with barrier coordinates,
         // so barriers are always visible on the chart
-        const x0 = (chart.series[0].data[0] || chart.series[1].data[0]).x;
+        const x0 = contract.date_start * 1000;
         const { high_barrier, low_barrier } = contract;
         chart.addSeries({
             name  : constants.barrier_series_name,
