@@ -267,10 +267,10 @@ const ViewPopup = (() => {
         Clock.showLocalTimeOnHover('#trade_details_live_date');
 
         const is_started = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        if (!is_started || contract.status !== 'open') {
+        let remained     = contract.date_expiry - now;
+        if (!is_started || contract.status !== 'open' || remained < 0) {
             containerSetText('trade_details_live_remaining', '-');
         } else {
-            let remained = contract.date_expiry - now;
             let days = 0;
             const day_seconds = 24 * 60 * 60;
             if (remained > day_seconds) {
