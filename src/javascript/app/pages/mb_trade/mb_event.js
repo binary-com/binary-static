@@ -23,10 +23,15 @@ const getPropertyValue      = require('../../../_common/utility').getPropertyVal
  *
  */
 const MBTradingEvents = (() => {
+    let $form,
+        hidden_class,
+        border_class;
+
     const initiate = () => {
-        const $form        = $('.trade_form');
-        const hidden_class = 'invisible';
-        const border_class = 'primary-border-color';
+        $form        = $('.trade_form');
+        hidden_class = 'invisible';
+        border_class = 'primary-border-color';
+
         const is_jp_client = Client.isJPClient();
 
         $(document).on('click', (e) => {
@@ -284,13 +289,13 @@ const MBTradingEvents = (() => {
                 setTradingStatus(status === 'allow');
             });
         }
+    };
 
-        const makeListsInvisible = () => {
-            $form.find('.list, #payout_list').setVisibility(0).end()
-                .find('#period, #category')
-                .setVisibility(1);
-            $form.find('.current, .header-current').removeClass(border_class);
-        };
+    const makeListsInvisible = () => {
+        $form.find('.list, #payout_list').setVisibility(0).end()
+            .find('#period, #category')
+            .setVisibility(1);
+        $form.find('.current, .header-current').removeClass(border_class);
     };
 
     return {
