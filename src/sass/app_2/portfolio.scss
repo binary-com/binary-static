@@ -18,6 +18,11 @@
         padding-left: 10px;
     }
     th {
+        white-space: nowrap;
+        @media (max-width: 1000px) {
+            white-space: normal;
+        }
+
         &.details {
             width: 30%;
             @media (max-width: 900px) {
