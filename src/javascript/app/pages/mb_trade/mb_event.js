@@ -45,7 +45,7 @@ const MBTradingEvents = (() => {
             let $list = $this.siblings('.list');
             if (!$list.length) {
                 $list = $this.siblings().find('.list'); // in case of .header-current
-            };
+            }
             if ($list.hasClass(hidden_class)) {
                 makeListsInvisible();
             }
