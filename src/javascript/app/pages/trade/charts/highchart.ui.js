@@ -1,5 +1,6 @@
-const addComma = require('../../../common/currency').addComma;
-const localize = require('../../../../_common/localize').localize;
+const addComma        = require('../../../common/currency').addComma;
+const localize        = require('../../../../_common/localize').localize;
+const isCallputspread = require('../callputspread').isCallputspread;
 
 const HighchartUI = (() => {
     let common_time_style,
@@ -27,17 +28,20 @@ const HighchartUI = (() => {
                 return `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `;
             case 'delay':
                 return `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`;
+            case 'payout_range':
+                return `<span class="chart-payout-range"> ${localize('Payout range')} </span>`;
             default:
                 return null;
         }
     };
 
-    const setLabels = (chart_delayed) => {
+    const setLabels = (chart_delayed, contract_type) => {
         // display a guide for clients to know how we are marking entry and exit spots
         txt = (chart_delayed ? getLabels('delay') : '') +
             getLabels('start_time') +
             (history ? getLabels('entry_spot') + getLabels('exit_spot') : '') +
-            getLabels('end_time');
+            getLabels('end_time') +
+            (isCallputspread(contract_type) ? getLabels('payout_range') : '');
     };
 
     const setChartOptions = (params) => {

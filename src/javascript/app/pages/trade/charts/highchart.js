@@ -128,7 +128,7 @@ const Highchart = (() => {
         }
 
         const is_jp_client = isJPClient();
-        HighchartUI.setLabels(is_chart_delayed);
+        HighchartUI.setLabels(is_chart_delayed, contract.contract_type);
 
         const chart_options = {
             is_jp_client,
