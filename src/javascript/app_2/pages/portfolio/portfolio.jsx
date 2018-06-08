@@ -269,7 +269,7 @@ class Portfolio extends React.PureComponent  {
     render() {
         return (
             <div className='portfolio' ref={(el) => this.el = el}>
-                <div className='portfolio_header_container'>
+                <div className='portfolio_header_container desktop-only'>
                     <h2>{localize('Portfolio')}</h2>
                 </div>
                 {(() => {
@@ -290,6 +290,7 @@ class Portfolio extends React.PureComponent  {
                                             columns={this.state.columns}
                                             data_source={this.state.data_source}
                                             footer={this.state.footer}
+                                            has_fixed_header
                                         />
                                     </div>
                                     <div className='mobile-only'>

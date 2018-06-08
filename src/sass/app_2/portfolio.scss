@@ -14,8 +14,22 @@
 }
 
 .portfolio {
+    padding-top: 60px;
+
     .portfolio_header_container {
+        position: fixed;
+        top: 57px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        z-index: 90;
+        width: 100%;
+        background: $COLOR_WHITE;
         padding-left: 10px;
+
+        h2 {
+            margin: 0px;
+        }
     }
     th {
         white-space: nowrap;
