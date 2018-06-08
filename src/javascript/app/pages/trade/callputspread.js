@@ -42,12 +42,6 @@ const Callputspread = (() => {
         contract                : null,
     };
 
-    // Called on Highcharts 'redraw' event
-    const redrawHandler = () => {
-        redrawInterval();
-        redrawSlider();
-    };
-
     /*
         METHODS THAT DRAW ON CHART:
     */
@@ -57,7 +51,7 @@ const Callputspread = (() => {
         if (state.el_interval) {
             state.el_interval.destroy();
         }
-        const { x, y0, y1, top_label, bottom_label } = calcIntervalState(state.chart, state.contract, constants);
+        const { x, y0, y1, top_label, bottom_label } = calcIntervalState(state.chart, state.contract);
         const { cap_width, stroke, strokeWidth } = constants.interval;
         state.el_interval = state.chart.renderer
             .path(getIntervalPath(x, y0, y1, cap_width))
@@ -93,7 +87,7 @@ const Callputspread = (() => {
         if (state.el_slider) {
             state.el_slider.destroy();
         }
-        const { x, y, width } = calcSliderState(state.chart, state.contract, constants);
+        const { x, y, width } = calcSliderState(state.chart, state.contract);
         const { height, fill } = constants.slider;
         state.el_slider = state.chart.renderer
             .path(getSliderPath(x, y, width, height))
@@ -175,7 +169,7 @@ const Callputspread = (() => {
     const init = (chart, contract) => {
         // Adds invisible points with barrier coordinates,
         // so barriers are always visible on the chart
-        const x0 = chart.series[0].data[0].x;
+        const x0 = (chart.series[0].data[0] || chart.series[1].data[0]).x;
         const { high_barrier, low_barrier } = contract;
         chart.addSeries({
             name  : constants.barrier_series_name,
@@ -192,7 +186,7 @@ const Callputspread = (() => {
                 },
             ],
         });
-        updateState(chart, contract);
+        update(chart, contract);
     };
 
     const isCallputspread = (contract_type) => (
@@ -201,22 +195,21 @@ const Callputspread = (() => {
 
     const getChartOptions = (contract) => ({
         marginRight: calcMarginRight(contract),
-        redrawHandler,
+        redrawHandler: () => update(),
     });
 
-    const updateState = (chart, contract, should_redraw_slider = false) => {
+    const update = (chart, contract) => {
         state.chart = chart || state.chart;
         state.contract = contract || state.contract;
-        // slider with indicative price lags behind sidebar value
-        // if only drawn on 'redraw' chart event
-        if (should_redraw_slider) redrawSlider();
+        redrawInterval();
+        redrawSlider();
     };
 
     return {
         init,
         isCallputspread,
         getChartOptions,
-        updateState,
+        update,
     };
 })();
 
