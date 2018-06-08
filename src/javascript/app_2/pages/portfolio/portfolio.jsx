@@ -279,7 +279,7 @@ class Portfolio extends React.PureComponent  {
                         return <Loading />;
                     }
                     if (error) {
-                        return <p>{this.state.error}</p>;
+                        return <p>{error}</p>;
                     }
                     return (
                             this.state.data_source.length > 0 ?
