@@ -194,7 +194,7 @@ const Callputspread = (() => {
     );
 
     const getChartOptions = (contract) => ({
-        marginRight: calcMarginRight(contract),
+        marginRight  : calcMarginRight(contract),
         redrawHandler: () => update(),
     });
 
