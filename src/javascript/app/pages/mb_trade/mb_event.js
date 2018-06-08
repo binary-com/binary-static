@@ -12,6 +12,7 @@ const Currency              = require('../../common/currency');
 const onlyNumericOnKeypress = require('../../common/event_handler');
 const localize              = require('../../../_common/localize').localize;
 const State                 = require('../../../_common/storage').State;
+const getPropertyValue      = require('../../../_common/utility').getPropertyValue;
 
 /*
  * TradingEvents object contains all the event handler function required for
@@ -108,9 +109,11 @@ const MBTradingEvents = (() => {
         }
 
         const validatePayout = (payout_amount, $error_wrapper) => {
-            const market              = MBSymbols.getAllSymbols()[MBDefaults.get('underlying')].market;
-            const selected_currency   = MBDefaults.get('currency');
-            const max_client_amount   = State.getResponse(`landing_company.financial_company.currency_config.${market}.${selected_currency}.max_payout`) || 5000;
+            const market = getPropertyValue(MBSymbols.getAllSymbols(), [MBDefaults.get('underlying'), 'market']);
+            if (!market) return false;
+
+            const selected_currency = MBDefaults.get('currency');
+            const max_client_amount = State.getResponse(`landing_company.financial_company.currency_config.${market}.${selected_currency}.max_payout`) || 5000;
 
             let is_valid  = true;
             let error_msg = '';
