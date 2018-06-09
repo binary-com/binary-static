@@ -266,6 +266,7 @@ const Process = (() => {
             formname_to_set = 'callputequal';
         }
         Defaults.set('formname', formname_to_set);
+        getElementById('contract').setAttribute('value', formname_to_set);
     };
 
     const forgetTradingStreams = () => {
