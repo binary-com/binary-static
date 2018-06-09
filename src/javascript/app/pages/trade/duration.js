@@ -61,7 +61,7 @@ const Durations = (() => {
         }
 
         Object.keys(durations).forEach((key) => {
-            Object.keys(durations[key][form_name]).forEach((form) => {
+            Object.keys(durations[key][form_name] || []).forEach((form) => {
                 let obj = {};
                 if (barrier_category) {
                     obj = durations[key][form_name][barrier_category];

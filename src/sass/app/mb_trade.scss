@@ -28,6 +28,9 @@
     #mb_trading {
         font-size: $FONT_SIZE_S;
 
+        #notifications_wrapper {
+            margin-left: 0;
+        }
         #panel {
             margin-left: 10px;
 
@@ -599,6 +602,9 @@
             }
         }
         @media screen and (max-width: 768px) {
+            #notifications_wrapper {
+                margin-left: -10px;
+            }
             .gr-12-p {
                 padding-bottom: 10px;
             }
