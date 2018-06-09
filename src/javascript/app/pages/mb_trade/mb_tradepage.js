@@ -54,7 +54,7 @@ const MBTradePage = (() => {
                 events_initialized = 1;
                 MBTradingEvents.init();
             }
-        }); 
+        });
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
             MBDisplayCurrencies();
