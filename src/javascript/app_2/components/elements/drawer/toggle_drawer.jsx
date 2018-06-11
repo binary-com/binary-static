@@ -11,7 +11,7 @@ class ToggleDrawer extends PureComponent {
         if (alignment && alignment === 'left') {
             this.props.showMainDrawer();
         } else if (alignment && alignment === 'right'){
-            this.props.showPortfolioDrawer();
+            this.props.showNotificationsDrawer();
         }
     }
 
@@ -48,19 +48,19 @@ ToggleDrawer.propTypes = {
         PropTypes.array,
         PropTypes.object,
     ]),
-    footer             : PropTypes.func,
-    hideDrawers        : PropTypes.func,
-    icon_class         : PropTypes.string,
-    icon_link          : PropTypes.string,
-    showMainDrawer     : PropTypes.func,
-    showPortfolioDrawer: PropTypes.func,
+    footer                 : PropTypes.func,
+    hideDrawers            : PropTypes.func,
+    icon_class             : PropTypes.string,
+    icon_link              : PropTypes.string,
+    showMainDrawer         : PropTypes.func,
+    showNotificationsDrawer: PropTypes.func,
 };
 
 const drawer_component = connect(
     ({ ui }) => ({
-        showMainDrawer     : ui.showMainDrawer,
-        showPortfolioDrawer: ui.showPortfolioDrawer,
-        hideDrawers        : ui.hideDrawers,
+        showMainDrawer         : ui.showMainDrawer,
+        showNotificationsDrawer: ui.showNotificationsDrawer,
+        hideDrawers            : ui.hideDrawers,
     })
 )(ToggleDrawer);
 
