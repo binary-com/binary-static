@@ -22,6 +22,9 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
             if (JSON.stringify(store[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
             } else {
+                if (key === 'symbol') {
+                    store.proposal_info = {}; // clear contract info, disable purchase button(s)
+                }
                 store[key] = new_state[key];
             }
         });
@@ -43,6 +46,8 @@ const process_methods = [
     StartDate.onChangeStartDate,
 ];
 const process = async(store) => {
+    updateStore(store, { proposal_info: {} }); // clear contract info, disable purchase button(s)
+
     const snapshot = cloneObject(store);
 
     if (!Client.get('currency') && isEmptyObject(store.currencies_list)) {

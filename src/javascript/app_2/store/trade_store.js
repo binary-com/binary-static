@@ -1,9 +1,10 @@
 import {
     action,
-    observable }       from 'mobx';
-import ContractType    from '../pages/trading/actions/helpers/contract_type';
-import { updateStore } from '../pages/trading/actions/index';
-import Client          from '../../_common/base/client_base';
+    observable }           from 'mobx';
+import ContractType        from '../pages/trading/actions/helpers/contract_type';
+import { updateStore }     from '../pages/trading/actions/index';
+import { processPurchase } from '../pages/trading/actions/purchase';
+import Client              from '../../_common/base/client_base';
 
 export default class TradeStore {
     time_interval = undefined;
@@ -27,6 +28,14 @@ export default class TradeStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
         updateStore(this, { [name]: (type === 'number' ? +value : value) }, true);
+    }
+
+    @action.bound onPurchase(proposal_id, price) {
+        if (proposal_id) {
+            processPurchase(proposal_id, price).then(action((response) => {
+                updateStore(this, { purchase_info: response });
+            }));
+        }
     }
 
     // Underlying
@@ -69,6 +78,7 @@ export default class TradeStore {
     @observable last_digit = 3;
 
     // Purchase
+    @observable purchase_info = {};
     @observable proposal_info = {};
 
     // TODO: to remove dummy portfolio value

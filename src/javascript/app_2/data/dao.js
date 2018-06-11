@@ -30,6 +30,9 @@ const DAO = (() => {
     const getWebsiteStatus = () =>
         BinarySocket.send({ website_status: 1 });
 
+    const sendBuy = (proposal_id, price) =>
+        BinarySocket.send({ buy: proposal_id, price });
+
     const sendLogout = () =>
         BinarySocket.send({ logout: 1 });
 
@@ -83,6 +86,7 @@ const DAO = (() => {
         getSettings,
         getWebsiteStatus,
         getStatement,
+        sendBuy,
         sendLogout,
 
         // streams
