@@ -1,13 +1,27 @@
-import React          from 'react';
-import PropTypes      from 'prop-types';
-import Button         from '../../../components/form/button.jsx';
-import Fieldset       from '../../../components/form/fieldset.jsx';
-import { connect }    from '../../../store/connect';
-import { isLoggedIn } from '../../../../_common/base/client_base';
-import { localize }   from '../../../../_common/localize';
+import React           from 'react';
+import PropTypes       from 'prop-types';
+import { toGMTFormat } from '../../../common/date_time';
+import Button          from '../../../components/form/button.jsx';
+import Fieldset        from '../../../components/form/fieldset.jsx';
+import { connect }     from '../../../store/connect';
+import { isLoggedIn }  from '../../../../_common/base/client_base';
+import { localize }    from '../../../../_common/localize';
 import {
     getPropertyValue,
-    isEmptyObject }   from '../../../../_common/utility';
+    isEmptyObject }    from '../../../../_common/utility';
+
+// TODO: update/remove this once the design is ready
+const createPurchaseInfo = (purchase_info) => (
+    <React.Fragment>
+        <div><strong>Purchase Info:</strong></div>
+        <div>Buy Price: {purchase_info.buy_price}</div>
+        <div>Payout: {purchase_info.payout}</div>
+        <div>Start: {toGMTFormat(purchase_info.start_time * 1000)}</div>
+        <div>Contract ID: {purchase_info.contract_id}</div>
+        <div>Transaction ID: {purchase_info.transaction_id}</div>
+        <div>Description: {purchase_info.longcode}</div>
+    </React.Fragment>
+);
 
 const Purchase = ({
     is_purchase_enabled,
@@ -25,7 +39,7 @@ const Purchase = ({
             <Fieldset key={idx} header={type} tooltip={info.message}>
                 {(!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id) ?
                     <div>
-                        {getPropertyValue(purchase_info, ['error', 'message']) || JSON.stringify(purchase_info.buy)}
+                        {getPropertyValue(purchase_info, ['error', 'message']) || createPurchaseInfo(purchase_info.buy)}
                     </div>
                     :
                     <React.Fragment>
