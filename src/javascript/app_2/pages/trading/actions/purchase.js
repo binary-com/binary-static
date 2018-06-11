@@ -1,5 +1,5 @@
-import DAO from '../../../data/dao';
+import WS from '../../../data/ws_methods';
 
 export const processPurchase = async(proposal_id, price) => (
-    await DAO.buy(proposal_id, price)
+    await WS.buy(proposal_id, price)
 );

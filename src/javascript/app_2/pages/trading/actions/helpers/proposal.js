@@ -1,10 +1,10 @@
-import { getDecimalPlaces } from '../../../../../_common/base/currency_base';
 import { convertToUnix }    from '../../../../common/date_time';
-import DAO                  from '../../../../data/dao';
+import WS                   from '../../../../data/ws_methods';
+import { getDecimalPlaces } from '../../../../../_common/base/currency_base';
 
 export const requestProposal = (store, updateStore) => {
     const proposal_info = {};
-    DAO.forgetAll('proposal').then(() => {
+    WS.forgetAll('proposal').then(() => {
         const proposalCallback = (response) => {
             const proposal = response.proposal || {};
             const profit   = (proposal.payout - proposal.ask_price) || 0;
@@ -24,7 +24,7 @@ export const requestProposal = (store, updateStore) => {
         };
 
         Object.keys(store.trade_types).forEach(type => {
-            DAO.subscribeProposal(createProposalRequest(store, type), proposalCallback);
+            WS.subscribeProposal(createProposalRequest(store, type), proposalCallback);
         });
     });
 };

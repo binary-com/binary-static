@@ -1,7 +1,7 @@
 import { buildBarriersConfig }        from './barrier';
 import { buildDurationConfig }        from './duration';
 import { buildForwardStartingConfig } from './start_date';
-import DAO                            from '../../../../data/dao';
+import WS                             from '../../../../data/ws_methods';
 import { get as getLanguage }         from '../../../../../_common/language';
 import { localize }                   from '../../../../../_common/localize';
 import { toTitleCase }                from '../../../../../_common/string_util';
@@ -42,7 +42,7 @@ const ContractType = (() => {
     let available_contract_types = {};
     let available_categories     = {};
 
-    const buildContractTypesConfig = (symbol) => DAO.contractsFor(symbol).then(r => {
+    const buildContractTypesConfig = (symbol) => WS.contractsFor(symbol).then(r => {
         available_contract_types = {};
         available_categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
         r.contracts_for.available.forEach((contract) => {
