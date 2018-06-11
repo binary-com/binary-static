@@ -18,6 +18,7 @@ module.exports = function (grunt) {
 
                     const rules = [
                         '^/binary-static/(.*)$ /$1',
+                        '^/(.*)/app.html.*$ /$1/app.html [L]',
                     ];
                     middlewares.push(rewrite(rules));
 
