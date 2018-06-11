@@ -31,6 +31,10 @@ export default class TradeStore {
         }
     }
 
+    // Control values
+    @observable is_trade_enabled    = false;
+    @observable is_purchase_enabled = false;
+
     // Underlying
     @observable symbol;
 

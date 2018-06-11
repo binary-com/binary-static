@@ -9,6 +9,8 @@ import {
     isEmptyObject }   from '../../../../_common/utility';
 
 const Purchase = ({
+    is_purchase_enabled,
+    is_trade_enabled,
     onClickPurchase,
     proposal_info,
     purchase_info,
@@ -35,7 +37,7 @@ const Purchase = ({
                             </React.Fragment>
                         }
                         <Button
-                            is_disabled={!info.id}
+                            is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id}
                             id={`purchase_${type}`}
                             className='primary green'
                             has_effect
@@ -50,17 +52,21 @@ const Purchase = ({
 );
 
 Purchase.propTypes = {
-    onClickPurchase: PropTypes.func,
-    proposal_info  : PropTypes.object,
-    purchase_info  : PropTypes.object,
-    trade_types    : PropTypes.object,
+    is_purchase_enabled: PropTypes.bool,
+    is_trade_enabled   : PropTypes.bool,
+    onClickPurchase    : PropTypes.func,
+    proposal_info      : PropTypes.object,
+    purchase_info      : PropTypes.object,
+    trade_types        : PropTypes.object,
 };
 
 export default connect(
     ({ trade }) => ({
-        onClickPurchase: trade.onPurchase,
-        proposal_info  : trade.proposal_info,
-        purchase_info  : trade.purchase_info,
-        trade_types    : trade.trade_types,
+        is_purchase_enabled: trade.is_purchase_enabled,
+        is_trade_enabled   : trade.is_trade_enabled,
+        onClickPurchase    : trade.onPurchase,
+        proposal_info      : trade.proposal_info,
+        purchase_info      : trade.purchase_info,
+        trade_types        : trade.trade_types,
     })
 )(Purchase);

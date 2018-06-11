@@ -20,7 +20,7 @@ export const requestProposal = (store, updateStore) => {
                 has_error: !!response.error,
             };
 
-            updateStore(store, { proposal_info });
+            updateStore(store, { is_purchase_enabled: true, proposal_info });
         };
 
         Object.keys(store.trade_types).forEach(type => {

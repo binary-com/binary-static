@@ -23,7 +23,8 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
                 delete new_state[key];
             } else {
                 if (key === 'symbol') {
-                    store.proposal_info = {}; // clear contract info, disable purchase button(s)
+                    store.is_purchase_enabled = false;
+                    store.is_trade_enabled    = false;
                 }
                 store[key] = new_state[key];
             }
@@ -46,7 +47,7 @@ const process_methods = [
     StartDate.onChangeStartDate,
 ];
 const process = async(store) => {
-    updateStore(store, { proposal_info: {} }); // clear contract info, disable purchase button(s)
+    updateStore(store, { is_purchase_enabled: false, proposal_info: {} }); // disable purchase button(s), clear contract info
 
     const snapshot = cloneObject(store);
 
@@ -58,6 +59,7 @@ const process = async(store) => {
         extendOrReplace(snapshot, fnc(snapshot));
     });
 
+    snapshot.is_trade_enabled = true;
     updateStore(store, snapshot);
 
     requestProposal(store, updateStore);
