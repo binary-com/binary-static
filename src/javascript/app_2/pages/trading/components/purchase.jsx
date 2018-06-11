@@ -3,6 +3,7 @@ import PropTypes      from 'prop-types';
 import Button         from '../../../components/form/button.jsx';
 import Fieldset       from '../../../components/form/fieldset.jsx';
 import { connect }    from '../../../store/connect';
+import { isLoggedIn } from '../../../../_common/base/client_base';
 import { localize }   from '../../../../_common/localize';
 import {
     getPropertyValue,
@@ -18,6 +19,8 @@ const Purchase = ({
 }) => (
     Object.keys(trade_types).map((type, idx) => {
         const info = proposal_info[type] || {};
+        const is_logged_in = isLoggedIn();
+
         return (
             <Fieldset key={idx} header={type} tooltip={info.message}>
                 {(!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id) ?
@@ -37,11 +40,11 @@ const Purchase = ({
                             </React.Fragment>
                         }
                         <Button
-                            is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id}
+                            is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id || !is_logged_in}
                             id={`purchase_${type}`}
                             className='primary green'
                             has_effect
-                            text={`${localize('Purchase')} ${trade_types[type]}`}
+                            text={is_logged_in ? `${localize('Purchase')} ${trade_types[type]}` : 'Please log in.'}
                             onClick={() => { onClickPurchase(info.id, 999); }}
                         />
                     </React.Fragment>
