@@ -9,7 +9,7 @@ export const MenuDrawer = () => (
     <div className='drawer-items-container'>
         <PerfectScrollbar>
             <div className='list-items-container'>
-                <DrawerItem text={localize('Manage Password')} />
+                <DrawerItem text={localize('Manage Password')}/>
                 <DrawerItem text={localize('Useful Resources')}/>
                 <DrawerItem text={localize('Login History')}/>
                 <hr />
