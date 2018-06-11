@@ -18,7 +18,7 @@ const Tooltip = ({
 
 Tooltip.propTypes = {
     alignment: PropTypes.string,
-    children : PropTypes.any, // string || number
+    children : PropTypes.string,
     is_icon  : PropTypes.bool,
     message  : PropTypes.string,
 };

@@ -76,85 +76,6 @@ const app_id = getAppId();
 
 class Portfolio extends React.PureComponent  {
     state = {
-        columns: [
-            {
-                title     : localize('Reference No.'),
-                data_index: 'reference',
-                renderCell: (data, data_index) => {
-                    const tooltip =
-                        (data.app_id !== app_id) && this.state.oauth_apps && this.state.oauth_apps[data.app_id];
-
-                    if (tooltip) {
-                        return (
-                            <td key={data_index} className={data_index}>
-                                <Tooltip
-                                    alignment='right'
-                                    message={localize('Transaction performed by [_1] (APP ID: [_2])', [tooltip, data.app_id])}
-                                >
-                                    {data.transaction_id}
-                                </Tooltip>
-                            </td>);
-                    }
-                    return (
-                        <td key={data_index} className={data_index}>
-                            {data.transaction_id || ''}
-                        </td>
-                    );
-                },
-            },
-            {
-                title     : localize('Contract Type'),
-                data_index: 'type',
-                renderCell: (data, data_index) => {
-                    if (data) {
-                        return (
-                            <td key={data_index}>
-                                <div className={`${data_index}_container`}>
-                                    <i className={`trade_type_icon icon_${data.toLowerCase()}--light`} />
-                                    {localize(contract_type_display[data])}
-                                </div>
-                            </td>);
-                    }
-                    return ( <td key={data_index} />);
-                },
-            },
-            {
-                title     : localize('Contract Details'),
-                data_index: 'details',
-            },
-            {
-                title     : localize('Remaining Time (GMT)'),
-                data_index: 'remaining_time',
-            },
-            {
-                title     : localize('Potential Payout'),
-                data_index: 'payout',
-                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency}`}/>{data}</td>),
-            },
-            {
-                title     : localize('Purchase'),
-                data_index: 'purchase',
-                renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency}`}/>{data}</td>),
-            },
-            {
-                title     : localize('Indicative'),
-                data_index: 'indicative',
-                renderCell: (data, data_index) => {
-                    if (data.amount) {
-                        return (
-                            <td key={data_index} className={`indicative ${data.style}`}>
-                                <span className={`symbols ${this.state.currency}`}/>{data.amount}
-                                {data.style === 'no_resale' && <div> {localize('resell not offered')}</div>}
-                            </td>);
-                    }
-                    // Footer total:
-                    if (data && typeof data === 'string') {
-                        return <td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency}`}/>{data}</td>;
-                    }
-                    return <td key={data_index}>-</td>;
-                },
-            },
-        ],
         currency   : ClientBase.get('currency').toLowerCase(),
         data_source: [],
         error      : null,
@@ -167,6 +88,85 @@ class Portfolio extends React.PureComponent  {
         is_loading: true,
         oauth_apps: null,
     }
+
+    columns = [
+        {
+            title     : localize('Reference No.'),
+            data_index: 'reference',
+            renderCell: (data, data_index) => {
+                const { oauth_apps } = this.state;
+                const tooltip = (data.app_id !== app_id) && oauth_apps && oauth_apps[data.app_id];
+                if (tooltip) {
+                    return (
+                        <td key={data_index} className={data_index}>
+                            <Tooltip
+                                alignment='right'
+                                message={localize('Transaction performed by [_1] (APP ID: [_2])', [tooltip, data.app_id])}
+                            >
+                                {data.transaction_id.toString()}
+                            </Tooltip>
+                        </td>);
+                }
+                return (
+                    <td key={data_index} className={data_index}>
+                        {data.transaction_id || ''}
+                    </td>
+                );
+            },
+        },
+        {
+            title     : localize('Contract Type'),
+            data_index: 'type',
+            renderCell: (data, data_index) => {
+                if (data) {
+                    return (
+                        <td key={data_index}>
+                            <div className={`${data_index}_container`}>
+                                <i className={`trade_type_icon icon_${data.toLowerCase()}--light`} />
+                                {localize(contract_type_display[data])}
+                            </div>
+                        </td>);
+                }
+                return ( <td key={data_index} />);
+            },
+        },
+        {
+            title     : localize('Contract Details'),
+            data_index: 'details',
+        },
+        {
+            title     : localize('Remaining Time (GMT)'),
+            data_index: 'remaining_time',
+        },
+        {
+            title     : localize('Potential Payout'),
+            data_index: 'payout',
+            renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency}`}/>{data}</td>),
+        },
+        {
+            title     : localize('Purchase'),
+            data_index: 'purchase',
+            renderCell: (data, data_index) => (<td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency}`}/>{data}</td>),
+        },
+        {
+            title     : localize('Indicative'),
+            data_index: 'indicative',
+            renderCell: (data, data_index) => {
+                if (data.amount) {
+                    return (
+                        <td key={data_index} className={`indicative ${data.style}`}>
+                            <span className={`symbols ${this.state.currency}`}/>{data.amount}
+                            {data.style === 'no_resale' && <div> {localize('resell not offered')}</div>}
+                        </td>);
+                }
+                // Footer total:
+                if (data && typeof data === 'string') {
+                    return <td key={data_index} className={data_index}> <span className={`symbols ${this.state.currency}`}/>{data}</td>;
+                }
+                return <td key={data_index}>-</td>;
+            },
+        },
+    ]
 
     componentWillMount() {
         this.initializePortfolio();
@@ -287,7 +287,7 @@ class Portfolio extends React.PureComponent  {
                                     <div className='desktop-only'>
                                         <DataTable
                                             {...this.props}
-                                            columns={this.state.columns}
+                                            columns={this.columns}
                                             data_source={this.state.data_source}
                                             footer={this.state.footer}
                                             has_fixed_header
