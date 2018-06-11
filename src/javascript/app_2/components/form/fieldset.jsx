@@ -7,7 +7,7 @@ class Fieldset extends React.PureComponent {
     render() {
         const field_left_class = classNames('field-info left', { icon: this.props.icon }, this.props.icon);
         return (
-            <fieldset>
+            <fieldset className={this.props.className}>
                 <div className='fieldset-header'>
                     <span className={field_left_class}>{this.props.header}</span>
                     <span className='field-info right'>
@@ -33,10 +33,11 @@ Fieldset.propTypes = {
         PropTypes.array,
         PropTypes.object,
     ]),
-    header : PropTypes.string,
-    icon   : PropTypes.string,
-    time   : PropTypes.object,
-    tooltip: PropTypes.string,
+    className: PropTypes.string,
+    header   : PropTypes.string,
+    icon     : PropTypes.string,
+    time     : PropTypes.object,
+    tooltip  : PropTypes.string,
 };
 
 export default Fieldset;

@@ -10,7 +10,7 @@ class ToggleDrawer extends PureComponent {
         const { alignment } = this.props;
         if (alignment && alignment === 'left') {
             this.props.showMainDrawer();
-        } else if (alignment && alignment === 'right'){
+        } else if (alignment && alignment === 'right') {
             this.props.showNotificationsDrawer();
         }
     }

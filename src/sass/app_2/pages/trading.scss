@@ -119,6 +119,86 @@
                 }
             }
         }
+        &.purchase-option {
+            .fieldset-header {
+                line-height: 0;
+            }
+            div.box {
+                display: grid;
+                grid-template-columns: 1fr 1.5fr;
+
+                .left-column, .right-column {
+                    margin: 0 auto;
+
+                    span {
+                        display: block;
+                    }
+                }
+                h4.trade-type {
+                    padding: 0;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+                div.amount {
+                    position: relative;
+
+                    &.down {
+                        color: $COLOR_LIGHT_RED;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_pricedown.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    &.up {
+                        color: $COLOR_LIGHT_BLUE;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_priceup.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    span.symbols {
+                        left: 0;
+                        top: 6px;
+                        font-size: 0.88rem;
+                        color: inherit;
+                    }
+                    span.payout {
+                        font-weight: 600;
+                    }
+                }
+                span:not(.purchase-return):not(.symbols) {
+                    position: relative;
+                }
+                span.purchase-return {
+                    color: $COLOR_ORANGE;
+                }
+            }
+            div.submit-section {
+                display: grid;
+                grid-template-columns: 1fr;
+
+                span.tooltip[data-tooltip] {
+                    &:before {
+                        max-width: unset;
+                        width: 250px;
+                        white-space: normal;
+                    }
+                    .btn {
+                        text-transform: capitalize;
+                        margin: 4px;
+                        width: calc(100% - 8px);
+                        height: 28px;
+                        box-shadow: 1px 3px 4px 0 rgba(76, 175, 80, 0.14), 1px 3px 4px 0 rgba(76, 175, 80, 0.14);
+                    }
+                }
+            }
+        }
         &.trade-types {
             border: 0;
             padding: 0;
