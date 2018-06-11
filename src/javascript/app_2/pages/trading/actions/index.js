@@ -16,8 +16,8 @@ import * as StartDate     from './start_date';
 import * as Symbol        from './symbol';
 
 export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
+    const new_state = cloneObject(obj_new_values);
     runInAction(() => {
-        const new_state = cloneObject(obj_new_values);
         Object.keys(new_state).forEach((key) => {
             if (JSON.stringify(store[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
@@ -27,9 +27,9 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
         });
     });
 
-    if (is_by_user || /^(symbol|contract_types_list)$/.test(Object.keys(obj_new_values))) {
-        if ('symbol' in obj_new_values) {
-            await Symbol.onChangeSymbolAsync(obj_new_values.symbol);
+    if (is_by_user || /^(symbol|contract_types_list)$/.test(Object.keys(new_state))) {
+        if ('symbol' in new_state) {
+            await Symbol.onChangeSymbolAsync(new_state.symbol);
         }
         process(store);
     }
