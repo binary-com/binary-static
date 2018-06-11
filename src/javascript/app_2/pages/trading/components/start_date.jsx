@@ -30,7 +30,6 @@ const StartDate = ({
         <Fieldset
             header={localize('Start time')}
             icon='start-time'
-            tooltip={localize('Text for Start Time goes here.')}
         >
             <Dropdown
                 name='start_date'

@@ -17,7 +17,10 @@ const Purchase = ({
             <Fieldset className='purchase-option' key={idx} tooltip={info.message}>
                 <div className='box'>
                     <div className='left-column'>
-                        <img src={Url.urlForStatic(`images/trading_app/purchase/ic_${trade_types[type].toLowerCase()}.svg`) || undefined} />
+                        <img
+                            className='type'
+                            src={Url.urlForStatic(`images/trading_app/purchase/trade_types/ic_${trade_types[type].toLowerCase()}_light.svg`) || undefined}
+                        />
                         <h4 className='trade-type'>{type.toLowerCase()}</h4>
                     </div>
                     <div className='right-column'>
@@ -30,7 +33,7 @@ const Purchase = ({
                 <div className='submit-section'>
                     <Tooltip
                         alignment='left'
-                        message={localize('Win payout if AUD/JPY is strictly higher than entry spot at close on 2018-04-04.')}
+                        message={info.message}
                     >
                         <Button
                             id={`purchase_${type}`}

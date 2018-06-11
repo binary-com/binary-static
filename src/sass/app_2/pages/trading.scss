@@ -134,10 +134,19 @@
                         display: block;
                     }
                 }
+                .left-column > img.type {
+                    width: 32px;
+                    padding: 2px;
+                    background: $COLOR_GRAY;
+                    border-radius: 100%;
+                }
                 h4.trade-type {
                     padding: 0;
                     font-weight: 600;
                     text-transform: capitalize;
+                    text-align: center;
+                    margin-top: 8px;
+                    line-height: 0;
                 }
                 div.amount {
                     position: relative;

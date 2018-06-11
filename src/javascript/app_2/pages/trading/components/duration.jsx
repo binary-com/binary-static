@@ -56,7 +56,6 @@ const Duration = ({
         <Fieldset
             header={localize('Trade Duration')}
             icon='trade-duration'
-            tooltip={localize('Text for Duration goes here.')}
         >
             <Dropdown
                 list={expiry_list}
