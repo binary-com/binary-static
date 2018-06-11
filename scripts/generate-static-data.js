@@ -160,6 +160,7 @@ const texts = [
     'The reset time is [_1]',
     'Purchase',
     'Purchase request sent',
+    'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -358,6 +359,7 @@ const texts = [
     'Higher',
     'Higher or equal',
     'Lower',
+    'Lower or equal',
     'Touches',
     'Does Not Touch',
     'Ends Between',

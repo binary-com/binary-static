@@ -296,10 +296,10 @@ const MBContract = (() => {
     const getCurrentContracts = () => {
         if (!contracts_for_response || isEmptyObject(contracts_for_response)) return [];
         const contracts = [];
-        const category  = MBDefaults.get('category');
         const periods   = MBDefaults.get('period').split('_');
         contracts_for_response.contracts_for.available.forEach((c) => {
-            if (c.contract_category === category && c.trading_period &&
+            // only allow callput/callputequal contracts here
+            if (/callput/.test(c.contract_category) && c.trading_period &&
                 +c.trading_period.date_start.epoch === +periods[0] &&
                 +c.trading_period.date_expiry.epoch === +periods[1]) {
                 contracts.push(c);

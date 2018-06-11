@@ -820,6 +820,9 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
+msgstr ""
+
 msgid "Add funds"
 msgstr ""
 
@@ -1013,6 +1016,9 @@ msgid "Allow Clients to deposit with lower amounts (via local currency)"
 msgstr ""
 
 msgid "Allow Clients to use e-wallets, which are not available directly on %1"
+msgstr ""
+
+msgid "Allow equals"
 msgstr ""
 
 msgid "Also known as counter currency"
@@ -3157,9 +3163,6 @@ msgstr ""
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr ""
 
-msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr ""
-
 msgid "Enter your email"
 msgstr ""
 
@@ -4255,9 +4258,6 @@ msgstr ""
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you only win the payout for \"Higher\" contracts"
 msgstr ""
 
-msgid "If the <strong>exit spot</strong> is equal to the <strong>entry spot</strong>, you don't win the payout."
-msgstr ""
-
 msgid "If the <strong>last tick</strong> is equal to the average of the ticks, you don't win the payout."
 msgstr ""
 
@@ -4366,6 +4366,9 @@ msgstr ""
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr ""
 
+msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
+msgstr ""
+
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr ""
 
@@ -4399,7 +4402,13 @@ msgstr ""
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>barrier</strong>."
 msgstr ""
 
+msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
+msgstr ""
+
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
+msgstr ""
+
+msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
 msgstr ""
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
@@ -5696,6 +5705,9 @@ msgid "Low minimum stakes"
 msgstr ""
 
 msgid "Lower"
+msgstr ""
+
+msgid "Lower or equal"
 msgstr ""
 
 msgid "M"
@@ -10711,6 +10723,9 @@ msgstr ""
 msgid "Why you should trade precious metals with %1"
 msgstr ""
 
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr ""
+
 msgid "Win the multiplier times the close minus low."
 msgstr ""
 
@@ -10864,7 +10879,7 @@ msgstr ""
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr ""
 
-msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
 msgstr ""
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
