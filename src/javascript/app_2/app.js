@@ -35,12 +35,6 @@ const initApp = () => {
     }
 };
 
-// TODO
-// const onUnload = () => {
-//     stores.trade.dispose();
-//     disposeActions();
-// };
-
 const BinaryApp = () => (
     <Router>
         <MobxProvider store={stores}>

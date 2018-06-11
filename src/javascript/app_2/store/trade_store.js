@@ -7,19 +7,12 @@ import { processPurchase } from '../pages/trading/actions/purchase';
 import Client              from '../../_common/base/client_base';
 
 export default class TradeStore {
-    time_interval = undefined;
-
     @action.bound init() {
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
                 updateStore(this, ContractType.getContractCategories());
             }));
         }
-    }
-
-    @action.bound dispose() {
-        clearInterval(this.time_interval);
-        this.time_interval = undefined;
     }
 
     @action.bound handleChange(e) {
