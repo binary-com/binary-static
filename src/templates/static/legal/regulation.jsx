@@ -164,7 +164,7 @@ const Regulation = () => {
                             center
                             border='border-dark-gray'
                             image='images/pages/regulation/pillar.svg'
-                            href={it.url_for('/download/BIEL_Pillar_3_Report_20170426.pdf')}
+                            href={it.url_for('/download/BIEL_Pillar_3_Report_20180601.pdf')}
                             target='_blank'
                             download
                             text={it.L('Pillar 3 disclosure report')}
