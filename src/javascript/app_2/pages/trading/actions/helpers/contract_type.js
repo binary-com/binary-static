@@ -42,7 +42,7 @@ const ContractType = (() => {
     let available_contract_types = {};
     let available_categories     = {};
 
-    const buildContractTypesConfig = (symbol) => DAO.getContractsFor(symbol).then(r => {
+    const buildContractTypesConfig = (symbol) => DAO.contractsFor(symbol).then(r => {
         available_contract_types = {};
         available_categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
         r.contracts_for.available.forEach((contract) => {

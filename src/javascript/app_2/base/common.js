@@ -4,7 +4,7 @@ import SocketCache       from '../../_common/base/socket_cache';
 import { removeCookies } from '../../_common/storage';
 
 export const requestLogout = () => {
-    DAO.sendLogout().then(doLogout);
+    DAO.logout().then(doLogout);
 };
 
 const doLogout = (response) => {

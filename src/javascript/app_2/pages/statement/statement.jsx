@@ -207,7 +207,7 @@ class Statement extends React.PureComponent {
 
         const { date_from, date_to } = this.state;
 
-        DAO.getStatement(
+        DAO.statement(
             this.props.batch_size,
             this.state.data_source.length,
             {

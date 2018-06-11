@@ -48,8 +48,8 @@ const BinarySocketGeneral = (() => {
                         DAO.subscribeBalance(ResponseHandlers.balance);
                         DAO.getSettings();
                         DAO.getAccountStatus();
-                        DAO.getPayoutCurrencies();
-                        DAO.getMt5LoginList();
+                        DAO.payoutCurrencies();
+                        DAO.mt5LoginList();
                         setResidence(response.authorize.country || Client.get('residence'));
                         if (!Client.get('is_virtual')) {
                             DAO.getSelfExclusion();
@@ -91,7 +91,7 @@ const BinarySocketGeneral = (() => {
     const setResidence = (residence) => {
         if (residence) {
             Client.set('residence', residence);
-            DAO.getLandingCompany(residence);
+            DAO.landingCompany(residence);
         }
     };
 

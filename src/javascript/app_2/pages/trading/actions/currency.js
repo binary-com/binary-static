@@ -3,7 +3,7 @@ import { isCryptocurrency } from '../../../../_common/base/currency_base';
 import { localize }         from '../../../../_common/localize';
 
 export const getCurrenciesAsync = async(currency) => {
-    const r = await DAO.getPayoutCurrencies();
+    const r = await DAO.payoutCurrencies();
     const fiat   = [];
     const crypto = [];
 
