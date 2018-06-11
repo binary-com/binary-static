@@ -85,7 +85,7 @@
     function handleReactUrl() {
 
         // if the url is not related to new app, returns false.
-        const langRegexString = `(${Object.keys(langs).join('|')})\/app\.html`;
+        const langRegexString = `(en|${Object.keys(langs).join('|')})\/app\.html`;
 
         if (!new RegExp(langRegexString).test(href)) {
             return false;
