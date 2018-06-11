@@ -1,6 +1,6 @@
-import { getDecimalPlaces }      from '../../../../../_common/base/currency_base';
-import { convertDateTimetoUnix } from '../../../../common/date_time';
-import DAO                       from '../../../../data/dao';
+import { getDecimalPlaces } from '../../../../../_common/base/currency_base';
+import { convertToUnix }    from '../../../../common/date_time';
+import DAO                  from '../../../../data/dao';
 
 export const requestProposal = (store, updateStore) => {
     const proposal_info = {};
@@ -38,7 +38,7 @@ const createProposalRequest = (store, type_of_contract) => ({
     symbol       : store.symbol,
     ...(
         store.start_date &&
-        { date_start: convertDateTimetoUnix(store.start_date, store.start_time) }
+        { date_start: convertToUnix(store.start_date, store.start_time) }
     ),
     ...(
         store.expiry_type === 'duration' ?
@@ -47,7 +47,7 @@ const createProposalRequest = (store, type_of_contract) => ({
             duration_unit: store.duration_unit,
         }
         :
-        { date_expiry: convertDateTimetoUnix(store.expiry_date, store.expiry_time) }
+        { date_expiry: convertToUnix(store.expiry_date, store.expiry_time) }
     ),
     ...(
         (store.barrier_count > 0 || store.form_components.indexOf('last_digit') !== -1) &&
