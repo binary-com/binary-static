@@ -32,8 +32,8 @@ export default class TradeStore {
     }
 
     // Control values
-    @observable is_trade_enabled    = false;
     @observable is_purchase_enabled = false;
+    @observable is_trade_enabled    = false;
 
     // Underlying
     @observable symbol;
@@ -75,8 +75,8 @@ export default class TradeStore {
     @observable last_digit = 3;
 
     // Purchase
-    @observable purchase_info = {};
     @observable proposal_info = {};
+    @observable purchase_info = {};
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [
