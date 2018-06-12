@@ -9,7 +9,7 @@ import { State }            from '../../_common/storage';
 import { getPropertyValue } from '../../_common/utility';
 
 let client_store,
-    main_store;
+    common_store;
 
 // TODO: update commented statements to the corresponding functions from app_2
 const BinarySocketGeneral = (() => {
@@ -23,7 +23,7 @@ const BinarySocketGeneral = (() => {
                 }
                 WS.subscribeWebsiteStatus(ResponseHandlers.websiteStatus);
             }
-            ServerTime.init(action('setTime', () => { main_store.server_time = ServerTime.get(); }));
+            ServerTime.init(action('setTime', () => { common_store.server_time = ServerTime.get(); }));
         }
     };
 
@@ -130,7 +130,7 @@ const BinarySocketGeneral = (() => {
 
     const init = (store) => {
         client_store = store.client;
-        main_store   = store.main;
+        common_store = store.common;
 
         return {
             onOpen,

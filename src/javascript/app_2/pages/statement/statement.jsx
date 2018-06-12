@@ -353,7 +353,7 @@ Statement.propTypes = {
 };
 
 export default connect(
-    ({ main }) => ({
-        server_time: main.server_time,
+    ({ common }) => ({
+        server_time: common.server_time,
     })
 )(Statement);

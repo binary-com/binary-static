@@ -75,8 +75,8 @@ TradeApp.propTypes = {
 };
 
 export default connect(
-    ({ main, trade, ui }) => ({
-        server_time           : main.server_time,
+    ({ common, trade, ui }) => ({
+        server_time           : common.server_time,
         is_purchase_enabled   : trade.is_purchase_enabled,
         is_trade_enabled      : trade.is_trade_enabled,
         form_components       : trade.form_components,
