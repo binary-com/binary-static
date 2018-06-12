@@ -125,6 +125,7 @@ const ProfitTableInit = (() => {
 
         DateTo.attachDateToPicker(() => {
             ProfitTableUI.cleanTableContent();
+            $('.barspinner').setVisibility(1);
             transactions_received = 0;
             getNextBatchTransactions();
         });

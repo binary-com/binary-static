@@ -37,6 +37,7 @@ const StatementInit = (() => {
 
         BinarySocket.send(req).then((response) => {
             statementHandler(response);
+            $('.barspinner').setVisibility(0);
         });
     };
 
@@ -137,7 +138,6 @@ const StatementInit = (() => {
 
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             addTooltip(StatementUI.setOauthApps(buildOauthApps(response)));
-            $('.barspinner').setVisibility(0);
         });
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
@@ -147,6 +147,7 @@ const StatementInit = (() => {
         initPage();
         DateTo.attachDateToPicker(() => {
             StatementUI.clearTableContent();
+            $('.barspinner').setVisibility(1);
             initPage();
         });
         ViewPopup.viewButtonOnClick('#statement-container');
