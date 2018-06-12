@@ -26,7 +26,7 @@ class TradeApp extends React.PureComponent {
         return this.props.form_components.includes(component_name);
     }
 
-    renderParamPickers() {
+    renderFormComponents() {
         return form_components
             .filter(({ name }) => this.isVisible(name))
             .map(({ name, Component }) => <Component key={name} />);
@@ -39,17 +39,17 @@ class TradeApp extends React.PureComponent {
                     <SmartCharts />
                     <Test />
                 </div>
-                <div className='sidebar-container desktop-only'>
+                <div className='sidebar-container desktop-only' style={this.props.is_trade_enabled ? {} : { backgroundColor: '#e9e9e9' }}>{/* TODO: update the disabled style */}
                     <fieldset className='trade-types'>
                         <ContractType className='desktop-only' />
                     </fieldset>
-                    {this.renderParamPickers()}
+                    {this.renderFormComponents()}
                     <Purchase />
                 </div>
                 <ContractType className='mobile-only' is_mobile_widget />
                 <div className='mobile-only'>
                     <MobileWidget>
-                        {this.renderParamPickers()}
+                        {this.renderFormComponents()}
                     </MobileWidget>
                 </div>
                 <div className='offset-container'>
@@ -67,14 +67,18 @@ class TradeApp extends React.PureComponent {
 TradeApp.propTypes = {
     form_components       : PropTypes.array,
     is_portfolio_drawer_on: PropTypes.bool,
+    is_purchase_enabled   : PropTypes.bool,
+    is_trade_enabled      : PropTypes.bool,
     portfolios            : PropTypes.array,
     server_time           : PropTypes.object,
     togglePortfolioDrawer : PropTypes.func,
 };
 
 export default connect(
-    ({ main, trade, ui }) => ({
-        server_time           : main.server_time,
+    ({ common, trade, ui }) => ({
+        server_time           : common.server_time,
+        is_purchase_enabled   : trade.is_purchase_enabled,
+        is_trade_enabled      : trade.is_trade_enabled,
         form_components       : trade.form_components,
         portfolios            : trade.portfolios,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,

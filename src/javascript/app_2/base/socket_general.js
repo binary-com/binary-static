@@ -1,5 +1,5 @@
 import { action, flow }     from 'mobx';
-import DAO                  from '../data/dao';
+import WS                   from '../data/ws_methods';
 import Client               from '../../_common/base/client_base';
 import { setCurrencies }    from '../../_common/base/currency_base';
 import Login                from '../../_common/base/login';
@@ -9,7 +9,7 @@ import { State }            from '../../_common/storage';
 import { getPropertyValue } from '../../_common/utility';
 
 let client_store,
-    main_store;
+    common_store;
 
 // TODO: update commented statements to the corresponding functions from app_2
 const BinarySocketGeneral = (() => {
@@ -21,9 +21,9 @@ const BinarySocketGeneral = (() => {
                     Client.sendLogoutRequest();
                     return;
                 }
-                DAO.subscribeWebsiteStatus(ResponseHandlers.websiteStatus);
+                WS.subscribeWebsiteStatus(ResponseHandlers.websiteStatus);
             }
-            ServerTime.init(action('setTime', () => { main_store.server_time = ServerTime.get(); }));
+            ServerTime.init(action('setTime', () => { common_store.server_time = ServerTime.get(); }));
         }
     };
 
@@ -45,14 +45,14 @@ const BinarySocketGeneral = (() => {
                     } else {
                         Client.responseAuthorize(response);
                         setBalance(response.authorize.balance);
-                        DAO.subscribeBalance(ResponseHandlers.balance);
-                        DAO.getSettings();
-                        DAO.getAccountStatus();
-                        DAO.getPayoutCurrencies();
-                        DAO.getMt5LoginList();
+                        WS.subscribeBalance(ResponseHandlers.balance);
+                        WS.getSettings();
+                        WS.getAccountStatus();
+                        WS.payoutCurrencies();
+                        WS.mt5LoginList();
                         setResidence(response.authorize.country || Client.get('residence'));
                         if (!Client.get('is_virtual')) {
-                            DAO.getSelfExclusion();
+                            WS.getSelfExclusion();
                         }
                         BinarySocket.sendBuffered();
                         if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
@@ -91,7 +91,7 @@ const BinarySocketGeneral = (() => {
     const setResidence = (residence) => {
         if (residence) {
             Client.set('residence', residence);
-            DAO.getLandingCompany(residence);
+            WS.landingCompany(residence);
         }
     };
 
@@ -130,7 +130,7 @@ const BinarySocketGeneral = (() => {
 
     const init = (store) => {
         client_store = store.client;
-        main_store   = store.main;
+        common_store = store.common;
 
         return {
             onOpen,

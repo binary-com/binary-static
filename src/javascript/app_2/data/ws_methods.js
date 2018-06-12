@@ -2,21 +2,18 @@ import SubscriptionManager from './subscription_manager';
 import BinarySocket        from '../../_common/base/socket_base';
 import { isEmptyObject }   from '../../_common/utility';
 
-const DAO = (() => {
-    const getAccountStatus = () =>
-        BinarySocket.send({ get_account_status: 1 });
-
-    const getActiveSymbols = () =>
+const WS = (() => {
+    const activeSymbols = () =>
         BinarySocket.send({ active_symbols: 'brief' });
 
-    const getContractsFor = (symbol) =>
+    const buy = (proposal_id, price) =>
+        BinarySocket.send({ buy: proposal_id, price });
+
+    const contractsFor = (symbol) =>
         BinarySocket.send({ contracts_for: symbol });
 
-    const getLandingCompany = (residence) =>
-        BinarySocket.send({ landing_company: residence });
-
-    const getMt5LoginList = () =>
-        BinarySocket.send({ mt5_login_list: 1 });
+    const getAccountStatus = () =>
+        BinarySocket.send({ get_account_status: 1 });
 
     const getOauthApps = () =>
         BinarySocket.send({ oauth_apps: 1 });
@@ -33,24 +30,34 @@ const DAO = (() => {
     const getSettings = () =>
         BinarySocket.send({ get_settings: 1 });
 
-    const getWebsiteStatus = () =>
-        BinarySocket.send({ website_status: 1 });
+    const landingCompany = (residence) =>
+        BinarySocket.send({ landing_company: residence });
 
-    const sendLogout = () =>
+    const logout = () =>
         BinarySocket.send({ logout: 1 });
+
+    const mt5LoginList = () =>
+        BinarySocket.send({ mt5_login_list: 1 });
+
+    const payoutCurrencies = () =>
+        BinarySocket.send({ payout_currencies: 1 });
 
     const sellExpired = () =>
         BinarySocket.send({ sell_expired: 1 });
 
-    const getStatement = (limit, offset, date_boundaries) => BinarySocket.send({
-        statement  : 1,
-        description: 1,
-        limit,
-        offset,
-        ...date_boundaries,
-    });
+    const sendRequest = (request_object) =>
+        Promise.resolve(!isEmptyObject(request_object) ? BinarySocket.send(request_object) : {});
+
+    const statement = (limit, offset, date_boundaries) =>
+        BinarySocket.send({ statement: 1, description: 1, limit, offset, ...date_boundaries });
 
     // ----- Streaming calls -----
+    const forget = (msg_type, cb, match_values) =>
+        SubscriptionManager.forget(msg_type, cb, match_values);
+
+    const forgetAll = (...msg_types) =>
+        SubscriptionManager.forgetAll(...msg_types);
+
     const subscribeBalance = (cb) =>
         SubscriptionManager.subscribe('balance', { balance: 1, subscribe: 1 }, cb);
 
@@ -63,48 +70,36 @@ const DAO = (() => {
     const subscribeTicks = (symbol, cb, should_forget_first) =>
         SubscriptionManager.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);
 
+    const subscribeTicksHistory = (request_object, cb, should_forget_first) =>
+        SubscriptionManager.subscribe('ticks_history', request_object, cb, should_forget_first);
+
     const subscribeTransaction = (cb, should_forget_first) =>
         SubscriptionManager.subscribe('transaction', { transaction: 1, subscribe: 1 }, cb, should_forget_first);
 
     const subscribeWebsiteStatus = (cb) =>
         SubscriptionManager.subscribe('website_status', { website_status: 1, subscribe: 1 }, cb);
 
-    const forget = (msg_type, cb, match_values) =>
-        SubscriptionManager.forget(msg_type, cb, match_values);
-
-    const forgetAll = (...msg_types) =>
-        SubscriptionManager.forgetAll(...msg_types);
-
-    // ------ SmartCharts calls ----
-    const subscribeTicksHistory = (request_object, cb, should_forget_first) =>
-        SubscriptionManager.subscribe('ticks_history', request_object, cb, should_forget_first);
-
-    const sendRequest = (request_object) => (
-        Promise.resolve(
-            !isEmptyObject(request_object) ?
-                BinarySocket.send(request_object) :
-                {}
-        )
-    );
-
     return {
+        activeSymbols,
+        buy,
+        contractsFor,
         getAccountStatus,
-        getActiveSymbols,
-        getContractsFor,
-        getLandingCompany,
-        getMt5LoginList,
         getOauthApps,
         getPayoutCurrencies,
         getPortfolio,
         getSelfExclusion,
         getSettings,
-        getWebsiteStatus,
-        getStatement,
-        sendLogout,
+        landingCompany,
+        logout,
+        mt5LoginList,
+        payoutCurrencies,
         sellExpired,
+        sendRequest,
+        statement,
 
         // streams
-        sendRequest,
+        forget,
+        forgetAll,
         subscribeBalance,
         subscribeProposal,
         subscribeProposalOpenContract,
@@ -112,9 +107,7 @@ const DAO = (() => {
         subscribeTicksHistory,
         subscribeTransaction,
         subscribeWebsiteStatus,
-        forget,
-        forgetAll,
     };
 })();
 
-export default DAO;
+export default WS;

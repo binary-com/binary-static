@@ -8,6 +8,7 @@ import { localize }   from '../../../_common/localize';
       1. to change to 24 hours format
       2. to handle disabled time period
       3. to handle null as initial value
+      4. update the state only when dropdown closed
 */
 
 class TimePickerDropdown extends PureComponent {
@@ -238,7 +239,7 @@ class TimePicker extends PureComponent {
     };
 
     handleChange = (arg) => {
-        
+
         // To handle nativepicker;
         const value = typeof arg === 'object' ? this.convertTo12h(arg.target.value) : arg;
 
