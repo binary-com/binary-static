@@ -10,7 +10,12 @@ module.exports = function (grunt) {
                 port      : 443,
                 protocol  : 'https',
                 base      : 'dist',
-                open      : 'https://localhost.localdomain',
+                open      : {
+                    appName: { 
+                        app: 'Google\ Chrome'
+                    },
+                    target : 'https://localhost',
+                },
                 middleware: (connect, options) => {
                     const middlewares = [
                         require('connect-livereload')(),
