@@ -229,15 +229,15 @@ const Durations = (() => {
     };
 
     const durationPopulate = () => {
-        const unit               = CommonFunctions.getElementById('duration_units');
-        const selected_unit      = unit.options[unit.selectedIndex];
-        const duration_amount_id = '#duration_amount';
+        const unit          = CommonFunctions.getElementById('duration_units');
+        const selected_unit = unit.options[unit.selectedIndex];
 
         if (!selected_unit) return false;
 
-        const unit_min_value = selected_unit.getAttribute('data-minimum');
-        const unit_max_value = selected_unit.getAttribute('data-maximum');
-        let unit_value       = Defaults.get('duration_amount') || unit_min_value;
+        const duration_amount_id = '#duration_amount';
+        const unit_min_value     = selected_unit.getAttribute('data-minimum');
+        const unit_max_value     = selected_unit.getAttribute('data-maximum');
+        let unit_value           = Defaults.get('duration_amount') || unit_min_value;
         Dropdown('#duration_units');
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_minimum'), unit_min_value);
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), localize(duration_map[unit.value] + (+unit_min_value > 1 ? 's' : '')));
