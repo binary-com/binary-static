@@ -251,7 +251,6 @@ const Durations = (() => {
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
-        const amount_element = $('#duration_amount');
         const duration_id    = '#duration_amount';
         if (unit.value === 'd') {
             const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
@@ -263,23 +262,18 @@ const Durations = (() => {
                 maxDate : 365,
                 native  : false,
             });
-            amount_element.change((value) => {
-                let day_diff;
-                const $duration_amount_val = $('#duration_amount').val();
-                if ($duration_amount_val) {
-                    day_diff = $duration_amount_val;
-                } else {
-                    const data_value = value.target.getAttribute('data-value');
-                    const date       = data_value ? new Date(data_value) : new Date();
-                    const today      = window.time ? window.time.valueOf() : new Date();
-
-                    day_diff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
-                }
-                amount_element.val(day_diff);
-            });
         } else {
             DatePicker.hide(duration_id);
         }
+
+        const amount_element = $(duration_id);
+        amount_element.change((e) => {
+            e.stopPropagation();
+            const $duration_amount_val = $(duration_id).val();
+            const data_min_value       = unit.options[unit.selectedIndex].getAttribute('data-minimum');
+            const value                = $duration_amount_val || data_min_value; // set to min value if no input value
+            amount_element.val(value);
+        });
 
         const requested = changeExpiryTimeType();
 
