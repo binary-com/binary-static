@@ -3,7 +3,7 @@ import moment               from 'moment';
 import PortfolioCard        from './portfolio_card.jsx';
 import DataTable            from '../../components/elements/data_table.jsx';
 import Tooltip              from '../../components/elements/tooltip.jsx';
-import DAO                  from '../../data/dao';
+import WS                   from '../../data/ws_methods';
 import { getAppId }         from '../../../config';
 import ClientBase           from '../../../_common/base/client_base';
 import { formatMoney }      from '../../../_common/base/currency_base';
@@ -173,23 +173,23 @@ class Portfolio extends React.PureComponent  {
     }
 
     componentWillUnmount() {     // eslint-disable-line class-methods-use-this
-        DAO.forgetAll('proposal_open_contract', 'transaction');
+        WS.forgetAll('proposal_open_contract', 'transaction');
     }
 
     initializePortfolio = () => {
-        DAO.getPortfolio().then((response) => {
+        WS.getPortfolio().then((response) => {
             this.setState({ is_loading: false });
             this.updatePortfolio(response);
         });
-        DAO.subscribeTransaction(this.transactionResponseHandler, false);
-        DAO.getOauthApps().then((response) => this.updateOAuthApps(response));
+        WS.subscribeTransaction(this.transactionResponseHandler, false);
+        WS.getOauthApps().then((response) => this.updateOAuthApps(response));
     }
 
     transactionResponseHandler = (response) => {
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
         }
-        DAO.getPortfolio().then((res) => this.updatePortfolio(res));
+        WS.getPortfolio().then((res) => this.updatePortfolio(res));
     }
 
     updateIndicative = (response) => {
@@ -202,7 +202,7 @@ class Portfolio extends React.PureComponent  {
         const proposal  = response.proposal_open_contract;
         // force to sell the expired contract, in order to remove from portfolio
         if (+proposal.is_settleable === 1 && !proposal.is_sold) {
-            DAO.sellExpired();
+            WS.sellExpired();
         }
         if (+proposal.is_sold === 1) {
             data_source = data_source.filter((portfolio_item) => portfolio_item.id !== +proposal.contract_id);
@@ -262,7 +262,7 @@ class Portfolio extends React.PureComponent  {
 
             this.setState({ data_source, footer });
 
-            DAO.subscribeProposalOpenContract(this.updateIndicative, false);
+            WS.subscribeProposalOpenContract(this.updateIndicative, false);
         }
     }
 
