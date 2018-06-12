@@ -298,7 +298,6 @@ const texts = [
     'Your account has no trading activity.',
     'Today',
     'Details',
-    'Data shows from [_1] in descending order.',
 
     // back-end string for statement page
     'Sell',
