@@ -6,11 +6,13 @@ import Client              from '../_common/base/client_base';
 import { redirectToLogin } from '../_common/base/login';
 import { localize }        from '../_common/localize';
 
+import Portfolio           from './pages/portfolio/portfolio.jsx';
 import TradeApp            from './pages/trading/trade_app.jsx';
 import Statement           from './pages/statement/statement.jsx';
 
 const routes = [
     { path: '/',          component: TradeApp, exact: true },
+    { path: '/portfolio', component: Portfolio, is_authenticated: true },
     { path: '/statement', component: Statement, is_authenticated: true },
 ];
 
