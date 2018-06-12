@@ -238,7 +238,7 @@ class TimePicker extends PureComponent {
     };
 
     handleChange = (arg) => {
-        
+
         // To handle nativepicker;
         const value = typeof arg === 'object' ? this.convertTo12h(arg.target.value) : arg;
 
@@ -291,6 +291,7 @@ class TimePicker extends PureComponent {
             is_nativepicker,
             value,
             name,
+            is_align_right,
             placeholder,
         } = this.props;
         const formatted_value = this.convertTo24h(value);
@@ -322,7 +323,7 @@ class TimePicker extends PureComponent {
                                 placeholder={placeholder}
                             />
                             <TimePickerDropdown
-                                className={this.state.is_open ? 'active' : ''}
+                                className={`${this.state.is_open ? 'active' : ''}${is_align_right ? ' from-right' : '' }`}
                                 toggle={this.toggleDropDown}
                                 onChange={this.handleChange}
                                 preClass={prefix_class}
@@ -338,6 +339,7 @@ class TimePicker extends PureComponent {
 
 TimePicker.propTypes = {
     is_nativepicker: PropTypes.bool,
+    is_align_right : PropTypes.bool,
     name           : PropTypes.string,
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
