@@ -58,7 +58,7 @@ const Purchase = ({
                             id={`purchase_${type}`}
                             className='primary green'
                             has_effect
-                            text={is_logged_in ? `${localize('Purchase')} ${trade_types[type]}` : 'Please log in.'}
+                            text={is_logged_in ? `${localize('Purchase')} ${trade_types[type]}` : localize('Please log in.')}
                             onClick={() => { onClickPurchase(info.id, info.stake); }}
                         />
                     </React.Fragment>
