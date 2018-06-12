@@ -1,4 +1,4 @@
-import DAO from '../../../data/dao';
+import WS from '../../../data/ws_methods';
 
 /* This action does not modify state directlly.
  * The payload will be the callback that get's called for each tick
@@ -11,6 +11,6 @@ const ticksCallback = (response) => {
 
 export const getTicks = function({ symbol }, callback) {
     cb = callback;
-    DAO.subscribeTicks(symbol, ticksCallback, true);
+    WS.subscribeTicks(symbol, ticksCallback, true);
     return { };
 };
