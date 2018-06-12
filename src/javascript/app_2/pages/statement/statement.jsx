@@ -1,16 +1,16 @@
-import React              from 'react';
-import moment             from 'moment';
 import classnames         from 'classnames';
+import moment             from 'moment';
 import PropTypes          from 'prop-types';
-import DAO                from '../../data/dao';
+import React              from 'react';
+import WS                 from '../../data/ws_methods';
 import { connect }        from '../../store/connect';
+import CardList           from '../../components/elements/card_list.jsx';
+import DataTable          from '../../components/elements/data_table.jsx';
+import DatePicker         from '../../components/form/date_picker.jsx';
 import Client             from '../../../_common/base/client_base';
 import { formatMoney }    from '../../../_common/base/currency_base';
 import { localize }       from '../../../_common/localize';
 import { toTitleCase }    from '../../../_common/string_util';
-import CardList           from '../../components/elements/card_list.jsx';
-import DataTable          from '../../components/elements/data_table.jsx';
-import DatePicker         from '../../components/form/date_picker.jsx';
 import Loading            from '../../../../templates/_common/components/loading.jsx';
 
 /* TODO:
@@ -207,7 +207,7 @@ class Statement extends React.PureComponent {
 
         const { date_from, date_to } = this.state;
 
-        DAO.getStatement(
+        WS.statement(
             this.props.batch_size,
             this.state.data_source.length,
             {
@@ -353,7 +353,7 @@ Statement.propTypes = {
 };
 
 export default connect(
-    ({ main }) => ({
-        server_time: main.server_time,
+    ({ common }) => ({
+        server_time: common.server_time,
     })
 )(Statement);
