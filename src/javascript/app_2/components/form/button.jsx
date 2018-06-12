@@ -7,11 +7,11 @@ const Button = ({
     text,
     has_effect,
     is_disabled,
-    handleClick,
+    onClick,
 }) => {
     const classes = `btn${has_effect ? ' effect' : ''} ${className}`;
     return (
-        <button id={id} className={classes} onClick={handleClick || undefined} disabled={is_disabled}>
+        <button id={id} className={classes} onClick={onClick || undefined} disabled={is_disabled}>
             <span>{text}</span>
         </button>
     );
@@ -19,10 +19,10 @@ const Button = ({
 
 Button.propTypes = {
     className  : PropTypes.string,
-    handleClick: PropTypes.func,
     has_effect : PropTypes.bool,
     id         : PropTypes.string,
     is_disabled: PropTypes.bool,
+    onClick    : PropTypes.func,
     text       : PropTypes.string,
 };
 
