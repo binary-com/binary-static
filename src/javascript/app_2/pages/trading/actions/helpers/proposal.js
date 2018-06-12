@@ -1,29 +1,30 @@
-import { getDecimalPlaces }      from '../../../../../_common/base/currency_base';
-import { convertDateTimetoUnix } from '../../../../common/date_time';
-import DAO                       from '../../../../data/dao';
+import { convertToUnix }    from '../../../../common/date_time';
+import WS                   from '../../../../data/ws_methods';
+import { getDecimalPlaces } from '../../../../../_common/base/currency_base';
 
 export const requestProposal = (store, updateStore) => {
     const proposal_info = {};
-    DAO.forgetAll('proposal').then(() => {
+    WS.forgetAll('proposal').then(() => {
         const proposalCallback = (response) => {
             const proposal = response.proposal || {};
             const profit   = (proposal.payout - proposal.ask_price) || 0;
             const returns  = profit * 100 / (proposal.payout || 1);
 
             proposal_info[response.echo_req.contract_type] = {
-                profit : profit.toFixed(getDecimalPlaces(store.currency)),
-                returns: returns.toFixed(2),
-                stake  : proposal.display_value,
-                payout : proposal.payout,
-                id     : proposal.id || '',
-                message: proposal.longcode || response.error.message,
+                profit   : profit.toFixed(getDecimalPlaces(store.currency)),
+                returns  : `${returns.toFixed(2)}%`,
+                stake    : proposal.display_value,
+                payout   : proposal.payout,
+                id       : proposal.id || '',
+                message  : proposal.longcode || response.error.message,
+                has_error: !!response.error,
             };
 
-            updateStore(store, { proposal_info });
+            updateStore(store, { is_purchase_enabled: true, proposal_info });
         };
 
         Object.keys(store.trade_types).forEach(type => {
-            DAO.subscribeProposal(createProposalRequest(store, type), proposalCallback);
+            WS.subscribeProposal(createProposalRequest(store, type), proposalCallback);
         });
     });
 };
@@ -38,7 +39,7 @@ const createProposalRequest = (store, type_of_contract) => ({
     symbol       : store.symbol,
     ...(
         store.start_date &&
-        { date_start: convertDateTimetoUnix(store.start_date, store.start_time) }
+        { date_start: convertToUnix(store.start_date, store.start_time) }
     ),
     ...(
         store.expiry_type === 'duration' ?
@@ -47,7 +48,7 @@ const createProposalRequest = (store, type_of_contract) => ({
             duration_unit: store.duration_unit,
         }
         :
-        { date_expiry: convertDateTimetoUnix(store.expiry_date, store.expiry_time) }
+        { date_expiry: convertToUnix(store.expiry_date, store.expiry_time) }
     ),
     ...(
         (store.barrier_count > 0 || store.form_components.indexOf('last_digit') !== -1) &&

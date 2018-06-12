@@ -16,20 +16,24 @@ import * as StartDate     from './start_date';
 import * as Symbol        from './symbol';
 
 export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
+    const new_state = cloneObject(obj_new_values);
     runInAction(() => {
-        const new_state = cloneObject(obj_new_values);
         Object.keys(new_state).forEach((key) => {
             if (JSON.stringify(store[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
             } else {
+                if (key === 'symbol') {
+                    store.is_purchase_enabled = false;
+                    store.is_trade_enabled    = false;
+                }
                 store[key] = new_state[key];
             }
         });
     });
 
-    if (is_by_user || /^(symbol|contract_types_list)$/.test(Object.keys(obj_new_values))) {
-        if ('symbol' in obj_new_values) {
-            await Symbol.onChangeSymbolAsync(obj_new_values.symbol);
+    if (is_by_user || /^(symbol|contract_types_list)$/.test(Object.keys(new_state))) {
+        if ('symbol' in new_state) {
+            await Symbol.onChangeSymbolAsync(new_state.symbol);
         }
         process(store);
     }
@@ -43,6 +47,8 @@ const process_methods = [
     StartDate.onChangeStartDate,
 ];
 const process = async(store) => {
+    updateStore(store, { is_purchase_enabled: false, proposal_info: {} }); // disable purchase button(s), clear contract info
+
     const snapshot = cloneObject(store);
 
     if (!Client.get('currency') && isEmptyObject(store.currencies_list)) {
@@ -53,6 +59,7 @@ const process = async(store) => {
         extendOrReplace(snapshot, fnc(snapshot));
     });
 
+    snapshot.is_trade_enabled = true;
     updateStore(store, snapshot);
 
     requestProposal(store, updateStore);

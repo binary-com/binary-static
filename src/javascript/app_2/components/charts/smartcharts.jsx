@@ -1,16 +1,16 @@
 import { SmartChart } from '@binary-com/smartcharts';
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import DAO            from '../../data/dao';
+import WS             from '../../data/ws_methods';
 import { connect }    from '../../store/connect';
 
 const subscribe = (request_object, callback) => {
     if (request_object.subscribe !== 1) return;
-    DAO.subscribeTicksHistory(request_object, callback);
+    WS.subscribeTicksHistory(request_object, callback);
 };
 
 const forget = (match_values, callback) => (
-    DAO.forget('ticks_history', callback, match_values)
+    WS.forget('ticks_history', callback, match_values)
 );
 
 const SmartCharts = ({ onSymbolChange }) =>  {
@@ -20,7 +20,7 @@ const SmartCharts = ({ onSymbolChange }) =>  {
             <SmartChart
                 requestSubscribe={subscribe}
                 requestForget={forget}
-                requestAPI={DAO.sendRequest.bind(DAO)}
+                requestAPI={WS.sendRequest.bind(WS)}
                 onSymbolChange={(symbol_obj) => {
                     onSymbolChange({
                         target: {
