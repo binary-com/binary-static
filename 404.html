@@ -47,7 +47,7 @@
             origin;
     }
 
-    const all_languages = ['en'].concat(Object.keys(langs));
+    var all_languages = ['en'].concat(Object.keys(langs));
     function redirect() {
         var alternative_pages = ['home', 'why-us', 'tour', 'terms-and-conditions', 'signup', 'get-started'];
         var redirect_to;
@@ -85,15 +85,15 @@
     function handleReactUrl() {
 
         // if the url is not related to new app, returns false.
-        const langRegexString = `(en|${Object.keys(langs).join('|')})\/app\.html`;
+        var lang_regex_string = `(en|${Object.keys(langs).join('|')})\/app\.html`;
 
-        if (!new RegExp(langRegexString).test(href)) {
+        if (!new RegExp(lang_regex_string).test(href)) {
             return false;
         }
 
         // Since there are two sub entries after CNAME URL for the app 'www.binary.com/en/app.html'
-        // the value of segmentCount should be 2.
-        var segmentCount = 2;
+        // the value of segment_count should be 2.
+        var segment_count = 2;
 
         var l = window.location;
 
@@ -103,8 +103,8 @@
         // https://www.binary.com/en/app.html/statement -> https://www.binary.com/en/app.html?p=/statement
         l.replace(
             l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-            l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '?p=/' +
-            l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+            l.pathname.split('/').slice(0, 1 + segment_count).join('/') + '?p=/' +
+            l.pathname.slice(1).split('/').slice(segment_count).join('/').replace(/&/g, '~and~') +
             (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~'): '') +
             l.hash
         );
