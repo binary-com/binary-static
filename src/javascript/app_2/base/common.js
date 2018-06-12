@@ -1,10 +1,10 @@
-import DAO               from '../data/dao';
+import WS                from '../data/ws_methods';
 import Client            from '../../_common/base/client_base';
 import SocketCache       from '../../_common/base/socket_cache';
 import { removeCookies } from '../../_common/storage';
 
 export const requestLogout = () => {
-    DAO.sendLogout().then(doLogout);
+    WS.logout().then(doLogout);
 };
 
 const doLogout = (response) => {

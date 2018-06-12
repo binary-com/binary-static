@@ -1,7 +1,7 @@
 import { buildBarriersConfig }        from './barrier';
 import { buildDurationConfig }        from './duration';
 import { buildForwardStartingConfig } from './start_date';
-import DAO                            from '../../../../data/dao';
+import WS                             from '../../../../data/ws_methods';
 import { get as getLanguage }         from '../../../../../_common/language';
 import { localize }                   from '../../../../../_common/localize';
 import { toTitleCase }                from '../../../../../_common/string_util';
@@ -42,7 +42,7 @@ const ContractType = (() => {
     let available_contract_types = {};
     let available_categories     = {};
 
-    const buildContractTypesConfig = (symbol) => DAO.getContractsFor(symbol).then(r => {
+    const buildContractTypesConfig = (symbol) => WS.contractsFor(symbol).then(r => {
         available_contract_types = {};
         available_categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
         r.contracts_for.available.forEach((contract) => {
@@ -94,10 +94,10 @@ const ContractType = (() => {
                         ],
                     },
                 },
-                forward_starting_dates: [
-                    { text: 'Mon - 19 Mar, 2018', open: 1517356800, close: 1517443199 },
-                    { text: 'Tue - 20 Mar, 2018', open: 1517443200, close: 1517529599 },
-                    { text: 'Wed - 21 Mar, 2018', open: 1517529600, close: 1517615999 },
+                forward_starting_dates: [ // value is 'open'
+                    { text: 'Mon - 19 Mar, 2018', value: 1517356800, close: 1517443199 },
+                    { text: 'Tue - 20 Mar, 2018', value: 1517443200, close: 1517529599 },
+                    { text: 'Wed - 21 Mar, 2018', value: 1517529600, close: 1517615999 },
                 ],
                 trade_types: {
                     'CALL': 'Higher',
@@ -131,9 +131,10 @@ const ContractType = (() => {
             // set config values
             config.has_spot               = contract.start_type === 'spot';
             config.durations              = buildDurationConfig(contract, config.durations);
-            config.forward_starting_dates = buildForwardStartingConfig(contract.forward_starting_options);
             config.trade_types            = buildTradeTypesConfig(contract, config.trade_types);
             config.barriers               = buildBarriersConfig(contract, config.barriers);
+            config.forward_starting_dates =
+                buildForwardStartingConfig(contract.forward_starting_options) || config.forward_starting_dates;
 
             available_contract_types[type].config = config;
         });
@@ -157,11 +158,11 @@ const ContractType = (() => {
     );
 
     const getContractValues = (store) => {
-        const { contract_expiry_type, contract_type, basis, duration_unit } = store;
+        const { contract_expiry_type, contract_type, basis, duration_unit, start_date } = store;
         const form_components   = getComponents(contract_type);
         const obj_basis         = getBasis(contract_type, basis);
         const obj_trade_types   = getTradeTypes(contract_type);
-        const obj_start_dates   = getStartDates(contract_type);
+        const obj_start_dates   = getStartDates(contract_type, start_date);
         const obj_start_type    = getStartType(obj_start_dates.start_date);
         const obj_barrier       = getBarriers(contract_type, contract_expiry_type);
         const obj_duration_unit = getDurationUnit(duration_unit, contract_type, obj_start_type.contract_start_type);
@@ -216,7 +217,7 @@ const ContractType = (() => {
         contract_start_type: start_date === Number(0) ? 'spot' : 'forward',
     });
 
-    const getStartDates = (contract_type) => {
+    const getStartDates = (contract_type, current_start_date) => {
         const config           = getPropertyValue(available_contract_types, [contract_type, 'config']);
         const start_dates_list = [];
 
@@ -228,7 +229,8 @@ const ContractType = (() => {
             start_dates_list.push(...config.forward_starting_dates);
         }
 
-        const start_date = start_dates_list[0].value;
+        const start_date = start_dates_list.find(item => item.value === current_start_date) ?
+            current_start_date : start_dates_list[0].value;
 
         return { start_date, start_dates_list };
     };

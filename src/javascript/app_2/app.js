@@ -4,8 +4,8 @@ import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import NetworkMonitor                from './base/network_monitor';
 import ClientStore                   from './store/client_store';
+import CommonStore                   from './store/common_store';
 import { MobxProvider }              from './store/connect';
-import MainStore                     from './store/main_store';
 import TradeStore                    from './store/trade_store';
 import UIStore                       from './store/ui_store';
 import Footer                        from './components/layout/footer.jsx';
@@ -19,7 +19,7 @@ import { localize }                  from '../_common/localize';
 
 const stores = {
     client: new ClientStore(),
-    main  : new MainStore(),
+    common: new CommonStore(),
     trade : new TradeStore(),
     ui    : new UIStore(),
 };
@@ -51,12 +51,6 @@ const getBasename = () => {
 
     return '/en/app.html';
 };
-
-// TODO
-// const onUnload = () => {
-//     stores.trade.dispose();
-//     disposeActions();
-// };
 
 const BinaryApp = () => (
     <Router basename={ getBasename() }>

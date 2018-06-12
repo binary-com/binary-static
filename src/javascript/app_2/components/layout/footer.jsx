@@ -116,8 +116,8 @@ TogglePortfolioDrawer.propTypes = {
 };
 
 export default connect(
-    ({ main, ui }) => ({
-        server_time           : main.server_time,
+    ({ common, ui }) => ({
+        server_time           : common.server_time,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
     })
