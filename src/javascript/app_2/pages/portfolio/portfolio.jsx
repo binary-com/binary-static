@@ -177,19 +177,19 @@ class Portfolio extends React.PureComponent  {
     }
 
     initializePortfolio = () => {
-        WS.getPortfolio().then((response) => {
+        WS.portfolio().then((response) => {
             this.setState({ is_loading: false });
             this.updatePortfolio(response);
         });
         WS.subscribeTransaction(this.transactionResponseHandler, false);
-        WS.getOauthApps().then((response) => this.updateOAuthApps(response));
+        WS.oauthApps().then((response) => this.updateOAuthApps(response));
     }
 
     transactionResponseHandler = (response) => {
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
         }
-        WS.getPortfolio().then((res) => this.updatePortfolio(res));
+        WS.portfolio().then((res) => this.updatePortfolio(res));
     }
 
     updateIndicative = (response) => {

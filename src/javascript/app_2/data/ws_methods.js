@@ -15,15 +15,6 @@ const WS = (() => {
     const getAccountStatus = () =>
         BinarySocket.send({ get_account_status: 1 });
 
-    const getOauthApps = () =>
-        BinarySocket.send({ oauth_apps: 1 });
-
-    const getPayoutCurrencies = () =>
-        BinarySocket.send({ payout_currencies: 1 });
-
-    const getPortfolio = () =>
-        BinarySocket.send({ portfolio: 1 });
-
     const getSelfExclusion = () =>
         BinarySocket.send({ get_self_exclusion: 1 });
 
@@ -39,8 +30,14 @@ const WS = (() => {
     const mt5LoginList = () =>
         BinarySocket.send({ mt5_login_list: 1 });
 
+    const oauthApps = () =>
+        BinarySocket.send({ oauth_apps: 1 });
+
     const payoutCurrencies = () =>
         BinarySocket.send({ payout_currencies: 1 });
+
+    const portfolio = () =>
+        BinarySocket.send({ portfolio: 1 });
 
     const sellExpired = () =>
         BinarySocket.send({ sell_expired: 1 });
@@ -84,14 +81,13 @@ const WS = (() => {
         buy,
         contractsFor,
         getAccountStatus,
-        getOauthApps,
-        getPayoutCurrencies,
-        getPortfolio,
         getSelfExclusion,
         getSettings,
         landingCompany,
         logout,
         mt5LoginList,
+        oauthApps,
+        portfolio,
         payoutCurrencies,
         sellExpired,
         sendRequest,
