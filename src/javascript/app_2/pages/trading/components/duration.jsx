@@ -142,8 +142,8 @@ Duration.propTypes = {
 };
 
 export default connect(
-    ({ main, trade }) => ({
-        server_time        : main.server_time,
+    ({ common, trade }) => ({
+        server_time        : common.server_time,
         expiry_type        : trade.expiry_type,
         expiry_date        : trade.expiry_date,
         expiry_time        : trade.expiry_time,
