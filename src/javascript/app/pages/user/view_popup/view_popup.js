@@ -122,7 +122,7 @@ const ViewPopup = (() => {
         } else {
             containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         }
-        Clock.setViewPopupTimer(updateTimers);
+        Clock.setExternalTimer(updateTimers);
         update();
         ViewPopupUI.repositionConfirmation();
 
