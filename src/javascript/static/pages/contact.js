@@ -23,7 +23,7 @@ const Contact = (() => {
     // sat - sun 0 - 9 GMT
     const showHideLiveChat = () => {
         BinarySocket.wait('time').then((response) => {
-            const moment_now        = moment.utc((response.time || 0) * 1000);
+            const moment_now        = moment.utc((response.time * 1000) || undefined);
             const hour              = moment_now.hour();
             const day               = moment_now.day(); // 0-6 (0 for sunday and 6 for saturday)
             const is_weekday        = !/^(0|6)$/.test(day);
