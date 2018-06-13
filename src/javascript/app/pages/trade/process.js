@@ -160,6 +160,8 @@ const Process = (() => {
 
         displayPrediction();
         refreshDropdown('#prediction');
+        displaySelectedTick();
+        refreshDropdown('#selected_tick');
         Lookback.display();
 
         let r1;
@@ -178,12 +180,10 @@ const Process = (() => {
         const amount    = is_crypto ? 'amount_crypto' : 'amount';
         if (Defaults.get(amount)) {
             $('#amount').val(Defaults.get(amount));
-        } else if (is_crypto) {
-            const default_crypto_value = getMinPayout(currency);
-            Defaults.set(amount, default_crypto_value);
-            getElementById('amount').value = default_crypto_value;
         } else {
-            Defaults.set(amount, getElementById('amount').value);
+            const default_value = getMinPayout(currency);
+            Defaults.set(amount, default_value);
+            getElementById('amount').value = default_value;
         }
         if (Defaults.get('amount_type')) {
             commonTrading.selectOption(Defaults.get('amount_type'), getElementById('amount_type'));
@@ -191,6 +191,14 @@ const Process = (() => {
             Defaults.set('amount_type', getElementById('amount_type').value);
         }
         refreshDropdown('#amount_type');
+
+        if (Contract.form() === 'callputspread') {
+            getElementById('stake_option').setVisibility(0);
+            $('[data-value="stake"]').hide();
+        } else {
+            getElementById('stake_option').setVisibility(1);
+        }
+
         if (Defaults.get('currency')) {
             commonTrading.selectOption(Defaults.get('currency'), getVisibleElement('currency'));
         }
@@ -216,6 +224,25 @@ const Process = (() => {
         } else {
             prediction_row.hide();
             Defaults.remove('prediction');
+        }
+    };
+
+    const displaySelectedTick = () => {
+        const selected_tick_row       = getElementById('selected_tick_row');
+        const highlowticks_expiry_row = getElementById('highlowticks_expiry_row');
+        if (sessionStorage.getItem('formname') === 'highlowticks') {
+            selected_tick_row.show();
+            highlowticks_expiry_row.show();
+            const selected_tick = getElementById('selected_tick');
+            if (Defaults.get('selected_tick')) {
+                commonTrading.selectOption(Defaults.get('selected_tick'), selected_tick);
+            } else {
+                Defaults.set('selected_tick', selected_tick.value);
+            }
+        } else {
+            selected_tick_row.hide();
+            highlowticks_expiry_row.hide();
+            Defaults.remove('selected_tick');
         }
     };
 

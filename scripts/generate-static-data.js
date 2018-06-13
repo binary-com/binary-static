@@ -84,6 +84,7 @@ const texts = [
     'Sell time',
     'Charting for this underlying is delayed',
     'Reset time',
+    'Payout range',
 
     // trading page
     'year',
@@ -124,8 +125,10 @@ const texts = [
     'Touch/No Touch',
     'Stays Between/Goes Outside',
     'Potential Payout',
+    'Maximum Payout',
     'Total Cost',
     'Potential Profit',
+    'Maximum Profit',
     'View',
     'Tick',
     'Buy price',
@@ -344,6 +347,8 @@ const texts = [
     'Digit Even',
     'Digit Over',
     'Digit Under',
+    'Call Spread',
+    'Put Spread',
 
     // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
@@ -416,6 +421,7 @@ const texts = [
     'Low Barrier',
     'High Barrier',
     'Reset Barrier',
+    'Average',
     'This contract won',
     'This contract lost',
     'Spot',
@@ -446,6 +452,8 @@ const texts = [
     'Sell at market',
     'You have sold this contract at [_1] [_2]',
     'Your transaction reference number is [_1]',
+    'Tick [_1] is the highest tick',
+    'Tick [_1] is the lowest tick',
     'Note',
     'Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.',
     'Contract ID',
@@ -461,6 +469,11 @@ const texts = [
     'Start Time and Entry Spot',
     'Exit Time and Exit Spot',
     'You can close this window without interrupting your trade.',
+    'Selected Tick',
+    'Highest Tick',
+    'Highest Tick Time',
+    'Lowest Tick',
+    'Lowest Tick Time',
 
     // financial assessment
     'Please select a value',
@@ -636,6 +649,12 @@ const texts = [
     // third party link confirmation dialog/popup
     'You will be redirected to a third-party website which is not owned by Binary.com.',
     'Click OK to proceed.',
+
+    // two factor authentication
+    'You have successfully enabled two-factor authentication for your account.',
+    'You have successfully disabled two-factor authentication for your account.',
+    'Enable',
+    'Disable',
 ];
 
 /* eslint-disable no-console */

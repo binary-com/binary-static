@@ -45,12 +45,24 @@ const Durations = (() => {
             start_type = 'spot';
         }
 
+        if (Defaults.get('formname') === 'highlowticks') {
+            Barriers.display(); // hide barrier field, instead of selecting barrier we select tick number
+            Defaults.set('expiry_type', 'duration');
+            Defaults.set('duration_amount', 5);
+            Defaults.set('duration_units', 't');
+            // display label instead of populating durations
+            CommonFunctions.getElementById('expiry_row').style.display = 'none';
+            return false;
+        }
+
         const durations = Contract.durations();
         if (durations === false) {
             CommonFunctions.getElementById('expiry_row').style.display = 'none';
             Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time');
             return false;
         }
+
+        CommonFunctions.getElementById('expiry_row').style.display = 'flex';
 
         const target             = CommonFunctions.getElementById('duration_units');
         const form_name          = Contract.form();
@@ -230,14 +242,15 @@ const Durations = (() => {
     };
 
     const durationPopulate = () => {
-        const unit = CommonFunctions.getElementById('duration_units');
-        if (!unit.options[unit.selectedIndex]) return false;
-        const unit_min_value = unit.options[unit.selectedIndex].getAttribute('data-minimum');
-        const unit_max_value = unit.options[unit.selectedIndex].getAttribute('data-maximum');
-        let unit_value       = Defaults.get('duration_amount') || unit_min_value;
-        unit.value           = Defaults.get('duration_units') &&
-            document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
-            Defaults.get('duration_units') : unit.value;
+        const unit          = CommonFunctions.getElementById('duration_units');
+        const selected_unit = unit.options[unit.selectedIndex];
+
+        if (!selected_unit) return false;
+
+        const duration_amount_id = '#duration_amount';
+        const unit_min_value     = selected_unit.getAttribute('data-minimum');
+        const unit_max_value     = selected_unit.getAttribute('data-maximum');
+        let unit_value           = Defaults.get('duration_amount') || unit_min_value;
         Dropdown('#duration_units');
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_minimum'), unit_min_value);
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), localize(duration_map[unit.value] + (+unit_min_value > 1 ? 's' : '')));
@@ -253,35 +266,27 @@ const Durations = (() => {
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
-        const amount_element = $('#duration_amount');
-        const duration_id    = '#duration_amount';
         if (unit.value === 'd') {
             const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             DatePicker.init({
-                selector: duration_id,
+                selector: duration_amount_id,
                 type    : 'diff',
                 minDate : 1,
                 maxDate : 365,
                 native  : false,
             });
-            amount_element.change((value) => {
-                let day_diff;
-                const $duration_amount_val = $('#duration_amount').val();
-                if ($duration_amount_val) {
-                    day_diff = $duration_amount_val;
-                } else {
-                    const data_value = value.target.getAttribute('data-value');
-                    const date       = data_value ? new Date(data_value) : new Date();
-                    const today      = window.time ? window.time.valueOf() : new Date();
-
-                    day_diff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
-                }
-                amount_element.val(day_diff);
-            });
         } else {
-            DatePicker.hide(duration_id);
+            DatePicker.hide(duration_amount_id);
         }
+
+        const $duration_amount = $(duration_amount_id);
+        $duration_amount.change((e) => {
+            e.stopPropagation();
+            const data_min_value = unit.options[unit.selectedIndex].getAttribute('data-minimum');
+            const value          = e.target.value || data_min_value; // set to min value if no input value
+            $duration_amount.val(value);
+        });
 
         const requested = changeExpiryTimeType();
 

@@ -55,6 +55,8 @@ const commonTrading = (() => {
         if (/higherlower/.test(form_name)) {
             name    = 'callput';
             barrier = 'euro_non_atm';
+        } else if (/callputspread/.test(form_name)) {
+            name = 'callputspread';
         } else if (/callputequal/.test(form_name)) {
             barrier = 'euro_atm';
         } else if (/risefall|callput/.test(form_name)) {
@@ -106,6 +108,10 @@ const commonTrading = (() => {
         LBHIGHLOW   : 'middle',
         RESETCALL   : 'top',
         RESETPUT    : 'bottom',
+        CALLSPREAD  : 'top',
+        PUTSPREAD   : 'bottom',
+        TICKHIGH    : 'top',
+        TICKLOW     : 'bottom',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -140,6 +146,8 @@ const commonTrading = (() => {
                 ['lookbackhigh', 'lookbacklow', 'lookbackhighlow'],
             ],
             'reset',
+            'callputspread',
+            'highlowticks',
         ];
 
         if (elements) {
