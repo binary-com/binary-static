@@ -14,7 +14,7 @@ const Settings = (() => {
                 $class_real.not((Client.isJPClient() ? '.ja-hide' : '')).setVisibility(1);
             }
 
-            const status = State.getResponse('get_account_status.status');
+            const status = State.getResponse('get_account_status.status') || [];
             if (!/social_signup/.test(status)) {
                 $('#change_password').setVisibility(1);
             }

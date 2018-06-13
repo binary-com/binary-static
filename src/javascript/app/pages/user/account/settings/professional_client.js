@@ -11,7 +11,7 @@ const professionalClient = (() => {
 
     const onLoad = () => {
         BinarySocket.wait('get_account_status').then((response) => {
-            if (getPropertyValue(response, ['get_account_status', 'status']).indexOf('professional') !== -1) {
+            if ((getPropertyValue(response, ['get_account_status', 'status']) || []).indexOf('professional') !== -1) {
                 BinaryPjax.loadPreviousUrl();
                 return;
             }
