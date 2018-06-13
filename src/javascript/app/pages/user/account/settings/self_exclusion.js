@@ -213,12 +213,12 @@ const SelfExclusion = (() => {
     const getTimeout = () => (getDate(timeout_date_id) ? (moment(new Date(`${getDate(timeout_date_id)}T${$(timeout_time_id).val()}`)).valueOf() / 1000).toFixed(0) : '');
 
     const initDatePicker = () => {
+        const timeout_time_options = {
+            selector: timeout_time_id,
+        };
+
         // timeout_until
-        TimePicker.init({
-            selector    : timeout_time_id,
-            minTime     : 'now',
-            useLocalTime: true,
-        });
+        TimePicker.init(timeout_time_options);
         DatePicker.init({
             selector: timeout_date_id,
             minDate : 0,
@@ -234,7 +234,22 @@ const SelfExclusion = (() => {
 
         $(`${timeout_date_id}, ${exclude_until_id}`).change(function () {
             dateValueChanged(this, 'date');
-            $('#gamstop_info_bottom').setVisibility(is_gamstop_client && this.getAttribute('data-value'));
+            const date = this.getAttribute('data-value');
+
+            if (timeout_date_id.indexOf(this.id) > 0) {
+                const disabled_time_options = {
+                    minTime     : 'now',
+                    useLocalTime: true,
+                };
+
+                // reinitialize timepicker on timeout date change
+                TimePicker.init({
+                    ...timeout_time_options,
+                    ...moment().isBefore(moment(date)) ? undefined : disabled_time_options,
+                });
+            }
+
+            $('#gamstop_info_bottom').setVisibility(is_gamstop_client && date);
         });
     };
 
