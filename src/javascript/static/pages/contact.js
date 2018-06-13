@@ -27,8 +27,8 @@ const Contact = (() => {
     ];
 
     const showHideLiveChat = () => {
-        BinarySocket.wait('time').then((response) => {
-            const moment_now   = moment.utc((response.time * 1000) || undefined).utcOffset(8); // MYT
+        BinarySocket.wait('time').then(() => {
+            const moment_now   = moment.utc(window.time || undefined).utcOffset(8); // MYT
             const hour         = moment_now.hour();
             const config       = availability[+isWeekday(moment_now)];
             const is_available = hour >= config[0] && hour < config[1];
