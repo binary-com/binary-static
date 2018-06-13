@@ -19,35 +19,39 @@ const Contact = (() => {
         });
     };
 
-    // mon - fri 22 - 13 GMT
-    // sat - sun 0 - 9 GMT
+    const isWeekday = (moment_obj) => !/^(0|6)$/.test(moment_obj.day); // 0 for sunday and 6 for saturday
+
+    const availability = [
+        [8, 17], // weekends (sat-sun): 08-17 MYT
+        [6, 21], // weekdays (mon-fri): 06-21 MYT
+    ];
+
     const showHideLiveChat = () => {
         BinarySocket.wait('time').then((response) => {
-            const moment_now        = moment.utc((response.time * 1000) || undefined);
-            const hour              = moment_now.hour();
-            const day               = moment_now.day(); // 0-6 (0 for sunday and 6 for saturday)
-            const is_weekday        = !/^(0|6)$/.test(day);
-            const is_chat_available = is_weekday ? (hour >= 22 || hour < 13) : hour < 9;
+            const moment_now   = moment.utc((response.time * 1000) || undefined).utcOffset(8); // MYT
+            const hour         = moment_now.hour();
+            const config       = availability[+isWeekday(moment_now)];
+            const is_available = hour >= config[0] && hour < config[1];
+            const moment_next  = moment_now.clone();
 
-            let next_interval,
-                is_next_interval_tomorrow;
-            if (is_chat_available) {
+            let next_hour;
+            if (is_available) {
                 $chat_button.attr({ href: 'https://binary.desk.com/customer/widget/chats/new', target: '_blank' }).removeClass('button-disabled');
                 $chat_unavailable.setVisibility(0);
-
-                next_interval = is_weekday ? 13 : 9;
-                is_next_interval_tomorrow = false;
+                next_hour = config[1];
             } else {
                 $chat_button.attr({ href: '', target: '' }).addClass('button-disabled');
                 $chat_unavailable.setVisibility(1);
-
-                next_interval = /^(0|1|2|3|4)$/.test(day) ? 22 : 0;
-                is_next_interval_tomorrow = (is_weekday && hour >= 13) || (!is_weekday && hour >= 9);
+                if (hour < config[0]) {
+                    next_hour = config[0];
+                } else {
+                    moment_next.add(1, 'days');
+                    next_hour = availability[+isWeekday(moment_next)][0];
+                }
             }
+            moment_next.hour(next_hour).minute(0).second(0);
 
-            const moment_interval = moment.utc().add(is_next_interval_tomorrow ? 1 : 0, 'day').hour(next_interval).minute(0);
-
-            livechat_timeout = setTimeout(showHideLiveChat, moment_interval.diff(moment_now, 'seconds') * 1000);
+            livechat_timeout = setTimeout(showHideLiveChat, moment_next.diff(moment_now));
         });
     };
 
