@@ -189,6 +189,14 @@ const Process = (() => {
             Defaults.set('amount_type', getElementById('amount_type').value);
         }
         refreshDropdown('#amount_type');
+
+        if (Contract.form() === 'callputspread') {
+            getElementById('stake_option').setVisibility(0);
+            $('[data-value="stake"]').hide();
+        } else {
+            getElementById('stake_option').setVisibility(1);
+        }
+
         if (Defaults.get('currency')) {
             commonTrading.selectOption(Defaults.get('currency'), getVisibleElement('currency'));
         }

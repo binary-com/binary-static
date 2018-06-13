@@ -222,6 +222,10 @@ const TradingAnalysis = (() => {
             lookbackhighlow: {
                 image1: 'high-low-image.svg',
             },
+            callputspread: {
+                image1: 'call-spread.svg',
+                image2: 'put-spread.svg',
+            },
         };
 
         if (images[form_name]) {
