@@ -215,8 +215,9 @@ const SelfExclusion = (() => {
     const initDatePicker = () => {
         // timeout_until
         TimePicker.init({
-            selector: timeout_time_id,
-            minTime : 'now',
+            selector    : timeout_time_id,
+            minTime     : 'now',
+            useLocalTime: true,
         });
         DatePicker.init({
             selector: timeout_date_id,
