@@ -160,6 +160,8 @@ const Process = (() => {
 
         displayPrediction();
         refreshDropdown('#prediction');
+        displaySelectedTick();
+        refreshDropdown('#selected_tick');
         Lookback.display();
 
         let r1;
@@ -222,6 +224,25 @@ const Process = (() => {
         } else {
             prediction_row.hide();
             Defaults.remove('prediction');
+        }
+    };
+
+    const displaySelectedTick = () => {
+        const selected_tick_row       = getElementById('selected_tick_row');
+        const highlowticks_expiry_row = getElementById('highlowticks_expiry_row');
+        if (sessionStorage.getItem('formname') === 'highlowticks') {
+            selected_tick_row.show();
+            highlowticks_expiry_row.show();
+            const selected_tick = getElementById('selected_tick');
+            if (Defaults.get('selected_tick')) {
+                commonTrading.selectOption(Defaults.get('selected_tick'), selected_tick);
+            } else {
+                Defaults.set('selected_tick', selected_tick.value);
+            }
+        } else {
+            selected_tick_row.hide();
+            highlowticks_expiry_row.hide();
+            Defaults.remove('selected_tick');
         }
     };
 

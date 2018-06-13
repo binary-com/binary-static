@@ -419,6 +419,7 @@ const texts = [
     'High Barrier',
     'High Barrier ([_1])',
     'Barrier ([_1])',
+    'Average',
     'This contract won',
     'This contract lost',
     'Spot',
@@ -449,6 +450,8 @@ const texts = [
     'Sell at market',
     'You have sold this contract at [_1] [_2]',
     'Your transaction reference number is [_1]',
+    'Tick [_1] is the highest tick',
+    'Tick [_1] is the lowest tick',
     'Note',
     'Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.',
     'Contract ID',
@@ -464,6 +467,11 @@ const texts = [
     'Start Time and Entry Spot',
     'Exit Time and Exit Spot',
     'You can close this window without interrupting your trade.',
+    'Selected Tick',
+    'Highest Tick',
+    'Highest Tick Time',
+    'Lowest Tick',
+    'Lowest Tick Time',
 
     // financial assessment
     'Please select a value',

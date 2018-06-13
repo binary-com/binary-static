@@ -106,6 +106,8 @@ const commonTrading = (() => {
         LBHIGHLOW   : 'middle',
         CALLSPREAD  : 'top',
         PUTSPREAD   : 'bottom',
+        TICKHIGH    : 'top',
+        TICKLOW     : 'bottom',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -140,6 +142,7 @@ const commonTrading = (() => {
                 ['lookbackhigh', 'lookbacklow', 'lookbackhighlow'],
             ],
             'callputspread',
+            'highlowticks',
         ];
 
         if (elements) {

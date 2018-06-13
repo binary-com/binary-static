@@ -122,6 +122,12 @@ const Explanation = () => (
                     <li>{it.L('No payout if exit spot is above or equal to the upper barrier.')}</li>
                 </ul>
             </div>
+
+            <div id='winning_highlowticks' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
+                <p>{it.L('If you select [_1]"High Tick"[_2], you win the payout if the selected tick is the [_1]highest among the next five ticks[_2].', '<strong>', '</strong>')}</p>
+                <p>{it.L('If you select [_1]"Low Tick"[_2], you win the payout if the selected tick is the [_1]lowest among the next five ticks[_2].', '<strong>', '</strong>')}</p>
+            </div>
         </div>
 
         {/* ========== Image ========== */}
@@ -263,6 +269,12 @@ const Explanation = () => (
                     <br />
                     {it.L('If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time.')}
                 </p>
+            </div>
+
+            <div id='explain_highlowticks' className='invisible'>
+                <h3>{it.L('The First Tick')}</h3>
+                <p>{it.L('The first tick is the first tick after the contract is processed by our servers.')}</p>
+                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('High Tick/Low Tick contracts have a strict duration of five ticks.')}</p>
             </div>
         </div>
     </div>

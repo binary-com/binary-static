@@ -22,6 +22,7 @@ const ViewPopup = (() => {
         chart_started,
         chart_init,
         chart_updated,
+        ticks_requested,
         sell_text_updated,
         btn_view,
         multiplier,
@@ -32,7 +33,7 @@ const ViewPopup = (() => {
     const wrapper_id   = 'sell_content_wrapper';
     const hidden_class = 'invisible';
 
-    const init = (button) => {
+    const init = (button, onClose) => {
         btn_view              = button;
         contract_id           = $(btn_view).attr('contract_id');
         contract              = {};
@@ -42,8 +43,13 @@ const ViewPopup = (() => {
         chart_started         = false;
         chart_init            = false;
         chart_updated         = false;
+        ticks_requested       = false;
         sell_text_updated     = false;
         $container            = '';
+
+        if (typeof onClose === 'function') {
+            ViewPopupUI.setOnCloseFunction(onClose);
+        }
 
         if (btn_view) {
             ViewPopupUI.disableButton($(btn_view));
@@ -111,6 +117,8 @@ const ViewPopup = (() => {
             NOTOUCH     : 'Does Not Touch',
             CALLSPREAD  : 'Call Spread',
             PUTSPREAD   : 'Put Spread',
+            TICKHIGH    : 'High Tick',
+            TICKLOW     : 'Low Tick',
         };
 
         containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
@@ -134,8 +142,9 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const is_touch_tick   = /touch/i.test(contract.contract_type) && contract.tick_count;
-        is_sold_before_expiry = is_touch_tick
+        const is_path_dependent_tick = +contract.is_path_dependent;
+
+        is_sold_before_expiry = is_path_dependent_tick
             ? contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry
             : contract.status === 'sold' || (contract.sell_time && contract.sell_time < contract.date_expiry);
 
@@ -171,8 +180,13 @@ const ViewPopup = (() => {
         let current_spot      = contract.current_spot;
         let current_spot_time = contract.current_spot_time;
         if (is_ended) {
-            current_spot      = is_sold_before_expiry ? '' : contract.exit_tick;
-            current_spot_time = is_sold_before_expiry ? '' : contract.exit_tick_time;
+            if (/^(tickhigh|ticklow)$/i.test(contract.contract_type)) {
+                current_spot      = is_sold_before_expiry ? contract.sell_spot : '';
+                current_spot_time = is_sold_before_expiry ? contract.sell_spot_time : '';
+            } else {
+                current_spot      = is_sold_before_expiry ? '' : contract.exit_tick;
+                current_spot_time = is_sold_before_expiry ? '' : contract.exit_tick_time;
+            }
         }
 
         if (current_spot) {
@@ -226,9 +240,12 @@ const ViewPopup = (() => {
             if (contract.entry_tick_time) {
                 chart_started = true;
             }
-        } else if (contract.tick_count && !chart_updated && 'barrier' in contract) {
-            TickDisplay.updateChart({ id_render: 'tick_chart' }, contract);
-            chart_updated = true;
+        } else if (contract.tick_count && !chart_updated) {
+            TickDisplay.updateChart({ id_render: 'tick_chart', request_ticks: !ticks_requested }, contract);
+            ticks_requested = true;
+            if ('barrier' in contract) {
+                chart_updated = true;
+            }
         }
 
         if (!is_sold && is_sold_before_expiry) {
@@ -289,6 +306,11 @@ const ViewPopup = (() => {
         if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));
             containerSetText('trade_details_spottime_label', localize('Close Time'));
+        } else if (/^(tickhigh|ticklow)$/i.test(contract.contract_type)) {
+            const is_high_tick = /^(tickhigh)$/i.test(contract.contract_type);
+            const txt_high_low = is_high_tick ? 'Highest' : 'Lowest';
+            containerSetText('trade_details_spot_label', localize(`${txt_high_low} Tick`));
+            containerSetText('trade_details_spottime_label', localize(`${txt_high_low} Tick Time`));
         } else {
             containerSetText('trade_details_spot_label', localize('Exit Spot'));
             containerSetText('trade_details_spottime_label', localize('Exit Spot Time'));
@@ -372,6 +394,7 @@ const ViewPopup = (() => {
         'upordown|range'  : 'staysinout',
         'touch'           : 'touchnotouch',
         '(call|put)spread': 'callputspread',
+        'tick(high|low)'  : 'highlowticks',
         'call|put'        : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
     };
 
@@ -524,6 +547,8 @@ const ViewPopup = (() => {
             barrier_text = 'High Barrier';
         } else if (/^DIGIT(MATCH|DIFF)$/.test(contract.contract_type)) {
             barrier_text = 'Target';
+        } else if (/^(tickhigh|ticklow)$/i.test(contract.contract_type)) {
+            barrier_text = 'Selected Tick';
         }
 
         $sections.find('#sell_details_table').append($(

@@ -226,6 +226,10 @@ const TradingAnalysis = (() => {
                 image1: 'call-spread.svg',
                 image2: 'put-spread.svg',
             },
+            highlowticks: {
+                image1: 'high-low-1.svg',
+                image2: 'high-low-2.svg',
+            },
         };
 
         if (images[form_name]) {
