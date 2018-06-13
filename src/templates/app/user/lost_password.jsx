@@ -13,7 +13,7 @@ const LostPassword = () => (
             </Fieldset>
         </form>
 
-        <p>{it.L('If you don’t receive the email within the next few minutes, please check your junk/spam folder.')}</p>
+        <p id='check_spam' className='invisible'>{it.L('If you don’t receive the email within the next few minutes, please check your junk/spam folder.')}</p>
     </div>
 );
 
