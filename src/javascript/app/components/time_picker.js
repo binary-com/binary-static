@@ -8,14 +8,20 @@ const TimePicker = (() => {
     const time_pickers = {};
 
     const init = (options) => {
-        hide(options.selector);
+        hide(options.selector, options.datepickerDate);
         time_pickers[options.selector] = {};
 
         config(options);
         $(window).resize(() => { checkWidth(options.selector); });
     };
 
-    const hide = (selector) => { $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown keyup input'); };
+    const hide = (selector, datepickerDate) => {
+        $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown keyup input');
+        if (!datepickerDate) return;
+        if (!moment().isBefore(moment(datepickerDate))) {
+            $(selector).attr('data-value', '').val('');
+        }
+    };
 
     const create = (selector) => {
         let $this;
@@ -48,6 +54,7 @@ const TimePicker = (() => {
                 (!options.maxTime || time_now.unix() !== options.maxTime.unix())) {
                 options.minTime = time_now;
             }
+            if (options.useLocalTime) options.minTime = options.minTime.local();
             obj_config.minTime = { hour: parseInt(options.minTime.hour()), minute: parseInt(options.minTime.minute()) };
         }
 
