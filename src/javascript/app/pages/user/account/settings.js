@@ -1,6 +1,7 @@
-const Client           = require('../../../base/client');
-const BinarySocket     = require('../../../base/socket');
-const State            = require('../../../../_common/storage').State;
+const Client       = require('../../../base/client');
+const BinarySocket = require('../../../base/socket');
+const localize     = require('../../../../_common/localize').localize;
+const State        = require('../../../../_common/storage').State;
 
 const Settings = (() => {
     const onLoad = () => {
@@ -19,9 +20,9 @@ const Settings = (() => {
             }
 
             // Professional Client menu should only be shown to maltainvest accounts.
-            if ((Client.get('landing_company_shortcode') === 'maltainvest') && !/professional/.test(status)) {
-
-                $('#professional_client').setVisibility(1);
+            if ((Client.get('landing_company_shortcode') === 'maltainvest') && status.indexOf('professional') === -1) {
+                const text = /professional_requested/.test(status) ? 'Your application to be treated as a professional client is being processed.' : 'You are categorised as a retail client. Apply to be treated as a professional trader.';
+                $('#professional_client').setVisibility(1).find('p').text(localize(text));
             }
 
             if (!State.getResponse('get_account_status.prompt_client_to_authenticate')) {

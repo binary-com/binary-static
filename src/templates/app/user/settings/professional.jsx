@@ -6,10 +6,14 @@ import { SubmitButton } from '../../../_common/components/forms.jsx';
 const Professional = () => (
     <div className='container'>
         <div className='static_full'>
-            <h1>{it.L('Professional Trader')}</h1>
+            <h1>{it.L('Account Categorisation')}</h1>
 
             <div id='loading'>
                 <Loading />
+            </div>
+
+            <div className='invisible' id='processing'>
+                <p>{it.L('Your application to be treated as a professional client is being processed.')}</p>
             </div>
 
             <form className='form gr-padding-10 invisible' id='frm_professional'>

@@ -197,6 +197,8 @@ const texts = [
     'Male',
     'Please select a country',
     'Please confirm that all the information above is true and complete.',
+    'Your application to be treated as a professional client is being processed.',
+    'You are categorised as a retail client. Apply to be treated as a professional trader.',
 
     // home and virtual account opening page
     'Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.',

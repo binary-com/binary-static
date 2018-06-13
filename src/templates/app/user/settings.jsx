@@ -30,7 +30,7 @@ const Settings = () => (
                 <Column url='detailsws' image='detail' header={it.L('Personal Details')} text={it.L('View your personal information.')} />
                 <Column className='ja-hide real invisible' url='assessmentws' image='financial-assessment' header={it.L('Financial Assessment')} text={it.L('View your financial assessment settings.')} />
                 <Column className='real invisible' url='../authenticate' id='authenticate' image='authenticate' header={it.L('Authentication')} text={it.L('View your account\'s authentication status.')} />
-                <Column className='ja-hide invisible' id='professional_client' url='professional' image='professional' header={it.L('Professional Trader')} text={it.L('Be treated as a professional trader.')} />
+                <Column className='ja-hide invisible' id='professional_client' url='professional' image='professional' header={it.L('Account Categorisation')} />
             </div>
         </div>
     </React.Fragment>

@@ -11,7 +11,7 @@ const professionalClient = (() => {
 
     const onLoad = () => {
         BinarySocket.wait('get_account_status').then((response) => {
-            if (/professional_requested|professional/.test(getPropertyValue(response, ['get_account_status', 'status']))) {
+            if (getPropertyValue(response, ['get_account_status', 'status']).indexOf('professional') !== -1) {
                 BinaryPjax.loadPreviousUrl();
                 return;
             }
@@ -32,6 +32,13 @@ const professionalClient = (() => {
             }
             return;
         }
+
+        if (is_in_page && /professional_requested/.test(State.getResponse('get_account_status.status'))) {
+            $('#loading').remove();
+            $('#processing').setVisibility(1);
+            return;
+        }
+
         const $container        = $('#fs_professional');
         const $chk_professional = $container.find('#chk_professional');
         const $info             = $container.find('#professional_info');
@@ -58,10 +65,6 @@ const professionalClient = (() => {
                 });
             }
         });
-
-        if (has_maltainvest) {
-            $container.find('#show_financial').setVisibility(1);
-        }
 
         $container.setVisibility(1);
 
