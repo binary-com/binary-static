@@ -14,7 +14,7 @@ class Fieldset extends React.PureComponent {
                         {!!this.props.tooltip &&
                             <Tooltip
                                 alignment='left'
-                                is_icon
+                                icon='info'
                                 message={this.props.tooltip || 'Message goes here.'}
                             />
                         }
