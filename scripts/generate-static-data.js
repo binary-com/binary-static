@@ -83,6 +83,7 @@ const texts = [
     'End time',
     'Sell time',
     'Charting for this underlying is delayed',
+    'Payout range',
 
     // trading page
     'year',
@@ -123,8 +124,10 @@ const texts = [
     'Touch/No Touch',
     'Stays Between/Goes Outside',
     'Potential Payout',
+    'Maximum Payout',
     'Total Cost',
     'Potential Profit',
+    'Maximum Profit',
     'View',
     'Tick',
     'Buy price',
@@ -340,6 +343,8 @@ const texts = [
     'Digit Even',
     'Digit Over',
     'Digit Under',
+    'Call Spread',
+    'Put Spread',
 
     // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
