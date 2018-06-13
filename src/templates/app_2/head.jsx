@@ -1,4 +1,5 @@
 import React from 'react';
+import URLHandler from './includes/url_handler.jsx';
 import Title from '../_common/components/title.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
 import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
@@ -6,6 +7,7 @@ import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 const Head = () => (
     <head>
         <AntiClickjack />
+        <URLHandler />
         <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
         <meta httpEquiv='Content-Language' content={it.language} />
         <meta name='description' content={` ${it.L('[_1] gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities.', it.broker_name)}`} />

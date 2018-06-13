@@ -52,6 +52,9 @@
                 }
             }
         }
+        &.from-right {
+            right: 0;
+        }
         .time-picker-panel {
             height: 0;
             background: $COLOR_WHITE;

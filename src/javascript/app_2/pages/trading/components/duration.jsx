@@ -96,22 +96,25 @@ const Duration = ({
                     </div>
                 </React.Fragment> :
                 <React.Fragment>
-                    <Datepicker
-                        name='expiry_date'
-                        showTodayBtn
-                        minDate={min_date_expiry}
-                        onChange={onChange}
-                        is_nativepicker={is_nativepicker}
-                    />
-                    {is_same_day &&
-                        <TimePicker
+                    <div className='endtime-container'>
+                        <Datepicker
+                            name='expiry_date'
+                            showTodayBtn
+                            minDate={min_date_expiry}
                             onChange={onChange}
-                            name='expiry_time'
-                            value={expiry_time}
-                            placeholder='12:00 pm'
                             is_nativepicker={is_nativepicker}
                         />
-                    }
+                        {is_same_day &&
+                            <TimePicker
+                                onChange={onChange}
+                                is_align_right
+                                name='expiry_time'
+                                value={expiry_time}
+                                placeholder='12:00 pm'
+                                is_nativepicker={is_nativepicker}
+                            />
+                        }
+                    </div>
                 </React.Fragment>
             }
         </Fieldset>

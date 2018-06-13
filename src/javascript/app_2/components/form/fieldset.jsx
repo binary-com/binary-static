@@ -10,15 +10,15 @@ class Fieldset extends React.PureComponent {
             <fieldset className={this.props.className}>
                 <div className='fieldset-header'>
                     <span className={field_left_class}>{this.props.header}</span>
-                    { !!this.props.tooltip &&
-                        <span className='field-info right'>
+                    <span className='field-info right'>
+                        {!!this.props.tooltip &&
                             <Tooltip
                                 alignment='left'
-                                is_icon
+                                icon='info'
                                 message={this.props.tooltip || 'Message goes here.'}
                             />
-                        </span>
-                    }
+                        }
+                    </span>
                 </div>
                 {this.props.children}
             </fieldset>
