@@ -117,11 +117,11 @@ const Purchase = (() => {
                 chart.hide();
             }
 
+            CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), '');
             if (has_chart) {
                 spots.hide();
             } else {
                 CommonFunctions.elementTextContent(spots, '');
-                CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), '');
                 spots.className = '';
                 spots.show();
 
