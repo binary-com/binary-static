@@ -208,6 +208,10 @@ const Validation = (() => {
     // --------------------
     const checkField = (field) => {
         if (!field.$.is(':visible') || !field.validations) return true;
+        if (field.clear_form_error_on_input) {
+            $(`${field.form}_error`).text('');
+        }
+
         let all_is_ok = true;
         let message   = '';
         const field_type = field.$.attr('type');

@@ -180,12 +180,10 @@ const Process = (() => {
         const amount    = is_crypto ? 'amount_crypto' : 'amount';
         if (Defaults.get(amount)) {
             $('#amount').val(Defaults.get(amount));
-        } else if (is_crypto) {
-            const default_crypto_value = getMinPayout(currency);
-            Defaults.set(amount, default_crypto_value);
-            getElementById('amount').value = default_crypto_value;
         } else {
-            Defaults.set(amount, getElementById('amount').value);
+            const default_value = getMinPayout(currency);
+            Defaults.set(amount, default_value);
+            getElementById('amount').value = default_value;
         }
         if (Defaults.get('amount_type')) {
             commonTrading.selectOption(Defaults.get('amount_type'), getElementById('amount_type'));
