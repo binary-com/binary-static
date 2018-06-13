@@ -5,7 +5,7 @@ const BinarySocket = require('../../_common/base/socket_base');
 const Contact = (() => {
     let $chat_button,
         $chat_unavailable,
-        liveChatTimeout;
+        livechat_timeout;
 
     const onLoad = () => {
         $chat_button      = $('#chat_button');
@@ -47,12 +47,12 @@ const Contact = (() => {
 
             const moment_interval = moment.utc().add(is_next_interval_tomorrow ? 1 : 0, 'day').hour(next_interval).minute(0);
 
-            liveChatTimeout = setTimeout(showHideLiveChat, moment_interval.diff(moment_now, 'seconds') * 1000);
+            livechat_timeout = setTimeout(showHideLiveChat, moment_interval.diff(moment_now, 'seconds') * 1000);
         });
     };
 
     const onUnload = () => {
-        clearTimeout(liveChatTimeout);
+        clearTimeout(livechat_timeout);
     };
 
     return {
