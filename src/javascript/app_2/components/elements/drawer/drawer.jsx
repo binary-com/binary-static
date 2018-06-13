@@ -23,7 +23,7 @@ class Drawer extends Component {
         if (this.props.alignment==='left') {
             this.setState({is_this_drawer_on: nextProps.is_main_drawer_on});
         } else if (this.props.alignment==='right'){
-            this.setState({is_this_drawer_on: nextProps.is_portfolio_drawer_on});
+            this.setState({is_this_drawer_on: nextProps.is_notifications_drawer_on});
         }
     }
 
@@ -42,7 +42,7 @@ class Drawer extends Component {
 
     render() {
         const { is_this_drawer_on } = this.state;
-        const { alignment, closeBtn, children, footer } = this.props;
+        const { alignment, closeBtn, children } = this.props;
 
         const visibility = {
             visibility: `${!is_this_drawer_on ? 'hidden' : 'visible'}`,
@@ -53,8 +53,6 @@ class Drawer extends Component {
         const drawer_class = classNames('drawer', {
             'visible': is_this_drawer_on,
         }, alignment);
-
-        const DrawerFooter = footer;
 
         return (
             <aside className='drawer-container'>
@@ -73,11 +71,6 @@ class Drawer extends Component {
                             closeBtn={closeBtn}
                         />
                         {children}
-                        {DrawerFooter &&
-                            <div className='drawer-footer'>
-                                <DrawerFooter />
-                            </div>
-                        }
                     </div>
                 </div>
             </aside>
@@ -91,20 +84,20 @@ Drawer.propTypes = {
         PropTypes.array,
         PropTypes.object,
     ]),
-    closeBtn              : PropTypes.func,
-    footer                : PropTypes.func,
-    hideDrawers           : PropTypes.func,
-    icon_class            : PropTypes.string,
-    icon_link             : PropTypes.string,
-    is_main_drawer_on     : PropTypes.bool,
-    is_portfolio_drawer_on: PropTypes.bool,
+    closeBtn                  : PropTypes.func,
+    footer                    : PropTypes.func,
+    hideDrawers               : PropTypes.func,
+    icon_class                : PropTypes.string,
+    icon_link                 : PropTypes.string,
+    is_main_drawer_on         : PropTypes.bool,
+    is_notifications_drawer_on: PropTypes.bool,
 };
 
 const drawer_component = connect(
     ({ ui }) => ({
-        is_main_drawer_on     : ui.is_main_drawer_on,
-        is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
-        hideDrawers           : ui.hideDrawers,
+        is_main_drawer_on         : ui.is_main_drawer_on,
+        is_notifications_drawer_on: ui.is_notifications_drawer_on,
+        hideDrawers               : ui.hideDrawers,
     })
 )(Drawer);
 

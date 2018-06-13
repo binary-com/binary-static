@@ -78,7 +78,6 @@ const StyleGuide = () => (
                             name='text'
                             placeholder='Placeholder Text'
                             label='Text Field'
-                            helper='Helper messages go here'
                         />
                     </div>
                 </div>
@@ -89,7 +88,6 @@ const StyleGuide = () => (
                             name='number'
                             placeholder='Placeholder Number'
                             label='Numbers Field'
-                            helper='Helper messages go here'
                         />
                     </div>
                 </div>

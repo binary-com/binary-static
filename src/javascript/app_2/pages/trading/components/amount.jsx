@@ -33,7 +33,6 @@ const Amount = ({
         <Fieldset
             header={localize('Invest Amount')}
             icon='invest-amount'
-            tooltip={localize('Text for Invest Amount goes here.')}
         >
             <div className='amount-container'>
                 <Dropdown
