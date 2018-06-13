@@ -1,6 +1,7 @@
 const Contract           = require('./contract');
 const getLookBackFormula = require('./lookback').getFormula;
 const isLookback         = require('./lookback').isLookback;
+const isCallputspread    = require('./callputspread').isCallputspread;
 const Symbols            = require('./symbols');
 const Tick               = require('./tick');
 const TickDisplay        = require('./tick_trade');
@@ -22,6 +23,7 @@ const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Purchase = (() => {
     let purchase_data = {};
+    let tick_config   = {};
 
     let payout_value,
         cost_value,
@@ -49,7 +51,8 @@ const Purchase = (() => {
         const button             = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
-        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't' && !/^(overunder|evenodd|matchdiff)$/.test(sessionStorage.formname);
+        const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
+        const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't';
 
         contracts_list.style.display = 'none';
 
@@ -96,6 +99,10 @@ const Purchase = (() => {
             if (isLookback(contract_type)) {
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formula}</p>`);
                 profit.setVisibility(0);
+            } else if (isCallputspread(contract_type)) {
+                profit.setVisibility(1);
+                CommonFunctions.elementInnerHtml(payout, `${localize('Maximum Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
+                CommonFunctions.elementInnerHtml(profit, `${localize('Maximum Profit')} <p>${profit_value}</p>`);
             } else {
                 profit.setVisibility(1);
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
@@ -104,21 +111,31 @@ const Purchase = (() => {
 
             updateValues.updateContractBalance(receipt.balance_after);
 
-            if (show_chart) {
+            if (show_chart && has_chart) {
                 chart.show();
             } else {
                 chart.hide();
             }
 
-            if (Contract.form() === 'digits') {
+            if (has_chart) {
+                spots.hide();
+            } else {
                 CommonFunctions.elementTextContent(spots, '');
+                CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), '');
                 spots.className = '';
                 spots.show();
-            } else {
-                spots.hide();
+
+                const arr_shortcode = purchase_data.buy.shortcode.split('_');
+                tick_config = {
+                    is_tick_high        : /^tickhigh$/i.test(contract_type),
+                    is_tick_low         : /^ticklow$/i.test(contract_type),
+                    selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
+                    winning_tick_quote  : '',
+                    winning_tick_number : '',
+                };
             }
 
-            if (Contract.form() !== 'digits' && !show_chart) {
+            if (has_chart && !show_chart) {
                 CommonFunctions.elementTextContent(button, localize('View'));
                 button.setAttribute('contract_id', receipt.contract_id);
                 button.show();
@@ -129,7 +146,7 @@ const Purchase = (() => {
             }
         }
 
-        if (show_chart) {
+        if (show_chart && has_chart) {
             // calculate number of decimals needed to display tick-chart according to the spot
             // value of the underlying
             let decimal_points     = 2;
@@ -164,19 +181,24 @@ const Purchase = (() => {
                 id_render           : 'trade_tick_chart',
             });
             TickDisplay.resetSpots();
-            TickDisplay.setStatus(); // reset status first
+        }
 
+        if (show_chart) {
             const request = {
                 proposal_open_contract: 1,
                 contract_id           : receipt.contract_id,
                 subscribe             : 1,
             };
             BinarySocket.send(request, { callback: (response) => {
-                if (response.proposal_open_contract) {
-                    TickDisplay.setStatus(response.proposal_open_contract);
+                const contract = response.proposal_open_contract;
+                if (contract) {
+                    status = contract.status;
+                    TickDisplay.setStatus(contract);
+                    if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
+                        TickDisplay.updateChart({ is_sold: true }, contract);
+                    }
                     // force to sell the expired contract, in order to get the final status
-                    if (+response.proposal_open_contract.is_settleable === 1 &&
-                        !response.proposal_open_contract.is_sold) {
+                    if (+contract.is_settleable === 1 && !contract.is_sold) {
                         BinarySocket.send({ sell_expired: 1 });
                     }
                 }
@@ -184,42 +206,38 @@ const Purchase = (() => {
         }
     };
 
+    const makeBold = d => `<strong>${d}</strong>`;
+
     const updateSpotList = () => {
         const $spots = $('#contract_purchase_spots');
         if (!$spots.length || $spots.is(':hidden')) {
             return;
         }
 
-        let duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
+        const spots = CommonFunctions.getElementById('contract_purchase_spots');
+        if (status && status !== 'open') {
+            if (!new RegExp(status).test(spots.classList)) {
+                spots.className = status;
+                if (status === 'won') {
+                    updateValues.updatePurchaseStatus(payout_value, cost_value, localize('This contract won'));
+                } else if (status === 'lost') {
+                    updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
+                }
+                if (tick_config.is_tick_high || tick_config.is_tick_low) {
+                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), localize(`Tick [_1] is the ${tick_config.is_tick_high ? 'highest' : 'lowest'} tick`, [tick_config.winning_tick_number]));
+                }
+            }
+        }
 
+        let duration = +getPropertyValue(purchase_data, ['echo_req', 'passthrough', 'duration']);
         if (!duration) {
             return;
         }
 
-        const spots   = CommonFunctions.getElementById('contract_purchase_spots');
         const spots2  = Tick.spots();
         const epoches = Object.keys(spots2).sort((a, b) => a - b);
         CommonFunctions.elementTextContent(spots, '');
 
-        if (!status) {
-            const request = {
-                proposal_open_contract: 1,
-                contract_id           : purchase_data.buy.contract_id,
-                subscribe             : 1,
-            };
-            BinarySocket.send(request, { callback: (response) => {
-                status = getPropertyValue(response, ['proposal_open_contract', 'status']);
-                if (status && status !== 'open') {
-                    spots.className = status;
-                    if (status === 'won') {
-                        updateValues.updatePurchaseStatus(payout_value, cost_value, localize('This contract won'));
-                    } else if (status === 'lost') {
-                        updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
-                    }
-                }
-            } });
-        }
-        const replace = d => `<strong>${d}</strong>`;
         for (let s = 0; s < epoches.length; s++) {
             const tick_d = {
                 epoch: epoches[s],
@@ -227,8 +245,25 @@ const Purchase = (() => {
             };
 
             if (CommonFunctions.isVisible(spots) && tick_d.epoch && tick_d.epoch > purchase_data.buy.start_time) {
-                const fragment = createElement('div', { class: 'row' });
-                const el1      = createElement('div', { class: 'col', text: `${localize('Tick')} ${(spots.getElementsByClassName('row').length + 1)}` });
+                const current_tick_count = spots.getElementsByClassName('row').length + 1;
+
+                let is_winning_tick = false;
+                if (tick_config.is_tick_high || tick_config.is_tick_low) {
+                    const $winning_row  = $spots.find('.winning-tick-row');
+                    if (!tick_config.winning_tick_quote ||
+                        (tick_config.winning_tick_quote === tick_d.quote && !$winning_row.length) ||
+                        (tick_config.is_tick_high && +tick_d.quote > tick_config.winning_tick_quote) ||
+                        (tick_config.is_tick_low && +tick_d.quote < tick_config.winning_tick_quote)) {
+                        is_winning_tick = true;
+                        tick_config.winning_tick_quote  = tick_d.quote;
+                        tick_config.winning_tick_number = current_tick_count;
+                        $winning_row.removeClass('winning-tick-row');
+                    }
+                }
+
+                const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row': ''}` });
+
+                const el1 = createElement('div', { class: 'col', text: `${localize('Tick')} ${current_tick_count}` });
                 fragment.appendChild(el1);
 
                 const el2     = createElement('div', { class: 'col' });
@@ -239,7 +274,7 @@ const Purchase = (() => {
                 CommonFunctions.elementTextContent(el2, [hours, minutes, seconds].join(':'));
                 fragment.appendChild(el2);
 
-                const tick = tick_d.quote.replace(/\d$/, replace);
+                const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
                 const el3  = createElement('div', { class: 'col' });
                 CommonFunctions.elementInnerHtml(el3, tick);
                 fragment.appendChild(el3);
@@ -248,6 +283,17 @@ const Purchase = (() => {
                 spots.scrollTop = spots.scrollHeight;
 
                 duration--;
+
+                if (tick_config.is_tick_high || tick_config.is_tick_low) {
+                    const lost_on_selected_tick = !is_winning_tick &&
+                        current_tick_count === +tick_config.selected_tick_number;
+                    const lost_after_selected_tick = is_winning_tick &&
+                        current_tick_count > +tick_config.selected_tick_number;
+                    if (lost_on_selected_tick || lost_after_selected_tick) {
+                        duration = 0; // no need to keep drawing ticks
+                    }
+                }
+
                 if (!duration) {
                     purchase_data.echo_req.passthrough.duration = 0;
                 }
