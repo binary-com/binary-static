@@ -246,6 +246,7 @@ const SelfExclusion = (() => {
                 TimePicker.init({
                     ...timeout_time_options,
                     ...moment().isBefore(moment(date)) ? undefined : disabled_time_options,
+                    datepickerDate: date,
                 });
             }
 
