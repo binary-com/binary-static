@@ -214,7 +214,10 @@ const SelfExclusion = (() => {
 
     const initDatePicker = () => {
         // timeout_until
-        TimePicker.init({ selector: timeout_time_id });
+        TimePicker.init({
+            selector: timeout_time_id,
+            minTime : 'now',
+        });
         DatePicker.init({
             selector: timeout_date_id,
             minDate : 0,

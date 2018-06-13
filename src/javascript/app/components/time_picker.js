@@ -48,7 +48,10 @@ const TimePicker = (() => {
                 (!options.maxTime || time_now.unix() !== options.maxTime.unix())) {
                 options.minTime = time_now;
             }
-            obj_config.minTime = { hour: parseInt(options.minTime.hour()), minute: parseInt(options.minTime.minute()) };
+            obj_config.minTime = {
+                hour  : parseInt(options.minTime.local().hour()),
+                minute: parseInt(options.minTime.local().minute()),
+            };
         }
 
         if (options.maxTime) {
