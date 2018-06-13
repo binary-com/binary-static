@@ -1,6 +1,7 @@
 const moment         = require('moment');
 const ViewPopupUI    = require('./view_popup.ui');
 const Highchart      = require('../../trade/charts/highchart');
+const Callputspread  = require('../../trade/callputspread');
 const Lookback       = require('../../trade/lookback');
 const TickDisplay    = require('../../trade/tick_trade');
 const isJPClient     = require('../../../base/client').isJPClient;
@@ -114,6 +115,8 @@ const ViewPopup = (() => {
             UPORDOWN    : 'Goes Outside',
             ONETOUCH    : 'Touches',
             NOTOUCH     : 'Does Not Touch',
+            CALLSPREAD  : 'Call Spread',
+            PUTSPREAD   : 'Put Spread',
             TICKHIGH    : 'High Tick',
             TICKLOW     : 'Low Tick',
         };
@@ -122,7 +125,6 @@ const ViewPopup = (() => {
         containerSetText('trade_details_contract_id', contract.contract_id);
         containerSetText('trade_details_start_date', epochToDateTime(contract.date_start));
         containerSetText('trade_details_end_date', epochToDateTime(contract.date_expiry));
-        containerSetText('trade_details_payout', formatMoney(contract.currency, contract.payout));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
         containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier, false, 3, 2));
         if (Lookback.isLookback(contract.contract_type)) {
@@ -148,9 +150,13 @@ const ViewPopup = (() => {
 
         const final_price          = contract.sell_price || contract.bid_price;
         const is_started           = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const is_ended             = contract.status !== 'open';
+        const is_ended             = contract.status !== 'open' || contract.is_expired || contract.is_settleable;
         const indicative_price     = final_price && is_ended ? final_price : (contract.bid_price || null);
         const is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
+
+        if (Callputspread.isCallputspread(contract.contract_type)) {
+            Callputspread.update(null, contract);
+        }
 
         if (contract.barrier_count > 1) {
             containerSetText('trade_details_barrier', is_sold_before_start ? '-' : addComma(contract.high_barrier), '', true);
@@ -265,6 +271,7 @@ const ViewPopup = (() => {
             $container.find('#errMsg').setVisibility(0);
         }
 
+        // next line is responsible for 'sell at market' flashing on the last tick
         sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
         contract.chart_validation_error = contract.validation_error;
         contract.validation_error       = '';
@@ -379,15 +386,16 @@ const ViewPopup = (() => {
     };
 
     const map_contract_type = {
-        'expiry'        : 'endsinout',
-        'asian'         : 'asian',
-        'even|odd'      : 'evenodd',
-        'over|under'    : 'overunder',
-        'digit'         : 'digits',
-        'upordown|range': 'staysinout',
-        'touch'         : 'touchnotouch',
-        'tick(high|low)': 'highlowticks',
-        'call|put'      : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
+        'expiry'          : 'endsinout',
+        'asian'           : 'asian',
+        'even|odd'        : 'evenodd',
+        'over|under'      : 'overunder',
+        'digit'           : 'digits',
+        'upordown|range'  : 'staysinout',
+        'touch'           : 'touchnotouch',
+        '(call|put)spread': 'callputspread',
+        'tick(high|low)'  : 'highlowticks',
+        'call|put'        : () => +contract.entry_tick === +contract.barrier ? 'risefall' : 'higherlower',
     };
 
     const showExplanation = (div) => {
@@ -555,8 +563,8 @@ const ViewPopup = (() => {
             ${!Lookback.isLookback(contract.contract_type) ? createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
-            ${createRow('Potential Payout', '', 'trade_details_payout')}
-            ${multiplier ? createRow('Multiplier', '', 'trade_details_multiplier') : ''}
+            ${createRow(Callputspread.isCallputspread(contract.contract_type) ? 'Maximum payout' : 'Potential Payout', '', 'trade_details_payout')}
+            ${multiplier && Lookback.isLookback(contract.contract_type) ? createRow('Multiplier', '', 'trade_details_multiplier') : ''}
             ${createRow('Purchase Price', '', 'trade_details_purchase_price')}
             </tbody>
             <th colspan="2" id="barrier_change" class="invisible">${localize('Barrier Change')}</th>
