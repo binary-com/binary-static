@@ -139,14 +139,14 @@ const Trading = () => (
                                     <div className='row' id='payout_row'>
                                         <div className='col form_label'>
                                             <select id='amount_type'>
-                                                <option value='payout' id='payout_option'>{it.L('Payout')}</option>
                                                 <option value='stake' id='stake_option'>{it.L('Stake')}</option>
+                                                <option value='payout' id='payout_option'>{it.L('Payout')}</option>
                                             </select>
                                         </div>
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
                                                 <select id='currency' className='currency small_width_input' />
-                                                <input id='amount' type='text' data-lpignore='true' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
+                                                <input id='amount' type='text' data-lpignore='true' step='any' maxLength='10' className='medium_width_input' autoComplete='off' />
                                             </div>
                                         </div>
                                     </div>
