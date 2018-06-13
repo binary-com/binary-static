@@ -30,8 +30,17 @@ const WS = (() => {
     const mt5LoginList = () =>
         BinarySocket.send({ mt5_login_list: 1 });
 
+    const oauthApps = () =>
+        BinarySocket.send({ oauth_apps: 1 });
+
     const payoutCurrencies = () =>
         BinarySocket.send({ payout_currencies: 1 });
+
+    const portfolio = () =>
+        BinarySocket.send({ portfolio: 1 });
+
+    const sellExpired = () =>
+        BinarySocket.send({ sell_expired: 1 });
 
     const sendRequest = (request_object) =>
         Promise.resolve(!isEmptyObject(request_object) ? BinarySocket.send(request_object) : {});
@@ -52,11 +61,17 @@ const WS = (() => {
     const subscribeProposal = (req, cb, should_forget_first) =>
         SubscriptionManager.subscribe('proposal', req, cb, should_forget_first);
 
+    const subscribeProposalOpenContract = (cb, should_forget_first) =>
+        SubscriptionManager.subscribe('proposal_open_contract', { proposal_open_contract: 1, subscribe: 1 }, cb, should_forget_first);
+
     const subscribeTicks = (symbol, cb, should_forget_first) =>
         SubscriptionManager.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);
 
     const subscribeTicksHistory = (request_object, cb, should_forget_first) =>
         SubscriptionManager.subscribe('ticks_history', request_object, cb, should_forget_first);
+
+    const subscribeTransaction = (cb, should_forget_first) =>
+        SubscriptionManager.subscribe('transaction', { transaction: 1, subscribe: 1 }, cb, should_forget_first);
 
     const subscribeWebsiteStatus = (cb) =>
         SubscriptionManager.subscribe('website_status', { website_status: 1, subscribe: 1 }, cb);
@@ -71,7 +86,10 @@ const WS = (() => {
         landingCompany,
         logout,
         mt5LoginList,
+        oauthApps,
+        portfolio,
         payoutCurrencies,
+        sellExpired,
         sendRequest,
         statement,
 
@@ -80,8 +98,10 @@ const WS = (() => {
         forgetAll,
         subscribeBalance,
         subscribeProposal,
+        subscribeProposalOpenContract,
         subscribeTicks,
         subscribeTicksHistory,
+        subscribeTransaction,
         subscribeWebsiteStatus,
     };
 })();
