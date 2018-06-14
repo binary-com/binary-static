@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-13 00:02-0400\n"
+"PO-Revision-Date: 2018-06-14 05:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -734,6 +734,9 @@ msgstr "Konto"
 
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "Saldo konta &mdash; saldo Twojego konta odzwierciedla:"
+
+msgid "Account Categorisation"
+msgstr ""
 
 msgid "Account Closure"
 msgstr "Zamknięcie konta"
@@ -1496,9 +1499,6 @@ msgstr "Waluta bazowa"
 
 msgid "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
 msgstr "Czy na podstawie poniższej tabeli potrafisz powiedzieć, jaki jest spread dla pary walutowej EUR/USD?"
-
-msgid "Be treated as a professional trader."
-msgstr "Traktowanie jako gracz profesjonalny."
 
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "Przed otworzeniem konta umożliwiającego handel lub inwestowanie w Produkty inwestycyjne w BIEL, jesteśmy prawnie zobowiązani do przeprowadzenia oceny, czy wybrane przez Ciebie Produkty inwestycyjne lub usługi są dla Ciebie odpowiednie i ostrzeżenia Cię, jeśli z dostarczonych nam informacji wynika, że dany produkt lub usługa nie jest dla Ciebie odpowiedni(a). Decyzja o otwarciu konta i korzystaniu z naszych produktów lub usług należy do Ciebie. Twoim obowiązkiem jest zaznajomienie się z ryzykami związanymi z naszymi produktami i usługami."
@@ -7417,9 +7417,6 @@ msgstr "Klient profesjonalny"
 msgid "Professional Clients"
 msgstr "Klienci profesjonalni"
 
-msgid "Professional Trader"
-msgstr "Gracz profesjonalny"
-
 msgid "Professionals"
 msgstr "Specjaliści"
 
@@ -9488,7 +9485,7 @@ msgid "Tick Prediction"
 msgstr ""
 
 msgid "Ticks"
-msgstr ""
+msgstr "Najmniejsze zmiany ceny"
 
 msgid "Tier"
 msgstr "Poziom"
@@ -11086,6 +11083,12 @@ msgstr "Informujemy, że handel opcji binarnych oferowanych przez %1 nie jest pr
 msgid "You are buying the base currency and selling the quote currency."
 msgstr "Kupujesz walutę bazową i sprzedajesz walutę kwotowaną."
 
+msgid "You are categorised as a professional client."
+msgstr ""
+
+msgid "You are categorised as a retail client. Apply to be treated as a professional trader."
+msgstr ""
+
 msgid "You are expecting the base currency to fall in value so you can buy it back at a lower price and make profit."
 msgstr "Spodziewasz się, że waluta bazowa straci na wartości, więc będzie możliwy zakup po niższej cenie i odniesienie zysku."
 
@@ -11508,6 +11511,9 @@ msgstr "Twoje konto nie powinno być wykorzystywane jako rachunek bankowy i wsze
 
 msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
 msgstr "Nasz automatyczny system nie zdołał zweryfikować Twojego adresu. Możesz kontynuować, ale upewnij się, że Twoje dane adresowe są kompletne."
+
+msgid "Your application to be treated as a professional client is being processed."
+msgstr ""
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Twoja aplikacja zostanie sprawdzona przez nasz zespół ds. zgodności oraz zespół ds. marketingu. Po akceptacji umieścimy Cię na liście naszych  <a href='%1'>pośredników płatności</a>."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-13 00:02-0400\n"
+"PO-Revision-Date: 2018-06-14 05:02-0400\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -735,6 +735,9 @@ msgid "Account"
 msgstr ""
 
 msgid "Account Balance &mdash; Your account balance represents:"
+msgstr ""
+
+msgid "Account Categorisation"
 msgstr ""
 
 msgid "Account Closure"
@@ -1499,9 +1502,6 @@ msgstr ""
 msgid "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
 msgstr ""
 
-msgid "Be treated as a professional trader."
-msgstr "전문 트레이더로써 대우받으세요."
-
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr ""
 
@@ -1893,7 +1893,7 @@ msgid "Cashier password"
 msgstr "캐쉬어 비밀번호"
 
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
-msgstr ""
+msgstr "계약의 장벽/권리행사가격에 관해 수용 가능 수준으로 특정 제한이 적용될 수 있습니다. 일반적으로, 장벽/권리행사가격은 현재 기본 시장가 수준에서 크게 벗어나지도, 너무 근접하지도 않습니다."
 
 msgid "Change API Endpoint"
 msgstr "API 종점 교체"
@@ -2376,7 +2376,7 @@ msgid "Contracts"
 msgstr "계약"
 
 msgid "Contracts are not usually offered in the last hour of trade of any given market (for foreign exchange markets, the restriction may be extended up to 3 hours)."
-msgstr ""
+msgstr "일반적으로 주어진 시장의 거래의 마지막에 해당하는 시간에는 계약이 제공되지 않습니다(외환 시장의 경우, 3시간까지 연장될 수 있습니다)."
 
 msgid "Contracts bought"
 msgstr ""
@@ -2388,7 +2388,7 @@ msgid "Contracts for difference (CFDs) allow you to speculate on a number of mar
 msgstr ""
 
 msgid "Contracts may not expire on a weekend; therefore, the expiry date of a contract may be pushed back to the following Monday in the event of a contract expiry date falling on a Saturday or a Sunday."
-msgstr ""
+msgstr "주말에는 계약이 만료되지 않을 수 있습니다; 그러므로, 계약 만료일이 토요일이나 또는 일요일인 경우 계약만료일은 다가오는 월요일로 미루어질 수 있습니다."
 
 msgid "Contracts offered by Binary Investments (Europe) Ltd. have a minimum purchase price of USD/GBP/EUR 5."
 msgstr ""
@@ -2406,10 +2406,10 @@ msgid "Contracts will not usually be offered at odds under 0.05 to 1 (i.e. payou
 msgstr ""
 
 msgid "Contracts will not usually be offered during the first 10 minutes of market trade."
-msgstr ""
+msgstr "계약은 일반적으로 시장 거래 첫 10분간은 제공되지 않을 것입니다."
 
 msgid "Contracts will not usually be offered when the underlying market is at its intraday high or intraday low."
-msgstr ""
+msgstr "시장가격이 하루중 최고가 또는 최저가일 때에는 일반적으로 계약이 제공되지 않을 것입니다."
 
 msgid "Contribute to %1's open-source projects."
 msgstr "%1의 오픈 소스 프로젝트에 기여하세요."
@@ -2958,7 +2958,7 @@ msgid "Duration up to 7 days"
 msgstr "7일까지의 기간"
 
 msgid "During fast markets (i.e. periods of very fast market movements), contracts may be offered at prices more unfavourable than those offered in usual market conditions."
-msgstr ""
+msgstr "빠른 시장 (즉, 시장의 움직임이 아주 빠른 기간)에는, 일반적인 시장 조건보다 불리한 가격에 계약이 제공될 수 있습니다."
 
 msgid "During our application process, we may ask you for information about your background, experience as well your investment assets and earnings. We do not monitor on your behalf whether the amount of money you have sent to us or your profits or losses are consistent with that information. It is up to you to assess whether your investment resources are adequate for your investment activity with us and your risk appetite in the products and services you use."
 msgstr ""
@@ -5982,7 +5982,7 @@ msgid "Market is closed. Please try again later."
 msgstr ""
 
 msgid "Market prices are updated at most once per second.  For any given second, the market price will be updated to the first tick, if any, received in that particular second on the company data feed."
-msgstr ""
+msgstr "시장 가격은 최대 1초에 한번씩 업데이트 됩니다. 주어진 어느 초라도, 해당 시장 가격은 첫번째 째깍거림에 업데이트됩니다, 만약 데이터가 따로 있을 시 해당초에 업데이트된 회사의 데이터 피드로 업데이트 됩니다."
 
 msgid "Market volatility – Political, economic, or social instability may lead to more volatile financial markets that affect the prices of certain metals"
 msgstr ""
@@ -6000,7 +6000,7 @@ msgid "Marketing Project Coordinator"
 msgstr ""
 
 msgid "Marketing and Promotion"
-msgstr ""
+msgstr "마케팅 및 프로모션"
 
 msgid "Marketing and promotions"
 msgstr "마케팅 및 홍보"
@@ -7418,9 +7418,6 @@ msgstr ""
 msgid "Professional Clients"
 msgstr ""
 
-msgid "Professional Trader"
-msgstr ""
-
 msgid "Professionals"
 msgstr ""
 
@@ -8790,7 +8787,7 @@ msgid "The Company may from time to time inform you about changes on the website
 msgstr ""
 
 msgid "The Company may impose certain rules and restrictions in relation to the placing of market orders on this website. Such rules may change from time to time, according to market conditions and other factors. The following indicative rules are currently in place:"
-msgstr ""
+msgstr "본 회사는 이 웹사이트에 시장 주문을 배치함과 관련하여 관련 규정 및 제한을 도입할 수 있습니다. 이러한 규정은 시장 조건과 다른 요인에 따라 때때로 변경 될 수 있습니다. 이와 관련한 규칙은 현재 여기에서 확인할 수 있습니다."
 
 msgid "The Company may use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide;"
 msgstr ""
@@ -11087,6 +11084,12 @@ msgstr ""
 msgid "You are buying the base currency and selling the quote currency."
 msgstr ""
 
+msgid "You are categorised as a professional client."
+msgstr ""
+
+msgid "You are categorised as a retail client. Apply to be treated as a professional trader."
+msgstr ""
+
 msgid "You are expecting the base currency to fall in value so you can buy it back at a lower price and make profit."
 msgstr ""
 
@@ -11295,7 +11298,7 @@ msgid "You may not cancel or amend the level of your Stop and Limit Order prior 
 msgstr ""
 
 msgid "You may only open an account at this site on conditions that:"
-msgstr ""
+msgstr "귀하는 본 사이트를 통해 다음의 조건으로만 계좌를 개설할 수 있습니다:"
 
 msgid "You may revoke the current manager's access."
 msgstr ""
@@ -11508,6 +11511,9 @@ msgid "Your account should not be used as a banking facility and deposits should
 msgstr ""
 
 msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgstr ""
+
+msgid "Your application to be treated as a professional client is being processed."
 msgstr ""
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
@@ -11928,10 +11934,10 @@ msgid "years"
 msgstr ""
 
 msgid "you are not resident in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
-msgstr ""
+msgstr "귀하는 국제자금세탁방지기구로부터 전략 부족으로 분류된 코스타리카, 홍콩, 이스라엘, 저지, 말레이시아, 몰타, 미국 또는 다른 제한된 나라출신이 아닙니다."
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
-msgstr "당신은 21살 이상이 되어야 하는 에스토니아 거주자가 아닌 경우에는 18살 이상이어야합니다;"
+msgstr "귀하는 21살 이상이 되어야 하는 에스토니아 거주자가 아닌 경우에는 18살 이상이어야합니다;"
 
 msgid "you have read our privacy statement and hereby give us consent to process your personal information as outlined there;"
 msgstr "귀하는 저희의 개인정보보호정책을 읽었으며 이로써 저희가 귀하의 개인정보를 명시된 대로 처리할 것에 동의하는 바입니다."
@@ -11940,7 +11946,7 @@ msgid "you have read this Legal Terms and Conditions page in full and understood
 msgstr "귀하는 이 모든 법적 약관을 읽었고 금융 계약들을 본 약관에 따라 구입 및 판매할 것을 이해했습니다;"
 
 msgid "you have sufficient experience and knowledge in matters of financial trading to be capable of evaluating the merits and risks of acquiring financial contracts via this site and have done so without relying on any information contained in this site."
-msgstr ""
+msgstr "귀하는 해당 사이트를 통해 취득된 금융계약의 장점 및 위험을 평가할 수 있는 충분한 금융 거래적 경험 및 지식이 있으며 본 사이트에 포함되어 있는 어떠한 정보에도 의존하지 않고 경험해 왔습니다."
 
 msgid "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1"
 msgstr "{JAPAN ONLY} Affiliate Program T&C Section 1 Paragraph 1"
