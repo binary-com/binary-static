@@ -1,20 +1,15 @@
-const BinaryPjax       = require('../../../../base/binary_pjax');
-const Client           = require('../../../../base/client');
-const BinarySocket     = require('../../../../base/socket');
-const localize         = require('../../../../../_common/localize').localize;
-const State            = require('../../../../../_common/storage').State;
-const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
+const BinaryPjax   = require('../../../../base/binary_pjax');
+const Client       = require('../../../../base/client');
+const BinarySocket = require('../../../../base/socket');
+const localize     = require('../../../../../_common/localize').localize;
+const State        = require('../../../../../_common/storage').State;
 
 
 const professionalClient = (() => {
     let is_in_page = false;
 
     const onLoad = () => {
-        BinarySocket.wait('get_account_status').then((response) => {
-            if ((getPropertyValue(response, ['get_account_status', 'status']) || []).indexOf('professional') !== -1) {
-                BinaryPjax.loadPreviousUrl();
-                return;
-            }
+        BinarySocket.wait('get_account_status', 'landing_company').then(() => {
             init(Client.isAccountOfType('financial'), true);
         });
     };
@@ -33,9 +28,10 @@ const professionalClient = (() => {
             return;
         }
 
-        if (is_in_page && /professional_requested/.test(State.getResponse('get_account_status.status'))) {
+        const status = State.getResponse('get_account_status.status') || [];
+        if (is_in_page && /professional/.test(status)) {
             $('#loading').remove();
-            $('#processing').setVisibility(1);
+            $(`#${/professional_requested/.test(status) ? 'processing' : 'professional'}`).setVisibility(1);
             return;
         }
 

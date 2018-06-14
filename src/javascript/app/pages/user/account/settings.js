@@ -20,8 +20,13 @@ const Settings = (() => {
             }
 
             // Professional Client menu should only be shown to maltainvest accounts.
-            if ((Client.get('landing_company_shortcode') === 'maltainvest') && status.indexOf('professional') === -1) {
-                const text = /professional_requested/.test(status) ? 'Your application to be treated as a professional client is being processed.' : 'You are categorised as a retail client. Apply to be treated as a professional trader.';
+            if ((Client.get('landing_company_shortcode') === 'maltainvest')) {
+                let text = 'You are categorised as a retail client. Apply to be treated as a professional trader.';
+                if (status.indexOf('professional') !== -1) {
+                    text = 'You are categorised as a professional client.';
+                } else if (/professional_requested/.test(status)) {
+                    text = 'Your application to be treated as a professional client is being processed.';
+                }
                 $('#professional_client').setVisibility(1).find('p').text(localize(text));
             }
 

@@ -15,6 +15,9 @@ const Professional = () => (
             <div className='invisible' id='processing'>
                 <p>{it.L('Your application to be treated as a professional client is being processed.')}</p>
             </div>
+            <div className='invisible' id='professional'>
+                <p>{it.L('You are categorised as a professional client.')}</p>
+            </div>
 
             <form className='form gr-padding-10 invisible' id='frm_professional'>
                 <ProfessionalClient />
