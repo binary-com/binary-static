@@ -31,6 +31,7 @@ const professionalClient = (() => {
         const status = State.getResponse('get_account_status.status') || [];
         if (is_in_page && /professional/.test(status)) {
             $('#loading').remove();
+            $('#frm_professional').setVisibility(0);
             $(`#${/professional_requested/.test(status) ? 'processing' : 'professional'}`).setVisibility(1);
             return;
         }
@@ -49,16 +50,20 @@ const professionalClient = (() => {
         });
 
         $chk_professional.on('change', () => {
-            if ($chk_professional.is(':checked') && !$(popup_selector).length) {
-                $('body').append($('<div/>', { id: 'professional_popup', class: 'lightbox' }).append($popup_contents.clone().setVisibility(1)));
+            if ($chk_professional.is(':checked')) {
+                $error.text('').setVisibility(0);
 
-                const $popup = $(popup_selector);
-                $popup.find('#btn_accept, #btn_decline').off('click').on('click dblclick', function() {
-                    if ($(this).attr('data-value') === 'decline') {
-                        $chk_professional.prop('checked', false);
-                    }
-                    $popup.remove();
-                });
+                if (!$(popup_selector).length) {
+                    $('body').append($('<div/>', { id: 'professional_popup', class: 'lightbox' }).append($popup_contents.clone().setVisibility(1)));
+
+                    const $popup = $(popup_selector);
+                    $popup.find('#btn_accept, #btn_decline').off('click').on('click dblclick', function () {
+                        if ($(this).attr('data-value') === 'decline') {
+                            $chk_professional.prop('checked', false);
+                        }
+                        $popup.remove();
+                    });
+                }
             }
         });
 
@@ -74,16 +79,16 @@ const professionalClient = (() => {
                         BinarySocket.wait('get_settings').then((res) => {
                             BinarySocket.send(populateReq(res.get_settings)).then((response) => {
                                 if (response.error) {
-                                    $error.text(response.error.message).removeClass('invisible');
+                                    $error.text(response.error.message).setVisibility(1);
                                 } else {
                                     BinarySocket.send({get_account_status: 1}).then(() => {
-                                        BinaryPjax.loadPreviousUrl();
+                                        populateProfessionalClient(true);
                                     });
                                 }
                             });
                         });
                     } else {
-                        $error.text(localize('This field is required.')).removeClass('invisible');
+                        $error.text(localize('This field is required.')).setVisibility(1);
                     }
                 })
                 .setVisibility(1);
