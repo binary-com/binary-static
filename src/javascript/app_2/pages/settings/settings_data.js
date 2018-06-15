@@ -39,7 +39,7 @@ export const data = [
             {
                 title    : 'Cashier Password',
                 content  : 'Change the password used for deposits and withdrawals',
-                img_src  : '../images/trading_app/settings/ic-personal-details.svg',
+                img_src  : '../images/trading_app/settings/ic-cashier-password.svg',
                 Component: CashierPassword,
             },
             {
