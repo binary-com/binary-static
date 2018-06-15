@@ -12,6 +12,10 @@
         height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
         box-sizing: border-box;
         border-right: 1px solid $COLOR_GRAY;
+
+        @media (max-width: 1025px) {
+            height: calc(100vh - #{$HEADER_HEIGHT});
+        }
     }
     &__content {
         flex-grow: 1;
