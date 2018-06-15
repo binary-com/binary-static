@@ -177,8 +177,8 @@ export const init = (contracts, contracts_tree) => ReactDOM.render(
 /* eslint-enable react/no-render-return-value */
 
 Contracts.propTypes = {
-    contracts     : PropTypes.string,
-    contracts_tree: PropTypes.string,
+    contracts     : PropTypes.object,
+    contracts_tree: PropTypes.array,
 };
 
 export default init;
