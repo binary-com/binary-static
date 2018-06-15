@@ -1,16 +1,24 @@
 import React, { PureComponent } from 'react';
-import { SettingContentHeader } from '../components/setting_content_header.jsx';
+import PropTypes from 'prop-types';
+import ContentHeader from '../components/content_header.jsx';
 
 class PersonalDetails extends PureComponent {
     render() {
-        const { title, content } = this.props;
+        const { title, description } = this.props;
         return (
             <div className='settings__content_container'>
-                <SettingContentHeader title={title} content={content}/>
-                <div className='settings__content_form_container'></div>
+                <ContentHeader title={title} description={description} />
+                <div className='settings__content_form_container'>
+                    {/* content here */}
+                </div>
             </div>
         );
     }
 }
+
+PersonalDetails.propTypes = {
+    title      : PropTypes.string,
+    description: PropTypes.string,
+};
 
 export default PersonalDetails;

@@ -19,31 +19,33 @@ const Settings = ({ match, routes }) => {
             ? match.url.slice(0, -1)
             : match.url;
         return `${base}${path}`;
-    }
+    };
 
     return (
         <div className='settings container'>
             <div className='settings__sidebar'>
                 {
-                    data.map(section => {
-                        return (
-                            <div key={section.title}>
-                                <h2 className='settings__section_header'>{section.title}</h2>
-                                <hr className='settings__separator'/>
-                                <MenuList items={section.items.map(item => ({ ...item, path: getFullPath(item.Component) }))} />
-                            </div>
-                        );
-                    })
+                    data.map(section => (
+                        <div key={section.title}>
+                            <h2 className='settings__section_header'>{section.title}</h2>
+                            <hr className='settings__separator'/>
+                            <MenuList
+                                items={section.items.map(
+                                    item => ({ ...item, path: getFullPath(item.Component) })
+                                )}
+                            />
+                        </div>
+                    ))
                 }
             </div>
             <div className='settings__content'>
                 <Switch>
                     {
-                        all_items.map(({ Component, title, content }, i) => (
+                        all_items.map(({ Component, title, description }, i) => (
                             <Route
                                 key={i}
                                 path={getFullPath(Component)}
-                                render={() => <Component title={title} content={content} />}
+                                render={() => <Component title={title} description={description} />}
                             />
                         ))
                     }
@@ -52,7 +54,7 @@ const Settings = ({ match, routes }) => {
             </div>
         </div>
     );
-}
+};
 
 Settings.propTypes = {
     match : PropTypes.object,
