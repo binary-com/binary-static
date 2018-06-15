@@ -3,6 +3,7 @@ import PropTypes   from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import Url         from '../../../../_common/url';
 
+// TODO: use BinaryLink once it supports nested routes
 const MenuItem = ({ title, content, img_src, path }) => {
     return (
         <NavLink className='menuitem' to={path} activeClassName='menuitem--active'>
