@@ -13,19 +13,7 @@ export const MenuDrawer = () => (
                 <DrawerItem text={localize('Useful Resources')}/>
                 <DrawerItem text={localize('Login History')}/>
                 <hr />
-                <DrawerItems
-                    text={localize('Settings')}
-                    items={[
-                        { text: localize('Personal Detail') },
-                        { text: localize('Account Authentication') },
-                        { text: localize('Financial Assessment') },
-                        { text: localize('Professional Trader') },
-                        { text: localize('Self Exclusion') },
-                        { text: localize('Trading Limits') },
-                        { text: localize('Authorised Applications') },
-                        { text: localize('API Token') },
-                    ]}
-                />
+                <DrawerItem text={localize('Settings')} link_to='/settings' />
                 <DrawerItem text={localize('Purchase Confirmation')} />
                 <DrawerItem text={localize('Purchase Lock')} />
                 <DrawerItem text={localize('Dark Theme')} />

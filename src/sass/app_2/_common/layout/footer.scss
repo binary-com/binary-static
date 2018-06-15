@@ -1,14 +1,15 @@
 footer {
     position: fixed;
     bottom: 0;
-    padding: 5px 10px;
     width: 100%;
+    height: $FOOTER_HEIGHT;
     border-top: 1px solid #e9e9e9; /* stylelint-disable-line color-no-hex */
     background-color: $COLOR_WHITE;
     box-sizing: border-box;
     z-index: 1;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 
     .server-time {
         display: inline-flex;
