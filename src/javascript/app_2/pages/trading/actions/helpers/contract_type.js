@@ -133,8 +133,7 @@ const ContractType = (() => {
             config.durations              = buildDurationConfig(contract, config.durations);
             config.trade_types            = buildTradeTypesConfig(contract, config.trade_types);
             config.barriers               = buildBarriersConfig(contract, config.barriers);
-            config.forward_starting_dates =
-                buildForwardStartingConfig(contract.forward_starting_options) || config.forward_starting_dates;
+            config.forward_starting_dates = buildForwardStartingConfig(contract, config.forward_starting_dates);
 
             available_contract_types[type].config = config;
         });
