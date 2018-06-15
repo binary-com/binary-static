@@ -1,7 +1,7 @@
-import React from 'react';
+import React                       from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import MenuList from './components/menu_list.jsx';
+import PropTypes                   from 'prop-types';
+import MenuList                    from './components/menu_list.jsx';
 
 import data from './settings_data';
 
@@ -55,8 +55,8 @@ const Settings = ({ match, routes }) => {
 }
 
 Settings.propTypes = {
-    match   : PropTypes.object,
-    sections: PropTypes.array,
+    match : PropTypes.object,
+    routes: PropTypes.array,
 };
 
 export default Settings;

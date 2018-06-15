@@ -7,68 +7,68 @@ import Limits                 from './sections/limits.jsx';
 import LoginHistory           from './sections/login_history.jsx';
 import PersonalDetails        from './sections/personal_details.jsx';
 import SelfExclusion          from './sections/self_exclusion.jsx';
+import { localize }           from '../../../_common/localize';
 
-// TODO: localize strings
 export const data = [
     {
-        title: 'Profile',
+        title: localize('Profile'),
         items: [
             {
-                title    : 'Personal Details',
-                content  : 'View your personal information.',
+                title    : localize('Personal Details'),
+                content  : localize('View your personal information.'),
                 img_src  : '../images/trading_app/settings/ic-personal-details.svg',
                 Component: PersonalDetails,
             },
             {
-                title    : 'Financial Assessment',
-                content  : 'View your financial assessment settings',
+                title    : localize('Financial Assessment'),
+                content  : localize('View your financial assessment settings'),
                 img_src  : '../images/trading_app/settings/ic-financial-assesment.svg',
                 Component: FinancialAssessment,
             },
         ],
     },
     {
-        title: 'Security & Limits',
+        title: localize('Security & Limits'),
         items: [
             {
-                title    : 'Account Password',
-                content  : 'Change your main login password.',
+                title    : localize('Account Password'),
+                content  : localize('Change your main login password.'),
                 img_src  : '../images/trading_app/settings/ic-account-password.svg',
                 Component: AccountPassword,
             },
             {
-                title    : 'Cashier Password',
-                content  : 'Change the password used for deposits and withdrawals',
+                title    : localize('Cashier Password'),
+                content  : localize('Change the password used for deposits and withdrawals'),
                 img_src  : '../images/trading_app/settings/ic-cashier-password.svg',
                 Component: CashierPassword,
             },
             {
-                title    : 'Self Exclusion',
-                content  : 'Facility that allows you to set limits on your account.',
+                title    : localize('Self Exclusion'),
+                content  : localize('Facility that allows you to set limits on your account.'),
                 img_src  : '../images/trading_app/settings/ic-self-exclusion.svg',
                 Component: SelfExclusion,
             },
             {
-                title    : 'Limits',
-                content  : 'View your trading and withdrawal limits',
+                title    : localize('Limits'),
+                content  : localize('View your trading and withdrawal limits'),
                 img_src  : '../images/trading_app/settings/ic-limits.svg',
                 Component: Limits,
             },
             {
-                title    : 'Login History',
-                content  : 'View your login history',
+                title    : localize('Login History'),
+                content  : localize('View your login history'),
                 img_src  : '../images/trading_app/settings/ic-login-history.svg',
                 Component: LoginHistory,
             },
             {
-                title    : 'API Token',
-                content  : 'API token for third party applications',
+                title    : localize('API Token'),
+                content  : localize('API token for third party applications'),
                 img_src  : '../images/trading_app/settings/ic-api-token.svg',
                 Component: ApiToken,
             },
             {
-                title    : 'Authorized Applications',
-                content  : 'Manage your authorised applications',
+                title    : localize('Authorized Applications'),
+                content  : localize('Manage your authorised applications'),
                 img_src  : '../images/trading_app/settings/ic-authorised-applications.svg',
                 Component: AuthorizedApplications,
             },
