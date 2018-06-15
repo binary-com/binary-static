@@ -26,36 +26,28 @@
         &__text {
             font-size: 16px;
             font-weight: bold;
-            font-style: normal;
-            font-stretch: normal;
             line-height: 1.5;
-            letter-spacing: normal;
             color: $COLOR_LIGHT_BLACK;
             margin: 0px;
         }
     }
     &__content_container {
-        margin: 48px 24px 0px;
+        padding: 0 24px;
     }
     &__content_header_title {
         font-size: 20px;
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 1.25;
-        letter-spacing: normal;
         color: $COLOR_LIGHT_BLACK;
-        margin-bottom: 8px;
+        margin-bottom: 0;
     }
     &__content_header_description {
         font-size: 12px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 1.5;
-        letter-spacing: normal;
         color: $COLOR_LIGHT_BLACK;
-        margin-bottom: 16px;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
     }
     &__section_header {
         width: 100%;
