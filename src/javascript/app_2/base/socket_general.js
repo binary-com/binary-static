@@ -1,4 +1,5 @@
 import { action, flow }     from 'mobx';
+import { requestLogout }    from '../base/common';
 import WS                   from '../data/ws_methods';
 import Client               from '../../_common/base/client_base';
 import { setCurrencies }    from '../../_common/base/currency_base';
@@ -18,7 +19,7 @@ const BinarySocketGeneral = (() => {
         if (is_ready) {
             if (!Login.isLoginPages()) {
                 if (!Client.isValidLoginid()) {
-                    Client.sendLogoutRequest();
+                    requestLogout();
                     return;
                 }
                 WS.subscribeWebsiteStatus(ResponseHandlers.websiteStatus);
@@ -38,10 +39,10 @@ const BinarySocketGeneral = (() => {
                         sessionStorage.removeItem('active_tab');
                         // Dialog.alert({ id: 'authorize_error_alert', message: response.error.message });
                     }
-                    Client.sendLogoutRequest(is_active_tab);
+                    requestLogout();
                 } else if (!Login.isLoginPages() && !/authorize/.test(State.get('skip_response'))) {
                     if (response.authorize.loginid !== Client.get('loginid')) {
-                        Client.sendLogoutRequest(true);
+                        requestLogout();
                     } else {
                         Client.responseAuthorize(response);
                         setBalance(response.authorize.balance);
