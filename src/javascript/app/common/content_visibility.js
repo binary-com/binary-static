@@ -74,12 +74,17 @@ const ContentVisibility = (() => {
         const visible_classname = 'data-show-visible';
         const mt_company_rule   = 'mtcompany';
 
+        const map_account_type = {
+            'maltainvest': 'financial',
+        };
+
         document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str              = el.dataset.show;
             const { is_exclude, names } = parseAttributeString(attr_str);
             const rule_set              = new Set(names);
 
-            const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
+            const rule_set_has_current = rule_set.has(current_landing_company_shortcode) ||
+                Client.hasAccountType(map_account_type[names]);
             const rule_set_has_mt      = rule_set.has(mt_company_rule);
 
             let show_element = false;

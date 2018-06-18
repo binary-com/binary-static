@@ -74,7 +74,8 @@ const Header = () => (
                                         <div />
                                     </div>
                                     <div className='gr-9 gr-hide-m gr-hide-p binary-logo-text'>
-                                        <div />
+                                        <div data-show='-maltainvest' />
+                                        <span data-show='maltainvest' className='binary-type-logo-old'/>
                                     </div>
                                 </div>
                             </a>
