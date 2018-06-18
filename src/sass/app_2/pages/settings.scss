@@ -23,6 +23,9 @@
         @media (max-width: 1025px) {
             margin-left: $sidebar_tablet_width;
         }
+        @media (max-width: 768px) {
+            margin-left: 0;
+        }
     }
     &__content_sub_title {
         &__container {

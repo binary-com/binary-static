@@ -2,6 +2,7 @@ import React                       from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import PropTypes                   from 'prop-types';
 import Menu                        from './components/menu/menu.jsx';
+import MobileDropdown              from './components/menu/mobile_dropdown.jsx';
 
 import settings_data from './settings_data';
 
@@ -37,7 +38,9 @@ const Settings = ({ match, routes }) => {
                 <Menu data={data} />
             </div>
             <div className='mobile-only'>
-                mobile menu here
+                <MobileDropdown all_items={all_items}>
+                    <Menu data={data} />
+                </MobileDropdown>
             </div>
             <div className='settings__content'>
                 <Switch>

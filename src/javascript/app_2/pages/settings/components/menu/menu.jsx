@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MenuList  from './menu_list.jsx';
 
 const Menu = ({ data }) => (
-    <div className='settings__sidebar'>
+    <div className='settings__menu'>
         {
             data.map(section => (
                 <div key={section.title}>
