@@ -1,12 +1,12 @@
 @supports (display: grid) {
     #app_contents {
-        margin: 56px 0 40px;
+        margin: 49px 0 40px;
         overflow: auto; // prevent margin collapse
     }
     /* trade-app layout */
     #trade_container {
         position: relative;
-        padding: 14px 15px 0;
+        padding: 12px 12px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: 1fr;
@@ -20,6 +20,7 @@
             cq-context { // stylelint-disable-line selector-type-no-unknown
                 top: 0;
                 left: 0;
+                z-index: 0;
 
                 div.ciq-chart {
                     height: calc(100% - 50px);
@@ -51,7 +52,7 @@
         }
         @media (min-width: 769px) {
             .chart-container {
-                grid-column: col-start 1 / span 9;
+                grid-column: col-start 1 / span 10;
                 padding: 10px;
                 margin-left: -15px;
 
@@ -62,7 +63,7 @@
                 }
             }
             .sidebar-container {
-                grid-column: col-start 10 / span 3;
+                grid-column: col-start 11 / span 2;
                 grid-gap: 10px;
                 grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
                 transition: all 0.25s;
@@ -72,13 +73,19 @@
 
                     div.duration-container, div.amount-container {
                         display: grid;
-                        grid-column-gap: 15px;
+                        grid-gap: 8px;
                         grid-template-columns: 1fr;
                         grid-auto-columns: auto;
                     }
+                    div.endtime-container {
+                        display: grid;
+                        grid-gap: 8px;
+                        grid-template-columns: 1.5fr 1fr;
+                        margin-top: -8px;
+                    }
                     @media (min-width: 979px) {
                         div.duration-container {
-                            grid-template-columns: 1.5fr 1fr;
+                            grid-template-columns: 1fr 1.5fr;
                         }
                         div.amount-container {
                             grid-template-columns: 1fr 1.5fr;
@@ -93,7 +100,7 @@
                 position: absolute;
                 height: 100vh;
                 width: 100%;
-                left: calc(100% + 20px);
+                left: calc(100% + 40px);
                 transition: all 0.25s;
                 grid-column: col-start 11 / span 2;
             }
@@ -101,10 +108,10 @@
                 margin-right: 0;
 
                 .chart-container {
-                    grid-column: col-start 1 / span 7;
+                    grid-column: col-start 1 / span 8;
                 }
                 .sidebar-container {
-                    transform: translate(-70%);
+                    transform: translate(-100%);
                 }
                 .offset-container {
                     transform: translate(calc(-100% - 20px));
@@ -137,7 +144,7 @@
 }
 
 .shadow {
-    box-shadow: 0 2px 8px #f0f1f2; /* stylelint-disable-line color-no-hex */
+    box-shadow: 0 1px 0 0 $COLOR_GRAY;
 }
 
 // Helpers

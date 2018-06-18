@@ -12,13 +12,22 @@ class DrawerItem extends PureComponent {
     }
 
     render() {
-        const { link_to, text, icon } = this.props;
+        const { link_to, text, icon, custom_action } = this.props;
 
         return (
             <div className='drawer-item' onClick={this.drawerItemClicked}>
-                <BinaryLink to={link_to}>
-                    <span className={icon || undefined}>{text}</span>
-                </BinaryLink>
+                {custom_action ?
+                    <a href='javascript:;' onClick={custom_action}>
+                        <span className=
+                            {icon || undefined}
+                        >{text}
+                        </span>
+                    </a>
+                :
+                    <BinaryLink to={link_to}>
+                        <span className={icon || undefined}>{text}</span>
+                    </BinaryLink>
+              }
             </div>
         );
     }
@@ -26,6 +35,7 @@ class DrawerItem extends PureComponent {
 
 DrawerItem.propTypes = {
     collapseItems: PropTypes.func,
+    custom_action: PropTypes.func,
     href         : PropTypes.string,
     icon         : PropTypes.string,
     text         : PropTypes.string,

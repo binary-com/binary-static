@@ -14,6 +14,7 @@
             border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
             background: $COLOR_LIGHT_GRAY;
             box-sizing: border-box;
+            font-size: inherit;
 
             &:before {
                 margin: 0;
@@ -37,6 +38,7 @@
         height: 32px;
         font-size: 1rem;
         line-height: normal;
+        padding-left: 8px;
         color: $COLOR_BLACK;
         background-color: $COLOR_WHITE;
         background-image: none;

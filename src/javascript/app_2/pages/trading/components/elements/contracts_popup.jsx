@@ -111,7 +111,7 @@ class ContractsPopUp extends React.PureComponent {
                 <div
                     className={`contracts-popup-display ${this.state.is_list_visible ? 'clicked': ''}`}
                 >
-                    <i className={`contract-icon ic-${this.props.value}`} />
+                    <i className={`contract-icon ic-${this.props.value}--invert`} />
                     <span name={this.props.name} value={this.props.value}>
                         {getDisplayText(this.props.list, this.props.value)}
                     </span>

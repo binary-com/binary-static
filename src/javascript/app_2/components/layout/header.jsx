@@ -4,17 +4,10 @@ import AccountSwitcher     from '../elements/account_switcher.jsx';
 import {
     ToggleDrawer,
     DrawerItem }           from '../elements/drawer/index.jsx';
-import { requestLogout }   from '../../base/common';
 import { BinaryLink }      from '../../routes';
-import { localize }        from '../../../_common/localize';
 import Url                 from '../../../_common/url';
 import { AccountBalance }  from '../elements/account_balance.jsx';
 import { MenuDrawer }      from '../elements/menu_drawer.jsx';
-import Client              from '../../../_common/base/client_base';
-
-const DrawerFooter = () => (Client.isLoggedIn() && // TODO: update the UI
-    <a href='javascript:;' onClick={requestLogout}>{localize('Log out')}</a>
-);
 
 class Header extends React.PureComponent {
     render() {
@@ -25,7 +18,7 @@ class Header extends React.PureComponent {
                 <header className='shadow'>
                     <div className='menu-items'>
                         <div className='menu-left'>
-                            <ToggleDrawer alignment='left' footer={DrawerFooter}>
+                            <ToggleDrawer alignment='left'>
                                 <AccountSwitcher />
                                 <MenuDrawer />
                             </ToggleDrawer>
