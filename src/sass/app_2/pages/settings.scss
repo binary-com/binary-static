@@ -137,9 +137,6 @@
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_GRAY;
 
-        &--active {
-            border: 1px solid $COLOR_BLUE;
-        }
         .menuitem {
             height: 100%;
         }
@@ -154,6 +151,12 @@
         border: 1px solid $COLOR_GRAY;
         box-sizing: border-box;
         user-select: none;
+    }
+    &--open {
+        .mobile_dropdown__button {
+            border: 1px solid $COLOR_BLUE;
+            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+        }
     }
     .menuitem--active {
         display: none;
