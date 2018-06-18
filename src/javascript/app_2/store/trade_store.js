@@ -4,7 +4,7 @@ import {
 import ContractType        from '../pages/trading/actions/helpers/contract_type';
 import { 
     updateStore,
-    queryStringVariables } from '../pages/trading/actions/index';
+    query_string_variables } from '../pages/trading/actions/index';
 import { processPurchase } from '../pages/trading/actions/purchase';
 import URLHelper           from '../common/url_helper';
 import Client              from '../../_common/base/client_base';
@@ -16,7 +16,7 @@ export default class TradeStore {
         const queryParams = URLHelper.getQueryParams();
  
         // create query string by default values in trade_store if the param doesn't exist in query string.
-        queryStringVariables.filter(p => !queryParams.get(p)).forEach( key => {
+        query_string_variables.filter(p => !queryParams.get(p)).forEach( key => {
             if (this[key] && this[key] !== '') {
                 URLHelper.setQueryParam({ [key]: this[key] });
                 queryParams.set(key, this[key]);

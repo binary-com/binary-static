@@ -17,7 +17,7 @@ import * as StartDate     from './start_date';
 import * as Symbol        from './symbol';
 
 // list of trade's options that should be used in querstring of trade page url.
-export const queryStringVariables = [
+export const query_string_variables = [
     'amount', 'barrier_1', 'barrier_2', 'basis', 
     'contract_start_type', 'contract_type', 
     'contract_type', 'currency', 'duration', 
@@ -39,7 +39,7 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
 
                 // TODO move to proper file or place
                 // Add changes to queryString of the url
-                if (queryStringVariables.indexOf(key) !== -1) {
+                if (query_string_variables.indexOf(key) !== -1) {
                     URLHelper.setQueryParam({ [key]: new_state[key] });
                 }
 
