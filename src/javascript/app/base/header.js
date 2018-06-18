@@ -272,6 +272,7 @@ const Header = (() => {
                     'address_city',
                     'phone',
                     'tax_residence',
+                    'tax_identification_number',
                     ...Client.get('residence') === 'gb' ? 'address_postcode' : '',
                 ];
                 const get_settings = State.getResponse('get_settings');
