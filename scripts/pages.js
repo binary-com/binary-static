@@ -17,7 +17,7 @@ module.exports = [
     ['paymentagent/withdrawws',                 'app/cashier/paymentagent_withdraw',           'default',    'Payment Agent Withdrawal'],
 
     ['multi_barriers_trading',                  'app/trade/mb_trading',                        'full_width', 'Ladders'],
-    ['trading',                                 'app/trade/trading',                           'default',    'SmartTraders'],
+    ['trading',                                 'app/trade/trading',                           'default',    'SmartTrader'],
 
     ['new_account/japanws',                     'app/new_account/japan',                       'default',    'Real Money Account Opening',        'NOT-ja,en'],
     ['new_account/knowledge_testws',            'app/japan/knowledge_test',                    'default',    'Real Money Account Opening',        'NOT-ja,en'],
