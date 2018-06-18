@@ -132,11 +132,16 @@
 
     &__button {
         height: $button_height;
+        width: 100%;
+        box-sizing: border-box;
         margin-bottom: $button_menu_gap;
+        padding-right: 40px;
         background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_GRAY;
         position: relative;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
         .menuitem {
             height: 100%;
@@ -162,11 +167,13 @@
             color: $COLOR_BLUE;
         }
     }
-    .menuitem--active {
-        display: none;
-    }
-    .menuitem__img_container {
-        margin-left: 8px;
+    .menuitem {
+        &--active {
+            display: none;
+        }
+        &__img_container {
+            margin-left: 8px;
+        }
     }
     .settings__section_header {
         padding-left: 12px;
