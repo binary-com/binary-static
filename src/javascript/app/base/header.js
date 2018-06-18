@@ -273,7 +273,7 @@ const Header = (() => {
                     'phone',
                     'tax_residence',
                     'tax_identification_number',
-                    ...Client.get('residence') === 'gb' ? 'address_postcode' : '',
+                    ...(Client.get('residence') === 'gb' ? ['address_postcode'] : []),
                 ];
                 const get_settings = State.getResponse('get_settings');
                 return required_field.some(field => get_settings[field] === '');
