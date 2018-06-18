@@ -1,8 +1,4 @@
 .settings {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-
     $sidebar_width: 350px;
 
     &__sidebar {
@@ -36,7 +32,7 @@
         }
     }
     &__content_container {
-        padding: 0 24px;
+        padding: 15px 24px;
     }
     &__content_header_title {
         font-size: 20px;

@@ -33,8 +33,11 @@ const Settings = ({ match, routes }) => {
 
     return (
         <div className='settings container'>
-            <div className='settings__sidebar'>
+            <div className='settings__sidebar desktop-only'>
                 <Menu data={data} />
+            </div>
+            <div className='mobile-only'>
+                mobile menu here
             </div>
             <div className='settings__content'>
                 <Switch>
