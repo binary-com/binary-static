@@ -1,5 +1,6 @@
 .settings {
     $sidebar_width: 350px;
+    $sidebar_tablet_width: 250px;
 
     &__sidebar {
         width: $sidebar_width;
@@ -11,12 +12,17 @@
 
         @media (max-width: 1025px) {
             height: calc(100vh - #{$HEADER_HEIGHT});
+            width: $sidebar_tablet_width;
         }
     }
     &__content {
         flex-grow: 1;
         margin-left: $sidebar_width;
         background: $COLOR_WHITE;
+
+        @media (max-width: 1025px) {
+            margin-left: $sidebar_tablet_width;
+        }
     }
     &__content_sub_title {
         &__container {
@@ -88,28 +94,25 @@
         margin: 8px 8px 8px 24px;
     }
     &__content_container {
-        flex: 1;
+        flex-grow: 1;
         margin: 8px 0px;
+        overflow: hidden;
     }
     &__menu_name {
         font-size: 12px;
         height: 18px;
         font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
         line-height: 1.5;
-        letter-spacing: normal;
         color: $COLOR_LIGHT_BLACK;
     }
     &__menu_content {
         font-size: 10px;
         height: 15px;
-        opacity: 0.5;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
+        padding-right: 5px;
         line-height: 1.5;
-        letter-spacing: normal;
         color: $COLOR_LIGHT_BLACK;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 }
