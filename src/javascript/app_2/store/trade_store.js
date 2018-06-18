@@ -2,17 +2,39 @@ import {
     action,
     observable }           from 'mobx';
 import ContractType        from '../pages/trading/actions/helpers/contract_type';
-import { updateStore }     from '../pages/trading/actions/index';
+import { 
+    updateStore,
+    queryStringVariables } from '../pages/trading/actions/index';
 import { processPurchase } from '../pages/trading/actions/purchase';
+import URLHelper           from '../common/url_helper';
 import Client              from '../../_common/base/client_base';
 
 export default class TradeStore {
     @action.bound init() {
+
+        // TODO move to proper file or place
+        const queryParams = URLHelper.getQueryParams();
+ 
+        // create query string by default values in trade_store if the param doesn't exist in query string.
+        queryStringVariables.filter(p => !queryParams.get(p)).forEach( key => {
+            if (this[key] && this[key] !== '') {
+                URLHelper.setQueryParam({ [key]: this[key] });
+                queryParams.set(key, this[key]);
+            }
+        });
+
+        // update state values from query string 
+        [...queryParams].forEach(param => {
+            this[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
+        });
+        // End of the block
+
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
                 updateStore(this, ContractType.getContractCategories());
             }));
         }
+
     }
 
     @action.bound handleChange(e) {
@@ -20,6 +42,7 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
+
         updateStore(this, { [name]: (type === 'number' ? +value : value) }, true);
     }
 
