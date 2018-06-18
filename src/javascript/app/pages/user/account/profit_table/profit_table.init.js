@@ -123,7 +123,7 @@ const ProfitTableInit = (() => {
         pending               = false;
         current_batch         = [];
 
-        DateTo.attachDateToPicker(() => {
+        DateTo.attachDatePicker(['date_to'], () => {
             ProfitTableUI.cleanTableContent();
             $('.barspinner').setVisibility(1);
             transactions_received = 0;

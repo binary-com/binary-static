@@ -145,12 +145,47 @@ const StatementInit = (() => {
 
     const onLoad = () => {
         initPage();
-        DateTo.attachDateToPicker(() => {
+        DateTo.attachDatePicker(['date_to'], () => {
             StatementUI.clearTableContent();
             $('.barspinner').setVisibility(1);
             initPage();
         });
         ViewPopup.viewButtonOnClick('#statement-container');
+        initDownloadStatement();
+    };
+
+    const initDownloadStatement = () => {
+        const $container = $('#download_statement_container');
+
+        $('#download_statement_btn').off('click').on('click', (e) => {
+            e.preventDefault();
+
+            $('#statement-container').setVisibility(0);
+            $container.setVisibility(1);
+
+            DateTo.attachDatePicker(['download_to', 'download_from'], () => {
+                $('#request_statement_btn').off('click').on('click', (evt) => {
+                    evt.preventDefault();
+
+                    const date_from = DateTo.getDatePickerValue('download_from');
+                    const date_to   = DateTo.getDatePickerValue('download_to');
+
+                    if (!date_from || !date_to) return;
+
+                    BinarySocket.send({
+                        statement: 1,
+                        date_from,
+                        date_to,
+                    }).then((response) => {
+                        if (response.error) {
+                            $container.find('.error-msg').setVisibility(1);
+                        } else {
+                            $container.find('.success-msg').setVisibility(1);
+                        }
+                    });
+                });
+            });
+        });
     };
 
     return {

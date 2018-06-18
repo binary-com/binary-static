@@ -5,12 +5,17 @@ const dateValueChanged = require('../../../_common/common_functions').dateValueC
 const localize         = require('../../../_common/localize').localize;
 const toISOFormat      = require('../../../_common/string_util').toISOFormat;
 
+const getDatePickerValue = (selector) => {
+    const val = $(`#${selector}`).attr('data-value');
+    return val ? moment.utc(val).unix() + ((isJPClient() ? 15 : 24) * (60 * 60)) : 0;
+};
+
 const getDateToFrom = () => {
     const date_to_val = $('#date_to').attr('data-value');
     let date_to,
         date_from;
     if (date_to_val) {
-        date_to   = moment.utc(date_to_val).unix() + ((isJPClient() ? 15 : 24) * (60 * 60));
+        date_to   = getDatePickerValue('date_to');
         date_from = 0;
     }
     return {
@@ -19,29 +24,32 @@ const getDateToFrom = () => {
     };
 };
 
-const attachDateToPicker = (fncOnChange) => {
-    const id_date_to = '#date_to';
-    const $date_to   = $(id_date_to);
-    $date_to
-        .attr('data-value', toISOFormat(moment.utc()))
-        .change(function () {
-            if (!dateValueChanged(this, 'date')) {
-                return false;
-            }
-            $('.table-container').remove();
-            if (typeof fncOnChange === 'function') {
-                fncOnChange();
-            }
-            return true;
+const attachDatePicker = (selectors, fncOnChange) => {
+    selectors.forEach(selector => {
+        const id          = `#${selector}`;
+        const $datepicker = $(id);
+        $datepicker
+            .attr('data-value', toISOFormat(moment.utc()))
+            .change(function () {
+                if (!dateValueChanged(this, 'date')) {
+                    return false;
+                }
+                $('.table-container').remove();
+                if (typeof fncOnChange === 'function') {
+                    fncOnChange();
+                }
+                return true;
+            });
+        DatePicker.init({
+            selector: id,
+            maxDate : 0,
         });
-    DatePicker.init({
-        selector: id_date_to,
-        maxDate : 0,
+        if ($datepicker.attr('data-picker') !== 'native') $datepicker.val(localize('Today'));
     });
-    if ($date_to.attr('data-picker') !== 'native') $date_to.val(localize('Today'));
 };
 
 module.exports = {
+    attachDatePicker,
+    getDatePickerValue,
     getDateToFrom,
-    attachDateToPicker,
 };
