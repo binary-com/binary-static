@@ -18,7 +18,7 @@ class MobileDropdown extends React.PureComponent {
         });
     }
 
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps() {
         this.setState({
             is_open: false,
         });
@@ -57,6 +57,7 @@ class MobileDropdown extends React.PureComponent {
 
 MobileDropdown.propTypes = {
     all_items: PropTypes.array,
+    children : PropTypes.component,
 };
 
 export default MobileDropdown;

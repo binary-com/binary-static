@@ -19,7 +19,7 @@ const Settings = ({ match, routes }) => {
             ? match.url.slice(0, -1)
             : match.url;
         return `${base}/${path}`;
-    }
+    };
 
     // Add paths from this.props.routes to items
     const data = settings_data.map(section => ({
@@ -27,7 +27,7 @@ const Settings = ({ match, routes }) => {
         items: section.items.map(item => ({
             ...item,
             path: getAbsolutePath(item.Component),
-        }))
+        })),
     }));
 
     const all_items = data.reduce((all, section) => [...all, ...section.items], []);
