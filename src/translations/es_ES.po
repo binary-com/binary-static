@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-17 21:15-0400\n"
+"PO-Revision-Date: 2018-06-18T09:46:35+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -842,7 +842,7 @@ msgid "Add"
 msgstr "Añadir"
 
 msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
-msgstr ""
+msgstr "Agregue un +/- para definir el intervalo de tolerancia de la barrera, por ejemplo, +0,005 significa una barrera superior al punto de entrada en 0,005."
 
 msgid "Add funds"
 msgstr "Añadir fondos"
@@ -6415,10 +6415,10 @@ msgid "No open positions."
 msgstr "No hay posiciones abiertas."
 
 msgid "No payout if exit spot is above or equal to the upper barrier."
-msgstr ""
+msgstr "No hay pago si el punto de salida es superior o igual a la barrera superior."
 
 msgid "No payout if exit spot is below or equal to the lower barrier."
-msgstr ""
+msgstr "No hay pago si el punto de salida es inferior o igual a la barrera inferior."
 
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering which may have several effects on Clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of Clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
 msgstr "Nadie usará este sitio con el fin de blanquear dinero. La Empresa cuenta con los mejores procedimientos contra el lavado de dinero, incluyendo la revisión de todas las transacciones, lo que puede tener varios efectos sobre los clientes. La Empresa se reserva el derecho a negarse a hacer negocios, suspender o anular negocios o transacciones de los clientes que no acepten o no se adhieran a estas medidas contra el lavado de dinero. Los fondos para invertir no deben proceder de ningún tipo de actividad criminal. La Empresa tiene la obligación de informar a las autoridades pertinentes sobre transacciones sospechosas."
@@ -7100,6 +7100,9 @@ msgstr "Por favor elija una moneda"
 
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
 msgstr "Por favor complete el %1formulario de evaluación financiera%2 para aumentar el límite de retiro y operación de su cuenta."
+
+msgid "Please complete your %1personal details%2 before you proceed."
+msgstr ""
 
 msgid "Please complete your personal details before you proceed."
 msgstr "Por favor complete sus datos personales antes de continuar."
@@ -9892,9 +9895,6 @@ msgstr "True"
 msgid "Trust"
 msgstr "Confianza"
 
-msgid "Trusted by traders since 2000"
-msgstr "De confianza de los traders desde 2000"
-
 msgid "Try Binary Bot"
 msgstr "Pruebe Binary Bot"
 
@@ -10079,7 +10079,7 @@ msgid "Unless otherwise advised, we shall treat you as a Retail Client. You may 
 msgstr "A menos que se indique lo contrario, lo trataremos como Cliente Minorista. También puede solicitarnos por escrito el cambio de la categoría en la que ha sido clasificado y esto puede tener un efecto en el nivel de protección que se le otorga. Los Clientes Profesionales no entran dentro del alcance del Esquema de indemnización de inversores. Nos reservamos el derecho de aceptar o rechazar cualquier solicitud de cambio de clasificación."
 
 msgid "Unless proven to be wrong, our records shall be used as evidence of your dealings with us in connection with the margin trading services described in this Agreement. You agree to use our records as evidence in any such legal or regulatory proceedings and you agree to keep your own record of your dealings with us that will help us investigate any complaints or disputes. If the records used as evidence of your dealings with us are not originals, are in the form of diagrams or charts, or are system generated content, you will not object to the use of such records as evidence."
-msgstr ""
+msgstr "Nuestros registros se utilizarán como evidencia de la utilización por su parte de los servicios de operación de margen descritos en este Acuerdo, a menos que se demuestre que estén equivocados. Usted acepta utilizar nuestros registros como evidencia en cualquier procedimiento legal o regulatorio y acepta mantener registro propio de sus transacciones con nosotros, lo que nos ayudará a investigar cualquier queja o disputa. Si los registros utilizados como prueba de sus operaciones con nosotros no son originales, están en forma de diagramas o gráficos, o son contenido generado por sistema, usted no se opondrá al uso de dichos registros como prueba."
 
 msgid "Unlock Cashier"
 msgstr "Desbloquear cajero"
