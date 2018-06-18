@@ -47,6 +47,7 @@ class MobileDropdown extends React.PureComponent {
                             ))
                         }
                     </Switch>
+                    <span className='select-arrow' />
                 </div>
                 {is_open && <div className='mobile_dropdown__menu'>{children}</div>}
             </div>

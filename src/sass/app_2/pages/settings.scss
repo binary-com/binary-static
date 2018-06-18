@@ -124,18 +124,19 @@
     MOBILE DROPDOWN MENU
 */
 .mobile_dropdown {
-    $vert_margin: 5px;
-    $side_margin: 5px;
+    $top_margin: 10px;
+    $side_margin: 8px;
     $button_height: 50px;
-    $gap: 7px;
-    margin: $vert_margin $side_margin;
+    $button_menu_gap: 10px;
+    margin: $top_margin $side_margin 0;
 
     &__button {
         height: $button_height;
-        margin-bottom: $gap;
-        background: $COLOR_LIGHT_GRAY;
+        margin-bottom: $button_menu_gap;
+        background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_GRAY;
+        position: relative;
 
         .menuitem {
             height: 100%;
@@ -144,9 +145,9 @@
     &__menu {
         position: fixed;
         width: calc(100vw - #{$side_margin} * 2);
-        max-height: calc(100vh - #{$HEADER_HEIGHT} - #{$vert_margin} - #{$button_height} - #{$gap} - 10px);
+        max-height: calc(100vh - #{$HEADER_HEIGHT} - #{$top_margin} - #{$button_height} - #{$button_menu_gap} - 20px);
         overflow-y: auto;
-        background: $COLOR_LIGHT_GRAY;
+        background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_GRAY;
         box-sizing: border-box;
@@ -155,7 +156,9 @@
     &--open {
         .mobile_dropdown__button {
             border: 1px solid $COLOR_BLUE;
-            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+        }
+        .select-arrow.select-arrow { // to increase specificity without !IMPORTANT
+            transform: rotate(0deg);
         }
     }
     .menuitem--active {
@@ -173,5 +176,27 @@
     .settings__separator {
         margin-right: 0;
         margin-left: 0;
+    }
+    .select-arrow {
+        display: inline-block;
+        font-style: normal;
+        vertical-align: baseline;
+        text-align: center;
+        text-transform: none;
+        text-rendering: optimizeLegibility;
+        position: absolute;
+        pointer-events: none;
+        top: 40%;
+        right: 15px;
+        line-height: 1;
+        transition: transform 0.3s ease;
+        transform: rotate(180deg);
+        transform-origin: 45% 30%;
+        color: $COLOR_GRAY;
+
+        &:before {
+            content: '\002303';
+            font-size: 1.1rem;
+        }
     }
 }
