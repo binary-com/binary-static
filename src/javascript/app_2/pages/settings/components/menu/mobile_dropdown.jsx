@@ -57,7 +57,7 @@ class MobileDropdown extends React.PureComponent {
 
 MobileDropdown.propTypes = {
     all_items: PropTypes.array,
-    children : PropTypes.component,
+    children : PropTypes.element,
 };
 
 export default MobileDropdown;
