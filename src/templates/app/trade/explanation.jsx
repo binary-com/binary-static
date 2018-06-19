@@ -107,6 +107,13 @@ const Explanation = () => (
                 <p>{it.L('By purchasing the [_1]‘High-Low’[_2] contract, you’ll win the multiplier times the difference between the [_1]high[_2] and [_1]low[_2] over the duration of the contract.', '<strong>', '</strong>')}</p>
             </div>
 
+            <div id='winning_reset' className='invisible'>
+                <h3>{it.L('Winning the contract')}</h3>
+                <p>{it.L('If you select "Reset-Call", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time.')}</p>
+                <p>{it.L('If you select "Reset-Put", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time.')}</p>
+                <p>{it.L('If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don\'t win the payout.')}</p>
+            </div>
+
             <div id='winning_callputspread' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
                 <h4>{it.L('Call Spread')}</h4>
@@ -224,6 +231,7 @@ const Explanation = () => (
                 <p>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')}</p>
             </div>
+
             <div id='explain_lookbacklow' className='invisible'>
                 <h3>{it.L('High, Low and Close')}</h3>
                 <p>{it.L('The [_1]high[_2] is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
@@ -234,6 +242,7 @@ const Explanation = () => (
                 <p>{it.L('The [_1]start time[_2] begins when the contract is processed by our servers.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2].', '<strong>','</strong>')}</p>
             </div>
+
             <div id='explain_lookbackhigh' className='invisible'>
                 <h3>{it.L('High, Low and Close')}</h3>
                 <p>{it.L('The [_1]high[_2] is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
@@ -244,6 +253,7 @@ const Explanation = () => (
                 <p>{it.L('The [_1]start time[_2] begins when the contract is processed by our servers.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2].', '<strong>','</strong>')}</p>
             </div>
+
             <div id='explain_lookbackhighlow' className='invisible'>
                 <h3>{it.L('High, Low and Close')}</h3>
                 <p>{it.L('The [_1]high[_2] is the highest point ever reached by the market during the contract period.', '<strong>','</strong>')}</p>
@@ -253,6 +263,15 @@ const Explanation = () => (
                 <p>{it.L('The [_1]contract period[_2] is the period between the [_1]first tick[_2] (after start time) and the [_1]end time[_2].', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]start time[_2] begins when the contract is processed by our servers.', '<strong>','</strong>')}</p>
                 <p>{it.L('The [_1]end time[_2] is the selected number of minutes/hours after the [_1]start time[_2].', '<strong>','</strong>')}</p>
+            </div>
+
+            <div id='explain_reset' className='invisible'>
+                <h3>{it.L('Reset Time')}</h3>
+                <p>{it.L('At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot.')}</p>
+                <p>{it.L('The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>.')}</p>
+                <p>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>.')}</p>
+                <p>{it.L('The <strong>start time</strong> is when the contract is processed by our servers.')}</p>
+                <p>{it.L('The <strong>entry spot</strong> is the first tick after the contract is processed by our servers.')}</p>
             </div>
 
             <div id='explain_callputspread' className='invisible'>
