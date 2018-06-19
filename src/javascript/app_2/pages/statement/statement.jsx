@@ -2,6 +2,7 @@ import React              from 'react';
 import classnames         from 'classnames';
 import moment             from 'moment';
 import PropTypes          from 'prop-types';
+import StatementCard      from './components/statement_card.jsx';
 import CardList           from '../../components/elements/card_list.jsx';
 import DataTable          from '../../components/elements/data_table.jsx';
 import DatePicker         from '../../components/form/date_picker.jsx';
@@ -9,40 +10,17 @@ import { connect }        from '../../store/connect';
 import { localize }       from '../../../_common/localize';
 import Loading            from '../../../../templates/_common/components/loading.jsx';
 
-const StatementCard = ({ date, refid, desc, action, amount, payout, balance, className }) => (
-    <div className={classnames('statement-card', className)}>
-        <div className='statement-card__header'>
-            <span className='statement-card__date'>{date}</span>
-            <span className='statement-card__refid'>{refid}</span>
-        </div>
-        <div className='statement-card__body'>
-            <div className='statement-card__desc'>{desc}</div>
-            <div className='statement-card__row'>
-                <div className={classnames('statement-card__cell statement-card__amount', {
-                    'statement-card__amount--buy'       : action === 'Buy',
-                    'statement-card__amount--sell'      : action === 'Sell',
-                    'statement-card__amount--deposit'   : action === 'Deposit',
-                    'statement-card__amount--withdrawal': action === 'Withdrawal',
-                })}
-                >
-                    <span className='statement-card__cell-text'>
-                        {amount}
-                    </span>
-                </div>
-                <div className='statement-card__cell statement-card__payout'>
-                    <span className='statement-card__cell-text'>
-                        {payout}
-                    </span>
-                </div>
-                <div className='statement-card__cell statement-card__balance'>
-                    <span className='statement-card__cell-text'>
-                        {balance}
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-);
+const renderAmountCell = (data, data_index) => {
+    const parseStrNum = (str) => parseFloat(str.replace(',', '.'));
+    return (
+        <td
+            key={data_index}
+            className={`${data_index} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`}
+        >
+            {data}
+        </td>
+    );
+};
 
 const columns = [
     {
@@ -68,17 +46,7 @@ const columns = [
     {
         title     : localize('Credit/Debit'),
         data_index: 'amount',
-        renderCell: (data, data_index) => {
-            const parseStrNum = (str) => parseFloat(str.replace(',', '.'));
-            return (
-                <td
-                    key={data_index}
-                    className={`${data_index} ${(parseStrNum(data) >= 0) ? 'profit' : 'loss'}`}
-                >
-                    {data}
-                </td>
-            );
-        },
+        renderCell: renderAmountCell,
     },
     {
         title     : localize('Balance'),
@@ -193,25 +161,15 @@ class Statement extends React.PureComponent {
     }
 }
 
-StatementCard.propTypes = {
-    action   : PropTypes.string,
-    amount   : PropTypes.string,
-    balance  : PropTypes.string,
-    className: PropTypes.string,
-    date     : PropTypes.string,
-    desc     : PropTypes.string,
-    payout   : PropTypes.string,
-    refid    : PropTypes.string,
-};
-
 Statement.propTypes = {
-    data            : PropTypes.object,
+    data            : PropTypes.array,
     date_from       : PropTypes.string,
     date_to         : PropTypes.string,
+    is_loading      : PropTypes.bool,
+    server_time     : PropTypes.object,
     fetchNextBatch  : PropTypes.func,
     handleDateChange: PropTypes.func,
-    is_loading      : PropTypes.bool,
-    server_time     : PropTypes.string,
+    clearTable      : PropTypes.func,
 };
 
 export default connect(
