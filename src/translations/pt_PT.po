@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T03:12:43+0000\n"
+"PO-Revision-Date: 2018-06-19T06:48:58+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -1340,6 +1340,9 @@ msgstr "Pelo menos 1 ano de experiência é necessária para esta função"
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "Pelo menos cinco anos de experiência com marketing de afiliados, estratégias de posicionamento, desenvolvimento de negócio e outras competências estreitamente relacionadas"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr "Auditoria"
 
@@ -1480,9 +1483,6 @@ msgstr "Colocação do banner"
 
 msgid "Barrier"
 msgstr "Barreira"
-
-msgid "Barrier (%1)"
-msgstr "Barreira (%1)"
 
 msgid "Barrier Change"
 msgstr "Alteração de barreira"
@@ -4010,9 +4010,6 @@ msgstr "Alta"
 msgid "High Barrier"
 msgstr "Barreira Alta"
 
-msgid "High Barrier (%1)"
-msgstr "Barreira Alta (%1)"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr ""
 
@@ -4298,6 +4295,9 @@ msgstr "Caso um evento de força maior dure mais do que 30 dias úteis, a parte 
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "Se o <strong>preço de saída</strong> for igual à <strong>Barreira inferior</strong> OU à <strong>Barreira superior</strong>, você não receberá o prêmio."
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Se o <strong>preço de saída</strong> for igual à <strong>barreira</strong>, você não receberá o prêmio."
 
@@ -4468,6 +4468,12 @@ msgstr "Se você selecionar \"Ímpar\", você ganha o prêmio se o <strong>últi
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "Se você selecionar \"Superior\", você ganha o prêmio se o <strong>último dígito</strong> do último tique-taque for <strong>superior à sua previsão.</strong>"
+
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Se você selecionar \"Sobe\", você ganha o prêmio se o <strong>preço de saída</strong> for estritamente superior ao <strong>preço de entrada</strong>."
@@ -5747,9 +5753,6 @@ msgstr "Baixa"
 
 msgid "Low Barrier"
 msgstr "Barreira Baixa"
-
-msgid "Low Barrier (%1)"
-msgstr "Barreira Baixa (%1)"
 
 msgid "Low barrier"
 msgstr "Barreira Baixa"
@@ -7323,6 +7326,12 @@ msgstr "Preveja se o mercado terminará mais alto que o preço médio"
 msgid "Predict that the market will end lower than the average price"
 msgstr "Preveja se o mercado terminará mais baixo que o preço médio"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "Preveja se o mercado irá subir ou descer do seu nível atual"
 
@@ -7761,17 +7770,41 @@ msgstr "A revenda não está disponivel"
 msgid "Resale price"
 msgstr "Preço de revenda"
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr "Redefinir a senha da MT5"
 
 msgid "Reset Password"
 msgstr "Redefinir senha"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr "Redefinir senha"
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
 msgstr "Redefinir para as configurações originais"
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
+msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr ""
@@ -8238,6 +8271,9 @@ msgstr "Lamentamos, ocorreu um erro durante o processamento da sua conta."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Lamentamos, ocorreu um erro durante o processamento do seu pedido."
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr ""
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Lamentamos, este recurso está disponível somente para contas virtuais."
 
@@ -8684,6 +8720,12 @@ msgstr "O <strong>período do contrato</strong> é o período entre o <strong>mo
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "A <strong>hora do término</strong> do contrato é o número selecionado de minutos/horas após a <strong>hora de início</strong> (se inferior a um dia de duração), ou no final do dia de negociação (se tiver uma duração de um dia, ou superior)."
+
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "O <strong>preço de saída</strong> é o tique-taque mais recente na ou antes da <strong>hora final</strong>."
@@ -9183,6 +9225,9 @@ msgstr "O depósito mínimo necessário tiver sido feito pelo cliente e"
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "O preço de revenda indica o preço atual de mercado de um contrato. Os preços de revenda estão em uma base de melhores esforços e podem não estar disponíveis em todos os momentos após a compra. Veja a opção vender para obter mais detalhes sobre a venda de contratos antes do término."
 
+msgid "The reset time is %1"
+msgstr ""
+
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "O retorno é o dinheiro ganho quando o contrato vence (Veja \"Pagamento\")."
 
@@ -9261,6 +9306,9 @@ msgstr "Existem dois tipos de negociações Dentro/Fora:"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Existem dois tipos de negociações Acima/Abaixo:"
+
+msgid "There are two types of two types of reset trades:"
+msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "Há qualquer valor em dívida de você para nós; e/ou"

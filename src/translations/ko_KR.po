@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T03:12:30+0000\n"
+"PO-Revision-Date: 2018-06-19T06:48:35+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -1340,6 +1340,9 @@ msgstr ""
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr ""
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr ""
 
@@ -1479,9 +1482,6 @@ msgid "Banner placement"
 msgstr ""
 
 msgid "Barrier"
-msgstr ""
-
-msgid "Barrier (%1)"
 msgstr ""
 
 msgid "Barrier Change"
@@ -4010,9 +4010,6 @@ msgstr ""
 msgid "High Barrier"
 msgstr ""
 
-msgid "High Barrier (%1)"
-msgstr ""
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr ""
 
@@ -4298,6 +4295,9 @@ msgstr ""
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr ""
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr ""
 
@@ -4467,6 +4467,12 @@ msgid "If you select \"Odd\", you will win the payout if the <strong>last digit
 msgstr ""
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
+msgstr ""
+
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
 msgstr ""
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
@@ -5745,9 +5751,6 @@ msgid "Low"
 msgstr ""
 
 msgid "Low Barrier"
-msgstr ""
-
-msgid "Low Barrier (%1)"
 msgstr ""
 
 msgid "Low barrier"
@@ -7322,6 +7325,12 @@ msgstr ""
 msgid "Predict that the market will end lower than the average price"
 msgstr ""
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr ""
 
@@ -7760,16 +7769,40 @@ msgstr ""
 msgid "Resale price"
 msgstr ""
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr ""
 
 msgid "Reset Password"
 msgstr "비밀번호 재설정"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr ""
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
+msgstr ""
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
 msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
@@ -8237,6 +8270,9 @@ msgstr ""
 msgid "Sorry, an error occurred while processing your request."
 msgstr ""
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr ""
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr ""
 
@@ -8682,6 +8718,12 @@ msgid "The <strong>contract period</strong> is the period between the <strong>ne
 msgstr ""
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
+msgstr ""
+
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
 msgstr ""
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
@@ -9182,6 +9224,9 @@ msgstr ""
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr ""
 
+msgid "The reset time is %1"
+msgstr ""
+
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr ""
 
@@ -9258,6 +9303,9 @@ msgid "There are two types of In/Out trades:"
 msgstr ""
 
 msgid "There are two types of Up/Down trades:"
+msgstr ""
+
+msgid "There are two types of two types of reset trades:"
 msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"

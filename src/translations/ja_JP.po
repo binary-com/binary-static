@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T03:12:23+0000\n"
+"PO-Revision-Date: 2018-06-19T06:48:26+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -1356,6 +1356,9 @@ msgstr "このポジションには少なくとも1年の実務経験が必要�
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "アフィリエイトマーケティング、グロースハック、事業開発、その他関連スキルに関する5年以上の経験"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr "監査"
 
@@ -1495,9 +1498,6 @@ msgid "Banner placement"
 msgstr "バナーの配置"
 
 msgid "Barrier"
-msgstr "バリア価格"
-
-msgid "Barrier (%1)"
 msgstr "バリア価格"
 
 msgid "Barrier Change"
@@ -4033,9 +4033,6 @@ msgstr "高値"
 msgid "High Barrier"
 msgstr "上限バリア"
 
-msgid "High Barrier (%1)"
-msgstr "上限バリア"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr ""
 
@@ -4322,6 +4319,9 @@ msgstr "If force majeure events last for more than 30 business days, the Party n
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "<strong>判定レート</strong>が<strong>低バリア値</strong>または<strong>高バリア値</strong>のどちらかと同等であった場合、ペイアウトは獲得できません。"
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "<strong>判定レート</strong>が<strong>バリア値</strong>と同等であった場合、ペイアウトは獲得できません。"
 
@@ -4492,6 +4492,12 @@ msgstr "「奇数」を選択された場合、最後のtickの<strong>下一桁
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "「OVER」を選択された場合、最後のtickの<strong>下一桁</strong>が<strong>予測を超える</strong>とペイアウトを獲得いただけます。"
+
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "「アップ」を選択された場合、<strong>終値</strong>が<strong>エントリー価格</strong>より正確に高くなるとペイアウトを獲得いただけます。同値は条件を満たしていないと判定されます。"
@@ -5780,9 +5786,6 @@ msgid "Low"
 msgstr "安値"
 
 msgid "Low Barrier"
-msgstr "下限バリア"
-
-msgid "Low Barrier (%1)"
 msgstr "下限バリア"
 
 msgid "Low barrier"
@@ -7359,6 +7362,12 @@ msgstr "市場価格が平均価格よりも上回って終了するかを予測
 msgid "Predict that the market will end lower than the average price"
 msgstr "市場価格が平均価格よりも下回って終了するかを予測します"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "権利行使価格を上回るか、下回るかを予測します"
 
@@ -7797,17 +7806,41 @@ msgstr "満期までの2分は売却取引不可"
 msgid "Resale price"
 msgstr "売却価格"
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr "MT5パスワードをリセット"
 
 msgid "Reset Password"
 msgstr "パスワード再設定"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr "パスワードをリセットする"
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
 msgstr "初期設定にリセットする"
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
+msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr ""
@@ -8277,6 +8310,9 @@ msgstr "通信エラーが発生しましたので、再度ページの読み込
 msgid "Sorry, an error occurred while processing your request."
 msgstr "通信エラーが発生しましたので、再度ページの読み込みをしてください"
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr ""
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "申し訳ございません。この機能はデモ口座のみでご利用頂けます。"
 
@@ -8723,6 +8759,12 @@ msgstr "<strong>取引期間</strong>は、<strong>取引開始時間直後</str
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>取引期間</strong>は、取引期間開始時から判定時刻までとなります。購入・売却は<strong>判定時刻2分前</strong>まで可能です。判定時刻2分前から新規購入＆売却注文は行なえません。"
+
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>判定レート</strong>とは<strong>判定時刻時</strong>の市場価格のことです。"
@@ -9281,6 +9323,9 @@ msgstr "ボーナス付与に必要な最低金額以上を入金され、かつ
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "期限前の契約転売の詳細は「オプションの売却」からご覧いただけます。"
 
+msgid "The reset time is %1"
+msgstr ""
+
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "ペイアウトとは、トレードの予測が正しかった場合に得る金額のことです。（「払い戻し価格」の項目をご確認下さい）"
 
@@ -9364,6 +9409,9 @@ msgstr "TickトレードはIN/OUT 2つの取引タイプから選択："
 
 msgid "There are two types of Up/Down trades:"
 msgstr "TickトレードではUP/DOWN 2つの取引タイプから選択："
+
+msgid "There are two types of two types of reset trades:"
+msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "お客さまから当社への未払金があります"
