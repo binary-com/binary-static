@@ -24,6 +24,8 @@ const fullscreen_map = {
     fnc_exit : ['exitFullscreen',    'webkitExitFullscreen',    'mozCancelFullScreen',  'msExitFullscreen'],
 };
 
+
+
 class ToggleFullScreen extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -74,6 +76,18 @@ class ToggleFullScreen extends React.PureComponent {
     }
 }
 
+const Settings = () => (
+    <Popover
+        subtitle='Settings'
+        alignment='top-right'
+    >
+        <a
+            href='javascript:;'
+            className='ic-settings'
+        />
+    </Popover>
+);
+
 // Better to keep this class as a Component.
 // Because new 'server_time' props will be passed every second,
 // so it will force to render the PureComponent anyway.
@@ -98,6 +112,7 @@ class Footer extends React.Component {
                             </Popover>
                         ))}
                         <ToggleFullScreen />
+                        <Settings />
                     </div>
                 }
             </React.Fragment>
@@ -116,8 +131,8 @@ TogglePortfolioDrawer.propTypes = {
 };
 
 export default connect(
-    ({ main, ui }) => ({
-        server_time           : main.server_time,
+    ({ common, ui }) => ({
+        server_time           : common.server_time,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
     })

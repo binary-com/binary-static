@@ -56,7 +56,6 @@ const Duration = ({
         <Fieldset
             header={localize('Trade Duration')}
             icon='trade-duration'
-            tooltip={localize('Text for Duration goes here.')}
         >
             <Dropdown
                 list={expiry_list}
@@ -97,22 +96,25 @@ const Duration = ({
                     </div>
                 </React.Fragment> :
                 <React.Fragment>
-                    <Datepicker
-                        name='expiry_date'
-                        showTodayBtn
-                        minDate={min_date_expiry}
-                        onChange={onChange}
-                        is_nativepicker={is_nativepicker}
-                    />
-                    {is_same_day &&
-                        <TimePicker
+                    <div className='endtime-container'>
+                        <Datepicker
+                            name='expiry_date'
+                            showTodayBtn
+                            minDate={min_date_expiry}
                             onChange={onChange}
-                            name='expiry_time'
-                            value={expiry_time}
-                            placeholder='12:00 pm'
                             is_nativepicker={is_nativepicker}
                         />
-                    }
+                        {is_same_day &&
+                            <TimePicker
+                                onChange={onChange}
+                                is_align_right
+                                name='expiry_time'
+                                value={expiry_time}
+                                placeholder='12:00 pm'
+                                is_nativepicker={is_nativepicker}
+                            />
+                        }
+                    </div>
                 </React.Fragment>
             }
         </Fieldset>
@@ -140,8 +142,8 @@ Duration.propTypes = {
 };
 
 export default connect(
-    ({ main, trade }) => ({
-        server_time        : main.server_time,
+    ({ common, trade }) => ({
+        server_time        : common.server_time,
         expiry_type        : trade.expiry_type,
         expiry_date        : trade.expiry_date,
         expiry_time        : trade.expiry_time,

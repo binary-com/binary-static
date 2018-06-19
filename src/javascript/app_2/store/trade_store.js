@@ -1,24 +1,18 @@
 import {
     action,
-    observable }       from 'mobx';
-import ContractType    from '../pages/trading/actions/helpers/contract_type';
-import { updateStore } from '../pages/trading/actions/index';
-import Client          from '../../_common/base/client_base';
+    observable }           from 'mobx';
+import ContractType        from '../pages/trading/actions/helpers/contract_type';
+import { updateStore }     from '../pages/trading/actions/index';
+import { processPurchase } from '../pages/trading/actions/purchase';
+import Client              from '../../_common/base/client_base';
 
 export default class TradeStore {
-    time_interval = undefined;
-
     @action.bound init() {
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
                 updateStore(this, ContractType.getContractCategories());
             }));
         }
-    }
-
-    @action.bound dispose() {
-        clearInterval(this.time_interval);
-        this.time_interval = undefined;
     }
 
     @action.bound handleChange(e) {
@@ -28,6 +22,18 @@ export default class TradeStore {
         }
         updateStore(this, { [name]: (type === 'number' ? +value : value) }, true);
     }
+
+    @action.bound onPurchase(proposal_id, price) {
+        if (proposal_id) {
+            processPurchase(proposal_id, price).then(action((response) => {
+                updateStore(this, { purchase_info: response });
+            }));
+        }
+    }
+
+    // Control values
+    @observable is_purchase_enabled = false;
+    @observable is_trade_enabled    = false;
 
     // Underlying
     @observable symbol;
@@ -70,6 +76,7 @@ export default class TradeStore {
 
     // Purchase
     @observable proposal_info = {};
+    @observable purchase_info = {};
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [

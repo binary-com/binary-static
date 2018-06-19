@@ -1,47 +1,27 @@
 import React from 'react';
-import PerfectScrollbar    from 'react-perfect-scrollbar';
-import { localize }        from '../../../_common/localize';
-import { DrawerItems, DrawerItem }         from '../elements/drawer/index.jsx';
-import LanguageSwitcher    from '../elements/language_switcher.jsx';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import { localize } from '../../../_common/localize';
+import { DrawerItem } from '../elements/drawer/index.jsx';
+import { requestLogout } from '../../base/common';
+import Client from '../../../_common/base/client_base';
 
 export const MenuDrawer = () => (
     <div className='drawer-items-container'>
         <PerfectScrollbar>
             <div className='list-items-container'>
-                <DrawerItems
-                    text={localize('Account Settings')}
-                    items={[
-                        { text: localize('Personal Detail') },
-                        { text: localize('Account Authentication') },
-                        { text: localize('Financial Assessment') },
-                        { text: localize('Professional Trader') },
-                    ]}
-                />
-                <DrawerItems
-                    text={localize('Security Settings')}
-                    items={[
-                        { text: localize('Self Exclusion') },
-                        { text: localize('Trading Limits') },
-                        { text: localize('Authorised Applications') },
-                        { text: localize('API Token') },
-                    ]}
-                />
-                <DrawerItems
-                    text={localize('Trading History')}
-                    items={[
-                        { text: localize('Portfolio') },
-                        { text: localize('Profit Table') },
-                        { text: localize('Statement'), link_to: '/statement' },
-                    ]}
-                />
-                <DrawerItem text={localize('Cashier')} />
-                <hr />
-                <DrawerItem text={localize('Forgot Password')}/>
                 <DrawerItem text={localize('Manage Password')} />
                 <DrawerItem text={localize('Useful Resources')}/>
                 <DrawerItem text={localize('Login History')}/>
                 <hr />
-                <LanguageSwitcher />
+                <DrawerItem text={localize('Settings')} link_to='/settings' />
+                <DrawerItem text={localize('Purchase Confirmation')} />
+                <DrawerItem text={localize('Purchase Lock')} />
+                <DrawerItem text={localize('Dark Theme')} />
+                <hr />
+                <DrawerItem text={localize('Contact Us')}/>
+                {Client.isLoggedIn() &&
+                    <DrawerItem text={localize('Logout')} custom_action={requestLogout}/>
+                }
             </div>
         </PerfectScrollbar>
     </div>

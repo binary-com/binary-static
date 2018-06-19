@@ -17,13 +17,13 @@
         cursor: pointer;
 
         &::placeholder {
-            color: #b0b3bf; /* stylelint-disable-line color-no-hex */
+            color: $COLOR_GRAY;
         }
         &:hover {
-            border-color: #4c5794; /* stylelint-disable-line color-no-hex */
+            border-color: $COLOR_GRAY;
         }
         &.active {
-            border-color: #4c5794; /* stylelint-disable-line color-no-hex */
+            border-color: $COLOR_BLUE;
         }
     }
     .time-picker-dropdown {
@@ -52,6 +52,9 @@
                 }
             }
         }
+        &.from-right {
+            right: 0;
+        }
         .time-picker-panel {
             height: 0;
             background: $COLOR_WHITE;
@@ -73,7 +76,7 @@
                 cursor: pointer;
             }
             .placeholder {
-                color: #b0b3bf; /* stylelint-disable-line color-no-hex */
+                color: $COLOR_GRAY;
             }
         }
         .time-picker-selector {
@@ -104,16 +107,16 @@
                     cursor: pointer;
 
                     &:hover {
-                        background: #f2f3f8; /* stylelint-disable-line color-no-hex */
+                        background: $COLOR_GRAY;
                         color: $COLOR_BLACK;
 
                         &.selected {
-                            background: #4c5794; /* stylelint-disable-line color-no-hex */
+                            background: $COLOR_BLUE;
                             color: $COLOR_WHITE;
                         }
                     }
                     &.selected {
-                        background: #4c5794; /* stylelint-disable-line color-no-hex */
+                        background: $COLOR_BLUE;
                         color: $COLOR_WHITE;
                     }
                 }

@@ -1,14 +1,28 @@
 import moment from 'moment';
 
-export const momentDateTime = (date, time) => {
-    const moment_date = moment.utc(date);
-    const arr_time    = ((time.split(' ') || [])[0] || '').split(':');
-    if (arr_time.length > 1) {
-        moment_date.hour(arr_time[0]).minute(arr_time[1]);
-    }
-    return moment_date.utc();
-};
+/**
+ * Convert epoch to moment object
+ * @param  {Number} epoch
+ * @return {moment} the moment object of provided epoch
+ */
+const toMoment = epoch => moment.unix(epoch).utc();
 
-export const convertDateTimetoUnix = (date, time) => momentDateTime(date, time).unix();
+/**
+ * Set specified time on moment object
+ * @param  {moment} moment_obj  the moment to set the time on
+ * @param  {String} time        12 hours format
+ * @return {moment} a new moment object of result
+ */
+const setTime = (moment_obj, time) => (
+    moment.utc(`${moment_obj.format('L')} ${time}`, 'L LT') // TODO: use 24 hours format once there is a new design for time_picker
+);
+
+/**
+ * return the unix value of provided epoch and time
+ * @param  {Number} epoch  the date to update with provided time
+ * @param  {String} time   the time to set on the date
+ * @return {Number} unix value of the result
+ */
+export const convertToUnix = (epoch, time) => setTime(toMoment(epoch), time).unix();
 
 export const toGMTFormat = (time) => moment(time || undefined).utc().format('YYYY-MM-DD HH:mm:ss [GMT]');
