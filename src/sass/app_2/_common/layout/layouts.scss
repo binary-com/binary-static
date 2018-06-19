@@ -113,6 +113,11 @@
                 }
             }
         }
+        @media (max-width: 1125px) {
+            .sidebar-container {
+                grid-column: col-start 10 / span 3;
+            }
+        }
     }
 }
 
