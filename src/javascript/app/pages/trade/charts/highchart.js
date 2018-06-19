@@ -6,6 +6,7 @@ const Callputspread    = require('../../trade/callputspread');
 const Defaults         = require('../../trade/defaults');
 const GetTicks         = require('../../trade/get_ticks');
 const Lookback         = require('../../trade/lookback');
+const Reset            = require('../../trade/reset');
 const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
 const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
@@ -68,7 +69,7 @@ const Highchart = (() => {
         exit_tick_time  = parseInt(contract.exit_tick_time);
         exit_time       = parseInt(is_sold && sell_time < end_time ? sell_spot_time : exit_tick_time || end_time);
         underlying      = contract.underlying;
-        prev_barriers    = [];
+        prev_barriers   = [];
     };
 
     // initialize the chart only once with ticks or candles data
@@ -177,6 +178,7 @@ const Highchart = (() => {
     const handleResponse = (response) => {
         const type  = response.msg_type;
         const error = response.error;
+
         if (/history|candles|tick|ohlc/.test(type) && !error) {
             options       = { title: contract.display_name };
             options[type] = response[type];
@@ -234,6 +236,10 @@ const Highchart = (() => {
                         // but are sold before the start time don't show start time
                         if (!is_sold || (is_sold && sell_time && sell_time > start_time)) {
                             drawLineX({ value: start_time });
+                        }
+
+                        if (Reset.isReset(contract.contract_type)) {
+                            drawResetTimeLine();
                         }
                     });
                 }
@@ -374,27 +380,44 @@ const Highchart = (() => {
         }
     };
 
+    const drawResetTimeLine = () => {
+        const { reset_time } = contract; // use epoch to draw non-ticks reset_time
+        if (!reset_time) return;
+        drawLineX({
+            value: parseInt(reset_time),
+            color: '#000',
+        });
+    };
+
     const drawBarrier = () => {
         if (chart.yAxis[0].plotLinesAndBands.length === 0) {
-            const {contract_type, barrier, high_barrier, low_barrier} = contract;
+            const { barrier, contract_type, entry_spot, high_barrier, low_barrier } = contract;
             if (barrier) {
                 prev_barriers[0] = barrier; // Batman like the kids who "Cache".
                 if (Lookback.isLookback(contract_type)) {
                     const label = Lookback.getBarrierLabel(contract_type);
-                    addPlotLine({ id: 'barrier',      value: +barrier,      label: localize(`${label} ([_1])`, [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
+                    addPlotLine({ id: 'barrier',      value: +barrier,      label: `${localize(`${label}`)} (${addComma(barrier)})`,           dashStyle: 'Dot'   }, 'y');
+                } else if (Reset.isReset(contract_type)) {
+                    if (Reset.isNewBarrier(entry_spot, barrier)) {
+                        addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot',   textBottom: contract_type !== 'RESETCALL', x: -60, align: 'right' }, 'y');
+                        addPlotLine({ id: 'reset_barrier', value: +barrier,    label: `${localize('Reset Barrier')} (${addComma(barrier)})`, dashStyle: 'Solid', textBottom: contract_type === 'RESETCALL', x: -60, align: 'right' }, 'y');
+                    } else {
+                        addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot', x: -60, align: 'right' }, 'y');
+
+                    }
                 } else {
-                    addPlotLine({ id: 'barrier',      value: +barrier,      label: localize('Barrier ([_1])', [addComma(barrier)]),           dashStyle: 'Dot' }, 'y');
+                    addPlotLine({ id: 'barrier',      value: +barrier,      label: `${localize('Barrier')} (${addComma(barrier)})`,            dashStyle: 'Dot' },   'y');
                 }
             } else if (high_barrier && low_barrier) {
                 prev_barriers[1] = high_barrier;
                 prev_barriers[0] = low_barrier;
                 if (Lookback.isLookback(contract_type)) {
                     const [high_label, low_label] = Lookback.getBarrierLabel(contract_type);
-                    addPlotLine({ id: 'high_barrier', value: +high_barrier, label: localize(`${high_label} ([_1])`, [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
-                    addPlotLine({ id: 'low_barrier',  value: +low_barrier,  label: localize(`${low_label} ([_1])`, [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
+                    addPlotLine({ id: 'high_barrier', value: +high_barrier, label: `${localize(`${high_label}`)} (${addComma(high_barrier)})`, dashStyle: 'Dot' }, 'y');
+                    addPlotLine({ id: 'low_barrier',  value: +low_barrier,  label: `${localize(`${low_label}`)} (${addComma(low_barrier)})`,   dashStyle: 'Dot', textBottom: true }, 'y');
                 } else {
-                    addPlotLine({ id: 'high_barrier', value: +high_barrier, label: localize('High Barrier ([_1])', [addComma(high_barrier)]), dashStyle: 'Dot' }, 'y');
-                    addPlotLine({ id: 'low_barrier',  value: +low_barrier,  label: localize('Low Barrier ([_1])', [addComma(low_barrier)]),   dashStyle: 'Dot', textBottom: true }, 'y');
+                    addPlotLine({ id: 'high_barrier', value: +high_barrier, label: `${localize('High Barrier')} (${addComma(high_barrier)})`,  dashStyle: 'Dot' }, 'y');
+                    addPlotLine({ id: 'low_barrier',  value: +low_barrier,  label: `${localize('Low Barrier')} (${addComma(low_barrier)})`,    dashStyle: 'Dot', textBottom: true }, 'y');
                 }
             }
         }
@@ -402,9 +425,7 @@ const Highchart = (() => {
 
     // Update barriers if needed.
     const updateBarrier = () => {
-        const barrier      = contract.barrier;
-        const high_barrier = contract.high_barrier;
-        const low_barrier  = contract.low_barrier;
+        const { barrier, high_barrier, low_barrier } = contract;
         // Update barrier only if it doesn't equal previous value
         if ( barrier && barrier !== prev_barriers[0] ) { // Batman: Good boy!
             prev_barriers[0] = barrier;
@@ -632,6 +653,9 @@ const Highchart = (() => {
             } else {
                 last.update(ohlc, true);
             }
+        }
+        if (Reset.isReset(contract.contract_type)) {
+            drawResetTimeLine();
         }
     };
 

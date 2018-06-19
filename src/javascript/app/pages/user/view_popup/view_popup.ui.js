@@ -1,4 +1,4 @@
-const setViewPopupTimer = require('../../../base/clock').setViewPopupTimer;
+const setExternalTimer  = require('../../../base/clock').setExternalTimer;
 const BinarySocket      = require('../../../base/socket');
 const getHighestZIndex  = require('../../../../_common/utility').getHighestZIndex;
 
@@ -40,7 +40,7 @@ const ViewPopupUI = (() => {
     const cleanup = (is_close) => {
         forgetStreams();
         forgetChartStreams();
-        setViewPopupTimer(null);
+        setExternalTimer(null);
         closeContainer();
         init();
         if (typeof triggerOnClose === 'function') {

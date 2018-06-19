@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-18T09:47:44+0000\n"
+"PO-Revision-Date: 2018-06-19T06:49:09+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1338,6 +1338,9 @@ msgstr "Для данной позиции необходим минимум 1 �
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "Минимум пять лет опыта в области партнёрского маркетинга, увеличения потенциала компании, развития бизнеса и схожих навыков"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr "Аудит"
 
@@ -1478,9 +1481,6 @@ msgstr "Размещение баннера"
 
 msgid "Barrier"
 msgstr "Барьер"
-
-msgid "Barrier (%1)"
-msgstr "Барьер (%1)"
 
 msgid "Barrier Change"
 msgstr "Изменение барьера"
@@ -1774,7 +1774,7 @@ msgid "By clicking OK, you confirm that you have read and accepted Terms & Condi
 msgstr "Нажав OK, Вы подтвердите, что прочитали и приняли Правила и условия."
 
 msgid "By default, all clients are treated as retail. Do you prefer to be treated as a professional client if you match the necessary criteria?"
-msgstr "По умолчанию все клиенты считаются розничными. Вы хотите, чтобы Вас считали профессиональным клиентом, в случае соответствия необходимым критериям?"
+msgstr "По умолчанию все клиенты считаются индивидуальными. Вы хотите, чтобы Вас считали профессиональным клиентом, в случае соответствия необходимым критериям?"
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "По умолчанию, система умного распределения поступающих ордеров гарантирует, что в верхней части стакана котировок всегда находится лучшая цена бид и цена предложения, предоставленные конкурирующими поставщиками ликвидности. Тем не менее, при определённом уровне рыночной ликвидности данное положение может измениться и наиболее важным фактором станет сама возможность исполнения."
@@ -4008,9 +4008,6 @@ msgstr "Макс."
 msgid "High Barrier"
 msgstr "Верхний барьер"
 
-msgid "High Barrier (%1)"
-msgstr "Верхний барьер (%1)"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Контракты Высокий тик/Низкий тик имеют длительность пять тиков."
 
@@ -4296,6 +4293,9 @@ msgstr "Если форс-мажорные обстоятельства длят
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "Если <strong>последняя котировка</strong> равна <strong>нижнему бартеру</strong> или <strong>верхнему барьеру</strong>, Вы не получаете прибыли."
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Если <strong>котировка на выходе</strong> совпадёт с <strong>барьером</strong>, Вы не получите прибыли."
 
@@ -4466,6 +4466,12 @@ msgstr "Если Вы выбираете \"Нечётное число\", Вы �
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "Если Вы выбираете \"Больше\", Вы выигрываете, если <strong>последняя десятичная</strong> последней котировки будет <strong>больше Вашего прогноза.</strong>"
+
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Если Вы выбираете \"Выше\", Вы выигрываете, если <strong>выходная котировка</strong> строго выше, чем <strong>входная котировка</strong>."
@@ -5744,9 +5750,6 @@ msgstr "Мин."
 
 msgid "Low Barrier"
 msgstr "Нижний Барьер"
-
-msgid "Low Barrier (%1)"
-msgstr "Нижний Барьер (%1)"
 
 msgid "Low barrier"
 msgstr "Нижний барьер"
@@ -7320,6 +7323,12 @@ msgstr "Предскажите, закроется ли контракт выш�
 msgid "Predict that the market will end lower than the average price"
 msgstr "Сделайте прогноз, закроется ли контракт ниже средней цены"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "Сделайте прогноз, упадет или поднимется цена относительно текущего уровня"
 
@@ -7758,17 +7767,41 @@ msgstr "Продажа не предлагается"
 msgid "Resale price"
 msgstr "Цена перепродажи"
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr "Изменить пароль MT5"
 
 msgid "Reset Password"
 msgstr "Изменить пароль"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr "Переустановка пароля"
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
 msgstr "Восстановить исходные настройки"
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
+msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Граждане стран, перечисленных FATF (Группой разработки финансовых мер борьбы с отмыванием денег) по причине нормативно-правового регулирования, не могут открыть счёт в компании Binary Investments (Europe) Ltd."
@@ -8235,6 +8268,9 @@ msgstr "Извините, произошла ошибка."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Извините, при обработке Вашего запроса произошла ошибка."
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr ""
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Извините, эта опция доступна только для демо-счетов."
 
@@ -8681,6 +8717,12 @@ msgstr "<strong>Период действия контракта</strong> – э
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Временем окончания</strong> является момент по истечении выбранного количества минут или часов после <strong>начала контракта</strong> (если контракт меньше дня по продолжительности) или момент окончания торгового дня (если контракт дольше одного дня по продолжительности)."
+
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>Выходной котировкой</strong> считается последний тик на момент или до <strong>момента окончания</strong> контракта."
@@ -9180,6 +9222,9 @@ msgstr "Клиент внес минимальный требуемый депо
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "Цена перепродажи показывает настоящую рыночную цену контракта. Эта цена основана на лучшем возможном предложении и не всегда может быть предложена после покупки контракта. Ознакомьтесь с термином \"Продажа опциона\" для получения подробной информации относительно досрочной продажи контрактов."
 
+msgid "The reset time is %1"
+msgstr ""
+
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "Прибыль – это сумма, которую трейдер получает по окончании контракта (см.\"Выплата\")."
 
@@ -9257,6 +9302,9 @@ msgstr "Существует два типа контрактов Внутри/�
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Выделяют два типа контрактов Вверх/Вниз:"
+
+msgid "There are two types of two types of reset trades:"
+msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "с Вашей стороны имеется задолженность перед нами; и/или"

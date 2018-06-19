@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-18T09:48:34+0000\n"
+"PO-Revision-Date: 2018-06-19T06:49:56+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1338,6 +1338,9 @@ msgstr "มีประสบการณ์อย่างน้อย 1 ปี
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "มีประสบการณ์อย่างน้อย 5 ปี ในการทำการตลาดกับพันธมิตร การทำให้ธุรกิจเติบโตโดยเทคนิคใหม่ๆ การพัฒนาธุรกิจ และทักษะอื่นๆ ที่เกี่ยวข้อง"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr "ตรวจสอบ"
 
@@ -1478,9 +1481,6 @@ msgstr "การจัดวางแบนเนอร์"
 
 msgid "Barrier"
 msgstr "Barrier"
-
-msgid "Barrier (%1)"
-msgstr "Barrier (%1)"
 
 msgid "Barrier Change"
 msgstr "ค่า Barrier เปลี่ยนแปลง"
@@ -4008,9 +4008,6 @@ msgstr "สูง"
 msgid "High Barrier"
 msgstr "Barrier สูง"
 
-msgid "High Barrier (%1)"
-msgstr "Barrier สูง (%1)"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "สัญญาราคาสูง/ราคาต่ำมีระยะเวลาที่แน่นอนเพียง 5 ช่วงราคา"
 
@@ -4296,6 +4293,9 @@ msgstr "หากเหตุการณ์ที่เป็นเหตุส
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "ถ้า<strong>สปอตสิ้นสุด</strong>มีค่าเท่ากับ<strong>Barrier ต่ำ</strong>หรือ<strong>Barrier สูง</strong>แล้ว ท่านจะไม่ได้เงิน"
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "ถ้า<strong>สปอตสิ้นสุด</strong>มีค่าเท่ากับ<strong>Barrier</strong>แล้ว ท่านจะไม่ได้เงิน"
 
@@ -4466,6 +4466,12 @@ msgstr "หากท่านเลือก \"Odd\" ท่านจะได้
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "หากท่านเลือก \"Over\" ท่านจะได้รับชำระเงินเมื่อ <strong>เลขหลักสุดท้าย</strong> ของช่วงราคาสุดท้ายมีค่า <strong>มากกว่าค่าที่ท่านทำนาย</strong>"
+
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "หากท่านเลือก \"Rises\" ท่านจะได้รับชำระเงินเมื่อ<strong>สปอตสุดท้าย</strong>มีค่าสูงกว่า<strong>สปอตเริ่มต้น</strong>"
@@ -5745,9 +5751,6 @@ msgstr "ต่ำ"
 
 msgid "Low Barrier"
 msgstr "Barrier ต่ำ"
-
-msgid "Low Barrier (%1)"
-msgstr "Barrier ต่ำ (%1)"
 
 msgid "Low barrier"
 msgstr "Barrier ต่ำ"
@@ -7323,6 +7326,12 @@ msgstr "คาดการณ์ว่า ตลาดจะสิ้นสุ�
 msgid "Predict that the market will end lower than the average price"
 msgstr "คาดการณ์ว่า ตลาดจะสิ้นสุดที่ต่ำกว่าราคาเฉลี่ย"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "คาดการณ์ว่า ตลาดจะขึ้น หรือ ลดต่ำลง จากระดับปัจจุบัน"
 
@@ -7761,17 +7770,41 @@ msgstr "การขายสัญญาไม่ได้ถูกนำเส
 msgid "Resale price"
 msgstr "ราคาจำหน่ายต่อ"
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr "ตั้งค่ารหัสผ่าน MT5 ใหม่"
 
 msgid "Reset Password"
 msgstr "ตั้งรหัสผ่านใหม่"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr "ตั้งรหัสผ่านใหม่"
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
 msgstr "ปรับการตั้งค่ากลับไปสู่ค่าเริ่มต้น"
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
+msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "ประชากรของประเทศที่ FATF ระบุว่า มีข้อบกพร่องเชิงกลยุทธ์จะถูกจำกัดการเปิดบัญชีกับ Binary Investments (Europe) Ltd."
@@ -8238,6 +8271,9 @@ msgstr "ขออภัย มีความผิดพลาดเกิด�
 msgid "Sorry, an error occurred while processing your request."
 msgstr "ขออภัย มีความผิดพลาดเกิดขึ้นขณะที่ประมวลผลความประสงค์ของท่าน"
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr ""
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "ขออภัย ฟังก์ชันนี้มีให้ใช้งานเฉพาะบัญชีทดลองใช้เท่านั้น"
 
@@ -8685,6 +8721,12 @@ msgstr "<strong>ระยะเวลาของสัญญา</strong> คื
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>เวลาสิ้นสุด</strong> คือ กำหนดของชั่วโมงและนาทีที่เลือกหลังจาก <strong>เวลาเริ่มต้น</strong> (หากเป็นช่วงเวลาที่น้อยกว่า 1 วัน) หรือ ณ สิ้นวันที่ทำการซื้อขาย (หากเป็นช่วงเวลา 1 วัน หรือมากกว่า)"
+
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอตสุดท้าย หรือ ก่อน<strong>เวลาสิ้นสุด</strong>"
@@ -9185,6 +9227,9 @@ msgstr "ลูกค้าได้ดำเนินการเงินฝา
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "ราคาจำหน่ายใหม่แสดงถึงราคาตลาดปัจจุบันของสัญญา ราคาจำหน่ายใหม่จะอยู่บนพื้นฐานปัจจัยที่ดีที่สุด ซึ่งอาจจะไม่ได้มีตลอดเวลาหลังจากการซื้อ พิจารณาข้อมูลจาก 'Sell Option' เพื่อทำการซื้อขายก่อนวันหมดอายุ"
 
+msgid "The reset time is %1"
+msgstr ""
+
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "ผลกำไร คือ เงินที่ถูกรับรู้เมื่อสัญญานั้นหมดอายุ (อ้างอิง 'Payout')"
 
@@ -9264,6 +9309,9 @@ msgstr "มีการซื้อขาย In/Out 2 ประเภท:"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "มีการซื้อขาย 2 ประเภทของ Up/Down:"
+
+msgid "There are two types of two types of reset trades:"
+msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "มีจำนวนเงินค้างชำระของท่าน และ/หรือ"

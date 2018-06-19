@@ -172,6 +172,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                     </div>
+                                    <div className='row' id='reset_time' />
                                     <div className='row invisible' id='equals_row'>
                                         <input id='callputequal' type='checkbox' />
                                         <label htmlFor='callputequal'><span data-balloon-length='xlarge' data-balloon={it.L('Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower.')}>{it.L('Allow equals')}</span></label>

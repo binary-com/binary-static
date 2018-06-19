@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-18T09:48:41+0000\n"
+"PO-Revision-Date: 2018-06-19T06:50:08+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -1338,6 +1338,9 @@ msgstr "crwdns37827:0crwdne37827:0"
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "crwdns37828:0crwdne37828:0"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr "crwdns45900:0crwdne45900:0"
+
 msgid "Audit"
 msgstr "crwdns41436:0crwdne41436:0"
 
@@ -1478,9 +1481,6 @@ msgstr "crwdns43858:0crwdne43858:0"
 
 msgid "Barrier"
 msgstr "crwdns37865:0crwdne37865:0"
-
-msgid "Barrier (%1)"
-msgstr "crwdns37866:0%1crwdne37866:0"
 
 msgid "Barrier Change"
 msgstr "crwdns37867:0crwdne37867:0"
@@ -4008,9 +4008,6 @@ msgstr "crwdns43508:0crwdne43508:0"
 msgid "High Barrier"
 msgstr "crwdns38580:0crwdne38580:0"
 
-msgid "High Barrier (%1)"
-msgstr "crwdns38581:0%1crwdne38581:0"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "crwdns45851:0crwdne45851:0"
 
@@ -4296,6 +4293,9 @@ msgstr "crwdns41576:0crwdne41576:0"
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "crwdns44610:0crwdne44610:0"
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr "crwdns45901:0crwdne45901:0"
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "crwdns44611:0crwdne44611:0"
 
@@ -4466,6 +4466,12 @@ msgstr "crwdns38696:0crwdne38696:0"
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "crwdns38697:0crwdne38697:0"
+
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr "crwdns45902:0crwdne45902:0"
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr "crwdns45903:0crwdne45903:0"
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "crwdns38698:0crwdne38698:0"
@@ -5744,9 +5750,6 @@ msgstr "crwdns43513:0crwdne43513:0"
 
 msgid "Low Barrier"
 msgstr "crwdns39104:0crwdne39104:0"
-
-msgid "Low Barrier (%1)"
-msgstr "crwdns39105:0%1crwdne39105:0"
 
 msgid "Low barrier"
 msgstr "crwdns39106:0crwdne39106:0"
@@ -7320,6 +7323,12 @@ msgstr "crwdns42346:0crwdne42346:0"
 msgid "Predict that the market will end lower than the average price"
 msgstr "crwdns42347:0crwdne42347:0"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr "crwdns45904:0crwdne45904:0"
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr "crwdns45905:0crwdne45905:0"
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "crwdns42348:0crwdne42348:0"
 
@@ -7758,17 +7767,41 @@ msgstr "crwdns39659:0crwdne39659:0"
 msgid "Resale price"
 msgstr "crwdns39660:0crwdne39660:0"
 
+msgid "Reset"
+msgstr "crwdns45906:0crwdne45906:0"
+
+msgid "Reset Barrier"
+msgstr "crwdns45907:0crwdne45907:0"
+
+msgid "Reset Call"
+msgstr "crwdns45908:0crwdne45908:0"
+
 msgid "Reset MT5 password"
 msgstr "crwdns44582:0crwdne44582:0"
 
 msgid "Reset Password"
 msgstr "crwdns39661:0crwdne39661:0"
 
+msgid "Reset Put"
+msgstr "crwdns45909:0crwdne45909:0"
+
+msgid "Reset Time"
+msgstr "crwdns45910:0crwdne45910:0"
+
 msgid "Reset password"
 msgstr "crwdns44583:0crwdne44583:0"
 
+msgid "Reset time"
+msgstr "crwdns45911:0crwdne45911:0"
+
 msgid "Reset to Original Settings"
 msgstr "crwdns39662:0crwdne39662:0"
+
+msgid "Reset-Call"
+msgstr "crwdns45912:0crwdne45912:0"
+
+msgid "Reset-Put"
+msgstr "crwdns45913:0crwdne45913:0"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "crwdns44810:0crwdne44810:0"
@@ -8235,6 +8268,9 @@ msgstr "crwdns39806:0crwdne39806:0"
 msgid "Sorry, an error occurred while processing your request."
 msgstr "crwdns39807:0crwdne39807:0"
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr "crwdns45918:0%1crwdne45918:0"
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "crwdns39808:0crwdne39808:0"
 
@@ -8681,6 +8717,12 @@ msgstr "crwdns39929:0crwdne39929:0"
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "crwdns39930:0crwdne39930:0"
+
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr "crwdns45914:0crwdne45914:0"
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr "crwdns45915:0crwdne45915:0"
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "crwdns39932:0crwdne39932:0"
@@ -9180,6 +9222,9 @@ msgstr "crwdns40089:0crwdne40089:0"
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "crwdns40090:0crwdne40090:0"
 
+msgid "The reset time is %1"
+msgstr "crwdns45916:0%1crwdne45916:0"
+
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "crwdns40091:0crwdne40091:0"
 
@@ -9257,6 +9302,9 @@ msgstr "crwdns40113:0crwdne40113:0"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "crwdns40114:0crwdne40114:0"
+
+msgid "There are two types of two types of reset trades:"
+msgstr "crwdns45917:0crwdne45917:0"
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "crwdns40116:0crwdne40116:0"
