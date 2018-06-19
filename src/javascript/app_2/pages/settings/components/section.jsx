@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const Section = ({ title, description, children }) => (
@@ -12,6 +12,10 @@ const Section = ({ title, description, children }) => (
 Section.propTypes = {
     title      : PropTypes.string,
     description: PropTypes.string,
+    children   : PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node,
+    ]),
 };
 
 export default Section;
