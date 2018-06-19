@@ -254,15 +254,18 @@ const Process = (() => {
 
     const displayEquals = () => {
         const formname  = Defaults.get('formname');
-        const el_equals = document.getElementById('callputequal');
+        const el_equals = getElementById('equals_row');
         const durations = getPropertyValue(Contract.durations(), [commonTrading.durationType(Defaults.get('duration_units'))]) || [];
         if (/^(callputequal|risefall)$/.test(formname) && 'callputequal' in durations && hasCallPutEqual()) {
+            let status = 'loses';
             if (+Defaults.get('is_equal')) {
-                el_equals.checked = true;
+                getElementById('callputequal').checked = true;
+                status = 'wins';
             }
-            el_equals.parentElement.setVisibility(1);
+            getElementById('hint_equal').innerText = localize(`contract ${status} if exit spot is equal to the entry spot`);
+            el_equals.setVisibility(1);
         } else {
-            el_equals.parentElement.setVisibility(0);
+            el_equals.setVisibility(0);
         }
     };
 
