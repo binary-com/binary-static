@@ -50,42 +50,40 @@ const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
     const $date_from = $(date_from_id);
     const $date_to   = $(date_to_id);
 
-    $date_from
-        .attr('data-value', toISOFormat(moment.utc()))
-        .change(function() {
-            if (!dateValueChanged(this, 'date')) {
-                return false;
-            }
-            if (typeof fncOnChange === 'function') {
-                fncOnChange();
-            }
-            const date = new Date(this.getAttribute('data-value'));
-            DatePicker.init({
-                selector: date_to_id,
-                minDate : new Date(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() + 1}`),
-                maxDate : 0,
-            });
-            return true;
-        });
+    const onChange = (e, additionalFnc) => {
+        if (!dateValueChanged(e, 'date')) {
+            return false;
+        }
+        if (typeof fncOnChange === 'function') {
+            fncOnChange();
+        }
+        if (typeof additionalFnc === 'function') {
+            additionalFnc();
+        }
+        return true;
+    };
 
-    $date_to
-        .attr('data-value', toISOFormat(moment.utc()))
-        .change(function() {
-            if (!dateValueChanged(this, 'date')) {
-                return false;
-            }
-            if (typeof fncOnChange === 'function') {
-                fncOnChange();
-            }
-            return true;
+    const initDatePicker = (id, opts) => {
+        const $datepicker = $(id);
+        DatePicker.init({
+            selector: id,
+            maxDate : 0,
+            ...opts,
         });
+        $datepicker.val('').removeAttr('data-value');
+        if ($datepicker.attr('data-picker') !== 'native') $datepicker.attr('placeholder', localize('Select date'));
+    };
 
-    DatePicker.init({
-        selector: date_from_id,
-        maxDate : 0,
-    });
-    if ($date_from.attr('data-picker') !== 'native') $date_from.val(localize('Select date'));
-    if ($date_to.attr('data-picker') !== 'native') $date_to.val(localize('Select date'));
+    const getMinDate = (e) => {
+        const date = new Date(e.getAttribute('data-value'));
+        return new Date(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() + 1}`);
+    };
+
+    $date_from.change(function() { onChange(this, initDatePicker(date_to_id, { minDate: getMinDate(this) })); });
+    $date_to.change(function() { onChange(this); });
+
+    initDatePicker(date_from_id);
+    initDatePicker(date_to_id);
 };
 
 module.exports = {

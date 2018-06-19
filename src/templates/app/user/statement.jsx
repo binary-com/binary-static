@@ -13,7 +13,7 @@ const Statement = () => (
                     <label htmlFor='date_to'>{it.L('Show all historical transactions up to')}:</label>
                     <input type='text' id='date_to' size='20' readOnly='readonly' />
                 </div>
-                <div className='gr-gutter-left gr-12-m align-start'>
+                <div className='gr-gutter-left gr-gutter-right gr-12-m align-start'>
                     <button className='button-secondary' id='download_statement_btn'>{it.L('Download your statement')}</button>
                 </div>
                 <div className='gr-12 gr-12-m align-end'>
@@ -28,15 +28,14 @@ const Statement = () => (
                 <h1>{it.L('Download your statement')}</h1>
             </div>
             <p>{it.L('Please select the date range of your statement:')}</p>
-
             <div className='gr-row'>
-                <div className='gr-4 gr-5-p gr-12-m'>
+                <div className='gr-4 gr-5-t gr-5-p gr-12-m'>
                     <div className='label_form gr-gutter-right'>
                         <label htmlFor='date_to'>{it.L('From')}:</label>
                         <input type='text' id='download_from' size='20' readOnly='readonly' />
                     </div>
                 </div>
-                <div className='gr-4 gr-5-p gr-12-m'>
+                <div className='gr-4 gr-5-t gr-5-p gr-12-m'>
                     <div className='label_form gr-gutter-right'>
                         <label htmlFor='date_to'>{it.L('To')}:</label>
                         <input type='text' id='download_to' size='20' readOnly='readonly' />

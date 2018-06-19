@@ -169,7 +169,11 @@
             padding: 10px 15px;
         }
     }
-    #download_to {
-        margin-left: 26px;
+    #download_to, #download_from {
+        width: auto;
+
+        &#download_to {
+            margin-left: 26px;
+        }
     }
 }

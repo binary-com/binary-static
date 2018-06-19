@@ -155,9 +155,12 @@ const StatementInit = (() => {
     };
 
     const initDownloadStatement = () => {
-        const $container       = $('#download_statement_container');
-        const download_from_id = '#download_from';
-        const download_to_id   = '#download_to';
+        const $container             = $('#download_statement_container');
+        const $request_statement_btn = $('#request_statement_btn');
+        const $success_msg           = $container.find('.success-msg');
+        const $error_msg             = $container.find('.error-msg');
+        const download_from_id       = '#download_from';
+        const download_to_id         = '#download_to';
 
         $('#download_statement_btn').off('click').on('click', (e) => {
             e.preventDefault();
@@ -165,36 +168,35 @@ const StatementInit = (() => {
             $('#statement-container').setVisibility(0);
             $container.setVisibility(1);
 
-            const $request_statement_btn = $('#request_statement_btn');
-            const $success_msg = $container.find('.success-msg');
-            const $error_msg = $container.find('.error-msg');
             DateTo.attachDateRangePicker(download_from_id, download_to_id, () => {
                 $success_msg.setVisibility(0);
                 $error_msg.setVisibility(0);
-                $request_statement_btn
-                    .removeClass('button-disabled')
-                    .off('click').on('click', (evt) => {
-                        evt.preventDefault();
 
-                        const date_from = DateTo.getDatePickerValue(download_from_id);
-                        const date_to   = DateTo.getDatePickerValue(download_to_id);
+                const date_from  = DateTo.getDatePickerValue(download_from_id);
+                const date_to    = DateTo.getDatePickerValue(download_to_id);
+                const can_submit = date_from && date_to;
 
-                        if (!date_from || !date_to) return;
-
-                        BinarySocket.send({
-                            statement: 1,
-                            date_from,
-                            date_to,
-                        }).then((response) => {
-                            $request_statement_btn.addClass('button-disabled');
-                            if (response.error) {
-                                // TODO: handle error from BE
-                                $error_msg.setVisibility(1);
-                            } else {
-                                $success_msg.setVisibility(1);
-                            }
+                if (can_submit) {
+                    $request_statement_btn.removeClass('button-disabled')
+                        .on('click', (evt) => {
+                            evt.preventDefault();
+                            BinarySocket.send({
+                                statement: 1,
+                                date_from,
+                                date_to,
+                            }).then((response) => {
+                                if (response.error) {
+                                    // TODO: handle error from BE
+                                    $error_msg.setVisibility(1);
+                                } else {
+                                    $success_msg.setVisibility(1);
+                                }
+                                $request_statement_btn.addClass('button-disabled').off('click');
+                            });
                         });
-                    });
+                } else {
+                    $request_statement_btn.addClass('button-disabled').off('click');
+                }
             });
         });
     };
