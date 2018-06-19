@@ -155,7 +155,9 @@ const StatementInit = (() => {
     };
 
     const initDownloadStatement = () => {
-        const $container = $('#download_statement_container');
+        const $container       = $('#download_statement_container');
+        const download_from_id = '#download_from';
+        const download_to_id   = '#download_to';
 
         $('#download_statement_btn').off('click').on('click', (e) => {
             e.preventDefault();
@@ -163,12 +165,12 @@ const StatementInit = (() => {
             $('#statement-container').setVisibility(0);
             $container.setVisibility(1);
 
-            DateTo.attachDateRangePicker('download_from', 'download_to', () => {
+            DateTo.attachDateRangePicker(download_from_id, download_to_id, () => {
                 $('#request_statement_btn').off('click').on('click', (evt) => {
                     evt.preventDefault();
 
-                    const date_from = DateTo.getDatePickerValue('download_from');
-                    const date_to   = DateTo.getDatePickerValue('download_to');
+                    const date_from = DateTo.getDatePickerValue(download_from_id);
+                    const date_to   = DateTo.getDatePickerValue(download_to_id);
 
                     if (!date_from || !date_to) return;
 
