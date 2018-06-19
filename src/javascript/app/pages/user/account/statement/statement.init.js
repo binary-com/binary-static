@@ -166,26 +166,33 @@ const StatementInit = (() => {
             $container.setVisibility(1);
 
             DateTo.attachDateRangePicker(download_from_id, download_to_id, () => {
-                $('#request_statement_btn').off('click').on('click', (evt) => {
-                    evt.preventDefault();
+                $('#request_statement_btn')
+                    .removeClass('button-disabled')
+                    .off('click').on('click', (evt) => {
+                        evt.preventDefault();
 
-                    const date_from = DateTo.getDatePickerValue(download_from_id);
-                    const date_to   = DateTo.getDatePickerValue(download_to_id);
+                        const date_from = DateTo.getDatePickerValue(download_from_id);
+                        const date_to   = DateTo.getDatePickerValue(download_to_id);
 
-                    if (!date_from || !date_to) return;
+                        if (!date_from || !date_to) return;
 
-                    BinarySocket.send({
-                        statement: 1,
-                        date_from,
-                        date_to,
-                    }).then((response) => {
-                        if (response.error) {
-                            $container.find('.error-msg').setVisibility(1);
-                        } else {
-                            $container.find('.success-msg').setVisibility(1);
-                        }
+                        BinarySocket.send({
+                            statement: 1,
+                            date_from,
+                            date_to,
+                        }).then((response) => {
+                            if (response.error) {
+                                // TODO: handle error from BE
+                                $container.find('.error-msg').setVisibility(1);
+                            } else {
+                                const $success_msg = $container.find('.success-msg');
+                                $success_msg.setVisibility(1);
+                                setTimeout(() => {
+                                    $success_msg.setVisibility(0);
+                                }, 5000);
+                            }
+                        });
                     });
-                });
             });
         });
     };

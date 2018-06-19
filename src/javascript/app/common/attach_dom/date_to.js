@@ -70,7 +70,8 @@ const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
         selector: date_from_id,
         maxDate : 0,
     });
-    if ($date_from.attr('data-picker') !== 'native') $date_from.val(localize('Select a date'));
+    if ($date_from.attr('data-picker') !== 'native') $date_from.val(localize('Select date'));
+    if ($date_to.attr('data-picker') !== 'native') $date_to.val(localize('Select date'));
 };
 
 module.exports = {

@@ -28,6 +28,7 @@ const Statement = () => (
                 <h1>{it.L('Download your statement')}</h1>
             </div>
             <p>{it.L('Please select the date range of your statement:')}</p>
+
             <div className='gr-row'>
                 <div className='gr-4 gr-6-m'>
                     <div className='label_form gr-gutter-right'>
@@ -42,7 +43,9 @@ const Statement = () => (
                     </div>
                 </div>
                 <div className='gr-12 gr-padding-30'>
-                    <button className='button' id='request_statement_btn'>{it.L('Request your statement')}</button>
+                    <a id='request_statement_btn' className='button button-disabled'>
+                        <span>{it.L('Request your statement')}</span>
+                    </a>
                     <p className='success-msg invisible'>{it.L('Your statement has been sent to your email address.')}</p>
                     <p className='error-msg invisible'>{it.L('There was an error processing your request.')}</p>
                 </div>

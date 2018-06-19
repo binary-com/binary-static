@@ -304,6 +304,7 @@ const texts = [
     'Your account has no trading activity.',
     'Today',
     'Details',
+    'Select date',
 
     // back-end string for statement page
     'Sell',
