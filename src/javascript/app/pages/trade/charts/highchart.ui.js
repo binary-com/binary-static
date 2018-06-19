@@ -1,4 +1,5 @@
 const isCallputspread = require('../callputspread').isCallputspread;
+const isReset         = require('../reset').isReset;
 const addComma        = require('../../../common/currency').addComma;
 const localize        = require('../../../../_common/localize').localize;
 
@@ -12,6 +13,7 @@ const HighchartUI = (() => {
     const labels = {
         start_time  : `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `,
         entry_spot  : `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `,
+        reset_time  : `<div style="${common_time_style} border-color: #000; border-style: solid;"></div> ${localize('Reset time')} `,
         exit_spot   : `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `,
         end_time    : `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `,
         delay       : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
@@ -23,6 +25,7 @@ const HighchartUI = (() => {
         txt_legend = (chart_delayed ? labels.delay : '') +
             labels.start_time +
             (history ? labels.entry_spot + labels.exit_spot : '') +
+            (isReset(contract_type) ? labels.reset_time : '') +
             labels.end_time +
             (isCallputspread(contract_type) ? labels.payout_range : '');
     };
@@ -147,8 +150,9 @@ const HighchartUI = (() => {
         if (is_plotx) {
             options.label.x = params.textLeft ? -15 : 5;
         } else {
+            options.label.x = params.x || 0;
             options.label.y = params.textBottom ? 15 : -5;
-            options.label.align = 'center';
+            options.label.align = params.align || 'center';
         }
 
         return options;
