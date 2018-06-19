@@ -165,8 +165,13 @@ const StatementInit = (() => {
             $('#statement-container').setVisibility(0);
             $container.setVisibility(1);
 
+            const $request_statement_btn = $('#request_statement_btn');
+            const $success_msg = $container.find('.success-msg');
+            const $error_msg = $container.find('.error-msg');
             DateTo.attachDateRangePicker(download_from_id, download_to_id, () => {
-                $('#request_statement_btn')
+                $success_msg.setVisibility(0);
+                $error_msg.setVisibility(0);
+                $request_statement_btn
                     .removeClass('button-disabled')
                     .off('click').on('click', (evt) => {
                         evt.preventDefault();
@@ -181,15 +186,12 @@ const StatementInit = (() => {
                             date_from,
                             date_to,
                         }).then((response) => {
+                            $request_statement_btn.addClass('button-disabled');
                             if (response.error) {
                                 // TODO: handle error from BE
-                                $container.find('.error-msg').setVisibility(1);
+                                $error_msg.setVisibility(1);
                             } else {
-                                const $success_msg = $container.find('.success-msg');
                                 $success_msg.setVisibility(1);
-                                setTimeout(() => {
-                                    $success_msg.setVisibility(0);
-                                }, 5000);
                             }
                         });
                     });

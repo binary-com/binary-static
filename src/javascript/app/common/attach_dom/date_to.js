@@ -49,7 +49,9 @@ const attachDateToPicker = (fncOnChange) => {
 const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
     const $date_from = $(date_from_id);
     const $date_to   = $(date_to_id);
+
     $date_from
+        .attr('data-value', toISOFormat(moment.utc()))
         .change(function() {
             if (!dateValueChanged(this, 'date')) {
                 return false;
@@ -65,7 +67,19 @@ const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
             });
             return true;
         });
-    $date_to.attr('data-value', toISOFormat(moment.utc()));
+
+    $date_to
+        .attr('data-value', toISOFormat(moment.utc()))
+        .change(function() {
+            if (!dateValueChanged(this, 'date')) {
+                return false;
+            }
+            if (typeof fncOnChange === 'function') {
+                fncOnChange();
+            }
+            return true;
+        });
+
     DatePicker.init({
         selector: date_from_id,
         maxDate : 0,

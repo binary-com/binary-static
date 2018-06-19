@@ -133,6 +133,9 @@
     .new-width {
         min-width: 100px;
     }
+    #date_to {
+        width: 100%;
+    }
 }
 
 #statement-container {
@@ -165,5 +168,8 @@
             font-size: $FONT_SIZE_XS;
             padding: 10px 15px;
         }
+    }
+    #download_to {
+        margin-left: 26px;
     }
 }
