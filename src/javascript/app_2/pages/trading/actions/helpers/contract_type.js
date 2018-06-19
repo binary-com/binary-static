@@ -61,24 +61,12 @@ const ContractType = (() => {
                 durations: {
                     min_max: {
                         spot: {
-                            tick: {
-                                min: 5, // value in ticks, as cannot convert to seconds
-                                max: 10,
-                            },
-                            intraday: {
-                                min: 18000, // all values converted to seconds
-                                max: 86400,
-                            },
-                            daily: {
-                                min: 86400,
-                                max: 432000,
-                            },
+                            tick    : { min: 5,     max: 10 },    // value in ticks, as cannot convert to seconds
+                            intraday: { min: 18000, max: 86400 }, // all values converted to seconds
+                            daily   : { min: 86400, max: 432000 },
                         },
                         forward: {
-                            intraday: {
-                                min: 18000,
-                                max: 86400,
-                            },
+                            intraday: { min: 18000, max: 86400 },
                         },
                     },
                     units_display: {
@@ -105,14 +93,9 @@ const ContractType = (() => {
                 },
                 barriers: {
                     count   : 2,
-                    intraday: {
-                        high_barrier: '+2.12',
-                        low_barrier : '-1.12',
-                    },
-                    daily: {
-                        high_barrier: 1111,
-                        low_barrier : 1093,
-                    },
+                    tick    : { high_barrier: '+1.12', low_barrier : '-1.12' },
+                    intraday: { high_barrier: '+2.12', low_barrier : '-2.12' },
+                    daily   : { high_barrier: 1111,    low_barrier : 1093 },
                 },
             }
             */

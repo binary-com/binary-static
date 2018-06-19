@@ -2,6 +2,7 @@ import moment       from 'moment';
 import ContractType from './helpers/contract_type';
 
 export const onChangeExpiry = (store) => {
+    // TODO: server_time is undefined because it does not belong to this store
     const { contract_type, duration_unit, expiry_date, expiry_type, server_time } = store;
 
     const duration_is_day       = expiry_type === 'duration' && duration_unit === 'd';
@@ -12,9 +13,12 @@ export const onChangeExpiry = (store) => {
         contract_expiry_type = duration_unit === 't' ? 'tick' : 'intraday';
     }
 
+    // TODO: there will be no barrier available if contract is only daily but client chooses intraday endtime. we should find a way to handle this.
+    const obj_barriers = store.contract_expiry_type !== contract_expiry_type && // barrier value changes for tick/intraday/daily
+        ContractType.getBarriers(contract_type, contract_expiry_type);
+
     return {
         contract_expiry_type,
-        // TODO: there will be no barrier available if contract is only daily but client chooses intraday endtime. we should find a way to handle this.
-        ...(contract_type && ContractType.getBarriers(contract_type, contract_expiry_type)), // barrier value changes for intraday/daily
+        ...obj_barriers,
     };
 };
