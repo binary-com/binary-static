@@ -55,11 +55,6 @@ const columns = [
 ];
 
 class Statement extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.handleScroll = this.handleScroll.bind(this);
-    }
-
     componentDidMount() {
         this.props.fetchNextBatch();
         window.addEventListener('scroll', this.handleScroll, false);
@@ -70,7 +65,7 @@ class Statement extends React.PureComponent {
         this.props.clearTable();
     }
 
-    handleScroll() {
+    handleScroll = () => {
         const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
         const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
 
@@ -80,11 +75,12 @@ class Statement extends React.PureComponent {
     }
 
     renderNoActivityMessage() {
+        const { date_from, date_to } = this.props;
         return (
             <div className='container'>
                 <div className='statement__no-activity-msg'>
                     {
-                        !this.props.date_from && !this.props.date_to
+                        !date_from && !date_to
                             ? localize('Your account has no trading activity.')
                             : localize('Your account has no trading activity for the selected period.')
                     }
@@ -94,13 +90,12 @@ class Statement extends React.PureComponent {
     }
 
     renderFilter(is_mobile) {
-        const moment_now = moment(this.props.server_time);
-        const today = moment_now.format('YYYY-MM-DD');
+        const today = moment(this.props.server_time).format('YYYY-MM-DD');
         const filter_class = classnames('statement-filter', {
             'mobile-only' : is_mobile,
             'desktop-only': !is_mobile,
         });
-
+        const { date_to, date_from, handleDateChange } = this.props;
         return (
             <div className={filter_class}>
                 <div className='statement-filter__content container'>
@@ -109,9 +104,9 @@ class Statement extends React.PureComponent {
                         name='date_from'
                         initial_value=''
                         placeholder={localize('Start date')}
-                        startDate={this.props.date_to || today}
-                        maxDate={this.props.date_to || today}
-                        onChange={this.props.handleDateChange}
+                        startDate={date_to || today}
+                        maxDate={date_to || today}
+                        onChange={handleDateChange}
                         is_nativepicker={is_mobile}
                     />
                     <span className='statement-filter__dash'>&mdash;</span>
@@ -120,10 +115,10 @@ class Statement extends React.PureComponent {
                         initial_value=''
                         placeholder={localize('End date')}
                         startDate={today}
-                        minDate={this.props.date_from}
+                        minDate={date_from}
                         maxDate={today}
                         showTodayBtn
-                        onChange={this.props.handleDateChange}
+                        onChange={handleDateChange}
                         is_nativepicker={is_mobile}
                     />
                 </div>
@@ -132,6 +127,7 @@ class Statement extends React.PureComponent {
     }
 
     render() {
+        const { data, is_loading } = this.props;
         return (
             <div className='statement'>
 
@@ -141,7 +137,7 @@ class Statement extends React.PureComponent {
                 <div className='statement__content'>
                     <div className='desktop-only'>
                         <DataTable
-                            data_source={this.props.data}
+                            data_source={data}
                             columns={columns}
                             has_fixed_header
                             is_full_width
@@ -149,12 +145,12 @@ class Statement extends React.PureComponent {
                     </div>
                     <div className='mobile-only'>
                         <CardList
-                            data_source={this.props.data}
+                            data_source={data}
                             Card={StatementCard}
                         />
                     </div>
-                    {this.props.is_loading && <Loading />}
-                    {!this.props.is_loading && this.props.data.length === 0 && this.renderNoActivityMessage()}
+                    {true && <Loading />}
+                    {!is_loading && data.length === 0 && this.renderNoActivityMessage()}
                 </div>
             </div>
         );
