@@ -38,9 +38,6 @@
                 display: none;
             }
         }
-        .sidebar-container {
-            position: relative;
-        }
         .offset-container {
             display: none;
         }
@@ -64,12 +61,10 @@
             }
             .sidebar-container {
                 grid-column: col-start 11 / span 2;
-                grid-gap: 10px;
-                grid-template-rows: fit-content(40%) fit-content(40%) fit-content(40%) fit-content(40%);
                 transition: all 0.25s;
 
                 fieldset {
-                    grid-column: 1;
+                    margin-bottom: 5px;
 
                     div.duration-container, div.amount-container {
                         display: grid;

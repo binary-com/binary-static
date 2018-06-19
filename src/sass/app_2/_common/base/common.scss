@@ -20,9 +20,7 @@ select, input, textarea {
 
 fieldset {
     border: 1px solid $COLOR_LIGHT_GRAY;
-    position: relative;
     padding: 5px;
-    margin-bottom: 10px;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
