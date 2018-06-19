@@ -129,7 +129,7 @@
     $side_margin: 8px;
     $button_height: 50px;
     $button_menu_gap: 10px;
-    margin: $top_margin $side_margin 0;
+    margin: $top_margin $side_margin $button_menu_gap;
 
     &__button {
         height: $button_height;
@@ -156,12 +156,21 @@
         background: $COLOR_WHITE;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_GRAY;
+        padding-bottom: 10px;
         box-sizing: border-box;
         user-select: none;
+        opacity: 0;
+        transform: scale(1, 0);
+        transform-origin: top center;
+        transition: all 0.25s;
     }
     &--open {
         .mobile_dropdown__button {
             border: 1px solid $COLOR_BLUE;
+        }
+        .mobile_dropdown__menu {
+            transform: scale(1, 1);
+            opacity: 1;
         }
         .select-arrow.select-arrow { // to increase specificity without !IMPORTANT
             transform: rotate(0deg);
