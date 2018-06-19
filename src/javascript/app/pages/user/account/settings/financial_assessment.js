@@ -25,6 +25,10 @@ const FinancialAssessment = (() => {
             submitForm();
         });
 
+        getFinancialAssessment();
+    };
+
+    const getFinancialAssessment = () => {
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
             handleForm(response.get_financial_assessment);
         });
@@ -97,6 +101,7 @@ const FinancialAssessment = (() => {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
                         Header.displayAccountStatus();
                         displayHighRiskClassification();
+                        getFinancialAssessment();
                     });
                 }
             });
