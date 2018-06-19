@@ -27,10 +27,10 @@ const routes = [
     { path: '/portfolio', component: Portfolio, is_authenticated: true },
     { path: '/statement', component: Statement, is_authenticated: true },
     {
-        path     : '/settings',
-        component: Settings,
+        path            : '/settings',
+        component       : Settings,
         is_authenticated: true,
-        routes   : [
+        routes          : [
             { path: 'personal',         component: PersonalDetails },
             { path: 'financial',        component: FinancialAssessment },
             { path: 'account_password', component: AccountPassword },
