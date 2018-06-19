@@ -157,7 +157,7 @@ const TradingEvents = (() => {
         getElementById('duration_units').addEventListener('change', (e) => {
             Defaults.remove('barrier', 'barrier_high', 'barrier_low');
             Process.onDurationUnitChange(e.target.value);
-            Price.processPriceRequest();
+            Process.processContractForm();
         });
 
         /*
@@ -393,6 +393,12 @@ const TradingEvents = (() => {
          */
         getElementById('prediction').addEventListener('change', CommonTrading.debounce((e) => {
             Defaults.set('prediction', e.target.value);
+            Price.processPriceRequest();
+            CommonTrading.submitForm(getElementById('websocket_form'));
+        }));
+
+        getElementById('selected_tick').addEventListener('change', CommonTrading.debounce((e) => {
+            Defaults.set('selected_tick', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));

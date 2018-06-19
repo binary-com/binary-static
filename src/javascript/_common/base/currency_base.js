@@ -80,11 +80,7 @@ const getPaWithdrawalLimit = (currency, limit) => {
 
 const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
 
-const getFiatPayout = () => isJPClient() ? 1 : 10;
-
-const getMinPayout = currency => (
-    isCryptocurrency(currency) ? getPropertyValue(currencies_config, [currency, 'stake_default']) : getFiatPayout()
-);
+const getMinPayout = currency => getPropertyValue(currencies_config, [currency, 'stake_default']);
 
 module.exports = {
     formatMoney,

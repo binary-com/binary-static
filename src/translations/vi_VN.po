@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-04 05:09-0400\n"
+"PO-Revision-Date: 2018-06-18T09:48:15+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -474,6 +474,9 @@ msgstr "6 Tháng tới 1 Năm"
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 giao dịch trong vòng 12 tháng trước"
 
+msgid "6-digit code"
+msgstr "Mã 6 chữ số"
+
 msgid "7-day limit on losses"
 msgstr "Giới hạn 7 ngày thua lỗ"
 
@@ -732,6 +735,9 @@ msgstr "Tài khoản"
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "Số dư tài khoản &mdash; Số dư tài khoản của bạn thể hiện:"
 
+msgid "Account Categorisation"
+msgstr "Phân loại tài khoản"
+
 msgid "Account Closure"
 msgstr "Đóng tài khoản"
 
@@ -833,6 +839,9 @@ msgstr "Thích nghi với các ngữ điệu giọng nói để phù hợp với
 
 msgid "Add"
 msgstr "Thêm"
+
+msgid "Add +/– to define a barrier offset. For example, +0.005 means a barrier that's 0.005 higher than the entry spot."
+msgstr "Thêm /-để xác định một độ lệch giới hạn. Ví dụ, +0.005 có nghĩa là một giới hạn mà cao hơn 0,005 so với điểm khởi đầu."
 
 msgid "Add funds"
 msgstr "Thêm quỹ"
@@ -1030,7 +1039,7 @@ msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Cho phép Khách hàng sử dụng ví điện tử, mà không có trực tiếp trên %1"
 
 msgid "Allow equals"
-msgstr ""
+msgstr "Cho phép bằng nhau"
 
 msgid "Also known as counter currency"
 msgstr "Còn được gọi là tiền tệ thứ hai"
@@ -1401,6 +1410,9 @@ msgstr "Những thị trường đang có sẵn"
 msgid "Available payment methods"
 msgstr "Phương thức thanh toán có sẵn"
 
+msgid "Average"
+msgstr "Trung bình"
+
 msgid "Avoid the need to have an e-wallet"
 msgstr "Không cần thiết phải có ví điện tử"
 
@@ -1487,9 +1499,6 @@ msgstr "Tiền tệ cơ sở"
 
 msgid "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
 msgstr "Căn cứ vào bảng dưới đây, bạn có thể nói biên lãi cặp tiền tệ EUR/USD là gì?"
-
-msgid "Be treated as a professional trader."
-msgstr "Được coi là một thương nhân chuyên nghiệp."
 
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "Trước khi chúng tôi mở tài khoản giao dịch hoặc đầu tư cho bạn trong mục Sản Phẩm Đầu Tư với BIEL, chúng tôi bắt buộc phải làm một bản đánh giá Sản Phẩm Đầu Tư hoặc dịch vụ mà bạn đã chọn xem có thích hợp không dựa trên cơ sở thông tin mà bạn cung cấp cho chúng tôi, chúng tôi sẽ cảnh báo bạn nếu như có bất kì sản phẩm hoặc dịch vụ nào trong số đó không thích hợp. Việc quyết định sử dụng dịch vụ hoặc sản phẩm nào là do bạn. Bạn phải có trách nhiệm tìm hiểu các rủi ro có liên quan tới những dịch vụ và sản phẩm của chúng tôi."
@@ -1817,6 +1826,9 @@ msgstr "Chính sách ký quỹ CFD"
 
 msgid "CFDs"
 msgstr "Các thị trường CFD"
+
+msgid "Call Spread"
+msgstr "Gọi biên"
 
 msgid "Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?"
 msgstr "Tôi có thể mời người tôi giới thiệu đăng ký qua đường dẫn liên kết đặc biệt của tôi thay vì đăng ký trực tiếp không?"
@@ -2817,6 +2829,9 @@ msgstr "Chữ số"
 msgid "Director"
 msgstr "Director"
 
+msgid "Disable"
+msgstr "Vô hiệu hoá"
+
 msgid "Disclaimer"
 msgstr "Miễn trừ trách nhiệm"
 
@@ -3111,11 +3126,14 @@ msgstr "Sổ Tay Nhân viên"
 msgid "Employment Status"
 msgstr "Tình Trạng Tuyển Dụng"
 
+msgid "Enable"
+msgstr "Kích hoạt"
+
+msgid "Enable two-factor authentication for an extra layer of security."
+msgstr "Kích hoạt xác thực 2 yếu tố cho thêm lớp bảo mật."
+
 msgid "End Time"
 msgstr "Thời Gian Kết Thúc"
-
-msgid "End at:"
-msgstr "Kết thúc lúc:"
 
 msgid "End time"
 msgstr "Thời gian kết thúc"
@@ -3174,8 +3192,8 @@ msgstr "Đảm bảo rằng Tập Đoàn Binary tuân thủ đầy đủ các qu
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr "Đảm bảo rằng Tập Đoàn Binary luôn tuân thủ đầy đủ các quy định của nhà nước sở tại"
 
-msgid "Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received"
-msgstr ""
+msgid "Enter the authentication code generated by the app below:"
+msgstr "Nhập mã số xác thực được tạo ra bởi ứng dụng dưới đây:"
 
 msgid "Enter your email"
 msgstr "Nhập địa chỉ email của bạn"
@@ -3184,13 +3202,13 @@ msgid "Entry Spot"
 msgstr "Điểm khởi đầu"
 
 msgid "Entry spot"
-msgstr "Giá khởi điểm"
+msgstr "Điểm khởi đầu"
 
 msgid "Entry spot price"
 msgstr "Giá tại điểm khởi đầu"
 
 msgid "Equals"
-msgstr "Tương đương"
+msgstr "Bằng nhau"
 
 msgid "Equities"
 msgstr "Vốn sở hữu"
@@ -3993,6 +4011,9 @@ msgstr "Rào cản Cao"
 msgid "High Barrier (%1)"
 msgstr "Rào cản Cao (%1)"
 
+msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
+msgstr "Hợp đồng Tick cao/Tick thấp có thời lượng quy định gồm năm tick."
+
 msgid "High barrier"
 msgstr "Rào cản cao"
 
@@ -4028,6 +4049,12 @@ msgstr "Hợp đồng giá trên/ dưới sẽ được hoàn lại bằng giá 
 
 msgid "Higher/Lower trades"
 msgstr "Giao dịch Cao Hơn/Thấp Hơn"
+
+msgid "Highest Tick"
+msgstr "Tick cao nhất"
+
+msgid "Highest Tick Time"
+msgstr "Thời gian tick cao nhất"
 
 msgid "Highlights"
 msgstr "Điểm nổi bật"
@@ -4103,6 +4130,9 @@ msgstr "Làm thế nào để đọc bảng thông số của hợp đồng"
 
 msgid "How to read the table above"
 msgstr "Làm thế nào để đọc bảng trên"
+
+msgid "How to setup two-factor authentication for your %1 account:"
+msgstr "Làm thế nào để thiết lập hai yếu tố xác thực tài khoản %1:"
 
 msgid "How to trade CFDs"
 msgstr "Làm thế nào để giao dịch các hợp đồng CFD"
@@ -4321,6 +4351,9 @@ msgstr "Nếu bạn đang gặp khó khăn khi đăng nhập, hãy kiểm tra đ
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
 msgstr "Nếu bạn không nằm trong các quốc gia nêu trên, đơn giản chỉ cần liên hệ bất kỳ số liên lạc của chúng tôi để được giúp đỡ."
 
+msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
+msgstr "Nếu bạn không thể để quét mã QR, bạn có thể nhập thủ công đoạn mã này:"
+
 msgid "If you are, we'd love to hear from you."
 msgstr "Nếu bạn quan tâm, chúng tôi rất vui được nhận phản hồi từ bạn."
 
@@ -4382,7 +4415,7 @@ msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 f
 msgstr "Nếu bạn thấy EUR/USD có giá mua vào là 1.05229, bạn sẽ mua 1.05229 USD cho mỗi 1 EUR bạn bán."
 
 msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
-msgstr ""
+msgstr "Nếu bạn chọn \"Cho phép bằng nhau\", bạn sẽ giành chiến thắng các thanh toán nếu điểm khởi đầu cao hơn hoặc bằng điểm chốt cho \"Cao Hơn\". Tương tự, bạn giành chiến thắng các thanh toán nếu điểm chốt thấp hơn hoặc bằng điểm khởi đầu cho \"Thấp Hơn\"."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Nếu bạn chọn \"Châu Á Giảm\", bạn sẽ giành chiến thắng nếu <strong> giá ở tick cuối cùng </strong> là <strong>thấp hơn</strong> so với <strong>trung bình</strong> của giá trong suốt giao dịch."
@@ -4418,13 +4451,13 @@ msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</st
 msgstr "Nếu bạn chọn \"Cao hơn\", bạn sẽ giành chiến thắng nếu <strong> điểm chốt</strong> cao hơn <strong> giới hạn </strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
-msgstr ""
+msgstr "Nếu bạn chọn \"Cao Hơn\", bạn sẽ giành chiến thắng nếu <strong> điểm chốt</strong> cao hơn <strong>điểm khởi đầu</strong>."
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Nếu bạn chọn \"Thấp hơn\", bạn sẽ giành chiến thắng nếu <strong>điểm chốt</strong> thấp hơn <strong> giới hạn </strong>."
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
-msgstr ""
+msgstr "Nếu bạn chọn \"Thấp Hơn\", bạn sẽ giành chiến thắng nếu <strong>điểm chốt</strong> thấp hơn <strong>điểm khởi đầu</strong>."
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Nếu bạn chọn \"Khớp\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> của giá tại thời điểm kết thúc giao dịch <strong>same</strong> giống với <strong>dự đoán của bạn</strong>"
@@ -4458,6 +4491,12 @@ msgstr "Nếu bạn chọn \"tăng\", bạn sẽ giành chiến thắng nếu
 
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Nếu bạn chọn \"tăng\", bạn sẽ giành chiến thắng nếu giá thị trường cao hơn điểm khởi đầu."
+
+msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
+msgstr "Nếu bạn chọn %1\"Tick cao\"%2, bạn sẽ giành chiến thắng các thanh toán nếu tick được chọn là %1cao nhất trong số 5 tick tiếp theo%2."
+
+msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
+msgstr "Nếu bạn chọn %1\"Tick thấp\"%2, bạn sẽ giành chiến thắng các thanh toán nếu tick được chọn là %1thấp nhất trong số 5 tick tiếp theo%2."
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Nếu bạn chọn <strong>thời điểm bắt đầu</strong> trong tương lai, <strong>thời điểm bắt đầu</strong> là mục được chọn và <strong>điểm khởi đầu</strong> là giá có hiệu lực vào thời điểm đó."
@@ -5724,7 +5763,13 @@ msgid "Lower"
 msgstr "Thấp hơn"
 
 msgid "Lower or equal"
-msgstr ""
+msgstr "Thấp hơn hoặc bằng"
+
+msgid "Lowest Tick"
+msgstr "Tick thấp nhất"
+
+msgid "Lowest Tick Time"
+msgstr "Thời gian tick thấp nhất"
 
 msgid "M"
 msgstr "M"
@@ -5965,6 +6010,12 @@ msgstr "Khớp/Khác nhau"
 
 msgid "Max"
 msgstr "Tối đa"
+
+msgid "Maximum Payout"
+msgstr "Thanh toán tối đa"
+
+msgid "Maximum Profit"
+msgstr "Lợi nhuận tối đa"
 
 msgid "Maximum account cash balance"
 msgstr "Số dư tài khoản tiền mặt tối đa"
@@ -6361,6 +6412,12 @@ msgstr "Không bất kì sự sửa đổi hoặc chắp vá tất cả hoặc m
 
 msgid "No open positions."
 msgstr "Không có vị trí cần tuyển dụng."
+
+msgid "No payout if exit spot is above or equal to the upper barrier."
+msgstr "Sẽ không được thanh toán nếu điểm chốt cao hơn hoặc bằng giới hạn trên."
+
+msgid "No payout if exit spot is below or equal to the lower barrier."
+msgstr "Sẽ không được thanh toán nếu điểm chốt thấp hơn hoặc bằng giới hạn trên."
 
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering which may have several effects on Clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of Clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
 msgstr "Không ai được phép lạm dụng trang web này với mục đích rửa tiền. Công Ty đã áp dụng các biện pháp chống rửa tiền tốt nhất. Tất cả các giao dịch đều được kiểm tra lại để ngăn chặn rửa tiền có thể sẽ có một vài ảnh hưởng tới Khách hàng. Công Ty có quyền từ chối hợp tác với Khách Hàng, ngừng làm việc với Khách Hàng và có quyền thay đổi hoàn toàn giao dịch của Khách Hàng nếu Khách Hàng không chấp nhận hoặc từ chối quy trình chống rửa tiền này. Khoản tiền được chấp nhận sẽ không phải là tiền từ hoạt động phi pháp. Công Ty bắt buộc phải báo cáo các giao dịch đáng ngờ cho các cơ quan chức năng có liên quan."
@@ -6929,6 +6986,9 @@ msgstr "Khoảng được trả"
 msgid "Payout per lot = 1,000"
 msgstr "Khoảng được trả cho mỗi lô = 1000"
 
+msgid "Payout range"
+msgstr "Phạm vi thanh toán"
+
 msgid "Pension"
 msgstr "Trợ Cấp"
 
@@ -7040,8 +7100,11 @@ msgstr "Hãy chọn một loại tiền tệ"
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
 msgstr "Xin vui lòng hoàn tất mẫu đánh giá tài chính%1 %2 để nâng giới hạn rút tiền và giao dịch của bạn."
 
-msgid "Please complete the tax information before proceeding."
-msgstr "Vui lòng hoàn thành thông tin thuế trước khi tiếp tục."
+msgid "Please complete your %1personal details%2 before you proceed."
+msgstr ""
+
+msgid "Please complete your personal details before you proceed."
+msgstr "Xin vui lòng điền thông tin cá nhân của bạn trước khi bạn tiến hành."
 
 msgid "Please confirm that all the information above is true and complete."
 msgstr "Xin vui lòng xác nhận rằng tất cả các thông tin trên là đúng sự thật và đầy đủ."
@@ -7153,9 +7216,6 @@ msgstr "Xin vui lòng thiết lập giới hạn 30 ngày doanh thu của bạn 
 
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr "Xin vui lòng thiết lập <a href=\"%1\"> giới hạn doanh thu 30 ngày</a> của bạn để truy cập vào thu ngân."
-
-msgid "Please set your account opening reason before proceeding."
-msgstr "Vui lòng lựa chọn lý do mở tài khoản trước khi tiếp tục."
 
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Hãy chỉ rõ khoảng thời gian kiểm tra thực tế ưa thích của bạn vào biên bản"
@@ -7361,9 +7421,6 @@ msgstr "Khách Hàng Chuyên Nghiệp"
 msgid "Professional Clients"
 msgstr "Khách Hàng Chuyên Nghiệp"
 
-msgid "Professional Trader"
-msgstr "Nhà Giao Dịch Chuyên Nghiệp"
-
 msgid "Professionals"
 msgstr "Các Chuyên Gia"
 
@@ -7418,6 +7475,9 @@ msgstr "Kiểm tra và sửa nội dung trên trang web, blog, phương tiện t
 msgid "Proofreader"
 msgstr "Chuyên viên kiểm tra nội dung dịch"
 
+msgid "Protect your account with two-factor authentication. Each time you sign into your account, you will need to enter your password, plus an authentication code generated by an app on your smartphone."
+msgstr "Bảo vệ tài khoản của bạn với xác thực 2 yếu tố. Mỗi lần bạn đăng nhập vào tài khoản của bạn, bạn sẽ cần phải nhập mật khẩu của bạn, kèm với một mã số xác thực được tạo ra bởi một ứng dụng trên điện thoại di động của bạn."
+
 msgid "Protect your profits"
 msgstr "Bảo vệ lợi nhuận của bạn"
 
@@ -7465,6 +7525,9 @@ msgstr "Yêu cầu mua hàng được gửi"
 
 msgid "Purpose of trading"
 msgstr "Mục đích giao dịch"
+
+msgid "Put Spread"
+msgstr "Đặt biên lãi"
 
 msgid "Put a limit on your winnings. Once you have reached it put some aside and trade with the rest of the money."
 msgstr "Hãy đặt giới hạn cho số hợp đồng mà bạn thắng. Khi bạn đã đạt tới mức đó, hãy cất một số tiền sang một bên riêng và tiếp tục giao dịch với số tiền còn lại."
@@ -7865,6 +7928,9 @@ msgstr "Thứ Bảy"
 msgid "Scalable"
 msgstr "Khả năng mở rộng"
 
+msgid "Scan the QR code below with your authentication app (such as %1, %2, and %3)."
+msgstr "Quét mã QR bên dưới bằng ứng dụng xác thực của bạn (chẳng hạn như %1, %2 và %3)."
+
 msgid "Scope and Intent"
 msgstr "Phạm vi và Mục đích"
 
@@ -7943,6 +8009,9 @@ msgstr "Chọn thị trường và các tài sản cơ sở của bạn"
 msgid "Select your trade type"
 msgstr "Chọn loại giao dịch của bạn"
 
+msgid "Selected Tick"
+msgstr "Tick đã chọn"
+
 msgid "Self Exclusion"
 msgstr "Tự Loại trừ"
 
@@ -7959,7 +8028,7 @@ msgid "Self-employed"
 msgstr "Tự làm chủ"
 
 msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
-msgstr ""
+msgstr "Tự loại trừ trên trang web này chỉ áp dụng cho tài khoản %1 của bạn và không bao gồm các công ty hoặc trang web khác."
 
 msgid "Sell"
 msgstr "Bán"
@@ -8096,6 +8165,9 @@ msgstr "Nên bắt đầu bằng chữ hoặc số, và có thể chứa các g�
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "Nếu tiền của bạn gửi vào tài khoản không đủ bù đắp những khoản chi phí này chúng tôi có quyền điều tra những phương tiện thay thế khác để lấy được khoản thanh toán này, ví dụ: nếu tài khoản của bạn vừa tạo tài khoản mua, chúng tôi sẽ giữ lại tiền thanh toán hoa hồng của những tài khoản này tới khi trả hết khoản nợ trong tài khoản."
 
+msgid "Show all historical transactions up to"
+msgstr "Hiển thị tất cả các lịch sử giao dịch tới"
+
 msgid "Sign out"
 msgstr "Đăng xuất"
 
@@ -8130,7 +8202,7 @@ msgid "Since we exclusively deal on own account in Financial Products this means
 msgstr "Từ khi chúng tôi mở tài khoản của mình vào Sản Phẩm Tài Chính, điều này có nghĩa là chúng tôi hoạt động như trung tâm thực hiện và theo đó tất cả các giao dịch được nhập vào với chúng tôi sẽ được thực hiện bên ngoài thị trường quy định (giao dịch chứng khoán) hoặc cơ sở thương mại đa phương."
 
 msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
-msgstr ""
+msgstr "Vì bạn cảm thấy cần tự loại trừ, chúng tôi thực sự khuyên bạn nên loại trừ bản thân khỏi các dịch vụ tương tự mà bạn có thể đã đăng ký."
 
 msgid "Size - the size of your order determined by the volume (number of lots)."
 msgstr "Kích thước - kích thước của lệnh của bạn được xác định theo khối lượng (số lượng của các lô)."
@@ -9320,6 +9392,9 @@ msgstr "Khoản này không áp dụng cho Chỉ Số Biến Động."
 msgid "This contract lost"
 msgstr "Hợp đồng này đã thua lỗ"
 
+msgid "This contract type only offers 5 ticks"
+msgstr "Loại hợp đồng này chỉ cung cấp 5 tick"
+
 msgid "This contract won"
 msgstr "Hợp đồng này đã thắng"
 
@@ -9404,6 +9479,18 @@ msgstr "Thứ Năm"
 msgid "Tick"
 msgstr "Tick"
 
+msgid "Tick %1 is the highest tick"
+msgstr "Tick %1 là tick cao nhất"
+
+msgid "Tick %1 is the lowest tick"
+msgstr "Tick %1 là tick thấp nhất"
+
+msgid "Tick Prediction"
+msgstr "Dự đoán tick"
+
+msgid "Ticks"
+msgstr "Các tick"
+
 msgid "Tier"
 msgstr "Lớp"
 
@@ -9458,6 +9545,9 @@ msgstr "Để tạo một tài khoản MAM thực, xin vui lòng:"
 msgid "To create a MetaTrader 5 real account, please:"
 msgstr "Để tạo một tài khoản thực MetaTrader 5, xin vui lòng:"
 
+msgid "To disable two-factor authentication, please enter the code generated by the app below:"
+msgstr ""
+
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Để bật cookie, hãy làm theo các hướng dẫn dưới đây dành cho phiên bản trình duyệt mà bạn đang sử dụng."
 
@@ -9510,7 +9600,7 @@ msgid "To self-exclude from all online gambling companies licensed in Great Brit
 msgstr "Để tự loại trừ khỏi tất cả công ty cờ bạc trực tuyến có giấy phép trong Anh Quốc, đi tới %1."
 
 msgid "To self-exclude from all online gambling companies licensed in Great Britain, you may go to %1."
-msgstr ""
+msgstr "Để tự loại trừ khỏi tất cả công ty cờ bạc trực tuyến có giấy phép trong Anh Quốc, đi tới %1."
 
 msgid "To withdraw from MetaTrader 5 Financial Account please <a href=\"%1\">Authenticate</a> your Binary account."
 msgstr "Để rút tiền từ MetaTrader 5 tài khoản tài chính xin vui lòng <a href=\"%1\">xác thực</a> tài khoản Binary của bạn."
@@ -9803,9 +9893,6 @@ msgstr "Đúng"
 msgid "Trust"
 msgstr "Sự tin tưởng"
 
-msgid "Trusted by traders since 2000"
-msgstr "Tin cậy bởi các nhà giao dịch từ năm 2000"
-
 msgid "Try Binary Bot"
 msgstr "Thử Binary Bot"
 
@@ -9841,6 +9928,15 @@ msgstr "Doanh thu"
 
 msgid "Turnover Limit"
 msgstr "Giới Hạn Doanh Thu"
+
+msgid "Two-Factor Authentication"
+msgstr ""
+
+msgid "Two-factor authentication is currently disabled."
+msgstr ""
+
+msgid "Two-factor authentication is currently enabled."
+msgstr ""
 
 msgid "Two-way pricing"
 msgstr "Giá 2 chiều"
@@ -10739,8 +10835,14 @@ msgstr "Tại sao bạn nên giao dịch binary options với %1"
 msgid "Why you should trade precious metals with %1"
 msgstr "Tại sao bạn nên giao dịch kim loại quý với %1"
 
-msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
 msgstr ""
+
+msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
+msgstr ""
+
+msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
+msgstr "Giành chiến thắng thanh toán nếu điểm chốt cũng bằng điểm khởi đầu, ngoài việc là cao hơn hoặc thấp hơn."
 
 msgid "Win the multiplier times the close minus low."
 msgstr "Thắng hệ số lần đóng âm thấp."
@@ -10750,6 +10852,12 @@ msgstr "Thắng hệ số lần cao âm thấp."
 
 msgid "Win the multiplier times the high minus low."
 msgstr "Thắng hệ số lần cao âm thấp."
+
+msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between exit spot and lower barrier."
+msgstr ""
+
+msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between upper barrier and exit spot."
+msgstr ""
 
 msgid "Windows"
 msgstr "Windows"
@@ -10895,8 +11003,8 @@ msgstr "Bạn thừa nhận rằng Công Ty có thể chấp nhận Lệnh và t
 msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr "Bạn thừa nhận rằng Công Ty có quyền xác định, với ý kiến của mình, các giao dịch sẽ được lưu giữ trong sổ sách của Công Ty (được biết như B booking) và các giao dịch sẽ được chuyển qua cho môi giới chính, những người hoạt động như các nhà cung cấp thanh khoản cho Công Ty (được biết như A đặt trước). Cho vế sau, Công Ty đối tác trong các giao dịch và sự tương quan giữa lợi nhuận/tổn thất được thực hiện bởi khách hàng và lợi nhuận/tổn thất được thực hiện bởi Công Ty tồn tại. Tại bất kỳ điểm nào trong thời gian, chúng tôi có thể nhập vào hoặc có thể đã nhập vào các giao dịch với một số lượng lớn các khách hàng, mỗi người có quyền lợi có thể phân ra các khách hàng khác. Như vậy, Công Ty có thể giữ mở các vị trí có thể không được liên kết với lợi ích/mục tiêu của bạn là một khách hàng cá nhân của Công Ty."
 
-msgid "You acknowledge that the Money Manager is entitled to receive USD $20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
-msgstr "Bạn thừa nhận rằng Nhà Quản Lý Tiền Bạc có quyền nhận được USD $20 / cho mỗi lô phí Hoa Hồng như chi phí lệ phí. Bạn cũng đồng ý rằng Công Ty có quyền để sửa đổi những chi phí lệ phí theo thời gian. Bạn công nhận thêm rằng các Công Ty có trách nhiệm tính phí lệ phí, thông qua hệ thống tự động của mình. Vì vậy, Công Ty sẽ được hợp lệ được ủy quyền để khấu trừ số tiền, được xác định như Hoa Hồng, từ các Tài Khoản và trả Nhà Quản Lý Tiền Bạc."
+msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
+msgstr "Bạn thừa nhận rằng Nhà Quản Lý Tiền Bạc có quyền nhận được USD $20 Hoa Hồng như chi phí lệ phí cho mỗi lô. Bạn cũng đồng ý rằng công ty có quyền để sửa đổi những chi phí lệ phí theo thời gian. Bạn công nhận thêm rằng các Công Ty có trách nhiệm tính phí lệ phí, thông qua hệ thống tự động của mình. Vì vậy, Công Ty sẽ được hợp lệ được ủy quyền để khấu trừ số tiền, được xác định như Hoa Hồng, từ Tài Khoản và để trả cho Nhà Quản Lý Tiền Bạc."
 
 msgid "You acknowledge that the Money Manager is not an employee or representative of the Company. Thus, you agree that you have an absolute responsibility to diligently monitor the entire performance of your Account."
 msgstr "Bạn thừa nhận rằng Nhà Quản Lý Tiền Bạc không phải là một nhân viên hoặc người đại diện của Công Ty. Vì thế, bạn đồng ý rằng bạn có một trách nhiệm tuyệt đối để siêng năng giám sát hiệu suất toàn bộ Tài Khoản của bạn."
@@ -10975,6 +11083,12 @@ msgstr "Bạn nên biết rằng Binary Options được cung cấp bởi %1 kh�
 
 msgid "You are buying the base currency and selling the quote currency."
 msgstr "Bạn đang mua các loại tiền tệ cơ sở và bán các loại tiền tệ trong danh sách."
+
+msgid "You are categorised as a professional client."
+msgstr ""
+
+msgid "You are categorised as a retail client. Apply to be treated as a professional trader."
+msgstr ""
 
 msgid "You are expecting the base currency to fall in value so you can buy it back at a lower price and make profit."
 msgstr "Bạn đang mong đợi tiền tệ cơ bản rơi trong giá trị để bạn có thể mua nó trở lại tại một mức giá thấp hơn và đạt được lợi nhuận."
@@ -11128,6 +11242,12 @@ msgstr "Bạn đã tạo thành công tài khoản %1 của bạn!"
 
 msgid "You have successfully created your Virtual Account."
 msgstr "Bạn đã tạo thành công tài khoản ảo của bạn."
+
+msgid "You have successfully disabled two-factor authentication for your account."
+msgstr ""
+
+msgid "You have successfully enabled two-factor authentication for your account."
+msgstr ""
 
 msgid "You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
 msgstr "Bạn có đủ kinh nghiệm và kiến thức trong các vấn đề hợp đồng cho sự khác biệt để có thể đánh giá ích lợi và rủi ro của việc mua các hợp đồng thông qua trang web này và đã giao dịch mà không dựa vào bất kỳ thông tin nào trên trang web này."
@@ -11393,6 +11513,9 @@ msgstr "Tài khoản của bạn không nên được sử dụng như một th
 
 msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
 msgstr "Địa chỉ của bạn không thể được kiểm chứng bởi hệ thống tự động của chúng tôi. Bạn có thể tiếp tục, nhưng hãy đảm bảo rằng địa chỉ của bạn được bổ sung đầy đủ."
+
+msgid "Your application to be treated as a professional client is being processed."
+msgstr ""
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Hồ sơ đăng kí của bạn sẽ được xem xét bởi phòng thủ tục và marketing. Khi đã được duyệt, chúng tôi sẽ xếp bạn vào danh sách <a href='%1'>đại lý thanh toán</a> của chúng tôi."

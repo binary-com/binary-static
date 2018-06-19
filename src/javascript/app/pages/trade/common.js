@@ -55,6 +55,8 @@ const commonTrading = (() => {
         if (/higherlower/.test(form_name)) {
             name    = 'callput';
             barrier = 'euro_non_atm';
+        } else if (/callputspread/.test(form_name)) {
+            name = 'callputspread';
         } else if (/callputequal/.test(form_name)) {
             barrier = 'euro_atm';
         } else if (/risefall|callput/.test(form_name)) {
@@ -102,6 +104,10 @@ const commonTrading = (() => {
         LBFLOATCALL : 'middle',
         LBFLOATPUT  : 'middle',
         LBHIGHLOW   : 'middle',
+        CALLSPREAD  : 'top',
+        PUTSPREAD   : 'bottom',
+        TICKHIGH    : 'top',
+        TICKLOW     : 'bottom',
     };
 
     const contractTypeDisplayMapping = type => (type ? obj[type] : 'top');
@@ -135,6 +141,8 @@ const commonTrading = (() => {
             ['lookback',
                 ['lookbackhigh', 'lookbacklow', 'lookbackhighlow'],
             ],
+            'callputspread',
+            'highlowticks',
         ];
 
         if (elements) {
@@ -286,12 +294,12 @@ const commonTrading = (() => {
     /*
      * sort the duration in ascending order
      */
-    const duration_order = {
-        t: 1,
-        s: 2,
-        m: 3,
-        h: 4,
-        d: 5,
+    const duration_config = {
+        t: { order: 1, type: 'tick' },
+        s: { order: 2, type: 'intraday' },
+        m: { order: 3, type: 'intraday' },
+        h: { order: 4, type: 'intraday' },
+        d: { order: 5, type: 'daily' },
     };
 
     const displayTooltip = () => {
@@ -414,7 +422,8 @@ const commonTrading = (() => {
         hidePriceOverlay: () => { showHideOverlay('loading_container2', 'none'); },
         hideFormOverlay : () => { showHideOverlay('loading_container3', 'none'); },
         showFormOverlay : () => { showHideOverlay('loading_container3', 'block'); },
-        durationOrder   : duration => duration_order[duration],
+        durationOrder   : duration => duration_config[duration].order,
+        durationType    : duration => duration_config[duration].type,
         clean           : () => { $chart = null; contracts_element = null; },
     };
 })();
