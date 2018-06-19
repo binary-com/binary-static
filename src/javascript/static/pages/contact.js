@@ -19,7 +19,7 @@ const Contact = (() => {
         });
     };
 
-    const isWeekday = (moment_obj) => !/^(0|6)$/.test(moment_obj.day); // 0 for sunday and 6 for saturday
+    const isWeekday = (moment_obj) => !/^(0|6)$/.test(moment_obj.day()); // 0 for sunday and 6 for saturday
 
     const availability = [
         [8, 17], // weekends (sat-sun): 08-17 MYT
