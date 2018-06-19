@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-17 21:16-0400\n"
+"PO-Revision-Date: 2018-06-19T06:49:31+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -736,7 +736,7 @@ msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "帳戶餘額 &mdash; 您的帳戶餘額代表:"
 
 msgid "Account Categorisation"
-msgstr ""
+msgstr "帳戶分類"
 
 msgid "Account Closure"
 msgstr "帳戶關閉"
@@ -1338,6 +1338,9 @@ msgstr "這個職位要求有至少 1 年的工作經驗"
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "聯盟網路行銷、技術增長、業務發展和其他密切相關的技能有至少五年經驗"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr "審計"
 
@@ -1478,9 +1481,6 @@ msgstr "放置橫幅"
 
 msgid "Barrier"
 msgstr "障礙"
-
-msgid "Barrier (%1)"
-msgstr "障礙 (%1)"
 
 msgid "Barrier Change"
 msgstr "障礙變更"
@@ -4008,9 +4008,6 @@ msgstr "最高值"
 msgid "High Barrier"
 msgstr "高障礙"
 
-msgid "High Barrier (%1)"
-msgstr "高障礙(%1)"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "高跳動點/低跳動點合約具有嚴格的五跳動點週期。"
 
@@ -4296,6 +4293,9 @@ msgstr "如果不可抗力事件持續超過 30 個工作日，沒遭受不可�
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "如果 <strong>退市現價</strong> 等於 <strong>低障礙</strong> 或 <strong>高障礙</strong>, 您將不會贏得賠付。"
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "如果 <strong>退市現價</strong> 等於 <strong>障礙價格</strong>, 您將不會贏得賠付。"
 
@@ -4466,6 +4466,12 @@ msgstr "如果您選擇「奇數」期權，只要<strong>最新價格的</stron
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "如果您選擇「大於」期權，只要<strong>最新價格的</strong>最後一個數字<strong>大於您的預測，您將獲得賠付。</strong>"
+
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "如果您選擇「上漲」期權，只要<strong>退市現價</strong>嚴格高於<strong>入市現價</strong>，您將獲得賠付。"
@@ -5744,9 +5750,6 @@ msgstr "最低值"
 
 msgid "Low Barrier"
 msgstr "低障礙"
-
-msgid "Low Barrier (%1)"
-msgstr "低障礙 (%1)"
 
 msgid "Low barrier"
 msgstr "低障礙"
@@ -7098,6 +7101,9 @@ msgstr "請選擇一種貨幣"
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
 msgstr "請完成%1財務評估表格%2，以便提升您的取款和交易限額。"
 
+msgid "Please complete your %1personal details%2 before you proceed."
+msgstr ""
+
 msgid "Please complete your personal details before you proceed."
 msgstr "繼續操作前請填寫您的個人資料。"
 
@@ -7316,6 +7322,12 @@ msgstr "預測到期時市場價格高於平均價格"
 
 msgid "Predict that the market will end lower than the average price"
 msgstr "預測到期時市場價格低於平均價格"
+
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
 
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "預測市場價格是否會從目前水平上漲或下跌"
@@ -7755,17 +7767,41 @@ msgstr "不提供轉售"
 msgid "Resale price"
 msgstr "轉售價格"
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr "重設MT5密碼"
 
 msgid "Reset Password"
 msgstr "重設密碼"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr "重設密碼"
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
 msgstr "重設為原始設定"
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
+msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "被FATF認定具有策略缺陷的國家的居民, 須受限制, 不得在Binary Investments (歐洲) 有限公司開立帳戶。"
@@ -8232,6 +8268,9 @@ msgstr "對不起，在處理您的帳戶時出錯。"
 msgid "Sorry, an error occurred while processing your request."
 msgstr "對不起，在處理您的請求時發生錯誤。"
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr ""
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "對不起，此功能僅適用虛擬帳戶。"
 
@@ -8678,6 +8717,12 @@ msgstr "<strong>合約期限</strong>是在合約<strong>開始時間</strong> �
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "合約<strong>結束時間</strong>是指合約<strong>開始時間</strong>（如果期限小於一天）以後所選定的分鐘/小時數，或是交易日結束之時（如果期限是一天或更長）。"
+
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>退市現價</strong>是合約<strong>結束時或之前的</strong>最後跳動價點。"
@@ -9177,6 +9222,9 @@ msgstr "客戶已經存入所需的最低存款以及"
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "轉售價格表示合約的目前市場價格。轉售價格在盡最大努力的基礎上提供，且買入合約後有可能一直不可用。請參閱「賣出期權」以了解在到期前賣出合約的更多細節。"
 
+msgid "The reset time is %1"
+msgstr ""
+
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "收益指當合約到期時實現的收益（參閱「賠付金額」）。"
 
@@ -9254,6 +9302,9 @@ msgstr "範圍內/外交易有兩種類型:"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "上漲/下跌交易有兩種類型:"
+
+msgid "There are two types of two types of reset trades:"
+msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "您欠我們一些數額尚未還清；和（或)"
@@ -9887,9 +9938,6 @@ msgstr "True"
 
 msgid "Trust"
 msgstr "信任"
-
-msgid "Trusted by traders since 2000"
-msgstr "自2000年以來備受交易員信賴"
 
 msgid "Try Binary Bot"
 msgstr "試試Binary Bot"
@@ -11083,10 +11131,10 @@ msgid "You are buying the base currency and selling the quote currency."
 msgstr "您正在買入基本貨幣並賣出報價貨幣。"
 
 msgid "You are categorised as a professional client."
-msgstr ""
+msgstr "您被歸類為專業客戶。"
 
 msgid "You are categorised as a retail client. Apply to be treated as a professional trader."
-msgstr ""
+msgstr "您被歸類為零售客戶。申請成為專業交易者。"
 
 msgid "You are expecting the base currency to fall in value so you can buy it back at a lower price and make profit."
 msgstr "您預計基礎貨幣的價值會下跌，因此您可以以較低的價格買回並賺取利潤。"
@@ -11512,7 +11560,7 @@ msgid "Your address could not be verified by our automated system. You may proce
 msgstr "我們的自動化系統無法驗證您的地址。您可以繼續操作, 但請確保您提供完整地址。"
 
 msgid "Your application to be treated as a professional client is being processed."
-msgstr ""
+msgstr "您請求成為專業客戶的申請正在處理中。"
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "然後我們的審核和行銷部門將審查您的申請。一旦批准，我們將把您列入 <a href='%1'>付款代理</a>列表。"

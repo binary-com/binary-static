@@ -83,6 +83,7 @@ const texts = [
     'End time',
     'Sell time',
     'Charting for this underlying is delayed',
+    'Reset time',
     'Payout range',
 
     // trading page
@@ -155,8 +156,11 @@ const texts = [
     'High-Close',
     'Close-Low',
     'High-Low',
+    'Reset Call',
+    'Reset Put',
     'Search...',
     'Select Asset',
+    'The reset time is [_1]',
     'Purchase',
     'Purchase request sent',
     'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.',
@@ -418,10 +422,8 @@ const texts = [
     'Start Time',
     'Entry Spot',
     'Low Barrier',
-    'Low Barrier ([_1])',
     'High Barrier',
-    'High Barrier ([_1])',
-    'Barrier ([_1])',
+    'Reset Barrier',
     'Average',
     'This contract won',
     'This contract lost',
@@ -596,6 +598,7 @@ const texts = [
     'Deposits and withdrawals have been disabled on your account. Please check your email for more details.',
     'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Withdrawals have been disabled on your account. Please check your email for more details.',
+    'Please complete your [_1]personal details[_2] before you proceed.',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
