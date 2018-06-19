@@ -29,6 +29,7 @@ const routes = [
     {
         path     : '/settings',
         component: Settings,
+        is_authenticated: true,
         routes   : [
             { path: 'personal',         component: PersonalDetails },
             { path: 'financial',        component: FinancialAssessment },
