@@ -24,28 +24,26 @@ const getDateToFrom = () => {
     };
 };
 
-const attachDatePicker = (selectors, fncOnChange) => {
-    selectors.forEach(selector => {
-        const id          = `#${selector}`;
-        const $datepicker = $(id);
-        $datepicker
-            .attr('data-value', toISOFormat(moment.utc()))
-            .change(function () {
-                if (!dateValueChanged(this, 'date')) {
-                    return false;
-                }
-                $('.table-container').remove();
-                if (typeof fncOnChange === 'function') {
-                    fncOnChange();
-                }
-                return true;
-            });
-        DatePicker.init({
-            selector: id,
-            maxDate : 0,
+const attachDateToPicker = (fncOnChange) => {
+    const id_date_to = '#date_to';
+    const $date_to   = $(id_date_to);
+    $date_to
+        .attr('data-value', toISOFormat(moment.utc()))
+        .change(function () {
+            if (!dateValueChanged(this, 'date')) {
+                return false;
+            }
+            $('.table-container').remove();
+            if (typeof fncOnChange === 'function') {
+                fncOnChange();
+            }
+            return true;
         });
-        if ($datepicker.attr('data-picker') !== 'native') $datepicker.val(localize('Today'));
+    DatePicker.init({
+        selector: id_date_to,
+        maxDate : 0,
     });
+    if ($date_to.attr('data-picker') !== 'native') $date_to.val(localize('Today'));
 };
 
 const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
@@ -76,7 +74,7 @@ const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
 };
 
 module.exports = {
-    attachDatePicker,
+    attachDateToPicker,
     attachDateRangePicker,
     getDatePickerValue,
     getDateToFrom,

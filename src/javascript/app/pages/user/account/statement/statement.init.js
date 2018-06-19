@@ -145,7 +145,7 @@ const StatementInit = (() => {
 
     const onLoad = () => {
         initPage();
-        DateTo.attachDatePicker(['date_to'], () => {
+        DateTo.attachDateToPicker(() => {
             StatementUI.clearTableContent();
             $('.barspinner').setVisibility(1);
             initPage();
