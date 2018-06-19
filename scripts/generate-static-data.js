@@ -197,6 +197,9 @@ const texts = [
     'Male',
     'Please select a country',
     'Please confirm that all the information above is true and complete.',
+    'Your application to be treated as a professional client is being processed.',
+    'You are categorised as a retail client. Apply to be treated as a professional trader.',
+    'You are categorised as a professional client.',
 
     // home and virtual account opening page
     'Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.',
@@ -593,6 +596,7 @@ const texts = [
     'Deposits and withdrawals have been disabled on your account. Please check your email for more details.',
     'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Withdrawals have been disabled on your account. Please check your email for more details.',
+    'Please complete your [_1]personal details[_2] before you proceed.',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
