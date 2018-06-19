@@ -11,6 +11,7 @@ import Url             from '../../../../_common/url';
 import {
     getPropertyValue,
     isEmptyObject }    from '../../../../_common/utility';
+import Client from '../../../../_common/base/client_base';
 
 // TODO: update/remove this once the design is ready
 const createPurchaseInfo = (purchase_info) => (
@@ -34,11 +35,12 @@ const Purchase = ({
     trade_types,
 }) => (
     Object.keys(trade_types).map((type, idx) => {
-        const info = proposal_info[type] || {};
+        const info         = proposal_info[type] || {};
         const is_logged_in = isLoggedIn();
+        const el_currency  = <span className={`symbols ${(Client.get('currency') || '').toLowerCase()}`}/>;
 
         return (
-            <Fieldset className='purchase-option' key={idx} header={type} tooltip={info.message}>
+            <Fieldset className='purchase-option' key={idx}>
                 {(!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id) ?
                     <div>
                         {getPropertyValue(purchase_info, ['error', 'message']) || createPurchaseInfo(purchase_info.buy)}
@@ -50,17 +52,19 @@ const Purchase = ({
                             :
                             <div className='box'>
                                 <div className='left-column'>
-                                    <img
-                                        className='type'
-                                        src={Url.urlForStatic(`images/trading_app/purchase/trade_types/ic_${trade_types[type].toLowerCase()}_light.svg`) || undefined}
-                                    />
-                                    <h4 className='trade-type'>{type.toLowerCase()}</h4>
+                                    <div className='type-wrapper'>
+                                        <img
+                                            className='type'
+                                            src={Url.urlForStatic(`images/trading_app/purchase/trade_types/ic_${trade_types[type].toLowerCase().replace(/(\s|-)/, '_')}_light.svg`) || undefined}
+                                        />
+                                    </div>
+                                    <h4 className='trade-type'>{trade_types[type]}</h4>
                                 </div>
-                                <div className='right-column'>
-                                    <span>{localize('Return')}: {info.returns}%</span>
-                                    <span>{localize('Stake')}: {info.stake}</span>
-                                    <span>{localize('Net Profit')}: {info.profit}</span>
-                                    <span>{localize('Payout')}: {info.payout}</span>
+                                <div className='purchase-info-wrapper'>
+                                    <div className='stake-wrapper'><span><strong>{localize('Stake')}</strong>: {el_currency}{info.stake}</span><span className='field-info'><Tooltip alignment='left' icon='info' message={info.message} /></span></div>
+                                    <div><strong>{localize('Payout')}</strong>: {el_currency}{info.payout}</div>
+                                    <div><strong>{localize('Net Profit')}</strong>: {el_currency}{info.profit}</div>
+                                    <div><strong>{localize('Return')}</strong>: {info.returns}</div>
                                 </div>
                             </div>
                         }
@@ -74,7 +78,7 @@ const Purchase = ({
                                     id={`purchase_${type}`}
                                     className='primary green'
                                     has_effect
-                                    text={is_logged_in ? `${localize('Purchase')} ${trade_types[type]}` : localize('Please log in.')}
+                                    text={localize(is_logged_in ? 'Purchase' : 'Please log in.')}
                                     onClick={() => { onClickPurchase(info.id, info.stake); }}
                                 />
                             </Tooltip>

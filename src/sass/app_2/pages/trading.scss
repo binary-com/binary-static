@@ -86,10 +86,7 @@
             z-index: 1;
             color: $COLOR_BLUE;
         }
-        .clock-header, .fieldset-header {
-            height: 1.5rem;
-            position: relative;
-
+        .clock-header, .fieldset-header, .stake-wrapper {
             span.field-info {
                 position: absolute;
                 color: $COLOR_BLUE;
@@ -116,9 +113,29 @@
                 }
             }
         }
+        .clock-header, .fieldset-header {
+            height: 1.5rem;
+            position: relative;
+        }
+        .purchase-info-wrapper {
+            line-height: 1rem;
+            padding-bottom: 1vh;
+
+            .stake-wrapper {
+                display: flex;
+                height: 1rem;
+
+                span.field-info {
+                    margin: 0 0 0 auto;
+                }
+            }
+        }
         &.purchase-option {
-            .fieldset-header {
-                line-height: 0;
+            padding: 1.5vh 1vh;
+            min-height: 100px;
+
+            > div:first-child {
+                min-height: 71px;
             }
             div.box {
                 display: grid;
@@ -131,18 +148,25 @@
                         display: block;
                     }
                 }
-                .left-column > img.type {
-                    width: 32px;
-                    padding: 2px;
-                    background: $COLOR_GRAY;
-                    border-radius: 100%;
+                .left-column > {
+                    .type-wrapper {
+                        width: 36px;
+                        height: 36px;
+                        background: $COLOR_GRAY;
+                        border-radius: 100%;
+
+                        img.type {
+                            width: 24px;
+                            margin: 6px 0 0 6px;
+                        }
+                    }
                 }
                 h4.trade-type {
                     padding: 0;
                     font-weight: 600;
                     text-transform: capitalize;
                     text-align: center;
-                    margin-top: 8px;
+                    margin-top: 14px;
                     line-height: 0;
                 }
                 div.amount {
@@ -184,12 +208,20 @@
                 span.purchase-return {
                     color: $COLOR_ORANGE;
                 }
+                .symbols {
+                    position: relative;
+                    display: inline;
+
+                    &:before {
+                        margin-right: 1px;
+                    }
+                }
             }
             div.submit-section {
                 display: grid;
                 grid-template-columns: 1fr;
 
-                span.tooltip[data-tooltip] {
+                span.tooltip {
                     &:before {
                         max-width: unset;
                         width: 250px;
@@ -199,8 +231,16 @@
                         text-transform: capitalize;
                         margin: 0;
                         width: 100%;
-                        height: 28px;
-                        box-shadow: 1px 3px 4px 0 rgba(76, 175, 80, 0.14), 1px 3px 4px 0 rgba(76, 175, 80, 0.14);
+                        height: 4vh;
+                        min-height: 25px;
+                        max-height: 35px;
+
+                        &:not([disabled]) {
+                            box-shadow: 1px 3px 4px 0 rgba(76, 175, 80, 0.14), 1px 3px 4px 0 rgba(76, 175, 80, 0.14);
+                        }
+                        span {
+                            font-size: 0.88rem;
+                        }
                     }
                 }
             }

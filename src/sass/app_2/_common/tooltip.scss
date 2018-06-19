@@ -52,7 +52,6 @@ span.tooltip {
             box-shadow: 0 2px 8px 0 rgba(21, 33, 45, 0.32);
             border-radius: 4px;
             color: $COLOR_WHITE;
-            max-width: 400px;
             content: attr(data-tooltip);
             padding: 8px;
             white-space: nowrap;
