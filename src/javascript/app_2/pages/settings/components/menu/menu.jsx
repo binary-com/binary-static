@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import MenuList  from './menu_list.jsx';
 
 const Menu = ({ data }) => (
-    <div className='settings__menu'>
+    <div className='settings-menu'>
         {
-            data.map(section => (
-                <div key={section.title}>
-                    <h2 className='settings__section_header'>{section.title}</h2>
-                    <hr className='settings__separator'/>
-                    <MenuList items={section.items} />
+            data.map(group => (
+                <div key={group.title}>
+                    <h2 className='settings-menu__group-header'>{group.title}</h2>
+                    <hr className='settings-menu__separator'/>
+                    <MenuList items={group.items} />
                 </div>
             ))
         }

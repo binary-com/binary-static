@@ -28,8 +28,8 @@ class MobileDropdown extends React.PureComponent {
         const { all_items, children } = this.props;
         const { is_open } = this.state;
         return (
-            <div className={classnames('mobile_dropdown', { 'mobile_dropdown--open': is_open })}>
-                <div className='mobile_dropdown__button' onClick={this.toggleOpen}>
+            <div className={classnames('mobile-dropdown', { 'mobile-dropdown--open': is_open })}>
+                <div className='mobile-dropdown__button' onClick={this.toggleOpen}>
                     <Switch>
                         {
                             all_items.map(({ title, description, path, img_src }) => (
@@ -49,7 +49,7 @@ class MobileDropdown extends React.PureComponent {
                     </Switch>
                     <span className='select-arrow' />
                 </div>
-                <div className='mobile_dropdown__menu'>{children}</div>
+                <div className='mobile-dropdown__menu'>{children}</div>
             </div>
         );
     }

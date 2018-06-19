@@ -7,25 +7,21 @@ import Url         from '../../../../../_common/url';
 const MenuItem = ({ title, description, img_src, path }) => {
     const itemContent = (
         <React.Fragment>
-            <div className='menuitem__img_container'>
-                <img className='menuitem__img' src={Url.urlForStatic(img_src)} />
-            </div>
-            <div className='menuitem__content_container'>
-                <div className='menuitem__menu_name'>
-                    <span>{title}</span>
-                </div>
-                <div className='menuitem__menu_content'><span>{description}</span></div>
+            <img className='menu-item__img' src={Url.urlForStatic(img_src)} />
+            <div className='menu-item__content'>
+                <div className='menu-item__title'>{title}</div>
+                <div className='menu-item__description'>{description}</div>
             </div>
         </React.Fragment>
     );
 
     return (
         path ?
-            <NavLink className='menuitem' to={path} activeClassName='menuitem--active'>
+            <NavLink className='menu-item' to={path} activeClassName='menu-item--active'>
                 {itemContent}
             </NavLink>
         :
-            <div className='menuitem'>{itemContent}</div>
+            <div className='menu-item'>{itemContent}</div>
     );
 };
 
