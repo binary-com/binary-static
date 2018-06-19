@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T03:13:12+0000\n"
+"PO-Revision-Date: 2018-06-19T06:29:43+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1338,6 +1338,9 @@ msgstr "Ít nhất 1 năm kinh nghiệm làm việc là cần thiết cho vị t
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "Ít nhất 5 năm kinh nghiệm trong việc liên kết tiếp thị, thúc đẩy độ tăng trưởng, phát triển kinh doanh và những ký năng liên quan chặt chẽ khác"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr "Kiểm toán"
 
@@ -1478,9 +1481,6 @@ msgstr "Vị trí đặt biểu ngữ"
 
 msgid "Barrier"
 msgstr "Giới hạn"
-
-msgid "Barrier (%1)"
-msgstr "Giới hạn (%1)"
 
 msgid "Barrier Change"
 msgstr "Giới hạn Thay đổi"
@@ -4008,9 +4008,6 @@ msgstr "Cao"
 msgid "High Barrier"
 msgstr "Rào cản Cao"
 
-msgid "High Barrier (%1)"
-msgstr "Rào cản Cao (%1)"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Hợp đồng Tick cao/Tick thấp có thời lượng quy định gồm năm tick."
 
@@ -4297,6 +4294,9 @@ msgstr "Nếu sự kiện bất khả kháng kéo dài trong hơn 30 ngày làm 
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "Nếu <strong>điểm chốt</strong> bằng với <strong>Giới hạn dưới</strong> hoặc <strong>Giới hạn trên</strong>, bạn không thắng khoản thanh toán."
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Nếu</strong>điểm chốt<strong> bằng với <strong>giới hạn</strong>, bạn không thắng các thanh toán."
 
@@ -4467,6 +4467,12 @@ msgstr "Nếu bạn chọn \"Lẻ\", bạn sẽ giành chiến thắng nếu 
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "Nếu bạn chọn \"Trên\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> của tick cuối cùng <strong>lớn hơn so với dự đoán của bạn.</strong>"
+
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Nếu bạn chọn \"Tăng\", bạn sẽ giành chiến thắng nếu <strong>điểm chốt</strong> cao hơn <strong>điểm khởi đầu </strong>."
@@ -5746,9 +5752,6 @@ msgstr "Thấp"
 
 msgid "Low Barrier"
 msgstr "Giới Hạn Dưới"
-
-msgid "Low Barrier (%1)"
-msgstr "Giới Hạn Dưới (%1)"
 
 msgid "Low barrier"
 msgstr "Giới hạn dưới"
@@ -7322,6 +7325,12 @@ msgstr "Dự đoán rằng thị trường sẽ kết thúc cao hơn giá trung 
 msgid "Predict that the market will end lower than the average price"
 msgstr "Dự đoán rằng thị trường sẽ kết thúc thấp hơn giá trung bình"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "Dự đoán rằng thị trường sẽ tăng hay giảm từ mức hiện tại"
 
@@ -7760,17 +7769,41 @@ msgstr "Không được bán lại"
 msgid "Resale price"
 msgstr "Giá bán lại"
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr "Đổi Mật Khẩu MT5"
 
 msgid "Reset Password"
 msgstr "Đổi Mật Khẩu"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr "Đổi Mật Khẩu"
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
 msgstr "Thiết lập lại Cài Đặt Gốc"
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
+msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Công dân của các quốc gia mà đã được xác định bởi FATF là thiếu sót chiến lược sẽ được hạn chế từ việc mở một tài khoản với đầu tư nhị phân (Châu Âu) Ltd."
@@ -8684,6 +8717,12 @@ msgstr "<strong>Thời hạn hợp đồng</strong> là khoảng thời gia
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Thời gian kết thúc</strong> được lựa chọn là số phút/giờ sau <strong>thời gian bắt đầu</strong> (nếu thời khoảng ít một ngày), hoặc vào cuối ngày giao dịch (nếu thời khoảng là một ngày hoặc hơn)."
 
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>điểm chốt</strong> là tick gần nhất sau hoặc trước khi <strong>thời gian kết thúc</strong>."
 
@@ -9182,6 +9221,9 @@ msgstr "Tiền gửi tối thiểu yêu cầu đã được gửi bởi khá
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "Giá bán lại chỉ giá thị trường hiện tại của hợp đồng. Giá bán lại dựa trên cơ sở nỗ lực nhất và có thể không có sẵn mọi lúc sau khi mua. Xem 'quyền chọn Bán' để biết thêm chi tiết về bán hợp đồng trước khi hết hạn."
 
+msgid "The reset time is %1"
+msgstr ""
+
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "Doanh thu là số tiền thấy được khi hợp đồng hết hạn (xem ('Khoảng được trả')."
 
@@ -9259,6 +9301,9 @@ msgstr "Hiện có hai loại giao dịch Trong/Ngoài:"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Hiện có hai loại giao dịch Lên/Xuống:"
+
+msgid "There are two types of two types of reset trades:"
+msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "Có bất kỳ số tiền chưa được trả bởi bạn cho chúng tôi; và/hoặc"
