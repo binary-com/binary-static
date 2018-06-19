@@ -163,7 +163,7 @@ const StatementInit = (() => {
             $('#statement-container').setVisibility(0);
             $container.setVisibility(1);
 
-            DateTo.attachDatePicker(['download_to', 'download_from'], () => {
+            DateTo.attachDateRangePicker('download_from', 'download_to', () => {
                 $('#request_statement_btn').off('click').on('click', (evt) => {
                     evt.preventDefault();
 

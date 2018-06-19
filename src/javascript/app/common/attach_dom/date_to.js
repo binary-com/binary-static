@@ -48,8 +48,36 @@ const attachDatePicker = (selectors, fncOnChange) => {
     });
 };
 
+const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
+    const $date_from = $(`#${date_from_id}`);
+    const $date_to   = $(`#${date_to_id}`);
+    $date_from
+        .change(function() {
+            if (!dateValueChanged(this, 'date')) {
+                return false;
+            }
+            if (typeof fncOnChange === 'function') {
+                fncOnChange();
+            }
+            const date = new Date(this.getAttribute('data-value'));
+            DatePicker.init({
+                selector: `#${date_to_id}`,
+                minDate : new Date(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() + 1}`),
+                maxDate : 0,
+            });
+            return true;
+        });
+    $date_to.attr('data-value', toISOFormat(moment.utc()));
+    DatePicker.init({
+        selector: `#${date_from_id}`,
+        maxDate : 0,
+    });
+    if ($date_from.attr('data-picker') !== 'native') $date_from.val(localize('Select a date'));
+};
+
 module.exports = {
     attachDatePicker,
+    attachDateRangePicker,
     getDatePickerValue,
     getDateToFrom,
 };
