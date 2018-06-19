@@ -101,8 +101,8 @@ const FinancialAssessment = (() => {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
                         Header.displayAccountStatus();
                         displayHighRiskClassification();
-                        getFinancialAssessment();
                     });
+                    getFinancialAssessment();
                 }
             });
         } else {
