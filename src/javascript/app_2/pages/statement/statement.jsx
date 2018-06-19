@@ -149,7 +149,7 @@ class Statement extends React.PureComponent {
                             Card={StatementCard}
                         />
                     </div>
-                    {true && <Loading />}
+                    {is_loading && <Loading />}
                     {!is_loading && data.length === 0 && this.renderNoActivityMessage()}
                 </div>
             </div>
