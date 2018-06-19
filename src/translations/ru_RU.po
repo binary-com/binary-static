@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-17 21:16-0400\n"
+"PO-Revision-Date: 2018-06-19T03:12:49+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1774,7 +1774,7 @@ msgid "By clicking OK, you confirm that you have read and accepted Terms & Condi
 msgstr "Нажав OK, Вы подтвердите, что прочитали и приняли Правила и условия."
 
 msgid "By default, all clients are treated as retail. Do you prefer to be treated as a professional client if you match the necessary criteria?"
-msgstr "По умолчанию все клиенты считаются розничными. Вы хотите, чтобы Вас считали профессиональным клиентом, в случае соответствия необходимым критериям?"
+msgstr "По умолчанию все клиенты считаются индивидуальными. Вы хотите, чтобы Вас считали профессиональным клиентом, в случае соответствия необходимым критериям?"
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "По умолчанию, система умного распределения поступающих ордеров гарантирует, что в верхней части стакана котировок всегда находится лучшая цена бид и цена предложения, предоставленные конкурирующими поставщиками ликвидности. Тем не менее, при определённом уровне рыночной ликвидности данное положение может измениться и наиболее важным фактором станет сама возможность исполнения."
@@ -7098,6 +7098,9 @@ msgstr "Пожалуйста, выберите валюту"
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
 msgstr "Прежде, чем продолжить, пожалуйста, заполните следующую %1форму финансовой оценки%2."
 
+msgid "Please complete your %1personal details%2 before you proceed."
+msgstr ""
+
 msgid "Please complete your personal details before you proceed."
 msgstr "Чтобы продолжить, введите Ваши личные данные."
 
@@ -9887,9 +9890,6 @@ msgstr "Верно"
 
 msgid "Trust"
 msgstr "Доверие"
-
-msgid "Trusted by traders since 2000"
-msgstr "Выбор трейдеров с 2000 года"
 
 msgid "Try Binary Bot"
 msgstr "Воспользуйтесь роботом Binary Bot"
