@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T03:12:57+0000\n"
+"PO-Revision-Date: 2018-06-19T06:29:29+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1338,6 +1338,9 @@ msgstr "该职位要求 1 年以上工作经验"
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "具有5年以上联盟网络营销、技术增长、业务发展经验及其他密切相关的技能"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr "审计"
 
@@ -1478,9 +1481,6 @@ msgstr "放置横幅"
 
 msgid "Barrier"
 msgstr "障碍"
-
-msgid "Barrier (%1)"
-msgstr "障碍(%1)"
 
 msgid "Barrier Change"
 msgstr "障碍变更"
@@ -4009,9 +4009,6 @@ msgstr "最高值"
 msgid "High Barrier"
 msgstr "高障碍"
 
-msgid "High Barrier (%1)"
-msgstr "高障碍(%1)"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "高跳动点/低跳动点合约具有严格的五跳动点周期。"
 
@@ -4297,6 +4294,9 @@ msgstr "如果不可抗力事件持续超过 30 个工作日，没遭受不可�
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "如果 <strong>退市现价</strong> 等于 <strong>低障碍</strong> 或 <strong>高障碍</strong>, 您将不会赢得赔付。"
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "如果 <strong>退市现价</strong> 等于 <strong>障碍价格</strong>, 您将不会赢得赔付。"
 
@@ -4467,6 +4467,12 @@ msgstr "如果您选择“奇数”期权，只要<strong>最新价格的</stron
 
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "如果您选择“大于”期权，只要<strong>最新价格的</strong>最后一个数字<strong>大于您的预测，您将获得赔付。</strong>"
+
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "如果您选择“上涨”期权，只要 <strong>退市现价</strong> 严格高于 <strong>入市现价</strong>，您将获得赔付。"
@@ -5745,9 +5751,6 @@ msgstr "最低值"
 
 msgid "Low Barrier"
 msgstr "低障碍"
-
-msgid "Low Barrier (%1)"
-msgstr "低障碍(%1)"
 
 msgid "Low barrier"
 msgstr "低障碍"
@@ -7322,6 +7325,12 @@ msgstr "预测市价在收盘时高于平均价格"
 msgid "Predict that the market will end lower than the average price"
 msgstr "预测市价在收盘时低于平均价格"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "预测市场价格是否会从当前水平上涨或下跌"
 
@@ -7760,17 +7769,41 @@ msgstr "不提供转售"
 msgid "Resale price"
 msgstr "转售价格"
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr "重设MT5密码"
 
 msgid "Reset Password"
 msgstr "重置密码"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr "重置密码"
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
 msgstr "重设为原始设置"
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
+msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "被FATF认定具有策略缺陷的国家的居民, 须受限制, 不得在Binary Investments (欧洲) 有限公司开立账户。"
@@ -8684,6 +8717,12 @@ msgstr "<strong>合约期限</strong>是在合约<strong>开始时间</strong>�
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "合约<strong>结束时间</strong>是指合约<strong>开始时间</strong>（如果期限小于一天）以后所选定的分钟/小时数，或是交易日结束之时（如果期限是一天或更长）。"
 
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>退市现价</strong>是合约<strong>结束时或之前的</strong>最后跳动价点。"
 
@@ -9183,6 +9222,9 @@ msgstr "客户已经存入所需的最低存款以及"
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "转售价格表示合约的当前市场价格。转售价格在尽最大努力的基础上提供，且买入合约后有可能一直不可用。请参阅“卖出期权”以了解在到期前卖出合约的更多细节。"
 
+msgid "The reset time is %1"
+msgstr ""
+
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "收益指当合约到期时实现的收益（参阅“赔付金额”）。"
 
@@ -9260,6 +9302,9 @@ msgstr "范围内/外交易有两种类型："
 
 msgid "There are two types of Up/Down trades:"
 msgstr "上涨/下跌交易有两种类型："
+
+msgid "There are two types of two types of reset trades:"
+msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "您欠我们一些数额尚未还清；和（或)"
