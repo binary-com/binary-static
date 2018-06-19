@@ -35,9 +35,12 @@ class TradeApp extends React.PureComponent {
 
     render() {
         return (
-            <div id='trade_container' className={classnames('trade-container', {
-                show: this.props.is_portfolio_drawer_on,
-            })}>
+            <div
+                id='trade_container'
+                className={classnames('trade-container', {
+                    show: this.props.is_portfolio_drawer_on,
+                })}
+            >
                 <div className='chart-container notice-msg'>
                     <SmartCharts />
                     <Test />
