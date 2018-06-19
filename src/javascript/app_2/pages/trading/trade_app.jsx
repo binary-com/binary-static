@@ -1,5 +1,6 @@
 import React           from 'react';
 import PropTypes       from 'prop-types';
+import classnames      from 'classnames';
 import Amount          from './components/amount.jsx';
 import Barrier         from './components/barrier.jsx';
 import ContractType    from './components/contract_type.jsx';
@@ -34,7 +35,9 @@ class TradeApp extends React.PureComponent {
 
     render() {
         return (
-            <div id='trade_container' className={this.props.is_portfolio_drawer_on ? 'show' : undefined}>
+            <div id='trade_container' className={classnames('trade-container', {
+                show: this.props.is_portfolio_drawer_on,
+            })}>
                 <div className='chart-container notice-msg'>
                     <SmartCharts />
                     <Test />

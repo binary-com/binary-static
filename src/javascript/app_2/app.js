@@ -68,7 +68,7 @@ const BinaryApp = () => (
                         ]}
                     />
                 </div>
-                <div id='app_contents'>
+                <div id='app_contents' className='app-contents'>
                     <BinaryRoutes />
                 </div>
                 <footer id='trading_footer'>
