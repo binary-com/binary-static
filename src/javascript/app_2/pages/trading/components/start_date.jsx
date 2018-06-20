@@ -58,7 +58,6 @@ StartDate.propTypes = {
     is_minimized    : PropTypes.bool,
     is_nativepicker : PropTypes.bool,
     onChange        : PropTypes.func,
-    server_time     : PropTypes.object,
     start_date      : PropTypes.number,
     start_dates_list: PropTypes.array,
     start_time      : PropTypes.string,

@@ -19,6 +19,7 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
     const new_state = cloneObject(obj_new_values);
     runInAction(() => {
         Object.keys(new_state).forEach((key) => {
+            if (key === 'main_store') return;
             if (JSON.stringify(store[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
             } else {

@@ -23,7 +23,7 @@ class Test extends React.PureComponent {
     render() {
         return (
             <div id='state_info' style={{ fontSize: '10px', lineHeight: '15px', position: 'absolute', zIndex: 1, opacity: 0.6, display: this.state.is_visible ? 'block' : 'none' }}>
-                {this.props.entries.map(([k, v]) => <div key={k}><strong>{k}:</strong> {v && typeof v === 'object' ? JSON.stringify(v) : v}</div>)}
+                {this.props.entries.map(([k, v]) => k !== 'main_store' && <div key={k}><strong>{k}:</strong> {v && typeof v === 'object' ? JSON.stringify(v) : v}</div>)}
             </div>
         );
     }
@@ -31,12 +31,10 @@ class Test extends React.PureComponent {
 
 Test.propTypes = {
     entries: PropTypes.array,
-    json   : PropTypes.string,
 };
 
 export default connect(
     ({ trade }) => ({
         entries: Object.entries(trade),
-        json   : JSON.stringify(trade).replace(/(:|,)/g, '$1 '),
     })
 )(Test);

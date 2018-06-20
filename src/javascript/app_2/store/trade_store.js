@@ -7,6 +7,10 @@ import { processPurchase } from '../pages/trading/actions/purchase';
 import Client              from '../../_common/base/client_base';
 
 export default class TradeStore {
+    constructor(main_store) {
+        this.main_store = main_store;
+    }
+
     @action.bound init() {
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
