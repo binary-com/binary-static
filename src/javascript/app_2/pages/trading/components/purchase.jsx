@@ -5,13 +5,13 @@ import Button          from '../../../components/form/button.jsx';
 import Tooltip         from '../../../components/elements/tooltip.jsx';
 import Fieldset        from '../../../components/form/fieldset.jsx';
 import { connect }     from '../../../store/connect';
-import { isLoggedIn }  from '../../../../_common/base/client_base';
+import Client,
+  { isLoggedIn }       from '../../../../_common/base/client_base';
 import { localize }    from '../../../../_common/localize';
 import Url             from '../../../../_common/url';
 import {
     getPropertyValue,
     isEmptyObject }    from '../../../../_common/utility';
-import Client from '../../../../_common/base/client_base';
 
 // TODO: update/remove this once the design is ready
 const createPurchaseInfo = (purchase_info) => (
@@ -69,19 +69,14 @@ const Purchase = ({
                             </div>
                         }
                         <div className='submit-section'>
-                            <Tooltip
-                                alignment='left'
-                                message={info.message}
-                            >
-                                <Button
-                                    is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id || !is_logged_in}
-                                    id={`purchase_${type}`}
-                                    className='primary green'
-                                    has_effect
-                                    text={localize(is_logged_in ? 'Purchase' : 'Please log in.')}
-                                    onClick={() => { onClickPurchase(info.id, info.stake); }}
-                                />
-                            </Tooltip>
+                            <Button
+                                is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id || !is_logged_in}
+                                id={`purchase_${type}`}
+                                className='primary green'
+                                has_effect
+                                text={localize(is_logged_in ? 'Purchase' : 'Please log in.')}
+                                onClick={() => { onClickPurchase(info.id, info.stake); }}
+                            />
                         </div>
                     </React.Fragment>
                 }
