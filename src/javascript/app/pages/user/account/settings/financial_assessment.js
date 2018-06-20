@@ -4,6 +4,7 @@ const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
 const Validation       = require('../../../../common/form_validation');
 const getElementById   = require('../../../../../_common/common_functions').getElementById;
+const isVisible        = require('../../../../../_common/common_functions').isVisible;
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const isEmptyObject    = require('../../../../../_common/utility').isEmptyObject;
@@ -25,24 +26,31 @@ const FinancialAssessment = (() => {
             submitForm();
         });
 
+        getFinancialAssessment();
+    };
+
+    const getFinancialAssessment = () => {
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
             handleForm(response.get_financial_assessment);
         });
     };
 
+    const displayHighRiskClassification = () => {
+        $('#high_risk_classification').setVisibility(Client.getRiskAssessment());
+    };
+
     const handleForm = (response = State.getResponse('get_financial_assessment')) => {
-        hideLoadingImg(true);
+        hideLoadingImg(!isVisible(getElementById('msg_main')));
 
         financial_assessment = $.extend({}, response);
 
         if (isEmptyObject(financial_assessment)) {
-            BinarySocket.wait('get_account_status').then(() => {
-                const risk_classification = State.getResponse('get_account_status.risk_classification');
-                if (risk_classification === 'high') {
-                    $('#high_risk_classification').setVisibility(1);
-                }
-            });
+            BinarySocket.wait('get_account_status').then(() => { displayHighRiskClassification(); });
         }
+
+        // display Trading Experience only for financial & MT5 financial accounts
+        const is_mt5_financial = /real_vanuatu_(standard|advanced|mamm_advanced)/.test(localStorage.getItem('financial_assessment_redirect'));
+        $('#trading_experience_form').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
 
         Object.keys(financial_assessment).forEach((key) => {
             const val = financial_assessment[key];
@@ -82,7 +90,7 @@ const FinancialAssessment = (() => {
             const data = { set_financial_assessment: 1 };
             showLoadingImage(getElementById('msg_form'));
             $(form_selector).find('select').each(function () {
-                financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val();
+                financial_assessment[$(this).attr('id')] = data[$(this).attr('id')] = $(this).val() || null;
             });
             BinarySocket.send(data).then((response) => {
                 $btn_submit.removeAttr('disabled');
@@ -93,7 +101,9 @@ const FinancialAssessment = (() => {
                     // need to remove financial_assessment_not_complete from status if any
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
                         Header.displayAccountStatus();
+                        displayHighRiskClassification();
                     });
+                    getFinancialAssessment();
                 }
             });
         } else {
@@ -130,8 +140,13 @@ const FinancialAssessment = (() => {
         }
     };
 
+    const onUnload = () => {
+        localStorage.removeItem('financial_assessment_redirect');
+    };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

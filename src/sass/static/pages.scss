@@ -317,6 +317,9 @@ body #not_authenticated_financial ul.checked > li {
             padding: 4px 0;
         }
     }
+    .list-style-inside {
+        list-style-position: inside;
+    }
 }
 
 .platforms-content {
@@ -663,6 +666,77 @@ body #not_authenticated_financial ul.checked > li {
         p {
             margin-top: 0;
             margin-bottom: 10px;
+        }
+    }
+}
+
+.two_factor_auth {
+    .padding-left-medium {
+        padding-left: 45px;
+    }
+    .otp-form-group {
+        display: flex;
+        align-items: flex-start;
+
+        input {
+            box-sizing: border-box;
+            height: 37px;
+            width: 140px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+    }
+    .steps.steps-vertical {
+        flex-direction: column;
+        padding-left: 15px;
+
+        .step {
+            position: relative;
+            margin-top: 0px;
+
+            &:not(:last-child) {
+                border-left: 1px solid $COLOR_LIGHT_GRAY;
+            }
+            .circle {
+                margin: 0;
+                position: absolute;
+                left: -20px;
+            }
+            .content {
+                padding: 8px 0 0 30px;
+
+                p {
+                    margin: 0;
+
+                    &:last-child, &:nth-child(2) {
+                        padding-bottom: 15px;
+                    }
+                }
+                #qrcode {
+                    padding-bottom: 60px;
+                    @media (max-width: 480px) {
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .two-fa-status {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        margin-bottom: 50px;
+
+        &-container {
+            display: flex;
+            align-items: center;
+            padding: 10px 30px 10px 15px;
+            background: $COLOR_LIGHT_GRAY;
+        }
+        &-icon {
+            max-width: 55px;
+            max-height: 55px;
+            padding-right: 15px;
         }
     }
 }

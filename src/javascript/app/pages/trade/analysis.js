@@ -32,9 +32,8 @@ const TradingAnalysis = (() => {
     const requestTradeAnalysis = () => {
         form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
 
-        const map_obj = { matchdiff: 'digits', callput: 'higherlower' };
-        const regex   = new RegExp(Object.keys(map_obj).join('|'), 'gi');
-        form_name     = form_name.replace(regex, matched => map_obj[matched]);
+        const map_obj = { matchdiff: 'digits', callputequal: 'risefall', callput: 'higherlower' };
+        form_name     = map_obj[form_name] || form_name;
 
         $('#tab_last_digit').setVisibility(/digits|overunder|evenodd/.test(form_name));
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
@@ -222,6 +221,18 @@ const TradingAnalysis = (() => {
             },
             lookbackhighlow: {
                 image1: 'high-low-image.svg',
+            },
+            reset: {
+                image1: 'reset-call.svg',
+                image2: 'reset-put.svg',
+            },
+            callputspread: {
+                image1: 'call-spread.svg',
+                image2: 'put-spread.svg',
+            },
+            highlowticks: {
+                image1: 'high-low-1.svg',
+                image2: 'high-low-2.svg',
             },
         };
 

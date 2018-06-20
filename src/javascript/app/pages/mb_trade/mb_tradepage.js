@@ -24,6 +24,11 @@ const MBTradePage = (() => {
     const onLoad = () => {
         State.set('is_mb_trading', true);
         BinarySocket.wait('authorize').then(init);
+        if (!Client.isLoggedIn()) {
+            BinarySocket.wait('website_status').then(() => {
+                BinarySocket.send({ landing_company: State.getResponse('website_status.clients_country') });
+            });
+        }
     };
 
     const init = () => {
@@ -44,10 +49,12 @@ const MBTradePage = (() => {
             showCurrency(Client.get('currency'));
         }
 
-        if (events_initialized === 0) {
-            events_initialized = 1;
-            MBTradingEvents.init();
-        }
+        BinarySocket.wait('landing_company', 'active_symbols').then(() => {
+            if (events_initialized === 0) {
+                events_initialized = 1;
+                MBTradingEvents.init();
+            }
+        });
 
         BinarySocket.send({ payout_currencies: 1 }).then(() => {
             MBDisplayCurrencies();
