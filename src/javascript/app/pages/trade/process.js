@@ -165,6 +165,10 @@ const Process = (() => {
         refreshDropdown('#selected_tick');
         Lookback.display();
 
+        if (!Reset.isReset(Defaults.get('formname'))) {
+            Reset.hideResetTime();
+        }
+
         let r1;
         if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
             r1 = Durations.onStartDateChange(Defaults.get('date_start'));
@@ -243,7 +247,6 @@ const Process = (() => {
             } else {
                 Defaults.set('selected_tick', selected_tick.value);
             }
-            Reset.hideResetTime();
         } else {
             selected_tick_row.hide();
             highlowticks_expiry_row.hide();
