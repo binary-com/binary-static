@@ -6,7 +6,7 @@ const State  = require('../../../_common/storage').State;
  */
 const getActiveTab = (item) => {
     const tab              = item || 'currentAnalysisTab';
-    const default_tab      = getDefaultTab();
+    const default_tab      = 'tab_explanation';
     let selected_tab       = sessionStorage.getItem(tab) || (State.get('is_mb_trading') ? 'tab_portfolio' : default_tab);
     let selected_element   = document.getElementById(selected_tab);
     if (!selected_element) {
@@ -22,8 +22,6 @@ const getActiveTab = (item) => {
 
     return selected_tab;
 };
-
-const getDefaultTab = () => 'tab_explanation';
 
 module.exports = {
     getActiveTab,
