@@ -65,7 +65,7 @@ const Trading = () => (
                                                 <select id='duration_units' className='medium_width_input' />
                                             </div>
                                             <div id='duration_wrapper' className='hint'>
-                                                <span id='duration_tooltip'>{it.L('The minimum duration is')}</span> <span id='duration_minimum' /> <span id='duration_unit' />
+                                                <span id='duration_tooltip'>{it.L('Min:')}</span> <span id='duration_minimum' /> <span id='duration_unit' />
                                                 <span id='duration_maximum' className='invisible' />
                                             </div>
                                             <div id='expiry_type_endtime'>
