@@ -9,6 +9,7 @@ const GetTicks          = require('./get_ticks');
 const Lookback          = require('./lookback');
 const Notifications     = require('./notifications');
 const Price             = require('./price');
+const Reset             = require('./reset');
 const StartDates        = require('./starttime').StartDates;
 const Symbols           = require('./symbols');
 const Tick              = require('./tick');
@@ -242,6 +243,7 @@ const Process = (() => {
             } else {
                 Defaults.set('selected_tick', selected_tick.value);
             }
+            Reset.hideResetTime();
         } else {
             selected_tick_row.hide();
             highlowticks_expiry_row.hide();
