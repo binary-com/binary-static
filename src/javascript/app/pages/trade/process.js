@@ -9,6 +9,7 @@ const GetTicks          = require('./get_ticks');
 const Lookback          = require('./lookback');
 const Notifications     = require('./notifications');
 const Price             = require('./price');
+const Reset             = require('./reset');
 const StartDates        = require('./starttime').StartDates;
 const Symbols           = require('./symbols');
 const Tick              = require('./tick');
@@ -163,6 +164,10 @@ const Process = (() => {
         displaySelectedTick();
         refreshDropdown('#selected_tick');
         Lookback.display();
+
+        if (!Reset.isReset(Defaults.get('formname'))) {
+            Reset.hideResetTime();
+        }
 
         let r1;
         if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {

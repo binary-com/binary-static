@@ -6,8 +6,7 @@ const State  = require('../../../_common/storage').State;
  */
 const getActiveTab = (item) => {
     const tab              = item || 'currentAnalysisTab';
-    const is_chart_allowed = State.get('is_chart_allowed');
-    const default_tab      = getDefaultTab(is_chart_allowed);
+    const default_tab      = 'tab_explanation';
     let selected_tab       = sessionStorage.getItem(tab) || (State.get('is_mb_trading') ? 'tab_portfolio' : default_tab);
     let selected_element   = document.getElementById(selected_tab);
     if (!selected_element) {
@@ -23,8 +22,6 @@ const getActiveTab = (item) => {
 
     return selected_tab;
 };
-
-const getDefaultTab = (is_chart_allowed) => is_chart_allowed ? 'tab_graph' : 'tab_explanation';
 
 module.exports = {
     getActiveTab,
