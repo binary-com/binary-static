@@ -320,8 +320,9 @@ const ViewPopup = (() => {
     };
 
     const contractEnded = () => {
-        containerSetText('trade_details_current_title', localize(contract.status === 'sold' || (contract.sell_spot_time < contract.date_expiry) ? 'Contract Sold' : 'Contract Expiry'));
+        getElementById('trade_details_live_date').parentNode.setVisibility(0);
 
+        containerSetText('trade_details_current_title', localize(contract.status === 'sold' || (contract.sell_spot_time < contract.date_expiry) ? 'Contract Sold' : 'Contract Expiry'));
         containerSetText('trade_details_indicative_label', localize('Price'));
         if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));
