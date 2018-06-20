@@ -183,7 +183,6 @@ const Barriers = (() => {
             barrier_low_element.classList.add('error-field');
             barrier_high_error_element.classList.remove('invisible');
             barrier_low_error_element.classList.remove('invisible');
-
         }
     };
 
