@@ -148,7 +148,6 @@ const Barriers = (() => {
                     Barriers.validateBarrier();
                     return;
                 }
-                Barriers.validateBarrier();
             }
         }
 
