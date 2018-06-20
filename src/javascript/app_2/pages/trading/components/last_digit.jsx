@@ -28,7 +28,6 @@ const LastDigit = ({
         <Fieldset
             header={localize('Last Digit Prediction')}
             icon='digits'
-            tooltip={localize('Text for Last Digits goes here.')}
         >
             <Dropdown
                 list={last_digit_numbers}
