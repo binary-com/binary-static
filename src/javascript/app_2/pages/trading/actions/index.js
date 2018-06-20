@@ -35,18 +35,11 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
         if ('symbol' in new_state) {
             await Symbol.onChangeSymbolAsync(new_state.symbol);
         }
-        process(store);
+        process(store, new_state);
     }
 };
 
-const process_methods = [
-    ContractTypeHelper.getContractCategories,
-    ContractType.onChangeContractTypeList,
-    ContractType.onChangeContractType,
-    Duration.onChangeExpiry,
-    StartDate.onChangeStartDate,
-];
-const process = async(store) => {
+const process = async(store, new_state) => {
     updateStore(store, { is_purchase_enabled: false, proposal_info: {} }); // disable purchase button(s), clear contract info
 
     const snapshot = cloneObject(store);
@@ -55,7 +48,7 @@ const process = async(store) => {
         extendOrReplace(snapshot, await Currency.getCurrenciesAsync(store.currency));
     }
 
-    process_methods.forEach((fnc) => {
+    getMethodsList(store, new_state).forEach((fnc) => {
         extendOrReplace(snapshot, fnc(snapshot));
     });
 
@@ -64,6 +57,15 @@ const process = async(store) => {
 
     requestProposal(store, updateStore);
 };
+
+const getMethodsList = (store, new_state) => ([
+    ContractTypeHelper.getContractCategories,
+    ContractType.onChangeContractTypeList,
+    ...(/^(symbol|contract_type)$/.test(Object.keys(new_state)) || !store.contract_type ? // symbol/contract_type changed or contract_type not set yet
+        [ContractType.onChangeContractType] : []),
+    Duration.onChangeExpiry,
+    StartDate.onChangeStartDate,
+]);
 
 // Some values need to be replaced, not extended
 const extendOrReplace = (source, new_values) => {
