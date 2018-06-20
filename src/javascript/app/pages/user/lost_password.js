@@ -11,7 +11,7 @@ const LostPassword = (() => {
             $(form_id).html($('<div/>', { class: 'notice-msg', text: localize('Please check your email for the password reset link.') }));
         } else if (response.error) {
             const $form_error = $('#form_error');
-            $form_error.setVisibility(1).text(localize(response.error.message));
+            $form_error.text(localize(response.error.message)).setVisibility(1);
             $('#email').one('input', () => $form_error.setVisibility(0)); // remove error message on input
         }
     };
