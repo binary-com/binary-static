@@ -23,7 +23,7 @@ const Barriers = (() => {
         const form_name = Contract.form();
 
         // TODO: remove `reset` when API stops sending barrier for Resets in contracts_for response
-        if (barriers && form_name && !/risefall|reset/i.test(Defaults.get('formname'))) {
+        if (barriers && form_name && barriers[form_name] && !/risefall|reset/i.test(Defaults.get('formname'))) {
             const unit     = getElementById('duration_units');
             const end_time = getElementById('expiry_date');
             const is_daily = (unit && isVisible(unit) && unit.value === 'd') ||
