@@ -90,11 +90,12 @@
     "ws": "1.1.5"
   },
   "dependencies": {
-    "@binary-com/binary-style": "0.2.7",
+    "@binary-com/binary-style": "0.2.10",
     "@binary-com/webtrader-charts": "0.4.2",
     "babel-polyfill": "6.26.0",
     "binary-document-uploader": "2.3.2",
     "custom-event-polyfill": "0.3.0",
+    "davidshimjs-qrcodejs": "0.0.2",
     "event-source-polyfill": "0.0.9",
     "highstock-release": "5.0.14",
     "jquery": "3.2.1",

@@ -43,7 +43,8 @@ const SocketCache = (() => {
 
         // prevent unwanted page behaviour
         // if a cached version already exists but it gives an error after being called for updating the cache
-        if ((response.error || !response[msg_type]) && get(response.echo_req)) {
+        const cashed_response = get(response.echo_req);
+        if ((response.error || !response[msg_type]) && cashed_response && !cashed_response.error) {
             clear();
             window.location.reload();
             return;

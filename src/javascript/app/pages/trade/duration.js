@@ -6,6 +6,7 @@ const commonIndependent  = require('./common_independent');
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Price              = require('./price');
+const Reset              = require('./reset');
 const BinarySocket       = require('../../base/socket');
 const DatePicker         = require('../../components/date_picker');
 const CommonFunctions    = require('../../../_common/common_functions');
@@ -44,12 +45,24 @@ const Durations = (() => {
             start_type = 'spot';
         }
 
+        if (Defaults.get('formname') === 'highlowticks') {
+            Barriers.display(); // hide barrier field, instead of selecting barrier we select tick number
+            Defaults.set('expiry_type', 'duration');
+            Defaults.set('duration_amount', 5);
+            Defaults.set('duration_units', 't');
+            // display label instead of populating durations
+            CommonFunctions.getElementById('expiry_row').style.display = 'none';
+            return false;
+        }
+
         const durations = Contract.durations();
         if (durations === false) {
             CommonFunctions.getElementById('expiry_row').style.display = 'none';
             Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time');
             return false;
         }
+
+        CommonFunctions.getElementById('expiry_row').style.display = 'flex';
 
         const target             = CommonFunctions.getElementById('duration_units');
         const form_name          = Contract.form();
@@ -61,7 +74,7 @@ const Durations = (() => {
         }
 
         Object.keys(durations).forEach((key) => {
-            Object.keys(durations[key][form_name]).forEach((form) => {
+            Object.keys(durations[key][form_name] || []).forEach((form) => {
                 let obj = {};
                 if (barrier_category) {
                     obj = durations[key][form_name][barrier_category];
@@ -229,14 +242,15 @@ const Durations = (() => {
     };
 
     const durationPopulate = () => {
-        const unit = CommonFunctions.getElementById('duration_units');
-        if (!unit.options[unit.selectedIndex]) return false;
-        const unit_min_value = unit.options[unit.selectedIndex].getAttribute('data-minimum');
-        const unit_max_value = unit.options[unit.selectedIndex].getAttribute('data-maximum');
-        let unit_value       = Defaults.get('duration_amount') || unit_min_value;
-        unit.value           = Defaults.get('duration_units') &&
-            document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
-            Defaults.get('duration_units') : unit.value;
+        const unit          = CommonFunctions.getElementById('duration_units');
+        const selected_unit = unit.options[unit.selectedIndex];
+
+        if (!selected_unit) return false;
+
+        const duration_amount_id = '#duration_amount';
+        const unit_min_value     = selected_unit.getAttribute('data-minimum');
+        const unit_max_value     = selected_unit.getAttribute('data-maximum');
+        let unit_value           = Defaults.get('duration_amount') || unit_min_value;
         Dropdown('#duration_units');
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_minimum'), unit_min_value);
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), localize(duration_map[unit.value] + (+unit_min_value > 1 ? 's' : '')));
@@ -248,38 +262,31 @@ const Durations = (() => {
         Defaults.set('duration_amount', unit_value);
         displayExpiryType();
         Dropdown('#expiry_type');
+
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
-        const amount_element = $('#duration_amount');
-        const duration_id    = '#duration_amount';
         if (unit.value === 'd') {
             const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             DatePicker.init({
-                selector: duration_id,
+                selector: duration_amount_id,
                 type    : 'diff',
                 minDate : 1,
                 maxDate : 365,
                 native  : false,
             });
-            amount_element.change((value) => {
-                let day_diff;
-                const $duration_amount_val = $('#duration_amount').val();
-                if ($duration_amount_val) {
-                    day_diff = $duration_amount_val;
-                } else {
-                    const data_value = value.target.getAttribute('data-value');
-                    const date       = data_value ? new Date(data_value) : new Date();
-                    const today      = window.time ? window.time.valueOf() : new Date();
-
-                    day_diff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
-                }
-                amount_element.val(day_diff);
-            });
         } else {
-            DatePicker.hide(duration_id);
+            DatePicker.hide(duration_amount_id);
         }
+
+        const $duration_amount = $(duration_amount_id);
+        $duration_amount.change((e) => {
+            e.stopPropagation();
+            const data_min_value = unit.options[unit.selectedIndex].getAttribute('data-minimum');
+            const value          = e.target.value || data_min_value; // set to min value if no input value
+            $duration_amount.val(value);
+        });
 
         const requested = changeExpiryTimeType();
 
@@ -410,7 +417,7 @@ const Durations = (() => {
         }
         fragment.appendChild(option);
 
-        if (has_end_date) {
+        if (has_end_date && !Reset.isReset(Contract.form())) {
             option = createElement('option', { value: 'endtime', text: localize('End Time') });
             if (current_selected === 'endtime') {
                 option.setAttribute('selected', 'selected');
@@ -559,13 +566,20 @@ const Durations = (() => {
         if (+duration_amount_element.value < +duration_min_element.textContent) {
             duration_amount_element.classList.add('error-field');
             duration_wrapper_element.classList.add('error-msg');
+            Reset.hideResetTime();
         } else if (+duration_max_element.textContent &&
             +duration_amount_element.value > +duration_max_element.textContent) {
             duration_amount_element.classList.add('error-field');
             duration_wrapper_element.classList.remove('error-msg');
+            Reset.hideResetTime();
         } else {
             duration_amount_element.classList.remove('error-field');
             duration_wrapper_element.classList.remove('error-msg');
+            if (Reset.isReset(Contract.form())) {
+                Reset.displayResetTime(duration_amount_element.value, Defaults.get('duration_units'));
+            } else {
+                Reset.hideResetTime();
+            }
         }
     };
 

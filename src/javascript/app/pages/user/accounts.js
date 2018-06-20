@@ -11,7 +11,6 @@ const localize           = require('../../../_common/localize').localize;
 const State              = require('../../../_common/storage').State;
 const toTitleCase        = require('../../../_common/string_util').toTitleCase;
 const urlFor             = require('../../../_common/url').urlFor;
-const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Accounts = (() => {
     let landing_company;
@@ -175,11 +174,9 @@ const Accounts = (() => {
 
     const newAccountResponse = (response) => {
         if (response.error) {
-            const account_opening_reason = State.getResponse('get_settings.account_opening_reason');
-            if (!account_opening_reason && getPropertyValue(response, ['error', 'details', 'account_opening_reason']) &&
-                /InsufficientAccountDetails|InputValidationFailed/.test(response.error.code)) {
+            if (/InsufficientAccountDetails|InputValidationFailed/.test(response.error.code)) {
                 setIsForNewAccount(true);
-                // ask client to set account opening reason
+                // ask client to set any missing information
                 BinaryPjax.load(urlFor('user/settings/detailsws'));
             } else {
                 showError(response.error.message);

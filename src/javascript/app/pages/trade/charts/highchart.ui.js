@@ -1,45 +1,37 @@
-const localize = require('../../../../_common/localize').localize;
+const isCallputspread = require('../callputspread').isCallputspread;
+const isReset         = require('../reset').isReset;
+const addComma        = require('../../../common/currency').addComma;
+const localize        = require('../../../../_common/localize').localize;
 
 const HighchartUI = (() => {
-    let common_time_style,
-        common_spot_style,
-        txt,
+    const common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
+    const common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
+
+    let txt_legend,
         chart_options;
 
-    const initLabels = () => {
-        common_time_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; border-color: #e98024; display: inline-block;';
-        common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
+    const labels = {
+        start_time  : `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `,
+        entry_spot  : `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `,
+        reset_time  : `<div style="${common_time_style} border-color: #000; border-style: solid;"></div> ${localize('Reset time')} `,
+        exit_spot   : `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `,
+        end_time    : `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `,
+        delay       : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
+        payout_range: `<span class="chart-payout-range"> ${localize('Payout range')} </span>`,
     };
 
-    const getLabels = (option) => {
-        if (!common_time_style || !common_spot_style) {
-            initLabels();
-        }
-        switch (option) {
-            case 'start_time':
-                return `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `;
-            case 'entry_spot':
-                return `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `;
-            case 'exit_spot':
-                return `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `;
-            case 'end_time':
-                return `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `;
-            case 'delay':
-                return `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`;
-            default:
-                return null;
-        }
-    };
-
-    const setLabels = (chart_delayed) => {
+    const setLabels = (chart_delayed, contract_type) => {
         // display a guide for clients to know how we are marking entry and exit spots
-        txt = (chart_delayed ? getLabels('delay') : '') +
-            getLabels('start_time') +
-            (history ? getLabels('entry_spot') + getLabels('exit_spot') : '') +
-            getLabels('end_time');
+        txt_legend = (chart_delayed ? labels.delay : '') +
+            labels.start_time +
+            (history ? labels.entry_spot + labels.exit_spot : '') +
+            (isReset(contract_type) ? labels.reset_time : '') +
+            labels.end_time +
+            (isCallputspread(contract_type) ? labels.payout_range : '');
     };
 
     const setChartOptions = (params) => {
+        const display_decimals = params.decimals.split('.')[1].length || 3;
         chart_options = {
             chart: {
                 backgroundColor: null, /* make background transparent */
@@ -47,7 +39,10 @@ const HighchartUI = (() => {
                 renderTo       : params.el,
                 animation      : false,
                 marginLeft     : 30,
-                marginRight    : 30,
+                marginRight    : params.marginRight || 30,
+                events         : {
+                    redraw: params.redrawHandler,
+                },
             },
             title: {
                 text : params.title,
@@ -56,10 +51,10 @@ const HighchartUI = (() => {
             credits: { enabled: false },
             tooltip: {
                 xDateFormat  : (params.is_jp_client ? '%Y/%m/%d, %H:%M:%S' : '%A, %b %e, %H:%M:%S GMT'),
-                valueDecimals: params.decimals.split('.')[1].length || 3,
+                valueDecimals: display_decimals,
             },
             subtitle: {
-                text   : txt,
+                text   : txt_legend,
                 useHTML: true,
             },
             xAxis: {
@@ -67,7 +62,14 @@ const HighchartUI = (() => {
             },
             yAxis: {
                 opposite: false,
-                labels  : { align: 'left' },
+                labels  : {
+                    align: 'left',
+                    formatter() {
+                        return addComma(this.value.toFixed(display_decimals));
+                    },
+                },
+                maxPadding: 0.05,
+                minPadding: 0.05,
             },
             series: [{
                 type : params.type,
@@ -148,8 +150,9 @@ const HighchartUI = (() => {
         if (is_plotx) {
             options.label.x = params.textLeft ? -15 : 5;
         } else {
+            options.label.x = params.x || 0;
             options.label.y = params.textBottom ? 15 : -5;
-            options.label.align = 'center';
+            options.label.align = params.align || 'center';
         }
 
         return options;
