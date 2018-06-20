@@ -4,6 +4,7 @@ const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
 const Validation       = require('../../../../common/form_validation');
 const getElementById   = require('../../../../../_common/common_functions').getElementById;
+const isVisible        = require('../../../../../_common/common_functions').isVisible;
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const isEmptyObject    = require('../../../../../_common/utility').isEmptyObject;
@@ -39,7 +40,7 @@ const FinancialAssessment = (() => {
     };
 
     const handleForm = (response = State.getResponse('get_financial_assessment')) => {
-        hideLoadingImg(true);
+        hideLoadingImg(!isVisible(getElementById('msg_main')));
 
         financial_assessment = $.extend({}, response);
 
