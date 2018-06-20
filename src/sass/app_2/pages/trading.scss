@@ -42,6 +42,7 @@
         background-color: $COLOR_LIGHT_GRAY;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_GRAY;
+        padding: 1vh 4px;
 
         input, select {
             width: 100%;
@@ -131,7 +132,8 @@
             }
         }
         &.purchase-option {
-            padding: 1.5vh 1vh;
+            padding-top: 1.5vh;
+            padding-bottom: 1.5vh;
             min-height: 100px;
 
             > div:first-child {
@@ -139,7 +141,7 @@
             }
             div.box {
                 display: grid;
-                grid-template-columns: 1fr 1.5fr;
+                grid-template-columns: 1fr 2fr;
                 position: relative;
 
                 .left-column, .right-column {

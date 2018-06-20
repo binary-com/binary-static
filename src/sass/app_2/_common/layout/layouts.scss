@@ -76,7 +76,7 @@
                         display: grid;
                         grid-gap: 8px;
                         grid-template-columns: 1.5fr 1fr;
-                        margin-top: -8px;
+                        grid-auto-columns: auto;
                     }
                     @media (min-width: 979px) {
                         div.duration-container {
