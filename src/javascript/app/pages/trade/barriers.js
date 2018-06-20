@@ -145,8 +145,10 @@ const Barriers = (() => {
                     Defaults.set('barrier_high', high_elm.value);
                     Defaults.set('barrier_low', low_elm.value);
                     Defaults.remove('barrier');
+                    Barriers.validateBarrier();
                     return;
                 }
+                Barriers.validateBarrier();
             }
         }
 
@@ -160,10 +162,30 @@ const Barriers = (() => {
     const validateBarrier = () => {
         const barrier_element = getElementById('barrier');
         const empty           = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
+        const higher_barrier_element = getElementById('higher-barrier');
+        const lower_barrier_element = getElementById('lower-barrier');
+        const barrier_high_element = getElementById('barrier_high');
+        const barrier_low_element = getElementById('barrier_low');
+
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');
         } else {
             barrier_element.classList.remove('error-field');
+        }
+
+        // if (+higher_barrier_element.value > +lower_barrier_element.value) {
+        //     higher_barrier_element.classList.add('error-field');
+        //     lower_barrier_element.classList.add('error-field');
+        // } else {
+        //     higher_barrier_element.classList.remove('error-field');
+        //     lower_barrier_element.classList.remove('error-field');
+        // }
+        if (+barrier_high_element.value > +barrier_low_element.value) {
+            barrier_high_element.classList.remove('error-field');
+            barrier_low_element.classList.remove('error-field');
+        } else {
+            barrier_high_element.classList.add('error-field');
+            barrier_low_element.classList.add('error-field');
         }
     };
 
