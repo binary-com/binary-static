@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T06:49:49+0000\n"
+"PO-Revision-Date: 2018-06-20T03:17:11+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1339,7 +1339,7 @@ msgid "At least five years of experience with affiliate marketing, growth hackin
 msgstr "Setidaknya memiliki lima tahun pengalaman pada pemasaran afiliasi, hacking pertumbuhan, pengembangan bisnis, dan keterampilan lainnya yang berhubungan erat"
 
 msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
-msgstr ""
+msgstr "Pada waktu reset, jika spot berlawanan dengan arah analisa Anda, maka batasan akan direset pada spot tersebut."
 
 msgid "Audit"
 msgstr "Audit"
@@ -4294,7 +4294,7 @@ msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barr
 msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>Batasan rendah</strong> atau<strong>Batasan tinggi</strong>, maka Anda tidak akan memperoleh hasil."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
-msgstr ""
+msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong> atau <stronm g>batasan baru (jika reset terjadi)</stronmg>, Anda tidak memperoleh hasil."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong>, Anda tidak akan memperoleh hasil."
@@ -4468,10 +4468,10 @@ msgid "If you select \"Over\", you will win the payout if the <strong>last digi
 msgstr "Pilih \"Over\", Anda akan mendapat hasil jika <strong>digit terakhir</strong> pada tik terakhir adalah <strong>lebih besar dari analisa Anda.</strong>"
 
 msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Jika Anda memilih \"Reset-Call\", Anda memperoleh hasil jika spot akhir pasti lebih tinggi dari spot masuk atau spot pada waktu reset."
 
 msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Jika Anda memilih \"Reset-Put\", Anda memperoleh hasil jika spot akhir pasti lebih rendah dari spot masuk atau spot pada waktu reset."
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Pilih \"Rise\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>spot masuk</strong>."
@@ -7324,10 +7324,10 @@ msgid "Predict that the market will end lower than the average price"
 msgstr "Prediksikan bahwa pasar akan berakhir lebih rendah dari harga rata-rata"
 
 msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
-msgstr ""
+msgstr "Menganalisa pasar akan berakhir lebih tinggi dari level saat ini atau level pada waktu yang ditentukan sebelumnya (waktu reset)"
 
 msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
-msgstr ""
+msgstr "Menganalisa pasar akan berakhir lebih rendah dari level saat ini atau level pada waktu yang ditentukan sebelumnya (waktu reset)"
 
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "Prediksikan bahwa pasar akan naik atau turun dari level saat ini"
@@ -7768,13 +7768,13 @@ msgid "Resale price"
 msgstr "Harga jual"
 
 msgid "Reset"
-msgstr ""
+msgstr "Reset"
 
 msgid "Reset Barrier"
-msgstr ""
+msgstr "Batasan Reset"
 
 msgid "Reset Call"
-msgstr ""
+msgstr "Reset Call"
 
 msgid "Reset MT5 password"
 msgstr "Reset kata sandi MT5"
@@ -7783,25 +7783,25 @@ msgid "Reset Password"
 msgstr "Ulang Kata Sandi"
 
 msgid "Reset Put"
-msgstr ""
+msgstr "Reset Put"
 
 msgid "Reset Time"
-msgstr ""
+msgstr "Waktu Reset"
 
 msgid "Reset password"
 msgstr "Reset kata sandi"
 
 msgid "Reset time"
-msgstr ""
+msgstr "Waktu reset"
 
 msgid "Reset to Original Settings"
 msgstr "Reset ke Pengaturan Asli"
 
 msgid "Reset-Call"
-msgstr ""
+msgstr "Reset-Call"
 
 msgid "Reset-Put"
-msgstr ""
+msgstr "Reset-Put"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Penduduk tetap yang telah ditentukan oleh FATF yang memiliki keterbatasan adalah tidak dapat mendaftar akun pada Binary Investments (Europe) Ltd."
@@ -8269,7 +8269,7 @@ msgid "Sorry, an error occurred while processing your request."
 msgstr "Maaf, error terjadi ketika memproses permohonan Anda."
 
 msgid "Sorry, live chat is currently unavailable. Please email us at %1."
-msgstr ""
+msgstr "Maaf, live chat untuk saat ini tidak tersedia. Silakan email kami di %1."
 
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Maaf, fasilitas ini hanya tersedia untuk rekening virtual saja."
@@ -8720,10 +8720,10 @@ msgid "The <strong>end time</strong> is the selected number of minutes/hours aft
 msgstr "<strong>Waktu akhir</strong> adalah menit/jam yang dipilih setelah <strong>waktu mulai</strong> (jika durasi kurang dari satu hari), atau pada akhir hari trading (jika durasi lebih dari satu hari)."
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
-msgstr ""
+msgstr "<strong>Waktu akhir</strong> adalah jumlah menit/jam yang dipilih setelah <strong>waktu mulai</strong>."
 
 msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
-msgstr ""
+msgstr "<strong>Spot masuk</strong> adalah tik pertama setelah kontrak diproses oleh server kami."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>Spot akhir</strong> adalah tik terakhir pada atau sebelum <strong>waktu akhir</strong>."
@@ -9224,7 +9224,7 @@ msgid "The resale price indicates a contract's current market price. Resale pric
 msgstr "Harga jual kembali menunjukkan harga pasar terkini. Harga jual kembali adalah berdasarkan penawaran terbaik dan mungkin tidak tersedia setiap saat. Lihat 'Opsi jual' untuk keterangan lengkap mengenai penjualan kontrak sebelum berakhir."
 
 msgid "The reset time is %1"
-msgstr ""
+msgstr "Waktu reset adalah %1"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "Hasil adalah dana yang diperoleh setelah kontrak berakhir (lihat 'Hasil')."
@@ -9305,7 +9305,7 @@ msgid "There are two types of Up/Down trades:"
 msgstr "Tersedia dua jenis kontrak Up/Down:"
 
 msgid "There are two types of two types of reset trades:"
-msgstr ""
+msgstr "Terdapat dua jenis kontrak reset:"
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "Terdapat saldo apapun yang masih tertunda dari Anda; dan/atau"
