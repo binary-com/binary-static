@@ -28,9 +28,6 @@
             background-image: url('../images/trading_app/sidebar/light/ic_digit_light.svg');
         }
     }
-    .desktop-only fieldset .duration-container > * {
-        margin-top: 0;
-    }
     input {
         &:hover {
             border-color: $COLOR_BLUE;
@@ -89,10 +86,7 @@
             z-index: 1;
             color: $COLOR_BLUE;
         }
-        .clock-header, .fieldset-header {
-            height: 1.5rem;
-            position: relative;
-
+        .clock-header, .fieldset-header, .stake-wrapper {
             span.field-info {
                 position: absolute;
                 color: $COLOR_BLUE;
@@ -116,6 +110,138 @@
                     top: -3px;
                     right: 5px;
                     font-size: 0.5625rem; /* stylelint-disable-line number-max-precision */
+                }
+            }
+        }
+        .clock-header, .fieldset-header {
+            height: 1.5rem;
+            position: relative;
+        }
+        .purchase-info-wrapper {
+            line-height: 1rem;
+            padding-bottom: 1vh;
+
+            .stake-wrapper {
+                display: flex;
+                height: 1rem;
+
+                span.field-info {
+                    margin: 0 0 0 auto;
+                }
+            }
+        }
+        &.purchase-option {
+            padding: 1.5vh 1vh;
+            min-height: 100px;
+
+            > div:first-child {
+                min-height: 71px;
+            }
+            div.box {
+                display: grid;
+                grid-template-columns: 1fr 1.5fr;
+
+                .left-column, .right-column {
+                    margin: 0 auto;
+
+                    span {
+                        display: block;
+                    }
+                }
+                .left-column > {
+                    .type-wrapper {
+                        width: 36px;
+                        height: 36px;
+                        background: $COLOR_GRAY;
+                        border-radius: 100%;
+
+                        img.type {
+                            width: 24px;
+                            margin: 6px 0 0 6px;
+                        }
+                    }
+                }
+                h4.trade-type {
+                    padding: 0;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    text-align: center;
+                    margin-top: 14px;
+                    line-height: 0;
+                }
+                div.amount {
+                    position: relative;
+
+                    &.down {
+                        color: $COLOR_LIGHT_RED;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_pricedown.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    &.up {
+                        color: $COLOR_LIGHT_BLUE;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_priceup.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    span.symbols {
+                        left: 0;
+                        top: 6px;
+                        font-size: 0.88rem;
+                        color: inherit;
+                    }
+                    span.payout {
+                        font-weight: 600;
+                    }
+                }
+                span:not(.purchase-return):not(.symbols) {
+                    position: relative;
+                }
+                span.purchase-return {
+                    color: $COLOR_ORANGE;
+                }
+                .symbols {
+                    position: relative;
+                    display: inline;
+
+                    &:before {
+                        margin-right: 1px;
+                    }
+                }
+            }
+            div.submit-section {
+                display: grid;
+                grid-template-columns: 1fr;
+
+                span.tooltip {
+                    &:before {
+                        max-width: unset;
+                        width: 250px;
+                        white-space: normal;
+                    }
+                    .btn {
+                        text-transform: capitalize;
+                        margin: 0;
+                        width: 100%;
+                        height: 4vh;
+                        min-height: 25px;
+                        max-height: 35px;
+
+                        &:not([disabled]) {
+                            box-shadow: 1px 3px 4px 0 rgba(76, 175, 80, 0.14), 1px 3px 4px 0 rgba(76, 175, 80, 0.14);
+                        }
+                        span {
+                            font-size: 0.88rem;
+                        }
+                    }
                 }
             }
         }
