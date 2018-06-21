@@ -5,12 +5,9 @@ import classnames        from 'classnames';
 import MenuItem          from './menu_item.jsx';
 
 class MobileDropdown extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
+    state = {
             is_open: false,
-        };
-    }
+    };
 
     toggleOpen = () => {
         this.setState({
