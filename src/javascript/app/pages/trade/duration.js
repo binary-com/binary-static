@@ -107,14 +107,14 @@ const Durations = (() => {
                     case 's':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
                         if (max_to_min_base >= 60) {
-                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max, true);
+                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max);
                             if (max_to_min_base >= 3600) {
                                 duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                             }
                         }
                         break;
                     case 'm':
-                        duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max, true);
+                        duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
                         if (max_to_min_base >= 60) {
                             duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                         }
@@ -154,7 +154,7 @@ const Durations = (() => {
         return durationPopulate();
     };
 
-    const makeDurationOption = (map_min, map_max, is_selected) => {
+    const makeDurationOption = (map_min, map_max) => {
         const option  = createElement('option', { value: map_min.unit, 'data-minimum': map_min.value, text: map_min.text });
         if (map_max.value && map_max.unit) {
             const max = convertDurationUnit(map_max.value, map_max.unit, map_min.unit);
@@ -162,7 +162,7 @@ const Durations = (() => {
                 option.setAttribute('data-maximum', max);
             }
         }
-        if (is_selected) {
+        if (map_min.unit === Defaults.get('duration_units')) {
             option.setAttribute('selected', 'selected');
         }
         return option;
