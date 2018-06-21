@@ -2,8 +2,8 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid $COLOR_LIGHT_GRAY;
-    margin: 1em 0;
+    border-top: 1px solid $COLOR_GRAY;
+    margin: 0.5em 0;
     padding: 0;
 }
 
@@ -56,7 +56,7 @@ hr {
                 .drawer-header {
                     display: flex;
                     align-items: center;
-                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+                    border-bottom: 1px solid $COLOR_GRAY;
                     z-index: 3;
 
                     .icons {
@@ -72,7 +72,7 @@ hr {
                         &.brand-logo {
                             display: inline-flex;
                             padding: 8px 20px;
-                            border-left: 1px solid $COLOR_LIGHT_GRAY;
+                            border-left: 1px solid $COLOR_GRAY;
 
                             img {
                                 width: 9.5rem;
@@ -84,7 +84,7 @@ hr {
                 }
                 .drawer-footer {
                     height: 30px;
-                    border-top: 1px solid $COLOR_LIGHT_GRAY;
+                    border-top: 1px solid $COLOR_GRAY;
                     left: 0;
                     bottom: 0;
                     background-color: $COLOR_WHITE;
@@ -101,7 +101,7 @@ hr {
                 .drawer-header {
                     display: flex;
                     align-items: center;
-                    border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+                    border-bottom: 1px solid $COLOR_GRAY;
 
                     .icons {
                         display: inline-flex;
@@ -201,7 +201,7 @@ hr {
                     }
                 }
                 &:hover {
-                    background: $COLOR_LIGHT_GRAY;
+                    background: $COLOR_GRAY;
                 }
             }
             &.visible {

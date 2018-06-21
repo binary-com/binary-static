@@ -6,11 +6,11 @@ div.dropdown-container {
         background: $COLOR_WHITE;
         height: 30px;
         cursor: pointer;
-        border: solid 1px $COLOR_LIGHT_GRAY;
-        border-radius: 4px;
+        border: solid 1px $COLOR_GRAY;
+        border-radius: $BORDER_RADIUS;
 
         span {
-            font-size: 1rem;
+            font-size: inherit;
             text-transform: capitalize;
             line-height: 32px;
             vertical-align: middle;
@@ -63,6 +63,7 @@ div.dropdown-container {
             cursor: pointer;
             background: $COLOR_WHITE;
             box-shadow: 0 0px 2px #d3d3d3; /* stylelint-disable-line color-no-hex */
+            border-radius: $BORDER_RADIUS;
 
             .list-label {
                 pointer-events: none;
@@ -73,7 +74,7 @@ div.dropdown-container {
                 span {
                     text-transform: capitalize;
                     color: #dedede; /* stylelint-disable-line color-no-hex */
-                    font-size: 1rem;
+                    font-size: inherit;
                     font-weight: 300;
                 }
             }
@@ -121,7 +122,7 @@ div.dropdown-container {
         transition: transform 0.2s ease;
         transform: rotate(180deg);
         transform-origin: 50% 50%;
-        color: $COLOR_LIGHT_GRAY;
+        color: $COLOR_GRAY;
         font-size: 1.1rem;
 
         &:before {

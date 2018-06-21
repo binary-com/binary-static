@@ -3,7 +3,7 @@
 
     .acc-switcher-header {
         cursor: pointer;
-        border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+        border-bottom: 1px solid $COLOR_GRAY;
         z-index: 3;
         position: relative;
 
@@ -85,7 +85,7 @@
                 padding-left: 3rem;
             }
             &:hover {
-                background: $COLOR_LIGHT_GRAY;
+                background: $COLOR_GRAY;
             }
         }
     }

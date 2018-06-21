@@ -42,9 +42,10 @@
         }
     }
     fieldset {
-        div {
-            font-size: 0.8rem;
-        }
+        background-color: $COLOR_LIGHT_GRAY;
+        border-radius: $BORDER_RADIUS;
+        border: 1px solid $COLOR_GRAY;
+
         input, select {
             width: 100%;
             height: 32px;
@@ -81,7 +82,7 @@
             }
         }
         .symbols {
-            font-size: 1rem;
+            font-size: inherit;
             position: absolute;
             display: block;
             text-align: center;
@@ -122,6 +123,39 @@
             border: 0;
             padding: 0;
             margin-bottom: 0;
+            background: transparent;
         }
+    }
+    .calendar {
+        width: 187px;
+
+        .calendar-input, .calendar-footer {
+            font-size: 12px;
+        }
+        .calendar-date-panel, .calendar-month-panel, .calendar-year-panel, .calendar-decade-panel, .calendar-century-panel {
+            display: grid;
+            grid-gap: 2px;
+            padding: 8px 12px;
+            height: 226px;
+
+            .calendar-date, .calendar-month, .calendar-year, .calendar-decade {
+                font-size: 10px;
+
+                &.calendar-date {
+                    width: 20px;
+                }
+                &-header {
+                    width: 20px;
+                }
+            }
+        }
+    }
+    div.datepicker-container {
+        .datepicker-display, .datepicker-native-overlay {
+            font-size: 12px;
+        }
+    }
+    .time-picker #time-picker-input.time-picker-input {
+        font-size: 12px;
     }
 }
