@@ -162,15 +162,23 @@ const Barriers = (() => {
     };
 
     const showError = (barrier) => {
-        barrier.classList.add('error-field');
+        if (!barrier.classList.contains('error-field')) {
+            barrier.classList.add('error-field');
+        }
         const error_node = barrier.parentNode.lastElementChild.firstElementChild;
-        error_node.classList.remove('invisible');
+        if (error_node.classList.contains('invisible')) {
+            error_node.classList.remove('invisible');
+        }
     };
 
     const resolveError = (barrier) => {
-        barrier.classList.remove('error-field');
+        if (barrier.classList.contains('error-field')) {
+            barrier.classList.remove('error-field');
+        }
         const error_node = barrier.parentNode.lastElementChild.firstElementChild;
-        error_node.classList.add('invisible');
+        if (!error_node.classList.contains('invisible')) {
+            error_node.classList.add('invisible');
+        }
     };
 
     /**
