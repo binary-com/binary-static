@@ -279,11 +279,10 @@ const ViewPopup = (() => {
             contractEnded();
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
             else TickDisplay.updateChart({ is_sold: true }, contract);
+            Clock.setExternalTimer(); // stop timer
         } else {
             $container.find('#notice_ongoing').setVisibility(1);
         }
-
-        Clock.setExternalTimer(is_ended ? '' : updateTimers); // stop/resume timer
 
         if (!contract.is_valid_to_sell) {
             $container.find('#errMsg').setVisibility(0);
