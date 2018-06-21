@@ -471,18 +471,19 @@ const TickDisplay = (() => {
     const plotResetSpot = (r_barrier) => {
         if (reset_spot_plotted || !chart) return;
 
+
         const is_resetcall  = contract.contract_type === 'RESETCALL';
-        const entry_barrier = +contract.entry_spot;
-        const reset_barrier = +r_barrier || +barrier;
+        const entry_barrier = contract.entry_spot;
+        const reset_barrier = r_barrier || contract.barrier;
 
-        if (!entry_barrier || !reset_barrier) return;
+        if (!+entry_barrier || !+reset_barrier) return;
 
-        if (entry_barrier !== reset_barrier) {
+        if (+entry_barrier !== +reset_barrier) {
             removePlotLine('tick-barrier', 'y');
             
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-reset-barrier',
-                value : reset_barrier,
+                value : +reset_barrier,
                 label : { text: `${localize('Reset Barrier')} (${addComma(reset_barrier)})`, align: 'right', x: -60, y: is_resetcall ? 15 : -5 },
                 color : 'green',
                 width : 2,
@@ -490,7 +491,7 @@ const TickDisplay = (() => {
             });
             chart.yAxis[0].addPlotLine({
                 id       : 'tick-barrier',
-                value    : entry_barrier,
+                value    : +entry_barrier,
                 label    : { text: `${localize('Barrier')} (${addComma(entry_barrier)})`,    align: 'right', x: -60, y: is_resetcall ? -5 : 15 },
                 color    : 'green',
                 width    : 2,
