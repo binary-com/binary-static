@@ -165,17 +165,17 @@ const Barriers = (() => {
         if (!barrier.classList.contains('error-field')) {
             barrier.classList.add('error-field');
         }
-        const error_node = barrier.parentNode.lastElementChild.firstElementChild;
+        const error_node = barrier.parentNode.getElementsByClassName('hint')[0].getElementsByClassName('error-msg')[0];
         if (error_node.classList.contains('invisible')) {
             error_node.classList.remove('invisible');
         }
     };
 
-    const resolveError = (barrier) => {
+    const hideError = (barrier) => {
         if (barrier.classList.contains('error-field')) {
             barrier.classList.remove('error-field');
         }
-        const error_node = barrier.parentNode.lastElementChild.firstElementChild;
+        const error_node = barrier.parentNode.getElementsByClassName('hint')[0].getElementsByClassName('error-msg')[0];
         if (!error_node.classList.contains('invisible')) {
             error_node.classList.add('invisible');
         }
@@ -187,21 +187,23 @@ const Barriers = (() => {
     * @param {Object} barrier_1   the target barrier object for prompting error
     * @param {Object} barrier_2   barrier object whose errors will be resolved
     */
-    const showThisError = (barrier_1, barrier_2) => {
+    const showErrorOnTarget = (barrier_1, barrier_2) => {
         showError(barrier_1);
-        resolveError(barrier_2);
+        hideError(barrier_2);
     };
 
     const resolveAllErrors = (barrier_1, barrier_2) => {
-        resolveError(barrier_1);
-        resolveError(barrier_2);
+        hideError(barrier_1);
+        hideError(barrier_2);
     };
 
     /**
     * Validate Barriers
-    * @param {Boolean} first_time pass True to force to validate;
+    * @param {Boolean} is_high_barrier_changed Whether we're validating this barrier.
+    *                                          And the default validation is on High barrier.
+    *
     */
-    const validateBarrier = (first_time = false) => {
+    const validateBarrier = (is_high_barrier_changed = true) => {
         const barrier_element = getElementById('barrier');
         const empty           = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
         const barrier_high_element = getElementById('barrier_high');
@@ -213,22 +215,18 @@ const Barriers = (() => {
             barrier_element.classList.remove('error-field');
         }
 
-        const is_high_barrier_changed = +Defaults.get('barrier_high') !== +barrier_high_element.value;
-        const is_low_barrier_changed = +Defaults.get('barrier_low') !== +barrier_low_element.value;
         const is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
 
-        if (first_time || is_high_barrier_changed) {
+        if (is_high_barrier_changed) {
             if (is_high_barrier_greater) {
                 resolveAllErrors(barrier_high_element, barrier_low_element);
             } else {
-                showThisError(barrier_high_element, barrier_low_element);
+                showErrorOnTarget(barrier_high_element, barrier_low_element);
             }
-        } else if (is_low_barrier_changed) {
-            if (is_high_barrier_greater) {
-                resolveAllErrors(barrier_high_element, barrier_low_element);
-            } else {
-                showThisError(barrier_low_element, barrier_high_element);
-            }
+        } else if (is_high_barrier_greater) {
+            resolveAllErrors(barrier_high_element, barrier_low_element);
+        } else {
+            showErrorOnTarget(barrier_low_element, barrier_high_element);
         }
     };
 
