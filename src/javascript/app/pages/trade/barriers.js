@@ -73,9 +73,9 @@ const Barriers = (() => {
                         }
                     }
                     elm.value = elm.textContent = value;
+                    Barriers.validateBarrier();
                     Defaults.set('barrier', elm.value);
                     Defaults.remove('barrier_high', 'barrier_low');
-                    Barriers.validateBarrier();
                     showHideRelativeTip(barrier.barrier, [tooltip, span]);
                     return;
                 } else if (barrier.count === 2) {
@@ -161,26 +161,37 @@ const Barriers = (() => {
         Defaults.remove('barrier', 'barrier_high', 'barrier_low');
     };
 
-    // Show an error on 'barrier_1'
-    const showError = (barrier_1, error_barrier_1, barrier_2, error_barrier_2) => {
-        barrier_1.classList.add('error-field');
-        error_barrier_1.classList.remove('invisible');
-        barrier_2.classList.remove('error-field');
-        error_barrier_2.classList.add('invisible');
+    const showError = (barrier) => {
+        barrier.classList.add('error-field');
+        const error_node = barrier.parentNode.lastElementChild.firstElementChild;
+        error_node.classList.remove('invisible');
     };
 
-    const resolveError = (barrier_1, error_barrier_1, barrier_2, error_barrier_2) => {
-        barrier_1.classList.remove('error-field');
-        error_barrier_1.classList.add('invisible');
-        barrier_2.classList.remove('error-field');
-        error_barrier_2.classList.add('invisible');
+    const resolveError = (barrier) => {
+        barrier.classList.remove('error-field');
+        const error_node = barrier.parentNode.lastElementChild.firstElementChild;
+        error_node.classList.add('invisible');
+    };
+
+    /**
+    * Show an error on the target Barrier.
+    *
+    * @param {Object} barrier_1   the target barrier object for prompting error
+    * @param {Object} barrier_2   barrier object whose errors will be resolved
+    */
+    const showThisError = (barrier_1, barrier_2) => {
+        showError(barrier_1);
+        resolveError(barrier_2);
+    };
+
+    const resolveAllErrors = (barrier_1, barrier_2) => {
+        resolveError(barrier_1);
+        resolveError(barrier_2);
     };
 
     const validateBarrier = () => {
         const barrier_element = getElementById('barrier');
         const empty           = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
-        const barrier_high_error_element = getElementById('barrier_high_error');
-        const barrier_low_error_element = getElementById('barrier_low_error');
         const barrier_high_element = getElementById('barrier_high');
         const barrier_low_element = getElementById('barrier_low');
 
@@ -190,17 +201,21 @@ const Barriers = (() => {
             barrier_element.classList.remove('error-field');
         }
 
-        if (+Defaults.get('barrier_high') !== +barrier_high_element.value) {
-            if (+barrier_high_element.value > +barrier_low_element.value) {
-                resolveError(barrier_high_element, barrier_high_error_element, barrier_low_element, barrier_low_error_element);
+        const is_high_barrier_changed = +Defaults.get('barrier_high') !== +barrier_high_element.value;
+        const is_low_barrier_changed = +Defaults.get('barrier_low') !== +barrier_low_element.value;
+        const is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
+
+        if (is_high_barrier_changed) {
+            if (is_high_barrier_greater) {
+                resolveAllErrors(barrier_high_element, barrier_low_element);
             } else {
-                showError(barrier_high_element, barrier_high_error_element, barrier_low_element, barrier_low_error_element);
+                showThisError(barrier_high_element, barrier_low_element);
             }
-        } else if (+Defaults.get('barrier_low') !== +barrier_low_element.value) {
-            if (+barrier_high_element.value > +barrier_low_element.value) {
-                resolveError(barrier_high_element, barrier_high_error_element, barrier_low_element, barrier_low_error_element);
+        } else if (is_low_barrier_changed) {
+            if (is_high_barrier_greater) {
+                resolveAllErrors(barrier_high_element, barrier_low_element);
             } else {
-                showError(barrier_low_element, barrier_low_error_element, barrier_high_element, barrier_high_error_element);
+                showThisError(barrier_low_element, barrier_high_element);
             }
         }
     };
