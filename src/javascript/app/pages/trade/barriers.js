@@ -165,7 +165,7 @@ const Barriers = (() => {
         if (!barrier.classList.contains('error-field')) {
             barrier.classList.add('error-field');
         }
-        const error_node = barrier.parentNode.getElementsByClassName('hint')[0].getElementsByClassName('error-msg')[0];
+        const error_node = barrier.parentNode.getElementsByClassName('error-msg')[0];
         if (error_node.classList.contains('invisible')) {
             error_node.classList.remove('invisible');
         }
