@@ -161,24 +161,18 @@ const Barriers = (() => {
         Defaults.remove('barrier', 'barrier_high', 'barrier_low');
     };
 
-    const showError = (barrier) => {
-        if (!barrier.classList.contains('error-field')) {
-            barrier.classList.add('error-field');
-        }
+    const showHideError = (barrier, should_show_error) => {
+        barrier.classList[should_show_error ? 'add' : 'remove']('error-field');
         const error_node = barrier.parentNode.getElementsByClassName('error-msg')[0];
-        if (error_node.classList.contains('invisible')) {
-            error_node.classList.remove('invisible');
-        }
+        error_node.classList[should_show_error ? 'remove' : 'add']('invisible');
+    };
+
+    const showError = (barrier) => {
+        showHideError(barrier, true);
     };
 
     const hideError = (barrier) => {
-        if (barrier.classList.contains('error-field')) {
-            barrier.classList.remove('error-field');
-        }
-        const error_node = barrier.parentNode.getElementsByClassName('hint')[0].getElementsByClassName('error-msg')[0];
-        if (!error_node.classList.contains('invisible')) {
-            error_node.classList.add('invisible');
-        }
+        showHideError(barrier, false);
     };
 
     /**
