@@ -30,33 +30,43 @@ export const requestProposal = (store, updateStore) => {
     });
 };
 
-const createProposalRequest = (store, type_of_contract) => ({
-    proposal     : 1,
-    subscribe    : 1,
-    amount       : parseFloat(store.amount),
-    basis        : store.basis,
-    contract_type: type_of_contract,
-    currency     : store.currency,
-    symbol       : store.symbol,
-    ...(
-        store.start_date &&
-        { date_start: convertToUnix(store.start_date, store.start_time) }
-    ),
-    ...(
-        store.expiry_type === 'duration' ?
-        {
-            duration     : parseInt(store.duration),
-            duration_unit: store.duration_unit,
-        }
-        :
-        { date_expiry: convertToUnix(moment.utc(store.expiry_date).unix(), store.expiry_time) }
-    ),
-    ...(
-        (store.barrier_count > 0 || store.form_components.indexOf('last_digit') !== -1) &&
-        { barrier: store.barrier_1 || store.last_digit }
-    ),
-    ...(
-        store.barrier_count === 2 &&
-        { barrier2: store.barrier_2 }
-    ),
-});
+const createProposalRequest = (store, type_of_contract) => {
+    const obj_expiry = {};
+    if (store.expiry_type === 'endtime') {
+        const expiry_date = moment.utc(store.expiry_date);
+        const is_same_day = expiry_date.isSame(moment(store.server_time), 'day');
+        const expiry_time = is_same_day ? store.expiry_time : '11:59:59 pm';
+        obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
+    }
+
+    return {
+        proposal     : 1,
+        subscribe    : 1,
+        amount       : parseFloat(store.amount),
+        basis        : store.basis,
+        contract_type: type_of_contract,
+        currency     : store.currency,
+        symbol       : store.symbol,
+        ...(
+            store.start_date &&
+            { date_start: convertToUnix(store.start_date, store.start_time) }
+        ),
+        ...(
+            store.expiry_type === 'duration' ?
+            {
+                duration     : parseInt(store.duration),
+                duration_unit: store.duration_unit,
+            }
+            :
+            obj_expiry
+        ),
+        ...(
+            (store.barrier_count > 0 || store.form_components.indexOf('last_digit') !== -1) &&
+            { barrier: store.barrier_1 || store.last_digit }
+        ),
+        ...(
+            store.barrier_count === 2 &&
+            { barrier2: store.barrier_2 }
+        ),
+    };
+};

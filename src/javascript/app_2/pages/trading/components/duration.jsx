@@ -101,6 +101,7 @@ const Duration = ({
                             name='expiry_date'
                             showTodayBtn
                             minDate={min_date_expiry}
+                            maxDate={max_date_duration}
                             onChange={onChange}
                             is_nativepicker={is_nativepicker}
                         />

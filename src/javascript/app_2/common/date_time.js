@@ -14,7 +14,7 @@ const toMoment = epoch => moment.unix(epoch).utc();
  * @return {moment} a new moment object of result
  */
 const setTime = (moment_obj, time) => (
-    moment.utc(`${moment_obj.format('L')} ${time}`, 'L LT') // TODO: use 24 hours format once there is a new design for time_picker
+    moment.utc(`${moment_obj.format('L')} ${time}`, 'L LTS') // TODO: use 24 hours format once there is a new design for time_picker
 );
 
 /**
