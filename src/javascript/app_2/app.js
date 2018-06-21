@@ -38,7 +38,7 @@ const initApp = () => {
 
 /*
  * Retrieves basename from current url
- * 
+ *
  * @return {string} returns the basename of current url
  */
 const getBasename = () => {
@@ -74,7 +74,8 @@ const BinaryApp = () => (
                         items={[
                             { icon: 'ic-statement',   text: localize('Statement'), link_to: 'statement' },
                             { icon: 'ic-chat-bubble', text: localize('Notification') },
-                            { icon: 'ic-lock-open',   text: localize('Lock') },
+                            { icon: 'ic-two-step'   , text: localize('Purchase Confirmation') },
+                            { icon: 'ic-lock-open',   text: localize('Purchase Lock') },
                         ]}
                     />
                 </footer>

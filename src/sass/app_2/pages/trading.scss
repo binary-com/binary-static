@@ -177,7 +177,7 @@
                     top: 24px;
                     line-height: 12px;
                     max-width: 50px;
-                    word-spacing: 50px;
+                    word-spacing: 0;
                 }
                 div.amount {
                     position: relative;
@@ -277,7 +277,7 @@
             .fieldset-header {
                 margin-bottom: -8px;
             }
-            input {
+            input, input.datepicker-display, .time-picker #time-picker-input.time-picker-input {
                 height: 26px;
             }
             .input-field i .symbols {
