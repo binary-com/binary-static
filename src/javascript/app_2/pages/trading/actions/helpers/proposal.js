@@ -1,3 +1,4 @@
+import moment               from 'moment';
 import { convertToUnix }    from '../../../../common/date_time';
 import WS                   from '../../../../data/ws_methods';
 import { getDecimalPlaces } from '../../../../../_common/base/currency_base';
@@ -48,7 +49,7 @@ const createProposalRequest = (store, type_of_contract) => ({
             duration_unit: store.duration_unit,
         }
         :
-        { date_expiry: convertToUnix(store.expiry_date, store.expiry_time) }
+        { date_expiry: convertToUnix(moment.utc(store.expiry_date).unix(), store.expiry_time) }
     ),
     ...(
         (store.barrier_count > 0 || store.form_components.indexOf('last_digit') !== -1) &&
