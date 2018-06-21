@@ -31,7 +31,6 @@ const Settings = ({ match, routes }) => {
     }));
 
     const all_items = data.reduce((all, section) => [...all, ...section.items], []);
-
     return (
         <div className='settings container'>
             <div className='settings__sidebar desktop-only'>
