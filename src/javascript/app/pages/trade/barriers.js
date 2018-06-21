@@ -144,11 +144,11 @@ const Barriers = (() => {
                     high_elm.value = high_elm.textContent = value_high;
                     low_elm.value  = low_elm.textContent  = value_low;
 
-                    Defaults.set('barrier_high', high_elm.value);
-                    Defaults.set('barrier_low', low_elm.value);
                     Defaults.remove('barrier');
                     showHideRelativeTip(barrier.barrier, [high_tooltip, high_span, low_tooltip, low_span]);
                     Barriers.validateBarrier();
+                    Defaults.set('barrier_high', high_elm.value);
+                    Defaults.set('barrier_low', low_elm.value);
                     return;
                 }
             }
@@ -175,16 +175,27 @@ const Barriers = (() => {
             barrier_element.classList.remove('error-field');
         }
 
-        if (+barrier_high_element.value > +barrier_low_element.value) {
-            barrier_high_element.classList.remove('error-field');
-            barrier_low_element.classList.remove('error-field');
-            barrier_high_error_element.classList.add('invisible');
-            barrier_low_error_element.classList.add('invisible');
-        } else {
-            barrier_high_element.classList.add('error-field');
-            barrier_low_element.classList.add('error-field');
-            barrier_high_error_element.classList.remove('invisible');
-            barrier_low_error_element.classList.remove('invisible');
+        barrier_high_element.classList.remove('error-field');
+        barrier_low_element.classList.remove('error-field');
+        barrier_high_error_element.classList.add('invisible');
+        barrier_low_error_element.classList.add('invisible');
+
+        if (+Defaults.get('barrier_high') !== +barrier_high_element.value) {
+            if (+barrier_high_element.value > +barrier_low_element.value) {
+                barrier_high_element.classList.remove('error-field');
+                barrier_high_error_element.classList.add('invisible');
+            } else {
+                barrier_high_element.classList.add('error-field');
+                barrier_high_error_element.classList.remove('invisible');
+            }
+        } else if (+Defaults.get('barrier_low') !== +barrier_low_element.value) {
+            if (+barrier_high_element.value > +barrier_low_element.value) {
+                barrier_low_element.classList.remove('error-field');
+                barrier_low_error_element.classList.add('invisible');
+            } else {
+                barrier_low_element.classList.add('error-field');
+                barrier_low_error_element.classList.remove('invisible');
+            }
         }
     };
 
