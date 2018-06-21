@@ -11,7 +11,6 @@ import { localize } from '../../../../_common/localize';
 
 const expiry_list = [
     { text: localize('Duration'), value: 'duration' },
-    { text: localize('End Time'), value: 'endtime' },
 ];
 
 let now_date,
@@ -50,6 +49,15 @@ const Duration = ({
                 }
             </div>
         );
+    }
+
+    const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
+    if (duration_units_list.length === 1 && duration_unit === 't') {
+        if (has_end_time) {
+            expiry_list.pop(); // remove end time for contracts with only tick duration
+        }
+    } else if (!has_end_time) {
+        expiry_list.push({ text: localize('End Time'), value: 'endtime' });
     }
 
     return (
