@@ -383,6 +383,7 @@ const TradingEvents = (() => {
             Defaults.set('barrier_high', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
+
         }));
         high_barrier_element.addEventListener('keypress', (ev) => {
             onlyNumericOnKeypress(ev, [43, 45, 46]);
