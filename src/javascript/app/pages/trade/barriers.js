@@ -182,22 +182,6 @@ const Barriers = (() => {
     };
 
     /**
-    * Show an error on the target Barrier.
-    *
-    * @param {Object} barrier_1   the target barrier object for prompting error
-    * @param {Object} barrier_2   barrier object whose errors will be resolved
-    */
-    const showErrorOnTarget = (barrier_1, barrier_2) => {
-        showError(barrier_1);
-        hideError(barrier_2);
-    };
-
-    const resolveAllErrors = (barrier_1, barrier_2) => {
-        hideError(barrier_1);
-        hideError(barrier_2);
-    };
-
-    /**
     * Validate Barriers
     * @param {Boolean} is_high_barrier_changed Whether we're validating this barrier.
     *                                          And the default validation is on High barrier.
@@ -216,17 +200,12 @@ const Barriers = (() => {
         }
 
         const is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
-
-        if (is_high_barrier_changed) {
-            if (is_high_barrier_greater) {
-                resolveAllErrors(barrier_high_element, barrier_low_element);
-            } else {
-                showErrorOnTarget(barrier_high_element, barrier_low_element);
-            }
-        } else if (is_high_barrier_greater) {
-            resolveAllErrors(barrier_high_element, barrier_low_element);
+        if (is_high_barrier_greater) {
+            hideError(barrier_high_element);
+            hideError(barrier_low_element);
         } else {
-            showErrorOnTarget(barrier_low_element, barrier_high_element);
+            hideError(is_high_barrier_changed ? barrier_low_element : barrier_high_element);
+            showError(is_high_barrier_changed ? barrier_high_element : barrier_low_element);
         }
     };
 
