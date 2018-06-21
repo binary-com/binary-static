@@ -1,17 +1,12 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Section from '../components/section.jsx';
 
-class Limits extends PureComponent {
-    render() {
-        const { title, description } = this.props;
-        return (
-            <Section title={title} description={description}>
-                {/* content here */}
-            </Section>
-        );
-    }
-}
+const Limits = ({ title, description }) => (
+    <Section title={title} description={description}>
+        {/* content here */}
+    </Section>
+);
 
 Limits.propTypes = {
     title      : PropTypes.string,
