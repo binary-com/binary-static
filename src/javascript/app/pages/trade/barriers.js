@@ -146,7 +146,7 @@ const Barriers = (() => {
 
                     Defaults.remove('barrier');
                     showHideRelativeTip(barrier.barrier, [high_tooltip, high_span, low_tooltip, low_span]);
-                    Barriers.validateBarrier();
+                    Barriers.validateBarrier(true);
                     Defaults.set('barrier_high', high_elm.value);
                     Defaults.set('barrier_low', low_elm.value);
                     return;
@@ -197,7 +197,11 @@ const Barriers = (() => {
         resolveError(barrier_2);
     };
 
-    const validateBarrier = () => {
+    /**
+    * Validate Barriers
+    * @param {Boolean} first_time pass True to force to validate;
+    */
+    const validateBarrier = (first_time = false) => {
         const barrier_element = getElementById('barrier');
         const empty           = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
         const barrier_high_element = getElementById('barrier_high');
@@ -213,7 +217,7 @@ const Barriers = (() => {
         const is_low_barrier_changed = +Defaults.get('barrier_low') !== +barrier_low_element.value;
         const is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
 
-        if (is_high_barrier_changed) {
+        if (first_time || is_high_barrier_changed) {
             if (is_high_barrier_greater) {
                 resolveAllErrors(barrier_high_element, barrier_low_element);
             } else {
