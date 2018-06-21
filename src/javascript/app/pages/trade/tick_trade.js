@@ -473,7 +473,7 @@ const TickDisplay = (() => {
 
         const is_resetcall  = contract.contract_type === 'RESETCALL';
         const entry_barrier = +contract.entry_spot;
-        const reset_barrier = +r_barrier || +barrier;
+        const reset_barrier = +r_barrier || +contract.barrier;
 
         if (!entry_barrier || !reset_barrier) return;
 
