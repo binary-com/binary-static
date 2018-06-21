@@ -183,15 +183,15 @@ const Barriers = (() => {
 
     /**
     * Validate Barriers
-    * @param {Boolean} is_high_barrier_changed Whether we're validating this barrier.
+    * @param {Boolean} is_high_barrier_changed Whether we're validating High barrier.
     *                                          And the default validation is on High barrier.
     *
     */
     const validateBarrier = (is_high_barrier_changed = true) => {
-        const barrier_element = getElementById('barrier');
-        const empty           = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
+        const barrier_element      = getElementById('barrier');
+        const empty                = isNaN(parseFloat(barrier_element.value))||parseFloat(barrier_element.value) === 0;
         const barrier_high_element = getElementById('barrier_high');
-        const barrier_low_element = getElementById('barrier_low');
+        const barrier_low_element  = getElementById('barrier_low');
 
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');
