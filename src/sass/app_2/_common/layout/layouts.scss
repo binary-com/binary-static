@@ -6,7 +6,7 @@
     /* trade-app layout */
     #trade_container {
         position: relative;
-        padding: 12px 12px 0;
+        padding: 8px 12px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: 1fr;
@@ -113,9 +113,12 @@
                 }
             }
         }
-        @media (max-width: 1125px) {
+        @media (min-width: 979px) and (max-width: 1125px) {
+            .chart-container {
+                grid-column: col-start 1 / span 9 !important;
+            }
             .sidebar-container {
-                grid-column: col-start 10 / span 3;
+                grid-column: col-start 10 / span 3 !important;
             }
         }
     }

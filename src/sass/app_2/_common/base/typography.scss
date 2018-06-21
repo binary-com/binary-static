@@ -51,7 +51,7 @@ body, input {
         }
         &.purchase-option > .box > .purchase-info-wrapper {
             div, strong, span {
-                @include interpolate(font-size, 320px, 1440px, 9px, 12px);
+                @include interpolate(font-size, 320px, 1440px, 8px, 11px);
             }
         }
     }

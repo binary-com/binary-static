@@ -273,6 +273,28 @@
             margin-bottom: 0;
             background: transparent;
         }
+        @media screen and (max-height: 800px) {
+            .fieldset-header {
+                margin-bottom: -8px;
+            }
+            input {
+                height: 26px;
+            }
+            .input-field i .symbols {
+                height: 24px;
+                line-height: 24px;
+            }
+            .dropdown-display {
+                height: 24px;
+
+                span {
+                    line-height: 26px;
+                }
+            }
+            span.select-arrow {
+                top: 9px;
+            }
+        }
     }
     .calendar {
         width: 187px;
