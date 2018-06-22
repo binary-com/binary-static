@@ -608,7 +608,7 @@ const Highchart = (() => {
                     i++;
                 }
                 const last = parseInt(last_data.x || last_data[0]);
-                if (last >= (end_time * 1000) || last >= ((sell_time || sell_spot_time) * 1000)) {
+                if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
                     stop_streaming = true;
                 } else {
                     // add a null point if the last tick is before end time to bring end time line into view
