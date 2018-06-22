@@ -155,7 +155,7 @@ const Explanation = () => (
         <div id='explanation_explain' className='invisible gr-padding-20 gr-child'>
             <div id='explain_asian' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
-                <p>{it.L('The first tick is the first tick after the contract is processed by our servers.')}</p>
+                <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
                 <h3>{it.L('The Average')}</h3>
                 <p>{it.L('The average is the average of the ticks, including the first and the last tick.')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Asian contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')}</p>
@@ -163,7 +163,7 @@ const Explanation = () => (
 
             <div id='explain_digits' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
-                <p>{it.L('The first tick is the first tick after the contract is processed by our servers.')}</p>
+                <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Digit contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')}</p>
             </div>
 
@@ -177,7 +177,7 @@ const Explanation = () => (
 
             <div id='explain_evenodd' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
-                <p>{it.L('The first tick is the first tick after the contract is processed by our servers.')}</p>
+                <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Even/Odd contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')}</p>
             </div>
 
@@ -192,14 +192,14 @@ const Explanation = () => (
 
             <div id='explain_overunder' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
-                <p>{it.L('The first tick is the first tick after the contract is processed by our servers.')}</p>
+                <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Over/Under contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')}</p>
             </div>
 
             <div id='explain_risefall' className='invisible'>
                 <h3>{it.L('Entry spot')}</h3>
                 <p>
-                    {it.L('If you select a <strong>start time</strong> of "Now", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter.')}
+                    {it.L('The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter.')}
                     <br />
                     {it.L('If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time.')}
                 </p>
@@ -277,7 +277,7 @@ const Explanation = () => (
             <div id='explain_callputspread' className='invisible'>
                 <h3>{it.L('Entry spot')}</h3>
                 <p>
-                    {it.L('If you select a <strong>start time</strong> of "Now", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter.')}
+                    {it.L('The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter.')}
                 </p>
                 <br />
                 <h3>{it.L('Exit spot')}</h3>
@@ -292,7 +292,7 @@ const Explanation = () => (
 
             <div id='explain_highlowticks' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
-                <p>{it.L('The first tick is the first tick after the contract is processed by our servers.')}</p>
+                <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
                 <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('High Tick/Low Tick contracts have a strict duration of five ticks.')}</p>
             </div>
         </div>
