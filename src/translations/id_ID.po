@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-20T03:17:11+0000\n"
+"PO-Revision-Date: 2018-06-22T01:26:38+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -2700,6 +2700,9 @@ msgstr "Permintaan - Didorong oleh aplikasi komersil dan industri, termasuk prod
 msgid "Demo"
 msgstr "Demo"
 
+msgid "Demo Account"
+msgstr ""
+
 msgid "Demo Accounts"
 msgstr "Akun Demo"
 
@@ -4509,9 +4512,6 @@ msgstr "Jika anda memilih <strong>waktu mulai</strong> mendatang, maka <strong>w
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Jika anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <strong>waktu berakhir</strong> adalah waktu menit/jam yang dipilih setelah <strong>waktu mulai</strong> (jika durasi kurang dari satu hari), atau pada akhir trading (jika durasi satu hari atau lebih)."
 
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "Jika Anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <strong>waktu mulai</strong> adalah ketika kontrak diproses oleh server kami dan <strong>spot masuk</strong> adalah <strong>tik berikutnya</strong>."
-
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong>waktu berakhir</strong> adalah waktu yang dipilih."
 
@@ -6150,6 +6150,9 @@ msgstr "Ukuran tiket minimum"
 msgid "Minimum volume"
 msgstr "Volume minimal"
 
+msgid "Minimum:"
+msgstr ""
+
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Pekerja Pertambangan, Konstruksi, Manufaktur dan Transportasi"
 
@@ -7623,6 +7626,9 @@ msgstr "Standar Riil"
 msgid "Real Volatility Indices"
 msgstr "Indeks Volatilitas Riil"
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr "Akun Uang Riil"
 
@@ -8731,6 +8737,9 @@ msgstr "<strong>Spot akhir</strong> adalah tik terakhir pada atau sebelum <stron
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "<strong>Waktu yang tersisa</strong> adalah sisa waktu hingga kontrak berakhir."
 
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>Waktu mulai</strong> adalah waktu ketika kontrak diproses oleh server kami."
 
@@ -9091,6 +9100,9 @@ msgstr "Durasi adalah tempo pembelian kontrak (lihat 'periode kontrak')."
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "Alamat email yang Anda sediakan sudah pernah di daftarkan. Jika Anda lupa kata sandi, silahkan coba <a href=\"%1\">alat pemulihan kata sandi</a> atau hubungi customer service kami."
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Harga spot masuk adalah harga awal kontrak yang dibeli oleh trader."
 
@@ -9117,9 +9129,6 @@ msgstr "Layanan trading finansial yang disediakan pada situs ini hanya cocok unt
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Langkah pertama adalah menetapkan parameter trading Anda. Terdapat lima parameter trading yang Anda harus sesuaikan agar dapat menerima harga untuk kontrak:"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "Tik awal adalah tik pertama setelah kontrak diproses oleh server kami."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "Pasar Foreign Exchange (Forex) adalah pasar yang paling likuid dan paling sering ditradingkan di seluruh dunia, dimana trading senilai trilyunan tiap harinya."
@@ -9165,9 +9174,6 @@ msgstr "Kerugian maksimal yang mungkin ditanggung oleh klien adalah sejumlah dan
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Jumlah maksimum token (%1) telah tercapai."
-
-msgid "The minimum duration is"
-msgstr "Durasi minimum adalah"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Jumlah minimum untuk menggunakan fasilitas transfer antar akun adalah %1."
@@ -9304,8 +9310,8 @@ msgstr "Tersedia dua jenis kontrak In/Out:"
 msgid "There are two types of Up/Down trades:"
 msgstr "Tersedia dua jenis kontrak Up/Down:"
 
-msgid "There are two types of two types of reset trades:"
-msgstr "Terdapat dua jenis kontrak reset:"
+msgid "There are two types of reset trades:"
+msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "Terdapat saldo apapun yang masih tertunda dari Anda; dan/atau"
@@ -9525,6 +9531,12 @@ msgstr "Kamis"
 
 msgid "Tick"
 msgstr "Tik"
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
+msgstr ""
 
 msgid "Tick %1 is the highest tick"
 msgstr "Tik %1 adalah tik tertinggi"
