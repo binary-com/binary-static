@@ -146,7 +146,7 @@ const Barriers = (() => {
 
                     Defaults.remove('barrier');
                     showHideRelativeTip(barrier.barrier, [high_tooltip, high_span, low_tooltip, low_span]);
-                    Barriers.validateBarrier(true);
+                    Barriers.validateBarrier();
                     Defaults.set('barrier_high', high_elm.value);
                     Defaults.set('barrier_low', low_elm.value);
                     return;
@@ -161,31 +161,15 @@ const Barriers = (() => {
         Defaults.remove('barrier', 'barrier_high', 'barrier_low');
     };
 
-    const showHideError = (barrier, should_show_error) => {
-        barrier.classList[should_show_error ? 'add' : 'remove']('error-field');
-        const error_node = barrier.parentNode.getElementsByClassName('error-msg')[0];
-        error_node.classList[should_show_error ? 'remove' : 'add']('invisible');
-    };
-
-    const showError = (barrier) => {
-        showHideError(barrier, true);
-    };
-
-    const hideError = (barrier) => {
-        showHideError(barrier, false);
-    };
-
     /**
     * Validate Barriers
-    * @param {Boolean} is_high_barrier_changed Whether we're validating High barrier.
-    *                                          And the default validation is on High barrier.
-    *
     */
-    const validateBarrier = (is_high_barrier_changed = true) => {
+    const validateBarrier = () => {
         const barrier_element      = getElementById('barrier');
         const empty                = isNaN(parseFloat(barrier_element.value))||parseFloat(barrier_element.value) === 0;
         const barrier_high_element = getElementById('barrier_high');
         const barrier_low_element  = getElementById('barrier_low');
+        const error_node           = getElementById('barrier_high_error');
 
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');
@@ -193,13 +177,10 @@ const Barriers = (() => {
             barrier_element.classList.remove('error-field');
         }
 
-        const is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
-        if (is_high_barrier_greater) {
-            hideError(barrier_high_element);
-            hideError(barrier_low_element);
-        } else {
-            hideError(is_high_barrier_changed ? barrier_low_element : barrier_high_element);
-            showError(is_high_barrier_changed ? barrier_high_element : barrier_low_element);
+        if (isVisible(barrier_high_element)) {
+            const is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
+            barrier_high_element.classList[is_high_barrier_greater ? 'remove' : 'add']('error-field');
+            error_node.classList[is_high_barrier_greater ? 'add' : 'remove']('invisible');
         }
     };
 
