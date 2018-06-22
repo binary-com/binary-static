@@ -50,7 +50,7 @@ const Highchart = (() => {
 
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
-        lines_drawn = [];
+        lines_drawn = new Set();
 
         is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming = is_response_id_set =
             is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
@@ -563,7 +563,7 @@ const Highchart = (() => {
     };
 
     const drawLineX = (properties) => {
-        if (chart && properties.value && !(new RegExp(properties.value).test(lines_drawn))) {
+        if (chart && properties.value && !lines_drawn.has(properties.value)) {
             addPlotLine({
                 value    : properties.value * 1000,
                 label    : properties.label || '',
@@ -571,7 +571,7 @@ const Highchart = (() => {
                 dashStyle: properties.dash_style || '',
                 color    : properties.color || '',
             }, 'x');
-            lines_drawn.push(properties.value);
+            lines_drawn.add(properties.value);
         }
     };
 
@@ -579,7 +579,7 @@ const Highchart = (() => {
     const endContract = () => {
         if (chart && !stop_streaming) {
             drawLineX({
-                value     : (isSoldBeforeExpiry() ? (sell_time || sell_spot_time) : end_time),
+                value     : (isSoldBeforeExpiry() ? sell_time : end_time),
                 text_left : 'textLeft',
                 dash_style: 'Dash',
             });
@@ -598,7 +598,7 @@ const Highchart = (() => {
     };
 
     const setStopStreaming = () => {
-        if (chart && (is_sold || is_settleable)) {
+        if (chart && (is_sold || is_settleable) && (isSoldBeforeExpiry() ? sell_time : end_time)) {
             const data = getPropertyValue(getPropertyValue(chart, ['series'])[0], ['options', 'data']);
             if (data && data.length > 0) {
                 let last_data = data[data.length - 1];
@@ -608,12 +608,14 @@ const Highchart = (() => {
                     i++;
                 }
                 const last = parseInt(last_data.x || last_data[0]);
-                if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
+                if (last >= (end_time * 1000) || last >= ((sell_time || sell_spot_time) * 1000)) {
                     stop_streaming = true;
                 } else {
                     // add a null point if the last tick is before end time to bring end time line into view
                     const time = isSoldBeforeExpiry() ? (sell_time || sell_spot_time) : end_time;
-                    chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
+                    const point = { x: time * 1000, y: null };
+                    chart.addSeries({ data: [point] });
+                    chart.zoomOut(); // sometimes navigator doesn't show new points
                 }
             }
         }
