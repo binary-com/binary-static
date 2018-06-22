@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-22T01:26:23+0000\n"
+"PO-Revision-Date: 2018-06-22T05:59:06+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -2701,7 +2701,7 @@ msgid "Demo"
 msgstr "展示"
 
 msgid "Demo Account"
-msgstr ""
+msgstr "模擬帳戶"
 
 msgid "Demo Accounts"
 msgstr "模擬帳戶"
@@ -4016,6 +4016,9 @@ msgstr "高跳動點/低跳動點合約具有嚴格的五跳動點週期。"
 
 msgid "High barrier"
 msgstr "高障礙"
+
+msgid "High barrier must be higher than low barrier"
+msgstr ""
 
 msgid "High barrier offset"
 msgstr "高障礙位移"
@@ -6151,7 +6154,7 @@ msgid "Minimum volume"
 msgstr "最小交易額"
 
 msgid "Minimum:"
-msgstr ""
+msgstr "最小:"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "礦業、建築業、製造業和運輸工人"
@@ -7627,7 +7630,7 @@ msgid "Real Volatility Indices"
 msgstr "真實波動率指數"
 
 msgid "Real-Money Account"
-msgstr ""
+msgstr "真實資金帳戶"
 
 msgid "Real-Money Accounts"
 msgstr "真實資金帳戶"
@@ -8737,7 +8740,7 @@ msgid "The <strong>remaining time</strong> is the time remaining until the contr
 msgstr "<strong>剩餘時間</strong> 是合約到期前剩下的時間。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr ""
+msgstr "<strong>開始時間</strong>就是我們的伺服器處理合約交易的時間，<strong>入市現價</strong>就是<strong>下一個價格</strong>。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合約<strong>開始時間</strong>即我們的伺服器處理合約的時間。"
@@ -9100,7 +9103,7 @@ msgid "The email address provided is already in use. If you forgot your password
 msgstr "所提供的電子郵件地址已經在使用。如果忘了密碼，請嘗試使用我們的<a href=\"%1\">密碼恢復工具</a>或聯繫客服部。"
 
 msgid "The entry spot is the first tick after the contract is processed by our servers."
-msgstr ""
+msgstr "入市現價指我們伺服器處理合約後的第一個跳動點。"
 
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "入市現價是交易者所買入交易的初始價格。"
@@ -9310,7 +9313,7 @@ msgid "There are two types of Up/Down trades:"
 msgstr "上漲/下跌交易有兩種類型:"
 
 msgid "There are two types of reset trades:"
-msgstr ""
+msgstr "重設交易有兩種類型:"
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "您欠我們一些數額尚未還清；和（或)"
@@ -9532,10 +9535,10 @@ msgid "Tick"
 msgstr "跳動點"
 
 msgid "Tick %1 is not the highest tick"
-msgstr ""
+msgstr "跳動點 %1 不是最高跳動點"
 
 msgid "Tick %1 is not the lowest tick"
-msgstr ""
+msgstr "跳動點 %1 不是最低跳動點"
 
 msgid "Tick %1 is the highest tick"
 msgstr "跳動點 %1 是最高跳動點"

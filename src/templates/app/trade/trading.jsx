@@ -109,6 +109,9 @@ const Trading = () => (
                                         <div className='big-col'>
                                             <input id='barrier_high' type='text' data-lpignore='true' name='H' autoComplete='off' />
                                             <span id='indicative_high_barrier_tooltip' data-balloon={it.L('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')} data-balloon-length='xlarge' />
+                                            <div className='hint'>
+                                                <span id='barrier_high_error' className='error-msg invisible'>{it.L('High barrier must be higher than low barrier')}</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='row barrier_class' id='low_barrier_row'>
