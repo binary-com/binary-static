@@ -2686,6 +2686,9 @@ msgstr ""
 msgid "Demo"
 msgstr ""
 
+msgid "Demo Account"
+msgstr ""
+
 msgid "Demo Accounts"
 msgstr ""
 
@@ -4495,9 +4498,6 @@ msgstr ""
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr ""
 
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr ""
-
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr ""
 
@@ -6136,6 +6136,9 @@ msgstr ""
 msgid "Minimum volume"
 msgstr ""
 
+msgid "Minimum:"
+msgstr ""
+
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr ""
 
@@ -7609,6 +7612,9 @@ msgstr ""
 msgid "Real Volatility Indices"
 msgstr ""
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr ""
 
@@ -8716,6 +8722,9 @@ msgstr ""
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr ""
 
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr ""
 
@@ -9076,6 +9085,9 @@ msgstr ""
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr ""
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr ""
 
@@ -9101,9 +9113,6 @@ msgid "The financial trading services contained within this site are only suitab
 msgstr ""
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
-msgstr ""
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr ""
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
@@ -9149,9 +9158,6 @@ msgid "The maximum loss that may be incurred by any Client is the amount of mone
 msgstr ""
 
 msgid "The maximum number of tokens (%1) has been reached."
-msgstr ""
-
-msgid "The minimum duration is"
 msgstr ""
 
 msgid "The minimum required amount for using the account transfer facility is %1."
@@ -9289,7 +9295,7 @@ msgstr ""
 msgid "There are two types of Up/Down trades:"
 msgstr ""
 
-msgid "There are two types of two types of reset trades:"
+msgid "There are two types of reset trades:"
 msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
@@ -9509,6 +9515,12 @@ msgid "Thursday"
 msgstr ""
 
 msgid "Tick"
+msgstr ""
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
 msgstr ""
 
 msgid "Tick %1 is the highest tick"
