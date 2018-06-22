@@ -93,6 +93,16 @@
                                 border-bottom-left-radius: $BORDER_RADIUS;
                                 border-top-right-radius: 0;
                                 border-bottom-right-radius: 0;
+
+                                &:hover, &:focus, &:active, &.clicked {
+                                    border-right-width: 1px;
+                                }
+                                &.dropdown-container {
+                                    &:hover, &:active, &:focus, &.show {
+                                        border-top-left-radius: $BORDER_RADIUS;
+                                        border-bottom-left-radius: $BORDER_RADIUS;
+                                    }
+                                }
                             }
                             input:last-child {
                                 border-right-width: 1px;
