@@ -97,11 +97,11 @@ div.dropdown-container {
                     vertical-align: middle;
                 }
                 &:hover {
-                    background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
+                    background-color: $COLOR_GRAY;
                 }
                 &.selected span {
-                    background-color: $COLOR_BLUE;
-                    color: $COLOR_WHITE;
+                    background-color: $COLOR_GRAY;
+                    color: $COLOR_BLUE;
                     font-weight: 400;
                 }
             }
