@@ -7,12 +7,14 @@ const Fieldset = ({
     children,
     header,
     icon,
+    onMouseEnter,
+    onMouseLeave,
     tooltip,
 }) => {
     const field_left_class = classNames('field-info left', { icon }, icon);
 
     return (
-        <fieldset>
+        <fieldset onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <div className='fieldset-header'>
                 <span className={field_left_class}>{header}</span>
                 <span className='field-info right'>
@@ -39,9 +41,11 @@ Fieldset.propTypes = {
         PropTypes.array,
         PropTypes.object,
     ]),
-    header : PropTypes.string,
-    icon   : PropTypes.string,
-    tooltip: PropTypes.string,
+    header      : PropTypes.string,
+    icon        : PropTypes.string,
+    onMouseEnter: PropTypes.func,
+    onMouseLeave: PropTypes.func,
+    tooltip     : PropTypes.string,
 };
 
 export default Fieldset;

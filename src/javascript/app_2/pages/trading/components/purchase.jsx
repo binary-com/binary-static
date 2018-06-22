@@ -27,16 +27,24 @@ const Purchase = ({
     is_purchase_enabled,
     is_trade_enabled,
     onClickPurchase,
+    onHoverPurchase,
     proposal_info,
     purchase_info,
     trade_types,
 }) => (
     Object.keys(trade_types).map((type, idx) => {
-        const info = proposal_info[type] || {};
+        const info         = proposal_info[type] || {};
         const is_logged_in = isLoggedIn();
+        const is_disabled  = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_logged_in;
 
         return (
-            <Fieldset key={idx} header={type} tooltip={info.message}>
+            <Fieldset
+                key={idx}
+                header={type}
+                tooltip={info.message}
+                onMouseEnter={() => { onHoverPurchase(true, type); }}
+                onMouseLeave={() => { onHoverPurchase(false); }}
+            >
                 {(!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id) ?
                     <div>
                         {getPropertyValue(purchase_info, ['error', 'message']) || createPurchaseInfo(purchase_info.buy)}
@@ -54,7 +62,7 @@ const Purchase = ({
                             </React.Fragment>
                         }
                         <Button
-                            is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id || !is_logged_in}
+                            is_disabled={is_disabled}
                             id={`purchase_${type}`}
                             className='primary green'
                             has_effect
@@ -72,6 +80,7 @@ Purchase.propTypes = {
     is_purchase_enabled: PropTypes.bool,
     is_trade_enabled   : PropTypes.bool,
     onClickPurchase    : PropTypes.func,
+    onHoverPurchase    : PropTypes.func,
     proposal_info      : PropTypes.object,
     purchase_info      : PropTypes.object,
     trade_types        : PropTypes.object,
@@ -82,6 +91,7 @@ export default connect(
         is_purchase_enabled: trade.is_purchase_enabled,
         is_trade_enabled   : trade.is_trade_enabled,
         onClickPurchase    : trade.onPurchase,
+        onHoverPurchase    : trade.onHoverPurchase,
         proposal_info      : trade.proposal_info,
         purchase_info      : trade.purchase_info,
         trade_types        : trade.trade_types,
