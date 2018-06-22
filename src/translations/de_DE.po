@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T06:48:04+0000\n"
+"PO-Revision-Date: 2018-06-22T01:25:25+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -1339,7 +1339,7 @@ msgid "At least five years of experience with affiliate marketing, growth hackin
 msgstr "Mindestens fünf Jahre Erfahrung im Geschätspartner Marketing, Growth Hacking, in Geschäftsentwicklung und andere eng verwandte Fähigkeiten"
 
 msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
-msgstr ""
+msgstr "Wenn der Spot zur Nachstellzeit in die entgegengesetzte Richtung Ihrer Vorhersage geht, wird die Schwelle auf diesen Spot zurückgesetzt."
 
 msgid "Audit"
 msgstr "Audit"
@@ -2700,6 +2700,9 @@ msgstr "Nachfrage – Durch industrielle und gewerbliche Anwendungen, einschlie�
 
 msgid "Demo"
 msgstr "Demo"
+
+msgid "Demo Account"
+msgstr ""
 
 msgid "Demo Accounts"
 msgstr "Demo-Konten"
@@ -4295,7 +4298,7 @@ msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barr
 msgstr "Wenn der <strong>Schlusskurs</strong> entweder der <strong>niedrigen Schwelle</strong> oder der <strong>hohen Barriere</strong> entspricht, gewinnen Sie die Auszahlung nicht."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
-msgstr ""
+msgstr "Wenn der <strong>Schlusskurs</strong> der <strong>Schwelle</strong> oder der <stronm g>neuen Schwelle (wenn eine Zurücksetzung erfolgt)</stronmg> entspricht, gewinnen Sie die Auszahlung nicht."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Wenn der <strong>Schlusskurs</strong> der <strong>Barriere </strong> entspricht, gewinnen Sie die Auszahlung nicht."
@@ -4469,10 +4472,10 @@ msgid "If you select \"Over\", you will win the payout if the <strong>last digi
 msgstr "Wenn Sie „Über\" auswählen, erhalten Sie eine Auszahlung, wenn die <strong>letzte Stelle</strong> des letzten Ticks größer als Ihre Voraussage ist.</strong>"
 
 msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Wenn Sie \"Reset-Call\" auswählen, erhalten Sie eine Auszahlung, entweder wenn der Kurs zum Auslauf des Kontrakts genau über dem Kurs bei Beginn des Kontrakts, oder zum Spot der Nachstellzeit liegt."
 
 msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Wenn Sie \"Reset-Put\" auswählen, erhalten Sie eine Auszahlung, entweder wenn der Kurs zum Auslauf des Kontrakts genau unter dem Kurs bei Beginn des Kontrakts, oder zum Spot der Nachstellzeit liegt."
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Wenn Sie \"Steigt\" auswählen, erhalten Sie eine Auszahlung, wenn der <strong>Kurs zum Auslauf des Kontrakts</strong> genau über dem <strong>Kurs bei Beginn des Kontrakts</strong> liegt."
@@ -4509,9 +4512,6 @@ msgstr "Wenn Sie eine  <strong>Startzeit</strong> in der Zukunft auswählen, ist
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Wenn Sie als <strong>Startzeit</strong> „Jetzt\" wählen, ist die <strong>Endzeit</strong> die ausgewählte Anzahl an Minuten/Stunden nach <strong>Beginn</strong> (sofern sie weniger als einen Tag dauert) oder das Ende des Börsentages (sofern sie einen Tag oder länger dauert)."
-
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "Wenn Sie als <strong>Startzeit</strong> „Jetzt\" wählen, ist der <strong>Beginn</strong> der Zeitpunkt, an dem der Auftrag von unseren Servern verarbeitet wurde und der <strong>Kurs zu Kontraktbeginn</strong> ist der danach <strong>folgende Tick</strong>."
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Wenn Sie eine bestimmte <strong>Endzeit</strong> auswählen, ist die ausgewählte Zeit die <strong>Endzeit</strong>."
@@ -6151,6 +6151,9 @@ msgstr "Minimale Ticket-Größe"
 msgid "Minimum volume"
 msgstr "Mindestvolumen"
 
+msgid "Minimum:"
+msgstr ""
+
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Bergbau-, Bau-, Herstellungs- und Transport-Arbeiter"
 
@@ -7624,6 +7627,9 @@ msgstr "Echter Standard"
 msgid "Real Volatility Indices"
 msgstr "Echte Volatilität Ind."
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr "Echtgeldkonten"
 
@@ -7769,13 +7775,13 @@ msgid "Resale price"
 msgstr "Wiederverkaufspreis"
 
 msgid "Reset"
-msgstr ""
+msgstr "Zurücksetzen"
 
 msgid "Reset Barrier"
-msgstr ""
+msgstr "Schwelle zurücksetzen"
 
 msgid "Reset Call"
-msgstr ""
+msgstr "Call zurücksetzen"
 
 msgid "Reset MT5 password"
 msgstr "MT5 Passwort zurücksetzen"
@@ -7784,25 +7790,25 @@ msgid "Reset Password"
 msgstr "Passwort zurücksetzen"
 
 msgid "Reset Put"
-msgstr ""
+msgstr "Put zurücksetzen"
 
 msgid "Reset Time"
-msgstr ""
+msgstr "Zeit zurückstellen"
 
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
 
 msgid "Reset time"
-msgstr ""
+msgstr "Zeit zurückstellen"
 
 msgid "Reset to Original Settings"
 msgstr "Auf Originaleinstellungen zurücksetzen"
 
 msgid "Reset-Call"
-msgstr ""
+msgstr "Reset-Call"
 
 msgid "Reset-Put"
-msgstr ""
+msgstr "Reset-Put"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Bewohner von Ländern in denen die FATF strategische Mängel identifiziert hat, sollen bei der Eröffnung eines Kontos mit Binary Investments (Europe) Ltd eingeschränkt sein."
@@ -8731,6 +8737,9 @@ msgstr "Der <strong>Schlusskurs</strong> ist der späteste Tick auf oder bevor d
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "Die <strong>verbleibende Zeit</strong> ist die Zeit, die verbleibt, bis der Vertrag ausläuft."
 
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "Die <strong>Startzeit</strong> beginnt, wenn der Kontrakt von unseren Servern bearbeitet wird."
 
@@ -9091,6 +9100,9 @@ msgstr "Die Laufzeit ist die Länge eines gekauften Kontrakts (siehe \"Kontraktp
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "Die angegebene E-Mail Adresse, ist bereits in Verwendung. Wenn Sie Ihr Passwort vergessen haben, versuchen Sie bitte unser <a href=\"%1\">Passwort-Wiederfindung Tool</a>, oder kontaktieren Sie die Kundenbetreuung."
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Der Einstiegskurs ist der Startpreis eines von einem Händler gekauften Kontrakts."
 
@@ -9117,9 +9129,6 @@ msgstr "Die Finanzhandelsdienstleistungen, die diese Site enthält, eignen sich 
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Der erste Schritt ist es, die Parameter Ihres Handels festzulegen. Es gibt fünf Handels-Parameter, die Sie anpassen müssen, um einen Preis für den Kontrakt zu erhalten:"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "Der erste Tick ist der erste Tick, nach dem der Kontrakt von unseren Servern bearbeitet wurde."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "Der Foreign Exchange Market (Forex) ist der weltweit liquideste und am meisten gehandelte Markt, wo jeden Tag Geschäfte im Wert von Billionen abgeschlossen werden."
@@ -9165,9 +9174,6 @@ msgstr "Der maximale Verlust, den ein Kunde erleiden kann, ist der Geldbetrag, d
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Die Höchstzahl an Token (%1) wurde erreicht."
-
-msgid "The minimum duration is"
-msgstr "Mindestdauer beträgt"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Der erforderliche Minimalbetrag, um die Konto-Überweisungs-Funktion zu verwenden, ist %1."
@@ -9304,7 +9310,7 @@ msgstr "Es gibt zwei Arten von Innerhalb/Außerhalb-Trades:"
 msgid "There are two types of Up/Down trades:"
 msgstr "Es gibt zwei Arten von Auf/Ab-Trades:"
 
-msgid "There are two types of two types of reset trades:"
+msgid "There are two types of reset trades:"
 msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
@@ -9525,6 +9531,12 @@ msgstr "Donnerstag"
 
 msgid "Tick"
 msgstr "Tick"
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
+msgstr ""
 
 msgid "Tick %1 is the highest tick"
 msgstr "Tick %1 ist der höchste Tick"

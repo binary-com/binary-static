@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T06:49:42+0000\n"
+"PO-Revision-Date: 2018-06-22T01:26:32+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1339,7 +1339,7 @@ msgid "At least five years of experience with affiliate marketing, growth hackin
 msgstr "Ít nhất 5 năm kinh nghiệm trong việc liên kết tiếp thị, thúc đẩy độ tăng trưởng, phát triển kinh doanh và những ký năng liên quan chặt chẽ khác"
 
 msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
-msgstr ""
+msgstr "Tại thời điểm thiết lập lại, nếu điểm nằm ở vị trí ngược lại với dự đoán của bạn, giới hạn được thiết lập lại tại vị trí đó."
 
 msgid "Audit"
 msgstr "Kiểm toán"
@@ -2699,6 +2699,9 @@ msgstr "Nhu cầu - được thúc đẩy bởi ứng dụng công nghiệp và 
 
 msgid "Demo"
 msgstr "Thử nghiệm"
+
+msgid "Demo Account"
+msgstr ""
 
 msgid "Demo Accounts"
 msgstr "Tài khoản demo"
@@ -4295,7 +4298,7 @@ msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barr
 msgstr "Nếu <strong>điểm chốt</strong> bằng với <strong>Giới hạn dưới</strong> hoặc <strong>Giới hạn trên</strong>, bạn không thắng khoản thanh toán."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
-msgstr ""
+msgstr "Nếu <strong>điểm chốt</strong> tương đương với <strong>giới hạn</strong> hoặc <stronm g>giới hạn mới(nếu một thiết lập lại diễn ra) </stronmg>, bạn không thắng khoản thanh toán."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Nếu</strong>điểm chốt<strong> bằng với <strong>giới hạn</strong>, bạn không thắng các thanh toán."
@@ -4469,10 +4472,10 @@ msgid "If you select \"Over\", you will win the payout if the <strong>last digi
 msgstr "Nếu bạn chọn \"Trên\", bạn sẽ giành chiến thắng nếu <strong>chữ số cuối cùng</strong> của tick cuối cùng <strong>lớn hơn so với dự đoán của bạn.</strong>"
 
 msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Nếu bạn chọn \"Đặt lại Gọi Biên\", bạn sẽ giành chiến thắng nếu giá tại thời điểm chốt cao hơn giá khởi điểm hoặc mốc tại thời điểm đặt lại."
 
 msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Nếu bạn chọn \"Đặt lại Đặt Biên\", bạn sẽ giành chiến thắng nếu giá tại điểm chốt thấp hơn giá khởi điểm hoặc mốc tại thời điểm đặt lại."
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Nếu bạn chọn \"Tăng\", bạn sẽ giành chiến thắng nếu <strong>điểm chốt</strong> cao hơn <strong>điểm khởi đầu </strong>."
@@ -4509,9 +4512,6 @@ msgstr "Nếu bạn chọn <strong>thời điểm bắt đầu</strong> tron
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Nếu bạn chọn <strong>thời gian bắt đầu</strong> \"Ngay bây giờ\", <strong>thời gian kết thúc</strong> là số giờ/ phút đã được chọn sau <strong>thời gian bắt đầu</strong> (nếu ít hơn một ngày trong thời hạn), hoặc vào cuối ngày giao dịch (nếu một ngày hoặc nhiều hơn trong thời hạn)."
-
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "Nếu bạn chọn <strong>thời gian bắt đầu là </strong> \"Ngay bây giờ\", <strong>thời gian bắt đầu</strong> là khi hợp đồng được xử lý bởi trình duyệt của chúng tôi và <strong>điểm khởi đầu</strong> là <strong>tick biến động tiếp theo</strong> sau đó."
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Nếu bạn chọn <strong>thời gian kết thúc cụ thể</strong>, <strong>thời gian kết thúc</strong> là thời gian đã được lựa chọn."
@@ -6152,6 +6152,9 @@ msgstr "Kích thước vé tối thiểu"
 msgid "Minimum volume"
 msgstr "Khối lượng tối thiểu"
 
+msgid "Minimum:"
+msgstr ""
+
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Công nhân khai khoáng, xây dựng, sản xuất và vận chuyển"
 
@@ -7326,10 +7329,10 @@ msgid "Predict that the market will end lower than the average price"
 msgstr "Dự đoán rằng thị trường sẽ kết thúc thấp hơn giá trung bình"
 
 msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
-msgstr ""
+msgstr "Dự đoán thị trường sẽ kết thúc cao hơn so với mức hiện hành hoặc các mức tại một thời gian định trước (Thời gian đặt lại)"
 
 msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
-msgstr ""
+msgstr "Dự đoán thị trường sẽ kết thúc thấp hơn so với mức hiện hành hoặc các cấp tại một thời gian định trước (Thời gian đặt lại)"
 
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "Dự đoán rằng thị trường sẽ tăng hay giảm từ mức hiện tại"
@@ -7625,6 +7628,9 @@ msgstr "Tiêu chuẩn thực"
 msgid "Real Volatility Indices"
 msgstr "Chỉ Số Biến Động Thực"
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr "Tài khoản tiền thật"
 
@@ -7770,13 +7776,13 @@ msgid "Resale price"
 msgstr "Giá bán lại"
 
 msgid "Reset"
-msgstr ""
+msgstr "Thiết lập lại"
 
 msgid "Reset Barrier"
-msgstr ""
+msgstr "Đặt lại Giới Hạn"
 
 msgid "Reset Call"
-msgstr ""
+msgstr "Đặt lại Gọi Biên"
 
 msgid "Reset MT5 password"
 msgstr "Đổi Mật Khẩu MT5"
@@ -7785,25 +7791,25 @@ msgid "Reset Password"
 msgstr "Đổi Mật Khẩu"
 
 msgid "Reset Put"
-msgstr ""
+msgstr "Đặt lại Đặt Biên"
 
 msgid "Reset Time"
-msgstr ""
+msgstr "Thời gian đặt lại"
 
 msgid "Reset password"
 msgstr "Đổi Mật Khẩu"
 
 msgid "Reset time"
-msgstr ""
+msgstr "Thời gian đặt lại"
 
 msgid "Reset to Original Settings"
 msgstr "Thiết lập lại Cài Đặt Gốc"
 
 msgid "Reset-Call"
-msgstr ""
+msgstr "Đặt lại-Gọi Biên"
 
 msgid "Reset-Put"
-msgstr ""
+msgstr "Đặt lại-Đặt Biên"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Công dân của các quốc gia mà đã được xác định bởi FATF là thiếu sót chiến lược sẽ được hạn chế từ việc mở một tài khoản với đầu tư nhị phân (Châu Âu) Ltd."
@@ -8271,7 +8277,7 @@ msgid "Sorry, an error occurred while processing your request."
 msgstr "Rất tiếc, đã xảy ra lỗi khi đang xử lý yêu cầu của bạn."
 
 msgid "Sorry, live chat is currently unavailable. Please email us at %1."
-msgstr ""
+msgstr "Xin lỗi, trò chuyện trực tiếp là hiện không khả dụng. Xin vui lòng gửi email cho chúng tôi tại %1."
 
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Rất tiếc, tính năng này chỉ khả dụng với tài khoản tiền ảo."
@@ -8721,16 +8727,19 @@ msgid "The <strong>end time</strong> is the selected number of minutes/hours aft
 msgstr "<strong>Thời gian kết thúc</strong> được lựa chọn là số phút/giờ sau <strong>thời gian bắt đầu</strong> (nếu thời khoảng ít một ngày), hoặc vào cuối ngày giao dịch (nếu thời khoảng là một ngày hoặc hơn)."
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
-msgstr ""
+msgstr "<strong>thời gian kết thúc</strong> là số giây/giờ tùy chọn sau <strong>thời gian bắt đầu</strong>."
 
 msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
-msgstr ""
+msgstr "<strong>Điểm khởi đầu </strong> là tick đầu tiên sau khi hợp đồng được xử lý bởi máy chủ của chúng tôi."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>điểm chốt</strong> là tick gần nhất sau hoặc trước khi <strong>thời gian kết thúc</strong>."
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "<strong>thời gian còn lại</strong> là thời gian còn lại tới khi hợp đồng hết hạn."
+
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr ""
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>Thời gian bắt đầu</strong> là lúc hợp đồng được xử lý bởi máy chủ."
@@ -9092,6 +9101,9 @@ msgstr "Thời khoảng là độ dài thời gian của giao dịch đượ
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "Địa chỉ email cung cấp đang đã được sử dụng. Nếu bạn quên mật khẩu của bạn, hãy thử <a href=\"%1\"> công cụ phục hồi mật khẩu của chúng tôi</a> hoặc liên hệ với dịch vụ khách hàng của chúng tôi."
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Giá tại điểm khởi đầu là giá bắt đầu của giao dịch được mua bởi người giao dịch."
 
@@ -9118,9 +9130,6 @@ msgstr "Các dịch vụ kinh doanh tài chính có trên trang web này chỉ t
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Bước đầu tiên là thiết lập thông số cho giao dịch của bạn. Có năm thông số giao dịch bạn cần phải điều chỉnh để có thể nhận được một mức giá cho hợp đồng:"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "Tick đầu tiên là điểm đầu tiên sau khi hợp đồng được xử lý bởi máy chủ của chúng tôi."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "Thị trường ngoại hối (Forex) là thị trường thanh khoản và được giao dịch nhiều nhất của thế giới, nơi mà các giao dịch đáng giá hàng tỷ được hoàn thành mỗi ngày."
@@ -9166,9 +9175,6 @@ msgstr "Thất thoát lớn nhất có thể xẩy ra cho Khách Hàng 
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Đã đạt đến độ dài tối đa của mã token (%1)."
-
-msgid "The minimum duration is"
-msgstr "Thời khoảng tối thiểu là"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Số tiền được yêu cầu tối thiểu để sử dụng các cơ sở chuyển khoản tài khoản là %1."
@@ -9225,7 +9231,7 @@ msgid "The resale price indicates a contract's current market price. Resale pric
 msgstr "Giá bán lại chỉ giá thị trường hiện tại của hợp đồng. Giá bán lại dựa trên cơ sở nỗ lực nhất và có thể không có sẵn mọi lúc sau khi mua. Xem 'quyền chọn Bán' để biết thêm chi tiết về bán hợp đồng trước khi hết hạn."
 
 msgid "The reset time is %1"
-msgstr ""
+msgstr "Thời gian thiết lập lại là %1"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "Doanh thu là số tiền thấy được khi hợp đồng hết hạn (xem ('Khoảng được trả')."
@@ -9305,7 +9311,7 @@ msgstr "Hiện có hai loại giao dịch Trong/Ngoài:"
 msgid "There are two types of Up/Down trades:"
 msgstr "Hiện có hai loại giao dịch Lên/Xuống:"
 
-msgid "There are two types of two types of reset trades:"
+msgid "There are two types of reset trades:"
 msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
@@ -9526,6 +9532,12 @@ msgstr "Thứ Năm"
 
 msgid "Tick"
 msgstr "Tick"
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
+msgstr ""
 
 msgid "Tick %1 is the highest tick"
 msgstr "Tick %1 là tick cao nhất"

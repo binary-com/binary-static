@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T06:48:13+0000\n"
+"PO-Revision-Date: 2018-06-22T01:25:31+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -2700,6 +2700,9 @@ msgstr "Domanda: dettata da applicazioni industriali e commerciali, tra cui nuov
 msgid "Demo"
 msgstr "Demo"
 
+msgid "Demo Account"
+msgstr ""
+
 msgid "Demo Accounts"
 msgstr "Account demo"
 
@@ -4511,9 +4514,6 @@ msgstr "Se selezioni un <strong>orario di inizio</strong> nel futuro, l'<strong>
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Se selezioni un <strong>orario di inizio</strong> per \"Adesso\", l'<strong>orario di fine</strong> sarà il numero di minuti/ore selezionati successivo all'<strong>orario di inizio</strong> (se la durata è inferiore a un giorno), oppure alla fine della giornata di trading (se la durata è di uno o più giorni)."
 
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "Se selezioni un <strong>orario di inizio</strong> per \"Adesso\", l'<strong>orario di inizio</strong> indica quando il contratto verrà elaborato dai nostri server e lo <strong>spot d'ingresso</strong> sarà il  <strong>tick successivo</strong>."
-
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Se selezioni un preciso <strong>orario di fine</strong>, l'<strong>orario di fine</strong> sarà quello selezionato."
 
@@ -6153,6 +6153,9 @@ msgstr "Dimensione minima del ticket"
 msgid "Minimum volume"
 msgstr "Volume minimo"
 
+msgid "Minimum:"
+msgstr ""
+
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Lavoratori per attività estrattive, edilizia, produzione e trasporti"
 
@@ -7626,6 +7629,9 @@ msgstr "Standard Reale"
 msgid "Real Volatility Indices"
 msgstr "Indici di volatilità reali"
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr "Conto monetario reale"
 
@@ -8733,6 +8739,9 @@ msgstr "Lo <strong>spot d'uscita</strong> è l'ultimo tick entro l'<strong>orari
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "Il <strong>tempo rimanente</strong> è il tempo che rimane fino alla scadenza del contratto."
 
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "L'<strong>orario d'inizio</strong> indica il momento in cui il contratto viene elaborato dai nostri server."
 
@@ -9093,6 +9102,9 @@ msgstr "La durata indica la lunghezza di un trade acquistato (vedi \"periodo del
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "L'indirizzo email fornito è già in uso. Se hai dimenticato la password, prova il nostro <a href=\"%1\">strumento di recupero della password</a> o contatta il nostro servizio clienti."
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Lo spot d'ingresso è il prezzo iniziale del trade acquistato da un trader."
 
@@ -9119,9 +9131,6 @@ msgstr "I servizi di trading finanziario contenuti in questo sito sono adatti so
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Il primo passo consiste nell'impostare i parametri del trade. Per ricevere un prezzo per il contratto, è necessario impostarne cinque:"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "Il primo tick è quello immediatamente successivo all'elaborazione del contratto da parte dei nostri server."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "Il mercato dei cambi (Forex) è il mercato più liquido e più scambiato al mondo, dove ogni giorno vengono completati scambi per trilioni."
@@ -9167,9 +9176,6 @@ msgstr "La perdita massima che può essere subita da qualsiasi Cliente è pari a
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Il numero massimo di token (%1) è stato raggiunto."
-
-msgid "The minimum duration is"
-msgstr "La durata minima è"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "L'importo minimo richiesto per utilizzare la funzione di trasferimento tra account è %1."
@@ -9306,7 +9312,7 @@ msgstr "Ci sono due tipologie di trade Dentro/Fuori:"
 msgid "There are two types of Up/Down trades:"
 msgstr "Ci sono due tipologie di trade Alto/Basso:"
 
-msgid "There are two types of two types of reset trades:"
+msgid "There are two types of reset trades:"
 msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
@@ -9527,6 +9533,12 @@ msgstr "Giovedì"
 
 msgid "Tick"
 msgstr "Tick"
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
+msgstr ""
 
 msgid "Tick %1 is the highest tick"
 msgstr "Il tick %1 è il tick più alto"
@@ -11348,10 +11360,10 @@ msgid "You may not cancel or amend the level of your Stop and Limit Order prior 
 msgstr "Non è possibile annullare o modificare il livello dello Stop e Limit Order prima della chiusura della Transazione una volta raggiunto il livello."
 
 msgid "You may only open an account at this site on conditions that:"
-msgstr ""
+msgstr "Puoi aprire un conto su questo sito esclusivamente a condizione che:"
 
 msgid "You may revoke the current manager's access."
-msgstr ""
+msgstr "È possibile revocare l'accesso del gestore attuale."
 
 msgid "You may specify your instruction of a Stop Order or a Limit Order may be applied for a limited duration or for an indefinite period (a \"good till cancelled\" or \"GTC\" Order)."
 msgstr "È possibile specificare le istruzioni per uno Stop Order o un Limit Order che può essere applicato per una durata limitata o per un periodo indefinito (un ordine \"good till cancelled-buono fino alla cancellazione\" o \"GTC\")."
@@ -11363,7 +11375,7 @@ msgid "You may terminate this Agreement at any time, but only by giving the Comp
 msgstr "Potrai in qualsiasi momento risolvere il presente Accordo ma solo dando alla Società un preavviso di sette giorni. Il \"Preavviso scritto\" qui si riferisce al preavviso consegnato tramite lettera raccomandata o email."
 
 msgid "You may update your personal information at any time by logging in to the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information."
-msgstr ""
+msgstr "Puoi aggiornare le tue informazioni personali in qualsiasi momento accedendo alla sezione \"Impostazioni\" del tuo conto. È tua responsabilità garantire che %1 venga tempestivamente e costantemente informata di qualsiasi modifica delle tue informazioni personali."
 
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "Puoi prelevare l'importo del bonus dopo aver effettuato un turnover sul tuo account pari a 25 volte l'importo del bonus."
@@ -11375,7 +11387,7 @@ msgid "You must comply with these Terms in order to use the %1 API."
 msgstr "Per poter utilizzare l'API di %1 devi conformarti ai presenti Termini."
 
 msgid "You must ensure that you do not place digital advertisements on websites providing unauthorised access to copyrighted content."
-msgstr ""
+msgstr "Occorre assicurarsi di non inserire pubblicità digitale su siti web che forniscono accesso non autorizzato a contenuto protetto da copyright."
 
 msgid "You must have a fast and stable Internet connection as screenshots of your documents are required for our records"
 msgstr "È necessario che tu disponga di una connessione a Internet stabile e veloce poiché screenshot dei tuoi documenti sono necessari per i nostri registri"
@@ -11438,7 +11450,7 @@ msgid "You shall not resort to high-pressure sales tactics or false promises."
 msgstr "Non dovrai ricorrere a tattiche di vendita opprimenti o a promesse infondate."
 
 msgid "You shall not target any of your marketing, advertising, and promotional activities to any persons unless they are over 18 years old, or for Estonian residents whereby they have to be over 21 years old."
-msgstr ""
+msgstr "Le tue attività promozionali, pubblicitarie e di marketing non devono essere indirizzate ad alcun soggetto con età inferiore ai 18 anni, oppure con età inferiore ai 21 anni per i residenti in Estonia."
 
 msgid "You should enter %1 characters."
 msgstr "Dovresti inserire %1 caratteri."
@@ -11471,7 +11483,7 @@ msgid "You will be automatically logged out after such time."
 msgstr "Dopo tale periodo, verrà effettuato automaticamente il logout."
 
 msgid "You will be redirected to a third-party website which is not owned by Binary.com."
-msgstr ""
+msgstr "Verrai reindirizzato a un sito esterno che non appartiene a Binary.com."
 
 msgid "You will be subjected to swap rates if you keep a position open past 23:59:59 GMT."
 msgstr "Sarai assoggettato a tassi swap se mantieni una posizione aperta oltre le 23:59:59 GMT."
@@ -11564,7 +11576,7 @@ msgid "Your address could not be verified by our automated system. You may proce
 msgstr "Il nostro sistema automatizzato non ha potuto verificare il tuo indirizzo. È possibile procedere con le operazioni, ti invitiamo tuttavia ad assicurati che l'indirizzo sia completo."
 
 msgid "Your application to be treated as a professional client is being processed."
-msgstr ""
+msgstr "La tua richiesta di essere categorizzato come cliente professionale è in fase di elaborazione."
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "La tua richiesta verrà dunque esaminata dal nostro dipartimento di compliance e marketing. Una volta approvata, ti inseriremo nel nostro elenco di <a href='%1'>agenti di pagamento</a>."
@@ -11621,7 +11633,7 @@ msgid "Your password has been successfully reset. Please log into your account u
 msgstr "La tua password è stata ripristinata con successo. Effettua il login sul tuo account utilizzando la tua nuova password."
 
 msgid "Your personal information is used primarily as a way of validating you as the legitimate account owner and proper recipient of withdrawal payments. We also use this information to process your trades. We collect from you all personal and financial data directly relating to you when you fill in our account opening form. In all instances, you have either a legal or a contractual obligation to provide us with the information. If such information is not provided, we will be unable to provide you with our services."
-msgstr ""
+msgstr "Le informazioni personali del Cliente vengono usate prevalentemente per certificare che quest'ultimo è il legittimo proprietario del conto e legittimo destinatario dei versamenti. Inoltre, utilizziamo tali informazioni per elaborare i suoi trade; raccogliamo tutti i dati personali e finanziari direttamente legati al Cliente durante la compilazione del modulo di apertura del conto. In ogni caso, il Cliente è sottoposto all'obbligo giuridico o contrattuale di fornirci le suddette informazioni; in assenza di questi dati, non saremo in grado di fornire i nostri servizi al Cliente."
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Il tuo profitto o perdita è calcolato come segue:"
@@ -11954,7 +11966,7 @@ msgid "use its best endeavours and diligence to transfer funds deposited to %1 A
 msgstr "usare il suo migliore impegno e diligenza per trasferire fondi depositati nell' Account di Agente in %1 all'Account del Cliente in %1;"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms; or"
-msgstr ""
+msgstr "usare o riprodurre l'API di %1 diversamente da quanto consentito dai presenti Termini; o"
 
 msgid "use the %1 API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy."
 msgstr "usare l'API di %1 per qualsiasi scopo che violi una qualsiasi legge o regolamento, qualsiasi diritto di un qualsiasi soggetto, inclusi, senza limitazione, i diritti di proprietà intellettuale, i diritti di privacy e della personalità o in qualsiasi modo in contrasto con i presenti Termini o informativa sulla privacy."

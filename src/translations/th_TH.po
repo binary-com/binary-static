@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T06:49:56+0000\n"
+"PO-Revision-Date: 2018-06-22T01:26:44+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -2700,6 +2700,9 @@ msgstr "อุปสงค์ - ขับเคลื่อนโดยแอพ
 msgid "Demo"
 msgstr "สาธิต"
 
+msgid "Demo Account"
+msgstr ""
+
 msgid "Demo Accounts"
 msgstr "บัญชีทดลองใช้"
 
@@ -4509,9 +4512,6 @@ msgstr "หากท่านกำหนด <strong>เวลาเริ่ม
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "หากท่านกำหนด<strong>เวลาเริ่มต้น</strong>เป็น \"เวลาปัจจุบัน (Now)\" ซึ่ง <strong>เวลาสิ้นสุด</strong>เป็นตัวเลขของชั่วโมงและนาทีหลังจาก<strong>เวลาเริ่มต้น</strong> (หากระยะเวลาน้อยกว่า 1 วัน) หรือ เมื่อสิ้นสุดการซื้อขายประจำวัน (หากเป็นระยะเวลา 1 วัน หรือ มากกว่า)"
 
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "หากท่านกำหนด<strong>เวลาเริ่มต้น</strong>เป็น \"เวลาปัจจุบัน (Now)\" ซึ่ง <strong>เวลาเริ่มต้น</strong>คือ เมื่อสัญญาถูกดำเนินการโดยเครื่องแม่ข่ายในระบบของเรา และ<strong>สปอตเริ่มต้น</strong> คือ <strong>ช่วงนาทีถัดไป</strong> หลังจากนั้น"
-
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "หากท่านกำหนดเจาะจง<strong>เวลาสิ้นสุด</strong> แล้ว<strong>เวลาสิ้นสุด</strong> คือ เวลาที่ถูกกำหนด"
 
@@ -6153,6 +6153,9 @@ msgstr "ขนาดทิกเก็ตที่เล็กที่สุด
 msgid "Minimum volume"
 msgstr "จำนวนต่ำสุด"
 
+msgid "Minimum:"
+msgstr ""
+
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "เจ้าหน้าที่เหมือง ก่อสร้าง อุตสาหกรรม และการขนส่ง"
 
@@ -7626,6 +7629,9 @@ msgstr "มาตรฐานจริง"
 msgid "Real Volatility Indices"
 msgstr "ดัชนีผันผวนจริง"
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr "บัญชีเงินจริง"
 
@@ -8734,6 +8740,9 @@ msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอ
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "<strong>เวลาที่คงเหลือ</strong>คือ เวลาที่คงเหลือจนหมดอายุสัญญา"
 
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>เวลาเริ่มต้น</strong> คือ เวลาที่สัญญาถูกนำเข้าประมวลผลโดยระบบของเรา"
 
@@ -9095,6 +9104,9 @@ msgstr "ระยะเวลา คือ ช่วงเวลาในกา�
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "อีเมล์ของท่านถูกลงทะเบียนไว้กับผู้ใช้งานอีกบัญชีหนึ่ง หากท่านลืมรหัสผ่านของบัญชีที่ท่านมีอยู่ โปรด <a href=\"%1\">เรียกใช้การกู้คืนรหัสผ่าน</a> หรือ ติดต่อเจ้าหน้าที่บริการลูกค้า"
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "ราคาสปอตเริ่มต้น คือ ราคาเริ่มต้นของการเริ่มซื้อขายโดยนักลงทุน"
 
@@ -9121,9 +9133,6 @@ msgstr "บริการการซื้อขายทางการเง
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "ขั้นตอนแรก คือ การตั้งค่าตัวแปรของการซื้อขายของท่าน มีห้าตัวแปรการซื้อขายที่ท่านจะต้องปรับแต่งเพื่อให้ได้รับราคาของสัญญา:"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "ช่วงราคาแรก คือ ช่วงราคาแรกที่เกิดขึ้นหลังจากสัญญาได้ถูกประมวลผลที่เซิร์ฟเวอร์ของเรา"
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "ตลาดแลกเปลี่ยนเงินตราต่างประเทศ หรือ ฟอเร็กซ์ เป็นตลาดที่มีสภาพคล่องมากที่สุดในโลก และมีการซื้อขายมากที่สุดเช่นกัน มูลค่าซื้อขายในแต่ละวันสูงถึงระดับล้านล้าน"
@@ -9169,9 +9178,6 @@ msgstr "จำนวนเงินขาดทุนที่มากที่
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "จำนวนมากที่สุดของโทเค่น (%1) ถูกใช้หมดแล้ว"
-
-msgid "The minimum duration is"
-msgstr "ระยะเวลาขั้นต่ำ คือ "
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "จำนวนขั้นต่ำที่จำเป็นในการในการโอนบัญชี คือ %1"
@@ -9310,7 +9316,7 @@ msgstr "มีการซื้อขาย In/Out 2 ประเภท:"
 msgid "There are two types of Up/Down trades:"
 msgstr "มีการซื้อขาย 2 ประเภทของ Up/Down:"
 
-msgid "There are two types of two types of reset trades:"
+msgid "There are two types of reset trades:"
 msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
@@ -9531,6 +9537,12 @@ msgstr "วันพฤหัสบดี"
 
 msgid "Tick"
 msgstr "ช่วงห่างของราคา"
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
+msgstr ""
 
 msgid "Tick %1 is the highest tick"
 msgstr "ช่วงราคา %1 เป็นราคาสูงสุด"

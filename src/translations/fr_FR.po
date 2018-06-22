@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T06:47:39+0000\n"
+"PO-Revision-Date: 2018-06-22T01:25:07+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -2701,6 +2701,9 @@ msgstr "Demande – poussée par les applications industrielles et commerciales,
 msgid "Demo"
 msgstr "Demonstration"
 
+msgid "Demo Account"
+msgstr ""
+
 msgid "Demo Accounts"
 msgstr "Compte Démo"
 
@@ -4510,9 +4513,6 @@ msgstr "Si vous sélectionnez une <strong>heure de début</strong> ultérieure, 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Si vous sélectionnez une <strong>heure de début</strong> équivalente à « Maintenant », <strong>l'heure de fin</strong> correspondra au nombre sélectionné de minutes/heures après <strong>l'heure de début<strong> (si la durée est de moins d'un jour), ou à la fin de la séance boursière (si la durée est d'un jour ou plus)."
 
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "Si vous sélectionnez une <strong>heure de début</strong> équivalente à « Maintenant », <strong>l'heure de début</strong> correspond au traitement de l'opération par nos serveurs et le <strong>point d'entrée<strong> est le <strong>prochain tick<strong> suivant le traitement de l'opération."
-
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Si vous sélectionnez une <strong>heure de fin<strong> spécifique, <strong>l'heure de fin <strong> correspond à l'heure sélectionnée."
 
@@ -6151,6 +6151,9 @@ msgstr "Taille minimum du ticket"
 msgid "Minimum volume"
 msgstr "Volume minimum"
 
+msgid "Minimum:"
+msgstr ""
+
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Employés des mines, de la construction, de l'industrie manufacturière et du Transport"
 
@@ -7624,6 +7627,9 @@ msgstr "Réel Standard"
 msgid "Real Volatility Indices"
 msgstr "Indices volatilité réelle"
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr "Comptes d’argent réel"
 
@@ -8731,6 +8737,9 @@ msgstr "Le <strong>point de sortie</strong> correspond au dernier tick enregistr
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "Le <strong>temps restant</strong> est le temps restant jusqu'à l’expiration du contrat."
 
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr ""
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "Le <strong>moment de départ</strong> correspond au moment où le contrat est traité par nos serveurs."
 
@@ -9091,6 +9100,9 @@ msgstr "La durée désigne la période d'activité d'une option (voir « pério
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "L'adresse e-mail que vous avez saisie est déjà utilisée. Si vous avez oublié votre mot de passe, veuillez essayer notre <a href=\"%1\">outil de récupération de mot de passe</a> ou contacter le service clientèle."
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Le spot d'entrée est le prix initial de l'option achetée par le trader."
 
@@ -9117,9 +9129,6 @@ msgstr "Les services financiers disponibles sur ce site conviennent uniquement a
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "La première étape consiste à définir les paramètres de votre métier. Il y a cinq paramètres de trade que vous devez régler pour recevoir un prix pour le contrat :"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "Le premier intervalle est le premier intervalle après le moment où le contrat est traité par nos serveurs."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "Le marché des changes (Forex) est le marché le plus liquide et le plus actif au monde, où les trades valant des trillions sont accomplis chaque jour."
@@ -9165,9 +9174,6 @@ msgstr "La perte maximale que peut encourir tout Client correspond au montant de
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Le nombre maximum de jetons d'authentification (%1) est atteint."
-
-msgid "The minimum duration is"
-msgstr "La durée minimale est"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Le minimum requis pour l’utilisation de la facilité de transfert de compte est %1."
@@ -9304,7 +9310,7 @@ msgstr "Il existe deux types d'option In/Out :"
 msgid "There are two types of Up/Down trades:"
 msgstr "Il existe deux types d'option Hausse/Baisse :"
 
-msgid "There are two types of two types of reset trades:"
+msgid "There are two types of reset trades:"
 msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
@@ -9525,6 +9531,12 @@ msgstr "jeudi"
 
 msgid "Tick"
 msgstr "Tick"
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
+msgstr ""
 
 msgid "Tick %1 is the highest tick"
 msgstr ""
