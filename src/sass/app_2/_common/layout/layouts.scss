@@ -84,6 +84,48 @@
                         }
                         div.amount-container {
                             grid-template-columns: 1fr 1.5fr;
+                            grid-gap: 0;
+
+                            div:first-child {
+                                border-right-width: 0px;
+                                border-left-width: 1px;
+                                border-top-left-radius: $BORDER_RADIUS;
+                                border-bottom-left-radius: $BORDER_RADIUS;
+                                border-top-right-radius: 0;
+                                border-bottom-right-radius: 0;
+                            }
+                            input:last-child {
+                                border-right-width: 1px;
+                                border-left-width: 1px;
+                                border-top-left-radius: 0;
+                                border-bottom-left-radius: 0;
+                                border-top-right-radius: $BORDER_RADIUS;
+                                border-bottom-right-radius: $BORDER_RADIUS;
+                            }
+                            &.three-columns {
+                                grid-template-columns: 1.5fr 1fr 1.5fr;
+
+                                div, input {
+                                    border-radius: 0;
+                                    border-left-width: 0;
+                                    border-right-width: 0;
+
+                                    &:first-child div, &:first-child input {
+                                        border-right-width: 1px;
+                                        border-left-width: 1px;
+                                        border-top-left-radius: $BORDER_RADIUS;
+                                        border-bottom-left-radius: $BORDER_RADIUS;
+                                    }
+                                    &:last-child div, &:last-child input {
+                                        border-right-width: 1px;
+                                        border-left-width: 1px;
+                                        border-top-left-radius: 0;
+                                        border-bottom-left-radius: 0;
+                                        border-top-right-radius: $BORDER_RADIUS;
+                                        border-bottom-right-radius: $BORDER_RADIUS;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
