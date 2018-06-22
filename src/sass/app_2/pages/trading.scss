@@ -118,6 +118,17 @@
             height: 1.5rem;
             position: relative;
         }
+        .error-info-wrapper {
+            line-height: 1rem;
+            padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+            background-color: $COLOR_YELLOW;
+            border-radius: $BORDER_RADIUS;
+            font-weight: 300;
+            height: 60%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
         .purchase-info-wrapper {
             line-height: 1rem;
             padding-bottom: 1vh;

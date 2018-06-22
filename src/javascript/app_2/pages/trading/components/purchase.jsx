@@ -37,7 +37,7 @@ const Purchase = ({
     Object.keys(trade_types).map((type, idx) => {
         const info         = proposal_info[type] || {};
         const is_logged_in = isLoggedIn();
-        const el_currency  = <span className={`symbols ${(Client.get('currency') || '').toLowerCase()}`}/>;
+        const el_currency  = <span className={`symbols ${(Client.get('currency') || 'usd').toLowerCase()}`}/>;
 
         return (
             <Fieldset className='purchase-option' key={idx}>
@@ -47,27 +47,27 @@ const Purchase = ({
                     </div>
                     :
                     <React.Fragment>
-                        {(info.has_error || !info.id) ?
-                            <div>{info.message}</div>
-                            :
-                            <div className='box'>
-                                <div className='left-column'>
-                                    <div className='type-wrapper'>
-                                        <img
-                                            className='type'
-                                            src={Url.urlForStatic(`images/trading_app/purchase/trade_types/ic_${trade_types[type].toLowerCase().replace(/(\s|-)/, '_')}_light.svg`) || undefined}
-                                        />
-                                    </div>
-                                    <h4 className='trade-type'>{trade_types[type]}</h4>
+                        <div className='box'>
+                            <div className='left-column'>
+                                <div className='type-wrapper'>
+                                    <img
+                                        className='type'
+                                        src={Url.urlForStatic(`images/trading_app/purchase/trade_types/ic_${trade_types[type].toLowerCase().replace(/(\s|-)/, '_')}_light.svg`) || undefined}
+                                    />
                                 </div>
+                                <h4 className='trade-type'>{trade_types[type]}</h4>
+                            </div>
+                            {(info.has_error || !info.id) ?
+                                <div className={info.has_error ? 'error-info-wrapper': ''}><span>{info.message}</span></div>
+                                :
                                 <div className='purchase-info-wrapper'>
                                     <div className='stake-wrapper'><span><strong>{localize('Stake')}</strong>: {el_currency}{info.stake}</span><span className='field-info'><Tooltip alignment='left' icon='info' message={info.message} /></span></div>
                                     <div><strong>{localize('Payout')}</strong>: {el_currency}{info.payout}</div>
                                     <div><strong>{localize('Net Profit')}</strong>: {el_currency}{info.profit}</div>
                                     <div><strong>{localize('Return')}</strong>: {info.returns}</div>
                                 </div>
-                            </div>
-                        }
+                            }
+                        </div>
                         <div className='submit-section'>
                             <Button
                                 is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id || !is_logged_in}

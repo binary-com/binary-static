@@ -49,9 +49,11 @@ body, input {
         div, input, span {
             @include interpolate(font-size, 320px, 1440px, 11px, 12px);
         }
-        &.purchase-option > .box > .purchase-info-wrapper {
-            div, strong, span {
-                @include interpolate(font-size, 320px, 1440px, 8px, 11px);
+        &.purchase-option > .box {
+            & > .purchase-info-wrapper, & > .error-info-wrapper {
+                div, strong, span {
+                    @include interpolate(font-size, 320px, 1440px, 8px, 11px);
+                }
             }
         }
     }
