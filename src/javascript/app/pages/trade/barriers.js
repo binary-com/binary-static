@@ -168,8 +168,6 @@ const Barriers = (() => {
         const barrier_element      = getElementById('barrier');
         const empty                = isNaN(parseFloat(barrier_element.value))||parseFloat(barrier_element.value) === 0;
         const barrier_high_element = getElementById('barrier_high');
-        const barrier_low_element  = getElementById('barrier_low');
-        const error_node           = getElementById('barrier_high_error');
 
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');
@@ -178,6 +176,8 @@ const Barriers = (() => {
         }
 
         if (isVisible(barrier_high_element)) {
+            const barrier_low_element     = getElementById('barrier_low');
+            const error_node              = getElementById('barrier_high_error');
             const is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
             barrier_high_element.classList[is_high_barrier_greater ? 'remove' : 'add']('error-field');
             error_node.classList[is_high_barrier_greater ? 'add' : 'remove']('invisible');
