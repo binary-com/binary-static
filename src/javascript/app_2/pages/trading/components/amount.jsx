@@ -62,7 +62,7 @@ const Amount = ({
                     value={amount}
                     onChange={onChange}
                     is_currency
-                    prefix={currency}
+                    prefix={has_currency ? currency : null}
                     is_nativepicker={is_nativepicker}
                 />
             </div>
