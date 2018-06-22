@@ -6,6 +6,13 @@ div.contracts-popup-container {
     border: solid 1px $COLOR_GRAY;
     border-radius: 4px;
 
+    &:hover {
+        border-color: $COLOR_BLUE;
+
+        .select-arrow {
+            color: $COLOR_BLUE;
+        }
+    }
     &.mobile-only {
         border: solid 1px $COLOR_BLUE;
     }
@@ -49,7 +56,6 @@ div.contracts-popup-container {
             border-color: $COLOR_BLUE;
         }
         & > .select-arrow {
-            top: 40%;
             transform: rotate(0deg);
         }
     }
