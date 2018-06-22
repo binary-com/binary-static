@@ -35,7 +35,7 @@ const createProposalRequest = (store, type_of_contract) => {
     if (store.expiry_type === 'endtime') {
         const expiry_date = moment.utc(store.expiry_date);
         const is_same_day = expiry_date.isSame(moment(store.server_time), 'day');
-        const expiry_time = is_same_day ? store.expiry_time : '11:59:59 pm';
+        const expiry_time = is_same_day ? store.expiry_time : '11:59:59';
         obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
     }
 

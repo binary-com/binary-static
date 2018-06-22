@@ -119,7 +119,7 @@ const Duration = ({
                                 is_align_right
                                 name='expiry_time'
                                 value={expiry_time}
-                                placeholder='12:00 pm'
+                                placeholder='12:00'
                                 is_nativepicker={is_nativepicker}
                             />
                         }

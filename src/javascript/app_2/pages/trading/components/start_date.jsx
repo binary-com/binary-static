@@ -45,7 +45,7 @@ const StartDate = ({
                         onChange={onChange}
                         name='start_time'
                         value={start_time}
-                        placeholder='12:00 pm'
+                        placeholder='12:00'
                         is_nativepicker={is_nativepicker}
                     />
                 </React.Fragment>
