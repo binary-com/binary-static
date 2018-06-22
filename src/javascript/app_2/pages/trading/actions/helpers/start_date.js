@@ -1,13 +1,29 @@
 import moment from 'moment';
 
-export const buildForwardStartingConfig = (contract, forward_starting_dates) => (
-    // TODO: handle multiple sessions (right now will create duplicated items in the list)
-    // preferably we should be able to disable the selection in time picker for that day
-    (contract.forward_starting_options || []).length ?
-        contract.forward_starting_options.map(option => ({
-            text : moment.unix(option.open).format('ddd - DD MMM, YYYY'),
-            value: option.open,
-            end  : option.close,
-        })) :
-        forward_starting_dates
+export const buildForwardStartingConfig = (contract, forward_starting_dates) => {
+    const forward_starting_config = [];
+
+    if ((contract.forward_starting_options || []).length) {
+        contract.forward_starting_options.forEach(option => {
+            const duplicated_option = forward_starting_config.find(opt => opt.value === option.date);
+            const current_session   = { open: moment.unix(option.open).utc(), close: moment.unix(option.close).utc() };
+            if (duplicated_option) {
+                duplicated_option.sessions.push(current_session);
+            } else {
+                forward_starting_config.push({
+                    text    : moment.unix(option.date).format('ddd - DD MMM, YYYY'),
+                    value   : option.date,
+                    sessions: [current_session],
+                });
+            }
+        });
+    }
+
+    return forward_starting_config.length ? forward_starting_config : forward_starting_dates;
+};
+
+export const isSessionAvailable = (sessions, compare_moment, should_only_check_hour = false) => (
+    !sessions || (!compare_moment.isBefore(moment.utc()) &&
+        !!sessions.find(session =>
+            compare_moment.isBetween(should_only_check_hour ? session.open.clone().minute(0) : session.open, session.close, null, '[]')))
 );

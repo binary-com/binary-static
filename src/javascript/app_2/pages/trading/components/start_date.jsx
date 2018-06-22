@@ -13,16 +13,19 @@ const StartDate = ({
     onChange,
     is_nativepicker,
     is_minimized,
+    sessions,
 }) => {
     // Number(0) refers to 'now'
+    const is_today = start_date === Number(0);
+    let current_date_config = '';
+    if (!is_today) {
+        current_date_config = start_dates_list.find(o => o.value === +start_date) || {};
+    }
     if (is_minimized) {
         return (
             <div className='fieldset-minimized start-date'>
                 <span className='icon start-time' />
-                {start_date === Number(0)
-                    ? localize('Now')
-                    : `${(start_dates_list.find(o => o.value === +start_date) || {}).text}\n${start_time}`
-                }
+                {is_today ? localize('Now') : `${current_date_config.text}\n${start_time}`}
             </div>
         );
     }
@@ -36,16 +39,17 @@ const StartDate = ({
                 value={start_date}
                 list={start_dates_list}
                 onChange={onChange}
-                type='date'
                 is_nativepicker={is_nativepicker}
             />
-            {start_date !== Number(0) &&
+            {!is_today &&
                 <React.Fragment>
                     <TimePicker
                         onChange={onChange}
                         name='start_time'
                         value={start_time}
                         placeholder='12:00'
+                        start_date={start_date}
+                        sessions={sessions}
                         is_nativepicker={is_nativepicker}
                     />
                 </React.Fragment>
@@ -61,6 +65,7 @@ StartDate.propTypes = {
     start_date      : PropTypes.number,
     start_dates_list: PropTypes.array,
     start_time      : PropTypes.string,
+    sessions        : PropTypes.array,
 };
 
 export default connect(
@@ -68,6 +73,7 @@ export default connect(
         start_date      : trade.start_date,
         start_dates_list: trade.start_dates_list,
         start_time      : trade.start_time,
+        sessions        : trade.sessions,
         onChange        : trade.handleChange,
     })
 )(StartDate);

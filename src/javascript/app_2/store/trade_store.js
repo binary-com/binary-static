@@ -73,7 +73,8 @@ export default class TradeStore {
     // Start Time
     @observable start_date       = Number(0); // Number(0) refers to 'now'
     @observable start_dates_list = [];
-    @observable start_time       = '12:30 am';
+    @observable start_time       = '12:30';
+    @observable sessions         = [];
 
     // Last Digit
     @observable last_digit = 3;

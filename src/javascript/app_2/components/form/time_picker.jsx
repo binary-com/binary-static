@@ -1,7 +1,9 @@
+import moment                 from 'moment';
 import React,
-    { PureComponent } from 'react';
-import PropTypes      from 'prop-types';
-import { localize }   from '../../../_common/localize';
+    { PureComponent }         from 'react';
+import PropTypes              from 'prop-types';
+import { isSessionAvailable } from '../../pages/trading/actions/helpers/start_date';
+import { localize }           from '../../../_common/localize';
 
 /* TODO:
       1. to handle disabled time period
@@ -12,11 +14,13 @@ import { localize }   from '../../../_common/localize';
 class TimePickerDropdown extends PureComponent {
     constructor(props) {
         super(props);
-        this.hours   = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
-        this.minutes = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
-        this.state   = {
+        this.sessions = props.sessions;
+        this.hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
+        this.minutes  = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
+        this.state    = {
             hour              : props.value.split(':')[0],
-            minute            : (props.value.split(':')[1] || '').split(' ')[0],
+            minute            : props.value.split(':')[1] || 0,
+            start_moment      : moment.unix(this.props.start_date).utc().minute(0).second(0),
             is_hour_selected  : false,
             is_minute_selected: false,
             last_updated_type : null,
@@ -55,7 +59,10 @@ class TimePickerDropdown extends PureComponent {
         });
     }
 
-    selectOption(type, value) {
+    selectOption(type, value, is_enabled = true) {
+        if (!is_enabled) {
+            return;
+        }
         this.setState({
             last_updated_type: type,
         });
@@ -64,6 +71,14 @@ class TimePickerDropdown extends PureComponent {
                 hour            : value,
                 is_hour_selected: true,
             });
+            this.state.start_moment.hour(value).minute(this.state.minute);
+            if (!isSessionAvailable(this.props.sessions, this.state.start_moment)) {
+                this.setState({
+                    minute: this.minutes.find(m =>
+                        isSessionAvailable(this.props.sessions, this.state.start_moment.minute(m))),
+                    is_minute_selected: false,
+                });
+            }
         } else if (type === 'minute') {
             this.setState({
                 minute            : value,
@@ -93,7 +108,7 @@ class TimePickerDropdown extends PureComponent {
     }
 
     render() {
-        const { preClass, value, toggle } = this.props;
+        const { preClass, value, toggle, sessions } = this.props;
         return (
             <div className={`${preClass}-dropdown ${this.props.className}`}>
                 <div
@@ -113,15 +128,19 @@ class TimePickerDropdown extends PureComponent {
                     >
                         <div className='list-title center-text'><strong>{localize('Hour')}</strong></div>
                         <div className='list-container'>
-                            {this.hours.map((h, key) => (
-                                <div
-                                    className={`list-item${this.state.hour === h ? ' selected' : ''}`}
-                                    key={key}
-                                    onClick={this.selectHour.bind(null, h)}
-                                >
-                                    {h}
-                                </div>
-                            ))}
+                            {this.hours.map((h, key) => {
+                                this.state.start_moment.hour(h).minute(0);
+                                const is_enabled = isSessionAvailable(sessions, this.state.start_moment, true);
+                                return (
+                                    <div
+                                        className={`list-item${this.state.hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
+                                        key={key}
+                                        onClick={this.selectHour.bind(null, h, is_enabled)}
+                                    >
+                                        {h}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                     <div
@@ -130,14 +149,18 @@ class TimePickerDropdown extends PureComponent {
                     >
                         <div className='list-title center-text'><strong>{localize('Minute')}</strong></div>
                         <div className='list-container'>
-                            {this.minutes.map((mm, key) => (
-                                <div
-                                    className={`list-item${this.state.minute === mm ? ' selected' : ''}`}
-                                    key={key}
-                                    onClick={this.selectMinute.bind(null, mm)}
-                                >{mm}
-                                </div>
-                            ))}
+                            {this.minutes.map((mm, key) => {
+                                this.state.start_moment.hour(this.state.hour).minute(mm);
+                                const is_enabled = isSessionAvailable(sessions, this.state.start_moment);
+                                return (
+                                    <div
+                                        className={`list-item${this.state.minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
+                                        key={key}
+                                        onClick={this.selectMinute.bind(null, mm, is_enabled)}
+                                    >{mm}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -214,6 +237,8 @@ class TimePicker extends PureComponent {
             name,
             is_align_right,
             placeholder,
+            start_date,
+            sessions,
         } = this.props;
         const formatted_value = this.convertTo24h(value);
         return (
@@ -248,7 +273,9 @@ class TimePicker extends PureComponent {
                                 toggle={this.toggleDropDown}
                                 onChange={this.handleChange}
                                 preClass={prefix_class}
+                                start_date={start_date}
                                 value={value}
+                                sessions={sessions}
                             />
                         </React.Fragment>
                     )
@@ -266,6 +293,8 @@ TimePicker.propTypes = {
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
     value          : PropTypes.string,
+    start_date     : PropTypes.number,
+    sessions       : PropTypes.array,
 };
 
 TimePickerDropdown.propTypes = {
@@ -275,6 +304,8 @@ TimePickerDropdown.propTypes = {
     toggle     : PropTypes.func,
     value      : PropTypes.string,
     value_split: PropTypes.bool,
+    start_date : PropTypes.number,
+    sessions   : PropTypes.array,
 };
 
 export default TimePicker;

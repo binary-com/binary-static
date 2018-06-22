@@ -1,6 +1,9 @@
+import moment                         from 'moment';
 import { buildBarriersConfig }        from './barrier';
 import { buildDurationConfig }        from './duration';
-import { buildForwardStartingConfig } from './start_date';
+import {
+    buildForwardStartingConfig,
+    isSessionAvailable }              from './start_date';
 import WS                             from '../../../../data/ws_methods';
 import { get as getLanguage }         from '../../../../../_common/language';
 import { localize }                   from '../../../../../_common/localize';
@@ -217,6 +220,26 @@ const ContractType = (() => {
         return { start_date, start_dates_list };
     };
 
+    const getSessions = (contract_type, start_date) => {
+        const config   = getPropertyValue(available_contract_types, [contract_type, 'config']);
+        const sessions =
+                  ((config.forward_starting_dates || []).find(option => option.value === start_date) || []).sessions;
+        return { sessions };
+    };
+
+    const getStartTime = (sessions, start_date, start_time) => {
+        let hour   = start_time.split(':')[0];
+        let minute = start_time.split(':')[1] || 0;
+        const start_moment = moment.unix(start_date).utc().hour(hour).minute(minute);
+        if (!isSessionAvailable(sessions, start_moment)) {
+            const hours   = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
+            const minutes = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
+            hour   = hours.find(h => isSessionAvailable(sessions, start_moment.hour(h)));
+            minute = minutes.find(m => isSessionAvailable(sessions, start_moment.minute(m)));
+        }
+        return { start_time: `${hour}:${minute}` };
+    };
+
     const getTradeTypes = (contract_type) => ({
         trade_types: getPropertyValue(available_contract_types, [contract_type, 'config', 'trade_types']),
     });
@@ -254,6 +277,8 @@ const ContractType = (() => {
         getDurationMinMax,
         getStartType,
         getBarriers,
+        getSessions,
+        getStartTime,
 
         getContractCategories: () => ({ contract_types_list: available_categories }),
     };

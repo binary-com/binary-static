@@ -102,7 +102,6 @@ class Dropdown extends React.PureComponent {
                                 name={this.props.name}
                                 value={this.props.value}
                                 handleSelect={this.handleSelect}
-                                type={this.props.type || undefined}
                             /> :
                             Object.keys(this.props.list).map(key => (
                                 <React.Fragment key={key}>
@@ -128,7 +127,6 @@ const Items = ({
     name,
     value,
     handleSelect,
-    type,
 }) => (
     items.map((item, idx) => (
         <React.Fragment key={idx}>
@@ -137,7 +135,6 @@ const Items = ({
                 key={idx}
                 name={name}
                 value={item.value}
-                data-end={type==='date' && item.end ? item.end : undefined}
                 onClick={handleSelect.bind(null, item)}
             >
                 <span>{item.text}</span>

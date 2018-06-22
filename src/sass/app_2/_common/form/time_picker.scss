@@ -110,13 +110,17 @@
                     cursor: pointer;
                     border-radius: 4px;
 
-                    &:hover {
+                    &:hover(:not.disabled) {
                         background: $COLOR_GRAY;
                         color: $COLOR_BLACK;
                     }
                     &.selected {
                         background: $COLOR_BLUE;
                         color: $COLOR_WHITE;
+                    }
+                    &.disabled {
+                        color: $COLOR_GRAY;
+                        cursor: not-allowed;
                     }
                 }
             }
