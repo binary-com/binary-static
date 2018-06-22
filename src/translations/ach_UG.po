@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-20T03:17:25+0000\n"
+"PO-Revision-Date: 2018-06-22T01:26:51+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -2700,6 +2700,9 @@ msgstr "crwdns42100:0crwdne42100:0"
 msgid "Demo"
 msgstr "crwdns38215:0crwdne38215:0"
 
+msgid "Demo Account"
+msgstr "crwdns45919:0crwdne45919:0"
+
 msgid "Demo Accounts"
 msgstr "crwdns43429:0crwdne43429:0"
 
@@ -4509,9 +4512,6 @@ msgstr "crwdns38706:0crwdne38706:0"
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "crwdns38707:0crwdne38707:0"
 
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "crwdns38708:0crwdne38708:0"
-
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "crwdns38709:0crwdne38709:0"
 
@@ -6150,6 +6150,9 @@ msgstr "crwdns43138:0crwdne43138:0"
 msgid "Minimum volume"
 msgstr "crwdns43470:0crwdne43470:0"
 
+msgid "Minimum:"
+msgstr "crwdns45920:0crwdne45920:0"
+
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "crwdns39199:0crwdne39199:0"
 
@@ -7623,6 +7626,9 @@ msgstr "crwdns39618:0crwdne39618:0"
 msgid "Real Volatility Indices"
 msgstr "crwdns43238:0crwdne43238:0"
 
+msgid "Real-Money Account"
+msgstr "crwdns45921:0crwdne45921:0"
+
 msgid "Real-Money Accounts"
 msgstr "crwdns43438:0crwdne43438:0"
 
@@ -8730,6 +8736,9 @@ msgstr "crwdns39932:0crwdne39932:0"
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "crwdns44616:0crwdne44616:0"
 
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr "crwdns45922:0crwdne45922:0"
+
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "crwdns39934:0crwdne39934:0"
 
@@ -9090,6 +9099,9 @@ msgstr "crwdns40041:0crwdne40041:0"
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "crwdns40043:0%1crwdne40043:0"
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr "crwdns45923:0crwdne45923:0"
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "crwdns40044:0crwdne40044:0"
 
@@ -9116,9 +9128,6 @@ msgstr "crwdns40052:0crwdne40052:0"
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "crwdns42406:0crwdne42406:0"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "crwdns40055:0crwdne40055:0"
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "crwdns43244:0crwdne43244:0"
@@ -9164,9 +9173,6 @@ msgstr "crwdns40073:0crwdne40073:0"
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "crwdns40074:0%1crwdne40074:0"
-
-msgid "The minimum duration is"
-msgstr "crwdns40075:0crwdne40075:0"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "crwdns40076:0%1crwdne40076:0"
@@ -9303,8 +9309,8 @@ msgstr "crwdns40113:0crwdne40113:0"
 msgid "There are two types of Up/Down trades:"
 msgstr "crwdns40114:0crwdne40114:0"
 
-msgid "There are two types of two types of reset trades:"
-msgstr "crwdns45917:0crwdne45917:0"
+msgid "There are two types of reset trades:"
+msgstr "crwdns45924:0crwdne45924:0"
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "crwdns40116:0crwdne40116:0"
@@ -9524,6 +9530,12 @@ msgstr "crwdns40179:0crwdne40179:0"
 
 msgid "Tick"
 msgstr "crwdns40180:0crwdne40180:0"
+
+msgid "Tick %1 is not the highest tick"
+msgstr "crwdns45925:0%1crwdne45925:0"
+
+msgid "Tick %1 is not the lowest tick"
+msgstr "crwdns45926:0%1crwdne45926:0"
 
 msgid "Tick %1 is the highest tick"
 msgstr "crwdns45871:0%1crwdne45871:0"
