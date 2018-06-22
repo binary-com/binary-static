@@ -488,20 +488,16 @@ const Highchart = (() => {
     // calculate where to display the maximum value of the x-axis of the chart for line chart
     const getMaxHistory = (history_times) => {
         let end = end_time;
-        if (sell_spot_time && (sell_time || sell_spot_time) < end_time) {
-            end = sell_spot_time;
+        if (sell_time && sell_time < end_time) {
+            end = sell_time;
         } else if (exit_tick_time) {
             end = exit_tick_time;
         }
 
         const history_times_length = history_times.length;
         if (is_settleable || is_sold) {
-            for (let i = history_times_length - 1; i >= 0; i--) {
-                if (parseInt(history_times[i]) === end) {
-                    max_point = parseInt(history_times[i === history_times_length - 1 ? i : i + 1]);
-                    break;
-                }
-            }
+            let i = history_times.findIndex(time => +time > end);
+            max_point = i > 0 ? +history_times[i] : end_time;
         }
         setMaxForDelayedChart(history_times, history_times_length);
     };
@@ -610,12 +606,6 @@ const Highchart = (() => {
                 const last = parseInt(last_data.x || last_data[0]);
                 if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
                     stop_streaming = true;
-                } else {
-                    // add a null point if the last tick is before end time to bring end time line into view
-                    const time = isSoldBeforeExpiry() ? (sell_time || sell_spot_time) : end_time;
-                    const point = { x: time * 1000, y: null };
-                    chart.addSeries({ data: [point] });
-                    chart.zoomOut(); // sometimes navigator doesn't show new points
                 }
             }
         }
