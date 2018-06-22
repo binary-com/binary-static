@@ -496,7 +496,7 @@ const Highchart = (() => {
 
         const history_times_length = history_times.length;
         if (is_settleable || is_sold) {
-            let i = history_times.findIndex(time => +time > end);
+            const i = history_times.findIndex(time => +time > end);
             max_point = i > 0 ? +history_times[i] : end_time;
         }
         setMaxForDelayedChart(history_times, history_times_length);
