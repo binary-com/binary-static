@@ -27,9 +27,10 @@ const Barriers = (() => {
             const unit     = getElementById('duration_units');
             const end_time = getElementById('expiry_date');
             const is_daily = (unit && isVisible(unit) && unit.value === 'd') ||
-                (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day'));
+                (end_time && isVisible(end_time));
 
             const barrier = barriers[form_name][is_daily ? 'daily' : 'intraday'];
+
             if (barrier) {
                 const current_tick   = Tick.quote();
                 const decimal_places = countDecimalPlaces(current_tick);
@@ -37,6 +38,7 @@ const Barriers = (() => {
                 const indicative_barrier_tooltip      = getElementById('indicative_barrier_tooltip');
                 const indicative_high_barrier_tooltip = getElementById('indicative_high_barrier_tooltip');
                 const indicative_low_barrier_tooltip  = getElementById('indicative_low_barrier_tooltip');
+                console.log('in barrier;');
 
                 if (barrier.count === 1) {
                     getElementById('high_barrier_row').style.display = 'none';
