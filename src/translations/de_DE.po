@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-22T05:58:20+0000\n"
+"PO-Revision-Date: 2018-06-25T01:33:43+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -1339,7 +1339,7 @@ msgid "At least five years of experience with affiliate marketing, growth hackin
 msgstr "Mindestens fünf Jahre Erfahrung im Geschätspartner Marketing, Growth Hacking, in Geschäftsentwicklung und andere eng verwandte Fähigkeiten"
 
 msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
-msgstr "Wenn der Spot zur Nachstellzeit in die entgegengesetzte Richtung Ihrer Vorhersage geht, wird die Schwelle auf diesen Spot zurückgesetzt."
+msgstr "Wenn der Kurs zur Nachstellzeit in die entgegengesetzte Richtung Ihrer Vorhersage geht, wird die Schwelle auf diesen Kurs zurückgesetzt."
 
 msgid "Audit"
 msgstr "Audit"
@@ -2702,7 +2702,7 @@ msgid "Demo"
 msgstr "Demo"
 
 msgid "Demo Account"
-msgstr ""
+msgstr "Demo-Konto"
 
 msgid "Demo Accounts"
 msgstr "Demo-Konten"
@@ -2807,22 +2807,22 @@ msgid "Digit"
 msgstr "Ziffer"
 
 msgid "Digit Differs"
-msgstr "Kommastelle unterschiedlich"
+msgstr "Kommast. vd."
 
 msgid "Digit Even"
-msgstr "Kommastelle gleich"
+msgstr "Kommast. gleich"
 
 msgid "Digit Matches"
-msgstr "Kommastelle stimmt überein"
+msgstr "Kommast. gleich"
 
 msgid "Digit Odd"
-msgstr "Kommastelle ungerade"
+msgstr "Kommast. ungerade"
 
 msgid "Digit Over"
-msgstr "Kommastelle über"
+msgstr "Kommast. über"
 
 msgid "Digit Under"
-msgstr "Kommastelle unter"
+msgstr "Kommast. unter"
 
 msgid "Digit contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr "Kommastellen-Kontrakte werden zum Kaufpreis erstattet, wenn der Kontrakt nicht innerhalb von 5 Minuten endet."
@@ -4019,7 +4019,7 @@ msgid "High barrier"
 msgstr "Hohe Schwelle"
 
 msgid "High barrier must be higher than low barrier"
-msgstr ""
+msgstr "Die hohe Schwelle muss höher als die niedrige Schwelle sein"
 
 msgid "High barrier offset"
 msgstr "Hohe Schwellenverschiebung"
@@ -4475,10 +4475,10 @@ msgid "If you select \"Over\", you will win the payout if the <strong>last digi
 msgstr "Wenn Sie „Über\" auswählen, erhalten Sie eine Auszahlung, wenn die <strong>letzte Stelle</strong> des letzten Ticks größer als Ihre Voraussage ist.</strong>"
 
 msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
-msgstr "Wenn Sie \"Reset-Call\" auswählen, erhalten Sie eine Auszahlung, entweder wenn der Kurs zum Auslauf des Kontrakts genau über dem Kurs bei Beginn des Kontrakts, oder zum Spot der Nachstellzeit liegt."
+msgstr "Wenn Sie \"Reset-Call\" auswählen, erhalten Sie eine Auszahlung, entweder dann, wenn der Kurs zum Auslauf des Kontrakts genau über dem Kurs zu Beginn des Kontrakts liegt, oder wenn er über dem Kurs der Nachstellzeit liegt."
 
 msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
-msgstr "Wenn Sie \"Reset-Put\" auswählen, erhalten Sie eine Auszahlung, entweder wenn der Kurs zum Auslauf des Kontrakts genau unter dem Kurs bei Beginn des Kontrakts, oder zum Spot der Nachstellzeit liegt."
+msgstr "Wenn Sie \"Reset-Put\" auswählen, erhalten Sie eine Auszahlung, entweder dann, wenn der Kurs zum Auslauf des Kontrakts genau unter dem Kurs zu Beginn des Kontrakts liegt, oder wenn er zum Kurs der Nachstellzeit liegt."
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Wenn Sie \"Steigt\" auswählen, erhalten Sie eine Auszahlung, wenn der <strong>Kurs zum Auslauf des Kontrakts</strong> genau über dem <strong>Kurs bei Beginn des Kontrakts</strong> liegt."
@@ -6155,7 +6155,7 @@ msgid "Minimum volume"
 msgstr "Mindestvolumen"
 
 msgid "Minimum:"
-msgstr ""
+msgstr "Minimum:"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Bergbau-, Bau-, Herstellungs- und Transport-Arbeiter"
@@ -7331,10 +7331,10 @@ msgid "Predict that the market will end lower than the average price"
 msgstr "Sagen Sie voraus, dass der Kurs niedriger als der Durchschnittskurs endet"
 
 msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
-msgstr ""
+msgstr "Sagen Sie voraus, dass der Kurs höher als das aktuelle Level oder als eine vorbestimmte Zeit (Nachstellzeit) sein wird"
 
 msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
-msgstr ""
+msgstr "Sagen voraus, dass der Kurs niedriger als das aktuelle Level oder als die vorbestimmte Zeit (Nachstellzeit) sein wird"
 
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "Sagen Sie voraus, dass der Kurs von seinem aktuellen Level steigen oder fallen wird"
@@ -7631,7 +7631,7 @@ msgid "Real Volatility Indices"
 msgstr "Echte Volatilität Ind."
 
 msgid "Real-Money Account"
-msgstr ""
+msgstr "Echtgeldkonto"
 
 msgid "Real-Money Accounts"
 msgstr "Echtgeldkonten"
@@ -8279,7 +8279,7 @@ msgid "Sorry, an error occurred while processing your request."
 msgstr "Es tut uns leid, bei der Bearbeitung Ihrer Anfrage ist ein Fehler aufgetreten."
 
 msgid "Sorry, live chat is currently unavailable. Please email us at %1."
-msgstr ""
+msgstr "Live-Chat ist derzeit leider nicht verfügbar. Schicken Sie uns bitte eine E-Mail an %1."
 
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Leider steht diese Funktion nur für virtuelle Konten zur Verfügung."
@@ -8729,10 +8729,10 @@ msgid "The <strong>end time</strong> is the selected number of minutes/hours aft
 msgstr "Die <strong>Endzeit</strong> ist die ausgewählte Anzahl an Minuten/Stunden nach der <strong>Startzeit</strong> (sofern sie weniger als einen Tag beträgt) oder das Ende des Börsentages (sofern sie einen Tag oder mehr beträgt)."
 
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
-msgstr ""
+msgstr "Die <strong>Endzeit</strong> ist die ausgewählte Anzahl der Minuten/Stunden nach der <strong>Startzeit</strong>."
 
 msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
-msgstr ""
+msgstr "Der <strong>Startkurs</strong> ist der erste Tick nachdem der Kontrakt von unseren Servern bearbeitet wird."
 
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "Der <strong>Schlusskurs</strong> ist der späteste Tick auf oder bevor der <strong>Endzeit</strong>."
@@ -8741,7 +8741,7 @@ msgid "The <strong>remaining time</strong> is the time remaining until the contr
 msgstr "Die <strong>verbleibende Zeit</strong> ist die Zeit, die verbleibt, bis der Vertrag ausläuft."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr ""
+msgstr "Die<strong>Startzeit</strong> ist der Zeitpunkt, zu dem der Auftrag von unseren Servern bearbeitet wird und der <strong>Startkurs</strong> ist der darauf <strong>folgende Tick</strong>."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "Die <strong>Startzeit</strong> beginnt, wenn der Kontrakt von unseren Servern bearbeitet wird."
@@ -9104,7 +9104,7 @@ msgid "The email address provided is already in use. If you forgot your password
 msgstr "Die angegebene E-Mail Adresse, ist bereits in Verwendung. Wenn Sie Ihr Passwort vergessen haben, versuchen Sie bitte unser <a href=\"%1\">Passwort-Wiederfindung Tool</a>, oder kontaktieren Sie die Kundenbetreuung."
 
 msgid "The entry spot is the first tick after the contract is processed by our servers."
-msgstr ""
+msgstr "Der Startkurs ist der erste Tick nachdem der Kontrakt von unseren Servern bearbeitet wird."
 
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Der Einstiegskurs ist der Startpreis eines von einem Händler gekauften Kontrakts."
@@ -9233,7 +9233,7 @@ msgid "The resale price indicates a contract's current market price. Resale pric
 msgstr "Der Wiederverkaufspreis gibt den aktuellen Marktpreis eines Kontrakts an. Wiederverkaufspreise beruhen auf bestem Wissen und können nach einem Kauf nicht jederzeit erzielt werden. Weitere Informationen über den Verkauf von Kontrakten vor Ablauf, finden Sie im Abschnitt „Option verkaufen\"."
 
 msgid "The reset time is %1"
-msgstr ""
+msgstr "Die Nachstellzeit ist %1"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "Die Rendite ist der Betrag, der zum Kontraktablauf realisiert wird (siehe 'Auszahlung')."
@@ -9314,7 +9314,7 @@ msgid "There are two types of Up/Down trades:"
 msgstr "Es gibt zwei Arten von Auf/Ab-Trades:"
 
 msgid "There are two types of reset trades:"
-msgstr ""
+msgstr "Es gibt zwei Arten von Reset-Trades:"
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "Von Ihnen ist ein Betrag an uns ausständig; und/oder"
@@ -9536,10 +9536,10 @@ msgid "Tick"
 msgstr "Tick"
 
 msgid "Tick %1 is not the highest tick"
-msgstr ""
+msgstr "Tick %1 ist nicht der höchste Tick"
 
 msgid "Tick %1 is not the lowest tick"
-msgstr ""
+msgstr "Tick %1 ist nicht der niedrigste Tick"
 
 msgid "Tick %1 is the highest tick"
 msgstr "Tick %1 ist der höchste Tick"
