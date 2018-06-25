@@ -166,8 +166,7 @@ const BinaryPjax = (() => {
 
         const query_params = Url.paramsHash();
         if (!query_params.anchor) {
-            // $.scrollTo('body', 500); // this jQuery function causes an issue and can be replaced by the function below
-            $('html, body').animate({ scrollTop: 0 }, 500);
+            $.scrollTo('body', 500);
         }
     };
 
