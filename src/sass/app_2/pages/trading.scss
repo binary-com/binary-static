@@ -119,15 +119,19 @@
             position: relative;
         }
         .error-info-wrapper {
-            line-height: 1rem;
-            padding: 0.5rem 0.5rem 0.5rem 0.8rem;
-            background-color: $COLOR_YELLOW;
-            border-radius: $BORDER_RADIUS;
-            font-weight: 300;
-            height: 60%;
             justify-content: center;
             align-items: center;
             display: flex;
+
+            span {
+                padding: 5px 5px 5px 8px;
+                line-height: normal;
+                background-color: $COLOR_YELLOW;
+                display: block;
+                margin-bottom: 10px;
+                font-weight: 300;
+                border-radius: $BORDER_RADIUS;
+            }
         }
         .purchase-info-wrapper {
             line-height: 1rem;
