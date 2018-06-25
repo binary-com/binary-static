@@ -102,7 +102,7 @@ const Cashier = () => (
                     </a>
                 </div>
                 <div className='gr-5 gr-12-m'>
-                    <span>{it.L('For e-wallet methods or local currencies not supported by [_1].', it.website_name)}</span>
+                    <span>{it.L('For e-wallets or local currencies not supported by [_1].', it.website_name)}</span>
                     <p className='faded'>{it.L('Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent')}</p>
                 </div>
                 <DepositWithdraw />
