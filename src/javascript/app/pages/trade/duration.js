@@ -6,6 +6,7 @@ const commonIndependent  = require('./common_independent');
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Price              = require('./price');
+const Reset              = require('./reset');
 const BinarySocket       = require('../../base/socket');
 const DatePicker         = require('../../components/date_picker');
 const CommonFunctions    = require('../../../_common/common_functions');
@@ -106,14 +107,14 @@ const Durations = (() => {
                     case 's':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
                         if (max_to_min_base >= 60) {
-                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max, true);
+                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max);
                             if (max_to_min_base >= 3600) {
                                 duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                             }
                         }
                         break;
                     case 'm':
-                        duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max, true);
+                        duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
                         if (max_to_min_base >= 60) {
                             duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                         }
@@ -153,7 +154,7 @@ const Durations = (() => {
         return durationPopulate();
     };
 
-    const makeDurationOption = (map_min, map_max, is_selected) => {
+    const makeDurationOption = (map_min, map_max) => {
         const option  = createElement('option', { value: map_min.unit, 'data-minimum': map_min.value, text: map_min.text });
         if (map_max.value && map_max.unit) {
             const max = convertDurationUnit(map_max.value, map_max.unit, map_min.unit);
@@ -161,7 +162,7 @@ const Durations = (() => {
                 option.setAttribute('data-maximum', max);
             }
         }
-        if (is_selected) {
+        if (map_min.unit === Defaults.get('duration_units')) {
             option.setAttribute('selected', 'selected');
         }
         return option;
@@ -261,6 +262,7 @@ const Durations = (() => {
         Defaults.set('duration_amount', unit_value);
         displayExpiryType();
         Dropdown('#expiry_type');
+
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
@@ -415,7 +417,7 @@ const Durations = (() => {
         }
         fragment.appendChild(option);
 
-        if (has_end_date) {
+        if (has_end_date && !Reset.isReset(Contract.form())) {
             option = createElement('option', { value: 'endtime', text: localize('End Time') });
             if (current_selected === 'endtime') {
                 option.setAttribute('selected', 'selected');
@@ -564,13 +566,20 @@ const Durations = (() => {
         if (+duration_amount_element.value < +duration_min_element.textContent) {
             duration_amount_element.classList.add('error-field');
             duration_wrapper_element.classList.add('error-msg');
+            Reset.hideResetTime();
         } else if (+duration_max_element.textContent &&
             +duration_amount_element.value > +duration_max_element.textContent) {
             duration_amount_element.classList.add('error-field');
             duration_wrapper_element.classList.remove('error-msg');
+            Reset.hideResetTime();
         } else {
             duration_amount_element.classList.remove('error-field');
             duration_wrapper_element.classList.remove('error-msg');
+            if (Reset.isReset(Contract.form())) {
+                Reset.displayResetTime(duration_amount_element.value, Defaults.get('duration_units'));
+            } else {
+                Reset.hideResetTime();
+            }
         }
     };
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T03:12:57+0000\n"
+"PO-Revision-Date: 2018-06-25T01:34:30+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1338,6 +1338,9 @@ msgstr "该职位要求 1 年以上工作经验"
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "具有5年以上联盟网络营销、技术增长、业务发展经验及其他密切相关的技能"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr "重设时, 如果现货价与您的预测方向相反, 则障碍将重设至现货价的方向。"
+
 msgid "Audit"
 msgstr "审计"
 
@@ -1478,9 +1481,6 @@ msgstr "放置横幅"
 
 msgid "Barrier"
 msgstr "障碍"
-
-msgid "Barrier (%1)"
-msgstr "障碍(%1)"
 
 msgid "Barrier Change"
 msgstr "障碍变更"
@@ -2700,6 +2700,9 @@ msgstr "需求 - 受工业和商业应用、包括新技术产品或时尚趋势
 
 msgid "Demo"
 msgstr "演示"
+
+msgid "Demo Account"
+msgstr "模拟账户"
 
 msgid "Demo Accounts"
 msgstr "模拟账户"
@@ -4009,14 +4012,14 @@ msgstr "最高值"
 msgid "High Barrier"
 msgstr "高障碍"
 
-msgid "High Barrier (%1)"
-msgstr "高障碍(%1)"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "高跳动点/低跳动点合约具有严格的五跳动点周期。"
 
 msgid "High barrier"
 msgstr "高障碍"
+
+msgid "High barrier must be higher than low barrier"
+msgstr "高障碍必须高于低障碍"
 
 msgid "High barrier offset"
 msgstr "高障碍位移"
@@ -4297,6 +4300,9 @@ msgstr "如果不可抗力事件持续超过 30 个工作日，没遭受不可�
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "如果 <strong>退市现价</strong> 等于 <strong>低障碍</strong> 或 <strong>高障碍</strong>, 您将不会赢得赔付。"
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr "如果 <strong>退市现价</strong> 等于 <strong>障碍</strong> 或 <stronm g>重设后的新障碍</stronmg>, 您将不会赢得赔付。"
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "如果 <strong>退市现价</strong> 等于 <strong>障碍价格</strong>, 您将不会赢得赔付。"
 
@@ -4468,6 +4474,12 @@ msgstr "如果您选择“奇数”期权，只要<strong>最新价格的</stron
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "如果您选择“大于”期权，只要<strong>最新价格的</strong>最后一个数字<strong>大于您的预测，您将获得赔付。</strong>"
 
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr "如果您选择“重设买权”，只要退市现价严格高于入市现价或重设时现货价，您将获得赔付。"
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr "如果您选择“重设卖权”，只要退市现价严格低于入市现价或重设时现货价，您将获得赔付。"
+
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "如果您选择“上涨”期权，只要 <strong>退市现价</strong> 严格高于 <strong>入市现价</strong>，您将获得赔付。"
 
@@ -4503,9 +4515,6 @@ msgstr "如果您选择的 <strong>开始时间</strong> 为未来的某个时�
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "如果您选择的 <strong>开始时间</strong> 是“现在”，交易 <strong>结束时间</strong> 就是交易 <strong>开始时间</strong> 之后所选的分钟数或小时数（如果期限短于一天），或在交易日的结束时间（如果期限为一天或更长）。"
-
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "如果您选择的 <strong>开始时间</strong> 是“现在”，<strong>开始时间</strong> 就是我们的服务器处理合约交易的时间，<strong>入市现价</strong> 就是 <strong>下一个价格</strong>。"
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "如果您选择具体的<strong>结束时间</strong>，交易<strong>结束时间</strong>就是您选择的时间。"
@@ -5746,9 +5755,6 @@ msgstr "最低值"
 msgid "Low Barrier"
 msgstr "低障碍"
 
-msgid "Low Barrier (%1)"
-msgstr "低障碍(%1)"
-
 msgid "Low barrier"
 msgstr "低障碍"
 
@@ -6147,6 +6153,9 @@ msgstr "最小票证大小"
 
 msgid "Minimum volume"
 msgstr "最小交易额"
+
+msgid "Minimum:"
+msgstr "最小:"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "矿业、建筑业、制造业和运输工人"
@@ -7100,7 +7109,7 @@ msgid "Please complete the %1financial assessment form%2 to lift your withdrawal
 msgstr "请完成%1财务评估表格%2，以便提升您的取款和交易限额 。"
 
 msgid "Please complete your %1personal details%2 before you proceed."
-msgstr ""
+msgstr "继续操作前请填写您的%1个人资料%2。"
 
 msgid "Please complete your personal details before you proceed."
 msgstr "继续操作前请填写您的个人资料。"
@@ -7321,6 +7330,12 @@ msgstr "预测市价在收盘时高于平均价格"
 
 msgid "Predict that the market will end lower than the average price"
 msgstr "预测市价在收盘时低于平均价格"
+
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr "预测市场价最终将高于当前水平或预定时间(重设时间) 的水平"
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr "预测市场价最终将低于当前水平或预定时间(重设时间) 的水平"
 
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "预测市场价格是否会从当前水平上涨或下跌"
@@ -7616,6 +7631,9 @@ msgstr "真实标准"
 msgid "Real Volatility Indices"
 msgstr "真实波动率指数"
 
+msgid "Real-Money Account"
+msgstr "真实资金账户"
+
 msgid "Real-Money Accounts"
 msgstr "真实资金账户"
 
@@ -7760,17 +7778,41 @@ msgstr "不提供转售"
 msgid "Resale price"
 msgstr "转售价格"
 
+msgid "Reset"
+msgstr "重设"
+
+msgid "Reset Barrier"
+msgstr "重设障碍"
+
+msgid "Reset Call"
+msgstr "重设买权"
+
 msgid "Reset MT5 password"
 msgstr "重设MT5密码"
 
 msgid "Reset Password"
 msgstr "重置密码"
 
+msgid "Reset Put"
+msgstr "重设卖权"
+
+msgid "Reset Time"
+msgstr "重设时间"
+
 msgid "Reset password"
 msgstr "重置密码"
 
+msgid "Reset time"
+msgstr "重设时间"
+
 msgid "Reset to Original Settings"
 msgstr "重设为原始设置"
+
+msgid "Reset-Call"
+msgstr "重设-买权"
+
+msgid "Reset-Put"
+msgstr "重设-卖权"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "被FATF认定具有策略缺陷的国家的居民, 须受限制, 不得在Binary Investments (欧洲) 有限公司开立账户。"
@@ -8237,6 +8279,9 @@ msgstr "对不起，您的账户处理发生错误。"
 msgid "Sorry, an error occurred while processing your request."
 msgstr "对不起，您的请求处理发生错误。"
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr "对不起, 实时聊天当前不可用。请发送电子邮件到 %1给我们。"
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "对不起，此功能仅适用虚拟账户。"
 
@@ -8684,11 +8729,20 @@ msgstr "<strong>合约期限</strong>是在合约<strong>开始时间</strong>�
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "合约<strong>结束时间</strong>是指合约<strong>开始时间</strong>（如果期限小于一天）以后所选定的分钟/小时数，或是交易日结束之时（如果期限是一天或更长）。"
 
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr "<strong>结束时间</strong>是<strong>开始时间</strong>过后的选定分钟/小时数。"
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr "<strong>入市现价</strong>指我们服务器处理合约后的第一个跳动点。"
+
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>退市现价</strong>是合约<strong>结束时或之前的</strong>最后跳动价点。"
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "<strong>剩余时间</strong> 是合约到期前剩下的时间。"
+
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr "<strong>开始时间</strong> 就是我们的服务器处理合约交易的时间，<strong>入市现价</strong> 就是 <strong>下一个价格</strong>。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合约<strong>开始时间</strong>即我们的服务器处理合约的时间。"
@@ -9051,6 +9105,9 @@ msgstr "期限是所买入交易的时间周期（参考“合约期限”’）
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "所提供的电子邮件地址已经在使用。如果忘了密码，请尝试使用我们的<a href=\"%1\">密码恢复工具</a>或联系客服部。"
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr "入市现价指我们服务器处理合约后的第一个跳动点。"
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "入市现价是交易者所买入交易的初始价格。"
 
@@ -9077,9 +9134,6 @@ msgstr "本网站包含的金融交易服务仅适合这样的客户：能够承
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "第一步是设置您的交易参数。首先需要调整五种交易参数才能获得合约价格："
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "首个跳动点指在我们服务器处理合约后的第一个跳动点。"
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "外汇交易市场（Forex）是世界上流动性最强、交易量最大的市场，每天交易额高达数兆美元。"
@@ -9125,9 +9179,6 @@ msgstr "客户可能蒙受的最大损失就是其向本公司支付的金额。
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "已达代币 (%1) 最大限数。"
-
-msgid "The minimum duration is"
-msgstr "最小持续时间是"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "使用账户资金转移设施的最小金额为 %1。"
@@ -9182,6 +9233,9 @@ msgstr "客户已经存入所需的最低存款以及"
 
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "转售价格表示合约的当前市场价格。转售价格在尽最大努力的基础上提供，且买入合约后有可能一直不可用。请参阅“卖出期权”以了解在到期前卖出合约的更多细节。"
+
+msgid "The reset time is %1"
+msgstr "重设时间为 %1"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "收益指当合约到期时实现的收益（参阅“赔付金额”）。"
@@ -9260,6 +9314,9 @@ msgstr "范围内/外交易有两种类型："
 
 msgid "There are two types of Up/Down trades:"
 msgstr "上涨/下跌交易有两种类型："
+
+msgid "There are two types of reset trades:"
+msgstr "重设交易有两种类型："
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "您欠我们一些数额尚未还清；和（或)"
@@ -9479,6 +9536,12 @@ msgstr "星期四"
 
 msgid "Tick"
 msgstr "跳动点"
+
+msgid "Tick %1 is not the highest tick"
+msgstr "跳动点 %1 不是最高跳动点"
+
+msgid "Tick %1 is not the lowest tick"
+msgstr "跳动点 %1 不是最低跳动点"
 
 msgid "Tick %1 is the highest tick"
 msgstr "跳动点 %1 是最高跳动点"

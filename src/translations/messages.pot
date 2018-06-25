@@ -1324,6 +1324,9 @@ msgstr ""
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr ""
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr ""
 
@@ -1463,9 +1466,6 @@ msgid "Banner placement"
 msgstr ""
 
 msgid "Barrier"
-msgstr ""
-
-msgid "Barrier (%1)"
 msgstr ""
 
 msgid "Barrier Change"
@@ -2684,6 +2684,9 @@ msgid "Demand – Driven by industrial and commercial applications, including ne
 msgstr ""
 
 msgid "Demo"
+msgstr ""
+
+msgid "Demo Account"
 msgstr ""
 
 msgid "Demo Accounts"
@@ -3994,13 +3997,13 @@ msgstr ""
 msgid "High Barrier"
 msgstr ""
 
-msgid "High Barrier (%1)"
-msgstr ""
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr ""
 
 msgid "High barrier"
+msgstr ""
+
+msgid "High barrier must be higher than low barrier"
 msgstr ""
 
 msgid "High barrier offset"
@@ -4282,6 +4285,9 @@ msgstr ""
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr ""
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr ""
 
@@ -4453,6 +4459,12 @@ msgstr ""
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr ""
 
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
+
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr ""
 
@@ -4487,9 +4499,6 @@ msgid "If you select a <strong>start time</strong> in the future, the <strong>st
 msgstr ""
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr ""
-
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
 msgstr ""
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
@@ -5731,9 +5740,6 @@ msgstr ""
 msgid "Low Barrier"
 msgstr ""
 
-msgid "Low Barrier (%1)"
-msgstr ""
-
 msgid "Low barrier"
 msgstr ""
 
@@ -6131,6 +6137,9 @@ msgid "Minimum ticket size"
 msgstr ""
 
 msgid "Minimum volume"
+msgstr ""
+
+msgid "Minimum:"
 msgstr ""
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
@@ -7306,6 +7315,12 @@ msgstr ""
 msgid "Predict that the market will end lower than the average price"
 msgstr ""
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr ""
 
@@ -7600,6 +7615,9 @@ msgstr ""
 msgid "Real Volatility Indices"
 msgstr ""
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr ""
 
@@ -7744,16 +7762,40 @@ msgstr ""
 msgid "Resale price"
 msgstr ""
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr ""
 
 msgid "Reset Password"
 msgstr ""
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr ""
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
+msgstr ""
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
 msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
@@ -8221,6 +8263,9 @@ msgstr ""
 msgid "Sorry, an error occurred while processing your request."
 msgstr ""
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr ""
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr ""
 
@@ -8668,10 +8713,19 @@ msgstr ""
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr ""
 
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr ""
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
 msgstr ""
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
@@ -9034,6 +9088,9 @@ msgstr ""
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr ""
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr ""
 
@@ -9059,9 +9116,6 @@ msgid "The financial trading services contained within this site are only suitab
 msgstr ""
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
-msgstr ""
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr ""
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
@@ -9107,9 +9161,6 @@ msgid "The maximum loss that may be incurred by any Client is the amount of mone
 msgstr ""
 
 msgid "The maximum number of tokens (%1) has been reached."
-msgstr ""
-
-msgid "The minimum duration is"
 msgstr ""
 
 msgid "The minimum required amount for using the account transfer facility is %1."
@@ -9164,6 +9215,9 @@ msgid "The required minimum deposit has been made by the client AND"
 msgstr ""
 
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
+msgstr ""
+
+msgid "The reset time is %1"
 msgstr ""
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
@@ -9242,6 +9296,9 @@ msgid "There are two types of In/Out trades:"
 msgstr ""
 
 msgid "There are two types of Up/Down trades:"
+msgstr ""
+
+msgid "There are two types of reset trades:"
 msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
@@ -9461,6 +9518,12 @@ msgid "Thursday"
 msgstr ""
 
 msgid "Tick"
+msgstr ""
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
 msgstr ""
 
 msgid "Tick %1 is the highest tick"

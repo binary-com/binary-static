@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T03:13:24+0000\n"
+"PO-Revision-Date: 2018-06-25T01:34:56+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1338,6 +1338,9 @@ msgstr "มีประสบการณ์อย่างน้อย 1 ปี
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "มีประสบการณ์อย่างน้อย 5 ปี ในการทำการตลาดกับพันธมิตร การทำให้ธุรกิจเติบโตโดยเทคนิคใหม่ๆ การพัฒนาธุรกิจ และทักษะอื่นๆ ที่เกี่ยวข้อง"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr "ตรวจสอบ"
 
@@ -1478,9 +1481,6 @@ msgstr "การจัดวางแบนเนอร์"
 
 msgid "Barrier"
 msgstr "Barrier"
-
-msgid "Barrier (%1)"
-msgstr "Barrier (%1)"
 
 msgid "Barrier Change"
 msgstr "ค่า Barrier เปลี่ยนแปลง"
@@ -2699,6 +2699,9 @@ msgstr "อุปสงค์ - ขับเคลื่อนโดยแอพ
 
 msgid "Demo"
 msgstr "สาธิต"
+
+msgid "Demo Account"
+msgstr ""
 
 msgid "Demo Accounts"
 msgstr "บัญชีทดลองใช้"
@@ -4008,14 +4011,14 @@ msgstr "สูง"
 msgid "High Barrier"
 msgstr "Barrier สูง"
 
-msgid "High Barrier (%1)"
-msgstr "Barrier สูง (%1)"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "สัญญาราคาสูง/ราคาต่ำมีระยะเวลาที่แน่นอนเพียง 5 ช่วงราคา"
 
 msgid "High barrier"
 msgstr "Barrier สูง"
+
+msgid "High barrier must be higher than low barrier"
+msgstr ""
 
 msgid "High barrier offset"
 msgstr "Barrier สูง ที่หักกลบลบกัน"
@@ -4296,6 +4299,9 @@ msgstr "หากเหตุการณ์ที่เป็นเหตุส
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "ถ้า<strong>สปอตสิ้นสุด</strong>มีค่าเท่ากับ<strong>Barrier ต่ำ</strong>หรือ<strong>Barrier สูง</strong>แล้ว ท่านจะไม่ได้เงิน"
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "ถ้า<strong>สปอตสิ้นสุด</strong>มีค่าเท่ากับ<strong>Barrier</strong>แล้ว ท่านจะไม่ได้เงิน"
 
@@ -4467,6 +4473,12 @@ msgstr "หากท่านเลือก \"Odd\" ท่านจะได้
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "หากท่านเลือก \"Over\" ท่านจะได้รับชำระเงินเมื่อ <strong>เลขหลักสุดท้าย</strong> ของช่วงราคาสุดท้ายมีค่า <strong>มากกว่าค่าที่ท่านทำนาย</strong>"
 
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
+
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "หากท่านเลือก \"Rises\" ท่านจะได้รับชำระเงินเมื่อ<strong>สปอตสุดท้าย</strong>มีค่าสูงกว่า<strong>สปอตเริ่มต้น</strong>"
 
@@ -4502,9 +4514,6 @@ msgstr "หากท่านกำหนด <strong>เวลาเริ่ม
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "หากท่านกำหนด<strong>เวลาเริ่มต้น</strong>เป็น \"เวลาปัจจุบัน (Now)\" ซึ่ง <strong>เวลาสิ้นสุด</strong>เป็นตัวเลขของชั่วโมงและนาทีหลังจาก<strong>เวลาเริ่มต้น</strong> (หากระยะเวลาน้อยกว่า 1 วัน) หรือ เมื่อสิ้นสุดการซื้อขายประจำวัน (หากเป็นระยะเวลา 1 วัน หรือ มากกว่า)"
-
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "หากท่านกำหนด<strong>เวลาเริ่มต้น</strong>เป็น \"เวลาปัจจุบัน (Now)\" ซึ่ง <strong>เวลาเริ่มต้น</strong>คือ เมื่อสัญญาถูกดำเนินการโดยเครื่องแม่ข่ายในระบบของเรา และ<strong>สปอตเริ่มต้น</strong> คือ <strong>ช่วงนาทีถัดไป</strong> หลังจากนั้น"
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "หากท่านกำหนดเจาะจง<strong>เวลาสิ้นสุด</strong> แล้ว<strong>เวลาสิ้นสุด</strong> คือ เวลาที่ถูกกำหนด"
@@ -5746,9 +5755,6 @@ msgstr "ต่ำ"
 msgid "Low Barrier"
 msgstr "Barrier ต่ำ"
 
-msgid "Low Barrier (%1)"
-msgstr "Barrier ต่ำ (%1)"
-
 msgid "Low barrier"
 msgstr "Barrier ต่ำ"
 
@@ -6149,6 +6155,9 @@ msgstr "ขนาดทิกเก็ตที่เล็กที่สุด
 
 msgid "Minimum volume"
 msgstr "จำนวนต่ำสุด"
+
+msgid "Minimum:"
+msgstr ""
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "เจ้าหน้าที่เหมือง ก่อสร้าง อุตสาหกรรม และการขนส่ง"
@@ -7323,6 +7332,12 @@ msgstr "คาดการณ์ว่า ตลาดจะสิ้นสุ�
 msgid "Predict that the market will end lower than the average price"
 msgstr "คาดการณ์ว่า ตลาดจะสิ้นสุดที่ต่ำกว่าราคาเฉลี่ย"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "คาดการณ์ว่า ตลาดจะขึ้น หรือ ลดต่ำลง จากระดับปัจจุบัน"
 
@@ -7617,6 +7632,9 @@ msgstr "มาตรฐานจริง"
 msgid "Real Volatility Indices"
 msgstr "ดัชนีผันผวนจริง"
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr "บัญชีเงินจริง"
 
@@ -7761,17 +7779,41 @@ msgstr "การขายสัญญาไม่ได้ถูกนำเส
 msgid "Resale price"
 msgstr "ราคาจำหน่ายต่อ"
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr "ตั้งค่ารหัสผ่าน MT5 ใหม่"
 
 msgid "Reset Password"
 msgstr "ตั้งรหัสผ่านใหม่"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr "ตั้งรหัสผ่านใหม่"
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
 msgstr "ปรับการตั้งค่ากลับไปสู่ค่าเริ่มต้น"
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
+msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "ประชากรของประเทศที่ FATF ระบุว่า มีข้อบกพร่องเชิงกลยุทธ์จะถูกจำกัดการเปิดบัญชีกับ Binary Investments (Europe) Ltd."
@@ -8238,6 +8280,9 @@ msgstr "ขออภัย มีความผิดพลาดเกิด�
 msgid "Sorry, an error occurred while processing your request."
 msgstr "ขออภัย มีความผิดพลาดเกิดขึ้นขณะที่ประมวลผลความประสงค์ของท่าน"
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr ""
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "ขออภัย ฟังก์ชันนี้มีให้ใช้งานเฉพาะบัญชีทดลองใช้เท่านั้น"
 
@@ -8686,11 +8731,20 @@ msgstr "<strong>ระยะเวลาของสัญญา</strong> คื
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>เวลาสิ้นสุด</strong> คือ กำหนดของชั่วโมงและนาทีที่เลือกหลังจาก <strong>เวลาเริ่มต้น</strong> (หากเป็นช่วงเวลาที่น้อยกว่า 1 วัน) หรือ ณ สิ้นวันที่ทำการซื้อขาย (หากเป็นช่วงเวลา 1 วัน หรือมากกว่า)"
 
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>สปอตสิ้นสุด</strong> เป็นสปอตสุดท้าย หรือ ก่อน<strong>เวลาสิ้นสุด</strong>"
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "<strong>เวลาที่คงเหลือ</strong>คือ เวลาที่คงเหลือจนหมดอายุสัญญา"
+
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr ""
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>เวลาเริ่มต้น</strong> คือ เวลาที่สัญญาถูกนำเข้าประมวลผลโดยระบบของเรา"
@@ -9053,6 +9107,9 @@ msgstr "ระยะเวลา คือ ช่วงเวลาในกา�
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "อีเมล์ของท่านถูกลงทะเบียนไว้กับผู้ใช้งานอีกบัญชีหนึ่ง หากท่านลืมรหัสผ่านของบัญชีที่ท่านมีอยู่ โปรด <a href=\"%1\">เรียกใช้การกู้คืนรหัสผ่าน</a> หรือ ติดต่อเจ้าหน้าที่บริการลูกค้า"
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "ราคาสปอตเริ่มต้น คือ ราคาเริ่มต้นของการเริ่มซื้อขายโดยนักลงทุน"
 
@@ -9079,9 +9136,6 @@ msgstr "บริการการซื้อขายทางการเง
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "ขั้นตอนแรก คือ การตั้งค่าตัวแปรของการซื้อขายของท่าน มีห้าตัวแปรการซื้อขายที่ท่านจะต้องปรับแต่งเพื่อให้ได้รับราคาของสัญญา:"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "ช่วงราคาแรก คือ ช่วงราคาแรกที่เกิดขึ้นหลังจากสัญญาได้ถูกประมวลผลที่เซิร์ฟเวอร์ของเรา"
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "ตลาดแลกเปลี่ยนเงินตราต่างประเทศ หรือ ฟอเร็กซ์ เป็นตลาดที่มีสภาพคล่องมากที่สุดในโลก และมีการซื้อขายมากที่สุดเช่นกัน มูลค่าซื้อขายในแต่ละวันสูงถึงระดับล้านล้าน"
@@ -9127,9 +9181,6 @@ msgstr "จำนวนเงินขาดทุนที่มากที่
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "จำนวนมากที่สุดของโทเค่น (%1) ถูกใช้หมดแล้ว"
-
-msgid "The minimum duration is"
-msgstr "ระยะเวลาขั้นต่ำ คือ "
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "จำนวนขั้นต่ำที่จำเป็นในการในการโอนบัญชี คือ %1"
@@ -9184,6 +9235,9 @@ msgstr "ลูกค้าได้ดำเนินการเงินฝา
 
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "ราคาจำหน่ายใหม่แสดงถึงราคาตลาดปัจจุบันของสัญญา ราคาจำหน่ายใหม่จะอยู่บนพื้นฐานปัจจัยที่ดีที่สุด ซึ่งอาจจะไม่ได้มีตลอดเวลาหลังจากการซื้อ พิจารณาข้อมูลจาก 'Sell Option' เพื่อทำการซื้อขายก่อนวันหมดอายุ"
+
+msgid "The reset time is %1"
+msgstr ""
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "ผลกำไร คือ เงินที่ถูกรับรู้เมื่อสัญญานั้นหมดอายุ (อ้างอิง 'Payout')"
@@ -9264,6 +9318,9 @@ msgstr "มีการซื้อขาย In/Out 2 ประเภท:"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "มีการซื้อขาย 2 ประเภทของ Up/Down:"
+
+msgid "There are two types of reset trades:"
+msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "มีจำนวนเงินค้างชำระของท่าน และ/หรือ"
@@ -9483,6 +9540,12 @@ msgstr "วันพฤหัสบดี"
 
 msgid "Tick"
 msgstr "ช่วงห่างของราคา"
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
+msgstr ""
 
 msgid "Tick %1 is the highest tick"
 msgstr "ช่วงราคา %1 เป็นราคาสูงสุด"

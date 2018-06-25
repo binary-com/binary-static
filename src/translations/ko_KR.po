@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T03:12:30+0000\n"
+"PO-Revision-Date: 2018-06-25T01:34:02+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -116,7 +116,7 @@ msgid "%1 Affiliate Programme"
 msgstr "%1 제휴 프로그램"
 
 msgid "%1 Affiliate Programme Terms and Conditions"
-msgstr ""
+msgstr "%1 제휴 프로그램 이용약관"
 
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1 응용 프로그램 인터페이스 (\"API\") 약관"
@@ -702,7 +702,7 @@ msgid "Accept local bank wires"
 msgstr ""
 
 msgid "Acceptance"
-msgstr ""
+msgstr "수락"
 
 msgid "Access MT5 dashboard"
 msgstr "MT5 대시보드에 접근하세요"
@@ -1340,6 +1340,9 @@ msgstr ""
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr ""
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr ""
+
 msgid "Audit"
 msgstr ""
 
@@ -1479,9 +1482,6 @@ msgid "Banner placement"
 msgstr ""
 
 msgid "Barrier"
-msgstr ""
-
-msgid "Barrier (%1)"
 msgstr ""
 
 msgid "Barrier Change"
@@ -1782,7 +1782,7 @@ msgid "By default, the intelligent order routing system ensures that the top of 
 msgstr ""
 
 msgid "By indicating your acceptance of these terms and conditions and continuing with your application to join our affiliate programme, you are agreeing to the terms and conditions set out in this Agreement. If you do not agree with the terms and conditions (or are not authorised to do so), you should not continue with your application."
-msgstr ""
+msgstr "이 약관에 수락하고 우리의 제휴 프로그램에 참여하기 위한 지원을 진행함으로써, 귀하는 본 협정에 정리되어 있는 약관에 동의하는 바입니다. 만약 본 약관에 동의하지 않는다면 (또는 동의할 권한이 없다면), 해당 지원을 중지해야 합니다."
 
 msgid "By opening an MT5 Real Account with %1, you represent, warrant and undertake that:"
 msgstr ""
@@ -2127,7 +2127,7 @@ msgid "Clients who wish to self-exclude should be aware that the self-exclusion 
 msgstr ""
 
 msgid "Clients' Money"
-msgstr ""
+msgstr "고객의 자금"
 
 msgid "Close"
 msgstr ""
@@ -2346,7 +2346,7 @@ msgid "Contract Information"
 msgstr "계약 정보"
 
 msgid "Contract Payouts"
-msgstr ""
+msgstr "계약 지불금"
 
 msgid "Contract Risks"
 msgstr "계약 위험"
@@ -2702,6 +2702,9 @@ msgstr ""
 msgid "Demo"
 msgstr ""
 
+msgid "Demo Account"
+msgstr ""
+
 msgid "Demo Accounts"
 msgstr ""
 
@@ -2745,13 +2748,13 @@ msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash
 msgstr ""
 
 msgid "Deposit: %1 blockchain confirmations"
-msgstr ""
+msgstr "입금: 확인된 %1블록체인"
 
 msgid "Deposit: %1 working day"
-msgstr ""
+msgstr "입금: 근무일 %1일"
 
 msgid "Deposit: Instant"
-msgstr ""
+msgstr "입금: 즉시"
 
 msgid "Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account."
 msgstr ""
@@ -2835,7 +2838,7 @@ msgid "Disable"
 msgstr ""
 
 msgid "Disclaimer"
-msgstr ""
+msgstr "권리포기각서"
 
 msgid "Disclaimer: The Economic Calendar tool is a third-party application developed by MetaQuotes Software Corp. and its data can change without prior notice. %1 is not responsible for the content or accuracy of its data, or for any loss or damage of any sort resulting from its data."
 msgstr ""
@@ -4010,13 +4013,13 @@ msgstr ""
 msgid "High Barrier"
 msgstr ""
 
-msgid "High Barrier (%1)"
-msgstr ""
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr ""
 
 msgid "High barrier"
+msgstr ""
+
+msgid "High barrier must be higher than low barrier"
 msgstr ""
 
 msgid "High barrier offset"
@@ -4298,6 +4301,9 @@ msgstr ""
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr ""
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr ""
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr ""
 
@@ -4469,6 +4475,12 @@ msgstr ""
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr ""
 
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr ""
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr ""
+
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr ""
 
@@ -4503,9 +4515,6 @@ msgid "If you select a <strong>start time</strong> in the future, the <strong>st
 msgstr ""
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
-msgstr ""
-
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
 msgstr ""
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
@@ -5747,9 +5756,6 @@ msgstr ""
 msgid "Low Barrier"
 msgstr ""
 
-msgid "Low Barrier (%1)"
-msgstr ""
-
 msgid "Low barrier"
 msgstr ""
 
@@ -6108,7 +6114,7 @@ msgid "Metals trading lets you speculate on the price movement of a particular m
 msgstr ""
 
 msgid "Method"
-msgstr ""
+msgstr "수단"
 
 msgid "Min"
 msgstr ""
@@ -6117,16 +6123,16 @@ msgid "Min / Max withdrawal"
 msgstr ""
 
 msgid "Min Deposit"
-msgstr ""
+msgstr "최소 입금액"
 
 msgid "Min Withdrawal"
-msgstr ""
+msgstr "최소 인출액"
 
 msgid "Min-Max Deposit"
-msgstr ""
+msgstr "최소-최대 입금액"
 
 msgid "Min-Max Withdrawal"
-msgstr ""
+msgstr "최소-최대 인출액"
 
 msgid "Minimum deposit"
 msgstr ""
@@ -6147,6 +6153,9 @@ msgid "Minimum ticket size"
 msgstr ""
 
 msgid "Minimum volume"
+msgstr ""
+
+msgid "Minimum:"
 msgstr ""
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
@@ -6672,7 +6681,7 @@ msgid "Open an account and start trading in minutes"
 msgstr ""
 
 msgid "Open an account now"
-msgstr ""
+msgstr "지금 계좌 열기"
 
 msgid "Open contracts"
 msgstr ""
@@ -6882,10 +6891,10 @@ msgid "Oversee incident responses for our production servers and take the necess
 msgstr ""
 
 msgid "Ownership"
-msgstr ""
+msgstr "소유권"
 
 msgid "Ownership and content of the %1 website remains our respective properties and shall not be deemed to have been transferred to you through any act or omission in respect of this Agreement."
-msgstr ""
+msgstr "본 %1 웹사이트의 내용과 소유권은 저희의 소유이며 어떠한 수단이나 본 동의문의 생략으로 귀하로 해당 내용과 소유권이 전송될 수 없습니다."
 
 msgid "Ownership, content, and liability of the Affiliate's websites are the sole responsibility of the Affiliate. You will be solely responsible for the development, operation, and maintenance of your website and for all materials that appear on your website. You will indemnify and hold us harmless from all claims, damages, and expenses (including, without limitation to, attorneys' fees) relating to the development, operation, maintenance, and contents of your website."
 msgstr ""
@@ -7322,6 +7331,12 @@ msgstr ""
 msgid "Predict that the market will end lower than the average price"
 msgstr ""
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr ""
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr ""
 
@@ -7407,7 +7422,7 @@ msgid "Process website content translations when a full time translator is unava
 msgstr ""
 
 msgid "Processing Time"
-msgstr ""
+msgstr "처리 시간"
 
 msgid "Processing your request..."
 msgstr ""
@@ -7616,6 +7631,9 @@ msgstr ""
 msgid "Real Volatility Indices"
 msgstr ""
 
+msgid "Real-Money Account"
+msgstr ""
+
 msgid "Real-Money Accounts"
 msgstr ""
 
@@ -7760,16 +7778,40 @@ msgstr ""
 msgid "Resale price"
 msgstr ""
 
+msgid "Reset"
+msgstr ""
+
+msgid "Reset Barrier"
+msgstr ""
+
+msgid "Reset Call"
+msgstr ""
+
 msgid "Reset MT5 password"
 msgstr ""
 
 msgid "Reset Password"
 msgstr "비밀번호 재설정"
 
+msgid "Reset Put"
+msgstr ""
+
+msgid "Reset Time"
+msgstr ""
+
 msgid "Reset password"
 msgstr ""
 
+msgid "Reset time"
+msgstr ""
+
 msgid "Reset to Original Settings"
+msgstr ""
+
+msgid "Reset-Call"
+msgstr ""
+
+msgid "Reset-Put"
 msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
@@ -8237,6 +8279,9 @@ msgstr ""
 msgid "Sorry, an error occurred while processing your request."
 msgstr ""
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr ""
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr ""
 
@@ -8253,7 +8298,7 @@ msgid "Source of Wealth"
 msgstr ""
 
 msgid "Spam - We do not condone Spam"
-msgstr ""
+msgstr "스팸 - 우리는 스팸을 용납하지 않습니다"
 
 msgid "Specific Instructions"
 msgstr ""
@@ -8684,10 +8729,19 @@ msgstr ""
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr ""
 
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr ""
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr ""
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
+msgstr ""
+
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
 msgstr ""
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
@@ -8697,7 +8751,7 @@ msgid "The Advanced account provides you with tight spreads, higher ticket size 
 msgstr ""
 
 msgid "The Affiliate's Obligations"
-msgstr ""
+msgstr "제휴자의 의무"
 
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
 msgstr ""
@@ -8775,10 +8829,10 @@ msgid "The Company is the sole owner of all rights or titles or interests whatso
 msgstr ""
 
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error free service, and will not be liable for the consequences of any such errors or interruptions."
-msgstr ""
+msgstr "본 회사는 %1웹사이트가 중단되지 않거나 에러가 없는 서비스를 제공한다는 주장을 전혀 하지 않습니다. 그리고 이에 어떠한 에러나 방해로 인한 결과에 대해 법적 책임을 지지 않습니다."
 
 msgid "The Company may also impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
-msgstr ""
+msgstr "본 회사는 단독 재량으로 클라이언트 계좌의 거래량을 제한할 수 있습니다. 거래 제한양은 귀하 계좌의 보안 & 제한 섹션에서 확인하실 수 있습니다. 만약 계좌 잔액이 최대 한도를 넘으면 해당 한도아래로 잔액을 맞출 수 있도록 인출이 진행되어야 합니다."
 
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavour to ensure affiliates are notified when changes have been made to the commission structure."
 msgstr ""
@@ -8787,7 +8841,7 @@ msgid "The Company may change, suspend, terminate or discontinue any aspect of t
 msgstr ""
 
 msgid "The Company may from time to time inform you about changes on the website, new services and promotions. If you, however, wish to opt out of such a service and do not wish to receive any direct marketing data you can either unsubscribe to the service or email our customer support team. If you decide to opt in again into receiving promotional material, you can also do so by contacting us."
-msgstr ""
+msgstr "본 회사는 웹사이트와 새로운 서비스 및 프로모션에서 변경된 부분을 때때로 귀하께 공지할 것입니다. 만약 귀하께서 이러한 서비스에 가입하고 싶지 않으시고 어떠한 마케팅 자료도 직접적으로 받고싶지 않으시다면 귀하는 해당 서비스 구독을 취소하시거나 저희의 고객 지원팀에게 이메일로 연락하실 수 있습니다. 만약 프로모션 자료를 다시 받고 싶으시다면 저희에게 연락을 통해 다시 가입하실 수 있습니다."
 
 msgid "The Company may impose certain rules and restrictions in relation to the placing of market orders on this website. Such rules may change from time to time, according to market conditions and other factors. The following indicative rules are currently in place:"
 msgstr "본 회사는 이 웹사이트에 시장 주문을 배치함과 관련하여 관련 규정 및 제한을 도입할 수 있습니다. 이러한 규정은 시장 조건과 다른 요인에 따라 때때로 변경 될 수 있습니다. 이와 관련한 규칙은 현재 여기에서 확인할 수 있습니다."
@@ -8871,16 +8925,16 @@ msgid "The Company will not be liable in any way to any persons in the event of 
 msgstr ""
 
 msgid "The Company will notify you by email if your application has been successful."
-msgstr ""
+msgstr "귀하의 지원 성공 여부에 대해 본 회사는 귀하께 이메일로 공지할 것입니다."
 
 msgid "The Company will provide advertising collaterals with links containing affiliate IDs which may be modified by us from time to time."
 msgstr ""
 
 msgid "The Company will, at its sole discretion, determine whether or not your application has been successful. The Company's decision is final and is not open to appeal."
-msgstr ""
+msgstr "본 회사의 단독 재량으로, 귀하의 지원이 성공적이었는지에 대해 결정할 것입니다. 본 회사의 결정은 최종적이며 공개되지 않습니다."
 
 msgid "The Company's Obligations"
-msgstr ""
+msgstr "본 회사의 의무"
 
 msgid "The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href=\"%1\">www.binary.com</a>."
 msgstr ""
@@ -9003,13 +9057,13 @@ msgid "The charting data made available to Clients by the Company is indicative 
 msgstr ""
 
 msgid "The client has reached a turnover that is 5 times the bonus amount"
-msgstr ""
+msgstr "고객의 턴오버 금액이 보너스 액수의 다섯 배에 해당하는 액수에 도달했을 때"
 
 msgid "The commission you will charge Clients on deposits and withdrawals"
 msgstr ""
 
 msgid "The company does not guarantee the ability to sell a contract prior to its expiration time."
-msgstr ""
+msgstr "본 회사는 계약의 만기시간에 앞서 계약을 판매할 수 있는 능력을 보장하지 않습니다."
 
 msgid "The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href='%1'>here.</a>"
 msgstr "본 회사는 각 입금마다 맞는 타이밍에 맞춤과 더불어 다양한 종류의 입금 방법이 있습니다, 어떤 것의 경우 인출이 안되어지는 종류도 있겠습니다. 결제시간을 포함하여 입금과 인출방법에 대해 자세한 사항은 <a href='%1'>여기</a>에서 확인할 수 있습니다."
@@ -9050,6 +9104,9 @@ msgstr ""
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "입력하신 이메일 주소는 이미 사용중입니다. 만약 비밀번호를 잊으셨다면, <a href=\"%1\">비밀번호 복구 도구</a> 또는 저희 고객 서비스부서에 연락바랍니다."
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr ""
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr ""
 
@@ -9075,9 +9132,6 @@ msgid "The financial trading services contained within this site are only suitab
 msgstr ""
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
-msgstr ""
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
 msgstr ""
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
@@ -9123,9 +9177,6 @@ msgid "The maximum loss that may be incurred by any Client is the amount of mone
 msgstr "어떠한 클라이언트라도 본인에 의해 초례할 수 있는 최대의 손실금액은 개인이 해당 회사에 지불한 금액을 의미합니다."
 
 msgid "The maximum number of tokens (%1) has been reached."
-msgstr ""
-
-msgid "The minimum duration is"
 msgstr ""
 
 msgid "The minimum required amount for using the account transfer facility is %1."
@@ -9177,9 +9228,12 @@ msgid "The provision of the margin trading services described in this Agreement 
 msgstr ""
 
 msgid "The required minimum deposit has been made by the client AND"
-msgstr ""
+msgstr "고객에 의해 최소한으로 정해진 입금금액이 정상입금되어진 경우 그리고"
 
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
+msgstr ""
+
+msgid "The reset time is %1"
 msgstr ""
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
@@ -9258,6 +9312,9 @@ msgid "There are two types of In/Out trades:"
 msgstr ""
 
 msgid "There are two types of Up/Down trades:"
+msgstr ""
+
+msgid "There are two types of reset trades:"
 msgstr ""
 
 msgid "There is any amount outstanding from you to us; and/or"
@@ -9366,7 +9423,7 @@ msgid "This Agreement will commence on the date you receive your MT5 Real Accoun
 msgstr ""
 
 msgid "This Document"
-msgstr ""
+msgstr "본 문서"
 
 msgid "This Policy applies to retail and professional clients of %1 dealing in financial products offered by %1."
 msgstr ""
@@ -9384,7 +9441,7 @@ msgid "This bonus is only available to new clients. Existing or former clients d
 msgstr ""
 
 msgid "This bonus will be processed and credited to a client's account when:"
-msgstr ""
+msgstr "이 보너스는 다음의 상황에 해당 되는 경우 처리되어 고객의 계좌에 입금됩니다:"
 
 msgid "This clause does not apply to Volatility Indices."
 msgstr ""
@@ -9477,6 +9534,12 @@ msgid "Thursday"
 msgstr ""
 
 msgid "Tick"
+msgstr ""
+
+msgid "Tick %1 is not the highest tick"
+msgstr ""
+
+msgid "Tick %1 is not the lowest tick"
 msgstr ""
 
 msgid "Tick %1 is the highest tick"
@@ -9786,7 +9849,7 @@ msgid "Trading Frequency in other Financial Instruments"
 msgstr ""
 
 msgid "Trading Limits"
-msgstr ""
+msgstr "거래 제한"
 
 msgid "Trading Platforms"
 msgstr "트레이딩 플랫폼"
@@ -10908,10 +10971,10 @@ msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr ""
 
 msgid "Withdrawal: %1 working day"
-msgstr ""
+msgstr "인출: 근무일 %1일"
 
 msgid "Withdrawal: Not applicable"
-msgstr ""
+msgstr "인출: 해당 없음"
 
 msgid "Withdrawals have been disabled on your account. Please check your email for more details."
 msgstr ""

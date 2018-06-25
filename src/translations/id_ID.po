@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-19T03:13:18+0000\n"
+"PO-Revision-Date: 2018-06-25T01:34:51+0000\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -1338,6 +1338,9 @@ msgstr "Memiliki pengalaman kerja minimal 1 tahun untuk posisi ini"
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "Setidaknya memiliki lima tahun pengalaman pada pemasaran afiliasi, hacking pertumbuhan, pengembangan bisnis, dan keterampilan lainnya yang berhubungan erat"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr "Pada waktu reset, jika spot berlawanan dengan arah analisa Anda, maka batasan akan direset pada spot tersebut."
+
 msgid "Audit"
 msgstr "Audit"
 
@@ -1478,9 +1481,6 @@ msgstr "Penempatan banner"
 
 msgid "Barrier"
 msgstr "Batasan"
-
-msgid "Barrier (%1)"
-msgstr "Batasan (%1)"
 
 msgid "Barrier Change"
 msgstr "Perubahan Batasan"
@@ -2699,6 +2699,9 @@ msgstr "Permintaan - Didorong oleh aplikasi komersil dan industri, termasuk prod
 
 msgid "Demo"
 msgstr "Demo"
+
+msgid "Demo Account"
+msgstr "Akun Demo"
 
 msgid "Demo Accounts"
 msgstr "Akun Demo"
@@ -4008,14 +4011,14 @@ msgstr "High"
 msgid "High Barrier"
 msgstr "Batasan Tinggi"
 
-msgid "High Barrier (%1)"
-msgstr "Batasan Tinggi (%1)"
-
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Kontrak High Tik/Low Tik memiliki durasi lima tik yang tetap."
 
 msgid "High barrier"
 msgstr "Batasan Tinggi"
+
+msgid "High barrier must be higher than low barrier"
+msgstr "Batasan Atas harus lebih tinggi dari batasan bawah"
 
 msgid "High barrier offset"
 msgstr "Batasan offset tinggi"
@@ -4296,6 +4299,9 @@ msgstr "Jika peristiwa keadaan memaksa terjadi lebih dari 30 hari bisnis, Pihak 
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>Batasan rendah</strong> atau<strong>Batasan tinggi</strong>, maka Anda tidak akan memperoleh hasil."
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong> atau <stronm g>batasan baru (jika reset terjadi)</stronmg>, Anda tidak memperoleh hasil."
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong>, Anda tidak akan memperoleh hasil."
 
@@ -4467,6 +4473,12 @@ msgstr "Pilih \"Odd\", Anda akan memperoleh hasil jika <strong>digit terakhir</
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "Pilih \"Over\", Anda akan mendapat hasil jika <strong>digit terakhir</strong> pada tik terakhir adalah <strong>lebih besar dari analisa Anda.</strong>"
 
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr "Jika Anda memilih \"Reset-Call\", Anda memperoleh hasil jika spot akhir pasti lebih tinggi dari spot masuk atau spot pada waktu reset."
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr "Jika Anda memilih \"Reset-Put\", Anda memperoleh hasil jika spot akhir pasti lebih rendah dari spot masuk atau spot pada waktu reset."
+
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Pilih \"Rise\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>spot masuk</strong>."
 
@@ -4502,9 +4514,6 @@ msgstr "Jika anda memilih <strong>waktu mulai</strong> mendatang, maka <strong>w
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Jika anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <strong>waktu berakhir</strong> adalah waktu menit/jam yang dipilih setelah <strong>waktu mulai</strong> (jika durasi kurang dari satu hari), atau pada akhir trading (jika durasi satu hari atau lebih)."
-
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "Jika Anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <strong>waktu mulai</strong> adalah ketika kontrak diproses oleh server kami dan <strong>spot masuk</strong> adalah <strong>tik berikutnya</strong>."
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong>waktu berakhir</strong> adalah waktu yang dipilih."
@@ -5745,9 +5754,6 @@ msgstr "Low"
 msgid "Low Barrier"
 msgstr "Batasan Rendah"
 
-msgid "Low Barrier (%1)"
-msgstr "Batasan Rendah (%1)"
-
 msgid "Low barrier"
 msgstr "Batasan rendah"
 
@@ -6146,6 +6152,9 @@ msgstr "Ukuran tiket minimum"
 
 msgid "Minimum volume"
 msgstr "Volume minimal"
+
+msgid "Minimum:"
+msgstr "Minimum:"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Pekerja Pertambangan, Konstruksi, Manufaktur dan Transportasi"
@@ -7320,6 +7329,12 @@ msgstr "Prediksikan bahwa pasar akan berakhir lebih tinggi dari harga rata-rata"
 msgid "Predict that the market will end lower than the average price"
 msgstr "Prediksikan bahwa pasar akan berakhir lebih rendah dari harga rata-rata"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr "Menganalisa pasar akan berakhir lebih tinggi dari level saat ini atau level pada waktu yang ditentukan sebelumnya (waktu reset)"
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr "Menganalisa pasar akan berakhir lebih rendah dari level saat ini atau level pada waktu yang ditentukan sebelumnya (waktu reset)"
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "Prediksikan bahwa pasar akan naik atau turun dari level saat ini"
 
@@ -7614,6 +7629,9 @@ msgstr "Standar Riil"
 msgid "Real Volatility Indices"
 msgstr "Indeks Volatilitas Riil"
 
+msgid "Real-Money Account"
+msgstr "Akun Uang Riil"
+
 msgid "Real-Money Accounts"
 msgstr "Akun Uang Riil"
 
@@ -7758,17 +7776,41 @@ msgstr "Penjualan ulang tidak ditawarkan"
 msgid "Resale price"
 msgstr "Harga jual"
 
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Reset Barrier"
+msgstr "Batasan Reset"
+
+msgid "Reset Call"
+msgstr "Reset Call"
+
 msgid "Reset MT5 password"
 msgstr "Reset kata sandi MT5"
 
 msgid "Reset Password"
 msgstr "Ulang Kata Sandi"
 
+msgid "Reset Put"
+msgstr "Reset Put"
+
+msgid "Reset Time"
+msgstr "Waktu Reset"
+
 msgid "Reset password"
 msgstr "Reset kata sandi"
 
+msgid "Reset time"
+msgstr "Waktu reset"
+
 msgid "Reset to Original Settings"
 msgstr "Reset ke Pengaturan Asli"
+
+msgid "Reset-Call"
+msgstr "Reset-Call"
+
+msgid "Reset-Put"
+msgstr "Reset-Put"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Penduduk tetap yang telah ditentukan oleh FATF yang memiliki keterbatasan adalah tidak dapat mendaftar akun pada Binary Investments (Europe) Ltd."
@@ -8235,6 +8277,9 @@ msgstr "Maaf, error terjadi ketika memproses rekening Anda."
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Maaf, error terjadi ketika memproses permohonan Anda."
 
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr "Maaf, live chat untuk saat ini tidak tersedia. Silakan email kami di %1."
+
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Maaf, fasilitas ini hanya tersedia untuk rekening virtual saja."
 
@@ -8683,11 +8728,20 @@ msgstr "<strong>Periode kontrak</strong> adalah periode antara <strong>tik berik
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Waktu akhir</strong> adalah menit/jam yang dipilih setelah <strong>waktu mulai</strong> (jika durasi kurang dari satu hari), atau pada akhir hari trading (jika durasi lebih dari satu hari)."
 
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr "<strong>Waktu akhir</strong> adalah jumlah menit/jam yang dipilih setelah <strong>waktu mulai</strong>."
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr "<strong>Spot masuk</strong> adalah tik pertama setelah kontrak diproses oleh server kami."
+
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>Spot akhir</strong> adalah tik terakhir pada atau sebelum <strong>waktu akhir</strong>."
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "<strong>Waktu yang tersisa</strong> adalah sisa waktu hingga kontrak berakhir."
+
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr "<strong>Waktu mulai</strong> adalah ketika kontrak terproses oleh server kami dan <strong>spot masuk</strong> adalah <strong>tik selanjutnya</strong>."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>Waktu mulai</strong> adalah waktu ketika kontrak diproses oleh server kami."
@@ -9049,6 +9103,9 @@ msgstr "Durasi adalah tempo pembelian kontrak (lihat 'periode kontrak')."
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "Alamat email yang Anda sediakan sudah pernah di daftarkan. Jika Anda lupa kata sandi, silahkan coba <a href=\"%1\">alat pemulihan kata sandi</a> atau hubungi customer service kami."
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr "Spot masuk adalah tik pertama setelah kontrak diproses oleh server kami."
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Harga spot masuk adalah harga awal kontrak yang dibeli oleh trader."
 
@@ -9075,9 +9132,6 @@ msgstr "Layanan trading finansial yang disediakan pada situs ini hanya cocok unt
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Langkah pertama adalah menetapkan parameter trading Anda. Terdapat lima parameter trading yang Anda harus sesuaikan agar dapat menerima harga untuk kontrak:"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "Tik awal adalah tik pertama setelah kontrak diproses oleh server kami."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "Pasar Foreign Exchange (Forex) adalah pasar yang paling likuid dan paling sering ditradingkan di seluruh dunia, dimana trading senilai trilyunan tiap harinya."
@@ -9123,9 +9177,6 @@ msgstr "Kerugian maksimal yang mungkin ditanggung oleh klien adalah sejumlah dan
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Jumlah maksimum token (%1) telah tercapai."
-
-msgid "The minimum duration is"
-msgstr "Durasi minimum adalah"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Jumlah minimum untuk menggunakan fasilitas transfer antar akun adalah %1."
@@ -9180,6 +9231,9 @@ msgstr "Syarat minimal deposit telah dilakukan oleh Pelanggan DAN"
 
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "Harga jual kembali menunjukkan harga pasar terkini. Harga jual kembali adalah berdasarkan penawaran terbaik dan mungkin tidak tersedia setiap saat. Lihat 'Opsi jual' untuk keterangan lengkap mengenai penjualan kontrak sebelum berakhir."
+
+msgid "The reset time is %1"
+msgstr "Waktu reset adalah %1"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "Hasil adalah dana yang diperoleh setelah kontrak berakhir (lihat 'Hasil')."
@@ -9258,6 +9312,9 @@ msgstr "Tersedia dua jenis kontrak In/Out:"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Tersedia dua jenis kontrak Up/Down:"
+
+msgid "There are two types of reset trades:"
+msgstr "Tersedia dua jenis kontrak reset:"
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "Terdapat saldo apapun yang masih tertunda dari Anda; dan/atau"
@@ -9477,6 +9534,12 @@ msgstr "Kamis"
 
 msgid "Tick"
 msgstr "Tik"
+
+msgid "Tick %1 is not the highest tick"
+msgstr "Tik %1 adalah bukan tik tertinggi"
+
+msgid "Tick %1 is not the lowest tick"
+msgstr "Tik %1 adalah bukan tik terendah"
 
 msgid "Tick %1 is the highest tick"
 msgstr "Tik %1 adalah tik tertinggi"
