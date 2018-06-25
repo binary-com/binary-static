@@ -39,12 +39,26 @@ class TradeApp extends React.PureComponent {
                     <SmartCharts />
                     <Test />
                 </div>
-                <div className='sidebar-container desktop-only' style={this.props.is_trade_enabled ? {} : { backgroundColor: '#e9e9e9' }}>{/* TODO: update the disabled style */}
-                    <fieldset className='trade-types'>
-                        <ContractType className='desktop-only' />
-                    </fieldset>
-                    {this.renderFormComponents()}
-                    <Purchase />
+                <div className='sidebar-container desktop-only'>
+                    <div className='sidebar-items'>
+                        {!this.props.is_trade_enabled &&
+                            <React.Fragment>
+                                <div className='block-ui' />
+                                <div className='loading'>
+                                    <div className='spinner'>
+                                        <div className='mask'>
+                                            <div className='maskedCircle' />
+                                        </div>
+                                    </div>
+                                </div>
+                            </React.Fragment>
+                        }
+                        <fieldset className='trade-types'>
+                            <ContractType className='desktop-only' />
+                        </fieldset>
+                        {this.renderFormComponents()}
+                        <Purchase />
+                    </div>
                 </div>
                 <ContractType className='mobile-only' is_mobile_widget />
                 <div className='mobile-only'>

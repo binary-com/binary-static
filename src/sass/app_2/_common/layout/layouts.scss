@@ -38,6 +38,9 @@
                 display: none;
             }
         }
+        .sidebar-container, .sidebar-items {
+            position: relative;
+        }
         .offset-container {
             display: none;
         }
