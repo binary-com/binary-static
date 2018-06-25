@@ -110,7 +110,7 @@ const PaymentMethods = () => {
                     }}
                 />
 
-                <TableTitle title={it.L('E-cash')} />
+                <TableTitle title={it.L('E-wallet')} />
                 <Table
                     data={{
                         thead: [ head ],
