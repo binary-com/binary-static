@@ -146,7 +146,90 @@
                 }
             }
         }
-        &.purchase-option {
+        &.trade-types {
+            border: 0;
+            padding: 0;
+            margin-bottom: 0;
+            background: transparent;
+        }
+        @media screen and (max-height: 800px) {
+            .fieldset-header {
+                margin-bottom: -8px;
+            }
+            input, input.datepicker-display, .time-picker #time-picker-input.time-picker-input {
+                height: 26px;
+            }
+            .input-field i .symbols {
+                height: 24px;
+                line-height: 24px;
+            }
+            .dropdown-display {
+                height: 24px;
+
+                span {
+                    line-height: 26px;
+                }
+            }
+            span.select-arrow {
+                top: 9px;
+            }
+        }
+    }
+    div.purchase-wrapper {
+        position: relative;
+
+        div.purchase-error {
+            position: absolute;
+            top: 0;
+            height: calc(100% - 2px);
+            width: calc(100% - 6px);
+            left: 2px;
+            z-index: 2;
+            border: 1px solid $COLOR_GRAY;
+            border-radius: $BORDER_RADIUS;
+            background: $COLOR_LIGHT_GRAY;
+
+            div.purchase-login-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 25%;
+
+                button.btn {
+                    margin: 0 auto;
+
+                    span {
+                        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                    }
+                }
+                p {
+                    line-height: 100%;
+                    margin-bottom: 0;
+                    font-size: 10px;
+                }
+                a {
+                    text-decoration: none;
+                    color: $COLOR_BLACK;
+                    font-weight: 500;
+
+                    span.info-text {
+                        padding: 5px 10px 10px;
+                    }
+                    &:hover, &:focus, &:active {
+                        text-decoration: underline;
+                        color: $COLOR_BLACK;
+                    }
+                }
+            }
+            span.info-text {
+                display: flex;
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        fieldset.purchase-option {
             padding-top: 1.5vh;
             padding-bottom: 1.5vh;
             min-height: 100px;
@@ -281,33 +364,16 @@
                     margin-bottom: 0 !important;
                 }
             }
-        }
-        &.trade-types {
-            border: 0;
-            padding: 0;
-            margin-bottom: 0;
-            background: transparent;
-        }
-        @media screen and (max-height: 800px) {
-            .fieldset-header {
-                margin-bottom: -8px;
-            }
-            input, input.datepicker-display, .time-picker #time-picker-input.time-picker-input {
-                height: 26px;
-            }
-            .input-field i .symbols {
-                height: 24px;
-                line-height: 24px;
-            }
-            .dropdown-display {
-                height: 24px;
+            div.block-ui {
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 4px;
+                border: 1px solid $COLOR_GRAY;
+                width: calc(100% - 6px);
+                height: calc(100% - 2px);
 
-                span {
-                    line-height: 26px;
+                .loading {
+                    top: calc(50% - 4px);
                 }
-            }
-            span.select-arrow {
-                top: 9px;
             }
         }
     }

@@ -1,28 +1,29 @@
-import React           from 'react';
-import PropTypes       from 'prop-types';
-import { toGMTFormat } from '../../../common/date_time';
-import Button          from '../../../components/form/button.jsx';
-import Tooltip         from '../../../components/elements/tooltip.jsx';
-import Fieldset        from '../../../components/form/fieldset.jsx';
-import { connect }     from '../../../store/connect';
+import React               from 'react';
+import PropTypes           from 'prop-types';
+import { toGMTFormat }     from '../../../common/date_time';
+import Button              from '../../../components/form/button.jsx';
+import Tooltip             from '../../../components/elements/tooltip.jsx';
+import Fieldset            from '../../../components/form/fieldset.jsx';
+import { connect }         from '../../../store/connect';
 import Client,
-  { isLoggedIn }       from '../../../../_common/base/client_base';
-import { localize }    from '../../../../_common/localize';
-import Url             from '../../../../_common/url';
+       { isLoggedIn }      from '../../../../_common/base/client_base';
+import { redirectToLogin } from '../../../../_common/base/login';
+import { localize }        from '../../../../_common/localize';
+import Url                 from '../../../../_common/url';
 import {
     getPropertyValue,
-    isEmptyObject }    from '../../../../_common/utility';
+    isEmptyObject }        from '../../../../_common/utility';
 
 // TODO: update/remove this once the design is ready
 const createPurchaseInfo = (purchase_info) => (
     <React.Fragment>
-        <div><strong>Purchase Info:</strong></div>
-        <div>Buy Price: {purchase_info.buy_price}</div>
-        <div>Payout: {purchase_info.payout}</div>
-        <div>Start: {toGMTFormat(purchase_info.start_time * 1000)}</div>
-        <div>Contract ID: {purchase_info.contract_id}</div>
-        <div>Transaction ID: {purchase_info.transaction_id}</div>
-        <div>Description: {purchase_info.longcode}</div>
+        <div><strong>{localize('Purchase Info')}:</strong></div>
+        <div>{localize('Buy Price')}: {purchase_info.buy_price}</div>
+        <div>{localize('Payout')}: {purchase_info.payout}</div>
+        <div>{localize('Start')}: {toGMTFormat(purchase_info.start_time * 1000)}</div>
+        <div>{localize('Contract ID')}: {purchase_info.contract_id}</div>
+        <div>{localize('Transaction ID')}: {purchase_info.transaction_id}</div>
+        <div>{localize('Description')}: {purchase_info.longcode}</div>
     </React.Fragment>
 );
 
@@ -42,11 +43,36 @@ const Purchase = ({
         return (
             <Fieldset className='purchase-option' key={idx}>
                 {(!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id) ?
-                    <div>
-                        {getPropertyValue(purchase_info, ['error', 'message']) || createPurchaseInfo(purchase_info.buy)}
+                    <div className='purchase-error'>
+                        {!is_logged_in ?
+                            <div className='purchase-login-wrapper'>
+                                <span className='info-text'>{localize('Please login to purchase the contract  ')}</span>
+                                <Button
+                                    className='secondary orange'
+                                    has_effect
+                                    text={localize('LOGIN')}
+                                    onClick={redirectToLogin}
+                                />
+                                <p>{localize('Don\'t have a Binary.com account?')}</p>
+                                <a href='javascript;'><span className='info-text'>{localize('Create one now')}</span></a>
+                            </div>
+                          :
+                            <span className='info-text'>{getPropertyValue(purchase_info, ['error', 'message']) || createPurchaseInfo(purchase_info.buy)}</span>
+                        }
                     </div>
                     :
                     <React.Fragment>
+                        {!is_purchase_enabled &&
+                            <div className='block-ui'>
+                                <div className='loading'>
+                                    <div className='spinner'>
+                                        <div className='mask'>
+                                            <div className='maskedCircle' />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
                         <div className='box'>
                             <div className='left-column'>
                                 <div className='type-wrapper'>
@@ -70,11 +96,11 @@ const Purchase = ({
                         </div>
                         <div className='submit-section'>
                             <Button
-                                is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id || !is_logged_in}
+                                is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id}
                                 id={`purchase_${type}`}
                                 className='primary green'
                                 has_effect
-                                text={localize(is_logged_in ? 'Purchase' : 'Please log in.')}
+                                text={localize('Purchase')}
                                 onClick={() => { onClickPurchase(info.id, info.stake); }}
                             />
                         </div>
