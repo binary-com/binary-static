@@ -125,6 +125,7 @@ module.exports = [
 
     ['affiliate_disclaimer',                    'static/japan/affiliates/popup',               null,          '',                                 'NOT-ja,en'],
 
+    ['signup',                                  'static/signup',                               'default',    'Signup'],
 
     // ==================== Section: "landing_pages" ====================
     ['graduates',                               'landing_pages/graduate_program',              null,        'Binary.com Graduate Program',        'NOT-en'],

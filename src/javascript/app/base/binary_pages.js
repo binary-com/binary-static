@@ -41,6 +41,7 @@ const MetaTrader              = require('../pages/user/metatrader/metatrader');
 const FinancialAccOpening     = require('../pages/user/new_account/financial_acc_opening');
 const JapanAccOpening         = require('../pages/user/new_account/japan_acc_opening');
 const RealAccOpening          = require('../pages/user/new_account/real_acc_opening');
+const Signup                  = require('../../static/pages/signup');
 const VirtualAccOpening       = require('../pages/user/new_account/virtual_acc_opening');
 const WelcomePage             = require('../pages/user/new_account/welcome_page');
 const ResetPassword           = require('../pages/user/reset_password');
@@ -107,7 +108,7 @@ const pages_config = {
     securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
-    signup                   : { module: TabSelector },
+    signup                   : { module: Signup },
     statementws              : { module: Statement,                  is_authenticated: true, needs_currency: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
