@@ -189,12 +189,14 @@ const Durations = (() => {
     };
 
     const displayEndTime = () => {
-        const date_start                      = CommonFunctions.getElementById('date_start').value;
-        const now                             = !date_start || date_start === 'now';
-        const current_moment                  = moment((now ? window.time : parseInt(date_start) * 1000));
-        const [duration_value, duration_unit] = getSmallestDuration();
-        const smallest_end_time               = current_moment.add(duration_value, duration_unit);
-        const default_end_time                = Defaults.get('expiry_date');
+        const date_start     = CommonFunctions.getElementById('date_start').value;
+        const now            = !date_start || date_start === 'now';
+        const current_moment = moment((now ? window.time : parseInt(date_start) * 1000));
+        const [
+            smallest_duration_value,
+            smallest_duration_unit ] = getSmallestDuration();
+        const smallest_end_time      = current_moment.add(smallest_duration_value, smallest_duration_unit);
+        const default_end_time       = Defaults.get('expiry_date');
 
         let expiry_date      = default_end_time &&
             moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : smallest_end_time.add(5, 'minutes').utc();
@@ -357,10 +359,10 @@ const Durations = (() => {
                     expiryDateOnChange($expiry_date);
                     removeCustomDropDown($expiry_date);
                 }
-                const duration_unit = getSmallestDuration()[1];
+                const smallest_duration_unit = getSmallestDuration()[1];
                 DatePicker.init({
                     selector: '#expiry_date',
-                    minDate : duration_unit === 'day' ? 1 : 0,
+                    minDate : smallest_duration_unit === 'day' ? 1 : 0,
                     maxDate : 365,
                 });
             } else {
