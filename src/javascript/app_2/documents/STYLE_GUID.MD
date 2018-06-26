@@ -3,7 +3,7 @@
 ## FILE STRUCTURE
 
 In this project, it is tried to keep relevant files in 6 major directories 
-which are called `Documents', `CommonComponents`, `Modules`, 'Services`, 
+which are called `Documents`, `CommonComponents`, `Modules`, `Services`, 
 `Stores` and `Utils`.
 We will describe them more in next sections.
 
@@ -22,12 +22,12 @@ app_2
     │   │   ├── Containers/
     │   │   │   ├── trade_form.jsx
     │   │   │   └── trade.jsx
-    │   │   ├── helpers/
+    │   │   ├── Helpers/
     │   │   └── index.js
     │   └── Statement/
     │       ├── Components/
     │       ├── Containers/
-    │       ├── helpers/
+    │       ├── Helpers/
     │       └── index.js
     ├── Services/
     ├── Stores/
