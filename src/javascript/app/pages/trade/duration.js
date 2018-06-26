@@ -180,16 +180,21 @@ const Durations = (() => {
         return (value * seconds[from_unit]) / seconds[to_unit];
     };
 
-    const displayEndTime = () => {
-        const date_start         = CommonFunctions.getElementById('date_start').value;
-        const now                = !date_start || date_start === 'now';
+    const getSmallestDuration = () => {
         const unit               = CommonFunctions.getElementById('duration_units');
         const smallest_unit      = unit.options[0];
         const smallest_unit_num  = smallest_unit.dataset.minimum;
         const smallest_unit_name = duration_map[smallest_unit.value];
-        const current_moment     = moment((now ? window.time : parseInt(date_start) * 1000));
+        return [smallest_unit_num, smallest_unit_name];
+    };
 
-        let expiry_date      = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment.add(smallest_unit_num, smallest_unit_name).add(5, 'minutes').utc();
+    const displayEndTime = () => {
+        const date_start         = CommonFunctions.getElementById('date_start').value;
+        const now                = !date_start || date_start === 'now';
+        const current_moment     = moment((now ? window.time : parseInt(date_start) * 1000));
+        const [duration_value, duration_unit] = getSmallestDuration();
+
+        let expiry_date      = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment.add(duration_value, duration_unit).add(5, 'minutes').utc();
         let expiry_time      = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         let expiry_date_iso  = toISOFormat(expiry_date);
 
@@ -274,6 +279,7 @@ const Durations = (() => {
         if (unit.value === 'd') {
             const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
+
             DatePicker.init({
                 selector: duration_amount_id,
                 type    : 'diff',
@@ -349,9 +355,11 @@ const Durations = (() => {
                     expiryDateOnChange($expiry_date);
                     removeCustomDropDown($expiry_date);
                 }
+                const duration_unit = getSmallestDuration()[1];
+
                 DatePicker.init({
                     selector: '#expiry_date',
-                    minDate : 0,
+                    minDate : duration_unit === 'day' ? 1 : 0,
                     maxDate : 365,
                 });
             } else {
