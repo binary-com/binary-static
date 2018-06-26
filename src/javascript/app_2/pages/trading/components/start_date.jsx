@@ -6,6 +6,10 @@ import TimePicker   from '../../../components/form/time_picker.jsx';
 import { connect }  from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
+/* TODO:
+    1. update sessions list when the selected one doesn’t have any enabled time
+*/
+
 const StartDate = ({
     start_date,
     start_dates_list,

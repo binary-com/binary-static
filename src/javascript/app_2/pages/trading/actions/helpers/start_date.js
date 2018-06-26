@@ -22,8 +22,20 @@ export const buildForwardStartingConfig = (contract, forward_starting_dates) => 
     return forward_starting_config.length ? forward_starting_config : forward_starting_dates;
 };
 
-export const isSessionAvailable = (sessions, compare_moment, should_only_check_hour = false) => (
-    !sessions || (!compare_moment.isBefore(moment.utc()) &&
-        !!sessions.find(session =>
-            compare_moment.isBetween(should_only_check_hour ? session.open.clone().minute(0) : session.open, session.close, null, '[]')))
+// returns false if same as now
+const isBeforeNow = (compare_moment, should_only_check_hour) => {
+    const now_moment = should_only_check_hour ? moment.utc().minute(0).second(0) : moment.utc();
+    return compare_moment.isBefore(now_moment) && now_moment.unix() !== compare_moment.unix();
+};
+
+export const isSessionAvailable = (
+    sessions               = [],
+    compare_moment         = moment.utc(),
+    start_moment           = moment.utc(),
+    should_only_check_hour = false,
+) => (
+    !isBeforeNow(compare_moment, should_only_check_hour) && !compare_moment.isBefore(start_moment) &&
+        (!sessions.length ||
+            !!sessions.find(session =>
+                compare_moment.isBetween(should_only_check_hour ? session.open.clone().minute(0) : session.open, session.close, null, '[]')))
 );

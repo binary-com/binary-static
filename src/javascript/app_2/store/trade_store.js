@@ -68,7 +68,7 @@ export default class TradeStore {
     @observable duration_units_list = [];
     @observable expiry_date         = '';
     @observable expiry_time         = '09:40';
-    @observable expiry_type         = 'endtime';
+    @observable expiry_type         = 'duration';
 
     // Barrier
     @observable barrier_1     = '';

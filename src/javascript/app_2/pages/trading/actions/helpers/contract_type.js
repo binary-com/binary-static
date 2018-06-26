@@ -85,10 +85,10 @@ const ContractType = (() => {
                         ],
                     },
                 },
-                forward_starting_dates: [ // value is 'open'
-                    { text: 'Mon - 19 Mar, 2018', value: 1517356800, close: 1517443199 },
-                    { text: 'Tue - 20 Mar, 2018', value: 1517443200, close: 1517529599 },
-                    { text: 'Wed - 21 Mar, 2018', value: 1517529600, close: 1517615999 },
+                forward_starting_dates: [
+                    { text: 'Mon - 19 Mar, 2018', value: 1517356800, sessions: [{ open: obj_moment, close: obj_moment }] },
+                    { text: 'Tue - 20 Mar, 2018', value: 1517443200, sessions: [{ open: obj_moment, close: obj_moment }] },
+                    { text: 'Wed - 21 Mar, 2018', value: 1517529600, sessions: [{ open: obj_moment, close: obj_moment }] },
                 ],
                 trade_types: {
                     'CALL': 'Higher',
@@ -223,21 +223,31 @@ const ContractType = (() => {
     const getSessions = (contract_type, start_date) => {
         const config   = getPropertyValue(available_contract_types, [contract_type, 'config']);
         const sessions =
-                  ((config.forward_starting_dates || []).find(option => option.value === start_date) || []).sessions;
+                  ((config.forward_starting_dates || []).find(option => option.value === start_date) || {}).sessions;
         return { sessions };
     };
 
+    const hours   = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
+    const minutes = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
+
     const getStartTime = (sessions, start_date, start_time) => {
-        let hour   = start_time.split(':')[0];
-        let minute = start_time.split(':')[1] || 0;
+        let [ hour, minute ] = start_time.split(':');
         const start_moment = moment.unix(start_date).utc().hour(hour).minute(minute);
-        if (!isSessionAvailable(sessions, start_moment)) {
-            const hours   = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
-            const minutes = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
-            hour   = hours.find(h => isSessionAvailable(sessions, start_moment.hour(h)));
-            minute = minutes.find(m => isSessionAvailable(sessions, start_moment.minute(m)));
+        if (sessions && !isSessionAvailable(sessions, start_moment)) {
+            hour   = hours.find(h => isSessionAvailable(sessions, start_moment.hour(h))) || hour;
+            minute = minutes.find(m => isSessionAvailable(sessions, start_moment.minute(m))) || minute;
         }
         return { start_time: `${hour}:${minute}` };
+    };
+
+    const getEndTime = (sessions, expiry_date, expiry_time) => {
+        let [ hour, minute ] = expiry_time.split(':');
+        const start_moment = moment.unix(expiry_date).utc().hour(hour).minute(minute);
+        if (sessions && !isSessionAvailable(sessions, start_moment)) {
+            hour   = hours.find(h => isSessionAvailable(sessions, start_moment.hour(h))) || hour;
+            minute = minutes.find(m => isSessionAvailable(sessions, start_moment.minute(m))) || minute;
+        }
+        return { expiry_time: `${hour}:${minute}` };
     };
 
     const getTradeTypes = (contract_type) => ({
@@ -279,6 +289,7 @@ const ContractType = (() => {
         getBarriers,
         getSessions,
         getStartTime,
+        getEndTime,
 
         getContractCategories: () => ({ contract_types_list: available_categories }),
     };
