@@ -42,8 +42,7 @@ class TradeApp extends React.PureComponent {
                 <div className='sidebar-container desktop-only'>
                     <div className='sidebar-items'>
                         {!this.props.is_trade_enabled &&
-                            <React.Fragment>
-                                <div className='block-ui' />
+                            <div className='block-ui'>
                                 <div className='loading'>
                                     <div className='spinner'>
                                         <div className='mask'>
@@ -51,13 +50,15 @@ class TradeApp extends React.PureComponent {
                                         </div>
                                     </div>
                                 </div>
-                            </React.Fragment>
+                            </div>
                         }
                         <fieldset className='trade-types'>
                             <ContractType className='desktop-only' />
                         </fieldset>
                         {this.renderFormComponents()}
-                        <Purchase />
+                        <div className='purchase-wrapper'>
+                            <Purchase />
+                        </div>
                     </div>
                 </div>
                 <ContractType className='mobile-only' is_mobile_widget />
