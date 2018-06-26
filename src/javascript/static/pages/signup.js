@@ -44,15 +44,10 @@ const Signup = (() => {
 
     const verifyEmailHandler = (response) => {
         if (response.error) {
-            $(form_id).find('div')
-                .html($('<p/>', {
-                    class: 'error-msg gr-centered gr-8 gr-12-m',
-                    html : response.error.message,
-                }));
+            showError('error', response.error.message);
         } else {
             $(form_id).setVisibility(0);
             $('#verify_email').setVisibility(1);
-
         }
     };
 
@@ -60,12 +55,16 @@ const Signup = (() => {
         if ((clients_country !== 'my') || /@binary\.com$/.test(req.verify_email)) {
             return true;
         }
+        showError('notice', localize('Sorry, account signup is not available in your country.'));
+        return false;
+    };
+
+    const showError = (type, message) => {
         $(form_id).find('div')
             .html($('<p/>', {
-                class: 'notice-msg gr-centered gr-8 gr-12-m',
-                html : localize('Sorry, account signup is not available in your country.'),
+                class: `${type}-msg gr-centered gr-8 gr-12-m`,
+                html : message,
             }));
-        return false;
     };
 
     const onUnload = () => {

@@ -10,7 +10,7 @@ const Signup = () => (
                         <input autoComplete='off' name='email' id='email' maxLength='50' placeholder={it.L('Email')} />
                     </div>
                     <div>
-                        <button type='submit'>{it.L('Create free account')}</button>
+                        <button type='submit'>{it.L('Create Free Account')}</button>
                     </div>
                     <div className='section-divider gr-padding-20'>
                         <div className='align-self-center border-bottom-light-gray' />
