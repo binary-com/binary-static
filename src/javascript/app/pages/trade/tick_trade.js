@@ -337,7 +337,7 @@ const TickDisplay = (() => {
     const dispatch = (data) => {
         const tick_chart = CommonFunctions.getElementById(id_render);
 
-        if (!CommonFunctions.isVisible(tick_chart) || !data || (!data.tick && !data.history) || !applicable_ticks) {
+        if (!CommonFunctions.isVisible(tick_chart) || !data || (!data.tick && !data.history) || applicable_ticks === 'undefined') {
             return;
         }
 
