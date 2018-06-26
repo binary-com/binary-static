@@ -189,12 +189,12 @@ const Durations = (() => {
     };
 
     const displayEndTime = () => {
-        const date_start         = CommonFunctions.getElementById('date_start').value;
-        const now                = !date_start || date_start === 'now';
-        const current_moment     = moment((now ? window.time : parseInt(date_start) * 1000));
+        const date_start                      = CommonFunctions.getElementById('date_start').value;
+        const now                             = !date_start || date_start === 'now';
+        const current_moment                  = moment((now ? window.time : parseInt(date_start) * 1000));
         const [duration_value, duration_unit] = getSmallestDuration();
-        const smallest_end_time = current_moment.add(duration_value, duration_unit).add(5, 'minutes').utc();
-        const default_end_time = Defaults.get('expiry_date');
+        const smallest_end_time               = current_moment.add(duration_value, duration_unit).add(5, 'minutes').utc();
+        const default_end_time                = Defaults.get('expiry_date');
 
         let expiry_date      = default_end_time &&
             moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : smallest_end_time;
