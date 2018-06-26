@@ -45,8 +45,8 @@ const TradingExperienceForm = () => (
         <SelectRow con={Experience} id='cfd_trading_experience' label={it.L('CFD Trading Experience')} />
         <SelectRow con={Frequency}  id='cfd_trading_frequency'  label={it.L('CFD Trading Frequency')} />
 
-        <SelectRow con={Experience} id='other_instruments_trading_experience' label={it.L('Trading Experience in other Financial Instruments')} />
-        <SelectRow con={Frequency}  id='other_instruments_trading_frequency'  label={it.L('Trading Frequency in other Financial Instruments')} />
+        <SelectRow con={Experience} id='other_instruments_trading_experience' label={it.L('Other Financial Instruments Trading Experience')} />
+        <SelectRow con={Frequency}  id='other_instruments_trading_frequency'  label={it.L('Other Financial Instruments Trading Frequency')} />
     </Fieldset>
 );
 
