@@ -187,9 +187,9 @@ const Durations = (() => {
         const smallest_unit      = unit.options[0];
         const smallest_unit_num  = smallest_unit.dataset.minimum;
         const smallest_unit_name = duration_map[smallest_unit.value];
-        const current_moment     = moment((now ? window.time : parseInt(date_start) * 1000)).add(smallest_unit_num, smallest_unit_name).add(5, 'minutes').utc();
+        const current_moment     = moment((now ? window.time : parseInt(date_start) * 1000));
 
-        let expiry_date      = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
+        let expiry_date      = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment.add(smallest_unit_num, smallest_unit_name).add(5, 'minutes').utc();
         let expiry_time      = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         let expiry_date_iso  = toISOFormat(expiry_date);
 
