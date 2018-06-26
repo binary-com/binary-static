@@ -367,13 +367,9 @@
             div.block-ui {
                 background: rgba(255, 255, 255, 0.2);
                 border-radius: 4px;
-                border: 1px solid $COLOR_GRAY;
+                border: 1px solid $COLOR_LIGHT_GRAY;
                 width: calc(100% - 6px);
                 height: calc(100% - 2px);
-
-                .loading {
-                    top: calc(50% - 4px);
-                }
             }
         }
     }
