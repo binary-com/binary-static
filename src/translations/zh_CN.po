@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-25T01:34:30+0000\n"
+"PO-Revision-Date: 2018-06-26 05:42\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -534,8 +534,8 @@ msgstr "MAM账户可以分配给资金经理代表您交易。您可以查看资
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr "PEP是被委托进行特出公众任务的个人。此身份包括了PEP的亲属和亲近的人。"
 
-msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
-msgstr "付款代理人扮演客户（即我们的顾客）和 %1之间的兑换员。付款代理人负责为希望使用某一特定电子货币方法或%1不支持的本地货币的客户处理充值和提款事宜。汇款费用由客户支付。"
+msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
+msgstr ""
 
 msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
 msgstr "政治公众人士(PEP) 是被委托进行特出公众任务的个人。此身份包括了其直系亲属和众所周知为其亲近的人，但不包括中级或初级官员。所指个人包括国家首长、部长、国会秘书、国会议员、法官、大使、高级政府官员、军事高层官员、中央银行的审计委员、国营企业董事等。以上各例的直系亲属也都属于政治公众人士，包括其配偶/伴侣、父母和孩子。再者，众所周知的与政治公众人士有亲密关系的人士包括其商业合伙人也属于政治公众人士。一般来说，已经停止被委托进行特出公众任务为期超过十二个月的个人不属于政治公众人士。"
@@ -1464,14 +1464,14 @@ msgstr "余额："
 msgid "Bank statement"
 msgstr "银行月结单"
 
+msgid "Bank wire, credit card, e-wallet"
+msgstr ""
+
 msgid "Bank wire/Money transfer"
 msgstr "银行电汇/转账"
 
 msgid "Bank your way"
 msgstr "支持各种存取款方式"
-
-msgid "Bank-wire, credit card, e-cash wallet"
-msgstr "银行电汇、信用卡、电子现金钱包"
 
 msgid "Banking"
 msgstr "资金管理"
@@ -2743,8 +2743,8 @@ msgstr "存款最低仅需5美元即可开始交易."
 msgid "Deposit or withdraw below"
 msgstr "在下方存款或提款"
 
-msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
-msgstr "通过银行电汇、信用卡或电子现金钱包向您的账户存款或提款。"
+msgid "Deposit or withdraw to your account via bank wire, credit card, or e-wallet."
+msgstr ""
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "存款： %1区块链确认"
@@ -2971,8 +2971,8 @@ msgstr "本协议有效期内，您将您所拥有的所有知识产权免版税
 msgid "Duties and Responsibilities:"
 msgstr "义务和责任:"
 
-msgid "E-cash"
-msgstr "电子现金"
+msgid "E-wallet"
+msgstr ""
 
 msgid "E. Account Management"
 msgstr "五、账户管理"
@@ -3628,8 +3628,8 @@ msgstr "与联盟、合作伙伴和其他与市场营销相关的查询专用:"
 msgid "For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our %1Complaints and Disputes%2 section."
 msgstr "关于就我们的数据处理方式事宜向我们的主要监督机构提交投诉的详细信息, 请查看我们的 %1控诉和争议%2 章节。"
 
-msgid "For e-cash methods or local currencies not supported by %1."
-msgstr "%1不支持的电子现金方式或本地货币。"
+msgid "For e-wallets or local currencies not supported by %1."
+msgstr ""
 
 msgid "For example, a CFD on Binary.com's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "例如，Binary.com的美国 30 指数差价合约报价每点1美元。如果您以当前20,000 美元的卖出价格购入 1.0 股美国 30 指数，然后以20,010 美元的买入价格出售，您的净利润计算方法如下︰"
@@ -4798,8 +4798,8 @@ msgstr "对我们的MAM工具感兴趣吗？ %1联系我们%2索取有关设置�
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "对流动性解决方案感兴趣吗？通过%1联系我们获取更多信息。"
 
-msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
-msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子付款方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过<a href='mailto:%2'>收到您的消息!</a>"
+msgid "Interested, so what's next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
+msgstr ""
 
 msgid "Internal Audit"
 msgstr "内部审计"
@@ -6010,6 +6010,9 @@ msgstr "市场推广"
 msgid "Marketing and promotions"
 msgstr "市场推广"
 
+msgid "Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal."
+msgstr ""
+
 msgid "Matches/Differs"
 msgstr "符合/相差"
 
@@ -6735,6 +6738,12 @@ msgstr "订单执行通常有两种：市场执行和即时执行。市场执行
 
 msgid "Other"
 msgstr "其它"
+
+msgid "Other Financial Instruments Trading Experience"
+msgstr ""
+
+msgid "Other Financial Instruments Trading Frequency"
+msgstr ""
 
 msgid "Other Obligations"
 msgstr "其它义务"
@@ -8756,8 +8765,8 @@ msgstr "联盟的义务"
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
 msgstr "由于代理欺诈行为或忽略和/或任何类型的疏忽和/或不当行为和/或故意违约和/或违反本协议，造成公司可能遭受的全部或任何损失，代理同意赔偿公司。"
 
-msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-cash or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
-msgstr "代理可向欲通过代理存款或取款的公司客户提供服务。特别是，代理可向欲使用公司已在使用以外的电子现金或电子付款方法（以下简称\"电子付款\"）和/或公司已接受以外的当地货币（以下简称\"当地货币\"） 和/或当地银行电汇 （以下简称\"银行电汇\"）的客户提供服务。"
+msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
+msgstr ""
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
 msgstr "代理声明和保证其目前及将来会遵守有关反洗钱，以及在其经营的管辖范围内的任何金融或经济制裁方案的所有法律。"
@@ -9842,12 +9851,6 @@ msgstr "差价合约 (CFD) 的波动性指数交易并不适合所有人。请�
 
 msgid "Trading Experience"
 msgstr "Trading Experience"
-
-msgid "Trading Experience in other Financial Instruments"
-msgstr "其它金融工具的交易经验"
-
-msgid "Trading Frequency in other Financial Instruments"
-msgstr "其它金融工具的交易频率"
 
 msgid "Trading Limits"
 msgstr "交易限制"
