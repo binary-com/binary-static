@@ -1,4 +1,3 @@
-const moment             = require('moment');
 const countDecimalPlaces = require('./common_independent').countDecimalPlaces;
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
@@ -38,7 +37,6 @@ const Barriers = (() => {
                 const indicative_barrier_tooltip      = getElementById('indicative_barrier_tooltip');
                 const indicative_high_barrier_tooltip = getElementById('indicative_high_barrier_tooltip');
                 const indicative_low_barrier_tooltip  = getElementById('indicative_low_barrier_tooltip');
-                console.log('in barrier;');
 
                 if (barrier.count === 1) {
                     getElementById('high_barrier_row').style.display = 'none';

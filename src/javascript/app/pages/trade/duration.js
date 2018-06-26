@@ -184,14 +184,9 @@ const Durations = (() => {
         const date_start     = CommonFunctions.getElementById('date_start').value;
         const now            = !date_start || date_start === 'now';
         const current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
-        console.log('---');
-        console.log(Defaults.get('expiry_date'));
         let expiry_date      = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
         let expiry_time      = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         let expiry_date_iso  = toISOFormat(expiry_date);
-        console.log(expiry_date);
-        console.log(expiry_date_iso);
-
 
         if (moment.utc(`${expiry_date_iso} ${expiry_time}`).valueOf() < current_moment.valueOf()) {
             expiry_date     = current_moment;
