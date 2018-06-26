@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-25T01:34:12+0000\n"
+"PO-Revision-Date: 2018-06-26 05:41\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -534,8 +534,8 @@ msgstr "Konto MAM może zostać przypisane do podmiotu zarządzającego pienięd
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr "PEP to osoba, która wykonuje lub wykonywała znaczącą funkcję publiczną. Status odnosi się również do członków rodziny takiej osoby i jej bliskich współpracowników."
 
-msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
-msgstr "Pośrednik płatności działa jako kantor wymiany walut między Klientem (naszym klientem) a %1. Pośrednik płatności przetwarza wpłaty i wypłaty dla klientów, którzy chcą korzystać z określonych metod płatności internetowych lub lokalnych walut niedostępnych na %1. Opłaty za przelewy są pokrywane przez Klienta."
+msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
+msgstr ""
 
 msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
 msgstr "Osoba zajmująca eksponowane stanowisko polityczne (PEP) to osoba, która sprawuje lub sprawowała znaczącą funkcję publiczną lub osoba, której bliski członek rodziny lub osoba uznana za bliskiego współpracownika sprawuje lub sprawowała taką funkcję, z wyłączeniem urzędników niższego lub średniego szczebla. Do takich osób zalicza się: przywódców państw, ministrów, sekretarzy parlamentarnych, posłów parlamentarnych, sędziów, ambasadorów, wysokiej rangi urzędników rządowych, wysokiej rangi wojskowych, członków komitetów ds. audytu w radach banków centralnych, dyrektorów spółek skarbu państwa. Za PEP uważa się również „bliskich członków rodziny” wyżej wymienionych osób, czyli np. małżonków i partnerów, rodziców, czy dzieci. Dodatkowo, „osoba uznana za bliskiego współpracownika” PEP rozumiana jest m. in. jako partner biznesowy. Co do zasady, osoba, która według powyższej definicji kwalifikuje się jako PEP, ale która nie sprawuje już znaczącej funkcji publicznej przez okres co najmniej dwunastu miesięczny nie jest już uznawana za PEP."
@@ -1464,14 +1464,14 @@ msgstr "Saldo:"
 msgid "Bank statement"
 msgstr "Wyciąg z rachunku bankowego"
 
+msgid "Bank wire, credit card, e-wallet"
+msgstr ""
+
 msgid "Bank wire/Money transfer"
 msgstr "Przelew bankowy/ transfer pieniężny"
 
 msgid "Bank your way"
 msgstr "Wygrywaj na swoich zasadach"
-
-msgid "Bank-wire, credit card, e-cash wallet"
-msgstr "Przelew bankowy, karta kredytowa lub e-gotówka"
 
 msgid "Banking"
 msgstr "Bankowość"
@@ -2743,8 +2743,8 @@ msgstr "Wpłać zaledwie 5 USD, aby rozpocząć handlowanie."
 msgid "Deposit or withdraw below"
 msgstr "Wpłaty lub wypłaty poniżej"
 
-msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
-msgstr "Wpłaty i wypłaty na Twoje konto za pośrednictwem przelewu bankowego, karty kredytowej lub e-gotówki."
+msgid "Deposit or withdraw to your account via bank wire, credit card, or e-wallet."
+msgstr ""
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "Wpłata: potwierdzenia blockchain w liczbie %1"
@@ -2971,8 +2971,8 @@ msgstr "Na czas trwania niniejszej Umowy udzielasz nam, na podstawie wszelkich T
 msgid "Duties and Responsibilities:"
 msgstr "Obowiązki:"
 
-msgid "E-cash"
-msgstr "E-gotówka"
+msgid "E-wallet"
+msgstr ""
 
 msgid "E. Account Management"
 msgstr "E. Zarządzanie kontami"
@@ -3628,8 +3628,8 @@ msgstr "Pytania związane ze współpracą, programem partnerskim i kwestiami ma
 msgid "For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our %1Complaints and Disputes%2 section."
 msgstr "Aby uzyskać szczegółowe informacje na temat złożenia skargi do naszego Głównego Organu Nadzoru dotyczącej naszych praktyk w zakresie przetwarzania danych, odwiedź naszą sekcję %1Skargi i spory%2."
 
-msgid "For e-cash methods or local currencies not supported by %1."
-msgstr "Rozwiązanie stosowane w przypadku metod e-gotówkowych i lokalnych walut nieobsługiwanych przez %1."
+msgid "For e-wallets or local currencies not supported by %1."
+msgstr ""
 
 msgid "For example, a CFD on Binary.com's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "Na przykład, kontrakty CFD na amerykański indeks US 30 Binary.com oferują kontrakt: 1 USD za punkt. Jeśli kupisz kontrakt na indeks gotówkowy US 30 o wolumenie 1.0 z ceną bieżącą wynoszącą 20 000 USD, a potem sprzedaż go po cenie sprzedaży 20 010 USD, Twój zysk netto zostanie obliczony następująco:"
@@ -4798,8 +4798,8 @@ msgstr "Interesuje Cię nasze narzędzie MAM? %1Skontaktuj się z nami%2, aby uz
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Chcesz poznać nasze rozwiązania w zakresie zarządzania płynnością? Skontaktuj się z nami pod adresem: %1, aby uzyskać więcej informacji."
 
-msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
-msgstr "Zainteresowaliśmy Cię? Co teraz? Jeśli możesz zaoferować naszym Klientom określone metody płatności e-gotówkowych lub możliwości dokonywania płatności lokalnych, których %1 nie ma jeszcze w swojej ofercie, i posiadasz dobre wyniki rynkowe, chcielibyśmy <a href='mailto:%2'>nawiązać kontakt!</a>"
+msgid "Interested, so what's next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
+msgstr ""
 
 msgid "Internal Audit"
 msgstr "Audyt wewnętrzny"
@@ -6010,6 +6010,9 @@ msgstr "Marketing i promocja"
 msgid "Marketing and promotions"
 msgstr "Marketing i promocja"
 
+msgid "Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal."
+msgstr ""
+
 msgid "Matches/Differs"
 msgstr "Zgadza się/Różni się"
 
@@ -6735,6 +6738,12 @@ msgstr "Istnieją dwa rodzaje wykonania zlecenia: realizacja rynkowe i realizacj
 
 msgid "Other"
 msgstr "Inne"
+
+msgid "Other Financial Instruments Trading Experience"
+msgstr ""
+
+msgid "Other Financial Instruments Trading Frequency"
+msgstr ""
 
 msgid "Other Obligations"
 msgstr "Inne zobowiązania"
@@ -8755,8 +8764,8 @@ msgstr "Zobowiązania Partnera"
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
 msgstr "Pośrednik zgadza się zrekompensować Firmie wszelkie straty, które Firma może ponieść w wyniku nieuczciwego działania, zaniedbań Pośrednika lub niedopełnienia obowiązków przez niego lub uchybień, umyślnego zaniedbania lub naruszenia niniejszej Umowy lub w związku z nimi."
 
-msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-cash or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
-msgstr "Pośrednik może oferować swoje usługi Klientom Firmy, którzy chcą wpłacić lub wypłacić środki za jego pośrednictwem. Pośrednik może oferować swoje usługi w szczególności Klientom, którzy chcą skorzystać z metod e-gotówki lub e-portfela innych niż metody oferowane przez Firmę (dalej zwanych „e-płatnościami”) luz z lokalnych walut innych niż te akceptowane przez Firmę (dalej zwanych „lokalnymi walutami”) luz z przelewów dokonywanych przez bank lokalny (dalej zwanych „przelewami bankowymi”)."
+msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
+msgstr ""
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
 msgstr "Pośrednik oświadcza i zapewnia, że działa i będzie działał zgodnie z wszelkimi prawami dotyczącymi prania brudnych pieniędzy oraz z programami sankcji finansowych i ekonomicznych obowiązującymi w jurysdykcji, w której prowadzi swoją działalność."
@@ -9840,12 +9849,6 @@ msgstr "Handel Wskaźnikami zmienności opartymi na kontraktach na różnice kur
 
 msgid "Trading Experience"
 msgstr "Doświadczenie w handlowaniu"
-
-msgid "Trading Experience in other Financial Instruments"
-msgstr "Doświadczenie w handlowaniu innymi instrumentami finansowymi"
-
-msgid "Trading Frequency in other Financial Instruments"
-msgstr "Częstotliwość handlowania innymi instrumentami finansowymi"
 
 msgid "Trading Limits"
 msgstr "Limity handlowe"
