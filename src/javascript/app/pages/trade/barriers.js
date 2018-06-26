@@ -28,7 +28,7 @@ const Barriers = (() => {
             const end_time = getElementById('expiry_date');
             const is_daily = (unit && isVisible(unit) && unit.value === 'd') ||
                 (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day'));
-            
+
             const barrier = barriers[form_name][is_daily ? 'daily' : 'intraday'];
             if (barrier) {
                 const current_tick   = Tick.quote();
