@@ -41,7 +41,11 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
 };
 
 const process = async(store, new_state) => {
-    updateStore(store, { is_purchase_enabled: false, proposal_info: {} }); // disable purchase button(s), clear contract info
+    updateStore(store, { // disable purchase button(s), clear contract info, cleanup chart
+        is_purchase_enabled: false,
+        proposal_info      : {},
+        chart_barriers     : [],
+    });
 
     const snapshot = cloneObject(store);
 

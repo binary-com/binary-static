@@ -1,7 +1,8 @@
-import moment               from 'moment';
-import { convertToUnix }    from '../../../../common/date_time';
-import WS                   from '../../../../data/ws_methods';
-import { getDecimalPlaces } from '../../../../../_common/base/currency_base';
+import moment                        from 'moment';
+import { createChartBarriersConfig } from './chart';
+import { convertToUnix }             from '../../../../common/date_time';
+import WS                            from '../../../../data/ws_methods';
+import { getDecimalPlaces }          from '../../../../../_common/base/currency_base';
 
 export const requestProposal = (store, updateStore) => {
     const proposal_info = {};
@@ -21,7 +22,14 @@ export const requestProposal = (store, updateStore) => {
                 has_error: !!response.error,
             };
 
-            updateStore(store, { is_purchase_enabled: true, proposal_info });
+            const chart_barriers = !store.chart_barriers.length &&
+                { chart_barriers: createChartBarriersConfig(store, response) };
+
+            updateStore(store, {
+                proposal_info,
+                ...(chart_barriers),
+                is_purchase_enabled: true,
+            });
         };
 
         Object.keys(store.trade_types).forEach(type => {

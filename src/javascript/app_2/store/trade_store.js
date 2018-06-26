@@ -1,10 +1,11 @@
 import {
     action,
-    observable }           from 'mobx';
-import ContractType        from '../pages/trading/actions/helpers/contract_type';
-import { updateStore }     from '../pages/trading/actions/index';
-import { processPurchase } from '../pages/trading/actions/purchase';
-import Client              from '../../_common/base/client_base';
+    observable }              from 'mobx';
+import ContractType           from '../pages/trading/actions/helpers/contract_type';
+import { updateStore }        from '../pages/trading/actions/index';
+import { updateBarrierShade } from '../pages/trading/actions/helpers/chart';
+import { processPurchase }    from '../pages/trading/actions/purchase';
+import Client                 from '../../_common/base/client_base';
 
 export default class TradeStore {
     constructor(main_store) {
@@ -25,6 +26,10 @@ export default class TradeStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
         updateStore(this, { [name]: (type === 'number' ? +value : value) }, true);
+    }
+
+    @action.bound onHoverPurchase(is_over, contract_type) {
+        this.chart_barriers = updateBarrierShade(this, is_over, contract_type);
     }
 
     @action.bound onPurchase(proposal_id, price) {
@@ -82,6 +87,9 @@ export default class TradeStore {
     // Purchase
     @observable proposal_info = {};
     @observable purchase_info = {};
+
+    // Chart
+    @observable chart_barriers = [];
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [

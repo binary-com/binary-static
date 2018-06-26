@@ -3,28 +3,34 @@ import React      from 'react';
 import PropTypes  from 'prop-types';
 import Tooltip    from '../elements/tooltip.jsx';
 
-class Fieldset extends React.PureComponent {
-    render() {
-        const field_left_class = classNames('field-info left', { icon: this.props.icon }, this.props.icon);
-        return (
-            <fieldset>
-                <div className='fieldset-header'>
-                    <span className={field_left_class}>{this.props.header}</span>
-                    <span className='field-info right'>
-                        {!!this.props.tooltip &&
-                            <Tooltip
-                                alignment='left'
-                                icon='info'
-                                message={this.props.tooltip || 'Message goes here.'}
-                            />
-                        }
-                    </span>
-                </div>
-                {this.props.children}
-            </fieldset>
-        );
-    }
-}
+const Fieldset = ({
+    children,
+    header,
+    icon,
+    onMouseEnter,
+    onMouseLeave,
+    tooltip,
+}) => {
+    const field_left_class = classNames('field-info left', { icon }, icon);
+
+    return (
+        <fieldset onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            <div className='fieldset-header'>
+                <span className={field_left_class}>{header}</span>
+                <span className='field-info right'>
+                    {!!tooltip &&
+                        <Tooltip
+                            alignment='left'
+                            icon='info'
+                            message={tooltip || 'Message goes here.'}
+                        />
+                    }
+                </span>
+            </div>
+            {children}
+        </fieldset>
+    );
+};
 
 // ToDo:
 // - Refactor Last Digit to keep the children as array type.
@@ -35,10 +41,11 @@ Fieldset.propTypes = {
         PropTypes.array,
         PropTypes.object,
     ]),
-    header : PropTypes.string,
-    icon   : PropTypes.string,
-    time   : PropTypes.object,
-    tooltip: PropTypes.string,
+    header      : PropTypes.string,
+    icon        : PropTypes.string,
+    onMouseEnter: PropTypes.func,
+    onMouseLeave: PropTypes.func,
+    tooltip     : PropTypes.string,
 };
 
 export default Fieldset;
