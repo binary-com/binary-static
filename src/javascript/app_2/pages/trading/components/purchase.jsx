@@ -3,6 +3,7 @@ import PropTypes           from 'prop-types';
 import { toGMTFormat }     from '../../../common/date_time';
 import Button              from '../../../components/form/button.jsx';
 import Tooltip             from '../../../components/elements/tooltip.jsx';
+import UILoader            from '../../../components/elements/ui_loader.jsx';
 import Fieldset            from '../../../components/form/fieldset.jsx';
 import { connect }         from '../../../store/connect';
 import Client,
@@ -63,15 +64,7 @@ const Purchase = ({
                     :
                     <React.Fragment>
                         {!is_purchase_enabled &&
-                            <div className='block-ui'>
-                                <div className='loading'>
-                                    <div className='spinner'>
-                                        <div className='mask'>
-                                            <div className='maskedCircle' />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <UILoader />
                         }
                         <div className='box'>
                             <div className='left-column'>

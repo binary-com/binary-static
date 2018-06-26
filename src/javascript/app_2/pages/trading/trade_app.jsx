@@ -11,6 +11,7 @@ import StartDate       from './components/start_date.jsx';
 import Test            from './components/test.jsx';
 import SmartCharts     from '../../components/charts/smartcharts.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
+import UILoader        from '../../components/elements/ui_loader.jsx';
 import { connect }     from '../../store/connect';
 
 const form_components = [
@@ -42,15 +43,7 @@ class TradeApp extends React.PureComponent {
                 <div className='sidebar-container desktop-only'>
                     <div className='sidebar-items'>
                         {!this.props.is_trade_enabled &&
-                            <div className='block-ui'>
-                                <div className='loading'>
-                                    <div className='spinner'>
-                                        <div className='mask'>
-                                            <div className='maskedCircle' />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <UILoader />
                         }
                         <fieldset className='trade-types'>
                             <ContractType className='desktop-only' />

@@ -1,0 +1,51 @@
+/* Loading Spinner */
+.block-ui {
+    position: absolute;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.8);
+    top: 0;
+    left: 2px;
+    right: 0;
+    bottom: 0;
+    width: calc(100% - 4px);
+    height: 100%;
+}
+
+.loading {
+    position: absolute;
+    top: calc(50% - 54px);
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    margin: -14px 0 0 -14px;
+    z-index: 11;
+
+    .maskedCircle {
+        width: 26px;
+        height: 26px;
+        border-radius: 18px;
+        border: 3px solid $COLOR_BLUE;
+    }
+    .mask {
+        width: 36px;
+        height: 22px;
+        overflow: hidden;
+    }
+    .spinner {
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        width: 32px;
+        height: 32px;
+        animation: spin 1s infinite linear;
+    }
+}
+/* Spinner Loader Animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
