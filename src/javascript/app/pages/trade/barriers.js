@@ -1,3 +1,4 @@
+const moment             = require('moment');
 const countDecimalPlaces = require('./common_independent').countDecimalPlaces;
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
@@ -26,8 +27,7 @@ const Barriers = (() => {
             const unit     = getElementById('duration_units');
             const end_time = getElementById('expiry_date');
             const is_daily = (unit && isVisible(unit) && unit.value === 'd') ||
-                (end_time && isVisible(end_time));
-
+                (end_time && isVisible(end_time) && moment(end_time.getAttribute('data-value')).isAfter(moment(), 'day'));
             const barrier = barriers[form_name][is_daily ? 'daily' : 'intraday'];
 
             if (barrier) {
