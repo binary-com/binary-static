@@ -1,29 +1,20 @@
-import extend          from 'extend';
-import { runInAction } from 'mobx';
-import Client          from '../../../../_common/base/client_base';
-import {
-    cloneObject,
-    isEmptyObject }    from '../../../../_common/utility';
-import URLHelper       from '../../../common/url_helper';
+import extend                             from 'extend';
+import { runInAction }                    from 'mobx';
+import Client                             from '../../../../_common/base/client_base';
+import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
+import URLHelper                          from '../../../common/url_helper';
 
-import ContractTypeHelper  from './helpers/contract_type';
-import { requestProposal } from './helpers/proposal';
+import ContractTypeHelper                 from './helpers/contract_type';
+import { allowed_query_string_variables } from './helpers/query_string';
+import { requestProposal }                from './helpers/proposal';
 
 // add files containing actions here.
-import * as ContractType  from './contract_type';
-import * as Currency      from './currency';
-import * as Duration      from './duration';
-import * as StartDate     from './start_date';
-import * as Symbol        from './symbol';
+import * as ContractType                  from './contract_type';
+import * as Currency                      from './currency';
+import * as Duration                      from './duration';
+import * as StartDate                     from './start_date';
+import * as Symbol                        from './symbol';
 
-// list of trade's options that should be used in querstring of trade page url.
-export const query_string_variables = [
-    'amount', 'barrier_1', 'barrier_2', 'basis', 
-    'contract_start_type', 'contract_type', 
-    'contract_type', 'currency', 'duration', 
-    'duration_unit', 'expiry_date', 'expiry_type', 
-    'last_digit', 'start_date', 'symbol',
-];
 
 export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
     const new_state = cloneObject(obj_new_values);
@@ -37,9 +28,8 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
                     store.is_trade_enabled    = false;
                 }
 
-                // TODO move to proper file or place
                 // Add changes to queryString of the url
-                if (query_string_variables.indexOf(key) !== -1) {
+                if (allowed_query_string_variables.indexOf(key) !== -1) {
                     URLHelper.setQueryParam({ [key]: new_state[key] });
                 }
 

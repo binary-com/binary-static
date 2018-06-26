@@ -16,8 +16,8 @@ export default class URLHelper {
     /**
      * append params to url query string
      *
-     * @param {Object} params a key value object that contains all query strings should be added to the url
-     * @param {String} url the url that should query strings add to
+     * @param {Object} params - a key value object that contains all query strings should be added to the url
+     * @param {String} url - the url that should query strings add to
      *
      * @return {Object} returns modified url object.
      */
@@ -43,5 +43,32 @@ export default class URLHelper {
         }
 
         return url_object;
+    }
+
+    /**
+     * Update query string by values of passing object
+     *
+     * @param {Object} store - an object that contains values which should be added to the query string
+     * @param {string[]} allowed_query_string_variables - a list of variables those are allowed to add to query string.
+     *
+     * @return {Object} returns an iterator object of updated query string
+     */
+    static updateQueryString(store, allowed_query_string_variables) {
+
+        const queryParams = URLHelper.getQueryParams();
+
+        if (store && Object.keys(store).length > 0 && store.constructor === Object) {
+ 
+            // create query string by default values in trade_store if the param doesn't exist in query string.
+            allowed_query_string_variables
+                .filter(p => !queryParams.get(p)).forEach( key => {
+                    if (store[key] && store[key] !== '') {
+                        URLHelper.setQueryParam({ [key]: this[key] });
+                        queryParams.set(key, this[key]);
+                    }
+                });
+        }
+
+        return queryParams;
     }
 }
