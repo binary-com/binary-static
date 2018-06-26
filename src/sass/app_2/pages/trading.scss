@@ -234,13 +234,11 @@
             padding-bottom: 1.5vh;
             min-height: 100px;
 
-            > div:first-child {
-                min-height: 71px;
-            }
             div.box {
                 display: grid;
                 grid-template-columns: 1fr 2fr;
                 position: relative;
+                min-height: 71px;
 
                 .left-column, .right-column {
                     position: relative;
