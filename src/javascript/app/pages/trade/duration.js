@@ -334,7 +334,7 @@ const Durations = (() => {
             let $expiry_date     = $('#expiry_date');
             const date_start_val = CommonFunctions.getElementById('date_start').value || 'now';
             const is_now         = isNow(date_start_val);
-            const is_risefall    = /risefall/.test(Defaults.get('formname')) || false;
+            const is_risefall    = /^(risefall|callputequal)$/.test(Defaults.get('formname')) || false;
 
             if (is_now || !is_risefall) {
                 if (!$expiry_date.is('input')) {
