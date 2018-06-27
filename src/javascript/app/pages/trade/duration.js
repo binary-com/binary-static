@@ -29,6 +29,7 @@ const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Durations = (() => {
     let selected_duration = {};
+    let smallest_duration = {};
     let has_end_date      = 0;
 
     const displayDurations = (time_start_val) => {
@@ -135,6 +136,11 @@ const Durations = (() => {
             commonTrading.durationOrder(a) > commonTrading.durationOrder(b) ? 1 : -1
         ));
 
+        smallest_duration = {
+            amount: duration_list[list[0]].dataset.minimum,
+            unit  : list[0],
+        };
+
         has_end_date = 0;
         for (let k = 0; k < list.length; k++) {
             const d = list[k];
@@ -181,10 +187,14 @@ const Durations = (() => {
     };
 
     const displayEndTime = () => {
-        const date_start     = CommonFunctions.getElementById('date_start').value;
-        const now            = !date_start || date_start === 'now';
-        const current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
-        let expiry_date      = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
+        const date_start        = CommonFunctions.getElementById('date_start').value;
+        const now               = !date_start || date_start === 'now';
+        const current_moment    = moment((now ? window.time : parseInt(date_start) * 1000));
+        const smallest_end_time = current_moment.add(smallest_duration.amount, smallest_duration.unit);
+        const default_end_time  = Defaults.get('expiry_date');
+
+        let expiry_date      = default_end_time &&
+            moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : smallest_end_time.add(5, 'minutes').utc();
         let expiry_time      = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         let expiry_date_iso  = toISOFormat(expiry_date);
 
@@ -344,7 +354,7 @@ const Durations = (() => {
                 }
                 DatePicker.init({
                     selector: '#expiry_date',
-                    minDate : 0,
+                    minDate : smallest_duration.unit === 'd' ? 1 : 0,
                     maxDate : 365,
                 });
             } else {
