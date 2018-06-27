@@ -189,6 +189,17 @@
             border-radius: $BORDER_RADIUS;
             background: $COLOR_LIGHT_GRAY;
 
+            .close-btn {
+                position: absolute;
+                padding: 8px;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+
+                &:before {
+                    content: url('../images/trading_app/footer/ic_close_blue_light.svg');
+                }
+            }
             div.purchase-login-wrapper {
                 display: flex;
                 flex-direction: column;

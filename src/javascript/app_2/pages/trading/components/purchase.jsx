@@ -28,6 +28,20 @@ const createPurchaseInfo = (purchase_info) => (
     </React.Fragment>
 );
 
+const LogInMessage = () => (
+    <div className='purchase-login-wrapper'>
+        <span className='info-text'>{localize('Please login to purchase the contract  ')}</span>
+        <Button
+            className='secondary orange'
+            has_effect
+            text={localize('LOGIN')}
+            onClick={redirectToLogin}
+        />
+        <p>{localize('Don\'t have a Binary.com account?')}</p>
+        <a href='javascript;'><span className='info-text'>{localize('Create one now')}</span></a>
+    </div>
+);
+
 const Purchase = ({
     is_purchase_enabled,
     is_trade_enabled,
@@ -43,61 +57,53 @@ const Purchase = ({
 
         return (
             <Fieldset className='purchase-option' key={idx}>
-                {(!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id) ?
-                    <div className='purchase-error'>
-                        {!is_logged_in ?
-                            <div className='purchase-login-wrapper'>
-                                <span className='info-text'>{localize('Please login to purchase the contract  ')}</span>
-                                <Button
-                                    className='secondary orange'
-                                    has_effect
-                                    text={localize('LOGIN')}
-                                    onClick={redirectToLogin}
-                                />
-                                <p>{localize('Don\'t have a Binary.com account?')}</p>
-                                <a href='javascript;'><span className='info-text'>{localize('Create one now')}</span></a>
-                            </div>
-                          :
-                            <span className='info-text'>{getPropertyValue(purchase_info, ['error', 'message']) || createPurchaseInfo(purchase_info.buy)}</span>
-                        }
-                    </div>
-                    :
-                    <React.Fragment>
-                        {!is_purchase_enabled &&
-                            <UILoader />
-                        }
-                        <div className='box'>
-                            <div className='left-column'>
-                                <div className='type-wrapper'>
-                                    <img
-                                        className='type'
-                                        src={Url.urlForStatic(`images/trading_app/purchase/trade_types/ic_${trade_types[type].toLowerCase().replace(/(\s|-)/, '_')}_light.svg`) || undefined}
-                                    />
-                                </div>
-                                <h4 className='trade-type'>{trade_types[type]}</h4>
-                            </div>
-                            {(info.has_error || !info.id) ?
-                                <div className={info.has_error ? 'error-info-wrapper': ''}><span>{info.message}</span></div>
-                                :
-                                <div className='purchase-info-wrapper'>
-                                    <div className='stake-wrapper'><span><strong>{localize('Stake')}</strong>: {el_currency}{info.stake}</span><span className='field-info'><Tooltip alignment='left' icon='info' message={info.message} /></span></div>
-                                    <div><strong>{localize('Payout')}</strong>: {el_currency}{info.payout}</div>
-                                    <div><strong>{localize('Net Profit')}</strong>: {el_currency}{info.profit}</div>
-                                    <div><strong>{localize('Return')}</strong>: {info.returns}</div>
-                                </div>
+                {(!isEmptyObject(purchase_info)
+                    && purchase_info.echo_req.buy === info.id) ?
+                        <div className='purchase-error'>
+                            {!is_logged_in ?
+                                <LogInMessage />
+                              :
+                                <span className='info-text'>{getPropertyValue(purchase_info, ['error', 'message']) || createPurchaseInfo(purchase_info.buy)}</span>
                             }
                         </div>
-                        <div className='submit-section'>
-                            <Button
-                                is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id}
-                                id={`purchase_${type}`}
-                                className='primary green'
-                                has_effect
-                                text={localize('Purchase')}
-                                onClick={() => { onClickPurchase(info.id, info.stake); }}
-                            />
-                        </div>
-                    </React.Fragment>
+                    :
+                        <React.Fragment>
+                            {/* // TODO - move this outside of the loop  */}
+                            {!is_purchase_enabled &&
+                                <UILoader />
+                            }
+                            <div className='box'>
+                                <div className='left-column'>
+                                    <div className='type-wrapper'>
+                                        <img
+                                            className='type'
+                                            src={Url.urlForStatic(`images/trading_app/purchase/trade_types/ic_${trade_types[type].toLowerCase().replace(/(\s|-)/, '_')}_light.svg`) || undefined}
+                                        />
+                                    </div>
+                                    <h4 className='trade-type'>{trade_types[type]}</h4>
+                                </div>
+                                {(info.has_error || !info.id) ?
+                                    <div className={info.has_error ? 'error-info-wrapper': ''}><span>{info.message}</span></div>
+                                    :
+                                    <div className='purchase-info-wrapper'>
+                                        <div className='stake-wrapper'><span><strong>{localize('Stake')}</strong>: {el_currency}{info.stake}</span><span className='field-info'><Tooltip alignment='left' icon='info' message={info.message} /></span></div>
+                                        <div><strong>{localize('Payout')}</strong>: {el_currency}{info.payout}</div>
+                                        <div><strong>{localize('Net Profit')}</strong>: {el_currency}{info.profit}</div>
+                                        <div><strong>{localize('Return')}</strong>: {info.returns}</div>
+                                    </div>
+                                }
+                            </div>
+                            <div className='submit-section'>
+                                <Button
+                                    is_disabled={!is_purchase_enabled || !is_trade_enabled || !info.id}
+                                    id={`purchase_${type}`}
+                                    className='primary green'
+                                    has_effect
+                                    text={localize('Purchase')}
+                                    onClick={() => { onClickPurchase(info.id, info.stake); }}
+                                />
+                            </div>
+                        </React.Fragment>
                 }
             </Fieldset>
         );
