@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-25T01:33:56+0000\n"
+"PO-Revision-Date: 2018-06-27 06:12\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -120,15 +120,6 @@ msgstr "%1アフィリエイトプログラム利用規約"
 
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1アプリケーション・プログラム・インターフェース(\"API\") ご利用規約"
-
-msgid "%1 Graduate Programme"
-msgstr "%1 研究生プログラム"
-
-msgid "%1 Graduate programme"
-msgstr "%1 Graduate programme"
-
-msgid "%1 Hackathon Competition"
-msgstr "%1 ハッカソン コンペティション"
 
 msgid "%1 Introducing Broker (IB) Programme"
 msgstr "%1ブローカー紹介プログラム（IBプログラム）"
@@ -550,8 +541,8 @@ msgstr ""
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr "PEPとは公的地位に有するまたは委託されている個人をいいます。親族や親しい友人にPEPがいる場合も該当します。"
 
-msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
-msgstr "決済サービスエージェントは、お客さま（当社の顧客）と当社の間で取引所のような役割を果たします。決済サービスエージェントは、当社が取り扱いをしていない特定のEキャッシュ手段や現地通貨を利用したいお客さまに入出金の処理をします。振込や送金手数料はお客さま負担です。"
+msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
+msgstr ""
 
 msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
 msgstr "公的地位に有するまたはそのような機関から委託されている個人（PEP）は、彼/彼女の近親にPEPがいたり、密接関係者がいる場合も該当します。しかし、中堅または次席公務員は含まれません。国家元首、大臣、議会秘書、議員、裁判官、大使、政府高官、高位の軍役員、中央銀行の監査委員、国営企業の取締役がそれにあたります。上記の「近親」に関しては、配偶者/パートナー、両親、子供がPEPの対象になります。また、「密接関係者がいる場合」とは、ビジネスパートナーも含まれます。原則として、PEPに該当すると判断されても、12ヶ月以上は公的機関から委任されていない場合はPEPの対象ではありません。"
@@ -1482,14 +1473,14 @@ msgstr "口座残高："
 msgid "Bank statement"
 msgstr "銀行取引明細書"
 
+msgid "Bank wire, credit card, e-wallet"
+msgstr ""
+
 msgid "Bank wire/Money transfer"
 msgstr "銀行振込・送金"
 
 msgid "Bank your way"
 msgstr "ご入金方法"
-
-msgid "Bank-wire, credit card, e-cash wallet"
-msgstr "銀行振込にて対応しております"
 
 msgid "Banking"
 msgstr "決済"
@@ -1713,9 +1704,6 @@ msgstr "Binaryの子会社 Binary Investments (Europe) Ltdはマルタ金融サ�
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Binaryのプラットフォームでは、毎秒%1件の取引が行われています。"
 
-msgid "Binary.com Graduate Program"
-msgstr "Binary.com Graduate Program"
-
 msgid "Bitcoin"
 msgstr "ビットコイン"
 
@@ -1757,9 +1745,6 @@ msgstr "ブラウザ"
 
 msgid "Browser platforms"
 msgstr "ブラウザ プラットフォーム"
-
-msgid "Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career."
-msgstr "Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career."
 
 msgid "But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade."
 msgstr "But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade."
@@ -2767,8 +2752,8 @@ msgstr "ペイアウト1,000円からお取引を開始することが可能で�
 msgid "Deposit or withdraw below"
 msgstr "入手金はしたの欄から"
 
-msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
-msgstr "銀行振込によりお客さまのJPY口座に入出金を行います"
+msgid "Deposit or withdraw to your account via bank wire, credit card, or e-wallet."
+msgstr ""
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "ご入金：%1ブロックチェーン認証"
@@ -2995,8 +2980,8 @@ msgstr "本契約期間中に、あなたの全知的財産権に基いて、ロ
 msgid "Duties and Responsibilities:"
 msgstr "義務と責任："
 
-msgid "E-cash"
-msgstr "eキャッシュ"
+msgid "E-wallet"
+msgstr ""
 
 msgid "E. Account Management"
 msgstr "E. 口座管理"
@@ -3652,8 +3637,8 @@ msgstr "アフィリエイト・パートナーシップ・その他マーケテ
 msgid "For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our %1Complaints and Disputes%2 section."
 msgstr ""
 
-msgid "For e-cash methods or local currencies not supported by %1."
-msgstr "eキャッシュの手段または現地通貨が%1では対応していません。"
+msgid "For e-wallets or local currencies not supported by %1."
+msgstr ""
 
 msgid "For example, a CFD on Binary.com's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "例えば、US 30インデックスでのCFD取引は１ポイントUSD 1としてトレードを提供しています。現行価格USD 20,000のUS 30インデックスを1.0の数量で購入し、その後USD 20,010の価格で売却した場合、純利益は以下のように算出されます。"
@@ -4008,9 +3993,6 @@ msgstr "HF Vol 100"
 
 msgid "HF Vol 50"
 msgstr "HF Vol 50"
-
-msgid "Hackathon Competition"
-msgstr "Hackathon Competition"
 
 msgid "Hands-on test automation experience a plus"
 msgstr "実践的なテスト自動化の経験があると好ましい"
@@ -4824,8 +4806,8 @@ msgstr ""
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Interested in our liquidity solutions? Contact us at %1 for more info."
 
-msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
-msgstr "ご興味がおありですか？当社がまだ提供していない特定のEキャッシュ方法またはローカル決済オプションの提供が可能で、市場で良い実績をお持ちでしたら是非我々に<a href='mailto:%2'>お話をお聞かせください。</a>"
+msgid "Interested, so what's next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
+msgstr ""
 
 msgid "Internal Audit"
 msgstr "内部監査"
@@ -6046,6 +6028,9 @@ msgstr "マーケティング＆プロモーション"
 msgid "Marketing and promotions"
 msgstr "マーケティング＆プロモーション"
 
+msgid "Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal."
+msgstr ""
+
 msgid "Matches/Differs"
 msgstr "MATCH/DIFFER"
 
@@ -6773,6 +6758,12 @@ msgstr "注文の実行には通常、市場実行とインスタント実行と
 
 msgid "Other"
 msgstr "その他"
+
+msgid "Other Financial Instruments Trading Experience"
+msgstr ""
+
+msgid "Other Financial Instruments Trading Frequency"
+msgstr ""
 
 msgid "Other Obligations"
 msgstr "その他の義務"
@@ -8796,8 +8787,8 @@ msgstr "アフィリエイト会員の義務"
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
 msgstr "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
 
-msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-cash or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
-msgstr "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-cash or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
+msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
+msgstr ""
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
 msgstr "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
@@ -9950,12 +9941,6 @@ msgstr "ボラティリティインデックスの差金決済取引（CFD）は
 
 msgid "Trading Experience"
 msgstr "投資経験"
-
-msgid "Trading Experience in other Financial Instruments"
-msgstr ""
-
-msgid "Trading Frequency in other Financial Instruments"
-msgstr ""
 
 msgid "Trading Limits"
 msgstr "取引上限について"
