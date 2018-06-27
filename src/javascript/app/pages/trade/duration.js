@@ -211,6 +211,7 @@ const Durations = (() => {
         expiry_date_el.setAttribute('data-value', expiry_date_iso);
         expiry_time_el.value = expiry_time;
         expiry_time_el.setAttribute('data-value', expiry_time);
+        console.log('-> 214: set');
         Defaults.set('expiry_date', expiry_date_iso);
         Defaults.set('expiry_time', expiry_time);
         setTime(expiry_time);
@@ -252,6 +253,8 @@ const Durations = (() => {
     };
 
     const durationPopulate = () => {
+        // TODO: this makes endtime dropdown
+        console.log('durationPopulate', Defaults.get('expiry_date'));
         const unit          = CommonFunctions.getElementById('duration_units');
         const selected_unit = unit.options[unit.selectedIndex];
 
@@ -308,6 +311,7 @@ const Durations = (() => {
     };
 
     const expiryDateOnChange = ($expiry_date) => {
+        console.log('expiryDateOnChange');
         $expiry_date.off('change').on('change', function () {
             if (!CommonFunctions.dateValueChanged(this, 'date')) {
                 return false;
@@ -376,25 +380,34 @@ const Durations = (() => {
                         return false;
                     });
                 }
+
+                const default_date          = moment(Defaults.get('expiry_date'));
+                const is_default_date_valid = default_date.isAfter(min_date) && (!max_date || default_date.isBefore(max_date));
+                const selected_date         = is_default_date_valid ? default_date : min_date;
+                console.log('SELECTED_DATE', toISOFormat(selected_date));
+
                 if (!$expiry_date.is('select')) {
-                    $expiry_date.replaceWith($('<select/>', { id: 'expiry_date', 'data-value': toISOFormat(min_date) }));
+                    $expiry_date.replaceWith($('<select/>', { id: 'expiry_date', 'data-value': toISOFormat(selected_date) }));
                     $expiry_date = $('#expiry_date');
                     expiryDateOnChange($expiry_date);
                 } else {
-                    $expiry_date.empty().attr('data-value', toISOFormat(min_date));
+                    $expiry_date.empty().attr('data-value', toISOFormat(selected_date));
                 }
-                appendExpiryDateValues($expiry_date, min_date);
+                // TODO: adds to dropdown
+                appendExpiryDateValues($expiry_date, min_date, toISOFormat(min_date) === toISOFormat(selected_date));
                 if (max_date) {
-                    appendExpiryDateValues($expiry_date, max_date);
+                    appendExpiryDateValues($expiry_date, max_date, toISOFormat(max_date) === toISOFormat(selected_date));
                 }
-                requested = selectEndDate(min_date);
+                // TODO: min_date here overrites previous Default
+                requested = selectEndDate(selected_date);
             }
         }
         return requested;
     };
 
-    const appendExpiryDateValues = ($expiry_date, date) => {
-        $expiry_date.append($('<option/>', { text: date.format('ddd - DD MMM, YYYY'), 'data-value': toISOFormat(date) }));
+    // TODO: trying to change select so Dropdown will pick up the selected value
+    const appendExpiryDateValues = ($expiry_date, date, is_selected) => {
+        $expiry_date.append($('<option/>', { text: date.format('ddd - DD MMM, YYYY'), 'data-value': toISOFormat(date), 'selected': is_selected }));
     };
 
     const displayExpiryType = () => {
@@ -454,8 +467,12 @@ const Durations = (() => {
         const expiry_time       = CommonFunctions.getElementById('expiry_time');
         const expiry_time_row   = CommonFunctions.getElementById('expiry_time_row');
         const end_date_readable = toReadableFormat(end_date);
+        console.log('selectEndDate', end_date_readable);
         const end_date_iso      = toISOFormat(end_date);
         const $expiry_date      = $('#expiry_date');
+        // TODO: this one REVERTS date to MIN!!!!!!!!!!!!!!
+        // facepalm, selector value is wrong on this step
+        // fixed, selector value, STILL WRONG!!!!!!!
         Dropdown('#expiry_date');
         if ($expiry_date.is('input')) {
             $expiry_date.val(end_date_readable)
@@ -463,6 +480,7 @@ const Durations = (() => {
 
             removeCustomDropDown($expiry_date);
         }
+        console.log('-> 471: set');
         Defaults.set('expiry_date', end_date_iso);
         if (isNow() && !isSameDay()) {
             Defaults.remove('expiry_time');
