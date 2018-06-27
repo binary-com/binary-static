@@ -13,7 +13,7 @@ const forget = (match_values, callback) => (
     WS.forget('ticks_history', callback, match_values)
 );
 
-const SmartCharts = ({ onSymbolChange }) =>  {
+const SmartCharts = ({ onSymbolChange, initial_symbol }) =>  {
     const is_mobile = window.innerWidth <= 767;
     return (
         <React.Fragment>
@@ -29,6 +29,7 @@ const SmartCharts = ({ onSymbolChange }) =>  {
                         },
                     });
                 }}
+                initialSymbol={initial_symbol}
                 isMobile={is_mobile}
             />
         </React.Fragment>
@@ -36,6 +37,7 @@ const SmartCharts = ({ onSymbolChange }) =>  {
 };
 
 SmartCharts.propTypes = {
+    initial_symbol: PropTypes.string,
     onSymbolChange: PropTypes.func,
 };
 

@@ -42,7 +42,7 @@ const initApp = () => {
  * @return {string} returns the basename of current url
  */
 const getBasename = () => {
-    const regex_string = `(.*(${Object.keys(getAllLanguages()).join('|')})\/app\.html).*`;
+    const regex_string = `(.*(${Object.keys(getAllLanguages()).join('|')})/app\\.html).*`;
     const basename = new RegExp(regex_string, 'ig').exec(window.location.pathname);
 
     if (basename && basename.length) {
