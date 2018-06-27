@@ -77,8 +77,8 @@ const urls = [
     ['resources/market_timesws',           'monthly', 0.80],
 
     // ==================== Section: "landing_pages" ====================
-    ['graduates',                          'monthly', 0.80, 'NOT-en'],
-    ['hackathon',                          'monthly', 0.80, 'NOT-en'],
+    // ['graduates',                          'monthly', 0.80, 'NOT-en'],
+    // ['hackathon',                          'monthly', 0.80, 'NOT-en'],
 ];
 
 const url_prefix = 'https://www.binary.com/';
