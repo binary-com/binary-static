@@ -1,4 +1,5 @@
 const moment           = require('moment');
+const getLanguage      = require('../language').get;
 const LocalStore       = require('../storage').LocalStore;
 const getPropertyValue = require('../utility').getPropertyValue;
 const getStaticHash    = require('../utility').getStaticHash;
@@ -24,10 +25,12 @@ const isEmptyObject    = require('../utility').isEmptyObject;
 const SocketCache = (() => {
     // keys are msg_type
     // expire: how long to keep the value (in minutes)
-    // map_to: if presents, stores the response based on the value of the provided key in the echo_req
+    // map_to: to store different responses of the same key, should be array of:
+    //     string  : the property value from echo_req
+    //     function: return value of the function
     const config = {
         payout_currencies: { expire: 10 },
-        active_symbols   : { expire: 10, map_to: ['product_type', 'landing_company'] },
+        active_symbols   : { expire: 10, map_to: ['product_type', 'landing_company', getLanguage] },
         contracts_for    : { expire: 10, map_to: ['contracts_for', 'product_type', 'currency'] },
         exchange_rates   : { expire: 60, map_to: ['base_currency'] },
     };
@@ -90,7 +93,8 @@ const SocketCache = (() => {
 
         if (key && !isEmptyObject(source_obj)) {
             ((config[key] || {}).map_to || []).forEach((map_key) => {
-                key += map_key ? `_${source_obj[map_key] || ''}` : '';
+                const value = typeof map_key === 'function' ? map_key() : source_obj[map_key];
+                key += map_key ? `_${value || ''}` : '';
             });
         }
 
