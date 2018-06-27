@@ -16,11 +16,6 @@ const Signup = (() => {
     const onLoad = () => {
         getElementById('footer').setVisibility(0); // always hide footer in this page
 
-        $google_btn   = $('#google-signup');
-        $login_btn    = $('#login');
-        $verify_email = $('#verify_email');
-        $error_msg    = $('.error-msg');
-
         BinarySocket.wait('website_status').then((response) => {
             clients_country = response.website_status.clients_country;
 
@@ -33,8 +28,12 @@ const Signup = (() => {
                 fnc_response_handler: verifyEmailHandler,
                 fnc_additional_check: checkCountry,
             });
+            $google_btn   = $('#google-signup');
+            $login_btn    = $('#login');
+            $verify_email = $('#verify_email');
+            $error_msg    = $('.error-msg');
+        }).then(() => {
             $error_msg.addClass('center-text');
-
             $google_btn.on('click', (e) => {
                 e.preventDefault();
                 window.location.href = Login.socialLoginUrl('google');
