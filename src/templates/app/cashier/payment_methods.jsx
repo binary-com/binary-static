@@ -149,13 +149,6 @@ const PaymentMethods = () => {
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                             ],
                             [
-                                { text: <PaymentLogo logo='monetaru' /> },
-                                { text: 'USD GBP EUR AUD' },
-                                { text: '5 - 10,000' },
-                                { text: '5 - 10,000' },
-                                { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                            ],
-                            [
                                 { text: <PaymentLogo logo='webmoney' /> },
                                 { text: 'USD EUR' },
                                 { text: '5 - 10,000' },
