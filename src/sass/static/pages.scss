@@ -540,53 +540,6 @@ body #not_authenticated_financial ul.checked > li {
         h4 {
             color: $COLOR_BLUE;
         }
-        .graduate-container {
-            position: relative;
-            margin-top: 1em;
-
-            .graduate-box {
-                background-color: $COLOR_BLUE;
-                padding: 30px;
-                position: absolute;
-                top: 50px;
-                width: 100%;
-
-                h1 {
-                    @media (max-width: 480px) {
-                        font-size: $FONT_SIZE_XXL;
-                    }
-                }
-                p {
-                    color: $COLOR_WHITE;
-
-                    @media (max-width: 480px) {
-                        font-size: $FONT_SIZE_S;
-                    }
-                }
-                a.button span {
-                    background-color: $COLOR_WHITE;
-                    color: $COLOR_BLUE;
-                    border-radius: 0;
-                    font-weight: 600;
-                }
-                @media screen and (max-width: 1024px) and (min-width: 769px) {
-                    left: 16%;
-                    bottom: 24%;
-                    top: unset;
-                }
-                @media (max-width: 768px) {
-                    text-align: center;
-                    background-color: transparent;
-                    // Center div to parent
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-                @media (max-width: 480px) {
-                    padding: 15px;
-                }
-            }
-        }
         ul.role-section {
             display: flex;
             align-items: center;
