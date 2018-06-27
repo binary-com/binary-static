@@ -333,10 +333,8 @@ const Durations = (() => {
         if (CommonFunctions.getElementById('expiry_type').value === 'endtime') {
             let $expiry_date     = $('#expiry_date');
             const date_start_val = CommonFunctions.getElementById('date_start').value || 'now';
-            const is_now         = isNow(date_start_val);
-            const is_risefall    = /^(risefall|callputequal)$/.test(Defaults.get('formname')) || false;
 
-            if (is_now || !is_risefall) {
+            if (isNow(date_start_val) || /^(risefall|callputequal)$/.test(Defaults.get('formname'))) {
                 if (!$expiry_date.is('input')) {
                     $expiry_date.replaceWith($('<input/>', { id: 'expiry_date', type: 'text', readonly: 'readonly', autocomplete: 'off', 'data-value': $expiry_date.attr('data-value') }))
                         .val(toReadableFormat($expiry_date.attr('data-value')));
