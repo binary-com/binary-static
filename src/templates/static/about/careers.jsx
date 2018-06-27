@@ -175,26 +175,6 @@ const Careers = () => (
         </div>
 
         <div className='container'>
-            <div className='gr-row gr-padding-30'>
-                <div className='graduate-container'>
-                    <div className='gr-6 gr-no-gutter gr-gutter-t gr-push-6 gr-12-p gr-push-0-p gr-12-m gr-push-0-m gr-12-t gr-push-0-t'>
-                        <img className='responsive' src={it.url_for('images/pages/careers/graduate-@3x.jpg')} />
-                    </div>
-                    <div className='gr-8 gr-no-gutter gr-gutter-t gr-12-p gr-12-m graduate-box'>
-                        <h1>{it.L('[_1] Graduate programme', it.website_name)}</h1>
-                        <p>{it.L('Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career.')}</p>
-                        <div className='gr-padding-10'>
-                            <a className='button no-ajax' href={it.url_for('graduates')}>
-                                <span>{it.L('Learn more')}</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <SeparatorLine no_wrapper sub_class='gr-padding-10' />
-        </div>
-
-        <div className='container'>
             <div className='gr-padding-30 center-text'>
                 <h1>{it.L('Interview process')}</h1>
             </div>
