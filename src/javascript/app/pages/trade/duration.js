@@ -29,6 +29,7 @@ const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Durations = (() => {
     let selected_duration = {};
+    let smallest_duration = {};
     let has_end_date      = 0;
 
     const displayDurations = (time_start_val) => {
@@ -135,6 +136,11 @@ const Durations = (() => {
             commonTrading.durationOrder(a) > commonTrading.durationOrder(b) ? 1 : -1
         ));
 
+        smallest_duration = {
+            amount: duration_list[list[0]].dataset.minimum,
+            unit  : list[0],
+        };
+
         has_end_date = 0;
         for (let k = 0; k < list.length; k++) {
             const d = list[k];
@@ -181,14 +187,11 @@ const Durations = (() => {
     };
 
     const displayEndTime = () => {
-        const date_start     = CommonFunctions.getElementById('date_start').value;
-        const now            = !date_start || date_start === 'now';
-        const current_moment = moment((now ? window.time : parseInt(date_start) * 1000));
-        const smallest_unit = CommonFunctions.getElementById('duration_units').options[0];
-        const smallest_duration_value  = smallest_unit.dataset.minimum;
-        const smallest_duration_unit = duration_map[smallest_unit.value];
-        const smallest_end_time      = current_moment.add(smallest_duration_value, smallest_duration_unit);
-        const default_end_time       = Defaults.get('expiry_date');
+        const date_start        = CommonFunctions.getElementById('date_start').value;
+        const now               = !date_start || date_start === 'now';
+        const current_moment    = moment((now ? window.time : parseInt(date_start) * 1000));
+        const smallest_end_time = current_moment.add(smallest_duration.amount, smallest_duration.unit);
+        const default_end_time  = Defaults.get('expiry_date');
 
         let expiry_date      = default_end_time &&
             moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : smallest_end_time.add(5, 'minutes').utc();
@@ -351,11 +354,9 @@ const Durations = (() => {
                     expiryDateOnChange($expiry_date);
                     removeCustomDropDown($expiry_date);
                 }
-                const smallest_unit      = CommonFunctions.getElementById('duration_units').options[0];
-                const smallest_unit_name = duration_map[smallest_unit.value];
                 DatePicker.init({
                     selector: '#expiry_date',
-                    minDate : smallest_unit_name === 'day' ? 1 : 0,
+                    minDate : smallest_duration.unit === 'd' ? 1 : 0,
                     maxDate : 365,
                 });
             } else {
