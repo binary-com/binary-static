@@ -8,13 +8,16 @@ const Signup = (() => {
     let clients_country,
         $google_btn,
         $login_btn,
-        $error_msg,
         $verify_email;
 
     const form_id = '#signup_form';
 
     const onLoad = () => {
         getElementById('footer').setVisibility(0); // always hide footer in this page
+
+        $google_btn   = $('#google-signup');
+        $login_btn    = $('#login');
+        $verify_email = $('#verify_email');
 
         BinarySocket.wait('website_status').then((response) => {
             clients_country = response.website_status.clients_country;
@@ -28,20 +31,16 @@ const Signup = (() => {
                 fnc_response_handler: verifyEmailHandler,
                 fnc_additional_check: checkCountry,
             });
-            $google_btn   = $('#google-signup');
-            $login_btn    = $('#login');
-            $verify_email = $('#verify_email');
-            $error_msg    = $('.error-msg');
-        }).then(() => {
-            $error_msg.addClass('center-text');
-            $google_btn.on('click', (e) => {
-                e.preventDefault();
-                window.location.href = Login.socialLoginUrl('google');
-            });
-            $login_btn.on('click', (e) => {
-                e.preventDefault();
-                Login.redirectToLogin();
-            });
+            $('.error-msg').addClass('center-text'); // this element exist only after calling FormManager.init
+        });
+
+        $google_btn.on('click', (e) => {
+            e.preventDefault();
+            window.location.href = Login.socialLoginUrl('google');
+        });
+        $login_btn.on('click', (e) => {
+            e.preventDefault();
+            Login.redirectToLogin();
         });
     };
 
