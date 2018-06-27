@@ -28,7 +28,7 @@ const Signup = () => (
         <div id='verify_email' className='center-text invisible gr-padding-20'>
             <img className='gr-padding-20' src={it.url_for('images/common/email_sent.svg')} />
             <h1>{it.L('We\'re almost there')}</h1>
-            <p>{it.L('Please check your email for the verification link to complete the process')}</p>
+            <p>{it.L('Please check your email for the verification link to complete the process.')}</p>
         </div>
     </React.Fragment>
 );
