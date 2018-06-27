@@ -180,21 +180,13 @@ const Durations = (() => {
         return (value * seconds[from_unit]) / seconds[to_unit];
     };
 
-    const getSmallestDuration = () => {
-        const unit               = CommonFunctions.getElementById('duration_units');
-        const smallest_unit      = unit.options[0];
-        const smallest_unit_num  = smallest_unit.dataset.minimum;
-        const smallest_unit_name = duration_map[smallest_unit.value];
-        return [smallest_unit_num, smallest_unit_name];
-    };
-
     const displayEndTime = () => {
         const date_start     = CommonFunctions.getElementById('date_start').value;
         const now            = !date_start || date_start === 'now';
         const current_moment = moment((now ? window.time : parseInt(date_start) * 1000));
-        const [
-            smallest_duration_value,
-            smallest_duration_unit ] = getSmallestDuration();
+        const smallest_unit = CommonFunctions.getElementById('duration_units').options[0];
+        const smallest_duration_value  = smallest_unit.dataset.minimum;
+        const smallest_duration_unit = duration_map[smallest_unit.value];
         const smallest_end_time      = current_moment.add(smallest_duration_value, smallest_duration_unit);
         const default_end_time       = Defaults.get('expiry_date');
 
@@ -359,10 +351,11 @@ const Durations = (() => {
                     expiryDateOnChange($expiry_date);
                     removeCustomDropDown($expiry_date);
                 }
-                const smallest_duration_unit = getSmallestDuration()[1];
+                const smallest_unit      = CommonFunctions.getElementById('duration_units').options[0];
+                const smallest_unit_name = duration_map[smallest_unit.value];
                 DatePicker.init({
                     selector: '#expiry_date',
-                    minDate : smallest_duration_unit === 'day' ? 1 : 0,
+                    minDate : smallest_unit_name === 'day' ? 1 : 0,
                     maxDate : 365,
                 });
             } else {
