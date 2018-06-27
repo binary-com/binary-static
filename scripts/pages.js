@@ -63,6 +63,7 @@ module.exports = [
     ['user/warning',                            'app/user/warning',                            'default',    'Warning'],
 
     ['endpoint',                                'app/endpoint',                                'default',    'Endpoint'],
+    ['signup',                                  'app/signup',                                  'default',    'Signup'],
 
     ['dialog',                                  'app/dialog',                                  null],
     ['explanation',                             'app/trade/explanation',                       null],
@@ -124,8 +125,6 @@ module.exports = [
     ['metatrader/types-of-accounts',            'static/metatrader/types_of_accounts',         'default',     'Types of MetaTrader 5 accounts'],
 
     ['affiliate_disclaimer',                    'static/japan/affiliates/popup',               null,          '',                                 'NOT-ja,en'],
-
-    ['signup',                                  'static/signup',                               'default',    'Signup'],
 
     // ==================== Section: "landing_pages" ====================
     ['graduates',                               'landing_pages/graduate_program',              null,        'Binary.com Graduate Program',        'NOT-en'],

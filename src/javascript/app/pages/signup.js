@@ -1,21 +1,25 @@
-const BinarySocket   = require('../../app/base/socket');
-const FormManager    = require('../../app/common/form_manager');
+const BinarySocket   = require('../base/socket');
+const FormManager    = require('../common/form_manager');
+const Login          = require('../../_common/base/login');
 const getElementById = require('../../_common/common_functions').getElementById;
 const localize       = require('../../_common/localize').localize;
-const Login          = require('../../_common/base/login');
 
 const Signup = (() => {
     let clients_country,
         $google_btn,
-        $login_btn;
+        $login_btn,
+        $error_msg,
+        $verify_email;
 
     const form_id = '#signup_form';
 
     const onLoad = () => {
         getElementById('footer').setVisibility(0); // always hide footer in this page
 
-        $google_btn = $('#google-signup');
-        $login_btn  = $('#login');
+        $google_btn   = $('#google-signup');
+        $login_btn    = $('#login');
+        $verify_email = $('#verify_email');
+        $error_msg    = $('.error-msg');
 
         BinarySocket.wait('website_status').then((response) => {
             clients_country = response.website_status.clients_country;
@@ -29,13 +33,13 @@ const Signup = (() => {
                 fnc_response_handler: verifyEmailHandler,
                 fnc_additional_check: checkCountry,
             });
-            $('.error-msg').addClass('center-text');
+            $error_msg.addClass('center-text');
 
-            $google_btn.off('click').on('click', (e) => {
+            $google_btn.on('click', (e) => {
                 e.preventDefault();
                 window.location.href = Login.socialLoginUrl('google');
             });
-            $login_btn.off('click').on('click', (e) => {
+            $login_btn.on('click', (e) => {
                 e.preventDefault();
                 Login.redirectToLogin();
             });
@@ -47,7 +51,7 @@ const Signup = (() => {
             showError('error', response.error.message);
         } else {
             $(form_id).setVisibility(0);
-            $('#verify_email').setVisibility(1);
+            $verify_email.setVisibility(1);
         }
     };
 
