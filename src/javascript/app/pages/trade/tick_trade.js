@@ -473,8 +473,7 @@ const TickDisplay = (() => {
     };
 
     const plotResetSpot = (r_barrier) => {
-        if (reset_spot_plotted || !chart) return;
-
+        if (reset_spot_plotted || !chart || !Reset.isReset(contract.contract_type)) return;
 
         const is_resetcall  = contract.contract_type === 'RESETCALL';
         const entry_barrier = contract.entry_spot;
