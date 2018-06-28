@@ -1,11 +1,13 @@
 import {
     action,
-    observable }              from 'mobx';
-import ContractType           from '../pages/trading/actions/helpers/contract_type';
-import { updateStore }        from '../pages/trading/actions/index';
-import { updateBarrierShade } from '../pages/trading/actions/helpers/chart';
-import { processPurchase }    from '../pages/trading/actions/purchase';
-import Client                 from '../../_common/base/client_base';
+    observable }                          from 'mobx';
+import URLHelper                          from '../common/url_helper';
+import { updateBarrierShade }             from '../pages/trading/actions/helpers/chart';
+import ContractType                       from '../pages/trading/actions/helpers/contract_type';
+import { allowed_query_string_variables } from '../pages/trading/actions/helpers/query_string';
+import { updateStore }                    from '../pages/trading/actions/index';
+import { processPurchase }                from '../pages/trading/actions/purchase';
+import Client                             from '../../_common/base/client_base';
 
 export default class TradeStore {
     constructor(main_store) {
@@ -13,11 +15,22 @@ export default class TradeStore {
     }
 
     @action.bound init() {
+
+        // Update the url's query string by default values of the store
+        const queryParams = URLHelper
+            .updateQueryString(this, allowed_query_string_variables);
+
+        // update state values from query string
+        [...queryParams].forEach(param => {
+            this[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
+        });
+
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
                 updateStore(this, ContractType.getContractCategories());
             }));
         }
+
     }
 
     @action.bound handleChange(e) {
@@ -25,6 +38,7 @@ export default class TradeStore {
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
+
         updateStore(this, { [name]: (type === 'number' ? +value : value) }, true);
     }
 

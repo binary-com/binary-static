@@ -13,7 +13,7 @@ const forget = (match_values, callback) => (
     WS.forget('ticks_history', callback, match_values)
 );
 
-const SmartCharts = ({ onSymbolChange, chart_barriers }) =>  {
+const SmartCharts = ({ onSymbolChange, chart_barriers, initial_symbol }) =>  {
     const is_mobile = window.innerWidth <= 767;
     const barriers  = Object.keys(chart_barriers || {}).map(key => chart_barriers[key]);
 
@@ -32,6 +32,7 @@ const SmartCharts = ({ onSymbolChange, chart_barriers }) =>  {
                     });
                 }}
                 barriers={barriers}
+                initialSymbol={initial_symbol}
                 isMobile={is_mobile}
             />
         </React.Fragment>
@@ -39,6 +40,7 @@ const SmartCharts = ({ onSymbolChange, chart_barriers }) =>  {
 };
 
 SmartCharts.propTypes = {
+    initial_symbol: PropTypes.string,
     onSymbolChange: PropTypes.func,
     chart_barriers: PropTypes.object,
 };
