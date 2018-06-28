@@ -219,7 +219,7 @@ const BinaryOptions = () => {
                         <p>{it.L('When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there\'s no risk of \'slippage\' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions.')}</p>
                     </Section>
                     <Section id='types-of-trades' header={it.L('Types of trades')}>
-                        <p>{it.L('[_1] offers five trade types that will help you execute your market view or strategy:', it.website_name)}</p>
+                        <p>{it.L('[_1] offers six trade types that will help you execute your market view or strategy:', it.website_name)}</p>
                         <SectionLarge header={it.L('Up/Down')} image='types-of-trades/up_down' text={it.L('There are two types of Up/Down trades:')}>
                             <ListStrong header={it.L('Rise/Fall')}    text={it.L('Predict that the market will rise or fall from its current level')} />
                             <ListStrong header={it.L('Higher/Lower')} text={it.L('Predict that the market will end higher or lower than a price target')} />
@@ -245,6 +245,7 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Reset-Put')}  text={it.L('Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)')} />
                             <p>{it.L('At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot.')}</p>
                         </SectionLarge>
+                        <SectionLarge header={it.L('High/Low Ticks')} image='types-of-trades/high_low_ticks' text={it.L('Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks.')} />
                         <p>{it.L('Please note that Asians and Digits are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='range-of-markets' header={it.L('Range of markets')}>

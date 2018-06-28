@@ -81,7 +81,7 @@ const Index = () => (
                                 hash='types-of-trades'
                                 image='binary-options/types-of-trades'
                                 header={it.L('Types of trades')}
-                                text={it.L('Learn about the five types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets.')}
+                                text={it.L('Learn about the six types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets.')}
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
