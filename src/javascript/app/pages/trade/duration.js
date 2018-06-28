@@ -378,7 +378,8 @@ const Durations = (() => {
                 }
 
                 const default_date          = moment(Defaults.get('expiry_date'));
-                const is_default_date_valid = default_date.isSameOrAfter(min_date) && (!max_date || default_date.isSameOrBefore(max_date));
+                const is_default_date_valid = default_date.isSameOrAfter(min_date)
+                                                && (!max_date || default_date.isSameOrBefore(max_date));
                 const selected_date         = is_default_date_valid ? default_date : min_date;
 
                 if (!$expiry_date.is('select')) {
