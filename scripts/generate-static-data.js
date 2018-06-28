@@ -443,6 +443,7 @@ const texts = [
     'Open',
     'Closed',
     'Contract has not started yet',
+    'Resale of this contract is not offered.',
     'Price',
     'Spot Time',
     'Spot Time (GMT)',

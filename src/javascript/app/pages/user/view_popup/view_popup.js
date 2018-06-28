@@ -74,7 +74,7 @@ const ViewPopup = (() => {
             return;
         }
 
-        $.extend(contract, response.proposal_open_contract);
+        contract = $.extend({}, response.proposal_open_contract);
         // Lookback multiplier value
         multiplier = contract.multiplier;
 
@@ -297,6 +297,13 @@ const ViewPopup = (() => {
         sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
         contract.chart_validation_error = contract.validation_error;
         contract.validation_error       = '';
+
+        const is_invalid_contract = !is_ended && is_started && typeof contract.bid_price === 'undefined';
+        if (is_invalid_contract) { // hide Indicative, Profit/Loss, sell button and its message
+            $container.find('#trade_details_message').text(localize('Resale of this contract is not offered.')).setVisibility(1);
+            sellSetVisibility(false);
+        }
+        $container.find('#trade_details_indicative_price, #trade_details_profit_loss').parents('tr').setVisibility(!is_invalid_contract);
     };
 
     // This is called by clock.js in order to sync time updates on header as well as view popup

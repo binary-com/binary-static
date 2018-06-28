@@ -162,7 +162,8 @@ const PortfolioInit = (() => {
         if (+proposal.is_sold === 1) {
             removeContract(proposal.contract_id);
         } else {
-            if (+proposal.is_valid_to_sell !== 1) {
+            const is_price_missing = typeof data.proposal_open_contract.bid_price === 'undefined';
+            if (+proposal.is_valid_to_sell !== 1 || is_price_missing) {
                 no_resale_html = $('<span/>', { class: 'message', text: localize('Resale not offered') });
                 $td.addClass('no_resale');
             } else {
@@ -171,7 +172,7 @@ const PortfolioInit = (() => {
                 }
                 $td.removeClass('no_resale');
             }
-            $td.html($('<strong/>', { class: `indicative_price ${status_class}`, html: formatMoney(proposal.currency, values[proposal.contract_id].indicative) })
+            $td.html($('<strong/>', { class: `indicative_price ${status_class}`, html: is_price_missing ? '' : formatMoney(proposal.currency, values[proposal.contract_id].indicative) })
                 .append(no_resale_html));
         }
 
