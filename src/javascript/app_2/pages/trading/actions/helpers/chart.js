@@ -18,9 +18,9 @@ export const createChartBarriersConfig = (store, proposal_response) => {
             low  : +barrier2,
             shade: 'NONE_DOUBLE',
         }),
-        relative         : !has_barrier || /^[+-]/.test(barrier),
-        draggable        : has_barrier,
-        disablePriceLines: !has_barrier,
+        relative      : !has_barrier || /^[+-]/.test(barrier),
+        draggable     : has_barrier,
+        hidePriceLines: !has_barrier,
     });
 
     return [config];
