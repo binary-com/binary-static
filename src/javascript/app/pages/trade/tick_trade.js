@@ -53,6 +53,7 @@ const TickDisplay = (() => {
 
     const initialize = (data, options) => {
         // setting up globals
+        applicable_ticks     = [];
         number_of_ticks      = parseInt(data.number_of_ticks);
         display_symbol       = data.display_symbol;
         contract_start_ms    = parseInt(data.contract_start) * 1000;
