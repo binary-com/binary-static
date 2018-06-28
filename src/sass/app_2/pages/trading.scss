@@ -149,7 +149,6 @@
         &.trade-types {
             border: 0;
             padding: 0;
-            margin-bottom: 0;
             background: transparent;
         }
         @media screen and (max-height: 800px) {
@@ -222,7 +221,7 @@
                 }
                 a {
                     text-decoration: none;
-                    color: $COLOR_BLACK;
+                    color: $COLOR_LIGHT_BLACK;
                     font-weight: 500;
 
                     span.info-text {
@@ -230,7 +229,7 @@
                     }
                     &:hover, &:focus, &:active {
                         text-decoration: underline;
-                        color: $COLOR_BLACK;
+                        color: $COLOR_LIGHT_BLACK;
                     }
                 }
             }

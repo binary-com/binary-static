@@ -80,7 +80,7 @@
                             font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                             font-weight: 300;
                             text-transform: capitalize;
-                            color: $COLOR_BLACK;
+                            color: $COLOR_LIGHT_BLACK;
                             padding: 14px 18px 12px 34px;
 
                             &:before {
@@ -169,7 +169,7 @@
 
                             p.acc-balance-accountid, p.acc-balance-currency {
                                 line-height: 0.5;
-                                color: $COLOR_BLACK;
+                                color: $COLOR_LIGHT_BLACK;
                                 font-size: 0.875rem; //stylelint-disable-line number-max-precision
                                 margin: 0.5em 1rem;
                                 font-weight: 400;
@@ -178,7 +178,7 @@
                         }
                         p.acc-balance-amount {
                             line-height: 100%;
-                            color: $COLOR_BLACK;
+                            color: $COLOR_LIGHT_BLACK;
                             font-size: 1rem;
                             margin: 0.5rem 1rem;
                             font-weight: 600;

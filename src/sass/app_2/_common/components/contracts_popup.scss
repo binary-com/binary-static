@@ -21,7 +21,7 @@ div.contracts-popup-container {
         align-items: center;
         justify-content: flex-start;
         flex-direction: column;
-        padding: 1vh 0;
+        padding: 5px;
 
         i {
             margin-bottom: 5px;
@@ -109,7 +109,7 @@ div.contracts-popup-container {
             position: absolute;
             width: 560px;
             right: calc(100% + 10px);
-            top: -56px;
+            top: -54px;
             display: grid;
             grid-auto-columns: 1fr;
             z-index: 2;
