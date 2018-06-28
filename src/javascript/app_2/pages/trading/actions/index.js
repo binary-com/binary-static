@@ -39,7 +39,7 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
         });
     });
 
-    if (is_by_user || /^(symbol|contract_types_list)$/.test(Object.keys(new_state))) {
+    if (is_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {
         if ('symbol' in new_state) {
             await Symbol.onChangeSymbolAsync(new_state.symbol);
         }
@@ -73,7 +73,7 @@ const process = async(store, new_state) => {
 const getMethodsList = (store, new_state) => ([
     ContractTypeHelper.getContractCategories,
     ContractType.onChangeContractTypeList,
-    ...(/^(symbol|contract_type)$/.test(Object.keys(new_state)) || !store.contract_type ? // symbol/contract_type changed or contract_type not set yet
+    ...(/\b(symbol|contract_type)\b/.test(Object.keys(new_state)) || !store.contract_type ? // symbol/contract_type changed or contract_type not set yet
         [ContractType.onChangeContractType] : []),
     Duration.onChangeExpiry,
     StartDate.onChangeStartDate,

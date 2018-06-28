@@ -21,9 +21,11 @@ export default class TradeStore {
             .updateQueryString(this, allowed_query_string_variables);
 
         // update state values from query string
+        const config = {};
         [...queryParams].forEach(param => {
-            this[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
+            config[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
         });
+        updateStore(this, config);
 
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
