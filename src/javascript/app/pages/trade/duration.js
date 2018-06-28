@@ -343,10 +343,8 @@ const Durations = (() => {
         if (CommonFunctions.getElementById('expiry_type').value === 'endtime') {
             let $expiry_date     = $('#expiry_date');
             const date_start_val = CommonFunctions.getElementById('date_start').value || 'now';
-            const is_now         = isNow(date_start_val);
-            const is_risefall    = /risefall/.test(Defaults.get('formname')) || false;
 
-            if (is_now || !is_risefall) {
+            if (isNow(date_start_val) || !/^(risefall|callputequal)$/.test(Defaults.get('formname'))) {
                 if (!$expiry_date.is('input')) {
                     $expiry_date.replaceWith($('<input/>', { id: 'expiry_date', type: 'text', readonly: 'readonly', autocomplete: 'off', 'data-value': $expiry_date.attr('data-value') }))
                         .val(toReadableFormat($expiry_date.attr('data-value')));
@@ -378,25 +376,31 @@ const Durations = (() => {
                         return false;
                     });
                 }
+
+                const default_date          = moment(Defaults.get('expiry_date'));
+                const is_default_date_valid = default_date.isSameOrAfter(min_date)
+                                                && (!max_date || default_date.isSameOrBefore(max_date));
+                const selected_date         = is_default_date_valid ? default_date : min_date;
+
                 if (!$expiry_date.is('select')) {
-                    $expiry_date.replaceWith($('<select/>', { id: 'expiry_date', 'data-value': toISOFormat(min_date) }));
+                    $expiry_date.replaceWith($('<select/>', { id: 'expiry_date', 'data-value': toISOFormat(selected_date) }));
                     $expiry_date = $('#expiry_date');
                     expiryDateOnChange($expiry_date);
                 } else {
-                    $expiry_date.empty().attr('data-value', toISOFormat(min_date));
+                    $expiry_date.empty().attr('data-value', toISOFormat(selected_date));
                 }
-                appendExpiryDateValues($expiry_date, min_date);
+                appendExpiryDateValues($expiry_date, min_date, selected_date);
                 if (max_date) {
-                    appendExpiryDateValues($expiry_date, max_date);
+                    appendExpiryDateValues($expiry_date, max_date, selected_date);
                 }
-                requested = selectEndDate(min_date);
+                requested = selectEndDate(selected_date);
             }
         }
         return requested;
     };
 
-    const appendExpiryDateValues = ($expiry_date, date) => {
-        $expiry_date.append($('<option/>', { text: date.format('ddd - DD MMM, YYYY'), 'data-value': toISOFormat(date) }));
+    const appendExpiryDateValues = ($expiry_date, date, selected_date) => {
+        $expiry_date.append($('<option/>', { text: date.format('ddd - DD MMM, YYYY'), 'data-value': toISOFormat(date), 'selected': toISOFormat(selected_date) === toISOFormat(date) }));
     };
 
     const displayExpiryType = () => {
