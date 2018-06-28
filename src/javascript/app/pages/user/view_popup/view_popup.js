@@ -279,6 +279,7 @@ const ViewPopup = (() => {
             contractEnded();
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
             else TickDisplay.updateChart({ is_sold: true }, contract);
+            containerSetText('trade_details_live_remaining', '-');
             Clock.setExternalTimer(); // stop timer
         } else {
             $container.find('#notice_ongoing').setVisibility(1);
@@ -321,9 +322,12 @@ const ViewPopup = (() => {
     };
 
     const contractEnded = () => {
-        getElementById('trade_details_live_date').parentNode.setVisibility(0);
+        const el_live_date = getElementById('trade_details_live_date');
+        if (el_live_date.parentNode) {
+            el_live_date.parentNode.setVisibility(0);
+        }
 
-        containerSetText('trade_details_current_title', localize(contract.status === 'sold' || (contract.sell_spot_time < contract.date_expiry) ? 'Contract Sold' : 'Contract Expiry'));
+        containerSetText('trade_details_current_title', 'Contract Result');
         containerSetText('trade_details_indicative_label', localize('Price'));
         if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));

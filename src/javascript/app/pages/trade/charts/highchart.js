@@ -50,7 +50,7 @@ const Highchart = (() => {
 
     const initOnce = () => {
         chart = options = response_id = contract = request = min_point = max_point = '';
-        lines_drawn = [];
+        lines_drawn = new Set();
 
         is_initialized = is_chart_delayed = is_chart_subscribed = stop_streaming = is_response_id_set =
             is_contracts_for_send = is_history_send = is_entry_tick_barrier_selected = false;
@@ -488,20 +488,16 @@ const Highchart = (() => {
     // calculate where to display the maximum value of the x-axis of the chart for line chart
     const getMaxHistory = (history_times) => {
         let end = end_time;
-        if (sell_spot_time && (sell_time || sell_spot_time) < end_time) {
-            end = sell_spot_time;
+        if (sell_time && sell_time < end_time) {
+            end = sell_time;
         } else if (exit_tick_time) {
             end = exit_tick_time;
         }
 
         const history_times_length = history_times.length;
         if (is_settleable || is_sold) {
-            for (let i = history_times_length - 1; i >= 0; i--) {
-                if (parseInt(history_times[i]) === end) {
-                    max_point = parseInt(history_times[i === history_times_length - 1 ? i : i + 1]);
-                    break;
-                }
-            }
+            const i = history_times.findIndex(time => +time > end);
+            max_point = i > 0 ? +history_times[i] : end_time;
         }
         setMaxForDelayedChart(history_times, history_times_length);
     };
@@ -563,7 +559,7 @@ const Highchart = (() => {
     };
 
     const drawLineX = (properties) => {
-        if (chart && properties.value && !(new RegExp(properties.value).test(lines_drawn))) {
+        if (chart && properties.value && !lines_drawn.has(properties.value)) {
             addPlotLine({
                 value    : properties.value * 1000,
                 label    : properties.label || '',
@@ -571,7 +567,7 @@ const Highchart = (() => {
                 dashStyle: properties.dash_style || '',
                 color    : properties.color || '',
             }, 'x');
-            lines_drawn.push(properties.value);
+            lines_drawn.add(properties.value);
         }
     };
 
@@ -598,7 +594,7 @@ const Highchart = (() => {
     };
 
     const setStopStreaming = () => {
-        if (chart && (is_sold || is_settleable)) {
+        if (chart && (is_sold || is_settleable) && (isSoldBeforeExpiry() ? sell_time : end_time)) {
             const data = getPropertyValue(getPropertyValue(chart, ['series'])[0], ['options', 'data']);
             if (data && data.length > 0) {
                 let last_data = data[data.length - 1];
@@ -610,10 +606,6 @@ const Highchart = (() => {
                 const last = parseInt(last_data.x || last_data[0]);
                 if (last > (end_time * 1000) || last > ((sell_time || sell_spot_time) * 1000)) {
                     stop_streaming = true;
-                } else {
-                    // add a null point if the last tick is before end time to bring end time line into view
-                    const time = isSoldBeforeExpiry() ? (sell_time || sell_spot_time) : end_time;
-                    chart.series[0].addPoint({ x: ((time || window.time.unix()) + margin) * 1000, y: null });
                 }
             }
         }
