@@ -21,7 +21,7 @@ const Signup = () => (
                         <span className='icon-google'>{it.L('Create account with Google')}</span>
                     </a>
                 </div>
-                <p>{it.L('Already have an account? [_1]Login[_2] here', '<a id="login" href="javascript:;">', '</a>')}</p>
+                <p>{it.L('Already have an account? [_1]Log in[_2] here', '<a id="login" href="javascript:;">', '</a>')}</p>
             </div>
         </form>
 
