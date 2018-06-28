@@ -104,7 +104,7 @@ const AuthenticateMessage = () => (
             instructions={[
                 it.L('Must be a clear, colour photo or scanned image'), it.L('Minimum of six months validity'),
                 it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
-                it.L('Maximum upload size for each file is 8MB'),
+                it.L('Maximum upload size for each file is [_1]', '8MB'),
             ]}
             type='poi'
             accepted_documents={[
@@ -125,7 +125,7 @@ const AuthenticateMessage = () => (
                 it.L('Must be a clear, colour photo or scanned image'),
                 it.L('Issued under your own name'), it.L('Dated within the last six months'),
                 it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
-                it.L('Maximum upload size for each file is 8MB'),
+                it.L('Maximum upload size for each file is [_1]', '8MB'),
             ]}
             type='poa'
             accepted_documents={[

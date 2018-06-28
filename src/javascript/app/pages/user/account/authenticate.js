@@ -9,6 +9,8 @@ const showLoadingImage    = require('../../../../_common/utility').showLoadingIm
 
 const Authenticate = (() => {
     let needs_action = false;
+    let success_any  = false;
+    let dup_files    = [];
 
     const onLoad = () => {
         BinarySocket.send({ get_account_status: 1 }).then((response) => {
@@ -44,6 +46,8 @@ const Authenticate = (() => {
             active     : false,
         });
         const file_checks = {};
+        dup_files   = [];
+        success_any = false;
         // Setup Date picker
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
@@ -158,7 +162,8 @@ const Authenticate = (() => {
                     const name = $e.attr('data-name');
                     const $inputs = $e.closest('.fields').find('input[type="text"]');
                     const file_obj = {
-                        file: e.files[0],
+                        file     : e.files[0],
+                        chunkSize: 16384, // any higher than this sends garbage data to websocket currently.
                         type,
                         name,
                     };
@@ -174,14 +179,23 @@ const Authenticate = (() => {
         };
 
         const processFiles = (files) => {
-            const promises = [];
-            const uploader = new DocumentUploader({ connection: BinarySocket.get() });
+            const uploader = new DocumentUploader({ connection: BinarySocket.get() }); // send 'debug: true' here for debugging
 
-            readFiles(files).then((objects) => {
-                objects.forEach(obj => promises.push(uploader.upload(obj)));
-                Promise.all(promises)
-                    .then(onResponse)
-                    .catch(showError);
+            let uploaded = 0;
+            readFiles(files).then((arr_files) => {
+                const to_upload = arr_files.length;
+                // sequentially send files
+                const uploadFile = () => {
+                    uploader.upload(arr_files[uploaded]).then((response) => {
+                        const is_last_upload = to_upload === uploaded + 1;
+                        onResponse(response, is_last_upload);
+                        if (!is_last_upload) {
+                            uploaded += 1;
+                            uploadFile();
+                        }
+                    }).catch(showError);
+                };
+                uploadFile();
             }).catch(showError);
         };
 
@@ -200,6 +214,7 @@ const Authenticate = (() => {
                             documentFormat: format,
                             documentId    : f.id_number || undefined,
                             expirationDate: f.exp_date || undefined,
+                            chunkSize     : f.chunkSize,
                             passthrough   : {
                                 filename: f.file.name,
                                 name    : f.name,
@@ -291,21 +306,17 @@ const Authenticate = (() => {
             $('#success-message').setVisibility(1);
         };
 
-        const onResponse = (res) => {
-            const dup_files = [];
-            let successAny = false;
-            res.forEach((file) => {
-                const passthrough = file.passthrough;
-                if (!file.warning) {
-                    successAny = true;
-                } else {
-                    dup_files.push(`${passthrough.filename}(${passthrough.name})`);
-                }
-            });
-            if (successAny) {
+        const onResponse = (response, is_last_response) => {
+            const passthrough = response.passthrough;
+            if (!response.warning) {
+                success_any = true;
+            } else {
+                dup_files.push(`${passthrough.filename}(${passthrough.name})`);
+            }
+            if (success_any && is_last_response) {
                 showSuccess();
             } else {
-                showError({message: localize('Following file(s) were already uploaded: [_1]', [`[ ${dup_files.join(', ')} ]`])});
+                showError({ message: dup_files.length ? localize('Following file(s) were already uploaded: [_1]', [`[ ${dup_files.join(', ')} ]`]) : response.error.message });
             }
         };
     };
