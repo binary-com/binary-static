@@ -30,11 +30,11 @@ const createPurchaseInfo = (purchase_info) => (
 
 const LogInMessage = () => (
     <div className='purchase-login-wrapper'>
-        <span className='info-text'>{localize('Please login to purchase the contract')}</span>
+        <span className='info-text'>{localize('Please log in to purchase the contract')}</span>
         <Button
             className='secondary orange'
             has_effect
-            text={localize('LOG IN')}
+            text={localize('log in')}
             onClick={redirectToLogin}
         />
         <p>{localize('Don\'t have a Binary.com account?')}</p>
