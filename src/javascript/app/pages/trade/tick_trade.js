@@ -228,7 +228,6 @@ const TickDisplay = (() => {
                 barrier_quote = parseFloat(contract.barrier);
             }
 
-
             chart.yAxis[0].addPlotLine({
                 id   : 'tick-barrier',
                 value: barrier_quote,
