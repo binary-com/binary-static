@@ -6,7 +6,7 @@ import { requestLogout } from '../../base/common';
 import Client from '../../../_common/base/client_base';
 
 export const MenuDrawer = () => {
-    const is_mobile = window.innerWidth < 980;
+    const is_desktop = window.innerWidth > 979;
     return (
         <div className='drawer-items-container'>
             <PerfectScrollbar>
@@ -28,7 +28,7 @@ export const MenuDrawer = () => {
                             { text: localize('API Token') },
                         ]}
                     />
-                    {!!is_mobile &&
+                    {!is_desktop &&
                     <React.Fragment>
                         <DrawerItem text={localize('Purchase Confirmation')} />
                         <DrawerItem text={localize('Purchase Lock')} />
