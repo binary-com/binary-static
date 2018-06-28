@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-27 06:13\n"
+"PO-Revision-Date: 2018-06-28 02:07\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -526,7 +526,7 @@ msgid "A PEP is an individual who is or has been entrusted with a prominent publ
 msgstr "PEP是被委托进行特出公众任务的个人。此身份包括了PEP的亲属和亲近的人。"
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
-msgstr ""
+msgstr "付款代理人扮演客户（即我们的顾客）和 %1之间的兑换员。付款代理人负责为希望使用某一特定电子錢包方法或%1不支持的本地货币的客户处理充值和提款事宜。汇款费用由客户支付。"
 
 msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
 msgstr "政治公众人士(PEP) 是被委托进行特出公众任务的个人。此身份包括了其直系亲属和众所周知为其亲近的人，但不包括中级或初级官员。所指个人包括国家首长、部长、国会秘书、国会议员、法官、大使、高级政府官员、军事高层官员、中央银行的审计委员、国营企业董事等。以上各例的直系亲属也都属于政治公众人士，包括其配偶/伴侣、父母和孩子。再者，众所周知的与政治公众人士有亲密关系的人士包括其商业合伙人也属于政治公众人士。一般来说，已经停止被委托进行特出公众任务为期超过十二个月的个人不属于政治公众人士。"
@@ -1456,7 +1456,7 @@ msgid "Bank statement"
 msgstr "银行月结单"
 
 msgid "Bank wire, credit card, e-wallet"
-msgstr ""
+msgstr "银行电汇、信用卡、电子钱包"
 
 msgid "Bank wire/Money transfer"
 msgstr "银行电汇/转账"
@@ -2320,9 +2320,6 @@ msgstr "合约详情"
 msgid "Contract Ends"
 msgstr "合同结束"
 
-msgid "Contract Expiry"
-msgstr "合约到期日"
-
 msgid "Contract ID"
 msgstr "合约编号"
 
@@ -2332,11 +2329,11 @@ msgstr "合约信息"
 msgid "Contract Payouts"
 msgstr "合约赔付额"
 
+msgid "Contract Result"
+msgstr ""
+
 msgid "Contract Risks"
 msgstr "合约风险"
-
-msgid "Contract Sold"
-msgstr "售出合约"
 
 msgid "Contract Starts"
 msgstr "合约开始时间"
@@ -2729,7 +2726,7 @@ msgid "Deposit or withdraw below"
 msgstr "在下方存款或提款"
 
 msgid "Deposit or withdraw to your account via bank wire, credit card, or e-wallet."
-msgstr ""
+msgstr "通过银行电汇、信用卡或电子钱包向您的账户存款或提款。"
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "存款： %1区块链确认"
@@ -2957,7 +2954,7 @@ msgid "Duties and Responsibilities:"
 msgstr "义务和责任:"
 
 msgid "E-wallet"
-msgstr ""
+msgstr "电子钱包"
 
 msgid "E. Account Management"
 msgstr "五、账户管理"
@@ -3614,7 +3611,7 @@ msgid "For details on submitting a complaint to our Lead Supervisory Authority o
 msgstr "关于就我们的数据处理方式事宜向我们的主要监督机构提交投诉的详细信息, 请查看我们的 %1控诉和争议%2 章节。"
 
 msgid "For e-wallets or local currencies not supported by %1."
-msgstr ""
+msgstr "%1不支持的电子錢包或本地货币。"
 
 msgid "For example, a CFD on Binary.com's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "例如，Binary.com的美国 30 指数差价合约报价每点1美元。如果您以当前20,000 美元的卖出价格购入 1.0 股美国 30 指数，然后以20,010 美元的买入价格出售，您的净利润计算方法如下︰"
@@ -4781,7 +4778,7 @@ msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "对流动性解决方案感兴趣吗？通过%1联系我们获取更多信息。"
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
-msgstr ""
+msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子錢包方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过<a href='mailto:%2'>收到您的消息!</a>"
 
 msgid "Internal Audit"
 msgstr "内部审计"
@@ -5993,7 +5990,7 @@ msgid "Marketing and promotions"
 msgstr "市场推广"
 
 msgid "Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal."
-msgstr ""
+msgstr "万事达卡提款只适用于在欧洲国家发行的卡。如果您不符合此要求, 您可以使用电子钱包方法进行提款。"
 
 msgid "Matches/Differs"
 msgstr "符合/相差"
@@ -6722,10 +6719,10 @@ msgid "Other"
 msgstr "其它"
 
 msgid "Other Financial Instruments Trading Experience"
-msgstr ""
+msgstr "其他金融工具交易经验"
 
 msgid "Other Financial Instruments Trading Frequency"
-msgstr ""
+msgstr "其他金融工具交易频率"
 
 msgid "Other Obligations"
 msgstr "其它义务"
@@ -8748,7 +8745,7 @@ msgid "The Agent agrees to indemnify the Company for all and any losses that the
 msgstr "由于代理欺诈行为或忽略和/或任何类型的疏忽和/或不当行为和/或故意违约和/或违反本协议，造成公司可能遭受的全部或任何损失，代理同意赔偿公司。"
 
 msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
-msgstr ""
+msgstr "代理可向欲通过代理存款或取款的公司客户提供服务。特别是，代理可向欲使用公司已在使用以外的电子钱包或电子付款方法（以下简称\"电子付款\"）和/或公司已接受以外的当地货币（以下简称\"当地货币\"） 和/或当地银行电汇 （以下简称\"银行电汇\"）的客户提供服务。"
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
 msgstr "代理声明和保证其目前及将来会遵守有关反洗钱，以及在其经营的管辖范围内的任何金融或经济制裁方案的所有法律。"
