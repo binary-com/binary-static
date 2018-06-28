@@ -37,7 +37,7 @@ const CTA = () => (
         <SeparatorLine show_mobile className='gr-padding-20 gr-child' />
         <div className='center-text'>
             <p>{it.L('Don\'t have an account?')}</p>
-            <a className='button' href={it.url_for('home')}><span>{it.L('Create Free Account')}</span></a>
+            <a className='button' href={it.url_for('signup')}><span>{it.L('Create Free Account')}</span></a>
         </div>
     </div>
 );
