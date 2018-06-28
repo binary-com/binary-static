@@ -12,6 +12,7 @@ import StartDate       from './components/start_date.jsx';
 import Test            from './components/test.jsx';
 import SmartCharts     from '../../components/charts/smartcharts.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
+import UILoader        from '../../components/elements/ui_loader.jsx';
 import { connect }     from '../../store/connect';
 
 const form_components = [
@@ -45,12 +46,19 @@ class TradeApp extends React.PureComponent {
                     <SmartCharts />
                     <Test />
                 </div>
-                <div className='sidebar-container desktop-only' style={this.props.is_trade_enabled ? {} : { backgroundColor: '#e9e9e9' }}>{/* TODO: update the disabled style */}
-                    <fieldset className='trade-types'>
-                        <ContractType className='desktop-only' />
-                    </fieldset>
-                    {this.renderFormComponents()}
-                    <Purchase />
+                <div className='sidebar-container desktop-only'>
+                    <div className='sidebar-items'>
+                        {!this.props.is_trade_enabled &&
+                            <UILoader />
+                        }
+                        <fieldset className='trade-types'>
+                            <ContractType className='desktop-only' />
+                        </fieldset>
+                        {this.renderFormComponents()}
+                        <div className='purchase-wrapper'>
+                            <Purchase />
+                        </div>
+                    </div>
                 </div>
                 <ContractType className='mobile-only' is_mobile_widget />
                 <div className='mobile-only'>

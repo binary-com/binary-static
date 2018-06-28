@@ -21,5 +21,4 @@ export default class UIStore {
         this.is_main_drawer_on = false;
         this.is_notifications_drawer_on = false;
     };
-
 };

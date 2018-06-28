@@ -8,9 +8,9 @@ import { connect }              from '../../../store/connect';
 class ToggleDrawer extends PureComponent {
     showDrawer = () => {
         const { alignment } = this.props;
-        if (alignment && alignment === 'left') {
+        if (alignment === 'left') {
             this.props.showMainDrawer();
-        } else if (alignment && alignment === 'right'){
+        } else if (alignment === 'right') {
             this.props.showNotificationsDrawer();
         }
     }

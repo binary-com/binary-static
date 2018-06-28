@@ -12,8 +12,8 @@ export const getCurrenciesAsync = async(currency) => {
     });
 
     const currencies_list = {
-        [localize('Fiat Currency')] : fiat,
-        [localize('Cryptocurrency')]: crypto,
+        [localize('Fiat')]  : fiat,
+        [localize('Crypto')]: crypto,
     };
 
     return {

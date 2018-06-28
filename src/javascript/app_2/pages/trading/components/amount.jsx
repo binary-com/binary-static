@@ -1,5 +1,6 @@
 import React        from 'react';
 import PropTypes    from 'prop-types';
+import classNames   from 'classnames';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import InputField   from '../../../components/form/input_field.jsx';
@@ -29,12 +30,16 @@ const Amount = ({
             </div>
         );
     }
+    const has_currency = Client.get('currency');
+    const amount_container_class = classNames('amount-container', {
+        'three-columns': !has_currency,
+    });
     return (
         <Fieldset
             header={localize('Invest Amount')}
             icon='invest-amount'
         >
-            <div className='amount-container'>
+            <div className={amount_container_class}>
                 <Dropdown
                     list={basis_list}
                     value={basis}
@@ -42,26 +47,25 @@ const Amount = ({
                     onChange={onChange}
                     is_nativepicker={is_nativepicker}
                 />
+                {!has_currency &&
+                    <Dropdown
+                        list={currencies_list}
+                        value={currency}
+                        name='currency'
+                        onChange={onChange}
+                        is_nativepicker={is_nativepicker}
+                    />
+                }
                 <InputField
                     type='number'
                     name='amount'
                     value={amount}
                     onChange={onChange}
                     is_currency
-                    prefix={currency}
+                    prefix={has_currency ? currency : null}
                     is_nativepicker={is_nativepicker}
                 />
             </div>
-
-            {!Client.get('currency') &&
-                <Dropdown
-                    list={currencies_list}
-                    value={currency}
-                    name='currency'
-                    onChange={onChange}
-                    is_nativepicker={is_nativepicker}
-                />
-            }
         </Fieldset>
     );
 };

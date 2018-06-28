@@ -6,13 +6,13 @@
     /* trade-app layout */
     .trade-container {
         position: relative;
-        padding: 12px 12px 0;
+        padding: 8px 12px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: 1fr;
         grid-gap: 4px;
         overflow: hidden;
-        min-height: calc(100vh - 110px);
+        min-height: calc(100vh - 105px);
 
         .chart-container {
             position: relative;
@@ -37,6 +37,10 @@
             div.debug-text {
                 display: none;
             }
+        }
+        .sidebar-container, .sidebar-items {
+            position: relative;
+            min-height: 500px;
         }
         .offset-container {
             display: none;
@@ -76,7 +80,7 @@
                         display: grid;
                         grid-gap: 8px;
                         grid-template-columns: 1.5fr 1fr;
-                        margin-top: -8px;
+                        grid-auto-columns: auto;
                     }
                     @media (min-width: 979px) {
                         div.duration-container {
@@ -84,6 +88,59 @@
                         }
                         div.amount-container {
                             grid-template-columns: 1fr 1.5fr;
+                            grid-gap: 0;
+
+                            div:first-child {
+                                border-right-width: 0px;
+                                border-left-width: 1px;
+                                border-top-left-radius: $BORDER_RADIUS;
+                                border-bottom-left-radius: $BORDER_RADIUS;
+                                border-top-right-radius: 0;
+                                border-bottom-right-radius: 0;
+
+                                &:hover, &:focus, &:active, &.clicked {
+                                    border-right-width: 1px;
+                                    border-left-width: 1px;
+                                }
+                                &.dropdown-container {
+                                    &:hover, &:active, &:focus, &.show {
+                                        border-top-left-radius: $BORDER_RADIUS;
+                                        border-bottom-left-radius: $BORDER_RADIUS;
+                                    }
+                                }
+                            }
+                            input:last-child {
+                                border-right-width: 1px;
+                                border-left-width: 1px;
+                                border-top-left-radius: 0;
+                                border-bottom-left-radius: 0;
+                                border-top-right-radius: $BORDER_RADIUS;
+                                border-bottom-right-radius: $BORDER_RADIUS;
+                            }
+                            &.three-columns {
+                                grid-template-columns: 1.5fr 1.2fr 1.5fr;
+
+                                div, input {
+                                    border-radius: 0;
+                                    border-left-width: 0;
+                                    border-right-width: 0;
+
+                                    &:first-child div, &:first-child input {
+                                        border-right-width: 1px;
+                                        border-left-width: 1px;
+                                        border-top-left-radius: $BORDER_RADIUS;
+                                        border-bottom-left-radius: $BORDER_RADIUS;
+                                    }
+                                    &:last-child div, &:last-child input {
+                                        border-right-width: 1px;
+                                        border-left-width: 1px;
+                                        border-top-left-radius: 0;
+                                        border-bottom-left-radius: 0;
+                                        border-top-right-radius: $BORDER_RADIUS;
+                                        border-bottom-right-radius: $BORDER_RADIUS;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -111,6 +168,14 @@
                 .offset-container {
                     transform: translate(calc(-100% - 20px));
                 }
+            }
+        }
+        @media (min-width: 979px) and (max-width: 1125px) {
+            .chart-container {
+                grid-column: col-start 1 / span 9 !important;
+            }
+            .sidebar-container {
+                grid-column: col-start 10 / span 3 !important;
             }
         }
     }

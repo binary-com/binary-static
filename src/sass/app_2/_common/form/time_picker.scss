@@ -1,5 +1,5 @@
 .time-picker {
-    margin: 8px 0;
+    margin: 8px 0 0;
     position: relative;
 
     &.padding {
@@ -108,7 +108,7 @@
 
                     &:hover {
                         background: $COLOR_GRAY;
-                        color: $COLOR_BLACK;
+                        color: $COLOR_LIGHT_BLACK;
 
                         &.selected {
                             background: $COLOR_BLUE;

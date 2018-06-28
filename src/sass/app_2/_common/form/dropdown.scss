@@ -1,6 +1,6 @@
 div.dropdown-container {
     position: relative;
-    margin: 8px 0;
+    margin: 8px 0 0;
 
     .dropdown-display {
         background: $COLOR_WHITE;
@@ -97,11 +97,11 @@ div.dropdown-container {
                     vertical-align: middle;
                 }
                 &:hover {
-                    background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
+                    background-color: $COLOR_GRAY;
                 }
                 &.selected span {
-                    background-color: $COLOR_BLUE;
-                    color: $COLOR_WHITE;
+                    background-color: $COLOR_GRAY;
+                    color: $COLOR_BLUE;
                     font-weight: 400;
                 }
             }
@@ -117,7 +117,7 @@ div.dropdown-container {
         position: absolute;
         pointer-events: none;
         top: 12px;
-        right: 11px;
+        right: 6px;
         line-height: 1;
         transition: transform 0.2s ease;
         transform: rotate(180deg);
