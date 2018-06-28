@@ -6,6 +6,7 @@ import NetworkMonitor                from './base/network_monitor';
 import ClientStore                   from './store/client_store';
 import CommonStore                   from './store/common_store';
 import { MobxProvider }              from './store/connect';
+import PagesStore                    from './store/pages_store';
 import TradeStore                    from './store/trade_store';
 import UIStore                       from './store/ui_store';
 import Footer                        from './components/layout/footer.jsx';
@@ -22,6 +23,7 @@ const stores = {
     common: new CommonStore(),
     trade : new TradeStore(),
     ui    : new UIStore(),
+    pages : new PagesStore(),
 };
 
 const initApp = () => {

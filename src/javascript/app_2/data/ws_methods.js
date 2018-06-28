@@ -27,6 +27,19 @@ const WS = (() => {
     const logout = () =>
         BinarySocket.send({ logout: 1 });
 
+    // TODO: rename to stay consistent
+    const getFinancialAssessment = () =>
+        BinarySocket.send({ get_financial_assessment: 1});
+
+    const getLoginHistory = (limit) =>
+        BinarySocket.send({ login_history: 1, limit });
+
+    const sendCashierPassword = (cashier_pw) =>
+        BinarySocket.send({ cashier_password: 1, lock_password: cashier_pw });
+
+    const setSelfExclusion = (data) =>
+        BinarySocket.send(data);
+
     const mt5LoginList = () =>
         BinarySocket.send({ mt5_login_list: 1 });
 
@@ -81,16 +94,20 @@ const WS = (() => {
         buy,
         contractsFor,
         getAccountStatus,
+        getFinancialAssessment,
+        getLoginHistory,
         getSelfExclusion,
         getSettings,
         landingCompany,
         logout,
         mt5LoginList,
         oauthApps,
-        portfolio,
         payoutCurrencies,
+        portfolio,
         sellExpired,
+        sendCashierPassword,
         sendRequest,
+        setSelfExclusion,
         statement,
 
         // streams

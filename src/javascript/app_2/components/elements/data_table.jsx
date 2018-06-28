@@ -7,6 +7,10 @@ import PropTypes  from 'prop-types';
       2. implement filtering per column
 */
 
+/*
+ * Documentation:
+ * https://github.com/binary-com/binary-static/wiki/DataTable
+ */
 class DataTable extends React.PureComponent {
     renderRow(transaction, id) {
         if (!transaction) return null;

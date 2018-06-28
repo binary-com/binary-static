@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/*
+ * Documentation:
+ * https://github.com/binary-com/binary-static/wiki/CardList
+ */
 const CardList = ({ data_source, Card }) => (
     <div className='card-list'>
         {

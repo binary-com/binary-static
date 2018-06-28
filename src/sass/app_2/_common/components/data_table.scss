@@ -62,9 +62,6 @@ $side-padding: 2rem;
             }
         }
     }
-    &-body &-row:hover {
-        background-color: #e4e6f1; /* stylelint-disable-line color-no-hex */
-    }
     // styles for fixed table header
     &.table-clone {
         position: fixed;

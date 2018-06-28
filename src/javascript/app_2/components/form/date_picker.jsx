@@ -660,7 +660,10 @@ Calendar.propTypes = {
         PropTypes.object,
         PropTypes.string,
     ]),
-    minDate     : PropTypes.object,
+    minDate: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
     mode        : PropTypes.string,
     placeholder : PropTypes.string,
     showTodayBtn: PropTypes.bool,
@@ -678,7 +681,10 @@ DatePicker.propTypes = {
         PropTypes.object,
         PropTypes.string,
     ]),
-    minDate     : PropTypes.object,
+    minDate: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.string,
+    ]),
     mode        : PropTypes.string,
     name        : PropTypes.string,
     onChange    : PropTypes.func,
