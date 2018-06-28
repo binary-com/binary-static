@@ -61,7 +61,7 @@ MobileDropdown.propTypes = {
             path       : PropTypes.string,
         })
     ),
-    children : PropTypes.element,
+    children: PropTypes.element,
 };
 
 export default MobileDropdown;
