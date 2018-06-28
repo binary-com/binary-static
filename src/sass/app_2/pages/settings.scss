@@ -159,10 +159,10 @@
         transition: all 0.25s;
     }
     &--open {
-        .mobile_dropdown__button {
+        .mobile-dropdown__button {
             border: 1px solid $COLOR_BLUE;
         }
-        .mobile_dropdown__menu {
+        .mobile-dropdown__menu {
             transform: scale(1, 1);
             opacity: 1;
         }
@@ -182,10 +182,10 @@
     .settings__section_header {
         padding-left: 12px;
     }
-    .settings__menu > div:first-child .settings__section_header {
+    .settings-menu > div:first-child .settings-menu__group-header {
         margin-top: 12px;
     }
-    .settings__separator {
+    .settings-menu__separator {
         margin-right: 0;
         margin-left: 0;
     }

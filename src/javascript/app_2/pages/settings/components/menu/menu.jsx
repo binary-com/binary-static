@@ -17,7 +17,12 @@ const Menu = ({ data }) => (
 );
 
 Menu.propTypes = {
-    data: PropTypes.array,
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string,
+            items: PropTypes.array,
+        })
+    ),
 };
 
 export default Menu;

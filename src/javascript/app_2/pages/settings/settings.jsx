@@ -61,7 +61,12 @@ const Settings = ({ match, routes }) => {
 
 Settings.propTypes = {
     match : PropTypes.object,
-    routes: PropTypes.array,
+    routes: PropTypes.arrayOf(
+        PropTypes.shape({
+            path     : PropTypes.string,
+            component: PropTypes.function,
+        })
+    ),
 };
 
 export default Settings;

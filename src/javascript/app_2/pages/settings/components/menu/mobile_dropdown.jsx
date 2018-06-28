@@ -53,7 +53,14 @@ class MobileDropdown extends React.PureComponent {
 }
 
 MobileDropdown.propTypes = {
-    all_items: PropTypes.array,
+    all_items: PropTypes.arrayOf(
+        PropTypes.shape({
+            title      : PropTypes.string,
+            description: PropTypes.string,
+            img_src    : PropTypes.string,
+            path       : PropTypes.string,
+        })
+    ),
     children : PropTypes.element,
 };
 

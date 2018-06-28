@@ -19,9 +19,14 @@ const MenuList = ({ items }) => (
 );
 
 MenuList.propTypes = {
-    match : PropTypes.object,
-    routes: PropTypes.array,
-    items : PropTypes.array,
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            title      : PropTypes.string,
+            description: PropTypes.string,
+            img_src    : PropTypes.string,
+            path       : PropTypes.string,
+        })
+    ),
 };
 
 export default MenuList;
