@@ -22,7 +22,7 @@ export const requestProposal = (store, updateStore) => {
                 has_error: !!response.error,
             };
 
-            const chart_barriers = !store.chart_barriers.length &&
+            const chart_barriers = !store.chart_barriers.main &&
                 { chart_barriers: createChartBarriersConfig(store, response) };
 
             updateStore(store, {

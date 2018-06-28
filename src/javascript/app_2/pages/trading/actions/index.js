@@ -44,7 +44,7 @@ const process = async(store, new_state) => {
     updateStore(store, { // disable purchase button(s), clear contract info, cleanup chart
         is_purchase_enabled: false,
         proposal_info      : {},
-        chart_barriers     : [],
+        chart_barriers     : {},
     });
 
     const snapshot = cloneObject(store);

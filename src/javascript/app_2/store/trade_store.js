@@ -29,7 +29,9 @@ export default class TradeStore {
     }
 
     @action.bound onHoverPurchase(is_over, contract_type) {
-        this.chart_barriers = updateBarrierShade(this, is_over, contract_type);
+        if (this.chart_barriers.main) {
+            this.chart_barriers.main = updateBarrierShade(this, is_over, contract_type);
+        }
     }
 
     @action.bound onPurchase(proposal_id, price) {
@@ -89,7 +91,7 @@ export default class TradeStore {
     @observable purchase_info = {};
 
     // Chart
-    @observable chart_barriers = [];
+    @observable chart_barriers = {};
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [

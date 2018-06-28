@@ -15,6 +15,8 @@ const forget = (match_values, callback) => (
 
 const SmartCharts = ({ onSymbolChange, chart_barriers }) =>  {
     const is_mobile = window.innerWidth <= 767;
+    const barriers  = Object.keys(chart_barriers || {}).map(key => chart_barriers[key]);
+
     return (
         <React.Fragment>
             <SmartChart
@@ -29,7 +31,7 @@ const SmartCharts = ({ onSymbolChange, chart_barriers }) =>  {
                         },
                     });
                 }}
-                barriers={chart_barriers}
+                barriers={barriers}
                 isMobile={is_mobile}
             />
         </React.Fragment>
@@ -38,7 +40,7 @@ const SmartCharts = ({ onSymbolChange, chart_barriers }) =>  {
 
 SmartCharts.propTypes = {
     onSymbolChange: PropTypes.func,
-    chart_barriers: PropTypes.array,
+    chart_barriers: PropTypes.object,
 };
 
 export default connect(

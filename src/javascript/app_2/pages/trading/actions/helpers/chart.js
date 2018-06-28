@@ -1,6 +1,6 @@
 export const createChartBarriersConfig = (store, proposal_response) => {
     if (proposal_response.error || !/(rise_fall|high_low|touch|end|stay)/.test(store.contract_type)) {
-        return [];
+        return {};
     }
 
     const config = {
@@ -23,18 +23,18 @@ export const createChartBarriersConfig = (store, proposal_response) => {
         hidePriceLines: !has_barrier,
     });
 
-    return [config];
+    return { main: config };
 };
 
 export const updateBarrierShade = (store, is_over, contract_type) => {
-    const config = store.chart_barriers[0];
-    if (!config) return store.chart_barriers;
+    const config = store.chart_barriers.main;
+    if (!config) return false;
 
     const shade = (is_over &&
         Object.keys(shade_map).find(key => shade_map[key].includes(contract_type))
     ) || getDefaults(config);
 
-    return [Object.assign({}, config, { shade })];
+    return Object.assign(config, { shade });
 };
 
 const shade_map = {
