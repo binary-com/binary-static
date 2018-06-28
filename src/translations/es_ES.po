@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-27 06:12\n"
+"PO-Revision-Date: 2018-06-28 02:06\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -499,7 +499,7 @@ msgid "<strong>Open menu</strong> and select <strong>Preferences</strong>."
 msgstr "<strong>Desplegar el menú</strong> y seleccione <strong>Preferencias</strong>."
 
 msgid "<strong>Other Risks</strong>: There are other risks that relate to trading investment products and trading foreign currencies that cannot be described in detail in this document. Generally, however, securities, options and currency transactions involve exposure to a combination of the following risk factors: market risk, credit risk, settlement risk, liquidity risk, operational risk and legal risk. For example, there can be serious market disruptions if economic or political or other unforeseen events locally or overseas affect the market. In addition to these types of risk there may be other factors such as accounting and tax treatment issues that you should consider."
-msgstr "<strong>Otros riesgoss</strong>: Existen otros riesgos que se relacionan con los productos de inversión y el comercio de divisas que no pueden ser descritos en detalle en este documento. Generalmente, sin embargo, los valores, las opciones y las transacciones con divisas implican la exposición a una combinación de los siguientes factores de riesgo: riesgo de mercado, riesgo de crédito, riesgo de liquidación, riesgo de liquidez, riesgo operacional y riesgo legal. Por ejemplo, pueden haber perturbaciones graves del mercado si se producen acontecimientos imprevistos económicos o políticos o de otro tipo a nivel local o en el extranjero que afectan al mercado. Además de estos tipos de riesgo pueden haber otros factores, tales como las cuestiones de contabilidad y tratamiento fiscal, que usted debe considerar."
+msgstr "<strong>Otros riesgos</strong>: Existen otros riesgos que se relacionan con los productos de inversión y el comercio de divisas que no pueden ser descritos en detalle en este documento. Generalmente, sin embargo, los valores, las opciones y las transacciones con divisas implican la exposición a una combinación de los siguientes factores de riesgo: riesgo de mercado, riesgo de crédito, riesgo de liquidación, riesgo de liquidez, riesgo operacional y riesgo legal. Por ejemplo, pueden haber perturbaciones graves del mercado si se producen acontecimientos imprevistos económicos o políticos o de otro tipo a nivel local o en el extranjero que afectan al mercado. Además de estos tipos de riesgo pueden haber otros factores, tales como las cuestiones de contabilidad y tratamiento fiscal, que usted debe considerar."
 
 msgid "A Bachelor's degree in Computer Science, or an equivalent combination of technical education, training and work experience"
 msgstr "Un título de licenciatura en Informática, o una combinación equivalente de educación técnica, capacitación y experiencia laboral"
@@ -2321,9 +2321,6 @@ msgstr "Detalles del contrato"
 msgid "Contract Ends"
 msgstr "El contrato termina"
 
-msgid "Contract Expiry"
-msgstr "Vencimiento del Contrato"
-
 msgid "Contract ID"
 msgstr "ID del Contrato"
 
@@ -2333,11 +2330,11 @@ msgstr "Información del Contrato"
 msgid "Contract Payouts"
 msgstr "Pagos de contratos"
 
+msgid "Contract Result"
+msgstr ""
+
 msgid "Contract Risks"
 msgstr "Riesgos del contrato"
-
-msgid "Contract Sold"
-msgstr "Contrato Vendido"
 
 msgid "Contract Starts"
 msgstr "Contrato empieza"
@@ -10714,7 +10711,7 @@ msgid "When to buy and sell?"
 msgstr "¿Cuándo comprar y vender?"
 
 msgid "When we accept an order from you to open or close a transaction, or any other specific instructions in relation to your order, we will endeavour to follow your instructions as far as reasonably possible, acting in accordance with our duty of best execution in accordance with your instructions. These specific instructions include, but are not limited to:"
-msgstr ""
+msgstr "Cuando aceptemos una orden suya para abrir o cerrar una transacción, o cualquier otra instrucción específica relacionada con su orden, nos esforzaremos por seguir sus instrucciones en la medida de lo posible y razonable, actuando de acuerdo con nuestro deber de mejor ejecución y en concordancia con sus instrucciones. Estas instrucciones específicas incluyen, pero no se limitan a:"
 
 msgid "When we deal on own account (dealing desk), we act as principal and not as an agent on your behalf and we therefore act as the execution venue."
 msgstr ""
@@ -10759,7 +10756,7 @@ msgid "When, as a result of political, economic, military or monetary events (in
 msgstr "Cuando, como consecuencia de sucesos políticos, económicos, militares o monetarios (incluyendo la volatilidad del mercado inusual o falta de liquidez) o cualquier otra circunstancia fuera del control, la responsabilidad y el poder de la Compañía, la operación continua de este sitio no es razonablemente practicable sin afectar y perjudicar de forma material y adversa los intereses de los clientes o de la Compañía, o si, en opinión de la Compañía, un precio no puede calcularse para los contratos financieros."
 
 msgid "Where a particular time or timeframe has been specified in a client's instructions with respect to the execution of an order, regardless of the price available, we will endeavour to execute the order at the specified time or over the specified timeframe in the best possible manner after taking all sufficient steps. However, we will not be responsible for any consequences related to pricing that resulted from the time or timeframe of the execution."
-msgstr ""
+msgstr "Cuando un horario o un plazo específico se ha determinado en las instrucciones del cliente con respecto a la ejecución de una orden, independientemente del precio disponible, haremos todo lo posible para ejecutar la orden en el tiempo especificado o dentro del marco temporal especificado de la mejor manera posible, tomando las medidas suficientes. Sin embargo, no seremos responsables de ninguna consecuencia relacionada con el precio, resultante del tiempo o el período de tiempo de la ejecución."
 
 msgid "Where a particular venue has been specified in your instructions with respect to the execution of an order, we will not be responsible for the venue selection."
 msgstr ""
@@ -10847,7 +10844,7 @@ msgid "Whilst we endeavour to close out your Open Positions if and when the Marg
 msgstr "Aunque nos esforzamos por cerrar sus Posiciones Abiertas si y cuando el Nivel de Margen de su cuenta real de MT5 alcance o caiga por debajo del nivel Stop Out, no garantizamos que sus Posiciones Abiertas se cerrarán cuando el Nivel de Margen de su cuenta real MT5 alcance el nivel de Stop Out."
 
 msgid "Whilst we endeavour to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
-msgstr ""
+msgstr "Mientras que nos esforzamos por abrir o cerrar la Transacción a la que se relacionan sus Órdenes al precio solicitado, de acuerdo con nuestro deber de mejor ejecución, existen momentos en los que, debido a un aumento en la volatilidad o el volumen, las Órdenes pueden estar sujetas al slippage. La diferencia entre el precio de órden y el precio de su ejecución cuando las órdenes están filiazadas se conoce como deslizamiento (el slippage). Esto significa que su orden no ha finalizado al precio esperado y exacto, sino al otro, diferente al precio de apertura. El deslizamiento se observa generalmente durante periodos de volatilidad extremadamente alta o baja y generalmente ocurre durante fundamentales noticias de prensa o períodos de liquidez limitada. Los slippages pueden resultar en un deslizamiento positivo (más favorable para usted) o en un deslizamiento negativo (menos favorable para usted)."
 
 msgid "Whilst we endeavour to take all reasonable and sufficient steps, as required by applicable laws and regulations, to identify potential conflicts of interests between ourselves and our clients, or between one client and another, that arise in the course of providing the margin trading services as described in this Agreement, by establishing and implementing policies and procedures, it is possible that we may execute certain Transactions which may have other direct or indirect material interests."
 msgstr "Si bien nos esforzamos por tomar todas las medidas razonables y suficientes, según lo exigen las leyes y normativas aplicables, para identificar posibles conflictos de intereses entre nosotros y nuestros clientes, o entre un cliente y otro, que surgen en el curso de proporcionar los servicios de operación de margen como descrito en este Acuerdo, al establecer e implementar políticas y procedimientos, es posible que ejecutemos ciertas Transacciones que pueden tener otros intereses materiales directos o indirectos."
@@ -11600,7 +11597,7 @@ msgid "Your debts are not settled as, and when, they fall due;"
 msgstr "Sus deudas que no se han saldado como debe ser y a su debido tiempo;"
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
-msgstr ""
+msgstr "Sus transacciones forex y contratos por diferencias con %1 están vinculados a un instrumento financiero subyacente y usted estará expuesto al precio, al tipo de cambio, a la tasa de interés u otra volatilidad del mercado con la cual se relaciona su instrumento financiero, especialmente si el mercado está de una jurisdicción ajena a usted. Las operaciones con forex y los contratos por diferencias a través de Internet y una plataforma electrónica de operación están sujetos al riesgo de latencia de datos, lo que puede ocasionar demoras en la ejecución de las órdenes."
 
 msgid "Your fund transfer is successful. Your new balances are:"
 msgstr "La transferencia de fondos de su cuenta ha sido realizada con éxito. Su nuevo saldo es:"
@@ -11735,13 +11732,13 @@ msgid "any restriction to its Clients from purchasing any contracts during certa
 msgstr "cualquier restricción a sus clientes de comprar cualquier contrato durante un horario determinado."
 
 msgid "b) The price at which your order will be executed;"
-msgstr ""
+msgstr "b) El precio al que se ejecutará su pedido;"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading"
 msgstr "opciones binarias, Forex, mercado de Forex, comercio en línea, comercio financiero, comercio binario, comercio sobre índices, operar sobre índices, operaciones de divisas, operaciones con materias primas, estrategia de opciones binarias, corredor binario, apuesta binaria, plataforma de operaciones con opciones binarias, estrategia binaria, finanzas, acción, inversión, comercio"
 
 msgid "c) The time at which your order will be executed; and"
-msgstr ""
+msgstr "c) La hora a la que se ejecutará su pedido; y"
 
 msgid "capable to have a material adverse effect on the Agent’s ability to perform any of its duties and/or obligations in accordance with this Agreement."
 msgstr ""
@@ -11750,7 +11747,7 @@ msgid "consolidating liquidity from several providers into a single stream of bl
 msgstr ""
 
 msgid "d) The timeframe or duration of the contract as defined by your order execution."
-msgstr ""
+msgstr "d) El plazo o la duración del contrato según lo definido por la ejecución de su orden."
 
 msgid "day"
 msgstr "día"
@@ -11909,7 +11906,7 @@ msgid "that contravenes any laws, regulations, instruments, ordinances or rules 
 msgstr "contravenga las leyes, regulaciones, instrumentos, ordenanzas o reglas que rigen el funcionamiento de cualquier intercambio, mercado financiero, o ambiente de regulador financiero; o"
 
 msgid "the characteristics of financial instruments that are the subject of that order;"
-msgstr ""
+msgstr "las características de los instrumentos financieros que son objeto de ese orden;"
 
 msgid "the characteristics of the client;"
 msgstr "las características del cliente;"
@@ -11924,10 +11921,10 @@ msgid "the commission to be charged on deposits and withdrawals;"
 msgstr ""
 
 msgid "the market conditions of the financial instruments that your orders are related to, which includes the need for timely execution, availability of price improvement, liquidity of the market, size of your order, and the potential impact on total consideration."
-msgstr ""
+msgstr "las condiciones de mercado de los instrumentos financieros con las cuales se relacionan sus órdenes, que incluyen la necesidad de una ejecución puntual, la disponibilidad de la mejora de precios, la liquidez del mercado, el tamaño de su orden y el impacto potencial sobre la consideración total."
 
 msgid "the specific instructions that we receive from you;"
-msgstr ""
+msgstr "las instrucciones específicas que recibimos de usted;"
 
 msgid "the terms and/or conditions and/or clauses and/or provisions of this Agreement, Orders whatsoever, the applicable law or any other law will not be breached or violated;"
 msgstr ""
