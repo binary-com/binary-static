@@ -1,19 +1,20 @@
-import extend          from 'extend';
-import { runInAction } from 'mobx';
-import Client          from '../../../../_common/base/client_base';
-import {
-    cloneObject,
-    isEmptyObject }    from '../../../../_common/utility';
+import extend                             from 'extend';
+import { runInAction }                    from 'mobx';
+import Client                             from '../../../../_common/base/client_base';
+import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
+import URLHelper                          from '../../../common/url_helper';
 
-import ContractTypeHelper  from './helpers/contract_type';
-import { requestProposal } from './helpers/proposal';
+import ContractTypeHelper                 from './helpers/contract_type';
+import { allowed_query_string_variables } from './helpers/query_string';
+import { requestProposal }                from './helpers/proposal';
 
 // add files containing actions here.
-import * as ContractType  from './contract_type';
-import * as Currency      from './currency';
-import * as Duration      from './duration';
-import * as StartDate     from './start_date';
-import * as Symbol        from './symbol';
+import * as ContractType                  from './contract_type';
+import * as Currency                      from './currency';
+import * as Duration                      from './duration';
+import * as StartDate                     from './start_date';
+import * as Symbol                        from './symbol';
+
 
 export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
     const new_state = cloneObject(obj_new_values);
@@ -26,6 +27,12 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
                     store.is_purchase_enabled = false;
                     store.is_trade_enabled    = false;
                 }
+
+                // Add changes to queryString of the url
+                if (allowed_query_string_variables.indexOf(key) !== -1) {
+                    URLHelper.setQueryParam({ [key]: new_state[key] });
+                }
+
                 store[key] = new_state[key];
             }
         });
