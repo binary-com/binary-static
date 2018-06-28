@@ -8,12 +8,40 @@ import { localize }        from '../_common/localize';
 
 import Portfolio           from './pages/portfolio/portfolio.jsx';
 import TradeApp            from './pages/trading/trade_app.jsx';
+import Settings            from './pages/settings/settings.jsx';
 import Statement           from './pages/statement/statement.jsx';
+
+// Settings Routes
+import AccountPassword        from './pages/settings/sections/account_password.jsx';
+import ApiToken               from './pages/settings/sections/api_token.jsx';
+import AuthorizedApplications from './pages/settings/sections/authorized_applications.jsx';
+import CashierPassword        from './pages/settings/sections/cashier_password.jsx';
+import FinancialAssessment    from './pages/settings/sections/financial_assessment.jsx';
+import Limits                 from './pages/settings/sections/limits.jsx';
+import LoginHistory           from './pages/settings/sections/login_history.jsx';
+import PersonalDetails        from './pages/settings/sections/personal_details.jsx';
+import SelfExclusion          from './pages/settings/sections/self_exclusion.jsx';
 
 const routes = [
     { path: '/',          component: TradeApp, exact: true },
     { path: '/portfolio', component: Portfolio, is_authenticated: true },
     { path: '/statement', component: Statement, is_authenticated: true },
+    {
+        path            : '/settings',
+        component       : Settings,
+        is_authenticated: true,
+        routes          : [
+            { path: 'personal',         component: PersonalDetails },
+            { path: 'financial',        component: FinancialAssessment },
+            { path: 'account_password', component: AccountPassword },
+            { path: 'cashier_password', component: CashierPassword },
+            { path: 'exclusion',        component: SelfExclusion },
+            { path: 'limits',           component: Limits },
+            { path: 'history',          component: LoginHistory },
+            { path: 'token',            component: ApiToken },
+            { path: 'apps',             component: AuthorizedApplications },
+        ],
+    },
 ];
 
 const RouteWithSubRoutes = route => (

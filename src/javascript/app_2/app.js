@@ -5,6 +5,7 @@ import { BrowserRouter as Router }   from 'react-router-dom';
 import NetworkMonitor                from './base/network_monitor';
 import ClientStore                   from './store/client_store';
 import CommonStore                   from './store/common_store';
+import PagesStore                    from './store/pages_store';
 import { MobxProvider }              from './store/connect';
 import TradeStore                    from './store/trade_store';
 import UIStore                       from './store/ui_store';
@@ -22,6 +23,7 @@ const stores = {
     common: new CommonStore(),
     trade : new TradeStore(),
     ui    : new UIStore(),
+    pages : new PagesStore(),
 };
 
 const initApp = () => {
@@ -38,7 +40,7 @@ const initApp = () => {
 
 /*
  * Retrieves basename from current url
- * 
+ *
  * @return {string} returns the basename of current url
  */
 const getBasename = () => {

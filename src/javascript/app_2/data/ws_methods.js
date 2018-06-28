@@ -21,6 +21,9 @@ const WS = (() => {
     const getSettings = () =>
         BinarySocket.send({ get_settings: 1 });
 
+    const getFinancialAssessment = () =>
+        BinarySocket.send({ get_financial_assessment: 1});
+
     const landingCompany = (residence) =>
         BinarySocket.send({ landing_company: residence });
 
@@ -83,6 +86,7 @@ const WS = (() => {
         getAccountStatus,
         getSelfExclusion,
         getSettings,
+        getFinancialAssessment,
         landingCompany,
         logout,
         mt5LoginList,
