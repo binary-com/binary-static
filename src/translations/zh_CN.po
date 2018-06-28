@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-07 00:45-0400\n"
+"PO-Revision-Date: 2018-06-28 03:42\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -119,15 +119,6 @@ msgstr "%1 联盟计划的条款和条件"
 
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1 应用程序编程界面(\"API\")的条款和条件"
-
-msgid "%1 Graduate Programme"
-msgstr "%1 研究生课程"
-
-msgid "%1 Graduate programme"
-msgstr "%1 研究生课程"
-
-msgid "%1 Hackathon Competition"
-msgstr "%1黑客松竞争"
 
 msgid "%1 Introducing Broker (IB) Programme"
 msgstr "%1 推出经纪 (IB) 计划"
@@ -474,6 +465,9 @@ msgstr "6 months to 1 year"
 msgid "6-10 transactions in the past 12 months"
 msgstr "过去12个月内6-10次交易"
 
+msgid "6-digit code"
+msgstr "6位数代码"
+
 msgid "7-day limit on losses"
 msgstr "7天期损失限额"
 
@@ -531,8 +525,8 @@ msgstr "MAM账户可以分配给资金经理代表您交易。您可以查看资
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr "PEP是被委托进行特出公众任务的个人。此身份包括了PEP的亲属和亲近的人。"
 
-msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
-msgstr "付款代理人扮演客户（即我们的顾客）和 %1之间的兑换员。付款代理人负责为希望使用某一特定电子货币方法或%1不支持的本地货币的客户处理充值和提款事宜。汇款费用由客户支付。"
+msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
+msgstr "付款代理人扮演客户（即我们的顾客）和 %1之间的兑换员。付款代理人负责为希望使用某一特定电子錢包方法或%1不支持的本地货币的客户处理充值和提款事宜。汇款费用由客户支付。"
 
 msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
 msgstr "政治公众人士(PEP) 是被委托进行特出公众任务的个人。此身份包括了其直系亲属和众所周知为其亲近的人，但不包括中级或初级官员。所指个人包括国家首长、部长、国会秘书、国会议员、法官、大使、高级政府官员、军事高层官员、中央银行的审计委员、国营企业董事等。以上各例的直系亲属也都属于政治公众人士，包括其配偶/伴侣、父母和孩子。再者，众所周知的与政治公众人士有亲密关系的人士包括其商业合伙人也属于政治公众人士。一般来说，已经停止被委托进行特出公众任务为期超过十二个月的个人不属于政治公众人士。"
@@ -731,6 +725,9 @@ msgstr "账户"
 
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "账户余额&mdash; 您的账户余额表示："
+
+msgid "Account Categorisation"
+msgstr "账户分类"
 
 msgid "Account Closure"
 msgstr "账户关闭"
@@ -1035,6 +1032,9 @@ msgstr "允许客户使用 %1不直接提供的电子货币"
 msgid "Allow equals"
 msgstr "允许等值"
 
+msgid "Already have an account? %1Log in%2 here"
+msgstr ""
+
 msgid "Also known as counter currency"
 msgstr "也称为相对货币"
 
@@ -1332,6 +1332,9 @@ msgstr "该职位要求 1 年以上工作经验"
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "具有5年以上联盟网络营销、技术增长、业务发展经验及其他密切相关的技能"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr "重设时, 如果现货价与您的预测方向相反, 则障碍将重设至现货价的方向。"
+
 msgid "Audit"
 msgstr "审计"
 
@@ -1404,6 +1407,9 @@ msgstr "可用的市场"
 msgid "Available payment methods"
 msgstr "可用支付方式"
 
+msgid "Average"
+msgstr "平均"
+
 msgid "Avoid the need to have an e-wallet"
 msgstr "避免使用电子钱包"
 
@@ -1452,14 +1458,14 @@ msgstr "余额："
 msgid "Bank statement"
 msgstr "银行月结单"
 
+msgid "Bank wire, credit card, e-wallet"
+msgstr "银行电汇、信用卡、电子钱包"
+
 msgid "Bank wire/Money transfer"
 msgstr "银行电汇/转账"
 
 msgid "Bank your way"
 msgstr "支持各种存取款方式"
-
-msgid "Bank-wire, credit card, e-cash wallet"
-msgstr "银行电汇、信用卡、电子现金钱包"
 
 msgid "Banking"
 msgstr "资金管理"
@@ -1469,9 +1475,6 @@ msgstr "放置横幅"
 
 msgid "Barrier"
 msgstr "障碍"
-
-msgid "Barrier (%1)"
-msgstr "障碍(%1)"
 
 msgid "Barrier Change"
 msgstr "障碍变更"
@@ -1490,9 +1493,6 @@ msgstr "基础货币"
 
 msgid "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
 msgstr "根据以下表格，您是否能看出欧元/美元货币对的点差？"
-
-msgid "Be treated as a professional trader."
-msgstr "被视为专业交易者。"
 
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "在为您开立 BIEL账户，对投资产品进行交易或投资之前，我们要先评估您所选择的投资产品或服务，如果对您不合适，我们必须提醒您。最后，由您自行决定是否开立账户，并使用我们产品或服务。您应充分了解我们产品和服务的风险，并承担所有责任。"
@@ -1686,9 +1686,6 @@ msgstr "Binary 的马耳他附属公司 Binary Investments (Europe) Ltd. 由 Mal
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Binary 平台平均每秒钟进行 %1宗%2交易%3，全天候提供服务，整年无休"
 
-msgid "Binary.com Graduate Program"
-msgstr "Binary.com 研究生课程"
-
 msgid "Bitcoin"
 msgstr "比特币"
 
@@ -1703,9 +1700,6 @@ msgstr "比特币兑美元"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "区块链技术 - 所有加密货币使用各式的区块链技术（一种公开账本）为每笔交易保存记录。 "
-
-msgid "Blue-chip stock contracts sourced from the OTC market."
-msgstr "源自场外交易市场的蓝筹股股票合约。"
 
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "源自场外交易市场的蓝筹股股票合约"
@@ -1730,9 +1724,6 @@ msgstr "浏览器"
 
 msgid "Browser platforms"
 msgstr "浏览器平台"
-
-msgid "Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career."
-msgstr "在金融和技术之间的交汇处建立成功的事业。我们的研究生课程旨在发掘您真正的潜能，让您深入洞察我们的业务，并为您的事业提供力能。"
 
 msgid "But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade."
 msgstr "但是，如果您是外汇或任何类型金融交易的新手，在您购买第一份合约之前还有很长的路要走。因此我们想出了一个基本的，一步一步的教程，以帮助您弥合差距，并开始第一次交易。"
@@ -1820,6 +1811,9 @@ msgstr "差价合约保证金政策"
 
 msgid "CFDs"
 msgstr "差价合约"
+
+msgid "Call Spread"
+msgstr "买权价差"
 
 msgid "Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?"
 msgstr "我是否可以让我推荐的客户不要直接注册，而是通过我的联盟专用链接注册，从而获得奖金？"
@@ -2326,9 +2320,6 @@ msgstr "合约详情"
 msgid "Contract Ends"
 msgstr "合同结束"
 
-msgid "Contract Expiry"
-msgstr "合约到期日"
-
 msgid "Contract ID"
 msgstr "合约编号"
 
@@ -2338,11 +2329,11 @@ msgstr "合约信息"
 msgid "Contract Payouts"
 msgstr "合约赔付额"
 
+msgid "Contract Result"
+msgstr ""
+
 msgid "Contract Risks"
 msgstr "合约风险"
-
-msgid "Contract Sold"
-msgstr "售出合约"
 
 msgid "Contract Starts"
 msgstr "合约开始时间"
@@ -2692,6 +2683,9 @@ msgstr "需求 - 受工业和商业应用、包括新技术产品或时尚趋势
 msgid "Demo"
 msgstr "演示"
 
+msgid "Demo Account"
+msgstr "模拟账户"
+
 msgid "Demo Accounts"
 msgstr "模拟账户"
 
@@ -2731,8 +2725,8 @@ msgstr "存款最低仅需5美元即可开始交易."
 msgid "Deposit or withdraw below"
 msgstr "在下方存款或提款"
 
-msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
-msgstr "通过银行电汇、信用卡或电子现金钱包向您的账户存款或提款。"
+msgid "Deposit or withdraw to your account via bank wire, credit card, or e-wallet."
+msgstr "通过银行电汇、信用卡或电子钱包向您的账户存款或提款。"
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "存款： %1区块链确认"
@@ -2820,6 +2814,9 @@ msgstr "数字期权"
 
 msgid "Director"
 msgstr "Director"
+
+msgid "Disable"
+msgstr "禁用"
 
 msgid "Disclaimer"
 msgstr "免责声明"
@@ -2956,8 +2953,8 @@ msgstr "本协议有效期内，您将您所拥有的所有知识产权免版税
 msgid "Duties and Responsibilities:"
 msgstr "义务和责任:"
 
-msgid "E-cash"
-msgstr "电子现金"
+msgid "E-wallet"
+msgstr "电子钱包"
 
 msgid "E. Account Management"
 msgstr "五、账户管理"
@@ -3115,11 +3112,14 @@ msgstr "员工手册"
 msgid "Employment Status"
 msgstr "就业状况"
 
+msgid "Enable"
+msgstr "启用"
+
+msgid "Enable two-factor authentication for an extra layer of security."
+msgstr "为双重安全保障启用双因素身份验证。"
+
 msgid "End Time"
 msgstr "结束时间"
-
-msgid "End at:"
-msgstr "收盘于:"
 
 msgid "End time"
 msgstr "结束时间"
@@ -3154,8 +3154,8 @@ msgstr "享受简单操作、轻松浏览的交易平台"
 msgid "Enjoy an award-winning online trading platform with trading conditions that are ideal for new and experienced traders."
 msgstr "享受交易条件对新手和有经验的交易者非常适合、屡获殊荣的在线交易平台。"
 
-msgid "Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing."
-msgstr "享受令人兴奋的机会和实时图表和定价的优势，进行股票和指数交易。"
+msgid "Enjoy exciting opportunities to trade indices with the benefit of real-time charts and pricing."
+msgstr ""
 
 msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
 msgstr "随时随地使用跳动价格交易应用程序，享受我们速度最快的交易。"
@@ -3177,6 +3177,9 @@ msgstr "确保Binary公司集团充分遵守相关的法律和监管制度。"
 
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr "确保Binary公司集团充分遵守相关监管制度"
+
+msgid "Enter the authentication code generated by the app below:"
+msgstr "输入以下应用程序生成的身份验证代码:"
 
 msgid "Enter your email"
 msgstr "请输入您的电子邮件"
@@ -3607,8 +3610,8 @@ msgstr "与联盟、合作伙伴和其他与市场营销相关的查询专用:"
 msgid "For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our %1Complaints and Disputes%2 section."
 msgstr "关于就我们的数据处理方式事宜向我们的主要监督机构提交投诉的详细信息, 请查看我们的 %1控诉和争议%2 章节。"
 
-msgid "For e-cash methods or local currencies not supported by %1."
-msgstr "%1不支持的电子现金方式或本地货币。"
+msgid "For e-wallets or local currencies not supported by %1."
+msgstr "%1不支持的电子錢包或本地货币。"
 
 msgid "For example, a CFD on Binary.com's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "例如，Binary.com的美国 30 指数差价合约报价每点1美元。如果您以当前20,000 美元的卖出价格购入 1.0 股美国 30 指数，然后以20,010 美元的买入价格出售，您的净利润计算方法如下︰"
@@ -3964,9 +3967,6 @@ msgstr "HF 卷100"
 msgid "HF Vol 50"
 msgstr "HF 卷50"
 
-msgid "Hackathon Competition"
-msgstr "黑客松竞争"
-
 msgid "Hands-on test automation experience a plus"
 msgstr "有自动化测试设备使用经验者优先考虑"
 
@@ -3991,11 +3991,14 @@ msgstr "最高值"
 msgid "High Barrier"
 msgstr "高障碍"
 
-msgid "High Barrier (%1)"
-msgstr "高障碍(%1)"
+msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
+msgstr "高跳动点/低跳动点合约具有严格的五跳动点周期。"
 
 msgid "High barrier"
 msgstr "高障碍"
+
+msgid "High barrier must be higher than low barrier"
+msgstr "高障碍必须高于低障碍"
 
 msgid "High barrier offset"
 msgstr "高障碍位移"
@@ -4029,6 +4032,12 @@ msgstr "如果开始和结束期间价格跳动次数少于2，高于/低于合�
 
 msgid "Higher/Lower trades"
 msgstr "“高于/低于”交易"
+
+msgid "Highest Tick"
+msgstr "最高跳动点"
+
+msgid "Highest Tick Time"
+msgstr "最高跳动点时间"
 
 msgid "Highlights"
 msgstr "亮点"
@@ -4104,6 +4113,9 @@ msgstr "如何阅读合约规格表"
 
 msgid "How to read the table above"
 msgstr "如何读取上面的表"
+
+msgid "How to setup two-factor authentication for your %1 account:"
+msgstr "如何为 %1 账户设置双因素身份验证:"
 
 msgid "How to trade CFDs"
 msgstr "差价合约如何交易"
@@ -4267,6 +4279,9 @@ msgstr "如果不可抗力事件持续超过 30 个工作日，没遭受不可�
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "如果 <strong>退市现价</strong> 等于 <strong>低障碍</strong> 或 <strong>高障碍</strong>, 您将不会赢得赔付。"
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr "如果 <strong>退市现价</strong> 等于 <strong>障碍</strong> 或 <stronm g>重设后的新障碍</stronmg>, 您将不会赢得赔付。"
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "如果 <strong>退市现价</strong> 等于 <strong>障碍价格</strong>, 您将不会赢得赔付。"
 
@@ -4320,6 +4335,9 @@ msgstr "如果存在账户登录问题，请确认您是否已启用浏览器 co
 
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
 msgstr "如果您目前不是位于上述国家内, 只需拨打我们的任一联系电话寻求帮助即可。"
+
+msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
+msgstr "如果无法扫描 QR 代码, 可以手动输入此代码取代:"
 
 msgid "If you are, we'd love to hear from you."
 msgstr "如果您已准备好，欢迎联系我们。"
@@ -4435,6 +4453,12 @@ msgstr "如果您选择“奇数”期权，只要<strong>最新价格的</stron
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "如果您选择“大于”期权，只要<strong>最新价格的</strong>最后一个数字<strong>大于您的预测，您将获得赔付。</strong>"
 
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr "如果您选择“重设买权”，只要退市现价严格高于入市现价或重设时现货价，您将获得赔付。"
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr "如果您选择“重设卖权”，只要退市现价严格低于入市现价或重设时现货价，您将获得赔付。"
+
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "如果您选择“上涨”期权，只要 <strong>退市现价</strong> 严格高于 <strong>入市现价</strong>，您将获得赔付。"
 
@@ -4459,14 +4483,17 @@ msgstr "如果您选择“上涨”期权，只要市场价格高于 <strong>入
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "如果您选择“上涨”期权，只要市场价格高于入市现价，您将获得赔付。"
 
+msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
+msgstr "如果您选择 %1\"高跳动点\"%2, 如果所选跳动点是接下来下五个跳动点%2 中%1最高值, 可获得赔付。"
+
+msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
+msgstr "如果您选择 %1\"低跳动点\"%2, 如果所选跳动点是接下来下五个跳动点%2 中%1最低值, 可获得赔付。"
+
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "如果您选择的 <strong>开始时间</strong> 为未来的某个时间，交易的 <strong>开始时间</strong> 就是您选择的时间，<strong>入市现价</strong> 就是当时的实时价格。"
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "如果您选择的 <strong>开始时间</strong> 是“现在”，交易 <strong>结束时间</strong> 就是交易 <strong>开始时间</strong> 之后所选的分钟数或小时数（如果期限短于一天），或在交易日的结束时间（如果期限为一天或更长）。"
-
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "如果您选择的 <strong>开始时间</strong> 是“现在”，<strong>开始时间</strong> 就是我们的服务器处理合约交易的时间，<strong>入市现价</strong> 就是 <strong>下一个价格</strong>。"
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "如果您选择具体的<strong>结束时间</strong>，交易<strong>结束时间</strong>就是您选择的时间。"
@@ -4750,8 +4777,8 @@ msgstr "对我们的MAM工具感兴趣吗？ %1联系我们%2索取有关设置�
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "对流动性解决方案感兴趣吗？通过%1联系我们获取更多信息。"
 
-msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
-msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子付款方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过<a href='mailto:%2'>收到您的消息!</a>"
+msgid "Interested, so what's next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
+msgstr "感兴趣，接下来该怎么做？如您可向我们的客户提供特殊的电子錢包方式或 %1目前不支持的本地付款选项，且在市场上有良好的记录，我们非常乐意通过<a href='mailto:%2'>收到您的消息!</a>"
 
 msgid "Internal Audit"
 msgstr "内部审计"
@@ -5707,9 +5734,6 @@ msgstr "最低值"
 msgid "Low Barrier"
 msgstr "低障碍"
 
-msgid "Low Barrier (%1)"
-msgstr "低障碍(%1)"
-
 msgid "Low barrier"
 msgstr "低障碍"
 
@@ -5724,6 +5748,12 @@ msgstr "低于"
 
 msgid "Lower or equal"
 msgstr "低于或等值"
+
+msgid "Lowest Tick"
+msgstr "最低跳动点"
+
+msgid "Lowest Tick Time"
+msgstr "最低跳动点时间"
 
 msgid "M"
 msgstr "M"
@@ -5959,11 +5989,20 @@ msgstr "市场推广"
 msgid "Marketing and promotions"
 msgstr "市场推广"
 
+msgid "Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal."
+msgstr "万事达卡提款只适用于在欧洲国家发行的卡。如果您不符合此要求, 您可以使用电子钱包方法进行提款。"
+
 msgid "Matches/Differs"
 msgstr "符合/相差"
 
 msgid "Max"
 msgstr "最大"
+
+msgid "Maximum Payout"
+msgstr "最大赔付"
+
+msgid "Maximum Profit"
+msgstr "最大利润"
 
 msgid "Maximum account cash balance"
 msgstr "最大账户现金余额"
@@ -6096,6 +6135,9 @@ msgstr "最小票证大小"
 
 msgid "Minimum volume"
 msgstr "最小交易额"
+
+msgid "Minimum:"
+msgstr "最小:"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "矿业、建筑业、制造业和运输工人"
@@ -6361,6 +6403,12 @@ msgstr "除非由双方明确及不含糊地接受，对本协议的任何或全
 msgid "No open positions."
 msgstr "无未平仓头寸。"
 
+msgid "No payout if exit spot is above or equal to the upper barrier."
+msgstr "如果退市现价高于或等于高障碍, 不能获得赔付。"
+
+msgid "No payout if exit spot is below or equal to the lower barrier."
+msgstr "如果退市现价低于或等于低障碍, 不能获得赔付。"
+
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering which may have several effects on Clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of Clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
 msgstr "任何人都不得以洗钱为目的滥用本网站。公司采用最佳反洗钱程序。所有交易都会被检查，以防止可能对客户造成影响的洗钱活动。公司保留权利拒绝、中断或撤销不接受或不遵守反洗钱规定的客户所执行的交易。基金不可来自非法活动。公司会向有关当局申报可疑的交易。"
 
@@ -6475,11 +6523,8 @@ msgstr "OTC Derivative (Option) Trading"
 msgid "OTC Indices"
 msgstr "场外交易指数"
 
-msgid "OTC Stocks"
-msgstr "场外交易股票"
-
-msgid "OTC stocks and indices"
-msgstr "场外交易股票和指数"
+msgid "OTC indices"
+msgstr ""
 
 msgid "Occupation"
 msgstr "职业"
@@ -6670,6 +6715,12 @@ msgstr "订单执行通常有两种：市场执行和即时执行。市场执行
 msgid "Other"
 msgstr "其它"
 
+msgid "Other Financial Instruments Trading Experience"
+msgstr "其他金融工具交易经验"
+
+msgid "Other Financial Instruments Trading Frequency"
+msgstr "其他金融工具交易频率"
+
 msgid "Other Obligations"
 msgstr "其它义务"
 
@@ -6745,6 +6796,9 @@ msgstr "在某些情况下，我们所决心的执行因素相对重要性可能
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "我们获取了主要竞争对手之一BetsForTraders 的客户群，为公司快速的内生性增长提供支持。"
 
+msgid "Our indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our indices may differ from their counterparts on centralised exchanges."
+msgstr ""
+
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "我们的信息安全政策基于访问控制和业务持续性的业内最佳实践。"
 
@@ -6768,9 +6822,6 @@ msgstr "我们的网站可以使用市场上多个过滤系统进行过滤，以
 
 msgid "Our site does not charge any transfer fees."
 msgstr "我们网站不收取任何转账费用。"
-
-msgid "Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges."
-msgstr "我们的股票和指数源自场外交易（OTC）市场 - 即源自中央交易所以外。请注意，由于其场外交易性质，我们股票和指数的价格可能与中央交易所同行的价格有所不同。"
 
 msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr "我们也可能会因为假期调整掉期利率。"
@@ -6928,6 +6979,9 @@ msgstr "赔付"
 msgid "Payout per lot = 1,000"
 msgstr "每手赔付额 = 1,000"
 
+msgid "Payout range"
+msgstr "赔付范围"
+
 msgid "Pension"
 msgstr "养老金"
 
@@ -7039,8 +7093,11 @@ msgstr "请选择一种货币"
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
 msgstr "请完成%1财务评估表格%2，以便提升您的取款和交易限额 。"
 
-msgid "Please complete the tax information before proceeding."
-msgstr "继续执行之前，请填写完整税务信息。"
+msgid "Please complete your %1personal details%2 before you proceed."
+msgstr "继续操作前请填写您的%1个人资料%2。"
+
+msgid "Please complete your personal details before you proceed."
+msgstr "继续操作前请填写您的个人资料。"
 
 msgid "Please confirm that all the information above is true and complete."
 msgstr "请确认以上所有信息是真实和完整的。"
@@ -7153,9 +7210,6 @@ msgstr "请到%1自我禁止工具%2设置30天交易限额，以移除存款限
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr "请设置<a href=\"%1\">30天交易限额</a>，以访问收银台。"
 
-msgid "Please set your account opening reason before proceeding."
-msgstr "继续操作前请设置开立账户的原因。"
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "请指定您的优选实况调查间隔时间分钟数"
 
@@ -7262,6 +7316,12 @@ msgstr "预测市价在收盘时高于平均价格"
 msgid "Predict that the market will end lower than the average price"
 msgstr "预测市价在收盘时低于平均价格"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr "预测市场价最终将高于当前水平或预定时间(重设时间) 的水平"
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr "预测市场价最终将低于当前水平或预定时间(重设时间) 的水平"
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "预测市场价格是否会从当前水平上涨或下跌"
 
@@ -7361,9 +7421,6 @@ msgstr "专业客户"
 msgid "Professional Clients"
 msgstr "专业客户"
 
-msgid "Professional Trader"
-msgstr "专业交易者"
-
 msgid "Professionals"
 msgstr "专业人士"
 
@@ -7418,6 +7475,9 @@ msgstr "公司网站、博客、社交媒体网站和营销材料内容翻译的
 msgid "Proofreader"
 msgstr "校对员"
 
+msgid "Protect your account with two-factor authentication. Each time you sign into your account, you will need to enter your password, plus an authentication code generated by an app on your smartphone."
+msgstr "使用双因素身份验证保护您的账户。每次登录账户时, 您必须输入密码及由应用程序在您的智能手机上生成的认证代码。"
+
 msgid "Protect your profits"
 msgstr "保护利润"
 
@@ -7465,6 +7525,9 @@ msgstr "采购请求已发送"
 
 msgid "Purpose of trading"
 msgstr "Purpose of trading"
+
+msgid "Put Spread"
+msgstr "卖权价差"
 
 msgid "Put a limit on your winnings. Once you have reached it put some aside and trade with the rest of the money."
 msgstr "对您的利润设置限额。一旦达到限额就将部分金额存起来，用剩余的资金继续操作。"
@@ -7552,6 +7615,9 @@ msgstr "真实标准"
 
 msgid "Real Volatility Indices"
 msgstr "真实波动率指数"
+
+msgid "Real-Money Account"
+msgstr "真实资金账户"
 
 msgid "Real-Money Accounts"
 msgstr "真实资金账户"
@@ -7697,17 +7763,41 @@ msgstr "不提供转售"
 msgid "Resale price"
 msgstr "转售价格"
 
+msgid "Reset"
+msgstr "重设"
+
+msgid "Reset Barrier"
+msgstr "重设障碍"
+
+msgid "Reset Call"
+msgstr "重设买权"
+
 msgid "Reset MT5 password"
 msgstr "重设MT5密码"
 
 msgid "Reset Password"
 msgstr "重置密码"
 
+msgid "Reset Put"
+msgstr "重设卖权"
+
+msgid "Reset Time"
+msgstr "重设时间"
+
 msgid "Reset password"
 msgstr "重置密码"
 
+msgid "Reset time"
+msgstr "重设时间"
+
 msgid "Reset to Original Settings"
 msgstr "重设为原始设置"
+
+msgid "Reset-Call"
+msgstr "重设-买权"
+
+msgid "Reset-Put"
+msgstr "重设-卖权"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "被FATF认定具有策略缺陷的国家的居民, 须受限制, 不得在Binary Investments (欧洲) 有限公司开立账户。"
@@ -7865,6 +7955,9 @@ msgstr "周六"
 msgid "Scalable"
 msgstr "可缩放"
 
+msgid "Scan the QR code below with your authentication app (such as %1, %2, and %3)."
+msgstr "使用身份验证应用程序 (如 %1、%2和 %3) 扫描下面的 QR 代码。"
+
 msgid "Scope and Intent"
 msgstr "范围和目的"
 
@@ -7942,6 +8035,9 @@ msgstr "选择您的市场和基础资产"
 
 msgid "Select your trade type"
 msgstr "选择交易类型"
+
+msgid "Selected Tick"
+msgstr "选定跳动点"
 
 msgid "Self Exclusion"
 msgstr "自我禁止"
@@ -8096,6 +8192,9 @@ msgstr "应以字母或数字开始，可包含连字符和下划线。"
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "如果您账户的资金不足以覆盖这些费用，我们有权考虑其他替代方法：如果您的账户产生了购买账户，我们将会截留此等账户的佣金款项，直至损害赔偿的账户结清。"
 
+msgid "Show all historical transactions up to"
+msgstr "显示此日期前的所有历史记录"
+
 msgid "Sign out"
 msgstr "注销"
 
@@ -8107,6 +8206,9 @@ msgstr "立刻注册%1 联盟计划:"
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "丰富的社交媒体、市场营销和/或广告经验"
+
+msgid "Signup"
+msgstr ""
 
 msgid "Silver vs US Dollar"
 msgstr "白银兑美元"
@@ -8164,6 +8266,9 @@ msgstr "对不起，您的账户处理发生错误。"
 
 msgid "Sorry, an error occurred while processing your request."
 msgstr "对不起，您的请求处理发生错误。"
+
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr "对不起, 实时聊天当前不可用。请发送电子邮件到 %1给我们。"
 
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "对不起，此功能仅适用虚拟账户。"
@@ -8230,6 +8335,9 @@ msgstr "开始时间"
 
 msgid "Start Time and Entry Spot"
 msgstr "开始时间和进入点"
+
+msgid "Start Trading with %1"
+msgstr ""
 
 msgid "Start Trading with MetaTrader 5"
 msgstr "立即开始在MetaTrader 5平台交易"
@@ -8612,11 +8720,20 @@ msgstr "<strong>合约期限</strong>是在合约<strong>开始时间</strong>�
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "合约<strong>结束时间</strong>是指合约<strong>开始时间</strong>（如果期限小于一天）以后所选定的分钟/小时数，或是交易日结束之时（如果期限是一天或更长）。"
 
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr "<strong>结束时间</strong>是<strong>开始时间</strong>过后的选定分钟/小时数。"
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr "<strong>入市现价</strong>指我们服务器处理合约后的第一个跳动点。"
+
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>退市现价</strong>是合约<strong>结束时或之前的</strong>最后跳动价点。"
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "<strong>剩余时间</strong> 是合约到期前剩下的时间。"
+
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr "<strong>开始时间</strong> 就是我们的服务器处理合约交易的时间，<strong>入市现价</strong> 就是 <strong>下一个价格</strong>。"
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合约<strong>开始时间</strong>即我们的服务器处理合约的时间。"
@@ -8630,8 +8747,8 @@ msgstr "联盟的义务"
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
 msgstr "由于代理欺诈行为或忽略和/或任何类型的疏忽和/或不当行为和/或故意违约和/或违反本协议，造成公司可能遭受的全部或任何损失，代理同意赔偿公司。"
 
-msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-cash or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
-msgstr "代理可向欲通过代理存款或取款的公司客户提供服务。特别是，代理可向欲使用公司已在使用以外的电子现金或电子付款方法（以下简称\"电子付款\"）和/或公司已接受以外的当地货币（以下简称\"当地货币\"） 和/或当地银行电汇 （以下简称\"银行电汇\"）的客户提供服务。"
+msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
+msgstr "代理可向欲通过代理存款或取款的公司客户提供服务。特别是，代理可向欲使用公司已在使用以外的电子钱包或电子付款方法（以下简称\"电子付款\"）和/或公司已接受以外的当地货币（以下简称\"当地货币\"） 和/或当地银行电汇 （以下简称\"银行电汇\"）的客户提供服务。"
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
 msgstr "代理声明和保证其目前及将来会遵守有关反洗钱，以及在其经营的管辖范围内的任何金融或经济制裁方案的所有法律。"
@@ -8979,6 +9096,9 @@ msgstr "期限是所买入交易的时间周期（参考“合约期限”’）
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "所提供的电子邮件地址已经在使用。如果忘了密码，请尝试使用我们的<a href=\"%1\">密码恢复工具</a>或联系客服部。"
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr "入市现价指我们服务器处理合约后的第一个跳动点。"
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "入市现价是交易者所买入交易的初始价格。"
 
@@ -9005,9 +9125,6 @@ msgstr "本网站包含的金融交易服务仅适合这样的客户：能够承
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "第一步是设置您的交易参数。首先需要调整五种交易参数才能获得合约价格："
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "首个跳动点指在我们服务器处理合约后的第一个跳动点。"
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "外汇交易市场（Forex）是世界上流动性最强、交易量最大的市场，每天交易额高达数兆美元。"
@@ -9053,9 +9170,6 @@ msgstr "客户可能蒙受的最大损失就是其向本公司支付的金额。
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "已达代币 (%1) 最大限数。"
-
-msgid "The minimum duration is"
-msgstr "最小持续时间是"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "使用账户资金转移设施的最小金额为 %1。"
@@ -9110,6 +9224,9 @@ msgstr "客户已经存入所需的最低存款以及"
 
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "转售价格表示合约的当前市场价格。转售价格在尽最大努力的基础上提供，且买入合约后有可能一直不可用。请参阅“卖出期权”以了解在到期前卖出合约的更多细节。"
+
+msgid "The reset time is %1"
+msgstr "重设时间为 %1"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "收益指当合约到期时实现的收益（参阅“赔付金额”）。"
@@ -9188,6 +9305,9 @@ msgstr "范围内/外交易有两种类型："
 
 msgid "There are two types of Up/Down trades:"
 msgstr "上涨/下跌交易有两种类型："
+
+msgid "There are two types of reset trades:"
+msgstr "重设交易有两种类型："
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "您欠我们一些数额尚未还清；和（或)"
@@ -9321,6 +9441,9 @@ msgstr "本条款不适用于波动率指数。"
 msgid "This contract lost"
 msgstr "此合约亏损"
 
+msgid "This contract type only offers 5 ticks"
+msgstr "此合约类型仅提供5跳动点"
+
 msgid "This contract won"
 msgstr "此合约获利"
 
@@ -9405,6 +9528,24 @@ msgstr "星期四"
 msgid "Tick"
 msgstr "跳动点"
 
+msgid "Tick %1 is not the highest tick"
+msgstr "跳动点 %1 不是最高跳动点"
+
+msgid "Tick %1 is not the lowest tick"
+msgstr "跳动点 %1 不是最低跳动点"
+
+msgid "Tick %1 is the highest tick"
+msgstr "跳动点 %1 是最高跳动点"
+
+msgid "Tick %1 is the lowest tick"
+msgstr "跳动点 %1 是最低跳动点"
+
+msgid "Tick Prediction"
+msgstr "跳动点预测"
+
+msgid "Ticks"
+msgstr "跳动点"
+
 msgid "Tier"
 msgstr "层级"
 
@@ -9458,6 +9599,9 @@ msgstr "想要开立 MMM 真实账户, 请:"
 
 msgid "To create a MetaTrader 5 real account, please:"
 msgstr "想要开立 MetaTrader 5 真实账户, 请:"
+
+msgid "To disable two-factor authentication, please enter the code generated by the app below:"
+msgstr "要禁用双因素身份验证, 请输入以下应用程序生成的代码:"
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "要启用 cookie，请根据您的浏览器版本选择对应的指示说明，并进行操作。"
@@ -9690,12 +9834,6 @@ msgstr "差价合约 (CFD) 的波动性指数交易并不适合所有人。请�
 msgid "Trading Experience"
 msgstr "Trading Experience"
 
-msgid "Trading Experience in other Financial Instruments"
-msgstr "其它金融工具的交易经验"
-
-msgid "Trading Frequency in other Financial Instruments"
-msgstr "其它金融工具的交易频率"
-
 msgid "Trading Limits"
 msgstr "交易限制"
 
@@ -9804,9 +9942,6 @@ msgstr "True"
 msgid "Trust"
 msgstr "信任"
 
-msgid "Trusted by traders since 2000"
-msgstr "自2000年以来备受交易员信赖"
-
 msgid "Try Binary Bot"
 msgstr "试试 Binary Bot"
 
@@ -9842,6 +9977,15 @@ msgstr "交易额"
 
 msgid "Turnover Limit"
 msgstr "交易限额"
+
+msgid "Two-Factor Authentication"
+msgstr "双因素身份验证"
+
+msgid "Two-factor authentication is currently disabled."
+msgstr "双因素身份验证当前已禁用。"
+
+msgid "Two-factor authentication is currently enabled."
+msgstr "双因素身份验证当前已启用。"
 
 msgid "Two-way pricing"
 msgstr "双边报价"
@@ -10431,6 +10575,9 @@ msgstr "We will provide all documents in electronic format. Please tick the box 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "我们将在可控制范围内合理地努力，确保您通过 MT5 交易平台和所有电子交易指示所收到并由我们执行提供的所有电子数据均不会受到网络延迟。"
 
+msgid "We're almost there"
+msgstr ""
+
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "我们获得了“用于金融市场投机的电脑交易系统及方法”和“用于定制金融市场投机的电脑交易系统”两项专利。这些专利说明了我们的创新性和领先水平。"
 
@@ -10740,6 +10887,12 @@ msgstr "为什么要用%1 进行二元期权交易"
 msgid "Why you should trade precious metals with %1"
 msgstr "为什么要用%1 进行贵重金属交易"
 
+msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
+msgstr "如果退市现价高于或等于高障碍, 可获得最大赔付。"
+
+msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
+msgstr "如果退市现价低于或等于低障碍, 可获得最大赔付。"
+
 msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
 msgstr "除了高于或低于, 如果退市现价也等于入市现价, 也可赢取赔付。"
 
@@ -10751,6 +10904,12 @@ msgstr "赢取倍数值乘以最高值减去最低值。"
 
 msgid "Win the multiplier times the high minus low."
 msgstr "赢取倍数值乘以最高值减去最低值。"
+
+msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between exit spot and lower barrier."
+msgstr "如果退市现价介于高、低障碍之间, 其比例与退市现价及低障碍之间的差异相等, 可获得最大赔付。"
+
+msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between upper barrier and exit spot."
+msgstr "如果退市现价介于低、高障碍之间, 其比例与高障碍及退市现价之间的差异相等, 可获得最大赔付。"
 
 msgid "Windows"
 msgstr "Windows"
@@ -10978,6 +11137,12 @@ msgstr "我们在此通知您，%1 所提供的二元期权交易均不受任何
 msgid "You are buying the base currency and selling the quote currency."
 msgstr "您正在买入基本货币并卖出报价货币。"
 
+msgid "You are categorised as a professional client."
+msgstr "您被归类为专业客户。"
+
+msgid "You are categorised as a retail client. Apply to be treated as a professional trader."
+msgstr "您被归类为零售客户。申请成为专业交易者。"
+
 msgid "You are expecting the base currency to fall in value so you can buy it back at a lower price and make profit."
 msgstr "您预计基础货币的价值会下跌，因此您可以以较低的价格买回并赚取利润。"
 
@@ -11130,6 +11295,12 @@ msgstr "您已成功开立%1账户!"
 
 msgid "You have successfully created your Virtual Account."
 msgstr "您已成功开立虚拟账户。"
+
+msgid "You have successfully disabled two-factor authentication for your account."
+msgstr "您已成功禁用账户的双因素身份验证。"
+
+msgid "You have successfully enabled two-factor authentication for your account."
+msgstr "您已成功漆用账户的双因素身份验证。"
 
 msgid "You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
 msgstr "您拥有足够的差价合约交易经验和知识，能够评估经由本网站购买合约的收益与风险，并且不依赖于本网站中包含的任何信息作出购买决定。"
@@ -11394,6 +11565,9 @@ msgstr "您的账户不应被用作银行信贷，其中的存款只应视为交
 
 msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
 msgstr "我们的自动化系统无法验证您的地址。您可以继续操作, 但请确保您提供完整地址。"
+
+msgid "Your application to be treated as a professional client is being processed."
+msgstr "您要求成为专业客户的申请正在处理中。"
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "随后，我们的审核和营销部门将审核您的申请。一经通过，我们就会把您列入 <a href='%1'>付款代理</a>列表。"

@@ -61,12 +61,7 @@ const Contact = () => (
                             <div className='chat'>
                                 <div className='chat-container'>
                                     <img className='chat-icon' src={it.url_for('images/pages/contact/chat-icon.svg')} />
-                                    <a
-                                        className='button-secondary'
-                                        href='https://binary.desk.com/customer/widget/chats/new'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                    >
+                                    <a className='button-secondary' rel='noopener noreferrer' id='chat_button'>
                                         <span>{it.L('Live Chat')}</span>
                                     </a>
                                 </div>
@@ -76,6 +71,11 @@ const Contact = () => (
                                     <p className='no-margin'>{it.L('Weekend:')} &zwj;0000 - 0900 GMT</p>
                                 </div>
                             </div>
+                        </div>
+                        <div className='gr-parent ja-hide invisible' id='live_chat_unavailable'>
+                            <p className='notice-msg center-text'>
+                                {it.L('Sorry, live chat is currently unavailable. Please email us at [_1].', '<a href=\'mailto:support@binary.com\'>support@binary.com</a>')}
+                            </p>
                         </div>
                     </div>
                     <div className='gr-4 gr-4-t gr-5-p gr-12-m ja-hide'>

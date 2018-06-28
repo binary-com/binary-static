@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-07 00:45-0400\n"
+"PO-Revision-Date: 2018-06-28 03:42\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -119,15 +119,6 @@ msgstr "Syarat dan Ketentuan Program Afiliasi %1"
 
 msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Syarat dan Ketentuan Application Program Interface (\"API\") %1"
-
-msgid "%1 Graduate Programme"
-msgstr "Program Pascasarjana %1"
-
-msgid "%1 Graduate programme"
-msgstr "Program Pascasarjana %1"
-
-msgid "%1 Hackathon Competition"
-msgstr "Kompetisi Hackathon %1"
 
 msgid "%1 Introducing Broker (IB) Programme"
 msgstr "Program Introducing Broker (IB) %1"
@@ -474,6 +465,9 @@ msgstr "6 bulan hingga 1 tahun"
 msgid "6-10 transactions in the past 12 months"
 msgstr "6-10 transaksi pada 12 bulan terakhir"
 
+msgid "6-digit code"
+msgstr "Kode 6 digit"
+
 msgid "7-day limit on losses"
 msgstr "Batas 7-hari pada kerugian"
 
@@ -531,7 +525,7 @@ msgstr "Akun MAM dapat di tugaskan ke akun money manager yang akan bertrading at
 msgid "A PEP is an individual who is or has been entrusted with a prominent public function. This status extends to a PEP's relatives and close associates."
 msgstr "PEP adalah individu yang atau telah dipercayakan dengan fungsi publik terkemuka. Status ini diperluas hingga ke kerabat seorang PEP dan rekan dekat."
 
-msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-cash method or local currency that is not offered by %1. The transfer fees are borne by the Client."
+msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Agen Pembayaran bertindak sebagai penukar antara Klien (Pelanggan kami) dan %1. Agen Pembayaran memproses deposit dan penarikan untuk Klien yang ingin menggunakan metode pembayaran tertentu atau mata uang lokal yang tidak ditawarkan oleh %1. Biaya transfer akan ditanggung oleh Klien."
 
 msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
@@ -731,6 +725,9 @@ msgstr "Akun"
 
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "Saldo Akun &mdash; Saldo Anda mewakili:"
+
+msgid "Account Categorisation"
+msgstr "Kategorisasi Akun"
 
 msgid "Account Closure"
 msgstr "Penutupan Akun"
@@ -1035,6 +1032,9 @@ msgstr "Memberi Klien menggunakan metode e-wallet yang tidak di sediakan di %1"
 msgid "Allow equals"
 msgstr "Pilih equal"
 
+msgid "Already have an account? %1Log in%2 here"
+msgstr ""
+
 msgid "Also known as counter currency"
 msgstr "Juga dikenal sebagai mata uang counter"
 
@@ -1332,6 +1332,9 @@ msgstr "Memiliki pengalaman kerja minimal 1 tahun untuk posisi ini"
 msgid "At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills"
 msgstr "Setidaknya memiliki lima tahun pengalaman pada pemasaran afiliasi, hacking pertumbuhan, pengembangan bisnis, dan keterampilan lainnya yang berhubungan erat"
 
+msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
+msgstr "Pada waktu reset, jika spot berlawanan dengan arah analisa Anda, maka batasan akan direset pada spot tersebut."
+
 msgid "Audit"
 msgstr "Audit"
 
@@ -1404,6 +1407,9 @@ msgstr "Pasar yang tersedia"
 msgid "Available payment methods"
 msgstr "Metode pembayaran yang tersedia"
 
+msgid "Average"
+msgstr "Rata-rata"
+
 msgid "Avoid the need to have an e-wallet"
 msgstr "Menghindari kebutuhan untuk memiliki e-wallet"
 
@@ -1452,14 +1458,14 @@ msgstr "Saldo:"
 msgid "Bank statement"
 msgstr "Rekening koran"
 
+msgid "Bank wire, credit card, e-wallet"
+msgstr "Transfer bank, kartu kredit, e-wallet"
+
 msgid "Bank wire/Money transfer"
 msgstr "Bank wire/Transfer dana"
 
 msgid "Bank your way"
 msgstr "Bank pilihan Anda"
-
-msgid "Bank-wire, credit card, e-cash wallet"
-msgstr "Transfer bank, kartu kredit, wallet e-cash"
 
 msgid "Banking"
 msgstr "Perbankan"
@@ -1469,9 +1475,6 @@ msgstr "Penempatan banner"
 
 msgid "Barrier"
 msgstr "Batasan"
-
-msgid "Barrier (%1)"
-msgstr "Batasan (%1)"
 
 msgid "Barrier Change"
 msgstr "Perubahan Batasan"
@@ -1490,9 +1493,6 @@ msgstr "Mata uang dasar"
 
 msgid "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
 msgstr "Berdasarkan tabel di bawah ini, berapakah spread untuk pasangan mata uang EUR/USD?"
-
-msgid "Be treated as a professional trader."
-msgstr "Diperlakukan sebagai trader profesional."
 
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "Sebelum kami mendaftarkan Anda pada BIEL, kami perlu melakukan penilaian apakah produk atau layanan yang telah Anda pilih sesuai untuk Anda, dan untuk mengingatkan Anda mengenai informasi dasar yang telah Anda berikan jika produk atau layanan kami tidak sesuai. Keputusan untuk mendaftar akun dan menggunakan produk atau layanan kami adalah sepenuhnya ditangan Anda. Merupakan tanggung jawab Anda untuk memahami risiko yang terlibat pada produk atau layanan kami."
@@ -1686,9 +1686,6 @@ msgstr "Cabang Binary Malta yaitu Binary Investments (Europe) Ltd. diberikan seb
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Platform Binary memproses rata-rata %1 %2transaksi%3 per detik, 24/7"
 
-msgid "Binary.com Graduate Program"
-msgstr "Binary.com Graduate Program"
-
 msgid "Bitcoin"
 msgstr "Bitcoin"
 
@@ -1703,9 +1700,6 @@ msgstr "Bitcoin vs Dolar AS"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Teknologi Blockchain - Semua mata uang kripto menggunakan variasi teknologi blockchain (semacam buku besar) untuk mencetak catatan setiap transaksi. "
-
-msgid "Blue-chip stock contracts sourced from the OTC market."
-msgstr "Kontrak saham blue-chip bersumber dari pasar OTC."
 
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "Kontrak saham blue chip yang bersumber dari pasar over-the-counter"
@@ -1730,9 +1724,6 @@ msgstr "Browser"
 
 msgid "Browser platforms"
 msgstr "Platform browser"
-
-msgid "Build a successful career at the intersection of finance and technology. Our graduate programme is designed to tap into your true potential, give you deep insights into our business, and empower your career."
-msgstr "Bangun karir sukses pada persimpangan antara keuangan dan teknologi. Program pascasarjana yang kami sediakan adalah dirancang untuk memanfaatkan potensi Anda, memberi Anda wawasan mendalam mengenai bisnis kami, dan memberdayakan karir Anda."
 
 msgid "But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade."
 msgstr "Tapi jika Anda baru mengenal Forex atau trading finansial dalam bentuk apapun, masih ada jalan yang panjang sebelum Anda sebelum membeli kontrak pertama Anda. Inilah sebabnya mengapa kami membuat tutorial langkah-demi-langkah dasar untuk membantu Anda melakukan trading pertama Anda."
@@ -1820,6 +1811,9 @@ msgstr "Kebijakan margin CFD"
 
 msgid "CFDs"
 msgstr "CFD"
+
+msgid "Call Spread"
+msgstr "Call Spread"
 
 msgid "Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?"
 msgstr "Dapatkah saya menawarkan referal saya insentif untuk mendaftar melalui tautan afiliasi unik saya?"
@@ -2325,9 +2319,6 @@ msgstr "Keterangan Kontrak"
 msgid "Contract Ends"
 msgstr "Kontrak Berakhir"
 
-msgid "Contract Expiry"
-msgstr "Kontrak berakhir"
-
 msgid "Contract ID"
 msgstr "ID Kontrak"
 
@@ -2337,11 +2328,11 @@ msgstr "Informasi Kontrak"
 msgid "Contract Payouts"
 msgstr "Hasil Kontrak"
 
+msgid "Contract Result"
+msgstr "Hasil Kontrak"
+
 msgid "Contract Risks"
 msgstr "Risiko Kontrak"
-
-msgid "Contract Sold"
-msgstr "Kontrak Terjual"
 
 msgid "Contract Starts"
 msgstr "Kontrak Mulai"
@@ -2691,6 +2682,9 @@ msgstr "Permintaan - Didorong oleh aplikasi komersil dan industri, termasuk prod
 msgid "Demo"
 msgstr "Demo"
 
+msgid "Demo Account"
+msgstr "Akun Demo"
+
 msgid "Demo Accounts"
 msgstr "Akun Demo"
 
@@ -2730,8 +2724,8 @@ msgstr "Depositkan serendah USD 5 untuk memulai trading."
 msgid "Deposit or withdraw below"
 msgstr "Deposit atau withdraw di bawah ini"
 
-msgid "Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet."
-msgstr "Deposit atau penarikan melalui bank-wire, kartu kredit atau wallet e-cash."
+msgid "Deposit or withdraw to your account via bank wire, credit card, or e-wallet."
+msgstr "Deposit atau penarikan melalui bank-wire, kartu kredit atau e-wallet."
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "Deposit: konfirmasi blockchain %1"
@@ -2819,6 +2813,9 @@ msgstr "Digits"
 
 msgid "Director"
 msgstr "Direktur"
+
+msgid "Disable"
+msgstr "Menonaktifkan"
 
 msgid "Disclaimer"
 msgstr "Sangkalan"
@@ -2955,8 +2952,8 @@ msgstr "Selama jangka waktu Perjanjian ini, Anda memberi kami royalti bebas, tid
 msgid "Duties and Responsibilities:"
 msgstr "Tugas dan Tanggung Jawab:"
 
-msgid "E-cash"
-msgstr "E-cash"
+msgid "E-wallet"
+msgstr "E-wallet"
 
 msgid "E. Account Management"
 msgstr "E. Manajemen Akun"
@@ -3114,11 +3111,14 @@ msgstr "Buku pedoman karyawan"
 msgid "Employment Status"
 msgstr "Status Pekerjaan"
 
+msgid "Enable"
+msgstr "Mengaktifkan"
+
+msgid "Enable two-factor authentication for an extra layer of security."
+msgstr "Aktifkan autentikasi dua faktor untuk lapisan keamanan ekstra."
+
 msgid "End Time"
 msgstr "Waktu berakhir"
-
-msgid "End at:"
-msgstr "Berakhir pada:"
 
 msgid "End time"
 msgstr "Waktu end"
@@ -3153,8 +3153,8 @@ msgstr "Nikmati platform trading yang mudah dinavigasikan dan digunakan"
 msgid "Enjoy an award-winning online trading platform with trading conditions that are ideal for new and experienced traders."
 msgstr "Nikmati platform trading online pemenang penghargaan dengan kondisi trading yang ideal untuk trader baru dan berpengalaman."
 
-msgid "Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing."
-msgstr "Nikmati peluang menarik untuk memperdagangkan saham dan indeks dengan memanfaatkan chart dan harga terkini."
+msgid "Enjoy exciting opportunities to trade indices with the benefit of real-time charts and pricing."
+msgstr ""
 
 msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
 msgstr "Nikmati jenis trading tercepat kami menggunakan applikasi Trading Tik, dimanapun Anda berada."
@@ -3176,6 +3176,9 @@ msgstr "Memastikan Grup Perusahaan Binary mematuhi secara menyeluruh wilayah huk
 
 msgid "Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject"
 msgstr "Memastikan Grup Perusahaan Binary mematuhi secara menyeluruh peraturan rezim yang mereka harus patuhi"
+
+msgid "Enter the authentication code generated by the app below:"
+msgstr "Masukkan kode autentikasi yang dihasilkan oleh aplikasi di bawah ini:"
 
 msgid "Enter your email"
 msgstr "Masukkan email Anda"
@@ -3606,8 +3609,8 @@ msgstr "Untuk afiliasi, kemitraan, dan pertanyaan terkait pemasaran lainnya:"
 msgid "For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our %1Complaints and Disputes%2 section."
 msgstr "Untuk rincian mengenai pengajuan keluhan kepada Otoritas Pengawasan terkait pada praktek-praktek pengolahan data kami, silahkan periksa bagian %1Keluhan dan Sengketa%2 kami."
 
-msgid "For e-cash methods or local currencies not supported by %1."
-msgstr "Untuk metode e-cash atau mata uang lokal yang tidak disediakan oleh %1."
+msgid "For e-wallets or local currencies not supported by %1."
+msgstr "Untuk metode e-wallet atau mata uang lokal yang tidak disediakan oleh %1."
 
 msgid "For example, a CFD on Binary.com's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "Sebagai contoh, CFD pada indeks AS 30 Binary.com menawarkan USD 1 per titik kontrak. Jika Anda membeli kontrak Volume 1.0 untuk AS 30 dengan harga ask saat ini sebesar USD 20.000 dan kemudian menjualnya dengan harga bid USD 20.010, laba bersih Anda akan dihitung sebagai berikut:"
@@ -3963,9 +3966,6 @@ msgstr "HF Vol 100"
 msgid "HF Vol 50"
 msgstr "HF Vol 50"
 
-msgid "Hackathon Competition"
-msgstr "Kompetisi Hackathon"
-
 msgid "Hands-on test automation experience a plus"
 msgstr "Memiliki pengalaman tes otomatisasi memiliki nilai tambah"
 
@@ -3990,11 +3990,14 @@ msgstr "High"
 msgid "High Barrier"
 msgstr "Batasan Tinggi"
 
-msgid "High Barrier (%1)"
-msgstr "Batasan Tinggi (%1)"
+msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
+msgstr "Kontrak High Tik/Low Tik memiliki durasi lima tik yang tetap."
 
 msgid "High barrier"
 msgstr "Batasan Tinggi"
+
+msgid "High barrier must be higher than low barrier"
+msgstr "Batasan Atas harus lebih tinggi dari batasan bawah"
 
 msgid "High barrier offset"
 msgstr "Batasan offset tinggi"
@@ -4028,6 +4031,12 @@ msgstr "Kontrak Higher/Lower akan mendapat pengembalian harga beli jika terdapat
 
 msgid "Higher/Lower trades"
 msgstr "Kontrak Higher/Lower"
+
+msgid "Highest Tick"
+msgstr "Tik Tertinggi"
+
+msgid "Highest Tick Time"
+msgstr "Waktu Tik Tertinggi"
 
 msgid "Highlights"
 msgstr "Sorotan"
@@ -4103,6 +4112,9 @@ msgstr "Cara membaca tabel spesifikasi kontrak"
 
 msgid "How to read the table above"
 msgstr "Bagaimana cara membaca tabel di atas"
+
+msgid "How to setup two-factor authentication for your %1 account:"
+msgstr "Cara menyiapkan autentikasi dua faktor pada akun %1 Anda:"
 
 msgid "How to trade CFDs"
 msgstr "Cara bertrading CFD"
@@ -4266,6 +4278,9 @@ msgstr "Jika peristiwa keadaan memaksa terjadi lebih dari 30 hari bisnis, Pihak 
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>Batasan rendah</strong> atau<strong>Batasan tinggi</strong>, maka Anda tidak akan memperoleh hasil."
 
+msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
+msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong> atau <stronm g>batasan baru (jika reset terjadi)</stronmg>, Anda tidak memperoleh hasil."
+
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Jika <strong>spot akhir</strong> sama dengan <strong>batasan</strong>, Anda tidak akan memperoleh hasil."
 
@@ -4319,6 +4334,9 @@ msgstr "Jika Anda mengalami kesulitan log in ke account Anda, mohon pastikan bah
 
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
 msgstr "Jika Anda tidak tersedia pada negara diatas, silahkan hubungi salah satu nomor diatas untuk bantuan lebih lanjut."
+
+msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
+msgstr "Jika Anda tidak dapat menscan kode QR, Anda dapat memasukkan kode berikut secara manual:"
 
 msgid "If you are, we'd love to hear from you."
 msgstr "Jika Anda sudah bersedia, hubungi kami segera."
@@ -4434,6 +4452,12 @@ msgstr "Pilih \"Odd\", Anda akan memperoleh hasil jika <strong>digit terakhir</
 msgid "If you select \"Over\", you will win the payout if the <strong>last digit</strong> of the last tick is <strong>greater than your prediction.</strong>"
 msgstr "Pilih \"Over\", Anda akan mendapat hasil jika <strong>digit terakhir</strong> pada tik terakhir adalah <strong>lebih besar dari analisa Anda.</strong>"
 
+msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
+msgstr "Jika Anda memilih \"Reset-Call\", Anda memperoleh hasil jika spot akhir pasti lebih tinggi dari spot masuk atau spot pada waktu reset."
+
+msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
+msgstr "Jika Anda memilih \"Reset-Put\", Anda memperoleh hasil jika spot akhir pasti lebih rendah dari spot masuk atau spot pada waktu reset."
+
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Pilih \"Rise\", maka anda akan memperoleh hasil jika <strong>spot akhir</strong> lebih tinggi dari <strong>spot masuk</strong>."
 
@@ -4458,14 +4482,17 @@ msgstr "Jika Anda memilih \"rise\", maka Anda akan memperoleh hasil jika harga p
 msgid "If you select \"rises\", you win the payout if the market price is higher than the entry spot."
 msgstr "Jika Anda memilih \"rise\", maka Anda akan memperoleh hasil jika harga pasar lebih tinggi dari spot masuk."
 
+msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick is the %1highest among the next five ticks%2."
+msgstr "Pilih %1\"High Tik\"%2, Anda akan memperoleh hasil jika tik yang dipilih merupakan %1tik tertinggi diatara lima tik selanjutnya%2."
+
+msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
+msgstr "Pilih %1\"Low Tik\"%2, Anda akan memperoleh hasil jika tik yang dipilih merupakan %1tik terendah diatara lima tik selanjutnya%2."
+
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Jika anda memilih <strong>waktu mulai</strong> mendatang, maka <strong>waktu mulai</strong> adalah waktu yang dipilih dan <strong>spot masuk</strong> adalah harga yang berlaku pada saat itu."
 
 msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "Jika anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <strong>waktu berakhir</strong> adalah waktu menit/jam yang dipilih setelah <strong>waktu mulai</strong> (jika durasi kurang dari satu hari), atau pada akhir trading (jika durasi satu hari atau lebih)."
-
-msgid "If you select a <strong>start time</strong> of \"Now\", the <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr "Jika Anda memilih <strong>waktu mulai</strong> \"Sekarang\", maka <strong>waktu mulai</strong> adalah ketika kontrak diproses oleh server kami dan <strong>spot masuk</strong> adalah <strong>tik berikutnya</strong>."
 
 msgid "If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time."
 msgstr "Jika anda memilih <strong>waktu berakhir</strong> tertentu, maka <strong>waktu berakhir</strong> adalah waktu yang dipilih."
@@ -4749,8 +4776,8 @@ msgstr "Tertarik dengan fasilitas MAM kami? %1Hubungi kami%2 untuk informasi lan
 msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Tertarik dengan solusi likuiditas kami? Hubungi kami di %1 untuk informasi lebih lanjut."
 
-msgid "Interested, so what's next? If you can offer our Clients a specific e-cash method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
-msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran tunai atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='mailto:%2'>mendengar balasan Anda!</a>"
+msgid "Interested, so what's next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
+msgstr "Tertarik, bagaimana langkah selanjutnya? Jika Anda dapat menawarkan metode pembayaran e-wallet atau pembayaran lokal yang tidak disediakan oleh %1 dan Anda memiliki track record yang baik, maka kami ingin <a href='mailto:%2'>mendengar balasan Anda!</a>"
 
 msgid "Internal Audit"
 msgstr "Audit Internal"
@@ -5458,7 +5485,7 @@ msgid "L. Event of Default"
 msgstr "L. Kelalaian"
 
 msgid "Ladders"
-msgstr "Ladders"
+msgstr "Ladder"
 
 msgid "Language Classes for Refugees (LCFR) is an educational programme for refugees organised by the 'Love & Respect Transformation Centre' –  a social enterprise committed to long-term quality education. This programme teaches English, Malay, and French to age groups ranging from children to adults in order to provide them with language skills that will help them to find employment while they are waiting to be repatriated."
 msgstr "Kelas Bahasa Untuk Pengungsi (LCFR) merupakan program pendidikan bagi pengungsi yang diselenggarakan oleh  'Love & Respect Transformation Centre' – sebuah perusahaan sosial berkomitmen untuk pendidikan berkualitas jangka panjang. Program ini mengajarkan bahasa Inggris, Melayu, dan Perancis untuk kelompok usia mulai dari anak-anak hingga orang dewasa yang menyediakan mereka kemampuan bahasa yang akan membantu mereka dalam mencari pekerjaan sementara mereka menunggu untuk dipulangkan."
@@ -5706,9 +5733,6 @@ msgstr "Low"
 msgid "Low Barrier"
 msgstr "Batasan Rendah"
 
-msgid "Low Barrier (%1)"
-msgstr "Batasan Rendah (%1)"
-
 msgid "Low barrier"
 msgstr "Batasan rendah"
 
@@ -5723,6 +5747,12 @@ msgstr "Lower"
 
 msgid "Lower or equal"
 msgstr "Lower atau equal"
+
+msgid "Lowest Tick"
+msgstr "Tik Terendah"
+
+msgid "Lowest Tick Time"
+msgstr "Waktu Tik Terendah"
 
 msgid "M"
 msgstr "M"
@@ -5958,11 +5988,20 @@ msgstr "Pemasaran dan Promosi"
 msgid "Marketing and promotions"
 msgstr "Pemasaran dan promosi"
 
+msgid "Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal."
+msgstr "Penarikan Mastercard hanya tersedia untuk kartu yang dikeluarkan di negara Eropa. Jika Anda tidak memenuhi persyaratan ini, Anda dapat menggunakan metode e-wallet untuk penarikan."
+
 msgid "Matches/Differs"
 msgstr "Matches/Differs"
 
 msgid "Max"
 msgstr "Maks"
+
+msgid "Maximum Payout"
+msgstr "Hasil Maksimum"
+
+msgid "Maximum Profit"
+msgstr "Laba Maksimum"
 
 msgid "Maximum account cash balance"
 msgstr "Maksimum saldo tunai"
@@ -6095,6 +6134,9 @@ msgstr "Ukuran tiket minimum"
 
 msgid "Minimum volume"
 msgstr "Volume minimal"
+
+msgid "Minimum:"
+msgstr "Minimum:"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Pekerja Pertambangan, Konstruksi, Manufaktur dan Transportasi"
@@ -6360,6 +6402,12 @@ msgstr "Tidak ada modifikasi atau amandemen terhadap setiap atau semua ketentuan
 msgid "No open positions."
 msgstr "Tidak terdapat posisi terbuka."
 
+msgid "No payout if exit spot is above or equal to the upper barrier."
+msgstr "Tidak ada hasil jika spot akhir adalah diatas atau sama dengan batasan atas."
+
+msgid "No payout if exit spot is below or equal to the lower barrier."
+msgstr "Tidak ada hasil jika spot akhir adalah dibawah atau sama dengan batasan bawah."
+
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering which may have several effects on Clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of Clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
 msgstr "Tidak ada orang yang akan menyalahgunakan situs ini untuk tujuan pencucian uang. Perusahaan ini mempekerjakan praktek terbaik prosedur anti pencucian uang. Semua transaksi diperiksa untuk mencegah pencucian uang yang mungkin memiliki beberapa efek pada Klien. Perusahaan berhak untuk menolak untuk melakukan bisnis dengan, untuk menghentikan untuk melakukan bisnis dengan, dan untuk membalikkan transaksi Klien yang tidak menerima atau mematuhi proses anti pencucian uang ini. Dana diterima tidak berasal dari kegiatan kriminal. Perusahaan terikat untuk melaporkan transaksi yang mencurigakan kepada pihak berwenang yang relevan."
 
@@ -6474,11 +6522,8 @@ msgstr "OTC Derivative (Option) Trading"
 msgid "OTC Indices"
 msgstr "Indeks OTC"
 
-msgid "OTC Stocks"
-msgstr "Saham OTC"
-
-msgid "OTC stocks and indices"
-msgstr "Indeks OTC dan saham"
+msgid "OTC indices"
+msgstr ""
 
 msgid "Occupation"
 msgstr "Pekerjaan"
@@ -6669,6 +6714,12 @@ msgstr "Eksekusi order biasanya datang dalam dua jenis: eksekusi pasar dan eksek
 msgid "Other"
 msgstr "Lainnya"
 
+msgid "Other Financial Instruments Trading Experience"
+msgstr "Pengalaman Trading Instrumen Keuangan Lainnya"
+
+msgid "Other Financial Instruments Trading Frequency"
+msgstr "Frekuensi Trading Instrumen Keuangan Lainnya"
+
 msgid "Other Obligations"
 msgstr "Kewajiban Lainnya"
 
@@ -6744,6 +6795,9 @@ msgstr "Tekad kami mengenai pentingnya faktor eksekusi mungkin berbeda dengan An
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "Pertumbuhan cepat kami dilengkapi dengan akuisisi dari klien BetsForTraders, salah satu pesaing utama kami."
 
+msgid "Our indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our indices may differ from their counterparts on centralised exchanges."
+msgstr ""
+
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "Kebijakan informasi keamanan kami adalah berdasarkan praktek industri terbaik pada kontrol akses dan kontinuitas bisnis."
 
@@ -6767,9 +6821,6 @@ msgstr " "
 
 msgid "Our site does not charge any transfer fees."
 msgstr "Situs kami tidak membebankan biaya transfer."
-
-msgid "Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges."
-msgstr "Saham dan indeks kami bersumber dari pasar over-the-counter (OTC) - sumber di luar bursa sentral. Harap dicatat bahwa karena sifat OTC mereka, harga saham dan indeks kami mungkin berbeda dari rekan-rekan mereka pada bursa sentral."
 
 msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr "Harga swap kami juga dapat disesuaikan untuk memperhitungkan liburan."
@@ -6927,6 +6978,9 @@ msgstr "Hasil"
 msgid "Payout per lot = 1,000"
 msgstr "Hasil per lot = 1.000"
 
+msgid "Payout range"
+msgstr "Kisaran hasil"
+
 msgid "Pension"
 msgstr "Pensiun"
 
@@ -7038,8 +7092,11 @@ msgstr "Silahkan pilih mata uang"
 msgid "Please complete the %1financial assessment form%2 to lift your withdrawal and trading limits."
 msgstr "Silahkan lengkapi %1formulir penilaian finansial%2 untuk meningkatkan batasan penarikan dan trading Anda."
 
-msgid "Please complete the tax information before proceeding."
-msgstr "Mohon lengkapi informasi pajak sebelum melanjutkan."
+msgid "Please complete your %1personal details%2 before you proceed."
+msgstr "Silakan lengkapi %1detail pribadi%2 Anda sebelum melanjutkan."
+
+msgid "Please complete your personal details before you proceed."
+msgstr "Silahkan lengkapi detail pribadi Anda sebelum melanjutkan."
 
 msgid "Please confirm that all the information above is true and complete."
 msgstr "Mohon konfirmasikan bahwa semua informasi di atas adalah benar dan lengkap."
@@ -7152,9 +7209,6 @@ msgstr "Tentukan batasan total pembelian kontrak 30-hari pada %1fasilitas pengec
 msgid "Please set your <a href=\"%1\">30-day turnover limit</a> to access the cashier."
 msgstr "Silahkan susun <a href=\"%1\">batasan turnover 30-hari Anda</a> untuk mengakses kasir."
 
-msgid "Please set your account opening reason before proceeding."
-msgstr "Silahkan informasikan alasan pendaftaran akun Anda sebelum melanjutkan."
-
 msgid "Please specify your preferred reality-check interval in minutes"
 msgstr "Silahkan tentukan interval cek-realitas pilihan Anda dalam menit"
 
@@ -7260,6 +7314,12 @@ msgstr "Prediksikan bahwa pasar akan berakhir lebih tinggi dari harga rata-rata"
 msgid "Predict that the market will end lower than the average price"
 msgstr "Prediksikan bahwa pasar akan berakhir lebih rendah dari harga rata-rata"
 
+msgid "Predict that the market will end up higher than either the current level or the level at a predetermined time (reset time)"
+msgstr "Menganalisa pasar akan berakhir lebih tinggi dari level saat ini atau level pada waktu yang ditentukan sebelumnya (waktu reset)"
+
+msgid "Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)"
+msgstr "Menganalisa pasar akan berakhir lebih rendah dari level saat ini atau level pada waktu yang ditentukan sebelumnya (waktu reset)"
+
 msgid "Predict that the market will rise or fall from its current level"
 msgstr "Prediksikan bahwa pasar akan naik atau turun dari level saat ini"
 
@@ -7359,9 +7419,6 @@ msgstr "Klien Profesional"
 msgid "Professional Clients"
 msgstr "Klien Profesional"
 
-msgid "Professional Trader"
-msgstr "Trader Profesional"
-
 msgid "Professionals"
 msgstr "Profesional"
 
@@ -7416,6 +7473,9 @@ msgstr "Mengoreksi dan memperbaiki konten yang muncul pada website perusahaan, b
 msgid "Proofreader"
 msgstr "Korektor"
 
+msgid "Protect your account with two-factor authentication. Each time you sign into your account, you will need to enter your password, plus an authentication code generated by an app on your smartphone."
+msgstr "Lindungi akun Anda dengan autentikasi dua faktor. Setiap kali Anda masuk ke akun Anda, Anda perlu memasukkan kata sandi dan kode autentikasi yang dihasilkan oleh aplikasi pada smartphone Anda."
+
 msgid "Protect your profits"
 msgstr "Melindungi keuntungan Anda"
 
@@ -7463,6 +7523,9 @@ msgstr "Permintaan pembelian dikirim"
 
 msgid "Purpose of trading"
 msgstr "Purpose of trading"
+
+msgid "Put Spread"
+msgstr "Put Spread"
 
 msgid "Put a limit on your winnings. Once you have reached it put some aside and trade with the rest of the money."
 msgstr "Batasi keuntungan Anda. Setelah Anda mencapai target, sisihkan dan bertrading menggunakan sisa dana yang ada."
@@ -7550,6 +7613,9 @@ msgstr "Standar Riil"
 
 msgid "Real Volatility Indices"
 msgstr "Indeks Volatilitas Riil"
+
+msgid "Real-Money Account"
+msgstr "Akun Uang Riil"
 
 msgid "Real-Money Accounts"
 msgstr "Akun Uang Riil"
@@ -7695,17 +7761,41 @@ msgstr "Penjualan ulang tidak ditawarkan"
 msgid "Resale price"
 msgstr "Harga jual"
 
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Reset Barrier"
+msgstr "Batasan Reset"
+
+msgid "Reset Call"
+msgstr "Reset Call"
+
 msgid "Reset MT5 password"
 msgstr "Reset kata sandi MT5"
 
 msgid "Reset Password"
 msgstr "Ulang Kata Sandi"
 
+msgid "Reset Put"
+msgstr "Reset Put"
+
+msgid "Reset Time"
+msgstr "Waktu Reset"
+
 msgid "Reset password"
 msgstr "Reset kata sandi"
 
+msgid "Reset time"
+msgstr "Waktu reset"
+
 msgid "Reset to Original Settings"
 msgstr "Reset ke Pengaturan Asli"
+
+msgid "Reset-Call"
+msgstr "Reset-Call"
+
+msgid "Reset-Put"
+msgstr "Reset-Put"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Penduduk tetap yang telah ditentukan oleh FATF yang memiliki keterbatasan adalah tidak dapat mendaftar akun pada Binary Investments (Europe) Ltd."
@@ -7863,6 +7953,9 @@ msgstr "Sabtu"
 msgid "Scalable"
 msgstr "Skalabilitas"
 
+msgid "Scan the QR code below with your authentication app (such as %1, %2, and %3)."
+msgstr "Scan kode QR di bawah ini menggunakan salah satu aplikasi autentikasi (seperti %1, %2, dan %3)."
+
 msgid "Scope and Intent"
 msgstr "Lingkup dan Niat"
 
@@ -7940,6 +8033,9 @@ msgstr "Pilih pasar dan aset dasar Anda"
 
 msgid "Select your trade type"
 msgstr "Pilih jenis kontrak Anda"
+
+msgid "Selected Tick"
+msgstr "Tik Terpilih"
 
 msgid "Self Exclusion"
 msgstr "Pengecualian Diri"
@@ -8094,6 +8190,9 @@ msgstr "Harus dimulai dengan huruf atau angka, dan mungkin mengandung tanda hubu
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "Jika biaya ini tidak cukup ditutupi oleh sisa saldo pada akun Anda maka kami berhak untuk mencari alternatif untuk meneliti  pilihan lain untuk memperoleh pembayaran, seperti: jika akun Anda menghasilkan hasil komisi, maka kami akan menahan komisi tersebut untuk akun bersangkutan hingga kerugian habis tertutupi."
 
+msgid "Show all historical transactions up to"
+msgstr "Tampilkan semua transaksi historis hingga"
+
 msgid "Sign out"
 msgstr "Keluar"
 
@@ -8105,6 +8204,9 @@ msgstr "Bergabunglah pada Program Afiliasi %1 hari ini:"
 
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Berpengalaman signifikan dalam Media Sosial, Pemasaran, dan/atau Iklan"
+
+msgid "Signup"
+msgstr ""
 
 msgid "Silver vs US Dollar"
 msgstr "Perak vs Dolar AS"
@@ -8162,6 +8264,9 @@ msgstr "Maaf, error terjadi ketika memproses rekening Anda."
 
 msgid "Sorry, an error occurred while processing your request."
 msgstr "Maaf, error terjadi ketika memproses permohonan Anda."
+
+msgid "Sorry, live chat is currently unavailable. Please email us at %1."
+msgstr "Maaf, live chat untuk saat ini tidak tersedia. Silakan email kami di %1."
 
 msgid "Sorry, this feature is available to virtual accounts only."
 msgstr "Maaf, fasilitas ini hanya tersedia untuk rekening virtual saja."
@@ -8228,6 +8333,9 @@ msgstr "Waktu Mulai"
 
 msgid "Start Time and Entry Spot"
 msgstr "Waktu Mulai dan Spot Mulai"
+
+msgid "Start Trading with %1"
+msgstr ""
 
 msgid "Start Trading with MetaTrader 5"
 msgstr "Mulai Trading dengan MetaTrader 5"
@@ -8611,11 +8719,20 @@ msgstr "<strong>Periode kontrak</strong> adalah periode antara <strong>tik berik
 msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration)."
 msgstr "<strong>Waktu akhir</strong> adalah menit/jam yang dipilih setelah <strong>waktu mulai</strong> (jika durasi kurang dari satu hari), atau pada akhir hari trading (jika durasi lebih dari satu hari)."
 
+msgid "The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong>."
+msgstr "<strong>Waktu akhir</strong> adalah jumlah menit/jam yang dipilih setelah <strong>waktu mulai</strong>."
+
+msgid "The <strong>entry spot</strong> is the first tick after the contract is processed by our servers."
+msgstr "<strong>Spot masuk</strong> adalah tik pertama setelah kontrak diproses oleh server kami."
+
 msgid "The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>."
 msgstr "<strong>Spot akhir</strong> adalah tik terakhir pada atau sebelum <strong>waktu akhir</strong>."
 
 msgid "The <strong>remaining time</strong> is the time remaining until the contract expires."
 msgstr "<strong>Waktu yang tersisa</strong> adalah sisa waktu hingga kontrak berakhir."
+
+msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
+msgstr "<strong>Waktu mulai</strong> adalah ketika kontrak terproses oleh server kami dan <strong>spot masuk</strong> adalah <strong>tik selanjutnya</strong>."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "<strong>Waktu mulai</strong> adalah waktu ketika kontrak diproses oleh server kami."
@@ -8629,8 +8746,8 @@ msgstr "Kewajiban Affiliasi"
 msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
 msgstr "Agen setuju untuk mengganti kerugian Perusahaan atas semua kerugian yang mungkin dialami Perusahaan karena, atau sehubungan dengan tindakan penipuan, atau kelalaian dan/atau kesalahan dan/atau pelanggaran yang disengaja dan/atau pelanggaran dari Perjanjian ini."
 
-msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-cash or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
-msgstr "Agen dapat memberikan layanannya kepada Klien Perusahaan yang ingin menyetor dan atau menarik dana dengan menggunakan Agen. Terutama, Agen dapat memberikan layanannya kepada Klien yang bermaksud menggunakan metode e-cash atau e-payment selain yang digunakan oleh Perusahaan (selanjutnya disebut \"pembayaran elektronik\") dan/atau mata uang lokal selain yang diterima oleh Perusahaan (selanjutnya disebut \"mata uang lokal\") dan/atau transfer bank lokal (selanjutnya disebut \"transfer bank wire\")."
+msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
+msgstr "Agen dapat memberikan layanannya kepada Klien Perusahaan yang ingin menyetor dan atau menarik dana dengan menggunakan Agen. Terutama, Agen dapat memberikan layanannya kepada Klien yang bermaksud menggunakan metode e-wallet atau e-payment selain yang digunakan oleh Perusahaan (selanjutnya disebut \"pembayaran elektronik\") dan/atau mata uang lokal selain yang diterima oleh Perusahaan (selanjutnya disebut \"mata uang lokal\") dan/atau transfer bank lokal (selanjutnya disebut \"transfer bank wire\")."
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
 msgstr "Agen mewakili dan menjamin bahwa untuk saat ini dan selamanya akan selalu mematuhi semua undang-undang yang terkait dengan Anti-Pencucian Uang atau program sanksi ekonomi lain pada juridiksi tempat beroperasi."
@@ -8977,6 +9094,9 @@ msgstr "Durasi adalah tempo pembelian kontrak (lihat 'periode kontrak')."
 msgid "The email address provided is already in use. If you forgot your password, please try our <a href=\"%1\">password recovery tool</a> or contact our customer service."
 msgstr "Alamat email yang Anda sediakan sudah pernah di daftarkan. Jika Anda lupa kata sandi, silahkan coba <a href=\"%1\">alat pemulihan kata sandi</a> atau hubungi customer service kami."
 
+msgid "The entry spot is the first tick after the contract is processed by our servers."
+msgstr "Spot masuk adalah tik pertama setelah kontrak diproses oleh server kami."
+
 msgid "The entry spot price is the starting price of the trade purchased by a trader."
 msgstr "Harga spot masuk adalah harga awal kontrak yang dibeli oleh trader."
 
@@ -9003,9 +9123,6 @@ msgstr "Layanan trading finansial yang disediakan pada situs ini hanya cocok unt
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Langkah pertama adalah menetapkan parameter trading Anda. Terdapat lima parameter trading yang Anda harus sesuaikan agar dapat menerima harga untuk kontrak:"
-
-msgid "The first tick is the first tick after the contract is processed by our servers."
-msgstr "Tik awal adalah tik pertama setelah kontrak diproses oleh server kami."
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "Pasar Foreign Exchange (Forex) adalah pasar yang paling likuid dan paling sering ditradingkan di seluruh dunia, dimana trading senilai trilyunan tiap harinya."
@@ -9051,9 +9168,6 @@ msgstr "Kerugian maksimal yang mungkin ditanggung oleh klien adalah sejumlah dan
 
 msgid "The maximum number of tokens (%1) has been reached."
 msgstr "Jumlah maksimum token (%1) telah tercapai."
-
-msgid "The minimum duration is"
-msgstr "Durasi minimum adalah"
 
 msgid "The minimum required amount for using the account transfer facility is %1."
 msgstr "Jumlah minimum untuk menggunakan fasilitas transfer antar akun adalah %1."
@@ -9108,6 +9222,9 @@ msgstr "Syarat minimal deposit telah dilakukan oleh Pelanggan DAN"
 
 msgid "The resale price indicates a contract's current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See 'Sell option' for more details on selling contracts before expiry."
 msgstr "Harga jual kembali menunjukkan harga pasar terkini. Harga jual kembali adalah berdasarkan penawaran terbaik dan mungkin tidak tersedia setiap saat. Lihat 'Opsi jual' untuk keterangan lengkap mengenai penjualan kontrak sebelum berakhir."
+
+msgid "The reset time is %1"
+msgstr "Waktu reset adalah %1"
 
 msgid "The return is the money realized when the contract expires (see 'Payout')."
 msgstr "Hasil adalah dana yang diperoleh setelah kontrak berakhir (lihat 'Hasil')."
@@ -9186,6 +9303,9 @@ msgstr "Tersedia dua jenis kontrak In/Out:"
 
 msgid "There are two types of Up/Down trades:"
 msgstr "Tersedia dua jenis kontrak Up/Down:"
+
+msgid "There are two types of reset trades:"
+msgstr "Tersedia dua jenis kontrak reset:"
 
 msgid "There is any amount outstanding from you to us; and/or"
 msgstr "Terdapat saldo apapun yang masih tertunda dari Anda; dan/atau"
@@ -9319,6 +9439,9 @@ msgstr "Klausul ini tidak berlaku untuk Indeks Volatilitas."
 msgid "This contract lost"
 msgstr "Kontrak ini rugi"
 
+msgid "This contract type only offers 5 ticks"
+msgstr "Jenis kontrak ini hanya menawarkan 5 tik"
+
 msgid "This contract won"
 msgstr "Kontrak ini untung"
 
@@ -9403,6 +9526,24 @@ msgstr "Kamis"
 msgid "Tick"
 msgstr "Tik"
 
+msgid "Tick %1 is not the highest tick"
+msgstr "Tik %1 adalah bukan tik tertinggi"
+
+msgid "Tick %1 is not the lowest tick"
+msgstr "Tik %1 adalah bukan tik terendah"
+
+msgid "Tick %1 is the highest tick"
+msgstr "Tik %1 adalah tik tertinggi"
+
+msgid "Tick %1 is the lowest tick"
+msgstr "Tik %1 adalah tik terendah"
+
+msgid "Tick Prediction"
+msgstr "Analisa Tik"
+
+msgid "Ticks"
+msgstr "Tik"
+
 msgid "Tier"
 msgstr "Tingkat"
 
@@ -9456,6 +9597,9 @@ msgstr "Untuk mendaftar akun riil MAM, silahkan:"
 
 msgid "To create a MetaTrader 5 real account, please:"
 msgstr "Untuk mendaftar akun riil MetaTrader 5, silahkan:"
+
+msgid "To disable two-factor authentication, please enter the code generated by the app below:"
+msgstr "Untuk menonaktifkan autentikasi dua faktor, masukkan kode yang dihasilkan oleh aplikasi di bawah ini:"
 
 msgid "To enable cookies, follow the instructions below for the browser version that you are using."
 msgstr "Untuk mengaktifkan cookie, ikuti petunjuk di bawah ini untuk versi browser yang anda gunakan."
@@ -9578,7 +9722,7 @@ msgid "Trade Bitcoin, Ethereum, and Litecoin pairs without owning them. Our cryp
 msgstr "Bertrading pasangan Bitcoin, Ethereum, dan Litecoin tanpa memiliki mereka. Pasangan mata uang kripto kami mengkuotasi mata uang kripto seperti Bitcoin terhadap mata uang fiat, seperti Dolar AS."
 
 msgid "Trade FX binary options on our multi-barrier platform, Ladders."
-msgstr "Trade opsi binary FX pada platform multi-barrier kami, Ladders."
+msgstr "Trade opsi binary FX pada platform multi-barrier kami, Ladder."
 
 msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Trading Forex dan CFD pada platform multi-aset populer kami."
@@ -9688,12 +9832,6 @@ msgstr "Trading Contract for Difference (CFDs) pada indeks volatilitas mungkin t
 msgid "Trading Experience"
 msgstr "Trading Experience"
 
-msgid "Trading Experience in other Financial Instruments"
-msgstr "Pengalaman Trading pada Instrumen Keuangan lainnya"
-
-msgid "Trading Frequency in other Financial Instruments"
-msgstr "Trading Frekuensi pada Instrumen Keuangan lainnya"
-
 msgid "Trading Limits"
 msgstr "Batasan Trading"
 
@@ -9802,9 +9940,6 @@ msgstr "Benar"
 msgid "Trust"
 msgstr "Kepercayaan"
 
-msgid "Trusted by traders since 2000"
-msgstr "Dipercaya oleh trader sejak 2000"
-
 msgid "Try Binary Bot"
 msgstr "Coba Bot Binary"
 
@@ -9840,6 +9975,15 @@ msgstr "Total pembelian"
 
 msgid "Turnover Limit"
 msgstr "Batas Turnover"
+
+msgid "Two-Factor Authentication"
+msgstr "Autentikasi Dua Faktor"
+
+msgid "Two-factor authentication is currently disabled."
+msgstr "Autentikasi dua faktor saat ini dinonaktifkan."
+
+msgid "Two-factor authentication is currently enabled."
+msgstr "Autentikasi dua faktor saat ini diaktifkan."
 
 msgid "Two-way pricing"
 msgstr "Harga dua-arah"
@@ -10429,6 +10573,9 @@ msgstr "Kami akan memberikan semua dokumen dalam format elektronik. Silahkan cen
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Kami akan menggunakan upaya yang wajar untuk memastikan semua data elektronik yang disediakan pada Platform Trading MT5 dan semua transaksi elektronik yang Anda instruksikan dan kami terima, serta yang kami eksekusikan diluar keterlambatan network."
 
+msgid "We're almost there"
+msgstr ""
+
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "Kami memperoleh hak paten sebagai 'Sistem trading komputer dan metode untuk berspekulasi dalam pasar finansial' dan 'Sistem trading komputer yang menawarkan spekulasi khusus pasar finansial'. Paten tersebut memperlihatkan kemampuan kami dalam berinovasi dan tetap terdepan dalam bisnis ini."
 
@@ -10739,6 +10886,12 @@ msgstr "Mengapa Anda harus bertrading opsi binary dengan %1"
 msgid "Why you should trade precious metals with %1"
 msgstr "Mengapa Anda harus bertrading logam mulia dengan %1"
 
+msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
+msgstr "Dapatkan hasli maksimum jika spot akhir lebih tinggi dari atau sama dengan batasan atas."
+
+msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
+msgstr "Dapatkan hasli maksimum jika spot akhir lebih rendah dari atau sama dengan batasan rendah."
+
 msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
 msgstr "Dapatkan hasil jika spot akhir sama dengan spot awal, selain menjadi lebih tinggi atau lebih rendah."
 
@@ -10750,6 +10903,12 @@ msgstr "Hasil multiplier dikali high dikurangi close."
 
 msgid "Win the multiplier times the high minus low."
 msgstr "Hasil multiplier dikali high dikurangi low."
+
+msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between exit spot and lower barrier."
+msgstr "Dapatkan hasil maksimum jika spot akhir berada diantara batasan bawah dan batasan atas, sebanding dengan selisih antara spot akhir dan batasan bawah."
+
+msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between upper barrier and exit spot."
+msgstr "Dapatkan hasil maksimum jika spot akhir berada diantara batasan bawah dan batasan atas, sebanding dengan selisih antara batasan atas dan spot akhir."
 
 msgid "Windows"
 msgstr "Windows"
@@ -10976,6 +11135,12 @@ msgstr "Anda disarankan bahwa Opsi Binary yang ditawarkan oleh %1 adalah tidak d
 msgid "You are buying the base currency and selling the quote currency."
 msgstr "Anda membeli mata uang dasar dan menjual mata uang kutipan."
 
+msgid "You are categorised as a professional client."
+msgstr "Anda dikategorikan sebagai klien profesional."
+
+msgid "You are categorised as a retail client. Apply to be treated as a professional trader."
+msgstr "Anda dikategorikan sebagai klien ritel. Ajukan permohonan sebagai trader profesional."
+
 msgid "You are expecting the base currency to fall in value so you can buy it back at a lower price and make profit."
 msgstr "Anda mengharapkan mata uang dasar jatuh nilainya sehingga Anda bisa membelinya kembali dengan harga lebih rendah dan menghasilkan keuntungan."
 
@@ -11128,6 +11293,12 @@ msgstr "Anda telah berhasil mendaftar akun %1Anda!"
 
 msgid "You have successfully created your Virtual Account."
 msgstr "Anda telah berhasil mendaftar akun Virtual Anda."
+
+msgid "You have successfully disabled two-factor authentication for your account."
+msgstr "Anda telah berhasil menonaktifkan autentikasi dua faktor pada akun Anda."
+
+msgid "You have successfully enabled two-factor authentication for your account."
+msgstr "Anda telah berhasil mengaktifkan autentikasi dua faktor pada akun Anda."
 
 msgid "You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site."
 msgstr "Anda memiliki cukup pengalaman dan pengetahuan dalam hal trading finansial dan mampu mengevaluasi manfaat serta risiko kontrak keuangan pada situs ini dan melakukannya tanpa mengandalkan informasi yang terkandung dalam situs ini."
@@ -11392,6 +11563,9 @@ msgstr "Akun Anda sebaiknya tidak digunakan sebagai fasilitas perbankan dan depo
 
 msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
 msgstr "Alamat Anda tidak dapat disahkan menggunakan sistem otomatis yang kami gunakan. Silahkan lanjutkan namun pastikan alamat Anda lengkap."
+
+msgid "Your application to be treated as a professional client is being processed."
+msgstr "Aplikasi Anda sebagai klien profesional sedang diproses."
 
 msgid "Your application will then be reviewed by our compliance and marketing departments. Once approved, we will put you live in our <a href='%1'>payment agent</a> list."
 msgstr "Permohonan Anda akan ditinjau oleh departemen compliance dan marketing kami. Setelah disetujui, kami akan mengaktifkan Anda di dalam daftar <a href='%1'>agen pembayaran</a>."

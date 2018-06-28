@@ -367,6 +367,7 @@ const TradingEvents = (() => {
          */
         const low_barrier_element = getElementById('barrier_low');
         low_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
+            Barriers.validateBarrier();
             Defaults.set('barrier_low', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
@@ -380,6 +381,7 @@ const TradingEvents = (() => {
          */
         const high_barrier_element = getElementById('barrier_high');
         high_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
+            Barriers.validateBarrier();
             Defaults.set('barrier_high', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
@@ -393,6 +395,12 @@ const TradingEvents = (() => {
          */
         getElementById('prediction').addEventListener('change', CommonTrading.debounce((e) => {
             Defaults.set('prediction', e.target.value);
+            Price.processPriceRequest();
+            CommonTrading.submitForm(getElementById('websocket_form'));
+        }));
+
+        getElementById('selected_tick').addEventListener('change', CommonTrading.debounce((e) => {
+            Defaults.set('selected_tick', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));

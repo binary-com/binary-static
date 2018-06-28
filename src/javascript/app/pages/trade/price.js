@@ -51,6 +51,7 @@ const Price = (() => {
         const high_barrier  = CommonFunctions.getElementById('barrier_high');
         const low_barrier   = CommonFunctions.getElementById('barrier_low');
         const prediction    = CommonFunctions.getElementById('prediction');
+        const selected_tick = CommonFunctions.getElementById('selected_tick');
         const multiplier    = CommonFunctions.getElementById('multiplier');
 
         if (payout && CommonFunctions.isVisible(payout) && payout.value) {
@@ -126,6 +127,14 @@ const Price = (() => {
 
         if (prediction && CommonFunctions.isVisible(prediction)) {
             proposal.barrier = parseInt(prediction.value);
+        }
+
+        if (selected_tick && CommonFunctions.isVisible(selected_tick)) {
+            proposal.selected_tick = parseInt(selected_tick.value);
+            // the only possibility for duration and duration tick is 5 ticks
+            // so we show a label and directly pass those values here
+            proposal.duration      = Defaults.get('duration_amount');
+            proposal.duration_unit = Defaults.get('duration_units');
         }
 
         if (contract_type) {
@@ -346,12 +355,14 @@ const Price = (() => {
         processForgetProposals().then(() => {
             Object.keys(types || {}).forEach((type_of_contract) => {
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
-                    if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+                    if (response.error && response.error.code === 'AlreadySubscribed') {
+                        BinarySocket.send({ forget_all: 'proposal' });
+                    } else if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
                         response.echo_req.passthrough.form_id === form_id) {
-                        commonTrading.hideOverlayContainer();
                         Price.display(response, Contract.contractType()[Contract.form()]);
-                        commonTrading.hidePriceOverlay();
                     }
+                    commonTrading.hideOverlayContainer();
+                    commonTrading.hidePriceOverlay();
                 } });
             });
         });

@@ -440,7 +440,7 @@ const MetaTraderUI = (() => {
                 const title = accounts_info[acc_type].short_title;
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
                     .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase().replace(/\s/g, '_').replace('mam_', '')}.svg`));
-                $acc.find('p').text(title);
+                $acc.find('p').text(localize(title));
                 (/mam/.test(acc_type) ? $acc_template_mam : $acc_template_mt).append($acc);
             });
         $templates.find('.hl-types-of-accounts').setVisibility(count > 1);
