@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-28 02:06\n"
+"PO-Revision-Date: 2018-06-28 03:41\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -1049,6 +1049,9 @@ msgstr "クライアントへ%1では直接利用できないEウォレットの
 msgid "Allow equals"
 msgstr ""
 
+msgid "Already have an account? %1Log in%2 here"
+msgstr ""
+
 msgid "Also known as counter currency"
 msgstr "対象銘柄とも知られています"
 
@@ -1718,9 +1721,6 @@ msgstr "ビットコイン vs 米ドル"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "ブロックチェーンテクノロジー - 全ての仮想通貨はブロックチェーン（公共帳簿の一種）技術を使用して各トランザクションを記録しています。"
-
-msgid "Blue-chip stock contracts sourced from the OTC market."
-msgstr "店頭市場から優良株を提供。"
 
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "店頭市場から優良株を提供"
@@ -3178,8 +3178,8 @@ msgstr "わかりやすく、使いやすいプラットフォームで取引を
 msgid "Enjoy an award-winning online trading platform with trading conditions that are ideal for new and experienced traders."
 msgstr "初心者にも経験者にも理想的な取引環境を備えた、　　　　　　　　　　　　　　　受賞履歴のあるオンライン取引プラットフォームでお取引をお楽しみいただけます。"
 
-msgid "Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing."
-msgstr "リアルタイムのチャートと価格設定の利点を活かして、株式やインデックスのお取引をお楽しみください。"
+msgid "Enjoy exciting opportunities to trade indices with the benefit of real-time charts and pricing."
+msgstr ""
 
 msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
 msgstr "当社のTick取引アプリケーションなら、いつでもどこでも最速のお取引をお楽しみいただけます。"
@@ -6561,11 +6561,8 @@ msgstr "店頭デリバティブ（オプション）取引"
 msgid "OTC Indices"
 msgstr "店頭インデックス"
 
-msgid "OTC Stocks"
-msgstr "店頭株"
-
-msgid "OTC stocks and indices"
-msgstr "店頭株と店頭インデックス"
+msgid "OTC indices"
+msgstr ""
 
 msgid "Occupation"
 msgstr "職業"
@@ -6837,6 +6834,9 @@ msgstr "実行要因の相対的重要性に関する当社の決定は、最良
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "当社の競合相手であったBetsForTraders社の顧客を獲得し、組織として成長していきます。"
 
+msgid "Our indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our indices may differ from their counterparts on centralised exchanges."
+msgstr ""
+
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "当社の情報秘匿に関する取り決めは、アクセス管理とビジネスの継続性を考慮した業界にて最良の慣行に基づいております。"
 
@@ -6860,9 +6860,6 @@ msgstr "数多く存在するフィルターシステムを用いることで、
 
 msgid "Our site does not charge any transfer fees."
 msgstr "当サイトはご入金、及びご出金時に手数料を請求することはありません。"
-
-msgid "Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges."
-msgstr "当社の株式及びインデックスは店頭（OTC）市場のデータを基にしています - 集中為替取引所外データ。OTCの性質上、当社の株式およびインデックスの価格は、集中取引所の複製データと異なる場合があります。"
 
 msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr "当社のスワップレートは休日も考慮して調整されることがあります。"
@@ -8250,6 +8247,9 @@ msgstr "今すぐ%1アフィリエイトプログラムに登録しましょう"
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "ソーシャルメディア、マーケティングと/または広告に関する豊富な経験"
 
+msgid "Signup"
+msgstr ""
+
 msgid "Silver vs US Dollar"
 msgstr "銀 vs 米ドル"
 
@@ -8375,6 +8375,9 @@ msgstr "取引開始時刻"
 
 msgid "Start Time and Entry Spot"
 msgstr "Start Time and Entry Spot"
+
+msgid "Start Trading with %1"
+msgstr ""
 
 msgid "Start Trading with MetaTrader 5"
 msgstr "MetaTrader 5でお取引を始める"
@@ -10680,6 +10683,9 @@ msgstr "口座開設には下記への同意が必要です。"
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
+
+msgid "We're almost there"
+msgstr ""
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "米国で「金融市場投機用コンピューター取引システムとメソッド」と「カスタムの金融市場投機用コンピューター取引システムとメソッド」に関する特許を取得。この特許取得により、当社の進化を証明し、及び競合他社との差別化を実現。"
