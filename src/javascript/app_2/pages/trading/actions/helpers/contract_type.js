@@ -221,7 +221,7 @@ const ContractType = (() => {
     };
 
     const getSessions = (contract_type, start_date) => {
-        const config   = getPropertyValue(available_contract_types, [contract_type, 'config']);
+        const config   = getPropertyValue(available_contract_types, [contract_type, 'config']) || {};
         const sessions =
                   ((config.forward_starting_dates || []).find(option => option.value === start_date) || {}).sessions;
         return { sessions };
