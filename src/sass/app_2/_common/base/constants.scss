@@ -11,14 +11,19 @@ $COLOR_BLUE        : #2a3052;
 $COLOR_DARK_BLUE   : #15212d;
 $COLOR_LIGHT_BLUE  : #1565c0;
 $COLOR_BLACK       : #000;
+$COLOR_LIGHT_BLACK : #333;
 $COLOR_WHITE       : #fff;
 $COLOR_LIGHT_GRAY  : #fafafb;
 $COLOR_LIGHT_GRAY_2: #b0b3bf;
 $COLOR_GRAY        : #e9e9ed;
 $COLOR_DARK_WHITE  : #ccc;
+$COLOR_YELLOW      : #fef1cf;
 /* stylelint-enable color-no-hex */
 
 $FONT_STACK: roboto, sans-serif;
 $BORDER_RADIUS: 4px;
 
 $MAX_CONTAINER_WIDTH: 1440px;
+
+$HEADER_HEIGHT: 50px;
+$FOOTER_HEIGHT: 35px;

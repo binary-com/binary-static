@@ -6,6 +6,13 @@ div.contracts-popup-container {
     border: solid 1px $COLOR_GRAY;
     border-radius: 4px;
 
+    &:hover {
+        border-color: $COLOR_BLUE;
+
+        .select-arrow {
+            color: $COLOR_BLUE;
+        }
+    }
     &.mobile-only {
         border: solid 1px $COLOR_BLUE;
     }
@@ -14,7 +21,7 @@ div.contracts-popup-container {
         align-items: center;
         justify-content: flex-start;
         flex-direction: column;
-        padding: 6px 0;
+        padding: 5px;
 
         i {
             margin-bottom: 5px;
@@ -49,7 +56,6 @@ div.contracts-popup-container {
             border-color: $COLOR_BLUE;
         }
         & > .select-arrow {
-            top: 40%;
             transform: rotate(0deg);
         }
     }
@@ -103,7 +109,7 @@ div.contracts-popup-container {
             position: absolute;
             width: 560px;
             right: calc(100% + 10px);
-            top: -56px;
+            top: -54px;
             display: grid;
             grid-auto-columns: 1fr;
             z-index: 2;
@@ -180,7 +186,7 @@ div.contracts-popup-container {
         position: absolute;
         pointer-events: none;
         top: 40%;
-        right: 15px;
+        right: 9px;
         line-height: 1;
         transition: transform 0.3s ease;
         transform: rotate(180deg);

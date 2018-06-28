@@ -60,7 +60,7 @@ const BinaryApp = ({ main_store }) => (
                         ]}
                     />
                 </div>
-                <div id='app_contents'>
+                <div id='app_contents' className='app-contents'>
                     <BinaryRoutes />
                 </div>
                 <footer id='trading_footer'>
@@ -68,7 +68,8 @@ const BinaryApp = ({ main_store }) => (
                         items={[
                             { icon: 'ic-statement',   text: localize('Statement'), link_to: 'statement' },
                             { icon: 'ic-chat-bubble', text: localize('Notification') },
-                            { icon: 'ic-lock-open',   text: localize('Lock') },
+                            { icon: 'ic-two-step'   , text: localize('Purchase Confirmation') },
+                            { icon: 'ic-lock-open',   text: localize('Purchase Lock') },
                         ]}
                     />
                 </footer>

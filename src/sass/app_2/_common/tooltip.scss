@@ -25,7 +25,7 @@ span.tooltip {
         cursor: help;
 
         &:hover:after, &:hover:before {
-            opacity: 0.88;
+            opacity: 0.96;
             pointer-events: auto;
             transform: translate(-50%, 0);
         }
@@ -48,11 +48,10 @@ span.tooltip {
             text-transform: none;
             text-decoration: none;
             letter-spacing: normal;
-            background: rgba(21, 33, 45, 0.88);
+            background: rgba(21, 33, 45, 0.96);
             box-shadow: 0 2px 8px 0 rgba(21, 33, 45, 0.32);
             border-radius: 4px;
             color: $COLOR_WHITE;
-            max-width: 400px;
             content: attr(data-tooltip);
             padding: 8px;
             white-space: nowrap;
@@ -65,7 +64,7 @@ span.tooltip {
             width: 0;
             position: absolute;
             pointer-events: none;
-            border-top-color: rgba(21, 33, 45, 0.88);
+            border-top-color: rgba(21, 33, 45, 0.96);
             border-width: 6px;
             margin-bottom: -1px;
         }
@@ -84,7 +83,7 @@ span.tooltip {
             }
             &:after {
                 border-top-color: transparent;
-                border-right-color: rgba(21, 33, 45, 0.88);
+                border-right-color: rgba(21, 33, 45, 0.96);
             }
         }
         &[data-tooltip-pos=left] {
@@ -103,7 +102,7 @@ span.tooltip {
             }
             &:after {
                 border-top-color: transparent;
-                border-left-color: rgba(21, 33, 45, 0.88);
+                border-left-color: rgba(21, 33, 45, 0.96);
                 margin-right: -1px;
             }
         }
@@ -122,7 +121,7 @@ span.tooltip {
             }
             &:after {
                 border-top-color: transparent;
-                border-bottom-color: rgba(21, 33, 45, 0.88);
+                border-bottom-color: rgba(21, 33, 45, 0.96);
             }
         }
     }

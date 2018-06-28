@@ -1,14 +1,16 @@
 footer {
     position: fixed;
     bottom: 0;
-    padding: 5px 10px;
+    padding: 3px 10px;
     width: 100%;
-    border-top: 1px solid #e9e9e9; /* stylelint-disable-line color-no-hex */
+    height: $FOOTER_HEIGHT;
+    border-top: 1px $COLOR_GRAY;
     background-color: $COLOR_WHITE;
     box-sizing: border-box;
-    z-index: 1;
+    z-index: 3;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 
     .server-time {
         display: inline-flex;
@@ -35,11 +37,11 @@ footer {
                 display: inline-block;
             }
             &:hover {
-                background: #e9e9e9; /* stylelint-disable-line color-no-hex */
+                background: $COLOR_GRAY;
             }
         }
     }
-    @media (max-width: 1025px) {
+    @media (max-width: 768px) {
         display: none;
     }
 }
@@ -59,6 +61,10 @@ footer {
 
 .ic-chat-bubble:before {
     content: url('../images/trading_app/footer/ic_chat_bubble_outline_light.svg');
+}
+
+.ic-two-step:before {
+    content: url('../images/trading_app/footer/ic_purchase_confirmation_light.svg');
 }
 
 .ic-lock-open:before {

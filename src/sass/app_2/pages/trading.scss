@@ -28,9 +28,6 @@
             background-image: url('../images/trading_app/sidebar/light/ic_digit_light.svg');
         }
     }
-    .desktop-only fieldset .duration-container > * {
-        margin-top: 0;
-    }
     input {
         &:hover {
             border-color: $COLOR_BLUE;
@@ -45,6 +42,7 @@
         background-color: $COLOR_LIGHT_GRAY;
         border-radius: $BORDER_RADIUS;
         border: 1px solid $COLOR_GRAY;
+        padding: 1vh 4px;
 
         input, select {
             width: 100%;
@@ -89,10 +87,7 @@
             z-index: 1;
             color: $COLOR_BLUE;
         }
-        .clock-header, .fieldset-header {
-            height: 1.5rem;
-            position: relative;
-
+        .clock-header, .fieldset-header, .stake-wrapper {
             span.field-info {
                 position: absolute;
                 color: $COLOR_BLUE;
@@ -119,11 +114,272 @@
                 }
             }
         }
+        .clock-header, .fieldset-header {
+            height: 1.5rem;
+            position: relative;
+        }
+        .error-info-wrapper {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+            span {
+                padding: 5px 5px 5px 8px;
+                line-height: normal;
+                background-color: $COLOR_YELLOW;
+                display: block;
+                margin-bottom: 10px;
+                font-weight: 300;
+                border-radius: $BORDER_RADIUS;
+            }
+        }
+        .purchase-info-wrapper {
+            line-height: 1rem;
+            padding-bottom: 1vh;
+
+            .stake-wrapper {
+                display: flex;
+                height: 1rem;
+
+                span.field-info {
+                    margin: 0 0 0 auto;
+                }
+            }
+        }
         &.trade-types {
             border: 0;
             padding: 0;
-            margin-bottom: 0;
             background: transparent;
+        }
+        @media screen and (max-height: 800px) {
+            .fieldset-header {
+                margin-bottom: -8px;
+            }
+            input, input.datepicker-display, .time-picker #time-picker-input.time-picker-input {
+                height: 26px;
+            }
+            .input-field i .symbols {
+                height: 24px;
+                line-height: 24px;
+            }
+            .dropdown-display {
+                height: 24px;
+
+                span {
+                    line-height: 26px;
+                }
+            }
+            span.select-arrow {
+                top: 9px;
+            }
+        }
+    }
+    div.purchase-wrapper {
+        position: relative;
+
+        div.purchase-error {
+            position: absolute;
+            top: 0;
+            height: calc(100% - 2px);
+            width: calc(100% - 6px);
+            left: 2px;
+            z-index: 2;
+            border: 1px solid $COLOR_GRAY;
+            border-radius: $BORDER_RADIUS;
+            background: $COLOR_LIGHT_GRAY;
+
+            .close-btn {
+                position: absolute;
+                padding: 8px;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+
+                &:before {
+                    content: url('../images/trading_app/footer/ic_close_blue_light.svg');
+                }
+            }
+            div.purchase-login-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-top: 25%;
+
+                button.btn {
+                    margin: 0 auto;
+
+                    span {
+                        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                        text-transform: uppercase;
+                    }
+                }
+                p {
+                    line-height: 100%;
+                    margin-bottom: 0;
+                    font-size: 10px;
+                }
+                a {
+                    text-decoration: none;
+                    color: $COLOR_LIGHT_BLACK;
+                    font-weight: 500;
+
+                    span.info-text {
+                        padding: 5px 10px 10px;
+                    }
+                    &:hover, &:focus, &:active {
+                        text-decoration: underline;
+                        color: $COLOR_LIGHT_BLACK;
+                    }
+                }
+            }
+            span.info-text {
+                display: flex;
+                padding: 10px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        fieldset.purchase-option {
+            padding-top: 1.5vh;
+            padding-bottom: 1.5vh;
+            min-height: 100px;
+
+            div.box {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                position: relative;
+                min-height: 71px;
+
+                .left-column, .right-column {
+                    position: relative;
+                    align-self: flex-start;
+                    display: flex;
+                    justify-content: center;
+
+                    span {
+                        display: block;
+                    }
+                }
+                .left-column > {
+                    .type-wrapper {
+                        width: 36px;
+                        height: 36px;
+                        background: $COLOR_GRAY;
+                        border-radius: 100%;
+
+                        img.type {
+                            width: 24px;
+                            margin: 6px 0 0 6px;
+                        }
+                    }
+                }
+                h4.trade-type {
+                    position: absolute;
+                    display: flex;
+                    padding: 0;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    text-align: center;
+                    top: 24px;
+                    line-height: 12px;
+                    max-width: 50px;
+                    word-spacing: 0;
+                }
+                div.amount {
+                    position: relative;
+
+                    &.down {
+                        color: $COLOR_LIGHT_RED;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_pricedown.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    &.up {
+                        color: $COLOR_LIGHT_BLUE;
+
+                        &:after {
+                            content: url('../images/trading_app/purchase/ic_priceup.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    span.symbols {
+                        left: 0;
+                        top: 6px;
+                        font-size: 0.88rem;
+                        color: inherit;
+                    }
+                    span.payout {
+                        font-weight: 600;
+                    }
+                }
+                span:not(.purchase-return):not(.symbols) {
+                    position: relative;
+                }
+                span.purchase-return {
+                    color: $COLOR_ORANGE;
+                }
+                .symbols {
+                    position: relative;
+                    display: inline;
+
+                    &:before {
+                        margin-right: 1px;
+                    }
+                }
+            }
+            div.submit-section {
+                display: grid;
+                grid-template-columns: 1fr;
+
+                .btn {
+                    text-transform: capitalize;
+                    margin: 0;
+                    width: 100%;
+                    height: 4vh;
+                    min-height: 25px;
+                    max-height: 35px;
+
+                    &:not([disabled]) {
+                        box-shadow: 1px 3px 4px 0 rgba(76, 175, 80, 0.14), 1px 3px 4px 0 rgba(76, 175, 80, 0.14);
+                    }
+                    span {
+                        font-size: 0.88rem;
+                    }
+                }
+
+            }
+            span.tooltip:before {
+                max-width: unset;
+                width: 250px;
+                white-space: normal;
+            }
+            &:not(:only-child) {
+                &:nth-last-child(2) {
+                    border-bottom: 1px;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    margin-bottom: 0 !important;
+                }
+                &:nth-last-child(1) {
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                    margin-bottom: 0 !important;
+                }
+            }
+            div.block-ui {
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 4px;
+                border: 1px solid $COLOR_LIGHT_GRAY;
+                width: calc(100% - 6px);
+                height: calc(100% - 2px);
+            }
         }
     }
     .calendar {

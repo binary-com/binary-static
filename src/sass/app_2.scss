@@ -33,10 +33,12 @@
 @import 'app_2/_common/components/data_table';
 @import 'app_2/_common/components/pagination';
 @import 'app_2/_common/components/popover';
+@import 'app_2/_common/components/ui_loader';
 @import 'app_2/_common/fullscreen_dialog';
 @import 'app_2/_common/mobile_widget';
 
 // Pages
 @import 'app_2/pages/portfolio';
+@import 'app_2/pages/settings';
 @import 'app_2/pages/statement';
 @import 'app_2/pages/trading';

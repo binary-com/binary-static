@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 99;
     width: 100%;
-    max-height: 48px;
+    height: $HEADER_HEIGHT;
     top: 0;
 
     header {
@@ -77,10 +77,10 @@
                         justify-content: space-evenly;
 
                         span {
-                            font-size: 0.75rem; /* stylelint-disable-line number-max-precision */
+                            font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                             font-weight: 300;
                             text-transform: capitalize;
-                            color: $COLOR_DARK_BLUE;
+                            color: $COLOR_LIGHT_BLACK;
                             padding: 14px 18px 12px 34px;
 
                             &:before {
@@ -156,23 +156,31 @@
 
                     .acc-balance {
                         display: flex;
-                        flex-direction: column;
+                        flex-direction: row;
                         align-items: center;
                         justify-content: center;
 
-                        p.acc-balance-accountid {
-                            line-height: 0.5;
-                            color: $COLOR_ORANGE;
-                            font-size: 0.75rem;
-                            margin: 0.5em;
-                            font-weight: 600;
-                            text-align: center;
+                        .acc-info {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            justify-content: center;
+                            border-right: 1px solid $COLOR_GRAY;
+
+                            p.acc-balance-accountid, p.acc-balance-currency {
+                                line-height: 0.5;
+                                color: $COLOR_LIGHT_BLACK;
+                                font-size: 0.875rem; //stylelint-disable-line number-max-precision
+                                margin: 0.5em 1rem;
+                                font-weight: 400;
+                                text-align: center;
+                            }
                         }
                         p.acc-balance-amount {
-                            line-height: 0.5;
-                            color: $COLOR_ORANGE;
-                            font-size: 1.25rem;
-                            margin: 0.5em;
+                            line-height: 100%;
+                            color: $COLOR_LIGHT_BLACK;
+                            font-size: 1rem;
+                            margin: 0.5rem 1rem;
                             font-weight: 600;
                             text-align: center;
 

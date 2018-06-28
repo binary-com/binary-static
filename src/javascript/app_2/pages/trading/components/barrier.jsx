@@ -38,7 +38,6 @@ const Barrier = ({
         <Fieldset
             header={localize(barrier_count > 1 ? 'Barriers' : 'Barrier')}
             icon='barriers'
-            tooltip={localize('Text for Barriers goes here.')}
         >
             <InputField
                 type='text'

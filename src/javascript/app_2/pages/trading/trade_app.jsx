@@ -1,5 +1,6 @@
 import React           from 'react';
 import PropTypes       from 'prop-types';
+import classnames      from 'classnames';
 import Amount          from './components/amount.jsx';
 import Barrier         from './components/barrier.jsx';
 import ContractType    from './components/contract_type.jsx';
@@ -11,6 +12,7 @@ import StartDate       from './components/start_date.jsx';
 import Test            from './components/test.jsx';
 import SmartCharts     from '../../components/charts/smartcharts.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
+import UILoader        from '../../components/elements/ui_loader.jsx';
 import { connect }     from '../../store/connect';
 
 const form_components = [
@@ -34,17 +36,29 @@ class TradeApp extends React.PureComponent {
 
     render() {
         return (
-            <div id='trade_container' className={this.props.is_portfolio_drawer_on ? 'show' : undefined}>
+            <div
+                id='trade_container'
+                className={classnames('trade-container', {
+                    show: this.props.is_portfolio_drawer_on,
+                })}
+            >
                 <div className='chart-container notice-msg'>
                     <SmartCharts />
                     <Test />
                 </div>
-                <div className='sidebar-container desktop-only' style={this.props.is_trade_enabled ? {} : { backgroundColor: '#e9e9e9' }}>{/* TODO: update the disabled style */}
-                    <fieldset className='trade-types'>
-                        <ContractType className='desktop-only' />
-                    </fieldset>
-                    {this.renderFormComponents()}
-                    <Purchase />
+                <div className='sidebar-container desktop-only'>
+                    <div className='sidebar-items'>
+                        {!this.props.is_trade_enabled &&
+                            <UILoader />
+                        }
+                        <fieldset className='trade-types'>
+                            <ContractType className='desktop-only' />
+                        </fieldset>
+                        {this.renderFormComponents()}
+                        <div className='purchase-wrapper'>
+                            <Purchase />
+                        </div>
+                    </div>
                 </div>
                 <ContractType className='mobile-only' is_mobile_widget />
                 <div className='mobile-only'>

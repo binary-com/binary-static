@@ -23,7 +23,10 @@ export const AccountBalance = connect(
             {Client.isLoggedIn() ?
                 <React.Fragment>
                     <div className='acc-balance'>
-                        <p className='acc-balance-accountid'>{loginid}</p>
+                        <div className='acc-info'>
+                            <p className='acc-balance-currency'>{`${(currency || '').toUpperCase()} ${localize('Account')}`}</p>
+                            <p className='acc-balance-accountid'>{loginid}</p>
+                        </div>
                         {typeof balance !== 'undefined' &&
                             <p className='acc-balance-amount'>
                                 <i><span className={`symbols ${(currency || '').toLowerCase()}`}/></i>
@@ -42,9 +45,9 @@ export const AccountBalance = connect(
                     }
                 </React.Fragment> :
                 <Button
-                    className='primary green'
+                    className='primary orange'
                     has_effect
-                    text={localize('Login')}
+                    text={localize('log in')}
                     onClick={redirectToLogin}
                 />
             }

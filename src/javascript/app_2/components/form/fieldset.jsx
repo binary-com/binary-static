@@ -5,6 +5,7 @@ import Tooltip    from '../elements/tooltip.jsx';
 
 const Fieldset = ({
     children,
+    className,
     header,
     icon,
     onMouseEnter,
@@ -14,19 +15,21 @@ const Fieldset = ({
     const field_left_class = classNames('field-info left', { icon }, icon);
 
     return (
-        <fieldset onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-            <div className='fieldset-header'>
-                <span className={field_left_class}>{header}</span>
+        <fieldset className={className}  onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+            {!!header &&
+                <div className='fieldset-header'>
+                    <span className={field_left_class}>{header}</span>
+                </div>
+            }
+            {!!tooltip &&
                 <span className='field-info right'>
-                    {!!tooltip &&
-                        <Tooltip
-                            alignment='left'
-                            icon='info'
-                            message={tooltip || 'Message goes here.'}
-                        />
-                    }
+                    <Tooltip
+                        alignment='left'
+                        icon='info'
+                        message={tooltip || 'Message goes here.'}
+                    />
                 </span>
-            </div>
+            }
             {children}
         </fieldset>
     );
@@ -41,6 +44,7 @@ Fieldset.propTypes = {
         PropTypes.array,
         PropTypes.object,
     ]),
+    className   : PropTypes.string,
     header      : PropTypes.string,
     icon        : PropTypes.string,
     onMouseEnter: PropTypes.func,
