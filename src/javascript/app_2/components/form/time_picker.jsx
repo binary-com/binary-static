@@ -1,12 +1,13 @@
+import moment                 from 'moment';
 import React,
-    { PureComponent } from 'react';
-import IScroll        from 'iscroll';
-import PropTypes      from 'prop-types';
-import { localize }   from '../../../_common/localize';
+    { PureComponent }         from 'react';
+import PropTypes              from 'prop-types';
+import { isSessionAvailable } from '../../pages/trading/actions/helpers/start_date';
+import { localize }           from '../../../_common/localize';
 
 /* TODO:
-      1. to change to 24 hours format
-      2. to handle disabled time period
+      1. to update state accordingly during native to desktop switches
+      2. to update state when value is not available after switching start date
       3. to handle null as initial value
       4. update the state only when dropdown closed
 */
@@ -14,99 +15,53 @@ import { localize }   from '../../../_common/localize';
 class TimePickerDropdown extends PureComponent {
     constructor(props) {
         super(props);
-        this.hours    = ['12', ...[...Array(11).keys()].map((a)=>`0${a+1}`.slice(-2))];
-        this.minutes  = [...Array(60).keys()].map((a)=>`0${a}`.slice(-2));
-        this.meridiem = ['am', 'pm'];
-        this.state = {
-            hour                : props.value.split(':')[0],
-            minute              : (props.value.split(':')[1] || '').split(' ')[0],
-            meridiem            : (props.value.split(':')[1] || '').split(' ')[1] || '',
-            is_hour_selected    : false,
-            is_minute_selected  : false,
-            is_meridiem_selected: false,
-            last_updated_type   : null,
+        this.hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
+        this.minutes  = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
+        this.state    = {
+            hour              : props.value.split(':')[0],
+            minute            : props.value.split(':')[1] || 0,
+            is_hour_selected  : false,
+            is_minute_selected: false,
+            last_updated_type : null,
         };
-        this.selectHour      = this.selectOption.bind(this, 'hour');
-        this.selectMinute    = this.selectOption.bind(this, 'minute');
-        this.selectMeridiem  = this.selectOption.bind(this, 'meridiem');
-        this.saveHourRef     = this.saveRef.bind(this, 'hour');
-        this.saveMinuteRef   = this.saveRef.bind(this, 'minute');
-        this.saveMeridiemRef = this.saveRef.bind(this, 'meridiem');
-    }
-
-    componentDidMount() {
-        this.initIScroll();
-    }
-
-    componentWillUnmount() {
-        this.hourScroll.destroy();
-        this.minuteScroll.destroy();
-        this.meridiemScroll.destroy();
+        this.selectHour    = this.selectOption.bind(this, 'hour');
+        this.selectMinute  = this.selectOption.bind(this, 'minute');
+        this.saveHourRef   = this.saveRef.bind(this, 'hour');
+        this.saveMinuteRef = this.saveRef.bind(this, 'minute');
     }
 
     componentDidUpdate(prevProps, prevState) {
-        const { is_hour_selected, is_minute_selected, is_meridiem_selected } = this.state;
-        if (is_hour_selected && is_minute_selected && is_meridiem_selected) {
+        const { is_hour_selected, is_minute_selected } = this.state;
+        if (is_hour_selected && is_minute_selected) {
             this.resetValues();
             this.props.toggle();
         }
 
-        const { hour, minute, meridiem } = this.state;
-        if (hour && minute && meridiem && (
-            hour !== prevState.hour || minute !== prevState.minute || meridiem !== prevState.meridiem
-        )) {
+        const { hour, minute } = this.state;
+        if (hour && minute && (hour !== prevState.hour || minute !== prevState.minute)) {
             // Call on change only once when all of the values are selected and one of the value is changed
-            this.props.onChange(`${hour}:${minute} ${meridiem}`);
+            this.props.onChange(`${hour}:${minute}`);
         }
 
         if (!prevProps.className && this.props.className === 'active') {
             this.resetValues();
         }
         if (prevState.last_updated_type !== this.state.last_updated_type && this.state.last_updated_type) {
-            this.scrollToSelected(this.state.last_updated_type, 200);
             this.setState({ last_updated_type: null });
-        }
-    }
-
-    initIScroll() {
-        const iScrollOptions = {
-            mouseWheel   : true,
-            useTransition: true,
-        };
-        this.hourScroll     = new IScroll('.time-picker-hours', iScrollOptions);
-        this.minuteScroll   = new IScroll('.time-picker-minutes', iScrollOptions);
-        this.meridiemScroll = new IScroll('.time-picker-meridiem', iScrollOptions);
-    }
-
-    scrollToSelected(type, duration, offset = -30) {
-        // move to selected item
-        const wrapper = {
-            hour    : this.hourScroll,
-            minute  : this.minuteScroll,
-            meridiem: this.meridiemScroll,
-        };
-        if (wrapper[type].scroller.querySelector('.selected')) {
-            wrapper[type].scrollToElement('.selected', duration, null, offset, IScroll.utils.ease.elastic);
-        } else {
-            wrapper[type].scrollToElement('.list-item', duration, null, null);
         }
     }
 
     resetValues() {
         this.setState({
-            is_hour_selected    : false,
-            is_minute_selected  : false,
-            is_meridiem_selected: false,
+            is_hour_selected  : false,
+            is_minute_selected: false,
         });
-        this.hourScroll.refresh();
-        this.minuteScroll.refresh();
-        this.meridiemScroll.refresh();
-        this.scrollToSelected('hour', 0, 0);
-        this.scrollToSelected('minute', 0, 0);
-        this.scrollToSelected('meridiem', 0, 0);
     }
 
-    selectOption(type, value) {
+    selectOption(type, value, is_enabled = true) {
+        if (!is_enabled) {
+            return;
+        }
         this.setState({
             last_updated_type: type,
         });
@@ -115,15 +70,22 @@ class TimePickerDropdown extends PureComponent {
                 hour            : value,
                 is_hour_selected: true,
             });
+            const { minute } = this.state;
+            const { sessions, start_date } = this.props;
+            if (sessions) {
+                const start_moment = moment(start_date * 1000 || undefined).utc().hour(value).minute(minute);
+                if (!isSessionAvailable(sessions, start_moment)) {
+                    this.setState({
+                        minute: this.minutes.find(m =>
+                            isSessionAvailable(sessions, start_moment.minute(m))) || minute,
+                        is_minute_selected: false,
+                    });
+                }
+            }
         } else if (type === 'minute') {
             this.setState({
                 minute            : value,
                 is_minute_selected: true,
-            });
-        } else {
-            this.setState({
-                meridiem            : value,
-                is_meridiem_selected: true,
             });
         }
     }
@@ -132,9 +94,8 @@ class TimePickerDropdown extends PureComponent {
         event.stopPropagation();
         this.resetValues();
         this.setState({
-            hour    : undefined,
-            minute  : undefined,
-            meridiem: undefined,
+            hour  : undefined,
+            minute: undefined,
         });
         this.props.onChange('');
     };
@@ -142,16 +103,17 @@ class TimePickerDropdown extends PureComponent {
     saveRef(type, node) {
         if (!node) return;
         const save = {
-            hour    : (n) => this.hourSelect = n,
-            minute  : (n) => this.minuteSelect = n,
-            meridiem: (n) => this.meridiemSelect = n,
+            hour  : (n) => this.hourSelect = n,
+            minute: (n) => this.minuteSelect = n,
         };
 
         save[type](node);
     }
 
     render() {
-        const { preClass, value, toggle } = this.props;
+        const { preClass, value, toggle, start_date, sessions } = this.props;
+        const start_moment       = moment(start_date * 1000 || undefined).utc();
+        const start_moment_clone = start_moment.clone().minute(0).second(0);
         return (
             <div className={`${preClass}-dropdown ${this.props.className}`}>
                 <div
@@ -169,46 +131,41 @@ class TimePickerDropdown extends PureComponent {
                         ref={this.saveHourRef}
                         className={`${preClass}-hours`}
                     >
+                        <div className='list-title center-text'><strong>{localize('Hour')}</strong></div>
                         <div className='list-container'>
-                            {this.hours.map((h, key) => (
-                                <div
-                                    className={`list-item${this.state.hour === h ? ' selected' : ''}`}
-                                    key={key}
-                                    onClick={this.selectHour.bind(null, h)}
-                                >
-                                    {h}
-                                </div>
-                            ))}
+                            {this.hours.map((h, key) => {
+                                start_moment_clone.hour(h);
+                                const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment, true);
+                                return (
+                                    <div
+                                        className={`list-item${this.state.hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
+                                        key={key}
+                                        onClick={this.selectHour.bind(null, h, is_enabled)}
+                                    >
+                                        {h}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                     <div
                         ref={this.saveMinuteRef}
                         className={`${preClass}-minutes`}
                     >
+                        <div className='list-title center-text'><strong>{localize('Minute')}</strong></div>
                         <div className='list-container'>
-                            {this.minutes.map((mm, key) => (
-                                <div
-                                    className={`list-item${this.state.minute === mm ? ' selected' : ''}`}
-                                    key={key}
-                                    onClick={this.selectMinute.bind(null, mm)}
-                                >{mm}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    <div
-                        ref={this.saveMeridiemRef}
-                        className={`${preClass}-meridiem`}
-                    >
-                        <div className='list-container'>
-                            {this.meridiem.map((a, key) => (
-                                <div
-                                    className={`list-item${this.state.meridiem === a ? ' selected' : ''}`}
-                                    key={key}
-                                    onClick={this.selectMeridiem.bind(null, a)}
-                                >{a}
-                                </div>
-                            ))}
+                            {this.minutes.map((mm, key) => {
+                                start_moment_clone.hour(this.state.hour).minute(mm);
+                                const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment);
+                                return (
+                                    <div
+                                        className={`list-item${this.state.minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
+                                        key={key}
+                                        onClick={this.selectMinute.bind(null, mm, is_enabled)}
+                                    >{mm}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -239,9 +196,8 @@ class TimePicker extends PureComponent {
     };
 
     handleChange = (arg) => {
-
         // To handle nativepicker;
-        const value = typeof arg === 'object' ? this.convertTo12h(arg.target.value) : arg;
+        const value = typeof arg === 'object' ? arg.target.value : arg;
 
         if (value !== this.props.value) {
             this.props.onChange({ target: { name: this.props.name, value } });
@@ -265,27 +221,6 @@ class TimePicker extends PureComponent {
         }
     };
 
-    convertTo24h = (value) => {
-        if (!value) return '';
-        const [hour, other] = value.split(':');
-        const [minute, meridiem] = other.split(' ');
-        if (meridiem.toLowerCase() === 'pm') {
-            return `${hour%12 ? +hour+12 : '12'}:${minute}`;
-        }
-        return `${hour%12 ? hour : '00'}:${minute}`;
-    };
-
-    convertTo12h = (value) => {
-        if (!value) return '';
-        const [hour, minute] = value.split(':');
-        const meridiem = +hour >= 12 ? 'pm' : 'am';
-        if (meridiem === 'pm' && hour > 12) {
-            return `${(`0${+hour-12}`).slice(-2)}:${minute} ${meridiem}`;
-        }
-
-        return `${+hour === 0 ? 12 : hour}:${minute} ${meridiem}`;
-    };
-
     render() {
         const prefix_class='time-picker';
         const {
@@ -294,8 +229,9 @@ class TimePicker extends PureComponent {
             name,
             is_align_right,
             placeholder,
+            start_date,
+            sessions,
         } = this.props;
-        const formatted_value = this.convertTo24h(value);
         return (
             <div
                 ref={this.saveRef}
@@ -306,7 +242,7 @@ class TimePicker extends PureComponent {
                     ? <input
                         type='time'
                         id={`${prefix_class}-input`}
-                        value={formatted_value}
+                        value={value}
                         onChange={this.handleChange}
                         name={name}
                     />
@@ -328,7 +264,9 @@ class TimePicker extends PureComponent {
                                 toggle={this.toggleDropDown}
                                 onChange={this.handleChange}
                                 preClass={prefix_class}
+                                start_date={start_date}
                                 value={value}
+                                sessions={sessions}
                             />
                         </React.Fragment>
                     )
@@ -346,6 +284,8 @@ TimePicker.propTypes = {
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
     value          : PropTypes.string,
+    start_date     : PropTypes.number,
+    sessions       : PropTypes.array,
 };
 
 TimePickerDropdown.propTypes = {
@@ -355,6 +295,8 @@ TimePickerDropdown.propTypes = {
     toggle     : PropTypes.func,
     value      : PropTypes.string,
     value_split: PropTypes.bool,
+    start_date : PropTypes.number,
+    sessions   : PropTypes.array,
 };
 
 export default TimePicker;

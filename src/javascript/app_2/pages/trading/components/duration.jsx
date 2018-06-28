@@ -9,15 +9,20 @@ import TimePicker   from '../../../components/form/time_picker.jsx';
 import { connect }  from '../../../store/connect';
 import { localize } from '../../../../_common/localize';
 
+/* TODO:
+      1. Change expiry date to drop-down if start date is forward starting
+      2. change the session for end time to minimum of start time
+*/
+
 const expiry_list = [
     { text: localize('Duration'), value: 'duration' },
-    { text: localize('End Time'), value: 'endtime' },
 ];
 
 let now_date,
     min_date_duration,
     max_date_duration,
-    min_date_expiry;
+    min_date_expiry,
+    start_date_time;
 
 const Duration = ({
     expiry_type,
@@ -30,6 +35,9 @@ const Duration = ({
     onChange,
     is_nativepicker,
     is_minimized,
+    start_date,
+    start_time,
+    sessions,
 }) => {
     const moment_now = moment(server_time);
     if (!now_date || moment_now.date() !== now_date.date()) {
@@ -38,7 +46,18 @@ const Duration = ({
         max_date_duration = moment_now.clone().add(365, 'd');
         min_date_expiry   = moment_now.clone();
     }
-    const is_same_day = moment.utc(expiry_date).isSame(moment_now, 'day');
+    const moment_expiry = moment.utc(expiry_date);
+    const is_same_day   = moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day');
+    if (is_same_day) {
+        const date_time = moment.utc(start_date * 1000 || undefined);
+        if (start_date) {
+            const [ hour, minute ] = start_time.split(':');
+            date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
+        }
+        if (start_date_time !== date_time.unix()) {
+            start_date_time = date_time.unix();
+        }
+    }
     if (is_minimized) {
         const duration_unit_text = (duration_units_list.find(o => o.value === duration_unit) || {}).text;
         return (
@@ -46,10 +65,19 @@ const Duration = ({
                 <span className='icon trade-duration' />
                 {expiry_type === 'duration'
                     ? `${duration} ${duration_unit_text}`
-                    : `${moment(expiry_date).format('ddd - DD MMM, YYYY')}\n${expiry_time}`
+                    : `${moment_expiry.format('ddd - DD MMM, YYYY')}\n${expiry_time}`
                 }
             </div>
         );
+    }
+
+    const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
+    if (duration_units_list.length === 1 && duration_unit === 't') {
+        if (has_end_time) {
+            expiry_list.pop(); // remove end time for contracts with only tick duration
+        }
+    } else if (!has_end_time) {
+        expiry_list.push({ text: localize('End Time'), value: 'endtime' });
     }
 
     return (
@@ -101,6 +129,7 @@ const Duration = ({
                             name='expiry_date'
                             showTodayBtn
                             minDate={min_date_expiry}
+                            maxDate={max_date_duration}
                             onChange={onChange}
                             is_nativepicker={is_nativepicker}
                         />
@@ -110,7 +139,9 @@ const Duration = ({
                                 is_align_right
                                 name='expiry_time'
                                 value={expiry_time}
-                                placeholder='12:00 pm'
+                                placeholder='12:00'
+                                start_date={start_date_time}
+                                sessions={sessions}
                                 is_nativepicker={is_nativepicker}
                             />
                         }
@@ -139,6 +170,9 @@ Duration.propTypes = {
     is_nativepicker: PropTypes.bool,
     onChange       : PropTypes.func,
     server_time    : PropTypes.object,
+    start_date     : PropTypes.number,
+    start_time     : PropTypes.string,
+    sessions       : PropTypes.array,
 };
 
 export default connect(
@@ -150,6 +184,9 @@ export default connect(
         duration           : trade.duration,
         duration_unit      : trade.duration_unit,
         duration_units_list: trade.duration_units_list,
+        start_date         : trade.start_date,
+        start_time         : trade.start_time,
+        sessions           : trade.sessions,
         onChange           : trade.handleChange,
     })
 )(Duration);

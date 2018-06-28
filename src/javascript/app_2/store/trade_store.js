@@ -67,7 +67,7 @@ export default class TradeStore {
     @observable duration_unit       = '';
     @observable duration_units_list = [];
     @observable expiry_date         = '';
-    @observable expiry_time         = '09:40 pm';
+    @observable expiry_time         = '09:40';
     @observable expiry_type         = 'duration';
 
     // Barrier
@@ -78,7 +78,8 @@ export default class TradeStore {
     // Start Time
     @observable start_date       = Number(0); // Number(0) refers to 'now'
     @observable start_dates_list = [];
-    @observable start_time       = '12:30 am';
+    @observable start_time       = '12:30';
+    @observable sessions         = [];
 
     // Last Digit
     @observable last_digit = 3;

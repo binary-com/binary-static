@@ -10,12 +10,14 @@ const toMoment = epoch => moment.unix(epoch).utc();
 /**
  * Set specified time on moment object
  * @param  {moment} moment_obj  the moment to set the time on
- * @param  {String} time        12 hours format
+ * @param  {String} time        24 hours format, may or may not include seconds
  * @return {moment} a new moment object of result
  */
-const setTime = (moment_obj, time) => (
-    moment.utc(`${moment_obj.format('L')} ${time}`, 'L LT') // TODO: use 24 hours format once there is a new design for time_picker
-);
+const setTime = (moment_obj, time) => {
+    const [hour, minute, second] = time.split(':');
+    moment_obj.hour(hour).minute(minute || 0).second(second || 0);
+    return moment_obj;
+};
 
 /**
  * return the unix value of provided epoch and time
