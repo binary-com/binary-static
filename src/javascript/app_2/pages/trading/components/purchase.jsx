@@ -38,7 +38,7 @@ const LogInMessage = () => (
             onClick={redirectToLogin}
         />
         <p>{localize('Don\'t have a [_1] account?', ['Binary.com'])}</p>
-        <a href='javascript;'><span className='info-text'>{localize('Create one now')}</span></a>
+        <a href='javascript:;'><span className='info-text'>{localize('Create one now')}</span></a>
     </div>
 );
 
