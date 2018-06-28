@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-27 06:12\n"
+"PO-Revision-Date: 2018-06-28 02:06\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -526,7 +526,7 @@ msgid "A PEP is an individual who is or has been entrusted with a prominent publ
 msgstr "Un PEP è un individuo che è o che è stato incaricato di un'importante funzione pubblica. Questo status si estende ai parenti e stretti collaboratori del PEP."
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
-msgstr ""
+msgstr "Un Agente di pagamento agisce da intermediario tra il Cliente (il nostro cliente) e %1, effettuando versamenti e prelievi per conto dei clienti che desiderano usare un metodo offerto dal portafoglio elettronico o una valuta locale non presenti tra quelli proposti da %1. Le commissioni sui trasferimenti sono a carico del Cliente."
 
 msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
 msgstr "Una Persona Esposta Politicamente (PEP) è un individuo a cui è o è stata affidata una funzione pubblica di spicco, compresi i suoi familiari diretti o persone note per essere stretti collaboratori di tali persone, ma non include funzionari di grado medio o inferiore. Tali persone comprendono capi di Stato, ministri, segretari parlamentari, membri del parlamento, giudici, ambasciatori, alti funzionari governativi, alti ufficiali delle Forze Armate, comitati di audit dei consigli di amministrazione delle banche centrali e direttori di società di proprietà statale. Anche i \"familiari stretti\" delle figure sopra citate saranno considerati come PEP, e questi includono i loro coniugi / partner, genitori e figli. Inoltre, \"le persone note per essere stretti collaboratori\" dei PEP includono i loro partner commerciali, che saranno a loro volta considerati tali. Come regola generale, una persona considerata PEP e che ha cessato di essere incaricata di una funzione pubblica di rilievo per un periodo di almeno dodici mesi non è da considerarsi più come PEP."
@@ -1330,7 +1330,7 @@ msgid "At least five years of experience with affiliate marketing, growth hackin
 msgstr "Almeno cinque anni di esperienza in marketing d'affiliazione, growth hacking, sviluppo aziendale e altre abilità connesse"
 
 msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
-msgstr ""
+msgstr "Se alla data di reset il punto è nella direzione opposta rispetto alla tua previsione, la barriera viene reimpostata su quel punto."
 
 msgid "Audit"
 msgstr "Controllo"
@@ -1456,7 +1456,7 @@ msgid "Bank statement"
 msgstr "Estratto conto bancario"
 
 msgid "Bank wire, credit card, e-wallet"
-msgstr ""
+msgstr "Bonifico bancario, carta di credito, portafoglio elettronico"
 
 msgid "Bank wire/Money transfer"
 msgstr "Bonifico bancario/Trasferimento di denaro"
@@ -2319,9 +2319,6 @@ msgstr "Dettagli del contratto"
 msgid "Contract Ends"
 msgstr "Il contratto termina"
 
-msgid "Contract Expiry"
-msgstr "Scadenza del contratto"
-
 msgid "Contract ID"
 msgstr "ID del contratto"
 
@@ -2331,11 +2328,11 @@ msgstr "Informazioni del contratto"
 msgid "Contract Payouts"
 msgstr "Payout del contratto"
 
+msgid "Contract Result"
+msgstr ""
+
 msgid "Contract Risks"
 msgstr "Rischi del contratto"
-
-msgid "Contract Sold"
-msgstr "Contratto venduto"
 
 msgid "Contract Starts"
 msgstr "Il contratto inizia"
@@ -2728,7 +2725,7 @@ msgid "Deposit or withdraw below"
 msgstr "Deposita o preleva qui sotto"
 
 msgid "Deposit or withdraw to your account via bank wire, credit card, or e-wallet."
-msgstr ""
+msgstr "Deposita sul tuo conto oppure preleva da questo tramite bonifico bancario, carta di credito o portafoglio elettronico."
 
 msgid "Deposit: %1 blockchain confirmations"
 msgstr "Deposito: %1 conferme di blockchain"
@@ -2956,7 +2953,7 @@ msgid "Duties and Responsibilities:"
 msgstr "Doveri e responsabilità:"
 
 msgid "E-wallet"
-msgstr ""
+msgstr "Portafoglio elettronico"
 
 msgid "E. Account Management"
 msgstr "E. Gestione dell'account"
@@ -3613,7 +3610,7 @@ msgid "For details on submitting a complaint to our Lead Supervisory Authority o
 msgstr "Per informazioni relative alla presentazione di un reclamo alla nostra autorità di vigilanza circa le modalità di elaborazione dei dati, ti invitiamo a consultare la sezione %1Reclami e controversie%2."
 
 msgid "For e-wallets or local currencies not supported by %1."
-msgstr ""
+msgstr "Per le valute locali e i portafogli elettronici non supportati da %1."
 
 msgid "For example, a CFD on Binary.com's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
 msgstr "Ad esempio, un CFD sull'indice US 30 di Binary.com offre un contratto di 1 USD per punto. Se acquisti un contratto su volume 1.0 per US 30 con un prezzo corrente di acquisto di 20.000 USD e successivamente lo vendi a un prezzo d'offerta di 20.010 USD, il tuo profitto netto sarà calcolato come segue:"
@@ -4000,7 +3997,7 @@ msgid "High barrier"
 msgstr "Barriera superiore"
 
 msgid "High barrier must be higher than low barrier"
-msgstr ""
+msgstr "La barriera superiore deve essere più alta rispetto alla barriera inferiore"
 
 msgid "High barrier offset"
 msgstr "Sfasamento della barriera superiore"
@@ -4117,7 +4114,7 @@ msgid "How to read the table above"
 msgstr "Come leggere la tabella di cui sopra"
 
 msgid "How to setup two-factor authentication for your %1 account:"
-msgstr ""
+msgstr "Come impostare l'autenticazione a due fattori per il tuo conto %1:"
 
 msgid "How to trade CFDs"
 msgstr "Come fare trading con i CFD"
@@ -4284,7 +4281,7 @@ msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barr
 msgstr "Se <strong>il punto di uscita</strong> corrisponde alla <strong>barriera inferiore</strong> o alla <strong>barriera superiore</strong>, non ottieni il payout."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
-msgstr ""
+msgstr "Se il <strong>punto di uscita</strong> coincide con la <strong>barriera</strong> o la <stronm g>nuova barriera (in caso di reset)</stronmg>, non ottieni il payout."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Se il <strong>punto di uscita</strong> corrisponde alla <strong>barriera</strong>, non ottieni il payout."
@@ -4341,7 +4338,7 @@ msgid "If you are not located in the above-mentioned countries, simply dial any 
 msgstr "Se non ti trovi nei paesi menzionati precedentemente e hai bisogno d'aiuto, puoi chiamare uno dei nostri numeri di telefono."
 
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
-msgstr ""
+msgstr "Se non riesci a leggere il codice QR, puoi inserire manualmente questo codice:"
 
 msgid "If you are, we'd love to hear from you."
 msgstr "Se sì, ci piacerebbe sentirti."
@@ -4458,10 +4455,10 @@ msgid "If you select \"Over\", you will win the payout if the <strong>last digi
 msgstr "Se selezioni \"Sopra\", vincerai il payout se l'<strong>ultima cifra</strong> dell'ultimo tick è <strong>maggiore rispetto alla tua previsione.</strong>"
 
 msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Selezionando \"Reset-Call\", vinci il payout se il punto di uscita è strettamente superiore al punto di entrata o al punto alla data di reset."
 
 msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Selezionando \"Reset-Put\", vinci il payout se il punto di uscita è strettamente inferiore al punto di entrata o al punto alla data di reset."
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Se selezioni \"Rialza\", vinci il payout se lo <strong>spot d'uscita</strong> è notevolmente superiore allo <strong>spot d'ingresso</strong>."
@@ -4491,7 +4488,7 @@ msgid "If you select %1\"High Tick\"%2, you win the payout if the selected tick 
 msgstr "Selezionando %1\"Tick alto\"%2, vinci il payout se il tick selezionato è il %1più alto tra i cinque tick successivi%2."
 
 msgid "If you select %1\"Low Tick\"%2, you win the payout if the selected tick is the %1lowest among the next five ticks%2."
-msgstr ""
+msgstr "Selezionando %1\"Tick basso\"%2, vinci il payout se il tick selezionato è quello %1più basso tra i successivi cinque tick%2."
 
 msgid "If you select a <strong>start time</strong> in the future, the <strong>start time</strong> is that which is selected and the <strong>entry spot</strong> is the price in effect at that time."
 msgstr "Se selezioni un <strong>orario di inizio</strong> nel futuro, l'<strong>orario d'inizio</strong> sarà quello selezionato e lo <strong>spot d'ingresso</strong> sarà il prezzo in vigore a quell'ora."
@@ -4782,7 +4779,7 @@ msgid "Interested in our liquidity solutions? Contact us at %1 for more info."
 msgstr "Sei interessato alle nostre soluzioni di liquidità? Per ulteriori informazioni, contattaci su %1."
 
 msgid "Interested, so what's next? If you can offer our Clients a specific e-wallet method or a local payment option that is not already provided by %1, and you have a good track record in the market, then we would love to <a href='mailto:%2'>hear from you!</a>"
-msgstr ""
+msgstr "Sei interessato? Qual è il prossimo step? Se puoi offrire ai nostri Clienti un metodo specifico del portafoglio elettronico oppure un'opzione di pagamento locale non forniti da %1, e hai una comprovata esperienza nel mercato, allora ci piacerebbe <a href='mailto:%2'>metterci in contatto con te!</a>"
 
 msgid "Internal Audit"
 msgstr "Internal Audit"
@@ -5995,7 +5992,7 @@ msgid "Marketing and promotions"
 msgstr "Marketing e promozioni"
 
 msgid "Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal."
-msgstr ""
+msgstr "I prelievi con Mastercard sono disponibili solo per le carte emesse in un paese europeo. Se la tua carta non soddisfa tali requisiti, puoi ricorrere a uno dei metodi offerti dal portafoglio elettronico per prelevare."
 
 msgid "Matches/Differs"
 msgstr "Combacia/Differisce"
@@ -6724,10 +6721,10 @@ msgid "Other"
 msgstr "Altro"
 
 msgid "Other Financial Instruments Trading Experience"
-msgstr ""
+msgstr "Esperienza di trading con altri strumenti finanziari"
 
 msgid "Other Financial Instruments Trading Frequency"
-msgstr ""
+msgstr "Frequenza di trading con altri strumenti finanziari"
 
 msgid "Other Obligations"
 msgstr "Altri obblighi"
