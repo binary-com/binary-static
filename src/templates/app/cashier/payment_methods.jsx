@@ -71,7 +71,7 @@ const PaymentMethods = () => {
                             ],
                             [
                                 { text: <PaymentLogo logo='internet_bank_transfer' /> },
-                                { text: 'USD GBP EUR AUD' },
+                                { text: 'USD GBP EUR' },
                                 { text: '25 - 10,000' },
                                 { text: '25 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${working_day}`, 1), it.L(`${withdrawal}${working_day}`, 1)]} /> },
@@ -101,7 +101,7 @@ const PaymentMethods = () => {
                             ],
                             [
                                 { text: <PaymentLogo logo='mastercard' /> },
-                                { text: 'USD EUR AUD' },
+                                { text: 'USD GBP EUR AUD' },
                                 { text: '10 - 10,000' },
                                 { text: '10 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
@@ -143,13 +143,6 @@ const PaymentMethods = () => {
                             ],
                             [
                                 { text: <PaymentLogo logo='neteller' /> },
-                                { text: 'USD GBP EUR AUD' },
-                                { text: '5 - 10,000' },
-                                { text: '5 - 10,000' },
-                                { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                            ],
-                            [
-                                { text: <PaymentLogo logo='monetaru' /> },
                                 { text: 'USD GBP EUR AUD' },
                                 { text: '5 - 10,000' },
                                 { text: '5 - 10,000' },

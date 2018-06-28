@@ -386,7 +386,6 @@ const Home = () => {
                                             { image: 'perfect_money' },
                                             { image: 'skrill' },
                                             { image: 'qiwi' },
-                                            { image: 'monetaru' },
                                             { image: 'webmoney' },
                                             { image: 'yandex' },
                                             { image: 'paysafe' },
