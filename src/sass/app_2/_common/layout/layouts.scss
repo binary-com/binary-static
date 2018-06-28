@@ -1,10 +1,10 @@
 @supports (display: grid) {
-    #app_contents {
-        margin: 49px 0 40px;
+    .app-contents {
+        margin: 49px 0 0;
         overflow: auto; // prevent margin collapse
     }
     /* trade-app layout */
-    #trade_container {
+    .trade-container {
         position: relative;
         padding: 12px 12px 0;
         display: grid;
@@ -118,7 +118,7 @@
 
 /* flexbox fallback is if the browser does not support display:grid */
 @supports not (display: grid) {
-    #trade_container {
+    .trade-container {
         display: flex;
         flex-flow: row wrap;
         padding: 20px;
