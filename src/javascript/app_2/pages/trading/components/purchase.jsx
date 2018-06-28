@@ -53,7 +53,7 @@ const Purchase = ({
     Object.keys(trade_types).map((type, idx) => {
         const info         = proposal_info[type] || {};
         const is_logged_in = isLoggedIn();
-        const el_currency  = <span className={`symbols ${(Client.get('currency') || 'usd').toLowerCase()}`}/>;
+        const el_currency  = <span className={`symbols ${(Client.get('currency') || 'USD').toLowerCase()}`}/>;
 
         return (
             <Fieldset className='purchase-option' key={idx}>
