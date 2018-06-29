@@ -8,22 +8,15 @@ const TimePicker = (() => {
     const time_pickers = {};
 
     const init = (options) => {
-        hide(options.selector, options.datepickerDate);
+        removeJqueryPicker(options.selector, options.datepickerDate);
         time_pickers[options.selector] = {};
 
-        config(options);
+        makeConfig(options);
+        updatePicker(options.selector);
         $(window).resize(() => { updatePicker(options.selector); });
     };
 
-    const hide = (selector, datepickerDate) => {
-        $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown keyup input');
-        if (!datepickerDate) return;
-        if (!moment().isBefore(moment(datepickerDate))) {
-            $(selector).attr('data-value', '').val('');
-        }
-    };
-
-    const config = (options) => {
+    const makeConfig = (options) => {
         let time_now = moment.utc(window.time).clone();
 
         const obj_config = {
@@ -93,13 +86,19 @@ const TimePicker = (() => {
         };
 
         time_pickers[options.selector].config_data = obj_config;
-
-        updatePicker(options.selector);
     };
 
     const formatTime = time => padLeft(time, 2, '0');
 
     const toTime = time => [formatTime(time.hour), formatTime(time.minute), '00'].join(':');
+
+    const removeJqueryPicker = (selector, datepickerDate) => {
+        $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown keyup input');
+        if (!datepickerDate) return;
+        if (!moment().isBefore(moment(datepickerDate))) {
+            $(selector).attr('data-value', '').val('');
+        }
+    };
 
     const addJqueryPicker = (selector) => {
         let $this;
@@ -121,7 +120,7 @@ const TimePicker = (() => {
         const $selector        = $(selector);
         const time_picker_conf = time_pickers[selector].config_data;
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
-            hide(selector);
+            removeJqueryPicker(selector);
             $selector.attr({ type: 'time', 'data-picker': 'native' }).val($selector.attr('data-value')).removeAttr('readonly').removeClass('clear');
 
             const minTime = time_picker_conf.minTime;
