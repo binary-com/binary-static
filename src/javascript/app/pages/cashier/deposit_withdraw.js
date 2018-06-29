@@ -14,8 +14,11 @@ const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
 
 const DepositWithdraw = (() => {
+    const default_iframe_height = 700;
+
     let cashier_type,
         token,
+        $iframe,
         $loading;
 
     const container = '#deposit_withdraw';
@@ -211,17 +214,30 @@ const DepositWithdraw = (() => {
                     showError('custom_error', error.message);
             }
         } else {
-            const $iframe = $(container).find('iframe');
-            if (Currency.isCryptocurrency(Client.get('currency'))) {
-                $iframe.css('height', '700px');
-            }
             if (/^BCH/.test(Client.get('currency'))) {
                 getElementById('message_bitcoin_cash').setVisibility(1);
             }
+
+            $iframe = $(container).find('#cashier_iframe');
+
+            if (Currency.isCryptocurrency(Client.get('currency'))) {
+                $iframe.height(default_iframe_height);
+            } else {
+                // Automatically adjust iframe height based on contents
+                window.addEventListener('message', setFrameHeight, false);
+            }
+
             $iframe.attr('src', response.cashier).parent().setVisibility(1);
+
             setTimeout(() => { // wait for iframe contents to load before removing loading bar
                 $loading.remove();
             }, 1000);
+        }
+    };
+
+    const setFrameHeight = (e) => {
+        if (!/www\.binary\.com/i.test(e.origin)) {
+            $iframe.height(+e.data || default_iframe_height);
         }
     };
 
@@ -254,8 +270,13 @@ const DepositWithdraw = (() => {
         });
     };
 
+    const onUnload = () => {
+        window.removeEventListener('message', setFrameHeight);
+    };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

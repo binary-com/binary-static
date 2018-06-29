@@ -1,11 +1,11 @@
-const Client           = require('../../base/client');
-const BinarySocket     = require('../../base/socket');
-const getDecimalPlaces = require('../../common/currency').getDecimalPlaces;
-const isCryptocurrency = require('../../common/currency').isCryptocurrency;
-const FormManager      = require('../../common/form_manager');
-const validEmailToken  = require('../../common/form_validation').validEmailToken;
-const localize         = require('../../../_common/localize').localize;
-const getHashValue     = require('../../../_common/url').getHashValue;
+const Client               = require('../../base/client');
+const BinarySocket         = require('../../base/socket');
+const getDecimalPlaces     = require('../../common/currency').getDecimalPlaces;
+const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
+const FormManager          = require('../../common/form_manager');
+const validEmailToken      = require('../../common/form_validation').validEmailToken;
+const localize             = require('../../../_common/localize').localize;
+const getHashValue         = require('../../../_common/url').getHashValue;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {
@@ -22,7 +22,8 @@ const PaymentAgentWithdraw = (() => {
     };
 
     let $views,
-        agent_name;
+        agent_name,
+        currency;
 
     // -----------------------
     // ----- Agents List -----
@@ -52,10 +53,10 @@ const PaymentAgentWithdraw = (() => {
             }
             setActiveView(view_ids.form);
 
-            const currency = Client.get('currency');
-            const form_id  = `#${$(view_ids.form).find('form').attr('id')}`;
-            const min      = isCryptocurrency(currency) ? 0.002 : 10;
-            const max      = isCryptocurrency(currency) ? 5 : 2000;
+            const form_id = `#${$(view_ids.form).find('form').attr('id')}`;
+            const min     = getPaWithdrawalLimit(currency, 'min');
+            const max     = getPaWithdrawalLimit(currency, 'max');
+
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
             FormManager.init(form_id, [
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
@@ -159,9 +160,10 @@ const PaymentAgentWithdraw = (() => {
             if (/(withdrawal|cashier)_locked/.test(data.get_account_status.status)) {
                 showPageError('', 'withdrawal-locked-error');
             } else {
+                currency = Client.get('currency');
                 BinarySocket.send({
                     paymentagent_list: Client.get('residence'),
-                    currency         : Client.get('currency'),
+                    currency,
                 })
                     .then(response => populateAgentsList(response));
             }

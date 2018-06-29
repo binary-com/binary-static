@@ -1,5 +1,6 @@
 const moment               = require('moment');
 const requireHighstock     = require('./common').requireHighstock;
+const Reset                = require('./reset');
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
@@ -29,6 +30,7 @@ const TickDisplay = (() => {
         spots_list,
         tick_init,
         subscribe,
+        reset_spot_plotted,
         response_id,
         contract,
         selected_tick;
@@ -51,6 +53,7 @@ const TickDisplay = (() => {
 
     const initialize = (data, options) => {
         // setting up globals
+        applicable_ticks     = [];
         number_of_ticks      = parseInt(data.number_of_ticks);
         display_symbol       = data.display_symbol;
         contract_start_ms    = parseInt(data.contract_start) * 1000;
@@ -59,6 +62,7 @@ const TickDisplay = (() => {
         barrier              = data.barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
+        reset_spot_plotted   = false;
 
         if (data.id_render) {
             id_render = data.id_render;
@@ -96,7 +100,7 @@ const TickDisplay = (() => {
                 id       : 'exit_tick',
                 dashStyle: 'Dash',
             };
-        } else if (contract_category.match('callput')) {
+        } else if (contract_category.match(/callput|reset/i)) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
                 _0: { label: 'Entry Spot', id: 'entry_tick' },
@@ -106,6 +110,15 @@ const TickDisplay = (() => {
                 id       : 'exit_tick',
                 dashStyle: 'Dash',
             };
+            if (contract_category.match('reset')) {
+                const reset_time_index = Math.floor(number_of_ticks / 2); // use index to draw ticks reset_time
+                x_indicators[`_${reset_time_index}`] = {
+                    index: reset_time_index,
+                    label: 'Reset Time',
+                    id   : 'reset_tick',
+                    color: '#000',
+                };
+            }
         } else if (contract_category.match('touchnotouch')) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
@@ -190,6 +203,8 @@ const TickDisplay = (() => {
         }
     };
 
+    const isRelativeBarrier = (barrier_str) => (/\+|-/.test(barrier_str));
+
     const addBarrier = () => {
         if (!should_set_barrier) {
             return;
@@ -203,19 +218,24 @@ const TickDisplay = (() => {
             let barrier_quote = first_quote;
 
             if (barrier) {
-                let final_barrier = barrier_quote + parseFloat(barrier);
-                // sometimes due to rounding issues, result is 1.009999 while it should
-                // be 1.01
-                final_barrier = Number(`${Math.round(`${final_barrier}e${display_decimals}`)}e-${display_decimals}`);
+                let final_barrier = Number(barrier).toFixed(parseInt(display_decimals));
+                if (isRelativeBarrier(barrier)) {
+                    // sometimes due to rounding issues, result is 1.009999 while it should be 1.01
+                    final_barrier = Number(`${Math.round(`${barrier_quote + parseFloat(barrier)}e${display_decimals}`)}e-${display_decimals}`);
+                }
                 barrier_quote = final_barrier;
             } else if (contract && contract.barrier) {
                 barrier_quote = parseFloat(contract.barrier);
             }
 
             chart.yAxis[0].addPlotLine({
-                id    : 'tick-barrier',
-                value : barrier_quote,
-                label : { text: `${localize('Barrier')} (${addComma(barrier_quote)})`, align: 'center' },
+                id   : 'tick-barrier',
+                value: barrier_quote,
+                label: {
+                    text : `${localize('Barrier')} (${addComma(barrier_quote)})`,
+                    align: Reset.isReset(contract_category) ? 'right' : 'center',
+                    x    : Reset.isReset(contract_category) ? -60 : 0,
+                },
                 color : 'green',
                 width : 2,
                 zIndex: 2,
@@ -283,7 +303,7 @@ const TickDisplay = (() => {
             value    : indicator.index,
             id       : indicator.id,
             label    : { text: indicator.label, x: /start_tick|entry_tick/.test(indicator.id) ? -15 : 5 },
-            color    : '#e98024',
+            color    : indicator.color || '#e98024',
             width    : 2,
             zIndex   : 2,
             dashStyle: indicator.dashStyle || '',
@@ -305,6 +325,10 @@ const TickDisplay = (() => {
             }
 
             addSellSpot();
+        }
+
+        if (Reset.isReset(contract_category) && Reset.isNewBarrier(contract.entry_spot, contract.barrier)) {
+            plotResetSpot(+contract.barrier);
         }
     };
 
@@ -329,6 +353,7 @@ const TickDisplay = (() => {
         let epoches,
             spots2,
             chart_display_decimals;
+
         if (document.getElementById('sell_content_wrapper')) {
             if (data.tick) {
                 Tick.details(data);
@@ -348,6 +373,8 @@ const TickDisplay = (() => {
                     category = 'digits';
                 } else if (/touch/i.test(contract.shortcode)) {
                     category = 'touchnotouch';
+                } else if (/reset/i.test(contract.shortcode)) {
+                    category = 'reset';
                 } else if (/^(tickhigh|ticklow)_/i.test(contract.shortcode)) {
                     category = 'highlowticks';
                 }
@@ -434,7 +461,51 @@ const TickDisplay = (() => {
                     counter++;
                 }
             }
+            if (Reset.isReset(contract_category) && data.history) {
+                plotResetSpot();
+            }
         }
+    };
+
+    const removePlotLine = (id, type = 'y') => {
+        if (!chart) return;
+        chart[(`${type}Axis`)][0].removePlotLine(id);
+    };
+
+    const plotResetSpot = (r_barrier) => {
+        if (reset_spot_plotted || !chart || !Reset.isReset(contract.contract_type)) return;
+
+        const is_resetcall  = contract.contract_type === 'RESETCALL';
+        const entry_barrier = contract.entry_spot;
+        const reset_barrier = r_barrier || contract.barrier;
+
+        if (!+entry_barrier || !+reset_barrier) return;
+
+        if (+entry_barrier !== +reset_barrier) {
+            removePlotLine('tick-barrier', 'y');
+            
+            chart.yAxis[0].addPlotLine({
+                id    : 'tick-reset-barrier',
+                value : +reset_barrier,
+                label : { text: `${localize('Reset Barrier')} (${addComma(reset_barrier)})`, align: 'right', x: -60, y: is_resetcall ? 15 : -5 },
+                color : 'green',
+                width : 2,
+                zIndex: 3,
+            });
+            chart.yAxis[0].addPlotLine({
+                id       : 'tick-barrier',
+                value    : +entry_barrier,
+                label    : { text: `${localize('Barrier')} (${addComma(entry_barrier)})`,    align: 'right', x: -60, y: is_resetcall ? -5 : 15 },
+                color    : 'green',
+                width    : 2,
+                zIndex   : 3,
+                dashStyle: 'dot',
+            });
+
+            CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Reset Barrier')}: ${reset_barrier}`);
+            reset_spot_plotted = true;
+        }
+
         evaluateContractOutcome();
     };
 
@@ -518,6 +589,7 @@ const TickDisplay = (() => {
     };
 
     return {
+        plotResetSpot,
         updateChart,
         init      : initialize,
         resetSpots: () => { spots_list = {}; updateContract({}); $(`#${id_render}`).css('background-color', '#F2F2F2'); },

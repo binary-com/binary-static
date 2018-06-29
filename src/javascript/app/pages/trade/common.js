@@ -66,6 +66,8 @@ const commonTrading = (() => {
             name = 'digits';
         } else if (/lookback/.test(form_name)) {
             name = 'lookback';
+        } else if (/reset/.test(form_name)) {
+            name = 'reset';
         }
         return {
             form_name       : name,
@@ -104,6 +106,8 @@ const commonTrading = (() => {
         LBFLOATCALL : 'middle',
         LBFLOATPUT  : 'middle',
         LBHIGHLOW   : 'middle',
+        RESETCALL   : 'top',
+        RESETPUT    : 'bottom',
         CALLSPREAD  : 'top',
         PUTSPREAD   : 'bottom',
         TICKHIGH    : 'top',
@@ -141,6 +145,7 @@ const commonTrading = (() => {
             ['lookback',
                 ['lookbackhigh', 'lookbacklow', 'lookbackhighlow'],
             ],
+            'reset',
             'callputspread',
             'highlowticks',
         ];

@@ -9,6 +9,7 @@ const GetTicks          = require('./get_ticks');
 const Lookback          = require('./lookback');
 const Notifications     = require('./notifications');
 const Price             = require('./price');
+const Reset             = require('./reset');
 const StartDates        = require('./starttime').StartDates;
 const Symbols           = require('./symbols');
 const Tick              = require('./tick');
@@ -164,6 +165,10 @@ const Process = (() => {
         refreshDropdown('#selected_tick');
         Lookback.display();
 
+        if (!Reset.isReset(Defaults.get('formname'))) {
+            Reset.hideResetTime();
+        }
+
         let r1;
         if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
             r1 = Durations.onStartDateChange(Defaults.get('date_start'));
@@ -269,9 +274,9 @@ const Process = (() => {
     const setFormName = (formname) => {
         let formname_to_set    = formname;
         const has_callputequal = hasCallPutEqual();
-        if (/^(callputequal)$/.test(formname_to_set) && (!has_callputequal || !+Defaults.get('is_equal'))) {
+        if (formname_to_set === 'callputequal' && (!has_callputequal || !+Defaults.get('is_equal'))) {
             formname_to_set = 'risefall';
-        } else if (/^(risefall)$/.test(formname_to_set) && has_callputequal && +Defaults.get('is_equal')) {
+        } else if (formname_to_set === 'risefall' && has_callputequal && +Defaults.get('is_equal')) {
             formname_to_set = 'callputequal';
         }
         Defaults.set('formname', formname_to_set);

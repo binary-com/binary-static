@@ -26,7 +26,7 @@ const MobileMenu = () => (
                         { text: it.L('SmartTrader'),  href: it.url_for('trading'), className: 'no-capitalize' },
                         { text: it.L('WebTrader'),    href: 'https://webtrader.binary.com', target: '_blank' },
                         { text: it.L('Binary Bot'),   href: 'https://bot.binary.com',       target: '_blank' },
-                        { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader') },
+                        { text: it.L('MetaTrader 5'), href: it.url_for('user/metatrader'), className: 'invisible mt_visibility' },
                         { text: it.L('Ladders'),      href: it.url_for('multi_barriers_trading'), className: 'financial-only' },
                     ]}
                 />

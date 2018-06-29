@@ -65,7 +65,7 @@ const Trading = () => (
                                                 <select id='duration_units' className='medium_width_input' />
                                             </div>
                                             <div id='duration_wrapper' className='hint'>
-                                                <span id='duration_tooltip'>{it.L('The minimum duration is')}</span> <span id='duration_minimum' /> <span id='duration_unit' />
+                                                <span id='duration_tooltip'>{it.L('Minimum:')}</span> <span id='duration_minimum' />
                                                 <span id='duration_maximum' className='invisible' />
                                             </div>
                                             <div id='expiry_type_endtime'>
@@ -109,6 +109,9 @@ const Trading = () => (
                                         <div className='big-col'>
                                             <input id='barrier_high' type='text' data-lpignore='true' name='H' autoComplete='off' />
                                             <span id='indicative_high_barrier_tooltip' data-balloon={it.L('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')} data-balloon-length='xlarge' />
+                                            <div className='hint'>
+                                                <span id='barrier_high_error' className='error-msg invisible'>{it.L('High barrier must be higher than low barrier')}</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='row barrier_class' id='low_barrier_row'>
@@ -172,6 +175,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                     </div>
+                                    <div className='row' id='reset_time' />
                                     <div className='row invisible' id='equals_row'>
                                         <input id='callputequal' type='checkbox' />
                                         <label htmlFor='callputequal'><span data-balloon-length='xlarge' data-balloon={it.L('Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower.')}>{it.L('Allow equals')}</span></label>

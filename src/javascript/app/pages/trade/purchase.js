@@ -224,7 +224,8 @@ const Purchase = (() => {
                     updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
                 }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
-                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), localize(`Tick [_1] is the ${tick_config.is_tick_high ? 'highest' : 'lowest'} tick`, [tick_config.winning_tick_number]));
+                    const is_won = +tick_config.selected_tick_number === +tick_config.winning_tick_number;
+                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), localize(`Tick [_1] is ${is_won ? '' : 'not'} the ${tick_config.is_tick_high ? 'highest' : 'lowest'} tick`, [tick_config.selected_tick_number]));
                 }
             }
         }

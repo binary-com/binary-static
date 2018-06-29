@@ -49,7 +49,7 @@ const PaymentMethods = () => {
                         <a className='button' />
                     </div>
                     <p>
-                        <Button url='/' text={it.L('Open an account now')} />
+                        <Button url='signup' text={it.L('Open an account now')} />
                         <Button url='cashier/forwardws?action=deposit'  real className='deposit'  text={it.L('Deposit')} />
                         <Button url='cashier/forwardws?action=withdraw' real className='withdraw' text={it.L('Withdraw')} />
                     </p>
@@ -71,7 +71,7 @@ const PaymentMethods = () => {
                             ],
                             [
                                 { text: <PaymentLogo logo='internet_bank_transfer' /> },
-                                { text: 'USD GBP EUR AUD' },
+                                { text: 'USD GBP EUR' },
                                 { text: '25 - 10,000' },
                                 { text: '25 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${working_day}`, 1), it.L(`${withdrawal}${working_day}`, 1)]} /> },
@@ -101,7 +101,7 @@ const PaymentMethods = () => {
                             ],
                             [
                                 { text: <PaymentLogo logo='mastercard' /> },
-                                { text: 'USD EUR AUD' },
+                                { text: 'USD GBP EUR AUD' },
                                 { text: '10 - 10,000' },
                                 { text: '10 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
@@ -110,7 +110,12 @@ const PaymentMethods = () => {
                     }}
                 />
 
-                <TableTitle title={it.L('E-cash')} />
+
+                <div className='gr-padding-10'>
+                    <p className='hint'>* {it.L('Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal.')}</p>
+                </div>
+
+                <TableTitle title={it.L('E-wallet')} />
                 <Table
                     data={{
                         thead: [ head ],
@@ -138,13 +143,6 @@ const PaymentMethods = () => {
                             ],
                             [
                                 { text: <PaymentLogo logo='neteller' /> },
-                                { text: 'USD GBP EUR AUD' },
-                                { text: '5 - 10,000' },
-                                { text: '5 - 10,000' },
-                                { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                            ],
-                            [
-                                { text: <PaymentLogo logo='monetaru' /> },
                                 { text: 'USD GBP EUR AUD' },
                                 { text: '5 - 10,000' },
                                 { text: '5 - 10,000' },
