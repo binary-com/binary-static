@@ -1,6 +1,6 @@
 import moment                        from 'moment';
 import { createChartBarriersConfig } from './chart';
-import { convertToUnix }             from '../../../../common/date_time';
+import { convertToUnix }             from '../../../../Utils/Date';
 import WS                            from '../../../../data/ws_methods';
 import { getDecimalPlaces }          from '../../../../../_common/base/currency_base';
 

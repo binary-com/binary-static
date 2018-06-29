@@ -1,6 +1,6 @@
 import React               from 'react';
 import PropTypes           from 'prop-types';
-import { toGMTFormat }     from '../../../common/date_time';
+import { toGMTFormat }     from '../../../Utils/Date';
 import Button              from '../../../components/form/button.jsx';
 import Tooltip             from '../../../components/elements/tooltip.jsx';
 import UILoader            from '../../../components/elements/ui_loader.jsx';

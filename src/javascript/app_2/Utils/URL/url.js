@@ -1,4 +1,4 @@
-import { isEmptyObject } from '../../_common/utility';
+import { isEmptyObject } from '../../../_common/utility';
 
 export default class URLHelper {
     /**

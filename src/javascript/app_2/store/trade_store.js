@@ -1,7 +1,7 @@
 import {
     action,
     observable }                          from 'mobx';
-import URLHelper                          from '../common/url_helper';
+import URLHelper                          from '../Utils/URL';
 import { updateBarrierShade }             from '../pages/trading/actions/helpers/chart';
 import ContractType                       from '../pages/trading/actions/helpers/contract_type';
 import { allowed_query_string_variables } from '../pages/trading/actions/helpers/query_string';

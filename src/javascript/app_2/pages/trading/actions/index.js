@@ -1,6 +1,6 @@
 import extend                             from 'extend';
 import { runInAction }                    from 'mobx';
-import URLHelper                          from '../../../common/url_helper';
+import URLHelper                          from '../../../Utils/URL';
 import Client                             from '../../../../_common/base/client_base';
 import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
 

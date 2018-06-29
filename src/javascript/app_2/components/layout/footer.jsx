@@ -1,7 +1,7 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import Popover         from '../elements/popover.jsx';
-import { toGMTFormat } from '../../common/date_time';
+import { toGMTFormat } from '../../Utils/Date';
 import { BinaryLink }  from '../../routes';
 import { connect }     from '../../store/connect';
 
