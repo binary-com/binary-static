@@ -318,7 +318,7 @@ const Authenticate = (() => {
             }
             if (success_any && is_last_response) {
                 showSuccess();
-            } else {
+            } else if (dup_files.length || 'error' in response) {
                 showError({ message: dup_files.length ? localize('Following file(s) were already uploaded: [_1]', [`[ ${dup_files.join(', ')} ]`]) : response.error.message });
             }
         };
