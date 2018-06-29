@@ -2,7 +2,7 @@ import moment                 from 'moment';
 import React,
     { PureComponent }         from 'react';
 import PropTypes              from 'prop-types';
-import { isSessionAvailable } from '../../pages/trading/actions/helpers/start_date';
+import { isSessionAvailable } from '../../Modules/trading/actions/helpers/start_date';
 import { localize }           from '../../../_common/localize';
 
 /* TODO:

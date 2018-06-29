@@ -6,21 +6,21 @@ import Client              from '../_common/base/client_base';
 import { redirectToLogin } from '../_common/base/login';
 import { localize }        from '../_common/localize';
 
-import Portfolio           from './pages/portfolio/portfolio.jsx';
-import TradeApp            from './pages/trading/trade_app.jsx';
-import Settings            from './pages/settings/settings.jsx';
-import Statement           from './pages/statement/statement.jsx';
+import Portfolio           from './Modules/Portfolio';
+import TradeApp            from './Modules/trading/trade_app.jsx';
+import Settings            from './Modules/settings/settings.jsx';
+import Statement           from './Modules/Statement';
 
 // Settings Routes
-import AccountPassword        from './pages/settings/sections/account_password.jsx';
-import ApiToken               from './pages/settings/sections/api_token.jsx';
-import AuthorizedApplications from './pages/settings/sections/authorized_applications.jsx';
-import CashierPassword        from './pages/settings/sections/cashier_password.jsx';
-import FinancialAssessment    from './pages/settings/sections/financial_assessment.jsx';
-import Limits                 from './pages/settings/sections/limits.jsx';
-import LoginHistory           from './pages/settings/sections/login_history.jsx';
-import PersonalDetails        from './pages/settings/sections/personal_details.jsx';
-import SelfExclusion          from './pages/settings/sections/self_exclusion.jsx';
+import AccountPassword        from './Modules/settings/sections/account_password.jsx';
+import ApiToken               from './Modules/settings/sections/api_token.jsx';
+import AuthorizedApplications from './Modules/settings/sections/authorized_applications.jsx';
+import CashierPassword        from './Modules/settings/sections/cashier_password.jsx';
+import FinancialAssessment    from './Modules/settings/sections/financial_assessment.jsx';
+import Limits                 from './Modules/settings/sections/limits.jsx';
+import LoginHistory           from './Modules/settings/sections/login_history.jsx';
+import PersonalDetails        from './Modules/settings/sections/personal_details.jsx';
+import SelfExclusion          from './Modules/settings/sections/self_exclusion.jsx';
 
 const routes = [
     { path: '/',          component: TradeApp, exact: true },

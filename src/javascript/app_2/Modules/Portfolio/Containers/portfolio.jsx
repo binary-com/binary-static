@@ -1,76 +1,17 @@
-import React                from 'react';
-import moment               from 'moment';
-import PortfolioCard        from './portfolio_card.jsx';
-import DataTable            from '../../components/elements/data_table.jsx';
-import Tooltip              from '../../components/elements/tooltip.jsx';
-import { WS }               from '../../Services';
-import { getAppId }         from '../../../config';
-import ClientBase           from '../../../_common/base/client_base';
-import { formatMoney }      from '../../../_common/base/currency_base';
-import { localize }         from '../../../_common/localize';
-import { getPropertyValue } from '../../../_common/utility';
-import Loading              from '../../../../templates/_common/components/loading.jsx';
-
-const formatPortfolioData = (portfolio_arr) => {
-    const formatted_portfolio = portfolio_arr.map((portfolio_item) => {
-        const moment_obj      = moment.utc(portfolio_item.expiry_time * 1000);
-        const remaining_time  = `${moment_obj.fromNow(true)} - ${moment_obj.format('h:mm:ss')}`;
-        const purchase        = parseFloat(portfolio_item.buy_price);
-        const payout          = parseFloat(portfolio_item.payout);
-        return {
-            reference: {
-                transaction_id: portfolio_item.transaction_id,
-                app_id        : portfolio_item.app_id,
-            },
-            type      : portfolio_item.contract_type,
-            details   : localize(portfolio_item.longcode.replace(/\n/g, '<br />')),
-            purchase  : formatMoney(false, purchase, true),
-            payout    : formatMoney(false, payout, true),
-            remaining_time,
-            id        : portfolio_item.contract_id,
-            indicative: {
-                amount: '',
-                style : '',
-            },
-        };
-    });
-    return formatted_portfolio;
-};
-
-// TODO: move to common
-const contract_type_display = {
-    ASIANU      : 'Asian Up',
-    ASIAND      : 'Asian Down',
-    CALL        : 'Higher',
-    CALLE       : 'Higher or equal',
-    PUT         : 'Lower',
-    DIGITMATCH  : 'Digit Matches',
-    DIGITDIFF   : 'Digit Differs',
-    DIGITODD    : 'Digit Odd',
-    DIGITEVEN   : 'Digit Even',
-    DIGITOVER   : 'Digit Over',
-    DIGITUNDER  : 'Digit Under',
-    EXPIRYMISS  : 'Ends Outside',
-    EXPIRYRANGE : 'Ends Between',
-    EXPIRYRANGEE: 'Ends Between',
-    LBFLOATCALL : 'Close-Low',
-    LBFLOATPUT  : 'High-Close',
-    LBHIGHLOW   : 'High-Low',
-    RANGE       : 'Stays Between',
-    UPORDOWN    : 'Goes Outside',
-    ONETOUCH    : 'Touches',
-    NOTOUCH     : 'Does Not Touch',
-};
-
-// TODO: move to common
-const buildOauthApps = (response) => {
-    if (!response || !response.oauth_apps) return {};
-    const obj_oauth_apps = { 2: 'Binary.com Autoexpiry' };
-    response.oauth_apps.forEach((app) => {
-        obj_oauth_apps[app.app_id] = app.name;
-    });
-    return obj_oauth_apps;
-};
+import React                     from 'react';
+import PortfolioCard             from '../Components/portfolio_card.jsx';
+import { formatPortfolioData }   from '../Helpers/process_data';
+import DataTable                 from '../../../components/elements/data_table.jsx';
+import Tooltip                   from '../../../components/elements/tooltip.jsx';
+import { contract_type_display } from '../../../Constants/contract';
+import { WS }                    from '../../../Services/index';
+import { ProcessData }           from '../../../Services/Helpers';
+import { getAppId }              from '../../../../config';
+import ClientBase                from '../../../../_common/base/client_base';
+import { formatMoney }           from '../../../../_common/base/currency_base';
+import { localize }              from '../../../../_common/localize';
+import { getPropertyValue }      from '../../../../_common/utility';
+import Loading                   from '../../../../../templates/_common/components/loading.jsx';
 
 const app_id = getAppId();
 
@@ -87,7 +28,7 @@ class Portfolio extends React.PureComponent  {
         },
         is_loading: true,
         oauth_apps: null,
-    }
+    };
 
     columns = [
         {
@@ -166,7 +107,7 @@ class Portfolio extends React.PureComponent  {
                 return <td key={data_index}>-</td>;
             },
         },
-    ]
+    ];
 
     componentWillMount() {
         this.initializePortfolio();
@@ -183,14 +124,14 @@ class Portfolio extends React.PureComponent  {
         });
         WS.subscribeTransaction(this.transactionResponseHandler, false);
         WS.oauthApps().then((response) => this.updateOAuthApps(response));
-    }
+    };
 
     transactionResponseHandler = (response) => {
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
         }
         WS.portfolio().then((res) => this.updatePortfolio(res));
-    }
+    };
 
     updateIndicative = (response) => {
         // prevent callback after component has unmounted
@@ -226,7 +167,7 @@ class Portfolio extends React.PureComponent  {
         }
         const footer = this.updateFooterTotals(data_source);
         this.setState({ data_source, footer });
-    }
+    };
 
     updateFooterTotals = (portfolioArr) => {
         let indicative = 0;
@@ -244,10 +185,10 @@ class Portfolio extends React.PureComponent  {
             payout    : formatMoney(false, payout, true),
             purchase  : formatMoney(false, purchase, true),
         };
-    }
+    };
 
     updateOAuthApps = (response) => {
-        const oauth_apps = buildOauthApps(response);
+        const oauth_apps = ProcessData.getOauthAppsObject(response);
         this.setState({ oauth_apps });
     };
 
@@ -264,7 +205,7 @@ class Portfolio extends React.PureComponent  {
 
             WS.subscribeProposalOpenContract(this.updateIndicative, false);
         }
-    }
+    };
 
     render() {
         return (
@@ -310,6 +251,6 @@ class Portfolio extends React.PureComponent  {
             </div>
         );
     }
-};
+}
 
 export default Portfolio;

@@ -5,7 +5,7 @@ import moment from 'moment';
  * @param  {Number} epoch
  * @return {moment} the moment object of provided epoch
  */
-const toMoment = epoch => moment.unix(epoch).utc();
+export const toMoment = epoch => moment.unix(epoch).utc();
 
 /**
  * Set specified time on moment object

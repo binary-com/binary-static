@@ -2,11 +2,11 @@ import {
     action,
     observable }                          from 'mobx';
 import URLHelper                          from '../../Utils/URL/index';
-import { updateBarrierShade }             from '../../pages/trading/actions/helpers/chart';
-import ContractType                       from '../../pages/trading/actions/helpers/contract_type';
-import { allowed_query_string_variables } from '../../pages/trading/actions/helpers/query_string';
-import { updateStore }                    from '../../pages/trading/actions/index';
-import { processPurchase }                from '../../pages/trading/actions/purchase';
+import { updateBarrierShade }             from '../../Modules/trading/actions/helpers/chart';
+import ContractType                       from '../../Modules/trading/actions/helpers/contract_type';
+import { allowed_query_string_variables } from '../../Modules/trading/actions/helpers/query_string';
+import { updateStore }                    from '../../Modules/trading/actions/index';
+import { processPurchase }                from '../../Modules/trading/actions/purchase';
 import Client                             from '../../../_common/base/client_base';
 
 export default class TradeStore {

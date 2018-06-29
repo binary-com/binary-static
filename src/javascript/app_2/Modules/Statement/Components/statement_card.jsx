@@ -1,8 +1,17 @@
-import React        from 'react';
-import PropTypes    from 'prop-types';
-import classnames   from 'classnames';
+import React      from 'react';
+import PropTypes  from 'prop-types';
+import classnames from 'classnames';
 
-const StatementCard = ({ date, refid, desc, action, amount, payout, balance, className }) => (
+const StatementCard = ({
+    date,
+    refid,
+    desc,
+    action,
+    amount,
+    payout,
+    balance,
+    className,
+}) => (
     <div className={classnames('statement-card', className)}>
         <div className='statement-card__header'>
             <span className='statement-card__date'>{date}</span>
