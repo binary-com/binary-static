@@ -1,24 +1,31 @@
 import {
     action,
     observable }                          from 'mobx';
-import ContractType                       from '../pages/trading/actions/helpers/contract_type';
-import { updateStore }                    from '../pages/trading/actions/index';
-import { allowed_query_string_variables } from '../pages/trading/actions/helpers/query_string';
-import { processPurchase }                from '../pages/trading/actions/purchase';
 import URLHelper                          from '../common/url_helper';
+import { updateBarrierShade }             from '../pages/trading/actions/helpers/chart';
+import ContractType                       from '../pages/trading/actions/helpers/contract_type';
+import { allowed_query_string_variables } from '../pages/trading/actions/helpers/query_string';
+import { updateStore }                    from '../pages/trading/actions/index';
+import { processPurchase }                from '../pages/trading/actions/purchase';
 import Client                             from '../../_common/base/client_base';
 
 export default class TradeStore {
+    constructor(main_store) {
+        this.main_store = main_store;
+    }
+
     @action.bound init() {
 
         // Update the url's query string by default values of the store
         const queryParams = URLHelper
             .updateQueryString(this, allowed_query_string_variables);
- 
-        // update state values from query string 
+
+        // update state values from query string
+        const config = {};
         [...queryParams].forEach(param => {
-            this[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
+            config[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
         });
+        updateStore(this, config);
 
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
@@ -35,6 +42,12 @@ export default class TradeStore {
         }
 
         updateStore(this, { [name]: (type === 'number' ? +value : value) }, true);
+    }
+
+    @action.bound onHoverPurchase(is_over, contract_type) {
+        if (this.chart_barriers.main) {
+            this.chart_barriers.main = updateBarrierShade(this, is_over, contract_type);
+        }
     }
 
     @action.bound onPurchase(proposal_id, price) {
@@ -72,7 +85,7 @@ export default class TradeStore {
     @observable duration_unit       = '';
     @observable duration_units_list = [];
     @observable expiry_date         = '';
-    @observable expiry_time         = '09:40 pm';
+    @observable expiry_time         = '09:40';
     @observable expiry_type         = 'duration';
 
     // Barrier
@@ -83,7 +96,8 @@ export default class TradeStore {
     // Start Time
     @observable start_date       = Number(0); // Number(0) refers to 'now'
     @observable start_dates_list = [];
-    @observable start_time       = '12:30 am';
+    @observable start_time       = '12:30';
+    @observable sessions         = [];
 
     // Last Digit
     @observable last_digit = 3;
@@ -91,6 +105,9 @@ export default class TradeStore {
     // Purchase
     @observable proposal_info = {};
     @observable purchase_info = {};
+
+    // Chart
+    @observable chart_barriers = {};
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [

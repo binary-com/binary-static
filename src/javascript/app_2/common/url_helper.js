@@ -1,9 +1,11 @@
+import { isEmptyObject } from '../../_common/utility';
+
 export default class URLHelper {
     /**
      * Get query string of the url
      *
      * @param {String|null} url
-     * 
+     *
      * @return {Object} returns a key-value object that contains all query string of the url.
      */
     static getQueryParams(url) {
@@ -28,7 +30,7 @@ export default class URLHelper {
             param_object.delete(name);
 
             const value = params[name];
-            
+
             if ( value && typeof value !== 'object' && value !== '') {
                 param_object.append(name, params[name]);
             }
@@ -57,14 +59,14 @@ export default class URLHelper {
 
         const queryParams = URLHelper.getQueryParams();
 
-        if (store && Object.keys(store).length > 0 && store.constructor === Object) {
- 
+        if (!isEmptyObject(store)) {
+
             // create query string by default values in trade_store if the param doesn't exist in query string.
             allowed_query_string_variables
                 .filter(p => !queryParams.get(p)).forEach( key => {
-                    if (store[key] && store[key] !== '') {
-                        URLHelper.setQueryParam({ [key]: this[key] });
-                        queryParams.set(key, this[key]);
+                    if (store[key]) {
+                        URLHelper.setQueryParam({ [key]: store[key] });
+                        queryParams.set(key, store[key]);
                     }
                 });
         }

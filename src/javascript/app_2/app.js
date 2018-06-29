@@ -1,14 +1,11 @@
 // import { configure }              from 'mobx';
+import PropTypes                     from 'prop-types';
 import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import NetworkMonitor                from './base/network_monitor';
-import ClientStore                   from './store/client_store';
-import CommonStore                   from './store/common_store';
 import { MobxProvider }              from './store/connect';
-import PagesStore                    from './store/pages_store';
-import TradeStore                    from './store/trade_store';
-import UIStore                       from './store/ui_store';
+import MainStore                     from './store/index';
 import Footer                        from './components/layout/footer.jsx';
 import Header                        from './components/layout/header.jsx';
 import { BinaryRoutes }              from './routes';
@@ -18,23 +15,18 @@ import { localize }                  from '../_common/localize';
 
 // configure({ enforceActions: true }); // disabled for SmartCharts compatibility
 
-const stores = {
-    client: new ClientStore(),
-    common: new CommonStore(),
-    trade : new TradeStore(),
-    ui    : new UIStore(),
-    pages : new PagesStore(),
-};
-
 const initApp = () => {
     Client.init();
-    NetworkMonitor.init(stores);
 
-    stores.trade.init();
+    const main_store = new MainStore();
+
+    NetworkMonitor.init(main_store);
+
+    main_store.trade.init();
 
     const app = document.getElementById('binary_app');
     if (app) {
-        render(<BinaryApp />, app);
+        render(<BinaryApp main_store={main_store} />, app);
     }
 };
 
@@ -54,9 +46,9 @@ const getBasename = () => {
     return '/en/app.html';
 };
 
-const BinaryApp = () => (
+const BinaryApp = ({ main_store }) => (
     <Router basename={ getBasename() }>
-        <MobxProvider store={stores}>
+        <MobxProvider store={main_store}>
             <div>
                 <div id='trading_header'>
                     <Header
@@ -85,5 +77,9 @@ const BinaryApp = () => (
         </MobxProvider>
     </Router>
 );
+
+BinaryApp.propTypes = {
+    main_store: PropTypes.object,
+};
 
 export default initApp;

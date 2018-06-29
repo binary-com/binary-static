@@ -27,7 +27,7 @@ const SocketCache = (() => {
     // map_to: if presents, stores the response based on the value of the provided key in the echo_req
     const config = {
         payout_currencies: { expire: 10 },
-        active_symbols   : { expire: 10, map_to: ['product_type', 'landing_company'] },
+        // active_symbols   : { expire: 10, map_to: ['product_type', 'landing_company'] }, // TODO: uncomment once smartcharts upgraded to 0.1.9
         contracts_for    : { expire: 10, map_to: ['contracts_for', 'product_type', 'currency'] },
         exchange_rates   : { expire: 60, map_to: ['base_currency'] },
     };

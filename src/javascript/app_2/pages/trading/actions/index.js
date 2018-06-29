@@ -1,12 +1,12 @@
 import extend                             from 'extend';
 import { runInAction }                    from 'mobx';
+import URLHelper                          from '../../../common/url_helper';
 import Client                             from '../../../../_common/base/client_base';
 import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
-import URLHelper                          from '../../../common/url_helper';
 
 import ContractTypeHelper                 from './helpers/contract_type';
-import { allowed_query_string_variables } from './helpers/query_string';
 import { requestProposal }                from './helpers/proposal';
+import { allowed_query_string_variables } from './helpers/query_string';
 
 // add files containing actions here.
 import * as ContractType                  from './contract_type';
@@ -20,6 +20,7 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
     const new_state = cloneObject(obj_new_values);
     runInAction(() => {
         Object.keys(new_state).forEach((key) => {
+            if (key === 'main_store') return;
             if (JSON.stringify(store[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
             } else {
@@ -38,23 +39,20 @@ export const updateStore = async(store, obj_new_values = {}, is_by_user) => {
         });
     });
 
-    if (is_by_user || /^(symbol|contract_types_list)$/.test(Object.keys(new_state))) {
+    if (is_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {
         if ('symbol' in new_state) {
             await Symbol.onChangeSymbolAsync(new_state.symbol);
         }
-        process(store);
+        process(store, new_state);
     }
 };
 
-const process_methods = [
-    ContractTypeHelper.getContractCategories,
-    ContractType.onChangeContractTypeList,
-    ContractType.onChangeContractType,
-    Duration.onChangeExpiry,
-    StartDate.onChangeStartDate,
-];
-const process = async(store) => {
-    updateStore(store, { is_purchase_enabled: false, proposal_info: {} }); // disable purchase button(s), clear contract info
+const process = async(store, new_state) => {
+    updateStore(store, { // disable purchase button(s), clear contract info, cleanup chart
+        is_purchase_enabled: false,
+        proposal_info      : {},
+        chart_barriers     : {},
+    });
 
     const snapshot = cloneObject(store);
 
@@ -62,7 +60,7 @@ const process = async(store) => {
         extendOrReplace(snapshot, await Currency.getCurrenciesAsync(store.currency));
     }
 
-    process_methods.forEach((fnc) => {
+    getMethodsList(store, new_state).forEach((fnc) => {
         extendOrReplace(snapshot, fnc(snapshot));
     });
 
@@ -71,6 +69,15 @@ const process = async(store) => {
 
     requestProposal(store, updateStore);
 };
+
+const getMethodsList = (store, new_state) => ([
+    ContractTypeHelper.getContractCategories,
+    ContractType.onChangeContractTypeList,
+    ...(/\b(symbol|contract_type)\b/.test(Object.keys(new_state)) || !store.contract_type ? // symbol/contract_type changed or contract_type not set yet
+        [ContractType.onChangeContractType] : []),
+    Duration.onChangeExpiry,
+    StartDate.onChangeStartDate,
+]);
 
 // Some values need to be replaced, not extended
 const extendOrReplace = (source, new_values) => {

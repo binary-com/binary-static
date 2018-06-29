@@ -34,14 +34,14 @@
         flex-direction: column;
         height: 0;
         opacity: 0;
-        border-radius: 4px 0 4px 4px;
+        border-radius: 4px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         z-index: -1;
         transition: all 0.3s ease 0.15s;
 
         &.active {
             opacity: 1;
-            height: 213px;
+            height: 261px;
             z-index: 2;
 
             .time-picker-panel {
@@ -58,8 +58,8 @@
         .time-picker-panel {
             height: 0;
             background: $COLOR_WHITE;
-            border-bottom: 1px solid $COLOR_LIGHT_GRAY;
-            border-radius: 4px 0 0;
+            border-bottom: 1px solid $COLOR_GRAY;
+            border-radius: 4px 4px 0 0;
             padding: 2px 8px 0 9px;
             line-height: 30px;
             font-weight: 300;
@@ -83,30 +83,34 @@
             display: flex;
             flex-direction: row;
 
-            .time-picker-hours, .time-picker-minutes {
-                border-right: 1px solid $COLOR_LIGHT_GRAY;
-            }
             .time-picker-hours {
+                border-right: 1px solid $COLOR_GRAY;
                 border-radius: 0 0 0 4px;
+                width: 150px;
             }
-            .time-picker-meridiem {
+            .time-picker-minutes {
+                width: 80px;
                 border-radius: 0 0 4px;
             }
-            .time-picker-hours, .time-picker-minutes, .time-picker-meridiem {
+            .time-picker-hours, .time-picker-minutes {
                 display: inline-block;
-                width: 50px;
                 background: $COLOR_WHITE;
-                height: 180px;
+                height: 228px;
                 overflow: hidden;
                 text-align: center;
 
+                .list-title {
+                    margin-top: 10px;
+                }
                 .list-container .list-item {
-                    margin: 0;
-                    padding: 10px 0;
+                    display: inline-block;
+                    margin: 3px;
+                    padding: 7px;
                     transition: all 0.3s ease;
                     cursor: pointer;
+                    border-radius: 4px;
 
-                    &:hover {
+                    &:hover(:not.disabled) {
                         background: $COLOR_GRAY;
                         color: $COLOR_LIGHT_BLACK;
 
@@ -118,6 +122,10 @@
                     &.selected {
                         background: $COLOR_BLUE;
                         color: $COLOR_WHITE;
+                    }
+                    &.disabled {
+                        color: $COLOR_GRAY;
+                        cursor: not-allowed;
                     }
                 }
             }

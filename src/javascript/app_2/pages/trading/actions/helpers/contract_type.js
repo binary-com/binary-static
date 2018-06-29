@@ -1,6 +1,9 @@
+import moment                         from 'moment';
 import { buildBarriersConfig }        from './barrier';
 import { buildDurationConfig }        from './duration';
-import { buildForwardStartingConfig } from './start_date';
+import {
+    buildForwardStartingConfig,
+    isSessionAvailable }              from './start_date';
 import WS                             from '../../../../data/ws_methods';
 import { get as getLanguage }         from '../../../../../_common/language';
 import { localize }                   from '../../../../../_common/localize';
@@ -61,24 +64,12 @@ const ContractType = (() => {
                 durations: {
                     min_max: {
                         spot: {
-                            tick: {
-                                min: 5, // value in ticks, as cannot convert to seconds
-                                max: 10,
-                            },
-                            intraday: {
-                                min: 18000, // all values converted to seconds
-                                max: 86400,
-                            },
-                            daily: {
-                                min: 86400,
-                                max: 432000,
-                            },
+                            tick    : { min: 5,     max: 10 },    // value in ticks, as cannot convert to seconds
+                            intraday: { min: 18000, max: 86400 }, // all values converted to seconds
+                            daily   : { min: 86400, max: 432000 },
                         },
                         forward: {
-                            intraday: {
-                                min: 18000,
-                                max: 86400,
-                            },
+                            intraday: { min: 18000, max: 86400 },
                         },
                     },
                     units_display: {
@@ -94,10 +85,10 @@ const ContractType = (() => {
                         ],
                     },
                 },
-                forward_starting_dates: [ // value is 'open'
-                    { text: 'Mon - 19 Mar, 2018', value: 1517356800, close: 1517443199 },
-                    { text: 'Tue - 20 Mar, 2018', value: 1517443200, close: 1517529599 },
-                    { text: 'Wed - 21 Mar, 2018', value: 1517529600, close: 1517615999 },
+                forward_starting_dates: [
+                    { text: 'Mon - 19 Mar, 2018', value: 1517356800, sessions: [{ open: obj_moment, close: obj_moment }] },
+                    { text: 'Tue - 20 Mar, 2018', value: 1517443200, sessions: [{ open: obj_moment, close: obj_moment }] },
+                    { text: 'Wed - 21 Mar, 2018', value: 1517529600, sessions: [{ open: obj_moment, close: obj_moment }] },
                 ],
                 trade_types: {
                     'CALL': 'Higher',
@@ -105,14 +96,9 @@ const ContractType = (() => {
                 },
                 barriers: {
                     count   : 2,
-                    intraday: {
-                        high_barrier: '+2.12',
-                        low_barrier : '-1.12',
-                    },
-                    daily: {
-                        high_barrier: 1111,
-                        low_barrier : 1093,
-                    },
+                    tick    : { high_barrier: '+1.12', low_barrier : '-1.12' },
+                    intraday: { high_barrier: '+2.12', low_barrier : '-2.12' },
+                    daily   : { high_barrier: 1111,    low_barrier : 1093 },
                 },
             }
             */
@@ -133,8 +119,7 @@ const ContractType = (() => {
             config.durations              = buildDurationConfig(contract, config.durations);
             config.trade_types            = buildTradeTypesConfig(contract, config.trade_types);
             config.barriers               = buildBarriersConfig(contract, config.barriers);
-            config.forward_starting_dates =
-                buildForwardStartingConfig(contract.forward_starting_options) || config.forward_starting_dates;
+            config.forward_starting_dates = buildForwardStartingConfig(contract, config.forward_starting_dates);
 
             available_contract_types[type].config = config;
         });
@@ -235,6 +220,36 @@ const ContractType = (() => {
         return { start_date, start_dates_list };
     };
 
+    const getSessions = (contract_type, start_date) => {
+        const config   = getPropertyValue(available_contract_types, [contract_type, 'config']) || {};
+        const sessions =
+                  ((config.forward_starting_dates || []).find(option => option.value === start_date) || {}).sessions;
+        return { sessions };
+    };
+
+    const hours   = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
+    const minutes = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
+
+    const getStartTime = (sessions, start_date, start_time) => {
+        let [ hour, minute ] = start_time.split(':');
+        const start_moment = moment.unix(start_date).utc().hour(hour).minute(minute);
+        if (sessions && !isSessionAvailable(sessions, start_moment)) {
+            hour   = hours.find(h => isSessionAvailable(sessions, start_moment.hour(h))) || hour;
+            minute = minutes.find(m => isSessionAvailable(sessions, start_moment.minute(m))) || minute;
+        }
+        return { start_time: `${hour}:${minute}` };
+    };
+
+    const getEndTime = (sessions, expiry_date, expiry_time) => {
+        let [ hour, minute ] = expiry_time.split(':');
+        const start_moment = moment.unix(expiry_date).utc().hour(hour).minute(minute);
+        if (sessions && !isSessionAvailable(sessions, start_moment)) {
+            hour   = hours.find(h => isSessionAvailable(sessions, start_moment.hour(h))) || hour;
+            minute = minutes.find(m => isSessionAvailable(sessions, start_moment.minute(m))) || minute;
+        }
+        return { expiry_time: `${hour}:${minute}` };
+    };
+
     const getTradeTypes = (contract_type) => ({
         trade_types: getPropertyValue(available_contract_types, [contract_type, 'config', 'trade_types']),
     });
@@ -272,6 +287,9 @@ const ContractType = (() => {
         getDurationMinMax,
         getStartType,
         getBarriers,
+        getSessions,
+        getStartTime,
+        getEndTime,
 
         getContractCategories: () => ({ contract_types_list: available_categories }),
     };
