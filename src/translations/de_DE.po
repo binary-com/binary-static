@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-28 03:41\n"
+"PO-Revision-Date: 2018-06-29 02:26\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -273,9 +273,6 @@ msgstr "%1 bietet eine Vielzahl von Konto-Typen, um den unterschiedlichen Bedür
 msgid "%1 offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out."
 msgstr "%1 bietet eine Vielzahl von Kontoarten, um den unterschiedlichen Bedürfnissen von Tradern überall gerecht zu werden; egal, ob Sie ein erfahrener Trader sind, oder gerade erst anfangen."
 
-msgid "%1 offers five trade types that will help you execute your market view or strategy:"
-msgstr "%1 bietet fünf Handelstypen an, die Ihnen dabei helfen werden, Ihre Markteinschätzung oder Strategie auszuüben:"
-
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
 msgstr "%1 bietet Forex und Differenzkontrakte via dem Hybrid Model an, d.h., beide handeln auf einem eigenen Benutzerkonto (Dealing Desk) und sichern Kundenorder zum Teil mit unseren Liquiditätsgebern (Non-Dealing Desk) ab."
 
@@ -284,6 +281,9 @@ msgstr "%1 bietet Forex und Differenzkontrakte via dem Hybrid Model an, d.h., be
 
 msgid "%1 offers new ways to trade"
 msgstr "%1 bietet neue Wege des Handelns an"
+
+msgid "%1 offers the following trade types that will help you execute your market view or strategy:"
+msgstr ""
 
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1 bietet die weltweiten Finanzmärkte auf einer einfachen, anwenderfreundlichen Plattform an."
@@ -2319,9 +2319,6 @@ msgstr "Kontraktdaten"
 msgid "Contract Ends"
 msgstr "Kontrakt endet"
 
-msgid "Contract ID"
-msgstr "Kontrakt ID"
-
 msgid "Contract Information"
 msgstr "Kontraktinformation"
 
@@ -4018,6 +4015,9 @@ msgstr "Hoch-Schluss"
 msgid "High-Low"
 msgstr "Hoch-Tief"
 
+msgid "High/Low Ticks"
+msgstr ""
+
 msgid "Higher"
 msgstr "Höher"
 
@@ -5515,8 +5515,8 @@ msgstr "Neuester Kontoauszug oder ein amtlicher Brief der Ihren Namen und Ihre A
 msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of persons accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, persons accessing this site are required to inform themselves about and to observe such restrictions."
 msgstr "Die Gesetze über Finanzverträge sind weltweit unterschiedlich und Personen, die diese Seite besuchen, sind dafür verantwortlich sicherzustellen, dass sie alle Gesetze und Vorschriften, die in ihrem eigenen Land für sie gelten, verstanden haben und diese einhalten. Diese Site darf nicht für die Zwecke eines Angebots oder einer Aufforderung einer Person innerhalb eines Landes, in dem ein solches Angebot oder eine Aufforderung nicht erlaubt ist, verwendet werden oder von einer Person, an die ein solches Angebot oder eine Aufforderung per Gesetz verboten ist, benutzt werden. Der Zugang zu dieser Seite und das Anbieten von Finanzverträgen über diese Seite kann in manchen Ländern eingeschränkt sein. Dementsprechend werden Personen, die diese Seite besuchen, dazu aufgefordert, sich selbst über solche Einschränkungen zu informieren und diese im Auge zu behalten."
 
-msgid "Learn about the five types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
-msgstr "Erfahren Sie mehr über die fünf Arten von Geschäften, die Ihnen helfen können, Ihre Handelsstrategie auf steigenden, fallenden und sogar seitwärtigen Märkten auszuführen."
+msgid "Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
+msgstr ""
 
 msgid "Learn from us"
 msgstr "Lernen Sie von uns"
@@ -7138,8 +7138,8 @@ msgstr "Melden Sie sich bitte an."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Bevor Sie Ihren Antrag absenden können, müssen Sie zuerst den Zahlungsbedingungen des Abwicklers zustimmen."
 
-msgid "Please note that Asians and Digits are available exclusively with our Volatility Indices."
-msgstr "Bitte beachten Sie, dass Asiaten und Ziffern exklusiv mit unseren Volatilitätsindizes verfügbar sind."
+msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
 msgstr "Bitte beachten Sie, dass ein Lot, auf unseren %1Kontrakt Spezifikationen%2 basierend, 100 Einheiten entspricht."
@@ -7513,6 +7513,9 @@ msgstr "Auf Englisch, Indonesisch, Japanisch, Chinesisch, Polnisch, Deutsch, Fra
 msgid "Purchase"
 msgstr "Kauf"
 
+msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr ""
+
 msgid "Purchase Price"
 msgstr "Kaufpreis"
 
@@ -7762,14 +7765,14 @@ msgstr "Wiederverkauf wird nicht angeboten"
 msgid "Resale price"
 msgstr "Wiederverkaufspreis"
 
-msgid "Reset"
-msgstr "Zurücksetzen"
-
 msgid "Reset Barrier"
 msgstr "Schwelle zurücksetzen"
 
 msgid "Reset Call"
 msgstr "Call zurücksetzen"
+
+msgid "Reset Call/Put"
+msgstr ""
 
 msgid "Reset MT5 password"
 msgstr "MT5 Passwort zurücksetzen"

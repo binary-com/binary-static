@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-28 03:42\n"
+"PO-Revision-Date: 2018-06-29 02:27\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -273,9 +273,6 @@ msgstr "無論您是經驗豐富的交易員，還是剛剛起步者，％1都�
 msgid "%1 offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out."
 msgstr "無論您是經驗豐富的交易員，還是剛剛起步者，％1都能提供各種帳戶類型，以滿足各地交易者不同的需求。"
 
-msgid "%1 offers five trade types that will help you execute your market view or strategy:"
-msgstr "%1 提供五種可幫助您執行市場觀點或策略的交易類型："
-
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
 msgstr "%1通過混合模式提供外匯和差價合約，即通過自己的帳戶（交易員）和部分對沖客戶訂單與我們的流動率提供商（無交易員）進行交易。"
 
@@ -284,6 +281,9 @@ msgstr "%1通過混合模式提供外匯和差價合約，即通過自己的帳�
 
 msgid "%1 offers new ways to trade"
 msgstr "%1提供新的交易方式"
+
+msgid "%1 offers the following trade types that will help you execute your market view or strategy:"
+msgstr ""
 
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1 提供簡單、人性化的全球性金融交易平台。"
@@ -2319,9 +2319,6 @@ msgstr "合約詳細資料"
 msgid "Contract Ends"
 msgstr "合同結束"
 
-msgid "Contract ID"
-msgstr "合約編號"
-
 msgid "Contract Information"
 msgstr "合約確認"
 
@@ -4017,6 +4014,9 @@ msgstr "最高值-收盤值"
 msgid "High-Low"
 msgstr "最高值-最低值"
 
+msgid "High/Low Ticks"
+msgstr ""
+
 msgid "Higher"
 msgstr "高於"
 
@@ -5514,8 +5514,8 @@ msgstr "包含您的姓名和地址的最新銀行月結單或任何由政府出
 msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of persons accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, persons accessing this site are required to inform themselves about and to observe such restrictions."
 msgstr "世界各地有關金融合約的法律各不相同，本網站訪客有責任確保自己了解並完全遵守所在國家與其相關的法律規定。本網站既不構成、也不能用於任何在司法管轄區未經授權或非法的要約或要約邀請。存取本網站以及本網站提供的金融合約在部分司法管轄區受到限制，本網站訪客須自行獲知並遵守此類限制。"
 
-msgid "Learn about the five types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
-msgstr "了解可幫助您在上漲、下跌甚至橫盤整理市場上執行交易策略的五種交易類型。"
+msgid "Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
+msgstr ""
 
 msgid "Learn from us"
 msgstr "我們將協助您提高交易技能"
@@ -7137,8 +7137,8 @@ msgstr "請登入。"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "在送出要求前，請確保您首先同意代理的支付條款。"
 
-msgid "Please note that Asians and Digits are available exclusively with our Volatility Indices."
-msgstr "請注意，亞洲貨幣和數字交易只適用於我們的波動指數。"
+msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
 msgstr "請注意，根據我們的%1合約規格%2，一手交易量相當於100個單位。"
@@ -7512,6 +7512,9 @@ msgstr "以英文、印尼文、日文、中文、波蘭文、德文、法文、
 msgid "Purchase"
 msgstr "買入"
 
+msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr ""
+
 msgid "Purchase Price"
 msgstr "買入價格"
 
@@ -7761,14 +7764,14 @@ msgstr "不提供轉售"
 msgid "Resale price"
 msgstr "轉售價格"
 
-msgid "Reset"
-msgstr "重設"
-
 msgid "Reset Barrier"
 msgstr "重設障礙"
 
 msgid "Reset Call"
 msgstr "重設買權"
+
+msgid "Reset Call/Put"
+msgstr ""
 
 msgid "Reset MT5 password"
 msgstr "重設MT5密碼"
