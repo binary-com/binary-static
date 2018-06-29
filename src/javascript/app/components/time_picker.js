@@ -12,7 +12,7 @@ const TimePicker = (() => {
         time_pickers[options.selector] = {};
 
         config(options);
-        $(window).resize(() => { checkWidth(options.selector); });
+        $(window).resize(() => { updatePicker(options.selector); });
     };
 
     const hide = (selector, datepickerDate) => {
@@ -21,22 +21,6 @@ const TimePicker = (() => {
         if (!moment().isBefore(moment(datepickerDate))) {
             $(selector).attr('data-value', '').val('');
         }
-    };
-
-    const create = (selector) => {
-        let $this;
-        $(selector).keydown(function (e) {
-            if (e.which === 13) {
-                $this = $(this);
-                e.preventDefault();
-                e.stopPropagation();
-                $this.timepicker('setTime', $this.val());
-                $this.timepicker('hide');
-                $this.blur();
-                return false;
-            }
-            return true;
-        }).timepicker(time_pickers[selector].config_data);
     };
 
     const config = (options) => {
@@ -110,14 +94,30 @@ const TimePicker = (() => {
 
         time_pickers[options.selector].config_data = obj_config;
 
-        checkWidth(options.selector);
+        updatePicker(options.selector);
     };
 
     const formatTime = time => padLeft(time, 2, '0');
 
     const toTime = time => [formatTime(time.hour), formatTime(time.minute), '00'].join(':');
 
-    const checkWidth = (selector) => {
+    const addJqueryPicker = (selector) => {
+        let $this;
+        $(selector).keydown(function (e) {
+            if (e.which === 13) {
+                $this = $(this);
+                e.preventDefault();
+                e.stopPropagation();
+                $this.timepicker('setTime', $this.val());
+                $this.timepicker('hide');
+                $this.blur();
+                return false;
+            }
+            return true;
+        }).timepicker(time_pickers[selector].config_data);
+    };
+
+    const updatePicker = (selector) => {
         const $selector        = $(selector);
         const time_picker_conf = time_pickers[selector].config_data;
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
@@ -137,7 +137,7 @@ const TimePicker = (() => {
             if ($selector.attr('data-value') && $selector.hasClass('clearable') && !$selector.attr('disabled')) {
                 clearable($selector);
             }
-            create(selector);
+            addJqueryPicker(selector);
         }
     };
 
