@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes                from 'prop-types';
-import { connect }              from '../../../store/connect';
+import { connect }              from '../../../Stores/connect';
 import { BinaryLink }           from '../../../routes';
 
 class DrawerItem extends PureComponent {

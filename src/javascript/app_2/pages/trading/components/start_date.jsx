@@ -3,7 +3,7 @@ import PropTypes    from 'prop-types';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import TimePicker   from '../../../components/form/time_picker.jsx';
-import { connect }  from '../../../store/connect';
+import { connect }  from '../../../Stores/connect';
 import { localize } from '../../../../_common/localize';
 
 /* TODO:
@@ -73,11 +73,11 @@ StartDate.propTypes = {
 };
 
 export default connect(
-    ({ trade }) => ({
-        start_date      : trade.start_date,
-        start_dates_list: trade.start_dates_list,
-        start_time      : trade.start_time,
-        sessions        : trade.sessions,
-        onChange        : trade.handleChange,
+    ({ modules }) => ({
+        start_date      : modules.trade.start_date,
+        start_dates_list: modules.trade.start_dates_list,
+        start_time      : modules.trade.start_time,
+        sessions        : modules.trade.sessions,
+        onChange        : modules.trade.handleChange,
     })
 )(StartDate);

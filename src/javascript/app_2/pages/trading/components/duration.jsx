@@ -6,7 +6,7 @@ import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import InputField   from '../../../components/form/input_field.jsx';
 import TimePicker   from '../../../components/form/time_picker.jsx';
-import { connect }  from '../../../store/connect';
+import { connect }  from '../../../Stores/connect';
 import { localize } from '../../../../_common/localize';
 
 /* TODO:
@@ -176,17 +176,17 @@ Duration.propTypes = {
 };
 
 export default connect(
-    ({ common, trade }) => ({
+    ({ common, modules }) => ({
         server_time        : common.server_time,
-        expiry_type        : trade.expiry_type,
-        expiry_date        : trade.expiry_date,
-        expiry_time        : trade.expiry_time,
-        duration           : trade.duration,
-        duration_unit      : trade.duration_unit,
-        duration_units_list: trade.duration_units_list,
-        start_date         : trade.start_date,
-        start_time         : trade.start_time,
-        sessions           : trade.sessions,
-        onChange           : trade.handleChange,
+        expiry_type        : modules.trade.expiry_type,
+        expiry_date        : modules.trade.expiry_date,
+        expiry_time        : modules.trade.expiry_time,
+        duration           : modules.trade.duration,
+        duration_unit      : modules.trade.duration_unit,
+        duration_units_list: modules.trade.duration_units_list,
+        start_date         : modules.trade.start_date,
+        start_time         : modules.trade.start_time,
+        sessions           : modules.trade.sessions,
+        onChange           : modules.trade.handleChange,
     })
 )(Duration);

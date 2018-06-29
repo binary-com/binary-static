@@ -2,7 +2,7 @@ import React        from 'react';
 import PropTypes    from 'prop-types';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
-import { connect }  from '../../../store/connect';
+import { connect }  from '../../../Stores/connect';
 import { localize } from '../../../../_common/localize';
 
 const last_digit_numbers = [...Array(10).keys()].map(number => ({
@@ -48,8 +48,8 @@ LastDigit.propTypes = {
 };
 
 export default connect(
-    ({ trade }) => ({
-        last_digit: trade.last_digit,
-        onChange  : trade.handleChange,
+    ({ modules }) => ({
+        last_digit: modules.trade.last_digit,
+        onChange  : modules.trade.handleChange,
     })
 )(LastDigit);

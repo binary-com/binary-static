@@ -1,14 +1,14 @@
 import { observable, action }     from 'mobx';
 import moment                     from 'moment';
-import { WS }                     from '../../../Services';
-import { formatMoney }            from '../../../../_common/base/currency_base';
-import Client                     from '../../../../_common/base/client_base';
-import { localize }               from '../../../../_common/localize';
-import { toTitleCase }            from '../../../../_common/string_util';
+import { WS }                     from '../../Services/index';
+import { formatMoney }            from '../../../_common/base/currency_base';
+import Client                     from '../../../_common/base/client_base';
+import { localize }               from '../../../_common/localize';
+import { toTitleCase }            from '../../../_common/string_util';
 
 const batch_size = 100; // request response limit
 
-export default class LoginHistoryModel {
+export default class StatementStore {
     @observable data            = [];
     @observable is_loading      = false;
     @observable has_loaded_all  = false;

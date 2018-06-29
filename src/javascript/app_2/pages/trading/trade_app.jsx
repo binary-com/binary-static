@@ -13,7 +13,7 @@ import Test            from './components/test.jsx';
 import SmartCharts     from '../../components/charts/smartcharts.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
 import UILoader        from '../../components/elements/ui_loader.jsx';
-import { connect }     from '../../store/connect';
+import { connect }     from '../../Stores/connect';
 
 const form_components = [
     { name: 'start_date', Component: StartDate },
@@ -89,12 +89,12 @@ TradeApp.propTypes = {
 };
 
 export default connect(
-    ({ common, trade, ui }) => ({
+    ({ common, modules, ui }) => ({
         server_time           : common.server_time,
-        is_purchase_enabled   : trade.is_purchase_enabled,
-        is_trade_enabled      : trade.is_trade_enabled,
-        form_components       : trade.form_components,
-        portfolios            : trade.portfolios,
+        is_purchase_enabled   : modules.trade.is_purchase_enabled,
+        is_trade_enabled      : modules.trade.is_trade_enabled,
+        form_components       : modules.trade.form_components,
+        portfolios            : modules.trade.portfolios,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
     })

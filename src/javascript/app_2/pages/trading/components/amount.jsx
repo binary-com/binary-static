@@ -4,7 +4,7 @@ import classNames   from 'classnames';
 import Dropdown     from '../../../components/form/dropdown.jsx';
 import Fieldset     from '../../../components/form/fieldset.jsx';
 import InputField   from '../../../components/form/input_field.jsx';
-import { connect }  from '../../../store/connect';
+import { connect }  from '../../../Stores/connect';
 import Client       from '../../../../_common/base/client_base';
 import { addComma } from '../../../../_common/base/currency_base';
 import { localize } from '../../../../_common/localize';
@@ -82,12 +82,12 @@ Amount.propTypes = {
 };
 
 export default connect(
-    ({ trade }) => ({
-        basis_list     : trade.basis_list,
-        basis          : trade.basis,
-        currency       : trade.currency,
-        currencies_list: trade.currencies_list,
-        amount         : trade.amount,
-        onChange       : trade.handleChange,
+    ({ modules }) => ({
+        basis_list     : modules.trade.basis_list,
+        basis          : modules.trade.basis,
+        currency       : modules.trade.currency,
+        currencies_list: modules.trade.currencies_list,
+        amount         : modules.trade.amount,
+        onChange       : modules.trade.handleChange,
     })
 )(Amount);

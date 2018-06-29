@@ -1,7 +1,7 @@
 import React          from 'react';
 import PropTypes      from 'prop-types';
 import ContractsPopUp from './elements/contracts_popup.jsx';
-import { connect }    from '../../../store/connect';
+import { connect }    from '../../../Stores/connect';
 
 const Contract = ({
     contract_type,
@@ -25,9 +25,9 @@ Contract.propTypes = {
 };
 
 export default connect(
-    ({ trade }) => ({
-        contract_type      : trade.contract_type,
-        contract_types_list: trade.contract_types_list,
-        onChange           : trade.handleChange,
+    ({ modules }) => ({
+        contract_type      : modules.trade.contract_type,
+        contract_types_list: modules.trade.contract_types_list,
+        onChange           : modules.trade.handleChange,
     })
 )(Contract);

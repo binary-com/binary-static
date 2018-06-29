@@ -3,7 +3,7 @@ import classNames               from 'classnames';
 import PropTypes                from 'prop-types';
 import { Drawer }               from './drawer.jsx';
 import Url                      from '../../../../_common/url';
-import { connect }              from '../../../store/connect';
+import { connect }              from '../../../Stores/connect';
 
 class ToggleDrawer extends PureComponent {
     showDrawer = () => {

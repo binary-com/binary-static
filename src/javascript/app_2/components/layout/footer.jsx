@@ -3,7 +3,7 @@ import React           from 'react';
 import Popover         from '../elements/popover.jsx';
 import { toGMTFormat } from '../../Utils/Date';
 import { BinaryLink }  from '../../routes';
-import { connect }     from '../../store/connect';
+import { connect }     from '../../Stores/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover

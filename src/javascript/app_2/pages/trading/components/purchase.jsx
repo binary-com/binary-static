@@ -5,7 +5,7 @@ import Button              from '../../../components/form/button.jsx';
 import Tooltip             from '../../../components/elements/tooltip.jsx';
 import UILoader            from '../../../components/elements/ui_loader.jsx';
 import Fieldset            from '../../../components/form/fieldset.jsx';
-import { connect }         from '../../../store/connect';
+import { connect }         from '../../../Stores/connect';
 import Client,
        { isLoggedIn }      from '../../../../_common/base/client_base';
 import { redirectToLogin } from '../../../../_common/base/login';
@@ -132,13 +132,13 @@ Purchase.propTypes = {
 };
 
 export default connect(
-    ({ trade }) => ({
-        is_purchase_enabled: trade.is_purchase_enabled,
-        is_trade_enabled   : trade.is_trade_enabled,
-        onClickPurchase    : trade.onPurchase,
-        onHoverPurchase    : trade.onHoverPurchase,
-        proposal_info      : trade.proposal_info,
-        purchase_info      : trade.purchase_info,
-        trade_types        : trade.trade_types,
+    ({ modules }) => ({
+        is_purchase_enabled: modules.trade.is_purchase_enabled,
+        is_trade_enabled   : modules.trade.is_trade_enabled,
+        onClickPurchase    : modules.trade.onPurchase,
+        onHoverPurchase    : modules.trade.onHoverPurchase,
+        proposal_info      : modules.trade.proposal_info,
+        purchase_info      : modules.trade.purchase_info,
+        trade_types        : modules.trade.trade_types,
     })
 )(Purchase);

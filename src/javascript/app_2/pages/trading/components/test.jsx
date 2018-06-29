@@ -1,6 +1,6 @@
 import React       from 'react';
 import PropTypes   from 'prop-types';
-import { connect } from '../../../store/connect';
+import { connect } from '../../../Stores/connect';
 
 class Test extends React.PureComponent {
     state         = { is_visible: false };
@@ -38,7 +38,7 @@ class Test extends React.PureComponent {
     render() {
         return (
             <div id='state_info' style={Object.assign({}, this.styles.container, { display: this.state.is_visible ? 'block' : 'none' })}>
-                {this.props.entries.sort().map(([k, v]) => k !== 'main_store' && <div key={k}><strong style={this.styles.prop_name}>{k}:</strong> {v && typeof v === 'object' ? JSON.stringify(v) : v}</div>)}
+                {this.props.entries.sort().map(([k, v]) => k !== 'root_store' && <div key={k}><strong style={this.styles.prop_name}>{k}:</strong> {v && typeof v === 'object' ? JSON.stringify(v) : v}</div>)}
             </div>
         );
     }
@@ -49,7 +49,7 @@ Test.propTypes = {
 };
 
 export default connect(
-    ({ trade }) => ({
-        entries: Object.entries(trade),
+    ({ modules }) => ({
+        entries: Object.entries(modules.trade),
     })
 )(Test);

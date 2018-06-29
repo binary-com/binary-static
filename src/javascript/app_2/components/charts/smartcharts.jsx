@@ -2,7 +2,7 @@ import { SmartChart } from '@binary-com/smartcharts';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { WS }         from '../../Services';
-import { connect }    from '../../store/connect';
+import { connect }    from '../../Stores/connect';
 
 const subscribe = (request_object, callback) => {
     if (request_object.subscribe !== 1) return;
@@ -46,9 +46,9 @@ SmartCharts.propTypes = {
 };
 
 export default connect(
-    ({ trade }) => ({
-        onSymbolChange: trade.handleChange,
-        initial_symbol: trade.symbol,
-        chart_barriers: trade.chart_barriers,
+    ({ modules }) => ({
+        onSymbolChange: modules.trade.handleChange,
+        initial_symbol: modules.trade.symbol,
+        chart_barriers: modules.trade.chart_barriers,
     })
 )(SmartCharts);

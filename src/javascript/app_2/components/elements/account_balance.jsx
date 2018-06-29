@@ -1,7 +1,7 @@
 import React               from 'react';
 import Client              from '../../../_common/base/client_base';
 import { formatMoney }     from '../../../_common/base/currency_base';
-import { connect }         from '../../store/connect';
+import { connect }         from '../../Stores/connect';
 import Button              from '../form/button.jsx';
 import { localize }        from '../../../_common/localize';
 import { redirectToLogin } from '../../../_common/base/login';

@@ -6,7 +6,7 @@ import StatementCard      from './components/statement_card.jsx';
 import CardList           from '../../components/elements/card_list.jsx';
 import DataTable          from '../../components/elements/data_table.jsx';
 import DatePicker         from '../../components/form/date_picker.jsx';
-import { connect }        from '../../store/connect';
+import { connect }        from '../../Stores/connect';
 import { localize }       from '../../../_common/localize';
 import Loading            from '../../../../templates/_common/components/loading.jsx';
 
@@ -169,15 +169,15 @@ Statement.propTypes = {
 };
 
 export default connect(
-    ({ common, pages }) => ({
+    ({ common, modules }) => ({
         server_time     : common.server_time,
-        data            : pages.statement.data,
-        is_loading      : pages.statement.is_loading,
-        has_loaded_all  : pages.statement.has_loaded_all,
-        date_from       : pages.statement.date_from,
-        date_to         : pages.statement.date_to,
-        fetchNextBatch  : pages.statement.fetchNextBatch,
-        handleDateChange: pages.statement.handleDateChange,
-        clearTable      : pages.statement.clearTable,
+        data            : modules.statement.data,
+        is_loading      : modules.statement.is_loading,
+        has_loaded_all  : modules.statement.has_loaded_all,
+        date_from       : modules.statement.date_from,
+        date_to         : modules.statement.date_to,
+        fetchNextBatch  : modules.statement.fetchNextBatch,
+        handleDateChange: modules.statement.handleDateChange,
+        clearTable      : modules.statement.clearTable,
     })
 )(Statement);

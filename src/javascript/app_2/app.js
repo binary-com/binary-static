@@ -4,8 +4,8 @@ import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import NetworkMonitor                from './base/network_monitor';
-import { MobxProvider }              from './store/connect';
-import MainStore                     from './store/index';
+import { MobxProvider }              from './Stores/connect';
+import MainStore                     from './Stores/index';
 import Footer                        from './components/layout/footer.jsx';
 import Header                        from './components/layout/header.jsx';
 import { BinaryRoutes }              from './routes';
@@ -18,15 +18,15 @@ import { localize }                  from '../_common/localize';
 const initApp = () => {
     Client.init();
 
-    const main_store = new MainStore();
+    const root_store = new MainStore();
 
-    NetworkMonitor.init(main_store);
+    NetworkMonitor.init(root_store);
 
-    main_store.trade.init();
+    root_store.modules.trade.init();
 
     const app = document.getElementById('binary_app');
     if (app) {
-        render(<BinaryApp main_store={main_store} />, app);
+        render(<BinaryApp root_store={root_store} />, app);
     }
 };
 
@@ -46,9 +46,9 @@ const getBasename = () => {
     return '/en/app.html';
 };
 
-const BinaryApp = ({ main_store }) => (
+const BinaryApp = ({ root_store }) => (
     <Router basename={ getBasename() }>
-        <MobxProvider store={main_store}>
+        <MobxProvider store={root_store}>
             <div>
                 <div id='trading_header'>
                     <Header
@@ -79,7 +79,7 @@ const BinaryApp = ({ main_store }) => (
 );
 
 BinaryApp.propTypes = {
-    main_store: PropTypes.object,
+    root_store: PropTypes.object,
 };
 
 export default initApp;

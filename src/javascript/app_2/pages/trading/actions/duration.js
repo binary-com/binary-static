@@ -3,7 +3,7 @@ import ContractType from './helpers/contract_type';
 
 export const onChangeExpiry = (store) => {
     const { contract_type, duration_unit, expiry_date, expiry_type } = store;
-    const server_time = store.main_store.common.server_time;
+    const server_time = store.root_store.common.server_time;
 
     const duration_is_day       = expiry_type === 'duration' && duration_unit === 'd';
     const expiry_is_after_today = expiry_type === 'endtime' && moment.utc(expiry_date).isAfter(moment(server_time).utc(), 'day');
