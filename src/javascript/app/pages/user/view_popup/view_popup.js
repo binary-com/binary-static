@@ -125,7 +125,6 @@ const ViewPopup = (() => {
         };
 
         containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
-        containerSetText('trade_details_contract_id', contract.contract_id);
         containerSetText('trade_details_start_date', epochToDateTime(contract.date_start));
         containerSetText('trade_details_end_date', epochToDateTime(contract.date_expiry));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
@@ -582,7 +581,6 @@ const ViewPopup = (() => {
             `<table>
             <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
             ${createRow('Contract Type', '', 'trade_details_contract_type')}
-            ${createRow('Contract ID', '', 'trade_details_contract_id')}
             ${createRow('Transaction ID', '', 'trade_details_ref_id')}
             ${createRow('Start Time', '', 'trade_details_start_date')}
             ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
