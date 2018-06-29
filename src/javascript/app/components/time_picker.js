@@ -32,7 +32,6 @@ const TimePicker = (() => {
                 options.minTime = time_now;
             }
             if (options.useLocalTime) options.minTime = options.minTime.local();
-            options.minTime.add(1, 'minute'); // rounding up seconds
             obj_config.minTime = { hour: parseInt(options.minTime.hour()), minute: parseInt(options.minTime.minute()) };
         }
 
