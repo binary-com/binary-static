@@ -1,4 +1,4 @@
-import WS from '../../../data/ws_methods';
+import { WS } from '../../../Services';
 
 /* This action does not modify state directlly.
  * The payload will be the callback that get's called for each tick

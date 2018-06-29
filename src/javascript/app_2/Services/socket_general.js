@@ -1,6 +1,6 @@
 import { action, flow }     from 'mobx';
-import { requestLogout }    from '../base/common';
-import WS                   from '../data/ws_methods';
+import { requestLogout }    from './logout';
+import WS                   from './ws_methods';
 import Client               from '../../_common/base/client_base';
 import { setCurrencies }    from '../../_common/base/currency_base';
 import Login                from '../../_common/base/login';

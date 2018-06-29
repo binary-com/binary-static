@@ -1,4 +1,4 @@
-import WS                from '../data/ws_methods';
+import WS                from './ws_methods';
 import Client            from '../../_common/base/client_base';
 import SocketCache       from '../../_common/base/socket_cache';
 import { removeCookies } from '../../_common/storage';

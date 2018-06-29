@@ -3,7 +3,7 @@ import moment               from 'moment';
 import PortfolioCard        from './portfolio_card.jsx';
 import DataTable            from '../../components/elements/data_table.jsx';
 import Tooltip              from '../../components/elements/tooltip.jsx';
-import WS                   from '../../data/ws_methods';
+import { WS }               from '../../Services';
 import { getAppId }         from '../../../config';
 import ClientBase           from '../../../_common/base/client_base';
 import { formatMoney }      from '../../../_common/base/currency_base';

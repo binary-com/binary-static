@@ -1,7 +1,7 @@
 import { SmartChart } from '@binary-com/smartcharts';
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import WS             from '../../data/ws_methods';
+import { WS }         from '../../Services';
 import { connect }    from '../../store/connect';
 
 const subscribe = (request_object, callback) => {

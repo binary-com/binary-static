@@ -1,4 +1,4 @@
-import WS                   from '../../../data/ws_methods';
+import { WS }               from '../../../Services';
 import { isCryptocurrency } from '../../../../_common/base/currency_base';
 import { localize }         from '../../../../_common/localize';
 

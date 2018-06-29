@@ -1,7 +1,7 @@
 import moment                        from 'moment';
 import { createChartBarriersConfig } from './chart';
 import { convertToUnix }             from '../../../../Utils/Date';
-import WS                            from '../../../../data/ws_methods';
+import { WS }                        from '../../../../Services';
 import { getDecimalPlaces }          from '../../../../../_common/base/currency_base';
 
 export const requestProposal = (store, updateStore) => {

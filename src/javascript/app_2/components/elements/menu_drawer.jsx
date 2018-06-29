@@ -2,7 +2,7 @@ import React from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { localize } from '../../../_common/localize';
 import { DrawerItem } from '../elements/drawer/index.jsx';
-import { requestLogout } from '../../base/common';
+import { requestLogout } from '../../Services';
 import Client from '../../../_common/base/client_base';
 
 export const MenuDrawer = () => {

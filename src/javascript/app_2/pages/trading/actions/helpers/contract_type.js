@@ -4,7 +4,7 @@ import { buildDurationConfig }        from './duration';
 import {
     buildForwardStartingConfig,
     isSessionAvailable }              from './start_date';
-import WS                             from '../../../../data/ws_methods';
+import { WS }                         from '../../../../Services';
 import { get as getLanguage }         from '../../../../../_common/language';
 import { localize }                   from '../../../../../_common/localize';
 import { toTitleCase }                from '../../../../../_common/string_util';
