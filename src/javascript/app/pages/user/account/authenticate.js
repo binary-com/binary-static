@@ -46,8 +46,6 @@ const Authenticate = (() => {
             active     : false,
         });
         const file_checks = {};
-        dup_files   = [];
-        success_any = false;
         // Setup Date picker
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
@@ -152,9 +150,14 @@ const Authenticate = (() => {
          * On submit button click
          */
         const submitFiles = ($files) => {
+            if ($button.length && $button.find('.barspinner').length) { // it's still in submit process
+                return;
+            }
             // Disable submit button
             disableButton();
             const files = [];
+            dup_files   = [];
+            success_any = false;
             $files.each((i, e) => {
                 if (e.files && e.files.length) {
                     const $e = $(e);
