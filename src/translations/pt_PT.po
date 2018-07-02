@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-28 02:06\n"
+"PO-Revision-Date: 2018-07-02 02:14\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -273,9 +273,6 @@ msgstr "A %1 disponibiliza uma grande variedade de tipos de conta para atender �
 msgid "%1 offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out."
 msgstr "A %1 disponibiliza uma grande variedade de tipos de conta para atender às diversas necessidades de negociadores em todo o mundo, quer sejam negociadores experientes ou principiantes."
 
-msgid "%1 offers five trade types that will help you execute your market view or strategy:"
-msgstr "A %1 disponibiliza cincos tipos de negociação que ajudam os negociadores a executar as suas visões ou estratégias de mercado:"
-
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
 msgstr "A %1 disponibiliza negociações nos mercados cambiais e contratos financeiros por diferenças através do modelo híbrido, i.e., tanto em negociações por conta própria (mesa de operações) como na cobertura parcial de ordens de clientes com os nossos fornecedores de liquidez (sem mesa de operações)."
 
@@ -284,6 +281,9 @@ msgstr "A %1 disponibiliza operações de câmbio e contratos por diferença atr
 
 msgid "%1 offers new ways to trade"
 msgstr "A %1 disponibiliza novas formas de negociar"
+
+msgid "%1 offers the following trade types that will help you execute your market view or strategy:"
+msgstr ""
 
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "A %1 oferece os mercados financeiros mundiais numa plataforma simples e fácil de usar."
@@ -1033,6 +1033,9 @@ msgstr "Permite que clientes utilizem carteiras eletrônicas que não estão dir
 msgid "Allow equals"
 msgstr ""
 
+msgid "Already have an account? %1Log in%2 here"
+msgstr ""
+
 msgid "Also known as counter currency"
 msgstr "Também conhecida como a moeda cotada"
 
@@ -1700,9 +1703,6 @@ msgstr "Bitcoin vs. Dólar americano"
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr " "
 
-msgid "Blue-chip stock contracts sourced from the OTC market."
-msgstr "Contratos de valores mobiliários de primeira categoria provenientes do mercado OTC."
-
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "Contratos de valores mobiliários de primeira categoria provenientes do mercado de balcão."
 
@@ -2320,9 +2320,6 @@ msgstr "Detalhes do Contrato"
 
 msgid "Contract Ends"
 msgstr "Contrato termina"
-
-msgid "Contract ID"
-msgstr "ID de contrato"
 
 msgid "Contract Information"
 msgstr "Informação do contrato"
@@ -3155,8 +3152,8 @@ msgstr "Desfrute de uma plataforma de negociação de fácil navegação e uso"
 msgid "Enjoy an award-winning online trading platform with trading conditions that are ideal for new and experienced traders."
 msgstr "Desfrute de uma plataforma de negociação premiada com condições de negociação que são ideais para novos e experientes negociadores."
 
-msgid "Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing."
-msgstr "Desfrute de oportunidades emocionantes para negociar ações e índices com o benefício de gráficos e preços em tempo real."
+msgid "Enjoy exciting opportunities to trade indices with the benefit of real-time charts and pricing."
+msgstr ""
 
 msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
 msgstr "Desfrute da nossa forma mais rápida de negociar com o aplicativo dos tique-taques, esteja onde estiver."
@@ -4018,6 +4015,9 @@ msgstr "Fechar-Alto"
 
 msgid "High-Low"
 msgstr "Fechar-Baixo"
+
+msgid "High/Low Ticks"
+msgstr ""
 
 msgid "Higher"
 msgstr "Superior"
@@ -5517,8 +5517,8 @@ msgstr "Extrato bancário mais recente ou qualquer carta emitida pelo governo qu
 msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of persons accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, persons accessing this site are required to inform themselves about and to observe such restrictions."
 msgstr "A legislação referente a contratos financeiros varia em todo o mundo, sendo da responsabilidade das pessoas que acedem a este site garantir que compreendem e cumprem integralmente as leis e regulamentos a si aplicáveis no seu próprio país. Esta página Web não constitui, nem pode ser usada para, uma oferta ou solicitação a qualquer pessoa em qualquer jurisdição na qual tal oferta ou solicitação não seja autorizada, ou a qualquer pessoa a quem seja ilegal fazer tal oferta ou solicitação. O acesso a este site e à oferta de contratos financeiros através deste site em certas jurisdições pode ser restringido; consequentemente, as pessoas que acedem a este site são obrigadas a informar-se sobre estas restrições e a cumpri-las."
 
-msgid "Learn about the five types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
-msgstr "Aprenda sobre os cinco tipos de negociações que podem ajudá-lo a executar a sua estratégia de negociação em mercados em alta, baixa e até estagnados."
+msgid "Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
+msgstr ""
 
 msgid "Learn from us"
 msgstr "Aprenda conosco"
@@ -6525,11 +6525,8 @@ msgstr "Negociações de derivados (opções) OTC"
 msgid "OTC Indices"
 msgstr "Índices OTC"
 
-msgid "OTC Stocks"
-msgstr "Ações OTC"
-
-msgid "OTC stocks and indices"
-msgstr "Ações e índices OTC"
+msgid "OTC indices"
+msgstr ""
 
 msgid "Occupation"
 msgstr "Profissão"
@@ -6801,6 +6798,9 @@ msgstr "A nossa determinação da importância relativa dos fatores de execuçã
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "Nosso rápido e orgânico crescimento é complementado pela aquisição da base de clientes da BetsForTraders, um dos nossos principais concorrentes."
 
+msgid "Our indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our indices may differ from their counterparts on centralised exchanges."
+msgstr ""
+
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "As nossas políticas de segurança de dados são baseadas nas melhores práticas da indústria no controle de acessos e continuidade do negócio."
 
@@ -6824,9 +6824,6 @@ msgstr "O nosso site pode ser filtrado usando uma variedade de sistemas de filtr
 
 msgid "Our site does not charge any transfer fees."
 msgstr "O nosso site não cobra taxas de transferência."
-
-msgid "Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges."
-msgstr "Os nossos índices e ações são obtidos do mercado de balcão (OTC – Over-The-Counter em inglês) – fontes exteriores às bolsas centralizadas. Note que, devido à sua natureza OTC, os preços dos nossos índices e ações podem diferir daqueles dos seus homólogos nas bolsas centralizadas."
 
 msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr "A nossa taxa swap pode também ser ajustada levar em conta as férias."
@@ -7143,8 +7140,8 @@ msgstr "Por favor, conecte-se."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Certifique-se de que aceita as condições de pagamento do Agente antes de submeter o seu pedido."
 
-msgid "Please note that Asians and Digits are available exclusively with our Volatility Indices."
-msgstr "Note que as negociações do tipo \"Asiáticos\" e \"Dígitos\" são exclusivamente disponíveis com os nosso índices \"Volatility\"."
+msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
 msgstr "Note que um lote equivale a 100 unidades, com base nas nossas %1especificações de contrato%2."
@@ -7518,6 +7515,9 @@ msgstr "Publicado em Inglês, Indonésio, Japonês, Chinês, Polaco, Alemão, Fr
 msgid "Purchase"
 msgstr "Comprar"
 
+msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr ""
+
 msgid "Purchase Price"
 msgstr "Preço de Compra"
 
@@ -7767,13 +7767,13 @@ msgstr "A revenda não está disponivel"
 msgid "Resale price"
 msgstr "Preço de revenda"
 
-msgid "Reset"
-msgstr ""
-
 msgid "Reset Barrier"
 msgstr ""
 
 msgid "Reset Call"
+msgstr ""
+
+msgid "Reset Call/Put"
 msgstr ""
 
 msgid "Reset MT5 password"
@@ -8211,6 +8211,9 @@ msgstr "Inscreva-se no programa de afiliados da %1 hoje:"
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Experiência relevante em Mídia Social, Marketing e / ou Publicidade"
 
+msgid "Signup"
+msgstr ""
+
 msgid "Silver vs US Dollar"
 msgstr "Prata vs. Dólar americano"
 
@@ -8336,6 +8339,9 @@ msgstr "Hora de Início"
 
 msgid "Start Time and Entry Spot"
 msgstr "Hora de início e preço de entrada"
+
+msgid "Start Trading with %1"
+msgstr ""
 
 msgid "Start Trading with MetaTrader 5"
 msgstr "Começar a negociar com a MetaTrader 5"
@@ -10572,6 +10578,9 @@ msgstr "Iremos fornecer todos os documentos em formato eletrônico. Marque a cai
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Usaremos esforços razoáveis dentro do nosso controle para assegurar que todos os dados eletrônicos fornecidos na plataforma de negociação MT5 e todas as transações eletrônicas instruídas por você e aceitas e executadas por nós não sejam sujeitas a latência de rede."
+
+msgid "We're almost there"
+msgstr ""
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "São nos concedidas patentes para \"Sistema de negociação informático e método para especulação nos mercados financeiros\" e \"Sistema de negociação informático para a oferta de especulações personalizadas sobre mercados financeiros\". As patentes mostram a nossa capacidade de inovar e ficar à frente dos nossos concorrentes."

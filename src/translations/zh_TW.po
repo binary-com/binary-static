@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-28 02:07\n"
+"PO-Revision-Date: 2018-07-02 02:14\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -273,9 +273,6 @@ msgstr "無論您是經驗豐富的交易員，還是剛剛起步者，％1都�
 msgid "%1 offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out."
 msgstr "無論您是經驗豐富的交易員，還是剛剛起步者，％1都能提供各種帳戶類型，以滿足各地交易者不同的需求。"
 
-msgid "%1 offers five trade types that will help you execute your market view or strategy:"
-msgstr "%1 提供五種可幫助您執行市場觀點或策略的交易類型："
-
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
 msgstr "%1通過混合模式提供外匯和差價合約，即通過自己的帳戶（交易員）和部分對沖客戶訂單與我們的流動率提供商（無交易員）進行交易。"
 
@@ -284,6 +281,9 @@ msgstr "%1通過混合模式提供外匯和差價合約，即通過自己的帳�
 
 msgid "%1 offers new ways to trade"
 msgstr "%1提供新的交易方式"
+
+msgid "%1 offers the following trade types that will help you execute your market view or strategy:"
+msgstr "%1 提供以下可幫助您執行市場觀點或策略的交易類型："
 
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1 提供簡單、人性化的全球性金融交易平台。"
@@ -1032,6 +1032,9 @@ msgstr "允許客戶使用%1並不直接提供之電子貨幣"
 msgid "Allow equals"
 msgstr "允許等值"
 
+msgid "Already have an account? %1Log in%2 here"
+msgstr "已經有帳戶？ 此處%1登入%2"
+
 msgid "Also known as counter currency"
 msgstr "也稱為相對貨幣"
 
@@ -1698,9 +1701,6 @@ msgstr "比特幣兌美元"
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "區塊鏈技術 - 所有加密貨幣使用各式的區塊鏈技術（一種公開帳本）為每筆交易保存記錄。 "
 
-msgid "Blue-chip stock contracts sourced from the OTC market."
-msgstr "源自場外交易市場的藍籌股股票合約。"
-
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "源自場外交易市場的藍籌股股票合約"
 
@@ -2319,9 +2319,6 @@ msgstr "合約詳細資料"
 msgid "Contract Ends"
 msgstr "合同結束"
 
-msgid "Contract ID"
-msgstr "合約編號"
-
 msgid "Contract Information"
 msgstr "合約確認"
 
@@ -2329,7 +2326,7 @@ msgid "Contract Payouts"
 msgstr "合約賠付額"
 
 msgid "Contract Result"
-msgstr ""
+msgstr "合約結果"
 
 msgid "Contract Risks"
 msgstr "合約風險"
@@ -3153,8 +3150,8 @@ msgstr "享受簡單操作、輕鬆瀏覽的交易平台"
 msgid "Enjoy an award-winning online trading platform with trading conditions that are ideal for new and experienced traders."
 msgstr "享受交易條件對新手和有經驗的交易者非常適合、屢獲殊榮的線上交易平台。"
 
-msgid "Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing."
-msgstr "享受令人興奮的機會和實時圖表和定價的優勢，進行股票和指數交易。"
+msgid "Enjoy exciting opportunities to trade indices with the benefit of real-time charts and pricing."
+msgstr "享受令人興奮的機會和實時圖表和定價的優勢，進行指數交易。"
 
 msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
 msgstr "隨時隨地使用跳動價格交易應用程式，享受我們速度最快的交易。"
@@ -4016,6 +4013,9 @@ msgstr "最高值-收盤值"
 
 msgid "High-Low"
 msgstr "最高值-最低值"
+
+msgid "High/Low Ticks"
+msgstr "高/低跳動點"
 
 msgid "Higher"
 msgstr "高於"
@@ -5514,8 +5514,8 @@ msgstr "包含您的姓名和地址的最新銀行月結單或任何由政府出
 msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of persons accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, persons accessing this site are required to inform themselves about and to observe such restrictions."
 msgstr "世界各地有關金融合約的法律各不相同，本網站訪客有責任確保自己了解並完全遵守所在國家與其相關的法律規定。本網站既不構成、也不能用於任何在司法管轄區未經授權或非法的要約或要約邀請。存取本網站以及本網站提供的金融合約在部分司法管轄區受到限制，本網站訪客須自行獲知並遵守此類限制。"
 
-msgid "Learn about the five types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
-msgstr "了解可幫助您在上漲、下跌甚至橫盤整理市場上執行交易策略的五種交易類型。"
+msgid "Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
+msgstr "了解可幫助您在上漲、下跌甚至橫盤整理市場上執行交易策略的交易類型。"
 
 msgid "Learn from us"
 msgstr "我們將協助您提高交易技能"
@@ -6522,11 +6522,8 @@ msgstr "OTC Derivative (Option) Trading"
 msgid "OTC Indices"
 msgstr "場外交易指數"
 
-msgid "OTC Stocks"
-msgstr "場外交易股票"
-
-msgid "OTC stocks and indices"
-msgstr "場外交易股票和指數"
+msgid "OTC indices"
+msgstr "場外交易指數"
 
 msgid "Occupation"
 msgstr "職業"
@@ -6798,6 +6795,9 @@ msgstr "在某些情況下，我們所決心的執行因素相對重要性可能
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "我們獲取了主要競爭對手之一 BetsForTraders 的客戶群，補充了公司快速的有機增長。"
 
+msgid "Our indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our indices may differ from their counterparts on centralised exchanges."
+msgstr "我們的指數源自場外交易（OTC）市場 - 即源自中央交易所以外。請注意，由於其場外交易性質，我們指數的價格可能與中央交易所同行的價格有所不同。"
+
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "我們的資訊安全政策基於存取控制和業務持續性的業內最佳實踐。"
 
@@ -6821,9 +6821,6 @@ msgstr "我們的網站可以使用市場上多個過濾系統進行過濾，以
 
 msgid "Our site does not charge any transfer fees."
 msgstr "我們網站不收取任何轉帳費用。"
-
-msgid "Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges."
-msgstr "我們的股票和指數源自場外交易（OTC）市場 - 即源自中央交易所以外。請注意，由於其場外交易性質，我們股票和指數的價格可能與中央交易所同行的價格有所不同。"
 
 msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr "我們也可能會因為假期調整掉期利率。"
@@ -7140,8 +7137,8 @@ msgstr "請登入。"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "在送出要求前，請確保您首先同意代理的支付條款。"
 
-msgid "Please note that Asians and Digits are available exclusively with our Volatility Indices."
-msgstr "請注意，亞洲貨幣和數字交易只適用於我們的波動指數。"
+msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgstr "請注意，亞洲貨幣、數字交易、買/賣權重設和高/低跳動點只適用於我們的波動指數。"
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
 msgstr "請注意，根據我們的%1合約規格%2，一手交易量相當於100個單位。"
@@ -7515,6 +7512,9 @@ msgstr "以英文、印尼文、日文、中文、波蘭文、德文、法文、
 msgid "Purchase"
 msgstr "買入"
 
+msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr "購買高/低跳動點合約以預測接下來五個跳動點中的最高或最低跳動價位。"
+
 msgid "Purchase Price"
 msgstr "買入價格"
 
@@ -7764,14 +7764,14 @@ msgstr "不提供轉售"
 msgid "Resale price"
 msgstr "轉售價格"
 
-msgid "Reset"
-msgstr "重設"
-
 msgid "Reset Barrier"
 msgstr "重設障礙"
 
 msgid "Reset Call"
 msgstr "重設買權"
+
+msgid "Reset Call/Put"
+msgstr "重設買/賣權"
 
 msgid "Reset MT5 password"
 msgstr "重設MT5密碼"
@@ -8208,6 +8208,9 @@ msgstr "立刻注冊%1 聯盟計劃:"
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "卓越的社交媒體、市場營銷和/或廣告經驗"
 
+msgid "Signup"
+msgstr "註冊"
+
 msgid "Silver vs US Dollar"
 msgstr "白銀兌美元"
 
@@ -8333,6 +8336,9 @@ msgstr "開始時間"
 
 msgid "Start Time and Entry Spot"
 msgstr "開始時間和進入點"
+
+msgid "Start Trading with %1"
+msgstr "開始用 %1 交易"
 
 msgid "Start Trading with MetaTrader 5"
 msgstr "開始使用MetaTrader 5交易"
@@ -10568,6 +10574,9 @@ msgstr "We will provide all documents in electronic format. Please tick the box 
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "我們將在可控制範圍內合理地努力，確保您通過 MT5 交易平台和所有電子交易指示所收到並由我們執行提供的所有電子資料均不會受到網絡延遲。"
+
+msgid "We're almost there"
+msgstr "快全部就緒了"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "我們獲得「用於金融市場投機的電腦交易系統及方法」和「用於自訂金融市場投機的電腦交易系統」的專利授權。這些專利表明我們的創新和保持領先群雄的能力。"

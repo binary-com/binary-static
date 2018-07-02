@@ -693,3 +693,18 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
 }
+
+#signup_form {
+    input {
+        width: 100%;
+        height: 3em;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: $FONT_SIZE_S;
+    }
+    button {
+        width: 100%;
+        height: 3rem;
+        margin: 5px 0;
+    }
+}

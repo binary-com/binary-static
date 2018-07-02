@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-28 02:07\n"
+"PO-Revision-Date: 2018-07-02 02:14\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -273,9 +273,6 @@ msgstr "%1 cung cấp một loạt các loại tài khoản để phục vụ ch
 msgid "%1 offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out."
 msgstr "%1 cung cấp một loạt các loại tài khoản để phục vụ cho các nhu cầu đa dạng của thương nhân ở khắp mọi nơi, cho dù bạn là một thương nhân nhiều kinh nghiệm hoặc chỉ là mới bắt đầu."
 
-msgid "%1 offers five trade types that will help you execute your market view or strategy:"
-msgstr "%1 cung cấp cho năm loại giao dịch sẽ giúp bạn thực hiện tầm nhìn thị trường hoặc chiến lược:"
-
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
 msgstr "%1 cung cấp ngoại hối và các hợp đồng cho sự khác biệt thông qua các mô hình lai, ví dụ, cả các giao dịch trên tài khoản riêng (Dealing Desk) và một phần đơn đặt hàng tránh rủi ro của khách hàng với nhà cung cấp thanh khoản của chúng tôi (No-Dealing Desk)."
 
@@ -284,6 +281,9 @@ msgstr "%1 cung cấp ngoại hối và các hợp đồng thông qua các mô h
 
 msgid "%1 offers new ways to trade"
 msgstr "%1 cung cấp nhiều cách thức giao dịch mới"
+
+msgid "%1 offers the following trade types that will help you execute your market view or strategy:"
+msgstr ""
 
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "%1 cung cấp sàn giao dịch thị trường tài chính thế giới đơn giản, thân thiện và dễ sử dụng."
@@ -1032,6 +1032,9 @@ msgstr "Cho phép Khách hàng sử dụng ví điện tử, mà không 
 msgid "Allow equals"
 msgstr "Cho phép bằng nhau"
 
+msgid "Already have an account? %1Log in%2 here"
+msgstr "Đã có tài khoản? %1Đăng nhập%2 ở đây"
+
 msgid "Also known as counter currency"
 msgstr "Còn được gọi là tiền tệ thứ hai"
 
@@ -1698,9 +1701,6 @@ msgstr "Bitcoin vs đô-la Mỹ"
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Công nghệ Blockchain - tất cả cryptocurrencies sử dụng một biến thể của công nghệ blockchain (một loại sổ sách công khai) ghi hồ sơ của mỗi giao dịch. "
 
-msgid "Blue-chip stock contracts sourced from the OTC market."
-msgstr "Hợp đồng cổ phiếu Blue-chip có nguồn gốc từ các thị trường chứng khoán phi tập trung."
-
 msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr "Hợp đồng cổ phiếu Blue-chip có nguồn gốc từ các thị trường mua bán không cần toa"
 
@@ -2319,9 +2319,6 @@ msgstr "Chi tiết Hợp đồng"
 msgid "Contract Ends"
 msgstr "Kết thúc hợp đồng"
 
-msgid "Contract ID"
-msgstr "Mã Hợp đồng"
-
 msgid "Contract Information"
 msgstr "Thông tin của Hợp đồng"
 
@@ -2329,7 +2326,7 @@ msgid "Contract Payouts"
 msgstr "Thanh Toán từ Hợp Đồng"
 
 msgid "Contract Result"
-msgstr ""
+msgstr "Kết quả hợp đồng"
 
 msgid "Contract Risks"
 msgstr "Rủi ro Hợp đồng"
@@ -3153,7 +3150,7 @@ msgstr "Tận hưởng một sàn giao dịch dễ dàng để điều hướng 
 msgid "Enjoy an award-winning online trading platform with trading conditions that are ideal for new and experienced traders."
 msgstr "Thưởng thức một nền tảng giao dịch trực tuyến đã đạt giải thưởng với điều kiện giao dịch lý tưởng cho các thương nhân mới và nhiều kinh nghiệm giao dịch."
 
-msgid "Enjoy exciting opportunities to trade stocks and indices with the benefit of real-time charts and pricing."
+msgid "Enjoy exciting opportunities to trade indices with the benefit of real-time charts and pricing."
 msgstr "Thưởng thức những cơ hội thú vị để giao dịch cổ phiếu và chỉ số với lợi ích của bảng xếp hạng thời gian thực và giá cả."
 
 msgid "Enjoy our fastest type of trading with our Tick Trade app, wherever you are."
@@ -4016,6 +4013,9 @@ msgstr "Cao-đóng"
 
 msgid "High-Low"
 msgstr "Cao thấp"
+
+msgid "High/Low Ticks"
+msgstr ""
 
 msgid "Higher"
 msgstr "Cao Hơn"
@@ -5516,8 +5516,8 @@ msgstr "Đặt báo cáo ngân hàng hoặc bất kỳ thư chính phủ phát h
 msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of persons accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, persons accessing this site are required to inform themselves about and to observe such restrictions."
 msgstr "Luật pháp liên quan đến hợp đồng tài chính thì khác nhau trên khắp thế giới, và trách nhiệm của người truy cập trang web này là cần phải bảo đảm rằng mình sẽ hiểu và tuân thủ đầy đủ các điều luật hoặc quy định có liên quan tới bản thân trong đất nước của mình. Trang web này không được hình thành và sử dụng với mục đích mời mọc hay lôi kéo khách hàng, trong bất cứ quyền hạn nào thì lời mời mọc lôi kéo đều không được cho phép hoặc đối với bất cứ ai làm công việc lôi kéo hay mời mọc đều không đúng pháp luật.  Việc truy cập vào trang web này và rao bán một hợp đồng tài chính thông qua trang web này trong quyền hạn nhất định có thể bị hạn chế, và theo đó, người truy cập trang web này được thông báo về vấn đề này và xem xét kĩ những điều cấm này."
 
-msgid "Learn about the five types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
-msgstr "Tìm hiểu về năm loại ngành nghề có thể giúp bạn thực hiện chiến lược kinh doanh của bạn trên các các thị trường tăng, giảm và thậm chí nghiêng."
+msgid "Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
+msgstr ""
 
 msgid "Learn from us"
 msgstr "Tìm hiểu về chúng tôi"
@@ -6524,11 +6524,8 @@ msgstr "Giao Dịch (Tùy Chọn) Phái Sinh Chứng Khoán Phi Tập Trung"
 msgid "OTC Indices"
 msgstr "Chỉ số chứng khoán phi tập trung"
 
-msgid "OTC Stocks"
-msgstr "Chứng khoán phi tập trung"
-
-msgid "OTC stocks and indices"
-msgstr "Cổ phiếu và chỉ số chứng khoán phi tập trung"
+msgid "OTC indices"
+msgstr "Chỉ số OTC"
 
 msgid "Occupation"
 msgstr "Nghề Nghiệp"
@@ -6800,6 +6797,9 @@ msgstr "Xác định của chúng tôi về tầm quan trọng tương đối c�
 msgid "Our fast organic growth is supplemented by the acquisition of the client base of BetsForTraders, one of our main competitors."
 msgstr "Công ty của chúng tôi tăng trưởng hữu cơ nhanh chóng do mua lại cơ sở dữ liệu khách hàng của BetsForTraders, một trong những đối thủ cạnh tranh chính của chúng tôi."
 
+msgid "Our indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our indices may differ from their counterparts on centralised exchanges."
+msgstr "Cổ phiếu và Chỉ số của chúng tôi có nguồn gốc từ các thị trường trên-kệ (OTC) - các nguồn bên ngoài thị trường tập trung. Xin lưu ý rằng do tính OTC, giá của cổ phiếu và chỉ số của chúng tôi có thể khác nhau từ các đối tác của họ trên thị trường tập trung."
+
 msgid "Our information security policies are based on industry best practices in access control and business continuity."
 msgstr "Chính sách bảo mật thông tin của chúng tôi dựa trên những điêu tốt nhất trong ngành công nghiệp kiểm soát truy cập và tính liên tục của giao dịch."
 
@@ -6823,9 +6823,6 @@ msgstr "Trang web của chúng tôi có thể được lọc bởi việc sử d
 
 msgid "Our site does not charge any transfer fees."
 msgstr "Trang web của chúng tôi không tính bất kì phí chuyển tiền nào."
-
-msgid "Our stocks and indices are sourced from the over-the-counter (OTC) market – sources outside of the centralised exchanges. Please note that due to their OTC nature, the prices of our stocks and indices may differ from their counterparts on centralised exchanges."
-msgstr "Chứng khoán và chỉ số của chúng tôi có nguồn gốc từ các thị trường trên-kệ (chứng khoán phi tập trung) - các nguồn bên ngoài thị trường tập trung. Xin lưu ý rằng do tính chứng khoán phi tập trung, giá của cổ phiếu và chỉ số của chúng tôi có thể khác nhau từ các đối tác của họ trên thị trường tập trung."
 
 msgid "Our swap rate may also be adjusted to take holidays into account."
 msgstr "Tỷ lệ trao đổi của chúng tôi cũng có thể được điều chỉnh để tính cả ngày lễ."
@@ -7142,8 +7139,8 @@ msgstr "Vui lòng đăng nhập."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Vui lòng chắc chắn rằng trước hết bạn đồng ý với Đại lý các điều khoản thanh toán trước khi gửi yêu cầu."
 
-msgid "Please note that Asians and Digits are available exclusively with our Volatility Indices."
-msgstr "Xin lưu ý rằng loại thương mại Châu Á và Chữ Số được cung cấp độc quyền với Chỉ Số Biến Động của chúng tôi."
+msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
 msgstr "Xin lưu ý rằng một lô tương đương với 100 đơn vị, dựa trên %1contract specifications%2 của chúng tôi."
@@ -7517,6 +7514,9 @@ msgstr "Xuất bản dưới các ngôn ngữ: tiếng Anh, Indonesia, Nhật
 msgid "Purchase"
 msgstr "Mua"
 
+msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr ""
+
 msgid "Purchase Price"
 msgstr "Giá Mua"
 
@@ -7766,14 +7766,14 @@ msgstr "Không được bán lại"
 msgid "Resale price"
 msgstr "Giá bán lại"
 
-msgid "Reset"
-msgstr "Thiết lập lại"
-
 msgid "Reset Barrier"
 msgstr "Đặt lại Giới Hạn"
 
 msgid "Reset Call"
 msgstr "Đặt lại Gọi Biên"
+
+msgid "Reset Call/Put"
+msgstr ""
 
 msgid "Reset MT5 password"
 msgstr "Đổi Mật Khẩu MT5"
@@ -8210,6 +8210,9 @@ msgstr "Đăng ký %1 Chương Trình Liên Kết hôm nay:"
 msgid "Significant experience in Social Media, Marketing, and / or Advertising"
 msgstr "Kinh nghiệm nổi bật trong lĩnh vực Truyền Thông Xã hội, Marketing, và/hoặc Quảng Cáo"
 
+msgid "Signup"
+msgstr "Đăng ký"
+
 msgid "Silver vs US Dollar"
 msgstr "Bạc vs đô-la Mỹ"
 
@@ -8335,6 +8338,9 @@ msgstr "Thời gian bắt đầu"
 
 msgid "Start Time and Entry Spot"
 msgstr "Thời gian bắt đầu và điểm khởi đầu"
+
+msgid "Start Trading with %1"
+msgstr "Bắt đầu giao dịch với %1"
 
 msgid "Start Trading with MetaTrader 5"
 msgstr "Bắt đầu giao dịch với MetaTrader 5"
@@ -10570,6 +10576,9 @@ msgstr "Chúng tôi sẽ cung cấp tất cả các tài liệu dưới dạng �
 
 msgid "We will use reasonable endeavours within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "Chúng tôi sẽ sử dụng các nỗ lực hợp lý trong khả năng kiểm soát của chúng tôi để đảm bảo rằng tất cả các dữ liệu điện tử được cung cấp trên Sàn Giao Dịch MT5 và tất cả các giao dịch điện tử hướng dẫn và chấp nhận bạn cho chúng tôi, và thực hiện bởi chúng tôi không phụ thuộc vào độ trễ mạng."
+
+msgid "We're almost there"
+msgstr "Gần hoàn tất rồi"
 
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "Chúng tôi được cấp bằng sáng chế cho 'Hệ thống kinh doanh máy tính và phương pháp suy đoán trên thị trường tài chính' và 'Hệ thống giao dịch máy tính để cung cấp hoạt động suy đoán thị trường tài chính tùy chỉnh'. Các bằng sáng chế cho thấy khả năng của chúng tôi trong việc đổi mới và luôn dẫn đầu trong ngành."

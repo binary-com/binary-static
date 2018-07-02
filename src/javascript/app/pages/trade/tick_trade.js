@@ -203,6 +203,8 @@ const TickDisplay = (() => {
         }
     };
 
+    const isRelativeBarrier = (barrier_str) => (/\+|-/.test(barrier_str));
+
     const addBarrier = () => {
         if (!should_set_barrier) {
             return;
@@ -216,10 +218,11 @@ const TickDisplay = (() => {
             let barrier_quote = first_quote;
 
             if (barrier) {
-                let final_barrier = barrier_quote + parseFloat(barrier);
-                // sometimes due to rounding issues, result is 1.009999 while it should
-                // be 1.01
-                final_barrier = Number(`${Math.round(`${final_barrier}e${display_decimals}`)}e-${display_decimals}`);
+                let final_barrier = Number(barrier).toFixed(parseInt(display_decimals));
+                if (isRelativeBarrier(barrier)) {
+                    // sometimes due to rounding issues, result is 1.009999 while it should be 1.01
+                    final_barrier = Number(`${Math.round(`${barrier_quote + parseFloat(barrier)}e${display_decimals}`)}e-${display_decimals}`);
+                }
                 barrier_quote = final_barrier;
             } else if (contract && contract.barrier) {
                 barrier_quote = parseFloat(contract.barrier);
@@ -470,8 +473,7 @@ const TickDisplay = (() => {
     };
 
     const plotResetSpot = (r_barrier) => {
-        if (reset_spot_plotted || !chart) return;
-
+        if (reset_spot_plotted || !chart || !Reset.isReset(contract.contract_type)) return;
 
         const is_resetcall  = contract.contract_type === 'RESETCALL';
         const entry_barrier = contract.entry_spot;
