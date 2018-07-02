@@ -227,10 +227,10 @@ const ViewPopup = (() => {
             percentage;
 
         if (final_price) {
-            profit_loss = final_price - contract.buy_price;
-            percentage  = addComma((profit_loss * 100) / contract.buy_price, 2);
             containerSetText('trade_details_profit_loss',
-                `${formatMoney(contract.currency, profit_loss)}<span class="percent">(${(percentage > 0 ? '+' : '')}${percentage}%)</span>`, { class: (profit_loss >= 0 ? 'profit' : 'loss') });
+                `${formatMoney(contract.currency, contract.profit)}<span class="percent">(${(contract.profit_percentage > 0 ? '+' : '')}${addComma(contract.profit_percentage, 2)}%)</span>`,
+                { class: (contract.profit >= 0 ? 'profit' : 'loss') }
+            );
         } else {
             containerSetText('trade_details_profit_loss', '-', { class: 'loss' });
         }
