@@ -54,7 +54,7 @@ const AssetIndex = (() => {
                 const asset_cells = asset_item[idx.cells];
                 const values      = {};
                 for (let j = 0; j < asset_cells.length; j++) {
-                    const col = asset_cells[j][idx.cell_props.cell_name];
+                    const col = asset_cells[j][idx.cell_props.cell_display_name];
 
                     values[col] = [asset_cells[j][idx.cell_props.cell_from], asset_cells[j][idx.cell_props.cell_to]].join(' - ');
 

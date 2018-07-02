@@ -1,8 +1,8 @@
 const moment           = require('moment');
 const TradingTimes     = require('./trading_times');
+const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
 const Table            = require('../../../common/attach_dom/table');
-const jpClient         = require('../../../common/country_base').jpClient;
 const DatePicker       = require('../../../components/date_picker');
 const dateValueChanged = require('../../../../_common/common_functions').dateValueChanged;
 const localize         = require('../../../../_common/localize').localize;
@@ -57,7 +57,7 @@ const TradingTimesUI = (() => {
 
         $('#errorMsg').setVisibility(0);
 
-        const is_japan_trading = jpClient();
+        const is_japan_trading = isJPClient();
 
         const markets = trading_times.markets;
 
@@ -178,7 +178,7 @@ const TradingTimesUI = (() => {
 
     const sendRequest = (date, should_request_active_symbols) => {
         const req = { active_symbols: 'brief' };
-        if (jpClient()) {
+        if (isJPClient()) {
             req.landing_company = 'japan';
         }
         if (should_request_active_symbols) {

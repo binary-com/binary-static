@@ -1,6 +1,6 @@
+const Login        = require('../../_common/base/login');
 const localize     = require('../../_common/localize').localize;
 const TabSelector  = require('../../_common/tab_selector');
-const Login        = require('../../app/base/login');
 const BinarySocket = require('../../app/base/socket');
 const FormManager  = require('../../app/common/form_manager');
 

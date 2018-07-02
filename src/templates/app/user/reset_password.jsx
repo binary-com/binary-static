@@ -5,10 +5,10 @@ const ResetPassword = () => (
     <React.Fragment>
         <div className='static_full'>
             <h1>{it.L('Password Reset')}</h1>
-            <p className='notice-msg invisible' id='msg_reset_password'></p>
+            <p className='notice-msg invisible' id='msg_reset_password' />
 
             <div className='invisible' id='form_error'>
-                <p id='form_error_msg'></p>
+                <p id='form_error_msg' />
                 <a href={it.url_for('user/lost_passwordws')}>{it.L('Click here to retry')}</a>
             </div>
 

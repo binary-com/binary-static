@@ -11,7 +11,6 @@ const localize           = require('../../../_common/localize').localize;
 const State              = require('../../../_common/storage').State;
 const toTitleCase        = require('../../../_common/string_util').toTitleCase;
 const urlFor             = require('../../../_common/url').urlFor;
-const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Accounts = (() => {
     let landing_company;
@@ -175,11 +174,9 @@ const Accounts = (() => {
 
     const newAccountResponse = (response) => {
         if (response.error) {
-            const account_opening_reason = State.getResponse('get_settings.account_opening_reason');
-            if (!account_opening_reason && getPropertyValue(response, ['error', 'details', 'account_opening_reason']) &&
-                /InsufficientAccountDetails|InputValidationFailed/.test(response.error.code)) {
+            if (/InsufficientAccountDetails|InputValidationFailed/.test(response.error.code)) {
                 setIsForNewAccount(true);
-                // ask client to set account opening reason
+                // ask client to set any missing information
                 BinaryPjax.load(urlFor('user/settings/detailsws'));
             } else {
                 showError(response.error.message);
@@ -203,7 +200,7 @@ const Accounts = (() => {
 
     const populateReq = () => {
         const get_settings = State.getResponse('get_settings');
-        const dob          = moment(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
+        const dob          = moment.utc(+get_settings.date_of_birth * 1000).format('YYYY-MM-DD');
         const req          = [
             { request_field: 'new_account_real',       value: 1 },
             { request_field: 'date_of_birth',          value: dob },
@@ -217,6 +214,7 @@ const Accounts = (() => {
             { request_field: 'address_postcode',       value: get_settings.address_postcode },
             { request_field: 'phone',                  value: get_settings.phone },
             { request_field: 'account_opening_reason', value: get_settings.account_opening_reason },
+            { request_field: 'place_of_birth',         value: get_settings.place_of_birth },
             { request_field: 'residence',              value: Client.get('residence') },
         ];
         if (get_settings.tax_identification_number) {

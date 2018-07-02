@@ -18,9 +18,7 @@ const createLanguageDropDown = (website_status) => {
     const languages        = website_status.supported_languages.sort((a, b) => ((a === 'EN' || a < b) ? -1 : 1));
     const $select_language = $languages.find(select_language_id);
     languages.forEach((language) => {
-        if (!/es/i.test(language)) {
-            $select_language.append($('<li/>', { class: language, text: mapCodeToLanguage(language) }));
-        }
+        $select_language.append($('<li/>', { class: language, text: mapCodeToLanguage(language) }));
     });
 
     $select_language.find(`.${current_language}:eq(1)`).setVisibility(0);

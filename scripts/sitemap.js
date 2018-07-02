@@ -61,7 +61,6 @@ const urls = [
 
     ['get-started-jp',                     'monthly', 0.80, 'NOT-ja'],
 
-    ['metatrader/contract-specifications', 'monthly', 0.80],
     ['metatrader/download',                'monthly', 0.80],
     ['metatrader/how-to-trade-mt5',        'monthly', 0.80],
     ['metatrader/types-of-accounts',       'monthly', 0.80],
@@ -78,10 +77,8 @@ const urls = [
     ['resources/market_timesws',           'monthly', 0.80],
 
     // ==================== Section: "landing_pages" ====================
-    ['graduates',                          'monthly', 0.80, 'NOT-en'],
-    ['hackathon',                          'monthly', 0.80, 'NOT-en'],
-    ['バイナリーオプション',                  'monthly', 0.80, 'NOT-ja'],
-    ['bo_1',                               'monthly', 0.80, 'NOT-ja'],
+    // ['graduates',                          'monthly', 0.80, 'NOT-en'],
+    // ['hackathon',                          'monthly', 0.80, 'NOT-en'],
 ];
 
 const url_prefix = 'https://www.binary.com/';

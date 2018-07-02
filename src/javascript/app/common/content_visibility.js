@@ -4,6 +4,32 @@ const State            = require('../../_common/storage').State;
 const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
 const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
 
+/*
+    data-show attribute controls element visibility based on
+        - current landing company
+        - metatrader availability
+        - logged in status
+
+    attribute value is a list of comma separated
+        - landing company shortcodes
+        - 'mtcompany' code that stands for metatrader availability
+        - 'default' code that describes logged out users
+
+    Examples:
+        Show only for logged in clients with costarica landing company:
+            data-show='costarica'
+        Hide for costarica clients:
+            data-show='-costarica'
+        Hide for malta and maltainvest clients:
+            data-show='-malta, -maltainvest'
+
+    Prohibited values:
+        Cannot mix includes and excludes:
+            data-show='costarica, -malta' -> throws error
+        Shortcodes are case sensitive:
+            data-show='Costarica'         -> throws error
+*/
+
 const ContentVisibility = (() => {
     const init = () => {
         if (Client.isLoggedIn()) {

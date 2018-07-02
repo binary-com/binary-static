@@ -1,16 +1,18 @@
 const BinaryPjax          = require('./binary_pjax');
 const pages_config        = require('./binary_pages');
 const Client              = require('./client');
-const GTM                 = require('./gtm');
 const Header              = require('./header');
-const Login               = require('./login');
+const NetworkMonitor      = require('./network_monitor');
 const Page                = require('./page');
 const BinarySocket        = require('./socket');
-const BinarySocketGeneral = require('./socket_general');
 const ContentVisibility   = require('../common/content_visibility');
+const GTM                 = require('../../_common/base/gtm');
+const Login               = require('../../_common/base/login');
 const getElementById      = require('../../_common/common_functions').getElementById;
 const localize            = require('../../_common/localize').localize;
+const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
+const ThirdPartyLinks     = require('../../_common/third_party_links');
 const urlFor              = require('../../_common/url').urlFor;
 const createElement       = require('../../_common/utility').createElement;
 
@@ -33,12 +35,25 @@ const BinaryLoader = (() => {
         Page.showNotificationOutdatedBrowser();
 
         Client.init();
-        BinarySocket.init(BinarySocketGeneral.initOptions());
+        NetworkMonitor.init();
 
         container = getElementById('content-holder');
         container.addEventListener('binarypjax:before', beforeContentChange);
         container.addEventListener('binarypjax:after',  afterContentChange);
-        BinaryPjax.init(container, '#content');
+
+        if (Login.isLoginPages()) {
+            BinaryPjax.init(container, '#content');
+        } else if (!Client.isLoggedIn()) {
+            Client.setJPFlag();
+            BinaryPjax.init(container, '#content');
+        } else { // client is logged in
+            // we need to set top-nav-menu class so binary-style can add event listener
+            // if we wait for socket.init before doing this binary-style will not initiate the drop-down menu
+            getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
+            // wait for socket to be initialized and authorize response before loading the page. handled in the onOpen function
+        }
+
+        ThirdPartyLinks.init();
     };
 
     const beforeContentChange = () => {
@@ -49,6 +64,7 @@ const BinaryLoader = (() => {
             }
             active_script = null;
         }
+        ScrollToAnchor.cleanup();
     };
 
     const afterContentChange = (e) => {
@@ -63,10 +79,11 @@ const BinaryLoader = (() => {
         }
 
         ContentVisibility.init();
+        ScrollToAnchor.init();
     };
 
     const error_messages = {
-        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_2] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor()}">`]),
+        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_2] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('signup')}">`]),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };

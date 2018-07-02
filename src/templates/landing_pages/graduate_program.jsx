@@ -26,13 +26,13 @@ const GraduateProgram = () => {
             <div className='navbar-fixed-top' role='navigation' id='navigation'>
                 <div className='container'>
                     <div className='navbar-header'>
-                        <span id='toggle-menu' href='button' className='navbar-toggle'></span>
-                        <a className='navbar-brand logo' href={it.url_for('home')}></a>
+                        <span id='toggle-menu' href='button' className='navbar-toggle' />
+                        <a className='navbar-brand logo' href={it.url_for('home')} />
                     </div>
                     <div className='navbar-collapse'>
                         <ul className='nav navbar-nav'>
                             <li className='invisible'>
-                                <a href='#page-top'></a>
+                                <a href='#page-top' />
                             </li>
                             <li>
                                 <a className='page-scroll' href='#who-we-are'>{('Who we are')}</a>
@@ -56,7 +56,7 @@ const GraduateProgram = () => {
                     <h1 className='intro-text'>{(`${it.website_name} Graduate Programme`)}</h1>
                     <p className='intro-subtext'>{('Build a successful career at the intersection of finance and technology')}</p>
                 </div>
-                <div className='intro-bg'></div>
+                <div className='intro-bg' />
                 <div id='register' className='primary-bg-color-dark section-title-inverse'>
                     <a href='https://goo.gl/forms/GWIuCPurg8D1ZlbR2' target='_blank' rel='noopener noreferrer' className='button'><span>Apply now</span></a>
                 </div>
@@ -82,7 +82,7 @@ const GraduateProgram = () => {
                             <p>{('When faced with a problem that you don\'t immediately have the answer to, your determination and curiosity will drive you to a solution. You are a fast learner, and are open to adapting a wide range of technologies. You work well with others, and can collaborate in a fast-paced environment.')}</p>
                         </div>
                     </div>
-                    <div className='separator gr-padding-30 gr-12-m'></div>
+                    <div className='separator gr-padding-30 gr-12-m' />
                     <div className='gr-6 gr-12-m'>
                         <h4 className='center-text'><span className='text-bold'>{('Education and experience requirement')}</span></h4>
                         <div className='inline-flex'>
@@ -110,7 +110,7 @@ const GraduateProgram = () => {
                         <div className='gr-12'>
                             {steps.map((step, idx) => (
                                 <div key={idx} className='boxed-steps'>
-                                    <span className={`${step.icon}_icon icon`}></span>
+                                    <span className={`${step.icon}_icon icon`} />
                                     <h3>{step.title}</h3>
                                     <p>{step.description}</p>
                                 </div>
@@ -129,7 +129,7 @@ const GraduateProgram = () => {
                         <li className='tab'><a href='#frontend'>{('Front-end')}</a></li>
                         <li className='tab'><a href='#backend'>{('Back-end')}</a></li>
                         <li className='tab'><a href='#quants'>{('Quants')}</a></li>
-                        <span className='active-tab-indicator'></span>
+                        <span className='active-tab-indicator' />
                     </ul>
                     <div className='tab-content-wrapper'>
                         <div id='frontend' className='tab-content'>

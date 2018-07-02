@@ -7,7 +7,7 @@ const AuthorisedApps = () => (
             <div className='page-title' id='applications-title'>
                 <h1>{it.L('Applications')}</h1>
                 <p id='description'>{it.L('Keep track of your authorised applications.')}</p>
-                <p className='error-msg' id='applications_error'></p>
+                <p className='error-msg' id='applications_error' />
             </div>
             <div id='applications_loading'><Loading /></div>
         </div>

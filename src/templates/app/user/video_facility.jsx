@@ -26,7 +26,7 @@ const VideoFacility = () => {
 
                     <div className='gr-padding-20 fill-bg-color center-text invisible'>
                         <span className='gr-gutter-right'>{it.L('Generated verification code:')}</span>
-                        <strong id='generated_token'></strong>
+                        <strong id='generated_token' />
                     </div>
 
                     <div className='invisible msg_authenticate'>
@@ -39,7 +39,7 @@ const VideoFacility = () => {
                         </ul>
                     </div>
 
-                    <p className='center-text notice-msg invisible' id='error_message'></p>
+                    <p className='center-text notice-msg invisible' id='error_message' />
                 </div>
             </div>
         </React.Fragment>

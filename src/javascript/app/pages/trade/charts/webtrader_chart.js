@@ -1,5 +1,6 @@
+const getAllSymbols    = require('../symbols').getAllSymbols;
 const MBDefaults       = require('../../mb_trade/mb_defaults');
-const jpClient         = require('../../../common/country_base').jpClient;
+const isJPClient       = require('../../../base/client').isJPClient;
 const getElementById   = require('../../../../_common/common_functions').getElementById;
 const getLanguage      = require('../../../../_common/language').get;
 const localize         = require('../../../../_common/localize').localize;
@@ -49,7 +50,7 @@ const WebtraderChart = (() => {
         if (!is_initialized) {
             require.ensure(['highstock-release'], () => {
                 require.ensure([], (require) => {
-                    WebtraderCharts = require('webtrader-charts');
+                    WebtraderCharts = require('@binary-com/webtrader-charts');
                     WebtraderCharts.init({
                         server: Config.getSocketURL(),
                         appId : Config.getAppId(),
@@ -68,7 +69,7 @@ const WebtraderChart = (() => {
         const is_mb_trading    = State.get('is_mb_trading');
         const $underlying      = $('#underlying');
         const $underlying_code = is_mb_trading ? $underlying.attr('value') : $underlying.val();
-        const $underlying_name = is_mb_trading ? $underlying.find('.current .name').text() : $underlying.find('option:selected').text();
+        const $underlying_name = is_mb_trading ? $underlying.find('.current .name').text() : getAllSymbols()[$underlying_code];
 
         const chart_config = {
             instrumentCode    : $underlying_code,
@@ -77,7 +78,7 @@ const WebtraderChart = (() => {
             timePeriod        : getChartSettings().time_frame,
             type              : getChartSettings().chart_type,
             lang              : getLanguage().toLowerCase(),
-            timezoneOffset    : (jpClient() ? -9 : 0) * 60,
+            timezoneOffset    : (isJPClient() ? -9 : 0) * 60,
             showShare         : !is_mb_trading,
         };
 

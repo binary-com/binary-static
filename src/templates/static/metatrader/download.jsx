@@ -60,7 +60,7 @@ const Download = () => (
             <h3>{it.L('For Mobile') }</h3>
             <p>{it.L('Access the markets anytime, anywhere using native apps for your iOS or Android devices.') }</p>
             <div className='gr-row'>
-                <div className='gr-2 gr-hide-m'></div>
+                <div className='gr-2 gr-hide-m' />
                 <DownloadBlock
                     image='android'
                     os='android'

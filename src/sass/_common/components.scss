@@ -35,6 +35,15 @@
     color: $COLOR_RED;
 }
 
+.chart-payout-range {
+    margin-left: 10px;
+
+    &:before {
+        content: url('../images/pages/trade/chart_payout_range.svg');
+        display: inline-block;
+    }
+}
+
 .lightbox {
     display: flex;
     position: fixed;

@@ -41,16 +41,20 @@ const Accounts = () => (
             <SeparatorLine className='gr-padding-20' show_mobile invisible />
 
             <h1>{it.L('Your Existing Accounts')}</h1>
-            <Table scroll id='existing_accounts' data={{
-                thead: [
-                    [
-                        { text: it.L('Account') },
-                        { text: it.L('Type') },
-                        { text: it.L('Available Markets') },
-                        { text: it.L('Currency') },
+            <Table
+                scroll
+                id='existing_accounts'
+                data={{
+                    thead: [
+                        [
+                            { text: it.L('Account') },
+                            { text: it.L('Type') },
+                            { text: it.L('Available Markets') },
+                            { text: it.L('Currency') },
+                        ],
                     ],
-                ],
-            }} />
+                }}
+            />
             <div id='note_support' className='invisible fill-bg-color gr-padding-10 gr-gutter'>
                 <div className='gr-gutter hint'>
                     {it.L('Note: For any enquiries regarding disabled or excluded accounts, please contact <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}

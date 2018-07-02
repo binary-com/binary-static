@@ -10,7 +10,7 @@ const Column = ({
     <div className={`gr-3 gr-6-m gr-parent${ja_hide ? ' ja-hide' : ''}`}>
         <div className='gr-8 gr-padding-10'>
             <a href={it.url_for(`resources/${url}`)}>
-            <img className='responsive' src={it.url_for(`images/pages/resources/${image}-icon.svg`)} />
+                <img className='responsive' src={it.url_for(`images/pages/resources/${image}-icon.svg`)} />
             </a>
         </div>
         <div className='gr-12'>
@@ -38,6 +38,13 @@ const Resources = () => (
                 image='trading-times'
                 text={it.L('View the operating hours of the markets you can trade.')}
                 url='market_timesws'
+            />
+
+            <Column
+                header={it.L('Economic Calendar')}
+                image='economic-calendar'
+                text={it.L('Keep up with breaking news and events on global markets.')}
+                url='economic_calendar'
             />
         </div>
     </React.Fragment>

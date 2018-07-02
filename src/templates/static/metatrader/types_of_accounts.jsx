@@ -1,8 +1,9 @@
 import React from 'react';
 import { Table } from '../../_common/components/elements.jsx';
 
-const Box = ({ image, text, title }) => (
-    <div className='gr-padding-10'>
+// toEnableMAM: remove className attr
+const Box = ({ image, text, title, className }) => (
+    <div className={`gr-padding-10${className ? ` ${className}` : ''}`}>
         <div className='box'>
             <div className='gr-row gr-row-align-middle'>
                 <div className='gr-2 gr-3-p gr-12-m center-text gr-centered'>
@@ -19,9 +20,9 @@ const Box = ({ image, text, title }) => (
 
 const FootNote = ({ number, texts, title }) => (
     <div className='gr-padding-10'>
-        <a name={`note-${number}`}></a>
+        <a name={`note-${number}`} />
         <h3 className='secondary-color'>{`${number}. ${title}`}</h3>
-        <div className='separator-line border-bottom'></div>
+        <div className='separator-line border-bottom' />
         { texts.map((text, idx) => (
             <p key={idx}>{text}</p>
         ))}
@@ -55,8 +56,27 @@ const TypesOfAccounts = () => (
             title={it.L('Volatility Indices')}
             text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
+        {/* toEnableMAM: remove className */}
+        <Box
+            className='invisible'
+            image='advanced'
+            title={it.L('MAM Advanced*')}
+            text={it.L('The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same.')}
+        />
+        {/* toEnableMAM: remove className */}
+        <Box
+            className='invisible'
+            image='volatility_indices'
+            title={it.L('MAM Volatility Indices*')}
+            text={it.L('The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
+        />
 
-        <div className='gr-padding-30'></div>
+        {/* toEnableMAM: remove 'invisible' from className */}
+        <div className='gr-padding-10 gr-child invisible'>
+            <a href={it.url_for('multiple-accounts-manager')} target='_blank'>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
+        </div>
+
+        <div className='gr-padding-30' />
 
         <h2 className='center-text'>{it.L('Account comparison')}</h2>
         <div className='gr-padding-10'>
@@ -67,25 +87,25 @@ const TypesOfAccounts = () => (
                         [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Advanced') }, { text: it.L('Volatility Indices') }],
                     ],
                     tbody: [
-                        [{ text: <Row number={1}  text={it.L('Account currency')} />},       { text: it.L('USD') },                    { text: it.L('USD') },                    { text: it.L('USD/EUR') }],
-                        [{ text: <Row number={2}  text={it.L('Maximum leverage')} />},       { text: it.L('Up to 1:500') },            { text: it.L('Up to 1:100') },            { text: it.L('Up to 1:500') }],
-                        [{ text: <Row number={3}  text={it.L('Order execution')} />},        { text: it.L('Market') },                 { text: it.L('Market') },                 { text: it.L('Market') }],
-                        [{ text: <Row number={4}  text={it.L('Spread')} />},                 { text: it.L('Variable from 1.2 pips') }, { text: it.L('Variable from 0.9 pips') }, { text: it.L('Fixed') }],
-                        [{ text: <Row number={5}  text={it.L('Commission')} />},             { text: it.L('No') },                     { text: it.L('No') },                     { text: it.L('No') }],
-                        [{ text: <Row number={6}  text={it.L('Minimum deposit')} />},        { text: it.L('No') },                     { text: it.L('No') },                     { text: it.L('No') }],
-                        [{ text: <Row number={7}  text={it.L('Margin call')} />},            { text: it.L('150%') },                   { text: it.L('150%') },                   { text: it.L('100%') }],
-                        [{ text: <Row number={8}  text={it.L('Stop out level')} />},         { text: it.L('75%') },                    { text: it.L('75%') },                    { text: it.L('50%') }],
-                        [{ text: <Row number={9}  text={it.L('Number of assets')} />},       { text: it.L('60+') },                    { text: it.L('80+') },                    { text: it.L('8') }],
-                        [{ text: <Row number={10} text={it.L('Maximum ticket size')} />},    { text: it.L('10 lots') },                { text: it.L('50 lots') },                { text: it.L('30 lots') }],
-                        [{ text: <Row number={11} text={it.L('Minimum ticket size')} />},    { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') }],
-                        [{ text: <Row number={12} text={it.L('Step size')} />},              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') },              { text: it.L('0.01 lots') }],
-                        [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} />}, { text: it.L('24/7') },                   { text: it.L('24/7') },                   { text: it.L('N/A') }],
+                        [{ text: <Row number={1}  text={it.L('Account currency')} />},       { text: it.L('USD') },                            { text: it.L('USD') },                            { text: it.L('USD/EUR') }],
+                        [{ text: <Row number={2}  text={it.L('Maximum leverage')} />},       { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:300') },            { text: it.L('Up to [_1]', '1:500') }],
+                        [{ text: <Row number={3}  text={it.L('Order execution')} />},        { text: it.L('Market') },                         { text: it.L('Market') },                         { text: it.L('Market') }],
+                        [{ text: <Row number={4}  text={it.L('Spread')} />},                 { text: it.L('Variable from [_1] pips', '1.2') }, { text: it.L('Variable from [_1] pips', '0.9') }, { text: it.L('Fixed') }],
+                        [{ text: <Row number={5}  text={it.L('Commission')} />},             { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
+                        [{ text: <Row number={6}  text={it.L('Minimum deposit')} />},        { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
+                        [{ text: <Row number={7}  text={it.L('Margin call')} />},            { text: '150%' },                                 { text: '150%' },                                 { text: '100%' }],
+                        [{ text: <Row number={8}  text={it.L('Stop out level')} />},         { text: '75%' },                                  { text: '75%' },                                  { text: '50%' }],
+                        [{ text: <Row number={9}  text={it.L('Number of assets')} />},       { text: '60+' },                                  { text: '70+' },                                  { text: '8' }],
+                        [{ text: <Row number={10} text={it.L('Maximum ticket size')} />},    { text: it.L('[_1] lots', '10') },                { text: it.L('[_1] lots', '20') },                { text: it.L('[_1] lots', '30') }],
+                        [{ text: <Row number={11} text={it.L('Minimum ticket size')} />},    { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
+                        [{ text: <Row number={12} text={it.L('Step size')} />},              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
+                        [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} />}, { text: '24/7' },                                 { text: '24/7' },                                 { text: it.L('N/A') }],
                     ],
                 }}
             />
         </div>
 
-        <div className='gr-padding-10'></div>
+        <div className='gr-padding-10' />
 
         <FootNote
             number={1}
@@ -138,7 +158,7 @@ const TypesOfAccounts = () => (
         <FootNote
             number={10}
             title={it.L('Maximum ticket size')}
-            texts={[it.L('Refers to the maximum volume or lots per order.')]}
+            texts={[it.L('Refers to the maximum volume or lots per order. Subject to change in respect to market conditions.')]}
         />
         <FootNote
             number={11}

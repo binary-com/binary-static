@@ -13,14 +13,16 @@ const SetCurrency = (() => {
 
     const onLoad = () => {
         is_new_account = localStorage.getItem('is_new_account');
-        localStorage.removeItem('is_new_account');
         const el = is_new_account ? 'show' : 'hide';
         $(`#${el}_new_account`).setVisibility(1);
+
+        const { can_upgrade, type } = Client.getUpgradeInfo();
+        $('#upgrade_to_mf').setVisibility(can_upgrade && type === 'financial');
 
         if (Client.get('currency')) {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
-                $('#has_currency, #set_currency').setVisibility(1);
+                $('.has_currency, #set_currency').setVisibility(1);
             } else {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -33,7 +35,7 @@ const SetCurrency = (() => {
             const $cryptocurrencies = $('<div/>');
             payout_currencies.forEach((c) => {
                 (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
-                    .append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
+                    .append($('<div/>', { class: 'gr-2 gr-3-m currency_wrapper', id: c })
                         .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
                         .append($('<div/>', { class: 'currency-name', html: (isCryptocurrency(c) ? `${getCurrencyName(c)}<br />(${c})` : c) })));
             });
@@ -68,6 +70,7 @@ const SetCurrency = (() => {
                         if (response_c.error) {
                             $error.text(response_c.error.message).setVisibility(1);
                         } else {
+                            localStorage.removeItem('is_new_account');
                             Client.set('currency', response_c.echo_req.set_account_currency);
                             BinarySocket.send({ balance: 1 });
                             BinarySocket.send({ payout_currencies: 1 }, { forced: true });
@@ -88,12 +91,13 @@ const SetCurrency = (() => {
                             } else {
                                 redirect_url = BinaryPjax.getPreviousUrl();
                             }
+
                             if (redirect_url) {
                                 window.location.href = redirect_url; // load without pjax
                             } else {
-                                Header.showOrHideLoginForm(); // update account title
+                                Header.populateAccountsList(); // update account title
                                 $('.select_currency').setVisibility(0);
-                                $('#has_currency').setVisibility(1);
+                                $('.has_currency').setVisibility(1);
                             }
                         }
                     });

@@ -35,6 +35,8 @@ const JapanAccOpening = (() => {
             form_selector       : form_id,
             fnc_response_handler: handleResponse,
         });
+
+        AccountOpening.showHidePulser(0);
     };
 
     const handleResponse = (response) => {
@@ -42,12 +44,14 @@ const JapanAccOpening = (() => {
             AccountOpening.handleNewAccount(response, response.msg_type);
         } else {
             BinaryPjax.load('new_account/knowledge_testws');
-            $('#topbar-msg').children('a').setVisibility(0);
         }
     };
 
+    const onUnload = () => { AccountOpening.showHidePulser(1);; };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

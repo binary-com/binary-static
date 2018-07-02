@@ -27,7 +27,7 @@ const DepositWithdraw = ({ ja_hide, ja_show, id, show_upgrade }) => {
             </div>
             { show_upgrade &&
                 <div className='gr-padding-10 invisible upgrademessage'>
-                    <a className='button'></a>
+                    <a className='button' />
                 </div>
             }
         </div>
@@ -45,29 +45,29 @@ const Cashier = () => (
         </div>
 
         <div className='gr-padding-10 table-body client_virtual invisible gr-parent'>
-            <h3 className='gr-padding-10'>{it.L('Get more virtual money')}</h3>
+            <h3 className='gr-padding-10'>{it.L('Top up virtual account')}</h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>
                     <img className='responsive' id='virtual_money_icon' src={it.url_for('images/pages/cashier/virtual_topup.svg')} />
                 </div>
                 <div className='gr-5 gr-12-m'>
-                    <span className='ja-hide'>{it.L('You can request more virtual money if your virtual balance falls below USD 1,000.00.')}</span>
-                    <span className='invisible ja-show'>{it.L('You can request more virtual money if your virtual balance falls below JPY 100,000.')}</span>
+                    <span className='ja-hide'>{it.L('You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00.')}</span>
+                    <span className='invisible ja-show'>{it.L('{JAPAN ONLY}You can request more virtual money if your virtual balance falls below JPY 100,000.')}</span>
                 </div>
                 <div className='gr-5 gr-12-m invisible'>
                     <a className='toggle button' id='VRT_topup_link'>
                         <span className='ja-hide'>{it.L('Get USD 10,000.00')}</span>
-                        <span className='invisible ja-show'>{it.L('Get JPY 1,000,000')}</span>
+                        <span className='invisible ja-show'>{it.L('{JAPAN ONLY}Get JPY 1,000,000')}</span>
                     </a>
                 </div>
             </div>
         </div>
 
-        <div className='gr-padding-10 client_virtual invisible'></div>
+        <div className='gr-padding-10 client_virtual invisible' />
 
         <div className='gr-padding-10 table-body'>
             <h3 className='gr-padding-10'>
-                <span className='invisible normal_currency client_logged_out'>{it.L('Bank-wire, credit card, e-cash wallet')}</span>
+                <span className='invisible normal_currency client_logged_out'>{it.L('Bank wire, credit card, e-wallet')}</span>
                 <span className='invisible crypto_currency'>{it.L('Cryptocurrency')}</span>
             </h3>
             <div className='gr-row'>
@@ -80,7 +80,7 @@ const Cashier = () => (
                     </a>
                 </div>
                 <div className='gr-5 gr-12-m'>
-                    <span className='invisible normal_currency client_logged_out'>{it.L('Deposit or withdraw to your account via bank-wire, credit card, or e-cash wallet.')}</span>
+                    <span className='invisible normal_currency client_logged_out'>{it.L('Deposit or withdraw to your account via bank wire, credit card, or e-wallet.')}</span>
                     <span className='invisible crypto_currency'>{it.L('Manage the funds in your cryptocurrency account.')}</span>
                     <a className='ja-hide invisible normal_currency client_logged_out' href={it.url_for('cashier/payment_methods')} id='view_payment_methods'>
                         <p>{it.L('View available payment methods')}</p>
@@ -91,7 +91,7 @@ const Cashier = () => (
             </div>
         </div>
 
-        <div className='gr-padding-10'></div>
+        <div className='gr-padding-10' />
 
         <div className='gr-padding-10 table-body ja-hide payment-agent invisible' id='payment-agent-section'>
             <h3 className='gr-padding-10'>{it.L('Payment Agent')}</h3>
@@ -102,7 +102,7 @@ const Cashier = () => (
                     </a>
                 </div>
                 <div className='gr-5 gr-12-m'>
-                    <span>{it.L('For e-cash methods or local currencies not supported by [_1].', it.website_name)}</span>
+                    <span>{it.L('For e-wallets or local currencies not supported by [_1].', it.website_name)}</span>
                     <p className='faded'>{it.L('Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent')}</p>
                 </div>
                 <DepositWithdraw />

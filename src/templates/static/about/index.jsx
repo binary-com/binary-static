@@ -39,7 +39,7 @@ const Index = () => (
                         <img className='mac ja-hide' src={it.url_for('images/pages/about/mac.svg')} />
                         <img className='mac invisible ja-show responsive' src={it.url_for('images/pages/about/mac-ja.png')} />
                     </div>
-                    <div className='gr-1 gr-hide-t gr-hide-p gr-hide-m'></div>
+                    <div className='gr-1 gr-hide-t gr-hide-p gr-hide-m' />
                     <div className='gr-5 gr-12-m'>
                         <p>{it.L('Founded in 1999, [_1] is one of the oldest and most respected names in online binary trading.', it.website_name)}</p>
                         <p>{it.L('Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available.')}</p>
@@ -66,7 +66,7 @@ const Index = () => (
                     <div className='gr-row gr-parent'>
                         <Box>
                             <BoxInner className='border-right-bottom gr-padding-30' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href=\'https://binarycom.statuspage.io/\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')} />
-                            <BoxInner className='border-right-bottom gr-padding-30' href='/contact' image='locations' text={it.L('<a href=\'[_1]\'>Offices</a> in Malta, Malaysia and Japan', it.url_for('contact'))} />
+                            <BoxInner className='border-right-bottom gr-padding-30' href='/contact' image='locations' text={it.L('<a href=\'[_1]\'>Offices</a> in Malta and Malaysia', it.url_for('contact'))} />
                         </Box>
                         <Box>
                             <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan')} />

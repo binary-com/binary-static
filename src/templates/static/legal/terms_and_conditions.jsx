@@ -3,7 +3,6 @@ import Affiliate from './tac_sections/affiliate.jsx';
 import Api from './tac_sections/api.jsx';
 import Biel from './tac_sections/biel.jsx';
 import Complaints from './tac_sections/complaints.jsx';
-import ConflictsPolicy from './tac_sections/conflicts_policy.jsx';
 import DepositBonus from './tac_sections/deposit_bonus.jsx';
 import Tac from './tac_sections/tac.jsx';
 import TradingRules from './tac_sections/trading_rules.jsx';
@@ -16,7 +15,7 @@ const Section = ({
     sectionNum,
 }) => (
     <div id={id} className={`section ${className}`}>
-        <a id={link_id}></a>
+        <a id={link_id} />
         <div className='section-content'>
             <div id={`section-${sectionNum}`}>{children}</div>
         </div>
@@ -50,19 +49,15 @@ const TermsAndConditions = () => (
                 <Complaints />
             </Section>
 
-            <Section sectionNum='7' link_id='conflicts-policy'>
-                <ConflictsPolicy />
-            </Section>
-
-            <Section sectionNum='8' link_id='biel'>
+            <Section sectionNum='7' link_id='biel'>
                 <Biel />
             </Section>
 
-            <Section sectionNum='9' id='tnc_accept' link_id='accept' className='tnc_accept invisible'>
+            <Section sectionNum='8' id='tnc_accept' link_id='accept' className='tnc_accept invisible'>
                 <div className='gr-9 gr-12-m gr-centered center-text'>
                     <p>{it.L('By clicking OK, you confirm that you have read and accepted Terms & Conditions.')}</p>
                     <button className='button' id='btn_accept'>{it.L('OK')}</button>
-                    <p className='gr-12 error-msg center-text invisible' id='err_message'></p>
+                    <p className='gr-12 error-msg center-text invisible' id='err_message' />
                 </div>
             </Section>
         </div>

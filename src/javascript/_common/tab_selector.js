@@ -1,4 +1,4 @@
-const tabListener        = require('binary-style').tabListener;
+const tabListener        = require('@binary-com/binary-style').tabListener;
 const getElementById     = require('./common_functions').getElementById;
 const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
@@ -70,10 +70,9 @@ const TabSelector = (() => {
     };
 
     const updateURL = (selector, tab_id) => {
-        const params_hash = Url.paramsHash();
-        params_hash[selector] = tab_id;
-        const updated_url = `${window.location.origin}${window.location.pathname}?${Url.paramsHashToString(params_hash)}`;
-        window.history.replaceState({ url: updated_url }, null, updated_url);
+        Url.updateParamsWithoutReload({
+            [selector]: tab_id,
+        }, true);
     };
 
     const goLeft = (e) => {
@@ -158,10 +157,25 @@ const TabSelector = (() => {
         });
     };
 
+    const onChangeTab = (fn) => {
+        applyToAllElements('.go-left', (element) => {
+            element.addEventListener('click', (e) => {
+                fn({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
+            });
+        });
+        applyToAllElements('.go-right', (element) => {
+            element.addEventListener('click', (e) => {
+                fn({ selector: e.target.getAttribute('data-parent'), direction: 'right' });
+            });
+        });
+    };
+
     return {
+        onChangeTab,
         onLoad,
         onUnload,
         repositionSelector,
+        slideSelector,
         updateTabDisplay,
     };
 })();

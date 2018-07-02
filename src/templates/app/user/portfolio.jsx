@@ -5,14 +5,14 @@ const Portfolio = () => (
     <div id='portfolio'>
         <h1 className='portfolio-header-margin'>{it.L('Portfolio')}</h1>
 
-        <p className='notice-msg center-text invisible' id='error-msg'></p>
+        <p className='notice-msg center-text invisible' id='error-msg' />
 
-        <div id='portfolio-loading'></div>
+        <div id='portfolio-loading' />
 
         <div id='portfolio-content' className='invisible'>
             <div className='gr-parent gr-padding-10'>
                 {it.L('Account balance: ')}
-                <span className='loading' id='portfolio-balance'></span>
+                <span className='loading' id='portfolio-balance' />
 
                 {/* If the account balance is zero we show the following button, otherwise we remove it */}
                 <span id='if-balance-zero' className='invisible'>
@@ -39,7 +39,7 @@ const Portfolio = () => (
                         [
                             { className: 'ref',                              text: it.L('Ref.') },
                             { className: 'payout nowrap',                    text: it.L('Potential Payout') },
-                            { className: 'expires nowrap invisible ja-show', text: it.L('Expiry') },
+                            { className: 'expires nowrap invisible ja-show', text: it.L('{JAPAN ONLY}Expiry') },
                             { className: 'details',                          text: it.L('Contract Details') },
                             { className: 'purchase',                         text: it.L('Purchase') },
                             { className: 'indicative nowrap',                text: it.L('Indicative') },
