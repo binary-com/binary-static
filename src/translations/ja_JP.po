@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-06-28 03:41\n"
+"PO-Revision-Date: 2018-07-02 02:14\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -286,9 +286,6 @@ msgstr "%1ではプロから初心者のトレーダーの皆様のニーズに�
 msgid "%1 offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out."
 msgstr "%1ではプロから初心者のトレーダーの皆様のニーズにいつでもどこでもお応えできるよう、多様な口座タイプを提供しています。"
 
-msgid "%1 offers five trade types that will help you execute your market view or strategy:"
-msgstr "%1では、それぞれのターゲット市場または戦略の実行に役立つ3つの主要タイプを提供しています。"
-
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
 msgstr "%1ではハイブリッドモデルを利用した外国為替取引を提供しています。例えば、自身の口座（Dealing Desk）と当社のLP制度（No Dealing Desk）の双方を用いて顧客の注文を部分的にヘッジしています。"
 
@@ -298,6 +295,9 @@ msgstr "%1ではハイブリッドモデルを利用した外国為替取引を�
 
 msgid "%1 offers new ways to trade"
 msgstr "新たなトレードの提供を開始"
+
+msgid "%1 offers the following trade types that will help you execute your market view or strategy:"
+msgstr ""
 
 msgid "%1 offers the world's financial markets in a simple, user-friendly platform."
 msgstr "当社は、金融市場に簡潔、かつ容易にアクセスできるプラットフォームを提供します。"
@@ -2344,9 +2344,6 @@ msgstr "トレード詳細情報"
 msgid "Contract Ends"
 msgstr "トレード終了"
 
-msgid "Contract ID"
-msgstr "トレード ID"
-
 msgid "Contract Information"
 msgstr "約定済み通知"
 
@@ -4042,6 +4039,9 @@ msgstr "高値-終値"
 msgid "High-Low"
 msgstr "高値-安値"
 
+msgid "High/Low Ticks"
+msgstr ""
+
 msgid "Higher"
 msgstr "ラダーHIGH"
 
@@ -5551,8 +5551,8 @@ msgid "Laws regarding financial contracts vary throughout the world, and it is t
 msgstr "（決済方法）\n"
 "第12条　本取引の決済は、判定時刻における権利行使（自動）又は反対売買により差金決済により行うものとし、受渡通貨は日本円のみとします。"
 
-msgid "Learn about the five types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
-msgstr "上昇・下降・保ち合いの市場でご自身の取引戦略を実行するのに役立つ5つの取引タイプを学びましょう。"
+msgid "Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
+msgstr ""
 
 msgid "Learn from us"
 msgstr "トレードを学ぶ"
@@ -7176,8 +7176,8 @@ msgstr "ログインをしてください。"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "リクエストを送信される前に、お支払い条件に関してエージェントに同意をいただく必要があります。"
 
-msgid "Please note that Asians and Digits are available exclusively with our Volatility Indices."
-msgstr "AsianとDigitのトレードタイプは、ボラティリティ インデックスでのみご利用いいただけます。"
+msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
 msgstr "当社の%1トレード詳細%2に基づき、1ロットは100単位に相当しますのでご注意ください。"
@@ -7551,6 +7551,9 @@ msgstr "ライブチャットは英語、インドネシア語、中国語、ポ
 msgid "Purchase"
 msgstr "購入"
 
+msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr ""
+
 msgid "Purchase Price"
 msgstr "購入金額"
 
@@ -7800,13 +7803,13 @@ msgstr "満期までの2分は売却取引不可"
 msgid "Resale price"
 msgstr "売却価格"
 
-msgid "Reset"
-msgstr ""
-
 msgid "Reset Barrier"
 msgstr ""
 
 msgid "Reset Call"
+msgstr ""
+
+msgid "Reset Call/Put"
 msgstr ""
 
 msgid "Reset MT5 password"
@@ -12797,7 +12800,7 @@ msgid "{JAPAN ONLY}Financial Instruments Mediation Assistance Center"
 msgstr "特定非営利活動法人証券・金融商品あっせん相談センター"
 
 msgid "{JAPAN ONLY}First-Class FX Binary Options Trading Platform"
-msgstr "この度、Binary株式会社は、事業継続が困難との判断から、平成３０年８月１０日をもちまして廃業させていただく運びとなりました。皆様のご愛顧に心から感謝申し上げますと共に、廃業によりお客様及び関係各位に多大なるご迷惑をおかけしますことを深くお詫び申し上げます。"
+msgstr "この度、Binary株式会社は、事業継続が困難との判断から、平成３０年８月１０日をもちまして廃業させていただく運びとなりました。皆様のご愛顧に心から感謝申し上げますと共に、廃業によりお客様及び関係各位に多大なるご迷惑をおかけしますことを深くお詫び申し上げます。<br>郵送及び電子メールにて送信した報告書の取引内容及び入出金履歴等を照合のうえ債権債務が存在しない旨の確認を行い、相違等がある場合は報告書受領後５日以内に当社に連絡すること"
 
 msgid "{JAPAN ONLY}Footer regulatory text"
 msgstr "■店頭バイナリーオプション取引は金融商品取引法に規定される店頭デリバティブ取引であり、元本や利益が保証されていません。■店頭バイナリーオプション取引は、判定時刻に自動的に権利行使されるヨーロピアンタイプと、取引期間中に決められた条件に達すると権利が自動行使されるアメリカンタイプがあります。■店頭バイナリーオプションは、外国為替相場等の変動により投資元本の全てを失うおそれのあるリスクの高い金融商品です。■判定時刻及び取引期間中における一定の権利を、オプション料を支払って購入する期限がある取引のため、権利が消滅した場合は支払ったオプション料の全額を失います。■ペイアウトは1ロットあたり1,000円です。■購入価格と売却価格にはスプレッドがあり、相場情勢により拡大することがあります。■相場情勢により、お客様が希望した価格より不利な価格で取引が成立する場合があります。■店頭バイナリーオプションの取引上限は以下のとおりです。1)1取引の取引上限は100ロット。2)1日の取引上限額は50万円。前記2)に達した時点でその日は取引ができなくなります。■取引手数料は無料。当該日から遡り12ヶ月間、新規又は売却取引がなかった場合は口座維持手数料（2,500円税込）が発生、引き続き取引等がない場合、6ヶ月毎に同額が発生します。3,000円未満を出金の際は250円（税込）の出金手数料がかかります。■オプションの購入後の注文取り消しは行う事ができませんが、取引可能期間であれば売却は可能です。ただし、購入価格と売却価格にはスプレッドがあり、売却時に損失を被る可能性があります。■お取引開始前に、契約締結前交付書面を熟読の上、必ず約款及び取扱説明書に書かれてある取引の特徴、取引条件、仕組み及びリスクを十分確認いただき、ご自身の判断と責任において、自己の計算によりお取引ください。"
@@ -13013,7 +13016,7 @@ msgid "{JAPAN ONLY}JSA_Explanation_1_1)"
 msgstr "この度、Binary株式会社は、事業継続が困難との判断から、平成３０年８月１０日をもちまして廃業させていただく運びとなりました。皆様のご愛顧に心から感謝申し上げますと共に、廃業によりお客様及び関係各位に多大なるご迷惑をおかけしますことを深くお詫び申し上げます。"
 
 msgid "{JAPAN ONLY}JSA_Explanation_1_2)"
-msgstr "."
+msgstr "郵送及び電子メールにて送信した報告書の取引内容及び入出金履歴等を照合のうえ債権債務が存在しない旨の確認を行い、相違等がある場合は報告書受領後５日以内に当社に連絡すること"
 
 msgid "{JAPAN ONLY}JSA_Explanation_2_1)"
 msgstr "2018年2月12日（月）より、以下の内容が変更となります。<br>1.ラダーオプションの2時間と6時間の各取引期間の取引時間（開始時間・判定時刻）<br>2.ラダーオプションの1日の取引期間を提供中止<br>3. 2時間と6時間のバリア価格の算出方法が変更<br>詳しくは、契約締結前交付書面をご確認いただきますようお願い申し上げます。<br>店頭通貨バイナリーオプション取引の概要と仕組みについて(P9) <br>店頭バイナリーオプション取引概要（P3、P4)"

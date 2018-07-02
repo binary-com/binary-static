@@ -460,7 +460,6 @@ const texts = [
     'Tick [_1] is not the lowest tick',
     'Note',
     'Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.',
-    'Contract ID',
     'Contract Type',
     'Transaction ID',
     'Remaining Time',
@@ -640,7 +639,7 @@ const texts = [
 
     // Authentication errors
     'Invalid document format: "[_1]"',
-    'File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB',
+    'File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]',
     'ID number is required for [_1].',
     'Only letters, numbers, space, underscore, and hyphen are allowed for ID number.',
     'Expiry date is required for [_1].',
