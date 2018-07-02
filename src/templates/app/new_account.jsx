@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Signup = () => (
+const NewAccount = () => (
     <React.Fragment>
         <form id='signup_form' className='center-text gr-padding-20'>
             <h1 className='dark'>{it.L('Start Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
@@ -33,4 +33,4 @@ const Signup = () => (
     </React.Fragment>
 );
 
-export default Signup;
+export default NewAccount;
