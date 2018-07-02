@@ -27,6 +27,7 @@ const Purchase = (() => {
 
     let payout_value,
         cost_value,
+        profit_value,
         status;
 
     const display = (details) => {
@@ -193,6 +194,7 @@ const Purchase = (() => {
                 const contract = response.proposal_open_contract;
                 if (contract) {
                     status = contract.status;
+                    profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
                     if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
                         TickDisplay.updateChart({ is_sold: true }, contract);
@@ -219,9 +221,9 @@ const Purchase = (() => {
             if (!new RegExp(status).test(spots.classList)) {
                 spots.className = status;
                 if (status === 'won') {
-                    updateValues.updatePurchaseStatus(payout_value, cost_value, localize('This contract won'));
+                    updateValues.updatePurchaseStatus(payout_value, cost_value, profit_value, localize('This contract won'));
                 } else if (status === 'lost') {
-                    updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
+                    updateValues.updatePurchaseStatus(0, -cost_value, profit_value, localize('This contract lost'));
                 }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
                     const is_won = +tick_config.selected_tick_number === +tick_config.winning_tick_number;
