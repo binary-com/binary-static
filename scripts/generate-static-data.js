@@ -460,7 +460,6 @@ const texts = [
     'Tick [_1] is not the lowest tick',
     'Note',
     'Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price.',
-    'Contract ID',
     'Contract Type',
     'Transaction ID',
     'Remaining Time',
