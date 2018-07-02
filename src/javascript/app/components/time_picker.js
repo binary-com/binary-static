@@ -34,7 +34,7 @@ const TimePicker = (() => {
             if (options.useLocalTime) options.minTime = options.minTime.local();
 
             // disable hour without minute options (55 min is the last option)
-            if (options.minTime.minutes() >= 55) {
+            if (options.minTime.minutes() > 55) {
                 options.minTime.minutes(60);
             }
             obj_config.minTime = { hour: parseInt(options.minTime.hour()), minute: parseInt(options.minTime.minute()) };
