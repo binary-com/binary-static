@@ -58,7 +58,7 @@ const PaymentAgentList = () => (
             </div>
         </div>
 
-        <p id='no_paymentagent' className='notice-msg center-text invisible'>{it.L('Payment agent is unavailable in your country.')}</p>
+        <p id='no_paymentagent' className='notice-msg center-text invisible'>{it.L('Payment Agent services are not available in your country or in your preferred currency.')}</p>
 
         <p>{it.L('Apply to become a [_1] <a href="[_2]">payment agent</a>.', it.website_name, it.url_for('payment-agent'))}</p>
         <p className='comment'>

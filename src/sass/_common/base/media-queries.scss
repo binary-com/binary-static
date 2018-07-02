@@ -19,6 +19,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .center-text-p {
+        text-align: center;
+    }
     #sell_popup_container {
         padding: 0;
         width: 100%;
@@ -31,6 +34,11 @@
     }
     .table-container {
         overflow-x: auto;
+    }
+    .welcome-content {
+        .box-grid:first-child div {
+            margin-bottom: 0.5rem;
+        }
     }
     .no-padding-m {
         padding: 0 !important;

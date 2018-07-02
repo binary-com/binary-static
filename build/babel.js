@@ -3,7 +3,7 @@ module.exports = {
         options: {
             minified  : true,
             plugins   : ['transform-remove-strict-mode'],
-            presets   : ['es2015'],
+            presets   : ['env'],
             sourceMap : true,
             sourceType: 'script',
         },

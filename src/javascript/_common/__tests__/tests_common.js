@@ -2,6 +2,7 @@ const { LiveApi } = require('binary-live-api');
 const expect      = require('chai').expect;
 const jsdom       = require('jsdom');
 const websocket   = require('ws');
+const Client      = require('../../app/base/client');
 const Language    = require('../language');
 const Url         = require('../url');
 
@@ -13,6 +14,7 @@ const setURL = (url) => {
 
 const setJPClient = () => {
     setURL(`${Url.websiteUrl()}ja/home-jp.html`);
+    Client.setJPFlag();
 };
 
 module.exports = {

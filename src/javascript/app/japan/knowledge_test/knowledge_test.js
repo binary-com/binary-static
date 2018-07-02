@@ -143,7 +143,7 @@ const KnowledgeTest = (() => {
         const answered_qid = Object.keys(submitted).map(k => +k);
         if (answered_qid.length !== 20) {
             $instructions.setVisibility(0);
-            $message.addClass('notice-msg').text(localize('You need to finish all 20 questions.'));
+            $message.addClass('notice-msg').text(localize('{JAPAN ONLY}You need to finish all 20 questions.'));
 
             const unanswered = random_picks
                 .reduce((a, b) => a.concat(b))

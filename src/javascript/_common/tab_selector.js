@@ -1,4 +1,4 @@
-const tabListener        = require('binary-style').tabListener;
+const tabListener        = require('@binary-com/binary-style').tabListener;
 const getElementById     = require('./common_functions').getElementById;
 const Url                = require('./url');
 const applyToAllElements = require('./utility').applyToAllElements;
@@ -157,10 +157,25 @@ const TabSelector = (() => {
         });
     };
 
+    const onChangeTab = (fn) => {
+        applyToAllElements('.go-left', (element) => {
+            element.addEventListener('click', (e) => {
+                fn({ selector: e.target.getAttribute('data-parent'), direction: 'left' });
+            });
+        });
+        applyToAllElements('.go-right', (element) => {
+            element.addEventListener('click', (e) => {
+                fn({ selector: e.target.getAttribute('data-parent'), direction: 'right' });
+            });
+        });
+    };
+
     return {
+        onChangeTab,
         onLoad,
         onUnload,
         repositionSelector,
+        slideSelector,
         updateTabDisplay,
     };
 })();

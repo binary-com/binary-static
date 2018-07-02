@@ -66,7 +66,7 @@ const Index = () => (
                     <div className='gr-row gr-parent'>
                         <Box>
                             <BoxInner className='border-right-bottom gr-padding-30' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href=\'https://binarycom.statuspage.io/\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')} />
-                            <BoxInner className='border-right-bottom gr-padding-30' href='/contact' image='locations' text={it.L('<a href=\'[_1]\'>Offices</a> in Malta, Malaysia and Japan', it.url_for('contact'))} />
+                            <BoxInner className='border-right-bottom gr-padding-30' href='/contact' image='locations' text={it.L('<a href=\'[_1]\'>Offices</a> in Malta and Malaysia', it.url_for('contact'))} />
                         </Box>
                         <Box>
                             <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan')} />

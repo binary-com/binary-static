@@ -1,7 +1,8 @@
-const Symbols      = require('../symbols');
-const BinarySocket = require('../../../base/socket');
-const getHighstock = require('../../../../_common/common_functions').requireHighstock;
-const localize     = require('../../../../_common/localize').localize;
+const CreateDropdown = require('@binary-com/binary-style').selectDropdown;
+const getHighstock   = require('../common').requireHighstock;
+const Symbols        = require('../symbols');
+const BinarySocket   = require('../../../base/socket');
+const localize       = require('../../../../_common/localize').localize;
 
 const DigitInfo = (() => {
     let spots          = [];
@@ -108,6 +109,8 @@ const DigitInfo = (() => {
         $('#digit_underlying').html($(elem)).val(underlying);
         $('#digit_domain').text(domain.charAt(0).toUpperCase() + domain.slice(1));
         $('#digit_info_underlying').text($('#digit_underlying option:selected').text());
+        CreateDropdown('#digit_underlying');
+        CreateDropdown('#tick_count');
     };
 
     const onLatest = () => {
@@ -145,6 +148,7 @@ const DigitInfo = (() => {
     };
 
     const showChart = (underlying, underlying_spots) => {
+        if (underlying_spots.length !== +$('#tick_count').val()) return;
         getHighstock((Highcharts) => {
             const new_spots = underlying_spots;
             if (typeof new_spots === 'undefined' || new_spots.length <= 0) {
@@ -163,17 +167,12 @@ const DigitInfo = (() => {
             );
 
             spots = new_spots;
-            if (chart && $('#last_digit_histo').html()) {
-                chart.xAxis[0].update({ title: getTitle() }, true);
-                chart.series[0].name = underlying;
-            } else {
-                addContent(underlying); // this creates #last_digit_title
-                chart_config.xAxis.title = getTitle();
-                chart = new Highcharts.Chart(chart_config);
-                chart.addSeries({ name: underlying, data: [] });
-                onLatest();
-                stream_id = null;
-            }
+            if (chart) chart.destroy();
+            addContent(underlying); // this creates #last_digit_title
+            chart_config.xAxis.title = getTitle();
+            chart = new Highcharts.Chart(chart_config);
+            chart.addSeries({ name: underlying, data: [] });
+            onLatest();
             update();
         });
     };

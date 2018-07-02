@@ -3,7 +3,7 @@ import ListNested from '../../../_common/components/list_nested.jsx';
 
 const Api = () => (
     <div>
-        <h2>{it.L('[_1] Application Program Interface ("API") Terms and Conditions', it.website_name)}</h2>
+        <h2 data-anchor>{it.L('[_1] Application Program Interface ("API") Terms and Conditions', it.website_name)}</h2>
         <p>{it.L('This document (the "Agreement") sets out the terms and conditions ("Terms") between "the Company" which is Binary Services Ltd ("we," "us," and "our"), and you (the person who registered for the [_1] Application Program Interface ("API"); "you", or "your").', it.website_name)}</p>
         <ol className='reset_ol'>
             <ListNested
@@ -18,7 +18,7 @@ const Api = () => (
 
             <ListNested
                 strong='1'
-                header={it.L('About Us and these Terms')}
+                header={it.L('About Us and These Terms')}
                 items={[
                     { text: it.L('You agree that by developing on the [_1] API, you are entering into a legally binding agreement with the Company.', it.website_name) },
                     { text: it.L('By registering a software application, website, or product you create or a service you offer (an "Application"), you acknowledge that you have read and understood and agree to be bound by these terms.') },
@@ -36,7 +36,7 @@ const Api = () => (
                                 header     : it.L('You agree that you will not:'),
                                 list_nested: [
                                     { text: it.L('sublicense any of the rights granted under these Terms, other than as permitted by these Terms;') },
-                                    { text: it.L('use or reproduce the [_1] API other than as permitted by these Terms or', it.website_name) },
+                                    { text: it.L('use or reproduce the [_1] API other than as permitted by these Terms; or', it.website_name) },
                                     { text: it.L('use the [_1] API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy.', it.website_name) },
                                 ],
                             },
@@ -101,7 +101,7 @@ const Api = () => (
                                     { text: it.L('The [_1] Order Execution Policy.', it.website_name) },
                                 ],
                             },
-                            { text: it.L('If you are an affiliate of [_1], you must also comply with the [_1] Affiliate Program Terms and Conditions.', it.website_name) },
+                            { text: it.L('If you are an affiliate of [_1], you must also comply with the [_1] Affiliate Programme Terms and Conditions.', it.website_name) },
                             { text: it.L('In the event of any conflict between the content in this document and the above documents, this document controls your use of the [_1] API. If you disagree with any of the provisions in these Terms, do not access or use the [_1] API.', it.website_name) },
                         ],
                     },
@@ -195,7 +195,7 @@ const Api = () => (
                     {
                         header     : it.L('Security Disclaimer'),
                         list_nested: [
-                            { text: it.L('You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the [_1] API. You acknowledge that there are risks associated with utilizing an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the [_1] API.', it.website_name) },
+                            { text: it.L('You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the [_1] API. You acknowledge that there are risks associated with utilising an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the [_1] API.', it.website_name) },
                         ],
                     },
                 ]}
@@ -238,7 +238,7 @@ const Api = () => (
 
             <ListNested
                 strong='1'
-                header={it.L('Term & Termination')}
+                header={it.L('Term and Termination')}
                 items={[
                     {
                         header     : it.L('Term'),
@@ -250,10 +250,10 @@ const Api = () => (
                         header     : it.L('Right to Terminate'),
                         list_nested: [
                             {
-                                header     : it.L('At any time and for any reason or no reason, the Company, in its sole discretion, may:'),
+                                header     : it.L('At any time and for any reason or no reason, the Company, in its sole discretion, may immediately:'),
                                 list_nested: [
                                     { text: it.L('Terminate your use of the [_1] API; or', it.website_name) },
-                                    { text: it.L('Terminate this Agreement by giving a minimum of seven days written notice to you.') },
+                                    { text: it.L('Terminate this Agreement') },
                                 ],
                             },
                             { text: it.L('You may terminate this Agreement at any time, but only by giving the Company a minimum of seven days written notice. "Written notice" here includes notice delivered by regular letter mail or by email.') },

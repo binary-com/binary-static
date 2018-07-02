@@ -18,14 +18,14 @@ import {
 const Money = () => (
     <React.Fragment>
         <option value=''>{it.L('Please select')}</option>
-        <option value='Less than 1 million JPY'>{it.L('Less than 1 million JPY')}</option>
-        <option value='1-3 million JPY'>{it.L('1-3 million JPY')}</option>
-        <option value='3-5 million JPY'>{it.L('3-5 million JPY')}</option>
-        <option value='5-10 million JPY'>{it.L('5-10 million JPY')}</option>
-        <option value='10-30 million JPY'>{it.L('10-30 million JPY')}</option>
-        <option value='30-50 million JPY'>{it.L('30-50 million JPY')}</option>
-        <option value='50-100 million JPY'>{it.L('50-100 million JPY')}</option>
-        <option value='Over 100 million JPY'>{it.L('Over 100 million JPY')}</option>
+        <option value='Less than 1 million JPY'>{it.L('{JAPAN ONLY}Less than 1 million JPY')}</option>
+        <option value='1-3 million JPY'>{it.L('{JAPAN ONLY}1-3 million JPY')}</option>
+        <option value='3-5 million JPY'>{it.L('{JAPAN ONLY}3-5 million JPY')}</option>
+        <option value='5-10 million JPY'>{it.L('{JAPAN ONLY}5-10 million JPY')}</option>
+        <option value='10-30 million JPY'>{it.L('{JAPAN ONLY}10-30 million JPY')}</option>
+        <option value='30-50 million JPY'>{it.L('{JAPAN ONLY}30-50 million JPY')}</option>
+        <option value='50-100 million JPY'>{it.L('{JAPAN ONLY}50-100 million JPY')}</option>
+        <option value='Over 100 million JPY'>{it.L('{JAPAN ONLY}Over 100 million JPY')}</option>
     </React.Fragment>
 );
 
@@ -215,7 +215,7 @@ const Japan = () => (
 
                 <Checkbox checkbox id='agree_warnings_and_policies' text={it.L('I confirm my agreement to the contents of all the documents listed below:')}>
                     <ul>
-                        <li><a href={`${it.url_for('terms-and-conditions-jp')}?#account-warning`} target='_blank'>{it.L('General Risk Warning')}</a></li>
+                        <li><a href={`${it.url_for('terms-and-conditions-jp')}?#account-warning`} target='_blank'>{it.L('{JAPAN ONLY}General Risk Warning')}</a></li>
                         <li><a href={`${it.url_for('terms-and-conditions-jp')}?#account-risk`} target='_blank'>{it.L('Risks for binary option trading')}</a></li>
                         <li><a href={it.url_for('get-started-jp')} target='_blank'>{it.L('Trading manual')}</a></li>
                         <li><a href={it.url_for('terms-and-conditions-jp')} target='_blank'>{it.L('Terms and conditions')}</a></li>

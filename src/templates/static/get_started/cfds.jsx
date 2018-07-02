@@ -96,17 +96,7 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'AUS_200' }, { text: 'Australia 200 Cash Index'  }, { text: it.L('AUD 1 per point') }, { text: one }, { text: tenth }],
                                 [{ text: 'DAX_30'  }, { text: 'Germany 30 Cash Index'     }, { text: it.L('EUR 1 per point') }, { text: one }, { text: tenth }],
-                                [{ text: 'ESP_35'  }, { text: 'Spain 35 Cash Index'       }, { text: it.L('EUR 1 per point') }, { text: one }, { text: tenth }],
-                                [{ text: 'EUR_50'  }, { text: 'Euro 50 Cash Index'        }, { text: it.L('EUR 1 per point') }, { text: one }, { text: tenth }],
-                                [{ text: 'FRA_40'  }, { text: 'France 40 Cash Index'      }, { text: it.L('EUR 1 per point') }, { text: one }, { text: tenth }],
-                                [{ text: 'GBR_100' }, { text: 'UK 100 Cash Index'         }, { text: it.L('GBP 1 per point') }, { text: one }, { text: tenth }],
-                                [{ text: 'JP_225'  }, { text: 'Japan 225 Cash Index'      }, { text: it.L('JPY 1 per point') }, { text: one }, { text: tenth }],
-                                [{ text: 'NED_25'  }, { text: 'Netherlands 25 Cash Index' }, { text: it.L('EUR 1 per point') }, { text: one }, { text: tenth }],
-                                [{ text: 'US_30'   }, { text: 'US 30 Cash Index'          }, { text: it.L('USD 1 per point') }, { text: one }, { text: tenth }],
-                                [{ text: 'US_100'  }, { text: 'US 100 Cash Index'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: tenth }],
-                                [{ text: 'US_500'  }, { text: 'US 500 Cash Index'         }, { text: it.L('USD 1 per point') }, { text: one }, { text: tenth }],
                             ],
                         }}
                     />

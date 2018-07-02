@@ -1,3 +1,4 @@
+const Dropdown          = require('@binary-com/binary-style').selectDropdown;
 const moment            = require('moment');
 const CommonIndependent = require('./common_independent');
 const Contract          = require('./contract');
@@ -91,6 +92,7 @@ const StartDates = (() => {
             });
             if (target) {
                 target.appendChild(fragment);
+                Dropdown('#date_start');
                 Defaults.set('date_start', target.value);
                 CommonIndependent.showAssetOpenHours(target.value === 'now' ? '' : $(target));
                 $('#time_start_row').setVisibility(target.value !== 'now');
@@ -100,6 +102,11 @@ const StartDates = (() => {
                 Durations.onStartDateChange(first);
             }
         } else {
+            if (start_dates && start_dates.has_spot) {
+                const now_option = createElement('option', { value: 'now', text: localize('Now') });
+                CommonIndependent.getStartDateNode().appendChild(now_option);
+                has_now = 1;
+            }
             State.remove('is_start_dates_displayed');
             getElementById('date_start_row').style.display = 'none';
             getElementById('date_start').value = 'now';

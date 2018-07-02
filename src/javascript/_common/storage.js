@@ -167,6 +167,29 @@ CookieStorage.prototype = {
     },
 };
 
+const removeCookies = (...cookie_names) => {
+    const domains = [
+        `.${document.domain.split('.').slice(-2).join('.')}`,
+        `.${document.domain}`,
+    ];
+
+    let parent_path = window.location.pathname.split('/', 2)[1];
+    if (parent_path !== '') {
+        parent_path = `/${parent_path}`;
+    }
+
+    cookie_names.forEach((c) => {
+        Cookies.remove(c, { path: '/', domain: domains[0] });
+        Cookies.remove(c, { path: '/', domain: domains[1] });
+        Cookies.remove(c);
+        if (new RegExp(c).test(document.cookie) && parent_path) {
+            Cookies.remove(c, { path: parent_path, domain: domains[0] });
+            Cookies.remove(c, { path: parent_path, domain: domains[1] });
+            Cookies.remove(c, { path: parent_path });
+        }
+    });
+};
+
 let SessionStore,
     LocalStore;
 
@@ -187,6 +210,7 @@ if (!SessionStore) {
 module.exports = {
     isStorageSupported,
     CookieStorage,
+    removeCookies,
     State,
     SessionStore,
     LocalStore,
