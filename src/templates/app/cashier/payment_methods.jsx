@@ -34,22 +34,20 @@ const ReferenceLink = ({ href, className = '', title = '' }) => (
     />
 );
 
-const ReferenceLinks = ({ pdf_file, video_link }) => {
-    return (
-        <React.Fragment>
-            <ReferenceLink
-                className='payment-methods__reference-pdf'
-                href={pdf_file && it.url_for(`download/payment/${pdf_file}`)}
-                title={pdf_file || it.L('PDF reference is not available for this method')}
-            />
-            <ReferenceLink
-                className='payment-methods__reference-video'
-                href={video_link}
-                title={video_link ? it.L('Tutorial video') : it.L('Tutorial video is not available for this method')}
-            />
-        </React.Fragment>
-    );
-};
+const ReferenceLinks = ({ pdf_file, video_link }) => (
+    <React.Fragment>
+        <ReferenceLink
+            className='payment-methods__reference-pdf'
+            href={pdf_file && it.url_for(`download/payment/${pdf_file}`)}
+            title={pdf_file || it.L('PDF reference is not available for this method')}
+        />
+        <ReferenceLink
+            className='payment-methods__reference-video'
+            href={video_link}
+            title={video_link ? it.L('Tutorial video') : it.L('Tutorial video is not available for this method')}
+        />
+    </React.Fragment>
+);
 
 const PaymentMethods = () => {
     const head = [
