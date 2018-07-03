@@ -2,10 +2,10 @@
     position: absolute;
     width: 320px;
     right: 12px;
-    top: -190px;
+    top: -250px;
     border: 1px solid $COLOR_GRAY;
     background: $COLOR_WHITE;
-    height: 220px;
+    height: 280px;
     border-radius: $BORDER_RADIUS;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     pointer-events: none;
@@ -16,7 +16,7 @@
     &.show {
         pointer-events: auto;
         opacity: 1;
-        transform: translateY(-20%);
+        transform: translateY(-15%);
     }
     .tab-container {
         .tab {
@@ -31,17 +31,46 @@
         .tab-wrapper {
             margin-bottom: 0;
         }
+        .tab-underline {
+            border-bottom: 2px solid $COLOR_BLUE;
+        }
     }
     .tab-content {
         display: flex;
         justify-content: center;
-        align-items: center;
-        height: 158px;
+        align-items: flex-start;
+        height: 216px;
         background: $COLOR_LIGHT_GRAY;
     }
     .settings-header {
         padding: 16px;
         font-size: 12px;
         font-weight: 400;
+    }
+    .general-setting-container, .chart-setting-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 16px;
+        background: $COLOR_WHITE;
+        border: 1px solid $COLOR_GRAY;
+
+        .settings-row {
+            width: 260px;
+            padding: 8px;
+            display: flex;
+            cursor: pointer;
+
+            span {
+                font-size: 12px;
+                text-transform: capitalize;
+                color: $COLOR_LIGHT_BLACK;
+            }
+            &:not(:last-child) {
+                border-bottom: 1px solid $COLOR_GRAY;
+            }
+            &:hover {
+                background-color: $COLOR_LIGHT_GRAY;
+            }
+        }
     }
 }

@@ -18,7 +18,6 @@ class SettingsDialog extends React.PureComponent {
     handleClickOutside(event) {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.props.is_open && !(event.target.className === 'ic-settings')) {
             this.props.toggleDialog();
-            console.log(event.target.className);
         }
     }
 
@@ -44,16 +43,44 @@ class SettingsDialog extends React.PureComponent {
 }
 
 const General = () => (
-    <div className='tab-content' />
+    <div className='tab-content'>
+        <div className='general-setting-container'>
+            <SettingsControl name='dark mode' />
+            <div className='settings-row'>
+                <span>{localize('language')}</span>
+            </div>
+        </div>
+    </div>
 );
 
 const Chart = () => (
-    <div className='tab-content' />
+    <div className='tab-content'>
+        <div className='chart-setting-container'>
+            <div className='settings-row'>
+                <span>{localize('position')}</span>
+            </div>
+            <SettingsControl name='asset information' />
+            <SettingsControl name='scale countdown' />
+        </div>
+    </div>
+);
+
+const SettingsControl = ({ name, is_toggle, onClick }) => (
+    <div className='settings-row' onClick={onClick}>
+        <span>{localize(name)}</span>
+        {!!is_toggle && <span className='toggle' />}
+    </div>
 );
 
 const content = {
     1: { header: localize('General'), content: General},
     2: { header: localize('Chart'), content: Chart},
+};
+
+SettingsControl.propTypes = {
+    name     : PropTypes.string,
+    is_toggle: PropTypes.bool,
+    onClick  : PropTypes.func,
 };
 
 SettingsDialog.propTypes = {
