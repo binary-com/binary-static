@@ -345,6 +345,7 @@ const Process = (() => {
     };
 
     return {
+        displayEquals,
         processActiveSymbols,
         processMarket,
         processContract,
