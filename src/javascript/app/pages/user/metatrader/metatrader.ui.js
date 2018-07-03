@@ -22,7 +22,7 @@ const MetaTraderUI = (() => {
         validations,
         submit,
         token,
-        current_action_UI;
+        current_action_ui;
 
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
@@ -318,7 +318,7 @@ const MetaTraderUI = (() => {
     // ----- New Account -----
     // -----------------------
     const handleNewAccountUI = (action, acc_type, $clicked_target) => {
-        current_action_UI = action;
+        current_action_ui = action;
 
         const $target = $clicked_target || $(`.act_${action}`);
         const is_new_account = /new_account/.test(action);
@@ -389,7 +389,7 @@ const MetaTraderUI = (() => {
     // So, if you change UI (e.g. to new_account) after triggering deposit and before BE response
     // -> UI will get messed up, since setCurrentAccount assumes you are still on cashier UI
     const restoreUI = (acc_type) => {
-        handleNewAccountUI(current_action_UI || 'cashier', acc_type);
+        handleNewAccountUI(current_action_ui || 'cashier', acc_type);
     };
 
     const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
