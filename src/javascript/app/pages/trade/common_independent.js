@@ -90,7 +90,7 @@ const getMinMaxTimeEnd = ($date_start = $('#date_start'), $time_start = $('#time
     const date_start_val = $date_start.val();
     if (date_start_val === 'now') {
         const min_max_time = getMinMaxTimeStart();
-        min_time = min_max_time.minTime;
+        min_time = min_max_time.minTime.clone().add(1, 'minute'); // round up seconds (previously 9:05 endtime was available, when time is 9:05:12)
         max_time = min_max_time.maxTime;
     } else {
         const expiry_time_val = $expiry_time.val().split(':');
