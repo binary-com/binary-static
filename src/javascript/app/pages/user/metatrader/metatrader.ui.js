@@ -321,10 +321,9 @@ const MetaTraderUI = (() => {
     // -----------------------
     // ----- New Account -----
     // -----------------------
-    const handleNewAccountUI = (action, acc_type, $clicked_target) => {
+    const handleNewAccountUI = (action, acc_type, $target) => {
         current_action_ui = action;
 
-        const $target = $clicked_target || $(`.act_${action}`);
         const is_new_account = /new_account/.test(action);
         const $acc_actions = $container.find('.acc-actions');
         $acc_actions.find('.new-account').setVisibility(is_new_account);
