@@ -168,7 +168,9 @@ const MetaTraderUI = (() => {
     const setCurrentAccount = (acc_type) => {
         if (Client.get('mt5_account') && Client.get('mt5_account') !== acc_type) return;
 
-        displayAccountDescription(acc_type);
+        if (current_action_ui !== 'new_account') {
+            displayAccountDescription(acc_type);
+        }
 
         if (accounts_info[acc_type].info) {
             // Update account info
@@ -183,7 +185,9 @@ const MetaTraderUI = (() => {
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
             // $container.find('.act_cashier').setVisibility(!types_info[acc_type].is_demo);
-            $container.find('.has-account').setVisibility(1);
+            if (current_action_ui !== 'new_account') {
+                $container.find('.has-account').setVisibility(1);
+            }
         } else {
             $detail.find('.acc-info, .acc-actions').setVisibility(0);
         }
@@ -384,14 +388,6 @@ const MetaTraderUI = (() => {
         $form.find('.mt5_type_box').click(selectAccountTypeUI);
     };
 
-    // restoreUI:
-    // On deposit response setCurrentAccount is called, which updates DOM
-    // So, if you change UI (e.g. to new_account) after triggering deposit and before API response
-    // -> UI will get messed up, since setCurrentAccount assumes you are still on cashier UI
-    const restoreUI = (acc_type) => {
-        handleNewAccountUI(current_action_ui || defaultAction(acc_type), acc_type);
-    };
-
     const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
 
     const selectAccountTypeUI = (e) => {
@@ -553,7 +549,6 @@ const MetaTraderUI = (() => {
         displayPageError,
         disableButton,
         enableButton,
-        restoreUI,
         showHideMAM,
 
         $form   : () => $form,
