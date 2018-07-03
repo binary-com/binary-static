@@ -4,7 +4,7 @@ const Login          = require('../../_common/base/login');
 const getElementById = require('../../_common/common_functions').getElementById;
 const localize       = require('../../_common/localize').localize;
 
-const Signup = (() => {
+const NewAccount = (() => {
     let clients_country,
         $google_btn,
         $login_btn,
@@ -81,4 +81,4 @@ const Signup = (() => {
     };
 })();
 
-module.exports = Signup;
+module.exports = NewAccount;
