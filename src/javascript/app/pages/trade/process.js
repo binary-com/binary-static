@@ -261,7 +261,7 @@ const Process = (() => {
         const formname  = Defaults.get('formname');
         const el_equals = document.getElementById('callputequal');
         const durations = getPropertyValue(Contract.durations(), [commonTrading.durationType(Defaults.get('duration_units'))]) || [];
-        if (/^(callputequal|risefall)$/.test(formname) && 'callputequal' in durations && hasCallPutEqual() || expiry_type === 'endtime') {
+        if (/^(callputequal|risefall)$/.test(formname) && (('callputequal' in durations || expiry_type === 'endtime') && hasCallPutEqual())) {
             if (+Defaults.get('is_equal')) {
                 el_equals.checked = true;
             }
