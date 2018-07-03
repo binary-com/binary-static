@@ -2,7 +2,7 @@
     position: absolute;
     width: 320px;
     right: 12px;
-    top: 100%;
+    top: -190px;
     border: 1px solid $COLOR_GRAY;
     background: $COLOR_WHITE;
     height: 220px;
@@ -14,10 +14,9 @@
     opacity: 0;
 
     &.show {
-        visibility: visible;
         pointer-events: auto;
         opacity: 1;
-        transform: translateY(calc(-100% - 40px));
+        transform: translateY(-20%);
     }
     .tab-container {
         .tab {
