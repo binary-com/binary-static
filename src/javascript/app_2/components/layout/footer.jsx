@@ -1,6 +1,7 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import Popover         from '../elements/popover.jsx';
+import SettingsDialog  from '../elements/settings_dialog.jsx';
 import { toGMTFormat } from '../../common/date_time';
 import { BinaryLink }  from '../../routes';
 import { connect }     from '../../store/connect';
@@ -76,16 +77,23 @@ class ToggleFullScreen extends React.PureComponent {
     }
 }
 
-const Settings = () => (
-    <Popover
-        subtitle='Settings'
-        alignment='top-right'
-    >
-        <a
-            href='javascript:;'
-            className='ic-settings'
+const Settings = ({...props}) => (
+    <React.Fragment>
+        <Popover
+            subtitle='Settings'
+            alignment='top-right'
+        >
+            <a
+                href='javascript:;'
+                className='ic-settings'
+                onClick={props.toggleSettingsDialog}
+            />
+        </Popover>
+        <SettingsDialog
+            is_open={props.is_settings_dialog_on}
+            toggleDialog={props.toggleSettingsDialog}
         />
-    </Popover>
+    </React.Fragment>
 );
 
 // Better to keep this class as a Component.
@@ -112,7 +120,7 @@ class Footer extends React.Component {
                             </Popover>
                         ))}
                         <ToggleFullScreen />
-                        <Settings />
+                        <Settings {...this.props} />
                     </div>
                 }
             </React.Fragment>
@@ -130,10 +138,17 @@ TogglePortfolioDrawer.propTypes = {
     togglePortfolioDrawer : PropTypes.func,
 };
 
+Settings.propTypes = {
+    toggleSettingsDialog : PropTypes.func,
+    is_settings_dialog_on: PropTypes.bool,
+};
+
 export default connect(
     ({ common, ui }) => ({
         server_time           : common.server_time,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
+        is_settings_dialog_on : ui.is_settings_dialog_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
+        toggleSettingsDialog  : ui.toggleSettingsDialog,
     })
 )(Footer);

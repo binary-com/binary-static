@@ -1,0 +1,19 @@
+.settings-dialog {
+    position: absolute;
+    width: 320px;
+    right: 12px;
+    top: 100%;
+    border: 1px solid $COLOR_GRAY;
+    background: $COLOR_WHITE;
+    height: 220px;
+    border-radius: $BORDER_RADIUS;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+
+    &.show {
+        visibility: visible;
+        opacity: 1;
+        top: -226px;
+    }
+}
