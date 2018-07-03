@@ -183,6 +183,7 @@ const MetaTrader = (() => {
                         }
                         BinarySocket.send({ mt5_login_list: 1 }).then((response_login_list) => {
                             setAccountDetails(login, acc_type, response_login_list);
+                            MetaTraderUI.restoreUI(acc_type);
                             if (/^(revoke_mam|new_account_mam)/.test(action)) {
                                 MetaTraderUI.showHideMAM(acc_type);
                             }

@@ -21,7 +21,8 @@ const MetaTraderUI = (() => {
         $main_msg,
         validations,
         submit,
-        token;
+        token,
+        current_action_UI;
 
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
@@ -317,6 +318,10 @@ const MetaTraderUI = (() => {
     // ----- New Account -----
     // -----------------------
     const handleNewAccountUI = (action, acc_type, $target) => {
+        current_action_UI = action;
+
+        if (!$target) $target = $(`.act_${action}`);
+
         const is_new_account = /new_account/.test(action);
         const $acc_actions = $container.find('.acc-actions');
         $acc_actions.find('.new-account').setVisibility(is_new_account);
@@ -378,6 +383,14 @@ const MetaTraderUI = (() => {
 
         // Account type selection
         $form.find('.mt5_type_box').click(selectAccountTypeUI);
+    };
+
+    // restoreUI:
+    // On deposit response setCurrentAccount is called, which updates DOM
+    // So, if you change UI (e.g. to new_account) after triggering deposit and before BE response
+    // -> UI will get messed up, since setCurrentAccount assumes you are still on cashier UI
+    const restoreUI = (acc_type) => {
+        handleNewAccountUI(current_action_UI || 'cashier', acc_type);
     };
 
     const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
@@ -541,6 +554,7 @@ const MetaTraderUI = (() => {
         displayPageError,
         disableButton,
         enableButton,
+        restoreUI,
         showHideMAM,
 
         $form   : () => $form,
