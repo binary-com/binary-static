@@ -386,10 +386,10 @@ const MetaTraderUI = (() => {
 
     // restoreUI:
     // On deposit response setCurrentAccount is called, which updates DOM
-    // So, if you change UI (e.g. to new_account) after triggering deposit and before BE response
+    // So, if you change UI (e.g. to new_account) after triggering deposit and before API response
     // -> UI will get messed up, since setCurrentAccount assumes you are still on cashier UI
     const restoreUI = (acc_type) => {
-        handleNewAccountUI(current_action_ui || 'cashier', acc_type);
+        handleNewAccountUI(current_action_ui || defaultAction(acc_type), acc_type);
     };
 
     const newAccountGetType = () => `${$form.find('.step-1 .selected').attr('data-acc-type') || 'real'}_${$form.find('.step-2 .selected').attr('data-acc-type')}`;
