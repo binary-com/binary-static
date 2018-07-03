@@ -190,11 +190,14 @@ const Durations = (() => {
         const date_start        = CommonFunctions.getElementById('date_start').value;
         const now               = !date_start || date_start === 'now';
         const current_moment    = moment((now ? window.time : parseInt(date_start) * 1000));
-        const smallest_end_time = current_moment.add(smallest_duration.amount, smallest_duration.unit);
+        const smallest_end_time = current_moment.clone().add(smallest_duration.amount, smallest_duration.unit);
+        const plus_5_min        = current_moment.clone().add(5, 'minutes');
+        // for contracts with min. duration of 1 day, the endtime should be the min. duration, else endtime is current time plus 5 mins
+        const selected_end_time = smallest_end_time.isAfter(plus_5_min) ? smallest_end_time : plus_5_min;
         const default_end_time  = Defaults.get('expiry_date');
 
         let expiry_date      = default_end_time &&
-            moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : smallest_end_time.add(5, 'minutes').utc();
+            moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : selected_end_time.utc();
         let expiry_time      = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         let expiry_date_iso  = toISOFormat(expiry_date);
 
