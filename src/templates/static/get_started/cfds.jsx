@@ -136,8 +136,8 @@ const Cfds = () => (
                                 { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
                             ]],
                             tbody: [
-                                [{ text: 'CL_BRENT' }, { text: 'Crude Oil Brent'                   }, { text: it.L('USD 1 per point') }, { text: one }, { text: one }],
-                                [{ text: 'WTI'      }, { text: 'West Texas Intermediate Crude Oil' }, { text: it.L('USD 1 per point') }, { text: one }, { text: one }],
+                                [{ text: 'CL_BRENT' }, { text: 'Crude Oil Brent Cash'                   }, { text: it.L('USD 1 per point') }, { text: one }, { text: one }],
+                                [{ text: 'WTI'      }, { text: 'West Texas Intermediate Crude Oil Cash' }, { text: it.L('USD 1 per point') }, { text: one }, { text: one }],
                             ],
                         }}
                     />
