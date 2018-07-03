@@ -16,16 +16,19 @@ class SettingsDialog extends React.PureComponent {
     }
 
     handleClickOutside(event) {
-        if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.props.is_open) {
+        if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.props.is_open && !(event.target.className === 'ic-settings')) {
             this.props.toggleDialog();
+            console.log(event.target.className);
         }
     }
 
-    // componentWillMount() {
-    // }
-    //
-    // componentWillUnmount() {
-    // }
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
 
     render() {
         const settings_dialog_class = classNames('settings-dialog', {
@@ -33,12 +36,25 @@ class SettingsDialog extends React.PureComponent {
         });
         return (
             <div ref={this.setWrapperRef} className={settings_dialog_class}>
-                <span onClick={this.handleVisibility}>{localize('something')}</span>
-                <Tabs />
+                <span className='settings-header'>{localize('Settings')}</span>
+                <Tabs alignment='center' list={content} />
             </div>
         );
     }
 }
+
+const General = () => (
+    <div className='tab-content' />
+);
+
+const Chart = () => (
+    <div className='tab-content' />
+);
+
+const content = {
+    1: { header: localize('General'), content: General},
+    2: { header: localize('Chart'), content: Chart},
+};
 
 SettingsDialog.propTypes = {
     is_open     : PropTypes.bool,

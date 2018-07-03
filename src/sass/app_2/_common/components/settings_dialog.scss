@@ -16,4 +16,30 @@
         opacity: 1;
         top: -226px;
     }
+    .tab-container {
+        .tab {
+            width: 50%;
+
+            span {
+                padding: 16px 16px 8px;
+                font-size: 12px;
+                color: $COLOR_LIGHT_BLACK;
+            }
+        }
+        .tab-wrapper {
+            margin-bottom: 0;
+        }
+    }
+    .tab-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 158px;
+        background: $COLOR_LIGHT_GRAY;
+    }
+    .settings-header {
+        padding: 16px;
+        font-size: 12px;
+        font-weight: 400;
+    }
 }

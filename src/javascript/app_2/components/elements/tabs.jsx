@@ -131,27 +131,6 @@ class TabsWrapper extends React.PureComponent {
     }
 }
 
-// TO-DO: Remove dummy values
-const TabContent1 = () => (
-    <div className='tab-content'><p>Content 1</p></div>
-);
-const TabContent2 = () => (
-    <div className='tab-content'><p>Content 2</p></div>
-);
-const TabContent3 = () => (
-    <div className='tab-content'><p>Content 3</p></div>
-);
-const TabContent4 = () => (
-    <div className='tab-content'><p>Content 4</p></div>
-);
-
-const content = {
-    1: { header: 'Tab 1', content: TabContent1 },
-    2: { header: 'Tab 2', content: TabContent2 },
-    3: { header: 'Tab 3', content: TabContent3 },
-    4: { header: 'Tab 4', content: TabContent4 },
-};
-
 TabsWrapper.propTypes = {
     active      : PropTypes.string,
     children    : PropTypes.node,
@@ -163,11 +142,6 @@ Tabs.propTypes = {
     list     : PropTypes.object,
     alignment: PropTypes.string,
 
-};
-
-Tabs.defaultProps = {
-    alignment: 'center',
-    list     : content,
 };
 
 export default Tabs;
