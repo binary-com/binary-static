@@ -1,6 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Url from '../../../../../_common/url';
+import React     from 'react';
+import Url       from '../../../../../_common/url';
 
 class FullscreenDialog extends React.PureComponent {
     componentDidUpdate() {
@@ -21,7 +21,7 @@ class FullscreenDialog extends React.PureComponent {
             const new_el_top = (window.innerHeight - el.clientHeight) / 2;
             parent.scrollTop += viewport_offset.top - new_el_top;
         }
-    }
+    };
 
     // sometimes input is covered by virtual keyboard on mobile chrome, uc browser
     handleClick = (e) => {
@@ -34,7 +34,7 @@ class FullscreenDialog extends React.PureComponent {
                 window.removeEventListener('resize', scrollToTarget, false);
             }, 2000);
         }
-    }
+    };
 
     render() {
         const { title, visible, children } = this.props;
@@ -68,7 +68,7 @@ class FullscreenDialog extends React.PureComponent {
 }
 
 FullscreenDialog.propTypes = {
-    children: PropTypes.array,
+    children: PropTypes.any,
     onClose : PropTypes.func,
     title   : PropTypes.string,
     visible : PropTypes.bool,

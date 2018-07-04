@@ -22,12 +22,13 @@ export const requestProposal = (store, updateStore) => {
                 has_error: !!response.error,
             };
 
-            const chart_barriers = !store.chart_barriers.main &&
-                { chart_barriers: createChartBarriersConfig(store, response) };
+            store.chart_barriers.main = createChartBarriersConfig(store, response);
+            // const chart_barriers = !store.chart_barriers.main &&
+            //     { chart_barriers: set(store.chart_barriers, 'main', createChartBarriersConfig(store, response)) };
 
             updateStore(store, {
                 proposal_info,
-                ...(chart_barriers),
+                // ...(chart_barriers),
                 is_purchase_enabled: true,
             });
         };

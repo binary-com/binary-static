@@ -7,7 +7,7 @@ import { redirectToLogin } from '../_common/base/login';
 import { localize }        from '../_common/localize';
 
 import Portfolio           from './Modules/Portfolio';
-import TradeApp            from './Modules/trading/trade_app.jsx';
+import TradeApp            from './Modules/Trading';
 import Settings            from './Modules/settings/settings.jsx';
 import Statement           from './Modules/Statement';
 

@@ -1,9 +1,10 @@
-import moment                 from 'moment';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
+import moment                         from 'moment';
 import React,
-    { PureComponent }         from 'react';
-import PropTypes              from 'prop-types';
-import { isSessionAvailable } from '../../Modules/trading/actions/helpers/start_date';
-import { localize }           from '../../../_common/localize';
+    { PureComponent }                 from 'react';
+import PropTypes                      from 'prop-types';
+import { isSessionAvailable }         from '../../Modules/Trading/actions/helpers/start_date';
+import { localize }                   from '../../../_common/localize';
 
 /* TODO:
       1. to update state accordingly during native to desktop switches
@@ -285,7 +286,7 @@ TimePicker.propTypes = {
     placeholder    : PropTypes.string,
     value          : PropTypes.string,
     start_date     : PropTypes.number,
-    sessions       : PropTypes.array,
+    sessions       : MobxPropTypes.arrayOrObservableArray,
 };
 
 TimePickerDropdown.propTypes = {
@@ -296,7 +297,7 @@ TimePickerDropdown.propTypes = {
     value      : PropTypes.string,
     value_split: PropTypes.bool,
     start_date : PropTypes.number,
-    sessions   : PropTypes.array,
+    sessions   : MobxPropTypes.arrayOrObservableArray,
 };
 
 export default TimePicker;

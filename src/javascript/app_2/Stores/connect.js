@@ -81,9 +81,9 @@ export const connect = mapStoresToProps => (WrappedComponent) => {
     // wrap the mapping function usually passed to mobx-react's inject method
     // so that it additionally unboxes any observables
     const unboxedMapStoresToProps = (stores, props, context) => {
-        const injectedProps = mapStoresToProps(stores, props, context);
-        Object.assign(injectedProps, props);
-        return unboxProps(injectedProps);
+        return mapStoresToProps(stores, props, context);
+        // Object.assign(injectedProps, props);
+        // return unboxProps(injectedProps);
     };
 
     // apply the mobx store injection with our wrapped function

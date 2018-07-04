@@ -1,16 +1,16 @@
-import React        from 'react';
+import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
-import Fieldset     from '../../../components/form/fieldset.jsx';
-import InputField   from '../../../components/form/input_field.jsx';
-import { connect }  from '../../../Stores/connect';
-import { localize } from '../../../../_common/localize';
+import React        from 'react';
+import Fieldset     from '../../../../../components/form/fieldset.jsx';
+import InputField   from '../../../../../components/form/input_field.jsx';
+import { localize } from '../../../../../../_common/localize';
 
 const Barrier = ({
-    barrier_count,
     barrier_1,
     barrier_2,
-    onChange,
+    barrier_count,
     is_minimized,
+    onChange,
 }) =>  {
     if (is_minimized) {
         if (barrier_count !== 2) {
@@ -60,18 +60,11 @@ const Barrier = ({
 };
 
 Barrier.propTypes = {
-    barrier_count: PropTypes.number,
     barrier_1    : PropTypes.string,
     barrier_2    : PropTypes.string,
+    barrier_count: PropTypes.number,
     is_minimized : PropTypes.bool,
     onChange     : PropTypes.func,
 };
 
-export default connect(
-    ({ modules }) => ({
-        barrier_count: modules.trade.barrier_count,
-        barrier_1    : modules.trade.barrier_1,
-        barrier_2    : modules.trade.barrier_2,
-        onChange     : modules.trade.handleChange,
-    })
-)(Barrier);
+export default observer(Barrier);

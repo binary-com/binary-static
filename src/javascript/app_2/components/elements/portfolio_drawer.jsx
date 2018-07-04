@@ -1,7 +1,8 @@
-import moment       from 'moment';
-import React        from 'react';
-import PropTypes    from 'prop-types';
-import { localize } from '../../../_common/localize';
+import React                          from 'react';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
+import moment                         from 'moment';
+import PropTypes                      from 'prop-types';
+import { localize }                   from '../../../_common/localize';
 
 class PortfolioDrawer extends React.PureComponent {
     state = { is_open: true, width: window.innerWidth };
@@ -16,7 +17,7 @@ class PortfolioDrawer extends React.PureComponent {
 
     handleVisibility = () => {
         this.setState({ is_open: !this.state.is_open });
-    }
+    };
 
     handleWindowSizeChange = () => {
         this.setState({ width: window.innerWidth });
@@ -90,7 +91,7 @@ PortfolioDrawer.propTypes = {
     alignment  : PropTypes.string,
     children   : PropTypes.object,
     onClick    : PropTypes.func,
-    portfolios : PropTypes.array,
+    portfolios : MobxPropTypes.arrayOrObservableArray,
     server_time: PropTypes.object,
     subtitle   : PropTypes.number,
 };
