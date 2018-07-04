@@ -5,9 +5,18 @@ export default class UIStore {
     @observable is_main_drawer_on = false;
     @observable is_notifications_drawer_on = false;
     @observable is_settings_dialog_on = false;
+    @observable is_language_dialog_on = false;
 
     @action.bound toggleSettingsDialog() {
         this.is_settings_dialog_on = !this.is_settings_dialog_on;
+    }
+
+    @action.bound showLanguageDialog() {
+        this.is_language_dialog_on = true;
+    }
+
+    @action.bound hideLanguageDialog() {
+        this.is_language_dialog_on = false;
     }
 
     @action.bound togglePortfolioDrawer() { // show and hide Portfolio Drawer
