@@ -14,6 +14,7 @@ import SmartCharts     from '../../components/charts/smartcharts.jsx';
 import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
 import UILoader        from '../../components/elements/ui_loader.jsx';
 import { connect }     from '../../Stores/connect';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 
 const form_components = [
     { name: 'start_date', Component: StartDate },
@@ -23,7 +24,7 @@ const form_components = [
     { name: 'amount',     Component: Amount },
 ];
 
-class TradeApp extends React.PureComponent {
+class TradeApp extends React.Component {
     isVisible(component_name) {
         return this.props.form_components.includes(component_name);
     }
@@ -79,11 +80,11 @@ class TradeApp extends React.PureComponent {
 }
 
 TradeApp.propTypes = {
-    form_components       : PropTypes.array,
+    form_components       : MobxPropTypes.arrayOrObservableArray,
     is_portfolio_drawer_on: PropTypes.bool,
     is_purchase_enabled   : PropTypes.bool,
     is_trade_enabled      : PropTypes.bool,
-    portfolios            : PropTypes.array,
+    portfolios            : MobxPropTypes.arrayOrObservableArray,
     server_time           : PropTypes.object,
     togglePortfolioDrawer : PropTypes.func,
 };

@@ -5,7 +5,7 @@ import PropTypes    from 'prop-types';
 import ArrowHead    from '../elements/arrowhead.jsx';
 import { localize } from '../../../_common/localize';
 
-class Calendar extends React.PureComponent {
+class Calendar extends React.Component {
     constructor(props) {
         super(props);
 
@@ -483,7 +483,7 @@ const getDayDifference = (date) => {
     return (!date || diff < 0) ? '' : diff + 1;
 };
 
-class DatePicker extends React.PureComponent {
+class DatePicker extends React.Component {
     constructor(props) {
         super(props);
 

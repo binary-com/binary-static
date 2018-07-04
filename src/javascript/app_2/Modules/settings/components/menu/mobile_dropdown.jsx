@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import classnames        from 'classnames';
 import MenuItem          from './menu_item.jsx';
 
-class MobileDropdown extends React.PureComponent {
+class MobileDropdown extends React.Component {
     state = {
         is_open: false,
     };

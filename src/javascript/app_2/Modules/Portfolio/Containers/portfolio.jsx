@@ -15,7 +15,7 @@ import Loading                   from '../../../../../templates/_common/componen
 
 const app_id = getAppId();
 
-class Portfolio extends React.PureComponent  {
+class Portfolio extends React.Component  {
     state = {
         currency   : ClientBase.get('currency').toLowerCase(),
         data_source: [],

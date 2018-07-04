@@ -5,6 +5,7 @@ import Fieldset     from '../../../components/form/fieldset.jsx';
 import TimePicker   from '../../../components/form/time_picker.jsx';
 import { connect }  from '../../../Stores/connect';
 import { localize } from '../../../../_common/localize';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 
 /* TODO:
     1. update sessions list when the selected one doesn’t have any enabled time
@@ -67,9 +68,9 @@ StartDate.propTypes = {
     is_nativepicker : PropTypes.bool,
     onChange        : PropTypes.func,
     start_date      : PropTypes.number,
-    start_dates_list: PropTypes.array,
+    start_dates_list: MobxPropTypes.arrayOrObservableArray,
     start_time      : PropTypes.string,
-    sessions        : PropTypes.array,
+    sessions        : MobxPropTypes.arrayOrObservableArray,
 };
 
 export default connect(

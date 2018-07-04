@@ -9,7 +9,7 @@ import Url                 from '../../../_common/url';
 import { AccountBalance }  from '../elements/account_balance.jsx';
 import { MenuDrawer }      from '../elements/menu_drawer.jsx';
 
-class Header extends React.PureComponent {
+class Header extends React.Component {
     render() {
         const { items } = this.props;
 

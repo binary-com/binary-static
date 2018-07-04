@@ -26,7 +26,7 @@ const fullscreen_map = {
 
 
 
-class ToggleFullScreen extends React.PureComponent {
+class ToggleFullScreen extends React.Component {
     constructor(props) {
         super(props);
         this.toggleFullScreen = this.toggleFullScreen.bind(this);
@@ -90,9 +90,9 @@ const Settings = () => (
 
 // Better to keep this class as a Component.
 // Because new 'server_time' props will be passed every second,
-// so it will force to render the PureComponent anyway.
-// PureComponent uses shallow-copy before it renders,
-// therefore this with PureComponent gives you slower performance than Component
+// so it will force to render the Component anyway.
+// Component uses shallow-copy before it renders,
+// therefore this with Component gives you slower performance than Component
 class Footer extends React.Component {
     render() {
         return (

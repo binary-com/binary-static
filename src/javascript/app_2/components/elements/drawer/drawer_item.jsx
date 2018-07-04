@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes                from 'prop-types';
 import { connect }              from '../../../Stores/connect';
 import { BinaryLink }           from '../../../routes';
 
-class DrawerItem extends PureComponent {
+class DrawerItem extends Component {
     drawerItemClicked = () => {
         this.props.hideDrawers();
         if (this.props.collapseItems) {

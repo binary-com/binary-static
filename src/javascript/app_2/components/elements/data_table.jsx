@@ -1,13 +1,14 @@
 import React      from 'react';
 import classnames from 'classnames';
 import PropTypes  from 'prop-types';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 
 /* TODO:
       1. implement sorting by column (ASC/DESC)
       2. implement filtering per column
 */
 
-class DataTable extends React.PureComponent {
+class DataTable extends React.Component {
     renderRow(transaction, id) {
         if (!transaction) return null;
         const defaultRenderCell = (data, data_index) => <td className={data_index} key={data_index}>{data}</td>;
@@ -85,7 +86,7 @@ class DataTable extends React.PureComponent {
 
 DataTable.propTypes = {
     columns         : PropTypes.array,
-    data_source     : PropTypes.array,
+    data_source     : MobxPropTypes.arrayOrObservableArray,
     footer          : PropTypes.object,
     has_fixed_header: PropTypes.bool,
     is_full_width   : PropTypes.bool,

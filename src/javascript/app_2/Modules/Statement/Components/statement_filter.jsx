@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import moment     from 'moment';
 import PropTypes  from 'prop-types';
 import React      from 'react';
+import {observer, inject} from 'mobx-react';
 import DatePicker from '../../../components/form/date_picker.jsx';
 import {localize} from '../../../../_common/localize';
 import {connect}  from '../../../Stores/connect';

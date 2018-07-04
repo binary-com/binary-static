@@ -8,6 +8,7 @@ import InputField   from '../../../components/form/input_field.jsx';
 import TimePicker   from '../../../components/form/time_picker.jsx';
 import { connect }  from '../../../Stores/connect';
 import { localize } from '../../../../_common/localize';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 
 /* TODO:
       1. Change expiry date to drop-down if start date is forward starting
@@ -159,7 +160,7 @@ Duration.propTypes = {
         PropTypes.string,
     ]),
     duration_unit      : PropTypes.string,
-    duration_units_list: PropTypes.array,
+    duration_units_list: MobxPropTypes.arrayOrObservableArray,
     expiry_date        : PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
@@ -172,7 +173,7 @@ Duration.propTypes = {
     server_time    : PropTypes.object,
     start_date     : PropTypes.number,
     start_time     : PropTypes.string,
-    sessions       : PropTypes.array,
+    sessions       : MobxPropTypes.arrayOrObservableArray,
 };
 
 export default connect(

@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import classNames               from 'classnames';
 import PropTypes                from 'prop-types';
 import { Drawer }               from './drawer.jsx';
 import Url                      from '../../../../_common/url';
 import { connect }              from '../../../Stores/connect';
 
-class ToggleDrawer extends PureComponent {
+class ToggleDrawer extends Component {
     showDrawer = () => {
         const { alignment } = this.props;
         if (alignment === 'left') {

@@ -3,6 +3,7 @@ import DataTable         from '../../../components/elements/data_table.jsx';
 import { connect }       from '../../../Stores/connect';
 import { localize }      from '../../../../_common/localize';
 import AmountCell        from '../Components/amount_cell.jsx';
+import { toJS }          from 'mobx';
 
 
 const CardListDesktop = ({
@@ -20,6 +21,7 @@ const CardListDesktop = ({
 export default connect(
     ({ modules }) => ({
         data            : modules.statement.data,
+
         columns         : [
             { title: localize('Daaaate'),          data_index: 'date' },
             { title: localize('Ref.'),             data_index: 'refid' },

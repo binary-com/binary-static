@@ -2,7 +2,7 @@ import React       from 'react';
 import PropTypes   from 'prop-types';
 import { connect } from '../../../Stores/connect';
 
-class Test extends React.PureComponent {
+class Test extends React.Component {
     state         = { is_visible: false };
     setVisibility = this.stateVisibility.bind(this);
     styles        = {

@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import classNames               from 'classnames';
 import PropTypes                from 'prop-types';
 import { DrawerItem }           from './drawer_item.jsx';
 
-class DrawerItems extends PureComponent {
+class DrawerItems extends Component {
     state = { is_collapsed: false };
 
     collapseItems = () => {

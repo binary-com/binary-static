@@ -1,18 +1,29 @@
-import React             from 'react';
-import PropTypes         from 'prop-types';
-import Filter            from './statement_filter.jsx';
-import NoActivityMessage from './no_activity_message.jsx';
-import CardListMobile    from './card_list_mobile.jsx';
-import CardListDesktop   from './card_list_desktop.jsx';
-import Loading           from '../../../../../templates/_common/components/loading.jsx';
-import { connect }       from '../../../Stores/connect';
+import React              from 'react';
+import {observer, inject} from 'mobx-react';
+import PropTypes          from 'prop-types';
+import Filter             from './statement_filter.jsx';
+import NoActivityMessage  from './no_activity_message.jsx';
+import CardListMobile     from './card_list_mobile.jsx';
+import CardListDesktop    from './card_list_desktop.jsx';
+import Loading            from '../../../../../templates/_common/components/loading.jsx';
+import moment     from 'moment';
+import { connect }        from '../../../Stores/connect';
 
-export class Statement extends React.PureComponent {
+@inject(
+    ({ modules, common }) => ({
+        onMount             : modules.statement.onMount,
+        onUnmount           : modules.statement.onUnmount,
+        is_loading          : modules.statement.is_loading,
+        no_activity_message : modules.statement.no_activity_message,
+    })
+)
+@observer
+export default class Statement extends React.Component {
     componentDidMount() { this.props.onMount(); }
     componentWillUnmount() { this.props.onUnmount(); }
 
     render() {
-        const { no_activity_message, is_loading } = this.props;
+        const { no_activity_message, is_loading, statement, today } = this.props;
 
         return (
             <div className='statement'>
@@ -38,12 +49,3 @@ export class Statement extends React.PureComponent {
         );
     }
 }
-
-export default connect(
-    ({ modules }) => ({
-        onMount             : modules.statement.onMount,
-        onUnmount           : modules.statement.onUnmount,
-        is_loading          : modules.statement.is_loading,
-        no_activity_message : modules.statement.no_activity_message,
-    })
-)(Statement);

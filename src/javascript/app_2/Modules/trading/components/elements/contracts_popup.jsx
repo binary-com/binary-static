@@ -2,7 +2,7 @@ import React            from 'react';
 import PropTypes        from 'prop-types';
 import FullscreenDialog from './fullscreen_dialog.jsx';
 
-class ContractsPopUp extends React.PureComponent {
+class ContractsPopUp extends React.Component {
     constructor(props) {
         super(props);
         this.handleVisibility   = this.handleVisibility.bind(this);

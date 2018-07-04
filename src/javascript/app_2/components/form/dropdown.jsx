@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {isArrayLike} from 'mobx';
 
-class Dropdown extends React.PureComponent {
+class Dropdown extends React.Component {
     constructor(props) {
         super(props);
         this.handleVisibility   = this.handleVisibility.bind(this);
@@ -13,14 +14,10 @@ class Dropdown extends React.PureComponent {
         };
     }
 
-    isOneLevel() {
-        return Array.isArray(this.props.list);
-    }
-
     getDisplayText(list, value) {
         const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
         let text = '';
-        if (this.isOneLevel(list)) {
+        if (isArrayLike(list)) {
             text = findInArray(list);
         } else {
             Object.keys(list).some(key => {
@@ -96,7 +93,7 @@ class Dropdown extends React.PureComponent {
                 <span className='select-arrow' />
                 <div className='dropdown-list'>
                     <div className='list-container'>
-                        { this.isOneLevel(this.props.list) ?
+                        { isArrayLike(this.props.list) ?
                             <Items
                                 items={this.props.list}
                                 name={this.props.name}

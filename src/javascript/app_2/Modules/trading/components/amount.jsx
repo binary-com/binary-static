@@ -8,6 +8,7 @@ import { connect }  from '../../../Stores/connect';
 import Client       from '../../../../_common/base/client_base';
 import { addComma } from '../../../../_common/base/currency_base';
 import { localize } from '../../../../_common/localize';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 
 const Amount = ({
     basis_list,
@@ -71,7 +72,7 @@ const Amount = ({
 };
 
 Amount.propTypes = {
-    basis_list     : PropTypes.array,
+    basis_list     : MobxPropTypes.arrayOrObservableArray,
     amount         : PropTypes.number,
     basis          : PropTypes.string,
     currencies_list: PropTypes.object,

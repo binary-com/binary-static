@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FullscreenDialog from './fullscreen_dialog.jsx';
 
-class MobileWidget extends React.PureComponent {
+class MobileWidget extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

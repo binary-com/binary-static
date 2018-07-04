@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Url from '../../../../../_common/url';
 
-class FullscreenDialog extends React.PureComponent {
+class FullscreenDialog extends React.Component {
     componentDidUpdate() {
         if (this.props.visible) {
             document.body.classList.add('no-scroll');
