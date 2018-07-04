@@ -49,12 +49,12 @@ table {
     $md: 600px;
 
     th {
-        @include BIDIR_VALUE(text-align, left !important, right !important);
-        border-bottom: none !important;
+        @include BIDIR_VALUE(text-align, left, right);
+        border-bottom: none;
         overflow: hidden;
     }
     td {
-        @include BIDIR_VALUE(text-align, left !important, right !important);
+        @include BIDIR_VALUE(text-align, left, right);
         @include BIDIR_PROP(padding-left, padding-right, 10px);
 
         &[data-balloon] {
