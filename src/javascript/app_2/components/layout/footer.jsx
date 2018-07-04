@@ -92,8 +92,6 @@ const Settings = ({...props}) => (
         <SettingsDialog
             is_open={props.is_settings_dialog_on}
             toggleDialog={props.toggleSettingsDialog}
-            language_is_open={props.is_language_dialog_on}
-            hideLanguages={props.hideLanguageDialog}
         />
     </React.Fragment>
 );
@@ -143,17 +141,13 @@ TogglePortfolioDrawer.propTypes = {
 Settings.propTypes = {
     toggleSettingsDialog : PropTypes.func,
     is_settings_dialog_on: PropTypes.bool,
-    is_language_dialog_on: PropTypes.bool,
-    hideLanguageDialog   : PropTypes.func,
 };
 
 export default connect(
     ({ common, ui }) => ({
         server_time           : common.server_time,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
-        is_language_dialog_on : ui.is_language_dialog_on,
         is_settings_dialog_on : ui.is_settings_dialog_on,
-        hideLanguageDialog    : ui.hideLanguageDialog,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
         toggleSettingsDialog  : ui.toggleSettingsDialog,
     })

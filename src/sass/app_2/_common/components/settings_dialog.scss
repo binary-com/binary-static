@@ -7,7 +7,7 @@
     background: $COLOR_WHITE;
     height: 280px;
     border-radius: $BORDER_RADIUS;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14);
     pointer-events: none;
     transition: all 0.3s ease 0.15s;
     transform: none;
@@ -80,9 +80,11 @@
         right: 0;
         bottom: 0;
         background: $COLOR_LIGHT_GRAY;
+        border-radius: $BORDER_RADIUS;
+        display: none;
 
         &.show {
-            display: none;
+            display: unset;
         }
         .language-header {
             font-size: 12px;

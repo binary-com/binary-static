@@ -2,77 +2,46 @@ import classNames   from 'classnames';
 import React        from 'react';
 import PropTypes    from 'prop-types';
 import { localize } from '../../../../_common/localize';
+import { connect }  from '../../../store/connect';
 
-// TO-DO - Simplify this into object / Get enabled languages object from config
-const LanguageDialog = ({ hide, is_open }) => {
-    const language_dialog_class = classNames('language-dialog-container', {
-        'show': is_open,
-    });
-    return (
-        <div className={language_dialog_class}>
-            <a className='language-header' href='javascript:;' onClick={hide}><span>{localize('Language')}</span></a>
-            <div className='language-container'>
-                <div className='language-row'>
-                    <i className='ic-flag-en' />
-                    <span>English</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-pt' />
-                    <span>Português</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-de' />
-                    <span>Deutsch</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-ru' />
-                    <span>Русский</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-fr' />
-                    <span>Français</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-th' />
-                    <span>Thai</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-id' />
-                    <span>Indonesia</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-vi' />
-                    <span>Tiếng Việt</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-it' />
-                    <span>Italiano</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-zh' />
-                    <span>简体中文</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-es' />
-                    <span>Espana</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-tw' />
-                    <span>繁體中文</span>
-                </div>
-                <div className='language-row'>
-                    <i className='ic-flag-pl' />
-                    <span>Polish</span>
+class LanguageDialog extends React.PureComponent {
+    render() {
+        const language_dialog_class = classNames('language-dialog-container', {
+            'show': this.props.is_visible,
+        });
+        return (
+            <div className={language_dialog_class}>
+                <a className='language-header' href='javascript:;' onClick={this.props.hide}>
+                    <span>{localize('language')}</span>
+                </a>
+                <div className='language-container'>
+                    {this.props.list.languages.map((language, idx) => (
+                        <React.Fragment key={idx}>
+                            <div className='language-row'>
+                                <i className={`ic-flag-${language.id.toLowerCase()}`} />
+                                <span>{language.name}</span>
+                            </div>
+                        </React.Fragment>
+                    ))}
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 };
 
 LanguageDialog.propTypes = {
-    onClick: PropTypes.func,
-    is_open: PropTypes.bool,
-    hide   : PropTypes.func,
+    is_visible: PropTypes.bool,
+    hide      : PropTypes.func,
+    list      : PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
 };
 
-export default LanguageDialog;
+export default connect(
+    ({ ui }) => ({
+        list      : ui.supported_languages,
+        is_visible: ui.is_language_dialog_on,
+        hide      : ui.hideLanguageDialog,
+    })
+)(LanguageDialog);

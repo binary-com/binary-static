@@ -7,6 +7,24 @@ export default class UIStore {
     @observable is_settings_dialog_on = false;
     @observable is_language_dialog_on = false;
 
+    @observable supported_languages = {
+        languages: [
+            { id: 'EN',    name: 'English'    },
+            { id: 'PT',    name: 'Português'  },
+            { id: 'DE',    name: 'Deutsch'    },
+            { id: 'RU',    name: 'Русский'    },
+            { id: 'FR',    name: 'Français'   },
+            { id: 'TH',    name: 'Thai'       },
+            { id: 'ID',    name: 'Indonesia'  },
+            { id: 'VI',    name: 'Tiếng Việt' },
+            { id: 'IT',    name: 'Italiano'   },
+            { id: 'ZH_CN', name: '简体中文'    },
+            { id: 'ES',    name: 'Espana'     },
+            { id: 'ZH_TW', name: '繁體中文'    },
+            { id: 'PL',    name: 'Polish'     },
+        ],
+    };
+
     @action.bound toggleSettingsDialog() {
         this.is_settings_dialog_on = !this.is_settings_dialog_on;
     }
