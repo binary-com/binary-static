@@ -127,7 +127,7 @@ const PaymentMethods = () => {
                                 { text: '10 - 10,000' },
                                 { text: '10 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks /> },
+                                { text: <ReferenceLinks pdf_file={'Binary.com_HowToDepositAndWithdrawViaCredit&Debit.pdf'} video_link={'https://youtu.be/n_qQbML_qAI'} /> },
                             ],
                             [
                                 { text: <PaymentLogo logo='mastercard' /> },
@@ -135,7 +135,7 @@ const PaymentMethods = () => {
                                 { text: '10 - 10,000' },
                                 { text: '10 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks /> },
+                                { text: <ReferenceLinks pdf_file={'Binary.com_HowToDepositAndWithdrawViaCredit&Debit.pdf'} video_link={'https://youtu.be/n_qQbML_qAI'} /> },
                             ],
                         ],
                     }}
@@ -197,7 +197,7 @@ const PaymentMethods = () => {
                                 { text: <TableValues value={['5 - 200 (USD)', '5 - 150 (EUR)']} /> },
                                 { text: <TableValues value={['5 - 200 (USD)', '5 - 150 (EUR)']} /> },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks /> },
+                                { text: <ReferenceLinks pdf_file={'Binary.com_HowToDepositAndWithdrawViaQiwi'} video_link={'https://youtu.be/CMAF29cn9XQ'} /> },
                             ],
                             [
                                 { text: <PaymentLogo logo='yandex' /> },
@@ -213,7 +213,7 @@ const PaymentMethods = () => {
                                 { text: '5 - 1,000' },
                                 { text: '5 - 750' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks /> },
+                                { text: <ReferenceLinks video_link={'https://youtu.be/IqY0220n0Ho'} /> },
                             ],
                         ],
                     }}
