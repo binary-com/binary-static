@@ -31,6 +31,7 @@ const ReferenceLink = ({ href, className = '', title = '' }) => (
         target='_blank'
         aria-disabled={!href}
         title={title}
+        rel='noopener noreferrer'
     />
 );
 
