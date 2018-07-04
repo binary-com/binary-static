@@ -257,11 +257,11 @@ const Process = (() => {
     const hasCallPutEqual = (contracts = getPropertyValue(Contract.contracts(), ['contracts_for', 'available']) || []) =>
         contracts.find(contract => contract.contract_category === 'callputequal');
 
-    const displayEquals = () => {
+    const displayEquals = (expiry_type = 'duration') => {
         const formname  = Defaults.get('formname');
         const el_equals = document.getElementById('callputequal');
         const durations = getPropertyValue(Contract.durations(), [commonTrading.durationType(Defaults.get('duration_units'))]) || [];
-        if (/^(callputequal|risefall)$/.test(formname) && 'callputequal' in durations && hasCallPutEqual()) {
+        if (/^(callputequal|risefall)$/.test(formname) && (('callputequal' in durations || expiry_type === 'endtime') && hasCallPutEqual())) {
             if (+Defaults.get('is_equal')) {
                 el_equals.checked = true;
             }
@@ -324,6 +324,7 @@ const Process = (() => {
             Defaults.remove('expiry_date', 'expiry_time', 'end_date');
             Durations.validateMinDurationAmount();
         }
+        displayEquals(validated_value);
 
         return make_price_request;
     };
@@ -344,6 +345,7 @@ const Process = (() => {
     };
 
     return {
+        displayEquals,
         processActiveSymbols,
         processMarket,
         processContract,
