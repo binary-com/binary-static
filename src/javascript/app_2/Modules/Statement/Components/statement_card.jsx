@@ -46,15 +46,4 @@ const StatementCard = ({
     </div>
 );
 
-StatementCard.propTypes = {
-    action   : PropTypes.string,
-    amount   : PropTypes.string,
-    balance  : PropTypes.string,
-    className: PropTypes.string,
-    date     : PropTypes.string,
-    desc     : PropTypes.string,
-    payout   : PropTypes.string,
-    refid    : PropTypes.string,
-};
-
 export default StatementCard;

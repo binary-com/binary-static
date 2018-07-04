@@ -1,8 +1,11 @@
 import React      from 'react';
 import PropTypes  from 'prop-types';
 import {localize} from '../../../../_common/localize';
+import { connect }       from '../../../Stores/connect';
 
-const NoActivityMessage = ({ has_selected_date }) => (
+const NoActivityMessage = ({
+    has_selected_date,
+}) => (
     <div className='container'>
         <div className='statement__no-activity-msg'>
             {!has_selected_date
@@ -13,8 +16,8 @@ const NoActivityMessage = ({ has_selected_date }) => (
     </div>
 );
 
-NoActivityMessage.propTypes = {
-    has_selected_date: PropTypes.bool,
-};
-
-export default NoActivityMessage;
+export default connect(
+    ({modules}) => ({
+        has_selected_date: modules.statement.has_selected_date,
+    })
+)(NoActivityMessage);

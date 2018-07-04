@@ -3,9 +3,11 @@ import {
     isObservable,
     isObservableArray,
     isObservableMap,
-    toJS }                  from 'mobx';
+    toJS,
+    action }                from 'mobx';
 import { inject, Provider } from 'mobx-react';
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const SPECIAL_REACT_KEYS = { children: true, key: true, ref: true };
 
@@ -98,4 +100,69 @@ export const connect = mapStoresToProps => (WrappedComponent) => {
     UnboxedComponent.displayName = `unbox-${wrappedDisplayName}`;
 
     return InjectedComponent;
+};
+
+export const connect_v2 = (Store, mapStoresToProps, handleProps) => {
+    class UnboxedComponent extends Component {
+        static contextTypes = { mobxStores: PropTypes.object };
+        static childContextTypes = { mobxStores: PropTypes.object };
+        getChildContext() { return { mobxStores: this.store }; }
+
+        handlePropsAction = action(handleProps || (() => {}));
+
+        componentWillReceiveProps(nextProps) {
+            this.handlePropsAction(this.store, nextProps);
+        }
+        componentWillMount() {
+            this.store = new Store(this.context.mobxStores);
+            this.injectedComponent = inject(unboxedMapStoresToProps)(UnboxedComponent.WrappedComponent);
+            this.injectedComponent.displayName = `inject-${UnboxedComponent.displayName}`;
+        }
+        componentDidMount() {
+            if (handleProps) { this.handlePropsAction(this.store, this.props); }
+        }
+
+        componentWillUnmount() {
+            if (this.store && this.store.destructor) {
+                this.store.destructor();
+            }
+        }
+
+        shouldComponentUpdate(nextProps) { return this.props.children != nextProps.children; }
+
+        render() {
+            return React.createElement(this.injectedComponent, { className: this.props.className }, this.props.children);
+        }
+    }
+
+    // wrap the mapping function usually passed to mobx-react's inject method
+    // so that it additionally unboxes any observables
+    const unboxedMapStoresToProps = (stores, props, context) => {
+        const injectedProps = mapStoresToProps(stores, props, context);
+        Object.assign(injectedProps, props);
+        return unboxProps(injectedProps);
+    };
+
+    // apply the mobx store injection with our wrapped function
+    // const InjectedComponent = inject(unboxedMapStoresToProps)(UnboxedComponent);
+    return (WrappedComponent) => {
+        UnboxedComponent.WrappedComponent = WrappedComponent;
+        // make some nice names that will show up in the React Devtools
+        const wrappedDisplayName = WrappedComponent.displayName
+            || WrappedComponent.name
+            || (WrappedComponent.constructor && WrappedComponent.constructor.name)
+            || 'Unknown';
+        // InjectedComponent.displayName = `inject-${wrappedDisplayName}`;
+        UnboxedComponent.displayName = `unbox-${wrappedDisplayName}`;
+
+        // let sub components like Menu.Body or List.Item work.
+        Object.keys(WrappedComponent).forEach((key) => {
+            const SubComponent = WrappedComponent[key];
+            if (!/^childContextTypes$/.test(key) && typeof SubComponent === 'function') {
+                UnboxedComponent[key] = SubComponent;
+            }
+        });
+
+        return UnboxedComponent;
+    };
 };

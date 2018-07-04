@@ -1,4 +1,4 @@
-import { observable, action }     from 'mobx';
+import { observable, action, computed }     from 'mobx';
 import moment                     from 'moment';
 import { WS }                     from '../../Services/index';
 import { formatMoney }            from '../../../_common/base/currency_base';
@@ -14,6 +14,7 @@ export default class StatementStore {
     @observable has_loaded_all  = false;
     @observable date_from       = '';
     @observable date_to         = '';
+
 
     @action.bound
     clearTable() {
@@ -54,6 +55,36 @@ export default class StatementStore {
             this.clearTable();
             this.fetchNextBatch();
         }
+    }
+
+    @action.bound
+    handleScroll() {
+        const {scrollTop, scrollHeight, clientHeight} = document.scrollingElement;
+        const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
+
+        if (left_to_scroll < 2000) {
+            this.fetchNextBatch();
+        }
+    };
+
+    @action.bound
+    onMount() {
+        this.fetchNextBatch();
+        window.addEventListener('scroll', this.handleScroll, false);
+    }
+
+    @action.bound
+    onUnmount() {
+        window.removeEventListener('scroll', this.handleScroll, false);
+        this.clearTable();
+    }
+
+
+    @computed get no_activity_message() {
+        return !this.is_loading && this.data.length === 0;
+    }
+    @computed get has_selected_date() {
+        return !!(this.date_from || this.date_to);
     }
 }
 

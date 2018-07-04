@@ -1,1 +1,1 @@
-export default from './Containers/statement.jsx';
+export default from './Components/statement.jsx';

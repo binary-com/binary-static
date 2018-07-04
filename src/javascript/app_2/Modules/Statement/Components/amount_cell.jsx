@@ -1,10 +1,14 @@
 import React from 'react';
+import classnames from 'classnames';
+import { connect }       from '../../../Stores/connect';
 
-const AmountCell = (data, data_index) => {
-    const class_name = `${data_index} ${+data.replace(/,/g, '') >= 0 ? 'profit' : 'loss'}`;
-
+const AmountCell = (
+    data,
+    data_index,
+) => {
+    const className = +data.replace(/,/g, '') >= 0 ? 'profit' : 'loss';
     return (
-        <td key={data_index} className={class_name}>
+        <td key={data_index} className={classnames(`${data_index}`, className)}>
             {data}
         </td>
     );
