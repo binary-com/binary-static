@@ -1,5 +1,31 @@
 // styling for static pages that are too short or simple to need their own styling page
 
+.payment-methods__reference {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+    vertical-align: middle;
+
+    &:not(:last-child) {
+        margin-right: 5px;
+    }
+    &-pdf {
+        background-image: url('../images/common/reference/pdf.svg');
+
+        &.payment-methods__reference--disabled {
+            background-image: url('../images/common/reference/pdf_disabled.svg');
+        }
+    }
+    &-video {
+        background-image: url('../images/common/reference/youtube.svg');
+
+        &.payment-methods__reference--disabled {
+            background-image: url('../images/common/reference/youtube_disabled.svg');
+        }
+    }
+}
+
 .box-row {
     border-bottom: 1px solid $COLOR_GRAY;
 
