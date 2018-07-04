@@ -44,7 +44,7 @@ const ReferenceLinks = ({ pdf_file, video_link }) => (
         <ReferenceLink
             className='payment-methods__reference-video'
             href={video_link}
-            title={video_link ? it.L('Tutorial video') : it.L('Tutorial video is not available for this method')}
+            title={video_link ? it.L('Video tutorial') : it.L('Video tutorial is not available for this method')}
         />
     </React.Fragment>
 );
@@ -197,7 +197,7 @@ const PaymentMethods = () => {
                                 { text: <TableValues value={['5 - 200 (USD)', '5 - 150 (EUR)']} /> },
                                 { text: <TableValues value={['5 - 200 (USD)', '5 - 150 (EUR)']} /> },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks pdf_file='Binary.com_HowToDepositAndWithdrawViaQiwi' video_link='https://youtu.be/CMAF29cn9XQ' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_HowToDepositAndWithdrawViaQiwi.pdf' video_link='https://youtu.be/CMAF29cn9XQ' /> },
                             ],
                             [
                                 { text: <PaymentLogo logo='yandex' /> },
