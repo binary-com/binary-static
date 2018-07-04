@@ -438,6 +438,20 @@ body #not_authenticated_financial ul.checked > li {
                 &.remove {
                     background: url('../images/pages/authenticate/remove.svg') no-repeat;
                 }
+                &.checked {
+                    width: 16px;
+                    height: 12px;
+                }
+            }
+            &.selected {
+                background-color: $COLOR_WHITE;
+            }
+            &.error {
+                color: $COLOR_RED;
+
+                &:before {
+                    content: '*';
+                }
             }
         }
         > input[type=file] {
@@ -446,6 +460,27 @@ body #not_authenticated_financial ul.checked > li {
     }
     .center-text .button .barspinner {
         margin: 0 auto;
+    }
+    .submit-status table {
+        th:not(:last-child) {
+            width: 25%;
+        }
+        .status {
+            &.error-msg {
+                font-size: inherit;
+                font-style: normal;
+            }
+        }
+    }
+    .checked {
+        background: url('../images/pages/authenticate/checked.svg') no-repeat;
+        width: 16px;
+        height: 12px;
+        display: inline-block;
+        margin-left: 5px;
+    }
+    #resolve_error {
+        color: $COLOR_RED;
     }
 }
 
