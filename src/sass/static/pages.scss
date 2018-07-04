@@ -734,3 +734,7 @@ body #not_authenticated_financial ul.checked > li {
         margin: 5px 0;
     }
 }
+
+#contract-specification table td {
+    white-space: nowrap;
+}
