@@ -30,7 +30,7 @@ const PaymentMethods = () => {
         { className: 'gr-padding-10', text: it.L('Currencies') },
         { className: 'gr-padding-10', text: it.L('Min-Max Deposit') },
         { className: 'gr-padding-10', text: it.L('Min-Max Withdrawal') },
-        { className: 'gr-padding-10', text: it.L('Processing Time') },
+        { className: 'gr-padding-10', text: it.L('Processing Time') + '*' },
     ];
 
     const deposit                  = 'Deposit: ';
@@ -190,7 +190,7 @@ const PaymentMethods = () => {
                                     { className: 'gr-padding-10', text: it.L('Currencies') },
                                     { className: 'gr-padding-10', text: it.L('Min Deposit') },
                                     { className: 'gr-padding-10', text: it.L('Min Withdrawal') },
-                                    { className: 'gr-padding-10', text: it.L('Processing Time') },
+                                    { className: 'gr-padding-10', text: it.L('Processing Time') + '*' },
                                 ],
                             ],
                             tbody: [
