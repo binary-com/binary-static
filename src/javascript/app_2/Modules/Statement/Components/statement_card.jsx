@@ -3,14 +3,14 @@ import PropTypes  from 'prop-types';
 import classnames from 'classnames';
 
 const StatementCard = ({
-    date,
-    refid,
-    desc,
     action,
     amount,
-    payout,
     balance,
     className,
+    date,
+    desc,
+    payout,
+    refid,
 }) => (
     <div className={classnames('statement-card', className)}>
         <div className='statement-card__header'>
@@ -45,5 +45,16 @@ const StatementCard = ({
         </div>
     </div>
 );
+
+StatementCard.propTypes = {
+    action   : PropTypes.string,
+    amount   : PropTypes.string,
+    balance  : PropTypes.string,
+    className: PropTypes.string,
+    date     : PropTypes.string,
+    desc     : PropTypes.string,
+    payout   : PropTypes.string,
+    refid    : PropTypes.string,
+};
 
 export default StatementCard;

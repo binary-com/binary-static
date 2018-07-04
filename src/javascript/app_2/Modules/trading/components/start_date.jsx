@@ -1,11 +1,11 @@
-import React        from 'react';
-import PropTypes    from 'prop-types';
-import Dropdown     from '../../../components/form/dropdown.jsx';
-import Fieldset     from '../../../components/form/fieldset.jsx';
-import TimePicker   from '../../../components/form/time_picker.jsx';
-import { connect }  from '../../../Stores/connect';
-import { localize } from '../../../../_common/localize';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
+import Dropdown                       from '../../../components/form/dropdown.jsx';
+import Fieldset                       from '../../../components/form/fieldset.jsx';
+import TimePicker                     from '../../../components/form/time_picker.jsx';
+import { connect }                    from '../../../Stores/connect';
+import { localize }                   from '../../../../_common/localize';
 
 /* TODO:
     1. update sessions list when the selected one doesn’t have any enabled time

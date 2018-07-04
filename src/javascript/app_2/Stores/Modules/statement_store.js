@@ -15,7 +15,6 @@ export default class StatementStore {
     @observable date_from       = '';
     @observable date_to         = '';
 
-
     @action.bound
     clearTable() {
         this.data            = [];
@@ -80,10 +79,13 @@ export default class StatementStore {
     }
 
 
-    @computed get no_activity_message() {
+    @computed
+    get has_no_activity_message() {
         return !this.is_loading && this.data.length === 0;
     }
-    @computed get has_selected_date() {
+
+    @computed
+    get has_selected_date() {
         return !!(this.date_from || this.date_to);
     }
 }

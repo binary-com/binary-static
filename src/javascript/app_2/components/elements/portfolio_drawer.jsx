@@ -1,8 +1,8 @@
-import moment       from 'moment';
-import React        from 'react';
-import PropTypes    from 'prop-types';
-import { localize } from '../../../_common/localize';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
+import moment                         from 'moment';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
+import { localize }                   from '../../../_common/localize';
 
 class PortfolioDrawer extends React.Component {
     state = { is_open: true, width: window.innerWidth };

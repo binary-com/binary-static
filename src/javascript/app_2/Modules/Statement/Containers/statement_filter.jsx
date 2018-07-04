@@ -1,11 +1,10 @@
-import classnames from 'classnames';
-import moment     from 'moment';
-import PropTypes  from 'prop-types';
-import React      from 'react';
-import {observer, inject} from 'mobx-react';
-import DatePicker from '../../../components/form/date_picker.jsx';
-import {localize} from '../../../../_common/localize';
-import {connect}  from '../../../Stores/connect';
+import classnames   from 'classnames';
+import moment       from 'moment';
+import PropTypes    from 'prop-types';
+import React        from 'react';
+import DatePicker   from '../../../components/form/date_picker.jsx';
+import { connect }  from '../../../Stores/connect';
+import { localize } from '../../../../_common/localize';
 
 const Filter = ({
     date_from,
@@ -13,9 +12,8 @@ const Filter = ({
     handleDateChange,
     is_mobile,
     today,
-    className,
 }) => (
-    <div className={classnames('statement-filter', className)}>
+    <div className={classnames('statement-filter', { 'mobile-only': is_mobile, 'desktop-only': !is_mobile })}>
         <div className='statement-filter__content container'>
             <span className='statement-filter__label'>{localize('Filter by date:')}</span>
             <DatePicker
@@ -43,13 +41,22 @@ const Filter = ({
     </div>
 );
 
+Filter.propTypes = {
+    date_from       : PropTypes.string,
+    date_to         : PropTypes.string,
+    server_time     : PropTypes.object,
+    handleDateChange: PropTypes.func,
+    is_mobile       : PropTypes.bool,
+    today           : PropTypes.string,
+};
+
 export default connect(
     ({ modules, common }, {is_mobile}) => ({
-        is_mobile       : is_mobile,
+        is_mobile,
+        className       : classnames(),
         date_from       : modules.statement.date_from,
         date_to         : modules.statement.date_to,
         handleDateChange: modules.statement.handleDateChange,
         today           : moment(common.server_time).format('YYYY-MM-DD'),
-        className       : classnames({ 'mobile-only' : is_mobile, 'desktop-only': !is_mobile }),
     })
 )(Filter);

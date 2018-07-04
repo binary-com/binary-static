@@ -1,14 +1,14 @@
-import React             from 'react';
-import DataTable         from '../../../components/elements/data_table.jsx';
-import { connect }       from '../../../Stores/connect';
-import { localize }      from '../../../../_common/localize';
-import AmountCell        from '../Components/amount_cell.jsx';
-import { toJS }          from 'mobx';
-
+import { PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
+import AmountCell                     from '../Components/amount_cell.jsx';
+import DataTable                      from '../../../components/elements/data_table.jsx';
+import { connect }                    from '../../../Stores/connect';
+import { localize }                   from '../../../../_common/localize';
 
 const CardListDesktop = ({
     data,
-    columns
+    columns,
 }) => (
     <DataTable
         data_source={data}
@@ -18,12 +18,16 @@ const CardListDesktop = ({
     />
 );
 
+CardListDesktop.propTypes = {
+    data   : MobxPropTypes.arrayOrObservableArray,
+    columns: PropTypes.array,
+};
+
 export default connect(
     ({ modules }) => ({
-        data            : modules.statement.data,
-
-        columns         : [
-            { title: localize('Daaaate'),          data_index: 'date' },
+        data   : modules.statement.data,
+        columns: [
+            { title: localize('Date'),          data_index: 'date' },
             { title: localize('Ref.'),             data_index: 'refid' },
             { title: localize('Description'),      data_index: 'desc' },
             { title: localize('Action'),           data_index: 'action' },
@@ -32,6 +36,6 @@ export default connect(
             // use Children or a render callback instead.
             { title: localize('Credit/Debit'),     data_index: 'amount', renderCell: AmountCell },
             { title: localize('Balance'),          data_index: 'balance' },
-        ]
+        ],
     })
 )(CardListDesktop);

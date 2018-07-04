@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {isArrayLike} from 'mobx';
+import { isArrayLike } from 'mobx';
+import PropTypes       from 'prop-types';
+import React           from 'react';
 
 class Dropdown extends React.Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class Dropdown extends React.Component {
         };
     }
 
-    getDisplayText(list, value) {
+    getDisplayText = (list, value) => {
         const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
         let text = '';
         if (isArrayLike(list)) {
@@ -26,7 +26,7 @@ class Dropdown extends React.Component {
             });
         }
         return text;
-    }
+    };
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);

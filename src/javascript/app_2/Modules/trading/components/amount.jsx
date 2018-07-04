@@ -1,14 +1,14 @@
-import React        from 'react';
-import PropTypes    from 'prop-types';
-import classNames   from 'classnames';
-import Dropdown     from '../../../components/form/dropdown.jsx';
-import Fieldset     from '../../../components/form/fieldset.jsx';
-import InputField   from '../../../components/form/input_field.jsx';
-import { connect }  from '../../../Stores/connect';
-import Client       from '../../../../_common/base/client_base';
-import { addComma } from '../../../../_common/base/currency_base';
-import { localize } from '../../../../_common/localize';
+import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
+import Dropdown                       from '../../../components/form/dropdown.jsx';
+import Fieldset                       from '../../../components/form/fieldset.jsx';
+import InputField                     from '../../../components/form/input_field.jsx';
+import { connect }                    from '../../../Stores/connect';
+import Client                         from '../../../../_common/base/client_base';
+import { addComma }                   from '../../../../_common/base/currency_base';
+import { localize }                   from '../../../../_common/localize';
 
 const Amount = ({
     basis_list,

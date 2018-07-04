@@ -1,14 +1,14 @@
-import moment       from 'moment';
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import Datepicker   from '../../../components/form/date_picker.jsx';
-import Dropdown     from '../../../components/form/dropdown.jsx';
-import Fieldset     from '../../../components/form/fieldset.jsx';
-import InputField   from '../../../components/form/input_field.jsx';
-import TimePicker   from '../../../components/form/time_picker.jsx';
-import { connect }  from '../../../Stores/connect';
-import { localize } from '../../../../_common/localize';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
+import moment                         from 'moment';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
+import Datepicker                     from '../../../components/form/date_picker.jsx';
+import Dropdown                       from '../../../components/form/dropdown.jsx';
+import Fieldset                       from '../../../components/form/fieldset.jsx';
+import InputField                     from '../../../components/form/input_field.jsx';
+import TimePicker                     from '../../../components/form/time_picker.jsx';
+import { connect }                    from '../../../Stores/connect';
+import { localize }                   from '../../../../_common/localize';
 
 /* TODO:
       1. Change expiry date to drop-down if start date is forward starting

@@ -1,20 +1,20 @@
-import React           from 'react';
-import PropTypes       from 'prop-types';
-import classnames      from 'classnames';
-import Amount          from './components/amount.jsx';
-import Barrier         from './components/barrier.jsx';
-import ContractType    from './components/contract_type.jsx';
-import Duration        from './components/duration.jsx';
-import MobileWidget    from './components/elements/mobile_widget.jsx';
-import LastDigit       from './components/last_digit.jsx';
-import Purchase        from './components/purchase.jsx';
-import StartDate       from './components/start_date.jsx';
-import Test            from './components/test.jsx';
-import SmartCharts     from '../../components/charts/smartcharts.jsx';
-import PortfolioDrawer from '../../components/elements/portfolio_drawer.jsx';
-import UILoader        from '../../components/elements/ui_loader.jsx';
-import { connect }     from '../../Stores/connect';
+import classnames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
+import Amount                         from './components/amount.jsx';
+import Barrier                        from './components/barrier.jsx';
+import ContractType                   from './components/contract_type.jsx';
+import Duration                       from './components/duration.jsx';
+import MobileWidget                   from './components/elements/mobile_widget.jsx';
+import LastDigit                      from './components/last_digit.jsx';
+import Purchase                       from './components/purchase.jsx';
+import StartDate                      from './components/start_date.jsx';
+import Test                           from './components/test.jsx';
+import SmartCharts                    from '../../components/charts/smartcharts.jsx';
+import PortfolioDrawer                from '../../components/elements/portfolio_drawer.jsx';
+import UILoader                       from '../../components/elements/ui_loader.jsx';
+import { connect }                    from '../../Stores/connect';
 
 const form_components = [
     { name: 'start_date', Component: StartDate },
