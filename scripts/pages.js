@@ -63,7 +63,7 @@ module.exports = [
     ['user/warning',                            'app/user/warning',                            'default',    'Warning'],
 
     ['endpoint',                                'app/endpoint',                                'default',    'Endpoint'],
-    ['signup',                                  'app/signup',                                  'default',    'Signup'],
+    ['new-account',                             'app/new_account',                             'default',    'Signup'],
 
     ['dialog',                                  'app/dialog',                                  null],
     ['explanation',                             'app/trade/explanation',                       null],

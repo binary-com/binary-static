@@ -16,7 +16,7 @@ const MBTradePage             = require('../pages/mb_trade/mb_tradepage');
 const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
 const TradingTimesUI          = require('../pages/resources/trading_times/trading_times.ui');
-const Signup                  = require('../pages/signup');
+const NewAccount              = require('../pages/new_account');
 const TradePage               = require('../pages/trade/tradepage');
 const Authenticate            = require('../pages/user/account/authenticate');
 const ChangePassword          = require('../pages/user/account/change_password');
@@ -108,7 +108,6 @@ const pages_config = {
     securityws               : { module: Settings,                   is_authenticated: true },
     self_exclusionws         : { module: SelfExclusion,              is_authenticated: true, only_real: true },
     settingsws               : { module: Settings,                   is_authenticated: true },
-    signup                   : { module: Signup,                     not_authenticated: true },
     statementws              : { module: Statement,                  is_authenticated: true, needs_currency: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
@@ -133,6 +132,7 @@ const pages_config = {
     'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
     'metals'                 : { module: GetStarted.Metals },
+    'new-account'            : { module: NewAccount,                     not_authenticated: true },
     'open-positions'         : { module: StaticPages.OpenPositions },
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
