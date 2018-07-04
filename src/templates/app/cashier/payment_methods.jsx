@@ -190,7 +190,7 @@ const PaymentMethods = () => {
                                 { text: '5 - 10,000' },
                                 { text: '5 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks pdf_file='Binary.com__WebMoney.pdf' video_link='https://youtu.be/e0THC3c-fEE' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_WebMoney.pdf' video_link='https://youtu.be/e0THC3c-fEE' /> },
                             ],
                             [
                                 { text: <PaymentLogo logo='qiwi' /> },
