@@ -186,8 +186,13 @@ const Authenticate = (() => {
                 fileTracker($e, true);
                 files.push(file_obj);
 
+                let display_name = name;
+                if (/front|back/.test(id)) {
+                    display_name += ` - ${localize(`${toTitleCase(/front/.test(id) ? 'Front' : 'Reverse')} Side`)}`;
+                }
+
                 $submit_table.append($('<tr/>', { id: file_obj.type, class: id })
-                    .append($('<td/>', { text: name }))                                   // document type, e.g. Passport
+                    .append($('<td/>', { text: display_name }))                           // document type, e.g. Passport - Front Side
                     .append($('<td/>', { text: e.files[0].name }))                        // file name, e.g. sample.pdf
                     .append($('<td/>', { text: localize('Pending'), class: 'status' }))   // status of uploading file, first set to Pending
                 );

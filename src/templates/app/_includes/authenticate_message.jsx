@@ -135,7 +135,7 @@ const AuthenticateMessage = () => (
             ]}
         />
 
-        <div className='submit-status gr-10 gr-centered gr-padding-30 invisible'>
+        <div className='submit-status gr-centered gr-padding-30 invisible'>
             <h2 className='center-text'>{it.L('Document submission status')}</h2>
             <Table
                 data={{
@@ -151,7 +151,7 @@ const AuthenticateMessage = () => (
         </div>
 
         <div className='center-text'>
-            <div id='resolve_error' className='invisible center-text'>{it.L('Please upload all required documents to continue')}</div>
+            <div id='resolve_error' className='invisible center-text'>{it.L('Please resolve all pending issues to continue')}</div>
             <div id='msg_form' className='error-msg invisible center-text' />
             <div className='gr-padding-10'>
                 <a className='button-disabled' id='btn_submit' type='submit'>
