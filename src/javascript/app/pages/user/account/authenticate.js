@@ -88,7 +88,9 @@ const Authenticate = (() => {
             .addClass('selected')
             .append($('<span/>', { class: 'remove' }))
             .find('.remove')
-            .click(() => resetLabel(event));
+            .click((e) => {
+                if ($(e.target).is('span.remove')) resetLabel(event);
+            });
 
         // Change submit button state
         enableDisableSubmit();
@@ -164,7 +166,7 @@ const Authenticate = (() => {
         is_any_upload_failed = false;
         $submit_table.children().remove();
         $files.each((i, e) => {
-            if (e.files && e.files.length && e.getAttribute('data-status') !== 'submitted') {
+            if (e.files && e.files.length) {
                 const $e       = $(e);
                 const id       = $e.attr('id');
                 const type     = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
@@ -221,7 +223,7 @@ const Authenticate = (() => {
                     onResponse(api_response, isLastUpload());
                     if (!api_response.error && !api_response.warning) {
                         $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
-                        $(`#${api_response.passthrough.class}`).attr('data-status', 'submitted');
+                        $(`#${api_response.passthrough.class}`).attr('type', 'hidden'); // don't allow users to change submitted files
                         $(`label[for=${api_response.passthrough.class}] span`).attr('class', 'checked');
                     }
                     uploadNextFile();
