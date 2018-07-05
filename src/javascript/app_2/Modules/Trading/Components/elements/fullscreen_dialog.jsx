@@ -2,9 +2,11 @@ import PropTypes from 'prop-types';
 import React     from 'react';
 import Url       from '../../../../../_common/url';
 
-class FullscreenDialog extends React.Component {
-    componentDidUpdate() {
-        if (this.props.visible) {
+const FullscreenDialog = (props) => {
+    const { title, visible, children } = props;
+
+    const checkVisibility = () => {
+        if (props.visible) {
             document.body.classList.add('no-scroll');
             document.getElementById('binary_app').classList.add('no-scroll');
         }
@@ -12,9 +14,9 @@ class FullscreenDialog extends React.Component {
             document.body.classList.remove('no-scroll');
             document.getElementById('binary_app').classList.remove('no-scroll');
         }
-    }
+    };
 
-    scrollToElIfNeeded = (parent, el) => {
+    const scrollToElIfNeeded = (parent, el) => {
         const viewport_offset = el.getBoundingClientRect();
         const hidden = viewport_offset.top + el.clientHeight + 20 > window.innerHeight;
         if (hidden) {
@@ -24,9 +26,9 @@ class FullscreenDialog extends React.Component {
     };
 
     // sometimes input is covered by virtual keyboard on mobile chrome, uc browser
-    handleClick = (e) => {
+    const handleClick = (e) => {
         if (e.target.tagName === 'INPUT' && e.target.type === 'number') {
-            const scrollToTarget = this.scrollToElIfNeeded.bind(null, e.currentTarget, e.target);
+            const scrollToTarget = scrollToElIfNeeded(e.currentTarget, e.target);
             window.addEventListener('resize', scrollToTarget, false);
 
             // remove listener, resize is not fired on iOS safari
@@ -36,36 +38,34 @@ class FullscreenDialog extends React.Component {
         }
     };
 
-    render() {
-        const { title, visible, children } = this.props;
+    checkVisibility();
 
-        return (
-            <div
-                className={`fullscreen-dialog ${visible ? 'fullscreen-dialog--open' : ''}`}
-                onClick={this.handleClick.bind(this)}
-            >
-                <div className='fullscreen-dialog__header'>
-                    <h2 className='fullscreen-dialog__title'>
-                        {title}
-                    </h2>
-                    <div
-                        className='icons btn-close fullscreen-dialog__close-btn'
-                        onClick={this.props.onClose}
-                    >
-                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
-                    </div>
-                </div>
-                <div className='fullscreen-dialog__header-shadow-cover' />
-                <div className='fullscreen-dialog__header-shadow' />
-                <div className='fullscreen-dialog__content'>
-                    <div className='contracts-modal-list'>
-                        {children}
-                    </div>
+    return (
+        <div
+            className={`fullscreen-dialog ${visible ? 'fullscreen-dialog--open' : ''}`}
+            onClick={handleClick}
+        >
+            <div className='fullscreen-dialog__header'>
+                <h2 className='fullscreen-dialog__title'>
+                    {title}
+                </h2>
+                <div
+                    className='icons btn-close fullscreen-dialog__close-btn'
+                    onClick={props.onClose}
+                >
+                    <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
                 </div>
             </div>
-        );
-    }
-}
+            <div className='fullscreen-dialog__header-shadow-cover' />
+            <div className='fullscreen-dialog__header-shadow' />
+            <div className='fullscreen-dialog__content'>
+                <div className='contracts-modal-list'>
+                    {children}
+                </div>
+            </div>
+        </div>
+    );
+};
 
 FullscreenDialog.propTypes = {
     children: PropTypes.any,
