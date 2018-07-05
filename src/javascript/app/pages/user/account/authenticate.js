@@ -304,12 +304,18 @@ const Authenticate = (() => {
         }
     };
 
-    const onErrorResolved = (error_field, class_name) => {
-        const id = `${error_field}_${class_name.match(/\d+/)[0]}`;
+    const onErrorResolved = (error_field, class_name, reverse_class_name) => {
+        const id = error_field ? `${error_field}_${class_name.match(/\d+/)[0]}` : reverse_class_name;
         $(`#${id}`).one('input change', () => {
             $(`label[for=${class_name}]`).removeClass('error');
             enableDisableSubmit();
         });
+    };
+
+    const sides = ['front', 'back'];
+    const getReverseClass = (class_name) => {
+        const is_front = /front/.test(class_name);
+        return class_name.replace(sides[+!is_front], sides[+is_front]);
     };
 
     // Validate user input
@@ -342,10 +348,12 @@ const Authenticate = (() => {
         // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
         if (!is_action_needed) {
             if (file_checks.proofid && (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
+                onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
                 return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
             }
             if (file_checks.driverslicense &&
                 (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
+                onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
                 return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
             }
         }
