@@ -442,6 +442,9 @@ body #not_authenticated_financial ul.checked > li {
                     width: 16px;
                     height: 12px;
                 }
+                &:hover {
+                    background-color: transparent;
+                }
             }
             &.selected {
                 background-color: $COLOR_WHITE;

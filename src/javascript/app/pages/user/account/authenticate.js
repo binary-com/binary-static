@@ -76,8 +76,8 @@ const Authenticate = (() => {
         const file_name    = event.target.files[0].name || '';
         const display_name = file_name.length > 10 ? `${file_name.slice(0, 5)}..${file_name.slice(-5)}` : file_name;
 
-        $target.parent()
-            .find('label')
+        $target.attr('data-status', '')
+            .parent().find('label')
             .off('click')
             // Prevent opening file selector.
             .on('click', (e) => {
@@ -198,28 +198,34 @@ const Authenticate = (() => {
     const processFiles = (files) => {
         const uploader = new DocumentUploader({ connection: BinarySocket.get() }); // send 'debug: true' here for debugging
 
-        let idx_to_upload = 0;
+        let idx_to_upload     = 0;
+        let is_any_file_error = false;
         readFiles(files).then((response) => {
+            response.forEach((file) => {
+                if (file.message) {
+                    is_any_file_error = true;
+                    showError(file);
+                }
+            });
+            if (is_any_file_error) {
+                return; // don't start submitting files until all front-end validation checks pass
+            }
+
             const total_to_upload = response.length;
             const isLastUpload = () => total_to_upload === idx_to_upload + 1;
             // sequentially send files
             const uploadFile = () => {
-                if (response[idx_to_upload].message) {
-                    showError(response[idx_to_upload]);
+                const $status = $submit_table.find(`.${response[idx_to_upload].passthrough.class} .status`);
+                $status.text(`${localize('Submitting')}...`);
+                uploader.upload(response[idx_to_upload]).then((api_response) => {
+                    onResponse(api_response, isLastUpload());
+                    if (!api_response.error && !api_response.warning) {
+                        $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
+                        $(`#${api_response.passthrough.class}`).attr('data-status', 'submitted');
+                        $(`label[for=${api_response.passthrough.class}] span`).attr('class', 'checked');
+                    }
                     uploadNextFile();
-                } else {
-                    const $status = $submit_table.find(`.${response[idx_to_upload].passthrough.class} .status`);
-                    $status.text(`${localize('Submitting')}...`);
-                    uploader.upload(response[idx_to_upload]).then((api_response) => {
-                        onResponse(api_response, isLastUpload());
-                        if (!api_response.error && !api_response.warning) {
-                            $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
-                            $(`#${api_response.passthrough.class}`).attr('data-status', 'submitted');
-                            $(`label[for=${api_response.passthrough.class}] span`).attr('class', 'checked');
-                        }
-                        uploadNextFile();
-                    });
-                }
+                });
             };
             const uploadNextFile = () => {
                 if (!isLastUpload()) {
@@ -298,6 +304,14 @@ const Authenticate = (() => {
         }
     };
 
+    const onErrorResolved = (error_field, class_name) => {
+        const id = `${error_field}_${class_name.match(/\d+/)[0]}`;
+        $(`#${id}`).one('input change', () => {
+            $(`label[for=${class_name}]`).removeClass('error');
+            enableDisableSubmit();
+        });
+    };
+
     // Validate user input
     const validate = (file) => {
         const required_docs = ['passport', 'proofid', 'driverslicense'];
@@ -314,12 +328,15 @@ const Authenticate = (() => {
             return localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]', [file.filename, '8MB']);
         }
         if (!file.documentId && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
+            onErrorResolved('id_number', file.passthrough.class);
             return localize('ID number is required for [_1].', [doc_name[file.documentType]]);
         }
         if (file.documentId && !/^[\w\s-]{0,30}$/.test(file.documentId)) {
+            onErrorResolved('id_number', file.passthrough.class);
             return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).', [doc_name[file.documentType]]);
         }
         if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
+            onErrorResolved('exp_date', file.passthrough.class);
             return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
         }
         // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
