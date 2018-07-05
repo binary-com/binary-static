@@ -18,7 +18,7 @@ class LanguageDialog extends React.PureComponent {
                     {this.props.list.languages.map((language, idx) => (
                         <React.Fragment key={idx}>
                             <div className='language-row'>
-                                <i className={`ic-flag-${language.id.toLowerCase()}`} />
+                                <i className={`flag ic-flag-${language.id.toLowerCase()}`} />
                                 <span>{language.name}</span>
                             </div>
                         </React.Fragment>

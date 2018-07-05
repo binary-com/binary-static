@@ -59,6 +59,8 @@
             padding: 8px;
             display: flex;
             cursor: pointer;
+            justify-content: space-between;
+            align-items: center;
 
             span {
                 font-size: 12px;
@@ -131,48 +133,9 @@
                 &:nth-last-child(-n+2) {
                     border-bottom-width: 1px;
                 }
-                i {
+                i.flag {
                     padding-left: 8px;
-
-                    &.ic-flag-en:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-en.svg');
-                    }
-                    &.ic-flag-de:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-de.svg');
-                    }
-                    &.ic-flag-pt:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-pt.svg');
-                    }
-                    &.ic-flag-it:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-it.svg');
-                    }
-                    &.ic-flag-vi:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-vi.svg');
-                    }
-                    &.ic-flag-ru:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-ru.svg');
-                    }
-                    &.ic-flag-pl:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-pl.svg');
-                    }
-                    &.ic-flag-es:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-es.svg');
-                    }
-                    &.ic-flag-zh:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-zh.svg');
-                    }
-                    &.ic-flag-tw:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-tw.svg');
-                    }
-                    &.ic-flag-id:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-id.svg');
-                    }
-                    &.ic-flag-fr:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-fr.svg');
-                    }
-                    &.ic-flag-th:before {
-                        content: url('../images/trading_app/footer/language/ic-flag-th.svg');
-                    }
+                    padding-right: unset;
                 }
                 span {
                     padding-left: 8px;
@@ -186,5 +149,48 @@
     }
     &.show > .language-dialog-container.show {
         pointer-events: auto;
+    }
+    i.flag {
+        padding-right: 6px;
+
+        &.ic-flag-en:before {
+            content: url('../images/trading_app/footer/language/ic-flag-en.svg');
+        }
+        &.ic-flag-de:before {
+            content: url('../images/trading_app/footer/language/ic-flag-de.svg');
+        }
+        &.ic-flag-pt:before {
+            content: url('../images/trading_app/footer/language/ic-flag-pt.svg');
+        }
+        &.ic-flag-it:before {
+            content: url('../images/trading_app/footer/language/ic-flag-it.svg');
+        }
+        &.ic-flag-vi:before {
+            content: url('../images/trading_app/footer/language/ic-flag-vi.svg');
+        }
+        &.ic-flag-ru:before {
+            content: url('../images/trading_app/footer/language/ic-flag-ru.svg');
+        }
+        &.ic-flag-pl:before {
+            content: url('../images/trading_app/footer/language/ic-flag-pl.svg');
+        }
+        &.ic-flag-es:before {
+            content: url('../images/trading_app/footer/language/ic-flag-es.svg');
+        }
+        &.ic-flag-zh_cn:before {
+            content: url('../images/trading_app/footer/language/ic-flag-zh.svg');
+        }
+        &.ic-flag-zh_tw:before {
+            content: url('../images/trading_app/footer/language/ic-flag-tw.svg');
+        }
+        &.ic-flag-id:before {
+            content: url('../images/trading_app/footer/language/ic-flag-id.svg');
+        }
+        &.ic-flag-fr:before {
+            content: url('../images/trading_app/footer/language/ic-flag-fr.svg');
+        }
+        &.ic-flag-th:before {
+            content: url('../images/trading_app/footer/language/ic-flag-th.svg');
+        }
     }
 }

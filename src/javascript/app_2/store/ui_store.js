@@ -6,6 +6,12 @@ export default class UIStore {
     @observable is_notifications_drawer_on = false;
     @observable is_settings_dialog_on = false;
     @observable is_language_dialog_on = false;
+    @observable is_dark_mode_on = false;
+
+    // SmartCharts Controls
+    @observable is_chart_layout_left = false;
+    @observable is_chart_asset_info_visible = false;
+    @observable is_chart_countdown_visible = false;
 
     // TO-DO - Get language list from config file
     @observable supported_languages = {
@@ -25,6 +31,22 @@ export default class UIStore {
             { id: 'PL',    name: 'Polish'     },
         ],
     };
+
+    @action.bound toggleChartLayout() {
+        this.is_chart_layout_left = !this.is_chart_layout_left;
+    }
+
+    @action.bound toggleChartAssetInfo() {
+        this.is_chart_asset_info_visible = !this.is_chart_asset_info_visible;
+    }
+
+    @action.bound toggleChartCountdown() {
+        this.is_chart_countdown_visible = !this.is_chart_countdown_visible;
+    }
+
+    @action.bound toggleDarkMode() {
+        this.is_dark_mode_on = !this.is_dark_mode_on;
+    }
 
     @action.bound toggleSettingsDialog() {
         this.is_settings_dialog_on = !this.is_settings_dialog_on;

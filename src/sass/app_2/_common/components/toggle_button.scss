@@ -1,0 +1,31 @@
+.toggle-button {
+    background: $COLOR_GRAY;
+    border-radius: 2rem;
+    padding: 2px;
+    transition: all 0.4s ease;
+    outline: 0;
+    display: block;
+    width: 2rem;
+    height: 1rem;
+    position: relative;
+    cursor: pointer;
+
+    &.toggled {
+        background: $COLOR_LIGHT_GREEN;
+
+        &:after {
+            left: 50%;
+        }
+    }
+    &:after {
+        border-radius: 50%;
+        background: $COLOR_WHITE;
+        transition: all 0.2s ease;
+        left: 0;
+        position: relative;
+        display: block;
+        content: '';
+        width: 50%;
+        height: 100%;
+    }
+}

@@ -3,25 +3,40 @@ import PropTypes    from 'prop-types';
 import SettingsControl from './settings_control.jsx';
 import { connect }  from '../../../store/connect';
 
-class General extends React.PureComponent {
+class GeneralSettings extends React.Component {
     render() {
         return (
             <div className='tab-content'>
                 <div className='general-setting-container'>
-                    <SettingsControl name='dark mode' />
-                    <SettingsControl name='language' toggle={this.props.showLanguage}/>
+                    <SettingsControl
+                        name='dark mode'
+                        to_toggle={this.props.is_dark_mode}
+                        toggle={this.props.toggleDarkMode}
+                    />
+                    <SettingsControl
+                        name='language'
+                        onClick={this.props.showLanguage}
+                    >
+                        <i className={`flag ic-flag-${(this.props.language || 'en').toLowerCase()}`} />
+                    </SettingsControl>
                 </div>
             </div>
         );
     }
 };
 
-General.propTypes = {
-    showLanguage: PropTypes.func,
+GeneralSettings.propTypes = {
+    language      : PropTypes.string,
+    showLanguage  : PropTypes.func,
+    is_dark_mode  : PropTypes.bool,
+    toggleDarkMode: PropTypes.func,
 };
 
 export default connect(
     ({ ui }) => ({
-        showLanguage: ui.showLanguageDialog,
+        language      : ui.current_language,
+        showLanguage  : ui.showLanguageDialog,
+        is_dark_mode  : ui.is_dark_mode_on,
+        toggleDarkMode: ui.toggleDarkMode,
     })
-)(General);
+)(GeneralSettings);

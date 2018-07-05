@@ -3,11 +3,11 @@ import React           from 'react';
 import PropTypes       from 'prop-types';
 import Tabs            from '../tabs.jsx';
 import LanguageDialog  from './language_dialog.jsx';
-import Chart           from './settings_chart.jsx';
-import General         from './settings_general.jsx';
+import ChartSettings   from './settings_chart.jsx';
+import GeneralSettings from './settings_general.jsx';
 import { localize }    from '../../../../_common/localize';
 
-class SettingsDialog extends React.PureComponent {
+class SettingsDialog extends React.Component {
     constructor(props) {
         super(props);
         this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -40,16 +40,16 @@ class SettingsDialog extends React.PureComponent {
         return (
             <div ref={this.setWrapperRef} className={settings_dialog_class}>
                 <span className='settings-header'>{localize('Settings')}</span>
-                <Tabs alignment='center' list={content} />
+                <Tabs alignment='center' list={SettingsContent} />
                 <LanguageDialog />
             </div>
         );
     }
 }
 
-const content = {
-    1: { header: localize('General'), content: General },
-    2: { header: localize('Chart'), content: Chart },
+const SettingsContent = {
+    1: { header: localize('General'), content: GeneralSettings },
+    2: { header: localize('Chart'), content: ChartSettings },
 };
 
 SettingsDialog.propTypes = {
