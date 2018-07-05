@@ -1,14 +1,15 @@
-import { PropTypes as MobxPropTypes } from 'mobx-react';
-import moment                         from 'moment';
-import PropTypes                      from 'prop-types';
-import React                          from 'react';
-import Datepicker                     from '../../../components/form/date_picker.jsx';
-import Dropdown                       from '../../../components/form/dropdown.jsx';
-import Fieldset                       from '../../../components/form/fieldset.jsx';
-import InputField                     from '../../../components/form/input_field.jsx';
-import TimePicker                     from '../../../components/form/time_picker.jsx';
-import { connect }                    from '../../../Stores/connect';
-import { localize }                   from '../../../../_common/localize';
+import {
+    PropTypes as MobxPropTypes,
+    observer }                  from 'mobx-react';
+import moment                   from 'moment';
+import PropTypes                from 'prop-types';
+import React                    from 'react';
+import Datepicker               from '../../../../../components/form/date_picker.jsx';
+import Dropdown                 from '../../../../../components/form/dropdown.jsx';
+import Fieldset                 from '../../../../../components/form/fieldset.jsx';
+import InputField               from '../../../../../components/form/input_field.jsx';
+import TimePicker               from '../../../../../components/form/time_picker.jsx';
+import { localize }             from '../../../../../../_common/localize';
 
 /* TODO:
       1. Change expiry date to drop-down if start date is forward starting
@@ -26,19 +27,19 @@ let now_date,
     start_date_time;
 
 const Duration = ({
-    expiry_type,
-    expiry_date,
-    expiry_time,
     duration,
     duration_unit,
     duration_units_list,
-    server_time,
+    expiry_date,
+    expiry_time,
+    expiry_type,
     onChange,
-    is_nativepicker,
     is_minimized,
+    is_nativepicker,
+    server_time,
+    sessions,
     start_date,
     start_time,
-    sessions,
 }) => {
     const moment_now = moment(server_time);
     if (!now_date || moment_now.date() !== now_date.date()) {
@@ -171,23 +172,9 @@ Duration.propTypes = {
     is_nativepicker: PropTypes.bool,
     onChange       : PropTypes.func,
     server_time    : PropTypes.object,
+    sessions       : MobxPropTypes.arrayOrObservableArray,
     start_date     : PropTypes.number,
     start_time     : PropTypes.string,
-    sessions       : MobxPropTypes.arrayOrObservableArray,
 };
 
-export default connect(
-    ({ common, modules }) => ({
-        server_time        : common.server_time,
-        expiry_type        : modules.trade.expiry_type,
-        expiry_date        : modules.trade.expiry_date,
-        expiry_time        : modules.trade.expiry_time,
-        duration           : modules.trade.duration,
-        duration_unit      : modules.trade.duration_unit,
-        duration_units_list: modules.trade.duration_units_list,
-        start_date         : modules.trade.start_date,
-        start_time         : modules.trade.start_time,
-        sessions           : modules.trade.sessions,
-        onChange           : modules.trade.handleChange,
-    })
-)(Duration);
+export default observer(Duration);

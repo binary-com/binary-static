@@ -1,3 +1,4 @@
+import { toJS }    from 'mobx';
 import React       from 'react';
 import PropTypes   from 'prop-types';
 import { connect } from '../../../Stores/connect';
@@ -11,10 +12,13 @@ class Test extends React.Component {
             lineHeight: '15px',
             position  : 'absolute',
             zIndex    : 1,
-            background: 'rgba(0, 0, 0, 0.7)',
-            color     : 'white',
+            background: 'rgba(0, 0, 0, 0.8)',
+            color     : '#ccc',
             padding   : '10px',
+            marginTop : '-10px',
             display   : 'none',
+            overflowY : 'auto',
+            height    : '100%',
         },
         prop_name: {
             color: 'yellowgreen',
@@ -37,9 +41,9 @@ class Test extends React.Component {
 
     render() {
         return (
-            <div id='state_info' style={Object.assign({}, this.styles.container, { display: this.state.is_visible ? 'block' : 'none' })}>
-                {this.props.entries.sort().map(([k, v]) => k !== 'root_store' && <div key={k}><strong style={this.styles.prop_name}>{k}:</strong> {v && typeof v === 'object' ? JSON.stringify(v) : v}</div>)}
-            </div>
+            <code id='state_info' style={Object.assign({}, this.styles.container, { display: this.state.is_visible ? 'block' : 'none' })}>
+                {this.props.entries.sort().map(([k, v]) => k !== 'root_store' && <div key={k}><span style={this.styles.prop_name}>{k}:</span> {v && typeof v === 'object' ? JSON.stringify(toJS(v), null, 1) : v}</div>)}
+            </code>
         );
     }
 }

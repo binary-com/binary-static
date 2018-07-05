@@ -1,12 +1,12 @@
 import {
     action,
     observable }                          from 'mobx';
-import URLHelper                          from '../../Utils/URL/index';
-import { updateBarrierShade }             from '../../Modules/trading/actions/helpers/chart';
-import ContractType                       from '../../Modules/trading/actions/helpers/contract_type';
-import { allowed_query_string_variables } from '../../Modules/trading/actions/helpers/query_string';
-import { updateStore }                    from '../../Modules/trading/actions/index';
-import { processPurchase }                from '../../Modules/trading/actions/purchase';
+import { updateBarrierShade }             from '../../Modules/Trading/actions/helpers/chart';
+import ContractType                       from '../../Modules/Trading/actions/helpers/contract_type';
+import { allowed_query_string_variables } from '../../Modules/Trading/actions/helpers/query_string';
+import { updateStore }                    from '../../Modules/Trading/actions/index';
+import { processPurchase }                from '../../Modules/Trading/actions/purchase';
+import URLHelper                          from '../../Utils/URL';
 import Client                             from '../../../_common/base/client_base';
 
 export default class TradeStore {
@@ -17,8 +17,7 @@ export default class TradeStore {
     @action.bound init() {
 
         // Update the url's query string by default values of the store
-        const queryParams = URLHelper
-            .updateQueryString(this, allowed_query_string_variables);
+        const queryParams = URLHelper.updateQueryString(this, allowed_query_string_variables);
 
         // update state values from query string
         const config = {};
@@ -35,7 +34,7 @@ export default class TradeStore {
 
     }
 
-    @action.bound handleChange(e) {
+    @action.bound onChange(e) {
         const { name, value, type } = e.target;
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
@@ -46,7 +45,7 @@ export default class TradeStore {
 
     @action.bound onHoverPurchase(is_over, contract_type) {
         if (this.chart_barriers.main) {
-            this.chart_barriers.main = updateBarrierShade(this, is_over, contract_type);
+            this.chart_barriers.main.shade = updateBarrierShade(this, is_over, contract_type);
         }
     }
 
@@ -107,7 +106,7 @@ export default class TradeStore {
     @observable purchase_info = {};
 
     // Chart
-    @observable chart_barriers = {};
+    @observable chart_barriers = observable.object({});
 
     // TODO: to remove dummy portfolio value
     @observable portfolios = [

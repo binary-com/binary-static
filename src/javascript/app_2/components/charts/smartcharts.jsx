@@ -1,8 +1,10 @@
-import { SmartChart } from '@binary-com/smartcharts';
-import PropTypes      from 'prop-types';
-import React          from 'react';
-import { WS }         from '../../Services';
-import { connect }    from '../../Stores/connect';
+import { SmartChart }    from '@binary-com/smartcharts';
+import { toJS }          from 'mobx';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { WS }            from '../../Services';
+import { connect }       from '../../Stores/connect';
+import { isEmptyObject } from '../../../_common/utility';
 
 const subscribe = (request_object, callback) => {
     if (request_object.subscribe !== 1) return;
@@ -13,9 +15,15 @@ const forget = (match_values, callback) => (
     WS.forget('ticks_history', callback, match_values)
 );
 
-const SmartCharts = ({ onSymbolChange, chart_barriers, initial_symbol }) =>  {
-    const is_mobile = window.innerWidth <= 767;
-    const barriers  = Object.keys(chart_barriers || {}).map(key => chart_barriers[key]);
+const SmartCharts = ({
+    chart_barriers,
+    initial_symbol,
+    is_mobile,
+    onSymbolChange,
+}) =>  {
+    const barriers = Object.keys(chart_barriers || {})
+        .map(key => toJS(chart_barriers[key]))
+        .filter(item => !isEmptyObject(item));
 
     return (
         <React.Fragment>
@@ -40,15 +48,17 @@ const SmartCharts = ({ onSymbolChange, chart_barriers, initial_symbol }) =>  {
 };
 
 SmartCharts.propTypes = {
-    initial_symbol: PropTypes.string,
-    onSymbolChange: PropTypes.func,
     chart_barriers: PropTypes.object,
+    initial_symbol: PropTypes.string,
+    is_mobile     : PropTypes.bool,
+    onSymbolChange: PropTypes.func,
 };
 
 export default connect(
-    ({ modules }) => ({
-        onSymbolChange: modules.trade.handleChange,
-        initial_symbol: modules.trade.symbol,
+    ({ modules, ui }) => ({
         chart_barriers: modules.trade.chart_barriers,
+        initial_symbol: modules.trade.symbol,
+        onSymbolChange: modules.trade.onChange,
+        is_mobile     : ui.is_mobile,
     })
 )(SmartCharts);

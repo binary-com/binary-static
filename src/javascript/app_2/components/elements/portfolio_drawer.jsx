@@ -17,7 +17,7 @@ class PortfolioDrawer extends React.Component {
 
     handleVisibility = () => {
         this.setState({ is_open: !this.state.is_open });
-    }
+    };
 
     handleWindowSizeChange = () => {
         this.setState({ width: window.innerWidth });

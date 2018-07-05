@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React            from 'react';
 import FullscreenDialog from './fullscreen_dialog.jsx';
+import TradeParams      from '../../Containers/trade_params.jsx';
 
 class MobileWidget extends React.Component {
     constructor(props) {
@@ -25,20 +25,10 @@ class MobileWidget extends React.Component {
     }
 
     render() {
-        const minimized_param_values = React.Children.map(this.props.children, child =>
-            React.cloneElement(child, {
-                is_minimized: true,
-            }));
-
-        const param_pickers = React.Children.map(this.props.children, child =>
-            React.cloneElement(child, {
-                is_nativepicker: true,
-            }));
-
         return (
             <React.Fragment>
                 <div className='mobile-widget' onClick={this.handleWidgetClick}>
-                    {minimized_param_values}
+                    <TradeParams is_minimized />
                 </div>
 
                 <FullscreenDialog
@@ -46,15 +36,11 @@ class MobileWidget extends React.Component {
                     visible={this.state.open}
                     onClose={this.handleDialogClose}
                 >
-                    {param_pickers}
+                    <TradeParams is_nativepicker />
                 </FullscreenDialog>
             </React.Fragment>
         );
     }
 }
-
-MobileWidget.propTypes = {
-    children: PropTypes.array,
-};
 
 export default MobileWidget;

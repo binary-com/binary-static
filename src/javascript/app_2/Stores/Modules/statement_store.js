@@ -1,6 +1,6 @@
 import { observable, action, computed }     from 'mobx';
 import moment                     from 'moment';
-import { WS }                     from '../../Services/index';
+import { WS }                     from '../../Services';
 import { formatMoney }            from '../../../_common/base/currency_base';
 import Client                     from '../../../_common/base/client_base';
 import { localize }               from '../../../_common/localize';

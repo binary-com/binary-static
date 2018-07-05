@@ -1,24 +1,25 @@
-import classNames                     from 'classnames';
-import { PropTypes as MobxPropTypes } from 'mobx-react';
-import PropTypes                      from 'prop-types';
-import React                          from 'react';
-import Dropdown                       from '../../../components/form/dropdown.jsx';
-import Fieldset                       from '../../../components/form/fieldset.jsx';
-import InputField                     from '../../../components/form/input_field.jsx';
-import { connect }                    from '../../../Stores/connect';
-import Client                         from '../../../../_common/base/client_base';
-import { addComma }                   from '../../../../_common/base/currency_base';
-import { localize }                   from '../../../../_common/localize';
+import classNames               from 'classnames';
+import {
+    PropTypes as MobxPropTypes,
+    observer }                  from 'mobx-react';
+import PropTypes                from 'prop-types';
+import React                    from 'react';
+import Dropdown                 from '../../../../../components/form/dropdown.jsx';
+import Fieldset                 from '../../../../../components/form/fieldset.jsx';
+import InputField               from '../../../../../components/form/input_field.jsx';
+import Client                   from '../../../../../../_common/base/client_base';
+import { addComma }             from '../../../../../../_common/base/currency_base';
+import { localize }             from '../../../../../../_common/localize';
 
 const Amount = ({
-    basis_list,
-    basis,
-    currency,
-    currencies_list,
     amount,
-    onChange,
+    basis,
+    basis_list,
+    currencies_list,
+    currency,
     is_minimized,
     is_nativepicker,
+    onChange,
 }) => {
     if (is_minimized) {
         return (
@@ -35,6 +36,7 @@ const Amount = ({
     const amount_container_class = classNames('amount-container', {
         'three-columns': !has_currency,
     });
+
     return (
         <Fieldset
             header={localize('Invest Amount')}
@@ -72,9 +74,9 @@ const Amount = ({
 };
 
 Amount.propTypes = {
-    basis_list     : MobxPropTypes.arrayOrObservableArray,
     amount         : PropTypes.number,
     basis          : PropTypes.string,
+    basis_list     : MobxPropTypes.arrayOrObservableArray,
     currencies_list: PropTypes.object,
     currency       : PropTypes.string,
     is_minimized   : PropTypes.bool,
@@ -82,13 +84,4 @@ Amount.propTypes = {
     onChange       : PropTypes.func,
 };
 
-export default connect(
-    ({ modules }) => ({
-        basis_list     : modules.trade.basis_list,
-        basis          : modules.trade.basis,
-        currency       : modules.trade.currency,
-        currencies_list: modules.trade.currencies_list,
-        amount         : modules.trade.amount,
-        onChange       : modules.trade.handleChange,
-    })
-)(Amount);
+export default observer(Amount);

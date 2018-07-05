@@ -93,7 +93,7 @@ class Dropdown extends React.Component {
                 <span className='select-arrow' />
                 <div className='dropdown-list'>
                     <div className='list-container'>
-                        { isArrayLike(this.props.list) ?
+                        {isArrayLike(this.props.list) ?
                             <Items
                                 items={this.props.list}
                                 name={this.props.name}
@@ -182,7 +182,6 @@ Dropdown.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-
 };
 
 // ToDo: Refactor NativeSelect

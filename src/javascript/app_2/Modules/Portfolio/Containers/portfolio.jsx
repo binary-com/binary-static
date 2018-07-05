@@ -4,7 +4,7 @@ import { formatPortfolioData }   from '../Helpers/process_data';
 import DataTable                 from '../../../components/elements/data_table.jsx';
 import Tooltip                   from '../../../components/elements/tooltip.jsx';
 import { contract_type_display } from '../../../Constants/contract';
-import { WS }                    from '../../../Services/index';
+import { WS }                    from '../../../Services';
 import { ProcessData }           from '../../../Services/Helpers';
 import { getAppId }              from '../../../../config';
 import ClientBase                from '../../../../_common/base/client_base';

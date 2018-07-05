@@ -1,24 +1,25 @@
-import { PropTypes as MobxPropTypes } from 'mobx-react';
-import PropTypes                      from 'prop-types';
-import React                          from 'react';
-import Dropdown                       from '../../../components/form/dropdown.jsx';
-import Fieldset                       from '../../../components/form/fieldset.jsx';
-import TimePicker                     from '../../../components/form/time_picker.jsx';
-import { connect }                    from '../../../Stores/connect';
-import { localize }                   from '../../../../_common/localize';
+import {
+    PropTypes as MobxPropTypes,
+    observer }                  from 'mobx-react';
+import PropTypes                from 'prop-types';
+import React                    from 'react';
+import Dropdown                 from '../../../../../components/form/dropdown.jsx';
+import Fieldset                 from '../../../../../components/form/fieldset.jsx';
+import TimePicker               from '../../../../../components/form/time_picker.jsx';
+import { localize }             from '../../../../../../_common/localize';
 
 /* TODO:
     1. update sessions list when the selected one doesn’t have any enabled time
 */
 
 const StartDate = ({
+    is_minimized,
+    is_nativepicker,
+    onChange,
+    sessions,
     start_date,
     start_dates_list,
     start_time,
-    onChange,
-    is_nativepicker,
-    is_minimized,
-    sessions,
 }) => {
     // Number(0) refers to 'now'
     const is_today = start_date === Number(0);
@@ -73,12 +74,4 @@ StartDate.propTypes = {
     sessions        : MobxPropTypes.arrayOrObservableArray,
 };
 
-export default connect(
-    ({ modules }) => ({
-        start_date      : modules.trade.start_date,
-        start_dates_list: modules.trade.start_dates_list,
-        start_time      : modules.trade.start_time,
-        sessions        : modules.trade.sessions,
-        onChange        : modules.trade.handleChange,
-    })
-)(StartDate);
+export default observer(StartDate);

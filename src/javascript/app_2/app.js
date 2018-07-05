@@ -4,8 +4,8 @@ import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import NetworkMonitor                from './base/network_monitor';
+import RootStore                     from './Stores';
 import { MobxProvider }              from './Stores/connect';
-import MainStore                     from './Stores/index';
 import Footer                        from './components/layout/footer.jsx';
 import Header                        from './components/layout/header.jsx';
 import { BinaryRoutes }              from './routes';
@@ -18,7 +18,7 @@ import { localize }                  from '../_common/localize';
 const initApp = () => {
     Client.init();
 
-    const root_store = new MainStore();
+    const root_store = new RootStore();
 
     NetworkMonitor.init(root_store);
 

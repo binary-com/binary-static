@@ -1,9 +1,9 @@
-import React        from 'react';
+import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
-import Dropdown     from '../../../components/form/dropdown.jsx';
-import Fieldset     from '../../../components/form/fieldset.jsx';
-import { connect }  from '../../../Stores/connect';
-import { localize } from '../../../../_common/localize';
+import React        from 'react';
+import Dropdown     from '../../../../../components/form/dropdown.jsx';
+import Fieldset     from '../../../../../components/form/fieldset.jsx';
+import { localize } from '../../../../../../_common/localize';
 
 const last_digit_numbers = [...Array(10).keys()].map(number => ({
     text : number,
@@ -11,10 +11,10 @@ const last_digit_numbers = [...Array(10).keys()].map(number => ({
 }));
 
 const LastDigit = ({
+    is_minimized,
+    is_nativepicker,
     last_digit,
     onChange,
-    is_nativepicker,
-    is_minimized,
 }) =>  {
     if (is_minimized) {
         return (
@@ -47,9 +47,4 @@ LastDigit.propTypes = {
     onChange       : PropTypes.func,
 };
 
-export default connect(
-    ({ modules }) => ({
-        last_digit: modules.trade.last_digit,
-        onChange  : modules.trade.handleChange,
-    })
-)(LastDigit);
+export default observer(LastDigit);
