@@ -51,12 +51,11 @@ Filter.propTypes = {
 };
 
 export default connect(
-    ({ modules, common }, {is_mobile}) => ({
-        is_mobile,
-        className       : classnames(),
+    ({ common, modules, ui }) => ({
+        today           : moment(common.server_time).format('YYYY-MM-DD'),
         date_from       : modules.statement.date_from,
         date_to         : modules.statement.date_to,
         handleDateChange: modules.statement.handleDateChange,
-        today           : moment(common.server_time).format('YYYY-MM-DD'),
+        is_mobile       : ui.is_mobile,
     })
 )(Filter);
