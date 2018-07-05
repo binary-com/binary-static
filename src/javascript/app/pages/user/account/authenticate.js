@@ -349,11 +349,12 @@ const Authenticate = (() => {
         }
         // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
         if (!is_action_needed) {
-            if (file_checks.proofid && (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
+            if (file.documentType === 'proofid' && file_checks.proofid &&
+                (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
                 onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
                 return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
             }
-            if (file_checks.driverslicense &&
+            if (file.documentType === 'driverslicense' && file_checks.driverslicense &&
                 (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
                 onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
                 return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
