@@ -7,6 +7,7 @@ export default class UIStore {
     @observable is_settings_dialog_on = false;
     @observable is_language_dialog_on = false;
 
+    // TO-DO - Get language list from config file
     @observable supported_languages = {
         languages: [
             { id: 'EN',    name: 'English'    },

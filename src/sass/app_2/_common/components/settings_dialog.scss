@@ -81,10 +81,14 @@
         bottom: 0;
         background: $COLOR_LIGHT_GRAY;
         border-radius: $BORDER_RADIUS;
-        display: none;
+        opacity: 0;
+        transition: all 0.3s ease 0.15s;
+        transform-origin: 35% 45%;
+        transform: scale(0, 0);
 
         &.show {
-            display: unset;
+            opacity: 1;
+            transform: scale(1, 1);
         }
         .language-header {
             font-size: 12px;
@@ -176,5 +180,11 @@
                 }
             }
         }
+    }
+    & > .language-dialog-container {
+        pointer-events: none;
+    }
+    &.show > .language-dialog-container.show {
+        pointer-events: auto;
     }
 }

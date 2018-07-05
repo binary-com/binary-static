@@ -3,8 +3,8 @@ import React           from 'react';
 import PropTypes       from 'prop-types';
 import Tabs            from '../tabs.jsx';
 import LanguageDialog  from './language_dialog.jsx';
+import Chart           from './settings_chart.jsx';
 import General         from './settings_general.jsx';
-import SettingsControl from './settings_control.jsx';
 import { localize }    from '../../../../_common/localize';
 
 class SettingsDialog extends React.PureComponent {
@@ -46,18 +46,6 @@ class SettingsDialog extends React.PureComponent {
         );
     }
 }
-
-const Chart = () => (
-    <div className='tab-content'>
-        <div className='chart-setting-container'>
-            <div className='settings-row'>
-                <span>{localize('position')}</span>
-            </div>
-            <SettingsControl name='asset information' />
-            <SettingsControl name='scale countdown' />
-        </div>
-    </div>
-);
 
 const content = {
     1: { header: localize('General'), content: General },
