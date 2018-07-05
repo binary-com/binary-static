@@ -9,7 +9,10 @@ class SettingsControl extends React.Component {
             <div className='settings-row' onClick={this.props.toggle || this.props.onClick}>
                 <span>{localize(this.props.name)}</span>
                 {this.props.toggle ?
-                    <ToggleButton bool={this.props.to_toggle} />
+                    <ToggleButton
+                        bool={this.props.to_toggle}
+                        style={this.props.style}
+                    />
                     :
                     this.props.children
                 }
@@ -19,6 +22,7 @@ class SettingsControl extends React.Component {
 };
 
 SettingsControl.propTypes = {
+    style    : PropTypes.string,
     name     : PropTypes.string,
     children : PropTypes.node,
     toggle   : PropTypes.func,

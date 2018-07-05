@@ -12,6 +12,7 @@ class ChartSettings extends React.Component {
                         name='position'
                         toggle={this.props.toggleLayout}
                         to_toggle={this.props.is_layout_left}
+                        style='toggle-chart-layout'
                     />
                     <SettingsControl
                         name='asset information'
