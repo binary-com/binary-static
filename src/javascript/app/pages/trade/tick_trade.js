@@ -1,5 +1,6 @@
 const moment               = require('moment');
 const requireHighstock     = require('./common').requireHighstock;
+const Lookback             = require('./lookback');
 const Reset                = require('./reset');
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
@@ -33,7 +34,8 @@ const TickDisplay = (() => {
         reset_spot_plotted,
         response_id,
         contract,
-        selected_tick;
+        selected_tick,
+        prev_barriers;
 
     let id_render = 'tick_chart';
 
@@ -63,6 +65,7 @@ const TickDisplay = (() => {
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
         reset_spot_plotted   = false;
+        prev_barriers        = []; // For checking if barrier was updated
 
         if (data.id_render) {
             id_render = data.id_render;
@@ -210,7 +213,10 @@ const TickDisplay = (() => {
             return;
         }
 
-        const barrier_type = /^(asian|highlowticks)$/.test(contract_category) ? contract_category : 'static';
+        let barrier_type = /^(asian|highlowticks)$/.test(contract_category) ? contract_category : 'static';
+        if (Lookback.isLookback(contract.contract_type)) {
+            barrier_type = 'lookback';
+        }
 
         let calculated_barrier = '';
         if (barrier_type === 'static') {
@@ -228,18 +234,7 @@ const TickDisplay = (() => {
                 barrier_quote = parseFloat(contract.barrier);
             }
 
-            chart.yAxis[0].addPlotLine({
-                id   : 'tick-barrier',
-                value: barrier_quote,
-                label: {
-                    text : `${localize('Barrier')} (${addComma(barrier_quote)})`,
-                    align: Reset.isReset(contract_category) ? 'right' : 'center',
-                    x    : Reset.isReset(contract_category) ? -60 : 0,
-                },
-                color : 'green',
-                width : 2,
-                zIndex: 2,
-            });
+            drawBarrier({ value: barrier_quote, text: 'Barrier' });
             calculated_barrier = barrier_quote;
             should_set_barrier = false;
         }
@@ -251,19 +246,7 @@ const TickDisplay = (() => {
             }
             // round calculated barrier
             const calc_barrier = (total / applicable_ticks.length).toFixed(parseInt(display_decimals) + 1);
-
-            chart.yAxis[0].removePlotLine('tick-barrier');
-            chart.yAxis[0].addPlotLine({
-                id   : 'tick-barrier',
-                value: calc_barrier,
-                color: 'green',
-                label: {
-                    text : `${localize('Average')} (${addComma(calc_barrier)})`,
-                    align: 'center',
-                },
-                width : 2,
-                zIndex: 2,
-            });
+            drawBarrier({ value: calc_barrier, text: 'Average' });
             calculated_barrier = calc_barrier;
         }
 
@@ -275,27 +258,82 @@ const TickDisplay = (() => {
 
                 if (high_low_barrier) {
                     should_set_barrier = false;
-
-                    chart.yAxis[0].addPlotLine({
-                        id   : 'tick-barrier',
-                        value: high_low_barrier,
-                        color: '#e98024',
-                        label: {
-                            text : `${localize(/^tickhigh_/i.test(contract.shortcode) ? 'Highest Tick' : 'Lowest Tick')} (${addComma(high_low_barrier)})`,
-                            align: 'center',
-                        },
-                        width    : 2,
-                        zIndex   : 2,
-                        dashStyle: 'dash',
-                    });
+                    const barrier_text = /^tickhigh_/i.test(contract.shortcode) ? 'Highest Tick' : 'Lowest Tick';
+                    drawBarrier({ value: high_low_barrier, text: barrier_text, dashStyle: 'dash', color: '#e98024' });
                 }
 
+            }
+        }
+
+        if (barrier_type === 'reset') {
+            const { barrier: current_barrier, entry_spot: entry_barrier, status } = contract;
+            if (current_barrier) {
+                const width        = ($('.highcharts-markers')[0].getBoundingClientRect() || {}).width;
+                const x            = status === 'open' ? 60 : (chart.chartWidth - width - 45);
+                const is_resetcall = contract.contract_type === 'RESETCALL';
+                const has_reset    = current_barrier !== entry_barrier;
+                if (has_reset) {
+                    drawBarrier({
+                        id        : 'tick-reset-barrier',
+                        value     : current_barrier,
+                        text      : 'Reset Barrier',
+                        label     : { align: 'right', x: -x },
+                        textBottom: is_resetcall,
+                    });
+                }
+                drawBarrier({
+                    id        : 'tick-barrier',
+                    value     : entry_barrier,
+                    text      : 'Barrier',
+                    label     : { align: 'right',  x: -x },
+                    dashStyle : has_reset ? 'dot' : 'default',
+                    textBottom: has_reset && !is_resetcall,
+                });
+            }
+        }
+
+        if (barrier_type === 'lookback') {
+            const { barrier: current_barrier, high_barrier, low_barrier, contract_type } = contract;
+            if (current_barrier && prev_barriers[0] !== current_barrier) { // draw High or Low barrier
+                prev_barriers[0] = current_barrier; // store previous barrier
+
+                const current_barrier_text = Lookback.getBarrierLabel(contract_type);
+                drawBarrier({ value: current_barrier, text: current_barrier_text });
+            } else if (high_barrier && low_barrier
+                && (high_barrier !== prev_barriers[1] || low_barrier !== prev_barriers[0])) { // draw High and Low barriers
+                prev_barriers[1] = high_barrier; // store previous barriers
+                prev_barriers[0] = low_barrier;
+
+                const [high_barrier_text, low_barrier_text] = Lookback.getBarrierLabel(contract_type);
+                drawBarrier({ id: 'tick-high-barrier', value: high_barrier, text: high_barrier_text });
+                drawBarrier({ id: 'tick-low-barrier',  value: low_barrier,  text: low_barrier_text, textBottom: true });
             }
         }
 
         if (calculated_barrier) {
             CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Barrier')}: ${calculated_barrier}`);
         }
+    };
+
+    /*
+     * Draw barrier
+     */
+    const drawBarrier = ({ id, color: barrier_color, value, text, label, dashStyle, width, zIndex, textBottom }) => {
+        chart.yAxis[0].removePlotLine(id || 'tick-barrier');
+        chart.yAxis[0].addPlotLine({
+            id   : id || 'tick-barrier',
+            value,
+            color: barrier_color || 'green',
+            label: {
+                text : `${localize(text)} (${addComma(value)})`,
+                align: label.align || 'center',
+                x    : label.x || 0,
+                y    : textBottom ? 15 : -5,
+            },
+            width    : width || 2,
+            zIndex   : zIndex || 2,
+            dashStyle: dashStyle || 'default',
+        });
     };
 
     const add = (indicator) => {
