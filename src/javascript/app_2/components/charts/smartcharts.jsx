@@ -13,9 +13,10 @@ const forget = (match_values, callback) => (
     WS.forget('ticks_history', callback, match_values)
 );
 
-const SmartCharts = ({ onSymbolChange, chart_barriers, initial_symbol }) =>  {
+const SmartCharts = ({ onSymbolChange, chart_barriers, initial_symbol, is_dark_theme }) =>  {
     const is_mobile = window.innerWidth <= 767;
     const barriers  = Object.keys(chart_barriers || {}).map(key => chart_barriers[key]);
+    const theme = is_dark_theme ? 'dark' : 'light';
 
     return (
         <React.Fragment>
@@ -34,6 +35,7 @@ const SmartCharts = ({ onSymbolChange, chart_barriers, initial_symbol }) =>  {
                 barriers={barriers}
                 initialSymbol={initial_symbol}
                 isMobile={is_mobile}
+                theme={theme}
             />
         </React.Fragment>
     );
@@ -43,12 +45,14 @@ SmartCharts.propTypes = {
     initial_symbol: PropTypes.string,
     onSymbolChange: PropTypes.func,
     chart_barriers: PropTypes.object,
+    is_dark_theme : PropTypes.bool,
 };
 
 export default connect(
-    ({ trade }) => ({
+    ({ trade, ui }) => ({
         onSymbolChange: trade.handleChange,
         initial_symbol: trade.symbol,
         chart_barriers: trade.chart_barriers,
+        is_dark_theme : ui.is_dark_mode_on,
     })
 )(SmartCharts);

@@ -6,7 +6,7 @@ import { connect }                 from '../../../store/connect';
 import { getAll as getLanguages,
          urlFor as getLanguageURL } from '../../../../_common/language';
 
-class LanguageDialog extends React.PureComponent {
+class LanguageDialog extends React.Component {
     render() {
         const language_dialog_class = classNames('language-dialog-container', {
             'show': this.props.is_visible,
