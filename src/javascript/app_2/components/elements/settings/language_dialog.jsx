@@ -32,7 +32,7 @@ class LanguageDialog extends React.PureComponent {
                         <React.Fragment key={key}>
                             <div className='language-row'>
                                 <a href={getLanguageURL(key)} >
-                                    <i className={`flag ic-flag-${key.toLowerCase()}`} />
+                                    <i className={`flag ic-flag-${key.replace(/(\s|_)/, '-').toLowerCase()}`} />
                                     <span>{language_list[key]}</span>
                                 </a>
                             </div>
