@@ -285,10 +285,6 @@ const ViewPopup = (() => {
             $container.find('#errMsg').setVisibility(0);
         }
 
-        const { barrier, contract_type, entry_spot } = contract;
-        if (Reset.isReset(contract_type) && Reset.isNewBarrier(entry_spot, barrier)) {
-            TickDisplay.plotResetSpot(barrier);
-        }
         // next line is responsible for 'sell at market' flashing on the last tick
         sellSetVisibility(!is_sell_clicked && !is_sold && !is_ended && +contract.is_valid_to_sell === 1);
         contract.chart_validation_error = contract.validation_error;

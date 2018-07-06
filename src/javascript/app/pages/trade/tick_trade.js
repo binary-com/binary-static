@@ -1,7 +1,6 @@
 const moment               = require('moment');
 const requireHighstock     = require('./common').requireHighstock;
 const Lookback             = require('./lookback');
-const Reset                = require('./reset');
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
@@ -31,7 +30,6 @@ const TickDisplay = (() => {
         spots_list,
         tick_init,
         subscribe,
-        reset_spot_plotted,
         response_id,
         contract,
         selected_tick,
@@ -64,7 +62,6 @@ const TickDisplay = (() => {
         barrier              = data.barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
-        reset_spot_plotted   = false;
         prev_barriers        = []; // For checking if barrier was updated
 
         if (data.id_render) {
@@ -213,7 +210,7 @@ const TickDisplay = (() => {
             return;
         }
 
-        let barrier_type = /^(asian|highlowticks)$/.test(contract_category) ? contract_category : 'static';
+        let barrier_type = /^(asian|highlowticks|reset)$/.test(contract_category) ? contract_category : 'static';
         if (Lookback.isLookback(contract.contract_type)) {
             barrier_type = 'lookback';
         }
@@ -266,29 +263,22 @@ const TickDisplay = (() => {
         }
 
         if (barrier_type === 'reset') {
-            const { barrier: current_barrier, entry_spot: entry_barrier, status } = contract;
-            if (current_barrier) {
+            const { status } = contract;
+
+            let { barrier: current_barrier, entry_spot: entry_barrier } = contract;
+            if (!entry_barrier || !current_barrier) {
+                entry_barrier = current_barrier = applicable_ticks[0].quote;
+            }
+
+            if (entry_barrier && current_barrier) {
                 const width        = ($('.highcharts-markers')[0].getBoundingClientRect() || {}).width;
                 const x            = status === 'open' ? 60 : (chart.chartWidth - width - 45);
                 const is_resetcall = contract.contract_type === 'RESETCALL';
                 const has_reset    = current_barrier !== entry_barrier;
                 if (has_reset) {
-                    drawBarrier({
-                        id        : 'tick-reset-barrier',
-                        value     : current_barrier,
-                        text      : 'Reset Barrier',
-                        label     : { align: 'right', x: -x },
-                        textBottom: is_resetcall,
-                    });
+                    drawBarrier({ id: 'tick-reset-barrier', value: current_barrier, text: 'Reset Barrier', label: { align: 'right', x: -x }, textBottom: is_resetcall });
                 }
-                drawBarrier({
-                    id        : 'tick-barrier',
-                    value     : entry_barrier,
-                    text      : 'Barrier',
-                    label     : { align: 'right',  x: -x },
-                    dashStyle : has_reset ? 'dot' : 'default',
-                    textBottom: has_reset && !is_resetcall,
-                });
+                drawBarrier({ id: 'tick-barrier', value: entry_barrier, text: 'Barrier', label: { align: 'right',  x: -x }, dashStyle: has_reset ? 'dot' : 'default', textBottom: has_reset && !is_resetcall });
             }
         }
 
@@ -326,8 +316,8 @@ const TickDisplay = (() => {
             color: barrier_color || 'green',
             label: {
                 text : `${localize(text)} (${addComma(value)})`,
-                align: label.align || 'center',
-                x    : label.x || 0,
+                align: label ? label.align : 'center',
+                x    : label ? label.x : 0,
                 y    : textBottom ? 15 : -5,
             },
             width    : width || 2,
@@ -363,10 +353,6 @@ const TickDisplay = (() => {
             }
 
             addSellSpot();
-        }
-
-        if (Reset.isReset(contract_category) && Reset.isNewBarrier(contract.entry_spot, contract.barrier)) {
-            plotResetSpot(+contract.barrier);
         }
     };
 
@@ -415,7 +401,7 @@ const TickDisplay = (() => {
                     category = 'reset';
                 } else if (/^(tickhigh|ticklow)_/i.test(contract.shortcode)) {
                     category = 'highlowticks';
-                }
+                } // TODO: add category for Lookback once API changes is ready
                 initialize({
                     symbol              : contract.underlying,
                     number_of_ticks     : contract.tick_count,
@@ -499,52 +485,7 @@ const TickDisplay = (() => {
                     counter++;
                 }
             }
-            if (Reset.isReset(contract_category) && data.history) {
-                plotResetSpot();
-            }
         }
-    };
-
-    const removePlotLine = (id, type = 'y') => {
-        if (!chart) return;
-        chart[(`${type}Axis`)][0].removePlotLine(id);
-    };
-
-    const plotResetSpot = (r_barrier) => {
-        if (reset_spot_plotted || !chart || !Reset.isReset(contract.contract_type)) return;
-
-        const is_resetcall  = contract.contract_type === 'RESETCALL';
-        const entry_barrier = contract.entry_spot;
-        const reset_barrier = r_barrier || contract.barrier;
-
-        if (!+entry_barrier || !+reset_barrier) return;
-
-        if (+entry_barrier !== +reset_barrier) {
-            removePlotLine('tick-barrier', 'y');
-            
-            chart.yAxis[0].addPlotLine({
-                id    : 'tick-reset-barrier',
-                value : +reset_barrier,
-                label : { text: `${localize('Reset Barrier')} (${addComma(reset_barrier)})`, align: 'right', x: -60, y: is_resetcall ? 15 : -5 },
-                color : 'green',
-                width : 2,
-                zIndex: 3,
-            });
-            chart.yAxis[0].addPlotLine({
-                id       : 'tick-barrier',
-                value    : +entry_barrier,
-                label    : { text: `${localize('Barrier')} (${addComma(entry_barrier)})`,    align: 'right', x: -60, y: is_resetcall ? -5 : 15 },
-                color    : 'green',
-                width    : 2,
-                zIndex   : 3,
-                dashStyle: 'dot',
-            });
-
-            CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Reset Barrier')}: ${reset_barrier}`);
-            reset_spot_plotted = true;
-        }
-
-        evaluateContractOutcome();
     };
 
     const addSellSpot = () => {
@@ -627,7 +568,6 @@ const TickDisplay = (() => {
     };
 
     return {
-        plotResetSpot,
         updateChart,
         init      : initialize,
         resetSpots: () => { spots_list = {}; updateContract({}); $(`#${id_render}`).css('background-color', '#F2F2F2'); },
