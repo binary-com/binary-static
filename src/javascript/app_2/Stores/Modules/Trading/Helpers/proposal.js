@@ -1,44 +1,39 @@
-import moment                        from 'moment';
-import { createChartBarriersConfig } from './chart';
-import { convertToUnix }             from '../../../../Utils/Date';
-import { WS }                        from '../../../../Services';
-import { getDecimalPlaces }          from '../../../../../_common/base/currency_base';
+import moment               from 'moment';
+import { convertToUnix }    from '../../../../Utils/Date';
+import { getDecimalPlaces } from '../../../../../_common/base/currency_base';
+import { isDeepEqual }      from '../../../../../_common/utility';
 
-export const requestProposal = (store, updateStore) => {
-    const proposal_info = {};
-    WS.forgetAll('proposal').then(() => {
-        const proposalCallback = (response) => {
-            const proposal = response.proposal || {};
-            const profit   = (proposal.payout - proposal.ask_price) || 0;
-            const returns  = profit * 100 / (proposal.payout || 1);
+export const getProposalInfo = (store, response) => {
+    const proposal = response.proposal || {};
+    const profit   = (proposal.payout - proposal.ask_price) || 0;
+    const returns  = profit * 100 / (proposal.payout || 1);
 
-            proposal_info[response.echo_req.contract_type] = {
-                profit   : profit.toFixed(getDecimalPlaces(store.currency)),
-                returns  : `${returns.toFixed(2)}%`,
-                stake    : proposal.display_value,
-                payout   : proposal.payout,
-                id       : proposal.id || '',
-                message  : proposal.longcode || response.error.message,
-                has_error: !!response.error,
-            };
-
-            if (!store.chart_barriers.main) {
-                store.chart_barriers = { main: createChartBarriersConfig(store.contract_type, response) };
-            }
-
-            updateStore({
-                proposal_info,
-                is_purchase_enabled: true,
-            });
-        };
-
-        Object.keys(store.trade_types).forEach(type => {
-            WS.subscribeProposal(createProposalRequest(store, type), proposalCallback);
-        });
-    });
+    return {
+        profit   : profit.toFixed(getDecimalPlaces(store.currency)),
+        returns  : `${returns.toFixed(2)}%`,
+        stake    : proposal.display_value,
+        payout   : proposal.payout,
+        id       : proposal.id || '',
+        message  : proposal.longcode || response.error.message,
+        has_error: !!response.error,
+    };
 };
 
-const createProposalRequest = (store, type_of_contract) => {
+export const createProposalRequests = (store) => {
+    const requests = {};
+
+    Object.keys(store.trade_types).forEach((type) => {
+        const new_req     = createProposalRequestForContract(store, type);
+        const current_req = store.proposal_requests[type];
+        if (!isDeepEqual(new_req, current_req)) {
+            requests[type] = new_req;
+        }
+    });
+
+    return requests;
+};
+
+const createProposalRequestForContract = (store, type_of_contract) => {
     const obj_expiry = {};
     if (store.expiry_type === 'endtime') {
         const expiry_date = moment.utc(store.expiry_date);

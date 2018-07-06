@@ -1,14 +1,35 @@
-import { observable } from 'mobx';
+import { action, observable } from 'mobx';
+
+export const createChartBarriersConfig = (contract_type, proposal_response, onChartBarrierChange) => {
+    if (proposal_response.error || !isBarrierSupported(contract_type)) {
+        return {};
+    }
+
+    return new ChartBarriersConfig(proposal_response.echo_req, onChartBarrierChange);
+};
+
+const isBarrierSupported = (contract_type) => contract_type in CONTRACT_SHADES;
 
 class ChartBarriersConfig {
     @observable color;
     @observable lineStyle;
     @observable shade;
 
-    constructor({ barrier, barrier2 }) {
+    @observable high;
+    @observable low;
+
+    @observable relative;
+    @observable draggable;
+    @observable hidePriceLines;
+
+    constructor({ barrier, barrier2 }, onChartBarrierChange) {
         this.color     = 'green';
         this.lineStyle = 'dashed';
         this.shade     = 'NONE_SINGLE';
+        this.onChange  = this.onBarrierChange;
+
+        // trade_store's action to process new barriers on dragged
+        this.onChartBarrierChange = onChartBarrierChange;
 
         this.high = +barrier || 0; // 0 to follow the price
         if (barrier2) {
@@ -21,30 +42,39 @@ class ChartBarriersConfig {
         this.draggable      = has_barrier;
         this.hidePriceLines = !has_barrier;
     }
-}
 
-export const createChartBarriersConfig = (contract_type, proposal_response) => {
-    if (proposal_response.error || !/(rise_fall|high_low|touch|end|stay)/.test(contract_type)) {
-        return {};
+    @action.bound
+    updateBarriers({ high, low }) {
+        this.high = +high || undefined;
+        this.low  = +low || undefined;
     }
 
-    return new ChartBarriersConfig(proposal_response.echo_req);
-};
+    @action.bound
+    updateBarrierShade(chart_barriers, is_over, contract_type) {
+        this.shade = (is_over && CONTRACT_SHADES[contract_type]) || this.getDefaults();
+    }
 
-export const updateBarrierShade = (chart_barriers, is_over, contract_type) => {
-    const config = chart_barriers.main;
-    if (!config) return false;
+    @action.bound
+    onBarrierChange({ high, low }) {
+        this.updateBarriers({ high, low });
+        this.onChartBarrierChange();
+    }
 
-    return (is_over &&
-        Object.keys(SHADE_TYPES).find(key => SHADE_TYPES[key].includes(contract_type))
-    ) || getDefaults(config);
-};
+    getDefaults = () => (
+        typeof this.high !== 'undefined' &&
+        typeof this.low !== 'undefined' ?
+            'NONE_DOUBLE' :
+            'NONE_SINGLE'
+    );
+}
 
-const getDefaults = (config = {}) => 'high' in config && 'low' in config ? 'NONE_DOUBLE' : 'NONE_SINGLE';
-
-const SHADE_TYPES = {
-    ABOVE  : ['CALL'],
-    BELOW  : ['PUT'],
-    BETWEEN: ['EXPIRYRANGE', 'RANGE'],
-    OUTSIDE: ['EXPIRYMISS', 'UPORDOWN'],
+const CONTRACT_SHADES = {
+    CALL       : 'ABOVE',
+    PUT        : 'BELOW',
+    EXPIRYRANGE: 'BETWEEN',
+    EXPIRYMISS : 'OUTSIDE',
+    RANGE      : 'BETWEEN',
+    UPORDOWN   : 'OUTSIDE',
+    ONETOUCH   : 'NONE_SINGLE', // no shade
+    NOTOUCH    : 'NONE_SINGLE', // no shade
 };
