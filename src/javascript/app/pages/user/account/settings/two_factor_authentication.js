@@ -3,6 +3,7 @@ const Client           = require('../../../../base/client');
 const BinarySocket     = require('../../../../base/socket');
 const FormManager      = require('../../../../common/form_manager');
 const localize         = require('../../../../../_common/localize').localize;
+const capitalize       = require('../../../../../_common/utility').capitalize;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const TwoFactorAuthentication = (() => {
@@ -41,7 +42,7 @@ const TwoFactorAuthentication = (() => {
             next_state    = state[+(!res.account_security.totp.is_enabled)].slice(0, -1);
 
             $(`#${current_state}`).setVisibility(1);
-            $btn_submit.text(localize(next_state));
+            $btn_submit.text(localize(capitalize(next_state)));
             $form.setVisibility(1);
 
             FormManager.init(form_id, [

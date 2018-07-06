@@ -179,6 +179,13 @@ const getStaticHash = () => {
     return static_hash;
 };
 
+/**
+ * Returns a string with capitalized first letter
+ *
+ * @param {String} string: string to be capitalized
+ */
+const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+
 module.exports = {
     showLoadingImage,
     getHighestZIndex,
@@ -193,4 +200,5 @@ module.exports = {
     applyToAllElements,
     findParent,
     getStaticHash,
+    capitalize,
 };
