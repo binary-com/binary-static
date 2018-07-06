@@ -5,7 +5,7 @@ import ContractType from '../../Containers/contract_type.jsx';
 
 const ScreenSmall = (/* { is_trade_enabled } */) => (
     <React.Fragment>
-        <ContractType className='mobile-only' is_mobile_widget />
+        <ContractType />
         <div className='mobile-only'>
             <MobileWidget />
         </div>

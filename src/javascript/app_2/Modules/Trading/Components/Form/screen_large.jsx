@@ -8,16 +8,19 @@ import UILoader     from '../../../../components/elements/ui_loader.jsx';
 const ScreenLarge = ({ is_trade_enabled }) => (
     <div className='sidebar-container desktop-only'>
         <div className='sidebar-items'>
-            {!is_trade_enabled &&
+            {!is_trade_enabled ?
                 <UILoader />
+                :
+                <React.Fragment>
+                    <fieldset className='trade-types'>
+                        <ContractType />
+                    </fieldset>
+                    <TradeParams />
+                    <div className='purchase-wrapper'>
+                        <Purchase />
+                    </div>
+                </React.Fragment>
             }
-            <fieldset className='trade-types'>
-                <ContractType className='desktop-only'/>
-            </fieldset>
-            <TradeParams />
-            <div className='purchase-wrapper'>
-                <Purchase />
-            </div>
         </div>
     </div>
 );
