@@ -53,7 +53,7 @@ const FullScreenDialog = (props) => {
                     className='icons btn-close fullscreen-dialog__close-btn'
                     onClick={props.onClose}
                 >
-                    <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                    <img src={Url.urlForStatic('images/app_2/common/close.svg')} alt='Close' />
                 </div>
             </div>
             <div className='fullscreen-dialog__header-shadow-cover' />

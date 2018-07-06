@@ -13,16 +13,16 @@ export const DrawerHeader = ({
             {alignment && alignment === 'right' ?
                 <div className={drawer_header_class}>
                     <div className='icons btn-close' onClick={closeBtn}>
-                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                        <img src={Url.urlForStatic('images/app_2/common/close.svg')} alt='Close' />
                     </div>
                 </div>
             :
                 <div className={drawer_header_class}>
                     <div className='icons btn-close' onClick={closeBtn}>
-                        <img src={Url.urlForStatic('images/trading_app/common/close.svg')} alt='Close' />
+                        <img src={Url.urlForStatic('images/app_2/common/close.svg')} alt='Close' />
                     </div>
                     <div className='icons brand-logo'>
-                        <img src={Url.urlForStatic('images/trading_app/header/binary_logo_dark.svg')} alt='Binary.com' />
+                        <img src={Url.urlForStatic('images/app_2/header/binary_logo_dark.svg')} alt='Binary.com' />
                     </div>
                 </div>
         }

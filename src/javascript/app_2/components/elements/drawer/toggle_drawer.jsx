@@ -29,7 +29,7 @@ class ToggleDrawer extends Component {
         return (
             <React.Fragment>
                 <div className={toggle_class} onClick={this.showDrawer}>
-                    <img src={icon_link || Url.urlForStatic('images/trading_app/header/menu.svg')} />
+                    <img src={icon_link || Url.urlForStatic('images/app_2/header/menu.svg')} />
                 </div>
                 <Drawer
                     alignment={alignment}

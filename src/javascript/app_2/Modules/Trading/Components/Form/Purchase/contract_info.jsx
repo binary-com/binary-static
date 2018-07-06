@@ -16,7 +16,7 @@ const ContractInfo = ({
             <div className='type-wrapper'>
                 <img
                     className='type'
-                    src={Url.urlForStatic(`images/trading_app/purchase/trade_types/ic_${contract_type.toLowerCase()}_light.svg`)}
+                    src={Url.urlForStatic(`images/app_2/purchase/trade_types/ic_${contract_type.toLowerCase()}_light.svg`)}
                 />
             </div>
             <h4 className='trade-type'>{contract_title}</h4>

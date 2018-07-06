@@ -84,7 +84,7 @@ $ICON_LIST: asianu call calle put digitdiff digiteven digitmatch digitodd digito
 
 // $style: light or dark
 @function tradetypeicon($style, $trade_type) {
-    @return url('../images/trading_app/contracts/trade_types/' + $style + '/ic-' + $style +'-' + $trade_type + '.svg');
+    @return url('../images/app_2/contracts/trade_types/' + $style + '/ic-' + $style +'-' + $trade_type + '.svg');
 }
 
 @each $icon in $ICON_LIST {

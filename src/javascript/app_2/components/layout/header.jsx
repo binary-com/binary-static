@@ -23,7 +23,7 @@ class Header extends React.Component {
                                 <MenuDrawer />
                             </ToggleDrawer>
                             <div className='navbar-icons binary-logo'>
-                                <img className='logo-img' src={Url.urlForStatic('images/trading_app/header/symbol.svg')} alt='Binary.com' />
+                                <img className='logo-img' src={Url.urlForStatic('images/app_2/header/symbol.svg')} alt='Binary.com' />
                             </div>
                             {!!items.length &&
                                 <div className='menu-links'>
@@ -41,7 +41,7 @@ class Header extends React.Component {
                         <ToggleDrawer
                             icon_class='notify-toggle'
                             alignment='right'
-                            icon_link={Url.urlForStatic('images/trading_app/header/icons/ic_notification_light.svg')}
+                            icon_link={Url.urlForStatic('images/app_2/header/icons/ic_notification_light.svg')}
                         >
                             <DrawerItem text='Alert 1'/>
                             <DrawerItem text='Alert 2'/>

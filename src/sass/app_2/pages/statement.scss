@@ -138,23 +138,23 @@ $filter-height: 60px;
                 color: $COLOR_LIGHT_RED;
             }
             &--sell:before {
-                background-image: url('../images/trading_app/statement/ic_sell.svg');
+                background-image: url('../images/app_2/statement/ic_sell.svg');
             }
             &--buy:before {
-                background-image: url('../images/trading_app/statement/ic_buy.svg');
+                background-image: url('../images/app_2/statement/ic_buy.svg');
             }
             &--deposit:before {
-                background-image: url('../images/trading_app/statement/ic_deposit.svg');
+                background-image: url('../images/app_2/statement/ic_deposit.svg');
             }
             &--withdrawal:before {
-                background-image: url('../images/trading_app/statement/ic_withdrawal.svg');
+                background-image: url('../images/app_2/statement/ic_withdrawal.svg');
             }
         }
         &__payout:before {
-            background-image: url('../images/trading_app/statement/ic_payout.svg');
+            background-image: url('../images/app_2/statement/ic_payout.svg');
         }
         &__balance:before {
-            background-image: url('../images/trading_app/statement/ic_wallet.svg');
+            background-image: url('../images/app_2/statement/ic_wallet.svg');
         }
     }
 }

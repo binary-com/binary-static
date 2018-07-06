@@ -97,16 +97,16 @@
                                 visibility: hidden;
                             }
                             &.trade:before {
-                                content: url('../images/trading_app/header/icons/ic_trade_normal_light.svg');
+                                content: url('../images/app_2/header/icons/ic_trade_normal_light.svg');
                             }
                             &.portfolio:before {
-                                content: url('../images/trading_app/header/icons/ic_portfolio_normal_light.svg');
+                                content: url('../images/app_2/header/icons/ic_portfolio_normal_light.svg');
                             }
                             &.statement:before {
-                                content: url('../images/trading_app/header/icons/ic_statement_normal_light.svg');
+                                content: url('../images/app_2/header/icons/ic_statement_normal_light.svg');
                             }
                             &.cashier:before {
-                                content: url('../images/trading_app/header/icons/ic_cashier_normal_light.svg');
+                                content: url('../images/app_2/header/icons/ic_cashier_normal_light.svg');
                             }
                         }
                         &:hover, &.active {
@@ -114,16 +114,16 @@
                                 font-weight: 400;
                             }
                             & > span.trade:before {
-                                content: url('../images/trading_app/header/icons/ic_trade_active_light.svg');
+                                content: url('../images/app_2/header/icons/ic_trade_active_light.svg');
                             }
                             & > span.portfolio:before {
-                                content: url('../images/trading_app/header/icons/ic_portfolio_active_light.svg');
+                                content: url('../images/app_2/header/icons/ic_portfolio_active_light.svg');
                             }
                             & > span.statement:before {
-                                content: url('../images/trading_app/header/icons/ic_statement_active_light.svg');
+                                content: url('../images/app_2/header/icons/ic_statement_active_light.svg');
                             }
                             & > span.cashier:before {
-                                content: url('../images/trading_app/header/icons/ic_cashier_active_light.svg');
+                                content: url('../images/app_2/header/icons/ic_cashier_active_light.svg');
                             }
                         }
                         &.active {
