@@ -93,6 +93,8 @@ const SetCurrency = (() => {
                                     if (!/authenticated/.test(get_account_status.status)) {
                                         redirect_url = Url.urlFor('user/authenticate');
                                     }
+                                } else {
+                                    $('#deposit_btn').setVisibility(1);
                                 }
                                 // Do not redirect MX clients to cashier, because they need to set max limit before making deposit
                                 if (!redirect_url && !/^(iom)$/i.test(Client.get('landing_company_shortcode'))) {
