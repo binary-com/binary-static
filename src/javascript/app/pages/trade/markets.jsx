@@ -347,7 +347,7 @@ class Markets extends React.Component {
         const {list} = this.references;
         const node = this.references.market_nodes[key];
         const offset = node.dataset.offsetTop - list.offsetTop;
-        scrollToPosition(list, offset, 250);
+        scrollToPosition(list, offset, 0);
     }
     /* eslint-enable no-shadow */
     /* eslint-enable no-undef */
