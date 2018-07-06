@@ -2,9 +2,11 @@ import React        from 'react';
 import PropTypes    from 'prop-types';
 import SettingsControl from './settings_control.jsx';
 import { connect }  from '../../../store/connect';
+import { get as getLanguage } from '../../../../_common/language';
 
 class GeneralSettings extends React.Component {
     render() {
+        const curr_language = getLanguage();
         return (
             <div className='tab-content'>
                 <div className='general-setting-container'>
@@ -17,7 +19,7 @@ class GeneralSettings extends React.Component {
                         name='language'
                         onClick={this.props.showLanguage}
                     >
-                        <i className={`flag ic-flag-${(this.props.language || 'en').toLowerCase()}`} />
+                        <i className={`flag ic-flag-${(curr_language || 'en').toLowerCase()}`} />
                     </SettingsControl>
                 </div>
             </div>
@@ -26,7 +28,6 @@ class GeneralSettings extends React.Component {
 };
 
 GeneralSettings.propTypes = {
-    language      : PropTypes.string,
     showLanguage  : PropTypes.func,
     is_dark_mode  : PropTypes.bool,
     toggleDarkMode: PropTypes.func,
@@ -34,7 +35,6 @@ GeneralSettings.propTypes = {
 
 export default connect(
     ({ ui }) => ({
-        language      : ui.current_language,
         showLanguage  : ui.showLanguageDialog,
         is_dark_mode  : ui.is_dark_mode_on,
         toggleDarkMode: ui.toggleDarkMode,

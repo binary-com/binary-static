@@ -13,25 +13,6 @@ export default class UIStore {
     @observable is_chart_asset_info_visible = false;
     @observable is_chart_countdown_visible = false;
 
-    // TO-DO - Get language list from config file
-    @observable supported_languages = {
-        languages: [
-            { id: 'EN',    name: 'English'    },
-            { id: 'PT',    name: 'Português'  },
-            { id: 'DE',    name: 'Deutsch'    },
-            { id: 'RU',    name: 'Русский'    },
-            { id: 'FR',    name: 'Français'   },
-            { id: 'TH',    name: 'Thai'       },
-            { id: 'ID',    name: 'Indonesia'  },
-            { id: 'VI',    name: 'Tiếng Việt' },
-            { id: 'IT',    name: 'Italiano'   },
-            { id: 'ZH_CN', name: '简体中文'    },
-            { id: 'ES',    name: 'Espana'     },
-            { id: 'ZH_TW', name: '繁體中文'    },
-            { id: 'PL',    name: 'Polish'     },
-        ],
-    };
-
     @action.bound toggleChartLayout() {
         this.is_chart_layout_left = !this.is_chart_layout_left;
     }
