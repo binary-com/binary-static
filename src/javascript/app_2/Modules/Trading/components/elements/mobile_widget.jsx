@@ -1,8 +1,8 @@
 import React            from 'react';
-import FullscreenDialog from './fullscreen_dialog.jsx';
+import FullScreenDialog from './full_screen_dialog.jsx';
 import TradeParams      from '../../Containers/trade_params.jsx';
 
-class MobileWidget extends React.Component {
+class MobileWidget extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,13 +31,13 @@ class MobileWidget extends React.Component {
                     <TradeParams is_minimized />
                 </div>
 
-                <FullscreenDialog
+                <FullScreenDialog
                     title='Set parameters'
                     visible={this.state.open}
                     onClose={this.handleDialogClose}
                 >
                     <TradeParams is_nativepicker />
-                </FullscreenDialog>
+                </FullScreenDialog>
             </React.Fragment>
         );
     }

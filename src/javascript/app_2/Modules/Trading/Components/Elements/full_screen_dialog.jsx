@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React     from 'react';
 import Url       from '../../../../../_common/url';
 
-const FullscreenDialog = (props) => {
+const FullScreenDialog = (props) => {
     const { title, visible, children } = props;
 
     const checkVisibility = () => {
@@ -16,7 +16,7 @@ const FullscreenDialog = (props) => {
         }
     };
 
-    const scrollToElIfNeeded = (parent, el) => {
+    const scrollToElement = (parent, el) => {
         const viewport_offset = el.getBoundingClientRect();
         const hidden = viewport_offset.top + el.clientHeight + 20 > window.innerHeight;
         if (hidden) {
@@ -28,7 +28,7 @@ const FullscreenDialog = (props) => {
     // sometimes input is covered by virtual keyboard on mobile chrome, uc browser
     const handleClick = (e) => {
         if (e.target.tagName === 'INPUT' && e.target.type === 'number') {
-            const scrollToTarget = scrollToElIfNeeded(e.currentTarget, e.target);
+            const scrollToTarget = scrollToElement(e.currentTarget, e.target);
             window.addEventListener('resize', scrollToTarget, false);
 
             // remove listener, resize is not fired on iOS safari
@@ -67,11 +67,11 @@ const FullscreenDialog = (props) => {
     );
 };
 
-FullscreenDialog.propTypes = {
+FullScreenDialog.propTypes = {
     children: PropTypes.any,
     onClose : PropTypes.func,
     title   : PropTypes.string,
     visible : PropTypes.bool,
 };
 
-export default FullscreenDialog;
+export default FullScreenDialog;

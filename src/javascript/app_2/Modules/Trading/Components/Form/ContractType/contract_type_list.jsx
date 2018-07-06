@@ -1,6 +1,6 @@
 import React            from 'react';
 import PropTypes        from 'prop-types';
-import FullscreenDialog from './fullscreen_dialog.jsx';
+import FullScreenDialog from '../../Elements/full_screen_dialog.jsx';
 
 class ContractsPopUp extends React.Component {
     constructor(props) {
@@ -75,13 +75,13 @@ class ContractsPopUp extends React.Component {
 
     renderModal() {
         return (
-            <FullscreenDialog
+            <FullScreenDialog
                 title='Select Trading Type'
                 visible={this.state.is_list_visible}
                 onClose={this.handleVisibility}
             >
                 {this.renderList()}
-            </FullscreenDialog>
+            </FullScreenDialog>
         );
     }
 

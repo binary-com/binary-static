@@ -1,6 +1,6 @@
 import React          from 'react';
 import PropTypes      from 'prop-types';
-import ContractsPopUp from '../Components/elements/contracts_popup.jsx';
+import ContractsPopUp from '../Components/Form/ContractType/contract_type_list.jsx';
 import { connect }    from '../../../Stores/connect';
 
 const Contract = ({
