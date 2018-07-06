@@ -22,11 +22,17 @@ const SetCurrency = (() => {
         if (Client.get('currency')) {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
-                $('.has_currency, #set_currency').setVisibility(1);
+                $('#set_currency').setVisibility(1);
 
-                // display authenticate msg only for financial or MT5 financial accounts
-                const is_mt5_financial = /real_vanuatu_(standard|advanced|mamm_advanced)/.test(Client.get('mt5_account'));
-                $('#authenticate_msg').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
+                if (Client.isAccountOfType('financial')) {
+                    BinarySocket.wait('get_account_status').then((response) => {
+                        const needs_to_authenticate = +response.get_account_status.prompt_client_to_authenticate;
+                        $('#deposit_btn').setVisibility(!needs_to_authenticate);
+                        $('#authenticate_msg').setVisibility(needs_to_authenticate);
+                    });
+                } else {
+                    $('#deposit_btn').setVisibility(1);
+                }
             } else {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -101,7 +107,6 @@ const SetCurrency = (() => {
                             } else {
                                 Header.populateAccountsList(); // update account title
                                 $('.select_currency').setVisibility(0);
-                                $('.has_currency').setVisibility(1);
                             }
                         }
                     });

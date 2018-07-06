@@ -39,7 +39,7 @@ const SetCurrency = () => (
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
 
-                <div className='invisible has_currency'>
+                <div id='deposit_btn' className='invisible'>
                     <div>
                         <a className='button' href={it.url_for('cashier/forwardws?action=deposit')}><span>{it.L('Make a Deposit')}</span></a>
                     </div>
