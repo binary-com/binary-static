@@ -145,8 +145,8 @@ const Home = () => {
                                 icon_1='PUT'
                                 icon_2='CALLE'
                                 className='visible'
-                                image_1='higher-lower-1'
-                                image_2='higher-lower-2'
+                                image_1='higher'
+                                image_2='lower'
                                 header={it.L('{JAPANY ONLY}Ladder Options')}
                                 description={it.L('{JAPANY ONLY}Predict whether a FX rate will finish higher or lower than a target barrier.')}
                                 duration={it.L('{JAPANY ONLY}2 hours to 1 year terms')}
@@ -155,8 +155,8 @@ const Home = () => {
                                 icon_1='ONETOUCH'
                                 icon_2='NOTOUCH'
                                 className='hidden'
-                                image_1='touch-notouch-1'
-                                image_2='touch-notouch-2'
+                                image_1='touch'
+                                image_2='no-touch'
                                 header={it.L('{JAPANY ONLY}Touch Options')}
                                 description={it.L('{JAPANY ONLY}Predict whether a FX rate will touch a target barrier or not.')}
                                 duration={it.L('{JAPANY ONLY}1 week to 1 year terms')}
@@ -165,8 +165,8 @@ const Home = () => {
                                 icon_1='EXPIRYRANGEE'
                                 icon_2='EXPIRYMISS'
                                 className='hidden'
-                                image_1='in-out-1'
-                                image_2='in-out-2'
+                                image_1='ends-between'
+                                image_2='ends-outside'
                                 header={it.L('{JAPANY ONLY}Range Options: End-In / End-Out')}
                                 description={it.L('{JAPANY ONLY}Predict whether a FX rate will end inside or outside a certain range.')}
                                 duration={it.L('{JAPANY ONLY}1 week to 1 year terms')}
@@ -175,8 +175,8 @@ const Home = () => {
                                 icon_1='RANGE'
                                 icon_2='UPORDOWN'
                                 className='hidden'
-                                image_1='in-out-3'
-                                image_2='in-out-4'
+                                image_1='stays-between'
+                                image_2='goes-outside'
                                 header={it.L('{JAPANY ONLY}Range Options: Stay-In / Break-Out')}
                                 description={it.L('{JAPANY ONLY}Predict whether a FX rate will touch either target barrier before expiry.')}
                                 duration={it.L('{JAPANY ONLY}1 week to 1 year terms')}
