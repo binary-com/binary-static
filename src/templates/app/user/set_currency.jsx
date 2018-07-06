@@ -33,7 +33,7 @@ const SetCurrency = () => (
                     <p>
                         {it.L('You have successfully created your [_1]account!', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}
                         <br/>
-                        <span className='invisible has_currency'>{it.L('Please [_1]authenticate[_2] your account before you make a deposit.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</span>
+                        <span id='authenticate_msg' className='invisible'>{it.L('Please [_1]authenticate[_2] your account before you make a deposit.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</span>
                     </p>
                 </div>
 

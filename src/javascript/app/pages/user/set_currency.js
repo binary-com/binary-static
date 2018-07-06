@@ -23,6 +23,10 @@ const SetCurrency = (() => {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
                 $('.has_currency, #set_currency').setVisibility(1);
+
+                // display authenticate msg only for financial or MT5 financial accounts
+                const is_mt5_financial = /real_vanuatu_(standard|advanced|mamm_advanced)/.test(Client.get('mt5_account'));
+                $('#authenticate_msg').setVisibility(is_mt5_financial || Client.isAccountOfType('financial'));
             } else {
                 BinaryPjax.loadPreviousUrl();
             }
