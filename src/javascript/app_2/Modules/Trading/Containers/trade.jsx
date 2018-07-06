@@ -1,8 +1,8 @@
-import classnames      from 'classnames';
+import classNames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import FormLayout      from '../Components/Form/form_layout.jsx';
 import Test            from './test.jsx';
+import FormLayout      from '../Components/Form/form_layout.jsx';
 import SmartCharts     from '../../../components/charts/smartcharts.jsx';
 import PortfolioDrawer from '../../../components/elements/portfolio_drawer.jsx';
 import { connect }     from '../../../Stores/connect';
@@ -12,7 +12,7 @@ class Trade extends React.Component {
         return (
             <div
                 id='trade_container'
-                className={classnames('trade-container', {
+                className={classNames('trade-container', {
                     show: this.props.is_portfolio_drawer_on,
                 })}
             >

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import classNames               from 'classnames';
-import PropTypes                from 'prop-types';
-import { Drawer }               from './drawer.jsx';
-import Url                      from '../../../../_common/url';
-import { connect }              from '../../../Stores/connect';
+import classNames  from 'classnames';
+import PropTypes   from 'prop-types';
+import React       from 'react';
+import { Drawer }  from './drawer.jsx';
+import { connect } from '../../../Stores/connect';
+import Url         from '../../../../_common/url';
 
-class ToggleDrawer extends Component {
+class ToggleDrawer extends React.Component {
     showDrawer = () => {
         const { alignment } = this.props;
         if (alignment === 'left') {
@@ -13,11 +13,11 @@ class ToggleDrawer extends Component {
         } else if (alignment === 'right') {
             this.props.showNotificationsDrawer();
         }
-    }
+    };
 
     closeDrawer = () => {
         this.props.hideDrawers();
-    }
+    };
 
     render() {
         const { icon_class, icon_link, alignment, children } = this.props;

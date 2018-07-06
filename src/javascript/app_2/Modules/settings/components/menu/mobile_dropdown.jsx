@@ -1,7 +1,7 @@
-import React             from 'react';
+import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
+import React             from 'react';
 import { Switch, Route } from 'react-router-dom';
-import classnames        from 'classnames';
 import MenuItem          from './menu_item.jsx';
 
 class MobileDropdown extends React.Component {
@@ -25,7 +25,7 @@ class MobileDropdown extends React.Component {
         const { all_items, children } = this.props;
         const { is_open } = this.state;
         return (
-            <div className={classnames('mobile-dropdown', { 'mobile-dropdown--open': is_open })}>
+            <div className={classNames('mobile-dropdown', { 'mobile-dropdown--open': is_open })}>
                 <div className='mobile-dropdown__button' onClick={this.toggleOpen}>
                     <Switch>
                         {

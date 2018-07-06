@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import classNames               from 'classnames';
-import PropTypes                from 'prop-types';
-import { DrawerItem }           from './drawer_item.jsx';
+import classNames     from 'classnames';
+import PropTypes      from 'prop-types';
+import React          from 'react';
+import { DrawerItem } from './drawer_item.jsx';
 
-class DrawerItems extends Component {
+class DrawerItems extends React.Component {
     state = { is_collapsed: false };
 
     collapseItems = () => {
         this.setState({
             is_collapsed: !this.state.is_collapsed,
         });
-    }
+    };
 
     render() {
         const { is_collapsed } = this.state;

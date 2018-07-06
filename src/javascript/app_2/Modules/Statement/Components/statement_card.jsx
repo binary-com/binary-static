@@ -1,6 +1,6 @@
-import React      from 'react';
+import classNames from 'classnames';
 import PropTypes  from 'prop-types';
-import classnames from 'classnames';
+import React      from 'react';
 
 const StatementCard = ({
     action,
@@ -12,7 +12,7 @@ const StatementCard = ({
     payout,
     refid,
 }) => (
-    <div className={classnames('statement-card', className)}>
+    <div className={classNames('statement-card', className)}>
         <div className='statement-card__header'>
             <span className='statement-card__date'>{date}</span>
             <span className='statement-card__refid'>{refid}</span>
@@ -20,7 +20,7 @@ const StatementCard = ({
         <div className='statement-card__body'>
             <div className='statement-card__desc'>{desc}</div>
             <div className='statement-card__row'>
-                <div className={classnames('statement-card__cell statement-card__amount', {
+                <div className={classNames('statement-card__cell statement-card__amount', {
                     'statement-card__amount--buy'       : action === 'Buy',
                     'statement-card__amount--sell'      : action === 'Sell',
                     'statement-card__amount--deposit'   : action === 'Deposit',

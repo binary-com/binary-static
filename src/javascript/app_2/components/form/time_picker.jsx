@@ -1,7 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
-import React, { Component }           from 'react';
+import React                          from 'react';
 import { isSessionAvailable }         from '../../Stores/Modules/Trading/Helpers/start_date';
 import { localize }                   from '../../../_common/localize';
 
@@ -12,7 +12,7 @@ import { localize }                   from '../../../_common/localize';
       4. update the state only when dropdown closed
 */
 
-class TimePickerDropdown extends Component {
+class TimePickerDropdown extends React.Component {
     constructor(props) {
         super(props);
         this.hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
@@ -174,7 +174,7 @@ class TimePickerDropdown extends Component {
     }
 }
 
-class TimePicker extends Component {
+class TimePicker extends React.Component {
     constructor (props) {
         super(props);
         this.state = {

@@ -1,11 +1,11 @@
-import classNames           from 'classnames';
-import PropTypes            from 'prop-types';
-import React, { Component } from 'react';
-import { DrawerHeader }     from './drawer_header.jsx';
-import { connect }          from '../../../Stores/connect';
+import classNames       from 'classnames';
+import PropTypes        from 'prop-types';
+import React            from 'react';
+import { DrawerHeader } from './drawer_header.jsx';
+import { connect }      from '../../../Stores/connect';
 
 
-class Drawer extends Component {
+class Drawer extends React.Component {
     state = {
         is_this_drawer_on: false,
     };

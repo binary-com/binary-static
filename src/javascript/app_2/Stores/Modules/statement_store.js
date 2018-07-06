@@ -1,19 +1,22 @@
-import { observable, action, computed }     from 'mobx';
-import moment                     from 'moment';
-import { WS }                     from '../../Services';
-import { formatMoney }            from '../../../_common/base/currency_base';
-import Client                     from '../../../_common/base/client_base';
-import { localize }               from '../../../_common/localize';
-import { toTitleCase }            from '../../../_common/string_util';
+import {
+    action,
+    computed,
+    observable }       from 'mobx';
+import moment          from 'moment';
+import { WS }          from '../../Services';
+import { formatMoney } from '../../../_common/base/currency_base';
+import Client          from '../../../_common/base/client_base';
+import { localize }    from '../../../_common/localize';
+import { toTitleCase } from '../../../_common/string_util';
 
 const batch_size = 100; // request response limit
 
 export default class StatementStore {
-    @observable data            = [];
-    @observable is_loading      = false;
-    @observable has_loaded_all  = false;
-    @observable date_from       = '';
-    @observable date_to         = '';
+    @observable data           = [];
+    @observable is_loading     = false;
+    @observable has_loaded_all = false;
+    @observable date_from      = '';
+    @observable date_to        = '';
 
     @action.bound
     clearTable() {

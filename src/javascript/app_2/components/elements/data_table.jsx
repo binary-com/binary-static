@@ -1,6 +1,6 @@
-import React      from 'react';
-import classnames from 'classnames';
-import PropTypes  from 'prop-types';
+import classNames                     from 'classnames';
+import PropTypes                      from 'prop-types';
+import React                          from 'react';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 
 /* TODO:
@@ -39,7 +39,7 @@ class DataTable extends React.Component {
             https://stackoverflow.com/questions/4709390
         */
         return (
-            <table className={classnames('table', 'table-clone', { 'table--full-width': this.props.is_full_width })}>
+            <table className={classNames('table', 'table-clone', { 'table--full-width': this.props.is_full_width })}>
                 <thead className='table-head'>
                     <tr className='table-row'>
                         {this.renderHeaders()}
@@ -54,7 +54,7 @@ class DataTable extends React.Component {
     }
 
     render() {
-        const table_class = classnames('table', {
+        const table_class = classNames('table', {
             'table--full-width'  : this.props.is_full_width,
             'table--fixed-header': this.props.has_fixed_header,
         });

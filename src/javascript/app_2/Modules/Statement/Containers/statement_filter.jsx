@@ -1,4 +1,4 @@
-import classnames   from 'classnames';
+import classNames   from 'classnames';
 import moment       from 'moment';
 import PropTypes    from 'prop-types';
 import React        from 'react';
@@ -13,7 +13,7 @@ const Filter = ({
     is_mobile,
     today,
 }) => (
-    <div className={classnames('statement-filter', { 'mobile-only': is_mobile, 'desktop-only': !is_mobile })}>
+    <div className={classNames('statement-filter', { 'mobile-only': is_mobile, 'desktop-only': !is_mobile })}>
         <div className='statement-filter__content container'>
             <span className='statement-filter__label'>{localize('Filter by date:')}</span>
             <DatePicker

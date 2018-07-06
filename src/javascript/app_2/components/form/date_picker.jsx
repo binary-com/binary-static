@@ -1,7 +1,7 @@
+import classNames   from 'classnames';
 import moment       from 'moment';
-import React        from 'react';
-import classnames   from 'classnames';
 import PropTypes    from 'prop-types';
+import React        from 'react';
 import ArrowHead    from '../elements/arrowhead.jsx';
 import { localize } from '../../../_common/localize';
 
@@ -239,7 +239,7 @@ class Calendar extends React.Component {
             days.push(
                 <span
                     key={date}
-                    className={classnames('calendar-date', {
+                    className={classNames('calendar-date', {
                         active  : is_active,
                         today   : is_today,
                         disabled: is_disabled,
@@ -279,7 +279,7 @@ class Calendar extends React.Component {
                     return (
                         <span
                             key={idx}
-                            className={classnames('calendar-month', {
+                            className={classNames('calendar-month', {
                                 active  : idx === is_active,
                                 disabled: is_disabled,
                             })}
@@ -309,7 +309,7 @@ class Calendar extends React.Component {
                     return (
                         <span
                             key={idx}
-                            className={classnames('calendar-year', {
+                            className={classNames('calendar-year', {
                                 disabled: is_disabled,
                                 active  : year === is_active,
                             })}
@@ -348,7 +348,7 @@ class Calendar extends React.Component {
                     return (
                         <span
                             key={idx}
-                            className={classnames('calendar-decade', {
+                            className={classNames('calendar-decade', {
                                 disabled: is_disabled,
                                 active  : start_year === is_active,
                             })}
@@ -374,7 +374,7 @@ class Calendar extends React.Component {
         const BtnPrevMonth = (is_date_view &&
             <span
                 type='button'
-                className={classnames('calendar-prev-month-btn', {
+                className={classNames('calendar-prev-month-btn', {
                     hidden: this.isPeriodDisabled(moment(this.state.date).subtract(1, 'month'), 'month'),
                 })}
                 onClick={this.previousMonth}
@@ -383,7 +383,7 @@ class Calendar extends React.Component {
         const BtnNextMonth = (is_date_view &&
             <span
                 type='button'
-                className={classnames('calendar-next-month-btn', {
+                className={classNames('calendar-next-month-btn', {
                     hidden: this.isPeriodDisabled(moment(this.state.date).add(1, 'month'), 'month'),
                 })}
                 onClick={this.nextMonth}
@@ -393,7 +393,7 @@ class Calendar extends React.Component {
         const BtnPrevYear = (
             <span
                 type='button'
-                className={classnames('calendar-prev-year-btn', {
+                className={classNames('calendar-prev-year-btn', {
                     hidden: this.isPeriodDisabled(moment(this.state.date).subtract(1, 'month'), 'month'),
                 })}
                 onClick={() => (((is_date_view || is_month_view) && this.previousYear())
@@ -404,7 +404,7 @@ class Calendar extends React.Component {
         const BtnNextYear = (
             <span
                 type='button'
-                className={classnames('calendar-next-year-btn', {
+                className={classNames('calendar-next-year-btn', {
                     hidden: this.isPeriodDisabled(moment(this.state.date).add(1, 'month'), 'month'),
                 })}
                 onClick={() => (((is_date_view || is_month_view) && this.nextYear())
@@ -614,20 +614,20 @@ class DatePicker extends React.Component {
                         onClick={this.handleVisibility}
                     />
                     <span
-                        className={classnames('picker-calendar-icon', {
+                        className={classNames('picker-calendar-icon', {
                             show: !this.state.is_close_btn_visible,
                         })}
                         onClick={this.handleVisibility}
                     />
                     <span
-                        className={classnames('close-circle-icon', {
+                        className={classNames('close-circle-icon', {
                             show: this.state.is_close_btn_visible,
                         })}
                         onClick={this.clearDateInput}
                     />
                 </div>
                 <div
-                    className={classnames('datepicker-calendar', {
+                    className={classNames('datepicker-calendar', {
                         show: this.state.is_calendar_visible,
                     })}
                 >
