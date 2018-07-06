@@ -1,13 +1,13 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import ContractInfo      from './contract_info.jsx';
-import MessageBox        from './MessageBox';
-import UILoader          from '../../../../../components/elements/ui_loader.jsx';
-import Button            from '../../../../../components/form/button.jsx';
-import Fieldset          from '../../../../../components/form/fieldset.jsx';
-import { connect }       from '../../../../../Stores/connect';
-import { localize }      from '../../../../../../_common/localize';
-import { isEmptyObject } from '../../../../../../_common/utility';
+import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
+import MessageBox        from '../Components/Form/Purchase/MessageBox';
+import UILoader          from '../../../components/elements/ui_loader.jsx';
+import Button            from '../../../components/form/button.jsx';
+import Fieldset          from '../../../components/form/fieldset.jsx';
+import { connect }       from '../../../Stores/connect';
+import { localize }      from '../../../../_common/localize';
+import { isEmptyObject } from '../../../../_common/utility';
 
 const Purchase = ({
     currency,

@@ -1,7 +1,7 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import ContractType from './TradeParams/contract_type.jsx';
-import Purchase     from './Purchase/purchase.jsx';
+import ContractType from '../../Containers/contract_type.jsx';
+import Purchase     from '../../Containers/purchase.jsx';
 import TradeParams  from '../../Containers/trade_params.jsx';
 import UILoader     from '../../../../components/elements/ui_loader.jsx';
 

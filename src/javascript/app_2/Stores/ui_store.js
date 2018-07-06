@@ -23,7 +23,7 @@ export default class UIStore {
     }
 
     @action.bound togglePortfolioDrawer() { // show and hide Portfolio Drawer
-        this.is_portfolio_drawer_on = true;
+        this.is_portfolio_drawer_on = !this.is_portfolio_drawer_on;
     };
 
     @action.bound showMainDrawer() { // show main Drawer

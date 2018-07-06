@@ -23,10 +23,10 @@ export const requestProposal = (store, updateStore) => {
             };
 
             if (!store.chart_barriers.main) {
-                store.chart_barriers = { main: createChartBarriersConfig(store, response) };
+                store.chart_barriers = { main: createChartBarriersConfig(store.contract_type, response) };
             }
 
-            updateStore(store, {
+            updateStore({
                 proposal_info,
                 is_purchase_enabled: true,
             });

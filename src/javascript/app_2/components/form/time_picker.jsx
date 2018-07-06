@@ -2,7 +2,7 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React, { Component }           from 'react';
-import { isSessionAvailable }         from '../../Modules/Trading/actions/helpers/start_date';
+import { isSessionAvailable }         from '../../Stores/Modules/Trading/Helpers/start_date';
 import { localize }                   from '../../../_common/localize';
 
 /* TODO:

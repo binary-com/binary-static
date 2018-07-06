@@ -1,3 +1,4 @@
+import moment       from 'moment';
 import { localize } from '../../../../../_common/localize';
 
 const duration_maps = {
@@ -61,6 +62,22 @@ const getDurationFromString = (duration_string) => {
     };
 };
 
+const getExpiryType = (store) => {
+    const { duration_unit, expiry_date, expiry_type } = store;
+    const server_time = store.root_store.common.server_time;
+
+    const duration_is_day       = expiry_type === 'duration' && duration_unit === 'd';
+    const expiry_is_after_today = expiry_type === 'endtime' && moment.utc(expiry_date).isAfter(moment(server_time).utc(), 'day');
+
+    let contract_expiry_type = 'daily';
+    if (!duration_is_day && !expiry_is_after_today) {
+        contract_expiry_type = duration_unit === 't' ? 'tick' : 'intraday';
+    }
+
+    return contract_expiry_type;
+};
+
 module.exports = {
     buildDurationConfig,
+    getExpiryType,
 };

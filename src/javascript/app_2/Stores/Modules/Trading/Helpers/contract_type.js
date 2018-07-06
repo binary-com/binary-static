@@ -1,53 +1,32 @@
-import moment                         from 'moment';
-import { buildBarriersConfig }        from './barrier';
-import { buildDurationConfig }        from './duration';
+import moment                    from 'moment';
+import { buildBarriersConfig }   from './barrier';
+import { buildDurationConfig }   from './duration';
 import {
     buildForwardStartingConfig,
-    isSessionAvailable }              from './start_date';
-import { WS }                         from '../../../../Services';
-import { get as getLanguage }         from '../../../../../_common/language';
-import { localize }                   from '../../../../../_common/localize';
-import { toTitleCase }                from '../../../../../_common/string_util';
+    isSessionAvailable }         from './start_date';
+import {
+    getContractCategoriesConfig,
+    getContractTypesConfig }     from '../Constants/contract';
+import { WS }                    from '../../../../Services';
+import { get as getLanguage }    from '../../../../../_common/language';
+import { localize }              from '../../../../../_common/localize';
+import { toTitleCase }           from '../../../../../_common/string_util';
 import {
     cloneObject,
-    getPropertyValue }                from '../../../../../_common/utility';
-
+    getPropertyValue }           from '../../../../../_common/utility';
 
 const ContractType = (() => {
-    /**
-     * components can be undef or an array containing any of: 'start_date', 'barrier', 'last_digit'
-     *     ['duration', 'amount'] are omitted, as they're available in all contract types
-     */
-    const contract_types = {
-        rise_fall  : { title: localize('Rise/Fall'),                  trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: ['start_date'], barrier_count: 0 },
-        high_low   : { title: localize('Higher/Lower'),               trade_types: ['CALL', 'PUT'],               basis: ['payout', 'stake'], components: ['barrier'],    barrier_count: 1 },
-        touch      : { title: localize('Touch/No Touch'),             trade_types: ['ONETOUCH', 'NOTOUCH'],       basis: ['payout', 'stake'], components: ['barrier'] },
-        end        : { title: localize('Ends Between/Ends Outside'),  trade_types: ['EXPIRYMISS', 'EXPIRYRANGE'], basis: ['payout', 'stake'], components: ['barrier'] },
-        stay       : { title: localize('Stays Between/Goes Outside'), trade_types: ['RANGE', 'UPORDOWN'],         basis: ['payout', 'stake'], components: ['barrier'] },
-        asian      : { title: localize('Asians'),                     trade_types: ['ASIANU', 'ASIAND'],          basis: ['payout', 'stake'], components: [] },
-        match_diff : { title: localize('Matches/Differs'),            trade_types: ['DIGITMATCH', 'DIGITDIFF'],   basis: ['payout', 'stake'], components: ['last_digit'] },
-        even_odd   : { title: localize('Even/Odd'),                   trade_types: ['DIGITODD', 'DIGITEVEN'],     basis: ['payout', 'stake'], components: [] },
-        over_under : { title: localize('Over/Under'),                 trade_types: ['DIGITOVER', 'DIGITUNDER'],   basis: ['payout', 'stake'], components: ['last_digit'] },
-        lb_call    : { title: localize('Close-Low'),                  trade_types: ['LBFLOATCALL'],               basis: ['multiplier'],      components: [] },
-        lb_put     : { title: localize('High-Close'),                 trade_types: ['LBFLOATPUT'],                basis: ['multiplier'],      components: [] },
-        lb_high_low: { title: localize('High-Low'),                   trade_types: ['LBHIGHLOW'],                 basis: ['multiplier'],      components: [] },
-    };
-
-    const contract_categories = {
-        [localize('Up/Down')]       : ['rise_fall', 'high_low'],
-        [localize('Touch/No Touch')]: ['touch'],
-        [localize('In/Out')]        : ['end', 'stay'],
-        [localize('Asians')]        : ['asian'],
-        [localize('Digits')]        : ['match_diff', 'even_odd', 'over_under'],
-        [localize('Lookback')]      : ['lb_call', 'lb_put', 'lb_high_low'],
-    };
-
     let available_contract_types = {};
     let available_categories     = {};
+    let contract_types;
 
     const buildContractTypesConfig = (symbol) => WS.contractsFor(symbol).then(r => {
+        const contract_categories = getContractCategoriesConfig();
+        contract_types = getContractTypesConfig();
+
         available_contract_types = {};
         available_categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
+
         r.contracts_for.available.forEach((contract) => {
             const type = Object.keys(contract_types).find(key => (
                 contract_types[key].trade_types.indexOf(contract.contract_type) !== -1 &&

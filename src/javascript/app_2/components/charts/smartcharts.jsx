@@ -1,9 +1,9 @@
 import { SmartChart }    from '@binary-com/smartcharts';
 import { toJS }          from 'mobx';
+import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { WS }            from '../../Services';
-import { connect }       from '../../Stores/connect';
 import { isEmptyObject } from '../../../_common/utility';
 
 const subscribe = (request_object, callback) => {
@@ -54,11 +54,4 @@ SmartCharts.propTypes = {
     onSymbolChange: PropTypes.func,
 };
 
-export default connect(
-    ({ modules, ui }) => ({
-        chart_barriers: modules.trade.chart_barriers,
-        initial_symbol: modules.trade.symbol,
-        onSymbolChange: modules.trade.onChange,
-        is_mobile     : ui.is_mobile,
-    })
-)(SmartCharts);
+export default observer(SmartCharts);

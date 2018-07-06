@@ -1,4 +1,4 @@
-import ContractType from './helpers/contract_type';
+import ContractType from '../Helpers/contract_type';
 
 export const onChangeStartDate = (store) => {
     const { contract_type, start_date, duration_unit, start_time } = store;
