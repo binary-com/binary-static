@@ -1,6 +1,6 @@
 import { toJS }    from 'mobx';
-import React       from 'react';
 import PropTypes   from 'prop-types';
+import React       from 'react';
 import { connect } from '../../../Stores/connect';
 
 class Test extends React.Component {

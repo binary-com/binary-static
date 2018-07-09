@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import React      from 'react';
 import PropTypes  from 'prop-types';
+import React      from 'react';
 import Tooltip    from '../Elements/tooltip.jsx';
 
 const Fieldset = ({

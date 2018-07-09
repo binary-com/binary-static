@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes        from 'prop-types';
+import React            from 'react';
 import FullScreenDialog from '../../Elements/full_screen_dialog.jsx';
 
 const ContractTypeDialog = ({

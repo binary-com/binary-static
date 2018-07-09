@@ -1,7 +1,7 @@
 import classNames                     from 'classnames';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { PropTypes as MobxPropTypes } from 'mobx-react';
 
 /* TODO:
       1. implement sorting by column (ASC/DESC)

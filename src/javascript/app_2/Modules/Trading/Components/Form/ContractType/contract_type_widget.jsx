@@ -1,5 +1,5 @@
-import React              from 'react';
 import PropTypes          from 'prop-types';
+import React              from 'react';
 import ContractTypeDialog from './contract_type_dialog.jsx';
 import ContractTypeList   from './contract_type_list.jsx';
 
@@ -85,7 +85,7 @@ class ContractTypeWidget extends React.PureComponent {
 
                 <span className='select-arrow' />
 
-                <ContractTypeDialog 
+                <ContractTypeDialog
                     is_mobile={this.props.is_mobile}
                     open={this.state.is_dialog_open}
                     onClose={this.handleVisibility}
