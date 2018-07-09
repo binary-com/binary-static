@@ -261,21 +261,21 @@ const Index = () => (
                         <p>{it.L('We offer three types of lookbacks:')}</p>
                         <div className='gr-row'>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
-                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-high-image.svg')} />
+                                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/high-close.svg`)} />
                                 <ul className='checked'>
                                     <li>{it.L('High-Close')}</li>
                                 </ul>
                                 <p>{it.L('Win the multiplier times the high minus close.')}</p>
                             </div>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
-                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-low-image.svg')} />
+                                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/close-low.svg`)} />
                                 <ul className='checked'>
                                     <li>{it.L('Close-Low')}</li>
                                 </ul>
                                 <p>{it.L('Win the multiplier times the close minus low.')}</p>
                             </div>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
-                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/high-low-image.svg')} />
+                                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/high-low.svg`)} />
                                 <ul className='checked'>
                                     <li>{it.L('High-Low')}</li>
                                 </ul>

@@ -182,45 +182,41 @@ const TradingAnalysis = (() => {
 
         const images = {
             risefall: {
-                image1: 'rise-fall-1.svg',
-                image2: 'rise-fall-2.svg',
+                image1: 'rises.svg',
+                image2: 'falls.svg',
             },
             higherlower: {
-                image1: 'higher-lower-1.svg',
-                image2: 'higher-lower-2.svg',
+                image1: 'higher.svg',
+                image2: 'lower.svg',
             },
             touchnotouch: {
-                image1: 'touch-notouch-1.svg',
-                image2: 'touch-notouch-2.svg',
+                image1: 'touch.svg',
+                image2: 'no-touch.svg',
             },
             endsinout: {
-                image1: 'in-out-1.svg',
-                image2: 'in-out-2.svg',
+                image1: 'ends-between.svg',
+                image2: 'ends-outside.svg',
             },
             staysinout: {
-                image1: 'in-out-3.svg',
-                image2: 'in-out-4.svg',
-            },
-            updown: {
-                image1: 'up-down-1.svg',
-                image2: 'up-down-2.svg',
+                image1: 'stays-between.svg',
+                image2: 'goes-outside.svg',
             },
             evenodd: {
-                image1: 'evenodd-1.svg',
-                image2: 'evenodd-2.svg',
+                image1: 'even.svg',
+                image2: 'odd.svg',
             },
             overunder: {
-                image1: 'overunder-1.svg',
-                image2: 'overunder-2.svg',
+                image1: 'over.svg',
+                image2: 'under.svg',
             },
             lookbackhigh: {
-                image1: 'close-high-image.svg',
+                image1: 'high-close.svg',
             },
             lookbacklow: {
-                image1: 'close-low-image.svg',
+                image1: 'close-low.svg',
             },
             lookbackhighlow: {
-                image1: 'high-low-image.svg',
+                image1: 'high-low.svg',
             },
             reset: {
                 image1: 'reset-call.svg',
@@ -231,13 +227,13 @@ const TradingAnalysis = (() => {
                 image2: 'put-spread.svg',
             },
             highlowticks: {
-                image1: 'high-low-1.svg',
-                image2: 'high-low-2.svg',
+                image1: 'high-tick.svg',
+                image2: 'low-tick.svg',
             },
         };
 
         if (images[form_name]) {
-            const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
+            const image_path = Url.urlForStatic(`images/pages/trade-explanation/${getLanguage().toLowerCase()}/`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             if (images[form_name].image2) {
                 $container
