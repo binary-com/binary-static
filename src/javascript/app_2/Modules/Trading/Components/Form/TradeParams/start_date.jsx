@@ -3,9 +3,9 @@ import {
     observer }                  from 'mobx-react';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
-import Dropdown                 from '../../../../../components/form/dropdown.jsx';
-import Fieldset                 from '../../../../../components/form/fieldset.jsx';
-import TimePicker               from '../../../../../components/form/time_picker.jsx';
+import Dropdown                 from '../../../../../App/Components/Form/dropdown.jsx';
+import Fieldset                 from '../../../../../App/Components/Form/fieldset.jsx';
+import TimePicker               from '../../../../../App/Components/Form/time_picker.jsx';
 import { localize }             from '../../../../../../_common/localize';
 
 /* TODO:
