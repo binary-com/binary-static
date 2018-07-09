@@ -1,9 +1,9 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import Popover         from '../elements/popover.jsx';
-import { toGMTFormat } from '../../Utils/Date';
+import Popover         from '../Elements/popover.jsx';
+import ServerTime      from '../../Containers/server_time.jsx';
 import { BinaryLink }  from '../../routes';
-import { connect }     from '../../Stores/connect';
+import { connect }     from '../../../Stores/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover
@@ -88,16 +88,11 @@ const Settings = () => (
     </Popover>
 );
 
-// Better to keep this class as a Component.
-// Because new 'server_time' props will be passed every second,
-// so it will force to render the PureComponent anyway.
-// PureComponent uses shallow-copy before it renders,
-// therefore this with PureComponent gives you slower performance than Component
 class Footer extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className='server-time'>{toGMTFormat(this.props.server_time)}</div>
+                <ServerTime />
                 {this.props.items.length &&
                     <div className='footer-links'>
                         <TogglePortfolioDrawer {...this.props} />
@@ -121,8 +116,7 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
-    items      : PropTypes.array,
-    server_time: PropTypes.object,
+    items: PropTypes.array,
 };
 
 TogglePortfolioDrawer.propTypes = {
@@ -131,8 +125,7 @@ TogglePortfolioDrawer.propTypes = {
 };
 
 export default connect(
-    ({ common, ui }) => ({
-        server_time           : common.server_time,
+    ({ ui }) => ({
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
         togglePortfolioDrawer : ui.togglePortfolioDrawer,
     })

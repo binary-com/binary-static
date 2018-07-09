@@ -1,7 +1,7 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import Money        from '../../../../../components/elements/money.jsx';
-import Tooltip      from '../../../../../components/elements/tooltip.jsx';
+import Money        from '../../../../../App/Components/Elements/money.jsx';
+import Tooltip      from '../../../../../App/Components/Elements/tooltip.jsx';
 import { localize } from '../../../../../../_common/localize';
 import Url          from '../../../../../../_common/url';
 

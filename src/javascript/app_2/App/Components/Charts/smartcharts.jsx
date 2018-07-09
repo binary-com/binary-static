@@ -3,8 +3,8 @@ import { toJS }          from 'mobx';
 import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { WS }            from '../../Services';
-import { isEmptyObject } from '../../../_common/utility';
+import { WS }            from '../../../Services';
+import { isEmptyObject } from '../../../../_common/utility';
 
 const subscribe = (request_object, callback) => {
     if (request_object.subscribe !== 1) return;

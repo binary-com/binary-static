@@ -2,8 +2,8 @@ import classNames   from 'classnames';
 import moment       from 'moment';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import ArrowHead    from '../elements/arrowhead.jsx';
-import { localize } from '../../../_common/localize';
+import ArrowHead    from '../Elements/arrowhead.jsx';
+import { localize } from '../../../../_common/localize';
 
 class Calendar extends React.Component {
     constructor(props) {

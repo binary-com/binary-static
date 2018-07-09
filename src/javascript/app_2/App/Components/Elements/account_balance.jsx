@@ -1,10 +1,10 @@
 import React               from 'react';
-import Client              from '../../../_common/base/client_base';
-import { formatMoney }     from '../../../_common/base/currency_base';
-import { connect }         from '../../Stores/connect';
-import Button              from '../form/button.jsx';
-import { localize }        from '../../../_common/localize';
-import { redirectToLogin } from '../../../_common/base/login';
+import Client              from '../../../../_common/base/client_base';
+import { formatMoney }     from '../../../../_common/base/currency_base';
+import { connect }         from '../../../Stores/connect';
+import Button              from '../Form/button.jsx';
+import { localize }        from '../../../../_common/localize';
+import { redirectToLogin } from '../../../../_common/base/login';
 
 export const AccountBalance = connect(
     ({ client }) => ({

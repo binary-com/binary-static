@@ -2,25 +2,25 @@ import React               from 'react';
 import { Route, NavLink }  from 'react-router-dom';
 import PropTypes           from 'prop-types';
 
-import Client              from '../_common/base/client_base';
-import { redirectToLogin } from '../_common/base/login';
-import { localize }        from '../_common/localize';
+import Client              from '../../_common/base/client_base';
+import { redirectToLogin } from '../../_common/base/login';
+import { localize }        from '../../_common/localize';
 
-import Portfolio           from './Modules/Portfolio';
-import TradeApp            from './Modules/Trading';
-import Settings            from './Modules/settings/settings.jsx';
-import Statement           from './Modules/Statement';
+import Portfolio           from '../Modules/Portfolio';
+import TradeApp            from '../Modules/Trading';
+import Settings            from '../Modules/settings/settings.jsx';
+import Statement           from '../Modules/Statement';
 
 // Settings Routes
-import AccountPassword        from './Modules/settings/sections/account_password.jsx';
-import ApiToken               from './Modules/settings/sections/api_token.jsx';
-import AuthorizedApplications from './Modules/settings/sections/authorized_applications.jsx';
-import CashierPassword        from './Modules/settings/sections/cashier_password.jsx';
-import FinancialAssessment    from './Modules/settings/sections/financial_assessment.jsx';
-import Limits                 from './Modules/settings/sections/limits.jsx';
-import LoginHistory           from './Modules/settings/sections/login_history.jsx';
-import PersonalDetails        from './Modules/settings/sections/personal_details.jsx';
-import SelfExclusion          from './Modules/settings/sections/self_exclusion.jsx';
+import AccountPassword        from '../Modules/settings/sections/account_password.jsx';
+import ApiToken               from '../Modules/settings/sections/api_token.jsx';
+import AuthorizedApplications from '../Modules/settings/sections/authorized_applications.jsx';
+import CashierPassword        from '../Modules/settings/sections/cashier_password.jsx';
+import FinancialAssessment    from '../Modules/settings/sections/financial_assessment.jsx';
+import Limits                 from '../Modules/settings/sections/limits.jsx';
+import LoginHistory           from '../Modules/settings/sections/login_history.jsx';
+import PersonalDetails        from '../Modules/settings/sections/personal_details.jsx';
+import SelfExclusion          from '../Modules/settings/sections/self_exclusion.jsx';
 
 const routes = [
     { path: '/',          component: TradeApp, exact: true },

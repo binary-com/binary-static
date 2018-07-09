@@ -2,8 +2,8 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { isSessionAvailable }         from '../../Stores/Modules/Trading/Helpers/start_date';
-import { localize }                   from '../../../_common/localize';
+import { isSessionAvailable }         from '../../../Stores/Modules/Trading/Helpers/start_date';
+import { localize }                   from '../../../../_common/localize';
 
 /* TODO:
       1. to update state accordingly during native to desktop switches

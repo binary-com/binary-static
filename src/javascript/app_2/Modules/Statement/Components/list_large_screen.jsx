@@ -1,7 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
-import DataTable                      from '../../../components/elements/data_table.jsx';
+import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
 
 const ListLargeScreen = ({
     data,

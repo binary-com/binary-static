@@ -1,10 +1,10 @@
 import classNames       from 'classnames';
 import React            from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
-import Client           from '../../../_common/base/client_base';
-import GTM              from '../../../_common/base/gtm';
-import SocketCache      from '../../../_common/base/socket_cache';
-import { localize }     from '../../../_common/localize';
+import Client           from '../../../../_common/base/client_base';
+import GTM              from '../../../../_common/base/gtm';
+import SocketCache      from '../../../../_common/base/socket_cache';
+import { localize }     from '../../../../_common/localize';
 
 const getAccountInfo = (loginid) => {
     const currency     = Client.get('currency', loginid);

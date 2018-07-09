@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import Dropdown     from '../../../../../components/form/dropdown.jsx';
-import Fieldset     from '../../../../../components/form/fieldset.jsx';
+import Dropdown     from '../../../../../App/Components/Form/dropdown.jsx';
+import Fieldset     from '../../../../../App/Components/Form/fieldset.jsx';
 import { localize } from '../../../../../../_common/localize';
 
 const last_digit_numbers = [...Array(10).keys()].map(number => ({

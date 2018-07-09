@@ -4,11 +4,11 @@ import {
 import moment                   from 'moment';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
-import Datepicker               from '../../../../../components/form/date_picker.jsx';
-import Dropdown                 from '../../../../../components/form/dropdown.jsx';
-import Fieldset                 from '../../../../../components/form/fieldset.jsx';
-import InputField               from '../../../../../components/form/input_field.jsx';
-import TimePicker               from '../../../../../components/form/time_picker.jsx';
+import Datepicker               from '../../../../../App/Components/Form/date_picker.jsx';
+import Dropdown                 from '../../../../../App/Components/Form/dropdown.jsx';
+import Fieldset                 from '../../../../../App/Components/Form/fieldset.jsx';
+import InputField               from '../../../../../App/Components/Form/input_field.jsx';
+import TimePicker               from '../../../../../App/Components/Form/time_picker.jsx';
 import { localize }             from '../../../../../../_common/localize';
 
 /* TODO:

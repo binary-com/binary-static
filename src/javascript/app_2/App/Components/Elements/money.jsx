@@ -1,6 +1,6 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import { formatMoney } from '../../../_common/base/currency_base';
+import { formatMoney } from '../../../../_common/base/currency_base';
 
 const Money = ({
     amount,

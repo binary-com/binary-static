@@ -1,7 +1,7 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { BinaryLink } from '../../../routes';
-import { connect }    from '../../../Stores/connect';
+import { connect }    from '../../../../Stores/connect';
 
 class DrawerItem extends React.Component {
     drawerItemClicked = () => {

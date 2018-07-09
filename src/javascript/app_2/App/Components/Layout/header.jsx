@@ -1,13 +1,13 @@
 import React               from 'react';
 import PropTypes           from 'prop-types';
-import AccountSwitcher     from '../elements/account_switcher.jsx';
+import AccountSwitcher     from '../Elements/account_switcher.jsx';
 import {
     ToggleDrawer,
-    DrawerItem }           from '../elements/drawer/index.jsx';
+    DrawerItem }           from '../Elements/Drawer/index.jsx';
 import { BinaryLink }      from '../../routes';
-import Url                 from '../../../_common/url';
-import { AccountBalance }  from '../elements/account_balance.jsx';
-import { MenuDrawer }      from '../elements/menu_drawer.jsx';
+import Url                 from '../../../../_common/url';
+import { AccountBalance }  from '../Elements/account_balance.jsx';
+import { MenuDrawer }      from '../Elements/menu_drawer.jsx';
 
 class Header extends React.Component {
     render() {

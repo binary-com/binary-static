@@ -2,7 +2,7 @@ import classNames   from 'classnames';
 import moment       from 'moment';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import DatePicker   from '../../../components/form/date_picker.jsx';
+import DatePicker   from '../../../App/Components/Form/date_picker.jsx';
 import { connect }  from '../../../Stores/connect';
 import { localize } from '../../../../_common/localize';
 
