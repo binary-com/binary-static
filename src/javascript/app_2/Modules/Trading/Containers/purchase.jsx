@@ -10,6 +10,7 @@ import { localize }      from '../../../../_common/localize';
 import { isEmptyObject } from '../../../../_common/utility';
 
 const Purchase = ({
+    barrier_count,
     currency,
     is_purchase_enabled,
     is_trade_enabled,
@@ -39,6 +40,7 @@ const Purchase = ({
                         <UILoader />
                         }
                         <ContractInfo
+                            barrier_count={barrier_count}
                             contract_title={trade_types[type]}
                             contract_type={type}
                             currency={currency}
@@ -61,6 +63,7 @@ const Purchase = ({
 );
 
 Purchase.propTypes = {
+    barrier_count      : PropTypes.number,
     currency           : PropTypes.string,
     is_purchase_enabled: PropTypes.bool,
     is_trade_enabled   : PropTypes.bool,
@@ -73,6 +76,7 @@ Purchase.propTypes = {
 
 export default connect(
     ({ modules }) => ({
+        barrier_count      : modules.trade.barrier_count,
         is_purchase_enabled: modules.trade.is_purchase_enabled,
         is_trade_enabled   : modules.trade.is_trade_enabled,
         onClickPurchase    : modules.trade.onPurchase,
