@@ -11,20 +11,20 @@ const HighchartUI = (() => {
         chart_options;
 
     const labels = {
-        start_time  : `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `,
-        entry_spot  : `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `,
-        reset_time  : `<div style="${common_time_style} border-color: #000; border-style: solid;"></div> ${localize('Reset time')} `,
-        exit_spot   : `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `,
-        end_time    : `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `,
+        start_time  : `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start Time')} `,
+        entry_spot  : `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry Spot')} `,
+        reset_time  : `<div style="${common_time_style} border-color: #000; border-style: solid;"></div> ${localize('Reset Time')} `,
+        exit_spot   : `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit Spot')} `,
+        end_time    : `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End Time')} `,
         delay       : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
-        payout_range: `<span class="chart-payout-range"> ${localize('Payout range')} </span>`,
+        payout_range: `<span class="chart-payout-range"> ${localize('Payout Range')} </span>`,
     };
 
-    const setLabels = (chart_delayed, contract_type) => {
+    const setLabels = (chart_delayed, contract_type, is_user_sold) => {
         // display a guide for clients to know how we are marking entry and exit spots
         txt_legend = (chart_delayed ? labels.delay : '') +
             labels.start_time +
-            (history ? labels.entry_spot + labels.exit_spot : '') +
+            (history ? labels.entry_spot + (is_user_sold ? '' : labels.exit_spot) : '') +
             (isReset(contract_type) ? labels.reset_time : '') +
             labels.end_time +
             (isCallputspread(contract_type) ? labels.payout_range : '');
@@ -56,6 +56,7 @@ const HighchartUI = (() => {
             subtitle: {
                 text   : txt_legend,
                 useHTML: true,
+                ...(params.user_sold && { style: { left: '180px' } }),
             },
             xAxis: {
                 labels: { overflow: 'justify', format: '{value:%H:%M:%S}' },
@@ -124,17 +125,6 @@ const HighchartUI = (() => {
         }
     );
 
-    const replaceExitLabelWithSell = (subtitle) => {
-        const subtitle_length = subtitle.childNodes.length;
-        const textnode        = document.createTextNode(` ${localize('Sell time')} `);
-        for (let i = 0; i < subtitle_length; i++) {
-            const item = subtitle.childNodes[i];
-            if (/End time/.test(item.nodeValue)) {
-                subtitle.replaceChild(textnode, item);
-            }
-        }
-    };
-
     const getPlotlineOptions = (params, type) => {
         const is_plotx = type === 'x';
         const options  = {
@@ -171,7 +161,6 @@ const HighchartUI = (() => {
         setLabels,
         setChartOptions,
         getHighchartOptions,
-        replaceExitLabelWithSell,
         getPlotlineOptions,
         showError,
         getMarkerObject,

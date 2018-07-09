@@ -76,15 +76,11 @@ const texts = [
     'Time is in the wrong format.',
 
     // highchart localization text
-    'Start time',
-    'Entry spot',
     'Purchase Time',
-    'Exit spot',
-    'End time',
-    'Sell time',
     'Charting for this underlying is delayed',
-    'Reset time',
-    'Payout range',
+    'Reset Time',
+    'Payout Range',
+    'Tick [_1]',
 
     // trading page
     'year',
@@ -447,7 +443,6 @@ const texts = [
     'Open',
     'Closed',
     'Contract has not started yet',
-    'Price',
     'Spot Time',
     'Spot Time (GMT)',
     'Current Time',

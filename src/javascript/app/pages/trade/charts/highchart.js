@@ -129,7 +129,8 @@ const Highchart = (() => {
         }
 
         const is_jp_client = isJPClient();
-        HighchartUI.setLabels(is_chart_delayed, contract.contract_type);
+        const is_user_sold = contract.status === 'sold';
+        HighchartUI.setLabels(is_chart_delayed, contract.contract_type, is_user_sold);
 
         const chart_options = {
             is_jp_client,
@@ -140,7 +141,7 @@ const Highchart = (() => {
             decimals  : history ? history.prices[0] : candles[0].open,
             entry_time: entry_tick_time ? entry_tick_time * 1000 : start_time * 1000,
             exit_time : exit_time ? exit_time * 1000 : null,
-            user_sold : isSoldBeforeExpiry(),
+            user_sold : is_user_sold,
         };
         if (Callputspread.isCallputspread(contract.contract_type)) {
             $.extend(chart_options, Callputspread.getChartOptions(contract));
@@ -165,9 +166,6 @@ const Highchart = (() => {
     // type 'y' is used to draw lines such as barrier
     const addPlotLine = (params, type) => {
         chart[(`${type}Axis`)][0].addPlotLine(HighchartUI.getPlotlineOptions(params, type));
-        if (isSoldBeforeExpiry()) {
-            HighchartUI.replaceExitLabelWithSell(chart.subtitle.element);
-        }
     };
 
     // Remove plotLines by id
@@ -374,7 +372,7 @@ const Highchart = (() => {
     };
 
     const updateZone = (type) => {
-        if (chart && type && !isSoldBeforeExpiry()) {
+        if (chart && type && contract.status !== 'sold') {
             const value = type === 'entry' ? entry_tick_time : exit_time;
             chart.series[0].zones[(type === 'entry' ? 0 : 1)].value = value * 1000;
         }
@@ -579,7 +577,9 @@ const Highchart = (() => {
                 text_left : 'textLeft',
                 dash_style: 'Dash',
             });
-            if (exit_tick_time) {
+            if (isSoldBeforeExpiry() && contract.status !== 'sold') {
+                selectTick(sell_spot_time, 'exit');
+            } else if (exit_tick_time) {
                 selectTick(exit_tick_time, 'exit');
             }
             if (!contract.sell_spot && !contract.exit_tick) {
@@ -668,7 +668,9 @@ const Highchart = (() => {
     };
 
     const isSoldBeforeExpiry = () => (
-        (sell_time && sell_time < end_time) || (!sell_time && sell_spot_time && sell_spot_time < end_time)
+        +contract.is_path_dependent
+            ? sell_spot_time && sell_spot_time < end_time
+            : sell_time && sell_time < end_time
     );
 
     return {

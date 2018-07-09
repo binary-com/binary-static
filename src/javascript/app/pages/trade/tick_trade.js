@@ -93,20 +93,20 @@ const TickDisplay = (() => {
         if (contract_category.match('asian')) {
             ticks_needed = number_of_ticks;
             x_indicators = {
-                _0: { label: 'Entry Spot', id: 'start_tick' },
+                _0: { label: localize('Entry Spot'), id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label    : 'Exit Spot',
+                label    : localize('Exit Spot'),
                 id       : 'exit_tick',
                 dashStyle: 'Dash',
             };
         } else if (contract_category.match(/callput|reset/i)) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
-                _0: { label: 'Entry Spot', id: 'entry_tick' },
+                _0: { label: localize('Entry Spot'), id: 'entry_tick' },
             };
             x_indicators[`_${number_of_ticks}`] = {
-                label    : 'Exit Spot',
+                label    : localize('Exit Spot'),
                 id       : 'exit_tick',
                 dashStyle: 'Dash',
             };
@@ -114,7 +114,7 @@ const TickDisplay = (() => {
                 const reset_time_index = Math.floor(number_of_ticks / 2); // use index to draw ticks reset_time
                 x_indicators[`_${reset_time_index}`] = {
                     index: reset_time_index,
-                    label: 'Reset Time',
+                    label: localize('Reset Time'),
                     id   : 'reset_tick',
                     color: '#000',
                 };
@@ -122,25 +122,25 @@ const TickDisplay = (() => {
         } else if (contract_category.match('touchnotouch')) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
-                _0: { label: 'Entry Spot', id: 'entry_tick' },
+                _0: { label: localize('Entry Spot'), id: 'entry_tick' },
             };
         } else if (contract_category.match('digits')) {
             ticks_needed = number_of_ticks;
             x_indicators = {
-                _0: { label: 'Tick 1', id: 'start_tick' },
+                _0: { label: localize('Tick [_1]', 1), id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label    : `Tick ${number_of_ticks}`,
+                label    : localize('Tick [_1]', number_of_ticks),
                 id       : 'last_tick',
                 dashStyle: 'Dash',
             };
         } else if (contract_category.match('highlowticks')) {
             ticks_needed = number_of_ticks;
             x_indicators = {
-                _0: { label: 'Entry Spot', id: 'start_tick' },
+                _0: { label: localize('Entry Spot'), id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label: 'Exit Spot',
+                label: localize('Exit Spot'),
                 id   : 'exit_tick',
             };
         } else {
@@ -540,7 +540,7 @@ const TickDisplay = (() => {
     };
 
     const getExitLabel = () =>
-        contract && contract.sell_spot_time && contract.exit_tick_time && +contract.sell_spot_time >= +contract.exit_tick_time ? 'Exit Spot' : 'Sell Spot';
+        localize(contract && contract.sell_spot_time && contract.exit_tick_time && +contract.sell_spot_time >= +contract.exit_tick_time ? 'Exit Spot' : 'Sell Spot');
 
     const updateContract = (proposal_open_contract) => {
         contract = proposal_open_contract;
