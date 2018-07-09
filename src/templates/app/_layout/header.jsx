@@ -20,10 +20,9 @@ const Account = () => (
     <a href='javascript:;'>
         <div className='main-account'>
             <div className='account-type nowrap' />
-            <div className='account-id' />
+            <span className='account-id' />
             <div className='topMenuBalance'>0</div>
         </div>
-        <span className='account-status' data-balloon={it.L('Account Authenticated')} data-balloon-pos='down' />
         <div className='nav-caret' />
     </a>
 );

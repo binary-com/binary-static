@@ -354,11 +354,13 @@ const Header = (() => {
             if (Client.get('is_virtual')) {
                 checkStatus(check_statuses_virtual);
             } else {
+                const el_account_status = createElement('span', { class: 'authenticated', 'data-balloon': localize('Account Authenticated'), 'data-balloon-pos': 'down' });
+
                 BinarySocket.wait('website_status', 'get_account_status', 'get_settings', 'balance').then(() => {
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
                     checkStatus(check_statuses_real);
-                    $('.account-status')[/authenticated/.test(status) ? 'addClass' : 'removeClass']('authenticated');
+                    $('.account-id')[/authenticated/.test(status) ? 'append' : 'remove'](el_account_status);
                 });
             }
         });
