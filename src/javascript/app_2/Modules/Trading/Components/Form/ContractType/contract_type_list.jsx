@@ -1,6 +1,6 @@
-import React                          from 'react';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
+import React                          from 'react';
 import ContractTypeItem               from './contract_type_item.jsx';
 
 const ContractTypeList = ({
@@ -8,7 +8,7 @@ const ContractTypeList = ({
     list,
     name,
     value,
-}) => 
+}) =>
     (
         Object.keys(list).map(key => (
             <React.Fragment key={key}>

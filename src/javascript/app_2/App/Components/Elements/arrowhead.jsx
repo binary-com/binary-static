@@ -1,5 +1,5 @@
-import React     from 'react';
 import PropTypes from 'prop-types';
+import React     from 'react';
 
 const Arrowhead = ({ className }) => (
     <svg className={className} width='16' height='16' xmlns='http://www.w3.org/2000/svg'>

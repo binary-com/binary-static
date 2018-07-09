@@ -2,8 +2,8 @@
 import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import { connect }                    from '../../../Stores/connect';
 import { localize }                   from '../../../../_common/localize';
-import {connect} from '../../../Stores/connect';
 
 class PortfolioDrawer extends React.Component {
     state = { is_open: true, width: window.innerWidth };

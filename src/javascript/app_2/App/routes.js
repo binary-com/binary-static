@@ -1,6 +1,6 @@
+import PropTypes           from 'prop-types';
 import React               from 'react';
 import { Route, NavLink }  from 'react-router-dom';
-import PropTypes           from 'prop-types';
 
 import Client              from '../../_common/base/client_base';
 import { redirectToLogin } from '../../_common/base/login';

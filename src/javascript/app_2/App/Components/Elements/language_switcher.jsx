@@ -1,5 +1,5 @@
-import React        from 'react';
 import PropTypes    from 'prop-types';
+import React        from 'react';
 import { localize } from '../../../../_common/localize';
 
 class LanguageSwitcher extends React.Component {

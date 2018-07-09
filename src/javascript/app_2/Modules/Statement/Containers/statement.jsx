@@ -1,17 +1,17 @@
-import React                          from 'react';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
+import React                          from 'react';
 import Filter                         from './statement_filter.jsx';
 import NoActivityMessage              from '../Components/no_activity_message.jsx';
 import ListLargeScreen                from '../Components/list_large_screen.jsx';
-import ListSmallScreen                 from '../Components/list_small_screen.jsx';
+import ListSmallScreen                from '../Components/list_small_screen.jsx';
 import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Statement extends React.Component {
     componentDidMount()    { this.props.onMount(); }
     componentWillUnmount() { this.props.onUnmount(); }
-    
+
     render() {
         const {
             has_no_activity_message,
@@ -24,10 +24,11 @@ class Statement extends React.Component {
         return (
             <React.Fragment>
                 <Filter />
-                { !is_mobile ?
-                    <ListLargeScreen data={data}/>
-                    :
-                    <ListSmallScreen data={data} />
+                {
+                    is_mobile ?
+                        <ListSmallScreen data={data} />
+                        :
+                        <ListLargeScreen data={data} />
                 }
                 {
                     is_loading &&
