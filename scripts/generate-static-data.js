@@ -124,6 +124,10 @@ const texts = [
     'Ends Between/Ends Outside',
     'Touch/No Touch',
     'Stays Between/Goes Outside',
+    'Asians',
+    'Reset Call/Reset Put',
+    'High/Low Ticks',
+    'Call Spread/Put Spread',
     'Potential Payout',
     'Maximum Payout',
     'Total Cost',
@@ -639,7 +643,7 @@ const texts = [
 
     // Authentication errors
     'Invalid document format: "[_1]"',
-    'File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB',
+    'File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]',
     'ID number is required for [_1].',
     'Only letters, numbers, space, underscore, and hyphen are allowed for ID number.',
     'Expiry date is required for [_1].',
