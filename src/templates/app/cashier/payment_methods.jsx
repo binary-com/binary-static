@@ -214,7 +214,7 @@ const PaymentMethods = () => {
                                 { text: '5 - 1,000' },
                                 { text: '5 - 750' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks video_link='https://youtu.be/IqY0220n0Ho' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_PaySafeCard.pdf' video_link='https://youtu.be/IqY0220n0Ho' /> },
                             ],
                         ],
                     }}
