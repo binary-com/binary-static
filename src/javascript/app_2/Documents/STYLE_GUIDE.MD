@@ -2,17 +2,27 @@
 
 ## FILE STRUCTURE
 
-In this project, it is tried to keep relevant files in 6 major directories 
-which are called `Documents`, `CommonComponents`, `Modules`, `Services`, 
+In this project, it is tried to keep relevant files in 7 major directories 
+which are called `App`, `Constants`, `Documents`, `Modules`, `Services`, 
 `Stores` and `Utils`.
 We will describe them more in next sections.
 
 Below is a sample file structure of the project.
 ```
 app_2
-    ├── CommonComponents/
-    │   ├── Form/
-    │   └── Layout/
+    ├── App/
+    │   ├── Components/
+    │   │   ├── Charts/
+    │   │   ├── Elements/
+    │   │   ├── Form/
+    │   │   └── Layout/
+    │   ├── Containers/
+    │   │   └── server_time.jsx
+    │   ├── Helpers/
+    │   ├── app.js
+    │   └── routes.js
+    ├── Constants/
+    ├── Documents/
     ├── Modules/
     │   ├── Trading/
     │   │   ├── Components/
@@ -43,15 +53,24 @@ If you're not sure of the distinction between them, we recommend you read the
 [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) 
 article first.
 
-## COMMON COMPONENTS
+## App
 
-The `CommonComponents` directory contains subdirectories which contain common 
-react components that are used all over the application (e.g. `Form`, `Layout`).
+The `App` directory contains common components and containers of the application
+which are used in others modules (e.g. `Form`, `Layout`).
+
+## Constants
+
+All public and common constants variable should be stored in related files in this directory
+(e.g. contract_type_display).
+
+## Documents
+
+This directory contains all documentations of the project (e.g. STYLE_GUIDE.RM).
 
 ## MODULES
 
-The predominant part of the project is `Modules` directory. 
-All the presentational and container components are categorized by functionality 
+The predominant part of the project is the `Modules` directory. 
+All the presentational and container components are classified by functionality 
 here. Regarding the picture above, each functionality in the project has a 
 directory in `Modules` directory (e.g. `Trading`) that contains two major subdirectories 
 `Components` and `Containers`. We will explain more about `Components` and 
@@ -68,15 +87,16 @@ its own subdirectory, e.g.:
 
 ```
 Components/
-└── Barrier/
-    ├── test/    
-    │   ├── barrier.spec.jsx
-    │   └── other tests files ...
-    ├── index.js
-    ├── barrier.jsx
-    ├── barrier.styles.scss
-    ├── barrier.md (for react-styleguidist)
-    └── other Barrier-related files...
+├── Elements/
+│   ├── full_screen_dialog.jsx
+│   └── mobile_widget.jsx
+└── Form/
+    ├── ContractType/
+    ├── Purchase/
+    ├── TradeParams/
+    ├── form_layout.jsx
+    ├── screen_large.jsx
+    └── screen_small.jsx
 ```
 
 The presentational components:
@@ -133,13 +153,10 @@ container inside its own subdirectory, e.g.:
 
 ```
 Containers/
-└── Trade/
-    ├── test/
-    │   ├── trade.spec.jsx
-    │   └── other tests files ...
-    ├── index.js
+└── contract_type.jsx
+    ├── purchase.jsx
     ├── trade.jsx
-    └── trade.md (for react-styleguidist)
+    └── trade_params.jsx
 ```
 
 Containers should follow rules:
@@ -184,6 +201,7 @@ All javascript files which are related to sending, fetching and handling WebSock
 requests and responses, are kept in `Services` directory.
 
 ## STORES
+___The structure of this section is tentative.___
 
 This directory contains everything that directly related to MobX stores, 
 with each store having its own class definition.
@@ -193,14 +211,20 @@ inside its own subdirectory, e.g.:
 
 ```
 Stores/
-├── test/
-│   └── connect.spec.js
+├── Modules/
+│   ├── Trading/
+│   │   ├── trade.spec.js
+│   │   ├── Actions/
+│   │   ├── trade.spec.js
+│   │   ├── Helpers/
+│   │   └── trade.spec.js
+│   ├── index.js
+│   └── statement_store.js
+├── client_store.js
+├── common_store.js
 ├── connect.js
-└── Trade/
-    ├── test/
-    │   ├── trade.spec.js
-    │   └── other tests files ...
-    └── trade.js
+├── index.js
+└── ui_store.js
 ```
 
 ### Do:
