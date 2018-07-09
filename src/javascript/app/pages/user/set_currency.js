@@ -22,7 +22,7 @@ const SetCurrency = (() => {
         if (Client.get('currency')) {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
-                $('#set_currency').setVisibility(1);
+                $('#deposit_btn, #set_currency').setVisibility(1);
             } else {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -83,8 +83,6 @@ const SetCurrency = (() => {
                                     if (!/authenticated/.test(get_account_status.status)) {
                                         redirect_url = Url.urlFor('user/authenticate');
                                     }
-                                } else {
-                                    $('#deposit_btn').setVisibility(1);
                                 }
                                 // Do not redirect MX clients to cashier, because they need to set max limit before making deposit
                                 if (!redirect_url && !/^(iom)$/i.test(Client.get('landing_company_shortcode'))) {
@@ -99,6 +97,7 @@ const SetCurrency = (() => {
                             } else {
                                 Header.populateAccountsList(); // update account title
                                 $('.select_currency').setVisibility(0);
+                                $('#deposit_btn').setVisibility(1);
                             }
                         }
                     });
