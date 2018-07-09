@@ -83,12 +83,40 @@ const FileSelector = ({
                                 );
                             })}
                         </div>
+                        {type === 'poi' && <SelfieSelector />}
                     </div>
                 </div>
             </div>
         </fieldset>
     </div>
 );
+
+const SelfieSelector = () => {
+    const name = it.L('Selfie with document');
+    return (
+        <React.Fragment>
+            <p className='font-s gr-padding-30 gr-child'>{it.L('Upload selfie that clearly shows your face and document (Optional)')}:</p>
+            <div className='files'>
+                <h3>{name}</h3>
+                <div className='fields'>
+                    <div className='gr-row form-row gr-centered'>
+                        <div className='gr-12'>
+                            <input
+                                id={`add_file_selfie`}
+                                className='file-picker'
+                                type='file'
+                                accept='.jpg, .jpeg, .gif, .png, .pdf'
+                                data-type='selfie'
+                                data-name={name}
+                            />
+                            <label htmlFor={`add_file_selfie`} className='button'>{it.L('Add')} <span className='add' /></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </React.Fragment>
+    );
+};
 
 
 const AuthenticateMessage = () => (
@@ -103,7 +131,8 @@ const AuthenticateMessage = () => (
                 it.L('National ID card or any government issued document which contains a photo, your name, and date of birth'),
             ]}
             instructions={[
-                it.L('Must be a clear, colour photo or scanned image'), it.L('Minimum of six months validity'),
+                it.L('Must be a clear, colour photo or scanned image'),
+                it.L('Minimum of six months validity'),
                 it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
                 it.L('Maximum upload size for each file is [_1]', '8MB'),
             ]}
