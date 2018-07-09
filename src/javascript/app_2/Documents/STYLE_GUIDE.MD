@@ -111,7 +111,7 @@ and usually, have some DOM markup and styles of their own.
 * Rarely have their own state (when they do, it’s UI state rather than data).
 * Are written as functional components unless they need state, lifecycle hooks, 
 or performance optimizations.
-* Examples: Balance, AccountList, UserIfo, ...
+* Examples: Balance, AccountList, UserInfo, ...
 
 #### Do:
 
@@ -161,7 +161,7 @@ Containers/
 
 Containers should follow rules:
 
-* Are concerned with how thing work
+* Are concerned with how things work
 * May contain both presentational and container components inside but usually 
 __don’t have any DOM markup of their own__ except for some wrapping divs and 
 never have any styles.
@@ -203,7 +203,7 @@ requests and responses, are kept in `Services` directory.
 ## STORES
 ___The structure of this section is tentative.___
 
-This directory contains everything that directly related to MobX stores, 
+This directory contains everything that is directly related to MobX stores, 
 with each store having its own class definition.
 
 The optimal structure for stores is to place files relevant to a store 
