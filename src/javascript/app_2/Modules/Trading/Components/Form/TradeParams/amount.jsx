@@ -4,9 +4,9 @@ import {
     observer }                  from 'mobx-react';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
-import Dropdown                 from '../../../../../components/form/dropdown.jsx';
-import Fieldset                 from '../../../../../components/form/fieldset.jsx';
-import InputField               from '../../../../../components/form/input_field.jsx';
+import Dropdown                 from '../../../../../App/Components/Form/dropdown.jsx';
+import Fieldset                 from '../../../../../App/Components/Form/fieldset.jsx';
+import InputField               from '../../../../../App/Components/Form/input_field.jsx';
 import Client                   from '../../../../../../_common/base/client_base';
 import { addComma }             from '../../../../../../_common/base/currency_base';
 import { localize }             from '../../../../../../_common/localize';

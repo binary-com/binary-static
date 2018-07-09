@@ -1,5 +1,5 @@
 import React               from 'react';
-import Button              from '../../../../../../components/form/button.jsx';
+import Button              from '../../../../../../App/Components/Form/button.jsx';
 import { redirectToLogin } from '../../../../../../../_common/base/login';
 import { localize }        from '../../../../../../../_common/localize';
 

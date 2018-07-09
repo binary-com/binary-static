@@ -1,8 +1,8 @@
 import React                     from 'react';
 import PortfolioCard             from '../Components/portfolio_card.jsx';
 import { formatPortfolioData }   from '../Helpers/process_data';
-import DataTable                 from '../../../components/elements/data_table.jsx';
-import Tooltip                   from '../../../components/elements/tooltip.jsx';
+import DataTable                 from '../../../App/Components/Elements/data_table.jsx';
+import Tooltip                   from '../../../App/Components/Elements/tooltip.jsx';
 import { contract_type_display } from '../../../Constants/contract';
 import { WS }                    from '../../../Services';
 import { ProcessData }           from '../../../Services/Helpers';

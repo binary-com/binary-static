@@ -3,8 +3,8 @@ import PropTypes       from 'prop-types';
 import React           from 'react';
 import Test            from './test.jsx';
 import FormLayout      from '../Components/Form/form_layout.jsx';
-import SmartCharts     from '../../../components/charts/smartcharts.jsx';
-import PortfolioDrawer from '../../../components/elements/portfolio_drawer.jsx';
+import SmartCharts     from '../../../App/Components/Charts/smartcharts.jsx';
+import PortfolioDrawer from '../../../App/Components/Elements/portfolio_drawer.jsx';
 import { connect }     from '../../../Stores/connect';
 
 class Trade extends React.Component {

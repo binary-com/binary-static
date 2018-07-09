@@ -22,6 +22,8 @@ class ChartBarriersConfig {
     @observable draggable;
     @observable hidePriceLines;
 
+    onChartBarrierChange;
+
     constructor({ barrier, barrier2 }, onChartBarrierChange) {
         this.color     = 'green';
         this.lineStyle = 'dashed';
@@ -29,7 +31,7 @@ class ChartBarriersConfig {
         this.onChange  = this.onBarrierChange;
 
         // trade_store's action to process new barriers on dragged
-        this.onChartBarrierChange = onChartBarrierChange;
+        this.onChartBarrierChange = onChartBarrierChange.bind(this);
 
         this.high = +barrier || 0; // 0 to follow the price
         if (barrier2) {
@@ -60,6 +62,7 @@ class ChartBarriersConfig {
         this.onChartBarrierChange();
     }
 
+    @action.bound
     getDefaults = () => (
         typeof this.high !== 'undefined' &&
         typeof this.low !== 'undefined' ?
