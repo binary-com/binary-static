@@ -27,6 +27,7 @@ const Purchase = (() => {
 
     let payout_value,
         cost_value,
+        profit_value,
         status;
 
     const display = (details) => {
@@ -93,7 +94,7 @@ const Purchase = (() => {
             payout_value = +receipt.payout;
             cost_value   = receipt.buy_price;
 
-            const profit_value = payout_value ? formatMoney(currency, payout_value - cost_value) : undefined;
+            const potential_profit_value = payout_value ? formatMoney(currency, payout_value - cost_value) : undefined;
 
             CommonFunctions.elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
             if (isLookback(contract_type)) {
@@ -102,11 +103,11 @@ const Purchase = (() => {
             } else if (isCallputspread(contract_type)) {
                 profit.setVisibility(1);
                 CommonFunctions.elementInnerHtml(payout, `${localize('Maximum Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
-                CommonFunctions.elementInnerHtml(profit, `${localize('Maximum Profit')} <p>${profit_value}</p>`);
+                CommonFunctions.elementInnerHtml(profit, `${localize('Maximum Profit')} <p>${potential_profit_value}</p>`);
             } else {
                 profit.setVisibility(1);
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formatMoney(currency, payout_value)}</p>`);
-                CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${profit_value}</p>`);
+                CommonFunctions.elementInnerHtml(profit, `${localize('Potential Profit')} <p>${potential_profit_value}</p>`);
             }
 
             updateValues.updateContractBalance(receipt.balance_after);
@@ -193,6 +194,7 @@ const Purchase = (() => {
                 const contract = response.proposal_open_contract;
                 if (contract) {
                     status = contract.status;
+                    profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
                     if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
                         TickDisplay.updateChart({ is_sold: true }, contract);
@@ -219,9 +221,9 @@ const Purchase = (() => {
             if (!new RegExp(status).test(spots.classList)) {
                 spots.className = status;
                 if (status === 'won') {
-                    updateValues.updatePurchaseStatus(payout_value, cost_value, localize('This contract won'));
+                    updateValues.updatePurchaseStatus(payout_value, cost_value, profit_value, localize('This contract won'));
                 } else if (status === 'lost') {
-                    updateValues.updatePurchaseStatus(0, -cost_value, localize('This contract lost'));
+                    updateValues.updatePurchaseStatus(0, -cost_value, profit_value, localize('This contract lost'));
                 }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
                     const is_won = +tick_config.selected_tick_number === +tick_config.winning_tick_number;
