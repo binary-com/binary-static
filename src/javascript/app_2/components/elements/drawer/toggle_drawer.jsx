@@ -1,23 +1,23 @@
-import React, { PureComponent } from 'react';
-import classNames               from 'classnames';
-import PropTypes                from 'prop-types';
-import { Drawer }               from './drawer.jsx';
-import Url                      from '../../../../_common/url';
-import { connect }              from '../../../store/connect';
+import classNames  from 'classnames';
+import PropTypes   from 'prop-types';
+import React       from 'react';
+import { Drawer }  from './drawer.jsx';
+import { connect } from '../../../Stores/connect';
+import Url         from '../../../../_common/url';
 
-class ToggleDrawer extends PureComponent {
+class ToggleDrawer extends React.Component {
     showDrawer = () => {
         const { alignment } = this.props;
-        if (alignment && alignment === 'left') {
+        if (alignment === 'left') {
             this.props.showMainDrawer();
-        } else if (alignment && alignment === 'right'){
+        } else if (alignment === 'right') {
             this.props.showNotificationsDrawer();
         }
-    }
+    };
 
     closeDrawer = () => {
         this.props.hideDrawers();
-    }
+    };
 
     render() {
         const { icon_class, icon_link, alignment, children } = this.props;
@@ -29,7 +29,7 @@ class ToggleDrawer extends PureComponent {
         return (
             <React.Fragment>
                 <div className={toggle_class} onClick={this.showDrawer}>
-                    <img src={icon_link || Url.urlForStatic('images/trading_app/header/menu.svg')} />
+                    <img src={icon_link || Url.urlForStatic('images/app_2/header/menu.svg')} />
                 </div>
                 <Drawer
                     alignment={alignment}

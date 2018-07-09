@@ -1,15 +1,15 @@
-import React, { PureComponent } from 'react';
-import PropTypes                from 'prop-types';
-import { connect }              from '../../../store/connect';
-import { BinaryLink }           from '../../../routes';
+import PropTypes      from 'prop-types';
+import React          from 'react';
+import { BinaryLink } from '../../../routes';
+import { connect }    from '../../../Stores/connect';
 
-class DrawerItem extends PureComponent {
+class DrawerItem extends React.Component {
     drawerItemClicked = () => {
         this.props.hideDrawers();
         if (this.props.collapseItems) {
             this.props.collapseItems();
         }
-    }
+    };
 
     render() {
         const { link_to, text, icon, custom_action } = this.props;

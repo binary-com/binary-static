@@ -1,13 +1,11 @@
 // import { configure }              from 'mobx';
+import PropTypes                     from 'prop-types';
 import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import NetworkMonitor                from './base/network_monitor';
-import ClientStore                   from './store/client_store';
-import CommonStore                   from './store/common_store';
-import { MobxProvider }              from './store/connect';
-import TradeStore                    from './store/trade_store';
-import UIStore                       from './store/ui_store';
+import RootStore                     from './Stores';
+import { MobxProvider }              from './Stores/connect';
 import Footer                        from './components/layout/footer.jsx';
 import Header                        from './components/layout/header.jsx';
 import { BinaryRoutes }              from './routes';
@@ -17,32 +15,28 @@ import { localize }                  from '../_common/localize';
 
 // configure({ enforceActions: true }); // disabled for SmartCharts compatibility
 
-const stores = {
-    client: new ClientStore(),
-    common: new CommonStore(),
-    trade : new TradeStore(),
-    ui    : new UIStore(),
-};
-
 const initApp = () => {
     Client.init();
-    NetworkMonitor.init(stores);
 
-    stores.trade.init();
+    const root_store = new RootStore();
+
+    NetworkMonitor.init(root_store);
+
+    root_store.modules.trade.init();
 
     const app = document.getElementById('binary_app');
     if (app) {
-        render(<BinaryApp />, app);
+        render(<BinaryApp root_store={root_store} />, app);
     }
 };
 
 /*
  * Retrieves basename from current url
- * 
+ *
  * @return {string} returns the basename of current url
  */
 const getBasename = () => {
-    const regex_string = `((${Object.keys(getAllLanguages()).join('|')})\/app\.html).*`;
+    const regex_string = `(.*(${Object.keys(getAllLanguages()).join('|')})/app\\.html).*`;
     const basename = new RegExp(regex_string, 'ig').exec(window.location.pathname);
 
     if (basename && basename.length) {
@@ -52,9 +46,9 @@ const getBasename = () => {
     return '/en/app.html';
 };
 
-const BinaryApp = () => (
+const BinaryApp = ({ root_store }) => (
     <Router basename={ getBasename() }>
-        <MobxProvider store={stores}>
+        <MobxProvider store={root_store}>
             <div>
                 <div id='trading_header'>
                     <Header
@@ -66,7 +60,7 @@ const BinaryApp = () => (
                         ]}
                     />
                 </div>
-                <div id='app_contents'>
+                <div id='app_contents' className='app-contents'>
                     <BinaryRoutes />
                 </div>
                 <footer id='trading_footer'>
@@ -74,7 +68,8 @@ const BinaryApp = () => (
                         items={[
                             { icon: 'ic-statement',   text: localize('Statement'), link_to: 'statement' },
                             { icon: 'ic-chat-bubble', text: localize('Notification') },
-                            { icon: 'ic-lock-open',   text: localize('Lock') },
+                            { icon: 'ic-two-step'   , text: localize('Purchase Confirmation') },
+                            { icon: 'ic-lock-open',   text: localize('Purchase Lock') },
                         ]}
                     />
                 </footer>
@@ -82,5 +77,9 @@ const BinaryApp = () => (
         </MobxProvider>
     </Router>
 );
+
+BinaryApp.propTypes = {
+    root_store: PropTypes.object,
+};
 
 export default initApp;

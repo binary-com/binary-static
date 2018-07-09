@@ -26,7 +26,7 @@ const makeAccountsList = () => Client.getAllLoginids().map(loginid => (
         undefined
 )).filter(account => account);
 
-class AccountSwitcher extends React.PureComponent {
+class AccountSwitcher extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

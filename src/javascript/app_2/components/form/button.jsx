@@ -1,29 +1,34 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React     from 'react';
 
 const Button = ({
-    id,
     className = '',
-    text,
     has_effect,
+    id,
     is_disabled,
     onClick,
+    text,
+    wrapperClassName,
 }) => {
     const classes = `btn${has_effect ? ' effect' : ''} ${className}`;
-    return (
+    const button = (
         <button id={id} className={classes} onClick={onClick || undefined} disabled={is_disabled}>
             <span>{text}</span>
         </button>
     );
+    const wrapper = (<div className={wrapperClassName}>{button}</div>);
+
+    return wrapperClassName ? wrapper : button;
 };
 
 Button.propTypes = {
-    className  : PropTypes.string,
-    has_effect : PropTypes.bool,
-    id         : PropTypes.string,
-    is_disabled: PropTypes.bool,
-    onClick    : PropTypes.func,
-    text       : PropTypes.string,
+    className       : PropTypes.string,
+    has_effect      : PropTypes.bool,
+    id              : PropTypes.string,
+    is_disabled     : PropTypes.bool,
+    onClick         : PropTypes.func,
+    text            : PropTypes.string,
+    wrapperClassName: PropTypes.string,
 };
 
 export default Button;

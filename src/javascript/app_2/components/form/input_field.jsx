@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class InputField extends React.PureComponent {
+class InputField extends React.Component {
     render() {
         return (
             <div className={`input-field ${this.props.className ? this.props.className : ''}`}>

@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import classNames           from 'classnames';
-import PropTypes            from 'prop-types';
-import { DrawerHeader }     from './drawer_header.jsx';
-import { connect }          from '../../../store/connect';
+import classNames       from 'classnames';
+import PropTypes        from 'prop-types';
+import React            from 'react';
+import { DrawerHeader } from './drawer_header.jsx';
+import { connect }      from '../../../Stores/connect';
 
 
-class Drawer extends Component {
+class Drawer extends React.Component {
     state = {
         is_this_drawer_on: false,
-    }
+    };
 
     setRef = (node) => {
         this.ref = node;
-    }
+    };
 
     scrollToggle(state) {
         this.is_open = state;
@@ -30,7 +30,7 @@ class Drawer extends Component {
     hide = () => {
         this.scrollToggle(false);
         this.props.hideDrawers();
-    }
+    };
 
     handleClickOutside = (event) => {
         if (this.state.is_this_drawer_on) {
@@ -38,7 +38,7 @@ class Drawer extends Component {
                 this.hide();
             }
         }
-    }
+    };
 
     render() {
         const { is_this_drawer_on } = this.state;

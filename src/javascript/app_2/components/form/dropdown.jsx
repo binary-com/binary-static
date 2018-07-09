@@ -1,7 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { isArrayLike } from 'mobx';
+import PropTypes       from 'prop-types';
+import React           from 'react';
 
-class Dropdown extends React.PureComponent {
+class Dropdown extends React.Component {
     constructor(props) {
         super(props);
         this.handleVisibility   = this.handleVisibility.bind(this);
@@ -13,14 +14,10 @@ class Dropdown extends React.PureComponent {
         };
     }
 
-    isOneLevel() {
-        return Array.isArray(this.props.list);
-    }
-
-    getDisplayText(list, value) {
+    getDisplayText = (list, value) => {
         const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
         let text = '';
-        if (this.isOneLevel(list)) {
+        if (isArrayLike(list)) {
             text = findInArray(list);
         } else {
             Object.keys(list).some(key => {
@@ -29,7 +26,7 @@ class Dropdown extends React.PureComponent {
             });
         }
         return text;
-    }
+    };
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
@@ -96,13 +93,12 @@ class Dropdown extends React.PureComponent {
                 <span className='select-arrow' />
                 <div className='dropdown-list'>
                     <div className='list-container'>
-                        { this.isOneLevel(this.props.list) ?
+                        {isArrayLike(this.props.list) ?
                             <Items
                                 items={this.props.list}
                                 name={this.props.name}
                                 value={this.props.value}
                                 handleSelect={this.handleSelect}
-                                type={this.props.type || undefined}
                             /> :
                             Object.keys(this.props.list).map(key => (
                                 <React.Fragment key={key}>
@@ -128,7 +124,6 @@ const Items = ({
     name,
     value,
     handleSelect,
-    type,
 }) => (
     items.map((item, idx) => (
         <React.Fragment key={idx}>
@@ -137,7 +132,6 @@ const Items = ({
                 key={idx}
                 name={name}
                 value={item.value}
-                data-end={type==='date' && item.end ? item.end : undefined}
                 onClick={handleSelect.bind(null, item)}
             >
                 <span>{item.text}</span>
@@ -188,7 +182,6 @@ Dropdown.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-
 };
 
 // ToDo: Refactor NativeSelect

@@ -17,6 +17,7 @@
     position: relative;
     color: rgba(0, 0, 0, 0.65);
     background: $COLOR_GREEN;
+    font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
 
     &:not([disabled]):hover {
         text-decoration: none;

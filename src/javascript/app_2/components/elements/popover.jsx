@@ -2,7 +2,7 @@ import React        from 'react';
 import PropTypes    from 'prop-types';
 import { localize } from '../../../_common/localize';
 
-class Popover extends React.PureComponent {
+class Popover extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

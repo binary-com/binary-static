@@ -1,8 +1,10 @@
-import { SmartChart } from '@binary-com/smartcharts';
-import PropTypes      from 'prop-types';
-import React          from 'react';
-import WS             from '../../data/ws_methods';
-import { connect }    from '../../store/connect';
+import { SmartChart }    from '@binary-com/smartcharts';
+import { toJS }          from 'mobx';
+import { observer }      from 'mobx-react';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { WS }            from '../../Services';
+import { isEmptyObject } from '../../../_common/utility';
 
 const subscribe = (request_object, callback) => {
     if (request_object.subscribe !== 1) return;
@@ -13,8 +15,16 @@ const forget = (match_values, callback) => (
     WS.forget('ticks_history', callback, match_values)
 );
 
-const SmartCharts = ({ onSymbolChange }) =>  {
-    const is_mobile = window.innerWidth <= 767;
+const SmartCharts = ({
+    chart_barriers,
+    initial_symbol,
+    is_mobile,
+    onSymbolChange,
+}) =>  {
+    const barriers = Object.keys(chart_barriers || {})
+        .map(key => toJS(chart_barriers[key]))
+        .filter(item => !isEmptyObject(item));
+
     return (
         <React.Fragment>
             <SmartChart
@@ -29,6 +39,8 @@ const SmartCharts = ({ onSymbolChange }) =>  {
                         },
                     });
                 }}
+                barriers={barriers}
+                initialSymbol={initial_symbol}
                 isMobile={is_mobile}
             />
         </React.Fragment>
@@ -36,12 +48,10 @@ const SmartCharts = ({ onSymbolChange }) =>  {
 };
 
 SmartCharts.propTypes = {
+    chart_barriers: PropTypes.object,
+    initial_symbol: PropTypes.string,
+    is_mobile     : PropTypes.bool,
     onSymbolChange: PropTypes.func,
 };
 
-export default connect(
-    ({ trade }) => ({
-        onSymbolChange: trade.handleChange,
-        initial_symbol: trade.symbol,
-    })
-)(SmartCharts);
+export default observer(SmartCharts);
