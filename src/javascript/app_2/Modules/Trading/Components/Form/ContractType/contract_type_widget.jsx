@@ -82,6 +82,9 @@ class ContractTypeWidget extends React.PureComponent {
                         {this.getDisplayText()}
                     </span>
                 </div>
+
+                <span className='select-arrow' />
+
                 <ContractTypeDialog 
                     is_mobile={this.props.is_mobile}
                     open={this.state.is_dialog_open}
