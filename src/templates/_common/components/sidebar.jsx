@@ -19,13 +19,14 @@ export const SidebarSubmenu = ({ id, items = [] }) => {
             <div className='sidebar-collapsible'>
                 <ul id={id}>
                     {items.map((item, idx) => (
-                        <li key={idx} id={item.id} className={item.submenu ? 'has-submenu' : ''}>
+                        // toEnableMAM: remove item.className check
+                        <li key={idx} id={`${item.id}-link`} className={`${item.submenu ? 'has-submenu' : ''}${item.className ? ` ${item.className}` : ''}`}>
                             { item.submenu &&
                                 <React.Fragment>
                                     <a href={getHref(item.id)}>{item.text}</a>
                                     <ul>
                                         { item.submenu.map((submenu, idx_submenu) => (
-                                            <li key={idx_submenu} id={submenu.id}>
+                                            <li key={idx_submenu} id={`${submenu.id}-link`}>
                                                 <a href={getHref(submenu.id)}>{submenu.text}</a>
                                             </li>
                                         ))}

@@ -19,29 +19,29 @@ const TAC = () => (
                 className='static_full'
                 id='legal-menu'
                 items={[
-                    { id: 'legal',      text: it.L('Terms and Conditions')  }  ,
-                    { id: 'contract',   text: it.L('Pre-contract Document') }  ,
+                    { id: 'legal',      text: it.L('{JAPAN ONLY}Terms and Conditions')  }  ,
+                    { id: 'contract',   text: it.L('{JAPAN ONLY}Pre-contract Document') }  ,
                     {
                         id     : 'account',
-                        text   : it.L('Account Opening'),
+                        text   : it.L('{JAPAN ONLY}Account Opening'),
                         subtabs: [
-                            { id: 'account-privacy',    text: it.L('Privacy Policy') }  ,
-                            { id: 'account-antisocial', text: it.L('No Connections with Antisocial Forces') }  ,
-                            { id: 'account-risk',       text: it.L('Risk for Binary Option Trading') }  ,
-                            { id: 'account-warning',    text: it.L('General Risk Warning') }  ,
+                            { id: 'account-privacy',    text: it.L('{JAPAN ONLY}Privacy Policy') }  ,
+                            { id: 'account-antisocial', text: it.L('{JAPAN ONLY}No Connections with Antisocial Forces') }  ,
+                            { id: 'account-risk',       text: it.L('{JAPAN ONLY}Risk for Binary Option Trading') }  ,
+                            { id: 'account-warning',    text: it.L('{JAPAN ONLY}General Risk Warning') }  ,
                         ],
                     },
                     {
                         id     : 'ethics',
-                        text   : it.L('Policies and Exclusion of Liability'),
+                        text   : it.L('{JAPAN ONLY}Policies and Exclusion of Liability'),
                         subtabs: [
-                            { id: 'ethics-code',         text: it.L('Ethics Code') }  ,
-                            { id: 'ethics-antisocial',   text: it.L('Eliminating Antisocial Forces') }  ,
-                            { id: 'ethics-solicitation', text: it.L('Investment Solicitation Policy') }  ,
-                            { id: 'ethics-liability',    text: it.L('Exclusion of Liability') }  ,
+                            { id: 'ethics-code',         text: it.L('{JAPAN ONLY}Ethics Code') }  ,
+                            { id: 'ethics-antisocial',   text: it.L('{JAPAN ONLY}Eliminating Antisocial Forces') }  ,
+                            { id: 'ethics-solicitation', text: it.L('{JAPAN ONLY}Investment Solicitation Policy') }  ,
+                            { id: 'ethics-liability',    text: it.L('{JAPAN ONLY}Exclusion of Liability') }  ,
                         ],
                     },
-                    { id: 'affiliates', text: it.L('Affiliates Program') },
+                    { id: 'affiliates', text: it.L('{JAPAN ONLY}Affiliates Program') },
                 ]}
             />
             <div className='tab-content'>

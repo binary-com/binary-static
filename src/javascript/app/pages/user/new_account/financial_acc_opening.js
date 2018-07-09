@@ -22,10 +22,6 @@ const FinancialAccOpening = (() => {
 
         if (AccountOpening.redirectAccount()) return;
 
-        if (Client.get('landing_company_shortcode') === 'iom') {
-            $('#authentication_notice_message').setVisibility(1);
-        }
-
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
             if (!isEmptyObject(response.get_financial_assessment)) {
                 const keys = Object.keys(response.get_financial_assessment);
@@ -41,13 +37,17 @@ const FinancialAccOpening = (() => {
             const get_settings = response.get_settings;
             let $element,
                 value;
+
             Object.keys(get_settings).forEach((key) => {
                 $element = $(`#${key}`);
                 value    = get_settings[key];
                 if (key === 'date_of_birth') {
                     const moment_val = moment.utc(value * 1000);
                     value = moment_val.format('DD MMM, YYYY');
-                    $element.attr('data-value', toISOFormat(moment_val));
+                    $element.attr({
+                        'data-value': toISOFormat(moment_val),
+                        'type'      : 'text',
+                    });
                     $('.input-disabled').attr('disabled', 'disabled');
                 }
                 if (value) $element.val(value);
@@ -65,6 +65,8 @@ const FinancialAccOpening = (() => {
             $('#tax_information_note_toggle').toggleClass('open');
             $('#tax_information_note').slideToggle();
         });
+
+        AccountOpening.showHidePulser(0);
     };
 
     const getValidations = () => {
@@ -102,8 +104,11 @@ const FinancialAccOpening = (() => {
         }
     };
 
+    const onUnload = () => { AccountOpening.showHidePulser(1); };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

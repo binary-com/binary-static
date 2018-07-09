@@ -11,7 +11,7 @@ You will also need to install the following on your development machine:
 
 - Ruby, RubyGems
 - Sass (`sudo gem install sass`)
-- Node.js and NPM (see <https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager>)
+- Node.js and NPM (see <https://nodejs.org/en/download/package-manager/>)
 - Go to project root, then run `npm install`
 - Grunt (`sudo npm install -g grunt-cli`)
 
@@ -22,6 +22,9 @@ You need to have:
 - The latest version of `node`
 - Version 4.x.x of `npm` (`npm install npm@4 -g`)
 
+### Use a custom domain
+In order to use your custom domain, please put it in a file named `CNAME` inside `scripts` folder of your local clone of binary-static.
+
 
 How to work with this project
 =============================
@@ -30,6 +33,8 @@ How to work with this project
 
 1. Register your application [here](https://developers.binary.com/applications/). This will give you the ability to redirect back to your github pages after login.
 Use `https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/logged_inws.html` for the Redirect URL and `https://YOUR_GITHUB_USERNAME.github.io/binary-static/en/redirect.html` for the Verification URL.
+
+    If you're using a custom domain, replace the github URLs above with your domain.
 
 2. In `src/javascript/config.js`: Insert the `Application ID` of your registered application in `user_app_id`.
   * **NOTE:** In order to avoid accidentally committing personal changes to this file, use `git update-index --assume-unchanged src/javascript/config.js`

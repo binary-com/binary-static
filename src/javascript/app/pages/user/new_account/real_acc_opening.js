@@ -24,6 +24,7 @@ const RealAccOpening = (() => {
         } else {
             BinaryPjax.loadPreviousUrl();
         }
+        AccountOpening.showHidePulser(0);
     };
 
     const getValidations = () => {
@@ -37,8 +38,11 @@ const RealAccOpening = (() => {
 
     const handleResponse = response => (AccountOpening.handleNewAccount(response, response.msg_type));
 
+    const onUnload = () => { AccountOpening.showHidePulser(1); };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

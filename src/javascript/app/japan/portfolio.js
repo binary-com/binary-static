@@ -32,8 +32,8 @@ const JapanPortfolio = (() => {
         if (isTradePage() && is_portfolio_active) {
             PortfolioInit.onUnload();
             is_portfolio_active = false;
-            $portfolio          = undefined;
         }
+        $portfolio = undefined;
     };
 
     const isTradePage = () => State.get('is_mb_trading');

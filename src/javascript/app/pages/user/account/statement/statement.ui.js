@@ -2,7 +2,6 @@ const Statement           = require('./statement');
 const Client              = require('../../../../base/client');
 const toJapanTimeIfNeeded = require('../../../../base/clock').toJapanTimeIfNeeded;
 const Table               = require('../../../../common/attach_dom/table');
-const jpClient            = require('../../../../common/country_base').jpClient;
 const showTooltip         = require('../../../../common/get_app_details').showTooltip;
 const localize            = require('../../../../../_common/localize').localize;
 const downloadCSV         = require('../../../../../_common/utility').downloadCSV;
@@ -26,10 +25,9 @@ const StatementUI = (() => {
             localize('Details'),
         ];
 
-        const jp_client = jpClient();
-        const currency  = Client.get('currency');
+        const currency = Client.get('currency');
 
-        header[6] += (jp_client || !currency ? '' : ` (${currency})`);
+        header[6] += (Client.isJPClient() || !currency) ? '' : ` (${currency})`;
 
         const metadata = {
             id  : table_id,
@@ -46,7 +44,7 @@ const StatementUI = (() => {
     };
 
     const createStatementRow = (transaction) => {
-        const statement_data = Statement.getStatementData(transaction, Client.get('currency'), jpClient());
+        const statement_data = Statement.getStatementData(transaction, Client.get('currency'), Client.isJPClient());
         all_data.push($.extend({}, statement_data, {
             action: localize(statement_data.action),
             desc  : localize(statement_data.desc),
@@ -92,7 +90,7 @@ const StatementUI = (() => {
 
     const exportCSV = () => {
         downloadCSV(
-            Statement.generateCSV(all_data, jpClient()),
+            Statement.generateCSV(all_data, Client.isJPClient()),
             `Statement_${Client.get('loginid')}_latest${$('#rows_count').text()}_${toJapanTimeIfNeeded(window.time).replace(/\s/g, '_').replace(/:/g, '')}.csv`);
     };
 

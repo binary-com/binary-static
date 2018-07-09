@@ -398,19 +398,19 @@ const Home = () => {
                                             { image: 'mastercard' },
                                             { image: 'bank_transfer' },
                                             { image: 'internet_bank_transfer' },
-                                            { image: 'internet_banking' },
+                                            { image: 'paysec' },
                                             { image: 'neteller' },
-                                            { image: 'okpay' },
                                             { image: 'fasapay' },
                                             { image: 'perfect_money' },
                                             { image: 'skrill' },
-                                            { image: 'ecopayz' },
                                             { image: 'qiwi' },
+                                            { image: 'webmoney' },
+                                            { image: 'yandex' },
+                                            { image: 'paysafe' },
                                             { image: 'ethereum_black', dataShow: '-malta, -maltainvest' },
                                             { image: 'bitcoin', dataShow: '-malta, -maltainvest' },
                                             { image: 'bitcoin_cash', dataShow: '-malta, -maltainvest' },
                                             { image: 'litecoin', dataShow: '-malta, -maltainvest' },
-                                            { image: 'union_pay', dataShow: '-malta, -maltainvest' },
                                         ]}
                                     />
                                 </div>

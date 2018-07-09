@@ -4,11 +4,11 @@ const MBNotifications  = require('./mb_notifications');
 const MBPrice          = require('./mb_price');
 const MBSymbols        = require('./mb_symbols');
 const MBTick           = require('./mb_tick');
+const showChart        = require('../trade/charts/webtrader_chart').showChart;
 const commonTrading    = require('../trade/common');
 const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
-const jpClient         = require('../../common/country_base').jpClient;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getLanguage      = require('../../../_common/language').get;
 const localize         = require('../../../_common/localize').localize;
@@ -62,7 +62,7 @@ const MBProcess = (() => {
         // populate the Symbols object
         MBSymbols.details(data);
 
-        const is_show_all  = Client.isLoggedIn() && !jpClient();
+        const is_show_all  = Client.isLoggedIn() && !Client.isJPClient();
         const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
         let symbol         = MBDefaults.get('underlying');
 
@@ -100,6 +100,7 @@ const MBProcess = (() => {
         const $list = $underlyings.find('.list');
         $list.empty();
         $underlyings.find('.current').html($('<div/>', { class: 'gr-row' })
+            .append($('<span/>', { class: 'nav-caret ja-hide' }))
             .append($('<img/>', { class: 'gr-3 gr-no-gutter-m' }))
             .append($('<span/>', { class: 'name gr-6 gr-5-m align-self-center' }))
             .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' })));
@@ -193,6 +194,10 @@ const MBProcess = (() => {
     const processContract = (contracts, should_send_proposal) => {
         if (getPropertyValue(contracts, 'error')) {
             MBNotifications.show({ text: contracts.error.message, uid: contracts.error.code });
+            // Hide trading form but still display the chart
+            $('#period').parents('.selection_wrapper').setVisibility(0);
+            $(`.price-table, ${Client.isLoggedIn() ? '#tab_explanation' : '#trade_analysis'}`).setVisibility(0);
+            showChart();
             return;
         }
 
@@ -229,17 +234,15 @@ const MBProcess = (() => {
     const processPriceRequest = () => {
         MBPrice.increaseReqId();
         MBPrice.showPriceOverlay();
-        const available_contracts = MBContract.getCurrentContracts();
-        const durations           = MBDefaults.get('period').split('_');
-        const jp_client           = jpClient();
-        const is_crypto           = isCryptocurrency(MBDefaults.get('currency'));
-        const payout              = parseFloat(MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`));
+        const durations = MBDefaults.get('period').split('_');
+        const is_crypto = isCryptocurrency(MBDefaults.get('currency'));
+        const payout    = parseFloat(MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`));
 
         const req = {
             proposal_array: 1,
             subscribe     : 1,
             basis         : 'payout',
-            amount        : jp_client ? (parseInt(payout) || 1) * 1000 : payout,
+            amount        : Client.isJPClient() ? (parseInt(payout) || 1) * 1000 : payout,
             currency      : MBContract.getCurrency(),
             symbol        : MBDefaults.get('underlying'),
             passthrough   : { req_id: MBPrice.getReqId() },
@@ -251,6 +254,7 @@ const MBProcess = (() => {
             trading_period_start: durations[0],
         };
 
+        const available_contracts = MBContract.getCurrentContracts();
         // contract_type
         available_contracts.forEach(c => req.contract_type.push(c.contract_type));
 

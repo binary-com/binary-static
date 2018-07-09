@@ -32,6 +32,16 @@ const GetStartedSectionWrapper = ({ section_id, section_header, section_descript
     </React.Fragment>
 );
 
+const CTA = () => (
+    <div data-show='default'>
+        <SeparatorLine show_mobile className='gr-padding-20 gr-child' />
+        <div className='center-text'>
+            <p>{it.L('Don\'t have an account?')}</p>
+            <a className='button' href={it.url_for('new-account')}><span>{it.L('Create Free Account')}</span></a>
+        </div>
+    </div>
+);
+
 const Index = () => (
     <div className='static_full get-started'>
         <h1 className='center-text'>{it.L('Get Started')}</h1>
@@ -71,7 +81,7 @@ const Index = () => (
                                 hash='types-of-trades'
                                 image='binary-options/types-of-trades'
                                 header={it.L('Types of trades')}
-                                text={it.L('Learn about the five types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets.')}
+                                text={it.L('Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets.')}
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
@@ -88,6 +98,7 @@ const Index = () => (
                                 text={it.L('Check out some technical terms before you start.')}
                             />
                         </div>
+                        <CTA />
                     </TabContent>
                     <TabContent id='mt5'>
                         <h2>{it.L('MetaTrader 5')}</h2>
@@ -239,6 +250,7 @@ const Index = () => (
                                 />
                             </div>
                         </GetStartedSectionWrapper>
+                        <CTA />
                     </TabContent>
                     <TabContent id='lookback'>
                         <h2>{it.L('Lookbacks')}</h2>
@@ -249,21 +261,21 @@ const Index = () => (
                         <p>{it.L('We offer three types of lookbacks:')}</p>
                         <div className='gr-row'>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
-                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-high-image.svg')} />
+                                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/high-close.svg`)} />
                                 <ul className='checked'>
                                     <li>{it.L('High-Close')}</li>
                                 </ul>
                                 <p>{it.L('Win the multiplier times the high minus close.')}</p>
                             </div>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
-                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-low-image.svg')} />
+                                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/close-low.svg`)} />
                                 <ul className='checked'>
                                     <li>{it.L('Close-Low')}</li>
                                 </ul>
                                 <p>{it.L('Win the multiplier times the close minus low.')}</p>
                             </div>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
-                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/high-low-image.svg')} />
+                                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/high-low.svg`)} />
                                 <ul className='checked'>
                                     <li>{it.L('High-Low')}</li>
                                 </ul>
@@ -276,6 +288,7 @@ const Index = () => (
                             <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
                         </div>
                         <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}#range-of-markets>`, '</a>')}</p>
+                        <CTA />
                     </TabContent>
                 </TabContentContainer>
             </div>

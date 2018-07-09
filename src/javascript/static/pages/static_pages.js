@@ -1,4 +1,4 @@
-const tabListener  = require('binary-style').tabListener;
+const tabListener  = require('@binary-com/binary-style').tabListener;
 const MenuSelector = require('../../_common/menu_selector');
 const Scroll       = require('../../_common/scroll');
 const handleHash   = require('../../_common/utility').handleHash;
@@ -38,6 +38,10 @@ module.exports = {
     },
     AffiliatesFAQ: {
         onLoad  : () => { MenuSelector.init(['general', 'account-management-and-tracking', 'marketing-and-promotions', 'support']); },
+        onUnload: () => { MenuSelector.clean(); },
+    },
+    IBProgrammeFAQ: {
+        onLoad  : () => { MenuSelector.init(['general', 'account-management', 'marketing-and-promotions']); },
         onUnload: () => { MenuSelector.clean(); },
     },
 };

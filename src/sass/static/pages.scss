@@ -1,4 +1,65 @@
 // styling for static pages that are too short or simple to need their own styling page
+
+.payment-methods__reference {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+    vertical-align: middle;
+
+    &:not(:last-child) {
+        margin-right: 5px;
+    }
+    &-pdf {
+        background-image: url('../images/common/reference/pdf.svg');
+
+        &.payment-methods__reference--disabled {
+            background-image: url('../images/common/reference/pdf_disabled.svg');
+        }
+    }
+    &-video {
+        background-image: url('../images/common/reference/youtube.svg');
+
+        &.payment-methods__reference--disabled {
+            background-image: url('../images/common/reference/youtube_disabled.svg');
+        }
+    }
+}
+
+.box-row {
+    border-bottom: 1px solid $COLOR_GRAY;
+
+    &__box {
+        padding: 2rem;
+    }
+    &__box:not(:last-child) {
+        border-right: 1px solid $COLOR_GRAY;
+    }
+    &__img {
+        height: 50px;
+    }
+    &--top {
+        &__box {
+            padding-top: 1rem;
+        }
+    }
+    &--bottom {
+        border: none;
+
+        &__box {
+            padding-bottom: 0;
+        }
+    }
+    &--no-border, &--no-border &__box {
+        border: none;
+    }
+    @media screen and (max-width: 480px) {
+        &, &__box {
+            border: none;
+        }
+    }
+}
+
 .steps {
     @media (max-width: 480px) {
         flex-direction: column;
@@ -131,8 +192,19 @@
 }
 
 .contact-content {
+    .contact-content {
+        padding: 0 100px;
+
+        @media screen and (max-width: 1024px) {
+            padding: 0 10px;
+        }
+    }
+    .u-mar-bottom-small {
+        margin-bottom: 15px;
+    }
     #cs_telephone_number {
         width: 100%;
+        min-width: 160px;
     }
     #company_addresses .border-bottom {
         min-height: 200px;
@@ -140,6 +212,27 @@
     @media screen and (max-width: 480px) {
         #company_addresses .border-bottom {
             min-height: 130px;
+        }
+    }
+
+    .chat {
+        margin-top: 20px;
+
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 20px;
+        }
+
+        &-container {
+            display: flex;
+
+            .button-secondary {
+                margin: 0;
+            }
+        }
+        &-icon {
+            margin-right: 5px;
+            height: 38px;
+            width: 38px;
         }
     }
 }
@@ -250,12 +343,19 @@ body #not_authenticated_financial ul.checked > li {
             padding: 4px 0;
         }
     }
+    .list-style-inside {
+        list-style-position: inside;
+    }
 }
 
 .platforms-content {
     img.responsive {
         max-height: 150px;
         width: auto;
+
+        @media (max-width: 350px) {
+            max-width: 290px;
+        }
     }
 }
 
@@ -349,10 +449,10 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
-.careers-content {
-    .career {
-        margin-top: 0;
+#content.careers-content {
+    margin-top: 0;
 
+    .career {
         .top-banner {
             background: url('../images/pages/careers/careers-1_bg.jpg') no-repeat;
             background-size: cover;
@@ -466,51 +566,6 @@ body #not_authenticated_financial ul.checked > li {
         h4 {
             color: $COLOR_BLUE;
         }
-        .graduate-container {
-            position: relative;
-            margin-top: 1em;
-
-            .graduate-box {
-                background-color: $COLOR_BLUE;
-                padding: 30px;
-                position: absolute;
-                z-index: 1;
-                top: 50px;
-
-                h1 {
-                    @media (max-width: 480px) {
-                        font-size: $FONT_SIZE_XXL;
-                        text-align: center;
-                    }
-                }
-                p {
-                    color: $COLOR_WHITE;
-
-                    @media (max-width: 480px) {
-                        font-size: $FONT_SIZE_S;
-                        text-align: center;
-                    }
-                }
-                a.button span {
-                    background-color: $COLOR_WHITE;
-                    color: $COLOR_BLUE;
-                    border-radius: 0;
-                    font-weight: 600;
-                }
-                @media screen and (max-width: 1024px) and (min-width: 769px) {
-                    left: 16%;
-                    bottom: 24%;
-                    top: unset;
-                }
-                @media (max-width: 768px) {
-                    top: 0;
-                }
-                @media (max-width: 480px) {
-                    background-color: transparent;
-                    padding: 15px;
-                }
-            }
-        }
         ul.role-section {
             display: flex;
             align-items: center;
@@ -562,4 +617,124 @@ body #not_authenticated_financial ul.checked > li {
             }
         }
     }
+}
+
+.welcome-content {
+    .box-grid .box {
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+        min-height: 120px;
+
+        div > p {
+            margin: 1em 0 0.5em;
+
+            &.text-orange {
+                color: $COLOR_ORANGE;
+                font-size: $FONT_SIZE_XXL;
+                font-weight: 300;
+            }
+        }
+    }
+    .account-created:before {
+        content: url('../images/pages/set_currency/congratulations.svg');
+    }
+    .box > .box-item-end {
+        margin-top: auto;
+
+        p {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.two_factor_auth {
+    .padding-left-medium {
+        padding-left: 45px;
+    }
+    .otp-form-group {
+        display: flex;
+        align-items: flex-start;
+
+        input {
+            box-sizing: border-box;
+            height: 37px;
+            width: 140px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+    }
+    .steps.steps-vertical {
+        flex-direction: column;
+        padding-left: 15px;
+
+        .step {
+            position: relative;
+            margin-top: 0px;
+
+            &:not(:last-child) {
+                border-left: 1px solid $COLOR_LIGHT_GRAY;
+            }
+            .circle {
+                margin: 0;
+                position: absolute;
+                left: -20px;
+            }
+            .content {
+                padding: 8px 0 0 30px;
+
+                p {
+                    margin: 0;
+
+                    &:last-child, &:nth-child(2) {
+                        padding-bottom: 15px;
+                    }
+                }
+                #qrcode {
+                    padding-bottom: 60px;
+                    @media (max-width: 480px) {
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .two-fa-status {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        margin-bottom: 50px;
+
+        &-container {
+            display: flex;
+            align-items: center;
+            padding: 10px 30px 10px 15px;
+            background: $COLOR_LIGHT_GRAY;
+        }
+        &-icon {
+            max-width: 55px;
+            max-height: 55px;
+            padding-right: 15px;
+        }
+    }
+}
+
+#signup_form {
+    input {
+        width: 100%;
+        height: 3em;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: $FONT_SIZE_S;
+    }
+    button {
+        width: 100%;
+        height: 3rem;
+        margin: 5px 0;
+    }
+}
+
+#contract-specification table td {
+    white-space: nowrap;
 }

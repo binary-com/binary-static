@@ -1,9 +1,9 @@
 const BinaryPjax           = require('../../../../base/binary_pjax');
+const isJPClient           = require('../../../../base/client').isJPClient;
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
 const Dialog               = require('../../../../common/attach_dom/dialog');
 const FlexTableUI          = require('../../../../common/attach_dom/flextable');
-const jpClient             = require('../../../../common/country_base').jpClient;
 const FormManager          = require('../../../../common/form_manager');
 const localize             = require('../../../../../_common/localize').localize;
 const toTitleCase          = require('../../../../../_common/string_util').toTitleCase;
@@ -17,7 +17,7 @@ const APIToken = (() => {
         $form;
 
     const onLoad = () => {
-        if (jpClient()) {
+        if (isJPClient()) {
             BinaryPjax.loadPreviousUrl();
             return;
         }

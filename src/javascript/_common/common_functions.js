@@ -82,13 +82,6 @@ const getSetElementValue = (element, text, type) => { // eslint-disable-line con
     }
 };
 
-const requireHighstock = callback => (
-    require.ensure([], (require) => {
-        const Highstock = require('highstock-release');
-        return callback(Highstock);
-    }, 'highstock')
-);
-
 /*
  * @param  {String}  id_selector   the selector for the element
  * @param  {Element} parent        optional selector to use for parent, defaults to document
@@ -112,7 +105,6 @@ module.exports = {
     checkInput,
     dateValueChanged,
     selectorExists,
-    requireHighstock,
     getElementById,
     getVisibleElement,
     elementTextContent: (element, text) => getSetElementValue(element, text, 'textContent'),
