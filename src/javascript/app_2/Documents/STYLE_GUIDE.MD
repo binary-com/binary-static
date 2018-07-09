@@ -153,10 +153,10 @@ container inside its own subdirectory, e.g.:
 
 ```
 Containers/
-└── contract_type.jsx
-    ├── purchase.jsx
-    ├── trade.jsx
-    └── trade_params.jsx
+├── contract_type.jsx
+├── purchase.jsx
+├── trade.jsx
+└── trade_params.jsx
 ```
 
 Containers should follow rules:
