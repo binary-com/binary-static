@@ -111,7 +111,7 @@ const PaymentMethods = () => {
                                 { text: '25 - 10,000' },
                                 { text: '25 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks pdf_file='Binary.com_PaySec.pdf' video_link='https://youtu.be/7ltMIxHntfk' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_PaySec.pdf' video_link='https://youtu.be/DTVspCgnx0M' /> },
                             ],
                         ],
                     }}
@@ -174,7 +174,7 @@ const PaymentMethods = () => {
                                 { text: '5 - 10,000' },
                                 { text: '5 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks pdf_file='Binary.com_Skrill.pdf' video_link='https://youtu.be/wyU73gsci8w' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_Skrill.pdf' video_link='https://youtu.be/pQDVDC-mWuA' /> },
                             ],
                             [
                                 { text: <PaymentLogo logo='neteller' /> },
@@ -214,7 +214,7 @@ const PaymentMethods = () => {
                                 { text: '5 - 1,000' },
                                 { text: '5 - 750' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks pdf_file='Binary.com_PaySafeCard.pdf' video_link='https://youtu.be/IqY0220n0Ho' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_PaySafeCard.pdf' video_link='https://youtu.be/5QzGc1nleQo' /> },
                             ],
                         ],
                     }}
@@ -241,7 +241,7 @@ const PaymentMethods = () => {
                                     { text: '0.002' },
                                     { text: '0.0003' },
                                     { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                    { text: <ReferenceLinks pdf_file='Binary.com_Bitcoin.pdf' video_link='https://youtu.be/Hx2bZAlaxQA' /> },
+                                    { text: <ReferenceLinks pdf_file='Binary.com_Bitcoin.pdf' video_link='https://youtu.be/StIW7CviBTw' /> },
                                 ],
                                 [
                                     { text: <PaymentLogo logo='bitcoin_cash' /> },
@@ -257,7 +257,7 @@ const PaymentMethods = () => {
                                     { text: '0.01' },
                                     { text: '0.01' },
                                     { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                    { text: <ReferenceLinks pdf_file='Binary.com_Ethereum.pdf' video_link='https://youtu.be/ptvi9hQt4Zw' /> },
+                                    { text: <ReferenceLinks pdf_file='Binary.com_Ethereum.pdf' video_link='https://youtu.be/B7EVLt3lIMs' /> },
                                 ],
                                 // [
                                 //     { text: <PaymentLogo logo='' /> },
@@ -272,7 +272,7 @@ const PaymentMethods = () => {
                                     { text: '0.1' },
                                     { text: '0.02' },
                                     { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                    { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/RJ_SJhcwUho' /> },
+                                    { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/DJhP5UjKPpI' /> },
                                 ],
                             ],
                         }}
