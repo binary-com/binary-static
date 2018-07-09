@@ -655,6 +655,11 @@ const texts = [
     'Front and reverse side photos of [_1] are required.',
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
     'Following file(s) were already uploaded: [_1]',
+    'Checking',
+    'Checked',
+    'Pending',
+    'Submitting',
+    'Submitted',
 
     // third party link confirmation dialog/popup
     'You will be redirected to a third-party website which is not owned by Binary.com.',
