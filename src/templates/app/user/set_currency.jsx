@@ -30,11 +30,7 @@ const SetCurrency = () => (
                     <img src={it.url_for('images/pages/set_currency/account-created.svg')} />
                     <div className='gr-padding-10' />
                     <h1>{it.L('Congratulations!')}</h1>
-                    <p>
-                        {it.L('You have successfully created your [_1]account!', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}
-                        <br/>
-                        <span id='authenticate_msg' className='invisible'>{it.L('Please [_1]authenticate[_2] your account before you make a deposit.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</span>
-                    </p>
+                    <p>{it.L('You have successfully created your [_1]account!', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}</p>
                 </div>
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />

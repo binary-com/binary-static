@@ -23,16 +23,6 @@ const SetCurrency = (() => {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
                 $('#set_currency').setVisibility(1);
-
-                if (Client.isAccountOfType('financial')) {
-                    BinarySocket.wait('get_account_status').then((response) => {
-                        const needs_to_authenticate = +response.get_account_status.prompt_client_to_authenticate;
-                        $('#deposit_btn').setVisibility(!needs_to_authenticate);
-                        $('#authenticate_msg').setVisibility(needs_to_authenticate);
-                    });
-                } else {
-                    $('#deposit_btn').setVisibility(1);
-                }
             } else {
                 BinaryPjax.loadPreviousUrl();
             }
