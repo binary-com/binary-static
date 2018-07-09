@@ -358,6 +358,7 @@ const Header = (() => {
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
                     checkStatus(check_statuses_real);
+                    $('.account-status')[/authenticated/.test(status) ? 'addClass' : 'removeClass']('authenticated');
                 });
             }
         });

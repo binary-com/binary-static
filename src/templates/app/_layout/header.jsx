@@ -23,6 +23,7 @@ const Account = () => (
             <div className='account-id' />
             <div className='topMenuBalance'>0</div>
         </div>
+        <span className='account-status' data-balloon={it.L('Account Authenticated')} data-balloon-pos='down' />
         <div className='nav-caret' />
     </a>
 );
