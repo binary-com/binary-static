@@ -102,7 +102,7 @@ const SelfieSelector = () => {
                     <div className='gr-row form-row gr-centered'>
                         <div className='gr-12'>
                             <input
-                                id={`add_file_selfie`}
+                                id='add_file_selfie'
                                 className='file-picker'
                                 type='file'
                                 accept='.jpg, .jpeg, .gif, .png, .pdf'
@@ -110,7 +110,7 @@ const SelfieSelector = () => {
                                 data-name={name}
                                 data-page-type='photo'
                             />
-                            <label htmlFor={`add_file_selfie`} className='button'>{it.L('Add')} <span className='add' /></label>
+                            <label htmlFor='add_file_selfie' className='button'>{it.L('Add')} <span className='add' /></label>
                         </div>
                     </div>
                 </div>
