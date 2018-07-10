@@ -447,7 +447,7 @@ const TickDisplay = (() => {
                     if (!x_indicators[indicator_key] && tick.epoch === exit_time && contract_category !== 'highlowticks') {
                         x_indicators[indicator_key] = {
                             index    : counter,
-                            label    : getExitLabel(),
+                            label    : localize('Exit Spot'),
                             dashStyle: 'Dash',
                         };
                     }
@@ -532,15 +532,12 @@ const TickDisplay = (() => {
 
         x_indicators[indicator_key] = {
             index,
-            label    : getExitLabel(),
+            label    : localize('Exit Spot'),
             dashStyle: 'Dash',
         };
         
         add(x_indicators[indicator_key]);
     };
-
-    const getExitLabel = () =>
-        localize(contract && contract.sell_spot_time && contract.exit_tick_time && +contract.sell_spot_time >= +contract.exit_tick_time ? 'Exit Spot' : 'Sell Spot');
 
     const updateContract = (proposal_open_contract) => {
         contract = proposal_open_contract;

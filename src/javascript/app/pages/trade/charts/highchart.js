@@ -577,8 +577,12 @@ const Highchart = (() => {
                 text_left : 'textLeft',
                 dash_style: 'Dash',
             });
-            if (isSoldBeforeExpiry() && contract.status !== 'sold') {
-                selectTick(sell_spot_time, 'exit');
+            if (isSoldBeforeExpiry()) {
+                if (contract.status === 'sold') {
+                    $('#chart_exit_spot').parent().css('left', '180px').end().remove();
+                } else {
+                    selectTick(sell_spot_time, 'exit');
+                }
             } else if (exit_tick_time) {
                 selectTick(exit_tick_time, 'exit');
             }

@@ -201,6 +201,7 @@ const ViewPopup = (() => {
 
         if (current_spot) {
             containerSetText('trade_details_current_spot > span', addComma(current_spot));
+            $('#trade_details_current_spot').parent().setVisibility(1);
         } else {
             $('#trade_details_current_spot').parent().setVisibility(0);
         }
@@ -211,6 +212,7 @@ const ViewPopup = (() => {
                 updateTimers();
             }
             containerSetText('trade_details_current_date', epochToDateTime(current_spot_time));
+            $('#trade_details_current_date').parent().setVisibility(1);
         } else {
             $('#trade_details_current_date').parent().setVisibility(0);
         }
