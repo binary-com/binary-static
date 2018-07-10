@@ -56,7 +56,9 @@ const BinaryApp = ({ root_store }) => (
                             { icon: 'trade',     text: localize('Trade'),     link_to: '/' },
                             { icon: 'portfolio', text: localize('Portfolio'), link_to: '/portfolio' },
                             { icon: 'statement', text: localize('Statement'), link_to: 'statement' },
-                            { icon: 'cashier',   text: localize('Cashier') },
+                            // TODO
+                            // Hide the Cashier button until its implementaiton is completed.
+                            // { icon: 'cashier',   text: localize('Cashier') },
                         ]}
                     />
                 </div>
