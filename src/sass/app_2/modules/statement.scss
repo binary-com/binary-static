@@ -1,0 +1,160 @@
+$filter-height: 60px;
+
+.statement-filter {
+    box-sizing: border-box;
+    height: $filter-height;
+    position: fixed;
+    z-index: 90;
+    background-color: $COLOR_WHITE;
+    width: 100%;
+    font-size: 14px;
+    border-bottom: 1px solid $COLOR_GRAY;
+    @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
+
+    &__content {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    &__label {
+        margin-right: 0.6rem;
+    }
+    &__dash {
+        margin: 0 0.5rem;
+    }
+    &.mobile-only {
+        padding: 0 0.5rem;
+
+        .statement-filter {
+            &__content {
+                padding: 0;
+                max-width: 450px;
+                display: grid;
+                grid-template-columns: 1fr 30px 1fr;
+                text-align: center;
+
+                .datepicker-display {
+                    width: 100%;
+                }
+            }
+            &__label {
+                display: none;
+            }
+        }
+    }
+}
+
+.statement {
+    &__content {
+        padding-top: $filter-height;
+        overflow: auto;
+
+        @media (max-width: 768px) {
+            background-color: #fafafa; /* stylelint-disable-line color-no-hex */
+        }
+    }
+    &__no-activity-msg {
+        padding: 1rem;
+        @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
+        font-size: 1rem;
+    }
+
+    /* TABLE STYLES START */
+    .table-head {
+        white-space: nowrap;
+    }
+    .table-body .table-row {
+        cursor: pointer;
+    }
+    .date, .refid {
+        width: 6.5em;
+    }
+    .desc {
+        padding-right: 2rem !important;
+    }
+    .action {
+        width: 6.5em;
+    }
+    .payout, .amount, .balance {
+        width: 6em;
+        text-align: right;
+    }
+    th.payout {
+        direction: rtl;
+    }
+    .amount {
+        font-weight: bold;
+
+        &.profit {
+            color: #4caf50; /* stylelint-disable-line color-no-hex */
+        }
+        &.loss {
+            color: #f44336; /* stylelint-disable-line color-no-hex */
+        }
+    }
+    /* TABLE STYLES END */
+
+    &-card {
+        &__header {
+            font-size: 10px;
+            padding: 0.5rem;
+            border-bottom: 1px solid $COLOR_GRAY;
+            display: flex;
+            justify-content: space-between;
+        }
+        &__refid {
+            color: $COLOR_LIGHT_BLUE;
+        }
+        &__body {
+            padding: 0.5rem;
+            font-size: 12px;
+        }
+        &__desc {
+            margin-bottom: 0.7rem;
+        }
+        &__row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            font-weight: bold;
+        }
+        &__cell-text {
+            vertical-align: middle;
+        }
+        &__cell:before {
+            content: '';
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            background-size: 16px 16px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        &__amount {
+            &--sell, &--deposit {
+                color: $COLOR_LIGHT_GREEN;
+            }
+            &--buy, &--withdrawal {
+                color: $COLOR_LIGHT_RED;
+            }
+            &--sell:before {
+                background-image: url('../images/app_2/statement/ic_sell.svg');
+            }
+            &--buy:before {
+                background-image: url('../images/app_2/statement/ic_buy.svg');
+            }
+            &--deposit:before {
+                background-image: url('../images/app_2/statement/ic_deposit.svg');
+            }
+            &--withdrawal:before {
+                background-image: url('../images/app_2/statement/ic_withdrawal.svg');
+            }
+        }
+        &__payout:before {
+            background-image: url('../images/app_2/statement/ic_payout.svg');
+        }
+        &__balance:before {
+            background-image: url('../images/app_2/statement/ic_wallet.svg');
+        }
+    }
+}
