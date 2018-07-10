@@ -26,12 +26,21 @@ app_2
     ├── Modules/
     │   ├── Trading/
     │   │   ├── Components/
-    │   │   │   ├── chart.jsx
-    │   │   │   ├── barrier.jsx
-    │   │   │   └── …
+    │   │   │   ├── Elements/
+    │   │   │   │   ├── full_screen_dialog.jsx
+    │   │   │   │   └── mobile_widget.jsx
+    │   │   │   └── Form/
+    │   │   │       ├── ContractType/
+    │   │   │       ├── Purchase/
+    │   │   │       ├── TradeParams/
+    │   │   │       ├── form_layout.jsx
+    │   │   │       ├── screen_large.jsx
+    │   │   │       └── screen_small.jsx
     │   │   ├── Containers/
-    │   │   │   ├── trade_form.jsx
-    │   │   │   └── trade.jsx
+    │   │   │   ├── contract_type.jsx
+    │   │   │   ├── purchase.jsx
+    │   │   │   ├── trade.jsx
+    │   │   │   └── trade_params.jsx
     │   │   ├── Helpers/
     │   │   └── index.js
     │   └── Statement/
@@ -44,7 +53,6 @@ app_2
     ├── Utils/
     │   ├── Date/
     │   └── …
-    ├── Documents/
     └── index.js
 ```
 
