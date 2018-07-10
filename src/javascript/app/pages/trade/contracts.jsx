@@ -8,8 +8,8 @@ import {localize} from '../../../_common/localize';
 class Contracts extends React.Component {
     constructor (props) {
         super(props);
-        const {contracts, contracts_tree} = props;
-        const formname = Defaults.get('formname');
+        const {contracts, contracts_tree, selected} = props;
+        const formname = selected || Defaults.get('formname');
         this.references = {};
         this.el_contract = getElementById('contract');
         this.el_contract.value = formname;
@@ -92,7 +92,6 @@ class Contracts extends React.Component {
     onContractClick = (formname) => {
         this.closeDropDown();
         if (formname === this.state.formname) { return; }
-        Defaults.set('formname', formname);
         // Notify for changes on contract.
         this.el_contract.value = formname;
         const event = new Event('change');
@@ -108,7 +107,7 @@ class Contracts extends React.Component {
             open,
             formname,
         } = this.state;
-
+        const is_mobile = window.innerWidth <= 767;
         return (
             <div className='contracts'>
                 <div
@@ -125,7 +124,7 @@ class Contracts extends React.Component {
                     className={`contracts_dropdown ${open ? '' : 'hidden'}`}
                     ref={this.saveRef.bind(null, 'wrapper')}
                 >
-                    <div className='mobile_close invisible'>
+                    <div className={`mobile_close invisible ${open && is_mobile ? '': 'disabled'}`}>
                         <span>{localize('Select Trade Type')}</span>
                         <span className='close' onClick={this.closeDropDown} />
                     </div>
@@ -170,8 +169,8 @@ class Contracts extends React.Component {
     }
 }
 /* eslint-disable react/no-render-return-value*/
-export const init = (contracts, contracts_tree) => ReactDOM.render(
-    <Contracts contracts={contracts} contracts_tree={contracts_tree}/>,
+export const init = (contracts, contracts_tree, selected) => ReactDOM.render(
+    <Contracts contracts={contracts} contracts_tree={contracts_tree} selected={selected}/>,
     getElementById('contract_component')
 );
 /* eslint-enable react/no-render-return-value */
@@ -179,6 +178,7 @@ export const init = (contracts, contracts_tree) => ReactDOM.render(
 Contracts.propTypes = {
     contracts     : PropTypes.object,
     contracts_tree: PropTypes.array,
+    selected      : PropTypes.string,
 };
 
 export default init;

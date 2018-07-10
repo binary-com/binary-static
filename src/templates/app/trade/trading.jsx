@@ -5,7 +5,7 @@ import Loading from '../../_common/components/loading.jsx';
 
 const Trading = () => (
     <React.Fragment>
-        <div id='trading_socket_container' className='tab-menu-wrap'>
+        <div id='trading_socket_container'>
             <div id='notifications_wrapper' />
             <div id='loading_container' className='overlay_container' />
             <a id='deposit_btn_trade' className='client_real invisible gr-hide-m button' href={it.url_for('cashier/forwardws?action=deposit')}>
@@ -65,7 +65,7 @@ const Trading = () => (
                                                 <select id='duration_units' className='medium_width_input' />
                                             </div>
                                             <div id='duration_wrapper' className='hint'>
-                                                <span id='duration_tooltip'>{it.L('The minimum duration is')}</span> <span id='duration_minimum' /> <span id='duration_unit' />
+                                                <span id='duration_tooltip'>{it.L('Minimum:')}</span> <span id='duration_minimum' />
                                                 <span id='duration_maximum' className='invisible' />
                                             </div>
                                             <div id='expiry_type_endtime'>
@@ -77,10 +77,20 @@ const Trading = () => (
                                             </div>
                                         </div>
                                     </div>
+                                    <div className='row' id='highlowticks_expiry_row'>
+                                        <div className='col form_label'>
+                                            <label>{it.L('Duration')}</label>
+                                        </div>
+                                        <div className='big-col'>
+                                            <label className='gr-gutter'>5</label>
+                                            <label className='gr-gutter-left'>{it.L('Ticks')}</label>
+                                            <div className='hint'>{it.L('This contract type only offers 5 ticks')}</div>
+                                        </div>
+                                    </div>
                                     <div className='row barrier_class' id='barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='H' id='barrier_label'>
-                                                <span id='barrier_tooltip'  data-balloon={it.L('Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received')} data-balloon-length='xlarge'>{it.L('Barrier offset')}</span>
+                                                <span id='barrier_tooltip'>{it.L('Barrier offset')}</span>
                                                 <span id='barrier_span'>{it.L('Barrier')}</span>
                                             </label>
                                         </div>
@@ -92,19 +102,22 @@ const Trading = () => (
                                     <div className='row barrier_class' id='high_barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='H' id='barrier_high_label'>
-                                                <span id='barrier_high_tooltip' data-balloon={it.L('Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received')} data-balloon-length='xlarge'>{it.L('High barrier offset')}</span>
+                                                <span id='barrier_high_tooltip'>{it.L('High barrier offset')}</span>
                                                 <span id='barrier_high_span'>{it.L('High barrier')}</span>
                                             </label>
                                         </div>
                                         <div className='big-col'>
                                             <input id='barrier_high' type='text' data-lpignore='true' name='H' autoComplete='off' />
                                             <span id='indicative_high_barrier_tooltip' data-balloon={it.L('This is an indicative barrier. Actual barrier will be the entry spot plus the barrier offset.')} data-balloon-length='xlarge' />
+                                            <div className='hint'>
+                                                <span id='barrier_high_error' className='error-msg invisible'>{it.L('High barrier must be higher than low barrier')}</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className='row barrier_class' id='low_barrier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='L' id='barrier_low_label'>
-                                                <span id='barrier_low_tooltip' data-balloon={it.L('Enter the barrier in terms of the difference from the spot price. If you enter +0.005, then you will be purchasing a contract with a barrier 0.005 higher than the entry spot. The entry spot will be the next tick after your order has been received')} data-balloon-length='xlarge'>{it.L('Low barrier offset')}</span>
+                                                <span id='barrier_low_tooltip'>{it.L('Low barrier offset')}</span>
                                                 <span id='barrier_low_span'>{it.L('Low barrier')}</span>
                                             </label>
                                         </div>
@@ -125,6 +138,18 @@ const Trading = () => (
                                             </select>
                                         </div>
                                     </div>
+                                    <div className='row' id='selected_tick_row'>
+                                        <div className='col form_label'>
+                                            <label htmlFor='selected_tick' id='selected_tick_label'>{it.L('Tick Prediction')}</label>
+                                        </div>
+                                        <div className='big-col'>
+                                            <select id='selected_tick' className='small_width_input'>
+                                                { Array.from(new Array(5)).map((x, idx) => (
+                                                    <option key={idx+1} value={idx+1}>{idx+1}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div className='row' id='multiplier_row'>
                                         <div className='col form_label'>
                                             <label htmlFor='multiplier' id='multiplier_label'>{it.L('Multiplier')}</label>
@@ -139,16 +164,21 @@ const Trading = () => (
                                     <div className='row' id='payout_row'>
                                         <div className='col form_label'>
                                             <select id='amount_type'>
-                                                <option value='payout' id='payout_option'>{it.L('Payout')}</option>
                                                 <option value='stake' id='stake_option'>{it.L('Stake')}</option>
+                                                <option value='payout' id='payout_option'>{it.L('Payout')}</option>
                                             </select>
                                         </div>
                                         <div className='row-inner big-col'>
                                             <div className='col-inner'>
                                                 <select id='currency' className='currency small_width_input' />
-                                                <input id='amount' type='text' data-lpignore='true' step='any' maxLength='10' defaultValue='10' className='medium_width_input' autoComplete='off' />
+                                                <input id='amount' type='text' data-lpignore='true' step='any' maxLength='10' className='medium_width_input' autoComplete='off' />
                                             </div>
                                         </div>
+                                    </div>
+                                    <div className='row' id='reset_time' />
+                                    <div className='row invisible' id='equals_row'>
+                                        <input id='callputequal' type='checkbox' />
+                                        <label htmlFor='callputequal'><span data-balloon-length='xlarge' data-balloon={it.L('Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower.')}>{it.L('Allow equals')}</span></label>
                                     </div>
                                 </form>
                             </div>
@@ -172,6 +202,7 @@ const Trading = () => (
                                 </div>
                                 <div id='contract_purchase_barrier' />
                                 <div id='contract_purchase_reference' />
+                                <div id='contract_highlowtick' />
                                 <div className='button'>
                                     <span id='contract_purchase_button' className='button open_contract_details' />
                                 </div>
@@ -201,7 +232,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>
-                                            <span className='purchase_button contract_description no-underline open_contract_details' id='purchase_button_top' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                            <span className='purchase_button contract_description no-underline' id='purchase_button_top' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
                                         </div>
                                     </span>
                                 </div>
@@ -225,7 +256,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>
-                                            <span className='purchase_button contract_description no-underline open_contract_details' id='purchase_button_bottom' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                            <span className='purchase_button contract_description no-underline' id='purchase_button_bottom' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
                                         </div>
                                     </span>
                                 </div>
@@ -249,7 +280,7 @@ const Trading = () => (
                                             </div>
                                         </div>
                                         <div className='contract_purchase button'>
-                                            <span className='purchase_button no-underline open_contract_details' id='purchase_button_middle' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
+                                            <span className='purchase_button no-underline' id='purchase_button_middle' data-balloon-length='xlarge' value='purchase'>{it.L('Purchase')}</span>
                                         </div>
                                     </span>
                                 </div>

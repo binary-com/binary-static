@@ -10,7 +10,6 @@ const Geocoder         = require('../../../../../_common/geocoder');
 const CommonFunctions  = require('../../../../../_common/common_functions');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
-const findParent       = require('../../../../../_common/utility').findParent;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const PersonalDetails = (() => {
@@ -18,7 +17,6 @@ const PersonalDetails = (() => {
     const real_acc_elements = '.RealAcc';
 
     let is_for_new_account = false;
-    let need_to_accept_tin = false;
 
     let editable_fields,
         is_jp_client,
@@ -34,39 +32,21 @@ const PersonalDetails = (() => {
         residence         = Client.get('residence');
         is_jp_client      = residence === 'jp'; // we need to check with residence so we know which fields will be present in get_settings response
         if (is_jp_client && !is_virtual) {
-            setVisibility('#fieldset_email_consent');
             showHideTaxMessage();
         }
     };
 
     const showHideTaxMessage = () => {
-        const $form_fieldsets       = $(`${form_id} fieldset`);
-        const $tax_info_notice      = $('#tax_information_notice');
         const $tax_info_declaration = $('#tax_information_declaration');
-        const $tax_info_form        = $('#tax_information_form');
         const $tax_information_info = $('#tax_information_info');
 
         if (Client.shouldCompleteTax()) {
-            $form_fieldsets.setVisibility(0);       // hide all fieldsets
-            const validations = getValidations();
-            validations.forEach((validation) => {
-                // show all fieldsets that are required and empty
-                if (/req/.test(validation.validations) && $(validation.selector).val() === '') {
-                    const fieldset = findParent(CommonFunctions.getElementById(validation.selector.replace('#', '')), 'fieldset');
-                    if (fieldset) fieldset.setVisibility(1);
-                }
-            });
-            $tax_info_notice.setVisibility(1);      // show tax notice message
-            $tax_info_form.setVisibility(1);        // show tax info fieldset
-            need_to_accept_tin = true;
-
             $('#tax_information_note_toggle').off('click').on('click', (e) => {
                 e.stopPropagation();
                 $('#tax_information_note_toggle').toggleClass('open');
                 $('#tax_information_note').slideToggle();
             });
         } else {
-            $tax_info_notice.setVisibility(0);      // hide tax notice message
             $tax_information_info.setVisibility(0); // hide tax info
             $tax_info_declaration.setVisibility(0); // hide tax info declaration
         }
@@ -92,6 +72,12 @@ const PersonalDetails = (() => {
         }
     };
 
+    const showHideMissingDetails = () => {
+        const validations = getValidations();
+        const has_missing_field = validations.find((validation) => /req/.test(validation.validations) && $(validation.selector).val() === '');
+        $('#missing_details_notice').setVisibility(!!has_missing_field);
+    };
+
     const getDetailsResponse = (data, residence_list = State.getResponse('residence_list')) => {
         const get_settings         = $.extend({}, data);
         get_settings.date_of_birth = 'date_of_birth' in get_settings ? moment.utc(new Date(get_settings.date_of_birth * 1000)).format('YYYY-MM-DD') : '';
@@ -99,7 +85,6 @@ const PersonalDetails = (() => {
         // for subaccounts, back-end sends loginid of the master account as name
         const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
         if (!hide_name) {
-            setVisibility('#row_name');
             get_settings.name = is_jp_client ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
@@ -129,15 +114,13 @@ const PersonalDetails = (() => {
             }
             displayGetSettingsData(jp_settings);
             if (jp_settings.hedge_asset !== null && jp_settings.hedge_asset_amount !== null) {
-                setVisibility('.hedge');
+                $('.hedge').setVisibility(1);
             }
-            setVisibility('.JpAcc');
+            $('.JpAcc').setVisibility(1);
         } else {
-            setVisibility(real_acc_elements);
+            $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
         }
-        setVisibility('#row_country');
-        setVisibility('#row_email');
         $(form_id).setVisibility(1);
         $('#loading').remove();
         FormManager.init(form_id, getValidations());
@@ -151,6 +134,7 @@ const PersonalDetails = (() => {
         if (!is_virtual && !is_jp_client) {
             Geocoder.validate(form_id);
         }
+        showHideMissingDetails();
     };
 
     const displayGetSettingsData = (data, populate = true) => {
@@ -181,7 +165,6 @@ const PersonalDetails = (() => {
         if (data.country) {
             $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'lbl_country' })));
             $('#lbl_country').text(data.country);
-            if (is_virtual) $('#btn_update').setVisibility(0);
         }
     };
 
@@ -224,7 +207,10 @@ const PersonalDetails = (() => {
                 validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
             });
         } else if (is_virtual) {
-            validations = [{ selector: '#residence', validations: ['req'] }];
+            validations = [
+                { selector: '#email_consent' },
+                { selector: '#residence', validations: ['req'] },
+            ];
         } else {
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
@@ -232,10 +218,11 @@ const PersonalDetails = (() => {
                 { selector: '#address_city',           validations: ['req', 'letter_symbol'] },
                 { selector: '#address_state',          validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
                 { selector: '#address_postcode',       validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
+                { selector: '#email_consent' },
                 { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 6, max: 35, value: () => $('#phone').val().replace(/^\+/, '')  }]] },
+                { selector: '#place_of_birth',         validations: ['req'] },
                 { selector: '#account_opening_reason', validations: ['req'] },
 
-                { selector: '#place_of_birth', validations: Client.isAccountOfType('financial') ? ['req'] : '' },
                 { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
                 { selector: '#chk_tax_id',     validations: Client.isAccountOfType('financial') ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
@@ -257,23 +244,21 @@ const PersonalDetails = (() => {
             BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
                 showHideTaxMessage();
                 Header.displayAccountStatus();
-                if (need_to_accept_tin) {
-                    need_to_accept_tin = false;
-                    window.location.reload();
-                }
             });
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
-                getDetailsResponse(data.get_settings);
+                if (is_virtual && response.echo_req.residence) {
+                    window.location.reload(); // reload page if we are setting residence
+                    return;
+                }
                 // update notification shown for set residence etc
                 Header.displayAccountStatus();
                 if (is_for_new_account) {
                     is_for_new_account = false;
                     BinaryPjax.loadPreviousUrl();
+                    return;
                 }
-                if (is_virtual && response.echo_req.residence) {
-                    window.location.reload(); // reload page if we are setting residence
-                }
+                getDetailsResponse(data.get_settings);
             });
         }
         showFormMessage(is_error ?
@@ -310,8 +295,9 @@ const PersonalDetails = (() => {
                     $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                         setTimeout(() => {
                             $tax_residence.select2()
-                                .val(get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : '').trigger('change');
-                            setVisibility('#tax_residence');
+                                .val(get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : '')
+                                .trigger('change')
+                                .setVisibility(1);
                         }, 500);
                     });
 
@@ -357,7 +343,7 @@ const PersonalDetails = (() => {
                         $field.append($('<option/>', { value: state.value, text: state.text }));
                     });
                 } else {
-                    $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35' }));
+                    $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35', 'data-lpignore': true }));
                     $field = $(address_state);
                 }
                 $field.val(get_settings_data.address_state);
@@ -380,29 +366,17 @@ const PersonalDetails = (() => {
         })
     );
 
-    const setVisibility = (el) => {
-        if (is_for_new_account) {
-            $(el).setVisibility(0);
-        } else {
-            $(el).setVisibility(1);
-        }
-    };
-
     const onLoad = () => {
         currency = Client.get('currency');
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.getResponse('get_settings');
 
-            $('#account_opening_reason_notice').setVisibility(+is_for_new_account);
-
             if (is_virtual) {
                 getDetailsResponse(get_settings_data);
             }
 
             if (!is_virtual || !residence) {
-                $('#btn_update').setVisibility(1);
-
                 BinarySocket.send({ residence_list: 1 }).then(response => {
                     populateResidence(response).then(() => {
                         if (residence) {
@@ -421,14 +395,17 @@ const PersonalDetails = (() => {
                         });
                     });
                 });
-            } else {
-                $('#btn_update').setVisibility(0);
             }
         });
     };
 
+    const onUnload = () => {
+        is_for_new_account = false;
+    };
+
     return {
         onLoad,
+        onUnload,
 
         setIsForNewAccount: (bool) => { is_for_new_account = bool; },
     };

@@ -248,44 +248,36 @@ class Markets extends React.Component {
     }
 
     stickyHeader = (position) => {
-        let curr, prev, next;
         const {market_nodes} = this.references;
-        const market_keys = Object.keys(market_nodes);
-        const TITLE_HEIGHT = 40;
-        Object.values(market_nodes).forEach((node, idx) => {
-            if (node.dataset.offsetTop <= position
-                && +node.dataset.offsetHeight + +node.dataset.offsetTop > position) {
-                curr = node;
-                prev = idx > 0 ? market_nodes[market_keys[idx-1]] : null;
-                next = idx < market_keys.length ? market_nodes[market_keys[idx+1]] : null;
-            }
-        });
-
         const class_sticky = 'sticky';
         const class_under = 'put_under';
+        const TITLE_HEIGHT = 40;
         const DEFAULT_TOP = this.references.list.offsetTop;
 
-        if (curr) {
-            curr.children[0].removeAttribute('style');
-            curr.removeAttribute('style');
-            curr.children[0].classList.remove(class_under);
-            const diff = (+curr.dataset.offsetHeight + +curr.dataset.offsetTop) - position;
-            if (diff > 0 && diff < TITLE_HEIGHT) {
-                curr.children[0].style.top = `${DEFAULT_TOP - (TITLE_HEIGHT - diff)}px`;
-                curr.children[0].classList.add(class_under);
-            }
-            curr.children[0].classList.add(class_sticky);
-            curr.style.paddingTop = `${TITLE_HEIGHT}px`;
+        const current_viewed_node = Object.values(market_nodes).find(node => (
+            node.dataset.offsetTop <= position
+                && +node.dataset.offsetHeight + +node.dataset.offsetTop > position
+        ));
+
+        if (current_viewed_node !== this.references.last_viewed_node) {
+            Object.values(market_nodes).forEach(node => {
+                node.removeAttribute('style');
+                node.children[0].removeAttribute('style');
+                node.children[0].classList.remove(class_under, class_sticky);
+            });
+            this.references.last_viewed_node = current_viewed_node;
         }
-        if (prev) {
-            prev.removeAttribute('style');
-            prev.children[0].removeAttribute('style');
-            prev.children[0].classList.remove(class_under, class_sticky);
+
+        const diff = (+current_viewed_node.dataset.offsetHeight + +current_viewed_node.dataset.offsetTop) - position;
+        if (diff > 0 && diff < TITLE_HEIGHT) {
+            current_viewed_node.children[0].style.top = `${DEFAULT_TOP - (TITLE_HEIGHT - diff)}px`;
+            current_viewed_node.children[0].classList.add(class_under);
+        } else {
+            current_viewed_node.children[0].removeAttribute('style');
+            current_viewed_node.children[0].classList.remove(class_under);
         }
-        if (next) {
-            next.children[0].classList.remove(class_sticky, class_under);
-            next.removeAttribute('style');
-        }
+        current_viewed_node.children[0].classList.add(class_sticky);
+        current_viewed_node.style.paddingTop = `${TITLE_HEIGHT}px`;
     }
 
     saveMarketRef = (market, node) => {
@@ -347,7 +339,7 @@ class Markets extends React.Component {
         const {list} = this.references;
         const node = this.references.market_nodes[key];
         const offset = node.dataset.offsetTop - list.offsetTop;
-        scrollToPosition(list, offset, 250);
+        scrollToPosition(list, offset, 0);
     }
     /* eslint-enable no-shadow */
     /* eslint-enable no-undef */

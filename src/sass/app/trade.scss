@@ -352,6 +352,28 @@
             background: url('../images/pages/trade/high_low_icon.svg') no-repeat center top;
             background-size: 50%;
         }
+        &.RESETCALL {
+            background: url('../images/pages/trade/reset_call.svg') no-repeat center top;
+            background-size: 50%;
+        }
+        &.RESETPUT {
+            background: url('../images/pages/trade/reset_put.svg') no-repeat center top;
+            background-size: 50%;
+        }
+        &.CALLSPREAD {
+            background: url('../images/pages/trade/call_spread.svg') no-repeat center top;
+            background-size: 50%;
+        }
+        &.PUTSPREAD {
+            background: url('../images/pages/trade/put_spread.svg') no-repeat center top;
+            background-size: 50%;
+        }
+        &.TICKHIGH {
+            background: url('../images/pages/trade/high_tick.svg') no-repeat center top;
+        }
+        &.TICKLOW {
+            background: url('../images/pages/trade/low_tick.svg') no-repeat center top;
+        }
     }
     #contract_prices_container {
         position: relative;
@@ -448,6 +470,10 @@
         #contract_purchase_profit_list, #contract_purchase_spots .row {
             padding: 3px 0;
             flex-direction: row !important;
+
+            &.winning-tick-row {
+                font-weight: bold;
+            }
         }
         #contract_purchase_profit_list {
             margin: 10px 0;

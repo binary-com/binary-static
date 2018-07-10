@@ -11,9 +11,9 @@ const urlFor       = require('../../../../_common/url').urlFor;
 const MetaTraderConfig = (() => {
     const mt_companies = {
         financial: {
-            standard: { mt5_account_type: 'standard',      max_leverage: 500, title: 'Standard' },
-            advanced: { mt5_account_type: 'advanced',      max_leverage: 100, title: 'Advanced' },
-            mamm    : { mt5_account_type: 'mamm_advanced', max_leverage: 100, title: 'MAM Advanced', is_real_only: 1 },
+            standard: { mt5_account_type: 'standard',      max_leverage: 1000, title: 'Standard' },
+            advanced: { mt5_account_type: 'advanced',      max_leverage: 300,  title: 'Advanced' },
+            mamm    : { mt5_account_type: 'mamm_advanced', max_leverage: 300,  title: 'MAM Advanced', is_real_only: 1 },
         },
         gaming: {
             volatility: { mt5_account_type: '',     max_leverage: 500, title: 'Volatility Indices' },
@@ -46,8 +46,8 @@ const MetaTraderConfig = (() => {
                 BinarySocket.wait('get_account_status').then((response_get_account_status) => {
                     const $message = $messages.find('#msg_real_financial').clone();
                     let is_ok = true;
-                    if (/financial_assessment_not_complete/.test(response_get_account_status.get_account_status.status)) {
-                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}')`);
+                    if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.get_account_status.status)) {
+                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
                         is_ok = false;
                     }
                     if (response_get_account_status.get_account_status.prompt_client_to_authenticate) {

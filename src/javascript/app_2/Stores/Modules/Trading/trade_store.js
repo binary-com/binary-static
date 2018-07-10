@@ -83,7 +83,10 @@ export default class TradeStore {
 
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
-                this.processNewValuesAsync(ContractType.getContractCategories());
+                this.processNewValuesAsync({
+                    ...ContractType.getContractValues(this),
+                    ...ContractType.getContractCategories(),
+                });
             }));
         }
     }

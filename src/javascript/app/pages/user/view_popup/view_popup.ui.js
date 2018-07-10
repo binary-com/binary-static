@@ -1,4 +1,4 @@
-const setViewPopupTimer = require('../../../base/clock').setViewPopupTimer;
+const setExternalTimer  = require('../../../base/clock').setExternalTimer;
 const BinarySocket      = require('../../../base/socket');
 const getHighestZIndex  = require('../../../../_common/utility').getHighestZIndex;
 
@@ -6,7 +6,6 @@ const ViewPopupUI = (() => {
     let $container,
         stream_ids,
         chart_stream_ids,
-        getPageTickStream,
         triggerOnClose;
 
     const init = () => {
@@ -24,7 +23,7 @@ const ViewPopupUI = (() => {
             const $con = $('<div class="inpage_popup_container" id="sell_popup_container"><a class="close"></a><div class="inpage_popup_content"></div></div>');
             $con.hide();
             const onClose = () => {
-                cleanup();
+                cleanup(true);
                 $(document).off('keydown');
                 $(window).off('popstate', onClose);
             };
@@ -38,16 +37,17 @@ const ViewPopupUI = (() => {
         return $container;
     };
 
-    const cleanup = () => {
+    const cleanup = (is_close) => {
         forgetStreams();
         forgetChartStreams();
-        setViewPopupTimer(null);
+        setExternalTimer(null);
         closeContainer();
         init();
-        if (typeof getPageTickStream === 'function') getPageTickStream();
         if (typeof triggerOnClose === 'function') {
             triggerOnClose();
-            triggerOnClose = '';
+            if (is_close) {
+                triggerOnClose = '';
+            }
         }
         $(window).off('resize', () => { repositionConfirmation(); });
     };
@@ -179,7 +179,6 @@ const ViewPopupUI = (() => {
         repositionConfirmation,
         storeSubscriptionID,
 
-        setStreamFunction : (streamFnc) => { getPageTickStream = streamFnc; },
         setOnCloseFunction: (onCloseFnc) => { triggerOnClose = onCloseFnc; },
     };
 })();

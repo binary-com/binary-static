@@ -1,5 +1,6 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
+import { Table } from '../../_common/components/elements.jsx';
 
 const FileSelector = ({
     heading,
@@ -104,7 +105,7 @@ const AuthenticateMessage = () => (
             instructions={[
                 it.L('Must be a clear, colour photo or scanned image'), it.L('Minimum of six months validity'),
                 it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
-                it.L('Maximum upload size for each file is 3MB'),
+                it.L('Maximum upload size for each file is [_1]', '8MB'),
             ]}
             type='poi'
             accepted_documents={[
@@ -125,7 +126,7 @@ const AuthenticateMessage = () => (
                 it.L('Must be a clear, colour photo or scanned image'),
                 it.L('Issued under your own name'), it.L('Dated within the last six months'),
                 it.L('Only JPG, JPEG, GIF, PNG and PDF formats are accepted'),
-                it.L('Maximum upload size for each file is 3MB'),
+                it.L('Maximum upload size for each file is [_1]', '8MB'),
             ]}
             type='poa'
             accepted_documents={[
@@ -134,7 +135,23 @@ const AuthenticateMessage = () => (
             ]}
         />
 
+        <div className='submit-status gr-centered gr-padding-30 invisible'>
+            <h2 className='center-text'>{it.L('Document submission status')}</h2>
+            <Table
+                data={{
+                    thead: [
+                        [
+                            { text: it.L('Document Type'), className: 'gr-padding-10 align-start' },
+                            { text: it.L('File Name'),     className: 'gr-padding-10 align-start' },
+                            { text: it.L('Status'),        className: 'gr-padding-10 align-start' },
+                        ],
+                    ],
+                }}
+            />
+        </div>
+
         <div className='center-text'>
+            <div id='resolve_error' className='invisible center-text'>{it.L('Please resolve all pending issues to continue')}</div>
             <div id='msg_form' className='error-msg invisible center-text' />
             <div className='gr-padding-10'>
                 <a className='button-disabled' id='btn_submit' type='submit'>

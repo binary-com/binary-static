@@ -1,4 +1,4 @@
-const DocumentUploader    = require('binary-document-uploader');
+const DocumentUploader    = require('@binary-com/binary-document-uploader');
 const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
 const BinarySocket        = require('../../../base/socket');
@@ -8,7 +8,12 @@ const Url                 = require('../../../../_common/url');
 const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
 
 const Authenticate = (() => {
-    let needs_action = false;
+    let is_action_needed     = false;
+    let is_any_upload_failed = false;
+    let file_checks          = {};
+    let $button,
+        $submit_status,
+        $submit_table;
 
     const onLoad = () => {
         BinarySocket.send({ get_account_status: 1 }).then((response) => {
@@ -17,7 +22,7 @@ const Authenticate = (() => {
                 $('#error_message').setVisibility(1).text(response.error.message);
             } else {
                 const status = response.get_account_status.status;
-                needs_action = /document_needs_action/.test(response.get_account_status.status);
+                is_action_needed = /document_needs_action/.test(response.get_account_status.status);
                 if (!/authenticated/.test(status)) {
                     init();
                     const $not_authenticated = $('#not_authenticated').setVisibility(1);
@@ -37,13 +42,16 @@ const Authenticate = (() => {
     };
 
     const init = () => {
+        file_checks    = {};
+        $submit_status = $('.submit-status');
+        $submit_table  = $submit_status.find('table tbody');
+
         // Setup accordion
         $('.files').accordion({
             heightStyle: 'content',
             collapsible: true,
             active     : false,
         });
-        const file_checks = {};
         // Setup Date picker
         $('.date-picker').datepicker({
             dateFormat : 'yy-mm-dd',
@@ -53,261 +61,349 @@ const Authenticate = (() => {
         });
 
         $('.file-picker').on('change', onFileSelected);
+    };
 
-        /**
-         * Listens for file changes.
-         * @param {*} event
-         */
-        function onFileSelected (event) {
-            if (!event.target.files || !event.target.files.length) {
-                resetLabel(event);
-                return;
-            }
-            // Change submit button state
-            showSubmit();
-            const $e = $(event.target);
-            const file_name = event.target.files[0].name || '';
-            const display_name = file_name.length > 10 ? `${file_name.slice(0, 5)}..${file_name.slice(-5)}` : file_name;
+    /**
+     * Listens for file changes.
+     * @param {*} event
+     */
+    const onFileSelected = (event) => {
+        if (!event.target.files || !event.target.files.length) {
+            resetLabel(event);
+            return;
+        }
+        const $target      = $(event.target);
+        const file_name    = event.target.files[0].name || '';
+        const display_name = file_name.length > 10 ? `${file_name.slice(0, 5)}..${file_name.slice(-5)}` : file_name;
 
-            $e.parent()
-                .find('label')
-                .off('click')
-                // Prevent opening file selector.
-                .on('click', (e) => {
-                    if ($(e.target).is('span.remove')) e.preventDefault();
-                })
-                .text(display_name)
-                .append($('<span/>', { class: 'remove' }))
-                .find('.remove')
-                .click(() => resetLabel(event));
-        };
-
-        // Reset file-selector label
-        const resetLabel = (event) => {
-            const $e = $(event.target);
-            let default_text = toTitleCase($e.attr('id').split('_')[0]);
-            if (default_text !== 'Add') {
-                default_text = default_text === 'Back' ? localize('Reverse Side')
-                    : localize('Front Side');
-            }
-            fileTracker($e, false);
-            // Remove previously selected file and set the label
-            $e.val('').parent().find('label').text(default_text)
-                .append($('<span/>', { class: 'add' }));
-            // Change submit button state
-            showSubmit();
-        };
-
-        /**
-         * Enables the submit button if any file is selected, also adds the event handler for the button.
-         * Disables the button if it no files are selected.
-         */
-        let $button;
-        const showSubmit = () => {
-            let file_selected = false;
-            const $ele = $('#authentication-message > div#not_authenticated');
-            $button = $ele.find('#btn_submit');
-            const $files = $ele.find('input[type="file"]');
-
-            // Check if any files are selected or not.
-            $files.each((i, e) => {
-                if (e.files && e.files.length) {
-                    file_selected = true;
-                }
+        $target.attr('data-status', '')
+            .parent().find('label')
+            .off('click')
+            // Prevent opening file selector.
+            .on('click', (e) => {
+                if ($(e.target).is('span.remove')) e.preventDefault();
+            })
+            .text(display_name)
+            .removeClass('error')
+            .addClass('selected')
+            .append($('<span/>', { class: 'remove' }))
+            .find('.remove')
+            .click((e) => {
+                if ($(e.target).is('span.remove')) resetLabel(event);
             });
 
-            if (file_selected) {
-                if ($button.hasClass('button')) return;
-                $button.removeClass('button-disabled')
-                    .addClass('button')
-                    .off('click') // To avoid binding multiple click events
-                    .click(() => submitFiles($files));
-            } else {
-                if ($button.hasClass('button-disabled')) return;
-                $button.removeClass('button')
-                    .addClass('button-disabled')
-                    .off('click');
-            }
-        };
+        // Change submit button state
+        enableDisableSubmit();
+    };
 
-        const disableButton = () => {
-            if ($button.length && !$button.find('.barspinner').length) {
-                const $btn_text = $('<span/>', { text: $button.find('span').text(), class: 'invisible' });
-                showLoadingImage($button.find('span'), 'white');
-                $button.find('span').append($btn_text);
-            }
-        };
+    // Reset file-selector label
+    const resetLabel = (event) => {
+        const $target = $(event.target);
+        let default_text = toTitleCase($target.attr('id').split('_')[0]);
+        if (default_text !== 'Add') {
+            default_text = default_text === 'Back' ? localize('Reverse Side')
+                : localize('Front Side');
+        }
+        fileTracker($target, false);
+        // Remove previously selected file and set the label
+        $target.val('').parent().find('label').text(default_text).removeClass('selected error')
+            .append($('<span/>', { class: 'add' }));
+        // Change submit button state
+        enableDisableSubmit();
+    };
 
-        const enableButton = () => {
-            if ($button.length && $button.find('.barspinner').length) {
-                $button.find('>span').html($button.find('>span>span').text());
-            }
-        };
+    /**
+     * Enables the submit button if any file is selected, also adds the event handler for the button.
+     * Disables the button if it no files are selected.
+     */
+    const enableDisableSubmit = () => {
+        const $not_authenticated = $('#authentication-message > div#not_authenticated');
+        const $files             = $not_authenticated.find('input[type="file"]');
+        $button = $not_authenticated.find('#btn_submit');
 
-        /**
-         * On submit button click
-         */
-        const submitFiles = ($files) => {
-            // Disable submit button
-            disableButton();
-            const files = [];
-            $files.each((i, e) => {
-                if (e.files && e.files.length) {
-                    const $e = $(e);
-                    const type = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
-                    const name = $e.attr('data-name');
-                    const $inputs = $e.closest('.fields').find('input[type="text"]');
-                    const file_obj = {
-                        file: e.files[0],
-                        type,
-                        name,
-                    };
-                    if ($inputs.length) {
-                        file_obj.id_number = $($inputs[0]).val();
-                        file_obj.exp_date = $($inputs[1]).val();
+        const file_selected  = $('label[class~="selected"]').length;
+        const has_file_error = $('label[class~="error"]').length;
+
+        if (file_selected && !has_file_error) {
+            if ($button.hasClass('button')) return;
+            $('#resolve_error').setVisibility(0);
+            $button.removeClass('button-disabled')
+                .addClass('button')
+                .off('click') // To avoid binding multiple click events
+                .click(() => submitFiles($files));
+        } else {
+            if ($button.hasClass('button-disabled')) return;
+            $button.removeClass('button')
+                .addClass('button-disabled')
+                .off('click');
+        }
+    };
+
+    const showButtonLoading = () => {
+        if ($button.length && !$button.find('.barspinner').length) {
+            const $btn_text = $('<span/>', { text: $button.find('span').text(), class: 'invisible' });
+            showLoadingImage($button.find('span'), 'white');
+            $button.find('span').append($btn_text);
+        }
+    };
+
+    const removeButtonLoading = () => {
+        if ($button.length && $button.find('.barspinner').length) {
+            $button.find('>span').html($button.find('>span>span').text());
+        }
+    };
+
+    /**
+     * On submit button click
+     */
+    const submitFiles = ($files) => {
+        if ($button.length && $button.find('.barspinner').length) { // it's still in submit process
+            return;
+        }
+        // Disable submit button
+        showButtonLoading();
+        const files = [];
+        is_any_upload_failed = false;
+        $submit_table.children().remove();
+        $files.each((i, e) => {
+            if (e.files && e.files.length) {
+                const $e       = $(e);
+                const id       = $e.attr('id');
+                const type     = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
+                const name     = $e.attr('data-name');
+                const $inputs  = $e.closest('.fields').find('input[type="text"]');
+                const file_obj = {
+                    file     : e.files[0],
+                    chunkSize: 16384, // any higher than this sends garbage data to websocket currently.
+                    class    : id,
+                    type,
+                    name,
+                };
+                if ($inputs.length) {
+                    file_obj.id_number = $($inputs[0]).val();
+                    file_obj.exp_date = $($inputs[1]).val();
+                }
+                fileTracker($e, true);
+                files.push(file_obj);
+
+                let display_name = name;
+                if (/front|back/.test(id)) {
+                    display_name += ` - ${localize(`${toTitleCase(/front/.test(id) ? 'Front' : 'Reverse')} Side`)}`;
+                }
+
+                $submit_table.append($('<tr/>', { id: file_obj.type, class: id })
+                    .append($('<td/>', { text: display_name }))                           // document type, e.g. Passport - Front Side
+                    .append($('<td/>', { text: e.files[0].name }))                        // file name, e.g. sample.pdf
+                    .append($('<td/>', { text: localize('Pending'), class: 'status' }))   // status of uploading file, first set to Pending
+                );
+            }
+        });
+        $submit_status.setVisibility(1);
+        processFiles(files);
+    };
+
+    const processFiles = (files) => {
+        const uploader = new DocumentUploader({ connection: BinarySocket.get() }); // send 'debug: true' here for debugging
+
+        let idx_to_upload     = 0;
+        let is_any_file_error = false;
+        readFiles(files).then((response) => {
+            response.forEach((file) => {
+                if (file.message) {
+                    is_any_file_error = true;
+                    showError(file);
+                }
+            });
+            if (is_any_file_error) {
+                return; // don't start submitting files until all front-end validation checks pass
+            }
+
+            const total_to_upload = response.length;
+            const isLastUpload = () => total_to_upload === idx_to_upload + 1;
+            // sequentially send files
+            const uploadFile = () => {
+                const $status = $submit_table.find(`.${response[idx_to_upload].passthrough.class} .status`);
+                $status.text(`${localize('Submitting')}...`);
+                uploader.upload(response[idx_to_upload]).then((api_response) => {
+                    onResponse(api_response, isLastUpload());
+                    if (!api_response.error && !api_response.warning) {
+                        $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
+                        $(`#${api_response.passthrough.class}`).attr('type', 'hidden'); // don't allow users to change submitted files
+                        $(`label[for=${api_response.passthrough.class}] span`).attr('class', 'checked');
                     }
-                    fileTracker($e, true);
-                    files.push(file_obj);
-                }
-            });
-            processFiles(files);
-        };
-
-        const processFiles = (files) => {
-            const promises = [];
-            const uploader = new DocumentUploader({ connection: BinarySocket.get() });
-
-            readFiles(files).then((objects) => {
-                objects.forEach(obj => promises.push(uploader.upload(obj)));
-                Promise.all(promises)
-                    .then(onResponse)
-                    .catch(showError);
-            }).catch(showError);
-        };
-
-        // Returns file promise.
-        const readFiles = (files) => {
-            const promises = [];
-            files.forEach((f) => {
-                const fr = new FileReader();
-                const promise = new Promise((resolve, reject) => {
-                    fr.onload = () => {
-                        const format = (f.file.type.split('/')[1] || (f.file.name.match(/\.([\w\d]+)$/) || [])[1] || '').toUpperCase();
-                        const obj = {
-                            filename      : f.file.name,
-                            buffer        : fr.result,
-                            documentType  : f.type,
-                            documentFormat: format,
-                            documentId    : f.id_number || undefined,
-                            expirationDate: f.exp_date || undefined,
-                            passthrough   : {
-                                filename: f.file.name,
-                                name    : f.name,
-                            },
-                        };
-
-                        const error = { message: validate(obj) };
-                        if (error && error.message) reject(error);
-
-                        resolve(obj);
-                    };
-
-                    fr.onerror = () => {
-                        reject(`Unable to read file ${f.file.name}`);
-                    };
-                    // Reading file.
-                    fr.readAsArrayBuffer(f.file);
+                    uploadNextFile();
                 });
+            };
+            const uploadNextFile = () => {
+                if (!isLastUpload()) {
+                    idx_to_upload += 1;
+                    uploadFile();
+                }
+            };
+            uploadFile();
+        });
+    };
 
-                promises.push(promise);
+    // Returns file promise.
+    const readFiles = (files) => {
+        const promises = [];
+        files.forEach((f) => {
+            const fr      = new FileReader();
+            const promise = new Promise((resolve) => {
+                fr.onload = () => {
+                    const $status = $submit_table.find(`.${f.class} .status`);
+                    $status.text(`${localize('Checking')}...`);
+
+                    const format = (f.file.type.split('/')[1] || (f.file.name.match(/\.([\w\d]+)$/) || [])[1] || '').toUpperCase();
+                    const obj    = {
+                        filename      : f.file.name,
+                        buffer        : fr.result,
+                        documentType  : f.type,
+                        documentFormat: format,
+                        documentId    : f.id_number || undefined,
+                        expirationDate: f.exp_date || undefined,
+                        chunkSize     : f.chunkSize,
+                        passthrough   : {
+                            filename: f.file.name,
+                            name    : f.name,
+                            class   : f.class,
+                        },
+                    };
+
+                    const error = { message: validate(obj) };
+                    if (error && error.message) {
+                        resolve({
+                            message: error.message,
+                            class  : f.class,
+                        });
+                    } else {
+                        $status.text(localize('Checked')).append($('<span/>', { class: 'checked' }));
+                    }
+
+                    resolve(obj);
+                };
+
+                fr.onerror = () => {
+                    resolve({
+                        message: `Unable to read file ${f.file.name}`,
+                        class  : f.class,
+                    });
+                };
+                // Reading file.
+                fr.readAsArrayBuffer(f.file);
             });
 
-            return Promise.all(promises);
+            promises.push(promise);
+        });
+
+        return Promise.all(promises);
+    };
+
+    const fileTracker = ($e, selected) => {
+        const doc_type = ($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase();
+        const file_type = ($e.attr('id').match(/\D+/g) || [])[0];
+        // Keep track of front and back sides of files.
+        if (selected) {
+            file_checks[doc_type] = file_checks[doc_type] || {};
+            file_checks[doc_type][file_type] = true;
+        } else if (file_checks[doc_type]) {
+            file_checks[doc_type][file_type] = false;
+        }
+    };
+
+    const onErrorResolved = (error_field, class_name, reverse_class_name) => {
+        const id = error_field ? `${error_field}_${class_name.match(/\d+/)[0]}` : reverse_class_name;
+        $(`#${id}`).one('input change', () => {
+            $(`label[for=${class_name}]`).removeClass('error');
+            enableDisableSubmit();
+        });
+    };
+
+    const sides = ['front', 'back'];
+    const getReverseClass = (class_name) => {
+        const is_front = /front/.test(class_name);
+        return class_name.replace(sides[+!is_front], sides[+is_front]);
+    };
+
+    // Validate user input
+    const validate = (file) => {
+        const required_docs = ['passport', 'proofid', 'driverslicense'];
+        const doc_name = {
+            passport      : localize('Passport'),
+            proofid       : localize('Identity card'),
+            driverslicense: localize('Driving licence'),
         };
 
-        const fileTracker = ($e, selected) => {
-            const doc_type = ($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase();
-            const file_type = ($e.attr('id').match(/\D+/g) || [])[0];
-            // Keep track of front and back sides of files.
-            if (selected) {
-                file_checks[doc_type] = file_checks[doc_type] || {};
-                file_checks[doc_type][file_type] = true;
-            } else if (file_checks[doc_type]) {
-                file_checks[doc_type][file_type] = false;
+        if (!(file.documentFormat || '').match(/^(PNG|JPG|JPEG|GIF|PDF)$/i)) {
+            return localize('Invalid document format: "[_1]"', [file.documentFormat]);
+        }
+        if (file.buffer && file.buffer.byteLength >= 8 * 1024 * 1024) {
+            return localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]', [file.filename, '8MB']);
+        }
+        if (!file.documentId && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
+            onErrorResolved('id_number', file.passthrough.class);
+            return localize('ID number is required for [_1].', [doc_name[file.documentType]]);
+        }
+        if (file.documentId && !/^[\w\s-]{0,30}$/.test(file.documentId)) {
+            onErrorResolved('id_number', file.passthrough.class);
+            return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).', [doc_name[file.documentType]]);
+        }
+        if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
+            onErrorResolved('exp_date', file.passthrough.class);
+            return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
+        }
+        // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
+        if (!is_action_needed) {
+            if (file.documentType === 'proofid' && file_checks.proofid &&
+                (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
+                onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
+                return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
             }
-        };
+            if (file.documentType === 'driverslicense' && file_checks.driverslicense &&
+                (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
+                onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
+                return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
+            }
+        }
 
-        // Validate user input
-        const validate = (file) => {
-            const required_docs = ['passport', 'proofid', 'driverslicense'];
-            const doc_name = {
-                passport      : localize('Passport'),
-                proofid       : localize('Identity card'),
-                driverslicense: localize('Driving licence'),
-            };
+        return null;
+    };
 
-            if (!(file.documentFormat || '').match(/^(PNG|JPG|JPEG|GIF|PDF)$/i)) {
-                return localize('Invalid document format: "[_1]"', [file.documentFormat]);
-            }
-            if (file.buffer && file.buffer.byteLength >= 3 * 1024 * 1024) {
-                return localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: 3MB', [file.filename]);
-            }
-            if (!file.documentId && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
-                return localize('ID number is required for [_1].', [doc_name[file.documentType]]);
-            }
-            if (file.documentId && !/^[\w\s-]{0,30}$/.test(file.documentId)) {
-                return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).', [doc_name[file.documentType]]);
-            }
-            if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
-                return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
-            }
-            // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
-            if (!needs_action) {
-                if (file_checks.proofid && (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
-                    return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
-                }
-                if (file_checks.driverslicense &&
-                    (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
-                    return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
-                }
-            }
+    const showError = (obj_error) => {
+        removeButtonLoading();
+        const $error      = $('#msg_form');
+        const $file_error = $submit_table.find(`.${obj_error.class} .status`);
+        const message     = obj_error.message;
+        if ($file_error.length) {
+            $file_error.text(message).addClass('error-msg');
+            $(`label[for=${obj_error.class}]`).addClass('error');
+            $('#resolve_error').setVisibility(1);
+        } else {
+            $error.text(message).setVisibility(1);
+        }
+        enableDisableSubmit();
+    };
 
-            return null;
-        };
-
-        const showError = (e) => {
-            const $error = $('.error-msg');
-            const message = e.message || e.message_to_client;
-            enableButton();
-            $error.setVisibility(1).text(message);
-            setTimeout(() => { $error.empty().setVisibility(0); }, 3000);
-        };
-
-        const showSuccess = () => {
-            const msg = localize('We are reviewing your documents. For more details [_1]contact us[_2].',
-                [`<a href="${Url.urlFor('contact')}">`, '</a>']);
-            displayNotification(msg, false, 'document_under_review');
+    const showSuccess = () => {
+        const msg = localize('We are reviewing your documents. For more details [_1]contact us[_2].',
+            [`<a href="${Url.urlFor('contact')}">`, '</a>']);
+        displayNotification(msg, false, 'document_under_review');
+        setTimeout(() => {
             $('#not_authenticated, #not_authenticated_financial').setVisibility(0); // Just hide it
             $('#success-message').setVisibility(1);
-        };
+        }, 3000);
+    };
 
-        const onResponse = (res) => {
-            const dup_files = [];
-            let successAny = false;
-            res.forEach((file) => {
-                const passthrough = file.passthrough;
-                if (!file.warning) {
-                    successAny = true;
-                } else {
-                    dup_files.push(`${passthrough.filename}(${passthrough.name})`);
-                }
+    const onResponse = (response, is_last_upload) => {
+        if (response.warning || response.error) {
+            is_any_upload_failed = true;
+            showError({
+                message: response.message || response.error.message,
+                class  : response.passthrough.class,
             });
-            if (successAny) {
-                showSuccess();
-            } else {
-                showError({message: localize('Following file(s) were already uploaded: [_1]', [`[ ${dup_files.join(', ')} ]`])});
-            }
-        };
+        } else if (is_last_upload && !is_any_upload_failed) {
+            showSuccess();
+        }
     };
 
     return {

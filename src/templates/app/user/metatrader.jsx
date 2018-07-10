@@ -44,7 +44,7 @@ const TypeGroup = ({ title, children, types }) => (
                         <img src={it.url_for(`images/pages/metatrader/icons/acc_${box.desc.toLowerCase()}.svg`)} />
                     }
                 </div>
-                <p className={`no-margin gr-padding-10 ${box.title ? 'hint' : ''}`}>{box.desc}</p>
+                <p className={`gr-padding-10 ${box.title ? 'hint' : ''}`}>{box.desc}</p>
             </div>
         ))}
     </div>
@@ -198,7 +198,7 @@ const Metatrader = () => (
                             title={it.L('Standard Account')}
                             description={it.L('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')}
                             items={[
-                                it.L('Leverage up to 1:500'),
+                                it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
@@ -209,7 +209,7 @@ const Metatrader = () => (
                             title={it.L('Advanced Account')}
                             description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
-                                it.L('Leverage up to 1:100'),
+                                it.L('Leverage up to [_1]', '1:300'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
@@ -220,7 +220,7 @@ const Metatrader = () => (
                             title={it.L('Volatility Indices Account')}
                             description={it.L('Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces.')}
                             items={[
-                                it.L('Leverage up to 1:500'),
+                                it.L('Leverage up to [_1]', '1:500'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
@@ -231,7 +231,7 @@ const Metatrader = () => (
                             title={it.L('MAM Advanced account')}
                             description={it.L('Our MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account.')}
                             items={[
-                                it.L('Leverage up to 1:100'),
+                                it.L('Leverage up to [_1]', '1:300'),
                                 it.L('Over 70 available assets'),
                                 it.L('Market execution'),
                             ]}
@@ -241,7 +241,7 @@ const Metatrader = () => (
                             title={it.L('MAM Volatility Indices Account')}
                             description={it.L('Our MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
                             items={[
-                                it.L('Leverage up to 1:500'),
+                                it.L('Leverage up to [_1]', '1:500'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
                             ]}
