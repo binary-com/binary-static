@@ -83,12 +83,14 @@ const SelfExclusion = (() => {
                         const time_value = timeout.format('HH:mm');
                         setDateTimePicker(timeout_date_id, date_value);
                         setDateTimePicker(timeout_time_id, time_value, true);
-                        $form.find('label[for="timeout_until_date"]').text('Timed out until');
+                        $form.find('label[for="timeout_until_date"]').text(localize('Timed out until'));
                         return;
                     }
                     if (key === 'exclude_until') {
                         setDateTimePicker(exclude_until_id, value);
-                        $form.find('label[for="exclude_until"]').text('Excluded from the website until');
+                        $form.find('label[for="exclude_until"]').text(localize('Excluded from the website until'));
+                        $('#ukgc_gamstop').setVisibility(is_gamstop_client);
+                        $('#ukgc_requirement_notice').setVisibility(1);
                         return;
                     }
                     if (key === 'max_30day_turnover') {
@@ -211,8 +213,12 @@ const SelfExclusion = (() => {
     const getTimeout = () => (getDate(timeout_date_id) ? (moment(new Date(`${getDate(timeout_date_id)}T${$(timeout_time_id).val()}`)).valueOf() / 1000).toFixed(0) : '');
 
     const initDatePicker = () => {
+        const timeout_time_options = {
+            selector: timeout_time_id,
+        };
+
         // timeout_until
-        TimePicker.init({ selector: timeout_time_id });
+        TimePicker.init(timeout_time_options);
         DatePicker.init({
             selector: timeout_date_id,
             minDate : 0,
@@ -228,7 +234,23 @@ const SelfExclusion = (() => {
 
         $(`${timeout_date_id}, ${exclude_until_id}`).change(function () {
             dateValueChanged(this, 'date');
-            $('#gamstop_info_bottom').setVisibility(is_gamstop_client && this.getAttribute('data-value'));
+            const date = this.getAttribute('data-value');
+
+            if (timeout_date_id.indexOf(this.id) > 0) {
+                const disabled_time_options = {
+                    minTime     : 'now',
+                    useLocalTime: true,
+                };
+
+                // reinitialize timepicker on timeout date change
+                TimePicker.init({
+                    ...timeout_time_options,
+                    ...moment().isBefore(moment(date)) ? undefined : disabled_time_options,
+                    datepickerDate: date,
+                });
+            }
+
+            $('#gamstop_info_bottom').setVisibility(is_gamstop_client && date);
         });
     };
 
@@ -268,6 +290,11 @@ const SelfExclusion = (() => {
             return;
         }
         showFormMessage('Your changes have been updated.', true);
+        if ($('#exclude_until').attr('data-value')) {
+            $('#gamstop_info_bottom').setVisibility(0);
+            $('#ukgc_gamstop').setVisibility(is_gamstop_client);
+            $('#ukgc_requirement_notice').setVisibility(1);
+        }
         Client.set('session_start', moment().unix()); // used to handle session duration limit
         const {exclude_until, timeout_until} = response.echo_req;
         if (exclude_until || timeout_until) {

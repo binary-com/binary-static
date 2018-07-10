@@ -75,9 +75,9 @@ const ClientBase = (() => {
 
     const getAccountType = (loginid = current_loginid) => {
         let account_type;
-        if (/^VR/.test(loginid))       account_type = 'virtual';
-        else if (/^MF/.test(loginid))  account_type = 'financial';
-        else if (/^MLT/.test(loginid)) account_type = 'gaming';
+        if (/^VR/.test(loginid))          account_type = 'virtual';
+        else if (/^MF/.test(loginid))     account_type = 'financial';
+        else if (/^MLT|MX/.test(loginid)) account_type = 'gaming';
         return account_type;
     };
 
@@ -236,6 +236,17 @@ const ClientBase = (() => {
         return (landing_company_object || {})[key];
     };
 
+    const getRiskAssessment = () => {
+        const status       = State.getResponse('get_account_status.status');
+        const is_high_risk = /high/.test(State.getResponse('get_account_status.risk_classification'));
+
+        return (
+            isAccountOfType('financial') ?
+                /(financial_assessment|trading_experience)_not_complete/.test(status) :
+                (is_high_risk && /financial_assessment_not_complete/.test(status))
+        );
+    };
+
     // API_V3: send a list of accounts the client can transfer to
     const canTransferFunds = (account) => {
         if (account) {
@@ -298,6 +309,7 @@ const ClientBase = (() => {
         getMT5AccountType,
         getBasicUpgradeInfo,
         getLandingCompanyValue,
+        getRiskAssessment,
         canTransferFunds,
         hasCostaricaAccount,
     };

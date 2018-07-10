@@ -6,6 +6,7 @@ const commonIndependent  = require('./common_independent');
 const Contract           = require('./contract');
 const Defaults           = require('./defaults');
 const Price              = require('./price');
+const Reset              = require('./reset');
 const BinarySocket       = require('../../base/socket');
 const DatePicker         = require('../../components/date_picker');
 const CommonFunctions    = require('../../../_common/common_functions');
@@ -28,6 +29,7 @@ const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
 
 const Durations = (() => {
     let selected_duration = {};
+    let smallest_duration = {};
     let has_end_date      = 0;
 
     const displayDurations = (time_start_val) => {
@@ -44,12 +46,24 @@ const Durations = (() => {
             start_type = 'spot';
         }
 
+        if (Defaults.get('formname') === 'highlowticks') {
+            Barriers.display(); // hide barrier field, instead of selecting barrier we select tick number
+            Defaults.set('expiry_type', 'duration');
+            Defaults.set('duration_amount', 5);
+            Defaults.set('duration_units', 't');
+            // display label instead of populating durations
+            CommonFunctions.getElementById('expiry_row').style.display = 'none';
+            return false;
+        }
+
         const durations = Contract.durations();
         if (durations === false) {
             CommonFunctions.getElementById('expiry_row').style.display = 'none';
             Defaults.remove('expiry_type', 'duration_amount', 'duration_units', 'expiry_date', 'expiry_time');
             return false;
         }
+
+        CommonFunctions.getElementById('expiry_row').style.display = 'flex';
 
         const target             = CommonFunctions.getElementById('duration_units');
         const form_name          = Contract.form();
@@ -61,7 +75,7 @@ const Durations = (() => {
         }
 
         Object.keys(durations).forEach((key) => {
-            Object.keys(durations[key][form_name]).forEach((form) => {
+            Object.keys(durations[key][form_name] || []).forEach((form) => {
                 let obj = {};
                 if (barrier_category) {
                     obj = durations[key][form_name][barrier_category];
@@ -94,14 +108,14 @@ const Durations = (() => {
                     case 's':
                         duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
                         if (max_to_min_base >= 60) {
-                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max, true);
+                            duration_list.m = makeDurationOption(durationTextValueMappings('1m'), text_mapping_max);
                             if (max_to_min_base >= 3600) {
                                 duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                             }
                         }
                         break;
                     case 'm':
-                        duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max, true);
+                        duration_list[min_unit] = makeDurationOption(text_mapping_min, text_mapping_max);
                         if (max_to_min_base >= 60) {
                             duration_list.h = makeDurationOption(durationTextValueMappings('1h'), text_mapping_max);
                         }
@@ -122,6 +136,11 @@ const Durations = (() => {
             commonTrading.durationOrder(a) > commonTrading.durationOrder(b) ? 1 : -1
         ));
 
+        smallest_duration = {
+            amount: duration_list[list[0]].dataset.minimum,
+            unit  : list[0],
+        };
+
         has_end_date = 0;
         for (let k = 0; k < list.length; k++) {
             const d = list[k];
@@ -141,7 +160,7 @@ const Durations = (() => {
         return durationPopulate();
     };
 
-    const makeDurationOption = (map_min, map_max, is_selected) => {
+    const makeDurationOption = (map_min, map_max) => {
         const option  = createElement('option', { value: map_min.unit, 'data-minimum': map_min.value, text: map_min.text });
         if (map_max.value && map_max.unit) {
             const max = convertDurationUnit(map_max.value, map_max.unit, map_min.unit);
@@ -149,7 +168,7 @@ const Durations = (() => {
                 option.setAttribute('data-maximum', max);
             }
         }
-        if (is_selected) {
+        if (map_min.unit === Defaults.get('duration_units')) {
             option.setAttribute('selected', 'selected');
         }
         return option;
@@ -168,10 +187,17 @@ const Durations = (() => {
     };
 
     const displayEndTime = () => {
-        const date_start     = CommonFunctions.getElementById('date_start').value;
-        const now            = !date_start || date_start === 'now';
-        const current_moment = moment((now ? window.time : parseInt(date_start) * 1000)).add(5, 'minutes').utc();
-        let expiry_date      = Defaults.get('expiry_date') ? moment(Defaults.get('expiry_date')) : current_moment;
+        const date_start        = CommonFunctions.getElementById('date_start').value;
+        const now               = !date_start || date_start === 'now';
+        const current_moment    = moment((now ? window.time : parseInt(date_start) * 1000));
+        const smallest_end_time = current_moment.clone().add(smallest_duration.amount, smallest_duration.unit);
+        const plus_5_min        = current_moment.clone().add(5, 'minutes');
+        // for contracts with min. duration of 1 day, the endtime should be the min. duration, else endtime is current time plus 5 mins
+        const selected_end_time = smallest_end_time.isAfter(plus_5_min) ? smallest_end_time : plus_5_min;
+        const default_end_time  = Defaults.get('expiry_date');
+
+        let expiry_date      = default_end_time &&
+            moment(default_end_time).isAfter(smallest_end_time) ? moment(default_end_time) : selected_end_time.utc();
         let expiry_time      = Defaults.get('expiry_time') || current_moment.format('HH:mm');
         let expiry_date_iso  = toISOFormat(expiry_date);
 
@@ -229,14 +255,15 @@ const Durations = (() => {
     };
 
     const durationPopulate = () => {
-        const unit = CommonFunctions.getElementById('duration_units');
-        if (!unit.options[unit.selectedIndex]) return false;
-        const unit_min_value = unit.options[unit.selectedIndex].getAttribute('data-minimum');
-        const unit_max_value = unit.options[unit.selectedIndex].getAttribute('data-maximum');
-        let unit_value       = Defaults.get('duration_amount') || unit_min_value;
-        unit.value           = Defaults.get('duration_units') &&
-            document.querySelectorAll(`select[id="duration_units"] [value="${Defaults.get('duration_units')}"]`).length ?
-            Defaults.get('duration_units') : unit.value;
+        const unit          = CommonFunctions.getElementById('duration_units');
+        const selected_unit = unit.options[unit.selectedIndex];
+
+        if (!selected_unit) return false;
+
+        const duration_amount_id = '#duration_amount';
+        const unit_min_value     = selected_unit.getAttribute('data-minimum');
+        const unit_max_value     = selected_unit.getAttribute('data-maximum');
+        let unit_value           = Defaults.get('duration_amount') || unit_min_value;
         Dropdown('#duration_units');
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_minimum'), unit_min_value);
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), localize(duration_map[unit.value] + (+unit_min_value > 1 ? 's' : '')));
@@ -248,38 +275,31 @@ const Durations = (() => {
         Defaults.set('duration_amount', unit_value);
         displayExpiryType();
         Dropdown('#expiry_type');
+
         Defaults.set('duration_units', unit.value);
 
         // jquery for datepicker
-        const amount_element = $('#duration_amount');
-        const duration_id    = '#duration_amount';
         if (unit.value === 'd') {
             const tomorrow = window.time ? new Date(window.time.valueOf()) : new Date();
             tomorrow.setDate(tomorrow.getDate() + 1);
             DatePicker.init({
-                selector: duration_id,
+                selector: duration_amount_id,
                 type    : 'diff',
                 minDate : 1,
                 maxDate : 365,
                 native  : false,
             });
-            amount_element.change((value) => {
-                let day_diff;
-                const $duration_amount_val = $('#duration_amount').val();
-                if ($duration_amount_val) {
-                    day_diff = $duration_amount_val;
-                } else {
-                    const data_value = value.target.getAttribute('data-value');
-                    const date       = data_value ? new Date(data_value) : new Date();
-                    const today      = window.time ? window.time.valueOf() : new Date();
-
-                    day_diff = Math.ceil((date - today) / (1000 * 60 * 60 * 24));
-                }
-                amount_element.val(day_diff);
-            });
         } else {
-            DatePicker.hide(duration_id);
+            DatePicker.hide(duration_amount_id);
         }
+
+        const $duration_amount = $(duration_amount_id);
+        $duration_amount.change((e) => {
+            e.stopPropagation();
+            const data_min_value = unit.options[unit.selectedIndex].getAttribute('data-minimum');
+            const value          = e.target.value || data_min_value; // set to min value if no input value
+            $duration_amount.val(value);
+        });
 
         const requested = changeExpiryTimeType();
 
@@ -326,10 +346,8 @@ const Durations = (() => {
         if (CommonFunctions.getElementById('expiry_type').value === 'endtime') {
             let $expiry_date     = $('#expiry_date');
             const date_start_val = CommonFunctions.getElementById('date_start').value || 'now';
-            const is_now         = isNow(date_start_val);
-            const is_risefall    = /risefall/.test(Defaults.get('formname')) || false;
 
-            if (is_now || !is_risefall) {
+            if (isNow(date_start_val) || !/^(risefall|callputequal)$/.test(Defaults.get('formname'))) {
                 if (!$expiry_date.is('input')) {
                     $expiry_date.replaceWith($('<input/>', { id: 'expiry_date', type: 'text', readonly: 'readonly', autocomplete: 'off', 'data-value': $expiry_date.attr('data-value') }))
                         .val(toReadableFormat($expiry_date.attr('data-value')));
@@ -339,7 +357,7 @@ const Durations = (() => {
                 }
                 DatePicker.init({
                     selector: '#expiry_date',
-                    minDate : 0,
+                    minDate : smallest_duration.unit === 'd' ? 1 : 0,
                     maxDate : 365,
                 });
             } else {
@@ -361,25 +379,31 @@ const Durations = (() => {
                         return false;
                     });
                 }
+
+                const default_date          = moment(Defaults.get('expiry_date'));
+                const is_default_date_valid = default_date.isSameOrAfter(min_date)
+                                                && (!max_date || default_date.isSameOrBefore(max_date));
+                const selected_date         = is_default_date_valid ? default_date : min_date;
+
                 if (!$expiry_date.is('select')) {
-                    $expiry_date.replaceWith($('<select/>', { id: 'expiry_date', 'data-value': toISOFormat(min_date) }));
+                    $expiry_date.replaceWith($('<select/>', { id: 'expiry_date', 'data-value': toISOFormat(selected_date) }));
                     $expiry_date = $('#expiry_date');
                     expiryDateOnChange($expiry_date);
                 } else {
-                    $expiry_date.empty().attr('data-value', toISOFormat(min_date));
+                    $expiry_date.empty().attr('data-value', toISOFormat(selected_date));
                 }
-                appendExpiryDateValues($expiry_date, min_date);
+                appendExpiryDateValues($expiry_date, min_date, selected_date);
                 if (max_date) {
-                    appendExpiryDateValues($expiry_date, max_date);
+                    appendExpiryDateValues($expiry_date, max_date, selected_date);
                 }
-                requested = selectEndDate(min_date);
+                requested = selectEndDate(selected_date);
             }
         }
         return requested;
     };
 
-    const appendExpiryDateValues = ($expiry_date, date) => {
-        $expiry_date.append($('<option/>', { text: date.format('ddd - DD MMM, YYYY'), 'data-value': toISOFormat(date) }));
+    const appendExpiryDateValues = ($expiry_date, date, selected_date) => {
+        $expiry_date.append($('<option/>', { text: date.format('ddd - DD MMM, YYYY'), 'data-value': toISOFormat(date), 'selected': toISOFormat(selected_date) === toISOFormat(date) }));
     };
 
     const displayExpiryType = () => {
@@ -410,7 +434,7 @@ const Durations = (() => {
         }
         fragment.appendChild(option);
 
-        if (has_end_date) {
+        if (has_end_date && !Reset.isReset(Contract.form())) {
             option = createElement('option', { value: 'endtime', text: localize('End Time') });
             if (current_selected === 'endtime') {
                 option.setAttribute('selected', 'selected');
@@ -559,13 +583,20 @@ const Durations = (() => {
         if (+duration_amount_element.value < +duration_min_element.textContent) {
             duration_amount_element.classList.add('error-field');
             duration_wrapper_element.classList.add('error-msg');
+            Reset.hideResetTime();
         } else if (+duration_max_element.textContent &&
             +duration_amount_element.value > +duration_max_element.textContent) {
             duration_amount_element.classList.add('error-field');
             duration_wrapper_element.classList.remove('error-msg');
+            Reset.hideResetTime();
         } else {
             duration_amount_element.classList.remove('error-field');
             duration_wrapper_element.classList.remove('error-msg');
+            if (Reset.isReset(Contract.form())) {
+                Reset.displayResetTime(duration_amount_element.value, Defaults.get('duration_units'));
+            } else {
+                Reset.hideResetTime();
+            }
         }
     };
 

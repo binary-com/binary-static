@@ -9,6 +9,7 @@ const GetTicks          = require('./get_ticks');
 const Lookback          = require('./lookback');
 const Notifications     = require('./notifications');
 const Price             = require('./price');
+const Reset             = require('./reset');
 const StartDates        = require('./starttime').StartDates;
 const Symbols           = require('./symbols');
 const Tick              = require('./tick');
@@ -139,26 +140,34 @@ const Process = (() => {
             }
         }
 
-        // set form to session storage
-        Defaults.set('formname', formname);
+        const available_contracts = getPropertyValue(contracts, ['contracts_for', 'available']);
 
         commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname);
 
-        processContractForm();
+        processContractForm(available_contracts, formname);
 
         TradingAnalysis.request();
 
         commonTrading.hideFormOverlay();
     };
 
-    const processContractForm = () => {
-        Contract.details(sessionStorage.getItem('formname'));
+    const processContractForm = (available_contracts = State.getResponse('contracts_for.available'), formname_to_set = getElementById('contract').value || Defaults.get('formname')) => {
+        setFormName(formname_to_set);
+
+        // get updated formname
+        Contract.details(Defaults.get('formname'));
 
         StartDates.display();
 
         displayPrediction();
         refreshDropdown('#prediction');
+        displaySelectedTick();
+        refreshDropdown('#selected_tick');
         Lookback.display();
+
+        if (!Reset.isReset(Defaults.get('formname'))) {
+            Reset.hideResetTime();
+        }
 
         let r1;
         if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
@@ -168,24 +177,36 @@ const Process = (() => {
             Durations.display();
         }
 
+        // needs to be called after durations are populated
+        displayEquals();
+
         const currency  = Defaults.get('currency') || getVisibleElement('currency').value;
         const is_crypto = isCryptocurrency(currency);
         const amount    = is_crypto ? 'amount_crypto' : 'amount';
         if (Defaults.get(amount)) {
             $('#amount').val(Defaults.get(amount));
-        } else if (is_crypto) {
-            const default_crypto_value = getMinPayout(currency);
-            Defaults.set(amount, default_crypto_value);
-            getElementById('amount').value = default_crypto_value;
         } else {
-            Defaults.set(amount, getElementById('amount').value);
+            const default_value = getMinPayout(currency);
+            Defaults.set(amount, default_value);
+            getElementById('amount').value = default_value;
         }
         if (Defaults.get('amount_type')) {
             commonTrading.selectOption(Defaults.get('amount_type'), getElementById('amount_type'));
         } else {
             Defaults.set('amount_type', getElementById('amount_type').value);
         }
-        refreshDropdown('#amount_type');
+
+        if (Contract.form() === 'callputspread') {
+            commonTrading.selectOption('payout', getElementById('amount_type'));
+            refreshDropdown('#amount_type');
+            // hide stake option
+            getElementById('stake_option').setVisibility(0);
+            $('[data-value="stake"]').hide();
+        } else {
+            getElementById('stake_option').setVisibility(1);
+            refreshDropdown('#amount_type');
+        }
+
         if (Defaults.get('currency')) {
             commonTrading.selectOption(Defaults.get('currency'), getVisibleElement('currency'));
         }
@@ -214,8 +235,57 @@ const Process = (() => {
         }
     };
 
+    const displaySelectedTick = () => {
+        const selected_tick_row       = getElementById('selected_tick_row');
+        const highlowticks_expiry_row = getElementById('highlowticks_expiry_row');
+        if (sessionStorage.getItem('formname') === 'highlowticks') {
+            selected_tick_row.show();
+            highlowticks_expiry_row.show();
+            const selected_tick = getElementById('selected_tick');
+            if (Defaults.get('selected_tick')) {
+                commonTrading.selectOption(Defaults.get('selected_tick'), selected_tick);
+            } else {
+                Defaults.set('selected_tick', selected_tick.value);
+            }
+        } else {
+            selected_tick_row.hide();
+            highlowticks_expiry_row.hide();
+            Defaults.remove('selected_tick');
+        }
+    };
+
+    const hasCallPutEqual = (contracts = getPropertyValue(Contract.contracts(), ['contracts_for', 'available']) || []) =>
+        contracts.find(contract => contract.contract_category === 'callputequal');
+
+    const displayEquals = (expiry_type = 'duration') => {
+        const formname  = Defaults.get('formname');
+        const el_equals = document.getElementById('callputequal');
+        const durations = getPropertyValue(Contract.durations(), [commonTrading.durationType(Defaults.get('duration_units'))]) || [];
+        if (/^(callputequal|risefall)$/.test(formname) && (('callputequal' in durations || expiry_type === 'endtime') && hasCallPutEqual())) {
+            if (+Defaults.get('is_equal')) {
+                el_equals.checked = true;
+            }
+            el_equals.parentElement.setVisibility(1);
+        } else {
+            el_equals.parentElement.setVisibility(0);
+        }
+    };
+
+    const setFormName = (formname) => {
+        let formname_to_set    = formname;
+        const has_callputequal = hasCallPutEqual();
+        if (formname_to_set === 'callputequal' && (!has_callputequal || !+Defaults.get('is_equal'))) {
+            formname_to_set = 'risefall';
+        } else if (formname_to_set === 'risefall' && has_callputequal && +Defaults.get('is_equal')) {
+            formname_to_set = 'callputequal';
+        }
+        Defaults.set('formname', formname_to_set);
+        getElementById('contract').setAttribute('value', formname_to_set);
+    };
+
     const forgetTradingStreams = () => {
         Price.processForgetProposals();
+        Price.processForgetProposalOpenContract();
         processForgetTicks();
     };
 
@@ -254,6 +324,7 @@ const Process = (() => {
             Defaults.remove('expiry_date', 'expiry_time', 'end_date');
             Durations.validateMinDurationAmount();
         }
+        displayEquals(validated_value);
 
         return make_price_request;
     };
@@ -274,6 +345,7 @@ const Process = (() => {
     };
 
     return {
+        displayEquals,
         processActiveSymbols,
         processMarket,
         processContract,

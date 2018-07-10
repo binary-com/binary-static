@@ -41,12 +41,8 @@ const PersonalDetails = () => (
     <React.Fragment>
         <h1>{it.L('Personal Details')}</h1>
 
-        <p className='notice-msg center-text invisible' id='tax_information_notice'>
-            {it.L('Please complete the tax information before proceeding.')}
-        </p>
-
-        <p className='notice-msg center-text invisible' id='account_opening_reason_notice'>
-            {it.L('Please set your account opening reason before proceeding.')}
+        <p className='notice-msg center-text invisible' id='missing_details_notice'>
+            {it.L('Please complete your personal details before you proceed.')}
         </p>
 
         <div id='loading'>
@@ -55,7 +51,7 @@ const PersonalDetails = () => (
 
         <form className='form gr-padding-10 invisible' id='frmPersonalDetails'>
             <Fieldset legend={it.L('Details')}>
-                <FormRow type='label'  label={it.L('Name')} is_bold id='lbl_name' row_class='invisible' row_id='row_name' />
+                <FormRow type='label'  label={it.L('Name')} is_bold id='lbl_name' row_class='invisible RealAcc JpAcc' row_id='row_name' />
                 <FormRow type='label'  label={it.L('Gender')} is_bold id='lbl_gender' row_class='invisible JpAcc' />
                 <FormRow type='label'  label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' />
                 <FormRow type='label'  label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />
@@ -160,11 +156,11 @@ const PersonalDetails = () => (
                 </FormRow>
             </Fieldset>
 
-            <Fieldset className='invisible' id='fieldset_email_consent' legend={it.L('Preferences')}>
-                <FormRow type='checkbox' label={it.L('Receive news and special offers')} id='email_consent' label_row_id='email_consent_label' />
+            <Fieldset id='fieldset_email_consent' legend={it.L('Email Preferences')}>
+                <FormRow type='checkbox' label={it.L('Receive emails on [_1] products, services, and events', it.website_name)} id='email_consent' label_row_id='email_consent_label' />
             </Fieldset>
 
-            <SubmitButton id='btn_update' className='invisible' msg_id='formMessage' type='submit' text={it.L('Update')} />
+            <SubmitButton id='btn_update' msg_id='formMessage' type='submit' text={it.L('Update')} />
         </form>
 
         <p className='required invisible RealAcc JpAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}</p>

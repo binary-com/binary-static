@@ -3,7 +3,6 @@ import React from 'react';
 const Platforms = ({
     className,
     data_show,
-    image_class,
     image_path = 'platforms',
     image,
     header,
@@ -12,28 +11,29 @@ const Platforms = ({
     url = '',
     target,
     button_text,
+    button_class = '',
     google_play_url = '',
 }) => (
-    <div className={`gr-5 gr-12-m gr-12-p ${className || ''}`} data-show={data_show}>
-        <div className={image_class}>
+    <div className={`gr-5 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
+        <div className='gr-12 gr-centered-m gr-centered-p'>
             <img className='responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-padding-30'>
             <h3>{header}</h3>
             <strong>{description}</strong>
             <p>{text}</p>
-            { url &&
-            <p>
-                <a className='button' href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
-            </p>
-            }
-            { google_play_url &&
             <div className='gr-row'>
-                <a className='gr-5 gr-6-m' href={google_play_url} target='_blank' rel='noopener noreferrer'>
-                    <div className='google-play-badge' />
-                </a>
+                <div className='gr-12'>
+                    { google_play_url &&
+                        <a className='' href={google_play_url} target='_blank' rel='noopener noreferrer'>
+                            <div className='google-play-badge' />
+                        </a>
+                    }
+                    { url &&
+                        <a className={`button ${button_class}`} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                    }
+                </div>
             </div>
-            }
         </div>
     </div>
 );
@@ -45,7 +45,6 @@ const Platform = () => (
 
             <div className='gr-row gr-padding-30'>
                 <Platforms
-                    image_class='gr-12 gr-7-p gr-10-m'
                     image='trading-page'
                     header='SmartTrader'
                     description={it.L('Premier binary options trading platform')}
@@ -53,9 +52,9 @@ const Platform = () => (
                     url={it.url_for('trading')}
                     button_text={it.L('Trade Now')}
                 />
-                <div className='gr-2' />
+                <div className='gr-2 gr-hide-m gr-hide-p' />
+                <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
                 <Platforms
-                    image_class='gr-12 gr-7-p gr-10-m'
                     image='mt5'
                     header={it.L('MetaTrader 5')}
                     description={it.L('Advanced multi-asset trading platform')}
@@ -66,16 +65,19 @@ const Platform = () => (
             </div>
             <div className='gr-row gr-padding-30'>
                 <Platforms
-                    image_class='gr-7 gr-5-p gr-7-m'
                     image='tick-trade'
                     header={it.L('Binary Tick Trade App')}
                     description={it.L('Ultra fast on-the-go trading')}
                     text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                     google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page'
+                    url='https://ticktrade.binary.com'
+                    target='_blank'
+                    button_text={it.L('Try Web Version')}
+                    button_class='gr-hide gr-show-inline-m gr-show-inline-p no-margin no-scroll'
                 />
-                <div className='gr-2' />
+                <div className='gr-2 gr-hide-m gr-hide-p' />
+                <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
                 <Platforms
-                    image_class='gr-8 gr-5-p gr-7-m'
                     image='webtrader'
                     header={it.L('Binary WebTrader')}
                     description={it.L('Advanced binary options trading interface')}
@@ -87,7 +89,6 @@ const Platform = () => (
             </div>
             <div className='gr-row gr-padding-30'>
                 <Platforms
-                    image_class='gr-10 gr-7-p gr-9-m'
                     image='binarybot'
                     header={it.L('Binary Bot')}
                     description={it.L('Auto-trader programming tool')}
@@ -96,9 +97,9 @@ const Platform = () => (
                     target='_blank'
                     button_text={it.L('Try Binary Bot')}
                 />
-                <div className='gr-2' />
+                <div className='gr-2 gr-hide-m gr-hide-p' />
+                <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
                 <Platforms
-                    image_class='gr-10 gr-5-p gr-9-m'
                     image='tradingview'
                     header={it.L('TradingView for [_1]', it.website_name)}
                     description={it.L('Powerful charting and technical analysis')}
@@ -110,7 +111,6 @@ const Platform = () => (
             </div>
             <div className='gr-row gr-padding-30'>
                 <Platforms
-                    image_class='gr-10 gr-7-p gr-9-m'
                     image='trading-multibarrier'
                     header={it.L('Ladders')}
                     className='financial-only'
@@ -119,9 +119,9 @@ const Platform = () => (
                     url={it.url_for('multi_barriers_trading')}
                     button_text={it.L('Trade now')}
                 />
-                <div className='gr-2 financial-only'  />
+                <div className='gr-2 financial-only gr-hide-m gr-hide-p' />
+                <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
                 <Platforms
-                    image_class='gr-10 gr-5-p gr-9-m'
                     image='chart'
                     header={it.L('SmartCharts')}
                     description={it.L('Interactive charting tool')}
