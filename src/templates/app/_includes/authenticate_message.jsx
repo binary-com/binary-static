@@ -106,7 +106,7 @@ const SelfieSelector = () => {
                                 className='file-picker'
                                 type='file'
                                 accept='.jpg, .jpeg, .gif, .png, .pdf'
-                                data-type='selfie'
+                                data-type='other'
                                 data-name={name}
                             />
                             <label htmlFor={`add_file_selfie`} className='button'>{it.L('Add')} <span className='add' /></label>
