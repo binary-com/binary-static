@@ -10,17 +10,17 @@ const HighchartUI = (() => {
     let txt_legend,
         chart_options;
 
-    const labels = {
-        start_time  : `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start Time')} `,
-        entry_spot  : `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry Spot')} `,
-        reset_time  : `<div style="${common_time_style} border-color: #000; border-style: solid;"></div> ${localize('Reset Time')} `,
-        exit_spot   : `<span id='chart_exit_spot'><div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit Spot')} </span>`,
-        end_time    : `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End Time')} `,
-        delay       : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
-        payout_range: `<span class="chart-payout-range"> ${localize('Payout Range')} </span>`,
-    };
-
     const setLabels = (chart_delayed, contract_type, is_user_sold) => {
+        const labels = { // needs to be inside setLabels function so localize works
+            start_time  : `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start Time')} `,
+            entry_spot  : `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry Spot')} `,
+            reset_time  : `<div style="${common_time_style} border-color: #000; border-style: solid;"></div> ${localize('Reset Time')} `,
+            exit_spot   : `<span id='chart_exit_spot'><div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit Spot')} </span>`,
+            end_time    : `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End Time')} `,
+            delay       : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
+            payout_range: `<span class="chart-payout-range"> ${localize('Payout Range')} </span>`,
+        };
+
         // display a guide for clients to know how we are marking entry and exit spots
         txt_legend = (chart_delayed ? labels.delay : '') +
             labels.start_time +
