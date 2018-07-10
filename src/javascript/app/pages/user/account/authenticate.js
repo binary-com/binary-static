@@ -167,21 +167,25 @@ const Authenticate = (() => {
         $submit_table.children().remove();
         $files.each((i, e) => {
             if (e.files && e.files.length) {
-                const $e       = $(e);
-                const id       = $e.attr('id');
-                const type     = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
-                const name     = $e.attr('data-name');
-                const $inputs  = $e.closest('.fields').find('input[type="text"]');
-                const file_obj = {
+                const $e        = $(e);
+                const id        = $e.attr('id');
+                const type      = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
+                const name      = $e.attr('data-name');
+                const page_type = $e.attr('data-page-type');
+                const $inputs   = $e.closest('.fields').find('input[type="text"]');
+                const file_obj  = {
                     file     : e.files[0],
                     chunkSize: 16384, // any higher than this sends garbage data to websocket currently.
                     class    : id,
                     type,
                     name,
                 };
+                if (page_type) {
+                    file_obj.page_type = page_type;
+                }
                 if ($inputs.length) {
                     file_obj.id_number = $($inputs[0]).val();
-                    file_obj.exp_date = $($inputs[1]).val();
+                    file_obj.exp_date  = $($inputs[1]).val();
                 }
                 fileTracker($e, true);
                 files.push(file_obj);
@@ -260,6 +264,7 @@ const Authenticate = (() => {
                         filename      : f.file.name,
                         buffer        : fr.result,
                         documentType  : f.type,
+                        pageType      : f.page_type,
                         documentFormat: format,
                         documentId    : f.id_number || undefined,
                         expirationDate: f.exp_date || undefined,
