@@ -2,13 +2,13 @@ import PropTypes       from 'prop-types';
 import React           from 'react';
 import Popover         from '../Elements/popover.jsx';
 import ServerTime      from '../../Containers/server_time.jsx';
-import SettingsDialog  from '../Elements/Settings/settings_dialog.jsx';
+import SettingsDialog  from '../Elements/SettingsDialog/settings_dialog.jsx';
 import { BinaryLink }  from '../../routes';
 import { connect }     from '../../../Stores/connect';
 
 const TogglePortfolioDrawer = ({...props}) => (
     <Popover
-        subtitle='Toggle Portfolio'
+        subtitle='Quick Portfolio'
     >
         <a
             href='javascript:;'
@@ -64,7 +64,7 @@ class ToggleFullScreen extends React.Component {
     render() {
         return (
             <Popover
-                subtitle='Toggle Fullscreen'
+                subtitle='Fullscreen'
                 alignment='top-right'
             >
                 <a
@@ -101,10 +101,10 @@ class Footer extends React.Component {
         return (
             <React.Fragment>
                 <ServerTime />
-                {this.props.items.length &&
-                    <div className='footer-links'>
-                        <TogglePortfolioDrawer {...this.props} />
-                        {this.props.items.map((item, idx) => (
+                <div className='footer-links'>
+                    <TogglePortfolioDrawer {...this.props} />
+                    {!!(this.props.items && this.props.items.length) &&
+                        this.props.items.map((item, idx) => (
                             <Popover
                                 key={idx}
                                 subtitle={item.text}
@@ -114,10 +114,9 @@ class Footer extends React.Component {
                                 </BinaryLink>
                             </Popover>
                         ))}
-                        <ToggleFullScreen />
-                        <Settings {...this.props} />
-                    </div>
-                }
+                    <Settings {...this.props} />
+                    <ToggleFullScreen />
+                </div>
             </React.Fragment>
         );
     }

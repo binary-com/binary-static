@@ -14,6 +14,10 @@ export default class UIStore {
     @observable is_language_dialog_on = false;
     @observable is_dark_mode_on = false;
 
+    // Purchase Controls
+    @observable is_purchase_confirm_on = false;
+    @observable is_purchase_lock_on = false;
+
     // SmartCharts Controls
     @observable is_chart_layout_left = false;
     @observable is_chart_asset_info_visible = false;
@@ -46,6 +50,16 @@ export default class UIStore {
     @action.bound
     toggleChartCountdown() {
         this.is_chart_countdown_visible = !this.is_chart_countdown_visible;
+    }
+
+    @action.bound
+    togglePurchaseLock() {
+        this.is_purchase_lock_on = !this.is_purchase_lock_on;
+    }
+
+    @action.bound
+    togglePurchaseConfirmation() {
+        this.is_purchase_confirm_on = !this.is_purchase_confirm_on;
     }
 
     @action.bound

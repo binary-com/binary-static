@@ -64,14 +64,7 @@ const BinaryApp = ({ root_store }) => (
                     <BinaryRoutes />
                 </div>
                 <footer id='footer'>
-                    <Footer
-                        items={[
-                            { icon: 'ic-statement',   text: localize('Statement'), link_to: 'statement' },
-                            { icon: 'ic-chat-bubble', text: localize('Notification') },
-                            { icon: 'ic-two-step'   , text: localize('Purchase Confirmation') },
-                            { icon: 'ic-lock-open',   text: localize('Purchase Lock') },
-                        ]}
-                    />
+                    <Footer />
                 </footer>
             </div>
         </MobxProvider>
