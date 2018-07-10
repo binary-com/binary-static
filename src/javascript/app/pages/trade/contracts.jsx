@@ -178,6 +178,7 @@ export const init = (contracts, contracts_tree, selected) => ReactDOM.render(
 Contracts.propTypes = {
     contracts     : PropTypes.object,
     contracts_tree: PropTypes.array,
+    selected      : PropTypes.string,
 };
 
 export default init;
