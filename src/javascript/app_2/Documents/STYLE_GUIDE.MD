@@ -65,7 +65,7 @@ All public and common constants variable should be stored in related files in th
 
 ## Documents
 
-This directory contains all documentations of the project (e.g. STYLE_GUIDE.RM).
+This directory contains all documentations of the project (e.g. STYLE_GUIDE.MD).
 
 ## MODULES
 
