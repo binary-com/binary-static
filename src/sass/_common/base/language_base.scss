@@ -139,6 +139,10 @@ body.ES {
     #trading_socket_container #contract_form_name_nav {
         font-size: $FONT_SIZE_XS;
     }
+    #header li.wordwrap a {
+        white-space: normal;
+        text-align: center;
+    }
 }
 
 body.RU {

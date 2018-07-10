@@ -22,7 +22,8 @@ const Barriers = (() => {
         const barriers  = Contract.barriers()[Defaults.get('underlying')];
         const form_name = Contract.form();
 
-        if (barriers && form_name && barriers[form_name] && Defaults.get('formname') !== 'risefall') {
+        // TODO: remove `reset` when API stops sending barrier for Resets in contracts_for response
+        if (barriers && form_name && barriers[form_name] && !/risefall|reset/i.test(Defaults.get('formname'))) {
             const unit     = getElementById('duration_units');
             const end_time = getElementById('expiry_date');
             const is_daily = (unit && isVisible(unit) && unit.value === 'd') ||
@@ -72,9 +73,9 @@ const Barriers = (() => {
                         }
                     }
                     elm.value = elm.textContent = value;
+                    Barriers.validateBarrier();
                     Defaults.set('barrier', elm.value);
                     Defaults.remove('barrier_high', 'barrier_low');
-                    Barriers.validateBarrier();
                     showHideRelativeTip(barrier.barrier, [tooltip, span]);
                     return;
                 } else if (barrier.count === 2) {
@@ -143,10 +144,11 @@ const Barriers = (() => {
                     high_elm.value = high_elm.textContent = value_high;
                     low_elm.value  = low_elm.textContent  = value_low;
 
-                    Defaults.set('barrier_high', high_elm.value);
-                    Defaults.set('barrier_low', low_elm.value);
                     Defaults.remove('barrier');
                     showHideRelativeTip(barrier.barrier, [high_tooltip, high_span, low_tooltip, low_span]);
+                    Barriers.validateBarrier();
+                    Defaults.set('barrier_high', high_elm.value);
+                    Defaults.set('barrier_low', low_elm.value);
                     return;
                 }
             }
@@ -159,13 +161,26 @@ const Barriers = (() => {
         Defaults.remove('barrier', 'barrier_high', 'barrier_low');
     };
 
+    /**
+    * Validate Barriers
+    */
     const validateBarrier = () => {
-        const barrier_element = getElementById('barrier');
-        const empty           = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
+        const barrier_element      = getElementById('barrier');
+        const empty                = isNaN(parseFloat(barrier_element.value))||parseFloat(barrier_element.value) === 0;
+        const barrier_high_element = getElementById('barrier_high');
+
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');
         } else {
             barrier_element.classList.remove('error-field');
+        }
+
+        if (isVisible(barrier_high_element)) {
+            const barrier_low_element     = getElementById('barrier_low');
+            const error_node              = getElementById('barrier_high_error');
+            const is_high_barrier_greater = +barrier_high_element.value > +barrier_low_element.value;
+            barrier_high_element.classList[is_high_barrier_greater ? 'remove' : 'add']('error-field');
+            error_node.classList[is_high_barrier_greater ? 'add' : 'remove']('invisible');
         }
     };
 

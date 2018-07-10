@@ -22,7 +22,7 @@ const SetCurrency = (() => {
         if (Client.get('currency')) {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
-                $('.has_currency, #set_currency').setVisibility(1);
+                $('#deposit_btn, #set_currency').setVisibility(1);
             } else {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -35,7 +35,7 @@ const SetCurrency = (() => {
             const $cryptocurrencies = $('<div/>');
             payout_currencies.forEach((c) => {
                 (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
-                    .append($('<div/>', { class: 'gr-3 currency_wrapper', id: c })
+                    .append($('<div/>', { class: 'gr-2 gr-3-m currency_wrapper', id: c })
                         .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))
                         .append($('<div/>', { class: 'currency-name', html: (isCryptocurrency(c) ? `${getCurrencyName(c)}<br />(${c})` : c) })));
             });
@@ -97,7 +97,7 @@ const SetCurrency = (() => {
                             } else {
                                 Header.populateAccountsList(); // update account title
                                 $('.select_currency').setVisibility(0);
-                                $('.has_currency').setVisibility(1);
+                                $('#deposit_btn').setVisibility(1);
                             }
                         }
                     });

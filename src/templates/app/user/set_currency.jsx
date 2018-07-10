@@ -9,7 +9,7 @@ const Currencies = ({ text, id }) => (
             <div className='faded'>{text}</div>
             <div className='align-self-center border-bottom-light-gray' />
         </div>
-        <div className='gr-5 gr-12-m gr-centered'>
+        <div className='gr-8 gr-10-p gr-12-m gr-centered'>
             <div className='gr-row gr-row-align-center gr-padding-20 gr-parent currency_list' id={`${id}_currency_list`} />
         </div>
     </React.Fragment>
@@ -30,16 +30,12 @@ const SetCurrency = () => (
                     <img src={it.url_for('images/pages/set_currency/account-created.svg')} />
                     <div className='gr-padding-10' />
                     <h1>{it.L('Congratulations!')}</h1>
-                    <p>
-                        {it.L('You have successfully created your [_1]account!', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}
-                        <br/>
-                        <span className='invisible has_currency'>{it.L('Please [_1]authenticate[_2] your account before you make a deposit.', `<a href="${it.url_for('user/authenticate')}">`, '</a>')}</span>
-                    </p>
+                    <p>{it.L('You have successfully created your [_1]account!', `<span data-show="iom">${it.L('gaming')}&nbsp;</span>`)}</p>
                 </div>
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
 
-                <div className='invisible has_currency'>
+                <div id='deposit_btn' className='invisible'>
                     <div>
                         <a className='button' href={it.url_for('cashier/forwardws?action=deposit')}><span>{it.L('Make a Deposit')}</span></a>
                     </div>

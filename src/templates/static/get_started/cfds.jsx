@@ -124,6 +124,24 @@ const Cfds = () => (
                         }}
                     />
 
+                    <HeaderSecondary header={it.L('CFD Energies')} />
+                    <Table
+                        scroll
+                        data={{
+                            thead: [[
+                                { text: it.L('Symbol'),         className: 'gr-padding-10' },
+                                { text: it.L('Description'),    className: 'gr-padding-10' },
+                                { text: it.L('Lot size'),       className: 'gr-padding-10' },
+                                { text: it.L('Minimum volume'), className: 'gr-padding-10 w-80' },
+                                { text: it.L('Volume step'),    className: 'gr-padding-10 w-80' },
+                            ]],
+                            tbody: [
+                                [{ text: 'CL_BRENT' }, { text: 'Crude Oil Brent Cash'                   }, { text: it.L('USD 1 per point') }, { text: one }, { text: one }],
+                                [{ text: 'WTI'      }, { text: 'West Texas Intermediate Crude Oil Cash' }, { text: it.L('USD 1 per point') }, { text: one }, { text: one }],
+                            ],
+                        }}
+                    />
+
                     <HeaderSecondary header={it.L('How to read the table above')} />
                     <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
                     <p>{it.L('For example, a CFD on Binary.com\'s US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:')}</p>

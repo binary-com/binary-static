@@ -63,6 +63,7 @@ module.exports = [
     ['user/warning',                            'app/user/warning',                            'default',    'Warning'],
 
     ['endpoint',                                'app/endpoint',                                'default',    'Endpoint'],
+    ['new-account',                             'app/new_account',                             'default',    'Signup'],
 
     ['dialog',                                  'app/dialog',                                  null],
     ['explanation',                             'app/trade/explanation',                       null],
@@ -125,9 +126,8 @@ module.exports = [
 
     ['affiliate_disclaimer',                    'static/japan/affiliates/popup',               null,          '',                                 'NOT-ja,en'],
 
-
     // ==================== Section: "landing_pages" ====================
-    ['graduates',                               'landing_pages/graduate_program',              null,        'Binary.com Graduate Program',        'NOT-en'],
-    ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
+    // ['graduates',                               'landing_pages/graduate_program',              null,        'Binary.com Graduate Program',        'NOT-en'],
+    // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
     ['landing/signup-frame',                    'landing_pages/signup_frame',                  null,        'Sign up'],
 ];

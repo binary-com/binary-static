@@ -111,7 +111,10 @@ const Header = (() => {
     const metatraderMenuItemVisibility = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
             if (MetaTrader.isEligible() && !Client.isJPClient()) {
-                getElementById('user_menu_metatrader').setVisibility(1);
+                const mt_visibility = document.getElementsByClassName('mt_visibility');
+                applyToAllElements(mt_visibility, (el) => {
+                    el.setVisibility(1);
+                });
             }
         });
     };
@@ -265,6 +268,20 @@ const Header = (() => {
 
             const riskAssessment = () => (Client.getRiskAssessment() && !Client.isJPClient());
 
+            const hasMissingRequiredField = () => {
+                const required_fields = [
+                    'account_opening_reason',
+                    'address_line_1',
+                    'address_city',
+                    'phone',
+                    'tax_identification_number',
+                    'tax_residence',
+                    ...(Client.get('residence') === 'gb' ? ['address_postcode'] : []),
+                ];
+                const get_settings = State.getResponse('get_settings');
+                return required_fields.some(field => !get_settings[field]);
+            };
+
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
 
             const messages = {
@@ -275,6 +292,7 @@ const Header = (() => {
                 document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
                 excluded_until       : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                                                 'contact'),
                 financial_limit      : () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                                             'user/security/self_exclusionws'),
+                required_fields      : () => buildMessage('Please complete your [_1]personal details[_2] before you proceed.', 'user/settings/detailsws'),
                 residence            : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                                                   'user/settings/detailsws'),
                 risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
                 tax                  : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                                            'user/settings/detailsws'),
@@ -291,6 +309,7 @@ const Header = (() => {
                 document_review      : () => /document_under_review/.test(status),
                 excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => /ukrts_max_turnover_limit_not_set/.test(status),
+                required_fields      : () => Client.isAccountOfType('financial') && hasMissingRequiredField(),
                 residence            : () => !Client.get('residence'),
                 risk                 : () => riskAssessment(),
                 tax                  : () => Client.shouldCompleteTax(),
@@ -303,6 +322,7 @@ const Header = (() => {
             const check_statuses_real = [
                 'excluded_until',
                 'tnc',
+                'required_fields',
                 'financial_limit',
                 'risk',
                 'tax',

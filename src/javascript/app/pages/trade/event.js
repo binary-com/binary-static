@@ -251,6 +251,7 @@ const TradingEvents = (() => {
                 CommonIndependent.showAssetOpenHours(e.target.value === 'now' ? '' : $(e.target));
                 initTimePicker();
                 const r = Durations.onStartDateChange(e.target.value);
+                Process.displayEquals();
                 if (r >= 0) {
                     Price.processPriceRequest();
                 }
@@ -367,6 +368,7 @@ const TradingEvents = (() => {
          */
         const low_barrier_element = getElementById('barrier_low');
         low_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
+            Barriers.validateBarrier();
             Defaults.set('barrier_low', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
@@ -380,6 +382,7 @@ const TradingEvents = (() => {
          */
         const high_barrier_element = getElementById('barrier_high');
         high_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
+            Barriers.validateBarrier();
             Defaults.set('barrier_high', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));

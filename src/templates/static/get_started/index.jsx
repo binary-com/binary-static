@@ -37,7 +37,7 @@ const CTA = () => (
         <SeparatorLine show_mobile className='gr-padding-20 gr-child' />
         <div className='center-text'>
             <p>{it.L('Don\'t have an account?')}</p>
-            <a className='button' href={it.url_for('home')}><span>{it.L('Create Free Account')}</span></a>
+            <a className='button' href={it.url_for('new-account')}><span>{it.L('Create Free Account')}</span></a>
         </div>
     </div>
 );
@@ -81,7 +81,7 @@ const Index = () => (
                                 hash='types-of-trades'
                                 image='binary-options/types-of-trades'
                                 header={it.L('Types of trades')}
-                                text={it.L('Learn about the five types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets.')}
+                                text={it.L('Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets.')}
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
@@ -261,21 +261,21 @@ const Index = () => (
                         <p>{it.L('We offer three types of lookbacks:')}</p>
                         <div className='gr-row'>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
-                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-high-image.svg')} />
+                                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/high-close.svg`)} />
                                 <ul className='checked'>
                                     <li>{it.L('High-Close')}</li>
                                 </ul>
                                 <p>{it.L('Win the multiplier times the high minus close.')}</p>
                             </div>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
-                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/close-low-image.svg')} />
+                                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/close-low.svg`)} />
                                 <ul className='checked'>
                                     <li>{it.L('Close-Low')}</li>
                                 </ul>
                                 <p>{it.L('Win the multiplier times the close minus low.')}</p>
                             </div>
                             <div className='gr-4 gr-12-m gr-padding-10 gr-child'>
-                                <img className='responsive' src={it.url_for('images/pages/trade-explanation/high-low-image.svg')} />
+                                <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/high-low.svg`)} />
                                 <ul className='checked'>
                                     <li>{it.L('High-Low')}</li>
                                 </ul>

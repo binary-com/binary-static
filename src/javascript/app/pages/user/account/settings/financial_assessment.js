@@ -4,6 +4,7 @@ const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
 const Validation       = require('../../../../common/form_validation');
 const getElementById   = require('../../../../../_common/common_functions').getElementById;
+const isVisible        = require('../../../../../_common/common_functions').isVisible;
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const isEmptyObject    = require('../../../../../_common/utility').isEmptyObject;
@@ -25,6 +26,10 @@ const FinancialAssessment = (() => {
             submitForm();
         });
 
+        getFinancialAssessment();
+    };
+
+    const getFinancialAssessment = () => {
         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
             handleForm(response.get_financial_assessment);
         });
@@ -35,7 +40,7 @@ const FinancialAssessment = (() => {
     };
 
     const handleForm = (response = State.getResponse('get_financial_assessment')) => {
-        hideLoadingImg(true);
+        hideLoadingImg(!isVisible(getElementById('msg_main')));
 
         financial_assessment = $.extend({}, response);
 
@@ -98,6 +103,7 @@ const FinancialAssessment = (() => {
                         Header.displayAccountStatus();
                         displayHighRiskClassification();
                     });
+                    getFinancialAssessment();
                 }
             });
         } else {

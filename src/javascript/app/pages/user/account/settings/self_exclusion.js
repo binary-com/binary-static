@@ -83,12 +83,12 @@ const SelfExclusion = (() => {
                         const time_value = timeout.format('HH:mm');
                         setDateTimePicker(timeout_date_id, date_value);
                         setDateTimePicker(timeout_time_id, time_value, true);
-                        $form.find('label[for="timeout_until_date"]').text('Timed out until');
+                        $form.find('label[for="timeout_until_date"]').text(localize('Timed out until'));
                         return;
                     }
                     if (key === 'exclude_until') {
                         setDateTimePicker(exclude_until_id, value);
-                        $form.find('label[for="exclude_until"]').text('Excluded from the website until');
+                        $form.find('label[for="exclude_until"]').text(localize('Excluded from the website until'));
                         $('#ukgc_gamstop').setVisibility(is_gamstop_client);
                         $('#ukgc_requirement_notice').setVisibility(1);
                         return;

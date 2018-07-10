@@ -6,7 +6,7 @@ const getElementById   = require('../../_common/common_functions').getElementByI
 
 const Clock = (() => {
     let el_clock,
-        fncViewPopupTimer;
+        fncExternalTimer;
 
     const startClock = () => {
         if (!el_clock) {
@@ -28,8 +28,8 @@ const Clock = (() => {
             showLocalTimeOnHover('#gmt-clock');
         }
 
-        if (typeof fncViewPopupTimer === 'function') {
-            fncViewPopupTimer();
+        if (typeof fncExternalTimer === 'function') {
+            fncExternalTimer();
         }
     };
 
@@ -72,7 +72,7 @@ const Clock = (() => {
         showLocalTimeOnHover,
         toJapanTimeIfNeeded,
 
-        setViewPopupTimer: (func) => { fncViewPopupTimer = func; },
+        setExternalTimer: (func) => { fncExternalTimer = func; },
     };
 })();
 

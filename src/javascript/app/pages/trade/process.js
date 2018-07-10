@@ -9,6 +9,7 @@ const GetTicks          = require('./get_ticks');
 const Lookback          = require('./lookback');
 const Notifications     = require('./notifications');
 const Price             = require('./price');
+const Reset             = require('./reset');
 const StartDates        = require('./starttime').StartDates;
 const Symbols           = require('./symbols');
 const Tick              = require('./tick');
@@ -164,6 +165,10 @@ const Process = (() => {
         refreshDropdown('#selected_tick');
         Lookback.display();
 
+        if (!Reset.isReset(Defaults.get('formname'))) {
+            Reset.hideResetTime();
+        }
+
         let r1;
         if (State.get('is_start_dates_displayed') && Defaults.get('date_start') && Defaults.get('date_start') !== 'now') {
             r1 = Durations.onStartDateChange(Defaults.get('date_start'));
@@ -252,11 +257,11 @@ const Process = (() => {
     const hasCallPutEqual = (contracts = getPropertyValue(Contract.contracts(), ['contracts_for', 'available']) || []) =>
         contracts.find(contract => contract.contract_category === 'callputequal');
 
-    const displayEquals = () => {
+    const displayEquals = (expiry_type = 'duration') => {
         const formname  = Defaults.get('formname');
         const el_equals = document.getElementById('callputequal');
         const durations = getPropertyValue(Contract.durations(), [commonTrading.durationType(Defaults.get('duration_units'))]) || [];
-        if (/^(callputequal|risefall)$/.test(formname) && 'callputequal' in durations && hasCallPutEqual()) {
+        if (/^(callputequal|risefall)$/.test(formname) && (('callputequal' in durations || expiry_type === 'endtime') && hasCallPutEqual())) {
             if (+Defaults.get('is_equal')) {
                 el_equals.checked = true;
             }
@@ -269,9 +274,9 @@ const Process = (() => {
     const setFormName = (formname) => {
         let formname_to_set    = formname;
         const has_callputequal = hasCallPutEqual();
-        if (/^(callputequal)$/.test(formname_to_set) && (!has_callputequal || !+Defaults.get('is_equal'))) {
+        if (formname_to_set === 'callputequal' && (!has_callputequal || !+Defaults.get('is_equal'))) {
             formname_to_set = 'risefall';
-        } else if (/^(risefall)$/.test(formname_to_set) && has_callputequal && +Defaults.get('is_equal')) {
+        } else if (formname_to_set === 'risefall' && has_callputequal && +Defaults.get('is_equal')) {
             formname_to_set = 'callputequal';
         }
         Defaults.set('formname', formname_to_set);
@@ -319,6 +324,7 @@ const Process = (() => {
             Defaults.remove('expiry_date', 'expiry_time', 'end_date');
             Durations.validateMinDurationAmount();
         }
+        displayEquals(validated_value);
 
         return make_price_request;
     };
@@ -339,6 +345,7 @@ const Process = (() => {
     };
 
     return {
+        displayEquals,
         processActiveSymbols,
         processMarket,
         processContract,
