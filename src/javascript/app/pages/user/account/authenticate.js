@@ -251,7 +251,6 @@ const Authenticate = (() => {
     // Returns file promise.
     const readFiles = (files) => {
         const promises = [];
-        console.log(files);
         files.forEach((f) => {
             const fr      = new FileReader();
             const promise = new Promise((resolve) => {
