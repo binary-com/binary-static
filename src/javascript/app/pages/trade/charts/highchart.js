@@ -61,7 +61,7 @@ const Highchart = (() => {
         end_time              = parseInt(contract.date_expiry);
         entry_tick_time       = parseInt(contract.entry_tick_time);
         sell_spot_time        = parseInt(contract.sell_spot_time);
-        sell_time             = +contract.is_path_dependent ? sell_spot_time : parseInt(contract.sell_time);
+        sell_time             = +contract.is_path_dependent && contract.status !== 'sold' ? sell_spot_time : parseInt(contract.sell_time);
         is_sold_before_expiry = sell_time < end_time;
         exit_tick_time        = parseInt(contract.exit_tick_time);
         exit_time             = is_sold_before_expiry ? sell_time : (exit_tick_time || end_time);

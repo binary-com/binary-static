@@ -13,10 +13,10 @@ const HighchartUI = (() => {
 
     const setLabels = (params) => {
         labels = labels || { // needs to be inside setLabels function so localize works
-            start_time  : `<span id='chart_start_time'><span style="${common_time_style} border-style: solid;"></span> ${localize('Start Time')} </span>`,
+            start_time  : `<span style="${common_time_style} border-style: solid;"></span> ${localize('Start Time')} `,
             entry_spot  : `<span style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></span> ${localize('Entry Spot')} `,
             reset_time  : `<span style="${common_time_style} border-color: #000; border-style: solid;"></span> ${localize('Reset Time')} `,
-            exit_spot   : `<span id='chart_exit_spot'><span style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></span> ${localize('Exit Spot')} </span>`,
+            exit_spot   : `<span style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></span> ${localize('Exit Spot')} `,
             end_time    : `<span style="${common_time_style} border-style: dashed;"></span> ${localize('End Time')} `,
             delay       : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
             payout_range: `<span class="chart-payout-range"> ${localize('Payout Range')} </span>`,
@@ -25,7 +25,7 @@ const HighchartUI = (() => {
         // display a guide for clients to know how we are marking entry and exit spots
         txt_legend = (params.is_chart_delayed ? labels.delay : '') +
             (params.is_sold_before_start ? '' : labels.start_time) +
-            (history ? (params.is_sold_before_start ? labels.entry_spot : '') + (params.is_user_sold ? '' : labels.exit_spot) : '') +
+            (history ? (params.is_sold_before_start ? '' : labels.entry_spot) + (params.is_user_sold ? '' : labels.exit_spot) : '') +
             (isReset(params.contract_type) ? labels.reset_time : '') +
             labels.end_time +
             (isCallputspread(params.contract_type) ? labels.payout_range : '');

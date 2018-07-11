@@ -324,7 +324,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_indicative_label', localize('Payout'));
         if (contract.status === 'sold') {
             containerSetText('trade_details_end_label', localize('End Time'));
-            containerSetText('trade_details_end_date', epochToDateTime(contract.sell_time), '', true);
+            containerSetText('trade_details_end_date', epochToDateTime(+contract.is_path_dependent && contract.status !== 'sold' ? contract.sell_spot_time : contract.sell_time), '', true);
         }
         if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));
