@@ -23,7 +23,7 @@ const PaymentAgents = () => (
 
         <h2 data-anchor>D. {it.L('Provision of Services')}</h2>
         <ol>
-            <li>{it.L('The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-cash or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”).')}</li>
+            <li>{it.L('The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”).')}</li>
             <li>{it.L('It is agreed that any deposits through the Agent shall be made as follows:  ')}
                 <ul className='bullet'>
                     <li>{it.L('The Client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his [_1] Account (hereinafter referred to as the “[_1] Agent Account”).', it.website_name)}</li>
@@ -36,7 +36,7 @@ const PaymentAgents = () => (
                     <li>{it.L('The Agent thereinafter, shall transfer the requested sum to the Client. It is noted that these transactions fall out of the scope of this Agreement and as result the Company shall not be liable against the Agent and/or Client and/or any other person, under contract or tort law or any other applicable law, for any conflicts or potential conflicts arising out of or in connection with such transactions.')}</li>
                 </ul>
             </li>
-            <li>{it.L('The Agent shall not be authorized to offer its services, under this Agreement, to Clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href="[_1]">www.binary.com.</a>', it.url_for('home'))}</li>
+            <li>{it.L('The Agent shall not be authorized to offer its services, under this Agreement, to Clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href="[_1]">www.binary.com.</a>', it.url_for('new-account'))}</li>
         </ol>
 
         <h2 data-anchor>E. {it.L('Agent\'s Obligations')}</h2>
@@ -113,7 +113,7 @@ const PaymentAgents = () => (
             </li>
             <li>{it.L('Information outlined in Paragraph 1 of this Section shall be submitted to <a href="mailto:[_1]">[_1]</a>.', 'affiliates@binary.com')}</li>
             <li>{it.L('The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H.')}</li>
-            <li>{it.L('The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href="[_1]">www.binary.com</a>.', it.url_for('home'))}</li>
+            <li>{it.L('The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href="[_1]">www.binary.com</a>.', it.url_for('new-account'))}</li>
         </ol>
 
         <h2 data-anchor>J. {it.L('Events of Default')}</h2>

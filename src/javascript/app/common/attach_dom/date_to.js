@@ -20,9 +20,10 @@ const getDateToFrom = () => {
 };
 
 const attachDateToPicker = (fncOnChange) => {
-    const date_to = '#date_to';
-    $(date_to)
-        .attr('data-value', toISOFormat(moment()))
+    const id_date_to = '#date_to';
+    const $date_to   = $(id_date_to);
+    $date_to
+        .attr('data-value', toISOFormat(moment.utc()))
         .change(function () {
             if (!dateValueChanged(this, 'date')) {
                 return false;
@@ -34,10 +35,10 @@ const attachDateToPicker = (fncOnChange) => {
             return true;
         });
     DatePicker.init({
-        selector: date_to,
+        selector: id_date_to,
         maxDate : 0,
     });
-    if ($(date_to).attr('data-picker') !== 'native') $(date_to).val(localize('Today'));
+    if ($date_to.attr('data-picker') !== 'native') $date_to.val(localize('Today'));
 };
 
 module.exports = {

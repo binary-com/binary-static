@@ -182,8 +182,12 @@ label {
     width: 45%;
 }
 
-*, .no-margin, .errorfield {
+*, .errorfield {
     margin: 0;
+}
+
+.no-margin {
+    margin: 0 !important;
 }
 
 .errorfield {

@@ -11,7 +11,6 @@ const Price                 = require('./price');
 const Process               = require('./process');
 const Purchase              = require('./purchase');
 const Tick                  = require('./tick');
-const ViewPopup             = require('../user/view_popup/view_popup');
 const BinarySocket          = require('../../base/socket');
 const getDecimalPlaces      = require('../../common/currency').getDecimalPlaces;
 const isCryptocurrency      = require('../../common/currency').isCryptocurrency;
@@ -21,6 +20,7 @@ const GTM                   = require('../../../_common/base/gtm');
 const dateValueChanged      = require('../../../_common/common_functions').dateValueChanged;
 const isVisible             = require('../../../_common/common_functions').isVisible;
 const getElementById        = require('../../../_common/common_functions').getElementById;
+const localize              = require('../../../_common/localize').localize;
 
 /*
  * TradingEvents object contains all the event handler function for
@@ -66,6 +66,13 @@ const TradingEvents = (() => {
              * attach event to form list, so when client click on different form we need to update form
              * and request for new Contract details to populate the form and request price accordingly
              */
+            Process.processContractForm();
+            TradingAnalysis.request();
+        });
+
+        const el_equal = getElementById('callputequal');
+        el_equal.addEventListener('change', (e) => {
+            Defaults.set('is_equal', +e.target.checked);
             Process.processContractForm();
             TradingAnalysis.request();
         });
@@ -150,7 +157,7 @@ const TradingEvents = (() => {
         getElementById('duration_units').addEventListener('change', (e) => {
             Defaults.remove('barrier', 'barrier_high', 'barrier_low');
             Process.onDurationUnitChange(e.target.value);
-            Price.processPriceRequest();
+            Process.processContractForm();
         });
 
         /*
@@ -244,6 +251,7 @@ const TradingEvents = (() => {
                 CommonIndependent.showAssetOpenHours(e.target.value === 'now' ? '' : $(e.target));
                 initTimePicker();
                 const r = Durations.onStartDateChange(e.target.value);
+                Process.displayEquals();
                 if (r >= 0) {
                     Price.processPriceRequest();
                 }
@@ -301,7 +309,8 @@ const TradingEvents = (() => {
         /*
          * attach event to purchase buttons to buy the current contract
          */
-        $('.purchase_button').on('click dblclick', function () {
+        const $purchase_button = $('.purchase_button');
+        $purchase_button.on('click dblclick', function () {
             if (isVisible(getElementById('confirmation_message_container')) || /disabled/.test(this.parentNode.classList)) {
                 return;
             }
@@ -320,18 +329,10 @@ const TradingEvents = (() => {
                 }
             }, this);
             if (id && ask_price) {
-                $('.purchase_button').css('visibility', 'hidden');
+                $purchase_button.parent().addClass('button-disabled');
+                $(this).text(localize('Purchase request sent'));
                 BinarySocket.send(params).then((response) => {
-                    if (response.error || /digit/i.test(response.echo_req.passthrough.contract_type)) {
-                        Purchase.display(response);
-                    } else {
-                        this.setAttribute('contract_id', response.buy.contract_id);
-                        ViewPopup.init(this, () => {
-                            GetTicks.request();
-                            CommonTrading.hideOverlayContainer();
-                            Price.processPriceRequest();
-                        });
-                    }
+                    Purchase.display(response);
                     GTM.pushPurchaseData(response);
                 });
                 Price.incrFormId();
@@ -367,6 +368,7 @@ const TradingEvents = (() => {
          */
         const low_barrier_element = getElementById('barrier_low');
         low_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
+            Barriers.validateBarrier();
             Defaults.set('barrier_low', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
@@ -380,6 +382,7 @@ const TradingEvents = (() => {
          */
         const high_barrier_element = getElementById('barrier_high');
         high_barrier_element.addEventListener('input', CommonTrading.debounce((e) => {
+            Barriers.validateBarrier();
             Defaults.set('barrier_high', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
@@ -393,6 +396,12 @@ const TradingEvents = (() => {
          */
         getElementById('prediction').addEventListener('change', CommonTrading.debounce((e) => {
             Defaults.set('prediction', e.target.value);
+            Price.processPriceRequest();
+            CommonTrading.submitForm(getElementById('websocket_form'));
+        }));
+
+        getElementById('selected_tick').addEventListener('change', CommonTrading.debounce((e) => {
+            Defaults.set('selected_tick', e.target.value);
             Price.processPriceRequest();
             CommonTrading.submitForm(getElementById('websocket_form'));
         }));

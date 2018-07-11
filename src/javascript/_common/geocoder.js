@@ -35,7 +35,7 @@ const Geocoder = (() => {
         el_error = form.querySelector('#geocode_error');
         applyToAllElements(`${addr_1}, ${addr_2}, ${city}, ${postcode}`, (element) => {
             element.addEventListener('keyup', () => {
-                if (validated && !el_btn_validate) {
+                if (!validated && !el_btn_validate) {
                     el_btn_validate = createElement('button', {
                         id   : 'geocode_validate',
                         class: 'button-secondary',
@@ -69,11 +69,9 @@ const Geocoder = (() => {
     const validator = (address) => (
         new Promise((resolve) => {
             scriptjs.ready('gMaps', () => {
-                const country  = Client.get('residence');
                 const geocoder = new google.maps.Geocoder();
                 geocoder.geocode({
                     address,
-                    componentRestrictions: { country },
                 }, (result, status) => {
                     // Geocoding status reference:
                     // https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingStatusCodes

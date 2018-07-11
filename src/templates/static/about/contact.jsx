@@ -61,12 +61,7 @@ const Contact = () => (
                             <div className='chat'>
                                 <div className='chat-container'>
                                     <img className='chat-icon' src={it.url_for('images/pages/contact/chat-icon.svg')} />
-                                    <a
-                                        className='button-secondary'
-                                        href='https://binary.desk.com/customer/widget/chats/new'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                    >
+                                    <a className='button-secondary' rel='noopener noreferrer' id='chat_button'>
                                         <span>{it.L('Live Chat')}</span>
                                     </a>
                                 </div>
@@ -76,6 +71,11 @@ const Contact = () => (
                                     <p className='no-margin'>{it.L('Weekend:')} &zwj;0000 - 0900 GMT</p>
                                 </div>
                             </div>
+                        </div>
+                        <div className='gr-parent ja-hide invisible' id='live_chat_unavailable'>
+                            <p className='notice-msg center-text'>
+                                {it.L('Sorry, live chat is currently unavailable. Please email us at [_1].', '<a href=\'mailto:support@binary.com\'>support@binary.com</a>')}
+                            </p>
                         </div>
                     </div>
                     <div className='gr-4 gr-4-t gr-5-p gr-12-m ja-hide'>
@@ -116,8 +116,8 @@ const Contact = () => (
             <div className='gr-hide-p gr-hide-m gr-padding-20' />
 
             <div className='gr-row'>
-                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')}    text={it.L('Binary Group Services Sdn. Bhd., C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
-                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Kuala Lumpur Office')} text={it.L('Binary Group Services Sdn. Bhd., 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur')} />
+                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')} text={it.L('Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
+                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')} text={it.L('4X Software Sdn. Bhd., C-10-10(1), iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
             </div>
         </div>
     </div>

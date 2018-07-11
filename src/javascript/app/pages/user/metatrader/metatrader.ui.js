@@ -21,7 +21,8 @@ const MetaTraderUI = (() => {
         $main_msg,
         validations,
         submit,
-        token;
+        token,
+        current_action_ui;
 
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
@@ -167,7 +168,9 @@ const MetaTraderUI = (() => {
     const setCurrentAccount = (acc_type) => {
         if (Client.get('mt5_account') && Client.get('mt5_account') !== acc_type) return;
 
-        displayAccountDescription(acc_type);
+        if (current_action_ui !== 'new_account') {
+            displayAccountDescription(acc_type);
+        }
 
         if (accounts_info[acc_type].info) {
             // Update account info
@@ -182,7 +185,9 @@ const MetaTraderUI = (() => {
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
             // $container.find('.act_cashier').setVisibility(!types_info[acc_type].is_demo);
-            $container.find('.has-account').setVisibility(1);
+            if (current_action_ui !== 'new_account') {
+                $container.find('.has-account').setVisibility(1);
+            }
         } else {
             $detail.find('.acc-info, .acc-actions').setVisibility(0);
         }
@@ -317,6 +322,8 @@ const MetaTraderUI = (() => {
     // ----- New Account -----
     // -----------------------
     const handleNewAccountUI = (action, acc_type, $target) => {
+        current_action_ui = action;
+
         const is_new_account = /new_account/.test(action);
         const $acc_actions = $container.find('.acc-actions');
         $acc_actions.find('.new-account').setVisibility(is_new_account);
@@ -440,7 +447,7 @@ const MetaTraderUI = (() => {
                 const title = accounts_info[acc_type].short_title;
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
                     .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase().replace(/\s/g, '_').replace('mam_', '')}.svg`));
-                $acc.find('p').text(title);
+                $acc.find('p').text(localize(title));
                 (/mam/.test(acc_type) ? $acc_template_mam : $acc_template_mt).append($acc);
             });
         $templates.find('.hl-types-of-accounts').setVisibility(count > 1);

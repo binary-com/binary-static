@@ -32,9 +32,8 @@ const TradingAnalysis = (() => {
     const requestTradeAnalysis = () => {
         form_name = (State.get('is_mb_trading') ? MBDefaults.get('category') : Defaults.get('formname')) || 'risefall';
 
-        const map_obj = { matchdiff: 'digits', callput: 'higherlower' };
-        const regex   = new RegExp(Object.keys(map_obj).join('|'), 'gi');
-        form_name     = form_name.replace(regex, matched => map_obj[matched]);
+        const map_obj = { matchdiff: 'digits', callputequal: 'risefall', callput: 'higherlower' };
+        form_name     = map_obj[form_name] || form_name;
 
         $('#tab_last_digit').setVisibility(/digits|overunder|evenodd/.test(form_name));
         sessionStorage.setItem('currentAnalysisTab', getActiveTab());
@@ -183,50 +182,58 @@ const TradingAnalysis = (() => {
 
         const images = {
             risefall: {
-                image1: 'rise-fall-1.svg',
-                image2: 'rise-fall-2.svg',
+                image1: 'rises.svg',
+                image2: 'falls.svg',
             },
             higherlower: {
-                image1: 'higher-lower-1.svg',
-                image2: 'higher-lower-2.svg',
+                image1: 'higher.svg',
+                image2: 'lower.svg',
             },
             touchnotouch: {
-                image1: 'touch-notouch-1.svg',
-                image2: 'touch-notouch-2.svg',
+                image1: 'touch.svg',
+                image2: 'no-touch.svg',
             },
             endsinout: {
-                image1: 'in-out-1.svg',
-                image2: 'in-out-2.svg',
+                image1: 'ends-between.svg',
+                image2: 'ends-outside.svg',
             },
             staysinout: {
-                image1: 'in-out-3.svg',
-                image2: 'in-out-4.svg',
-            },
-            updown: {
-                image1: 'up-down-1.svg',
-                image2: 'up-down-2.svg',
+                image1: 'stays-between.svg',
+                image2: 'goes-outside.svg',
             },
             evenodd: {
-                image1: 'evenodd-1.svg',
-                image2: 'evenodd-2.svg',
+                image1: 'even.svg',
+                image2: 'odd.svg',
             },
             overunder: {
-                image1: 'overunder-1.svg',
-                image2: 'overunder-2.svg',
+                image1: 'over.svg',
+                image2: 'under.svg',
             },
             lookbackhigh: {
-                image1: 'close-high-image.svg',
+                image1: 'high-close.svg',
             },
             lookbacklow: {
-                image1: 'close-low-image.svg',
+                image1: 'close-low.svg',
             },
             lookbackhighlow: {
-                image1: 'high-low-image.svg',
+                image1: 'high-low.svg',
+            },
+            reset: {
+                image1: 'reset-call.svg',
+                image2: 'reset-put.svg',
+            },
+            callputspread: {
+                image1: 'call-spread.svg',
+                image2: 'put-spread.svg',
+            },
+            highlowticks: {
+                image1: 'high-tick.svg',
+                image2: 'low-tick.svg',
             },
         };
 
         if (images[form_name]) {
-            const image_path = Url.urlForStatic(`images/pages/trade-explanation/${(getLanguage() === 'JA' ? 'ja/' : '')}`);
+            const image_path = Url.urlForStatic(`images/pages/trade-explanation/${getLanguage().toLowerCase()}/`);
             $container.find('#explanation_image_1').attr('src', image_path + images[form_name].image1);
             if (images[form_name].image2) {
                 $container

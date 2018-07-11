@@ -8,32 +8,15 @@ const TimePicker = (() => {
     const time_pickers = {};
 
     const init = (options) => {
-        hide(options.selector);
+        removeJqueryPicker(options.selector, options.datepickerDate);
         time_pickers[options.selector] = {};
 
-        config(options);
-        $(window).resize(() => { checkWidth(options.selector); });
+        makeConfig(options);
+        updatePicker(options.selector);
+        $(window).resize(() => { updatePicker(options.selector); });
     };
 
-    const hide = (selector) => { $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown keyup input'); };
-
-    const create = (selector) => {
-        let $this;
-        $(selector).keydown(function (e) {
-            if (e.which === 13) {
-                $this = $(this);
-                e.preventDefault();
-                e.stopPropagation();
-                $this.timepicker('setTime', $this.val());
-                $this.timepicker('hide');
-                $this.blur();
-                return false;
-            }
-            return true;
-        }).timepicker(time_pickers[selector].config_data);
-    };
-
-    const config = (options) => {
+    const makeConfig = (options) => {
         let time_now = moment.utc(window.time).clone();
 
         const obj_config = {
@@ -47,6 +30,12 @@ const TimePicker = (() => {
             if (options.minTime.isBefore(time_now) &&
                 (!options.maxTime || time_now.unix() !== options.maxTime.unix())) {
                 options.minTime = time_now;
+            }
+            if (options.useLocalTime) options.minTime = options.minTime.local();
+
+            // disable hour without minute options (55 min is the last option)
+            if (options.minTime.minutes() > 55) {
+                options.minTime.minutes(60);
             }
             obj_config.minTime = { hour: parseInt(options.minTime.hour()), minute: parseInt(options.minTime.minute()) };
         }
@@ -101,19 +90,41 @@ const TimePicker = (() => {
         };
 
         time_pickers[options.selector].config_data = obj_config;
-
-        checkWidth(options.selector);
     };
 
     const formatTime = time => padLeft(time, 2, '0');
 
     const toTime = time => [formatTime(time.hour), formatTime(time.minute), '00'].join(':');
 
-    const checkWidth = (selector) => {
+    const removeJqueryPicker = (selector, datepickerDate) => {
+        $(selector).timepicker('destroy').removeAttr('data-picker').off('keydown keyup input');
+        if (!datepickerDate) return;
+        if (!moment().isBefore(moment(datepickerDate))) {
+            $(selector).attr('data-value', '').val('');
+        }
+    };
+
+    const addJqueryPicker = (selector) => {
+        let $this;
+        $(selector).keydown(function (e) {
+            if (e.which === 13) {
+                $this = $(this);
+                e.preventDefault();
+                e.stopPropagation();
+                $this.timepicker('setTime', $this.val());
+                $this.timepicker('hide');
+                $this.blur();
+                return false;
+            }
+            return true;
+        }).timepicker(time_pickers[selector].config_data);
+    };
+
+    const updatePicker = (selector) => {
         const $selector        = $(selector);
         const time_picker_conf = time_pickers[selector].config_data;
         if ($(window).width() < 770 && checkInput('time', 'not-a-time') && $selector.attr('data-picker') !== 'native') {
-            hide(selector);
+            removeJqueryPicker(selector);
             $selector.attr({ type: 'time', 'data-picker': 'native' }).val($selector.attr('data-value')).removeAttr('readonly').removeClass('clear');
 
             const minTime = time_picker_conf.minTime;
@@ -129,7 +140,7 @@ const TimePicker = (() => {
             if ($selector.attr('data-value') && $selector.hasClass('clearable') && !$selector.attr('disabled')) {
                 clearable($selector);
             }
-            create(selector);
+            addJqueryPicker(selector);
         }
     };
 
