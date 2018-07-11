@@ -360,7 +360,7 @@ const Header = (() => {
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
                     checkStatus(check_statuses_real);
-                    $('.account-id')[/authenticated/.test(status) ? 'append' : 'remove'](el_account_status);
+                    $('.account-id')[+get_account_status.prompt_client_to_authenticate ? 'remove' : 'append'](el_account_status);
                 });
             }
         });
