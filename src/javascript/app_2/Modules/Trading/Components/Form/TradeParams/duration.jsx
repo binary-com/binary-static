@@ -56,7 +56,9 @@ const Duration = ({
             const [ hour, minute ] = start_time.split(':');
             date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
         }
-        if (start_date_time !== date_time.unix()) {
+        // only update start time every five minutes, since time picker shows five minute durations
+        if (!start_date_time ||
+            (moment.unix(start_date_time).minutes() !== date_time.minutes() && date_time.minutes() % 5 === 0)) {
             start_date_time = date_time.unix();
         }
     }

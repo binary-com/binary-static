@@ -1,4 +1,6 @@
-import { PropTypes as MobxPropTypes } from 'mobx-react';
+import {
+    observer,
+    PropTypes as MobxPropTypes }      from 'mobx-react';
 import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
@@ -299,4 +301,4 @@ TimePickerDropdown.propTypes = {
     sessions   : MobxPropTypes.arrayOrObservableArray,
 };
 
-export default TimePicker;
+export default observer(TimePicker);

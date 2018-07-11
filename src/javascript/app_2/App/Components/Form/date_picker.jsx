@@ -1,4 +1,5 @@
 import classNames   from 'classnames';
+import { observer } from 'mobx-react';
 import moment       from 'moment';
 import PropTypes    from 'prop-types';
 import React        from 'react';
@@ -692,4 +693,4 @@ DatePicker.propTypes = {
     showTodayBtn: PropTypes.bool,
 };
 
-export default DatePicker;
+export default observer(DatePicker);
