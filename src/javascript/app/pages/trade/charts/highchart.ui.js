@@ -12,7 +12,7 @@ const HighchartUI = (() => {
 
     const setLabels = (chart_delayed, contract_type, is_user_sold) => {
         const labels = { // needs to be inside setLabels function so localize works
-            start_time  : `<span style="${common_time_style} border-style: solid;"></span> ${localize('Start Time')} `,
+            start_time  : `<span id='chart_start_time'><span style="${common_time_style} border-style: solid;"></span> ${localize('Start Time')} </span>`,
             entry_spot  : `<span style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></span> ${localize('Entry Spot')} `,
             reset_time  : `<span style="${common_time_style} border-color: #000; border-style: solid;"></span> ${localize('Reset Time')} `,
             exit_spot   : `<span id='chart_exit_spot'><span style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></span> ${localize('Exit Spot')} </span>`,
