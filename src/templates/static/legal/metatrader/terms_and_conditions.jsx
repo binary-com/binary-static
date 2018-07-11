@@ -1,13 +1,21 @@
 import React from 'react';
+import BIEL from './biel.jsx';
+
+const Li = ({ title, subtitle, sub_list, paragraph }) => (
+    <li><strong>{title}</strong> &mdash; {subtitle}
+        { sub_list && <ol>{sub_list.map(list => <li key={list}>{list}</li>)}</ol> }
+        { paragraph && <p>{paragraph}</p> }
+    </li>
+);
 
 const TermsAndConditions = () => (
     <div id='mt-tnc'>
         <h2 data-anchor>{it.L('Terms and Conditions')}</h2>
-        <p><i>{it.L('Version 5. Last modified 2018-04-10.')}</i></p>
+        <p><i>{it.L('Version 6. Last modified 2018-07-03.')}</i></p>
 
         <h2 data-anchor>{it.L('A. Introduction and Scope of Agreement')}</h2>
         <ol>
-            <li>{it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either Binary (V) Ltd., Binary (C.R.) S.A., or Binary (Europe) Ltd depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website.', it.website_name)}</li>
+            <li>{it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote Binary (V) Ltd., Binary (C.R.) S.A., Binary (Europe) Ltd or Binary Investments (Europe) Ltd, depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website.', it.website_name)}</li>
             <li>{it.L('You understand that products based on a random number generator (the "Volatility Indices") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments.')}</li>
             <li>{it.L('All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading services described in this Agreement is not suitable for everyone. You acknowledge that the margin trading services described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us.')}</li>
             <li>{it.L('You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks.')}</li>
@@ -77,6 +85,7 @@ const TermsAndConditions = () => (
                                     <li>{it.L('We are required to do so in accordance with any relevant law or regulation.')}</li>
                                 </ol>
                             </li>
+                            <li>{it.L('Withdrawal of funds from your MT5 Real Account must be made in the same currency maintained in your Binary Options Real Account.')}</li>
                         </ol>
                     </li>
                 </ol>
@@ -106,7 +115,7 @@ const TermsAndConditions = () => (
                             <li>{it.L('It is your responsibility to keep your password and login ID confidential. You agree that you will not disclose your password and login ID to any other person;')}</li>
                             <li>{it.L('All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies;')}</li>
                             <li>{it.L('Our information security policies are based on industry best practices in access control and business continuity; and')}</li>
-                            <li>{it.L('We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues.')}</li>
+                            <li>{it.L('We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues.')}</li>
                         </ol>
                     </li>
                 </ol>
@@ -125,7 +134,7 @@ const TermsAndConditions = () => (
             <li>{it.L('Order Execution/Cancellation/Modification')}
                 <ol>
                     <li>{it.L('You acknowledge that it is your responsibility to understand the features, characteristics, terms and conditions of an Order and the implications of executing an Order before you place an Order with us.')}</li>
-                    <li>{it.L('Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price.')}</li>
+                    <li>{it.L('Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price. This can happen under certain trading conditions when there are sharp price movements in the market. In that case the company has the right to execute the order at the first available price.')}</li>
                     <li>{it.L('We endeavour to open or close the Transaction to which your Order relates at the price reasonably available to us, acting in accordance with our duty of best execution. Best execution means that we must take all sufficient steps to obtain, when executing orders, the best possible result for you, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the order.')}</li>
                     <li>{it.L('Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices.')}</li>
                 </ol>
@@ -134,10 +143,10 @@ const TermsAndConditions = () => (
                 <ol>
                     <li>{it.L('We may, at our absolute discretion, accept a Stop Order or a Limit Order from you. We may enable other types of Orders (for example, a trailing stop order) for your execution at any point in time.')}</li>
                     <li>{it.L('You may specify your instruction of a Stop Order or a Limit Order may be applied for a limited duration or for an indefinite period (a "good till cancelled" or "GTC" Order).')}</li>
-                    <li>{it.L('In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at the Next Available Price.')}</li>
-                    <li>{it.L('In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you.')}</li>
+                    <li>{it.L('In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at a price equal to the one you specified. However, if the specified price is unavailable, a less favourable price may be quoted. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you.')}</li>
+                    <li>{it.L('In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price.')}</li>
                     <li>{it.L('You may not cancel or amend the level of your Stop and Limit Order prior to the closing of your Transaction once the level has been reached.')}</li>
-                    <li>{it.L('You acknowledge that a Stop or Limit Order placed on your Open Position, when executed, would be capable of closing or partly closing your Transaction. You also acknowledge that it is your responsibility to cancel the Stop or Limit Order that you placed on your Open Positions if you do not want the Stop or Limit Order to remain valid. If you close your original Transaction and fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order.')}</li>
+                    <li>{it.L('You acknowledge that it is your responsibility to cancel the Stop or Limit Order if you do not want the Stop or Limit Order to remain valid. If you fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order.')}</li>
                     <li>{it.L('You acknowledge that we reserve the right to establish a minimum and maximum transaction size which may be subject to alteration and that we will only execute Orders that fall within the range of the minimum and maximum transaction size.')}</li>
                     <li>{it.L('We may, at our absolute discretion, disregard your Order if an Event takes place resulting in it no longer being reasonable for us to act on your Order after indicating an acceptance of your Order.')}</li>
                 </ol>
@@ -171,7 +180,7 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('Negative Balance Protection')}
                 <ol>
-                    <li>{it.L('The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:')}
+                    <li>{it.L('The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:')}
                         <ol>
                             <li>{it.L('in the case of a force majeure event;')}</li>
                             <li>{it.L('in abnormal market conditions or exceptional market movements/volatility;')}</li>
@@ -196,7 +205,7 @@ const TermsAndConditions = () => (
             <li>{it.L('Potential Conflicts of Interest')}
                 <ol>
                     <li>{it.L('The margin trading services described in this Agreement are conducted over the counter. This means that the market in one or more of the instruments which you ordinarily transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the electronic trading platform as described in this Agreement.')}</li>
-                    <li>{it.L('You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company\'s own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company.')}</li>
+                    <li>{it.L('You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company\'s own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the latter, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company.')}</li>
                     <li>{it.L('Whilst we endeavour to take all reasonable and sufficient steps, as required by applicable laws and regulations, to identify potential conflicts of interests between ourselves and our clients, or between one client and another, that arise in the course of providing the margin trading services as described in this Agreement, by establishing and implementing policies and procedures, it is possible that we may execute certain Transactions which may have other direct or indirect material interests.')}</li>
                     <li>{it.L('Given our role as a margin trading service provider as described in this Agreement, we seek to avoid undue market influence to the extent consistent with your trading needs and our risk management policies and procedures. By continuing to use the margin trading services described in this Agreement, you acknowledge that you are aware of the potential conflict of interest disclosed that may arise and cannot be completely eliminated, and you consent us to act notwithstanding such potential conflict of interests.')}</li>
                 </ol>
@@ -266,6 +275,7 @@ const TermsAndConditions = () => (
                                 <ol>
                                     <li>{it.L('The hours of closure of the market (for e.g., the hours over the weekend during which trading of certain transactions are not possible);')}</li>
                                     <li>{it.L('The minimum, incremental and maximum transaction amount;')}</li>
+                                    <li>{it.L('The Margin Requirement;')}</li>
                                     <li>{it.L('The instruments available on the electronic trading platform (including their availability for trading);')}</li>
                                     <li>{it.L('The cut-off time for performing Roll-overs and booking of the Roll-over Credit/Debit.')}</li>
                                 </ol>
@@ -343,7 +353,7 @@ const TermsAndConditions = () => (
                     <li>{it.L('You have fully read and understood the: (i) Risk Disclosure Statement; (ii) Order Execution Policy; (iii) terms and condition attached to this Agreement; before requesting to open a MT5 Real Account with us;')}</li>
                     <li>{it.L('You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into, and perform this Agreement and such Transactions lawfully;')}</li>
                     <li>{it.L('The execution, delivery, and performance of this Agreement and each Transaction will not violate any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident.')}</li>
-                    <li>{it.L('You are willing and financially able to sustain a total loss of funds (which may exceed your initial deposit) resulting from a Transaction;')}</li>
+                    <li>{it.L('You are willing and financially able to sustain a total loss of funds (which may exceed your initial deposit, unless you are a Customer of Binary Investments (Europe) Ltd) resulting from a Transaction;')}</li>
                     <li>{it.L('Any information which you provide or have provided to us in respect of your financial position, domicile or other matters is accurate and not misleading in any material respect.')}</li>
                 </ol>
             </li>
@@ -367,41 +377,61 @@ const TermsAndConditions = () => (
 
         <h2 data-anchor>{it.L('Q. Miscellaneous')}</h2>
         <ol>
-            <li>{it.L('Unless proven to be wrong, our records shall be used as evidence of your dealings with us in connection with the margin trading services described in this Agreement. You agree to use our records as evidence in any such legal or regulatory proceedings and you agree to keep your own record of your dealings with us that will help us investigate any complaints or disputes. If the records used as evidence of your dealings with us are not originals, are in the form of diagrams or charts, or are system generated content, you will not object to the use of such records as evidence.')}</li>
-            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2018 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-2018 Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
+            <li>{it.L('You agree that in any Legal or Arbitration or Mediation or Regulatory or Administration or any other proceedings, initiated by you or by us, the Company’s records related to your dealings shall constitute evidence. Subject to the Laws and any Court or tribunal or Competent Authority or Government Authority Orders or requests or instructions or guidelines, you shall not object to the admission of such records because they are not originals, or in writing, or produced by computers or any other electronic systems whatsoever. You shall not rely on the Company to meet any of your disclosures or other obligations imposed by any Court or tribunal or Competent Authority or Government Authority.')}</li>
+            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2018 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-2018 Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
             <li>{it.L('If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect.')}</li>
             <li>{it.L('In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident.')}</li>
         </ol>
 
         <h2 data-anchor>{it.L('R. Interpretation of Terms')}</h2>
         <ol>
-            <li>{it.L('Account Balance &mdash; Your account balance represents:')}
-                <ol>
-                    <li>{it.L('net of fund transfers between your Binary Options Account and your MT5 Real Account;')}</li>
-                    <li>{it.L('net of realised profits credited to your MT5 Real Account and realised losses debited from your MT5 Real Account;')}</li>
-                    <li>{it.L('net of any other money credited to your MT5 Real Account and debited from your MT5 Real Account. Your account balance includes Margin Requirement. The amount of your account balance in excess of Margin Requirement is available for your withdrawal. The amount set aside for Margin Requirement is not available for your withdrawal.')}</li>
-                </ol>
-            </li>
-            <li>{it.L('Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss.')}</li>
-            <li>{it.L('Account Free Margin &mdash; Your Account Equity minus your Total Margin.')}</li>
-            <li>{it.L('Binary Options Real Account &mdash; Your real money account opened with [_1] which you use to trade binary options with [_1].', it.website_name)}</li>
-            <li>{it.L('Event &mdash; Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others.')}</li>
-            <li>{it.L('Limit/Limit Price &mdash; The price specified in your Limit Order.')}</li>
-            <li>{it.L('Limit Order &mdash; An instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.')}</li>
-            <li>{it.L('Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract.')}</li>
-            <li>{it.L('Margin Level &mdash; Ratio of Account Equity to Total Margin, expressed as a percentage.')}</li>
-            <li>{it.L('Next Available Price &mdash; Earliest price reasonably available and quoted by [_1] when our Price quotation reaches or goes beyond the level of your Stop Order.', it.website_name)}</li>
-            <li>{it.L('Open Position &mdash; The position in a market made by reference to an Underlying Instrument created by opening a Transaction as a result of placing an Order to the extent that such position has not been closed in whole or in part under this Agreement.')}</li>
-            <li>{it.L('Order &mdash; An execution instruction given by you to us in relation to a Market Order, Stop Order, Limit Order, and etc.')}</li>
-            <li>{it.L('Price/Prices &mdash; Bid and Offer Price/Prices.')}</li>
-            <li>{it.L('MT5 Real Account &mdash; Your real money account opened with [_1]\'s MT5 Trading Platform licensed from MetaQuotes Software Corporation.', it.website_name)}</li>
-            <li>{it.L('Roll-over &mdash; In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day.')}</li>
-            <li>{it.L('Roll-over Credit/Debit &mdash; Accounts with Open Positions concerned by the Roll-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company at its sole discretion.')}</li>
-            <li>{it.L('Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price.')}</li>
-            <li>{it.L('Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent.')}</li>
-            <li>{it.L('Total Margin &mdash; The aggregate of all Margin Requirements in your MT5 Real Account.')}</li>
-            <li>{it.L('Transaction &mdash; A contract entered into by you pursuant to this Agreement.')}</li>
+            <Li 
+                title={it.L('Account Balance')}
+                subtitle={it.L('Your account balance represents:')}
+                sub_list={[
+                    it.L('net of fund transfers between your Binary Options Real Account and your MT5 Real Account;'),
+                    it.L('net of realised profits credited to your MT5 Real Account and realised losses debited from your MT5 Real Account;'),
+                    it.L('net of any other money credited to your MT5 Real Account and debited from your MT5 Real Account.'),
+                ]}
+                paragraph={it.L('Your account balance includes the Margin Requirement. The amount of your account balance in excess of the Margin Requirement is available for your withdrawal. The amount set aside for the Margin Requirement is not available for your withdrawal.')}
+            />
+            <Li title={it.L('Account Deposit Currency')}    subtitle={it.L('currency in which your MT5 Real Account will be operated.')} />
+            <Li title={it.L('Account Equity')}              subtitle={it.L('Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss.')} />
+            <Li title={it.L('Account Free Margin')}         subtitle={it.L('Your Account Equity minus your Total Margin.')} />
+            <Li title={it.L('Binary Options Real Account')} subtitle={it.L('Your Real Money Account opened with [_1] which you use to trade binary options with [_1] Trading Platform and Binary Webtrader.', it.website_name)} />
+            <Li title={it.L('CFD')}                         subtitle={it.L('Contract for Difference.')} />
+            <Li title={it.L('Client (or you)')}             subtitle={it.L('a natural person, legal person or organisation who opened an MT5 Real Account.')} />
+            <Li title={it.L('Compensation Scheme')}         subtitle={it.L('the scheme specified in the Investor Compensation Scheme Regulations (Laws of Malta/Subsidiary Legislation 370.09) for the purpose of paying compensation to the Investors.')} />
+            <Li title={it.L('Control of Assets Rules')}     subtitle={it.L('rules and regulations set out in the (Laws of Malta) <i>Investment Services Act (Control of Assets) Regulations, 1998 as amended,</i> or any subsequent regulation thereto.')} />
+            <Li title={it.L('Derivative')}                  subtitle={it.L('a financial instrument as defined in Article 2 Paragraph (5) of Regulation (EU) No 648/2012 of the European Parliament and of the Council (EMIR).')} />
+            <Li title={it.L('Event')}                       subtitle={it.L('Event examples include circumstances whereby the type of Transaction, which your Order is related to, ceased to be offered, or a Corporate Event, or the insolvency of a Company whose shares are related to the subject matter of the Order, and others.')} />
+            <Li title={it.L('Financial Instrument')}        subtitle={it.L('has the meaning attached to it by the Directive 2004/39/EC of the European Parliament and of the Council (MIFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MIFID II), whichever is in force.')} />
+            <Li title={it.L('Lot')}                         subtitle={it.L('a transaction unit representing a standardized quantity of the underlying instrument, as specified in the Product Disclosure and Specifications. On the Forex market 1 Lot constitutes the equivalent of 100,000 units of the base currency.')} />  
+            <Li title={it.L('Limit/Limit Price')}           subtitle={it.L('The price specified in your Limit Order.')} />
+            <Li title={it.L('Limit Order')}                 subtitle={it.L('An Order to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.')} />
+            <Li title={it.L('Margin')}                      subtitle={it.L('The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover your potential loss, if it occurs.')} />
+            <Li title={it.L('Margin Level')}                subtitle={it.L('Ratio of Account Equity to Total Margin, expressed as a percentage.')} />
+            <Li title={it.L('Market Order')}                subtitle={it.L('An Order to open or close a position in the market identified by reference to an Underlying Instrument at the current price.')} />
+            <Li title={it.L('Next Available Price')}        subtitle={it.L('Nearest price reasonably available and quoted by [_1] when our Price quotation reaches or goes beyond the level of your Stop Order.', it.website_name)} />
+            <Li title={it.L('Open Position')}               subtitle={it.L('The position in a market identified by reference to an Underlying Instrument, created by opening a Transaction as a result of placing a buy or sell Order to the extent that such position has not been closed in whole or in part by on opposite Order under this Agreement.')} />
+            <Li title={it.L('Order')}                       subtitle={it.L('An execution instruction given by you to us to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order etc.')} />
+            <Li title={it.L('Price(s)/Pricing Data')}       subtitle={it.L('Bid and Offer Price(s) of each Financial Instrument in the Transaction System, quoted at market price at the moment of pricing.')} />
+            <Li title={it.L('Professional Client')}         subtitle={it.L('a professional client as defined in the Directive 2004/39/EC of the European Parliament and of the Council (MiFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MiFID II), whichever is in force.')} />
+            <Li title={it.L('MT5 Real Account')}            subtitle={it.L('Your Real Money Account opened with the [_1] MT5 Trading Platform licensed by MetaQuotes Software Corporation.', it.website_name)} />
+            <Li title={it.L('Retail Client')}               subtitle={it.L('A client that is not a Professional Client or Eligible Counterparty.')} />
+            <Li title={it.L('Roll-over')}                   subtitle={it.L('In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day.')} />
+            <Li title={it.L('Roll-over Credit/Debit')}      subtitle={it.L('Accounts with Open Positions being Rolled-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company.')} />
+            <Li title={it.L('Settlement')}                  subtitle={it.L('When the Client\'s Cash Account with us is credited or charged with the net amount of the results of a transaction.')} />
+            <Li title={it.L('Spread')}                      subtitle={it.L('the difference between the bid and ask price of a Financial Instrument.')} />
+            <Li title={it.L('Stop Order/Stop Loss Order')}  subtitle={it.L('An Order to execute a Transaction to close an Open Position when the Price reaches your specified Price.')} />
+            <Li title={it.L('Stop Out Level')}              subtitle={it.L('The Margin Level at, or below which your Open Positions may be closed forcefully and automatically with or without your prior consent.')} />
+            <Li title={it.L('Terms')}                       subtitle={it.L('shall mean these Terms and Conditions regulating the provision of services.')} />
+            <Li title={it.L('Total Margin')}                subtitle={it.L('the aggregate of all Margin Requirements in your MT5 Real Account.')} />
+            <Li title={it.L('Transaction')}                 subtitle={it.L('A contract entered into by you pursuant to this Agreement.')} />
+            <Li title={it.L('Underlying instrument')}       subtitle={it.L('the underlying currency, or Financial Instrument, on which the price of the CFD is based.')} />
         </ol>
+
+        <BIEL />
     </div>
 );
 
