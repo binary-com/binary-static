@@ -19,7 +19,7 @@ export default class UIStore {
     @observable is_purchase_lock_on = false;
 
     // SmartCharts Controls
-    @observable is_chart_layout_left = false;
+    @observable is_chart_layout_default = false;
     @observable is_chart_asset_info_visible = false;
     @observable is_chart_countdown_visible = false;
 
@@ -39,7 +39,7 @@ export default class UIStore {
 
     @action.bound
     toggleChartLayout() {
-        this.is_chart_layout_left = !this.is_chart_layout_left;
+        this.is_chart_layout_default = !this.is_chart_layout_default;
     };
 
     @action.bound

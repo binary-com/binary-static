@@ -1,8 +1,8 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import Popover         from '../Elements/popover.jsx';
+import Popover         from '../../Components/Elements/popover.jsx';
 import ServerTime      from '../../Containers/server_time.jsx';
-import SettingsDialog  from '../Elements/SettingsDialog/settings_dialog.jsx';
+import SettingsDialog  from '../../Components/Elements/SettingsDialog/settings_dialog.jsx';
 import { BinaryLink }  from '../../routes';
 import { connect }     from '../../../Stores/connect';
 
@@ -92,6 +92,7 @@ const Settings = ({...props}) => (
         <SettingsDialog
             is_open={props.is_settings_dialog_on}
             toggleDialog={props.toggleSettingsDialog}
+            is_language_dialog_visible={props.is_language_dialog_visible}
         />
     </React.Fragment>
 );
@@ -132,15 +133,18 @@ TogglePortfolioDrawer.propTypes = {
 };
 
 Settings.propTypes = {
-    toggleSettingsDialog : PropTypes.func,
-    is_settings_dialog_on: PropTypes.bool,
+    toggleSettingsDialog      : PropTypes.func,
+    is_language_dialog_visible: PropTypes.bool,
+    is_settings_dialog_on     : PropTypes.bool,
+
 };
 
 export default connect(
     ({ ui }) => ({
-        is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
-        is_settings_dialog_on : ui.is_settings_dialog_on,
-        togglePortfolioDrawer : ui.togglePortfolioDrawer,
-        toggleSettingsDialog  : ui.toggleSettingsDialog,
+        is_language_dialog_visible: ui.is_language_dialog_on,
+        is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
+        is_settings_dialog_on     : ui.is_settings_dialog_on,
+        togglePortfolioDrawer     : ui.togglePortfolioDrawer,
+        toggleSettingsDialog      : ui.toggleSettingsDialog,
     })
 )(Footer);

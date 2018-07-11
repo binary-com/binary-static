@@ -1,6 +1,6 @@
 import React        from 'react';
 import PropTypes    from 'prop-types';
-import SettingsControl from './settings_control.jsx';
+import SettingsControl from '../../../../App/Components/Elements/SettingsDialog/settings_control.jsx';
 import { connect }  from '../../../../Stores/connect';
 import { get as getLanguage } from '../../../../../_common/language';
 
@@ -40,6 +40,7 @@ class GeneralSettings extends React.Component {
 GeneralSettings.propTypes = {
     showLanguage              : PropTypes.func,
     is_dark_mode              : PropTypes.bool,
+    is_language_visible       : PropTypes.bool,
     is_purchase_confirmed     : PropTypes.bool,
     is_purchase_locked        : PropTypes.bool,
     toggleDarkMode            : PropTypes.func,
@@ -49,10 +50,11 @@ GeneralSettings.propTypes = {
 
 export default connect(
     ({ ui }) => ({
-        showLanguage              : ui.showLanguageDialog,
         is_dark_mode              : ui.is_dark_mode_on,
+        is_language_visible       : ui.is_language_dialog_on,
         is_purchase_confirmed     : ui.is_purchase_confirm_on,
         is_purchase_locked        : ui.is_purchase_lock_on,
+        showLanguage              : ui.showLanguageDialog,
         toggleDarkMode            : ui.toggleDarkMode,
         togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
         togglePurchaseLock        : ui.togglePurchaseLock,

@@ -1,6 +1,6 @@
 import React           from 'react';
 import PropTypes       from 'prop-types';
-import SettingsControl from './settings_control.jsx';
+import SettingsControl from '../../../../App/Components/Elements/SettingsDialog/settings_control.jsx';
 import { connect }     from '../../../../Stores/connect';
 
 class ChartSettings extends React.Component {
@@ -11,7 +11,7 @@ class ChartSettings extends React.Component {
                     <SettingsControl
                         name='position'
                         toggle={this.props.toggleLayout}
-                        to_toggle={this.props.is_layout_left}
+                        to_toggle={this.props.is_layout_default}
                         style='toggle-chart-layout'
                     />
                     <SettingsControl
@@ -31,7 +31,7 @@ class ChartSettings extends React.Component {
 };
 
 ChartSettings.propTypes = {
-    is_layout_left      : PropTypes.bool,
+    is_layout_default   : PropTypes.bool,
     is_asset_visible    : PropTypes.bool,
     is_countdown_visible: PropTypes.bool,
     toggleLayout        : PropTypes.func,
@@ -41,7 +41,7 @@ ChartSettings.propTypes = {
 
 export default connect(
     ({ ui }) => ({
-        is_layout_left      : ui.is_chart_layout_left,
+        is_layout_default   : ui.is_chart_layout_default,
         is_asset_visible    : ui.is_chart_asset_info_visible,
         is_countdown_visible: ui.is_chart_countdown_visible,
         toggleLayout        : ui.toggleChartLayout,

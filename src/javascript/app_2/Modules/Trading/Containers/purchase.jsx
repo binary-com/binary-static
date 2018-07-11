@@ -2,6 +2,7 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
 import MessageBox        from '../Components/Form/Purchase/MessageBox';
+import PopConfirm        from '../../../App/Components/Elements/popconfirm.jsx';
 import UILoader          from '../../../App/Components/Elements/ui_loader.jsx';
 import Button            from '../../../App/Components/Form/button.jsx';
 import Fieldset          from '../../../App/Components/Form/fieldset.jsx';
@@ -12,6 +13,7 @@ import { isEmptyObject } from '../../../../_common/utility';
 const Purchase = ({
     barrier_count,
     currency,
+    is_purchase_confirm_on,
     is_purchase_enabled,
     is_purchase_locked,
     is_trade_enabled,
@@ -47,15 +49,29 @@ const Purchase = ({
                             currency={currency}
                             proposal_info={info}
                         />
-                        <Button
-                            is_disabled={is_disabled}
-                            id={`purchase_${type}`}
-                            className='primary green'
-                            has_effect
-                            text={localize('Purchase')}
-                            onClick={() => { onClickPurchase(info.id, info.stake); }}
-                            wrapperClassName='submit-section'
-                        />
+                        {is_purchase_confirm_on ?
+                            <PopConfirm alignment='left'>
+                                <Button
+                                    is_disabled={is_disabled}
+                                    id={`purchase_${type}`}
+                                    className='primary green'
+                                    has_effect
+                                    text={localize('Purchase')}
+                                    onClick={() => { onClickPurchase(info.id, info.stake); }}
+                                    wrapperClassName='submit-section'
+                                />
+                            </PopConfirm>
+                            :
+                            <Button
+                                is_disabled={is_disabled}
+                                id={`purchase_${type}`}
+                                className='primary green'
+                                has_effect
+                                text={localize('Purchase')}
+                                onClick={() => { onClickPurchase(info.id, info.stake); }}
+                                wrapperClassName='submit-section'
+                            />
+                        }
                     </React.Fragment>
                 }
             </Fieldset>
@@ -64,28 +80,30 @@ const Purchase = ({
 );
 
 Purchase.propTypes = {
-    barrier_count      : PropTypes.number,
-    currency           : PropTypes.string,
-    is_purchase_enabled: PropTypes.bool,
-    is_purchase_locked : PropTypes.bool,
-    is_trade_enabled   : PropTypes.bool,
-    onClickPurchase    : PropTypes.func,
-    onHoverPurchase    : PropTypes.func,
-    proposal_info      : PropTypes.object,
-    purchase_info      : PropTypes.object,
-    trade_types        : PropTypes.object,
+    barrier_count         : PropTypes.number,
+    currency              : PropTypes.string,
+    is_purchase_enabled   : PropTypes.bool,
+    is_purchase_confirm_on: PropTypes.bool,
+    is_purchase_locked    : PropTypes.bool,
+    is_trade_enabled      : PropTypes.bool,
+    onClickPurchase       : PropTypes.func,
+    onHoverPurchase       : PropTypes.func,
+    proposal_info         : PropTypes.object,
+    purchase_info         : PropTypes.object,
+    trade_types           : PropTypes.object,
 };
 
 export default connect(
     ({ modules, ui }) => ({
-        barrier_count      : modules.trade.barrier_count,
-        is_purchase_enabled: modules.trade.is_purchase_enabled,
-        is_trade_enabled   : modules.trade.is_trade_enabled,
-        onClickPurchase    : modules.trade.onPurchase,
-        onHoverPurchase    : modules.trade.onHoverPurchase,
-        proposal_info      : modules.trade.proposal_info,
-        purchase_info      : modules.trade.purchase_info,
-        trade_types        : modules.trade.trade_types,
-        is_purchase_locked : ui.is_purchase_lock_on,
+        barrier_count         : modules.trade.barrier_count,
+        is_purchase_enabled   : modules.trade.is_purchase_enabled,
+        is_trade_enabled      : modules.trade.is_trade_enabled,
+        onClickPurchase       : modules.trade.onPurchase,
+        onHoverPurchase       : modules.trade.onHoverPurchase,
+        proposal_info         : modules.trade.proposal_info,
+        purchase_info         : modules.trade.purchase_info,
+        trade_types           : modules.trade.trade_types,
+        is_purchase_confirm_on: ui.is_purchase_confirm_on,
+        is_purchase_locked    : ui.is_purchase_lock_on,
     })
 )(Purchase);

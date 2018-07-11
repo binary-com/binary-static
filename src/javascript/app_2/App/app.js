@@ -3,7 +3,7 @@ import PropTypes                     from 'prop-types';
 import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
-import Footer                        from './Components/Layout/footer.jsx';
+import Footer                        from '../App/Containers/Layout/footer.jsx';
 import Header                        from './Components/Layout/header.jsx';
 import { BinaryRoutes }              from './routes';
 import NetworkMonitor                from '../Services/network_monitor';
