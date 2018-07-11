@@ -124,10 +124,9 @@ const Highchart = (() => {
             return null;
         }
 
-        const is_jp_client = isJPClient();
-        const is_user_sold = contract.status === 'sold';
-        HighchartUI.setLabels(is_chart_delayed, contract.contract_type, is_user_sold);
+        HighchartUI.setLabels(getHighchartLabelParams());
 
+        const is_jp_client = isJPClient();
         const chart_options = {
             is_jp_client,
             type,
@@ -137,7 +136,7 @@ const Highchart = (() => {
             decimals  : history ? history.prices[0] : candles[0].open,
             entry_time: entry_tick_time ? entry_tick_time * 1000 : start_time * 1000,
             exit_time : exit_time ? exit_time * 1000 : null,
-            user_sold : is_user_sold,
+            user_sold : contract.status === 'sold',
         };
         if (Callputspread.isCallputspread(contract.contract_type)) {
             $.extend(chart_options, Callputspread.getChartOptions(contract));
@@ -157,6 +156,13 @@ const Highchart = (() => {
             }
         });
     };
+
+    const getHighchartLabelParams = () => ({
+        is_chart_delayed,
+        contract_type       : contract.contract_type,
+        is_user_sold        : contract.status === 'sold',
+        is_sold_before_start: sell_time < start_time,
+    });
 
     // type 'x' is used to draw lines such as start and end times
     // type 'y' is used to draw lines such as barrier
@@ -227,8 +233,8 @@ const Highchart = (() => {
                         }
 
                         // don't draw start time for contracts that are sold before contract starts
-                        if (sell_time && sell_time < start_time) {
-                            $('#chart_start_time').parent().css('left', '180px').end().remove();
+                        if (sell_time < start_time) {
+                            HighchartUI.updateLabels(chart, getHighchartLabelParams());
                         } else {
                             drawLineX({ value: start_time });
                         }
@@ -570,7 +576,7 @@ const Highchart = (() => {
             });
             if (is_sold_before_expiry) {
                 if (contract.status === 'sold') {
-                    $('#chart_exit_spot').parent().css('left', '180px').end().remove();
+                    HighchartUI.updateLabels(chart, getHighchartLabelParams());
                 } else {
                     selectTick(sell_spot_time, 'exit');
                 }
