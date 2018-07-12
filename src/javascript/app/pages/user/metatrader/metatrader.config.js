@@ -76,6 +76,7 @@ const MetaTraderConfig = (() => {
             ),
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
+                    // TODO: remove logs
                     console.log(Client.get('residence'));
                     BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
                         console.log(response.get_financial_assessment);
@@ -90,19 +91,27 @@ const MetaTraderConfig = (() => {
                             }
                             resolve(is_ok);
                         });
-                    } else if (Client.get('residence')) {
-                        console.log(Client.get('residence'));
-                        // TODO: check if spanish account
-                        // TODO: check if pass test or not
-                        Dialog.confirm({
-                            id     : 'spain_cnmv_warning',
-                            message: ['text', 'here'],
-                            ok_text: localize('Acknowledge'),
-                        }).then((is_ok) => {
-                            if (!is_ok) {
-                                BinaryPjax.load(Client.defaultRedirectUrl());
+                    } else if (Client.get('residence') === 'sp') {
+                        BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
+                            const { cfd_score, trading_score } = response.get_financial_assessment;
+                            const passed_financial_assessment = cfd_score === 4 || trading_score >= 8;
+                            const message = [
+                                localize('You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.'),
+                                localize('This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product.'),
+                            ];
+                            if (passed_financial_assessment) {
+                                message.splice(1, 0, localize('However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you.'));
                             }
-                            resolve(is_ok);
+                            Dialog.confirm({
+                                id     : 'spain_cnmv_warning',
+                                ok_text: localize('Acknowledge'),
+                                message,
+                            }).then((is_ok) => {
+                                if (!is_ok) {
+                                    BinaryPjax.load(Client.defaultRedirectUrl());
+                                }
+                                resolve(is_ok);
+                            });
                         });
                     } else {
                         resolve(true);
