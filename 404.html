@@ -85,17 +85,19 @@
     function handleReactUrl() {
 
         // if the url is not related to new app, returns false.
-        var lang_regex_string = '(' + all_languages.join('|') + ')\/app\.html';
+        var lang_regex_string = '(.*)(' + all_languages.join('|') + ')\/app\\.html';
 
         if (!new RegExp(lang_regex_string).test(href)) {
             return false;
         }
 
+        var l = window.location;
+        var sub_directories = new RegExp(lang_regex_string).exec(l.pathname)[1];
+
         // Since there are two sub entries after CNAME URL for the app 'www.binary.com/en/app.html'
         // the value of segment_count should be 2.
-        var segment_count = 2;
+        var segment_count = sub_directories.split('/').length;
 
-        var l = window.location;
 
 
         // Converting the path and query strings into just query strings and
