@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-09 06:26\n"
+"PO-Revision-Date: 2018-07-12 02:38\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -725,6 +725,9 @@ msgstr "除非%1的關鍵人員在執行職務時有此必要，我們嚴格禁�
 
 msgid "Account"
 msgstr "帳戶"
+
+msgid "Account Authenticated"
+msgstr ""
 
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "帳戶餘額 &mdash; 您的帳戶餘額代表:"
@@ -3133,9 +3136,6 @@ msgid "Enable two-factor authentication for an extra layer of security."
 msgstr "為雙重安全保障啟用雙因素身份驗證。"
 
 msgid "End Time"
-msgstr "結束時間"
-
-msgid "End time"
 msgstr "結束時間"
 
 msgid "Endpoint"
@@ -7005,11 +7005,11 @@ msgstr "回報"
 msgid "Payout"
 msgstr "賠付"
 
+msgid "Payout Range"
+msgstr ""
+
 msgid "Payout per lot = 1,000"
 msgstr "每手賠付額 = 1,000"
-
-msgid "Payout range"
-msgstr "賠付範圍"
 
 msgid "Pending"
 msgstr ""
@@ -7082,9 +7082,6 @@ msgstr "鉑金兌美元"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "請%1接受條款和條件%2，以提高存取款限額。"
-
-msgid "Please %1authenticate%2 your account before you make a deposit."
-msgstr "請在存款前 %1驗證%2 您的帳戶。"
 
 msgid "Please %1authenticate%2 your account."
 msgstr "請%1驗證%2您的帳戶。"
@@ -7397,9 +7394,6 @@ msgstr "行銷或廣告知識與經驗"
 
 msgid "Previous work experience in a client service and/or marketing role"
 msgstr "客戶服務和/或市場行銷崗位的工作經驗"
-
-msgid "Price"
-msgstr "價格"
 
 msgid "Price - the price at which the transaction in relation to your order is executed at."
 msgstr "價格 - 您的訂單相關的交易執行價格。"
@@ -7830,9 +7824,6 @@ msgstr "重設時間"
 msgid "Reset password"
 msgstr "重設密碼"
 
-msgid "Reset time"
-msgstr "重設時間"
-
 msgid "Reset to Original Settings"
 msgstr "重設為原始設定"
 
@@ -8117,9 +8108,6 @@ msgstr "按市價賣回交易。"
 
 msgid "Sell option"
 msgstr "賣出期權"
-
-msgid "Sell time"
-msgstr "賣出時間"
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses."
 msgstr "長期合約到期前售出交易，以保護您的盈利或將虧損降至最低。"
@@ -9575,6 +9563,9 @@ msgstr "星期四"
 
 msgid "Tick"
 msgstr "跳動點"
+
+msgid "Tick %1"
+msgstr ""
 
 msgid "Tick %1 is not the highest tick"
 msgstr "跳動點 %1 不是最高跳動點"
