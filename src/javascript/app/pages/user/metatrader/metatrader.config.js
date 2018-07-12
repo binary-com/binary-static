@@ -76,11 +76,6 @@ const MetaTraderConfig = (() => {
             ),
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
-                    // TODO: remove logs
-                    console.log(Client.get('residence'));
-                    BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
-                        console.log(response.get_financial_assessment);
-                    });
                     if (!accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
                             id     : 'confirm_new_account',
@@ -91,9 +86,14 @@ const MetaTraderConfig = (() => {
                             }
                             resolve(is_ok);
                         });
-                    } else if (Client.get('residence') === 'sp') {
+                    } else if (!accounts_info[acc_type].is_demo && Client.get('residence') === 'es') {
                         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
                             const { cfd_score, trading_score } = response.get_financial_assessment;
+                            if (trading_score === undefined) {
+                                // TODO: handle case when user hasn't done assessment test
+                                // user opened real account, but not financial account
+                                BinaryPjax.load(Client.defaultRedirectUrl());
+                            }
                             const passed_financial_assessment = cfd_score === 4 || trading_score >= 8;
                             const message = [
                                 localize('You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.'),
