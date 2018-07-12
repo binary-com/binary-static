@@ -300,7 +300,7 @@ const TermsAndConditions = () => (
 
         <h2 data-anchor>{it.L('L. Event of Default')}</h2>
         <ol>
-            <li>{it.L('Each of the following events constitutes an "Event of Default":')}
+            <li>{it.L('Each of the following events constitute an "Event of Default":')}
                 <ol>
                     <li>{it.L('Your death, your incapacity, become of unsound mind or your inability to pay your debts as they fall due, or is bankrupt or insolvent, as defined under any bankruptcy or insolvency law applicable to you, if you are an individual;')}</li>
                     <li>{it.L('The Margin Level of your MT5 Real Account reaches or falls below the Stop Out Level;')}</li>
