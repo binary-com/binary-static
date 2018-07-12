@@ -12,6 +12,7 @@ const Platforms = ({
     target,
     button_text,
     button_class = '',
+    download = '',
 }) => (
     <div className={`gr-5 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
         <div className='gr-12 gr-centered-m gr-centered-p'>
@@ -24,7 +25,7 @@ const Platforms = ({
             <div className='gr-row'>
                 <div className='gr-12'>
                     { url &&
-                        <a className={`button ${button_class}`} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        <a className={`button ${button_class}`} download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                     }
                 </div>
             </div>
@@ -75,8 +76,8 @@ const Platform = () => (
                     description={it.L('Advanced binary options trading interface')}
                     text={it.L('Monitor the movements of your favourite assets and markets at the same time.')}
                     url='https://webtrader.binary.com'
-                    target='_blank'
                     button_text={it.L('Try WebTrader')}
+                    download='true'
                 />
             </div>
             <div className='gr-row gr-padding-30'>
