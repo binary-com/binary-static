@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-09 06:25\n"
+"PO-Revision-Date: 2018-07-12 02:37\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -726,6 +726,9 @@ msgstr "El acceso a sus datos personales está estrictamente prohibido, con la e
 
 msgid "Account"
 msgstr "Cuenta"
+
+msgid "Account Authenticated"
+msgstr ""
 
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "Saldo de la cuenta &mdash; El saldo de su cuenta representa:"
@@ -3137,9 +3140,6 @@ msgstr "Habilite la autenticación de dos factores para una capa adicional de se
 msgid "End Time"
 msgstr "Hora de finalización"
 
-msgid "End time"
-msgstr "Hora de finalización"
-
 msgid "Endpoint"
 msgstr "Punto final"
 
@@ -4846,7 +4846,7 @@ msgid "Investigate and reproduce client-reported issues"
 msgstr "Investigar y reproducir los problemas comunicados por clientes"
 
 msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
-msgstr ""
+msgstr "Invertir en productos complejos, como CFDs y FX puede incurrir en pérdidas y ganancias. Los precios pueden variar y / o fluctuar debido a cambios en precios y condiciones actuales del mercado, lo que puede afectar el rendimiento de su inversión. Antes de tomar una decisión de Inversión, debe consultar nuestros Documentos de Información Clave en nuestro sitio web, en particular, la cantidad de Margen requerida para los instrumentos específicos que ofrecemos. Los Productos ofrecidos por Binary Investments (Europe) Ltd entran en la categoría de \"productos complejos\" y pueden no ser adecuados para clientes minoristas."
 
 msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices, stocks and commodities each of which have their own features and risks."
 msgstr "La inversión o las operaciones con contratos le exponen a las prestaciones del instrumento o activo subyacente o de referencia al que se refiere el contrato binario incluyendo divisas, índices, acciones y materias primas, cada uno de los cuales tiene sus propias características y sus propios riesgos."
@@ -7008,11 +7008,11 @@ msgstr "Recompensa"
 msgid "Payout"
 msgstr "Pago"
 
+msgid "Payout Range"
+msgstr ""
+
 msgid "Payout per lot = 1,000"
 msgstr "Pago por lote = 1.000"
-
-msgid "Payout range"
-msgstr "Rango de pago"
 
 msgid "Pending"
 msgstr ""
@@ -7085,9 +7085,6 @@ msgstr "Platino vs dólar estadounidense"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "Por favor %1acepte los términos y condiciones actualizados%2 para aumentar el límite de retiro y negociación de su cuenta."
-
-msgid "Please %1authenticate%2 your account before you make a deposit."
-msgstr "Porfavor, %1verifique%2 su cuenta antes de realizar un depósito."
 
 msgid "Please %1authenticate%2 your account."
 msgstr "Por favor, %1autentique%2 su cuenta."
@@ -7400,9 +7397,6 @@ msgstr "Conocimientos y experiencia previa de Marketing o Publicidad"
 
 msgid "Previous work experience in a client service and/or marketing role"
 msgstr "La experiencia previa de trabajo en el servicio de atención al cliente y/o marketing"
-
-msgid "Price"
-msgstr "Precio"
 
 msgid "Price - the price at which the transaction in relation to your order is executed at."
 msgstr "Precio - el precio al que se ejecuta la transacción en relación con su orden."
@@ -7833,9 +7827,6 @@ msgstr "Tiempo de Reset"
 msgid "Reset password"
 msgstr "Restablecer contraseña"
 
-msgid "Reset time"
-msgstr "Tiempo de Reset"
-
 msgid "Reset to Original Settings"
 msgstr "Restablecer los Ajustes Originales"
 
@@ -8120,9 +8111,6 @@ msgstr "Revenda los contratos según los precios del mercado."
 
 msgid "Sell option"
 msgstr "Opción de venta"
-
-msgid "Sell time"
-msgstr "Tiempo de venta"
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses."
 msgstr "Venda su contrato de largo plazo antes del vencimiento para conservar cualquier ganancia obtenida o para minimizar sus pérdidas."
@@ -9580,6 +9568,9 @@ msgstr "Jueves"
 
 msgid "Tick"
 msgstr "Intervalo"
+
+msgid "Tick %1"
+msgstr ""
 
 msgid "Tick %1 is not the highest tick"
 msgstr "El Tick %1 no es el tick más alto"
