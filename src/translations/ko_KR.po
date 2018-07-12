@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-12 02:37\n"
+"PO-Revision-Date: 2018-07-12 03:25\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -560,7 +560,13 @@ msgstr "다양한 인사관련 행정업무"
 msgid "A client is someone who has been referred through your unique affiliate link and who has deposited money into their %1 account. They must fulfil the following criteria:"
 msgstr ""
 
+msgid "A client that is not a Professional Client or Eligible Counterparty."
+msgstr ""
+
 msgid "A competitive and flexible affiliate programme that can be adapted to your needs"
+msgstr ""
+
+msgid "A contract entered into by you pursuant to this Agreement."
 msgstr ""
 
 msgid "A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the option whether to accept or decline it. If you do not accept the cookie, then you will need to input your login ID and password again at every form to log into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
@@ -731,7 +737,7 @@ msgstr ""
 msgid "Account Authenticated"
 msgstr ""
 
-msgid "Account Balance &mdash; Your account balance represents:"
+msgid "Account Balance"
 msgstr ""
 
 msgid "Account Categorisation"
@@ -740,13 +746,19 @@ msgstr ""
 msgid "Account Closure"
 msgstr "계좌 닫기"
 
-msgid "Account Equity &mdash; Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
+msgid "Account Deposit Currency"
 msgstr ""
 
-msgid "Account Free Margin &mdash; Your Account Equity minus your Total Margin."
+msgid "Account Equity"
+msgstr ""
+
+msgid "Account Free Margin"
 msgstr ""
 
 msgid "Account Limits"
+msgstr ""
+
+msgid "Account Management"
 msgstr ""
 
 msgid "Account Opening"
@@ -799,6 +811,9 @@ msgstr ""
 
 msgid "Accounts List"
 msgstr "계좌 목록"
+
+msgid "Accounts with Open Positions being Rolled-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company."
+msgstr ""
 
 msgid "Accounts with debit balance (i.e. credit exposure to %1)"
 msgstr ""
@@ -965,6 +980,9 @@ msgstr ""
 msgid "All conditions and durations"
 msgstr "모든 조건 및 기간"
 
+msgid "All credit card details are submitted directly to the Visa/MasterCard network using the latest SSL encryption technology, in accordance with bank policies;"
+msgstr ""
+
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies."
 msgstr ""
 
@@ -1010,10 +1028,16 @@ msgstr "모든 지불금"
 msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading services described in this Agreement is not suitable for everyone. You acknowledge that the margin trading services described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
 msgstr ""
 
+msgid "All software is to be used at your own risk. The Company will not be liable for any financial losses incurred using a third-party software. The Company is not associated with the development of the automated trading software or the Expert Advisors because they are exclusively developed and supported by third parties and not by the Company. The Company does not receive any form of financial and/or other benefits from permitting Expert Advisors to be used."
+msgstr ""
+
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "모든 시간은 GMT (그리니치 평균시)로 표시됩니다."
 
 msgid "All transactions that occur on the blockchain related to cryptocurrency may not be supervised and regulated by financial institutions and government agencies. The absence of an overarching authority overseeing cryptographic transactions means that there is no recourse to banks, payment service providers, or regulators in the event of erroneous or fraudulent transactions. It is your responsibility to check what rules and protections apply in your relevant jurisdiction before investing and / or trading in virtual currency and / or trading on contracts for differences relating to virtual currency. Please be aware of all the risks associated with cryptocurrency trading and seek advice from an independent financial advisor and / or legal advisor if you have any doubts."
+msgstr ""
+
+msgid "All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company’s responsibility hence the Company is not liable for such actions or results."
 msgstr ""
 
 msgid "All versions of Android"
@@ -1041,6 +1065,9 @@ msgid "Allow equals"
 msgstr ""
 
 msgid "Already have an account? %1Log in%2 here"
+msgstr ""
+
+msgid "Also consider that your internet connection can influence what price is displayed after the trade has been executed."
 msgstr ""
 
 msgid "Also known as counter currency"
@@ -1079,6 +1106,15 @@ msgstr ""
 msgid "An Open Position may be partially closed by entering into an opposite Transaction in the same Market but for a smaller number of lots (volume) as the Open Position."
 msgstr ""
 
+msgid "An Order to execute a Transaction to close an Open Position when the Price reaches your specified Price."
+msgstr ""
+
+msgid "An Order to open or close a position in the market identified by reference to an Underlying Instrument at the current price."
+msgstr ""
+
+msgid "An Order to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price."
+msgstr ""
+
 msgid "An additional password can be used to restrict access to the cashier."
 msgstr "캐쉬어 접근에 제한을 설정하기 위해 추가적인 비밀번호를 이용하실 수 있습니다."
 
@@ -1086,6 +1122,9 @@ msgid "An advanced university degree in Mathematics, Physics or Engineering"
 msgstr ""
 
 msgid "An assertive, sales-driven personality, able to adapt quickly and achieve powerful results"
+msgstr ""
+
+msgid "An execution instruction given by you to us to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order etc."
 msgstr ""
 
 msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Japanese, Italian, Thai, Polish, Russian, and Indonesian"
@@ -1226,10 +1265,16 @@ msgstr ""
 msgid "As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations."
 msgstr ""
 
+msgid "As a Client and Trader, you acknowledge, recognise and understand that:"
+msgstr ""
+
 msgid "As a General Affairs Executive, you will provide administrative support to several departments in areas related to vendor management, event planning, accounting, and human resources administration to name a few."
 msgstr ""
 
 msgid "As a Professional Client, you must keep us informed about any changes that may affect your status."
+msgstr ""
+
+msgid "As a Retail Client, you are provided with a higher degree of regulatory protection than a Professional Client or an Eligible Counterparty, since the latter are considered to be more experienced, knowledgeable and sophisticated, with the ability to assess their own risk."
 msgstr ""
 
 msgid "As a Senior Front-End Developer, you'll be tasked with writing robust, high-quality, production-ready code; refactoring and optimizing a large and complex legacy code base; and contributing to the architecture that drives our high-traffic global website."
@@ -1247,6 +1292,9 @@ msgstr ""
 msgid "As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues."
 msgstr ""
 
+msgid "As a result, your trades are executed at market as follows:"
+msgstr ""
+
 msgid "As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company."
 msgstr ""
 
@@ -1260,6 +1308,9 @@ msgid "As conclusion, keeping up with market news and trends in a certain sector
 msgstr ""
 
 msgid "As long as you follow these Terms, we grant you a limited, non-exclusive, non-assignable, non-transferable, terminable license to use the %1 API to develop, test, and support your Application, and to let your customers use your integration of the %1 API within your Application."
+msgstr ""
+
+msgid "As our Client, you agree to comply with the following when making payments to the Company:"
 msgstr ""
 
 msgid "As our DevOps Manager/Team Lead, you'll be responsible for the training, development and direction of a world class Linux-based Systems Administration team."
@@ -1299,6 +1350,12 @@ msgid "Aspects of a client order not affected by specific instructions are subje
 msgstr ""
 
 msgid "Assessment of Appropriateness"
+msgstr ""
+
+msgid "Assessment of appropriateness of the requested service or product as we assume that you appreciate risk disclosures associated with the requested investment services and products offered by the Company; "
+msgstr ""
+
+msgid "Assessment of appropriateness of the requested service or product as we assume that you appreciate the risks associated with such investment services and products offered by the Company;"
 msgstr ""
 
 msgid "Asset"
@@ -1436,6 +1493,9 @@ msgstr ""
 msgid "BIEL forms part of %1the Investor Compensation Scheme%2 (the \"Scheme\") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
 msgstr ""
 
+msgid "BIEL forms part of the Investor Compensation Scheme (the \"Scheme\") which is a rescue fund for investors that are clients of failed investment firms licensed by the MFSA. The Scheme covers 90% of the Company's net liability to a client in respect of investments which qualify for compensation under the Investment Services Act subject to a maximum payment to any one person of €20,000. The Scheme is based on EC Directive 97/9."
+msgstr ""
+
 msgid "BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta."
 msgstr ""
 
@@ -1502,6 +1562,12 @@ msgstr ""
 msgid "Based on the table below, can you tell what is the spread for the EUR/USD currency pair?"
 msgstr ""
 
+msgid "Because of the leverage effect, the Margin required in Margined Transactions and price changes in the Underlying Instruments, you may suffer significant losses;"
+msgstr ""
+
+msgid "Before the provision of our services, we conduct an appropriateness test for our Retail Clients, in accordance with our Regulatory obligations and in order to determine whether, on the basis of the Regulatory Criteria and information provided by you, you have the necessary skills, knowledge, expertise and experience in the investment field to understand the risks involved in the specific type of product or service requested."
+msgstr ""
+
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr ""
 
@@ -1518,6 +1584,9 @@ msgid "Best Execution Factors"
 msgstr ""
 
 msgid "Best Execution Policy"
+msgstr ""
+
+msgid "Best Execution Requirements;"
 msgstr ""
 
 msgid "Best execution is the requirement to take all sufficient steps to obtain, when executing orders, the best possible result for you taking into account price, costs, speed, likelihood of execution and settlement, size, nature or any other consideration relevant (hereinafter referred to as the \"execution factors\") to the execution of the order."
@@ -1548,6 +1617,9 @@ msgid "Betting system and method"
 msgstr "베팅 시스템과 방법"
 
 msgid "Bid"
+msgstr ""
+
+msgid "Bid and Offer Price(s) of each Financial Instrument in the Transaction System, quoted at market price at the moment of pricing."
 msgstr ""
 
 msgid "Bid price"
@@ -1610,6 +1682,12 @@ msgstr "바이너리 투자(유럽) 유한회사는 유럽연합 여권 권리�
 msgid "Binary Investments (Europe) Ltd"
 msgstr "바이너리 투자(유럽) 유한 책임회사"
 
+msgid "Binary Investments (Europe) Ltd aggregates the bid and ask prices from a pool of liquidity providers to determine and offer you the best available price of the instrument. The Company is always the final counterparty to your Transactions. The Company may execute orders on behalf of its clients, wherein the Company will act as a broker and pass on the order to the liquidity provider for execution. Alternatively, the Company may also keep the client’s order on its own account, wherein the Company will take the other side of the client’s trade. It is further noted that the Company may make a profit as a result of your losses and vice-versa. For further details please refer to our Conflicts of Interest Policy and Order Execution Policy."
+msgstr ""
+
+msgid "Binary Investments (Europe) Ltd shall review your complaint and provide you with the outcome of the investigation as promptly as possible, and at most within 15 days of the submission date. If we are unable to provide you with the final response within this time, due to an ongoing investigation of your complaint, we shall inform you of that fact and the anticipated timeframe to resolve the issue."
+msgstr ""
+
 msgid "Binary Investments (Europe) Ltd, Binary (Europe) Ltd, Binary (IOM) Ltd, Binary (CR) SA and all other Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
 msgstr ""
 
@@ -1637,7 +1715,7 @@ msgstr "47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands에 등록된 Bi
 msgid "Binary Options"
 msgstr "바이너리 옵션"
 
-msgid "Binary Options Real Account &mdash; Your real money account opened with %1 which you use to trade binary options with %1."
+msgid "Binary Options Real Account"
 msgstr ""
 
 msgid "Binary Options Trading Experience"
@@ -1763,10 +1841,16 @@ msgstr ""
 msgid "By clicking OK, you confirm that you have read and accepted Terms & Conditions."
 msgstr ""
 
+msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
+msgstr ""
+
 msgid "By default, all clients are treated as retail. Do you prefer to be treated as a professional client if you match the necessary criteria?"
 msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
+msgstr ""
+
+msgid "By entering into an agreement with us, you understand that CFDs are highly speculative, complex products and carry a high degree of risk, especially those traded on margin. Whilst you may generate profit and increase your capital, you may also expose yourself to losing the entire sum invested and your loss may exceed your deposit. The products attaching this Agreement are not appropriate for everyone. You acknowledge that the trading services described in this Agreement are designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
 msgstr ""
 
 msgid "By indicating your acceptance of these terms and conditions and continuing with your application to join our affiliate programme, you are agreeing to the terms and conditions set out in this Agreement. If you do not agree with the terms and conditions (or are not authorised to do so), you should not continue with your application."
@@ -1796,10 +1880,16 @@ msgstr ""
 msgid "By using or interacting with our website, you are giving permission to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID such as VRTC1234, CR1234, and MF1234. When this feature is enabled, no other personally identifiable information other than your %1 login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google."
 msgstr ""
 
+msgid "By using the electronic trading system, including the MT5 Trading Platform, Clients accept full responsibility for the use of such platforms and for any orders transmitted via such platforms."
+msgstr ""
+
 msgid "C. Definition of Best Execution"
 msgstr ""
 
 msgid "C. Provision of Services"
+msgstr ""
+
+msgid "CFD"
 msgstr ""
 
 msgid "CFD Energies"
@@ -1819,6 +1909,12 @@ msgstr ""
 
 msgid "CFDs"
 msgstr "차익결제거래"
+
+msgid "CFDs on commodities; and/or"
+msgstr ""
+
+msgid "CFDs on indices."
+msgstr ""
 
 msgid "Call Spread"
 msgstr ""
@@ -2054,11 +2150,17 @@ msgstr ""
 msgid "Click on the <strong>X</strong> button at the top right to save and close."
 msgstr ""
 
+msgid "Client (or you)"
+msgstr ""
+
 msgid "Client Classification"
 msgstr ""
 
 msgid "Client Money"
 msgstr "고객님의 돈"
+
+msgid "Client Reporting;"
+msgstr ""
 
 msgid "Client withdrawals"
 msgstr "클라이언트 인출액"
@@ -2222,6 +2324,9 @@ msgstr "회사의 권리"
 msgid "Compare MetaTrader 5 accounts"
 msgstr ""
 
+msgid "Compensation Scheme"
+msgstr ""
+
 msgid "Competitive and transparent pricing"
 msgstr ""
 
@@ -2354,6 +2459,9 @@ msgstr ""
 msgid "Contract Type"
 msgstr "계약 종류"
 
+msgid "Contract for Difference."
+msgstr ""
+
 msgid "Contract has not started yet"
 msgstr "계약이 아직 시작되지 않았습니다."
 
@@ -2419,6 +2527,9 @@ msgstr ""
 
 msgid "Contributors"
 msgstr "기여자"
+
+msgid "Control of Assets Rules"
+msgstr ""
 
 msgid "Controlled risk"
 msgstr "제어되는 위험"
@@ -2756,6 +2867,9 @@ msgstr ""
 msgid "Deposits and withdrawals have been disabled on your account. Please check your email for more details."
 msgstr ""
 
+msgid "Deposits and/or payments due are to be made in the currency chosen by you from the ones specified by the Company from time to time;"
+msgstr ""
+
 msgid "Derivative"
 msgstr ""
 
@@ -2972,6 +3086,9 @@ msgstr ""
 msgid "Duties and Responsibilities:"
 msgstr ""
 
+msgid "E-mail"
+msgstr ""
+
 msgid "E-wallet"
 msgstr ""
 
@@ -3020,10 +3137,10 @@ msgstr ""
 msgid "Each binary option is a prediction on the future movement of an underlying market."
 msgstr ""
 
-msgid "Each of the following event constitutes an \"Event of Default\":"
+msgid "Each of the following event constitutes an “Event of Default”:"
 msgstr ""
 
-msgid "Each of the following event constitutes an “Event of Default”:"
+msgid "Each of the following events constitute an \"Event of Default\":"
 msgstr ""
 
 msgid "Each option transaction has a specified expiry time and date, known as the judgment time."
@@ -3102,6 +3219,9 @@ msgid "Either party may terminate this Agreement forthwith on written notice if 
 msgstr ""
 
 msgid "Either party may terminate this Agreement on delivery of one weeks' prior written notice to the other party."
+msgstr ""
+
+msgid "Eligible Counterparties"
 msgstr ""
 
 msgid "Eligible Counterparty"
@@ -3278,7 +3398,10 @@ msgstr "짝/홀"
 msgid "Even/Odd contracts will be refunded at the purchase price if the contract doesn't end within 5 minutes."
 msgstr ""
 
-msgid "Event &mdash; Event examples include circumstances whereby the type of Transaction to which your Order is related to ceased to be offered, or a Corporate Event or the insolvency of a Company whose shares represent are related to the subject matter of the Order, and others."
+msgid "Event"
+msgstr ""
+
+msgid "Event examples include circumstances whereby the type of Transaction, which your Order is related to, ceased to be offered, or a Corporate Event, or the insolvency of a Company whose shares are related to the subject matter of the Order, and others."
 msgstr ""
 
 msgid "Events of Default"
@@ -3408,6 +3531,15 @@ msgid "Experience working with client-side JavaScript frameworks such as jQuery,
 msgstr ""
 
 msgid "Experience working within an international environment"
+msgstr ""
+
+msgid "Expert Advisors"
+msgstr ""
+
+msgid "Expert Advisors made available on the MT5 Trading Platform, are owned by MetaQuotes Software Corporation (the MT5 Trading Platform Licensor) and shall remain the exclusive property of MetaQuotes Software Corporation."
+msgstr ""
+
+msgid "Expert Advisors, including any additional functions/plug-ins of trading operations provided by or developed using Expert Advisors, are applications developed using the MetaQuotes Language which can be used to analyse price charts and automate your trades."
 msgstr ""
 
 msgid "Expert analysis and learning resources."
@@ -3546,6 +3678,9 @@ msgid "Financial Asset"
 msgstr ""
 
 msgid "Financial Information"
+msgstr ""
+
+msgid "Financial Instrument"
 msgstr ""
 
 msgid "Financial Risk approval is required. Please contact <a href=\"%1\">customer support</a> for more information."
@@ -4316,6 +4451,9 @@ msgstr ""
 msgid "If the Company (in its sole discretion) is not satisfied that a Client is complying with these terms, or if a Client does not comply with a reasonable request for information made by the Company, the Company may cancel the Client’s account and withhold any funds accumulated therein."
 msgstr "만약 본 회사가(본 회사의 재량으로) 고객이 이러한 조항을 따르지 않는 것에 대해 만족하지 않거나, 고객이본 회사에 의해 제공된 정보에 대해 합리적인 요구에 응하지 않는다면, 본 회사는 고객의 계좌를 취소할 수 있고 그 계좌의 축적된 자금을 보류할 수 있습니다."
 
+msgid "If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility."
+msgstr ""
+
 msgid "If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level."
 msgstr ""
 
@@ -4326,6 +4464,9 @@ msgid "If this Agreement is terminated for any reason, you must permanently dele
 msgstr ""
 
 msgid "If we decide to extend an offer, we'll conduct background and reference checks."
+msgstr ""
+
+msgid "If we decide to introduce a new Trading Platform, we shall provide you with a relevant notice within 30 days before we introduce the new Trading Platform or the additional Trading Platform. In such a notice, we will outline information including but not limited to features and operations of the new Trading Platform. Thus, using our backup database on the MT5 Trading Platform we shall integrate all data to the new Trading Platform, including but not limited to open trades, historical trades/data, and Accounts."
 msgstr ""
 
 msgid "If we determine that a force majeure event exists, the Company shall promptly give notice thereof to the client. Subsequently, we may, at our absolute discretion, take one or more of the following steps:"
@@ -4342,6 +4483,9 @@ msgstr ""
 
 msgid "If you are an individual, you are over 18 years old and you have full capacity to enter into this Agreement;"
 msgstr "만약 귀하께서 18세 이상의 개인이시면, 이에 대해 동의할수 있는 능력이 있습니다;"
+
+msgid "If you are categorised as a Professional Client or an Eligible Counterparty;"
+msgstr ""
 
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr ""
@@ -4363,6 +4507,9 @@ msgstr ""
 
 msgid "If you are, we'd love to hear from you."
 msgstr "만약 그러시다면, 저희는 귀하를 경청할 것입니다."
+
+msgid "If you ask to be treated as a Professional Client, you need to meet certain specified quantitative and qualitative criteria. On the basis of your request to be categorised as Professional, the Company undertakes an assessment of your expertise, knowledge and experience to determine whether you fall within this Category and whether you are able to make your own investment decisions and understand the risks involved. If the relevant criteria are not met, the Company reserves the right to choose whether to provide its services under this requested classification."
+msgstr ""
 
 msgid "If you choose to be treated as a Professional Client, we’ll regard you as having the required market knowledge and experience. As such, we’ll take steps to ensure that your request for Professional Client status meets the above criteria, including a request for the following:"
 msgstr ""
@@ -4394,10 +4541,16 @@ msgstr ""
 msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to submit a pull request on GitHub."
 msgstr ""
 
+msgid "If you have a positive balance in your MT5 Real Account, you may transfer such balance from your MT5 Real Account into your Binary Options Real Account and then request a withdrawal as necessary for any amount available on your Binary Options Real Account. The Company may withhold, deduct or refuse to make any such transfer or withdrawal, in whole or in part, if:"
+msgstr ""
+
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr ""
 
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
+msgstr ""
+
+msgid "If you incur a negative balance through your trading activities, you should inform the Company, who in return will evaluate the inquiry and at its discretion may credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy. Such decisions may be based on our local regulatory obligations and may entail subsequent closing of your Account."
 msgstr ""
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
@@ -4523,6 +4676,9 @@ msgstr ""
 msgid "If you wish to withdraw funds from your MT5 Real Account and close your MT5 Real Account, you may notify us by contacting our helpdesk at <a href='mailto:%1'>%1</a>. Your MT5 Real Account may be closed if you do not have any Open Positions and all amounts due to us have been settled."
 msgstr ""
 
+msgid "If you wish to withdraw funds from your MT5 Real Account and/or close your MT5 Real Account, you may notify us by contacting our helpdesk at %1. Your MT5 Real Account may be closed if you do not have any Open Positions and all amounts due to us have been settled."
+msgstr ""
+
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr ""
 
@@ -4556,6 +4712,9 @@ msgstr ""
 msgid "If your complaint relates to our data processing practices, you may formally submit a complaint to the Information and Data Protection Commissioner (Malta) on the entity’s %1website%2."
 msgstr ""
 
+msgid "If your complaint relates to the outcome of an investment or transaction and remains unresolved, it will turn into a dispute. Before contacting the Office of the Arbiter, we strongly recommend trying to resolve your concern with us."
+msgstr ""
+
 msgid "If your documents cannot be verified over video call for any reason, you will be required to send your documents to %1"
 msgstr ""
 
@@ -4566,6 +4725,9 @@ msgid "If your margin level is still under the stop out level, your next order w
 msgstr ""
 
 msgid "If your margin level reaches an even lower level (usually 50%), it will reach the stop out level where it is unable to sustain an open position. This will lead to some, or all your open positions being forcibly closed (also known as \"forced liquidation\")."
+msgstr ""
+
+msgid "If your usable margin drops below 100%, a margin call mode will be triggered and maintained till the level of 50%. In the event that your margin level is equal to, or drops below 50%, the Company will initiate the closing of your current open positions, starting from the most unprofitable until the required margin level is achieved. In such events, the positions will be automatically closed at the current market price at that point in time."
 msgstr ""
 
 msgid "If:"
@@ -4646,6 +4808,9 @@ msgstr ""
 msgid "In providing its services, the Agent shall:"
 msgstr ""
 
+msgid "In providing these services, we are bound by the Act, any applicable regulations, by-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
+msgstr ""
+
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr ""
 
@@ -4667,10 +4832,10 @@ msgstr ""
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
 msgstr "저희 고객님들의 경우, 영국에서는 Binary (맨 섬) 주식회사와 Binary 투자 (유럽) 주식회사를 통해 거래합니다. 맨 섬에서는 Binary (맨 섬) 주식회사를 통해 거래합니다. 일본에서는, Binary KK를 통해 거래합니다. 유럽 연합(영국 제외)에서는 Binary(유럽) 주식회사와 Binary 투자 (유럽) 주식회사를 통해 거래합니다. 나머지 국가에서는 Binary (C.R.) S.A.를 통해 거래합니다."
 
-msgid "In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
+msgid "In the case of a Limit Order, you acknowledge that we will endeavour to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price."
 msgstr ""
 
-msgid "In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at the Next Available Price."
+msgid "In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at a price equal to the one you specified. However, if the specified price is unavailable, a less favourable price may be quoted. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
 msgstr ""
 
 msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
@@ -4686,6 +4851,9 @@ msgid "In the event of any conflict between the content in this document and the
 msgstr ""
 
 msgid "In the event of your failing to make a Margin Payment, we may, at our absolute discretion, allow your Open Positions to remain open and allow you to place new Orders to open a Transaction. You acknowledge that, upon allowing your Open Positions to remain open, you may incur further losses."
+msgstr ""
+
+msgid "In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day."
 msgstr ""
 
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Programme. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the %1 website in respect of such action taken by the Company."
@@ -5654,10 +5822,10 @@ msgstr ""
 msgid "Limit"
 msgstr ""
 
-msgid "Limit Order &mdash; An instruction to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price."
+msgid "Limit Order"
 msgstr ""
 
-msgid "Limit/Limit Price &mdash; The price specified in your Limit Order."
+msgid "Limit/Limit Price"
 msgstr ""
 
 msgid "Limitations on Liability"
@@ -5744,6 +5912,9 @@ msgstr "룩백 옵션은 현재 %1변동성지수%2에 대해서만 가능합니
 msgid "Loss"
 msgstr ""
 
+msgid "Lot"
+msgstr ""
+
 msgid "Lot size"
 msgstr ""
 
@@ -5825,7 +5996,7 @@ msgstr "MT5 데모"
 msgid "MT5 Financial"
 msgstr "MT5 금융"
 
-msgid "MT5 Real Account &mdash; Your real money account opened with %1's MT5 Trading Platform licensed from MetaQuotes Software Corporation."
+msgid "MT5 Real Account"
 msgstr ""
 
 msgid "MT5 Volatility Indices"
@@ -5945,13 +6116,13 @@ msgstr "3월"
 msgid "March"
 msgstr ""
 
-msgid "Margin &mdash; The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover our exposure as a counterparty to your contract."
+msgid "Margin"
 msgstr ""
 
 msgid "Margin FX"
 msgstr ""
 
-msgid "Margin Level &mdash; Ratio of Account Equity to Total Margin, expressed as a percentage."
+msgid "Margin Level"
 msgstr ""
 
 msgid "Margin Payment"
@@ -5978,7 +6149,13 @@ msgstr ""
 msgid "Market"
 msgstr ""
 
+msgid "Market Execution"
+msgstr ""
+
 msgid "Market Opinions"
+msgstr ""
+
+msgid "Market Order"
 msgstr ""
 
 msgid "Market execution"
@@ -6311,6 +6488,9 @@ msgstr ""
 msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
 msgstr ""
 
+msgid "Nearest price reasonably available and quoted by %1 when our Price quotation reaches or goes beyond the level of your Stop Order."
+msgstr ""
+
 msgid "Need more information?"
 msgstr ""
 
@@ -6386,7 +6566,7 @@ msgstr ""
 msgid "Next"
 msgstr "다음"
 
-msgid "Next Available Price &mdash; Earliest price reasonably available and quoted by %1 when our Price quotation reaches or goes beyond the level of your Stop Order."
+msgid "Next Available Price"
 msgstr ""
 
 msgid "No"
@@ -6569,6 +6749,9 @@ msgstr ""
 msgid "Offset potential losses to your investment portfolio by hedging with CFDs."
 msgstr ""
 
+msgid "On the MT5 Trading Platform, you will benefit from Direct Market Access that gives you the opportunity to receive the best possible price in the market at a specified time, without having to use a dealing desk."
+msgstr ""
+
 msgid "On the basis of the information provided in relation to your knowledge and experience, we consider that the investments available via this website are not appropriate for you."
 msgstr ""
 
@@ -6662,7 +6845,7 @@ msgstr ""
 msgid "Open Account"
 msgstr ""
 
-msgid "Open Position &mdash; The position in a market made by reference to an Underlying Instrument created by opening a Transaction as a result of placing an Order to the extent that such position has not been closed in whole or in part under this Agreement."
+msgid "Open Position"
 msgstr ""
 
 msgid "Open Positions"
@@ -6670,6 +6853,9 @@ msgstr ""
 
 msgid "Open Source"
 msgstr "오픈 소스"
+
+msgid "Open a Binary Options Real Account through our website %1; and"
+msgstr ""
 
 msgid "Open a Financial Account"
 msgstr ""
@@ -6704,6 +6890,9 @@ msgstr ""
 msgid "Opening an Account"
 msgstr ""
 
+msgid "Opening an MT5 Real Account"
+msgstr ""
+
 msgid "Opening price"
 msgstr ""
 
@@ -6719,7 +6908,7 @@ msgstr "간단한 네/아니오 제안을 바탕으로 한 고정 지불금을 �
 msgid "Options trading can become a real addiction, as can any other activity pushed to its limits. To avoid the danger of such an addiction, we provide a reality-check that gives you a summary of your trades and accounts on a regular basis."
 msgstr ""
 
-msgid "Order &mdash; An execution instruction given by you to us in relation to a Market Order, Stop Order, Limit Order, and etc."
+msgid "Order"
 msgstr ""
 
 msgid "Order Execution"
@@ -7001,6 +7190,12 @@ msgstr ""
 msgid "Payments"
 msgstr ""
 
+msgid "Payments & Withdrawals"
+msgstr ""
+
+msgid "Payments made to the Company will only be deemed to have been received once the Company receives cleared funds; "
+msgstr ""
+
 msgid "Payoff"
 msgstr ""
 
@@ -7106,6 +7301,9 @@ msgstr ""
 msgid "Please accept the terms and conditions."
 msgstr ""
 
+msgid "Please be advised that prices can change very quickly in the market, so the execution price may not necessarily be visible instantly once the order has been filled."
+msgstr ""
+
 msgid "Please check the above form for pending errors."
 msgstr ""
 
@@ -7170,6 +7368,9 @@ msgid "Please make sure that you first agree with the Agent on the terms of paym
 msgstr ""
 
 msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgstr ""
+
+msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr ""
 
 msgid "Please note that one lot is equivalent to 100 units, based on our %1contract specifications%2."
@@ -7403,7 +7604,7 @@ msgstr ""
 msgid "Price Per Point"
 msgstr ""
 
-msgid "Price/Prices &mdash; Bid and Offer Price/Prices."
+msgid "Price(s)/Pricing Data"
 msgstr ""
 
 msgid "Primary"
@@ -7449,6 +7650,9 @@ msgid "Professional Client"
 msgstr ""
 
 msgid "Professional Clients"
+msgstr ""
+
+msgid "Professional Clients are offered the possibility to request reclassification, and thus increase the level of regulatory protection afforded, at any time during the relationship."
 msgstr ""
 
 msgid "Professionals"
@@ -7521,6 +7725,9 @@ msgid "Provide such information to the licensee as they may reasonably require i
 msgstr ""
 
 msgid "Provide the customer support agent with the four-digit verification code below for confirmation."
+msgstr ""
+
+msgid "Provision of Service"
 msgstr ""
 
 msgid "Provision of Services"
@@ -7606,6 +7813,9 @@ msgstr ""
 
 msgid "Range of markets"
 msgstr "다양한 시장"
+
+msgid "Ratio of Account Equity to Total Margin, expressed as a percentage."
+msgstr ""
 
 msgid "Re-enter password"
 msgstr "비밀번호를 재입력해주세요"
@@ -7874,6 +8084,9 @@ msgstr ""
 msgid "Restrictions"
 msgstr "제한"
 
+msgid "Retail Client"
+msgstr ""
+
 msgid "Retail Clients"
 msgstr ""
 
@@ -7937,6 +8150,9 @@ msgstr ""
 msgid "Rise/Fall trades"
 msgstr ""
 
+msgid "Risk Acknowledgement"
+msgstr ""
+
 msgid "Risk Disclaimer"
 msgstr "위험 책임 부인 공지"
 
@@ -7958,10 +8174,13 @@ msgstr ""
 msgid "Risks of Investment Products"
 msgstr ""
 
-msgid "Roll-over &mdash; In the event that the Company does not receive Orders from you to close an Open Position by the close of a Business Day, the Company will roll-over the said Open Position to the following day being a Business Day."
+msgid "Roll-over"
 msgstr ""
 
-msgid "Roll-over Credit/Debit &mdash; Accounts with Open Positions concerned by the Roll-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company at its sole discretion."
+msgid "Roll-over Credit/Debit"
+msgstr ""
+
+msgid "Rolling Spot Forex;"
 msgstr ""
 
 msgid "Run daily payments reports and report suspected fraud"
@@ -8016,6 +8235,9 @@ msgid "Secondary"
 msgstr ""
 
 msgid "Secret question"
+msgstr ""
+
+msgid "Secure Access"
 msgstr ""
 
 msgid "Security"
@@ -8177,6 +8399,9 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
+msgid "Settlement"
+msgstr ""
+
 msgid "Settles"
 msgstr "정착"
 
@@ -8223,6 +8448,9 @@ msgid "Should start with letter or number, and may contain hyphen and underscore
 msgstr ""
 
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
+msgstr ""
+
+msgid "Should you be unsatisfied with our response, you can also escalate your complaint to the Office of the Arbiter for Financial Services, who is independent from us. Complaints to the Arbiter for Financial Services should always be made in a prescribed form and addressed to the:"
 msgstr ""
 
 msgid "Show all historical transactions up to"
@@ -8462,13 +8690,10 @@ msgstr ""
 msgid "Stocks"
 msgstr ""
 
-msgid "Stop Order/Stop Loss Order &mdash; An instruction to execute a Transaction to close an Open Position when the Price reaches your specified Price."
+msgid "Stop Order/Stop Loss Order"
 msgstr ""
 
 msgid "Stop Out Level"
-msgstr ""
-
-msgid "Stop Out Level &mdash; The Margin Level at, or below, which your Open Positions may be forcefully closed with or without your prior consent."
 msgstr ""
 
 msgid "Stop and Limit Orders"
@@ -8516,7 +8741,7 @@ msgstr "일"
 msgid "Subject to any specific instructions which may be provided by you, when executing client orders, we will take all reasonable steps to obtain the best possible results for you. The best possible results will be determined in terms of total consideration, that is, the price of the instrument and the costs related to execution which shall include all expenses incurred by you that are directly related to the execution of the order."
 msgstr ""
 
-msgid "Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price."
+msgid "Subject to network latency, we endeavour to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price. This can happen under certain trading conditions when there are sharp price movements in the market. In that case the company has the right to execute the order at the first available price."
 msgstr ""
 
 msgid "Subject to the applicable governing law and the Client Agreement, you represent and acknowledge that this Agreement shall be admissible as an evidence in any legal, judicial, administrative, arbitration or mediation proceedings."
@@ -8564,6 +8789,9 @@ msgstr ""
 msgid "Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remains intact and that all copies include the following notice in a clearly visible position: &ldquo;Copyright 1999-<span class='currentYear'></span> Binary Ltd. All rights reserved.&rdquo;"
 msgstr ""
 
+msgid "Such transfer would result in your Account Equity being less than zero; "
+msgstr ""
+
 msgid "Such withdrawal would result in your Account Equity being less than zero; and/or"
 msgstr ""
 
@@ -8574,6 +8802,9 @@ msgid "Summary Order Execution Policy"
 msgstr ""
 
 msgid "Sunday"
+msgstr ""
+
+msgid "Supplementary Terms and Conditions for Financial Products Offered by Binary Investments (Europe) Ltd"
 msgstr ""
 
 msgid "Supplementary Terms and Conditions for Financial Products Offered by Binary Investments (Europe) Ltd "
@@ -8675,6 +8906,9 @@ msgstr ""
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
 msgstr ""
 
+msgid "Terms"
+msgstr ""
+
 msgid "Terms and Conditions"
 msgstr "이용 약관"
 
@@ -8729,7 +8963,7 @@ msgstr ""
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1 웹사이트는 특정 저작권으로부터 보호받고 있습니다."
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2018 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for noncommercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2018 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2018 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2018 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
 msgstr ""
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
@@ -8822,10 +9056,19 @@ msgstr ""
 msgid "The Average"
 msgstr ""
 
+msgid "The Client shall accept the risk of using any additional functions provided by the Expert Advisor on the MT5 Trading Platform. The Company has no responsibility for the outcome of such trading and reserves the right to accept or reject the use of such functions with absolute discretion."
+msgstr ""
+
 msgid "The Client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his %1 Account (hereinafter referred to as the “%1 Agent Account”)."
 msgstr ""
 
+msgid "The Client, before using the trading robots or Expert Advisors and forward trade, should test it on a demo Account. "
+msgstr ""
+
 msgid "The Company and Agent (hereinafter referred to as “the Parties”) desire to enter into this Agreement whereby the Company will offer to its Clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement."
+msgstr ""
+
+msgid "The Company does not accept any liability for any inconsistencies or results related to Clients utilizing Expert Advisors on the MT5 Trading Platform. Clients are liable for their use of Expert Advisors and the trading activity they conduct. The Company takes a neutral position on Clients’ use of Expert Advisors."
 msgstr ""
 
 msgid "The Company does not guarantee that the %1 API it provides will function without interruption or errors in functioning. In particular, the operation of the %1 API may be interrupted due to maintenance, updates, or system or network failures. The Company disclaims all liability for damages caused by any such interruption or errors in functioning."
@@ -8837,10 +9080,19 @@ msgstr ""
 msgid "The Company does not offer any credit facilities or arrangement to its clients in normal trading circumstances. You acknowledge and agree that you will not be dealing with us on credit, regardless of the amount of your Account Balance and Transactions entered into with us."
 msgstr ""
 
+msgid "The Company does not offer credit to its clients. You acknowledge and agree that you will not be dealing with us on credit."
+msgstr ""
+
 msgid "The Company does not provide a market amongst or between Clients for investments, securities, derivatives or speculations. Each financial contract purchased by a Client via this site is an individual agreement between that Client and the Company and is not a security, nor is it transferable, negotiable or assignable to or with any third party."
 msgstr "본 회사는 투자, 증권, 파생 상품 또는 투기 시장을 고객님들과의 사이에 제공하지 않습니다. 본 사이트를 통해 고객님이 구매하신 각 금융 계약은 고객과 본 회사간의 개인적 협약이며 보장 또는 양도 및 협상 또는 제 3자로 하여금 배정할 수 있는 것이 아닙니다."
 
-msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
+msgid "The Company does not provide and is not authorised to provide investment advice. The Company will not make personal recommendations or advise on the merits of buying and/or selling in particular investments."
+msgstr ""
+
+msgid "The Company ensures that complaints received will be investigated thoroughly and fairly. You may submit your complaint by sending an email to %1."
+msgstr ""
+
+msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
 msgstr ""
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
@@ -8848,6 +9100,9 @@ msgstr "본 회사는 상기 언급된 어떠한 상황 발생에 국한 되지 
 
 msgid "The Company has the discretion to seek information from Clients to verify compliance with these terms."
 msgstr "본 회사는 이의 조건에 준수사항을 확인하기 위해 고객으로부터 정보를 찾는 재량권이 있습니다."
+
+msgid "The Company is an independent legal entity and is not affiliated with the MT5 Trading Platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5."
+msgstr ""
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API;"
 msgstr ""
@@ -8879,6 +9134,9 @@ msgstr "본 회사는 이 웹사이트에 시장 주문을 배치함과 관련�
 msgid "The Company may use or disclose (or choose not to use or disclose) such Contributions for any purpose, in any way, in any media worldwide;"
 msgstr ""
 
+msgid "The Company may use the Client Money for the purposes of meeting obligations incurred by the Company in connection with the margining, guaranteeing, securing, transferring, adjusting or settling of your dealings in derivatives."
+msgstr ""
+
 msgid "The Company may withhold payment of funds accumulated in a Client’s account while it takes steps to verify compliance with these terms."
 msgstr "본 회사는 해당 조항에 적합하게 따르는 지에 대한 확인절차를 진행하는 동안 고객의 계좌에 축적된 지불금을 보류할 수 있습니다."
 
@@ -8889,6 +9147,12 @@ msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basi
 msgstr ""
 
 msgid "The Company provides the %1 website on an “as is” and “as available” basis, and gives no warranty that the %1 website will be free of errors, or that errors will be corrected, or that our website is free of any third party interferences such as hackers or any other harmful components that arise outside of the Company's control."
+msgstr ""
+
+msgid "The Company reasonably considers that funds may be required to meet any current or future Margin Requirements on Open Positions due to the underlying market conditions;"
+msgstr ""
+
+msgid "The Company reasonably determines that there is an unresolved dispute between the Company and the Client relating to the agreed Terms and Agreements;"
 msgstr ""
 
 msgid "The Company receives a complaint which could have involved the Alternate Dispute Resolution entity, or the Company believes that you, the Affiliate, is in breach of any laws, rules, and regulations that may be relevant or applicable to the jurisdiction(s) in which you operate or target your business;"
@@ -8915,6 +9179,9 @@ msgstr "본 회사는 이 사이트의 실행 또는 다음과 같은 부분들�
 msgid "The Company reserves the right to void, delay, or withhold payment of commission fees to you in situations including a suspected breach of a law or a breach of the terms and conditions of this Agreement."
 msgstr ""
 
+msgid "The Company shall assume that the information provided by the client is accurate and complete. The Company shall bear no responsibility if such information is inaccurate and/or incomplete."
+msgstr ""
+
 msgid "The Company shall be entitled to exercise any of its rights or fulfil any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies."
 msgstr ""
 
@@ -8925,6 +9192,9 @@ msgid "The Company shall not be in breach of its obligation under this Agreement
 msgstr ""
 
 msgid "The Company shall not be liable to you in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate's business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever."
+msgstr ""
+
+msgid "The Company shall not be obliged to provide Professional Clients with the following:"
 msgstr ""
 
 msgid "The Company shall not be responsible or liable for any advice on financial services provided by the Agent to any Client."
@@ -8948,16 +9218,31 @@ msgstr ""
 msgid "The Company shall provide you with statements accessible through an electronic system detailing the revenues generated by clients you have referred, if any, which have accrued to you over the course of the calendar month. Such statements shall be updated daily. At the end of a calendar month, the Company shall record your total share of Net Revenues, if any, during the previous calendar month. In the event that a revenue share in any calendar month is a negative amount, the Company shall be entitled but not obliged to carry forward and set off such negative amount against future revenue shares which would otherwise be payable to you. However, the Company shall also be entitled but not obliged to zeroise the negative balance that would otherwise be carried forward."
 msgstr ""
 
+msgid "The Company shall treat each applicant as a Retail Client at the time of Account opening, unless the Client requests to be treated as a Professional Client.  However, if the Client satisfies the definition of an Eligible Counterparty, the Company may treat the Client as such, following a mutual agreement."
+msgstr ""
+
 msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing your Transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by us or the prime brokers to yourselves. You acknowledge and agree that such data is proprietary to us and any such provider, and you will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. You represent and warrant that you will only use such data for purposes of facilitating your entry into Transactions with us on your MT5 Real Account in accordance with this Agreement and not for any other purpose. This clause does not apply to Volatility Indices."
 msgstr ""
 
+msgid "The Company treats the money deposited or earned as a result of profitable transactions by the client as ‘Client Money’ and in accordance with the Control of Assets Rules. Client Money is held in accounts segregated and designated as clients’ monies accounts, clearly separated from the Company's money."
+msgstr ""
+
+msgid "The Company will assess your knowledge and experience versus the appropriateness of the requested service/investment product."
+msgstr ""
+
 msgid "The Company will not be liable in any way to any persons in the event of force majeure, or for the act of any Government or legal authority or for the failure of or damage or destruction to, its computer systems, data or records or any part thereof, or for delays, losses, errors or omissions resulting from the failure or mismanagement of any telecommunications or computer equipment or software. The Company shall not be responsible for any damages or losses deemed or alleged to have resulted from or been caused by this site or its content. This includes any client's use or misuse of its content, the inability of any client to connect with or use the site, delay in operations or transmission, failure of communication lines, or any errors or omissions in content."
+msgstr ""
+
+msgid "The Company will not pay interest on the Client Money;"
 msgstr ""
 
 msgid "The Company will notify you by email if your application has been successful."
 msgstr "귀하의 지원 성공 여부에 대해 본 회사는 귀하께 이메일로 공지할 것입니다."
 
 msgid "The Company will provide advertising collaterals with links containing affiliate IDs which may be modified by us from time to time."
+msgstr ""
+
+msgid "The Company will rely on the transactions and other instructions entered into and/or given by your username and password, and as a Client, you are bound by any transaction or expense incurred in reliance on such order and/or instructions."
 msgstr ""
 
 msgid "The Company will, at its sole discretion, determine whether or not your application has been successful. The Company's decision is final and is not open to appeal."
@@ -8967,6 +9252,9 @@ msgid "The Company's Obligations"
 msgstr "본 회사의 의무"
 
 msgid "The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href=\"%1\">www.binary.com</a>."
+msgstr ""
+
+msgid "The Company, under no circumstances shall provide Investment and/or Financial and/or Legal and/or Tax and/or Regulatory and/or other Investment advice or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written or video information, which we may publish on our website or provide to you in any other manner. We will endeavour to ensure the accuracy and completeness of this information but it will not constitute independent investment research or investment advice provided by us to you."
 msgstr ""
 
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
@@ -8984,6 +9272,9 @@ msgstr ""
 msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is equivalent to 100,000 units. Each time you open a position on a currency symbol, you can start with a minimum transaction of <i>0.01 lots</i>."
 msgstr ""
 
+msgid "The Investors Compensation Scheme."
+msgstr ""
+
 msgid "The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same."
 msgstr ""
 
@@ -8993,10 +9284,16 @@ msgstr ""
 msgid "The MAM tool is ideal for money managers who want to easily manage multiple client accounts. It gives you the ability to simultaneously view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr ""
 
+msgid "The Margin Level at, or below which your Open Positions may be closed forcefully and automatically with or without your prior consent."
+msgstr ""
+
 msgid "The Margin Level of your MT5 Real Account reaches or falls below the Stop Out Level;"
 msgstr ""
 
 msgid "The Margin Requirement is a percentage of the value of the Open Positions and will continue to fluctuate in accordance with the value of the Open Positions throughout the duration of the relevant contracts (the \"Contract Value\")."
+msgstr ""
+
+msgid "The Margin Requirement;"
 msgstr ""
 
 msgid "The MetaTrader platform will no longer support Windows XP, Windows 2003, and Windows Vista after 01 October, 2017."
@@ -9053,6 +9350,9 @@ msgstr ""
 msgid "The ability to write high-quality, self-documenting code, using test-driven development techniques"
 msgstr ""
 
+msgid "The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover your potential loss, if it occurs."
+msgstr ""
+
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "이 자금세탁 방지 프로세스는 고객에게 다음과 같은 효과를 지닙니다:"
 
@@ -9084,6 +9384,9 @@ msgid "The calculation of the price to be paid (or the payout to be received) fo
 msgstr ""
 
 msgid "The charting data made available to Clients by the Company is indicative only and may at times differ from the real market values. The Company's decision as to the calculation of a financial contract price will be final and binding. The Company allows the option to sell contracts before expiry time of some contracts but will not be obliged to do so and can suspend this option depending on the current market conditions. Contracts may be amended when the underlying asset value is adjusted by corporate actions during the contract period."
+msgstr ""
+
+msgid "The client acknowledges and agrees that:"
 msgstr ""
 
 msgid "The client has reached a turnover that is 5 times the bonus amount"
@@ -9242,6 +9545,9 @@ msgstr ""
 msgid "The personal information that we collect and hold is treated as confidential. Confidential information will not be used for any purpose other than in connection with the provision of the margin trading services described in this Agreement. Confidential information will only be disclosed as and when required by law. We may also disclose such personal information to: (i) other companies within the Binary Group of companies; (ii) any such third parties as we see fit to assist us in servicing your MT5 Real Account; (iii) regulatory authorities upon their reasonable request; (iv) any such third parties as we see fit to assist us in enforcing our legal or contractual rights against you, including, but not limited, to legal advisors; (v) third parties as we see fit to investigate or prevent fraud or other illegal activities."
 msgstr ""
 
+msgid "The position in a market identified by reference to an Underlying Instrument, created by opening a Transaction as a result of placing a buy or sell Order to the extent that such position has not been closed in whole or in part by on opposite Order under this Agreement."
+msgstr ""
+
 msgid "The premier platform for trading binary options in the world's financial markets"
 msgstr "세계 금융시장에서 바이너리 옵션거래에 있어 최고의 플랫폼입니다."
 
@@ -9251,10 +9557,25 @@ msgstr ""
 msgid "The price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
 msgstr ""
 
+msgid "The price of your chosen investment appears on the platform/on your screen;"
+msgstr ""
+
+msgid "The price specified in your Limit Order."
+msgstr ""
+
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr ""
 
 msgid "The provision of the margin trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sublicensable, terminable licence from the third-party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that we reserve the right to change the third-party system provider/licensor during the course of providing the margin trading services described in this Agreement to you."
+msgstr ""
+
+msgid "The provision of the trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sub-licensable, terminable licence from the third-party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that when providing trading services, described in this Agreement to you, we may decide to change our third–party system provider/licensor and use a different Trading Platform, other than the MT5 Trading Platform. Hence, in such cases we may decide to use an entirely new third–party system provider/licensor (hereinafter referred to as the “new Trading Platform”) or to introduce an additional third–party system provider/licensor (hereinafter referred to as the “additional Trading Platform”)."
+msgstr ""
+
+msgid "The provisions of the Negative Balance protection do not apply:"
+msgstr ""
+
+msgid "The requested transfer would reduce your Account balance to less than the Margin required for your Open Positions;"
 msgstr ""
 
 msgid "The required minimum deposit has been made by the client AND"
@@ -9305,10 +9626,13 @@ msgstr ""
 msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
 msgstr ""
 
-msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote Binary (V) Ltd."
+msgid "The term 'we', 'us', 'our', 'ours', 'the Company', '%1' shall denote Binary (V) Ltd, or Binary Investments (Europe) Ltd."
 msgstr ""
 
-msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either Binary (V) Ltd., Binary (C.R.) S.A., or Binary (Europe) Ltd depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
+msgid "The term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote Binary (V) Ltd., Binary (C.R.) S.A., Binary (Europe) Ltd or Binary Investments (Europe) Ltd, depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website."
+msgstr ""
+
+msgid "The trading services described in this Agreement are OTC. This means that one or more of the underlying instruments in which you transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the Electronic Trading Platform as described in this Agreement."
 msgstr ""
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"), which shall be either of the Isle of Man, Malta, or Costa Rica. You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
@@ -9330,6 +9654,15 @@ msgid "Then, make your trade"
 msgstr "그다음, 거래를 실행하세요"
 
 msgid "There are four types of Smart FX indices that you can trade:"
+msgstr ""
+
+msgid "There are no charges for transferring money from your Binary Options Real Account to your MT5 Real Account. "
+msgstr ""
+
+msgid "There are no guaranteed profits in investment trading;"
+msgstr ""
+
+msgid "There are no restrictions to the use of Expert Advisors on the MT5 Trading Platform apart from unethical trading. Expert Advisors can be programmed for:"
 msgstr ""
 
 msgid "There are risks associated with utilizing an Internet-based deal execution trading system, including but not limited to the failure of hardware, software and Internet connection. Since %1 does not control signal power, its reception or routing via Internet, configuration of your equipment or reliability of its connection, we cannot be responsible for communication failures, distortions or delays when trading via the Internet."
@@ -9626,6 +9959,9 @@ msgstr "지원을 희망하시면 이력서와 커버레터를 %1로 제출해 �
 msgid "To apply, please submit your CV and a cover letter to %1."
 msgstr ""
 
+msgid "To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:"
+msgstr ""
+
 msgid "To be considered for this mission critical leadership role, you'll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment."
 msgstr ""
 
@@ -9722,7 +10058,7 @@ msgstr ""
 msgid "Total Cost"
 msgstr ""
 
-msgid "Total Margin &mdash; The aggregate of all Margin Requirements in your MT5 Real Account."
+msgid "Total Margin"
 msgstr ""
 
 msgid "Total Profit/Loss"
@@ -9917,13 +10253,19 @@ msgstr ""
 msgid "TradingView for %1"
 msgstr "%1의 TradingView"
 
-msgid "Transaction &mdash; A contract entered into by you pursuant to this Agreement."
+msgid "Transaction"
 msgstr ""
 
 msgid "Transaction ID"
 msgstr "거래 ID"
 
+msgid "Transaction monitoring is your responsibility in its entirety. The Company shall not conduct any monitoring of your trades entered into by you;"
+msgstr ""
+
 msgid "Transaction performed by %1 (App ID: %2)"
+msgstr ""
+
+msgid "Transactions in CFD instruments are traded outside a stock exchange or OTF or MTF;"
 msgstr ""
 
 msgid "Transfer"
@@ -9951,6 +10293,9 @@ msgid "Transfer funds to your MT5 account"
 msgstr ""
 
 msgid "Transfer of Data"
+msgstr ""
+
+msgid "Transfer of Funds from the MT5 Real Account"
 msgstr ""
 
 msgid "Transfer to"
@@ -10130,13 +10475,22 @@ msgstr ""
 msgid "Under the Rules, clients may be categorised into one of the following three categories:"
 msgstr ""
 
+msgid "Under the applicable regulations, the Company classifies its clients into three categories: Retail Clients, or Professional Clients, or Eligible Counterparties. Each category is assigned a different level of regulatory protection."
+msgstr ""
+
 msgid "Under the supervision of %1's Translation Project Manager, you will:"
+msgstr ""
+
+msgid "Under these Terms, you may enter into transactions in the following investments and instruments, all of which are Over-the-Counter (“OTC”) products:"
 msgstr ""
 
 msgid "Underage Gambling"
 msgstr ""
 
 msgid "Underlying"
+msgstr ""
+
+msgid "Underlying instrument"
 msgstr ""
 
 msgid "Underlying market"
@@ -10164,9 +10518,6 @@ msgid "University degree, preferably in Graphic Design or a related discipline"
 msgstr "그래픽디자인 또는 그 관련분야의 대학학위가 선호됩니다"
 
 msgid "Unless otherwise advised, we shall treat you as a Retail Client. You may also request by writing to us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. Professional Clients do not fall within the scope of the Investor Compensation Scheme. We reserve the right to accept or refuse any such request for change in classification."
-msgstr ""
-
-msgid "Unless proven to be wrong, our records shall be used as evidence of your dealings with us in connection with the margin trading services described in this Agreement. You agree to use our records as evidence in any such legal or regulatory proceedings and you agree to keep your own record of your dealings with us that will help us investigate any complaints or disputes. If the records used as evidence of your dealings with us are not originals, are in the form of diagrams or charts, or are system generated content, you will not object to the use of such records as evidence."
 msgstr ""
 
 msgid "Unlock Cashier"
@@ -10286,7 +10637,7 @@ msgstr "새 비밀번호를 확인하세요"
 msgid "Version 45. Last modified 2018-05-21."
 msgstr "버전 45. 최근 수정날짜 2018-05-21."
 
-msgid "Version 5. Last modified 2018-04-10."
+msgid "Version 6. Last modified 2018-07-03."
 msgstr ""
 
 msgid "Video Room Facility"
@@ -10445,6 +10796,9 @@ msgstr ""
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
 msgstr ""
 
+msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
+msgstr ""
+
 msgid "We are committed to making sure your personal data and transactions are secure:"
 msgstr ""
 
@@ -10464,6 +10818,9 @@ msgid "We are required by our licence to inform you about what happens to funds 
 msgstr "저희는 저희의 라이센스에 따라 귀하를 위해 보관하는계좌의 자금에 행해어지는 행위와 파산시 보호되어지는 자금 수준에 대해 귀하께 공지해야 하는 의무가 있습니다. 더 많은 정보를 아시려면, %1here%2를 참고하세요."
 
 msgid "We are required by our license to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency %1."
+msgstr ""
+
+msgid "We are required to do so in accordance with any relevant Law or Regulation."
 msgstr ""
 
 msgid "We are required to do so in accordance with any relevant law or regulation."
@@ -10598,7 +10955,10 @@ msgstr ""
 msgid "We support hundreds of deposit and withdrawal options, including Bitcoin."
 msgstr "저희는 비트코인을 포함해서 수많은 예금 및 인출 옵션들을 지원합니다."
 
-msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
+msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your Account. We also monitor Account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues."
+msgstr ""
+
+msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
 msgstr ""
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection and law-enforcement agencies to address fraud issues."
@@ -10748,6 +11108,12 @@ msgstr ""
 msgid "When the Client requests a withdrawal from his %1 Account, such request shall be automatically proceeded and as a result the requested sum shall be transferred from the %1 Client Account to %1 Agent Account. However, it is noted that where the Client reaches its withdrawal limits, a withdrawal request shall not automatically be proceeded before the required authentication process is conducted."
 msgstr ""
 
+msgid "When the Client's Cash Account with us is credited or charged with the net amount of the results of a transaction."
+msgstr ""
+
+msgid "When the order hits the liquidity provider’s server, or our server in case the order is taken on our own books, it is fulfilled."
+msgstr ""
+
 msgid "When the remaining funds in your account is unable to cover the leverage or margin requirement, your account will be placed under margin call. To prevent a margin call escalating into a stop out level, you can deposit additional funds into your account or close any open positions."
 msgstr ""
 
@@ -10760,6 +11126,9 @@ msgstr "매매시기"
 msgid "When to buy and sell?"
 msgstr "언제 매매하나요?"
 
+msgid "When using the MT5 Trading Platform, all our clients will be provided with margin monitoring functionality to protect you from encountering negative balances when trading under normal market conditions. As a trader, you should always, and at all times maintain the appropriate levels of margin in your trading account as the recommended method of your own risk management."
+msgstr ""
+
 msgid "When we accept an order from you to open or close a transaction, or any other specific instructions in relation to your order, we will endeavour to follow your instructions as far as reasonably possible, acting in accordance with our duty of best execution in accordance with your instructions. These specific instructions include, but are not limited to:"
 msgstr ""
 
@@ -10767,6 +11136,9 @@ msgid "When we deal on own account (dealing desk), we act as principal and not a
 msgstr ""
 
 msgid "When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere."
+msgstr ""
+
+msgid "When you are classified as an Eligible Counterparty we shall not provide you with:"
 msgstr ""
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there's no risk of 'slippage' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions."
@@ -10798,6 +11170,9 @@ msgstr ""
 
 msgid "When you trade with %1, you can be assured that your deposits are held in a separate trust account and are not used for any other purpose."
 msgstr "%1과 함께 거래를 하실때, 여러분께서는 여러분의 예금액이 신뢰할 수 있는 분리된 계좌에 목적 외의 다른 용도로는 사용이 되지 않도록 안전하게 관리되도록 보장받으실 수 있습니다."
+
+msgid "When you transfer your money to us for trading purposes, your funds are deposited in your Binary Options Real Account. If you choose to trade FX and CFDs you shall transfer funds from your Binary Options Real Account to your MT5 Real Account. Such transfer shall not be regarded as a transfer from two different Accounts but as a transfer of funds from your centralised Binary Options Real Account to the MT5 Real Account. No fund transfers shall be made to any other Account in the name of any third party."
+msgstr ""
 
 msgid "When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:"
 msgstr ""
@@ -10832,6 +11207,9 @@ msgstr ""
 msgid "Where our arrangements to manage conflicts are not or cannot be sufficient to be reasonably confident that risks of damage to a client's interest will be prevented we aim to disclose the general nature or sources of conflicts. This is aimed at allowing the client the opportunity to consider whether to ask for more information by sending an email to compliance<b></b>@<i></i>binary.com, or to continue with the service; we do not aim to provide detailed, highly specific or comprehensive information."
 msgstr ""
 
+msgid "Where such additional functions/plug-ins affect the reliability and/or smooth operation and/or orderly functioning of the MT5 Trading Platform, the Company has the right to immediately terminate its contractual relationship with its Clients by written notice."
+msgstr ""
+
 msgid "Where supportive colleagues are like a second family."
 msgstr ""
 
@@ -10857,6 +11235,9 @@ msgid "Where the Agent omits or fails or refuse whatsoever to provide the Compan
 msgstr ""
 
 msgid "Where the Agent owns, or operates website/s, shall:"
+msgstr ""
+
+msgid "Where the Client’s obligations to the Company are due and payable, the Company shall cease to treat as Client Money the amount equal to the amount of such obligations;"
 msgstr ""
 
 msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
@@ -11006,6 +11387,9 @@ msgstr ""
 msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr ""
 
+msgid "Withdrawal of funds from your MT5 Real Account must be made in the same currency maintained in your Binary Options Real Account."
+msgstr ""
+
 msgid "Withdrawal: %1 working day"
 msgstr "인출: 근무일 %1일"
 
@@ -11084,7 +11468,10 @@ msgstr ""
 msgid "You acknowledge and agree that you are solely and exclusively responsible for the control, operation and security of transactions and communications made through its access to or use of the %1 API. You acknowledge that there are risks associated with utilising an internet-based deal execution trading system including, but not limited to, the failure of hardware, software, and internet connections. You acknowledge that the Company does not control signal power, its reception or routing via the internet, configuration of your equipment or reliability of its connection, and the Company shall not be responsible for any communication failures, disruptions, errors, distortions or delays you may experience when trading via the internet using the %1 API."
 msgstr ""
 
-msgid "You acknowledge that a Stop or Limit Order placed on your Open Position, when executed, would be capable of closing or partly closing your Transaction. You also acknowledge that it is your responsibility to cancel the Stop or Limit Order that you placed on your Open Positions if you do not want the Stop or Limit Order to remain valid. If you close your original Transaction and fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order."
+msgid "You acknowledge that any explanation, trading recommendations, independent investment research, market commentary or any other information provided by the Company, is provided to you as marketing communication and/or educational material, for information purposes only, and does not construe any personal advice on the merits of investing."
+msgstr ""
+
+msgid "You acknowledge that it is your responsibility to cancel the Stop or Limit Order if you do not want the Stop or Limit Order to remain valid. If you fail to cancel the Stop or Limit Order, we shall be entitled, at our absolute discretion, to treat the Stop or Limit Order as an instruction to enter into a new Transaction for you if and when our quote reaches or goes beyond the level of the Stop or Limit Order."
 msgstr ""
 
 msgid "You acknowledge that it is your responsibility to monitor your Account Balance and Margin Requirement and we are not under any obligation to keep you informed (i.e., to make a Margin Call)."
@@ -11099,7 +11486,7 @@ msgstr ""
 msgid "You acknowledge that the Company may accept Orders and proceed with transactions for your Account executed by any employees or representatives of the Money Manager."
 msgstr ""
 
-msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the former, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
+msgid "You acknowledge that the Company will determine, at its discretion, the Transactions that will be kept in the Company's own book (known as B booking) and the Transactions that will be passed through to the prime brokers who act as liquidity providers for the Company (known as A booking). For the latter, the Company is the counterparty in these transactions and a correlation between the profit/loss made by the client and the profit/loss made by the Company exists. At any point in time, we may be entering into or may have entered into transactions with a large number of clients, each of whose interests may diverge from those of other clients. As such, the Company may be holding Open Positions that may not be aligned with your objectives/interests as an individual client of the Company."
 msgstr ""
 
 msgid "You acknowledge that the Money Manager is entitled to receive USD 20/per lot for Commission as fee charges. You also agree that the Company reserves the right to revise the fee charges from time to time. You further acknowledge that the Company shall be responsible for calculating the fee charges, via its automated systems. Thus, the Company shall be duly authorised to deduct the amount, defined as Commission, from the Account and to pay the Money Manager."
@@ -11145,6 +11532,9 @@ msgid "You agree and authorise the Money Manager to place all Orders and transac
 msgstr ""
 
 msgid "You agree that by developing on the %1 API, you are entering into a legally binding agreement with the Company."
+msgstr ""
+
+msgid "You agree that in any Legal or Arbitration or Mediation or Regulatory or Administration or any other proceedings, initiated by you or by us, the Company’s records related to your dealings shall constitute evidence. Subject to the Laws and any Court or tribunal or Competent Authority or Government Authority Orders or requests or instructions or guidelines, you shall not object to the admission of such records because they are not originals, or in writing, or produced by computers or any other electronic systems whatsoever. You shall not rely on the Company to meet any of your disclosures or other obligations imposed by any Court or tribunal or Competent Authority or Government Authority."
 msgstr ""
 
 msgid "You agree that this Agreement shall become effective on the Commencement Date. You also agree that unless this Agreement is revoked or terminated in accordance with Section E below, this Agreement shall remain valid and in full force."
@@ -11210,10 +11600,16 @@ msgstr ""
 msgid "You are not resident in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
 msgstr ""
 
+msgid "You are not trading in the actual underlying instrument, or the actual foreign currency; all transactions are settled in cash only."
+msgstr ""
+
 msgid "You are now using your %1Bitcoin Cash%2 account. Please fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr ""
 
 msgid "You are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
+msgstr ""
+
+msgid "You are responsible for all third-party electronic transfer fees in respect of payments;"
 msgstr ""
 
 msgid "You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through %1, you may wish to seek independent advice."
@@ -11222,13 +11618,19 @@ msgstr ""
 msgid "You are selling the base currency and buying the quote currency."
 msgstr ""
 
+msgid "You are to immediately notify us if you become aware of the loss, theft or disclosure to third parties of your login details."
+msgstr ""
+
 msgid "You are unilaterally entitled to request the revocation of the appointment of your Money Manager by electronically revoking your Money Manager's authorisation through the relevant functions provided in the system."
 msgstr ""
 
 msgid "You are warned of the following additional risks:"
 msgstr ""
 
-msgid "You are willing and financially able to sustain a total loss of funds (which may exceed your initial deposit) resulting from a Transaction;"
+msgid "You are willing and financially able to sustain a total loss of funds (which may exceed your initial deposit, unless you are a Customer of Binary Investments (Europe) Ltd) resulting from a Transaction;"
+msgstr ""
+
+msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr ""
 
 msgid "You can choose from two types of affiliate commission plans:"
@@ -11280,6 +11682,9 @@ msgid "You further acknowledge and agree that we will not be held liable or resp
 msgstr ""
 
 msgid "You further agree to indemnify the Company from any loss, damage or liability arising out of your failure or refuse to confirm all Orders and/or transactions proceeded."
+msgstr ""
+
+msgid "You have Open Positions on the Account showing a loss;"
 msgstr ""
 
 msgid "You have all necessary authority, powers, consents, licences and authorisations and have taken all necessary actions to enable you to enter into, and perform this Agreement and such Transactions lawfully;"
@@ -11492,7 +11897,13 @@ msgstr ""
 msgid "You should enter %1 characters."
 msgstr ""
 
+msgid "You should get independent advice from an investment adviser if you have any doubts about dealing in margined products."
+msgstr ""
+
 msgid "You should not sign up to receive the margin trading services described in this Agreement unless you understand their nature and the associated risks."
+msgstr ""
+
+msgid "You should not sign up to receive the trading services described in this Agreement unless you understand their nature and the associated risks."
 msgstr ""
 
 msgid "You should not trade or invest in Binary Options unless you know and understand the features risks involved and you may lose all the money invested."
@@ -11573,13 +11984,25 @@ msgstr "현재 고객님은 가상계좌를 쓰시고 계십니다."
 msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other currency)."
 msgstr ""
 
+msgid "Your Account Equity minus your Total Margin."
+msgstr ""
+
+msgid "Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
+msgstr ""
+
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr ""
 
 msgid "Your Existing Accounts"
 msgstr ""
 
+msgid "Your MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in your Binary Options Real Account."
+msgstr ""
+
 msgid "Your MT5 Real Account password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;"
+msgstr ""
+
+msgid "Your MT5 Real Account password and login ID are unique and passwords are hashed so that not even the employees at Binary Investments (Europe) Ltd can read/access them. This is the reason why we cannot retrieve your password and shall issue you with a new one to your email address if you cannot recall it;"
 msgstr ""
 
 msgid "Your MT5 Real Account shall be funded by transferring funds from your Binary Options Real Account, subject to the availability and sufficiency of funds in your Binary Options Real Account. No fund transfers shall be made to any other account in the name of any third party."
@@ -11587,6 +12010,18 @@ msgstr ""
 
 msgid "Your Property"
 msgstr "귀하의 재산"
+
+msgid "Your Real Money Account opened with %1 which you use to trade binary options with %1 Trading Platform and Binary Webtrader."
+msgstr ""
+
+msgid "Your Real Money Account opened with the %1 MT5 Trading Platform licensed by MetaQuotes Software Corporation."
+msgstr ""
+
+msgid "Your account balance includes the Margin Requirement. The amount of your account balance in excess of the Margin Requirement is available for your withdrawal. The amount set aside for the Margin Requirement is not available for your withdrawal."
+msgstr ""
+
+msgid "Your account balance represents:"
+msgstr ""
 
 msgid "Your account has no Login/Logout activity."
 msgstr ""
@@ -11642,7 +12077,7 @@ msgstr ""
 msgid "Your death, your incapacity, become of unsound mind or your inability to pay your debts as they fall due, or is bankrupt or insolvent, as defined under any bankruptcy or insolvency law applicable to you, if you are an individual;"
 msgstr ""
 
-msgid "Your debts are not settled as, and when, they fall due;"
+msgid "Your debts are not settled as, and when, they fall due."
 msgstr ""
 
 msgid "Your forex and contracts for differences transactions with %1 are linked to an underlying financial instrument and you will be exposed to price, currency exchange, interest rate or other volatility of the market to which your financial instrument is related to, especially if the market is of a jurisdiction that is foreign to you. Forex and contracts for differences trading over the internet via an electronic trading platform is subject to data latency risk which may result in delays in order execution."
@@ -11693,6 +12128,9 @@ msgstr ""
 msgid "Your token has expired or is invalid. Please click <a href=\"%1\">here</a> to restart the verification process."
 msgstr ""
 
+msgid "Your trades will be carried out on an execution-only basis through our online platform."
+msgstr ""
+
 msgid "Your trading statistics since %1."
 msgstr ""
 
@@ -11738,6 +12176,9 @@ msgstr ""
 msgid "a definite or indefinite period during which you wish to exclude yourself from the website."
 msgstr ""
 
+msgid "a financial instrument as defined in Article 2 Paragraph (5) of Regulation (EU) No 648/2012 of the European Parliament and of the Council (EMIR)."
+msgstr ""
+
 msgid "a limit on the amount of time you may trade in any given online session;"
 msgstr ""
 
@@ -11750,10 +12191,25 @@ msgstr ""
 msgid "a list of payment methods accepted;"
 msgstr ""
 
+msgid "a natural person, legal person or organisation who opened an MT5 Real Account."
+msgstr ""
+
+msgid "a professional client as defined in the Directive 2004/39/EC of the European Parliament and of the Council (MiFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MiFID II), whichever is in force."
+msgstr ""
+
+msgid "a transaction unit representing a standardized quantity of the underlying instrument, as specified in the Product Disclosure and Specifications. On the Forex market 1 Lot constitutes the equivalent of 100,000 units of the base currency."
+msgstr ""
+
+msgid "a) Access the MT5 Trading Platform through the direct link %1 from our web interface; or"
+msgstr ""
+
 msgid "a) The venue at which your order will be executed;"
 msgstr ""
 
 msgid "abusively or fraudulently whatsoever use the Application Programme Interface (API) of %1"
+msgstr ""
+
+msgid "alerting Clients of a potential trading opportunity;"
 msgstr ""
 
 msgid "and"
@@ -11780,6 +12236,12 @@ msgstr ""
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
 msgstr "본 회사의 고객으로 하여금 특정 시간에 어떠한 계약을 구매하는 것을 제한하는 경우."
 
+msgid "automatic adjustments of take profit levels;"
+msgstr ""
+
+msgid "b) Download and install the MT5 Trading Platform through the link %1"
+msgstr ""
+
 msgid "b) The price at which your order will be executed;"
 msgstr ""
 
@@ -11792,7 +12254,13 @@ msgstr ""
 msgid "capable to have a material adverse effect on the Agent’s ability to perform any of its duties and/or obligations in accordance with this Agreement."
 msgstr ""
 
+msgid "compensation under Investor Compensation Scheme."
+msgstr ""
+
 msgid "consolidating liquidity from several providers into a single stream of blended feed; and"
+msgstr ""
+
+msgid "currency in which your MT5 Real Account will be operated."
 msgstr ""
 
 msgid "d) The timeframe or duration of the contract as defined by your order execution."
@@ -11810,10 +12278,16 @@ msgstr ""
 msgid "e.g. frontend.binaryws.com"
 msgstr ""
 
+msgid "educational material;"
+msgstr ""
+
 msgid "engage in misleading or illusory or deceptive advertising;"
 msgstr ""
 
 msgid "engage in misleading or illusory or deceptive conduct; "
+msgstr ""
+
+msgid "execution of trades automatically on their behalf;"
 msgstr ""
 
 msgid "fairly and accurately describe its services to the Clients;"
@@ -11829,6 +12303,9 @@ msgid "gaming"
 msgstr ""
 
 msgid "h"
+msgstr ""
+
+msgid "has the meaning attached to it by the Directive 2004/39/EC of the European Parliament and of the Council (MIFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MIFID II), whichever is in force."
 msgstr ""
 
 msgid "he has all necessary authority and/or powers and/or consents and/or licences and/or authorisations and has taken all necessary actions to enable himself to lawfully enter into and perform this Agreement;"
@@ -11853,6 +12330,12 @@ msgid "in abnormal market conditions or exceptional market movements/volatility;
 msgstr ""
 
 msgid "in the case of Professional Clients;"
+msgstr ""
+
+msgid "in the case of a Force Majeure Event;"
+msgstr ""
+
+msgid "in the case of a client breaching any of the terms of this Agreement which results in a Negative Balance."
 msgstr ""
 
 msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
@@ -11882,6 +12365,9 @@ msgstr "라이센스 참조 번호: 39495"
 msgid "logout"
 msgstr "로그아웃"
 
+msgid "managing of various aspects of online trading such as sending orders to the platform;"
+msgstr ""
+
 msgid "million"
 msgstr ""
 
@@ -11906,10 +12392,10 @@ msgstr ""
 msgid "name, email address and contact number;"
 msgstr ""
 
-msgid "net of any other money credited to your MT5 Real Account and debited from your MT5 Real Account. Your account balance includes Margin Requirement. The amount of your account balance in excess of Margin Requirement is available for your withdrawal. The amount set aside for Margin Requirement is not available for your withdrawal."
+msgid "net of any other money credited to your MT5 Real Account and debited from your MT5 Real Account."
 msgstr ""
 
-msgid "net of fund transfers between your Binary Options Account and your MT5 Real Account;"
+msgid "net of fund transfers between your Binary Options Real Account and your MT5 Real Account;"
 msgstr ""
 
 msgid "net of realised profits credited to your MT5 Real Account and realised losses debited from your MT5 Real Account;"
@@ -11939,13 +12425,28 @@ msgstr ""
 msgid "represent itself as a representative of the Company or as an authorised Person by the Company in its advertising activities;"
 msgstr ""
 
+msgid "risk warnings and notices related to transactions and investments in the proposed instruments;"
+msgstr ""
+
+msgid "risk warnings and notices related to your transactions;"
+msgstr ""
+
+msgid "rules and regulations set out in the (Laws of Malta) <i>Investment Services Act (Control of Assets) Regulations, 1998 as amended,</i> or any subsequent regulation thereto."
+msgstr ""
+
 msgid "second"
 msgstr ""
 
 msgid "seconds"
 msgstr ""
 
+msgid "shall mean these Terms and Conditions regulating the provision of services."
+msgstr ""
+
 msgid "space"
+msgstr ""
+
+msgid "stop loss orders."
 msgstr ""
 
 msgid "sublicense any of the rights granted under these Terms, other than as permitted by these Terms;"
@@ -11953,6 +12454,9 @@ msgstr ""
 
 msgid "that contravenes any laws, regulations, instruments, ordinances or rules that govern the operation of any exchange, financial market, or financial regulatory environment; or"
 msgstr "어떠한 종류의 교환, 금융시장, 또는 금융 규제 환경을 통치하는 법규, 규정, 규칙, 법령, 원칙을 위반하는 경우; 또는"
+
+msgid "the aggregate of all Margin Requirements in your MT5 Real Account."
+msgstr ""
 
 msgid "the characteristics of financial instruments that are the subject of that order;"
 msgstr ""
@@ -11969,13 +12473,22 @@ msgstr ""
 msgid "the commission to be charged on deposits and withdrawals;"
 msgstr ""
 
+msgid "the difference between the bid and ask price of a Financial Instrument."
+msgstr ""
+
 msgid "the market conditions of the financial instruments that your orders are related to, which includes the need for timely execution, availability of price improvement, liquidity of the market, size of your order, and the potential impact on total consideration."
+msgstr ""
+
+msgid "the scheme specified in the Investor Compensation Scheme Regulations (Laws of Malta/Subsidiary Legislation 370.09) for the purpose of paying compensation to the Investors."
 msgstr ""
 
 msgid "the specific instructions that we receive from you;"
 msgstr ""
 
 msgid "the terms and/or conditions and/or clauses and/or provisions of this Agreement, Orders whatsoever, the applicable law or any other law will not be breached or violated;"
+msgstr ""
+
+msgid "the underlying currency, or Financial Instrument, on which the price of the CFD is based."
 msgstr ""
 
 msgid "this Agreement as well as any and all obligations and/or rights derive from this Agreement are binding and enforceable against him;"
@@ -11995,6 +12508,9 @@ msgstr ""
 
 msgid "today, Fridays"
 msgstr "오늘, 매 금요일"
+
+msgid "trailing stops; and"
+msgstr ""
 
 msgid "upon our request, he provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
 msgstr ""
@@ -12018,6 +12534,9 @@ msgid "weeks"
 msgstr ""
 
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
+msgstr ""
+
+msgid "where the Negative Balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
 msgstr ""
 
 msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
