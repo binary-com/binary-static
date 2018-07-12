@@ -23,24 +23,22 @@ $filter-height: 60px;
     &__dash {
         margin: 0 0.5rem;
     }
-    &.mobile-only {
+    &--mobile {
         padding: 0 0.5rem;
 
-        .statement-filter {
-            &__content {
-                padding: 0;
-                max-width: 450px;
-                display: grid;
-                grid-template-columns: 1fr 30px 1fr;
-                text-align: center;
+        .statement-filter__content {
+            padding: 0;
+            max-width: 450px;
+            display: grid;
+            grid-template-columns: 1fr 30px 1fr;
+            text-align: center;
 
-                .datepicker-display {
-                    width: 100%;
-                }
+            .datepicker-display {
+                width: 100%;
             }
-            &__label {
-                display: none;
-            }
+        }
+        .statement-filter__label {
+            display: none;
         }
     }
 }
