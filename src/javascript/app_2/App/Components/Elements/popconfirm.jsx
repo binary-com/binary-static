@@ -10,7 +10,7 @@ class PopConfirm extends React.Component {
         this.state = {
             is_open: false,
         };
-        this.handleClose = this.handleClose.bind(this);
+        this.handleClose        = this.handleClose.bind(this);
         this.setWrapperRef      = this.setWrapperRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
     }
@@ -41,34 +41,15 @@ class PopConfirm extends React.Component {
         const popconfirm_class = classNames('popconfirm', this.props.alignment, {
             'open': this.state.is_open,
         });
-        // const popconfirm_element = () => (
-        //     <div ref={this.setWrapperRef} className={popconfirm_class}>
-        //         <div className='popconfirm-title'>
-        //             {localize('Are you sure you want to purchase this contract?')}
-        //         </div>
-        //         <div className='popconfirm-buttons'>
-        //             <Button
-        //                 className='flat'
-        //                 has_effect
-        //                 text={localize('close')}
-        //                 onClick={this.handleClose}
-        //             />
-        //             <Button
-        //                 className='flat'
-        //                 has_effect
-        //                 text={localize('purchase')}
-        //                 onClick={this.props.children.props.onClick}
-        //             />
-        //         </div>
-        //     </div>
-        // );
+
+        const cloned_element = React.Children.map(this.props.children, child => (
+            React.cloneElement(child, {
+                onClick: () => this.setState({ is_open: !this.state.is_open }),
+            })
+        ));
         return (
             <React.Fragment>
-                {React.Children.map(this.props.children, child => (
-                    React.cloneElement(child, {
-                        onClick: () => this.setState({ is_open: !this.state.is_open }),
-                    })
-                ))}
+                {cloned_element}
                 <div ref={this.setWrapperRef} className={popconfirm_class}>
                     <div className='popconfirm-title'>
                         {localize('Are you sure you want to purchase this contract?')}
@@ -94,8 +75,11 @@ class PopConfirm extends React.Component {
 }
 
 PopConfirm.propTypes = {
-    alignment: PropTypes.string,
-    children : PropTypes.object,
+    alignment   : PropTypes.string,
+    children    : PropTypes.object,
+    cancel_text : PropTypes.string,
+    confirm_text: PropTypes.string,
+    message     : PropTypes.string,
 };
 
 export default PopConfirm;

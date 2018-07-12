@@ -50,7 +50,12 @@ const Purchase = ({
                             proposal_info={info}
                         />
                         {is_purchase_confirm_on ?
-                            <PopConfirm alignment='left'>
+                            <PopConfirm
+                                alignment='left'
+                                cancel_text='Cancel'
+                                confirm_text='Purchase'
+                                message='Are you sure you want to purchase this contract?'
+                            >
                                 <Button
                                     is_disabled={is_disabled}
                                     id={`purchase_${type}`}
