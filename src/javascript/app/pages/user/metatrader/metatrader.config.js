@@ -76,10 +76,28 @@ const MetaTraderConfig = (() => {
             ),
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
+                    console.log(Client.get('residence'));
+                    BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
+                        console.log(response.get_financial_assessment);
+                    });
                     if (!accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
                             id     : 'confirm_new_account',
                             message: ['Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?'],
+                        }).then((is_ok) => {
+                            if (!is_ok) {
+                                BinaryPjax.load(Client.defaultRedirectUrl());
+                            }
+                            resolve(is_ok);
+                        });
+                    } else if (Client.get('residence')) {
+                        console.log(Client.get('residence'));
+                        // TODO: check if spanish account
+                        // TODO: check if pass test or not
+                        Dialog.confirm({
+                            id     : 'spain_cnmv_warning',
+                            message: ['text', 'here'],
+                            ok_text: localize('Acknowledge'),
                         }).then((is_ok) => {
                             if (!is_ok) {
                                 BinaryPjax.load(Client.defaultRedirectUrl());
