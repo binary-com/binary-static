@@ -41,12 +41,12 @@ const ReferenceLinks = ({ pdf_file, video_link }) => (
         {pdf_file && <ReferenceLink
             className='payment-methods__reference-pdf'
             href={pdf_file && it.url_for(`download/payment/${pdf_file}`)}
-            title={pdf_file || it.L('PDF reference is not available for this method')}
+            title={pdf_file}
         />}
         {video_link && <ReferenceLink
             className='payment-methods__reference-video'
             href={video_link}
-            title={video_link ? it.L('Video tutorial') : it.L('Video tutorial is not available for this method')}
+            title={it.L('Video tutorial')}
         />}
     </React.Fragment>
 );
