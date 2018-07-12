@@ -12,9 +12,9 @@ class LanguageDialog extends React.Component {
             'show': this.props.is_visible,
         });
         // TO-DO - Simplify and refactor, get supported languages from config
-        const supported_languages = ['EN', 'PT', 'DE', 'RU', 'FR','TH', 'ID', 'VI','IT', 'ZH_CN', 'ES', 'ZH_TW', 'PL'];
+        const exclude_languages = ['JA', 'ACH'];
         const language_list = Object.keys(getLanguages())
-          .filter(key => supported_languages.includes(key))
+          .filter(key => !(exclude_languages.includes(key)))
           .reduce((obj, key) => {
               obj[key] = getLanguages()[key];
               return obj;
