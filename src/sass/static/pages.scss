@@ -12,17 +12,9 @@
     }
     &-pdf {
         background-image: url('../images/common/reference/pdf.svg');
-
-        &.payment-methods__reference--disabled {
-            background-image: url('../images/common/reference/pdf_disabled.svg');
-        }
     }
     &-video {
         background-image: url('../images/common/reference/youtube.svg');
-
-        &.payment-methods__reference--disabled {
-            background-image: url('../images/common/reference/youtube_disabled.svg');
-        }
     }
 }
 
