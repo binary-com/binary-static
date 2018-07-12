@@ -65,8 +65,8 @@ const Platform = () => (
                     description={it.L('Ultra fast on-the-go trading')}
                     text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                     url='https://ticktrade.binary.com/download/ticktrade-app.apk'
-                    target='_blank'
                     button_text={it.L('Download the Android App')}
+                    download='true'
                 />
                 <div className='gr-2 gr-hide-m gr-hide-p' />
                 <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
@@ -76,8 +76,8 @@ const Platform = () => (
                     description={it.L('Advanced binary options trading interface')}
                     text={it.L('Monitor the movements of your favourite assets and markets at the same time.')}
                     url='https://webtrader.binary.com'
+                    target='_blank'
                     button_text={it.L('Try WebTrader')}
-                    download='true'
                 />
             </div>
             <div className='gr-row gr-padding-30'>
