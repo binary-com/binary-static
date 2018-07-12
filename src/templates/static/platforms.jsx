@@ -12,6 +12,7 @@ const Platforms = ({
     target,
     button_text,
     button_class = '',
+    download = '',
 }) => (
     <div className={`gr-5 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
         <div className='gr-12 gr-centered-m gr-centered-p'>
@@ -24,7 +25,7 @@ const Platforms = ({
             <div className='gr-row'>
                 <div className='gr-12'>
                     { url &&
-                        <a className={`button ${button_class}`} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        <a className={`button ${button_class}`} download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                     }
                 </div>
             </div>
@@ -64,8 +65,8 @@ const Platform = () => (
                     description={it.L('Ultra fast on-the-go trading')}
                     text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                     url='https://ticktrade.binary.com/download/ticktrade-app.apk'
-                    target='_blank'
                     button_text={it.L('Download the Android App')}
+                    download='true'
                 />
                 <div className='gr-2 gr-hide-m gr-hide-p' />
                 <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />
