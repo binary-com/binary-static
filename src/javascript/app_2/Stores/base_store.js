@@ -59,7 +59,7 @@ export default class BaseStore {
      *
      * @param {String[]} properties - A list of properties' names that should be in the snapshot.
      *
-     * @return {Object} Returns a cloned object for the store.
+     * @return {Object} Returns a cloned object of the store.
      */
     getSnapshot(properties) {
         let snapshot = toJS(this);
@@ -107,8 +107,7 @@ export default class BaseStore {
     }
 
     /**
-     * Saves the snapshot of the store includes properties that are mentioned in
-     *  first parameter in the storage that is mentioned in second parameters.
+     * Removes properties that are not passed from the snapshot of the store and saves it to the passed storage
      *
      * @param {String[]} properties - A list of the store's properties' names which should be saved in the storage.
      * @param {Symbol}   storage    - A symbol object that defines the storage which the snapshot should be stored in it.
