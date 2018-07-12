@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-09 06:25\n"
+"PO-Revision-Date: 2018-07-12 02:38\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -725,6 +725,9 @@ msgstr "Доступ к личным данным строго запрещен,
 
 msgid "Account"
 msgstr "Счёт"
+
+msgid "Account Authenticated"
+msgstr "Аутентификация пройдена"
 
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "Баланс счёта &mdash; баланс Вашего счёта представляет собой:"
@@ -1927,10 +1930,10 @@ msgid "Check out the payment methods accepted by the payment agents in the list 
 msgstr "Ниже проверьте список платежных способов, принимаемых платежным агентом."
 
 msgid "Checked"
-msgstr ""
+msgstr "Проверено"
 
 msgid "Checking"
-msgstr ""
+msgstr "Проверка"
 
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Руководители, высокопоставленные чиновники и работники законодательных органов"
@@ -2884,7 +2887,7 @@ msgid "Do you wish to continue?"
 msgstr "Хотите продолжить?"
 
 msgid "Document Type"
-msgstr ""
+msgstr "Вид документа"
 
 msgid "Document account chargebacks"
 msgstr "Документация запросов на отзыв средств на счетах"
@@ -2893,7 +2896,7 @@ msgid "Document department processes, to enhance the marketing team's ability to
 msgstr "Документирование внутренних процедур отдела с целью повышения способности маркетингового отдела успешно и эффективно исполнять повторяющиеся задачи"
 
 msgid "Document submission status"
-msgstr ""
+msgstr "Статус предоставления документа"
 
 msgid "Does Not Touch"
 msgstr "не коснется"
@@ -3133,9 +3136,6 @@ msgid "Enable two-factor authentication for an extra layer of security."
 msgstr "Активировать двухступенчатую проверку для дополнительной безопасности."
 
 msgid "End Time"
-msgstr "Окончание"
-
-msgid "End time"
 msgstr "Окончание"
 
 msgid "Endpoint"
@@ -3514,7 +3514,7 @@ msgid "File (%1) size exceeds the permitted limit. Maximum allowed file size: %2
 msgstr "Размер файла (%1) превышает разрешенный лимит. Максимальный допустимый размер: %2"
 
 msgid "File Name"
-msgstr ""
+msgstr "Название файла"
 
 msgid "File format"
 msgstr "Формат файла"
@@ -4843,7 +4843,7 @@ msgid "Investigate and reproduce client-reported issues"
 msgstr "Расследование и решение проблем по сообщениям клиентов"
 
 msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
-msgstr ""
+msgstr "Инвестиции в сложные финансовые продукты, к которым относятся контракты на разницу (CFD) и валютные пары, могут принести не только прибыль, но и убыток. Цены могут отличаться или колебаться, ввиду изменений условий и текущей рыночной цены активов, что может также сказаться на окупаемости Ваших инвестиций. Перед принятием инвестиционного решения рекомендуем ознакомиться с Ключевыми информационными документами, размещёнными на нашем вебсайте, и прочитать подробную информацию о маржевых требованиях к определённым инструментам, доступным на сайте. Продукты компании Binary Investments (Europe) Ltd попадают под категорию \"сложных инвестиционных продуктов\" и подходят не каждому индивидуальному клиенту."
 
 msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices, stocks and commodities each of which have their own features and risks."
 msgstr "Инвестирование или торговля на контрактах подвергает Вас зависимости от результатов инструмента или актива, под которыми бинарный контракт подразумевает и включает иностранные валюты, индексы, акции и сырьевые товары, каждые из которых имеют свои особенности и риски."
@@ -6748,7 +6748,7 @@ msgid "Other Obligations"
 msgstr "Другие обязательства"
 
 msgid "Other Warnings & Regulatory Disclosures"
-msgstr ""
+msgstr "Другие предупреждения и нормативные уведомления"
 
 msgid "Other best execution factors such as speed of execution, likelihood of execution and settlement, size, nature or any other considerations relevant to the execution of a particular order may also be applied by us in order to obtain the best possible results for you."
 msgstr "Другие факторы нашей политики лучшего исполнения включают скорость исполнения, вероятность исполнения и окончания, размер, природу или любые другие факторы, имеющие отношение к исполнению конкретного ордера, которые также могут применяться нами для обеспечения лучших результатов для Вас."
@@ -6913,7 +6913,7 @@ msgid "P. Indemnification"
 msgstr "P. Возмещение ущерба"
 
 msgid "PDF reference is not available for this method"
-msgstr "Номер контракта на PDF не доступен для данного метода"
+msgstr "Номер контракта на PDF недоступен для данного метода"
 
 msgid "PEP Declaration"
 msgstr "Декларация ПЗЛ"
@@ -7005,14 +7005,14 @@ msgstr "Выигрыш"
 msgid "Payout"
 msgstr "Выплата"
 
+msgid "Payout Range"
+msgstr ""
+
 msgid "Payout per lot = 1,000"
 msgstr "Выплата за лот = 1 000"
 
-msgid "Payout range"
-msgstr "Диапазон выплат"
-
 msgid "Pending"
-msgstr ""
+msgstr "Ожидающ."
 
 msgid "Pension"
 msgstr "Пенсия"
@@ -7082,9 +7082,6 @@ msgstr "Платина против доллара США"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "Пожалуйста, %1примите Правила и условия,%2 чтобы снять ограничения на торговые лимиты и вывод средств."
-
-msgid "Please %1authenticate%2 your account before you make a deposit."
-msgstr "Пожалуйста, пройдите %1аутентификацию%2 счёта перед его пополнением."
 
 msgid "Please %1authenticate%2 your account."
 msgstr "Пожалуйста, пройдите %1аутентификацию%2 счёта."
@@ -7198,7 +7195,7 @@ msgid "Please remember at all times that trading binary options can be an exciti
 msgstr "Пожалуйста, помните, что, несмотря на всю привлекательность торговли бинарными опционами, она сопряжена с различными рисками. Работа с опционами может перерасти в настоящую зависимость, как и любая другая деятельность, доведенная до крайности. Мы просим Вас произвести тщательный самоанализ, чтобы проверить, находитесь ли Вы в опасности. Чтобы избежать возникновения такой зависимости, важно следовать некоторым основным правилам и принципам."
 
 msgid "Please resolve all pending issues to continue"
-msgstr ""
+msgstr "Чтобы продолжить, пожалуйста, урегулируйте все вопросы"
 
 msgid "Please see our <a href=%1>terms and conditions</a> for details of payout qualifications."
 msgstr "Пожалуйста, ознакомьтесь с нашими <a href=%1>правилами и условиями</a> для получения информации о выплатах."
@@ -7397,9 +7394,6 @@ msgstr "Знания и предыдущий опыт работы в облас
 
 msgid "Previous work experience in a client service and/or marketing role"
 msgstr "Предыдущий опыт работы в клиентской службе и/или области маркетинга"
-
-msgid "Price"
-msgstr "Цена"
 
 msgid "Price - the price at which the transaction in relation to your order is executed at."
 msgstr "Цена – цена, по которой будет исполнен контракт, заключенный по Вашему ордеру."
@@ -7830,9 +7824,6 @@ msgstr "Время Reset"
 msgid "Reset password"
 msgstr "Переустановка пароля"
 
-msgid "Reset time"
-msgstr "Время Reset"
-
 msgid "Reset to Original Settings"
 msgstr "Восстановить исходные настройки"
 
@@ -8117,9 +8108,6 @@ msgstr "Продайте опционы досрочно по рыночной �
 
 msgid "Sell option"
 msgstr "Продажа опциона"
-
-msgid "Sell time"
-msgstr "Время продажи"
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses."
 msgstr "Продавайте длинные контракты до истечения срока их действия, чтобы зафиксировать прибыль или минимизировать убыток."
@@ -8563,10 +8551,10 @@ msgid "Submit your CV and Cover Letter"
 msgstr "Отправьте своё резюме и сопроводительное письмо"
 
 msgid "Submitted"
-msgstr ""
+msgstr "Отправлено"
 
 msgid "Submitting"
-msgstr ""
+msgstr "Отправка"
 
 msgid "Successful"
 msgstr "Успешно"
@@ -9576,6 +9564,9 @@ msgstr "Четверг"
 msgid "Tick"
 msgstr "Тики"
 
+msgid "Tick %1"
+msgstr ""
+
 msgid "Tick %1 is not the highest tick"
 msgstr "Тик %1 не является наибольшим"
 
@@ -10303,7 +10294,7 @@ msgid "Video tutorial"
 msgstr "Видеокурс"
 
 msgid "Video tutorial is not available for this method"
-msgstr "Видеокурс не доступен для данного метода"
+msgstr "Видеокурс недоступен для данного метода"
 
 msgid "View"
 msgstr "Просмотр"

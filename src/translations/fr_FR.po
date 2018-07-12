@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-09 06:25\n"
+"PO-Revision-Date: 2018-07-12 02:37\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -726,6 +726,9 @@ msgstr "L'accès à vos données personnelles est strictement interdit. Seuls ce
 
 msgid "Account"
 msgstr "Compte"
+
+msgid "Account Authenticated"
+msgstr "Compte Authentifié"
 
 msgid "Account Balance &mdash; Your account balance represents:"
 msgstr "Solde du compte &mdash; Le solde de votre compte représente :"
@@ -1928,10 +1931,10 @@ msgid "Check out the payment methods accepted by the payment agents in the list 
 msgstr "Vérifiez les méthodes de paiement acceptées par les agents de paiement dans la liste ci-dessous."
 
 msgid "Checked"
-msgstr ""
+msgstr "Vérifié"
 
 msgid "Checking"
-msgstr ""
+msgstr "Vérification en cours"
 
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Directeurs Généraux, Hauts Fonctionnaires et Législateurs"
@@ -2885,7 +2888,7 @@ msgid "Do you wish to continue?"
 msgstr "Voulez-vous continuer ?"
 
 msgid "Document Type"
-msgstr ""
+msgstr "Type de Document"
 
 msgid "Document account chargebacks"
 msgstr "Administration des rejets de débit"
@@ -2894,7 +2897,7 @@ msgid "Document department processes, to enhance the marketing team's ability to
 msgstr "Optimiser les processus opérationnels sur l'ensemble du service pour permettre à l'équipe marketing d'exécuter plus efficacement les tâches répétitives"
 
 msgid "Document submission status"
-msgstr ""
+msgstr "Statut de soumission du document"
 
 msgid "Does Not Touch"
 msgstr "Ne touche pas"
@@ -3135,9 +3138,6 @@ msgstr "Activez l’authentification deux facteurs pour une couche supplémentai
 
 msgid "End Time"
 msgstr "Heure de fin"
-
-msgid "End time"
-msgstr "Moment de fin"
 
 msgid "Endpoint"
 msgstr "Point terminal"
@@ -3515,7 +3515,7 @@ msgid "File (%1) size exceeds the permitted limit. Maximum allowed file size: %2
 msgstr "Taille du fichier (%1) dépasse la limite autorisée. La taille maximum du fichier est de : %2"
 
 msgid "File Name"
-msgstr ""
+msgstr "Nom du Fichier"
 
 msgid "File format"
 msgstr "Format du fichier"
@@ -4844,7 +4844,7 @@ msgid "Investigate and reproduce client-reported issues"
 msgstr "Examiner et reproduire les problèmes signalés par les clients"
 
 msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
-msgstr ""
+msgstr "Investir dans des produits complexes, tels que les CFD et FX peut entrainer des pertes ainsi que des gains. Les prix peuvent varier ou fluctuer en raison des changements dans les prix courants du marché et des conditions qui peuvent influer le retour sur votre investissement. Avant de prendre une décision d’investissement, vous devriez consulter nos Documents d'Informations Clés sur notre site, en particulier, le montant de la marge requise pour certains instruments que nous offrons. Les produits offerts par Binary Investments (Europe) Ltd entrent dans la catégorie des « produits complexes » et ne conviennent pas aux clients particuliers."
 
 msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices, stocks and commodities each of which have their own features and risks."
 msgstr "Investir ou trader des Contrats vous expose à la performance d'un instrument ou actif sous-jacent ou de référence auquel le Contrat Binaire fait référence, échange étranger, indices, actions et commodités inclus, chacun d'entre eux ont leurs propres options et risques."
@@ -6749,7 +6749,7 @@ msgid "Other Obligations"
 msgstr "Autres obligations"
 
 msgid "Other Warnings & Regulatory Disclosures"
-msgstr ""
+msgstr "Autres Avertissements & Déclarations Réglementaires"
 
 msgid "Other best execution factors such as speed of execution, likelihood of execution and settlement, size, nature or any other considerations relevant to the execution of a particular order may also be applied by us in order to obtain the best possible results for you."
 msgstr "D'autres facteurs de meilleure exécution comme la vitesse d'exécution, vraisemblance d'exécution et règlement, taille, nature ou toutes autres considérations liées à l'exécution d'un ordre particulier peuvent aussi être appliqués par nous afin d'obtenir le meilleur résultat pour vous."
@@ -7006,14 +7006,14 @@ msgstr "Versement"
 msgid "Payout"
 msgstr "Paiement"
 
+msgid "Payout Range"
+msgstr ""
+
 msgid "Payout per lot = 1,000"
 msgstr "Paiement par lot = 1 000"
 
-msgid "Payout range"
-msgstr "Gamme de paiement"
-
 msgid "Pending"
-msgstr ""
+msgstr "En attente"
 
 msgid "Pension"
 msgstr "Pension"
@@ -7083,9 +7083,6 @@ msgstr "Platinum vs Dollar Américain"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
 msgstr "S'il vous plait %1acceptez les termes et conditions mises à jour%2 pour supprimer vos limites de retrait et de trading."
-
-msgid "Please %1authenticate%2 your account before you make a deposit."
-msgstr "S’il vous plaît %1authentifiez%2 votre compte avant de faire un dépôt."
 
 msgid "Please %1authenticate%2 your account."
 msgstr "S’il vous plaît %1authentifiez%2 votre compte."
@@ -7199,7 +7196,7 @@ msgid "Please remember at all times that trading binary options can be an exciti
 msgstr "N.B. Si le trading d'options binaires peut être une activité exaltante, nous avons cependant le devoir de vous rappeler les risques que vous pourriez courir. Les options binaires peuvent devenir une réelle addiction, comme toute autre activité poussée à l'extrême. Nous vous demandons de bien vouloir analyser attentivement votre situation pour déterminer si cette activité constitue un risque pour vous. Afin d'éviter le danger d'une telle addiction, il est important que vous respectiez certains principes et consignes de base."
 
 msgid "Please resolve all pending issues to continue"
-msgstr ""
+msgstr "Veuillez résoudre tous les problèmes en suspens pour continuer"
 
 msgid "Please see our <a href=%1>terms and conditions</a> for details of payout qualifications."
 msgstr "S'il vous plait regardez nos <a href=%1>termes et conditions</a>pour les détails concernant les qualifications de versement."
@@ -7398,9 +7395,6 @@ msgstr "Compétences et expérience préalable dans les secteurs du marketing ou
 
 msgid "Previous work experience in a client service and/or marketing role"
 msgstr "Expérience professionnelle préalable dans le domaine du service à la clientèle et/ou du marketing"
-
-msgid "Price"
-msgstr "Prix"
 
 msgid "Price - the price at which the transaction in relation to your order is executed at."
 msgstr "Prix - le prix auquel la transaction en relation avec l'ordre est exécutée à."
@@ -7831,9 +7825,6 @@ msgstr "Temps de réinitialisation"
 msgid "Reset password"
 msgstr "Réinitialiser le mot de passe"
 
-msgid "Reset time"
-msgstr "Temps de réinitialisation"
-
 msgid "Reset to Original Settings"
 msgstr "Réinitialiser les paramètres"
 
@@ -8118,9 +8109,6 @@ msgstr "Revendez vos options au prix du marché."
 
 msgid "Sell option"
 msgstr "Option de vente"
-
-msgid "Sell time"
-msgstr "Heure de vente"
 
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses."
 msgstr "Vendez vos contrats à long terme avant leur expiration pour protéger les bénéfices déjà réalisés ou minimiser vos pertes."
@@ -8564,10 +8552,10 @@ msgid "Submit your CV and Cover Letter"
 msgstr "Envoyez votre CV et votre lettre de motivation"
 
 msgid "Submitted"
-msgstr ""
+msgstr "Soumis"
 
 msgid "Submitting"
-msgstr ""
+msgstr "En cours de soumission"
 
 msgid "Successful"
 msgstr "Réussite"
@@ -9576,6 +9564,9 @@ msgstr "jeudi"
 
 msgid "Tick"
 msgstr "Tick"
+
+msgid "Tick %1"
+msgstr ""
 
 msgid "Tick %1 is not the highest tick"
 msgstr "Le tick %1 n’est pas le tick le plus haut"
