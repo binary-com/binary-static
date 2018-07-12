@@ -3,6 +3,7 @@ import React     from 'react';
 
 const Button = ({
     className = '',
+    children,
     has_effect,
     id,
     is_disabled,
@@ -14,6 +15,7 @@ const Button = ({
     const button = (
         <button id={id} className={classes} onClick={onClick || undefined} disabled={is_disabled}>
             <span>{text}</span>
+            {children}
         </button>
     );
     const wrapper = (<div className={wrapperClassName}>{button}</div>);

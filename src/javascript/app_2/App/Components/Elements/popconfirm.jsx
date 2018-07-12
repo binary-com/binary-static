@@ -1,7 +1,6 @@
 import React        from 'react';
 import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
-import Button       from '../Form/button.jsx';
 import { localize } from '../../../../_common/localize';
 
 class PopConfirm extends React.Component {
@@ -42,33 +41,43 @@ class PopConfirm extends React.Component {
             'open': this.state.is_open,
         });
 
-        const cloned_element = React.Children.map(this.props.children, child => (
-            React.cloneElement(child, {
-                onClick: () => this.setState({ is_open: !this.state.is_open }),
-            })
-        ));
-        return (
-            <React.Fragment>
-                {cloned_element}
-                <div ref={this.setWrapperRef} className={popconfirm_class}>
-                    <div className='popconfirm-title'>
-                        {localize('Are you sure you want to purchase this contract?')}
+        const popconfirm_element = (
+            <div ref={this.setWrapperRef} className={popconfirm_class}>
+                <div className='popconfirm-title'>
+                    {/* TO-DO - Move inline svg to sprite or component with other svg once assets are finalized */}
+                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+                        <g fill='none' fillRule='evenodd'><circle cx='8' cy='8' r='8' fill='#FFC107'/>
+                            <g fill='#FFF' transform='matrix(1 0 0 -1 6.5 12)'>
+                                <circle cx='1.5' cy='1' r='1'/>
+                                <path d='M1.5 3c.6 0 1 .4 1 1v3a1 1 0 1 1-2 0V4c0-.6.4-1 1-1z'/>
+                            </g>
+                        </g>
+                    </svg>
+                    <h4>{localize(this.props.message)}</h4>
+                </div>
+                <div className='popconfirm-buttons'>
+                    <div
+                        className='btn flat effect'
+                        onClick={this.handleClose}
+                    >
+                        <span>{localize(this.props.cancel_text)}</span>
                     </div>
-                    <div className='popconfirm-buttons'>
-                        <Button
-                            className='flat'
-                            has_effect
-                            text={localize('close')}
-                            onClick={this.handleClose}
-                        />
-                        <Button
-                            className='flat'
-                            has_effect
-                            text={localize('purchase')}
-                            onClick={this.props.children.props.onClick}
-                        />
+                    <div
+                        className='btn flat effect'
+                        onClick={this.props.children.props.onClick}
+                    >
+                        <span>{localize(this.props.confirm_text)}</span>
                     </div>
                 </div>
+            </div>
+        );
+        return (
+            <React.Fragment>
+                {React.Children.map(this.props.children, child => (
+                    React.cloneElement(child, {
+                        onClick: () => this.setState({ is_open: !this.state.is_open }),
+                    }, popconfirm_element)
+                ))}
             </React.Fragment>
         );
     }

@@ -26,13 +26,13 @@ const SmartCharts = ({
     onSymbolChange,
 }) =>  {
     const chart_layout = !is_position_default ? 'bottom' : 'left';
-    const chart_theme = is_dark_theme ? 'dark' : 'light';
+    const chart_theme  = is_dark_theme ? 'dark' : 'light';
 
     const chart_settings = {
         assetInformation: is_asset_enabled,
         lang            : 'en',
         position        : chart_layout,
-        showCountdown   : is_countdown_enabled,
+        countdown       : is_countdown_enabled,
         theme           : chart_theme,
     };
     const barriers = Object.keys(chart_barriers || {})

@@ -20,7 +20,7 @@ export default class UIStore {
 
     // SmartCharts Controls
     @observable is_chart_layout_default = false;
-    @observable is_chart_asset_info_visible = false;
+    @observable is_chart_asset_info_visible = true;
     @observable is_chart_countdown_visible = false;
 
     constructor() {

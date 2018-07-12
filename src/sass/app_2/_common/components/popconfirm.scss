@@ -31,18 +31,37 @@ button.btn {
 
         .btn {
             margin: 0 8px;
+            box-shadow: none;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             span {
                 color: $COLOR_BLUE;
+                font-size: 12px;
             }
         }
     }
     &-title {
         margin: 8px;
-        padding: 8px 16px;
-        color: rgba(0, 0, 0, 0.85);
-        font-size: 12px;
-        font-weight: 300;
+        padding: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        svg {
+            margin-right: 8px;
+        }
+        h4 {
+            color: $COLOR_BLUE;
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: none;
+            padding: 0;
+            margin: 0;
+            line-height: 100%;
+        }
     }
     &:after {
         // arrow pointing down
