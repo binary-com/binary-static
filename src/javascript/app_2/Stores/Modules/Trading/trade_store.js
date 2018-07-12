@@ -8,12 +8,13 @@ import { processTradeParams }             from './Helpers/process';
 import {
     createProposalRequests,
     getProposalInfo }                     from './Helpers/proposal';
+import BaseStore                          from '../../base_store';
 import { WS }                             from '../../../Services';
 import URLHelper                          from '../../../Utils/URL';
 import Client                             from '../../../../_common/base/client_base';
 import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
 
-export default class TradeStore {
+export default class TradeStore extends BaseStore {
     // Control values
     @observable is_purchase_enabled = false;
     @observable is_trade_enabled    = false;
@@ -65,8 +66,10 @@ export default class TradeStore {
     // Chart
     @observable chart_barriers = observable.object({});
 
+
     constructor(root_store) {
-        this.root_store = root_store;
+        const local_storage_properties = allowed_query_string_variables;
+        super(root_store, local_storage_properties);
     }
 
     @action.bound

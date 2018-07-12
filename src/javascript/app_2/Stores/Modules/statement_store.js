@@ -3,6 +3,7 @@ import {
     computed,
     observable }       from 'mobx';
 import moment          from 'moment';
+import BaseStore       from '../base_store';
 import { WS }          from '../../Services';
 import { formatMoney } from '../../../_common/base/currency_base';
 import Client          from '../../../_common/base/client_base';
@@ -11,7 +12,7 @@ import { toTitleCase } from '../../../_common/string_util';
 
 const batch_size = 100; // request response limit
 
-export default class StatementStore {
+export default class StatementStore extends BaseStore {
     @observable data           = [];
     @observable is_loading     = false;
     @observable has_loaded_all = false;

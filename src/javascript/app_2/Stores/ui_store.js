@@ -2,9 +2,10 @@ import {
     action,
     computed,
     observable }            from 'mobx';
+import BaseStore            from './base_store';
 import { MAX_MOBILE_WIDTH } from '../Constants/ui';
 
-export default class UIStore {
+export default class UIStore extends BaseStore {
     @observable is_portfolio_drawer_on     = false;
     @observable is_main_drawer_on          = false;
     @observable is_notifications_drawer_on = false;
@@ -24,6 +25,9 @@ export default class UIStore {
     @observable is_chart_countdown_visible = false;
 
     constructor() {
+        const local_storage_properties = ['is_portfolio_drawer_on'];
+
+        super(null, local_storage_properties);
         window.addEventListener('resize', this.updateScreenWidth);
     }
 
