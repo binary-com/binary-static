@@ -227,7 +227,7 @@ class Portfolio extends React.Component  {
                                     {...this.props}
                                     columns={this.columns}
                                     data_source={this.state.data_source}
-                                    footer={this.state.footer}
+                                    footer={this.state.data_source.length > 0 && this.state.footer}
                                     has_fixed_header
                                 />
                             </div>
@@ -241,7 +241,7 @@ class Portfolio extends React.Component  {
                                     </div>)
                                 )}
                             </div>
-                            {this.state.data_source && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
+                            {this.state.data_source.length === 0 && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
                         </div>
                     );
                 })()}
