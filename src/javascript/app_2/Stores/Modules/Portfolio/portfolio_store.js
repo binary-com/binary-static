@@ -12,6 +12,8 @@ export default class StatementStore extends BaseStore {
     @observable data       = [];
     @observable is_loading = false;
     @observable error      = '';
+    // TODO: convert to computed
+    // TODO: localize string, move it presentational component
     @observable footer     = {
         reference : 'Total',
         payout    : '',

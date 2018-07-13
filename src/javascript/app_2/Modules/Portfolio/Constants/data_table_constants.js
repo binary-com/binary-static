@@ -50,6 +50,7 @@ export const getTableColumnsTemplate = (currency) => [
     {
         title     : localize('Indicative'),
         data_index: 'indicative',
+        // TODO: render cell -> render cell content
         renderCell: (data, data_index) => {
             if (data.amount) {
                 return (
