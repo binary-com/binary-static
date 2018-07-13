@@ -38,7 +38,8 @@ export default class StatementStore extends BaseStore {
         WS.portfolio().then((res) => this.updatePortfolio(res));
     };
 
-    updateIndicative = (response) => {
+    @action.bound
+    updateIndicative(response) {
         // prevent callback after component has unmounted
         if (!this.el) return;
         if (getPropertyValue(response, 'error')) {
@@ -72,7 +73,7 @@ export default class StatementStore extends BaseStore {
         }
         this.data = data_source;
         this.footer = this.updateFooterTotals(data_source);
-    };
+    }
 
     updateFooterTotals = (portfolioArr) => {
         let indicative = 0;
@@ -92,7 +93,8 @@ export default class StatementStore extends BaseStore {
         };
     };
 
-    updatePortfolio = (response) => {
+    @action.bound
+    updatePortfolio(response) {
         if (getPropertyValue(response, 'error')) {
             this.error = response.error.message;
             return;
@@ -103,7 +105,7 @@ export default class StatementStore extends BaseStore {
 
             WS.subscribeProposalOpenContract(this.updateIndicative, false);
         }
-    };
+    }
 
     @action.bound
     onMount() {

@@ -20,6 +20,7 @@ class Portfolio extends React.Component  {
     render() {
         const {
             data,
+            footer,
             is_mobile,
             is_loading,
             error,
