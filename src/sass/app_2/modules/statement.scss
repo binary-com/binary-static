@@ -52,13 +52,6 @@ $filter-height: 60px;
             background-color: #fafafa; /* stylelint-disable-line color-no-hex */
         }
     }
-    &__no-activity-msg {
-        padding: 1rem;
-        @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
-        font-size: 1rem;
-        text-align: center;
-        background-color: $COLOR_YELLOW;
-    }
 
     /* TABLE STYLES START */
     .table-head {
