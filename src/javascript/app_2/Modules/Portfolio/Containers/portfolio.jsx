@@ -1,15 +1,10 @@
 import React                     from 'react';
 import CardList                  from '../Components/card_list.jsx';
-import { formatPortfolioData }   from '../Helpers/process_data';
 import DataTable                 from '../../../App/Components/Elements/data_table.jsx';
-import NoticeMessage             from '../../../App/Components/Elements/notice_message.jsx';
-import { contract_type_display } from '../../../Constants/contract';
-import { WS }                    from '../../../Services';
 import ClientBase                from '../../../../_common/base/client_base';
-import { formatMoney }           from '../../../../_common/base/currency_base';
 import { localize }              from '../../../../_common/localize';
-import { getPropertyValue }      from '../../../../_common/utility';
 import Loading                   from '../../../../../templates/_common/components/loading.jsx';
+import NoticeMessage             from '../../../App/Components/Elements/notice_message.jsx';
 import { connect }                    from '../../../Stores/connect';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
 
