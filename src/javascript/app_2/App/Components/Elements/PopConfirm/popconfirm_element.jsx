@@ -59,4 +59,4 @@ PopConfirmElement.propTypes = {
     wrapperRef  : PropTypes.func,
 };
 
-export default PopConfirmElement;
+export { PopConfirmElement };

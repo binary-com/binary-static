@@ -34,4 +34,4 @@ TabsItem.propTypes = {
     onChange: PropTypes.func,
 };
 
-export default TabsItem;
+export { TabsItem };

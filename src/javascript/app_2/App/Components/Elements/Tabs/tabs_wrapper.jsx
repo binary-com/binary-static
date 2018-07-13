@@ -1,6 +1,6 @@
-import React      from 'react';
-import PropTypes  from 'prop-types';
-import TabsItem   from './tabs_item.jsx';
+import React        from 'react';
+import PropTypes    from 'prop-types';
+import { TabsItem } from './tabs_item.jsx';
 
 class TabsWrapper extends React.PureComponent {
     constructor(props) {
@@ -77,4 +77,4 @@ TabsWrapper.propTypes = {
     onChange    : PropTypes.func,
 };
 
-export default TabsWrapper;
+export { TabsWrapper };

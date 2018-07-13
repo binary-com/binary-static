@@ -1,7 +1,7 @@
-import classNames  from 'classnames';
-import React       from 'react';
-import PropTypes   from 'prop-types';
-import TabsWrapper from './tabs_wrapper.jsx';
+import classNames      from 'classnames';
+import React           from 'react';
+import PropTypes       from 'prop-types';
+import { TabsWrapper } from './tabs_wrapper.jsx';
 
 class Tabs extends React.PureComponent {
     state = {
@@ -50,4 +50,4 @@ Tabs.propTypes = {
     }),
 };
 
-export default Tabs;
+export { Tabs };

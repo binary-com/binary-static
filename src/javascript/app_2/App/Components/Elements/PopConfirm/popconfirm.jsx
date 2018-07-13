@@ -1,6 +1,6 @@
-import React        from 'react';
-import PropTypes    from 'prop-types';
-import PopConfirmElement from './popconfirm_element.jsx';
+import React                 from 'react';
+import PropTypes             from 'prop-types';
+import { PopConfirmElement } from './popconfirm_element.jsx';
 
 class PopConfirm extends React.Component {
     state = {
@@ -62,4 +62,4 @@ PopConfirm.propTypes = {
     message     : PropTypes.string,
 };
 
-export default PopConfirm;
+export { PopConfirm };

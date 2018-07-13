@@ -2,7 +2,7 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
 import MessageBox        from '../Components/Form/Purchase/MessageBox';
-import PopConfirm        from '../../../App/Components/Elements/PopConfirm/popconfirm.jsx';
+import { PopConfirm }    from '../../../App/Components/Elements/PopConfirm/popconfirm.jsx';
 import UILoader          from '../../../App/Components/Elements/ui_loader.jsx';
 import Button            from '../../../App/Components/Form/button.jsx';
 import Fieldset          from '../../../App/Components/Form/fieldset.jsx';
