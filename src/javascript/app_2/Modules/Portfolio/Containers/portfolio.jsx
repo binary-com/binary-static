@@ -2,6 +2,7 @@ import React                     from 'react';
 import PortfolioCard             from '../Components/portfolio_card.jsx';
 import { formatPortfolioData }   from '../Helpers/process_data';
 import DataTable                 from '../../../App/Components/Elements/data_table.jsx';
+import NoticeMessage             from '../../../App/Components/Elements/notice_message.jsx';
 import Tooltip                   from '../../../App/Components/Elements/tooltip.jsx';
 import { contract_type_display } from '../../../Constants/contract';
 import { WS }                    from '../../../Services';
@@ -220,29 +221,28 @@ class Portfolio extends React.Component  {
                         return <p>{error}</p>;
                     }
                     return (
-                            this.state.data_source.length > 0 ?
-                                <div>
-                                    <div className='desktop-only'>
-                                        <DataTable
-                                            {...this.props}
-                                            columns={this.columns}
-                                            data_source={this.state.data_source}
-                                            footer={this.state.footer}
-                                            has_fixed_header
+                        <div>
+                            <div className='desktop-only'>
+                                <DataTable
+                                    {...this.props}
+                                    columns={this.columns}
+                                    data_source={this.state.data_source}
+                                    footer={this.state.footer}
+                                    has_fixed_header
+                                />
+                            </div>
+                            <div className='mobile-only'>
+                                {this.state.data_source.map((transaction, idx) => (
+                                    <div key={idx} className='card-list'>
+                                        <PortfolioCard
+                                            {...transaction}
+                                            currency={this.state.currency}
                                         />
-                                    </div>
-                                    <div className='mobile-only'>
-                                        {this.state.data_source.map((transaction, idx) => (
-                                            <div key={idx} className='card-list'>
-                                                <PortfolioCard
-                                                    {...transaction}
-                                                    currency={this.state.currency}
-                                                />
-                                            </div>)
-                                        )}
-                                    </div>
-                                </div>
-                            : <p>{localize('No open positions.')}</p>
+                                    </div>)
+                                )}
+                            </div>
+                            {this.state.data_source && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
+                        </div>
                     );
                 })()}
             </div>
