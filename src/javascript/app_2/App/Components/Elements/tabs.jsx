@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React      from 'react';
 import PropTypes  from 'prop-types';
 
-class Tabs extends React.Component {
+class Tabs extends React.PureComponent {
     state = {
         active_tab_index: '1',
     };
@@ -22,16 +22,18 @@ class Tabs extends React.Component {
                     active={this.state.active_tab_index}
                     onChange={active => this.setActiveTab(active)}
                 >
-                    {Object.keys(this.props.list).map(key => (
-                        <React.Fragment key={key}>
-                            <span
-                                className={tab_header_class(this.props.list[key].icon)}
-                                title={this.props.list[key].header}
-                            >
-                                {this.props.list[key].header}
-                            </span>
-                        </React.Fragment>
-                    ))}
+                    {
+                        Object.keys(this.props.list).map(key => (
+                            <React.Fragment key={key}>
+                                <span
+                                    className={tab_header_class(this.props.list[key].icon)}
+                                    title={this.props.list[key].header}
+                                >
+                                    {this.props.list[key].header}
+                                </span>
+                            </React.Fragment>
+                        ))
+                    }
                 </TabsWrapper>
                 <TabContents />
             </div>
@@ -52,13 +54,6 @@ class TabsWrapper extends React.PureComponent {
     componentDidMount() {
         this.getSizes();
         window.addEventListener('resize', this.getSizes);
-    }
-
-    componentDidUpdate(prevProps) {
-        // component re-renders twice, pending better workaround
-        if (prevProps.children !== this.props.children && prevProps.active !== this.props.active) {
-            this.getSizes();
-        }
     }
 
     componentWillUnmount() {
