@@ -2,12 +2,11 @@ import classNames from 'classnames';
 import React      from 'react';
 import PropTypes  from 'prop-types';
 
-class Tabs extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = { active_tab_index: '1' };
-    }
-    setActiveTab(index) {
+class Tabs extends React.Component {
+    state = {
+        active_tab_index: '1',
+    };
+    setActiveTab = (index) => {
         this.setState({active_tab_index: index});
     };
     render() {

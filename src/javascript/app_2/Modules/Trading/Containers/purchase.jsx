@@ -27,6 +27,18 @@ const Purchase = ({
         const info        = proposal_info[type] || {};
         const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || is_purchase_locked;
 
+        const PurchaseButton = () => (
+            <Button
+                is_disabled={is_disabled}
+                id={`purchase_${type}`}
+                className='primary green'
+                has_effect
+                text={localize('Purchase')}
+                onClick={() => { onClickPurchase(info.id, info.stake); }}
+                wrapperClassName='submit-section'
+            />
+        );
+
         return (
             <Fieldset
                 className='purchase-option'
@@ -56,26 +68,10 @@ const Purchase = ({
                                 confirm_text='Purchase'
                                 message='Are you sure you want to purchase this contract?'
                             >
-                                <Button
-                                    is_disabled={is_disabled}
-                                    id={`purchase_${type}`}
-                                    className='primary green'
-                                    has_effect
-                                    text={localize('Purchase')}
-                                    onClick={() => { onClickPurchase(info.id, info.stake); }}
-                                    wrapperClassName='submit-section'
-                                />
+                                <PurchaseButton />
                             </PopConfirm>
                             :
-                            <Button
-                                is_disabled={is_disabled}
-                                id={`purchase_${type}`}
-                                className='primary green'
-                                has_effect
-                                text={localize('Purchase')}
-                                onClick={() => { onClickPurchase(info.id, info.stake); }}
-                                wrapperClassName='submit-section'
-                            />
+                            <PurchaseButton />
                         }
                     </React.Fragment>
                 }

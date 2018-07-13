@@ -44,7 +44,7 @@
     margin-right: 4px;
 
     &.toggled:after {
-        animation: lineAnimationAfter 2s ease-in;
+        animation: lineAnimationAfter 0.3s ease-in;
         animation-fill-mode: both;
     }
     &:after {
@@ -57,7 +57,7 @@
         content: '';
         width: 100%;
         height: 4px;
-        animation: lineAnimationBefore 2s ease-in;
+        animation: lineAnimationBefore 0.3s ease-in;
     }
     @keyframes lineAnimationBefore {
         0% {
