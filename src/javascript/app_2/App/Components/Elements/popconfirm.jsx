@@ -3,7 +3,7 @@ import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import { localize } from '../../../../_common/localize';
 
-class PopConfirm extends React.Component {
+class PopConfirm extends React.PureComponent {
     state = {
         is_open: false,
     };
