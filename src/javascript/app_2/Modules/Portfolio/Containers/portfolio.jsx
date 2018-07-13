@@ -3,18 +3,13 @@ import PortfolioCard             from '../Components/portfolio_card.jsx';
 import { formatPortfolioData }   from '../Helpers/process_data';
 import DataTable                 from '../../../App/Components/Elements/data_table.jsx';
 import NoticeMessage             from '../../../App/Components/Elements/notice_message.jsx';
-import Tooltip                   from '../../../App/Components/Elements/tooltip.jsx';
 import { contract_type_display } from '../../../Constants/contract';
 import { WS }                    from '../../../Services';
-import { ProcessData }           from '../../../Services/Helpers';
-import { getAppId }              from '../../../../config';
 import ClientBase                from '../../../../_common/base/client_base';
 import { formatMoney }           from '../../../../_common/base/currency_base';
 import { localize }              from '../../../../_common/localize';
 import { getPropertyValue }      from '../../../../_common/utility';
 import Loading                   from '../../../../../templates/_common/components/loading.jsx';
-
-const app_id = getAppId();
 
 class Portfolio extends React.Component  {
     state = {
@@ -28,33 +23,17 @@ class Portfolio extends React.Component  {
             indicative: '',
         },
         is_loading: true,
-        oauth_apps: null,
     };
 
     columns = [
         {
             title     : localize('Reference No.'),
             data_index: 'reference',
-            renderCell: (data, data_index) => {
-                const { oauth_apps } = this.state;
-                const tooltip = (data.app_id !== app_id) && oauth_apps && oauth_apps[data.app_id];
-                if (tooltip) {
-                    return (
-                        <td key={data_index} className={data_index}>
-                            <Tooltip
-                                alignment='right'
-                                message={localize('Transaction performed by [_1] (APP ID: [_2])', [tooltip, data.app_id])}
-                            >
-                                {data.transaction_id.toString()}
-                            </Tooltip>
-                        </td>);
-                }
-                return (
-                    <td key={data_index} className={data_index}>
-                        {data.transaction_id || ''}
-                    </td>
-                );
-            },
+            renderCell: (data, data_index) => (
+                <td key={data_index} className={data_index}>
+                    {data.transaction_id || ''}
+                </td>
+            ),
         },
         {
             title     : localize('Contract Type'),
@@ -124,7 +103,6 @@ class Portfolio extends React.Component  {
             this.updatePortfolio(response);
         });
         WS.subscribeTransaction(this.transactionResponseHandler, false);
-        WS.oauthApps().then((response) => this.updateOAuthApps(response));
     };
 
     transactionResponseHandler = (response) => {
@@ -188,11 +166,6 @@ class Portfolio extends React.Component  {
         };
     };
 
-    updateOAuthApps = (response) => {
-        const oauth_apps = ProcessData.getOauthAppsObject(response);
-        this.setState({ oauth_apps });
-    };
-
     updatePortfolio = (response) => {
         if (getPropertyValue(response, 'error')) {
             this.setState({ error: response.error.message });
@@ -224,7 +197,7 @@ class Portfolio extends React.Component  {
                                     {...this.props}
                                     columns={this.columns}
                                     data_source={this.state.data_source}
-                                    footer={this.state.data_source.length > 0 && this.state.footer}
+                                    footer={this.state.data_source.length > 0 ? this.state.footer : undefined}
                                     has_fixed_header
                                 />
                             </div>
