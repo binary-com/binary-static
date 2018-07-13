@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import React      from 'react';
 import PropTypes  from 'prop-types';
 
-const ToggleButton = ({ style, bool }) => {
+const ToggleButton = ({ style, toggled }) => {
     const toggle_style = style || 'toggle-button';
     const icon_class = classNames(toggle_style, {
-        'toggled': bool,
+        'toggled': toggled,
     });
     return (
         <div className={icon_class} />
@@ -13,8 +13,8 @@ const ToggleButton = ({ style, bool }) => {
 };
 
 ToggleButton.propTypes = {
-    bool : PropTypes.bool,
-    style: PropTypes.string,
+    style  : PropTypes.string,
+    toggled: PropTypes.bool,
 };
 
 export default ToggleButton;

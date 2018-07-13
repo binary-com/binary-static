@@ -14,7 +14,7 @@ const SettingsControl = ({
               <span>{localize(name)}</span>
               {toggle ?
                   <ToggleButton
-                      bool={to_toggle}
+                      toggled={to_toggle}
                       style={style}
                   />
                   :
