@@ -214,9 +214,6 @@ class Portfolio extends React.Component  {
                 {(() => {
                     const {error, is_loading} = this.state;
 
-                    if (is_loading) {
-                        return <Loading />;
-                    }
                     if (error) {
                         return <p>{error}</p>;
                     }
@@ -241,7 +238,8 @@ class Portfolio extends React.Component  {
                                     </div>)
                                 )}
                             </div>
-                            {this.state.data_source.length === 0 && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
+                            {is_loading && <Loading />}
+                            {!is_loading && this.state.data_source.length === 0 && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
                         </div>
                     );
                 })()}
