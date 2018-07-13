@@ -24,9 +24,9 @@ const SettingsControl = ({
 );
 
 SettingsControl.propTypes = {
-    style    : PropTypes.string,
-    name     : PropTypes.string,
     children : PropTypes.node,
+    name     : PropTypes.string,
+    style    : PropTypes.string,
     toggle   : PropTypes.func,
     to_toggle: PropTypes.bool,
     onClick  : PropTypes.func,

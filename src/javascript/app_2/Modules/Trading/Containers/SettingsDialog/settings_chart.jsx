@@ -37,9 +37,9 @@ ChartSettings.propTypes = {
     is_layout_default   : PropTypes.bool,
     is_asset_visible    : PropTypes.bool,
     is_countdown_visible: PropTypes.bool,
-    toggleLayout        : PropTypes.func,
     toggleAsset         : PropTypes.func,
     toggleCountdown     : PropTypes.func,
+    toggleLayout        : PropTypes.func,
 };
 
 export default connect(
@@ -47,8 +47,8 @@ export default connect(
         is_layout_default   : ui.is_chart_layout_default,
         is_asset_visible    : ui.is_chart_asset_info_visible,
         is_countdown_visible: ui.is_chart_countdown_visible,
-        toggleLayout        : ui.toggleChartLayout,
         toggleAsset         : ui.toggleChartAssetInfo,
         toggleCountdown     : ui.toggleChartCountdown,
+        toggleLayout        : ui.toggleChartLayout,
     })
 )(ChartSettings);

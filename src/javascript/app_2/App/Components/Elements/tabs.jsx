@@ -129,14 +129,13 @@ class TabsWrapper extends React.PureComponent {
 TabsWrapper.propTypes = {
     active      : PropTypes.string,
     children    : PropTypes.node,
-    onChange    : PropTypes.func,
     toggleDialog: PropTypes.func,
+    onChange    : PropTypes.func,
 };
 
 Tabs.propTypes = {
-    list     : PropTypes.object,
     alignment: PropTypes.string,
-
+    list     : PropTypes.object,
 };
 
 export default Tabs;

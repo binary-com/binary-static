@@ -13,7 +13,7 @@ export default class UIStore extends BaseStore {
 
     @observable is_settings_dialog_on = false;
     @observable is_language_dialog_on = false;
-    @observable is_dark_mode_on = false;
+    @observable is_dark_mode_on = true;
 
     // Purchase Controls
     @observable is_purchase_confirm_on = false;

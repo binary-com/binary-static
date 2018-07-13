@@ -25,7 +25,7 @@ const SmartCharts = ({
     is_mobile,
     onSymbolChange,
 }) =>  {
-    const chart_layout = !is_position_default ? 'bottom' : 'left';
+    const chart_layout = is_position_default ? 'left' : 'bottom';
     const chart_theme  = is_dark_theme ? 'dark' : 'light';
 
     const chart_settings = {
@@ -69,8 +69,8 @@ SmartCharts.propTypes = {
     is_asset_enabled    : PropTypes.bool,
     is_countdown_enabled: PropTypes.bool,
     is_dark_theme       : PropTypes.bool,
-    is_position_default : PropTypes.bool,
     is_mobile           : PropTypes.bool,
+    is_position_default : PropTypes.bool,
     onSymbolChange      : PropTypes.func,
 };
 
