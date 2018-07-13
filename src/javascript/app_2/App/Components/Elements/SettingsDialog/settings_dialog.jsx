@@ -8,18 +8,13 @@ import LanguageDialog  from '../../../../Modules/Trading/Containers/SettingsDial
 import { localize }    from '../../../../../_common/localize';
 
 class SettingsDialog extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-        this.setWrapperRef      = this.setWrapperRef.bind(this);
-    }
 
-    setWrapperRef(node) {
+    setWrapperRef = (node) => {
         this.wrapper_ref = node;
     }
 
     // TO-DO - Simplify this
-    handleClickOutside(event) {
+    handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.props.is_open && !(event.target.className === 'ic-settings')) {
             this.props.toggleDialog();
         }
