@@ -210,9 +210,6 @@ class Portfolio extends React.Component  {
     render() {
         return (
             <div className='portfolio' ref={(el) => this.el = el}>
-                <div className='portfolio_header_container desktop-only'>
-                    <h2>{localize('Portfolio')}</h2>
-                </div>
                 {(() => {
                     const {error, is_loading} = this.state;
 
