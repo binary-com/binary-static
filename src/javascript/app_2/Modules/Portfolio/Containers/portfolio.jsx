@@ -1,5 +1,5 @@
 import React                     from 'react';
-import PortfolioCard             from '../Components/portfolio_card.jsx';
+import CardList                  from '../Components/card_list.jsx';
 import { formatPortfolioData }   from '../Helpers/process_data';
 import DataTable                 from '../../../App/Components/Elements/data_table.jsx';
 import NoticeMessage             from '../../../App/Components/Elements/notice_message.jsx';
@@ -202,14 +202,7 @@ class Portfolio extends React.Component  {
                                 />
                             </div>
                             <div className='mobile-only'>
-                                {this.state.data_source.map((transaction, idx) => (
-                                    <div key={idx} className='card-list'>
-                                        <PortfolioCard
-                                            {...transaction}
-                                            currency={this.state.currency}
-                                        />
-                                    </div>)
-                                )}
+                                <CardList data={this.state.data_source} />
                             </div>
                             {is_loading && <Loading />}
                             {!is_loading && this.state.data_source.length === 0 && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
