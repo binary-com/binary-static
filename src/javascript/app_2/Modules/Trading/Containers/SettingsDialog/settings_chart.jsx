@@ -3,32 +3,35 @@ import PropTypes       from 'prop-types';
 import SettingsControl from '../../../../App/Components/Elements/SettingsDialog/settings_control.jsx';
 import { connect }     from '../../../../Stores/connect';
 
-class ChartSettings extends React.Component {
-    render() {
-        return (
-            <div className='tab-content'>
-                <div className='chart-setting-container'>
-                    <SettingsControl
-                        name='position'
-                        toggle={this.props.toggleLayout}
-                        to_toggle={this.props.is_layout_default}
-                        style='toggle-chart-layout'
-                    />
-                    <SettingsControl
-                        name='asset information'
-                        toggle={this.props.toggleAsset}
-                        to_toggle={this.props.is_asset_visible}
-                    />
-                    <SettingsControl
-                        name='scale countdown'
-                        toggle={this.props.toggleCountdown}
-                        to_toggle={this.props.is_countdown_visible}
-                    />
-                </div>
-            </div>
-        );
-    }
-};
+const ChartSettings = ({
+      is_asset_visible,
+      is_countdown_visible,
+      is_layout_default,
+      toggleAsset,
+      toggleCountdown,
+      toggleLayout }) => (
+          <div className='tab-content'>
+              <div className='chart-setting-container'>
+                  <SettingsControl
+                      name='position'
+                      toggle={toggleLayout}
+                      to_toggle={is_layout_default}
+                      style='toggle-chart-layout'
+                  />
+                  <SettingsControl
+                      name='asset information'
+                      toggle={toggleAsset}
+                      to_toggle={is_asset_visible}
+                  />
+                  <SettingsControl
+                      name='scale countdown'
+                      toggle={toggleCountdown}
+                      to_toggle={is_countdown_visible}
+                  />
+              </div>
+          </div>
+);
+
 
 ChartSettings.propTypes = {
     is_layout_default   : PropTypes.bool,

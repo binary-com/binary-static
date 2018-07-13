@@ -3,23 +3,25 @@ import PropTypes    from 'prop-types';
 import ToggleButton from '../toggle_button.jsx';
 import { localize } from '../../../../../_common/localize';
 
-class SettingsControl extends React.Component {
-    render() {
-        return (
-            <div className='settings-row' onClick={this.props.toggle || this.props.onClick}>
-                <span>{localize(this.props.name)}</span>
-                {this.props.toggle ?
-                    <ToggleButton
-                        bool={this.props.to_toggle}
-                        style={this.props.style}
-                    />
-                    :
-                    this.props.children
-                }
-            </div>
-        );
-    }
-};
+const SettingsControl = ({
+      children,
+      name,
+      style,
+      to_toggle,
+      toggle,
+      onClick }) => (
+          <div className='settings-row' onClick={toggle || onClick}>
+              <span>{localize(name)}</span>
+              {toggle ?
+                  <ToggleButton
+                      bool={to_toggle}
+                      style={style}
+                  />
+                  :
+                  children
+              }
+          </div>
+);
 
 SettingsControl.propTypes = {
     style    : PropTypes.string,

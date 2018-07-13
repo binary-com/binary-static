@@ -2,9 +2,9 @@ import classNames      from 'classnames';
 import React           from 'react';
 import PropTypes       from 'prop-types';
 import Tabs            from '../tabs.jsx';
-import LanguageDialog  from './language_dialog.jsx';
 import ChartSettings   from '../../../../Modules/Trading/Containers/SettingsDialog/settings_chart.jsx';
 import GeneralSettings from '../../../../Modules/Trading/Containers/SettingsDialog/settings_general.jsx';
+import LanguageDialog  from '../../../../Modules/Trading/Containers/SettingsDialog/settings_language.jsx';
 import { localize }    from '../../../../../_common/localize';
 
 class SettingsDialog extends React.Component {

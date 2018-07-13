@@ -47,11 +47,12 @@ class TabsWrapper extends React.PureComponent {
             sizes: {},
         };
         this.els = {};
+        this.getSizes = this.getSizes.bind(this);
     }
 
     componentDidMount() {
         this.getSizes();
-        window.addEventListener('resize', this.getSizes.bind(this));
+        window.addEventListener('resize', this.getSizes);
     }
 
     componentDidUpdate(prevProps) {
@@ -62,14 +63,12 @@ class TabsWrapper extends React.PureComponent {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.getSizes.bind(this));
+        window.removeEventListener('resize', this.getSizes);
     }
 
     getSizes() {
         const rootBounds = this.root.getBoundingClientRect();
-
         const sizes = {};
-
         Object.keys(this.els).forEach((key) => {
             const el = this.els[key];
             const bounds = el.getBoundingClientRect();
@@ -79,9 +78,7 @@ class TabsWrapper extends React.PureComponent {
 
             sizes[key] = {left, right};
         });
-
         this.setState({sizes});
-        return sizes;
     }
 
     render() {
@@ -120,9 +117,7 @@ class TabsWrapper extends React.PureComponent {
         if (this.props.active == null || Object.keys(this.state.sizes).length === 0) {
             return {left: '0', right: '100%'};
         }
-
         const size = this.state.sizes[this.props.active];
-
         return {
             left      : `${size.left}px`,
             right     : `${size.right}px`,

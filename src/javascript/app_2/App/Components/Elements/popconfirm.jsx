@@ -4,15 +4,9 @@ import PropTypes    from 'prop-types';
 import { localize } from '../../../../_common/localize';
 
 class PopConfirm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            is_open: false,
-        };
-        this.handleClose        = this.handleClose.bind(this);
-        this.setWrapperRef      = this.setWrapperRef.bind(this);
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-    }
+    state = {
+        is_open: false,
+    };
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
@@ -22,17 +16,17 @@ class PopConfirm extends React.Component {
         document.removeEventListener('mousedown', this.handleClickOutside);
     }
 
-    setWrapperRef(node) {
+    setWrapperRef = (node) => {
         this.wrapper_ref = node;
     }
 
-    handleClickOutside(event) {
+    handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_open) {
             this.setState({ is_open: false });
         }
     }
 
-    handleClose() {
+    handleClose = () => {
         this.setState({ is_open: false });
     }
 

@@ -4,37 +4,42 @@ import SettingsControl from '../../../../App/Components/Elements/SettingsDialog/
 import { connect }  from '../../../../Stores/connect';
 import { get as getLanguage } from '../../../../../_common/language';
 
-class GeneralSettings extends React.Component {
-    render() {
-        const curr_language = getLanguage();
-        return (
-            <div className='tab-content'>
-                <div className='general-setting-container'>
-                    <SettingsControl
-                        name='language'
-                        onClick={this.props.showLanguage}
-                    >
-                        <i className={`flag ic-flag-${(curr_language || 'EN').toLowerCase()}`} />
-                    </SettingsControl>
-                    <SettingsControl
-                        name='dark mode'
-                        to_toggle={this.props.is_dark_mode}
-                        toggle={this.props.toggleDarkMode}
-                    />
-                    <SettingsControl
-                        name='purchase confirmation'
-                        to_toggle={this.props.is_purchase_confirmed}
-                        toggle={this.props.togglePurchaseConfirmation}
-                    />
-                    <SettingsControl
-                        name='purchase lock'
-                        to_toggle={this.props.is_purchase_locked}
-                        toggle={this.props.togglePurchaseLock}
-                    />
-                </div>
+const GeneralSettings = ({
+    is_dark_mode,
+    is_purchase_confirmed,
+    is_purchase_locked,
+    showLanguage,
+    toggleDarkMode,
+    togglePurchaseConfirmation,
+    togglePurchaseLock}) => {
+    const curr_language = getLanguage();
+    return (
+        <div className='tab-content'>
+            <div className='general-setting-container'>
+                <SettingsControl
+                    name='language'
+                    onClick={showLanguage}
+                >
+                    <i className={`flag ic-flag-${(curr_language || 'EN').toLowerCase()}`} />
+                </SettingsControl>
+                <SettingsControl
+                    name='dark mode'
+                    to_toggle={is_dark_mode}
+                    toggle={toggleDarkMode}
+                />
+                <SettingsControl
+                    name='purchase confirmation'
+                    to_toggle={is_purchase_confirmed}
+                    toggle={togglePurchaseConfirmation}
+                />
+                <SettingsControl
+                    name='purchase lock'
+                    to_toggle={is_purchase_locked}
+                    toggle={togglePurchaseLock}
+                />
             </div>
-        );
-    }
+        </div>
+    );
 };
 
 GeneralSettings.propTypes = {
