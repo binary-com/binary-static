@@ -10,6 +10,7 @@ import { formatMoney }           from '../../../../_common/base/currency_base';
 import { localize }              from '../../../../_common/localize';
 import { getPropertyValue }      from '../../../../_common/utility';
 import Loading                   from '../../../../../templates/_common/components/loading.jsx';
+import { connect }                    from '../../../Stores/connect';
 
 class Portfolio extends React.Component  {
     state = {
@@ -182,6 +183,10 @@ class Portfolio extends React.Component  {
     };
 
     render() {
+        const {
+            is_mobile,
+        } = this.props;
+
         return (
             <div className='portfolio' ref={(el) => this.el = el}>
                 {(() => {
@@ -191,22 +196,25 @@ class Portfolio extends React.Component  {
                         return <p>{error}</p>;
                     }
                     return (
-                        <div>
-                            <div className='desktop-only'>
-                                <DataTable
-                                    {...this.props}
-                                    columns={this.columns}
-                                    data_source={this.state.data_source}
-                                    footer={this.state.data_source.length > 0 ? this.state.footer : undefined}
-                                    has_fixed_header
-                                />
-                            </div>
-                            <div className='mobile-only'>
-                                <CardList data={this.state.data_source} currency={this.state.currency} />
-                            </div>
-                            {is_loading && <Loading />}
+                        <React.Fragment>
+                            {
+                                is_mobile ?
+                                    <CardList data={this.state.data_source} currency={this.state.currency} />
+                                    :
+                                    <DataTable
+                                        {...this.props}
+                                        columns={this.columns}
+                                        data_source={this.state.data_source}
+                                        footer={this.state.data_source.length > 0 ? this.state.footer : undefined}
+                                        has_fixed_header
+                                    />
+                            }
+                            {
+                                is_loading &&
+                                <Loading />
+                            }
                             {!is_loading && this.state.data_source.length === 0 && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
-                        </div>
+                        </React.Fragment>
                     );
                 })()}
             </div>
@@ -214,4 +222,8 @@ class Portfolio extends React.Component  {
     }
 }
 
-export default Portfolio;
+export default connect(
+    ({modules, ui}) => ({
+        is_mobile              : ui.is_mobile,
+    })
+)(Portfolio);
