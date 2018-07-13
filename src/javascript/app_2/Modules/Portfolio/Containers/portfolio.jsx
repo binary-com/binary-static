@@ -202,7 +202,7 @@ class Portfolio extends React.Component  {
                                 />
                             </div>
                             <div className='mobile-only'>
-                                <CardList data={this.state.data_source} />
+                                <CardList data={this.state.data_source} currency={this.state.currency} />
                             </div>
                             {is_loading && <Loading />}
                             {!is_loading && this.state.data_source.length === 0 && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
