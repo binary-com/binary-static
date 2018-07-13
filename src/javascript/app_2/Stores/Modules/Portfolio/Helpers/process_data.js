@@ -1,6 +1,6 @@
-import { toMoment }    from '../../../Utils/Date';
-import { formatMoney } from '../../../../_common/base/currency_base';
-import { localize }    from '../../../../_common/localize';
+import { toMoment }    from '../../../../Utils/Date';
+import { formatMoney } from '../../../../../_common/base/currency_base';
+import { localize }    from '../../../../../_common/localize';
 
 export const formatPortfolioData = (portfolio_arr) => (
     portfolio_arr.map((portfolio_item) => {
