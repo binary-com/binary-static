@@ -9,19 +9,19 @@ import React                          from 'react';
 */
 
 class DataTable extends React.Component {
-    renderRow(transaction, id) {
+    renderRow(transaction, id = 0) {
         if (!transaction) return null;
 
         return (
             <tr className='table-row' key={id}>
-                {this.props.columns.map(({ data_index, renderCellContent }) => {
-                    const cell_content = transaction[data_index] || '';
+                {this.props.columns.map(({ col_index, renderCellContent }) => {
+                    const cell_value = transaction[col_index] || '';
 
                     return (
-                        <td className={data_index} key={data_index}>
+                        <td className={col_index} key={col_index}>
                             {renderCellContent
-                                ? renderCellContent(cell_content, data_index, transaction)
-                                : cell_content
+                                ? renderCellContent(cell_value, col_index, transaction)
+                                : cell_value
                             }
                         </td>
                     );
@@ -36,7 +36,7 @@ class DataTable extends React.Component {
     }
 
     renderHeaders() {
-        return this.props.columns.map(col => <th className={col.data_index} key={col.data_index}>{col.title}</th>);
+        return this.props.columns.map(col => <th className={col.col_index} key={col.col_index}>{col.title}</th>);
     }
 
     renderTableClone() {
@@ -54,7 +54,7 @@ class DataTable extends React.Component {
                 </thead>
 
                 <tbody className='table-body'>
-                    {this.renderRow(this.props.data_source[0], 0)}
+                    {this.renderRow(this.props.data_source[0])}
                 </tbody>
             </table>
         );
@@ -78,7 +78,7 @@ class DataTable extends React.Component {
 
                     {this.props.footer &&
                         <tfoot className='table-foot'>
-                            {this.renderRow(this.props.footer, 0)}
+                            {this.renderRow(this.props.footer)}
                         </tfoot>
                     }
 
