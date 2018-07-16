@@ -1,12 +1,12 @@
-import React                     from 'react';
-import CardList                  from '../Components/card_list.jsx';
-import DataTable                 from '../../../App/Components/Elements/data_table.jsx';
-import ClientBase                from '../../../../_common/base/client_base';
-import { localize }              from '../../../../_common/localize';
-import Loading                   from '../../../../../templates/_common/components/loading.jsx';
-import NoticeMessage             from '../../../App/Components/Elements/notice_message.jsx';
-import { connect }                    from '../../../Stores/connect';
+import React                          from 'react';
+import CardList                       from '../Components/card_list.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
+import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
+import NoticeMessage                  from '../../../App/Components/Elements/notice_message.jsx';
+import { connect }                    from '../../../Stores/connect';
+import ClientBase                     from '../../../../_common/base/client_base';
+import { localize }                   from '../../../../_common/localize';
+import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Portfolio extends React.Component  {
     state = {
@@ -25,6 +25,7 @@ class Portfolio extends React.Component  {
             is_loading,
             error,
             totals,
+            has_no_open_positions,
         } = this.props;
 
         if (error) {
@@ -50,7 +51,7 @@ class Portfolio extends React.Component  {
                     is_loading &&
                     <Loading />
                 }
-                {!is_loading && data.length === 0 && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
+                {has_no_open_positions && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
             </React.Fragment>
             </div>
         );
@@ -64,6 +65,7 @@ export default connect(
         is_loading             : modules.portfolio.is_loading,
         error                  : modules.portfolio.error,
         totals                 : modules.portfolio.totals,
+        has_no_open_positions  : modules.portfolio.has_no_open_positions,
         onMount                : modules.portfolio.onMount,
         onUnmount              : modules.portfolio.onUnmount,
         is_mobile              : ui.is_mobile,

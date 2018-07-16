@@ -105,4 +105,9 @@ export default class StatementStore extends BaseStore {
             purchase,
         };
     }
+
+    @computed
+    get has_no_open_positions() {
+        return !this.is_loading && this.data.length === 0;
+    }
 }
