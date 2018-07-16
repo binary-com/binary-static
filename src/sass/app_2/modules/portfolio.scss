@@ -21,6 +21,20 @@
     .payout, .indicative, .purchase, .remaining_time {
         text-align: right;
     }
+    .contract-type {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__icon {
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            margin-bottom: 3px;
+            border-radius: 100%;
+            background-color: $COLOR_LIGHT_GRAY;
+        }
+    }
     .indicative {
         font-weight: bold;
 
@@ -37,24 +51,10 @@
             font-size: 10px;
         }
     }
-    .contract-type {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        &__icon {
-            width: 20px;
-            height: 20px;
-            padding: 5px;
-            margin-bottom: 3px;
-            border-radius: 100%;
-            background-color: $COLOR_LIGHT_GRAY;
-        }
-    }
 }
 
 // Contract type => Icon name
-$ICON_LIST: asianu asaind call calle put digitdiff digiteven digitmatch digitodd digitover digitunder expirymiss
+$CONTRACT_TYPE_LIST: asianu asaind call calle put digitdiff digiteven digitmatch digitodd digitover digitunder expirymiss
     expiryrange expiryrangee fall notouch onetouch range rise upordown lbfloatcall lbfloatput lbhighlow;
 
 // $style: light or dark
@@ -62,8 +62,8 @@ $ICON_LIST: asianu asaind call calle put digitdiff digiteven digitmatch digitodd
     @return url('../images/app_2/contracts/types/' + $style + '/ic_' + $trade_type + '.svg');
 }
 
-@each $icon in $ICON_LIST {
-    .icon_#{$icon}--light {
-        content: tradetypeicon('light', $icon);
+@each $type in $CONTRACT_TYPE_LIST {
+    .#{$type}-icon--light {
+        content: tradetypeicon('light', $type);
     }
 }

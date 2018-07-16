@@ -4,7 +4,7 @@ import { localize }              from '../../../../_common/localize';
 
 const ContractTypeCell = ({ type }) => (
     <div className='contract-type'>
-        <i className={`contract-type__icon icon_${type.toLowerCase()}--light`} />
+        <i className={`contract-type__icon ${type.toLowerCase()}-icon--light`} />
         {localize(contract_type_display[type])}
     </div>
 );
