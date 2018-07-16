@@ -2,6 +2,7 @@
 import React from 'react';
 import { contract_type_display } from '../../../Constants/contract';
 import { localize }              from '../../../../_common/localize';
+import Money                     from '../../../App/Components/Elements/money.jsx';
 
 export const getTableColumnsTemplate = (currency) => [
     {
@@ -33,16 +34,15 @@ export const getTableColumnsTemplate = (currency) => [
     {
         title     : localize('Potential Payout'),
         col_index: 'payout',
-        // renderCell: (data, col_index) => (<td key={col_index} className={col_index}> <span className={`symbols ${currency}`}/>{data}</td>),
+        renderCellContent: (cell_value) => (
+            <Money amount={cell_value} currency={currency} />
+        ),
     },
     {
         title     : localize('Purchase'),
         col_index: 'purchase',
         renderCellContent: (cell_value) => (
-            <React.Fragment>
-                <span className={`symbols ${currency}`}/>
-                {cell_value}
-            </React.Fragment>
+            <Money amount={cell_value} currency={currency} />
         ),
     },
     {
@@ -54,13 +54,10 @@ export const getTableColumnsTemplate = (currency) => [
                 : '';
             return (
                 <div className={modifier_class_name}>
-                    <div className='indicative__value'>
-                        <span className={`symbols ${currency}`} />
-                        {cell_value}
-                    </div>
+                    <Money amount={cell_value} currency={currency} />
 
                     {portfolio_position.status === 'no-resale' &&
-                        <div className='indicative__message'>
+                        <div className='indicative__no-resale-msg'>
                             {localize('Resale not offered')}
                         </div>
                     }

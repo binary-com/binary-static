@@ -1,5 +1,4 @@
 import { toMoment }    from '../../../../Utils/Date';
-import { formatMoney } from '../../../../../_common/base/currency_base';
 import { localize }    from '../../../../../_common/localize';
 
 export const formatPortfolioData = (portfolio_arr) => (
@@ -14,8 +13,8 @@ export const formatPortfolioData = (portfolio_arr) => (
             reference : portfolio_item.transaction_id,
             type      : portfolio_item.contract_type,
             details   : localize(portfolio_item.longcode.replace(/\n/g, '<br />')),
-            purchase  : formatMoney(false, purchase, true),
-            payout    : formatMoney(false, payout, true),
+            payout,
+            purchase,
             remaining_time,
             id        : portfolio_item.contract_id,
             indicative: '',
