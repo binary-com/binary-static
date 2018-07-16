@@ -5,7 +5,6 @@ import {
 import { formatPortfolioData }   from './Helpers/process_data';
 import BaseStore                 from '../../base_store';
 import { WS }                    from '../../../Services';
-import { formatMoney }           from '../../../../_common/base/currency_base';
 import { getPropertyValue }      from '../../../../_common/utility';
 
 export default class StatementStore extends BaseStore {
@@ -49,7 +48,7 @@ export default class StatementStore extends BaseStore {
         } else {
             const portfolio_position = data_source.find((portfolio_position) => portfolio_position.id === +proposal.contract_id);
             const prev_indicative = portfolio_position.indicative;
-            const new_indicative  = formatMoney(false, proposal.bid_price, true);
+            const new_indicative  = proposal.bid_price;
 
             portfolio_position.indicative = new_indicative;
 
@@ -101,9 +100,9 @@ export default class StatementStore extends BaseStore {
             purchase   += (+portfolio_item.purchase);
         });
         return {
-            indicative: formatMoney(false, indicative, true),
-            payout    : formatMoney(false, payout, true),
-            purchase  : formatMoney(false, purchase, true),
+            indicative,
+            payout,
+            purchase,
         };
     }
 }
