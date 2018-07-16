@@ -1,21 +1,3 @@
-
-.indicative {
-    font-weight: bold;
-
-    &--price-moved-up {
-        color: $COLOR_LIGHT_GREEN;
-    }
-    &--price-moved-down {
-        color: $COLOR_LIGHT_RED;
-    }
-    &--no-resale {
-        color: $COLOR_LIGHT_GRAY_2;
-    }
-    &__no-resale-msg {
-        font-size: 10px;
-    }
-}
-
 .portfolio {
     th {
         white-space: nowrap;
@@ -39,20 +21,34 @@
     .payout, .indicative, .purchase, .remaining_time {
         text-align: right;
     }
-    .table-body {
-        .type-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    .indicative {
+        font-weight: bold;
 
-            .trade-type-icon {
-                width: 20px;
-                height: 20px;
-                padding: 5px;
-                margin-bottom: 3px;
-                border-radius: 100%;
-                background-color: $COLOR_LIGHT_GRAY;
-            }
+        &--price-moved-up {
+            color: $COLOR_LIGHT_GREEN;
+        }
+        &--price-moved-down {
+            color: $COLOR_LIGHT_RED;
+        }
+        &--no-resale {
+            color: $COLOR_LIGHT_GRAY_2;
+        }
+        &__no-resale-msg {
+            font-size: 10px;
+        }
+    }
+    .contract-type {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__icon {
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            margin-bottom: 3px;
+            border-radius: 100%;
+            background-color: $COLOR_LIGHT_GRAY;
         }
     }
 }

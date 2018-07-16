@@ -10,7 +10,7 @@ import Loading                        from '../../../../../templates/_common/com
 
 class Portfolio extends React.Component  {
     state = {
-        // TODO: get currency from some common store
+        // TODO: get currency from store, once it has been added
         currency   : ClientBase.get('currency').toLowerCase(),
     };
 
@@ -35,7 +35,6 @@ class Portfolio extends React.Component  {
         return (
             // TODO: remove styled elements
             <div className='portfolio'>
-            <React.Fragment>
                 {
                     is_mobile ?
                         <CardList data={data} currency={this.state.currency} />
@@ -52,7 +51,6 @@ class Portfolio extends React.Component  {
                     <Loading />
                 }
                 {has_no_open_positions && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
-            </React.Fragment>
             </div>
         );
     }
