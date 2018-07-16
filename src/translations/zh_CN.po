@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-12 05:26\n"
+"PO-Revision-Date: 2018-07-16 02:26\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -559,13 +559,13 @@ msgid "A client is someone who has been referred through your unique affiliate l
 msgstr "客户即通过您的专用联盟链接推介加入并已往他们的 %1 账号注资的人。他们必须满足以下标准："
 
 msgid "A client that is not a Professional Client or Eligible Counterparty."
-msgstr ""
+msgstr "非专业客户或有资格当交易对手的客户。"
 
 msgid "A competitive and flexible affiliate programme that can be adapted to your needs"
 msgstr "可根据您的需要调整的具竞争性和灵活的联盟计划"
 
 msgid "A contract entered into by you pursuant to this Agreement."
-msgstr ""
+msgstr "您根据本协议签订的合约。"
 
 msgid "A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the option whether to accept or decline it. If you do not accept the cookie, then you will need to input your login ID and password again at every form to log into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Cookie 是数据元素，网站可以把它发送到您的浏览器并存储在您的系统上。您可以设置让浏览器在收到 cookie 时通知您, 让您选择是接受还是拒绝。如果您不接受 cookie, 则需要在每个表单再次输入登录 ID 和密码才能登录系统。如果您对个人浏览器或电脑的安全性有顾虑, 建议您选择此选项。"
@@ -733,10 +733,10 @@ msgid "Account"
 msgstr "账户"
 
 msgid "Account Authenticated"
-msgstr ""
+msgstr "账户验证"
 
 msgid "Account Balance"
-msgstr ""
+msgstr "账户余额"
 
 msgid "Account Categorisation"
 msgstr "账户分类"
@@ -745,19 +745,19 @@ msgid "Account Closure"
 msgstr "账户关闭"
 
 msgid "Account Deposit Currency"
-msgstr ""
+msgstr "账户存款币种"
 
 msgid "Account Equity"
-msgstr ""
+msgstr "账户权益"
 
 msgid "Account Free Margin"
-msgstr ""
+msgstr "账户免费保证金"
 
 msgid "Account Limits"
 msgstr "账户限额"
 
 msgid "Account Management"
-msgstr ""
+msgstr "账户管理"
 
 msgid "Account Opening"
 msgstr "账户开立"
@@ -811,7 +811,7 @@ msgid "Accounts List"
 msgstr "账户列表"
 
 msgid "Accounts with Open Positions being Rolled-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company."
-msgstr ""
+msgstr "有未平仓头寸隔夜利息的账户须记上由公司决定的隔夜利息借/贷费用金额，称为隔夜利息借/贷费。"
 
 msgid "Accounts with debit balance (i.e. credit exposure to %1)"
 msgstr "账户的借方余额 （即对 %1的信贷风险）"
@@ -979,7 +979,7 @@ msgid "All conditions and durations"
 msgstr "所有环境和期限"
 
 msgid "All credit card details are submitted directly to the Visa/MasterCard network using the latest SSL encryption technology, in accordance with bank policies;"
-msgstr ""
+msgstr "所有信用卡信息都按照银行政策，使用最新 SSL 加密技术直接提交至 Visa/Mastercard 网络。"
 
 msgid "All credit card details are submitted directly to the Visa/Mastercard network using the latest SSL encryption technology, in accordance with bank policies."
 msgstr "所有信用卡信息都按照银行政策，使用最新 SSL 加密技术直接提交至 Visa/Mastercard 网络。"
@@ -1027,7 +1027,7 @@ msgid "All products traded on margin carry a high degree of risk and can result 
 msgstr "保证金交易的所有产品有很高的风险，可能导致亏损，也可能给您带来超越起始资金存款的利润。本协议所述的保证金交易服务并不适合所有人。您承认本协议所述的保证金交易服务专为在本协议所述交易类型中拥有渊博知识和丰富经验的客户提供。与我们签订本协议前，您充分了解相关的风险。"
 
 msgid "All software is to be used at your own risk. The Company will not be liable for any financial losses incurred using a third-party software. The Company is not associated with the development of the automated trading software or the Expert Advisors because they are exclusively developed and supported by third parties and not by the Company. The Company does not receive any form of financial and/or other benefits from permitting Expert Advisors to be used."
-msgstr ""
+msgstr "您使用所有软件的风险由您自己承担。公司对使用第三方软件所招致的任何财务损失概不负责。公司与自动化交易软件或专家顾问的开发无关, 因为这些完全由第三方开发和支持, 而不是由公司提供。公司允许使用专家顾问没有获得任何形式的财务和/或其他利益。"
 
 msgid "All times are in GMT (Greenwich Mean Time)."
 msgstr "所有时间均采用 格林威治标准时间（GMT）。"
@@ -1036,7 +1036,7 @@ msgid "All transactions that occur on the blockchain related to cryptocurrency m
 msgstr "在与加密货币有关的区块链上发生的所有交易可能不受金融机构和政府机构监督和监管。没有受官方机构监督的加密交易意味着在交易发生错误或欺诈行为时, 无法向银行、支付服务提供商或监管机构求助。在进行虚拟货币投资和/或交易和/或进行与虚拟货币相关的差价合约交易之前, 您有责任检查在您的相关管辖区中适用的规则和保护。请注意与加密货币交易相关的所有风险。如有任何疑问, 请向独立的财务顾问和/或法律顾问寻求意见。"
 
 msgid "All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company’s responsibility hence the Company is not liable for such actions or results."
-msgstr ""
+msgstr "专家顾问发起的所有不可预见的头寸开仓或平仓, 无论是与系统出错有关或是由于其他原因, 都超出了公司的责任范围, 因此公司不承担此类行动或结果的责任。"
 
 msgid "All versions of Android"
 msgstr "所有Android版本"
@@ -1066,7 +1066,7 @@ msgid "Already have an account? %1Log in%2 here"
 msgstr "已经有账户？此处%1登录%2"
 
 msgid "Also consider that your internet connection can influence what price is displayed after the trade has been executed."
-msgstr ""
+msgstr "还有考虑您的网路连接可能会影响到交易执行后的显示价格。"
 
 msgid "Also known as counter currency"
 msgstr "也称为相对货币"
@@ -1105,10 +1105,10 @@ msgid "An Open Position may be partially closed by entering into an opposite Tra
 msgstr "未平仓头寸可通过在同一市場为比未平仓头寸较小批（量）数目下反向订单进行部分平仓。"
 
 msgid "An Order to execute a Transaction to close an Open Position when the Price reaches your specified Price."
-msgstr ""
+msgstr "当价格达到您指定的水平时对持仓头寸执行平仓交易的指令。"
 
 msgid "An Order to open or close a position in the market identified by reference to an Underlying Instrument at the current price."
-msgstr ""
+msgstr "通过当前价格参考相关工具在市场上确定执行开仓或平仓交易的指令。"
 
 msgid "An Order to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price."
 msgstr ""
@@ -4147,6 +4147,9 @@ msgstr "最高值"
 msgid "High Barrier"
 msgstr "高障碍"
 
+msgid "High Tick"
+msgstr ""
+
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "高跳动点/低跳动点合约具有严格的五跳动点周期。"
 
@@ -5931,6 +5934,9 @@ msgstr "最低值"
 
 msgid "Low Barrier"
 msgstr "低障碍"
+
+msgid "Low Tick"
+msgstr ""
 
 msgid "Low barrier"
 msgstr "低障碍"
