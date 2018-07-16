@@ -2,7 +2,7 @@ import PropTypes           from 'prop-types';
 import React               from 'react';
 import { AccountBalance }  from '../Elements/account_balance.jsx';
 import AccountSwitcher     from '../Elements/account_switcher.jsx';
-import { Notifications }   from '../Elements/Notifications/index.jsx';
+import { Notifications }   from '../Elements/Notifications';
 import { ToggleDrawer }    from '../Elements/Drawer/index.jsx';
 import { MenuDrawer }      from '../Elements/menu_drawer.jsx';
 import { BinaryLink }      from '../../routes';
