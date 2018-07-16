@@ -4,7 +4,7 @@ import { AccountBalance }  from '../Elements/account_balance.jsx';
 import AccountSwitcher     from '../Elements/account_switcher.jsx';
 import {
     ToggleDrawer,
-    DrawerItem }           from '../Elements/Drawer/index.jsx';
+    DrawerItem }           from '../Elements/Drawer';
 import { MenuDrawer }      from '../Elements/menu_drawer.jsx';
 import { BinaryLink }      from '../../routes';
 import Url                 from '../../../../_common/url';

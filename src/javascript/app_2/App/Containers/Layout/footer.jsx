@@ -5,7 +5,7 @@ import {
     ToggleFullScreen,
     TogglePortfolio,
     ToggleSettings,
-    }                 from '../../Components/Layout/Footer/index.jsx';
+    }                 from '../../Components/Layout/Footer';
 import ServerTime     from '../../Containers/server_time.jsx';
 import { BinaryLink } from '../../routes';
 import { connect }    from '../../../Stores/connect';

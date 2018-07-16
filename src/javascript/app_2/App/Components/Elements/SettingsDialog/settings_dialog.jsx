@@ -1,12 +1,12 @@
 import classNames      from 'classnames';
 import React           from 'react';
 import PropTypes       from 'prop-types';
-import { Tabs }        from '../Tabs/index.jsx';
+import { Tabs }        from '../Tabs/';
 import {
     ChartSettings,
     GeneralSettings,
     LanguageSettings,
-    }                  from '../../../Containers/SettingsDialog/index.jsx';
+    }                  from '../../../Containers/SettingsDialog';
 import { localize }    from '../../../../../_common/localize';
 
 class SettingsDialog extends React.PureComponent {
