@@ -9,7 +9,7 @@ import React                          from 'react';
 */
 
 class DataTable extends React.Component {
-    renderRow(transaction, id = 0) {
+    renderRow(transaction, is_footer = false, id = 0) {
         if (!transaction) return null;
 
         return (
@@ -20,7 +20,7 @@ class DataTable extends React.Component {
                     return (
                         <td className={col_index} key={col_index}>
                             {renderCellContent
-                                ? renderCellContent(cell_value, col_index, transaction)
+                                ? renderCellContent(cell_value, col_index, transaction, is_footer)
                                 : cell_value
                             }
                         </td>
@@ -32,7 +32,7 @@ class DataTable extends React.Component {
 
     renderBodyRows() {
         return this.props.data_source
-            .map((transaction, id) => this.renderRow(transaction, id));
+            .map((transaction, id) => this.renderRow(transaction, false, id));
     }
 
     renderHeaders() {
@@ -78,7 +78,7 @@ class DataTable extends React.Component {
 
                     {this.props.footer &&
                         <tfoot className='table-foot'>
-                            {this.renderRow(this.props.footer)}
+                            {this.renderRow(this.props.footer, true)}
                         </tfoot>
                     }
 

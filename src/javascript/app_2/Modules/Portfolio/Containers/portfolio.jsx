@@ -42,6 +42,7 @@ class Portfolio extends React.Component  {
                         <DataTable
                             columns={getTableColumnsTemplate(this.state.currency)}
                             data_source={data}
+                            // TODO: localize string, move it presentational component
                             footer={data.length > 0 ? { reference: 'Total', ...totals } : undefined}
                             has_fixed_header
                         />

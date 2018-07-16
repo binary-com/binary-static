@@ -11,20 +11,14 @@ export const formatPortfolioData = (portfolio_arr) => (
         const payout         = parseFloat(portfolio_item.payout);
 
         return {
-            reference: {
-                transaction_id: portfolio_item.transaction_id,
-                app_id        : portfolio_item.app_id,
-            },
+            reference : portfolio_item.transaction_id,
             type      : portfolio_item.contract_type,
             details   : localize(portfolio_item.longcode.replace(/\n/g, '<br />')),
             purchase  : formatMoney(false, purchase, true),
             payout    : formatMoney(false, payout, true),
             remaining_time,
             id        : portfolio_item.contract_id,
-            indicative: {
-                amount: '',
-                style : '',
-            },
+            indicative: '',
         };
     })
 );
