@@ -1,8 +1,8 @@
 import React        from 'react';
 import PropTypes    from 'prop-types';
-import SettingsControl from '../../../../App/Components/Elements/SettingsDialog/settings_control.jsx';
-import { connect }  from '../../../../Stores/connect';
-import { get as getLanguage } from '../../../../../_common/language';
+import SettingsControl from '.././../Components/Elements/SettingsDialog/settings_control.jsx';
+import { connect }  from '../../../Stores/connect';
+import { get as getLanguage } from '../../../../_common/language';
 
 const GeneralSettings = ({
     is_dark_mode,

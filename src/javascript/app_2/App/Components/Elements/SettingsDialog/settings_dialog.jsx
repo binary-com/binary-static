@@ -2,12 +2,12 @@ import classNames      from 'classnames';
 import React           from 'react';
 import PropTypes       from 'prop-types';
 import { Tabs }        from '../Tabs/tabs.jsx';
-import ChartSettings   from '../../../../Modules/Trading/Containers/SettingsDialog/settings_chart.jsx';
-import GeneralSettings from '../../../../Modules/Trading/Containers/SettingsDialog/settings_general.jsx';
-import LanguageDialog  from '../../../../Modules/Trading/Containers/SettingsDialog/settings_language.jsx';
+import ChartSettings   from '../../../Containers/SettingsDialog/settings_chart.jsx';
+import GeneralSettings from '../../../Containers/SettingsDialog/settings_general.jsx';
+import LanguageDialog  from '../../../Containers/SettingsDialog/settings_language.jsx';
 import { localize }    from '../../../../../_common/localize';
 
-class SettingsDialog extends React.Component {
+class SettingsDialog extends React.PureComponent {
 
     setWrapperRef = (node) => {
         this.wrapper_ref = node;

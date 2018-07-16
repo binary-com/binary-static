@@ -9,7 +9,6 @@ class TabsWrapper extends React.PureComponent {
             sizes: {},
         };
         this.els = {};
-        this.getSizes = this.getSizes.bind(this);
     }
 
     componentDidMount() {

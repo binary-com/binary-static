@@ -1,10 +1,10 @@
 import classNames                  from 'classnames';
 import React                       from 'react';
 import PropTypes                   from 'prop-types';
-import { localize }                from '../../../../../_common/localize';
-import { connect }                 from '../../../../Stores/connect';
+import { localize }                from '../../../../_common/localize';
+import { connect }                 from '../../../Stores/connect';
 import { getAll as getLanguages,
-         urlFor as getLanguageURL } from '../../../../../_common/language';
+         urlFor as getLanguageURL } from '../../../../_common/language';
 
 const LanguageDialog = ({ hide, is_visible }) => {
     const language_dialog_class = classNames('language-dialog-container', {

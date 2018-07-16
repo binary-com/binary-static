@@ -1,7 +1,7 @@
 import React           from 'react';
 import PropTypes       from 'prop-types';
-import SettingsControl from '../../../../App/Components/Elements/SettingsDialog/settings_control.jsx';
-import { connect }     from '../../../../Stores/connect';
+import SettingsControl from '../../Components/Elements/SettingsDialog/settings_control.jsx';
+import { connect }     from '../../../Stores/connect';
 
 const ChartSettings = ({
       is_asset_visible,
