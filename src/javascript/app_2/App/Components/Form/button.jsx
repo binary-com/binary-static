@@ -25,6 +25,7 @@ const Button = ({
 
 Button.propTypes = {
     className       : PropTypes.string,
+    children        : PropTypes.object,
     has_effect      : PropTypes.bool,
     id              : PropTypes.string,
     is_disabled     : PropTypes.bool,
