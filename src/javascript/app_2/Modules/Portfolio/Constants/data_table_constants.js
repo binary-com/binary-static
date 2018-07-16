@@ -1,4 +1,4 @@
-// TODO: move rendercells to componentns
+// TODO: move rendercells to components
 import React from 'react';
 import { contract_type_display } from '../../../Constants/contract';
 import { localize }              from '../../../../_common/localize';
@@ -11,17 +11,16 @@ export const getTableColumnsTemplate = (currency) => [
     {
         title     : localize('Contract Type'),
         col_index: 'type',
-        // renderCell: (data, col_index) => {
-        //     if (data) {
-        //         return (
-        //             <div className={`${col_index}_container`}>
-        //                 <i className={`trade_type_icon icon_${data.toLowerCase()}--light`} />
-        //                 {localize(contract_type_display[data])}
-        //             </div>
-        //         );
-        //     }
-        //     return ( <td key={col_index} />);
-        // },
+        renderCellContent: (cell_value, col_index, portfolio_position, is_footer) => {
+            if (is_footer) return '';
+
+            return (
+                <div className='type-container'>
+                    <i className={`trade-type-icon icon_${cell_value.toLowerCase()}--light`} />
+                    {localize(contract_type_display[cell_value])}
+                </div>
+            );
+        },
     },
     {
         title     : localize('Contract Details'),
@@ -57,23 +56,11 @@ export const getTableColumnsTemplate = (currency) => [
 
                     {portfolio_position.status === 'no-resale' &&
                         <div className='indicative__message'>
-                            {localize('resell not offered')}
+                            {localize('Resale not offered')}
                         </div>
                     }
                 </div>
             );
-            // if (data.amount) {
-            //     return (
-            //         <td key={col_index} className={`indicative ${data.style}`}>
-            //             <span className={`symbols ${currency}`}/>{data.amount}
-            //             {data.style === 'no_resale' && <div> {localize('resell not offered')}</div>}
-            //         </td>);
-            // }
-            // // Footer total:
-            // if (data && typeof data === 'string') {
-            //     return <td key={col_index} className={col_index}> </td>;
-            // }
-            // return <td key={col_index}>-</td>;
         },
     },
 ];
