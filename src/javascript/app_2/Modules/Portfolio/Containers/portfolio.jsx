@@ -8,7 +8,7 @@ import ClientBase                     from '../../../../_common/base/client_base
 import { localize }                   from '../../../../_common/localize';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
-class Portfolio extends React.Component  {
+class Portfolio extends React.Component {
     state = {
         // TODO: get currency from store, once it has been added
         currency   : ClientBase.get('currency').toLowerCase(),
@@ -33,7 +33,6 @@ class Portfolio extends React.Component  {
         }
 
         return (
-            // TODO: remove styled elements
             <div className='portfolio'>
                 {
                     is_mobile ?
@@ -42,7 +41,7 @@ class Portfolio extends React.Component  {
                         <DataTable
                             columns={getTableColumnsTemplate(this.state.currency)}
                             data_source={data}
-                            footer={data.length > 0 ? totals : undefined}
+                            footer={data.length > 0 ? totals : undefined} // don't show footer if table is empty
                             has_fixed_header
                         />
                 }

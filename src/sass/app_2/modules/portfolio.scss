@@ -53,11 +53,10 @@
     }
 }
 
-// Contract type => Icon name
 $CONTRACT_TYPE_LIST: asianu asaind call calle put digitdiff digiteven digitmatch digitodd digitover digitunder expirymiss
     expiryrange expiryrangee fall notouch onetouch range rise upordown lbfloatcall lbfloatput lbhighlow;
 
-// $style: light or dark
+// $style: 'light' or 'dark'
 @function tradetypeicon($style, $trade_type) {
     @return url('../images/app_2/contracts/types/' + $style + '/ic_' + $trade_type + '.svg');
 }
