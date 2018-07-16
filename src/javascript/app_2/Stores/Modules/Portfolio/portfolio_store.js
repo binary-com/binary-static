@@ -24,6 +24,13 @@ export default class StatementStore extends BaseStore {
     };
 
     @action.bound
+    clearTable() {
+        this.data       = [];
+        this.is_loading = false;
+        this.error      = '';
+    }
+
+    @action.bound
     transactionResponseHandler = (response) => {
         if (getPropertyValue(response, 'error')) {
             this.error = response.error.message;
@@ -85,6 +92,7 @@ export default class StatementStore extends BaseStore {
 
     @action.bound
     onUnmount() {
+        this.clearTable();
         WS.forgetAll('proposal_open_contract', 'transaction');
     }
 

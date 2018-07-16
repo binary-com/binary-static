@@ -18,6 +18,7 @@ export default class StatementStore extends BaseStore {
     @observable has_loaded_all = false;
     @observable date_from      = '';
     @observable date_to        = '';
+    @observable error          = '';
 
     @action.bound
     clearTable() {
@@ -42,6 +43,10 @@ export default class StatementStore extends BaseStore {
                 ...this.date_to   && {date_to: moment(this.date_to).add(1, 'd').subtract(1, 's').unix()},
             }
         ).then((response) => {
+            if (response.error) {
+                this.error = response.error.message;
+                return;
+            }
             const formatted_transactions = response.statement.transactions
                 .map(transaction => getStatementData(transaction, currency));
 

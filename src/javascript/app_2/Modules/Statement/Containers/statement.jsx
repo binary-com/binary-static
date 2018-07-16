@@ -19,7 +19,10 @@ class Statement extends React.Component {
             data,
             is_loading,
             is_mobile,
+            error,
         } = this.props;
+
+        if (error) return <p>{error}</p>;
 
         return (
             <React.Fragment>
@@ -59,6 +62,7 @@ export default connect(
         has_selected_date      : modules.statement.has_selected_date,
         data                   : modules.statement.data,
         is_loading             : modules.statement.is_loading,
+        error                  : modules.statement.error,
         onMount                : modules.statement.onMount,
         onUnmount              : modules.statement.onUnmount,
         is_mobile              : ui.is_mobile,
