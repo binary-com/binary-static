@@ -1,6 +1,6 @@
 // TODO: move rendercells to components
 import React from 'react';
-import { contract_type_display } from '../../../Constants/contract';
+import ContractTypeCell          from '../Components/contract_type_cell.jsx';
 import { localize }              from '../../../../_common/localize';
 import Money                     from '../../../App/Components/Elements/money.jsx';
 
@@ -14,13 +14,7 @@ export const getTableColumnsTemplate = (currency) => [
         col_index: 'type',
         renderCellContent: (cell_value, col_index, portfolio_position, is_footer) => {
             if (is_footer) return '';
-
-            return (
-                <div className='type-container'>
-                    <i className={`trade-type-icon icon_${cell_value.toLowerCase()}--light`} />
-                    {localize(contract_type_display[cell_value])}
-                </div>
-            );
+            return <ContractTypeCell type={cell_value} />;
         },
     },
     {
