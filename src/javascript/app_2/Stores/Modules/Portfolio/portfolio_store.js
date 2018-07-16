@@ -14,12 +14,6 @@ export default class StatementStore extends BaseStore {
     @observable error      = '';
     // TODO: convert to computed
     // TODO: localize string, move it presentational component
-    @observable footer     = {
-        reference : 'Total',
-        payout    : '',
-        purchase  : '',
-        indicative: '',
-    };
 
     @action.bound
     initializePortfolio = () => {
@@ -74,26 +68,7 @@ export default class StatementStore extends BaseStore {
             });
         }
         this.data = data_source;
-        this.footer = this.updateFooterTotals(data_source);
     }
-
-    updateFooterTotals = (portfolioArr) => {
-        let indicative = 0;
-        let payout     = 0;
-        let purchase   = 0;
-
-        portfolioArr.forEach((portfolio_item) => {
-            indicative += (+portfolio_item.indicative.amount);
-            payout     += (+portfolio_item.payout);
-            purchase   += (+portfolio_item.purchase);
-        });
-        return {
-            ...this.footer,
-            indicative: formatMoney(false, indicative, true),
-            payout    : formatMoney(false, payout, true),
-            purchase  : formatMoney(false, purchase, true),
-        };
-    };
 
     @action.bound
     updatePortfolio(response) {
@@ -103,7 +78,6 @@ export default class StatementStore extends BaseStore {
         }
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
             this.data = formatPortfolioData(response.portfolio.contracts);
-            this.footer = this.updateFooterTotals(this.data);
 
             WS.subscribeProposalOpenContract(this.updateIndicative, false);
         }
@@ -117,5 +91,23 @@ export default class StatementStore extends BaseStore {
     @action.bound
     onUnmount() {
         WS.forgetAll('proposal_open_contract', 'transaction');
+    }
+
+    @computed
+    get totals() {
+        let indicative = 0;
+        let payout     = 0;
+        let purchase   = 0;
+
+        this.data.forEach((portfolio_item) => {
+            indicative += (+portfolio_item.indicative.amount);
+            payout     += (+portfolio_item.payout);
+            purchase   += (+portfolio_item.purchase);
+        });
+        return {
+            indicative: formatMoney(false, indicative, true),
+            payout    : formatMoney(false, payout, true),
+            purchase  : formatMoney(false, purchase, true),
+        };
     }
 }

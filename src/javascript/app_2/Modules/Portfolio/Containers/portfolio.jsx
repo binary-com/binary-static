@@ -24,6 +24,7 @@ class Portfolio extends React.Component  {
             is_mobile,
             is_loading,
             error,
+            totals,
         } = this.props;
 
         if (error) {
@@ -41,7 +42,7 @@ class Portfolio extends React.Component  {
                         <DataTable
                             columns={getTableColumnsTemplate(this.state.currency)}
                             data_source={data}
-                            footer={data.length > 0 ? footer : undefined}
+                            footer={data.length > 0 ? { reference: 'Total', ...totals } : undefined}
                             has_fixed_header
                         />
                 }
@@ -62,6 +63,7 @@ export default connect(
         footer                 : modules.portfolio.footer,
         is_loading             : modules.portfolio.is_loading,
         error                  : modules.portfolio.error,
+        totals                 : modules.portfolio.totals,
         onMount                : modules.portfolio.onMount,
         onUnmount              : modules.portfolio.onUnmount,
         is_mobile              : ui.is_mobile,
