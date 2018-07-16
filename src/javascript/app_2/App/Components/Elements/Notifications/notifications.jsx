@@ -2,6 +2,7 @@ import PropTypes           from 'prop-types';
 import React               from 'react';
 import { DrawerItem }      from '../../Elements/Drawer/index.jsx';
 import Url                 from '../../../../../_common/url';
+import { localize }        from '../../../../../_common/localize';
 
 const Notifications = ({ list }) => (
     <React.Fragment>
@@ -18,8 +19,8 @@ const Notifications = ({ list }) => (
                     <img src={Url.urlForStatic('images/app_2/header/icons/ic_notification_light.svg')} />
                 </div>
                 <div>
-                    <h4>No Notifications</h4>
-                    <span className='no-notifications_message'>You have yet to receive any notifications</span>
+                    <h4>{localize('No Notifications')}</h4>
+                    <span className='no-notifications_message'>{localize('You have yet to receive any notifications')}</span>
                 </div>
             </div>
         }
