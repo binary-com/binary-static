@@ -1,13 +1,16 @@
-// TODO: move rendercells to components
-import React from 'react';
+import React                     from 'react';
 import ContractTypeCell          from '../Components/contract_type_cell.jsx';
-import { localize }              from '../../../../_common/localize';
+import IndicativeCell            from '../Components/indicative_cell.jsx';
 import Money                     from '../../../App/Components/Elements/money.jsx';
+import { localize }              from '../../../../_common/localize';
 
 export const getTableColumnsTemplate = (currency) => [
     {
         title     : localize('Reference No.'),
         col_index: 'reference',
+        renderCellContent: (cell_value, col_index, portfolio_position, is_footer) => (
+            is_footer ? localize('Total') : cell_value
+        ),
     },
     {
         title     : localize('Contract Type'),
@@ -42,21 +45,8 @@ export const getTableColumnsTemplate = (currency) => [
     {
         title     : localize('Indicative'),
         col_index: 'indicative',
-        renderCellContent: (cell_value, col_index, portfolio_position, is_footer) => {
-            const modifier_class_name = portfolio_position.status
-                ? `indicative--${portfolio_position.status}`
-                : '';
-            return (
-                <div className={modifier_class_name}>
-                    <Money amount={cell_value} currency={currency} />
-
-                    {portfolio_position.status === 'no-resale' &&
-                        <div className='indicative__no-resale-msg'>
-                            {localize('Resale not offered')}
-                        </div>
-                    }
-                </div>
-            );
-        },
+        renderCellContent: (cell_value, col_index, portfolio_position) => (
+            <IndicativeCell amount={cell_value} currency={currency} status={portfolio_position.status} />
+        ),
     },
 ];
