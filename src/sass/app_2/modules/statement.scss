@@ -79,11 +79,11 @@ $filter-height: 60px;
     .amount {
         font-weight: bold;
 
-        &.profit {
-            color: #4caf50; /* stylelint-disable-line color-no-hex */
+        &--profit {
+            color: $COLOR_LIGHT_GREEN;
         }
-        &.loss {
-            color: #f44336; /* stylelint-disable-line color-no-hex */
+        &--loss {
+            color: $COLOR_LIGHT_RED;
         }
     }
     /* TABLE STYLES END */

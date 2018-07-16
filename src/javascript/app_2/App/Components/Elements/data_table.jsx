@@ -11,13 +11,20 @@ import React                          from 'react';
 class DataTable extends React.Component {
     renderRow(transaction, id) {
         if (!transaction) return null;
-        const defaultRenderCell = (data, data_index) => <td className={data_index} key={data_index}>{data}</td>;
 
         return (
             <tr className='table-row' key={id}>
-                {this.props.columns.map(({ data_index, renderCell }) => {
-                    const data = transaction[data_index] || '';
-                    return (renderCell || defaultRenderCell)(data, data_index, transaction);
+                {this.props.columns.map(({ data_index, renderCellContent }) => {
+                    const cell_content = transaction[data_index] || '';
+
+                    return (
+                        <td className={data_index} key={data_index}>
+                            {renderCellContent
+                                ? renderCellContent(cell_content, data_index, transaction)
+                                : cell_content
+                            }
+                        </td>
+                    );
                 })}
             </tr>
         );
