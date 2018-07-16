@@ -100,7 +100,9 @@ hr {
 
                 .drawer-header {
                     display: flex;
-                    align-items: center;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                    align-items: stretch;
                     border-bottom: 1px solid $COLOR_GRAY;
 
                     .icons {
@@ -109,10 +111,46 @@ hr {
                         padding: 14px 8px;
 
                         &.btn-close {
-                            width: 1.5rem;
-                            height: auto;
-                            align-self: center;
+                            border-left: 1px solid $COLOR_GRAY;
                         }
+                    }
+                    .notifications-header {
+                        padding: 0 16px;
+                        text-transform: capitalize;
+                        font-size: 16px;
+
+                        h4 {
+                            margin: 0.5rem;
+                            font-weight: 400;
+                        }
+                    }
+                }
+                .no-notifications-container {
+                    position: absolute;
+                    top: 53px;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: calc(100% - 53px);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 70px;
+                        height: auto;
+                    }
+                    h4 {
+                        margin: 0;
+                        text-align: center;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 100%;
+                    }
+                    span {
+                        display: block;
+                        font-size: 12px;
                     }
                 }
             }
