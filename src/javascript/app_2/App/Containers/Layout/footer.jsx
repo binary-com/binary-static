@@ -1,7 +1,7 @@
 import PropTypes             from 'prop-types';
 import React                 from 'react';
 import Popover               from '../../Components/Elements/popover.jsx';
-import TogglePortfolioDrawer from '../../Components/Layout/Footer/toggle_portfolio.jsx';
+import TogglePortfolio       from '../../Components/Layout/Footer/toggle_portfolio.jsx';
 import ToggleSettings        from '../../Components/Layout/Footer/toggle_settings.jsx';
 import ToggleFullScreen      from '../../Components/Layout/Footer/toggle_fullscreen.jsx';
 import ServerTime            from '../../Containers/server_time.jsx';
@@ -14,7 +14,7 @@ class Footer extends React.Component {
             <React.Fragment>
                 <ServerTime />
                 <div className='footer-links'>
-                    <TogglePortfolioDrawer
+                    <TogglePortfolio
                         is_portfolio_drawer_on={this.props.is_portfolio_drawer_on}
                         togglePortfolioDrawer={this.props.togglePortfolioDrawer}
                     />

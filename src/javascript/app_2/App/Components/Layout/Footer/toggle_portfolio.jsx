@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React     from 'react';
 import Popover   from '../../../Components/Elements/popover.jsx';
 
-const TogglePortfolioDrawer = ({
+const TogglePortfolio = ({
     is_portfolio_drawer_on,
     togglePortfolioDrawer,
   }) => (
@@ -17,9 +17,9 @@ const TogglePortfolioDrawer = ({
       </Popover>
 );
 
-TogglePortfolioDrawer.propTypes = {
+TogglePortfolio.propTypes = {
     is_portfolio_drawer_on: PropTypes.bool,
     togglePortfolioDrawer : PropTypes.func,
 };
 
-export default TogglePortfolioDrawer;
+export default TogglePortfolio;
