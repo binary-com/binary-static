@@ -1,7 +1,7 @@
 import classNames      from 'classnames';
 import React           from 'react';
 import PropTypes       from 'prop-types';
-import { Tabs }        from '../Tabs/tabs.jsx';
+import { Tabs }        from '../Tabs/index.jsx';
 import ChartSettings   from '../../../Containers/SettingsDialog/settings_chart.jsx';
 import GeneralSettings from '../../../Containers/SettingsDialog/settings_general.jsx';
 import LanguageDialog  from '../../../Containers/SettingsDialog/settings_language.jsx';
