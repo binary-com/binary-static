@@ -352,6 +352,8 @@ const texts = [
     'Digit Under',
     'Call Spread',
     'Put Spread',
+    'High Tick',
+    'Low Tick',
 
     // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
