@@ -11,6 +11,9 @@
     &--no-resale {
         color: $COLOR_LIGHT_GRAY_2;
     }
+    &__no-resale-msg {
+        font-size: 10px;
+    }
 }
 
 .portfolio {
@@ -37,13 +40,6 @@
         text-align: right;
     }
     .table-body {
-        td.reference span.tooltip {
-            color: $COLOR_LIGHT_BLUE;
-            text-decoration: none;
-        }
-        td.reference {
-            color: $COLOR_LIGHT_BLUE;
-        }
         .type-container {
             display: flex;
             flex-direction: column;
