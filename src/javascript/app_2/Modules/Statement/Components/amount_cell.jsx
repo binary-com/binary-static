@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React      from 'react';
 
-const Amount = ({ value }) => {
+const AmountCell = ({ value }) => {
     const status = +value.replace(/,/g, '') >= 0 ? 'profit' : 'loss';
 
     return (
@@ -11,4 +11,4 @@ const Amount = ({ value }) => {
     );
 };
 
-export default Amount;
+export default AmountCell;
