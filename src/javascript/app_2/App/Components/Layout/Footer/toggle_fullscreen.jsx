@@ -57,4 +57,4 @@ class ToggleFullScreen extends React.Component {
     }
 }
 
-export default ToggleFullScreen;
+export { ToggleFullScreen };

@@ -32,7 +32,6 @@ const ChartSettings = ({
           </div>
 );
 
-
 ChartSettings.propTypes = {
     is_layout_default   : PropTypes.bool,
     is_asset_visible    : PropTypes.bool,
@@ -42,7 +41,7 @@ ChartSettings.propTypes = {
     toggleLayout        : PropTypes.func,
 };
 
-export default connect(
+const chart_settings_component =  connect(
     ({ ui }) => ({
         is_layout_default   : ui.is_chart_layout_default,
         is_asset_visible    : ui.is_chart_asset_info_visible,
@@ -52,3 +51,5 @@ export default connect(
         toggleLayout        : ui.toggleChartLayout,
     })
 )(ChartSettings);
+
+export { chart_settings_component as ChartSettings };

@@ -1,55 +1,22 @@
-import classNames                  from 'classnames';
-import React                       from 'react';
-import PropTypes                   from 'prop-types';
-import { localize }                from '../../../../_common/localize';
-import { connect }                 from '../../../Stores/connect';
-import { getAll as getLanguages,
-         urlFor as getLanguageURL } from '../../../../_common/language';
+import React          from 'react';
+import PropTypes      from 'prop-types';
+import LanguageDialog from '../../Components/Elements/SettingsDialog/language_dialog.jsx';
+import { connect }    from '../../../Stores/connect';
 
-const LanguageDialog = ({ hide, is_visible }) => {
-    const language_dialog_class = classNames('language-dialog-container', {
-        'show': is_visible,
-    });
-    // TO-DO - Simplify and refactor, get supported languages from config
-    const exclude_languages = ['JA', 'ACH'];
-    const language_list = Object.keys(getLanguages())
-      .filter(key => !(exclude_languages.includes(key)))
-      .reduce((obj, key) => {
-          obj[key] = getLanguages()[key];
-          return obj;
-      }, {});
-    return (
-        <div className={language_dialog_class}>
-            <a className='language-header' href='javascript:;' onClick={hide}>
-                <svg className='arrow-back' xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
-                    <path fill='#333' fillRule='nonzero' d='M3.6 8.5L7 12.2a.5.5 0 1 1-.8.6l-4-4.5a.5.5 0 0 1 0-.6l4-4.5a.5.5 0 0 1 .8.6L3.6 7.5h9.9a.5.5 0 1 1 0 1H3.6z'/>
-                </svg>
-                <span>{localize('language')}</span>
-            </a>
-            <div className='language-container'>
-                {Object.keys(language_list).map(key => (
-                    <React.Fragment key={key}>
-                        <div className='language-row'>
-                            <a href={getLanguageURL(key)} >
-                                <i className={`flag ic-flag-${key.replace(/(\s|_)/, '-').toLowerCase()}`} />
-                                <span>{language_list[key]}</span>
-                            </a>
-                        </div>
-                    </React.Fragment>
-                ))}
-            </div>
-        </div>
-    );
-};
+const LanguageSettings = ({ hide, is_visible }) => (
+    <LanguageDialog hide={hide} is_visible={is_visible} />
+);
 
-LanguageDialog.propTypes = {
+LanguageSettings.propTypes = {
     is_visible: PropTypes.bool,
     hide      : PropTypes.func,
 };
 
-export default connect(
+const language_settings_component = connect(
     ({ ui }) => ({
         is_visible: ui.is_language_dialog_on,
         hide      : ui.hideLanguageDialog,
     })
-)(LanguageDialog);
+)(LanguageSettings);
+
+export { language_settings_component as LanguageSettings };

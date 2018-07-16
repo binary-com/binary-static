@@ -2,9 +2,11 @@ import classNames      from 'classnames';
 import React           from 'react';
 import PropTypes       from 'prop-types';
 import { Tabs }        from '../Tabs/index.jsx';
-import ChartSettings   from '../../../Containers/SettingsDialog/settings_chart.jsx';
-import GeneralSettings from '../../../Containers/SettingsDialog/settings_general.jsx';
-import LanguageDialog  from '../../../Containers/SettingsDialog/settings_language.jsx';
+import {
+    ChartSettings,
+    GeneralSettings,
+    LanguageSettings,
+    }                  from '../../../Containers/SettingsDialog/index.jsx';
 import { localize }    from '../../../../../_common/localize';
 
 class SettingsDialog extends React.PureComponent {
@@ -48,7 +50,7 @@ class SettingsDialog extends React.PureComponent {
                     <span className='settings-header'>{localize('Settings')}</span>
                     <Tabs alignment='center' list={SettingsDialog.settings_content} />
                 </div>
-                <LanguageDialog />
+                <LanguageSettings />
             </div>
         );
     }

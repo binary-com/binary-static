@@ -22,4 +22,4 @@ TogglePortfolio.propTypes = {
     togglePortfolioDrawer : PropTypes.func,
 };
 
-export default TogglePortfolio;
+export { TogglePortfolio };

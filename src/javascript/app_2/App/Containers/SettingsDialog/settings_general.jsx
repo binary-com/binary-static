@@ -1,19 +1,18 @@
 import React        from 'react';
 import PropTypes    from 'prop-types';
-import SettingsControl from '.././../Components/Elements/SettingsDialog/settings_control.jsx';
+import SettingsControl from '../../Components/Elements/SettingsDialog/settings_control.jsx';
 import { connect }  from '../../../Stores/connect';
-import { get as getLanguage } from '../../../../_common/language';
 
 const GeneralSettings = ({
+    curr_language,
     is_dark_mode,
     is_purchase_confirmed,
     is_purchase_locked,
     showLanguage,
     toggleDarkMode,
     togglePurchaseConfirmation,
-    togglePurchaseLock}) => {
-    const curr_language = getLanguage();
-    return (
+    togglePurchaseLock,
+    }) => (
         <div className='tab-content'>
             <div className='general-setting-container'>
                 <SettingsControl
@@ -40,9 +39,9 @@ const GeneralSettings = ({
             </div>
         </div>
     );
-};
 
 GeneralSettings.propTypes = {
+    curr_language             : PropTypes.string,
     showLanguage              : PropTypes.func,
     is_dark_mode              : PropTypes.bool,
     is_language_visible       : PropTypes.bool,
@@ -53,8 +52,9 @@ GeneralSettings.propTypes = {
     togglePurchaseLock        : PropTypes.func,
 };
 
-export default connect(
-    ({ ui }) => ({
+const general_settings_component =  connect(
+    ({ common, ui }) => ({
+        curr_language             : common.current_language,
         is_dark_mode              : ui.is_dark_mode_on,
         is_language_visible       : ui.is_language_dialog_on,
         is_purchase_confirmed     : ui.is_purchase_confirm_on,
@@ -65,3 +65,5 @@ export default connect(
         togglePurchaseLock        : ui.togglePurchaseLock,
     })
 )(GeneralSettings);
+
+export { general_settings_component as GeneralSettings };
