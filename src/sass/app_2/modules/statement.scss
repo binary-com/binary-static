@@ -9,13 +9,13 @@ $filter-height: 60px;
     width: 100%;
     font-size: 14px;
     border-bottom: 1px solid $COLOR_GRAY;
-    @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
 
     &__content {
         height: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
+        @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
     }
     &__label {
         margin-right: 0.6rem;
@@ -61,20 +61,19 @@ $filter-height: 60px;
         cursor: pointer;
     }
     .date, .refid {
-        width: 6.5em;
-    }
-    .desc {
-        padding-right: 2rem !important;
+        width: 6.5rem;
     }
     .action {
-        width: 6.5em;
+        width: 5rem;
+    }
+    .payout {
+        width: 7rem;
+    }
+    .amount, .balance {
+        width: 6rem;
     }
     .payout, .amount, .balance {
-        width: 6em;
         text-align: right;
-    }
-    th.payout {
-        direction: rtl;
     }
     .amount {
         font-weight: bold;

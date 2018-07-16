@@ -5,18 +5,18 @@
             white-space: normal;
         }
 
-        &.details {
-            width: 30%;
-            @media (max-width: 900px) {
-                width: 20%;
-            }
-        }
-        &.remaining_time {
-            width: 16%;
-        }
-        &.type {
-            text-align: center;
-        }
+    }
+    .reference, .type {
+        width: 6.5rem;
+    }
+    .remaining_time {
+        width: 9rem;
+    }
+    .payout {
+        width: 6rem;
+    }
+    .purchase, .indicative {
+        width: 5rem;
     }
     .payout, .indicative, .purchase, .remaining_time {
         text-align: right;
@@ -49,6 +49,7 @@
         }
         &__no-resale-msg {
             font-size: 10px;
+            font-weight: 400;
         }
     }
 }
