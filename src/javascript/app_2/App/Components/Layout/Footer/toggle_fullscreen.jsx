@@ -4,7 +4,6 @@ import Popover from '../../../Components/Elements/popover.jsx';
 class ToggleFullScreen extends React.Component {
     constructor(props) {
         super(props);
-        this.toggleFullScreen = this.toggleFullScreen.bind(this);
         this.state = {
             is_full_screen: false,
         };
@@ -18,7 +17,7 @@ class ToggleFullScreen extends React.Component {
     }
 
     componentWillMount() {
-        this.fullscreen_map.event .forEach((event) => {
+        this.fullscreen_map.event.forEach((event) => {
             document.addEventListener(event, this.onFullScreen, false);
         });
     }
@@ -28,7 +27,7 @@ class ToggleFullScreen extends React.Component {
         this.setState({ is_full_screen });
     };
 
-    toggleFullScreen(e) {
+    toggleFullScreen = (e) => {
         e.stopPropagation();
 
         const to_exit   = this.state.is_full_screen;
