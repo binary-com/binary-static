@@ -38,7 +38,12 @@ export const getTableColumnsTemplate = (currency) => [
     {
         title     : localize('Purchase'),
         col_index: 'purchase',
-        // renderCell: (data, col_index) => (<td key={col_index} className={col_index}> <span className={`symbols ${currency}`}/>{data}</td>),
+        renderCellContent: (cell_value) => (
+            <React.Fragment>
+                <span className={`symbols ${currency}`}/>
+                {cell_value}
+            </React.Fragment>
+        ),
     },
     {
         title     : localize('Indicative'),
