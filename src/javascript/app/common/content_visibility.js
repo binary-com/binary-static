@@ -138,6 +138,10 @@ const ContentVisibility = (() => {
 
     return {
         init,
+        __test__: {
+            parseAttributeString,
+            shouldShowElement,
+        },
     };
 })();
 
