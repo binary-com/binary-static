@@ -203,7 +203,7 @@ class Portfolio extends React.Component  {
 
             this.setState({ data_source, footer });
 
-            WS.subscribeProposalOpenContract(this.updateIndicative, false);
+            WS.subscribeProposalOpenContract(null, this.updateIndicative, false);
         }
     };
 
