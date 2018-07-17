@@ -179,10 +179,8 @@ const Authenticate = (() => {
                     class    : id,
                     type,
                     name,
+                    page_type,
                 };
-                if (page_type) {
-                    file_obj.page_type = page_type;
-                }
                 if ($inputs.length) {
                     file_obj.id_number = $($inputs[0]).val();
                     file_obj.exp_date  = $($inputs[1]).val();
