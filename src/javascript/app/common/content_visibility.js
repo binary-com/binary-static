@@ -88,37 +88,40 @@ const ContentVisibility = (() => {
 
     const parseMT5Rule = (rule) => rule.slice(4);
 
+    const shouldShowElement = (attr_str, current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
+        const { is_exclude,
+                names,
+                mt5_rules } = parseAttributeString(attr_str);
+        const rule_set      = new Set(names);
+
+        const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
+        const rule_set_has_mt      = rule_set.has(mt_company_rule);
+
+        const mt5_rules_matches = mt5_rules.map((rule) => {
+            const rule_regex = new RegExp(rule);
+            return mt5_login_list.some(mt5_login => rule_regex.test(mt5_login.group));
+        });
+
+        let show_element = false;
+
+        if (mt5_rules.length) {
+            if (is_exclude) show_element = mt5_rules_matches.every(is_match => !is_match);
+            else show_element = mt5_rules_matches.some(is_match => is_match);
+        }
+
+        if (client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
+        else if (is_exclude !== rule_set_has_current) show_element = true;
+
+        return show_element;
+    };
+
     const controlVisibility = (current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
         const visible_classname = 'data-show-visible';
         const mt_company_rule   = 'mtcompany';
 
         document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str      = el.dataset.show;
-            const { is_exclude,
-                    names,
-                    mt5_rules } = parseAttributeString(attr_str);
-            const rule_set      = new Set(names);
-
-            const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
-            const rule_set_has_mt      = rule_set.has(mt_company_rule);
-
-            const mt5_rules_matches = mt5_rules.map((rule) => {
-                const rule_regex = new RegExp(rule);
-                return mt5_login_list.some(mt5_login => rule_regex.test(mt5_login.group));
-            });
-
-            let show_element = false;
-
-            if (mt5_rules.length) {
-                if (is_exclude) show_element = mt5_rules_matches.every(is_match => !is_match);
-                else show_element = mt5_rules_matches.some(is_match => is_match);
-            }
-
-            if (client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
-            else if (is_exclude !== rule_set_has_current) show_element = true;
-
-
-            if (show_element) {
+            if (shouldShowElement(attr_str, current_landing_company_shortcode, client_has_mt_company, mt5_login_list)) {
                 el.classList.add(visible_classname);
             } else {
                 const open_tab_url = new RegExp(`\\?.+_tabs=${el.id}`, 'i');
