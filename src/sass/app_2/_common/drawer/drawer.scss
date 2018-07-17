@@ -126,31 +126,34 @@ hr {
                     }
                 }
                 .no-notifications-container {
-                    position: absolute;
-                    top: 53px;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    height: calc(100% - 53px);
+                    position: relative;
+                    height: 100%;
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
 
-                    img {
-                        width: 70px;
-                        height: auto;
-                    }
-                    h4 {
-                        margin: 0;
-                        text-align: center;
-                        font-weight: 400;
-                        font-size: 14px;
-                        line-height: 100%;
-                    }
-                    span {
-                        display: block;
-                        font-size: 12px;
+                    .notification-message {
+                        display: flex;
+                        flex-grow: 1;
+                        flex-flow: column;
+                        align-items: center;
+                        justify-content: center;
+                        height: 80%;
+
+                        img {
+                            width: 70px;
+                            height: auto;
+                        }
+                        h4 {
+                            margin: 0;
+                            text-align: center;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 100%;
+                        }
+                        span {
+                            display: block;
+                            font-size: 12px;
+                        }
+
                     }
                 }
             }

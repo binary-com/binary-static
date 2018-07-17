@@ -15,12 +15,14 @@ const Notifications = ({ list }) => (
             ))
           :
             <div className='no-notifications-container'>
-                <div>
-                    <img src={Url.urlForStatic('images/app_2/header/icons/ic_notification_light.svg')} />
-                </div>
-                <div>
-                    <h4>{localize('No Notifications')}</h4>
-                    <span className='no-notifications_message'>{localize('You have yet to receive any notifications')}</span>
+                <div className='notification-message'>
+                    <div>
+                        <img src={Url.urlForStatic('images/app_2/header/icons/ic_notification_light.svg')} />
+                    </div>
+                    <div>
+                        <h4>{localize('No Notifications')}</h4>
+                        <span className='no-notifications-message'>{localize('You have yet to receive any notifications')}</span>
+                    </div>
                 </div>
             </div>
         }
