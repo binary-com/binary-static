@@ -68,8 +68,8 @@ export default class TradeStore extends BaseStore {
 
 
     constructor(root_store) {
-        const local_storage_properties = allowed_query_string_variables;
-        super(root_store, local_storage_properties);
+        const session_storage_properties = allowed_query_string_variables;
+        super(root_store, null, session_storage_properties);
     }
 
     @action.bound
