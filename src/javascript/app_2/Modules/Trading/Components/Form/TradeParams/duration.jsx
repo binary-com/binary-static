@@ -4,7 +4,7 @@ import {
 import moment                   from 'moment';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
-import Datepicker               from '../../../../../App/Components/Form/date_picker.jsx';
+import Datepicker               from '../../../../../App/Components/Form/Datepicker';
 import Dropdown                 from '../../../../../App/Components/Form/dropdown.jsx';
 import Fieldset                 from '../../../../../App/Components/Form/fieldset.jsx';
 import InputField               from '../../../../../App/Components/Form/input_field.jsx';
@@ -105,6 +105,7 @@ const Duration = ({
                                 maxDate={max_date_duration}
                                 mode='duration'
                                 onChange={onChange}
+                                value={duration || 1} // TODO: replace 1 with min duration
                                 is_nativepicker={is_nativepicker}
                                 footer={localize('The minimum duration is 1 day')}
                             /> :
@@ -133,6 +134,7 @@ const Duration = ({
                             minDate={min_date_expiry}
                             maxDate={max_date_duration}
                             onChange={onChange}
+                            value={expiry_date}
                             is_nativepicker={is_nativepicker}
                         />
                         {is_same_day &&
