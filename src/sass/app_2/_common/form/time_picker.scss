@@ -125,7 +125,7 @@
                     }
                     &.disabled {
                         color: $COLOR_GRAY;
-                        cursor: not-allowed;
+                        cursor: default;
                     }
                 }
             }

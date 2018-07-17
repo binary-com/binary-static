@@ -43,10 +43,12 @@ const Duration = ({
 }) => {
     const moment_now = moment(server_time);
     if (!now_date || moment_now.date() !== now_date.date()) {
+        const moment_today = moment_now.clone().set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+
         now_date          = moment_now.clone();
-        min_date_duration = moment_now.clone().add(1, 'd');
-        max_date_duration = moment_now.clone().add(365, 'd');
-        min_date_expiry   = moment_now.clone();
+        min_date_duration = moment_today.clone().add(1, 'd');
+        max_date_duration = moment_today.clone().add(365, 'd');
+        min_date_expiry   = moment_today.clone();
     }
     const moment_expiry = moment.utc(expiry_date);
     const is_same_day   = moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day');
