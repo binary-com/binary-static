@@ -1,6 +1,5 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import Popover        from '../../Components/Elements/popover.jsx';
 import {
     ToggleFullScreen,
     TogglePortfolio,
@@ -27,21 +26,16 @@ const Footer = ({
             />
             {!!(items && items.length) &&
                 items.map((item, idx) => (
-                    <Popover
-                        key={idx}
-                        subtitle={item.text}
-                    >
-                        <BinaryLink key={idx} to={item.link_to} className={item.icon}>
-                            <span title={item.text} />
-                        </BinaryLink>
-                    </Popover>
+                    <BinaryLink key={idx} to={item.link_to} className={item.icon}>
+                        <span title={item.text} />
+                    </BinaryLink>
                 ))}
+            <ToggleFullScreen />
             <ToggleSettings
                 is_settings_visible={is_settings_dialog_on}
                 is_language_visible={is_language_dialog_visible}
                 toggleSettings={toggleSettingsDialog}
             />
-            <ToggleFullScreen />
         </div>
     </React.Fragment>
 );

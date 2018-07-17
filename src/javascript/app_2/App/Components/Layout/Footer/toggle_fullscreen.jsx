@@ -1,5 +1,5 @@
-import React   from 'react';
-import Popover from '../../../Components/Elements/popover.jsx';
+import classNames from 'classnames';
+import React      from 'react';
 
 class ToggleFullScreen extends React.Component {
     constructor(props) {
@@ -42,17 +42,15 @@ class ToggleFullScreen extends React.Component {
     }
 
     render() {
+        const full_screen_icon_class = classNames('ic-fullscreen', {
+            'active': this.state.is_full_screen,
+        });
         return (
-            <Popover
-                subtitle='Fullscreen'
-                alignment='top-right'
-            >
-                <a
-                    href='javascript:;'
-                    className='ic-fullscreen'
-                    onClick={this.toggleFullScreen}
-                />
-            </Popover>
+            <a
+                href='javascript:;'
+                className={full_screen_icon_class}
+                onClick={this.toggleFullScreen}
+            />
         );
     }
 }

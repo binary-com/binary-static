@@ -74,6 +74,7 @@ export default class UIStore extends BaseStore {
     @action.bound
     toggleSettingsDialog() {
         this.is_settings_dialog_on = !this.is_settings_dialog_on;
+        if (!this.is_settings_dialog_on) this.is_language_dialog_on = false;
     }
 
     @action.bound

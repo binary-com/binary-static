@@ -1,21 +1,22 @@
-import PropTypes from 'prop-types';
-import React     from 'react';
-import Popover   from '../../../Components/Elements/popover.jsx';
+import classNames from 'classnames';
+import PropTypes  from 'prop-types';
+import React      from 'react';
 
 const TogglePortfolio = ({
     is_portfolio_drawer_on,
     togglePortfolioDrawer,
-  }) => (
-      <Popover
-          subtitle='Quick Portfolio'
-      >
-          <a
-              href='javascript:;'
-              className={`${is_portfolio_drawer_on ? 'ic-portfolio-active' : 'ic-portfolio' }`}
-              onClick={togglePortfolioDrawer}
-          />
-      </Popover>
-);
+  }) => {
+    const toggle_portolio_class = classNames('ic-portfolio', {
+        'active': is_portfolio_drawer_on,
+    });
+    return (
+        <a
+            href='javascript:;'
+            className={toggle_portolio_class}
+            onClick={togglePortfolioDrawer}
+        />
+    );
+};
 
 TogglePortfolio.propTypes = {
     is_portfolio_drawer_on: PropTypes.bool,
