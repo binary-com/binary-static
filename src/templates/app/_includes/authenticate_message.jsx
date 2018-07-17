@@ -15,12 +15,16 @@ const FileSelector = ({
                 <h2>{heading}</h2>
                 <div className='gr-row'>
                     <div className='gr-7 gr-12-m'>
-                        <strong>{it.L('We accept')}:</strong>
-                        <ul className='bullet'>
-                            { allowed_documents.map((document, i) => (
-                                <li key={i}>{document}</li>
-                            ))}
-                        </ul>
+                        {allowed_documents &&
+                            <React.Fragment>
+                                <strong>{it.L('We accept')}:</strong>
+                                <ul className='bullet'>
+                                    { allowed_documents.map((document, i) => (
+                                        <li key={i}>{document}</li>
+                                    ))}
+                                </ul>
+                            </React.Fragment>
+                        }
                         <strong>{it.L('Requirements')}:</strong>
                         <ul className='bullet'>
                             { instructions.map((instruction, i) => (
@@ -32,7 +36,12 @@ const FileSelector = ({
                         </p>
                     </div>
                     <div className='gr-5 gr-12-m'>
-                        <p className='font-s'>{it.L('Submit one of the documents below')}:</p>
+                        <p className='font-s'>
+                            {accepted_documents.length > 1
+                                ? `${it.L('Submit one of the documents below')}:`
+                                : `${it.L('Submit the document below')}:`
+                            }
+                        </p>
                         <div className='files'>
                             { accepted_documents.map((document, i) => {
                                 const j = i + 1;
@@ -78,46 +87,25 @@ const FileSelector = ({
                                                     </div>
                                                 </div>
                                             )}
+                                            { type === 'selfie' && (
+                                                <div className='gr-row form-row gr-centered'>
+                                                    <div className='gr-12'>
+                                                        <input id={`add_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png' data-type='other' data-name={document.name} data-page-type='photo'/>
+                                                        <label htmlFor={`add_file${j}`} className='button'>{it.L('Add')} <span className='add' /></label>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     </React.Fragment>
                                 );
                             })}
                         </div>
-                        {type === 'poi' && <SelfieSelector />}
                     </div>
                 </div>
             </div>
         </fieldset>
     </div>
 );
-
-const SelfieSelector = () => {
-    const name = it.L('Selfie with document');
-    return (
-        <React.Fragment>
-            <p className='font-s gr-padding-30 gr-child'>{it.L('Upload selfie that clearly shows your face and document (Optional)')}:</p>
-            <div className='files'>
-                <h3>{name}</h3>
-                <div className='fields'>
-                    <div className='gr-row form-row gr-centered'>
-                        <div className='gr-12'>
-                            <input
-                                id='add_file_selfie'
-                                className='file-picker'
-                                type='file'
-                                accept='.jpg, .jpeg, .gif, .png, .pdf'
-                                data-type='other'
-                                data-name={name}
-                                data-page-type='photo'
-                            />
-                            <label htmlFor='add_file_selfie' className='button'>{it.L('Add')} <span className='add' /></label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </React.Fragment>
-    );
-};
 
 
 const AuthenticateMessage = () => (
@@ -162,6 +150,20 @@ const AuthenticateMessage = () => (
             accepted_documents={[
                 { name: it.L('Utility bill'), value: 'proofaddress' },
                 { name: it.L('Bank statement'), value: 'bankstatement' },
+            ]}
+        />
+
+        <FileSelector
+            heading={it.L('3. Selfie or self-portrait photo')}
+            instructions={[
+                it.L('Must be a clear, colour photo'),
+                it.L('Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously'),
+                it.L('Only JPG, JPEG, GIF, and PNG formats are accepted'),
+                it.L('Maximum upload size for each file is [_1]', '8MB'),
+            ]}
+            type='selfie'
+            accepted_documents={[
+                { name: it.L('Selfie holding proof of identity (front)') },
             ]}
         />
 
