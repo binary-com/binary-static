@@ -8,9 +8,9 @@ import {
     getURL,
 }                      from '../../../../Utils/Language/index';
 
-const LanguageDialog = ({ hide, is_visible }) => {
+const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
     const language_dialog_class = classNames('language-dialog-container', {
-        'show': is_visible,
+        'show': is_visible && is_settings_on,
     });
     return (
         <div className={language_dialog_class}>
@@ -35,8 +35,9 @@ const LanguageDialog = ({ hide, is_visible }) => {
 };
 
 LanguageDialog.propTypes = {
-    is_visible: PropTypes.bool,
-    hide      : PropTypes.func,
+    is_settings_on: PropTypes.bool,
+    is_visible    : PropTypes.bool,
+    hide          : PropTypes.func,
 };
 
 export default LanguageDialog;
