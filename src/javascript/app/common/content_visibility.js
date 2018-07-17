@@ -58,15 +58,14 @@ const ContentVisibility = (() => {
     );
 
     const parseAttributeString = (attr_str) => {
-        if (!/^[a-z,-\s]+$/.test(attr_str)) {
-            throw new Error(generateParsingErrorMessage('Invalid character used.', attr_str));
-        }
         let names = attr_str.split(',').map(name => name.trim());
+
         if (names.some(name => name.length === 0)) {
             throw new Error(generateParsingErrorMessage('No empty names allowed.', attr_str));
         }
         const is_exclude = names.every(name => name.charAt(0) === '-');
         const is_include = names.every(name => name.charAt(0) !== '-');
+
         if (!is_exclude && !is_include) {
             throw new Error(generateParsingErrorMessage('No mixing of includes and excludes allowed.', attr_str));
         }
