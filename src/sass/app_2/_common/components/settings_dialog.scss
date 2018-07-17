@@ -112,6 +112,7 @@
             border-bottom: 1px solid $COLOR_GRAY;
             cursor: pointer;
             text-decoration: none;
+            text-transform: capitalize;
 
             svg.arrow-back {
                 padding-right: 4px;

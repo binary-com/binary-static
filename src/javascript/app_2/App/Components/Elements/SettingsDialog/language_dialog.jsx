@@ -14,10 +14,10 @@ const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
     });
     return (
         <div className={language_dialog_class}>
-            <a className='language-header' href='javascript:;' onClick={hide}>
+            <div className='language-header' onClick={hide}>
                 <Arrowback className='arrow-back' />
                 <span>{localize('language')}</span>
-            </a>
+            </div>
             <div className='language-container'>
                 {Object.keys(getAllowedLanguages()).map(key => (
                     <React.Fragment key={key}>
