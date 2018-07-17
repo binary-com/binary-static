@@ -32,5 +32,24 @@ describe('ContentVisibility', () => {
                 mt5_rules : [],
             });
         });
+        it('works for a single mt5 rule', () => {
+            expect(parseAttributeString('mt5:real\\vanuatu')).to.deep.equal({
+                is_exclude: false,
+                names     : [],
+                mt5_rules : ['real\\vanuatu'],
+            });
+        });
+        it('works for a mix of rules', () => {
+            expect(parseAttributeString('-maltainvest,  -default, -mt5:real\\vanuatu')).to.deep.equal({
+                is_exclude: true,
+                names     : ['maltainvest', 'default'],
+                mt5_rules : ['real\\vanuatu'],
+            });
+            expect(parseAttributeString('maltainvest, mt5:real\\vanuatu, costarica')).to.deep.equal({
+                is_exclude: false,
+                names     : ['maltainvest', 'costarica'],
+                mt5_rules : ['real\\vanuatu'],
+            });
+        });
     });
 });
