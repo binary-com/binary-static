@@ -35,6 +35,9 @@ const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
             data-show='Costarica'         -> throws error
 */
 
+const visible_classname = 'data-show-visible';
+const mt_company_rule   = 'mtcompany';
+
 const ContentVisibility = (() => {
     const init = () => {
         if (Client.isLoggedIn()) {
@@ -116,9 +119,6 @@ const ContentVisibility = (() => {
     };
 
     const controlVisibility = (current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
-        const visible_classname = 'data-show-visible';
-        const mt_company_rule   = 'mtcompany';
-
         document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str      = el.dataset.show;
             if (shouldShowElement(attr_str, current_landing_company_shortcode, client_has_mt_company, mt5_login_list)) {
