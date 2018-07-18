@@ -80,8 +80,8 @@ class Calendar extends React.Component {
         const { dateFormat, maxDate, minDate, onSelect } = this.props;
 
         const date      = moment(e.target.dataset.date);
-        const min_date  = moment(minDate).utc().format(dateFormat);
-        const max_date  = moment(maxDate).utc().format(dateFormat);
+        const min_date  = moment(minDate).format(dateFormat);
+        const max_date  = moment(maxDate).format(dateFormat);
         const is_before = date.isBefore(min_date);
         const is_after  = date.isAfter(max_date);
 

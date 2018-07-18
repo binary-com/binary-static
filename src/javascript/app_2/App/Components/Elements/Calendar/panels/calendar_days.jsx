@@ -37,7 +37,7 @@ const getDays = ({ calendarDate: date_ref, dateFormat, selectedDate: value, minD
             <span
                 key={date}
                 className={classNames('calendar-date', {
-                    active  : is_active,
+                    active  : is_active && !is_disabled,
                     today   : is_today,
                     disabled: is_disabled,
                     hidden  : is_other_month,
