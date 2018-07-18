@@ -4,12 +4,13 @@ import { Table } from '../../_common/components/elements.jsx';
 
 const FileSelector = ({
     heading,
+    data_show,
     allowed_documents,
     instructions,
     accepted_documents,
     type,
 }) => (
-    <div className='gr-row gr-12'>
+    <div className='gr-row gr-12' data-show={data_show}>
         <fieldset>
             <div className='gr-padding-30 gr-gutter-left gr-gutter-right'>
                 <h2>{heading}</h2>
@@ -155,6 +156,7 @@ const AuthenticateMessage = () => (
 
         <FileSelector
             heading={it.L('3. Selfie or self-portrait photo')}
+            data_show='mt5:real+vanuatu'
             instructions={[
                 it.L('Must be a clear, colour photo'),
                 it.L('Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously'),
