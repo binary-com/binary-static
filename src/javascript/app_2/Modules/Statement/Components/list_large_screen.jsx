@@ -8,12 +8,11 @@ const ListLargeScreen = ({
 }) => {
     const columns = getTableColumnsTemplate();
     return (
-        <div className='statement statement__content'>
+        <div className='statement__content'>
             <DataTable
                 data_source={data.slice()}
                 columns={columns}
                 has_fixed_header
-                is_full_width
             />
         </div>
     );

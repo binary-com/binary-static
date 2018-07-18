@@ -46,7 +46,7 @@ class DataTable extends React.Component {
             https://stackoverflow.com/questions/4709390
         */
         return (
-            <table className={classNames('table', 'table-clone', { 'table--full-width': this.props.is_full_width })}>
+            <table className={classNames('table', 'table-clone', 'container', { 'table--full-width': this.props.is_full_width })}>
                 <thead className='table-head'>
                     <tr className='table-row'>
                         {this.renderHeaders()}
@@ -62,7 +62,6 @@ class DataTable extends React.Component {
 
     render() {
         const table_class = classNames('table', {
-            'table--full-width'  : this.props.is_full_width,
             'table--fixed-header': this.props.has_fixed_header,
         });
         return (
@@ -96,7 +95,6 @@ DataTable.propTypes = {
     data_source     : MobxPropTypes.arrayOrObservableArray,
     footer          : PropTypes.object,
     has_fixed_header: PropTypes.bool,
-    is_full_width   : PropTypes.bool,
 };
 
 

@@ -8,7 +8,6 @@ $filter-height: 60px;
     background-color: $COLOR_WHITE;
     width: 100%;
     font-size: 14px;
-    border-bottom: 1px solid $COLOR_GRAY;
 
     &__content {
         height: 100%;
@@ -28,6 +27,7 @@ $filter-height: 60px;
 
         .statement-filter__content {
             padding: 0;
+            margin: 0 auto;
             max-width: 450px;
             display: grid;
             grid-template-columns: 1fr 30px 1fr;

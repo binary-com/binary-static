@@ -3,7 +3,7 @@ import React                          from 'react';
 import StatementCard                  from '../Components/statement_card.jsx';
 
 const ListSmallScreen = ({ data }) => (
-    <div className='statement statement__content'>
+    <div className='statement__content'>
         <div className='card-list'>
             {
                 data.map((transaction, id) => (

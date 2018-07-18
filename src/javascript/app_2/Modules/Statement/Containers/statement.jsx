@@ -25,7 +25,7 @@ class Statement extends React.Component {
         if (error) return <p>{error}</p>;
 
         return (
-            <React.Fragment>
+            <div className='statement container'>
                 <Filter />
                 {
                     is_mobile ?
@@ -41,7 +41,7 @@ class Statement extends React.Component {
                     has_no_activity_message &&
                     <NoActivityMessage has_selected_date={has_selected_date} />
                 }
-            </React.Fragment>
+            </div>
         );
     }
 }

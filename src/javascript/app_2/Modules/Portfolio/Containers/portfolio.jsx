@@ -33,7 +33,7 @@ class Portfolio extends React.Component {
         }
 
         return (
-            <div className='portfolio'>
+            <div className='portfolio container'>
                 {
                     is_mobile ?
                         <CardList data={data} currency={this.state.currency} />
@@ -43,7 +43,6 @@ class Portfolio extends React.Component {
                             data_source={data}
                             footer={data.length > 0 ? totals : undefined} // don't show footer if table is empty
                             has_fixed_header
-                            is_full_width
                         />
                 }
                 {
