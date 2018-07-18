@@ -1,0 +1,187 @@
+button.btn {
+    position: relative;
+
+    .popconfirm {
+        position: absolute;
+    }
+}
+
+.popconfirm {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    background: $COLOR_WHITE;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.14);
+    width: 348px;
+    min-height: 90px;
+    font-weight: 500;
+    border-radius: 4px;
+    transform: scale(0, 0) translate(-50%, 0);
+    opacity: 0;
+    transform-origin: left bottom;
+    transition: all 0.3s;
+
+    &.open {
+        transform: scale(1, 1) translate(-50%, 0);
+        opacity: 1;
+    }
+    &-buttons {
+        display: flex;
+        justify-content: flex-end;
+
+        .btn {
+            margin: 0 8px;
+            box-shadow: none;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                color: $COLOR_BLUE;
+                font-size: 12px;
+            }
+        }
+    }
+    &-title {
+        margin: 8px;
+        padding: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        svg {
+            margin-right: 8px;
+        }
+        h4 {
+            color: $COLOR_BLUE;
+            font-size: 12px;
+            font-weight: 300;
+            text-transform: none;
+            padding: 0;
+            margin: 0;
+            line-height: 100%;
+        }
+    }
+    &:after {
+        // arrow pointing down
+        position: absolute;
+        content: '';
+        bottom: -3px;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent $COLOR_WHITE $COLOR_WHITE transparent;
+        transform: rotate(45deg);
+        box-shadow: rgba(0, 0, 0, 0.05) 2px 2px 2px;
+    }
+
+    // Alignments
+    &.bottom {
+        top: 40px;
+        bottom: unset;
+        transform-origin: left top;
+
+        &:after {
+            top: -3px;
+            bottom: unset;
+            transform: rotate(-135deg);
+        }
+    }
+    &.right {
+        bottom: 50%;
+        left: unset;
+        right: -20px;
+        transform-origin: right bottom;
+        transform: scale(0, 0) translate(100%, 50%);
+
+        &.open {
+            transform: scale(1, 1) translate(100%, 50%);
+        }
+        &:after {
+            left: 0;
+            bottom: 50%;
+            transform: rotate(135deg);
+        }
+    }
+    &.left {
+        bottom: 50%;
+        left: -20px;
+        transform-origin: left bottom;
+        transform: scale(0, 0) translate(-100%, 50%);
+
+        &.open {
+            transform: scale(1, 1) translate(-100%, 50%);
+        }
+        &:after {
+            left: unset;
+            right: -3px;
+            bottom: 45%;
+            transform: rotate(-45deg);
+        }
+    }
+    &.top-right {
+        transform-origin: right bottom;
+        transform: scale(0, 0) translate(0, 0);
+        left: unset;
+        right: 0;
+
+        &.open {
+            transform: scale(1, 1) translate(0, 0);
+        }
+        &:after {
+            left: unset;
+            right: 5%;
+        }
+    }
+    &.top-left {
+        transform-origin: left bottom;
+        transform: scale(0, 0) translate(0, 0);
+        left: 0;
+
+        &.open {
+            transform: scale(1, 1) translate(0, 0);
+        }
+        &:after {
+            left: 8%;
+        }
+    }
+    &.bottom-right {
+        top: 40px;
+        bottom: unset;
+        transform-origin: right top;
+        transform: scale(0, 0) translate(0, 0);
+        left: unset;
+        right: 0;
+
+        &.open {
+            transform: scale(1, 1) translate(0, 0);
+        }
+        &:after {
+            top: -3px;
+            bottom: unset;
+            left: unset;
+            right: 5%;
+            transform: rotate(-135deg);
+
+        }
+    }
+    &.bottom-left {
+        top: 40px;
+        bottom: unset;
+        transform-origin: left top;
+        transform: scale(0, 0) translate(0, 0);
+        left: 0;
+
+        &.open {
+            transform: scale(1, 1) translate(0, 0);
+        }
+        &:after {
+            top: -3px;
+            left: 8%;
+            bottom: unset;
+            transform: rotate(-135deg);
+        }
+    }
+}

@@ -1,7 +1,7 @@
 footer {
     position: fixed;
     bottom: 0;
-    padding: 3px 10px;
+    padding: 0 10px;
     width: 100%;
     height: $FOOTER_HEIGHT;
     border-top: 1px solid $COLOR_GRAY;
@@ -23,11 +23,18 @@ footer {
         border-color: $COLOR_DARK_WHITE;
     }
     .footer-links {
-        display: inline-flex;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        height: 100%;
 
         a {
-            padding: 0 5px;
+            padding: 0 8px;
             text-decoration: none;
+            height: 100%;
+            display: inline-flex;
+            align-items: center;
 
             span {
                 font-size: 0.8rem;
@@ -36,7 +43,7 @@ footer {
                 vertical-align: middle;
                 display: inline-block;
             }
-            &:hover {
+            &:hover, &:focus {
                 background: $COLOR_GRAY;
             }
         }
@@ -47,12 +54,13 @@ footer {
 }
 
 // TODO: Use font-icons
-.ic-portfolio:before {
-    content: url('../images/app_2/footer/ic_portfolio_normal_light.svg');
-}
-
-.ic-portfolio-active:before {
-    content: url('../images/app_2/footer/ic_portfolio_active_light.svg');
+.ic-portfolio {
+    &.active:before {
+        content: url('../images/app_2/footer/ic_portfolio_active_light.svg');
+    }
+    &:before {
+        content: url('../images/app_2/footer/ic_portfolio_normal_light.svg');
+    }
 }
 
 .ic-statement:before {
@@ -71,8 +79,23 @@ footer {
     content: url('../images/app_2/footer/ic_lock_open_light.svg');
 }
 
-.ic-settings:before {
-    content: url('../images/app_2/footer/ic_edit_normal_light.svg');
+.ic-settings {
+    &:before {
+        content: url('../images/app_2/footer/ic_edit_normal_light.svg');
+    }
+    &.active {
+        background: $COLOR_GRAY;
+
+        &:after {
+            content: '';
+            height: 2px;
+            width: 100%;
+            background: $COLOR_BLUE;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
 }
 
 .ic-fullscreen:before {
