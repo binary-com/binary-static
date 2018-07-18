@@ -8,6 +8,11 @@ import PortfolioDrawer from '../../../App/Components/Elements/portfolio_drawer.j
 import { connect }     from '../../../Stores/connect';
 
 class Trade extends React.Component {
+
+    componentDidMount() {
+        this.props.updateQueryString();
+    }
+
     render() {
         return (
             <div
@@ -50,6 +55,7 @@ Trade.propTypes = {
     is_trade_enabled      : PropTypes.bool,
     onSymbolChange        : PropTypes.func,
     server_time           : PropTypes.object,
+    updateQueryString     : PropTypes.func,
 };
 
 export default connect(
@@ -57,13 +63,14 @@ export default connect(
         server_time           : common.server_time,
         chart_barriers        : modules.trade.chart_barriers,
         initial_symbol        : modules.trade.symbol,
+        is_purchase_enabled   : modules.trade.is_purchase_enabled,
+        is_trade_enabled      : modules.trade.is_trade_enabled,
+        onSymbolChange        : modules.trade.onChange,
+        updateQueryString     : modules.trade.updateQueryString,
         is_dark_theme         : ui.is_dark_mode_on,
         is_countdown_enabled  : ui.is_chart_countdown_visible,
         is_asset_enabled      : ui.is_chart_asset_info_visible,
         is_position_default   : ui.is_chart_layout_default,
-        is_purchase_enabled   : modules.trade.is_purchase_enabled,
-        is_trade_enabled      : modules.trade.is_trade_enabled,
-        onSymbolChange        : modules.trade.onChange,
         is_mobile             : ui.is_mobile,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
     })
