@@ -14,6 +14,10 @@ const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
         - landing company shortcodes
         - 'mtcompany' code that stands for metatrader availability
         - 'default' code that describes logged out users
+        - mt5 rules that are matched against `group` field in `mt5_login_list`
+            starts with 'mt5:'
+            keywords are separated by '+'
+            e.g. 'mt5:real+vanuatu' => matches if client has at least one single mt5 login with 'real' and 'vanuatu' keywords in it
 
     Examples:
         Show only for logged in clients with costarica landing company:
@@ -27,6 +31,9 @@ const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
 
         Hide for malta and maltainvest:
             data-show='-malta, -maltainvest'
+
+        Show for real\vanuatu MT5 clients with standard account
+            data-show='mt5:real+vanuatu+standard'
 
     Prohibited values:
         Cannot mix includes and excludes:
