@@ -5,10 +5,10 @@ import React          from 'react';
 import CalendarButton from './calendar_button.jsx';
 
 export default function CalendarHeader({ calendarDate: date, isPeriodDisabled, onClick, onSelect, view }) {
-    const is_date_view   = (view === 'date');
-    const is_month_view  = (view === 'month');
-    const is_year_view   = (view === 'year');
-    const is_decade_view = (view === 'decade');
+    const is_date_view   = view === 'date';
+    const is_month_view  = view === 'month';
+    const is_year_view   = view === 'year';
+    const is_decade_view = view === 'decade';
     
     return (
         <div className='calendar-header'>

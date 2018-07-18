@@ -69,11 +69,11 @@ class Calendar extends React.Component {
 
         if (unit === 'months' && this.isPeriodDisabled(new_date, 'month')) return;
 
-        if (unit === 'years'  && this.isPeriodDisabled(new_date, 'month')) {
+        if (unit === 'years'  && this.isPeriodDisabled(new_date, 'years')) {
             new_date = is_add ? maxDate : minDate;
         }
 
-        this.setState({ calendar_date: new_date });
+        this.setState({ calendar_date: moment(new_date, dateFormat).format(dateFormat) }); // formatted date
     }
 
     updateSelectedDate = (e) => {
