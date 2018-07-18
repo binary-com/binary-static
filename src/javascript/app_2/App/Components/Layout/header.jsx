@@ -2,9 +2,8 @@ import PropTypes           from 'prop-types';
 import React               from 'react';
 import { AccountBalance }  from '../Elements/account_balance.jsx';
 import AccountSwitcher     from '../Elements/account_switcher.jsx';
-import {
-    ToggleDrawer,
-    DrawerItem }           from '../Elements/Drawer/index.jsx';
+import { Notifications }   from '../Elements/Notifications';
+import { ToggleDrawer }    from '../Elements/Drawer/index.jsx';
 import { MenuDrawer }      from '../Elements/menu_drawer.jsx';
 import { BinaryLink }      from '../../routes';
 import Url                 from '../../../../_common/url';
@@ -43,9 +42,7 @@ class Header extends React.Component {
                             alignment='right'
                             icon_link={Url.urlForStatic('images/app_2/header/icons/ic_notification_light.svg')}
                         >
-                            <DrawerItem text='Alert 1'/>
-                            <DrawerItem text='Alert 2'/>
-                            <DrawerItem text='Alert 3'/>
+                            <Notifications />
                         </ToggleDrawer>
                     </div>
                 </header>

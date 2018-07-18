@@ -1,6 +1,6 @@
 import extend                             from 'extend';
 import Client                             from '../../../../../_common/base/client_base';
-import { cloneObject, isEmptyObject }     from '../../../../../_common/utility';
+import { isEmptyObject }                  from '../../../../../_common/utility';
 
 import ContractTypeHelper                 from '../Helpers/contract_type';
 
@@ -10,7 +10,7 @@ import * as Duration                      from '../Actions/duration';
 import * as StartDate                     from '../Actions/start_date';
 
 export const processTradeParams = async(store, new_state) => {
-    const snapshot = cloneObject(store);
+    const snapshot = store.getSnapshot();
 
     if (!Client.get('currency') && isEmptyObject(store.currencies_list)) {
         extendOrReplace(snapshot, await Currency.getCurrenciesAsync(store.currency));

@@ -100,6 +100,8 @@ hr {
 
                 .drawer-header {
                     display: flex;
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
                     align-items: center;
                     border-bottom: 1px solid $COLOR_GRAY;
 
@@ -109,10 +111,49 @@ hr {
                         padding: 14px 8px;
 
                         &.btn-close {
-                            width: 1.5rem;
-                            height: auto;
-                            align-self: center;
+                            border-left: 1px solid $COLOR_GRAY;
                         }
+                    }
+                    .notifications-header {
+                        padding: 0 16px;
+                        text-transform: capitalize;
+                        font-size: 16px;
+
+                        h4 {
+                            margin: 0.5rem;
+                            font-weight: 400;
+                        }
+                    }
+                }
+                .no-notifications-container {
+                    position: relative;
+                    height: 100%;
+                    display: flex;
+
+                    .notification-message {
+                        display: flex;
+                        flex-grow: 1;
+                        flex-flow: column;
+                        align-items: center;
+                        justify-content: center;
+                        height: 80%;
+
+                        img {
+                            width: 70px;
+                            height: auto;
+                        }
+                        h4 {
+                            margin: 0;
+                            text-align: center;
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 100%;
+                        }
+                        span {
+                            display: block;
+                            font-size: 12px;
+                        }
+
                     }
                 }
             }
