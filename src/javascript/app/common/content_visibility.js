@@ -88,7 +88,7 @@ const ContentVisibility = (() => {
 
     const isMT5Rule = (rule) => /^mt5:/.test(rule);
 
-    const parseMT5Rule = (rule) => rule.slice(4);
+    const parseMT5Rule = (rule) => rule.slice(4).split('+');
 
     const shouldShowElement = (attr_str, current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
         const { is_exclude,
@@ -99,20 +99,22 @@ const ContentVisibility = (() => {
         const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
         const rule_set_has_mt      = rule_set.has(mt_company_rule);
 
-        const mt5_rules_matches = mt5_rules.map((rule) => {
-            const rule_regex = new RegExp(rule);
-            return mt5_login_list.some(mt5_login => rule_regex.test(mt5_login.group));
+        const mt5_rules_matches = mt5_rules.map((keywords) => {
+            const keywords_regex = keywords.map((keyword) => new RegExp(keyword));
+            return mt5_login_list.some(mt5_login =>
+                keywords_regex.every(keyword_regex => keyword_regex.test(mt5_login.group))
+            );
         });
 
         let show_element = false;
 
-        if (mt5_rules.length) {
-            if (is_exclude) show_element = mt5_rules_matches.every(is_match => !is_match);
-            else show_element = mt5_rules_matches.some(is_match => is_match);
-        }
-
         if (client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
         else if (is_exclude !== rule_set_has_current) show_element = true;
+
+        if (mt5_rules.length) {
+            if (is_exclude) show_element = mt5_rules_matches.every(is_match => !is_match);
+            else            show_element = mt5_rules_matches.some(is_match => is_match);
+        }
 
         return show_element;
     };
