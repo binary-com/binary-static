@@ -3,7 +3,7 @@ import PropTypes                     from 'prop-types';
 import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
-import Footer                        from './Components/Layout/footer.jsx';
+import Footer                        from '../App/Containers/Layout/footer.jsx';
 import Header                        from './Components/Layout/header.jsx';
 import { BinaryRoutes }              from './routes';
 import NetworkMonitor                from '../Services/network_monitor';
@@ -66,14 +66,7 @@ const BinaryApp = ({ root_store }) => (
                     <BinaryRoutes />
                 </div>
                 <footer id='footer'>
-                    <Footer
-                        items={[
-                            { icon: 'ic-statement',   text: localize('Statement'), link_to: 'statement' },
-                            { icon: 'ic-chat-bubble', text: localize('Notification') },
-                            { icon: 'ic-two-step'   , text: localize('Purchase Confirmation') },
-                            { icon: 'ic-lock-open',   text: localize('Purchase Lock') },
-                        ]}
-                    />
+                    <Footer />
                 </footer>
             </div>
         </MobxProvider>
