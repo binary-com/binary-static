@@ -10,9 +10,9 @@ import {
 
 class DatePicker extends React.PureComponent {
     state = {
-        value               : '',
-        is_calendar_visible : false,
-        is_close_btn_visible: false,
+        value                : '',
+        is_datepicker_visible: false,
+        is_close_btn_visible : false,
     };
 
     componentWillReceiveProps({ value, mode }) {
@@ -28,13 +28,13 @@ class DatePicker extends React.PureComponent {
         document.removeEventListener('click', this.onClickOutside, true);
     }
 
-    handleCalendarVisibility = () => {
-        this.setState({ is_calendar_visible: !this.state.is_calendar_visible });
+    handleVisibility = () => {
+        this.setState({ is_datepicker_visible: !this.state.is_datepicker_visible });
     }
 
     onClickOutside = (e) => {
-        if (!this.mainNode.contains(e.target) && this.state.is_calendar_visible) {
-            this.setState({ is_calendar_visible: false });
+        if (!this.mainNode.contains(e.target) && this.state.is_datepicker_visible) {
+            this.setState({ is_datepicker_visible: false });
             if (this.props.mode !== 'duration') {
                 this.updateDatePickerValue(formatDate(this.state.value));
             }
@@ -51,7 +51,7 @@ class DatePicker extends React.PureComponent {
         this.setState({ is_close_btn_visible: false });
     }
 
-    onSelectCalendar = (selected_date, is_calendar_visible) => {
+    onSelectCalendar = (selected_date, is_datepicker_visible) => {
         let value = selected_date;
         if (!moment(value).isValid) { value = ''; }
 
@@ -60,7 +60,7 @@ class DatePicker extends React.PureComponent {
         } else {
             this.updateDatePickerValue(value);
         }
-        this.setState({ is_calendar_visible });
+        this.setState({ is_datepicker_visible });
     }
 
     onChangeInput = (e) => {
@@ -146,7 +146,7 @@ class DatePicker extends React.PureComponent {
                         mode={this.props.mode}
                         name={this.props.name}
                         placeholder={this.props.placeholder}
-                        onClick={this.handleCalendarVisibility}
+                        onClick={this.handleVisibility}
                         readOnly={true}
                         value={this.state.value}
                     />
@@ -154,7 +154,7 @@ class DatePicker extends React.PureComponent {
                         className={classNames('picker-calendar-icon', {
                             show: !this.state.is_close_btn_visible,
                         })}
-                        onClick={this.handleCalendarVisibility}
+                        onClick={this.handleVisibility}
                     />
                     <span
                         className={classNames('close-circle-icon', {
@@ -165,7 +165,7 @@ class DatePicker extends React.PureComponent {
                 </div>
                 <div
                     className={classNames('datepicker-calendar', {
-                        show: this.state.is_calendar_visible,
+                        show: this.state.is_datepicker_visible,
                     })}
                 >
                     <Calendar
