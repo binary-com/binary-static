@@ -5,10 +5,10 @@ import PortfolioCard                  from './portfolio_card.jsx';
 const CardList = ({ data, currency }) => (
     <div className='card-list'>
         {
-            data.map((transaction, id) => (
+            data.map((portfolio_position, id) => (
                 <PortfolioCard
                     key={id}
-                    {...transaction}
+                    {...portfolio_position}
                     currency={currency}
                 />
             ))

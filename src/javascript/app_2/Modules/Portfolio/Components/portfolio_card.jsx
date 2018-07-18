@@ -10,21 +10,22 @@ const PortfolioCard = ({
     payout,
     purchase,
     currency,
+    status,
 }) => (
-    // TODO: Update styling once UI is ready
+    // TODO: implement portfolio card mockup (once available)
     <div className='statement-card card-list__card'>
         <div className='statement-card__header'>
-            <span className='statement-card__refid'>{ reference.transaction_id }</span>
+            <span className='statement-card__refid'>{ reference }</span>
             <span className='statement-card__date'>{ remaining_time }</span>
         </div>
         <div className='statement-card__body'>
             <div className='statement-card__desc'>{details}</div>
             <div className='statement-card__row'>
-                {indicative.amount &&
-                    <div className={`statement-card__cell statement-card__amount--${indicative.style && indicative.style === 'price_moved_up' ? 'buy' : 'sell'}`}>
+                {indicative &&
+                    <div className={`statement-card__cell statement-card__amount${status && (status === 'price-moved-up' ? '--sell' : '--buy')}`}>
                         <span className='statement-card__cell-text'>
                             <span className={`symbols ${currency}`}/>
-                            {indicative.amount}
+                            {indicative}
                         </span>
                     </div>
                 }
