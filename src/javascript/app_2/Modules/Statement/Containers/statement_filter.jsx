@@ -13,7 +13,7 @@ const Filter = ({
     is_mobile,
     today,
 }) => (
-    <div className={classNames('statement-filter', 'container', { 'statement-filter--mobile': is_mobile })}>
+    <div className={classNames('statement-filter', { 'statement-filter--mobile': is_mobile })}>
         <div className='statement-filter__content'>
             <span className='statement-filter__label'>{localize('Filter by date:')}</span>
             <DatePicker

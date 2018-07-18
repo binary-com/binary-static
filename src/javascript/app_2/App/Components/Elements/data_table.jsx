@@ -9,6 +9,28 @@ import React                          from 'react';
 */
 
 class DataTable extends React.Component {
+    componentDidMount() {
+        if (this.props.has_fixed_header) {
+            window.addEventListener('resize', this.updateFixedHeaderWidth, false);
+        }
+    }
+
+    componentDidUpdate() {
+        if (this.props.has_fixed_header) {
+            this.updateFixedHeaderWidth();
+        }
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateFixedHeaderWidth, false);
+    }
+
+    updateFixedHeaderWidth = () => {
+        if (this.el_fixed_header && this.el_container) {
+            this.el_fixed_header.style.width = `${this.el_container.offsetWidth}px`;
+        }
+    }
+
     renderRow(transaction, is_footer = false, id = 0) {
         if (!transaction) return null;
 
@@ -46,7 +68,10 @@ class DataTable extends React.Component {
             https://stackoverflow.com/questions/4709390
         */
         return (
-            <table className={classNames('table', 'table-clone', 'container', { 'table--full-width': this.props.is_full_width })}>
+            <table
+                className={classNames('table', 'table-clone', { 'table--full-width': this.props.is_full_width })}
+                ref={el => { this.el_fixed_header = el; }}
+            >
                 <thead className='table-head'>
                     <tr className='table-row'>
                         {this.renderHeaders()}
@@ -65,7 +90,7 @@ class DataTable extends React.Component {
             'table--fixed-header': this.props.has_fixed_header,
         });
         return (
-            <div className='table-container'>
+            <div className='table-container' ref={el => { this.el_container = el; }}>
                 {this.props.has_fixed_header && this.renderTableClone()}
 
                 <table className={table_class}>

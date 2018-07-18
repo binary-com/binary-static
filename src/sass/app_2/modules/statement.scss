@@ -44,6 +44,8 @@ $filter-height: 60px;
 }
 
 .statement {
+    padding: 0 12px;
+
     &__content {
         padding-top: $filter-height;
         overflow: auto;
