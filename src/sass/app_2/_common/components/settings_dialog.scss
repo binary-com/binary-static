@@ -1,0 +1,219 @@
+.settings-dialog {
+    position: absolute;
+    width: 320px;
+    right: 12px;
+    top: -250px;
+    border: 1px solid $COLOR_GRAY;
+    background: $COLOR_WHITE;
+    height: 280px;
+    border-radius: $BORDER_RADIUS;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.14);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: none;
+    opacity: 0;
+
+    &.show {
+        pointer-events: auto;
+        opacity: 1;
+        transform: translateY(-15%) scale(1, 1);
+    }
+    .settings-dialog-container {
+        position: relative;
+
+        &.hide {
+            display: none;
+        }
+        .tab-container {
+            .tab {
+                width: 50%;
+
+                span {
+                    padding: 16px 16px 8px;
+                    font-size: 12px;
+                    color: $COLOR_LIGHT_BLACK;
+                }
+            }
+            .tab-wrapper {
+                margin-bottom: 0;
+            }
+            .tab-underline {
+                border-bottom: 2px solid $COLOR_BLUE;
+            }
+        }
+        .tab-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 216px;
+            background: $COLOR_LIGHT_GRAY;
+        }
+        .settings-header {
+            padding: 16px;
+            font-size: 12px;
+            font-weight: 400;
+        }
+        .general-setting-container, .chart-setting-container {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 16px;
+            background: $COLOR_WHITE;
+            border: 1px solid $COLOR_GRAY;
+
+            .settings-row {
+                width: 260px;
+                padding: 8px 16px;
+                height: 23px;
+                display: flex;
+                cursor: pointer;
+                justify-content: space-between;
+                align-items: center;
+
+                span {
+                    font-size: 12px;
+                    text-transform: capitalize;
+                    color: $COLOR_LIGHT_BLACK;
+                }
+                &:not(:last-child) {
+                    border-bottom: 1px solid $COLOR_GRAY;
+                }
+                &:hover {
+                    background-color: $COLOR_LIGHT_GRAY;
+                }
+            }
+        }
+
+    }
+    .language-dialog-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+        background: $COLOR_LIGHT_GRAY;
+        border-radius: $BORDER_RADIUS;
+        opacity: 0;
+        transition: all 0.3s ease 0.15s;
+        overflow: hidden;
+        overflow-y: scroll;
+
+        &.show {
+            pointer-events: auto;
+            position: relative;
+            opacity: 1;
+            height: 280px;
+        }
+        .language-header {
+            font-size: 12px;
+            padding: 8px 16px;
+            display: flex;
+            background: $COLOR_WHITE;
+            border-bottom: 1px solid $COLOR_GRAY;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: capitalize;
+
+            svg.arrow-back {
+                padding-right: 4px;
+            }
+        }
+        .language-container {
+            display: grid;
+            padding: 8px 16px 0px;
+
+            .language-row {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                background: $COLOR_WHITE;
+                height: 32px;
+                cursor: pointer;
+
+                &:hover {
+                    background: $COLOR_LIGHT_GRAY;
+                }
+                &:nth-child(odd) {
+                    grid-column: 1;
+                    border: 1px solid $COLOR_GRAY;
+                    border-bottom-width: 0;
+                }
+                &:nth-child(even) {
+                    grid-column: 2;
+                    border: 1px solid $COLOR_GRAY;
+                    border-left-width: 0;
+                    border-bottom-width: 0;
+                }
+                &:last-child:not(:nth-child(even)) {
+                    border-top-width: 1px;
+                }
+                &:nth-last-child(-n+2) {
+                    border-bottom-width: 1px;
+                }
+                i.flag {
+                    padding-left: 8px;
+                    padding-right: unset;
+                }
+                span {
+                    padding-left: 8px;
+                    font-size: 12px;
+                }
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    & > .language-dialog-container {
+        pointer-events: none;
+    }
+    &.show > .language-dialog-container.show {
+        pointer-events: auto;
+    }
+    i.flag {
+        padding-right: 6px;
+
+        &.ic-flag-en:before {
+            content: url('../images/trading_app/footer/language/ic_flag_en.svg');
+        }
+        &.ic-flag-de:before {
+            content: url('../images/trading_app/footer/language/ic_flag_de.svg');
+        }
+        &.ic-flag-pt:before {
+            content: url('../images/trading_app/footer/language/ic_flag_pt.svg');
+        }
+        &.ic-flag-it:before {
+            content: url('../images/trading_app/footer/language/ic_flag_it.svg');
+        }
+        &.ic-flag-vi:before {
+            content: url('../images/trading_app/footer/language/ic_flag_vi.svg');
+        }
+        &.ic-flag-ru:before {
+            content: url('../images/trading_app/footer/language/ic_flag_ru.svg');
+        }
+        &.ic-flag-pl:before {
+            content: url('../images/trading_app/footer/language/ic_flag_pl.svg');
+        }
+        &.ic-flag-es:before {
+            content: url('../images/trading_app/footer/language/ic_flag_es.svg');
+        }
+        &.ic-flag-zh-cn:before {
+            content: url('../images/trading_app/footer/language/ic_flag_zh_cn.svg');
+        }
+        &.ic-flag-zh-tw:before {
+            content: url('../images/trading_app/footer/language/ic_flag_zh_tw.svg');
+        }
+        &.ic-flag-id:before {
+            content: url('../images/trading_app/footer/language/ic_flag_id.svg');
+        }
+        &.ic-flag-fr:before {
+            content: url('../images/trading_app/footer/language/ic_flag_fr.svg');
+        }
+        &.ic-flag-th:before {
+            content: url('../images/trading_app/footer/language/ic_flag_th.svg');
+        }
+    }
+}
