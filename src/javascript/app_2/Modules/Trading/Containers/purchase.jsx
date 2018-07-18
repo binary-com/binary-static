@@ -51,7 +51,7 @@ const Purchase = ({
                     :
                     <React.Fragment>
                         {/* // TODO - move this outside of the loop  */}
-                        {!is_purchase_enabled &&
+                        {(!is_purchase_enabled && idx < 1) &&
                         <UILoader />
                         }
                         <ContractInfo
