@@ -116,6 +116,7 @@ class TimePickerDropdown extends React.Component {
         const { preClass, value, toggle, start_date, sessions } = this.props;
         const start_moment       = moment(start_date * 1000 || undefined).utc();
         const start_moment_clone = start_moment.clone().minute(0).second(0);
+        const [ hour, minute ]   = value.split(':');
         return (
             <div className={`${preClass}-dropdown ${this.props.className}`}>
                 <div
@@ -140,7 +141,7 @@ class TimePickerDropdown extends React.Component {
                                 const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment, true);
                                 return (
                                     <div
-                                        className={`list-item${this.state.hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
+                                        className={`list-item${hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
                                         key={key}
                                         onClick={this.selectHour.bind(null, h, is_enabled)}
                                     >
@@ -157,11 +158,11 @@ class TimePickerDropdown extends React.Component {
                         <div className='list-title center-text'><strong>{localize('Minute')}</strong></div>
                         <div className='list-container'>
                             {this.minutes.map((mm, key) => {
-                                start_moment_clone.hour(this.state.hour).minute(mm);
+                                start_moment_clone.hour(hour).minute(mm);
                                 const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment);
                                 return (
                                     <div
-                                        className={`list-item${this.state.minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
+                                        className={`list-item${minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
                                         key={key}
                                         onClick={this.selectMinute.bind(null, mm, is_enabled)}
                                     >{mm}
