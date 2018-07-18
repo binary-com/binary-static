@@ -43,10 +43,15 @@
                 &.notify-toggle {
                     order: 2;
                     padding: 6px;
+                    width: 36px;
+                    height: 36px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
                     img {
-                        width: 32px;
-                        height: auto;
+                        width: 24px;
+                        height: 24px;
                     }
                 }
             }
@@ -66,15 +71,18 @@
                     }
                 }
                 .menu-links {
+                    height: 100%;
                     align-self: center;
 
                     a {
+                        height: 100%;
                         padding: 0 12px;
                         text-decoration: none;
                         position: relative;
                         display: inline-flex;
                         align-items: center;
                         justify-content: space-evenly;
+                        transition: background-color 0.3s;
 
                         span {
                             font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
@@ -82,11 +90,12 @@
                             text-transform: capitalize;
                             color: $COLOR_LIGHT_BLACK;
                             padding: 14px 18px 12px 34px;
+                            position: relative;
 
                             &:before {
                                 position: absolute;
-                                top: 12px;
-                                left: 24px;
+                                top: 15px;
+                                left: 12px;
                             }
                             &:after {
                                 display: block;
@@ -109,9 +118,12 @@
                                 content: url('../images/app_2/header/icons/ic_cashier_normal_light.svg');
                             }
                         }
-                        &:hover, &.active {
-                            & > span {
-                                font-weight: 400;
+                        &:hover {
+                            background-color: $COLOR_GRAY;
+                        }
+                        &.active {
+                            & > span[title] {
+                                font-weight: 500;
                             }
                             & > span.trade:before {
                                 content: url('../images/app_2/header/icons/ic_trade_active_light.svg');
@@ -124,18 +136,6 @@
                             }
                             & > span.cashier:before {
                                 content: url('../images/app_2/header/icons/ic_cashier_active_light.svg');
-                            }
-                        }
-                        &.active {
-                            &:after {
-                                display: block;
-                                position: absolute;
-                                content: '';
-                                height: 2px;
-                                width: 100%;
-                                left: 0;
-                                bottom: -4px;
-                                background-color: $COLOR_BLUE;
                             }
                         }
                     }
@@ -211,4 +211,14 @@
         }
     }
 
+}
+
+.inkbar {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 2px;
+    bottom: 0;
+    background-color: $COLOR_BLUE;
+    transition: left 0.3s;
 }
