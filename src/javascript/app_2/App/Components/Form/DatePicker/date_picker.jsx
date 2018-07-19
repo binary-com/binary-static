@@ -142,12 +142,12 @@ class DatePicker extends React.PureComponent {
                     onMouseLeave={this.onMouseLeave}
                 >
                     <DatePickerInput 
-                        className='datepicker-display'
+                        class_name='datepicker-display'
                         mode={this.props.mode}
                         name={this.props.name}
                         placeholder={this.props.placeholder}
                         onClick={this.handleVisibility}
-                        readOnly={true}
+                        is_read_only={true}
                         value={this.state.value}
                     />
                     <span
@@ -174,12 +174,12 @@ class DatePicker extends React.PureComponent {
                         {...this.props}
                     > 
                         <DatePickerInput 
-                            className='calendar-input'
+                            class_name='calendar-input'
                             mode={this.props.mode}
                             name={this.props.name}
                             onChange={this.onChangeInput}
                             placeholder={this.props.placeholder}
-                            readOnly={false}
+                            is_read_only={false}
                             value={this.state.value}
                         />
                     </Calendar>
