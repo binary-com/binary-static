@@ -15,8 +15,8 @@ const PortfolioCard = ({
     // TODO: implement portfolio card mockup (once available)
     <div className='statement-card card-list__card'>
         <div className='statement-card__header'>
-            <span className='statement-card__refid'>{ reference }</span>
             <span className='statement-card__date'>{ remaining_time }</span>
+            <span className='statement-card__refid'>{ reference }</span>
         </div>
         <div className='statement-card__body'>
             <div className='statement-card__desc'>{details}</div>
@@ -29,16 +29,16 @@ const PortfolioCard = ({
                         </span>
                     </div>
                 }
-                <div className='statement-card__cell statement-card__payout'>
-                    <span className='statement-card__cell-text'>
-                        <span className={`symbols ${currency}`}/>
-                        {payout}
-                    </span>
-                </div>
                 <div className='statement-card__cell statement-card__balance'>
                     <span className='statement-card__cell-text'>
                         <span className={`symbols ${currency}`}/>
                         {purchase}
+                    </span>
+                </div>
+                <div className='statement-card__cell statement-card__payout'>
+                    <span className='statement-card__cell-text'>
+                        <span className={`symbols ${currency}`}/>
+                        {payout}
                     </span>
                 </div>
             </div>
