@@ -16,11 +16,12 @@ describe('<Calendar />', () => {
     });
 
     it('should render children when passed in', () => {
+        const child_div = <div className='sweet-child-of-mine' />;
         const wrapper = shallow(
             <Calendar>
-                <div className='sweet-child-of-mine' />
+                { child_div }
             </Calendar>
         );
-        expect(wrapper.contains(<div className='sweet-child-of-mine' />)).to.equal(true);
+        expect(wrapper.contains(child_div)).to.equal(true);
     });
 });
