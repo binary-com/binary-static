@@ -31,20 +31,22 @@ class Statement extends React.Component {
         return (
             <div className={classnames('statement container', { 'statement--card-view': should_show_cards })}>
                 <Filter should_center={should_show_cards} use_native_pickers={should_show_cards} />
-                {
-                    should_show_cards ?
-                        <StatementCardList data={data} />
-                        :
-                        <StatementTable data={data} />
-                }
-                {
-                    is_empty &&
-                    <EmptyStatementMessage has_selected_date={has_selected_date} />
-                }
-                {
-                    is_loading &&
-                    <Loading />
-                }
+                <div className='statement__content'>
+                    {
+                        should_show_cards ?
+                            <StatementCardList data={data} />
+                            :
+                            <StatementTable data={data} />
+                    }
+                    {
+                        is_empty &&
+                        <EmptyStatementMessage has_selected_date={has_selected_date} />
+                    }
+                    {
+                        is_loading &&
+                        <Loading />
+                    }
+                </div>
             </div>
         );
     }

@@ -84,6 +84,9 @@ $side-padding: 12px;
     &__content {
         padding-top: $filter-height;
         overflow: auto;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     /* TABLE STYLES START */

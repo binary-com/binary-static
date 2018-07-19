@@ -8,13 +8,11 @@ const StatementTable = ({
 }) => {
     const columns = getTableColumnsTemplate();
     return (
-        <div className='statement__content'>
-            <DataTable
-                data_source={data.slice()}
-                columns={columns}
-                has_fixed_header
-            />
-        </div>
+        <DataTable
+            data_source={data.slice()}
+            columns={columns}
+            has_fixed_header
+        />
     );
 };
 
