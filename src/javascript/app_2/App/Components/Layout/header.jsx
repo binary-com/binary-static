@@ -5,7 +5,7 @@ import AccountSwitcher     from '../Elements/account_switcher.jsx';
 import { Notifications }   from '../Elements/Notifications';
 import { ToggleDrawer }    from '../Elements/Drawer';
 import { MenuDrawer }      from '../Elements/menu_drawer.jsx';
-import { BinaryLink }      from '../../routes';
+import { BinaryLink }      from '../Routes';
 import Url                 from '../../../../_common/url';
 
 class Header extends React.Component {

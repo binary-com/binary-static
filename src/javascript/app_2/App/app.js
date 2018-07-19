@@ -5,7 +5,8 @@ import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import Footer                        from '../App/Containers/Layout/footer.jsx';
 import Header                        from './Components/Layout/header.jsx';
-import { BinaryRoutes }              from './routes';
+import BinaryRoutes                  from './Components/Routes';
+import { routes }                    from '../Constants';
 import NetworkMonitor                from '../Services/network_monitor';
 import RootStore                     from '../Stores';
 import { MobxProvider }              from '../Stores/connect';
@@ -53,9 +54,9 @@ const BinaryApp = ({ root_store }) => (
                 <div id='header'>
                     <Header
                         items={[
-                            { icon: 'trade',     text: localize('Trade'),     link_to: '/' },
-                            { icon: 'portfolio', text: localize('Portfolio'), link_to: '/portfolio' },
-                            { icon: 'statement', text: localize('Statement'), link_to: 'statement' },
+                            { icon: 'trade',     text: localize('Trade'),     link_to: routes.trade },
+                            { icon: 'portfolio', text: localize('Portfolio'), link_to: routes.portfolio },
+                            { icon: 'statement', text: localize('Statement'), link_to: routes.statement },
                             // TODO
                             // Hide the Cashier button until its implementaiton is completed.
                             // { icon: 'cashier',   text: localize('Cashier') },
