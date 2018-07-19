@@ -9,9 +9,8 @@ import { localize }                   from '../../../../_common/localize';
 
 /* TODO:
       1. to update state accordingly during native to desktop switches
-      2. to update state when value is not available after switching start date
-      3. to handle null as initial value
-      4. update the state only when dropdown closed
+      2. to handle null as initial value
+      3. update the state only when dropdown closed
 */
 
 class TimePickerDropdown extends React.Component {

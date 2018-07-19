@@ -10,9 +10,7 @@ import {
 import { WS }                    from '../../../../Services';
 import { get as getLanguage }    from '../../../../../_common/language';
 import { localize }              from '../../../../../_common/localize';
-import {
-    padLeft,
-    toTitleCase }                from '../../../../../_common/string_util';
+import { toTitleCase }           from '../../../../../_common/string_util';
 import {
     cloneObject,
     getPropertyValue }           from '../../../../../_common/utility';
@@ -211,45 +209,45 @@ const ContractType = (() => {
     const hours   = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
     const minutes = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
 
-    const getStartTime = (sessions, start_date, start_time) => {
-        let [ hour, minute ] = start_time.split(':');
-        const start_moment = moment.unix(start_date).utc().hour(hour).minute(minute);
-        if (sessions && !isSessionAvailable(sessions, start_moment)) {
-            hour   = hours.find(h => isSessionAvailable(sessions, start_moment.hour(h))) || hour;
-            minute = minutes.find(m => isSessionAvailable(sessions, start_moment.minute(m))) || minute;
+    const getValidTime = (sessions, compare_moment, start_moment) => {
+        if (sessions && !isSessionAvailable(sessions, compare_moment)) {
+            // first see if changing the minute brings it to the right session
+            compare_moment.minute(minutes.find(m => isSessionAvailable(sessions, compare_moment.minute(m))) || compare_moment.format('mm'));
+            // if not, also change the hour
+            if (!isSessionAvailable(sessions, compare_moment)) {
+                compare_moment.minute(0);
+                compare_moment.hour(hours.find(h => isSessionAvailable(sessions, compare_moment.hour(h), start_moment, true)) || compare_moment.format('HH'));
+                compare_moment.minute(minutes.find(m => isSessionAvailable(sessions, compare_moment.minute(m))) || compare_moment.format('mm'));
+            }
         }
-        return { start_time: `${hour}:${minute}` };
+        return compare_moment.format('HH:mm');
     };
 
+    const buildMoment = (date, time) => {
+        const [ hour, minute ] = time.split(':');
+        return moment.utc(isNaN(date) ? date : +date * 1000).hour(hour).minute(minute);
+    };
+
+    const getStartTime = (sessions, start_date, start_time) => ({
+        start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
+    });
+
+    // if expiry time is same as or before start time, use start time plus five minutes
+    // if start time is 23:55 or if start time plus five minutes will exceed the session, don't add 5 minutes
+    // else if expiry time is not within the available sessions, use the first available session
     const getEndTime = (sessions, start_date, start_time, expiry_date, expiry_time) => {
-        let start_moment;
-        // if start_date is not 0 (not 'now'), use start time, else use now time
-        if (start_date) {
-            const [ start_hour, start_minute ] = start_time.split(':');
-            start_moment = moment.unix(start_date).utc().hour(start_hour).minute(start_minute);
-        } else {
-            start_moment = moment().utc();
-        }
+        const start_moment = start_date ? buildMoment(start_date, start_time) : moment().utc();
+        const end_moment   = buildMoment(expiry_date, expiry_time);
 
-        let [ end_hour, end_minute ] = expiry_time.split(':');
-        let end_moment = moment.utc(expiry_date).hour(end_hour).minute(end_minute);
-
-        // if expiry time is same as or before start time, use start time plus five minutes
+        let end_time = expiry_time;
         if (end_moment.isSameOrBefore(start_moment)) {
-            const is_end_of_day     = start_moment.get('hours') === 23 && start_moment.get('minutes') === 55;
+            const is_end_of_day     = start_moment.format('HH:mm') === '23:55';
             const is_end_of_session = sessions && !isSessionAvailable(sessions, start_moment.clone().add(5, 'minutes'));
-            // don't add 5 minutes if start time is 23:55, since 00:00 will be considered in the past
-            // or if start time plus five minutes will exceed the session
-            end_moment = start_moment.clone().add((is_end_of_day || is_end_of_session) ? 0 : 5, 'minutes');
-            end_hour   = padLeft(end_moment.get('hours'), 2, '0');
-            end_minute = padLeft(end_moment.get('minutes'), 2, '0');
+            end_time = start_moment.clone().add((is_end_of_day || is_end_of_session) ? 0 : 5, 'minutes').format('HH:mm');
         } else if (sessions && !isSessionAvailable(sessions, end_moment)) {
-            // if expiry time is not within available session, find the first available session and use that
-            end_moment.minute(0);
-            end_hour   = hours.find(h => isSessionAvailable(sessions, end_moment.hour(h))) || end_hour;
-            end_minute = minutes.find(m => isSessionAvailable(sessions, end_moment.minute(m))) || end_minute;
+            end_time = getValidTime(sessions, end_moment, start_moment);
         }
-        return { expiry_time: `${end_hour}:${end_minute}` };
+        return { expiry_time: end_time };
     };
 
     const getTradeTypes = (contract_type) => ({

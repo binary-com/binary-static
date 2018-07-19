@@ -13,7 +13,6 @@ import { localize }             from '../../../../../../_common/localize';
 
 /* TODO:
       1. Change expiry date to drop-down if start date is forward starting
-      2. change the session for end time to minimum of start time
 */
 
 const expiry_list = [
