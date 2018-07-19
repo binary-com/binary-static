@@ -1,6 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import classnames                     from 'classnames';
 import Filter                         from './statement_filter.jsx';
 import NoActivityMessage              from '../Components/no_activity_message.jsx';
 import ListLargeScreen                from '../Components/list_large_screen.jsx';
@@ -25,7 +26,7 @@ class Statement extends React.Component {
         if (error) return <p>{error}</p>;
 
         return (
-            <div className='statement container'>
+            <div className={classnames('statement container', { 'statement--mobile': is_mobile })}>
                 <Filter />
                 {
                     is_mobile ?

@@ -24,7 +24,9 @@ $side-padding: 12px;
         margin: 0 0.5rem;
     }
     &--mobile {
-        padding: 0 0.5rem;
+        padding: 0 $side-padding;
+        left: 0;
+        border-bottom: 1px solid $COLOR_GRAY;
 
         .statement-filter__content {
             padding: 0;
@@ -46,14 +48,14 @@ $side-padding: 12px;
 
 .statement {
     padding: 0 $side-padding;
+    overflow: auto; // prevent margin collapse
 
+    &--mobile {
+        background: $COLOR_LIGHT_GRAY;
+    }
     &__content {
         padding-top: $filter-height;
         overflow: auto;
-
-        @media (max-width: 768px) {
-            background-color: #fafafa; /* stylelint-disable-line color-no-hex */
-        }
     }
 
     /* TABLE STYLES START */
