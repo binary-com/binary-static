@@ -21,7 +21,9 @@ const PurchaseLock = ({ toggle }) => (
             onClick={toggle}
             text={localize('unlock')}
         />
-        <span className='lock-message'>{localize('You can lock/unlock the purchase button from the Settings menu')}</span>
+        <span className='lock-message'>
+            {localize('You can lock/unlock the purchase button from the Settings menu')}
+        </span>
     </div>
 );
 

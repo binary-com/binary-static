@@ -1,5 +1,6 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
+import ErrorBalance         from './error_balance.jsx';
 import ErrorGeneral         from './error_general.jsx';
 import ErrorLogin           from './error_login.jsx';
 import PurchaseResult       from './purchase_result.jsx';
@@ -13,6 +14,9 @@ const MessageBox = ({ purchase_info }) => {
         switch (error_code) {
             case 'AuthorizationRequired':
                 ErrorComponent = <ErrorLogin />;
+                break;
+            case 'InsufficientBalance':
+                ErrorComponent = <ErrorBalance />;
                 break;
             default:
                 ErrorComponent = <ErrorGeneral message={purchase_info.error.message} />;
