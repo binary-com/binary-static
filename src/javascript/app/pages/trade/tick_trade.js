@@ -210,10 +210,7 @@ const TickDisplay = (() => {
             return;
         }
 
-        let barrier_type = /^(asian|highlowticks|reset)$/.test(contract_category) ? contract_category : 'static';
-        if (Lookback.isLookback(contract.contract_type)) {
-            barrier_type = 'lookback';
-        }
+        const barrier_type = /^(asian|highlowticks|reset|lookback)$/.test(contract_category) ? contract_category : 'static';
 
         let calculated_barrier = '';
         if (barrier_type === 'static') {
@@ -401,7 +398,9 @@ const TickDisplay = (() => {
                     category = 'reset';
                 } else if (/^(tickhigh|ticklow)_/i.test(contract.shortcode)) {
                     category = 'highlowticks';
-                } // TODO: add category for Lookback once API changes is ready
+                } else if (/^(lbfloatput|lbfloatcall|lbhighlow)_/i.test(contract.shortcode)) {
+                    category = 'lookback';
+                }
                 initialize({
                     symbol              : contract.underlying,
                     number_of_ticks     : contract.tick_count,
