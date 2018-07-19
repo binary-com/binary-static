@@ -86,6 +86,9 @@ const ContractType = (() => {
                 // extend contract_categories to include what is needed to create the contract list
                 const sub_cats = available_categories[Object.keys(available_categories)
                     .find(key => available_categories[key].indexOf(type) !== -1)];
+
+                if (!sub_cats) return;
+
                 sub_cats[sub_cats.indexOf(type)] = { value: type, text: localize(contract_types[type].title) };
 
                 // populate available contract types
