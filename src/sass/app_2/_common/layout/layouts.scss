@@ -3,6 +3,8 @@
         margin: $HEADER_HEIGHT 0 $FOOTER_HEIGHT;
         min-height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
         overflow: auto; // prevent margin collapse
+        display: flex; // needed to allow setting child height to 100% without explicit height defined here (https://stackoverflow.com/a/23300532/4402857)
+        flex-direction: column;
     }
     /* trade-app layout */
     .trade-container {
