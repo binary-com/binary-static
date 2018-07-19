@@ -1,5 +1,8 @@
 .portfolio {
     padding: 1.5rem 12px 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 
     th {
         white-space: nowrap;
@@ -53,6 +56,31 @@
             font-size: 10px;
             font-weight: 400;
         }
+    }
+}
+
+.portfolio-empty {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__icon {
+        display: inline-block;
+        height: 64px;
+        width: 64px;
+        background-size: 64px;
+        background-image: url('../images/app_2/header/icons/ic_portfolio_normal_light.svg');
+        margin-bottom: 16px;
+    }
+    &__title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    &__text {
+        font-size: 14px;
     }
 }
 

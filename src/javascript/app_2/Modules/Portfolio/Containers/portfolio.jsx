@@ -1,5 +1,6 @@
 import React                          from 'react';
 import CardList                       from '../Components/card_list.jsx';
+import EmptyPortfolioMessage          from '../Components/empty_portfolio_message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
 import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
 import { connect }                    from '../../../Stores/connect';
@@ -24,7 +25,7 @@ class Portfolio extends React.Component {
             is_loading,
             error,
             totals,
-            has_no_open_positions,
+            is_empty,
         } = this.props;
 
         if (error) {
@@ -48,7 +49,7 @@ class Portfolio extends React.Component {
                     is_loading &&
                     <Loading />
                 }
-                {has_no_open_positions && <p>{localize('No open positions.')}</p>}
+                {is_empty && <EmptyPortfolioMessage />}
             </div>
         );
     }
@@ -61,7 +62,7 @@ export default connect(
         is_loading             : modules.portfolio.is_loading,
         error                  : modules.portfolio.error,
         totals                 : modules.portfolio.totals,
-        has_no_open_positions  : modules.portfolio.has_no_open_positions,
+        is_empty               : modules.portfolio.is_empty,
         onMount                : modules.portfolio.onMount,
         onUnmount              : modules.portfolio.onUnmount,
         is_mobile              : ui.is_mobile,
