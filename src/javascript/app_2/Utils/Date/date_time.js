@@ -28,3 +28,15 @@ const setTime = (moment_obj, time) => {
 export const convertToUnix = (epoch, time) => setTime(toMoment(epoch), time).unix();
 
 export const toGMTFormat = (time) => moment(time || undefined).utc().format('YYYY-MM-DD HH:mm:ss [GMT]');
+
+export const formatDate = (date, date_format = 'YYYY-MM-DD') => moment(date || undefined, date_format).format(date_format);
+
+/**
+ * return the number of days from today to date specified
+ * @param  {String} date   the date to calculate number of days from today
+ * @return {Number} an integer of the number of days
+ */
+export const daysFromTodayTo = (date) => {
+    const diff = moment(date).utc().diff(moment().utc(), 'days');
+    return (!date || diff < 0) ? '' : diff + 1;
+};
