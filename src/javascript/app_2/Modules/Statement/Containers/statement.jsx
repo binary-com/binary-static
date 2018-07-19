@@ -20,16 +20,19 @@ class Statement extends React.Component {
             data,
             is_loading,
             is_mobile,
+            is_tablet,
             error,
         } = this.props;
 
         if (error) return <p>{error}</p>;
 
+        const should_show_cards = is_mobile || is_tablet;
+
         return (
-            <div className={classnames('statement container', { 'statement--mobile': is_mobile })}>
-                <Filter />
+            <div className={classnames('statement container', { 'statement--card-view': should_show_cards })}>
+                <Filter should_center={should_show_cards} use_native_pickers={should_show_cards} />
                 {
-                    is_mobile ?
+                    should_show_cards ?
                         <ListSmallScreen data={data} />
                         :
                         <ListLargeScreen data={data} />
@@ -67,5 +70,6 @@ export default connect(
         onMount                : modules.statement.onMount,
         onUnmount              : modules.statement.onUnmount,
         is_mobile              : ui.is_mobile,
+        is_tablet              : ui.is_tablet,
     })
 )(Statement);

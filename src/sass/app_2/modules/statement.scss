@@ -23,7 +23,7 @@ $side-padding: 12px;
     &__dash {
         margin: 0 0.5rem;
     }
-    &--mobile {
+    &--center {
         padding: 0 $side-padding;
         left: 0;
         border-bottom: 1px solid $COLOR_GRAY;
@@ -50,7 +50,7 @@ $side-padding: 12px;
     padding: 0 $side-padding;
     overflow: auto; // prevent margin collapse
 
-    &--mobile {
+    &--card-view {
         background: $COLOR_LIGHT_GRAY;
     }
     &__content {

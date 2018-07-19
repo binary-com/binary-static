@@ -10,10 +10,11 @@ const Filter = ({
     date_from,
     date_to,
     handleDateChange,
-    is_mobile,
     today,
+    should_center,
+    use_native_pickers,
 }) => (
-    <div className={classNames('statement-filter', { 'statement-filter--mobile': is_mobile })}>
+    <div className={classNames('statement-filter', { 'statement-filter--center': should_center })}>
         <div className='statement-filter__content'>
             <span className='statement-filter__label'>{localize('Filter by date:')}</span>
             <DatePicker
@@ -23,7 +24,7 @@ const Filter = ({
                 startDate={date_to || today}
                 maxDate={date_to || today}
                 onChange={handleDateChange}
-                is_nativepicker={is_mobile}
+                is_nativepicker={use_native_pickers}
             />
             <span className='statement-filter__dash'>&mdash;</span>
             <DatePicker
@@ -35,19 +36,20 @@ const Filter = ({
                 maxDate={today}
                 showTodayBtn
                 onChange={handleDateChange}
-                is_nativepicker={is_mobile}
+                is_nativepicker={use_native_pickers}
             />
         </div>
     </div>
 );
 
 Filter.propTypes = {
-    date_from       : PropTypes.string,
-    date_to         : PropTypes.string,
-    server_time     : PropTypes.object,
-    handleDateChange: PropTypes.func,
-    is_mobile       : PropTypes.bool,
-    today           : PropTypes.string,
+    date_from         : PropTypes.string,
+    date_to           : PropTypes.string,
+    server_time       : PropTypes.object,
+    handleDateChange  : PropTypes.func,
+    should_center     : PropTypes.bool,
+    use_native_pickers: PropTypes.bool,
+    today             : PropTypes.string,
 };
 
 export default connect(
@@ -56,6 +58,5 @@ export default connect(
         date_from       : modules.statement.date_from,
         date_to         : modules.statement.date_to,
         handleDateChange: modules.statement.handleDateChange,
-        is_mobile       : ui.is_mobile,
     })
 )(Filter);
