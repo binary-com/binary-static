@@ -1,6 +1,6 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import { DrawerItem }      from '../../Elements/Drawer/index.jsx';
+import { DrawerItem }      from '../../Elements/Drawer';
 import Url                 from '../../../../../_common/url';
 import { localize }        from '../../../../../_common/localize';
 

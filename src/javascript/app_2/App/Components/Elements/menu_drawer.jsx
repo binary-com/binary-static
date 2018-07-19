@@ -1,6 +1,6 @@
 import React             from 'react';
 import PerfectScrollbar  from 'react-perfect-scrollbar';
-import { DrawerItem }    from './Drawer/index.jsx';
+import { DrawerItem }    from './Drawer';
 import { requestLogout } from '../../../Services';
 import Client            from '../../../../_common/base/client_base';
 import { localize }      from '../../../../_common/localize';
