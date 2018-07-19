@@ -1,4 +1,5 @@
 import React                          from 'react';
+import classnames                     from 'classnames';
 import CardList                       from '../Components/card_list.jsx';
 import EmptyPortfolioMessage          from '../Components/empty_portfolio_message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
@@ -22,6 +23,7 @@ class Portfolio extends React.Component {
             data,
             footer,
             is_mobile,
+            is_tablet,
             is_loading,
             error,
             totals,
@@ -32,10 +34,12 @@ class Portfolio extends React.Component {
             return <p>{error}</p>;
         }
 
+        const should_show_cards = is_mobile || is_tablet;
+
         return (
-            <div className='portfolio container'>
+            <div className={classnames('portfolio container', { 'portfolio--card-view': should_show_cards })}>
                 {
-                    is_mobile ?
+                    should_show_cards ?
                         <CardList data={data} currency={this.state.currency} />
                         :
                         <DataTable
@@ -66,5 +70,6 @@ export default connect(
         onMount                : modules.portfolio.onMount,
         onUnmount              : modules.portfolio.onUnmount,
         is_mobile              : ui.is_mobile,
+        is_tablet              : ui.is_tablet,
     })
 )(Portfolio);
