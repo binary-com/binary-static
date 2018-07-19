@@ -19,7 +19,7 @@ const Filter = ({
             <span className='statement-filter__label'>{localize('Filter by date:')}</span>
             <DatePicker
                 name='date_from'
-                initial_value=''
+                initial_value={date_from}
                 placeholder={localize('Start date')}
                 startDate={date_to || today}
                 maxDate={date_to || today}
@@ -29,7 +29,7 @@ const Filter = ({
             <span className='statement-filter__dash'>&mdash;</span>
             <DatePicker
                 name='date_to'
-                initial_value=''
+                initial_value={date_to}
                 placeholder={localize('End date')}
                 startDate={today}
                 minDate={date_from}

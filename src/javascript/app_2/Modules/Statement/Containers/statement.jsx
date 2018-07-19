@@ -15,24 +15,16 @@ class Statement extends React.Component {
 
     render() {
         const {
-            has_no_activity_message,
             has_selected_date,
             data,
+            is_empty,
             is_loading,
-            is_first_load,
             is_mobile,
             is_tablet,
             error,
         } = this.props;
 
         if (error) return <p>{error}</p>;
-
-        if (is_first_load) {
-            return <Loading />;
-        }
-        if (has_no_activity_message) {
-            return <EmptyStatementMessage has_selected_date={has_selected_date} />;
-        }
 
         const should_show_cards = is_mobile || is_tablet;
 
@@ -46,6 +38,10 @@ class Statement extends React.Component {
                         <StatementTable data={data} />
                 }
                 {
+                    is_empty &&
+                    <EmptyStatementMessage has_selected_date={has_selected_date} />
+                }
+                {
                     is_loading &&
                     <Loading />
                 }
@@ -55,7 +51,7 @@ class Statement extends React.Component {
 }
 
 Statement.propTypes = {
-    has_no_activity_message: PropTypes.bool,
+    is_empty               : PropTypes.bool,
     has_selected_date      : PropTypes.bool,
     data                   : MobxPropTypes.arrayOrObservableArray,
     is_loading             : PropTypes.bool,
@@ -66,11 +62,10 @@ Statement.propTypes = {
 
 export default connect(
     ({modules, ui}) => ({
-        has_no_activity_message: modules.statement.has_no_activity_message,
+        is_empty               : modules.statement.is_empty,
         has_selected_date      : modules.statement.has_selected_date,
         data                   : modules.statement.data,
         is_loading             : modules.statement.is_loading,
-        is_first_load          : modules.statement.is_first_load,
         error                  : modules.statement.error,
         onMount                : modules.statement.onMount,
         onUnmount              : modules.statement.onUnmount,

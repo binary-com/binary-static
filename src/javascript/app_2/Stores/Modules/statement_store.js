@@ -15,7 +15,6 @@ const batch_size = 100; // request response limit
 export default class StatementStore extends BaseStore {
     @observable data           = [];
     @observable is_loading     = false;
-    @observable is_first_load  = true;
     @observable has_loaded_all = false;
     @observable date_from      = '';
     @observable date_to        = '';
@@ -26,7 +25,6 @@ export default class StatementStore extends BaseStore {
         this.data            = [];
         this.has_loaded_all  = false;
         this.is_loading      = false;
-        this.is_first_load   = true;
     }
 
     @action.bound
@@ -55,7 +53,6 @@ export default class StatementStore extends BaseStore {
             this.data           = [...this.data, ...formatted_transactions];
             this.has_loaded_all = formatted_transactions.length < batch_size;
             this.is_loading     = false;
-            this.is_first_load  = false;
         });
     }
 
@@ -92,7 +89,7 @@ export default class StatementStore extends BaseStore {
 
 
     @computed
-    get has_no_activity_message() {
+    get is_empty() {
         return !this.is_loading && this.data.length === 0;
     }
 
