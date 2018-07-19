@@ -47,12 +47,12 @@ const PortfolioCard = ({
 );
 
 PortfolioCard.propTypes = {
-    reference     : PropTypes.object,
+    reference     : PropTypes.number,
     details       : PropTypes.string,
     remaining_time: PropTypes.string,
-    indicative    : PropTypes.object,
-    payout        : PropTypes.string,
-    purchase      : PropTypes.string,
+    indicative    : PropTypes.string,
+    payout        : PropTypes.number,
+    purchase      : PropTypes.number,
     currency      : PropTypes.string,
 };
 

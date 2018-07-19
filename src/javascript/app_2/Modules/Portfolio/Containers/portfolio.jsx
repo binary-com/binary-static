@@ -59,6 +59,8 @@ class Portfolio extends React.Component {
     }
 }
 
+// TODO: add proptypes
+
 export default connect(
     ({modules, ui}) => ({
         data                   : modules.portfolio.data,
