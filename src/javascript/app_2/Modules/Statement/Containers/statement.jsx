@@ -27,11 +27,11 @@ class Statement extends React.Component {
 
         if (error) return <p>{error}</p>;
 
-        const should_show_cards = is_mobile || is_tablet;
-
         if (is_first_load) {
             return <Loading />;
         }
+
+        const should_show_cards = is_mobile || is_tablet;
 
         return (
             <div className={classnames('statement container', { 'statement--card-view': should_show_cards })}>

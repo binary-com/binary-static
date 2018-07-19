@@ -12,11 +12,6 @@ class DataTable extends React.Component {
     componentDidMount() {
         if (this.props.has_fixed_header) {
             window.addEventListener('resize', this.updateFixedHeaderWidth, false);
-        }
-    }
-
-    componentDidUpdate() {
-        if (this.props.has_fixed_header) {
             this.updateFixedHeaderWidth();
         }
     }
