@@ -16,11 +16,11 @@ export default function CalendarPanel(props) {
 
     return (
         <div className='calendar-panel'>
-            { calendar_panel[props.view] }
+            { calendar_panel[props.calendar_view] }
         </div>
     );
 } 
 
 CalendarPanel.propTypes = {
-    view: PropTypes.string,
+    calendar_view: PropTypes.string,
 };

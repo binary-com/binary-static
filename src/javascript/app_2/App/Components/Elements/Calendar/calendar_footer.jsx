@@ -3,11 +3,11 @@ import React          from 'react';
 import CalendarButton from './calendar_button.jsx';
 import { localize }   from '../../../../../_common/localize';
 
-export default function CalendarFooter({ footer, showTodayBtn, onClick }) {
+export default function CalendarFooter({ footer, has_today_btn, onClick }) {
     return (
         <div className='calendar-footer'>
             { footer && <span className='calendar-footer-extra'>{footer}</span> }
-            { showTodayBtn &&
+            { has_today_btn &&
                 <CalendarButton className='calendar-footer-btn'>
                     <a role='button' onClick={onClick}>{localize('Today')}</a>
                 </CalendarButton>
@@ -17,7 +17,7 @@ export default function CalendarFooter({ footer, showTodayBtn, onClick }) {
 } 
 
 CalendarFooter.propTypes = {
-    footer      : PropTypes.string,
-    onClick     : PropTypes.func,
-    showTodayBtn: PropTypes.bool,
+    footer       : PropTypes.string,
+    has_today_btn: PropTypes.bool,
+    onClick      : PropTypes.func,
 };

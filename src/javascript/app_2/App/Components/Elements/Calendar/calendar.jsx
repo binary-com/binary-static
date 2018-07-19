@@ -5,11 +5,11 @@ import CalendarFooter from './calendar_footer.jsx';
 import CalendarHeader from './calendar_header.jsx';
 import CalendarPanel  from './calendar_panel.jsx';
 
-class Calendar extends React.Component {
+class Calendar extends React.PureComponent {
     constructor(props) {
         super(props);
-        const { dateFormat, startDate } = props;
-        const current_date = (startDate ? moment(startDate) : moment()).utc().format(dateFormat);
+        const { date_format, start_date } = props;
+        const current_date = (start_date ? moment(start_date) : moment()).utc().format(date_format);
         this.state = {
             calendar_date: current_date, // calendar date reference
             selected_date: '',           // selected date
@@ -46,31 +46,29 @@ class Calendar extends React.Component {
     }
 
     navigateTo = (value, unit, is_add) => {
-        const { dateFormat, maxDate, minDate } = this.props;
+        const { date_format, max_date, min_date } = this.props;
 
-        let new_date = moment(this.state.calendar_date, dateFormat)[is_add ? 'add' : 'subtract'](value, unit).format(dateFormat);
+        let new_date = moment(this.state.calendar_date, date_format)[is_add ? 'add' : 'subtract'](value, unit).format(date_format);
 
         if (unit === 'months' && this.isPeriodDisabled(new_date, 'month')) return;
 
         if (unit === 'years'  && this.isPeriodDisabled(new_date, 'years')) {
-            new_date = is_add ? maxDate : minDate;
+            new_date = is_add ? max_date : min_date;
         }
 
-        this.setState({ calendar_date: moment(new_date, dateFormat).format(dateFormat) }); // formatted date
+        this.setState({ calendar_date: moment(new_date, date_format).format(date_format) }); // formatted date
     }
 
     updateSelectedDate = (e) => {
-        const { dateFormat, maxDate, minDate, onSelect } = this.props;
+        const { date_format, max_date, min_date, onSelect } = this.props;
 
         const date      = moment(e.target.dataset.date);
-        const min_date  = moment(minDate).format(dateFormat);
-        const max_date  = moment(maxDate).format(dateFormat);
-        const is_before = date.isBefore(min_date);
-        const is_after  = date.isAfter(max_date);
+        const is_before = date.isBefore(moment(min_date).format(date_format));
+        const is_after  = date.isAfter(moment(max_date).format(date_format));
 
         if (is_before || is_after) return;
 
-        const formatted_date = date.format(dateFormat);
+        const formatted_date = date.format(date_format);
         this.setState({
             calendar_date: formatted_date,
             selected_date: formatted_date,
@@ -87,7 +85,7 @@ class Calendar extends React.Component {
             year  : 'month',
             decade: 'year',
         };
-        const date = moment(this.state.calendar_date, this.props.dateFormat)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.dateFormat);
+        const date = moment(this.state.calendar_date, this.props.date_format)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.date_format);
 
         if (this.isPeriodDisabled(date, type)) return;
 
@@ -98,19 +96,20 @@ class Calendar extends React.Component {
     }
 
     resetCalendar = () => {
-        const { dateFormat, startDate } = this.props;
+        const { date_format, start_date } = this.props;
 
-        const default_date = (startDate ? moment(startDate) : moment()).utc().format(dateFormat);
+        const default_date = (start_date ? moment(start_date) : moment()).utc().format(date_format);
         this.setState({
             calendar_date: default_date,
             selected_date: '',
+            calendar_view: 'date',
         });
     }
 
     setToday = () => {
-        const { dateFormat, onSelect } = this.props;
+        const { date_format, onSelect } = this.props;
 
-        const now = moment().utc().format(dateFormat);
+        const now = moment().utc().format(date_format);
         this.setState({
             calendar_date: now,
             selected_date: now,
@@ -123,42 +122,42 @@ class Calendar extends React.Component {
     }
 
     isPeriodDisabled = (date, unit) => {
-        const { maxDate, minDate } = this.props;
+        const { max_date, min_date } = this.props;
 
         const start_of_period = moment(date).startOf(unit);
         const end_of_period   = moment(date).endOf(unit);
-        return end_of_period.isBefore(moment(minDate))
-            || start_of_period.isAfter(moment(maxDate));
+        return end_of_period.isBefore(moment(min_date))
+            || start_of_period.isAfter(moment(max_date));
     }
 
     render() {
-        const { children, dateFormat, footer, id, maxDate, minDate, showTodayBtn } = this.props;
+        const { children, date_format, footer, id, max_date, min_date, has_today_btn } = this.props;
         const { calendar_date, calendar_view, selected_date  } = this.state;
 
         return (
             <div id={id} className='calendar' value={selected_date}>
                 { children }
                 <CalendarHeader
-                    calendarDate={calendar_date}
+                    calendar_date={calendar_date}
                     isPeriodDisabled={this.isPeriodDisabled}
                     onClick={this.navigators}
                     onSelect={this.calendarViews}
-                    view={calendar_view}
+                    calendar_view={calendar_view}
                 />
                 <CalendarPanel
-                    calendarDate={calendar_date}
-                    dateFormat={dateFormat}
+                    calendar_date={calendar_date}
+                    date_format={date_format}
                     isPeriodDisabled={this.isPeriodDisabled}
-                    maxDate={maxDate}
-                    minDate={minDate}
+                    max_date={max_date}
+                    min_date={min_date}
                     onClick={this.panelSelectors}
-                    selectedDate={selected_date}
-                    view={calendar_view}
+                    selected_date={selected_date}
+                    calendar_view={calendar_view}
                 />
                 <CalendarFooter
                     footer={footer}
                     onClick={this.setToday}
-                    showTodayBtn={showTodayBtn}
+                    has_today_btn={has_today_btn}
                 />
             </div>
         );
@@ -166,28 +165,28 @@ class Calendar extends React.Component {
 }
 
 Calendar.defaultProps = {
-    dateFormat: 'YYYY-MM-DD',
-    minDate   : moment(0).utc().format('YYYY-MM-DD'),              // by default, minDate is set to Unix Epoch (January 1st 1970)
-    maxDate   : moment().utc().add(120, 'y').format('YYYY-MM-DD'), // by default, maxDate is set to 120 years after today
+    date_format: 'YYYY-MM-DD',
+    min_date   : moment(0).utc().format('YYYY-MM-DD'),              // by default, min_date is set to Unix Epoch (January 1st 1970)
+    max_date   : moment().utc().add(120, 'y').format('YYYY-MM-DD'), // by default, max_date is set to 120 years after today
 };
 
 Calendar.propTypes = {
     children       : PropTypes.object,
-    dateFormat     : PropTypes.string,
+    date_format    : PropTypes.string,
     footer         : PropTypes.string,
-    onSelect       : PropTypes.func,
+    has_today_btn  : PropTypes.bool,
     id             : PropTypes.string,
     is_nativepicker: PropTypes.bool,
-    maxDate        : PropTypes.oneOfType([
+    max_date       : PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.string,
     ]),
-    minDate: PropTypes.oneOfType([
+    min_date: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.string,
     ]),
-    showTodayBtn: PropTypes.bool,
-    startDate   : PropTypes.oneOfType([
+    onSelect  : PropTypes.func,
+    start_date: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.string,
     ]),

@@ -19,8 +19,8 @@ const Filter = ({
             <DatePicker
                 name='date_from'
                 placeholder={localize('Start date')}
-                startDate={date_to || today}
-                maxDate={date_to || today}
+                start_date={date_to || today}
+                max_date={date_to || today}
                 onChange={handleDateChange}
                 value={date_from}
                 is_nativepicker={is_mobile}
@@ -29,10 +29,10 @@ const Filter = ({
             <DatePicker
                 name='date_to'
                 placeholder={localize('End date')}
-                startDate={today}
-                minDate={date_from}
-                maxDate={today}
-                showTodayBtn
+                start_date={today}
+                min_date={date_from}
+                max_date={today}
+                has_today_btn
                 onChange={handleDateChange}
                 value={date_to}
                 is_nativepicker={is_mobile}

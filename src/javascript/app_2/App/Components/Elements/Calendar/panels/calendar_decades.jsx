@@ -3,9 +3,9 @@ import moment             from 'moment';
 import React              from 'react';
 import CalendarPanelTypes from './types';
 
-export function CalendarDecades({ isPeriodDisabled, selectedDate: value, calendarDate: date, onClick }) {
-    const is_active    = moment(value).year();
-    const current_year = moment(date).year();
+export function CalendarDecades({ calendar_date, isPeriodDisabled, onClick, selected_date }) {
+    const is_active    = moment(selected_date).year();
+    const current_year = moment(calendar_date).year();
     const decades      = [];
     let min_year       = current_year - 10;
 
@@ -20,8 +20,8 @@ export function CalendarDecades({ isPeriodDisabled, selectedDate: value, calenda
         <div className='calendar-decade-panel'>
             {decades.map((range, idx) => {
                 const [start_year, end_year] = range.split('-');
-                const start_date = moment(date).year(start_year);
-                const end_date   = moment(date).year(end_year);
+                const start_date = moment(calendar_date).year(start_year);
+                const end_date   = moment(calendar_date).year(end_year);
                 const is_disabled = isPeriodDisabled(start_date, 'year')
                                  && isPeriodDisabled(end_date, 'year');
                 return (

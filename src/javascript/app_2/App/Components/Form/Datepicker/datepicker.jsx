@@ -73,16 +73,16 @@ class DatePicker extends React.PureComponent {
         this.calendar.resetCalendar();
     };
 
-    // TODO: handle cases where user inputs date before minDate and date after maxDate
+    // TODO: handle cases where user inputs date before min_date and date after max_date
     updateDatePickerValue = (value, mode) => {
         this.setState({ value }, this.updateStore);
         
         // update Calendar
-        const { dateFormat, startDate } = this.props;
-        const new_date = (mode === 'duration') ? moment().add(value, 'days').format(dateFormat) : value;
-        if (moment(new_date, dateFormat).isValid() || !new_date) {
+        const { date_format, start_date } = this.props;
+        const new_date = (mode === 'duration') ? moment().add(value, 'days').format(date_format) : value;
+        if (moment(new_date, date_format).isValid() || !new_date) {
             if (!new_date) {
-                const current_date = (startDate ? moment(startDate) : moment()).utc().format(dateFormat);
+                const current_date = (start_date ? moment(start_date) : moment()).utc().format(date_format);
                 this.calendar.setState({ 
                     calendar_date: current_date,
                     selected_date: current_date,
@@ -114,8 +114,8 @@ class DatePicker extends React.PureComponent {
                         className='datepicker-display'
                         type='date'
                         value={this.state.value}
-                        min={this.props.minDate}
-                        max={this.props.maxDate}
+                        min={this.props.min_date}
+                        max={this.props.max_date}
                         onChange={(e) => {
                             // fix for ios issue: clear button doesn't work
                             // https://github.com/facebook/react/issues/8938
@@ -190,8 +190,8 @@ class DatePicker extends React.PureComponent {
 }
 
 DatePicker.defaultProps = {
-    dateFormat: Calendar.defaultProps.dateFormat,
-    mode      : 'date',
+    date_format: Calendar.defaultProps.date_format,
+    mode       : 'date',
 };
 
 DatePicker.propTypes = {

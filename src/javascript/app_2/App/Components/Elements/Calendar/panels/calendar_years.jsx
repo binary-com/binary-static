@@ -3,9 +3,9 @@ import moment             from 'moment';
 import React              from 'react';
 import CalendarPanelTypes from './types';
 
-export function CalendarYears({ isPeriodDisabled, selectedDate: value, calendarDate: date, onClick }) {
-    const is_active    = moment(value).year();
-    const current_year = moment(date).year();
+export function CalendarYears({ calendar_date, isPeriodDisabled, onClick, selected_date }) {
+    const is_active    = moment(selected_date).year();
+    const current_year = moment(calendar_date).year();
     const years = [];
     for (let year = current_year - 1; year < current_year + 11; year++) {
         years.push(year);
@@ -13,7 +13,7 @@ export function CalendarYears({ isPeriodDisabled, selectedDate: value, calendarD
     return (
         <div className='calendar-year-panel'>
             {years.map((year, idx) => {
-                const dates       = moment(date).year(year);
+                const dates       = moment(calendar_date).year(year);
                 const is_disabled = isPeriodDisabled(dates, 'year');
                 return (
                     <span

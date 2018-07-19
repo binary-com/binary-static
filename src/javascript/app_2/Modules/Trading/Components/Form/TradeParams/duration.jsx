@@ -101,8 +101,8 @@ const Duration = ({
                         {duration_unit === 'd' && !is_nativepicker ?
                             <Datepicker
                                 name='duration'
-                                minDate={min_date_duration}
-                                maxDate={max_date_duration}
+                                min_date={min_date_duration}
+                                max_date={max_date_duration}
                                 mode='duration'
                                 onChange={onChange}
                                 value={duration || 1} // TODO: replace 1 with min duration
@@ -130,9 +130,9 @@ const Duration = ({
                     <div className='endtime-container'>
                         <Datepicker
                             name='expiry_date'
-                            showTodayBtn
-                            minDate={min_date_expiry}
-                            maxDate={max_date_duration}
+                            has_today_btn
+                            min_date={min_date_expiry}
+                            max_date={max_date_duration}
                             onChange={onChange}
                             value={expiry_date}
                             is_nativepicker={is_nativepicker}

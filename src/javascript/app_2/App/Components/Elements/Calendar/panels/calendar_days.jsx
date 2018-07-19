@@ -4,33 +4,33 @@ import React              from 'react';
 import CalendarPanelTypes from './types';
 import { localize }       from '../../../../../../_common/localize';
 
-const getDays = ({ calendarDate: date_ref, dateFormat, selectedDate: value, minDate, maxDate, onClick }) => {
+const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, selected_date }) => {
     const dates = [];
     const days  = [];
-    const num_of_days    = moment(date_ref).daysInMonth() + 1;
-    const start_of_month = moment(date_ref).startOf('month').format(dateFormat);
-    const end_of_month   = moment(date_ref).endOf('month').format(dateFormat);
+    const num_of_days    = moment(calendar_date).daysInMonth() + 1;
+    const start_of_month = moment(calendar_date).startOf('month').format(date_format);
+    const end_of_month   = moment(calendar_date).endOf('month').format(date_format);
     const first_day = moment(start_of_month).day();
     const last_day  = moment(end_of_month).day();
 
     const pad = (num) => (`0${num}`).substr(-2); // pad zero
 
     for (let i = first_day; i > 0; i--) {
-        dates.push(moment(start_of_month).subtract(i, 'day').format(dateFormat));
+        dates.push(moment(start_of_month).subtract(i, 'day').format(date_format));
     }
     for (let idx = 1; idx < num_of_days; idx += 1) {
-        dates.push(moment(date_ref).format(dateFormat.replace('DD', pad(idx))));
+        dates.push(moment(calendar_date).format(date_format.replace('DD', pad(idx))));
     }
     for (let i = 1; i <= 6 - last_day; i++) {
-        dates.push(moment(end_of_month).add(i, 'day').format(dateFormat));
+        dates.push(moment(end_of_month).add(i, 'day').format(date_format));
     }
 
     dates.map((date) => {
-        const is_disabled = moment(date).isBefore(moment(minDate))
-            || moment(date).isAfter(moment(maxDate));
+        const is_disabled = moment(date).isBefore(moment(min_date))
+            || moment(date).isAfter(moment(max_date));
         const is_other_month = moment(date).isBefore(moment(start_of_month))
             || moment(date).isAfter(moment(end_of_month));
-        const is_active = value && moment(date).isSame(moment(value));
+        const is_active = selected_date && moment(date).isSame(moment(selected_date));
         const is_today  = moment(date).isSame(moment().utc(), 'day');
 
         days.push(
