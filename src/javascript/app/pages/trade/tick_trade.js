@@ -2,6 +2,7 @@ const moment               = require('moment');
 const requireHighstock     = require('./common').requireHighstock;
 const Lookback             = require('./lookback');
 const Tick                 = require('./tick');
+const updateContractPayout = require('./update_values').updateContractPayout;
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
@@ -357,6 +358,11 @@ const TickDisplay = (() => {
             }
 
             addSellSpot();
+        } else if (contract.is_expired) {
+            // non-binary options that has status === null
+            if (contract_category === 'lookback') {
+                updateContractPayout(contract.sell_price || contract.bid_price);
+            }
         }
     };
 

@@ -23,7 +23,12 @@ const updateContractBalance = (balance) => {
     $('#contract_purchase_balance').html(`${localize('Account balance:')} ${formatMoney(Client.get('currency'), balance)}`);
 };
 
+const updateContractPayout = (payout) => {
+    $('#contract_purchase_payout').html(localize('Payout')).append($('<p/>', { html: formatMoney(Client.get('currency'), payout) }));
+}
+
 module.exports = {
+    updateContractPayout,
     updatePurchaseStatus,
     updateContractBalance,
 };
