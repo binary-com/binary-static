@@ -100,7 +100,7 @@ const TickDisplay = (() => {
                 id       : 'exit_tick',
                 dashStyle: 'Dash',
             };
-        } else if (contract_category.match(/callput|reset/i)) {
+        } else if (contract_category.match(/callput|reset|lookback/i)) {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
                 _0: { label: localize('Entry Spot'), id: 'entry_tick' },

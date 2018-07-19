@@ -164,6 +164,8 @@ const Purchase = (() => {
             let category = sessionStorage.getItem('formname');
             if (/^(risefall|higherlower)$/.test(category)) {
                 category = 'callput';
+            } else if (/^lookback(highlow|high|low)$/.test(category)) {
+                category = 'lookback';
             }
 
             TickDisplay.init({
