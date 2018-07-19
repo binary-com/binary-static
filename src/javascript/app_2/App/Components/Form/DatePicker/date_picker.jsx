@@ -1,7 +1,7 @@
 import classNames      from 'classnames';
 import moment          from 'moment';
 import React           from 'react';
-import DatePickerInput from './datepicker_input.jsx';
+import DatePickerInput from './date_picker_input.jsx';
 import ArrowHead       from '../../Elements/arrowhead.jsx';
 import Calendar        from '../../Elements/Calendar';
 import {

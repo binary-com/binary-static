@@ -4,7 +4,7 @@ import {
 import moment                   from 'moment';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
-import Datepicker               from '../../../../../App/Components/Form/Datepicker';
+import Datepicker               from '../../../../../App/Components/Form/DatePicker';
 import Dropdown                 from '../../../../../App/Components/Form/dropdown.jsx';
 import Fieldset                 from '../../../../../App/Components/Form/fieldset.jsx';
 import InputField               from '../../../../../App/Components/Form/input_field.jsx';
