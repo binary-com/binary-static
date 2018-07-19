@@ -16,6 +16,10 @@ class DataTable extends React.Component {
         }
     }
 
+    componentDidUpdate() {
+        this.updateFixedHeaderWidth();
+    }
+
     componentWillUnmount() {
         window.removeEventListener('resize', this.updateFixedHeaderWidth, false);
     }
