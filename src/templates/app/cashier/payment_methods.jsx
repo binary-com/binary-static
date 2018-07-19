@@ -26,7 +26,7 @@ const TableValues = ({ value }) => {
 
 const ReferenceLink = ({ href, className = '', title = '' }) => (
     <a
-        className={`payment-methods__reference ${className} ${!href ? 'payment-methods__reference--disabled' : ''}`}
+        className={`payment-methods__reference ${className}`}
         href={href}
         target='_blank'
         aria-disabled={!href}
@@ -37,16 +37,17 @@ const ReferenceLink = ({ href, className = '', title = '' }) => (
 
 const ReferenceLinks = ({ pdf_file, video_link }) => (
     <React.Fragment>
-        <ReferenceLink
+        {!pdf_file && !video_link && <span>&mdash;</span>}
+        {pdf_file && <ReferenceLink
             className='payment-methods__reference-pdf'
             href={pdf_file && it.url_for(`download/payment/${pdf_file}`)}
-            title={pdf_file || it.L('PDF reference is not available for this method')}
-        />
-        <ReferenceLink
+            title={pdf_file}
+        />}
+        {video_link && <ReferenceLink
             className='payment-methods__reference-video'
             href={video_link}
-            title={video_link ? it.L('Video tutorial') : it.L('Video tutorial is not available for this method')}
-        />
+            title={it.L('Video tutorial')}
+        />}
     </React.Fragment>
 );
 
@@ -144,7 +145,7 @@ const PaymentMethods = () => {
 
 
                 <div className='gr-padding-10'>
-                    <p className='hint'>* {it.L('Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal.')}</p>
+                    <p className='hint'>{it.L('Note:')} {it.L('Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal.')}</p>
                 </div>
 
                 <TableTitle title={it.L('E-wallet')} />
