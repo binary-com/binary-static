@@ -205,6 +205,8 @@ const TickDisplay = (() => {
 
     const isRelativeBarrier = (barrier_str) => (/\+|-/.test(barrier_str));
 
+    const getContractBarrierLabel = (text, value) => `${localize(`${text}`)}: ${value}`;
+
     const addBarrier = () => {
         if (!should_set_barrier) {
             return;
@@ -212,7 +214,7 @@ const TickDisplay = (() => {
 
         const barrier_type = /^(asian|highlowticks|reset|lookback)$/.test(contract_category) ? contract_category : 'static';
 
-        let calculated_barrier = '';
+        let contract_barrier_label = '';
         if (barrier_type === 'static') {
             const first_quote = applicable_ticks[0].quote;
             let barrier_quote = first_quote;
@@ -229,7 +231,7 @@ const TickDisplay = (() => {
             }
 
             drawBarrier({ value: barrier_quote, text: 'Barrier' });
-            calculated_barrier = barrier_quote;
+            contract_barrier_label = getContractBarrierLabel('Barrier', barrier_quote);
             should_set_barrier = false;
         }
 
@@ -241,7 +243,7 @@ const TickDisplay = (() => {
             // round calculated barrier
             const calc_barrier = (total / applicable_ticks.length).toFixed(parseInt(display_decimals) + 1);
             drawBarrier({ value: calc_barrier, text: 'Average' });
-            calculated_barrier = calc_barrier;
+            contract_barrier_label = getContractBarrierLabel('Average', calc_barrier);
         }
 
         if (barrier_type === 'highlowticks') {
@@ -272,10 +274,13 @@ const TickDisplay = (() => {
                 const x            = status === 'open' ? 60 : (chart.chartWidth - width - 45);
                 const is_resetcall = contract.contract_type === 'RESETCALL';
                 const has_reset    = current_barrier !== entry_barrier;
+
+                drawBarrier({ id: 'tick-barrier', value: entry_barrier, text: 'Barrier', label: { align: 'right',  x: -x }, dashStyle: has_reset ? 'dot' : 'default', textBottom: has_reset && !is_resetcall });
+                contract_barrier_label = getContractBarrierLabel('Barrier', entry_barrier);
                 if (has_reset) {
                     drawBarrier({ id: 'tick-reset-barrier', value: current_barrier, text: 'Reset Barrier', label: { align: 'right', x: -x }, textBottom: is_resetcall });
+                    contract_barrier_label = getContractBarrierLabel('Reset Barrier', current_barrier);
                 }
-                drawBarrier({ id: 'tick-barrier', value: entry_barrier, text: 'Barrier', label: { align: 'right',  x: -x }, dashStyle: has_reset ? 'dot' : 'default', textBottom: has_reset && !is_resetcall });
             }
         }
 
@@ -286,6 +291,7 @@ const TickDisplay = (() => {
 
                 const current_barrier_text = Lookback.getBarrierLabel(contract_type);
                 drawBarrier({ value: current_barrier, text: current_barrier_text });
+                contract_barrier_label = getContractBarrierLabel(current_barrier_text, current_barrier);
             } else if (high_barrier && low_barrier
                 && (high_barrier !== prev_barriers[1] || low_barrier !== prev_barriers[0])) { // draw High and Low barriers
                 prev_barriers[1] = high_barrier; // store previous barriers
@@ -294,11 +300,12 @@ const TickDisplay = (() => {
                 const [high_barrier_text, low_barrier_text] = Lookback.getBarrierLabel(contract_type);
                 drawBarrier({ id: 'tick-high-barrier', value: high_barrier, text: high_barrier_text });
                 drawBarrier({ id: 'tick-low-barrier',  value: low_barrier,  text: low_barrier_text, textBottom: true });
+                contract_barrier_label = `${getContractBarrierLabel(high_barrier_text, high_barrier)}, ${getContractBarrierLabel(low_barrier_text, low_barrier)}`;
             }
         }
 
-        if (calculated_barrier) {
-            CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Barrier')}: ${calculated_barrier}`);
+        if (contract_barrier_label) {
+            CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), contract_barrier_label);
         }
     };
 
