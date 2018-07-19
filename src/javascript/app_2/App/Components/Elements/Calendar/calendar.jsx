@@ -13,6 +13,7 @@ class Calendar extends React.Component {
         this.state = {
             calendar_date: current_date, // calendar date reference
             selected_date: '',           // selected date
+            calendar_view: 'date',
         };
     }
 
@@ -42,24 +43,6 @@ class Calendar extends React.Component {
         month : () => { this.setState({ calendar_view: 'month'  }); },
         year  : () => { this.setState({ calendar_view: 'year'   }); },
         decade: () => { this.setState({ calendar_view: 'decade' }); },
-    }
-
-    componentWillMount() {
-        this.setState({ calendar_view: 'date' });
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const date = moment(this.state.calendar_date);
-
-        if (date.isBefore(moment(nextProps.minDate))) {
-            this.setState({
-                date: nextProps.minDate,
-            });
-        } else if (date.isAfter(moment(nextProps.maxDate))) {
-            this.setState({
-                date: nextProps.maxDate,
-            });
-        }
     }
 
     navigateTo = (value, unit, is_add) => {
