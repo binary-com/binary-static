@@ -4,7 +4,7 @@ import React                          from 'react';
 import classnames                     from 'classnames';
 import Filter                         from './statement_filter.jsx';
 import StatementCardList              from '../Components/statement_card_list.jsx';
-import NoActivityMessage              from '../Components/no_activity_message.jsx';
+import EmptyStatementMessage          from '../Components/empty_statement_message.jsx';
 import StatementTable                 from '../Components/statement_table.jsx';
 import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
@@ -30,6 +30,9 @@ class Statement extends React.Component {
         if (is_first_load) {
             return <Loading />;
         }
+        if (has_no_activity_message) {
+            return <EmptyStatementMessage has_selected_date={has_selected_date} />;
+        }
 
         const should_show_cards = is_mobile || is_tablet;
 
@@ -45,10 +48,6 @@ class Statement extends React.Component {
                 {
                     is_loading &&
                     <Loading />
-                }
-                {
-                    has_no_activity_message &&
-                    <NoActivityMessage has_selected_date={has_selected_date} />
                 }
             </div>
         );

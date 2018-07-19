@@ -2,7 +2,6 @@ import React                          from 'react';
 import CardList                       from '../Components/card_list.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
 import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
-import NoticeMessage                  from '../../../App/Components/Elements/notice_message.jsx';
 import { connect }                    from '../../../Stores/connect';
 import ClientBase                     from '../../../../_common/base/client_base';
 import { localize }                   from '../../../../_common/localize';
@@ -49,7 +48,7 @@ class Portfolio extends React.Component {
                     is_loading &&
                     <Loading />
                 }
-                {has_no_open_positions && <NoticeMessage>{localize('No open positions.')}</NoticeMessage>}
+                {has_no_open_positions && <p>{localize('No open positions.')}</p>}
             </div>
         );
     }

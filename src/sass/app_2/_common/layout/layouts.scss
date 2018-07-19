@@ -1,6 +1,7 @@
 @supports (display: grid) {
     .app-contents {
-        margin: 49px 0 41px;
+        margin: $HEADER_HEIGHT 0 $FOOTER_HEIGHT;
+        min-height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
         overflow: auto; // prevent margin collapse
     }
     /* trade-app layout */
