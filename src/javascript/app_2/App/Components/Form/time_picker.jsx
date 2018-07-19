@@ -9,8 +9,7 @@ import { localize }                   from '../../../../_common/localize';
 
 /* TODO:
       1. to update state accordingly during native to desktop switches
-      2. to handle null as initial value
-      3. update the state only when dropdown closed
+      2. update the state only when dropdown closed
 */
 
 class TimePickerDropdown extends React.Component {
@@ -79,10 +78,12 @@ class TimePickerDropdown extends React.Component {
                     onClick={toggle}
                 >
                     <span className={value ? '' : 'placeholder'}>{value || localize('Select time')}</span>
-                    <span
-                        className={`${preClass}-clear`}
-                        onClick={this.clear}
-                    />
+                    {(!('is_clearable' in this.props) || this.props.is_clearable) &&
+                        <span
+                            className={`${preClass}-clear`}
+                            onClick={this.clear}
+                        />
+                    }
                 </div>
                 <div className={`${preClass}-selector`}>
                     <div
@@ -225,6 +226,7 @@ class TimePicker extends React.Component {
                                 start_date={start_date}
                                 value={value}
                                 sessions={sessions}
+                                is_clearable={this.props.is_clearable}
                             />
                         </React.Fragment>
                     )
@@ -237,6 +239,7 @@ class TimePicker extends React.Component {
 TimePicker.propTypes = {
     is_nativepicker: PropTypes.bool,
     is_align_right : PropTypes.bool,
+    is_clearable   : PropTypes.bool,
     name           : PropTypes.string,
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
@@ -247,14 +250,15 @@ TimePicker.propTypes = {
 };
 
 TimePickerDropdown.propTypes = {
-    className  : PropTypes.string,
-    onChange   : PropTypes.func,
-    preClass   : PropTypes.string,
-    toggle     : PropTypes.func,
-    value      : PropTypes.string,
-    value_split: PropTypes.bool,
-    start_date : PropTypes.number,
-    sessions   : MobxPropTypes.arrayOrObservableArray,
+    className   : PropTypes.string,
+    onChange    : PropTypes.func,
+    preClass    : PropTypes.string,
+    toggle      : PropTypes.func,
+    value       : PropTypes.string,
+    value_split : PropTypes.bool,
+    is_clearable: PropTypes.bool,
+    start_date  : PropTypes.number,
+    sessions    : MobxPropTypes.arrayOrObservableArray,
 };
 
 export default observer(TimePicker);

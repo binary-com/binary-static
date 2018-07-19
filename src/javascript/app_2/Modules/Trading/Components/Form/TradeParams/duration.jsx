@@ -12,7 +12,7 @@ import TimePicker               from '../../../../../App/Components/Form/time_pi
 import { localize }             from '../../../../../../_common/localize';
 
 /* TODO:
-      1. Change expiry date to drop-down if start date is forward starting
+      1. disable days other than today and tomorrow if start date is forward starting
 */
 
 const expiry_list = [
@@ -110,6 +110,8 @@ const Duration = ({
                                 mode='duration'
                                 onChange={onChange}
                                 value={duration || 1} // TODO: replace 1 with min duration
+                                is_read_only
+                                is_clearable={false}
                                 is_nativepicker={is_nativepicker}
                                 footer={localize('The minimum duration is 1 day')}
                             /> :
@@ -139,6 +141,8 @@ const Duration = ({
                             max_date={max_date_duration}
                             onChange={onChange}
                             value={expiry_date}
+                            is_read_only
+                            is_clearable={false}
                             is_nativepicker={is_nativepicker}
                         />
                         {is_same_day &&
@@ -150,6 +154,7 @@ const Duration = ({
                                 placeholder='12:00'
                                 start_date={start_date_time}
                                 sessions={sessions}
+                                is_clearable={false}
                                 is_nativepicker={is_nativepicker}
                             />
                         }

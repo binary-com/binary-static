@@ -42,7 +42,7 @@ class DatePicker extends React.PureComponent {
     }
 
     onMouseEnter = () => {
-        if (this.state.value) {
+        if (this.state.value && (!('is_clearable' in this.props) || this.props.is_clearable)) {
             this.setState({ is_close_btn_visible: true });
         }
     }
@@ -179,7 +179,7 @@ class DatePicker extends React.PureComponent {
                             name={this.props.name}
                             onChange={this.onChangeInput}
                             placeholder={this.props.placeholder}
-                            is_read_only={false}
+                            is_read_only={'is_read_only' in this.props ? this.props.is_read_only : false}
                             value={this.state.value}
                         />
                     </Calendar>

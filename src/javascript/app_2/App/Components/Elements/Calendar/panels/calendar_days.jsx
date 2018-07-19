@@ -45,7 +45,7 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, sele
                     disabled: is_disabled,
                     hidden  : is_other_month,
                 })}
-                onClick={() => { onClick.date.bind(this, is_disabled); }}
+                onClick={(e) => { onClick.date(e, is_disabled); }}
                 data-date={date}
             >
                 {moment_date.date()}

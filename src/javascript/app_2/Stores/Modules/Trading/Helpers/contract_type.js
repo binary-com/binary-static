@@ -232,20 +232,21 @@ const ContractType = (() => {
         start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
     });
 
-    // if expiry time is same as or before start time, use start time plus five minutes
-    // if start time is 23:55 or if start time plus five minutes will exceed the session, don't add 5 minutes
-    // else if expiry time is not within the available sessions, use the first available session
+    // has to follow the correct order of checks:
+    // first check if end time is within available sessions
+    // then confirm that end time is after start time
     const getEndTime = (sessions, start_date, start_time, expiry_date, expiry_time) => {
         const start_moment = start_date ? buildMoment(start_date, start_time) : moment().utc();
         const end_moment   = buildMoment(expiry_date, expiry_time);
 
         let end_time = expiry_time;
+        if (sessions && !isSessionAvailable(sessions, end_moment)) {
+            end_time = getValidTime(sessions, end_moment, start_moment);
+        }
         if (end_moment.isSameOrBefore(start_moment)) {
             const is_end_of_day     = start_moment.format('HH:mm') === '23:55';
             const is_end_of_session = sessions && !isSessionAvailable(sessions, start_moment.clone().add(5, 'minutes'));
             end_time = start_moment.clone().add((is_end_of_day || is_end_of_session) ? 0 : 5, 'minutes').format('HH:mm');
-        } else if (sessions && !isSessionAvailable(sessions, end_moment)) {
-            end_time = getValidTime(sessions, end_moment, start_moment);
         }
         return { expiry_time: end_time };
     };
