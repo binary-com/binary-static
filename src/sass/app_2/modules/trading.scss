@@ -380,6 +380,47 @@
                 width: calc(100% - 6px);
                 height: calc(100% - 2px);
             }
+            div.purchase-lock-container {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $COLOR_LIGHT_GRAY;
+                opacity: 0.95;
+                width: calc(100% - 5px);
+                height: calc(100% - 2px);
+                z-index: 3;
+                top: 0;
+                left: 2px;
+                right: 0;
+                flex-direction: column;
+                bottom: 0;
+                border-radius: $BORDER_RADIUS;
+                border: 1px solid $COLOR_GRAY;
+
+                .lock-container svg {
+                    width: 64px;
+                    height: 64px;
+                }
+                button.btn {
+                    height: 32px;
+                    margin: 0 1rem 1.5rem;
+                    width: 90px;
+                    line-height: 100%;
+                }
+                h4 {
+                    margin: 2px 8px 8px;
+                    padding: 0;
+                    text-transform: capitalize;
+                }
+                span.lock-message {
+                    background: $COLOR_GRAY;
+                    padding: 8px;
+                    margin: 1rem 1rem 0;
+                    border-radius: $BORDER_RADIUS;
+                    font-size: 10px;
+                }
+            }
         }
     }
     .calendar {

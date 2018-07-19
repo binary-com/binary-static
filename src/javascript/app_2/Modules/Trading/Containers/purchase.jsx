@@ -2,6 +2,7 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
 import MessageBox        from '../Components/Form/Purchase/MessageBox';
+import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 import { PopConfirm }    from '../../../App/Components/Elements/PopConfirm';
 import UILoader          from '../../../App/Components/Elements/ui_loader.jsx';
 import Button            from '../../../App/Components/Form/button.jsx';
@@ -19,13 +20,14 @@ const Purchase = ({
     is_trade_enabled,
     onClickPurchase,
     onHoverPurchase,
+    togglePurchaseLock,
     proposal_info,
     purchase_info,
     trade_types,
 }) => (
     Object.keys(trade_types).map((type, idx) => {
         const info        = proposal_info[type] || {};
-        const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || is_purchase_locked;
+        const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id;
 
         const purchase_button = (
             <Button
@@ -46,12 +48,14 @@ const Purchase = ({
                 onMouseEnter={() => { onHoverPurchase(true, type); }}
                 onMouseLeave={() => { onHoverPurchase(false); }}
             >
+                {(is_purchase_locked && idx === 0) &&
+                    <PurchaseLock toggle={togglePurchaseLock} />
+                }
                 {(!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id) ?
                     <MessageBox purchase_info={purchase_info} />
                     :
                     <React.Fragment>
-                        {/* // TODO - move this outside of the loop  */}
-                        {(!is_purchase_enabled && idx < 1) &&
+                        {(!is_purchase_enabled && idx === 0) &&
                         <UILoader />
                         }
                         <ContractInfo
@@ -89,6 +93,7 @@ Purchase.propTypes = {
     is_trade_enabled      : PropTypes.bool,
     onClickPurchase       : PropTypes.func,
     onHoverPurchase       : PropTypes.func,
+    togglePurchaseLock    : PropTypes.func,
     proposal_info         : PropTypes.object,
     purchase_info         : PropTypes.object,
     trade_types           : PropTypes.object,
@@ -106,5 +111,6 @@ export default connect(
         trade_types           : modules.trade.trade_types,
         is_purchase_confirm_on: ui.is_purchase_confirm_on,
         is_purchase_locked    : ui.is_purchase_lock_on,
+        togglePurchaseLock    : ui.togglePurchaseLock,
     })
 )(Purchase);
