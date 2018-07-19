@@ -12,7 +12,7 @@ const Platforms = ({
     target,
     button_text,
     button_class = '',
-    google_play_url = '',
+    download = '',
 }) => (
     <div className={`gr-5 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
         <div className='gr-12 gr-centered-m gr-centered-p'>
@@ -24,13 +24,8 @@ const Platforms = ({
             <p>{text}</p>
             <div className='gr-row'>
                 <div className='gr-12'>
-                    { google_play_url &&
-                        <a className='' href={google_play_url} target='_blank' rel='noopener noreferrer'>
-                            <div className='google-play-badge' />
-                        </a>
-                    }
                     { url &&
-                        <a className={`button ${button_class}`} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
+                        <a className={`button ${button_class}`} download={download || undefined} href={url} target={target || undefined} rel={/http/.test(url) ? 'noopener noreferrer' : undefined}><span>{button_text}</span></a>
                     }
                 </div>
             </div>
@@ -69,11 +64,9 @@ const Platform = () => (
                     header={it.L('Binary Tick Trade App')}
                     description={it.L('Ultra fast on-the-go trading')}
                     text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
-                    google_play_url='https://play.google.com/store/apps/details?id=com.binary.ticktrade&referrer=utm_source%3Dbinary-com%26utm_medium%3Dreferrer%26utm_campaign%3Dplatforms_page'
-                    url='https://ticktrade.binary.com'
-                    target='_blank'
-                    button_text={it.L('Try Web Version')}
-                    button_class='gr-hide gr-show-inline-m gr-show-inline-p no-margin no-scroll'
+                    url='https://ticktrade.binary.com/download/ticktrade-app.apk'
+                    button_text={it.L('Download the Android App')}
+                    download='true'
                 />
                 <div className='gr-2 gr-hide-m gr-hide-p' />
                 <div className='gr-12 gr-padding-30 gr-hide gr-show-m gr-show-p' />

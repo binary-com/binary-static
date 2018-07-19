@@ -26,7 +26,7 @@ const TableValues = ({ value }) => {
 
 const ReferenceLink = ({ href, className = '', title = '' }) => (
     <a
-        className={`payment-methods__reference ${className} ${!href ? 'payment-methods__reference--disabled' : ''}`}
+        className={`payment-methods__reference ${className}`}
         href={href}
         target='_blank'
         aria-disabled={!href}
@@ -37,16 +37,17 @@ const ReferenceLink = ({ href, className = '', title = '' }) => (
 
 const ReferenceLinks = ({ pdf_file, video_link }) => (
     <React.Fragment>
-        <ReferenceLink
+        {!pdf_file && !video_link && <span>&mdash;</span>}
+        {pdf_file && <ReferenceLink
             className='payment-methods__reference-pdf'
             href={pdf_file && it.url_for(`download/payment/${pdf_file}`)}
-            title={pdf_file || it.L('PDF reference is not available for this method')}
-        />
-        <ReferenceLink
+            title={pdf_file}
+        />}
+        {video_link && <ReferenceLink
             className='payment-methods__reference-video'
             href={video_link}
-            title={video_link ? it.L('Video tutorial') : it.L('Video tutorial is not available for this method')}
-        />
+            title={it.L('Video tutorial')}
+        />}
     </React.Fragment>
 );
 
@@ -56,7 +57,7 @@ const PaymentMethods = () => {
         { className: 'gr-padding-10', text: it.L('Currencies') },
         { className: 'gr-padding-10', text: it.L('Min-Max Deposit') },
         { className: 'gr-padding-10', text: it.L('Min-Max Withdrawal') },
-        { className: 'gr-padding-10', text: it.L('Processing Time') },
+        { className: 'gr-padding-10', text: `${it.L('Processing Time')}*` },
         { className: 'gr-padding-10', text: it.L('Reference') },
     ];
 
@@ -111,7 +112,7 @@ const PaymentMethods = () => {
                                 { text: '25 - 10,000' },
                                 { text: '25 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks pdf_file='Binary.com_PaySec.pdf' video_link='https://youtu.be/7ltMIxHntfk' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_PaySec.pdf' video_link='https://youtu.be/DTVspCgnx0M' /> },
                             ],
                         ],
                     }}
@@ -144,7 +145,7 @@ const PaymentMethods = () => {
 
 
                 <div className='gr-padding-10'>
-                    <p className='hint'>* {it.L('Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal.')}</p>
+                    <p className='hint'>{it.L('Note:')} {it.L('Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal.')}</p>
                 </div>
 
                 <TableTitle title={it.L('E-wallet')} />
@@ -174,7 +175,7 @@ const PaymentMethods = () => {
                                 { text: '5 - 10,000' },
                                 { text: '5 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks pdf_file='Binary.com_Skrill.pdf' video_link='https://youtu.be/wyU73gsci8w' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_Skrill.pdf' video_link='https://youtu.be/pQDVDC-mWuA' /> },
                             ],
                             [
                                 { text: <PaymentLogo logo='neteller' /> },
@@ -214,7 +215,7 @@ const PaymentMethods = () => {
                                 { text: '5 - 1,000' },
                                 { text: '5 - 750' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks video_link='https://youtu.be/IqY0220n0Ho' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_PaySafeCard.pdf' video_link='https://youtu.be/5QzGc1nleQo' /> },
                             ],
                         ],
                     }}
@@ -230,7 +231,7 @@ const PaymentMethods = () => {
                                     { className: 'gr-padding-10', text: it.L('Currencies') },
                                     { className: 'gr-padding-10', text: it.L('Min Deposit') },
                                     { className: 'gr-padding-10', text: it.L('Min Withdrawal') },
-                                    { className: 'gr-padding-10', text: it.L('Processing Time') },
+                                    { className: 'gr-padding-10', text: `${it.L('Processing Time')}*` },
                                     { className: 'gr-padding-10', text: it.L('Reference') },
                                 ],
                             ],
@@ -241,7 +242,7 @@ const PaymentMethods = () => {
                                     { text: '0.002' },
                                     { text: '0.0003' },
                                     { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                    { text: <ReferenceLinks pdf_file='Binary.com_Bitcoin.pdf' video_link='https://youtu.be/Hx2bZAlaxQA' /> },
+                                    { text: <ReferenceLinks pdf_file='Binary.com_Bitcoin.pdf' video_link='https://youtu.be/StIW7CviBTw' /> },
                                 ],
                                 [
                                     { text: <PaymentLogo logo='bitcoin_cash' /> },
@@ -257,7 +258,7 @@ const PaymentMethods = () => {
                                     { text: '0.01' },
                                     { text: '0.01' },
                                     { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                    { text: <ReferenceLinks pdf_file='Binary.com_Ethereum.pdf' video_link='https://youtu.be/ptvi9hQt4Zw' /> },
+                                    { text: <ReferenceLinks pdf_file='Binary.com_Ethereum.pdf' video_link='https://youtu.be/B7EVLt3lIMs' /> },
                                 ],
                                 // [
                                 //     { text: <PaymentLogo logo='' /> },
@@ -272,7 +273,7 @@ const PaymentMethods = () => {
                                     { text: '0.1' },
                                     { text: '0.02' },
                                     { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                    { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/RJ_SJhcwUho' /> },
+                                    { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/DJhP5UjKPpI' /> },
                                 ],
                             ],
                         }}
