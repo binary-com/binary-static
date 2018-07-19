@@ -3,9 +3,9 @@ import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import classnames                     from 'classnames';
 import Filter                         from './statement_filter.jsx';
+import StatementCardList              from '../Components/statement_card_list.jsx';
 import NoActivityMessage              from '../Components/no_activity_message.jsx';
-import ListLargeScreen                from '../Components/list_large_screen.jsx';
-import ListSmallScreen                from '../Components/list_small_screen.jsx';
+import StatementTable                 from '../Components/statement_table.jsx';
 import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
@@ -33,9 +33,9 @@ class Statement extends React.Component {
                 <Filter should_center={should_show_cards} use_native_pickers={should_show_cards} />
                 {
                     should_show_cards ?
-                        <ListSmallScreen data={data} />
+                        <StatementCardList data={data} />
                         :
-                        <ListLargeScreen data={data} />
+                        <StatementTable data={data} />
                 }
                 {
                     is_loading &&

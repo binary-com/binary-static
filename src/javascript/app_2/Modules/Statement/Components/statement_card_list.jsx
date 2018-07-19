@@ -2,7 +2,7 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
 import StatementCard                  from '../Components/statement_card.jsx';
 
-const ListSmallScreen = ({ data }) => (
+const StatementCardList = ({ data }) => (
     <div className='statement__content'>
         <div className='card-list'>
             {
@@ -14,8 +14,8 @@ const ListSmallScreen = ({ data }) => (
     </div>
 );
 
-ListSmallScreen.propTypes = {
+StatementCardList.propTypes = {
     data: MobxPropTypes.arrayOrObservableArray,
 };
 
-export default ListSmallScreen;
+export default StatementCardList;

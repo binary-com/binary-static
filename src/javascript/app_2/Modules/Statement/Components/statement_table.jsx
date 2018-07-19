@@ -3,7 +3,7 @@ import React                          from 'react';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
 import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
 
-const ListLargeScreen = ({
+const StatementTable = ({
     data,
 }) => {
     const columns = getTableColumnsTemplate();
@@ -18,8 +18,8 @@ const ListLargeScreen = ({
     );
 };
 
-ListLargeScreen.propTypes = {
+StatementTable.propTypes = {
     data: MobxPropTypes.arrayOrObservableArray,
 };
 
-export default ListLargeScreen;
+export default StatementTable;
