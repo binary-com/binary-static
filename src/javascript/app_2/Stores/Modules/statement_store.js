@@ -28,6 +28,12 @@ export default class StatementStore extends BaseStore {
     }
 
     @action.bound
+    clearDateFilter() {
+        this.date_from = '';
+        this.date_to   = '';
+    }
+
+    @action.bound
     fetchNextBatch() {
         if (this.has_loaded_all || this.is_loading) return;
 
@@ -85,6 +91,7 @@ export default class StatementStore extends BaseStore {
     onUnmount() {
         window.removeEventListener('scroll', this.handleScroll, false);
         this.clearTable();
+        this.clearDateFilter();
     }
 
 
