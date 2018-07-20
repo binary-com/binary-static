@@ -4,7 +4,7 @@ import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import Footer                        from '../App/Containers/Layout/footer.jsx';
-import Header                        from './Components/Layout/header.jsx';
+import Header                        from '../App/Containers/Layout/header.jsx';
 import { BinaryRoutes }              from './routes';
 import NetworkMonitor                from '../Services/network_monitor';
 import RootStore                     from '../Stores';
