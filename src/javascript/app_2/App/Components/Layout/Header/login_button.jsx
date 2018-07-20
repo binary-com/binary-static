@@ -1,19 +1,15 @@
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import Button       from '../../Form/button.jsx';
-import { localize } from '../../../../../_common/localize';
+import React               from 'react';
+import Button              from '../../Form/button.jsx';
+import { localize }        from '../../../../../_common/localize';
+import { redirectToLogin } from '../../../../../_common/base/login';
 
-const LoginButton = ({ onClick }) => (
+const LoginButton = () => (
     <Button
         className='primary orange'
         has_effect
         text={localize('Log in')}
-        onClick={onClick}
+        onClick={redirectToLogin}
     />
 );
-
-LoginButton.propTypes = {
-    onClick: PropTypes.func,
-};
 
 export { LoginButton };

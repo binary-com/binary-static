@@ -17,8 +17,7 @@ const Header = ({
     currency, 
     loginid, 
     items, 
-    is_logged_in, 
-    onClick, 
+    is_logged_in,  
     onClickUpgrade,
 }) => (
     <header className='shadow'>
@@ -39,7 +38,7 @@ const Header = ({
                             { can_upgrade && <UpgradeButton onClick={onClickUpgrade} /> }
                         </React.Fragment>
                         :
-                        <LoginButton onClick={onClick} />
+                        <LoginButton />
                     }
                 </div>
             </div>
@@ -56,7 +55,6 @@ Header.propTypes = {
     items         : PropTypes.array,
     is_dark_mode  : PropTypes.bool, // TODO: add dark theme handler
     is_logged_in  : PropTypes.bool,
-    onClick       : PropTypes.func, // TODO: add click handler
     onClickUpgrade: PropTypes.func, // TODO: add click handler
 };
 
