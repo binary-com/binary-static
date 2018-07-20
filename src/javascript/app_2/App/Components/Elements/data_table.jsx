@@ -17,6 +17,7 @@ class DataTable extends React.Component {
     }
 
     componentDidUpdate() {
+        // adding data can cause scrollbar to appear, window resize is not triggered in this case
         this.updateFixedHeaderWidth();
     }
 
@@ -25,6 +26,8 @@ class DataTable extends React.Component {
     }
 
     updateFixedHeaderWidth = () => {
+        // header is fixed to viewport and is taken out of normal DOM flow
+        // table doesn't have a fixed width -> we need to check it manually and react to changes
         if (this.el_fixed_header && this.el_container) {
             this.el_fixed_header.style.width = `${this.el_container.offsetWidth}px`;
         }
@@ -67,10 +70,7 @@ class DataTable extends React.Component {
             https://stackoverflow.com/questions/4709390
         */
         return (
-            <table
-                className='table table-clone'
-                ref={el => { this.el_fixed_header = el; }}
-            >
+            <table className='table table-clone' ref={el => { this.el_fixed_header = el; }}>
                 <thead className='table-head'>
                     <tr className='table-row'>
                         {this.renderHeaders()}

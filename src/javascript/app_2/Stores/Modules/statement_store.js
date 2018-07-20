@@ -49,7 +49,7 @@ export default class StatementStore extends BaseStore {
                 ...this.date_to   && {date_to: moment(this.date_to).add(1, 'd').subtract(1, 's').unix()},
             }
         ).then((response) => {
-            if (response.error) {
+            if ('error' in response) {
                 this.error = response.error.message;
                 return;
             }

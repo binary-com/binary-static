@@ -5,7 +5,6 @@ import {
 import { formatPortfolioData }   from './Helpers/process_data';
 import BaseStore                 from '../../base_store';
 import { WS }                    from '../../../Services';
-import { getPropertyValue }      from '../../../../_common/utility';
 
 export default class StatementStore extends BaseStore {
     @observable data       = [];
@@ -32,7 +31,7 @@ export default class StatementStore extends BaseStore {
 
     @action.bound
     transactionResponseHandler = (response) => {
-        if (getPropertyValue(response, 'error')) {
+        if ('error' in response) {
             this.error = response.error.message;
         }
         WS.portfolio().then((res) => this.updatePortfolio(res));
@@ -40,22 +39,23 @@ export default class StatementStore extends BaseStore {
 
     @action.bound
     updateIndicative(response) {
-        if (getPropertyValue(response, 'error')) {
+        if ('error' in response) {
             return;
         }
-        let data_source = this.data.slice();
-        const proposal  = response.proposal_open_contract;
-        // TODO: find how it is done in current binary-static
+        const proposal = response.proposal_open_contract;
+
         // force to sell the expired contract, in order to remove from portfolio
-        if (+proposal.is_settleable === 1 && !proposal.is_sold) {
-            WS.sellExpired();
-        }
+        if (+proposal.is_settleable === 1 && !proposal.is_sold) { WS.sellExpired(); }
+
+        const position_data_index = this.data.findIndex(
+            (position) => position.id === +proposal.contract_id
+        );
+
         if (proposal.is_sold) {
-            data_source = data_source.filter((pos) => pos.id !== +proposal.contract_id);
+            this.data.splice(position_data_index, 1);
         } else {
-            const portfolio_position = data_source.find(
-                (pos) => pos.id === +proposal.contract_id
-            );
+            const portfolio_position = this.data[position_data_index];
+
             const prev_indicative = portfolio_position.indicative;
             const new_indicative  = proposal.bid_price;
 
@@ -64,19 +64,21 @@ export default class StatementStore extends BaseStore {
             if (!proposal.is_valid_to_sell) {
                 portfolio_position.status = 'no-resale';
             }
-            else if (new_indicative !== prev_indicative) {
-                portfolio_position.status = new_indicative > prev_indicative ? 'price-moved-up' : 'price-moved-down';
+            else if (new_indicative > prev_indicative) {
+                portfolio_position.status = 'price-moved-up';
+            }
+            else if (new_indicative < prev_indicative) {
+                portfolio_position.status = 'price-moved-down';
             }
             else {
                 portfolio_position.status = '';
             }
         }
-        this.data = data_source;
     }
 
     @action.bound
     updatePortfolio(response) {
-        if (getPropertyValue(response, 'error')) {
+        if ('error' in response) {
             this.error = response.error.message;
             return;
         }
