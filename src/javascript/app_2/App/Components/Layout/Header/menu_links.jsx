@@ -36,7 +36,7 @@ class MenuLinks extends React.PureComponent {
                 {!!items.length &&
                     <div className='menu-links' ref={node => { this.node = node; }}>
                         {items.map((item, idx) => (
-                            <BinaryLink onClick={this.onClick.bind(this)} key={idx} to={item.link_to}>
+                            <BinaryLink onClick={this.onClick} key={idx} to={item.link_to}>
                                 <span className={item.icon} title={item.text}>{item.text}</span>
                             </BinaryLink>
                         ))}
