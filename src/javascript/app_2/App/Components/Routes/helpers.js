@@ -5,3 +5,4 @@ export const getRouteInfo = (routes, path) => routes.find(r => r.path === normal
 
 export const isRouteVisible = (route, is_logged_in) =>
     !(route && route.is_authenticated && !is_logged_in);
+

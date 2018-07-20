@@ -18,7 +18,7 @@ const Settings = ({ match, routes }) => {
         const base = match.url[match.url.length - 1] === '/'
             ? match.url.slice(0, -1)
             : match.url;
-        return `${base}/${path}`;
+        return `${base}${path}`;
     };
 
     // Add paths from this.props.routes to items

@@ -1,9 +1,9 @@
 import { Redirect }           from 'react-router-dom';
 import { routes }             from '../../Constants';
 import Portfolio              from '../../Modules/Portfolio';
-import TradeApp               from '../../Modules/Trading';
 import Settings               from '../../Modules/settings/settings.jsx';
 import Statement              from '../../Modules/Statement';
+import TradeApp               from '../../Modules/Trading';
 
 // Settings Routes
 import AccountPassword        from '../../Modules/settings/sections/account_password.jsx';
@@ -27,15 +27,15 @@ const routes_config = [
         component       : Settings,
         is_authenticated: true,
         routes          : [
-            { path: 'personal',         component: PersonalDetails },
-            { path: 'financial',        component: FinancialAssessment },
-            { path: 'account_password', component: AccountPassword },
-            { path: 'cashier_password', component: CashierPassword },
-            { path: 'exclusion',        component: SelfExclusion },
-            { path: 'limits',           component: Limits },
-            { path: 'history',          component: LoginHistory },
-            { path: 'token',            component: ApiToken },
-            { path: 'apps',             component: AuthorizedApplications },
+            { path: routes.personal,         component: PersonalDetails },
+            { path: routes.financial,        component: FinancialAssessment },
+            { path: routes.account_password, component: AccountPassword },
+            { path: routes.cashier_password, component: CashierPassword },
+            { path: routes.exclusion,        component: SelfExclusion },
+            { path: routes.limits,           component: Limits },
+            { path: routes.history,          component: LoginHistory },
+            { path: routes.token,            component: ApiToken },
+            { path: routes.apps,             component: AuthorizedApplications },
         ],
     },
 ];
