@@ -21,33 +21,31 @@ const Header = ({
     onClick, 
     onClickUpgrade,
 }) => (
-    <React.Fragment>
-        <header className='shadow'>
-            <div className='menu-items'>
-                <div className='menu-left'>
-                    <ToggleMenuDrawer />
-                    <MenuLinks items={items} />
-                </div>
-                <div className='menu-right'>
-                    <div className='acc-balance-container'>
-                        { is_logged_in ?
-                            <React.Fragment>
-                                <AccountInfo 
-                                    balance={formatMoney(currency, balance, true)}
-                                    currency={currency}
-                                    loginid={loginid}
-                                />
-                                { can_upgrade && <AccountUpgrade onClick={onClickUpgrade} /> }
-                            </React.Fragment>
-                            :
-                            <LoginButton onClick={onClick} />
-                        }
-                    </div>
-                </div>
-                <ToggleNotificationsDrawer />
+    <header className='shadow'>
+        <div className='menu-items'>
+            <div className='menu-left'>
+                <ToggleMenuDrawer />
+                <MenuLinks items={items} />
             </div>
-        </header>
-    </React.Fragment>
+            <div className='menu-right'>
+                <div className='acc-balance-container'>
+                    { is_logged_in ?
+                        <React.Fragment>
+                            <AccountInfo 
+                                balance={formatMoney(currency, balance, true)}
+                                currency={currency}
+                                loginid={loginid}
+                            />
+                            { can_upgrade && <AccountUpgrade onClick={onClickUpgrade} /> }
+                        </React.Fragment>
+                        :
+                        <LoginButton onClick={onClick} />
+                    }
+                </div>
+            </div>
+            <ToggleNotificationsDrawer />
+        </div>
+    </header>
 );
 
 Header.propTypes = {
