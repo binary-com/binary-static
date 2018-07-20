@@ -1,4 +1,5 @@
-import React from 'react';
+import React                     from 'react';
+import PropTypes                 from 'prop-types';
 import { contract_type_display } from '../../../Constants/contract';
 import { localize }              from '../../../../_common/localize';
 
@@ -8,5 +9,9 @@ const ContractTypeCell = ({ type }) => (
         {localize(contract_type_display[type])}
     </div>
 );
+
+ContractTypeCell.propTypes = {
+    type: PropTypes.string,
+};
 
 export default ContractTypeCell;

@@ -53,25 +53,27 @@ class Statement extends React.Component {
 }
 
 Statement.propTypes = {
-    is_empty               : PropTypes.bool,
-    has_selected_date      : PropTypes.bool,
-    data                   : MobxPropTypes.arrayOrObservableArray,
-    is_loading             : PropTypes.bool,
-    is_mobile              : PropTypes.bool,
-    onMount                : PropTypes.func,
-    onUnmount              : PropTypes.func,
+    has_selected_date: PropTypes.bool,
+    data             : MobxPropTypes.arrayOrObservableArray,
+    error            : PropTypes.string,
+    is_empty         : PropTypes.bool,
+    is_loading       : PropTypes.bool,
+    is_mobile        : PropTypes.bool,
+    is_tablet        : PropTypes.bool,
+    onMount          : PropTypes.func,
+    onUnmount        : PropTypes.func,
 };
 
 export default connect(
     ({modules, ui}) => ({
-        is_empty               : modules.statement.is_empty,
-        has_selected_date      : modules.statement.has_selected_date,
-        data                   : modules.statement.data,
-        is_loading             : modules.statement.is_loading,
-        error                  : modules.statement.error,
-        onMount                : modules.statement.onMount,
-        onUnmount              : modules.statement.onUnmount,
-        is_mobile              : ui.is_mobile,
-        is_tablet              : ui.is_tablet,
+        is_empty         : modules.statement.is_empty,
+        has_selected_date: modules.statement.has_selected_date,
+        data             : modules.statement.data,
+        is_loading       : modules.statement.is_loading,
+        error            : modules.statement.error,
+        onMount          : modules.statement.onMount,
+        onUnmount        : modules.statement.onUnmount,
+        is_mobile        : ui.is_mobile,
+        is_tablet        : ui.is_tablet,
     })
 )(Statement);

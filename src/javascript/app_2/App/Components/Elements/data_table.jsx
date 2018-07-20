@@ -68,7 +68,7 @@ class DataTable extends React.Component {
         */
         return (
             <table
-                className={classNames('table', 'table-clone', { 'table--full-width': this.props.is_full_width })}
+                className='table table-clone'
                 ref={el => { this.el_fixed_header = el; }}
             >
                 <thead className='table-head'>

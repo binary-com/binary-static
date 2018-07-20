@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React      from 'react';
+import PropTypes  from 'prop-types';
 
 const AmountCell = ({ value }) => {
     const status = +value.replace(/,/g, '') >= 0 ? 'profit' : 'loss';
@@ -9,6 +9,10 @@ const AmountCell = ({ value }) => {
             {value}
         </span>
     );
+};
+
+AmountCell.propTypes = {
+    value: PropTypes.string,
 };
 
 export default AmountCell;

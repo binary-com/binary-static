@@ -51,9 +51,11 @@ export default class StatementStore extends BaseStore {
             WS.sellExpired();
         }
         if (proposal.is_sold) {
-            data_source = data_source.filter((portfolio_position) => portfolio_position.id !== +proposal.contract_id);
+            data_source = data_source.filter((pos) => pos.id !== +proposal.contract_id);
         } else {
-            const portfolio_position = data_source.find((portfolio_position) => portfolio_position.id === +proposal.contract_id);
+            const portfolio_position = data_source.find(
+                (pos) => pos.id === +proposal.contract_id
+            );
             const prev_indicative = portfolio_position.indicative;
             const new_indicative  = proposal.bid_price;
 

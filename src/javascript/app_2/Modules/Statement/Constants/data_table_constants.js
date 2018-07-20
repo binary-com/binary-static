@@ -2,6 +2,7 @@ import React                          from 'react';
 import AmountCell                     from '../Components/amount_cell.jsx';
 import { localize }                   from '../../../../_common/localize';
 
+/* eslint-disable react/display-name */
 export const getTableColumnsTemplate = () => 
     [
         { title: localize('Date'),             col_index: 'date'    },
@@ -12,3 +13,4 @@ export const getTableColumnsTemplate = () =>
         { title: localize('Credit/Debit'),     col_index: 'amount', renderCellContent: (value) => <AmountCell value={value} /> },
         { title: localize('Balance'),          col_index: 'balance' },
     ];
+/* eslint-enable react/display-name */

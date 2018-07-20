@@ -1,5 +1,6 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
+import PropTypes                      from 'prop-types';
 import PortfolioCard                  from './portfolio_card.jsx';
 
 const CardList = ({ data, currency }) => (
@@ -17,7 +18,8 @@ const CardList = ({ data, currency }) => (
 );
 
 CardList.propTypes = {
-    data: MobxPropTypes.arrayOrObservableArray,
+    data    : MobxPropTypes.arrayOrObservableArray,
+    currency: PropTypes.string,
 };
 
 export default CardList;

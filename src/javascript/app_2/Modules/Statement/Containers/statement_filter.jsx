@@ -53,7 +53,7 @@ Filter.propTypes = {
 };
 
 export default connect(
-    ({ common, modules, ui }) => ({
+    ({ common, modules }) => ({
         today           : moment(common.server_time).format('YYYY-MM-DD'),
         date_from       : modules.statement.date_from,
         date_to         : modules.statement.date_to,

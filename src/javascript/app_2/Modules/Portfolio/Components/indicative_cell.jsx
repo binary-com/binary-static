@@ -1,4 +1,5 @@
-import React from 'react';
+import React                     from 'react';
+import PropTypes                 from 'prop-types';
 import Money                     from '../../../App/Components/Elements/money.jsx';
 import { localize }              from '../../../../_common/localize';
 
@@ -17,6 +18,12 @@ const IndicativeCell = ({ amount, currency, status }) => {
             }
         </div>
     );
+};
+
+IndicativeCell.propTypes = {
+    amount  : PropTypes.string,
+    currency: PropTypes.string,
+    status  : PropTypes.string,
 };
 
 export default IndicativeCell;

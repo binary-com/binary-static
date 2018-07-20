@@ -54,6 +54,7 @@ PortfolioCard.propTypes = {
     payout        : PropTypes.number,
     purchase      : PropTypes.number,
     currency      : PropTypes.string,
+    status        : PropTypes.string,
 };
 
 export default PortfolioCard;

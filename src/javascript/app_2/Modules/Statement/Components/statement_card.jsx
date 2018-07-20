@@ -20,8 +20,7 @@ const StatementCard = ({
         <div className='statement-card__body'>
             <div className='statement-card__desc'>{desc}</div>
             <div className='statement-card__row'>
-                <div className={classNames('statement-card__cell statement-card__amount', `statement-card__amount--${action.toLowerCase()}`)}
-                >
+                <div className={classNames('statement-card__cell statement-card__amount', `statement-card__amount--${action.toLowerCase()}`)}>
                     <span className='statement-card__cell-text'>
                         {amount}
                     </span>

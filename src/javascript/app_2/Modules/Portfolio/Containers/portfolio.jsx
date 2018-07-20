@@ -1,3 +1,5 @@
+import { PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import classnames                     from 'classnames';
 import CardList                       from '../Components/card_list.jsx';
@@ -6,13 +8,12 @@ import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
 import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
 import { connect }                    from '../../../Stores/connect';
 import ClientBase                     from '../../../../_common/base/client_base';
-import { localize }                   from '../../../../_common/localize';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Portfolio extends React.Component {
     state = {
         // TODO: get currency from store, once it has been added
-        currency   : ClientBase.get('currency').toLowerCase(),
+        currency: ClientBase.get('currency').toLowerCase(),
     };
 
     componentDidMount()    { this.props.onMount(); }
@@ -21,7 +22,6 @@ class Portfolio extends React.Component {
     render() {
         const {
             data,
-            footer,
             is_mobile,
             is_tablet,
             is_loading,
@@ -39,7 +39,7 @@ class Portfolio extends React.Component {
         }
 
         if (is_empty) {
-            return <EmptyPortfolioMessage />
+            return <EmptyPortfolioMessage />;
         }
 
         const should_show_cards = is_mobile || is_tablet;
@@ -62,19 +62,28 @@ class Portfolio extends React.Component {
     }
 }
 
-// TODO: add proptypes
+Portfolio.propTypes = {
+    data      : MobxPropTypes.arrayOrObservableArray,
+    totals    : PropTypes.object,
+    error     : PropTypes.string,
+    is_empty  : PropTypes.bool,
+    is_loading: PropTypes.bool,
+    is_mobile : PropTypes.bool,
+    is_tablet : PropTypes.bool,
+    onMount   : PropTypes.func,
+    onUnmount : PropTypes.func,
+};
 
 export default connect(
     ({modules, ui}) => ({
-        data                   : modules.portfolio.data,
-        footer                 : modules.portfolio.footer,
-        is_loading             : modules.portfolio.is_loading,
-        error                  : modules.portfolio.error,
-        totals                 : modules.portfolio.totals,
-        is_empty               : modules.portfolio.is_empty,
-        onMount                : modules.portfolio.onMount,
-        onUnmount              : modules.portfolio.onUnmount,
-        is_mobile              : ui.is_mobile,
-        is_tablet              : ui.is_tablet,
+        data      : modules.portfolio.data,
+        is_loading: modules.portfolio.is_loading,
+        error     : modules.portfolio.error,
+        totals    : modules.portfolio.totals,
+        is_empty  : modules.portfolio.is_empty,
+        onMount   : modules.portfolio.onMount,
+        onUnmount : modules.portfolio.onUnmount,
+        is_mobile : ui.is_mobile,
+        is_tablet : ui.is_tablet,
     })
 )(Portfolio);
