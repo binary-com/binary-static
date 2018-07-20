@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types';
-import React     from 'react';
+import PropTypes  from 'prop-types';
+import React      from 'react';
+import classNames from 'classnames';
 
 // Mobile view for portfolio items
 const PortfolioCard = ({
@@ -13,32 +14,30 @@ const PortfolioCard = ({
     status,
 }) => (
     // TODO: implement portfolio card mockup (once available)
-    <div className='statement-card card-list__card'>
-        <div className='statement-card__header'>
-            <span className='statement-card__date'>{ remaining_time }</span>
-            <span className='statement-card__refid'>{ reference }</span>
+    <div className='portfolio-card card-list__card'>
+        <div className='portfolio-card__header'>
+            <span className='portfolio-card__date'>{ remaining_time }</span>
+            <span className='portfolio-card__refid'>{ reference }</span>
         </div>
-        <div className='statement-card__body'>
-            <div className='statement-card__desc'>{details}</div>
-            <div className='statement-card__row'>
-                {indicative &&
-                    <div className={`statement-card__cell statement-card__amount${status && (status === 'price-moved-up' ? '--sell' : '--buy')}`}>
-                        <span className='statement-card__cell-text'>
-                            <span className={`symbols ${currency}`}/>
-                            {indicative}
-                        </span>
-                    </div>
-                }
-                <div className='statement-card__cell statement-card__balance'>
-                    <span className='statement-card__cell-text'>
+        <div className='portfolio-card__body'>
+            <div className='portfolio-card__desc'>{details}</div>
+            <div className='portfolio-card__row'>
+                <div className='portfolio-card__cell portfolio-card__purchase'>
+                    <span className='portfolio-card__cell-text'>
                         <span className={`symbols ${currency}`}/>
                         {purchase}
                     </span>
                 </div>
-                <div className='statement-card__cell statement-card__payout'>
-                    <span className='statement-card__cell-text'>
+                <div className='portfolio-card__cell portfolio-card__payout'>
+                    <span className='portfolio-card__cell-text'>
                         <span className={`symbols ${currency}`}/>
                         {payout}
+                    </span>
+                </div>
+                <div className={`portfolio-card__indicative portfolio-card__indicative--${status}`}>
+                    <span className='portfolio-card__cell-text'>
+                        <span className={`symbols ${currency}`}/>
+                        {indicative}
                     </span>
                 </div>
             </div>

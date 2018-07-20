@@ -71,7 +71,7 @@ export default class StatementStore extends BaseStore {
                 portfolio_position.status = 'price-moved-down';
             }
             else {
-                portfolio_position.status = '';
+                portfolio_position.status = 'price-stable';
             }
         }
     }
