@@ -34,6 +34,14 @@ class Portfolio extends React.Component {
             return <p>{error}</p>;
         }
 
+        if (is_loading) {
+            return <Loading />;
+        }
+
+        if (is_empty) {
+            return <EmptyPortfolioMessage />
+        }
+
         const should_show_cards = is_mobile || is_tablet;
 
         return (
@@ -49,11 +57,6 @@ class Portfolio extends React.Component {
                             has_fixed_header
                         />
                 }
-                {
-                    is_loading &&
-                    <Loading />
-                }
-                {is_empty && <EmptyPortfolioMessage />}
             </div>
         );
     }
