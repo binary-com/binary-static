@@ -188,16 +188,8 @@
             border-radius: $BORDER_RADIUS;
             background: $COLOR_LIGHT_GRAY;
 
-            .close-btn {
-                position: absolute;
-                padding: 8px;
-                top: 0;
-                right: 0;
-                cursor: pointer;
-
-                &:before {
-                    content: url('../images/app_2/footer/ic_close_blue_light.svg');
-                }
+            .close-btn-container {
+                float: right;
             }
             div.purchase-login-wrapper {
                 display: flex;
