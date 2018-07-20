@@ -1,7 +1,8 @@
-import classNames from 'classnames';
-import PropTypes  from 'prop-types';
-import React      from 'react';
-import Url        from '../../../../../_common/url';
+import classNames   from 'classnames';
+import PropTypes    from 'prop-types';
+import React        from 'react';
+import Url          from '../../../../../_common/url';
+import { localize } from '../../../../../_common/localize';
 
 export const DrawerHeader = ({
     alignment,
@@ -14,6 +15,9 @@ export const DrawerHeader = ({
                 <div className={drawer_header_class}>
                     <div className='icons btn-close' onClick={closeBtn}>
                         <img src={Url.urlForStatic('images/app_2/common/close.svg')} alt='Close' />
+                    </div>
+                    <div className='notifications-header'>
+                        <h4>{localize('all notifications')}</h4>
                     </div>
                 </div>
             :

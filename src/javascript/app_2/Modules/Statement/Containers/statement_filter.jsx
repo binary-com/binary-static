@@ -2,7 +2,7 @@ import classNames   from 'classnames';
 import moment       from 'moment';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import DatePicker   from '../../../App/Components/Form/date_picker.jsx';
+import DatePicker   from '../../../App/Components/Form/DatePicker';
 import { connect }  from '../../../Stores/connect';
 import { localize } from '../../../../_common/localize';
 
@@ -19,23 +19,23 @@ const Filter = ({
             <span className='statement-filter__label'>{localize('Filter by date:')}</span>
             <DatePicker
                 name='date_from'
-                initial_value={date_from}
                 placeholder={localize('Start date')}
-                startDate={date_to || today}
-                maxDate={date_to || today}
+                start_date={date_to || today}
+                max_date={date_to || today}
                 onChange={handleDateChange}
+                value={date_from}
                 is_nativepicker={use_native_pickers}
             />
             <span className='statement-filter__dash'>&mdash;</span>
             <DatePicker
                 name='date_to'
-                initial_value={date_to}
                 placeholder={localize('End date')}
-                startDate={today}
-                minDate={date_from}
-                maxDate={today}
-                showTodayBtn
+                start_date={today}
+                min_date={date_from}
+                max_date={today}
+                has_today_btn
                 onChange={handleDateChange}
+                value={date_to}
                 is_nativepicker={use_native_pickers}
             />
         </div>

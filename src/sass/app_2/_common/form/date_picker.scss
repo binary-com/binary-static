@@ -18,6 +18,7 @@
         margin: 0 !important;
         border: none;
         outline: none;
+        width: 100%;
         box-sizing: border-box;
         font-size: 14px;
         font-weight: 300;
@@ -256,9 +257,11 @@ div.datepicker-container {
         }
         &.picker-calendar-icon:before {
             background-image: url('../images/app_2/common/calendar.svg');
+            background-repeat: no-repeat;
         }
         &.close-circle-icon:before {
             background-image: url('../images/app_2/common/close_circle.svg');
+            background-repeat: no-repeat;
         }
     }
     .datepicker-calendar {
