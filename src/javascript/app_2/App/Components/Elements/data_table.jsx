@@ -30,18 +30,18 @@ class DataTable extends React.Component {
         }
     }
 
-    renderRow(transaction, is_footer = false, id = 0) {
-        if (!transaction) return null;
+    renderRow(row_obj, is_footer = false, id = 0) {
+        if (!row_obj) return null;
 
         return (
             <tr className='table-row' key={id}>
                 {this.props.columns.map(({ col_index, renderCellContent }) => {
-                    const cell_value = transaction[col_index] || '';
+                    const cell_value = row_obj[col_index] || '';
 
                     return (
                         <td className={col_index} key={col_index}>
                             {renderCellContent
-                                ? renderCellContent(cell_value, col_index, transaction, is_footer)
+                                ? renderCellContent({ cell_value, col_index, row_obj, is_footer })
                                 : cell_value
                             }
                         </td>
@@ -53,7 +53,7 @@ class DataTable extends React.Component {
 
     renderBodyRows() {
         return this.props.data_source
-            .map((transaction, id) => this.renderRow(transaction, false, id));
+            .map((row_obj, id) => this.renderRow(row_obj, false, id));
     }
 
     renderHeaders() {

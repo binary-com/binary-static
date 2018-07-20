@@ -9,14 +9,14 @@ export const getTableColumnsTemplate = (currency) => [
     {
         title            : localize('Reference No.'),
         col_index        : 'reference',
-        renderCellContent: (cell_value, col_index, portfolio_position, is_footer) => (
+        renderCellContent: ({ cell_value, is_footer }) => (
             is_footer ? localize('Total') : cell_value
         ),
     },
     {
         title            : localize('Contract Type'),
         col_index        : 'type',
-        renderCellContent: (cell_value, col_index, portfolio_position, is_footer) => {
+        renderCellContent: ({ cell_value, is_footer }) => {
             if (is_footer) return '';
             return <ContractTypeCell type={cell_value} />;
         },
@@ -32,22 +32,22 @@ export const getTableColumnsTemplate = (currency) => [
     {
         title            : localize('Potential Payout'),
         col_index        : 'payout',
-        renderCellContent: (cell_value) => (
+        renderCellContent: ({ cell_value }) => (
             <Money amount={cell_value} currency={currency} />
         ),
     },
     {
         title            : localize('Purchase'),
         col_index        : 'purchase',
-        renderCellContent: (cell_value) => (
+        renderCellContent: ({ cell_value }) => (
             <Money amount={cell_value} currency={currency} />
         ),
     },
     {
         title            : localize('Indicative'),
         col_index        : 'indicative',
-        renderCellContent: (cell_value, col_index, portfolio_position) => (
-            <IndicativeCell amount={cell_value} currency={currency} status={portfolio_position.status} />
+        renderCellContent: ({ cell_value, row_obj }) => (
+            <IndicativeCell amount={cell_value} currency={currency} status={row_obj.status} />
         ),
     },
 ];
