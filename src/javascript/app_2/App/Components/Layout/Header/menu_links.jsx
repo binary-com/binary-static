@@ -1,10 +1,10 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import Inkbar         from '../../Elements/Inkbar';
+import InkBar         from '../../Elements/InkBar';
 import { BinaryLink } from '../../../routes';
 import Url            from '../../../../../_common/url';
 
-class MenuLinks extends React.Component {
+class MenuLinks extends React.PureComponent {
     state = {
         width: 0,
         left : 0,
@@ -40,7 +40,7 @@ class MenuLinks extends React.Component {
                                 <span className={item.icon} title={item.text}>{item.text}</span>
                             </BinaryLink>
                         ))}
-                        <Inkbar left={this.state.left} width={this.state.width} />
+                        <InkBar left={this.state.left} width={this.state.width} />
                     </div>
                 }
             </React.Fragment>

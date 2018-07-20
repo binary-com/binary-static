@@ -18,11 +18,9 @@ const AccountInfo = ({ balance, currency, loginid }) => (
 );
 
 AccountInfo.propTypes = {
-    balance       : PropTypes.string,
-    can_upgrade   : PropTypes.bool,
-    currency      : PropTypes.string,
-    loginid       : PropTypes.string,
-    onClickUpgrade: PropTypes.func,
+    balance : PropTypes.string,
+    currency: PropTypes.string,
+    loginid : PropTypes.string,
 };
 
 export { AccountInfo };

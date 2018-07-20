@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React     from 'react';
 
-export default function Inkbar({ left, width }) {
+const InkBar = ({ left, width }) => {
     const inkbar_style = {
         left,
         width,
@@ -9,9 +9,11 @@ export default function Inkbar({ left, width }) {
     return (
         <span style={inkbar_style} className='inkbar' />
     );
-}
+};
 
-Inkbar.propTypes = {
+InkBar.propTypes = {
     left : PropTypes.number,
     width: PropTypes.number,
 };
+
+export default InkBar;
