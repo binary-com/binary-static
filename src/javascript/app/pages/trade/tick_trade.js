@@ -2,7 +2,6 @@ const moment               = require('moment');
 const requireHighstock     = require('./common').requireHighstock;
 const Lookback             = require('./lookback');
 const Tick                 = require('./tick');
-const updateContractPayout = require('./update_values').updateContractPayout;
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
@@ -244,7 +243,7 @@ const TickDisplay = (() => {
             // round calculated barrier
             const calc_barrier = (total / applicable_ticks.length).toFixed(parseInt(display_decimals) + 1);
             drawBarrier({ value: calc_barrier, text: 'Average' });
-            contract_barrier_label = getContractBarrierLabel('Average', calc_barrier);
+            contract_barrier_label = getContractBarrierLabel('Barrier', calc_barrier);
         }
 
         if (barrier_type === 'highlowticks') {
@@ -361,7 +360,7 @@ const TickDisplay = (() => {
         } else if (contract.is_expired) {
             // non-binary options that has status === null
             if (contract_category === 'lookback') {
-                updateContractPayout(contract.sell_price || contract.bid_price);
+                updatePurchaseStatus(contract.sell_price, price, contract.profit, localize('Contract confirmation'), contract_category);
             }
         }
     };
