@@ -3,7 +3,7 @@ import React        from 'react';
 import Button       from '../../Form/button.jsx';
 import { localize } from '../../../../../_common/localize';
 
-const AccountUpgrade = ({ onClick }) => (
+const UpgradeButton = ({ onClick }) => (
     <Button
         id='acc-balance-btn'
         className='primary orange'
@@ -13,8 +13,8 @@ const AccountUpgrade = ({ onClick }) => (
     />
 );
 
-AccountUpgrade.propTypes = {
+UpgradeButton.propTypes = {
     onClick: PropTypes.func,
 };
 
-export { AccountUpgrade };
+export { UpgradeButton };

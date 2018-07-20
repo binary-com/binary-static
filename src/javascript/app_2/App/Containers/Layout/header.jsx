@@ -2,11 +2,11 @@ import PropTypes          from 'prop-types';
 import React              from 'react';
 import {
     AccountInfo,
-    AccountUpgrade,
     LoginButton,
     MenuLinks,
     ToggleMenuDrawer,
     ToggleNotificationsDrawer,
+    UpgradeButton,
     }                     from '../../Components/Layout/Header';
 import { connect }        from '../../../Stores/connect';
 import { formatMoney }    from '../../../../_common/base/currency_base';
@@ -36,7 +36,7 @@ const Header = ({
                                 currency={currency}
                                 loginid={loginid}
                             />
-                            { can_upgrade && <AccountUpgrade onClick={onClickUpgrade} /> }
+                            { can_upgrade && <UpgradeButton onClick={onClickUpgrade} /> }
                         </React.Fragment>
                         :
                         <LoginButton onClick={onClick} />
