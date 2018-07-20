@@ -10,12 +10,17 @@ const EmptyStatementMessage = ({ has_selected_date }) => (
             {localize('No Statement')}
         </span>
         <span className='statement-empty__text'>
-            {!has_selected_date
-                ? localize('Your account has no trading activity.')
-                : localize('Your account has no trading activity for the selected period.')
+            {
+                !has_selected_date ?
+                    localize('Your account has no trading activity.')
+                    :
+                    localize('Your account has no trading activity for the selected period.')
             }
         </span>
-        <Button className='secondary orange' text={localize('Trade now')} />
+        {
+            !has_selected_date &&
+            <Button className='secondary orange' text={localize('Trade now')} />
+        }
     </div>
 );
 
