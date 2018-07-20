@@ -19,7 +19,7 @@ export default class StatementStore extends BaseStore {
             this.is_loading = false;
             this.updatePortfolio(response);
         });
-        WS.subscribeTransaction(this.transactionResponseHandler, false);
+        WS.subscribeTransaction(this.transactionHandler, false);
     };
 
     @action.bound
@@ -30,7 +30,7 @@ export default class StatementStore extends BaseStore {
     }
 
     @action.bound
-    transactionResponseHandler = (response) => {
+    transactionHandler(response) {
         if ('error' in response) {
             this.error = response.error.message;
         }
@@ -38,7 +38,7 @@ export default class StatementStore extends BaseStore {
     };
 
     @action.bound
-    updateIndicative(response) {
+    proposalOpenContractHandler(response) {
         if ('error' in response) {
             return;
         }
@@ -85,7 +85,7 @@ export default class StatementStore extends BaseStore {
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
             this.data = formatPortfolioData(response.portfolio.contracts);
 
-            WS.subscribeProposalOpenContract(this.updateIndicative, false);
+            WS.subscribeProposalOpenContract(this.proposalOpenContractHandler, false);
         }
     }
 
