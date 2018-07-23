@@ -17,6 +17,11 @@
                     background-color: $COLOR_WHITE;
                 }
             }
+            &:hover {
+                span {
+                    color: $COLOR_WHITE;
+                }
+            }
             span {
                 color: $COLOR_DARK_GRAY;
             }

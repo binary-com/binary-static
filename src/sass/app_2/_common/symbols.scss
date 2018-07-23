@@ -49,3 +49,9 @@
         content: '\004c';
     }
 }
+
+.theme-wrapper.dark {
+    .symbols {
+        color: $COLOR_WHITE;
+    }
+}

@@ -80,5 +80,9 @@
         background-color: $COLOR_BLUE;
         color: $COLOR_WHITE;
         border-color: $COLOR_COOL_GRAY;
+
+        &:hover, &:focus, &:active {
+            border-color: $COLOR_WHITE;
+        }
     }
 }

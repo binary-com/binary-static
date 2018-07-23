@@ -289,7 +289,7 @@ div.datepicker-container {
         border-color: $COLOR_COOL_GRAY;
         color: $COLOR_WHITE;
 
-        &:focus, &:active {
+        &:hover, &:focus, &:active {
             border-color: $COLOR_WHITE;
         }
     }
@@ -303,7 +303,7 @@ div.datepicker-container {
             border-color: $COLOR_COOL_GRAY;
             color: $COLOR_WHITE;
 
-            &:focus, &:active {
+            &:hover, &:focus, &:active {
                 border-color: $COLOR_WHITE;
             }
         }
