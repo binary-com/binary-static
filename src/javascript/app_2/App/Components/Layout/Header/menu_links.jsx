@@ -49,7 +49,11 @@ class MenuLinks extends React.PureComponent {
 }
 
 MenuLinks.propTypes = {
-    items: PropTypes.array,
+    items: PropTypes.arrayOf(PropTypes.shape({
+        icon   : PropTypes.string,
+        text   : PropTypes.string,
+        link_to: PropTypes.string,
+    })),
 };
 
 export { MenuLinks };
