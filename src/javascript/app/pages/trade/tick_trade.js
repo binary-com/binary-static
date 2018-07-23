@@ -276,10 +276,11 @@ const TickDisplay = (() => {
                 const has_reset    = current_barrier !== entry_barrier;
 
                 drawBarrier({ id: 'tick-barrier', value: entry_barrier, text: 'Barrier', label: { align: 'right',  x: -x }, dashStyle: has_reset ? 'dot' : 'default', textBottom: has_reset && !is_resetcall });
-                contract_barrier_label = getContractBarrierLabel('Barrier', entry_barrier);
                 if (has_reset) {
                     drawBarrier({ id: 'tick-reset-barrier', value: current_barrier, text: 'Reset Barrier', label: { align: 'right', x: -x }, textBottom: is_resetcall });
                     contract_barrier_label = getContractBarrierLabel('Reset Barrier', current_barrier);
+                } else {
+                    contract_barrier_label = getContractBarrierLabel('Barrier', entry_barrier);
                 }
             }
         }
