@@ -301,23 +301,34 @@ div.datepicker-container {
             border-radius: 0;
             background: $COLOR_BLUE;
             border-color: $COLOR_COOL_GRAY;
+            color: $COLOR_WHITE;
 
             &:focus, &:active {
                 border-color: $COLOR_WHITE;
             }
         }
-        .calendar-header {
+        .calendar-header, .calendar-footer {
             border-color: $COLOR_COOL_GRAY;
+            color: $COLOR_DARK_GRAY;
+
+            .calendar-prev-year-btn, .calendar-prev-month-btn, .calendar-next-month-btn, .calendar-next-year-btn {
+                color: $COLOR_DARK_GRAY;
+            }
         }
         span.calendar-date-header {
             color: $COLOR_DARK_GRAY;
         }
         span.calendar-date {
             background: $COLOR_BLUE;
+            color: $COLOR_DARK_GRAY;
 
             &.active {
                 font-weight: 600;
                 color: $COLOR_WHITE;
+                background: $COLOR_DARK_GRAY !important;
+            }
+            &.disabled {
+                background: $COLOR_GLASS_GRAY !important;
             }
         }
     }
