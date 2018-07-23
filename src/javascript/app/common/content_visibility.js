@@ -32,9 +32,6 @@ const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
         Hide for malta and maltainvest:
             data-show='-malta, -maltainvest'
 
-        Show for real\vanuatu MT5 clients with standard account
-            data-show='mt5:real+vanuatu+standard'
-
     Prohibited values:
         Cannot mix includes and excludes:
             data-show='costarica, -malta' -> throws error
@@ -48,11 +45,11 @@ const mt_company_rule   = 'mtcompany';
 const ContentVisibility = (() => {
     const init = () => {
         if (Client.isLoggedIn()) {
-            BinarySocket.wait('authorize', 'landing_company', 'mt5_login_list').then(() => {
+            BinarySocket.wait('authorize', 'landing_company').then(() => {
                 controlVisibility(
                     State.getResponse('authorize.landing_company_name'),
                     MetaTrader.isEligible(),
-                    State.getResponse('mt5_login_list'),
+                    State.getResponse('landing_company.mt_financial_company.shortcode')
                 );
             });
         } else {
@@ -80,48 +77,43 @@ const ContentVisibility = (() => {
             names = names.map(name => name.slice(1));
         }
 
-        const mt5_rules = names
-            .filter(name => isMT5Rule(name))
-            .map(rule => parseMT5Rule(rule));
+        const mt5fin_rules = names
+            .filter(name => isMT5FinRule(name))
+            .map(rule => parseMT5FinRule(rule));
 
-        names = names.filter(name => !isMT5Rule(name));
+        names = names.filter(name => !isMT5FinRule(name));
 
         return {
             is_exclude,
             names,
-            mt5_rules,
+            mt5fin_rules,
         };
     };
 
-    const isMT5Rule = (rule) => /^mt5:/.test(rule);
+    const isMT5FinRule = (rule) => /^mt5fin:/.test(rule);
 
-    const parseMT5Rule = (rule) => rule.slice(4).split('+');
+    const parseMT5FinRule = (rule) => rule.match(/^mt5fin:(.+)$/)[1];
 
-    const shouldShowElement = (attr_str, current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
+    const shouldShowElement = (
+            attr_str,
+            current_landing_company_shortcode,
+            client_has_mt_company,
+            mt5fin_company_shortcode
+    ) => {
         const { is_exclude,
                 names,
-                mt5_rules } = parseAttributeString(attr_str);
-        const rule_set      = new Set(names);
+                mt5fin_rules } = parseAttributeString(attr_str);
+        const rule_set = new Set(names);
 
         const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
         const rule_set_has_mt      = rule_set.has(mt_company_rule);
-
-        const mt5_rules_matches = mt5_rules.map((keywords) => {
-            const keywords_regex = keywords.map((keyword) => new RegExp(keyword));
-            return mt5_login_list.some(mt5_login =>
-                keywords_regex.every(keyword_regex => keyword_regex.test(mt5_login.group))
-            );
-        });
 
         let show_element = false;
 
         if (client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
         else if (is_exclude !== rule_set_has_current) show_element = true;
 
-        if (mt5_rules.length) {
-            if (is_exclude) show_element = mt5_rules_matches.every(is_match => !is_match);
-            else            show_element = mt5_rules_matches.some(is_match => is_match);
-        }
+        if (mt5fin_rules.includes(mt5fin_company_shortcode)) show_element = !is_exclude;
 
         return show_element;
     };
