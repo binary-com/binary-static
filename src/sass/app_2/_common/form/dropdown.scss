@@ -28,7 +28,6 @@ div.dropdown-container {
     &:active, &:focus, &.show {
         outline: 0;
         border-radius: 4px;
-        box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
 
         .select-arrow {
             color: $COLOR_BLUE;
@@ -129,6 +128,27 @@ div.dropdown-container {
             content: '\002303';
             display: block;
             height: 0.53em; // center content glyph
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .dropdown-container {
+        .dropdown-display {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_COOL_GRAY;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &.show > .clicked {
+            border-color: $COLOR_WHITE;
+        }
+        .list-container {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_COOL_GRAY;
         }
     }
 }

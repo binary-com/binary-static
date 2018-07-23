@@ -298,3 +298,32 @@ div.contracts-popup-container {
         }
     }
 }
+
+// Dark Theme
+.theme-wrapper.dark {
+    div.contracts-popup-container {
+        background: $COLOR_BLUE;
+        border-color: $COLOR_COOL_GRAY;
+
+        &:hover {
+            border-color: $COLOR_WHITE;
+        }
+        .list-container {
+            border-color: $COLOR_COOL_GRAY;
+            background: $COLOR_LIGHTER_BLUE;
+
+            .list-group .list-items .list-item {
+                background: $COLOR_BLUE;
+                border-color: $COLOR_COOL_GRAY;
+
+                &.selected {
+                    background: $COLOR_GLASS_GRAY;
+                    font-weight: 600;
+                }
+                &:only-child, &:first-child:nth-last-child(2) {
+                    border-color: $COLOR_GLASS_GRAY;
+                }
+            }
+        }
+    }
+}

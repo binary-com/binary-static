@@ -282,3 +282,43 @@ div.datepicker-container {
         }
     }
 }
+
+.theme-wrapper.dark {
+    input.datepicker-display {
+        background: $COLOR_BLUE;
+        border-color: $COLOR_COOL_GRAY;
+        color: $COLOR_WHITE;
+
+        &:focus, &:active {
+            border-color: $COLOR_WHITE;
+        }
+    }
+    .calendar {
+        background: $COLOR_BLUE;
+        border: 1px solid $COLOR_COOL_GRAY;
+
+        input {
+            border-radius: 0;
+            background: $COLOR_BLUE;
+            border-color: $COLOR_COOL_GRAY;
+
+            &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        .calendar-header {
+            border-color: $COLOR_COOL_GRAY;
+        }
+        span.calendar-date-header {
+            color: $COLOR_DARK_GRAY;
+        }
+        span.calendar-date {
+            background: $COLOR_BLUE;
+
+            &.active {
+                font-weight: 600;
+                color: $COLOR_WHITE;
+            }
+        }
+    }
+}

@@ -19,25 +19,19 @@ hr {
         height: 100vh;
         z-index: 665;
         transition: all 0.25s;
-        opacity: 0;
         overflow: hidden;
-        background-color: rgba(42, 48, 82, 0.96);
-        will-change: opacity;
 
-        &.show {
-            opacity: 1;
-        }
         .drawer {
             position: absolute;
             z-index: 666;
-            top: 0;
+            top: 50px;
             left: 0;
             right: initial;
             will-change: transform;
             overflow: hidden;
             box-sizing: border-box;
             width: 260px;
-            height: 100%;
+            height: calc(100% - 50px);
             transition: all 0.25s;
             background: $COLOR_WHITE;
 
@@ -108,7 +102,7 @@ hr {
                     .icons {
                         display: inline-flex;
                         cursor: pointer;
-                        padding: 14px 8px;
+                        padding: 14px 10px;
 
                         &.btn-close {
                             border-left: 1px solid $COLOR_GRAY;
@@ -255,6 +249,22 @@ hr {
             @media (max-width: 768px) {
                 width: 100%;
             }
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    hr {
+        border-color: $COLOR_COOL_GRAY;
+    }
+    .drawer-bg .drawer {
+        background: $COLOR_BLUE;
+        color: $COLOR_WHITE;
+        box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
+
+        .drawer-item a span {
+            color: $COLOR_WHITE;
         }
     }
 }

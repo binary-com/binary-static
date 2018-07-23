@@ -85,3 +85,10 @@
         stroke: $COLOR_BLUE;
     }
 }
+
+// Dark Theme
+.theme-wrapper.dark {
+    .block-ui {
+        background: rgba(170, 172, 186, 0.8);
+    }
+}

@@ -53,7 +53,6 @@
             outline: 0;
             border-radius: $BORDER_RADIUS;
             border-color: $COLOR_BLUE;
-            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
         }
         &:not([type=range]), label, textarea {
             touch-action: manipulation;
@@ -72,5 +71,14 @@
         font-weight: 300;
         font-size: 0.75rem;
         color: #b0b3bf; /* stylelint-disable-line color-no-hex */
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .input-field input {
+        background-color: $COLOR_BLUE;
+        color: $COLOR_WHITE;
+        border-color: $COLOR_COOL_GRAY;
     }
 }
