@@ -34,7 +34,7 @@ const ContractInfo = ({
                     <div className='stake-wrapper'>
                         <span>
                             {localize('Stake')}:
-                            <strong><Money amount={proposal_info.stake} currency={currency} /></strong>
+                            <Money amount={proposal_info.stake} currency={currency} />
                         </span>
                         <span className='field-info'>
                             <Tooltip alignment='left' icon='info' message={proposal_info.message}/>
@@ -44,19 +44,19 @@ const ContractInfo = ({
                         <span>
                             {localize('Payout')}:
                         </span>
-                        <strong><Money amount={proposal_info.payout} currency={currency} /></strong>
+                        <Money amount={proposal_info.payout} currency={currency} />
                     </div>
                     <div>
                         <span>
                             {localize('Net Profit')}:
                         </span>
-                        <strong><Money amount={proposal_info.profit} currency={currency} /></strong>
+                        <Money amount={proposal_info.profit} currency={currency} />
                     </div>
                     <div>
                         <span>
                             {localize('Return')}:
                         </span>
-                        <strong>{proposal_info.returns}</strong>
+                        {proposal_info.returns}
                     </div>
                 </div>
             }
