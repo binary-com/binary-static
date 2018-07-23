@@ -213,6 +213,7 @@ const Metatrader = () => (
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
+                                it.L('Negative balance protection'),
                             ]}
                         />
                         <AccountDesc
