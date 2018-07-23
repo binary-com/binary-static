@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-12 05:26\n"
+"PO-Revision-Date: 2018-07-23 01:46\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -1061,7 +1061,7 @@ msgid "Allow Clients to use e-wallets, which are not available directly on %1"
 msgstr "Permite que clientes utilizem carteiras eletrônicas que não estão diretamente disponíveis na %1"
 
 msgid "Allow equals"
-msgstr ""
+msgstr "Permitir igualdades"
 
 msgid "Already have an account? %1Log in%2 here"
 msgstr ""
@@ -1398,7 +1398,7 @@ msgid "At least five years of experience with affiliate marketing, growth hackin
 msgstr "Pelo menos cinco anos de experiência com marketing de afiliados, estratégias de posicionamento, desenvolvimento de negócio e outras competências estreitamente relacionadas"
 
 msgid "At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot."
-msgstr ""
+msgstr "Na hora de redefinição, se o preço estiver na direção oposta à sua previsão, a barreira é redefinida para esse preço."
 
 msgid "Audit"
 msgstr "Auditoria"
@@ -1917,7 +1917,7 @@ msgid "CFDs on indices."
 msgstr ""
 
 msgid "Call Spread"
-msgstr ""
+msgstr "Spread de compra"
 
 msgid "Call Spread/Put Spread"
 msgstr ""
@@ -4148,6 +4148,9 @@ msgstr "Alta"
 msgid "High Barrier"
 msgstr "Barreira Alta"
 
+msgid "High Tick"
+msgstr "Tique-taque Alto"
+
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr ""
 
@@ -4155,7 +4158,7 @@ msgid "High barrier"
 msgstr "Barreira alta"
 
 msgid "High barrier must be higher than low barrier"
-msgstr ""
+msgstr "Barreira superior deve estar acima da barreira inferior"
 
 msgid "High barrier offset"
 msgstr "Variação de barreira alta"
@@ -4176,7 +4179,7 @@ msgid "High-Low"
 msgstr "Fechar-Baixo"
 
 msgid "High/Low Ticks"
-msgstr ""
+msgstr "Tique-taques Altos/Baixos"
 
 msgid "Higher"
 msgstr "Superior"
@@ -4440,7 +4443,7 @@ msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barr
 msgstr "Se o <strong>preço de saída</strong> for igual à <strong>Barreira inferior</strong> OU à <strong>Barreira superior</strong>, você não receberá o prêmio."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong> or the <stronm g>new barrier (if a reset occurs)</stronmg>, you don't win the payout."
-msgstr ""
+msgstr "Se o <strong>preço de saída</strong> for igual à <strong>barreira</strong> ou à <strong>nova barreira (no caso de ocorrer uma redefinição)</strong>, você não ganhará o prêmio."
 
 msgid "If the <strong>exit spot</strong> is equal to the <strong>barrier</strong>, you don't win the payout."
 msgstr "Se o <strong>preço de saída</strong> for igual à <strong>barreira</strong>, você não receberá o prêmio."
@@ -4578,7 +4581,7 @@ msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 f
 msgstr "Você vê que o EUR/USD tem um preço de compra de 1,05229, você irá comprar 1,05229 por cada 1 EUR que você vender."
 
 msgid "If you select \"Allow equals\", you win the payout if exit spot is higher than or equal to entry spot for \"Higher\". Similarly, you win the payout if exit spot is lower than or equal to entry spot for \"Lower\"."
-msgstr ""
+msgstr "Se você selecionar \"Permitir igualdade\", você ganhará o prêmio se o preço de saída for superior ou igual ao preço de entrada em contratos \"Superior\". Do mesmo modo, você ganhará o prêmio se o preço de saída for inferior ou igual ao preço de entrada em contratos \"Inferior\"."
 
 msgid "If you select \"Asian Fall\", you will win the payout if the <strong>last tick</strong> is <strong>lower</strong> than the <strong>average</strong> of the ticks."
 msgstr "Se selecionar \"Asiático Em Queda\", você ganha o pagamento se o <strong>último tique-taque</strong> for <strong>inferior</strong> à <strong>média</strong> dos tique-taques."
@@ -4614,13 +4617,13 @@ msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</st
 msgstr "Se você selecionar \"Superior\", você ganha o prêmio se o <strong>preço de saída</strong> for estritamente superior à <strong>barreira</strong>."
 
 msgid "If you select \"Higher\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
-msgstr ""
+msgstr "Se você selecionar \"Superior\", você ganhará o prêmio se o <strong>preço de saída</strong> for estritamente superior ao <strong>preço de entrada</strong>."
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>barrier</strong>."
 msgstr "Se você selecionar \"Inferior\", você ganha o prêmio se o <strong>preço de saída</strong> for estritamente inferior à <strong>barreira</strong>."
 
 msgid "If you select \"Lower\", you win the payout if the <strong>exit spot</strong> is strictly lower than the <strong>entry spot</strong>."
-msgstr ""
+msgstr "Se você selecionar \"Inferior\", você ganhará o prêmio se o <strong>preço de saída</strong> for estritamente inferior ao <strong>preço de entrada</strong>."
 
 msgid "If you select \"Matches\", you will win the payout if the <strong>last digit</strong> of the last tick is the <strong>same</strong> as your <strong>prediction.</strong>"
 msgstr "Se você selecionar \"Combina\", você ganha o prêmio se o <strong>último dígito</strong> do último tique-taque for o <strong>mesmo</strong> que a sua <strong>previsão.</strong>"
@@ -4632,10 +4635,10 @@ msgid "If you select \"Over\", you will win the payout if the <strong>last digi
 msgstr "Se você selecionar \"Superior\", você ganha o prêmio se o <strong>último dígito</strong> do último tique-taque for <strong>superior à sua previsão.</strong>"
 
 msgid "If you select \"Reset-Call\", you win the payout if the exit spot is strictly higher than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Se você selecionar \"Redefinição - Compra\", você ganhará o prêmio se o preço de saída for estritamente superior ao preço de entrada OU ao preço no momento de redefinição."
 
 msgid "If you select \"Reset-Put\", you win the payout if the exit spot is strictly lower than either the entry spot or the spot at reset time."
-msgstr ""
+msgstr "Se você selecionar \"Redefinição - Venda\", você ganhará o prêmio se o preço de saída for estritamente inferior ao preço de entrada OU ao preço no momento de redefinição."
 
 msgid "If you select \"Rises\", you win the payout if the <strong>exit spot</strong> is strictly higher than the <strong>entry spot</strong>."
 msgstr "Se você selecionar \"Sobe\", você ganha o prêmio se o <strong>preço de saída</strong> for estritamente superior ao <strong>preço de entrada</strong>."
@@ -5934,6 +5937,9 @@ msgstr "Baixa"
 msgid "Low Barrier"
 msgstr "Barreira Baixa"
 
+msgid "Low Tick"
+msgstr "Tique-taque Baixo"
+
 msgid "Low barrier"
 msgstr "Barreira Baixa"
 
@@ -6343,7 +6349,7 @@ msgid "Minimum volume"
 msgstr "Volume mínimo"
 
 msgid "Minimum:"
-msgstr ""
+msgstr "Mínimo:"
 
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Trabalhadores de mineração, construção, fabricação e transporte"
@@ -6613,10 +6619,10 @@ msgid "No open positions."
 msgstr "Nenhuma posição em aberto."
 
 msgid "No payout if exit spot is above or equal to the upper barrier."
-msgstr ""
+msgstr "Não haverá prêmio se o preço de saída for superior ou igual à barreira inferior."
 
 msgid "No payout if exit spot is below or equal to the lower barrier."
-msgstr ""
+msgstr "Não haverá prêmio se o preço de saída for inferior ou igual à barreira inferior."
 
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering which may have several effects on Clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of Clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
 msgstr "Ninguém deve abusar este site para o efeito de lavagem de dinheiro. A Empresa emprega procedimentos de boas práticas contra a lavagem de dinheiro. Todas as transações são controladas de modo a prevenir a lavagem de dinheiro, o que pode dar origem a vários efeitos para Clientes. A Empresa reserva-se o direito de recusar fazer negócio com Clientes, interromper negócio com Clientes e reverter as transações de Clientes que não aceitam ou não aderem a estes processos contra a lavagem de dinheiro. Fundos aceitáveis não devem provir de atividades criminosas. A Empresa irá, por obrigação, comunicar transações suspeitas às autoridades relevantes."
@@ -7768,7 +7774,7 @@ msgid "Purpose of trading"
 msgstr "Purpose of trading"
 
 msgid "Put Spread"
-msgstr ""
+msgstr "Spead de venda"
 
 msgid "Put a limit on your winnings. Once you have reached it put some aside and trade with the rest of the money."
 msgstr "Atribua um limite aos seus ganhos. Depois de atingi-lo, guarde uma parte do dinheiro e aposte com o restante."
@@ -8032,7 +8038,7 @@ msgid "Reset Put"
 msgstr ""
 
 msgid "Reset Time"
-msgstr ""
+msgstr "Hora de redefinição"
 
 msgid "Reset password"
 msgstr "Redefinir senha"
@@ -9007,7 +9013,7 @@ msgid "The <strong>remaining time</strong> is the time remaining until the contr
 msgstr "O <strong>tempo restante</strong> é o tempo restante até o contrato expirar."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers and the <strong>entry spot</strong> is the <strong>next tick</strong> thereafter."
-msgstr ""
+msgstr "A <strong>hora de início</strong> quando o contrato é processado pelos nossos servidores e o <strong>preço de entrada</strong> é o <strong>próximo tique-taque</strong> a seguir."
 
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "A <strong>hora de início</strong> é quando o contrato é processado pelos nossos servidores."
@@ -9815,7 +9821,7 @@ msgid "This contract lost"
 msgstr "Esse contrato perdeu"
 
 msgid "This contract type only offers 5 ticks"
-msgstr ""
+msgstr "Este tipo de contrato apenas disponibiliza 5 tique-taques"
 
 msgid "This contract won"
 msgstr "Esse contrato ganhou"
@@ -9917,10 +9923,10 @@ msgid "Tick %1 is the lowest tick"
 msgstr ""
 
 msgid "Tick Prediction"
-msgstr ""
+msgstr "Previsão de tique-taque"
 
 msgid "Ticks"
-msgstr ""
+msgstr "Tique-taques"
 
 msgid "Tier"
 msgstr "Nível"
@@ -11312,10 +11318,10 @@ msgid "Why you should trade precious metals with %1"
 msgstr "Por que você deve negociar metais preciosos com a %1"
 
 msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
-msgstr ""
+msgstr "Ganhe o prêmio máximo se o preço de saída for superior ou igual à barreira superior."
 
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
-msgstr ""
+msgstr "Ganhe o prêmio máximo se o preço de saída for inferior ou igual à barreira inferior."
 
 msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
 msgstr ""
@@ -11330,10 +11336,10 @@ msgid "Win the multiplier times the high minus low."
 msgstr "Ganhe o multiplicador vezes a alta menos a baixa."
 
 msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between exit spot and lower barrier."
-msgstr ""
+msgstr "Ganhe até o prêmio máximo se o preço de saída for entre a barreira inferior e a barreira superior, em proporção à diferença entre o preço de saída e a barreira inferior."
 
 msgid "Win up to maximum payout if exit spot is between lower and upper barrier, in proportion to the difference between upper barrier and exit spot."
-msgstr ""
+msgstr "Ganhe até o prêmio máximo se o preço de saída for entre a barreira inferior e a barreira superior, em proporção à diferença entre a barreira superior e o preço de saída."
 
 msgid "Windows"
 msgstr "Windows"

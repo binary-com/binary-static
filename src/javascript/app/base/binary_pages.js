@@ -4,7 +4,6 @@ const TabSelector = require('../../_common/tab_selector');
 // ==================== app ====================
 const LoggedInHandler         = require('./logged_in');
 const Redirect                = require('./redirect');
-const CashierJP               = require('../japan/cashier');
 const KnowledgeTest           = require('../japan/knowledge_test/knowledge_test');
 const AccountTransfer         = require('../pages/cashier/account_transfer');
 const Cashier                 = require('../pages/cashier/cashier');
@@ -122,7 +121,6 @@ const pages_config = {
     'cfds'                   : { module: GetStarted.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
-    'deposit-jp'             : { module: CashierJP.Deposit,          is_authenticated: true, only_real: true },
     'faq'                    : { module: StaticPages.AffiliatesFAQ },
     'forex'                  : { module: GetStarted.Forex },
     'get-started'            : { module: TabSelector },
@@ -144,7 +142,6 @@ const pages_config = {
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },
-    'withdraw-jp'            : { module: CashierJP.Withdraw,         is_authenticated: true, only_real: true },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
 };
 /* eslint-enable max-len */

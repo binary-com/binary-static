@@ -1,4 +1,3 @@
-const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
@@ -36,20 +35,19 @@ const Cashier = (() => {
         });
     };
 
+    // show this message to jp clients who are logged out or on their real account
+    const showUnavailableMessage = () => {
+        getElementById('message_cashier_unavailable').setVisibility(1);
+    };
+
     const onLoad = () => {
-        if (Client.isJPClient()) {
-            if (Client.get('residence') !== 'jp') {
-                BinaryPjax.loadPreviousUrl();
-            } else {
-                $('.deposit').parent().addClass('button-disabled').attr('href', 'javascript:;');
-            }
-        }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
-                const is_virtual = Client.get('is_virtual');
-                const is_crypto  = isCryptocurrency(Client.get('currency'));
-                if (is_virtual) {
+                if (Client.get('is_virtual')) {
                     displayTopUpButton();
+                } else if (Client.isJPClient()) { // we can't store this in a variable in upper scope because we need to wait for authorize
+                    showUnavailableMessage();
+                    return;
                 }
                 const residence = Client.get('residence');
                 if (residence) {
@@ -60,11 +58,13 @@ const Cashier = (() => {
                         }
                     });
                 }
-                $(is_crypto ? '.crypto_currency' : '.normal_currency').setVisibility(1);
+                $(isCryptocurrency(Client.get('currency')) ? '.crypto_currency' : '.normal_currency').setVisibility(1);
                 if (/^BCH/.test(Client.get('currency'))) {
                     getElementById('message_bitcoin_cash').setVisibility(1);
                 }
             });
+        } else if (Client.isJPClient()) {
+            showUnavailableMessage();
         }
         showContent();
     };
