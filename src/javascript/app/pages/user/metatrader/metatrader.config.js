@@ -21,6 +21,16 @@ const MetaTraderConfig = (() => {
         },
     };
 
+    // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
+    const mt_financial_companies = {
+        financial: {
+            standard: { mt5_account_type: 'standard', max_leverage: 30, title: 'Standard' },
+        },
+        gaming: {
+            volatility: mt_companies.gaming.volatility,
+        },
+    };
+
     const accounts_info = {};
 
     let $messages;
@@ -324,6 +334,7 @@ const MetaTraderConfig = (() => {
 
     return {
         mt_companies,
+        mt_financial_companies,
         accounts_info,
         actions_info,
         fields,

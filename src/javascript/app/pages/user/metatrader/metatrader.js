@@ -9,7 +9,7 @@ const toTitleCase      = require('../../../../_common/string_util').toTitleCase;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const MetaTrader = (() => {
-    const mt_companies  = MetaTraderConfig.mt_companies;
+    let mt_companies;
     const accounts_info = MetaTraderConfig.accounts_info;
     const actions_info  = MetaTraderConfig.actions_info;
     const fields        = MetaTraderConfig.fields;
@@ -18,6 +18,7 @@ const MetaTrader = (() => {
 
     const onLoad = () => {
         BinarySocket.wait('landing_company', 'get_account_status').then(() => {
+            setMTCompanies();
             if (isEligible()) {
                 if (Client.get('is_virtual')) {
                     getAllAccountsInfo();
@@ -38,7 +39,12 @@ const MetaTrader = (() => {
     // we need to calculate min/max equivalent to 1 and 20000 USD, so get exchange rates for all currencies based on USD
     const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
+    const setMTCompanies = () => {
+        mt_companies = mt_companies || MetaTraderConfig[State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest' ? 'mt_financial_companies' : 'mt_companies'];
+    };
+
     const isEligible = () => {
+        setMTCompanies();
         let has_mt_company = false;
         Object.keys(mt_companies).forEach((company) => {
             mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.shortcode`);
