@@ -1,0 +1,26 @@
+// main-app
+.theme-wrapper.dark {
+    background: $COLOR_BLUE;
+
+    #header header, footer, .app-contents {
+        background: $COLOR_BLUE;
+
+    }
+    #header header.shadow {
+        box-shadow: 0 1px 0 0 $COLOR_COOL_GRAY;
+    }
+    footer {
+        border-top: 1px solid $COLOR_COOL_GRAY;
+    }
+    fieldset {
+        background: $COLOR_LIGHTER_BLUE;
+        color: $COLOR_WHITE;
+        border: 1px solid $COLOR_COOL_GRAY;
+
+        div.fieldset-header {
+            span.field-info.left {
+                color: $COLOR_DARK_GRAY;
+            }
+        }
+    }
+}

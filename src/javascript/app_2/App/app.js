@@ -3,6 +3,7 @@ import PropTypes                     from 'prop-types';
 import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
+import Theme                         from '../App/Containers/Layout/theme.jsx';
 import Footer                        from '../App/Containers/Layout/footer.jsx';
 import Header                        from './Components/Layout/header.jsx';
 import { BinaryRoutes }              from './routes';
@@ -49,7 +50,7 @@ const getBasename = () => {
 const BinaryApp = ({ root_store }) => (
     <Router basename={ getBasename() }>
         <MobxProvider store={root_store}>
-            <div>
+            <Theme>
                 <div id='header'>
                     <Header
                         items={[
@@ -68,7 +69,7 @@ const BinaryApp = ({ root_store }) => (
                 <footer id='footer'>
                     <Footer />
                 </footer>
-            </div>
+            </Theme>
         </MobxProvider>
     </Router>
 );
