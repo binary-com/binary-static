@@ -146,6 +146,13 @@
                     background-image: url('../images/app_2/statement/ic_price_stable.svg');
                 }
             }
+            &--no-resale {
+                color: $COLOR_GRAY;
+
+                &:before {
+                    background-image: url('../images/app_2/statement/ic_no_resale.svg');
+                }
+            }
         }
     }
 }

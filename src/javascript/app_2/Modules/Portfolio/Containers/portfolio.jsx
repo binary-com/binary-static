@@ -1,7 +1,7 @@
+import classnames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import classnames                     from 'classnames';
 import CardList                       from '../Components/card_list.jsx';
 import EmptyPortfolioMessage          from '../Components/empty_portfolio_message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';

@@ -34,7 +34,7 @@ const PortfolioCard = ({
                         {payout}
                     </span>
                 </div>
-                <div className={`portfolio-card__indicative portfolio-card__indicative--${status}`}>
+                <div className={`portfolio-card__cell portfolio-card__indicative portfolio-card__indicative--${status}`}>
                     <span className='portfolio-card__cell-text'>
                         <span className={`symbols ${currency}`}/>
                         {indicative}
