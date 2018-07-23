@@ -1,5 +1,4 @@
 /* Ant style */
-// TODO: use constants for colors
 .btn {
     line-height: 1.5;
     display: inline-block;
@@ -41,21 +40,21 @@
             }
         }
         &.green {
-            background: #4caf50; /* stylelint-disable-line color-no-hex */
+            background: $COLOR_LIGHT_GREEN;
 
             &:hover {
                 background: #66bb6a; /* stylelint-disable-line color-no-hex */
             }
             &:active {
-                background: #4caf50; /* stylelint-disable-line color-no-hex */
+                background: $COLOR_LIGHT_GREEN;
             }
             &.effect:focus:not(:active):after {
-                border: 0 solid #4caf50; /* stylelint-disable-line color-no-hex */
+                border: 0 solid $COLOR_LIGHT_GREEN;
             }
         }
         &:disabled, &[disabled] {
             background: #f4f4f6 !important; /* stylelint-disable-line color-no-hex */
-            color: #e9e9ed !important; /* stylelint-disable-line color-no-hex */
+            color: $COLOR_GRAY !important;
             cursor: not-allowed;
         }
     }
@@ -80,8 +79,8 @@
             }
         }
         &.green {
-            border: 1px solid #4caf50; /* stylelint-disable-line color-no-hex */
-            color: #4caf50; /* stylelint-disable-line color-no-hex */
+            border: 1px solid $COLOR_LIGHT_GREEN;
+            color: $COLOR_LIGHT_GREEN;
 
             &:hover {
                 border: 1px solid #66bb6a; /* stylelint-disable-line color-no-hex */
@@ -89,17 +88,17 @@
                 background: rgba(76, 175, 80, 0.1);
             }
             &:active {
-                border: 1px solid #4caf50; /* stylelint-disable-line color-no-hex */
-                color: #4caf50; /* stylelint-disable-line color-no-hex */
+                border: 1px solid $COLOR_LIGHT_GREEN;
+                color: $COLOR_LIGHT_GREEN;
             }
             &.effect:focus:not(:active):after {
-                border: 0 solid #4caf50; /* stylelint-disable-line color-no-hex */
+                border: 0 solid $COLOR_LIGHT_GREEN;
             }
         }
         &:disabled, &[disabled] {
             background: #f4f4f6 !important; /* stylelint-disable-line color-no-hex */
             border: 0 !important;
-            color: #e9e9ed !important; /* stylelint-disable-line color-no-hex */
+            color: $COLOR_GRAY !important;
             cursor: not-allowed !important;
         }
     }
@@ -118,8 +117,8 @@
         }
         &:disabled, &[disabled] {
             background: transparent !important;
-            border: 1px solid #e9e9ed !important; /* stylelint-disable-line color-no-hex */
-            color: #e9e9ed !important; /* stylelint-disable-line color-no-hex */
+            border: 1px solid $COLOR_GRAY !important; /* stylelint-disable-line color-no-hex */
+            color: $COLOR_GRAY !important;
             cursor: not-allowed !important;
         }
     }
