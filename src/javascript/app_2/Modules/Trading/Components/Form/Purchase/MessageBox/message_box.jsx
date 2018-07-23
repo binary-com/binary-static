@@ -1,8 +1,8 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
-import ErrorBalance         from './error_balance.jsx';
-import ErrorGeneral         from './error_general.jsx';
-import ErrorLogin           from './error_login.jsx';
+import { ErrorBalance,
+         ErrorGeneral,
+         ErrorLogin }       from './Templates';
 import PurchaseResult       from './purchase_result.jsx';
 import { getPropertyValue } from '../../../../../../../_common/utility';
 import CloseButton          from '../../../../../../App/Components/Elements/closebutton.jsx';

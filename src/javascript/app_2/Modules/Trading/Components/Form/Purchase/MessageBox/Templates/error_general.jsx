@@ -11,4 +11,4 @@ ErrorGeneral.propTypes = {
     message: PropTypes.string,
 };
 
-export default ErrorGeneral;
+export { ErrorGeneral };

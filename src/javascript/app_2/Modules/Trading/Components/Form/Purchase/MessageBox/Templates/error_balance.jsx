@@ -1,6 +1,6 @@
 import React               from 'react';
-import Button              from '../../../../../../App/Components/Form/button.jsx';
-import { localize }        from '../../../../../../../_common/localize';
+import Button              from '../../../../../../../App/Components/Form/button.jsx';
+import { localize }        from '../../../../../../../../_common/localize';
 
 const ErrorBalance = () => (
     <div className='purchase-login-wrapper'>
@@ -13,4 +13,4 @@ const ErrorBalance = () => (
     </div>
 );
 
-export default ErrorBalance;
+export { ErrorBalance };
