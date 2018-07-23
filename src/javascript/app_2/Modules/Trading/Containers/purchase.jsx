@@ -21,6 +21,7 @@ const Purchase = ({
     onClickPurchase,
     onHoverPurchase,
     togglePurchaseLock,
+    resetPurchase,
     proposal_info,
     purchase_info,
     trade_types,
@@ -41,6 +42,8 @@ const Purchase = ({
             />
         );
 
+        const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
+
         return (
             <Fieldset
                 className='purchase-option'
@@ -51,8 +54,11 @@ const Purchase = ({
                 {(is_purchase_locked && idx === 0) &&
                     <PurchaseLock toggle={togglePurchaseLock} />
                 }
-                {(!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id) ?
-                    <MessageBox purchase_info={purchase_info} />
+                {(is_purchase_error) ?
+                    <MessageBox
+                        purchase_info={purchase_info}
+                        onClick={resetPurchase}
+                    />
                     :
                     <React.Fragment>
                         {(!is_purchase_enabled && idx === 0) &&
@@ -93,6 +99,7 @@ Purchase.propTypes = {
     is_trade_enabled      : PropTypes.bool,
     onClickPurchase       : PropTypes.func,
     onHoverPurchase       : PropTypes.func,
+    resetPurchase         : PropTypes.func,
     togglePurchaseLock    : PropTypes.func,
     proposal_info         : PropTypes.object,
     purchase_info         : PropTypes.object,
@@ -106,6 +113,7 @@ export default connect(
         is_trade_enabled      : modules.trade.is_trade_enabled,
         onClickPurchase       : modules.trade.onPurchase,
         onHoverPurchase       : modules.trade.onHoverPurchase,
+        resetPurchase         : modules.trade.requestProposal,
         proposal_info         : modules.trade.proposal_info,
         purchase_info         : modules.trade.purchase_info,
         trade_types           : modules.trade.trade_types,

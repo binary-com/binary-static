@@ -7,7 +7,7 @@ import ErrorLogin           from './error_login.jsx';
 import PurchaseResult       from './purchase_result.jsx';
 import { getPropertyValue } from '../../../../../../../_common/utility';
 
-const MessageBox = ({ purchase_info }) => {
+const MessageBox = ({ purchase_info, onClick }) => {
     const has_error = !!purchase_info.error;
     let ErrorComponent;
     if (has_error) {
@@ -29,7 +29,7 @@ const MessageBox = ({ purchase_info }) => {
         <div className='purchase-error'>
             {has_error ?
                 <React.Fragment>
-                    <div className='close-btn-container'>
+                    <div className='close-btn-container' onClick={onClick}>
                         <CloseButton className='ic-close' />
                     </div>
                     {ErrorComponent}
@@ -43,6 +43,7 @@ const MessageBox = ({ purchase_info }) => {
 
 MessageBox.propTypes = {
     purchase_info: PropTypes.object,
+    onClick      : PropTypes.func,
 };
 
 export default MessageBox;
