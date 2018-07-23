@@ -1,14 +1,12 @@
 import {
     action,
     computed,
-    observable }       from 'mobx';
-import moment          from 'moment';
-import BaseStore       from '../base_store';
-import { WS }          from '../../Services';
-import { formatMoney } from '../../../_common/base/currency_base';
-import Client          from '../../../_common/base/client_base';
-import { localize }    from '../../../_common/localize';
-import { toTitleCase } from '../../../_common/string_util';
+    observable }                      from 'mobx';
+import moment                         from 'moment';
+import { formatStatementTransaction } from './Helpers/format_response';
+import BaseStore                      from '../../base_store';
+import { WS }                         from '../../../Services';
+import Client                         from '../../../../_common/base/client_base';
 
 const batch_size = 100; // request response limit
 
@@ -54,7 +52,7 @@ export default class StatementStore extends BaseStore {
                 return;
             }
             const formatted_transactions = response.statement.transactions
-                .map(transaction => getStatementData(transaction, currency));
+                .map(transaction => formatStatementTransaction(transaction, currency));
 
             this.data           = [...this.data, ...formatted_transactions];
             this.has_loaded_all = formatted_transactions.length < batch_size;
@@ -105,29 +103,3 @@ export default class StatementStore extends BaseStore {
         return !!(this.date_from || this.date_to);
     }
 }
-
-/*
-    RESPONSE PARSING FUNCTION
-*/
-const getStatementData = (statement, currency) => {
-    const date_obj   = new Date(statement.transaction_time * 1000);
-    const moment_obj = moment.utc(date_obj);
-    const date_str   = moment_obj.format('YYYY-MM-DD');
-    const time_str   = `${moment_obj.format('HH:mm:ss')} GMT`;
-    const payout     = parseFloat(statement.payout);
-    const amount     = parseFloat(statement.amount);
-    const balance    = parseFloat(statement.balance_after);
-    const should_exclude_currency = true;
-
-    return {
-        action : localize(toTitleCase(statement.action_type)),
-        date   : `${date_str}\n${time_str}`,
-        refid  : statement.transaction_id,
-        payout : isNaN(payout)  ? '-' : formatMoney(currency, payout,  should_exclude_currency),
-        amount : isNaN(amount)  ? '-' : formatMoney(currency, amount,  should_exclude_currency),
-        balance: isNaN(balance) ? '-' : formatMoney(currency, balance, should_exclude_currency),
-        desc   : localize(statement.longcode.replace(/\n/g, '<br />')),
-        id     : statement.contract_id,
-        app_id : statement.app_id,
-    };
-};

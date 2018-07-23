@@ -21,7 +21,7 @@ const IndicativeCell = ({ amount, currency, status }) => {
 };
 
 IndicativeCell.propTypes = {
-    amount  : PropTypes.string,
+    amount  : PropTypes.number,
     currency: PropTypes.string,
     status  : PropTypes.string,
 };

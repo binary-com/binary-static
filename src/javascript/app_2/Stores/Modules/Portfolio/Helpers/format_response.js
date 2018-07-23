@@ -1,7 +1,7 @@
 import { toMoment }    from '../../../../Utils/Date';
 import { localize }    from '../../../../../_common/localize';
 
-export const formatPortfolioData = (portfolio_arr) => (
+export const formatPortfolioResponse = (portfolio_arr) => (
     portfolio_arr.map((portfolio_item) => {
         const moment_obj     = toMoment(portfolio_item.expiry_time);
         // TODO: fromNow should check against server time not local time

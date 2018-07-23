@@ -1,10 +1,10 @@
 import {
     action,
     computed,
-    observable }                 from 'mobx';
-import { formatPortfolioData }   from './Helpers/process_data';
-import BaseStore                 from '../../base_store';
-import { WS }                    from '../../../Services';
+    observable }                   from 'mobx';
+import { formatPortfolioResponse } from './Helpers/format_response';
+import BaseStore                   from '../../base_store';
+import { WS }                      from '../../../Services';
 
 export default class StatementStore extends BaseStore {
     @observable data       = [];
@@ -83,8 +83,7 @@ export default class StatementStore extends BaseStore {
             return;
         }
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
-            this.data = formatPortfolioData(response.portfolio.contracts);
-
+            this.data = formatPortfolioResponse(response.portfolio.contracts);
             WS.subscribeProposalOpenContract(this.proposalOpenContractHandler, false);
         }
     }

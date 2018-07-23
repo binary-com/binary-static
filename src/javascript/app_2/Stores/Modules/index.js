@@ -1,4 +1,4 @@
-import StatementStore from './statement_store';
+import StatementStore from './Statement/statement_store';
 import PortfolioStore from './Portfolio/portfolio_store';
 import TradeStore     from './Trading/trade_store';
 
