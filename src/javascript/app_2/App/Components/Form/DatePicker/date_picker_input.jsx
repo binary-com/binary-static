@@ -27,6 +27,7 @@ DatePickerInput.propTypes = {
     onChange    : PropTypes.func,
     onClick     : PropTypes.func,
     placeholder : PropTypes.string,
+    is_clearable: PropTypes.bool,
     value       : PropTypes.oneOfType([
         PropTypes.number, // duration
         PropTypes.string, // date

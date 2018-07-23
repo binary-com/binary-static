@@ -12,8 +12,7 @@ import TimePicker               from '../../../../../App/Components/Form/time_pi
 import { localize }             from '../../../../../../_common/localize';
 
 /* TODO:
-      1. Change expiry date to drop-down if start date is forward starting
-      2. change the session for end time to minimum of start time
+      1. disable days other than today and tomorrow if start date is forward starting
 */
 
 const expiry_list = [
@@ -43,10 +42,12 @@ const Duration = ({
 }) => {
     const moment_now = moment(server_time);
     if (!now_date || moment_now.date() !== now_date.date()) {
+        const moment_today = moment_now.clone().set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+
         now_date          = moment_now.clone();
-        min_date_duration = moment_now.clone().add(1, 'd');
-        max_date_duration = moment_now.clone().add(365, 'd');
-        min_date_expiry   = moment_now.clone();
+        min_date_duration = moment_today.clone().add(1, 'd');
+        max_date_duration = moment_today.clone().add(365, 'd');
+        min_date_expiry   = moment_today.clone();
     }
     const moment_expiry = moment.utc(expiry_date);
     const is_same_day   = moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day');
@@ -56,7 +57,10 @@ const Duration = ({
             const [ hour, minute ] = start_time.split(':');
             date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
         }
-        if (start_date_time !== date_time.unix()) {
+        // only update start time every five minutes, since time picker shows five minute durations
+        const moment_start_date_time = moment.unix(start_date_time);
+        if (!start_date_time || moment_start_date_time.isAfter(date_time) || moment_start_date_time.clone().add(5, 'minutes').isBefore(date_time) ||
+            (moment_start_date_time.minutes() !== date_time.minutes() && date_time.minutes() % 5 === 0)) {
             start_date_time = date_time.unix();
         }
     }
@@ -106,6 +110,8 @@ const Duration = ({
                                 mode='duration'
                                 onChange={onChange}
                                 value={duration || 1} // TODO: replace 1 with min duration
+                                is_read_only
+                                is_clearable={false}
                                 is_nativepicker={is_nativepicker}
                                 footer={localize('The minimum duration is 1 day')}
                             /> :
@@ -135,6 +141,8 @@ const Duration = ({
                             max_date={max_date_duration}
                             onChange={onChange}
                             value={expiry_date}
+                            is_read_only
+                            is_clearable={false}
                             is_nativepicker={is_nativepicker}
                         />
                         {is_same_day &&
@@ -146,6 +154,7 @@ const Duration = ({
                                 placeholder='12:00'
                                 start_date={start_date_time}
                                 sessions={sessions}
+                                is_clearable={false}
                                 is_nativepicker={is_nativepicker}
                             />
                         }
