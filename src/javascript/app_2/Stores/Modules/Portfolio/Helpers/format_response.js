@@ -17,7 +17,7 @@ export const formatPortfolioResponse = (portfolio_arr) => (
             purchase,
             remaining_time,
             id        : portfolio_item.contract_id,
-            indicative: '',
+            indicative: 0,
         };
     })
 );

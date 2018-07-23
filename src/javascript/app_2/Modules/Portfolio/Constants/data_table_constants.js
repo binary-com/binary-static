@@ -47,7 +47,7 @@ export const getTableColumnsTemplate = (currency) => [
         title            : localize('Indicative'),
         col_index        : 'indicative',
         renderCellContent: ({ cell_value, row_obj }) => (
-            <IndicativeCell amount={cell_value} currency={currency} status={row_obj.status} />
+            <IndicativeCell amount={+cell_value} currency={currency} status={row_obj.status} />
         ),
     },
 ];

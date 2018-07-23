@@ -57,7 +57,7 @@ export default class StatementStore extends BaseStore {
             const portfolio_position = this.data[position_data_index];
 
             const prev_indicative = portfolio_position.indicative;
-            const new_indicative  = proposal.bid_price;
+            const new_indicative  = +proposal.bid_price;
 
             portfolio_position.indicative = new_indicative;
 
