@@ -31,14 +31,12 @@ const PortfolioCard = ({
                         {payout}
                     </span>
                 </div>
-                {!!indicative &&
-                    <div className={`portfolio-card__cell portfolio-card__indicative portfolio-card__indicative--${status}`}>
-                        <span className='portfolio-card__cell-text'>
-                            <span className={`symbols ${currency}`}/>
-                            {indicative}
-                        </span>
-                    </div>
-                }
+                <div className={`portfolio-card__cell portfolio-card__indicative portfolio-card__indicative--${status}`}>
+                    <span className='portfolio-card__cell-text'>
+                        <span className={`symbols ${currency}`}/>
+                        {indicative}
+                    </span>
+                </div>
             </div>
         </div>
     </div>
