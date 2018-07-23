@@ -22,7 +22,6 @@ class TimePickerDropdown extends React.Component {
             is_minute_selected: false,
             last_updated_type : null,
         };
-        this.selectOption = this.selectOption.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -46,7 +45,7 @@ class TimePickerDropdown extends React.Component {
         });
     }
 
-    selectOption(type, value, is_enabled = true) {
+    selectOption = (type, value, is_enabled = true) => {
         if (is_enabled) {
             const [ prev_hour, prev_minute ] = this.props.value.split(':');
             if ((type === 'h' && value !== prev_hour) || (type === 'm' && value !== prev_minute)) {
@@ -58,7 +57,7 @@ class TimePickerDropdown extends React.Component {
                 this.props.onChange(`${type === 'h' ? value : prev_hour}:${type === 'm' ? value : prev_minute}`);
             }
         }
-    }
+    };
 
     clear = (event) => {
         event.stopPropagation();

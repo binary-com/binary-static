@@ -6,7 +6,7 @@ import { localize }       from '../../../../../../_common/localize';
 
 const month_headers = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-export function CalendarMonths({ calendar_date, isPeriodDisabled, onClick, selected_date }) {
+export const CalendarMonths = ({ calendar_date, isPeriodDisabled, onClick, selected_date }) => {
     const moment_date    = moment.utc(calendar_date);
     const selected_month = moment.utc(selected_date).month();
     return (
@@ -26,6 +26,6 @@ export function CalendarMonths({ calendar_date, isPeriodDisabled, onClick, selec
             ))}
         </div>
     );
-}
+};
 
 CalendarMonths.propTypes = { ...CalendarPanelTypes };

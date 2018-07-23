@@ -3,7 +3,7 @@ import moment             from 'moment';
 import React              from 'react';
 import CalendarPanelTypes from './types';
 
-export function CalendarYears({ calendar_date, isPeriodDisabled, onClick, selected_date }) {
+export const CalendarYears = ({ calendar_date, isPeriodDisabled, onClick, selected_date }) => {
     const selected_year = moment.utc(selected_date).year();
     const moment_date   = moment.utc(calendar_date);
     const current_year  = moment_date.year();
@@ -28,6 +28,6 @@ export function CalendarYears({ calendar_date, isPeriodDisabled, onClick, select
             ))}
         </div>
     );
-}
+};
 
 CalendarYears.propTypes = { ...CalendarPanelTypes };

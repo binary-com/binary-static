@@ -58,7 +58,7 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, sele
 
 const week_headers = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
-export function CalendarDays(props) {
+export const CalendarDays = (props) => {
     const days = getDays(props).map(day => day);
 
     return (
@@ -67,6 +67,6 @@ export function CalendarDays(props) {
             {days}
         </div>
     );
-}
+};
 
 CalendarDays.propTypes = { ...CalendarPanelTypes };

@@ -244,7 +244,7 @@ const ContractType = (() => {
             end_time = getValidTime(sessions, end_moment, start_moment);
         }
         if (end_moment.isSameOrBefore(start_moment)) {
-            const is_end_of_day     = start_moment.format('HH:mm') === '23:55';
+            const is_end_of_day     = start_moment.get('hours') === 23 && start_moment.get('minute') >= 55;
             const is_end_of_session = sessions && !isSessionAvailable(sessions, start_moment.clone().add(5, 'minutes'));
             end_time = start_moment.clone().add((is_end_of_day || is_end_of_session) ? 0 : 5, 'minutes').format('HH:mm');
         }
