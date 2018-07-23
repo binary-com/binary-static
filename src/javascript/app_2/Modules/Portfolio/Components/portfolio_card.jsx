@@ -1,8 +1,6 @@
 import PropTypes  from 'prop-types';
 import React      from 'react';
-import classNames from 'classnames';
 
-// Mobile view for portfolio items
 const PortfolioCard = ({
     reference,
     details,
@@ -13,7 +11,6 @@ const PortfolioCard = ({
     currency,
     status,
 }) => (
-    // TODO: implement portfolio card mockup (once available)
     <div className='portfolio-card card-list__card'>
         <div className='portfolio-card__header'>
             <span className='portfolio-card__date'>{ remaining_time }</span>

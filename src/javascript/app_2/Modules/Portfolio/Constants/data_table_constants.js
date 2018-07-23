@@ -4,7 +4,7 @@ import IndicativeCell            from '../Components/indicative_cell.jsx';
 import Money                     from '../../../App/Components/Elements/money.jsx';
 import { localize }              from '../../../../_common/localize';
 
-/* eslint-disable react/display-name */
+/* eslint-disable react/display-name, react/prop-types */
 export const getTableColumnsTemplate = (currency) => [
     {
         title            : localize('Reference No.'),
@@ -51,4 +51,4 @@ export const getTableColumnsTemplate = (currency) => [
         ),
     },
 ];
-/* eslint-enable react/display-name */
+/* eslint-enable react/display-name, react/prop-types */
