@@ -76,15 +76,11 @@ const texts = [
     'Time is in the wrong format.',
 
     // highchart localization text
-    'Start time',
-    'Entry spot',
     'Purchase Time',
-    'Exit spot',
-    'End time',
-    'Sell time',
     'Charting for this underlying is delayed',
-    'Reset time',
-    'Payout range',
+    'Reset Time',
+    'Payout Range',
+    'Tick [_1]',
 
     // trading page
     'year',
@@ -356,6 +352,8 @@ const texts = [
     'Digit Under',
     'Call Spread',
     'Put Spread',
+    'High Tick',
+    'Low Tick',
 
     // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
@@ -447,7 +445,6 @@ const texts = [
     'Open',
     'Closed',
     'Contract has not started yet',
-    'Price',
     'Spot Time',
     'Spot Time (GMT)',
     'Current Time',
@@ -605,6 +602,7 @@ const texts = [
     'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Withdrawals have been disabled on your account. Please check your email for more details.',
     'Please complete your [_1]personal details[_2] before you proceed.',
+    'Account Authenticated',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
@@ -655,6 +653,11 @@ const texts = [
     'Front and reverse side photos of [_1] are required.',
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
     'Following file(s) were already uploaded: [_1]',
+    'Checking',
+    'Checked',
+    'Pending',
+    'Submitting',
+    'Submitted',
 
     // third party link confirmation dialog/popup
     'You will be redirected to a third-party website which is not owned by Binary.com.',

@@ -20,7 +20,7 @@ const Account = () => (
     <a href='javascript:;'>
         <div className='main-account'>
             <div className='account-type nowrap' />
-            <div className='account-id' />
+            <span className='account-id' />
             <div className='topMenuBalance'>0</div>
         </div>
         <div className='nav-caret' />

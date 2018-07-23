@@ -40,6 +40,9 @@ const ResponsibleTrading = () => (
             <p>{it.L('Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one\'s access to our site.')}</p>
             <p>{it.L('[_1] supports [_2] which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling.', it.website_name, '<a target=\'_blank\' href=\'https://www.begambleaware.org/about-us/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
             <p>{it.L('[_1] also provides links to an online quiz to assess a potential gambling problem and an online gambling calculator to see how much you can really spend.', '<a target=\'_blank\' href=\'https://www.begambleaware.org/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
+
+            <h2>{it.L('Other Warnings & Regulatory Disclosures')}</h2>
+            <p>{it.L('Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients.')}</p>
         </div>
     </div>
 );
