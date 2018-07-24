@@ -7,7 +7,6 @@ import EmptyPortfolioMessage          from '../Components/empty_portfolio_messag
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
 import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
 import { connect }                    from '../../../Stores/connect';
-import ClientBase                     from '../../../../_common/base/client_base';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Portfolio extends React.Component {
@@ -62,6 +61,7 @@ Portfolio.propTypes = {
     data      : MobxPropTypes.arrayOrObservableArray,
     totals    : PropTypes.object,
     error     : PropTypes.string,
+    currency  : PropTypes.string,
     is_empty  : PropTypes.bool,
     is_loading: PropTypes.bool,
     is_mobile : PropTypes.bool,
