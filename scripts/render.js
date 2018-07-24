@@ -179,7 +179,7 @@ const createContextBuilder = async () => {
     return {
         buildFor: (model) => {
             const translator = createTranslator(model.language);
-            return Object.assign({}, extra(/^app$/.test(model.current_path)), model, {
+            return Object.assign({}, extra(/^app\/index$/.test(model.current_path)), model, {
                 L: (text, ...args) => {
                     const translated = translator(text, ...args);
                     return RenderHTML(translated);

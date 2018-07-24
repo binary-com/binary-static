@@ -1,7 +1,7 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import InkBar         from '../../Elements/InkBar';
-import { BinaryLink } from '../../../routes';
+import { BinaryLink } from '../../Routes';
 import Url            from '../../../../../_common/url';
 
 class MenuLinks extends React.PureComponent {
