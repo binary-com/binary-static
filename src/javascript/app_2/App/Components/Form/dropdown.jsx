@@ -1,4 +1,5 @@
 import { isArrayLike } from 'mobx';
+import { observer }    from 'mobx-react';
 import PropTypes       from 'prop-types';
 import React           from 'react';
 
@@ -198,4 +199,4 @@ NativeSelect.propTypes = {
     ]),
 };
 
-export default Dropdown;
+export default observer(Dropdown);
