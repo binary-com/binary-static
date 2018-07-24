@@ -60,7 +60,7 @@
         bottom: -1px;
         left: 0;
         right: 0;
-        border-bottom: 3px solid $COLOR_BLUE;
+        border-bottom: 2px solid $COLOR_BLUE;
     }
     .tab-content {
         p {
@@ -68,5 +68,27 @@
             line-height: 1.4em;
             text-align: left;
         }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .tab-container {
+        .tab-wrapper {
+            border-color: $COLOR_COOL_GRAY;
+        }
+    }
+    .tab {
+        span {
+            color: $COLOR_DARK_GRAY;
+        }
+        &:hover, &--active {
+            span {
+                color: $COLOR_WHITE;
+            }
+        }
+    }
+    .tab-underline {
+        border-color: $COLOR_WHITE;
     }
 }

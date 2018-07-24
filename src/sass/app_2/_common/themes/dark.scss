@@ -18,6 +18,8 @@
                 }
             }
             &:hover {
+                background-color: $COLOR_COOL_GRAY;
+
                 span {
                     color: $COLOR_WHITE;
                 }
@@ -32,8 +34,12 @@
             }
             .menu-right .acc-balance-container {
                 .acc-balance {
-                    .acc-info p {
-                        color: $COLOR_DARK_GRAY;
+                    .acc-info {
+                        border-color: $COLOR_COOL_GRAY;
+
+                        p {
+                            color: $COLOR_DARK_GRAY;
+                        }
                     }
                     .acc-balance-amount {
                         color: $COLOR_WHITE;
@@ -44,6 +50,9 @@
                     }
                 }
             }
+        }
+        .inkbar {
+            background-color: $COLOR_WHITE;
         }
     }
     footer {
@@ -63,6 +72,13 @@
             span.field-info.left {
                 color: $COLOR_DARK_GRAY;
             }
+        }
+    }
+    div.purchase-wrapper {
+        div.purchase-error {
+            background: $COLOR_LIGHTER_BLUE;
+            border-color: $COLOR_COOL_GRAY;
+            color: $COLOR_DARK_GRAY;
         }
     }
 }
