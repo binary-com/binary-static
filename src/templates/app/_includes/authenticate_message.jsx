@@ -91,8 +91,8 @@ const FileSelector = ({
                                             { type === 'selfie' && (
                                                 <div className='gr-row form-row gr-centered'>
                                                     <div className='gr-12'>
-                                                        <input id={`add_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png' data-type='other' data-name={document.name} data-page-type='photo'/>
-                                                        <label htmlFor={`add_file${j}`} className='button'>{it.L('Add')} <span className='add' /></label>
+                                                        <input id='selfie' className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png' data-type='other' data-name={document.name} data-page-type='photo'/>
+                                                        <label htmlFor='selfie' className='button'>{it.L('Add')} <span className='add' /></label>
                                                     </div>
                                                 </div>
                                             )}
