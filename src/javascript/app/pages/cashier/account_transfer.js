@@ -27,6 +27,7 @@ const AccountTransfer = (() => {
         el_transfer_to,
         el_reset_transfer,
         el_transfer_fee,
+        el_transfer_fiat_crypto,
         el_success_form,
         client_balance,
         client_currency,
@@ -69,7 +70,10 @@ const AccountTransfer = (() => {
         getElementById('transfer_info').setVisibility(1);
 
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
-            getElementById('transfer_fee').setVisibility(1);
+            el_transfer_fiat_crypto.setVisibility(1);
+            if (!State.getResponse('get_settings.is_authenticated_payment_agent')) {
+                el_transfer_fee.setVisibility(1);
+            }
         }
     };
 
@@ -143,6 +147,7 @@ const AccountTransfer = (() => {
         });
 
         el_transfer_fee.setVisibility(0);
+        el_transfer_fiat_crypto.setVisibility(0);
         el_success_form.setVisibility(1);
         getElementById('transfer_info').setVisibility(0);
     };
@@ -159,9 +164,10 @@ const AccountTransfer = (() => {
             return;
         }
 
-        el_transfer_fee   = getElementById('transfer_fee');
-        el_success_form   = getElementById('success_form');
-        el_reset_transfer = getElementById('reset_transfer');
+        el_transfer_fee         = getElementById('transfer_fee');
+        el_transfer_fiat_crypto = getElementById('transfer_fiat_crypto');
+        el_success_form         = getElementById('success_form');
+        el_reset_transfer       = getElementById('reset_transfer');
         el_reset_transfer.addEventListener('click', onClickReset);
 
         BinarySocket.wait('balance').then((response) => {
