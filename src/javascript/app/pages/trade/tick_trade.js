@@ -548,6 +548,7 @@ const TickDisplay = (() => {
         }
 
         if (data.is_sold) {
+            addBarrier();
             addSellSpot();
         } else if (proposal_open_contract) {
             if (data.id_render) {
