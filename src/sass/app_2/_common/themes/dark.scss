@@ -30,6 +30,20 @@
             .menu-left .binary-logo, .menu-right {
                 border-color: $COLOR_COOL_GRAY;
             }
+            .menu-right .acc-balance-container {
+                .acc-balance {
+                    .acc-info p {
+                        color: $COLOR_DARK_GRAY;
+                    }
+                    .acc-balance-amount {
+                        color: $COLOR_WHITE;
+
+                        .symbols {
+                            background: $COLOR_BLUE;
+                        }
+                    }
+                }
+            }
         }
     }
     footer {

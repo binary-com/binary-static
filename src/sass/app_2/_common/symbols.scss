@@ -53,5 +53,7 @@
 .theme-wrapper.dark {
     .symbols {
         color: $COLOR_WHITE;
+        background: $COLOR_LIGHTER_BLUE;
+        border-radius: 0;
     }
 }

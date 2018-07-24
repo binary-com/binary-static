@@ -315,13 +315,19 @@ div.contracts-popup-container {
             .list-group .list-items .list-item {
                 background: $COLOR_BLUE;
                 border-color: $COLOR_COOL_GRAY;
+                color: $COLOR_DARK_GRAY;
 
                 &.selected {
                     background: $COLOR_GLASS_GRAY;
                     font-weight: 600;
+                    color: $COLOR_WHITE;
+                }
+                &:hover {
+                    background: $COLOR_GLASS_GRAY;
+                    color: $COLOR_WHITE;
                 }
                 &:only-child, &:first-child:nth-last-child(2) {
-                    border-color: $COLOR_GLASS_GRAY;
+                    border-color: $COLOR_COOL_GRAY;
                 }
             }
         }

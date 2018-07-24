@@ -149,6 +149,19 @@ div.dropdown-container {
         .list-container {
             background: $COLOR_BLUE;
             border-color: $COLOR_COOL_GRAY;
+
+            .list-item {
+                color: $COLOR_DARK_GRAY;
+
+                &.selected span {
+                    color: $COLOR_WHITE;
+                    font-weight: 600;
+                    background: $COLOR_COOL_GRAY;
+                }
+                &:hover {
+                    background: $COLOR_COOL_GRAY;
+                }
+            }
         }
     }
 }
