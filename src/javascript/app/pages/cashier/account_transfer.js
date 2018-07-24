@@ -68,7 +68,7 @@ const AccountTransfer = (() => {
         showForm();
         getElementById('transfer_info').setVisibility(1);
 
-        if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
+        if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat') && !State.getResponse('get_settings.is_authenticated_payment_agent')) {
             getElementById('transfer_fee').setVisibility(1);
         }
     };
