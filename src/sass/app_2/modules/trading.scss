@@ -85,7 +85,7 @@
             display: block;
             text-align: center;
             z-index: 1;
-            color: $COLOR_BLUE;
+            color: $COLOR_LIGHT_BLACK;
         }
         .clock-header, .fieldset-header, .stake-wrapper {
             span.field-info {
@@ -143,6 +143,17 @@
 
                 span.field-info {
                     margin: 0 0 0 auto;
+                }
+                div:nth-child(2) {
+                    margin-left: 4px;
+                }
+            }
+            .payout-wrapper, .profit-wrapper, .returns-wrapper {
+                display: inline-flex;
+                height: 1rem;
+
+                div:last-child {
+                    margin-left: 4px;
                 }
             }
         }
