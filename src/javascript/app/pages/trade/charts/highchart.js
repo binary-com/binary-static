@@ -65,7 +65,7 @@ const Highchart = (() => {
         is_sold_before_expiry = sell_time < end_time;
         exit_tick_time        = parseInt(contract.exit_tick_time);
         exit_time             = is_sold_before_expiry ? sell_time : (exit_tick_time || end_time);
-        prev_barriers         = [];
+        prev_barriers         = contract.barrier ? [contract.barrier] : [contract.low_barrier, contract.high_barrier];
     };
 
     // initialize the chart only once with ticks or candles data
@@ -405,7 +405,6 @@ const Highchart = (() => {
                         addPlotLine({ id: 'reset_barrier', value: +barrier,    label: `${localize('Reset Barrier')} (${addComma(barrier)})`, dashStyle: 'Solid', textBottom: contract_type === 'RESETCALL', x: -60, align: 'right' }, 'y');
                     } else {
                         addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot', x: -60, align: 'right' }, 'y');
-
                     }
                 } else {
                     addPlotLine({ id: 'barrier',      value: +barrier,      label: `${localize('Barrier')} (${addComma(barrier)})`,            dashStyle: 'Dot' },   'y');
