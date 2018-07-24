@@ -46,14 +46,14 @@ const SmartCharts = ({
                 requestSubscribe={subscribe}
                 requestForget={forget}
                 requestAPI={WS.sendRequest.bind(WS)}
-                onSymbolChange={(symbol_obj) => {
+                onSymbolChange={onSymbolChange && ((symbol_obj) => {
                     onSymbolChange({
                         target: {
                             name : 'symbol',
                             value: symbol_obj.symbol,
                         },
                     });
-                }}
+                })}
                 barriers={barriers}
                 initialSymbol={initial_symbol}
                 isMobile={is_mobile}
