@@ -56,6 +56,7 @@ const StartDate = ({
                         placeholder='12:00'
                         start_date={start_date}
                         sessions={sessions}
+                        is_clearable={false}
                         is_nativepicker={is_nativepicker}
                     />
                 </React.Fragment>

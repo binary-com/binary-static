@@ -3,12 +3,12 @@ import moment             from 'moment';
 import React              from 'react';
 import CalendarPanelTypes from './types';
 
-export function CalendarDecades({ calendar_date, isPeriodDisabled, onClick, selected_date }) {
-    const is_active    = moment(selected_date).year();
-    const current_year = moment(calendar_date).year();
-    const decades      = [];
-    let min_year       = current_year - 10;
+export const CalendarDecades = ({ calendar_date, isPeriodDisabled, onClick, selected_date }) => {
+    const selected_year = moment.utc(selected_date).year();
+    const moment_date   = moment.utc(calendar_date);
 
+    const decades = [];
+    let min_year  = moment_date.year() - 10;
     for (let i = 0; i < 12; i++) {
         const max_year = min_year + 9;
         const range    = `${min_year}-${max_year}`;
@@ -20,16 +20,12 @@ export function CalendarDecades({ calendar_date, isPeriodDisabled, onClick, sele
         <div className='calendar-decade-panel'>
             {decades.map((range, idx) => {
                 const [start_year, end_year] = range.split('-');
-                const start_date = moment(calendar_date).year(start_year);
-                const end_date   = moment(calendar_date).year(end_year);
-                const is_disabled = isPeriodDisabled(start_date, 'year')
-                                 && isPeriodDisabled(end_date, 'year');
                 return (
                     <span
                         key={idx}
                         className={classNames('calendar-decade', {
-                            disabled: is_disabled,
-                            active  : start_year === is_active,
+                            disabled: isPeriodDisabled(moment_date.year(start_year), 'year') && isPeriodDisabled(moment_date.year(end_year), 'year'),
+                            active  : start_year === selected_year,
                         })}
                         onClick={onClick.decade}
                         data-decade={range}
@@ -40,6 +36,6 @@ export function CalendarDecades({ calendar_date, isPeriodDisabled, onClick, sele
             })}
         </div>
     );
-}
+};
 
 CalendarDecades.propTypes = { ...CalendarPanelTypes };

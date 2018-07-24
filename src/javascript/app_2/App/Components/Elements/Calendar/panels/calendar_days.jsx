@@ -3,35 +3,38 @@ import moment             from 'moment';
 import React              from 'react';
 import CalendarPanelTypes from './types';
 import { localize }       from '../../../../../../_common/localize';
+import { padLeft }        from '../../../../../../_common/string_util';
 
 const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, selected_date }) => {
     const dates = [];
     const days  = [];
-    const num_of_days    = moment(calendar_date).daysInMonth() + 1;
-    const start_of_month = moment(calendar_date).startOf('month').format(date_format);
-    const end_of_month   = moment(calendar_date).endOf('month').format(date_format);
-    const first_day = moment(start_of_month).day();
-    const last_day  = moment(end_of_month).day();
-
-    const pad = (num) => (`0${num}`).substr(-2); // pad zero
+    const moment_today       = moment().utc();
+    const moment_cur_date    = moment.utc(calendar_date);
+    const num_of_days        = moment_cur_date.daysInMonth() + 1;
+    const moment_month_start = moment_cur_date.clone().startOf('month');
+    const moment_month_end   = moment_cur_date.clone().endOf('month');
+    const first_day          = moment_month_start.day();
+    const last_day           = moment_month_end.day();
+    const moment_min_date    = moment.utc(min_date);
+    const moment_max_date    = moment.utc(max_date);
+    const moment_selected    = moment.utc(selected_date);
 
     for (let i = first_day; i > 0; i--) {
-        dates.push(moment(start_of_month).subtract(i, 'day').format(date_format));
+        dates.push(moment_month_start.clone().subtract(i, 'day').format(date_format));
     }
     for (let idx = 1; idx < num_of_days; idx += 1) {
-        dates.push(moment(calendar_date).format(date_format.replace('DD', pad(idx))));
+        dates.push(moment_cur_date.clone().format(date_format.replace('DD', padLeft(idx, 2, '0'))));
     }
     for (let i = 1; i <= 6 - last_day; i++) {
-        dates.push(moment(end_of_month).add(i, 'day').format(date_format));
+        dates.push(moment_month_end.clone().add(i, 'day').format(date_format));
     }
 
     dates.map((date) => {
-        const is_disabled = moment(date).isBefore(moment(min_date))
-            || moment(date).isAfter(moment(max_date));
-        const is_other_month = moment(date).isBefore(moment(start_of_month))
-            || moment(date).isAfter(moment(end_of_month));
-        const is_active = selected_date && moment(date).isSame(moment(selected_date));
-        const is_today  = moment(date).isSame(moment().utc(), 'day');
+        const moment_date    = moment.utc(date).set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+        const is_disabled    = moment_date.isBefore(moment_min_date) || moment_date.isAfter(moment_max_date);
+        const is_other_month = moment_date.isBefore(moment_month_start) || moment_date.isAfter(moment_month_end);
+        const is_active      = selected_date && moment_date.isSame(moment_selected);
+        const is_today       = moment_date.isSame(moment_today, 'day');
 
         days.push(
             <span
@@ -42,10 +45,10 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, sele
                     disabled: is_disabled,
                     hidden  : is_other_month,
                 })}
-                onClick={onClick.date}
+                onClick={(e) => { onClick.date(e, is_disabled); }}
                 data-date={date}
             >
-                {moment(date).date()}
+                {moment_date.date()}
             </span>
         );
     });
@@ -53,9 +56,10 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, sele
     return days;
 };
 
-export function CalendarDays(props) {
+const week_headers = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+
+export const CalendarDays = (props) => {
     const days = getDays(props).map(day => day);
-    const week_headers = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
     return (
         <div className='calendar-date-panel'>
@@ -63,6 +67,6 @@ export function CalendarDays(props) {
             {days}
         </div>
     );
-}
+};
 
 CalendarDays.propTypes = { ...CalendarPanelTypes };
