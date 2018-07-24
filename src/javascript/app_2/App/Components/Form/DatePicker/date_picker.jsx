@@ -42,7 +42,7 @@ class DatePicker extends React.PureComponent {
     }
 
     onMouseEnter = () => {
-        if (this.state.value) {
+        if (this.state.value && (!('is_clearable' in this.props) || this.props.is_clearable)) {
             this.setState({ is_close_btn_visible: true });
         }
     }
@@ -53,7 +53,7 @@ class DatePicker extends React.PureComponent {
 
     onSelectCalendar = (selected_date, is_datepicker_visible) => {
         let value = selected_date;
-        if (!moment(value).isValid) { value = ''; }
+        if (!moment.utc(value).isValid) { value = ''; }
 
         if (this.props.mode === 'duration') {
             this.updateDatePickerValue(daysFromTodayTo(value), 'duration');
@@ -79,10 +79,10 @@ class DatePicker extends React.PureComponent {
         
         // update Calendar
         const { date_format, start_date } = this.props;
-        const new_date = (mode === 'duration') ? moment().add(value, 'days').format(date_format) : value;
-        if (moment(new_date, date_format).isValid() || !new_date) {
+        const new_date = (mode === 'duration') ? moment.utc().add(value, 'days').format(date_format) : value;
+        if (moment.utc(new_date, date_format).isValid() || !new_date) {
             if (!new_date) {
-                const current_date = (start_date ? moment(start_date) : moment()).utc().format(date_format);
+                const current_date = moment.utc(start_date).format(date_format);
                 this.calendar.setState({ 
                     calendar_date: current_date,
                     selected_date: current_date,
@@ -179,7 +179,7 @@ class DatePicker extends React.PureComponent {
                             name={this.props.name}
                             onChange={this.onChangeInput}
                             placeholder={this.props.placeholder}
-                            is_read_only={false}
+                            is_read_only={'is_read_only' in this.props ? this.props.is_read_only : false}
                             value={this.state.value}
                         />
                     </Calendar>

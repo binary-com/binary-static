@@ -25,6 +25,10 @@
         height: 34px;
         padding: 6px 10px;
         color: rgba(0, 0, 0, 0.65);
+
+        &[readonly] {
+            cursor: default;
+        }
     }
     .calendar-footer {
         font-size: 14px;

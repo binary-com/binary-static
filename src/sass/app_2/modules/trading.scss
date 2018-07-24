@@ -28,7 +28,7 @@
             background-image: url('../images/app_2/sidebar/light/ic_digit_light.svg');
         }
     }
-    input {
+    input:not([readonly]) {
         &:hover {
             border-color: $COLOR_BLUE;
         }
