@@ -8,7 +8,7 @@ const ErrorBalance = () => (
         <Button
             className='secondary orange'
             has_effect
-            text={localize('deposit')}
+            text={localize('Deposit')}
         />
     </div>
 );
