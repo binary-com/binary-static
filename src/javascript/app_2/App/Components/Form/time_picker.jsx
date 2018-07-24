@@ -1,4 +1,6 @@
-import { PropTypes as MobxPropTypes } from 'mobx-react';
+import {
+    observer,
+    PropTypes as MobxPropTypes }      from 'mobx-react';
 import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
@@ -7,9 +9,7 @@ import { localize }                   from '../../../../_common/localize';
 
 /* TODO:
       1. to update state accordingly during native to desktop switches
-      2. to update state when value is not available after switching start date
-      3. to handle null as initial value
-      4. update the state only when dropdown closed
+      2. update the state only when dropdown closed
 */
 
 class TimePickerDropdown extends React.Component {
@@ -18,16 +18,10 @@ class TimePickerDropdown extends React.Component {
         this.hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
         this.minutes  = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
         this.state    = {
-            hour              : props.value.split(':')[0],
-            minute            : props.value.split(':')[1] || 0,
             is_hour_selected  : false,
             is_minute_selected: false,
             last_updated_type : null,
         };
-        this.selectHour    = this.selectOption.bind(this, 'hour');
-        this.selectMinute  = this.selectOption.bind(this, 'minute');
-        this.saveHourRef   = this.saveRef.bind(this, 'hour');
-        this.saveMinuteRef = this.saveRef.bind(this, 'minute');
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -36,13 +30,6 @@ class TimePickerDropdown extends React.Component {
             this.resetValues();
             this.props.toggle();
         }
-
-        const { hour, minute } = this.state;
-        if (hour && minute && (hour !== prevState.hour || minute !== prevState.minute)) {
-            // Call on change only once when all of the values are selected and one of the value is changed
-            this.props.onChange(`${hour}:${minute}`);
-        }
-
         if (!prevProps.className && this.props.className === 'active') {
             this.resetValues();
         }
@@ -58,62 +45,31 @@ class TimePickerDropdown extends React.Component {
         });
     }
 
-    selectOption(type, value, is_enabled = true) {
-        if (!is_enabled) {
-            return;
-        }
-        this.setState({
-            last_updated_type: type,
-        });
-        if (type === 'hour') {
-            this.setState({
-                hour            : value,
-                is_hour_selected: true,
-            });
-            const { minute } = this.state;
-            const { sessions, start_date } = this.props;
-            if (sessions) {
-                const start_moment = moment(start_date * 1000 || undefined).utc().hour(value).minute(minute);
-                if (!isSessionAvailable(sessions, start_moment)) {
-                    this.setState({
-                        minute: this.minutes.find(m =>
-                            isSessionAvailable(sessions, start_moment.minute(m))) || minute,
-                        is_minute_selected: false,
-                    });
-                }
+    selectOption = (type, value, is_enabled = true) => {
+        if (is_enabled) {
+            const [ prev_hour, prev_minute ] = this.props.value.split(':');
+            if ((type === 'h' && value !== prev_hour) || (type === 'm' && value !== prev_minute)) {
+                const is_type_selected = type === 'h' ? 'is_hour_selected' : 'is_minute_selected';
+                this.setState({
+                    last_updated_type : type,
+                    [is_type_selected]: true,
+                });
+                this.props.onChange(`${type === 'h' ? value : prev_hour}:${type === 'm' ? value : prev_minute}`);
             }
-        } else if (type === 'minute') {
-            this.setState({
-                minute            : value,
-                is_minute_selected: true,
-            });
         }
-    }
+    };
 
     clear = (event) => {
         event.stopPropagation();
         this.resetValues();
-        this.setState({
-            hour  : undefined,
-            minute: undefined,
-        });
         this.props.onChange('');
     };
-
-    saveRef(type, node) {
-        if (!node) return;
-        const save = {
-            hour  : (n) => this.hourSelect = n,
-            minute: (n) => this.minuteSelect = n,
-        };
-
-        save[type](node);
-    }
 
     render() {
         const { preClass, value, toggle, start_date, sessions } = this.props;
         const start_moment       = moment(start_date * 1000 || undefined).utc();
         const start_moment_clone = start_moment.clone().minute(0).second(0);
+        const [ hour, minute ]   = value.split(':');
         return (
             <div className={`${preClass}-dropdown ${this.props.className}`}>
                 <div
@@ -121,10 +77,12 @@ class TimePickerDropdown extends React.Component {
                     onClick={toggle}
                 >
                     <span className={value ? '' : 'placeholder'}>{value || localize('Select time')}</span>
-                    <span
-                        className={`${preClass}-clear`}
-                        onClick={this.clear}
-                    />
+                    {(!('is_clearable' in this.props) || this.props.is_clearable) &&
+                        <span
+                            className={`${preClass}-clear`}
+                            onClick={this.clear}
+                        />
+                    }
                 </div>
                 <div className={`${preClass}-selector`}>
                     <div
@@ -138,9 +96,9 @@ class TimePickerDropdown extends React.Component {
                                 const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment, true);
                                 return (
                                     <div
-                                        className={`list-item${this.state.hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
+                                        className={`list-item${hour === h ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
                                         key={key}
-                                        onClick={this.selectHour.bind(null, h, is_enabled)}
+                                        onClick={() => { this.selectOption('h', h, is_enabled); }}
                                     >
                                         {h}
                                     </div>
@@ -155,13 +113,13 @@ class TimePickerDropdown extends React.Component {
                         <div className='list-title center-text'><strong>{localize('Minute')}</strong></div>
                         <div className='list-container'>
                             {this.minutes.map((mm, key) => {
-                                start_moment_clone.hour(this.state.hour).minute(mm);
+                                start_moment_clone.hour(hour).minute(mm);
                                 const is_enabled = isSessionAvailable(sessions, start_moment_clone, start_moment);
                                 return (
                                     <div
-                                        className={`list-item${this.state.minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
+                                        className={`list-item${minute === mm ? ' selected' : ''}${is_enabled ? '' : ' disabled'}`}
                                         key={key}
-                                        onClick={this.selectMinute.bind(null, mm, is_enabled)}
+                                        onClick={() => { this.selectOption('m', mm, is_enabled); }}
                                     >{mm}
                                     </div>
                                 );
@@ -267,6 +225,7 @@ class TimePicker extends React.Component {
                                 start_date={start_date}
                                 value={value}
                                 sessions={sessions}
+                                is_clearable={this.props.is_clearable}
                             />
                         </React.Fragment>
                     )
@@ -279,6 +238,7 @@ class TimePicker extends React.Component {
 TimePicker.propTypes = {
     is_nativepicker: PropTypes.bool,
     is_align_right : PropTypes.bool,
+    is_clearable   : PropTypes.bool,
     name           : PropTypes.string,
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
@@ -289,14 +249,15 @@ TimePicker.propTypes = {
 };
 
 TimePickerDropdown.propTypes = {
-    className  : PropTypes.string,
-    onChange   : PropTypes.func,
-    preClass   : PropTypes.string,
-    toggle     : PropTypes.func,
-    value      : PropTypes.string,
-    value_split: PropTypes.bool,
-    start_date : PropTypes.number,
-    sessions   : MobxPropTypes.arrayOrObservableArray,
+    className   : PropTypes.string,
+    onChange    : PropTypes.func,
+    preClass    : PropTypes.string,
+    toggle      : PropTypes.func,
+    value       : PropTypes.string,
+    value_split : PropTypes.bool,
+    is_clearable: PropTypes.bool,
+    start_date  : PropTypes.number,
+    sessions    : MobxPropTypes.arrayOrObservableArray,
 };
 
-export default TimePicker;
+export default observer(TimePicker);
