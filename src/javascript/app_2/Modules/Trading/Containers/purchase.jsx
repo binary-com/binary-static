@@ -52,7 +52,7 @@ const Purchase = ({
                 onMouseLeave={() => { onHoverPurchase(false); }}
             >
                 {(is_purchase_locked && idx === 0) &&
-                    <PurchaseLock toggle={togglePurchaseLock} />
+                    <PurchaseLock onClick={togglePurchaseLock} />
                 }
                 {(is_purchase_error) ?
                     <MessageBox

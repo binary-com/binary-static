@@ -4,7 +4,7 @@ import Button          from '../../../../../../App/Components/Form/button.jsx';
 import { localize }    from '../../../../../../../_common/localize';
 import LockIcon       from '../../../../../../App/Components/Elements/lock_icon.jsx';
 
-const PurchaseLock = ({ toggle }) => (
+const PurchaseLock = ({ onClick }) => (
     <div className='purchase-lock-container'>
         <div className='lock-container'>
             <LockIcon className='ic-lock' />
@@ -13,7 +13,7 @@ const PurchaseLock = ({ toggle }) => (
         <Button
             className='flat secondary orange'
             has_effect
-            onClick={toggle}
+            onClick={onClick}
             text={localize('Unlock')}
         />
         <span className='lock-message'>
@@ -23,7 +23,7 @@ const PurchaseLock = ({ toggle }) => (
 );
 
 PurchaseLock.propTypes = {
-    toggle: PropTypes.func,
+    onClick: PropTypes.func,
 };
 
 export default PurchaseLock;
