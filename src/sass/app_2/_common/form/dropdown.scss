@@ -61,8 +61,8 @@ div.dropdown-container {
             z-index: 2;
             cursor: pointer;
             background: $COLOR_WHITE;
-            box-shadow: 0 0px 2px #d3d3d3; /* stylelint-disable-line color-no-hex */
             border-radius: $BORDER_RADIUS;
+            border: 1px solid $COLOR_GRAY;
 
             .list-label {
                 pointer-events: none;
@@ -72,7 +72,7 @@ div.dropdown-container {
 
                 span {
                     text-transform: capitalize;
-                    color: #dedede; /* stylelint-disable-line color-no-hex */
+                    color: $COLOR_GRAY;
                     font-size: inherit;
                     font-weight: 300;
                 }
