@@ -51,9 +51,6 @@ const checkLanguage = () => {
                 el.setVisibility(1);
             }
         });
-        if (Client.get('residence') !== 'jp') {
-            $('#topMenuCashier').hide();
-        }
     }
 };
 
