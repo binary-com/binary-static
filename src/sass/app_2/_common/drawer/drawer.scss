@@ -19,19 +19,20 @@ hr {
         height: 100vh;
         z-index: 665;
         transition: all 0.25s;
+        background: rgba(42, 48, 82, 0.6);
         overflow: hidden;
 
         .drawer {
             position: absolute;
             z-index: 666;
-            top: 50px;
+            top: 0;
             left: 0;
             right: initial;
             will-change: transform;
             overflow: hidden;
             box-sizing: border-box;
             width: 260px;
-            height: calc(100% - 50px);
+            height: 100%;
             transition: all 0.25s;
             background: $COLOR_WHITE;
 
