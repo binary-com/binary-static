@@ -180,6 +180,7 @@
         div.purchase-error {
             position: absolute;
             top: 0;
+            min-height: 245px;
             height: calc(100% - 2px);
             width: calc(100% - 6px);
             left: 2px;
@@ -388,6 +389,7 @@
                 align-items: center;
                 background: $COLOR_LIGHT_GRAY;
                 opacity: 0.95;
+                min-height: 245px;
                 width: calc(100% - 5px);
                 height: calc(100% - 2px);
                 z-index: 3;
