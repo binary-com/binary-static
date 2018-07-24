@@ -9,7 +9,7 @@ class Calendar extends React.PureComponent {
     constructor(props) {
         super(props);
         const { date_format, start_date } = props;
-        const current_date = (start_date ? moment(start_date) : moment()).utc().format(date_format);
+        const current_date = moment.utc(start_date).format(date_format);
         this.state = {
             calendar_date: current_date, // calendar date reference
             selected_date: '',           // selected date
@@ -31,7 +31,7 @@ class Calendar extends React.PureComponent {
 
     // selects a day, a month, a year, or a decade
     panelSelectors = {
-        date  : (e) => { this.updateSelectedDate(e); },
+        date  : (e, is_disabled) => { this.updateSelectedDate(e, is_disabled); },
         month : (e) => { this.updateSelected(e, 'month' ); },
         year  : (e) => { this.updateSelected(e, 'year'  ); },
         decade: (e) => { this.updateSelected(e, 'decade'); },
@@ -48,7 +48,7 @@ class Calendar extends React.PureComponent {
     navigateTo = (value, unit, is_add) => {
         const { date_format, max_date, min_date } = this.props;
 
-        let new_date = moment(this.state.calendar_date, date_format)[is_add ? 'add' : 'subtract'](value, unit).format(date_format);
+        let new_date = moment.utc(this.state.calendar_date, date_format)[is_add ? 'add' : 'subtract'](value, unit).format(date_format);
 
         if (unit === 'months' && this.isPeriodDisabled(new_date, 'month')) return;
 
@@ -56,19 +56,25 @@ class Calendar extends React.PureComponent {
             new_date = is_add ? max_date : min_date;
         }
 
-        this.setState({ calendar_date: moment(new_date, date_format).format(date_format) }); // formatted date
+        this.setState({ calendar_date: moment.utc(new_date, date_format).format(date_format) }); // formatted date
     }
 
-    updateSelectedDate = (e) => {
+    updateSelectedDate = (e, is_disabled) => {
+        if (is_disabled) {
+            return;
+        }
+
         const { date_format, max_date, min_date, onSelect } = this.props;
 
-        const date      = moment(e.target.dataset.date);
-        const is_before = date.isBefore(moment(min_date).format(date_format));
-        const is_after  = date.isAfter(moment(max_date).format(date_format));
+        const moment_date = moment.utc(e.target.dataset.date).set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+        const is_before   = moment_date.isBefore(moment.utc(min_date));
+        const is_after    = moment_date.isAfter(moment.utc(max_date));
 
-        if (is_before || is_after) return;
+        if (is_before || is_after) {
+            return;
+        }
 
-        const formatted_date = date.format(date_format);
+        const formatted_date = moment_date.format(date_format);
         this.setState({
             calendar_date: formatted_date,
             selected_date: formatted_date,
@@ -85,7 +91,7 @@ class Calendar extends React.PureComponent {
             year  : 'month',
             decade: 'year',
         };
-        const date = moment(this.state.calendar_date, this.props.date_format)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.date_format);
+        const date = moment.utc(this.state.calendar_date, this.props.date_format)[type === 'decade' ? 'year' : type](e.target.dataset[type].split('-')[0]).format(this.props.date_format);
 
         if (this.isPeriodDisabled(date, type)) return;
 
@@ -98,7 +104,7 @@ class Calendar extends React.PureComponent {
     resetCalendar = () => {
         const { date_format, start_date } = this.props;
 
-        const default_date = (start_date ? moment(start_date) : moment()).utc().format(date_format);
+        const default_date = moment.utc(start_date).format(date_format);
         this.setState({
             calendar_date: default_date,
             selected_date: '',
@@ -124,10 +130,10 @@ class Calendar extends React.PureComponent {
     isPeriodDisabled = (date, unit) => {
         const { max_date, min_date } = this.props;
 
-        const start_of_period = moment(date).startOf(unit);
-        const end_of_period   = moment(date).endOf(unit);
-        return end_of_period.isBefore(moment(min_date))
-            || start_of_period.isAfter(moment(max_date));
+        const start_of_period = moment.utc(date).startOf(unit);
+        const end_of_period   = moment.utc(date).endOf(unit);
+        return end_of_period.isBefore(moment.utc(min_date))
+            || start_of_period.isAfter(moment.utc(max_date));
     }
 
     render() {
