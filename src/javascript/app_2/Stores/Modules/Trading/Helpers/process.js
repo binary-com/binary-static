@@ -34,7 +34,7 @@ const getMethodsList = (store, new_state) => ([
 
 // Some values need to be replaced, not extended
 const extendOrReplace = (source, new_values) => {
-    const to_replace = ['contract_types_list', 'trade_types'];
+    const to_replace = ['contract_types_list', 'trade_types', 'duration_units_list'];
 
     to_replace.forEach((key) => {
         if (key in new_values) {
