@@ -51,6 +51,8 @@ export default class StatementStore extends BaseStore {
             (position) => position.id === +proposal.contract_id
         );
 
+        if (position_data_index === -1) return;
+
         if (proposal.is_sold) {
             this.data.splice(position_data_index, 1);
         } else {

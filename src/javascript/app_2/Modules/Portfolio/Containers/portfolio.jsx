@@ -11,11 +11,6 @@ import ClientBase                     from '../../../../_common/base/client_base
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Portfolio extends React.Component {
-    state = {
-        // TODO: get currency from store, once it has been added
-        currency: ClientBase.get('currency').toLowerCase(),
-    };
-
     componentDidMount()    { this.props.onMount(); }
     componentWillUnmount() { this.props.onUnmount(); }
 
@@ -28,6 +23,7 @@ class Portfolio extends React.Component {
             error,
             totals,
             is_empty,
+            currency,
         } = this.props;
 
         if (error) {
@@ -48,12 +44,12 @@ class Portfolio extends React.Component {
             <div className={classnames('portfolio container', { 'portfolio--card-view': should_show_cards })}>
                 {
                     should_show_cards ?
-                        <CardList data={data} currency={this.state.currency} />
+                        <CardList data={data} currency={currency} />
                         :
                         <DataTable
-                            columns={getTableColumnsTemplate(this.state.currency)}
+                            columns={getTableColumnsTemplate(currency)}
                             data_source={data}
-                            footer={data.length > 0 ? totals : undefined} // don't show footer if table is empty
+                            footer={totals}
                             has_fixed_header
                         />
                 }
@@ -75,7 +71,7 @@ Portfolio.propTypes = {
 };
 
 export default connect(
-    ({modules, ui}) => ({
+    ({modules, client, ui}) => ({
         data      : modules.portfolio.data,
         is_loading: modules.portfolio.is_loading,
         error     : modules.portfolio.error,
@@ -83,6 +79,7 @@ export default connect(
         is_empty  : modules.portfolio.is_empty,
         onMount   : modules.portfolio.onMount,
         onUnmount : modules.portfolio.onUnmount,
+        currency  : client.currency,
         is_mobile : ui.is_mobile,
         is_tablet : ui.is_tablet,
     })

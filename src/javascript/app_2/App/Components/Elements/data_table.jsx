@@ -8,7 +8,7 @@ import React                          from 'react';
       2. implement filtering per column
 */
 
-class DataTable extends React.Component {
+class DataTable extends React.PureComponent {
     componentDidMount() {
         if (this.props.has_fixed_header) {
             window.addEventListener('resize', this.updateFixedHeaderWidth, false);
