@@ -13,20 +13,22 @@ const Settings = ({ match, routes }) => {
     }, {});
 
     // Redirect doesn't work with relative paths
-    const getAbsolutePath = (component) => {
-        const path = component_to_path[component.displayName || component.name];
-        const base = match.url[match.url.length - 1] === '/'
-            ? match.url.slice(0, -1)
-            : match.url;
-        return `${base}${path}`;
-    };
+    // const getAbsolutePath = (component) => {
+    //     const path = component_to_path[component.displayName || component.name];
+    //     const base = match.url[match.url.length - 1] === '/'
+    //         ? match.url.slice(0, -1)
+    //         : match.url;
+    //     return `${base}${path}`;
+    // };
 
     // Add paths from this.props.routes to items
     const data = settings_data.map(section => ({
         ...section,
         items: section.items.map(item => ({
             ...item,
-            path: getAbsolutePath(item.Component),
+            // path: getAbsolutePath(item.Component),
+            path: component_to_path[item.Component.displayname || item.Component.name],
+
         })),
     }));
 
