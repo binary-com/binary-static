@@ -14,12 +14,12 @@ const PurchaseLock = ({ toggle }) => (
                 </g>
             </svg>
         </div>
-        <h4>{localize('purchase locked')}</h4>
+        <h4>{localize('Purchase Locked')}</h4>
         <Button
             className='flat secondary orange'
             has_effect
             onClick={toggle}
-            text={localize('unlock')}
+            text={localize('Unlock')}
         />
         <span className='lock-message'>
             {localize('You can lock/unlock the purchase button from the Settings menu')}
