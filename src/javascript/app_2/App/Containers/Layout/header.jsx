@@ -53,9 +53,9 @@ Header.propTypes = {
     currency      : PropTypes.string,
     loginid       : PropTypes.string,
     items         : PropTypes.array,
-    is_dark_mode  : PropTypes.bool, // TODO: add dark theme handler
+    is_dark_mode  : PropTypes.bool, // TODO: add dark theme handler.
     is_logged_in  : PropTypes.bool,
-    onClickUpgrade: PropTypes.func, // TODO: add click handler
+    onClickUpgrade: PropTypes.func, // TODO: add click handler.
 };
 
 export default connect(

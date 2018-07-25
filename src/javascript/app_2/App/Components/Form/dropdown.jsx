@@ -185,7 +185,7 @@ Dropdown.propTypes = {
     ]),
 };
 
-// ToDo: Refactor NativeSelect
+// ToDo: Refactor NativeSelect.
 NativeSelect.propTypes = {
     list: PropTypes.oneOfType([
         PropTypes.object,
