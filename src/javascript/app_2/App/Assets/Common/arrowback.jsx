@@ -11,4 +11,4 @@ Arrowback.propTypes = {
     className: PropTypes.string,
 };
 
-export default Arrowback;
+export { Arrowback };
