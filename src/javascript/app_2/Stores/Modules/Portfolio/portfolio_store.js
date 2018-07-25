@@ -6,7 +6,6 @@ import { formatPortfolioResponse } from './Helpers/format_response';
 import BaseStore                   from '../../base_store';
 import { WS }                      from '../../../Services';
 import {
-    toMoment,
     getDiffDuration,
     formatDuration }               from '../../../Utils/Date';
 
@@ -114,7 +113,9 @@ export default class PortfolioStore extends BaseStore {
     @computed
     get data_with_remaining_time() {
         return this.data.map((portfolio_pos) => {
-            portfolio_pos.remaining_time = formatDuration(getDiffDuration(this.common.server_time, portfolio_pos.expiry_time));
+            portfolio_pos.remaining_time = formatDuration(
+                getDiffDuration(this.common.server_time, portfolio_pos.expiry_time)
+            );
             return portfolio_pos;
         });
     }
