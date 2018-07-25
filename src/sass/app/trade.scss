@@ -476,7 +476,7 @@
             }
         }
         #contract_purchase_profit_list {
-            margin: 10px 0;
+            margin: 10px 0 15px;
 
             > div {
                 display: flex;
@@ -484,8 +484,8 @@
                 line-height: 1.4em;
                 padding: 0 10px;
 
-                > p {
-                    margin: auto 0 5px;
+                p {
+                    margin: auto 0;
                     padding-top: 10px;
                 }
             }
