@@ -30,27 +30,27 @@ const ContractInfo = ({
                     <span>{proposal_info.message}</span>
                 </div>
                 :
-                <div className='purchase-info-wrapper'>
-                    <div className='stake-wrapper'>
+                <fieldset className='purchase-info-wrapper'>
+                    <span className='field-info'>
+                        <Tooltip alignment='left' icon='info' message={proposal_info.message}/>
+                    </span>
+                    <div className='info-wrapper'>
                         <div>{localize('Stake')}:</div>
                         <div><Money amount={proposal_info.stake} currency={currency} /></div>
-                        <span className='field-info'>
-                            <Tooltip alignment='left' icon='info' message={proposal_info.message}/>
-                        </span>
                     </div>
-                    <div className='payout-wrapper'>
+                    <div className='info-wrapper'>
                         <div>{localize('Payout')}:</div>
                         <div><Money amount={proposal_info.payout} currency={currency} /></div>
                     </div>
-                    <div className='profit-wrapper'>
+                    <div className='info-wrapper'>
                         <div>{localize('Net Profit')}:</div>
                         <div><Money amount={proposal_info.profit} currency={currency} /></div>
                     </div>
-                    <div className='returns-wrapper'>
+                    <div className='info-wrapper'>
                         <div>{localize('Return')}:</div>
                         <div>{proposal_info.returns}</div>
                     </div>
-                </div>
+                </fieldset>
             }
         </div>
     );

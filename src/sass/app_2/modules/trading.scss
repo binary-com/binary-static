@@ -134,27 +134,20 @@
             }
         }
         .purchase-info-wrapper {
-            line-height: 1rem;
+            line-height: 2vh;
             padding-bottom: 1vh;
+            border: 0;
 
-            .stake-wrapper {
-                display: flex;
-                height: 1rem;
-
-                span.field-info {
-                    margin: 0 0 0 auto;
-                }
-                div:nth-child(2) {
-                    margin-left: 4px;
-                }
-            }
-            .payout-wrapper, .profit-wrapper, .returns-wrapper {
+            .info-wrapper {
                 display: inline-flex;
-                height: 1rem;
 
                 div:last-child {
                     margin-left: 4px;
                 }
+            }
+            .field-info {
+                float: right;
+                margin-top: -4px;
             }
         }
         &.trade-types {
