@@ -1,11 +1,13 @@
-import classNames      from 'classnames';
-import PropTypes       from 'prop-types';
-import React           from 'react';
-import Test            from './test.jsx';
-import FormLayout      from '../Components/Form/form_layout.jsx';
-import SmartCharts     from '../../../App/Components/Charts/smartcharts.jsx';
-import PortfolioDrawer from '../../../App/Components/Elements/portfolio_drawer.jsx';
-import { connect }     from '../../../Stores/connect';
+import classNames           from 'classnames';
+import PropTypes            from 'prop-types';
+import React                from 'react';
+import Test                 from './test.jsx';
+import FormLayout           from '../Components/Form/form_layout.jsx';
+import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
+import SmartCharts          from '../../../App/Components/Charts/smartcharts.jsx';
+import PortfolioDrawer      from '../../../App/Components/Elements/portfolio_drawer.jsx';
+import { connect }          from '../../../Stores/connect';
+import { getPropertyValue } from '../../../../_common/utility';
 
 class Trade extends React.Component {
     componentDidMount() {
@@ -13,6 +15,8 @@ class Trade extends React.Component {
     }
 
     render() {
+        const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
+
         return (
             <div
                 id='trade_container'
@@ -33,7 +37,11 @@ class Trade extends React.Component {
                     />
                     <Test />
                 </div>
-                <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
+                { contract_id ?
+                    <ContractDetails contract_id={contract_id} />
+                    :
+                    <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
+                }
                 {/* TODO: to move PortfolioDrawer to an upper parent, as it should be available in all pages */}
                 <PortfolioDrawer />
             </div>
@@ -53,6 +61,7 @@ Trade.propTypes = {
     is_trade_enabled      : PropTypes.bool,
     onSymbolChange        : PropTypes.func,
     updateQueryString     : PropTypes.func,
+    purchase_info         : PropTypes.object,
 };
 
 export default connect(
@@ -61,6 +70,7 @@ export default connect(
         initial_symbol        : modules.trade.symbol,
         is_trade_enabled      : modules.trade.is_trade_enabled,
         onSymbolChange        : modules.trade.onChange,
+        purchase_info         : modules.trade.purchase_info,
         updateQueryString     : modules.trade.updateQueryString,
         is_asset_enabled      : ui.is_chart_asset_info_visible,
         is_countdown_enabled  : ui.is_chart_countdown_visible,
