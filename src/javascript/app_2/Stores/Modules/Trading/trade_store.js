@@ -68,8 +68,7 @@ export default class TradeStore extends BaseStore {
 
 
     constructor(root_store) {
-        const session_storage_properties = allowed_query_string_variables;
-        super(root_store, null, session_storage_properties);
+        super(root_store, null, allowed_query_string_variables);
     }
 
     @action.bound
@@ -105,9 +104,16 @@ export default class TradeStore extends BaseStore {
     onPurchase(proposal_id, price) {
         if (proposal_id) {
             processPurchase(proposal_id, price).then(action((response) => {
+                WS.forgetAll('proposal');
                 this.purchase_info = response;
             }));
         }
+    }
+
+    @action.bound
+    onClickNewTrade(e) {
+        this.requestProposal();
+        e.preventDefault();
     }
 
     /**
@@ -173,6 +179,7 @@ export default class TradeStore extends BaseStore {
         if (!isEmptyObject(requests)) {
             this.proposal_requests = requests;
             this.proposal_info     = {};
+            this.purchase_info     = {};
 
             WS.forgetAll('proposal').then(() => {
                 Object.keys(this.proposal_requests).forEach((type) => {

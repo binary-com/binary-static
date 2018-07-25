@@ -38,7 +38,7 @@ class Trade extends React.Component {
                     <Test />
                 </div>
                 { contract_id ?
-                    <ContractDetails contract_id={contract_id} />
+                    <ContractDetails contract_id={contract_id} onClickNewTrade={this.props.onClickNewTrade} />
                     :
                     <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
                 }
@@ -60,8 +60,9 @@ Trade.propTypes = {
     is_position_default   : PropTypes.bool,
     is_trade_enabled      : PropTypes.bool,
     onSymbolChange        : PropTypes.func,
-    updateQueryString     : PropTypes.func,
+    onClickNewTrade       : PropTypes.func,
     purchase_info         : PropTypes.object,
+    updateQueryString     : PropTypes.func,
 };
 
 export default connect(
@@ -69,6 +70,7 @@ export default connect(
         chart_barriers        : modules.trade.chart_barriers,
         initial_symbol        : modules.trade.symbol,
         is_trade_enabled      : modules.trade.is_trade_enabled,
+        onClickNewTrade       : modules.trade.onClickNewTrade,
         onSymbolChange        : modules.trade.onChange,
         purchase_info         : modules.trade.purchase_info,
         updateQueryString     : modules.trade.updateQueryString,
