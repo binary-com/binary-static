@@ -26,7 +26,7 @@ export const getTableColumnsTemplate = (currency) => [
         col_index: 'details',
     },
     {
-        title    : localize('Remaining Time (GMT)'),
+        title    : localize('Remaining Time'),
         col_index: 'remaining_time',
     },
     {
