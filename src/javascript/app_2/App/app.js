@@ -6,7 +6,8 @@ import { BrowserRouter as Router }   from 'react-router-dom';
 import Footer                        from './Containers/Layout/footer.jsx';
 import Header                        from './Containers/Layout/header.jsx';
 import Theme                         from '../App/Containers/Layout/theme.jsx';
-import { BinaryRoutes }              from './routes';
+import BinaryRoutes                  from './Components/Routes';
+import { routes }                    from '../Constants';
 import NetworkMonitor                from '../Services/network_monitor';
 import RootStore                     from '../Stores';
 import { MobxProvider }              from '../Stores/connect';
@@ -37,14 +38,14 @@ const initApp = () => {
  * @return {string} returns the basename of current url
  */
 const getBasename = () => {
-    const regex_string = `(.*(${Object.keys(getAllLanguages()).join('|')})/app\\.html).*`;
+    const regex_string = `(.*(${Object.keys(getAllLanguages()).join('|')})/app(/index\\.html)?).*`;
     const basename = new RegExp(regex_string, 'ig').exec(window.location.pathname);
 
     if (basename && basename.length) {
         return basename[1];
     }
 
-    return '/en/app.html';
+    return '/en/app/';
 };
 
 const BinaryApp = ({ root_store }) => (
@@ -54,9 +55,9 @@ const BinaryApp = ({ root_store }) => (
                 <div id='header'>
                     <Header
                         items={[
-                            { icon: 'trade',     text: localize('Trade'),     link_to: '/' },
-                            { icon: 'portfolio', text: localize('Portfolio'), link_to: '/portfolio' },
-                            { icon: 'statement', text: localize('Statement'), link_to: 'statement' },
+                            { icon: 'trade',     text: localize('Trade'),     link_to: routes.trade },
+                            { icon: 'portfolio', text: localize('Portfolio'), link_to: routes.portfolio },
+                            { icon: 'statement', text: localize('Statement'), link_to: routes.statement },
                             // TODO
                             // Hide the Cashier button until its implementaiton is completed.
                             // { icon: 'cashier',   text: localize('Cashier') },

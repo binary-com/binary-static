@@ -72,7 +72,7 @@ module.exports = [
 
 
     // ==================== Section: "app_2" ====================
-    ['app',                                'app_2/app',                                 null,         'Trusted by traders since 2000'],
+    ['app/index',                               'app_2/app',                                   null,         'Trusted by traders since 2000'],
 
 
     // ==================== Section: "static" ====================

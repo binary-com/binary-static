@@ -84,27 +84,32 @@
      */
     function handleReactUrl() {
 
-        // if the url is not related to new app, returns false.
-        var lang_regex_string = '(' + all_languages.join('|') + ')\/app\.html';
+        var l = window.location;
 
-        if (!new RegExp(lang_regex_string).test(href)) {
+        // if the url is not related to new app, returns false.
+        var lang_regex_string = '(.*)\/(' + all_languages.join('|') + ')\/app\/(\\w+\\.html)?';
+        var rx_result = new RegExp(lang_regex_string).exec(l.pathname)
+
+        if (!new RegExp(lang_regex_string).test(l.pathname) || (rx_result[3] && rx_result[3] !== 'index.html')) {
             return false;
         }
 
-        // Since there are two sub entries after CNAME URL for the app 'www.binary.com/en/app.html'
+        var sub_directories = rx_result[1];
+
+        // Since there are two sub entries after CNAME URL for the app 'www.binary.com/en/app'
         // the value of segment_count should be 2.
-        var segment_count = 2;
+        var segment_count = 2 + sub_directories.split('/').length;
 
-        var l = window.location;
 
+        var pathname = l.pathname.toLowerCase().replace(/\/index(\.html)?/, '');
 
         // Converting the path and query strings into just query strings and
         // then redirects the browser to the new url with only query strings and hash fragment.
-        // https://www.binary.com/en/app.html/statement -> https://www.binary.com/en/app.html?p=/statement
+        // https://www.binary.com/en/app/statement -> https://www.binary.com/en/app?p=/statement
         l.replace(
             l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-            l.pathname.split('/').slice(0, 1 + segment_count).join('/') + '?p=/' +
-            l.pathname.slice(1).split('/').slice(segment_count).join('/').replace(/&/g, '~and~') +
+            pathname.split('/').slice(0, segment_count).join('/') + '/?p=' +
+            pathname.split('/').slice(segment_count).join('/').replace(/&/g, '~and~') +
             (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~'): '') +
             l.hash
         );
