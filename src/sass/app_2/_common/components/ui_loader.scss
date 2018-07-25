@@ -41,7 +41,7 @@
                 .path {
                     stroke-dasharray: 1, 200;
                     stroke-dashoffset: 0;
-                    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+                    animation: dash 1.5s ease-in-out infinite, colorBlue 6s ease-in-out infinite;
                     stroke-linecap: round;
                 }
             }
@@ -71,24 +71,26 @@
     }
 }
 
-@keyframes color {
+@keyframes colorBlue {
+    100%, 0% {
+        stroke: $COLOR_BLUE;
+    }
+}
+
+@keyframes colorOrange {
     100%, 0% {
         stroke: $COLOR_ORANGE;
-    }
-    40% {
-        stroke: $COLOR_BLUE;
-    }
-    66% {
-        stroke: $COLOR_ORANGE;
-    }
-    80%, 90% {
-        stroke: $COLOR_BLUE;
     }
 }
 
 // Dark Theme
 .theme-wrapper.dark {
     .block-ui {
-        background: rgba(170, 172, 186, 0.8);
+        background: rgba(42, 48, 82, 0.8) !important;
+        border-color: $COLOR_COOL_GRAY !important;
+
+        .loading .circular .path {
+            animation: dash 1.5s ease-in-out infinite, colorOrange 6s ease-in-out infinite;
+        }
     }
 }
