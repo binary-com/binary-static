@@ -331,8 +331,12 @@ div.datepicker-container {
                 color: $COLOR_WHITE;
                 background: $COLOR_DARK_GRAY !important;
             }
+            &:hover:not(.active) {
+                background: $COLOR_GLASS_GRAY !important;
+            }
             &.disabled {
                 background: $COLOR_GLASS_GRAY !important;
+                color: $COLOR_DARK_BLUE !important;
             }
         }
     }

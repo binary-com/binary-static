@@ -128,8 +128,10 @@
                 line-height: normal;
                 background-color: $COLOR_YELLOW;
                 display: block;
+                color: $COLOR_BLUE;
                 margin-bottom: 10px;
                 font-weight: 300;
+                border: 1px solid $COLOR_LIGHT_ORANGE;
                 border-radius: $BORDER_RADIUS;
             }
         }
@@ -351,6 +353,9 @@
                     }
                     span {
                         font-size: 12px;
+                    }
+                    &:disabled {
+                        box-shadow: 0 2px 2px 0 $COLOR_GLASS_GRAY;
                     }
                 }
 

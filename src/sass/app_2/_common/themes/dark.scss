@@ -73,6 +73,11 @@
                 color: $COLOR_DARK_GRAY;
             }
         }
+        input, select {
+            background: $COLOR_BLUE;
+            color: $COLOR_WHITE;
+            border-color: $COLOR_COOL_GRAY;
+        }
     }
     div.purchase-wrapper {
         div.purchase-error {
