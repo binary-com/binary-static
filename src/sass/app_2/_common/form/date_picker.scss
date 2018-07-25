@@ -339,5 +339,8 @@ div.datepicker-container {
                 color: $COLOR_DARK_BLUE !important;
             }
         }
+        div.calendar-footer span.calendar-footer-btn {
+            color: $COLOR_DARK_GRAY;
+        }
     }
 }
