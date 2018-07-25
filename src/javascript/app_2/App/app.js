@@ -5,7 +5,7 @@ import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import Footer                        from './Containers/Layout/footer.jsx';
 import Header                        from './Containers/Layout/header.jsx';
-import Theme                         from './Containers/Layout/theme.jsx';
+import ThemeWrapper                  from './Containers/Layout/theme_wrapper.jsx';
 import BinaryRoutes                  from './Components/Routes';
 import { routes }                    from '../Constants';
 import NetworkMonitor                from '../Services/network_monitor';
@@ -51,26 +51,28 @@ const getBasename = () => {
 const BinaryApp = ({ root_store }) => (
     <Router basename={ getBasename() }>
         <MobxProvider store={root_store}>
-            <Theme>
-                <div id='header'>
-                    <Header
-                        items={[
-                            { icon: 'trade',     text: localize('Trade'),     link_to: routes.trade },
-                            { icon: 'portfolio', text: localize('Portfolio'), link_to: routes.portfolio },
-                            { icon: 'statement', text: localize('Statement'), link_to: routes.statement },
-                            // TODO
-                            // Hide the Cashier button until its implementaiton is completed.
-                            // { icon: 'cashier',   text: localize('Cashier') },
-                        ]}
-                    />
-                </div>
-                <div id='app_contents' className='app-contents'>
-                    <BinaryRoutes />
-                </div>
-                <footer id='footer'>
-                    <Footer />
-                </footer>
-            </Theme>
+            <React.Fragment>
+                <ThemeWrapper>
+                    <div id='header'>
+                        <Header
+                            items={[
+                                { icon: 'trade',     text: localize('Trade'),     link_to: routes.trade },
+                                { icon: 'portfolio', text: localize('Portfolio'), link_to: routes.portfolio },
+                                { icon: 'statement', text: localize('Statement'), link_to: routes.statement },
+                                // TODO
+                                // Hide the Cashier button until its implementaiton is completed.
+                                // { icon: 'cashier',   text: localize('Cashier') },
+                            ]}
+                        />
+                    </div>
+                    <div id='app_contents' className='app-contents'>
+                        <BinaryRoutes />
+                    </div>
+                    <footer id='footer'>
+                        <Footer />
+                    </footer>
+                </ThemeWrapper>
+            </React.Fragment>
         </MobxProvider>
     </Router>
 );
