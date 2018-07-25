@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React     from 'react';
+import Money     from '../../../App/Components/Elements/money.jsx';
 
 const PortfolioCard = ({
     reference,
@@ -21,20 +22,17 @@ const PortfolioCard = ({
             <div className='portfolio-card__row'>
                 <div className='portfolio-card__cell portfolio-card__purchase'>
                     <span className='portfolio-card__cell-text'>
-                        <span className={`symbols ${currency}`}/>
-                        {purchase}
+                        <Money amount={purchase} currency={currency} />
                     </span>
                 </div>
                 <div className='portfolio-card__cell portfolio-card__payout'>
                     <span className='portfolio-card__cell-text'>
-                        <span className={`symbols ${currency}`}/>
-                        {payout}
+                        <Money amount={payout} currency={currency} />
                     </span>
                 </div>
                 <div className={`portfolio-card__cell portfolio-card__indicative portfolio-card__indicative--${status}`}>
                     <span className='portfolio-card__cell-text'>
-                        <span className={`symbols ${currency}`}/>
-                        {indicative}
+                        <Money amount={indicative} currency={currency} />
                     </span>
                 </div>
             </div>
