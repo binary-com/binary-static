@@ -19,7 +19,7 @@ const updatePurchaseStatus = (final_price, pnl, profit, contract_status, contrac
             $profit
                 .removeClass('invisible')
                 .html($('<div/>', { text: profit < 0 ? localize('Loss') : localize('Profit') })
-                .append($('<p/>', { html: formatMoney(currency, profit) })));
+                .append($('<p/>', { html: formatMoney(currency, profit), class: profit < 0 ? 'loss' : 'profit' })));
         }
         updateContractBalance(Client.get('balance'));
     }
@@ -29,7 +29,14 @@ const updateContractBalance = (balance) => {
     $('#contract_purchase_balance').html(`${localize('Account balance:')} ${formatMoney(Client.get('currency'), balance)}`);
 };
 
+const updateContractProfit = (profit) => {
+    $('#contract_purchase_profit')
+        .removeClass('invisible')
+        .html(`${localize('Profit/Loss')}<p>${formatMoney(Client.get('currency'), profit)}</p>`);
+};
+
 module.exports = {
     updatePurchaseStatus,
     updateContractBalance,
+    updateContractProfit,
 };
