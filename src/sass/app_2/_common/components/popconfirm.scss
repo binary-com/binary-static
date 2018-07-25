@@ -20,6 +20,7 @@ button.btn {
     opacity: 0;
     transform-origin: left bottom;
     transition: all 0.3s;
+    z-index: 3;
 
     &.open {
         transform: scale(1, 1) translate(-50%, 0);
