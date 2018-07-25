@@ -72,7 +72,7 @@ Portfolio.propTypes = {
 
 export default connect(
     ({modules, client, ui}) => ({
-        data      : modules.portfolio.data,
+        data      : modules.portfolio.data_with_remaining_time,
         is_loading: modules.portfolio.is_loading,
         error     : modules.portfolio.error,
         totals    : modules.portfolio.totals,

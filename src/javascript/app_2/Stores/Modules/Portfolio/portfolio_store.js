@@ -5,11 +5,21 @@ import {
 import { formatPortfolioResponse } from './Helpers/format_response';
 import BaseStore                   from '../../base_store';
 import { WS }                      from '../../../Services';
+import {
+    toMoment,
+    getDiffDuration,
+    formatDuration }               from '../../../Utils/Date';
 
-export default class StatementStore extends BaseStore {
+export default class PortfolioStore extends BaseStore {
     @observable data       = [];
     @observable is_loading = false;
     @observable error      = '';
+
+    constructor(common) {
+        super();
+        // TODO: is there another way of getting observable from another store?
+        this.common = common;
+    }
 
     @action.bound
     initializePortfolio = () => {
@@ -102,15 +112,23 @@ export default class StatementStore extends BaseStore {
     }
 
     @computed
+    get data_with_remaining_time() {
+        return this.data.map((portfolio_pos) => {
+            portfolio_pos.remaining_time = formatDuration(getDiffDuration(this.common.server_time, portfolio_pos.expiry_time));
+            return portfolio_pos;
+        });
+    }
+
+    @computed
     get totals() {
         let indicative = 0;
         let payout     = 0;
         let purchase   = 0;
 
-        this.data.forEach((portfolio_item) => {
-            indicative += (+portfolio_item.indicative);
-            payout     += (+portfolio_item.payout);
-            purchase   += (+portfolio_item.purchase);
+        this.data.forEach((portfolio_pos) => {
+            indicative += (+portfolio_pos.indicative);
+            payout     += (+portfolio_pos.payout);
+            purchase   += (+portfolio_pos.purchase);
         });
         return {
             indicative,

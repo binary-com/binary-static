@@ -40,3 +40,28 @@ export const daysFromTodayTo = (date) => {
     const diff = moment(date).utc().diff(moment().utc(), 'days');
     return (!date || diff < 0) ? '' : diff + 1;
 };
+
+/**
+ * return moment duration between two dates
+ * @param  {Number|moment} epoch start time or moment object
+ * @param  {Number|moment} epoch end time or moment object
+ * @return {moment.duration} moment duration between start time and end time
+ */
+export const getDiffDuration = (start_time, end_time) => moment.duration(moment(end_time).diff(moment(start_time)));
+
+/**
+ * return formatted duration `2 days 01:23:59`
+ * @param {moment.duration} moment duration object
+ * @return {String} formatted display string
+ */
+export const formatDuration = (duration) => {
+    const d = Math.floor(duration.asDays()); // duration.days() does not include months/years
+    const h = duration.hours();
+    const m = duration.minutes();
+    const s = duration.seconds();
+    let formatted_str = moment(0).hour(h).minute(m).seconds(s).format('HH:mm:ss');
+    if (d > 0) {
+        formatted_str = `${d} ${d > 1 ? 'days' : 'day'} ${formatted_str}`;
+    }
+    return formatted_str;
+};
