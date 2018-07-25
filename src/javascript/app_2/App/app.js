@@ -5,7 +5,7 @@ import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import Footer                        from './Containers/Layout/footer.jsx';
 import Header                        from './Containers/Layout/header.jsx';
-import Theme                         from '../App/Containers/Layout/theme.jsx';
+import Theme                         from './Containers/Layout/theme.jsx';
 import BinaryRoutes                  from './Components/Routes';
 import { routes }                    from '../Constants';
 import NetworkMonitor                from '../Services/network_monitor';
