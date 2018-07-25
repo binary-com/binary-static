@@ -68,22 +68,12 @@ export default class TradeStore extends BaseStore {
 
 
     constructor(root_store) {
-        const local_storage_properties = allowed_query_string_variables;
-        super(root_store, local_storage_properties);
+        const session_storage_properties = allowed_query_string_variables;
+        super(root_store, null, session_storage_properties);
     }
 
     @action.bound
     init() {
-        // Update the url's query string by default values of the store
-        const queryParams = URLHelper.updateQueryString(this, allowed_query_string_variables);
-
-        // update state values from query string
-        const config = {};
-        [...queryParams].forEach(param => {
-            config[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
-        });
-        this.processNewValuesAsync(config);
-
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
                 this.processNewValuesAsync({
@@ -219,5 +209,18 @@ export default class TradeStore extends BaseStore {
             },
             true,
         );
+    }
+
+    @action.bound
+    updateQueryString() {
+        // Update the url's query string by default values of the store
+        const queryParams = URLHelper.updateQueryString(this, allowed_query_string_variables);
+
+        // update state values from query string
+        const config = {};
+        [...queryParams].forEach(param => {
+            config[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
+        });
+        this.processNewValuesAsync(config);
     }
 };

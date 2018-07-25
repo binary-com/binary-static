@@ -100,7 +100,7 @@ export default class BaseStore {
     setupReactionForSessionStorage() {
         if (this.session_storage_properties.length) {
             reaction(
-                () => this.local_storage_properties.map(i => this[i]),
+                () => this.session_storage_properties.map(i => this[i]),
                 () => this.saveToStorage(this.session_storage_properties, BaseStore.STORAGES.SESSION_STORAGE)
             );
         }
