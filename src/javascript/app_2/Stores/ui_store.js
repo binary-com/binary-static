@@ -25,7 +25,15 @@ export default class UIStore extends BaseStore {
     @observable is_chart_countdown_visible = false;
 
     constructor() {
-        const local_storage_properties = ['is_portfolio_drawer_on'];
+        const local_storage_properties = [
+            'is_chart_asset_info_visible',
+            'is_chart_countdown_visible',
+            'is_chart_layout_default',
+            'is_dark_mode_on',
+            'is_portfolio_drawer_on',
+            'is_purchase_confirm_on',
+            'is_purchase_lock_on',
+        ];
 
         super(null, local_storage_properties);
         window.addEventListener('resize', this.updateScreenWidth);
