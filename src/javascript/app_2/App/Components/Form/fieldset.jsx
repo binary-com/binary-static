@@ -36,7 +36,7 @@ const Fieldset = ({
 };
 
 // ToDo:
-// - Refactor Last Digit to keep the children as array type.
+// - Refactor Last Digit to keep the children as array type
 //   Currently last_digit.jsx returns object (React-Element) as 'children'
 //   props type.
 Fieldset.propTypes = {
