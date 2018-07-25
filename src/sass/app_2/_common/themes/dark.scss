@@ -78,6 +78,9 @@
             color: $COLOR_WHITE;
             border-color: $COLOR_COOL_GRAY;
         }
+        div.submit-section button.btn:disabled {
+            box-shadow: 0 2px 2px 0 $COLOR_GLASS_GRAY;
+        }
     }
     div.purchase-wrapper {
         div.purchase-error {
