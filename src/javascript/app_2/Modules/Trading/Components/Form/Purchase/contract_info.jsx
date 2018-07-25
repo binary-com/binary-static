@@ -30,8 +30,8 @@ const ContractInfo = ({
                     <span>{proposal_info.message}</span>
                 </div>
                 :
-                <fieldset className='purchase-info-wrapper'>
-                    <span className='field-info'>
+                <div className='purchase-info-wrapper'>
+                    <span className='purchase-tooltip'>
                         <Tooltip alignment='left' icon='info' message={proposal_info.message}/>
                     </span>
                     <div className='info-wrapper'>
@@ -50,7 +50,7 @@ const ContractInfo = ({
                         <div>{localize('Return')}:</div>
                         <div>{proposal_info.returns}</div>
                     </div>
-                </fieldset>
+                </div>
             }
         </div>
     );
