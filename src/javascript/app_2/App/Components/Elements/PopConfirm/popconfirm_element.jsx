@@ -19,7 +19,7 @@ const PopConfirmElement = ({
     return (
         <div ref={wrapperRef} className={popconfirm_class}>
             <div className='popconfirm-title'>
-                {/* TO-DO - Move inline svg to sprite or component with other svg once assets are finalized */}
+                {/* TODO - Move inline svg to sprite or component with other svg once assets are finalized */}
                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
                     <g fill='none' fillRule='evenodd'><circle cx='8' cy='8' r='8' fill='#FFC107'/>
                         <g fill='#FFF' transform='matrix(1 0 0 -1 6.5 12)'>

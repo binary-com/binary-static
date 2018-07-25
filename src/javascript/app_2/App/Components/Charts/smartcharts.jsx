@@ -30,8 +30,7 @@ const SmartCharts = ({
 
     const chart_settings = {
         assetInformation: is_asset_enabled,
-        // TO-DO - Update language to use saved / stored language
-        lang            : 'en',
+        lang            : 'en', // TODO - Update language to use saved/stored language
         position        : chart_layout,
         countdown       : is_countdown_enabled,
         theme           : chart_theme,
