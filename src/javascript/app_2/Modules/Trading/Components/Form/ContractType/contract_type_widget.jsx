@@ -2,7 +2,7 @@ import PropTypes          from 'prop-types';
 import React              from 'react';
 import ContractTypeDialog from './contract_type_dialog.jsx';
 import ContractTypeList   from './contract_type_list.jsx';
-import { Arrowhead }      from '../../../../../App/Assets/Common';
+import { IconArrow }      from '../../../../../App/Assets/Common';
 
 class ContractTypeWidget extends React.PureComponent {
     constructor(props) {
@@ -84,7 +84,7 @@ class ContractTypeWidget extends React.PureComponent {
                     </span>
                 </div>
 
-                <Arrowhead className='select-arrow' />
+                <IconArrow className='select-arrow' />
 
                 <ContractTypeDialog
                     is_mobile={this.props.is_mobile}

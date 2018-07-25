@@ -2,7 +2,7 @@ import { isArrayLike } from 'mobx';
 import { observer }    from 'mobx-react';
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import { Arrowhead }   from '../../Assets/Common';
+import { IconArrow }   from '../../Assets/Common';
 
 class Dropdown extends React.Component {
     constructor(props) {
@@ -92,7 +92,7 @@ class Dropdown extends React.Component {
                         {this.getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
-                <Arrowhead className='select-arrow' />
+                <IconArrow className='select-arrow' />
                 <div className='dropdown-list'>
                     <div className='list-container'>
                         {isArrayLike(this.props.list) ?
