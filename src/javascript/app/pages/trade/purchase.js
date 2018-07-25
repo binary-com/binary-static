@@ -85,7 +85,7 @@ const Purchase = (() => {
 
             const currency = Client.get('currency');
             let formula, multiplier;
-            const {contract_type} = passthrough;
+            const { contract_type, duration_unit } = passthrough;
 
             if (isLookback(contract_type)) {
                 multiplier = formatMoney(currency, passthrough.amount, false, 3, 2);
@@ -99,8 +99,14 @@ const Purchase = (() => {
 
             CommonFunctions.elementInnerHtml(cost,   `${localize('Total Cost')} <p>${formatMoney(currency, cost_value)}</p>`);
             if (isLookback(contract_type)) {
+                const is_tick = duration_unit === 't';
+                if (is_tick) {
+                    profit.setVisibility(1);
+                    CommonFunctions.elementInnerHtml(profit, `${localize('Profit/Loss')} <p>-</p>`);
+                } else {
+                    profit.setVisibility(0);
+                }
                 CommonFunctions.elementInnerHtml(payout, `${localize('Potential Payout')} <p>${formula}</p>`);
-                profit.setVisibility(0);
             } else if (isCallputspread(contract_type)) {
                 profit.setVisibility(1);
                 CommonFunctions.elementInnerHtml(payout, `${localize('Maximum Payout')} <p>${formatMoney(currency, payout_value)}</p>`);

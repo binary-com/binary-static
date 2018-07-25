@@ -17,7 +17,6 @@ const updatePurchaseStatus = (final_price, pnl, profit, contract_status, contrac
         $profit.html($('<div/>', { text: localize('Profit') }).append($('<p/>', { html: formatMoney(currency, profit) })));
         if (contract_category === 'lookback') {
             $profit
-                .removeClass('invisible')
                 .html($('<div/>', { text: profit < 0 ? localize('Loss') : localize('Profit') })
                 .append($('<p/>', { html: formatMoney(currency, profit), class: profit < 0 ? 'loss' : 'profit' })));
         }
@@ -31,7 +30,6 @@ const updateContractBalance = (balance) => {
 
 const updateContractProfit = (profit) => {
     $('#contract_purchase_profit')
-        .removeClass('invisible')
         .html(`${localize('Profit/Loss')}<p>${formatMoney(Client.get('currency'), profit)}</p>`);
 };
 
