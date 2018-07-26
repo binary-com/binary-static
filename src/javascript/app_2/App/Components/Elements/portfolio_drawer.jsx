@@ -96,7 +96,7 @@ class PortfolioDrawer extends React.Component {
                     { header }
                     <div className={`portfolio-list ${is_open ? 'show': '' }`}>
                         {this.portfolios.map((portfolio, idx) => (
-                            <div key={idx} className='portfolio'>
+                            <div key={idx} className='portfolio-drawer-item'>
                                 <span className='ic-portfolio' />
                                 <div className='asset'>
                                     <span className='symbol'>{portfolio.symbol}</span>

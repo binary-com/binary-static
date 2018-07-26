@@ -164,6 +164,43 @@
                 }
             }
         }
+        .statement-filter {
+            background: $COLOR_BLUE;
+            color: $COLOR_DARK_GRAY;
+            border-color: $COLOR_COOL_GRAY;
+        }
+        .statement {
+            background: $COLOR_BLUE;
+
+            .table-container {
+                .table-head {
+                    background: $COLOR_GLASS_GRAY;
+                    border-color: $COLOR_COOL_GRAY;
+
+                    .table-row {
+                        border-color: $COLOR_COOL_GRAY;
+                        color: $COLOR_DARK_GRAY;
+                    }
+                }
+                .table-body {
+                    .table-row {
+                        border-color: $COLOR_COOL_GRAY;
+
+                        td {
+                            &.date, &.desc, &.action, &.payout, &.balance {
+                                color: $COLOR_WHITE;
+                            }
+                            &.refid {
+                                color: $COLOR_SKY_BLUE;
+                            }
+                        }
+                        &:hover {
+                            background: $COLOR_COOL_GRAY;
+                        }
+                    }
+                }
+            }
+        }
     }
     footer {
         border-color: $COLOR_COOL_GRAY;

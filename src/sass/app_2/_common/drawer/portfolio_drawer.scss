@@ -27,7 +27,7 @@
             margin-left: auto;
         }
     }
-    .portfolio {
+    .portfolio-drawer-item {
         position: relative;
         box-sizing: border-box;
         width: 100%;
@@ -104,7 +104,7 @@
                 transform: scale(1, 1);
                 opacity: 1;
             }
-            .portfolio {
+            .portfolio-drawer-item {
                 box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
 
                 &:hover {
@@ -162,12 +162,15 @@
         p {
             color: $COLOR_DARK_GRAY;
         }
-        .portfolio {
+        .portfolio-drawer-item {
             background: $COLOR_BLUE;
             border-color: $COLOR_COOL_GRAY;
 
             span {
                 color: $COLOR_WHITE;
+            }
+            &:hover {
+                background: $COLOR_COOL_GRAY;
             }
         }
     }
