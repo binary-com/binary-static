@@ -9,7 +9,7 @@
         box-shadow: 0 1px 0 0 $COLOR_COOL_GRAY;
 
         .menu-links a {
-            &.active {
+            &.active, &:hover {
                 span {
                     color: $COLOR_WHITE;
 
@@ -210,10 +210,7 @@
             span {
                 color: $COLOR_DARK_GRAY;
             }
-            &:hover, &:focus {
-                background: $COLOR_COOL_GRAY;
-            }
-            &.active {
+            &.active, &:hover, &:focus {
                 background: $COLOR_COOL_GRAY;
 
                 .inline-icon {
