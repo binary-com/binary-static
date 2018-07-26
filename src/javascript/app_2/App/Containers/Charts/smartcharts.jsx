@@ -23,7 +23,7 @@ const SmartCharts = ({
         assetInformation: is_asset_enabled,
         countdown       : is_countdown_enabled,
         lang            : 'en', // TODO - Update language to use saved/stored language
-        position        : is_position_default ? 'left' : 'bottom',
+        position        : is_position_default ? 'bottom' : 'left',
         theme           : is_dark_theme ? 'dark' : 'light',
     };
 
