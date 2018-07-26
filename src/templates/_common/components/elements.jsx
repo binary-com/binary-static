@@ -99,6 +99,7 @@ export const FillBox = ({
     download,
     em,
     text,
+    dataShow,
     children,
 }) => {
     let classes1 = '';
@@ -113,7 +114,7 @@ export const FillBox = ({
     classes2 += `${border || ''}`;
 
     return (
-        <div className={[classes1, className].join(' ')}>
+        <div data-show={dataShow} className={[classes1, className].join(' ')}>
             <div className={classes2}>
                 <div className='inline-flex center-align gr-gutter'>
                     { image &&
