@@ -8,7 +8,7 @@ import BaseStore                      from '../../base_store';
 import { WS }                         from '../../../Services';
 import Client                         from '../../../../_common/base/client_base';
 
-const batch_size = 100; // request response limit
+const batch_size = 30; // request response limit
 
 export default class StatementStore extends BaseStore {
     @observable data           = [];

@@ -5,14 +5,16 @@ import DataTable                      from '../../../App/Components/Elements/dat
 
 const StatementTable = ({
     data,
+    children,
 }) => {
     const columns = getTableColumnsTemplate();
     return (
         <DataTable
             data_source={data.slice()}
             columns={columns}
-            has_fixed_header
-        />
+        >
+            {children}
+        </DataTable>
     );
 };
 

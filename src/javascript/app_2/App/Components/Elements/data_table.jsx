@@ -62,6 +62,7 @@ class DataTable extends React.PureComponent {
                 <PerfectScrollbar>
                     <div className='table__body'>
                         {this.renderBodyRows()}
+                        {this.props.children}
                     </div>
                 </PerfectScrollbar>
             </div>
@@ -73,7 +74,6 @@ DataTable.propTypes = {
     columns         : PropTypes.array,
     data_source     : MobxPropTypes.arrayOrObservableArray,
     footer          : PropTypes.object,
-    has_fixed_header: PropTypes.bool,
 };
 
 
