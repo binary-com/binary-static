@@ -6,6 +6,7 @@ const BinaryPjax         = require('../base/binary_pjax');
 const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
+const getElementById     = require('../../_common/common_functions').getElementById;
 const makeOption         = require('../../_common/common_functions').makeOption;
 const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
@@ -83,6 +84,27 @@ const AccountOpening = (() => {
                         },
                     });
                 });
+            }
+
+            if (/^(malta|maltainvest|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
+                const $citizen = $('#citizen');
+                getElementById('citizen_row').setVisibility(1);
+                if ($citizen.length) {
+                    BinarySocket.wait('get_settings').then((response) => {
+                        const citizen = response.get_settings.citizen;
+                        if (citizen) {
+                            const txt_citizen = (residence_list.find(obj => obj.value === citizen) || {}).text;
+                            $citizen.replaceWith($('<span/>', { text: txt_citizen || citizen, 'data-value': citizen }));
+                        } else {
+                            $citizen.html($options.html()).val(residence_value);
+                        }
+                        $citizen.select2({
+                            matcher(params, data) {
+                                return SelectMatcher(params, data);
+                            },
+                        });
+                    });
+                }
             }
 
             if ($tax_residence) {
@@ -191,7 +213,7 @@ const AccountOpening = (() => {
             id;
         $(form_id).find('select, input[type=checkbox]').each(function () {
             id = $(this).attr('id');
-            if (!/^(tnc|address_state|chk_professional|chk_tax_id)$/.test(id)) {
+            if (!/^(tnc|address_state|chk_professional|chk_tax_id|citizen)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;
