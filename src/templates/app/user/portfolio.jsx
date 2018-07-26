@@ -20,9 +20,6 @@ const Portfolio = () => (
                     <a href={it.url_for('cashier/forwardws?action=deposit')} className='button nowrap ja-hide'>
                         <span>{it.L('Make a Deposit')}</span>
                     </a>
-                    <a href={it.url_for('cashier/deposit-jp')} className='button nowrap invisible ja-show'>
-                        <span>{it.L('Make a Deposit')}</span>
-                    </a>
                 </span>
             </div>
 
