@@ -106,4 +106,27 @@
             border-color: $COLOR_COOL_GRAY;
         }
     }
+    .inline-icon {
+        path {
+            fill: $COLOR_DARK_GRAY;
+        }
+        .stroke-only {
+            stroke: $COLOR_DARK_GRAY;
+            fill: none;
+        }
+        .fill-only {
+            fill: $COLOR_DARK_GRAY;
+            stroke: none;
+        }
+        .stroke-fill {
+            stroke: $COLOR_DARK_GRAY;
+            fill: $COLOR_DARK_GRAY;
+        }
+        .no-stroke {
+            stroke: $COLOR_BLUE;
+        }
+        .no-fill {
+            fill: $COLOR_BLUE;
+        }
+    }
 }

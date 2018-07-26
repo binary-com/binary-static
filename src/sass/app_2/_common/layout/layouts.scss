@@ -182,6 +182,9 @@
             }
         }
     }
+    .inline-icon {
+        pointer-events: none;
+    }
 }
 
 /* flexbox fallback is if the browser does not support display:grid */

@@ -3,16 +3,10 @@ import PropTypes  from 'prop-types';
 import React      from 'react';
 
 const IconPortfolio = ({ className }) => (
-    <svg className={classNames('inline-icon', className)} xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
-        <g fill='none' fillRule='evenodd'>
-            <g transform='translate(0 3)'>
-                <path d='M1 1v10h14V1H1zm0-1h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1z' fill='#2A3052' fillRule='nonzero'/>
-                <path d='M3.151 7.5h9.698l2.428-1.62a.5.5 0 0 0 .223-.415V1a.5.5 0 0 0-.5-.5H1a.5.5 0 0 0-.5.5v4.465a.5.5 0 0 0 .223.416L3.15 7.5z' stroke='#2A3052'/>
-                <rect fill='#2A3052' x='6' y='5' width='4' height='1' rx='.5'/>
-            </g>
-            <path d='M5.5 3.5h5V2a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0-.5.5v1.5z' stroke='#2A3052'/>
-        </g>
+    <svg className={classNames('inline-icon', className)} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'>
+        <path fill='#FFF' fillRule='evenodd' d='M5 3V2c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v1h4c.6 0 1 .4 1 1v4l-2.7 1.8a1 1 0 0 1-.6.2H3.3a1 1 0 0 1-.6-.2L0 8V4c0-.6.4-1 1-1h4zm1 0h4V2H6v1zM0 9l2.7 1.8.6.2h9.4c.2 0 .4 0 .6-.2L16 9v5c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1V9zm6.5-1a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3z'/>
     </svg>
+
 );
 
 IconPortfolio.propTypes = {
