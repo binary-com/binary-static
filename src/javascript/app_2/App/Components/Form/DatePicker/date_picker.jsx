@@ -2,7 +2,7 @@ import classNames      from 'classnames';
 import moment          from 'moment';
 import React           from 'react';
 import DatePickerInput from './date_picker_input.jsx';
-import { ArrowHead }   from '../../../Assets/Common';
+import { IconArrow }   from '../../../../Assets/Common';
 import Calendar        from '../../Elements/Calendar';
 import {
     formatDate,
@@ -128,7 +128,7 @@ class DatePicker extends React.PureComponent {
                     />
                     <label className='datepicker-native-overlay' htmlFor={this.props.name}>
                         {this.state.value || this.props.placeholder}
-                        <ArrowHead className='datepicker-native-overlay__arrowhead' />
+                        <IconArrow className='datepicker-native-overlay__arrowhead' />
                     </label>
                 </div>
             );

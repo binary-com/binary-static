@@ -37,7 +37,7 @@ class MenuLinks extends React.PureComponent {
                     <div className='menu-links' ref={node => { this.node = node; }}>
                         {items.map((item, idx) => (
                             <BinaryLink onClick={this.onClick} key={idx} to={item.link_to}>
-                                <span className={item.icon} title={item.text}>{item.text}</span>
+                                <span title={item.text}>{item.icon}{item.text}</span>
                             </BinaryLink>
                         ))}
                         <InkBar left={this.state.left} width={this.state.width} />
@@ -50,7 +50,9 @@ class MenuLinks extends React.PureComponent {
 
 MenuLinks.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
-        icon   : PropTypes.string,
+        icon: PropTypes.shape({
+            className: PropTypes.string,
+        }),
         text   : PropTypes.string,
         link_to: PropTypes.string,
     })),

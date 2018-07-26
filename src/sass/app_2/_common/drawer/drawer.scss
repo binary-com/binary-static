@@ -60,9 +60,15 @@ hr {
                         padding: 6px 10px;
 
                         &.btn-close {
-                            width: 1.5rem;
-                            height: auto;
+                            width: 24px;
+                            height: 24px;
                             align-self: center;
+
+                            .inline-icon {
+                                position: absolute;
+                                top: 18px;
+                                left: 14px;
+                            }
                         }
                         &.brand-logo {
                             display: inline-flex;
@@ -103,10 +109,18 @@ hr {
                     .icons {
                         display: inline-flex;
                         cursor: pointer;
-                        padding: 14px 10px;
+                        padding: 14px 11px;
 
                         &.btn-close {
                             border-left: 1px solid $COLOR_GRAY;
+                            width: 24px;
+                            height: 24px;
+
+                            .inline-icon {
+                                position: absolute;
+                                top: 18px;
+                                right: 14px;
+                            }
                         }
                     }
                     .notifications-header {
