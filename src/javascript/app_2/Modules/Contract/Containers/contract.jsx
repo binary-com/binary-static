@@ -1,12 +1,11 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import ContractDetails from './contract_details.jsx';
-import SmartCharts     from '../../../App/Components/Charts/smartcharts.jsx';
+import SmartCharts     from '../../../App/Containers/Charts';
 import { connect }     from '../../../Stores/connect';
 
 const Contract = ({
     initial_symbol,
-    is_mobile,
     match,
 }) => (
     <div className='trade-container'>
@@ -14,7 +13,6 @@ const Contract = ({
             { initial_symbol &&
                 <SmartCharts
                     initial_symbol={initial_symbol}
-                    is_mobile={is_mobile}
                 />
             }
         </div>
@@ -24,13 +22,11 @@ const Contract = ({
 
 Contract.propTypes = {
     initial_symbol: PropTypes.string,
-    is_mobile     : PropTypes.bool,
     match         : PropTypes.object,
 };
 
 export default connect(
-    ({ modules, ui }) => ({
+    ({ modules }) => ({
         initial_symbol: modules.contract.contract_info.underlying,
-        is_mobile     : ui.is_mobile,
     })
 )(Contract);
