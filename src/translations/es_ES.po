@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-26 02:02\n"
+"PO-Revision-Date: 2018-07-26 05:19\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -449,6 +449,9 @@ msgstr "2. Comprobante de domicilio"
 
 msgid "3-5 years"
 msgstr "3-5 años"
+
+msgid "3. Selfie or self-portrait photo"
+msgstr ""
 
 msgid "30-day limit on losses"
 msgstr "El límite de pérdidas de 30 días"
@@ -1899,13 +1902,13 @@ msgid "CFD Trading Frequency"
 msgstr "Frecuencia de operación de CFDs"
 
 msgid "CFD contract specifications"
-msgstr "Especificaciones del contrato CDF"
+msgstr "Especificaciones del contrato CFD"
 
 msgid "CFD margin policy"
-msgstr "Política de márgenes de CDF"
+msgstr "Política de márgenes de CFD"
 
 msgid "CFDs"
-msgstr "CDF"
+msgstr "CFD"
 
 msgid "CFDs on commodities; and/or"
 msgstr ""
@@ -2014,6 +2017,9 @@ msgstr "Caridad"
 
 msgid "Chart"
 msgstr "Gráfico"
+
+msgid "Chart is not available for this underlying."
+msgstr ""
 
 msgid "Charting for this underlying is delayed"
 msgstr "Gráficos para este instrumento se muestran con retraso"
@@ -2230,6 +2236,9 @@ msgstr "Dinero de clientes"
 
 msgid "Close"
 msgstr "Cerrar"
+
+msgid "Close Time"
+msgstr ""
 
 msgid "Close all or any of your Open Positions at a closing level that is reasonably available;"
 msgstr "Cierre todas o cualquiera de sus posiciones abiertas en un nivel de cierre que esté razonablemente disponible;"
@@ -2481,7 +2490,7 @@ msgid "Contracts bought"
 msgstr "Contratos comprados"
 
 msgid "Contracts for Difference (CFDs) are financial derivatives that allow you to trade on the movement of underlying assets without owning them."
-msgstr "Los contratos por diferencias (CDF) son derivados financieros que le permiten negociar con el movimiento de activos subyacentes sin poseerlos."
+msgstr "Los contratos por diferencias (CFD) son derivados financieros que le permiten negociar con el movimiento de activos subyacentes sin poseerlos."
 
 msgid "Contracts for difference (CFDs) allow you to speculate on a number of markets, including indices, shares, and commodities. At Binary.com, we offer popular cash indices, cryptocurrencies, as well as proprietary Volatility Indices that simulate market movement."
 msgstr "Los contratos por diferencias (CFD) le permiten especular sobre diferentes mercados, incluyendo índices, acciones y commodities. En Binary.com, ofrecemos índices de monedas populares, criptomonedas, así como nuestros índices Volatility que simulan los movimientos del mercado."
@@ -3771,7 +3780,7 @@ msgid "For e-wallets or local currencies not supported by %1."
 msgstr "Para monederos electrónicos o divisas locales no admitidos por %1."
 
 msgid "For example, a CFD on Binary.com's US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:"
-msgstr "Por ejemplo, un CDF del índice US 30 de Binary.com ofrece un contrato a 1 USD por punto. Si usted compra un contrato Volumen 1.0 del índice US 30 con un precio de venta actual de 20.000 USD y luego lo vende a un precio de compra de 20.010 USD, su ganancia neta se calculará de la siguiente manera:"
+msgstr "Por ejemplo, un CFD del índice US 30 de Binary.com ofrece un contrato a 1 USD por punto. Si usted compra un contrato Volumen 1.0 del índice US 30 con un precio de venta actual de 20.000 USD y luego lo vende a un precio de compra de 20.010 USD, su ganancia neta se calculará de la siguiente manera:"
 
 msgid "For example, if you buy a US 100 contract and it's not going as planned, you just need to sell it to cut your losses at the current market price."
 msgstr "Por ejemplo, si compra un contrato de 100 USD y no va según lo planeado, solo necesita venderlo al precio actual de mercado para reducir sus pérdidas."
@@ -6471,6 +6480,9 @@ msgstr "Múltiples oportunidades"
 msgid "Multiplier"
 msgstr "Multiplicador"
 
+msgid "Must be a clear, colour photo"
+msgstr ""
+
 msgid "Must be a clear, colour photo or scanned image"
 msgstr "Debe ser una foto o imagen escaneada nítida y a color"
 
@@ -6819,6 +6831,9 @@ msgstr "Se permiten solo %1."
 msgid "Only JPG, JPEG, GIF, PNG and PDF formats are accepted"
 msgstr "Se aceptan sólo los formatos JPG, JPEG, GIF, PNG y PDF"
 
+msgid "Only JPG, JPEG, GIF, and PNG formats are accepted"
+msgstr ""
+
 msgid "Only five years after inception, we pick up this major award for our online trading services. The award recognises BetOnMarkets.com's reliable, fast and secure online trading for novice and expert traders. At this time, our website has received over 15 million trades."
 msgstr "Sólo cinco años después de la creación de la web, recogemos este importante premio por nuestros servicios de apuestas en línea. El premio reconoce una forma de operar en línea fiable, rápida y segura ofrecida por BetOnMarkets.com tanto para principiantes como expertos. Hasta ese momento, nuestro sitio web había recibido más de 15 millones de transaciones."
 
@@ -6831,8 +6846,8 @@ msgstr "Se permite sólo el uso de letras, números, espacios y los siguientes c
 msgid "Only letters, numbers, space, hyphen, period, and apostrophe are allowed."
 msgstr "Se permite sólo el uso de letras, números, espacios, guiones, puntos y apóstrofes."
 
-msgid "Only letters, numbers, space, underscore, and hyphen are allowed for ID number."
-msgstr "Se permite sólo el uso de letras, números, espacios, guión bajo y guiones para la cédula de identidad."
+msgid "Only letters, numbers, space, underscore, and hyphen are allowed for ID number (%1)."
+msgstr ""
 
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
 msgstr "Se permite sólo el uso de letras, espacios, guiones, puntos y apóstrofes."
@@ -7296,8 +7311,8 @@ msgstr "Por favor \"complete su perfil\" para aumentar el límite de retiro y ne
 msgid "Please %1deposit%2 to your account."
 msgstr "Por favor, %1deposite saldo%2 en su cuenta."
 
-msgid "Please %1log in%2 or %3sign up%2 to view this page."
-msgstr "Por favor %1inicie sesión%2 o %3regístrese%2 para ver esta página."
+msgid "Please %1log in%2 or %3sign up%4 to view this page."
+msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Por favor <a href=\"%1\">acepte los términos y condiciones actualizados</a>."
@@ -7400,6 +7415,9 @@ msgstr "Por favor, proporcione un número de identificación tributaria de cada 
 
 msgid "Please provide us with the following information:"
 msgstr "Por favor, proporciónenos la siguiente información:"
+
+msgid "Please reload the page"
+msgstr ""
 
 msgid "Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines."
 msgstr "Por favor recuerde en todo momento que el comercio de opciones binarias puede ser una actividad interesante, pero tenemos el deber moral de recordarle los riesgos que pueda correr. Opciones binarias pueden convertirse en una verdadera adicción, al igual que cualquier otra actividad llevada a sus límites. Le pedimos que se involucre en un auto-análisis cuidadoso para comprobar si corre algún riesgo. Para evitar el peligro de una tal adicción, es importante que siga algunos principios básicos."
@@ -7703,6 +7721,9 @@ msgstr "Promueva %1"
 
 msgid "Promote our products easily, and keep track of all your earnings with our nifty marketing tools."
 msgstr "Promocione nuestros productos fácilmente y haga seguimiento de todas sus ganancias mediante nuestras ingeniosas herramientas de marketing."
+
+msgid "Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously"
+msgstr ""
 
 msgid "Proof of your employment"
 msgstr "Prueba de su empleo"
@@ -8322,6 +8343,9 @@ msgstr "Autónomo"
 msgid "Self-exclusion on this website only applies to your %1 account and does not include other companies or websites."
 msgstr "La autoexclusión en este sitio web solo se aplica a su cuenta %1 y no incluye otras empresas o sitios web."
 
+msgid "Selfie holding proof of identity (front)"
+msgstr ""
+
 msgid "Sell"
 msgstr "Venta"
 
@@ -8438,6 +8462,9 @@ msgstr "En caso cuando se produce una interrupción en los datos de mercado sin 
 
 msgid "Should any client for whom you are receiving commissions process a chargeback, the Company reserves the right to deduct the commission portion of the chargeback from the total balance due to you for the current month. Should this deduction of the accumulated revenue exceed your current amount due, your balance will then revert to a negative balance, and you will have to earn revenue to cover the chargeback before you can start earning revenue again. The Company reserves the right, in special cases, to exclude revenue sharing  on promotional funds deposited into the client's account by the Company."
 msgstr "En caso de que cualquier cliente por quien usted esté recibiendo comisiones procese una devolución de cargo, la Compañía se reserva el derecho a deducir la parte de la comisión de la devolución de cargo del saldo total que le corresponda en el respectivo mes. Si esta deducción de los ingresos acumulados excediera su importe actual, su saldo se volverá negativo y usted tendrá que obtener ingresos para cubrir la devolución de cargo antes de poder volver a obtener ingresos. La Compañía se reserva el derecho, en casos especiales, de excluir el reparto de ingresos de los fondos de promoción depositados en la cuenta del cliente por la Compañía."
+
+msgid "Should be %1"
+msgstr ""
 
 msgid "Should be a valid number."
 msgstr "Debe ser un número válido."
@@ -8780,6 +8807,9 @@ msgstr "Enviar para revisión"
 
 msgid "Submit one of the documents below"
 msgstr "Envíe uno de los siguientes documentos"
+
+msgid "Submit the document below"
+msgstr ""
 
 msgid "Submit your CV and Cover Letter"
 msgstr "Envíe su currículum y carta de presentación"
@@ -9929,6 +9959,9 @@ msgstr "Tick de Predicción"
 msgid "Ticks"
 msgstr "Ticks"
 
+msgid "Ticks history returned an empty array."
+msgstr ""
+
 msgid "Tier"
 msgstr "Nivel"
 
@@ -10699,7 +10732,7 @@ msgid "View the operating hours of the markets you can trade."
 msgstr "Ver el horario de apretura de mercados en los cuales se puede operar."
 
 msgid "View your account's authentication status."
-msgstr ""
+msgstr "Ver el estado de autenticación de su cuenta."
 
 msgid "View your financial assessment settings."
 msgstr "Vea sus ajustes del asesoramiento financiero."
@@ -10804,7 +10837,7 @@ msgid "We are authorised and regulated by the Malta Financial Services Authority
 msgstr "Estamos autorizados y regulados por la Autoridad de Servicios Financieros de Malta (\"MFSA\") bajo la Ley de Servicios de Inversión (Cap. 370, Leyes de Malta) (la \"Ley\") para desempeñar negocios de inversión. Estamos autorizados por la MFSA para negociar por cuenta propia (es decir, ofrecer y actuar como contraparte de operaciones) y para ejecutar órdenes en nombre de otras personas, ambos servicios están en relación con productos financieros derivados (principalmente opciones binarias) relativos al mercado de divisas, índices, acciones y otros productos o activos financieros (\"Productos financieros\"). No estamos autorizados y no ofrecemos ni brindamos asesoramiento de inversión ni otros servicios de inversión distintos a los descritos anteriormente. Si considera que necesita asesoramiento de inversión o servicios de inversión distintos a los descritos anteriormente, debe ponerse en contacto con un asesor o empresa financiera independiente."
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
-msgstr ""
+msgstr "Estamos autorizados y regulados por la Autoridad de Servicios Financieros de Malta (\"MFSA\") de conformidad con la Ley de Servicios de Inversión (Cap. 370, Leyes de Malta) (la \"Ley\") para desempeñar negocios de inversión. Estamos autorizados por la MFSA para negociar por cuenta propia (es decir, ofrecer y actuar como contraparte de operaciones) y para ejecutar órdenes en nombre de otras personas, ambos servicios en relación con productos financieros derivados relativos al mercado de divisas, índices, acciones y otros productos o activos financieros (\"Productos financieros\"). No estamos autorizados y no ofrecemos ni brindamos asesoramiento de inversión ni otros servicios de inversión distintos a los descritos anteriormente. Si considera que necesita asesoramiento de inversión o servicios de inversión distintos a los descritos anteriormente, póngase en contacto con un asesor o empresa financiera independiente."
 
 msgid "We are committed to making sure your personal data and transactions are secure:"
 msgstr "Estamos comprometidos en asegurar sus datos personales y transacciones:"
@@ -11050,7 +11083,7 @@ msgid "We’ve paid millions in commission to date through our industry-leading 
 msgstr "A la fecha, hemos pagado millones en comisiones a través de nuestro programa de afiliados líder en la industria."
 
 msgid "What about instant execution? In this case, your order is placed at the price that’s available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
-msgstr ""
+msgstr "¿Qué sucede con la ejecución inmediata? En esta caso, su orden se realiza al precio disponible en ese momento. Existe la posibilidad de recotizar si el precio fluctúa en gran medida antes de que se complete la ejecución de la orden."
 
 msgid "What advertising materials and marketing tools do you offer?"
 msgstr "¿Qué materiales y herramientas de marketing y publicidad ofrecen?"
@@ -11149,7 +11182,7 @@ msgid "When you are classified as an Eligible Counterparty we shall not provide 
 msgstr "Si usted es clasificado como Contraparte Elegible, no le proporcionaremos:"
 
 msgid "When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there's no risk of 'slippage' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions."
-msgstr ""
+msgstr "Cuando esté satisfecho con el precio que reciba, ejecute la transacción de inmediato. Con nuestra plataforma única, no existen riesgos de \"deslizamiento\" ni mercados con brechas. Y, lo que es más importante, no hay tarifas ocultas. Usted también puede volver a vender cualquier transacción a largo plazo en cualquier momento para obtener ganancias de las condiciones favorables del mercado."
 
 msgid "When you are trading CFDs, you can choose to open a buy position (if you think that the price will rise) or a sell position (if you think that the price will fall)."
 msgstr "Cuando opere con CFD, usted podrá elegir abrir una posición de compra (si cree que el precio aumentará) o una posición de venta (si cree que el precio caerá)."
@@ -11215,7 +11248,7 @@ msgid "Where our arrangements to manage conflicts are not or cannot be sufficien
 msgstr "Donde nuestros procedimientos para gestionar los conflictos no son o no pueden ser suficientes para estar razonablemente seguros de que se previenen los riesgos de daños a los intereses de un cliente, nuestro objetivo es revelar la naturaleza general o el origen de los conflictos. El objetivo es permitir al cliente la oportunidad de considerar la posibilidad de solicitar más información enviando un correo a compliance<b></b>@<i></i>binary.com o continuar con el servicio; no pretendemos proporcionar información detallada, altamente específica o integral."
 
 msgid "Where such additional functions/plug-ins affect the reliability and/or smooth operation and/or orderly functioning of the MT5 Trading Platform, the Company has the right to immediately terminate its contractual relationship with its Clients by written notice."
-msgstr ""
+msgstr "Cuando las funciones adicionales/plug-ins affecten la confiabilidad y/o el correcto funcionamiento y/o el funcionamiento ordenado de la Plataforma de operaciones MT5, la Compañía tiene derecho a finalizar inmediatamente su relación contractual con sus Clientes mediante una notificación por escrito."
 
 msgid "Where supportive colleagues are like a second family."
 msgstr "Donde los compañeros de trabajo son como una segunda familia."
@@ -11233,7 +11266,7 @@ msgid "Where the Agent ceases to be competent and/or capable and/or adequate and
 msgstr ""
 
 msgid "Where the Agent fails to comply with its obligations and/or fails to perform any of its duties or other provisions under this Agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company."
-msgstr ""
+msgstr "Cuando el Agente no cumpla con sus obligaciones y/o no lleve a cabo sus tareas u otras disposiciones de acuerdo con este Acuerdo y ese incumplimineto se prolongue durante al menos un día hábil luego de que reciba el aviso de incumplimiento de parte de la Compañía."
 
 msgid "Where the Agent is dissolved, or deregistered from any records of a formal register whatsoever. Furthermore, where any procedure is initiated, seeking or intending or proposing the Agent’s dissolution or deregistration from any records of a formal register. "
 msgstr ""
