@@ -57,13 +57,6 @@ footer {
     }
 }
 
-.ic-portfolio {
-    &.active {
-        // change stroke to active
-        stroke: $COLOR_BLUE;
-    }
-}
-
 .ic-settings {
     &.active {
         background: $COLOR_GRAY;
