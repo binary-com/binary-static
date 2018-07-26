@@ -33,7 +33,6 @@ class ContractTypeWidget extends React.PureComponent {
 
     handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_dialog_open) {
-            console.log(event.target);
             this.setState({ is_dialog_open: false });
         }
     };
