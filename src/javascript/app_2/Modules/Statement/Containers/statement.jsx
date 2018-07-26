@@ -5,7 +5,8 @@ import classnames                     from 'classnames';
 import Filter                         from './statement_filter.jsx';
 import StatementCardList              from '../Components/statement_card_list.jsx';
 import EmptyStatementMessage          from '../Components/empty_statement_message.jsx';
-import StatementTable                 from '../Components/statement_table.jsx';
+import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
+import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
 import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
@@ -22,10 +23,13 @@ class Statement extends React.Component {
             is_mobile,
             is_tablet,
             error,
+            handleScroll,
         } = this.props;
+
 
         if (error) return <p>{error}</p>;
 
+        const columns = getTableColumnsTemplate();
         const should_show_cards = is_mobile || is_tablet;
 
         const renderGUI = () => (
@@ -52,9 +56,13 @@ class Statement extends React.Component {
                                 {renderGUI()}
                             </React.Fragment>
                             :
-                            <StatementTable data={data}>
+                            <DataTable
+                                data_source={data}
+                                columns={columns}
+                                onScroll={handleScroll}
+                            >
                                 {renderGUI()}
-                            </StatementTable>
+                            </DataTable>
                     }
                 </div>
             </div>
@@ -72,6 +80,7 @@ Statement.propTypes = {
     is_tablet        : PropTypes.bool,
     onMount          : PropTypes.func,
     onUnmount        : PropTypes.func,
+    handleScroll     : PropTypes.func,
 };
 
 export default connect(
@@ -83,6 +92,7 @@ export default connect(
         error            : modules.statement.error,
         onMount          : modules.statement.onMount,
         onUnmount        : modules.statement.onUnmount,
+        handleScroll     : modules.statement.handleScroll,
         is_mobile        : ui.is_mobile,
         is_tablet        : ui.is_tablet,
     })

@@ -2,7 +2,6 @@ import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import PerfectScrollbar               from 'react-perfect-scrollbar';
 
 /* TODO:
       1. implement sorting by column (ASC/DESC)
@@ -45,6 +44,12 @@ class DataTable extends React.PureComponent {
     }
 
     render() {
+        const {
+            children,
+            onScroll,
+            footer,
+        } = this.props;
+
         return (
             <div className='table'>
                 <div className='table__head'>
@@ -55,16 +60,14 @@ class DataTable extends React.PureComponent {
 
                 {this.props.footer &&
                     <div className='table__foot'>
-                        {this.renderRow(this.props.footer, true)}
+                        {this.renderRow(footer, true)}
                     </div>
                 }
                 
-                <PerfectScrollbar>
-                    <div className='table__body'>
-                        {this.renderBodyRows()}
-                        {this.props.children}
-                    </div>
-                </PerfectScrollbar>
+                <div className='table__body' onScroll={onScroll}>
+                    {this.renderBodyRows()}
+                    {children}
+                </div>
             </div>
         );
     }
@@ -74,6 +77,7 @@ DataTable.propTypes = {
     columns         : PropTypes.array,
     data_source     : MobxPropTypes.arrayOrObservableArray,
     footer          : PropTypes.object,
+    onScroll        : PropTypes.func,
 };
 
 

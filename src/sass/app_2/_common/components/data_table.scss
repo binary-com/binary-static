@@ -8,10 +8,6 @@ $header-height: 42px;
     color: $COLOR_LIGHT_BLACK;
     font-size: 14px;
 
-    .scrollbar-container {
-        flex-grow: 1;
-        display: flex;
-    }
     &__head {
         height: $header-height;
 
@@ -24,6 +20,7 @@ $header-height: 42px;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
     }
     &__row {
         border-style: solid;
