@@ -1,54 +1,49 @@
 $header-height: 42px;
 
 .table {
-    color: $COLOR_LIGHT_BLACK;
-    font-size: 14px;
-    border: 1px solid $COLOR_GRAY;
-    border-radius: 2px;
-    overflow: hidden; // children outside border radius are hidden
-
+    height: 100px; // default height for flex-grow on .table to work
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    height: 50vh;
+    color: $COLOR_LIGHT_BLACK;
+    font-size: 14px;
 
+    .scrollbar-container {
+        flex-grow: 1;
+    }
     &__head {
         height: $header-height;
 
         .table__row {
+            border-top-width: 1px;
             height: 100%;
         }
     }
-    &__body {
-        display: block;
-        height: calc(100% - #{$header-height});
-
-        .table__row:hover {
-            background-color: $COLOR_GRAY;
-        }
-    }
     &__row {
-        border-bottom: 1px solid $COLOR_GRAY;
+        border-style: solid;
+        border-color: $COLOR_GRAY;
+        border-width: 0 1px 1px;
         display: grid;
+        padding: 0 16px;
+    }
+    &__body .table__row:hover {
+        background-color: $COLOR_GRAY;
     }
     &__cell {
         padding: 0.75rem;
         display: flex;
         align-items: center;
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
     }
     &__head, &__foot {
         font-weight: 600;
         white-space: nowrap;
         background-color: $COLOR_LIGHT_GRAY;
     }
-    // th, td {
-    //     border: none;
-
-    //     &:first-child {
-    //         @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
-    //     }
-    //     &:last-child {
-    //         @include interpolate(padding-right, 981px, 1440px, 16px, 32px);
-    //     }
-    // }
 }

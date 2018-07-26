@@ -12,7 +12,7 @@ $side-padding: 12px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
+        padding-left: 16px;
     }
     &__label {
         margin-right: 0.6rem;
@@ -84,6 +84,9 @@ $side-padding: 12px;
     }
 
     /* TABLE STYLES START */
+    .table {
+        flex-grow: 1;
+    }
     .table__body .table__row {
         cursor: pointer;
     }
