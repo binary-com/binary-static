@@ -36,6 +36,10 @@ footer {
             display: inline-flex;
             align-items: center;
 
+            .inline-icon {
+                width: 16px;
+                height: 16px;
+            }
             span {
                 font-size: 0.8rem;
                 text-transform: capitalize;
@@ -53,36 +57,14 @@ footer {
     }
 }
 
-// TODO: Use font-icons
 .ic-portfolio {
-    &.active:before {
-        content: url('../images/app_2/footer/ic_portfolio_active_light.svg');
+    &.active {
+        // change stroke to active
+        stroke: $COLOR_BLUE;
     }
-    &:before {
-        content: url('../images/app_2/footer/ic_portfolio_normal_light.svg');
-    }
-}
-
-.ic-statement:before {
-    content: url('../images/app_2/footer/ic_statement_normal_light.svg');
-}
-
-.ic-chat-bubble:before {
-    content: url('../images/app_2/footer/ic_chat_bubble_outline_light.svg');
-}
-
-.ic-two-step:before {
-    content: url('../images/app_2/footer/ic_purchase_confirmation_light.svg');
-}
-
-.ic-lock-open:before {
-    content: url('../images/app_2/footer/ic_lock_open_light.svg');
 }
 
 .ic-settings {
-    &:before {
-        content: url('../images/app_2/footer/ic_edit_normal_light.svg');
-    }
     &.active {
         background: $COLOR_GRAY;
 
@@ -96,8 +78,4 @@ footer {
             left: 0;
         }
     }
-}
-
-.ic-fullscreen:before {
-    content: url('../images/app_2/footer/ic_fullscreen_light.svg');
 }

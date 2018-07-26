@@ -151,3 +151,24 @@
         }
     }
 }
+
+// Dark Theme
+.theme-wrapper.dark {
+    .portfolio-drawer {
+        color: $COLOR_WHITE;
+        background: $COLOR_BLUE;
+        border-color: $COLOR_COOL_GRAY;
+
+        p {
+            color: $COLOR_DARK_GRAY;
+        }
+        .portfolio {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_COOL_GRAY;
+
+            span {
+                color: $COLOR_WHITE;
+            }
+        }
+    }
+}

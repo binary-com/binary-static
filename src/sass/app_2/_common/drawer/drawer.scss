@@ -281,5 +281,16 @@ hr {
         .drawer-item a span {
             color: $COLOR_WHITE;
         }
+        &.left, &.right {
+            .drawer-header {
+                border-color: $COLOR_COOL_GRAY;
+
+                .icons {
+                    &.brand-logo, &.btn-close {
+                        border-color: $COLOR_COOL_GRAY;
+                    }
+                }
+            }
+        }
     }
 }

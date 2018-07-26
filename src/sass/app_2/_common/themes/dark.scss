@@ -55,38 +55,55 @@
             background-color: $COLOR_WHITE;
         }
     }
+    .app-contents {
+        fieldset {
+            background: $COLOR_LIGHTER_BLUE;
+            color: $COLOR_WHITE;
+            border-color: $COLOR_COOL_GRAY;
+
+            div.fieldset-header {
+                span.field-info.left {
+                    color: $COLOR_DARK_GRAY;
+                }
+            }
+            input, select {
+                background: $COLOR_BLUE;
+                color: $COLOR_WHITE;
+                border-color: $COLOR_COOL_GRAY;
+            }
+            div.submit-section button.btn:disabled {
+                box-shadow: 0 2px 2px 0 $COLOR_GLASS_GRAY;
+            }
+        }
+        div.purchase-wrapper {
+            div.purchase-error {
+                background: $COLOR_LIGHTER_BLUE;
+                border-color: $COLOR_COOL_GRAY;
+                color: $COLOR_DARK_GRAY;
+            }
+        }
+    }
     footer {
         border-color: $COLOR_COOL_GRAY;
         color: $COLOR_DARK_GRAY;
 
-        .server-time {
-            border-color: $COLOR_COOL_GRAY;
-        }
-    }
-    fieldset {
-        background: $COLOR_LIGHTER_BLUE;
-        color: $COLOR_WHITE;
-        border-color: $COLOR_COOL_GRAY;
-
-        div.fieldset-header {
-            span.field-info.left {
+        .footer-links a {
+            span {
                 color: $COLOR_DARK_GRAY;
             }
+            &:hover, &:focus {
+                background: $COLOR_COOL_GRAY;
+            }
+            &.active {
+                background: $COLOR_COOL_GRAY;
+
+                &:after {
+                    background: $COLOR_WHITE;
+                }
+            }
         }
-        input, select {
-            background: $COLOR_BLUE;
-            color: $COLOR_WHITE;
+        .server-time {
             border-color: $COLOR_COOL_GRAY;
-        }
-        div.submit-section button.btn:disabled {
-            box-shadow: 0 2px 2px 0 $COLOR_GLASS_GRAY;
-        }
-    }
-    div.purchase-wrapper {
-        div.purchase-error {
-            background: $COLOR_LIGHTER_BLUE;
-            border-color: $COLOR_COOL_GRAY;
-            color: $COLOR_DARK_GRAY;
         }
     }
 }
