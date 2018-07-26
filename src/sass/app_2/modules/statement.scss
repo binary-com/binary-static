@@ -86,6 +86,7 @@ $side-padding: 12px;
     /* TABLE STYLES START */
     .table {
         flex-grow: 1;
+        border-bottom: none;
     }
     .table__body .table__row {
         cursor: pointer;
