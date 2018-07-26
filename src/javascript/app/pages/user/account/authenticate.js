@@ -398,7 +398,7 @@ const Authenticate = (() => {
         if (response.warning || response.error) {
             is_any_upload_failed = true;
             showError({
-                message: response.message || response.error.message,
+                message: response.message || (response.error ? response.error.message : localize('Failed')),
                 class  : response.passthrough.class,
             });
         } else if (is_last_upload && !is_any_upload_failed) {
