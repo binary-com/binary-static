@@ -54,6 +54,8 @@ const PersonalDetails = () => (
                 <FormRow type='label'  label={it.L('Name')} is_bold id='lbl_name' row_class='invisible RealAcc JpAcc' row_id='row_name' />
                 <FormRow type='label'  label={it.L('Gender')} is_bold id='lbl_gender' row_class='invisible JpAcc' />
                 <FormRow type='label'  label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' />
+                <FormRow type='label'  label={it.L('Nationality')} id='lbl_citizen' row_id='row_lbl_citizen' row_class='invisible' />
+                <FormRow type='select' label={it.L('Nationality')} id='citizen' row_id='row_citizen' row_class='invisible' attributes={{single: 'single'}} />
                 <FormRow type='label'  label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />
                 <FormRow type='select' label={it.L('Place of birth')} id='place_of_birth' row_id='row_place_of_birth' row_class='invisible' attributes={{single: 'single'}} />
                 <FormRow type='label'  label={it.L('Country of Residence')} is_bold id='lbl_country' row_id='row_country' />

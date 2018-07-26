@@ -54,9 +54,15 @@ const AccountOpening = (() => {
             const residence_value = Client.get('residence') || '';
             let residence_text    = '';
 
-            const $options = $('<div/>');
+            const $options               = $('<div/>');
+            const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption({ text: res.text, value: res.value, is_disabled: res.disabled }));
+                $options.append(makeOption({ text: res.text, value: res.value }));
+                $options_with_disabled.append(makeOption({
+                    text       : res.text,
+                    value      : res.value,
+                    is_disabled: res.disabled,
+                }));
 
                 if (residence_value === res.value) {
                     residence_text = res.text;
@@ -76,7 +82,7 @@ const AccountOpening = (() => {
                               (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
                         $place_of_birth.replaceWith($('<span/>', { text: txt_place_of_birth || place_of_birth, 'data-value': place_of_birth }));
                     } else {
-                        $place_of_birth.html($options.html()).val(residence_value);
+                        $place_of_birth.html($options_with_disabled.html()).val(residence_value);
                     }
                     $place_of_birth.select2({
                         matcher(params, data) {
@@ -108,7 +114,7 @@ const AccountOpening = (() => {
             }
 
             if ($tax_residence) {
-                $tax_residence.html($options.html()).promise().done(() => {
+                $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(getTaxResidence() || residence_value).trigger('change')

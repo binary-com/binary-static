@@ -54,7 +54,7 @@ const PersonalDetails = (() => {
 
     const showHideLabel = (get_settings) => {
         if (!is_jp_client) {
-            ['place_of_birth', 'account_opening_reason'].forEach((id) => {
+            ['place_of_birth', 'account_opening_reason', 'citizen'].forEach((id) => {
                 if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
                     if (get_settings[id]) {
                         // we have to show text here instead of relying on displayGetSettingsData()
@@ -212,6 +212,9 @@ const PersonalDetails = (() => {
                 { selector: '#residence', validations: ['req'] },
             ];
         } else {
+            const is_financial = Client.isAccountOfType('financial');
+            const is_gaming    = Client.isAccountOfType('gaming');
+
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
                 { selector: '#address_line_2',         validations: ['address'] },
@@ -226,12 +229,17 @@ const PersonalDetails = (() => {
                 { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
                 { selector: '#chk_tax_id',     validations: Client.isAccountOfType('financial') ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
-            const tax_id_validation = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
-            if (Client.isAccountOfType('financial')) {
+
+            const tax_id_validation  = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
+            const citizen_validation = { selector: '#citizen' };
+            if (is_financial) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
-            validations.push(tax_id_validation);
+            if (is_financial || is_gaming) {
+                citizen_validation.validations = ['req'];
+            }
+            validations.push(tax_id_validation, citizen_validation);
         }
         return validations;
     };
@@ -304,6 +312,13 @@ const PersonalDetails = (() => {
                     if (!get_settings_data.place_of_birth) {
                         $options.prepend($('<option/>', { value: '', text: localize('Please select') }));
                         $('#place_of_birth')
+                            .html($options.html())
+                            .val(residence);
+                    }
+
+                    if (!get_settings_data.citizen) {
+                        $options.prepend($('<option/>', { value: '', text: localize('Please select') }));
+                        $('#citizen')
                             .html($options.html())
                             .val(residence);
                     }
@@ -388,7 +403,7 @@ const PersonalDetails = (() => {
                         } else {
                             getDetailsResponse(get_settings_data, response.residence_list);
                         }
-                        $('#place_of_birth').select2({
+                        $('#place_of_birth, #citizen').select2({
                             matcher(params, data) {
                                 return SelectMatcher(params, data);
                             },
