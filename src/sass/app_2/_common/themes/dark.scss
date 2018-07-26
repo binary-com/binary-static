@@ -29,6 +29,13 @@
                             stroke: $COLOR_WHITE;
                             fill: $COLOR_WHITE;
                         }
+                        .no-stroke {
+                            stroke: $COLOR_BLUE;
+                        }
+                        .no-fill {
+                            fill: $COLOR_BLUE;
+                        }
+
                     }
                 }
                 &:after {
@@ -92,12 +99,69 @@
             div.submit-section button.btn:disabled {
                 box-shadow: 0 2px 2px 0 $COLOR_GLASS_GRAY;
             }
+            .symbols {
+                color: $COLOR_WHITE;
+                background: $COLOR_LIGHTER_BLUE;
+                border-radius: 0;
+            }
         }
         div.purchase-wrapper {
             div.purchase-error {
                 background: $COLOR_LIGHTER_BLUE;
                 border-color: $COLOR_COOL_GRAY;
                 color: $COLOR_DARK_GRAY;
+            }
+        }
+        .portfolio {
+            background: $COLOR_BLUE;
+
+            .portfolio_header_container {
+                background: $COLOR_BLUE;
+
+                h2 {
+                    color: $COLOR_DARK_GRAY;
+                }
+            }
+            table.table {
+                color: $COLOR_DARK_GRAY;
+
+                .table-head, .table-foot {
+                    background-color: $COLOR_BLUE;
+                    border-color: $COLOR_COOL_GRAY;
+
+                    .table-row {
+                        background: $COLOR_BLUE;
+                        border-color: $COLOR_COOL_GRAY;
+                    }
+                }
+                .table-body {
+                    td {
+                        &.reference {
+                            color: $COLOR_SKY_BLUE;
+                        }
+                        &.details, &.payout, &.purchase, &.remaining_time {
+                            color: $COLOR_WHITE;
+                        }
+                        div.type_container {
+                            color: $COLOR_WHITE;
+                        }
+                    }
+                    .table-row {
+                        background: $COLOR_BLUE;
+                        border-color: $COLOR_COOL_GRAY;
+
+                        td.payout span.symbol {
+                            background: $COLOR_BLUE;
+                        }
+                        &:hover {
+                            background: $COLOR_COOL_GRAY;
+
+                            td.payout span.symbol {
+                                background: $COLOR_COOL_GRAY;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

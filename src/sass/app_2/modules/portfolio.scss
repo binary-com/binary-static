@@ -15,10 +15,11 @@
 
 .portfolio {
     padding-top: 60px;
+    min-height: calc(100vh - 110px);
 
     .portfolio_header_container {
         position: fixed;
-        top: 57px;
+        top: 49px;
         height: 60px;
         display: flex;
         align-items: center;
