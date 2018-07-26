@@ -1,51 +1,54 @@
+$header-height: 42px;
+
 .table {
     color: $COLOR_LIGHT_BLACK;
     font-size: 14px;
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
     border: 1px solid $COLOR_GRAY;
     border-radius: 2px;
+    overflow: hidden; // children outside border radius are hidden
 
-    &-row {
-        border-bottom: 1px solid $COLOR_GRAY;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 50vh;
+
+    &__head {
+        height: $header-height;
+
+        .table__row {
+            height: 100%;
+        }
     }
-    &-head, &-foot {
+    &__body {
+        display: block;
+        height: calc(100% - #{$header-height});
+
+        .table__row:hover {
+            background-color: $COLOR_GRAY;
+        }
+    }
+    &__row {
+        border-bottom: 1px solid $COLOR_GRAY;
+        display: grid;
+    }
+    &__cell {
+        padding: 0.75rem;
+        display: flex;
+        align-items: center;
+    }
+    &__head, &__foot {
         font-weight: 600;
-        text-align: left;
+        white-space: nowrap;
         background-color: $COLOR_LIGHT_GRAY;
     }
-    th, td {
-        padding: 0.75rem;
-        border: none;
+    // th, td {
+    //     border: none;
 
-        &:first-child {
-            @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
-        }
-        &:last-child {
-            @include interpolate(padding-right, 981px, 1440px, 16px, 32px);
-        }
-    }
-    &--fixed-header:not(.table-clone) {
-        .table-head {
-            visibility: hidden;
-        }
-    }
-    &-body &-row:hover {
-        background-color: $COLOR_GRAY;
-    }
-    // styles for fixed table header
-    &.table-clone {
-        position: fixed;
-        z-index: 80;
-        pointer-events: none;
-
-        .table-head {
-            pointer-events: auto;
-            visibility: visible;
-        }
-        .table-body {
-            visibility: hidden;
-        }
-    }
+    //     &:first-child {
+    //         @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
+    //     }
+    //     &:last-child {
+    //         @include interpolate(padding-right, 981px, 1440px, 16px, 32px);
+    //     }
+    // }
 }

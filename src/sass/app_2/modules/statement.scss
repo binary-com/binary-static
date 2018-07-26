@@ -4,9 +4,6 @@ $side-padding: 12px;
 .statement-filter {
     box-sizing: border-box;
     height: $filter-height;
-    position: fixed;
-    z-index: 90;
-    background-color: $COLOR_WHITE;
     width: 100%;
     font-size: 14px;
 
@@ -73,7 +70,6 @@ $side-padding: 12px;
 
 .statement {
     padding: 0 $side-padding;
-    overflow: auto; // prevent margin collapse
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -82,34 +78,20 @@ $side-padding: 12px;
         background: $COLOR_LIGHT_GRAY;
     }
     &__content {
-        padding-top: $filter-height;
-        overflow: auto;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
     }
 
     /* TABLE STYLES START */
-    .table-head {
-        white-space: nowrap;
-    }
-    .table-body .table-row {
+    .table__body .table__row {
         cursor: pointer;
     }
-    .date, .refid {
-        width: 6.5rem;
-    }
-    .action {
-        width: 5rem;
-    }
-    .payout {
-        width: 7rem;
-    }
-    .amount, .balance {
-        width: 6rem;
+    .table__row {
+        grid-template-columns: 6.5rem 6.5rem 1fr 5rem 7rem 6rem 6rem;
     }
     .payout, .amount, .balance {
-        text-align: right;
+        justify-content: flex-end;
     }
     .amount {
         font-weight: bold;
