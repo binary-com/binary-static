@@ -262,4 +262,14 @@
             fill: $COLOR_BLUE;
         }
     }
+    .acc-switcher-header {
+        border-color: $COLOR_COOL_GRAY;
+    }
+    .acc-switcher-list {
+        background: $COLOR_BLUE;
+
+        .acc-switcher-items {
+            color: $COLOR_DARK_GRAY;
+        }
+    }
 }

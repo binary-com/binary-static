@@ -75,10 +75,13 @@ hr {
                             padding: 8px 20px;
                             border-left: 1px solid $COLOR_GRAY;
 
-                            img {
-                                width: 9.5rem;
-                                height: auto;
-                                align-self: center;
+                            div.img:before {
+                                display: block;
+                                content: ' ';
+                                background-image: url('../images/app_2/header/binary_logo_light.svg');
+                                background-size: 138px 32px;
+                                height: 32px;
+                                width: 138px;
                             }
                         }
                     }
@@ -278,8 +281,25 @@ hr {
         color: $COLOR_WHITE;
         box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
 
-        .drawer-item a span {
-            color: $COLOR_WHITE;
+        .drawer-item {
+            a {
+                &:before {
+                    color: $COLOR_DARK_GRAY;
+                }
+                &:hover:before {
+                    color: $COLOR_WHITE;
+                }
+                span {
+                    color: $COLOR_DARK_GRAY;
+                }
+            }
+            &:hover {
+                background: $COLOR_COOL_GRAY;
+
+                span {
+                    color: $COLOR_WHITE;
+                }
+            }
         }
         &.left, &.right {
             .drawer-header {
@@ -288,6 +308,9 @@ hr {
                 .icons {
                     &.brand-logo, &.btn-close {
                         border-color: $COLOR_COOL_GRAY;
+                    }
+                    &.brand-logo div.img:before {
+                        background-image: url('../images/app_2/header/binary_logo_dark.svg');
                     }
                 }
             }
