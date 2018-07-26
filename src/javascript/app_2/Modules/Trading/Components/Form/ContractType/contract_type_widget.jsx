@@ -2,7 +2,7 @@ import PropTypes          from 'prop-types';
 import React              from 'react';
 import ContractTypeDialog from './contract_type_dialog.jsx';
 import ContractTypeList   from './contract_type_list.jsx';
-import { IconArrow }      from '../../../../../App/Assets/Common';
+import { IconArrow }      from '../../../../../Assets/Common';
 
 class ContractTypeWidget extends React.PureComponent {
     constructor(props) {
@@ -33,6 +33,7 @@ class ContractTypeWidget extends React.PureComponent {
 
     handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_dialog_open) {
+            console.log(event.target);
             this.setState({ is_dialog_open: false });
         }
     };

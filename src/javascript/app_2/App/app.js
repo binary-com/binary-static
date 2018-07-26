@@ -51,28 +51,26 @@ const getBasename = () => {
 const BinaryApp = ({ root_store }) => (
     <Router basename={ getBasename() }>
         <MobxProvider store={root_store}>
-            <React.Fragment>
-                <ThemeWrapper>
-                    <div id='header'>
-                        <Header
-                            items={[
-                                { icon: 'trade',     text: localize('Trade'),     link_to: routes.trade },
-                                { icon: 'portfolio', text: localize('Portfolio'), link_to: routes.portfolio },
-                                { icon: 'statement', text: localize('Statement'), link_to: routes.statement },
-                                // TODO
-                                // Hide the Cashier button until its implementaiton is completed.
-                                // { icon: 'cashier',   text: localize('Cashier') },
-                            ]}
-                        />
-                    </div>
-                    <div id='app_contents' className='app-contents'>
-                        <BinaryRoutes />
-                    </div>
-                    <footer id='footer'>
-                        <Footer />
-                    </footer>
-                </ThemeWrapper>
-            </React.Fragment>
+            <ThemeWrapper>
+                <div id='header'>
+                    <Header
+                        items={[
+                            { icon: 'trade',     text: localize('Trade'),     link_to: routes.trade },
+                            { icon: 'portfolio', text: localize('Portfolio'), link_to: routes.portfolio },
+                            { icon: 'statement', text: localize('Statement'), link_to: routes.statement },
+                            // TODO
+                            // Hide the Cashier button until its implementaiton is completed.
+                            // { icon: 'cashier',   text: localize('Cashier') },
+                        ]}
+                    />
+                </div>
+                <div id='app_contents' className='app-contents'>
+                    <BinaryRoutes />
+                </div>
+                <footer id='footer'>
+                    <Footer />
+                </footer>
+            </ThemeWrapper>
         </MobxProvider>
     </Router>
 );

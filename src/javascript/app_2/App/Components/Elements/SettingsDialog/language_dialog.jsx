@@ -1,7 +1,7 @@
 import classNames      from 'classnames';
 import React           from 'react';
 import PropTypes       from 'prop-types';
-import { IconBack }    from '../../../Assets/Common';
+import { IconBack }    from '../../../../Assets/Common';
 import { localize }    from '../../../../../_common/localize';
 import {
     getAllowedLanguages,
