@@ -43,6 +43,11 @@
     .faq-box {
         padding: 1rem;
     }
+    .table-container.center-text {
+        & th, td {
+            text-align: center;
+        }
+    }
     @media screen and (max-width: 480px) {
         table, .mobile-text-small {
             font-size: 0.9rem;

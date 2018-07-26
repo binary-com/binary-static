@@ -4,14 +4,11 @@ module.exports = [
     ['cashier',                                 'app/cashier/index',                           'default',    'Cashier'],
     ['cashier/account_transfer',                'app/cashier/account_transfer',                'default',    'Transfer Between Accounts'],
     ['cashier/confirmation',                    'app/cashier/confirmation',                    'default',    'Confirm'],
-    ['cashier/deposit-jp',                      'app/japan/cashier/deposit',                   'default',    'Deposit',                           'NOT-ja,en'],
     ['cashier/epg_forwardws',                   'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/forwardws',                       'app/cashier/deposit_withdraw',                'default',    'Cashier',                           'ja'],
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
     ['cashier/payment_methods',                 'app/cashier/payment_methods',                 'default',    'Payment Methods',                   'ja'],
-    ['cashier/submit-withdraw-jp',              'app/japan/cashier/submit',                    'default',    'Acknowledgement',                   'NOT-ja,en'],
     ['cashier/top_up_virtualws',                'app/user/top_up_virtual',                     'default',    'Top Up Virtual Account'],
-    ['cashier/withdraw-jp',                     'app/japan/cashier/withdraw',                  'default',    'Withdraw',                          'NOT-ja,en'],
 
     ['paymentagent/transferws',                 'app/cashier/paymentagent_transfer',           'default',    'Payment Agent Transfer'],
     ['paymentagent/withdrawws',                 'app/cashier/paymentagent_withdraw',           'default',    'Payment Agent Withdrawal'],
@@ -63,7 +60,7 @@ module.exports = [
     ['user/warning',                            'app/user/warning',                            'default',    'Warning'],
 
     ['endpoint',                                'app/endpoint',                                'default',    'Endpoint'],
-    ['signup',                                  'app/signup',                                  'default',    'Signup'],
+    ['new-account',                             'app/new_account',                             'default',    'Signup'],
 
     ['dialog',                                  'app/dialog',                                  null],
     ['explanation',                             'app/trade/explanation',                       null],

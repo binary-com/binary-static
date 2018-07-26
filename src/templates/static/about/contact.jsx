@@ -116,8 +116,8 @@ const Contact = () => (
             <div className='gr-hide-p gr-hide-m gr-padding-20' />
 
             <div className='gr-row'>
-                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')}    text={it.L('Binary Group Services Sdn. Bhd., C-13-02, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
-                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Kuala Lumpur Office')} text={it.L('Binary Group Services Sdn. Bhd., 30-10, Q Sentral, Jalan Stesen Sentral 2, 50470 Kuala Lumpur')} />
+                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')} text={it.L('Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
+                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')} text={it.L('4X Software Sdn. Bhd., C-10-10(1), iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
             </div>
         </div>
     </div>

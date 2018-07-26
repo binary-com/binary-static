@@ -1,5 +1,23 @@
 // styling for static pages that are too short or simple to need their own styling page
 
+.payment-methods__reference {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-size: cover;
+    vertical-align: middle;
+
+    &:not(:last-child) {
+        margin-right: 5px;
+    }
+    &-pdf {
+        background-image: url('../images/common/reference/pdf.svg');
+    }
+    &-video {
+        background-image: url('../images/common/reference/youtube.svg');
+    }
+}
+
 .box-row {
     border-bottom: 1px solid $COLOR_GRAY;
 
@@ -223,6 +241,12 @@
     .background-gray {
         margin-top: -30px;
     }
+    .margin-right-0 {
+        margin-right: 0 !important;
+    }
+    .margin-left-0 {
+        margin-left: 0 !important;
+    }
 }
 
 .tour-content#content {
@@ -412,6 +436,23 @@ body #not_authenticated_financial ul.checked > li {
                 &.remove {
                     background: url('../images/pages/authenticate/remove.svg') no-repeat;
                 }
+                &.checked {
+                    width: 16px;
+                    height: 12px;
+                }
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+            &.selected {
+                background-color: $COLOR_WHITE;
+            }
+            &.error {
+                color: $COLOR_RED;
+
+                &:before {
+                    content: '*';
+                }
             }
         }
         > input[type=file] {
@@ -420,6 +461,27 @@ body #not_authenticated_financial ul.checked > li {
     }
     .center-text .button .barspinner {
         margin: 0 auto;
+    }
+    .submit-status table {
+        th:not(:last-child) {
+            width: 25%;
+        }
+        .status {
+            &.error-msg {
+                font-size: inherit;
+                font-style: normal;
+            }
+        }
+    }
+    .checked {
+        background: url('../images/pages/authenticate/checked.svg') no-repeat;
+        width: 16px;
+        height: 12px;
+        display: inline-block;
+        margin-left: 5px;
+    }
+    #resolve_error {
+        color: $COLOR_RED;
     }
 }
 
@@ -707,4 +769,8 @@ body #not_authenticated_financial ul.checked > li {
         height: 3rem;
         margin: 5px 0;
     }
+}
+
+#contract-specification table td {
+    white-space: nowrap;
 }

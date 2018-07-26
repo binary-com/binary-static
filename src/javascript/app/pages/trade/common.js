@@ -428,7 +428,7 @@ const commonTrading = (() => {
         hideFormOverlay : () => { showHideOverlay('loading_container3', 'none'); },
         showFormOverlay : () => { showHideOverlay('loading_container3', 'block'); },
         durationOrder   : duration => duration_config[duration].order,
-        durationType    : duration => duration_config[duration].type,
+        durationType    : duration => (duration_config[duration] || {}).type,
         clean           : () => { $chart = null; contracts_element = null; },
     };
 })();

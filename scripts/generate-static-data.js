@@ -9,7 +9,7 @@ const texts = [
     'Month',
     'Year',
     'Sorry, an error occurred while processing your request.',
-    'Please [_1]log in[_2] or [_3]sign up[_2] to view this page.',
+    'Please [_1]log in[_2] or [_3]sign up[_4] to view this page.',
 
     // top bar
     'Click here to open a Real Account',
@@ -76,15 +76,13 @@ const texts = [
     'Time is in the wrong format.',
 
     // highchart localization text
-    'Start time',
-    'Entry spot',
     'Purchase Time',
-    'Exit spot',
-    'End time',
-    'Sell time',
     'Charting for this underlying is delayed',
-    'Reset time',
-    'Payout range',
+    'Reset Time',
+    'Payout Range',
+    'Tick [_1]',
+    'Ticks history returned an empty array.',
+    'Chart is not available for this underlying.',
 
     // trading page
     'year',
@@ -124,6 +122,10 @@ const texts = [
     'Ends Between/Ends Outside',
     'Touch/No Touch',
     'Stays Between/Goes Outside',
+    'Asians',
+    'Reset Call/Reset Put',
+    'High/Low Ticks',
+    'Call Spread/Put Spread',
     'Potential Payout',
     'Maximum Payout',
     'Total Cost',
@@ -164,6 +166,7 @@ const texts = [
     'Purchase',
     'Purchase request sent',
     'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.',
+    'Please reload the page',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -352,6 +355,8 @@ const texts = [
     'Digit Under',
     'Call Spread',
     'Put Spread',
+    'High Tick',
+    'Low Tick',
 
     // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
@@ -443,7 +448,6 @@ const texts = [
     'Open',
     'Closed',
     'Contract has not started yet',
-    'Price',
     'Spot Time',
     'Spot Time (GMT)',
     'Current Time',
@@ -477,6 +481,7 @@ const texts = [
     'Highest Tick Time',
     'Lowest Tick',
     'Lowest Tick Time',
+    'Close Time',
 
     // financial assessment
     'Please select a value',
@@ -517,6 +522,7 @@ const texts = [
     'Should be a valid number.',
     'Should be more than [_1]',
     'Should be less than [_1]',
+    'Should be [_1]',
     'Should be between [_1] and [_2]',
     'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.',
     'Only letters, space, hyphen, period, and apostrophe are allowed.',
@@ -601,6 +607,7 @@ const texts = [
     'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Withdrawals have been disabled on your account. Please check your email for more details.',
     'Please complete your [_1]personal details[_2] before you proceed.',
+    'Account Authenticated',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
@@ -641,7 +648,7 @@ const texts = [
     'Invalid document format: "[_1]"',
     'File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]',
     'ID number is required for [_1].',
-    'Only letters, numbers, space, underscore, and hyphen are allowed for ID number.',
+    'Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).',
     'Expiry date is required for [_1].',
     'Passport',
     'ID card',
@@ -651,6 +658,11 @@ const texts = [
     'Front and reverse side photos of [_1] are required.',
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
     'Following file(s) were already uploaded: [_1]',
+    'Checking',
+    'Checked',
+    'Pending',
+    'Submitting',
+    'Submitted',
 
     // third party link confirmation dialog/popup
     'You will be redirected to a third-party website which is not owned by Binary.com.',

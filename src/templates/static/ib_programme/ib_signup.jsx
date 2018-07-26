@@ -41,7 +41,7 @@ const Signup = () => (
 
         <div className='container gr-padding-20'>
             <h2 className='center-text'>{it.L('Commission structure')}</h2>
-            <div className='gr-padding-20 center-text'>
+            <div className='gr-padding-20 table-container'>
                 <Table
                     className='ib-signup-page__commission-table'
                     data={{
