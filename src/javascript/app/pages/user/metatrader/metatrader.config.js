@@ -57,7 +57,7 @@ const MetaTraderConfig = (() => {
                     const $message = $messages.find('#msg_real_financial').clone();
                     let is_ok = true;
                     if (State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
-                        $message.find('.maltainvest').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('new_account_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                        $message.find('.maltainvest').setVisibility(1);
                         is_ok = false;
                     } else {
                         if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.get_account_status.status)) {
