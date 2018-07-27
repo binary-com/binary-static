@@ -94,6 +94,12 @@ const PersonalDetails = (() => {
                 get_settings.place_of_birth;
         }
 
+        if (get_settings.citizen) {
+            get_settings.citizen =
+                (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text ||
+                get_settings.citizen;
+        }
+
         showHideLabel(get_settings);
 
         displayGetSettingsData(get_settings);
