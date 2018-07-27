@@ -48,7 +48,8 @@ export const daysFromTodayTo = (date) => {
  * @param  {Number} epoch end time
  * @return {moment.duration} moment duration between start time and end time
  */
-export const getDiffDuration = (start_time, end_time) => moment.duration(moment.unix(end_time).diff(moment.unix(start_time)));
+export const getDiffDuration = (start_time, end_time) =>
+    moment.duration(moment.unix(end_time).diff(moment.unix(start_time)));
 
 /**
  * return formatted duration `2 days 01:23:59`

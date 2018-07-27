@@ -96,10 +96,14 @@ class DataTable extends React.PureComponent {
 }
 
 DataTable.propTypes = {
-    columns         : PropTypes.array,
-    data_source     : MobxPropTypes.arrayOrObservableArray,
-    footer          : PropTypes.object,
-    onScroll        : PropTypes.func,
+    columns    : PropTypes.array,
+    data_source: MobxPropTypes.arrayOrObservableArray,
+    footer     : PropTypes.object,
+    onScroll   : PropTypes.func,
+    children   : PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.arrayOf(PropTypes.node),
+    ]),
 };
 
 
