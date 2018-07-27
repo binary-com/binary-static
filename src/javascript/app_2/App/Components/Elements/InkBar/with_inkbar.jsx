@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import PropTypes  from 'prop-types';
 import React      from 'react';
-// import ReactDOM   from 'react-dom';
+import ReactDOM   from 'react-dom';
 import InkBar     from './inkbar.jsx';
 
 const withInkBar = (Component) => {
@@ -11,9 +11,10 @@ const withInkBar = (Component) => {
             width: 0,
         };
 
-        // componentDidMount() {
-        //     this.node = ReactDOM.findDOMNode(this); // eslint-disable-line
-        // }
+        componentDidMount() {
+            this.node = ReactDOM.findDOMNode(this); // eslint-disable-line
+            this.updateInkbarPosition(this.node.querySelector('a[class="active"]'));
+        }
 
         onClick = (e) => {
             if (!e.target) return;
