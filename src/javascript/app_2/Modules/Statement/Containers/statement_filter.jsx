@@ -1,4 +1,3 @@
-import classNames   from 'classnames';
 import moment       from 'moment';
 import PropTypes    from 'prop-types';
 import React        from 'react';
@@ -14,7 +13,7 @@ const Filter = ({
     should_center,
     use_native_pickers,
 }) => (
-    <div className={classNames('statement-filter', { 'statement-filter--center': should_center })}>
+    <div className='statement-filter'>
         <div className='statement-filter__content'>
             <span className='statement-filter__label'>{localize('Filter by date:')}</span>
             <DatePicker
@@ -47,7 +46,6 @@ Filter.propTypes = {
     date_to           : PropTypes.string,
     server_time       : PropTypes.object,
     handleDateChange  : PropTypes.func,
-    should_center     : PropTypes.bool,
     use_native_pickers: PropTypes.bool,
     today             : PropTypes.string,
 };

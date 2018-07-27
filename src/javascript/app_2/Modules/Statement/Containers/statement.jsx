@@ -47,7 +47,7 @@ class Statement extends React.Component {
 
         return (
             <div className={classnames('statement container', { 'statement--card-view': should_show_cards })}>
-                <Filter should_center={should_show_cards} use_native_pickers={should_show_cards} />
+                <Filter use_native_pickers={should_show_cards} />
                 <div className='statement__content'>
                     {
                         should_show_cards ?
