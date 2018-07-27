@@ -213,12 +213,16 @@
 
 }
 
-.inkbar {
-    display: block;
-    position: absolute;
-    content: '';
-    height: 2px;
-    bottom: 0;
-    background-color: $COLOR_BLUE;
-    transition: left 0.3s;
+.with-inkbar {
+    position: relative;
+
+    .inkbar {
+        display: block;
+        position: absolute;
+        content: '';
+        height: 2px;
+        bottom: 0;
+        background-color: $COLOR_BLUE;
+        transition: all 0.3s;
+    }
 }
