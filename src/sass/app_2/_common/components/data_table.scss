@@ -1,7 +1,6 @@
 $header-height: 42px;
 
 .table {
-    height: 100px; // default height for flex-grow on .table to work
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -11,10 +10,9 @@ $header-height: 42px;
 
     &__head {
         height: $header-height;
-
-        .table__row {
-            height: 100%;
-        }
+    }
+    &__head &__row {
+        height: 100%;
     }
     &__body {
         flex-grow: 1;
@@ -28,8 +26,14 @@ $header-height: 42px;
         box-sizing: border-box;
         border-bottom: 1px solid $COLOR_GRAY;
     }
-    &__body .table__row:hover {
-        background-color: $COLOR_GRAY;
+    &__body &__row {
+        &:hover {
+            background-color: $COLOR_GRAY;
+            cursor: pointer;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
     }
     &__cell {
         padding: 0.75rem;
@@ -47,5 +51,9 @@ $header-height: 42px;
         font-weight: 600;
         white-space: nowrap;
         background-color: $COLOR_LIGHT_GRAY;
+    }
+    &__foot &__row {
+        border-top: 1px solid $COLOR_GRAY;
+        border-bottom: none;
     }
 }

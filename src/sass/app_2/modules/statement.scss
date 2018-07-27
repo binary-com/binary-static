@@ -85,11 +85,9 @@ $side-padding: 12px;
 
     /* TABLE STYLES START */
     .table {
+        height: 50px; // default height for flex-grow to work when table is bigger than parent
         flex-grow: 1;
         border-bottom: none;
-    }
-    .table__body .table__row {
-        cursor: pointer;
     }
     .table__row {
         grid-template-columns: 6.5rem 6.5rem 1fr 5rem 7rem 6rem 6rem;

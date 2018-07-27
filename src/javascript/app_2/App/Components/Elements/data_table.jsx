@@ -75,12 +75,6 @@ class DataTable extends React.PureComponent {
                         {this.renderHeaders()}
                     </div>
                 </div>
-
-                {this.props.footer &&
-                    <div className='table__foot'>
-                        {this.renderRow(footer, true)}
-                    </div>
-                }
                 
                 <div
                     className='table__body'
@@ -90,6 +84,12 @@ class DataTable extends React.PureComponent {
                     {this.renderBodyRows()}
                     {children}
                 </div>
+
+                {this.props.footer &&
+                    <div className='table__foot'>
+                        {this.renderRow(footer, true)}
+                    </div>
+                }
             </div>
         );
     }
