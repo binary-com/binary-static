@@ -10,7 +10,6 @@ const Filter = ({
     date_to,
     handleDateChange,
     today,
-    should_center,
     use_native_pickers,
 }) => (
     <div className='statement-filter'>
