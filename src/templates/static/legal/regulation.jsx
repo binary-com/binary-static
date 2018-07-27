@@ -76,8 +76,9 @@ const Area = ({items}) => {
 };
 
 const Regulation = () => {
-    const has_KID = /de|en|es|it|fr|pl|pt|ru/.test(`${it.language.toLowerCase()}`);
-    const lang = has_KID ? `${it.language.toLowerCase()}` : 'en';
+    const has_KID    = /de|en|es|it|fr|pl|pt|ru/.test(`${it.language.toLowerCase()}`);
+    const has_CFD_FX = !/fr/.test(it.language.toLowerCase()); // CFD, FX documents in FR will not be available
+    const lang       = has_KID && has_CFD_FX ? `${it.language.toLowerCase()}` : 'en';
 
     return (
         <div className='static_full'>
@@ -178,9 +179,8 @@ const Regulation = () => {
                             <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Up_Down.pdf`)}        target='_blank' download text={it.L('Up/Down')} />
                             <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Touch_No_Touch.pdf`)} target='_blank' download text={it.L('Touch/No Touch')} />
                             <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/In_and_Out.pdf`)}     target='_blank' download text={it.L('In/Out')} />
-                            {/* TODO: return lang instead of 'en' when we have CFD, FX docs in PL and FR */}
-                            <FillBox dataShow='maltainvest' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${/pl|fr/.test(lang) ? 'en' : lang}/CFD.pdf`)} target='_blank' download text={it.L('CFD')} />
-                            <FillBox dataShow='maltainvest' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${/pl|fr/.test(lang) ? 'en' : lang}/FX.pdf`)}  target='_blank' download text={it.L('FX')} />
+                            <FillBox dataShow='maltainvest' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/CFD.pdf`)} target='_blank' download text={it.L('CFD')} />
+                            <FillBox dataShow='maltainvest' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' download text={it.L('FX')} />
                         </div>
                     </div>
                 </div>
