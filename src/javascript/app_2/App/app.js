@@ -5,7 +5,7 @@ import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import Footer                        from './Containers/Layout/footer.jsx';
 import Header                        from './Containers/Layout/header.jsx';
-import BinaryRoutes                  from './Components/Routes';
+import Routes                        from './Containers/Routes/routes.jsx';
 import { routes }                    from '../Constants';
 import NetworkMonitor                from '../Services/network_monitor';
 import RootStore                     from '../Stores';
@@ -64,7 +64,7 @@ const BinaryApp = ({ root_store }) => (
                     />
                 </div>
                 <div id='app_contents' className='app-contents'>
-                    <BinaryRoutes />
+                    <Routes />
                 </div>
                 <footer id='footer'>
                     <Footer />
