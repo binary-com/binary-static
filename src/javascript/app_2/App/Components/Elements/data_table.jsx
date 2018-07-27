@@ -9,6 +9,24 @@ import React                          from 'react';
 */
 
 class DataTable extends React.PureComponent {
+    componentDidUpdate() {
+        this.alignHeader();
+    }
+
+    alignHeader() {
+        // scrollbar inside body table can push content (depending on the browser and if mouse is plugged in)
+        if (!this.props.data_source.length) return;
+
+        const first_body_row   = this.el_table_body.firstChild;
+        const body_row_width   = first_body_row.offsetWidth;
+        const header_row_width = this.el_header_row.offsetWidth;
+
+        const original_padding_right = parseInt(window.getComputedStyle(first_body_row, null).getPropertyValue('padding-right'));
+        const new_padding_right      = header_row_width - body_row_width + original_padding_right;
+
+        this.el_header_row.style.paddingRight = `${new_padding_right}px`;
+    }
+
     renderRow(row_obj, is_footer = false, id = 0) {
         if (!row_obj) return null;
 
@@ -53,7 +71,7 @@ class DataTable extends React.PureComponent {
         return (
             <div className='table'>
                 <div className='table__head'>
-                    <div className='table__row'>
+                    <div className='table__row' ref={el => { this.el_header_row = el; }}>
                         {this.renderHeaders()}
                     </div>
                 </div>
@@ -64,7 +82,11 @@ class DataTable extends React.PureComponent {
                     </div>
                 }
                 
-                <div className='table__body' onScroll={onScroll}>
+                <div
+                    className='table__body'
+                    onScroll={onScroll}
+                    ref={el => { this.el_table_body = el; }}
+                >
                     {this.renderBodyRows()}
                     {children}
                 </div>
