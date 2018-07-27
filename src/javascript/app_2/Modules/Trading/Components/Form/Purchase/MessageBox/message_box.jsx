@@ -1,11 +1,13 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
-import ErrorGeneral         from './error_general.jsx';
-import ErrorLogin           from './error_login.jsx';
+import { ErrorBalance,
+         ErrorGeneral,
+         ErrorLogin }       from './Templates';
 import PurchaseResult       from './purchase_result.jsx';
 import { getPropertyValue } from '../../../../../../../_common/utility';
+import CloseIcon            from '../../../../../../App/Components/Elements/close_icon.jsx';
 
-const MessageBox = ({ purchase_info }) => {
+const MessageBox = ({ purchase_info, onClick }) => {
     const has_error = !!purchase_info.error;
     let ErrorComponent;
     if (has_error) {
@@ -13,6 +15,9 @@ const MessageBox = ({ purchase_info }) => {
         switch (error_code) {
             case 'AuthorizationRequired':
                 ErrorComponent = <ErrorLogin />;
+                break;
+            case 'InsufficientBalance':
+                ErrorComponent = <ErrorBalance />;
                 break;
             default:
                 ErrorComponent = <ErrorGeneral message={purchase_info.error.message} />;
@@ -23,7 +28,12 @@ const MessageBox = ({ purchase_info }) => {
     return (
         <div className='purchase-error'>
             {has_error ?
-                ErrorComponent
+                <React.Fragment>
+                    <div className='close-btn-container' onClick={onClick}>
+                        <CloseIcon className='ic-close' />
+                    </div>
+                    {ErrorComponent}
+                </React.Fragment>
                 :
                 <PurchaseResult purchase_info={purchase_info.buy} />
             }
@@ -33,6 +43,7 @@ const MessageBox = ({ purchase_info }) => {
 
 MessageBox.propTypes = {
     purchase_info: PropTypes.object,
+    onClick      : PropTypes.func,
 };
 
 export default MessageBox;
