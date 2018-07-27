@@ -1,4 +1,4 @@
-import { action, observable } from 'mobx';
+import { action, computed, observable } from 'mobx';
 
 export const createChartBarriersConfig = (contract_type, proposal_response, onChartBarrierChange) => {
     if (proposal_response.error || !isBarrierSupported(contract_type)) {
@@ -27,7 +27,6 @@ class ChartBarriersConfig {
     constructor({ barrier, barrier2 }, onChartBarrierChange) {
         this.color     = 'green';
         this.lineStyle = 'dashed';
-        this.shade     = 'NONE_SINGLE';
         this.onChange  = this.onBarrierChange;
 
         // trade_store's action to process new barriers on dragged
@@ -35,9 +34,10 @@ class ChartBarriersConfig {
 
         this.high = +barrier || 0; // 0 to follow the price
         if (barrier2) {
-            this.low   = +barrier2;
-            this.shade = 'NONE_DOUBLE';
+            this.low = +barrier2;
         }
+
+        this.shade = this.default_shade;
 
         const has_barrier   = !!barrier;
         this.relative       = !has_barrier || /^[+-]/.test(barrier);
@@ -48,28 +48,34 @@ class ChartBarriersConfig {
     @action.bound
     updateBarriers({ high, low }) {
         this.high = +high || undefined;
-        this.low  = +low || undefined;
+        this.low  = +low  || undefined;
     }
 
     @action.bound
     updateBarrierShade(chart_barriers, is_over, contract_type) {
-        this.shade = (is_over && CONTRACT_SHADES[contract_type]) || this.getDefaults();
+        this.shade = (is_over && CONTRACT_SHADES[contract_type]) || this.default_shade;
     }
 
     @action.bound
     onBarrierChange({ high, low }) {
         this.updateBarriers({ high, low });
-        this.onChartBarrierChange();
+        this.onChartBarrierChange(...barriersToString(this.relative, high, low));
     }
 
-    @action.bound
-    getDefaults = () => (
-        typeof this.high !== 'undefined' &&
-        typeof this.low !== 'undefined' ?
-            'NONE_DOUBLE' :
-            'NONE_SINGLE'
-    );
+    @computed
+    get barrier_count() {
+        return (typeof this.high !== 'undefined') + (typeof this.low !== 'undefined');
+    }
+
+    @computed
+    get default_shade() {
+        return DEFAULT_SHADES[this.barrier_count];
+    };
 }
+
+const barriersToString = (is_relative, ...barriers_list) => barriers_list.map(
+    barrier => `${is_relative && !/^[+-]/.test(barrier) ? '+' : ''}${barrier}`
+);
 
 const CONTRACT_SHADES = {
     CALL       : 'ABOVE',
@@ -80,4 +86,10 @@ const CONTRACT_SHADES = {
     UPORDOWN   : 'OUTSIDE',
     ONETOUCH   : 'NONE_SINGLE', // no shade
     NOTOUCH    : 'NONE_SINGLE', // no shade
+};
+
+// Default non-shade according to number of barriers
+const DEFAULT_SHADES = {
+    1: 'NONE_SINGLE',
+    2: 'NONE_DOUBLE',
 };

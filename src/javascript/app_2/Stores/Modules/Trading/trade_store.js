@@ -207,15 +207,8 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    onChartBarrierChange() {
-        const main_barriers = this.chart_barriers.main;
-        this.processNewValuesAsync(
-            {
-                barrier_1: `${main_barriers.relative && !/^[+-]/.test(main_barriers.high) ? '+' : ''}${main_barriers.high}`,
-                barrier_2: `${main_barriers.low}`,
-            },
-            true,
-        );
+    onChartBarrierChange(barrier_1, barrier_2) {
+        this.processNewValuesAsync({ barrier_1, barrier_2 }, true);
     }
 
     @action.bound
