@@ -85,7 +85,7 @@
             display: block;
             text-align: center;
             z-index: 1;
-            color: $COLOR_BLUE;
+            color: $COLOR_LIGHT_BLACK;
         }
         .clock-header, .fieldset-header, .stake-wrapper {
             span.field-info {
@@ -134,16 +134,20 @@
             }
         }
         .purchase-info-wrapper {
-            line-height: 1rem;
+            line-height: 0.9rem;
             padding-bottom: 1vh;
+            border: 0;
 
-            .stake-wrapper {
-                display: flex;
-                height: 1rem;
+            .info-wrapper {
+                display: inline-flex;
 
-                span.field-info {
-                    margin: 0 0 0 auto;
+                div:last-child {
+                    margin-left: 4px;
                 }
+            }
+            .purchase-tooltip {
+                float: right;
+                margin-top: -4px;
             }
         }
         &.trade-types {
@@ -180,6 +184,7 @@
         div.purchase-error {
             position: absolute;
             top: 0;
+            min-height: 245px;
             height: calc(100% - 2px);
             width: calc(100% - 6px);
             left: 2px;
@@ -188,23 +193,16 @@
             border-radius: $BORDER_RADIUS;
             background: $COLOR_LIGHT_GRAY;
 
-            .close-btn {
-                position: absolute;
-                padding: 8px;
-                top: 0;
-                right: 0;
+            .close-btn-container {
+                float: right;
                 cursor: pointer;
-
-                &:before {
-                    content: url('../images/app_2/footer/ic_close_blue_light.svg');
-                }
             }
             div.purchase-login-wrapper {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                margin-top: 25%;
+                margin-top: 35%;
 
                 button.btn {
                     margin: 0 auto;
@@ -233,11 +231,19 @@
                     }
                 }
             }
-            span.info-text {
+            div.purchase-error-wrapper {
                 display: flex;
-                padding: 10px;
+                flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                margin-top: 45%;
+            }
+            span.info-text {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.5rem 1.5rem;
+                text-align: center;
             }
         }
         fieldset.purchase-option {
@@ -379,6 +385,48 @@
                 border: 1px solid $COLOR_LIGHT_GRAY;
                 width: calc(100% - 6px);
                 height: calc(100% - 2px);
+            }
+            div.purchase-lock-container {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $COLOR_LIGHT_GRAY;
+                opacity: 0.95;
+                min-height: 245px;
+                width: calc(100% - 5px);
+                height: calc(100% - 2px);
+                z-index: 3;
+                top: 0;
+                left: 2px;
+                right: 0;
+                flex-direction: column;
+                bottom: 0;
+                border-radius: $BORDER_RADIUS;
+                border: 1px solid $COLOR_GRAY;
+
+                .lock-container svg.ic-lock {
+                    width: 64px;
+                    height: 64px;
+                }
+                button.btn {
+                    height: 32px;
+                    margin: 0 1rem 1.5rem;
+                    width: 90px;
+                    line-height: 100%;
+                }
+                h4 {
+                    margin: 2px 8px 8px;
+                    padding: 0;
+                    text-transform: capitalize;
+                }
+                span.lock-message {
+                    background: $COLOR_GRAY;
+                    padding: 8px;
+                    margin: 1rem 1rem 0;
+                    border-radius: $BORDER_RADIUS;
+                    font-size: 10px;
+                }
             }
         }
     }
