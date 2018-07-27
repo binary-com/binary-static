@@ -7,7 +7,7 @@ import {
     FirstName,
     LastName,
     DateOfBirth,
-    Nationality,
+    Citizenship,
     Residence,
     AccountOpeningReason,
     AddressLine1,
@@ -32,7 +32,7 @@ const Real = () => (
                 <FirstName />
                 <LastName />
                 <DateOfBirth />
-                <Nationality className='invisible' />
+                <Citizenship className='invisible' />
                 <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{single: 'single'}} />
                 <Residence />
                 <AccountOpeningReason />

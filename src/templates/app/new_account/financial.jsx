@@ -8,7 +8,7 @@ import {
     FirstName,
     LastName,
     DateOfBirth,
-    Nationality,
+    Citizenship,
     Residence,
     AccountOpeningReason,
     AddressLine1,
@@ -35,7 +35,7 @@ const Financial = () => (
                 <FirstName className='input-disabled' />
                 <LastName className='input-disabled' />
                 <DateOfBirth className='input-disabled' />
-                <Nationality />
+                <Citizenship />
                 <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{single: 'single'}} />
                 <Residence />
                 <AccountOpeningReason />

@@ -44,8 +44,8 @@ export const DateOfBirth = ({ className }) => (
     />
 );
 
-export const Nationality = ({ className }) => (
-    <FormRow type='select' id='citizen' label={it.L('Nationality')} row_class={className} row_id='citizen_row' attributes={{single: 'single'}} />
+export const Citizenship = ({ className }) => (
+    <FormRow type='select' id='citizen' label={it.L('Citizenship')} row_class={className} row_id='citizen_row' attributes={{single: 'single'}} />
 );
 
 export const Residence = () => (
