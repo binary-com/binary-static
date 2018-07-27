@@ -111,6 +111,9 @@ export default class PortfolioStore extends BaseStore {
 
     @computed
     get data_with_remaining_time() {
+        // don't use es6 spread operator here
+        // modifying object in place is 20 times faster (http://jsben.ch/YTUEK)
+        // this function runs every second
         return this.data.map((portfolio_pos) => {
             portfolio_pos.remaining_time = formatDuration(
                 getDiffDuration(this.common.server_time.unix(), portfolio_pos.expiry_time)
