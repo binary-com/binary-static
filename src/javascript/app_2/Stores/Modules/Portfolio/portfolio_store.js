@@ -16,7 +16,7 @@ export default class PortfolioStore extends BaseStore {
 
     constructor(root_store) {
         super();
-        this.common = root_store.common;
+        this.root_store = root_store;
     }
 
     @action.bound
@@ -116,7 +116,7 @@ export default class PortfolioStore extends BaseStore {
         // this function runs every second
         return this.data.map((portfolio_pos) => {
             portfolio_pos.remaining_time = formatDuration(
-                getDiffDuration(this.common.server_time.unix(), portfolio_pos.expiry_time)
+                getDiffDuration(this.root_store.common.server_time.unix(), portfolio_pos.expiry_time)
             );
             return portfolio_pos;
         });
