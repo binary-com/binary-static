@@ -3,11 +3,17 @@
     border: 1px solid $COLOR_GRAY;
 
     .contract-header {
+        display: flex;
+        align-items: center;
         padding: 0 10px;
         color: $COLOR_WHITE;
         font-weight: bold;
         line-height: 2rem;
 
+        svg {
+            display: inline-block;
+            margin-right: 7px;
+        }
         &.purchased {
             color: $COLOR_LIGHT_GREEN;
             background-color: $COLOR_LIGHT_GRAY;
