@@ -1,4 +1,5 @@
-import moment from 'moment';
+import moment       from 'moment';
+import { localize } from '../../../_common/localize';
 
 /**
  * Convert epoch to moment object
@@ -43,15 +44,15 @@ export const daysFromTodayTo = (date) => {
 
 /**
  * return moment duration between two dates
- * @param  {Number|moment} epoch start time or moment object
- * @param  {Number|moment} epoch end time or moment object
+ * @param  {Number} epoch start time
+ * @param  {Number} epoch end time
  * @return {moment.duration} moment duration between start time and end time
  */
-export const getDiffDuration = (start_time, end_time) => moment.duration(moment(end_time).diff(moment(start_time)));
+export const getDiffDuration = (start_time, end_time) => moment.duration(moment.unix(end_time).diff(moment.unix(start_time)));
 
 /**
  * return formatted duration `2 days 01:23:59`
- * @param {moment.duration} moment duration object
+ * @param  {moment.duration} moment duration object
  * @return {String} formatted display string
  */
 export const formatDuration = (duration) => {
@@ -61,7 +62,7 @@ export const formatDuration = (duration) => {
     const s = duration.seconds();
     let formatted_str = moment(0).hour(h).minute(m).seconds(s).format('HH:mm:ss');
     if (d > 0) {
-        formatted_str = `${d} ${d > 1 ? 'days' : 'day'} ${formatted_str}`;
+        formatted_str = `${d} ${d > 1 ? localize('days') : localize('day')} ${formatted_str}`;
     }
     return formatted_str;
 };

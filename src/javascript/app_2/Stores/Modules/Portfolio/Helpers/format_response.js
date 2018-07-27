@@ -11,7 +11,7 @@ export const formatPortfolioResponse = (portfolio_arr) => (
             details    : localize(portfolio_pos.longcode.replace(/\n/g, '<br />')),
             payout,
             purchase,
-            expiry_time: portfolio_pos.expiry_time * 1000,
+            expiry_time: portfolio_pos.expiry_time,
             id         : portfolio_pos.contract_id,
             indicative : 0,
         };

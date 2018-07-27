@@ -14,10 +14,9 @@ export default class PortfolioStore extends BaseStore {
     @observable is_loading = false;
     @observable error      = '';
 
-    constructor(common) {
+    constructor(root_store) {
         super();
-        // TODO: is there another way of getting observable from another store?
-        this.common = common;
+        this.common = root_store.common;
     }
 
     @action.bound
@@ -114,7 +113,7 @@ export default class PortfolioStore extends BaseStore {
     get data_with_remaining_time() {
         return this.data.map((portfolio_pos) => {
             portfolio_pos.remaining_time = formatDuration(
-                getDiffDuration(this.common.server_time, portfolio_pos.expiry_time)
+                getDiffDuration(this.common.server_time.unix(), portfolio_pos.expiry_time)
             );
             return portfolio_pos;
         });
