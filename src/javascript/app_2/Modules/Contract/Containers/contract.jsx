@@ -1,7 +1,7 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import ContractDetails from './contract_details.jsx';
-import SmartCharts     from '../../../App/Containers/Charts';
+import SmartChart      from '../../SmartChart';
 import { connect }     from '../../../Stores/connect';
 
 const Contract = ({
@@ -11,7 +11,7 @@ const Contract = ({
     <div className='trade-container'>
         <div className='chart-container notice-msg'>
             { initial_symbol &&
-                <SmartCharts
+                <SmartChart
                     initial_symbol={initial_symbol}
                 />
             }

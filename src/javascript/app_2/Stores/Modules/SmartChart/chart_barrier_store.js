@@ -1,16 +1,13 @@
-import { action, computed, observable } from 'mobx';
+import {
+    action,
+    computed,
+    observable }            from 'mobx';
+import {
+    CONTRACT_SHADES,
+    DEFAULT_SHADES }        from './Constants/barrier_shades';
+import { barriersToString } from './Helpers/barriers';
 
-export const createChartBarriersConfig = (contract_type, proposal_response, onChartBarrierChange) => {
-    if (proposal_response.error || !isBarrierSupported(contract_type)) {
-        return {};
-    }
-
-    return new ChartBarriersConfig(proposal_response.echo_req, onChartBarrierChange);
-};
-
-const isBarrierSupported = (contract_type) => contract_type in CONTRACT_SHADES;
-
-class ChartBarriersConfig {
+export class ChartBarrierStore {
     @observable color;
     @observable lineStyle;
     @observable shade;
@@ -72,24 +69,3 @@ class ChartBarriersConfig {
         return DEFAULT_SHADES[this.barrier_count];
     };
 }
-
-const barriersToString = (is_relative, ...barriers_list) => barriers_list.map(
-    barrier => `${is_relative && !/^[+-]/.test(barrier) ? '+' : ''}${barrier}`
-);
-
-const CONTRACT_SHADES = {
-    CALL       : 'ABOVE',
-    PUT        : 'BELOW',
-    EXPIRYRANGE: 'BETWEEN',
-    EXPIRYMISS : 'OUTSIDE',
-    RANGE      : 'BETWEEN',
-    UPORDOWN   : 'OUTSIDE',
-    ONETOUCH   : 'NONE_SINGLE', // no shade
-    NOTOUCH    : 'NONE_SINGLE', // no shade
-};
-
-// Default non-shade according to number of barriers
-const DEFAULT_SHADES = {
-    1: 'NONE_SINGLE',
-    2: 'NONE_DOUBLE',
-};

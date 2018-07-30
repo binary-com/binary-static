@@ -4,7 +4,7 @@ import React                from 'react';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form_layout.jsx';
 import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
-import SmartCharts          from '../../../App/Containers/Charts';
+import SmartChart           from '../../SmartChart';
 import PortfolioDrawer      from '../../../App/Components/Elements/portfolio_drawer.jsx';
 import { connect }          from '../../../Stores/connect';
 import { getPropertyValue } from '../../../../_common/utility';
@@ -25,8 +25,7 @@ class Trade extends React.Component {
                 })}
             >
                 <div className='chart-container notice-msg'>
-                    <SmartCharts
-                        chart_barriers={this.props.chart_barriers}
+                    <SmartChart
                         initial_symbol={this.props.initial_symbol}
                         onSymbolChange={this.props.onSymbolChange}
                     />
@@ -45,7 +44,6 @@ class Trade extends React.Component {
 }
 
 Trade.propTypes = {
-    chart_barriers        : PropTypes.object,
     initial_symbol        : PropTypes.string,
     is_mobile             : PropTypes.bool,
     is_portfolio_drawer_on: PropTypes.bool,
@@ -58,7 +56,6 @@ Trade.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
-        chart_barriers        : modules.trade.chart_barriers,
         initial_symbol        : modules.trade.symbol,
         is_trade_enabled      : modules.trade.is_trade_enabled,
         onClickNewTrade       : modules.trade.onClickNewTrade,
