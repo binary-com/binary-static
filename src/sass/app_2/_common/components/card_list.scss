@@ -1,6 +1,4 @@
 .card-list {
-    background-color: #fafafa; /* stylelint-disable-line color-no-hex */
-    padding: 0 0.5rem;
     overflow: auto; // fixes margin collapse
 
     &__card {

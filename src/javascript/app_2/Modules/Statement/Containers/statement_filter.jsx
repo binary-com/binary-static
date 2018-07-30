@@ -1,4 +1,3 @@
-import classNames   from 'classnames';
 import moment       from 'moment';
 import PropTypes    from 'prop-types';
 import React        from 'react';
@@ -10,11 +9,11 @@ const Filter = ({
     date_from,
     date_to,
     handleDateChange,
-    is_mobile,
     today,
+    use_native_pickers,
 }) => (
-    <div className={classNames('statement-filter', { 'mobile-only': is_mobile, 'desktop-only': !is_mobile })}>
-        <div className='statement-filter__content container'>
+    <div className='statement-filter'>
+        <div className='statement-filter__content'>
             <span className='statement-filter__label'>{localize('Filter by date:')}</span>
             <DatePicker
                 name='date_from'
@@ -23,7 +22,7 @@ const Filter = ({
                 max_date={date_to || today}
                 onChange={handleDateChange}
                 value={date_from}
-                is_nativepicker={is_mobile}
+                is_nativepicker={use_native_pickers}
             />
             <span className='statement-filter__dash'>&mdash;</span>
             <DatePicker
@@ -35,27 +34,26 @@ const Filter = ({
                 has_today_btn
                 onChange={handleDateChange}
                 value={date_to}
-                is_nativepicker={is_mobile}
+                is_nativepicker={use_native_pickers}
             />
         </div>
     </div>
 );
 
 Filter.propTypes = {
-    date_from       : PropTypes.string,
-    date_to         : PropTypes.string,
-    server_time     : PropTypes.object,
-    handleDateChange: PropTypes.func,
-    is_mobile       : PropTypes.bool,
-    today           : PropTypes.string,
+    date_from         : PropTypes.string,
+    date_to           : PropTypes.string,
+    server_time       : PropTypes.object,
+    handleDateChange  : PropTypes.func,
+    use_native_pickers: PropTypes.bool,
+    today             : PropTypes.string,
 };
 
 export default connect(
-    ({ common, modules, ui }) => ({
+    ({ common, modules }) => ({
         today           : moment(common.server_time).format('YYYY-MM-DD'),
         date_from       : modules.statement.date_from,
         date_to         : modules.statement.date_to,
         handleDateChange: modules.statement.handleDateChange,
-        is_mobile       : ui.is_mobile,
     })
 )(Filter);

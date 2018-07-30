@@ -1,94 +1,165 @@
-
-.indicative {
-    font-weight: bold;
-
-    &.price_moved_up {
-        color: $COLOR_LIGHT_GREEN;
-    }
-    &.price_moved_down {
-        color: $COLOR_LIGHT_RED;
-    }
-    &.no_resale {
-        color: $COLOR_LIGHT_GRAY_2;
-    }
-}
-
 .portfolio {
-    padding-top: 60px;
+    padding: 1.5rem 12px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 
-    .portfolio_header_container {
-        position: fixed;
-        top: 57px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        z-index: 90;
-        width: 100%;
-        background: $COLOR_WHITE;
-        padding-left: 10px;
-
-        h2 {
-            margin: 0px;
-        }
+    &--card-view {
+        background: $COLOR_LIGHT_GRAY;
     }
-    th {
-        white-space: nowrap;
-        @media (max-width: 1000px) {
-            white-space: normal;
-        }
-
-        &.details {
-            width: 30%;
-            @media (max-width: 900px) {
-                width: 20%;
-            }
-        }
-        &.remaining_time {
-            width: 16%;
-        }
-        &.type {
-            text-align: center;
-        }
+    .table {
+        height: 50px; // default height for flex-grow to work when table is bigger than parent
+        flex-grow: 1;
+    }
+    .table__row {
+        grid-template-columns: 6.5rem 7rem 1fr 6rem 9rem 6rem 5rem;
     }
     .payout, .indicative, .purchase, .remaining_time {
-        text-align: right;
+        justify-content: flex-end;
     }
-    .table-body {
-        td.reference span.tooltip {
-            color: $COLOR_LIGHT_BLUE;
-            text-decoration: none;
-        }
-        td.reference {
-            color: $COLOR_LIGHT_BLUE;
-        }
-        .type_container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    .contract-type {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-            .trade_type_icon {
-                width: 20px;
-                height: 20px;
-                padding: 5px;
-                margin-bottom: 3px;
-                border-radius: 100%;
-                background-color: $COLOR_LIGHT_GRAY;
+        &__icon {
+            width: 20px;
+            height: 20px;
+            padding: 5px;
+            margin-bottom: 3px;
+            border-radius: 100%;
+            background-color: $COLOR_GRAY;
+        }
+    }
+    .indicative {
+        font-weight: bold;
+
+        &--price-moved-up {
+            color: $COLOR_LIGHT_GREEN;
+        }
+        &--price-moved-down {
+            color: $COLOR_LIGHT_RED;
+        }
+        &--no-resale {
+            color: $COLOR_LIGHT_GRAY_2;
+        }
+        &__no-resale-msg {
+            font-size: 10px;
+            font-weight: 400;
+        }
+    }
+    // empty portfolio message
+    &-empty {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__icon {
+            display: inline-block;
+            height: 64px;
+            width: 64px;
+            background-size: 64px;
+            background-image: url('../images/app_2/header/icons/ic_portfolio_normal_light.svg');
+            margin-bottom: 16px;
+        }
+        &__title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        &__text {
+            font-size: 14px;
+        }
+    }
+    // portfolio card
+    // TODO: reuse statement styles (common component?)
+    &-card {
+        &__header {
+            font-size: 10px;
+            padding: 0.5rem;
+            border-bottom: 1px solid $COLOR_GRAY;
+            display: flex;
+            justify-content: space-between;
+        }
+        &__refid {
+            color: $COLOR_LIGHT_BLUE;
+        }
+        &__body {
+            padding: 0.5rem;
+            font-size: 12px;
+        }
+        &__desc {
+            margin-bottom: 0.7rem;
+        }
+        &__row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            font-weight: bold;
+        }
+        &__cell-text {
+            vertical-align: middle;
+        }
+        &__cell:before {
+            content: '';
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            background-size: 16px 16px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        &__purchase:before {
+            background-image: url('../images/app_2/statement/ic_purchase.svg');
+        }
+        &__payout:before {
+            background-image: url('../images/app_2/statement/ic_payout.svg');
+        }
+        &__indicative {
+            &--price-moved-up {
+                color: $COLOR_LIGHT_GREEN;
+
+                &:before {
+                    background-image: url('../images/app_2/statement/ic_price_up.svg');
+                }
+            }
+            &--price-moved-down {
+                color: $COLOR_LIGHT_RED;
+
+                &:before {
+                    background-image: url('../images/app_2/statement/ic_price_down.svg');
+                }
+            }
+            &--price-stable {
+                color: $COLOR_BLACK;
+
+                &:before {
+                    background-image: url('../images/app_2/statement/ic_price_stable.svg');
+                }
+            }
+            &--no-resale {
+                color: $COLOR_GRAY;
+
+                &:before {
+                    background-image: url('../images/app_2/statement/ic_no_resale.svg');
+                }
             }
         }
     }
 }
 
-// Contract type => Icon name
-$ICON_LIST: asianu asaind call calle put digitdiff digiteven digitmatch digitodd digitover digitunder expirymiss
+$CONTRACT_TYPE_LIST: asianu asaind call calle put digitdiff digiteven digitmatch digitodd digitover digitunder expirymiss
     expiryrange expiryrangee fall notouch onetouch range rise upordown lbfloatcall lbfloatput lbhighlow;
 
-// $style: light or dark
+// $style: 'light' or 'dark'
 @function tradetypeicon($style, $trade_type) {
     @return url('../images/app_2/contracts/types/' + $style + '/ic_' + $trade_type + '.svg');
 }
 
-@each $icon in $ICON_LIST {
-    .icon_#{$icon}--light {
-        content: tradetypeicon('light', $icon);
+@each $type in $CONTRACT_TYPE_LIST {
+    .#{$type}-icon--light {
+        content: tradetypeicon('light', $type);
     }
 }
