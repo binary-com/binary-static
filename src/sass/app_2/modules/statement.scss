@@ -1,34 +1,82 @@
 $filter-height: 60px;
+$side-padding: 12px;
 
-.statement-filter {
-    box-sizing: border-box;
-    height: $filter-height;
-    position: fixed;
-    z-index: 90;
-    background-color: $COLOR_WHITE;
-    width: 100%;
-    font-size: 14px;
-    border-bottom: 1px solid $COLOR_GRAY;
-    @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
+.statement {
+    padding: 0 $side-padding;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 
+    &-filter {
+        box-sizing: border-box;
+        height: $filter-height;
+        width: 100%;
+        font-size: 14px;
+
+        &__content {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 16px;
+        }
+        &__label {
+            margin-right: 0.6rem;
+        }
+        &__dash {
+            margin: 0 0.5rem;
+        }
+    }
     &__content {
-        height: 100%;
+        flex-grow: 1;
         display: flex;
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
     }
-    &__label {
-        margin-right: 0.6rem;
+
+    /*
+        TABLE STYLES START
+    */
+    .table {
+        height: 50px; // default height for flex-grow to work when table is bigger than parent
+        flex-grow: 1;
+        border-bottom: none;
     }
-    &__dash {
-        margin: 0 0.5rem;
+    .table__row {
+        grid-template-columns: 6.5rem 6.5rem 1fr 5rem 7rem 6rem 6rem;
     }
-    &.mobile-only {
-        padding: 0 0.5rem;
+    .payout, .amount, .balance {
+        justify-content: flex-end;
+    }
+    .amount {
+        font-weight: bold;
+
+        &--profit {
+            color: $COLOR_LIGHT_GREEN;
+        }
+        &--loss {
+            color: $COLOR_LIGHT_RED;
+        }
+    }
+    /*
+        TABLE STYLES END
+    */
+
+    /*
+        MOBILE CARDS START
+    */
+    &--card-view {
+        background: $COLOR_LIGHT_GRAY;
 
         .statement-filter {
+            position: fixed;
+            background-color: $COLOR_WHITE;
+            padding: 0 $side-padding;
+            left: 0;
+            border-bottom: 1px solid $COLOR_GRAY;
+
             &__content {
                 padding: 0;
+                margin: 0 auto;
                 max-width: 450px;
                 display: grid;
                 grid-template-columns: 1fr 30px 1fr;
@@ -42,59 +90,10 @@ $filter-height: 60px;
                 display: none;
             }
         }
-    }
-}
-
-.statement {
-    &__content {
-        padding-top: $filter-height;
-        overflow: auto;
-
-        @media (max-width: 768px) {
-            background-color: #fafafa; /* stylelint-disable-line color-no-hex */
+        .statement__content {
+            margin-top: $filter-height;
         }
     }
-    &__no-activity-msg {
-        padding: 1rem;
-        @include interpolate(padding-left, 981px, 1440px, 16px, 32px);
-        font-size: 1rem;
-    }
-
-    /* TABLE STYLES START */
-    .table-head {
-        white-space: nowrap;
-    }
-    .table-body .table-row {
-        cursor: pointer;
-    }
-    .date, .refid {
-        width: 6.5em;
-    }
-    .desc {
-        padding-right: 2rem !important;
-    }
-    .action {
-        width: 6.5em;
-    }
-    .payout, .amount, .balance {
-        width: 6em;
-        text-align: right;
-    }
-    th.payout {
-        direction: rtl;
-    }
-    .amount {
-        font-weight: bold;
-
-        &.profit {
-            color: #4caf50; /* stylelint-disable-line color-no-hex */
-        }
-        &.loss {
-            color: #f44336; /* stylelint-disable-line color-no-hex */
-        }
-    }
-    /* TABLE STYLES END */
-
     &-card {
         &__header {
             font-size: 10px;
@@ -155,6 +154,34 @@ $filter-height: 60px;
         }
         &__balance:before {
             background-image: url('../images/app_2/statement/ic_wallet.svg');
+        }
+    }
+    /*
+        MOBILE CARDS END
+    */
+
+    &-empty {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__icon {
+            display: inline-block;
+            height: 64px;
+            width: 64px;
+            background-size: 64px;
+            background-image: url('../images/app_2/header/icons/ic_statement_normal_light.svg');
+            margin-bottom: 16px;
+        }
+        &__title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        &__text {
+            font-size: 14px;
         }
     }
 }

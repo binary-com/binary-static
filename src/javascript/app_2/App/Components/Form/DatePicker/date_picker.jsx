@@ -35,7 +35,7 @@ class DatePicker extends React.PureComponent {
     onClickOutside = (e) => {
         if (!this.mainNode.contains(e.target) && this.state.is_datepicker_visible) {
             this.setState({ is_datepicker_visible: false });
-            if (this.props.mode !== 'duration') {
+            if (!!this.state.value && this.props.mode !== 'duration') {
                 this.updateDatePickerValue(formatDate(this.state.value));
             }
         }
