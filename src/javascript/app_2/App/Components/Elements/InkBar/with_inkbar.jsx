@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import PropTypes  from 'prop-types';
 import React      from 'react';
 import ReactDOM   from 'react-dom';
-import InkBar     from './inkbar.jsx';
+import { InkBar } from './inkbar.jsx';
 
 const withInkBar = (Component) => {
     class ComponentWithInkBar extends React.Component {
@@ -16,6 +16,13 @@ const withInkBar = (Component) => {
             this.updateInkbarPosition(this.node.querySelector('a[class="active"]'));
         }
 
+        componentDidUpdate() {
+            const active_el = this.node.querySelector('a[class="active"]');
+            if (active_el) {
+                this.updateInkbarPosition(active_el);
+            }
+        }
+
         onClick = (e) => {
             if (!e.target) return;
             this.updateInkbarPosition(e.target.closest('a'));
@@ -23,10 +30,13 @@ const withInkBar = (Component) => {
 
         updateInkbarPosition = (el) => {
             if (!el) return;
-            this.setState({ 
-                left : el.offsetLeft,
-                width: el.offsetWidth,
-            });
+            const { offsetLeft: left, offsetWidth: width } = el;
+            if (this.state.width !== width) {
+                this.setState({ width });
+            }
+            if (this.state.left !== left) {
+                this.setState({ left });
+            }
         }
 
         render() {
