@@ -5,7 +5,7 @@ import React                          from 'react';
 import CardList                       from '../Components/card_list.jsx';
 import EmptyPortfolioMessage          from '../Components/empty_portfolio_message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
-import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
+import DataTable                      from '../../../App/Components/Elements/DataTable';
 import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 

@@ -1,12 +1,12 @@
+import classnames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import classnames                     from 'classnames';
 import Filter                         from './statement_filter.jsx';
 import StatementCardList              from '../Components/statement_card_list.jsx';
 import EmptyStatementMessage          from '../Components/empty_statement_message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
-import DataTable                      from '../../../App/Components/Elements/data_table.jsx';
+import DataTable                      from '../../../App/Components/Elements/DataTable';
 import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
