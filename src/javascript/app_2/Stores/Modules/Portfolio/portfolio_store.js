@@ -14,11 +14,6 @@ export default class PortfolioStore extends BaseStore {
     @observable is_loading = false;
     @observable error      = '';
 
-    constructor(root_store) {
-        super();
-        this.root_store = root_store;
-    }
-
     @action.bound
     initializePortfolio = () => {
         this.is_loading = true;
