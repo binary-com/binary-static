@@ -6,33 +6,33 @@ import React                          from 'react';
 import { connect }                    from '../../../Stores/connect';
 import { localize }                   from '../../../../_common/localize';
 
-class PortfolioDrawer extends React.Component {
-    render() {
-        return (
-            <div className='portfolio-drawer'>
-                <div className='portfolio-drawer__header'>
-                    <span className='portfolio-drawer__icon-main' />
-                    <span>{localize('Portfolio Quick Menu')}</span>
-                    <a
-                        href='javascript:;'
-                        className='portfolio-drawer__icon-close'
-                        onClick={this.props.toggleDrawer}
-                    />
-                </div>
-                <div className='portfolio-drawer__body'>
-                    content here
-                </div>
-            </div>
-        );
-    }
-}
+const PortfolioDrawer = ({ is_portfolio_drawer_on, toggleDrawer }) => (
+    <div className={classNames('portfolio-drawer', {
+        'portfolio-drawer--open': is_portfolio_drawer_on,
+    })}>
+        <div className='portfolio-drawer__header'>
+            <span className='portfolio-drawer__icon-main' />
+            <span>{localize('Portfolio Quick Menu')}</span>
+            <a
+                href='javascript:;'
+                className='portfolio-drawer__icon-close'
+                onClick={toggleDrawer}
+            />
+        </div>
+        <div className='portfolio-drawer__body'>
+            content here
+        </div>
+    </div>
+);
 
 PortfolioDrawer.propTypes = {
-    toggleDrawer: PropTypes.func,
+    is_portfolio_drawer_on: PropTypes.bool,
+    toggleDrawer          : PropTypes.func,
 };
 
 export default connect(
     ({ ui }) => ({
-        toggleDrawer: ui.togglePortfolioDrawer,
+        is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
+        toggleDrawer          : ui.togglePortfolioDrawer,
     })
 )(PortfolioDrawer);
