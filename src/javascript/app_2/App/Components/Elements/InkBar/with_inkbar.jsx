@@ -20,12 +20,25 @@ const withInkBar = (Component) => {
             const active_el = this.node.querySelector('a[class="active"]');
             if (active_el) {
                 this.updateInkbarPosition(active_el);
+            } else if (this.state.left !== 0 || this.state.width !== 0) {
+                this.clearInkBar(); // clear InkBar when active element doesn't exist
             }
+        }
+
+        componentWillMount() {
+            this.clearInkBar();
         }
 
         onClick = (e) => {
             if (!e.target) return;
             this.updateInkbarPosition(e.target.closest('a'));
+        }
+
+        clearInkBar = () => {
+            this.setState({
+                left : 0,
+                width: 0,
+            });
         }
 
         updateInkbarPosition = (el) => {
