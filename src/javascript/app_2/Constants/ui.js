@@ -1,4 +1,5 @@
 export const MAX_MOBILE_WIDTH = 767;
+export const MAX_TABLET_WIDTH = 980;
 
 export const COLOR_CODES = {
     WHITE       : '#fff',

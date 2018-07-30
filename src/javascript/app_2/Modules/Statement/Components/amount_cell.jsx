@@ -1,17 +1,18 @@
-import classNames from 'classnames';
 import React      from 'react';
+import PropTypes  from 'prop-types';
 
-const AmountCell = (
-    data,
-    data_index,
-) => {
-    const className = +data.replace(/,/g, '') >= 0 ? 'profit' : 'loss';
+const AmountCell = ({ value }) => {
+    const status = +value.replace(/,/g, '') >= 0 ? 'profit' : 'loss';
 
     return (
-        <td key={data_index} className={classNames(`${data_index}`, className)}>
-            {data}
-        </td>
+        <span className={`amount--${status}`}>
+            {value}
+        </span>
     );
+};
+
+AmountCell.propTypes = {
+    value: PropTypes.string,
 };
 
 export default AmountCell;
