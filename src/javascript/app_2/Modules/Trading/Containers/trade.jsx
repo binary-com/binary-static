@@ -4,7 +4,6 @@ import React           from 'react';
 import Test            from './test.jsx';
 import FormLayout      from '../Components/Form/form_layout.jsx';
 import SmartCharts     from '../../../App/Components/Charts/smartcharts.jsx';
-import PortfolioDrawer from '../../../App/Components/Elements/portfolio_drawer.jsx';
 import { connect }     from '../../../Stores/connect';
 
 class Trade extends React.Component {
@@ -35,8 +34,6 @@ class Trade extends React.Component {
                     <Test />
                 </div>
                 <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
-                {/* TODO: to move PortfolioDrawer to an upper parent, as it should be available in all pages */}
-                <PortfolioDrawer />
             </div>
         );
     }

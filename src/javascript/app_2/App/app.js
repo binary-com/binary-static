@@ -3,6 +3,7 @@ import PropTypes                     from 'prop-types';
 import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
+import PortfolioDrawer               from './Components/Elements/portfolio_drawer.jsx';
 import Footer                        from './Containers/Layout/footer.jsx';
 import Header                        from './Containers/Layout/header.jsx';
 import Routes                        from './Containers/Routes/routes.jsx';
@@ -58,7 +59,7 @@ const BinaryApp = ({ root_store }) => (
                             { icon: 'portfolio', text: localize('Portfolio'), link_to: routes.portfolio },
                             { icon: 'statement', text: localize('Statement'), link_to: routes.statement },
                             // TODO
-                            // Hide the Cashier button until its implementaiton is completed.
+                            // Hide the Cashier button until its implementation is completed.
                             // { icon: 'cashier',   text: localize('Cashier') },
                         ]}
                     />
@@ -66,6 +67,7 @@ const BinaryApp = ({ root_store }) => (
                 <div id='app_contents' className='app-contents'>
                     <Routes />
                 </div>
+                <PortfolioDrawer />
                 <footer id='footer'>
                     <Footer />
                 </footer>
