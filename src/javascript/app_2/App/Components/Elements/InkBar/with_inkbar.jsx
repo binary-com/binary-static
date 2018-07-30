@@ -26,6 +26,11 @@ const withInkBar = (Component) => {
         }
 
         componentWillMount() {
+            window.addEventListener('resize', this.updateInkbarPosition);
+        }
+
+        componentWillUnMount() {
+            window.removeEventListener('resize', this.updateInkbarPosition);
             this.clearInkBar();
         }
 
