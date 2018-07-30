@@ -6,6 +6,9 @@
         display: flex; // needed to allow setting child height to 100% without explicit height defined here (https://stackoverflow.com/a/23300532/4402857)
         flex-direction: column;
 
+        &--show-portfolio-drawer {
+            margin-right: $PORTFOLIO_DRAWER_WIDTH;
+        }
         @media screen and (max-width: 768px) {
             margin-bottom: 0;
             min-height: calc(100vh - #{$HEADER_HEIGHT});
@@ -49,9 +52,6 @@
         .sidebar-container, .sidebar-items {
             position: relative;
             min-height: 500px;
-        }
-        .offset-container {
-            display: none;
         }
         & > * {
             grid-column: col-start / span 12;
@@ -154,30 +154,6 @@
                             }
                         }
                     }
-                }
-            }
-        }
-        @media (min-width: 1025px) {
-            .offset-container {
-                display: unset;
-                position: absolute;
-                height: 100vh;
-                width: 100%;
-                left: calc(100% + 40px);
-                transition: all 0.25s;
-                grid-column: col-start 11 / span 2;
-            }
-            &.show {
-                margin-right: 0;
-
-                .chart-container {
-                    grid-column: col-start 1 / span 8;
-                }
-                .sidebar-container {
-                    transform: translate(-100%);
-                }
-                .offset-container {
-                    transform: translate(calc(-100% - 20px));
                 }
             }
         }

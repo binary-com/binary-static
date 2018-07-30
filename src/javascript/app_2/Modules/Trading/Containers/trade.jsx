@@ -14,12 +14,7 @@ class Trade extends React.Component {
 
     render() {
         return (
-            <div
-                id='trade_container'
-                className={classNames('trade-container', {
-                    show: this.props.is_portfolio_drawer_on,
-                })}
-            >
+            <div id='trade_container' className='trade-container'>
                 <div className='chart-container notice-msg'>
                     <SmartCharts
                         chart_barriers={this.props.chart_barriers}
@@ -47,7 +42,6 @@ Trade.propTypes = {
     is_dark_theme         : PropTypes.bool,
     is_position_default   : PropTypes.bool,
     is_mobile             : PropTypes.bool,
-    is_portfolio_drawer_on: PropTypes.bool,
     is_purchase_enabled   : PropTypes.bool,
     is_trade_enabled      : PropTypes.bool,
     onSymbolChange        : PropTypes.func,
@@ -69,6 +63,5 @@ export default connect(
         is_asset_enabled      : ui.is_chart_asset_info_visible,
         is_position_default   : ui.is_chart_layout_default,
         is_mobile             : ui.is_mobile,
-        is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
     })
 )(Trade);
