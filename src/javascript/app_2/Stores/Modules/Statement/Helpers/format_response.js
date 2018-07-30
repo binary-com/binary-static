@@ -4,7 +4,7 @@ import { localize }    from '../../../../../_common/localize';
 import { toTitleCase } from '../../../../../_common/string_util';
 
 export const formatStatementTransaction = (transaction, currency) => {
-    const moment_obj = toMoment(transaction.transaction_time * 1000);
+    const moment_obj = toMoment(transaction.transaction_time);
     const date_str   = moment_obj.format('YYYY-MM-DD');
     const time_str   = `${moment_obj.format('HH:mm:ss')} GMT`;
     const payout     = parseFloat(transaction.payout);
