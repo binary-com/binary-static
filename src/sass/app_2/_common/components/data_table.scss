@@ -8,33 +8,6 @@ $header-height: 42px;
     font-size: 14px;
     border: 1px solid $COLOR_GRAY;
 
-    &__head {
-        height: $header-height;
-    }
-    &__head &__row {
-        height: 100%;
-    }
-    &__body {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-    }
-    &__row {
-        display: grid;
-        padding: 0 16px;
-        box-sizing: border-box;
-        border-bottom: 1px solid $COLOR_GRAY;
-    }
-    &__body &__row {
-        &:hover {
-            background-color: $COLOR_GRAY;
-            cursor: pointer;
-        }
-        &:last-child {
-            border-bottom: none;
-        }
-    }
     &__cell {
         padding: 0.75rem;
         display: flex;
@@ -45,6 +18,35 @@ $header-height: 42px;
         }
         &:last-child {
             padding-right: 0;
+        }
+    }
+    &__row {
+        display: grid;
+        padding: 0 16px;
+        box-sizing: border-box;
+        border-bottom: 1px solid $COLOR_GRAY;
+    }
+    &__head {
+        height: $header-height;
+        border-bottom: 1px solid $COLOR_GRAY;
+    }
+    &__head &__row {
+        height: 100%;
+        border-bottom: none;
+    }
+    &__body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    &__body &__row {
+        &:hover {
+            background-color: $COLOR_GRAY;
+            cursor: pointer;
+        }
+        &:last-child {
+            border-bottom: none;
         }
     }
     &__head, &__foot {
