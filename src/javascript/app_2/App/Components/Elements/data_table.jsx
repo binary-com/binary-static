@@ -14,6 +14,14 @@ const TableCell = ({ col_index, children }) => (
     </div>
 );
 
+TableCell.propTypes = {
+    col_index: PropTypes.string,
+    children : PropTypes.oneOfType([
+        PropTypes.node,
+        PropTypes.string,
+    ]),
+};
+
 const TableRow = ({ columns, row_obj = {}, is_header, is_footer }) => (
     <div className='table__row'>
         {columns.map(({ col_index, renderCellContent, title }) => {
@@ -32,6 +40,13 @@ const TableRow = ({ columns, row_obj = {}, is_header, is_footer }) => (
         })}
     </div>
 );
+
+TableRow.propTypes = {
+    columns  : PropTypes.array,
+    row_obj  : PropTypes.object,
+    is_header: PropTypes.bool,
+    is_footer: PropTypes.bool,
+};
 
 class DataTable extends React.PureComponent {
     componentDidUpdate() {
@@ -73,7 +88,7 @@ class DataTable extends React.PureComponent {
 
                 {this.props.footer &&
                     <div className='table__foot'>
-                        <TableRow row_obj={footer} columns={columns} is_footer />)}
+                        <TableRow row_obj={footer} columns={columns} is_footer />
                     </div>
                 }
             </div>
@@ -91,7 +106,5 @@ DataTable.propTypes = {
         PropTypes.arrayOf(PropTypes.node),
     ]),
 };
-
-
 
 export default DataTable;
