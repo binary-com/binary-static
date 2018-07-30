@@ -4,6 +4,7 @@ import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
 import PortfolioDrawer               from './Components/Elements/portfolio_drawer.jsx';
+import AppContents                   from './Containers/Layout/app_contents.jsx';
 import Footer                        from './Containers/Layout/footer.jsx';
 import Header                        from './Containers/Layout/header.jsx';
 import Routes                        from './Containers/Routes/routes.jsx';
@@ -64,10 +65,13 @@ const BinaryApp = ({ root_store }) => (
                         ]}
                     />
                 </div>
-                <div id='app_contents' className='app-contents'>
+
+                <AppContents>
                     <Routes />
-                </div>
+                </AppContents>
+
                 <PortfolioDrawer />
+
                 <footer id='footer'>
                     <Footer />
                 </footer>
