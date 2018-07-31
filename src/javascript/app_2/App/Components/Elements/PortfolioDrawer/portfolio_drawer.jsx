@@ -3,6 +3,7 @@ import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { connect }                    from '../../../../Stores/connect';
 import { localize }                   from '../../../../../_common/localize';
+import PortfolioDrawerCard            from './portfolio_drawer_card.jsx';
 
 const PortfolioDrawer = ({ is_portfolio_drawer_on, toggleDrawer }) => (
     <div className={classNames('portfolio-drawer', {
@@ -18,7 +19,7 @@ const PortfolioDrawer = ({ is_portfolio_drawer_on, toggleDrawer }) => (
             />
         </div>
         <div className='portfolio-drawer__body'>
-            content here
+            <PortfolioDrawerCard />
         </div>
     </div>
 );
