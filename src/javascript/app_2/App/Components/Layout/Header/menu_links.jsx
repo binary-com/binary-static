@@ -1,11 +1,8 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import withInkBar     from '../../Elements/InkBar';
+import DivWithInkBar  from '../../Elements/InkBar';
 import { BinaryLink } from '../../Routes';
 import Url            from '../../../../../_common/url';
-
-// components wrapped with withInkBar has to be outside of render
-const DivWithInkBar = withInkBar((props) => <div {...props} />);
 
 const MenuLinks = ({ items }) => (
     <React.Fragment>
