@@ -44,8 +44,9 @@
     margin-right: 4px;
 
     &.toggled:after {
-        animation: lineAnimationAfter 0.3s ease-in;
-        animation-fill-mode: both;
+        top: 0;
+        height: 100%;
+        width: 4px;
     }
     &:after {
         background: $COLOR_BLUE;
@@ -57,41 +58,6 @@
         content: '';
         width: 100%;
         height: 4px;
-        animation: lineAnimationBefore 0.3s ease-in;
-    }
-    @keyframes lineAnimationBefore {
-        0% {
-            top: 0;
-            height: 100%;
-            width: 4px;
-        }
-        50% {
-            top: 70%;
-            height: 4px;
-            width: 4px;
-        }
-        100% {
-            top: 70%;
-            width: 100%;
-            height: 4px;
-        }
-    }
-    @keyframes lineAnimationAfter {
-        0% {
-            top: 70%;
-            width: 100%;
-            height: 4px;
-        }
-        50% {
-            top: 70%;
-            height: 4px;
-            width: 4px;
-        }
-        100% {
-            top: 0;
-            height: 100%;
-            width: 4px;
-        }
     }
 }
 
@@ -99,5 +65,12 @@
 .theme-wrapper.dark {
     .toggle-button:not(.toggled) {
         background: $COLOR_BRANDBLUE_85;
+    }
+    .toggle-chart-layout {
+        border-color: $COLOR_BRANDBLUE_85;
+
+        &:after {
+            background: $COLOR_WHITE;
+        }
     }
 }
