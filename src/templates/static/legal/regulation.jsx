@@ -39,7 +39,7 @@ const RegulatorImage = ({
     href,
     image,
 }) => (
-    <div className={`gr-${padding || 2} gr-${padding_m || 4}-m gr-centered gr-padding-10`}>
+    <div className={`gr-${padding || 3} gr-${padding_m || 4}-m gr-centered`}>
         <a href={href} target='_blank' rel='noopener noreferrer'>
             <img className='responsive' src={it.url_for(image)} />
         </a>
@@ -176,7 +176,7 @@ const Regulation = () => {
                 <p>{it.L('Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) and for UK clients by the UK Gambling Commission - [_1]view licence[_2].', '<a href="https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39172" target="_blank">', '</a>')}</p>
                 <p>{it.L('UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Limited.')}</p>
                 <RegulatorText />
-                <RegulatorImage href='https://www.gov.im/gambling/' image='images/pages/footer/isle-of-man.png' />
+                <RegulatorImage href='https://www.gov.im/gambling/' image='images/pages/regulation/isle-of-man.png' />
             </Box>
 
             <Box header={it.L('Binary (C.R.) S.A.')} >
@@ -188,14 +188,14 @@ const Regulation = () => {
                 <p>{it.L('Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - [_1]view licence[_2].', '<a href="https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf" target="_blank">', '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. [_1] is not available in the Republic of Vanuatu.', it.website_name)}</p>
                 <RegulatorText />
-                <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.svg' />
+                <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />
             </Box>
             
             <Box header={it.L('Binary (BVI) Ltd')} >
                 <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
-                <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.svg' />
+                <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.png' />
             </Box>
 
             <Box header={it.L('Binary (FX) Ltd')} last>
