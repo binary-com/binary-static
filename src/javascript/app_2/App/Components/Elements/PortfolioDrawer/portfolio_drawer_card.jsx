@@ -4,10 +4,13 @@ import React                          from 'react';
 import Money                          from '../money.jsx';
 import { connect }                    from '../../../../Stores/connect';
 import { localize }                   from '../../../../../_common/localize';
+import ContractTypeCell               from '../../../../Modules/Portfolio/Components/contract_type_cell.jsx';
 
 const PortfolioDrawerCard = ({ type, indicative, symbol, remaining_time, currency, status }) => (
     <div className='portfolio-drawer-card'>
-        <div className='portfolio-drawer-card__type'>{type}</div>
+        <div className='portfolio-drawer-card__type'>
+            <ContractTypeCell type={type} />
+        </div>
         <div className={`portfolio-drawer-card__indicative portfolio-drawer-card__indicative--${status}`}>
             <Money amount={indicative} currency={currency} />
         </div>

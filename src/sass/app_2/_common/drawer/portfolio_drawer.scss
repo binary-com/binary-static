@@ -52,6 +52,26 @@
         border: 1px solid $COLOR_GRAY;
         border-radius: 2px;
 
+        &__type {
+            font-size: 12px;
+            color: $COLOR_BLUE;
+
+            .contract-type {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &__icon {
+                    box-sizing: border-box;
+                    width: 24px;
+                    height: 24px;
+                    padding: 4px;
+                    border-radius: 100%;
+                    background-color: $COLOR_GRAY;
+                    margin-right: 8px;
+                }
+            }
+        }
         &__symbol {
             font-size: 10px;
             color: $COLOR_BLUE;
