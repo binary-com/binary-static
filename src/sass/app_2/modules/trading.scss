@@ -196,8 +196,15 @@
             background: $COLOR_LIGHT_GRAY;
 
             .close-btn-container {
-                float: right;
+                position: absolute;
                 cursor: pointer;
+                right: 2px;
+                top: 2px;
+
+                .ic-close {
+                    width: 24px;
+                    height: 24px;
+                }
             }
             div.purchase-login-wrapper {
                 display: flex;
