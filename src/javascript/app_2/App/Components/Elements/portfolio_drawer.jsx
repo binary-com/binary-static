@@ -11,8 +11,8 @@ const PortfolioDrawer = ({ is_portfolio_drawer_on, toggleDrawer }) => (
         'portfolio-drawer--open': is_portfolio_drawer_on,
     })}>
         <div className='portfolio-drawer__header'>
-            <span className='portfolio-drawer__icon-main' />
-            <span>{localize('Portfolio Quick Menu')}</span>
+            <span className='portfolio-drawer__icon-main ic-portfolio' />
+            <span className='portfolio-drawer__title'>{localize('Portfolio Quick Menu')}</span>
             <a
                 href='javascript:;'
                 className='portfolio-drawer__icon-close'
