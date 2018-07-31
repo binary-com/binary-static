@@ -57,6 +57,10 @@ $side-padding: 12px;
             color: $COLOR_LIGHT_RED;
         }
     }
+    .refid a {
+        color: $COLOR_LIGHT_BLUE;
+        text-decoration: none;
+    }
     /*
         TABLE STYLES END
     */
@@ -102,8 +106,9 @@ $side-padding: 12px;
             display: flex;
             justify-content: space-between;
         }
-        &__refid {
+        &__refid a {
             color: $COLOR_LIGHT_BLUE;
+            text-decoration: none;
         }
         &__body {
             padding: 0.5rem;

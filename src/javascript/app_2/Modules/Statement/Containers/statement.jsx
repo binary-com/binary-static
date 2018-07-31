@@ -2,17 +2,23 @@ import classnames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import { withRouter }                 from 'react-router-dom';
 import Filter                         from './statement_filter.jsx';
 import StatementCardList              from '../Components/statement_card_list.jsx';
 import EmptyStatementMessage          from '../Components/empty_statement_message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
 import DataTable                      from '../../../App/Components/Elements/DataTable';
+import { getContractPath }            from '../../../App/Components/Routes/helpers';
 import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Statement extends React.Component {
     componentDidMount()    { this.props.onMount(); }
     componentWillUnmount() { this.props.onUnmount(); }
+
+    redirectToContract = (row_obj) => {
+        this.props.history.push(getContractPath(row_obj.id));
+    };
 
     render() {
         const {
@@ -60,6 +66,7 @@ class Statement extends React.Component {
                                 data_source={data}
                                 columns={columns}
                                 onScroll={handleScroll}
+                                onRowClick={this.redirectToContract}
                             >
                                 {renderGUI()}
                             </DataTable>
@@ -74,6 +81,7 @@ Statement.propTypes = {
     has_selected_date: PropTypes.bool,
     data             : MobxPropTypes.arrayOrObservableArray,
     error            : PropTypes.string,
+    history          : PropTypes.object,
     is_empty         : PropTypes.bool,
     is_loading       : PropTypes.bool,
     is_mobile        : PropTypes.bool,
@@ -96,4 +104,4 @@ export default connect(
         is_mobile        : ui.is_mobile,
         is_tablet        : ui.is_tablet,
     })
-)(Statement);
+)(withRouter(Statement));

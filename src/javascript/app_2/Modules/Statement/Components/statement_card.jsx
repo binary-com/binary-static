@@ -1,6 +1,9 @@
-import classNames from 'classnames';
-import PropTypes  from 'prop-types';
-import React      from 'react';
+import classNames          from 'classnames';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import ContractLink        from '../../Contract/Components/contract_link.jsx';
+import { getContractPath } from '../../../App/Components/Routes/helpers';
+import RedirectOnClick     from '../../../App/Components/Routes/redirect_onclick.jsx';
 
 const StatementCard = ({
     action,
@@ -9,13 +12,16 @@ const StatementCard = ({
     className,
     date,
     desc,
+    id,
     payout,
     refid,
 }) => (
-    <div className={classNames('statement-card', className)}>
+    <RedirectOnClick className={classNames('statement-card', className)} path={getContractPath(id)}>
         <div className='statement-card__header'>
             <span className='statement-card__date'>{date}</span>
-            <span className='statement-card__refid'>{refid}</span>
+            <span className='statement-card__refid'>
+                <ContractLink contract_id={id} text={refid} />
+            </span>
         </div>
         <div className='statement-card__body'>
             <div className='statement-card__desc'>{desc}</div>
@@ -37,7 +43,7 @@ const StatementCard = ({
                 </div>
             </div>
         </div>
-    </div>
+    </RedirectOnClick>
 );
 
 StatementCard.propTypes = {
@@ -47,6 +53,7 @@ StatementCard.propTypes = {
     className: PropTypes.string,
     date     : PropTypes.string,
     desc     : PropTypes.string,
+    id       : PropTypes.string,
     payout   : PropTypes.string,
     refid    : PropTypes.string,
 };

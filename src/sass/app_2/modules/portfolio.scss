@@ -32,6 +32,10 @@
             background-color: $COLOR_GRAY;
         }
     }
+    .reference a {
+        color: $COLOR_LIGHT_BLUE;
+        text-decoration: none;
+    }
     .indicative {
         font-weight: bold;
 
@@ -84,8 +88,9 @@
             display: flex;
             justify-content: space-between;
         }
-        &__refid {
+        &__refid a {
             color: $COLOR_LIGHT_BLUE;
+            text-decoration: none;
         }
         &__body {
             padding: 0.5rem;
