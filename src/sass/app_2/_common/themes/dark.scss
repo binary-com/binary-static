@@ -112,45 +112,36 @@
                 color: $COLOR_DARK_GRAY;
             }
         }
-        .portfolio {
+        .portfolio.container {
             background: $COLOR_BLUE;
 
-            .portfolio_header_container {
-                background: $COLOR_BLUE;
-
-                h2 {
-                    color: $COLOR_DARK_GRAY;
-                }
-            }
-            table.table {
+            .table {
                 color: $COLOR_DARK_GRAY;
+                border-color: $COLOR_COOL_GRAY;
 
-                .table-head, .table-foot {
+                .table__head, .table__foot {
                     background-color: $COLOR_BLUE;
                     border-color: $COLOR_COOL_GRAY;
 
-                    .table-row {
+                    .table__row {
                         background: $COLOR_BLUE;
                         border-color: $COLOR_COOL_GRAY;
                     }
                 }
-                .table-body {
-                    td {
+                .table__body {
+                    .table__cell {
                         &.reference {
                             color: $COLOR_SKY_BLUE;
                         }
-                        &.details, &.payout, &.purchase, &.remaining_time {
-                            color: $COLOR_WHITE;
-                        }
-                        div.type_container {
+                        &.details, &.payout, &.purchase, &.remaining_time, &.indicative {
                             color: $COLOR_WHITE;
                         }
                     }
-                    .table-row {
+                    .table__row {
                         background: $COLOR_BLUE;
                         border-color: $COLOR_COOL_GRAY;
 
-                        td.payout span.symbol {
+                        .table__cell.payout span.symbol {
                             background: $COLOR_BLUE;
                         }
                         &:hover {
