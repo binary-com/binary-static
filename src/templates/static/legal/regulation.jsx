@@ -93,27 +93,6 @@ const Regulation = () => {
                 <p>{it.L('Binary Limited, with registered office at 47 Esplanade, St Helier, Jersey JE1 0BD, Channel Islands, is the holding company for the subsidiaries listed below.')}</p>
             </Box>
 
-            <Box header={it.L('Binary K.K.')} >
-                <p>{it.L('Binary K.K., 3F Hiroo Miyata Building, 1-9-16 Hiroo, Shibuya-ku, Tokyo 150-0012. Licensed and regulated as a Type 1 Financial Instruments Business by the KLFB (license no. 2949) and a member of FFAJ (membership no. 1590).')}</p>
-                <p>{it.L('Japan residents will have their account opened with Binary K.K. and will use our Japan trading platform, which is compliant with Japan rules and regulations.')}</p>
-                <p><strong>{it.L('Regulators:')}</strong></p>
-                <RegulatorImage
-                    padding='3'
-                    padding_m='6'
-                    href='http://www.fsa.go.jp'
-                    image='images/pages/regulation/fsa-logo.png'
-                />
-                <RegulatorImage
-                    padding='4'
-                    padding_m='8'
-                    href='http://www.ffaj.or.jp/en/memberlist/list.html#k_sakimono_senmon'
-                    image='images/pages/regulation/binarykk-logo.gif'
-                />
-                <div className='ja-hide center-text gr-padding-20 gr-child'>
-                    <button id='visit_japan'>{it.L('View Japanese website')}</button>
-                </div>
-            </Box>
-
             <Box header={it.L('Binary Investments (Europe) Ltd')} >
                 <p>{it.L('Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf')}" target="_blank" download=1>`, '</a>')}</p>
                 <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd.')}</p>
@@ -212,11 +191,18 @@ const Regulation = () => {
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.svg' />
             </Box>
             
-            <Box header={it.L('Binary (BVI) Ltd')} last>
+            <Box header={it.L('Binary (BVI) Ltd')} >
                 <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.svg' />
+            </Box>
+
+            <Box header={it.L('Binary (FX) Ltd')} last>
+                <p>{it.L('Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business [_1](licence no. MB/18/0024)[_2].', `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}</p>
+                <p>{it.L('Clients from the rest of the world (excluding certain jurisdictions such as the USA, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. [_1] is not available in Malaysia.', it.website_name)}</p>
+                <RegulatorText />
+                <RegulatorImage href='https://www.labuanibfc.com/' image='images/pages/regulation/labuan-logo.png' />
             </Box>
         </div>
     );
