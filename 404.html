@@ -48,16 +48,11 @@
 
     const all_languages = ['en'].concat(Object.keys(langs));
     function redirect() {
-        var redirect_to;
         // if language is wrong, we need to rebuild the url
         var lang_regex = new RegExp('/(' + all_languages.join('|') + ')/', 'i');
         if (!lang_regex.test(href)) {
-            redirect_to = '404';
-            href = getRoot() + '/' + lang.toLowerCase() + '/' + redirect_to.replace(/\.html/i, '') + '.html';
-        }
-
-        // if not alternate page, redirect to 404 page
-        if (!redirect_to) {
+            href = getRoot() + '/' + lang.toLowerCase() + '/' + '404.html';
+        } else {
             href = href.replace(new RegExp('(/' + lang + '/).*', 'i'), '$1404.html');
         }
 

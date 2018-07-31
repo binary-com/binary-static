@@ -72,7 +72,7 @@ const BinaryLoader = (() => {
     };
 
     const error_messages = {
-        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_2] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor()}">`]),
+        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
         only_virtual: 'Sorry, this feature is available to virtual accounts only.',
         only_real   : 'This feature is not relevant to virtual-money accounts.',
     };

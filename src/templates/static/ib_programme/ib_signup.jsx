@@ -41,7 +41,7 @@ const Signup = () => (
 
         <div className='container gr-padding-20'>
             <h2 className='center-text'>{it.L('Commission structure')}</h2>
-            <div className='gr-padding-20 center-text'>
+            <div className='gr-padding-20 table-container'>
                 <Table
                     className='ib-signup-page__commission-table'
                     data={{
@@ -54,53 +54,63 @@ const Signup = () => (
                         ],
                         tbody: [
                             [
-                                { text: it.L('Forex & Metals*'), attributes: { rowSpan: 2 } },
+                                { text: `${it.L('Forex & Metals')}*`, attributes: { rowSpan: 2 } },
                                 { text: it.L('Standard') },
-                                { text: it.L('6 per lot') },
+                                { text: it.L('[_1] per lot', '10') },
                             ],
                             [
                                 { text: it.L('Advanced') },
-                                { text: it.L('2 per lot') },
+                                { text: it.L('[_1] per lot', '5') },
                             ],
                             [
-                                { text: it.L('Volatility Indices**'), attributes: { rowSpan: 8 } },
+                                { text: `${it.L('Cryptocurrencies')}**`, attributes: { rowSpan: 2 } },
+                                { text: it.L('Standard') },
+                                { text: it.L('[_1] per lot', '0.3%') },
+                            ],
+                            [
+                                { text: it.L('Advanced') },
+                                { text: it.L('[_1] per lot', '0.2%') },
+                            ],
+                            [
+                                { text: `${it.L('Volatility Indices')}***`, attributes: { rowSpan: 8 } },
                                 { text: it.L('Vol 10') },
-                                { text: it.L('0.25 per lot') },
+                                { text: it.L('[_1] per lot', '0.25') },
                             ],
                             [
                                 { text: it.L('Vol 25') },
-                                { text: it.L('0.1 per lot') },
+                                { text: it.L('[_1] per lot', '0.1') },
                             ],
                             [
                                 { text: it.L('Vol 50') },
-                                { text: it.L('0.1 per lot') },
+                                { text: it.L('[_1] per lot', '0.1') },
                             ],
                             [
                                 { text: it.L('Vol 75') },
-                                { text: it.L('2.25 per lot') },
+                                { text: it.L('[_1] per lot', '2.25') },
                             ],
                             [
                                 { text: it.L('Vol 100') },
-                                { text: it.L('0.75 per lot') },
+                                { text: it.L('[_1] per lot', '0.75') },
                             ],
                             [
                                 { text: it.L('HF Vol 10') },
-                                { text: it.L('0.25 per lot') },
+                                { text: it.L('[_1] per lot', '0.25') },
                             ],
                             [
                                 { text: it.L('HF Vol 50') },
-                                { text: it.L('0.1 per lot') },
+                                { text: it.L('[_1] per lot', '0.1') },
                             ],
                             [
                                 { text: it.L('HF Vol 100') },
-                                { text: it.L('0.1 per lot') },
+                                { text: it.L('[_1] per lot', '0.1') },
                             ],
                         ],
                     }}
                 />
             </div>
-            <p className='mobile-text-small'>{it.L('*Represents the amount in base currency per round trade. Example: A buy of 1 lot of EUR/USD would pay EUR 6 on standard accounts.')}</p>
-            <p className='mobile-text-small'>{it.L('**Volatility Indices commission rates in account currency per round trade. Example: A buy of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account.')}</p>
+            <p className='mobile-text-small'>*{it.L('Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account.')}</p>
+            <p className='mobile-text-small'>**{it.L('Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account.')}</p>
+            <p className='mobile-text-small'>***{it.L('Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account.')}</p>
             <div className='gr-padding-20 center-text'>
                 <a className='button' href={it.affiliate_signup_url}>
                     <span>{it.L('Apply Now')}</span>

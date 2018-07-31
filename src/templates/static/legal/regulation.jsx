@@ -1,5 +1,5 @@
 import React from 'react';
-import {FillBox} from '../../_common/components/elements.jsx';
+import { FillBox } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const TimelineFirst = () => (
@@ -76,8 +76,9 @@ const Area = ({items}) => {
 };
 
 const Regulation = () => {
-    const has_KID = /de|en|es|it|fr|pl|pt|ru/.test(`${it.language.toLowerCase()}`);
-    const lang = has_KID ? `${it.language.toLowerCase()}` : 'en';
+    const has_KID    = /de|en|es|it|fr|pl|pt|ru/.test(`${it.language.toLowerCase()}`);
+    const has_CFD_FX = !/fr/.test(it.language.toLowerCase()); // CFD, FX documents in FR will not be available
+    const lang       = has_KID && has_CFD_FX ? `${it.language.toLowerCase()}` : 'en';
 
     return (
         <div className='static_full'>
@@ -143,7 +144,7 @@ const Regulation = () => {
                             center
                             border='border-dark-gray'
                             image='images/pages/regulation/pillar.svg'
-                            href={it.url_for('/download/BIEL_Pillar_3_Report_20170426.pdf')}
+                            href={it.url_for('/download/BIEL_Pillar_3_Report_20180601.pdf')}
                             target='_blank'
                             download
                             text={it.L('Pillar 3 disclosure report')}
@@ -157,6 +158,8 @@ const Regulation = () => {
                             <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Up_Down.pdf`)}        target='_blank' download text={it.L('Up/Down')} />
                             <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Touch_No_Touch.pdf`)} target='_blank' download text={it.L('Touch/No Touch')} />
                             <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/In_and_Out.pdf`)}     target='_blank' download text={it.L('In/Out')} />
+                            <FillBox dataShow='maltainvest' padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/CFD.pdf`)} target='_blank' download text={it.L('CFD')} />
+                            <FillBox dataShow='maltainvest' padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' download text={it.L('FX')} />
                         </div>
                     </div>
                 </div>
@@ -189,7 +192,7 @@ const Regulation = () => {
             </Box>
             
             <Box header={it.L('Binary (BVI) Ltd')} last>
-                <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', '<a href="http://www.bvifsc.vg/en-us/regulatedentities/investmentbusiness/categoriesofinvestmentbusinesslicences/category1dealingininvestments/subcategoryadealingininvestments.aspx" target="_blank">', '</a>')}</p>
+                <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>
                 <RegulatorText />
                 <RegulatorImage href='http://www.bvifsc.vg/' image='images/pages/regulation/bvi.svg' />

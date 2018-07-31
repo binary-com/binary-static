@@ -4,6 +4,7 @@ import { Fieldset } from '../../_common/components/forms.jsx';
 const ProfessionalClient = () => (
     <Fieldset legend={it.L('Professional Client')} id='fs_professional' className='invisible'>
         <div className='gr-padding-10 gr-12'>
+            <p>{it.L('By default, all clients are treated as retail. Do you prefer to be treated as a professional client if you match the necessary criteria?')}</p>
             <input id='chk_professional' type='checkbox' />
             <label htmlFor='chk_professional'>{it.L('I want to be treated as a professional client.')}&nbsp;</label>
             <a id='professional_info_toggle' className='toggle-arrow' href='javascript:;'>{it.L('What is this?')}</a>
@@ -26,21 +27,20 @@ const ProfessionalClient = () => (
                     <li>{it.L('Proof of your employment')}</li>
                 </ul>
             </div>
-            <div id='popup' className='invisible gr-padding-20 gr-gutter'>
-                <h2>{it.L('Professional Clients')}</h2>
-                <p>{it.L('A Professional Client receives a lower degree of client protection due to the following:')}</p>
-                <ul className='bullet'>
-                    <li>{it.L('We presume that you possess the experience, knowledge, and expertise to make your own investment decisions and properly assess the risks involved')}</li>
-                    <li>{it.L('We’re not obliged to conduct an appropriateness test, nor provide you with any risk warnings')}</li>
-                </ul>
-                <p>{it.L('As a Professional Client, you must keep us informed about any changes that may affect your status.')}</p>
-                <p>{it.L('You can choose to be treated as a Retail Client at any time, even if you would qualify as a Professional Client.')}</p>
-                <div className='center-text'>
-                    <a className='button' id='btn_accept' href='javascript:;'><span>{it.L('ACCEPT')}</span></a>
-                    <a className='button' id='btn_decline' data-value='decline' href='javascript:;'><span>{it.L('DECLINE')}</span></a>
-                </div>
-                <p><strong>{it.L('Note: You may decline and continue as a Retail Client.')}</strong></p>
+        </div>
+        <div id='popup' className='invisible gr-padding-20 gr-gutter'>
+            <h2>{it.L('Professional Clients')}</h2>
+            <p>{it.L('A Professional Client receives a lower degree of client protection due to the following:')}</p>
+            <ul className='bullet'>
+                <li>{it.L('We presume that you possess the experience, knowledge, and expertise to make your own investment decisions and properly assess the risks involved')}</li>
+                <li>{it.L('We’re not obliged to conduct an appropriateness test, nor provide you with any risk warnings')}</li>
+            </ul>
+            <p>{it.L('As a Professional Client, you must keep us informed about any changes that may affect your status.')}</p>
+            <div className='center-text'>
+                <a className='button' id='btn_accept' href='javascript:;'><span>{it.L('ACCEPT')}</span></a>
+                <a className='button' id='btn_decline' data-value='decline' href='javascript:;'><span>{it.L('DECLINE')}</span></a>
             </div>
+            <p><strong>{it.L('Note: You may decline and continue as a Retail Client.')}</strong></p>
         </div>
     </Fieldset>
 );

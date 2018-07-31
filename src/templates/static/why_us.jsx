@@ -28,7 +28,7 @@ const WhyUs = () => (
                         ]}
                     />
                     <div className='center-text gr-padding-10 client_logged_out invisible'>
-                        <a className='button' href={it.url_for('/')}>
+                        <a className='button' href={it.url_for('new-account')}>
                             <span>{it.L('Open a free account')}</span>
                         </a>
                     </div>

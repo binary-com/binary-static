@@ -4,6 +4,7 @@ const MBNotifications  = require('./mb_notifications');
 const MBPrice          = require('./mb_price');
 const MBSymbols        = require('./mb_symbols');
 const MBTick           = require('./mb_tick');
+const showChart        = require('../trade/charts/webtrader_chart').showChart;
 const commonTrading    = require('../trade/common');
 const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
@@ -193,6 +194,10 @@ const MBProcess = (() => {
     const processContract = (contracts, should_send_proposal) => {
         if (getPropertyValue(contracts, 'error')) {
             MBNotifications.show({ text: contracts.error.message, uid: contracts.error.code });
+            // Hide trading form but still display the chart
+            $('#period').parents('.selection_wrapper').setVisibility(0);
+            $(`.price-table, ${Client.isLoggedIn() ? '#tab_explanation' : '#trade_analysis'}`).setVisibility(0);
+            showChart();
             return;
         }
 

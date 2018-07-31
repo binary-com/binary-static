@@ -80,7 +80,6 @@ const RealityCheckData = (() => {
         summaryData,
         set,
         get,
-
         clear,
     };
 })();

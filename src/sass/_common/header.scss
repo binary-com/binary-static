@@ -150,6 +150,23 @@ body #topbar, .landing_page-content {
     .container {
         max-width: 1200px;
     }
+    .binary-type-logo-old {
+        background-image: url('../images/pages/binary-type-logo-old.svg');
+    }
+    .account-id {
+        position: relative;
+
+        .authenticated[data-balloon] {
+            position: absolute;
+            top: 3px;
+            left: -18px;
+            height: 13px;
+            width: 12px;
+            background-image: url('../images/common/authenticated.svg');
+            background-repeat: no-repeat;
+            border-bottom: none;
+        }
+    }
 }
 
 /* mobile menu overrides */

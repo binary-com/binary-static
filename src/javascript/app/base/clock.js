@@ -5,14 +5,14 @@ const getElementById   = require('../../_common/common_functions').getElementByI
 
 const Clock = (() => {
     let el_clock,
-        view_popup_timer_func;
+        fncExternalTimer;
 
     const startClock = () => {
-        ServerTime.init(onTimeUpdated);
-
         if (!el_clock) {
             el_clock = getElementById('gmt-clock');
         }
+
+        ServerTime.init(onTimeUpdated);
     };
 
     const onTimeUpdated = () => {
@@ -23,8 +23,8 @@ const Clock = (() => {
         elementInnerHtml(el_clock, time_str);
         showLocalTimeOnHover('#gmt-clock');
 
-        if (typeof view_popup_timer_func === 'function') {
-            view_popup_timer_func();
+        if (typeof fncExternalTimer === 'function') {
+            fncExternalTimer();
         }
     };
 
@@ -42,7 +42,7 @@ const Clock = (() => {
         startClock,
         showLocalTimeOnHover,
 
-        setViewPopupTimer: (func) => { view_popup_timer_func = func; },
+        setExternalTimer: (func) => { fncExternalTimer = func; },
     };
 })();
 

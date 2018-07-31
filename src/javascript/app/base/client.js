@@ -79,7 +79,6 @@ const Client = (() => {
         const upgrade_info = ClientBase.getBasicUpgradeInfo();
 
         let upgrade_link;
-
         if (upgrade_info.can_upgrade_to) {
             const upgrade_link_map = {
                 realws       : ['costarica', 'iom', 'malta'],

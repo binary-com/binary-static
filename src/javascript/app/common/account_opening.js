@@ -119,19 +119,19 @@ const AccountOpening = (() => {
                 if (client_state) {
                     $address_state.val(client_state);
                 }
+                $address_state.select2({
+                    matcher(params, data) {
+                        return SelectMatcher(params, data);
+                    },
+                });
             } else {
-                $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35' }));
+                $address_state.replaceWith($('<input/>', { id: 'address_state', name: 'address_state', type: 'text', maxlength: '35', 'data-lpignore': true }));
                 $address_state = $(address_state_id);
                 if (client_state) {
                     $address_state.text(client_state);
                 }
             }
             $address_state.parent().parent().setVisibility(1);
-            $address_state.select2({
-                matcher(params, data) {
-                    return SelectMatcher(params, data);
-                },
-            });
 
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());
@@ -165,7 +165,7 @@ const AccountOpening = (() => {
             { selector: '#address_line_1',   validations: ['req', 'address', ['length', { min: 1, max: 70 }]] },
             { selector: '#address_line_2',   validations: ['address', ['length', { min: 0, max: 70 }]] },
             { selector: '#address_city',     validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
-            { selector: '#address_state',    validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['general', ['length', { min: 0, max: 35 }]] },
+            { selector: '#address_state',    validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]] },
             { selector: '#address_postcode', validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
             { selector: '#phone',            validations: ['req', 'phone', ['length', { min: 6, max: 35, value: () => $('#phone').val().replace(/^\+/, '') }]] },
             { selector: '#secret_question',  validations: ['req'] },
@@ -201,12 +201,15 @@ const AccountOpening = (() => {
         return validations;
     };
 
+    const showHidePulser = (should_show) => { $('.upgrademessage').children('a').setVisibility(should_show); };
+
     return {
         redirectAccount,
         populateForm,
         handleNewAccount,
         commonValidations,
         selectCheckboxValidation,
+        showHidePulser,
     };
 })();
 

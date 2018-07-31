@@ -37,9 +37,7 @@ const Cashier = (() => {
     const onLoad = () => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
-                const is_virtual = Client.get('is_virtual');
-                const is_crypto  = isCryptocurrency(Client.get('currency'));
-                if (is_virtual) {
+                if (Client.get('is_virtual')) {
                     displayTopUpButton();
                 }
                 const residence = Client.get('residence');
@@ -51,7 +49,7 @@ const Cashier = (() => {
                         }
                     });
                 }
-                $(is_crypto ? '.crypto_currency' : '.normal_currency').setVisibility(1);
+                $(isCryptocurrency(Client.get('currency')) ? '.crypto_currency' : '.normal_currency').setVisibility(1);
                 if (/^BCH/.test(Client.get('currency'))) {
                     getElementById('message_bitcoin_cash').setVisibility(1);
                 }
