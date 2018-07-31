@@ -6,10 +6,14 @@ import { InkBar } from './inkbar.jsx';
 
 const withInkBar = (Component) => {
     class ComponentWithInkBar extends React.Component {
-        state = {
-            left : 0,
-            width: 0,
-        };
+        constructor(props) {
+            super(props);
+            window.addEventListener('resize', this.updateInkbarPosition);
+            this.state = {
+                left : 0,
+                width: 0,
+            };
+        }
 
         componentDidMount() {
             this.node = ReactDOM.findDOMNode(this); // eslint-disable-line
@@ -23,10 +27,6 @@ const withInkBar = (Component) => {
             } else if (this.state.left !== 0 || this.state.width !== 0) {
                 this.clearInkBar(); // clear InkBar when active element doesn't exist
             }
-        }
-
-        componentWillMount() {
-            window.addEventListener('resize', this.updateInkbarPosition);
         }
 
         componentWillUnMount() {
