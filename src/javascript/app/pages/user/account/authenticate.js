@@ -232,6 +232,13 @@ const Authenticate = (() => {
                         $(`label[for=${api_response.passthrough.class}] span`).attr('class', 'checked');
                     }
                     uploadNextFile();
+                }).catch((error) => {
+                    is_any_upload_failed = true;
+                    showError({
+                        message: error.message || localize('Failed'),
+                        class  : error.passthrough ? error.passthrough.class : '',
+                    });
+                    uploadNextFile();
                 });
             };
             const uploadNextFile = () => {
