@@ -150,9 +150,14 @@ hr {
                         justify-content: center;
                         height: 80%;
 
-                        img {
-                            width: 70px;
-                            height: auto;
+                        .bell-icon {
+                            height: 70px;
+
+                            svg.inline-icon {
+                                width: 16px;
+                                height: 16px;
+                                transform: scale(6, 6);
+                            }
                         }
                         h4 {
                             margin: 0;
