@@ -14,16 +14,17 @@ const TableRow = ({
     return (
         <div className='table__row' onClick={onClick}>
             {columns.map(({ col_index, renderCellContent, title }) => {
-                const cell_value = row_obj[col_index] || '';
+                let cell_content = title;
+                if (!is_header) {
+                    const cell_value = row_obj[col_index] || '';
+                    cell_content = renderCellContent
+                        ? renderCellContent({ cell_value, col_index, row_obj, is_footer })
+                        : cell_value;
+                }
 
                 return (
                     <TableCell col_index={col_index} key={col_index}>
-                        {is_header
-                            ? title
-                            : renderCellContent
-                                ? renderCellContent({ cell_value, col_index, row_obj, is_footer })
-                                : cell_value
-                        }
+                        {cell_content}
                     </TableCell>
                 );
             })}
