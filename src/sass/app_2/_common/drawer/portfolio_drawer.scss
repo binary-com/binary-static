@@ -42,11 +42,22 @@
     */
     &-card {
         height: 58px;
+        box-sizing: border-box;
+        padding: 8px;
         display: grid;
         grid-template-columns: 3fr 2fr;
         grid-template-rows: 50% 50%;
         border: 1px solid $COLOR_GRAY;
         border-radius: 2px;
+
+        &__remaining-time {
+            font-size: 10px;
+            color: $COLOR_BLUE_GRAY;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
     }
     /*
         PORTFOLIO DRAWER CARD ENDS

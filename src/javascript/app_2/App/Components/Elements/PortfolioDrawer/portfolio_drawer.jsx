@@ -19,7 +19,12 @@ const PortfolioDrawer = ({ is_portfolio_drawer_on, toggleDrawer }) => (
             />
         </div>
         <div className='portfolio-drawer__body'>
-            <PortfolioDrawerCard />
+            <PortfolioDrawerCard
+                type='Rise'
+                symbol='Gold/USD'
+                indicative={0.84}
+                remaining_time='00:08:17'
+            />
         </div>
     </div>
 );
