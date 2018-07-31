@@ -3,7 +3,7 @@ import PropTypes                     from 'prop-types';
 import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
-import PortfolioDrawer               from './Components/Elements/portfolio_drawer.jsx';
+import PortfolioDrawer               from './Components/Elements/PortfolioDrawer';
 import AppContents                   from './Containers/Layout/app_contents.jsx';
 import Footer                        from './Containers/Layout/footer.jsx';
 import Header                        from './Containers/Layout/header.jsx';

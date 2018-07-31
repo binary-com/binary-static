@@ -1,10 +1,8 @@
-// import { PropTypes as MobxPropTypes } from 'mobx-react';
 import classNames                     from 'classnames';
-import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { connect }                    from '../../../Stores/connect';
-import { localize }                   from '../../../../_common/localize';
+import { connect }                    from '../../../../Stores/connect';
+import { localize }                   from '../../../../../_common/localize';
 
 const PortfolioDrawer = ({ is_portfolio_drawer_on, toggleDrawer }) => (
     <div className={classNames('portfolio-drawer', {
