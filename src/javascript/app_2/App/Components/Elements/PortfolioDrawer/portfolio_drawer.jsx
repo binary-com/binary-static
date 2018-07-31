@@ -25,6 +25,7 @@ const PortfolioDrawer = ({ is_portfolio_drawer_on, toggleDrawer }) => (
                 indicative={0.84}
                 remaining_time='00:08:17'
                 currency='USD'
+                status='price-moved-up'
             />
         </div>
     </div>

@@ -10,7 +10,6 @@
     border-left: 1px solid $COLOR_GRAY;
     background-color: $COLOR_WHITE;
     box-sizing: border-box;
-    padding: 0 10px;
 
     &--open {
         transform: translateX(0);
@@ -19,7 +18,10 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 16px 0;
+        padding: 16px 10px;
+    }
+    &__body {
+        padding: 0 10px;
     }
     &__title {
         font-size: 13px;
@@ -58,7 +60,48 @@
             font-size: 12px;
             color: $COLOR_BLUE;
             font-weight: bold;
-            text-align: right;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: auto;
+
+            &:after {
+                content: '';
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                background-size: 16px 16px;
+                margin-left: 2px;
+            }
+            &--price-moved-up {
+                color: $COLOR_LIGHT_GREEN;
+
+                &:after {
+                    background-image: url('../images/app_2/statement/ic_price_up.svg');
+                }
+            }
+            &--price-moved-down {
+                color: $COLOR_LIGHT_RED;
+
+                &:after {
+                    background-image: url('../images/app_2/statement/ic_price_down.svg');
+                }
+            }
+            &--price-stable {
+                color: $COLOR_BLACK;
+
+                &:after {
+                    background-image: url('../images/app_2/statement/ic_price_stable.svg');
+                }
+            }
+            &--no-resale {
+                color: $COLOR_GRAY;
+
+                &:after {
+                    background-image: url('../images/app_2/statement/ic_no_resale.svg');
+                }
+            }
         }
         &__remaining-time {
             font-size: 10px;

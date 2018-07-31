@@ -5,10 +5,10 @@ import Money                          from '../money.jsx';
 import { connect }                    from '../../../../Stores/connect';
 import { localize }                   from '../../../../../_common/localize';
 
-const PortfolioDrawerCard = ({ type, indicative, symbol, remaining_time, currency }) => (
+const PortfolioDrawerCard = ({ type, indicative, symbol, remaining_time, currency, status }) => (
     <div className='portfolio-drawer-card'>
         <div className='portfolio-drawer-card__type'>{type}</div>
-        <div className='portfolio-drawer-card__indicative'>
+        <div className={`portfolio-drawer-card__indicative portfolio-drawer-card__indicative--${status}`}>
             <Money amount={indicative} currency={currency} />
         </div>
         <span className='portfolio-drawer-card__symbol'>{symbol}</span>
