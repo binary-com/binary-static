@@ -3,7 +3,7 @@ import PropTypes  from 'prop-types';
 import React      from 'react';
 import { InkBar } from './inkbar.jsx';
 
-class DivWithInkBar extends React.Component {
+class InkBarDiv extends React.Component {
     constructor(props) {
         super(props);
         window.addEventListener('resize', this.updateInkbarPosition);
@@ -58,7 +58,7 @@ class DivWithInkBar extends React.Component {
     render() {
         const { className, ...other_props } = this.props;
         const props = {
-            className: classnames('with-inkbar', className),
+            className: classnames('has-inkbar', className),
             ...other_props,
         };
 
@@ -77,9 +77,9 @@ class DivWithInkBar extends React.Component {
     }
 };
 
-DivWithInkBar.propTypes = {
+InkBarDiv.propTypes = {
     className: PropTypes.string,
     children : PropTypes.array,
 };
 
-export default DivWithInkBar;
+export default InkBarDiv;

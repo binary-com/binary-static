@@ -1,6 +1,6 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import DivWithInkBar  from '../../Elements/InkBar';
+import InkBarDiv      from '../../Elements/InkBar';
 import { BinaryLink } from '../../Routes';
 import Url            from '../../../../../_common/url';
 
@@ -10,13 +10,13 @@ const MenuLinks = ({ items }) => (
             <img className='logo-img' src={Url.urlForStatic('images/app_2/header/symbol.svg')} alt='Binary.com' />
         </div>
         { !!items.length &&
-            <DivWithInkBar className='menu-links'>
+            <InkBarDiv className='menu-links'>
                 {items.map((item, idx) => (
                     <BinaryLink key={idx} to={item.link_to}>
                         <span className={item.icon} title={item.text}>{item.text}</span>
                     </BinaryLink>
                 ))}
-            </DivWithInkBar>
+            </InkBarDiv>
         }
     </React.Fragment>
 );

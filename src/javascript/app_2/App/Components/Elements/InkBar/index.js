@@ -1,2 +1,2 @@
-export default from './div_with_inkbar.jsx';
+export default from './inkbar_div.jsx';
 export *       from './inkbar.jsx';
