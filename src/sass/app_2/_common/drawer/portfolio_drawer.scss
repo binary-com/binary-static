@@ -157,20 +157,20 @@
     .portfolio-drawer {
         color: $COLOR_WHITE;
         background: $COLOR_BLUE;
-        border-color: $COLOR_COOL_GRAY;
+        border-color: $COLOR_BRANDBLUE_85;
 
         p {
-            color: $COLOR_DARK_GRAY;
+            color: $COLOR_BRANDBLUE_40;
         }
         .portfolio-drawer-item {
             background: $COLOR_BLUE;
-            border-color: $COLOR_COOL_GRAY;
+            border-color: $COLOR_BRANDBLUE_85;
 
             span {
                 color: $COLOR_WHITE;
             }
             &:hover {
-                background: $COLOR_COOL_GRAY;
+                background: $COLOR_BRANDBLUE_85;
             }
         }
     }

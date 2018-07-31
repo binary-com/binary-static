@@ -6,7 +6,7 @@
         background: $COLOR_BLUE;
     }
     header {
-        border-color: $COLOR_COOL_GRAY;
+        border-color: $COLOR_BRANDBLUE_85;
 
         .menu-items {
             .menu-links a {
@@ -44,26 +44,26 @@
                     }
                 }
                 &:hover {
-                    background-color: $COLOR_COOL_GRAY;
+                    background-color: $COLOR_BRANDBLUE_85;
 
                     span {
                         color: $COLOR_WHITE;
                     }
                 }
                 span {
-                    color: $COLOR_DARK_GRAY;
+                    color: $COLOR_BRANDBLUE_40;
                 }
             }
             .menu-left .binary-logo, .menu-right {
-                border-color: $COLOR_COOL_GRAY;
+                border-color: $COLOR_BRANDBLUE_85;
             }
             .menu-right .acc-balance-container {
                 .acc-balance {
                     .acc-info {
-                        border-color: $COLOR_COOL_GRAY;
+                        border-color: $COLOR_BRANDBLUE_85;
 
                         p {
-                            color: $COLOR_DARK_GRAY;
+                            color: $COLOR_BRANDBLUE_40;
                         }
                     }
                     .acc-balance-amount {
@@ -82,50 +82,50 @@
     }
     .app-contents {
         fieldset {
-            background: $COLOR_LIGHTER_BLUE;
+            background: $COLOR_BRANDBLUE_95;
             color: $COLOR_WHITE;
-            border-color: $COLOR_COOL_GRAY;
+            border-color: $COLOR_BRANDBLUE_85;
 
             div.fieldset-header {
                 span.field-info.left {
-                    color: $COLOR_DARK_GRAY;
+                    color: $COLOR_BRANDBLUE_40;
                 }
             }
             input, select {
                 background: $COLOR_BLUE;
                 color: $COLOR_WHITE;
-                border-color: $COLOR_COOL_GRAY;
+                border-color: $COLOR_BRANDBLUE_85;
             }
             div.submit-section button.btn:disabled {
-                box-shadow: 0 2px 2px 0 $COLOR_GLASS_GRAY;
+                box-shadow: 0 2px 2px 0 $COLOR_BRANDBLUE_85;
             }
             .symbols {
                 color: $COLOR_WHITE;
-                background: $COLOR_LIGHTER_BLUE;
+                background: $COLOR_BRANDBLUE_95;
                 border-radius: 0;
             }
         }
         div.purchase-wrapper {
             div.purchase-error {
-                background: $COLOR_LIGHTER_BLUE;
-                border-color: $COLOR_COOL_GRAY;
-                color: $COLOR_DARK_GRAY;
+                background: $COLOR_BRANDBLUE_95;
+                border-color: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_40;
             }
         }
         .portfolio.container {
             background: $COLOR_BLUE;
 
             .table {
-                color: $COLOR_DARK_GRAY;
-                border-color: $COLOR_COOL_GRAY;
+                color: $COLOR_BRANDBLUE_40;
+                border-color: $COLOR_BRANDBLUE_85;
 
                 .table__head, .table__foot {
                     background-color: $COLOR_BLUE;
-                    border-color: $COLOR_COOL_GRAY;
+                    border-color: $COLOR_BRANDBLUE_85;
 
                     .table__row {
                         background: $COLOR_BLUE;
-                        border-color: $COLOR_COOL_GRAY;
+                        border-color: $COLOR_BRANDBLUE_85;
                     }
                 }
                 .table__body {
@@ -139,16 +139,16 @@
                     }
                     .table__row {
                         background: $COLOR_BLUE;
-                        border-color: $COLOR_COOL_GRAY;
+                        border-color: $COLOR_BRANDBLUE_85;
 
                         .table__cell.payout span.symbol {
                             background: $COLOR_BLUE;
                         }
                         &:hover {
-                            background: $COLOR_COOL_GRAY;
+                            background: $COLOR_BRANDBLUE_85;
 
                             td.payout span.symbol {
-                                background: $COLOR_COOL_GRAY;
+                                background: $COLOR_BRANDBLUE_85;
                             }
                         }
                     }
@@ -158,27 +158,27 @@
         .statement.container {
             .statement-filter {
                 background: $COLOR_BLUE;
-                color: $COLOR_DARK_GRAY;
-                border-color: $COLOR_COOL_GRAY;
+                color: $COLOR_BRANDBLUE_40;
+                border-color: $COLOR_BRANDBLUE_85;
             }
             .statement__content {
                 background: $COLOR_BLUE;
 
                 .table {
-                    border-color: $COLOR_COOL_GRAY;
+                    border-color: $COLOR_BRANDBLUE_85;
 
                     .table__head {
-                        background: $COLOR_GLASS_GRAY;
-                        border-color: $COLOR_COOL_GRAY;
+                        background: $COLOR_BRANDBLUE_85;
+                        border-color: $COLOR_BRANDBLUE_85;
 
                         .table__row {
-                            border-color: $COLOR_COOL_GRAY;
-                            color: $COLOR_DARK_GRAY;
+                            border-color: $COLOR_BRANDBLUE_85;
+                            color: $COLOR_BRANDBLUE_40;
                         }
                     }
                     .table__body {
                         .table__row {
-                            border-color: $COLOR_COOL_GRAY;
+                            border-color: $COLOR_BRANDBLUE_85;
 
                             .table__cell {
                                 &.date, &.desc, &.action, &.payout, &.balance {
@@ -189,7 +189,7 @@
                                 }
                             }
                             &:hover {
-                                background: $COLOR_COOL_GRAY;
+                                background: $COLOR_BRANDBLUE_85;
                             }
                         }
                     }
@@ -198,15 +198,15 @@
         }
     }
     footer {
-        border-color: $COLOR_COOL_GRAY;
-        color: $COLOR_DARK_GRAY;
+        border-color: $COLOR_BRANDBLUE_85;
+        color: $COLOR_BRANDBLUE_40;
 
         .footer-links a {
             span {
-                color: $COLOR_DARK_GRAY;
+                color: $COLOR_BRANDBLUE_40;
             }
             &.active, &:hover, &:focus {
-                background: $COLOR_COOL_GRAY;
+                background: $COLOR_BRANDBLUE_85;
 
                 .inline-icon {
                     path {
@@ -231,24 +231,24 @@
             }
         }
         .server-time {
-            border-color: $COLOR_COOL_GRAY;
+            border-color: $COLOR_BRANDBLUE_85;
         }
     }
     .inline-icon {
         path {
-            fill: $COLOR_DARK_GRAY;
+            fill: $COLOR_BRANDBLUE_40;
         }
         .stroke-only {
-            stroke: $COLOR_DARK_GRAY;
+            stroke: $COLOR_BRANDBLUE_40;
             fill: none;
         }
         .fill-only {
-            fill: $COLOR_DARK_GRAY;
+            fill: $COLOR_BRANDBLUE_40;
             stroke: none;
         }
         .stroke-fill {
-            stroke: $COLOR_DARK_GRAY;
-            fill: $COLOR_DARK_GRAY;
+            stroke: $COLOR_BRANDBLUE_40;
+            fill: $COLOR_BRANDBLUE_40;
         }
         .no-stroke {
             stroke: $COLOR_BLUE;
@@ -258,13 +258,13 @@
         }
     }
     .acc-switcher-header {
-        border-color: $COLOR_COOL_GRAY;
+        border-color: $COLOR_BRANDBLUE_85;
     }
     .acc-switcher-list {
         background: $COLOR_BLUE;
 
         .acc-switcher-items {
-            color: $COLOR_DARK_GRAY;
+            color: $COLOR_BRANDBLUE_40;
         }
     }
 }

@@ -290,7 +290,7 @@ div.datepicker-container {
 .theme-wrapper.dark {
     input.datepicker-display {
         background: $COLOR_BLUE;
-        border-color: $COLOR_COOL_GRAY;
+        border-color: $COLOR_BRANDBLUE_85;
         color: $COLOR_WHITE;
 
         &:hover, &:focus, &:active {
@@ -299,12 +299,12 @@ div.datepicker-container {
     }
     .calendar {
         background: $COLOR_BLUE;
-        border: 1px solid $COLOR_COOL_GRAY;
+        border: 1px solid $COLOR_BRANDBLUE_85;
 
         input {
             border-radius: 0;
             background: $COLOR_BLUE;
-            border-color: $COLOR_COOL_GRAY;
+            border-color: $COLOR_BRANDBLUE_85;
             color: $COLOR_WHITE;
 
             &:hover, &:focus, &:active {
@@ -312,35 +312,35 @@ div.datepicker-container {
             }
         }
         .calendar-header, .calendar-footer {
-            border-color: $COLOR_COOL_GRAY;
-            color: $COLOR_DARK_GRAY;
+            border-color: $COLOR_BRANDBLUE_85;
+            color: $COLOR_BRANDBLUE_40;
 
             .calendar-prev-year-btn, .calendar-prev-month-btn, .calendar-next-month-btn, .calendar-next-year-btn {
-                color: $COLOR_DARK_GRAY;
+                color: $COLOR_BRANDBLUE_40;
             }
         }
         span.calendar-date-header {
-            color: $COLOR_DARK_GRAY;
+            color: $COLOR_BRANDBLUE_40;
         }
         span.calendar-date {
             background: $COLOR_BLUE;
-            color: $COLOR_DARK_GRAY;
+            color: $COLOR_BRANDBLUE_40;
 
             &.active {
                 font-weight: 600;
                 color: $COLOR_WHITE;
-                background: $COLOR_DARK_GRAY !important;
+                background: $COLOR_BRANDBLUE_40 !important;
             }
             &:hover:not(.active) {
-                background: $COLOR_GLASS_GRAY !important;
+                background: $COLOR_BRANDBLUE_85 !important;
             }
             &.disabled {
-                background: $COLOR_GLASS_GRAY !important;
+                background: $COLOR_BRANDBLUE_85 !important;
                 color: $COLOR_DARK_BLUE !important;
             }
         }
         div.calendar-footer span.calendar-footer-btn {
-            color: $COLOR_DARK_GRAY;
+            color: $COLOR_BRANDBLUE_40;
         }
     }
 }

@@ -120,8 +120,10 @@ hr {
 
                             .inline-icon {
                                 position: absolute;
-                                top: 18px;
-                                right: 14px;
+                                top: 14px;
+                                right: 10px;
+                                width: 24px;
+                                height: 24px;
                             }
                         }
                     }
@@ -278,7 +280,7 @@ hr {
 // Dark Theme
 .theme-wrapper.dark {
     hr {
-        border-color: $COLOR_COOL_GRAY;
+        border-color: $COLOR_BRANDBLUE_85;
     }
     .drawer-bg .drawer {
         background: $COLOR_BLUE;
@@ -288,17 +290,17 @@ hr {
         .drawer-item {
             a {
                 &:before {
-                    color: $COLOR_DARK_GRAY;
+                    color: $COLOR_BRANDBLUE_40;
                 }
                 &:hover:before {
                     color: $COLOR_WHITE;
                 }
                 span {
-                    color: $COLOR_DARK_GRAY;
+                    color: $COLOR_BRANDBLUE_40;
                 }
             }
             &:hover {
-                background: $COLOR_COOL_GRAY;
+                background: $COLOR_BRANDBLUE_85;
 
                 span {
                     color: $COLOR_WHITE;
@@ -307,11 +309,11 @@ hr {
         }
         &.left, &.right {
             .drawer-header {
-                border-color: $COLOR_COOL_GRAY;
+                border-color: $COLOR_BRANDBLUE_85;
 
                 .icons {
                     &.brand-logo, &.btn-close {
-                        border-color: $COLOR_COOL_GRAY;
+                        border-color: $COLOR_BRANDBLUE_85;
                     }
                     &.brand-logo div.img:before {
                         background-image: url('../images/app_2/header/binary_logo_dark.svg');

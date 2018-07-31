@@ -303,31 +303,31 @@ div.contracts-popup-container {
 .theme-wrapper.dark {
     div.contracts-popup-container {
         background: $COLOR_BLUE;
-        border-color: $COLOR_COOL_GRAY;
+        border-color: $COLOR_BRANDBLUE_85;
 
         &:hover {
             border-color: $COLOR_WHITE;
         }
         .list-container {
-            border-color: $COLOR_COOL_GRAY;
-            background: $COLOR_LIGHTER_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_BRANDBLUE_95;
 
             .list-group .list-items .list-item {
                 background: $COLOR_BLUE;
-                border-color: $COLOR_COOL_GRAY;
-                color: $COLOR_DARK_GRAY;
+                border-color: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_40;
 
                 &.selected {
-                    background: $COLOR_GLASS_GRAY;
+                    background: $COLOR_BRANDBLUE_85;
                     font-weight: 600;
                     color: $COLOR_WHITE;
                 }
                 &:hover {
-                    background: $COLOR_GLASS_GRAY;
+                    background: $COLOR_BRANDBLUE_85;
                     color: $COLOR_WHITE;
                 }
                 &:only-child, &:first-child:nth-last-child(2) {
-                    border-color: $COLOR_COOL_GRAY;
+                    border-color: $COLOR_BRANDBLUE_85;
                 }
             }
         }

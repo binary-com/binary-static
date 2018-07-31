@@ -219,51 +219,51 @@
 .theme-wrapper.dark {
     .settings-dialog {
         background: $COLOR_BLUE;
-        border-color: $COLOR_COOL_GRAY;
+        border-color: $COLOR_BRANDBLUE_85;
 
         .settings-dialog-container {
             background: $COLOR_BLUE;
 
             .tab-content {
-                background: $COLOR_LIGHTER_BLUE;
+                background: $COLOR_BRANDBLUE_95;
             }
             .general-setting-container, .chart-setting-container {
                 background: $COLOR_BLUE;
-                border-color: $COLOR_COOL_GRAY;
+                border-color: $COLOR_BRANDBLUE_85;
 
             }
             .settings-row {
-                border-color: $COLOR_COOL_GRAY;
+                border-color: $COLOR_BRANDBLUE_85;
 
                 span {
-                    color: $COLOR_DARK_GRAY;
+                    color: $COLOR_BRANDBLUE_40;
                 }
                 &:hover {
-                    background-color: $COLOR_COOL_GRAY;
+                    background-color: $COLOR_BRANDBLUE_85;
                     color: $COLOR_WHITE;
                 }
             }
         }
         .language-dialog-container {
-            background: $COLOR_LIGHTER_BLUE;
-            border-color: $COLOR_COOL_GRAY;
+            background: $COLOR_BRANDBLUE_95;
+            border-color: $COLOR_BRANDBLUE_85;
 
             .language-header {
                 background: $COLOR_BLUE;
-                color: $COLOR_DARK_GRAY;
-                border-color: $COLOR_COOL_GRAY;
+                color: $COLOR_BRANDBLUE_40;
+                border-color: $COLOR_BRANDBLUE_85;
             }
             .language-row {
                 background: $COLOR_BLUE;
-                color: $COLOR_DARK_GRAY;
-                border-color: $COLOR_COOL_GRAY;
+                color: $COLOR_BRANDBLUE_40;
+                border-color: $COLOR_BRANDBLUE_85;
 
                 a span {
-                    color: $COLOR_DARK_GRAY;
+                    color: $COLOR_BRANDBLUE_40;
                 }
                 &:hover {
                     a {
-                        background: $COLOR_COOL_GRAY;
+                        background: $COLOR_BRANDBLUE_85;
 
                         span {
                             color: $COLOR_WHITE;

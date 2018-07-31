@@ -137,7 +137,7 @@ div.dropdown-container {
     .dropdown-container {
         .dropdown-display {
             background: $COLOR_BLUE;
-            border-color: $COLOR_COOL_GRAY;
+            border-color: $COLOR_BRANDBLUE_85;
 
             &:hover, &:focus, &:active {
                 border-color: $COLOR_WHITE;
@@ -148,18 +148,18 @@ div.dropdown-container {
         }
         .list-container {
             background: $COLOR_BLUE;
-            border-color: $COLOR_COOL_GRAY;
+            border-color: $COLOR_BRANDBLUE_85;
 
             .list-item {
-                color: $COLOR_DARK_GRAY;
+                color: $COLOR_BRANDBLUE_40;
 
                 &.selected span {
                     color: $COLOR_WHITE;
                     font-weight: 600;
-                    background: $COLOR_COOL_GRAY;
+                    background: $COLOR_BRANDBLUE_85;
                 }
                 &:hover {
-                    background: $COLOR_COOL_GRAY;
+                    background: $COLOR_BRANDBLUE_85;
                 }
             }
         }
