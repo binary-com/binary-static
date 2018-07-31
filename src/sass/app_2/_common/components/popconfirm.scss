@@ -186,3 +186,27 @@ button.btn {
         }
     }
 }
+
+// Dark theme
+.theme-wrapper.dark {
+    .popconfirm {
+        background: $COLOR_LIGHTER_BLUE;
+
+        &-title h4 {
+            color: $COLOR_WHITE;
+        }
+        &-buttons .btn {
+            background: $COLOR_LIGHTER_BLUE;
+
+            span {
+                color: $COLOR_WHITE;
+            }
+            &:hover {
+                background: $COLOR_GLASS_GRAY;
+            }
+        }
+        &:after {
+            border-color: $COLOR_LIGHTER_BLUE;
+        }
+    }
+}
