@@ -46,17 +46,24 @@
         padding: 8px;
         display: grid;
         grid-template-columns: 3fr 2fr;
-        grid-template-rows: 50% 50%;
+        grid-template-rows: 1fr auto;
         border: 1px solid $COLOR_GRAY;
         border-radius: 2px;
 
+        &__symbol {
+            font-size: 10px;
+            color: $COLOR_BLUE;
+        }
+        &__indicative {
+            font-size: 12px;
+            color: $COLOR_BLUE;
+            font-weight: bold;
+            text-align: right;
+        }
         &__remaining-time {
             font-size: 10px;
             color: $COLOR_BLUE_GRAY;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            justify-content: flex-end;
+            text-align: right;
         }
     }
     /*
