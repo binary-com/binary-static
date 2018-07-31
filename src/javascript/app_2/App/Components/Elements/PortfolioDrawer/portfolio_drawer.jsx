@@ -24,6 +24,7 @@ const PortfolioDrawer = ({ is_portfolio_drawer_on, toggleDrawer }) => (
                 symbol='Gold/USD'
                 indicative={0.84}
                 remaining_time='00:08:17'
+                currency='USD'
             />
         </div>
     </div>
