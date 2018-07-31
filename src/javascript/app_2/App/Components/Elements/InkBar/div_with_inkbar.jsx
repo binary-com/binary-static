@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import PropTypes  from 'prop-types';
 import React      from 'react';
-import ReactDOM   from 'react-dom';
 import { InkBar } from './inkbar.jsx';
 
 class DivWithInkBar extends React.Component {
@@ -15,7 +14,7 @@ class DivWithInkBar extends React.Component {
     }
 
     componentDidMount() {
-        this.node = ReactDOM.findDOMNode(this); // eslint-disable-line
+        if (!this.node) return;
         this.updateInkbarPosition(this.node.querySelector('a[class="active"]'));
     }
 
@@ -64,7 +63,7 @@ class DivWithInkBar extends React.Component {
         };
 
         return (
-            <div {...props}>
+            <div ref={(node) => this.node = node} {...props}>
                 { 
                     React.Children.map(this.props.children, child => (
                         React.cloneElement(child, {
