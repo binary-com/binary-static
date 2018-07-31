@@ -2,6 +2,7 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
 import MessageBox        from '../Components/Form/Purchase/MessageBox';
+import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
 import { PopConfirm }    from '../../../App/Components/Elements/PopConfirm';
 import UILoader          from '../../../App/Components/Elements/ui_loader.jsx';
 import Button            from '../../../App/Components/Form/button.jsx';
@@ -19,13 +20,15 @@ const Purchase = ({
     is_trade_enabled,
     onClickPurchase,
     onHoverPurchase,
+    togglePurchaseLock,
+    resetPurchase,
     proposal_info,
     purchase_info,
     trade_types,
 }) => (
     Object.keys(trade_types).map((type, idx) => {
         const info        = proposal_info[type] || {};
-        const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || is_purchase_locked;
+        const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id;
 
         const purchase_button = (
             <Button
@@ -39,6 +42,8 @@ const Purchase = ({
             />
         );
 
+        const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
+
         return (
             <Fieldset
                 className='purchase-option'
@@ -46,12 +51,17 @@ const Purchase = ({
                 onMouseEnter={() => { onHoverPurchase(true, type); }}
                 onMouseLeave={() => { onHoverPurchase(false); }}
             >
-                {(!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id) ?
-                    <MessageBox purchase_info={purchase_info} />
+                {(is_purchase_locked && idx === 0) &&
+                    <PurchaseLock onClick={togglePurchaseLock} />
+                }
+                {(is_purchase_error) ?
+                    <MessageBox
+                        purchase_info={purchase_info}
+                        onClick={resetPurchase}
+                    />
                     :
                     <React.Fragment>
-                        {/* // TODO - move this outside of the loop  */}
-                        {!is_purchase_enabled &&
+                        {(!is_purchase_enabled && idx === 0) &&
                         <UILoader />
                         }
                         <ContractInfo
@@ -89,6 +99,8 @@ Purchase.propTypes = {
     is_trade_enabled      : PropTypes.bool,
     onClickPurchase       : PropTypes.func,
     onHoverPurchase       : PropTypes.func,
+    resetPurchase         : PropTypes.func,
+    togglePurchaseLock    : PropTypes.func,
     proposal_info         : PropTypes.object,
     purchase_info         : PropTypes.object,
     trade_types           : PropTypes.object,
@@ -101,10 +113,12 @@ export default connect(
         is_trade_enabled      : modules.trade.is_trade_enabled,
         onClickPurchase       : modules.trade.onPurchase,
         onHoverPurchase       : modules.trade.onHoverPurchase,
+        resetPurchase         : modules.trade.requestProposal,
         proposal_info         : modules.trade.proposal_info,
         purchase_info         : modules.trade.purchase_info,
         trade_types           : modules.trade.trade_types,
         is_purchase_confirm_on: ui.is_purchase_confirm_on,
         is_purchase_locked    : ui.is_purchase_lock_on,
+        togglePurchaseLock    : ui.togglePurchaseLock,
     })
 )(Purchase);

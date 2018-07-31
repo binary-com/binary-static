@@ -1,7 +1,15 @@
 @supports (display: grid) {
     .app-contents {
-        margin: 48px 0 0;
+        margin: $HEADER_HEIGHT 0 $FOOTER_HEIGHT;
+        min-height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
         overflow: auto; // prevent margin collapse
+        display: flex; // needed to allow setting child height to 100% without explicit height defined here (https://stackoverflow.com/a/23300532/4402857)
+        flex-direction: column;
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 0;
+            min-height: calc(100vh - #{$HEADER_HEIGHT});
+        }
     }
     /* trade-app layout */
     .trade-container {
@@ -84,6 +92,9 @@
                         &.has-time {
                             grid-template-columns: 1.5fr 1fr;
                         }
+                    }
+                    .time-picker, .datepicker-container {
+                        margin-top: 8px;
                     }
                     @media (min-width: 979px) {
                         div.duration-container {
@@ -209,10 +220,6 @@
     }
 }
 
-.shadow {
-    box-shadow: 0 1px 0 0 $COLOR_GRAY;
-}
-
 // Helpers
 .no-scroll {
     overflow: hidden;
@@ -228,5 +235,18 @@
 .mobile-only {
     @media (min-width: 769px) {
         display: none !important;
+    }
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 90px); // TODO: replace with 100vh - header height - footer height
+
+    p {
+        @include interpolate(font-size, 320px, 1440px, 14px, 20px);
+        color: $COLOR_LIGHT_BLACK;
     }
 }

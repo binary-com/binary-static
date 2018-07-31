@@ -2,58 +2,58 @@
 .theme-wrapper.dark {
     background: $COLOR_BLUE;
 
-    #header header, footer, .app-contents {
+    header, footer, .app-contents {
         background: $COLOR_BLUE;
     }
-    #header header.shadow {
-        box-shadow: 0 1px 0 0 $COLOR_COOL_GRAY;
+    header {
+        border-color: $COLOR_COOL_GRAY;
 
-        .menu-links a {
-            &.active, &:hover {
-                span {
-                    color: $COLOR_WHITE;
+        .menu-items {
+            .menu-links a {
+                &.active, &:hover {
+                    span {
+                        color: $COLOR_WHITE;
 
-                    .inline-icon {
-                        path {
-                            fill: $COLOR_WHITE;
-                        }
-                        .stroke-only {
-                            stroke: $COLOR_WHITE;
-                            fill: none;
-                        }
-                        .fill-only {
-                            fill: $COLOR_WHITE;
-                            stroke: none;
-                        }
-                        .stroke-fill {
-                            stroke: $COLOR_WHITE;
-                            fill: $COLOR_WHITE;
-                        }
-                        .no-stroke {
-                            stroke: $COLOR_BLUE;
-                        }
-                        .no-fill {
-                            fill: $COLOR_BLUE;
-                        }
+                        .inline-icon {
+                            path {
+                                fill: $COLOR_WHITE;
+                            }
+                            .stroke-only {
+                                stroke: $COLOR_WHITE;
+                                fill: none;
+                            }
+                            .fill-only {
+                                fill: $COLOR_WHITE;
+                                stroke: none;
+                            }
+                            .stroke-fill {
+                                stroke: $COLOR_WHITE;
+                                fill: $COLOR_WHITE;
+                            }
+                            .no-stroke {
+                                stroke: $COLOR_BLUE;
+                            }
+                            .no-fill {
+                                fill: $COLOR_BLUE;
+                            }
 
+                        }
+                    }
+                    &:after {
+                        background-color: $COLOR_WHITE;
                     }
                 }
-                &:after {
-                    background-color: $COLOR_WHITE;
-                }
-            }
-            &:hover {
-                background-color: $COLOR_COOL_GRAY;
+                &:hover {
+                    background-color: $COLOR_COOL_GRAY;
 
+                    span {
+                        color: $COLOR_WHITE;
+                    }
+                }
                 span {
-                    color: $COLOR_WHITE;
+                    color: $COLOR_DARK_GRAY;
                 }
             }
-            span {
-                color: $COLOR_DARK_GRAY;
-            }
-        }
-        .menu-items {
             .menu-left .binary-logo, .menu-right {
                 border-color: $COLOR_COOL_GRAY;
             }

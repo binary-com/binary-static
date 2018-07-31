@@ -9,7 +9,7 @@ import ThemeWrapper                  from './Containers/Layout/theme_wrapper.jsx
 import { IconTrade,
          IconPortfolio,
          IconStatement }             from '../Assets/Header/NavBar';
-import BinaryRoutes                  from './Components/Routes';
+import Routes                        from './Containers/Routes/routes.jsx';
 import { routes }                    from '../Constants';
 import NetworkMonitor                from '../Services/network_monitor';
 import RootStore                     from '../Stores';
@@ -68,7 +68,7 @@ const BinaryApp = ({ root_store }) => (
                     />
                 </div>
                 <div id='app_contents' className='app-contents'>
-                    <BinaryRoutes />
+                    <Routes />
                 </div>
                 <footer id='footer'>
                     <Footer />

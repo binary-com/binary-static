@@ -20,7 +20,7 @@ const Header = ({
     is_logged_in,  
     onClickUpgrade,
 }) => (
-    <header className='shadow'>
+    <header className='header'>
         <div className='menu-items'>
             <div className='menu-left'>
                 <ToggleMenuDrawer />

@@ -1,10 +1,12 @@
+import classnames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import Filter                         from './statement_filter.jsx';
-import NoActivityMessage              from '../Components/no_activity_message.jsx';
-import ListLargeScreen                from '../Components/list_large_screen.jsx';
-import ListSmallScreen                from '../Components/list_small_screen.jsx';
+import StatementCardList              from '../Components/statement_card_list.jsx';
+import EmptyStatementMessage          from '../Components/empty_statement_message.jsx';
+import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
+import DataTable                      from '../../../App/Components/Elements/DataTable';
 import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
@@ -14,53 +16,84 @@ class Statement extends React.Component {
 
     render() {
         const {
-            has_no_activity_message,
             has_selected_date,
             data,
+            is_empty,
             is_loading,
             is_mobile,
+            is_tablet,
+            error,
+            handleScroll,
         } = this.props;
 
-        return (
+
+        if (error) return <p>{error}</p>;
+
+        const columns = getTableColumnsTemplate();
+        const should_show_cards = is_mobile || is_tablet;
+
+        const renderGUI = () => (
             <React.Fragment>
-                <Filter />
                 {
-                    is_mobile ?
-                        <ListSmallScreen data={data} />
-                        :
-                        <ListLargeScreen data={data} />
+                    is_empty &&
+                    <EmptyStatementMessage has_selected_date={has_selected_date} />
                 }
                 {
                     is_loading &&
                     <Loading />
                 }
-                {
-                    has_no_activity_message &&
-                    <NoActivityMessage has_selected_date={has_selected_date} />
-                }
             </React.Fragment>
+        );
+
+        return (
+            <div className={classnames('statement container', { 'statement--card-view': should_show_cards })}>
+                <Filter use_native_pickers={should_show_cards} />
+                <div className='statement__content'>
+                    {
+                        should_show_cards ?
+                            <React.Fragment>
+                                <StatementCardList data={data} />
+                                {renderGUI()}
+                            </React.Fragment>
+                            :
+                            <DataTable
+                                data_source={data}
+                                columns={columns}
+                                onScroll={handleScroll}
+                            >
+                                {renderGUI()}
+                            </DataTable>
+                    }
+                </div>
+            </div>
         );
     }
 }
 
 Statement.propTypes = {
-    has_no_activity_message: PropTypes.bool,
-    has_selected_date      : PropTypes.bool,
-    data                   : MobxPropTypes.arrayOrObservableArray,
-    is_loading             : PropTypes.bool,
-    is_mobile              : PropTypes.bool,
-    onMount                : PropTypes.func,
-    onUnmount              : PropTypes.func,
+    has_selected_date: PropTypes.bool,
+    data             : MobxPropTypes.arrayOrObservableArray,
+    error            : PropTypes.string,
+    is_empty         : PropTypes.bool,
+    is_loading       : PropTypes.bool,
+    is_mobile        : PropTypes.bool,
+    is_tablet        : PropTypes.bool,
+    onMount          : PropTypes.func,
+    onUnmount        : PropTypes.func,
+    handleScroll     : PropTypes.func,
 };
 
 export default connect(
     ({modules, ui}) => ({
-        has_no_activity_message: modules.statement.has_no_activity_message,
-        has_selected_date      : modules.statement.has_selected_date,
-        data                   : modules.statement.data,
-        is_loading             : modules.statement.is_loading,
-        onMount                : modules.statement.onMount,
-        onUnmount              : modules.statement.onUnmount,
-        is_mobile              : ui.is_mobile,
+        is_empty         : modules.statement.is_empty,
+        has_selected_date: modules.statement.has_selected_date,
+        data             : modules.statement.data,
+        is_loading       : modules.statement.is_loading,
+        error            : modules.statement.error,
+        onMount          : modules.statement.onMount,
+        onUnmount        : modules.statement.onUnmount,
+        handleScroll     : modules.statement.handleScroll,
+        is_mobile        : ui.is_mobile,
+        is_tablet        : ui.is_tablet,
     })
 )(Statement);

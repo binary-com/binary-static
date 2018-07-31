@@ -31,32 +31,24 @@ const ContractInfo = ({
                 </div>
                 :
                 <div className='purchase-info-wrapper'>
-                    <div className='stake-wrapper'>
-                        <span>
-                            {localize('Stake')}:
-                            <Money amount={proposal_info.stake} currency={currency} />
-                        </span>
-                        <span className='field-info'>
-                            <Tooltip alignment='left' icon='info' message={proposal_info.message}/>
-                        </span>
+                    <span className='purchase-tooltip'>
+                        <Tooltip alignment='left' icon='info' message={proposal_info.message}/>
+                    </span>
+                    <div className='info-wrapper'>
+                        <div>{localize('Stake')}:</div>
+                        <div><Money amount={proposal_info.stake} currency={currency} /></div>
                     </div>
-                    <div>
-                        <span>
-                            {localize('Payout')}:
-                        </span>
-                        <Money amount={proposal_info.payout} currency={currency} />
+                    <div className='info-wrapper'>
+                        <div>{localize('Payout')}:</div>
+                        <div><Money amount={proposal_info.payout} currency={currency} /></div>
                     </div>
-                    <div>
-                        <span>
-                            {localize('Net Profit')}:
-                        </span>
-                        <Money amount={proposal_info.profit} currency={currency} />
+                    <div className='info-wrapper'>
+                        <div>{localize('Net Profit')}:</div>
+                        <div><Money amount={proposal_info.profit} currency={currency} /></div>
                     </div>
-                    <div>
-                        <span>
-                            {localize('Return')}:
-                        </span>
-                        {proposal_info.returns}
+                    <div className='info-wrapper'>
+                        <div>{localize('Return')}:</div>
+                        <div>{proposal_info.returns}</div>
                     </div>
                 </div>
             }

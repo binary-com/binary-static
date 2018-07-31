@@ -110,20 +110,20 @@ const BinarySocketGeneral = (() => {
             case 'InternalServerError':
             case 'OutputValidationFailed': {
                 if (msg_type !== 'mt5_login_list') {
-                    // showNoticeMessage(response.error.message);
+                    common_store.setError(true, { message: response.error.message });
                 }
                 break;
             }
             case 'RateLimit':
                 if (msg_type !== 'cashier_password') {
-                    // Header.displayNotification(localize('You have reached the rate limit of requests per second. Please try later.'), true, 'RATE_LIMIT');
+                    common_store.setError(true, { message: 'You have reached the rate limit of requests per second. Please try later.' });
                 }
                 break;
             case 'InvalidAppID':
-                // Header.displayNotification(response.error.message, true, 'INVALID_APP_ID');
+                common_store.setError(true, { message: response.error.message });
                 break;
             case 'DisabledClient':
-                // showNoticeMessage(response.error.message);
+                common_store.setError(true, { message: response.error.message });
                 break;
             // no default
         }
