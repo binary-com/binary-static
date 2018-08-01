@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:19\n"
+"PO-Revision-Date: 2018-08-01 05:33\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -483,9 +483,6 @@ msgstr "Limite du volume des transactions sur 7 jours"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Retour aux descriptions de postes"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "<a href=\"%1\">Authentifier</a> votre compte en vérifiant votre identité et votre adresse."
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1 »>Retour à la plateforme de trading</a>"
@@ -1449,6 +1446,9 @@ msgstr "Authentification"
 
 msgid "Authorised Applications"
 msgstr "Applications autorisées"
+
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
 
 msgid "Auto-trader programming tool"
 msgstr "Outil de programmation de trading automatique"
@@ -3166,6 +3166,9 @@ msgstr "Chaque fois que vous ouvrez une position sur une paire de crypto monnaie
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Chaque fois que vous ouvrez une position sur un symbole indice, vous pouvez commencer avec un minimum de volume comme il est indiqué dans le tableau ci-dessus."
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "Gagnez"
 
@@ -3906,12 +3909,6 @@ msgstr "vendredi"
 
 msgid "Fridays"
 msgstr "Vendredis"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "De monnaie digitale à fiat : les frais de transfert %1"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "De fiat à la monnaie digitale : frais de transfert %1"
 
 msgid "Front Side"
 msgstr "Face Avant"
@@ -6694,9 +6691,6 @@ msgstr "Remarque : Vous ne pouvez avoir qu'un compte en monnaie fiduciaire et u
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "Remarque : Vous pouvez refuser et continuer comme un Client de détail."
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Remarque : Vous pouvez uniquement transférer des fonds entre un compte fiat et un en crypto devise."
-
 msgid "Notes:"
 msgstr "Remarques :"
 
@@ -7314,6 +7308,9 @@ msgstr "S’il vous plaît %1connectez vous%2 ou %3inscrivez vous%4 pour affiche
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Veuillez <a href=\"%1\">accepter la dernière version des conditions générales</a>."
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "Veuillez <a href=\"%1\">effectuer un dépôt</a> avant de virer des fonds vers un compte client."
@@ -10312,11 +10309,11 @@ msgstr "Transfert"
 msgid "Transfer Between Accounts"
 msgstr "Transfert Entre Comptes"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "Virement depuis"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "Virez des fonds entre vos comptes fiat et crypto devise pour un montant de frais :"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Virez des fonds entre vos comptes d’argent réel."
@@ -11832,6 +11829,12 @@ msgstr "Vous ne pouvez pas annuler ou amender le Niveau de votre Ordre Stop et L
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Vous pouvez uniquement ouvrir un compte sur ce site à condition que:"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "Vous pouvez révoquer l’accès du gestionnaire actuel."

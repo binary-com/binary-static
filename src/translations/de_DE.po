@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:19\n"
+"PO-Revision-Date: 2018-08-01 05:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -482,9 +482,6 @@ msgstr "7-Tage Umsatzlimit"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Back to Job Beschreibungen"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "<a href=\"%1\">Authentifizieren</a> Sie Ihr Konto, indem Sie Ihre Identität und Adresse bestätigen."
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Zurück zur Handelsseite</a>"
@@ -1449,6 +1446,9 @@ msgstr "Authentifizierung"
 msgid "Authorised Applications"
 msgstr "Erlaubte Anwendungen"
 
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
+
 msgid "Auto-trader programming tool"
 msgstr "Auto-Handels Programmierwerkzeug"
 
@@ -1645,10 +1645,10 @@ msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MS
 msgstr "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Lizensiert und reguliert (nur für Glücksspielprodukte - %1's Volatilität Indizes) von der Malta Gaming Authority in Malta (Lizenznummer MGA/CL2/118/2000) und für Kunden aus Großbritannien von der UK Gambling Commission - %2Lizenz anzeigen%3."
 
 msgid "Binary (FX) Ltd"
-msgstr ""
+msgstr "Binary (FX) Ltd"
 
 msgid "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr ""
+msgstr "Binary (FX) Ltd., Lot Nr. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Lizenziert und reguliert von der Labuan Financial Services Authority, um ein Geldmaklergeschäft zu betreiben %1(Lizenznr.: MB/18/0024)%2."
 
 msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
@@ -2191,7 +2191,7 @@ msgid "Clients from the rest of the world (excluding certain countries such as t
 msgstr "Kunden aus dem Rest der Welt (mit Ausnahme bestimmter Länder wie den USA, Costa Rica, Hongkong) haben ihr FX und CFD Metatrader 5 Konto mit Binary (V) Ltd eröffnet. %1 ist in der Republik Vanuatu nicht verfügbar."
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr ""
+msgstr "Kunden aus dem Rest der Welt (mit Ausnahme von bestimmten Ländern wie den USA, Japan und der Europäischen Union), die CFDs handeln möchten, bekommen ihr MetaTrader 5 Konto mit Binary (FX) Ltd eröffnet. %1 ist in Malaysia nicht verfügbar."
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
 msgstr "Kunden können diesen Bonus nur verwenden, wenn sie ein Echtgeldkonto eröffnet haben."
@@ -3166,6 +3166,9 @@ msgstr "Bei jedem Öffnen einer Position auf ein Kryptowährungspaar, können Si
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Bei jedem Öffnen einer Position auf ein Index-Symbol, können Sie mit einem Mindestvolumen, wie in der obigen Tabelle angezeigt, eine Transaktion vornehmen."
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "Verdienen Sie"
 
@@ -3906,12 +3909,6 @@ msgstr "Freitag"
 
 msgid "Fridays"
 msgstr "Freitag"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "Von Kryptowährung bis Fiat: %1 Ablösesumme"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "Von Fiat bis Kryptowährung: %1 Ablösesumme"
 
 msgid "Front Side"
 msgstr "Vorderseite"
@@ -6694,9 +6691,6 @@ msgstr "Hinweis: Sie können nur ein Fiat-Währungskonto und ein Konto je Krypto
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "Hinweis: Sie können zurückgehen und als Einzelhandelskunde fortfahren."
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Hinweis: Sie können Gelder nur zwischen einem Fiat-Konto und einem Kryptowährung-Konto überweisen."
-
 msgid "Notes:"
 msgstr "Anmerkungen:"
 
@@ -7314,6 +7308,9 @@ msgstr "Bitte %1melden%2 Sie sich an, oder %3registrieren%4 Sie sich, um diese S
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Bitte <a href=\"%1\">akzeptieren Sie die aktualisierten Geschäftsbedingungen</a>."
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "Bitte <a href=\"%1\">einzahlen</a>, bevor Sie an den Kunden überweisen."
@@ -10312,11 +10309,11 @@ msgstr "Überweisung"
 msgid "Transfer Between Accounts"
 msgstr "Überweisung zwischen Konten"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "Überweisung von"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "Überweisen Sie zwischen Ihren Fiat- und Kryptowährung-Konten gegen eine Gebühr:"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Überweisen Sie zwischen Ihren Echtgeld-Konten."
@@ -11836,6 +11833,12 @@ msgstr "Sobald das Level erreicht wurde, können Sie das Level Ihrer Stop und Li
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Sie können auf dieser Site ein Konto nur unter den Bedingungen eröffnen, dass:"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "Sie können den aktuellen Zugang des Managers widerrufen."

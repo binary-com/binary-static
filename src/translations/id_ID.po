@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:20\n"
+"PO-Revision-Date: 2018-08-01 05:35\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -482,9 +482,6 @@ msgstr "Batas 7-hari total pembelian kontrak"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Kembali ke Deskripsi Pekerjaan"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "<a href=\"%1\">Otentikasi</a> akun Anda dengan memverifikasi identitas dan alamat Anda."
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Kembali ke halaman trading</a>"
@@ -1449,6 +1446,9 @@ msgstr "Pembuktian"
 msgid "Authorised Applications"
 msgstr "Aplikasi Resmi"
 
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
+
 msgid "Auto-trader programming tool"
 msgstr "Alat pemrograman auto-trader"
 
@@ -1645,10 +1645,10 @@ msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MS
 msgstr "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta."
 
 msgid "Binary (FX) Ltd"
-msgstr ""
+msgstr "Binary (FX) Ltd"
 
 msgid "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr ""
+msgstr "Binary (FX) Ltd., Lot No. F16, Lantai Satu, Paragon Labuan, Jalan Tun Mustapha, 87000 Wilayah Federal Labuan, Malaysia. Dilisensikan dan diregulasi oleh Otoritas Jasa Keuangan Labuan untuk menjalankan bisnis pialang keuangan %1(lisensi no. MB/18/0024)%2."
 
 msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
@@ -2191,7 +2191,7 @@ msgid "Clients from the rest of the world (excluding certain countries such as t
 msgstr "Pelanggan dari seluruh dunia (kecuali Amerika Serikat, Costa Rica, Hong Kong) akan mendaftar akun  FX dan CFD Metatrader 5 dibawah Binary (V) Ltd. %1 tidak tersedia untuk warga Republik Vanuatu."
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr ""
+msgstr "Klien dari seluruh dunia (diluiar yurisdiksi tertentu seperti Amerika Serikat, Jepang, dan Uni Eropa) yang ingin bertrading CFD akan memiliki akun MetaTrader 5 yang didaftarkan pada Binary (FX) Ltd. %1 tidak tersedia di Malaysia."
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
 msgstr "Klien dapat menggunakan bonus ini hanya ketika akun uang riil dibuka."
@@ -3165,6 +3165,9 @@ msgstr "Setiap kali Anda membuka posisi pada pasangan mata uang kripto, Anda dap
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Setiap kali Anda membuka posisi pada simbol indeks, Anda dapat mulai dengan volume transkasi minimal seperti yang ditunjukkan pada tabel diatas."
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "Dapatkan Hasil"
 
@@ -3905,12 +3908,6 @@ msgstr "Jum'at"
 
 msgid "Fridays"
 msgstr "Jum'at"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "Dari mata uang kripto ke mata uang fiat: biaya transfer %1"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "Dari mata uang fiat ke mata uang kripto: biaya transfer %1"
 
 msgid "Front Side"
 msgstr "Bagian Depan"
@@ -6693,9 +6690,6 @@ msgstr "Catatan: Anda hanya dapat memiliki satu akun mata uang fiat dan satu set
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "Catatan: Anda dapat menolak dan melanjutkan sebagai Klien Ritel."
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Catatan: Anda hanya dapat mentransfer dana antara akun fiat dan mata uang kripto saja."
-
 msgid "Notes:"
 msgstr "Catatan:"
 
@@ -7313,6 +7307,9 @@ msgstr "Silahkan %1log in%2 atau %3daftar%4 untuk melihat halaman ini."
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Silahkan <a href=\"%1\">setujui Syarat dan Ketentuan terbaru</a>."
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "Silahkan <a href=\"%1\">mendeposit</a> sebelum mentransfer kepada klien."
@@ -10312,11 +10309,11 @@ msgstr "Transfer"
 msgid "Transfer Between Accounts"
 msgstr "Transfer Antar Akun"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "Transfer dari"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "Transfer dana antar akun fiat dan akun mata uang kripto Anda dengan biaya:"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Transfer dana antar akun uang riil Anda."
@@ -11833,6 +11830,12 @@ msgstr "Anda tidak dapat membatalkan atau merubah level Stop dan Limit Order And
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Anda hanya dapat mendaftar akun pada situs ini dengan syarat:"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "Anda dapat mencabut akses manajer saat ini."

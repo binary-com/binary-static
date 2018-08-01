@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:19\n"
+"PO-Revision-Date: 2018-08-01 05:33\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -482,9 +482,6 @@ msgstr "El límite de volumen de transacciones de 7 días"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Volver a descripciones de trabajo"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "<a href=\"%1\">Autentique</a> su cuenta verificando su identidad y dirección."
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Volver a la página de comercio</a>"
@@ -1450,6 +1447,9 @@ msgstr "Autenticación"
 
 msgid "Authorised Applications"
 msgstr "Aplicaciones Autorizadas"
+
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
 
 msgid "Auto-trader programming tool"
 msgstr "Herramienta de programación auto-trader"
@@ -3167,6 +3167,9 @@ msgstr "Cada vez que abre una posición en un par de criptomonedas, puede comenz
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Cada vez que abre una posición en un índice, puede comenzar con un volumen mínimo de operación, de acuerdo a lo que se indica en la tabla anterior."
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "Gane"
 
@@ -3907,12 +3910,6 @@ msgstr "Viernes"
 
 msgid "Fridays"
 msgstr "Viernes"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "De criptomoneda a dinero fíat: tarifa de transferencia de %1"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "De dinero fíat a criptomoneda: tarifa de transferencia de %1"
 
 msgid "Front Side"
 msgstr "Parte delantera"
@@ -6696,9 +6693,6 @@ msgstr "Nota: Sólo puede tener una cuenta en moneda fiat y una cuenta de cada c
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "Nota: Puede rechazar y continuar como cliente independiente."
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Nota: Sólo puede transferir fondos entre una cuenta de dinero fiat y una cuenta de criptomoneda."
-
 msgid "Notes:"
 msgstr "Notas:"
 
@@ -7316,6 +7310,9 @@ msgstr "%1Inicie sesión%2 o %3regístrese%4 para ver esta página."
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Por favor <a href=\"%1\">acepte los términos y condiciones actualizados</a>."
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "Por favor <a href=\"%1\">deposite saldo</a> antes de transferir a un cliente."
@@ -10316,11 +10313,11 @@ msgstr "Transferencia"
 msgid "Transfer Between Accounts"
 msgstr "Transferencia entre cuentas"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "Transferir desde"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "Transfiera fondos entre sus cuentas de dinero fíat y criptomonedas pagando una tasa:"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Transfiera fundos entre sus cuentas de dinero real."
@@ -11838,6 +11835,12 @@ msgstr "No puede cancelar o modificar el nivel de sus órdenes Stop y Limitada a
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Solo puede abrir una cuenta en este sitio a condición de que:"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr ""

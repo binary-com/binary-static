@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:20\n"
+"PO-Revision-Date: 2018-08-01 05:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -482,9 +482,6 @@ msgstr "7天期交易限额"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< 返回工作说明"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "请提交身份与地址证明，立刻进行账户<a href=\"%1\">验证</a> 。"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">返回交易页面</a>"
@@ -1449,6 +1446,9 @@ msgstr "验证"
 msgid "Authorised Applications"
 msgstr "授权应用程序"
 
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
+
 msgid "Auto-trader programming tool"
 msgstr "自动交易编程工具"
 
@@ -1645,10 +1645,10 @@ msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MS
 msgstr "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta。公司经马耳他博彩局授予牌照并受其监管（仅博彩产品-%1的波动率指数），（牌照号MGA/CL2/118/2000）。而英国客户由英国博彩委员会授予牌照和监管 - %2查看牌照%3。"
 
 msgid "Binary (FX) Ltd"
-msgstr ""
+msgstr "Binary (FX) Ltd"
 
 msgid "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr ""
+msgstr "Binary (FX) Ltd., 地址是 Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia。由Labuan 金融服务管理局授予许可证执行资金经纪业务%1(许可证编号MB/18/0024)%2和监管。"
 
 msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
@@ -2191,7 +2191,7 @@ msgid "Clients from the rest of the world (excluding certain countries such as t
 msgstr "全球其他地区的客户 (不包括某些国家如美国、哥斯达黎加、香港)可在 Binary (V) Ltd.开设外汇和差价合约Metatrader 5账户。%1在瓦努阿图不能使用。"
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr ""
+msgstr "全球其他地区想要进行差价合约交易的客户 (不包括某些管辖区如美国、日本和欧盟国家) 可在 Binary (FX) Ltd. 开设MetaTrader 5账户。%1不可在马来西亚使用。"
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
 msgstr "客户只有开立真实账户后才能使用此奖金。"
@@ -3166,6 +3166,9 @@ msgstr "每次开加密货币对头寸时, 您都可以由上表所示的最小�
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "每次开指标符号头寸时, 您都可以由上表所示的最小交易额开始。"
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "赚取"
 
@@ -3906,12 +3909,6 @@ msgstr "星期五"
 
 msgid "Fridays"
 msgstr "星期五"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "加密货币换成法定货币： %1兑换费"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "法定货币换成加密货币: %1兑换费"
 
 msgid "Front Side"
 msgstr "前侧"
@@ -6694,9 +6691,6 @@ msgstr "注： 您只能拥有一个法定货币账户以及每种加密货币�
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "注: 您可以拒绝并继续保留零售客户资格。"
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "注：资金只可在法定账户和加密货币账户之间转移。"
-
 msgid "Notes:"
 msgstr "注："
 
@@ -7314,6 +7308,9 @@ msgstr "要查看本页，请 %1登录%2 或 %注册%4 。"
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "请<a href=\"%1\">接受更新条款和条件</a>。"
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "给客户转账前请先<a href=\"%1\">存款</a>。"
@@ -10314,11 +10311,11 @@ msgstr "转账"
 msgid "Transfer Between Accounts"
 msgstr "账户之间转账"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "转移自"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "在法定账户和加密账户间转移资金须付费用："
 
 msgid "Transfer funds between your real money accounts."
 msgstr "在真实资金账户间转移资金。"
@@ -11835,6 +11832,12 @@ msgstr "一旦已经达到订单止损和限价水平，您不能在收盘交易
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "只有满足下列条件，您才能在本网站开户："
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "您可撤消当前经理的访问权限。"
