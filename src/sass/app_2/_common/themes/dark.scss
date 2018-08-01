@@ -127,6 +127,29 @@
                     }
                 }
             }
+            div.purchase-lock-container {
+                background: $COLOR_BRANDBLUE_95;
+                border-color: $COLOR_BRANDBLUE_85;
+
+                .lock-container svg.ic-lock {
+                    rect, path {
+                        stroke: $COLOR_WHITE;
+                    }
+                    circle {
+                        fill: $COLOR_WHITE;
+                    }
+                }
+                h4 {
+                    color: $COLOR_WHITE;
+                }
+                span.lock-message {
+                    background: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_BRANDBLUE_95;
+                }
+                button.btn {
+                    background: transparent;
+                }
+            }
         }
         .portfolio.container {
             background: $COLOR_BLUE;
