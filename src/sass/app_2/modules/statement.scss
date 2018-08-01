@@ -3,9 +3,7 @@ $side-padding: 12px;
 
 .statement {
     padding: 0 $side-padding;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
 
     &-filter {
         box-sizing: border-box;
@@ -28,17 +26,14 @@ $side-padding: 12px;
         }
     }
     &__content {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
+        height: calc(100% - #{$filter-height});
     }
 
     /*
         TABLE STYLES START
     */
     .table {
-        height: 50px; // default height for flex-grow to work when table is bigger than parent
-        flex-grow: 1;
+        height: 100%;
         border-bottom: none;
     }
     .table__row {
