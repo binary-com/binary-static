@@ -3,6 +3,7 @@ import {
     computed,
     observable }              from 'mobx';
 import { ChartBarrierStore }  from './chart_barrier_store';
+import { ChartMarkerStore }   from './chart_marker_store';
 import {
     barriersObjectToArray,
     isBarrierSupported }      from './Helpers/barriers';
@@ -13,6 +14,7 @@ import { isEmptyObject }      from '../../../../_common/utility';
 export default class SmartChartStore extends BaseStore {
     @observable symbol;
     @observable barriers = observable.object({});
+    @observable markers  = observable.object({});
 
     is_contract_mode = false;
 
@@ -20,6 +22,7 @@ export default class SmartChartStore extends BaseStore {
     onUnmount = () => {
         this.symbol = null;
         this.removeBarriers();
+        this.removeMarkers();
     };
 
     // ---------- Barriers ----------
@@ -59,6 +62,17 @@ export default class SmartChartStore extends BaseStore {
     @computed
     get barriers_array() {
         return barriersObjectToArray(this.barriers);
+    }
+
+    // ---------- Markers ----------
+    @action.bound
+    createMarker(config) {
+        this.markers[config.type] = new ChartMarkerStore(config.marker_config, config.content_config);
+    }
+
+    @action.bound
+    removeMarkers() {
+        this.markers = {};
     }
 
     // ---------- Chart Settings ----------

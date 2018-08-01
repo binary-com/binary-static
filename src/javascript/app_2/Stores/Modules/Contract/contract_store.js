@@ -3,7 +3,9 @@ import {
     computed,
     observable,
     toJS }                 from 'mobx';
-import { setChartBarrier } from './Helpers/chart';
+import {
+    createChartMarker,
+    setChartBarrier }      from './Helpers/chart';
 import {
     getDetailsExpiry,
     getDetailsInfo }       from './Helpers/details';
@@ -40,6 +42,7 @@ export default class ContractStore extends BaseStore {
         this.contract_id   = null;
         this.contract_info = {};
         this.smart_chart.removeBarriers();
+        this.smart_chart.removeMarkers();
         this.smart_chart.is_contract_mode = false;
     };
 
@@ -49,6 +52,7 @@ export default class ContractStore extends BaseStore {
 
         if (isEmptyObject(toJS(this.contract_info))) { // set on the first response
             setChartBarrier(this.smart_chart, contract_info);
+            createChartMarker(this.smart_chart, contract_info);
         }
 
         this.contract_info = contract_info;
