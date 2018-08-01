@@ -90,6 +90,9 @@ export default class PortfolioStore extends BaseStore {
             this.error = response.error.message;
             return;
         }
+        else {
+            this.error = '';
+        }
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
             this.data = formatPortfolioResponse(response.portfolio.contracts);
         }
@@ -97,13 +100,16 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     onMount() {
-        this.initializePortfolio();
+        if (this.data.length === 0) {
+            this.initializePortfolio();
+        }
     }
 
     @action.bound
     onUnmount() {
-        this.clearTable();
-        WS.forgetAll('proposal_open_contract', 'transaction');
+        // TODO: clear when portfolio drawer is unavailable (mobile?)
+        // this.clearTable();
+        // WS.forgetAll('proposal_open_contract', 'transaction');
     }
 
     @computed

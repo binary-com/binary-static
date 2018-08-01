@@ -6,6 +6,9 @@ import { localize }                   from '../../../../../_common/localize';
 import PortfolioDrawerCard            from './portfolio_drawer_card.jsx';
 
 class PortfolioDrawer extends React.Component {
+    componentDidMount()    { this.props.onMount(); }
+    componentWillUnmount() { this.props.onUnmount(); }
+
     render() {
         const {
             data,
