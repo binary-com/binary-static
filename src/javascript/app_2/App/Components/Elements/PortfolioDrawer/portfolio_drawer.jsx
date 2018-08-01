@@ -1,4 +1,5 @@
 import classNames                     from 'classnames';
+import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { connect }                    from '../../../../Stores/connect';
@@ -16,17 +17,16 @@ class PortfolioDrawer extends React.Component {
             error,
             currency,
             is_empty,
-            is_loading,
             is_portfolio_drawer_on,
-            onMount,
-            onUnmount,
             toggleDrawer,
         } = this.props;
 
+        if (error) {
+            return <p>{error}</p>;
+        }
+
         return (
-            <div className={classNames('portfolio-drawer', {
-                'portfolio-drawer--open': is_portfolio_drawer_on,
-            })}>
+            <div className={classNames('portfolio-drawer', { 'portfolio-drawer--open': is_portfolio_drawer_on })}>
                 <div className='portfolio-drawer__header'>
                     <span className='portfolio-drawer__icon-main ic-portfolio' />
                     <span className='portfolio-drawer__title'>{localize('Portfolio Quick Menu')}</span>
@@ -38,8 +38,7 @@ class PortfolioDrawer extends React.Component {
                 </div>
                 <div className='portfolio-drawer__body'>
                     {
-                        is_empty
-                            ?
+                        is_empty ?
                             <EmptyPortfolioMessage />
                             :
                             data.map((portfolio_position, id) => (
@@ -57,8 +56,15 @@ class PortfolioDrawer extends React.Component {
 };
 
 PortfolioDrawer.propTypes = {
+    data                  : MobxPropTypes.arrayOrObservableArray,
+    error                 : PropTypes.string,
+    currency              : PropTypes.string,
+    is_empty              : PropTypes.bool,
+    is_loading            : PropTypes.bool,
     is_portfolio_drawer_on: PropTypes.bool,
     toggleDrawer          : PropTypes.func,
+    onMount               : PropTypes.func,
+    onUnmount             : PropTypes.func,
 };
 
 export default connect(

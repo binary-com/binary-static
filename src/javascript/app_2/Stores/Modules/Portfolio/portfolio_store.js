@@ -91,9 +91,7 @@ export default class PortfolioStore extends BaseStore {
             this.error = response.error.message;
             return;
         }
-        else {
-            this.error = '';
-        }
+        this.error = '';
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
             this.data = formatPortfolioResponse(response.portfolio.contracts);
         }

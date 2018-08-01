@@ -1,9 +1,6 @@
-import classNames                     from 'classnames';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import Money                          from '../money.jsx';
-import { connect }                    from '../../../../Stores/connect';
-import { localize }                   from '../../../../../_common/localize';
 import ContractTypeCell               from '../../../../Modules/Portfolio/Components/contract_type_cell.jsx';
 
 const PortfolioDrawerCard = ({ type, indicative, underlying, remaining_time, currency, status }) => (
@@ -20,6 +17,9 @@ const PortfolioDrawerCard = ({ type, indicative, underlying, remaining_time, cur
 );
 
 PortfolioDrawerCard.propTypes = {
+    type          : PropTypes.string,
+    underlying    : PropTypes.string,
+    currency      : PropTypes.string,
     indicative    : PropTypes.number,
     remaining_time: PropTypes.string,
     status        : PropTypes.string,
