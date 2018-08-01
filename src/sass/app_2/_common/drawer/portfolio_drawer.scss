@@ -1,3 +1,5 @@
+$header-height: 40px;
+
 .portfolio-drawer {
     width: $PORTFOLIO_DRAWER_WIDTH;
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
@@ -15,13 +17,17 @@
         transform: translateX(0);
     }
     &__header {
+        height: $header-height;
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 16px 10px;
+        padding: 0 10px;
     }
     &__body {
-        padding: 0 10px;
+        height: calc(100% - #{$header-height});
+        padding: 8px 10px;
+        box-sizing: border-box;
+        overflow-y: auto;
     }
     &__title {
         font-size: 12px;
@@ -51,8 +57,10 @@
         grid-template-rows: 1fr auto;
         border: 1px solid $COLOR_GRAY;
         border-radius: 2px;
-        margin-bottom: 16px;
 
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
         &__type {
             font-size: 12px;
             color: $COLOR_BLUE;

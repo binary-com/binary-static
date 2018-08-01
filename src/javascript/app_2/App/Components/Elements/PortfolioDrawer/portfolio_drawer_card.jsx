@@ -6,7 +6,7 @@ import { connect }                    from '../../../../Stores/connect';
 import { localize }                   from '../../../../../_common/localize';
 import ContractTypeCell               from '../../../../Modules/Portfolio/Components/contract_type_cell.jsx';
 
-const PortfolioDrawerCard = ({ type, indicative, symbol, remaining_time, currency, status }) => (
+const PortfolioDrawerCard = ({ type, indicative, underlying, remaining_time, currency, status }) => (
     <div className='portfolio-drawer-card'>
         <div className='portfolio-drawer-card__type'>
             <ContractTypeCell type={type} />
@@ -14,7 +14,7 @@ const PortfolioDrawerCard = ({ type, indicative, symbol, remaining_time, currenc
         <div className={`portfolio-drawer-card__indicative portfolio-drawer-card__indicative--${status}`}>
             <Money amount={indicative} currency={currency} />
         </div>
-        <span className='portfolio-drawer-card__symbol'>{symbol}</span>
+        <span className='portfolio-drawer-card__symbol'>{underlying}</span>
         <span className='portfolio-drawer-card__remaining-time'>{remaining_time}</span>
     </div>
 );

@@ -39,13 +39,8 @@ class PortfolioDrawer extends React.Component {
                     {
                         data.map((portfolio_position, id) => (
                             <PortfolioDrawerCard
-                                // type='ONETOUCH'
-                                // symbol='Gold/USD'
-                                // indicative={0.84}
-                                // remaining_time='00:08:17'
-                                // currency='USD'
-                                // status='price-moved-up'
                                 key={id}
+                                currency={currency}
                                 {...portfolio_position}
                             />
                         ))

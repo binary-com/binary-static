@@ -68,6 +68,7 @@ export default class PortfolioStore extends BaseStore {
             const new_indicative  = +proposal.bid_price;
 
             portfolio_position.indicative = new_indicative;
+            portfolio_position.underlying = proposal.display_name;
 
             if (!proposal.is_valid_to_sell) {
                 portfolio_position.status = 'no-resale';
