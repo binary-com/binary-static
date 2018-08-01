@@ -159,6 +159,10 @@ div.contracts-popup-container {
                         &.selected {
                             background: $COLOR_BLUE;
                             color: $COLOR_WHITE;
+
+                            span {
+                                font-weight: 500;
+                            }
                         }
                         &:hover:not(.selected) {
                             background: $COLOR_BRANDBLUE_5;
