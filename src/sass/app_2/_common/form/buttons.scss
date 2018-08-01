@@ -43,7 +43,7 @@
             background: $COLOR_LIGHT_GREEN;
 
             &:hover {
-                background: #66bb6a; /* stylelint-disable-line color-no-hex */
+                background: $COLOR_GREEN_2;
             }
             &:active {
                 background: $COLOR_LIGHT_GREEN;
@@ -53,7 +53,7 @@
             }
         }
         &:disabled, &[disabled] {
-            background: #f4f4f6 !important; /* stylelint-disable-line color-no-hex */
+            background: $COLOR_BRANDBLUE_5 !important;
             color: $COLOR_GRAY !important;
             cursor: not-allowed;
         }
