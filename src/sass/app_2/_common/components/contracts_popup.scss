@@ -1,7 +1,6 @@
 div.contracts-popup-container {
     position: relative;
     z-index: 2;
-    cursor: pointer;
     background: $COLOR_WHITE;
     border: solid 1px $COLOR_GRAY;
     border-radius: 4px;
@@ -17,6 +16,7 @@ div.contracts-popup-container {
         border: solid 1px $COLOR_BLUE;
     }
     .contracts-popup-display {
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: flex-start;
