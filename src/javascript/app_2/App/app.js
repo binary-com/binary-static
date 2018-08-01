@@ -62,7 +62,7 @@ const BinaryApp = ({ root_store }) => (
                             { icon: <IconPortfolio />, text: localize('Portfolio'), link_to: routes.portfolio },
                             { icon: <IconStatement />, text: localize('Statement'), link_to: routes.statement },
                             // TODO
-                            // Hide the Cashier button until its implementaiton is completed.
+                            // Hide the Cashier button until its implementation is completed.
                             // { icon: <IconCashier />,   text: localize('Cashier') },
                         ]}
                     />
