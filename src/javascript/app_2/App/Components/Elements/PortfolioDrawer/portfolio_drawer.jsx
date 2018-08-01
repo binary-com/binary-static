@@ -4,6 +4,7 @@ import React                          from 'react';
 import { connect }                    from '../../../../Stores/connect';
 import { localize }                   from '../../../../../_common/localize';
 import PortfolioDrawerCard            from './portfolio_drawer_card.jsx';
+import EmptyPortfolioMessage          from '../../../../Modules/Portfolio/Components/empty_portfolio_message.jsx';
 
 class PortfolioDrawer extends React.Component {
     componentDidMount()    { this.props.onMount(); }
@@ -37,13 +38,17 @@ class PortfolioDrawer extends React.Component {
                 </div>
                 <div className='portfolio-drawer__body'>
                     {
-                        data.map((portfolio_position, id) => (
-                            <PortfolioDrawerCard
-                                key={id}
-                                currency={currency}
-                                {...portfolio_position}
-                            />
-                        ))
+                        is_empty
+                            ?
+                            <EmptyPortfolioMessage />
+                            :
+                            data.map((portfolio_position, id) => (
+                                <PortfolioDrawerCard
+                                    key={id}
+                                    currency={currency}
+                                    {...portfolio_position}
+                                />
+                            ))
                     }
                 </div>
             </div>
