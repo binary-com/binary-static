@@ -4,7 +4,6 @@ import React      from 'react';
 
 const IconTradeType = ({ type, className }) => {
     let IconType;
-    console.log(type);
     if (type) {
         switch (type) {
             case 'asiand':
@@ -33,7 +32,7 @@ const IconTradeType = ({ type, className }) => {
                 break;
             case 'call_barrier':
                 IconType = (
-                    <svg className={classNames('inline-icon', className)} idth='16' height='16' xmlns='http://www.w3.org/2000/svg'>
+                    <svg className={classNames('inline-icon', className)} width='16' height='16' xmlns='http://www.w3.org/2000/svg'>
                         <g fill='#2A3052' fillRule='evenodd'>
                             <rect x='3' y='8' width='10' height='1' rx='.5'/>
                             <path d='M3.812 8.11a.5.5 0 0 0-.624.78l2.5 2a.5.5 0 0 0 .68-.05l6-6.5a.5.5 0 0 0-.735-.68L5.949 9.82l-2.137-1.71z' fillRule='nonzero'/>

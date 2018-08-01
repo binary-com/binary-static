@@ -221,6 +221,10 @@
 }
 
 // Helpers
+.dark {
+    background: $COLOR_BLUE;
+}
+
 .no-scroll {
     overflow: hidden;
     max-height: 100vh;

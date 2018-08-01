@@ -21,11 +21,8 @@ div.contracts-popup-container {
         align-items: center;
         justify-content: flex-start;
         flex-direction: column;
-        padding: 5px;
+        padding: 4px;
 
-        i {
-            margin-bottom: 5px;
-        }
         span {
             font-size: inherit;
             text-transform: capitalize;
@@ -164,8 +161,21 @@ div.contracts-popup-container {
                             color: $COLOR_WHITE;
                         }
                         &:hover:not(.selected) {
-                            background: $COLOR_GRAY;
+                            background: $COLOR_BRANDBLUE_5;
                         }
+                    }
+                }
+            }
+            .categories-container {
+                margin-right: 4px;
+
+                .category-wrapper {
+                    width: 24px;
+                    height: 24px;
+                    background: $COLOR_GRAY;
+
+                    .category-type {
+                        transform: scale(1, 1);
                     }
                 }
             }
@@ -196,6 +206,16 @@ div.contracts-popup-container {
         &:before {
             content: '\002303';
             font-size: 1.1rem;
+        }
+    }
+    .categories-container {
+        margin-bottom: 4px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        .category-wrapper {
+            margin: 0 2px;
         }
     }
 }
@@ -328,6 +348,22 @@ div.contracts-popup-container {
                 }
                 &:only-child, &:first-child:nth-last-child(2) {
                     border-color: $COLOR_BRANDBLUE_85;
+                }
+            }
+        }
+        .category-wrapper {
+            background: $COLOR_BRANDBLUE_75;
+
+            .category-type {
+                path, rect {
+                    fill: $COLOR_WHITE;
+
+                    &.transparent {
+                        fill: $COLOR_BRANDBLUE_75;
+                    }
+                }
+                .stroke-white {
+                    stroke: $COLOR_WHITE;
                 }
             }
         }

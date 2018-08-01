@@ -96,12 +96,12 @@ div.dropdown-container {
                     vertical-align: middle;
                 }
                 &:hover {
-                    background-color: $COLOR_GRAY;
+                    background-color: $COLOR_BRANDBLUE_5;
                 }
                 &.selected span {
-                    background-color: $COLOR_GRAY;
+                    background-color: $COLOR_BRANDBLUE_5;
                     color: $COLOR_BLUE;
-                    font-weight: 400;
+                    font-weight: 500;
                 }
             }
         }

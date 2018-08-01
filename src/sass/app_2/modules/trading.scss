@@ -276,17 +276,6 @@
                         display: block;
                     }
                 }
-                .left-column > {
-                    .type-wrapper {
-                        width: 30px;
-                        height: 30px;
-                        background: $COLOR_GRAY;
-                        border-radius: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                }
                 h4.trade-type {
                     position: absolute;
                     display: flex;
@@ -468,5 +457,18 @@
     }
     .time-picker #time-picker-input.time-picker-input {
         font-size: 12px;
+    }
+    .category-wrapper, .type-wrapper {
+        width: 30px;
+        height: 30px;
+        background: $COLOR_GRAY;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .category-type, .type {
+            transform: scale(1.2, 1.2);
+        }
     }
 }
