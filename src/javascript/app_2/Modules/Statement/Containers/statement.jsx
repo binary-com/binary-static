@@ -52,7 +52,10 @@ class Statement extends React.Component {
                     {
                         should_show_cards ?
                             <React.Fragment>
-                                <StatementCardList data={data} />
+                                <StatementCardList
+                                    data={data}
+                                    onScroll={handleScroll}
+                                />
                                 {renderGUI()}
                             </React.Fragment>
                             :

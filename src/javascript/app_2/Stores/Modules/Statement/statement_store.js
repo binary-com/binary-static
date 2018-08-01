@@ -87,13 +87,11 @@ export default class StatementStore extends BaseStore {
 
     @action.bound
     onMount() {
-        window.addEventListener('scroll', this.handleWindowScroll, false);
         this.fetchNextBatch();
     }
 
     @action.bound
     onUnmount() {
-        window.removeEventListener('scroll', this.handleWindowScroll, false);
         this.clearTable();
         this.clearDateFilter();
     }
