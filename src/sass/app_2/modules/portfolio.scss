@@ -61,12 +61,9 @@
         align-items: center;
 
         &__icon {
-            display: inline-block;
-            height: 64px;
             width: 64px;
-            background-size: 64px;
-            background-image: url('../images/app_2/header/icons/ic_portfolio_normal_light.svg');
-            margin-bottom: 16px;
+            height: 64px;
+            margin-bottom: 1rem;
         }
         &__title {
             font-size: 16px;

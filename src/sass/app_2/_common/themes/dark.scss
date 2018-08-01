@@ -199,6 +199,14 @@
                 }
             }
         }
+        .portfolio-empty, .statement-empty {
+            span {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            button.btn span {
+                color: unset;
+            }
+        }
         .statement.container {
             .statement-filter {
                 background: $COLOR_BLUE;
