@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:21\n"
+"PO-Revision-Date: 2018-08-01 05:35\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -482,9 +482,6 @@ msgstr "crwdns37580:0crwdne37580:0"
 
 msgid "<< Back to Job Descriptions"
 msgstr "crwdns37581:0crwdne37581:0"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "crwdns41982:0%1crwdne41982:0"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "crwdns37582:0%1crwdne37582:0"
@@ -1448,6 +1445,9 @@ msgstr "crwdns37836:0crwdne37836:0"
 
 msgid "Authorised Applications"
 msgstr "crwdns37837:0crwdne37837:0"
+
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr "crwdns46283:0crwdne46283:0"
 
 msgid "Auto-trader programming tool"
 msgstr "crwdns37838:0crwdne37838:0"
@@ -3165,6 +3165,9 @@ msgstr "crwdns42120:0crwdne42120:0"
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "crwdns42121:0crwdne42121:0"
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr "crwdns46284:0%1crwdne46284:0"
+
 msgid "Earn"
 msgstr "crwdns43871:0crwdne43871:0"
 
@@ -3905,12 +3908,6 @@ msgstr "crwdns38511:0crwdne38511:0"
 
 msgid "Fridays"
 msgstr "crwdns38512:0crwdne38512:0"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "crwdns41677:0%1crwdne41677:0"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "crwdns41678:0%1crwdne41678:0"
 
 msgid "Front Side"
 msgstr "crwdns41748:0crwdne41748:0"
@@ -6693,9 +6690,6 @@ msgstr "crwdns39281:0crwdne39281:0"
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "crwdns43586:0crwdne43586:0"
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "crwdns39282:0crwdne39282:0"
-
 msgid "Notes:"
 msgstr "crwdns39283:0crwdne39283:0"
 
@@ -7313,6 +7307,9 @@ msgstr "crwdns46272:0%1locrwdnd46272:0%2crwdnd46272:0%3scrwdnd46272:0%4crwdne462
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "crwdns39463:0%1crwdne39463:0"
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr "crwdns46285:0%1crwdne46285:0"
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "crwdns39464:0%1crwdne39464:0"
@@ -10311,11 +10308,11 @@ msgstr "crwdns40271:0crwdne40271:0"
 msgid "Transfer Between Accounts"
 msgstr "crwdns40272:0crwdne40272:0"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr "crwdns46286:0crwdne46286:0"
+
 msgid "Transfer from"
 msgstr "crwdns40273:0crwdne40273:0"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "crwdns40274:0crwdne40274:0"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "crwdns40275:0crwdne40275:0"
@@ -11831,6 +11828,12 @@ msgstr "crwdns40665:0crwdne40665:0"
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "crwdns44837:0crwdne44837:0"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr "crwdns46287:0crwdne46287:0"
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr "crwdns46288:0%1crwdne46288:0"
 
 msgid "You may revoke the current manager's access."
 msgstr "crwdns44725:0crwdne44725:0"

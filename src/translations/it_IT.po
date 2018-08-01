@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:19\n"
+"PO-Revision-Date: 2018-08-01 05:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -483,9 +483,6 @@ msgstr "Limite di 7 giorni sul turnover"
 msgid "<< Back to Job Descriptions"
 msgstr "<< Torna su Descrizioni dei lavori"
 
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "<a href=\"%1\">Autentica</a> il tuo account verificando l'identità e l'indirizzo."
-
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Ritorna alla pagina di trading</a>"
 
@@ -568,7 +565,7 @@ msgid "A competitive and flexible affiliate programme that can be adapted to you
 msgstr "Un programma per associati competitivo e flessibile che può essere adattato alle tue esigenze"
 
 msgid "A contract entered into by you pursuant to this Agreement."
-msgstr "Contratto stipulato dal Cliente ai sensi del presente accordo."
+msgstr "Contratto stipulato dal Cliente ai sensi del presente contratto."
 
 msgid "A cookie is an element of data that a website can send to your browser, which may then store it on your system. You can set your browser to notify you when you receive a cookie, giving you the option whether to accept or decline it. If you do not accept the cookie, then you will need to input your login ID and password again at every form to log into the system. You are advised to choose this option if you have concerns about the security of your personal browser or PC."
 msgstr "Un cookie è un elemento di dati che un sito web può inviare al tuo browser, e che il browser potrebbe poi memorizzare nel sistema. È possibile impostare il browser in modo da ricevere una notifica per ogni cookie, e scegliere se accettarlo o rifiutarlo. In caso di rifiuto, dovrai inserire nuovamente credenziali di accesso e password a ogni fase per accedere al sistema. È consigliabile scegliere questa opzione se si desidera tutelare maggiormente la sicurezza del browser o del PC."
@@ -814,7 +811,7 @@ msgid "Accounts List"
 msgstr "Elenco degli account"
 
 msgid "Accounts with Open Positions being Rolled-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company."
-msgstr "Sui conti con posizioni aperte soggette a rollover dovrà essere accreditato o addebitato un importo denominato accredito/addebito di rollover, che viene determinato dalla Società."
+msgstr "Sui conti con posizioni aperte soggette a rollover dovrà essere accreditato o addebitato un importo denominato accredito/addebito di rollover che viene determinato dalla Società."
 
 msgid "Accounts with debit balance (i.e. credit exposure to %1)"
 msgstr "Account con saldo a debito (ossia esposizione creditizia verso %1)"
@@ -1448,6 +1445,9 @@ msgstr "Convalida"
 
 msgid "Authorised Applications"
 msgstr "Applicazioni autorizzate"
+
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
 
 msgid "Auto-trader programming tool"
 msgstr "Strumento di programmazione auto-trader"
@@ -2554,7 +2554,7 @@ msgid "Copywriter"
 msgstr "Copywriter"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
-msgstr "Costi - i costi dell'esecuzione di tuo ordine formati principalmente dallo spread, cioè, la differenza tra la nostro prezzo e il nostro prezzo di offerta."
+msgstr "Costi: i costi dell'esecuzione del tuo ordine formati principalmente dallo spread, ovvero la differenza tra il nostro prezzo di acquisto e di vendita."
 
 msgid "Costs and Charges"
 msgstr "Costi e Oneri"
@@ -2833,7 +2833,7 @@ msgid "Demonstrate the ability to think / act quickly and multi-task as needed t
 msgstr "Dimostrare la capacità di pensare / agire rapidamente in modo multifunzionale come richiesto, per effettuare campagne efficaci"
 
 msgid "Depending on the level of risk that we are exposed to acting as your counterparty, we largely act in a principal capacity of your trades. As such, the execution venue will usually be %1. However, we may transmit your order to third party liquidity providers, in which case we will determine the execution venue ourselves on the basis described above."
-msgstr "A seconda del livello di rischio a cui siamo esposti a agendo come tua controparte, noi agiamo in gran parte come capitale di capienza dei vostri trade. Come tale, il luogo di esecuzione sarà solitamente %1. Tuttavia, potremmo trasmettere il vostro ordine a terzi fornitori di liquidità, nel qual caso determineremo noi stessi il luogo di esecuzione sulla base di quanto sopra descritto."
+msgstr "A seconda del livello di rischio a cui siamo esposti come tua controparte, rappresentiamo il principale capitale di capienza dei tuoi trade. In quanto tale, la sede di esecuzione degli ordini sarà solitamente %1. Tuttavia, è possibile che il tuo ordine venga trasmesso a fornitori di liquidità esterni, nel qual caso saremo noi a determinare la sede di esecuzione sulla base di quanto sopra descritto."
 
 msgid "Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
 msgstr "In base alla qualità dei flussi di dati ricevuti dai nostri provider, i nostri server applicano un algoritmo di filtraggio dei tick. Lo scopo di tale algoritmo è quello di rimuovere il feed degli \"stray tick\", ossia di tick che cadono chiaramente al di fuori dell'attuale range di trading del mercato. Tali tick sono spesso causati da ritardi nella comunicazione con le borse o banche che forniscono le quotazioni, errori umani oppure problemi dei database in qualsiasi punto tra l'autore della quotazione e i nostri server."
@@ -3165,6 +3165,9 @@ msgstr "Ogni volta che apri una posizione su una coppia di criptovalute, puoi in
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Ogni volta che apri una posizione su un simbolo di un indice, puoi iniziare con un volume minimo di transazione come indicato nella tabella sopra."
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "Guadagna"
 
@@ -3340,7 +3343,7 @@ msgid "Entry spot price"
 msgstr "Prezzo d'ingresso"
 
 msgid "Equals"
-msgstr "Uguale"
+msgstr "Equivale a"
 
 msgid "Equities"
 msgstr "Equities"
@@ -3418,7 +3421,7 @@ msgid "Events of Default"
 msgstr "Casi di inadempienza"
 
 msgid "Everyone else can use the FIX API to connect to our One Zero bridge – subject to a conformance test."
-msgstr "Tutti possono utilizzare il FIX API per la connessione al nostro ponte One Zero – sottoposti a un test di conformità."
+msgstr "Tutti possono utilizzare FIX API per la connessione al nostro ponte One Zero – purché idoneo al test di conformità."
 
 msgid "Example:"
 msgstr "Esempio:"
@@ -3493,7 +3496,7 @@ msgid "Exit Spot Time"
 msgstr "Orario del prezzo di uscita"
 
 msgid "Exit Time and Exit Spot"
-msgstr "Ora di Termine e Prezzo di Uscita"
+msgstr "Ora e prezzo di uscita"
 
 msgid "Exit spot"
 msgstr "Prezzo di uscita"
@@ -3811,7 +3814,7 @@ msgid "For example, let’s say the market has a low of 5,200 and a close of 6,0
 msgstr "Ad esempio, se supponiamo che nel corso della durata del contratto il mercato registra un minimo (low) di 5.200 e una chiusura (close) a 6.000, un'opzione retrospettiva 'Close-Low' con un moltiplicatore di $2 avrebbe un payout di:"
 
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product Disclosure Statement. This policy is an appendix to the overarching %1 Order Execution Policy and should be read in conjunction with the overarching %1 Order Execution Policy."
-msgstr "Per le caratteristiche e la spiegazione del trading di Spot FX offerti da%1, fai riferimento all'Informativa sul Prodotto. Questa policy è in appendice alla onnicomprensiva Policy di Esecuzione degli Ordini di %1 e deve essere letta insieme alla onnicomprensiva Policy di Esecuzione degli Ordini di %1."
+msgstr "Per le caratteristiche e approfondimenti sul trading di Spot FX offerti da %1, consultare l'informativa sul prodotto. Questa policy è in appendice alla onnicomprensiva Politica di Esecuzione degli Ordini di %1 e deve essere letta insieme alla onnicomprensiva Politica di Esecuzione degli Ordini di %1."
 
 msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as stocks and stock indices) are not open throughout the day and that trading may not be available when the markets are closed."
 msgstr "Per le quotazioni Forex, gli orari di chiusura sono definiti dalla Società così come mostrati nella sezione Orari di Apertura del Mercato presenti sul sito internet. In caso di una qualsiasi controversia relativa ai valori di mercato o di liquidazione, la decisione della Società sarà finale e vincolante. I clienti devono considerare che alcuni mercati (come quelli delle azioni e degli indici azionari) non sono aperti durante tutto il giorno e che il trading in tali mercati potrebbe non essere disponibile quando questi sono chiusi."
@@ -3847,7 +3850,7 @@ msgid "Force majeure events must be confirmed by an authority and/or government 
 msgstr "Eventi di forza maggiore devono essere confermati da un'autorità e/o istituzione governativa del paese di residenza della Parte."
 
 msgid "Foreign currency deposit"
-msgstr "Foreign currency deposit"
+msgstr "Deposito in valuta estera"
 
 msgid "Forex"
 msgstr "Forex"
@@ -3862,10 +3865,10 @@ msgid "Forex Trading Frequency"
 msgstr "Frequenza del trading su Forex"
 
 msgid "Forex and contract for differences transactions involve a high degree of risk and are speculative because they allow you to speculate on the short term movements of the price of the underlying financial instruments. You should not enter into forex and/or contracts for differences transactions unless you are able to sustain losses that exceed your deposited funds. It is important for you to understand that in order to realise any value from your open positions, you would have to enter into a corresponding transaction to close your open positions and you may find it difficult or impossible to do so under certain market conditions."
-msgstr "Transazioni Forex e su contratti per differenze comportano un grado elevato di rischio e sono speculativi, poiché consentono di speculare sui movimenti a breve termine del prezzo degli strumenti finanziari sottostanti. Non dovresti entrare in transazioni forex e/o in contratti per differenze, a meno che tu non sia in grado di sostenere perdite che superano i fondi depositati. È importante per te capire che per poter realizzare qualsiasi valore dalle posizioni aperte, dovrai stipulare una transazione corrispondente per chiudere le posizioni aperte e può risultare difficile o impossibile farlo in determinate condizioni di mercato."
+msgstr "Le operazioni di trading su Forex e contratti per differenza comportano un grado elevato di rischio e sono speculativi, poiché consentono di speculare sui movimenti a breve termine del prezzo degli strumenti finanziari sottostanti. Non dovresti realizzare operazioni su forex e/o contratti per differenza, a meno che tu non sia in grado di sostenere perdite che superano i fondi depositati. È importante comprendere che per monetizzare il valore delle posizioni aperte e per poterle chiudere è necessario stipulare una transazione corrispondente e può risultare difficile o impossibile farlo in determinate condizioni di mercato."
 
 msgid "Forex and contracts for differences are high risk and speculative"
-msgstr "Forex e contratti per differenze sono ad alto rischio e speculativi"
+msgstr "Forex e i contratti per differenza comportano un elevato rischio e sono speculativi"
 
 msgid "Forex contract specifications"
 msgstr "Specifiche contrattuali su Forex"
@@ -3906,12 +3909,6 @@ msgstr "Venerdì"
 msgid "Fridays"
 msgstr "Venerdì"
 
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "Dalla criptovaluta alla fiat (moneta legale): tassa di trasferimento di %1"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "Dalla fiat (moneta legale) alla criptovaluta: tassa di trasferimento di %1"
-
 msgid "Front Side"
 msgstr "Fronte"
 
@@ -3922,7 +3919,7 @@ msgid "Fund Transfers"
 msgstr "Trasferimenti di fondi"
 
 msgid "Fund transfers between accounts are unavailable."
-msgstr "I trasferimenti di fondi tra account non sono disponibili."
+msgstr "I trasferimenti di fondi tra conti non sono disponibili."
 
 msgid "Funding of MT5 Real Account"
 msgstr "Trasferimento di fondi sul conto reale MT5"
@@ -3946,7 +3943,7 @@ msgid "G. Margin"
 msgstr "G. Margine"
 
 msgid "G. Order Handling"
-msgstr "G. Gestione degli Ordini"
+msgstr "Gestione degli ordini G."
 
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
 msgstr "GAMSTOP è un servizio gratuito che ti permette di autoescluderti da qualsiasi società di gioco d'azzardo online autorizzata in Gran Bretagna."
@@ -3967,13 +3964,13 @@ msgid "GamCare"
 msgstr "GamCare"
 
 msgid "Gaming"
-msgstr "Gioco Online"
+msgstr "Gioco online"
 
 msgid "Gaming Account"
 msgstr "Account di gioco"
 
 msgid "Gender"
-msgstr "Gender"
+msgstr "Genere"
 
 msgid "General"
 msgstr "Info generali"
@@ -6696,9 +6693,6 @@ msgstr "Nota: puoi avere solo un account di moneta reale e uno per ogni account 
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "Nota: puoi rifiutare e continuare come un Cliente al dettaglio."
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Nota: Puoi trasferire fondi solamente tra un account di moneta reale e uno di criptovaluta."
-
 msgid "Notes:"
 msgstr "Note:"
 
@@ -7316,6 +7310,9 @@ msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "<a href=\"%1\">Accetta i termini e le condizioni aggiornate</a>."
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "<a href=\"%1\">Deposita</a> prima di trasferire al cliente."
@@ -10314,11 +10311,11 @@ msgstr "Trasferisci"
 msgid "Transfer Between Accounts"
 msgstr "Trasferimento tra account"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "Trasferisci da"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "Trasferisci fondi tra i tuoi account di moneta fiat e criptovaluta con una commissione:"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Trasferisci fondi tra i tuoi account con denaro reale."
@@ -11836,6 +11833,12 @@ msgstr "Non è possibile annullare o modificare il livello dello Stop e Limit Or
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Puoi aprire un conto su questo sito esclusivamente a condizione che:"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "È possibile revocare l'accesso del gestore attuale."

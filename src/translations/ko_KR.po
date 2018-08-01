@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:19\n"
+"PO-Revision-Date: 2018-08-01 05:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -483,9 +483,6 @@ msgid "7-day turnover limit"
 msgstr ""
 
 msgid "<< Back to Job Descriptions"
-msgstr ""
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
 msgstr ""
 
 msgid "<a href=\"%1\">Return to trading page</a>"
@@ -1449,6 +1446,9 @@ msgid "Authentication"
 msgstr "인증"
 
 msgid "Authorised Applications"
+msgstr ""
+
+msgid "Authorised payment agents are exempted from paying any transfer fees"
 msgstr ""
 
 msgid "Auto-trader programming tool"
@@ -3167,6 +3167,9 @@ msgstr ""
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr ""
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "수익을 얻으세요"
 
@@ -3907,12 +3910,6 @@ msgstr "금요일"
 
 msgid "Fridays"
 msgstr "매주 금요일"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr ""
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr ""
 
 msgid "Front Side"
 msgstr ""
@@ -6695,9 +6692,6 @@ msgstr ""
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr ""
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr ""
-
 msgid "Notes:"
 msgstr ""
 
@@ -7314,6 +7308,9 @@ msgid "Please %1log in%2 or %3sign up%4 to view this page."
 msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr ""
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
 msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
@@ -10313,10 +10310,10 @@ msgstr ""
 msgid "Transfer Between Accounts"
 msgstr ""
 
-msgid "Transfer from"
+msgid "Transfer between accounts is not available on weekends"
 msgstr ""
 
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgid "Transfer from"
 msgstr ""
 
 msgid "Transfer funds between your real money accounts."
@@ -11833,6 +11830,12 @@ msgstr ""
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "귀하는 본 사이트를 통해 다음의 조건으로만 계좌를 개설할 수 있습니다:"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr ""
