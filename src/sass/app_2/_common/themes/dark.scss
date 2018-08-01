@@ -98,6 +98,8 @@
             }
             div.submit-section button.btn:disabled {
                 box-shadow: 0 2px 2px 0 $COLOR_BRANDBLUE_85;
+                background: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_75;
             }
             .symbols {
                 color: $COLOR_WHITE;
@@ -149,6 +151,9 @@
                 button.btn {
                     background: transparent;
                 }
+            }
+            .error-info-wrapper span {
+                color: $COLOR_WHITE;
             }
         }
         .portfolio.container {

@@ -53,8 +53,8 @@
             }
         }
         &:disabled, &[disabled] {
-            background: $COLOR_BRANDBLUE_5 !important;
-            color: $COLOR_GRAY !important;
+            background: $COLOR_BRANDBLUE_5;
+            color: $COLOR_GRAY;
             cursor: not-allowed;
         }
     }
