@@ -1,5 +1,6 @@
 import PropTypes          from 'prop-types';
 import React              from 'react';
+import { withRouter }     from 'react-router';
 import {
     AccountInfo,
     LoginButton,
@@ -58,7 +59,9 @@ Header.propTypes = {
     onClickUpgrade: PropTypes.func, // TODO: add click handler
 };
 
-export default connect(
+// need to wrap withRouter around connect
+// to prevent updates on <MenuLinks /> from being blocked
+export default withRouter(connect(
     ({ ui, client }) => ({
         is_dark_mode: ui.is_dark_mode_on,
         balance     : client.balance,
@@ -67,4 +70,4 @@ export default connect(
         loginid     : client.loginid,
         is_logged_in: client.is_logged_in,
     })
-)(Header);
+)(Header));
