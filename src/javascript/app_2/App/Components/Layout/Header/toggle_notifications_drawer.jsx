@@ -1,7 +1,7 @@
 import React             from 'react';
 import { Notifications } from '../../Elements/Notifications';
 import { ToggleDrawer }  from '../../Elements/Drawer';
-import { IconBell }       from '../../../../Assets/Header/NavBar';
+import { IconBell }      from '../../../../Assets/Header/NavBar';
 
 const ToggleNotificationsDrawer = () => (
     <ToggleDrawer
