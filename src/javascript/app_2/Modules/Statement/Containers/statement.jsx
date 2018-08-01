@@ -55,8 +55,9 @@ class Statement extends React.Component {
                                 <StatementCardList
                                     data={data}
                                     onScroll={handleScroll}
-                                />
-                                {renderGUI()}
+                                >
+                                    {renderGUI()}
+                                </StatementCardList>
                             </React.Fragment>
                             :
                             <DataTable
