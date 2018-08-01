@@ -1,5 +1,5 @@
 import { toJS }            from 'mobx';
-import { CONTRACT_SHADES } from '../Constants/barrier_shades';
+import { CONTRACT_SHADES } from '../Constants/barriers';
 import { isEmptyObject }   from '../../../../../_common/utility';
 
 export const isBarrierSupported = (contract_type) => contract_type in CONTRACT_SHADES;

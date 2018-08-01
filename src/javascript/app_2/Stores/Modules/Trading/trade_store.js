@@ -2,6 +2,7 @@ import { action, observable }             from 'mobx';
 import { processPurchase }                from './Actions/purchase';
 import * as Symbol                        from './Actions/symbol';
 import { allowed_query_string_variables } from './Constants/query_string';
+import { setChartBarrier }                from './Helpers/chart';
 import ContractType                       from './Helpers/contract_type';
 import { processTradeParams }             from './Helpers/process';
 import {
@@ -77,6 +78,7 @@ export default class TradeStore extends BaseStore {
                 });
             }));
         }
+        this.smart_chart = this.root_store.modules.smart_chart;
     }
 
     @action.bound
@@ -91,7 +93,7 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onHoverPurchase(is_over, contract_type) {
-        this.root_store.modules.smart_chart.updateBarrierShade(is_over, contract_type);
+        this.smart_chart.updateBarrierShade(is_over, contract_type);
     }
 
     @action.bound
@@ -152,11 +154,13 @@ export default class TradeStore extends BaseStore {
                 proposal_info      : {},
             });
 
-            const is_barrier_changed = 'barrier_1' in new_state || 'barrier_2' in new_state;
-            if (is_barrier_changed) {
-                this.root_store.modules.smart_chart.updateBarriers(this.barrier_1, this.barrier_2);
-            } else {
-                this.root_store.modules.smart_chart.removeBarriers();
+            if (!this.smart_chart.is_contract_mode) {
+                const is_barrier_changed = 'barrier_1' in new_state || 'barrier_2' in new_state;
+                if (is_barrier_changed) {
+                    this.smart_chart.updateBarriers(this.barrier_1, this.barrier_2);
+                } else {
+                    this.smart_chart.removeBarriers();
+                }
             }
 
             const snapshot = await processTradeParams(this, new_state);
@@ -193,7 +197,9 @@ export default class TradeStore extends BaseStore {
             [contract_type]: getProposalInfo(this, response),
         };
 
-        this.root_store.modules.smart_chart.createChartBarriers(contract_type, response, this.onChartBarrierChange);
+        if (!this.smart_chart.is_contract_mode) {
+            setChartBarrier(this.smart_chart, response, this.onChartBarrierChange);
+        }
 
         this.is_purchase_enabled = true;
     }

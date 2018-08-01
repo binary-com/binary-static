@@ -14,6 +14,8 @@ export default class SmartChartStore extends BaseStore {
     @observable symbol;
     @observable barriers = observable.object({});
 
+    is_contract_mode = false;
+
     @action.bound
     onUnmount = () => {
         this.symbol = null;
@@ -22,11 +24,11 @@ export default class SmartChartStore extends BaseStore {
 
     // ---------- Barriers ----------
     @action.bound
-    createChartBarriers = (contract_type, proposal_response, onChartBarrierChange) => {
+    createBarriers = (contract_type, high_barrier, low_barrier, onChartBarrierChange, config) => {
         if (isEmptyObject(this.barriers.main)) {
             let main_barrier = {};
-            if (!proposal_response.error && isBarrierSupported(contract_type)) {
-                main_barrier = new ChartBarrierStore(proposal_response.echo_req, onChartBarrierChange);
+            if (isBarrierSupported(contract_type)) {
+                main_barrier = new ChartBarrierStore(high_barrier, low_barrier, onChartBarrierChange, config);
             }
 
             this.barriers = {
@@ -38,14 +40,14 @@ export default class SmartChartStore extends BaseStore {
     @action.bound
     updateBarriers(barrier_1, barrier_2) {
         if (!isEmptyObject(this.barriers.main)) {
-            this.barriers.main.updateBarriers({ high: barrier_1, low: barrier_2 });
+            this.barriers.main.updateBarriers(barrier_1, barrier_2);
         }
     }
 
     @action.bound
-    updateBarrierShade(is_over, contract_type) {
+    updateBarrierShade(should_display, contract_type) {
         if (!isEmptyObject(this.barriers.main)) {
-            this.barriers.main.updateBarrierShade(this.barriers, is_over, contract_type);
+            this.barriers.main.updateBarrierShade(should_display, contract_type);
         }
     }
 
