@@ -111,6 +111,22 @@
                 border-color: $COLOR_BRANDBLUE_85;
                 color: $COLOR_BRANDBLUE_40;
             }
+            fieldset.purchase-option div.box .left-column .type-wrapper {
+                background: $COLOR_BRANDBLUE_75;
+
+                .type {
+                    path, rect {
+                        fill: $COLOR_WHITE;
+
+                        &.transparent {
+                            fill: $COLOR_BRANDBLUE_75;
+                        }
+                    }
+                    .stroke-white {
+                        stroke: $COLOR_WHITE;
+                    }
+                }
+            }
         }
         .portfolio.container {
             background: $COLOR_BLUE;
