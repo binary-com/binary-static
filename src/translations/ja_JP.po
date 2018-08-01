@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:19\n"
+"PO-Revision-Date: 2018-08-01 05:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -497,9 +497,6 @@ msgstr "取引限度額（7日間）"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<<職務内容に戻る"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "お客さまの個人情報（身分と住所証明）を確認して、アカウントの<a href=\"%1\">認証</a>を行います。"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">取引ページヘ戻る</a>"
@@ -1466,6 +1463,9 @@ msgstr "ご口座アップグレード"
 
 msgid "Authorised Applications"
 msgstr "認識済みアプリケーション"
+
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
 
 msgid "Auto-trader programming tool"
 msgstr "オートトレーダー・プログラミングツール"
@@ -3190,6 +3190,9 @@ msgstr "Each time you open a position on a cryptocurrency pair, you can start wi
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "報酬"
 
@@ -3930,12 +3933,6 @@ msgstr "金曜日"
 
 msgid "Fridays"
 msgstr "金曜日"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "仮想通貨口座からフィアットマネー口座への振替手数料：%1"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "不換紙幣口座から仮想通貨口座への振替手数料：%1 "
 
 msgid "Front Side"
 msgstr "表面"
@@ -6732,9 +6729,6 @@ msgstr "注意：フィアットマネー口座と各仮想通貨口座はお一
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "ご注意：リクエストが拒否され、引き続きリテール顧客として分類される場合があります。"
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-
 msgid "Notes:"
 msgstr "ご注意："
 
@@ -7352,6 +7346,9 @@ msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "利用規約に同意していただく必要があります。"
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "お客さまへ送金される前にご入金をしてください。"
@@ -10423,11 +10420,11 @@ msgstr "送金"
 msgid "Transfer Between Accounts"
 msgstr "口座振替"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "送金元"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "リアル口座に口座振替"
@@ -11944,6 +11941,12 @@ msgid "You may not cancel or amend the level of your Stop and Limit Order prior 
 msgstr "You may not cancel or amend the level of your Stop and Limit Order prior to the closing of your Transaction once the level has been reached."
 
 msgid "You may only open an account at this site on conditions that:"
+msgstr ""
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr ""
 
 msgid "You may revoke the current manager's access."

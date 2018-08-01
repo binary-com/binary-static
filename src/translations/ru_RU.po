@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:20\n"
+"PO-Revision-Date: 2018-08-01 05:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -482,9 +482,6 @@ msgstr "7-дневный лимит на объём покупок"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Вернуться к вакансиям"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "<a href=\"%1\">Пройдите аутентификацию счёта</a>, подтвердив Вашу личность и адрес."
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Вернуться к торговле</a>"
@@ -1448,6 +1445,9 @@ msgstr "Аутентификация"
 
 msgid "Authorised Applications"
 msgstr "Доступные приложения"
+
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
 
 msgid "Auto-trader programming tool"
 msgstr "Программный инструмент для автоматизированной торговли"
@@ -3165,6 +3165,9 @@ msgstr "Каждый раз когда Вы открываете контрак�
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Каждый раз когда Вы открываете контракт на определённом индексе, Вы можете торговать минимальным объёмом контракта, как это показано в таблице выше."
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "Зарабатывайте"
 
@@ -3905,12 +3908,6 @@ msgstr "пятница"
 
 msgid "Fridays"
 msgstr "пятница"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "Комиссия за перевод из криптовалют в фидуциарные валюты: %1"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "Комиссия за перевод из фидуциарных валют в криптовалюты: %1"
 
 msgid "Front Side"
 msgstr "Лицевая сторона"
@@ -6693,9 +6690,6 @@ msgstr "Примечание: Вы можете открыть лишь один
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "Примечание: Вы можете отклонить заявку и продолжить в статусе индивидуального клиента."
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Примечание: Вы можете переводить средства только между фидуциарным и криптовалютным счётом."
-
 msgid "Notes:"
 msgstr "Примечания:"
 
@@ -7313,6 +7307,9 @@ msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Пожалуйста, <a href=\"%1\">примите Правила и условия</a>."
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "Пожалуйста, <a href=\"%1\">пополните счёт</a> перед переводом клиенту."
@@ -10311,11 +10308,11 @@ msgstr "Перечисление"
 msgid "Transfer Between Accounts"
 msgstr "Перевод между счетами"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "Перевести со счёта"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "Переводите средства с фидуциарного на криптовалютный счёт за следующую комиссию:"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Перевод средств между реальными счетами."
@@ -11831,6 +11828,12 @@ msgstr "Вы не можете отменить или изменить уров
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Вы можете открыть счет на этом сайте при следующих условиях:"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "Вы можете отказать в доступе текущему менеджеру."

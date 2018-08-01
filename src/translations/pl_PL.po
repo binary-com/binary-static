@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:20\n"
+"PO-Revision-Date: 2018-08-01 05:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -482,9 +482,6 @@ msgstr "7-dniowy maksymalny obrót"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Wróć do opisu stanowiska"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "<a href=\"%1\">Zweryfikuj</a> swoje konto, potwierdzając swoją tożsamość i dane adresowe."
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Wróć do strony do handlowania</a>"
@@ -1448,6 +1445,9 @@ msgstr "Weryfikacja"
 
 msgid "Authorised Applications"
 msgstr "Aplikacje zatwierdzone"
+
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
 
 msgid "Auto-trader programming tool"
 msgstr "Narzędzie programistyczne autohandlowania"
@@ -3166,6 +3166,9 @@ msgstr "Za każdym razem, gdy otwierasz pozycję powiązaną z parą kryptowalut
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Za każdym razem, gdy otwierasz pozycję opartą na indeksie, rozpoczynasz z minimalnym wolumenem transakcji, jak wskazano w powyższej tabeli."
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "Zarabiaj"
 
@@ -3906,12 +3909,6 @@ msgstr "piątek"
 
 msgid "Fridays"
 msgstr "piątki"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "Z kryptowaluty na walutę fiducjarną: opłata za przelew w wysokości 1%"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "Z waluty fiducjarnej na kryptowalutę: opłata za przelew w wysokości 1%"
 
 msgid "Front Side"
 msgstr "Przednia strona"
@@ -6694,9 +6691,6 @@ msgstr "Uwaga: Możesz mieć konto z tylko jedną walutą fiducjarną i jedno ko
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "Uwaga: Możesz nie zgodzić się i kontynuować jako klient detaliczny."
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Uwaga: Możesz przesyłać środki wyłącznie między kontem prowadzonym w walucie fiducjarnej i kontem w kryptowalucie."
-
 msgid "Notes:"
 msgstr "Uwagi:"
 
@@ -7314,6 +7308,9 @@ msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Proszę <a href=\"%1\">zaakceptować zaktualizowany regulamin</a>."
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "Wpłać <a href=\"%1\">środki</a> przed ich wysłaniem do klienta."
@@ -10312,11 +10309,11 @@ msgstr "Przelew"
 msgid "Transfer Between Accounts"
 msgstr "Przelewaj środki między kontami"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "Przelew z"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "Przelewaj pieniądze pomiędzy kontami w walucie fiducjarnej i kryptowalucie po uiszczeniu opłaty:"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Przelewaj środki między Twoimi kontami z prawdziwymi pieniędzmi."
@@ -11832,6 +11829,12 @@ msgstr "Nie możesz anulować ani zmieniać poziomu dla swojego zlecenia Stop lu
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Możesz otworzyć konto na portalu pod warunkiem, że:"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "Możesz odebrać dostęp obecnemu menedżerowi."
