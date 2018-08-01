@@ -196,6 +196,19 @@
     .inline-icon {
         pointer-events: none;
     }
+    .category-wrapper, .type-wrapper {
+        width: 30px;
+        height: 30px;
+        background: $COLOR_GRAY;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .category-type, .type {
+            transform: scale(1.2, 1.2);
+        }
+    }
 }
 
 /* flexbox fallback is if the browser does not support display:grid */

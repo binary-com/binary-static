@@ -240,6 +240,22 @@
                 }
             }
         }
+        .type-wrapper {
+            background: $COLOR_BRANDBLUE_75;
+
+            .type {
+                path, rect {
+                    fill: $COLOR_WHITE;
+
+                    &.transparent {
+                        fill: $COLOR_BRANDBLUE_75;
+                    }
+                }
+                .stroke-white {
+                    stroke: $COLOR_WHITE;
+                }
+            }
+        }
     }
     footer {
         border-color: $COLOR_BRANDBLUE_85;

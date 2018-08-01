@@ -23,13 +23,16 @@
         flex-direction: column;
         align-items: center;
 
-        &__icon {
+        .type-wrapper {
             width: 20px;
             height: 20px;
             padding: 5px;
             margin-bottom: 3px;
             border-radius: 100%;
             background-color: $COLOR_GRAY;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
     .indicative {
