@@ -205,11 +205,6 @@ div.contracts-popup-container {
         transform: rotate(0deg);
         transform-origin: 45% 45;
         color: $COLOR_GRAY;
-
-        &:before {
-            content: '\002303';
-            font-size: 1.1rem;
-        }
     }
     .categories-container {
         margin-bottom: 4px;

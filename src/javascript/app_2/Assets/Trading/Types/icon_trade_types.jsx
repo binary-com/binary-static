@@ -283,6 +283,9 @@ const IconTradeType = ({ type, className }) => {
                 );
                 break;
             default:
+                IconType = (
+                    <span>?</span>
+                );
                 break;
         }
     }

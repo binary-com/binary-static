@@ -205,6 +205,16 @@ const IconTradeCategory = ({ category }) => {
                 );
                 break;
             default:
+                IconCategory = (
+                    <div className='categories-container'>
+                        <div className='category-wrapper'>
+                            <IconTradeType
+                                className='category-type'
+                                type='unknown'
+                            />
+                        </div>
+                    </div>
+                );
                 break;
         }
     }
