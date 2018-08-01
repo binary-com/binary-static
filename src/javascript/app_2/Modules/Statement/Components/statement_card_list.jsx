@@ -17,7 +17,7 @@ const StatementCardList = ({ data, onScroll, children }) => (
 StatementCardList.propTypes = {
     data    : MobxPropTypes.arrayOrObservableArray,
     onScroll: PropTypes.func,
-    children   : PropTypes.oneOfType([
+    children: PropTypes.oneOfType([
         PropTypes.node,
         PropTypes.arrayOf(PropTypes.node),
     ]),
