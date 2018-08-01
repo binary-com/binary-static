@@ -108,9 +108,11 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     onUnmount() {
-        // TODO: clear when portfolio drawer is unavailable (mobile?)
-        // this.clearTable();
-        // WS.forgetAll('proposal_open_contract', 'transaction');
+        // keep data and connections for portfolio drawer on desktop
+        if (this.root_store.ui.is_mobile) {
+            this.clearTable();
+            WS.forgetAll('proposal_open_contract', 'transaction');
+        }
     }
 
     @computed
