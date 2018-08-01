@@ -22,6 +22,7 @@ export default class PortfolioStore extends BaseStore {
             this.is_loading = false;
             this.updatePortfolio(response);
         });
+        WS.subscribeProposalOpenContract(this.proposalOpenContractHandler, false);
         WS.subscribeTransaction(this.transactionHandler, false);
     };
 
@@ -38,6 +39,8 @@ export default class PortfolioStore extends BaseStore {
             this.error = response.error.message;
         }
         WS.portfolio().then((res) => this.updatePortfolio(res));
+        // subscribe to new contracts:
+        WS.subscribeProposalOpenContract(this.proposalOpenContractHandler, false);
     };
 
     @action.bound
@@ -89,7 +92,6 @@ export default class PortfolioStore extends BaseStore {
         }
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
             this.data = formatPortfolioResponse(response.portfolio.contracts);
-            WS.subscribeProposalOpenContract(this.proposalOpenContractHandler, false);
         }
     }
 
