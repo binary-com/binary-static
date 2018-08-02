@@ -2,16 +2,14 @@ $filter-height: 60px;
 $side-padding: 12px;
 
 .statement {
-    padding: 0 $side-padding;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
 
     &-filter {
         box-sizing: border-box;
         height: $filter-height;
         width: 100%;
         font-size: 14px;
+        padding: 0 $side-padding;
 
         &__content {
             height: 100%;
@@ -28,17 +26,15 @@ $side-padding: 12px;
         }
     }
     &__content {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
+        height: calc(100% - #{$filter-height});
+        padding: 0 $side-padding;
     }
 
     /*
         TABLE STYLES START
     */
     .table {
-        height: 50px; // default height for flex-grow to work when table is bigger than parent
-        flex-grow: 1;
+        height: 100%;
         border-bottom: none;
     }
     .table__row {
@@ -66,6 +62,7 @@ $side-padding: 12px;
     */
     &--card-view {
         background: $COLOR_LIGHT_GRAY;
+        overflow: hidden;
 
         .statement-filter {
             position: fixed;
@@ -92,6 +89,11 @@ $side-padding: 12px;
         }
         .statement__content {
             margin-top: $filter-height;
+            padding: 0;
+        }
+        .card-list {
+            padding: 0 $side-padding;
+            height: 100%;
         }
     }
     &-card {

@@ -3,6 +3,8 @@ import PropTypes                     from 'prop-types';
 import React                         from 'react';
 import { render }                    from 'react-dom';
 import { BrowserRouter as Router }   from 'react-router-dom';
+import PortfolioDrawer               from './Components/Elements/PortfolioDrawer';
+import AppContents                   from './Containers/Layout/app_contents.jsx';
 import Footer                        from './Containers/Layout/footer.jsx';
 import Header                        from './Containers/Layout/header.jsx';
 import ThemeWrapper                  from './Containers/Layout/theme_wrapper.jsx';
@@ -67,9 +69,13 @@ const BinaryApp = ({ root_store }) => (
                         ]}
                     />
                 </div>
-                <div id='app_contents' className='app-contents'>
+
+                <AppContents>
                     <Routes />
-                </div>
+                </AppContents>
+
+                <PortfolioDrawer />
+
                 <footer id='footer'>
                     <Footer />
                 </footer>
