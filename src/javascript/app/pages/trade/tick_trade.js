@@ -496,7 +496,12 @@ const TickDisplay = (() => {
 
                     addBarrier();
                     if (Lookback.isLookback(contract.contract_type)) {
-                        updateContractProfit(contract.profit);
+                        const barrier_map = {
+                            LBFLOATCALL: [contract.current_spot,  contract.barrier],
+                            LBFLOATPUT : [contract.barrier,       contract.current_spot],
+                            LBHIGHLOW  : [contract.high_barrier,  contract.low_barrier],
+                        };
+                        updateContractProfit(Lookback.getContractPayout(barrier_map[contract.contract_type]));
                     }
                     counter++;
                 }

@@ -47,11 +47,18 @@ const Lookback = (() => {
         return barrier_map[type] || ['Barrier'];
     };
 
+    // Current payout (payoff) computations for each contract type are as follow:
+    // High-Low  : high_barrier - low_barrier
+    // Close-Low : current_spot - barrier
+    // High-Close: barrier - current_spot
+    const getContractPayout = ([ barrier1, barrier2 ]) => +barrier1 - +barrier2;
+
     return {
         display: displayLookback,
         getFormula,
         isLookback,
         getBarrierLabel,
+        getContractPayout,
     };
 })();
 
