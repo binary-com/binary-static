@@ -90,13 +90,14 @@ const MetaTraderConfig = (() => {
                         BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
                             const { cfd_score, trading_score } = response.get_financial_assessment;
                             const passed_financial_assessment = cfd_score === 4 || trading_score >= 8;
-                            const message = [
+                            let message = [
                                 localize('{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.'),
                                 localize('{SPAIN ONLY}This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product.'),
                             ];
                             if (passed_financial_assessment) {
                                 message.splice(1, 0, localize('{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you.'));
                             }
+                            message = message.map(str => str.replace(/{SPAIN ONLY}/, '')); // remove '{SPAIN ONLY}' from english strings
                             Dialog.confirm({
                                 id     : 'spain_cnmv_warning',
                                 ok_text: localize('Acknowledge'),
