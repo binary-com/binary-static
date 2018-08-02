@@ -19,7 +19,7 @@ const ToggleSettings = ({
                 onClick={toggleSettings}
                 className={toggle_settings_class}
             >
-                <IconSettings />
+                <IconSettings className='footer-icon'/>
             </a>
             <SettingsDialog
                 is_open={is_settings_visible}

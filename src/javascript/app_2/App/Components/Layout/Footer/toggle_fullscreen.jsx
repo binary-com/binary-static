@@ -53,7 +53,7 @@ class ToggleFullScreen extends React.Component {
                 className={full_screen_icon_class}
                 onClick={this.toggleFullScreen}
             >
-                <IconMaximize />
+                <IconMaximize className='footer-icon'/>
             </a>
         );
     }

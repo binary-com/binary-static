@@ -7,7 +7,7 @@ const TogglePortfolio = ({
     is_portfolio_drawer_on,
     togglePortfolioDrawer,
   }) => {
-    const toggle_portfolio_class = classNames('ic-portfolio', {
+    const toggle_portfolio_class = classNames('footer-icon','ic-portfolio', {
         'active': is_portfolio_drawer_on,
     });
     return (
@@ -16,7 +16,7 @@ const TogglePortfolio = ({
             className={toggle_portfolio_class}
             onClick={togglePortfolioDrawer}
         >
-            <IconQuickPortfolio />
+            <IconQuickPortfolio className='footer-icon' />
         </a>
     );
 };

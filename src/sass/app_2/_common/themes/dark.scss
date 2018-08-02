@@ -14,7 +14,7 @@
                     span {
                         color: $COLOR_WHITE;
 
-                        .inline-icon {
+                        .header-icon {
                             path {
                                 fill: $COLOR_WHITE;
                             }
@@ -276,7 +276,7 @@
             &.active, &:hover, &:focus {
                 background: $COLOR_BRANDBLUE_85;
 
-                .inline-icon {
+                .footer-icon {
                     path {
                         fill: $COLOR_WHITE;
                     }
