@@ -21,10 +21,6 @@ class PortfolioDrawer extends React.Component {
             toggleDrawer,
         } = this.props;
 
-        if (error) {
-            return <p>{error}</p>;
-        }
-
         return (
             <div className={classNames('portfolio-drawer', { 'portfolio-drawer--open': is_portfolio_drawer_on })}>
                 <div className='portfolio-drawer__header'>
@@ -38,16 +34,19 @@ class PortfolioDrawer extends React.Component {
                 </div>
                 <div className='portfolio-drawer__body'>
                     {
-                        is_empty ?
-                            <EmptyPortfolioMessage />
+                        error ?
+                            <p>{error}</p>
                             :
-                            data.map((portfolio_position, id) => (
-                                <PortfolioDrawerCard
-                                    key={id}
-                                    currency={currency}
-                                    {...portfolio_position}
-                                />
-                            ))
+                            is_empty ?
+                                <EmptyPortfolioMessage />
+                                :
+                                data.map((portfolio_position, id) => (
+                                    <PortfolioDrawerCard
+                                        key={id}
+                                        currency={currency}
+                                        {...portfolio_position}
+                                    />
+                                ))
                     }
                 </div>
             </div>
