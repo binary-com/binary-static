@@ -120,6 +120,7 @@ const MetaTraderUI = (() => {
     const updateAccount = (acc_type) => {
         updateListItem(acc_type);
         setCurrentAccount(acc_type);
+        showHideFinancialAuthenticate(acc_type);
     };
 
     const setMTAccountText = () => {
@@ -398,6 +399,7 @@ const MetaTraderUI = (() => {
         if (/\b(disabled|selected|existed)\b/.test($item.attr('class'))) return;
         $item.parents('.type-group').find(`.${box_class}.selected`).removeClass('selected');
         $item.addClass('selected');
+        $('#new_account_financial_authenticate_msg').setVisibility(0);
         const selected_acc_type = $item.attr('data-acc-type');
         const action            = `new_account${/mamm/.test(selected_acc_type) ? '_mam' : ''}`;
         if (/(demo|real)/.test(selected_acc_type)) {
@@ -532,6 +534,12 @@ const MetaTraderUI = (() => {
         $container.find('.has-mam').setVisibility(has_manager);
         if (!has_manager && $container.find('.acc-actions .has-mam').hasClass('selected')) {
             loadAction(defaultAction(acc_type));
+        }
+    };
+
+    const showHideFinancialAuthenticate = (acc_type) => {
+        if (MetaTraderConfig.hasAccount(acc_type) && accounts_info[acc_type].account_type === 'financial') {
+            $('#financial_authenticate_msg').setVisibility(!MetaTraderConfig.isAuthenticated());
         }
     };
 
