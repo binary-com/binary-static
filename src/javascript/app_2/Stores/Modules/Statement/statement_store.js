@@ -18,12 +18,6 @@ export default class StatementStore extends BaseStore {
     @observable date_to        = '';
     @observable error          = '';
 
-    constructor() {
-        super();
-        // for mobile cards view
-        this.handleWindowScroll = this.handleScroll.bind(null, { target: document.scrollingElement });
-    }
-
     @action.bound
     clearTable() {
         this.data            = [];
