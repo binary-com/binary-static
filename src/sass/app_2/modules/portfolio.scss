@@ -1,15 +1,12 @@
 .portfolio {
     padding: 1.5rem 12px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
 
     &--card-view {
         background: $COLOR_LIGHT_GRAY;
     }
     .table {
-        height: 50px; // default height for flex-grow to work when table is bigger than parent
-        flex-grow: 1;
+        height: 100%;
     }
     .table__row {
         grid-template-columns: 6.5rem 7rem 1fr 6rem 9rem 6rem 5rem;
@@ -22,6 +19,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
 
         &__icon {
             width: 20px;
@@ -33,6 +31,7 @@
         }
     }
     .indicative {
+        text-align: right;
         font-weight: bold;
 
         &--price-moved-up {
@@ -51,7 +50,7 @@
     }
     // empty portfolio message
     &-empty {
-        flex-grow: 1;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -112,7 +111,7 @@
             margin-right: 5px;
         }
         &__purchase:before {
-            background-image: url('../images/app_2/statement/ic_purchase.svg');
+            background-image: url('../images/app_2/portfolio/ic_purchase.svg');
         }
         &__payout:before {
             background-image: url('../images/app_2/statement/ic_payout.svg');
@@ -122,28 +121,28 @@
                 color: $COLOR_LIGHT_GREEN;
 
                 &:before {
-                    background-image: url('../images/app_2/statement/ic_price_up.svg');
+                    background-image: url('../images/app_2/portfolio/ic_price_up.svg');
                 }
             }
             &--price-moved-down {
                 color: $COLOR_LIGHT_RED;
 
                 &:before {
-                    background-image: url('../images/app_2/statement/ic_price_down.svg');
+                    background-image: url('../images/app_2/portfolio/ic_price_down.svg');
                 }
             }
             &--price-stable {
                 color: $COLOR_BLACK;
 
                 &:before {
-                    background-image: url('../images/app_2/statement/ic_price_stable.svg');
+                    background-image: url('../images/app_2/portfolio/ic_price_stable.svg');
                 }
             }
             &--no-resale {
                 color: $COLOR_GRAY;
 
                 &:before {
-                    background-image: url('../images/app_2/statement/ic_no_resale.svg');
+                    background-image: url('../images/app_2/portfolio/ic_no_resale.svg');
                 }
             }
         }

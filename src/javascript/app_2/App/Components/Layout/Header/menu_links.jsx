@@ -13,7 +13,7 @@ const MenuLinks = ({ items }) => (
             <InkBarDiv className='menu-links'>
                 {items.map((item, idx) => (
                     <BinaryLink key={idx} to={item.link_to}>
-                        <span className={item.icon} title={item.text}>{item.text}</span>
+                        <span className={`menu-links__${item.icon}`} title={item.text}>{item.text}</span>
                     </BinaryLink>
                 ))}
             </InkBarDiv>

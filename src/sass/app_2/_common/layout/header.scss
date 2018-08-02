@@ -1,6 +1,7 @@
 .header {
     position: fixed;
     z-index: 99;
+    box-sizing: border-box;
     width: 100%;
     height: $HEADER_HEIGHT;
     top: 0;
@@ -101,16 +102,16 @@
                             overflow: hidden;
                             visibility: hidden;
                         }
-                        &.trade:before {
+                        &.menu-links__trade:before {
                             content: url('../images/app_2/header/icons/ic_trade_normal_light.svg');
                         }
-                        &.portfolio:before {
+                        &.menu-links__portfolio:before {
                             content: url('../images/app_2/header/icons/ic_portfolio_normal_light.svg');
                         }
-                        &.statement:before {
+                        &.menu-links__statement:before {
                             content: url('../images/app_2/header/icons/ic_statement_normal_light.svg');
                         }
-                        &.cashier:before {
+                        &.menu-links__cashier:before {
                             content: url('../images/app_2/header/icons/ic_cashier_normal_light.svg');
                         }
                     }
@@ -121,16 +122,16 @@
                         & > span[title] {
                             font-weight: 500;
                         }
-                        & > span.trade:before {
+                        & > .menu-links__trade:before {
                             content: url('../images/app_2/header/icons/ic_trade_active_light.svg');
                         }
-                        & > span.portfolio:before {
+                        & > .menu-links__portfolio:before {
                             content: url('../images/app_2/header/icons/ic_portfolio_active_light.svg');
                         }
-                        & > span.statement:before {
+                        & > .menu-links__statement:before {
                             content: url('../images/app_2/header/icons/ic_statement_active_light.svg');
                         }
-                        & > span.cashier:before {
+                        & > .menu-links__cashier:before {
                             content: url('../images/app_2/header/icons/ic_cashier_active_light.svg');
                         }
                     }
