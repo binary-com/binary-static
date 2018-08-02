@@ -40,7 +40,7 @@ const MetaTrader = (() => {
     const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
     const setMTCompanies = () => {
-        mt_companies = mt_companies || MetaTraderConfig[State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest' ? 'mt_financial_companies' : 'mt_companies'];
+        mt_companies = mt_companies || MetaTraderConfig[State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest' ? 'mt_financial_companies' : 'mt_companies'];
     };
 
     const isEligible = () => {
