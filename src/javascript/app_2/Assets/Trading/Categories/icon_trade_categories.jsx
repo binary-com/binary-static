@@ -8,7 +8,7 @@ const IconTradeCategory = ({ category }) => {
         switch (category) {
             case 'rise_fall':
                 IconCategory = (
-                    <div className='categories-container'>
+                    <React.Fragment>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
@@ -21,12 +21,12 @@ const IconTradeCategory = ({ category }) => {
                                 type='put'
                             />
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
                 break;
             case 'high_low':
                 IconCategory = (
-                    <div className='categories-container'>
+                    <React.Fragment>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
@@ -39,12 +39,12 @@ const IconTradeCategory = ({ category }) => {
                                 type='put_barrier'
                             />
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
                 break;
             case 'end':
                 IconCategory = (
-                    <div className='categories-container'>
+                    <React.Fragment>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
@@ -57,12 +57,12 @@ const IconTradeCategory = ({ category }) => {
                                 type='expiryrange'
                             />
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
                 break;
             case 'stay':
                 IconCategory = (
-                    <div className='categories-container'>
+                    <React.Fragment>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
@@ -75,12 +75,12 @@ const IconTradeCategory = ({ category }) => {
                                 type='upordown'
                             />
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
                 break;
             case 'match_diff':
                 IconCategory = (
-                    <div className='categories-container'>
+                    <React.Fragment>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
@@ -93,12 +93,12 @@ const IconTradeCategory = ({ category }) => {
                                 type='digitdiff'
                             />
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
                 break;
             case 'even_odd':
                 IconCategory = (
-                    <div className='categories-container'>
+                    <React.Fragment>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
@@ -111,12 +111,12 @@ const IconTradeCategory = ({ category }) => {
                                 type='digiteven'
                             />
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
                 break;
             case 'over_under':
                 IconCategory = (
-                    <div className='categories-container'>
+                    <React.Fragment>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
@@ -129,12 +129,12 @@ const IconTradeCategory = ({ category }) => {
                                 type='digitunder'
                             />
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
                 break;
             case 'touch':
                 IconCategory = (
-                    <div className='categories-container'>
+                    <React.Fragment>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
@@ -147,12 +147,12 @@ const IconTradeCategory = ({ category }) => {
                                 type='notouch'
                             />
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
                 break;
             case 'asian':
                 IconCategory = (
-                    <div className='categories-container'>
+                    <React.Fragment>
                         <div className='category-wrapper'>
                             <IconTradeType
                                 className='category-type'
@@ -165,63 +165,55 @@ const IconTradeCategory = ({ category }) => {
                                 type='asiand'
                             />
                         </div>
-                    </div>
+                    </React.Fragment>
                 );
                 break;
             case 'lb_call':
                 IconCategory = (
-                    <div className='categories-container'>
-                        <div className='category-wrapper'>
-                            <IconTradeType
-                                className='category-type'
-                                type='lbfloatcall'
-                            />
-                        </div>
+                    <div className='category-wrapper'>
+                        <IconTradeType
+                            className='category-type'
+                            type='lbfloatcall'
+                        />
                     </div>
                 );
                 break;
             case 'lb_put':
                 IconCategory = (
-                    <div className='categories-container'>
-                        <div className='category-wrapper'>
-                            <IconTradeType
-                                className='category-type'
-                                type='lbfloatput'
-                            />
-                        </div>
+                    <div className='category-wrapper'>
+                        <IconTradeType
+                            className='category-type'
+                            type='lbfloatput'
+                        />
                     </div>
                 );
                 break;
             case 'lb_high_low':
                 IconCategory = (
-                    <div className='categories-container'>
-                        <div className='category-wrapper'>
-                            <IconTradeType
-                                className='category-type'
-                                type='lbhighlow'
-                            />
-                        </div>
+                    <div className='category-wrapper'>
+                        <IconTradeType
+                            className='category-type'
+                            type='lbhighlow'
+                        />
                     </div>
                 );
                 break;
             default:
                 IconCategory = (
-                    <div className='categories-container'>
-                        <div className='category-wrapper'>
-                            <IconTradeType
-                                className='category-type'
-                                type='unknown'
-                            />
-                        </div>
+                    <div className='category-wrapper'>
+                        <IconTradeType
+                            className='category-type'
+                            type='unknown'
+                        />
                     </div>
                 );
                 break;
         }
     }
     return (
-        <React.Fragment>
+        <div className='categories-container'>
             {IconCategory}
-        </React.Fragment>
+        </div>
     );
 };
 
