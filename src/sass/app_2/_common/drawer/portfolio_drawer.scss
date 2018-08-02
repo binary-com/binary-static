@@ -39,11 +39,13 @@ $header-height: 40px;
     }
     &__icon-close {
         display: inline-block;
-        height: 16px;
-        width: 16px;
-        background-image: url('../images/app_2/footer/ic_close_blue_light.svg');
-        background-size: 16px;
         margin-left: auto;
+        cursor: pointer;
+
+        svg {
+            height: 16px;
+            width: 16px;
+        }
     }
     /*
         PORTFOLIO DRAWER CARD STARTS
@@ -70,14 +72,8 @@ $header-height: 40px;
                 flex-direction: row;
                 align-items: center;
 
-                &__icon {
-                    box-sizing: border-box;
-                    width: 24px;
-                    height: 24px;
-                    padding: 4px;
-                    border-radius: 100%;
-                    background-color: $COLOR_GRAY;
-                    margin-right: 8px;
+                .type-wrapper {
+                    margin: 0 4px 4px 0;
                 }
             }
         }
@@ -157,19 +153,21 @@ $header-height: 40px;
 // Dark Theme
 .theme-wrapper.dark {
     .portfolio-drawer {
-        color: $COLOR_WHITE;
         background: $COLOR_BLUE;
         border-color: $COLOR_BRANDBLUE_85;
 
-        p {
-            color: $COLOR_BRANDBLUE_40;
+        &__title {
+            color: $COLOR_WHITE;
         }
-        .portfolio-drawer-item {
+        &-card {
             background: $COLOR_BLUE;
             border-color: $COLOR_BRANDBLUE_85;
 
-            span {
+            .contract-type, &__symbol {
                 color: $COLOR_WHITE;
+            }
+            &__remaining-time {
+                color: $COLOR_BRANDBLUE_40;
             }
             &:hover {
                 background: $COLOR_BRANDBLUE_85;

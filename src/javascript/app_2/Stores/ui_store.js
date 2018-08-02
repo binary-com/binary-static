@@ -85,16 +85,6 @@ export default class UIStore extends BaseStore {
     @action.bound
     toggleDarkMode() {
         this.is_dark_mode_on = !this.is_dark_mode_on;
-
-        // temporary workaround for body element color in dark theme
-        if (this.is_dark_mode_on) {
-            document.body.classList.remove('body-bg__light');
-            document.body.classList.add('body-bg__dark');
-        }
-        else {
-            document.body.classList.remove('body-bg__dark');
-            document.body.classList.add('body-bg__light');
-        }
     }
 
     @action.bound

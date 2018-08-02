@@ -209,15 +209,6 @@
 }
 
 // Helpers
-.body-bg {
-    &__dark {
-        background: $COLOR_BLUE;
-    }
-    &__light {
-        background: $COLOR_WHITE;
-    }
-}
-
 .no-scroll {
     overflow: hidden;
     max-height: 100vh;

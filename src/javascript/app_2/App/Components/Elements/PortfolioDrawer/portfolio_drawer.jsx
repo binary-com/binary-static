@@ -6,6 +6,7 @@ import { connect }                    from '../../../../Stores/connect';
 import { localize }                   from '../../../../../_common/localize';
 import PortfolioDrawerCard            from './portfolio_drawer_card.jsx';
 import EmptyPortfolioMessage          from '../../../../Modules/Portfolio/Components/empty_portfolio_message.jsx';
+import { IconClose }                  from '../../../../Assets/Common';
 
 class PortfolioDrawer extends React.Component {
     componentDidMount()    { this.props.onMount(); }
@@ -44,11 +45,12 @@ class PortfolioDrawer extends React.Component {
                 <div className='portfolio-drawer__header'>
                     <span className='portfolio-drawer__icon-main ic-portfolio' />
                     <span className='portfolio-drawer__title'>{localize('Portfolio Quick Menu')}</span>
-                    <a
-                        href='javascript:;'
+                    <div
                         className='portfolio-drawer__icon-close'
                         onClick={toggleDrawer}
-                    />
+                    >
+                        <IconClose />
+                    </div>
                 </div>
                 <div className='portfolio-drawer__body'>
                     {body_content}

@@ -260,22 +260,6 @@
                 }
             }
         }
-        .type-wrapper {
-            background: $COLOR_BRANDBLUE_75;
-
-            .type {
-                path, rect {
-                    fill: $COLOR_WHITE;
-
-                    &.transparent {
-                        fill: $COLOR_BRANDBLUE_75;
-                    }
-                }
-                .stroke-white {
-                    stroke: $COLOR_WHITE;
-                }
-            }
-        }
     }
     footer {
         border-color: $COLOR_BRANDBLUE_85;
@@ -314,6 +298,24 @@
             border-color: $COLOR_BRANDBLUE_85;
         }
     }
+    // inline trade-types icons
+    .type-wrapper {
+        background: $COLOR_BRANDBLUE_75;
+
+        .type {
+            path, rect {
+                fill: $COLOR_WHITE;
+
+                &.transparent {
+                    fill: $COLOR_BRANDBLUE_75;
+                }
+            }
+            .stroke-white {
+                stroke: $COLOR_WHITE;
+            }
+        }
+    }
+    // common inline icons
     .inline-icon {
         path {
             fill: $COLOR_BRANDBLUE_40;
