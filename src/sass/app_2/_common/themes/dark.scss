@@ -115,6 +115,15 @@
                 background: $COLOR_BRANDBLUE_95;
                 border-color: $COLOR_BRANDBLUE_85;
                 color: $COLOR_BRANDBLUE_40;
+
+                a {
+                    color: $COLOR_BRANDBLUE_40;
+
+                    &:hover {
+                        color: $COLOR_WHITE;
+                        font-weight: 500;
+                    }
+                }
             }
             fieldset.purchase-option div.box .left-column .type-wrapper {
                 background: $COLOR_BRANDBLUE_75;

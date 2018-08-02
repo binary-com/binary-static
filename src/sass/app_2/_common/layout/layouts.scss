@@ -234,8 +234,13 @@
 }
 
 // Helpers
-.dark-bg {
-    background: $COLOR_BLUE;
+.body-bg {
+    &__dark {
+        background: $COLOR_BLUE;
+    }
+    &__light {
+        background: $COLOR_WHITE;
+    }
 }
 
 .no-scroll {
