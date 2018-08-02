@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-01 05:35\n"
+"PO-Revision-Date: 2018-08-02 06:59\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -1447,7 +1447,7 @@ msgid "Authorised Applications"
 msgstr "แอพพลิเคชันที่รองรับ"
 
 msgid "Authorised payment agents are exempted from paying any transfer fees"
-msgstr ""
+msgstr "เว้นจากการชำระค่าธรรมเนียมการโอนเงินเมื่อชำระผ่านตัวแทนรับชำระเงิน"
 
 msgid "Auto-trader programming tool"
 msgstr "เครื่องมือในการตั้งซื้อขายแบบอัตโนมัติ"
@@ -1648,7 +1648,7 @@ msgid "Binary (FX) Ltd"
 msgstr "Binary (FX) Ltd"
 
 msgid "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr "Binary (FX) Ltd ตั้งอยู่ที่ หมายเลขล็อต F16 ชั้น 1 อาคาร Paragon Labuan, Jalan Tun Mustapha, 87000 ดินแดนสหพันธ์ Labuan ประเทศมาเลเซีย ได้รับอนุญาตและกำกับดูแลโดย Labuan Financial Services Authority เพื่อดำเนินธุรกิจซื้อขายทางด้านการเงิน %1(หมายเลขใบอนุญาต MB/18/0024)%2"
+msgstr "Binary (FX) Ltd ตั้งอยู่ที่ ล็อตที่ F16 ชั้น 1 อาคาร Paragon Labuan ถนน Tun Mustapha รหัสไปรษณีย์ 87000 เขต Labuan ประเทศมาเลเซีย ได้รับอนุญาตและกำกับดูแลโดย Labuan Financial Services Authority เพื่อดำเนินธุรกิจซื้อขายทางด้านการเงิน %1(ใบอนุญาตเลขที่ MB/18/0024)%2"
 
 msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
@@ -2100,6 +2100,9 @@ msgstr "กำหนดราคาใช้สิทธิของท่าน
 msgid "Christmas Day"
 msgstr "วันคริสต์มาส"
 
+msgid "Citizenship"
+msgstr ""
+
 msgid "Classification of assets requiring hedge"
 msgstr "การจำแนกสินทรัพย์ที่ต้องป้องกันความเสี่ยง"
 
@@ -2191,7 +2194,7 @@ msgid "Clients from the rest of the world (excluding certain countries such as t
 msgstr "ลูกค้าจากประเทศอื่นๆ ทั่วโลก (ยกเว้นบางประเทศ เช่น สหรัฐอเมริกา คอสตาริกา ฮ่องกง) จะมี FX ของพวกเขา และบัญชี CFD Metatrader 5 ที่เปิดบัญชีกับ Binary (V) Ltd. หากแต่ %1 จะไม่มีบริการในสาธารณรัฐวานูอาตู"
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr "ลูกค้าจากส่วนอื่นของโลก (ยกเว้นบางเขตพื้นที่เช่น สหรัฐอเมริกา ญี่ปุ่น และสหภาพยุโรป) ที่ต้องการซื้อขาย CFD จะมีบัญชี MetaTrader 5 เปิดกับ Binary (FX) Ltd. ไม่มี %1ในประเทศมาเลเซีย"
+msgstr "ลูกค้าจากประเทศอื่นๆ (ยกเว้นบางเขตพื้นที่ เช่น สหรัฐอเมริกา ญี่ปุ่น และสหภาพยุโรป) ที่ต้องการซื้อขาย CFD จะต้องเปิดบัญชี MetaTrader 5 กับ บริษัท Binary (FX) Ltd. ซึ่งไม่มี %1ให้บริการในประเทศมาเลเซีย"
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
 msgstr "ลูกค้าสามารถใช้โบนัสนี้ได้เมื่อมีการเปิดบัญชีเงินจริงเท่านั้น"
@@ -3166,7 +3169,7 @@ msgid "Each time you open a position on an index symbol, you can start with a mi
 msgstr "แต่ละครั้งที่ท่านเปิดตำแหน่งของสัญลักษณ์ดัชนี ท่านสามารถเริ่มที่ปริมาณธุรกรรมขั้นต่ำตามที่ระบุเอาไว้ในตารางข้างต้น"
 
 msgid "Each transfer is subject to a %1 transfer fee"
-msgstr ""
+msgstr "การโอนเงินแต่ละครั้ง มี %1 ค่าธรรมเนียมการโอน"
 
 msgid "Earn"
 msgstr "รับรายได้"
@@ -7310,7 +7313,7 @@ msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "โปรด <a href=\"%1\">ยอมรับข้อตกลงและเงื่อนไข</a>"
 
 msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
-msgstr ""
+msgstr "โปรด <a href=\"%1\">ยืนยัน</a> บัญชีของท่านเพื่อการซื้อขายอย่างต่อเนื่อง"
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "โปรด <a href=\"%1\">ฝากเงิน</a> ก่อนทำการโอนให้ลูกค้า"
@@ -10314,7 +10317,7 @@ msgid "Transfer Between Accounts"
 msgstr "โอนเงินระหว่างบัญชี"
 
 msgid "Transfer between accounts is not available on weekends"
-msgstr ""
+msgstr "ไม่มีบริการโอนระหว่างบัญชีในช่วงวันหยุดสุดสัปดาห์"
 
 msgid "Transfer from"
 msgstr "โอนจาก"
@@ -11835,10 +11838,10 @@ msgid "You may only open an account at this site on conditions that:"
 msgstr "ท่านอาจเปิดบัญชีในเว็บไซต์นี้เท่านั้น ตามเงื่อนไขที่ว่า:"
 
 msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
-msgstr ""
+msgstr "ท่านโอนเงินได้ระหว่างบัญชีเงินกระดาษและบัญชีเงินดิจิทัลเท่านั้น"
 
 msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
-msgstr ""
+msgstr "โปรด <a href=\"%1\">ยืนยัน</a> บัญชีของท่านภายในห้าวันเพื่อการซื้อขายอย่างต่อเนื่อง"
 
 msgid "You may revoke the current manager's access."
 msgstr "ท่านอาจจะยกเลิกการเข้าถึงของผู้จัดการคนปัจจุบัน"
