@@ -1,7 +1,7 @@
-import React from 'react';
-import Head from './head.jsx';
-import Loading from '../_common/components/loading.jsx';
-import GTM from '../_common/includes/gtm.jsx';
+import React  from 'react';
+import Head   from './head.jsx';
+import Loader from '../_common/components/loader.jsx';
+import GTM    from '../_common/includes/gtm.jsx';
 
 const BinaryApp = () => (
     <html>
@@ -9,7 +9,7 @@ const BinaryApp = () => (
         <body className={it.language}>
             <GTM />
             <div id='binary_app' className='binary-app'>
-                <Loading />
+                <Loader />
             </div>
         </body>
     </html>

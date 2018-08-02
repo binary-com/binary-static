@@ -1,0 +1,81 @@
+.loader {
+    background-color: #fff; // stylelint-disable-line color-no-hex
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+
+    &.dark {
+        background-color: #2a3052; // stylelint-disable-line color-no-hex
+    }
+    svg {
+        position: absolute;
+    }
+}
+
+.grid-lines {
+    background-size: 6em 6em;
+    background-image: linear-gradient(to right, #f4f4f6 1px, transparent 1px), linear-gradient(to bottom, #f4f4f6 1px, transparent 1px); // stylelint-disable-line color-no-hex
+
+    &.dark {
+        background-image: linear-gradient(to right, #353b5b 1px, transparent 1px), linear-gradient(to bottom, #353b5b 1px, transparent 1px); // stylelint-disable-line color-no-hex    
+    }
+}
+
+.chart-line {
+    stroke-dasharray: 4300;
+    stroke-dashoffset: 4300;
+    animation: chart-line-loader 5s linear infinite;
+}
+
+.loading-line {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: loading 1s linear infinite;
+}
+
+.loading-line-bg {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: bgloading 1s linear infinite;
+}
+
+@keyframes chart-line-loader {
+    from {
+        stroke-dashoffset: 4300;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes loading {
+    from {
+        stroke-dashoffset: 150;
+    }
+    50% {
+        stroke-dashoffset: 150;
+    }
+    75% {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes bgloading {
+    from {
+        stroke-dashoffset: 150;
+    }
+    33% {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
