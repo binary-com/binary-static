@@ -69,6 +69,9 @@ const Metatrader = () => (
                 <h1>{it.L('MetaTrader 5 dashboard')}</h1>
             </div>
             <p id='page_msg' className='notice-msg center-text invisible' />
+            <p id='financial_authenticate_msg' className='notice-msg center-text invisible'>
+                {it.L('Please <a href="[_1]">authenticate</a> your account to continue trading.', it.url_for('user/authenticate'))}
+            </p>
             <div id='mt_loading'><Loading /></div>
             <div id='mt_account_management' className='gr-row invisible'>
                 <div id='mt_left_panel' className='gr-9 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
@@ -285,6 +288,7 @@ const Metatrader = () => (
                                         </TypeGroup>
                                     </div>
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
+                                    <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please <a href="[_1]">authenticate</a> your account within five days to continue trading.', it.url_for('user/authenticate'))}</p>
                                     <div className='center-text'>
                                         <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
                                             <span>{it.L('Cancel')}</span>
@@ -527,7 +531,6 @@ const Metatrader = () => (
                             <ul className='bullet'>
                                 <li className='maltainvest invisible'>{it.L('Upgrade to [_2] <a href="[_1]">Financial Account</a>.', it.url_for('new_account/maltainvestws'), it.website_name)}</li>
                                 <li className='assessment invisible'>{it.L('Complete the <a href="[_1]">Financial Assessment</a>.', it.url_for('user/settings/assessmentws'))}</li>
-                                <li className='authenticate invisible'>{it.L('<a href="[_1]">Authenticate</a> your account by verifying your identity and address.', it.url_for('user/authenticate'))}</li>
                             </ul>
                         </div>
                         <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please <a href="[_1]">Authenticate</a> your Binary account.', it.url_for('user/authenticate'))}</div>

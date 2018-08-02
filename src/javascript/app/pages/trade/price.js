@@ -7,6 +7,7 @@ const Contract             = require('./contract');
 const Defaults             = require('./defaults');
 const getLookBackFormula   = require('./lookback').getFormula;
 const isLookback           = require('./lookback').isLookback;
+const Client               = require('../../base/client');
 const BinarySocket         = require('../../base/socket');
 const formatMoney          = require('../../common/currency').formatMoney;
 const CommonFunctions      = require('../../../_common/common_functions');
@@ -252,7 +253,8 @@ const Price = (() => {
             comment.show();
             error.hide();
             if (isLookback(type)) {
-                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${getLookBackFormula(type)}`);
+                const multiplier_value = formatMoney(Client.get('currency'), proposal.multiplier, false, 3, 2);
+                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${getLookBackFormula(type, multiplier_value)}`);
             } else {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }

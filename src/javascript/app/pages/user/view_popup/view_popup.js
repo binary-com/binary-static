@@ -320,7 +320,7 @@ const ViewPopup = (() => {
             el_live_date.parentNode.setVisibility(0);
         }
 
-        containerSetText('trade_details_current_title', 'Contract Result');
+        containerSetText('trade_details_current_title', localize('Contract Result'));
         containerSetText('trade_details_indicative_label', localize('Payout'));
         if (contract.status === 'sold') {
             containerSetText('trade_details_end_label', localize('End Time'));
