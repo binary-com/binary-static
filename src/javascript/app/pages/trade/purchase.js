@@ -102,7 +102,7 @@ const Purchase = (() => {
                 const is_tick = duration_unit === 't';
                 if (is_tick) {
                     profit.setVisibility(1);
-                    CommonFunctions.elementInnerHtml(profit, `${localize('Profit/Loss')} <p>-</p>`);
+                    CommonFunctions.elementInnerHtml(profit, `${localize('Current Payout')} <p>-</p>`);
                 } else {
                     profit.setVisibility(0);
                 }

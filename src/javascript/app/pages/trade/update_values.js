@@ -11,15 +11,13 @@ const updatePurchaseStatus = (final_price, pnl, profit, contract_status, contrac
 
     $payout.html($('<div/>', { text: localize('Buy price') }).append($('<p/>', { html: formatMoney(currency, Math.abs(pnl)) })));
     $cost.html($('<div/>', { text: localize('Final price') }).append($('<p/>', { html: formatMoney(currency, final_price) })));
-    if (!final_price) {
+
+    if (contract_category === 'lookback') {
+        updateContractPayout(profit, true);
+    } else if (!final_price) {
         $profit.html($('<div/>', { text: localize('Loss') }).append($('<p/>', { html: formatMoney(currency, pnl) })));
     } else {
         $profit.html($('<div/>', { text: localize('Profit') }).append($('<p/>', { html: formatMoney(currency, profit) })));
-        if (contract_category === 'lookback') {
-            $profit
-                .html($('<div/>', { text: profit < 0 ? localize('Loss') : localize('Profit') })
-                .append($('<p/>', { html: formatMoney(currency, profit), class: profit < 0 ? 'loss' : 'profit' })));
-        }
         updateContractBalance(Client.get('balance'));
     }
 };
@@ -28,13 +26,13 @@ const updateContractBalance = (balance) => {
     $('#contract_purchase_balance').html(`${localize('Account balance:')} ${formatMoney(Client.get('currency'), balance)}`);
 };
 
-const updateContractProfit = (profit) => {
+const updateContractPayout = (payout, is_expired = false) => {
     $('#contract_purchase_profit')
-        .html(`${localize('Profit/Loss')}<p>${formatMoney(Client.get('currency'), profit)}</p>`);
+        .html(`${is_expired ? localize('Payout') : localize('Current Payout')}<p>${formatMoney(Client.get('currency'), payout)}</p>`);
 };
 
 module.exports = {
     updatePurchaseStatus,
     updateContractBalance,
-    updateContractProfit,
+    updateContractPayout,
 };

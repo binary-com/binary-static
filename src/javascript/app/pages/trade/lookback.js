@@ -48,10 +48,19 @@ const Lookback = (() => {
     };
 
     // Current payout (payoff) computations for each contract type are as follow:
-    // High-Low  : high_barrier - low_barrier
     // Close-Low : current_spot - barrier
     // High-Close: barrier - current_spot
-    const getContractPayout = ([ barrier1, barrier2 ]) => +barrier1 - +barrier2;
+    // High-Low  : high_barrier - low_barrier
+    const getContractPayout = ({ contract_type, multiplier, barrier, current_spot, high_barrier, low_barrier }) => { 
+        const barrier_map = {
+            LBFLOATCALL: [current_spot,  barrier],
+            LBFLOATPUT : [barrier,       current_spot],
+            LBHIGHLOW  : [high_barrier,  low_barrier],
+        };
+        const [barrier1, barrier2] = barrier_map[contract_type];
+        const payout = +multiplier * (+barrier1 - +barrier2);
+        return payout < 0 ? 0 : payout;
+    };
 
     return {
         display: displayLookback,

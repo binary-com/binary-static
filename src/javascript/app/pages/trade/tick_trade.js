@@ -3,7 +3,7 @@ const requireHighstock     = require('./common').requireHighstock;
 const Lookback             = require('./lookback');
 const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
-const updateContractProfit = require('./update_values').updateContractProfit;
+const updateContractPayout = require('./update_values').updateContractPayout;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
 const addComma             = require('../../../_common/base/currency_base').addComma;
@@ -362,7 +362,7 @@ const TickDisplay = (() => {
         } else if (contract.is_expired) {
             // non-binary options that has status === null
             if (contract_category === 'lookback') {
-                updatePurchaseStatus(contract.sell_price, price, contract.profit, localize('Contract Result'), contract_category);
+                updatePurchaseStatus(contract.sell_price, price, Lookback.getContractPayout(contract), localize('Contract Result'), contract_category);
             }
         }
     };
@@ -496,12 +496,7 @@ const TickDisplay = (() => {
 
                     addBarrier();
                     if (Lookback.isLookback(contract.contract_type)) {
-                        const barrier_map = {
-                            LBFLOATCALL: [contract.current_spot,  contract.barrier],
-                            LBFLOATPUT : [contract.barrier,       contract.current_spot],
-                            LBHIGHLOW  : [contract.high_barrier,  contract.low_barrier],
-                        };
-                        updateContractProfit(Lookback.getContractPayout(barrier_map[contract.contract_type]));
+                        updateContractPayout(Lookback.getContractPayout(contract));
                     }
                     counter++;
                 }
