@@ -173,5 +173,10 @@ $header-height: 40px;
                 background: $COLOR_BRANDBLUE_85;
             }
         }
+        &__body {
+            .portfolio-empty {
+                color: $COLOR_WHITE;
+            }
+        }
     }
 }
