@@ -59,7 +59,7 @@ const Lookback = (() => {
         };
         const [barrier1, barrier2] = barrier_map[contract_type];
         const payout = +multiplier * (+barrier1 - +barrier2);
-        return payout < 0 ? 0 : payout;
+        return Math.max(0, payout);
     };
 
     return {
