@@ -1,9 +1,9 @@
 import { observer }    from 'mobx-react';
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import { COLOR_CODES } from '../../../../Constants';
+import { COLOR_CODES } from '../../Constants/index';
 
-const TickIcon = ({
+const IconTick = ({
     circle_color = COLOR_CODES.LIGHT_GREEN,
     tick_color   = COLOR_CODES.WHITE,
 }) => (
@@ -15,9 +15,9 @@ const TickIcon = ({
     </svg>
 );
 
-TickIcon.propTypes = {
+IconTick.propTypes = {
     circle_color: PropTypes.string,
     tick_color  : PropTypes.string,
 };
 
-export default observer(TickIcon);
+export default observer(IconTick);

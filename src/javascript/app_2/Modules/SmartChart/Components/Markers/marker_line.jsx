@@ -1,14 +1,14 @@
 import { observer }    from 'mobx-react';
 import PropTypes       from 'prop-types';
 import React           from 'react';
-// import { COLOR_CODES } from '../../../../Constants';
 
 const MarkerLine = ({
-    // color = COLOR_CODES.GRAY,
     label,
-    // line_style,
+    line_style,
 }) => (
-    <div>{label}</div>
+    <div className={line_style}>
+        <div>{label}</div>
+    </div>
 );
 
 MarkerLine.propTypes = {
