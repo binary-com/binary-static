@@ -2,21 +2,20 @@ import {
     action,
     computed,
     observable,
-    toJS }                 from 'mobx';
-import {
-    createChartMarker,
-    setChartBarrier }      from './Helpers/chart';
+    toJS }                    from 'mobx';
+import { setChartBarrier }    from './Helpers/chart_barriers';
+import { createChartMarkers } from './Helpers/chart_markers';
 import {
     getDetailsExpiry,
-    getDetailsInfo }       from './Helpers/details';
+    getDetailsInfo }          from './Helpers/details';
 import {
     getDisplayStatus,
     getFinalPrice,
     getIndicativePrice,
-    isEnded }              from './Helpers/logic';
-import BaseStore           from '../../base_store';
-import { WS }              from '../../../Services';
-import { isEmptyObject }   from '../../../../_common/utility';
+    isEnded }                 from './Helpers/logic';
+import BaseStore              from '../../base_store';
+import { WS }                 from '../../../Services';
+import { isEmptyObject }      from '../../../../_common/utility';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;
@@ -52,8 +51,9 @@ export default class ContractStore extends BaseStore {
 
         if (isEmptyObject(toJS(this.contract_info))) { // set on the first response
             setChartBarrier(this.smart_chart, contract_info);
-            createChartMarker(this.smart_chart, contract_info);
         }
+
+        createChartMarkers(this.smart_chart, contract_info);
 
         this.contract_info = contract_info;
     }

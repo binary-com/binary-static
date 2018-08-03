@@ -1,3 +1,4 @@
+import extend                 from 'extend';
 import {
     action,
     computed,
@@ -67,12 +68,19 @@ export default class SmartChartStore extends BaseStore {
     // ---------- Markers ----------
     @action.bound
     createMarker(config) {
-        this.markers[config.type] = new ChartMarkerStore(config.marker_config, config.content_config);
+        this.markers = extend({}, this.markers, {
+            [config.type]: new ChartMarkerStore(config.marker_config, config.content_config),
+        });
     }
 
     @action.bound
     removeMarkers() {
         this.markers = {};
+    }
+
+    @computed
+    get markers_array() {
+        return barriersObjectToArray(this.markers);
     }
 
     // ---------- Chart Settings ----------

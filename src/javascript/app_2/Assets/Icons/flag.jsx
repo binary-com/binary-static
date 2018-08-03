@@ -1,9 +1,9 @@
 import { observer }    from 'mobx-react';
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import { COLOR_CODES } from '../../../../Constants';
+import { COLOR_CODES } from '../../Constants/index';
 
-const FlagIcon = ({ color = COLOR_CODES.WHITE }) => (
+const IconFlag = ({ color = COLOR_CODES.WHITE }) => (
     <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
         <g fill='none' fillRule='evenodd'>
             <path d='M0 0h16v16H0z' />
@@ -12,8 +12,8 @@ const FlagIcon = ({ color = COLOR_CODES.WHITE }) => (
     </svg>
 );
 
-FlagIcon.propTypes = {
+IconFlag.propTypes = {
     color: PropTypes.string,
 };
 
-export default observer(FlagIcon);
+export default observer(IconFlag);

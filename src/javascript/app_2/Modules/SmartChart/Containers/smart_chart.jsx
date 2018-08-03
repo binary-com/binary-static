@@ -22,16 +22,13 @@ class Chart extends React.Component {
                 requestSubscribe={this.props.wsSubscribe}
                 settings={this.props.settings}
             >
-                { Object.keys(this.props.markers).map((key) => {
-                    const marker = this.props.markers[key];
-                    return (
-                        <ChartMarker
-                            key={key}
-                            marker_config={marker.marker_config}
-                            marker_content_props={marker.content_config}
-                        />
-                    );
-                })}
+                { this.props.markers_array.map((marker, idx) => (
+                    <ChartMarker
+                        key={idx}
+                        marker_config={marker.marker_config}
+                        marker_content_props={marker.content_config}
+                    />
+                ))}
             </SmartChart>
         );
     }
@@ -41,7 +38,7 @@ Chart.propTypes = {
     barriers_array: PropTypes.array,
     initial_symbol: PropTypes.string,
     is_mobile     : PropTypes.bool,
-    markers       : PropTypes.object,
+    markers_array : PropTypes.array,
     onSymbolChange: PropTypes.func,
     onUnmount     : PropTypes.func,
     settings      : PropTypes.object,
@@ -53,7 +50,7 @@ Chart.propTypes = {
 export default connect(
     ({ modules, ui }) => ({
         barriers_array: modules.smart_chart.barriers_array,
-        markers       : modules.smart_chart.markers,
+        markers_array : modules.smart_chart.markers_array,
         onUnmount     : modules.smart_chart.onUnmount,
         settings      : modules.smart_chart.settings,
         wsForget      : modules.smart_chart.wsForget,
