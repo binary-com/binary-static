@@ -347,6 +347,10 @@
 
         .acc-switcher-items {
             color: $COLOR_BRANDBLUE_40;
+
+            .acc-switcher-account:hover {
+                background: $COLOR_BRANDBLUE_85;
+            }
         }
     }
 }

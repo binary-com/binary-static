@@ -86,14 +86,16 @@ hr {
                     }
                 }
                 .drawer-footer {
-                    height: 30px;
+                    height: 44px;
                     border-top: 1px solid $COLOR_GRAY;
                     left: 0;
                     bottom: 0;
-                    background-color: $COLOR_WHITE;
                     z-index: 3;
                     position: fixed;
                     width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
             &.right {
@@ -253,10 +255,15 @@ hr {
                     span {
                         padding-left: 1.5rem;
                         color: $COLOR_BLUE;
-                    }
-                    &:before {
-                        content: '\25A2';
-                        color: $COLOR_BLUE;
+                        position: relative;
+
+                        .drawer-icon {
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
                     }
                 }
                 &:hover {
@@ -308,7 +315,7 @@ hr {
             }
         }
         &.left, &.right {
-            .drawer-header {
+            .drawer-header, .drawer-footer {
                 border-color: $COLOR_BRANDBLUE_85;
 
                 .icons {

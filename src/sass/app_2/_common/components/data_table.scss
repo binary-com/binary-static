@@ -42,7 +42,7 @@ $header-height: 42px;
     }
     &__body &__row {
         &:hover {
-            background-color: $COLOR_GRAY;
+            background-color: $COLOR_LIGHT_GRAY;
             cursor: pointer;
         }
         &:last-child {
