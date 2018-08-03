@@ -33,6 +33,9 @@ const RealAccOpening = (() => {
         if (place_of_birth) {
             validations = validations.concat([{ request_field: 'place_of_birth', value: place_of_birth }]);
         }
+        if (/^(malta|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
+            validations = validations.concat([{ selector: '#citizen', validations: ['req'] }]);
+        }
         return validations;
     };
 

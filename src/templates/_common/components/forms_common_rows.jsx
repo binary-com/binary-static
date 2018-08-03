@@ -44,6 +44,10 @@ export const DateOfBirth = ({ className }) => (
     />
 );
 
+export const Citizenship = ({ className }) => (
+    <FormRow type='select' id='citizen' label={it.L('Citizenship')} row_class={className} row_id='citizen_row' attributes={{single: 'single'}} />
+);
+
 export const Residence = () => (
     <FormRow type='custom' id='residence' label={it.L('Country of residence')}>
         <label id='lbl_residence' />

@@ -214,6 +214,7 @@ const Accounts = (() => {
             { request_field: 'address_postcode',       value: get_settings.address_postcode },
             { request_field: 'phone',                  value: get_settings.phone },
             { request_field: 'account_opening_reason', value: get_settings.account_opening_reason },
+            { request_field: 'citizen',                value: get_settings.citizen },
             { request_field: 'place_of_birth',         value: get_settings.place_of_birth },
             { request_field: 'residence',              value: Client.get('residence') },
         ];
