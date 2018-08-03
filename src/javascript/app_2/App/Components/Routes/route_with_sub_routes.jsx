@@ -22,7 +22,12 @@ const RouteWithSubRoutes = route => {
         } else {
             result = (
                 (route.is_authenticated && !Client.isLoggedIn()) ? // TODO: update styling of the message below
-                    <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a> :
+                    <div className='login-message-wrapper'>
+                        <div className='message'>
+                            <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a>
+                        </div>
+                    </div>
+                    :
                     <route.component {...props} routes={route.routes}/>
             );
         }

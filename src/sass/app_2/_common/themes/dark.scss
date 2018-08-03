@@ -260,6 +260,15 @@
                 }
             }
         }
+        .login-message-wrapper {
+            .message a {
+                color: $COLOR_BRANDBLUE_40;
+
+                &:hover {
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
     }
     footer {
         border-color: $COLOR_BRANDBLUE_85;

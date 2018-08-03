@@ -174,7 +174,7 @@ $header-height: 40px;
             }
         }
         &__body {
-            .portfolio-empty {
+            .portfolio-empty, p {
                 color: $COLOR_WHITE;
             }
         }
