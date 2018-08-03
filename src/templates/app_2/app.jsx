@@ -8,9 +8,8 @@ const BinaryApp = () => (
         <Head />
         <body className={it.language}>
             <GTM />
-            <div id='binary_app' className='binary-app'>
-                <Loader />
-            </div>
+            <Loader is_dark_mode={true} />
+            <div id='binary_app' className='binary-app' />
         </body>
     </html>
 );

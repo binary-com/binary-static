@@ -18,7 +18,7 @@
 }
 
 .grid-lines {
-    background-size: 6em 6em;
+    background-size: 6vw 6vw;
     background-image: linear-gradient(to right, #f4f4f6 1px, transparent 1px), linear-gradient(to bottom, #f4f4f6 1px, transparent 1px); // stylelint-disable-line color-no-hex
 
     &.dark {
