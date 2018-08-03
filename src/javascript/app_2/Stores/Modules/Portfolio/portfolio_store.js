@@ -22,6 +22,7 @@ export default class PortfolioStore extends BaseStore {
             this.is_loading = false;
             this.updatePortfolio(response);
         });
+        WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
         WS.subscribeTransaction(this.transactionHandler, false);
     };
 
@@ -38,6 +39,8 @@ export default class PortfolioStore extends BaseStore {
             this.error = response.error.message;
         }
         WS.portfolio().then((res) => this.updatePortfolio(res));
+        // subscribe to new contracts:
+        WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
     };
 
     @action.bound
@@ -65,6 +68,7 @@ export default class PortfolioStore extends BaseStore {
             const new_indicative  = +proposal.bid_price;
 
             portfolio_position.indicative = new_indicative;
+            portfolio_position.underlying = proposal.display_name;
 
             if (!proposal.is_valid_to_sell) {
                 portfolio_position.status = 'no-resale';
@@ -87,21 +91,26 @@ export default class PortfolioStore extends BaseStore {
             this.error = response.error.message;
             return;
         }
+        this.error = '';
         if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
             this.data = formatPortfolioResponse(response.portfolio.contracts);
-            WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
         }
     }
 
     @action.bound
     onMount() {
-        this.initializePortfolio();
+        if (this.data.length === 0) {
+            this.initializePortfolio();
+        }
     }
 
     @action.bound
     onUnmount() {
-        this.clearTable();
-        WS.forgetAll('proposal_open_contract', 'transaction');
+        // keep data and connections for portfolio drawer on desktop
+        if (this.root_store.ui.is_mobile) {
+            this.clearTable();
+            WS.forgetAll('proposal_open_contract', 'transaction');
+        }
     }
 
     @computed

@@ -16,4 +16,4 @@ InkBar.propTypes = {
     width: PropTypes.number,
 };
 
-export default InkBar;
+export { InkBar };

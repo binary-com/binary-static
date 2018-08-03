@@ -1,153 +1,155 @@
-// Desktop
+$header-height: 40px;
+
 .portfolio-drawer {
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
-    height: 100vh;
+    width: $PORTFOLIO_DRAWER_WIDTH;
+    height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
+    position: fixed;
+    z-index: 50;
+    top: $HEADER_HEIGHT;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.25s;
+    border-left: 1px solid $COLOR_GRAY;
+    background-color: $COLOR_WHITE;
     box-sizing: border-box;
-    transition: transform ease 250ms;
-    background: $COLOR_WHITE;
-    padding: 15px;
 
-    &-header {
+    &--open {
+        transform: translateX(0);
+    }
+    &__header {
+        height: $header-height;
         display: flex;
+        flex-direction: row;
         align-items: center;
-
-        p {
-            margin: 0;
-            font-size: 0.7rem;
-            font-weight: bold;
-            color: $COLOR_BLUE;
-        }
-        .ic-portfolio {
-            margin-right: 5px;
-        }
-        .ic-close {
-            &:before {
-                content: url('../images/app_2/footer/ic_close_blue_light.svg');
-            }
-            margin-left: auto;
-        }
+        padding: 0 10px;
     }
-    .portfolio {
-        position: relative;
+    &__body {
+        height: calc(100% - #{$header-height});
+        padding: 8px 10px;
         box-sizing: border-box;
-        width: 100%;
-        background: $COLOR_WHITE;
-        border: 1px solid $COLOR_LIGHT_GRAY;
-        border-radius: 4px;
-        transition: all 0.3s;
-        font-size: 0.7rem;
-        cursor: pointer;
+        overflow-y: auto;
+    }
+    &__title {
+        font-size: 12px;
+        font-weight: bold;
+        color: $COLOR_BLUE;
+    }
+    &__icon-main {
+        margin-right: 8px;
+    }
+    &__icon-close {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        background-image: url('../images/app_2/footer/ic_close_blue_light.svg');
+        background-size: 16px;
+        margin-left: auto;
+    }
+    /*
+        PORTFOLIO DRAWER CARD STARTS
+    */
+    &-card {
+        height: 60px;
+        box-sizing: border-box;
+        padding: 8px;
         display: grid;
-        grid-template-columns: 30px 1fr;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 10px;
-        margin: 15px 0;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 1fr auto;
+        border: 1px solid $COLOR_GRAY;
+        border-radius: 2px;
 
-        &:hover {
-            border-color: $COLOR_BLUE;
+        &:not(:last-child) {
+            margin-bottom: 16px;
         }
-        &:active, &:focus {
-            outline: 0;
-            border-radius: 4px;
-            border-color: $COLOR_BLUE;
-            box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
-        }
-        &.error {
-            color: #f44336; /* stylelint-disable-line color-no-hex */
-            border: 1px solid #f44336; /* stylelint-disable-line color-no-hex */
-        }
-        .asset {
-            display: grid;
-            grid-gap: 7px;
-
-            .symbol {
-                font-weight: 300;
-                color: $COLOR_BLUE;
-            }
-            .indicative-positive, .indicative-negative {
-                font-weight: 600;
-
-                &.indicative-positive {
-                    color: #66bb6a; /* stylelint-disable-line color-no-hex */
-                }
-                &.indicative-negative {
-                    color: #f44336; /* stylelint-disable-line color-no-hex */
-                }
-            }
-            .remaining-time {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                margin: 5px;
-                font-size: 0.7rem;
-                color: $COLOR_BLUE;
-                font-weight: 300;
-            }
-        }
-    }
-}
-
-// Mobile
-@media (max-width: 1024px) {
-    .portfolio-drawer {
-        box-shadow: none;
-        padding: 0;
-
-        div.portfolio-list {
-            opacity: 0;
-            transform: scale(1, 0);
-            transform-origin: center top;
-            transition: all 0.25s;
-
-            &.show {
-                transform: scale(1, 1);
-                opacity: 1;
-            }
-            .portfolio {
-                box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.14);
-
-                &:hover {
-                    border: 0;
-                    border-bottom: 2px solid $COLOR_BLUE;
-                    border-bottom-left-radius: 0;
-                    border-bottom-right-radius: 0;
-                }
-                &:active, &:focus {
-                    border: 0;
-                }
-                .asset {
-                    display: flex;
-                    align-items: center;
-
-                    .indicative-positive, .indicative-negative {
-                        margin-left: auto;
-                    }
-                    .remaining-time {
-                        position: relative;
-                        margin: 0 0 0 40px;
-                    }
-                }
-            }
-        }
-        .portfolio-drawer-header p {
-            text-transform: uppercase;
-        }
-        .ic-close {
-            transform: rotate(180deg);
-            transform-origin: 50% 50%;
-            transition: transform 0.2s ease;
-            text-decoration: none;
-            line-height: 1;
+        &__type {
+            font-size: 12px;
             color: $COLOR_BLUE;
-            font-size: 1.1rem;
 
-            &.open {
-                transform: rotate(0deg);
+            .contract-type {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &__icon {
+                    box-sizing: border-box;
+                    width: 24px;
+                    height: 24px;
+                    padding: 4px;
+                    border-radius: 100%;
+                    background-color: $COLOR_GRAY;
+                    margin-right: 8px;
+                }
             }
+        }
+        &__symbol {
+            font-size: 10px;
+            color: $COLOR_BLUE;
+        }
+        &__indicative {
+            font-size: 12px;
+            color: $COLOR_BLUE;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: auto;
+
+            &:after {
+                content: '';
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                background-size: 16px 16px;
+                margin-left: 2px;
+            }
+            &--price-moved-up {
+                color: $COLOR_LIGHT_GREEN;
+
+                &:after {
+                    background-image: url('../images/app_2/portfolio/ic_price_up.svg');
+                }
+            }
+            &--price-moved-down {
+                color: $COLOR_LIGHT_RED;
+
+                &:after {
+                    background-image: url('../images/app_2/portfolio/ic_price_down.svg');
+                }
+            }
+            &--price-stable {
+                color: $COLOR_BLACK;
+
+                &:after {
+                    background-image: url('../images/app_2/portfolio/ic_price_stable.svg');
+                }
+            }
+            &--no-resale {
+                color: $COLOR_GRAY;
+
+                &:after {
+                    background-image: url('../images/app_2/portfolio/ic_no_resale.svg');
+                }
+            }
+        }
+        &__remaining-time {
+            font-size: 10px;
+            color: $COLOR_BLUE_GRAY;
+            text-align: right;
+
             &:before {
-                content: '\002303';
+                content: '';
+                display: inline-block;
+                height: 10px;
+                width: 10px;
+                background-size: 10px 10px;
+                margin-right: 2px;
+                background-image: url('../images/app_2/portfolio/ic_countdown.svg');
+                vertical-align: text-top;
             }
         }
     }
+    /*
+        PORTFOLIO DRAWER CARD ENDS
+    */
 }
