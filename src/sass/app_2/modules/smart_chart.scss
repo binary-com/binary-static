@@ -1,0 +1,11 @@
+.start-time {
+    border-left: 1px solid;
+    padding-left: 5px;
+    height: 100%;
+
+    div {
+        position: absolute;
+        bottom: 0px;
+        white-space: nowrap;
+    }
+}

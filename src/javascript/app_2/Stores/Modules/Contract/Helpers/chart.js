@@ -24,9 +24,11 @@ export const setChartBarrier = (SmartChartStore, contract_info) => {
 export const createChartMarker = (SmartChartStore, contract_info) => {
     if (contract_info) {
         const spot_entry_config = createMarkerConfig(
-            MARKER_TYPES_CONFIG.SPOT_ENTRY.type,
-            toMoment(contract_info.date_start).toDate(),
-            contract_info.entry_tick,
+            {
+                type: MARKER_TYPES_CONFIG.SPOT_ENTRY.type,
+                x   : toMoment(contract_info.date_start).toDate(),
+                y   : contract_info.entry_tick,
+            },
             {
                 value: `${contract_info.entry_tick}`,
             },
@@ -36,11 +38,30 @@ export const createChartMarker = (SmartChartStore, contract_info) => {
     }
 };
 
-const createMarkerConfig = (marker_type, x, y, content_config) => (
-    extend(true, {}, MARKER_TYPES_CONFIG[marker_type], {
+export const createChartLineMarker = (SmartChartStore, line_config) => {
+    if (line_config) {
+        const config = createMarkerConfig(
+            {
+                type     : line_config.type,
+                x        : toMoment(line_config.time).toDate(),
+                y        : 'none',
+                className: 'start-time',
+            },
+            {
+                label: line_config.label,
+            },
+        );
+
+        SmartChartStore.createMarker(config);
+    }
+};
+
+const createMarkerConfig = (marker_config, content_config) => (
+    extend(true, {}, MARKER_TYPES_CONFIG[marker_config.type], {
         marker_config: {
-            x,
-            y,
+            x        : marker_config.x,
+            y        : marker_config.y,
+            className: marker_config.className,
         },
         content_config,
     })
