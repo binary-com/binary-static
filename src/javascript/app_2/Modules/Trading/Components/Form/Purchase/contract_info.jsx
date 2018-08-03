@@ -31,21 +31,23 @@ const ContractInfo = ({
                     <span className='purchase-tooltip'>
                         <Tooltip alignment='left' icon='info' message={proposal_info.message}/>
                     </span>
-                    <div className='info-wrapper'>
-                        <div>{localize('Stake')}:</div>
-                        <div><Money amount={proposal_info.stake} currency={currency} /></div>
-                    </div>
-                    <div className='info-wrapper'>
-                        <div>{localize('Payout')}:</div>
-                        <div><Money amount={proposal_info.payout} currency={currency} /></div>
-                    </div>
-                    <div className='info-wrapper'>
-                        <div>{localize('Net Profit')}:</div>
-                        <div><Money amount={proposal_info.profit} currency={currency} /></div>
-                    </div>
-                    <div className='info-wrapper'>
-                        <div>{localize('Return')}:</div>
-                        <div>{proposal_info.returns}</div>
+                    <div className='info-container-wrapper'>
+                        <div className='info-wrapper'>
+                            <div>{localize('Stake')}:</div>
+                            <div><Money amount={proposal_info.stake} currency={currency} /></div>
+                        </div>
+                        <div className='info-wrapper'>
+                            <div>{localize('Payout')}:</div>
+                            <div><Money amount={proposal_info.payout} currency={currency} /></div>
+                        </div>
+                        <div className='info-wrapper'>
+                            <div>{localize('Net Profit')}:</div>
+                            <div><Money amount={proposal_info.profit} currency={currency} /></div>
+                        </div>
+                        <div className='info-wrapper'>
+                            <div>{localize('Return')}:</div>
+                            <div>{proposal_info.returns}</div>
+                        </div>
                     </div>
                 </div>
             }

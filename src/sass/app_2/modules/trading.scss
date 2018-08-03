@@ -139,17 +139,26 @@
             line-height: 0.9rem;
             padding-bottom: 1vh;
             border: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 2px;
 
-            .info-wrapper {
-                display: inline-flex;
+            .info-container-wrapper {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
 
-                div:last-child {
-                    margin-left: 4px;
+                .info-wrapper {
+                    display: inline-flex;
+
+                    div:last-child {
+                        margin-left: 4px;
+                    }
                 }
             }
             .purchase-tooltip {
-                float: right;
-                margin-top: -4px;
+                position: absolute;
+                right: 0;
             }
         }
         &.trade-types {
@@ -256,8 +265,8 @@
             }
         }
         fieldset.purchase-option {
-            padding-top: 1.5vh;
-            padding-bottom: 1.5vh;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
             min-height: 100px;
 
             div.box {
@@ -283,8 +292,8 @@
                     font-weight: 300;
                     text-transform: capitalize;
                     text-align: center;
-                    top: 24px;
-                    line-height: 12px;
+                    top: 20px;
+                    line-height: 14px;
                     max-width: 50px;
                     word-spacing: 0;
                 }
@@ -321,7 +330,7 @@
                         font-weight: 600;
                     }
                 }
-                span:not(.purchase-return):not(.symbols) {
+                span:not(.purchase-return):not(.symbols):not(.purchase-tooltip) {
                     position: relative;
                 }
                 span.purchase-return {
