@@ -161,7 +161,7 @@
                 border: 1px solid $COLOR_BLUE;
             }
             &.active {
-                background: #4c5794 !important; /* stylelint-disable-line color-no-hex */
+                background: $COLOR_BLUE;
                 color: $COLOR_WHITE;
             }
             &.disabled {
@@ -317,6 +317,15 @@ div.datepicker-container {
 
             .calendar-prev-year-btn, .calendar-prev-month-btn, .calendar-next-month-btn, .calendar-next-year-btn {
                 color: $COLOR_BRANDBLUE_40;
+
+                &:hover {
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
+        .calendar-header {
+            span:hover {
+                color: $COLOR_BRANDBLUE_40;
             }
         }
         span.calendar-date-header {
@@ -328,15 +337,27 @@ div.datepicker-container {
 
             &.active {
                 font-weight: 600;
-                color: $COLOR_WHITE;
-                background: $COLOR_BRANDBLUE_40 !important;
+                color: $COLOR_BLUE;
+                background: $COLOR_WHITE !important;
             }
             &:hover:not(.active) {
                 background: $COLOR_BRANDBLUE_85 !important;
             }
             &.disabled {
-                background: $COLOR_BRANDBLUE_85 !important;
-                color: $COLOR_DARK_BLUE !important;
+                background: $COLOR_BLUE !important;
+                color: $COLOR_BRANDBLUE_75 !important;
+                pointer-events: none;
+            }
+            &.today {
+                background: $COLOR_BLUE;
+                border: 1px solid $COLOR_WHITE;
+                color: $COLOR_WHITE !important;
+
+                &.disabled {
+                    background: $COLOR_BLUE !important;
+                    border: 1px solid $COLOR_BRANDBLUE_75;
+                    color: $COLOR_BRANDBLUE_75 !important;
+                }
             }
         }
         div.calendar-footer span.calendar-footer-btn {

@@ -172,6 +172,14 @@ $header-height: 40px;
             &:hover {
                 background: $COLOR_BRANDBLUE_85;
             }
+            &__indicative {
+                &--no-resale {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+                &--price-stable {
+                    color: $COLOR_WHITE;
+                }
+            }
         }
         &__body {
             .portfolio-empty, p {

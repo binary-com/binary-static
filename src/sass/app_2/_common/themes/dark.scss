@@ -176,11 +176,10 @@
                 border-color: $COLOR_BRANDBLUE_85;
 
                 .table__head, .table__foot {
-                    background-color: $COLOR_BLUE;
                     border-color: $COLOR_BRANDBLUE_85;
 
                     .table__row {
-                        background: $COLOR_BLUE;
+                        background-color: $COLOR_BRANDBLUE_95;
                         border-color: $COLOR_BRANDBLUE_85;
                     }
                 }
@@ -190,7 +189,7 @@
                             color: $COLOR_SKY_BLUE;
                         }
                         &.details, &.payout, &.purchase, &.remaining_time, &.indicative {
-                            color: $COLOR_WHITE;
+                            color: $COLOR_BRANDBLUE_40;
                         }
                     }
                     .table__row {
@@ -208,6 +207,9 @@
                             }
                         }
                     }
+                }
+                .table__foot {
+                    color: $COLOR_WHITE;
                 }
             }
         }
@@ -232,7 +234,7 @@
                     border-color: $COLOR_BRANDBLUE_85;
 
                     .table__head {
-                        background: $COLOR_BRANDBLUE_85;
+                        background: $COLOR_BRANDBLUE_95;
                         border-color: $COLOR_BRANDBLUE_85;
 
                         .table__row {
@@ -246,7 +248,7 @@
 
                             .table__cell {
                                 &.date, &.desc, &.action, &.payout, &.balance {
-                                    color: $COLOR_WHITE;
+                                    color: $COLOR_BRANDBLUE_40;
                                 }
                                 &.refid {
                                     color: $COLOR_SKY_BLUE;
