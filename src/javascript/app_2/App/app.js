@@ -7,6 +7,10 @@ import PortfolioDrawer               from './Components/Elements/PortfolioDrawer
 import AppContents                   from './Containers/Layout/app_contents.jsx';
 import Footer                        from './Containers/Layout/footer.jsx';
 import Header                        from './Containers/Layout/header.jsx';
+import ThemeWrapper                  from './Containers/Layout/theme_wrapper.jsx';
+import { IconTrade,
+         IconPortfolio,
+         IconStatement }             from '../Assets/Header/NavBar';
 import Routes                        from './Containers/Routes/routes.jsx';
 import { routes }                    from '../Constants';
 import NetworkMonitor                from '../Services/network_monitor';
@@ -52,16 +56,16 @@ const getBasename = () => {
 const BinaryApp = ({ root_store }) => (
     <Router basename={ getBasename() }>
         <MobxProvider store={root_store}>
-            <div>
+            <ThemeWrapper>
                 <div id='header'>
                     <Header
                         items={[
-                            { icon: 'trade',     text: localize('Trade'),     link_to: routes.trade },
-                            { icon: 'portfolio', text: localize('Portfolio'), link_to: routes.portfolio },
-                            { icon: 'statement', text: localize('Statement'), link_to: routes.statement },
+                            { icon: <IconTrade className='header-icon' />,     text: localize('Trade'),     link_to: routes.trade },
+                            { icon: <IconPortfolio className='header-icon' />, text: localize('Portfolio'), link_to: routes.portfolio },
+                            { icon: <IconStatement className='header-icon' />, text: localize('Statement'), link_to: routes.statement },
                             // TODO
                             // Hide the Cashier button until its implementation is completed.
-                            // { icon: 'cashier',   text: localize('Cashier') },
+                            // { icon: <IconCashier />,   text: localize('Cashier') },
                         ]}
                     />
                 </div>
@@ -75,7 +79,7 @@ const BinaryApp = ({ root_store }) => (
                 <footer id='footer'>
                     <Footer />
                 </footer>
-            </div>
+            </ThemeWrapper>
         </MobxProvider>
     </Router>
 );

@@ -20,6 +20,7 @@ button.btn {
     opacity: 0;
     transform-origin: left bottom;
     transition: all 0.3s;
+    z-index: 3;
 
     &.open {
         transform: scale(1, 1) translate(-50%, 0);
@@ -182,6 +183,30 @@ button.btn {
             left: 8%;
             bottom: unset;
             transform: rotate(-135deg);
+        }
+    }
+}
+
+// Dark theme
+.theme-wrapper.dark {
+    .popconfirm {
+        background: $COLOR_BRANDBLUE_95;
+
+        &-title h4 {
+            color: $COLOR_WHITE;
+        }
+        &-buttons .btn {
+            background: $COLOR_BRANDBLUE_95;
+
+            span {
+                color: $COLOR_WHITE;
+            }
+            &:hover {
+                background: $COLOR_BRANDBLUE_85;
+            }
+        }
+        &:after {
+            border-color: $COLOR_BRANDBLUE_95;
         }
     }
 }

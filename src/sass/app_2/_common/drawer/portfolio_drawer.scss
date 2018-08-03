@@ -39,11 +39,13 @@ $header-height: 40px;
     }
     &__icon-close {
         display: inline-block;
-        height: 16px;
-        width: 16px;
-        background-image: url('../images/app_2/footer/ic_close_blue_light.svg');
-        background-size: 16px;
         margin-left: auto;
+        cursor: pointer;
+
+        svg {
+            height: 16px;
+            width: 16px;
+        }
     }
     /*
         PORTFOLIO DRAWER CARD STARTS
@@ -70,14 +72,8 @@ $header-height: 40px;
                 flex-direction: row;
                 align-items: center;
 
-                &__icon {
-                    box-sizing: border-box;
-                    width: 24px;
-                    height: 24px;
-                    padding: 4px;
-                    border-radius: 100%;
-                    background-color: $COLOR_GRAY;
-                    margin-right: 8px;
+                .type-wrapper {
+                    margin: 0 4px 4px 0;
                 }
             }
         }
@@ -152,4 +148,43 @@ $header-height: 40px;
     /*
         PORTFOLIO DRAWER CARD ENDS
     */
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .portfolio-drawer {
+        background: $COLOR_BLUE;
+        border-color: $COLOR_BRANDBLUE_85;
+
+        &__title {
+            color: $COLOR_WHITE;
+        }
+        &-card {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .contract-type, &__symbol {
+                color: $COLOR_WHITE;
+            }
+            &__remaining-time {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            &:hover {
+                background: $COLOR_BRANDBLUE_85;
+            }
+            &__indicative {
+                &--no-resale {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+                &--price-stable {
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
+        &__body {
+            .portfolio-empty, p {
+                color: $COLOR_WHITE;
+            }
+        }
+    }
 }
