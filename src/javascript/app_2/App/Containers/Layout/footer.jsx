@@ -1,6 +1,5 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import { BinaryLink } from '../../Components/Routes';
 import {
     ToggleFullScreen,
     TogglePortfolio,
@@ -10,7 +9,6 @@ import ServerTime     from '../../Containers/server_time.jsx';
 import { connect }    from '../../../Stores/connect';
 
 const Footer = ({
-    items,
     is_portfolio_drawer_on,
     is_language_dialog_visible,
     is_settings_dialog_on,
@@ -24,12 +22,6 @@ const Footer = ({
                 is_portfolio_drawer_on={is_portfolio_drawer_on}
                 togglePortfolioDrawer={togglePortfolioDrawer}
             />
-            {!!(items && items.length) &&
-                items.map((item, idx) => (
-                    <BinaryLink key={idx} to={item.link_to} className={item.icon}>
-                        <span title={item.text} />
-                    </BinaryLink>
-                ))}
             <ToggleFullScreen />
             <ToggleSettings
                 is_settings_visible={is_settings_dialog_on}
@@ -42,7 +34,6 @@ const Footer = ({
 
 
 Footer.propTypes = {
-    items                     : PropTypes.array,
     is_language_dialog_visible: PropTypes.bool,
     is_portfolio_drawer_on    : PropTypes.bool,
     is_settings_dialog_on     : PropTypes.bool,

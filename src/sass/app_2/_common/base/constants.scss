@@ -4,12 +4,16 @@
 
 /* stylelint-disable color-no-hex */
 $COLOR_ORANGE      : #e98024;
+$COLOR_ORANGE_2    : #ee9e58;
+$COLOR_LIGHT_ORANGE: #ffc107;
 $COLOR_GREEN       : #2e8836;
+$COLOR_GREEN_2     : #66bb6a;
 $COLOR_LIGHT_GREEN : #4caf50;
 $COLOR_LIGHT_RED   : #f44336;
 $COLOR_BLUE        : #2a3052;
 $COLOR_DARK_BLUE   : #15212d;
 $COLOR_LIGHT_BLUE  : #1565c0;
+$COLOR_SKY_BLUE    : #2196f3;
 $COLOR_BLACK       : #000;
 $COLOR_LIGHT_BLACK : #333;
 $COLOR_WHITE       : #fff;
@@ -19,6 +23,14 @@ $COLOR_BLUE_GRAY   : #6e7287;
 $COLOR_GRAY        : #e9e9ed;
 $COLOR_DARK_WHITE  : #ccc;
 $COLOR_YELLOW      : #fef1cf;
+
+// Dark Theme Colors
+$COLOR_BRANDBLUE_5 : #f4f4f6;
+$COLOR_BRANDBLUE_40: #aaacba;
+$COLOR_BRANDBLUE_75: #60647e;
+$COLOR_BRANDBLUE_85: #4a4f6c;
+$COLOR_BRANDBLUE_95: #353b5b;
+
 /* stylelint-enable color-no-hex */
 
 $FONT_STACK: roboto, sans-serif;
@@ -27,5 +39,5 @@ $BORDER_RADIUS: 4px;
 $MAX_CONTAINER_WIDTH: 1440px;
 $PORTFOLIO_DRAWER_WIDTH: 228px;
 
-$HEADER_HEIGHT: 50px;
+$HEADER_HEIGHT: 48px;
 $FOOTER_HEIGHT: 35px;

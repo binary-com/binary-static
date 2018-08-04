@@ -3,7 +3,6 @@ import PropTypes   from 'prop-types';
 import React       from 'react';
 import { Drawer }  from './drawer.jsx';
 import { connect } from '../../../../Stores/connect';
-import Url         from '../../../../../_common/url';
 
 class ToggleDrawer extends React.Component {
     showDrawer = () => {
@@ -20,16 +19,14 @@ class ToggleDrawer extends React.Component {
     };
 
     render() {
-        const { icon_class, icon_link, alignment, children } = this.props;
+        const { icon_class, icon, alignment, children } = this.props;
 
-        const toggle_class = classNames('navbar-icons', icon_class, {
-            'menu-toggle': !icon_class,
-        });
+        const toggle_class = classNames('navbar-icons', icon_class);
 
         return (
             <React.Fragment>
                 <div className={toggle_class} onClick={this.showDrawer}>
-                    <img src={icon_link || Url.urlForStatic('images/app_2/header/menu.svg')} />
+                    {icon}
                 </div>
                 <Drawer
                     alignment={alignment}
@@ -43,17 +40,19 @@ class ToggleDrawer extends React.Component {
 }
 
 ToggleDrawer.propTypes = {
-    alignment: PropTypes.string,
-    children : PropTypes.oneOfType([
-        PropTypes.array,
-        PropTypes.object,
-    ]),
+    alignment              : PropTypes.string,
     footer                 : PropTypes.func,
     hideDrawers            : PropTypes.func,
     icon_class             : PropTypes.string,
-    icon_link              : PropTypes.string,
     showMainDrawer         : PropTypes.func,
     showNotificationsDrawer: PropTypes.func,
+    icon                   : PropTypes.shape({
+        className: PropTypes.string,
+    }),
+    children: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
 };
 
 const drawer_component = connect(

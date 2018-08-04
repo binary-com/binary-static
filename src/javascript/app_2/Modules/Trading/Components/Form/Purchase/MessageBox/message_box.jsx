@@ -5,7 +5,7 @@ import { ErrorBalance,
          ErrorLogin }       from './Templates';
 import PurchaseResult       from './purchase_result.jsx';
 import { getPropertyValue } from '../../../../../../../_common/utility';
-import CloseIcon            from '../../../../../../App/Components/Elements/close_icon.jsx';
+import { IconClose }        from '../../../../../../Assets/Common/icon_close.jsx';
 
 const MessageBox = ({ purchase_info, onClick }) => {
     const has_error = !!purchase_info.error;
@@ -30,7 +30,7 @@ const MessageBox = ({ purchase_info, onClick }) => {
             {has_error ?
                 <React.Fragment>
                     <div className='close-btn-container' onClick={onClick}>
-                        <CloseIcon className='ic-close' />
+                        <IconClose className='ic-close' />
                     </div>
                     {ErrorComponent}
                 </React.Fragment>

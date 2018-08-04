@@ -2,7 +2,7 @@ import classNames      from 'classnames';
 import moment          from 'moment';
 import React           from 'react';
 import DatePickerInput from './date_picker_input.jsx';
-import ArrowHead       from '../../Elements/arrowhead.jsx';
+import { IconArrow }   from '../../../../Assets/Common';
 import Calendar        from '../../Elements/Calendar';
 import {
     formatDate,
@@ -76,26 +76,26 @@ class DatePicker extends React.PureComponent {
     // TODO: handle cases where user inputs date before min_date and date after max_date
     updateDatePickerValue = (value, mode) => {
         this.setState({ value }, this.updateStore);
-        
+
         // update Calendar
         const { date_format, start_date } = this.props;
         const new_date = (mode === 'duration') ? moment.utc().add(value, 'days').format(date_format) : value;
         if (moment.utc(new_date, date_format).isValid() || !new_date) {
             if (!new_date) {
                 const current_date = moment.utc(start_date).format(date_format);
-                this.calendar.setState({ 
+                this.calendar.setState({
                     calendar_date: current_date,
                     selected_date: current_date,
                 });
             } else {
-                this.calendar.setState({ 
+                this.calendar.setState({
                     calendar_date: formatDate(new_date),
                     selected_date: formatDate(new_date),
-                }); 
+                });
             }
         }
     }
-    
+
     // update MobX store
     updateStore = () => {
         const { name, onChange } = this.props;
@@ -128,7 +128,7 @@ class DatePicker extends React.PureComponent {
                     />
                     <label className='datepicker-native-overlay' htmlFor={this.props.name}>
                         {this.state.value || this.props.placeholder}
-                        <ArrowHead className='datepicker-native-overlay__arrowhead' />
+                        <IconArrow className='datepicker-native-overlay__arrowhead' />
                     </label>
                 </div>
             );
@@ -141,7 +141,7 @@ class DatePicker extends React.PureComponent {
                     onMouseEnter={this.onMouseEnter}
                     onMouseLeave={this.onMouseLeave}
                 >
-                    <DatePickerInput 
+                    <DatePickerInput
                         class_name='datepicker-display'
                         mode={this.props.mode}
                         name={this.props.name}
@@ -172,8 +172,8 @@ class DatePicker extends React.PureComponent {
                         ref={node => { this.calendar = node; }}
                         onSelect={this.onSelectCalendar}
                         {...this.props}
-                    > 
-                        <DatePickerInput 
+                    >
+                        <DatePickerInput
                             class_name='calendar-input'
                             mode={this.props.mode}
                             name={this.props.name}

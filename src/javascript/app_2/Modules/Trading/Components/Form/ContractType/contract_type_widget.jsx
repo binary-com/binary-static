@@ -1,7 +1,9 @@
-import PropTypes          from 'prop-types';
-import React              from 'react';
-import ContractTypeDialog from './contract_type_dialog.jsx';
-import ContractTypeList   from './contract_type_list.jsx';
+import PropTypes             from 'prop-types';
+import React                 from 'react';
+import ContractTypeDialog    from './contract_type_dialog.jsx';
+import ContractTypeList      from './contract_type_list.jsx';
+import { IconArrow }         from '../../../../../Assets/Common';
+import { IconTradeCategory } from '../../../../../Assets/Trading/Categories';
 
 class ContractTypeWidget extends React.PureComponent {
     constructor(props) {
@@ -71,19 +73,19 @@ class ContractTypeWidget extends React.PureComponent {
             <div
                 ref={this.setWrapperRef}
                 className={container_classes.join(' ')}
-                onClick={this.handleVisibility}
-                onBlur={this.handleVisibility}
             >
                 <div
                     className={`contracts-popup-display ${this.state.is_dialog_open ? 'clicked': ''}`}
+                    onClick={this.handleVisibility}
+                    onBlur={this.handleVisibility}
                 >
-                    <i className={`contract-icon ic-${this.props.value}--invert`} />
+                    <IconTradeCategory category={this.props.value} />
                     <span name={this.props.name} value={this.props.value}>
                         {this.getDisplayText()}
                     </span>
                 </div>
 
-                <span className='select-arrow' />
+                <IconArrow className='select-arrow' />
 
                 <ContractTypeDialog
                     is_mobile={this.props.is_mobile}

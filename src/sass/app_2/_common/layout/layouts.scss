@@ -13,6 +13,24 @@
             margin-bottom: 0;
             height: calc(100vh - #{$HEADER_HEIGHT});
         }
+
+        .login-message-wrapper {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .message {
+                a {
+                    text-decoration: none;
+                    color: $COLOR_BLUE;
+
+                    &:hover {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
     }
     /* trade-app layout */
     .trade-container {
@@ -22,7 +40,7 @@
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: 1fr;
         grid-gap: 4px;
-        min-height: calc(100vh - 105px);
+        min-height: calc(100vh - 91px);
 
         .chart-container {
             position: relative;
@@ -34,6 +52,7 @@
 
                 div.ciq-chart {
                     height: calc(100% - 50px);
+                    box-shadow: none;
 
                     div.chartContainer {
                         background: transparent;
@@ -61,7 +80,6 @@
         @media (min-width: 769px) {
             .chart-container {
                 grid-column: col-start 1 / span 10;
-                padding: 10px;
                 margin-left: -15px;
 
                 fieldset {
@@ -86,8 +104,12 @@
                     div.endtime-container {
                         display: grid;
                         grid-gap: 8px;
-                        grid-template-columns: 1.5fr 1fr;
+                        grid-template-columns: 1fr;
                         grid-auto-columns: auto;
+
+                        &.has-time {
+                            grid-template-columns: 1.5fr 1fr;
+                        }
                     }
                     .time-picker, .datepicker-container {
                         margin-top: 8px;
@@ -163,6 +185,22 @@
             .sidebar-container {
                 grid-column: col-start 10 / span 3 !important;
             }
+        }
+    }
+    .inline-icon {
+        pointer-events: none;
+    }
+    .category-wrapper, .type-wrapper {
+        width: 30px;
+        height: 30px;
+        background: $COLOR_GRAY;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .category-type, .type {
+            transform: scale(1.2, 1.2);
         }
     }
 }

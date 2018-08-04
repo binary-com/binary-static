@@ -13,7 +13,7 @@ const MenuLinks = ({ items }) => (
             <InkBarDiv className='menu-links'>
                 {items.map((item, idx) => (
                     <BinaryLink key={idx} to={item.link_to}>
-                        <span className={`menu-links__${item.icon}`} title={item.text}>{item.text}</span>
+                        <span title={item.text}>{item.icon}{item.text}</span>
                     </BinaryLink>
                 ))}
             </InkBarDiv>
@@ -23,7 +23,9 @@ const MenuLinks = ({ items }) => (
 
 MenuLinks.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
-        icon   : PropTypes.string,
+        icon: PropTypes.shape({
+            className: PropTypes.string,
+        }),
         text   : PropTypes.string,
         link_to: PropTypes.string,
     })),

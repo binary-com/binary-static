@@ -39,17 +39,9 @@
             }
             &.notify-toggle {
                 order: 2;
-                padding: 6px;
-                width: 36px;
-                height: 36px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                img {
-                    width: 24px;
-                    height: 24px;
-                }
+                order: 2;
+                padding: 5px 12px;
+                width: 20px;
             }
         }
         .menu-left {
@@ -102,18 +94,6 @@
                             overflow: hidden;
                             visibility: hidden;
                         }
-                        &.menu-links__trade:before {
-                            content: url('../images/app_2/header/icons/ic_trade_normal_light.svg');
-                        }
-                        &.menu-links__portfolio:before {
-                            content: url('../images/app_2/header/icons/ic_portfolio_normal_light.svg');
-                        }
-                        &.menu-links__statement:before {
-                            content: url('../images/app_2/header/icons/ic_statement_normal_light.svg');
-                        }
-                        &.menu-links__cashier:before {
-                            content: url('../images/app_2/header/icons/ic_cashier_normal_light.svg');
-                        }
                     }
                     &:hover {
                         background-color: $COLOR_GRAY;
@@ -122,18 +102,11 @@
                         & > span[title] {
                             font-weight: 500;
                         }
-                        & > .menu-links__trade:before {
-                            content: url('../images/app_2/header/icons/ic_trade_active_light.svg');
-                        }
-                        & > .menu-links__portfolio:before {
-                            content: url('../images/app_2/header/icons/ic_portfolio_active_light.svg');
-                        }
-                        & > .menu-links__statement:before {
-                            content: url('../images/app_2/header/icons/ic_statement_active_light.svg');
-                        }
-                        & > .menu-links__cashier:before {
-                            content: url('../images/app_2/header/icons/ic_cashier_active_light.svg');
-                        }
+                    }
+                    .inline-icon {
+                        position: absolute;
+                        left: 10px;
+                        top: 13px;
                     }
                 }
                 @media (max-width: 980px) {

@@ -1,8 +1,8 @@
-import classNames   from 'classnames';
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import Url          from '../../../../../_common/url';
-import { localize } from '../../../../../_common/localize';
+import classNames    from 'classnames';
+import PropTypes     from 'prop-types';
+import React         from 'react';
+import { IconClose } from '../../../../Assets/Common';
+import { localize }  from '../../../../../_common/localize';
 
 export const DrawerHeader = ({
     alignment,
@@ -14,7 +14,7 @@ export const DrawerHeader = ({
             {alignment && alignment === 'right' ?
                 <div className={drawer_header_class}>
                     <div className='icons btn-close' onClick={closeBtn}>
-                        <img src={Url.urlForStatic('images/app_2/common/close.svg')} alt='Close' />
+                        <IconClose />
                     </div>
                     <div className='notifications-header'>
                         <h4>{localize('all notifications')}</h4>
@@ -23,10 +23,10 @@ export const DrawerHeader = ({
             :
                 <div className={drawer_header_class}>
                     <div className='icons btn-close' onClick={closeBtn}>
-                        <img src={Url.urlForStatic('images/app_2/common/close.svg')} alt='Close' />
+                        <IconClose />
                     </div>
                     <div className='icons brand-logo'>
-                        <img src={Url.urlForStatic('images/app_2/header/binary_logo_dark.svg')} alt='Binary.com' />
+                        <div className='img' />
                     </div>
                 </div>
         }

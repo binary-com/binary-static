@@ -13,19 +13,19 @@
             width: 16px;
         }
         &.start-time:before {
-            background-image: url('../images/app_2/sidebar/light/ic_watch_later_light.svg');
+            background-image: url('../images/app_2/sidebar/ic_watch_later.svg');
         }
         &.trade-duration:before {
-            background-image: url('../images/app_2/sidebar/light/ic_timelapse_light.svg');
+            background-image: url('../images/app_2/sidebar/ic_timelapse.svg');
         }
         &.invest-amount:before {
-            background-image: url('../images/app_2/sidebar/light/ic_monetization_light.svg');
+            background-image: url('../images/app_2/sidebar/ic_monetization.svg');
         }
         &.barriers:before {
-            background-image: url('../images/app_2/sidebar/light/ic_barrier_light.svg');
+            background-image: url('../images/app_2/sidebar/ic_barrier.svg');
         }
         &.digits:before {
-            background-image: url('../images/app_2/sidebar/light/ic_digit_light.svg');
+            background-image: url('../images/app_2/sidebar/ic_digit.svg');
         }
     }
     input:not([readonly]) {
@@ -126,10 +126,12 @@
             span {
                 padding: 5px 5px 5px 8px;
                 line-height: normal;
-                background-color: $COLOR_YELLOW;
+                background-color: rgba($COLOR_LIGHT_ORANGE, 0.16);
                 display: block;
+                color: $COLOR_BLUE;
                 margin-bottom: 10px;
                 font-weight: 300;
+                border: 1px solid $COLOR_LIGHT_ORANGE;
                 border-radius: $BORDER_RADIUS;
             }
         }
@@ -139,7 +141,7 @@
             border: 0;
 
             .info-wrapper {
-                display: inline-flex;
+                display: flex;
 
                 div:last-child {
                     margin-left: 4px;
@@ -194,8 +196,15 @@
             background: $COLOR_LIGHT_GRAY;
 
             .close-btn-container {
-                float: right;
+                position: absolute;
                 cursor: pointer;
+                right: 2px;
+                top: 2px;
+
+                .ic-close {
+                    width: 24px;
+                    height: 24px;
+                }
             }
             div.purchase-login-wrapper {
                 display: flex;
@@ -267,24 +276,11 @@
                         display: block;
                     }
                 }
-                .left-column > {
-                    .type-wrapper {
-                        width: 36px;
-                        height: 36px;
-                        background: $COLOR_GRAY;
-                        border-radius: 100%;
-
-                        img.type {
-                            width: 24px;
-                            margin: 6px 0 0 6px;
-                        }
-                    }
-                }
                 h4.trade-type {
                     position: absolute;
                     display: flex;
                     padding: 0;
-                    font-weight: 600;
+                    font-weight: 300;
                     text-transform: capitalize;
                     text-align: center;
                     top: 24px;
@@ -380,9 +376,9 @@
                 }
             }
             div.block-ui {
-                background: rgba(255, 255, 255, 0.2);
+                background: rgba(255, 255, 255, 0.6);
                 border-radius: 4px;
-                border: 1px solid $COLOR_LIGHT_GRAY;
+                border: 1px solid $COLOR_GRAY;
                 width: calc(100% - 6px);
                 height: calc(100% - 2px);
             }
@@ -394,7 +390,7 @@
                 background: $COLOR_LIGHT_GRAY;
                 opacity: 0.95;
                 min-height: 245px;
-                width: calc(100% - 5px);
+                width: calc(100% - 6px);
                 height: calc(100% - 2px);
                 z-index: 3;
                 top: 0;
@@ -431,7 +427,7 @@
         }
     }
     .calendar {
-        width: 187px;
+        width: 192px;
 
         .calendar-input, .calendar-footer {
             font-size: 12px;

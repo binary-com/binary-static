@@ -1,7 +1,8 @@
-import classNames     from 'classnames';
-import PropTypes      from 'prop-types';
-import React          from 'react';
-import SettingsDialog from '../../../Components/Elements/SettingsDialog/settings_dialog.jsx';
+import classNames       from 'classnames';
+import PropTypes        from 'prop-types';
+import React            from 'react';
+import SettingsDialog   from '../../../Components/Elements/SettingsDialog/settings_dialog.jsx';
+import { IconSettings } from '../../../../Assets/Footer';
 
 const ToggleSettings = ({
     is_language_visible,
@@ -15,9 +16,11 @@ const ToggleSettings = ({
         <React.Fragment>
             <a
                 href='javascript:;'
-                className={toggle_settings_class}
                 onClick={toggleSettings}
-            />
+                className={toggle_settings_class}
+            >
+                <IconSettings className='footer-icon'/>
+            </a>
             <SettingsDialog
                 is_open={is_settings_visible}
                 is_language_dialog_visible={is_language_visible}

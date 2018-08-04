@@ -19,14 +19,9 @@ hr {
         height: 100vh;
         z-index: 665;
         transition: all 0.25s;
-        opacity: 0;
+        background: rgba(42, 48, 82, 0.6);
         overflow: hidden;
-        background-color: rgba(42, 48, 82, 0.96);
-        will-change: opacity;
 
-        &.show {
-            opacity: 1;
-        }
         .drawer {
             position: absolute;
             z-index: 666;
@@ -65,32 +60,42 @@ hr {
                         padding: 6px 10px;
 
                         &.btn-close {
-                            width: 1.5rem;
-                            height: auto;
+                            width: 24px;
+                            height: 24px;
                             align-self: center;
+
+                            .inline-icon {
+                                width: 24px;
+                                height: 24px;
+                            }
                         }
                         &.brand-logo {
                             display: inline-flex;
                             padding: 8px 20px;
                             border-left: 1px solid $COLOR_GRAY;
 
-                            img {
-                                width: 9.5rem;
-                                height: auto;
-                                align-self: center;
+                            div.img:before {
+                                display: block;
+                                content: ' ';
+                                background-image: url('../images/app_2/header/binary_logo_light.svg');
+                                background-size: 138px 32px;
+                                height: 32px;
+                                width: 138px;
                             }
                         }
                     }
                 }
                 .drawer-footer {
-                    height: 30px;
+                    height: 44px;
                     border-top: 1px solid $COLOR_GRAY;
                     left: 0;
                     bottom: 0;
-                    background-color: $COLOR_WHITE;
                     z-index: 3;
                     position: fixed;
                     width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
             &.right {
@@ -108,10 +113,20 @@ hr {
                     .icons {
                         display: inline-flex;
                         cursor: pointer;
-                        padding: 14px 8px;
+                        padding: 14px 11px;
 
                         &.btn-close {
                             border-left: 1px solid $COLOR_GRAY;
+                            width: 24px;
+                            height: 24px;
+
+                            .inline-icon {
+                                position: absolute;
+                                top: 14px;
+                                right: 10px;
+                                width: 24px;
+                                height: 24px;
+                            }
                         }
                     }
                     .notifications-header {
@@ -138,9 +153,14 @@ hr {
                         justify-content: center;
                         height: 80%;
 
-                        img {
-                            width: 70px;
-                            height: auto;
+                        .bell-icon {
+                            height: 70px;
+
+                            svg.inline-icon {
+                                width: 16px;
+                                height: 16px;
+                                transform: scale(6, 6);
+                            }
                         }
                         h4 {
                             margin: 0;
@@ -235,10 +255,15 @@ hr {
                     span {
                         padding-left: 1.5rem;
                         color: $COLOR_BLUE;
-                    }
-                    &:before {
-                        content: '\25A2';
-                        color: $COLOR_BLUE;
+                        position: relative;
+
+                        .drawer-icon {
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                        }
                     }
                 }
                 &:hover {
@@ -254,6 +279,53 @@ hr {
             }
             @media (max-width: 768px) {
                 width: 100%;
+            }
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    hr {
+        border-color: $COLOR_BRANDBLUE_85;
+    }
+    .drawer-bg .drawer {
+        background: $COLOR_BLUE;
+        color: $COLOR_WHITE;
+        box-shadow: 0 1px 6px 0 rgba(42, 48, 82, 0.14), 0 2px 8px 0 rgba(20, 20, 20, 0.3);
+
+        .drawer-item {
+            a {
+                &:before {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+                &:hover:before {
+                    color: $COLOR_WHITE;
+                }
+                span {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+            &:hover {
+                background: $COLOR_BRANDBLUE_85;
+
+                span {
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
+        &.left, &.right {
+            .drawer-header, .drawer-footer {
+                border-color: $COLOR_BRANDBLUE_85;
+
+                .icons {
+                    &.brand-logo, &.btn-close {
+                        border-color: $COLOR_BRANDBLUE_85;
+                    }
+                    &.brand-logo div.img:before {
+                        background-image: url('../images/app_2/header/binary_logo_dark.svg');
+                    }
+                }
             }
         }
     }

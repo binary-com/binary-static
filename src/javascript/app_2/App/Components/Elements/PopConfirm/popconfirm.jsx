@@ -29,6 +29,12 @@ class PopConfirm extends React.Component {
         this.setState({ is_open: false });
     }
 
+    handleOpen = (event) => {
+        if (!this.wrapper_ref.contains(event.target)) {
+            this.setState({ is_open: true});
+        }
+    }
+
     render() {
         const popconfirm_element = (
             <PopConfirmElement
@@ -46,7 +52,7 @@ class PopConfirm extends React.Component {
             <React.Fragment>
                 {React.Children.map(this.props.children, child => (
                     React.cloneElement(child, {
-                        onClick: () => this.setState({ is_open: !this.state.is_open }),
+                        onClick: this.handleOpen,
                     }, popconfirm_element)
                 ))}
             </React.Fragment>

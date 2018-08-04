@@ -18,14 +18,11 @@ class DrawerItem extends React.Component {
             <div className='drawer-item' onClick={this.drawerItemClicked}>
                 {custom_action ?
                     <a href='javascript:;' onClick={custom_action}>
-                        <span className=
-                            {icon || undefined}
-                        >{text}
-                        </span>
+                        <span>{icon}{text}</span>
                     </a>
                 :
                     <BinaryLink to={link_to}>
-                        <span className={icon || undefined}>{text}</span>
+                        <span>{icon}{text}</span>
                     </BinaryLink>
               }
             </div>
@@ -37,7 +34,7 @@ DrawerItem.propTypes = {
     collapseItems: PropTypes.func,
     custom_action: PropTypes.func,
     href         : PropTypes.string,
-    icon         : PropTypes.string,
+    icon         : PropTypes.node,
     text         : PropTypes.string,
     hideDrawers  : PropTypes.func,
     link_to      : PropTypes.string,
