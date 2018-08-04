@@ -102,6 +102,39 @@
                         & > span[title] {
                             font-weight: 500;
                         }
+                        .inline-icon.ic-header {
+                            &__trade {
+                                g {
+                                    stroke: $COLOR_BLUE;
+                                }
+                                path {
+                                    fill: $COLOR_BLUE;
+                                }
+                            }
+                            &__portfolio {
+                                .stroke-only {
+                                    stroke: $COLOR_WHITE;
+                                    fill: $COLOR_BLUE;
+
+                                    &:nth-child(2) {
+                                        fill: none;
+                                        stroke: $COLOR_BLUE;
+                                    }
+                                    &:first-child {
+                                        stroke: $COLOR_BLUE;
+                                    }
+                                }
+                            }
+                            &__statement {
+                                .fill-only {
+                                    fill: $COLOR_WHITE;
+                                }
+                                .no-fill {
+                                    fill: $COLOR_BLUE;
+                                    stroke: $COLOR_WHITE;
+                                }
+                            }
+                        }
                     }
                     .inline-icon {
                         position: absolute;

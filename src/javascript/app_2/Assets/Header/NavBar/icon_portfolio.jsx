@@ -3,10 +3,16 @@ import PropTypes  from 'prop-types';
 import React      from 'react';
 
 const IconPortfolio = ({ className }) => (
-    <svg className={classNames('inline-icon', className)} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' width='16' height='16'>
-        <path fill='#2A3052' fillRule='evenodd' d='M5 3V2c0-.6.4-1 1-1h4c.6 0 1 .4 1 1v1h4c.6 0 1 .4 1 1v4l-2.7 1.8a1 1 0 0 1-.6.2H3.3a1 1 0 0 1-.6-.2L0 8V4c0-.6.4-1 1-1h4zm1 0h4V2H6v1zM0 9l2.7 1.8.6.2h9.4c.2 0 .4 0 .6-.2L16 9v5c0 .6-.4 1-1 1H1a1 1 0 0 1-1-1V9zm6.5-1a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3z'/>
+    <svg className={classNames('inline-icon', className)} xmlns='http://www.w3.org/2000/svg' width='16' height='16'>
+        <g fill='none' fillRule='evenodd' stroke='none' strokeWidth='1'>
+            <g>
+                <path className='stroke-only' fill='none' stroke='#2A3052' d='M1.5 14.5h13a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1h-13a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1z'/>
+                <path className='stroke-only' stroke='#2A3052' d='M5.5 3v-.5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1V3'/>
+                <path className='stroke-only' stroke='#2A3052' strokeLinecap='square' d='M0 8l4.047 2.248a2 2 0 0 0 .971.252h5.964a2 2 0 0 0 .971-.252L16 8'/>
+                <path className='stroke-only' stroke='#2A3052' strokeLinecap='round' d='M6.5 8.5h3'/>
+            </g>
+        </g>
     </svg>
-
 );
 
 IconPortfolio.propTypes = {

@@ -10,33 +10,41 @@
 
         .menu-items {
             .menu-links a {
+                .inline-icon.ic-header__trade {
+                    .stroke-fill {
+                        stroke: $COLOR_BRANDBLUE_40;
+                        fill: $COLOR_BLUE;
+                    }
+                }
                 &.active, &:hover {
                     span {
                         color: $COLOR_WHITE;
 
-                        .header-icon {
-                            path {
-                                fill: $COLOR_WHITE;
+                        .inline-icon.ic-header {
+                            &__trade {
+                                .stroke-fill {
+                                    fill: $COLOR_WHITE;
+                                    stroke: $COLOR_WHITE;
+                                }
                             }
-                            .stroke-only {
-                                stroke: $COLOR_WHITE;
-                                fill: none;
+                            &__portfolio, &__statement {
+                                .stroke-only {
+                                    stroke: $COLOR_WHITE;
+                                }
+                                .fill-only {
+                                    fill: $COLOR_WHITE;
+                                }
                             }
-                            .fill-only {
-                                fill: $COLOR_WHITE;
-                                stroke: none;
+                            &__portfolio .stroke-only {
+                                &:first-child, &:nth-child(2) {
+                                    stroke: $COLOR_WHITE;
+                                }
                             }
-                            .stroke-fill {
-                                stroke: $COLOR_WHITE;
-                                fill: $COLOR_WHITE;
+                            &__statement {
+                                .no-fill {
+                                    fill: $COLOR_BLUE;
+                                }
                             }
-                            .no-stroke {
-                                stroke: $COLOR_BLUE;
-                            }
-                            .no-fill {
-                                fill: $COLOR_BLUE;
-                            }
-
                         }
                     }
                     &:after {
@@ -344,10 +352,10 @@
             fill: $COLOR_BRANDBLUE_40;
         }
         .no-stroke {
-            stroke: $COLOR_BLUE;
+            stroke: none;
         }
         .no-fill {
-            fill: $COLOR_BLUE;
+            fill: none;
         }
     }
     .acc-switcher-header {
