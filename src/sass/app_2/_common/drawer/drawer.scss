@@ -207,7 +207,7 @@ hr {
                 cursor: pointer;
                 font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                 box-sizing: border-box;
-                line-height: 48px;
+                padding: 16px;
                 z-index: 1;
 
                 span.parent-item {
@@ -249,8 +249,6 @@ hr {
                     text-decoration: none;
                     font-weight: 300;
                     display: block;
-                    padding-left: 1rem;
-                    line-height: 3rem;
 
                     span {
                         padding-left: 1.5rem;
@@ -274,6 +272,8 @@ hr {
                     padding: 16px;
                     justify-content: space-between;
                     align-items: center;
+                    color: $COLOR_BLUE;
+                    font-weight: 300;
 
                     .toggle-button {
                         width: 36px;
@@ -328,6 +328,9 @@ hr {
                 span {
                     color: $COLOR_WHITE;
                 }
+            }
+            &__toggle {
+                color: $COLOR_BRANDBLUE_40;
             }
         }
         &.left, &.right {

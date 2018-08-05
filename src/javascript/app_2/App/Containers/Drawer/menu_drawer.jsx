@@ -3,6 +3,9 @@ import PropTypes         from 'prop-types';
 import { DrawerItem,
          DrawerToggle }  from '../../Components/Elements/Drawer';
 import { IconLogout }    from '../../../Assets/Header/Drawer';
+import { IconTrade,
+         IconPortfolio,
+         IconStatement } from '../../../Assets/Header/NavBar';
 import { requestLogout } from '../../../Services';
 import Client            from '../../../../_common/base/client_base';
 import { localize }      from '../../../../_common/localize';
@@ -29,6 +32,22 @@ const MenuDrawer = ({
                 */}
                 {!is_desktop &&
                 <React.Fragment>
+                    <DrawerItem
+                        text={localize('Trade')}
+                        icon={<IconTrade className='drawer-icon' />}
+                        link_to='/trade'
+                    />
+                    <DrawerItem
+                        text={localize('Portfolio')}
+                        icon={<IconPortfolio className='drawer-icon' />}
+                        link_to='/portfolio'
+                    />
+                    <DrawerItem
+                        text={localize('Statement')}
+                        icon={<IconStatement className='drawer-icon' />}
+                        link_to='/statement'
+                    />
+                    <hr />
                     <DrawerToggle
                         text={localize('Purchase Confirmation')}
                         toggle={togglePurchaseConfirmation}
