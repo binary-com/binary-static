@@ -95,7 +95,7 @@
                         height: 100%;
                         width: 100%;
                         top: 47px;
-                        left: 0;
+                        left: -1px;
                     }
                     .cq-categorical-display {
                         .ic-icon.icon-close-menu {
@@ -106,6 +106,9 @@
                         }
                         .cq-lookup-filters.scroll-down {
                             max-height: unset;
+                        }
+                        .scrollbar-container.cq-scroll-panel {
+                            left: -1px;
                         }
                     }
                 }

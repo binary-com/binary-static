@@ -13,7 +13,7 @@ div.contracts-popup-container {
         }
     }
     &.mobile-only {
-        border: solid 1px $COLOR_BLUE;
+        border: solid 1px $COLOR_GRAY;
 
         .list-group {
             margin-bottom: 1.5rem;
@@ -30,6 +30,9 @@ div.contracts-popup-container {
                     margin-right: 8px;
                 }
             }
+        }
+        &:hover, &:focus, &:active {
+            border: solid 1px $COLOR_BLUE;
         }
     }
     .contracts-popup-display {
