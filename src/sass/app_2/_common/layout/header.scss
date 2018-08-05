@@ -181,6 +181,10 @@
                             margin: 0.5em 1rem;
                             font-weight: 400;
                             text-align: center;
+
+                            @media (max-width: 768px) {
+                                @include interpolate(font-size, 320px, 1440px, 10px, 14px);
+                            }
                         }
                     }
                     p.acc-balance-amount {
@@ -192,7 +196,7 @@
                         text-align: center;
 
                         @media (max-width: 768px) {
-                            font-size: 1rem;
+                            @include interpolate(font-size, 320px, 1440px, 10px, 14px);
                         }
                     }
                 }
