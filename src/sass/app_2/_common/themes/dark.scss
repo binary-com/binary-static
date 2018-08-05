@@ -303,8 +303,15 @@
         }
         .chart-container {
             cq-context { // stylelint-disable-line selector-type-no-unknown
+
                 div.cq-chart-controls {
-                    border: 1px solid $COLOR_BRANDBLUE_85;
+                    border: none;
+                    border-right: 1px solid $COLOR_BRANDBLUE_85;
+                    border-top: 1px solid $COLOR_BRANDBLUE_85;
+
+                    @media (max-width: 768px) {
+                        border: 1px solid $COLOR_BRANDBLUE_85;
+                    }
                 }
             }
             .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
