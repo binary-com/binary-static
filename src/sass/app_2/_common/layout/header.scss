@@ -102,6 +102,8 @@
                         & > span[title] {
                             font-weight: 500;
                         }
+                    }
+                    &:hover, &.active {
                         .inline-icon.ic-header {
                             &__trade {
                                 g {

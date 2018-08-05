@@ -14,6 +14,23 @@ div.contracts-popup-container {
     }
     &.mobile-only {
         border: solid 1px $COLOR_BLUE;
+
+        .list-group {
+            margin-bottom: 1.5rem;
+
+            .list-label {
+                padding-left: 24px;
+                margin-bottom: 8px;
+            }
+            .list-item {
+                padding-bottom: 6px;
+                padding-top: 6px;
+
+                .categories-container {
+                    margin-right: 8px;
+                }
+            }
+        }
     }
     .contracts-popup-display {
         cursor: pointer;
@@ -224,6 +241,14 @@ div.contracts-popup-container {
         background: $COLOR_BLUE;
         border-color: $COLOR_BRANDBLUE_85;
 
+        &.mobile-only {
+            .contracts-popup-display span {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            .contracts-modal-list {
+                background: $COLOR_BLUE;
+            }
+        }
         &:hover {
             border-color: $COLOR_WHITE;
         }

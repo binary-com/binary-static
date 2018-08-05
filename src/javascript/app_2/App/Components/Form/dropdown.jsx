@@ -68,16 +68,17 @@ class Dropdown extends React.Component {
     }
 
     render() {
-        if (this.props.is_nativepicker) {
-            return (
-                <NativeSelect
-                    name={this.props.name}
-                    value={this.props.value}
-                    list={this.props.list}
-                    onChange={this.props.onChange}
-                />
-            );
-        }
+        // TODO: Fix list not being populated in native picker dropdown before re-enabling
+        // if (this.props.is_nativepicker) {
+        //     return (
+        //         <NativeSelect
+        //             name={this.props.name}
+        //             value={this.props.value}
+        //             list={this.props.list}
+        //             onChange={this.props.onChange}
+        //         />
+        //     );
+        // }
         return (
             <div
                 ref={this.setWrapperRef}
@@ -147,26 +148,29 @@ const NativeSelect = ({
     value,
     list,
     onChange,
-}) => (
-    <div className='select-wrapper'>
-        <select name={name} value={value} onChange={onChange}>
-            {Array.isArray(list) ?
-              list.map((item, idx) => (
-                  <option key={idx} value={item.value}>{item.text}</option>
-              ))
-            :
-            Object.keys(list).map(key => (
-                <React.Fragment key={key}>
-                    <optgroup label={key}>
-                        {list[key].map((item, idx) => (
-                            <option key={idx} value={item.value}>{item.text}</option>
-                        ))}
-                    </optgroup>
-                </React.Fragment>
-            ))}
-        </select>
-    </div>
-);
+}) => {
+    console.log(list);
+    return (
+        <div className='select-wrapper'>
+            <select name={name} value={value} onChange={onChange}>
+                {Array.isArray(list) ?
+                  list.map((item, idx) => (
+                      <option key={idx} value={item.value}>{item.text}</option>
+                  ))
+                :
+                Object.keys(list).map(key => (
+                    <React.Fragment key={key}>
+                        <optgroup label={key}>
+                            {list[key].map((item, idx) => (
+                                <option key={idx} value={item.value}>{item.text}</option>
+                            ))}
+                        </optgroup>
+                    </React.Fragment>
+                ))}
+            </select>
+        </div>
+    );
+};
 
 // ToDo: Refactor Drop-down.
 // It's now too risky to refactor Dropdown for 'list' and 'value' prop types.

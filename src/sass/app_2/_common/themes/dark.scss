@@ -36,12 +36,27 @@
                                 }
                             }
                             &__portfolio .stroke-only {
-                                &:first-child, &:nth-child(2) {
+                                &:first-child {
+                                    fill: $COLOR_WHITE;
                                     stroke: $COLOR_WHITE;
+                                }
+                                &:nth-child(2) {
+                                    stroke: $COLOR_WHITE;
+                                }
+                                &:nth-child(3) {
+                                    stroke: $COLOR_BLUE;
+                                    fill: $COLOR_WHITE;
+                                }
+                                &:last-child {
+                                    stroke: $COLOR_BLUE;
                                 }
                             }
                             &__statement {
                                 .no-fill {
+                                    fill: $COLOR_WHITE;
+                                    stroke: $COLOR_BLUE;
+                                }
+                                .fill-only {
                                     fill: $COLOR_BLUE;
                                 }
                             }
@@ -130,6 +145,13 @@
                     &:hover {
                         color: $COLOR_WHITE;
                         font-weight: 500;
+                    }
+                }
+                div.purchase-result-wrapper {
+                    color: $COLOR_WHITE;
+
+                    span.label {
+                        color: $COLOR_BRANDBLUE_40;
                     }
                 }
             }
@@ -277,6 +299,34 @@
                 &:hover {
                     color: $COLOR_WHITE;
                 }
+            }
+        }
+        .chart-container {
+            cq-context { // stylelint-disable-line selector-type-no-unknown
+                div.cq-chart-controls {
+                    border: 1px solid $COLOR_BRANDBLUE_85;
+                }
+            }
+            .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
+                svg {
+                    g path {
+                        fill: $COLOR_BRANDBLUE_40;
+                    }
+                }
+            }
+        }
+        .mobile-widget {
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .fieldset-minimized {
+                color: $COLOR_BRANDBLUE_40;
+
+                &__basis {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
             }
         }
     }
