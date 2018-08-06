@@ -2,6 +2,7 @@ import React               from 'react';
 import {
     Redirect,
     Route }                from 'react-router-dom';
+import PleaseLoginMessage  from '../Elements/please_login_message.jsx';
 import routes              from '../../../Constants/routes';
 import { redirectToLogin } from '../../../../_common/base/login';
 import Client              from '../../../../_common/base/client_base';
@@ -22,22 +23,13 @@ const RouteWithSubRoutes = route => {
         } else {
             const should_show_login_msg = route.is_authenticated && !Client.isLoggedIn();
 
-            // TODO: update styling of the message below
-            const login_msg = (
-                <div className='login-message-wrapper'>
-                    <div className='message'>
-                        <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a>
-                    </div>
-                </div>
-            );
-
             result = (
                 should_show_login_msg && route.keep_component &&
                     <route.component {...props} routes={route.routes}>
-                        {login_msg}
+                        <PleaseLoginMessage onLogin={redirectToLogin} />
                     </route.component>
                 ||
-                should_show_login_msg && login_msg
+                should_show_login_msg && <PleaseLoginMessage onLogin={redirectToLogin} />
                 ||
                 <route.component {...props} routes={route.routes} />
             );
