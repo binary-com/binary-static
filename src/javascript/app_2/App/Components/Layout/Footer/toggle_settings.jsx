@@ -10,7 +10,7 @@ const ToggleSettings = ({
     toggleSettings,
 }) => {
     const toggle_settings_class = classNames('ic-settings', {
-        'ic-settings--active': is_settings_visible,
+        'active': is_settings_visible,
     });
     return (
         <React.Fragment>
