@@ -469,9 +469,6 @@ msgstr ""
 msgid "<< Back to Job Descriptions"
 msgstr ""
 
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr ""
-
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr ""
 
@@ -1435,6 +1432,9 @@ msgstr ""
 msgid "Authorised Applications"
 msgstr ""
 
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
+
 msgid "Auto-trader programming tool"
 msgstr ""
 
@@ -1627,7 +1627,7 @@ msgstr ""
 msgid "Binary (Europe) Limited & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr ""
 
-msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - %2view licence%3."
+msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no %2) and for UK clients by the UK Gambling Commission - %3view licence%4."
 msgstr ""
 
 msgid "Binary (FX) Ltd"
@@ -2084,6 +2084,9 @@ msgid "Choose your own strike."
 msgstr ""
 
 msgid "Christmas Day"
+msgstr ""
+
+msgid "Citizenship"
 msgstr ""
 
 msgid "Classification of assets requiring hedge"
@@ -3151,6 +3154,9 @@ msgstr ""
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr ""
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr ""
 
@@ -3890,12 +3896,6 @@ msgid "Friday"
 msgstr ""
 
 msgid "Fridays"
-msgstr ""
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr ""
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
 msgstr ""
 
 msgid "Front Side"
@@ -4828,7 +4828,7 @@ msgstr ""
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr ""
 
-msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%2), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. %2 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %4. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr ""
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
@@ -6679,9 +6679,6 @@ msgstr ""
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr ""
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr ""
-
 msgid "Notes:"
 msgstr ""
 
@@ -7298,6 +7295,9 @@ msgid "Please %1log in%2 or %3sign up%4 to view this page."
 msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
+msgstr ""
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
 msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
@@ -9640,7 +9640,7 @@ msgstr ""
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr ""
 
-msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
+msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. %1 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
 msgstr ""
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', '%1' shall denote Binary (V) Ltd, or Binary Investments (Europe) Ltd."
@@ -10297,10 +10297,10 @@ msgstr ""
 msgid "Transfer Between Accounts"
 msgstr ""
 
-msgid "Transfer from"
+msgid "Transfer between accounts is not available on weekends"
 msgstr ""
 
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
+msgid "Transfer from"
 msgstr ""
 
 msgid "Transfer funds between your real money accounts."
@@ -11816,6 +11816,12 @@ msgid "You may not cancel or amend the level of your Stop and Limit Order prior 
 msgstr ""
 
 msgid "You may only open an account at this site on conditions that:"
+msgstr ""
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
 msgstr ""
 
 msgid "You may revoke the current manager's access."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:20\n"
+"PO-Revision-Date: 2018-08-06 01:52\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -482,9 +482,6 @@ msgstr "7-dniowy maksymalny obrót"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< Wróć do opisu stanowiska"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "<a href=\"%1\">Zweryfikuj</a> swoje konto, potwierdzając swoją tożsamość i dane adresowe."
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Wróć do strony do handlowania</a>"
@@ -1449,6 +1446,9 @@ msgstr "Weryfikacja"
 msgid "Authorised Applications"
 msgstr "Aplikacje zatwierdzone"
 
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr ""
+
 msgid "Auto-trader programming tool"
 msgstr "Narzędzie programistyczne autohandlowania"
 
@@ -1641,8 +1641,8 @@ msgstr "Binarny (Europe) Limited"
 msgid "Binary (Europe) Limited & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Limited & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
-msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - %2view licence%3."
-msgstr "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Za licencję i nadzór (wyłącznie w zakresie produktów hazardowych – Wskaźniki zmienności %1) odpowiada Urząd ds. Gier Hazardowych: Malta Gaming Authority na Malcie (licencja nr MGA/CL2/118/2000), a w przypadku klientów ze Zjednoczonego Królestwa: Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission) – %2zobacz licencję%3."
+msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no %2) and for UK clients by the UK Gambling Commission - %3view licence%4."
+msgstr ""
 
 msgid "Binary (FX) Ltd"
 msgstr ""
@@ -2100,6 +2100,9 @@ msgstr "Wybierz swoją wypłatę."
 
 msgid "Christmas Day"
 msgstr "Boże Narodzenie"
+
+msgid "Citizenship"
+msgstr ""
 
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
@@ -3166,6 +3169,9 @@ msgstr "Za każdym razem, gdy otwierasz pozycję powiązaną z parą kryptowalut
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Za każdym razem, gdy otwierasz pozycję opartą na indeksie, rozpoczynasz z minimalnym wolumenem transakcji, jak wskazano w powyższej tabeli."
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr ""
+
 msgid "Earn"
 msgstr "Zarabiaj"
 
@@ -3906,12 +3912,6 @@ msgstr "piątek"
 
 msgid "Fridays"
 msgstr "piątki"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "Z kryptowaluty na walutę fiducjarną: opłata za przelew w wysokości 1%"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "Z waluty fiducjarnej na kryptowalutę: opłata za przelew w wysokości 1%"
 
 msgid "Front Side"
 msgstr "Przednia strona"
@@ -4843,8 +4843,8 @@ msgstr "W takim przypadku Firma może według własnego uznania (i bez uprzedzen
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "W polu „Dalsze instrukcje” prosimy podać sposób płatności i numer konta, na które pośrednik wyśle fundusze."
 
-msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%2), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "W UE produkty finansowe są oferowane przez Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, objętą licencją i regulacjami Urzędu ds. Usług Finansowych na Malcie: Malta Financial Services Authority jako firma świadcząca usługi inwestycyjne kategorii 3 (licencja o numerze IS/70156). Wskaźniki zmienności są oferowane w Wielkiej Brytanii i na Wyspie Man przez spółkę Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Wyspa Man, Wyspy Brytyjskie; za wydawanie licencji i regulację odpowiada (1) Komisja Nadzoru Gier Hazardowych Wyspy Man, na Wyspach Brytyjskich (Gambling Supervision Commission); aktualna licencja na prowadzenie gier hazardowych została wydana 31 sierpnia 2017 r., i (2) Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission %1). W pozostałej części UE, w przypadku produktów inwestycyjnych, niniejsza witryna internetowa jest udostępniana przez spółkę Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, objętą licencją i nadzorem Urzędu ds. Usług Finansowych: Malta Financial Services Authority na Malcie jako dostawca usług finansowych kategorii 3 (Nr licencji: IS/70156), a w przypadku produktów hazardowych przez Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, objętą licencją i nadzorem (1) Urzędu ds. Gier Hazardowych: Malta Gaming Authority na Malcie (licencja o numerze: MGA/CL2/118/2000 wydana 26 maja 2015 r.), w przypadku klientów ze Zjednoczonego Królestwa (2) Komisji ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission %2), w przypadku klientów z Irlandii (3) Irlandzkich Władz Podatkowych i Celnych: Revenue Commissioners in Ireland (obecna licencja operatora o numerze: 1010285 wydana 1 lipca 2017 r. Zapoznaj się z %3. Niektóre produkty nie są dostępne we wszystkich krajach. Usługi oferowane za pośrednictwem niniejszej witryny są niedostępne w określonych krajach, takich jak: Stany Zjednoczone, Kostaryka, Hongkong oraz dla osób poniżej 18 roku życia."
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. %2 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %4. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
 msgstr "W Zjednoczonym Królestwie nasi klienci handlują za pośrednictwem Binary (IOM) Ltd oraz Binary Investments (Europe) Ltd. Na Wyspie Man nasi klienci handlują za pośrednictwem Binary (IOM) Ltd. W Japonii handel odbywa się za pośrednictwem Binary KK. W Unii Europejskiej (za wyjątkiem Zjednoczonego Królestwa), handlują za pośrednictwem Binary (Europa) Ltd oraz Binary Investments (Europa) Ltd. W pozostałych krajach handel odbywa się za pośrednictwem Binary (C.R.) S.A."
@@ -6694,9 +6694,6 @@ msgstr "Uwaga: Możesz mieć konto z tylko jedną walutą fiducjarną i jedno ko
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "Uwaga: Możesz nie zgodzić się i kontynuować jako klient detaliczny."
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "Uwaga: Możesz przesyłać środki wyłącznie między kontem prowadzonym w walucie fiducjarnej i kontem w kryptowalucie."
-
 msgid "Notes:"
 msgstr "Uwagi:"
 
@@ -7314,6 +7311,9 @@ msgstr ""
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "Proszę <a href=\"%1\">zaakceptować zaktualizowany regulamin</a>."
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr ""
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "Wpłać <a href=\"%1\">środki</a> przed ich wysłaniem do klienta."
@@ -9655,8 +9655,8 @@ msgstr "Kwota zgromadzona na Koncie pośrednika %1 ma zostać przelana przez Po�
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "System przetwarza zlecenia przy wykorzystaniu metody FIFO („pierwsze weszło, pierwsze wyszło”) w zależności od kolejności otrzymywania zleceń i nie mamy na to wpływu. W rezultacie zamknięcie danej pozycji po zakładanej cenie, która została określona w Twoim zleceniu Stop może okazać się trudne lub niemożliwe w określonych warunkach rynkowych. Złożenie przez Ciebie zlecenia Stop, mimo że jest przydatnym narzędziem zarządzania ryzykiem, w przypadku bardzo zmiennych warunków rynkowych może nie być skutecznym sposobem ograniczania strat do zamierzonej kwoty, gdyż warunki rynkowe mogą uniemożliwić realizację takich zleceń i możliwa cena końcowa jest niepewna. Podsumowując, zlecenie Stop nie jest zleceniem gwarantowanym, gdyż nie można go stosować w każdych warunkach rynkowych."
 
-msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
-msgstr "Termin „Firma” oznacza Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Wyspa Man, Wyspy Brytyjskie; za wydawanie licencji i jego regulację odpowiada (1) Komisja Nadzoru Gier Hazardowych Wyspy Man, na Wyspach Brytyjskich (Gambling Supervision Commission); aktualna licencja na prowadzenie gier hazardowych została wydana dnia 31 sierpnia 2012 r., a w sprawach dotyczących klientów ze Zjednoczonego Królestwa (2) Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission); Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, za wydawanie licencji i jego regulację odpowiada (1) Urząd ds. Gier Hazardowych na Malcie (Malta Gaming Authority) dla produktów hazardowych; licencja nr MGA/CL2/118/2000 z dnia 26 maja 2010 r., a w sprawach dotyczących klientów ze Zjednoczonego Królestwa (2) Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission); Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, za regulację odpowiada Urząd ds. Usług Finansowych: Malta Financial Services Authority na Malcie dla produktów inwestycyjnych, posiadacz licencji dla podmiotów świadczących usługi inwestycyjne kategorii 3 nr IS/ 70156, udzielonej 19 maja 2015 r.; lub Binary (CR) S.A, w zależności od jurysdykcji, której podlega konto Klienta zgodnie z procedurami otwierania konta dostępnymi na stronie internetowej i zgodnie z informacjami przedstawionymi w sekcji O nas na stronie internetowej."
+msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. %1 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
+msgstr ""
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', '%1' shall denote Binary (V) Ltd, or Binary Investments (Europe) Ltd."
 msgstr ""
@@ -10312,11 +10312,11 @@ msgstr "Przelew"
 msgid "Transfer Between Accounts"
 msgstr "Przelewaj środki między kontami"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr ""
+
 msgid "Transfer from"
 msgstr "Przelew z"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "Przelewaj pieniądze pomiędzy kontami w walucie fiducjarnej i kryptowalucie po uiszczeniu opłaty:"
 
 msgid "Transfer funds between your real money accounts."
 msgstr "Przelewaj środki między Twoimi kontami z prawdziwymi pieniędzmi."
@@ -11832,6 +11832,12 @@ msgstr "Nie możesz anulować ani zmieniać poziomu dla swojego zlecenia Stop lu
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "Możesz otworzyć konto na portalu pod warunkiem, że:"
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr ""
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr ""
 
 msgid "You may revoke the current manager's access."
 msgstr "Możesz odebrać dostęp obecnemu menedżerowi."

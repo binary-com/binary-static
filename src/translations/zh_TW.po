@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-07-31 09:20\n"
+"PO-Revision-Date: 2018-08-06 01:52\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -482,9 +482,6 @@ msgstr "7天期交易限額"
 
 msgid "<< Back to Job Descriptions"
 msgstr "<< 返回工作詳細說明"
-
-msgid "<a href=\"%1\">Authenticate</a> your account by verifying your identity and address."
-msgstr "請提交身份與地址證明，立刻進行帳戶<a href=\"%1\">驗證</a>。"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">返回交易頁面</a>"
@@ -1449,6 +1446,9 @@ msgstr "驗證"
 msgid "Authorised Applications"
 msgstr "圖表應用程式"
 
+msgid "Authorised payment agents are exempted from paying any transfer fees"
+msgstr "獲授權付款代理人免繳任何轉帳費"
+
 msgid "Auto-trader programming tool"
 msgstr "自動交易編程工具"
 
@@ -1641,14 +1641,14 @@ msgstr "Binary (歐洲) 有限公司"
 msgid "Binary (Europe) Limited & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (歐洲) 有限公司 & Binary 投資 (歐洲) 有限公司, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
-msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no MGA/CL2/118/2000) and for UK clients by the UK Gambling Commission - %2view licence%3."
-msgstr "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta。公司經馬爾他博彩局授予執照並受其監管（僅博彩產品-%1的波動率指數），（執照號 MGA/CL2/118/2000）。而英國客戶由英國博彩委員會授予執照和監管 - %2檢視執照%3。"
+msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no %2) and for UK clients by the UK Gambling Commission - %3view licence%4."
+msgstr "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta。公司經馬爾他博彩局授予執照並受其監管（僅博彩產品-%1的波動率指數），（執照號 %2）。而英國客戶由英國博彩委員會授予執照和監管 - %3檢視執照%4。"
 
 msgid "Binary (FX) Ltd"
-msgstr ""
+msgstr "Binary (FX) Ltd"
 
 msgid "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
-msgstr ""
+msgstr "Binary (FX) Ltd., 地址: Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia。由Labuan 金融服務管理局授予牌照執行資金經紀商業活動 %1(牌照編號MB/18/0024)%2和監管。"
 
 msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
@@ -2100,6 +2100,9 @@ msgstr "選擇您自己的履約價格。"
 msgid "Christmas Day"
 msgstr "聖誕節"
 
+msgid "Citizenship"
+msgstr "公民身份"
+
 msgid "Classification of assets requiring hedge"
 msgstr "Classification of assets requiring hedge"
 
@@ -2191,7 +2194,7 @@ msgid "Clients from the rest of the world (excluding certain countries such as t
 msgstr "全球其他地區的客戶(不包括某些國家如美國、哥斯大黎加、香港)可在 Binary (V) Ltd.開設外匯和差價合約Metatrader 5帳戶。%1在萬那杜不能使用。"
 
 msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
-msgstr ""
+msgstr "全球其他地區想要進行差價合約交易的客戶 (不包括某些管轄區如美國、日本和歐盟國家) 可在 Binary (FX) Ltd. 開設MetaTrader 5帳戶。%1不可在馬來西亞使用。"
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
 msgstr "客戶只有開立真實帳戶後才能使用此獎金。"
@@ -3165,6 +3168,9 @@ msgstr "每次開加密貨幣對頭寸時, 您都可以由上表所示的最小�
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "每次開指標符號頭寸時, 您都可以由上表所示的最小交易額開始。"
 
+msgid "Each transfer is subject to a %1 transfer fee"
+msgstr "每次轉帳都得付 %1 轉帳費"
+
 msgid "Earn"
 msgstr "賺取"
 
@@ -3905,12 +3911,6 @@ msgstr "星期五"
 
 msgid "Fridays"
 msgstr "星期五"
-
-msgid "From cryptocurrency to fiat: %1 transfer fee"
-msgstr "加密貨幣換成法定貨幣： %1兌換費"
-
-msgid "From fiat to cryptocurrency: %1 transfer fee"
-msgstr "法定貨幣換成加密貨幣: %1兌換費"
 
 msgid "Front Side"
 msgstr "前側"
@@ -4842,8 +4842,8 @@ msgstr "在這種情況下，公司可自行（不論通知與否）以其認為
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "請在「詳細說明」欄位指定支付方式及代理將轉帳的帳號。"
 
-msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/CL2/118/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%2), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "金融產品在歐盟由Binary Investments (Europe) Ltd. 經營，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商（執照號碼為IS/70156)）。波動指數產品由Binary (IOM) Ltd. 在英國和曼島經營，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；分別由(1) 曼島博彩監管委員會(目前線上博彩執照於2012 年8 月31 日頒發) 和(2) 英國博彩委員會(%1) 授予執照和監管。在歐盟其他地區，波動指數產品由Binary (Europe) Ltd., 經營，地址為：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由(1) 位於馬爾他的馬爾他博彩管理局授予執照和監管，執照號碼為MGA/CL2/118/2000（2015年5 月26 日），而英國客戶由(2) 英國博彩委員會(%2) 授予執照和監管，以及愛爾蘭客戶由(3) 愛爾蘭稅務專員辦事處授予執照和監管，目前遠程執照號碼為1010285 (2017年7 月1 日頒發）。檢視詳細的資料%3。一些產品不是所有國家都適用。本網站的服務不向一些國家如美國、哥斯大黎加及香港或對年齡不到18歲的使用者提供。"
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. %2 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %4. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr "金融產品在歐盟由Binary Investments (Europe) Ltd. 經營，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商（執照號碼為IS/70156)）。波動指數產品由Binary (IOM) Ltd. 在英國和曼島經營，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；分別由(1) 曼島博彩監管委員會(目前線上博彩執照於2012 年8 月31 日頒發) 和(2) 英國博彩委員會(%1) 授予執照和監管。在歐盟其他地區，波動指數產品由Binary (Europe) Ltd., 經營，地址為：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由(1) 位於馬爾他的馬爾他博彩管理局授予執照和監管，執照號碼為%2（2015年5 月26 日），而英國客戶由(2) 英國博彩委員會(%3) 授予執照和監管，以及愛爾蘭客戶由(3) 愛爾蘭稅務專員辦事處授予執照和監管，目前遠程執照號碼為1010285 (2017年7 月1 日頒發）。檢視詳細的資料%4。一些產品不是所有國家都適用。本網站的服務不向一些國家如美國、哥斯大黎加及香港或對年齡不到18歲的使用者提供。"
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
 msgstr "在英國，我們的客戶通過 Binary (IOM) Ltd. 和 Binary Investments (Europe) Ltd. 進行交易。在曼島，他們通過 Binary (IOM) Ltd. 進行交易。在日本通過Binary KK進行交易。在歐盟（除了英國），他們通過 Binary (Europe) Ltd 和 Binary Investments (Europe) Ltd. 進行交易。在全世界其他地區，他們通過 Binary (C.R.) S.A. 進行交易。"
@@ -6693,9 +6693,6 @@ msgstr "注： 您只能擁有一個法定貨幣帳戶以及每種加密貨幣�
 msgid "Note: You may decline and continue as a Retail Client."
 msgstr "注: 您可以拒絕並繼續保留零售客戶資格。"
 
-msgid "Note: You may only transfer funds between a fiat account and a cryptocurrency account."
-msgstr "註：資金只可在法定帳戶和加密貨幣帳戶之間轉移。"
-
 msgid "Notes:"
 msgstr "注："
 
@@ -7313,6 +7310,9 @@ msgstr "要檢視本頁，請%1登入%2 或 %3註冊%4 。"
 
 msgid "Please <a href=\"%1\">accept the updated Terms and Conditions</a>."
 msgstr "請<a href=\"%1\">接受更新條款和條件</a>。"
+
+msgid "Please <a href=\"%1\">authenticate</a> your account to continue trading."
+msgstr "請 <a href=\"%1\">驗證</a> 您的帳戶以繼續交易。"
 
 msgid "Please <a href=\"%1\">deposit</a> before transferring to client."
 msgstr "給客戶轉帳前請先<a href=\"%1\">存款</a>。"
@@ -9654,8 +9654,8 @@ msgstr "%1代理帳戶收到的金額須由代理轉移到%1客戶帳戶。"
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "系統按先進先出的次序，即按照收到訂單的順序處理訂單，這是我們無法控制的。因此，您可能會發現很難或無法在某些市場條件下按照您的止損單規定的預期價位平倉。您設定的止損單雖然是有用的風險管理工具，卻不一定能按照您原先設想的數額限制損失。在極不穩定的交易條件下，由於市場情況可能無法執行這些指令，您的退出價格具不確定性。簡而言之，止損單是無法提供保證的，因為無法在所有市場情況下運作。"
 
-msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. MGA/CL2/118/2000 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
-msgstr "「公司」一詞指 Binary (IOM) Ltd.，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；(1) 由不列顛群島曼島投資監管委員會授予執照和監管，目前線上博彩執照於 2012 年 8 月 31 日頒發；而英國客戶 (2) 由英國博彩委員會授予執照和監管。 Binary (Europe) Ltd.，地址為：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，(1) 由位於馬爾他的馬爾他博彩產品管理局授予執照和監管，執照號碼為 MGA/CL2/118/ 2000（2010年5 月26 日），而英國客戶 (2) 由英國博彩委員會授予執照和監管。Binary Investments (Europe) Ltd.， 地址為 Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, 由Malta Financial Services Authority for Investment products 監管, 持3級投資服務執照，號碼為 IS/70156，發照日期為2015年5月19日; 或 Binary (CR) SA, 根據網站上「關於我們」部份所詳細說明的網站開帳戶程序所述之司法管轄而定。"
+msgid "The term \"the Company\" shall denote either Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 August 2012, and for UK clients by (2) the UK Gambling Commission; Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. %1 dated 26th May 2010 and for UK clients by (2) the UK Gambling Commission; Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or Binary (CR) S.A., depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website."
+msgstr "「公司」一詞指 Binary (IOM) Ltd.，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；(1) 由不列顛群島曼島投資監管委員會授予執照和監管，目前線上博彩執照於 2012 年 8 月 31 日頒發；而英國客戶 (2) 由英國博彩委員會授予執照和監管。 Binary (Europe) Ltd.，地址為：Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，(1) 由位於馬爾他的馬爾他博彩產品管理局授予執照和監管，執照號碼為 %1（2010年5 月26 日），而英國客戶 (2) 由英國博彩委員會授予執照和監管。Binary Investments (Europe) Ltd.， 地址為 Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, 由Malta Financial Services Authority for Investment products 監管, 持3級投資服務執照，號碼為 IS/70156，發照日期為2015年5月19日; 或 Binary (CR) SA, 根據網站上「關於我們」部份所詳細說明的網站開帳戶程序所述之司法管轄而定。"
 
 msgid "The term 'we', 'us', 'our', 'ours', 'the Company', '%1' shall denote Binary (V) Ltd, or Binary Investments (Europe) Ltd."
 msgstr "「我們」、「我們的」、「公司」、「%1」等詞指Binary (V) 有限公司或Binary投資 (歐洲) 有限公司。"
@@ -10311,11 +10311,11 @@ msgstr "轉帳"
 msgid "Transfer Between Accounts"
 msgstr "帳戶之間轉帳"
 
+msgid "Transfer between accounts is not available on weekends"
+msgstr "帳戶之間的轉帳週末期間不可用。"
+
 msgid "Transfer from"
 msgstr "轉移自"
-
-msgid "Transfer funds between your fiat and cryptocurrency accounts for a fee:"
-msgstr "在法定帳戶和加密帳戶間轉移資金須付費用："
 
 msgid "Transfer funds between your real money accounts."
 msgstr "在真實資金帳戶間轉移資金。"
@@ -11831,6 +11831,12 @@ msgstr "一旦已經達到訂單止損和限價水平，您不能在收盤交易
 
 msgid "You may only open an account at this site on conditions that:"
 msgstr "只有滿足下列條件，您才能在本網站開戶："
+
+msgid "You may only transfer funds between a fiat account and a cryptocurrency account"
+msgstr "資金只可在法定帳戶和加密貨幣帳戶之間轉移"
+
+msgid "You may proceed but please <a href=\"%1\">authenticate</a> your account within five days to continue trading."
+msgstr "您可以繼續操作, 但請在五天內 <a href=\"%1\">驗證</a> 您的帳戶以繼續交易。"
 
 msgid "You may revoke the current manager's access."
 msgstr "您可撤銷目前經理的存取權限。"
