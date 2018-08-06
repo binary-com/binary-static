@@ -15,9 +15,11 @@ export const createChartMarkers = (SmartChartStore, contract_info) => {
 };
 
 const marker_creators = {
-    [MARKER_TYPES_CONFIG.SPOT_ENTRY.type]: createMarkerSpotEntry,
-    [MARKER_TYPES_CONFIG.SPOT_EXIT.type] : createMarkerSpotExit,
-    [MARKER_TYPES_CONFIG.LINE_START.type]: createMarkerStartTime,
+    [MARKER_TYPES_CONFIG.SPOT_ENTRY.type]   : createMarkerSpotEntry,
+    [MARKER_TYPES_CONFIG.SPOT_EXIT.type]    : createMarkerSpotExit,
+    [MARKER_TYPES_CONFIG.LINE_PURCHASE.type]: createMarkerPurchaseTime,
+    [MARKER_TYPES_CONFIG.LINE_START.type]   : createMarkerStartTime,
+    [MARKER_TYPES_CONFIG.LINE_END.type]     : createMarkerEndTime,
 };
 
 function createMarkerSpotEntry(contract_info) {
@@ -47,12 +49,33 @@ function createMarkerSpotExit(contract_info) {
     );
 }
 
+function createMarkerPurchaseTime(contract_info) {
+    if (!contract_info.purchase_time || !contract_info.date_start ||
+        +contract_info.purchase_time === +contract_info.date_start) return false;
+
+    return createMarkerConfig(
+        MARKER_TYPES_CONFIG.LINE_PURCHASE.type,
+        epochToMarkerDate(contract_info.purchase_time),
+        'none',
+    );
+}
+
 function createMarkerStartTime(contract_info) {
     if (!contract_info.date_start) return false;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_START.type,
         epochToMarkerDate(contract_info.date_start),
+        'none',
+    );
+}
+
+function createMarkerEndTime(contract_info) {
+    if (!contract_info.date_expiry) return false;
+
+    return createMarkerConfig(
+        MARKER_TYPES_CONFIG.LINE_END.type,
+        epochToMarkerDate(contract_info.date_expiry),
         'none',
     );
 }
