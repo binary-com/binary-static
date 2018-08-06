@@ -11,6 +11,7 @@ const TimePicker          = require('../../../../components/time_picker');
 const dateValueChanged    = require('../../../../../_common/common_functions').dateValueChanged;
 const localize            = require('../../../../../_common/localize').localize;
 const scrollToHashSection = require('../../../../../_common/scroll').scrollToHashSection;
+const urlFor              = require('../../../../../_common/url').urlFor;
 
 const SelfExclusion = (() => {
     let $form,
@@ -34,7 +35,7 @@ const SelfExclusion = (() => {
         // if client hasn't set their currency, don't allow them to put self exclusion values
         if (!Client.get('currency')) {
             $('#loading').setVisibility(0);
-            $('#msg_error').html(localize('Please set the [_1]currency[_2] of your account.', ['<a href="user/set-currency">', '</a>'])).setVisibility(1);
+            $('#msg_error').html(localize('Please set the [_1]currency[_2] of your account.', [`<a href="${urlFor('user/set-currency')}">`, '</a>'])).setVisibility(1);
             $('#description_header').setVisibility(1);
             return;
         }
