@@ -58,6 +58,7 @@ const Purchase = ({
                     <MessageBox
                         purchase_info={purchase_info}
                         onClick={resetPurchase}
+                        currency={currency}
                     />
                     :
                     <React.Fragment>

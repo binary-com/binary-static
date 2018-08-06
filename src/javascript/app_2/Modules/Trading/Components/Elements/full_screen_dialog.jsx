@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import React     from 'react';
-import Url       from '../../../../../_common/url';
+import PropTypes     from 'prop-types';
+import React         from 'react';
+import { IconClose } from '../../../../Assets/Common';
 
 const FullScreenDialog = (props) => {
     const { title, visible, children } = props;
@@ -53,7 +53,7 @@ const FullScreenDialog = (props) => {
                     className='icons btn-close fullscreen-dialog__close-btn'
                     onClick={props.onClose}
                 >
-                    <img src={Url.urlForStatic('images/app_2/common/close.svg')} alt='Close' />
+                    <IconClose className='ic-close' />
                 </div>
             </div>
             <div className='fullscreen-dialog__header-shadow-cover' />
