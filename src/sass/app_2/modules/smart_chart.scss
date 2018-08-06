@@ -69,3 +69,25 @@
         }
     }
 }
+
+.chart-marker-line {
+    height: 100%;
+
+    > div {
+        border-left-width: 1px;
+        padding-left: 5px;
+        height: 100%;
+
+        &.solid {
+            border-left-style: solid;
+        }
+        &.dash {
+            border-left-style: dashed;
+        }
+        > div {
+            position: absolute;
+            bottom: 0;
+            white-space: nowrap;
+        }
+    }
+}
