@@ -1,6 +1,6 @@
 import React    from 'react';
-import IconFlag from '../../../../Assets/Icons/flag.jsx';
-import IconTick from '../../../../Assets/Icons/tick.jsx';
+import IconFlag from '../../../../Assets/Contract/icon_flag.jsx';
+import IconTick from '../../../../Assets/Contract/icon_tick.jsx';
 
 export const header_config = {
     purchased: { title: 'Contract Purchased', icon: <IconTick /> },

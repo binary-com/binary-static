@@ -29,7 +29,6 @@ class Trade extends React.Component {
                     :
                     <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
                 }
-                {/* TODO: to move PortfolioDrawer to an upper parent, as it should be available in all pages */}
             </div>
         );
     }

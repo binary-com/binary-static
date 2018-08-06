@@ -1,8 +1,8 @@
 import React         from 'react';
 import MarkerLine    from '../../../../Modules/SmartChart/Components/Markers/marker_line.jsx';
 import MarkerSpot    from '../../../../Modules/SmartChart/Components/Markers/marker_spot.jsx';
-import IconFlag      from '../../../../Assets/Icons/flag.jsx';
-import IconEntrySpot from '../../../../Assets/Icons/entry_spot.jsx';
+import IconFlag      from '../../../../Assets/Contract/icon_flag.jsx';
+import IconEntrySpot from '../../../../Assets/Contract/icon_entry_spot.jsx';
 import { localize }  from '../../../../../_common/localize';
 
 const MARKER_X_POSITIONER = {
