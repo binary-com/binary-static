@@ -1,6 +1,6 @@
-import { observer }    from 'mobx-react';
-import PropTypes       from 'prop-types';
-import React           from 'react';
+import { observer } from 'mobx-react';
+import PropTypes    from 'prop-types';
+import React        from 'react';
 
 const MarkerLine = ({
     label,
@@ -12,7 +12,6 @@ const MarkerLine = ({
 );
 
 MarkerLine.propTypes = {
-    color     : PropTypes.string,
     label     : PropTypes.string,
     line_style: PropTypes.string,
 };

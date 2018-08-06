@@ -2,8 +2,8 @@ import {
     action,
     observable }           from 'mobx';
 import moment              from 'moment';
-import { currentLanguage } from '../Utils/Language/index';
 import BaseStore           from './base_store';
+import { currentLanguage } from '../Utils/Language/index';
 
 export default class CommonStore extends BaseStore {
     @observable server_time = moment.utc();
@@ -12,7 +12,7 @@ export default class CommonStore extends BaseStore {
     @observable error     = {
         type   : 'info',
         message: '',
-    }
+    };
 
     @action.bound
     setError(has_error, error) {
@@ -22,5 +22,4 @@ export default class CommonStore extends BaseStore {
             message: error ? error.message : '',
         };
     }
-
 };

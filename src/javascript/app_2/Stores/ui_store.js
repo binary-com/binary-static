@@ -1,9 +1,11 @@
 import {
     action,
     computed,
-    observable }            from 'mobx';
-import BaseStore            from './base_store';
-import { MAX_MOBILE_WIDTH, MAX_TABLET_WIDTH } from '../Constants/ui';
+    observable }       from 'mobx';
+import BaseStore       from './base_store';
+import {
+    MAX_MOBILE_WIDTH,
+    MAX_TABLET_WIDTH } from '../Constants/ui';
 
 export default class UIStore extends BaseStore {
     @observable is_main_drawer_on          = false;
