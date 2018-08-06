@@ -271,7 +271,7 @@ const Metatrader = () => (
                                         <TypeGroup
                                             title={it.L('Step 1: Choose demo or real account')}
                                             types={[
-                                                { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with [_1] of virtual funds in a risk-free environment.', '$10,000') },
+                                                { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with [_1] of virtual funds in a risk-free environment.', '10,000') },
                                                 { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds and access to competitive trading conditions.') },
                                             ]}
                                         />
@@ -449,7 +449,7 @@ const Metatrader = () => (
 
                     <div id='frm_cashier'>
                         <div className='gr-row demo-only invisible'>
-                            <p className='gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30'>{it.L('This demo account comes with [_1] of virtual funds. Please [_2]contact our customer support team[_3] to replenish virtual funds if your account balance is empty.', '$10,000.00', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+                            <p className='gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30'>{it.L('This demo account comes with [_1] of virtual funds. Please [_2]contact our customer support team[_3] to replenish virtual funds if your account balance is empty.', '<span class="symbols" />10,000.00', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
                         </div>
                         <div className='real-only invisible'>
                             <div className='gr-padding-20 gr-parent'>
