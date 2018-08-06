@@ -20,17 +20,11 @@ const RouteWithSubRoutes = route => {
             }
             result = <Redirect to={to} />;
         } else {
-            const should_show_login_msg = route.is_authenticated && !Client.isLoggedIn();
-
             result = (
-                should_show_login_msg && route.keep_component &&
-                    <route.component {...props} routes={route.routes}>
-                        <PleaseLoginMessage onLogin={redirectToLogin} />
-                    </route.component>
-                ||
-                should_show_login_msg && <PleaseLoginMessage onLogin={redirectToLogin} />
-                ||
-                <route.component {...props} routes={route.routes} />
+                (route.is_authenticated && !Client.isLoggedIn()) ? // TODO: update styling of the message below
+                    <PleaseLoginMessage onClick={redirectToLogin} />
+                    :
+                    <route.component {...props} routes={route.routes}/>
             );
         }
 
