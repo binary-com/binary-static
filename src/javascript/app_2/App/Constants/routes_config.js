@@ -1,4 +1,5 @@
 import { Redirect }           from 'react-router-dom';
+import PortfolioDrawer        from '../Components/Elements/PortfolioDrawer';
 import { routes }             from '../../Constants';
 import Portfolio              from '../../Modules/Portfolio';
 import Settings               from '../../Modules/settings/settings.jsx';
@@ -17,6 +18,7 @@ import PersonalDetails        from '../../Modules/settings/sections/personal_det
 import SelfExclusion          from '../../Modules/settings/sections/self_exclusion.jsx';
 
 const routes_config = [
+    { path: routes.root,      component: PortfolioDrawer, is_authenticated: true, keep_component: true },
     { path: routes.root,      component: Redirect,  exact: true, to: '/trade' },
     { path: routes.index,     component: Redirect,  to: '/trade' },
     { path: routes.trade,     component: TradeApp,  exact: true },

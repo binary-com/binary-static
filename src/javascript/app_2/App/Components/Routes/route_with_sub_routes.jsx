@@ -20,15 +20,26 @@ const RouteWithSubRoutes = route => {
             }
             result = <Redirect to={to} />;
         } else {
-            result = (
-                (route.is_authenticated && !Client.isLoggedIn()) ? // TODO: update styling of the message below
-                    <div className='login-message-wrapper'>
-                        <div className='message'>
-                            <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a>
-                        </div>
+            const should_show_login_msg = route.is_authenticated && !Client.isLoggedIn();
+
+            // TODO: update styling of the message below
+            const login_msg = (
+                <div className='login-message-wrapper'>
+                    <div className='message'>
+                        <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a>
                     </div>
-                    :
-                    <route.component {...props} routes={route.routes}/>
+                </div>
+            );
+
+            result = (
+                should_show_login_msg && route.keep_component &&
+                    <route.component {...props} routes={route.routes}>
+                        {login_msg}
+                    </route.component>
+                ||
+                should_show_login_msg && login_msg
+                ||
+                <route.component {...props} routes={route.routes} />
             );
         }
 
