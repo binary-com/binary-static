@@ -13,74 +13,72 @@ import { connect }       from '../../../Stores/connect';
 
 const MenuDrawer = ({
     is_dark_mode,
+    is_mobile,
     is_purchase_confirmed,
     is_purchase_locked,
     toggleDarkMode,
     togglePurchaseLock,
     togglePurchaseConfirmation,
-}) => {
-    const is_desktop = window.innerWidth > 979;
-    return (
-        <div className='drawer-items-container'>
-            <div className='list-items-container'>
-                {/* Hide menu items until pages are ready
-                <DrawerItem text={localize('Manage Password')} />
-                <DrawerItem text={localize('Useful Resources')}/>
-                <DrawerItem text={localize('Login History')}/>
+}) => (
+    <div className='drawer-items-container'>
+        <div className='list-items-container'>
+            {/* Hide menu items until pages are ready
+            <DrawerItem text={localize('Manage Password')} />
+            <DrawerItem text={localize('Useful Resources')}/>
+            <DrawerItem text={localize('Login History')}/>
+            <hr />
+            <DrawerItem text={localize('Settings')} link_to='/settings' />
+            */}
+            {is_mobile &&
+            <React.Fragment>
+                <DrawerItem
+                    text={localize('Trade')}
+                    icon={<IconTrade className='drawer-icon' />}
+                    link_to='/trade'
+                />
+                <DrawerItem
+                    text={localize('Portfolio')}
+                    icon={<IconPortfolio className='drawer-icon' />}
+                    link_to='/portfolio'
+                />
+                <DrawerItem
+                    text={localize('Statement')}
+                    icon={<IconStatement className='drawer-icon' />}
+                    link_to='/statement'
+                />
                 <hr />
-                <DrawerItem text={localize('Settings')} link_to='/settings' />
-                */}
-                {!is_desktop &&
-                <React.Fragment>
-                    <DrawerItem
-                        text={localize('Trade')}
-                        icon={<IconTrade className='drawer-icon' />}
-                        link_to='/trade'
-                    />
-                    <DrawerItem
-                        text={localize('Portfolio')}
-                        icon={<IconPortfolio className='drawer-icon' />}
-                        link_to='/portfolio'
-                    />
-                    <DrawerItem
-                        text={localize('Statement')}
-                        icon={<IconStatement className='drawer-icon' />}
-                        link_to='/statement'
-                    />
-                    <hr />
-                    <DrawerToggle
-                        text={localize('Purchase Confirmation')}
-                        toggle={togglePurchaseConfirmation}
-                        to_toggle={is_purchase_confirmed}
-                    />
-                    <DrawerToggle
-                        text={localize('Purchase Lock')}
-                        toggle={togglePurchaseLock}
-                        to_toggle={is_purchase_locked}
-                    />
-                    <DrawerToggle
-                        text={localize('Dark Theme')}
-                        toggle={toggleDarkMode}
-                        to_toggle={is_dark_mode}
-                    />
-                </React.Fragment>}
-                {/* Same as above
-                <hr />
-                <DrawerItem text={localize('Contact Us')}/>
-                */}
-            </div>
-            <div className='drawer-footer'>
-                {Client.isLoggedIn() &&
-                    <DrawerItem
-                        icon={<IconLogout className='drawer-icon'/>}
-                        text={localize('Logout')}
-                        custom_action={requestLogout}
-                    />
-                }
-            </div>
+                <DrawerToggle
+                    text={localize('Purchase Confirmation')}
+                    toggle={togglePurchaseConfirmation}
+                    to_toggle={is_purchase_confirmed}
+                />
+                <DrawerToggle
+                    text={localize('Purchase Lock')}
+                    toggle={togglePurchaseLock}
+                    to_toggle={is_purchase_locked}
+                />
+                <DrawerToggle
+                    text={localize('Dark Theme')}
+                    toggle={toggleDarkMode}
+                    to_toggle={is_dark_mode}
+                />
+            </React.Fragment>}
+            {/* Same as above
+            <hr />
+            <DrawerItem text={localize('Contact Us')}/>
+            */}
         </div>
-    );
-};
+        <div className='drawer-footer'>
+            {Client.isLoggedIn() &&
+                <DrawerItem
+                    icon={<IconLogout className='drawer-icon'/>}
+                    text={localize('Logout')}
+                    custom_action={requestLogout}
+                />
+            }
+        </div>
+    </div>
+);
 
 MenuDrawer.propTypes = {
     is_dark_mode              : PropTypes.bool,
@@ -89,6 +87,7 @@ MenuDrawer.propTypes = {
     toggleDarkMode            : PropTypes.func,
     togglePurchaseConfirmation: PropTypes.func,
     togglePurchaseLock        : PropTypes.func,
+    is_mobile                 : PropTypes.bool,
 };
 
 const menu_drawer_component = connect(({ ui }) => ({
@@ -98,6 +97,7 @@ const menu_drawer_component = connect(({ ui }) => ({
     toggleDarkMode            : ui.toggleDarkMode,
     togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
     togglePurchaseLock        : ui.togglePurchaseLock,
+    is_mobile                 : ui.is_mobile,
 }))(MenuDrawer);
 
 export { menu_drawer_component as MenuDrawer };
