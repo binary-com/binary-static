@@ -26,11 +26,18 @@ const SelfExclusion = (() => {
     const timeout_time_id       = '#timeout_until_time';
     const exclude_until_id      = '#exclude_until';
     const max_30day_turnover_id = '#max_30day_turnover';
-    const error_class           = 'errorfield';
     const TURNOVER_LIMIT        = 999999999999999; // 15 digits
 
     const onLoad = () => {
         $form = $(form_id);
+
+        // if client hasn't set their currency, don't allow them to put self exclusion values
+        if (!Client.get('currency')) {
+            $('#loading').setVisibility(0);
+            $('#msg_error').html(localize('Please set the [_1]currency[_2] of your account.', ['<a href="user/set-currency">', '</a>'])).setVisibility(1);
+            $('#description_header').setVisibility(1);
+            return;
+        }
 
         fields = {};
         $form.find('input').each(function () {
@@ -191,6 +198,10 @@ const SelfExclusion = (() => {
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isAfter(moment().add(6, 'months')), message: 'Exclude time cannot be less than 6 months.' }],
                     ['custom', { func: value => !value.length || getMoment(exclude_until_id).isBefore(moment().add(5, 'years')), message: 'Exclude time cannot be for more than 5 years.' }],
                 ],
+            },
+            {
+                request_field: 'last_modified_timestamp',
+                value        : self_exclusion_data.last_modified_timestamp,
             });
 
         FormManager.init(form_id, validations);
@@ -319,7 +330,7 @@ const SelfExclusion = (() => {
 
     const showFormMessage = (msg, is_success) => {
         $('#msg_form')
-            .attr('class', is_success ? 'success-msg' : error_class)
+            .attr('class', is_success ? 'success-msg' : 'errorfield')
             .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
             .css('display', 'block')
             .delay(5000)

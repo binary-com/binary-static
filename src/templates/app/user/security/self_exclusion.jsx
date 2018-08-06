@@ -4,6 +4,7 @@ import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/for
 
 const SelfExclusion = () => (
     <React.Fragment>
+        <h1 className='invisible' id='description_header'>{it.L('Self-Exclusion Facilities')}</h1>
         <div className='invisible' id='description'>
             <h1>{it.L('Self-Exclusion Facilities')}</h1>
             <p>{it.L('Online trading can become addictive. Fill in the form below to limit your participation on the website or send a signed letter or fax to our customer support team. Once set, you can only tighten your limits. Limits will only be removed or loosened after 7 days with the exception of the self-exclusion date, which cannot be removed or altered once you have confirmed it. To remove or increase your limits, please contact <a href="[_1]">customer support</a>.', it.url_for('contact'))}</p>
