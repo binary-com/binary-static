@@ -71,7 +71,7 @@ function createMarkerStartTime(contract_info) {
 }
 
 function createMarkerEndTime(contract_info) {
-    if (!contract_info.date_expiry) return false;
+    if (contract_info.status === 'open' || !contract_info.date_expiry) return false;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_END.type,
