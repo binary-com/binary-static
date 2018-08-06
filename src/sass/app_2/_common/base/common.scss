@@ -18,6 +18,14 @@ select, input, textarea {
     border-radius: $BORDER_RADIUS;
 }
 
+a {
+    color: $COLOR_SKY_BLUE;
+
+    &:hover {
+        color: $COLOR_LIGHT_BLUE;
+    }
+}
+
 fieldset {
     border: 1px solid $COLOR_LIGHT_GRAY;
 }

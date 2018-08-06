@@ -1,0 +1,11 @@
+.please-login {
+    height: 100%;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__message {
+        font-size: 14px;
+    }
+}
