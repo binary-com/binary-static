@@ -60,7 +60,7 @@ const Amount = ({
                     />
                 }
                 <InputField
-                    type='number'
+                    type='text'
                     name='amount'
                     value={amount}
                     onChange={onChange}
@@ -74,7 +74,10 @@ const Amount = ({
 };
 
 Amount.propTypes = {
-    amount         : PropTypes.number,
+    amount: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
     basis          : PropTypes.string,
     basis_list     : MobxPropTypes.arrayOrObservableArray,
     currencies_list: PropTypes.object,
