@@ -1,3 +1,4 @@
+import classNames    from 'classnames';
 import PropTypes     from 'prop-types';
 import React         from 'react';
 import { IconClose } from '../../../../Assets/Common';
@@ -42,7 +43,9 @@ const FullScreenDialog = (props) => {
 
     return (
         <div
-            className={`fullscreen-dialog ${visible ? 'fullscreen-dialog--open' : ''}`}
+            className={classNames('fullscreen-dialog', {
+                'fullscreen-dialog--open': visible,
+            })}
             onClick={handleClick}
         >
             <div className='fullscreen-dialog__header'>

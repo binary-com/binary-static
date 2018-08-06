@@ -16,7 +16,7 @@
                         fill: $COLOR_BLUE;
                     }
                 }
-                &.active, &:hover {
+                &.active {
                     span {
                         color: $COLOR_WHITE;
 
@@ -68,10 +68,6 @@
                 }
                 &:hover {
                     background-color: $COLOR_BRANDBLUE_85;
-
-                    span {
-                        color: $COLOR_WHITE;
-                    }
                 }
                 span {
                     color: $COLOR_BRANDBLUE_40;
@@ -153,6 +149,9 @@
                     span.label {
                         color: $COLOR_BRANDBLUE_40;
                     }
+                }
+                div.purchase-login-wrapper {
+                    color: $COLOR_WHITE;
                 }
             }
             fieldset.purchase-option div.box .left-column .type-wrapper {
