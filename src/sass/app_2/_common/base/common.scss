@@ -21,7 +21,7 @@ select, input, textarea {
 a {
     color: $COLOR_SKY_BLUE;
 
-    &:hover {
+    &:active, &:visited {
         color: $COLOR_LIGHT_BLUE;
     }
 }
