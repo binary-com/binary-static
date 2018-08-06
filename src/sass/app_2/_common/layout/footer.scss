@@ -58,7 +58,7 @@ footer {
 }
 
 .ic-settings {
-    &.active {
+    &--active {
         background: $COLOR_GRAY;
 
         &:after {

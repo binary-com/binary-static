@@ -45,7 +45,7 @@ class ToggleFullScreen extends React.Component {
 
     render() {
         const full_screen_icon_class = classNames('ic-fullscreen', {
-            'active': this.state.is_full_screen,
+            'ic-fullscreen--active': this.state.is_full_screen,
         });
         return (
             <a
