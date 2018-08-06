@@ -131,3 +131,37 @@
         }
     }
 }
+
+// Dark Theme
+.theme-wrapper.dark {
+    .time-picker .time-picker-dropdown {
+        border: 1px solid $COLOR_BRANDBLUE_85;
+
+        .time-picker-panel, .time-picker-selector {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .time-picker-hours, .time-picker-minutes {
+                color: $COLOR_BRANDBLUE_40;
+                background: $COLOR_BLUE;
+                border-color: $COLOR_BRANDBLUE_85;
+
+                .list-item {
+                    color: $COLOR_BRANDBLUE_40;
+
+                    &.disabled {
+                        background: $COLOR_BRANDBLUE_85;
+                        color: $COLOR_DARK_BLUE;
+                    }
+                    &.selected {
+                        background: $COLOR_BRANDBLUE_85;
+                        color: $COLOR_WHITE;
+                    }
+                    &:hover {
+                        background: $COLOR_BRANDBLUE_85;
+                    }
+                }
+            }
+        }
+    }
+}

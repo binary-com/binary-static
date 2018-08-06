@@ -51,6 +51,7 @@ const StartDate = ({
                 <React.Fragment>
                     <TimePicker
                         onChange={onChange}
+                        is_align_right
                         name='start_time'
                         value={start_time}
                         placeholder='12:00'

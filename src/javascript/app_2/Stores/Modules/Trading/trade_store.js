@@ -66,6 +66,10 @@ export default class TradeStore extends BaseStore {
 
     constructor(root_store) {
         super(root_store, null, allowed_query_string_variables);
+
+        if (Client.isLoggedIn) {
+            this.processNewValuesAsync({currency: Client.get('currency')});
+        }
     }
 
     @action.bound

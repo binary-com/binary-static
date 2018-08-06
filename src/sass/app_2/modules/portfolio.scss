@@ -21,13 +21,16 @@
         align-items: center;
         text-align: center;
 
-        &__icon {
+        .type-wrapper {
             width: 20px;
             height: 20px;
             padding: 5px;
             margin-bottom: 3px;
             border-radius: 100%;
             background-color: $COLOR_GRAY;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
     .reference a {
@@ -61,12 +64,9 @@
         align-items: center;
 
         &__icon {
-            display: inline-block;
-            height: 64px;
             width: 64px;
-            background-size: 64px;
-            background-image: url('../images/app_2/header/icons/ic_portfolio_normal_light.svg');
-            margin-bottom: 16px;
+            height: 64px;
+            margin-bottom: 1rem;
         }
         &__title {
             font-size: 16px;
@@ -151,19 +151,5 @@
                 }
             }
         }
-    }
-}
-
-$CONTRACT_TYPE_LIST: asianu asaind call calle put digitdiff digiteven digitmatch digitodd digitover digitunder expirymiss
-    expiryrange expiryrangee fall notouch onetouch range rise upordown lbfloatcall lbfloatput lbhighlow;
-
-// $style: 'light' or 'dark'
-@function tradetypeicon($style, $trade_type) {
-    @return url('../images/app_2/contracts/types/' + $style + '/ic_' + $trade_type + '.svg');
-}
-
-@each $type in $CONTRACT_TYPE_LIST {
-    .#{$type}-icon--light {
-        content: tradetypeicon('light', $type);
     }
 }

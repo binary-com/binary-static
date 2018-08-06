@@ -7,8 +7,8 @@ import { addComma } from '../../../../../_common/base/currency_base';
 const MarkerSpot = ({
     align,
     icon,
-    status,
     spot_value,
+    status,
 }) => (
     <div className={classNames('chart-spot', align, status)}>
         <div className='content'>
@@ -23,7 +23,7 @@ const MarkerSpot = ({
 MarkerSpot.propTypes = {
     align     : PropTypes.oneOf(['left', 'right']),
     icon      : PropTypes.object,
-    status    : PropTypes.oneOf(['won', 'lost']),
     spot_value: PropTypes.string,
+    status    : PropTypes.oneOf(['won', 'lost']),
 };
 export default observer(MarkerSpot);

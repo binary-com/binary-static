@@ -1,7 +1,7 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { DrawerItem }      from '../../Elements/Drawer';
-import Url                 from '../../../../../_common/url';
+import { IconBell }        from '../../../../Assets/Header/NavBar/';
 import { localize }        from '../../../../../_common/localize';
 
 const Notifications = ({ list }) => (
@@ -16,8 +16,8 @@ const Notifications = ({ list }) => (
           :
             <div className='no-notifications-container'>
                 <div className='notification-message'>
-                    <div>
-                        <img src={Url.urlForStatic('images/app_2/header/icons/ic_notification_light.svg')} />
+                    <div className='bell-icon'>
+                        <IconBell />
                     </div>
                     <div>
                         <h4>{localize('No Notifications')}</h4>

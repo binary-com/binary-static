@@ -1,13 +1,13 @@
 import React             from 'react';
 import { Notifications } from '../../Elements/Notifications';
 import { ToggleDrawer }  from '../../Elements/Drawer';
-import Url               from '../../../../../_common/url';
+import { IconBell }      from '../../../../Assets/Header/NavBar';
 
 const ToggleNotificationsDrawer = () => (
     <ToggleDrawer
-        icon_class='notify-toggle'
         alignment='right'
-        icon_link={Url.urlForStatic('images/app_2/header/icons/ic_notification_light.svg')}
+        icon={<IconBell/>}
+        icon_class='notify-toggle'
     >
         <Notifications />
     </ToggleDrawer>

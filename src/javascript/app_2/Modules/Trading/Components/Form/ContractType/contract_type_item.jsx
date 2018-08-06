@@ -1,6 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import { IconTradeCategory }          from '../../../../../Assets/Trading/Categories';
 
 const ContractTypeItem = ({
     contracts,
@@ -16,7 +17,7 @@ const ContractTypeItem = ({
             value={contract.value}
             onClick={() => handleSelect(contract)}
         >
-            <i className={`contract-icon ic-${contract.value}${value === contract.value ? '' : '--invert'}`} />
+            <IconTradeCategory category={contract.value} />
             <span className='contract-title'>
                 {contract.text}
             </span>
