@@ -1,3 +1,4 @@
+import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '../../../../_common/localize';
 
@@ -20,6 +21,11 @@ const PleaseLoginMessage = ({ onLogin, onSignup }) => (
         </div>
     </div>
 );
+
+PleaseLoginMessage.propTypes = {
+    onLogin : PropTypes.func,
+    onSignup: PropTypes.func,
+};
 
 export default PleaseLoginMessage;
 
