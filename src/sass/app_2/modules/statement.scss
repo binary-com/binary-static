@@ -17,6 +17,10 @@ $side-padding: 12px;
             flex-direction: row;
             align-items: center;
             padding-left: 16px;
+
+            .datepicker-container .datepicker-native-overlay {
+                line-height: 30px;
+            }
         }
         &__label {
             margin-right: 0.6rem;

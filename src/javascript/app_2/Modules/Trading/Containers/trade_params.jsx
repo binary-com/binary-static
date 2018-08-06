@@ -17,6 +17,7 @@ class TradeParams extends React.Component {
                 <Component
                     key={name}
                     is_minimized={this.props.is_minimized}
+                    is_nativepicker={this.props.is_nativepicker}
                     {...getComponentProperties(
                         Component,
                         this.props.trade_store,
@@ -36,6 +37,7 @@ class TradeParams extends React.Component {
 TradeParams.propTypes = {
     form_components: MobxPropTypes.arrayOrObservableArray,
     is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
     onChange       : PropTypes.func,
     server_time    : PropTypes.object,
     trade_store    : PropTypes.object,

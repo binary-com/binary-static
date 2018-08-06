@@ -1,5 +1,5 @@
 .mobile-widget {
-    border: 1px solid $COLOR_BLUE;
+    border: 1px solid $COLOR_GRAY;
     border-radius: 4px;
     padding: 10px 5px;
     display: grid;
@@ -8,8 +8,9 @@
     grid-template-areas: 'a b' 'c d';
     font-size: 0.7rem;
 
-    &:hover {
+    &:hover, &:focus, &:active {
         cursor: pointer;
+        border: solid 1px $COLOR_BLUE;
     }
     .fieldset-minimized {
         display: flex;

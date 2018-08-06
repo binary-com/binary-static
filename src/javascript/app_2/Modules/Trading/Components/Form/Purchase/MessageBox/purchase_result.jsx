@@ -1,21 +1,45 @@
+import classNames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import { toGMTFormat } from '../../../../../../Utils/Date';
 import { localize }    from '../../../../../../../_common/localize';
 
-const PurchaseResult = ({ purchase_info }) => (
-    <div className='info-text'>
-        <div><strong>{localize('Purchase Info')}:</strong></div>
-        <div>{localize('Buy Price')}: {purchase_info.buy_price}</div>
-        <div>{localize('Payout')}: {purchase_info.payout}</div>
-        <div>{localize('Start')}: {toGMTFormat(purchase_info.start_time * 1000)}</div>
-        <div>{localize('Contract ID')}: {purchase_info.contract_id}</div>
-        <div>{localize('Transaction ID')}: {purchase_info.transaction_id}</div>
-        <div>{localize('Description')}: {purchase_info.longcode}</div>
+const PurchaseResult = ({ currency, purchase_info }) => (
+    <div className='purchase-result-wrapper'>
+        <div>
+            <strong>{localize('Purchase Info')}</strong>
+        </div>
+        <div>
+            <span className='label'>{localize('Buy Price')}:</span>
+            <span className='buy-price'>
+                <i className={classNames('symbols', currency.toLowerCase())} />
+                {purchase_info.buy_price}
+            </span>
+        </div>
+        <div>
+            <span className='label'>{localize('Payout')}:</span>
+            <span className='payout'>
+                <i className={classNames('symbols', currency.toLowerCase())} />
+                {purchase_info.payout}
+            </span>
+        </div>
+        <div>
+            <span className='label'>{localize('Start')}:</span> {toGMTFormat(purchase_info.start_time * 1000)}
+        </div>
+        <div>
+            <span className='label'>{localize('Contract ID')}:</span> {purchase_info.contract_id}
+        </div>
+        <div>
+            <span className='label'>{localize('Transaction ID')}:</span> {purchase_info.transaction_id}
+        </div>
+        <div>
+            <span className='label'>{localize('Description')}:</span> {purchase_info.longcode}
+        </div>
     </div>
 );
 
 PurchaseResult.propTypes = {
+    currency     : PropTypes.string,
     purchase_info: PropTypes.object,
 };
 

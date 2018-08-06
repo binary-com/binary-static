@@ -103,6 +103,41 @@
                             font-weight: 500;
                         }
                     }
+                    &:hover, &.active {
+                        .inline-icon.ic-header {
+                            &__trade {
+                                g {
+                                    stroke: $COLOR_BLUE;
+                                }
+                                path {
+                                    fill: $COLOR_BLUE;
+                                }
+                            }
+                            &__portfolio {
+                                .stroke-only {
+                                    stroke: $COLOR_WHITE;
+                                    fill: $COLOR_BLUE;
+
+                                    &:nth-child(2) {
+                                        fill: none;
+                                        stroke: $COLOR_BLUE;
+                                    }
+                                    &:first-child {
+                                        stroke: $COLOR_BLUE;
+                                    }
+                                }
+                            }
+                            &__statement {
+                                .fill-only {
+                                    fill: $COLOR_WHITE;
+                                }
+                                .no-fill {
+                                    fill: $COLOR_BLUE;
+                                    stroke: $COLOR_WHITE;
+                                }
+                            }
+                        }
+                    }
                     .inline-icon {
                         position: absolute;
                         left: 10px;
@@ -146,6 +181,10 @@
                             margin: 0.5em 1rem;
                             font-weight: 400;
                             text-align: center;
+
+                            @media (max-width: 768px) {
+                                @include interpolate(font-size, 320px, 1440px, 10px, 14px);
+                            }
                         }
                     }
                     p.acc-balance-amount {
@@ -157,7 +196,7 @@
                         text-align: center;
 
                         @media (max-width: 768px) {
-                            font-size: 1rem;
+                            @include interpolate(font-size, 320px, 1440px, 10px, 14px);
                         }
                     }
                 }

@@ -197,7 +197,7 @@ div.datepicker-container {
         border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
         font-size: 14px;
-        line-height: 32px;
+        line-height: 100%;
         vertical-align: middle;
         padding: 4px 11px;
         box-sizing: border-box;
@@ -219,7 +219,7 @@ div.datepicker-container {
             display: block;
             position: absolute;
             top: 8px;
-            right: 8px;
+            right: 6px;
 
             & .arrow-path {
                 fill: $COLOR_GRAY;
@@ -362,6 +362,16 @@ div.datepicker-container {
         }
         div.calendar-footer span.calendar-footer-btn {
             color: $COLOR_BRANDBLUE_40;
+        }
+    }
+    .datepicker-container {
+        .datepicker-native-overlay {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
         }
     }
 }
