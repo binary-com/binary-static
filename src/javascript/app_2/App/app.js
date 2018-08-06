@@ -59,9 +59,21 @@ const BinaryApp = ({ root_store }) => (
                 <div id='header'>
                     <Header
                         items={[
-                            { icon: <IconTrade className='header-icon' />,     text: localize('Trade'),     link_to: routes.trade },
-                            { icon: <IconPortfolio className='header-icon' />, text: localize('Portfolio'), link_to: routes.portfolio },
-                            { icon: <IconStatement className='header-icon' />, text: localize('Statement'), link_to: routes.statement },
+                            {
+                                icon   : <IconTrade className='ic-header__trade' />,
+                                text   : localize('Trade'),
+                                link_to: routes.trade,
+                            },
+                            {
+                                icon   : <IconPortfolio className='ic-header__portfolio' />,
+                                text   : localize('Portfolio'),
+                                link_to: routes.portfolio,
+                            },
+                            {
+                                icon   : <IconStatement className='ic-header__statement' />,
+                                text   : localize('Statement'),
+                                link_to: routes.statement,
+                            },
                             // TODO
                             // Hide the Cashier button until its implementation is completed.
                             // { icon: <IconCashier />,   text: localize('Cashier') },
