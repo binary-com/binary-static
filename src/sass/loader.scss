@@ -15,6 +15,21 @@
     svg {
         position: absolute;
     }
+    .chart-line {
+        stroke-dasharray: 4300;
+        stroke-dashoffset: 4300;
+        animation: draw-chart-line 5s linear infinite;
+    }
+    .loading-line {
+        stroke-dasharray: 150;
+        stroke-dashoffset: 150;
+        animation: loading 1s linear infinite;
+    }
+    .loading-line-bg {
+        stroke-dasharray: 150;
+        stroke-dashoffset: 150;
+        animation: bgloading 1s linear infinite;
+    }
 }
 
 .grid-lines {
@@ -26,25 +41,7 @@
     }
 }
 
-.chart-line {
-    stroke-dasharray: 4300;
-    stroke-dashoffset: 4300;
-    animation: chart-line-loader 5s linear infinite;
-}
-
-.loading-line {
-    stroke-dasharray: 150;
-    stroke-dashoffset: 150;
-    animation: loading 1s linear infinite;
-}
-
-.loading-line-bg {
-    stroke-dasharray: 150;
-    stroke-dashoffset: 150;
-    animation: bgloading 1s linear infinite;
-}
-
-@keyframes chart-line-loader {
+@keyframes draw-chart-line {
     from {
         stroke-dashoffset: 4300;
     }
