@@ -300,23 +300,6 @@
             &.active, &:hover, &:focus {
                 background: $COLOR_BRANDBLUE_85;
 
-                .footer-icon {
-                    path {
-                        fill: $COLOR_WHITE;
-                    }
-                    .stroke-only {
-                        stroke: $COLOR_WHITE;
-                        fill: none;
-                    }
-                    .fill-only {
-                        fill: $COLOR_WHITE;
-                        stroke: none;
-                    }
-                    .stroke-fill {
-                        stroke: $COLOR_WHITE;
-                        fill: $COLOR_WHITE;
-                    }
-                }
                 &:after {
                     background: $COLOR_WHITE;
                 }

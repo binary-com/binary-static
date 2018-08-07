@@ -49,6 +49,10 @@ footer {
             }
             &:hover, &:focus {
                 background: $COLOR_BRANDBLUE_5;
+
+                .inline-icon {
+                    @extend .inline-icon.active;
+                }
             }
             &.disabled {
                 cursor: not-allowed;
@@ -57,7 +61,7 @@ footer {
                     @extend .inline-icon.disabled;
                 }
                 &:hover, &:focus {
-                    background: none;
+                    background: none !important;
                 }
             }
         }
