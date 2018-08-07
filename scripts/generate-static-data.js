@@ -583,9 +583,9 @@ const texts = [
     'Please check your email for further instructions.',
     'Revoke MAM',
     'Manager successfully revoked',
-    'You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.',
-    'However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you.',
-    'This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product.',
+    '{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.',
+    '{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you.',
+    '{SPAIN ONLY}This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product.',
 
     // account_transfer
     'Min',
