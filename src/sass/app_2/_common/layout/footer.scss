@@ -53,9 +53,8 @@ footer {
             &.disabled {
                 cursor: not-allowed;
 
-                svg path {
-                    fill: $COLOR_GRAY;
-                    stroke: $COLOR_GRAY;
+                .inline-icon {
+                    @extend .inline-icon.disabled;
                 }
                 &:hover, &:focus {
                     background: none;
