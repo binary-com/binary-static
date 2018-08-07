@@ -60,7 +60,7 @@ footer {
                 .inline-icon {
                     @extend .inline-icon.disabled;
                 }
-                &:hover {
+                &:hover, &:focus {
                     background: none !important;
                 }
             }
