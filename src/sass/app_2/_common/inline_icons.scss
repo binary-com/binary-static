@@ -20,6 +20,8 @@
 */
 
 .inline-icon {
+    @include colorIcon($COLOR_BLUE, none);
+
     &.active {
         @include colorIcon($COLOR_WHITE, $COLOR_BLUE, $COLOR_BLUE, none);
     }

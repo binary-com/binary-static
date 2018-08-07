@@ -10,57 +10,9 @@
 
         .menu-items {
             .menu-links a {
-                .inline-icon.ic-header__trade {
-                    .stroke-fill {
-                        stroke: $COLOR_BRANDBLUE_40;
-                        fill: $COLOR_BLUE;
-                    }
-                }
                 &.active, &:hover {
                     span {
                         color: $COLOR_WHITE;
-
-                        .inline-icon.ic-header {
-                            &__trade {
-                                .stroke-fill {
-                                    fill: $COLOR_WHITE;
-                                    stroke: $COLOR_WHITE;
-                                }
-                            }
-                            &__portfolio, &__statement {
-                                .stroke-only {
-                                    stroke: $COLOR_WHITE;
-                                }
-                                .fill-only {
-                                    fill: $COLOR_WHITE;
-                                }
-                            }
-                            &__portfolio .stroke-only {
-                                &:first-child {
-                                    fill: $COLOR_WHITE;
-                                    stroke: $COLOR_WHITE;
-                                }
-                                &:nth-child(2) {
-                                    stroke: $COLOR_WHITE;
-                                }
-                                &:nth-child(3) {
-                                    stroke: $COLOR_BLUE;
-                                    fill: $COLOR_WHITE;
-                                }
-                                &:last-child {
-                                    stroke: $COLOR_BLUE;
-                                }
-                            }
-                            &__statement {
-                                .no-fill {
-                                    fill: $COLOR_WHITE;
-                                    stroke: $COLOR_BLUE;
-                                }
-                                .fill-only {
-                                    fill: $COLOR_BLUE;
-                                }
-                            }
-                        }
                     }
                     &:after {
                         background-color: $COLOR_WHITE;
@@ -393,26 +345,13 @@
     }
     // common inline icons
     .inline-icon {
-        path {
-            fill: $COLOR_BRANDBLUE_40;
+        @include colorIcon($COLOR_BRANDBLUE_40, none);
+
+        &.active {
+            @include colorIcon($COLOR_BLUE, $COLOR_WHITE, $COLOR_WHITE);
         }
-        .stroke-only {
-            stroke: $COLOR_BRANDBLUE_40;
-            fill: none;
-        }
-        .fill-only {
-            fill: $COLOR_BRANDBLUE_40;
-            stroke: none;
-        }
-        .stroke-fill {
-            stroke: $COLOR_BRANDBLUE_40;
-            fill: $COLOR_BRANDBLUE_40;
-        }
-        .no-stroke {
-            stroke: none;
-        }
-        .no-fill {
-            fill: none;
+        &.disabled {
+            @include colorIcon($COLOR_BRANDBLUE_40, none);
         }
     }
     .acc-switcher-header {
