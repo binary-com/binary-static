@@ -50,6 +50,16 @@ footer {
             &:hover, &:focus {
                 background: $COLOR_BRANDBLUE_5;
             }
+            &.disabled {
+                cursor: not-allowed;
+
+                svg path {
+                    fill: $COLOR_GRAY;
+                }
+                &:hover, &:focus {
+                    background: none;
+                }
+            }
         }
     }
     @media (max-width: 768px) {
@@ -69,19 +79,6 @@ footer {
             position: absolute;
             top: 0;
             left: 0;
-        }
-    }
-}
-
-.ic-portfolio {
-    &.disabled {
-        cursor: not-allowed;
-
-        svg path {
-            fill: $COLOR_GRAY;
-        }
-        &:hover, &:focus {
-            background: none;
         }
     }
 }
