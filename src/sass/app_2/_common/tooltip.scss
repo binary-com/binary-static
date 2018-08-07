@@ -126,3 +126,31 @@ span.tooltip {
         }
     }
 }
+
+// Dark Theme
+.theme-wrapper.dark {
+    span.tooltip {
+        color: $COLOR_WHITE;
+
+        &:before {
+            background: rgba(255, 255, 255, 0.88);
+            box-shadow: 0 2px 8px 0 rgba(20, 20, 20, 0.2);
+            color: $COLOR_BLUE;
+        }
+        &[data-tooltip-pos=right] {
+            &:after {
+                border-right-color: rgba(255, 255, 255, 0.88);
+            }
+        }
+        &[data-tooltip-pos=left] {
+            &:after {
+                border-left-color: rgba(255, 255, 255, 0.88);
+            }
+        }
+        &[data-tooltip-pos=bottom] {
+            &:after {
+                border-bottom-color: rgba(255, 255, 255, 0.88);
+            }
+        }
+    }
+}

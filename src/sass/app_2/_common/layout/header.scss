@@ -102,8 +102,6 @@
                         & > span[title] {
                             font-weight: 500;
                         }
-                    }
-                    &:hover, &.active {
                         .inline-icon.ic-header {
                             &__trade {
                                 g {
@@ -118,7 +116,7 @@
                                     stroke: $COLOR_WHITE;
                                     fill: $COLOR_BLUE;
 
-                                    &:nth-child(2) {
+                                    &.portfolio-fix {
                                         fill: none;
                                         stroke: $COLOR_BLUE;
                                     }
