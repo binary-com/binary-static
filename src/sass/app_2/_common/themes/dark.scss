@@ -334,7 +334,7 @@
             @include colorIcon($COLOR_BLUE, $COLOR_WHITE, $COLOR_WHITE);
         }
         &.disabled {
-            @include colorIcon($COLOR_BRANDBLUE_40, none);
+            @include colorIcon($COLOR_BRANDBLUE_75, none);
         }
     }
     .acc-switcher-header {
