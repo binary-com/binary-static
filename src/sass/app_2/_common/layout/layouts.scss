@@ -4,9 +4,20 @@
         height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
         overflow-y: auto;
         overflow-x: hidden;
+        transition: transform 0.25s ease;
+        will-change: transform;
 
         &--show-portfolio-drawer {
-            margin-right: $PORTFOLIO_DRAWER_WIDTH;
+            transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
+
+            .ciq-chart .cq-top-ui-widgets, .cq-chart-controls {
+                transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
+            }
+            .cq-chart-controls {
+                transition: max-width 0.25 ease;
+                will-change: max-width;
+                max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
+            }
         }
         @media screen and (max-width: 768px) {
             // no footer:
