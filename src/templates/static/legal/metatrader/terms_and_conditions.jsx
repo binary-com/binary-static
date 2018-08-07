@@ -10,9 +10,6 @@ const Li = ({ title, subtitle, sub_list, paragraph }) => (
 
 const TermsAndConditions = () => (
     <div id='mt-tnc'>
-        <h2 data-anchor>{it.L('Terms and Conditions')}</h2>
-        <p><i>{it.L('Version 6. Last modified 2018-07-03.')}</i></p>
-
         <h2 data-anchor>{it.L('A. Introduction and Scope of Agreement')}</h2>
         <ol>
             <li>{it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote Binary (V) Ltd., Binary (C.R.) S.A., Binary (Europe) Ltd or Binary Investments (Europe) Ltd, depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website.', it.website_name)}</li>
