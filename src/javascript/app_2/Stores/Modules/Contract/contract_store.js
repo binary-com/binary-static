@@ -1,21 +1,22 @@
 import {
     action,
     computed,
-    observable,
-    toJS }                    from 'mobx';
-import { setChartBarrier }    from './Helpers/chart_barriers';
+    observable }              from 'mobx';
+import { createChartBarrier } from './Helpers/chart_barriers';
 import { createChartMarkers } from './Helpers/chart_markers';
 import {
     getDetailsExpiry,
     getDetailsInfo }          from './Helpers/details';
 import {
     getDisplayStatus,
+    getEndSpot,
+    getEndSpotTime,
     getFinalPrice,
     getIndicativePrice,
-    isEnded }                 from './Helpers/logic';
+    isEnded,
+    isUserSold }              from './Helpers/logic';
 import BaseStore              from '../../base_store';
 import { WS }                 from '../../../Services';
-import { isEmptyObject }      from '../../../../_common/utility';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;
@@ -47,15 +48,10 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     updateProposal(response) {
-        const contract_info = response.proposal_open_contract;
+        this.contract_info = response.proposal_open_contract;
 
-        if (isEmptyObject(toJS(this.contract_info))) { // set on the first response
-            setChartBarrier(this.smart_chart, contract_info);
-        }
-
-        createChartMarkers(this.smart_chart, contract_info);
-
-        this.contract_info = contract_info;
+        createChartBarrier(this.smart_chart, this.contract_info);
+        createChartMarkers(this.smart_chart, this.contract_info, this);
     }
 
     // ---------------------------
@@ -77,6 +73,16 @@ export default class ContractStore extends BaseStore {
     }
 
     @computed
+    get end_spot() {
+        return getEndSpot(this.contract_info);
+    }
+
+    @computed
+    get end_spot_time() {
+        return getEndSpotTime(this.contract_info);
+    }
+
+    @computed
     get final_price() {
         return getFinalPrice(this.contract_info);
     }
@@ -89,5 +95,10 @@ export default class ContractStore extends BaseStore {
     @computed
     get is_ended() {
         return isEnded(this.contract_info);
+    }
+
+    @computed
+    get is_user_sold() {
+        return isUserSold(this.contract_info);
     }
 };

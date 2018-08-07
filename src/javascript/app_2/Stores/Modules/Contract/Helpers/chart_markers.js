@@ -1,12 +1,12 @@
 import extend                  from 'extend';
 import { MARKER_TYPES_CONFIG } from '../../SmartChart/Constants/markers';
 
-export const createChartMarkers = (SmartChartStore, contract_info) => {
+export const createChartMarkers = (SmartChartStore, contract_info, ContractStore = null) => {
     if (contract_info) {
         Object.keys(marker_creators).forEach((marker_type) => {
             if (marker_type in SmartChartStore.markers) return;
 
-            const marker_config = marker_creators[marker_type](contract_info);
+            const marker_config = marker_creators[marker_type](contract_info, ContractStore);
             if (marker_config) {
                 SmartChartStore.createMarker(marker_config);
             }
@@ -65,15 +65,15 @@ function createMarkerSpotEntry(contract_info) {
     );
 }
 
-function createMarkerSpotExit(contract_info) {
-    if (!contract_info.exit_spot_time) return false;
+function createMarkerSpotExit(contract_info, ContractStore) {
+    if (!ContractStore.end_spot_time) return false;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_EXIT.type,
-        contract_info.exit_spot_time,
-        contract_info.exit_tick,
+        ContractStore.end_spot_time,
+        ContractStore.end_spot,
         {
-            spot_value: `${contract_info.exit_tick}`,
+            spot_value: `${ContractStore.end_spot}`,
             status    : `${contract_info.profit > 0 ? 'won' : 'lost' }`,
         },
     );
