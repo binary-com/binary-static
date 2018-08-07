@@ -36,6 +36,7 @@ const Footer = ({
 
 
 Footer.propTypes = {
+    is_logged_in              : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
     is_portfolio_drawer_on    : PropTypes.bool,
     is_settings_dialog_on     : PropTypes.bool,

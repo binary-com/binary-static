@@ -14,7 +14,9 @@ const IconStatement = ({ className, stroke_color = '#2A3052', fill_color = 'none
 );
 
 IconStatement.propTypes = {
-    className: PropTypes.string,
+    stroke_color: PropTypes.string,
+    fill_color  : PropTypes.string,
+    className   : PropTypes.string,
 };
 
 export { IconStatement };

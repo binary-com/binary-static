@@ -16,7 +16,9 @@ const IconPortfolio = ({ className, stroke_color = '#2A3052', fill_color = 'none
 );
 
 IconPortfolio.propTypes = {
-    className: PropTypes.string,
+    stroke_color: PropTypes.string,
+    fill_color  : PropTypes.string,
+    className   : PropTypes.string,
 };
 
 export { IconPortfolio };

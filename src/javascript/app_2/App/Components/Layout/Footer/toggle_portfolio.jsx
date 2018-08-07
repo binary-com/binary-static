@@ -24,6 +24,7 @@ const TogglePortfolio = ({
 };
 
 TogglePortfolio.propTypes = {
+    is_disabled           : PropTypes.bool,
     is_portfolio_drawer_on: PropTypes.bool,
     togglePortfolioDrawer : PropTypes.func,
 };
