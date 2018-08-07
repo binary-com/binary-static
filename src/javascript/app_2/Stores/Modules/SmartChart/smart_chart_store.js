@@ -17,7 +17,15 @@ export default class SmartChartStore extends BaseStore {
     @observable barriers = observable.object({});
     @observable markers  = observable.object({});
 
+    @observable is_title_enabled = true;
+
     is_contract_mode = false;
+
+    @action.bound
+    setContractMode(is_contract_mode) {
+        this.is_contract_mode = is_contract_mode;
+        this.is_title_enabled = !is_contract_mode;
+    }
 
     @action.bound
     onUnmount = () => {

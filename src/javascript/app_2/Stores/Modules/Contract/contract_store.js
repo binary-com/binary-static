@@ -28,7 +28,7 @@ export default class ContractStore extends BaseStore {
     onMount(contract_id) {
         this.contract_id = contract_id;
         this.smart_chart = this.root_store.modules.smart_chart;
-        this.smart_chart.is_contract_mode = true;
+        this.smart_chart.setContractMode(true);
 
         if (contract_id) {
             WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, true);
@@ -42,7 +42,7 @@ export default class ContractStore extends BaseStore {
         this.contract_info = {};
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
-        this.smart_chart.is_contract_mode = false;
+        this.smart_chart.setContractMode(false);
     };
 
     @action.bound

@@ -28,7 +28,7 @@ function createMarkerEndTime(contract_info) {
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_END.type,
-        epochToMarkerDate(contract_info.date_expiry),
+        contract_info.date_expiry,
     );
 }
 
@@ -38,7 +38,7 @@ function createMarkerPurchaseTime(contract_info) {
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_PURCHASE.type,
-        epochToMarkerDate(contract_info.purchase_time),
+        contract_info.purchase_time,
     );
 }
 
@@ -47,7 +47,7 @@ function createMarkerStartTime(contract_info) {
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.LINE_START.type,
-        epochToMarkerDate(contract_info.date_start),
+        contract_info.date_start,
     );
 }
 
@@ -57,7 +57,7 @@ function createMarkerSpotEntry(contract_info) {
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_ENTRY.type,
-        epochToMarkerDate(contract_info.entry_tick_time),
+        contract_info.entry_tick_time,
         contract_info.entry_tick,
         {
             spot_value: `${contract_info.entry_tick}`,
@@ -70,7 +70,7 @@ function createMarkerSpotExit(contract_info) {
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_EXIT.type,
-        epochToMarkerDate(contract_info.exit_spot_time),
+        contract_info.exit_spot_time,
         contract_info.exit_tick,
         {
             spot_value: `${contract_info.exit_tick}`,
@@ -83,12 +83,9 @@ function createMarkerSpotExit(contract_info) {
 const createMarkerConfig = (marker_type, x, y, content_config) => (
     extend(true, {}, MARKER_TYPES_CONFIG[marker_type], {
         marker_config: {
-            x,
+            x: +x,
             y,
         },
         content_config,
     })
 );
-
-// TODO: remove this function once SmartCharts accepts epoch instead of Date
-const epochToMarkerDate = (epoch) => new Date((epoch + new Date().getTimezoneOffset() * 60) * 1000);

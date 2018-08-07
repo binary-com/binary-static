@@ -19,8 +19,8 @@ class Trade extends React.Component {
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container notice-msg'>
                     <SmartChart
-                        initial_symbol={this.props.initial_symbol}
                         onSymbolChange={this.props.onSymbolChange}
+                        symbol={this.props.symbol}
                     />
                     <Test />
                 </div>
@@ -35,22 +35,22 @@ class Trade extends React.Component {
 }
 
 Trade.propTypes = {
-    initial_symbol   : PropTypes.string,
     is_mobile        : PropTypes.bool,
     is_trade_enabled : PropTypes.bool,
     onSymbolChange   : PropTypes.func,
     onClickNewTrade  : PropTypes.func,
     purchase_info    : PropTypes.object,
+    symbol           : PropTypes.string,
     updateQueryString: PropTypes.func,
 };
 
 export default connect(
     ({ modules, ui }) => ({
-        initial_symbol   : modules.trade.symbol,
         is_trade_enabled : modules.trade.is_trade_enabled,
         onClickNewTrade  : modules.trade.onClickNewTrade,
         onSymbolChange   : modules.trade.onChange,
         purchase_info    : modules.trade.purchase_info,
+        symbol           : modules.trade.symbol,
         updateQueryString: modules.trade.updateQueryString,
         is_mobile        : ui.is_mobile,
     })

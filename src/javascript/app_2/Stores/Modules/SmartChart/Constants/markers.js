@@ -6,8 +6,8 @@ import IconEntrySpot from '../../../../Assets/Contract/icon_entry_spot.jsx';
 import { localize }  from '../../../../../_common/localize';
 
 const MARKER_X_POSITIONER = {
-    DATE: 'date',
-    NONE: 'none',
+    EPOCH: 'epoch',
+    NONE : 'none',
 };
 
 const MARKER_Y_POSITIONER = {
@@ -18,13 +18,13 @@ const MARKER_Y_POSITIONER = {
 const MARKER_CONTENT_TYPES = {
     LINE: {
         ContentComponent: MarkerLine,
-        xPositioner     : MARKER_X_POSITIONER.DATE,
+        xPositioner     : MARKER_X_POSITIONER.EPOCH,
         yPositioner     : MARKER_Y_POSITIONER.NONE,
         className       : 'chart-marker-line',
     },
     SPOT: {
         ContentComponent: MarkerSpot,
-        xPositioner     : MARKER_X_POSITIONER.DATE,
+        xPositioner     : MARKER_X_POSITIONER.EPOCH,
         yPositioner     : MARKER_Y_POSITIONER.VALUE,
     },
 };
