@@ -11,6 +11,7 @@ const Barrier = ({
     barrier_count,
     is_minimized,
     onChange,
+    validation_errors,
 }) =>  {
     if (is_minimized) {
         if (barrier_count !== 2) {
@@ -44,6 +45,7 @@ const Barrier = ({
                 name='barrier_1'
                 value={barrier_1}
                 onChange={onChange}
+                error_messages = {validation_errors.barrier_1 || []}
             />
 
             {barrier_count === 2 &&
@@ -53,6 +55,7 @@ const Barrier = ({
                     value={barrier_2}
                     onChange={onChange}
                     is_currency
+                    error_messages = {validation_errors.barrier_2 || []}
                 />
             }
         </Fieldset>
@@ -60,11 +63,12 @@ const Barrier = ({
 };
 
 Barrier.propTypes = {
-    barrier_1    : PropTypes.string,
-    barrier_2    : PropTypes.string,
-    barrier_count: PropTypes.number,
-    is_minimized : PropTypes.bool,
-    onChange     : PropTypes.func,
+    barrier_1        : PropTypes.string,
+    barrier_2        : PropTypes.string,
+    barrier_count    : PropTypes.number,
+    is_minimized     : PropTypes.bool,
+    onChange         : PropTypes.func,
+    validation_errors: PropTypes.object,
 };
 
 export default observer(Barrier);

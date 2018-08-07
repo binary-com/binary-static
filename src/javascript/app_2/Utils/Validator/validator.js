@@ -52,6 +52,10 @@ class Validator {
                     return; 
                 }
 
+                if (this.input[attribute] === '' && rule.name !== 'req') {
+                    return;
+                }
+
                 const is_valid = ruleObject.validator(this.input[attribute], ruleObject.options);
 
                 if (!is_valid) {
@@ -78,15 +82,17 @@ class Validator {
      * @return {object}
      */
     static getRuleObject(rule) {
+        const rule_object = {};
         if (typeof rule === 'string') {
-            return { name: rule };
+            rule_object.name = rule;
+        } else {
+            rule_object.name = rule[0];
         }
 
-        return {
-            name     : rule[0],
-            validator: rule[0] === 'custom' ? rule[1].func : pre_build_dvrs[rule[0]].func,
-            options  : rule[1] || {},
-        };
+        rule_object.validator = rule_object.name === 'custom' ? rule[1].func : pre_build_dvrs[rule_object.name].func;
+        rule_object.options   = rule[1] || {};
+
+        return rule_object;
     }
 }
 

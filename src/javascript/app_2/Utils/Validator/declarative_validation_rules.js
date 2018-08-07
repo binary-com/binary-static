@@ -35,6 +35,7 @@ const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
 const validRegular      = (value, options) => options.regex.test(value);
 const validEmailToken   = value => value.trim().length === 8;
 const validTaxID        = value => /^[a-zA-Z0-9]*[\w-]*$/.test(value);
+const validBarrier      = value => /^[+-]\d+\.?\d*$/.test(value);
 
 const validCompare  = (value, options) => value === $(options.to).val();
 const validNotEqual = (value, options) => value !== $(options.to).val();
@@ -88,21 +89,22 @@ const isMoreThanMax = (value, options) =>
     (options.type === 'float' ? +value > +options.max : compareBigUnsignedInt(value, options.max) === 1);
 
 export const pre_build_dvrs = {
-    req          : { func: validRequired,     message: '' },
-    email        : { func: validEmail,        message: 'Invalid email address.' },
-    signup_token : { func: validEmailToken,   message: 'The length of token should be 8.'},
-    password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
-    general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
     address      : { func: validAddress,      message: 'Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /' },
-    letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
-    postcode     : { func: validPostCode,     message: 'Only letters, numbers, space, and hyphen are allowed.' },
-    phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
+    barrier      : { func: validBarrier,      message: 'Only numbers and these special characters are allowed: + - .' },
     compare      : { func: validCompare,      message: 'The two passwords that you entered do not match.' },
-    not_equal    : { func: validNotEqual,     message: '[_1] and [_2] cannot be the same.' },
-    min          : { func: validMin,          message: 'Minimum of [_1] characters required.' },
+    email        : { func: validEmail,        message: 'Invalid email address.' },
+    general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
     length       : { func: validLength,       message: 'You should enter [_1] characters.' },
+    letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
+    min          : { func: validMin,          message: 'Minimum of [_1] characters required.' },
+    not_equal    : { func: validNotEqual,     message: '[_1] and [_2] cannot be the same.' },
     number       : { func: validNumber,       message: '' },
+    password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
+    phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
+    postcode     : { func: validPostCode,     message: 'Only letters, numbers, space, and hyphen are allowed.' },
     regular      : { func: validRegular,      message: '' },
+    req          : { func: validRequired,     message: '' },
+    signup_token : { func: validEmailToken,   message: 'The length of token should be 8.'},
     tax_id       : { func: validTaxID,        message: 'Should start with letter or number, and may contain hyphen and underscore.' },
 };
 

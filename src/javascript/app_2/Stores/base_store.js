@@ -1,7 +1,10 @@
 import {
     action,
+    intercept,
+    observable,
     reaction,
     toJS }               from 'mobx';
+import Validator         from '../Utils/Validator';
 import { isEmptyObject } from '../../_common/utility';
 
 /**
@@ -10,6 +13,12 @@ import { isEmptyObject } from '../../_common/utility';
  *  2. Saving the store's snapshot in local/session storage and keeping them in sync.
  */
 export default class BaseStore {
+
+    @observable
+    validation_errors = {};
+
+    @observable
+    validation_rules = {};
 
     /**
      * An enum object to define LOCAL_STORAGE and SESSION_STORAGE
@@ -22,15 +31,19 @@ export default class BaseStore {
     /**
      * Constructor of the base class that gets properties' name of child which should be saved in storages
      *
-     * @param {Object}   root_store - An object that contains the root store of the app.
-     * @param {String[]} local_storage_properties - A list of properties' names that should be kept in localStorage.
-     * @param {String[]} session_storage_properties - A list of properties' names that should be kept in sessionStorage.
+     * @param {Object} options - An object that contains the following properties:
+     *     @property {Object}   root_store - An object that contains the root store of the app.
+     *     @property {String[]} local_storage_properties - A list of properties' names that should be kept in localStorage.
+     *     @property {String[]} session_storage_properties - A list of properties' names that should be kept in sessionStorage.
+     *     @property {Object}   validation_rules - An object that contains the validation rules for each property of the store.
      */
-    constructor(
-        root_store = null,
-        local_storage_properties = null,
-        session_storage_properties = null
-    ) {
+    constructor(options = {}) {
+        const {
+        root_store,
+        local_storage_properties,
+        session_storage_properties,
+        validation_rules,
+        } = options;
 
         Object.defineProperty(this, 'root_store', {
             enumerable: false,
@@ -48,6 +61,7 @@ export default class BaseStore {
         this.root_store = root_store;
         this.local_storage_properties   = local_storage_properties || [];
         this.session_storage_properties = session_storage_properties || [];
+        this.setValidationRules(validation_rules);
 
         this.setupReactionForLocalStorage();
         this.setupReactionForSessionStorage();
@@ -136,4 +150,65 @@ export default class BaseStore {
 
         Object.keys(snapshot).forEach((k) => this[k] = snapshot[k]);
     }
+    
+    /**
+     * Sets validation error messages for an observable property of the store
+     *
+     * @param {String} propertyName - The observable property's name
+     * @param {String} messages - An array of strings that contains validation error messages for the particular property.
+     *
+     */
+    @action
+    setValidationErrorMessages( propertyName, messages) {
+        this.validation_errors[propertyName] = messages;
+    }
+
+    /**
+     * Sets validation rules
+     *
+     * @param {object} rules
+     *
+     */
+    @action
+    setValidationRules(rules = {}){
+        Object.keys(rules).forEach(key => {
+            this.addRule(key, rules[key]);
+        });
+    }
+
+    /**
+     * Adds rules to the particular property
+     *
+     * @param {String} property
+     * @param {String} rules
+     *
+     */
+    @action
+    addRule(property, rules){
+        this.validation_rules[property] = rules;
+
+        intercept(this, property, change => {
+            this.validateProperty(property, change.newValue);
+            return change;
+        });
+    }
+
+    /**
+     * Validates a particular property of the store
+     *
+     * @param {String} property - The name of the property in the store
+     * @param {object} value    - The value of the property, it can be undefined.
+     *
+     */
+    @action
+    validateProperty(property, value) {
+        const validator = new Validator(
+            { [property]: value !== undefined ? value : this[property] },
+            { [property]: this.validation_rules[property] }
+        );
+
+        validator.isPassed();
+        this.setValidationErrorMessages(property, validator.errors.get(property));
+    }
 }
+

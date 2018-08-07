@@ -131,7 +131,8 @@ const ContractType = (() => {
         const obj_barrier       = getBarriers(contract_type, contract_expiry_type);
         const obj_duration_unit = getDurationUnit(duration_unit, contract_type, obj_start_type.contract_start_type);
 
-        const obj_duration_units_list = getDurationUnitsList(contract_type, obj_start_type.contract_start_type);
+        const obj_duration_units_list    = getDurationUnitsList(contract_type, obj_start_type.contract_start_type);
+        const obj_duration_units_min_max = getDurationUnitsMinMax(contract_type, obj_start_type.contract_start_type);
 
         return {
             ...form_components,
@@ -142,6 +143,7 @@ const ContractType = (() => {
             ...obj_barrier,
             ...obj_duration_unit,
             ...obj_duration_units_list,
+            ...obj_duration_units_min_max,
         };
     };
 
@@ -157,6 +159,10 @@ const ContractType = (() => {
 
     const getDurationUnitsList = (contract_type, contract_start_type) => ({
         duration_units_list: getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [],
+    });
+
+    const getDurationUnitsMinMax = (contract_type, contract_start_type) => ({
+        duration_units_min_max: getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type]) || [],
     });
 
     const getDurationUnit = (duration_unit, contract_type, contract_start_type) => {
