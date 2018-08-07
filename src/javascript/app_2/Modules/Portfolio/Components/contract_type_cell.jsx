@@ -9,7 +9,9 @@ const ContractTypeCell = ({ type }) => (
         <div className='type-wrapper'>
             <IconTradeType type={type.toLowerCase()} className='type' />
         </div>
-        {localize(contract_type_display[type] || '')}
+        <span>
+            {localize(contract_type_display[type] || '')}
+        </span>
     </div>
 );
 

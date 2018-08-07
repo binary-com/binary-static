@@ -47,7 +47,7 @@ footer {
                 vertical-align: middle;
                 display: inline-block;
             }
-            &:hover, &:focus {
+            &:hover {
                 background: $COLOR_BRANDBLUE_5;
 
                 .inline-icon {
@@ -60,7 +60,7 @@ footer {
                 .inline-icon {
                     @extend .inline-icon.disabled;
                 }
-                &:hover, &:focus {
+                &:hover {
                     background: none !important;
                 }
             }
