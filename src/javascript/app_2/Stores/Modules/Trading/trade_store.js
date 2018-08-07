@@ -8,6 +8,7 @@ import { processTradeParams }             from './Helpers/process';
 import {
     createProposalRequests,
     getProposalInfo }                     from './Helpers/proposal';
+import { pickDefaultSymbol }              from './Helpers/symbol';
 import BaseStore                          from '../../base_store';
 import { WS }                             from '../../../Services';
 import URLHelper                          from '../../../Utils/URL';
@@ -73,7 +74,14 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    init() {
+    async init() {
+        this.smart_chart = this.root_store.modules.smart_chart;
+
+        if (!this.symbol) {
+            const active_symbols = await WS.activeSymbols();
+            await this.processNewValuesAsync({ symbol: pickDefaultSymbol(active_symbols.active_symbols) });
+        }
+
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
                 this.processNewValuesAsync({
@@ -82,7 +90,6 @@ export default class TradeStore extends BaseStore {
                 });
             }));
         }
-        this.smart_chart = this.root_store.modules.smart_chart;
     }
 
     @action.bound
