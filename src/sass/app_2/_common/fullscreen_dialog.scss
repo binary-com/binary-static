@@ -1,4 +1,3 @@
-/* stylelint-disable color-no-hex */
 $animation-duration: 0.2s;
 
 $header-height: 3.2rem;
@@ -21,7 +20,7 @@ $content-index: 1;
     opacity: 0;
     pointer-events: none;
     transition: opacity $animation-duration;
-    background: #fff;
+    background: $COLOR_WHITE;
     // transform here would break fixed header
 
     &--open {
@@ -41,7 +40,7 @@ $content-index: 1;
         padding-top: $shadow-cover-height;
         padding-bottom: 70px; // ios bottom bar fix
         z-index: $content-index;
-        background: #fff;
+        background: $COLOR_WHITE;
         transform: scale(0);
         transition: all $animation-duration ease-out;
     }
@@ -57,7 +56,7 @@ $content-index: 1;
         padding: 1rem;
         height: $header-height;
         z-index: $header-index;
-        background: #fff;
+        background: $COLOR_WHITE;
         transform: translateY(-100%);
         transition: all $animation-duration ease-out;
         transition-delay: $animation-duration;
@@ -68,7 +67,7 @@ $content-index: 1;
         width: 100%;
         height: $shadow-cover-height;
         z-index: $shadow-cover-index;
-        background-color: #fff;
+        background-color: $COLOR_WHITE;
     }
     &__header-shadow {
         position: fixed;
@@ -81,11 +80,12 @@ $content-index: 1;
     &__title {
         font-size: 1.3rem;
         font-weight: 600;
-        color: #333;
+        color: $COLOR_LIGHT_BLACK;
         margin: 0;
     }
-    &__close-btn img {
-        display: block;
+    &__close-btn .ic-close {
+        width: 24px;
+        height: 24px;
     }
     fieldset {
         border: none;
@@ -93,4 +93,20 @@ $content-index: 1;
         margin-left: 0.5rem;
     }
 }
-/* stylelint-enable color-no-hex */
+
+// Dark Theme
+.theme-wrapper.dark {
+    .fullscreen-dialog {
+        background: $COLOR_BLUE;
+
+        &__header, &__header-shadow-cover, &__content {
+            background: $COLOR_BLUE;
+        }
+        &__header-shadow-cover {
+            box-shadow: 0 1px 0px $COLOR_BLUE;
+        }
+        &__title {
+            color: $COLOR_BRANDBLUE_40;
+        }
+    }
+}

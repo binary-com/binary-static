@@ -9,13 +9,14 @@
     font-size: 14px;
     box-sizing: border-box;
     width: 280px;
+
     @media (max-width: 1024px) {
         left: unset;
         right: 0;
     }
 
     .calendar-input {
-        margin: 0 !important;
+        margin: 0;
         border: none;
         outline: none;
         width: 100%;
@@ -32,21 +33,21 @@
     }
     .calendar-footer {
         font-size: 14px;
-        font-weight: 300;
-        border-top: 1px solid #e8e8e8; /* stylelint-disable-line color-no-hex */
+        border-top: 1px solid $COLOR_GRAY;
         display: grid;
         align-items: center;
         line-height: 38px;
         padding: 0 12px;
-        color: rgba(0, 0, 0, 0.65);
+        color: $COLOR_LIGHT_BLACK;
+        font-weight: 500;
 
         .calendar-footer-extra + .calendar-footer-btn {
-            border-top: 1px solid #e8e8e8; /* stylelint-disable-line color-no-hex */
+            border-top: 1px solid $COLOR_GRAY;
             margin: 0 -12px;
         }
         .calendar-footer-btn {
             cursor: pointer;
-            color: #4c5794; /* stylelint-disable-line color-no-hex */
+            color: $COLOR_BLUE;
             text-align: center;
         }
     }
@@ -55,15 +56,16 @@
         justify-content: center;
         height: 32px;
         line-height: 32px;
-        border-top: 1px solid #e8e8e8; /* stylelint-disable-line color-no-hex */
-        border-bottom: 1px solid #e8e8e8; /* stylelint-disable-line color-no-hex */
+        border-top: 1px solid $COLOR_GRAY;
+        border-bottom: 1px solid $COLOR_GRAY;
+        font-weight: 500;
 
         .calendar-select-month-btn, .calendar-select-year-btn, .calendar-select-decade-btn, .calendar-select-century-btn {
             padding: 0 4px;
             cursor: pointer;
 
             &:hover {
-                color: #4c5794; /* stylelint-disable-line color-no-hex */
+                color: $COLOR_BLUE;
             }
             &.calendar-select-century-btn {
                 cursor: default;
@@ -78,7 +80,7 @@
             cursor: pointer;
 
             &:hover {
-                color: #4c5794; /* stylelint-disable-line color-no-hex */
+                color: $COLOR_BLUE;
             }
             &.calendar-prev-year-btn {
                 left: 7%;
@@ -130,16 +132,16 @@
             border: 1px solid transparent;
             border-radius: $BORDER_RADIUS;
             padding: 0;
-            color: rgba(0, 0, 0, 0.65);
+            color: $COLOR_LIGHT_BLACK;
             text-align: center;
             background: transparent;
-            -webkit-transition: all 0.3s;
             transition: all 0.3s;
             font-size: 14px;
             line-height: 24px;
 
             &.calendar-date {
                 width: 24px;
+                color: $COLOR_BLUE;
             }
             &.calendar-month, &.calendar-year {
                 padding: 0 8px;
@@ -154,25 +156,34 @@
                 padding: 6px 0;
                 text-align: center;
                 align-self: center;
-                color: rgba(0, 0, 0, 0.65);
+                font-weight: 500;
+                color: $COLOR_LIGHT_BLACK;
             }
             &.today {
-                background: $COLOR_WHITE;
+                font-weight: 400;
                 border: 1px solid $COLOR_BLUE;
+
+                &.disabled {
+                    color: $COLOR_GRAY;
+                    border: 1px solid $COLOR_GRAY;
+                }
             }
             &.active {
                 background: $COLOR_BLUE;
                 color: $COLOR_WHITE;
+                font-weight: 300;
+
+                &.disabled {
+                    color: $COLOR_GRAY;
+                    border: 1px solid $COLOR_GRAY;
+                }
             }
             &.disabled {
-                background: $COLOR_WHITE !important;
-                color: $COLOR_GRAY !important;
+                color: $COLOR_GRAY;
                 cursor: default;
             }
-            &:hover {
-                &:not(.disabled) {
-                    cursor: pointer;
-                }
+            &:hover:not(.disabled) {
+                cursor: pointer;
                 background: $COLOR_GRAY;
             }
         }
@@ -197,7 +208,7 @@ div.datepicker-container {
         border: 1px solid $COLOR_GRAY;
         border-radius: $BORDER_RADIUS;
         font-size: 14px;
-        line-height: 32px;
+        line-height: 100%;
         vertical-align: middle;
         padding: 4px 11px;
         box-sizing: border-box;
@@ -219,7 +230,7 @@ div.datepicker-container {
             display: block;
             position: absolute;
             top: 8px;
-            right: 8px;
+            right: 6px;
 
             & .arrow-path {
                 fill: $COLOR_GRAY;
@@ -298,12 +309,12 @@ div.datepicker-container {
         }
     }
     .calendar {
-        background: $COLOR_BLUE;
+        background: $COLOR_BRANDBLUE_95;
         border: 1px solid $COLOR_BRANDBLUE_85;
 
-        input {
+        input.calendar-input {
             border-radius: 0;
-            background: $COLOR_BLUE;
+            background: $COLOR_BRANDBLUE_95;
             border-color: $COLOR_BRANDBLUE_85;
             color: $COLOR_WHITE;
 
@@ -313,7 +324,7 @@ div.datepicker-container {
         }
         .calendar-header, .calendar-footer {
             border-color: $COLOR_BRANDBLUE_85;
-            color: $COLOR_BRANDBLUE_40;
+            color: $COLOR_WHITE;
 
             .calendar-prev-year-btn, .calendar-prev-month-btn, .calendar-next-month-btn, .calendar-next-year-btn {
                 color: $COLOR_BRANDBLUE_40;
@@ -322,46 +333,62 @@ div.datepicker-container {
                     color: $COLOR_WHITE;
                 }
             }
+            span a {
+                color: $COLOR_WHITE;
+            }
         }
         .calendar-header {
+            background: $COLOR_BLUE;
+
             span:hover {
                 color: $COLOR_BRANDBLUE_40;
             }
         }
         span.calendar-date-header {
-            color: $COLOR_BRANDBLUE_40;
+            color: $COLOR_WHITE;
         }
-        span.calendar-date {
-            background: $COLOR_BLUE;
+        span.calendar-date, span.calendar-month, span.calendar-year {
             color: $COLOR_BRANDBLUE_40;
+            background: $COLOR_BRANDBLUE_95;
 
             &.active {
                 font-weight: 600;
                 color: $COLOR_BLUE;
-                background: $COLOR_WHITE !important;
+                background: $COLOR_WHITE;
             }
             &:hover:not(.active) {
-                background: $COLOR_BRANDBLUE_85 !important;
+                background: $COLOR_BRANDBLUE_85;
             }
             &.disabled {
-                background: $COLOR_BLUE !important;
-                color: $COLOR_BRANDBLUE_75 !important;
+                color: $COLOR_BRANDBLUE_75;
                 pointer-events: none;
             }
             &.today {
-                background: $COLOR_BLUE;
                 border: 1px solid $COLOR_WHITE;
-                color: $COLOR_WHITE !important;
+                color: $COLOR_WHITE;
 
                 &.disabled {
-                    background: $COLOR_BLUE !important;
+                    background: $COLOR_BLUE;
                     border: 1px solid $COLOR_BRANDBLUE_75;
-                    color: $COLOR_BRANDBLUE_75 !important;
+                    color: $COLOR_BRANDBLUE_75;
+                }
+                &.active {
+                    color: $COLOR_BLUE;
                 }
             }
         }
         div.calendar-footer span.calendar-footer-btn {
             color: $COLOR_BRANDBLUE_40;
+        }
+    }
+    .datepicker-container {
+        .datepicker-native-overlay {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
         }
     }
 }

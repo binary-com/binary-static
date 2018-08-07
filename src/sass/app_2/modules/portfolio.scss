@@ -64,9 +64,12 @@
         align-items: center;
 
         &__icon {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 1rem;
+            margin: 0 auto 2rem;
+            transform: scale(3, 3);
+
+            .scale-fix {
+                transform: scaleX(0.96);
+            }
         }
         &__title {
             font-size: 16px;

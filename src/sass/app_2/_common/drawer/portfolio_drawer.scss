@@ -4,7 +4,7 @@ $header-height: 40px;
     width: $PORTFOLIO_DRAWER_WIDTH;
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
     position: fixed;
-    z-index: 50;
+    z-index: 2;
     top: $HEADER_HEIGHT;
     right: 0;
     transform: translateX(100%);
@@ -55,7 +55,7 @@ $header-height: 40px;
         box-sizing: border-box;
         padding: 8px;
         display: grid;
-        grid-template-columns: 3fr 2fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
         border: 1px solid $COLOR_GRAY;
         border-radius: 2px;
@@ -78,6 +78,9 @@ $header-height: 40px;
 
                 .type-wrapper {
                     margin: 0 4px 4px 0;
+                }
+                span {
+                    width: 30px;
                 }
             }
         }
@@ -121,7 +124,7 @@ $header-height: 40px;
                 color: $COLOR_BLACK;
 
                 &:after {
-                    background-image: url('../images/app_2/portfolio/ic_price_stable.svg');
+                    background-image: url('../images/app_2/portfolio/ic_price_stable_light.svg');
                 }
             }
             &--no-resale {
@@ -182,6 +185,10 @@ $header-height: 40px;
                 }
                 &--price-stable {
                     color: $COLOR_WHITE;
+
+                    &:after {
+                        background-image: url('../images/app_2/portfolio/ic_price_stable_dark.svg');
+                    }
                 }
             }
         }

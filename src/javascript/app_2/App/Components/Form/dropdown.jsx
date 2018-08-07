@@ -68,16 +68,17 @@ class Dropdown extends React.Component {
     }
 
     render() {
-        if (this.props.is_nativepicker) {
-            return (
-                <NativeSelect
-                    name={this.props.name}
-                    value={this.props.value}
-                    list={this.props.list}
-                    onChange={this.props.onChange}
-                />
-            );
-        }
+        // TODO: Fix list not being populated in native picker dropdown before re-enabling
+        // if (this.props.is_nativepicker) {
+        //     return (
+        //         <NativeSelect
+        //             name={this.props.name}
+        //             value={this.props.value}
+        //             list={this.props.list}
+        //             onChange={this.props.onChange}
+        //         />
+        //     );
+        // }
         return (
             <div
                 ref={this.setWrapperRef}

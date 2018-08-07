@@ -10,33 +10,56 @@
 
         .menu-items {
             .menu-links a {
-                &.active, &:hover {
+                .inline-icon.ic-header__trade {
+                    .stroke-fill {
+                        stroke: $COLOR_BRANDBLUE_40;
+                        fill: $COLOR_BLUE;
+                    }
+                }
+                &.active {
                     span {
                         color: $COLOR_WHITE;
 
-                        .header-icon {
-                            path {
-                                fill: $COLOR_WHITE;
+                        .inline-icon.ic-header {
+                            &__trade {
+                                .stroke-fill {
+                                    fill: $COLOR_WHITE;
+                                    stroke: $COLOR_WHITE;
+                                }
                             }
-                            .stroke-only {
-                                stroke: $COLOR_WHITE;
-                                fill: none;
+                            &__portfolio, &__statement {
+                                .stroke-only {
+                                    stroke: $COLOR_WHITE;
+                                }
+                                .fill-only {
+                                    fill: $COLOR_WHITE;
+                                }
                             }
-                            .fill-only {
-                                fill: $COLOR_WHITE;
-                                stroke: none;
+                            &__portfolio .stroke-only {
+                                &:first-child {
+                                    fill: $COLOR_WHITE;
+                                    stroke: $COLOR_WHITE;
+                                }
+                                &:nth-child(2) {
+                                    stroke: $COLOR_WHITE;
+                                }
+                                &:nth-child(3) {
+                                    stroke: $COLOR_BLUE;
+                                    fill: $COLOR_WHITE;
+                                }
+                                &:last-child {
+                                    stroke: $COLOR_BLUE;
+                                }
                             }
-                            .stroke-fill {
-                                stroke: $COLOR_WHITE;
-                                fill: $COLOR_WHITE;
+                            &__statement {
+                                .no-fill {
+                                    fill: $COLOR_WHITE;
+                                    stroke: $COLOR_BLUE;
+                                }
+                                .fill-only {
+                                    fill: $COLOR_BLUE;
+                                }
                             }
-                            .no-stroke {
-                                stroke: $COLOR_BLUE;
-                            }
-                            .no-fill {
-                                fill: $COLOR_BLUE;
-                            }
-
                         }
                     }
                     &:after {
@@ -45,10 +68,6 @@
                 }
                 &:hover {
                     background-color: $COLOR_BRANDBLUE_85;
-
-                    span {
-                        color: $COLOR_WHITE;
-                    }
                 }
                 span {
                     color: $COLOR_BRANDBLUE_40;
@@ -123,6 +142,16 @@
                         color: $COLOR_WHITE;
                         font-weight: 500;
                     }
+                }
+                div.purchase-result-wrapper {
+                    color: $COLOR_WHITE;
+
+                    span.label {
+                        color: $COLOR_BRANDBLUE_40;
+                    }
+                }
+                div.purchase-login-wrapper {
+                    color: $COLOR_WHITE;
                 }
             }
             fieldset.purchase-option div.box .left-column .type-wrapper {
@@ -271,6 +300,44 @@
                 }
             }
         }
+        .chart-container {
+            cq-context { // stylelint-disable-line selector-type-no-unknown
+
+                div.cq-chart-controls {
+                    border: none;
+                    border-right: 1px solid $COLOR_BRANDBLUE_85;
+                    border-top: 1px solid $COLOR_BRANDBLUE_85;
+
+                    @media (max-width: 768px) {
+                        border: 1px solid $COLOR_BRANDBLUE_85;
+                    }
+                }
+            }
+            .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
+                svg {
+                    g path {
+                        fill: $COLOR_BRANDBLUE_40;
+                    }
+                }
+            }
+        }
+        .mobile-widget {
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .fieldset-minimized {
+                color: $COLOR_BRANDBLUE_40;
+
+                &__basis {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        .error-container p {
+            color: $COLOR_BRANDBLUE_40;
+        }
     }
     footer {
         border-color: $COLOR_BRANDBLUE_85;
@@ -344,10 +411,10 @@
             fill: $COLOR_BRANDBLUE_40;
         }
         .no-stroke {
-            stroke: $COLOR_BLUE;
+            stroke: none;
         }
         .no-fill {
-            fill: $COLOR_BLUE;
+            fill: none;
         }
     }
     .acc-switcher-header {
