@@ -21,6 +21,16 @@ const MetaTraderConfig = (() => {
         },
     };
 
+    // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
+    const mt_financial_companies = {
+        financial: {
+            standard: { mt5_account_type: 'standard', max_leverage: 30, title: 'Standard' },
+        },
+        gaming: {
+            volatility: mt_companies.gaming.volatility,
+        },
+    };
+
     const accounts_info = {};
 
     let $messages;
@@ -48,12 +58,17 @@ const MetaTraderConfig = (() => {
                 BinarySocket.wait('get_account_status').then((response_get_account_status) => {
                     const $message = $messages.find('#msg_real_financial').clone();
                     let is_ok = true;
-                    if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.get_account_status.status)) {
-                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                    if (State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
+                        $message.find('.maltainvest').setVisibility(1);
                         is_ok = false;
-                    }
-                    if (is_ok && !isAuthenticated()) {
-                        $new_account_financial_authenticate_msg.setVisibility(1);
+                    } else {
+                        if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.get_account_status.status)) {
+                            $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                            is_ok = false;
+                        }
+                        if (is_ok && !isAuthenticated()) {
+                            $new_account_financial_authenticate_msg.setVisibility(1);
+                        }
                     }
                     if (is_ok) {
                         resolve();
@@ -327,6 +342,7 @@ const MetaTraderConfig = (() => {
 
     return {
         mt_companies,
+        mt_financial_companies,
         accounts_info,
         actions_info,
         fields,
