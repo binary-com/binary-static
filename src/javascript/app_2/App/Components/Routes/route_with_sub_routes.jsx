@@ -23,7 +23,7 @@ const RouteWithSubRoutes = route => {
             result = (
                 (route.is_authenticated && !Client.isLoggedIn()) ?
                     <PleaseLoginMessage onLogin={redirectToLogin}>
-                        <route.icon_component stroke_color='#e9e9ed' />
+                        <route.icon_component className='disabled' />
                     </PleaseLoginMessage>
                     :
                     <route.component {...props} routes={route.routes}/>

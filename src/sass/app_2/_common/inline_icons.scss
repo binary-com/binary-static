@@ -1,0 +1,23 @@
+@mixin colorIcon($color1, $color2) {
+    .color1-fill {
+        fill: $color1;
+    }
+    .color1-stroke {
+        stroke: $color1;
+    }
+    .color2-fill {
+        fill: $color2;
+    }
+    .color2-stroke {
+        stroke: $color2;
+    }
+}
+
+.inline-icon {
+    &.active {
+        @include colorIcon($COLOR_WHITE, $COLOR_BLUE);
+    }
+    &.disabled {
+        @include colorIcon($COLOR_GRAY, none);
+    }
+}
