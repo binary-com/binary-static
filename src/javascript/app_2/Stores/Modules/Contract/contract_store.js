@@ -14,6 +14,7 @@ import {
     getFinalPrice,
     getIndicativePrice,
     isEnded,
+    isSoldBeforeStart,
     isUserSold }              from './Helpers/logic';
 import BaseStore              from '../../base_store';
 import { WS }                 from '../../../Services';
@@ -95,6 +96,11 @@ export default class ContractStore extends BaseStore {
     @computed
     get is_ended() {
         return isEnded(this.contract_info);
+    }
+
+    @computed
+    get is_sold_before_start() {
+        return isSoldBeforeStart(this.contract_info);
     }
 
     @computed

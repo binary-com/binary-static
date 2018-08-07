@@ -52,9 +52,8 @@ function createMarkerStartTime(contract_info) {
 }
 
 // -------------------- Spots --------------------
-function createMarkerSpotEntry(contract_info) {
-    if (!contract_info.entry_tick_time ||
-        (contract_info.sell_time && +contract_info.sell_time < +contract_info.date_start)) return false;
+function createMarkerSpotEntry(contract_info, ContractStore) {
+    if (!contract_info.entry_tick_time || ContractStore.is_sold_before_start) return false;
 
     return createMarkerConfig(
         MARKER_TYPES_CONFIG.SPOT_ENTRY.type,
