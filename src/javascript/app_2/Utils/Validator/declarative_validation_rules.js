@@ -3,7 +3,7 @@ import {
     addComma,
     getDecimalPlaces }           from '../../../_common/base/currency_base';
 import Password                  from '../../../_common/check_password';
-import { localize }                  from '../../../_common/localize';
+import { localize }              from '../../../_common/localize';
 import { compareBigUnsignedInt } from '../../../_common/string_util';
 import { cloneObject }           from '../../../_common/utility';
 

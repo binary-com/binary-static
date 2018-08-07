@@ -1,7 +1,7 @@
 const validation_rules = {
     amount: [
         ['req', {message: 'The amount is a required field.'}],
-        ['number',{min: 5}],
+        ['number',{min: 0, type: 'float'}],
     ],
     barrier_1: [
         'barrier',
