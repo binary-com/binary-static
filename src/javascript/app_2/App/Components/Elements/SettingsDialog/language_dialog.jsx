@@ -1,7 +1,7 @@
 import classNames      from 'classnames';
 import React           from 'react';
 import PropTypes       from 'prop-types';
-import Arrowback       from '../../../Components/Elements/arrowback.jsx';
+import { IconBack }    from '../../../../Assets/Common';
 import { localize }    from '../../../../../_common/localize';
 import {
     getAllowedLanguages,
@@ -15,7 +15,7 @@ const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
     return (
         <div className={language_dialog_class}>
             <div className='language-header' onClick={hide}>
-                <Arrowback className='arrow-back' />
+                <IconBack className='arrow-back' />
                 <span>{localize('language')}</span>
             </div>
             <div className='language-container'>

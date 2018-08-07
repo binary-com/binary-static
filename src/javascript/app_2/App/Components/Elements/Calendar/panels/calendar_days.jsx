@@ -32,7 +32,6 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, sele
     dates.map((date) => {
         const moment_date    = moment.utc(date).set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
         const is_disabled    = moment_date.isBefore(moment_min_date) || moment_date.isAfter(moment_max_date);
-        const is_other_month = moment_date.isBefore(moment_month_start) || moment_date.isAfter(moment_month_end);
         const is_active      = selected_date && moment_date.isSame(moment_selected);
         const is_today       = moment_date.isSame(moment_today, 'day');
 
@@ -43,7 +42,6 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, sele
                     active  : is_active && !is_disabled,
                     today   : is_today,
                     disabled: is_disabled,
-                    hidden  : is_other_month,
                 })}
                 onClick={(e) => { onClick.date(e, is_disabled); }}
                 data-date={date}
@@ -56,7 +54,7 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, sele
     return days;
 };
 
-const week_headers = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+const week_headers = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 export const CalendarDays = (props) => {
     const days = getDays(props).map(day => day);

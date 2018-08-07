@@ -1,7 +1,7 @@
 import {
     intercept,
-    spy } from 'mobx';
-import Validator from 'validatorjs';
+    spy }        from 'mobx';
+import Validator from '../validator';
 
 const validate = (dvrs) => (target, key) => {
 

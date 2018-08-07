@@ -1,15 +1,12 @@
 .portfolio {
     padding: 1.5rem 12px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
 
     &--card-view {
         background: $COLOR_LIGHT_GRAY;
     }
     .table {
-        height: 50px; // default height for flex-grow to work when table is bigger than parent
-        flex-grow: 1;
+        height: 100%;
     }
     .table__row {
         grid-template-columns: 6.5rem 7rem 1fr 6rem 9rem 6rem 5rem;
@@ -22,17 +19,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
 
-        &__icon {
+        .type-wrapper {
             width: 20px;
             height: 20px;
             padding: 5px;
             margin-bottom: 3px;
             border-radius: 100%;
             background-color: $COLOR_GRAY;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
     .indicative {
+        text-align: right;
         font-weight: bold;
 
         &--price-moved-up {
@@ -51,19 +53,19 @@
     }
     // empty portfolio message
     &-empty {
-        flex-grow: 1;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
         &__icon {
-            display: inline-block;
-            height: 64px;
-            width: 64px;
-            background-size: 64px;
-            background-image: url('../images/app_2/header/icons/ic_portfolio_normal_light.svg');
-            margin-bottom: 16px;
+            margin: 0 auto 2rem;
+            transform: scale(3, 3);
+
+            .scale-fix {
+                transform: scaleX(0.96);
+            }
         }
         &__title {
             font-size: 16px;
@@ -112,7 +114,7 @@
             margin-right: 5px;
         }
         &__purchase:before {
-            background-image: url('../images/app_2/statement/ic_purchase.svg');
+            background-image: url('../images/app_2/portfolio/ic_purchase.svg');
         }
         &__payout:before {
             background-image: url('../images/app_2/statement/ic_payout.svg');
@@ -122,44 +124,30 @@
                 color: $COLOR_LIGHT_GREEN;
 
                 &:before {
-                    background-image: url('../images/app_2/statement/ic_price_up.svg');
+                    background-image: url('../images/app_2/portfolio/ic_price_up.svg');
                 }
             }
             &--price-moved-down {
                 color: $COLOR_LIGHT_RED;
 
                 &:before {
-                    background-image: url('../images/app_2/statement/ic_price_down.svg');
+                    background-image: url('../images/app_2/portfolio/ic_price_down.svg');
                 }
             }
             &--price-stable {
                 color: $COLOR_BLACK;
 
                 &:before {
-                    background-image: url('../images/app_2/statement/ic_price_stable.svg');
+                    background-image: url('../images/app_2/portfolio/ic_price_stable.svg');
                 }
             }
             &--no-resale {
                 color: $COLOR_GRAY;
 
                 &:before {
-                    background-image: url('../images/app_2/statement/ic_no_resale.svg');
+                    background-image: url('../images/app_2/portfolio/ic_no_resale.svg');
                 }
             }
         }
-    }
-}
-
-$CONTRACT_TYPE_LIST: asianu asaind call calle put digitdiff digiteven digitmatch digitodd digitover digitunder expirymiss
-    expiryrange expiryrangee fall notouch onetouch range rise upordown lbfloatcall lbfloatput lbhighlow;
-
-// $style: 'light' or 'dark'
-@function tradetypeicon($style, $trade_type) {
-    @return url('../images/app_2/contracts/types/' + $style + '/ic_' + $trade_type + '.svg');
-}
-
-@each $type in $CONTRACT_TYPE_LIST {
-    .#{$type}-icon--light {
-        content: tradetypeicon('light', $type);
     }
 }

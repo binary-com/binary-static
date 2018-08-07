@@ -5,9 +5,9 @@ import { ErrorBalance,
          ErrorLogin }       from './Templates';
 import PurchaseResult       from './purchase_result.jsx';
 import { getPropertyValue } from '../../../../../../../_common/utility';
-import CloseIcon            from '../../../../../../App/Components/Elements/close_icon.jsx';
+import { IconClose }        from '../../../../../../Assets/Common/icon_close.jsx';
 
-const MessageBox = ({ purchase_info, onClick }) => {
+const MessageBox = ({ currency, purchase_info, onClick }) => {
     const has_error = !!purchase_info.error;
     let ErrorComponent;
     if (has_error) {
@@ -27,21 +27,23 @@ const MessageBox = ({ purchase_info, onClick }) => {
 
     return (
         <div className='purchase-error'>
+            <div className='close-btn-container' onClick={onClick}>
+                <IconClose className='ic-close' />
+            </div>
             {has_error ?
-                <React.Fragment>
-                    <div className='close-btn-container' onClick={onClick}>
-                        <CloseIcon className='ic-close' />
-                    </div>
-                    {ErrorComponent}
-                </React.Fragment>
+                ErrorComponent
                 :
-                <PurchaseResult purchase_info={purchase_info.buy} />
+                <PurchaseResult
+                    purchase_info={purchase_info.buy}
+                    currency={currency}
+                />
             }
         </div>
     );
 };
 
 MessageBox.propTypes = {
+    currency     : PropTypes.string,
     purchase_info: PropTypes.object,
     onClick      : PropTypes.func,
 };

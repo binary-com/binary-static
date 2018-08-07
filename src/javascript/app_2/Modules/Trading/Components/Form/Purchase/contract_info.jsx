@@ -1,9 +1,9 @@
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import Money        from '../../../../../App/Components/Elements/money.jsx';
-import Tooltip      from '../../../../../App/Components/Elements/tooltip.jsx';
-import { localize } from '../../../../../../_common/localize';
-import Url          from '../../../../../../_common/url';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import Money             from '../../../../../App/Components/Elements/money.jsx';
+import Tooltip           from '../../../../../App/Components/Elements/tooltip.jsx';
+import { IconTradeType } from '../../../../../Assets/Trading/Types';
+import { localize }      from '../../../../../../_common/localize';
 
 const ContractInfo = ({
     barrier_count,
@@ -18,10 +18,7 @@ const ContractInfo = ({
         <div className='box'>
             <div className='left-column'>
                 <div className='type-wrapper'>
-                    <img
-                        className='type'
-                        src={Url.urlForStatic(`images/app_2/contracts/types/light/ic_${icon_type}.svg`)}
-                    />
+                    <IconTradeType type={icon_type} className='type' />
                 </div>
                 <h4 className='trade-type'>{contract_title}</h4>
             </div>

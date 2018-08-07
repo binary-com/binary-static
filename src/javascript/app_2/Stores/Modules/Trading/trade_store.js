@@ -35,7 +35,6 @@ export default class TradeStore extends BaseStore {
     @observable form_components      = [];
     @observable trade_types          = {};
 
-
     // Amount
     @observable amount          = 10;
     @observable basis           = '';
@@ -83,6 +82,10 @@ export default class TradeStore extends BaseStore {
         };
         super(options);
 
+        if (Client.isLoggedIn) {
+            this.processNewValuesAsync({currency: Client.get('currency')});        
+        }
+
         // Adds intercept to change min_max value of duration validation
         reaction(
             ()=> [this.duration_units_min_max, this.contract_expiry_type, this.duration_unit],
@@ -90,7 +93,6 @@ export default class TradeStore extends BaseStore {
                 this.changeDurationValidationRules();
             }
         );
-
     }
 
     @action.bound

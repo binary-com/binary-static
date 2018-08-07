@@ -37,7 +37,7 @@ class AccountSwitcher extends React.Component {
     }
 
     toggleAccountsList = () => {
-        if (this.state.accounts_list) {
+        if (this.state.accounts_list && this.state.accounts_list.length > 0) {
             this.setState({
                 is_collapsed: !this.state.is_collapsed,
             });

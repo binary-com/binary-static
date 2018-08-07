@@ -8,7 +8,6 @@
         height: 32px;
         padding: 0 8px;
         border-radius: 4px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         font-size: 16px;
         font-weight: 300;
@@ -100,6 +99,11 @@
 
                 .list-title {
                     margin-top: 10px;
+                    color: $COLOR_LIGHT_BLACK;
+
+                    strong {
+                        font-weight: 400;
+                    }
                 }
                 .list-container .list-item {
                     display: inline-block;
@@ -128,6 +132,46 @@
                     }
                 }
             }
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .time-picker .time-picker-dropdown {
+        border: 1px solid $COLOR_BRANDBLUE_85;
+
+        .time-picker-panel, .time-picker-selector {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .time-picker-hours, .time-picker-minutes {
+                color: $COLOR_BRANDBLUE_40;
+                background: $COLOR_BRANDBLUE_95;
+                border-color: $COLOR_BRANDBLUE_85;
+
+                .list-title {
+                    color: $COLOR_WHITE;
+                }
+                .list-item {
+                    color: $COLOR_BRANDBLUE_40;
+
+                    &.disabled {
+                        color: $COLOR_BRANDBLUE_75;
+                        pointer-events: none;
+                    }
+                    &.selected {
+                        background: $COLOR_WHITE;
+                        color: $COLOR_BLUE;
+                    }
+                    &:hover:not(.selected):not(.disabled) {
+                        background: $COLOR_BRANDBLUE_85;
+                    }
+                }
+            }
+        }
+        .time-picker-panel {
+            color: $COLOR_BRANDBLUE_40;
         }
     }
 }

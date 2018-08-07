@@ -36,12 +36,15 @@ export default class UIStore extends BaseStore {
         ];
 
         super({ local_storage_properties });
-        window.addEventListener('resize', this.updateScreenWidth);
+        window.addEventListener('resize', this.handleResize);
     }
 
     @action.bound
-    updateScreenWidth() {
+    handleResize() {
         this.screen_width = window.innerWidth;
+        if (this.is_mobile) {
+            this.is_portfolio_drawer_on = false;
+        }
     }
 
     @computed

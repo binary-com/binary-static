@@ -1,3 +1,4 @@
+import classNames               from 'classnames';
 import {
     PropTypes as MobxPropTypes,
     observer }                  from 'mobx-react';
@@ -87,6 +88,10 @@ const Duration = ({
         expiry_list.push({ text: localize('End Time'), value: 'endtime' });
     }
 
+    const endtime_container_class = classNames('endtime-container', {
+        'has-time': is_same_day,
+    });
+
     return (
         <Fieldset
             header={localize('Trade Duration')}
@@ -117,7 +122,7 @@ const Duration = ({
                                 footer={localize('The minimum duration is 1 day')}
                             /> :
                             <InputField
-                                type='number'
+                                type='text'
                                 name='duration'
                                 value={duration}
                                 onChange={onChange}
@@ -135,7 +140,7 @@ const Duration = ({
                     </div>
                 </React.Fragment> :
                 <React.Fragment>
-                    <div className='endtime-container'>
+                    <div className={endtime_container_class}>
                         <Datepicker
                             name='expiry_date'
                             has_today_btn

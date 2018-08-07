@@ -1,7 +1,6 @@
 div.contracts-popup-container {
     position: relative;
     z-index: 2;
-    cursor: pointer;
     background: $COLOR_WHITE;
     border: solid 1px $COLOR_GRAY;
     border-radius: 4px;
@@ -14,18 +13,36 @@ div.contracts-popup-container {
         }
     }
     &.mobile-only {
-        border: solid 1px $COLOR_BLUE;
+        border: solid 1px $COLOR_GRAY;
+
+        .list-group {
+            margin-bottom: 1.5rem;
+
+            .list-label {
+                padding-left: 24px;
+                margin-bottom: 8px;
+            }
+            .list-item {
+                padding-bottom: 6px;
+                padding-top: 6px;
+
+                .categories-container {
+                    margin-right: 8px;
+                }
+            }
+        }
+        &:hover, &:focus, &:active {
+            border: solid 1px $COLOR_BLUE;
+        }
     }
     .contracts-popup-display {
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: flex-start;
         flex-direction: column;
-        padding: 5px;
+        padding: 4px;
 
-        i {
-            margin-bottom: 5px;
-        }
         span {
             font-size: inherit;
             text-transform: capitalize;
@@ -56,7 +73,7 @@ div.contracts-popup-container {
             border-color: $COLOR_BLUE;
         }
         & > .select-arrow {
-            transform: rotate(270deg);
+            transform: rotate(90deg);
         }
     }
     .list-item {
@@ -162,10 +179,26 @@ div.contracts-popup-container {
                         &.selected {
                             background: $COLOR_BLUE;
                             color: $COLOR_WHITE;
+
+                            span {
+                                font-weight: 500;
+                            }
                         }
                         &:hover:not(.selected) {
-                            background: $COLOR_GRAY;
+                            background: $COLOR_BRANDBLUE_5;
                         }
+                    }
+                }
+            }
+            .categories-container {
+                margin-right: 4px;
+
+                .category-wrapper {
+                    width: 24px;
+                    height: 24px;
+
+                    .category-type {
+                        transform: scale(1, 1);
                     }
                 }
             }
@@ -185,116 +218,81 @@ div.contracts-popup-container {
         text-rendering: optimizeLegibility;
         position: absolute;
         pointer-events: none;
-        top: 40%;
-        right: 9px;
+        top: 35%;
+        right: 8px;
         line-height: 1;
         transition: transform 0.3s ease;
-        transform: rotate(180deg);
-        transform-origin: 45% 30%;
+        transform: rotate(0deg);
+        transform-origin: 45% 45;
         color: $COLOR_GRAY;
+    }
+    .categories-container {
+        margin-bottom: 4px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
 
-        &:before {
-            content: '\002303';
-            font-size: 1.1rem;
+        .category-wrapper {
+            margin: 0 2px;
         }
     }
 }
 
-.contract-icon {
-    &.ic-rise_fall {
-        &:before {
-            content: url('../images/app_2/contracts/categories/rise_fall.svg');
+// Dark Theme
+.theme-wrapper.dark {
+    div.contracts-popup-container {
+        background: $COLOR_BLUE;
+        border-color: $COLOR_BRANDBLUE_85;
+
+        &.mobile-only {
+            .contracts-popup-display span {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            .contracts-modal-list {
+                background: $COLOR_BLUE;
+            }
         }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/rise_fall.svg');
+        &:hover {
+            border-color: $COLOR_WHITE;
         }
-    }
-    &.ic-high_low {
-        &:before {
-            content: url('../images/app_2/contracts/categories/high_low.svg');
+        .list-container {
+            border-color: $COLOR_BRANDBLUE_85;
+            background: $COLOR_BRANDBLUE_95;
+
+            .list-group .list-items .list-item {
+                background: $COLOR_BLUE;
+                border-color: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_40;
+
+                &.selected {
+                    background: $COLOR_BRANDBLUE_85;
+                    font-weight: 600;
+                    color: $COLOR_WHITE;
+                }
+                &:hover {
+                    background: $COLOR_BRANDBLUE_85;
+                    color: $COLOR_WHITE;
+                }
+                &:only-child, &:first-child:nth-last-child(2) {
+                    border-color: $COLOR_BRANDBLUE_85;
+                }
+            }
         }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/high_low.svg');
-        }
-    }
-    &.ic-touch {
-        &:before {
-            content: url('../images/app_2/contracts/categories/touch.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/touch.svg');
-        }
-    }
-    &.ic-end {
-        &:before {
-            content: url('../images/app_2/contracts/categories/end.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/end.svg');
-        }
-    }
-    &.ic-stay {
-        &:before {
-            content: url('../images/app_2/contracts/categories/stay.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/stay.svg');
-        }
-    }
-    &.ic-asian {
-        &:before {
-            content: url('../images/app_2/contracts/categories/asian.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/asian.svg');
-        }
-    }
-    &.ic-match_diff {
-        &:before {
-            content: url('../images/app_2/contracts/categories/match_diff.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/match_diff.svg');
-        }
-    }
-    &.ic-even_odd {
-        &:before {
-            content: url('../images/app_2/contracts/categories/even_odd.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/even_odd.svg');
-        }
-    }
-    &.ic-over_under {
-        &:before {
-            content: url('../images/app_2/contracts/categories/over_under.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/over_under.svg');
-        }
-    }
-    &.ic-lb_call {
-        &:before {
-            content: url('../images/app_2/contracts/categories/lb_call.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/lb_call.svg');
-        }
-    }
-    &.ic-lb_put {
-        &:before {
-            content: url('../images/app_2/contracts/categories/lb_put.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/lb_put.svg');
-        }
-    }
-    &.ic-lb_high_low {
-        &:before {
-            content: url('../images/app_2/contracts/categories/lb_high_low.svg');
-        }
-        &--invert:before {
-            content: url('../images/app_2/contracts/categories/invert/lb_high_low.svg');
+        .category-wrapper {
+            background: $COLOR_BRANDBLUE_75;
+
+            .category-type {
+                path, rect {
+                    fill: $COLOR_WHITE;
+
+                    &.transparent {
+                        fill: $COLOR_BRANDBLUE_75;
+                    }
+                }
+                .stroke-white {
+                    stroke: $COLOR_WHITE;
+                }
+            }
         }
     }
 }

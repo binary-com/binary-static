@@ -1,14 +1,35 @@
 @supports (display: grid) {
     .app-contents {
         margin: $HEADER_HEIGHT 0 $FOOTER_HEIGHT;
-        min-height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
-        overflow: auto; // prevent margin collapse
-        display: flex; // needed to allow setting child height to 100% without explicit height defined here (https://stackoverflow.com/a/23300532/4402857)
-        flex-direction: column;
+        height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
+        overflow-y: auto;
+        overflow-x: hidden;
 
+        &--show-portfolio-drawer {
+            margin-right: $PORTFOLIO_DRAWER_WIDTH;
+        }
         @media screen and (max-width: 768px) {
+            // no footer:
             margin-bottom: 0;
-            min-height: calc(100vh - #{$HEADER_HEIGHT});
+            height: calc(100vh - #{$HEADER_HEIGHT});
+        }
+
+        .login-message-wrapper {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .message {
+                a {
+                    text-decoration: none;
+                    color: $COLOR_BLUE;
+
+                    &:hover {
+                        font-weight: 500;
+                    }
+                }
+            }
         }
     }
     /* trade-app layout */
@@ -19,8 +40,7 @@
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: 1fr;
         grid-gap: 4px;
-        overflow: hidden;
-        min-height: calc(100vh - 105px);
+        min-height: calc(100vh - 91px);
 
         .chart-container {
             position: relative;
@@ -32,6 +52,7 @@
 
                 div.ciq-chart {
                     height: calc(100% - 50px);
+                    box-shadow: none;
 
                     div.chartContainer {
                         background: transparent;
@@ -40,6 +61,12 @@
                     div.cq-chart-controls {
                         box-shadow: none;
                     }
+                }
+                div.cq-chart-controls {
+                    border-right: 1px solid $COLOR_GRAY;
+                }
+                div.cq-chart-control-left .cq-chart-controls {
+                    border-top: 1px solid $COLOR_GRAY;
                 }
             }
             div.debug-text {
@@ -50,19 +77,46 @@
             position: relative;
             min-height: 500px;
         }
-        .offset-container {
-            display: none;
-        }
         & > * {
             grid-column: col-start / span 12;
         }
         @media (max-width: 768px) {
             grid-template-rows: 1fr auto auto;
+
+            .chart-container {
+                cq-context { // stylelint-disable-line selector-type-no-unknown
+                    div.cq-chart-controls {
+                        border: 1px solid $COLOR_GRAY;
+                    }
+                }
+                .cq-modal-dropdown {
+                    &.stxMenuActive {
+                        position: fixed;
+                        height: 100%;
+                        width: 100%;
+                        top: 47px;
+                        left: -1px;
+                    }
+                    .cq-categorical-display {
+                        .ic-icon.icon-close-menu {
+                            svg {
+                                width: 24px;
+                                height: 24px;
+                            }
+                        }
+                        .cq-lookup-filters.scroll-down {
+                            max-height: unset;
+                        }
+                        .scrollbar-container.cq-scroll-panel {
+                            left: -1px;
+                        }
+                    }
+                }
+            }
         }
         @media (min-width: 769px) {
             .chart-container {
                 grid-column: col-start 1 / span 10;
-                padding: 10px;
                 margin-left: -15px;
 
                 fieldset {
@@ -87,8 +141,12 @@
                     div.endtime-container {
                         display: grid;
                         grid-gap: 8px;
-                        grid-template-columns: 1.5fr 1fr;
+                        grid-template-columns: 1fr;
                         grid-auto-columns: auto;
+
+                        &.has-time {
+                            grid-template-columns: 1.5fr 1fr;
+                        }
                     }
                     .time-picker, .datepicker-container {
                         margin-top: 8px;
@@ -157,30 +215,6 @@
                 }
             }
         }
-        @media (min-width: 1025px) {
-            .offset-container {
-                display: unset;
-                position: absolute;
-                height: 100vh;
-                width: 100%;
-                left: calc(100% + 40px);
-                transition: all 0.25s;
-                grid-column: col-start 11 / span 2;
-            }
-            &.show {
-                margin-right: 0;
-
-                .chart-container {
-                    grid-column: col-start 1 / span 8;
-                }
-                .sidebar-container {
-                    transform: translate(-100%);
-                }
-                .offset-container {
-                    transform: translate(calc(-100% - 20px));
-                }
-            }
-        }
         @media (min-width: 979px) and (max-width: 1125px) {
             .chart-container {
                 grid-column: col-start 1 / span 9 !important;
@@ -188,6 +222,22 @@
             .sidebar-container {
                 grid-column: col-start 10 / span 3 !important;
             }
+        }
+    }
+    .inline-icon {
+        pointer-events: none;
+    }
+    .category-wrapper, .type-wrapper {
+        width: 30px;
+        height: 30px;
+        background: $COLOR_GRAY;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .category-type, .type {
+            transform: scale(1.2, 1.2);
         }
     }
 }

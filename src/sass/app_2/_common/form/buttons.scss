@@ -30,7 +30,7 @@
             background: $COLOR_ORANGE;
 
             &:hover {
-                background: #ee9e58; /* stylelint-disable-line color-no-hex */
+                background: $COLOR_ORANGE_2;
             }
             &:active {
                 background: $COLOR_ORANGE;
@@ -43,7 +43,7 @@
             background: $COLOR_LIGHT_GREEN;
 
             &:hover {
-                background: #66bb6a; /* stylelint-disable-line color-no-hex */
+                background: $COLOR_GREEN_2;
             }
             &:active {
                 background: $COLOR_LIGHT_GREEN;
@@ -53,8 +53,8 @@
             }
         }
         &:disabled, &[disabled] {
-            background: #f4f4f6 !important; /* stylelint-disable-line color-no-hex */
-            color: $COLOR_GRAY !important;
+            background: $COLOR_BRANDBLUE_5;
+            color: $COLOR_GRAY;
             cursor: not-allowed;
         }
     }
@@ -66,8 +66,8 @@
             color: $COLOR_ORANGE;
 
             &:hover {
-                border: 1px solid #ee9e58; /* stylelint-disable-line color-no-hex */
-                color: #ee9e58; /* stylelint-disable-line color-no-hex */
+                border: 1px solid $COLOR_ORANGE_2;
+                color: $COLOR_ORANGE_2;
                 background: rgba(233, 128, 36, 0.1);
             }
             &:active {
@@ -83,8 +83,8 @@
             color: $COLOR_LIGHT_GREEN;
 
             &:hover {
-                border: 1px solid #66bb6a; /* stylelint-disable-line color-no-hex */
-                color: #66bb6a; /* stylelint-disable-line color-no-hex */
+                border: 1px solid $COLOR_GREEN_2;
+                color: $COLOR_GREEN_2;
                 background: rgba(76, 175, 80, 0.1);
             }
             &:active {
@@ -96,7 +96,7 @@
             }
         }
         &:disabled, &[disabled] {
-            background: #f4f4f6 !important; /* stylelint-disable-line color-no-hex */
+            background: $COLOR_BRANDBLUE_5;
             border: 0 !important;
             color: $COLOR_GRAY !important;
             cursor: not-allowed !important;

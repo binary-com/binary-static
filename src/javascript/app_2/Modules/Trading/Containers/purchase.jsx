@@ -58,6 +58,7 @@ const Purchase = ({
                     <MessageBox
                         purchase_info={purchase_info}
                         onClick={resetPurchase}
+                        currency={currency}
                     />
                     :
                     <React.Fragment>
@@ -109,6 +110,7 @@ Purchase.propTypes = {
 export default connect(
     ({ modules, ui }) => ({
         barrier_count         : modules.trade.barrier_count,
+        currency              : modules.trade.currency,
         is_purchase_enabled   : modules.trade.is_purchase_enabled,
         is_trade_enabled      : modules.trade.is_trade_enabled,
         onClickPurchase       : modules.trade.onPurchase,

@@ -28,7 +28,6 @@ div.dropdown-container {
     &:active, &:focus, &.show {
         outline: 0;
         border-radius: 4px;
-        box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
 
         .select-arrow {
             color: $COLOR_BLUE;
@@ -42,7 +41,7 @@ div.dropdown-container {
         border-color: $COLOR_BLUE;
     }
     &.show > .select-arrow {
-        transform: rotate(0deg);
+        transform: rotate(180deg);
     }
     .dropdown-list {
         left: 0;
@@ -62,8 +61,8 @@ div.dropdown-container {
             z-index: 2;
             cursor: pointer;
             background: $COLOR_WHITE;
-            box-shadow: 0 0px 2px #d3d3d3; /* stylelint-disable-line color-no-hex */
             border-radius: $BORDER_RADIUS;
+            border: 1px solid $COLOR_GRAY;
 
             .list-label {
                 pointer-events: none;
@@ -73,7 +72,7 @@ div.dropdown-container {
 
                 span {
                     text-transform: capitalize;
-                    color: #dedede; /* stylelint-disable-line color-no-hex */
+                    color: $COLOR_GRAY;
                     font-size: inherit;
                     font-weight: 300;
                 }
@@ -97,12 +96,12 @@ div.dropdown-container {
                     vertical-align: middle;
                 }
                 &:hover {
-                    background-color: $COLOR_GRAY;
+                    background-color: $COLOR_BRANDBLUE_5;
                 }
                 &.selected span {
-                    background-color: $COLOR_GRAY;
+                    background-color: $COLOR_BRANDBLUE_5;
                     color: $COLOR_BLUE;
-                    font-weight: 400;
+                    font-weight: 500;
                 }
             }
         }
@@ -116,12 +115,12 @@ div.dropdown-container {
         text-rendering: optimizeLegibility;
         position: absolute;
         pointer-events: none;
-        top: 12px;
+        top: 9px;
         right: 6px;
         line-height: 1;
         transition: transform 0.2s ease;
-        transform: rotate(180deg);
-        transform-origin: 50% 50%;
+        transform: rotate(0deg);
+        transform-origin: 50% 45%;
         color: $COLOR_GRAY;
         font-size: 1.1rem;
 
@@ -129,6 +128,40 @@ div.dropdown-container {
             content: '\002303';
             display: block;
             height: 0.53em; // center content glyph
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .dropdown-container {
+        .dropdown-display {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &.show > .clicked {
+            border-color: $COLOR_WHITE;
+        }
+        .list-container {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .list-item {
+                color: $COLOR_BRANDBLUE_40;
+
+                &.selected span {
+                    color: $COLOR_WHITE;
+                    font-weight: 600;
+                    background: $COLOR_BRANDBLUE_85;
+                }
+                &:hover {
+                    background: $COLOR_BRANDBLUE_85;
+                }
+            }
         }
     }
 }

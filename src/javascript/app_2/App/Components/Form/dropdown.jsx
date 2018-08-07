@@ -2,6 +2,7 @@ import { isArrayLike } from 'mobx';
 import { observer }    from 'mobx-react';
 import PropTypes       from 'prop-types';
 import React           from 'react';
+import { IconArrow }   from '../../../Assets/Common';
 
 class Dropdown extends React.Component {
     constructor(props) {
@@ -67,16 +68,17 @@ class Dropdown extends React.Component {
     }
 
     render() {
-        if (this.props.is_nativepicker) {
-            return (
-                <NativeSelect
-                    name={this.props.name}
-                    value={this.props.value}
-                    list={this.props.list}
-                    onChange={this.props.onChange}
-                />
-            );
-        }
+        // TODO: Fix list not being populated in native picker dropdown before re-enabling
+        // if (this.props.is_nativepicker) {
+        //     return (
+        //         <NativeSelect
+        //             name={this.props.name}
+        //             value={this.props.value}
+        //             list={this.props.list}
+        //             onChange={this.props.onChange}
+        //         />
+        //     );
+        // }
         return (
             <div
                 ref={this.setWrapperRef}
@@ -91,7 +93,7 @@ class Dropdown extends React.Component {
                         {this.getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
-                <span className='select-arrow' />
+                <IconArrow className='select-arrow' />
                 <div className='dropdown-list'>
                     <div className='list-container'>
                         {isArrayLike(this.props.list) ?

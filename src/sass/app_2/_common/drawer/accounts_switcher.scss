@@ -28,8 +28,14 @@
             &:before {
                 content: '\25EF';
                 font-size: 3rem;
-                top: -8px;
+                top: 0;
+                left: 0;
                 position: absolute;
+                height: 100%;
+                width: 75px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             &:after {
                 content: '\0025BE';
@@ -60,7 +66,7 @@
             opacity: 1;
             transform: scale(1, 1);
             height: 100%;
-            max-height: calc(100% - 140px);
+            max-height: calc(100% - 123px);
         }
         .acc-switcher-account {
             cursor: pointer;
@@ -72,6 +78,12 @@
                 font-size: 2.5rem;
                 top: 0;
                 position: absolute;
+                left: 0;
+                height: 100%;
+                width: 75px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             p.acc-switcher-accountid {
                 font-weight: 300;

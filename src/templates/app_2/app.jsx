@@ -1,7 +1,7 @@
-import React from 'react';
-import Head from './head.jsx';
-import Loading from '../_common/components/loading.jsx';
-import GTM from '../_common/includes/gtm.jsx';
+import React      from 'react';
+import Head       from './head.jsx';
+import Loading    from '../_common/components/loading.jsx';
+import GTM        from '../_common/includes/gtm.jsx';
 
 const BinaryApp = () => (
     <html>
