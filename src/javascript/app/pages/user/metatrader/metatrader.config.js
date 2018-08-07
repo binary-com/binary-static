@@ -38,6 +38,8 @@ const MetaTraderConfig = (() => {
 
     const newAccCheck = (acc_type, message_selector) => (
         new Promise((resolve) => {
+            const $new_account_financial_authenticate_msg = $('#new_account_financial_authenticate_msg');
+            $new_account_financial_authenticate_msg.setVisibility(0);
             if (accounts_info[acc_type].is_demo) {
                 resolve();
             } else if (Client.get('is_virtual')) {
@@ -50,9 +52,8 @@ const MetaTraderConfig = (() => {
                         $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
                         is_ok = false;
                     }
-                    if (response_get_account_status.get_account_status.prompt_client_to_authenticate) {
-                        $message.find('.authenticate').setVisibility(1);
-                        is_ok = false;
+                    if (is_ok && !isAuthenticated()) {
+                        $new_account_financial_authenticate_msg.setVisibility(1);
                     }
                     if (is_ok) {
                         resolve();
@@ -192,9 +193,8 @@ const MetaTraderConfig = (() => {
                 if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
-                    BinarySocket.send({ get_account_status: 1 }).then((response_status) => {
-                        resolve(!/authenticated/.test(response_status.get_account_status.status) ?
-                            $messages.find('#msg_authenticate').html() : '');
+                    BinarySocket.send({ get_account_status: 1 }).then(() => {
+                        resolve(!isAuthenticated() ? $messages.find('#msg_authenticate').html() : '');
                     });
                 } else {
                     resolve();
@@ -345,6 +345,9 @@ const MetaTraderConfig = (() => {
 
     const getCurrency = acc_type => accounts_info[acc_type].info.currency;
 
+    const isAuthenticated = () =>
+        State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
+
     return {
         mt_companies,
         accounts_info,
@@ -354,6 +357,7 @@ const MetaTraderConfig = (() => {
         needsRealMessage,
         hasAccount,
         getCurrency,
+        isAuthenticated,
         setMessages   : ($msg) => { $messages = $msg; },
         getAllAccounts: () => (
             Object.keys(accounts_info)
