@@ -55,6 +55,7 @@ footer {
 
                 svg path {
                     fill: $COLOR_GRAY;
+                    stroke: $COLOR_GRAY;
                 }
                 &:hover, &:focus {
                     background: none;

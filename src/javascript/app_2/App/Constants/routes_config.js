@@ -4,6 +4,8 @@ import Portfolio              from '../../Modules/Portfolio';
 import Settings               from '../../Modules/settings/settings.jsx';
 import Statement              from '../../Modules/Statement';
 import TradeApp               from '../../Modules/Trading';
+import { IconPortfolio,
+         IconStatement }      from '../../Assets/Header/NavBar';
 
 // Settings Routes
 import AccountPassword        from '../../Modules/settings/sections/account_password.jsx';
@@ -20,8 +22,8 @@ const routes_config = [
     { path: routes.root,      component: Redirect,  exact: true, to: '/trade' },
     { path: routes.index,     component: Redirect,  to: '/trade' },
     { path: routes.trade,     component: TradeApp,  exact: true },
-    { path: routes.portfolio, component: Portfolio, is_authenticated: true },
-    { path: routes.statement, component: Statement, is_authenticated: true },
+    { path: routes.portfolio, component: Portfolio, is_authenticated: true, icon_component: IconPortfolio },
+    { path: routes.statement, component: Statement, is_authenticated: true, icon_component: IconStatement },
     {
         path            : routes.settings,
         component       : Settings,
