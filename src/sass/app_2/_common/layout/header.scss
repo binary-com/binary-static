@@ -103,11 +103,11 @@
                             font-weight: 500;
                         }
                     }
-                    // &:hover, &.active {
-                    //     .inline-icon {
-                    //         @include colorIcon(none, $COLOR_BLUE);
-                    //     }
-                    // }
+                    &:hover, &.active {
+                        .inline-icon {
+                            @extend .inline-icon.active;
+                        }
+                    }
                     .inline-icon {
                         position: absolute;
                         left: 10px;

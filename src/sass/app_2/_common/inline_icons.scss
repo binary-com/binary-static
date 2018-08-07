@@ -1,21 +1,20 @@
-@mixin colorIcon($color1, $color2) {
-    .color1-fill {
-        fill: $color1;
-    }
-    .color1-stroke {
-        stroke: $color1;
-    }
-    .color2-fill {
-        fill: $color2;
-    }
-    .color2-stroke {
-        stroke: $color2;
+@mixin colorIcon($colors...) {
+    @for $i from 1 through length($colors) {
+        .color#{$i}-fill {
+            fill: nth($colors, $i);
+        }
+        .color#{$i}-stroke {
+            stroke: nth($colors, $i);
+        }
     }
 }
 
 .inline-icon {
+    &.red {
+        @include colorIcon(red, none);
+    }
     &.active {
-        @include colorIcon($COLOR_WHITE, $COLOR_BLUE);
+        @include colorIcon($COLOR_WHITE, $COLOR_BLUE, $COLOR_BLUE, none);
     }
     &.disabled {
         @include colorIcon($COLOR_GRAY, none);
