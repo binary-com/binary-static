@@ -106,7 +106,7 @@ export default class SmartChartStore extends BaseStore {
     // ---------- WS ----------
     wsSubscribe = (request_object, callback) => {
         if (request_object.subscribe !== 1) return;
-        WS.subscribeTicksHistory(request_object, callback);
+        WS.subscribeTicksHistory({ ...request_object }, callback); // use a copy of the request_object to prevent updating the source
     };
 
     wsForget = (match_values, callback) => (
