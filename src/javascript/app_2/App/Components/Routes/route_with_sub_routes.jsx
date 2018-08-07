@@ -22,7 +22,7 @@ const RouteWithSubRoutes = route => {
         } else {
             result = (
                 (route.is_authenticated && !Client.isLoggedIn()) ?
-                    <PleaseLoginMessage onClick={redirectToLogin}>
+                    <PleaseLoginMessage onLogin={redirectToLogin}>
                         <route.icon_component stroke_color='#e9e9ed' />
                     </PleaseLoginMessage>
                     :
