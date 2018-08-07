@@ -335,6 +335,9 @@
                 border-color: $COLOR_WHITE;
             }
         }
+        .error-container p {
+            color: $COLOR_BRANDBLUE_40;
+        }
     }
     footer {
         border-color: $COLOR_BRANDBLUE_85;
