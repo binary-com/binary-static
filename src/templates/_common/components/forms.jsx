@@ -35,7 +35,7 @@ export const FormRow = ({
                 </select>
             );
         }
-        if (['text', 'password', 'number', 'checkbox'].indexOf(type) !== -1) {
+        if (['text', 'password', 'number', 'checkbox'].includes(type)) {
             return (
                 <React.Fragment>
                     {input_prefix}
