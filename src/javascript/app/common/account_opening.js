@@ -6,6 +6,7 @@ const BinaryPjax         = require('../base/binary_pjax');
 const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
+const getElementById     = require('../../_common/common_functions').getElementById;
 const makeOption         = require('../../_common/common_functions').makeOption;
 const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
@@ -51,9 +52,15 @@ const AccountOpening = (() => {
             const residence_value = Client.get('residence') || '';
             let residence_text    = '';
 
-            const $options = $('<div/>');
+            const $options               = $('<div/>');
+            const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption({ text: res.text, value: res.value, is_disabled: res.disabled }));
+                $options.append(makeOption({ text: res.text, value: res.value }));
+                $options_with_disabled.append(makeOption({
+                    text       : res.text,
+                    value      : res.value,
+                    is_disabled: res.disabled,
+                }));
 
                 if (residence_value === res.value) {
                     residence_text = res.text;
@@ -73,7 +80,7 @@ const AccountOpening = (() => {
                               (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
                         $place_of_birth.replaceWith($('<span/>', { text: txt_place_of_birth || place_of_birth, 'data-value': place_of_birth }));
                     } else {
-                        $place_of_birth.html($options.html()).val(residence_value);
+                        $place_of_birth.html($options_with_disabled.html()).val(residence_value);
                     }
                     $place_of_birth.select2({
                         matcher(params, data) {
@@ -83,8 +90,29 @@ const AccountOpening = (() => {
                 });
             }
 
+            if (/^(malta|maltainvest|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
+                const $citizen = $('#citizen');
+                getElementById('citizen_row').setVisibility(1);
+                if ($citizen.length) {
+                    BinarySocket.wait('get_settings').then((response) => {
+                        const citizen = response.get_settings.citizen;
+                        if (citizen) {
+                            const txt_citizen = (residence_list.find(obj => obj.value === citizen) || {}).text;
+                            $citizen.replaceWith($('<span/>', { text: txt_citizen || citizen, 'data-value': citizen }));
+                        } else {
+                            $citizen.html($options.html()).val(residence_value);
+                        }
+                        $citizen.select2({
+                            matcher(params, data) {
+                                return SelectMatcher(params, data);
+                            },
+                        });
+                    });
+                }
+            }
+
             if ($tax_residence) {
-                $tax_residence.html($options.html()).promise().done(() => {
+                $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(getTaxResidence() || residence_value).trigger('change')
@@ -189,7 +217,7 @@ const AccountOpening = (() => {
             id;
         $(form_id).find('select, input[type=checkbox]').each(function () {
             id = $(this).attr('id');
-            if (!/^(tnc|address_state|chk_professional|chk_tax_id)$/.test(id)) {
+            if (!/^(tnc|address_state|chk_professional|chk_tax_id|citizen)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;

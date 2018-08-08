@@ -68,7 +68,7 @@ const Contact = () => (
                                 </div>
                             </div>
                         </div>
-                        <div className='gr-parent ja-hide invisible' id='live_chat_unavailable'>
+                        <div className='gr-parent invisible' id='live_chat_unavailable'>
                             <p className='notice-msg center-text'>
                                 {it.L('Sorry, live chat is currently unavailable. Please email us at [_1].', '<a href=\'mailto:support@binary.com\'>support@binary.com</a>')}
                             </p>
@@ -105,15 +105,15 @@ const Contact = () => (
                 <h1>{it.L('Company addresses')}</h1>
             </div>
             <div className='gr-row'>
-                <InfoBox padding='6' header={it.L('Malta')} text={it.L('Binary (Europe) Limited & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825')} />
-                <InfoBox padding='6' header={it.L('Isle of Man')} text={it.L('Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW')} />
+                <InfoBox padding='6' header={it.L('Malta')} text={it.L('Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825')} />
+                <InfoBox padding='6' header={it.L('Isle of Man')} text={it.L('Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW')} />
             </div>
 
             <div className='gr-hide-p gr-hide-m gr-padding-20' />
 
             <div className='gr-row'>
                 <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')} text={it.L('Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
-                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Cyberjaya Office')} text={it.L('4X Software Sdn. Bhd., C-10-10(1), iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan')} />
+                <InfoBox padding='6' header={it.L('Malaysia')} sub_header={it.L('Labuan')} text={it.L('Binary (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan')} />
             </div>
         </div>
     </div>
