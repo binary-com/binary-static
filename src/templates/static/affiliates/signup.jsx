@@ -19,7 +19,7 @@ const Signup = () => (
             <div className='gr-padding-20'>
                 <h2 className='center-text margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
-                    <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy – just <a href=\'[_1]\'>fill out the application form</a>, choose from two types of commission plans and wait for our approval.', it.affiliate_signup_url)} />
+                    <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy – just <a href=\'[_1]\' target="_blank">fill out the application form</a>, choose from two types of commission plans and wait for our approval.', it.affiliate_signup_url)} />
                     <Step circle_no='2' header={it.L('Promote [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise [_1] to your audience.', it.website_name)} />
                     <Step circle_no='3' header={it.L('Earn')}                          text={it.L('Receive your affiliate commission once your referred clients start trading on our platform.')} />
                 </div>
