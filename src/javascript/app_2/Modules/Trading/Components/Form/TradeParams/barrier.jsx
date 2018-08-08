@@ -55,7 +55,7 @@ const Barrier = ({
                     value={barrier_2}
                     onChange={onChange}
                     is_float
-                    error_messages = {validation_errors.barrier_2 || []}
+                    error_messages = {validation_errors.barrier_2}
                 />
             }
         </Fieldset>

@@ -52,7 +52,7 @@ const validNumber = (value, opts) => {
         return true;
     }
 
-    let is_ok   = true;
+    let is_ok = true;
     if ('min' in options && typeof options.min === 'function') {
         options.min = options.min();
     }
