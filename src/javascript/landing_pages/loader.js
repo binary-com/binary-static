@@ -1,4 +1,4 @@
-const initLoader = (css_files, js_files) => {
+const initLoader = (css_files, js_files) => { // eslint-disable-line no-unused-vars
     const is_dark_mode_on = localStorage.getItem('is_dark_mode_on');
     const el_loader = document.getElementById('binary_loader');
     if (el_loader) {
@@ -7,8 +7,8 @@ const initLoader = (css_files, js_files) => {
         el_loader.classList.add('run'); 
     }
 
-    if (css_files.length) { loadCSS(css_files); }
-    if (js_files.length) { loadJS(js_files); }
+    if (css_files) { loadCSS(css_files); }
+    if (js_files) { loadJS(js_files); }
 };
 
 const loadCSS = (css_files) => {
@@ -43,8 +43,4 @@ const loadJS = (js_files) => {
             scripts.push(script);
         }
     });
-};
-
-window.onload = () => {
-    initLoader();
 };
