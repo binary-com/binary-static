@@ -1,3 +1,29 @@
+export const getChartConfig = (contract_info) => {
+    if (!isEnded(contract_info)) return {}; // don't limit the range for ongoing contracts until smartchart supports it
+
+    const start = contract_info.date_start;
+    const end   = contract_info.date_expiry;
+    const granularity = calculateGranularity(end - start);
+
+    return {
+        granularity,
+        chart_type : granularity ? 'candle' : 'mountain',
+        end_epoch  : end   + (granularity || 3),
+        start_epoch: start - (granularity || 3),
+    };
+};
+
+const hour_to_granularity_map = [
+    [1      , 0],
+    [2      , 120],
+    [6      , 600],
+    [24     , 900],
+    [5 * 24 , 3600],
+    [30 * 24, 14400],
+];
+const calculateGranularity = (duration) =>
+    (hour_to_granularity_map.find(m => duration <= m[0] * 3600) || [null, 86400])[1];
+
 export const getDisplayStatus = (is_ended, profit) => {
     let status = 'purchased';
     if (is_ended) {

@@ -8,6 +8,7 @@ import {
     getDetailsExpiry,
     getDetailsInfo }          from './Helpers/details';
 import {
+    getChartConfig,
     getDisplayStatus,
     getEndSpot,
     getEndSpotTime,
@@ -58,6 +59,11 @@ export default class ContractStore extends BaseStore {
     // ---------------------------
     // ----- Computed values -----
     // ---------------------------
+    @computed
+    get chart_config() {
+        return getChartConfig(this.contract_info);
+    }
+
     @computed
     get details_expiry() {
         return getDetailsExpiry(this);

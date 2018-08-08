@@ -10,19 +10,23 @@ class Chart extends React.Component {
     componentWillUnmount() { this.props.onUnmount(); }
 
     topWidgets = () => <TopWidgets
-        onSymbolChange={symbolChange(this.props.onSymbolChange)}
         is_title_enabled={this.props.is_title_enabled}
+        onSymbolChange={symbolChange(this.props.onSymbolChange)}
     />;
 
     render() {
         return (
             <SmartChart
                 barriers={this.props.barriers_array}
+                chartType={this.props.chart_type}
+                endEpoch={this.props.end_epoch}
+                granularity={this.props.granularity}
                 isMobile={this.props.is_mobile}
                 requestAPI={this.props.wsSendRequest}
                 requestForget={this.props.wsForget}
                 requestSubscribe={this.props.wsSubscribe}
                 settings={this.props.settings}
+                startEpoch={this.props.start_epoch}
                 symbol={this.props.symbol}
                 topWidgets={this.topWidgets}
             >
@@ -40,12 +44,16 @@ class Chart extends React.Component {
 
 Chart.propTypes = {
     barriers_array  : PropTypes.array,
+    chart_type      : PropTypes.string,
+    end_epoch       : PropTypes.number,
+    granularity     : PropTypes.number,
     is_title_enabled: PropTypes.bool,
     is_mobile       : PropTypes.bool,
     markers_array   : PropTypes.array,
     onSymbolChange  : PropTypes.func,
     onUnmount       : PropTypes.func,
     settings        : PropTypes.object,
+    start_epoch     : PropTypes.number,
     symbol          : PropTypes.string,
     wsForget        : PropTypes.func,
     wsSendRequest   : PropTypes.func,
