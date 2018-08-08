@@ -41,7 +41,7 @@ const Head = () => (
                 ))
         }
 
-        <link rel='stylesheet' href={`${it.root_url}css/loader.css`} />
+        <link rel='stylesheet' href={`${it.root_url}css/loader.min.css`} />
         <script type='text/javascript' src={`${it.root_url}js/landing_pages/loader.js`} async />
     </head>
 );
