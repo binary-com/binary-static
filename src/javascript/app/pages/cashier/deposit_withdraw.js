@@ -16,6 +16,8 @@ const template          = require('../../../_common/utility').template;
 const DepositWithdraw = (() => {
     const default_iframe_height = 700;
 
+    let response_withdrawal = {};
+
     let cashier_type,
         token,
         $iframe,
@@ -46,20 +48,29 @@ const DepositWithdraw = (() => {
     const checkToken = () => {
         token = Url.getHashValue('token');
         if (!token) {
-            BinarySocket.send({
-                verify_email: Client.get('email'),
-                type        : 'payment_withdraw',
-            }).then((response_withdraw) => {
-                if ('error' in response_withdraw) {
-                    showError('custom_error', response_withdraw.error.message);
-                } else {
-                    showMessage('check_email_message');
-                }
-            });
+            if (response_withdrawal.length) {
+                handleWithdrawalResponse();
+            } else {
+                BinarySocket.send({
+                    verify_email: Client.get('email'),
+                    type        : 'payment_withdraw',
+                }).then((response) => {
+                    response_withdrawal = response;
+                    handleWithdrawalResponse();
+                });
+            }
         } else if (!validEmailToken(token)) {
             showError('token_error');
         } else {
             getCashierURL();
+        }
+    };
+
+    const handleWithdrawalResponse = () => {
+        if ('error' in response_withdrawal) {
+            showError('custom_error', response_withdrawal.error.message);
+        } else {
+            showMessage('check_email_message');
         }
     };
 
@@ -272,6 +283,7 @@ const DepositWithdraw = (() => {
 
     const onUnload = () => {
         window.removeEventListener('message', setFrameHeight);
+        response_withdrawal = {};
     };
 
     return {
