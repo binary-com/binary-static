@@ -14,12 +14,12 @@ export const onChangeStartDate = (store) => {
     start_time                    = obj_start_time.start_time;
     const obj_end_time            = ContractType.getEndTime(sessions, start_date, start_time, expiry_date, expiry_time);
 
-    const obj_duration_units_min_max = ContractType.getDurationUnitsList(contract_type, contract_start_type);
+    const obj_duration_min_max = ContractType.getDurationMinMax(contract_type, contract_start_type);
 
     return {
         ...obj_contract_start_type,
         ...obj_duration_units_list,
-        ...obj_duration_units_min_max,
+        ...obj_duration_min_max,
         ...obj_duration_unit,
         ...obj_sessions,
         ...obj_start_time,

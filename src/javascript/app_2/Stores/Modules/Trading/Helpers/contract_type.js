@@ -132,7 +132,7 @@ const ContractType = (() => {
         const obj_duration_unit = getDurationUnit(duration_unit, contract_type, obj_start_type.contract_start_type);
 
         const obj_duration_units_list    = getDurationUnitsList(contract_type, obj_start_type.contract_start_type);
-        const obj_duration_units_min_max = getDurationUnitsMinMax(contract_type, obj_start_type.contract_start_type);
+        const obj_duration_units_min_max = getDurationMinMax(contract_type, obj_start_type.contract_start_type);
 
         return {
             ...form_components,
@@ -161,10 +161,6 @@ const ContractType = (() => {
         duration_units_list: getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [],
     });
 
-    const getDurationUnitsMinMax = (contract_type, contract_start_type) => ({
-        duration_units_min_max: getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type]) || [],
-    });
-
     const getDurationUnit = (duration_unit, contract_type, contract_start_type) => {
         const duration_units = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'units_display', contract_start_type]) || [];
         const arr_units = [];
@@ -178,9 +174,15 @@ const ContractType = (() => {
     };
 
     // TODO: use this getter function to dynamically compare min/max versus duration amount
-    const getDurationMinMax = (contract_type, contract_start_type, contract_expiry_type) => ({
-        duration_min_max: getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type, contract_expiry_type]) || {},
-    });
+    const getDurationMinMax = (contract_type, contract_start_type, contract_expiry_type) => {
+        let duration_min_max = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type]) || {};
+
+        if (contract_expiry_type) {
+            duration_min_max = duration_min_max[contract_expiry_type] || {};
+        }
+
+        return { duration_min_max };
+    };
 
     const getStartType = (start_date) => ({
         // Number(0) refers to 'now'

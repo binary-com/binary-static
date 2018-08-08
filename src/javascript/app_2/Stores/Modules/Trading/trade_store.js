@@ -46,7 +46,7 @@ export default class TradeStore extends BaseStore {
     @observable duration               = 5;
     @observable duration_unit          = '';
     @observable duration_units_list    = [];
-    @observable duration_units_min_max = {};
+    @observable duration_min_max       = {};
     @observable expiry_date            = '';
     @observable expiry_time            = '09:40';
     @observable expiry_type            = 'duration';
@@ -88,7 +88,7 @@ export default class TradeStore extends BaseStore {
 
         // Adds intercept to change min_max value of duration validation
         reaction(
-            ()=> [this.duration_units_min_max, this.contract_expiry_type, this.duration_unit],
+            ()=> [this.duration_min_max, this.contract_expiry_type, this.duration_unit],
             () => {
                 this.changeDurationValidationRules();
             }
@@ -250,7 +250,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     changeDurationValidationRules() {
         const index = this.validation_rules.duration.findIndex(item => item[0] === 'number');
-        const limits = this.duration_units_min_max[this.contract_expiry_type] || false;
+        const limits = this.duration_min_max[this.contract_expiry_type] || false;
         const duration_options = {
             min: convertDurationLimit(+limits.min, this.duration_unit),
             max: convertDurationLimit(+limits.max, this.duration_unit),
