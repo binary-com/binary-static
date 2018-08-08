@@ -52,7 +52,7 @@ class Validator {
                     return; 
                 }
 
-                if (this.input[attribute] === '' && rule.name !== 'req') {
+                if (this.input[attribute] === '' && ruleObject.name !== 'req') {
                     return;
                 }
 
