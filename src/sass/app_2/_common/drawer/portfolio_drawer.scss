@@ -59,7 +59,11 @@ $header-height: 40px;
         grid-template-rows: 1fr auto;
         border: 1px solid $COLOR_GRAY;
         border-radius: 2px;
+        cursor: pointer;
 
+        &:hover {
+            background: $COLOR_LIGHT_GRAY;
+        }
         &:not(:last-child) {
             margin-bottom: 16px;
         }

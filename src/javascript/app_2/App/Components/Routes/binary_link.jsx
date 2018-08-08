@@ -2,14 +2,13 @@ import PropTypes     from 'prop-types';
 import React         from 'react';
 import { NavLink }   from 'react-router-dom';
 import {
-    normalizePath,
-    getRouteInfo }   from './helpers';
+    findRouteByPath,
+    normalizePath }  from './helpers';
 import routes_config from '../../Constants/routes_config';
-
 
 const BinaryLink = ({ to, children, ...props }) => {
     const path  = normalizePath(to);
-    const route = getRouteInfo(routes_config, path);
+    const route = findRouteByPath(path, routes_config);
 
     if (!route) {
         throw new Error(`Route not found: ${to}`);
