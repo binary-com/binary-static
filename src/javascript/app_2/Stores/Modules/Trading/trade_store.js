@@ -11,6 +11,8 @@ import {
 import BaseStore                          from '../../base_store';
 import { WS }                             from '../../../Services';
 import URLHelper                          from '../../../Utils/URL';
+
+
 import Client                             from '../../../../_common/base/client_base';
 import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
 
@@ -200,6 +202,7 @@ export default class TradeStore extends BaseStore {
         }
 
         this.is_purchase_enabled = true;
+        this.root_store.ui.is_app_ready = true;
     }
 
     @action.bound

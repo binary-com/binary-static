@@ -1,16 +1,38 @@
+body {
+    margin: 0;
+}
+
 .loader {
     background-color: #fff; // stylelint-disable-line color-no-hex
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 999;
+    visibility: hidden;
 
+    &.run {
+        visibility: visible;
+
+        .chart-line, .loading-line, .loading-line-bg {
+            animation-play-state: running;
+        }
+    }
     &.dark {
         background-color: #2a3052; // stylelint-disable-line color-no-hex
+
+        .chart-line {
+            stroke: #aaacbe; // stylelint-disable-line color-no-hex
+        }
+        .loading-line {
+            stroke: #3f4463; // stylelint-disable-line color-no-hex
+        }
+        .loading-line-bg {
+            stroke: #e98024; // stylelint-disable-line color-no-hex
+        }
     }
     svg {
         position: absolute;
@@ -19,16 +41,19 @@
         stroke-dasharray: 4300;
         stroke-dashoffset: 4300;
         animation: draw-chart-line 5s linear infinite;
+        animation-play-state: paused;
     }
     .loading-line {
         stroke-dasharray: 150;
         stroke-dashoffset: 150;
         animation: loading 1s linear infinite;
+        animation-play-state: paused;
     }
     .loading-line-bg {
         stroke-dasharray: 150;
         stroke-dashoffset: 150;
         animation: bgloading 1s linear infinite;
+        animation-play-state: paused;
     }
 }
 

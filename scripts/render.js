@@ -165,7 +165,6 @@ const createContextBuilder = async () => {
             `${config.root_url}js/binary${is_app ? '_app' : ''}${program.dev ? '' : '.min'}.js?${static_hash}`,
         ],
         css_files: is_app ? [
-            `${config.root_url}css/loader.css?${static_hash}`,
             `${config.root_url}css/app_2.min.css?${static_hash}`,
             `${config.root_url}css/smartcharts.css?${static_hash}`,
         ] : [

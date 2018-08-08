@@ -1,9 +1,12 @@
 import {
     action,
     computed,
-    observable }            from 'mobx';
-import BaseStore            from './base_store';
-import { MAX_MOBILE_WIDTH, MAX_TABLET_WIDTH } from '../Constants/ui';
+    observable,
+    reaction }         from 'mobx';
+import BaseStore       from './base_store';
+import {
+    MAX_MOBILE_WIDTH,
+    MAX_TABLET_WIDTH } from '../Constants/ui';
 
 export default class UIStore extends BaseStore {
     @observable is_portfolio_drawer_on     = false;
@@ -24,6 +27,8 @@ export default class UIStore extends BaseStore {
     @observable is_chart_asset_info_visible = true;
     @observable is_chart_countdown_visible = false;
 
+    @observable is_app_ready = false;
+
     constructor() {
         const local_storage_properties = [
             'is_chart_asset_info_visible',
@@ -37,6 +42,14 @@ export default class UIStore extends BaseStore {
 
         super(null, local_storage_properties);
         window.addEventListener('resize', this.handleResize);
+        reaction(
+            () => this.is_app_ready,
+            () => { if (this.is_app_ready) { document.getElementById('binary_loader').remove(); } }
+        );
+        reaction(
+            () => this.is_dark_mode_on,
+            () => { localStorage.setItem('is_dark_mode_on', this.is_dark_mode_on); }
+        );
     }
 
     @action.bound

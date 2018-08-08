@@ -1,3 +1,4 @@
+import classnames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import Test            from './test.jsx';
@@ -14,7 +15,7 @@ class Trade extends React.Component {
     render() {
         return (
             <div id='trade_container' className='trade-container'>
-                <div className='chart-container notice-msg'>
+                <div className={classnames('chart-container notice-msg', { 'fade-in': this.props.is_app_ready })}>
                     <SmartCharts
                         chart_barriers={this.props.chart_barriers}
                         initial_symbol={this.props.initial_symbol}
@@ -27,7 +28,11 @@ class Trade extends React.Component {
                     />
                     <Test />
                 </div>
-                <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
+                <FormLayout 
+                    is_mobile={this.props.is_mobile} 
+                    is_trade_enabled={this.props.is_trade_enabled} 
+                    is_app_ready={this.props.is_app_ready} 
+                />
             </div>
         );
     }
@@ -37,6 +42,7 @@ Trade.propTypes = {
     chart_barriers      : PropTypes.object,
     initial_symbol      : PropTypes.string,
     is_asset_enabled    : PropTypes.bool,
+    is_app_ready        : PropTypes.bool,
     is_countdown_enabled: PropTypes.bool,
     is_dark_theme       : PropTypes.bool,
     is_position_default : PropTypes.bool,
@@ -57,6 +63,7 @@ export default connect(
         is_trade_enabled    : modules.trade.is_trade_enabled,
         onSymbolChange      : modules.trade.onChange,
         updateQueryString   : modules.trade.updateQueryString,
+        is_app_ready        : ui.is_app_ready,
         is_dark_theme       : ui.is_dark_mode_on,
         is_countdown_enabled: ui.is_chart_countdown_visible,
         is_asset_enabled    : ui.is_chart_asset_info_visible,
