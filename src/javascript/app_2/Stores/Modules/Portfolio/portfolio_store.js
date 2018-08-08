@@ -22,7 +22,7 @@ export default class PortfolioStore extends BaseStore {
             this.is_loading = false;
             this.updatePortfolio(response);
         });
-        WS.subscribeProposalOpenContract(this.proposalOpenContractHandler, false);
+        WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
         WS.subscribeTransaction(this.transactionHandler, false);
     };
 
@@ -40,7 +40,7 @@ export default class PortfolioStore extends BaseStore {
         }
         WS.portfolio().then((res) => this.updatePortfolio(res));
         // subscribe to new contracts:
-        WS.subscribeProposalOpenContract(this.proposalOpenContractHandler, false);
+        WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
     };
 
     @action.bound

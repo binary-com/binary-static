@@ -15,7 +15,7 @@ class SettingsDialog extends React.PureComponent {
         this.wrapper_ref = node;
     }
 
-    // TO-DO - Simplify this
+    // TODO - Simplify this
     handleClickOutside = (event) => {
         const footer_settings_btn = !(event.target.classList.contains('ic-settings', 'ic-settings active'));
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.props.is_open && footer_settings_btn) {

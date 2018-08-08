@@ -68,15 +68,15 @@ const MenuDrawer = ({
             <DrawerItem text={localize('Contact Us')}/>
             */}
         </div>
-        <div className='drawer-footer'>
-            {Client.isLoggedIn() &&
+        {Client.isLoggedIn() &&
+            <div className='drawer-footer'>
                 <DrawerItem
                     icon={<IconLogout className='drawer-icon'/>}
                     text={localize('Logout')}
                     custom_action={requestLogout}
                 />
-            }
-        </div>
+            </div>
+        }
     </div>
 );
 

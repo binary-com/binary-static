@@ -8,7 +8,6 @@
         height: 32px;
         padding: 0 8px;
         border-radius: 4px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         font-size: 16px;
         font-weight: 300;
@@ -100,6 +99,11 @@
 
                 .list-title {
                     margin-top: 10px;
+                    color: $COLOR_LIGHT_BLACK;
+
+                    strong {
+                        font-weight: 400;
+                    }
                 }
                 .list-container .list-item {
                     display: inline-block;
@@ -143,25 +147,31 @@
 
             .time-picker-hours, .time-picker-minutes {
                 color: $COLOR_BRANDBLUE_40;
-                background: $COLOR_BLUE;
+                background: $COLOR_BRANDBLUE_95;
                 border-color: $COLOR_BRANDBLUE_85;
 
+                .list-title {
+                    color: $COLOR_WHITE;
+                }
                 .list-item {
                     color: $COLOR_BRANDBLUE_40;
 
                     &.disabled {
-                        background: $COLOR_BRANDBLUE_85;
-                        color: $COLOR_DARK_BLUE;
+                        color: $COLOR_BRANDBLUE_75;
+                        pointer-events: none;
                     }
                     &.selected {
-                        background: $COLOR_BRANDBLUE_85;
-                        color: $COLOR_WHITE;
+                        background: $COLOR_WHITE;
+                        color: $COLOR_BLUE;
                     }
-                    &:hover {
+                    &:hover:not(.selected):not(.disabled) {
                         background: $COLOR_BRANDBLUE_85;
                     }
                 }
             }
+        }
+        .time-picker-panel {
+            color: $COLOR_BRANDBLUE_40;
         }
     }
 }

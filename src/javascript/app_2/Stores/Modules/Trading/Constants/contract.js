@@ -28,6 +28,6 @@ export const getContractCategoriesConfig = () => (
         [localize('In/Out')]        : ['end', 'stay'],
         [localize('Asians')]        : ['asian'],
         [localize('Digits')]        : ['match_diff', 'even_odd', 'over_under'],
-        [localize('Lookback')]      : ['lb_call', 'lb_put', 'lb_high_low'],
+        // [localize('Lookback')]      : ['lb_call', 'lb_put', 'lb_high_low'],
     }
 );

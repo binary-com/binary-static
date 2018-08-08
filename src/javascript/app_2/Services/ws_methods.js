@@ -61,8 +61,8 @@ const WS = (() => {
     const subscribeProposal = (req, cb, should_forget_first) =>
         SubscriptionManager.subscribe('proposal', req, cb, should_forget_first);
 
-    const subscribeProposalOpenContract = (cb, should_forget_first) =>
-        SubscriptionManager.subscribe('proposal_open_contract', { proposal_open_contract: 1, subscribe: 1 }, cb, should_forget_first);
+    const subscribeProposalOpenContract = (contract_id = null, cb, should_forget_first) =>
+        SubscriptionManager.subscribe('proposal_open_contract', { proposal_open_contract: 1, subscribe: 1, ...(contract_id && { contract_id }) }, cb, should_forget_first);
 
     const subscribeTicks = (symbol, cb, should_forget_first) =>
         SubscriptionManager.subscribe('ticks', { ticks: symbol, subscribe: 1 }, cb, should_forget_first);

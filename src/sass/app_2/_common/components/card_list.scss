@@ -7,5 +7,10 @@
         background-color: $COLOR_WHITE;
         border: 1px solid $COLOR_GRAY;
         border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            background: $COLOR_LIGHT_GRAY;
+        }
     }
 }

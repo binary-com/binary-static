@@ -221,11 +221,10 @@ inside its own subdirectory, e.g.:
 Stores/
 ├── Modules/
 │   ├── Trading/
-│   │   ├── trade.spec.js
 │   │   ├── Actions/
-│   │   ├── trade.spec.js
+│   │   ├── Constants/
 │   │   ├── Helpers/
-│   │   └── trade.spec.js
+│   │   └── trade_store.js
 │   ├── index.js
 │   └── statement_store.js
 ├── client_store.js

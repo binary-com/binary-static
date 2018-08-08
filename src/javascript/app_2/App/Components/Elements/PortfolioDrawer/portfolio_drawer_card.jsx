@@ -1,10 +1,20 @@
-import PropTypes                      from 'prop-types';
-import React                          from 'react';
-import Money                          from '../money.jsx';
-import ContractTypeCell               from '../../../../Modules/Portfolio/Components/contract_type_cell.jsx';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import Money               from '../money.jsx';
+import { getContractPath } from '../../../../App/Components/Routes/helpers';
+import RedirectOnClick     from '../../../../App/Components/Routes/redirect_onclick.jsx';
+import ContractTypeCell    from '../../../../Modules/Portfolio/Components/contract_type_cell.jsx';
 
-const PortfolioDrawerCard = ({ type, indicative, underlying, remaining_time, currency, status }) => (
-    <div className='portfolio-drawer-card'>
+const PortfolioDrawerCard = ({
+    currency,
+    id,
+    indicative,
+    remaining_time,
+    status,
+    type,
+    underlying,
+}) => (
+    <RedirectOnClick className='portfolio-drawer-card' path={getContractPath(id)}>
         <div className='portfolio-drawer-card__type'>
             <ContractTypeCell type={type} />
         </div>
@@ -13,16 +23,17 @@ const PortfolioDrawerCard = ({ type, indicative, underlying, remaining_time, cur
         </div>
         <span className='portfolio-drawer-card__symbol'>{underlying}</span>
         <span className='portfolio-drawer-card__remaining-time'>{remaining_time}</span>
-    </div>
+    </RedirectOnClick>
 );
 
 PortfolioDrawerCard.propTypes = {
-    type          : PropTypes.string,
-    underlying    : PropTypes.string,
     currency      : PropTypes.string,
+    id            : PropTypes.number,
     indicative    : PropTypes.number,
     remaining_time: PropTypes.string,
     status        : PropTypes.string,
+    type          : PropTypes.string,
+    underlying    : PropTypes.string,
 };
 
 export default PortfolioDrawerCard;

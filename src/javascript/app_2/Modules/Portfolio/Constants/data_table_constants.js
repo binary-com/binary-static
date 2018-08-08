@@ -1,16 +1,17 @@
-import React                     from 'react';
-import ContractTypeCell          from '../Components/contract_type_cell.jsx';
-import IndicativeCell            from '../Components/indicative_cell.jsx';
-import Money                     from '../../../App/Components/Elements/money.jsx';
-import { localize }              from '../../../../_common/localize';
+import React            from 'react';
+import ContractTypeCell from '../Components/contract_type_cell.jsx';
+import IndicativeCell   from '../Components/indicative_cell.jsx';
+import ContractLink     from '../../Contract/Components/contract_link.jsx';
+import Money            from '../../../App/Components/Elements/money.jsx';
+import { localize }     from '../../../../_common/localize';
 
 /* eslint-disable react/display-name, react/prop-types */
 export const getTableColumnsTemplate = (currency) => [
     {
         title            : localize('Reference No.'),
         col_index        : 'reference',
-        renderCellContent: ({ cell_value, is_footer }) => (
-            is_footer ? localize('Total') : cell_value
+        renderCellContent: ({ cell_value, is_footer, row_obj }) => (
+            is_footer ? localize('Total') : <ContractLink contract_id={row_obj.id} text={cell_value} />
         ),
     },
     {
