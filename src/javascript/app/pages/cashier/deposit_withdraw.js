@@ -12,6 +12,7 @@ const State             = require('../../../_common/storage').State;
 const toTitleCase       = require('../../../_common/string_util').toTitleCase;
 const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
+const isEmptyObject     = require('../../../_common/utility').isEmptyObject;
 
 const DepositWithdraw = (() => {
     const default_iframe_height = 700;
@@ -48,9 +49,7 @@ const DepositWithdraw = (() => {
     const checkToken = () => {
         token = Url.getHashValue('token');
         if (!token) {
-            if (response_withdrawal.length) {
-                handleWithdrawalResponse();
-            } else {
+            if (isEmptyObject(response_withdrawal)) {
                 BinarySocket.send({
                     verify_email: Client.get('email'),
                     type        : 'payment_withdraw',
@@ -58,6 +57,8 @@ const DepositWithdraw = (() => {
                     response_withdrawal = response;
                     handleWithdrawalResponse();
                 });
+            } else {
+                handleWithdrawalResponse();
             }
         } else if (!validEmailToken(token)) {
             showError('token_error');
