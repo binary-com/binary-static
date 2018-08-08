@@ -242,10 +242,18 @@ const ContractType = (() => {
         start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
     });
 
+    const getExpiryDate = (expiry_date) => {
+        const moment_today    = moment.utc();
+        const is_before_today = moment.utc(expiry_date).isBefore(moment_today, 'day');
+        return {
+            expiry_date: is_before_today ? moment_today.format('YYYY-MM-DD') : expiry_date,
+        };
+    };
+
     // has to follow the correct order of checks:
     // first check if end time is within available sessions
     // then confirm that end time is after start time
-    const getEndTime = (sessions, start_date, start_time, expiry_date, expiry_time) => {
+    const getExpiryTime = (sessions, start_date, start_time, expiry_date, expiry_time) => {
         const start_moment = start_date ? buildMoment(start_date, start_time) : moment().utc();
         const end_moment   = buildMoment(expiry_date, expiry_time);
 
@@ -300,7 +308,8 @@ const ContractType = (() => {
         getBarriers,
         getSessions,
         getStartTime,
-        getEndTime,
+        getExpiryDate,
+        getExpiryTime,
 
         getContractCategories: () => ({ contract_types_list: available_categories }),
     };
