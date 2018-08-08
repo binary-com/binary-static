@@ -59,7 +59,7 @@ const Index = () => (
                             <BoxInner className='border-right-top' image='debt-free' text={it.L('Debt-free')} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-top' href='/careers' image='staff' text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '200', it.url_for('careers'))} />
+                            <BoxInner className='border-right-top' href='/careers' image='staff' text={it.L('Over [_1] <a href=\'[_2]\'>staff</a> and contractors worldwide', '190', it.url_for('careers'))} />
                             <BoxInner image='1mil' text={it.L('Over 1 million registered accounts worldwide')} />
                         </Box>
                     </div>
