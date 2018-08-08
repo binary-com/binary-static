@@ -43,7 +43,7 @@ export const FormRow = ({
                         type={type}
                         className={className}
                         id={id}
-                        maxLength={type === 'password' ? 25 : undefined}
+                        maxLength={type === 'password' ? 26 : undefined}
                         {...attributes}
                     />
                     {type === 'checkbox' && spaced ?
