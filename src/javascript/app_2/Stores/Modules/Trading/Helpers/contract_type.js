@@ -242,11 +242,13 @@ const ContractType = (() => {
         start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
     });
 
-    const getExpiryDate = (expiry_date) => {
-        const moment_today    = moment.utc();
-        const is_before_today = moment.utc(expiry_date).isBefore(moment_today, 'day');
+    const getExpiryDate = (expiry_date, start_date) => {
+        const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
+        const moment_expiry = moment.utc(expiry_date);
+        // forward starting contracts should only show today and tomorrow as expiry date
+        const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
         return {
-            expiry_date: is_before_today ? moment_today.format('YYYY-MM-DD') : expiry_date,
+            expiry_date: is_invalid ? moment_start.format('YYYY-MM-DD') : expiry_date,
         };
     };
 

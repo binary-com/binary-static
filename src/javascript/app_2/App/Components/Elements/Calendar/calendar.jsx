@@ -137,7 +137,7 @@ class Calendar extends React.PureComponent {
     }
 
     render() {
-        const { children, date_format, footer, id, max_date, min_date, has_today_btn } = this.props;
+        const { children, date_format, footer, id, max_date, min_date, start_date, has_today_btn } = this.props;
         const { calendar_date, calendar_view, selected_date  } = this.state;
 
         return (
@@ -156,6 +156,7 @@ class Calendar extends React.PureComponent {
                     isPeriodDisabled={this.isPeriodDisabled}
                     max_date={max_date}
                     min_date={min_date}
+                    start_date={start_date}
                     onClick={this.panelSelectors}
                     selected_date={selected_date}
                     calendar_view={calendar_view}
@@ -193,7 +194,7 @@ Calendar.propTypes = {
     ]),
     onSelect  : PropTypes.func,
     start_date: PropTypes.oneOfType([
-        PropTypes.object,
+        PropTypes.number,
         PropTypes.string,
     ]),
 };

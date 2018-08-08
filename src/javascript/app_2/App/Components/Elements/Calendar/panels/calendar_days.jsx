@@ -5,10 +5,10 @@ import CalendarPanelTypes from './types';
 import { localize }       from '../../../../../../_common/localize';
 import { padLeft }        from '../../../../../../_common/string_util';
 
-const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, selected_date }) => {
+const getDays = ({ calendar_date, date_format, max_date, min_date, start_date, onClick, selected_date }) => {
     const dates = [];
     const days  = [];
-    const moment_today       = moment().utc();
+    const moment_today       = moment().utc().set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
     const moment_cur_date    = moment.utc(calendar_date);
     const num_of_days        = moment_cur_date.daysInMonth() + 1;
     const moment_month_start = moment_cur_date.clone().startOf('month');
@@ -29,11 +29,14 @@ const getDays = ({ calendar_date, date_format, max_date, min_date, onClick, sele
         dates.push(moment_month_end.clone().add(i, 'day').format(date_format));
     }
 
+    const moment_start_date = moment.unix(start_date).utc().set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
     dates.map((date) => {
-        const moment_date    = moment.utc(date).set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
-        const is_disabled    = moment_date.isBefore(moment_min_date) || moment_date.isAfter(moment_max_date);
-        const is_active      = selected_date && moment_date.isSame(moment_selected);
-        const is_today       = moment_date.isSame(moment_today, 'day');
+        const moment_date = moment.utc(date).set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+        const is_active   = selected_date && moment_date.isSame(moment_selected);
+        const is_today    = moment_date.isSame(moment_today, 'day');
+        const is_disabled = moment_date.isBefore(moment_min_date) || moment_date.isAfter(moment_max_date) ||
+            // for forward starting accounts, only show same day as start date and the day after
+            (start_date && (moment_date.isBefore(moment_start_date) || moment_date.isAfter(moment_start_date.clone().add(1, 'day'))));
 
         days.push(
             <span
