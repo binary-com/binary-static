@@ -1,0 +1,95 @@
+.contract-container {
+    font-size: 0.85rem;
+    border: 1px solid $COLOR_GRAY;
+
+    .contract-header {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        color: $COLOR_WHITE;
+        font-weight: bold;
+        line-height: 2rem;
+
+        svg {
+            display: inline-block;
+            margin-right: 7px;
+        }
+        &.purchased {
+            color: $COLOR_LIGHT_GREEN;
+            background-color: $COLOR_LIGHT_GRAY;
+        }
+        &.won {
+            background-color: $COLOR_LIGHT_GREEN;
+        }
+        &.lost {
+            background-color: $COLOR_LIGHT_RED;
+        }
+    }
+    .contract-contents {
+        padding: 10px;
+        font-size: 0.75rem;
+
+        .longcode {
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.1rem;
+        }
+        .ref-number, .info-header {
+            margin-top: 10px;
+            font-weight: 300;
+            text-align: center;
+            background-color: $COLOR_LIGHT_GRAY;
+            line-height: 1.7rem;
+        }
+        .info-header {
+            font-weight: bold;
+        }
+        .info-item {
+            display: flex;
+            padding: 7px 0;
+            border-bottom: 1px solid $COLOR_GRAY;
+
+            > div {
+                align-self: center;
+
+                &:first-child {
+                    font-weight: 300;
+                    flex-grow: 1;
+                    color: $COLOR_LIGHT_BLACK;
+                }
+                &:last-child {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .contract-container {
+        border-color: $COLOR_BRANDBLUE_85;
+        color: $COLOR_BRANDBLUE_40;
+
+        .contract-header {
+            &.purchased {
+                background-color: $COLOR_BRANDBLUE_95;
+            }
+            &.won {
+                background-color: $COLOR_GREEN;
+            }
+        }
+        .contract-contents {
+            .ref-number, .info-header {
+                background-color: $COLOR_BRANDBLUE_95;
+            }
+            .info-item {
+                border-bottom-color: $COLOR_BRANDBLUE_85;
+
+                > div:first-child {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+        }
+    }
+}

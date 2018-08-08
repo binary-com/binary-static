@@ -2,12 +2,13 @@ import { action, observable }             from 'mobx';
 import { processPurchase }                from './Actions/purchase';
 import * as Symbol                        from './Actions/symbol';
 import { allowed_query_string_variables } from './Constants/query_string';
-import { createChartBarriersConfig }      from './Helpers/chart';
+import { setChartBarrier }                from './Helpers/chart';
 import ContractType                       from './Helpers/contract_type';
 import { processTradeParams }             from './Helpers/process';
 import {
     createProposalRequests,
     getProposalInfo }                     from './Helpers/proposal';
+import { pickDefaultSymbol }              from './Helpers/symbol';
 import BaseStore                          from '../../base_store';
 import { WS }                             from '../../../Services';
 import URLHelper                          from '../../../Utils/URL';
@@ -63,20 +64,24 @@ export default class TradeStore extends BaseStore {
     @observable proposal_info = {};
     @observable purchase_info = {};
 
-    // Chart
-    @observable chart_barriers = observable.object({});
-
 
     constructor(root_store) {
-        const session_storage_properties = allowed_query_string_variables;
-        super(root_store, null, session_storage_properties);
+        super(root_store, null, allowed_query_string_variables);
+
         if (Client.isLoggedIn) {
-            this.processNewValuesAsync({currency: Client.get('currency')});        
+            this.processNewValuesAsync({currency: Client.get('currency')});
         }
     }
 
     @action.bound
-    init() {
+    async init() {
+        this.smart_chart = this.root_store.modules.smart_chart;
+
+        if (!this.symbol) {
+            const active_symbols = await WS.activeSymbols();
+            await this.processNewValuesAsync({ symbol: pickDefaultSymbol(active_symbols.active_symbols) });
+        }
+
         if (this.symbol) {
             ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
                 this.processNewValuesAsync({
@@ -99,18 +104,23 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onHoverPurchase(is_over, contract_type) {
-        if (!isEmptyObject(this.chart_barriers.main)) {
-            this.chart_barriers.main.updateBarrierShade(this.chart_barriers, is_over, contract_type);
-        }
+        this.smart_chart.updateBarrierShade(is_over, contract_type);
     }
 
     @action.bound
     onPurchase(proposal_id, price) {
         if (proposal_id) {
             processPurchase(proposal_id, price).then(action((response) => {
+                WS.forgetAll('proposal');
                 this.purchase_info = response;
             }));
         }
+    }
+
+    @action.bound
+    onClickNewTrade(e) {
+        this.requestProposal();
+        e.preventDefault();
     }
 
     /**
@@ -150,14 +160,18 @@ export default class TradeStore extends BaseStore {
                 await Symbol.onChangeSymbolAsync(new_state.symbol);
             }
 
-            const is_barrier_changed = 'barrier_1' in new_state || 'barrier_2' in new_state;
-            this.updateStore({ // disable purchase button(s), clear contract info, cleanup chart
+            this.updateStore({ // disable purchase button(s), clear contract info
                 is_purchase_enabled: false,
                 proposal_info      : {},
-                ...(is_barrier_changed ? {} : { chart_barriers: {} }),
             });
-            if (is_barrier_changed && !isEmptyObject(this.chart_barriers.main)) {
-                this.chart_barriers.main.updateBarriers({ high: this.barrier_1, low: this.barrier_2 });
+
+            if (!this.smart_chart.is_contract_mode) {
+                const is_barrier_changed = 'barrier_1' in new_state || 'barrier_2' in new_state;
+                if (is_barrier_changed) {
+                    this.smart_chart.updateBarriers(this.barrier_1, this.barrier_2);
+                } else {
+                    this.smart_chart.removeBarriers();
+                }
             }
 
             const snapshot = await processTradeParams(this, new_state);
@@ -176,6 +190,7 @@ export default class TradeStore extends BaseStore {
         if (!isEmptyObject(requests)) {
             this.proposal_requests = requests;
             this.proposal_info     = {};
+            this.purchase_info     = {};
 
             WS.forgetAll('proposal').then(() => {
                 Object.keys(this.proposal_requests).forEach((type) => {
@@ -193,25 +208,16 @@ export default class TradeStore extends BaseStore {
             [contract_type]: getProposalInfo(this, response),
         };
 
-        if (isEmptyObject(this.chart_barriers.main)) {
-            this.chart_barriers = {
-                main: createChartBarriersConfig(contract_type, response, this.onChartBarrierChange),
-            };
+        if (!this.smart_chart.is_contract_mode) {
+            setChartBarrier(this.smart_chart, response, this.onChartBarrierChange);
         }
 
         this.is_purchase_enabled = true;
     }
 
     @action.bound
-    onChartBarrierChange() {
-        const main_barriers = this.chart_barriers.main;
-        this.processNewValuesAsync(
-            {
-                barrier_1: `${main_barriers.relative && !/^[+-]/.test(main_barriers.high) ? '+' : ''}${main_barriers.high}`,
-                barrier_2: `${main_barriers.low}`,
-            },
-            true,
-        );
+    onChartBarrierChange(barrier_1, barrier_2) {
+        this.processNewValuesAsync({ barrier_1, barrier_2 }, true);
     }
 
     @action.bound

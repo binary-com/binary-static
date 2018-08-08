@@ -1,11 +1,13 @@
 import { Redirect }           from 'react-router-dom';
 import { routes }             from '../../Constants';
+
+import { IconPortfolio,
+         IconStatement }      from '../../Assets/Header/NavBar';
+import ContractDetails        from '../../Modules/Contract';
 import Portfolio              from '../../Modules/Portfolio';
 import Settings               from '../../Modules/settings/settings.jsx';
 import Statement              from '../../Modules/Statement';
-import TradeApp               from '../../Modules/Trading';
-import { IconPortfolio,
-         IconStatement }      from '../../Assets/Header/NavBar';
+import Trade                  from '../../Modules/Trading';
 
 // Settings Routes
 import AccountPassword        from '../../Modules/settings/sections/account_password.jsx';
@@ -19,11 +21,12 @@ import PersonalDetails        from '../../Modules/settings/sections/personal_det
 import SelfExclusion          from '../../Modules/settings/sections/self_exclusion.jsx';
 
 const routes_config = [
-    { path: routes.root,      component: Redirect,  exact: true, to: '/trade' },
-    { path: routes.index,     component: Redirect,  to: '/trade' },
-    { path: routes.trade,     component: TradeApp,  exact: true },
-    { path: routes.portfolio, component: Portfolio, is_authenticated: true, icon_component: IconPortfolio },
-    { path: routes.statement, component: Statement, is_authenticated: true, icon_component: IconStatement },
+    { path: routes.contract,  component: ContractDetails, is_authenticated: true },
+    { path: routes.index,     component: Redirect,        to: '/trade' },
+    { path: routes.portfolio, component: Portfolio,       is_authenticated: true, icon_component: IconPortfolio },
+    { path: routes.root,      component: Redirect,        exact: true, to: '/trade' },
+    { path: routes.statement, component: Statement,       is_authenticated: true, icon_component: IconStatement },
+    { path: routes.trade,     component: Trade,           exact: true },
     {
         path            : routes.settings,
         component       : Settings,

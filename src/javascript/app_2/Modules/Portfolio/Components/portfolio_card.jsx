@@ -1,21 +1,27 @@
-import PropTypes from 'prop-types';
-import React     from 'react';
-import Money     from '../../../App/Components/Elements/money.jsx';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import ContractLink        from '../../Contract/Components/contract_link.jsx';
+import Money               from '../../../App/Components/Elements/money.jsx';
+import { getContractPath } from '../../../App/Components/Routes/helpers';
+import RedirectOnClick     from '../../../App/Components/Routes/redirect_onclick.jsx';
 
 const PortfolioCard = ({
-    reference,
+    currency,
     details,
-    remaining_time,
+    id,
     indicative,
     payout,
     purchase,
-    currency,
+    reference,
+    remaining_time,
     status,
 }) => (
-    <div className='portfolio-card card-list__card'>
+    <RedirectOnClick className='portfolio-card card-list__card' path={getContractPath(id)}>
         <div className='portfolio-card__header'>
             <span className='portfolio-card__date'>{ remaining_time }</span>
-            <span className='portfolio-card__refid'>{ reference }</span>
+            <span className='portfolio-card__refid'>
+                <ContractLink contract_id={id} text={reference} />
+            </span>
         </div>
         <div className='portfolio-card__body'>
             <div className='portfolio-card__desc'>{details}</div>
@@ -37,17 +43,18 @@ const PortfolioCard = ({
                 </div>
             </div>
         </div>
-    </div>
+    </RedirectOnClick>
 );
 
 PortfolioCard.propTypes = {
-    reference     : PropTypes.number,
+    currency      : PropTypes.string,
     details       : PropTypes.string,
-    remaining_time: PropTypes.string,
+    id            : PropTypes.number,
     indicative    : PropTypes.number,
     payout        : PropTypes.number,
     purchase      : PropTypes.number,
-    currency      : PropTypes.string,
+    reference     : PropTypes.number,
+    remaining_time: PropTypes.string,
     status        : PropTypes.string,
 };
 

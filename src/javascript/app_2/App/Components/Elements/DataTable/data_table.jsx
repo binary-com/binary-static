@@ -24,9 +24,10 @@ class DataTable extends React.PureComponent {
     render() {
         const {
             children,
-            onScroll,
-            footer,
             columns,
+            footer,
+            onRowClick,
+            onScroll,
         } = this.props;
 
         return (
@@ -34,15 +35,20 @@ class DataTable extends React.PureComponent {
                 <div className='table__head' ref={el => { this.el_table_head = el; }}>
                     <TableRow columns={columns} is_header />
                 </div>
-                
+
                 <div
                     className='table__body'
                     onScroll={onScroll}
                     ref={el => { this.el_table_body = el; }}
                 >
                     {this.props.data_source.map((row_obj, id) =>
-                        <TableRow row_obj={row_obj} columns={columns} key={id} />)
-                    }
+                        <TableRow
+                            row_obj={row_obj}
+                            columns={columns}
+                            key={id}
+                            onRowClick={onRowClick}
+                        />
+                    )}
                     {children}
                 </div>
 
@@ -60,6 +66,7 @@ DataTable.propTypes = {
     columns    : PropTypes.array,
     data_source: MobxPropTypes.arrayOrObservableArray,
     footer     : PropTypes.object,
+    onRowClick : PropTypes.func,
     onScroll   : PropTypes.func,
     children   : PropTypes.oneOfType([
         PropTypes.node,
