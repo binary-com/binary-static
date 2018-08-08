@@ -17,8 +17,8 @@ class Trade extends React.Component {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
 
         return (
-            <div className={classnames('chart-container notice-msg', { 'fade-in': this.props.is_app_ready })}>
-                <div className='chart-container notice-msg'>
+            <div id='trade_container' className='trade-container'>
+                <div className={classnames('chart-container notice-msg', { 'fade-in': this.props.is_app_ready })}>
                     { this.props.symbol &&
                         <SmartChart
                             onSymbolChange={this.props.onSymbolChange}

@@ -45,7 +45,7 @@ export default class UIStore extends BaseStore {
         window.addEventListener('resize', this.handleResize);
         reaction(
             () => this.is_app_ready,
-            () => { if (this.is_app_ready) { document.getElementById('binary_loader').remove(); } }
+            () => { if (this.is_app_ready) { document.getElementById('binary_loader').classList.add('fade-out'); } }
         );
         reaction(
             () => this.is_dark_mode_on,
