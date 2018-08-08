@@ -54,7 +54,7 @@ const Barrier = ({
                     name='barrier_2'
                     value={barrier_2}
                     onChange={onChange}
-                    is_currency
+                    is_float
                     error_messages = {validation_errors.barrier_2 || []}
                 />
             }

@@ -65,7 +65,7 @@ const Amount = ({
                     name='amount'
                     value={amount}
                     onChange={onChange}
-                    is_currency
+                    is_float
                     prefix={has_currency ? currency : null}
                     is_nativepicker={is_nativepicker}
                     error_messages = {validation_errors.amount}

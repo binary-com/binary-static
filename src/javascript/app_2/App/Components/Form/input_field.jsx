@@ -11,7 +11,7 @@ const InputField = ({
     className,
     error_messages,
     helper,
-    is_currency,
+    is_float,
     is_disabled,
     label,
     name,
@@ -19,16 +19,17 @@ const InputField = ({
     placeholder,
     prefix,
     required,
+    step = '0.01',
     type,
     value,
 }) => {
     const has_error = error_messages && error_messages.length;
-    const input = 
+    const input =
         <input
             className={classNames({error: has_error})}
             type={type}
             name={name}
-            step={is_currency ? '0.01' : undefined}
+            step={is_float ? step : undefined}
             placeholder={placeholder || undefined}
             disabled={is_disabled}
             value={value}
@@ -70,7 +71,7 @@ InputField.propTypes = {
     className     : PropTypes.string,
     error_messages: MobxPropTypes.arrayOrObservableArray,
     helper        : PropTypes.bool,
-    is_currency   : PropTypes.bool,
+    is_float      : PropTypes.bool,
     is_disabled   : PropTypes.string,
     label         : PropTypes.string,
     name          : PropTypes.string,
@@ -78,6 +79,7 @@ InputField.propTypes = {
     placeholder   : PropTypes.string,
     prefix        : PropTypes.string,
     required      : PropTypes.bool,
+    step          : PropTypes.string,
     type          : PropTypes.string,
     value         : PropTypes.oneOfType([
         PropTypes.number,
