@@ -26,6 +26,7 @@ const InputField = ({
     const has_error = error_messages && error_messages.length;
     const input =
         <input
+            autoFocus
             className={classNames({error: has_error})}
             type={type}
             name={name}
@@ -52,14 +53,9 @@ const InputField = ({
             {!!helper &&
                 <span className='input-helper'>{helper}</span>
             }
-            {
-                has_error ?
-                    <Tooltip alignment='left' message={error_messages[0]}>
-                        { input }
-                    </Tooltip>
-                    :
-                    input
-            }
+            <Tooltip alignment='left' message={has_error ? error_messages[0] : null }>
+                { input }
+            </Tooltip>
         </div>
     );
 };
