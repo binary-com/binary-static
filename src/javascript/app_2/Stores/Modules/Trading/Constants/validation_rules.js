@@ -10,7 +10,7 @@ const validation_rules = {
         'barrier',
     ],
     duration: [
-        ['req', {message: 'The duratoin is a required field.'}],
+        ['req', {message: 'The duration is a required field.'}],
     ],
 };
 

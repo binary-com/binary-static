@@ -39,10 +39,10 @@ export default class BaseStore {
      */
     constructor(options = {}) {
         const {
-        root_store,
-        local_storage_properties,
-        session_storage_properties,
-        validation_rules,
+            root_store,
+            local_storage_properties,
+            session_storage_properties,
+            validation_rules,
         } = options;
 
         Object.defineProperty(this, 'root_store', {
