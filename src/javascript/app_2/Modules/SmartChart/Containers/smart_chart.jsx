@@ -2,25 +2,60 @@ import { SmartChart }   from '@binary-com/smartcharts';
 import PropTypes        from 'prop-types';
 import React            from 'react';
 import ChartMarker      from '../Components/Markers/marker.jsx';
+import ControlWidgets   from '../Components/control_widgets.jsx';
 import TopWidgets       from '../Components/top_widgets.jsx';
 import { symbolChange } from '../Helpers/symbol';
 import { connect }      from '../../../Stores/connect';
 
 class Chart extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            chart_type : this.props.chart_type,
+            granularity: this.props.granularity,
+        };
+
+        this.updateChartType   = this.updateChartType.bind(this);
+        this.updateGranularity = this.updateGranularity.bind(this);
+    }
+
     componentWillUnmount() { this.props.onUnmount(); }
 
-    topWidgets = () => <TopWidgets
-        is_title_enabled={this.props.is_title_enabled}
-        onSymbolChange={symbolChange(this.props.onSymbolChange)}
-    />;
+    updateChartType(chart_type) {
+        if (this.state.chart_type !== chart_type) {
+            this.setState({ chart_type });
+        }
+    }
+
+    updateGranularity(granularity) {
+        if (this.state.granularity !== granularity) {
+            this.setState({ granularity });
+        }
+    }
+
+    chartControlsWidgets = () => (
+        <ControlWidgets
+            updateChartType={this.updateChartType}
+            updateGranularity={this.updateGranularity}
+        />
+    );
+
+    topWidgets = () => (
+        <TopWidgets
+            is_title_enabled={this.props.is_title_enabled}
+            onSymbolChange={symbolChange(this.props.onSymbolChange)}
+        />
+    );
 
     render() {
         return (
             <SmartChart
                 barriers={this.props.barriers_array}
-                chartType={this.props.chart_type}
+                chartControlsWidgets={this.chartControlsWidgets}
+                chartType={this.state.chart_type}
                 endEpoch={this.props.end_epoch}
-                granularity={this.props.granularity}
+                granularity={this.state.granularity}
                 isMobile={this.props.is_mobile}
                 requestAPI={this.props.wsSendRequest}
                 requestForget={this.props.wsForget}
