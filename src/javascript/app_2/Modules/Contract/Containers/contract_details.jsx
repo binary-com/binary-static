@@ -20,7 +20,8 @@ class ContractDetails extends React.Component {
         } = this.props.contract_info;
 
         return (
-            <React.Fragment>
+
+            <div className='contract-wrapper'>
                 { !contract_id ?
                     <UILoader/>
                     :
@@ -43,7 +44,7 @@ class ContractDetails extends React.Component {
                         </Link>
                     </React.Fragment>
                 }
-            </React.Fragment>
+            </div>
         );
     }
 }

@@ -40,6 +40,18 @@
 
             &.slide-out {
                 animation: slide 0.6s linear forwards;
+
+                .contract-wrapper {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    animation: fadeIn 0.6s linear forwards;
+                    z-index: 2;
+                }
+                .sidebar-items {
+                    animation: fadeOut 0.6s linear forwards;
+                    z-index: 1;
+                }
             }
         }
         .login-message-wrapper {
@@ -101,7 +113,7 @@
                 display: none;
             }
         }
-        .sidebar-container, .sidebar-items {
+        .sidebar-container, .sidebar-items, .contract-wrapper {
             position: relative;
             min-height: 500px;
         }
@@ -323,5 +335,29 @@
     }
     100% {
         transform: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
     }
 }

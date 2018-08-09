@@ -30,11 +30,18 @@ class Trade extends React.Component {
                     'slide-out': contract_id,
                 })}
                 >
-                    { contract_id ?
-                        <ContractDetails contract_id={contract_id} onClickNewTrade={this.props.onClickNewTrade} />
-                        :
-                        <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
+                    {
+                        contract_id &&
+                            <ContractDetails
+                                contract_id={contract_id}
+                                onClickNewTrade={this.props.onClickNewTrade}
+                            />
                     }
+                    <FormLayout
+                        is_mobile={this.props.is_mobile}
+                        is_contract_visible={contract_id}
+                        is_trade_enabled={this.props.is_trade_enabled}
+                    />
                 </div>
             </div>
         );
