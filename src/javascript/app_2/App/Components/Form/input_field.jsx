@@ -44,16 +44,16 @@ const InputField = ({
         <div
             className={`input-field ${className || ''}`}
         >
-            {!!label &&
-                <label htmlFor={name} className='input-label'>{label}</label>
-            }
-            {!!prefix &&
-                <i><span className={`symbols ${prefix.toLowerCase()}`} /></i>
-            }
-            {!!helper &&
-                <span className='input-helper'>{helper}</span>
-            }
             <Tooltip alignment='left' message={has_error ? error_messages[0] : null }>
+                {!!label &&
+                    <label htmlFor={name} className='input-label'>{label}</label>
+                }
+                {!!prefix &&
+                    <i><span className={`symbols ${prefix.toLowerCase()}`} /></i>
+                }
+                {!!helper &&
+                    <span className='input-helper'>{helper}</span>
+                }
                 { input }
             </Tooltip>
         </div>

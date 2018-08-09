@@ -8,7 +8,6 @@ import {
     getContractCategoriesConfig,
     getContractTypesConfig }     from '../Constants/contract';
 import { WS }                    from '../../../../Services';
-import { get as getLanguage }    from '../../../../../_common/language';
 import { localize }              from '../../../../../_common/localize';
 import { toTitleCase }           from '../../../../../_common/string_util';
 import {
@@ -33,7 +32,7 @@ const ContractType = (() => {
                 (typeof contract_types[key].barrier_count === 'undefined' || +contract_types[key].barrier_count === contract.barriers) // To distinguish betweeen Rise/Fall & Higher/Lower
             ));
 
-            if (!type || Exceptions.isExcluded(type)) return; // ignore unsupported/excepted contract types
+            if (!type) return; // ignore unsupported contract types
 
             /*
             add to this config if a value you are looking for does not exist yet
@@ -86,6 +85,9 @@ const ContractType = (() => {
                 // extend contract_categories to include what is needed to create the contract list
                 const sub_cats = available_categories[Object.keys(available_categories)
                     .find(key => available_categories[key].indexOf(type) !== -1)];
+
+                if (!sub_cats) return;
+
                 sub_cats[sub_cats.indexOf(type)] = { value: type, text: localize(contract_types[type].title) };
 
                 // populate available contract types
@@ -301,20 +303,6 @@ const ContractType = (() => {
         getEndTime,
 
         getContractCategories: () => ({ contract_types_list: available_categories }),
-    };
-})();
-
-const Exceptions = (() => {
-    const isIDLanguage = () => getLanguage() === 'ID';
-
-    // if the exception value is true, then it is excluded
-    const exceptions = {
-        even_odd  : isIDLanguage,
-        over_under: isIDLanguage,
-    };
-
-    return {
-        isExcluded: key => exceptions[key] ? exceptions[key]() : false,
     };
 })();
 
