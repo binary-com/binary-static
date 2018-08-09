@@ -15,7 +15,8 @@ class Trade extends React.Component {
 
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
-        const form_wrapper = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
+        const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
+        const slider_class = contract_id ? 'slide-out' : 'slide-in';
 
         return (
             <div id='trade_container' className='trade-container'>
@@ -26,10 +27,7 @@ class Trade extends React.Component {
                     />
                     <Test />
                 </div>
-                <div className={classNames(form_wrapper, {
-                    'slide-out': contract_id,
-                })}
-                >
+                <div className={classNames(form_wrapper_class, slider_class)}>
                     {
                         contract_id &&
                             <ContractDetails
