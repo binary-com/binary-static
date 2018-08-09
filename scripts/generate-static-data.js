@@ -9,7 +9,7 @@ const texts = [
     'Month',
     'Year',
     'Sorry, an error occurred while processing your request.',
-    'Please [_1]log in[_2] or [_3]sign up[_2] to view this page.',
+    'Please [_1]log in[_2] or [_3]sign up[_4] to view this page.',
 
     // top bar
     'Click here to open a Real Account',
@@ -81,6 +81,8 @@ const texts = [
     'Reset Time',
     'Payout Range',
     'Tick [_1]',
+    'Ticks history returned an empty array.',
+    'Chart is not available for this underlying.',
 
     // trading page
     'year',
@@ -164,6 +166,7 @@ const texts = [
     'Purchase',
     'Purchase request sent',
     'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.',
+    'Please reload the page',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -478,6 +481,7 @@ const texts = [
     'Highest Tick Time',
     'Lowest Tick',
     'Lowest Tick Time',
+    'Close Time',
 
     // financial assessment
     'Please select a value',
@@ -518,6 +522,7 @@ const texts = [
     'Should be a valid number.',
     'Should be more than [_1]',
     'Should be less than [_1]',
+    'Should be [_1]',
     'Should be between [_1] and [_2]',
     'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.',
     'Only letters, space, hyphen, period, and apostrophe are allowed.',
@@ -578,6 +583,9 @@ const texts = [
     'Please check your email for further instructions.',
     'Revoke MAM',
     'Manager successfully revoked',
+    '{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.',
+    '{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you.',
+    '{SPAIN ONLY}This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product.',
 
     // account_transfer
     'Min',
@@ -643,7 +651,7 @@ const texts = [
     'Invalid document format: "[_1]"',
     'File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]',
     'ID number is required for [_1].',
-    'Only letters, numbers, space, underscore, and hyphen are allowed for ID number.',
+    'Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).',
     'Expiry date is required for [_1].',
     'Passport',
     'ID card',
