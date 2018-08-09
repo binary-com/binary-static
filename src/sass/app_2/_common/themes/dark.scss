@@ -103,6 +103,24 @@
         color: $COLOR_WHITE;
         background: $COLOR_BLUE;
 
+        .sidebar-container .contract-container {
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .contract-header {
+                background: $COLOR_BRANDBLUE_95;
+            }
+            .contract-contents .ref-number, .info-header {
+                background: $COLOR_BRANDBLUE_95;
+            }
+            .info-item {
+                color: $COLOR_WHITE;
+                border-color: $COLOR_BRANDBLUE_85;
+
+                div:first-child {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+        }
         fieldset {
             background: $COLOR_BRANDBLUE_95;
             color: $COLOR_WHITE;

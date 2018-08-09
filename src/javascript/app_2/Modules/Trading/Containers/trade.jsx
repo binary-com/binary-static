@@ -1,3 +1,4 @@
+import classNames           from 'classnames';
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import Test                 from './test.jsx';
@@ -14,6 +15,7 @@ class Trade extends React.Component {
 
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
+        const form_wrapper = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
 
         return (
             <div id='trade_container' className='trade-container'>
@@ -24,11 +26,16 @@ class Trade extends React.Component {
                     />
                     <Test />
                 </div>
-                { contract_id ?
-                    <ContractDetails contract_id={contract_id} onClickNewTrade={this.props.onClickNewTrade} />
-                    :
-                    <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
-                }
+                <div className={classNames(form_wrapper, {
+                    'slide-out': contract_id,
+                })}
+                >
+                    { contract_id ?
+                        <ContractDetails contract_id={contract_id} onClickNewTrade={this.props.onClickNewTrade} />
+                        :
+                        <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
+                    }
+                </div>
             </div>
         );
     }

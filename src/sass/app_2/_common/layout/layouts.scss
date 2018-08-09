@@ -7,6 +7,27 @@
 
         &--show-portfolio-drawer {
             margin-right: $PORTFOLIO_DRAWER_WIDTH;
+
+            @media screen and (max-width: 1280px) {
+                .trade-container {
+                    .chart-container {
+                        grid-column: col-start 1 / span 9;
+                    }
+                    .sidebar-container {
+                        grid-column: col-start 10 / span 3;
+                    }
+                }
+            }
+            @media screen and (max-width: 980px) {
+                .trade-container {
+                    .chart-container {
+                        grid-column: col-start 1 / span 8;
+                    }
+                    .sidebar-container {
+                        grid-column: col-start 9 / span 4;
+                    }
+                }
+            }
         }
         @media screen and (max-width: 768px) {
             // no footer:
@@ -14,6 +35,13 @@
             height: calc(100vh - #{$HEADER_HEIGHT});
         }
 
+        .sidebar-container {
+            animation: none;
+
+            &.slide-out {
+                animation: slide 0.6s linear forwards;
+            }
+        }
         .login-message-wrapper {
             height: 100%;
             display: flex;
@@ -283,5 +311,17 @@
     p {
         @include interpolate(font-size, 320px, 1440px, 14px, 20px);
         color: $COLOR_LIGHT_BLACK;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: none;
+    }
+    50% {
+        transform: translateX(calc(100% + 20px));
+    }
+    100% {
+        transform: none;
     }
 }
