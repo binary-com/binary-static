@@ -30,14 +30,14 @@ const loadJS = (js_files) => {
             ++counter;
             if (counter === length - 1) {
                 while (scripts.length) {
-                    document.body.appendChild(scripts.pop());
+                    document.head.appendChild(scripts.pop());
                 }
             }
         };
         script.setAttribute('src', src);
         if (idx < length - 1) {
             // load all scripts except the last one
-            document.body.appendChild(script);
+            document.head.appendChild(script);
         } else {
             // load the last script later
             scripts.push(script);
