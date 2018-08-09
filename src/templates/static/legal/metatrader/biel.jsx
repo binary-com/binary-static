@@ -172,7 +172,9 @@ const BIEL = () => (
         <p>{it.L('Expert Advisors, including any additional functions/plug-ins of trading operations provided by or developed using Expert Advisors, are applications developed using the MetaQuotes Language which can be used to analyse price charts and automate your trades.')}</p>
         <p>{it.L('Expert Advisors made available on the MT5 Trading Platform, are owned by MetaQuotes Software Corporation (the MT5 Trading Platform Licensor) and shall remain the exclusive property of MetaQuotes Software Corporation.')}</p>
         <p>{it.L('The Company is an independent legal entity and is not affiliated with the MT5 Trading Platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5.')}</p>
-        <p>{it.L('There are no restrictions to the use of Expert Advisors on the MT5 Trading Platform apart from unethical trading. Expert Advisors can be programmed for:')}</p>
+        <p>{it.L('There are no restrictions to the use of Expert Advisors on the MT5 Trading Platform apart from unethical trading.')}</p>
+
+        <p>{it.L('As an example, Expert Advisors might be able to be programmed for:')}</p>
         <ol>
             <li>{it.L('alerting Clients of a potential trading opportunity;')}</li>
             <li>{it.L('execution of trades automatically on their behalf;')}</li>
