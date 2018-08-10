@@ -65,3 +65,32 @@
         }
     }
 }
+
+// Dark Theme
+.theme-wrapper.dark {
+    .contract-container {
+        border-color: $COLOR_BRANDBLUE_85;
+        color: $COLOR_BRANDBLUE_40;
+
+        .contract-header {
+            &.purchased {
+                background-color: $COLOR_BRANDBLUE_95;
+            }
+            &.won {
+                background-color: $COLOR_GREEN;
+            }
+        }
+        .contract-contents {
+            .ref-number, .info-header {
+                background-color: $COLOR_BRANDBLUE_95;
+            }
+            .info-item {
+                border-bottom-color: $COLOR_BRANDBLUE_85;
+
+                > div:first-child {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+        }
+    }
+}

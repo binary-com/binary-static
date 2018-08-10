@@ -21,10 +21,12 @@ class Trade extends React.Component {
         return (
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container notice-msg'>
-                    <SmartChart
-                        onSymbolChange={this.props.onSymbolChange}
-                        symbol={this.props.symbol}
-                    />
+                    { this.props.symbol &&
+                        <SmartChart
+                            onSymbolChange={this.props.onSymbolChange}
+                            symbol={this.props.symbol}
+                        />
+                    }
                     <Test />
                 </div>
                 <div className={classNames(form_wrapper_class, slider_class)}>

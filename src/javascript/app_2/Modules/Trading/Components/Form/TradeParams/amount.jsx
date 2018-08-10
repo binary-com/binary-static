@@ -20,6 +20,7 @@ const Amount = ({
     is_minimized,
     is_nativepicker,
     onChange,
+    validation_errors,
 }) => {
     if (is_minimized) {
         return (
@@ -64,9 +65,10 @@ const Amount = ({
                     name='amount'
                     value={amount}
                     onChange={onChange}
-                    is_currency
+                    is_float
                     prefix={has_currency ? currency : null}
                     is_nativepicker={is_nativepicker}
+                    error_messages = {validation_errors.amount}
                 />
             </div>
         </Fieldset>
@@ -78,13 +80,14 @@ Amount.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    basis          : PropTypes.string,
-    basis_list     : MobxPropTypes.arrayOrObservableArray,
-    currencies_list: PropTypes.object,
-    currency       : PropTypes.string,
-    is_minimized   : PropTypes.bool,
-    is_nativepicker: PropTypes.bool,
-    onChange       : PropTypes.func,
+    basis            : PropTypes.string,
+    basis_list       : MobxPropTypes.arrayOrObservableArray,
+    currencies_list  : PropTypes.object,
+    currency         : PropTypes.string,
+    is_minimized     : PropTypes.bool,
+    is_nativepicker  : PropTypes.bool,
+    onChange         : PropTypes.func,
+    validation_errors: PropTypes.object,
 };
 
 export default observer(Amount);

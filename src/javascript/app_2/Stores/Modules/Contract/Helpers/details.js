@@ -32,27 +32,16 @@ export const getDetailsExpiry = (store) => {
     if (!store.is_ended) return {};
 
     const {
-        exit_tick,
-        exit_tick_time,
-        sell_spot,
-        sell_spot_time,
+        end_spot,
+        end_spot_time,
         date_expiry,
-        is_path_dependent,
-        status,
     } = store.contract_info;
 
-    // for path dependent contracts the contract is sold from server side
-    // so we need to use sell spot and sell spot time instead
-    const end_spot      = is_path_dependent ? sell_spot : exit_tick;
-    const end_spot_time = is_path_dependent ? sell_spot_time : exit_tick_time;
-
+    // TODO: don't localize on every call
     // for user sold contracts sell spot can get updated when the next tick becomes available
     // so we only show end time instead of any spot information
-    const is_user_sold = status === 'sold';
-
-    // TODO: don't localize on every call
     return {
-        ...(is_user_sold ? {
+        ...(store.is_user_sold ? {
             [localize('End Time')]: date_expiry && toGMTFormat(+date_expiry * 1000),
         } : {
             [localize('Exit Spot')]     : end_spot ? addComma(end_spot) : '-',

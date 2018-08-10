@@ -5,15 +5,14 @@ import SmartChart      from '../../SmartChart';
 import { connect }     from '../../../Stores/connect';
 
 const Contract = ({
-    initial_symbol,
+    chart_config = {},
     match,
+    symbol,
 }) => (
     <div className='trade-container'>
         <div className='chart-container notice-msg'>
-            { initial_symbol &&
-                <SmartChart
-                    initial_symbol={initial_symbol}
-                />
+            { symbol &&
+                <SmartChart symbol={symbol} {...chart_config} />
             }
         </div>
         <ContractDetails contract_id={match.params.contract_id} />
@@ -21,12 +20,14 @@ const Contract = ({
 );
 
 Contract.propTypes = {
-    initial_symbol: PropTypes.string,
-    match         : PropTypes.object,
+    chart_config: PropTypes.object,
+    match       : PropTypes.object,
+    symbol      : PropTypes.string,
 };
 
 export default connect(
     ({ modules }) => ({
-        initial_symbol: modules.contract.contract_info.underlying,
+        chart_config: modules.contract.chart_config,
+        symbol      : modules.contract.contract_info.underlying,
     })
 )(Contract);
