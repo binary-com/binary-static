@@ -1,6 +1,6 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import Localize     from '../../../Utils/Language/localize.jsx';
+import Localize     from './Localize.jsx';
 
 const LoginPrompt = ({ onLogin, onSignup, children }) => (
     <div className='login-prompt'>

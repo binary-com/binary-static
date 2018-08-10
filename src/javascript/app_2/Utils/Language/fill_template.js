@@ -1,7 +1,6 @@
-import React        from 'react';
-import { localize } from '../../../_common/localize';
+import React from 'react';
 
-function fillTemplate(template, replacers) {
+export const fillTemplate = (template, replacers) => {
     const res = [];
     let str = template;
     let open_tag_id = null;
@@ -46,16 +45,4 @@ function fillTemplate(template, replacers) {
     }
     if (open_tag_id) throw new Error(`Localize: no ${open_tag_id} replacer for "${template}" template.`);
     return res;
-}
-
-const Localize = ({ str, replacers }) => {
-    const localized = localize(str);
-    if (!/\[_\d+\]/.test(localized)) return <React.Fragment>{localized}</React.Fragment>;
-    return (
-        <React.Fragment>
-            {fillTemplate(localized, replacers)}
-        </React.Fragment>
-    );
 };
-
-export default Localize;
