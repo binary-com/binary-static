@@ -36,23 +36,15 @@ const MetaTraderConfig = (() => {
     let $messages;
     const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
-    const getTransferMinMax = (binary_to_mt5 = true) => {
-        const binary_currency = Client.get('currency');
-        const mt5_currency    = getCurrency(Client.get('mt5_account'));
-        const from_currency   = binary_to_mt5 ? binary_currency : mt5_currency;
+    // currency equivalent to 1 USD
+    const getMinMT5TransferValue = (currency) => (
+        (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency))
+    );
 
-        let min = 1;
-
-        if (binary_currency !== mt5_currency) {
-            // amount in from_currency equivalent to 1 USD
-            min = (+State.getResponse(`exchange_rates.rates.${from_currency}`) || 1).toFixed(Currency.getDecimalPlaces(from_currency));
-        }
-
-        return {
-            min,
-            max: (min * 20000).toFixed(Currency.getDecimalPlaces(from_currency)),
-        };
-    };
+    // currency equivalent to 20000 USD
+    const getMaxMT5TransferValue = (currency) => (
+        (+getMinMT5TransferValue(currency) * 20000).toFixed(Currency.getDecimalPlaces(currency))
+    );
 
     const newAccCheck = (acc_type, message_selector) => (
         new Promise((resolve) => {
@@ -194,7 +186,7 @@ const MetaTraderConfig = (() => {
                                     resolve(localize('Your cashier is locked.')); // Locked from BO
                                 } else {
                                     const limit = State.getResponse('get_limits.remainder');
-                                    if (typeof limit !== 'undefined' && +limit < getTransferMinMax().min) {
+                                    if (typeof limit !== 'undefined' && +limit < getMinMT5TransferValue(Client.get('currency'))) {
                                         resolve(localize('You have reached the limit.'));
                                     } else {
                                         resolve();
@@ -358,11 +350,11 @@ const MetaTraderConfig = (() => {
             { selector: fields.password_reset.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_reset.txt_new_password.id }]] },
         ],
         deposit: [
-            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getTransferMinMax().min, max: () => Math.min(State.getResponse('get_limits.remainder') || getTransferMinMax().max, getTransferMinMax().max).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(Client.get('currency')), max: Math.min(State.getResponse('get_limits.remainder') || getMaxMT5TransferValue(Client.get('currency')), getMaxMT5TransferValue(Client.get('currency'))).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
         ],
         withdrawal: [
             { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
-            { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getTransferMinMax(false).min, max: () => getTransferMinMax(false).max, decimals: 2 }]] },
+            { selector: fields.withdrawal.txt_amount.id,    validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(getCurrency(Client.get('mt5_account'))), max: () => getMaxMT5TransferValue(getCurrency(Client.get('mt5_account'))), decimals: 2 }]] },
         ],
     });
 
