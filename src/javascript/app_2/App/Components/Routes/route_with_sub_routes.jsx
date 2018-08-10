@@ -2,6 +2,7 @@ import React               from 'react';
 import {
     Redirect,
     Route }                from 'react-router-dom';
+import { default_title }   from '../../Constants/app_config';
 import routes              from '../../../Constants/routes';
 import { redirectToLogin } from '../../../../_common/base/login';
 import Client              from '../../../../_common/base/client_base';
@@ -32,7 +33,8 @@ const RouteWithSubRoutes = route => {
             );
         }
 
-        document.title = `${localize(route.title)} | Binary.com`;
+        const title = route.title ? `${ localize(route.title) } | ` : '';
+        document.title = `${ title }${default_title}`;
         return result;
     };
 
