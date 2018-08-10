@@ -42,7 +42,7 @@ const Signup = () => (
                 </BoxRow>
 
                 <div className='gr-padding-30'>
-                    <a className='button' href={it.affiliate_signup_url}>
+                    <a className='button' href={it.affiliate_signup_url} target='_blank'>
                         <span>{it.L('Apply Now')}</span>
                     </a>
                 </div>
@@ -158,7 +158,7 @@ const Signup = () => (
             <div className='container center-text gr-padding-30'>
                 <p>{it.L('Sign up for the [_1] Affiliate Programme today:', it.website_name)}</p>
                 <p>
-                    <a className='button' href={it.affiliate_signup_url}>
+                    <a className='button' href={it.affiliate_signup_url} target='_blank'>
                         <span>{it.L('Yes, I Want To Sign Up As An Affiliate')}</span>
                     </a>
                 </p>
