@@ -16,7 +16,9 @@ import {
     getIndicativePrice,
     isEnded,
     isSoldBeforeStart,
-    isUserSold }              from './Helpers/logic';
+    isStarted,
+    isUserSold,
+    isValidToSell }           from './Helpers/logic';
 import BaseStore              from '../../base_store';
 import { WS }                 from '../../../Services';
 
@@ -76,7 +78,7 @@ export default class ContractStore extends BaseStore {
 
     @computed
     get display_status() {
-        return getDisplayStatus(this.is_ended, this.contract_info.profit);
+        return getDisplayStatus(this.contract_info);
     }
 
     @computed
@@ -96,7 +98,7 @@ export default class ContractStore extends BaseStore {
 
     @computed
     get indicative_price() {
-        return getIndicativePrice(this);
+        return getIndicativePrice(this.contract_info);
     }
 
     @computed
@@ -110,7 +112,17 @@ export default class ContractStore extends BaseStore {
     }
 
     @computed
+    get is_started() {
+        return isStarted(this.contract_info);
+    }
+
+    @computed
     get is_user_sold() {
         return isUserSold(this.contract_info);
+    }
+
+    @computed
+    get is_valid_to_sell() {
+        return isValidToSell(this.contract_info);
     }
 };
