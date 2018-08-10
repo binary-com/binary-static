@@ -2,7 +2,7 @@ import React               from 'react';
 import {
     Redirect,
     Route }                from 'react-router-dom';
-import PleaseLoginMessage  from '../Elements/please_login_message.jsx';
+import LoginPrompt         from '../Elements/login_prompt.jsx';
 import routes              from '../../../Constants/routes';
 import { redirectToLogin } from '../../../../_common/base/login';
 import Client              from '../../../../_common/base/client_base';
@@ -22,9 +22,9 @@ const RouteWithSubRoutes = route => {
         } else {
             result = (
                 (route.is_authenticated && !Client.isLoggedIn()) ?
-                    <PleaseLoginMessage onLogin={redirectToLogin}>
+                    <LoginPrompt onLogin={redirectToLogin}>
                         <route.icon_component className='disabled' />
-                    </PleaseLoginMessage>
+                    </LoginPrompt>
                     :
                     <route.component {...props} routes={route.routes}/>
             );
