@@ -1,6 +1,6 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import { localize } from '../../../../_common/localize';
+import Localize     from '../../../Utils/Language/localize.jsx';
 
 const LoginPrompt = ({ onLogin, onSignup, children }) => (
     <div className='login-prompt'>
@@ -8,19 +8,13 @@ const LoginPrompt = ({ onLogin, onSignup, children }) => (
             {children}
         </div>
         <div className='login-prompt__message'>
-            {localize('Please')}
-            &nbsp;
-            <a href='javascript:;' onClick={onLogin}>
-                {localize('log in')}
-            </a>
-            &nbsp;
-            {localize('or')}
-            &nbsp;
-            <a href='javascript:;' onClick={onSignup}>
-                {localize('sign up')}
-            </a>
-            &nbsp;
-            {localize('to view this page.')}
+            <Localize
+                str='Please [_1]log in[_2] or [_3]sign up[_2] to view this page.'
+                replacers={{
+                    '1_2': <a href='javascript:;' onClick={onLogin} />,
+                    '3_2': <a href='javascript:;' onClick={onSignup} />,
+                }}
+            />
         </div>
     </div>
 );
