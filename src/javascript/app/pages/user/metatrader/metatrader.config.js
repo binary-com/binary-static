@@ -37,9 +37,13 @@ const MetaTraderConfig = (() => {
     const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
     // currency equivalent to 1 USD
-    const getMinMT5TransferValue = (currency) => (
-        (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency))
-    );
+    // or 1 of donor currency if both accounts have the same currency
+    const getMinMT5TransferValue = (currency) => {
+        const client_currency = Client.get('currency');
+        const mt5_currency    = MetaTraderConfig.getCurrency(Client.get('mt5_account'));
+        if (client_currency === mt5_currency) return 1;
+        return (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency));
+    };
 
     // currency equivalent to 20000 USD
     const getMaxMT5TransferValue = (currency) => (
