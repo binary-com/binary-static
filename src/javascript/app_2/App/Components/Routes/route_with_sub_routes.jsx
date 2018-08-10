@@ -32,6 +32,7 @@ const RouteWithSubRoutes = route => {
             );
         }
 
+        document.title = `${localize(route.title)} | Binary.com`;
         return result;
     };
 
