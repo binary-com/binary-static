@@ -34,7 +34,7 @@ const RouteWithSubRoutes = route => {
         }
 
         const title = route.title ? `${ localize(route.title) } | ` : '';
-        document.title = `${ title }${default_title}`;
+        document.title = `${ title }${ default_title }`;
         return result;
     };
 
