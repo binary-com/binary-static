@@ -77,7 +77,20 @@ const getExpiryType = (store) => {
     return contract_expiry_type;
 };
 
+const convertDurationLimit = (value, unit) => {
+    if (unit === 'm') {
+        const minute = value / 60;
+        return minute >= 1 ? Math.floor(minute) : 1;
+    } else if (unit === 'h') {
+        const hour = value / 3600;
+        return hour >= 1 ? Math.floor(hour) : 1;
+    }
+
+    return value;
+};
+
 module.exports = {
     buildDurationConfig,
+    convertDurationLimit,
     getExpiryType,
 };
