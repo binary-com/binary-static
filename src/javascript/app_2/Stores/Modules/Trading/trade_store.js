@@ -1,9 +1,14 @@
-import { action, observable }             from 'mobx';
+import {
+    action,
+    observable,
+    reaction }                            from 'mobx';
 import { processPurchase }                from './Actions/purchase';
 import * as Symbol                        from './Actions/symbol';
 import { allowed_query_string_variables } from './Constants/query_string';
+import validation_rules                   from './Constants/validation_rules';
 import { setChartBarrier }                from './Helpers/chart';
 import ContractType                       from './Helpers/contract_type';
+import { convertDurationLimit }           from './Helpers/duration';
 import { processTradeParams }             from './Helpers/process';
 import {
     createProposalRequests,
@@ -42,6 +47,7 @@ export default class TradeStore extends BaseStore {
     @observable duration            = 5;
     @observable duration_unit       = '';
     @observable duration_units_list = [];
+    @observable duration_min_max    = {};
     @observable expiry_date         = '';
     @observable expiry_time         = '09:40';
     @observable expiry_type         = 'duration';
@@ -65,12 +71,26 @@ export default class TradeStore extends BaseStore {
     @observable purchase_info = {};
 
 
-    constructor(root_store) {
-        super(root_store, null, allowed_query_string_variables);
+    constructor({ root_store }) {
+        const session_storage_properties = allowed_query_string_variables;
+        const options = {
+            root_store,
+            session_storage_properties,
+            validation_rules,
+        };
+        super(options);
 
         if (Client.isLoggedIn) {
             this.processNewValuesAsync({currency: Client.get('currency')});
         }
+
+        // Adds intercept to change min_max value of duration validation
+        reaction(
+            ()=> [this.duration_min_max, this.contract_expiry_type, this.duration_unit],
+            () => {
+                this.changeDurationValidationRules();
+            }
+        );
     }
 
     @action.bound
@@ -131,7 +151,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     updateStore(new_state) {
         Object.keys(cloneObject(new_state)).forEach((key) => {
-            if (key === 'root_store') return;
+            if (key === 'root_store' || ['validation_rules', 'validation_errors'].indexOf(key) > -1) return;
             if (JSON.stringify(this[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
             } else {
@@ -231,5 +251,24 @@ export default class TradeStore extends BaseStore {
             config[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
         });
         this.processNewValuesAsync(config);
+    }
+
+    @action.bound
+    changeDurationValidationRules() {
+        const index = this.validation_rules.duration.findIndex(item => item[0] === 'number');
+        const limits = this.duration_min_max[this.contract_expiry_type] || false;
+        const duration_options = {
+            min: convertDurationLimit(+limits.min, this.duration_unit),
+            max: convertDurationLimit(+limits.max, this.duration_unit),
+        };
+
+        if (limits) {
+            if (index > -1) {
+                this.validation_rules.duration[index][1] = duration_options;
+            } else {
+                this.validation_rules.duration.push(['number', duration_options]);
+            }
+            this.validateProperty('duration', this.duration);
+        }
     }
 };
