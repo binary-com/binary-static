@@ -10,7 +10,7 @@ const State          = require('../storage').State;
 const getAppId       = require('../../config').getAppId;
 
 const GTM = (() => {
-    const isGtmApplicable = () => (/^(1|1098|1108)$/.test(getAppId()));
+    const isGtmApplicable = () => (/^(1|1098)$/.test(getAppId()));
 
     const gtmDataLayerInfo = (data) => {
         const data_layer_info = {
