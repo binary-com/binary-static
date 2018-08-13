@@ -1,4 +1,5 @@
 import React from 'react';
+import GoogleOptimizer from './includes/google/google_optimizer.jsx';
 import GTMScript from './includes/google/gtm_script.jsx';
 import URLHandler from './includes/url_handler.jsx';
 import Title from '../_common/components/title.jsx';
@@ -7,6 +8,7 @@ import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 
 const Head = () => (
     <head>
+        <GoogleOptimizer />
         <GTMScript />
         <AntiClickjack />
         <URLHandler />
