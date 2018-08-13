@@ -16,13 +16,17 @@ import {
     getIndicativePrice,
     isEnded,
     isSoldBeforeStart,
-    isUserSold }              from './Helpers/logic';
+    isStarted,
+    isUserSold,
+    isValidToSell }           from './Helpers/logic';
 import BaseStore              from '../../base_store';
 import { WS }                 from '../../../Services';
+import { isEmptyObject }      from '../../../../_common/utility';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;
     @observable contract_info = observable.object({});
+    @observable has_error     = false;
 
     // -------------------
     // ----- Actions -----
@@ -52,8 +56,12 @@ export default class ContractStore extends BaseStore {
     updateProposal(response) {
         this.contract_info = response.proposal_open_contract;
 
-        createChartBarrier(this.smart_chart, this.contract_info);
-        createChartMarkers(this.smart_chart, this.contract_info, this);
+        if (isEmptyObject(this.contract_info)) {
+            this.has_error = true;
+        } else {
+            createChartBarrier(this.smart_chart, this.contract_info);
+            createChartMarkers(this.smart_chart, this.contract_info, this);
+        }
     }
 
     // ---------------------------
@@ -76,7 +84,7 @@ export default class ContractStore extends BaseStore {
 
     @computed
     get display_status() {
-        return getDisplayStatus(this.is_ended, this.contract_info.profit);
+        return getDisplayStatus(this.contract_info);
     }
 
     @computed
@@ -96,7 +104,7 @@ export default class ContractStore extends BaseStore {
 
     @computed
     get indicative_price() {
-        return getIndicativePrice(this);
+        return getIndicativePrice(this.contract_info);
     }
 
     @computed
@@ -110,7 +118,17 @@ export default class ContractStore extends BaseStore {
     }
 
     @computed
+    get is_started() {
+        return isStarted(this.contract_info);
+    }
+
+    @computed
     get is_user_sold() {
         return isUserSold(this.contract_info);
+    }
+
+    @computed
+    get is_valid_to_sell() {
+        return isValidToSell(this.contract_info);
     }
 };
