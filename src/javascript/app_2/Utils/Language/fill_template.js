@@ -1,9 +1,8 @@
 import React from 'react';
 
-// TODO: add tests
-const fillTemplate = (template, replacers) => {
-    const res = [];
-    let str = template;
+export const fillTemplate = (template, replacers) => {
+    const res       = [];
+    let str         = template;
     let open_tag_id = null;
 
     while (str.length) {
@@ -25,12 +24,12 @@ const fillTemplate = (template, replacers) => {
 
         if (open_tag_id) {
             const pair_code = `${open_tag_id}_${tag_id}`;
-            const wrapper = replacers[pair_code];
-            // TODO: throw if wrapper is not a component
+            const wrapper   = replacers[pair_code];
+
+            if (!React.isValidElement(wrapper)) throw new Error(`Localize: pair tag must be replaced with a react element.`);
             if (!wrapper) throw new Error(`Localize: no ${open_tag_id} or ${pair_code} replacer for "${template}" template.`);
-            res.push(
-                React.cloneElement(wrapper, { key: index, children: before })
-            );
+
+            res.push(React.cloneElement(wrapper, { key: index, children: before }));
             open_tag_id = null;
         }
         else {
@@ -58,5 +57,3 @@ const fillTemplate = (template, replacers) => {
         return arr;
     }, []);
 };
-
-export default fillTemplate;

@@ -1,6 +1,6 @@
-import { expect }   from 'chai';
-import React        from 'react';
-import fillTemplate from '../fill_template';
+import { expect }       from 'chai';
+import React            from 'react';
+import { fillTemplate } from '../fill_template';
 
 describe('fillTemplate', () => {
     it('works for string without tags', () => {

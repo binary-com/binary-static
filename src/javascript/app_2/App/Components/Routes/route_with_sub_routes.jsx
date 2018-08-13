@@ -7,6 +7,7 @@ import { default_title }   from '../../Constants/app_config';
 import routes              from '../../../Constants/routes';
 import { redirectToLogin } from '../../../../_common/base/login';
 import Client              from '../../../../_common/base/client_base';
+import { localize }        from '../../../../_common/localize';
 
 const RouteWithSubRoutes = route => {
     const renderFactory = props => {
