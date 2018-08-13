@@ -12,8 +12,9 @@ module.exports = {
             ],
         },
         src: [
-            'src/javascript/**/__tests__/*.js',
-            'scripts/__tests__/*.js',
+            // 'src/javascript/**/__tests__/*.js',
+            // 'scripts/__tests__/*.js',
+            'src/javascript/app_2/Utils/Language/__tests__/fill_template.spec.js',
         ],
     },
 };
