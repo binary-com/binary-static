@@ -3,6 +3,7 @@ import PropTypes            from 'prop-types';
 import React                from 'react';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form_layout.jsx';
+import InfoBox              from '../../Contract/Components/InfoBox';
 import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
 import SmartChart           from '../../SmartChart';
 import { connect }          from '../../../Stores/connect';
@@ -17,12 +18,15 @@ class Trade extends React.Component {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
         const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
         const slider_class = contract_id ? 'sidebar-container__contract-in' : 'sidebar-container__form-in';
+        const InfoBoxComponent = this.props.is_contract_mode ?
+            <InfoBox contract_info={this.props.contract_info} /> : null;
 
         return (
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container notice-msg'>
                     { this.props.symbol &&
                         <SmartChart
+                            InfoBox={InfoBoxComponent}
                             onSymbolChange={this.props.onSymbolChange}
                             symbol={this.props.symbol}
                         />
@@ -49,6 +53,8 @@ class Trade extends React.Component {
 }
 
 Trade.propTypes = {
+    contract_info    : PropTypes.object,
+    is_contract_mode : PropTypes.bool,
     is_mobile        : PropTypes.bool,
     is_trade_enabled : PropTypes.bool,
     onSymbolChange   : PropTypes.func,
@@ -60,6 +66,8 @@ Trade.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
+        contract_info    : modules.contract.contract_info,
+        is_contract_mode : modules.smart_chart.is_contract_mode,
         is_trade_enabled : modules.trade.is_trade_enabled,
         onClickNewTrade  : modules.trade.onClickNewTrade,
         onSymbolChange   : modules.trade.onChange,

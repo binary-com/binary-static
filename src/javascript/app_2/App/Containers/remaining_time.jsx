@@ -1,11 +1,18 @@
-import PropTypes       from 'prop-types';
-import React           from 'react';
-import { connect }     from '../../Stores/connect';
+import PropTypes      from 'prop-types';
+import React          from 'react';
+import { connect }    from '../../Stores/connect';
 import {
     formatDuration,
-    getDiffDuration }  from '../../Utils/Date';
+    getDiffDuration } from '../../Utils/Date';
 
-const RemainingTime = ({ start_time, end_time = null }) => {
+const RemainingTime = ({
+    end_time = null,
+    start_time,
+}) => {
+    if (!+end_time || start_time.unix() > +end_time) {
+        return '';
+    }
+
     const remaining_time = formatDuration(getDiffDuration(start_time.unix(), end_time));
 
     return (

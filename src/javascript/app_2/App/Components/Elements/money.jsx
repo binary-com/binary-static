@@ -4,14 +4,26 @@ import { formatMoney } from '../../../../_common/base/currency_base';
 
 const Money = ({
     amount,
-    currency,
+    currency = 'USD',
+    has_sign,
     is_formatted = true,
-}) => (
-    <React.Fragment>
-        <span className={`symbols ${(currency || 'USD').toLowerCase()}`} />
-        {is_formatted ? formatMoney(currency, amount, true) : amount}
-    </React.Fragment>
-);
+}) => {
+    let sign = '';
+    if (+amount && (amount < 0 || has_sign)) {
+        sign = amount > 0 ? '+' : '-';
+    }
+
+    const abs_value = Math.abs(amount);
+    const final_amount = is_formatted ? formatMoney(currency, abs_value, true) : abs_value;
+
+    return (
+        <React.Fragment>
+            {sign}
+            <span className={`symbols ${currency.toLowerCase()}`} />
+            {final_amount}
+        </React.Fragment>
+    );
+};
 
 Money.propTypes = {
     amount: PropTypes.oneOfType([
@@ -19,6 +31,7 @@ Money.propTypes = {
         PropTypes.string,
     ]),
     currency    : PropTypes.string,
+    has_sign    : PropTypes.bool,
     is_formatted: PropTypes.bool,
 };
 
