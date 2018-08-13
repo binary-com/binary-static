@@ -46,13 +46,13 @@ export const fillTemplate = (template, replacers) => {
     if (open_tag_id) throw new Error(`Localize: no ${open_tag_id} replacer for "${template}" template.`);
 
     // concat adjacent strings in result array
-    return res.reduce((arr, el) => {
+    return res.reduce((arr, current) => {
         const last = arr[arr.length - 1];
-        if (typeof last === 'string' && typeof el === 'string') {
-            arr[arr.length - 1] = last + el;
+        if (typeof last === 'string' && typeof current === 'string') {
+            arr[arr.length - 1] = last + current;
         }
         else {
-            arr.push(el);
+            arr.push(current);
         }
         return arr;
     }, []);
