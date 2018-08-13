@@ -13,7 +13,7 @@
                     .chart-container {
                         grid-column: col-start 1 / span 9;
                     }
-                    .sidebar-container {
+                    .sidebar-container, .contract-wrapper {
                         grid-column: col-start 10 / span 3;
                     }
                 }
@@ -23,7 +23,7 @@
                     .chart-container {
                         grid-column: col-start 1 / span 8;
                     }
-                    .sidebar-container {
+                    .sidebar-container, .contract-wrapper {
                         grid-column: col-start 9 / span 4;
                     }
                 }
@@ -193,6 +193,9 @@
                     margin: 0 8px 16px;
                 }
             }
+            .contract-wrapper {
+                grid-column: col-start 11 / span 2;
+            }
             .sidebar-container {
                 grid-column: col-start 11 / span 2;
                 transition: all 0.25s;
@@ -274,11 +277,11 @@
                 }
             }
         }
-        @media (min-width: 979px) and (max-width: 1125px) {
+        @media (min-width: 769px) and (max-width: 1050px) {
             .chart-container {
                 grid-column: col-start 1 / span 9 !important;
             }
-            .sidebar-container {
+            .sidebar-container, .contract-wrapper {
                 grid-column: col-start 10 / span 3 !important;
             }
         }
