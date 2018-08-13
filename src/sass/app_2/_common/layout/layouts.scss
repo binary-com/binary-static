@@ -38,7 +38,7 @@
         .sidebar-container {
             position: relative;
 
-            &.slide-in {
+            &__form-in {
                 animation: slideIn 0.6s ease forwards;
 
                 .contract-wrapper {
@@ -60,7 +60,7 @@
                     z-index: 2;
                 }
             }
-            &.slide-out {
+            &__contract-in {
                 animation: slideOut 0.6s ease forwards;
 
                 .contract-wrapper {
