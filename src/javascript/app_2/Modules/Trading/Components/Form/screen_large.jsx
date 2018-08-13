@@ -5,9 +5,9 @@ import Purchase     from '../../Containers/purchase.jsx';
 import TradeParams  from '../../Containers/trade_params.jsx';
 import UILoader     from '../../../../App/Components/Elements/ui_loader.jsx';
 
-const ScreenLarge = ({ contract_id, is_trade_enabled }) => (
+const ScreenLarge = ({ is_contract_visible, is_trade_enabled }) => (
     <div className='sidebar-items'>
-        {!is_trade_enabled && !contract_id ?
+        {!is_trade_enabled && !is_contract_visible ?
             <UILoader />
             :
             <React.Fragment>
@@ -24,8 +24,8 @@ const ScreenLarge = ({ contract_id, is_trade_enabled }) => (
 );
 
 ScreenLarge.propTypes = {
-    contract_id     : PropTypes.string,
-    is_trade_enabled: PropTypes.bool,
+    is_contract_visible: PropTypes.string,
+    is_trade_enabled   : PropTypes.bool,
 };
 
 export default ScreenLarge;
