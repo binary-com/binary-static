@@ -21,10 +21,12 @@ import {
     isValidToSell }           from './Helpers/logic';
 import BaseStore              from '../../base_store';
 import { WS }                 from '../../../Services';
+import { isEmptyObject }      from '../../../../_common/utility';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;
     @observable contract_info = observable.object({});
+    @observable has_error     = false;
 
     // -------------------
     // ----- Actions -----
@@ -54,8 +56,12 @@ export default class ContractStore extends BaseStore {
     updateProposal(response) {
         this.contract_info = response.proposal_open_contract;
 
-        createChartBarrier(this.smart_chart, this.contract_info);
-        createChartMarkers(this.smart_chart, this.contract_info, this);
+        if (isEmptyObject(this.contract_info)) {
+            this.has_error = true;
+        } else {
+            createChartBarrier(this.smart_chart, this.contract_info);
+            createChartMarkers(this.smart_chart, this.contract_info, this);
+        }
     }
 
     // ---------------------------
