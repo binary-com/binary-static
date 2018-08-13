@@ -15,7 +15,7 @@ const FormLayout = ({
 );
 
 FormLayout.propTypes = {
-    is_contract_visible: PropTypes.string,
+    is_contract_visible: PropTypes.bool,
     is_mobile          : PropTypes.bool,
     is_trade_enabled   : PropTypes.bool,
 };

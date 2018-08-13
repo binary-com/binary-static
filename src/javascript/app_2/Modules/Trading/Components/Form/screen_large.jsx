@@ -24,7 +24,7 @@ const ScreenLarge = ({ is_contract_visible, is_trade_enabled }) => (
 );
 
 ScreenLarge.propTypes = {
-    is_contract_visible: PropTypes.string,
+    is_contract_visible: PropTypes.bool,
     is_trade_enabled   : PropTypes.bool,
 };
 

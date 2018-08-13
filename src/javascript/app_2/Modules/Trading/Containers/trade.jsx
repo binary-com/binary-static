@@ -35,7 +35,7 @@ class Trade extends React.Component {
                 </div>
                 <div className={classNames(form_wrapper_class, slider_class)}>
                     {
-                        contract_id &&
+                        !!contract_id &&
                             <ContractDetails
                                 contract_id={contract_id}
                                 onClickNewTrade={this.props.onClickNewTrade}
@@ -43,7 +43,7 @@ class Trade extends React.Component {
                     }
                     <FormLayout
                         is_mobile={this.props.is_mobile}
-                        is_contract_visible={contract_id}
+                        is_contract_visible={!!contract_id}
                         is_trade_enabled={this.props.is_trade_enabled}
                     />
                 </div>
