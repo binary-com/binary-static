@@ -50,4 +50,11 @@ describe('fillTemplate', () => {
             .to.have.lengthOf(3)
             .to.eql(['These ', <Link key={result[1].key}>violent delights</Link>, ' have violent ends.']);
     });
+    it('works for 2 pair tags replaced with components', () => {
+        const Link = ({ children }) => <a className='link' href='javascript:;'>{ children }</a>;
+        const result = fillTemplate('These [_1]violent delights[_2] have [_1]violent ends[_2].', { '1_2': <Link /> });
+        expect(result)
+            .to.have.lengthOf(5)
+            .to.eql(['These ', <Link key={result[1].key}>violent delights</Link>, ' have ', <Link key={result[3].key}>violent ends</Link>, '.']);
+    });
 });
