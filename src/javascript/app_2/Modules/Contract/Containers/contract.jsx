@@ -15,7 +15,10 @@ const Contract = ({
                 <SmartChart symbol={symbol} {...chart_config} />
             }
         </div>
-        <ContractDetails contract_id={match.params.contract_id} />
+        <ContractDetails 
+            contract_id={match.params.contract_id}
+            key={match.params.contract_id}
+        />
     </div>
 );
 
