@@ -26,7 +26,7 @@ export const fillTemplate = (template, replacers) => {
             const pair_code = `${open_tag_id}_${tag_id}`;
             const wrapper   = replacers[pair_code];
 
-            if (!React.isValidElement(wrapper)) throw new Error(`Localize: pair tag must be replaced with a react element.`);
+            if (!React.isValidElement(wrapper)) throw new Error(`Localize: pair tag ${pair_code} must be replaced with a react element.`);
             if (!wrapper) throw new Error(`Localize: no ${open_tag_id} or ${pair_code} replacer for "${template}" template.`);
 
             res.push(React.cloneElement(wrapper, { key: index, children: before }));
