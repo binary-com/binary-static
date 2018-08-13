@@ -5,9 +5,6 @@ import {
 import { formatPortfolioResponse } from './Helpers/format_response';
 import BaseStore                   from '../../base_store';
 import { WS }                      from '../../../Services';
-import {
-    getDiffDuration,
-    formatDuration }               from '../../../Utils/Date';
 
 export default class PortfolioStore extends BaseStore {
     @observable data       = [];
@@ -92,7 +89,7 @@ export default class PortfolioStore extends BaseStore {
             return;
         }
         this.error = '';
-        if (response.portfolio.contracts && response.portfolio.contracts.length !== 0) {
+        if (response.portfolio.contracts) {
             this.data = formatPortfolioResponse(response.portfolio.contracts);
         }
     }
@@ -111,19 +108,6 @@ export default class PortfolioStore extends BaseStore {
             this.clearTable();
             WS.forgetAll('proposal_open_contract', 'transaction');
         }
-    }
-
-    @computed
-    get data_with_remaining_time() {
-        // don't use es6 spread operator here
-        // modifying object in place is 20 times faster (http://jsben.ch/YTUEK)
-        // this function runs every second
-        return this.data.map((portfolio_pos) => {
-            portfolio_pos.remaining_time = formatDuration(
-                getDiffDuration(this.root_store.common.server_time.unix(), portfolio_pos.expiry_time)
-            );
-            return portfolio_pos;
-        });
     }
 
     @computed
