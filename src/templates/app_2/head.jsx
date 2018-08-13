@@ -1,4 +1,6 @@
 import React from 'react';
+import GoogleOptimizer from './includes/google/go.jsx';
+import GA from './includes/google/ga.jsx';
 import URLHandler from './includes/url_handler.jsx';
 import Title from '../_common/components/title.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
@@ -6,6 +8,8 @@ import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 
 const Head = () => (
     <head>
+        <GoogleOptimizer />
+        <GA />
         <AntiClickjack />
         <URLHandler />
         <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
