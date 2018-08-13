@@ -1,6 +1,7 @@
 import React from 'react';
 
-export const fillTemplate = (template, replacers) => {
+// TODO: add tests
+const fillTemplate = (template, replacers) => {
     const res = [];
     let str = template;
     let open_tag_id = null;
@@ -35,7 +36,7 @@ export const fillTemplate = (template, replacers) => {
         else {
             if (before.length) res.push(before);
 
-            if (replacers.hasOwnProperty(tag_id)) {
+            if (tag_id in replacers) {
                 res.push(replacers[tag_id]);
             }
             else {
@@ -46,3 +47,5 @@ export const fillTemplate = (template, replacers) => {
     if (open_tag_id) throw new Error(`Localize: no ${open_tag_id} replacer for "${template}" template.`);
     return res;
 };
+
+export default fillTemplate;
