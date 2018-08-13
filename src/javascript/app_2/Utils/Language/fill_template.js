@@ -45,7 +45,18 @@ const fillTemplate = (template, replacers) => {
         }
     }
     if (open_tag_id) throw new Error(`Localize: no ${open_tag_id} replacer for "${template}" template.`);
-    return res;
+
+    // concat adjacent strings in result array
+    return res.reduce((arr, el) => {
+        const last = arr[arr.length - 1];
+        if (typeof last === 'string' && typeof el === 'string') {
+            arr[arr.length - 1] = last + el;
+        }
+        else {
+            arr.push(el);
+        }
+        return arr;
+    }, []);
 };
 
 export default fillTemplate;
