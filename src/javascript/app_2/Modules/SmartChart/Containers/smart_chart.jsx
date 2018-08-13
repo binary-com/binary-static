@@ -43,6 +43,7 @@ class Chart extends React.Component {
 
     topWidgets = () => (
         <TopWidgets
+            InfoBox={this.props.InfoBox}
             is_title_enabled={this.props.is_title_enabled}
             onSymbolChange={symbolChange(this.props.onSymbolChange)}
         />
@@ -82,6 +83,7 @@ Chart.propTypes = {
     chart_type      : PropTypes.string,
     end_epoch       : PropTypes.number,
     granularity     : PropTypes.number,
+    InfoBox         : PropTypes.node,
     is_title_enabled: PropTypes.bool,
     is_mobile       : PropTypes.bool,
     markers_array   : PropTypes.array,
