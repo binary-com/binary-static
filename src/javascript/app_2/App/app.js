@@ -16,6 +16,7 @@ import { routes }                    from '../Constants';
 import NetworkMonitor                from '../Services/network_monitor';
 import RootStore                     from '../Stores';
 import { MobxProvider }              from '../Stores/connect';
+import { setStorageEvents }          from '../Utils/Events/storage';
 import Client                        from '../../_common/base/client_base';
 import { getAll as getAllLanguages } from '../../_common/language';
 import { localize }                  from '../../_common/localize';
@@ -24,6 +25,8 @@ import { localize }                  from '../../_common/localize';
 
 const initApp = () => {
     Client.init();
+
+    setStorageEvents();
 
     const root_store = new RootStore();
 
