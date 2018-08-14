@@ -24,7 +24,10 @@ const Contract = ({
                 />
             }
         </div>
-        <ContractDetails contract_id={match.params.contract_id} />
+        <ContractDetails 
+            contract_id={match.params.contract_id}
+            key={match.params.contract_id}
+        />
     </div>
 );
 
