@@ -24,11 +24,7 @@ const RouteWithSubRoutes = route => {
         } else {
             result = (
                 (route.is_authenticated && !Client.isLoggedIn()) ?
-                    <LoginPrompt onLogin={redirectToLogin}>
-                        { route.icon_component && // TODO: needs a general icon in case not specified in route
-                            <route.icon_component className='disabled'/>
-                        }
-                    </LoginPrompt>
+                    <LoginPrompt IconComponent={route.icon_component} onLogin={redirectToLogin} />
                     :
                     <route.component {...props} routes={route.routes}/>
             );
