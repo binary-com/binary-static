@@ -1,4 +1,4 @@
-// import { configure }     from 'mobx';
+import { configure }        from 'mobx';
 import React                from 'react';
 import { render }           from 'react-dom';
 import App                  from './app.jsx';
@@ -7,7 +7,7 @@ import RootStore            from '../Stores';
 import { setStorageEvents } from '../Utils/Events/storage';
 import Client               from '../../_common/base/client_base';
 
-// configure({ enforceActions: true }); // disabled for SmartCharts compatibility
+configure({ enforceActions: true });
 
 const initApp = () => {
     Client.init();
