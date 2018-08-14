@@ -9,6 +9,7 @@ import ServerTime     from '../../Containers/server_time.jsx';
 import { connect }    from '../../../Stores/connect';
 
 const Footer = ({
+    is_logged_in,
     is_portfolio_drawer_on,
     is_language_dialog_visible,
     is_settings_dialog_on,
@@ -19,6 +20,7 @@ const Footer = ({
         <ServerTime />
         <div className='footer-links'>
             <TogglePortfolio
+                is_disabled={!is_logged_in}
                 is_portfolio_drawer_on={is_portfolio_drawer_on}
                 togglePortfolioDrawer={togglePortfolioDrawer}
             />
@@ -34,6 +36,7 @@ const Footer = ({
 
 
 Footer.propTypes = {
+    is_logged_in              : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
     is_portfolio_drawer_on    : PropTypes.bool,
     is_settings_dialog_on     : PropTypes.bool,
@@ -42,7 +45,8 @@ Footer.propTypes = {
 };
 
 export default connect(
-    ({ ui }) => ({
+    ({ client, ui }) => ({
+        is_logged_in              : client.is_logged_in,
         is_language_dialog_visible: ui.is_language_dialog_on,
         is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
         is_settings_dialog_on     : ui.is_settings_dialog_on,

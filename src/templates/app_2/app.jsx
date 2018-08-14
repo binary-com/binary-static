@@ -1,13 +1,13 @@
-import React  from 'react';
-import Head   from './head.jsx';
-import Loader from './includes/loader.jsx';
-import GTM    from '../_common/includes/gtm.jsx';
+import React       from 'react';
+import Head        from './head.jsx';
+import GTMNoScript from './includes/google/gtm_no_script.jsx';
+import Loader      from './includes/loader.jsx';
 
 const BinaryApp = () => (
     <html>
         <Head />
         <body className={it.language}>
-            <GTM />
+            <GTMNoScript />
             <Loader />
             <div id='binary_app' className='binary-app' />
             <script

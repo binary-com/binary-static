@@ -1,5 +1,5 @@
 import React         from 'react';
-import { IconPortfolio } from '../../../Assets/Header/NavBar/';
+import { IconPortfolio } from '../../../Assets/Header/NavBar';
 import { localize }  from '../../../../_common/localize';
 
 const EmptyPortfolioMessage = () => (

@@ -40,6 +40,7 @@ const Duration = ({
     sessions,
     start_date,
     start_time,
+    validation_errors,
 }) => {
     const moment_now = moment(server_time);
     if (!now_date || moment_now.date() !== now_date.date()) {
@@ -126,6 +127,7 @@ const Duration = ({
                                 value={duration}
                                 onChange={onChange}
                                 is_nativepicker={is_nativepicker}
+                                error_messages = {validation_errors.duration || []}
                             />
                         }
                         <Dropdown
@@ -182,15 +184,16 @@ Duration.propTypes = {
         PropTypes.string,
         PropTypes.number,
     ]),
-    expiry_time    : PropTypes.string,
-    expiry_type    : PropTypes.string,
-    is_minimized   : PropTypes.bool,
-    is_nativepicker: PropTypes.bool,
-    onChange       : PropTypes.func,
-    server_time    : PropTypes.object,
-    sessions       : MobxPropTypes.arrayOrObservableArray,
-    start_date     : PropTypes.number,
-    start_time     : PropTypes.string,
+    expiry_time      : PropTypes.string,
+    expiry_type      : PropTypes.string,
+    is_minimized     : PropTypes.bool,
+    is_nativepicker  : PropTypes.bool,
+    onChange         : PropTypes.func,
+    server_time      : PropTypes.object,
+    sessions         : MobxPropTypes.arrayOrObservableArray,
+    start_date       : PropTypes.number,
+    start_time       : PropTypes.string,
+    validation_errors: PropTypes.object,
 };
 
 export default observer(Duration);

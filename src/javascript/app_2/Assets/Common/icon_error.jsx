@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ErrorIcon = (/* { type } */) => ( // TODO: add icon for different types of error
+const IconError = (/* { type } */) => ( // TODO: add icon for different types of error
     <svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'>
         <g fill='none' fillRule='evenodd'>
             <circle cx='32' cy='32' r='32' fill='#FFC107'/>
@@ -12,4 +12,4 @@ const ErrorIcon = (/* { type } */) => ( // TODO: add icon for different types of
     </svg>
 );
 
-export { ErrorIcon };
+export default IconError;

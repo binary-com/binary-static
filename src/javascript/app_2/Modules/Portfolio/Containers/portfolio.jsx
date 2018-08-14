@@ -81,7 +81,7 @@ Portfolio.propTypes = {
 export default connect(
     ({modules, client, ui}) => ({
         currency  : client.currency,
-        data      : modules.portfolio.data_with_remaining_time,
+        data      : modules.portfolio.data,
         error     : modules.portfolio.error,
         is_empty  : modules.portfolio.is_empty,
         is_loading: modules.portfolio.is_loading,

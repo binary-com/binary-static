@@ -23,7 +23,7 @@ const Tooltip = ({
 
 Tooltip.propTypes = {
     alignment: PropTypes.string,
-    children : PropTypes.string,
+    children : PropTypes.node,
     icon     : PropTypes.string,
     message  : PropTypes.string,
 };

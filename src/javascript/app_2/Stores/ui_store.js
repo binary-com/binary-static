@@ -41,7 +41,7 @@ export default class UIStore extends BaseStore {
             'is_purchase_lock_on',
         ];
 
-        super(null, local_storage_properties);
+        super({ local_storage_properties });
         window.addEventListener('resize', this.handleResize);
         reaction(
             () => this.is_app_ready,

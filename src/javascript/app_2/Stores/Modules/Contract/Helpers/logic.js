@@ -24,10 +24,10 @@ const hour_to_granularity_map = [
 const calculateGranularity = (duration) =>
     (hour_to_granularity_map.find(m => duration <= m[0] * 3600) || [null, 86400])[1];
 
-export const getDisplayStatus = (is_ended, profit) => {
+export const getDisplayStatus = (contract_info) => {
     let status = 'purchased';
-    if (is_ended) {
-        status = profit >= 0 ? 'won' : 'lost';
+    if (isEnded(contract_info)) {
+        status = contract_info.profit >= 0 ? 'won' : 'lost';
     }
     return status;
 };
@@ -43,17 +43,17 @@ export const getEndSpotTime = (contract_info) => (
 );
 
 export const getFinalPrice = (contract_info) => (
-    contract_info.sell_price || contract_info.bid_price
+    +(contract_info.sell_price || contract_info.bid_price)
 );
 
-export const getIndicativePrice = (store) => (
-    store.final_price && store.is_ended ?
-        store.final_price :
-        (store.contract_info.bid_price || null)
+export const getIndicativePrice = (contract_info) => (
+    getFinalPrice(contract_info) && isEnded(contract_info) ?
+        getFinalPrice(contract_info) :
+        (+contract_info.bid_price || null)
 );
 
-export const isEnded = (contract_info) => (
-    contract_info.status !== 'open' ||
+export const isEnded = (contract_info) => !!(
+    (contract_info.status && contract_info.status !== 'open') ||
     contract_info.is_expired        ||
     contract_info.is_settleable
 );
@@ -62,6 +62,14 @@ export const isSoldBeforeStart = (contract_info) => (
     contract_info.sell_time && +contract_info.sell_time < +contract_info.date_start
 );
 
+export const isStarted = (contract_info) => (
+    !contract_info.is_forward_starting || contract_info.current_spot_time > contract_info.date_start
+);
+
 export const isUserSold = (contract_info) => (
     contract_info.status === 'sold'
+);
+
+export const isValidToSell = (contract_info) => (
+    !isEnded(contract_info) && !isUserSold(contract_info) && +contract_info.is_valid_to_sell === 1
 );

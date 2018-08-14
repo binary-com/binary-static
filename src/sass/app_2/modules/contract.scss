@@ -65,6 +65,93 @@
     }
 }
 
+$CONTRACT_INFO_BOX_PADDING: 15px;
+
+.info-box {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 10px;
+    padding: $CONTRACT_INFO_BOX_PADDING;
+    border: 1px solid $COLOR_GRAY;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+
+    .expired {
+        display: flex;
+        align-items: center;
+
+        svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+
+            .color1-fill {
+                fill: $COLOR_LIGHT_GREEN;
+            }
+        }
+        .pl-value {
+            color: $COLOR_LIGHT_GREEN;
+            font-weight: bold;
+            font-size: 1rem;
+            line-height: 1.5rem;
+
+            .percentage {
+                display: inline-block;
+                margin-left: 7px;
+            }
+        }
+        &.lost {
+            .pl-value {
+                color: $COLOR_LIGHT_RED;
+            }
+            svg .color1-fill {
+                fill: $COLOR_LIGHT_RED;
+            }
+        }
+    }
+    .general {
+        display: flex;
+        align-items: center;
+        line-height: 1.4rem;
+
+        .values {
+            margin-left: 10px;
+            margin-right: 20px;
+            text-align: right;
+            font-weight: bold;
+
+            .profit {
+                color: $COLOR_LIGHT_GREEN;
+            }
+            .loss {
+                color: $COLOR_LIGHT_RED;
+            }
+        }
+        .sell {
+            display: flex;
+            align-items: center;
+            margin: -$CONTRACT_INFO_BOX_PADDING;
+            margin-left: $CONTRACT_INFO_BOX_PADDING;
+            padding: $CONTRACT_INFO_BOX_PADDING;
+            border-left: 1px solid $COLOR_GRAY;
+
+            .tooltip {
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+                line-height: 0;
+
+                &:before {
+                    width: 350px;
+                    white-space: normal;
+                }
+            }
+        }
+    }
+}
+
 // Dark Theme
 .theme-wrapper.dark {
     .contract-container {
@@ -89,6 +176,19 @@
                 > div:first-child {
                     color: $COLOR_BRANDBLUE_40;
                 }
+            }
+        }
+    }
+    .info-box {
+        border-color: $COLOR_BRANDBLUE_85;
+        background: rgba(42, 48, 82, 0.6);
+
+        .general .sell {
+            border-left-color: $COLOR_BRANDBLUE_85;
+
+            .btn:disabled {
+                background: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_75 !important;
             }
         }
     }
