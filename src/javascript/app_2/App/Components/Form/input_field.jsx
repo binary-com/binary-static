@@ -26,7 +26,6 @@ const InputField = ({
     const has_error = error_messages && error_messages.length;
     const input =
         <input
-            autoFocus
             className={classNames({error: has_error})}
             type={type}
             name={name}

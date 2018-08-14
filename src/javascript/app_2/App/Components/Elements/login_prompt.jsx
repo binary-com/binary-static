@@ -2,10 +2,16 @@ import PropTypes    from 'prop-types';
 import React        from 'react';
 import Localize     from './localize.jsx';
 
-const LoginPrompt = ({ onLogin, onSignup, children }) => (
+const LoginPrompt = ({
+    IconComponent,
+    onLogin,
+    onSignup,
+}) => (
     <div className='login-prompt'>
         <div className='login-prompt__icon'>
-            {children}
+            { IconComponent && // TODO: needs a general icon in case not specified in route
+                <IconComponent className='disabled' />
+            }
         </div>
         <div className='login-prompt__message'>
             <Localize
@@ -20,9 +26,9 @@ const LoginPrompt = ({ onLogin, onSignup, children }) => (
 );
 
 LoginPrompt.propTypes = {
-    children: PropTypes.any,
-    onLogin : PropTypes.func,
-    onSignup: PropTypes.func,
+    IconComponent: PropTypes.node,
+    onLogin      : PropTypes.func,
+    onSignup     : PropTypes.func,
 };
 
 export default LoginPrompt;
