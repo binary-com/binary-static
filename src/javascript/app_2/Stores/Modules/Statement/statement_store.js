@@ -37,27 +37,30 @@ export default class StatementStore extends BaseStore {
 
         this.is_loading = true;
 
-        const currency = Client.get('currency');
-
         WS.statement(
             batch_size,
             this.data.length,
             {
-                ...this.date_from && {date_from: moment(this.date_from).unix()},
-                ...this.date_to   && {date_to: moment(this.date_to).add(1, 'd').subtract(1, 's').unix()},
+                ...this.date_from && { date_from: moment(this.date_from).unix() },
+                ...this.date_to   && { date_to: moment(this.date_to).add(1, 'd').subtract(1, 's').unix() },
             }
-        ).then((response) => {
-            if ('error' in response) {
-                this.error = response.error.message;
-                return;
-            }
-            const formatted_transactions = response.statement.transactions
-                .map(transaction => formatStatementTransaction(transaction, currency));
+        ).then(this.statementHandler);
+    }
 
-            this.data           = [...this.data, ...formatted_transactions];
-            this.has_loaded_all = formatted_transactions.length < batch_size;
-            this.is_loading     = false;
-        });
+    @action.bound
+    statementHandler(response) {
+        if ('error' in response) {
+            this.error = response.error.message;
+            return;
+        }
+
+        const currency = Client.get('currency');
+        const formatted_transactions = response.statement.transactions
+            .map(transaction => formatStatementTransaction(transaction, currency));
+
+        this.data           = [...this.data, ...formatted_transactions];
+        this.has_loaded_all = formatted_transactions.length < batch_size;
+        this.is_loading     = false;
     }
 
     @action.bound

@@ -1,37 +1,36 @@
-import PropTypes          from 'prop-types';
-import React              from 'react';
-import { withRouter }     from 'react-router';
+import PropTypes               from 'prop-types';
+import React                   from 'react';
+import { withRouter }          from 'react-router';
 import {
     AccountInfo,
     LoginButton,
     MenuLinks,
     ToggleMenuDrawer,
     ToggleNotificationsDrawer,
-    UpgradeButton,
-    }                     from '../../Components/Layout/Header';
-import { connect }        from '../../../Stores/connect';
-import { formatMoney }    from '../../../../_common/base/currency_base';
+    UpgradeButton }            from '../../Components/Layout/Header';
+import header_links            from '../../Constants/header_links';
+import { connect }             from '../../../Stores/connect';
+import { formatMoney }         from '../../../../_common/base/currency_base';
 
-const Header = ({ 
-    balance, 
+const Header = ({
+    balance,
     can_upgrade,
-    currency, 
-    loginid, 
-    items, 
-    is_logged_in,  
+    currency,
+    loginid,
+    is_logged_in,
     onClickUpgrade,
 }) => (
     <header className='header'>
         <div className='menu-items'>
             <div className='menu-left'>
                 <ToggleMenuDrawer />
-                <MenuLinks items={items} />
+                <MenuLinks items={header_links} />
             </div>
             <div className='menu-right'>
                 <div className='acc-balance-container'>
                     { is_logged_in ?
                         <React.Fragment>
-                            <AccountInfo 
+                            <AccountInfo
                                 balance={formatMoney(currency, balance, true)}
                                 currency={currency}
                                 loginid={loginid}
@@ -53,7 +52,6 @@ Header.propTypes = {
     can_upgrade   : PropTypes.bool,
     currency      : PropTypes.string,
     loginid       : PropTypes.string,
-    items         : PropTypes.array,
     is_dark_mode  : PropTypes.bool, // TODO: add dark theme handler
     is_logged_in  : PropTypes.bool,
     onClickUpgrade: PropTypes.func, // TODO: add click handler

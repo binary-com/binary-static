@@ -15,10 +15,7 @@ export default class PortfolioStore extends BaseStore {
     initializePortfolio = () => {
         this.is_loading = true;
 
-        WS.portfolio().then((response) => {
-            this.is_loading = false;
-            this.updatePortfolio(response);
-        });
+        WS.portfolio().then(this.portfolioHandler);
         WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
         WS.subscribeTransaction(this.transactionHandler, false);
     };
@@ -29,6 +26,12 @@ export default class PortfolioStore extends BaseStore {
         this.is_loading = false;
         this.error      = '';
     }
+
+    @action.bound
+    portfolioHandler(response) {
+        this.is_loading = false;
+        this.updatePortfolio(response);
+    };
 
     @action.bound
     transactionHandler(response) {

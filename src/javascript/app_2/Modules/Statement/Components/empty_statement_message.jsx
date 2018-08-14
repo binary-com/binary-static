@@ -1,11 +1,12 @@
-import PropTypes     from 'prop-types';
-import React         from 'react';
-import { localize }  from '../../../../_common/localize';
-import Button        from '../../../App/Components/Form/button.jsx';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { localize }      from '../../../../_common/localize';
+import { IconStatement } from '../../../Assets/Header/NavBar';
+import Button            from '../../../App/Components/Form/button.jsx';
 
 const EmptyStatementMessage = ({ has_selected_date }) => (
     <div className='statement-empty'>
-        <span className='statement-empty__icon' />
+        <IconStatement className='statement-empty__icon' />
         <span className='statement-empty__title'>
             {localize('No Statement')}
         </span>
