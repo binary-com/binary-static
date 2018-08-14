@@ -1,6 +1,8 @@
 import { Redirect }           from 'react-router-dom';
 import { routes }             from '../../Constants';
 
+import { IconPortfolio,
+         IconStatement }      from '../../Assets/Header/NavBar';
 import ContractDetails        from '../../Modules/Contract';
 import Portfolio              from '../../Modules/Portfolio';
 import Settings               from '../../Modules/settings/settings.jsx';
@@ -21,9 +23,9 @@ import SelfExclusion          from '../../Modules/settings/sections/self_exclusi
 const routes_config = [
     { path: routes.contract,  component: ContractDetails, title: 'Contract Details',  is_authenticated: true },
     { path: routes.index,     component: Redirect,        title: '',                  to: '/trade' },
-    { path: routes.portfolio, component: Portfolio,       title: 'Portfolio',         is_authenticated: true },
+    { path: routes.portfolio, component: Portfolio,       title: 'Portfolio',         is_authenticated: true, icon_component: IconPortfolio },
     { path: routes.root,      component: Redirect,        title: '',                  exact: true, to: '/trade' },
-    { path: routes.statement, component: Statement,       title: 'Statement',         is_authenticated: true },
+    { path: routes.statement, component: Statement,       title: 'Statement',         is_authenticated: true, icon_component: IconStatement },
     { path: routes.trade,     component: Trade,           title: 'Trade',             exact: true },
     {
         path            : routes.settings,

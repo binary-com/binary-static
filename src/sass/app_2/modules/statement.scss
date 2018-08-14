@@ -179,11 +179,8 @@ $side-padding: 12px;
         align-items: center;
 
         &__icon {
-            display: inline-block;
             height: 64px;
             width: 64px;
-            background-size: 64px;
-            background-image: url('../images/app_2/header/icons/ic_statement_normal_light.svg');
             margin-bottom: 16px;
         }
         &__title {

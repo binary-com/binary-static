@@ -13,24 +13,6 @@
             margin-bottom: 0;
             height: calc(100vh - #{$HEADER_HEIGHT});
         }
-
-        .login-message-wrapper {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            .message {
-                a {
-                    text-decoration: none;
-                    color: $COLOR_BLUE;
-
-                    &:hover {
-                        font-weight: 500;
-                    }
-                }
-            }
-        }
     }
     /* trade-app layout */
     .trade-container {

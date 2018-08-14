@@ -61,6 +61,7 @@ class PortfolioDrawer extends React.Component {
 };
 
 PortfolioDrawer.propTypes = {
+    children              : PropTypes.any,
     data                  : MobxPropTypes.arrayOrObservableArray,
     error                 : PropTypes.string,
     currency              : PropTypes.string,
