@@ -35,7 +35,7 @@ export const FormRow = ({
                 </select>
             );
         }
-        if (['text', 'password', 'number', 'checkbox'].indexOf(type) !== -1) {
+        if (['text', 'password', 'number', 'checkbox'].includes(type)) {
             return (
                 <React.Fragment>
                     {input_prefix}
@@ -43,7 +43,6 @@ export const FormRow = ({
                         type={type}
                         className={className}
                         id={id}
-                        maxLength={type === 'password' ? 25 : undefined}
                         {...attributes}
                     />
                     {type === 'checkbox' && spaced ?
