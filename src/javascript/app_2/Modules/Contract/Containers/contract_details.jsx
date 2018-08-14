@@ -20,21 +20,18 @@ class ContractDetails extends React.Component {
         } = this.props.contract_info;
 
         return (
-
-            <div className='contract-wrapper'>
-                { !contract_id ?
-                    <UILoader/>
-                    :
-                    <React.Fragment>
-                        <div className='contract-container'>
-                            <DetailsHeader status={this.props.display_status}/>
-                            <DetailsContents
-                                buy_id={transaction_ids.buy}
-                                details_expiry={this.props.details_expiry}
-                                details_info={this.props.details_info}
-                                longcode={longcode}
-                            />
-                        </div>
+            !contract_id ?
+                <UILoader/>
+                :
+                <React.Fragment>
+                    <div className='contract-container'>
+                        <DetailsHeader status={this.props.display_status}/>
+                        <DetailsContents
+                            buy_id={transaction_ids.buy}
+                            details_expiry={this.props.details_expiry}
+                            details_info={this.props.details_info}
+                            longcode={longcode}
+                        />
                         <Link
                             className='btn secondary orange'
                             to={routes.trade}
@@ -42,9 +39,8 @@ class ContractDetails extends React.Component {
                         >
                             <span>{localize('Start a new trade')}</span>
                         </Link>
-                    </React.Fragment>
-                }
-            </div>
+                    </div>
+                </React.Fragment>
         );
     }
 }

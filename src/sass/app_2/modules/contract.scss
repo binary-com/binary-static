@@ -1,7 +1,7 @@
 .contract-container {
     font-size: 0.85rem;
-    border: 1px solid $COLOR_GRAY;
     border-radius: $BORDER_RADIUS;
+    position: relative;
 
     .contract-header {
         display: flex;
@@ -30,6 +30,9 @@
     .contract-contents {
         padding: 10px;
         font-size: 0.75rem;
+        border: 1px solid $COLOR_GRAY;
+        border-top-width: 0;
+        border-radius: 0 0 4px 4px;
 
         .longcode {
             font-weight: 300;
@@ -157,7 +160,6 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 // Dark Theme
 .theme-wrapper.dark {
     .contract-container {
-        border-color: $COLOR_BRANDBLUE_85;
         color: $COLOR_BRANDBLUE_40;
 
         .contract-header {
@@ -169,6 +171,8 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             }
         }
         .contract-contents {
+            border-color: $COLOR_BRANDBLUE_85;
+
             .ref-number, .info-header {
                 background-color: $COLOR_BRANDBLUE_95;
             }

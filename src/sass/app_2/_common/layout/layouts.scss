@@ -38,48 +38,34 @@
         .sidebar-container {
             position: relative;
 
-            &__form-in {
-                animation: slideIn 0.6s ease forwards;
+            .sidebar-items {
+                opacity: 1;
+                transform: none;
+                transition: all 0.6s ease;
 
-                .contract-wrapper {
-                    position: absolute;
-                    height: 100%;
-                    width: 100%;
-                    top: 0;
-                    left: 0;
-                    animation: fadeOut 0.3s linear forwards;
-                    z-index: 0;
-                }
-                .sidebar-items {
-                    height: 100%;
-                    width: 100%;
-                    animation: fadeIn 0.3s linear forwards;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    z-index: 2;
+                &__slideout {
+                    transform: translateX(calc(100% + 20px));
+                    opacity: 0;
                 }
             }
-            &__contract-in {
-                animation: slideOut 0.6s ease forwards;
+            .contract-wrapper {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                top: 0;
+                left: 0;
+                transition: all 0.6s ease;
+                opacity: 1;
+                transform: none;
 
-                .contract-wrapper {
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    animation: fadeIn 0.3s linear forwards;
-                    z-index: 2;
+                &-enter {
+                    transform: translateX(calc(100% + 20px));
+                    opacity: 0;
                 }
-                .sidebar-items {
-                    height: 100%;
-                    width: 100%;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    animation: fadeOut 0.3s linear forwards;
-                    z-index: 1;
+                &-exit {
+                    transform: translateX(calc(100% + 20px));
+                    opacity: 0;
                 }
             }
         }
@@ -114,7 +100,7 @@
         .chart-container {
             position: relative;
 
-            cq-context { // stylelint-disable-line selector-type-no-unknown
+            .cq-context {
                 top: 0;
                 left: 0;
                 z-index: 0;
@@ -145,6 +131,9 @@
         .sidebar-items, .contract-wrapper {
             min-height: 500px;
         }
+        .sidebar-items {
+            position: relative;
+        }
         & > * {
             grid-column: col-start / span 12;
         }
@@ -152,7 +141,7 @@
             grid-template-rows: 1fr auto auto;
 
             .chart-container {
-                cq-context { // stylelint-disable-line selector-type-no-unknown
+                .cq-context {
                     div.cq-chart-controls {
                         border: 1px solid $COLOR_GRAY;
                     }
@@ -193,7 +182,7 @@
                     margin: 0 8px 16px;
                 }
             }
-            .contract-wrapper {
+            .contract-container {
                 grid-column: col-start 11 / span 2;
             }
             .sidebar-container {
@@ -281,7 +270,7 @@
             .chart-container {
                 grid-column: col-start 1 / span 9 !important;
             }
-            .sidebar-container, .contract-wrapper {
+            .sidebar-container, .contract-container {
                 grid-column: col-start 10 / span 3 !important;
             }
         }
@@ -354,34 +343,6 @@
     p {
         @include interpolate(font-size, 320px, 1440px, 14px, 20px);
         color: $COLOR_LIGHT_BLACK;
-    }
-}
-
-@keyframes slideIn {
-    0% {
-        pointer-events: none;
-        transform: none;
-    }
-    50% {
-        transform: translateX(calc(100% + 20px));
-    }
-    100% {
-        pointer-events: auto;
-        transform: none;
-    }
-}
-
-@keyframes slideOut {
-    0% {
-        pointer-events: none;
-        transform: none;
-    }
-    50% {
-        transform: translateX(calc(100% + 20px));
-    }
-    100% {
-        pointer-events: auto;
-        transform: none;
     }
 }
 

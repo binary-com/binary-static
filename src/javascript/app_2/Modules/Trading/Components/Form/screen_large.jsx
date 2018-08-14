@@ -1,3 +1,4 @@
+import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import ContractType from '../../Containers/contract_type.jsx';
@@ -6,7 +7,10 @@ import TradeParams  from '../../Containers/trade_params.jsx';
 import UILoader     from '../../../../App/Components/Elements/ui_loader.jsx';
 
 const ScreenLarge = ({ is_contract_visible, is_trade_enabled }) => (
-    <div className='sidebar-items'>
+    <div className={classNames('sidebar-items', {
+        'sidebar-items__slideout': is_contract_visible,
+    })}
+    >
         {!is_trade_enabled && !is_contract_visible ?
             <UILoader />
             :

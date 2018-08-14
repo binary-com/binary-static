@@ -1,13 +1,13 @@
-import classNames           from 'classnames';
-import PropTypes            from 'prop-types';
-import React                from 'react';
-import Test                 from './test.jsx';
-import FormLayout           from '../Components/Form/form_layout.jsx';
-import InfoBox              from '../../Contract/Components/InfoBox';
-import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
-import SmartChart           from '../../SmartChart';
-import { connect }          from '../../../Stores/connect';
-import { getPropertyValue } from '../../../../_common/utility';
+import PropTypes              from 'prop-types';
+import React                  from 'react';
+import { CSSTransition } from 'react-transition-group';
+import Test                   from './test.jsx';
+import FormLayout             from '../Components/Form/form_layout.jsx';
+import InfoBox                from '../../Contract/Components/InfoBox';
+import ContractDetails        from '../../Contract/Containers/contract_details.jsx';
+import SmartChart             from '../../SmartChart';
+import { connect }            from '../../../Stores/connect';
+import { getPropertyValue }   from '../../../../_common/utility';
 
 class Trade extends React.Component {
     componentDidMount() {
@@ -17,7 +17,6 @@ class Trade extends React.Component {
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
         const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
-        const slider_class = contract_id ? 'sidebar-container__contract-in' : 'sidebar-container__form-in';
         const InfoBoxComponent = this.props.is_contract_mode ?
             <InfoBox contract_info={this.props.contract_info} /> : null;
 
@@ -33,19 +32,27 @@ class Trade extends React.Component {
                     }
                     <Test />
                 </div>
-                <div className={classNames(form_wrapper_class, slider_class)}>
-                    {
-                        !!contract_id &&
-                            <ContractDetails
-                                contract_id={contract_id}
-                                onClickNewTrade={this.props.onClickNewTrade}
-                            />
-                    }
+                <div
+                    className={form_wrapper_class}
+                >
                     <FormLayout
                         is_mobile={this.props.is_mobile}
                         is_contract_visible={!!contract_id}
                         is_trade_enabled={this.props.is_trade_enabled}
                     />
+                    <CSSTransition
+                        in={!!contract_id}
+                        timeout={600}
+                        classNames='contract-wrapper'
+                        unmountOnExit
+                    >
+                        <div className='contract-wrapper'>
+                            <ContractDetails
+                                contract_id={contract_id}
+                                onClickNewTrade={this.props.onClickNewTrade}
+                            />
+                        </div>
+                    </CSSTransition>
                 </div>
             </div>
         );

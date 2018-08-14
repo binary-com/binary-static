@@ -301,8 +301,7 @@
             }
         }
         .chart-container {
-            cq-context { // stylelint-disable-line selector-type-no-unknown
-
+            .cq-context {
                 div.cq-chart-controls {
                     border: none;
                     border-right: 1px solid $COLOR_BRANDBLUE_85;
