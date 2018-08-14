@@ -531,6 +531,8 @@ const Metatrader = () => (
                             <ul className='bullet'>
                                 <li className='maltainvest invisible'>{it.L('Upgrade to [_1] <a href="[_2]">Financial Account</a>.', it.website_name, it.url_for('new_account/maltainvestws'))}</li>
                                 <li className='assessment invisible'>{it.L('Complete the <a href="[_1]">Financial Assessment</a>.', it.url_for('user/settings/assessmentws'))}</li>
+                                <li className='tax invisible'>{it.L('Complete your <a href="[_1]">Tax Information</a>.', it.url_for('user/settings/detailsws'))}</li>
+                                <li className='citizen invisible'>{it.L('Select <a href="[_1]">Citizenship</a>.', it.url_for('user/settings/detailsws'))}</li>
                             </ul>
                         </div>
                         <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please <a href="[_1]">Authenticate</a> your Binary account.', it.url_for('user/authenticate'))}</div>
