@@ -254,10 +254,14 @@ const PersonalDetails = (() => {
         // allow user to resubmit the form on error.
         const is_error = response.set_settings !== 1;
         if (!is_error) {
+            const redirect_url = localStorage.getItem('personal_details_redirect');
             // to update tax information message for financial clients
-            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then((response_status) => {
                 showHideTaxMessage();
                 Header.displayAccountStatus();
+                if (redirect_url && +response_status.get_account_status.prompt_client_to_authenticate && Client.isAccountOfType('financial')) {
+                    $('#msg_authenticate').setVisibility(1);
+                }
             });
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
@@ -271,6 +275,12 @@ const PersonalDetails = (() => {
                     is_for_new_account = false;
                     BinaryPjax.loadPreviousUrl();
                     return;
+                }
+                if (redirect_url && data.tax_residence && data.tax_identification_number && data.citizen) {
+                    localStorage.removeItem('personal_details_redirect');
+                    $.scrollTo($('h1#heading'), 500, { offset: -10 });
+                    $(form_id).setVisibility(0);
+                    $('#msg_main').setVisibility(1);
                 }
                 getDetailsResponse(data.get_settings);
             });
@@ -422,6 +432,7 @@ const PersonalDetails = (() => {
 
     const onUnload = () => {
         is_for_new_account = false;
+        localStorage.removeItem('personal_details_redirect');
     };
 
     return {
