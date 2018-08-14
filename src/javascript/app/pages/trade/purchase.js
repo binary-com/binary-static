@@ -65,7 +65,7 @@ const Purchase = (() => {
             if (/RestrictedCountry/.test(error.code)) {
                 let additional_message = '';
                 if (/FinancialBinaries/.test(error.code)) {
-                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>']);
+                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
                 } else if (/Random/.test(error.code)) {
                     additional_message = localize('Try our other markets.');
                 }
