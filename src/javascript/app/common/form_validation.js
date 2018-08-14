@@ -78,6 +78,7 @@ const Validation = (() => {
                         }
                         field.$error = $parent.find(`.${error_class}`);
                     }
+                    field.$submit_btn_error = $form.find('#msg_form');
 
                     const event = events_map[field.type];
 
@@ -270,6 +271,9 @@ const Validation = (() => {
     const clearError = (field) => {
         if (field.$error && field.$error.length) {
             field.$error.setVisibility(0);
+            if (field.$submit_btn_error && field.$submit_btn_error.length) {
+                field.$submit_btn_error.setVisibility(0);
+            }
         }
     };
 
