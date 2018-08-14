@@ -122,8 +122,7 @@ const Metatrader = () => (
                             <a href='javascript:;' className='act_new_account new-account center-text invisible'>
                                 <span>{it.L('Create MetaTrader 5 account')}</span>
                             </a>
-                            {/* toEnableMAM: add 'new-account' to className */}
-                            <a href='javascript:;' className='act_new_account_mam center-text invisible'>
+                            <a href='javascript:;' className='act_new_account_mam new-account center-text invisible'>
                                 <span>{it.L('Create MAM account')}</span>
                             </a>
                             <a href='javascript:;' className='act_cashier has-account center-text invisible'>

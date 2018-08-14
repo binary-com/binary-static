@@ -27,7 +27,7 @@ const Tac = () => (
                       { id: 'legal-mt',     text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'mam',              text: it.L('MAM'), className: 'invisible' }, // toEnableMAM: remove className
+                    { id: 'mam',              text: it.L('MAM') },
                     { id: 'datafeed',         text: it.L('Data Feed') },
                     { id: 'privacy',          text: it.L('Security and Privacy') },
                     { id: 'conflicts-policy', text: it.L('Conflicts Policy') },
