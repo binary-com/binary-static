@@ -16,7 +16,7 @@ import {
 import { pickDefaultSymbol }              from './Helpers/symbol';
 import BaseStore                          from '../../base_store';
 import { WS }                             from '../../../Services';
-import URLHelper                          from '../../../Utils/URL';
+import URLHelper                          from '../../../Utils/URL/url_helper';
 import Client                             from '../../../../_common/base/client_base';
 import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
 
