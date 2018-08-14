@@ -220,6 +220,7 @@ const PersonalDetails = (() => {
         } else {
             const is_financial = Client.isAccountOfType('financial');
             const is_gaming    = Client.isAccountOfType('gaming');
+            const is_for_mt    = localStorage.getItem('personal_details_redirect');
 
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
@@ -232,20 +233,17 @@ const PersonalDetails = (() => {
                 { selector: '#place_of_birth',         validations: ['req'] },
                 { selector: '#account_opening_reason', validations: ['req'] },
 
-                { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
-                { selector: '#chk_tax_id',     validations: Client.isAccountOfType('financial') ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
+                { selector: '#tax_residence',  validations: (is_financial || is_for_mt) ? ['req'] : '' },
+                { selector: '#citizen',        validations: (is_financial || is_gaming || is_for_mt) ? ['req'] : '' },
+                { selector: '#chk_tax_id',     validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
 
             const tax_id_validation  = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
-            const citizen_validation = { selector: '#citizen' };
-            if (is_financial) {
+            if (is_financial || is_for_mt) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
-            if (is_financial || is_gaming) {
-                citizen_validation.validations = ['req'];
-            }
-            validations.push(tax_id_validation, citizen_validation);
+            validations.push(tax_id_validation);
         }
         return validations;
     };
@@ -284,6 +282,7 @@ const PersonalDetails = (() => {
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
                     $(form_id).setVisibility(0);
                     $('#msg_main').setVisibility(1);
+                    return;
                 }
                 getDetailsResponse(get_settings);
             });
