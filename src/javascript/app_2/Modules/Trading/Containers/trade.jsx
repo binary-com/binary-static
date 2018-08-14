@@ -42,7 +42,7 @@ class Trade extends React.Component {
                     />
                     <CSSTransition
                         in={!!contract_id}
-                        timeout={600}
+                        timeout={400}
                         classNames='contract-wrapper'
                         unmountOnExit
                     >
