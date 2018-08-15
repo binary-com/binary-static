@@ -345,8 +345,14 @@ const Price = (() => {
 
         processForgetProposalOpenContract();
         processForgetProposals().then(() => {
-            $('.price_container').hide();
+            const position_is_visible = {
+                top   : false,
+                middle: false,
+                bottom: false,
+            };
             Object.keys(types || {}).forEach((type_of_contract) => {
+                const position = commonTrading.contractTypeDisplayMapping(type_of_contract);
+                position_is_visible[position] = true;
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
                     if (response.error && response.error.code === 'AlreadySubscribed') {
                         BinarySocket.send({ forget_all: 'proposal' });
@@ -357,6 +363,15 @@ const Price = (() => {
                     commonTrading.hideOverlayContainer();
                     commonTrading.hidePriceOverlay();
                 } });
+            });
+            Object.keys(position_is_visible).forEach(position => {
+                const container = CommonFunctions.getElementById(`price_container_${position}`);
+                if (position_is_visible[position]) {
+                    $(container).fadeIn(0);
+                }
+                else {
+                    $(container).fadeOut(0);
+                }
             });
         });
     };
