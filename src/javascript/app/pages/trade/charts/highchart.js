@@ -78,12 +78,12 @@ const Highchart = (() => {
             // and we can't update markers if data is empty
             const int_time       = parseInt(time);
             const is_match_entry = int_time === entry_tick_time;
-            const is_match_exit  = int_time === exit_tick_time;
+            const is_match_exit  = contract.status !== 'sold' && int_time === exit_tick_time;
             const tick_type      = is_match_entry ? 'entry' : 'exit';
             data.push({
                 x     : int_time * 1000,
                 y     : price * 1,
-                marker: is_match_entry || is_match_exit ? HighchartUI.getMarkerObject(tick_type) : '',
+                marker: (is_match_entry || is_match_exit) ? HighchartUI.getMarkerObject(tick_type) : '',
             });
         };
 
