@@ -26,7 +26,7 @@ const LoginPrompt = ({
 );
 
 LoginPrompt.propTypes = {
-    IconComponent: PropTypes.node,
+    IconComponent: PropTypes.func,
     onLogin      : PropTypes.func,
     onSignup     : PropTypes.func,
 };
