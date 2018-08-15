@@ -365,18 +365,18 @@ const Price = (() => {
                 const position = commonTrading.contractTypeDisplayMapping(type_of_contract);
                 position_is_visible[position] = true;
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
-                    if (first_price_proposal) {
-                        setPriceContainersVisibility();
-                        first_price_proposal = false;
-                    }
                     if (response.error && response.error.code === 'AlreadySubscribed') {
                         BinarySocket.send({ forget_all: 'proposal' });
                     } else if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
                         response.echo_req.passthrough.form_id === form_id) {
                         Price.display(response, Contract.contractType()[Contract.form()]);
                     }
-                    commonTrading.hideOverlayContainer();
-                    commonTrading.hidePriceOverlay();
+                    if (first_price_proposal) {
+                        commonTrading.hideOverlayContainer();
+                        commonTrading.hidePriceOverlay();
+                        setPriceContainersVisibility();
+                        first_price_proposal = false;
+                    }
                 } });
             });
         });
