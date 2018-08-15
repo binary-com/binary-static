@@ -350,16 +350,6 @@ const Price = (() => {
                 middle: false,
                 bottom: false,
             };
-            const setPriceContainersVisibility = () => {
-                Object.keys(position_is_visible).forEach(position => {
-                    const container = CommonFunctions.getElementById(`price_container_${position}`);
-                    if (position_is_visible[position]) {
-                        $(container).fadeIn(0);
-                    } else {
-                        $(container).fadeOut(0);
-                    }
-                });
-            };
             let first_price_proposal = true;
             Object.keys(types || {}).forEach((type_of_contract) => {
                 const position = commonTrading.contractTypeDisplayMapping(type_of_contract);
@@ -374,11 +364,22 @@ const Price = (() => {
                     if (first_price_proposal) {
                         commonTrading.hideOverlayContainer();
                         commonTrading.hidePriceOverlay();
-                        setPriceContainersVisibility();
+                        setPriceContainersVisibility(position_is_visible);
                         first_price_proposal = false;
                     }
                 } });
             });
+        });
+    };
+
+    const setPriceContainersVisibility = (position_is_visible) => {
+        Object.keys(position_is_visible).forEach(position => {
+            const container = CommonFunctions.getElementById(`price_container_${position}`);
+            if (position_is_visible[position]) {
+                $(container).fadeIn(0);
+            } else {
+                $(container).fadeOut(0);
+            }
         });
     };
 
