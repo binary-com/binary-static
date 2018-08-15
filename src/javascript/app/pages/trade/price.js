@@ -24,7 +24,7 @@ const getPropertyValue     = require('../../../_common/utility').getPropertyValu
  *
  * Usage:
  *
- * `socket.send(Price.proposal())` to send price proposal to sever
+ * `socket.send(Price.proposal())` to send price proposal to server
  * `Price.display()` to display the price details returned from server
  */
 const Price = (() => {
@@ -169,16 +169,6 @@ const Price = (() => {
 
         if (!position) {
             return;
-        }
-
-        // hide all containers except current one
-        if (position === 'middle') {
-            if ($('#price_container_top').is(':visible') || $('#price_container_bottom').is(':visible')) {
-                $('#price_container_top').fadeOut(0);
-                $('#price_container_bottom').fadeOut(0);
-            }
-        } else if ($('#price_container_middle').is(':visible')) {
-            $('#price_container_middle').fadeOut(0);
         }
 
         const container = CommonFunctions.getElementById(`price_container_${position}`);
@@ -355,6 +345,7 @@ const Price = (() => {
 
         processForgetProposalOpenContract();
         processForgetProposals().then(() => {
+            $('.price_container').hide();
             Object.keys(types || {}).forEach((type_of_contract) => {
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
                     if (response.error && response.error.code === 'AlreadySubscribed') {
