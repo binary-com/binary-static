@@ -353,4 +353,19 @@
             }
         }
     }
+    .card-list {
+        &__card {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            div[class*='-card__header'] {
+                background: $COLOR_BRANDBLUE_95;
+                border-color: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_40;
+            }
+            div[class*='-card__body'] {
+                color: $COLOR_BRANDBLUE_40;
+            }
+        }
+    }
 }
