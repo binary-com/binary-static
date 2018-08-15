@@ -4,27 +4,60 @@
     position: relative;
 
     .contract-header {
-        display: flex;
-        align-items: center;
-        padding: 0 10px;
-        color: $COLOR_WHITE;
-        font-weight: bold;
-        line-height: 2rem;
+        max-height: 2rem;
+        overflow: hidden;
         border-radius: 4px 4px 0 0;
+        border: 1px solid $COLOR_GRAY;
 
-        svg {
-            display: inline-block;
-            margin-right: 7px;
+        .header-wrapper {
+            transition: transform 0.4s ease;
+            transform: translateY(-32px);
+
+            .header-result, .header-purchased {
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                color: $COLOR_WHITE;
+                font-weight: bold;
+                line-height: 2rem;
+
+                svg {
+                    display: inline-block;
+                    margin-right: 7px;
+                }
+            }
         }
         &.purchased {
-            color: $COLOR_LIGHT_GREEN;
-            background-color: $COLOR_LIGHT_GRAY;
+            .header-wrapper .header-purchased {
+                color: $COLOR_LIGHT_GREEN;
+                background-color: $COLOR_LIGHT_GRAY;
+                opacity: 1;
+                transition: opacity 0.4s linear;
+            }
         }
         &.won {
-            background-color: $COLOR_LIGHT_GREEN;
+            .header-wrapper {
+                transform: none;
+
+                .header-result {
+                    background-color: $COLOR_LIGHT_GREEN;
+                }
+                .header-purchased {
+                    opacity: 0;
+                }
+            }
         }
         &.lost {
-            background-color: $COLOR_LIGHT_RED;
+            .header-wrapper {
+                transform: none;
+
+                .header-result {
+                    background-color: $COLOR_LIGHT_RED;
+                }
+                .header-purchased {
+                    opacity: 0;
+                }
+            }
         }
     }
     .contract-contents {
@@ -82,7 +115,19 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.9);
     font-weight: 300;
+    transform: none;
+    opacity: 1;
+    transition: transform 0.4s ease, opacity 0.4s linear;
 
+    &-enter {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 0;
+    }
+    &-exit {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 0;
+        pointer-events: none;
+    }
     .expired {
         display: flex;
         align-items: center;
@@ -163,11 +208,17 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
         color: $COLOR_BRANDBLUE_40;
 
         .contract-header {
+            border-color: $COLOR_BRANDBLUE_85;
+
             &.purchased {
-                background-color: $COLOR_BRANDBLUE_95;
+                .header-wrapper .header-purchased {
+                    background-color: $COLOR_BRANDBLUE_95;
+                }
             }
             &.won {
-                background-color: $COLOR_GREEN;
+                .header-wrapper .header-result {
+                    background-color: $COLOR_GREEN;
+                }
             }
         }
         .contract-contents {
