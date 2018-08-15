@@ -368,8 +368,7 @@ const Price = (() => {
                 const container = CommonFunctions.getElementById(`price_container_${position}`);
                 if (position_is_visible[position]) {
                     $(container).fadeIn(0);
-                }
-                else {
+                } else {
                     $(container).fadeOut(0);
                 }
             });
