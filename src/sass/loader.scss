@@ -44,19 +44,19 @@ body {
     .chart-line {
         stroke-dasharray: 4300;
         stroke-dashoffset: 4300;
-        animation: draw-chart-line 5s linear infinite;
+        animation: draw-chart-line 10s linear infinite;
         animation-play-state: paused;
     }
     .loading-line {
         stroke-dasharray: 150;
         stroke-dashoffset: 150;
-        animation: loading 1s linear infinite;
+        animation: loading 2s linear infinite;
         animation-play-state: paused;
     }
     .loading-line-bg {
         stroke-dasharray: 150;
         stroke-dashoffset: 150;
-        animation: bgloading 1s linear infinite;
+        animation: bgloading 2s linear infinite;
         animation-play-state: paused;
     }
 }
