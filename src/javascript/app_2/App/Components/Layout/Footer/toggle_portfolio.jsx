@@ -8,7 +8,7 @@ const TogglePortfolio = ({
     togglePortfolioDrawer,
   }) => {
     const toggle_portfolio_class = classNames('ic-portfolio', {
-        'active'  : is_portfolio_drawer_on,
+        'active': is_portfolio_drawer_on,
     });
     return (
         <a
