@@ -35,9 +35,6 @@ $header-height: 42px;
         border-bottom: none;
     }
     &__body {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
         overflow-y: auto;
     }
     &__body &__row {

@@ -54,16 +54,6 @@ footer {
                     @extend .inline-icon.active;
                 }
             }
-            &.disabled {
-                cursor: not-allowed;
-
-                .inline-icon {
-                    @extend .inline-icon.disabled;
-                }
-                &:hover, &:focus {
-                    background: none !important;
-                }
-            }
         }
     }
     @media (max-width: 768px) {

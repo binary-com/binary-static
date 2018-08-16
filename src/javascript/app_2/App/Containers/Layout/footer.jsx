@@ -19,11 +19,13 @@ const Footer = ({
     <React.Fragment>
         <ServerTime />
         <div className='footer-links'>
-            <TogglePortfolio
-                is_disabled={!is_logged_in}
-                is_portfolio_drawer_on={is_portfolio_drawer_on}
-                togglePortfolioDrawer={togglePortfolioDrawer}
-            />
+            {
+                is_logged_in &&
+                <TogglePortfolio
+                    is_portfolio_drawer_on={is_portfolio_drawer_on}
+                    togglePortfolioDrawer={togglePortfolioDrawer}
+                />
+            }
             <ToggleFullScreen />
             <ToggleSettings
                 is_settings_visible={is_settings_dialog_on}

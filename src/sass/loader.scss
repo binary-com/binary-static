@@ -3,7 +3,7 @@ body {
 }
 
 .loader {
-    background-color: #fff; // stylelint-disable-line color-no-hex
+    background: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
