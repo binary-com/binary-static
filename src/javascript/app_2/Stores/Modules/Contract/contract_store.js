@@ -29,9 +29,13 @@ import { isEmptyObject }      from '../../../../_common/utility';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;
+
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
-    @observable has_error     = false;
+    @observable sell_info     = observable.object({});
+
+    @observable has_error         = false;
+    @observable is_sell_requested = false;
 
     // -------------------
     // ----- Actions -----
@@ -48,17 +52,19 @@ export default class ContractStore extends BaseStore {
     }
 
     @action.bound
-    onUnmount = () => {
+    onUnmount() {
         this.forgetProposalOpenContract();
 
-        this.contract_id   = null;
-        this.contract_info = {};
-        this.digits_info   = {};
+        this.contract_id       = null;
+        this.contract_info     = {};
+        this.digits_info       = {};
+        this.sell_info         = {};
+        this.is_sell_requested = false;
 
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
         this.smart_chart.setContractMode(false);
-    };
+    }
 
     @action.bound
     updateProposal(response) {
@@ -77,6 +83,30 @@ export default class ContractStore extends BaseStore {
     handleDigits() {
         if (isDigitContract(this.contract_info.contract_type)) {
             extendObservable(this.digits_info, getDigitInfo(this.digits_info, this.contract_info));
+        }
+    }
+
+    @action.bound
+    onClickSell() {
+        if (this.contract_id && !this.is_sell_requested && isEmptyObject(this.sell_info)) {
+            this.is_sell_requested = true;
+            WS.sell(this.contract_id, this.contract_info.bid_price).then(this.handleSell);
+        }
+    }
+
+    @action.bound
+    handleSell(response) {
+        if (response.error) {
+            this.sell_info = {
+                error_message: response.error.message,
+            };
+        } else {
+            this.forgetProposalOpenContract();
+            this.sell_info = {
+                sell_price    : response.sell.sold_for,
+                transaction_id: response.sell.transaction_id,
+            };
+            WS.proposalOpenContract(this.contract_id).then(this.updateProposal);
         }
     }
 
