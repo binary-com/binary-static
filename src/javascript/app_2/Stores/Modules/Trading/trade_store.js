@@ -247,9 +247,7 @@ export default class TradeStore extends BaseStore {
 
         // update state values from query string
         const config = {};
-        [...queryParams].forEach(param => {
-            config[param[0]] = isNaN(param[1]) ? param[1] : +param[1];
-        });
+        [...queryParams].forEach(param => config[param[0]] = param[1]);
         this.processNewValuesAsync(config);
     }
 
