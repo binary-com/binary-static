@@ -26,18 +26,18 @@ const loadJS = (js_files) => {
     let counter = 0;
     js_files.map((src, idx) => {
         const script = document.createElement('script');
-        script.onload = () => {
+        script.onload = script.onreadystatechange = () => {
             ++counter;
             if (counter === length - 1) {
                 while (scripts.length) {
-                    document.head.appendChild(scripts.pop());
+                    document.body.appendChild(scripts.pop());
                 }
             }
         };
         script.setAttribute('src', src);
         if (idx < length - 1) {
             // load all scripts except the last one
-            document.head.appendChild(script);
+            document.body.appendChild(script);
         } else {
             // load the last script later
             scripts.push(script);
