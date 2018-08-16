@@ -1,21 +1,22 @@
 import { observer } from 'mobx-react';
+import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import Money        from '../../../../App/Components/Elements/money.jsx';
 import IconFlag     from '../../../../Assets/Contract/icon_flag.jsx';
 import { localize } from '../../../../../_common/localize';
 
-const InfoBoxExpired = ({ contract_info }) => {
+const InfoBoxExpired = ({ className, contract_info }) => {
     const {
         currency,
         profit,
         profit_percentage,
     } = contract_info;
-
+    const expired_box_class = classNames('expired', `${profit > 0 ? 'won' : 'lost'}`, className);
     const percentage_text = `${profit_percentage > 0 ? '+' : ''}${profit_percentage}%`;
 
     return (
-        <div className={`expired ${profit > 0 ? 'won' : 'lost'}`}>
+        <div className={expired_box_class}>
             <IconFlag />
             <div>
                 <div>{localize('Profit/Loss')}:</div>
@@ -29,6 +30,7 @@ const InfoBoxExpired = ({ contract_info }) => {
 };
 
 InfoBoxExpired.propTypes = {
+    className    : PropTypes.string,
     contract_info: PropTypes.object,
 };
 

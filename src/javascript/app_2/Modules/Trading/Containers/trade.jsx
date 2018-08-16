@@ -17,17 +17,18 @@ class Trade extends React.Component {
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
         const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
-        const InfoBoxComponent = this.props.is_contract_mode ?
+        const InfoBoxComponent = (
             <CSSTransition
                 in={this.props.is_contract_mode}
-                timeout={400}
-                classNames='info-box'
+                timeout={200}
+                classNames='info-box-container'
                 unmountOnExit
             >
-                <InfoBox contract_info={this.props.contract_info} />
+                <div className='info-box-container'>
+                    <InfoBox contract_info={this.props.contract_info} />
+                </div>
             </CSSTransition>
-        :
-            null;
+        );
 
         return (
             <div id='trade_container' className='trade-container'>

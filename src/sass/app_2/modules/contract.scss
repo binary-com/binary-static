@@ -105,97 +105,121 @@
 
 $CONTRACT_INFO_BOX_PADDING: 15px;
 
-.info-box {
+.info-box-container {
     position: absolute;
     z-index: 10;
     top: 10px;
     right: 10px;
-    padding: $CONTRACT_INFO_BOX_PADDING;
-    border: 1px solid $COLOR_GRAY;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.9);
-    font-weight: 300;
     transform: none;
     opacity: 1;
-    transition: transform 0.4s ease, opacity 0.4s linear;
+    transition: transform 0.3s ease, opacity 0.3s linear;
 
     &-enter {
         transform: translateY(calc(-100% - 20px));
         opacity: 0;
     }
     &-exit {
-        transform: translateY(calc(-100% - 20px));
-        opacity: 0;
-        pointer-events: none;
+        display: none;
     }
-    .expired {
-        display: flex;
-        align-items: center;
+    .info-box {
+        padding: $CONTRACT_INFO_BOX_PADDING;
+        border: 1px solid $COLOR_GRAY;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.9);
+        font-weight: 300;
+        transition: max-height 0.4s ease, max-width 0.4s ease;
+        max-width: 386px;
+        max-height: 72px;
 
-        svg {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
+        &.ended {
+            max-width: 179px;
+            max-height: 39px;
+        }
+        .expired, .general {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s linear, transform 0.2s ease;
 
-            .color1-fill {
-                fill: $COLOR_LIGHT_GREEN;
+            &.show {
+                opacity: 1;
+                pointer-events: auto;
+                transform: scale(1, 1) translate(0);
             }
         }
-        .pl-value {
-            color: $COLOR_LIGHT_GREEN;
-            font-weight: bold;
-            font-size: 1rem;
-            line-height: 1.5rem;
-
-            .percentage {
-                display: inline-block;
-                margin-left: 7px;
-            }
-        }
-        &.lost {
-            .pl-value {
-                color: $COLOR_LIGHT_RED;
-            }
-            svg .color1-fill {
-                fill: $COLOR_LIGHT_RED;
-            }
-        }
-    }
-    .general {
-        display: flex;
-        align-items: center;
-        line-height: 1.4rem;
-
-        .values {
-            margin-left: 10px;
-            margin-right: 20px;
-            text-align: right;
-            font-weight: bold;
-
-            .profit {
-                color: $COLOR_LIGHT_GREEN;
-            }
-            .loss {
-                color: $COLOR_LIGHT_RED;
-            }
-        }
-        .sell {
+        .expired {
             display: flex;
             align-items: center;
-            margin: -$CONTRACT_INFO_BOX_PADDING;
-            margin-left: $CONTRACT_INFO_BOX_PADDING;
-            padding: $CONTRACT_INFO_BOX_PADDING;
-            border-left: 1px solid $COLOR_GRAY;
+            transform: scale(0, 0);
 
-            .tooltip {
-                position: absolute;
-                bottom: 5px;
-                right: 5px;
-                line-height: 0;
+            svg {
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
 
-                &:before {
-                    width: 350px;
-                    white-space: normal;
+                .color1-fill {
+                    fill: $COLOR_LIGHT_GREEN;
+                }
+            }
+            .pl-value {
+                color: $COLOR_LIGHT_GREEN;
+                font-weight: bold;
+                font-size: 1rem;
+                line-height: 1.5rem;
+
+                .percentage {
+                    display: inline-block;
+                    margin-left: 7px;
+                }
+            }
+            &.lost {
+                .pl-value {
+                    color: $COLOR_LIGHT_RED;
+                }
+                svg .color1-fill {
+                    fill: $COLOR_LIGHT_RED;
+                }
+            }
+        }
+        .general {
+            display: flex;
+            align-items: center;
+            line-height: 1.4rem;
+            transform: scale(0, 0);
+
+            &.show {
+                transform: translateY(-39px);
+            }
+            .values {
+                margin-left: 10px;
+                margin-right: 20px;
+                text-align: right;
+                font-weight: bold;
+
+                .profit {
+                    color: $COLOR_LIGHT_GREEN;
+                }
+                .loss {
+                    color: $COLOR_LIGHT_RED;
+                }
+            }
+            .sell {
+                display: flex;
+                align-items: center;
+                margin: -$CONTRACT_INFO_BOX_PADDING;
+                margin-left: $CONTRACT_INFO_BOX_PADDING;
+                padding: $CONTRACT_INFO_BOX_PADDING;
+                border-left: 1px solid $COLOR_GRAY;
+
+                .tooltip {
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    line-height: 0;
+
+                    &:before {
+                        width: 350px;
+                        white-space: normal;
+                    }
                 }
             }
         }
