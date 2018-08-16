@@ -1,5 +1,5 @@
 // Dark Theme for Global Layout
-.theme-wrapper.dark {
+body.dark, .theme-wrapper.dark {
     background: $COLOR_BLUE;
 
     header, footer, .app-contents {
@@ -350,6 +350,21 @@
 
             .acc-switcher-account:hover {
                 background: $COLOR_BRANDBLUE_85;
+            }
+        }
+    }
+    .card-list {
+        &__card {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            div[class*='-card__header'] {
+                background: $COLOR_BRANDBLUE_95;
+                border-color: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_40;
+            }
+            div[class*='-card__body'] {
+                color: $COLOR_BRANDBLUE_40;
             }
         }
     }
