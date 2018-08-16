@@ -299,7 +299,7 @@ body.dark, .theme-wrapper.dark {
             span {
                 color: $COLOR_BRANDBLUE_40;
             }
-            &.active, &:hover, &:focus {
+            &.active, &:hover {
                 background: $COLOR_BRANDBLUE_85;
 
                 &:after {
