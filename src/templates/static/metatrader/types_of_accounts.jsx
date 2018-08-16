@@ -1,9 +1,8 @@
 import React from 'react';
 import { Table } from '../../_common/components/elements.jsx';
 
-// toEnableMAM: remove className attr
-const Box = ({ image, text, title, className }) => (
-    <div className={`gr-padding-10${className ? ` ${className}` : ''}`}>
+const Box = ({ image, text, title }) => (
+    <div className='gr-padding-10'>
         <div className='box'>
             <div className='gr-row gr-row-align-middle'>
                 <div className='gr-2 gr-3-p gr-12-m center-text gr-centered'>
@@ -56,23 +55,18 @@ const TypesOfAccounts = () => (
             title={it.L('Volatility Indices')}
             text={it.L('The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
         />
-        {/* toEnableMAM: remove className */}
         <Box
-            className='invisible'
             image='advanced'
             title={it.L('MAM Advanced*')}
             text={it.L('The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same.')}
         />
-        {/* toEnableMAM: remove className */}
         <Box
-            className='invisible'
             image='volatility_indices'
             title={it.L('MAM Volatility Indices*')}
             text={it.L('The MAM Volatility Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Volatility Indices account.')}
         />
 
-        {/* toEnableMAM: remove 'invisible' from className */}
-        <div className='gr-padding-10 gr-child invisible'>
+        <div className='gr-padding-10 gr-child'>
             <a href={it.url_for('multiple-accounts-manager')} target='_blank'>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
         </div>
 
