@@ -8,7 +8,11 @@ const initLoader = (css_files, js_files) => { // eslint-disable-line no-unused-v
     }
 
     if (css_files) { loadCSS(css_files); }
-    if (js_files) { loadJS(js_files); }
+    if (js_files) {
+        loadJS(js_files.slice(0,4), () => {
+            loadJS(js_files.slice(4));
+        });
+    }
 };
 
 const loadCSS = (css_files) => {
@@ -20,27 +24,19 @@ const loadCSS = (css_files) => {
     });
 };
 
-const loadJS = (js_files) => {
-    const scripts = [];
-    const length  = js_files.length;
+const loadJS = (js_files, callback) => {
     let counter = 0;
-    js_files.map((src, idx) => {
+    js_files.map((src) => {
         const script = document.createElement('script');
         script.onload = script.onreadystatechange = () => {
             ++counter;
-            if (counter === length - 1) {
-                while (scripts.length) {
-                    document.body.appendChild(scripts.pop());
+            if (counter === js_files.length) {
+                if (callback) {
+                    callback();
                 }
             }
         };
         script.setAttribute('src', src);
-        if (idx < length - 1) {
-            // load all scripts except the last one
-            document.body.appendChild(script);
-        } else {
-            // load the last script later
-            scripts.push(script);
-        }
+        document.body.appendChild(script);
     });
 };
