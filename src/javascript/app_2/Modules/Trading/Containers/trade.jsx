@@ -8,37 +8,42 @@ import SmartChart           from '../../SmartChart';
 import { connect }          from '../../../Stores/connect';
 import { getPropertyValue } from '../../../../_common/utility';
 
-class Trade extends React.Component {
-    componentDidMount() {
-        this.props.updateQueryString();
-    }
+const Trade = ({
+    contract_info,
+    is_contract_mode,
+    is_mobile,
+    is_trade_enabled,
+    onSymbolChange,
+    onClickNewTrade,
+    purchase_info,
+    symbol,
+    updateQueryString,
+}) => {
+    updateQueryString();
+    const contract_id = getPropertyValue(purchase_info, ['buy', 'contract_id']);
+    const InfoBoxComponent = is_contract_mode ?
+        <InfoBox contract_info={contract_info} /> : null;
 
-    render() {
-        const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
-        const InfoBoxComponent = this.props.is_contract_mode ?
-            <InfoBox contract_info={this.props.contract_info} /> : null;
-
-        return (
-            <div id='trade_container' className='trade-container'>
-                <div className='chart-container notice-msg'>
-                    { this.props.symbol &&
-                        <SmartChart
-                            InfoBox={InfoBoxComponent}
-                            onSymbolChange={this.props.onSymbolChange}
-                            symbol={this.props.symbol}
-                        />
-                    }
-                    <Test />
-                </div>
-                { contract_id ?
-                    <ContractDetails contract_id={contract_id} onClickNewTrade={this.props.onClickNewTrade} />
-                    :
-                    <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
+    return (
+        <div id='trade_container' className='trade-container'>
+            <div className='chart-container notice-msg'>
+                { symbol &&
+                    <SmartChart
+                        InfoBox={InfoBoxComponent}
+                        onSymbolChange={onSymbolChange}
+                        symbol={symbol}
+                    />
                 }
+                <Test />
             </div>
-        );
-    }
-}
+            { contract_id ?
+                <ContractDetails contract_id={contract_id} onClickNewTrade={onClickNewTrade} />
+                :
+                <FormLayout is_mobile={is_mobile} is_trade_enabled={is_trade_enabled} />
+            }
+        </div>
+    );
+};
 
 Trade.propTypes = {
     contract_info    : PropTypes.object,

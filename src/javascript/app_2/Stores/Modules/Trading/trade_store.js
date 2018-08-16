@@ -80,6 +80,16 @@ export default class TradeStore extends BaseStore {
         };
         super(options);
 
+        Object.defineProperty(
+            this,
+            'is_query_string_applied',
+            {
+                enumerable: false,
+                value     : false,
+                writable  : true,
+            }
+        );
+
         if (Client.isLoggedIn) {
             this.processNewValuesAsync({currency: Client.get('currency')});
         }
@@ -95,11 +105,15 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     async init() {
+        const query_string_values = this.updateQueryString();
         this.smart_chart = this.root_store.modules.smart_chart;
 
         if (!this.symbol) {
             const active_symbols = await WS.activeSymbols();
-            await this.processNewValuesAsync({ symbol: pickDefaultSymbol(active_symbols.active_symbols) });
+            await this.processNewValuesAsync({ 
+                symbol: pickDefaultSymbol(active_symbols.active_symbols),
+                ...query_string_values,
+            });
         }
 
         if (this.symbol) {
@@ -107,6 +121,7 @@ export default class TradeStore extends BaseStore {
                 this.processNewValuesAsync({
                     ...ContractType.getContractValues(this),
                     ...ContractType.getContractCategories(),
+                    ...query_string_values,
                 });
             }));
         }
@@ -195,8 +210,12 @@ export default class TradeStore extends BaseStore {
             }
 
             const snapshot = await processTradeParams(this, new_state);
+            const query_string_values = this.is_query_string_applied ? {} : this.updateQueryString();
             snapshot.is_trade_enabled = true;
-            this.updateStore(snapshot);
+
+            this.updateStore({...snapshot, ...query_string_values});
+
+            this.is_query_string_applied = true;
 
             this.requestProposal();
         }
@@ -243,12 +262,12 @@ export default class TradeStore extends BaseStore {
     @action.bound
     updateQueryString() {
         // Update the url's query string by default values of the store
-        const queryParams = URLHelper.updateQueryString(this, allowed_query_string_variables);
+        const query_params = URLHelper.updateQueryString(this, allowed_query_string_variables);
 
         // update state values from query string
         const config = {};
-        [...queryParams].forEach(param => config[param[0]] = param[1]);
-        this.processNewValuesAsync(config);
+        [...query_params].forEach(param => config[param[0]] = param[1]);
+        return config;
     }
 
     @action.bound
