@@ -2,8 +2,7 @@
     .app-contents {
         margin: $HEADER_HEIGHT 0 $FOOTER_HEIGHT;
         height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow: hidden;
 
         &--show-portfolio-drawer {
             margin-right: $PORTFOLIO_DRAWER_WIDTH;
@@ -22,7 +21,8 @@
         grid-template-columns: repeat(12, [col-start] 1fr);
         grid-template-rows: 1fr;
         grid-gap: 4px;
-        min-height: calc(100vh - 91px);
+        height: 100%;
+        box-sizing: border-box;
 
         .chart-container {
             position: relative;
@@ -55,9 +55,11 @@
                 display: none;
             }
         }
-        .sidebar-container, .sidebar-items {
+        .sidebar-container {
             position: relative;
-            min-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-bottom: 8px;
         }
         & > * {
             grid-column: col-start / span 12;
