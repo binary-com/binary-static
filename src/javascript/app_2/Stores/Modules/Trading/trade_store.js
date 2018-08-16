@@ -64,7 +64,7 @@ export default class TradeStore extends BaseStore {
     @observable sessions         = [];
 
     // Last Digit
-    @observable last_digit = 3;
+    @observable last_digit = 5;
 
     // Purchase
     @observable proposal_info = {};
