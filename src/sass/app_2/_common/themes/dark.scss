@@ -327,6 +327,10 @@
             }
         }
     }
+    // tooltip
+    span.tooltip i.question:after {
+        content: url('../images/app_2/common/tooltip/ic_tooltip_question_dark.svg ');
+    }
     // common inline icons
     .inline-icon {
         @include colorIcon($COLOR_BRANDBLUE_40, none);

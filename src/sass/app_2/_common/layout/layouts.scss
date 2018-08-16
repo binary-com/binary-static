@@ -85,6 +85,7 @@
         .chart-container {
             position: relative;
 
+            // smartchart library style fixes
             .cq-context {
                 top: 0;
                 left: 0;
@@ -105,8 +106,13 @@
                 div.cq-chart-controls {
                     border-right: 1px solid $COLOR_GRAY;
                 }
-                div.cq-chart-control-left .cq-chart-controls {
-                    border-top: 1px solid $COLOR_GRAY;
+                div.cq-chart-control-left {
+                    .cq-chart-controls {
+                        border-top: 1px solid $COLOR_GRAY;
+                    }
+                    .cq-top-ui-widgets {
+                        width: calc(100% - 90px);
+                    }
                 }
             }
             div.debug-text {
@@ -126,6 +132,7 @@
             grid-template-rows: 1fr auto auto;
 
             .chart-container {
+                // smartchart library style fixes
                 .cq-context {
                     div.cq-chart-controls {
                         border: 1px solid $COLOR_GRAY;
