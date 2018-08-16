@@ -1,7 +1,8 @@
 import {
     action,
     computed,
-    observable }       from 'mobx';
+    observable,
+    autorun }          from 'mobx';
 import BaseStore       from './base_store';
 import {
     MAX_MOBILE_WIDTH,
@@ -40,6 +41,7 @@ export default class UIStore extends BaseStore {
 
         super({ local_storage_properties });
         window.addEventListener('resize', this.handleResize);
+        autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark'));
     }
 
     @action.bound
