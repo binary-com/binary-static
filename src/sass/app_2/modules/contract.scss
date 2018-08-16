@@ -128,11 +128,11 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
         background: rgba(255, 255, 255, 0.9);
         font-weight: 300;
         transition: max-height 0.4s ease, max-width 0.4s ease;
-        max-width: 386px;
+        max-width: 420px;
         max-height: 72px;
 
         &.ended {
-            max-width: 179px;
+            max-width: 215px;
             max-height: 39px;
         }
         .expired, .general {
