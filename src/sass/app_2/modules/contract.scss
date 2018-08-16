@@ -119,7 +119,8 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
         opacity: 0;
     }
     &-exit {
-        display: none;
+        transform: translateY(calc(-100% - 20px));
+        opacity: 0;
     }
     .info-box {
         padding: $CONTRACT_INFO_BOX_PADDING;
@@ -127,29 +128,10 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
         border-radius: 4px;
         background: rgba(255, 255, 255, 0.9);
         font-weight: 300;
-        transition: max-height 0.4s ease, max-width 0.4s ease;
-        max-width: 420px;
-        max-height: 72px;
 
-        &.ended {
-            max-width: 215px;
-            max-height: 39px;
-        }
-        .expired, .general {
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s linear, transform 0.2s ease;
-
-            &.show {
-                opacity: 1;
-                pointer-events: auto;
-                transform: scale(1, 1) translate(0);
-            }
-        }
         .expired {
             display: flex;
             align-items: center;
-            transform: scale(0, 0);
 
             svg {
                 width: 24px;
@@ -184,11 +166,7 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             display: flex;
             align-items: center;
             line-height: 1.4rem;
-            transform: scale(0, 0);
 
-            &.show {
-                transform: translateY(-39px);
-            }
             .values {
                 margin-left: 10px;
                 margin-right: 20px;
@@ -212,8 +190,8 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 
                 .tooltip {
                     position: absolute;
-                    top: -10px;
-                    right: -10px;
+                    bottom: 5px;
+                    right: 5px;
                     line-height: 0;
 
                     &:before {
@@ -221,6 +199,61 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                         white-space: normal;
                     }
                 }
+            }
+        }
+        .digits {
+            display: flex;
+            align-items: center;
+
+            .digit-title {
+                font-weight: bold;
+                max-width: min-content;
+            }
+            .digit-list {
+                display: flex;
+                margin: 0 25px 0 10px;
+
+                .digit-info {
+                    margin: 0 4px;
+                    text-align: center;
+
+                    .digit-value {
+                        width: 32px;
+                        height: 32px;
+                        margin-bottom: 5px;
+                        border: 2px solid $COLOR_LIGHT_GREEN;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $COLOR_LIGHT_GREEN;
+                        font-size: 1rem;
+                        font-weight: bold;
+
+                        &.loss {
+                            border-color: $COLOR_LIGHT_RED;
+                            color: $COLOR_LIGHT_RED;
+                        }
+                        &.last {
+                            background-color: $COLOR_LIGHT_GREEN;
+                            color: $COLOR_WHITE;
+
+                            &.loss {
+                                background-color: $COLOR_LIGHT_RED;
+                            }
+                        }
+                        &:empty {
+                            border-color: $COLOR_DARK_WHITE;
+                        }
+                    }
+                    .tick-number {
+                        line-height: 0.6rem;
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+            .expired {
+                margin-right: -25px;
             }
         }
     }
