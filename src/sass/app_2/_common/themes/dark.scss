@@ -243,6 +243,15 @@
                 }
             }
         }
+        .card-list__card {
+            background-color: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+        }
+        .statement, .portfolio {
+            &-card__header {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+        }
         .login-message-wrapper {
             .message a {
                 color: $COLOR_BRANDBLUE_40;
