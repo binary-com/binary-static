@@ -1,4 +1,3 @@
-import classnames           from 'classnames'; 
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import Test                 from './test.jsx';
@@ -21,7 +20,7 @@ class Trade extends React.Component {
 
         return (
             <div id='trade_container' className='trade-container'>
-                <div className={classnames('chart-container notice-msg', { 'fade-in': this.props.is_app_ready })}>
+                <div className='chart-container notice-msg'>
                     { this.props.symbol &&
                         <SmartChart
                             InfoBox={InfoBoxComponent}
@@ -37,7 +36,6 @@ class Trade extends React.Component {
                     <FormLayout 
                         is_mobile={this.props.is_mobile} 
                         is_trade_enabled={this.props.is_trade_enabled} 
-                        is_app_ready={this.props.is_app_ready} 
                     />
                 }
             </div>
@@ -46,7 +44,6 @@ class Trade extends React.Component {
 }
 
 Trade.propTypes = {
-    is_app_ready     : PropTypes.bool,
     contract_info    : PropTypes.object,
     is_contract_mode : PropTypes.bool,
     is_mobile        : PropTypes.bool,
@@ -68,7 +65,6 @@ export default connect(
         purchase_info    : modules.trade.purchase_info,
         symbol           : modules.trade.symbol,
         updateQueryString: modules.trade.updateQueryString,
-        is_app_ready     : ui.is_app_ready,
         is_mobile        : ui.is_mobile,
     })
 )(Trade);

@@ -1,14 +1,15 @@
 import classNames  from 'classnames';
-import ProptTypes  from 'prop-types';
+import PropTypes   from 'prop-types';
 import React       from 'react';
 import { withRouter } from 'react-router';
 import { connect } from '../../../Stores/connect';
 
-const AppContents = ({ children, is_portfolio_drawer_on }) => (
+const AppContents = ({ children, is_app_ready, is_portfolio_drawer_on }) => (
     <div
         id='app_contents'
         className={classNames('app-contents', {
             'app-contents--show-portfolio-drawer': is_portfolio_drawer_on,
+            'fade-in'                            : is_app_ready,
         })}
     >
         {children}
@@ -16,12 +17,14 @@ const AppContents = ({ children, is_portfolio_drawer_on }) => (
 );
 
 AppContents.propTypes = {
-    children              : ProptTypes.any,
-    is_portfolio_drawer_on: ProptTypes.bool,
+    children              : PropTypes.any,
+    is_app_ready          : PropTypes.bool,
+    is_portfolio_drawer_on: PropTypes.bool,
 };
 
 export default withRouter(connect(
     ({ ui }) => ({
+        is_app_ready          : ui.is_app_ready,
         is_portfolio_drawer_on: ui.is_portfolio_drawer_on,
     })
 )(AppContents));

@@ -1,4 +1,4 @@
-import classnames         from 'classnames';
+import classNames         from 'classnames';
 import PropTypes          from 'prop-types';
 import React              from 'react';
 import { withRouter }     from 'react-router';
@@ -22,7 +22,7 @@ const Header = ({
     is_logged_in,
     onClickUpgrade,
 }) => (
-    <header className={classnames('header', { 'slide-down': is_app_ready })}>
+    <header className={classNames('header', { 'slide-down': is_app_ready })}>
         <div className='menu-items'>
             <div className='menu-left'>
                 <ToggleMenuDrawer />

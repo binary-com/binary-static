@@ -1,4 +1,3 @@
-import classnames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import ContractType from '../../Containers/contract_type.jsx';
@@ -6,8 +5,8 @@ import Purchase     from '../../Containers/purchase.jsx';
 import TradeParams  from '../../Containers/trade_params.jsx';
 import UILoader     from '../../../../App/Components/Elements/ui_loader.jsx';
 
-const ScreenLarge = ({ is_app_ready, is_trade_enabled }) => (
-    <div className={classnames('sidebar-container','desktop-only', { 'fade-in': is_app_ready })}>
+const ScreenLarge = ({ is_trade_enabled }) => (
+    <div className='sidebar-container desktop-only'>
         <div className='sidebar-items'>
             {!is_trade_enabled ?
                 <UILoader />
@@ -27,7 +26,6 @@ const ScreenLarge = ({ is_app_ready, is_trade_enabled }) => (
 );
 
 ScreenLarge.propTypes = {
-    is_app_ready    : PropTypes.bool,
     is_trade_enabled: PropTypes.bool,
 };
 
