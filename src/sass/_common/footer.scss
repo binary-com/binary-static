@@ -78,6 +78,9 @@
                 font-weight: 400;
                 line-height: 110%;
             }
+            &.font-n {
+                font-size: $FONT_SIZE_N;
+            }
         }
     }
     #end-note {

@@ -1,4 +1,18 @@
+const Client = require('../base/client');
+
 const Footer = (() => {
+    const onLoad = () => {
+        const $footer      = $('#footer-last');
+        const $cfd_warning = $footer.find('.eu-only');
+        const is_eu        = Client.get('is_eu');
+        if (is_eu) {
+            $footer.find('p').addClass('font-n');
+            $cfd_warning.setVisibility(1);
+        } else {
+            $cfd_warning.setVisibility(0);
+        }
+    };
+
     const clearNotification = () => {
         const $status_notification = $('#status_notification');
         $status_notification.slideUp(200);
@@ -18,6 +32,7 @@ const Footer = (() => {
     };
 
     return {
+        onLoad,
         clearNotification,
         displayNotification,
     };
