@@ -22,8 +22,9 @@ import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
 
 export default class TradeStore extends BaseStore {
     // Control values
-    @observable is_purchase_enabled = false;
-    @observable is_trade_enabled    = false;
+    @observable is_trade_component_mounted = false;
+    @observable is_purchase_enabled        = false;
+    @observable is_trade_enabled           = false;
 
     // Underlying
     @observable symbol;
@@ -176,7 +177,10 @@ export default class TradeStore extends BaseStore {
                 }
 
                 // Add changes to queryString of the url
-                if (allowed_query_string_variables.indexOf(key) !== -1) {
+                if (
+                    allowed_query_string_variables.indexOf(key) !== -1 &&
+                    this.is_trade_component_mounted
+                ) {
                     URLHelper.setQueryParam({ [key]: new_state[key] });
                 }
 
@@ -261,8 +265,13 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     updateQueryString() {
+
         // Update the url's query string by default values of the store
-        const query_params = URLHelper.updateQueryString(this, allowed_query_string_variables);
+        const query_params = URLHelper.updateQueryString(
+            this,
+            allowed_query_string_variables,
+            this.is_trade_component_mounted
+        );
 
         // update state values from query string
         const config = {};
@@ -287,5 +296,15 @@ export default class TradeStore extends BaseStore {
             }
             this.validateProperty('duration', this.duration);
         }
+    }
+
+    @action.bound
+    tradeComponentDidMount() {
+        this.is_trade_component_mounted = true;
+    }
+
+    @action.bound
+    tradeComponentWillUnmount() {
+        this.is_trade_component_mounted = false;
     }
 };

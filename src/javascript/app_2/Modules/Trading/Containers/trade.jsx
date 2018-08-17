@@ -10,7 +10,12 @@ import { getPropertyValue } from '../../../../_common/utility';
 
 class Trade extends React.Component {
     componentDidMount() {
+        this.props.tradeComponentDidMount();
         this.props.updateQueryString();
+    }
+
+    componentWillUnmount() {
+        this.props.tradeComponentWillUnmount();
     }
 
     render() {
@@ -41,25 +46,29 @@ class Trade extends React.Component {
 }
 
 Trade.propTypes = {
-    is_contract_mode : PropTypes.bool,
-    is_mobile        : PropTypes.bool,
-    is_trade_enabled : PropTypes.bool,
-    onSymbolChange   : PropTypes.func,
-    onClickNewTrade  : PropTypes.func,
-    purchase_info    : PropTypes.object,
-    symbol           : PropTypes.string,
-    updateQueryString: PropTypes.func,
+    is_contract_mode         : PropTypes.bool,
+    is_mobile                : PropTypes.bool,
+    is_trade_enabled         : PropTypes.bool,
+    onSymbolChange           : PropTypes.func,
+    onClickNewTrade          : PropTypes.func,
+    purchase_info            : PropTypes.object,
+    symbol                   : PropTypes.string,
+    tradeComponentDidMount   : PropTypes.func,
+    tradeComponentWillUnmount: PropTypes.func,
+    updateQueryString        : PropTypes.func,
 };
 
 export default connect(
     ({ modules, ui }) => ({
-        is_contract_mode : modules.smart_chart.is_contract_mode,
-        is_trade_enabled : modules.trade.is_trade_enabled,
-        onClickNewTrade  : modules.trade.onClickNewTrade,
-        onSymbolChange   : modules.trade.onChange,
-        purchase_info    : modules.trade.purchase_info,
-        symbol           : modules.trade.symbol,
-        updateQueryString: modules.trade.updateQueryString,
-        is_mobile        : ui.is_mobile,
+        is_contract_mode         : modules.smart_chart.is_contract_mode,
+        is_trade_enabled         : modules.trade.is_trade_enabled,
+        onClickNewTrade          : modules.trade.onClickNewTrade,
+        onSymbolChange           : modules.trade.onChange,
+        purchase_info            : modules.trade.purchase_info,
+        symbol                   : modules.trade.symbol,
+        tradeComponentDidMount   : modules.trade.tradeComponentDidMount,
+        tradeComponentWillUnmount: modules.trade.tradeComponentWillUnmount,
+        updateQueryString        : modules.trade.updateQueryString,
+        is_mobile                : ui.is_mobile,
     })
 )(Trade);

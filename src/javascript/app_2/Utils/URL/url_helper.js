@@ -55,7 +55,7 @@ export default class URLHelper {
      *
      * @return {Object} returns an iterator object of updated query string
      */
-    static updateQueryString(store, allowed_query_string_variables) {
+    static updateQueryString(store, allowed_query_string_variables, set_query_string=false) {
 
         const query_params = URLHelper.getQueryParams();
 
@@ -65,7 +65,10 @@ export default class URLHelper {
             allowed_query_string_variables
                 .filter(p => !query_params.get(p)).forEach( key => {
                     if (store[key]) {
-                        URLHelper.setQueryParam({ [key]: store[key] });
+                        if (set_query_string) {
+                            URLHelper.setQueryParam({ [key]: store[key] });
+                        }
+
                         query_params.set(key, store[key]);
                     }
                 });
