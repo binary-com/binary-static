@@ -1,13 +1,14 @@
 const BinarySocket = require('./socket');
 const Client       = require('../base/client');
+const State        = require('../../_common/storage').State;
 
 const Footer = (() => {
     const onLoad = () => {
-        BinarySocket.wait('website_status').then(() => {
+        BinarySocket.wait('website_status', 'authorize').then(() => {
             const $footer      = $('#footer-last');
             const $cfd_warning = $footer.find('.eu-only');
-            const is_eu        = Client.get('is_eu');
-            if (is_eu) {
+            const show_warning = Client.get('is_eu') || /maltainvest/.test(State.getResponse('authorize.landing_company_name'));
+            if (show_warning) {
                 $footer.find('p').addClass('font-n');
                 $cfd_warning.setVisibility(1);
             } else {
