@@ -87,6 +87,9 @@ $header-height: 40px;
         &__symbol {
             font-size: 10px;
             color: $COLOR_BLUE;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
         &__indicative {
             font-size: 12px;
