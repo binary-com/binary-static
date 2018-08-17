@@ -11,9 +11,11 @@ const initLoader = (css_files, js_files) => { // eslint-disable-line no-unused-v
     if (js_files) {
         const required_js   = js_files.slice(0, 4);
         const binary_app_js = js_files.slice(4);
-        loadJS(required_js, () => {
-            loadJS(binary_app_js);
-        });
+        setTimeout(() => {
+            loadJS(required_js, () => {
+                loadJS(binary_app_js);
+            });
+        }, 1000); // delay loading JS
     }
 };
 
