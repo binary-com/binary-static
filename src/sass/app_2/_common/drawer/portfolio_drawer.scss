@@ -186,6 +186,8 @@ $header-height: 40px;
                 background: $COLOR_BRANDBLUE_85;
             }
             &__indicative {
+                color: $COLOR_WHITE;
+
                 &--no-resale {
                     color: $COLOR_BRANDBLUE_40;
                 }
