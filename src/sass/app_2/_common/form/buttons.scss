@@ -32,7 +32,7 @@
             &:hover:not([disabled]) {
                 background: $COLOR_ORANGE_2;
             }
-            &:active {
+            &:active:not([disabled]) {
                 background: $COLOR_ORANGE;
             }
             &.effect:focus:not(:active):after {
@@ -45,7 +45,7 @@
             &:hover:not([disabled]) {
                 background: $COLOR_GREEN_2;
             }
-            &:active {
+            &:active:not([disabled]) {
                 background: $COLOR_LIGHT_GREEN;
             }
             &.effect:focus:not(:active):after {
@@ -70,7 +70,7 @@
                 color: $COLOR_ORANGE_2;
                 background: rgba(233, 128, 36, 0.1);
             }
-            &:active {
+            &:active:not([disabled]) {
                 border: 1px solid $COLOR_ORANGE;
                 color: $COLOR_ORANGE;
             }
@@ -87,7 +87,7 @@
                 color: $COLOR_GREEN_2;
                 background: rgba(76, 175, 80, 0.1);
             }
-            &:active {
+            &:active:not([disabled]) {
                 border: 1px solid $COLOR_LIGHT_GREEN;
                 color: $COLOR_LIGHT_GREEN;
             }
@@ -109,7 +109,7 @@
         &:hover:not([disabled]) {
             background: #f2f3f8; /* stylelint-disable-line color-no-hex */
         }
-        &:active {
+        &:active:not([disabled]) {
             color: #4c5794; /* stylelint-disable-line color-no-hex */
         }
         &.effect:focus:not(:active):after {
