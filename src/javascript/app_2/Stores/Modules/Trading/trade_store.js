@@ -299,12 +299,13 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    tradeComponentDidMount() {
+    onMount() {
         this.is_trade_component_mounted = true;
+        this.updateQueryString();
     }
 
     @action.bound
-    tradeComponentWillUnmount() {
+    onUnmount() {
         this.is_trade_component_mounted = false;
     }
 };
