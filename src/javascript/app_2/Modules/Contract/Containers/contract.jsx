@@ -1,7 +1,7 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import ContractDetails from './contract_details.jsx';
-import InfoBox         from '../Components/InfoBox';
+import InfoBox         from '../Containers/info_box.jsx';
 import SmartChart      from '../../SmartChart';
 import ErrorComponent  from '../../../App/Components/Elements/Errors';
 import { connect }     from '../../../Stores/connect';
@@ -9,7 +9,6 @@ import { localize }    from '../../../../_common/localize';
 
 const Contract = ({
     chart_config = {},
-    contract_info,
     has_error,
     match,
     symbol,
@@ -18,7 +17,7 @@ const Contract = ({
         <div className='chart-container notice-msg'>
             { symbol &&
                 <SmartChart
-                    InfoBox={<InfoBox contract_info={contract_info} />}
+                    InfoBox={<InfoBox />}
                     symbol={symbol}
                     {...chart_config}
                 />
@@ -32,18 +31,16 @@ const Contract = ({
 );
 
 Contract.propTypes = {
-    chart_config : PropTypes.object,
-    contract_info: PropTypes.object,
-    has_error    : PropTypes.bool,
-    match        : PropTypes.object,
-    symbol       : PropTypes.string,
+    chart_config: PropTypes.object,
+    has_error   : PropTypes.bool,
+    match       : PropTypes.object,
+    symbol      : PropTypes.string,
 };
 
 export default connect(
     ({ modules }) => ({
-        chart_config : modules.contract.chart_config,
-        contract_info: modules.contract.contract_info,
-        has_error    : modules.contract.has_error,
-        symbol       : modules.contract.contract_info.underlying,
+        chart_config: modules.contract.chart_config,
+        has_error   : modules.contract.has_error,
+        symbol      : modules.contract.contract_info.underlying,
     })
 )(Contract);

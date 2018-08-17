@@ -55,22 +55,25 @@ export default class URLHelper {
      *
      * @return {Object} returns an iterator object of updated query string
      */
-    static updateQueryString(store, allowed_query_string_variables) {
+    static updateQueryString(store, allowed_query_string_variables, set_query_string=false) {
 
-        const queryParams = URLHelper.getQueryParams();
+        const query_params = URLHelper.getQueryParams();
 
         if (!isEmptyObject(store)) {
 
             // create query string by default values in trade_store if the param doesn't exist in query string.
             allowed_query_string_variables
-                .filter(p => !queryParams.get(p)).forEach( key => {
+                .filter(p => !query_params.get(p)).forEach( key => {
                     if (store[key]) {
-                        URLHelper.setQueryParam({ [key]: store[key] });
-                        queryParams.set(key, store[key]);
+                        if (set_query_string) {
+                            URLHelper.setQueryParam({ [key]: store[key] });
+                        }
+
+                        query_params.set(key, store[key]);
                     }
                 });
         }
 
-        return queryParams;
+        return query_params;
     }
 }

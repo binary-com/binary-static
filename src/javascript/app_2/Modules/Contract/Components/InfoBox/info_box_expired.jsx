@@ -5,7 +5,11 @@ import Money        from '../../../../App/Components/Elements/money.jsx';
 import IconFlag     from '../../../../Assets/Contract/icon_flag.jsx';
 import { localize } from '../../../../../_common/localize';
 
-const InfoBoxExpired = ({ contract_info }) => {
+const InfoBoxExpired = ({
+    contract_info,
+    has_flag = true,
+    has_percentage = true,
+}) => {
     const {
         currency,
         profit,
@@ -16,12 +20,16 @@ const InfoBoxExpired = ({ contract_info }) => {
 
     return (
         <div className={`expired ${profit > 0 ? 'won' : 'lost'}`}>
-            <IconFlag />
+            { has_flag &&
+                <IconFlag/>
+            }
             <div>
                 <div>{localize('Profit/Loss')}:</div>
                 <div className='pl-value'>
                     <Money amount={profit} currency={currency} has_sign />
-                    <span className='percentage'>({percentage_text})</span>
+                    { has_percentage &&
+                        <span className='percentage'>({percentage_text})</span>
+                    }
                 </div>
             </div>
         </div>
@@ -29,7 +37,9 @@ const InfoBoxExpired = ({ contract_info }) => {
 };
 
 InfoBoxExpired.propTypes = {
-    contract_info: PropTypes.object,
+    contract_info : PropTypes.object,
+    has_flag      : PropTypes.bool,
+    has_percentage: PropTypes.bool,
 };
 
 export default observer(InfoBoxExpired);

@@ -31,7 +31,7 @@ const LastDigit = ({
         >
             <Dropdown
                 list={last_digit_numbers}
-                value={last_digit}
+                value={+last_digit}
                 name='last_digit'
                 onChange={onChange}
                 is_nativepicker={is_nativepicker}
@@ -43,8 +43,11 @@ const LastDigit = ({
 LastDigit.propTypes = {
     is_minimized   : PropTypes.bool,
     is_nativepicker: PropTypes.bool,
-    last_digit     : PropTypes.number,
-    onChange       : PropTypes.func,
+    last_digit     : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
+    onChange: PropTypes.func,
 };
 
 export default observer(LastDigit);
