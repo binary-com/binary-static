@@ -348,6 +348,9 @@
             @include colorIcon($COLOR_BRANDBLUE_75, none);
         }
     }
+    .barspinner {
+        @extend .barspinner.white;
+    }
     .acc-switcher-header {
         border-color: $COLOR_BRANDBLUE_85;
     }
