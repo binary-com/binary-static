@@ -49,10 +49,12 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     onUnmount = () => {
-        WS.forgetAll('proposal_open_contract');
+        this.forgetProposalOpenContract();
+
         this.contract_id   = null;
         this.contract_info = {};
         this.digits_info   = {};
+
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
         this.smart_chart.setContractMode(false);
@@ -76,6 +78,10 @@ export default class ContractStore extends BaseStore {
         if (isDigitContract(this.contract_info.contract_type)) {
             extendObservable(this.digits_info, getDigitInfo(this.digits_info, this.contract_info));
         }
+    }
+
+    forgetProposalOpenContract() {
+        WS.forget('proposal_open_contract', this.updateProposal, { contract_id: this.contract_id });
     }
 
     // ---------------------------
