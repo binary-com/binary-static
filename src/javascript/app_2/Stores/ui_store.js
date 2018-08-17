@@ -50,7 +50,7 @@ export default class UIStore extends BaseStore {
         });
         reaction(
             () => this.is_app_ready,
-            () => { if (this.is_app_ready) { document.getElementById('binary_loader').classList.add('fade-out'); } }
+            () => { if (this.is_app_ready) { document.getElementById('binary_loader').remove(); } }
         );
     }
 

@@ -4,33 +4,22 @@ body {
 
 .loader {
     background-color: #ffffff; // stylelint-disable-line color-no-hex
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: fixed;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
     z-index: 999;
-    visibility: hidden;
 
-    &.run {
-        visibility: visible;
-
-        .chart-line, .loading-line, .loading-line-bg {
-            animation-play-state: running;
-        }
-    }
     &.dark {
         background-color: #2a3052; // stylelint-disable-line color-no-hex
 
         .chart-line {
             stroke: #aaacbe; // stylelint-disable-line color-no-hex
         }
-        .loading-line {
+        .loading {
             stroke: #3f4463; // stylelint-disable-line color-no-hex
         }
-        .loading-line-bg {
+        .loading-bg {
             stroke: #e98024; // stylelint-disable-line color-no-hex
         }
     }
@@ -44,20 +33,14 @@ body {
     .chart-line {
         stroke-dasharray: 4300;
         stroke-dashoffset: 4300;
-        animation: draw-chart-line 10s linear infinite;
-        animation-play-state: paused;
     }
-    .loading-line {
+    .loading {
         stroke-dasharray: 150;
         stroke-dashoffset: 150;
-        animation: loading 2s linear infinite;
-        animation-play-state: paused;
     }
-    .loading-line-bg {
+    .loading-bg {
         stroke-dasharray: 150;
         stroke-dashoffset: 150;
-        animation: bgloading 2s linear infinite;
-        animation-play-state: paused;
     }
 }
 
@@ -67,44 +50,5 @@ body {
 
     &.dark {
         background-image: linear-gradient(to right, #353b5b 1px, transparent 1px), linear-gradient(to bottom, #353b5b 1px, transparent 1px); // stylelint-disable-line color-no-hex    
-    }
-}
-
-@keyframes draw-chart-line {
-    from {
-        stroke-dashoffset: 4300;
-    }
-    75% {
-        stroke-dashoffset: 0;
-    }
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes loading {
-    from {
-        stroke-dashoffset: 150;
-    }
-    50% {
-        stroke-dashoffset: 150;
-    }
-    75% {
-        stroke-dashoffset: 0;
-    }
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes bgloading {
-    from {
-        stroke-dashoffset: 150;
-    }
-    33% {
-        stroke-dashoffset: 0;
-    }
-    to {
-        stroke-dashoffset: 0;
     }
 }

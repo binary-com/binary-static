@@ -6,10 +6,6 @@
     animation: fade-in 0.5s ease-in forwards;
 }
 
-.fade-out {
-    animation: fade-out 0.2s linear forwards;
-}
-
 @keyframes slide-down {
     from {
         transform: translateY(-200%);
@@ -36,16 +32,5 @@
     to {
         opacity: 1;
         visibility: visible;
-    }
-}
-
-@keyframes fade-out {
-    from {
-        opacity: 1;
-        visibility: visible;
-    }
-    to {
-        opacity: 0;
-        visibility: hidden;
     }
 }
