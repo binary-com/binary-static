@@ -16,10 +16,10 @@ body {
         .chart-line {
             stroke: #aaacbe; // stylelint-disable-line color-no-hex
         }
-        .loading {
+        .loading-bg {
             stroke: #3f4463; // stylelint-disable-line color-no-hex
         }
-        .loading-bg {
+        .loading {
             stroke: #e98024; // stylelint-disable-line color-no-hex
         }
     }
@@ -29,18 +29,6 @@ body {
         height: 100%;
         top: 0;
         left: 0;
-    }
-    .chart-line {
-        stroke-dasharray: 4300;
-        stroke-dashoffset: 4300;
-    }
-    .loading {
-        stroke-dasharray: 150;
-        stroke-dashoffset: 150;
-    }
-    .loading-bg {
-        stroke-dasharray: 150;
-        stroke-dashoffset: 150;
     }
 }
 

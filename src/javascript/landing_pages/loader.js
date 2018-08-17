@@ -50,34 +50,43 @@ const animate = () => {
     const el_loading    = document.querySelectorAll('.loading');
     const el_loading_bg = document.querySelectorAll('.loading-bg');
 
-    const paths = {
-        chart     : el_chart.getTotalLength(),
-        loading   : el_loading[0].getTotalLength(),
-        loading_bg: el_loading_bg[0].getTotalLength(),
+    const PATHS_LENGTH = {
+        chart  : el_chart.getTotalLength(),
+        loading: el_loading[0].getTotalLength(),
+    };
+
+    const position = {
+        chart     : PATHS_LENGTH.chart,
+        loading   : PATHS_LENGTH.loading,
+        loading_bg: PATHS_LENGTH.loading,
     };
 
     let draw_loading = false;
     let req_id;
     const draw = () => {
-        if (paths.chart < 0) {
-            paths.chart = el_chart.getTotalLength();
+        if (position.chart < 0) {
+            position.chart = PATHS_LENGTH.chart;
         } else {
-            paths.chart -= 5;
-            el_chart.style.strokeDashoffset = paths.chart;
+            el_chart.style.strokeDashoffset = position.chart;
+            position.chart -= 5;
         }
 
-        el_loading_bg.forEach(path => {
-            path.style.strokeDashoffset = paths.loading_bg;
-            paths.loading_bg -= 1.2;
-            if (paths.loading_bg < 0) {
+        el_loading.forEach(path => {
+            path.style.strokeDashoffset = position.loading;
+            position.loading -= 1.2;
+            if (position.loading < 0) {
+                position.loading = 2 * PATHS_LENGTH.loading;
                 draw_loading = true;
             }
         });
 
         if (draw_loading) {
-            el_loading.forEach(path => {
-                path.style.strokeDashoffset = paths.loading;
-                paths.loading -= 1.2;
+            el_loading_bg.forEach(path => {
+                path.style.strokeDashoffset = position.loading_bg;
+                position.loading_bg -= 1.2;
+                if (position.loading_bg < 0) {
+                    position.loading_bg = 2 * PATHS_LENGTH.loading;
+                }
             });
         }
 
@@ -90,5 +99,5 @@ const animate = () => {
         };
     });
 
-    draw();
+    requestAnimationFrame(draw);
 };
