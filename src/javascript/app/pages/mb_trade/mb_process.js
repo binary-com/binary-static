@@ -250,8 +250,6 @@ const MBProcess = (() => {
             contract_type : [],
             barriers      : [],
             product_type  : 'multi_barrier',
-
-            trading_period_start: durations[0],
         };
 
         const available_contracts = MBContract.getCurrentContracts();

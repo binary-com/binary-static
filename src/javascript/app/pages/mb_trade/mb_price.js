@@ -285,7 +285,6 @@ const MBPrice = (() => {
                 currency             : MBContract.getCurrency(),
                 symbol               : proposal.echo_req.symbol,
                 date_expiry          : proposal.echo_req.date_expiry,
-                trading_period_start : proposal.echo_req.trading_period_start,
                 product_type         : 'multi_barrier',
                 app_markup_percentage: '0',
             },
