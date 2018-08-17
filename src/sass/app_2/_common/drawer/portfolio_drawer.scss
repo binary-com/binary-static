@@ -12,6 +12,7 @@ $header-height: 40px;
     border-left: 1px solid $COLOR_GRAY;
     background-color: $COLOR_WHITE;
     box-sizing: border-box;
+    color: $COLOR_BLUE;
 
     &--open {
         transform: translateX(0);
@@ -32,7 +33,6 @@ $header-height: 40px;
     &__title {
         font-size: 12px;
         font-weight: bold;
-        color: $COLOR_BLUE;
     }
     &__icon-main {
         margin-right: 8px;
@@ -51,12 +51,12 @@ $header-height: 40px;
         PORTFOLIO DRAWER CARD STARTS
     */
     &-card {
-        height: 60px;
         box-sizing: border-box;
         padding: 8px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
+        row-gap: 5px;
         border: 1px solid $COLOR_GRAY;
         border-radius: 2px;
         cursor: pointer;
@@ -69,7 +69,6 @@ $header-height: 40px;
         }
         &__type {
             font-size: 12px;
-            color: $COLOR_BLUE;
 
             .contract-type {
                 display: flex;
@@ -86,14 +85,12 @@ $header-height: 40px;
         }
         &__symbol {
             font-size: 10px;
-            color: $COLOR_BLUE;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
         }
         &__indicative {
             font-size: 12px;
-            color: $COLOR_BLUE;
             font-weight: bold;
             display: flex;
             flex-direction: row;
@@ -168,17 +165,12 @@ $header-height: 40px;
     .portfolio-drawer {
         background: $COLOR_BLUE;
         border-color: $COLOR_BRANDBLUE_85;
+        color: $COLOR_WHITE;
 
-        &__title {
-            color: $COLOR_WHITE;
-        }
         &-card {
             background: $COLOR_BLUE;
             border-color: $COLOR_BRANDBLUE_85;
 
-            .contract-type, &__symbol {
-                color: $COLOR_WHITE;
-            }
             &__remaining-time {
                 color: $COLOR_BRANDBLUE_40;
             }
@@ -186,8 +178,6 @@ $header-height: 40px;
                 background: $COLOR_BRANDBLUE_85;
             }
             &__indicative {
-                color: $COLOR_WHITE;
-
                 &--no-resale {
                     color: $COLOR_BRANDBLUE_40;
                 }
