@@ -329,6 +329,7 @@ const MetaTraderUI = (() => {
         const is_new_account = /new_account/.test(action);
         const $acc_actions = $container.find('.acc-actions');
         $acc_actions.find('.new-account').setVisibility(is_new_account);
+        $acc_actions.find('.act_new_account_mam').setVisibility(is_new_account && Client.get('landing_company_shortcode') === 'costarica');
         $acc_actions.find('.has-account').setVisibility(!is_new_account);
         $acc_actions.find('.has-mam').setVisibility(is_new_account ? 0 : getPropertyValue(accounts_info, [Client.get('mt5_account'), 'info', 'manager_id']));
         $detail.setVisibility(!is_new_account);
