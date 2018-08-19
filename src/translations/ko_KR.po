@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-14 02:12\n"
+"PO-Revision-Date: 2018-08-19 02:46\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgid "\"Company\" means Binary (V) Ltd, operating under the brand or trademark 
 msgstr ""
 
 msgid "\"Content\" means any data or content from our Website or accessed via the API. Our \"Website\" means %1's website at www.binary.com and any other website or service owned or operated by %1."
-msgstr "\"내용\"의 뜻은 우리 웹사이트가 출처 또는 본 API를 통해 접근되어진 어떠한 데이터나 내용을 의미합니다. 우리의 \"웹사이트\"란 www.binary.com에서 %1의 웹사이트와 %1에 의해 소유 및 운영되어지는 타 웹사이트 또는 서비스를 의미합니다."
+msgstr "\"자료\"의 뜻은 저희 웹사이트가 출처 또는 본 API를 통해 접근되어진 어떠한 데이터나 내용을 의미합니다. 저희 \"웹사이트\"란 www.binary.com에서 %1의 웹사이트와 %1에 의해 소유 및 운영되어지는 타 웹사이트 또는 서비스를 의미합니다."
 
 msgid "\"Money Manager\" means any physical person including any executor, representative, administrator or successor in law, authorised to manage the Account on behalf of the Client in accordance with this Agreement."
 msgstr ""
@@ -687,7 +687,7 @@ msgid "About Us and Our Regulator"
 msgstr ""
 
 msgid "About Us and These Terms"
-msgstr "저희 소개와 이 약관"
+msgstr "우리 소개와 이에 관한 조항"
 
 msgid "Academy"
 msgstr "아카데미"
@@ -939,7 +939,7 @@ msgid "Agent's Obligations"
 msgstr ""
 
 msgid "Agreement Restrictions"
-msgstr ""
+msgstr "합의문 제한"
 
 msgid "Agreement for documents"
 msgstr ""
@@ -2024,6 +2024,9 @@ msgstr "차트"
 msgid "Chart is not available for this underlying."
 msgstr ""
 
+msgid "Charting Platforms"
+msgstr ""
+
 msgid "Charting for this underlying is delayed"
 msgstr ""
 
@@ -2363,6 +2366,9 @@ msgstr ""
 msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
 msgstr ""
 
+msgid "Complete your <a href=\"%1\">Tax Information</a>."
+msgstr ""
+
 msgid "Compliance"
 msgstr "감사"
 
@@ -2614,6 +2620,9 @@ msgstr "새 계정 만들기"
 
 msgid "Create New Token"
 msgstr "새 토큰 만들기"
+
+msgid "Create New Virtual-money Account"
+msgstr ""
 
 msgid "Create account with Google"
 msgstr "구글 정보로 계정 만들기"
@@ -3168,7 +3177,7 @@ msgid "Each option transaction has a specified expiry time and date, known as th
 msgstr ""
 
 msgid "Each party to this Agreement represents and warrants to the other that it has, and will retain throughout the term of this Agreement all right, title, and authority to enter into this Agreement, to grant to the other party the rights and licences granted in this Agreement, and to perform all of its obligations under this Agreement."
-msgstr ""
+msgstr "본 협약에 동의하는 각 단체는 타 단체에게 본 협약이 유효한 기간동안 본 협약에가입하고 타 단체에게 본 협의문으로부터 승인된 권리와 라이센스를 승인할 권한, 그리고 이 협약아래 해당되는 모든 준수사항을 이행할 모든 권리, 타이틀을 유지할 것을 대변하며 타 단체에게 보증합니다."
 
 msgid "Each time you open a position on a cryptocurrency pair, you can start with a minimum volume as indicated in the table above."
 msgstr ""
@@ -3240,10 +3249,10 @@ msgid "Effectively monitor daily client activity"
 msgstr ""
 
 msgid "Either party may terminate this Agreement forthwith on written notice if a receiver, examiner, or administrator is appointed of the whole or any part of the other party's assets or the other party is struck off the Register of Companies in the jurisdiction where it was incorporated or an order is made or a resolution passed for winding up of the other party (unless such order or resolution is part of a voluntary scheme for the reconstruction or amalgamation of that party as a solvent corporation and the resulting corporation, if a different legal person, undertakes to be bound by this Agreement)."
-msgstr ""
+msgstr "재산관리인, 심사원, 관리자가 타 당사자의 자산의 일부 또는 전체에 해당하는 부분을 관리할 책임이 생길 때, 또는 타 당사자가 회사가 설립되거나 타 당사자의 마무리에 대해 결의안의 전달 또는 지시가 내려지는 관할권내의 회사등기부에서 명단이 삭제될 시 각 당사자는 본 협의문을 서면으로 즉시 소멸할 수 있습니다. (해당 지침 또는 결의안이 해당 회사가 용해되는 회사로써 또는 건립된 기업으로써 재건 또는 합병에 대한 자발적 체제의 일부분이지 않은 경우, 만약 타 법인이 본 협의문을 이행할 의무를 맡은 경우)."
 
 msgid "Either party may terminate this Agreement on delivery of one weeks' prior written notice to the other party."
-msgstr ""
+msgstr "각 당사자는 당사자 사이에 일주일 전까지 서면공지를 함으로써 본 합의문을 종료할 수 있습니다."
 
 msgid "Eligible Counterparties"
 msgstr ""
@@ -4508,9 +4517,6 @@ msgstr "귀하께서 %1의 제휴자인 경우, %1제휴 프로그램의 약관�
 msgid "If you are an individual, you are over 18 years old and you have full capacity to enter into this Agreement;"
 msgstr "만약 귀하께서 18세 이상의 개인이시면, 이에 대해 동의할수 있는 능력이 있습니다;"
 
-msgid "If you are categorised as a Professional Client or an Eligible Counterparty;"
-msgstr ""
-
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr ""
 
@@ -4574,7 +4580,7 @@ msgstr ""
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr ""
 
-msgid "If you incur a negative balance through your trading activities, you should inform the Company, who in return will evaluate the inquiry and at its discretion may credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy. Such decisions may be based on our local regulatory obligations and may entail subsequent closing of your Account."
+msgid "If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy."
 msgstr ""
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
@@ -4755,7 +4761,7 @@ msgid "If your usable margin drops below 100%, a margin call mode will be trigge
 msgstr ""
 
 msgid "If:"
-msgstr ""
+msgstr "만약:"
 
 msgid "Imagine"
 msgstr "상상해보세요."
@@ -5027,7 +5033,7 @@ msgstr ""
 msgid "Invalid amount, minimum is"
 msgstr ""
 
-msgid "Invalid document format: \"%1\""
+msgid "Invalid document format."
 msgstr ""
 
 msgid "Invalid email address."
@@ -5772,7 +5778,7 @@ msgid "Legal"
 msgstr "법률"
 
 msgid "Legal Compliance"
-msgstr ""
+msgstr "법률 준수"
 
 msgid "Less than $100,000"
 msgstr ""
@@ -8247,7 +8253,7 @@ msgid "Scan the QR code below with your authentication app (such as %1, %2, and 
 msgstr ""
 
 msgid "Scope and Intent"
-msgstr ""
+msgstr "범위 및 의도"
 
 msgid "Scope of Agreement"
 msgstr ""
@@ -8295,6 +8301,9 @@ msgid "Security and privacy"
 msgstr ""
 
 msgid "Security testing opportunities"
+msgstr ""
+
+msgid "Select <a href=\"%1\">Citizenship</a>."
 msgstr ""
 
 msgid "Select <strong>Accept cookies</strong>."
@@ -8742,7 +8751,7 @@ msgid "Stop out level"
 msgstr ""
 
 msgid "Storage of Content"
-msgstr ""
+msgstr "자료의 저장"
 
 msgid "Strengthen relationships with current clients and foster greater loyalty through a variety of social-media outlets"
 msgstr ""
@@ -8940,10 +8949,10 @@ msgid "Terminate your use of the %1 API; or"
 msgstr ""
 
 msgid "Termination"
-msgstr ""
+msgstr "소멸"
 
 msgid "Termination for Causes"
-msgstr ""
+msgstr "원인의 소멸"
 
 msgid "Termination of this Agreement shall not prejudice any rights of any party which may have arisen on or before the date of termination."
 msgstr ""
@@ -8970,6 +8979,9 @@ msgid "Th"
 msgstr "목"
 
 msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
+msgstr ""
+
+msgid "Thank you for completing your Personal Details. You can now deposit funds and trade Forex with real money on MetaTrader 5."
 msgstr ""
 
 msgid "Thank you for signing up! Please check your email to complete the registration process."
@@ -9234,7 +9246,7 @@ msgid "The Company shall not be in breach of its obligation under this Agreement
 msgstr ""
 
 msgid "The Company shall not be liable to you in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate's business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever."
-msgstr ""
+msgstr "본 회사는 제휴자의 비즈니스, 수익 또는 이윤, 예상되는 절약금액, 또는 낭비된 비용, 부패, 또는 데이터의 파괴 또는 종류에 막론하고 간접적 또는 결과적 손해에 대해 계약적으로, 또는 그 외적으로 직접 또는 간접적에 상관없는 어느 손실에 대해(과실로 인한 법적 책임을 포함) 당신에게 법적인 책임이 없습니다."
 
 msgid "The Company shall not be obliged to provide Professional Clients with the following:"
 msgstr ""
@@ -9614,9 +9626,6 @@ msgstr ""
 msgid "The provision of the trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sub-licensable, terminable licence from the third-party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that when providing trading services, described in this Agreement to you, we may decide to change our third–party system provider/licensor and use a different Trading Platform, other than the MT5 Trading Platform. Hence, in such cases we may decide to use an entirely new third–party system provider/licensor (hereinafter referred to as the “new Trading Platform”) or to introduce an additional third–party system provider/licensor (hereinafter referred to as the “additional Trading Platform”)."
 msgstr ""
 
-msgid "The provisions of the Negative Balance protection do not apply:"
-msgstr ""
-
 msgid "The requested transfer would reduce your Account balance to less than the Margin required for your Open Positions;"
 msgstr ""
 
@@ -9822,7 +9831,7 @@ msgid "This Agreement is supplied to you in English. In the event that there is 
 msgstr ""
 
 msgid "This Agreement may be terminated forthwith by either party on written notice to the other party if the other party is in material breach of the terms of the Agreement and, in the event of a breach capable of being remedied, fails to remedy the breach within 15 days of receipt of notice in writing of such breach."
-msgstr ""
+msgstr "당사자가 본 조항에 대해 중대한 위반을 했을 경우, 그리고 해결될 수 있는 위반 사항에 대해 해당 위반사항에 대한 서면 공지후 15일 이내에 해결되지 않는다면 해당 동의는 즉시 각 당사자에게 서면통지를 통해 소멸될 수 있습니다."
 
 msgid "This Agreement shall commence on the date you first accept this Agreement, and shall continue unless and until terminated in accordance with the Term and Termination conditions set forth in this Agreement."
 msgstr ""
@@ -11577,7 +11586,7 @@ msgid "You agree and authorise the Money Manager to place all Orders and transac
 msgstr ""
 
 msgid "You agree that by developing on the %1 API, you are entering into a legally binding agreement with the Company."
-msgstr ""
+msgstr "당신은 %1API 상에서 개발함으로써, 본 회사와 법적으로 구속력을 가지는 합의문에 참여하는 것을 동의합니다."
 
 msgid "You agree that in any Legal or Arbitration or Mediation or Regulatory or Administration or any other proceedings, initiated by you or by us, the Company’s records related to your dealings shall constitute evidence. Subject to the Laws and any Court or tribunal or Competent Authority or Government Authority Orders or requests or instructions or guidelines, you shall not object to the admission of such records because they are not originals, or in writing, or produced by computers or any other electronic systems whatsoever. You shall not rely on the Company to meet any of your disclosures or other obligations imposed by any Court or tribunal or Competent Authority or Government Authority."
 msgstr ""
@@ -11589,7 +11598,7 @@ msgid "You agree that we may use Personal Information provided by you in order t
 msgstr "귀하께서는 저희가 적절한 사기 방지 검사를 수행하기 위해 귀하로부터 제공된 개인 정보를 사용할 수 있다는 점에 동의합니다. 귀하께서 제공하신 개인 정보는 신용 조회처 또는 사기 방지 기관에 공개 될 수 있습니다. 그리고 이러한 정보는 기록될 수 있습니다."
 
 msgid "You agree that you will not:"
-msgstr ""
+msgstr "당신은 다음사항을 하지 않을 것에 동의합니다:"
 
 msgid "You also acknowledge that %1 may continue to make changes to and enhance the %1 API and that those changes and enhancements will be owned by %1. You hereby assign and transfer to the Company all of your right, title and interest in and to any modifications or derivative works of the %1 API created by or for you, regardless of whether they were created in accordance with these Terms; such assignment being effective upon creation of such works, and shall include, without limitation, all rights under any intellectual property laws, including copyright. You shall not take any action to jeopardise, encumber, limit or interface in any manner with %1's ownership of and rights with respect to the %1 API, or any derivative works or updates thereof or thereto. Any components, parts, or mechanics of any system or API program derived from the %1 API, or %1's business practices shall belong solely to %1. Further, you will not, at any time, contest or assist any other third party in contesting the rights of %1 in the %1 API or any other intellectual property provided in these Terms."
 msgstr ""
@@ -11637,7 +11646,7 @@ msgid "You are not allowed to rebate any part commission payment onto your refer
 msgstr "당신은 당신의 추천인에 대한 수수료 지불의 어떤 부분이라도 환불을 할 수 없습으며 본 회사가 당신이 이러한 행위를 하는 것을 적발할 경우; 당신의 제휴계좌는 즉시 폐지될 것입니다."
 
 msgid "You are not allowed to store any Content (such as feed data)."
-msgstr ""
+msgstr "어떠한 자료라도 (피드자료와 같은) 저장하는 것이 금지되어 있습니다."
 
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr ""
@@ -11904,7 +11913,7 @@ msgid "You represent, warrant, and undertake that you have obtained and shall ma
 msgstr "당신이 운영하거나 목표로 하는 비즈니스에 해당하는 관할권(들) 의 어떠한 규제기관의 관할아래 적용되는 규정과 규칙, 법률 내에서 운영하는데에 필요한 모든 라이센스 취득과 동의를 유지하는 것을 대표, 보증 및 이를 따를 책임이 있습니다."
 
 msgid "You represent, warrant, and undertake that your website or promotion shall contain no material which is defamatory, pornographic, unlawful, harmful, threatening, obscene, harassing, or racially, ethnically, or otherwise objectionable or discriminatory, violent, politically sensitive, or otherwise controversial or in breach of any third party rights and shall not link to any such material."
-msgstr ""
+msgstr "당신은 당신의 웹사이트 또는 홍보물에 명예 훼손, 외설물, 불법, 유해, 위협, 외설, 모독, 또는 인종적, 민족적, 또는 그 외 불쾌한 또는 차별, 폭력, 정치적으로 민감한, 또는 그 외 논란의 여지가 있는 또는 제 3자의 권리를 위반하는 자료들이 포함하지 않을 것을 보증하며, 약속하는 바입니다. 그리고 이러한 자료들에 연결하는 링크를 걸면 안됩니다."
 
 msgid "You risk only your initial stake, and your stake never increases."
 msgstr "귀하께서는 귀하의 초기 배당액에 해당하는 위험만 있습니다. 그리고 귀하의 배당액은 절대 증가하지 않습니다."
@@ -12383,12 +12392,6 @@ msgstr ""
 msgid "in the case of Professional Clients;"
 msgstr ""
 
-msgid "in the case of a Force Majeure Event;"
-msgstr ""
-
-msgid "in the case of a client breaching any of the terms of this Agreement which results in a Negative Balance."
-msgstr ""
-
 msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
 msgstr ""
 
@@ -12585,9 +12588,6 @@ msgid "weeks"
 msgstr ""
 
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
-msgstr ""
-
-msgid "where the Negative Balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
 msgstr ""
 
 msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
