@@ -74,6 +74,23 @@ export default class URLHelper {
                 });
         }
 
+        // URLHelper.pruneQueryString(allowed_query_string_variables);
+
         return query_params;
+    }
+
+    /**
+     * Prunes the query string values
+     *
+     * @param {string[]} keys - A list of variable's name which should be in url's query string.
+     */
+    static pruneQueryString(keys=[]) {
+        const query_params = URLHelper.getQueryParams();
+
+        [...query_params].forEach(value => keys.indexOf(value[0]) <= -1 && query_params.delete(value[0]));
+
+        const query_string = [...query_params].length ? `?${query_params.toString()}` : '';
+
+        window.history.replaceState(null, null, query_string);
     }
 }

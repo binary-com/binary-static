@@ -74,3 +74,34 @@ const createProposalRequestForContract = (store, type_of_contract) => {
         ),
     };
 };
+
+export const getProposalParametersName = (proposal_requests, alternatives, removable_properties) => {
+    const is_digit = Object.keys(proposal_requests)
+        .findIndex(i => i.toUpperCase().indexOf('DIGIT') > -1) > -1;
+
+    const keys = Object.keys(proposal_requests[Object.keys(proposal_requests)[0]]);
+
+    Object.keys(alternatives).forEach( name => {
+        const index = keys.indexOf(name);
+        if ( index > -1) {
+            keys.splice(index, 1);
+
+            if (typeof alternatives[name] === 'string') {
+                keys.push(alternatives[name]);
+            } else if (typeof alternatives[name] === 'function') {
+                keys.push(alternatives[name](is_digit));
+            }
+        }
+    });
+
+    removable_properties.forEach( name => {
+        const index = keys.indexOf(name);
+
+        if (index > -1) {
+            keys.splice(index, 1);
+        }
+    });
+
+    keys.sort();
+    return keys;
+};
