@@ -7,20 +7,21 @@ import { IconTrade,
          IconPortfolio,
          IconStatement } from '../../../Assets/Header/NavBar';
 import { requestLogout } from '../../../Services';
+import { connect }       from '../../../Stores/connect';
 import Client            from '../../../../_common/base/client_base';
 import { localize }      from '../../../../_common/localize';
-import { connect }       from '../../../Stores/connect';
+
 
 const MenuDrawer = ({
     is_dark_mode,
     is_mobile,
     is_portfolio_drawer_on,
-    is_purchase_confirmed,
+    // is_purchase_confirmed,
     is_purchase_locked,
     toggleDarkMode,
     togglePortfolioDrawer,
     togglePurchaseLock,
-    togglePurchaseConfirmation,
+    // togglePurchaseConfirmation,
 }) => (
     <div className='drawer-items-container'>
         <div className='list-items-container'>
@@ -49,11 +50,13 @@ const MenuDrawer = ({
                     link_to='/statement'
                 />
                 <hr />
+                {/* Disabled until design is ready
                 <DrawerToggle
                     text={localize('Purchase Confirmation')}
                     toggle={togglePurchaseConfirmation}
                     to_toggle={is_purchase_confirmed}
                 />
+                */}
                 <DrawerToggle
                     text={localize('Purchase Lock')}
                     toggle={togglePurchaseLock}
@@ -89,6 +92,7 @@ const MenuDrawer = ({
 
 MenuDrawer.propTypes = {
     is_dark_mode              : PropTypes.bool,
+    is_mobile                 : PropTypes.bool,
     is_portfolio_drawer_on    : PropTypes.bool,
     is_purchase_confirmed     : PropTypes.bool,
     is_purchase_locked        : PropTypes.bool,
@@ -96,11 +100,11 @@ MenuDrawer.propTypes = {
     togglePortfolioDrawer     : PropTypes.func,
     togglePurchaseConfirmation: PropTypes.func,
     togglePurchaseLock        : PropTypes.func,
-    is_mobile                 : PropTypes.bool,
 };
 
 const menu_drawer_component = connect(({ ui }) => ({
     is_dark_mode              : ui.is_dark_mode_on,
+    is_mobile                 : ui.is_mobile,
     is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
     is_purchase_confirmed     : ui.is_purchase_confirm_on,
     is_purchase_locked        : ui.is_purchase_lock_on,
@@ -108,7 +112,6 @@ const menu_drawer_component = connect(({ ui }) => ({
     togglePortfolioDrawer     : ui.togglePortfolioDrawer,
     togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
     togglePurchaseLock        : ui.togglePurchaseLock,
-    is_mobile                 : ui.is_mobile,
 }))(MenuDrawer);
 
 export { menu_drawer_component as MenuDrawer };
