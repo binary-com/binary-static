@@ -78,7 +78,6 @@ const Validation = (() => {
                         }
                         field.$error = $parent.find(`.${error_class}`);
                     }
-                    field.$submit_btn_error = $form.find('#msg_form');
 
                     const event = events_map[field.type];
 
@@ -99,7 +98,7 @@ const Validation = (() => {
         // need to init Dropdown after we have responses from ws
         const el_all_select = document.querySelectorAll('select:not([multiple]):not([single])');
         el_all_select.forEach((el) => {
-            if (el.id && el.length) {
+            if (el.id) {
                 Dropdown(`#${el.id}`);
             }
         });
@@ -271,9 +270,6 @@ const Validation = (() => {
     const clearError = (field) => {
         if (field.$error && field.$error.length) {
             field.$error.setVisibility(0);
-            if (field.$submit_btn_error && field.$submit_btn_error.length) {
-                field.$submit_btn_error.setVisibility(0);
-            }
         }
     };
 

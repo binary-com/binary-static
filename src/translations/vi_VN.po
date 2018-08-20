@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-20 06:42\n"
+"PO-Revision-Date: 2018-08-14 02:12\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -2022,9 +2022,6 @@ msgstr "Biểu đồ"
 msgid "Chart is not available for this underlying."
 msgstr "Biểu đồ không phải là có sẵn cho cơ sở này."
 
-msgid "Charting Platforms"
-msgstr "Biểu đồ sàn"
-
 msgid "Charting for this underlying is delayed"
 msgstr "Biểu đồ cho tài sản cơ sở này bị hoãn"
 
@@ -2364,9 +2361,6 @@ msgstr "Khiếu nại và Tranh chấp"
 msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
 msgstr "Hoàn thành <a href=\"%1\"> Đánh Giá Tài Chính</a>."
 
-msgid "Complete your <a href=\"%1\">Tax Information</a>."
-msgstr "Hoàn thành <a href=\"%1\">thông tin thuế</a>của bạn."
-
 msgid "Compliance"
 msgstr "Pháp Chế"
 
@@ -2618,9 +2612,6 @@ msgstr "Tạo Tài Khoản Mới"
 
 msgid "Create New Token"
 msgstr "Tạo Token Mới"
-
-msgid "Create New Virtual-money Account"
-msgstr "Tạo tài khoản tiền ảo mới"
 
 msgid "Create account with Google"
 msgstr "Tạo tài khoản với Google"
@@ -4516,6 +4507,9 @@ msgstr "Nếu bạn là một đại lý liên kết của %1, bạn phải tuâ
 msgid "If you are an individual, you are over 18 years old and you have full capacity to enter into this Agreement;"
 msgstr "Nếu bạn là một cá nhân, bạn phải trên 18 tuổi và bạn phải có đầy đủ năng lực để tham gia vào thỏa thuận này;"
 
+msgid "If you are categorised as a Professional Client or an Eligible Counterparty;"
+msgstr "Nếu bạn được phân loại như là một Khách Hàng Chuyên Nghiệp hay một Đối tác Đủ Điều Kiện;"
+
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr "Nếu bạn đang cân nhắc việc tự loại trừ, bạn có thể muốn đăng ký với GAMSTOP."
 
@@ -4579,8 +4573,8 @@ msgstr "Nếu bạn đã tham gia vào nhiều hơn một Phiên Mở trong cùn
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Nếu bạn có những kĩ năng mà chúng tôi cần, bạn sẽ trở thành một thành viên chủ chốt trong đội lập trình front-end để góp phần đưa hệ thống giao dịch binary options của chúng ta lên một tầm cao mới."
 
-msgid "If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy."
-msgstr ""
+msgid "If you incur a negative balance through your trading activities, you should inform the Company, who in return will evaluate the inquiry and at its discretion may credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy. Such decisions may be based on our local regulatory obligations and may entail subsequent closing of your Account."
+msgstr "Nếu bạn có số dư âm thông qua hoạt động giao dịch, bạn nên thông báo cho Công ty, người sẽ đánh giá yêu cầu và theo quyết định của họ có thể ghi nợ vào số dư âm, với điều kiện ghi nợ đó là do hoạt động giao dịch bình thường theo chính sách này. Các quyết định như vậy có thể dựa trên các nghĩa vụ pháp lý địa phương của chúng tôi và có thể dẫn đến việc đóng Tài Khoản của bạn."
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Nếu bạn giữ cho bất kỳ phiên mở nào qua đêm, điều chỉnh lãi suất sẽ được thực hiện cho tài khoản giao dịch như là một dấu hiệu của các chi phí cần thiết để giữ phiên của bạn mở."
@@ -5033,8 +5027,8 @@ msgstr "Số tiền không hợp lệ, tối đa là"
 msgid "Invalid amount, minimum is"
 msgstr "Số tiền không hợp lệ, tối thiểu là"
 
-msgid "Invalid document format."
-msgstr "Định dạng tài liệu không hợp lệ."
+msgid "Invalid document format: \"%1\""
+msgstr "Định dạng tài liệu không hợp lệ: \"%1\""
 
 msgid "Invalid email address."
 msgstr "Địa chỉ email không hợp lệ."
@@ -7090,7 +7084,7 @@ msgid "Our trading screen is simple to use:"
 msgstr "Màn hình giao dịch của chúng tôi đơn giản để sử dụng:"
 
 msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "Kế hoạch hoa hồng dựa trên doanh của chúng tôi thu phụ thuộc vào khả năng trả lại cho từng hợp đồng. Hợp đồng với lợi nhuận cao hơn cho khách hàng cung cấp hoa hồng thấp hơn cho các chi nhánh."
+msgstr "Kế hoạch hoa hồng dựa trên doanh của chúng tôi thu phụ thuộc vào khả năng thanh toán của từng hợp đồng. Hợp đồng với lợi nhuận cao hơn cho khách hàng cung cấp hoa hồng thấp hơn cho các chi nhánh."
 
 msgid "Our website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and their advertisements may submit cookies to your web browser which is beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites because their practices may differ from ours."
 msgstr "Trang web của chúng tôi chứa các đường dẫn đến các trang web khác và có thể chứa biểu ngữ hoặc biểu tượng quảng cáo liên quan đến các trang web của bên thứ ba. Những trang web và quảng cáo ở đó có thể gửi cookie trên trình duyệt web của bạn và những điều như vậy nằm ngoài tầm kiểm soát của chúng tôi. Chúng tôi không chịu trách nhiệm cho hoạt động bảo mật hoặc nội dung của trang web đó. Chúng tôi khuyến khích bạn đọc chính sách bảo mật của các trang web này, vì thực tế hoạt động của họ có thể khác với của chúng tôi."
@@ -8304,9 +8298,6 @@ msgstr "Bảo mật và riêng tư"
 msgid "Security testing opportunities"
 msgstr "Cơ hội kiểm tra bảo mật"
 
-msgid "Select <a href=\"%1\">Citizenship</a>."
-msgstr "Chọn <a href=\"%1\">quốc tịch</a>."
-
 msgid "Select <strong>Accept cookies</strong>."
 msgstr "Chọn <strong>chấp nhận cookies</strong>."
 
@@ -8982,9 +8973,6 @@ msgstr "Thứ 5"
 msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
 msgstr "Cảm ơn bạn đã hoàn tất việc đánh giá tài chính. Bây giờ bạn có thể gửi tiền quỹ và giao dịch ngoại hối với tiền thật trên MetaTrader 5."
 
-msgid "Thank you for completing your Personal Details. You can now deposit funds and trade Forex with real money on MetaTrader 5."
-msgstr "Cảm ơn bạn đã hoàn tất các Chi Tiết Cá Nhân của bạn. Bây giờ bạn có thể gửi tiền quỹ và giao dịch ngoại hối với tiền thật trên MetaTrader 5."
-
 msgid "Thank you for signing up! Please check your email to complete the registration process."
 msgstr "Cảm ơn bạn đã đăng ký! Vui lòng kiểm tra email của bạn để hoàn tất quá trình đăng ký."
 
@@ -9626,6 +9614,9 @@ msgstr "Việc cung cấp các dịch vụ kinh doanh ký quỹ được mô t�
 
 msgid "The provision of the trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sub-licensable, terminable licence from the third-party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that when providing trading services, described in this Agreement to you, we may decide to change our third–party system provider/licensor and use a different Trading Platform, other than the MT5 Trading Platform. Hence, in such cases we may decide to use an entirely new third–party system provider/licensor (hereinafter referred to as the “new Trading Platform”) or to introduce an additional third–party system provider/licensor (hereinafter referred to as the “additional Trading Platform”)."
 msgstr "Việc cung cấp các dịch vụ giao dịch được mô tả trong Thỏa Thuận này sử dụng hệ thống của bên thứ ba có được thông qua giấy phép không độc quyền, không thể chuyển nhượng, không cấp phép, có thể ký được từ nhà cung cấp/ nhà cấp phép hệ thống của bên thứ ba (\"Sàn Giao Dịch MT5 \"). Bạn xác nhận rằng khi cung cấp các dịch vụ giao dịch, được mô tả trong Thỏa Thuận này cho bạn, chúng tôi có thể quyết định thay đổi nhà cung cấp/ nhà cấp phép hệ thống của bên thứ ba và sử dụng Nền tảng giao dịch khác, ngoài Nền tảng giao dịch MT5. Do đó, trong trường hợp này, chúng tôi có thể quyết định sử dụng nhà cung cấp/ nhà cấp phép hệ thống bên thứ ba hoàn toàn mới (sau đây gọi là “Sàn Giao Dịch mới”) hoặc giới thiệu nhà cung cấp / nhà cấp phép hệ thống bên thứ ba (sau đây gọi tắt là \"Sàn Giao Dịch bổ sung\")."
+
+msgid "The provisions of the Negative Balance protection do not apply:"
+msgstr "Các điều khoản của Bảo Vệ Số Dư Âm không áp dụng:"
 
 msgid "The requested transfer would reduce your Account balance to less than the Margin required for your Open Positions;"
 msgstr "Việc chuyển tiền được yêu cầu sẽ làm giảm số dư Tài Khoản của bạn xuống dưới số tiền Ký Quỹ bắt buộc đối với các Phiên Mở của bạn;"
@@ -10306,7 +10297,7 @@ msgid "Trading in Binary Options is speculative and involves a high degree of ri
 msgstr "Giao dịch Binary Options là hoạt động đầu cơ và có rủi ro cao có thể gây ra thua lỗ cho toàn bộ vốn đầu tư của bạn. Vì vậy, giao dịch Binary Options chỉ thích hợp với người đã hiểu biết đầy đủ và sẵn sàng chấp nhận rủi ro kinh tế, pháp lý và những rủi ro khác có liên quan tới những giao dịch này. Bạn nên biết rằng giao dịch Binary Options thích hợp với bạn trong điều kiện bạn sẵn sàng về vốn đầu tư và thái độ đối với những rủi ro xảy ra trước khi giao dịch. Bạn không nên thực hiện các giao dịch Binary Options trừ khi bạn hiểu những thành phần cơ bản của những giao dịch này và các rủi ro của nó. Nếu bạn còn nghi ngờ về giao dịch Binary Options có thích hợp với bạn hay không, vui lòng tìm nguồn tư vấn độc lập với các đội ngũ chuyên gia tư vấn đầu tư. %1 không cung cấp cho bạn những tư vấn này. Đó là trách nhiệm của bạn, đặt các điều kiện cá nhân và nguồn lực đầu tư vào tài khoản của bạn, đặt mối quan tâm thực sự và cân nhắc cẩn thận một cách độc lập, vừa ưu tiên cho việc tham gia vào Binary Options thông qua %1, cùng với ưu tiên đặt lệnh cá nhân. Bạn còn chưa hiểu rủi ro có liên quan trong việc tham gia mở tài khoản giao dịch với %1 hoặc trong việc đặt lệnh cá nhân ở chỗ nào, bạn nên tìm kiếm tư vấn và lời khuyên từ nhà tư vấn đầu tư độc lập. Nếu bạn vẫn tiếp tục không hiểu về những rủi ro có liên quan tới giao dịch Binary Options, thì bạn không nên giao dịch."
 
 msgid "Trading is unavailable at this time."
-msgstr "Giao dịch không khả dụng tại thời điểm này."
+msgstr ""
 
 msgid "Trading manual"
 msgstr "Hướng dẫn giao dịch"
@@ -12394,6 +12385,12 @@ msgstr "trong điều kiện thị trường bất thường hoặc chuyển đ�
 msgid "in the case of Professional Clients;"
 msgstr "trong trường hợp Khách Hàng Chuyên Nghiệp;"
 
+msgid "in the case of a Force Majeure Event;"
+msgstr "trong trường hợp một một Sự Kiện Bất Khả Kháng;"
+
+msgid "in the case of a client breaching any of the terms of this Agreement which results in a Negative Balance."
+msgstr "trong trường hợp khách hàng vi phạm bất kỳ điều khoản nào trong Thỏa Thuận này dẫn đến Số Dư Âm."
+
 msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
 msgstr "trong trường hợp khách hàng vi phạm bất kỳ các điều khoản của Thỏa Thuận này và dẫn đến số dư âm."
 
@@ -12591,6 +12588,9 @@ msgstr "tuần"
 
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
 msgstr "Đại Lý là một cá nhân, anh hoặc chị ấy đã đạt 18 tuổi trở lên và có đầy đủ năng lực pháp lý để tham gia vào Thỏa Thuận này;"
+
+msgid "where the Negative Balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
+msgstr "khi số dư âm được kết nối với hoặc là kết quả của những hạn chế chức năng và/hoặc sự cố của các Sàn Giao Dịch MT5; và"
 
 msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
 msgstr "khi số dư âm được kết nối với hoặc là kết quả của những hạn chế chức năng và/hoặc sự cố của các Sàn Giao Dịch MT5; và"

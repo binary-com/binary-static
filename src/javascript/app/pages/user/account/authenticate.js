@@ -216,13 +216,11 @@ const Authenticate = (() => {
                     showError(file);
                 }
             });
-            const total_to_upload = response.length;
-            if (is_any_file_error || !total_to_upload) {
-                removeButtonLoading();
-                enableDisableSubmit();
+            if (is_any_file_error) {
                 return; // don't start submitting files until all front-end validation checks pass
             }
 
+            const total_to_upload = response.length;
             const isLastUpload = () => total_to_upload === idx_to_upload + 1;
             // sequentially send files
             const uploadFile = () => {
@@ -233,7 +231,7 @@ const Authenticate = (() => {
                     if (!api_response.error && !api_response.warning) {
                         $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
                         $(`#${api_response.passthrough.class}`).attr('type', 'hidden'); // don't allow users to change submitted files
-                        $(`label[for=${api_response.passthrough.class}]`).removeClass('selected error').find('span').attr('class', 'checked');
+                        $(`label[for=${api_response.passthrough.class}] span`).attr('class', 'checked');
                     }
                     uploadNextFile();
                 }).catch((error) => {
@@ -351,7 +349,7 @@ const Authenticate = (() => {
             : /^(PNG|JPG|JPEG|GIF|PDF)$/i;
 
         if (!(file.documentFormat || '').match(accepted_formats_regex)) {
-            return localize('Invalid document format.');
+            return localize('Invalid document format: "[_1]"', [file.documentFormat]);
         }
         if (file.buffer && file.buffer.byteLength >= 8 * 1024 * 1024) {
             return localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]', [file.filename, '8MB']);
