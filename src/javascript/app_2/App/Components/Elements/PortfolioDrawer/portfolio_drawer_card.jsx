@@ -16,16 +16,18 @@ const PortfolioDrawerCard = ({
     underlying,
 }) => (
     <BinaryLink className='portfolio-drawer-card' to={getContractPath(id)}>
-        <div className='portfolio-drawer-card__type'>
-            <ContractTypeCell type={type} />
-        </div>
-        <div className={`portfolio-drawer-card__indicative portfolio-drawer-card__indicative--${status}`}>
-            <Money amount={indicative} currency={currency} />
-        </div>
-        <span className='portfolio-drawer-card__symbol'>{underlying}</span>
-        <span className='portfolio-drawer-card__remaining-time'>
-            <RemainingTime end_time={expiry_time} />
-        </span>
+        <React.Fragment>
+            <div className='portfolio-drawer-card__type'>
+                <ContractTypeCell type={type} />
+            </div>
+            <div className={`portfolio-drawer-card__indicative portfolio-drawer-card__indicative--${status}`}>
+                <Money amount={indicative} currency={currency} />
+            </div>
+            <span className='portfolio-drawer-card__symbol'>{underlying}</span>
+            <span className='portfolio-drawer-card__remaining-time'>
+                <RemainingTime end_time={expiry_time} />
+            </span>
+        </React.Fragment>
     </BinaryLink>
 );
 

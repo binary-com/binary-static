@@ -50,7 +50,7 @@ $header-height: 40px;
     /*
         PORTFOLIO DRAWER CARD STARTS
     */
-    &-card {
+    & &-card {
         box-sizing: border-box;
         padding: 8px;
         display: grid;
@@ -61,6 +61,7 @@ $header-height: 40px;
         border-radius: 4px;
         cursor: pointer;
         text-decoration: none;
+        color: $COLOR_LIGHT_BLACK;
 
         &.active, &:hover {
             background: $COLOR_LIGHT_GRAY;
@@ -175,6 +176,7 @@ $header-height: 40px;
         &-card {
             background: $COLOR_BLUE;
             border-color: $COLOR_BRANDBLUE_85;
+            color: $COLOR_WHITE;
 
             &__remaining-time {
                 color: $COLOR_BRANDBLUE_40;
