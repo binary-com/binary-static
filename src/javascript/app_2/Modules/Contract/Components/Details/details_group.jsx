@@ -1,9 +1,9 @@
 import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { isEmptyObject } from '../../../../_common/utility';
+import { isEmptyObject } from '../../../../../_common/utility';
 
-const InfoGroup = ({
+const DetailsGroup = ({
     items,
     title,
 }) => (
@@ -19,9 +19,9 @@ const InfoGroup = ({
     </React.Fragment>
 );
 
-InfoGroup.propTypes = {
+DetailsGroup.propTypes = {
     items: PropTypes.object,
     title: PropTypes.string,
 };
 
-export default observer(InfoGroup);
+export default observer(DetailsGroup);
