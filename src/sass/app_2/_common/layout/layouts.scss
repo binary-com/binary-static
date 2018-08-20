@@ -24,24 +24,6 @@
             margin-bottom: 0;
             height: calc(100vh - #{$HEADER_HEIGHT});
         }
-
-        .login-message-wrapper {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            .message {
-                a {
-                    text-decoration: none;
-                    color: $COLOR_BLUE;
-
-                    &:hover {
-                        font-weight: 500;
-                    }
-                }
-            }
-        }
     }
     /* trade-app layout */
     .trade-container {
@@ -171,12 +153,9 @@
                             grid-gap: 0;
 
                             div:first-child {
-                                border-right-width: 0px;
+                                border-right-width: 0;
                                 border-left-width: 1px;
-                                border-top-left-radius: $BORDER_RADIUS;
-                                border-bottom-left-radius: $BORDER_RADIUS;
-                                border-top-right-radius: 0;
-                                border-bottom-right-radius: 0;
+                                border-radius: $BORDER_RADIUS 0 0 $BORDER_RADIUS;
 
                                 &:hover, &:focus, &:active, &.clicked {
                                     border-right-width: 1px;
@@ -192,10 +171,7 @@
                             input:last-child {
                                 border-right-width: 1px;
                                 border-left-width: 1px;
-                                border-top-left-radius: 0;
-                                border-bottom-left-radius: 0;
-                                border-top-right-radius: $BORDER_RADIUS;
-                                border-bottom-right-radius: $BORDER_RADIUS;
+                                border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
                             }
                             &.three-columns {
                                 grid-template-columns: 1.5fr 1.2fr 1.5fr;
@@ -214,10 +190,7 @@
                                     &:last-child div, &:last-child input {
                                         border-right-width: 1px;
                                         border-left-width: 1px;
-                                        border-top-left-radius: 0;
-                                        border-bottom-left-radius: 0;
-                                        border-top-right-radius: $BORDER_RADIUS;
-                                        border-bottom-right-radius: $BORDER_RADIUS;
+                                        border-radius: 0 $BORDER_RADIUS $BORDER_RADIUS 0;
                                     }
                                 }
                             }

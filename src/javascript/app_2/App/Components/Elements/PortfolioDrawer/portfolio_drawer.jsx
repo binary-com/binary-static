@@ -61,6 +61,7 @@ class PortfolioDrawer extends React.Component {
 };
 
 PortfolioDrawer.propTypes = {
+    children              : PropTypes.any,
     data                  : MobxPropTypes.arrayOrObservableArray,
     error                 : PropTypes.string,
     currency              : PropTypes.string,
@@ -74,7 +75,7 @@ PortfolioDrawer.propTypes = {
 
 export default connect(
     ({ modules, client, ui }) => ({
-        data                  : modules.portfolio.data_with_remaining_time,
+        data                  : modules.portfolio.data,
         is_loading            : modules.portfolio.is_loading,
         error                 : modules.portfolio.error,
         is_empty              : modules.portfolio.is_empty,

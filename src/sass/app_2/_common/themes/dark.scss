@@ -1,5 +1,5 @@
 // Dark Theme for Global Layout
-.theme-wrapper.dark {
+body.dark, .theme-wrapper.dark {
     background: $COLOR_BLUE;
 
     header, footer, .app-contents {
@@ -10,57 +10,9 @@
 
         .menu-items {
             .menu-links a {
-                .inline-icon.ic-header__trade {
-                    .stroke-fill {
-                        stroke: $COLOR_BRANDBLUE_40;
-                        fill: $COLOR_BLUE;
-                    }
-                }
                 &.active {
                     span {
                         color: $COLOR_WHITE;
-
-                        .inline-icon.ic-header {
-                            &__trade {
-                                .stroke-fill {
-                                    fill: $COLOR_WHITE;
-                                    stroke: $COLOR_WHITE;
-                                }
-                            }
-                            &__portfolio, &__statement {
-                                .stroke-only {
-                                    stroke: $COLOR_WHITE;
-                                }
-                                .fill-only {
-                                    fill: $COLOR_WHITE;
-                                }
-                            }
-                            &__portfolio .stroke-only {
-                                &:first-child {
-                                    fill: $COLOR_WHITE;
-                                    stroke: $COLOR_WHITE;
-                                }
-                                &:nth-child(2) {
-                                    stroke: $COLOR_WHITE;
-                                }
-                                &:nth-child(3) {
-                                    stroke: $COLOR_BLUE;
-                                    fill: $COLOR_WHITE;
-                                }
-                                &:last-child {
-                                    stroke: $COLOR_BLUE;
-                                }
-                            }
-                            &__statement {
-                                .no-fill {
-                                    fill: $COLOR_WHITE;
-                                    stroke: $COLOR_BLUE;
-                                }
-                                .fill-only {
-                                    fill: $COLOR_BLUE;
-                                }
-                            }
-                        }
                     }
                     &:after {
                         background-color: $COLOR_WHITE;
@@ -347,26 +299,9 @@
             span {
                 color: $COLOR_BRANDBLUE_40;
             }
-            &.active, &:hover, &:focus {
+            &.active, &:hover {
                 background: $COLOR_BRANDBLUE_85;
 
-                .footer-icon {
-                    path {
-                        fill: $COLOR_WHITE;
-                    }
-                    .stroke-only {
-                        stroke: $COLOR_WHITE;
-                        fill: none;
-                    }
-                    .fill-only {
-                        fill: $COLOR_WHITE;
-                        stroke: none;
-                    }
-                    .stroke-fill {
-                        stroke: $COLOR_WHITE;
-                        fill: $COLOR_WHITE;
-                    }
-                }
                 &:after {
                     background: $COLOR_WHITE;
                 }
@@ -395,26 +330,13 @@
     }
     // common inline icons
     .inline-icon {
-        path {
-            fill: $COLOR_BRANDBLUE_40;
+        @include colorIcon($COLOR_BRANDBLUE_40, none);
+
+        &.active {
+            @include colorIcon($COLOR_BLUE, $COLOR_WHITE, $COLOR_WHITE);
         }
-        .stroke-only {
-            stroke: $COLOR_BRANDBLUE_40;
-            fill: none;
-        }
-        .fill-only {
-            fill: $COLOR_BRANDBLUE_40;
-            stroke: none;
-        }
-        .stroke-fill {
-            stroke: $COLOR_BRANDBLUE_40;
-            fill: $COLOR_BRANDBLUE_40;
-        }
-        .no-stroke {
-            stroke: none;
-        }
-        .no-fill {
-            fill: none;
+        &.disabled {
+            @include colorIcon($COLOR_BRANDBLUE_75, none);
         }
     }
     .acc-switcher-header {
@@ -428,6 +350,21 @@
 
             .acc-switcher-account:hover {
                 background: $COLOR_BRANDBLUE_85;
+            }
+        }
+    }
+    .card-list {
+        &__card {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            div[class*='-card__header'] {
+                background: $COLOR_BRANDBLUE_95;
+                border-color: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_40;
+            }
+            div[class*='-card__body'] {
+                color: $COLOR_BRANDBLUE_40;
             }
         }
     }

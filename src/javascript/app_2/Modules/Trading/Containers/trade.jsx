@@ -1,66 +1,71 @@
-import PropTypes       from 'prop-types';
-import React           from 'react';
-import Test            from './test.jsx';
-import FormLayout      from '../Components/Form/form_layout.jsx';
-import SmartCharts     from '../../../App/Components/Charts/smartcharts.jsx';
-import { connect }     from '../../../Stores/connect';
+import PropTypes            from 'prop-types';
+import React                from 'react';
+import Test                 from './test.jsx';
+import FormLayout           from '../Components/Form/form_layout.jsx';
+import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
+import InfoBox              from '../../Contract/Containers/info_box.jsx';
+import SmartChart           from '../../SmartChart';
+import { connect }          from '../../../Stores/connect';
+import { getPropertyValue } from '../../../../_common/utility';
 
 class Trade extends React.Component {
-
     componentDidMount() {
-        this.props.updateQueryString();
+        this.props.onMount();
+    }
+
+    componentWillUnmount() {
+        this.props.onUnmount();
     }
 
     render() {
+        const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
+        const InfoBoxComponent = this.props.is_contract_mode ?
+            <InfoBox is_trade_page /> : null;
+
         return (
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container notice-msg'>
-                    <SmartCharts
-                        chart_barriers={this.props.chart_barriers}
-                        initial_symbol={this.props.initial_symbol}
-                        is_mobile={this.props.is_mobile}
-                        onSymbolChange={this.props.onSymbolChange}
-                        is_dark_theme={this.props.is_dark_theme}
-                        is_asset_enabled={this.props.is_asset_enabled}
-                        is_countdown_enabled={this.props.is_countdown_enabled}
-                        is_position_default={this.props.is_position_default}
-                    />
+                    { this.props.symbol &&
+                        <SmartChart
+                            InfoBox={InfoBoxComponent}
+                            onSymbolChange={this.props.onSymbolChange}
+                            symbol={this.props.symbol}
+                        />
+                    }
                     <Test />
                 </div>
-                <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
+                { contract_id ?
+                    <ContractDetails contract_id={contract_id} onClickNewTrade={this.props.onClickNewTrade} />
+                    :
+                    <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
+                }
             </div>
         );
     }
 }
 
 Trade.propTypes = {
-    chart_barriers      : PropTypes.object,
-    initial_symbol      : PropTypes.string,
-    is_asset_enabled    : PropTypes.bool,
-    is_countdown_enabled: PropTypes.bool,
-    is_dark_theme       : PropTypes.bool,
-    is_position_default : PropTypes.bool,
-    is_mobile           : PropTypes.bool,
-    is_purchase_enabled : PropTypes.bool,
-    is_trade_enabled    : PropTypes.bool,
-    onSymbolChange      : PropTypes.func,
-    server_time         : PropTypes.object,
-    updateQueryString   : PropTypes.func,
+    is_contract_mode: PropTypes.bool,
+    is_mobile       : PropTypes.bool,
+    is_trade_enabled: PropTypes.bool,
+    onClickNewTrade : PropTypes.func,
+    onMount         : PropTypes.func,
+    onSymbolChange  : PropTypes.func,
+    onUnmount       : PropTypes.func,
+    purchase_info   : PropTypes.object,
+    symbol          : PropTypes.string,
 };
 
 export default connect(
-    ({ common, modules, ui }) => ({
-        server_time         : common.server_time,
-        chart_barriers      : modules.trade.chart_barriers,
-        initial_symbol      : modules.trade.symbol,
-        is_purchase_enabled : modules.trade.is_purchase_enabled,
-        is_trade_enabled    : modules.trade.is_trade_enabled,
-        onSymbolChange      : modules.trade.onChange,
-        updateQueryString   : modules.trade.updateQueryString,
-        is_dark_theme       : ui.is_dark_mode_on,
-        is_countdown_enabled: ui.is_chart_countdown_visible,
-        is_asset_enabled    : ui.is_chart_asset_info_visible,
-        is_position_default : ui.is_chart_layout_default,
-        is_mobile           : ui.is_mobile,
+    ({ modules, ui }) => ({
+        is_contract_mode: modules.smart_chart.is_contract_mode,
+        is_mobile       : ui.is_mobile,
+        is_trade_enabled: modules.trade.is_trade_enabled,
+        onClickNewTrade : modules.trade.onClickNewTrade,
+        onMount         : modules.trade.onMount,
+        onSymbolChange  : modules.trade.onChange,
+        onUnmount       : modules.trade.onUnmount,
+        purchase_info   : modules.trade.purchase_info,
+        symbol          : modules.trade.symbol,
     })
 )(Trade);

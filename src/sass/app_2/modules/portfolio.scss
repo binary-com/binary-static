@@ -33,6 +33,10 @@
             align-items: center;
         }
     }
+    .reference a {
+        color: $COLOR_LIGHT_BLUE;
+        text-decoration: none;
+    }
     .indicative {
         text-align: right;
         font-weight: bold;
@@ -60,12 +64,9 @@
         align-items: center;
 
         &__icon {
-            margin: 0 auto 2rem;
-            transform: scale(3, 3);
-
-            .scale-fix {
-                transform: scaleX(0.96);
-            }
+            height: 64px;
+            width: 64px;
+            margin-bottom: 16px;
         }
         &__title {
             font-size: 16px;
@@ -86,8 +87,9 @@
             display: flex;
             justify-content: space-between;
         }
-        &__refid {
+        &__refid a {
             color: $COLOR_LIGHT_BLUE;
+            text-decoration: none;
         }
         &__body {
             padding: 0.5rem;

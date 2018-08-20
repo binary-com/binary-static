@@ -2,6 +2,8 @@ import React               from 'react';
 import {
     Redirect,
     Route }                from 'react-router-dom';
+import LoginPrompt         from '../Elements/login_prompt.jsx';
+import { default_title }   from '../../Constants/app_config';
 import routes              from '../../../Constants/routes';
 import { redirectToLogin } from '../../../../_common/base/login';
 import Client              from '../../../../_common/base/client_base';
@@ -21,17 +23,15 @@ const RouteWithSubRoutes = route => {
             result = <Redirect to={to} />;
         } else {
             result = (
-                (route.is_authenticated && !Client.isLoggedIn()) ? // TODO: update styling of the message below
-                    <div className='login-message-wrapper'>
-                        <div className='message'>
-                            <a href='javascript:;' onClick={redirectToLogin}>{localize('Please login to view this page.')}</a>
-                        </div>
-                    </div>
+                (route.is_authenticated && !Client.isLoggedIn()) ?
+                    <LoginPrompt IconComponent={route.icon_component} onLogin={redirectToLogin} />
                     :
                     <route.component {...props} routes={route.routes}/>
             );
         }
 
+        const title = route.title ? `${ localize(route.title) } | ` : '';
+        document.title = `${ title }${ default_title }`;
         return result;
     };
 

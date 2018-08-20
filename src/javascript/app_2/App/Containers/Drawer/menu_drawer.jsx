@@ -14,9 +14,11 @@ import { connect }       from '../../../Stores/connect';
 const MenuDrawer = ({
     is_dark_mode,
     is_mobile,
+    is_portfolio_drawer_on,
     is_purchase_confirmed,
     is_purchase_locked,
     toggleDarkMode,
+    togglePortfolioDrawer,
     togglePurchaseLock,
     togglePurchaseConfirmation,
 }) => (
@@ -73,7 +75,12 @@ const MenuDrawer = ({
                 <DrawerItem
                     icon={<IconLogout className='drawer-icon'/>}
                     text={localize('Logout')}
-                    custom_action={requestLogout}
+                    custom_action={() => {
+                        if (is_portfolio_drawer_on) {
+                            togglePortfolioDrawer(); // TODO: hide drawer inside logout, once it is a mobx action
+                        }
+                        requestLogout();
+                    }}
                 />
             </div>
         }
@@ -82,9 +89,11 @@ const MenuDrawer = ({
 
 MenuDrawer.propTypes = {
     is_dark_mode              : PropTypes.bool,
+    is_portfolio_drawer_on    : PropTypes.bool,
     is_purchase_confirmed     : PropTypes.bool,
     is_purchase_locked        : PropTypes.bool,
     toggleDarkMode            : PropTypes.func,
+    togglePortfolioDrawer     : PropTypes.func,
     togglePurchaseConfirmation: PropTypes.func,
     togglePurchaseLock        : PropTypes.func,
     is_mobile                 : PropTypes.bool,
@@ -92,9 +101,11 @@ MenuDrawer.propTypes = {
 
 const menu_drawer_component = connect(({ ui }) => ({
     is_dark_mode              : ui.is_dark_mode_on,
+    is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
     is_purchase_confirmed     : ui.is_purchase_confirm_on,
     is_purchase_locked        : ui.is_purchase_lock_on,
     toggleDarkMode            : ui.toggleDarkMode,
+    togglePortfolioDrawer     : ui.togglePortfolioDrawer,
     togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
     togglePurchaseLock        : ui.togglePurchaseLock,
     is_mobile                 : ui.is_mobile,

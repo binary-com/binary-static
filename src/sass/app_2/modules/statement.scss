@@ -57,6 +57,10 @@ $side-padding: 12px;
             color: $COLOR_LIGHT_RED;
         }
     }
+    .refid a {
+        color: $COLOR_LIGHT_BLUE;
+        text-decoration: none;
+    }
     /*
         TABLE STYLES END
     */
@@ -108,8 +112,9 @@ $side-padding: 12px;
             display: flex;
             justify-content: space-between;
         }
-        &__refid {
+        &__refid a {
             color: $COLOR_LIGHT_BLUE;
+            text-decoration: none;
         }
         &__body {
             padding: 0.5rem;
@@ -174,11 +179,8 @@ $side-padding: 12px;
         align-items: center;
 
         &__icon {
-            display: inline-block;
             height: 64px;
             width: 64px;
-            background-size: 64px;
-            background-image: url('../images/app_2/header/icons/ic_statement_normal_light.svg');
             margin-bottom: 16px;
         }
         &__title {
