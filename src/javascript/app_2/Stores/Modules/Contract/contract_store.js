@@ -1,12 +1,16 @@
 import {
     action,
     computed,
+    extendObservable,
     observable }              from 'mobx';
 import { createChartBarrier } from './Helpers/chart_barriers';
 import { createChartMarkers } from './Helpers/chart_markers';
 import {
     getDetailsExpiry,
     getDetailsInfo }          from './Helpers/details';
+import {
+    getDigitInfo,
+    isDigitContract }         from './Helpers/digits';
 import {
     getChartConfig,
     getDisplayStatus,
@@ -26,6 +30,7 @@ import { isEmptyObject }      from '../../../../_common/utility';
 export default class ContractStore extends BaseStore {
     @observable contract_id;
     @observable contract_info = observable.object({});
+    @observable digits_info   = observable.object({});
     @observable has_error     = false;
 
     // -------------------
@@ -44,9 +49,12 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     onUnmount = () => {
-        WS.forgetAll('proposal_open_contract');
+        this.forgetProposalOpenContract();
+
         this.contract_id   = null;
         this.contract_info = {};
+        this.digits_info   = {};
+
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
         this.smart_chart.setContractMode(false);
@@ -61,7 +69,19 @@ export default class ContractStore extends BaseStore {
         } else {
             createChartBarrier(this.smart_chart, this.contract_info);
             createChartMarkers(this.smart_chart, this.contract_info, this);
+            this.handleDigits();
         }
+    }
+
+    @action.bound
+    handleDigits() {
+        if (isDigitContract(this.contract_info.contract_type)) {
+            extendObservable(this.digits_info, getDigitInfo(this.digits_info, this.contract_info));
+        }
+    }
+
+    forgetProposalOpenContract() {
+        WS.forget('proposal_open_contract', this.updateProposal, { contract_id: this.contract_id });
     }
 
     // ---------------------------

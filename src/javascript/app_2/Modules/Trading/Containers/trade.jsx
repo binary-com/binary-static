@@ -2,21 +2,25 @@ import PropTypes            from 'prop-types';
 import React                from 'react';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form_layout.jsx';
-import InfoBox              from '../../Contract/Components/InfoBox';
 import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
+import InfoBox              from '../../Contract/Containers/info_box.jsx';
 import SmartChart           from '../../SmartChart';
 import { connect }          from '../../../Stores/connect';
 import { getPropertyValue } from '../../../../_common/utility';
 
 class Trade extends React.Component {
     componentDidMount() {
-        this.props.updateQueryString();
+        this.props.onMount();
+    }
+
+    componentWillUnmount() {
+        this.props.onUnmount();
     }
 
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
         const InfoBoxComponent = this.props.is_contract_mode ?
-            <InfoBox contract_info={this.props.contract_info} /> : null;
+            <InfoBox is_trade_page /> : null;
 
         return (
             <div id='trade_container' className='trade-container'>
@@ -41,27 +45,27 @@ class Trade extends React.Component {
 }
 
 Trade.propTypes = {
-    contract_info    : PropTypes.object,
-    is_contract_mode : PropTypes.bool,
-    is_mobile        : PropTypes.bool,
-    is_trade_enabled : PropTypes.bool,
-    onSymbolChange   : PropTypes.func,
-    onClickNewTrade  : PropTypes.func,
-    purchase_info    : PropTypes.object,
-    symbol           : PropTypes.string,
-    updateQueryString: PropTypes.func,
+    is_contract_mode: PropTypes.bool,
+    is_mobile       : PropTypes.bool,
+    is_trade_enabled: PropTypes.bool,
+    onClickNewTrade : PropTypes.func,
+    onMount         : PropTypes.func,
+    onSymbolChange  : PropTypes.func,
+    onUnmount       : PropTypes.func,
+    purchase_info   : PropTypes.object,
+    symbol          : PropTypes.string,
 };
 
 export default connect(
     ({ modules, ui }) => ({
-        contract_info    : modules.contract.contract_info,
-        is_contract_mode : modules.smart_chart.is_contract_mode,
-        is_trade_enabled : modules.trade.is_trade_enabled,
-        onClickNewTrade  : modules.trade.onClickNewTrade,
-        onSymbolChange   : modules.trade.onChange,
-        purchase_info    : modules.trade.purchase_info,
-        symbol           : modules.trade.symbol,
-        updateQueryString: modules.trade.updateQueryString,
-        is_mobile        : ui.is_mobile,
+        is_contract_mode: modules.smart_chart.is_contract_mode,
+        is_mobile       : ui.is_mobile,
+        is_trade_enabled: modules.trade.is_trade_enabled,
+        onClickNewTrade : modules.trade.onClickNewTrade,
+        onMount         : modules.trade.onMount,
+        onSymbolChange  : modules.trade.onChange,
+        onUnmount       : modules.trade.onUnmount,
+        purchase_info   : modules.trade.purchase_info,
+        symbol          : modules.trade.symbol,
     })
 )(Trade);

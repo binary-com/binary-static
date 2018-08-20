@@ -22,8 +22,9 @@ import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
 
 export default class TradeStore extends BaseStore {
     // Control values
-    @observable is_purchase_enabled = false;
-    @observable is_trade_enabled    = false;
+    @observable is_trade_component_mounted = false;
+    @observable is_purchase_enabled        = false;
+    @observable is_trade_enabled           = false;
 
     // Underlying
     @observable symbol;
@@ -64,7 +65,7 @@ export default class TradeStore extends BaseStore {
     @observable sessions         = [];
 
     // Last Digit
-    @observable last_digit = 3;
+    @observable last_digit = 5;
 
     // Purchase
     @observable proposal_info = {};
@@ -79,6 +80,16 @@ export default class TradeStore extends BaseStore {
             validation_rules,
         };
         super(options);
+
+        Object.defineProperty(
+            this,
+            'is_query_string_applied',
+            {
+                enumerable: false,
+                value     : false,
+                writable  : true,
+            }
+        );
 
         if (Client.isLoggedIn) {
             this.processNewValuesAsync({currency: Client.get('currency')});
@@ -95,11 +106,15 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     async init() {
+        const query_string_values = this.updateQueryString();
         this.smart_chart = this.root_store.modules.smart_chart;
 
         if (!this.symbol) {
             const active_symbols = await WS.activeSymbols();
-            await this.processNewValuesAsync({ symbol: pickDefaultSymbol(active_symbols.active_symbols) });
+            await this.processNewValuesAsync({ 
+                symbol: pickDefaultSymbol(active_symbols.active_symbols),
+                ...query_string_values,
+            });
         }
 
         if (this.symbol) {
@@ -107,6 +122,7 @@ export default class TradeStore extends BaseStore {
                 this.processNewValuesAsync({
                     ...ContractType.getContractValues(this),
                     ...ContractType.getContractCategories(),
+                    ...query_string_values,
                 });
             }));
         }
@@ -161,7 +177,10 @@ export default class TradeStore extends BaseStore {
                 }
 
                 // Add changes to queryString of the url
-                if (allowed_query_string_variables.indexOf(key) !== -1) {
+                if (
+                    allowed_query_string_variables.indexOf(key) !== -1 &&
+                    this.is_trade_component_mounted
+                ) {
                     URLHelper.setQueryParam({ [key]: new_state[key] });
                 }
 
@@ -195,8 +214,12 @@ export default class TradeStore extends BaseStore {
             }
 
             const snapshot = await processTradeParams(this, new_state);
+            const query_string_values = this.is_query_string_applied ? {} : this.updateQueryString();
             snapshot.is_trade_enabled = true;
-            this.updateStore(snapshot);
+
+            this.updateStore({...snapshot, ...query_string_values});
+
+            this.is_query_string_applied = true;
 
             this.requestProposal();
         }
@@ -242,13 +265,18 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     updateQueryString() {
+
         // Update the url's query string by default values of the store
-        const queryParams = URLHelper.updateQueryString(this, allowed_query_string_variables);
+        const query_params = URLHelper.updateQueryString(
+            this,
+            allowed_query_string_variables,
+            this.is_trade_component_mounted
+        );
 
         // update state values from query string
         const config = {};
-        [...queryParams].forEach(param => config[param[0]] = param[1]);
-        this.processNewValuesAsync(config);
+        [...query_params].forEach(param => config[param[0]] = param[1]);
+        return config;
     }
 
     @action.bound
@@ -268,5 +296,16 @@ export default class TradeStore extends BaseStore {
             }
             this.validateProperty('duration', this.duration);
         }
+    }
+
+    @action.bound
+    onMount() {
+        this.is_trade_component_mounted = true;
+        this.updateQueryString();
+    }
+
+    @action.bound
+    onUnmount() {
+        this.is_trade_component_mounted = false;
     }
 };
