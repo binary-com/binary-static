@@ -32,21 +32,23 @@ export const getDetailsExpiry = (store) => {
     if (!store.is_ended) return {};
 
     const {
+        contract_info,
         end_spot,
         end_spot_time,
-        date_expiry,
-    } = store.contract_info;
+        indicative_price,
+        is_user_sold,
+    } = store;
 
     // TODO: don't localize on every call
     // for user sold contracts sell spot can get updated when the next tick becomes available
     // so we only show end time instead of any spot information
     return {
-        ...(store.is_user_sold ? {
-            [localize('End Time')]: date_expiry && toGMTFormat(+date_expiry * 1000),
+        ...(is_user_sold ? {
+            [localize('End Time')]: contract_info.date_expiry && toGMTFormat(+contract_info.date_expiry * 1000),
         } : {
             [localize('Exit Spot')]     : end_spot ? addComma(end_spot) : '-',
             [localize('Exit Spot Time')]: end_spot_time ? toGMTFormat(+end_spot_time * 1000) : '-',
         }),
-        [localize('Payout')]: <Money amount={store.indicative_price} currency={'USD'} />,
+        [localize('Payout')]: <Money amount={indicative_price} currency={'USD'} />,
     };
 };
