@@ -12,6 +12,7 @@ const InfoBox = ({
     contract_info,
     digits_info,
     is_trade_page,
+    sell_info,
 }) => {
     const is_digit = isDigitContract(contract_info.contract_type);
     const is_ended = isEnded(contract_info);
@@ -28,6 +29,7 @@ const InfoBox = ({
                     contract_info={contract_info}
                     digits_info={digits_info}
                     is_ended={is_ended}
+                    sell_info={sell_info}
                 />
             }
         </div>
@@ -38,11 +40,13 @@ InfoBox.propTypes = {
     contract_info: PropTypes.object,
     digits_info  : PropTypes.object,
     is_trade_page: PropTypes.bool,
+    sell_info    : PropTypes.object,
 };
 
 export default connect(
     ({ modules }) => ({
         contract_info: modules.contract.contract_info,
         digits_info  : modules.contract.digits_info,
+        sell_info    : modules.contract.sell_info,
     })
 )(InfoBox);

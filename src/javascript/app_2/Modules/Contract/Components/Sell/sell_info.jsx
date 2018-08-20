@@ -9,7 +9,7 @@ const SellInfo = ({
     contract_info,
     sell_info,
 }) => (
-    <React.Fragment>
+    <div className='sell-info'>
         <div>
             <Localize
                 str='You have sold this contract at [_1]'
@@ -23,7 +23,7 @@ const SellInfo = ({
             />
         </div>
         <div>{localize('Your transaction reference number is [_1]', [sell_info.transaction_id])}</div>
-    </React.Fragment>
+    </div>
 );
 
 SellInfo.propTypes = {

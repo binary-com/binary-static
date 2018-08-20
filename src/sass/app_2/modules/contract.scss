@@ -110,6 +110,11 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                 fill: $COLOR_LIGHT_RED;
             }
         }
+        .sell-info {
+            margin-right: 20px;
+            text-align: center;
+            line-height: 1.2rem;
+        }
     }
     .general {
         display: flex;

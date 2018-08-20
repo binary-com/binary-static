@@ -102,11 +102,13 @@ export default class ContractStore extends BaseStore {
             };
         } else {
             this.forgetProposalOpenContract();
-            this.sell_info = {
-                sell_price    : response.sell.sold_for,
-                transaction_id: response.sell.transaction_id,
-            };
-            WS.proposalOpenContract(this.contract_id).then(this.updateProposal);
+            WS.proposalOpenContract(this.contract_id).then(action((proposal_response) => {
+                this.updateProposal(proposal_response);
+                this.sell_info = {
+                    sell_price    : response.sell.sold_for,
+                    transaction_id: response.sell.transaction_id,
+                };
+            }));
         }
     }
 
