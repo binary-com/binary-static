@@ -1,6 +1,7 @@
-import PropTypes               from 'prop-types';
-import React                   from 'react';
-import { withRouter }          from 'react-router';
+import classNames         from 'classnames';
+import PropTypes          from 'prop-types';
+import React              from 'react';
+import { withRouter }     from 'react-router';
 import {
     AccountInfo,
     LoginButton,
@@ -17,10 +18,11 @@ const Header = ({
     can_upgrade,
     currency,
     loginid,
+    is_app_ready,
     is_logged_in,
     onClickUpgrade,
 }) => (
-    <header className='header'>
+    <header className={classNames('header', { 'slide-down': is_app_ready })}>
         <div className='menu-items'>
             <div className='menu-left'>
                 <ToggleMenuDrawer />
@@ -52,7 +54,7 @@ Header.propTypes = {
     can_upgrade   : PropTypes.bool,
     currency      : PropTypes.string,
     loginid       : PropTypes.string,
-    is_dark_mode  : PropTypes.bool, // TODO: add dark theme handler
+    is_app_ready  : PropTypes.bool,
     is_logged_in  : PropTypes.bool,
     onClickUpgrade: PropTypes.func, // TODO: add click handler
 };
@@ -61,7 +63,7 @@ Header.propTypes = {
 // to prevent updates on <MenuLinks /> from being blocked
 export default withRouter(connect(
     ({ ui, client }) => ({
-        is_dark_mode: ui.is_dark_mode_on,
+        is_app_ready: ui.is_app_ready,
         balance     : client.balance,
         can_upgrade : client.can_upgrade,
         currency    : client.currency,

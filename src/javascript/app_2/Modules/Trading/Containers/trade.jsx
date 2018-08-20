@@ -37,7 +37,10 @@ class Trade extends React.Component {
                 { contract_id ?
                     <ContractDetails contract_id={contract_id} onClickNewTrade={this.props.onClickNewTrade} />
                     :
-                    <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
+                    <FormLayout 
+                        is_mobile={this.props.is_mobile} 
+                        is_trade_enabled={this.props.is_trade_enabled} 
+                    />
                 }
             </div>
         );

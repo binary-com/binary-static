@@ -8,6 +8,7 @@ const ThemeWrapper = ({ children, is_dark_theme }) => {
     const theme_wrapper_class = classNames('theme-wrapper', {
         dark: is_dark_theme,
     });
+    document.getElementsByTagName('body')[0].classList[is_dark_theme ? 'add':'remove']('dark');
     return (
         <div id='theme_wrapper' className={theme_wrapper_class}>
             {children}

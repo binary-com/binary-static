@@ -2,6 +2,7 @@ import {
     action,
     computed,
     observable,
+    reaction,
     autorun }          from 'mobx';
 import BaseStore       from './base_store';
 import {
@@ -28,6 +29,8 @@ export default class UIStore extends BaseStore {
 
     @observable screen_width = window.innerWidth;
 
+    @observable is_app_ready = false;
+
     constructor() {
         const local_storage_properties = [
             'is_chart_asset_info_visible',
@@ -41,7 +44,20 @@ export default class UIStore extends BaseStore {
 
         super({ local_storage_properties });
         window.addEventListener('resize', this.handleResize);
-        autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark'));
+        autorun(() => {
+            document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark');
+            localStorage.setItem('is_dark_mode_on', this.is_dark_mode_on);
+        });
+        reaction(
+            () => this.is_app_ready,
+            () => {
+                if (this.is_app_ready) {
+                    setTimeout(() => {
+                        document.getElementById('binary_loader').remove();
+                    }, 250);
+                }
+            }
+        );
     }
 
     @action.bound

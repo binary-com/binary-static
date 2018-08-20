@@ -256,6 +256,7 @@ export default class TradeStore extends BaseStore {
         }
 
         this.is_purchase_enabled = true;
+        this.root_store.ui.is_app_ready = true;
     }
 
     @action.bound

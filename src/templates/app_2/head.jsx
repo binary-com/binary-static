@@ -45,12 +45,8 @@ const Head = () => (
                 ))
         }
 
-        { it.css_files.map((css_file, inx) => (
-            <link key={inx} rel='stylesheet' href={css_file} />
-        ))}
-        { it.js_files.map((js_file, inx) => (
-            <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())} />
-        ))}
+        <link rel='stylesheet' href={`${it.root_url}css/loader.min.css`} />
+        <script type='text/javascript' src={`${it.root_url}js/landing_pages/loader.js`} async />
     </head>
 );
 

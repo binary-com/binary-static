@@ -15,7 +15,7 @@ module.exports = {
             {
                 expand: true,
                 cwd   : global.dist + '/css',
-                src   : ['app.css', 'static.css', 'app_2.css'],
+                src   : ['app.css', 'static.css', 'app_2.css', 'loader.css'],
                 dest  : global.dist + '/css',
                 ext   : '.min.css',
             },

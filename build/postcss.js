@@ -10,6 +10,7 @@ module.exports = {
             global.dist + '/css/app.css',
             global.dist + '/css/static.css',
             global.dist + '/css/app_2.css',
+            global.dist + '/css/loader.css',
         ]
     }
 };
