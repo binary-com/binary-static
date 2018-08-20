@@ -283,6 +283,8 @@ const Header = (() => {
             };
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
+            const checkCashierStatus = (string) =>
+                status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
 
             const messages = {
                 authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',                                      'user/authenticate'),
@@ -299,11 +301,12 @@ const Header = (() => {
                 tnc                  : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',                                  'user/tnc_approvalws'),
                 unwelcome            : () => buildMessage('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                    'contact'),
                 withdrawal_locked    : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
+                mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
             };
 
             const validations = {
                 authenticate         : () => +get_account_status.prompt_client_to_authenticate,
-                cashier_locked       : () => /^cashier_locked$/.test(status),
+                cashier_locked       : () => checkCashierStatus('cashier_locked'),
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => /document_needs_action/.test(status),
                 document_review      : () => /document_under_review/.test(status),
@@ -315,7 +318,8 @@ const Header = (() => {
                 tax                  : () => Client.shouldCompleteTax(),
                 tnc                  : () => Client.shouldAcceptTnc(),
                 unwelcome            : () => /unwelcome/.test(status),
-                withdrawal_locked    : () => /^withdrawal_locked$/.test(status),
+                withdrawal_locked    : () => checkCashierStatus('withdrawal_locked'),
+                mt5_withdrawal_locked: () => checkCashierStatus('mt5_withdrawal_locked'),
             };
 
             // real account checks in order
@@ -332,6 +336,7 @@ const Header = (() => {
                 'authenticate',
                 'cashier_locked',
                 'withdrawal_locked',
+                'mt5_withdrawal_locked',
                 'unwelcome',
             ];
 
