@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-20 06:41\n"
+"PO-Revision-Date: 2018-08-14 02:11\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -2022,9 +2022,6 @@ msgstr "Diagramm"
 msgid "Chart is not available for this underlying."
 msgstr "Für diesen Basiswert gibt es kein Diagramm."
 
-msgid "Charting Platforms"
-msgstr "Charting-Plattform"
-
 msgid "Charting for this underlying is delayed"
 msgstr "Die grafische Darstellung für diesen Basiswert ist verzögert"
 
@@ -2364,9 +2361,6 @@ msgstr "Beschwerden und Streitfälle"
 msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
 msgstr "Vervollständigen Sie die <a href=\"%1\">Finanzielle Bewertung</a>."
 
-msgid "Complete your <a href=\"%1\">Tax Information</a>."
-msgstr "Geben Sie Ihre <a href=\"%1\">Steuerinformationen</a> an."
-
 msgid "Compliance"
 msgstr "Compliance"
 
@@ -2618,9 +2612,6 @@ msgstr "Neues Konto einrichten"
 
 msgid "Create New Token"
 msgstr "Neuen Token erstellen"
-
-msgid "Create New Virtual-money Account"
-msgstr "Neues virtuelles Echtgeldkonto erstellen"
 
 msgid "Create account with Google"
 msgstr "Konto mit Google erstellen"
@@ -4516,6 +4507,9 @@ msgstr "Wenn Sie ein Geschäftspartner von %1 sind, müssen Sie die Allgemeinen 
 msgid "If you are an individual, you are over 18 years old and you have full capacity to enter into this Agreement;"
 msgstr "Sofern Sie eine Einzelperson sind, Sie über 18 Jahre alt sind und Sie die volle Kapazität besitzen in diese Vereinbarung einzuwilligen;"
 
+msgid "If you are categorised as a Professional Client or an Eligible Counterparty;"
+msgstr "Wenn Sie als ein professioneller Kunde oder als geeignete Gegenpartei kategorisiert werden;"
+
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr "Wenn Sie einen Selbstausschluss erwägen, können Sie sich bei GAMSTOP registrieren."
 
@@ -4579,8 +4573,8 @@ msgstr "Wenn Sie mehr als eine offene Position im selben Markt eingegangen sind,
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Wenn Sie die von uns gesuchten Fähigkeiten aufweisen, werden Sie ein geschätztes Mitglied eines hochkompetenten Frontend-Entwicklungsteams werden, dass sich engagiert, um unser Binäres Optionen Handelssystem in neue Sphären zu heben."
 
-msgid "If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy."
-msgstr ""
+msgid "If you incur a negative balance through your trading activities, you should inform the Company, who in return will evaluate the inquiry and at its discretion may credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy. Such decisions may be based on our local regulatory obligations and may entail subsequent closing of your Account."
+msgstr "Wenn Sie durch Ihre Handelsaktivitäten einen negativen Kontostand haben, sollten Sie das Unternehmen davon informieren. Das Unternehmen wird im Gegenzug Ihre Nachfrage evaluieren und kann Ihnen nach eigenem Ermessen, den Betrag des negativen Kontostandes gutschreiben, vorausgesetzt, dass eine solche Lastschrift auf Grund einer normalen Handelsaktivität, die dieser Richtlinie gefolgt ist, entstanden ist. Solche Entscheidungen basieren auf unseren regionalen regulatorischen Verpflichtungen, und können zur Folge haben, dass Ihr Konto geschlossen wird."
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Wenn Sie Positionen über Nacht offnen halten, wird eine Zinsanpassung auf Ihr Handelskonto als Hinweis auf die Kosten, die erforderlich sind, um Ihre Position offen zu halten, erfolgen."
@@ -5032,8 +5026,8 @@ msgstr "Ungültiger Betrag, das Maximum ist"
 msgid "Invalid amount, minimum is"
 msgstr "Ungültiger Betrag, das Minimum ist"
 
-msgid "Invalid document format."
-msgstr "Ungültiges Dokumentformat."
+msgid "Invalid document format: \"%1\""
+msgstr "Ungültiges Dokumentformat: \"%1\""
 
 msgid "Invalid email address."
 msgstr "Ungültige E-Mail Adresse."
@@ -7088,7 +7082,7 @@ msgid "Our trading screen is simple to use:"
 msgstr "Unser Handelsbildschirm ist einfach zu benützen:"
 
 msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "Unser auf Umsatz basierender Provisionsplan hängt von der Zahlungswahrscheinlichkeit für jeden Kontrakt ab. Kontrakte mit höheren Renditen für den Kunden haben niedrigere Provisionen für den Partner."
+msgstr "Unser auf Umsatz basierender Provisionsplan hängt von der Auszahlungswahrscheinlichkeit für jeden Kontrakt ab. Kontrakte mit höheren Renditen für den Kunden haben niedrigere Provisionen für den Partner."
 
 msgid "Our website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and their advertisements may submit cookies to your web browser which is beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites because their practices may differ from ours."
 msgstr "Unsere Website enthält Links zu anderen Websites und kann Banner- oder Bildwerbungen von Websites Dritter enthalten. Diese Websites und deren Anzeigen können auf Ihrem Webbrowser Cookies hinterlegen, was nicht unserer Kontrolle unterliegt. Wir sind für die Datenschutzrichtlinien oder den Inhalt solcher Websites nicht verantwortlich. Wir raten Ihnen, die Datenschutzrichtlinien dieser Websites durchzulesen, da sie sich von unseren unterscheiden könnten."
@@ -8302,9 +8296,6 @@ msgstr "Sicherheit und Datenschutz"
 msgid "Security testing opportunities"
 msgstr "Sicherheitsprüfungs-Möglichkeiten"
 
-msgid "Select <a href=\"%1\">Citizenship</a>."
-msgstr "<a href=\"%1\">Staatsbürgerschaft</a> auswählen."
-
 msgid "Select <strong>Accept cookies</strong>."
 msgstr "Wählen Sie <strong>Cookies akzeptieren</strong> aus."
 
@@ -8980,9 +8971,6 @@ msgstr "Do"
 msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
 msgstr "Vielen Dank für den Abschluss der finanziellen Bewertung. Jetzt können Sie auf MetaTrader 5 Guthaben hinterlegen und Forex mit echtem Geld handeln."
 
-msgid "Thank you for completing your Personal Details. You can now deposit funds and trade Forex with real money on MetaTrader 5."
-msgstr "Vielen Dank für die Angabe Ihrer persönlichen Daten. Jetzt können Sie auf MetaTrader 5 Guthaben hinterlegen und Forex mit echtem Geld handeln."
-
 msgid "Thank you for signing up! Please check your email to complete the registration process."
 msgstr "Vielen Dank, dass Sie sich angemeldet haben! Bitte überprüfen Sie Ihre E-Mail, um den Anmeldeprozess abzuschließen."
 
@@ -9624,6 +9612,9 @@ msgstr "Die Bereitstellung der Margin-Handelsdienstleistungen, wie in dieser Ver
 
 msgid "The provision of the trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sub-licensable, terminable licence from the third-party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that when providing trading services, described in this Agreement to you, we may decide to change our third–party system provider/licensor and use a different Trading Platform, other than the MT5 Trading Platform. Hence, in such cases we may decide to use an entirely new third–party system provider/licensor (hereinafter referred to as the “new Trading Platform”) or to introduce an additional third–party system provider/licensor (hereinafter referred to as the “additional Trading Platform”)."
 msgstr "Die Bereitstellung von Handelsdienstleistungen, wie in dieser Vereinbarung beschrieben, verwendet ein System von Drittanbietern über eine nicht-exklusive, nicht-übertragbare, nicht-unterlizierbare, kündbare Lizenz von einem Drittanbieter-System bzw. eines Lizenzgebers (die MT5 Handelsplattform). Sie erkennen an, dass wir uns dazu entscheiden können, unser Drittanbieter-System bzw. unseren Lizenzgeber zu ändern und eine andere Handelsplattform als die MT5 Handelsplattform verwenden können, wenn wir Handelsdienstleistungen, wie sie Ihnen in dieser Vereinbarung beschrieben sind, anbieten. Daher können wir uns in solchen Fällen dazu entscheiden, ein ganz neues Drittanbieter-System bzw. neuen Lizenzgeber (nachfolgend als die 'neue Handelsplattform' bezeichnet) zu verwenden, oder ein zusätzliches Drittanbieter-System bzw. einen zusätzlichen Lizenzgeber (nachfolgend als 'zusätzliche Handelsplattform bezeichnet), einzuführen."
+
+msgid "The provisions of the Negative Balance protection do not apply:"
+msgstr "Die Bestimmungen der Negativ Saldo-Versicherung gelten nicht:"
 
 msgid "The requested transfer would reduce your Account balance to less than the Margin required for your Open Positions;"
 msgstr "Die angeforderte Überweisung würde Ihren Kontostand auf eine weniger als für Ihre offenen Positionen erforderliche Marge reduzieren;"
@@ -10304,7 +10295,7 @@ msgid "Trading in Binary Options is speculative and involves a high degree of ri
 msgstr "Der Handel mit Binären Optionen ist spekulativ und beinhaltet einen hohen Grad an Risiken, der dazu führen kann, dass Sie Ihre gesamte Investition verlieren können. Daher ist der Handel mit Binären Optionen nur für Menschen geeignet, die die mit solchen Transaktionen verbundenen wirschaftlichen, rechtlichen und sonstigen Risiken erkennen und sie eingehen möchten. Sie müssen sich vor dem Trading davon überzeugen, ob der Handel von Binären Optionen im Licht Ihrer Investitionsumstände und Ihrer Haltung zu den Risiken für Sie geeignet ist. Sie sollten sich nicht mit dem spekulativen Handel mit Binären Optionen beschäftigen, es sei denn, Sie verstehen die Grundaspekte solcher Geschäfte und ihre Risiken. Wenn Sie im Zweifel sind, ob der Handel mit Binären Optionen für Sie geeignet und tragbar ist, lassen Sie sich bitte von einem Anlageberater beraten. %1 bietet keine solche Beratung an. Es ist in Ihrer Verantwortung, bevor Sie bei %1 beantragen, sich an Binären Optionen zu beteiligen oder bevor Sie eine einzelne Order aufgeben, Ihre persönlichen Umstände und Investitionsmittel zu berücksichtigen, sich besonders vorsichtig zu verhalten und unabhängig Überlegungen anzustellen. Sofern Sie die Risiken, die mit dem Antrag auf Beteiligung an Binären Optionen bei %1 oder der Erteilung einer einzelnen Order verbunden sind, nicht verstehen, müssen Sie sich von einem unabhängigen Finanzberater Rat und Beratung einholen. Wenn Sie dann noch immer nicht die mit dem Handel von Binären Optionen verbundenen Risiken verstehen, sollten Sie überhaupt keine derartigen Geschäfte abschließen."
 
 msgid "Trading is unavailable at this time."
-msgstr "Der Handel ist zu diesem Zeitpunkt nicht verfügbar."
+msgstr ""
 
 msgid "Trading manual"
 msgstr "Trading manual"
@@ -12395,6 +12386,12 @@ msgstr "unter abnormalen Marktbedingungen oder außergewöhnlicher Markt-Bewegun
 msgid "in the case of Professional Clients;"
 msgstr "bei Professionellen Kunden;"
 
+msgid "in the case of a Force Majeure Event;"
+msgstr "im Falle eines Ereignisses höherer Gewalt;"
+
+msgid "in the case of a client breaching any of the terms of this Agreement which results in a Negative Balance."
+msgstr "im Fall, dass der Kunde Bestimmungen dieser Vereinbarung verletzt, die zu einem negativen Kontostand führen."
+
 msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
 msgstr "im Fall, dass der Kunde Bestimmungen dieser Vereinbarung verletzt, die zu einem negativen Kontostand führen."
 
@@ -12592,6 +12589,9 @@ msgstr "Wochen"
 
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
 msgstr "der Agent ein Individuum ist, er ein Alter von 18 Jahren oder mehr erreicht hat, und die volle Kapazität, um diese Vereinbarung einzugehen, besitzt;"
+
+msgid "where the Negative Balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
+msgstr "wo der Negativsaldo mit Funktionseinschränkungen und/oder Fehlfunktionen der MT5 Handelsplattform verbunden ist, oder daraus resultiert; und"
 
 msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
 msgstr "wo der Negativsaldo mit Funktionseinschränkungen und/oder Fehlfunktionen der MT5 Handelsplattform verbunden ist, oder daraus resultiert; und"
