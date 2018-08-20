@@ -1,15 +1,16 @@
-import React             from 'react';
 import PropTypes         from 'prop-types';
+import React             from 'react';
 import { DrawerItem,
          DrawerToggle }  from '../../Components/Elements/Drawer';
 import { IconLogout }    from '../../../Assets/Header/Drawer';
 import { IconTrade,
          IconPortfolio,
          IconStatement } from '../../../Assets/Header/NavBar';
+import routes            from '../../../Constants/routes';
 import { requestLogout } from '../../../Services';
+import { connect }       from '../../../Stores/connect';
 import Client            from '../../../../_common/base/client_base';
 import { localize }      from '../../../../_common/localize';
-import { connect }       from '../../../Stores/connect';
 
 const MenuDrawer = ({
     is_dark_mode,
@@ -24,31 +25,29 @@ const MenuDrawer = ({
 }) => (
     <div className='drawer-items-container'>
         <div className='list-items-container'>
-            {/* Hide menu items until pages are ready
-            <DrawerItem text={localize('Manage Password')} />
-            <DrawerItem text={localize('Useful Resources')}/>
-            <DrawerItem text={localize('Login History')}/>
-            <hr />
-            <DrawerItem text={localize('Settings')} link_to='/settings' />
-            */}
-            {is_mobile &&
+            { is_mobile &&
             <React.Fragment>
                 <DrawerItem
                     text={localize('Trade')}
                     icon={<IconTrade className='drawer-icon' />}
-                    link_to='/trade'
+                    link_to={routes.trade}
                 />
                 <DrawerItem
                     text={localize('Portfolio')}
                     icon={<IconPortfolio className='drawer-icon' />}
-                    link_to='/portfolio'
+                    link_to={routes.portfolio}
                 />
                 <DrawerItem
                     text={localize('Statement')}
                     icon={<IconStatement className='drawer-icon' />}
-                    link_to='/statement'
+                    link_to={routes.statement}
                 />
                 <hr />
+                <DrawerToggle
+                    text={localize('Dark Mode')}
+                    toggle={toggleDarkMode}
+                    to_toggle={is_dark_mode}
+                />
                 <DrawerToggle
                     text={localize('Purchase Confirmation')}
                     toggle={togglePurchaseConfirmation}
@@ -59,18 +58,9 @@ const MenuDrawer = ({
                     toggle={togglePurchaseLock}
                     to_toggle={is_purchase_locked}
                 />
-                <DrawerToggle
-                    text={localize('Dark Theme')}
-                    toggle={toggleDarkMode}
-                    to_toggle={is_dark_mode}
-                />
             </React.Fragment>}
-            {/* Same as above
-            <hr />
-            <DrawerItem text={localize('Contact Us')}/>
-            */}
         </div>
-        {Client.isLoggedIn() &&
+        { Client.isLoggedIn() &&
             <div className='drawer-footer'>
                 <DrawerItem
                     icon={<IconLogout className='drawer-icon'/>}
@@ -99,16 +89,16 @@ MenuDrawer.propTypes = {
     is_mobile                 : PropTypes.bool,
 };
 
-const menu_drawer_component = connect(({ ui }) => ({
-    is_dark_mode              : ui.is_dark_mode_on,
-    is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
-    is_purchase_confirmed     : ui.is_purchase_confirm_on,
-    is_purchase_locked        : ui.is_purchase_lock_on,
-    toggleDarkMode            : ui.toggleDarkMode,
-    togglePortfolioDrawer     : ui.togglePortfolioDrawer,
-    togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
-    togglePurchaseLock        : ui.togglePurchaseLock,
-    is_mobile                 : ui.is_mobile,
-}))(MenuDrawer);
-
-export { menu_drawer_component as MenuDrawer };
+export default connect(
+    ({ ui }) => ({
+        is_dark_mode              : ui.is_dark_mode_on,
+        is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
+        is_purchase_confirmed     : ui.is_purchase_confirm_on,
+        is_purchase_locked        : ui.is_purchase_lock_on,
+        toggleDarkMode            : ui.toggleDarkMode,
+        togglePortfolioDrawer     : ui.togglePortfolioDrawer,
+        togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
+        togglePurchaseLock        : ui.togglePurchaseLock,
+        is_mobile                 : ui.is_mobile,
+    })
+)(MenuDrawer);
