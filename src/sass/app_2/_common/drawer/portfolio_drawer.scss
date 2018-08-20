@@ -8,13 +8,15 @@ $header-height: 40px;
     top: $HEADER_HEIGHT;
     right: 0;
     transform: translateX(100%);
-    transition: transform 0.25s ease;
+    transition: opacity 0.4s linear;
     border-left: 1px solid $COLOR_GRAY;
     background-color: $COLOR_WHITE;
     box-sizing: border-box;
+    opacity: 0;
 
     &--open {
         transform: translateX(0);
+        opacity: 1;
     }
     &__header {
         height: $header-height;

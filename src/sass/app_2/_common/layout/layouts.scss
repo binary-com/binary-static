@@ -14,9 +14,16 @@
                 transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
             }
             .cq-chart-controls {
-                transition: max-width 0.25 ease;
                 will-change: max-width;
                 max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
+            }
+        }
+        .chart-container .ciq-chart {
+            .cq-top-ui-widgets {
+                transition: transform 0.25s ease;
+            }
+            .cq-chart-controls {
+                transition: max-width 0.25s ease;
             }
         }
         @media screen and (max-width: 768px) {
