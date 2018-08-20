@@ -7,9 +7,6 @@ import Button            from '../../../App/Components/Form/button.jsx';
 const EmptyStatementMessage = ({ has_selected_date }) => (
     <div className='statement-empty'>
         <IconStatement className='statement-empty__icon' />
-        <span className='statement-empty__title'>
-            {localize('No Statement')}
-        </span>
         <span className='statement-empty__text'>
             {
                 !has_selected_date ?
