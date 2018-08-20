@@ -51,8 +51,8 @@ export default class ContractStore extends BaseStore {
     onUnmount = () => {
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
-        // delay removal for animation transition
         this.smart_chart.setContractMode(false);
+        // delay removal for animation transition
         setTimeout(() => this.removeContractInfo(), 600);
     };
 
