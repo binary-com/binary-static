@@ -9,9 +9,14 @@ const FormLayout = ({
     is_trade_enabled,
 }) => (
     is_mobile ?
-        <ScreenSmall is_trade_enabled={is_trade_enabled} />
+        <ScreenSmall
+            is_trade_enabled={is_trade_enabled}
+        />
         :
-        <ScreenLarge is_contract_visible={is_contract_visible} is_trade_enabled={is_trade_enabled} />
+        <ScreenLarge
+            is_contract_visible={is_contract_visible}
+            is_trade_enabled={is_trade_enabled}
+        />
 );
 
 FormLayout.propTypes = {

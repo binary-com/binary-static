@@ -1,6 +1,6 @@
-import { CSSTransition } from 'react-transition-group';
 import PropTypes         from 'prop-types';
 import React             from 'react';
+import { CSSTransition } from 'react-transition-group';
 import ContractDetails   from './contract_details.jsx';
 import InfoBox           from '../Containers/info_box.jsx';
 import SmartChart        from '../../SmartChart';
@@ -26,7 +26,7 @@ const Contract = ({
                         <div className='chart-container notice-msg'>
                             { symbol &&
                                 <SmartChart
-                                    InfoBox={InfoBox}
+                                    InfoBox={<InfoBox />}
                                     symbol={symbol}
                                     {...chart_config}
                                 />

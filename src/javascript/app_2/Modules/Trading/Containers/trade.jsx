@@ -1,6 +1,6 @@
-import { CSSTransition }    from 'react-transition-group';
 import PropTypes            from 'prop-types';
 import React                from 'react';
+import { CSSTransition }    from 'react-transition-group';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form_layout.jsx';
 import ContractDetails      from '../../Contract/Containers/contract_details.jsx';

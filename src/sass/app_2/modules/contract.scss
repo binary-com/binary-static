@@ -107,12 +107,14 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 
 .info-box-container {
     position: absolute;
+    border: 1px solid $COLOR_GRAY;
+    border-radius: 4px;
     z-index: 10;
     top: 10px;
     right: 10px;
     transform: none;
     opacity: 1;
-    transition: transform 0.3s ease, opacity 0.3s linear;
+    transition: transform 0.4s ease, opacity 0.4s linear;
 
     &-enter {
         transform: translateY(calc(-100% - 20px));
@@ -124,11 +126,18 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
     }
     .info-box {
         padding: $CONTRACT_INFO_BOX_PADDING;
-        border: 1px solid $COLOR_GRAY;
-        border-radius: 4px;
         background: rgba(255, 255, 255, 0.9);
         font-weight: 300;
+        width: auto;
+        height: auto;
+        max-width: 600px;
+        max-height: 105px;
+        transition: max-height 0.4s ease, max-width 0.4s ease;
 
+        &.ended {
+            max-width: 270px;
+            max-height: 71px;
+        }
         .expired {
             display: flex;
             align-items: center;
@@ -293,16 +302,19 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             }
         }
     }
-    .info-box {
+    .info-box-container {
         border-color: $COLOR_BRANDBLUE_85;
-        background: rgba(42, 48, 82, 0.6);
 
-        .general .sell {
-            border-left-color: $COLOR_BRANDBLUE_85;
+        .info-box {
+            background: rgba(42, 48, 82, 0.6);
 
-            .btn:disabled {
-                background: $COLOR_BRANDBLUE_85;
-                color: $COLOR_BRANDBLUE_75 !important;
+            .general .sell {
+                border-left-color: $COLOR_BRANDBLUE_85;
+
+                .btn:disabled {
+                    background: $COLOR_BRANDBLUE_85;
+                    color: $COLOR_BRANDBLUE_75 !important;
+                }
             }
         }
     }

@@ -1,6 +1,7 @@
-import { CSSTransition }   from 'react-transition-group';
+import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
+import { CSSTransition }   from 'react-transition-group';
 import {
     InfoBoxDigit,
     InfoBoxExpired,
@@ -17,6 +18,9 @@ const InfoBox = ({
 }) => {
     const is_digit = isDigitContract(contract_info.contract_type);
     const is_ended = isEnded(contract_info);
+    const box_class = classNames('info-box', {
+        'ended': is_ended,
+    });
 
     let Contents = is_ended ? InfoBoxExpired : InfoBoxGeneral;
     if (is_digit && is_trade_page) { // we don't display digit info in Statement/Portfolio because of API shortages
@@ -26,19 +30,17 @@ const InfoBox = ({
     return (
         <CSSTransition
             in={is_contract_mode}
-            timeout={200}
+            timeout={400}
             classNames='info-box-container'
             unmountOnExit
         >
             <div className='info-box-container'>
-                <div className='info-box'>
-                    { contract_info.contract_type &&
-                        <Contents
-                            contract_info={contract_info}
-                            digits_info={digits_info}
-                            is_ended={is_ended}
-                        />
-                    }
+                <div className={box_class}>
+                    <Contents
+                        contract_info={contract_info}
+                        digits_info={digits_info}
+                        is_ended={is_ended}
+                    />
                 </div>
             </div>
         </CSSTransition>
