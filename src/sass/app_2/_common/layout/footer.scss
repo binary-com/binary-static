@@ -74,5 +74,8 @@ footer {
             top: 0;
             left: 0;
         }
+        .inline-icon {
+            @extend .inline-icon.active;
+        }
     }
 }
