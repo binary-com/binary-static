@@ -1,8 +1,8 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import Money               from '../money.jsx';
-import { getContractPath } from '../../Routes/helpers';
 import BinaryLink          from '../../Routes/binary_link.jsx';
+import { getContractPath } from '../../Routes/helpers';
 import RemainingTime       from '../../../Containers/remaining_time.jsx';
 import ContractTypeCell    from '../../../../Modules/Portfolio/Components/contract_type_cell.jsx';
 

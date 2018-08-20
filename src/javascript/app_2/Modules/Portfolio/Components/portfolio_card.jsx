@@ -1,9 +1,9 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
+import { NavLink }         from 'react-router-dom';
 import ContractLink        from '../../Contract/Components/contract_link.jsx';
 import Money               from '../../../App/Components/Elements/money.jsx';
 import { getContractPath } from '../../../App/Components/Routes/helpers';
-import RedirectOnClick     from '../../../App/Components/Routes/redirect_onclick.jsx';
 import RemainingTime       from '../../../App/Containers/remaining_time.jsx';
 
 const PortfolioCard = ({
@@ -17,7 +17,7 @@ const PortfolioCard = ({
     reference,
     status,
 }) => (
-    <RedirectOnClick className='portfolio-card card-list__card' path={getContractPath(id)}>
+    <NavLink className='portfolio-card card-list__card' activeClassName='active' to={getContractPath(id)}>
         <div className='portfolio-card__header'>
             <span className='portfolio-card__date'>
                 <RemainingTime end_time={expiry_time} />
@@ -46,7 +46,7 @@ const PortfolioCard = ({
                 </div>
             </div>
         </div>
-    </RedirectOnClick>
+    </NavLink>
 );
 
 PortfolioCard.propTypes = {
