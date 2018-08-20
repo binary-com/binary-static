@@ -196,7 +196,7 @@ const Purchase = (() => {
                     status = contract.status;
                     profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
-                    if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
+                    if (contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
                         TickDisplay.updateChart({ is_sold: true }, contract);
                     }
                     // force to sell the expired contract, in order to get the final status
