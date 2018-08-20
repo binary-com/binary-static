@@ -24,7 +24,7 @@ const getPropertyValue     = require('../../../_common/utility').getPropertyValu
  *
  * Usage:
  *
- * `socket.send(Price.proposal())` to send price proposal to sever
+ * `socket.send(Price.proposal())` to send price proposal to server
  * `Price.display()` to display the price details returned from server
  */
 const Price = (() => {
@@ -169,16 +169,6 @@ const Price = (() => {
 
         if (!position) {
             return;
-        }
-
-        // hide all containers except current one
-        if (position === 'middle') {
-            if ($('#price_container_top').is(':visible') || $('#price_container_bottom').is(':visible')) {
-                $('#price_container_top').fadeOut(0);
-                $('#price_container_bottom').fadeOut(0);
-            }
-        } else if ($('#price_container_middle').is(':visible')) {
-            $('#price_container_middle').fadeOut(0);
         }
 
         const container = CommonFunctions.getElementById(`price_container_${position}`);
@@ -355,7 +345,15 @@ const Price = (() => {
 
         processForgetProposalOpenContract();
         processForgetProposals().then(() => {
+            const position_is_visible = {
+                top   : false,
+                middle: false,
+                bottom: false,
+            };
+            let first_price_proposal = true;
             Object.keys(types || {}).forEach((type_of_contract) => {
+                const position = commonTrading.contractTypeDisplayMapping(type_of_contract);
+                position_is_visible[position] = true;
                 BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
                     if (response.error && response.error.code === 'AlreadySubscribed') {
                         BinarySocket.send({ forget_all: 'proposal' });
@@ -363,10 +361,25 @@ const Price = (() => {
                         response.echo_req.passthrough.form_id === form_id) {
                         Price.display(response, Contract.contractType()[Contract.form()]);
                     }
-                    commonTrading.hideOverlayContainer();
-                    commonTrading.hidePriceOverlay();
+                    if (first_price_proposal) {
+                        commonTrading.hideOverlayContainer();
+                        commonTrading.hidePriceOverlay();
+                        setPriceContainersVisibility(position_is_visible);
+                        first_price_proposal = false;
+                    }
                 } });
             });
+        });
+    };
+
+    const setPriceContainersVisibility = (position_is_visible) => {
+        Object.keys(position_is_visible).forEach(position => {
+            const container = CommonFunctions.getElementById(`price_container_${position}`);
+            if (position_is_visible[position]) {
+                $(container).fadeIn(0);
+            } else {
+                $(container).fadeOut(0);
+            }
         });
     };
 
