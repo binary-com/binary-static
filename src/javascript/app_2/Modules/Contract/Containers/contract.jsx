@@ -1,6 +1,6 @@
+import { CSSTransition } from 'react-transition-group';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { CSSTransition } from 'react-transition-group';
 import ContractDetails   from './contract_details.jsx';
 import InfoBox           from '../Containers/info_box.jsx';
 import SmartChart        from '../../SmartChart';
@@ -55,8 +55,8 @@ const Contract = ({
 
 Contract.propTypes = {
     chart_config: PropTypes.object,
-    is_mobile   : PropTypes.bool,
     has_error   : PropTypes.bool,
+    is_mobile   : PropTypes.bool,
     match       : PropTypes.object,
     symbol      : PropTypes.string,
 };
@@ -65,7 +65,7 @@ export default connect(
     ({ modules, ui }) => ({
         chart_config: modules.contract.chart_config,
         has_error   : modules.contract.has_error,
-        symbol      : modules.contract.contract_info.underlying,
         is_mobile   : ui.is_mobile,
+        symbol      : modules.contract.contract_info.underlying,
     })
 )(Contract);
