@@ -1,9 +1,9 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import Money               from '../money.jsx';
-import { getContractPath } from '../../../../App/Components/Routes/helpers';
-import RedirectOnClick     from '../../../../App/Components/Routes/redirect_onclick.jsx';
-import RemainingTime       from '../../../../App/Containers/remaining_time.jsx';
+import BinaryLink          from '../../Routes/binary_link.jsx';
+import { getContractPath } from '../../Routes/helpers';
+import RemainingTime       from '../../../Containers/remaining_time.jsx';
 import ContractTypeCell    from '../../../../Modules/Portfolio/Components/contract_type_cell.jsx';
 
 const PortfolioDrawerCard = ({
@@ -15,7 +15,7 @@ const PortfolioDrawerCard = ({
     type,
     underlying,
 }) => (
-    <RedirectOnClick className='portfolio-drawer-card' path={getContractPath(id)}>
+    <BinaryLink className='portfolio-drawer-card' to={getContractPath(id)}>
         <div className='portfolio-drawer-card__type'>
             <ContractTypeCell type={type} />
         </div>
@@ -26,7 +26,7 @@ const PortfolioDrawerCard = ({
         <span className='portfolio-drawer-card__remaining-time'>
             <RemainingTime end_time={expiry_time} />
         </span>
-    </RedirectOnClick>
+    </BinaryLink>
 );
 
 PortfolioDrawerCard.propTypes = {
