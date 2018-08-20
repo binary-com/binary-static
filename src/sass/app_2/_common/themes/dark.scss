@@ -252,6 +252,9 @@
                 border-color: $COLOR_BRANDBLUE_85;
             }
         }
+        .portfolio-card__indicative--price-stable:before {
+            background-image: url('../images/app_2/portfolio/ic_price_stable_dark.svg');
+        }
         .login-message-wrapper {
             .message a {
                 color: $COLOR_BRANDBLUE_40;
