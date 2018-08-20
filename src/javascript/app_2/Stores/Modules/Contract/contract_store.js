@@ -49,19 +49,15 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     onUnmount = () => {
-        this.smart_chart.removeBarriers();
-        this.smart_chart.removeMarkers();
-        this.smart_chart.setContractMode(false);
-        // delay removal for animation transition
-        setTimeout(() => this.removeContractInfo(), 600);
-    };
-
-    @action.bound
-    removeContractInfo = () => {
         this.forgetProposalOpenContract();
+
         this.contract_id   = null;
         this.contract_info = {};
         this.digits_info   = {};
+
+        this.smart_chart.removeBarriers();
+        this.smart_chart.removeMarkers();
+        this.smart_chart.setContractMode(false);
     };
 
     @action.bound

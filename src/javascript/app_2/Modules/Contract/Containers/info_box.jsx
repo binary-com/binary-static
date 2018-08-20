@@ -1,5 +1,5 @@
 import classNames          from 'classnames';
-import { CSSTransition }   from 'react-transition-group';
+// import { CSSTransition }   from 'react-transition-group';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import {
@@ -11,7 +11,7 @@ import { isDigitContract } from '../../../Stores/Modules/Contract/Helpers/digits
 import { isEnded }         from '../../../Stores/Modules/Contract/Helpers/logic';
 
 const InfoBox = ({
-    is_contract_mode,
+    // is_contract_mode,
     contract_info,
     digits_info,
     is_trade_page,
@@ -28,22 +28,23 @@ const InfoBox = ({
     }
 
     return (
-        <CSSTransition
-            in={is_contract_mode}
-            timeout={400}
-            classNames='info-box-container'
-            unmountOnExit
-        >
-            <div className='info-box-container'>
-                <div className={box_class}>
-                    <Contents
-                        contract_info={contract_info}
-                        digits_info={digits_info}
-                        is_ended={is_ended}
-                    />
-                </div>
+        // TODO: Resolve issue with undefined contract_info showing upon unmounting transition
+        // <CSSTransition
+        //     in={is_contract_mode}
+        //     timeout={400}
+        //     classNames='info-box-container'
+        //     unmountOnExit
+        // >
+        <div className='info-box-container'>
+            <div className={box_class}>
+                <Contents
+                    contract_info={contract_info}
+                    digits_info={digits_info}
+                    is_ended={is_ended}
+                />
             </div>
-        </CSSTransition>
+        </div>
+        // </CSSTransition>
     );
 };
 
@@ -56,8 +57,8 @@ InfoBox.propTypes = {
 
 export default connect(
     ({ modules }) => ({
-        is_contract_mode: modules.smart_chart.is_contract_mode,
         contract_info   : modules.contract.contract_info,
         digits_info     : modules.contract.digits_info,
+        is_contract_mode: modules.smart_chart.is_contract_mode,
     })
 )(InfoBox);
