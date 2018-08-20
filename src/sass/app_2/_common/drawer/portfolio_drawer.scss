@@ -58,11 +58,16 @@ $header-height: 40px;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
         border: 1px solid $COLOR_GRAY;
-        border-radius: 2px;
+        border-radius: 4px;
         cursor: pointer;
+        text-decoration: none;
 
-        &:hover {
+        &.active, &:hover {
             background: $COLOR_LIGHT_GRAY;
+        }
+        &.active {
+            cursor: default;
+            border-color: $COLOR_BLUE;
         }
         &:not(:last-child) {
             margin-bottom: 16px;
@@ -179,8 +184,11 @@ $header-height: 40px;
             &__remaining-time {
                 color: $COLOR_BRANDBLUE_40;
             }
-            &:hover {
+            &.active, &:hover {
                 background: $COLOR_BRANDBLUE_85;
+            }
+            &.active {
+                border-color: $COLOR_WHITE;
             }
             &__indicative {
                 &--no-resale {
