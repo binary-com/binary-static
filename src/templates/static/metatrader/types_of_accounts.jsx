@@ -70,23 +70,18 @@ const TypesOfAccounts = () => (
                 title={it.L('Synthetic Indices')}
                 text={it.L('The Synthetic Indices account allows you to trade CFDs on Synthetic Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7.')}
             />
-            {/* toEnableMAM: remove className */}
             <Box
-                className='invisible'
                 image='advanced'
                 title={it.L('MAM Advanced*')}
                 text={it.L('The MAM Advanced account can be assigned to a money manager who will trade on your behalf with more competitive spreads than the regular Advanced account. Other account specifications remain the same.')}
             />
-            {/* toEnableMAM: remove className */}
             <Box
-                className='invisible'
                 image='volatility_indices'
                 title={it.L('MAM Synthetic Indices*')}
                 text={it.L('The MAM Synthetic Indices account can be assigned to a money manager who will trade on your behalf with the same specifications as the regular Synthetic Indices account.')}
             />
 
-            {/* toEnableMAM: remove 'invisible' from className */}
-            <div className='gr-padding-10 gr-child invisible'>
+            <div className='gr-padding-10 gr-child'>
                 <a href={it.url_for('multiple-accounts-manager')}>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
             </div>
 
