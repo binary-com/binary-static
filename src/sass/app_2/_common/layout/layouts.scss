@@ -10,20 +10,38 @@
         &--show-portfolio-drawer {
             transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
 
-            .ciq-chart .cq-top-ui-widgets, .cq-chart-controls {
-                transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-            }
-            .cq-chart-controls {
-                will-change: max-width;
-                max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
+            .chart-container {
+                .ciq-chart .cq-top-ui-widgets, .cq-chart-controls {
+                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
+                }
+                .cq-chart-controls {
+                    will-change: max-width;
+                    max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
+                }
+                .cq-chart-control-left {
+                    .cq-chart-controls {
+                        transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH}) !important;
+                    }
+                }
             }
         }
-        .chart-container .ciq-chart {
-            .cq-top-ui-widgets {
-                transition: transform 0.25s ease;
+        .chart-container {
+            .cq-chart-control-left {
+                .cq-chart-controls {
+                    transform: translateX(0);
+                    transition: transform 0.25s ease;
+                }
+                .cq-top-ui-widgets {
+                    left: 90px;
+                }
             }
-            .cq-chart-controls {
-                transition: max-width 0.25s ease;
+            .ciq-chart {
+                .cq-top-ui-widgets {
+                    transition: transform 0.25s ease;
+                }
+                .cq-chart-controls {
+                    transition: max-width 0.25s ease;
+                }
             }
         }
         @media screen and (max-width: 768px) {
