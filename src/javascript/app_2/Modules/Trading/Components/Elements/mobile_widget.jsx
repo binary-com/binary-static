@@ -1,5 +1,6 @@
 import React            from 'react';
 import FullScreenDialog from './full_screen_dialog.jsx';
+import Purchase         from '../../Containers/purchase.jsx';
 import TradeParams      from '../../Containers/trade_params.jsx';
 
 class MobileWidget extends React.PureComponent {
@@ -37,6 +38,9 @@ class MobileWidget extends React.PureComponent {
                     onClose={this.handleDialogClose}
                 >
                     <TradeParams is_nativepicker />
+                    <div className='purchase-wrapper'>
+                        <Purchase />
+                    </div>
                 </FullScreenDialog>
             </React.Fragment>
         );
