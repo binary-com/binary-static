@@ -283,8 +283,7 @@ const Header = (() => {
             };
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
-            const checkCashierStatus = (string) =>
-                status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
+            const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
 
             const messages = {
                 authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',                                      'user/authenticate'),
@@ -306,20 +305,20 @@ const Header = (() => {
 
             const validations = {
                 authenticate         : () => +get_account_status.prompt_client_to_authenticate,
-                cashier_locked       : () => checkCashierStatus('cashier_locked'),
+                cashier_locked       : () => hasStatus('cashier_locked'),
                 currency             : () => !Client.get('currency'),
-                document_needs_action: () => /document_needs_action/.test(status),
-                document_review      : () => /document_under_review/.test(status),
+                document_needs_action: () => hasStatus('document_needs_action'),
+                document_review      : () => hasStatus('document_under_review'),
                 excluded_until       : () => Client.get('excluded_until'),
-                financial_limit      : () => /ukrts_max_turnover_limit_not_set/.test(status),
+                financial_limit      : () => hasStatus('ukrts_max_turnover_limit_not_set'),
                 required_fields      : () => Client.isAccountOfType('financial') && hasMissingRequiredField(),
                 residence            : () => !Client.get('residence'),
                 risk                 : () => riskAssessment(),
                 tax                  : () => Client.shouldCompleteTax(),
                 tnc                  : () => Client.shouldAcceptTnc(),
-                unwelcome            : () => /unwelcome/.test(status),
-                withdrawal_locked    : () => checkCashierStatus('withdrawal_locked'),
-                mt5_withdrawal_locked: () => checkCashierStatus('mt5_withdrawal_locked'),
+                unwelcome            : () => hasStatus('unwelcome'),
+                withdrawal_locked    : () => hasStatus('withdrawal_locked'),
+                mt5_withdrawal_locked: () => hasStatus('mt5_withdrawal_locked'),
             };
 
             // real account checks in order
