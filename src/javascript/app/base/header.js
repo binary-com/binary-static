@@ -303,7 +303,7 @@ const Header = (() => {
 
             const validations = {
                 authenticate         : () => +get_account_status.prompt_client_to_authenticate,
-                cashier_locked       : () => /cashier_locked/.test(status),
+                cashier_locked       : () => /^cashier_locked$/.test(status),
                 currency             : () => !Client.get('currency'),
                 document_needs_action: () => /document_needs_action/.test(status),
                 document_review      : () => /document_under_review/.test(status),
@@ -315,7 +315,7 @@ const Header = (() => {
                 tax                  : () => Client.shouldCompleteTax(),
                 tnc                  : () => Client.shouldAcceptTnc(),
                 unwelcome            : () => /unwelcome/.test(status),
-                withdrawal_locked    : () => /withdrawal_locked/.test(status),
+                withdrawal_locked    : () => /^withdrawal_locked$/.test(status),
             };
 
             // real account checks in order
