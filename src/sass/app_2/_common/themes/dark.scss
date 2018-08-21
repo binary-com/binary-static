@@ -158,9 +158,9 @@ body.dark, .theme-wrapper.dark {
 
                 .table__head, .table__foot {
                     border-color: $COLOR_BRANDBLUE_85;
+                    background-color: $COLOR_BRANDBLUE_95;
 
                     .table__row {
-                        background-color: $COLOR_BRANDBLUE_95;
                         border-color: $COLOR_BRANDBLUE_85;
                     }
                 }
@@ -241,6 +241,35 @@ body.dark, .theme-wrapper.dark {
                         }
                     }
                 }
+            }
+        }
+        .card-list__card {
+            background-color: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+        }
+        .statement, .portfolio {
+            &-card__header {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+        }
+        // TODO: refactor to inline SVG and change colors with CSS
+        .portfolio-card {
+            &__purchase:before {
+                background-image: url('../images/app_2/portfolio/ic_purchase_dark.svg');
+            }
+            &__payout:before {
+                background-image: url('../images/app_2/statement/ic_payout_dark.svg');
+            }
+            &__indicative--price-stable:before {
+                background-image: url('../images/app_2/portfolio/ic_price_stable_dark.svg');
+            }
+        }
+        .statement-card {
+            &__payout:before {
+                background-image: url('../images/app_2/statement/ic_payout_dark.svg');
+            }
+            &__balance:before {
+                background-image: url('../images/app_2/statement/ic_wallet_dark.svg');
             }
         }
         .login-message-wrapper {
@@ -338,6 +367,9 @@ body.dark, .theme-wrapper.dark {
         &.disabled {
             @include colorIcon($COLOR_BRANDBLUE_75, none);
         }
+    }
+    .barspinner {
+        @extend .barspinner.white;
     }
     .acc-switcher-header {
         border-color: $COLOR_BRANDBLUE_85;

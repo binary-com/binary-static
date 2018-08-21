@@ -1,9 +1,9 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
+import { NavLink }         from 'react-router-dom';
 import ContractLink        from '../../Contract/Components/contract_link.jsx';
 import { getContractPath } from '../../../App/Components/Routes/helpers';
-import RedirectOnClick     from '../../../App/Components/Routes/redirect_onclick.jsx';
 
 const StatementCard = ({
     action,
@@ -16,7 +16,7 @@ const StatementCard = ({
     payout,
     refid,
 }) => (
-    <RedirectOnClick className={classNames('statement-card', className)} path={getContractPath(id)}>
+    <NavLink className={classNames('statement-card', className)} activeClassName='active' to={getContractPath(id)}>
         <div className='statement-card__header'>
             <span className='statement-card__date'>{date}</span>
             <span className='statement-card__refid'>
@@ -43,7 +43,7 @@ const StatementCard = ({
                 </div>
             </div>
         </div>
-    </RedirectOnClick>
+    </NavLink>
 );
 
 StatementCard.propTypes = {
