@@ -2,7 +2,7 @@ import {
     action,
     computed,
     observable }                   from 'mobx';
-import { formatPortfolioResponse } from './Helpers/format_response';
+import { formatPortfolioPosition } from './Helpers/format_response';
 import BaseStore                   from '../../base_store';
 import { WS }                      from '../../../Services';
 
@@ -36,7 +36,9 @@ export default class PortfolioStore extends BaseStore {
         }
         this.error = '';
         if (response.portfolio.contracts) {
-            this.data = formatPortfolioResponse(response.portfolio.contracts);
+            this.data = response.portfolio.contracts
+                .map(pos => formatPortfolioPosition(pos))
+                .sort((pos1, pos2) => pos2.reference - pos1.reference); // new contracts first
         }
     };
 
