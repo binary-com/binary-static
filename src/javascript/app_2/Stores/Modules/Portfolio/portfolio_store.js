@@ -48,8 +48,12 @@ export default class PortfolioStore extends BaseStore {
             this.error = response.error.message;
         }
         const { contract_id } = response.transaction;
+        if (!contract_id) return;
+
         WS.portfolio().then((res) => {
-            // TODO: find position with matching contract_id, append to data
+            const new_pos = res.portfolio.contracts.find(pos => +pos.contract_id === +contract_id);
+            if (!new_pos) return;
+            this.pushNewPosition(new_pos);
         });
         // subscribe to new contracts:
         WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
@@ -95,6 +99,11 @@ export default class PortfolioStore extends BaseStore {
                 portfolio_position.status = 'price-stable';
             }
         }
+    }
+
+    @action.bound
+    pushNewPosition(new_pos) {
+        this.data.unshift(formatPortfolioPosition(new_pos));
     }
 
     @action.bound
