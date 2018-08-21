@@ -45,7 +45,7 @@ const Duration = ({
 }) => {
     const moment_now = moment(server_time);
     if (!now_date || moment_now.date() !== now_date.date()) {
-        const moment_today = moment_now.clone().set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+        const moment_today = moment_now.clone().startOf('day');
 
         now_date          = moment_now.clone();
         min_date_duration = moment_today.clone().add(1, 'd');
