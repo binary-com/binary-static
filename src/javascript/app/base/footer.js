@@ -10,7 +10,7 @@ const Footer = (() => {
             const show_warning = (Client.isLoggedIn() ?
                 (/maltainvest/.test(State.getResponse('authorize.landing_company_name'))
                     || Client.hasAccountType('financial'))
-                    || /financial/.test(Client.getBasicUpgradeInfo().can_upgrade_to)
+                    || /financial/.test(Client.getBasicUpgradeInfo().type)
                 :
                 Client.get('is_eu')
             );
