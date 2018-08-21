@@ -282,8 +282,7 @@ body.dark, .theme-wrapper.dark {
             }
         }
         .chart-container {
-            cq-context { // stylelint-disable-line selector-type-no-unknown
-
+            .cq-context {
                 div.cq-chart-controls {
                     border: none;
                     border-right: 1px solid $COLOR_BRANDBLUE_85;
@@ -356,6 +355,10 @@ body.dark, .theme-wrapper.dark {
                 stroke: $COLOR_WHITE;
             }
         }
+    }
+    // tooltip
+    span.tooltip i.question:after {
+        content: url('../images/app_2/common/tooltip/ic_tooltip_question_dark.svg ');
     }
     // common inline icons
     .inline-icon {

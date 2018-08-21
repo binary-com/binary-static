@@ -57,6 +57,7 @@ class Chart extends React.Component {
                 chartType={this.state.chart_type}
                 endEpoch={this.props.end_epoch}
                 granularity={this.state.granularity}
+                id={this.props.chart_id}
                 isMobile={this.props.is_mobile}
                 requestAPI={this.props.wsSendRequest}
                 requestForget={this.props.wsForget}
@@ -80,6 +81,7 @@ class Chart extends React.Component {
 
 Chart.propTypes = {
     barriers_array  : PropTypes.array,
+    chart_id        : PropTypes.number,
     chart_type      : PropTypes.string,
     end_epoch       : PropTypes.number,
     granularity     : PropTypes.number,
