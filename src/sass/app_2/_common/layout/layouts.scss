@@ -16,16 +16,20 @@
                         transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
                     }
                     .cq-top-ui-widgets .info-box {
-                        transform: translateX(calc(-#{$PORTFOLIO_DRAWER_WIDTH} - 90px)) !important;
+                        transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
                     }
                 }
                 .cq-chart-controls {
                     will-change: max-width;
                     max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
+                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
                 }
                 .cq-chart-control-left {
                     .cq-chart-controls {
                         transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH}) !important;
+                    }
+                    .info-box {
+                        transform: translateX(calc(-#{$PORTFOLIO_DRAWER_WIDTH} - 90px)) !important;
                     }
                 }
             }
@@ -40,7 +44,6 @@
                     left: 90px;
 
                     .info-box {
-                        transition: transform 0.25s ease;
                         transform: translateX(-90px);
                     }
                 }
@@ -48,9 +51,14 @@
             .ciq-chart {
                 .cq-top-ui-widgets {
                     transition: transform 0.25s ease;
+
+                    .info-box {
+                        transition: transform 0.25s ease;
+                    }
                 }
                 .cq-chart-controls {
-                    transition: max-width 0.25s ease;
+                    transition: max-width 0.25s ease, transform 0.25s ease;
+
                 }
             }
         }
