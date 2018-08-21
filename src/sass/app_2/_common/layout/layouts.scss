@@ -33,6 +33,12 @@
                     }
                 }
             }
+            .portfolio, .statement {
+                &.container {
+                    max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
+                    transform: translateX(calc(#{$PORTFOLIO_DRAWER_WIDTH} / 2));
+                }
+            }
         }
         .chart-container {
             .cq-chart-control-left {
@@ -60,6 +66,11 @@
                     transition: max-width 0.25s ease, transform 0.25s ease;
 
                 }
+            }
+        }
+        .portfolio, .statement {
+            &.container {
+                transition: transform 0.25s ease, max-width 0.12s ease;
             }
         }
         @media screen and (max-width: 768px) {
