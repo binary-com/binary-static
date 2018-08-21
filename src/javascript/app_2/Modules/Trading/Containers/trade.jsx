@@ -27,6 +27,7 @@ class Trade extends React.Component {
                 <div className='chart-container notice-msg'>
                     { this.props.symbol &&
                         <SmartChart
+                            chart_id={1}
                             InfoBox={InfoBoxComponent}
                             onSymbolChange={this.props.onSymbolChange}
                             symbol={this.props.symbol}
