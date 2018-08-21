@@ -31,9 +31,9 @@ class PortfolioDrawer extends React.Component {
             body_content = <EmptyPortfolioMessage />;
         }
         else {
-            body_content = data.map((portfolio_position, id) => (
+            body_content = data.map((portfolio_position) => (
                 <PortfolioDrawerCard
-                    key={id}
+                    key={portfolio_position.id}
                     currency={currency}
                     {...portfolio_position}
                 />
