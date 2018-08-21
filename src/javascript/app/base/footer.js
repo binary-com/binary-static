@@ -7,7 +7,13 @@ const Footer = (() => {
         BinarySocket.wait('website_status', 'authorize').then(() => {
             const $footer      = $('#footer-last');
             const $cfd_warning = $footer.find('.eu-only');
-            const show_warning = Client.get('is_eu') || /maltainvest/.test(State.getResponse('authorize.landing_company_name'));
+            const show_warning = (Client.isLoggedIn() ?
+                (/maltainvest/.test(State.getResponse('authorize.landing_company_name'))
+                    || /financial/.test(Client.getBasicUpgradeInfo().can_upgrade_to)
+                    || Client.hasAccountType('financial'))
+                :
+                Client.get('is_eu')
+            );
             if (show_warning) {
                 $footer.find('p').addClass('font-n');
                 $cfd_warning.setVisibility(1);
