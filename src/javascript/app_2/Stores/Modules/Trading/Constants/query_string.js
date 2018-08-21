@@ -15,3 +15,22 @@ export const allowed_query_string_variables = [
     'start_date',
     'symbol',
 ];
+
+export const non_proposal_query_string_variable = [
+    'expiry_type',
+    'contract_start_type',
+];
+
+export const proposal_properties_alternative_names = {
+    barrier    : is_digit => is_digit ? 'last_digit' : 'barrier_1',
+    barrier2   : 'barrier_2',
+    date_expiry: 'expiry_date',
+    date_start : 'start_date',
+};
+
+export const removable_proposal_properties = [
+    'proposal',
+    'subscribe',
+    'passthrough',
+    'req_id',
+];
