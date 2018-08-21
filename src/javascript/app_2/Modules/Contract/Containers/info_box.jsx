@@ -1,5 +1,6 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
+import ContractError       from '../Components/contract_error.jsx';
 import {
     InfoBoxDigit,
     InfoBoxExpired,
@@ -12,6 +13,7 @@ const InfoBox = ({
     contract_info,
     digits_info,
     is_trade_page,
+    removeError,
     sell_info,
 }) => {
     const is_digit = isDigitContract(contract_info.contract_type);
@@ -23,15 +25,21 @@ const InfoBox = ({
     }
 
     return (
-        <div className='info-box'>
-            { contract_info.contract_type &&
-                <Contents
-                    contract_info={contract_info}
-                    digits_info={digits_info}
-                    is_ended={is_ended}
-                    sell_info={sell_info}
-                />
-            }
+        <div className='info-box-container'>
+            <div className='info-box'>
+                { contract_info.contract_type &&
+                    <Contents
+                        contract_info={contract_info}
+                        digits_info={digits_info}
+                        is_ended={is_ended}
+                        sell_info={sell_info}
+                    />
+                }
+            </div>
+            <ContractError
+                message={sell_info.error_message}
+                onClickClose={removeError}
+            />
         </div>
     );
 };
@@ -40,6 +48,7 @@ InfoBox.propTypes = {
     contract_info: PropTypes.object,
     digits_info  : PropTypes.object,
     is_trade_page: PropTypes.bool,
+    removeError  : PropTypes.func,
     sell_info    : PropTypes.object,
 };
 
@@ -47,6 +56,7 @@ export default connect(
     ({ modules }) => ({
         contract_info: modules.contract.contract_info,
         digits_info  : modules.contract.digits_info,
+        removeError  : modules.contract.removeSellError,
         sell_info    : modules.contract.sell_info,
     })
 )(InfoBox);

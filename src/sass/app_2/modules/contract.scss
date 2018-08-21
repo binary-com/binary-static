@@ -67,14 +67,38 @@
 
 $CONTRACT_INFO_BOX_PADDING: 15px;
 
-.info-box {
+.info-box-container {
     position: absolute;
     z-index: 10;
     top: 10px;
     right: 10px;
+
+    .message {
+        margin-top: 5px;
+        border: 1px solid $COLOR_LIGHT_RED;
+        border-radius: $BORDER_RADIUS;
+        padding: 10px;
+        background-color: rgba(244, 67, 54, 0.16);
+        display: flex;
+        align-items: center;
+
+        .message-icon {
+            margin-right: 10px;
+        }
+        .message-text {
+            flex-grow: 1;
+        }
+        .message-close {
+            cursor: pointer;
+        }
+    }
+}
+
+.info-box {
+    position: relative;
     padding: $CONTRACT_INFO_BOX_PADDING;
     border: 1px solid $COLOR_GRAY;
-    border-radius: 4px;
+    border-radius: $BORDER_RADIUS;
     background: rgba(255, 255, 255, 0.9);
     font-weight: 300;
 

@@ -7,7 +7,6 @@ import { localize } from '../../../../../_common/localize';
 
 const SellButton = ({
     contract_info,
-    error_message,
     is_sell_requested,
     is_valid_to_sell,
     onClickSell,
@@ -25,16 +24,12 @@ const SellButton = ({
                 text={localize('Sell')}
                 onClick={onClickSell}
             />
-            { error_message &&
-                <div>{error_message}</div>
-            }
         </React.Fragment>
     );
 };
 
 SellButton.propTypes = {
     contract_info    : PropTypes.object,
-    error_message    : PropTypes.string,
     is_sell_requested: PropTypes.bool,
     is_valid_to_sell : PropTypes.bool,
     onClickSell      : PropTypes.func,

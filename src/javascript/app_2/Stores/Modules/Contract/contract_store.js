@@ -100,6 +100,7 @@ export default class ContractStore extends BaseStore {
             this.sell_info = {
                 error_message: response.error.message,
             };
+            this.is_sell_requested = false;
         } else {
             this.forgetProposalOpenContract();
             WS.proposalOpenContract(this.contract_id).then(action((proposal_response) => {
@@ -114,6 +115,11 @@ export default class ContractStore extends BaseStore {
 
     forgetProposalOpenContract() {
         WS.forget('proposal_open_contract', this.updateProposal, { contract_id: this.contract_id });
+    }
+
+    @action.bound
+    removeSellError() {
+        delete this.sell_info.error_message;
     }
 
     // ---------------------------
