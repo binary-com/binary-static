@@ -1,4 +1,5 @@
 import { observer }     from 'mobx-react';
+import classNames       from 'classnames';
 import PropTypes        from 'prop-types';
 import React            from 'react';
 import ContractSell     from '../../Containers/contract_sell.jsx';
@@ -10,7 +11,7 @@ import {
     isStarted }         from '../../../../Stores/Modules/Contract/Helpers/logic';
 import { localize }     from '../../../../../_common/localize';
 
-const InfoBoxGeneral = ({ contract_info }) => {
+const InfoBoxGeneral = ({ className, contract_info}) => {
     const {
         buy_price,
         currency,
@@ -23,7 +24,7 @@ const InfoBoxGeneral = ({ contract_info }) => {
     const is_ended         = isEnded(contract_info);
 
     return (
-        <div className='general'>
+        <div className={classNames('general', className)}>
             <div>
                 <div>{localize('Purchase Price')}</div>
                 <div>{localize('Indicative Price')}</div>
@@ -58,6 +59,7 @@ const InfoBoxGeneral = ({ contract_info }) => {
 };
 
 InfoBoxGeneral.propTypes = {
+    className    : PropTypes.string,
     contract_info: PropTypes.object,
     onClickSell  : PropTypes.func,
 };

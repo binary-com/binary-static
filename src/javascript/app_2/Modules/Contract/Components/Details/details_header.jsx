@@ -6,14 +6,22 @@ import { header_config } from '../../../../Stores/Modules/Contract/Constants/ui'
 import { localize }      from '../../../../../_common/localize';
 
 const DetailsHeader = ({ status }) => {
-    const className = classNames('contract-header', status);
-    const title     = localize(header_config[status].title);
-    const icon      = header_config[status].icon;
-
+    const title_purchased = localize(header_config.purchased.title);
+    const title_result = localize(header_config[status].title);
+    const icon_purchased  = header_config.purchased.icon;
+    const icon_result  = header_config[status].icon;
     return (
-        <div className={className}>
-            {icon}
-            {title}
+        <div className={classNames('contract-header', status)}>
+            <div className='header-wrapper'>
+                <div className='header-result'>
+                    {icon_result}
+                    {title_result}
+                </div>
+                <div className='header-purchased'>
+                    {icon_purchased}
+                    {title_purchased}
+                </div>
+            </div>
         </div>
     );
 };

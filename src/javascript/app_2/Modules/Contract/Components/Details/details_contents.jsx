@@ -12,7 +12,7 @@ const DetailsContents = ({
 }) => (
     <div className='contract-contents'>
         <div className='longcode'>{longcode}</div>
-        <div className='ref-number'>{localize('Reference No.:')} {buy_id}</div>
+        <div className='ref-number'>{localize('Reference No:')} {buy_id}</div>
         <DetailsGroup
             title={localize('Contract Information')}
             items={details_info}

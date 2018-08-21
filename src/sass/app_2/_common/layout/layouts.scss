@@ -7,11 +7,69 @@
 
         &--show-portfolio-drawer {
             margin-right: $PORTFOLIO_DRAWER_WIDTH;
+
+            @media screen and (max-width: 1280px) {
+                .trade-container {
+                    .chart-container {
+                        grid-column: col-start 1 / span 9;
+                    }
+                    .sidebar-container, .contract-wrapper {
+                        grid-column: col-start 10 / span 3;
+                    }
+                }
+            }
+            @media screen and (max-width: 980px) {
+                .trade-container {
+                    .chart-container {
+                        grid-column: col-start 1 / span 8;
+                    }
+                    .sidebar-container, .contract-wrapper {
+                        grid-column: col-start 9 / span 4;
+                    }
+                }
+            }
         }
         @media screen and (max-width: 768px) {
             // no footer:
             margin-bottom: 0;
             height: calc(100vh - #{$HEADER_HEIGHT});
+        }
+
+        .sidebar-container {
+            position: relative;
+
+            .sidebar-items {
+                opacity: 1;
+                transform: none;
+                transition: transform 0.4s ease, opacity 0.2s linear;
+
+                &__slideout {
+                    transform: translateX(calc(100% + 20px));
+                    pointer-events: none;
+                    opacity: 0;
+                }
+            }
+            .contract-wrapper {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                top: 0;
+                left: 0;
+                transition: transform 0.4s ease, opacity 0.2s linear;
+                opacity: 1;
+                transform: none;
+
+                &-enter {
+                    transform: translateX(calc(100% + 20px));
+                    opacity: 0;
+                }
+                &-exit {
+                    transform: translateX(calc(100% + 20px));
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
         }
     }
     /* trade-app layout */
@@ -27,7 +85,8 @@
         .chart-container {
             position: relative;
 
-            cq-context { // stylelint-disable-line selector-type-no-unknown
+            // smartchart library style fixes
+            .cq-context {
                 top: 0;
                 left: 0;
                 z-index: 0;
@@ -47,17 +106,24 @@
                 div.cq-chart-controls {
                     border-right: 1px solid $COLOR_GRAY;
                 }
-                div.cq-chart-control-left .cq-chart-controls {
-                    border-top: 1px solid $COLOR_GRAY;
+                div.cq-chart-control-left {
+                    .cq-chart-controls {
+                        border-top: 1px solid $COLOR_GRAY;
+                    }
+                    .cq-top-ui-widgets {
+                        width: calc(100% - 90px);
+                    }
                 }
             }
             div.debug-text {
                 display: none;
             }
         }
-        .sidebar-container, .sidebar-items {
-            position: relative;
+        .sidebar-items, .contract-wrapper {
             min-height: 500px;
+        }
+        .sidebar-items {
+            position: relative;
         }
         & > * {
             grid-column: col-start / span 12;
@@ -66,7 +132,8 @@
             grid-template-rows: 1fr auto auto;
 
             .chart-container {
-                cq-context { // stylelint-disable-line selector-type-no-unknown
+                // smartchart library style fixes
+                .cq-context {
                     div.cq-chart-controls {
                         border: 1px solid $COLOR_GRAY;
                     }
@@ -94,18 +161,25 @@
                         }
                     }
                 }
+                .smartcharts-mobile .cq-modal-dropdown .cq-menu-overlay .cq-menu-dropdown {
+                    bottom: 48px;
+                }
             }
         }
         @media (min-width: 769px) {
             .chart-container {
                 grid-column: col-start 1 / span 10;
                 margin-left: -15px;
+                margin-top: -15px;
 
                 fieldset {
                     display: inline-grid;
                     width: 25%;
                     margin: 0 8px 16px;
                 }
+            }
+            .contract-container {
+                grid-column: col-start 11 / span 2;
             }
             .sidebar-container {
                 grid-column: col-start 11 / span 2;
@@ -188,11 +262,11 @@
                 }
             }
         }
-        @media (min-width: 979px) and (max-width: 1125px) {
+        @media (min-width: 769px) and (max-width: 1050px) {
             .chart-container {
                 grid-column: col-start 1 / span 9 !important;
             }
-            .sidebar-container {
+            .sidebar-container, .contract-container {
                 grid-column: col-start 10 / span 3 !important;
             }
         }
@@ -265,5 +339,29 @@
     p {
         @include interpolate(font-size, 320px, 1440px, 14px, 20px);
         color: $COLOR_LIGHT_BLACK;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0;
     }
 }
