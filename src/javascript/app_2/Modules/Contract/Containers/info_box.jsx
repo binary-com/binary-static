@@ -39,18 +39,16 @@ const InfoBox = ({
         //     unmountOnExit
         // >
         <div className='info-box-container'>
-            <div className='info-box'>
-                { contract_info.contract_type &&
-                    <div className={box_class}>
-                        <Contents
-                            contract_info={contract_info}
-                            digits_info={digits_info}
-                            is_ended={is_ended}
-                            sell_info={sell_info}
-                        />
-                    </div>
-                }
-            </div>
+            { contract_info.contract_type &&
+                <div className={box_class}>
+                    <Contents
+                        contract_info={contract_info}
+                        digits_info={digits_info}
+                        is_ended={is_ended}
+                        sell_info={sell_info}
+                    />
+                </div>
+            }
             <ContractError
                 message={sell_info.error_message}
                 onClickClose={removeError}
