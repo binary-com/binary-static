@@ -1,29 +1,27 @@
 import {
     action,
     observable,
-    reaction }                            from 'mobx';
-import { processPurchase }                from './Actions/purchase';
-import * as Symbol                        from './Actions/symbol';
+    reaction }                          from 'mobx';
+import { processPurchase }              from './Actions/purchase';
+import * as Symbol                      from './Actions/symbol';
 import { 
     allowed_query_string_variables,
-    non_proposal_query_string_variable,
-    proposal_properties_alternative_names,
-    removable_proposal_properties}        from './Constants/query_string';
-import validation_rules                   from './Constants/validation_rules';
-import { setChartBarrier }                from './Helpers/chart';
-import ContractType                       from './Helpers/contract_type';
-import { convertDurationLimit }           from './Helpers/duration';
-import { processTradeParams }             from './Helpers/process';
+    non_proposal_query_string_variable} from './Constants/query_string';
+import validation_rules                 from './Constants/validation_rules';
+import { setChartBarrier }              from './Helpers/chart';
+import ContractType                     from './Helpers/contract_type';
+import { convertDurationLimit }         from './Helpers/duration';
+import { processTradeParams }           from './Helpers/process';
 import {
     createProposalRequests,
     getProposalInfo,
-    getProposalParametersName }           from './Helpers/proposal';
-import { pickDefaultSymbol }              from './Helpers/symbol';
-import BaseStore                          from '../../base_store';
-import { WS }                             from '../../../Services';
-import URLHelper                          from '../../../Utils/URL/url_helper';
-import Client                             from '../../../../_common/base/client_base';
-import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
+    getProposalParametersName }         from './Helpers/proposal';
+import { pickDefaultSymbol }            from './Helpers/symbol';
+import BaseStore                        from '../../base_store';
+import { WS }                           from '../../../Services';
+import URLHelper                        from '../../../Utils/URL/url_helper';
+import Client                           from '../../../../_common/base/client_base';
+import { cloneObject, isEmptyObject }   from '../../../../_common/utility';
 
 export default class TradeStore extends BaseStore {
     // Control values
@@ -239,11 +237,7 @@ export default class TradeStore extends BaseStore {
     requestProposal() {
         const requests = createProposalRequests(this);
         if (!isEmptyObject(requests)) {
-            const proper_proposal_params_for_query_string = getProposalParametersName(
-                requests,
-                proposal_properties_alternative_names,
-                removable_proposal_properties
-            );
+            const proper_proposal_params_for_query_string = getProposalParametersName(requests);
 
             URLHelper.pruneQueryString(
                 [

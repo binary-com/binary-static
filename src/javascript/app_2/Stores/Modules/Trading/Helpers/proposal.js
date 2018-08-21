@@ -1,7 +1,10 @@
-import moment               from 'moment';
-import { convertToUnix }    from '../../../../Utils/Date';
-import { getDecimalPlaces } from '../../../../../_common/base/currency_base';
-import { isDeepEqual }      from '../../../../../_common/utility';
+import moment                              from 'moment';
+import {
+    proposal_properties_alternative_names,
+    removable_proposal_properties }        from '../Constants/query_string';
+import { convertToUnix }                   from '../../../../Utils/Date';
+import { getDecimalPlaces }                from '../../../../../_common/base/currency_base';
+import { isDeepEqual }                     from '../../../../../_common/utility';
 
 export const getProposalInfo = (store, response) => {
     const proposal = response.proposal || {};
@@ -75,33 +78,23 @@ const createProposalRequestForContract = (store, type_of_contract) => {
     };
 };
 
-export const getProposalParametersName = (proposal_requests, alternatives, removable_properties) => {
+export const getProposalParametersName = (proposal_requests) => {
+    const proper_param_name = [];
     const is_digit = Object.keys(proposal_requests)
         .findIndex(i => i.toUpperCase().indexOf('DIGIT') > -1) > -1;
 
-    const keys = Object.keys(proposal_requests[Object.keys(proposal_requests)[0]]);
+    const keys = Object.keys(Object.values(proposal_requests)[0]);
 
-    Object.keys(alternatives).forEach( name => {
-        const index = keys.indexOf(name);
-        if ( index > -1) {
-            keys.splice(index, 1);
+    keys.forEach(name => {
+        const alternative_name = proposal_properties_alternative_names[name];
 
-            if (typeof alternatives[name] === 'string') {
-                keys.push(alternatives[name]);
-            } else if (typeof alternatives[name] === 'function') {
-                keys.push(alternatives[name](is_digit));
-            }
+        if (alternative_name) {
+            proper_param_name.push(typeof alternative_name === 'string' ? alternative_name : alternative_name(is_digit));
+        } else if (removable_proposal_properties.indexOf(name) === -1) {
+            proper_param_name.push(name);
         }
     });
 
-    removable_properties.forEach( name => {
-        const index = keys.indexOf(name);
-
-        if (index > -1) {
-            keys.splice(index, 1);
-        }
-    });
-
-    keys.sort();
-    return keys;
+    proper_param_name.sort();
+    return proper_param_name;
 };

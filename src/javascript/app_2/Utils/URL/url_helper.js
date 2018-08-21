@@ -74,8 +74,6 @@ export default class URLHelper {
                 });
         }
 
-        // URLHelper.pruneQueryString(allowed_query_string_variables);
-
         return query_params;
     }
 
