@@ -14,6 +14,7 @@ const Footer = (() => {
             } else {
                 $cfd_warning.setVisibility(0);
             }
+            $footer.setVisibility(1);
         });
     };
 

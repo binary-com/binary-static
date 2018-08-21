@@ -247,7 +247,7 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id='footer-last' className='primary-bg-color'>
+        <div id='footer-last' className='primary-bg-color invisible'>
             <div className='container'>
                 <div className='gr-padding-10'>
                     <p className='gambling content-inverse-color no-para-margin'>
