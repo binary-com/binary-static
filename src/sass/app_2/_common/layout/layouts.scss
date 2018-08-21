@@ -78,26 +78,6 @@
             margin-bottom: 0;
             height: calc(100vh - #{$HEADER_HEIGHT});
         }
-        @media screen and (max-width: 980px) {
-            .trade-container {
-                .chart-container {
-                    grid-column: col-start 1 / span 8;
-                }
-                .sidebar-container, .contract-wrapper {
-                    grid-column: col-start 9 / span 4;
-                }
-            }
-        }
-        @media screen and (max-width: 1280px) {
-            .trade-container {
-                .chart-container {
-                    grid-column: col-start 1 / span 9;
-                }
-                .sidebar-container, .contract-wrapper {
-                    grid-column: col-start 10 / span 3;
-                }
-            }
-        }
 
         .sidebar-container {
             position: relative;
