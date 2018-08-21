@@ -66,11 +66,6 @@
         &__icon {
             height: 64px;
             width: 64px;
-            margin-bottom: 16px;
-        }
-        &__title {
-            font-size: 16px;
-            font-weight: bold;
             margin-bottom: 8px;
         }
         &__text {
@@ -116,10 +111,10 @@
             margin-right: 5px;
         }
         &__purchase:before {
-            background-image: url('../images/app_2/portfolio/ic_purchase.svg');
+            background-image: url('../images/app_2/portfolio/ic_purchase_light.svg');
         }
         &__payout:before {
-            background-image: url('../images/app_2/statement/ic_payout.svg');
+            background-image: url('../images/app_2/statement/ic_payout_light.svg');
         }
         &__indicative {
             &--price-moved-up {
@@ -137,10 +132,8 @@
                 }
             }
             &--price-stable {
-                color: $COLOR_BLACK;
-
                 &:before {
-                    background-image: url('../images/app_2/portfolio/ic_price_stable.svg');
+                    background-image: url('../images/app_2/portfolio/ic_price_stable_light.svg');
                 }
             }
             &--no-resale {
