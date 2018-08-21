@@ -21,7 +21,7 @@ const checkClientsCountry = () => {
         } else {
             createLanguageDropDown(website_status);
         }
-        Client.set('is_eu', isEuropeanCountries(clients_country));
+        Client.set('is_eu', isEuropeanCountries(Client.get('residence') || clients_country));
     });
 };
 
