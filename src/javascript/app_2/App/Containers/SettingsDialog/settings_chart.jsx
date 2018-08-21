@@ -14,18 +14,18 @@ const ChartSettings = ({
     <div className='tab-content'>
         <div className='chart-setting-container'>
             <SettingsControl
-                name='position'
+                name='Position'
                 toggle={toggleLayout}
                 to_toggle={!is_layout_default}
                 style='toggle-chart-layout'
             />
             <SettingsControl
-                name='asset information'
+                name='Asset Information'
                 toggle={toggleAsset}
                 to_toggle={is_asset_visible}
             />
             <SettingsControl
-                name='scale countdown'
+                name='Scale Countdown'
                 toggle={toggleCountdown}
                 to_toggle={is_countdown_visible}
             />
