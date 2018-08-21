@@ -301,17 +301,17 @@ const ContractType = (() => {
 
     return {
         buildContractTypesConfig,
-        getContractValues,
-        getContractType,
-        getDurationUnitsList,
-        getDurationUnit,
-        getDurationMinMax,
-        getStartType,
         getBarriers,
-        getSessions,
-        getStartTime,
+        getContractType,
+        getContractValues,
+        getDurationMinMax,
+        getDurationUnit,
+        getDurationUnitsList,
         getExpiryDate,
         getExpiryTime,
+        getSessions,
+        getStartTime,
+        getStartType,
 
         getContractCategories: () => ({ contract_types_list: available_categories }),
     };
