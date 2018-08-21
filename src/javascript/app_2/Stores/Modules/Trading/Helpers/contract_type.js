@@ -242,10 +242,20 @@ const ContractType = (() => {
         start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
     });
 
+    const getExpiryDate = (expiry_date, start_date) => {
+        const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
+        const moment_expiry = moment.utc(expiry_date);
+        // forward starting contracts should only show today and tomorrow as expiry date
+        const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
+        return {
+            expiry_date: is_invalid ? moment_start.format('YYYY-MM-DD') : expiry_date,
+        };
+    };
+
     // has to follow the correct order of checks:
     // first check if end time is within available sessions
     // then confirm that end time is after start time
-    const getEndTime = (sessions, start_date, start_time, expiry_date, expiry_time) => {
+    const getExpiryTime = (sessions, start_date, start_time, expiry_date, expiry_time) => {
         const start_moment = start_date ? buildMoment(start_date, start_time) : moment().utc();
         const end_moment   = buildMoment(expiry_date, expiry_time);
 
@@ -291,16 +301,17 @@ const ContractType = (() => {
 
     return {
         buildContractTypesConfig,
-        getContractValues,
-        getContractType,
-        getDurationUnitsList,
-        getDurationUnit,
-        getDurationMinMax,
-        getStartType,
         getBarriers,
+        getContractType,
+        getContractValues,
+        getDurationMinMax,
+        getDurationUnit,
+        getDurationUnitsList,
+        getExpiryDate,
+        getExpiryTime,
         getSessions,
         getStartTime,
-        getEndTime,
+        getStartType,
 
         getContractCategories: () => ({ contract_types_list: available_categories }),
     };

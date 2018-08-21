@@ -66,7 +66,7 @@ class Calendar extends React.PureComponent {
 
         const { date_format, max_date, min_date, onSelect } = this.props;
 
-        const moment_date = moment.utc(e.target.dataset.date).set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+        const moment_date = moment.utc(e.target.dataset.date).startOf('day');
         const is_before   = moment_date.isBefore(moment.utc(min_date));
         const is_after    = moment_date.isAfter(moment.utc(max_date));
 
@@ -137,7 +137,7 @@ class Calendar extends React.PureComponent {
     }
 
     render() {
-        const { children, date_format, footer, id, max_date, min_date, has_today_btn } = this.props;
+        const { children, date_format, footer, has_today_btn, id, max_date, min_date, start_date } = this.props;
         const { calendar_date, calendar_view, selected_date  } = this.state;
 
         return (
@@ -156,6 +156,7 @@ class Calendar extends React.PureComponent {
                     isPeriodDisabled={this.isPeriodDisabled}
                     max_date={max_date}
                     min_date={min_date}
+                    start_date={start_date}
                     onClick={this.panelSelectors}
                     selected_date={selected_date}
                     calendar_view={calendar_view}
@@ -193,7 +194,7 @@ Calendar.propTypes = {
     ]),
     onSelect  : PropTypes.func,
     start_date: PropTypes.oneOfType([
-        PropTypes.object,
+        PropTypes.number,
         PropTypes.string,
     ]),
 };
