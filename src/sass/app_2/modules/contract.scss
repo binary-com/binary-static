@@ -1,33 +1,71 @@
 .contract-container {
     font-size: 0.85rem;
-    border: 1px solid $COLOR_GRAY;
+    border-radius: $BORDER_RADIUS;
+    position: relative;
 
     .contract-header {
-        display: flex;
-        align-items: center;
-        padding: 0 10px;
-        color: $COLOR_WHITE;
-        font-weight: bold;
-        line-height: 2rem;
+        max-height: 2rem;
+        overflow: hidden;
+        border-radius: 4px 4px 0 0;
+        border: 1px solid $COLOR_GRAY;
 
-        svg {
-            display: inline-block;
-            margin-right: 7px;
+        .header-wrapper {
+            transition: transform 0.4s ease;
+            transform: translateY(-32px);
+
+            .header-result, .header-purchased {
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                color: $COLOR_WHITE;
+                font-weight: bold;
+                line-height: 2rem;
+
+                svg {
+                    display: inline-block;
+                    margin-right: 7px;
+                }
+            }
         }
         &.purchased {
-            color: $COLOR_LIGHT_GREEN;
-            background-color: $COLOR_LIGHT_GRAY;
+            .header-wrapper .header-purchased {
+                color: $COLOR_LIGHT_GREEN;
+                background-color: $COLOR_LIGHT_GRAY;
+                opacity: 1;
+                transition: opacity 0.4s linear;
+            }
         }
         &.won {
-            background-color: $COLOR_LIGHT_GREEN;
+            .header-wrapper {
+                transform: none;
+
+                .header-result {
+                    background-color: $COLOR_LIGHT_GREEN;
+                }
+                .header-purchased {
+                    opacity: 0;
+                }
+            }
         }
         &.lost {
-            background-color: $COLOR_LIGHT_RED;
+            .header-wrapper {
+                transform: none;
+
+                .header-result {
+                    background-color: $COLOR_LIGHT_RED;
+                }
+                .header-purchased {
+                    opacity: 0;
+                }
+            }
         }
     }
     .contract-contents {
         padding: 10px;
         font-size: 0.75rem;
+        border: 1px solid $COLOR_GRAY;
+        border-top-width: 0;
+        border-radius: 0 0 4px 4px;
 
         .longcode {
             font-weight: 300;
@@ -67,142 +105,156 @@
 
 $CONTRACT_INFO_BOX_PADDING: 15px;
 
-.info-box {
+.info-box-container {
     position: absolute;
+    border: 1px solid $COLOR_GRAY;
+    border-radius: 4px;
     z-index: 10;
     top: 10px;
     right: 10px;
-    padding: $CONTRACT_INFO_BOX_PADDING;
-    border: 1px solid $COLOR_GRAY;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.9);
-    font-weight: 300;
+    transform: none;
+    opacity: 1;
+    transition: transform 0.4s ease, opacity 0.4s linear;
 
-    .expired {
-        display: flex;
-        align-items: center;
-
-        svg {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-
-            .color1-fill {
-                fill: $COLOR_LIGHT_GREEN;
-            }
-        }
-        .pl-value {
-            color: $COLOR_LIGHT_GREEN;
-            font-weight: bold;
-            font-size: 1rem;
-            line-height: 1.5rem;
-
-            .percentage {
-                display: inline-block;
-                margin-left: 7px;
-            }
-        }
-        &.lost {
-            .pl-value {
-                color: $COLOR_LIGHT_RED;
-            }
-            svg .color1-fill {
-                fill: $COLOR_LIGHT_RED;
-            }
-        }
+    &-enter {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 0;
     }
-    .general {
-        display: flex;
-        align-items: center;
-        line-height: 1.4rem;
+    &-exit {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 0;
+    }
+    .info-box {
+        padding: $CONTRACT_INFO_BOX_PADDING;
+        background: rgba(255, 255, 255, 0.9);
+        font-weight: 300;
 
-        .values {
-            margin-left: 10px;
-            margin-right: 20px;
-            text-align: right;
-            font-weight: bold;
-
-            .profit {
-                color: $COLOR_LIGHT_GREEN;
-            }
-            .loss {
-                color: $COLOR_LIGHT_RED;
-            }
-        }
-        .sell {
+        .expired {
             display: flex;
             align-items: center;
-            margin: -$CONTRACT_INFO_BOX_PADDING;
-            margin-left: $CONTRACT_INFO_BOX_PADDING;
-            padding: $CONTRACT_INFO_BOX_PADDING;
-            border-left: 1px solid $COLOR_GRAY;
 
-            .tooltip {
-                position: absolute;
-                bottom: 5px;
-                right: 5px;
-                line-height: 0;
+            svg {
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
 
-                &:before {
-                    width: 350px;
-                    white-space: normal;
+                .color1-fill {
+                    fill: $COLOR_LIGHT_GREEN;
+                }
+            }
+            .pl-value {
+                color: $COLOR_LIGHT_GREEN;
+                font-weight: bold;
+                font-size: 1rem;
+                line-height: 1.5rem;
+
+                .percentage {
+                    display: inline-block;
+                    margin-left: 7px;
+                }
+            }
+            &.lost {
+                .pl-value {
+                    color: $COLOR_LIGHT_RED;
+                }
+                svg .color1-fill {
+                    fill: $COLOR_LIGHT_RED;
                 }
             }
         }
-    }
-    .digits {
-        display: flex;
-        align-items: center;
-
-        .digit-title {
-            font-weight: bold;
-            max-width: min-content;
-        }
-        .digit-list {
+        .general {
             display: flex;
-            margin: 0 25px 0 10px;
+            align-items: center;
+            line-height: 1.4rem;
 
-            .digit-info {
-                margin: 0 4px;
-                text-align: center;
+            .values {
+                margin-left: 10px;
+                margin-right: 20px;
+                text-align: right;
+                font-weight: bold;
 
-                .digit-value {
-                    width: 32px;
-                    height: 32px;
-                    margin-bottom: 5px;
-                    border: 2px solid $COLOR_LIGHT_GREEN;
-                    border-radius: 50%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                .profit {
                     color: $COLOR_LIGHT_GREEN;
-                    font-size: 1rem;
-                    font-weight: bold;
+                }
+                .loss {
+                    color: $COLOR_LIGHT_RED;
+                }
+            }
+            .sell {
+                display: flex;
+                align-items: center;
+                margin: -$CONTRACT_INFO_BOX_PADDING;
+                margin-left: $CONTRACT_INFO_BOX_PADDING;
+                padding: $CONTRACT_INFO_BOX_PADDING;
+                border-left: 1px solid $COLOR_GRAY;
 
-                    &.loss {
-                        border-color: $COLOR_LIGHT_RED;
-                        color: $COLOR_LIGHT_RED;
+                .tooltip {
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                    line-height: 0;
+
+                    &:before {
+                        width: 350px;
+                        white-space: normal;
                     }
-                    &.last {
-                        background-color: $COLOR_LIGHT_GREEN;
-                        color: $COLOR_WHITE;
+                }
+            }
+        }
+        .digits {
+            display: flex;
+            align-items: center;
+
+            .digit-title {
+                font-weight: bold;
+                max-width: min-content;
+            }
+            .digit-list {
+                display: flex;
+                margin: 0 25px 0 10px;
+
+                .digit-info {
+                    margin: 0 4px;
+                    text-align: center;
+
+                    .digit-value {
+                        width: 32px;
+                        height: 32px;
+                        margin-bottom: 5px;
+                        border: 2px solid $COLOR_LIGHT_GREEN;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $COLOR_LIGHT_GREEN;
+                        font-size: 1rem;
+                        font-weight: bold;
 
                         &.loss {
-                            background-color: $COLOR_LIGHT_RED;
+                            border-color: $COLOR_LIGHT_RED;
+                            color: $COLOR_LIGHT_RED;
+                        }
+                        &.last {
+                            background-color: $COLOR_LIGHT_GREEN;
+                            color: $COLOR_WHITE;
+
+                            &.loss {
+                                background-color: $COLOR_LIGHT_RED;
+                            }
+                        }
+                        &:empty {
+                            border-color: $COLOR_DARK_WHITE;
                         }
                     }
-                    &:empty {
-                        border-color: $COLOR_DARK_WHITE;
+                    .tick-number {
+                        line-height: 0.6rem;
+                        font-size: 0.6rem;
                     }
                 }
-                .tick-number {
-                    line-height: 0.6rem;
-                    font-size: 0.6rem;
-                }
             }
-        }
-        .expired {
-            margin-right: -25px;
+            .expired {
+                margin-right: -25px;
+            }
         }
     }
 }
@@ -210,18 +262,25 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 // Dark Theme
 .theme-wrapper.dark {
     .contract-container {
-        border-color: $COLOR_BRANDBLUE_85;
         color: $COLOR_BRANDBLUE_40;
 
         .contract-header {
+            border-color: $COLOR_BRANDBLUE_85;
+
             &.purchased {
-                background-color: $COLOR_BRANDBLUE_95;
+                .header-wrapper .header-purchased {
+                    background-color: $COLOR_BRANDBLUE_95;
+                }
             }
             &.won {
-                background-color: $COLOR_GREEN;
+                .header-wrapper .header-result {
+                    background-color: $COLOR_GREEN;
+                }
             }
         }
         .contract-contents {
+            border-color: $COLOR_BRANDBLUE_85;
+
             .ref-number, .info-header {
                 background-color: $COLOR_BRANDBLUE_95;
             }
@@ -234,20 +293,20 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             }
         }
     }
-    .info-box {
+    .info-box-container {
         border-color: $COLOR_BRANDBLUE_85;
-        background: rgba(42, 48, 82, 0.6);
 
-        .general .sell {
-            border-left-color: $COLOR_BRANDBLUE_85;
+        .info-box {
+            background: rgba(42, 48, 82, 0.6);
 
-            .btn:disabled {
-                background: $COLOR_BRANDBLUE_85;
-                color: $COLOR_BRANDBLUE_75 !important;
+            .general .sell {
+                border-left-color: $COLOR_BRANDBLUE_85;
+
+                .btn:disabled {
+                    background: $COLOR_BRANDBLUE_85;
+                    color: $COLOR_BRANDBLUE_75 !important;
+                }
             }
-        }
-        .digit-value:empty {
-            border-color: $COLOR_BRANDBLUE_75 !important;
         }
     }
 }

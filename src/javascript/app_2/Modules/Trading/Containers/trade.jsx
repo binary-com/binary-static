@@ -1,3 +1,4 @@
+import { CSSTransition }    from 'react-transition-group';
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import Test                 from './test.jsx';
@@ -19,8 +20,7 @@ class Trade extends React.Component {
 
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
-        const InfoBoxComponent = this.props.is_contract_mode ?
-            <InfoBox is_trade_page /> : null;
+        const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
 
         return (
             <div id='trade_container' className='trade-container'>
@@ -28,18 +28,35 @@ class Trade extends React.Component {
                     { this.props.symbol &&
                         <SmartChart
                             chart_id={1}
-                            InfoBox={InfoBoxComponent}
+                            InfoBox={<InfoBox is_trade_page />}
                             onSymbolChange={this.props.onSymbolChange}
                             symbol={this.props.symbol}
                         />
                     }
                     <Test />
                 </div>
-                { contract_id ?
-                    <ContractDetails contract_id={contract_id} onClickNewTrade={this.props.onClickNewTrade} />
-                    :
-                    <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
-                }
+                <div
+                    className={form_wrapper_class}
+                >
+                    <FormLayout
+                        is_mobile={this.props.is_mobile}
+                        is_contract_visible={!!contract_id}
+                        is_trade_enabled={this.props.is_trade_enabled}
+                    />
+                    <CSSTransition
+                        in={!!contract_id}
+                        timeout={400}
+                        classNames='contract-wrapper'
+                        unmountOnExit
+                    >
+                        <div className='contract-wrapper'>
+                            <ContractDetails
+                                contract_id={contract_id}
+                                onClickNewTrade={this.props.onClickNewTrade}
+                            />
+                        </div>
+                    </CSSTransition>
+                </div>
             </div>
         );
     }
