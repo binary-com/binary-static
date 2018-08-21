@@ -9,8 +9,8 @@ const Footer = (() => {
             const $cfd_warning = $footer.find('.eu-only');
             const show_warning = (Client.isLoggedIn() ?
                 (/maltainvest/.test(State.getResponse('authorize.landing_company_name'))
-                    || /financial/.test(Client.getBasicUpgradeInfo().can_upgrade_to)
                     || Client.hasAccountType('financial'))
+                    || /financial/.test(Client.getBasicUpgradeInfo().can_upgrade_to)
                 :
                 Client.get('is_eu')
             );
