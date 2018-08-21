@@ -270,8 +270,8 @@ const TickDisplay = (() => {
         if (barrier_type === 'highlowticks') {
             if (/^(won|lost)$/.test(contract.status)) {
                 // for contracts that won, highest/lowest tick will be the quote of the selected tick
-                // for contracts that lost, API will send sell spot to mark highest/lowest spot
-                const high_low_barrier = contract.status === 'won' ? ((applicable_ticks[+selected_tick - 1] || {}).quote) : +contract.sell_spot;
+                // for contracts that lost, API will send exit tick to mark highest/lowest spot
+                const high_low_barrier = contract.status === 'won' ? ((applicable_ticks[+selected_tick - 1] || {}).quote) : +contract.exit_tick;
 
                 if (high_low_barrier) {
                     should_set_barrier = false;
@@ -324,7 +324,7 @@ const TickDisplay = (() => {
                 updatePurchaseStatus(0, -price, contract.profit, localize('This contract lost'));
             }
 
-            addSellSpot();
+            addExitSpot();
         }
 
         if (Reset.isReset(contract_category) && Reset.isNewBarrier(contract.entry_spot, contract.barrier)) {
@@ -401,8 +401,8 @@ const TickDisplay = (() => {
         }
 
         const has_finished = applicable_ticks && ticks_needed && applicable_ticks.length >= ticks_needed;
-        const has_sold     = contract && contract.sell_spot_time && applicable_ticks
-            && applicable_ticks.find(({ epoch }) => +epoch === +contract.sell_spot_time) !== undefined;
+        const has_sold     = contract && contract.exit_tick_time && applicable_ticks
+            && applicable_ticks.find(({ epoch }) => +epoch === +contract.exit_tick_time) !== undefined;
 
         if (!has_finished && !has_sold && (!data.tick || !contract.status || contract.status === 'open')) {
             let should_show_all_ticks = true;
@@ -421,9 +421,9 @@ const TickDisplay = (() => {
                 }
 
                 const current_tick_count = applicable_ticks.length + 1;
-                // for contracts that lost, sell spot time will have the value of the highest/lowest tick
-                // if current tick is selected tick and current tick occurs after sell spot time (highest/lowest tick), then don't show it
-                if (contract.status === 'lost' && current_tick_count > +selected_tick && tick.epoch > +contract.sell_spot_time) {
+                // for contracts that lost, exit tick time will have the value of the highest/lowest tick
+                // if current tick is selected tick and current tick occurs after exit tick time (highest/lowest tick), then don't show it
+                if (contract.status === 'lost' && current_tick_count > +selected_tick && tick.epoch > +contract.exit_tick_time) {
                     should_show_all_ticks = false;
                 }
 
@@ -441,10 +441,7 @@ const TickDisplay = (() => {
                     spots_list[tick.epoch] = tick.quote;
                     const indicator_key    = `_${counter}`;
 
-                    const exit_time = contract ? (Math.min(+contract.sell_spot_time, +contract.exit_tick_time) ||
-                        +contract.sell_spot_time || +contract.exit_tick_time) : '';
-
-                    if (!x_indicators[indicator_key] && tick.epoch === exit_time && contract_category !== 'highlowticks') {
+                    if (!x_indicators[indicator_key] && tick.epoch === +contract.exit_tick_time && contract_category !== 'highlowticks') {
                         x_indicators[indicator_key] = {
                             index    : counter,
                             label    : localize('Exit Spot'),
@@ -509,7 +506,7 @@ const TickDisplay = (() => {
         evaluateContractOutcome();
     };
 
-    const addSellSpot = () => {
+    const addExitSpot = () => {
         if (!applicable_ticks || !contract) return;
 
         if (contract_category === 'highlowticks') {
@@ -517,12 +514,7 @@ const TickDisplay = (() => {
             return;
         }
 
-        let index = applicable_ticks.findIndex(({ epoch }) => epoch === +contract.sell_spot_time);
-
-        // if sell spot time is later than exit tick time, use that instead
-        if (index === -1) {
-            index = applicable_ticks.findIndex(({ epoch }) => epoch === +contract.exit_tick_time);
-        }
+        const index = applicable_ticks.findIndex(({ epoch }) => epoch === +contract.exit_tick_time);
 
         if (index === -1) return;
 
@@ -557,7 +549,7 @@ const TickDisplay = (() => {
         }
 
         if (data.is_sold) {
-            addSellSpot();
+            addExitSpot();
         } else if (proposal_open_contract) {
             if (data.id_render) {
                 id_render = data.id_render;
@@ -571,8 +563,8 @@ const TickDisplay = (() => {
             if (contract.current_spot_time < contract.date_expiry) {
                 request.subscribe = 1;
                 subscribe         = 'true';
-            } else if (!/^(tickhigh|ticklow)_/i.test(contract.shortcode) && contract.sell_spot_time && +contract.sell_spot_time < +contract.date_expiry) {
-                request.end = contract.sell_spot_time;
+            } else if (!/^(tickhigh|ticklow)_/i.test(contract.shortcode) && contract.exit_tick_time && +contract.exit_tick_time < +contract.date_expiry) {
+                request.end = contract.exit_tick_time;
             } else {
                 request.end = contract.date_expiry;
             }
