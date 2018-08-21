@@ -30,7 +30,14 @@ export default class PortfolioStore extends BaseStore {
     @action.bound
     portfolioHandler(response) {
         this.is_loading = false;
-        this.updatePortfolio(response);
+        if ('error' in response) {
+            this.error = response.error.message;
+            return;
+        }
+        this.error = '';
+        if (response.portfolio.contracts) {
+            this.data = formatPortfolioResponse(response.portfolio.contracts);
+        }
     };
 
     @action.bound
@@ -38,7 +45,10 @@ export default class PortfolioStore extends BaseStore {
         if ('error' in response) {
             this.error = response.error.message;
         }
-        WS.portfolio().then((res) => this.updatePortfolio(res));
+        const { contract_id } = response.transaction;
+        WS.portfolio().then((res) => {
+            // TODO: find position with matching contract_id, append to data
+        });
         // subscribe to new contracts:
         WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
     };
@@ -82,18 +92,6 @@ export default class PortfolioStore extends BaseStore {
             else {
                 portfolio_position.status = 'price-stable';
             }
-        }
-    }
-
-    @action.bound
-    updatePortfolio(response) {
-        if ('error' in response) {
-            this.error = response.error.message;
-            return;
-        }
-        this.error = '';
-        if (response.portfolio.contracts) {
-            this.data = formatPortfolioResponse(response.portfolio.contracts);
         }
     }
 
