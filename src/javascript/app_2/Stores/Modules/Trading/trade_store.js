@@ -74,6 +74,8 @@ export default class TradeStore extends BaseStore {
     @observable proposal_info = {};
     @observable purchase_info = {};
 
+    // Chart
+    chart_id = 1;
 
     constructor({ root_store }) {
         const session_storage_properties = allowed_query_string_variables;
@@ -114,7 +116,7 @@ export default class TradeStore extends BaseStore {
 
         if (!this.symbol) {
             const active_symbols = await WS.activeSymbols();
-            await this.processNewValuesAsync({ 
+            await this.processNewValuesAsync({
                 symbol: pickDefaultSymbol(active_symbols.active_symbols),
                 ...query_string_values,
             });
