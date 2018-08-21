@@ -6,7 +6,6 @@ export const allowed_query_string_variables = [
     'basis',
     'contract_start_type',
     'contract_type',
-    'currency',
     'duration',
     'duration_unit',
     'expiry_date',
@@ -17,8 +16,8 @@ export const allowed_query_string_variables = [
 ];
 
 export const non_proposal_query_string_variable = [
-    'expiry_type',
     'contract_start_type',
+    'expiry_type',
 ];
 
 export const proposal_properties_alternative_names = {
@@ -29,8 +28,9 @@ export const proposal_properties_alternative_names = {
 };
 
 export const removable_proposal_properties = [
-    'proposal',
-    'subscribe',
+    'currency',
     'passthrough',
+    'proposal',
     'req_id',
+    'subscribe',
 ];
