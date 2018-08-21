@@ -28,8 +28,8 @@
                     .cq-chart-controls {
                         transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH}) !important;
                     }
-                    .info-box-container {
-                        transform: translateX(calc(-#{$PORTFOLIO_DRAWER_WIDTH} - 90px)) !important;
+                    .info-box {
+                        transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH}) !important;
                     }
                 }
             }
@@ -49,8 +49,8 @@
                 .cq-top-ui-widgets {
                     left: 90px;
 
-                    .info-box-container {
-                        transform: translateX(-90px);
+                    .info-box {
+                        transform: translateX(0);
                     }
                 }
             }
@@ -58,8 +58,11 @@
                 .cq-top-ui-widgets {
                     transition: transform 0.25s ease;
 
-                    .info-box-container {
+                    .info-box {
                         transition: transform 0.25s ease;
+                    }
+                    .cq-symbols-display {
+                        z-index: 1;
                     }
                 }
                 .cq-chart-controls {
