@@ -28,7 +28,7 @@
                     .cq-chart-controls {
                         transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH}) !important;
                     }
-                    .info-box {
+                    .info-box-container {
                         transform: translateX(calc(-#{$PORTFOLIO_DRAWER_WIDTH} - 90px)) !important;
                     }
                 }
@@ -49,7 +49,7 @@
                 .cq-top-ui-widgets {
                     left: 90px;
 
-                    .info-box {
+                    .info-box-container {
                         transform: translateX(-90px);
                     }
                 }
@@ -58,7 +58,7 @@
                 .cq-top-ui-widgets {
                     transition: transform 0.25s ease;
 
-                    .info-box {
+                    .info-box-container {
                         transition: transform 0.25s ease;
                     }
                 }

@@ -107,8 +107,6 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 
 .info-box-container {
     position: absolute;
-    border: 1px solid $COLOR_GRAY;
-    border-radius: 4px;
     z-index: 10;
     top: 10px;
     right: 10px;
@@ -125,6 +123,8 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
         opacity: 0;
     }
     .info-box {
+        border: 1px solid $COLOR_GRAY;
+        border-radius: 4px;
         padding: $CONTRACT_INFO_BOX_PADDING;
         background: rgba(255, 255, 255, 0.9);
         font-weight: 300;
@@ -294,10 +294,9 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
         }
     }
     .info-box-container {
-        border-color: $COLOR_BRANDBLUE_85;
-
         .info-box {
             background: rgba(42, 48, 82, 0.6);
+            border-color: $COLOR_BRANDBLUE_85;
 
             .general .sell {
                 border-left-color: $COLOR_BRANDBLUE_85;
