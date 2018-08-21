@@ -26,8 +26,8 @@ div.dropdown-container {
         }
     }
     &:active, &:focus, &.show {
-        outline: 0;
-        border-radius: 4px;
+        outline: none;
+        border-radius: $BORDER_RADIUS;
 
         .select-arrow {
             color: $COLOR_BLUE;
@@ -141,6 +141,7 @@ div.dropdown-container {
 
             &:hover, &:focus, &:active {
                 border-color: $COLOR_WHITE;
+                outline: none;
             }
         }
         &.show > .clicked {

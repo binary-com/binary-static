@@ -13,6 +13,7 @@ class Dropdown extends React.Component {
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.state = {
             is_list_visible: false,
+            curr_value     : this.props.value,
         };
     }
 
@@ -42,7 +43,37 @@ class Dropdown extends React.Component {
         if (item.value !== this.props.value) {
             this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
+        this.setState({ curr_value: item.value });
         this.handleVisibility();
+    }
+
+    onKeyPressed = (event) => {
+        if (event.keyCode === 9) { // Tab is pressed
+            if (this.state.is_list_visible) {
+                this.handleVisibility();
+            }
+            return;
+        }
+        event.preventDefault();
+        const curr_selection = this.state.curr_value;
+        const handleToggle = () => {
+            if (this.state.is_list_visible) {
+                this.handleSelect(curr_selection);
+            } else {
+                this.handleVisibility();
+            }
+            console.log(curr_selection);
+        };
+
+        switch (event.keyCode) {
+            case 13: // Enter is pressed
+                handleToggle();
+                break;
+            case 32: // Space is pressed
+                handleToggle();
+                break;
+            default:
+        }
     }
 
     setWrapperRef(node) {
@@ -87,7 +118,8 @@ class Dropdown extends React.Component {
                 <div
                     className={`dropdown-display ${this.state.is_list_visible ? 'clicked': ''}`}
                     onClick={this.handleVisibility}
-                    onBlur={this.handleVisibility}
+                    tabIndex='0'
+                    onKeyDown={this.onKeyPressed}
                 >
                     <span name={this.props.name} value={this.props.value}>
                         {this.getDisplayText(this.props.list, this.props.value)}
