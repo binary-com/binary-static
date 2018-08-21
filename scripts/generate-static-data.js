@@ -610,6 +610,7 @@ const texts = [
     'Deposits and withdrawals have been disabled on your account. Please check your email for more details.',
     'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Withdrawals have been disabled on your account. Please check your email for more details.',
+    'MT5 withdrawals have been disabled on your account. Please check your email for more details.',
     'Please complete your [_1]personal details[_2] before you proceed.',
     'Account Authenticated',
 
