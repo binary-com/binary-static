@@ -27,7 +27,7 @@ class Trade extends React.Component {
                 <div className='chart-container notice-msg'>
                     { this.props.symbol &&
                         <SmartChart
-                            chart_id={1}
+                            chart_id={this.props.chart_id}
                             InfoBox={<InfoBox is_trade_page />}
                             onSymbolChange={this.props.onSymbolChange}
                             symbol={this.props.symbol}
@@ -63,6 +63,7 @@ class Trade extends React.Component {
 }
 
 Trade.propTypes = {
+    chart_id        : PropTypes.number,
     is_contract_mode: PropTypes.bool,
     is_mobile       : PropTypes.bool,
     is_trade_enabled: PropTypes.bool,
@@ -77,7 +78,7 @@ Trade.propTypes = {
 export default connect(
     ({ modules, ui }) => ({
         is_contract_mode: modules.smart_chart.is_contract_mode,
-        is_mobile       : ui.is_mobile,
+        chart_id        : modules.trade.chart_id,
         is_trade_enabled: modules.trade.is_trade_enabled,
         onClickNewTrade : modules.trade.onClickNewTrade,
         onMount         : modules.trade.onMount,
@@ -85,5 +86,6 @@ export default connect(
         onUnmount       : modules.trade.onUnmount,
         purchase_info   : modules.trade.purchase_info,
         symbol          : modules.trade.symbol,
+        is_mobile       : ui.is_mobile,
     })
 )(Trade);
