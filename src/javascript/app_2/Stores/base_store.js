@@ -203,6 +203,7 @@ export default class BaseStore {
     @action
     validateProperty(property, value) {
         const validator = new Validator(
+            this,
             { [property]: value !== undefined ? value : this[property] },
             { [property]: this.validation_rules[property] }
         );
