@@ -5,23 +5,25 @@ const State        = require('../../_common/storage').State;
 const Footer = (() => {
     const onLoad = () => {
         BinarySocket.wait('website_status', 'authorize').then(() => {
-            const $footer      = $('#footer-last');
-            const $cfd_warning = $footer.find('.eu-only');
-            const show_warning = (Client.isLoggedIn() ?
-                (/maltainvest/.test(State.getResponse('authorize.landing_company_name'))
-                    || Client.hasAccountType('financial'))
-                    || /financial/.test(Client.getBasicUpgradeInfo().type)
-                :
-                Client.get('is_eu')
-            );
-            if (show_warning) {
-                $footer.find('p').addClass('font-n');
-                $cfd_warning.setVisibility(1);
+            // show CFD warning to logged in maltainvest clients or
+            // logged in virtual clients with maltainvest financial landing company or
+            // logged out clients with EU IP address
+            if (Client.isLoggedIn()) {
+                BinarySocket.wait('landing_company').then(() => {
+                    showWarning((Client.get('landing_company_shortcode') === 'maltainvest' ||
+                        (Client.get('is_virtual') && State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest')));
+                });
             } else {
-                $cfd_warning.setVisibility(0);
+                showWarning(State.get('is_eu'));
             }
-            $footer.setVisibility(1);
         });
+    };
+
+    const showWarning = (should_show_warning) => {
+        const $footer = $('#footer-last');
+        $footer.find('p')[`${should_show_warning ? 'add' : 'remove'}Class`]('font-n');
+        $footer.find('.eu-only').setVisibility(should_show_warning);
+        $footer.setVisibility(1);
     };
 
     const clearNotification = () => {
