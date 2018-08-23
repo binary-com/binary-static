@@ -1,3 +1,4 @@
+import debounce                         from 'lodash.debounce';
 import {
     action,
     observable,
@@ -76,6 +77,8 @@ export default class TradeStore extends BaseStore {
 
     // Chart
     chart_id = 1;
+
+    debouncedProposal = debounce(this.requestProposal, 500);
 
     constructor({ root_store }) {
         const session_storage_properties = allowed_query_string_variables;
@@ -232,7 +235,7 @@ export default class TradeStore extends BaseStore {
 
             this.is_query_string_applied = true;
 
-            this.requestProposal();
+            this.debouncedProposal();
         }
     }
 
