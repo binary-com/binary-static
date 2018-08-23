@@ -47,10 +47,10 @@ export default class PortfolioStore extends BaseStore {
         if ('error' in response) {
             this.error = response.error.message;
         }
-        const { contract_id, action } = response.transaction;
+        const { contract_id, action: act } = response.transaction;
         if (!contract_id) return;
 
-        if (action === 'buy') {
+        if (act === 'buy') {
             WS.portfolio().then((res) => {
                 const new_pos = res.portfolio.contracts.find(pos => +pos.contract_id === +contract_id);
                 if (!new_pos) return;
@@ -58,7 +58,7 @@ export default class PortfolioStore extends BaseStore {
             });
             // subscribe to new contract:
             WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
-        } else if (action === 'sell') {
+        } else if (act === 'sell') {
             this.removePositionById(contract_id);
         }
     };
