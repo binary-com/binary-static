@@ -16,23 +16,23 @@ const GeneralSettings = ({
     <div className='tab-content'>
         <div className='general-setting-container'>
             <SettingsControl
-                name='language'
+                name='Language'
                 onClick={showLanguage}
             >
                 <i className={`flag ic-flag-${(curr_language || 'EN').toLowerCase()}`} />
             </SettingsControl>
             <SettingsControl
-                name='dark mode'
+                name='Dark Mode'
                 to_toggle={is_dark_mode}
                 toggle={toggleDarkMode}
             />
             <SettingsControl
-                name='purchase confirmation'
+                name='Purchase Confirmation'
                 to_toggle={is_purchase_confirmed}
                 toggle={togglePurchaseConfirmation}
             />
             <SettingsControl
-                name='purchase lock'
+                name='Purchase Lock'
                 to_toggle={is_purchase_locked}
                 toggle={togglePurchaseLock}
             />

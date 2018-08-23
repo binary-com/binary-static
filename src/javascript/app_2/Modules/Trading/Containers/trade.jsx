@@ -1,3 +1,4 @@
+import { CSSTransition }    from 'react-transition-group';
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import Test                 from './test.jsx';
@@ -19,32 +20,50 @@ class Trade extends React.Component {
 
     render() {
         const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
-        const InfoBoxComponent = this.props.is_contract_mode ?
-            <InfoBox is_trade_page /> : null;
+        const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
 
         return (
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container notice-msg'>
                     { this.props.symbol &&
                         <SmartChart
-                            InfoBox={InfoBoxComponent}
+                            chart_id={this.props.chart_id}
+                            InfoBox={<InfoBox is_trade_page />}
                             onSymbolChange={this.props.onSymbolChange}
                             symbol={this.props.symbol}
                         />
                     }
                     <Test />
                 </div>
-                { contract_id ?
-                    <ContractDetails contract_id={contract_id} onClickNewTrade={this.props.onClickNewTrade} />
-                    :
-                    <FormLayout is_mobile={this.props.is_mobile} is_trade_enabled={this.props.is_trade_enabled} />
-                }
+                <div
+                    className={form_wrapper_class}
+                >
+                    <FormLayout
+                        is_mobile={this.props.is_mobile}
+                        is_contract_visible={!!contract_id}
+                        is_trade_enabled={this.props.is_trade_enabled}
+                    />
+                    <CSSTransition
+                        in={!!contract_id}
+                        timeout={400}
+                        classNames='contract-wrapper'
+                        unmountOnExit
+                    >
+                        <div className='contract-wrapper'>
+                            <ContractDetails
+                                contract_id={contract_id}
+                                onClickNewTrade={this.props.onClickNewTrade}
+                            />
+                        </div>
+                    </CSSTransition>
+                </div>
             </div>
         );
     }
 }
 
 Trade.propTypes = {
+    chart_id        : PropTypes.number,
     is_contract_mode: PropTypes.bool,
     is_mobile       : PropTypes.bool,
     is_trade_enabled: PropTypes.bool,
@@ -59,7 +78,7 @@ Trade.propTypes = {
 export default connect(
     ({ modules, ui }) => ({
         is_contract_mode: modules.smart_chart.is_contract_mode,
-        is_mobile       : ui.is_mobile,
+        chart_id        : modules.trade.chart_id,
         is_trade_enabled: modules.trade.is_trade_enabled,
         onClickNewTrade : modules.trade.onClickNewTrade,
         onMount         : modules.trade.onMount,
@@ -67,5 +86,6 @@ export default connect(
         onUnmount       : modules.trade.onUnmount,
         purchase_info   : modules.trade.purchase_info,
         symbol          : modules.trade.symbol,
+        is_mobile       : ui.is_mobile,
     })
 )(Trade);

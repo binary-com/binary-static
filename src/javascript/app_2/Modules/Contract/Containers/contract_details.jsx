@@ -1,8 +1,8 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import { Link }        from 'react-router-dom';
-import DetailsContents from '../Components/details_contents.jsx';
-import DetailsHeader   from '../Components/details_header.jsx';
+import DetailsContents from '../Components/Details/details_contents.jsx';
+import DetailsHeader   from '../Components/Details/details_header.jsx';
 import UILoader        from '../../../App/Components/Elements/ui_loader.jsx';
 import routes          from '../../../Constants/routes';
 import { connect }     from '../../../Stores/connect';
@@ -20,20 +20,18 @@ class ContractDetails extends React.Component {
         } = this.props.contract_info;
 
         return (
-            <div className='sidebar-container'>
-                { !contract_id ?
-                    <UILoader/>
-                    :
-                    <React.Fragment>
-                        <div className='contract-container'>
-                            <DetailsHeader status={this.props.display_status}/>
-                            <DetailsContents
-                                buy_id={transaction_ids.buy}
-                                details_expiry={this.props.details_expiry}
-                                details_info={this.props.details_info}
-                                longcode={longcode}
-                            />
-                        </div>
+            !contract_id ?
+                <UILoader/>
+                :
+                <React.Fragment>
+                    <div className='contract-container'>
+                        <DetailsHeader status={this.props.display_status}/>
+                        <DetailsContents
+                            buy_id={transaction_ids.buy}
+                            details_expiry={this.props.details_expiry}
+                            details_info={this.props.details_info}
+                            longcode={longcode}
+                        />
                         <Link
                             className='btn secondary orange'
                             to={routes.trade}
@@ -41,9 +39,8 @@ class ContractDetails extends React.Component {
                         >
                             <span>{localize('Start a new trade')}</span>
                         </Link>
-                    </React.Fragment>
-                }
-            </div>
+                    </div>
+                </React.Fragment>
         );
     }
 }

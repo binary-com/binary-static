@@ -80,7 +80,7 @@ class DatePicker extends React.PureComponent {
         // update Calendar
         const { date_format, start_date } = this.props;
         const new_date = (mode === 'duration') ? moment.utc().add(value, 'days').format(date_format) : value;
-        if (moment.utc(new_date, date_format).isValid() || !new_date) {
+        if (this.calendar && (moment.utc(new_date, date_format).isValid() || !new_date)) {
             if (!new_date) {
                 const current_date = moment.utc(start_date).format(date_format);
                 this.calendar.setState({
