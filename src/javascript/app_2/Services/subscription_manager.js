@@ -55,7 +55,7 @@ const SubscriptionManager = (() => {
             };
 
             BinarySocket.send(request_obj, {
-                callback: ((id) => (response) => { dispatch(response, id); })(sub_id),
+                callback: (response) => dispatch(response, sub_id),
             });
         } else if (!hasCallbackFunction(sub_id, fncCallback)) {
             // there is already an active subscription for the very same request which fncCallback is not subscribed to it yet
