@@ -34,9 +34,12 @@
                 }
             }
             .portfolio, .statement {
-                &.container {
-                    max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
+                &.container, &-empty {
                     transform: translateX(calc(#{$PORTFOLIO_DRAWER_WIDTH} / 2));
+                }
+                &.container {
+                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
+                    padding-right: $PORTFOLIO_DRAWER_WIDTH;
                 }
             }
         }
@@ -55,25 +58,21 @@
                 }
             }
             .ciq-chart {
-                .cq-top-ui-widgets {
+                .cq-top-ui-widgets, & .info-box {
                     transition: transform 0.25s ease;
 
-                    .info-box {
-                        transition: transform 0.25s ease;
-                    }
                     .cq-symbols-display {
                         z-index: 1;
                     }
                 }
                 .cq-chart-controls {
                     transition: max-width 0.25s ease, transform 0.25s ease;
-
                 }
             }
         }
         .portfolio, .statement {
-            &.container {
-                transition: transform 0.25s ease, max-width 0.12s ease;
+            &.container, &-empty {
+                transition: transform 0.25s ease;
             }
         }
         @media screen and (max-width: 768px) {
