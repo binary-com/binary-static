@@ -44,31 +44,30 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     transactionHandler(response) {
-        console.log('%c transaction handler', 'color: green; font-weight: bold;', response);
         if ('error' in response) {
             this.error = response.error.message;
         }
         const { contract_id, action } = response.transaction;
         if (!contract_id) return;
-        console.timeEnd(contract_id);
-        console.time(contract_id);
 
         if (action === 'buy') {
+            console.log('%c buy', 'color: green; font-weight: bold;');
             WS.portfolio().then((res) => {
                 const new_pos = res.portfolio.contracts.find(pos => +pos.contract_id === +contract_id);
                 if (!new_pos) return;
                 this.pushNewPosition(new_pos);
             });
-            // subscribe to new contracts:
-            WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
+            // subscribe to new contract:
+            WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
         } else if (action === 'sell') {
+            console.log('%c sell', 'color: red; font-weight: bold;');
             this.removeByContractId(contract_id);
         }
     };
 
     @action.bound
     proposalOpenContractHandler(response) {
-        console.log('proposal open contract', response);
+        console.log('%c proposalOpenContractHandler', 'color: orange; font-weight: bold;', response);
         if ('error' in response) return;
 
         const proposal = response.proposal_open_contract;
