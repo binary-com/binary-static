@@ -39,8 +39,13 @@
                 }
                 &.container {
                     transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-                    padding-right: $PORTFOLIO_DRAWER_WIDTH;
                 }
+            }
+            .statement.container {
+                padding-right: $PORTFOLIO_DRAWER_WIDTH;
+            }
+            .portfolio.container {
+                padding-right: calc(#{$PORTFOLIO_DRAWER_WIDTH} + 12px);
             }
         }
         .chart-container {
