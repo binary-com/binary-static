@@ -70,10 +70,13 @@ StartDate.propTypes = {
     is_minimized    : PropTypes.bool,
     is_nativepicker : PropTypes.bool,
     onChange        : PropTypes.func,
-    start_date      : PropTypes.number,
     start_dates_list: MobxPropTypes.arrayOrObservableArray,
     start_time      : PropTypes.string,
     sessions        : MobxPropTypes.arrayOrObservableArray,
+    start_date      : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
 export default observer(StartDate);

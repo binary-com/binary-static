@@ -30,6 +30,7 @@ const Duration = ({
     duration,
     duration_unit,
     duration_units_list,
+    duration_min_max,
     expiry_date,
     expiry_time,
     expiry_type,
@@ -44,7 +45,7 @@ const Duration = ({
 }) => {
     const moment_now = moment(server_time);
     if (!now_date || moment_now.date() !== now_date.date()) {
-        const moment_today = moment_now.clone().set({ hour: 0, minute: 0, second: 0, millisecond: 0 });
+        const moment_today = moment_now.clone().startOf('day');
 
         now_date          = moment_now.clone();
         min_date_duration = moment_today.clone().add(1, 'd');
@@ -115,7 +116,7 @@ const Duration = ({
                                 max_date={max_date_duration}
                                 mode='duration'
                                 onChange={onChange}
-                                value={duration || 1} // TODO: replace 1 with min duration
+                                value={duration || duration_min_max.min}
                                 is_read_only
                                 is_clearable={false}
                                 is_nativepicker={is_nativepicker}
@@ -146,6 +147,7 @@ const Duration = ({
                             has_today_btn
                             min_date={min_date_expiry}
                             max_date={max_date_duration}
+                            start_date={start_date}
                             onChange={onChange}
                             value={expiry_date}
                             is_read_only
@@ -180,6 +182,7 @@ Duration.propTypes = {
     ]),
     duration_unit      : PropTypes.string,
     duration_units_list: MobxPropTypes.arrayOrObservableArray,
+    duration_min_max   : PropTypes.object,
     expiry_date        : PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
@@ -191,9 +194,12 @@ Duration.propTypes = {
     onChange         : PropTypes.func,
     server_time      : PropTypes.object,
     sessions         : MobxPropTypes.arrayOrObservableArray,
-    start_date       : PropTypes.number,
     start_time       : PropTypes.string,
     validation_errors: PropTypes.object,
+    start_date       : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
 export default observer(Duration);
