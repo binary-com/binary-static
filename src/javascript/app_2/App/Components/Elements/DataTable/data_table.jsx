@@ -14,7 +14,7 @@ class DataTable extends React.PureComponent {
     }
 
     alignHeader() {
-        // scrollbar inside body table can push content (depending on the browser and if mouse is plugged in)
+        // scrollbar inside table-body can push content (depending on the browser and if mouse is plugged in)
         if (!this.props.data_source.length) return;
         const first_body_row   = this.el_table_body.firstChild;
         const scrollbar_offset = this.el_table_head.offsetWidth - first_body_row.offsetWidth;
@@ -26,7 +26,7 @@ class DataTable extends React.PureComponent {
             children,
             columns,
             footer,
-            onRowClick,
+            getRowLink,
             onScroll,
         } = this.props;
 
@@ -46,7 +46,7 @@ class DataTable extends React.PureComponent {
                             row_obj={row_obj}
                             columns={columns}
                             key={id}
-                            onRowClick={onRowClick}
+                            to={getRowLink(row_obj)}
                         />
                     )}
                     {children}

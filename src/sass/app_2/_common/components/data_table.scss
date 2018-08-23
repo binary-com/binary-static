@@ -26,6 +26,11 @@ $header-height: 42px;
         padding: 0 16px;
         box-sizing: border-box;
         border-bottom: 1px solid $COLOR_GRAY;
+        text-decoration: none;
+
+        &, &:active, &:visited {
+            color: $COLOR_LIGHT_BLACK;
+        }
     }
     &__head {
         height: $header-height;

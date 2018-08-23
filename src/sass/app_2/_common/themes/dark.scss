@@ -227,16 +227,13 @@ body.dark, .theme-wrapper.dark {
                         .table__row {
                             border-color: $COLOR_BRANDBLUE_85;
 
-                            .table__cell {
-                                &.date, &.desc, &.action, &.payout, &.balance {
-                                    color: $COLOR_BRANDBLUE_40;
-                                }
-                                &.refid {
-                                    color: $COLOR_SKY_BLUE;
-                                }
-                            }
                             &:hover {
                                 background: $COLOR_BRANDBLUE_85;
+                            }
+                        }
+                        .table__cell {
+                            &:not(.amount) {
+                                color: $COLOR_BRANDBLUE_40;
                             }
                         }
                     }

@@ -16,10 +16,6 @@ class Statement extends React.Component {
     componentDidMount()    { this.props.onMount(); }
     componentWillUnmount() { this.props.onUnmount(); }
 
-    redirectToContract = (row_obj) => {
-        this.props.history.push(getContractPath(row_obj.id));
-    };
-
     render() {
         const {
             has_selected_date,
@@ -70,7 +66,7 @@ class Statement extends React.Component {
                                 data_source={data}
                                 columns={columns}
                                 onScroll={handleScroll}
-                                onRowClick={this.redirectToContract}
+                                getRowLink={(row_obj) => getContractPath(row_obj.id)}
                             >
                                 {renderGUI()}
                             </DataTable>
