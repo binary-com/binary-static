@@ -30,16 +30,20 @@ const Process = (() => {
      */
     const processActiveSymbols = () => {
         BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
-            // populate the Symbols object
-            Symbols.details(response);
+            if (response.active_symbols.length) {
+                // populate the Symbols object
+                Symbols.details(response);
 
-            const market = commonTrading.getDefaultMarket();
+                const market = commonTrading.getDefaultMarket();
 
-            // store the market
-            Defaults.set('market', market);
+                // store the market
+                Defaults.set('market', market);
 
-            commonTrading.displayMarkets();
-            processMarket();
+                commonTrading.displayMarkets();
+                processMarket();
+            } else {
+                $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: localize('Trading is unavailable at this time.') })));
+            }
         });
     };
 

@@ -33,6 +33,10 @@ const Dialog = (() => {
                         });
                     }
 
+                    if (options.ok_text && el_btn_ok.firstElementChild) {
+                        el_btn_ok.firstElementChild.textContent = options.ok_text;
+                    }
+
                     el_btn_ok.addEventListener('click', () => {
                         el_dialog.remove();
                         if (typeof options.onConfirm === 'function') {

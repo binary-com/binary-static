@@ -167,6 +167,7 @@ const texts = [
     'Purchase request sent',
     'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.',
     'Please reload the page',
+    'Trading is unavailable at this time.',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -583,6 +584,9 @@ const texts = [
     'Please check your email for further instructions.',
     'Revoke MAM',
     'Manager successfully revoked',
+    '{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.',
+    '{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you.',
+    '{SPAIN ONLY}This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product.',
 
     // account_transfer
     'Min',
@@ -606,6 +610,7 @@ const texts = [
     'Deposits and withdrawals have been disabled on your account. Please check your email for more details.',
     'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Withdrawals have been disabled on your account. Please check your email for more details.',
+    'MT5 withdrawals have been disabled on your account. Please check your email for more details.',
     'Please complete your [_1]personal details[_2] before you proceed.',
     'Account Authenticated',
 
@@ -645,7 +650,7 @@ const texts = [
     'Dai',
 
     // Authentication errors
-    'Invalid document format: "[_1]"',
+    'Invalid document format.',
     'File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]',
     'ID number is required for [_1].',
     'Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).',

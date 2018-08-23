@@ -186,17 +186,10 @@ const ViewPopup = (() => {
         let current_spot      = contract.status === 'sold' ? '' : contract.current_spot;
         let current_spot_time = contract.status === 'sold' ? '' : contract.current_spot_time;
         if (is_ended && contract.status !== 'sold') {
-            if (/^(tickhigh|ticklow)$/i.test(contract.contract_type)) {
-                // sell spot indicates highest/lowest tick for lost contracts
-                current_spot      = contract.status === 'lost' ? contract.sell_spot : '';
-                current_spot_time = contract.status === 'lost' ? contract.sell_spot_time : '';
-            } else {
-                const is_sold_before_expiry = +contract.is_path_dependent
-                    ? contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry
-                    : contract.sell_time && contract.sell_time < contract.date_expiry;
-                current_spot      = is_sold_before_expiry ? contract.sell_spot : contract.exit_tick;
-                current_spot_time = is_sold_before_expiry ? contract.sell_spot_time : contract.exit_tick_time;
-            }
+            // for tick high/low contracts, only show exit tick information if contract lost (indicates highest/lowest tick)
+            const should_show_exit_tick = !/^(tickhigh|ticklow)$/i.test(contract.contract_type) || contract.status === 'lost';
+            current_spot      = should_show_exit_tick ? contract.exit_tick : '';
+            current_spot_time = should_show_exit_tick ? contract.exit_tick_time : '';
         }
 
         if (current_spot) {
@@ -324,7 +317,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_indicative_label', localize('Payout'));
         if (contract.status === 'sold') {
             containerSetText('trade_details_end_label', localize('End Time'));
-            containerSetText('trade_details_end_date', epochToDateTime(+contract.is_path_dependent && contract.status !== 'sold' ? contract.sell_spot_time : contract.sell_time), '', true);
+            containerSetText('trade_details_end_date', epochToDateTime(contract.sell_time), '', true);
         }
         if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));
@@ -350,7 +343,7 @@ const ViewPopup = (() => {
         // don't show for japanese clients or contracts that are manually sold before starting
         // Hide audit table for Lookback
         if (contract.audit_details && !isJPClient() && !Lookback.isLookback(contract.contract_type) &&
-            (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
+            (!contract.exit_tick_time || contract.exit_tick_time > contract.date_start)) {
             initAuditTable(0);
         }
     };

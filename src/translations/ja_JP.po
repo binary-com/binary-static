@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-06 01:52\n"
+"PO-Revision-Date: 2018-08-23 07:59\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Japanese\n"
 "MIME-Version: 1.0\n"
@@ -286,6 +286,9 @@ msgstr "%1ではプロから初心者のトレーダーの皆様のニーズに�
 msgid "%1 offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out."
 msgstr "%1ではプロから初心者のトレーダーの皆様のニーズにいつでもどこでもお応えできるよう、多様な口座タイプを提供しています。"
 
+msgid "%1 offers complete trading solutions for binary options%2 and CFDs%3."
+msgstr ""
+
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
 msgstr "%1ではハイブリッドモデルを利用した外国為替取引を提供しています。例えば、自身の口座（Dealing Desk）と当社のLP制度（No Dealing Desk）の双方を用いて顧客の注文を部分的にヘッジしています。"
 
@@ -476,9 +479,6 @@ msgstr "取引限度額（30日間）"
 
 msgid "40 transactions or more in the past 12 months"
 msgstr "過去12ヶ月で40以上のお取引"
-
-msgid "4X Software Sdn. Bhd., C-10-10(1), iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
-msgstr ""
 
 msgid "6 months to 1 year"
 msgstr "6ヶ月から1年"
@@ -1313,6 +1313,9 @@ msgstr "顧客・支払担当者は顧客の支払処理、支払に関するお
 msgid "As an EU resident, you are also required to verify the above documents by %1video call%2."
 msgstr ""
 
+msgid "As an example, Expert Advisors might be able to be programmed for:"
+msgstr ""
+
 msgid "As between you and us, we own all rights, title, and interest, including all intellectual property rights, in and to, the %1 API, and all elements, components, and executables of the %1 API."
 msgstr "お客さまと当社間において、%1 APIでの全知的財産権を含む全ての権利、権原、所有権、及び%1 APIの全ての要素、構成、執行を当社が所有しています。"
 
@@ -1650,20 +1653,22 @@ msgstr "Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wic
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
 
-msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
-msgstr "その他の国（アメリカ、日本、コスタリカ、香港などの一部の国を除く）の居住者は、この会社の下で口座を開設されます。"
+msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
+msgstr ""
 
 msgid "Binary (Europe) Limited"
 msgstr "Binary (Europe) Limited"
 
-msgid "Binary (Europe) Limited & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
-msgstr "Binary (Europe) Limited & Binary Investments (Europe)\n"
-"所在地：Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
-
 msgid "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - %1's Volatility Indices) by the Malta Gaming Authority in Malta (licence no %2) and for UK clients by the UK Gambling Commission - %3view licence%4."
 msgstr ""
 
+msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
+msgstr ""
+
 msgid "Binary (FX) Ltd"
+msgstr ""
+
+msgid "Binary (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
 msgstr ""
 
 msgid "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
@@ -1672,12 +1677,12 @@ msgstr ""
 msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
 
-msgid "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
-msgstr "Binary (IOM) Limited　　　　　　 所在地：<br> First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
-
 msgid "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW. Licensed and regulated by the Gambling Supervision Commission in the Isle of Man (current online gambling licence granted on the 31 August 2017) and for UK clients by the UK Gambling Commission - %1view licence%2."
 msgstr "Binary (IOM) Limited：First Floor, Millennium House, Victoria Road, Douglas, Isle of Man, IM2 4RW\n"
 "マン島のライセンス当局GSCによってライセンスが付与されています。%1ライセンスを確認する%2"
+
+msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
+msgstr ""
 
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
@@ -1928,6 +1933,9 @@ msgstr "CFDマージンポリシー"
 msgid "CFDs"
 msgstr "CFD"
 
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1Between 74-89% of retail investor accounts lose money when trading CFDs.%2 You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr ""
+
 msgid "CFDs on commodities; and/or"
 msgstr ""
 
@@ -2037,6 +2045,9 @@ msgid "Chart"
 msgstr "チャート"
 
 msgid "Chart is not available for this underlying."
+msgstr ""
+
+msgid "Charting Platforms"
 msgstr ""
 
 msgid "Charting for this underlying is delayed"
@@ -2208,13 +2219,13 @@ msgstr "（債権譲渡等の禁止）\n"
 msgid "Clients agree to comply with the reasonable requests made by the Company for the purpose of verifying compliance with this term."
 msgstr "この条件の遵守を検証するために、クライアントは当社による合理的なリクエストを遵守することに同意します。"
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
-msgstr "その他の国（アメリカ、日本、コスタリカ、香港などの一部の国を除く）の居住者は、この会社の下で口座を開設されます。"
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. %1 is not available in the British Virgin Islands."
+msgstr ""
 
-msgid "Clients from the rest of the world (excluding certain countries such as the USA, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
-msgstr "その他の国（アメリカ、日本、コスタリカ、香港などの一部の国を除く）の居住者は、この会社の下で口座を開設されます。"
+msgid "Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (V) Ltd. %1 is not available in the Republic of Vanuatu."
+msgstr ""
 
-msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
+msgid "Clients from the rest of the world (excluding certain jurisdictions such as the USA, Canada, Japan, and the European Union) who wish to trade CFDs will have their MetaTrader 5 account opened with Binary (FX) Ltd. %1 is not available in Malaysia."
 msgstr ""
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
@@ -2258,6 +2269,9 @@ msgstr "自己制限の更新をされたい、またはお取引を再開され
 
 msgid "Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client's account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again."
 msgstr "サイトのアクセス制限を設定される場合は、アクセス制限の最低期間は６ヶ月であり、クーリングオフ無しに最長で５年間の設定を即座にすることが可能です。アクセス制限を設定された場合は、ご口座に存在する資金はお客さまに返金されます。アクセス制限の期間が過ぎた後も、お客様がアクセス制限の解除を申請しない限りアクセス制限が自動的に解除されることはありません。"
+
+msgid "Clients with insider knowledge of any financial market or instrument are prohibited from trading at this website."
+msgstr ""
 
 msgid "Clients' Money"
 msgstr "お客さまマネー"
@@ -2378,6 +2392,9 @@ msgstr "苦情の申し立て"
 
 msgid "Complete the <a href=\"%1\">Financial Assessment</a>."
 msgstr "<a href=\"%1\">財務評価</a>を比較する。"
+
+msgid "Complete your <a href=\"%1\">Tax Information</a>."
+msgstr ""
 
 msgid "Compliance"
 msgstr "コンプライアンス"
@@ -2630,6 +2647,9 @@ msgstr "次へ"
 
 msgid "Create New Token"
 msgstr "新しいトークンを作成"
+
+msgid "Create New Virtual-money Account"
+msgstr ""
 
 msgid "Create account with Google"
 msgstr "Googleアカウントを使って口座作成"
@@ -4044,8 +4064,8 @@ msgstr "はじめに"
 msgid "Getting started"
 msgstr "はじめに"
 
-msgid "Getting started is free and easy – just <a href='%1'>fill out the application form</a>, choose from two types of commission plans and wait for our approval."
-msgstr "無料ですぐに始められます - <a href='%1'>申請書を入力</a>して、2つのコミッションタイプから選択し、当社からの承認をお待ちいただくだけです。"
+msgid "Getting started is free and easy – just %1fill out the application form%2, choose from two types of commission plans and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "無料ですぐに始められます - %1申請書%2*を入力して当社からの承認をお待ちいただくだけです。"
@@ -4525,9 +4545,6 @@ msgstr ""
 msgid "If you are an individual, you are over 18 years old and you have full capacity to enter into this Agreement;"
 msgstr "個人の場合、18歳以上であり、且つ本契約を締結するにあたり十分な能力がある必要があります。"
 
-msgid "If you are categorised as a Professional Client or an Eligible Counterparty;"
-msgstr ""
-
 msgid "If you are considering self-exclusion, you may wish to register with GAMSTOP."
 msgstr "自己宣言を検討されるなら、GAMSTOPでのご登録をおすすめします。"
 
@@ -4591,7 +4608,7 @@ msgstr "If you have entered into more than one Open Position in the same market,
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "当社が求めるスキルをお持ちでしたら、バイナリーオプショントレーディングシステムの運営に従事している、新たな高みを目指す非常に有能なフロントエンド開発チームの貴重な一員になれます。"
 
-msgid "If you incur a negative balance through your trading activities, you should inform the Company, who in return will evaluate the inquiry and at its discretion may credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy. Such decisions may be based on our local regulatory obligations and may entail subsequent closing of your Account."
+msgid "If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy."
 msgstr ""
 
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
@@ -4868,7 +4885,7 @@ msgstr "このような状況下では当社は事前通達の有無に関わら
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "詳細説明欄ではエージェントの決済方法、振込先の口座番号を記入して下さい。"
 
-msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. %2 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %4. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18."
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. %2 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %4. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr ""
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
@@ -5045,8 +5062,8 @@ msgstr "無効な値です。最大はXXXです。"
 msgid "Invalid amount, minimum is"
 msgstr "無効な値です。最小"
 
-msgid "Invalid document format: \"%1\""
-msgstr "文書フォーマットが無効です：「%1」"
+msgid "Invalid document format."
+msgstr ""
 
 msgid "Invalid email address."
 msgstr "メールアドレスが無効です。"
@@ -5726,6 +5743,9 @@ msgstr "クアラルンプール"
 msgid "L. Event of Default"
 msgstr "L. 契約不履行事由"
 
+msgid "Labuan"
+msgstr ""
+
 msgid "Ladders"
 msgstr ""
 
@@ -5753,9 +5773,8 @@ msgstr "%2の最新%1 tickの下一桁統計"
 msgid "Latest bank statement or any government-issued letter which contains your name and address"
 msgstr "最新の銀行取引明細書または氏名と住所が確認できる政府発行の手紙"
 
-msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of persons accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, persons accessing this site are required to inform themselves about and to observe such restrictions."
-msgstr "（決済方法）\n"
-"第12条　本取引の決済は、判定時刻における権利行使（自動）又は反対売買により差金決済により行うものとし、受渡通貨は日本円のみとします。"
+msgid "Laws regarding financial contracts vary throughout the world, and it is the responsibility of clients accessing this site to ensure that they understand and fully comply with any laws or regulations relevant to themselves in their own country. This site does not constitute, and may not be used for the purposes of, an offer or solicitation to anyone in any jurisdiction in which such offer or solicitation is not authorised or to any person to whom it is unlawful to make such offer or solicitation. Access to this site and the offering of financial contracts via this site in certain jurisdictions may be restricted and, accordingly, clients accessing this site are required to inform themselves about and to observe such restrictions."
+msgstr ""
 
 msgid "Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
 msgstr ""
@@ -6062,6 +6081,9 @@ msgstr "ボラティリティ・インデックスのみのMT5レアルマネー
 
 msgid "MT5 trading platform links:"
 msgstr "MT5取引プラットフォームリンク："
+
+msgid "MT5 withdrawals have been disabled on your account. Please check your email for more details."
+msgstr ""
 
 msgid "MacOS"
 msgstr "MacOS"
@@ -6557,11 +6579,14 @@ msgstr "ポジションをモニターする必要があります。"
 msgid "Negative Balance Protection"
 msgstr "ゼロカット（NBP）"
 
+msgid "Negative balance protection"
+msgstr ""
+
 msgid "Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of, or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of your obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement."
 msgstr "Neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable for any loss, damage or debt to you arising directly or indirectly out of, or in connection with this Agreement. You agree to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses (including reasonable attorney's fees) incurred arising out of your failure to comply with any and all of your obligations set forth in this Agreement and/or the Company's enforcement against you of any and all of its rights under this Agreement."
 
-msgid "Neither you, your direct relatives, or any persons you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled persons."
-msgstr "アフィリエイト会員の近しい立場の親族または制御できる人を獲得会員にすることはできません。また、アフィリエイト会員はアフィリエイト報酬や当社からのいかなる報酬もそのような親族や友人と共有することはできません。近しい立場の親族とは、配偶者、両親、子、兄弟姉妹と定義します。"
+msgid "Neither you, your direct relatives, or any clients you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled clients."
+msgstr ""
 
 msgid "Net Annual Income"
 msgstr "年間純収入"
@@ -7107,7 +7132,7 @@ msgid "Our trading screen is simple to use:"
 msgstr "取引方法は次の5つの取引条件を選択・指定："
 
 msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
-msgstr "各トレードのリターン率に基づいた取引金額コミッションプログラムです。獲得顧客のリターン率が高いほど、アフィリエイト報酬率が低いプランです。"
+msgstr ""
 
 msgid "Our website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and their advertisements may submit cookies to your web browser which is beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites because their practices may differ from ours."
 msgstr ""
@@ -7294,9 +7319,6 @@ msgstr "お客さま登録情報"
 
 msgid "Personal Wealth Awards 2017"
 msgstr "Personal Wealth Awards 2017を受賞"
-
-msgid "Persons with insider knowledge of any financial market or instrument are prohibited from trading at this website."
-msgstr "金融市場や金融商品の内部情報を知る方による当ウェブサイトでのお取引は禁止されています。"
 
 msgid "Pillar 3 Disclosures"
 msgstr "Pillar 3 Disclosures"
@@ -7562,8 +7584,8 @@ msgstr "補充可能なUSD 10,000バーチャルクレジットが利用でき�
 msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
 msgstr "バーチャルマネーを利用して、リスクフリーの環境で様々な取引戦略を試しましょう。"
 
-msgid "Practise your trading strategy with %1 of virtual funds in a risk-free environment."
-msgstr "バーチャルクレジットが利用できる%1を利用して、リスクのない環境で取引戦略を試してみましょう。"
+msgid "Practise your trading strategy with virtual funds in a risk-free environment."
+msgstr ""
 
 msgid "Precious metal pairs including gold and platinum."
 msgstr "金やプラチナなどの貴金属ペア"
@@ -7808,8 +7830,8 @@ msgstr "公務員"
 msgid "Publish your name and logo (with or without a link to your Application) on our website, in press releases, and in promotional materials without additional consent;"
 msgstr "お客さまのお名前及びロゴ（アプリケーションのリンクを含む）を当サイト、プレスリリース、販促資料において同意を伺うことなく公開します。"
 
-msgid "Published in English, Indonesian, Japanese, Chinese, Polish, German, French, Portuguese, Russian, and Thai"
-msgstr "ライブチャットは英語、インドネシア語、中国語、ポーランド語、ドイツ語、フランス語、ポルトガル語、ロシア語、タイ語の11ヵ国語で対応。（日本語は、現在対応しておりません。）"
+msgid "Published in English, Indonesian, Chinese, Polish, German, French, Spanish, Portuguese, Russian, and Thai"
+msgstr ""
 
 msgid "Purchase"
 msgstr "購入"
@@ -8326,6 +8348,9 @@ msgstr "口座開設時確認書類"
 
 msgid "Security testing opportunities"
 msgstr "セキュリティテストの機会"
+
+msgid "Select <a href=\"%1\">Citizenship</a>."
+msgstr ""
 
 msgid "Select <strong>Accept cookies</strong>."
 msgstr "<strong>Cookieを有効にする</strong>を選択してください。"
@@ -9002,6 +9027,9 @@ msgstr "木"
 msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
 msgstr "財務評価にご入力いただきありがとうございます。これよりご入金が可能となり、MetaTrader 5でリアルマネーの外国為替取引ができるようになります。"
 
+msgid "Thank you for completing your Personal Details. You can now deposit funds and trade Forex with real money on MetaTrader 5."
+msgstr ""
+
 msgid "Thank you for signing up! Please check your email to complete the registration process."
 msgstr "口座開設ありがとうございます。ご登録頂いたメールアドレスに【認証専用のURL】を送信致しましたのでご確認下さい。"
 
@@ -9308,8 +9336,8 @@ msgstr ""
 msgid "The Company will assess your knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr ""
 
-msgid "The Company will not be liable in any way to any persons in the event of force majeure, or for the act of any Government or legal authority or for the failure of or damage or destruction to, its computer systems, data or records or any part thereof, or for delays, losses, errors or omissions resulting from the failure or mismanagement of any telecommunications or computer equipment or software. The Company shall not be responsible for any damages or losses deemed or alleged to have resulted from or been caused by this site or its content. This includes any client's use or misuse of its content, the inability of any client to connect with or use the site, delay in operations or transmission, failure of communication lines, or any errors or omissions in content."
-msgstr "当社は、不可抗力的な事象、政府や規制機関による行動、コンピュータシステム、データ、記録などへの損害や破壊、及び通信、コンピュータ設備またはソフトウェアに対する不備に起因するような遅延、損害、エラーや遺漏というような事象に対する責任は一切負うことはありません。当社は当社サイトやコンテンツから引き起こされたと推測、及び主張されるような損害に対して責任を負うことはありません。この取り決めにはお客さまの誤ったコンテンツのご利用方法、当社サイトへの接続の失敗、操作や送受信の遅延、通信の失敗、及びコンテンツへのあらゆるエラーや遺漏といった事象も含まれます。"
+msgid "The Company will not be liable in any way to any clients in the event of force majeure, or for the act of any Government or legal authority or for the failure of or damage or destruction to, its computer systems, data or records or any part thereof, or for delays, losses, errors or omissions resulting from the failure or mismanagement of any telecommunications or computer equipment or software. The Company shall not be responsible for any damages or losses deemed or alleged to have resulted from or been caused by this site or its content. This includes any client's use or misuse of its content, the inability of any client to connect with or use the site, delay in operations or transmission, failure of communication lines, or any errors or omissions in content."
+msgstr ""
 
 msgid "The Company will not pay interest on the Client Money;"
 msgstr ""
@@ -9703,9 +9731,6 @@ msgstr "The provision of the margin trading services described in this Agreement
 msgid "The provision of the trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sub-licensable, terminable licence from the third-party system provider/licensor (the \"MT5 Trading Platform\"). You acknowledge that when providing trading services, described in this Agreement to you, we may decide to change our third–party system provider/licensor and use a different Trading Platform, other than the MT5 Trading Platform. Hence, in such cases we may decide to use an entirely new third–party system provider/licensor (hereinafter referred to as the “new Trading Platform”) or to introduce an additional third–party system provider/licensor (hereinafter referred to as the “additional Trading Platform”)."
 msgstr ""
 
-msgid "The provisions of the Negative Balance protection do not apply:"
-msgstr ""
-
 msgid "The requested transfer would reduce your Account balance to less than the Margin required for your Open Positions;"
 msgstr ""
 
@@ -9798,7 +9823,7 @@ msgstr ""
 msgid "There are no guaranteed profits in investment trading;"
 msgstr ""
 
-msgid "There are no restrictions to the use of Expert Advisors on the MT5 Trading Platform apart from unethical trading. Expert Advisors can be programmed for:"
+msgid "There are no restrictions to the use of Expert Advisors on the MT5 Trading Platform apart from unethical trading."
 msgstr ""
 
 msgid "There are risks associated with utilizing an Internet-based deal execution trading system, including but not limited to the failure of hardware, software and Internet connection. Since %1 does not control signal power, its reception or routing via Internet, configuration of your equipment or reliability of its connection, we cannot be responsible for communication failures, distortions or delays when trading via the Internet."
@@ -9855,6 +9880,9 @@ msgstr "これらST＆Csは、Binary.com (バイナリードットコム)の使�
 
 msgid "These Supplementary Terms and Conditions (these \"ST&Cs\") apply solely to clients (\"you\") of Binary Investments (Europe) Ltd (\"BIEL\", \"we\" or \"us\") and will govern the relationship between you and us when trading Financial Products (as defined below) with us."
 msgstr "これらの補助ご利用規約（\"ST&Cs\"）は、Binary Investments (Europe) Ltd(\"BIEL\", \"当社\" または \"私達\"と表記されます。)のお客さまにのみ適用され、当社と金融商品（以下に定義されているもの）のお取引の際のお客さまと当社間の関係にあたります。"
+
+msgid "These Supplementary Terms and Conditions (these \"ST&Cs\") apply solely to clients (\"you\") of Binary Investments (Europe) Ltd (\"BIEL\", \"we\" or \"us\") and will govern the relationship between you and us when trading Financial Products (as defined in the Key Information documents %1here%2) with us."
+msgstr ""
 
 msgid "These Terms and Conditions may be supplemented from time to time by Supplementary Terms and Conditions applicable to a particular Company or products."
 msgstr "これらの規約は、適用補足規約と特定会社または商品によって随時補足されることがあります。"
@@ -10380,7 +10408,7 @@ msgid "Trading binary options may not be suitable for everyone, so please ensure
 msgstr "【商号】Binary株式会社　金融商品取引業者　関東財務局長（金商）第2949号【加入協会】一般社団法人金融先物取引業協会 \n"
 "Copyright (c) 2017 Binary K.K. All Rights Reserved."
 
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2. %3CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %4Between 74-89% of retail investor accounts lose money when trading CFDs.%5 You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.%6"
+msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive – please play responsibly. Read about %1Responsible Trading%2."
 msgstr ""
 
 msgid "Trading cryptocurrencies on our MetaTrader 5 platform means taking a position on a cryptocurrency pair when you expect it to rise or fall in value so you can make a profit when your prediction is correct."
@@ -10391,6 +10419,9 @@ msgstr "Trading forex and contracts for differences carries a high level of risk
 
 msgid "Trading in Binary Options is speculative and involves a high degree of risk that can result in the loss of your entire investment. Therefore, trading in Binary Options is appropriate only for persons that understand and are willing to assume the economic, legal and other risks involved in such transactions. You should be satisfied that Binary Options trading is suitable for you in light of your investment circumstances and attitude towards risk before trading. You should not engage in speculative Binary Options trading unless you understand the basic aspects of such trading and its risks. If you are in any doubt as to whether Binary Option trading is appropriate and suitable for you, please seek independent advice from a investment consulting professional. %1 does not provide such advice. It is your responsibility, taking into account your personal circumstances and investment resources, to take particular care and make careful considerations independently, both prior to applying to engage in Binary Options with %1, as well as prior to making any individual order. Where you do not understand the risks involved in applying for a trading account with %1 or in making any individual order, you should seek advice and consultation from an independent investment advisor. If you continue to not understand the risks involved in trading in Binary Options, you should not trade at all."
 msgstr "バイナリーオプション取引は投機的であり、全資産を失いかねない高いリスクを伴います。それ故、バイナリーオプション取引は取引の経済的、法律的、またはその他のリスクを含むことを理解し、自ら想定できる方にのみ適しています。バイナリーオプション取引がお客さまの投資環境または投資前のリスクへの心構えがある方に適しているということに納得していただく必要がございます。そのような取引やリスクの基本的な側面を理解されない限り、バイナリーオプション取引に投機的に関与してはいけません。バイナリーオプション取引がお客さまに適しているかどうか疑わしい場合は、プロの投資コンサルティングからアドバイスを貰うようにしてください。%1ではそのようなアドバイスは行っておりません。個人の注文をする前同様、%1とバイナリーオプションに参加するため申請する前に、お客さま個人の事情や投資資源の口座を用いたり、特別な注意をしたり、個別に慎重に考慮することはお客さま自身の責任となります。%1 の取引口座申請に関するリスク、個人の注文に関するリスクをご理解いただけない場合は、独立の投資アドバイザーに相談して、アドバイスを求めてください。それでもバイナリーオプション取引に関するリスクをご理解いただけない場合は、絶対にお取引をしないでください。"
+
+msgid "Trading is unavailable at this time."
+msgstr ""
 
 msgid "Trading manual"
 msgstr "取引マニュアル"
@@ -10695,6 +10726,9 @@ msgstr "詐欺対策マニュアルおよびその他関連ドキュメントの
 msgid "Upgrade now"
 msgstr "今すぐアップグレードする"
 
+msgid "Upgrade to %1 <a href=\"%2\">Financial Account</a>."
+msgstr ""
+
 msgid "Upgrade your account and start trading using real money."
 msgstr "口座をアップグレードして、リアルマネーでお取引をはじめましょう。"
 
@@ -10779,10 +10813,7 @@ msgstr "新しいMT5パスワード（確認用）"
 msgid "Verify new password"
 msgstr "新しいパスワード（確認用）"
 
-msgid "Version 45. Last modified 2018-05-21."
-msgstr ""
-
-msgid "Version 6. Last modified 2018-07-03."
+msgid "Version 46. Last modified 2018-08-02."
 msgstr ""
 
 msgid "Video Room Facility"
@@ -10932,8 +10963,8 @@ msgstr ""
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
 msgstr "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
 
-msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products (primarily binary options) relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
-msgstr "当社は投資事業を行ううえで、投資サービス法(Cap. 370, マルタ法律)の下、マルタ金融サービス庁 (\"MFSA\")によって承認、規制されています。外国為替、インデックス、株式、その他金融商品または資産（金融商品）に関する金融デリバティブ商品（主にバイナリーオプション）を自身の口座で取り扱うことを（取引相手としてのオファーや行為）MFSAによって承認されています。投資アドバイスまたは上述の行為を超えるその他投資サービスの提供は承認されていないため、致しかねます。投資アドバイスまたは上記以外のその他投資サービスが必要だと感じだ際は、独立財務顧問または会社に連絡する必要があります。"
+msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients, both services are in relation to financial derivative products relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
+msgstr ""
 
 msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
 msgstr ""
@@ -11175,8 +11206,8 @@ msgstr "当社には適正テストの実施やリスク警告の義務はあり
 msgid "We’re projected to register over 197 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 789 million."
 msgstr "今年の取引件数は1億9,700万以上になると推測しており、これが達成されると創業以来の総取引件数は7億8，900万件に及びます。"
 
-msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over 150 employees across four offices in Malaysia, Malta, and Japan. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "人材・拠点ともに年々成長をしています。 現在では、マレーシア・マルタ・日本の4店舗で150人を超えるメンバーがBinary.comを支えています。"
+msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr ""
 
 msgid "We’ve paid millions in commission to date through our industry-leading affiliate programme."
 msgstr "業界最先端のアフィリエイトプログラムにこれまで数百万ドルものコミッションをお客さまに提供してきました。"
@@ -11736,8 +11767,8 @@ msgstr "コンテンツの格納が許可されていません（データフィ
 msgid "You are not entitled to any compensation or reimbursement of any kind from the Company under any circumstances."
 msgstr "いかなる状況下において当社からの補償または償還を受ける権利はありません。"
 
-msgid "You are not resident in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
-msgstr "コスタリカ共和国、香港、イスラエル、ジャージー、マレーシア、マルタ、アメリカ合衆国またはその他FATFによって指定されている国の居住者は、Binary Investments (Europe) Ltd.での口座開設はできません。"
+msgid "You are not resident in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA, Canada or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
+msgstr ""
 
 msgid "You are not trading in the actual underlying instrument, or the actual foreign currency; all transactions are settled in cash only."
 msgstr ""
@@ -12005,8 +12036,8 @@ msgstr "アフィリエイト会員は、自身のプロモーションサイト
 msgid "You risk only your initial stake, and your stake never increases."
 msgstr "お客さまの負う取引の最大損失額は購入金額と同額であり、損失リスクが増大することはありません。"
 
-msgid "You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third persons or external parties."
-msgstr "第三者または外部関係者に自身の知識または所有権を与えうる機密情報の不正または開示は避けてください。"
+msgid "You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third clients or external parties."
+msgstr ""
 
 msgid "You shall be solely responsible for, and shall indemnify and hold the Company free and harmless from, any and all third party claims, damages or lawsuits (including, but not limited to, consequential losses and loss of profit, the Company's reasonable legal costs and expenses if applicable):"
 msgstr "アフィリエイト会員は要求に応じた賠償を行う必要があり、当社に対してあらゆる損失、要求、苦情、損害賠償や費用（重大な損失、利益の損失、法的対応の費用やそれにまつわる付加価値税）を求めることはありません。また、直接的であれ間接的であれ、3.3条または3.4条の違反行為の結果として生じた責任はアフィリエイト会員が負います。"
@@ -12038,7 +12069,7 @@ msgstr "検索エンジン、ポータル、スポンサーの公告サービス
 msgid "You shall not resort to high-pressure sales tactics or false promises."
 msgstr "高圧的な販売戦術や口約束を用いてはいけません。"
 
-msgid "You shall not target any of your marketing, advertising, and promotional activities to any persons unless they are over 18 years old, or for Estonian residents whereby they have to be over 21 years old."
+msgid "You shall not target any of your marketing, advertising, and promotional activities to any clients unless they are over 18 years old, or for Estonian residents whereby they have to be over 21 years old."
 msgstr ""
 
 msgid "You should enter %1 characters."
@@ -12496,12 +12527,6 @@ msgstr "予測が難しい市場または例外的な市場動向/ボラティ�
 msgid "in the case of Professional Clients;"
 msgstr "プロのクライアントの場合"
 
-msgid "in the case of a Force Majeure Event;"
-msgstr ""
-
-msgid "in the case of a client breaching any of the terms of this Agreement which results in a Negative Balance."
-msgstr ""
-
 msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
 msgstr "クライアントが本契約の条項のいずれかに違反し、損失を被った場合"
 
@@ -12700,9 +12725,6 @@ msgstr "週間"
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
 msgstr "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
 
-msgid "where the Negative Balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
-msgstr ""
-
 msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
 msgstr "損失がMT5取引プラットフォームの機能制限および/または誤動作に結びついている、またはその結果である場合。"
 
@@ -12715,8 +12737,8 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-msgid "you are not resident in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
-msgstr "コスタリカ共和国、香港、イスラエル、ジャージー、マレーシア、マルタ、アメリカ合衆国またはその他FATFによって指定されている国の居住者は、Binary Investments (Europe) Ltd.での口座開設はできません。"
+msgid "you are not resident in a restricted country such as Canada, Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;"
+msgstr ""
 
 msgid "you are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;"
 msgstr "１８歳以上であり、エストニア国民の場合は２１歳以上です。"
@@ -14433,4 +14455,13 @@ msgstr "タッチオプション"
 
 msgid "{Japan Only} Download Terms and Conditions Document file"
 msgstr "店頭バイナリーオプション取引約款"
+
+msgid "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
+msgstr "{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you."
+
+msgid "{SPAIN ONLY}This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product."
+msgstr "{SPAIN ONLY}This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product."
+
+msgid "{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity."
+msgstr "{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity."
 

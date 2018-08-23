@@ -135,16 +135,7 @@ const BIEL = () => (
                     <li>{it.L('Negative Balance Protection')}
                         <p>{it.L('When using the MT5 Trading Platform, all our clients will be provided with margin monitoring functionality to protect you from encountering negative balances when trading under normal market conditions. As a trader, you should always, and at all times maintain the appropriate levels of margin in your trading account as the recommended method of your own risk management.')}</p>
                         <p>{it.L('If your usable margin drops below 100%, a margin call mode will be triggered and maintained till the level of 50%. In the event that your margin level is equal to, or drops below 50%, the Company will initiate the closing of your current open positions, starting from the most unprofitable until the required margin level is achieved. In such events, the positions will be automatically closed at the current market price at that point in time.')}</p>
-                        <p>{it.L('If you incur a negative balance through your trading activities, you should inform the Company, who in return will evaluate the inquiry and at its discretion may credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy. Such decisions may be based on our local regulatory obligations and may entail subsequent closing of your Account.')}</p>
-                        <p>{it.L('The provisions of the Negative Balance protection do not apply:')}</p>
-                        <ol>
-                            <li>{it.L('If you are categorised as a Professional Client or an Eligible Counterparty;')}</li>
-                            <li>{it.L('in the case of a Force Majeure Event;')}</li>
-                            <li>{it.L('in abnormal market conditions or exceptional market movements/volatility;')}</li>
-                            <li>{it.L('in the case of a client opening any Transaction in relation to Prohibited Trades;')}</li>
-                            <li>{it.L('where the Negative Balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and')}</li>
-                            <li>{it.L('in the case of a client breaching any of the terms of this Agreement which results in a Negative Balance.')}</li>
-                        </ol>
+                        <p>{it.L('If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy.')}</p>
                         <p>{it.L('The Company does not offer credit to its clients. You acknowledge and agree that you will not be dealing with us on credit.')}</p>
                     </li>
                 </ol>
@@ -172,7 +163,9 @@ const BIEL = () => (
         <p>{it.L('Expert Advisors, including any additional functions/plug-ins of trading operations provided by or developed using Expert Advisors, are applications developed using the MetaQuotes Language which can be used to analyse price charts and automate your trades.')}</p>
         <p>{it.L('Expert Advisors made available on the MT5 Trading Platform, are owned by MetaQuotes Software Corporation (the MT5 Trading Platform Licensor) and shall remain the exclusive property of MetaQuotes Software Corporation.')}</p>
         <p>{it.L('The Company is an independent legal entity and is not affiliated with the MT5 Trading Platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5.')}</p>
-        <p>{it.L('There are no restrictions to the use of Expert Advisors on the MT5 Trading Platform apart from unethical trading. Expert Advisors can be programmed for:')}</p>
+        <p>{it.L('There are no restrictions to the use of Expert Advisors on the MT5 Trading Platform apart from unethical trading.')}</p>
+
+        <p>{it.L('As an example, Expert Advisors might be able to be programmed for:')}</p>
         <ol>
             <li>{it.L('alerting Clients of a potential trading opportunity;')}</li>
             <li>{it.L('execution of trades automatically on their behalf;')}</li>

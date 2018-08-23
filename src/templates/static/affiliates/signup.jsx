@@ -19,7 +19,7 @@ const Signup = () => (
             <div className='gr-padding-20'>
                 <h2 className='center-text margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
-                    <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy – just <a href=\'[_1]\'>fill out the application form</a>, choose from two types of commission plans and wait for our approval.', it.affiliate_signup_url)} />
+                    <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy – just [_1]fill out the application form[_2], choose from two types of commission plans and wait for our approval.', `<a href='${it.affiliate_signup_url}' target="_blank">` ,'</a>')} />
                     <Step circle_no='2' header={it.L('Promote [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise [_1] to your audience.', it.website_name)} />
                     <Step circle_no='3' header={it.L('Earn')}                          text={it.L('Receive your affiliate commission once your referred clients start trading on our platform.')} />
                 </div>
@@ -42,7 +42,7 @@ const Signup = () => (
                 </BoxRow>
 
                 <div className='gr-padding-30'>
-                    <a className='button' href={it.affiliate_signup_url}>
+                    <a className='button' href={it.affiliate_signup_url} target='_blank'>
                         <span>{it.L('Apply Now')}</span>
                     </a>
                 </div>
@@ -158,7 +158,7 @@ const Signup = () => (
             <div className='container center-text gr-padding-30'>
                 <p>{it.L('Sign up for the [_1] Affiliate Programme today:', it.website_name)}</p>
                 <p>
-                    <a className='button' href={it.affiliate_signup_url}>
+                    <a className='button' href={it.affiliate_signup_url} target='_blank'>
                         <span>{it.L('Yes, I Want To Sign Up As An Affiliate')}</span>
                     </a>
                 </p>

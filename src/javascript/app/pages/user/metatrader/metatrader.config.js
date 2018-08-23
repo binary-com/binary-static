@@ -21,15 +21,29 @@ const MetaTraderConfig = (() => {
         },
     };
 
+    // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
+    const mt_financial_companies = {
+        financial: {
+            standard: { mt5_account_type: 'standard', max_leverage: 30, title: 'Standard' },
+        },
+        gaming: {
+            volatility: mt_companies.gaming.volatility,
+        },
+    };
+
     const accounts_info = {};
 
     let $messages;
     const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
 
     // currency equivalent to 1 USD
-    const getMinMT5TransferValue = (currency) => (
-        (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency))
-    );
+    // or 1 of donor currency if both accounts have the same currency
+    const getMinMT5TransferValue = (currency) => {
+        const client_currency = Client.get('currency');
+        const mt5_currency    = MetaTraderConfig.getCurrency(Client.get('mt5_account'));
+        if (client_currency === mt5_currency) return 1;
+        return (+State.getResponse(`exchange_rates.rates.${currency}`) || 1).toFixed(Currency.getDecimalPlaces(currency));
+    };
 
     // currency equivalent to 20000 USD
     const getMaxMT5TransferValue = (currency) => (
@@ -40,20 +54,37 @@ const MetaTraderConfig = (() => {
         new Promise((resolve) => {
             const $new_account_financial_authenticate_msg = $('#new_account_financial_authenticate_msg');
             $new_account_financial_authenticate_msg.setVisibility(0);
-            if (accounts_info[acc_type].is_demo) {
+            if (!Client.get('currency')) {
+                resolve($messages.find('#msg_set_currency').html());
+            } else if (accounts_info[acc_type].is_demo) {
                 resolve();
             } else if (Client.get('is_virtual')) {
                 resolve(needsRealMessage());
             } else if (accounts_info[acc_type].account_type === 'financial') {
-                BinarySocket.wait('get_account_status').then((response_get_account_status) => {
+                BinarySocket.wait('get_account_status', 'get_settings', 'landing_company').then(() => {
                     const $message = $messages.find('#msg_real_financial').clone();
                     let is_ok = true;
-                    if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.get_account_status.status)) {
-                        $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                    if (State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
+                        $message.find('.maltainvest').setVisibility(1);
                         is_ok = false;
-                    }
-                    if (is_ok && !isAuthenticated()) {
-                        $new_account_financial_authenticate_msg.setVisibility(1);
+                    } else {
+                        const response_get_account_status = State.getResponse('get_account_status');
+                        const response_get_settings       = State.getResponse('get_settings');
+                        if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status)) {
+                            $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                            is_ok = false;
+                        }
+                        if (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number) {
+                            $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                            is_ok = false;
+                        }
+                        if (!response_get_settings.citizen) {
+                            $message.find('.citizen').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                            is_ok = false;
+                        }
+                        if (is_ok && !isAuthenticated()) {
+                            $new_account_financial_authenticate_msg.setVisibility(1);
+                        }
                     }
                     if (is_ok) {
                         resolve();
@@ -77,7 +108,9 @@ const MetaTraderConfig = (() => {
             ),
             pre_submit: ($form, acc_type) => (
                 new Promise((resolve) => {
-                    if (!accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
+                    const is_volatility = !accounts_info[acc_type].mt5_account_type;
+
+                    if (is_volatility && !accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
                             id     : 'confirm_new_account',
                             message: ['Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?'],
@@ -86,6 +119,29 @@ const MetaTraderConfig = (() => {
                                 BinaryPjax.load(Client.defaultRedirectUrl());
                             }
                             resolve(is_ok);
+                        });
+                    } else if (!accounts_info[acc_type].is_demo && Client.get('residence') === 'es') {
+                        BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
+                            const { cfd_score, trading_score } = response.get_financial_assessment;
+                            const passed_financial_assessment = cfd_score === 4 || trading_score >= 8;
+                            let message = [
+                                localize('{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.'),
+                                localize('{SPAIN ONLY}This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product.'),
+                            ];
+                            if (passed_financial_assessment) {
+                                message.splice(1, 0, localize('{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you.'));
+                            }
+                            message = message.map(str => str.replace(/{SPAIN ONLY}/, '')); // remove '{SPAIN ONLY}' from english strings
+                            Dialog.confirm({
+                                id     : 'spain_cnmv_warning',
+                                ok_text: localize('Acknowledge'),
+                                message,
+                            }).then((is_ok) => {
+                                if (!is_ok) {
+                                    BinaryPjax.load(Client.defaultRedirectUrl());
+                                }
+                                resolve(is_ok);
+                            });
                         });
                     } else {
                         resolve(true);
@@ -310,7 +366,7 @@ const MetaTraderConfig = (() => {
             { selector: fields.password_reset.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_reset.txt_new_password.id }]] },
         ],
         deposit: [
-            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(Client.get('currency')), max: Math.min(State.getResponse('get_limits.remainder') || getMaxMT5TransferValue(Client.get('currency')), getMaxMT5TransferValue(Client.get('currency'))).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
+            { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(Client.get('currency')), max: () => Math.min(State.getResponse('get_limits.remainder') || getMaxMT5TransferValue(Client.get('currency')), getMaxMT5TransferValue(Client.get('currency'))).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },
         ],
         withdrawal: [
             { selector: fields.withdrawal.txt_main_pass.id, validations: [['req', { hide_asterisk: true }]] },
@@ -327,6 +383,7 @@ const MetaTraderConfig = (() => {
 
     return {
         mt_companies,
+        mt_financial_companies,
         accounts_info,
         actions_info,
         fields,
