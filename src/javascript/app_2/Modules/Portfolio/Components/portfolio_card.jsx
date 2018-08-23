@@ -1,7 +1,6 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { NavLink }         from 'react-router-dom';
-import ContractLink        from '../../Contract/Components/contract_link.jsx';
 import Money               from '../../../App/Components/Elements/money.jsx';
 import { getContractPath } from '../../../App/Components/Routes/helpers';
 import RemainingTime       from '../../../App/Containers/remaining_time.jsx';
@@ -23,7 +22,7 @@ const PortfolioCard = ({
                 <RemainingTime end_time={expiry_time} />
             </span>
             <span className='portfolio-card__refid'>
-                <ContractLink contract_id={id} text={reference} />
+                {reference}
             </span>
         </div>
         <div className='portfolio-card__body'>
