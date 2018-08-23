@@ -7,6 +7,9 @@
         transition: transform 0.25s ease;
         will-change: transform;
 
+        > .container:not(.trade-container) {
+            transition: transform 0.25s ease;
+        }
         &--show-portfolio-drawer {
             transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
 
@@ -33,17 +36,12 @@
                     }
                 }
             }
-            & > :not(.trade-container) {
-                &.container, &-empty {
-                    transform: translateX(calc(#{$PORTFOLIO_DRAWER_WIDTH} / 2));
-                }
-                &.container {
-                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-                    padding-right: $PORTFOLIO_DRAWER_WIDTH;
+            > .container:not(.trade-container) {
+                transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
+                padding-right: $PORTFOLIO_DRAWER_WIDTH;
 
-                    &.portfolio {
-                        padding-right: calc(#{$PORTFOLIO_DRAWER_WIDTH} + 12px);
-                    }
+                &.portfolio {
+                    padding-right: calc(#{$PORTFOLIO_DRAWER_WIDTH} + 12px);
                 }
             }
         }
@@ -72,11 +70,6 @@
                 .cq-chart-controls {
                     transition: max-width 0.25s ease, transform 0.25s ease;
                 }
-            }
-        }
-        & > :not(.trade-container) {
-            &.container, &-empty {
-                transition: transform 0.25s ease;
             }
         }
         @media screen and (max-width: 768px) {
