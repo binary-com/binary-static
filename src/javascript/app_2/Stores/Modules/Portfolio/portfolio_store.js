@@ -44,66 +44,69 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     transactionHandler(response) {
+        console.log('%c transaction handler', 'color: green; font-weight: bold;', response);
         if ('error' in response) {
             this.error = response.error.message;
         }
-        const { contract_id } = response.transaction;
+        const { contract_id, action } = response.transaction;
         if (!contract_id) return;
+        console.timeEnd(contract_id);
+        console.time(contract_id);
 
-        WS.portfolio().then((res) => {
-            const new_pos = res.portfolio.contracts.find(pos => +pos.contract_id === +contract_id);
-            if (!new_pos) return;
-            this.pushNewPosition(new_pos);
-        });
-        // subscribe to new contracts:
-        WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
+        if (action === 'buy') {
+            WS.portfolio().then((res) => {
+                const new_pos = res.portfolio.contracts.find(pos => +pos.contract_id === +contract_id);
+                if (!new_pos) return;
+                this.pushNewPosition(new_pos);
+            });
+            // subscribe to new contracts:
+            WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
+        } else if (action === 'sell') {
+            this.removeByContractId(contract_id);
+        }
     };
 
     @action.bound
     proposalOpenContractHandler(response) {
-        if ('error' in response) {
-            return;
-        }
+        console.log('proposal open contract', response);
+        if ('error' in response) return;
+
         const proposal = response.proposal_open_contract;
-
-        // force to sell the expired contract, in order to remove from portfolio
-        if (+proposal.is_settleable === 1 && !proposal.is_sold) { WS.sellExpired(); }
-
-        const position_data_index = this.data.findIndex(
-            (position) => position.id === +proposal.contract_id
+        const portfolio_position = this.data.find(
+            (position) => +position.id === +proposal.contract_id
         );
 
-        if (position_data_index === -1) return;
+        if (!portfolio_position) return;
 
-        if (proposal.is_sold) {
-            this.data.splice(position_data_index, 1);
-        } else {
-            const portfolio_position = this.data[position_data_index];
+        const prev_indicative = portfolio_position.indicative;
+        const new_indicative  = +proposal.bid_price;
 
-            const prev_indicative = portfolio_position.indicative;
-            const new_indicative  = +proposal.bid_price;
+        portfolio_position.indicative = new_indicative;
+        portfolio_position.underlying = proposal.display_name;
 
-            portfolio_position.indicative = new_indicative;
-            portfolio_position.underlying = proposal.display_name;
-
-            if (!proposal.is_valid_to_sell) {
-                portfolio_position.status = 'no-resale';
-            }
-            else if (new_indicative > prev_indicative) {
-                portfolio_position.status = 'price-moved-up';
-            }
-            else if (new_indicative < prev_indicative) {
-                portfolio_position.status = 'price-moved-down';
-            }
-            else {
-                portfolio_position.status = 'price-stable';
-            }
+        if (!proposal.is_valid_to_sell) {
+            portfolio_position.status = 'no-resale';
+        }
+        else if (new_indicative > prev_indicative) {
+            portfolio_position.status = 'price-moved-up';
+        }
+        else if (new_indicative < prev_indicative) {
+            portfolio_position.status = 'price-moved-down';
+        }
+        else {
+            portfolio_position.status = 'price-stable';
         }
     }
 
     @action.bound
     pushNewPosition(new_pos) {
         this.data.unshift(formatPortfolioPosition(new_pos));
+    }
+
+    @action.bound
+    removeByContractId(contract_id) {
+        const i = this.data.findIndex(pos => +pos.id === +contract_id);
+        this.data.splice(i, 1);
     }
 
     @action.bound
