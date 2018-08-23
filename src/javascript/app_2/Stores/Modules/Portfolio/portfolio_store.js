@@ -47,8 +47,8 @@ export default class PortfolioStore extends BaseStore {
         if ('error' in response) {
             this.error = response.error.message;
         }
+        if (!response.transaction) return;
         const { contract_id, action: act } = response.transaction;
-        if (!contract_id) return;
 
         if (act === 'buy') {
             WS.portfolio().then((res) => {
