@@ -37,9 +37,11 @@
         color: $COLOR_LIGHT_BLUE;
         text-decoration: none;
     }
+    .table__body .indicative {
+        font-weight: bold;
+    }
     .indicative {
         text-align: right;
-        font-weight: bold;
 
         &--price-moved-up {
             color: $COLOR_LIGHT_GREEN;

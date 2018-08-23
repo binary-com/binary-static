@@ -40,10 +40,10 @@ const TableRow = ({
 };
 
 TableRow.propTypes = {
+    to        : PropTypes.string,
     columns   : PropTypes.array,
     is_footer : PropTypes.bool,
     is_header : PropTypes.bool,
-    onRowClick: PropTypes.func,
     row_obj   : PropTypes.object,
 };
 

@@ -51,7 +51,7 @@ const PortfolioCard = ({
 PortfolioCard.propTypes = {
     currency   : PropTypes.string,
     details    : PropTypes.string,
-    expiry_time: PropTypes.string,
+    expiry_time: PropTypes.number,
     id         : PropTypes.number,
     indicative : PropTypes.number,
     payout     : PropTypes.number,

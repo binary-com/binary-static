@@ -188,9 +188,7 @@ body.dark, .theme-wrapper.dark {
                 }
             }
             &__cell {
-                &:not(.amount) {
-                    color: $COLOR_BRANDBLUE_40;
-                }
+                color: $COLOR_BRANDBLUE_40;
             }
         }
         .card-list__card {
