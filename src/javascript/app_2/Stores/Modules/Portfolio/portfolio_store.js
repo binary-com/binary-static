@@ -59,7 +59,7 @@ export default class PortfolioStore extends BaseStore {
             // subscribe to new contract:
             WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
         } else if (action === 'sell') {
-            this.removeByContractId(contract_id);
+            this.removePositionById(contract_id);
         }
     };
 
@@ -68,9 +68,7 @@ export default class PortfolioStore extends BaseStore {
         if ('error' in response) return;
 
         const proposal = response.proposal_open_contract;
-        const portfolio_position = this.data.find(
-            (position) => +position.id === +proposal.contract_id
-        );
+        const portfolio_position = this.data.find((position) => +position.id === +proposal.contract_id);
 
         if (!portfolio_position) return;
 
@@ -100,7 +98,7 @@ export default class PortfolioStore extends BaseStore {
     }
 
     @action.bound
-    removeByContractId(contract_id) {
+    removePositionById(contract_id) {
         const i = this.data.findIndex(pos => +pos.id === +contract_id);
         this.data.splice(i, 1);
     }
@@ -140,7 +138,15 @@ export default class PortfolioStore extends BaseStore {
     }
 
     @computed
+    get active_positions() {
+        return this.data.filter((portfolio_pos) => {
+            const server_epoch = this.root_store.common.server_time.unix();
+            return portfolio_pos.expiry_time > server_epoch;
+        });
+    }
+
+    @computed
     get is_empty() {
-        return !this.is_loading && this.data.length === 0;
+        return !this.is_loading && this.active_positions.length === 0;
     }
 }
