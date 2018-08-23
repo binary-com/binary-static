@@ -84,6 +84,9 @@ export default class TradeStore extends BaseStore {
             session_storage_properties,
             validation_rules,
         };
+
+        URLHelper.pruneQueryString(allowed_query_string_variables);
+
         super(options);
 
         Object.defineProperty(
