@@ -42,7 +42,7 @@ class Test extends React.Component {
     render() {
         return (
             <code id='state_info' style={Object.assign({}, this.styles.container, { display: this.state.is_visible ? 'block' : 'none' })}>
-                {this.props.entries.sort().map(([k, v]) => k !== 'root_store' && <div key={k}><span style={this.styles.prop_name}>{k}:</span> {v && typeof v === 'object' ? JSON.stringify(toJS(v), null, 1) : v}</div>)}
+                {this.props.entries.sort().map(([k, v]) => k !== 'root_store' && typeof v !== 'function' && <div key={k}><span style={this.styles.prop_name}>{k}:</span> {v && typeof v === 'object' ? JSON.stringify(toJS(v), null, 1) : v}</div>)}
             </code>
         );
     }
