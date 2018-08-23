@@ -13,6 +13,7 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     initializePortfolio = () => {
+        if (!this.root_store.client.is_logged_in) return;
         this.is_loading = true;
 
         WS.portfolio().then(this.portfolioHandler);
