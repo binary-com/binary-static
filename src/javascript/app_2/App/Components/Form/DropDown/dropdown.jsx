@@ -2,7 +2,14 @@ import { isArrayLike } from 'mobx';
 import { observer }    from 'mobx-react';
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import { IconArrow }   from '../../../Assets/Common';
+import {
+    getDisplayText,
+    getDropDownList,
+    getItemFromValue,
+    getValueFromItem,
+    getPrevIndex,
+    getNextIndex   }   from './helpers';
+import { IconArrow }   from '../../../../Assets/Common';
 
 class Dropdown extends React.Component {
     constructor(props) {
@@ -13,23 +20,9 @@ class Dropdown extends React.Component {
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.state = {
             is_list_visible: false,
-            curr_value     : this.props.value,
+            curr_index     : getItemFromValue(this.props.list, this.props.value),
         };
     }
-
-    getDisplayText = (list, value) => {
-        const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
-        let text = '';
-        if (isArrayLike(list)) {
-            text = findInArray(list);
-        } else {
-            Object.keys(list).some(key => {
-                text = findInArray(list[key]);
-                return text;
-            });
-        }
-        return text;
-    };
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
@@ -43,7 +36,6 @@ class Dropdown extends React.Component {
         if (item.value !== this.props.value) {
             this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
-        this.setState({ curr_value: item.value });
         this.handleVisibility();
     }
 
@@ -55,22 +47,37 @@ class Dropdown extends React.Component {
             return;
         }
         event.preventDefault();
-        const curr_selection = this.state.curr_value;
+        const index = getItemFromValue(this.props.list, this.props.value);
+        const value = getValueFromItem(this.props.list, index.number);
         const handleToggle = () => {
             if (this.state.is_list_visible) {
-                this.handleSelect(curr_selection);
+                this.props.onChange({ target: { name: this.props.name, value } });
             } else {
                 this.handleVisibility();
             }
-            console.log(curr_selection);
         };
-
+        this.setState({ curr_index: index.number });
+        const prev_index = getPrevIndex(this.state.curr_index, index.length);
+        const next_index = getNextIndex(this.state.curr_index, index.length);
+        console.log(getDropDownList(event.target));
         switch (event.keyCode) {
             case 13: // Enter is pressed
                 handleToggle();
                 break;
             case 32: // Space is pressed
                 handleToggle();
+                break;
+            case 38: // Up Arrow is pressed
+                if (this.state.is_list_visible) {
+                    this.setState({ curr_index: prev_index });
+                    console.log(getValueFromItem(this.props.list, this.state.curr_index));
+                }
+                break;
+            case 40: // Down Arrow is pressed
+                if (this.state.is_list_visible) {
+                    this.setState({ curr_index: next_index });
+                    console.log(getValueFromItem(this.props.list, this.state.curr_index));
+                }
                 break;
             default:
         }
@@ -122,7 +129,7 @@ class Dropdown extends React.Component {
                     onKeyDown={this.onKeyPressed}
                 >
                     <span name={this.props.name} value={this.props.value}>
-                        {this.getDisplayText(this.props.list, this.props.value)}
+                        {getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
                 <IconArrow className='select-arrow' />
