@@ -107,8 +107,6 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
 
 .info-box-container {
     position: absolute;
-    border: 1px solid $COLOR_GRAY;
-    border-radius: 4px;
     z-index: 10;
     top: 10px;
     right: 10px;
@@ -125,6 +123,9 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
         opacity: 0;
     }
     .info-box {
+        position: relative;
+        border: 1px solid $COLOR_GRAY;
+        border-radius: $BORDER_RADIUS;
         padding: $CONTRACT_INFO_BOX_PADDING;
         background: rgba(255, 255, 255, 0.9);
         font-weight: 300;
@@ -161,6 +162,11 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
                     fill: $COLOR_LIGHT_RED;
                 }
             }
+            .sell-info {
+                margin-right: 20px;
+                text-align: center;
+                line-height: 1.2rem;
+            }
         }
         .general {
             display: flex;
@@ -182,7 +188,9 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             }
             .sell {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
+                text-align: center;
                 margin: -$CONTRACT_INFO_BOX_PADDING;
                 margin-left: $CONTRACT_INFO_BOX_PADDING;
                 padding: $CONTRACT_INFO_BOX_PADDING;
@@ -255,6 +263,25 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
             .expired {
                 margin-right: -25px;
             }
+        }
+    }
+    .message {
+        margin-top: 5px;
+        border: 1px solid $COLOR_LIGHT_RED;
+        border-radius: $BORDER_RADIUS;
+        padding: 10px;
+        background-color: rgba(244, 67, 54, 0.16);
+        display: flex;
+        align-items: center;
+
+        .message-icon {
+            margin-right: 10px;
+        }
+        .message-text {
+            flex-grow: 1;
+        }
+        .message-close {
+            cursor: pointer;
         }
     }
 }
