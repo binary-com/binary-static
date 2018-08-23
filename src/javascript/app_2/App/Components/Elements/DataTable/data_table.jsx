@@ -46,7 +46,7 @@ class DataTable extends React.PureComponent {
                             row_obj={row_obj}
                             columns={columns}
                             key={id}
-                            to={getRowLink(row_obj)}
+                            to={getRowLink && getRowLink(row_obj)}
                         />
                     )}
                     {children}
@@ -66,7 +66,7 @@ DataTable.propTypes = {
     columns    : PropTypes.array,
     data_source: MobxPropTypes.arrayOrObservableArray,
     footer     : PropTypes.object,
-    onRowClick : PropTypes.func,
+    getRowLink : PropTypes.func,
     onScroll   : PropTypes.func,
     children   : PropTypes.oneOfType([
         PropTypes.node,

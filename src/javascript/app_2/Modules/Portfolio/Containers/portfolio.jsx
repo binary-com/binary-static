@@ -15,10 +15,6 @@ class Portfolio extends React.Component {
     componentDidMount()    { this.props.onMount(); }
     componentWillUnmount() { this.props.onUnmount(); }
 
-    redirectToContract = (row_obj) => {
-        this.props.history.push(getContractPath(row_obj.id));
-    };
-
     render() {
         const {
             active_positions,
@@ -57,6 +53,7 @@ class Portfolio extends React.Component {
                             footer={totals}
                             has_fixed_header
                             onRowClick={this.redirectToContract}
+                            getRowLink={(row_obj) => getContractPath(row_obj.id)}
                         />
                 }
             </div>
