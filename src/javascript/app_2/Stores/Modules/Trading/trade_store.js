@@ -1,24 +1,28 @@
+import debounce                         from 'lodash.debounce';
 import {
     action,
     observable,
-    reaction }                            from 'mobx';
-import { processPurchase }                from './Actions/purchase';
-import * as Symbol                        from './Actions/symbol';
-import { allowed_query_string_variables } from './Constants/query_string';
-import validation_rules                   from './Constants/validation_rules';
-import { setChartBarrier }                from './Helpers/chart';
-import ContractType                       from './Helpers/contract_type';
-import { convertDurationLimit }           from './Helpers/duration';
-import { processTradeParams }             from './Helpers/process';
+    reaction }                          from 'mobx';
+import { processPurchase }              from './Actions/purchase';
+import * as Symbol                      from './Actions/symbol';
+import { 
+    allowed_query_string_variables,
+    non_proposal_query_string_variable} from './Constants/query_string';
+import validation_rules                 from './Constants/validation_rules';
+import { setChartBarrier }              from './Helpers/chart';
+import ContractType                     from './Helpers/contract_type';
+import { convertDurationLimit }         from './Helpers/duration';
+import { processTradeParams }           from './Helpers/process';
 import {
     createProposalRequests,
-    getProposalInfo }                     from './Helpers/proposal';
-import { pickDefaultSymbol }              from './Helpers/symbol';
-import BaseStore                          from '../../base_store';
-import { WS }                             from '../../../Services';
-import URLHelper                          from '../../../Utils/URL/url_helper';
-import Client                             from '../../../../_common/base/client_base';
-import { cloneObject, isEmptyObject }     from '../../../../_common/utility';
+    getProposalInfo,
+    getProposalParametersName }         from './Helpers/proposal';
+import { pickDefaultSymbol }            from './Helpers/symbol';
+import BaseStore                        from '../../base_store';
+import { WS }                           from '../../../Services';
+import URLHelper                        from '../../../Utils/URL/url_helper';
+import Client                           from '../../../../_common/base/client_base';
+import { cloneObject, isEmptyObject }   from '../../../../_common/utility';
 
 export default class TradeStore extends BaseStore {
     // Control values
@@ -74,6 +78,8 @@ export default class TradeStore extends BaseStore {
     // Chart
     chart_id = 1;
 
+    debouncedProposal = debounce(this.requestProposal, 500);
+
     constructor({ root_store }) {
         const session_storage_properties = allowed_query_string_variables;
         const options = {
@@ -81,6 +87,9 @@ export default class TradeStore extends BaseStore {
             session_storage_properties,
             validation_rules,
         };
+
+        URLHelper.pruneQueryString(allowed_query_string_variables);
+
         super(options);
 
         Object.defineProperty(
@@ -216,14 +225,17 @@ export default class TradeStore extends BaseStore {
             }
 
             const snapshot = await processTradeParams(this, new_state);
-            const query_string_values = this.is_query_string_applied ? {} : this.updateQueryString();
+            const query_string_values = this.updateQueryString();
             snapshot.is_trade_enabled = true;
 
-            this.updateStore({...snapshot, ...query_string_values});
+            this.updateStore({
+                ...snapshot,
+                ...(this.is_query_string_applied ? {} : query_string_values),
+            });
 
             this.is_query_string_applied = true;
 
-            this.requestProposal();
+            this.debouncedProposal();
         }
     }
 
@@ -233,6 +245,15 @@ export default class TradeStore extends BaseStore {
     requestProposal() {
         const requests = createProposalRequests(this);
         if (!isEmptyObject(requests)) {
+            const proper_proposal_params_for_query_string = getProposalParametersName(requests);
+
+            URLHelper.pruneQueryString(
+                [
+                    ...proper_proposal_params_for_query_string,
+                    ...non_proposal_query_string_variable,
+                ]
+            );
+
             this.proposal_requests = requests;
             this.proposal_info     = {};
             this.purchase_info     = {};

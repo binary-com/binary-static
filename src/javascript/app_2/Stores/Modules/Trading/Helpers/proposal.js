@@ -1,7 +1,10 @@
-import moment               from 'moment';
-import { convertToUnix }    from '../../../../Utils/Date';
-import { getDecimalPlaces } from '../../../../../_common/base/currency_base';
-import { isDeepEqual }      from '../../../../../_common/utility';
+import moment                              from 'moment';
+import {
+    proposal_properties_alternative_names,
+    removable_proposal_properties }        from '../Constants/query_string';
+import { convertToUnix }                   from '../../../../Utils/Date';
+import { getDecimalPlaces }                from '../../../../../_common/base/currency_base';
+import { isDeepEqual }                     from '../../../../../_common/utility';
 
 export const getProposalInfo = (store, response) => {
     const proposal = response.proposal || {};
@@ -73,4 +76,25 @@ const createProposalRequestForContract = (store, type_of_contract) => {
             { barrier2: store.barrier_2 }
         ),
     };
+};
+
+export const getProposalParametersName = (proposal_requests) => {
+    const proper_param_name = [];
+    const is_digit = Object.keys(proposal_requests)
+        .findIndex(i => i.toUpperCase().indexOf('DIGIT') > -1) > -1;
+
+    const keys = Object.keys(Object.values(proposal_requests)[0]);
+
+    keys.forEach(name => {
+        const alternative_name = proposal_properties_alternative_names[name];
+
+        if (alternative_name) {
+            proper_param_name.push(typeof alternative_name === 'string' ? alternative_name : alternative_name(is_digit));
+        } else if (removable_proposal_properties.indexOf(name) === -1) {
+            proper_param_name.push(name);
+        }
+    });
+
+    proper_param_name.sort();
+    return proper_param_name;
 };

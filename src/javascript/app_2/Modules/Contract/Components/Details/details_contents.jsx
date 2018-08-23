@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import InfoGroup    from '../Components/info_group.jsx';
-import { localize } from '../../../../_common/localize';
+import DetailsGroup from './details_group.jsx';
+import { localize } from '../../../../../_common/localize';
 
 const DetailsContents = ({
     buy_id,
@@ -13,11 +13,11 @@ const DetailsContents = ({
     <div className='contract-contents'>
         <div className='longcode'>{longcode}</div>
         <div className='ref-number'>{localize('Reference No:')} {buy_id}</div>
-        <InfoGroup
+        <DetailsGroup
             title={localize('Contract Information')}
             items={details_info}
         />
-        <InfoGroup
+        <DetailsGroup
             title={localize('Contract Expiry')}
             items={details_expiry}
         />

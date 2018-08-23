@@ -39,6 +39,12 @@ const WS = (() => {
     const portfolio = () =>
         BinarySocket.send({ portfolio: 1 });
 
+    const proposalOpenContract = (contract_id) =>
+        BinarySocket.send({ proposal_open_contract: 1, contract_id });
+
+    const sell = (contract_id, price) =>
+        BinarySocket.send({ sell: contract_id, price });
+
     const sellExpired = () =>
         BinarySocket.send({ sell_expired: 1 });
 
@@ -89,6 +95,8 @@ const WS = (() => {
         oauthApps,
         portfolio,
         payoutCurrencies,
+        proposalOpenContract,
+        sell,
         sellExpired,
         sendRequest,
         statement,

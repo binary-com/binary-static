@@ -7,11 +7,6 @@ import React                          from 'react';
 import { isSessionAvailable }         from '../../../Stores/Modules/Trading/Helpers/start_date';
 import { localize }                   from '../../../../_common/localize';
 
-/* TODO:
-      1. to update state accordingly during native to desktop switches
-      2. update the state only when dropdown closed
-*/
-
 class TimePickerDropdown extends React.Component {
     constructor(props) {
         super(props);
@@ -244,8 +239,11 @@ TimePicker.propTypes = {
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
     value          : PropTypes.string,
-    start_date     : PropTypes.number,
     sessions       : MobxPropTypes.arrayOrObservableArray,
+    start_date     : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
 TimePickerDropdown.propTypes = {
@@ -256,8 +254,11 @@ TimePickerDropdown.propTypes = {
     value       : PropTypes.string,
     value_split : PropTypes.bool,
     is_clearable: PropTypes.bool,
-    start_date  : PropTypes.number,
     sessions    : MobxPropTypes.arrayOrObservableArray,
+    start_date  : PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
 export default observer(TimePicker);

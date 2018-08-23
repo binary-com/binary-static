@@ -56,7 +56,6 @@ export default class URLHelper {
      * @return {Object} returns an iterator object of updated query string
      */
     static updateQueryString(store, allowed_query_string_variables, set_query_string=false) {
-
         const query_params = URLHelper.getQueryParams();
 
         if (!isEmptyObject(store)) {
@@ -75,5 +74,20 @@ export default class URLHelper {
         }
 
         return query_params;
+    }
+
+    /**
+     * Prunes the query string values
+     *
+     * @param {string[]} keys - A list of variable's name which should be in url's query string.
+     */
+    static pruneQueryString(keys=[]) {
+        const query_params = URLHelper.getQueryParams();
+
+        [...query_params].forEach(value => keys.indexOf(value[0]) <= -1 && query_params.delete(value[0]));
+
+        const query_string = [...query_params].length ? `?${query_params.toString()}` : '';
+
+        window.history.replaceState(null, null, query_string);
     }
 }

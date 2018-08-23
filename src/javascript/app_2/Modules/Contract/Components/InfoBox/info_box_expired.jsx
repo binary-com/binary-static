@@ -1,6 +1,7 @@
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
+import SellInfo     from '../Sell/sell_info.jsx';
 import Money        from '../../../../App/Components/Elements/money.jsx';
 import IconFlag     from '../../../../Assets/Contract/icon_flag.jsx';
 import { localize } from '../../../../../_common/localize';
@@ -9,6 +10,7 @@ const InfoBoxExpired = ({
     contract_info,
     has_flag = true,
     has_percentage = true,
+    sell_info = {},
 }) => {
     const {
         currency,
@@ -20,6 +22,9 @@ const InfoBoxExpired = ({
 
     return (
         <div className={`expired ${profit > 0 ? 'won' : 'lost'}`}>
+            { sell_info.transaction_id &&
+                <SellInfo contract_info={contract_info} sell_info={sell_info} />
+            }
             { has_flag &&
                 <IconFlag/>
             }
@@ -40,6 +45,7 @@ InfoBoxExpired.propTypes = {
     contract_info : PropTypes.object,
     has_flag      : PropTypes.bool,
     has_percentage: PropTypes.bool,
+    sell_info     : PropTypes.object,
 };
 
 export default observer(InfoBoxExpired);

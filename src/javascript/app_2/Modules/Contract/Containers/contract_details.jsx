@@ -1,8 +1,8 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
 import { Link }        from 'react-router-dom';
-import DetailsContents from '../Components/details_contents.jsx';
-import DetailsHeader   from '../Components/details_header.jsx';
+import DetailsContents from '../Components/Details/details_contents.jsx';
+import DetailsHeader   from '../Components/Details/details_header.jsx';
 import UILoader        from '../../../App/Components/Elements/ui_loader.jsx';
 import routes          from '../../../Constants/routes';
 import { connect }     from '../../../Stores/connect';
