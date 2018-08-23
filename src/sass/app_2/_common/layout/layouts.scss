@@ -74,7 +74,7 @@
                 }
             }
         }
-        .portfolio, .statement {
+        & > :not(.trade-container) {
             &.container, &-empty {
                 transition: transform 0.25s ease;
             }
