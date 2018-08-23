@@ -5,7 +5,7 @@ import { localize }       from '../../../_common/localize';
 
 class Validator {
 
-    constructor(store, input, rules) {
+    constructor(input, rules, store = null) {
         this.input  = input;
         this.rules  = rules;
         this.store  = store;
