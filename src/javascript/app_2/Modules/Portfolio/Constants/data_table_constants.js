@@ -10,7 +10,7 @@ export const getTableColumnsTemplate = (currency) => [
     {
         title            : localize('Reference No.'),
         col_index        : 'reference',
-        renderCellContent: ({ cell_value, is_footer, row_obj }) => (
+        renderCellContent: ({ cell_value, is_footer }) => (
             is_footer ? localize('Total') : cell_value
         ),
     },

@@ -8,7 +8,6 @@ const TableRow = ({
     columns,
     is_footer,
     is_header,
-    onRowClick,
     row_obj = {},
 }) => {
     const cells = columns.map(({ col_index, renderCellContent, title }) => {
@@ -28,7 +27,7 @@ const TableRow = ({
     });
 
     return (
-        !!to ?
+        to ?
             <NavLink className='table__row' to={to}>
                 {cells}
             </NavLink>
@@ -40,11 +39,11 @@ const TableRow = ({
 };
 
 TableRow.propTypes = {
-    to        : PropTypes.string,
-    columns   : PropTypes.array,
-    is_footer : PropTypes.bool,
-    is_header : PropTypes.bool,
-    row_obj   : PropTypes.object,
+    to       : PropTypes.string,
+    columns  : PropTypes.array,
+    is_footer: PropTypes.bool,
+    is_header: PropTypes.bool,
+    row_obj  : PropTypes.object,
 };
 
 export default TableRow;
