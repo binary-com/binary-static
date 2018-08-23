@@ -33,19 +33,18 @@
                     }
                 }
             }
-            .portfolio, .statement {
+            & > :not(.trade-container) {
                 &.container, &-empty {
                     transform: translateX(calc(#{$PORTFOLIO_DRAWER_WIDTH} / 2));
                 }
                 &.container {
                     transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
+                    padding-right: $PORTFOLIO_DRAWER_WIDTH;
+
+                    &.portfolio {
+                        padding-right: calc(#{$PORTFOLIO_DRAWER_WIDTH} + 12px);
+                    }
                 }
-            }
-            .statement.container {
-                padding-right: $PORTFOLIO_DRAWER_WIDTH;
-            }
-            .portfolio.container {
-                padding-right: calc(#{$PORTFOLIO_DRAWER_WIDTH} + 12px);
             }
         }
         .chart-container {
