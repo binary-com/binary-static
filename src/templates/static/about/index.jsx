@@ -97,7 +97,10 @@ const Index = () => (
                         paragraph={it.L('We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible.')}
                     />
 
-                    <div className='fill-text center-element btn-margin-top'>
+                    <div className='gr-12 center-text'>
+                        <p>{it.L('Want to be a part of our dynamic culture? Browse all our openings and see where you fit:')}</p>
+                    </div>
+                    <div className='center-element'>
                         <a className='button-secondary' href={it.url_for('careers')}>
                             <span>{it.L('open positions')}</span>
                         </a>
