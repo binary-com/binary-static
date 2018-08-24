@@ -7,13 +7,14 @@ $header-height: 40px;
     z-index: 2;
     top: $HEADER_HEIGHT;
     right: 0;
-    transform: translateX(100%);
-    transition: opacity 0.4s linear;
     border-left: 1px solid $COLOR_GRAY;
     background-color: $COLOR_WHITE;
     box-sizing: border-box;
     opacity: 0;
     color: $COLOR_BLUE;
+    transform: translateX(100%);
+    will-change: transform, opacity;
+    transition: opacity 0.25s ease, transform 0.25s ease;
 
     &--open {
         transform: translateX(0);
