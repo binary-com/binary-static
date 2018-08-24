@@ -121,10 +121,9 @@ const Careers = () => {
                         <div className='gr-12 gr-padding-30'>
                             <h1>{it.L('Our locations')}</h1>
                         </div>
-                        <ColumnLG image='malta@1'   text={it.L('Malta')} link='#' />
-                        <ColumnLG image='my@2'      text={it.L('Cyberjaya, Malaysia')} link='#' />
-                        <ColumnLG image='malta@1'   text={it.L('Labuan, Malaysia')} link='#' />
-
+                        <ColumnLG image='malta@1'   text={it.L('Malta')}               link={it.url_for('malta')} />
+                        <ColumnLG image='my@2'      text={it.L('Cyberjaya, Malaysia')} link={it.url_for('cyberjaya')} />
+                        <ColumnLG image='labuan@2'  text={it.L('Labuan, Malaysia')}    link={it.url_for('labuan')} />
                     </div>
                 </div>
 
