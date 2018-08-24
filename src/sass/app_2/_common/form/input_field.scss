@@ -58,8 +58,8 @@
             touch-action: manipulation;
         }
         &.error {
-            color: #f44336; /* stylelint-disable-line color-no-hex */
-            border: 1px solid #f44336; /* stylelint-disable-line color-no-hex */
+            color: $COLOR_LIGHT_RED;
+            border: 1px solid $COLOR_LIGHT_RED !important;
         }
     }
     label.input-label {

@@ -4,15 +4,15 @@ import {
     PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
-// import ReactTooltip              from 'react-tooltip';
 import Tooltip                   from '../Elements/tooltip.jsx';
 
 const InputField = ({
     className,
     error_messages,
     helper,
-    is_float,
     is_disabled,
+    is_float,
+    is_signed = false,
     label,
     name,
     onChange,
@@ -24,19 +24,43 @@ const InputField = ({
     value,
 }) => {
     const has_error = error_messages && error_messages.length;
+
+    const changeValue = (e) => {
+        if (type === 'number') {
+            const is_empty = !e.target.value || e.target.value === '';
+            const signed_regex = is_signed ? '[\\+-]?' : '';
+
+            const is_number = new RegExp(`^${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}(?<=\\d)(?<!-0)$`)
+                .test(e.target.value);
+
+            const is_not_completed_number = is_float && new RegExp(`^${signed_regex}(\\.|\\d+\\.)?$`)
+                .test(e.target.value);
+
+            if (is_number || is_empty) {
+                e.target.value = is_empty || is_signed ? e.target.value : +e.target.value;
+            } else if (!is_not_completed_number) {
+                e.target.value = value;
+                return;
+            }
+
+        }
+
+        onChange(e);
+    };
+
     const input =
         <input
             className={classNames({error: has_error})}
-            type={type}
-            name={name}
-            step={is_float ? step : undefined}
-            placeholder={placeholder || undefined}
             disabled={is_disabled}
-            value={value}
-            onChange={onChange}
-            required={required || undefined}
-            data-tip
             data-for={`error_tooltip_${name}`}
+            data-tip
+            name={name}
+            onChange={changeValue}
+            placeholder={placeholder || undefined}
+            required={required || undefined}
+            step={is_float ? step : undefined}
+            type={type === 'number' ? 'text' : type}
+            value={value}
         />;
 
     return (
@@ -68,6 +92,7 @@ InputField.propTypes = {
     helper        : PropTypes.bool,
     is_float      : PropTypes.bool,
     is_disabled   : PropTypes.string,
+    is_signed     : PropTypes.bool,
     label         : PropTypes.string,
     name          : PropTypes.string,
     onChange      : PropTypes.func,
