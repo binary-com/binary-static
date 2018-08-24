@@ -5,6 +5,9 @@
         overflow-y: auto;
         overflow-x: hidden;
 
+        & > .container { // trade-container doesn't have .container class, since it's full width
+            // TODO: hide and show
+        }
         &--show-portfolio-drawer {
             margin-right: $PORTFOLIO_DRAWER_WIDTH;
 
