@@ -1,6 +1,7 @@
 const MBContract          = require('./mb_contract');
 const MBDisplayCurrencies = require('./mb_currency');
 const MBTradingEvents     = require('./mb_event');
+const MBPortfolio         = require('./mb_portfolio');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
@@ -79,6 +80,7 @@ const MBTradePage = (() => {
     const onUnload = () => {
         cleanupChart();
         State.set('is_chart_allowed', false);
+        MBPortfolio.hide();
         State.remove('is_mb_trading');
         events_initialized = 0;
         MBContract.onUnload();
