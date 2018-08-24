@@ -204,7 +204,8 @@ export default class BaseStore {
     validateProperty(property, value) {
         const validator = new Validator(
             { [property]: value !== undefined ? value : this[property] },
-            { [property]: this.validation_rules[property] }
+            { [property]: this.validation_rules[property] },
+            this
         );
 
         validator.isPassed();
