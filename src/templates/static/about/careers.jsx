@@ -44,12 +44,26 @@ const ColumnSM = ({ gr, header, paragraph }) => (
     </div>
 );
 
+const ColumnValues = ({ gr, icon, header }) => (
+    <div className={`gr-${gr ? `${gr} gr-12-m` : '3 gr-6-p gr-12-m'}`}>
+        <div className='values-box'>
+            <img className='responsive values-box-icon' src={it.url_for(`images/pages/careers/${icon}.svg`)} />
+            <div className='fill-text'>
+                <h4 className='values-box-subheader'>{header}</h4>
+            </div>
+        </div>
+    </div>
+);
 
-const ColumnLG = ({ center, image, text }) => (
-    <div className={`gr-6 gr-12-m${center ? ' center-text' : ''}`}>
+
+const ColumnLG = ({ center, image, text, link }) => (
+    <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
+        <div>
+            <p className='column-margin'>{text}</p>
+        </div>
         <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
-        <div className='white-bg-color'>
-            <p className='column-margin fill-text'>{text}</p>
+        <div className='fill-text'>
+            <a href={link}><span>{it.L('Learn more')}</span></a>
         </div>
     </div>
 );
@@ -79,13 +93,38 @@ const Careers = () => {
                     <ColumnSM header={it.L('Support')}  paragraph={it.L('Where supportive colleagues are like a second family.')} />
                 </div>
 
+                <div className='container gr-row'>
+                    <div className='gr-12'>
+                        <SeparatorLine no_wrapper sub_class='gr-padding-10' />
+                    </div>
+                </div>
+
+                <div className='container gr-row gr-padding-30 center-text'>
+                    <div className='gr-12 gr-padding-30'>
+                        <h1>{it.L('Our values')}</h1>
+                    </div>
+
+                    <ColumnValues header={it.L('integrity')} icon='ic-intergrity'/>
+                    <ColumnValues header={it.L('teamwork')} icon='ic-teamwork' />
+                    <ColumnValues header={it.L('competence')} icon='ic-competence' />
+                    <ColumnValues header={it.L('customer focus')} icon='ic-customer-focus' />
+
+                    <div className='fill-text center-element btn-margin-top'>
+                        <a className='button-secondary' href={it.url_for('about-us#values-section')}>
+                            <span>{it.L('Learn more')}</span>
+                        </a>
+                    </div>
+                </div>
+
                 <div className='fill-bg-color'>
                     <div className='container gr-row gr-padding-30 center-text'>
                         <div className='gr-12 gr-padding-30'>
                             <h1>{it.L('Our locations')}</h1>
                         </div>
-                        <ColumnLG image='my@2'      text={it.L('Malaysia')} />
-                        <ColumnLG image='malta@1'   text={it.L('Malta')} />
+                        <ColumnLG image='malta@1'   text={it.L('Malta')} link='#' />
+                        <ColumnLG image='my@2'      text={it.L('Cyberjaya, Malaysia')} link='#' />
+                        <ColumnLG image='malta@1'   text={it.L('Labuan, Malaysia')} link='#' />
+
                     </div>
                 </div>
 

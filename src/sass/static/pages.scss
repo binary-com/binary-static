@@ -301,6 +301,59 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.about-us-content {
+    .about-us .values-box {
+        display: flex;
+        align-items: flex-start;
+        margin: 8px;
+
+        .icon-wrapper {
+            margin-right: 1.5rem;
+
+            &.ic-intergrity:before {
+                content: url('../images/pages/careers/ic-intergrity.svg');
+                width: 60px;
+                height: 60px;
+            }
+            &.ic-competence:before {
+                content: url('../images/pages/careers/ic-competence.svg');
+                width: 60px;
+                height: 60px;
+            }
+            &.ic-customer-focus:before {
+                content: url('../images/pages/careers/ic-customer-focus.svg');
+                width: 60px;
+                height: 60px;
+            }
+            &.ic-teamwork:before {
+                content: url('../images/pages/careers/ic-teamwork.svg');
+                width: 60px;
+                height: 60px;
+            }
+        }
+        &-subheader {
+            font-size: $FONT_SIZE_L;
+            font-weight: normal;
+            text-transform: capitalize;
+        }
+        .header-line {
+            border-color: $COLOR_ORANGE;
+            border-width: 3px;
+            width: 25%;
+            min-width: 50px;
+        }
+    }
+    .fill-text {
+        padding: 1em 0;
+    }
+    .center-element {
+        margin: 0 auto;
+    }
+    .btn-margin-top {
+        margin-top: 1.5em;
+    }
+}
+
 .accounts-content {
     .table-container table {
         border: 1px solid $COLOR_LIGHT_GRAY;
@@ -544,6 +597,9 @@ body #not_authenticated_financial ul.checked > li {
                 }
             }
         }
+        .center-element {
+            margin: 0 auto;
+        }
         .margin-top-100 {
             margin-top: 100px;
         }
@@ -560,6 +616,25 @@ body #not_authenticated_financial ul.checked > li {
         }
         .fill-text {
             padding: 1em 0;
+        }
+        .values-box {
+            border: 2px solid $COLOR_ORANGE;
+            margin: 0 4px;
+
+            &-icon {
+                max-width: 60px;
+                padding: 8px 36px 0px;
+                margin-top: -36px;
+                background: $COLOR_WHITE;
+            }
+            &-subheader {
+                font-size: $FONT_SIZE_L;
+                font-weight: normal;
+                text-transform: capitalize;
+            }
+            @media (max-width: 768px) {
+                margin-bottom: 2.5rem;
+            }
         }
         .box-container {
             &.padding {
