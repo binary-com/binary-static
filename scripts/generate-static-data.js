@@ -613,6 +613,7 @@ const texts = [
     'MT5 withdrawals have been disabled on your account. Please check your email for more details.',
     'Please complete your [_1]personal details[_2] before you proceed.',
     'Account Authenticated',
+    'In the EU, financial binary options are only available to professional investors.',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
