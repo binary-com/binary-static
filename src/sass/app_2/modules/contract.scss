@@ -321,10 +321,9 @@ $CONTRACT_INFO_BOX_PADDING: 15px;
         }
     }
     .info-box-container {
-        border-color: $COLOR_BRANDBLUE_85;
-
         .info-box {
             background: rgba(42, 48, 82, 0.6);
+            border-color: $COLOR_BRANDBLUE_85;
 
             .general .sell {
                 border-left-color: $COLOR_BRANDBLUE_85;

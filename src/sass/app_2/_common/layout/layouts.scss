@@ -4,28 +4,71 @@
         height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
         overflow-y: auto;
         overflow-x: hidden;
+        transition: transform 0.25s ease;
+        will-change: transform;
 
+        > .container:not(.trade-container) {
+            transition: transform 0.25s ease;
+        }
         &--show-portfolio-drawer {
-            margin-right: $PORTFOLIO_DRAWER_WIDTH;
+            transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
 
-            @media screen and (max-width: 1280px) {
-                .trade-container {
-                    .chart-container {
-                        grid-column: col-start 1 / span 9;
+            .chart-container {
+                .ciq-chart {
+                    .cq-top-ui-widgets, .cq-chart-controls {
+                        transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
                     }
-                    .sidebar-container, .contract-wrapper {
-                        grid-column: col-start 10 / span 3;
+                    .cq-top-ui-widgets .info-box {
+                        transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
+                    }
+                }
+                .cq-chart-controls {
+                    will-change: max-width;
+                    max-width: calc(100% - #{$PORTFOLIO_DRAWER_WIDTH});
+                    transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
+                }
+                .cq-chart-control-left {
+                    .cq-chart-controls {
+                        transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH}) !important;
+                    }
+                    .info-box {
+                        transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH}) !important;
                     }
                 }
             }
-            @media screen and (max-width: 980px) {
-                .trade-container {
-                    .chart-container {
-                        grid-column: col-start 1 / span 8;
+            > .container:not(.trade-container) {
+                transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
+                padding-right: $PORTFOLIO_DRAWER_WIDTH;
+
+                &.portfolio {
+                    padding-right: calc(#{$PORTFOLIO_DRAWER_WIDTH} + 12px);
+                }
+            }
+        }
+        .chart-container {
+            .cq-chart-control-left {
+                .cq-chart-controls {
+                    transform: translateX(0);
+                    transition: transform 0.25s ease;
+                }
+                .cq-top-ui-widgets {
+                    left: 90px;
+
+                    .info-box {
+                        transform: translateX(0);
                     }
-                    .sidebar-container, .contract-wrapper {
-                        grid-column: col-start 9 / span 4;
+                }
+            }
+            .ciq-chart {
+                .cq-top-ui-widgets, & .info-box {
+                    transition: transform 0.25s ease;
+
+                    .cq-symbols-display {
+                        z-index: 1;
                     }
+                }
+                .cq-chart-controls {
+                    transition: max-width 0.25s ease, transform 0.25s ease;
                 }
             }
         }
