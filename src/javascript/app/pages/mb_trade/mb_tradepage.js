@@ -21,7 +21,7 @@ const MBTradePage = (() => {
     const onLoad = () => {
         State.set('is_mb_trading', true);
         BinarySocket.wait('authorize').then(init);
-        if (!Client.isLoggedIn()) {
+        if (!Client.isLoggedIn() || !Client.get('residence')) { // if client is logged out or they don't have residence set
             BinarySocket.wait('website_status').then(() => {
                 BinarySocket.send({ landing_company: State.getResponse('website_status.clients_country') });
             });
