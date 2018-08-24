@@ -35,6 +35,12 @@ const Header = (() => {
                     }
                 });
             }
+        } else { // logged-out
+            BinarySocket.wait('website_status').then(() => {
+                if (State.get('is_eu')) {
+                    displayNotification('In the EU, financial binary options are only available to professional investors.', false, 'MFSA_MESSAGE');
+                }
+            });
         }
     };
 
@@ -234,7 +240,7 @@ const Header = (() => {
 
     const hideNotification = (msg_code) => {
         const msg_notification = getElementById('msg_notification');
-        if (msg_notification.getAttribute('data-code') === 'STORAGE_NOT_SUPPORTED' ||
+        if (/^(STORAGE_NOT_SUPPORTED|MFSA_MESSAGE)$/.test(msg_notification.getAttribute('data-code')) ||
             msg_code && msg_notification.getAttribute('data-code') !== msg_code) {
             return;
         }
@@ -268,6 +274,7 @@ const Header = (() => {
             };
 
             const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
+            const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
 
             const messages = {
                 authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',                                      'user/authenticate'),
@@ -284,23 +291,25 @@ const Header = (() => {
                 tnc                  : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',                                  'user/tnc_approvalws'),
                 unwelcome            : () => buildMessage('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                    'contact'),
                 withdrawal_locked    : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
+                mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
             };
 
             const validations = {
                 authenticate         : () => +get_account_status.prompt_client_to_authenticate,
-                cashier_locked       : () => /cashier_locked/.test(status),
+                cashier_locked       : () => hasStatus('cashier_locked'),
                 currency             : () => !Client.get('currency'),
-                document_needs_action: () => /document_needs_action/.test(status),
-                document_review      : () => /document_under_review/.test(status),
+                document_needs_action: () => hasStatus('document_needs_action'),
+                document_review      : () => hasStatus('document_under_review'),
                 excluded_until       : () => Client.get('excluded_until'),
-                financial_limit      : () => /ukrts_max_turnover_limit_not_set/.test(status),
+                financial_limit      : () => hasStatus('ukrts_max_turnover_limit_not_set'),
                 required_fields      : () => Client.isAccountOfType('financial') && hasMissingRequiredField(),
                 residence            : () => !Client.get('residence'),
                 risk                 : () => Client.getRiskAssessment(),
                 tax                  : () => Client.shouldCompleteTax(),
                 tnc                  : () => Client.shouldAcceptTnc(),
-                unwelcome            : () => /unwelcome/.test(status),
-                withdrawal_locked    : () => /withdrawal_locked/.test(status),
+                unwelcome            : () => hasStatus('unwelcome'),
+                withdrawal_locked    : () => hasStatus('withdrawal_locked'),
+                mt5_withdrawal_locked: () => hasStatus('mt5_withdrawal_locked'),
             };
 
             // real account checks in order
@@ -317,6 +326,7 @@ const Header = (() => {
                 'authenticate',
                 'cashier_locked',
                 'withdrawal_locked',
+                'mt5_withdrawal_locked',
                 'unwelcome',
             ];
 
@@ -345,7 +355,7 @@ const Header = (() => {
                     get_account_status = State.getResponse('get_account_status') || {};
                     status             = get_account_status.status;
                     checkStatus(check_statuses_real);
-                    const is_fully_authenticated = /authenticated/.test(status) && !+get_account_status.prompt_client_to_authenticate;
+                    const is_fully_authenticated = hasStatus('authenticated') && !+get_account_status.prompt_client_to_authenticate;
                     $('.account-id')[is_fully_authenticated ? 'append' : 'remove'](el_account_status);
                 });
             }

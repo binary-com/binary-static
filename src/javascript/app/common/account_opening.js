@@ -80,7 +80,7 @@ const AccountOpening = (() => {
                               (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
                         $place_of_birth.replaceWith($('<span/>', { text: txt_place_of_birth || place_of_birth, 'data-value': place_of_birth }));
                     } else {
-                        $place_of_birth.html($options_with_disabled.html()).val(residence_value);
+                        $place_of_birth.html($options.html()).val(residence_value);
                     }
                     $place_of_birth.select2({
                         matcher(params, data) {

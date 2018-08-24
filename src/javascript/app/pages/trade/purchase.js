@@ -65,7 +65,7 @@ const Purchase = (() => {
             if (/RestrictedCountry/.test(error.code)) {
                 let additional_message = '';
                 if (/FinancialBinaries/.test(error.code)) {
-                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>']);
+                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
                 } else if (/Random/.test(error.code)) {
                     additional_message = localize('Try our other markets.');
                 }
@@ -196,7 +196,7 @@ const Purchase = (() => {
                     status = contract.status;
                     profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
-                    if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
+                    if (contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
                         TickDisplay.updateChart({ is_sold: true }, contract);
                     }
                     // force to sell the expired contract, in order to get the final status

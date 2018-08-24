@@ -2,6 +2,7 @@ const Cookies          = require('js-cookie');
 const Client           = require('./client');
 const Contents         = require('./contents');
 const Header           = require('./header');
+const Footer           = require('./footer');
 const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
 const checkLanguage    = require('../common/country_base').checkLanguage;
@@ -74,6 +75,7 @@ const Page = (() => {
             }
             Localize.forLang(Language.urlLang());
             Header.onLoad();
+            Footer.onLoad();
             Language.setCookie();
             Menu.makeMobileMenu();
             recordAffiliateExposure();

@@ -171,6 +171,7 @@ const PersonalDetails = (() => {
         } else {
             const is_financial = Client.isAccountOfType('financial');
             const is_gaming    = Client.isAccountOfType('gaming');
+            const is_for_mt    = localStorage.getItem('personal_details_redirect');
 
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
@@ -183,20 +184,17 @@ const PersonalDetails = (() => {
                 { selector: '#place_of_birth',         validations: ['req'] },
                 { selector: '#account_opening_reason', validations: ['req'] },
 
-                { selector: '#tax_residence',  validations: Client.isAccountOfType('financial') ? ['req'] : '' },
-                { selector: '#chk_tax_id',     validations: Client.isAccountOfType('financial') ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
+                { selector: '#tax_residence',  validations: (is_financial || is_for_mt) ? ['req'] : '' },
+                { selector: '#citizen',        validations: (is_financial || is_gaming || is_for_mt) ? ['req'] : '' },
+                { selector: '#chk_tax_id',     validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
 
             const tax_id_validation  = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
-            const citizen_validation = { selector: '#citizen' };
-            if (is_financial) {
+            if (is_financial || is_for_mt) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
-            if (is_financial || is_gaming) {
-                citizen_validation.validations = ['req'];
-            }
-            validations.push(tax_id_validation, citizen_validation);
+            validations.push(tax_id_validation);
         }
         return validations;
     };
@@ -205,10 +203,14 @@ const PersonalDetails = (() => {
         // allow user to resubmit the form on error.
         const is_error = response.set_settings !== 1;
         if (!is_error) {
+            const redirect_url = localStorage.getItem('personal_details_redirect');
             // to update tax information message for financial clients
-            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then(() => {
+            BinarySocket.send({ get_account_status: 1 }, { forced: true }).then((response_status) => {
                 showHideTaxMessage();
                 Header.displayAccountStatus();
+                if (redirect_url && +response_status.get_account_status.prompt_client_to_authenticate && Client.isAccountOfType('financial')) {
+                    $('#msg_authenticate').setVisibility(1);
+                }
             });
             // to update the State with latest get_settings data
             BinarySocket.send({ get_settings: 1 }, { forced: true }).then((data) => {
@@ -223,7 +225,19 @@ const PersonalDetails = (() => {
                     BinaryPjax.loadPreviousUrl();
                     return;
                 }
-                getDetailsResponse(data.get_settings);
+                const get_settings    = data.get_settings;
+                const has_required_mt = get_settings.tax_residence && get_settings.tax_identification_number &&
+                    get_settings.citizen;
+                if (redirect_url && has_required_mt) {
+                    localStorage.removeItem('personal_details_redirect');
+                    $.scrollTo($('h1#heading'), 500, { offset: -10 });
+                    $(form_id).setVisibility(0);
+                    $('#missing_details_notice').setVisibility(0);
+                    $('.rowCustomerSupport').setVisibility(0);
+                    $('#msg_main').setVisibility(1);
+                    return;
+                }
+                getDetailsResponse(get_settings);
             });
         }
         showFormMessage(is_error ?
@@ -363,6 +377,7 @@ const PersonalDetails = (() => {
 
     const onUnload = () => {
         is_for_new_account = false;
+        localStorage.removeItem('personal_details_redirect');
     };
 
     return {
