@@ -61,6 +61,7 @@ const SubscriptionManager = (() => {
             // there is already an active subscription for the very same request which fncCallback is not subscribed to it yet
             subscriptions[sub_id].subscribers.push(fncCallback);
         }
+        console.log('%c new sub', 'color: purple; font-size: 16px;', msg_type, JSON.parse(JSON.stringify(subscriptions)));
     };
 
     // dispatches the response to subscribers of the specific subscription id (internal use only)
@@ -83,16 +84,23 @@ const SubscriptionManager = (() => {
         // callback subscribers
         const subscribers = sub_info.subscribers;
         if (subscribers.length) {
-            // remove subscription info when first response returned error
-            // or not a subscription (i.e. subscribed proposal_open_contract for an expired contract)
-            // check msg_type to filter out those calls which don't return stream `id` on first response (tick_history, ...)
-            if (!sub_info.stream_id && (response.error || response.msg_type === sub_info.msg_type)) {
+            if (
+                // remove subscription info when first response returned error
+                // or not a subscription (i.e. subscribed proposal_open_contract for an expired contract)
+                // check msg_type to filter out those calls which don't return stream `id` on first response (tick_history, ...)
+                !sub_info.stream_id && (response.error || response.msg_type === sub_info.msg_type)
+                ||
+                // remove when response isn't first and response has no stream_id
+                !stream_id && sub_info.stream_id
+            ) {
+                console.log('%c delete 1', 'color: purple; font-size: 20px;', subscriptions[sub_id].msg_type);
                 delete subscriptions[sub_id];
             }
             sub_info.subscribers.forEach((fnc) => {
                 fnc(response);
             });
         } else {
+            console.log('%c delete 2', 'color: purple; font-size: 20px;', subscriptions[sub_id].msg_type);
             delete subscriptions[sub_id];
             forgetStream(sub_info.stream_id);
         }
@@ -125,6 +133,7 @@ const SubscriptionManager = (() => {
             }
             const stream_id = subscriptions[id].stream_id;
             if (stream_id && subscriptions[id].subscribers.length === 1) {
+                console.log('%c delete 3', 'color: purple; font-size: 20px;', subscriptions[id].msg_type);
                 delete subscriptions[id];
                 forgets_list.push(forgetStream(stream_id));
             } else {
@@ -149,6 +158,7 @@ const SubscriptionManager = (() => {
             const sub_ids = Object.keys(subscriptions).filter(id => subscriptions[id].msg_type === msg_type);
             if (sub_ids.length) {
                 sub_ids.forEach((id) => {
+                    console.log('%c delete 4', 'color: purple; font-size: 20px;', subscriptions[id].msg_type);
                     delete subscriptions[id];
                 });
                 types_to_forget[msg_type] = true;
