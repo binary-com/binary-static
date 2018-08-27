@@ -7,10 +7,12 @@ import { localize }              from '../../../../../_common/localize';
 
 export const getDetailsInfo = (contract_info) => {
     const {
+        buy_price,
         contract_type,
+        currency,
         date_start,
-        sell_time,
         entry_spot,
+        sell_time,
     } = contract_info;
 
     // if a forward starting contract was sold before starting
@@ -22,9 +24,10 @@ export const getDetailsInfo = (contract_info) => {
 
     // TODO: don't localize on every call
     return {
-        [localize('Contract Type')]: contract_type_display[contract_type],
-        [localize('Start Time')]   : txt_start_time,
-        [localize('Entry Spot')]   : txt_entry_spot,
+        [localize('Contract Type')] : contract_type_display[contract_type],
+        [localize('Start Time')]    : txt_start_time,
+        [localize('Entry Spot')]    : txt_entry_spot,
+        [localize('Purchase Price')]: <Money amount={buy_price} currency={currency} />,
     };
 };
 
@@ -33,6 +36,7 @@ export const getDetailsExpiry = (store) => {
 
     const {
         contract_info,
+        currency,
         end_spot,
         end_spot_time,
         indicative_price,
@@ -49,6 +53,6 @@ export const getDetailsExpiry = (store) => {
             [localize('Exit Spot')]     : end_spot ? addComma(end_spot) : '-',
             [localize('Exit Spot Time')]: end_spot_time ? toGMTFormat(+end_spot_time * 1000) : '-',
         }),
-        [localize('Payout')]: <Money amount={indicative_price} currency={'USD'} />,
+        [localize('Payout')]: <Money amount={indicative_price} currency={currency} />,
     };
 };
