@@ -158,6 +158,11 @@ const Home = () => {
 
     return (
         <React.Fragment>
+            <div id='msfa_message' className='container gr-padding-30 gr-parent invisible'>
+                <div className='notice-msg center-text gr-parent gr-child'>
+                    <p>{it.L('Financial binary options are only available to professional clients')}</p>
+                </div>
+            </div>
             <div id='banner'>
                 <div className='container gr-padding-30'>
                     <h1 className='dark center-text gr-padding-20 gr-child'>{it.L('Online Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>

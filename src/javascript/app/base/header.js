@@ -37,7 +37,7 @@ const Header = (() => {
         } else { // logged-out
             BinarySocket.wait('website_status').then(() => {
                 if (State.get('is_eu')) {
-                    displayNotification('In the EU, financial binary options are only available to professional investors.', false, 'MFSA_MESSAGE');
+                    $('#msfa_message').setVisibility(1);
                 }
             });
         }
@@ -253,7 +253,7 @@ const Header = (() => {
 
     const hideNotification = (msg_code) => {
         const msg_notification = getElementById('msg_notification');
-        if (/^(STORAGE_NOT_SUPPORTED|MFSA_MESSAGE)$/.test(msg_notification.getAttribute('data-code')) ||
+        if (/^(STORAGE_NOT_SUPPORTED)$/.test(msg_notification.getAttribute('data-code')) ||
             msg_code && msg_notification.getAttribute('data-code') !== msg_code) {
             return;
         }
