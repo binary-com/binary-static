@@ -1,5 +1,10 @@
 $header-height: 40px;
 
+// Trade page animation performance fix #perfmatters
+.trade-container + .portfolio-drawer {
+    transition: opacity 0.4s ease;
+}
+
 .portfolio-drawer {
     width: $PORTFOLIO_DRAWER_WIDTH;
     height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
