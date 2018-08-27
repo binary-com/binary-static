@@ -299,7 +299,7 @@ const Header = (() => {
                 document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
                 excluded_until       : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                                                 'contact'),
                 financial_limit      : () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                                             'user/security/self_exclusionws'),
-                mf_retail            : () => buildMessage('Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                                  'contact'),
+                mf_retail            : () => buildMessage('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                                  'contact'),
                 mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
                 required_fields      : () => buildMessage('Please complete your [_1]personal details[_2] before you proceed.', 'user/settings/detailsws'),
                 residence            : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                                                   'user/settings/detailsws'),
