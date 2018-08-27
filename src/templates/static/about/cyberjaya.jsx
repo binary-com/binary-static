@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageSlider from '../../_common/components/image_slider.jsx';
 // import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const Cyberjaya = () =>  (
@@ -27,6 +28,26 @@ const Cyberjaya = () =>  (
             <div className='container gr-row gr-padding-20 center-text'>
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Living in Cyberjaya')}</h2>
+                </div>
+                <div className='gr-12'>
+                    <div className='container gr-padding-10 center-text'>
+                        <ImageSlider
+                            images={[
+                                {
+                                    url    : 'images/pages/careers/cyberjaya/companies.jpg',
+                                    caption: 'As a high-tech knowledge hub, Cyberjaya enjoys the presence of several multinational companies and private universities. This has created a vibrant, thriving community thanks to the many expats and international students who call Cyberjaya home.',
+                                },
+                                {
+                                    url    : 'images/pages/careers/cyberjaya/food.jpg',
+                                    caption: 'If you call yourself a foodie, you’ll be blown away by the sheer number of choices in town. From Middle Eastern, Indian, Japanese, and international cuisine to essential local fare such as Malay, Chinese, and mamak — you can expect to satisfy any cravings you may have.',
+                                },
+                                {
+                                    url    : 'images/pages/careers/cyberjaya/lower-cost-living.jpg',
+                                    caption: 'Malaysia\'s lower cost of living compared to most western countries means that you can enjoy a high quality of life. You’ll also find easy access to world-class healthcare, plus several international schools, colleges, and universities that offer globally-recognised programmes.',
+                                },
+                            ]}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
