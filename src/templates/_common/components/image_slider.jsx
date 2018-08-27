@@ -2,7 +2,7 @@ import React from 'react';
 
 const ImageSlider = ({ id, className, images }) => (
     <div id={id} className={className}>
-        <div id='img_slider' className='image-slider gr-row gr-row-align-center'>
+        <div id='image_slider' className='image-slider gr-row gr-row-align-center'>
             <div id='go_back' className='align-self-center gr-1'>
                 <img className='go-left gr-12 gr-no-gutter gr-centered' src={it.url_for('images/pages/home/arrow_left.svg')} />
             </div>

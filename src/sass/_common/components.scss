@@ -64,6 +64,13 @@
     }
 }
 
+.image-slider {
+    #go_back, #go_next {
+        cursor: pointer;
+        margin-top: -3.5rem;
+    }
+}
+
 #reality_check_content {
     td {
         width: 12.5%;

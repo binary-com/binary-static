@@ -1,6 +1,6 @@
-import React from 'react';
-import ImageSlider from '../../_common/components/image_slider.jsx';
-// import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React               from 'react';
+import { BoxOverlayImage } from '../../_common/components/box_row.jsx';
+import ImageSlider         from '../../_common/components/image_slider.jsx';
 
 const Cyberjaya = () =>  (
     <div className='static_full location-cyberjaya'>
@@ -56,6 +56,22 @@ const Cyberjaya = () =>  (
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Can\'t miss in Cyberjaya')}</h2>
                 </div>
+                <BoxOverlayImage
+                    title={it.L('Lush living')}
+                    text={it.L('Cyberjaya expertly combines green lungs and modern amenities to give you the ultimate work-life balance.')}
+                    img_src={it.url_for('images/pages/careers/cyberjaya/lush-living.jpg')}
+                />
+                <BoxOverlayImage
+                    alignment='right'
+                    title={it.L('Cultural diversity')}
+                    text={it.L('Expats and international students make up more than 10 of Cyberjaya\'s vibrant population.')}
+                    img_src={it.url_for('images/pages/careers/cyberjaya/cultural-diversity.jpg')}
+                />
+                <BoxOverlayImage
+                    title={it.L('Putrajaya')}
+                    text={it.L('Located 10 minutes away, Malaysia\'s intelligent garden city offers stunning greenery and exquisite structures.')}
+                    img_src={it.url_for('images/pages/careers/cyberjaya/putrajaya.jpg')}
+                />
             </div>
         </div>
     </div>

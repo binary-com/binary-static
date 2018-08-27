@@ -79,6 +79,51 @@
     }
 }
 
+.box-overlay-image {
+    margin-bottom: 2rem;
+
+    .box-wrapper {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+
+        &.right {
+            flex-direction: row-reverse;
+
+            .box-content {
+                left: 25%;
+            }
+        }
+        .box-img {
+            max-width: 60%;
+        }
+        .box-content {
+            padding: 1rem 0;
+            border: 1px solid $COLOR_GRAY;
+            max-width: 300px;
+            background: $COLOR_WHITE;
+            left: 45%;
+            position: absolute;
+
+            h4 {
+                text-align: left;
+                margin: 0 1rem;
+            }
+            .box-headerline {
+                border-color: $COLOR_ORANGE;
+                border-bottom-width: 2px;
+                margin: 10px 1rem 0;
+                width: 75px;
+            }
+            .box-text {
+                text-align: left;
+                margin: 0.5rem 1rem;
+            }
+        }
+    }
+}
+
 .why-us-jp-content ol {
     &.split li {
         text-indent: -1.1em;
