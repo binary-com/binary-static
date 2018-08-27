@@ -527,7 +527,7 @@ const TickDisplay = (() => {
             label    : localize('Exit Spot'),
             dashStyle: 'Dash',
         };
-        
+
         add(x_indicators[indicator_key]);
     };
 

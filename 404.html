@@ -47,7 +47,7 @@
             origin;
     }
 
-    const all_languages = ['en'].concat(Object.keys(langs));
+    var all_languages = ['en'].concat(Object.keys(langs));
     function redirect() {
         var alternative_pages = ['home', 'why-us', 'tour', 'terms-and-conditions', 'signup', 'get-started'];
         var redirect_to;
@@ -78,25 +78,68 @@
         window.location = href;
     }
 
+    /**
+     * A helper function to add suport of HTML5 routing to gh-pages
+     * @return {boolean} if window.location.href doesn't contain app.html it will returns false immediately
+     */
+    function handleReactUrl() {
+
+        var l = window.location;
+
+        // if the url is not related to new app, returns false.
+        var lang_regex_string = '(.*)\/(' + all_languages.join('|') + ')\/app\/(\\w+\\.html)?';
+        var rx_result = new RegExp(lang_regex_string).exec(l.pathname)
+
+        if (!new RegExp(lang_regex_string).test(l.pathname) || (rx_result[3] && rx_result[3] !== 'index.html')) {
+            return false;
+        }
+
+        var sub_directories = rx_result[1];
+
+        // Since there are two sub entries after CNAME URL for the app 'www.binary.com/en/app'
+        // the value of segment_count should be 2.
+        var segment_count = 2 + sub_directories.split('/').length;
+
+
+        var pathname = l.pathname.toLowerCase().replace(/\/index(\.html)?/, '');
+
+        // Converting the path and query strings into just query strings and
+        // then redirects the browser to the new url with only query strings and hash fragment.
+        // https://www.binary.com/en/app/statement -> https://www.binary.com/en/app?p=/statement
+        l.replace(
+            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+            pathname.split('/').slice(0, segment_count).join('/') + '/?p=' +
+            pathname.split('/').slice(segment_count).join('/').replace(/&/g, '~and~') +
+            (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~'): '') +
+            l.hash
+        );
+
+        return true;
+    }
+
     var href = window.location.href;
-    var lang = href.split('/').slice(3).find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 }) || getCookieItem('language');
-    if (lang && all_languages.indexOf(lang.toLowerCase()) > -1) {
-        redirect();
-    } else {
-        var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
-        ws.onopen = function(e) {
-            ws.send(JSON.stringify({'website_status': '1'}));
-        };
-        ws.onmessage = function(msg) {
-            var response = JSON.parse(msg.data);
-            if(response.msg_type === 'website_status') {
-                if(!response.error && response.hasOwnProperty('website_status')) {
-                    lang = getLanguage(response.website_status.clients_country);
+
+    if (!handleReactUrl()) {
+
+        var lang = href.split('/').slice(3).find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 }) || getCookieItem('language');
+        if (lang && all_languages.indexOf(lang.toLowerCase()) > -1) {
+            redirect();
+        } else {
+            var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
+            ws.onopen = function(e) {
+                ws.send(JSON.stringify({'website_status': '1'}));
+            };
+            ws.onmessage = function(msg) {
+                var response = JSON.parse(msg.data);
+                if(response.msg_type === 'website_status') {
+                    if(!response.error && response.hasOwnProperty('website_status')) {
+                        lang = getLanguage(response.website_status.clients_country);
+                    }
+                    ws.close();
+                    redirect();
                 }
-                ws.close();
-                redirect();
-            }
-        };
+            };
+        }
     }
     </script>
 </head>

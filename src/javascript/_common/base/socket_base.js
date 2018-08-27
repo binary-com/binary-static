@@ -1,5 +1,5 @@
 const ClientBase       = require('./client_base');
-const SocketCache      = require('../base/socket_cache');
+const SocketCache      = require('./socket_cache');
 const getLanguage      = require('../language').get;
 const State            = require('../storage').State;
 const cloneObject      = require('../utility').cloneObject;

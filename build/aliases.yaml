@@ -1,6 +1,7 @@
 css:
   - 'sass'
   - 'postcss'
+  - 'embedFonts'
   - 'cssmin'
 
 js:
@@ -15,9 +16,9 @@ test:
 
 default:
   - 'test'
+  - 'copy'
   - 'css'
   - 'js'
-  - 'copy'
 
 dev:
   - 'shell:check_origin'

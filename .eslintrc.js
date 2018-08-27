@@ -22,6 +22,7 @@ module.exports = {
         'one-var'                           : ['error', { initialized: 'never', uninitialized: 'always' }],
         // react rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],
+        'import/prefer-default-export'      : 0,
         'jsx-quotes'                        : ['error', 'prefer-single'],
         'react/jsx-closing-bracket-location': ['error', { selfClosing: 'line-aligned', nonEmpty: 'line-aligned' }],
         'react/jsx-closing-tag-location'    : 'error',
@@ -29,7 +30,6 @@ module.exports = {
         'react/jsx-indent'                  : ['error', 4],
         'react/jsx-indent-props'            : ['error', 4],
         'react/jsx-max-props-per-line'      : ['error', { when: 'multiline' }],
-        'react/prop-types'                  : 0,
         'react/self-closing-comp'           : 'error',
     },
     extends: [

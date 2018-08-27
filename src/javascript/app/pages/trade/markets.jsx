@@ -249,14 +249,13 @@ class Markets extends React.Component {
 
     stickyHeader = (position) => {
         const {market_nodes} = this.references;
-        const market_keys = Object.keys(market_nodes);
         const class_sticky = 'sticky';
         const class_under = 'put_under';
         const TITLE_HEIGHT = 40;
         const DEFAULT_TOP = this.references.list.offsetTop;
 
         const current_viewed_node = Object.values(market_nodes).find(node => (
-            node.dataset.offsetTop <= position 
+            node.dataset.offsetTop <= position
                 && +node.dataset.offsetHeight + +node.dataset.offsetTop > position
         ));
 

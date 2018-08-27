@@ -82,7 +82,8 @@ module.exports = function (grunt) {
             chunks: false,
         },
         entry: {
-            [is_production ? 'binary.min' :'binary']: './src/javascript',
+            [is_production ? 'binary.min'     :'binary']    : './src/javascript',
+            [is_production ? 'binary_app.min' :'binary_app']: './src/javascript/app_2',
         },
         output: {
             path         : path.resolve(__dirname, `../${global.dist}/js/`),
@@ -100,8 +101,9 @@ module.exports = function (grunt) {
                     exclude: /node_modules/,
                     loader : 'babel-loader',
                     query  : {
-                        presets: ['env', 'react'],
+                        presets: ['env', 'stage-1', 'react'],
                         plugins: [
+                            'transform-decorators-legacy',
                             'transform-object-rest-spread',
                             'transform-class-properties',
                         ],
@@ -111,6 +113,9 @@ module.exports = function (grunt) {
             ],
         },
         plugins,
+        externals: {
+            CIQ: 'CIQ',
+        },
     };
 
     const watch_options = Object.assign({ watch: true }, common_options);

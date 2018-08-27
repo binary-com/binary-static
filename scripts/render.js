@@ -18,13 +18,12 @@ const ReactDOMServer = require('../node_modules/react-dom/server.js');
 const renderComponent = (context, path) => {
     const Component = require(path).default; // eslint-disable-line
 
-    global.it    = context;
-    const result = ReactDOMServer.renderToStaticMarkup(
+    global.it = context;
+    return ReactDOMServer.renderToStaticMarkup(
         React.createElement(
             Component
         )
     );
-    return result;
 };
 
 const color                = require('cli-color');
@@ -151,33 +150,36 @@ const createContextBuilder = async () => {
             static_hash = await common.readFile(Path.join(config.dist_path, 'version'));
         } catch (e) { } // eslint-disable-line
     }
-    const vendor_hash = await fileHash(Path.join(config.dist_path, 'js/vendor.min.js'));
+    const vendor_hash  = await fileHash(Path.join(config.dist_path, 'js/vendor.min.js'));
+    const chartiq_hash = await fileHash(Path.join(config.dist_path, 'js/chartiq.min.js'));
     if (!is_translation) {
         await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
     }
 
-    const extra = {
+    const extra = is_app => ({
         js_files: [
             `${config.root_url}js/texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
             `${config.root_url}js/manifest.js?${static_hash}`,
             `${config.root_url}js/vendor.min.js?${vendor_hash}`,
-            program.dev ?
-                `${config.root_url}js/binary.js?${static_hash}` :
-                `${config.root_url}js/binary.min.js?${static_hash}`,
+            ...(is_app ? [`${config.root_url}js/chartiq.min.js?${chartiq_hash}`] : []),
+            `${config.root_url}js/binary${is_app ? '_app' : ''}${program.dev ? '' : '.min'}.js?${static_hash}`,
         ],
-        css_files: [
+        css_files: is_app ? [
+            `${config.root_url}css/app_2.min.css?${static_hash}`,
+            `${config.root_url}css/smartcharts.css?${static_hash}`,
+        ] : [
             `${config.root_url}css/common.min.css?${static_hash}`,
             ...config.sections.map(section => `${config.root_url}css/${section}.min.css?${static_hash}`),
         ],
         languages  : config.languages,
         broker_name: 'Binary.com',
         static_hash,
-    };
+    });
 
     return {
         buildFor: (model) => {
             const translator = createTranslator(model.language);
-            return Object.assign({}, extra, model, {
+            return Object.assign({}, extra(/^app\/index$/.test(model.current_path)), model, {
                 L: (text, ...args) => {
                     const translated = translator(text, ...args);
                     return RenderHTML(translated);

@@ -61,7 +61,7 @@ export const Li = ({
 };
 ```
 
-- Imports with four or more arguments need to be broken down to separate lines, but lower than that should stay in one line. 
+- Imports with four or more arguments need to be broken down to separate lines, but lower than that should stay in one line.
 - Always name your components before default exporting them, for example:
 
 ```
