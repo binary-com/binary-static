@@ -52,7 +52,6 @@ class Portfolio extends React.Component {
                             data_source={active_positions}
                             footer={totals}
                             has_fixed_header
-                            onRowClick={this.redirectToContract}
                             getRowLink={(row_obj) => getContractPath(row_obj.id)}
                         />
                 }
