@@ -3,7 +3,7 @@ import ImageSlider from '../../_common/components/image_slider.jsx';
 // import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const Cyberjaya = () =>  (
-    <div className='static_full cyberjaya'>
+    <div className='static_full location-cyberjaya'>
         <div className='introduction'>
             <div className='container gr-row gr-padding-20'>
                 <div className='gr-12 gr-padding-20 center-text'>

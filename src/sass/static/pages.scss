@@ -229,22 +229,24 @@
     }
 }
 
-.cyberjaya-content {
-    .introduction {
-        h1 {
-            color: $COLOR_BLUE;
-            font-size: 2.25rem;
-        }
-        h2 {
-            color: $COLOR_ORANGE;
-            font-size: 1.75rem;
-        }
-        h4.subheader {
-            font-style: italic;
-            font-size: $FONT_SIZE_L;
-        }
-        p.no-margin-top {
-            margin-top: 0;
+.location {
+    &-cyberjaya, &-labuan, &-malta {
+        .introduction {
+            h1 {
+                color: $COLOR_BLUE;
+                font-size: 2.25rem;
+            }
+            h2 {
+                color: $COLOR_ORANGE;
+                font-size: 1.75rem;
+            }
+            h4.subheader {
+                font-style: italic;
+                font-size: $FONT_SIZE_L;
+            }
+            p.no-margin-top {
+                margin-top: 0;
+            }
         }
     }
 }
