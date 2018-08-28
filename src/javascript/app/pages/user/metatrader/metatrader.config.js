@@ -52,63 +52,69 @@ const MetaTraderConfig = (() => {
 
     const newAccCheck = (acc_type, message_selector) => (
         new Promise((resolve) => {
+            const $message = $messages.find('#msg_real_financial').clone();
             const $new_account_financial_authenticate_msg = $('#new_account_financial_authenticate_msg');
             $new_account_financial_authenticate_msg.setVisibility(0);
+
             if (!Client.get('currency')) {
                 resolve($messages.find('#msg_set_currency').html());
-            } else if (accounts_info[acc_type].is_demo) {
-                resolve();
-            } else if (Client.get('is_virtual')) {
-                resolve(needsRealMessage());
-            } else if (accounts_info[acc_type].account_type === 'financial') {
-                BinarySocket.wait('get_account_status', 'get_settings', 'landing_company').then(() => {
-                    const $message = $messages.find('#msg_real_financial').clone();
-                    let is_ok = true;
-                    if (State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
-                        $message.find('.maltainvest').setVisibility(1);
-                        is_ok = false;
-                    } else {
-                        const response_get_account_status = State.getResponse('get_account_status');
-                        const response_get_settings       = State.getResponse('get_settings');
-                        if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status)) {
-                            $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
-                            is_ok = false;
-                        }
-                        if (!response_get_settings.tax_residence || !response_get_settings.tax_identification_number) {
-                            $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
-                            is_ok = false;
-                        }
-                        if (!response_get_settings.citizen) {
-                            $message.find('.citizen').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
-                            is_ok = false;
-                        }
-                        if (is_ok && !isAuthenticated()) {
-                            $new_account_financial_authenticate_msg.setVisibility(1);
-                        }
-                    }
-                    if (is_ok) {
-                        resolve();
-                    } else {
-                        $message.find(message_selector).setVisibility(1);
-                        resolve($message.html());
-                    }
-                });
-            } else {
-                BinarySocket.wait('get_settings').then((response) => {
-                    const $message = $messages.find('#msg_real_financial').clone();
-                    let is_ok = true;
-                    if (!response.get_settings.citizen) {
-                        $message.find('.citizen').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
-                        is_ok = false;
-                    }
-                    if (is_ok) {
-                        resolve();
-                    } else {
-                        $message.find(message_selector).setVisibility(1);
-                        resolve($message.html());
-                    }
-                });
             }
+
+            BinarySocket.wait('get_settings').then(() => {
+                const response_get_settings = State.getResponse('get_settings');
+
+                const showCitizenshipMessage = () => {
+                    $message.find('.citizen').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                };
+
+                if (!accounts_info[acc_type].is_demo) {
+                    if (Client.get('is_virtual')) {
+                        resolve(needsRealMessage());
+                    }
+                    if (accounts_info[acc_type].account_type === 'financial') {
+                        BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+                            let is_ok = true;
+                            if (State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
+                                $message.find('.maltainvest').setVisibility(1);
+                                is_ok = false;
+                            } else {
+                                const response_get_account_status = State.getResponse('get_account_status');
+                                if (/(financial_assessment|trading_experience)_not_complete/.test(response_get_account_status.status)) {
+                                    $message.find('.assessment').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('financial_assessment_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                                    is_ok = false;
+                                }
+                                if (!response_get_settings.tax_residence ||
+                                    !response_get_settings.tax_identification_number) {
+                                    $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                                    is_ok = false;
+                                }
+                                if (!response_get_settings.citizen) {
+                                    showCitizenshipMessage();
+                                    is_ok = false;
+                                }
+                                if (is_ok && !isAuthenticated()) {
+                                    $new_account_financial_authenticate_msg.setVisibility(1);
+                                }
+                            }
+                            if (is_ok) {
+                                resolve();
+                            } else {
+                                $message.find(message_selector).setVisibility(1);
+                                resolve($message.html());
+                            }
+                        });
+                    }
+                }
+
+                // we need to check this for every mt5 account
+                if (!response_get_settings.citizen) {
+                    showCitizenshipMessage();
+                    $message.find(message_selector).setVisibility(1);
+                    resolve($message.html());
+                }
+
+                resolve();
+            });
         })
     );
 
