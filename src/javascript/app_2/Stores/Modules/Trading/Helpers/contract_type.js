@@ -96,7 +96,7 @@ const ContractType = (() => {
             const config = available_contract_types[type].config || {};
 
             // set config values
-            config.has_spot               = contract.start_type === 'spot';
+            config.has_spot               = config.has_spot || contract.start_type === 'spot';
             config.durations              = buildDurationConfig(contract, config.durations);
             config.trade_types            = buildTradeTypesConfig(contract, config.trade_types);
             config.barriers               = buildBarriersConfig(contract, config.barriers);

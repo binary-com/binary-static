@@ -31,7 +31,9 @@ const buildDurationConfig = (contract, durations = { min_max: {}, units_display:
         }
     } else {
         Object.keys(duration_maps).forEach(u => {
-            if (arr_units.indexOf(u) === -1 &&
+            if (
+                u !== 'd' && // when the expiray_type is intraday, the supported units are seconds, minutes and hours.
+                arr_units.indexOf(u) === -1 &&
                 duration_maps[u].order >= duration_maps[obj_min.unit].order &&
                 duration_maps[u].order <= duration_maps[obj_max.unit].order) {
                 arr_units.push(u);
