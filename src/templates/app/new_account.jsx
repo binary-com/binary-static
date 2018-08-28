@@ -1,9 +1,11 @@
 import React from 'react';
+import MFSA  from '../_common/includes/mfsa.jsx';
 
 const NewAccount = () => (
     <React.Fragment>
+        <MFSA />
         <form id='signup_form' className='center-text gr-padding-20'>
-            <h1 className='dark'>{it.L('Start Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
+            <h1 className='dark gr-padding-20 gr-child'>{it.L('Start Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
             <div>
                 <div className='gr-4 gr-5-t gr-5-p gr-10-m gr-no-gutter gr-centered gr-padding-30 gr-parent'>
                     <div className='gr-padding-20'>

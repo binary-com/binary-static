@@ -3,6 +3,7 @@ const FormManager    = require('../common/form_manager');
 const Login          = require('../../_common/base/login');
 const getElementById = require('../../_common/common_functions').getElementById;
 const localize       = require('../../_common/localize').localize;
+const State          = require('../../_common/storage').State;
 
 const NewAccount = (() => {
     let clients_country,
@@ -32,6 +33,9 @@ const NewAccount = (() => {
                 fnc_additional_check: checkCountry,
             });
             $('.error-msg').addClass('center-text'); // this element exist only after calling FormManager.init
+            if (State.get('is_eu')) {
+                $('.mfsa_message').slideDown(300);
+            }
         });
 
         $google_btn.on('click', (e) => {
