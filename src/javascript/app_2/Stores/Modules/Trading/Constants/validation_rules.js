@@ -4,12 +4,12 @@ const validation_rules = {
         ['number' , {min: 0, type: 'float'}],
     ],
     barrier_1: [
-        ['req'    , {condition: store => store.barrier_count, message: 'The barrier is a required field.'}],
+        ['req'    , {condition: store => store.barrier_count && store.form_components.indexOf('barrier') > -1, message: 'The barrier is a required field.'}],
         ['barrier', {condition: store => store.contract_expiry_type !== 'daily' && store.barrier_count}],
         ['number' , {condition: store => store.contract_expiry_type === 'daily' && store.barrier_count, type: 'float'}],
     ],
     barrier_2: [
-        ['req'    , {condition: store => store.barrier_count, message: 'The barrier is a required field.'}],
+        ['req'    , {condition: store => store.barrier_count > 1 && store.form_components.indexOf('barrier') > -1, message: 'The barrier is a required field.'}],
         ['barrier', {condition: store => store.contract_expiry_type !== 'daily' && store.barrier_count}],
         ['number' , {condition: store => store.contract_expiry_type === 'daily' && store.barrier_count, type: 'float'}],
     ],
