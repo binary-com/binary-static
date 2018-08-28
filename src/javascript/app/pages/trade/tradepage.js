@@ -83,7 +83,9 @@ const TradePage = (() => {
     };
 
     const onUnload = () => {
-        Header.hideNotification('MF_RETAIL_MESSAGE');
+        if (!/trading/.test(window.location.href)) {
+            Header.hideNotification('MF_RETAIL_MESSAGE');
+        }
         State.remove('is_trading');
         events_initialized = 0;
         Process.forgetTradingStreams();

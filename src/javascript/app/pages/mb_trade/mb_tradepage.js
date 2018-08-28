@@ -100,7 +100,9 @@ const MBTradePage = (() => {
     };
 
     const onUnload = () => {
-        Header.hideNotification('MF_RETAIL_MESSAGE');
+        if (!/trading/.test(window.location.href)) {
+            Header.hideNotification('MF_RETAIL_MESSAGE');
+        }
         cleanupChart();
         State.set('is_chart_allowed', false);
         JapanPortfolio.hide();
