@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-24 07:02\n"
+"PO-Revision-Date: 2018-08-28 05:24\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -4586,9 +4586,6 @@ msgstr "Si cuenta con más de una posición abierta en el mismo mercado, cualqui
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Si usted tiene el conjunto de habilidades que buscamos, se convertirá en un valioso miembro de un equipo de desarrollo front-end altamente competente responsable de llevar nuestros sistemas de comercio de opciones binarias a nuevas alturas."
 
-msgid "If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy."
-msgstr ""
-
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Si mantiene cualquier posición abierta durante la noche, se realizará un ajuste de interés a su cuenta de operaciones como indicación del costo necesario para ello."
 
@@ -4819,6 +4816,9 @@ msgstr "En el clásico estilo de Silicon Valley, el empresario y gestor de fondo
 
 msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
 msgstr "En relación con este Acuerdo y todas las transacciones contempladas en el mismo, usted se compromete a ejecutar y entregar los documentos e instrumentos adicionales, así como a realizar las acciones adicionales que sean necesarias o apropiadas para efectuar, llevar a cabo y ejecutar todos los términos, disposiciones y condiciones de este Acuerdo. Usted deberá cooperar plenamente con cualquier investigación por parte de cualquier autoridad reguladora y proporcionarle con prontitud la información y los registros que puedan ser solicitados en cumplimiento de cualquier ley, ordenanza, estatuto, reglamento o norma aplicable a usted o a la jurisdicción en la que usted resida."
+
+msgid "In exceptional circumstances, where there is a price change in the underlying that is sufficiently large and sudden, gapping can occur. In such cases, the automatic margin close-out protection might fail, causing your account balance to fall below zero. For this purpose, a Negative Balance Protection mechanism has been introduced. Negative Balance Protection provides a ‘backstop’ in case of extreme market conditions and ensures that your maximum losses from trading CFDs, including all related costs, are limited to the balance available on your CFD account. Therefore, you can never lose more money than the total sum invested for trading CFDs; if your CFD account balance falls below zero, the Company will compensate the negative balance as soon as possible without any additional cost to you."
+msgstr ""
 
 msgid "In executing orders on your behalf, %1 takes into consideration the following to achieve the best possible result for you:"
 msgstr "En la ejecución de órdenes en su nombre, %1 tiene en cuenta las siguientes acciones para lograr el mejor resultado posible para usted:"
@@ -6548,6 +6548,9 @@ msgstr "Necesidad de vigilar posiciones"
 
 msgid "Negative Balance Protection"
 msgstr "Protección contra saldo negativo"
+
+msgid "Negative Balance Protection does not apply to clients categorized as professional traders, who can still lose more money than their available balance."
+msgstr ""
 
 msgid "Negative balance protection"
 msgstr ""
@@ -9159,9 +9162,6 @@ msgstr "La Compañía no brinda ni está autorizada a brindar asesoramiento de i
 
 msgid "The Company ensures that complaints received will be investigated thoroughly and fairly. You may submit your complaint by sending an email to %1."
 msgstr "La Compañía asegura que las quejas recibidas serán investigadas a fondo y de manera justa. Puede enviar una queja por correo electrónico a través de %1."
-
-msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
-msgstr ""
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "La Compañía tiene y se reserva el derecho a finalizar cualquier evento o contrato, incluyendo pero no limitándose a la ocurrencia de cualquiera de los eventos anteriores."
@@ -12403,21 +12403,6 @@ msgstr "horas"
 msgid "iOS"
 msgstr "iOS"
 
-msgid "in abnormal market conditions or exceptional market movements/volatility;"
-msgstr "en condiciones de mercado anormales o movimientos / volatilidad del mercado excepcionales;"
-
-msgid "in the case of Professional Clients;"
-msgstr "en el caso de Clientes Profesionales;"
-
-msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
-msgstr "en el caso de un cliente que incumpla cualquiera de los términos de este Acuerdo que resulte en un saldo negativo."
-
-msgid "in the case of a client opening any Transaction in relation to Prohibited Trades;"
-msgstr "en el caso de un cliente que abre una Transacción en relación con Operaciones Prohibidas;"
-
-msgid "in the case of a force majeure event;"
-msgstr "en el caso de un evento de fuerza mayor;\n"
-
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "incluir un desgargo y/o aviso de que todos los derechos de propiedad intelectual, incluida cualquier marca registrada o eslogan, pertenecen a la Compañía y cualquier uso no autorizado está estríctamente prohíbido."
 
@@ -12606,9 +12591,6 @@ msgstr "semanas"
 
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
 msgstr ""
-
-msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
-msgstr "cuando el saldo negativo está conectado o es el resultado de limitaciones funcionales y / o mal funcionamiento de la plataforma de operación MT5; y"
 
 msgid "with insider knowledge of any financial market or instrument."
 msgstr "conocimiento interno de cualquier mercado financiero o instrumento."
