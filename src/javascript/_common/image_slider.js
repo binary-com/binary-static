@@ -51,9 +51,8 @@ const ImageSlider = (() => {
 
     const onUnMount = () => {
         if (go_back && go_next) {
-            console.log('unmounting');
             go_back.removeEventListener('click', goLeft);
-            go_back.removeEventListener('click', goLeft);
+            go_back.removeEventListener('click', goRight);
         }
     };
 
