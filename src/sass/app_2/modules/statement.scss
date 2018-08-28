@@ -69,10 +69,8 @@ $side-padding: 12px;
         overflow: hidden;
 
         .statement-filter {
-            position: fixed;
             background-color: $COLOR_WHITE;
             padding: 0 $side-padding;
-            left: 0;
             border-bottom: 1px solid $COLOR_GRAY;
 
             &__content {
@@ -92,7 +90,6 @@ $side-padding: 12px;
             }
         }
         .statement__content {
-            margin-top: $filter-height;
             padding: 0;
         }
         .card-list {
