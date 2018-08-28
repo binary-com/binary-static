@@ -22,9 +22,15 @@ $header-height: 42px;
     }
     &__row {
         display: grid;
+        grid-auto-rows: min-content; // safari fix
         padding: 0 16px;
         box-sizing: border-box;
         border-bottom: 1px solid $COLOR_GRAY;
+        text-decoration: none;
+
+        &, &:active, &:visited {
+            color: $COLOR_LIGHT_BLACK;
+        }
     }
     &__head {
         height: $header-height;
@@ -36,6 +42,9 @@ $header-height: 42px;
     }
     &__body {
         overflow-y: auto;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
     &__body &__row {
         &:hover {

@@ -1,3 +1,4 @@
+import debounce                         from 'lodash.debounce';
 import {
     action,
     observable,
@@ -77,6 +78,8 @@ export default class TradeStore extends BaseStore {
     // Chart
     chart_id = 1;
 
+    debouncedProposal = debounce(this.requestProposal, 500);
+
     constructor({ root_store }) {
         const session_storage_properties = allowed_query_string_variables;
         const options = {
@@ -138,12 +141,12 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onChange(e) {
-        const { name, value, type } = e.target;
+        const { name, value } = e.target;
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
-        this.processNewValuesAsync({ [name]: (type === 'number' ? +value : value) }, true);
+        this.processNewValuesAsync({ [name]: value }, true);
     }
 
     @action.bound
@@ -232,7 +235,7 @@ export default class TradeStore extends BaseStore {
 
             this.is_query_string_applied = true;
 
-            this.requestProposal();
+            this.debouncedProposal();
         }
     }
 

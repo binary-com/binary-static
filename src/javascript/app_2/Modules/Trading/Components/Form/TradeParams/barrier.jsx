@@ -41,21 +41,24 @@ const Barrier = ({
             icon='barriers'
         >
             <InputField
-                type='text'
+                type='number'
                 name='barrier_1'
                 value={barrier_1}
                 onChange={onChange}
                 error_messages = {validation_errors.barrier_1 || []}
+                is_float
+                is_signed
             />
 
             {barrier_count === 2 &&
                 <InputField
-                    type='text'
+                    type='number'
                     name='barrier_2'
                     value={barrier_2}
                     onChange={onChange}
-                    is_float
                     error_messages = {validation_errors.barrier_2}
+                    is_float
+                    is_signed
                 />
             }
         </Fieldset>

@@ -2,7 +2,6 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { NavLink }         from 'react-router-dom';
-import ContractLink        from '../../Contract/Components/contract_link.jsx';
 import { getContractPath } from '../../../App/Components/Routes/helpers';
 
 const StatementCard = ({
@@ -20,7 +19,7 @@ const StatementCard = ({
         <div className='statement-card__header'>
             <span className='statement-card__date'>{date}</span>
             <span className='statement-card__refid'>
-                <ContractLink contract_id={id} text={refid} />
+                {refid}
             </span>
         </div>
         <div className='statement-card__body'>

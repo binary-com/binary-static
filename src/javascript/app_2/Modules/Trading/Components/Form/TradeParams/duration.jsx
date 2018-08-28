@@ -123,7 +123,7 @@ const Duration = ({
                                 footer={localize('The minimum duration is 1 day')}
                             /> :
                             <InputField
-                                type='text'
+                                type='number'
                                 name='duration'
                                 value={duration}
                                 onChange={onChange}

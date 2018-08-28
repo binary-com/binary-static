@@ -61,7 +61,7 @@ const Amount = ({
                     />
                 }
                 <InputField
-                    type='text'
+                    type='number'
                     name='amount'
                     value={amount}
                     onChange={onChange}
