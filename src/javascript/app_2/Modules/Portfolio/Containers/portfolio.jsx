@@ -15,13 +15,9 @@ class Portfolio extends React.Component {
     componentDidMount()    { this.props.onMount(); }
     componentWillUnmount() { this.props.onUnmount(); }
 
-    redirectToContract = (row_obj) => {
-        this.props.history.push(getContractPath(row_obj.id));
-    };
-
     render() {
         const {
-            data,
+            active_positions,
             is_mobile,
             is_tablet,
             is_loading,
@@ -49,14 +45,14 @@ class Portfolio extends React.Component {
             <div className={classnames('portfolio container', { 'portfolio--card-view': should_show_cards })}>
                 {
                     should_show_cards ?
-                        <CardList data={data} currency={currency} />
+                        <CardList data={active_positions} currency={currency} />
                         :
                         <DataTable
                             columns={getTableColumnsTemplate(currency)}
-                            data_source={data}
+                            data_source={active_positions}
                             footer={totals}
                             has_fixed_header
-                            onRowClick={this.redirectToContract}
+                            getRowLink={(row_obj) => getContractPath(row_obj.id)}
                         />
                 }
             </div>
@@ -65,30 +61,30 @@ class Portfolio extends React.Component {
 }
 
 Portfolio.propTypes = {
-    currency  : PropTypes.string,
-    data      : MobxPropTypes.arrayOrObservableArray,
-    error     : PropTypes.string,
-    history   : PropTypes.object,
-    is_empty  : PropTypes.bool,
-    is_loading: PropTypes.bool,
-    is_mobile : PropTypes.bool,
-    is_tablet : PropTypes.bool,
-    onMount   : PropTypes.func,
-    onUnmount : PropTypes.func,
-    totals    : PropTypes.object,
+    currency        : PropTypes.string,
+    active_positions: MobxPropTypes.arrayOrObservableArray,
+    error           : PropTypes.string,
+    history         : PropTypes.object,
+    is_empty        : PropTypes.bool,
+    is_loading      : PropTypes.bool,
+    is_mobile       : PropTypes.bool,
+    is_tablet       : PropTypes.bool,
+    onMount         : PropTypes.func,
+    onUnmount       : PropTypes.func,
+    totals          : PropTypes.object,
 };
 
 export default connect(
     ({modules, client, ui}) => ({
-        currency  : client.currency,
-        data      : modules.portfolio.data,
-        error     : modules.portfolio.error,
-        is_empty  : modules.portfolio.is_empty,
-        is_loading: modules.portfolio.is_loading,
-        totals    : modules.portfolio.totals,
-        onMount   : modules.portfolio.onMount,
-        onUnmount : modules.portfolio.onUnmount,
-        is_mobile : ui.is_mobile,
-        is_tablet : ui.is_tablet,
+        currency        : client.currency,
+        active_positions: modules.portfolio.active_positions,
+        error           : modules.portfolio.error,
+        is_empty        : modules.portfolio.is_empty,
+        is_loading      : modules.portfolio.is_loading,
+        totals          : modules.portfolio.totals,
+        onMount         : modules.portfolio.onMount,
+        onUnmount       : modules.portfolio.onUnmount,
+        is_mobile       : ui.is_mobile,
+        is_tablet       : ui.is_tablet,
     })
 )(withRouter(Portfolio));
