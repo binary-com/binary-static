@@ -7,6 +7,7 @@ const MBProcess           = require('./mb_process');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
 const BinaryPjax          = require('../../base/binary_pjax');
 const Client              = require('../../base/client');
+const Header              = require('../../base/header');
 const BinarySocket        = require('../../base/socket');
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
 const JapanPortfolio      = require('../../japan/portfolio');
@@ -17,6 +18,7 @@ const State               = require('../../../_common/storage').State;
 const urlFor              = require('../../../_common/url').urlFor;
 const findParent          = require('../../../_common/utility').findParent;
 
+
 const MBTradePage = (() => {
     let events_initialized = 0;
     State.remove('is_mb_trading');
@@ -24,6 +26,7 @@ const MBTradePage = (() => {
     const onLoad = () => {
         State.set('is_mb_trading', true);
         BinarySocket.wait('authorize').then(init);
+        Header.displayAccountStatus();
         if (!Client.isLoggedIn()) {
             BinarySocket.wait('website_status').then(() => {
                 BinarySocket.send({ landing_company: State.getResponse('website_status.clients_country') });
@@ -98,6 +101,7 @@ const MBTradePage = (() => {
     };
 
     const onUnload = () => {
+        Header.hideNotification('MF_RETAIL_MESSAGE');
         cleanupChart();
         State.set('is_chart_allowed', false);
         JapanPortfolio.hide();
