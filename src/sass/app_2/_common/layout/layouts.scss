@@ -6,10 +6,11 @@
         overflow-x: hidden;
 
         &--show-portfolio-drawer {
-            margin-right: $PORTFOLIO_DRAWER_WIDTH;
+            padding-right: $PORTFOLIO_DRAWER_WIDTH;
 
             .trade-container {
                 transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
+                margin-right: -#{$PORTFOLIO_DRAWER_WIDTH};
             }
             .chart-container {
                 .ciq-chart {
@@ -107,7 +108,7 @@
     }
     /* trade-app layout */
     .trade-container {
-        position: absolute;
+        position: relative;
         padding: 8px 12px 0;
         display: grid;
         grid-template-columns: repeat(12, [col-start] 1fr);
