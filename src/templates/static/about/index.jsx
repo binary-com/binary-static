@@ -77,22 +77,22 @@ const Index = () => (
                 </h1>
                 <div className='gr-row'>
                     <ValuesBox
-                        subheader={it.L('integrity')}
+                        subheader={it.L('Integrity')}
                         icon='ic-intergrity'
                         paragraph={it.L('We believe that we should always do the right thing. This includes serving our customers with honesty and transparency, settling all contracts by the book, and communicating in plain language that can be easily understood.')}
                     />
                     <ValuesBox
-                        subheader={it.L('teamwork')}
+                        subheader={it.L('Teamwork')}
                         icon='ic-teamwork'
                         paragraph={it.L('We value positive team players who can work together to overcome challenges and achieve common goals.')}
                     />
                     <ValuesBox
-                        subheader={it.L('competence')}
+                        subheader={it.L('Competence')}
                         icon='ic-competence'
                         paragraph={it.L('We love to work with smart and talented people who are eager to roll up their sleeves and get things done.')}
                     />
                     <ValuesBox
-                        subheader={it.L('customer focus')}
+                        subheader={it.L('Customer focus')}
                         icon='ic-customer-focus'
                         paragraph={it.L('We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible.')}
                     />
