@@ -94,7 +94,20 @@ const MetaTraderConfig = (() => {
                     }
                 });
             } else {
-                resolve();
+                BinarySocket.wait('get_settings').then((response) => {
+                    const $message = $messages.find('#msg_real_financial').clone();
+                    let is_ok = true;
+                    if (!response.get_settings.citizen) {
+                        $message.find('.citizen').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                        is_ok = false;
+                    }
+                    if (is_ok) {
+                        resolve();
+                    } else {
+                        $message.find(message_selector).setVisibility(1);
+                        resolve($message.html());
+                    }
+                });
             }
         })
     );
