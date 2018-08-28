@@ -37,8 +37,11 @@ const InputField = ({
             const is_not_completed_number = is_float && new RegExp(`^${signed_regex}(\\.|\\d+\\.)?$`)
                 .test(e.target.value);
 
+            const is_zero = new RegExp(`^${signed_regex}(0)?\\.[0]*$`)
+                .test(e.target.value);
+
             if (is_number || is_empty) {
-                e.target.value = is_empty || is_signed ? e.target.value : +e.target.value;
+                e.target.value = is_empty || is_signed || is_zero ? e.target.value : +e.target.value;
             } else if (!is_not_completed_number) {
                 e.target.value = value;
                 return;
