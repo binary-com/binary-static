@@ -59,20 +59,15 @@ const Malta = () =>  (
                     <h2>{it.L('Can\'t miss in Malta')}</h2>
                 </div>
                 <BoxOverlayImage
-                    title={it.L('Lush living')}
-                    text={it.L('Cyberjaya expertly combines green lungs and modern amenities to give you the ultimate work-life balance.')}
-                    img_src={it.url_for('images/pages/careers/cyberjaya/lush-living.jpg')}
+                    title={it.L('Natural wonders')}
+                    text={it.L('Malta\'s natural attractions are absolutely breathtaking, from its sheer cliffs and lush valleys to its golden sandy beaches and underwater structures in clear blue seas.')}
+                    img_src={it.url_for('images/pages/careers/malta/natural-wonders.jpg')}
                 />
                 <BoxOverlayImage
                     alignment='right'
-                    title={it.L('Cultural diversity')}
-                    text={it.L('Expats and international students make up more than 10 of Cyberjaya\'s vibrant population.')}
-                    img_src={it.url_for('images/pages/careers/cyberjaya/cultural-diversity.jpg')}
-                />
-                <BoxOverlayImage
-                    title={it.L('Putrajaya')}
-                    text={it.L('Located 10 minutes away, Malaysia\'s intelligent garden city offers stunning greenery and exquisite structures.')}
-                    img_src={it.url_for('images/pages/careers/cyberjaya/putrajaya.jpg')}
+                    title={it.L('Festivals galore')}
+                    text={it.L('Malta celebrates a large number of religious festivities and cultural events every year, filling the streets with people and carts laden with traditional delicacies.')}
+                    img_src={it.url_for('images/pages/careers/malta/festivals-galore.jpg')}
                 />
             </div>
         </div>

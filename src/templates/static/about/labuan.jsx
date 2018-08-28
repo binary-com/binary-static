@@ -60,20 +60,15 @@ const Labuan = () =>  (
                     <h2>{it.L('Can\'t miss in Labuan')}</h2>
                 </div>
                 <BoxOverlayImage
-                    title={it.L('Lush living')}
-                    text={it.L('Cyberjaya expertly combines green lungs and modern amenities to give you the ultimate work-life balance.')}
-                    img_src={it.url_for('images/pages/careers/cyberjaya/lush-living.jpg')}
+                    title={it.L('Small island charm')}
+                    text={it.L('Get out of the city centre and enjoy the serenity of island life free from the excesses of commercialisation. Friendly, helpful locals are also never far off.')}
+                    img_src={it.url_for('images/pages/careers/labuan/small-island-charm.jpg')}
                 />
                 <BoxOverlayImage
                     alignment='right'
-                    title={it.L('Cultural diversity')}
-                    text={it.L('Expats and international students make up more than 10 of Cyberjaya\'s vibrant population.')}
-                    img_src={it.url_for('images/pages/careers/cyberjaya/cultural-diversity.jpg')}
-                />
-                <BoxOverlayImage
-                    title={it.L('Putrajaya')}
-                    text={it.L('Located 10 minutes away, Malaysia\'s intelligent garden city offers stunning greenery and exquisite structures.')}
-                    img_src={it.url_for('images/pages/careers/cyberjaya/putrajaya.jpg')}
+                    title={it.L('The great outdoors')}
+                    text={it.L('Step outdoors and soak up the sun on one of Labuan\'s pristine beaches. There’s also wreck diving, kayaking, island hopping, and deep sea fishing to look forward to.')}
+                    img_src={it.url_for('images/pages/careers/labuan/the-great-outdoors.jpg')}
                 />
             </div>
         </div>

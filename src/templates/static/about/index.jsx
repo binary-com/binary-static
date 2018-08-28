@@ -71,8 +71,8 @@ const Index = () => (
             <div className='gr-12'>
                 <SeparatorLine no_wrapper sub_class='gr-padding-10' />
             </div>
-            <div className='gr-parent' id='values-section'>
-                <h1 className='center-text gr-padding-20'>
+            <div className='gr-parent'>
+                <h1 className='center-text gr-padding-20' data-anchor>
                     {it.L('Our values')}
                 </h1>
                 <div className='gr-row'>
@@ -101,7 +101,7 @@ const Index = () => (
                         <p>{it.L('Want to be a part of our dynamic culture? Browse all our openings and see where you fit:')}</p>
                     </div>
                     <div className='center-element'>
-                        <a className='button-secondary' href={it.url_for('careers')}>
+                        <a className='button-secondary' href={it.url_for('careers?anchor=open-positions')}>
                             <span>{it.L('open positions')}</span>
                         </a>
                     </div>

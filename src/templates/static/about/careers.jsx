@@ -110,7 +110,7 @@ const Careers = () => {
                     <ColumnValues header={it.L('customer focus')} icon='ic-customer-focus' />
 
                     <div className='fill-text center-element btn-margin-top'>
-                        <a className='button-secondary' href={it.url_for('about-us#values-section')}>
+                        <a className='button-secondary' href={it.url_for('about-us?anchor=our-values')}>
                             <span>{it.L('Learn more')}</span>
                         </a>
                     </div>
@@ -189,7 +189,7 @@ const Careers = () => {
 
             <div className='container'>
                 <div className='gr-padding-30 center-text'>
-                    <h1>{it.L('Open positions')}</h1>
+                    <h1 data-anchor>{it.L('Open positions')}</h1>
                     <p>{it.L('[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we\'ve developed a number of exciting career opportunities in the following areas:', it.website_name)}</p>
                 </div>
                 <div className='gr-row'>
