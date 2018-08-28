@@ -3,7 +3,7 @@
         font-family: 'BinarySymbols';
         font-style: normal;
         font-weight: normal;
-        src: url('../download/fonts/binary_symbols.woff') format('woff');
+        src: url('../../node_modules/@binary-com/binary-style/src/fonts/symbols/binary_symbols.woff') format('woff');
     }
 }
 
@@ -47,5 +47,8 @@
     }
     &.ltc:before {
         content: '\004c';
+    }
+    &.dai:before {
+        content: '\e902';
     }
 }
