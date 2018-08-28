@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-28 04:14\n"
+"PO-Revision-Date: 2018-08-28 05:26\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -4584,9 +4584,6 @@ msgstr "ถ้าท่านมีโพซิชั่นเปิดมาก
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "หากท่านมีคุณสมบัติที่เรากำลังสรรหา ท่านจะกลายเป็นส่วนหนึ่งของทีมงานพัฒนาระบบส่วนหน้าที่มีความสามารถสูง และรับผิดชอบในการพัฒนาระบบซื้อขายไบนารีออปชั่นที่มีสมรรถนะที่ดีเยี่ยมขึ้นไปอีก"
 
-msgid "If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy."
-msgstr "หากท่านมียอดคงเหลือติดลบในการซื้อขาย บริษัทฯ จะเครดิตยอดติดลบในบัญชีของท่าน เป็นเดบิตจากการซื้อขายตามปกติต่อนโยบายนี้"
-
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "ถ้าท่านเก็บตำแหน่งเปิดใดๆ เอาไว้ข้ามคืน จะมีการปรับดอกเบี้ยในบัญชีซื้อขายของท่านเพื่อแสดงต้นทุนในการเก็บรักษาตำแหน่งเปิด"
 
@@ -4817,6 +4814,9 @@ msgstr "ในรูปแบบซิลิคอนวัลเลย์ที
 
 msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
 msgstr "อนึ่ง สัญญานี้ และธุรกรรมทั้งหมดที่มีการพิจารณาถึงในสัญญานี้ ท่านยินยอมที่จะดำเนินการและส่งเอกสารเพิ่มเติมและเครื่องมือดังกล่าว และปฏิบัติเพิ่มเติมดังกล่าว เนื่องจากอาจมีความจำเป็น หรือ เหมาะสมที่จะทำให้เกิด ดำเนินการ และปฏิบัติตามข้อตกลง ข้อกำหนด และเงื่อนไขของสัญญานี้ ท่านจะให้ความร่วมมือย่างเต็มที่ในการสืบสวนโดยหน่วยงานกำกับดูแล และให้ข้อมูลและบันทึกดังกล่าวแก่หน่วยงานที่กำกับดูแลทันที ซึ่งอาจจะมีการข้อร้องเพื่อให้เป็นไปตามกฎหมาย กฤษฎีกา กฎบัตร เทศบัญญัติ หรือ กฎข้อบังคับที่เกี่ยวข้องกับท่าน หรือ เขตที่อยู่ที่ท่านอาศัยอยู่"
+
+msgid "In exceptional circumstances, where there is a price change in the underlying that is sufficiently large and sudden, gapping can occur. In such cases, the automatic margin close-out protection might fail, causing your account balance to fall below zero. For this purpose, a Negative Balance Protection mechanism has been introduced. Negative Balance Protection provides a ‘backstop’ in case of extreme market conditions and ensures that your maximum losses from trading CFDs, including all related costs, are limited to the balance available on your CFD account. Therefore, you can never lose more money than the total sum invested for trading CFDs; if your CFD account balance falls below zero, the Company will compensate the negative balance as soon as possible without any additional cost to you."
+msgstr ""
 
 msgid "In executing orders on your behalf, %1 takes into consideration the following to achieve the best possible result for you:"
 msgstr "ในการดำเนินการตามคำสั่งซื้อในนามของท่าน %1 จะพิจารณาดังต่อไปนี้เพื่อให้บรรลุผลที่ดีสุดสำหรับท่าน"
@@ -6545,6 +6545,9 @@ msgstr "ต้องสังเกตการณ์โพซิชั่น"
 
 msgid "Negative Balance Protection"
 msgstr "การป้องกันยอดคงเหลือติดลบ"
+
+msgid "Negative Balance Protection does not apply to clients categorized as professional traders, who can still lose more money than their available balance."
+msgstr ""
 
 msgid "Negative balance protection"
 msgstr "การป้องกันยอดคงเหลือติดลบ"
@@ -9156,9 +9159,6 @@ msgstr "บริษัทฯ ไม่ได้ให้คำแนะนำ�
 
 msgid "The Company ensures that complaints received will be investigated thoroughly and fairly. You may submit your complaint by sending an email to %1."
 msgstr "บริษัทฯ พิจารณาต่อทุกคำร้อง ข้อร้องเรียน อย่างเป็นธรรม ท่านสามารถส่งข้อร้องเรียนของท่านผ่านทางอีเมล์ %1"
-
-msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
-msgstr "บริษัทฯ มีนโยบายยุติการซื้อขายซึ่งจะป้องกันท่านจากการสูญเสียเงินมากกว่าที่ท่านได้ฝากเอาไว้ อย่างไรก็ตามในกรณีที่โพซิชั่นเปิดของท่านไม่ถูกปิดเมื่อระดับมาร์จินของบัญชี MT5 จริงได้ถึงระดับยุติการซื้อขาย ด้วยดุลยพินิจของบริษัทฯ บริษัทฯ อาจจะละเว้นยอดคงเหลือที่เป็นลบโดยการเครดิตบัญชีของท่าน หากยอดคงเหลือบัญชีของท่านติดลบ ยอดคงเหลือที่เป็นลบถูกพิจารณามาจากการรวบรวมยอดคงเหลือที่เป็นลบทั้งหมดที่เกิดขึ้นภายในระยะเวลา 24 ชั่วโมงจากบัญชีทั้งหมดที่ท่านถือ ท่านรับทราบว่า ข้อเสนอของการปกป้องยอดคงเหลือที่เป็นลบของท่านโดยบริษัทฯ นอกจากว่า ท่านจะเป็นลูกค้ารายย่อยของ Binary Investments (Europe) Ltd ทั้งนี้ขึ้นอยู่กับดุลยพินิจของบริษัทฯ เท่านั้น และเราสงวนสิทธิ์ที่จะเปลี่ยนแปลงคุณลักษณะ หรือ เกณฑ์กำหนดของการมีคุณสมบัติของการปกป้องยอดคงเหลือที่เป็นลบเมื่อใดก็ได้ ข้อกำหนดของการปกป้องยอดคงเหลือที่เป็นลบไม่นำมาใช้กับ"
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "บริษัทฯ มีสิทธิ์และทำหน้าที่ในการรักษาสิทธิ์ เพื่อการยุติพฤติการณ์ใดๆ หรือ การซื้อขาย รวมถึงเหตุการณ์ที่เกี่ยวข้อง"
@@ -12399,21 +12399,6 @@ msgstr "ชั่วโมง"
 msgid "iOS"
 msgstr "iOS"
 
-msgid "in abnormal market conditions or exceptional market movements/volatility;"
-msgstr "ในสภาพตลาดที่ไม่ปกติ หรือ การเคลื่อนไหว/ความผันผวนที่ผิดปกติของตลาด"
-
-msgid "in the case of Professional Clients;"
-msgstr "ในกรณีของลูกค้าผู้มีความเชี่ยวชาญ (Professional Client)"
-
-msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
-msgstr "ในกรณีของลูกค้าที่ฝ่าฝืนเงื่อนไขของสัญญานี้จนทำให้เกิดยอดคงเหลือที่เป็นลบ"
-
-msgid "in the case of a client opening any Transaction in relation to Prohibited Trades;"
-msgstr "ในกรณีที่ลูกค้าเปิดธุรกรรมใดๆ ที่เกี่ยวข้องกับการซื้อขายที่ต้องห้าม"
-
-msgid "in the case of a force majeure event;"
-msgstr "ในกรณีที่เกิดเหตุสุดวิสัย"
-
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "รวมถึงการสงวนสิทธิ์ และ/หรือ ประกาศว่า สิทธิ์ของทรัพย์สินทางปัญญา รวมถึงเครื่องหมายการค้า หรือ คำขวัญอะไรก็ตามเป็นของบริษัทฯ และห้ามมิให้ใช้โดยไม่ได้รับอนุญาต"
 
@@ -12602,9 +12587,6 @@ msgstr "สัปดาห์"
 
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
 msgstr "เมื่อตัวแทนในนามบุคคล มีอายุ 18 ปี หรือมากกว่า และมีความความสามารถอย่างสมบูรณ์ในการดำเนินการกับข้อตกลงนี้"
-
-msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
-msgstr "เมื่อยอดคงเหลือที่เป็นลบเชื่อมกับ หรือ ผลของข้อจำกัดทางฟังก์ชัน และ/หรือ การทำงานผิดปกติของแพลตฟอร์มการซื้อขาย MT5 และ"
 
 msgid "with insider knowledge of any financial market or instrument."
 msgstr "ด้วยความรู้อันลึกซึ้งในตลาดการเงินใดๆ หรือ เครื่องมือทางการเงิน"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-28 04:14\n"
+"PO-Revision-Date: 2018-08-28 05:26\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -4584,9 +4584,6 @@ msgstr "crwdns38678:0crwdne38678:0"
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "crwdns38679:0crwdne38679:0"
 
-msgid "If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy."
-msgstr "crwdns46373:0crwdne46373:0"
-
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "crwdns42201:0crwdne42201:0"
 
@@ -4817,6 +4814,9 @@ msgstr "crwdns38741:0crwdne38741:0"
 
 msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
 msgstr "crwdns38742:0crwdne38742:0"
+
+msgid "In exceptional circumstances, where there is a price change in the underlying that is sufficiently large and sudden, gapping can occur. In such cases, the automatic margin close-out protection might fail, causing your account balance to fall below zero. For this purpose, a Negative Balance Protection mechanism has been introduced. Negative Balance Protection provides a ‘backstop’ in case of extreme market conditions and ensures that your maximum losses from trading CFDs, including all related costs, are limited to the balance available on your CFD account. Therefore, you can never lose more money than the total sum invested for trading CFDs; if your CFD account balance falls below zero, the Company will compensate the negative balance as soon as possible without any additional cost to you."
+msgstr "crwdns46392:0crwdne46392:0"
 
 msgid "In executing orders on your behalf, %1 takes into consideration the following to achieve the best possible result for you:"
 msgstr "crwdns38743:0%1crwdne38743:0"
@@ -6545,6 +6545,9 @@ msgstr "crwdns39238:0crwdne39238:0"
 
 msgid "Negative Balance Protection"
 msgstr "crwdns44498:0crwdne44498:0"
+
+msgid "Negative Balance Protection does not apply to clients categorized as professional traders, who can still lose more money than their available balance."
+msgstr "crwdns46393:0crwdne46393:0"
 
 msgid "Negative balance protection"
 msgstr "crwdns46304:0crwdne46304:0"
@@ -9155,9 +9158,6 @@ msgstr "crwdns46104:0crwdne46104:0"
 
 msgid "The Company ensures that complaints received will be investigated thoroughly and fairly. You may submit your complaint by sending an email to %1."
 msgstr "crwdns46105:0%1crwdne46105:0"
-
-msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
-msgstr "crwdns46106:0crwdne46106:0"
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "crwdns39944:0crwdne39944:0"
@@ -12396,21 +12396,6 @@ msgstr "crwdns40798:0crwdne40798:0"
 msgid "iOS"
 msgstr "crwdns42551:0crwdne42551:0"
 
-msgid "in abnormal market conditions or exceptional market movements/volatility;"
-msgstr "crwdns44542:0crwdne44542:0"
-
-msgid "in the case of Professional Clients;"
-msgstr "crwdns44543:0crwdne44543:0"
-
-msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
-msgstr "crwdns44544:0crwdne44544:0"
-
-msgid "in the case of a client opening any Transaction in relation to Prohibited Trades;"
-msgstr "crwdns44545:0crwdne44545:0"
-
-msgid "in the case of a force majeure event;"
-msgstr "crwdns44546:0crwdne44546:0"
-
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "crwdns41653:0crwdne41653:0"
 
@@ -12599,9 +12584,6 @@ msgstr "crwdns40841:0crwdne40841:0"
 
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
 msgstr "crwdns41667:0crwdne41667:0"
-
-msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
-msgstr "crwdns44550:0crwdne44550:0"
 
 msgid "with insider knowledge of any financial market or instrument."
 msgstr "crwdns40842:0crwdne40842:0"
