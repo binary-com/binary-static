@@ -102,7 +102,7 @@ const Index = () => (
                     </div>
                     <div className='center-element'>
                         <a className='button-secondary' href={it.url_for('careers?anchor=open-positions')}>
-                            <span>{it.L('open positions')}</span>
+                            <span>{it.L('Open positions')}</span>
                         </a>
                     </div>
                 </div>
