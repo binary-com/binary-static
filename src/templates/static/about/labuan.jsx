@@ -1,4 +1,5 @@
 import React from 'react';
+import { BoxOverlayImage } from '../../_common/components/box_row.jsx';
 import ImageSlider from '../../_common/components/image_slider.jsx';
 // import SeparatorLine from '../../_common/components/separator_line.jsx';
 
@@ -13,13 +14,15 @@ const Labuan = () =>  (
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Introduction')}</h2>
                 </div>
-                <div className='gr-row'>
-                    <div className='gr-5'>
-                        <img className='responsive' src={it.url_for('images/pages/careers/labuan/introduction-labuan.jpg')} />
-                    </div>
-                    <div className='gr-7'>
-                        <p className='no-margin-top'>{it.L('Labuan is a federal territory made up of the main island, Labuan Island, and six other small islands off the coast of Sabah. Its name comes from the Malay word, ‘labuhan’ which means harbour. Formerly a part of the Brunei Sultanate, it was ceded to the British Crown in 1846, before joining Malaysia in 1963.')}</p>
-                        <p>{it.L('Today, Labuan is known as a flourishing financial centre and tax-free tourist destination. Its economy is driven primarily by its oil and gas resources, as well as its international investment and banking services. The latter has attracted thousands of companies to Labuan over the years, plus dozens of leading banks.')}</p>
+                <div className='gr-12 gr-centered'>
+                    <div className='gr-row'>
+                        <div className='gr-5 gr-12-p gr-12-m'>
+                            <img className='responsive' src={it.url_for('images/pages/careers/labuan/introduction-labuan.jpg')} />
+                        </div>
+                        <div className='gr-7 gr-12-p gr-12-m'>
+                            <p className='no-margin-top'>{it.L('Labuan is a federal territory made up of the main island, Labuan Island, and six other small islands off the coast of Sabah. Its name comes from the Malay word, ‘labuhan’ which means harbour. Formerly a part of the Brunei Sultanate, it was ceded to the British Crown in 1846, before joining Malaysia in 1963.')}</p>
+                            <p>{it.L('Today, Labuan is known as a flourishing financial centre and tax-free tourist destination. Its economy is driven primarily by its oil and gas resources, as well as its international investment and banking services. The latter has attracted thousands of companies to Labuan over the years, plus dozens of leading banks.')}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,6 +59,22 @@ const Labuan = () =>  (
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Can\'t miss in Labuan')}</h2>
                 </div>
+                <BoxOverlayImage
+                    title={it.L('Lush living')}
+                    text={it.L('Cyberjaya expertly combines green lungs and modern amenities to give you the ultimate work-life balance.')}
+                    img_src={it.url_for('images/pages/careers/cyberjaya/lush-living.jpg')}
+                />
+                <BoxOverlayImage
+                    alignment='right'
+                    title={it.L('Cultural diversity')}
+                    text={it.L('Expats and international students make up more than 10 of Cyberjaya\'s vibrant population.')}
+                    img_src={it.url_for('images/pages/careers/cyberjaya/cultural-diversity.jpg')}
+                />
+                <BoxOverlayImage
+                    title={it.L('Putrajaya')}
+                    text={it.L('Located 10 minutes away, Malaysia\'s intelligent garden city offers stunning greenery and exquisite structures.')}
+                    img_src={it.url_for('images/pages/careers/cyberjaya/putrajaya.jpg')}
+                />
             </div>
         </div>
     </div>

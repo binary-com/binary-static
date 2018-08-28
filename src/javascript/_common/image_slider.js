@@ -2,24 +2,30 @@ const getElementById     = require('./common_functions').getElementById;
 const applyToAllElements = require('./utility').applyToAllElements;
 
 const ImageSlider = (() => {
-    let slider_els,
+    let slider,
+        slider_els,
         go_back,
         go_next,
         curr_slide;
 
     const init = () => {
-        go_back    = getElementById('go_back');
-        go_next    = getElementById('go_next');
-        slider_els = document.querySelectorAll('#slider_wrapper .slider-image');
-        curr_slide = 0;
+        slider = getElementById('image_slider');
 
-        if (slider_els && slider_els.length) {
-            slider_els[curr_slide].classList.remove('invisible');
-        }
+        if (slider) {
+            go_back    = getElementById('go_back');
+            go_next    = getElementById('go_next');
+            slider_els = document.querySelectorAll('#slider_wrapper .slider-image');
+            curr_slide = 0;
 
-        if (go_back && go_next) {
-            go_back.addEventListener('click', goLeft);
-            go_next.addEventListener('click', goRight);
+            if (slider_els && slider_els.length) {
+                slider_els[curr_slide].classList.remove('invisible');
+                slider.classList.remove('invisible');
+            }
+
+            if (go_back && go_next) {
+                go_back.addEventListener('click', goLeft);
+                go_next.addEventListener('click', goRight);
+            }
         }
     };
 
@@ -45,6 +51,7 @@ const ImageSlider = (() => {
 
     const onUnMount = () => {
         if (go_back && go_next) {
+            console.log('unmounting');
             go_back.removeEventListener('click', goLeft);
             go_back.removeEventListener('click', goLeft);
         }

@@ -2,9 +2,9 @@ import React from 'react';
 
 const ImageSlider = ({ id, className, images }) => (
     <div id={id} className={className}>
-        <div id='image_slider' className='image-slider gr-row gr-row-align-center'>
+        <div id='image_slider' className='image-slider gr-row gr-row-align-center invisible'>
             <div id='go_back' className='align-self-center gr-1'>
-                <img className='go-left gr-12 gr-no-gutter gr-centered' src={it.url_for('images/pages/home/arrow_left.svg')} />
+                <img src={it.url_for('images/pages/home/arrow_left.svg')} />
             </div>
             <div className='gr-10 no-scroll'>
                 <ul id='slider_wrapper' className='slider-wrapper'>
@@ -21,7 +21,7 @@ const ImageSlider = ({ id, className, images }) => (
                 </ul>
             </div>
             <div id='go_next' className='align-self-center gr-1'>
-                <img className='go-right gr-12 gr-no-gutter gr-centered' src={it.url_for('images/pages/home/arrow_right.svg')} />
+                <img src={it.url_for('images/pages/home/arrow_right.svg')} />
             </div>
         </div>
     </div>

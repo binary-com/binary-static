@@ -15,7 +15,7 @@ module.exports = {
         onLoad: () => { tabListener(); handleHash(); $('.has-tabs').tabs(); },
     },
     Locations: {
-        onLoad  : () => { console.log('is location pages'); ImageSlider.init(); },
+        onLoad  : () => { ImageSlider.init(); },
         onUnload: () => { ImageSlider.onUnMount(); },
     },
     OpenSourceProjects: {

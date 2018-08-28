@@ -96,12 +96,12 @@
             }
         }
         .box-img {
-            max-width: 60%;
+            width: 60%;
         }
         .box-content {
             padding: 1rem 0;
             border: 1px solid $COLOR_GRAY;
-            max-width: 300px;
+            width: 300px;
             background: $COLOR_WHITE;
             left: 45%;
             position: absolute;
@@ -119,6 +119,25 @@
             .box-text {
                 text-align: left;
                 margin: 0.5rem 1rem;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+
+            &.right {
+                flex-direction: column;
+
+                .box-content {
+                    left: unset;
+                }
+            }
+            .box-img {
+                width: 100%;
+            }
+            .box-content {
+                position: relative;
+                width: 100%;
+                left: unset;
             }
         }
     }
@@ -291,6 +310,15 @@
             }
             p.no-margin-top {
                 margin-top: 0;
+            }
+            @media (max-width: 768px) {
+                p {
+                    text-align: center;
+
+                    &.no-margin-top {
+                        margin-top: 1rem;
+                    }
+                }
             }
         }
     }

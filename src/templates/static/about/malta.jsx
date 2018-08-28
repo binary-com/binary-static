@@ -1,6 +1,6 @@
 import React from 'react';
+import { BoxOverlayImage } from '../../_common/components/box_row.jsx';
 import ImageSlider from '../../_common/components/image_slider.jsx';
-// import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const Malta = () =>  (
     <div className='static_full location-malta'>
@@ -13,13 +13,15 @@ const Malta = () =>  (
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Introduction')}</h2>
                 </div>
-                <div className='gr-row'>
-                    <div className='gr-5'>
-                        <img className='responsive' src={it.url_for('images/pages/careers/malta/introduction-malta.jpg')} />
-                    </div>
-                    <div className='gr-7'>
-                        <p className='no-margin-top'>{it.L('The Republic of Malta is an island country in Southern Europe — located approximately 80km south of Italy. Its rich, colourful history can be traced back thousands of years to the Neolithic period.')}</p>
-                        <p>{it.L('Malta’s strategic location in the Mediterranean Sea saw it occupied by a number of foreign powers, including the Greeks, Romans, Arabs, French, and most recently, the British. It gained independence from the British in 1964, and joined the European Union in 2004. Today, Malta is a popular tourist destination and a high-income country powered by an industrialised, service-based economy.')}</p>
+                <div className='gr-12 gr-centered'>
+                    <div className='gr-row'>
+                        <div className='gr-5 gr-12-p gr-12-m'>
+                            <img className='responsive' src={it.url_for('images/pages/careers/malta/introduction-malta.jpg')} />
+                        </div>
+                        <div className='gr-7 gr-12-p gr-12-m'>
+                            <p className='no-margin-top'>{it.L('The Republic of Malta is an island country in Southern Europe — located approximately 80km south of Italy. Its rich, colourful history can be traced back thousands of years to the Neolithic period.')}</p>
+                            <p>{it.L('Malta’s strategic location in the Mediterranean Sea saw it occupied by a number of foreign powers, including the Greeks, Romans, Arabs, French, and most recently, the British. It gained independence from the British in 1964, and joined the European Union in 2004. Today, Malta is a popular tourist destination and a high-income country powered by an industrialised, service-based economy.')}</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,6 +58,22 @@ const Malta = () =>  (
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Can\'t miss in Malta')}</h2>
                 </div>
+                <BoxOverlayImage
+                    title={it.L('Lush living')}
+                    text={it.L('Cyberjaya expertly combines green lungs and modern amenities to give you the ultimate work-life balance.')}
+                    img_src={it.url_for('images/pages/careers/cyberjaya/lush-living.jpg')}
+                />
+                <BoxOverlayImage
+                    alignment='right'
+                    title={it.L('Cultural diversity')}
+                    text={it.L('Expats and international students make up more than 10 of Cyberjaya\'s vibrant population.')}
+                    img_src={it.url_for('images/pages/careers/cyberjaya/cultural-diversity.jpg')}
+                />
+                <BoxOverlayImage
+                    title={it.L('Putrajaya')}
+                    text={it.L('Located 10 minutes away, Malaysia\'s intelligent garden city offers stunning greenery and exquisite structures.')}
+                    img_src={it.url_for('images/pages/careers/cyberjaya/putrajaya.jpg')}
+                />
             </div>
         </div>
     </div>

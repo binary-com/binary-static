@@ -65,9 +65,27 @@
 }
 
 .image-slider {
+    position: relative;
+
     #go_back, #go_next {
         cursor: pointer;
         margin-top: -3.5rem;
+    }
+    @media (max-width: 480px) {
+        #go_back, #go_next {
+            top: 110px;
+            position: absolute;
+
+            img {
+                min-width: 48px;
+            }
+        }
+        #go_back {
+            left: -25px;
+        }
+        #go_next {
+            right: 15px;
+        }
     }
 }
 
