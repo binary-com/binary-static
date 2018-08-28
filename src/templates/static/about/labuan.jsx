@@ -46,7 +46,7 @@ const Labuan = () =>  (
                                 },
                                 {
                                     url    : 'images/pages/careers/labuan/seafood.jpg',
-                                    caption: 'As expected, the seafood is affordable and simply amazing. Locals absolutely adore crayfish which they refer to as ‘satak’. Despite being a small island, Labuan still offers so much in terms of culture; you can explore the island\'s rich history at the Labuan Museum, Peace Park, the Chimney, and Labuan Square. The island also has a vibrant nightlife.',
+                                    caption: 'As expected, the seafood is affordable and simply amazing. Locals absolutely adore crayfish which they refer to as \'satak\'. Despite being a small island, Labuan still offers so much in terms of culture; you can explore the island\'s rich history at the Labuan Museum, Peace Park, the Chimney, and Labuan Square. The island also has a vibrant nightlife.',
                                 },
                             ]}
                         />
