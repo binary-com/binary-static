@@ -26,7 +26,6 @@ const MBTradePage = (() => {
     const onLoad = () => {
         State.set('is_mb_trading', true);
         BinarySocket.wait('authorize').then(init);
-        Header.displayAccountStatus();
         if (!Client.isLoggedIn()) {
             BinarySocket.wait('website_status').then(() => {
                 BinarySocket.send({ landing_company: State.getResponse('website_status.clients_country') });
@@ -35,6 +34,7 @@ const MBTradePage = (() => {
     };
 
     const init = () => {
+        Header.displayAccountStatus();
         if (/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) {
             if (getLanguage() === 'JA') {
                 $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: localize('This page is not available in the selected language.') })));
