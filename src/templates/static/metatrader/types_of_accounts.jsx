@@ -48,7 +48,7 @@ const TypesOfAccounts = () => (
             <p>{it.L('[_1] offers a variety of account types to cater to the diverse needs of traders everywhere, whether you are an experienced trader or just starting out. Each account has been tailored to provide you with a unique opportunity to trade financial instruments.', it.website_name)}</p>
             <p>{it.L('Best of all, there is no minimum deposit requirement.')}</p>
             <Box
-                className='show-maltainvest'
+                className='invisible show-maltainvest'
                 image='standard'
                 title={it.L('Standard')}
                 text={it.L('The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit.')}
@@ -119,7 +119,7 @@ const TypesOfAccounts = () => (
                         }}
                     />
                 </div>
-                <div className='show-maltainvest'>
+                <div className='invisible show-maltainvest'>
                     <Table
                         scroll
                         data={{
