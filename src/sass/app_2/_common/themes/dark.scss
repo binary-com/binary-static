@@ -151,48 +151,6 @@ body.dark, .theme-wrapper.dark {
         }
         .portfolio.container {
             background: $COLOR_BLUE;
-
-            .table {
-                color: $COLOR_BRANDBLUE_40;
-                border-color: $COLOR_BRANDBLUE_85;
-
-                .table__head, .table__foot {
-                    border-color: $COLOR_BRANDBLUE_85;
-                    background-color: $COLOR_BRANDBLUE_95;
-
-                    .table__row {
-                        border-color: $COLOR_BRANDBLUE_85;
-                    }
-                }
-                .table__body {
-                    .table__cell {
-                        &.reference {
-                            color: $COLOR_SKY_BLUE;
-                        }
-                        &.details, &.payout, &.purchase, &.remaining_time, &.indicative {
-                            color: $COLOR_BRANDBLUE_40;
-                        }
-                    }
-                    .table__row {
-                        background: $COLOR_BLUE;
-                        border-color: $COLOR_BRANDBLUE_85;
-
-                        .table__cell.payout span.symbol {
-                            background: $COLOR_BLUE;
-                        }
-                        &:hover {
-                            background: $COLOR_BRANDBLUE_85;
-
-                            td.payout span.symbol {
-                                background: $COLOR_BRANDBLUE_85;
-                            }
-                        }
-                    }
-                }
-                .table__foot {
-                    color: $COLOR_WHITE;
-                }
-            }
         }
         .portfolio-empty, .statement-empty {
             span {
@@ -210,37 +168,27 @@ body.dark, .theme-wrapper.dark {
             }
             .statement__content {
                 background: $COLOR_BLUE;
+            }
+        }
+        .table {
+            border-color: $COLOR_BRANDBLUE_85;
 
-                .table {
-                    border-color: $COLOR_BRANDBLUE_85;
-
-                    .table__head {
-                        background: $COLOR_BRANDBLUE_95;
-                        border-color: $COLOR_BRANDBLUE_85;
-
-                        .table__row {
-                            border-color: $COLOR_BRANDBLUE_85;
-                            color: $COLOR_BRANDBLUE_40;
-                        }
-                    }
-                    .table__body {
-                        .table__row {
-                            border-color: $COLOR_BRANDBLUE_85;
-
-                            .table__cell {
-                                &.date, &.desc, &.action, &.payout, &.balance {
-                                    color: $COLOR_BRANDBLUE_40;
-                                }
-                                &.refid {
-                                    color: $COLOR_SKY_BLUE;
-                                }
-                            }
-                            &:hover {
-                                background: $COLOR_BRANDBLUE_85;
-                            }
-                        }
-                    }
+            &__head, &__foot {
+                background: $COLOR_BRANDBLUE_95;
+            }
+            &__head, &__foot, &__row {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+            &__body .table__row {
+                &:hover {
+                    background: $COLOR_BRANDBLUE_85;
                 }
+                &, &:active, &:visited {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+            &__cell {
+                color: $COLOR_BRANDBLUE_40;
             }
         }
         .card-list__card {

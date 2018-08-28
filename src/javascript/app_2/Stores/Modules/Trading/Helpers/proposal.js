@@ -9,7 +9,7 @@ import { isDeepEqual }                     from '../../../../../_common/utility'
 export const getProposalInfo = (store, response) => {
     const proposal = response.proposal || {};
     const profit   = (proposal.payout - proposal.ask_price) || 0;
-    const returns  = profit * 100 / (proposal.payout || 1);
+    const returns  = profit * 100 / (proposal.ask_price || 1);
 
     return {
         profit   : profit.toFixed(getDecimalPlaces(store.currency)),

@@ -14,7 +14,7 @@ class PortfolioDrawer extends React.Component {
 
     render() {
         const {
-            data,
+            active_positions,
             error,
             currency,
             is_empty,
@@ -31,9 +31,9 @@ class PortfolioDrawer extends React.Component {
             body_content = <EmptyPortfolioMessage />;
         }
         else {
-            body_content = data.map((portfolio_position, id) => (
+            body_content = active_positions.map((portfolio_position) => (
                 <PortfolioDrawerCard
-                    key={id}
+                    key={portfolio_position.id}
                     currency={currency}
                     {...portfolio_position}
                 />
@@ -62,7 +62,7 @@ class PortfolioDrawer extends React.Component {
 
 PortfolioDrawer.propTypes = {
     children              : PropTypes.any,
-    data                  : MobxPropTypes.arrayOrObservableArray,
+    active_positions      : MobxPropTypes.arrayOrObservableArray,
     error                 : PropTypes.string,
     currency              : PropTypes.string,
     is_empty              : PropTypes.bool,
@@ -75,7 +75,7 @@ PortfolioDrawer.propTypes = {
 
 export default connect(
     ({ modules, client, ui }) => ({
-        data                  : modules.portfolio.data,
+        active_positions      : modules.portfolio.active_positions,
         is_loading            : modules.portfolio.is_loading,
         error                 : modules.portfolio.error,
         is_empty              : modules.portfolio.is_empty,
