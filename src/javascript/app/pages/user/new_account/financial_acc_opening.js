@@ -22,22 +22,21 @@ const FinancialAccOpening = (() => {
 
         if (AccountOpening.redirectAccount()) return;
 
-        BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
-            if (!isEmptyObject(response.get_financial_assessment)) {
-                const keys = Object.keys(response.get_financial_assessment);
+        const req_financial_assessment = BinarySocket.send({ get_financial_assessment: 1 }).then(() => {
+            const get_financial_assessment = State.getResponse('get_financial_assessment');
+            if (!isEmptyObject(get_financial_assessment)) {
+                const keys = Object.keys(get_financial_assessment);
                 keys.forEach((key) => {
-                    const val = response.get_financial_assessment[key];
+                    const val = get_financial_assessment[key];
                     $(`#${key}`).val(val);
                 });
+
             }
         });
-
-        BinarySocket.wait('get_settings').then((response) => {
-            AccountOpening.populateForm(form_id, getValidations, true);
-            const get_settings = response.get_settings;
+        const req_settings = BinarySocket.wait('get_settings').then(() => {
+            const get_settings = State.getResponse('get_settings');
             let $element,
                 value;
-
             Object.keys(get_settings).forEach((key) => {
                 $element = $(`#${key}`);
                 value    = get_settings[key];
@@ -54,10 +53,14 @@ const FinancialAccOpening = (() => {
             });
         });
 
-        FormManager.handleSubmit({
-            form_selector       : form_id,
-            obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
-            fnc_response_handler: handleResponse,
+        Promise.all([req_settings, req_financial_assessment]).then(() => {
+            AccountOpening.populateForm(form_id, getValidations, true);
+
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
+                fnc_response_handler: handleResponse,
+            });
         });
 
         $('#tax_information_note_toggle').off('click').on('click', (e) => {
