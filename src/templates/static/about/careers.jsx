@@ -106,10 +106,10 @@ const Careers = () => {
                         <h1>{it.L('Our values')}</h1>
                     </div>
 
-                    <ColumnValues header={it.L('integrity')} icon='ic-intergrity'/>
-                    <ColumnValues header={it.L('teamwork')} icon='ic-teamwork' />
-                    <ColumnValues header={it.L('competence')} icon='ic-competence' />
-                    <ColumnValues header={it.L('customer focus')} icon='ic-customer-focus' />
+                    <ColumnValues header={it.L('Integrity')} icon='ic-intergrity'/>
+                    <ColumnValues header={it.L('Teamwork')} icon='ic-teamwork' />
+                    <ColumnValues header={it.L('Competence')} icon='ic-competence' />
+                    <ColumnValues header={it.L('Customer focus')} icon='ic-customer-focus' />
 
                     <div className='fill-text center-element btn-margin-top'>
                         <a className='button-secondary' href={it.url_for('about-us?anchor=our-values')}>
