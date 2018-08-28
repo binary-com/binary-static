@@ -18,7 +18,6 @@ const State               = require('../../../_common/storage').State;
 const urlFor              = require('../../../_common/url').urlFor;
 const findParent          = require('../../../_common/utility').findParent;
 
-
 const MBTradePage = (() => {
     let events_initialized = 0;
     State.remove('is_mb_trading');

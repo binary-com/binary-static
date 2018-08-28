@@ -312,7 +312,7 @@ const Header = (() => {
                 document_review      : () => hasStatus('document_under_review'),
                 excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => hasStatus('ukrts_max_turnover_limit_not_set'),
-                mf_retail            : () => State.getResponse('authorize.landing_company_name') === 'maltainvest' && !hasStatus('professional'),
+                mf_retail            : () => Client.get('landing_company_shortcode') === 'maltainvest' && !hasStatus('professional'),
                 mt5_withdrawal_locked: () => hasStatus('mt5_withdrawal_locked'),
                 required_fields      : () => Client.isAccountOfType('financial') && hasMissingRequiredField(),
                 residence            : () => !Client.get('residence'),
@@ -350,7 +350,7 @@ const Header = (() => {
             const checkStatus = (check_statuses) => {
                 const notified = check_statuses.some((check_type) => {
                     if (validations[check_type]()) {
-                        if (check_type === 'mf_retail' && !/trading/.test(window.location.href)) {
+                        if (check_type === 'mf_retail' && !(State.get('is_trading') || State.get('is_mb_trading'))) {
                             return false;
                         }
                         displayNotification(messages[check_type](), false, check_type === 'mf_retail' ? 'MF_RETAIL_MESSAGE' : '');
