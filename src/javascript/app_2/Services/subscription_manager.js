@@ -83,10 +83,15 @@ const SubscriptionManager = (() => {
         // callback subscribers
         const subscribers = sub_info.subscribers;
         if (subscribers.length) {
-            // remove subscription info when first response returned error
-            // or not a subscription (i.e. subscribed proposal_open_contract for an expired contract)
-            // check msg_type to filter out those calls which don't return stream `id` on first response (tick_history, ...)
-            if (!sub_info.stream_id && (response.error || response.msg_type === sub_info.msg_type)) {
+            if (
+                // remove subscription info when first response returned error
+                // or not a subscription (i.e. subscribed proposal_open_contract for an expired contract)
+                // check msg_type to filter out those calls which don't return stream `id` on first response (tick_history, ...)
+                !sub_info.stream_id && (response.error || response.msg_type === sub_info.msg_type)
+                ||
+                // remove when response isn't first and response has no stream_id
+                !stream_id && sub_info.stream_id
+            ) {
                 delete subscriptions[sub_id];
             }
             sub_info.subscribers.forEach((fnc) => {

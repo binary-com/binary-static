@@ -141,12 +141,12 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onChange(e) {
-        const { name, value, type } = e.target;
+        const { name, value } = e.target;
         if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
-        this.processNewValuesAsync({ [name]: (type === 'number' ? +value : value) }, true);
+        this.processNewValuesAsync({ [name]: value }, true);
     }
 
     @action.bound

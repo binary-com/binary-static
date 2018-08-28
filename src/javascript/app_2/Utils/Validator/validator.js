@@ -5,10 +5,12 @@ import { localize }       from '../../../_common/localize';
 
 class Validator {
 
-    constructor(input, rules) {
-        this.input       = input;
-        this.rules       = rules;
-        this.errors      = new Error();
+    constructor(input, rules, store = null) {
+        this.input  = input;
+        this.rules  = rules;
+        this.store  = store;
+        this.errors = new Error();
+
         this.error_count = 0;
     }
 
@@ -52,6 +54,10 @@ class Validator {
                     return; 
                 }
 
+                if (ruleObject.options.condition && !ruleObject.options.condition(this.store)) {
+                    return;
+                }
+
                 if (this.input[attribute] === '' && ruleObject.name !== 'req') {
                     return;
                 }
@@ -82,15 +88,13 @@ class Validator {
      * @return {object}
      */
     static getRuleObject(rule) {
-        const rule_object = {};
-        if (typeof rule === 'string') {
-            rule_object.name = rule;
-        } else {
-            rule_object.name = rule[0];
-        }
+        const is_rule_string = typeof rule === 'string';
+        const rule_object = {
+            name   : is_rule_string ? rule : rule[0],
+            options: is_rule_string ? {} : rule[1] || {},
+        };
 
         rule_object.validator = rule_object.name === 'custom' ? rule[1].func : pre_build_dvrs[rule_object.name].func;
-        rule_object.options   = rule[1] || {};
 
         return rule_object;
     }

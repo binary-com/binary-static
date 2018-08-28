@@ -60,7 +60,7 @@ const validNumber = (value, opts) => {
         options.max = options.max();
     }
 
-    if (!(options.type === 'float' ? /^\d+(\.\d+)?$/ : /^\d+$/).test(value) || isNaN(value)) {
+    if (!(options.type === 'float' ? /^\d*(\.\d+)?$/ : /^\d+$/).test(value) || isNaN(value)) {
         is_ok   = false;
         message = localize('Should be a valid number.');
     } else if (options.type === 'float' && options.decimals &&
