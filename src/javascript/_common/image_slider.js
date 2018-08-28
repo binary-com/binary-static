@@ -46,7 +46,6 @@ const ImageSlider = (() => {
         curr_slide = curr_slide === slider_els.length - 1 ? 0 : curr_slide + 1;
         hideAll(slider_els);
         slider_els[curr_slide].classList.remove('invisible');
-
     };
 
     const onUnMount = () => {
