@@ -2,7 +2,7 @@ import {
     action,
     computed,
     observable }                   from 'mobx';
-import { formatPortfolioResponse } from './Helpers/format_response';
+import { formatPortfolioPosition } from './Helpers/format_response';
 import BaseStore                   from '../../base_store';
 import { WS }                      from '../../../Services';
 
@@ -13,6 +13,7 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     initializePortfolio = () => {
+        if (!this.root_store.client.is_logged_in) return;
         this.is_loading = true;
 
         WS.portfolio().then(this.portfolioHandler);
@@ -30,7 +31,16 @@ export default class PortfolioStore extends BaseStore {
     @action.bound
     portfolioHandler(response) {
         this.is_loading = false;
-        this.updatePortfolio(response);
+        if ('error' in response) {
+            this.error = response.error.message;
+            return;
+        }
+        this.error = '';
+        if (response.portfolio.contracts) {
+            this.data = response.portfolio.contracts
+                .map(pos => formatPortfolioPosition(pos))
+                .sort((pos1, pos2) => pos2.reference - pos1.reference); // new contracts first
+        }
     };
 
     @action.bound
@@ -38,63 +48,60 @@ export default class PortfolioStore extends BaseStore {
         if ('error' in response) {
             this.error = response.error.message;
         }
-        WS.portfolio().then((res) => this.updatePortfolio(res));
-        // subscribe to new contracts:
-        WS.subscribeProposalOpenContract(null, this.proposalOpenContractHandler, false);
+        if (!response.transaction) return;
+        const { contract_id, action: act } = response.transaction;
+
+        if (act === 'buy') {
+            WS.portfolio().then((res) => {
+                const new_pos = res.portfolio.contracts.find(pos => +pos.contract_id === +contract_id);
+                if (!new_pos) return;
+                this.pushNewPosition(new_pos);
+            });
+            // subscribe to new contract:
+            WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
+        } else if (act === 'sell') {
+            this.removePositionById(contract_id);
+        }
     };
 
     @action.bound
     proposalOpenContractHandler(response) {
-        if ('error' in response) {
-            return;
-        }
+        if ('error' in response) return;
+
         const proposal = response.proposal_open_contract;
+        const portfolio_position = this.data.find((position) => +position.id === +proposal.contract_id);
 
-        // force to sell the expired contract, in order to remove from portfolio
-        if (+proposal.is_settleable === 1 && !proposal.is_sold) { WS.sellExpired(); }
+        if (!portfolio_position) return;
 
-        const position_data_index = this.data.findIndex(
-            (position) => position.id === +proposal.contract_id
-        );
+        const prev_indicative = portfolio_position.indicative;
+        const new_indicative  = +proposal.bid_price;
 
-        if (position_data_index === -1) return;
+        portfolio_position.indicative = new_indicative;
+        portfolio_position.underlying = proposal.display_name;
 
-        if (proposal.is_sold) {
-            this.data.splice(position_data_index, 1);
-        } else {
-            const portfolio_position = this.data[position_data_index];
-
-            const prev_indicative = portfolio_position.indicative;
-            const new_indicative  = +proposal.bid_price;
-
-            portfolio_position.indicative = new_indicative;
-            portfolio_position.underlying = proposal.display_name;
-
-            if (!proposal.is_valid_to_sell) {
-                portfolio_position.status = 'no-resale';
-            }
-            else if (new_indicative > prev_indicative) {
-                portfolio_position.status = 'price-moved-up';
-            }
-            else if (new_indicative < prev_indicative) {
-                portfolio_position.status = 'price-moved-down';
-            }
-            else {
-                portfolio_position.status = 'price-stable';
-            }
+        if (!proposal.is_valid_to_sell) {
+            portfolio_position.status = 'no-resale';
+        }
+        else if (new_indicative > prev_indicative) {
+            portfolio_position.status = 'price-moved-up';
+        }
+        else if (new_indicative < prev_indicative) {
+            portfolio_position.status = 'price-moved-down';
+        }
+        else {
+            portfolio_position.status = 'price-stable';
         }
     }
 
     @action.bound
-    updatePortfolio(response) {
-        if ('error' in response) {
-            this.error = response.error.message;
-            return;
-        }
-        this.error = '';
-        if (response.portfolio.contracts) {
-            this.data = formatPortfolioResponse(response.portfolio.contracts);
-        }
+    pushNewPosition(new_pos) {
+        this.data.unshift(formatPortfolioPosition(new_pos));
+    }
+
+    @action.bound
+    removePositionById(contract_id) {
+        const i = this.data.findIndex(pos => +pos.id === +contract_id);
+        this.data.splice(i, 1);
     }
 
     @action.bound
@@ -132,7 +139,15 @@ export default class PortfolioStore extends BaseStore {
     }
 
     @computed
+    get active_positions() {
+        return this.data.filter((portfolio_pos) => {
+            const server_epoch = this.root_store.common.server_time.unix();
+            return portfolio_pos.expiry_time > server_epoch;
+        });
+    }
+
+    @computed
     get is_empty() {
-        return !this.is_loading && this.data.length === 0;
+        return !this.is_loading && this.active_positions.length === 0;
     }
 }
