@@ -175,20 +175,6 @@ const TermsAndConditions = () => (
                     <li>{it.L('The Stop Out Level applicable to your MT5 Real Account may differ from the default Stop Out Level published on our website.')}</li>
                 </ol>
             </li>
-            <li>{it.L('Negative Balance Protection')}
-                <ol>
-                    <li>{it.L('The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:')}
-                        <ol>
-                            <li>{it.L('in the case of a force majeure event;')}</li>
-                            <li>{it.L('in abnormal market conditions or exceptional market movements/volatility;')}</li>
-                            <li>{it.L('in the case of a client opening any Transaction in relation to Prohibited Trades;')}</li>
-                            <li>{it.L('in the case of Professional Clients;')}</li>
-                            <li>{it.L('where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and')}</li>
-                            <li>{it.L('in the case of a client breaching any of the terms of this Agreement which results in a negative balance.')}</li>
-                        </ol>
-                    </li>
-                </ol>
-            </li>
             <li>{it.L('Margin Payment')}
                 <ol>
                     <li>{it.L('You may make Margin Payments by transferring funds from your Binary Options Real Account to your MT5 Real Account. In the event that there are insufficient funds in your Binary Options Real Account to fund your MT5 Real Account, you may make Margin Payments by funding your Binary Options Real Account and transferring the funds from your Binary Options Real Account to your MT5 Real Account.')}</li>
