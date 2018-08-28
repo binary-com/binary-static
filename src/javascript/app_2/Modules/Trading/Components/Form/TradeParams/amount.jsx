@@ -61,14 +61,15 @@ const Amount = ({
                     />
                 }
                 <InputField
-                    type='number'
-                    name='amount'
-                    value={amount}
-                    onChange={onChange}
-                    is_float
-                    prefix={has_currency ? currency : null}
-                    is_nativepicker={is_nativepicker}
                     error_messages = {validation_errors.amount}
+                    is_float
+                    is_nativepicker={is_nativepicker}
+                    max_length={10}
+                    name='amount'
+                    onChange={onChange}
+                    prefix={has_currency ? currency : null}
+                    type='number'
+                    value={amount}
                 />
             </div>
         </Fieldset>

@@ -14,6 +14,7 @@ const InputField = ({
     is_float,
     is_signed = false,
     label,
+    max_length,
     name,
     onChange,
     placeholder,
@@ -42,7 +43,6 @@ const InputField = ({
                 e.target.value = value;
                 return;
             }
-
         }
 
         onChange(e);
@@ -54,6 +54,7 @@ const InputField = ({
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
             data-tip
+            maxLength={max_length}
             name={name}
             onChange={changeValue}
             placeholder={placeholder || undefined}
@@ -94,6 +95,7 @@ InputField.propTypes = {
     is_disabled   : PropTypes.string,
     is_signed     : PropTypes.bool,
     label         : PropTypes.string,
+    max_length    : PropTypes.number,
     name          : PropTypes.string,
     onChange      : PropTypes.func,
     placeholder   : PropTypes.string,
