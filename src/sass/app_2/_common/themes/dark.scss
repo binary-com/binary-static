@@ -179,12 +179,14 @@ body.dark, .theme-wrapper.dark {
             &__head, &__foot, &__row {
                 border-color: $COLOR_BRANDBLUE_85;
             }
-            &__body .table__row {
-                &:hover {
+            &__body {
+                a.table__row:hover {
                     background: $COLOR_BRANDBLUE_85;
                 }
-                &, &:active, &:visited {
-                    color: $COLOR_BRANDBLUE_40;
+                .table__row {
+                    &, &:active, &:visited {
+                        color: $COLOR_BRANDBLUE_40;
+                    }
                 }
             }
             &__cell {
