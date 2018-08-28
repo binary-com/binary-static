@@ -64,7 +64,7 @@ const MetaTraderConfig = (() => {
                 const response_get_settings = State.getResponse('get_settings');
 
                 const showCitizenshipMessage = () => {
-                    $message.find('.citizen').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                    $message.find('.citizen').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', ${acc_type})`);
                 };
 
                 if (!accounts_info[acc_type].is_demo) {
@@ -85,7 +85,7 @@ const MetaTraderConfig = (() => {
                                 }
                                 if (!response_get_settings.tax_residence ||
                                     !response_get_settings.tax_identification_number) {
-                                    $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', '${urlFor('user/metatrader')}#${acc_type}')`);
+                                    $message.find('.tax').setVisibility(1).find('a').attr('onclick', `localStorage.setItem('personal_details_redirect', ${acc_type})`);
                                     is_ok = false;
                                 }
                                 if (!response_get_settings.citizen) {
