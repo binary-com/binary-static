@@ -62,9 +62,11 @@ const ColumnLG = ({ center, image, text, link }) => (
             <p className='column-margin'>{text}</p>
         </div>
         <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
-        <div className='fill-text'>
-            <a href={link}><span>{it.L('Learn more')}</span></a>
-        </div>
+        {!!link &&
+            <div className='fill-text'>
+                <a href={link}><span>{it.L('Learn more')}</span></a>
+            </div>
+        }
     </div>
 );
 
