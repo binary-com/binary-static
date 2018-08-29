@@ -143,12 +143,12 @@ const FooterNormal = () => (
                             <FooterColumn
                                 header={it.L('Education')}
                                 items={[
-                                    { text: it.L('Why Us?'),            href: it.url_for('why-us') },
-                                    { text: it.L('Getting Started'),    href: it.url_for('get-started') },
-                                    { text: it.L('Platform Tour'),      href: it.url_for('tour') },
-                                    { text: it.L('GamCare'),            href: 'http://www.gamcare.org.uk/',  className: 'id-hide', target: '_blank' },
-                                    { text: it.L('Academy'),            href: 'https://academy.binary.com',  className: 'academy', target: '_blank' },
-                                    { text: it.L('Webinars'),           href: 'https://academy.binary.com/en/events/',  className: 'id-hide', target: '_blank' },
+                                    { text: it.L('Why Us?'),         href: it.url_for('why-us') },
+                                    { text: it.L('Getting Started'), href: it.url_for('get-started') },
+                                    { text: it.L('Platform Tour'),   href: it.url_for('tour') },
+                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',             className: 'id-hide', target: '_blank' },
+                                    { text: it.L('Academy'),         href: 'https://academy.binary.com',             className: 'academy', target: '_blank' },
+                                    { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/',  className: 'id-hide', target: '_blank' },
                                 ]}
                             />
 
@@ -188,8 +188,8 @@ const FooterNormal = () => (
                                 items={[
                                     { text: it.L('Affiliate Programme'),     href: it.url_for('affiliate/signup') },
                                     { text: it.L('IB Programme'),            href: it.url_for('ib-programme/ib-signup') },
-                                    { text: it.L('API'),                     href: 'https://developers.binary.com',    target: '_blank' },
-                                    { text: it.L('Binary Shop'),             href: 'https://shop.binary.com',          target: '_blank' },
+                                    { text: it.L('API'),                     href: 'https://developers.binary.com', target: '_blank' },
+                                    { text: it.L('Binary Shop'),             href: 'https://shop.binary.com',       target: '_blank' },
                                     { text: it.L('Charitable Activities'),   href: it.url_for('charity') },
                                     { text: it.L('All Partnership Options'), href: it.url_for('partners') },
                                 ]}
@@ -260,6 +260,7 @@ const FooterNormal = () => (
         <StatusNotification />
     </div>
 );
+
 const Footer = () => (
     (it.language.toLowerCase() === 'ja') ? <FooterJA /> : <FooterNormal />
 );
