@@ -4,15 +4,14 @@
         height: calc(100vh - #{$HEADER_HEIGHT} - #{$FOOTER_HEIGHT});
         overflow-y: auto;
         overflow-x: hidden;
-        transition: transform 0.25s ease;
-        will-change: transform;
 
-        > .container:not(.trade-container) {
-            transition: transform 0.25s ease;
-        }
         &--show-portfolio-drawer {
-            transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
+            padding-right: $PORTFOLIO_DRAWER_WIDTH;
 
+            .trade-container {
+                transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH});
+                margin-right: -#{$PORTFOLIO_DRAWER_WIDTH};
+            }
             .chart-container {
                 .ciq-chart {
                     .cq-top-ui-widgets, .cq-chart-controls {
@@ -34,14 +33,6 @@
                     .info-box {
                         transform: translateX(-#{$PORTFOLIO_DRAWER_WIDTH}) !important;
                     }
-                }
-            }
-            > .container:not(.trade-container) {
-                transform: translateX(#{$PORTFOLIO_DRAWER_WIDTH});
-                padding-right: $PORTFOLIO_DRAWER_WIDTH;
-
-                &.portfolio {
-                    padding-right: calc(#{$PORTFOLIO_DRAWER_WIDTH} + 12px);
                 }
             }
         }
@@ -124,6 +115,8 @@
         grid-template-rows: 1fr;
         grid-gap: 4px;
         min-height: calc(100vh - 91px);
+        transition: transform 0.25s ease;
+        will-change: transform;
 
         .chart-container {
             position: relative;
