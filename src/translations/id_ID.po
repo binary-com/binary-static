@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-24 07:04\n"
+"PO-Revision-Date: 2018-08-28 05:25\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -4584,9 +4584,6 @@ msgstr "Jika Anda membeli lebih dari satu Open Position pada pasar yang sama, se
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "Jika Anda memiliki keahlian yang kami cari, maka Anda akan menjadi bagian dari anggota dari tim pengembangan front end yang sangat kompeten terlibat dalam mengoperasikan sistem opsi trading binary ke tahap yang lebih maju."
 
-msgid "If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy."
-msgstr "Jika Anda mengalami saldo negatif melalui aktivitas trading Anda, Perusahaan akan mengkreditkan akun Anda sejumlah dengan saldo negatif tersebut, dengan ketentuan bahwa debit tersebut adalah berhubung aktivitas trading normal mengikuti kebijakan ini."
-
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "Jika Anda menjaga posisi Anda terbuka dalam semalam, penyesuaian bunga akan dilakukan ke akun trading Anda sebagai indikasi biaya yang diperlukan untuk menjaga posisi Anda tetap terbuka."
 
@@ -4817,6 +4814,9 @@ msgstr "Dengan gaya klasik Silicon Valley, seorang manager pengelola dana berjiw
 
 msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
 msgstr "Sehubungan dengan Perjanjian ini dan semua Transaksi yang disebutkan pada Perjanjian ini, Anda bersetuju untuk mengeksekusi dan mengirimkan dokumentasi tambahan dan instrumen, serta untuk melakukan tindakan tambahan yang mungkin diperlukan atau sesuai untuk penyelenggaraan, melaksanakan, dan melakukan semua persyaratan, ketentuan serta aturan Perjanjian ini. Anda akan bekerja sama sepenuhnya dengan penyelidikan oleh otoritas regulasi dan segera memberikan otoritas pengawas dengan informasi dan catatan yang mungkin diminta sesuai dengan hukum, peraturan, piagam, oleh-hukum, atau aturan yang berlaku untuk Anda atau yurisdiksi pada tempat domisili Anda."
+
+msgid "In exceptional circumstances, where there is a price change in the underlying that is sufficiently large and sudden, gapping can occur. In such cases, the automatic margin close-out protection might fail, causing your account balance to fall below zero. For this purpose, a Negative Balance Protection mechanism has been introduced. Negative Balance Protection provides a ‘backstop’ in case of extreme market conditions and ensures that your maximum losses from trading CFDs, including all related costs, are limited to the balance available on your CFD account. Therefore, you can never lose more money than the total sum invested for trading CFDs; if your CFD account balance falls below zero, the Company will compensate the negative balance as soon as possible without any additional cost to you."
+msgstr ""
 
 msgid "In executing orders on your behalf, %1 takes into consideration the following to achieve the best possible result for you:"
 msgstr "Dalam mengeksekusi order atas nama Anda, %1 mempertimbangkan hal berikut dalam memperoleh hasil terbaik untuk Anda:"
@@ -6545,6 +6545,9 @@ msgstr "Perlu Memantau Kontrak"
 
 msgid "Negative Balance Protection"
 msgstr "Perlindungan Saldo Negatif"
+
+msgid "Negative Balance Protection does not apply to clients categorized as professional traders, who can still lose more money than their available balance."
+msgstr ""
 
 msgid "Negative balance protection"
 msgstr "Perlindungan saldo negatif"
@@ -9156,9 +9159,6 @@ msgstr "Perusahaan tidak menyediakan dan tidak berwenang untuk memberikan saran 
 
 msgid "The Company ensures that complaints received will be investigated thoroughly and fairly. You may submit your complaint by sending an email to %1."
 msgstr "Perusahaan memastikan bahwa keluhan yang diterima akan diselidiki secara menyeluruh dan adil. Anda dapat mengirimkan keluhan Anda dengan mengirim email ke %1."
-
-msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
-msgstr "Perusahaan memiliki kebijakan Stop Out yang mencegah Anda kehilangan lebih dari yang Anda miliki. Namun, jika Open Position Anda tidak ditutup ketika Margin Level Akun Riil MT5 Anda mencapai Level Stop Out, Perusahaan, atas kebijakannya sendiri, dapat membebaskan saldo negatif Anda dengan mengkredit akun Anda jika Saldo Akun Anda negatif. Saldo negatif ditentukan dengan menggabungkan semua saldo negatif yang terjadi selama 24 jam di semua akun yang Anda miliki. Anda mengakui bahwa, kecuali jika Anda adalah pelanggan ritel Binary Investments (Europe) Ltd, penawaran perlindungan Saldo Negatif oleh Perusahaan kepada Anda adalah atas kebijakan mutlak Perusahaan dan kami berhak untuk mengubah fitur dan kriteria kelayakan dari Perlindungan Saldo Negatif kapan saja. Ketentuan dari Perlindungan Neraca Negatif tidak berlaku pada:"
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "Perusahaan memiliki dan mempertahankan hak, untuk menghentikan setiap kegiatan atau trading dan termasuk peristiwa diatas."
@@ -12398,21 +12398,6 @@ msgstr "jam"
 msgid "iOS"
 msgstr "iOS"
 
-msgid "in abnormal market conditions or exceptional market movements/volatility;"
-msgstr "dalam kondisi pasar yang abnormal atau pergerakan / volatilitas pasar yang luar biasa;"
-
-msgid "in the case of Professional Clients;"
-msgstr "dalam hal Klien Profesional;"
-
-msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
-msgstr "dalam kasus klien melanggar salah satu ketentuan Perjanjian ini yang menghasilkan saldo negatif."
-
-msgid "in the case of a client opening any Transaction in relation to Prohibited Trades;"
-msgstr "dalam hal klien membuka Transaksi apa pun terkait dengan Perdagangan Terlarang;"
-
-msgid "in the case of a force majeure event;"
-msgstr "dalam kasus kejadian force majeure;"
-
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "termasuk penafian dan/atau perhatikan bahwa setiap hak kekayaan intelektual termasuk setiap Merek Dagang atau slogan apapun yang dimiliki Perusahaan dan penggunaan yang tidak sah adalah terlarang."
 
@@ -12601,9 +12586,6 @@ msgstr "minggu"
 
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
 msgstr "dimana Agen adalah individu, dan telah mencapai usia 18 tahun atau lebih dan memiliki kapasitas penuh untuk masuk ke dalam Perjanjian ini;"
-
-msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
-msgstr "di mana saldo negatif terhubung ke atau hasil dari keterbatasan fungsional dan / atau kerusakan dari Platform Perdagangan MT5; dan"
 
 msgid "with insider knowledge of any financial market or instrument."
 msgstr "dengan pengetahuan dalam mengenai pasar keuangan atau instrumen."

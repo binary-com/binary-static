@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-24 07:03\n"
+"PO-Revision-Date: 2018-08-28 05:25\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -4585,9 +4585,6 @@ msgstr "如果您已在同一市场持有多个未平仓头寸，您在同一市
 msgid "If you have the skill set we seek, you'll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights."
 msgstr "如果您拥有我们需要的技能，您将有机会加入一个优秀的的前端开发团队，引导我们二元期权交易系统达到新的高度。"
 
-msgid "If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy."
-msgstr "如果您在交易时发生负数余额, 公司会将负数的金额贷记入您的账户, 前提是此借贷是根据此项政策的正常交易活动所造成的。"
-
 msgid "If you keep any positions open overnight, an interest adjustment will be made to your trading account as indication of the cost required to keep your position open."
 msgstr "如果您持仓隔夜，需付持仓费。此费用将以利息名义在您的交易账户中扣除。"
 
@@ -4818,6 +4815,9 @@ msgstr "Regent Markets 的创始人 Jean-Yves Sireau 是香港的一名对冲基
 
 msgid "In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
 msgstr "关于本协议和本协议所预期的所有交易，您同意执行并提供对实现、开展和执行本协议的所有条款、 规定和条件可能需要或适宜的额外文件和工具并执行额外的行动。您须与任何监管机构所进行的任何调查充分合作，及时向监管机构提供此类符合适用于您或您所在地管辖权的任何规则、法律、条例、规章、或法令要求的信息和记录。"
+
+msgid "In exceptional circumstances, where there is a price change in the underlying that is sufficiently large and sudden, gapping can occur. In such cases, the automatic margin close-out protection might fail, causing your account balance to fall below zero. For this purpose, a Negative Balance Protection mechanism has been introduced. Negative Balance Protection provides a ‘backstop’ in case of extreme market conditions and ensures that your maximum losses from trading CFDs, including all related costs, are limited to the balance available on your CFD account. Therefore, you can never lose more money than the total sum invested for trading CFDs; if your CFD account balance falls below zero, the Company will compensate the negative balance as soon as possible without any additional cost to you."
+msgstr ""
 
 msgid "In executing orders on your behalf, %1 takes into consideration the following to achieve the best possible result for you:"
 msgstr "代您执行订单时，为了替您争取最佳成果，%1将考虑以下各点︰"
@@ -6546,6 +6546,9 @@ msgstr "必须监控头寸"
 
 msgid "Negative Balance Protection"
 msgstr "负结余额保护"
+
+msgid "Negative Balance Protection does not apply to clients categorized as professional traders, who can still lose more money than their available balance."
+msgstr ""
 
 msgid "Negative balance protection"
 msgstr "负结余额保护"
@@ -9157,9 +9160,6 @@ msgstr "公司不提供, 也无权提供投资建议。公司不会就购买和/
 
 msgid "The Company ensures that complaints received will be investigated thoroughly and fairly. You may submit your complaint by sending an email to %1."
 msgstr "公司确保将会对收到的投诉作出彻底和公平的调查。您可以通过向 %1 发送电子邮件提交投诉。"
-
-msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
-msgstr "公司制定了“强制平仓”政策，可以防止您的损失超过您存入的金额。 但是，当您的MT5真实账户的保证金水平达到止损水平时您的未平仓头寸未平仓，而且如果您的账户余额已是负余额，则公司可以自行决定是否通过贷记您的账户来免除您的负余额。负余额是通过汇总您持有的所有账户在24小时内发生的所有负余额而确定的。除非您是Binary投资（欧洲）有限公司的零售客户，您确认公司提供的负余额保护是由公司自行决定的，我们保留随时更改负余额保护的功能和资格标准的权利。 负余额保护的规定不适用于："
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "公司有权停止任何活动或交易，包括但不限于上述任何事件。"
@@ -12400,21 +12400,6 @@ msgstr "小时"
 msgid "iOS"
 msgstr "iOS"
 
-msgid "in abnormal market conditions or exceptional market movements/volatility;"
-msgstr "在异常的市场情况下或有异常市场变动/波动性;"
-
-msgid "in the case of Professional Clients;"
-msgstr "如是专业客户;"
-
-msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
-msgstr "如果客户违反本协议的任何条款, 导致负余额。"
-
-msgid "in the case of a client opening any Transaction in relation to Prohibited Trades;"
-msgstr "如果客户进行任何被禁止的交易;"
-
-msgid "in the case of a force majeure event;"
-msgstr "不可抗力事件;"
-
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "包括免责声明和/或通知, 说明任何知识产权, 包括任何商标或标语均属于公司所有，并严格禁止任何未经授权的使用。"
 
@@ -12603,9 +12588,6 @@ msgstr "周"
 
 msgid "where the Agent is an individual, he has reached the age of 18 years or over and has full capacity to enter into this Agreement;"
 msgstr "代理为个人，已满18岁或以上, 并有充分的能力签订本协议。"
-
-msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
-msgstr "负余额与MT5交易平台的功能限制和/或故障相关的结果; 和"
 
 msgid "with insider knowledge of any financial market or instrument."
 msgstr "对任何金融市场或工具具有内幕知识。"

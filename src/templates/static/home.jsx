@@ -1,5 +1,6 @@
 import React from 'react';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
+import MFSA from '../_common/includes/mfsa.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
 import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
 
@@ -158,8 +159,9 @@ const Home = () => {
 
     return (
         <React.Fragment>
+            <MFSA />
             <div id='banner'>
-                <div className='container gr-padding-30'>
+                <div className='container gr-padding-20'>
                     <h1 className='dark center-text gr-padding-20 gr-child'>{it.L('Online Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
                     <p className='center-text gr-padding-10'>{it.L('Trade 24/7, even on weekends.')}</p>
 
