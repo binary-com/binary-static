@@ -17,7 +17,7 @@ const Malta = () =>  (
                         </div>
                         <div className='gr-7 gr-12-p gr-12-m'>
                             <p className='no-margin-top'>{it.L('The Republic of Malta is an island country in Southern Europe — located approximately 80km south of Italy. Its rich, colourful history can be traced back thousands of years to the Neolithic period.')}</p>
-                            <p>{it.L('Malta’s strategic location in the Mediterranean Sea saw it occupied by a number of foreign powers, including the Greeks, Romans, Arabs, French, and most recently, the British. It gained independence from the British in 1964, and joined the European Union in 2004. Today, Malta is a popular tourist destination and a high-income country powered by an industrialised, service-based economy.')}</p>
+                            <p>{it.L('Malta\'s strategic location in the Mediterranean Sea saw it occupied by a number of foreign powers, including the Greeks, Romans, Arabs, French, and most recently, the British. It gained independence from the British in 1964, and joined the European Union in 2004. Today, Malta is a popular tourist destination and a high-income country powered by an industrialised, service-based economy.')}</p>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ const Malta = () =>  (
                             images={[
                                 {
                                     url    : 'images/pages/careers/malta/smallest-capital.jpg',
-                                    caption: 'Malta is one of the most densely-populated countries in the world with the smallest capital (Valletta) in the European Union. Maltese and English are the country’s official languages, while Italian is also widely spoken. Malta has plenty of sunshine throughout the year and enjoys a mild climate.',
+                                    caption: 'Malta is one of the most densely-populated countries in the world with the smallest capital (Valletta) in the European Union. Maltese and English are the country\'s official languages, while Italian is also widely spoken. Malta has plenty of sunshine throughout the year and enjoys a mild climate.',
                                 },
                                 {
                                     url    : 'images/pages/careers/malta/festivities.jpg',
@@ -42,7 +42,7 @@ const Malta = () =>  (
                                 },
                                 {
                                     url    : 'images/pages/careers/malta/cost-of-living.jpg',
-                                    caption: 'The cost of living in Malta is relatively affordable; food and public transportation are much cheaper than what you’ll find in a major European city. Malta offers free healthcare but queues at public healthcare facilities are less than ideal. Fortunately, health insurance is easily affordable and provides you with access to private clinics and hospitals.',
+                                    caption: 'The cost of living in Malta is relatively affordable; food and public transportation are much cheaper than what you\'ll find in a major European city. Malta offers free healthcare but queues at public healthcare facilities are less than ideal. Fortunately, health insurance is easily affordable and provides you with access to private clinics and hospitals.',
                                 },
                             ]}
                         />
@@ -63,7 +63,7 @@ const Malta = () =>  (
                 <BoxOverlayImage
                     alignment='right'
                     title={it.L('Festivals galore')}
-                    text={it.L('Malta celebrates a large number of religious festivities and cultural events every year, filling the streets with people and carts laden with traditional delicacies.')}
+                    text={it.L('Malta celebrates a large number of religious festivities and cultural events every year, filling the streets with carts laden with traditional sweets and delicacies.')}
                     img_src={it.url_for('images/pages/careers/malta/festivals-galore.jpg')}
                 />
             </div>

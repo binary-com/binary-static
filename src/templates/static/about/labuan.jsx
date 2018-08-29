@@ -16,7 +16,7 @@ const Labuan = () =>  (
                             <img className='responsive' src={it.url_for('images/pages/careers/labuan/introduction-labuan.jpg')} />
                         </div>
                         <div className='gr-7 gr-12-p gr-12-m'>
-                            <p className='no-margin-top'>{it.L('Labuan is a federal territory made up of the main island, Labuan Island, and six other small islands off the coast of Sabah. Its name comes from the Malay word, ‘labuhan’ which means harbour. Formerly a part of the Brunei Sultanate, it was ceded to the British Crown in 1846, before joining Malaysia in 1963.')}</p>
+                            <p className='no-margin-top'>{it.L('Labuan is a federal territory made up of the main island, Labuan Island, and six other small islands off the coast of Sabah. Its name comes from the Malay word, \'labuhan\' which means harbour. Formerly a part of the Brunei Sultanate, it was ceded to the British Crown in 1846, before joining Malaysia in 1963.')}</p>
                             <p>{it.L('Today, Labuan is known as a flourishing financial centre and tax-free tourist destination. Its economy is driven primarily by its oil and gas resources, as well as its international investment and banking services. The latter has attracted thousands of companies to Labuan over the years, plus dozens of leading banks.')}</p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ const Labuan = () =>  (
                 <BoxOverlayImage
                     alignment='right'
                     title={it.L('The great outdoors')}
-                    text={it.L('Step outdoors and soak up the sun on one of Labuan\'s pristine beaches. There’s also wreck diving, kayaking, island hopping, and deep sea fishing to look forward to.')}
+                    text={it.L('Step outdoors and soak up the sun on one of Labuan\'s pristine beaches. There\'s also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to.')}
                     img_src={it.url_for('images/pages/careers/labuan/the-great-outdoors.jpg')}
                 />
             </div>
