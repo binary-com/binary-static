@@ -63,7 +63,7 @@ const Cyberjaya = () =>  (
                 <BoxOverlayImage
                     alignment='right'
                     title={it.L('Cultural diversity')}
-                    text={it.L('Expats and international students make up more than 10 of Cyberjaya\'s vibrant population.')}
+                    text={it.L('Expats and international students make up more than 10% of Cyberjaya\'s vibrant population.')}
                     img_src={it.url_for('images/pages/careers/cyberjaya/cultural-diversity.jpg')}
                 />
                 <BoxOverlayImage
