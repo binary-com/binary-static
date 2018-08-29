@@ -63,7 +63,7 @@ const Price = (() => {
             proposal.amount = multiplier.value;
             if (multiplier.value > 1000) {
                 proposal.error = {
-                    message: 'Maximum multiplier of 1000.',
+                    message: localize('Maximum multiplier of 1000.'),
                 };
             }
         }
