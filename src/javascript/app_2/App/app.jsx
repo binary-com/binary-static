@@ -20,9 +20,8 @@ const App = ({ root_store }) => (
 
                 <AppContents>
                     <Routes />
+                    <PortfolioDrawer />
                 </AppContents>
-
-                <PortfolioDrawer />
 
                 <footer id='footer'>
                     <Footer />
