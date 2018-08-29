@@ -16,9 +16,10 @@
         text-decoration: underline;
     }
     #footer-regulatory {
-        #regulatory-text {
-            text-align: justify;
-            font-size: $FONT_SIZE_XXS;
+        p {
+            font-size: $FONT_SIZE_XS;
+            font-weight: 100;
+            margin: 0 0 10px;
         }
         #iom_icon_footer {
             max-width: 90px;
