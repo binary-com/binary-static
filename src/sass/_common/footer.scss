@@ -52,6 +52,11 @@
             z-index: 9999;
         }
     }
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
     .lga-gamstop-icon-container {
         height: 100%;
         display: flex;
@@ -63,21 +68,22 @@
             width: 100%;
         }
     }
-    #social-icons {
-        padding-right: 10px !important;
+    .social-icons {
+        margin-left: auto;
 
+        > *:not(:first-child) {
+            margin-left: 10px;
+        }
         img {
-            max-height: 35px;
+            height: 35px;
+            width: 35px;
         }
     }
-    #footer-last {
-        .gambling {
-            &, a {
-                text-align: justify;
-                font-size: $FONT_SIZE_XS;
-                font-weight: 400;
-                line-height: 110%;
-            }
+    .icon-row {
+        padding: 10px;
+
+        > *:not(:last-child) {
+            margin-right: 20px;
         }
     }
     #end-note {

@@ -202,57 +202,32 @@ const FooterNormal = () => (
         <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10 gr-child'>
             <div className='container'>
                 <div className='gr-row'>
-                    <p id='regulatory-text' className='gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin'>
-                        {it.L(
-                            'In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK ([_1]). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. [_2] issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission ([_3]), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker\'s Licence no. 1010285 issued on 1 July 2017). View complete [_4]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Costa Rica, Hong Kong, or to persons under age 18.',
-                            `<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank">${it.L('license reference no: 39172')}</a>`,
-                            'MGA/B2C/102/2000',
-                            `<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank">${it.L('license reference no: 39495')}</a>`,
-                            `<a href=${it.url_for('regulation')}>${it.L('Regulatory Information')}</a>`,
-                        )}
-                    </p>
-                    <div className='gr-3 gr-12-m gr-5-p center-text' id='social-networks'>
-                        <div className='gr-row gr-row-align-center-m gr-padding-10 gr-parent id-hide'>
-                            <div className='gr-5 gr-6-m'>
-                                <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
-                                    <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
-                                </a>
-                            </div>
-                            <div className='gr-7 gr-6-m'>
-                                <div className='lga-gamstop-icon-container'>
-                                    <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
-                                        <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
-                                    </a>
-                                    <div data-show='iom, malta, default' className='id-hide'>
-                                        <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
-                                            <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <SocialIcons
-                            is_centered
-                            networks={[
-                                { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
-                                { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
-                                { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
-                                { media: 'telegram',    href: 'https://t.me/binarydotcom' },
-                                { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
-                            ]}
-                        />
+                    <div className='gr-5 gr-6-m'>
+                        <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
+                            <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div id='footer-last' className='primary-bg-color'>
-            <div className='container'>
-                <div className='gr-padding-10'>
-                    <p className='gambling content-inverse-color no-para-margin'>
-                        {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about [_1]Responsible Trading[_2]. [_3]CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. [_4]Between 74-89% of retail investor accounts lose money when trading CFDs.[_5] You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.[_6]', `<a href="${it.url_for('responsible-trading')}">`, '</a>', '<span data-show="maltainvest">', '<strong>', '</strong>', '</span>')}
-                    </p>
+                    <div className='lga-gamstop-icon-container'>
+                        <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
+                            <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
+                        </a>
+                        <div data-show='iom, malta, default' className='id-hide'>
+                            <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
+                                <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
+                            </a>
+                        </div>
+                    </div>
+                    <SocialIcons
+                        is_centered
+                        networks={[
+                            { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
+                            { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
+                            { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
+                            { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
+                            { media: 'telegram',    href: 'https://t.me/binarydotcom' },
+                            { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
+                        ]}
+                    />
                 </div>
             </div>
         </div>
