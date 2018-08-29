@@ -552,7 +552,7 @@ const ViewPopup = (() => {
         const longcode = contract.longcode;
 
         $container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode }));
-        const $sections  = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
+        const $sections  = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-p gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-p gr-12-m"></div></div>'));
         let [barrier_text, low_barrier_text] = ['Barrier', 'Low Barrier'];
         if (Lookback.isLookback(contract.contract_type)) {
             [barrier_text, low_barrier_text] =
