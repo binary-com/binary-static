@@ -245,10 +245,6 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Reset-Put')}  text={it.L('Predict that the market will end up lower than either the current level or the level at a predetermined time (reset time)')} />
                             <p>{it.L('At reset time, if the spot is in the opposite direction of your prediction, the barrier is reset to that spot.')}</p>
                         </SectionLarge>
-                        <SectionLarge header={it.L('Call/Put Spreads')} image='types-of-trades/call_put_spread' text={it.L('What are call and put spreads:')}>
-                            <ListStrong header={it.L('Call spread')} text={it.L('Win up to maximum payout if exit spot is between lower and upper barrier')} />
-                            <ListStrong header={it.L('Put spread')}  text={it.L('Win up to maximum payout if exit spot is between upper and lower barrier')} />
-                        </SectionLarge>
                         <SectionLarge header={it.L('High/Low Ticks')} image='types-of-trades/high_low_ticks' text={it.L('Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks.')} />
                         <p>{it.L('Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices.')}</p>
                     </Section>
