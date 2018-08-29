@@ -20,8 +20,7 @@ export const getItemFromValue = (list, value) => {
     if (isArrayLike(list)) {
         item = { number: findInArray(list), length: list.length };
     } else {
-        const keys = Object.keys(list);
-        keys(list).some(key => {
+        Object.keys(list).some(key => {
             item = { number: findInArray(list[key]), length: list[key].length };
             return item;
         });
@@ -35,8 +34,7 @@ export const getValueFromIndex = (list, index) => {
     if (isArrayLike(list)) {
         result = findInArray(list);
     } else {
-        const keys = Object.keys(list);
-        keys(list).some(key => {
+        Object.keys(list).some(key => {
             result = findInArray(list[key]);
             return result.value;
         });
