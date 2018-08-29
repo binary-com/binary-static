@@ -199,7 +199,7 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10 gr-child'>
+        <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10 content-inverse-color'>
             <div className='container'>
                 <div className='gr-row icon-row flex-row'>
                     <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
@@ -226,7 +226,7 @@ const FooterNormal = () => (
                         ]}
                     />
                 </div>
-                <div className='gr-row content-inverse-color'>
+                <div className='gr-row'>
                     <p>
                         {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156).')}
                     </p>
@@ -237,6 +237,20 @@ const FooterNormal = () => (
                     <p>
                         {/* TODO: insert links 2 */}
                         {it.L('In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/B2C/102/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (licence reference no: 39495), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker\'s Licence no. 1010285 issued on 1 July 2017). View complete Regulatory Information.')}
+                    </p>
+                </div>
+                <div className='gr-row about-binary'>
+                    <p>
+                        {/* TODO: insert links 1 */}
+                        {it.L('Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about Responsible Trading. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.')}
+                    </p>
+                </div>
+                <div className='gr-row risk-warning'>
+                    <p>
+                        {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset.')}
+                    </p>
+                    <p>
+                        {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74-89% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.')}
                     </p>
                 </div>
             </div>

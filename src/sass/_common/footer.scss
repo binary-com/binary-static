@@ -21,6 +21,21 @@
             font-weight: 100;
             margin: 0 0 10px;
         }
+        .about-binary {
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            padding: 10px 0;
+            margin-bottom: 10px;
+
+            p {
+                margin: 0;
+            }
+        }
+        .risk-warning {
+            p {
+                font-size: $FONT_SIZE_S;
+            }
+        }
         #iom_icon_footer {
             max-width: 90px;
         }
