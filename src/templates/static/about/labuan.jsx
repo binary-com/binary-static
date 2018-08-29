@@ -1,7 +1,6 @@
 import React from 'react';
 import { BoxOverlayImage } from '../../_common/components/box_row.jsx';
 import ImageSlider from '../../_common/components/image_slider.jsx';
-// import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const Labuan = () =>  (
     <div className='static_full location-labuan'>
@@ -11,10 +10,7 @@ const Labuan = () =>  (
                     <h1>{it.L('Labuan')}</h1>
                     <h4 className='subheader'>{it.L('The Pearl of Borneo')}</h4>
                 </div>
-                <div className='gr-12 gr-padding-20 center-text'>
-                    <h2>{it.L('Introduction')}</h2>
-                </div>
-                <div className='gr-12 gr-centered'>
+                <div className='gr-12 gr-padding-20 gr-centered'>
                     <div className='gr-row'>
                         <div className='gr-5 gr-12-p gr-12-m'>
                             <img className='responsive' src={it.url_for('images/pages/careers/labuan/introduction-labuan.jpg')} />
@@ -28,12 +24,12 @@ const Labuan = () =>  (
             </div>
         </div>
         <div className='living fill-bg-color'>
-            <div className='container gr-row gr-padding-20 center-text'>
+            <div className='container gr-row gr-padding-30 center-text'>
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Living in Labuan')}</h2>
                 </div>
                 <div className='gr-12'>
-                    <div className='container gr-padding-10 center-text'>
+                    <div className='container center-text'>
                         <ImageSlider
                             images={[
                                 {
@@ -55,7 +51,7 @@ const Labuan = () =>  (
             </div>
         </div>
         <div className='misc'>
-            <div className='container gr-row gr-padding-20 center-text'>
+            <div className='container gr-row gr-padding-30 center-text'>
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Can\'t miss in Labuan')}</h2>
                 </div>

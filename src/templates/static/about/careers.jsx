@@ -101,26 +101,28 @@ const Careers = () => {
                     </div>
                 </div>
 
-                <div className='container gr-row gr-padding-30 center-text'>
-                    <div className='gr-12 gr-padding-30'>
-                        <h1>{it.L('Our values')}</h1>
-                    </div>
+                <div className='values-group'>
+                    <div className='container gr-row gr-padding-10 center-text'>
+                        <div className='gr-12 gr-padding-30'>
+                            <h1>{it.L('Our values')}</h1>
+                        </div>
 
-                    <ColumnValues header={it.L('Integrity')} icon='ic-intergrity'/>
-                    <ColumnValues header={it.L('Teamwork')} icon='ic-teamwork' />
-                    <ColumnValues header={it.L('Competence')} icon='ic-competence' />
-                    <ColumnValues header={it.L('Customer focus')} icon='ic-customer-focus' />
+                        <ColumnValues header={it.L('Integrity')} icon='ic-intergrity'/>
+                        <ColumnValues header={it.L('Teamwork')} icon='ic-teamwork' />
+                        <ColumnValues header={it.L('Competence')} icon='ic-competence' />
+                        <ColumnValues header={it.L('Customer focus')} icon='ic-customer-focus' />
 
-                    <div className='fill-text center-element btn-margin-top'>
-                        <a className='button-secondary' href={it.url_for('about-us?anchor=our-values')}>
-                            <span>{it.L('Learn more')}</span>
-                        </a>
+                        <div className='fill-text center-element btn-margin-top'>
+                            <a className='button-secondary' href={it.url_for('about-us?anchor=our-values')}>
+                                <span>{it.L('Learn more')}</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div className='fill-bg-color'>
-                    <div className='container gr-row gr-padding-30 center-text'>
-                        <div className='gr-12 gr-padding-30'>
+                <div className='fill-bg-color location-section'>
+                    <div className='container gr-row gr-padding-20 center-text'>
+                        <div className='gr-12 gr-padding-20'>
                             <h1>{it.L('Our locations')}</h1>
                         </div>
                         <ColumnLG image='malta@1'   text={it.L('Malta')}               link={it.url_for('malta')} />

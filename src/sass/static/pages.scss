@@ -293,6 +293,14 @@
     }
 }
 
+#content {
+    &.cyberjaya, &.malta, &.labuan {
+        &-content {
+            margin-top: 0;
+        }
+    }
+}
+
 .location {
     &-cyberjaya, &-labuan, &-malta {
         .introduction {
@@ -319,6 +327,11 @@
                         margin-top: 1rem;
                     }
                 }
+            }
+        }
+        .living, .misc {
+            h2 {
+                margin-bottom: 10px;
             }
         }
     }
@@ -432,8 +445,7 @@ body #not_authenticated_financial ul.checked > li {
             text-transform: capitalize;
         }
         .header-line {
-            border-color: $COLOR_ORANGE;
-            border-width: 3px;
+            border: 2px solid $COLOR_ORANGE;
             width: 50px;
         }
     }
@@ -819,6 +831,24 @@ body #not_authenticated_financial ul.checked > li {
                 color: $COLOR_WHITE;
                 padding: 20px 0;
                 text-align: center;
+            }
+        }
+        .location-section {
+            padding-bottom: 10px;
+
+            @media (max-width: 480px) {
+                padding-bottom: 0;
+
+                .fill-text {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        .values-group {
+            margin-bottom: 20px;
+
+            h1 {
+                margin-bottom: 30px;
             }
         }
     }

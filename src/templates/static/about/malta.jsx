@@ -10,10 +10,7 @@ const Malta = () =>  (
                     <h1>{it.L('Malta')}</h1>
                     <h4 className='subheader'>{it.L('Historical Mediterranean island')}</h4>
                 </div>
-                <div className='gr-12 gr-padding-20 center-text'>
-                    <h2>{it.L('Introduction')}</h2>
-                </div>
-                <div className='gr-12 gr-centered'>
+                <div className='gr-12 gr-padding-20 gr-centered'>
                     <div className='gr-row'>
                         <div className='gr-5 gr-12-p gr-12-m'>
                             <img className='responsive' src={it.url_for('images/pages/careers/malta/introduction-malta.jpg')} />
@@ -27,12 +24,12 @@ const Malta = () =>  (
             </div>
         </div>
         <div className='living fill-bg-color'>
-            <div className='container gr-row gr-padding-20 center-text'>
+            <div className='container gr-row gr-padding-30 center-text'>
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Living in Malta')}</h2>
                 </div>
                 <div className='gr-12'>
-                    <div className='container gr-padding-10 center-text'>
+                    <div className='container center-text'>
                         <ImageSlider
                             images={[
                                 {
@@ -54,7 +51,7 @@ const Malta = () =>  (
             </div>
         </div>
         <div className='misc'>
-            <div className='container gr-row gr-padding-20 center-text'>
+            <div className='container gr-row gr-padding-30 center-text'>
                 <div className='gr-12 gr-padding-20 center-text'>
                     <h2>{it.L('Can\'t miss in Malta')}</h2>
                 </div>

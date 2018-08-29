@@ -29,7 +29,7 @@ export const Box = ({ img_src, title, text, class_name = '' }) => (
 
 export const BoxOverlayImage = ({ img_src, text, title, alignment='left' }) => (
     <div className='box-overlay-image gr-row gr-centered'>
-        <div className='gr-12'>
+        <div className='gr-12 gr-padding-10'>
             <div className={`box-wrapper ${alignment}`}>
                 <div className='box-img'>
                     <img className='responsive' src={img_src} />
