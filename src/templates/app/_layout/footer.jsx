@@ -202,30 +202,32 @@ const FooterNormal = () => (
         <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10'>
             <div className='container'>
                 <div className='gr-row'>
-                    <div className='gr-12 icon-row flex-row'>
-                        <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
-                            <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
-                        </a>
-                        <div className='lga-gamstop-icon-container'>
-                            <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
-                                <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
+                    <div className='gr-12'>
+                        <div className='icon-row flex-row'>
+                            <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
+                                <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                             </a>
-                            <div data-show='iom, malta, default' className='id-hide'>
-                                <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
-                                    <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
+                            <div className='lga-gamstop-icon-container'>
+                                <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
+                                    <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
                                 </a>
+                                <div data-show='iom, malta, default' className='id-hide'>
+                                    <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
+                                        <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
+                                    </a>
+                                </div>
                             </div>
+                            <SocialIcons
+                                networks={[
+                                    { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
+                                    { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
+                                    { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
+                                    { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
+                                    { media: 'telegram',    href: 'https://t.me/binarydotcom' },
+                                    { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
+                                ]}
+                            />
                         </div>
-                        <SocialIcons
-                            networks={[
-                                { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
-                                { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
-                                { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
-                                { media: 'telegram',    href: 'https://t.me/binarydotcom' },
-                                { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
-                            ]}
-                        />
                     </div>
                 </div>
                 <div className='gr-row'>
@@ -243,22 +245,26 @@ const FooterNormal = () => (
                         </p>
                     </div>
                 </div>
-                <div className='gr-row about-binary'>
+                <div className='gr-row'>
                     <div className='gr-12'>
-                        <p>
-                            {/* TODO: insert links 1 */}
-                            {it.L('Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about Responsible Trading. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.')}
-                        </p>
+                        <div className='about-binary'>
+                            <p>
+                                {/* TODO: insert links 1 */}
+                                {it.L('Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about Responsible Trading. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.')}
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div className='gr-row risk-warning'>
+                <div className='gr-row'>
                     <div className='gr-12'>
-                        <p>
-                            {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset.')}
-                        </p>
-                        <p>
-                            {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74-89% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.')}
-                        </p>
+                        <div className='risk-warning'>
+                            <p>
+                                {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset.')}
+                            </p>
+                            <p>
+                                {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74-89% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.')}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

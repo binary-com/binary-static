@@ -22,6 +22,7 @@
         p {
             font-size: 13px;
             font-weight: 100;
+            text-align: justify;
             margin: 0 0 10px;
         }
         .about-binary {
@@ -49,6 +50,17 @@
             max-width: 120px;
         }
         @media screen and (max-width: 480px) {
+            .icon-row {
+                flex-direction: column;
+
+                > * {
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                }
+            }
+            .social-icons {
+                margin-left: 0;
+            }
             #iom_icon_footer {
                 max-width: 110px;
             }
