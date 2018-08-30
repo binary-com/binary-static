@@ -17,8 +17,11 @@
     }
     #footer-regulatory {
         padding-bottom: 30px;
-        color: $COLOR_DARK_WHITE;
+        color: #a8a8a8; // stylelint-disable color-no-hex
 
+        a {
+            font-size: 13px !important;
+        }
         p {
             font-size: 13px;
             font-weight: 100;
