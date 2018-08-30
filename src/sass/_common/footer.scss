@@ -29,8 +29,8 @@
             margin: 0 0 10px;
         }
         .about-binary {
-            border-top: 1px solid;
-            border-bottom: 1px solid;
+            border-top: 1px solid $COLOR_DARK_GRAY;
+            border-bottom: 1px solid $COLOR_DARK_GRAY;
             padding: 10px 0;
             margin-bottom: 10px;
 
@@ -40,7 +40,7 @@
         }
         .risk-warning {
             p {
-                font-size: 18px;
+                font-size: 16px;
             }
         }
         #iom_icon_footer {
