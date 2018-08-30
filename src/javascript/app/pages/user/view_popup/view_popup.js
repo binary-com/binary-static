@@ -381,7 +381,7 @@ const ViewPopup = (() => {
             return;
         }
 
-        const div         = Utility.createElement('div', { id: 'sell_details_audit', class: 'gr-8 gr-12-m gr-no-gutter invisible' });
+        const div         = Utility.createElement('div', { id: 'sell_details_audit', class: 'gr-8 gr-12-p gr-12-m gr-no-gutter invisible' });
         const table       = Utility.createElement('table', { id: 'audit_header', class: 'gr-12' });
         const tr          = Utility.createElement('tr', { class: 'gr-row' });
         const th_previous = Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' });
