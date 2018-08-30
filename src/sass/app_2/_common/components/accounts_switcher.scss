@@ -1,0 +1,52 @@
+.acc-switcher-wrapper {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    background: $COLOR_WHITE;
+    border: 1px solid $COLOR_GRAY;
+    transform: translateY(-30px);
+    transition: transform 0.25s ease, opacity 0.25s linear;
+
+    &-enter, &-enter-done {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+    &-exit {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-30px);
+    }
+    .acc-switcher-account {
+        cursor: pointer;
+        padding: 4px 16px;
+        position: relative;
+
+        &:before {
+            content: '\25EF';
+            font-size: 2.5rem;
+            top: 0;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        p.acc-switcher-accountid {
+            font-weight: 300;
+            font-size: 0.75rem;
+            line-height: 0.5;
+            padding-left: 3rem;
+        }
+        p.acc-switcher-currency {
+            font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+            line-height: 0.5;
+            padding-left: 3rem;
+        }
+        &:hover {
+            background: $COLOR_GRAY;
+        }
+    }
+}
