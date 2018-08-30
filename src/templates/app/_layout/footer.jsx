@@ -199,59 +199,67 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10 content-inverse-color'>
+        <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10'>
             <div className='container'>
-                <div className='gr-row icon-row flex-row'>
-                    <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
-                        <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
-                    </a>
-                    <div className='lga-gamstop-icon-container'>
-                        <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
-                            <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
+                <div className='gr-row icon-row'>
+                    <div className='gr-12 flex-row'>
+                        <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
+                            <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                         </a>
-                        <div data-show='iom, malta, default' className='id-hide'>
-                            <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
-                                <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
+                        <div className='lga-gamstop-icon-container'>
+                            <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
+                                <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
                             </a>
+                            <div data-show='iom, malta, default' className='id-hide'>
+                                <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
+                                    <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
+                                </a>
+                            </div>
                         </div>
+                        <SocialIcons
+                            networks={[
+                                { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
+                                { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
+                                { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
+                                { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
+                                { media: 'telegram',    href: 'https://t.me/binarydotcom' },
+                                { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
+                            ]}
+                        />
                     </div>
-                    <SocialIcons
-                        networks={[
-                            { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                            { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
-                            { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
-                            { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
-                            { media: 'telegram',    href: 'https://t.me/binarydotcom' },
-                            { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
-                        ]}
-                    />
                 </div>
                 <div className='gr-row'>
-                    <p>
-                        {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156).')}
-                    </p>
-                    <p>
-                        {/* TODO: insert links 1 */}
-                        {it.L('In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence reference no: 39172).')}
-                    </p>
-                    <p>
-                        {/* TODO: insert links 2 */}
-                        {it.L('In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/B2C/102/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (licence reference no: 39495), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker\'s Licence no. 1010285 issued on 1 July 2017). View complete Regulatory Information.')}
-                    </p>
+                    <div className='gr-12'>
+                        <p>
+                            {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156).')}
+                        </p>
+                        <p>
+                            {/* TODO: insert links 1 */}
+                            {it.L('In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence reference no: 39172).')}
+                        </p>
+                        <p>
+                            {/* TODO: insert links 2 */}
+                            {it.L('In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/B2C/102/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (licence reference no: 39495), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker\'s Licence no. 1010285 issued on 1 July 2017). View complete Regulatory Information.')}
+                        </p>
+                    </div>
                 </div>
                 <div className='gr-row about-binary'>
-                    <p>
-                        {/* TODO: insert links 1 */}
-                        {it.L('Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about Responsible Trading. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.')}
-                    </p>
+                    <div className='gr-12'>
+                        <p>
+                            {/* TODO: insert links 1 */}
+                            {it.L('Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about Responsible Trading. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.')}
+                        </p>
+                    </div>
                 </div>
                 <div className='gr-row risk-warning'>
-                    <p>
-                        {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset.')}
-                    </p>
-                    <p>
-                        {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74-89% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.')}
-                    </p>
+                    <div className='gr-12'>
+                        <p>
+                            {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset.')}
+                        </p>
+                        <p>
+                            {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74-89% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.')}
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

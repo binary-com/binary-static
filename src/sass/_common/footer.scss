@@ -16,8 +16,11 @@
         text-decoration: underline;
     }
     #footer-regulatory {
+        padding-bottom: 30px;
+        color: $COLOR_DARK_WHITE;
+
         p {
-            font-size: $FONT_SIZE_XS;
+            font-size: 13px;
             font-weight: 100;
             margin: 0 0 10px;
         }
@@ -33,7 +36,7 @@
         }
         .risk-warning {
             p {
-                font-size: $FONT_SIZE_S;
+                font-size: 18px;
             }
         }
         #iom_icon_footer {
