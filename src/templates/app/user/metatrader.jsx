@@ -204,7 +204,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                             ]}
                         />
                         <AccountDesc
@@ -215,7 +215,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:30'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                                 it.L('Negative balance protection'),
                             ]}
                         />
@@ -227,7 +227,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:300'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                             ]}
                         />
                         <AccountDesc
@@ -238,7 +238,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:500'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                             ]}
                         />
                         <AccountDesc
