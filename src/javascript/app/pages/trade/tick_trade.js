@@ -204,9 +204,10 @@ const TickDisplay = (() => {
             dispatch(data);
         }
         let resize_timeout;
-        const el_chart_container = document.getElementById(id_render);
+        const el_chart_container = CommonFunctions.getElementById(id_render);
         window.addEventListener('resize', (e) => {
             e.stopPropagation();
+            if (!CommonFunctions.isVisible(el_chart_container)) return;
             clearTimeout(resize_timeout);
             resize_timeout = setTimeout(() => {
                 const { offsetWidth, offsetHeight } = el_chart_container;
