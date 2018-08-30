@@ -161,6 +161,8 @@ const TickDisplay = (() => {
                 backgroundColor: null,
                 events         : { load: () => plot(config.plot_from, config.plot_to) },
                 marginLeft     : 50,
+                marginRight    : 30,
+                marginTop      : 25,
             },
             credits: { enabled: false },
             tooltip: {
@@ -201,6 +203,16 @@ const TickDisplay = (() => {
         if (data) {
             dispatch(data);
         }
+        let resize_timeout;
+        const el_chart_container = document.getElementById(id_render);
+        window.addEventListener('resize', (e) => {
+            e.stopPropagation();
+            clearTimeout(resize_timeout);
+            resize_timeout = setTimeout(() => {
+                const { offsetWidth, offsetHeight } = el_chart_container;
+                chart.setSize(offsetWidth, offsetHeight);
+            }, 250);
+        });
     };
 
     const isRelativeBarrier = (barrier_str) => (/\+|-/.test(barrier_str));

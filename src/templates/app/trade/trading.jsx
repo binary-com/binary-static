@@ -36,7 +36,7 @@ const Trading = () => (
                 <a className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</a>
             </div>
             <div className='row clear' id='contract_form_content_wrapper'>
-                <div className='col row-inner'>
+                <div className='col row-inner gr-6 gr-12-p gr-12-m gr-no-gutter'>
                     <div id='contract_container' className='col row'>
                         <div id='loading_container3' className='overlay_container' />
                         <div id='contract_form_container' className='col'>
@@ -188,7 +188,7 @@ const Trading = () => (
                         </div>
                     </div>
                 </div>
-                <div id='contract_prices_container' className='col row-inner'>
+                <div id='contract_prices_container' className='col row-inner gr-6 gr-12-p gr-12-m gr-no-gutter'>
                     <div id='contract_confirmation_container' className='overlay_container col'>
                         <a className='close' id='close_confirmation_container' />
                         <div id='confirmation_message_container'>
