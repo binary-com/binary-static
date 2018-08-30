@@ -201,8 +201,8 @@ const FooterNormal = () => (
         </div>
         <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10'>
             <div className='container'>
-                <div className='gr-row icon-row'>
-                    <div className='gr-12 flex-row'>
+                <div className='gr-row'>
+                    <div className='gr-12 icon-row flex-row'>
                         <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
                             <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                         </a>
