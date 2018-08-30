@@ -247,7 +247,6 @@ const FooterNormal = () => (
                     <div className='gr-12'>
                         <div className='about-binary'>
                             <p>
-                                {/* TODO: insert links 1 */}
                                 {it.L('Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about [_1]Responsible Trading[_2]. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
                             </p>
                         </div>
