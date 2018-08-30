@@ -1,5 +1,6 @@
 const Login        = require('../../_common/base/login');
 const localize     = require('../../_common/localize').localize;
+const State        = require('../../_common/storage').State;
 const TabSelector  = require('../../_common/tab_selector');
 const BinarySocket = require('../../app/base/socket');
 const FormManager  = require('../../app/common/form_manager');
@@ -27,6 +28,9 @@ const Home = (() => {
                 fnc_additional_check: checkCountry,
             });
             socialLogin();
+            if (State.get('is_eu')) {
+                $('.mfsa_message').slideDown(300);
+            }
         });
     };
 
@@ -51,6 +55,7 @@ const Home = (() => {
         const error = response.error;
         if (!error) {
             $('.signup-box div').replaceWith($('<p/>', { text: localize('Thank you for signing up! Please check your email to complete the registration process.'), class: 'gr-10 gr-centered center-text' }));
+            $('#social-signup').setVisibility(0);
         } else {
             $('#signup_error').setVisibility(1).text(error.message);
         }

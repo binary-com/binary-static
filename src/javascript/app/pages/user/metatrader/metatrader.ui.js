@@ -273,7 +273,7 @@ const MetaTraderUI = (() => {
             $form.find('.binary-balance').html(`${formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
             $form.find('.mt5-balance').html(`${formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
-            $form.find('.symbols').addClass(mt_currency.toLowerCase());
+            $form.find('.symbols.mt-currency').addClass(mt_currency.toLowerCase());
             $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
@@ -442,7 +442,7 @@ const MetaTraderUI = (() => {
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !accounts_info[acc_type].is_demo)
+            .filter(acc_type => !accounts_info[acc_type].is_demo && accounts_info[acc_type].mt5_account_type !== 'mamm') // toEnableMAM: remove second check
             .forEach((acc_type) => {
                 count++;
                 const $acc  = $acc_template.clone();

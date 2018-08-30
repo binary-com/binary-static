@@ -449,7 +449,7 @@ const Metatrader = () => (
 
                     <div id='frm_cashier'>
                         <div className='gr-row demo-only invisible'>
-                            <p className='gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30'>{it.L('This demo account comes with [_1] of virtual funds. Please [_2]contact our customer support team[_3] to replenish virtual funds if your account balance is empty.', '<span class="symbols" />10,000.00', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+                            <p className='gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30'>{it.L('This demo account comes with [_1] of virtual funds. Please [_2]contact our customer support team[_3] to replenish virtual funds if your account balance is empty.', '<span class="symbols mt-currency" />10,000.00', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
                         </div>
                         <div className='real-only invisible'>
                             <div className='gr-padding-20 gr-parent'>
@@ -526,11 +526,13 @@ const Metatrader = () => (
                         <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
                         <div id='msg_upgrade'>{it.L('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', it.url_for('new_account/realws'), it.website_name)}</div>
                         <div id='msg_real_financial'>
-                            <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 real account, please:')}</span>
+                            <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account, please:')}</span>
                             <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>
                             <ul className='bullet'>
                                 <li className='maltainvest invisible'>{it.L('Upgrade to [_1] <a href="[_2]">Financial Account</a>.', it.website_name, it.url_for('new_account/maltainvestws'))}</li>
                                 <li className='assessment invisible'>{it.L('Complete the <a href="[_1]">Financial Assessment</a>.', it.url_for('user/settings/assessmentws'))}</li>
+                                <li className='tax invisible'>{it.L('Complete your <a href="[_1]">Tax Information</a>.', it.url_for('user/settings/detailsws'))}</li>
+                                <li className='citizen invisible'>{it.L('Select <a href="[_1]">Citizenship</a>.', it.url_for('user/settings/detailsws'))}</li>
                             </ul>
                         </div>
                         <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please <a href="[_1]">Authenticate</a> your Binary account.', it.url_for('user/authenticate'))}</div>

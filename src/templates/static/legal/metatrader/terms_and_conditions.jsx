@@ -47,7 +47,7 @@ const TermsAndConditions = () => (
                             <li>{it.L('You have read this Legal Terms and Conditions page in full and understood that you will be buying and selling financial contracts subject to these terms and conditions;')}</li>
                             <li>{it.L('You have read our privacy statement and hereby give us consent to process your personal information as outlined there;')}</li>
                             <li>{it.L('You are over 18 years of age, unless you are an Estonian resident whereby you would have to be over 21;')}</li>
-                            <li>{it.L('You are not resident in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA or any other restricted country which has been identified by the FATF as having strategic deficiencies;')}</li>
+                            <li>{it.L('You are not resident in a restricted country such as Costa Rica, Hong Kong, Israel, Jersey, Malaysia, Malta, USA, Canada or any other restricted country which has been identified by the FATF as having strategic deficiencies;')}</li>
                             <li>{it.L('You have sufficient experience and knowledge in matters of contracts for difference to be capable of evaluating the merits and risks of acquiring contracts via this site and have done so without relying on any information contained in this site.')}</li>
                         </ol>
                     </li>
@@ -173,20 +173,6 @@ const TermsAndConditions = () => (
                     <li>{it.L('If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients\' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level.')}</li>
                     <li>{it.L('The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavour to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level.')}</li>
                     <li>{it.L('The Stop Out Level applicable to your MT5 Real Account may differ from the default Stop Out Level published on our website.')}</li>
-                </ol>
-            </li>
-            <li>{it.L('Negative Balance Protection')}
-                <ol>
-                    <li>{it.L('The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:')}
-                        <ol>
-                            <li>{it.L('in the case of a force majeure event;')}</li>
-                            <li>{it.L('in abnormal market conditions or exceptional market movements/volatility;')}</li>
-                            <li>{it.L('in the case of a client opening any Transaction in relation to Prohibited Trades;')}</li>
-                            <li>{it.L('in the case of Professional Clients;')}</li>
-                            <li>{it.L('where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and')}</li>
-                            <li>{it.L('in the case of a client breaching any of the terms of this Agreement which results in a negative balance.')}</li>
-                        </ol>
-                    </li>
                 </ol>
             </li>
             <li>{it.L('Margin Payment')}

@@ -135,16 +135,8 @@ const BIEL = () => (
                     <li>{it.L('Negative Balance Protection')}
                         <p>{it.L('When using the MT5 Trading Platform, all our clients will be provided with margin monitoring functionality to protect you from encountering negative balances when trading under normal market conditions. As a trader, you should always, and at all times maintain the appropriate levels of margin in your trading account as the recommended method of your own risk management.')}</p>
                         <p>{it.L('If your usable margin drops below 100%, a margin call mode will be triggered and maintained till the level of 50%. In the event that your margin level is equal to, or drops below 50%, the Company will initiate the closing of your current open positions, starting from the most unprofitable until the required margin level is achieved. In such events, the positions will be automatically closed at the current market price at that point in time.')}</p>
-                        <p>{it.L('If you incur a negative balance through your trading activities, you should inform the Company, who in return will evaluate the inquiry and at its discretion may credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy. Such decisions may be based on our local regulatory obligations and may entail subsequent closing of your Account.')}</p>
-                        <p>{it.L('The provisions of the Negative Balance protection do not apply:')}</p>
-                        <ol>
-                            <li>{it.L('If you are categorised as a Professional Client or an Eligible Counterparty;')}</li>
-                            <li>{it.L('in the case of a Force Majeure Event;')}</li>
-                            <li>{it.L('in abnormal market conditions or exceptional market movements/volatility;')}</li>
-                            <li>{it.L('in the case of a client opening any Transaction in relation to Prohibited Trades;')}</li>
-                            <li>{it.L('where the Negative Balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and')}</li>
-                            <li>{it.L('in the case of a client breaching any of the terms of this Agreement which results in a Negative Balance.')}</li>
-                        </ol>
+                        <p>{it.L('In exceptional circumstances, where there is a price change in the underlying that is sufficiently large and sudden, gapping can occur. In such cases, the automatic margin close-out protection might fail, causing your account balance to fall below zero. For this purpose, a Negative Balance Protection mechanism has been introduced. Negative Balance Protection provides a ‘backstop’ in case of extreme market conditions and ensures that your maximum losses from trading CFDs, including all related costs, are limited to the balance available on your CFD account. Therefore, you can never lose more money than the total sum invested for trading CFDs; if your CFD account balance falls below zero, the Company will compensate the negative balance as soon as possible without any additional cost to you.')}</p>
+                        <p>{it.L('Negative Balance Protection does not apply to clients categorized as professional traders, who can still lose more money than their available balance.')}</p>
                         <p>{it.L('The Company does not offer credit to its clients. You acknowledge and agree that you will not be dealing with us on credit.')}</p>
                     </li>
                 </ol>
