@@ -460,7 +460,7 @@
 
             p {
                 margin: 0;
-                padding-left: 5px;
+                padding-left: 3px;
             }
         }
         #confirmation_message {
@@ -498,9 +498,9 @@
             }
         }
         #contract_purchase_spots {
-            height: 110px;
             overflow: hidden;
-            padding-top: 5px;
+            padding-top: 10px;
+            padding-bottom: 5px;
 
             .col {
                 margin-bottom: 0;
