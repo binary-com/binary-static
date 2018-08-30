@@ -84,8 +84,11 @@ const convertDurationLimit = (value, unit) => {
         const minute = value / 60;
         return minute >= 1 ? Math.floor(minute) : 1;
     } else if (unit === 'h') {
-        const hour = value / 3600;
+        const hour = value / (60 * 60);
         return hour >= 1 ? Math.floor(hour) : 1;
+    } else if (unit === 'd') {
+        const day = value / (60 * 60 * 24);
+        return day >= 1 ? Math.floor(day) : 1;
     }
 
     return value;
