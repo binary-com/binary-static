@@ -30,6 +30,7 @@ module.exports = {
         'prefer-destructuring'              : 0,
         // react rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],
+        'import/order'                      : ['error', { groups: [['builtin', 'external'], 'sibling', 'parent'], 'newlines-between': 'ignore' }],
         'jsx-quotes'                        : ['error', 'prefer-single'],
         'react/jsx-closing-bracket-location': ['error', { selfClosing: 'line-aligned', nonEmpty: 'line-aligned' }],
         'react/jsx-closing-tag-location'    : 'error',
