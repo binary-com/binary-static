@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormRow } from '../../_common/components/forms.jsx';
+import { FormRow } from './forms.jsx';
 
 export const Salutation = ({ className }) => (
     <FormRow
@@ -172,7 +172,7 @@ export const ClientMessage = () => (
             </div>
         </div>
     </div>
- );
+);
 
 export const TaxInformationForm = () => (
     <React.Fragment>

@@ -87,7 +87,7 @@ const TypesOfAccounts = () => (
 
             {/* toEnableMAM: remove 'invisible' from className */}
             <div className='gr-padding-10 gr-child invisible'>
-                <a href={it.url_for('multiple-accounts-manager')} target='_blank'>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
+                <a href={it.url_for('multiple-accounts-manager')}>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
             </div>
 
             <div className='gr-padding-30' />

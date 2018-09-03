@@ -17,9 +17,13 @@ module.exports = {
         'array-callback-return'             : 0,
         'func-names'                        : ['error', 'never'],
         'keyword-spacing'                   : ['error', { after: true }],
+        'no-else-return'                    : ['error', { allowElseIf: true }],
+        'no-multi-assign'                   : 0,
         'no-param-reassign'                 : ['error', { props: false }],
+        'no-restricted-globals'             : 0,
         'no-script-url'                     : 0,
         'one-var'                           : ['error', { initialized: 'never', uninitialized: 'always' }],
+        'prefer-destructuring'              : 0,
         // react rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],
         'jsx-quotes'                        : ['error', 'prefer-single'],
