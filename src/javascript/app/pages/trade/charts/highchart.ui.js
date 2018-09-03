@@ -49,6 +49,7 @@ const HighchartUI = (() => {
                 events         : {
                     redraw: params.redrawHandler,
                 },
+                borderWidth: 0,
             },
             title: {
                 text : params.title,
