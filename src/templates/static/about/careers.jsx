@@ -44,13 +44,29 @@ const ColumnSM = ({ gr, header, paragraph }) => (
     </div>
 );
 
-
-const ColumnLG = ({ center, image, text }) => (
-    <div className={`gr-6 gr-12-m${center ? ' center-text' : ''}`}>
-        <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
-        <div className='white-bg-color'>
-            <p className='column-margin fill-text'>{text}</p>
+const ColumnValues = ({ gr, icon, header }) => (
+    <div className={`gr-${gr ? `${gr} gr-12-m` : '3 gr-6-p gr-12-m'}`}>
+        <div className='values-box'>
+            <img className='responsive values-box-icon' src={it.url_for(`images/pages/careers/${icon}.svg`)} />
+            <div className='fill-text'>
+                <h4 className='values-box-subheader'>{header}</h4>
+            </div>
         </div>
+    </div>
+);
+
+
+const ColumnLG = ({ center, image, text, link }) => (
+    <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
+        <div>
+            <p className='column-margin'>{text}</p>
+        </div>
+        <img className='responsive' src={it.url_for(`images/pages/careers/${image}.jpg`)} />
+        {!!link &&
+            <div className='fill-text'>
+                <a href={link}><span>{it.L('Learn more')}</span></a>
+            </div>
+        }
     </div>
 );
 
@@ -79,13 +95,39 @@ const Careers = () => {
                     <ColumnSM header={it.L('Support')}  paragraph={it.L('Where supportive colleagues are like a second family.')} />
                 </div>
 
-                <div className='fill-bg-color'>
-                    <div className='container gr-row gr-padding-30 center-text'>
+                <div className='container gr-row'>
+                    <div className='gr-12'>
+                        <SeparatorLine no_wrapper sub_class='gr-padding-10' />
+                    </div>
+                </div>
+
+                <div className='values-group'>
+                    <div className='container gr-row gr-padding-10 center-text'>
                         <div className='gr-12 gr-padding-30'>
+                            <h1>{it.L('Our values')}</h1>
+                        </div>
+
+                        <ColumnValues header={it.L('Integrity')} icon='ic-intergrity'/>
+                        <ColumnValues header={it.L('Teamwork')} icon='ic-teamwork' />
+                        <ColumnValues header={it.L('Competence')} icon='ic-competence' />
+                        <ColumnValues header={it.L('Customer focus')} icon='ic-customer-focus' />
+
+                        <div className='fill-text center-element btn-margin-top'>
+                            <a className='button-secondary' href={it.url_for('about-us?anchor=our-values')}>
+                                <span>{it.L('Learn more')}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='fill-bg-color location-section'>
+                    <div className='container gr-row gr-padding-20 center-text'>
+                        <div className='gr-12 gr-padding-20'>
                             <h1>{it.L('Our locations')}</h1>
                         </div>
-                        <ColumnLG image='my@2'      text={it.L('Malaysia')} />
-                        <ColumnLG image='malta@1'   text={it.L('Malta')} />
+                        <ColumnLG image='malta@1'   text={it.L('Malta')}               link={it.url_for('malta')} />
+                        <ColumnLG image='my@2'      text={it.L('Cyberjaya, Malaysia')} link={it.url_for('cyberjaya')} />
+                        <ColumnLG image='labuan@2'  text={it.L('Labuan, Malaysia')}    link={it.url_for('labuan')} />
                     </div>
                 </div>
 
@@ -151,7 +193,7 @@ const Careers = () => {
 
             <div className='container'>
                 <div className='gr-padding-30 center-text'>
-                    <h1>{it.L('Open positions')}</h1>
+                    <h1 data-anchor>{it.L('Open positions')}</h1>
                     <p>{it.L('[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we\'ve developed a number of exciting career opportunities in the following areas:', it.website_name)}</p>
                 </div>
                 <div className='gr-row'>
