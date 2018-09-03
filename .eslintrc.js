@@ -28,6 +28,7 @@ module.exports = {
         'object-curly-spacing'              : ['error', 'always', { arraysInObjects: true, objectsInObjects: true }],
         'one-var'                           : ['error', { initialized: 'never', uninitialized: 'always' }],
         'prefer-destructuring'              : 0,
+        'space-unary-ops'                   : 'error',
         // react rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],
         'import/order'                      : ['error', { groups: [['builtin', 'external'], 'sibling', 'parent'], 'newlines-between': 'ignore' }],
