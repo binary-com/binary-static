@@ -15,6 +15,7 @@ module.exports = {
         camelcase                           : 0,
         semi                                : ['error', 'always'],
         'array-callback-return'             : 0,
+        'brace-style'                       : ['error', '1tbs', { allowSingleLine: true }],
         'func-names'                        : ['error', 'never'],
         'keyword-spacing'                   : ['error', { after: true }],
         'no-else-return'                    : ['error', { allowElseIf: true }],

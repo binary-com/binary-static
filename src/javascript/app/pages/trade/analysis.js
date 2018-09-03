@@ -97,8 +97,7 @@ const TradingAnalysis = (() => {
                         });
                         $digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
                     }
-                }
-                else {
+                } else {
                     GetTicks.request('', {
                         ticks_history: underlying,
                         count        : tick.toString(),
