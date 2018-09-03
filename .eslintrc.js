@@ -19,6 +19,7 @@ module.exports = {
         'eol-last'                          : ['error', 'always'],
         'func-names'                        : ['error', 'never'],
         'keyword-spacing'                   : ['error', { after: true }],
+        'no-console'                        : 'error',
         'no-else-return'                    : ['error', { allowElseIf: true }],
         'no-multi-assign'                   : 0,
         'no-param-reassign'                 : ['error', { props: false }],
