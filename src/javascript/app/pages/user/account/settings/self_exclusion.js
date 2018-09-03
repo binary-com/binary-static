@@ -296,7 +296,7 @@ const SelfExclusion = (() => {
             $('#ukgc_requirement_notice').setVisibility(1);
         }
         Client.set('session_start', moment().unix()); // used to handle session duration limit
-        const {exclude_until, timeout_until} = response.echo_req;
+        const { exclude_until, timeout_until } = response.echo_req;
         if (exclude_until || timeout_until) {
             Client.set(
                 'excluded_until',

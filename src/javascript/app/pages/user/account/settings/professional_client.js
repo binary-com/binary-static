@@ -81,7 +81,7 @@ const professionalClient = (() => {
                                 if (response.error) {
                                     $error.text(response.error.message).setVisibility(1);
                                 } else {
-                                    BinarySocket.send({get_account_status: 1}).then(() => {
+                                    BinarySocket.send({ get_account_status: 1 }).then(() => {
                                         populateProfessionalClient(true);
                                     });
                                 }

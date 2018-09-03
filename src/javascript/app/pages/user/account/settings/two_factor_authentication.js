@@ -30,7 +30,7 @@ const TwoFactorAuthentication = (() => {
     };
 
     const init = () => {
-        BinarySocket.send({ account_security: 1, totp_action: 'status'}).then((res) => {
+        BinarySocket.send({ account_security: 1, totp_action: 'status' }).then((res) => {
             $two_factor_loading.setVisibility(0);
 
             if (res.error) {
@@ -75,7 +75,7 @@ const TwoFactorAuthentication = (() => {
     };
 
     const initQRCode = () => {
-        BinarySocket.send({ account_security: 1, totp_action: 'generate'}).then((res) => {
+        BinarySocket.send({ account_security: 1, totp_action: 'generate' }).then((res) => {
             $qrcode_loading.setVisibility(0);
 
             if (res.error) {

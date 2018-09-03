@@ -85,7 +85,7 @@ const Purchase = (() => {
 
             const currency = Client.get('currency');
             let formula, multiplier;
-            const {contract_type} = passthrough;
+            const { contract_type } = passthrough;
             if (isLookback(contract_type)) {
                 multiplier = formatMoney(currency, passthrough.amount, false, 3, 2);
                 formula    = getLookBackFormula(contract_type, multiplier);

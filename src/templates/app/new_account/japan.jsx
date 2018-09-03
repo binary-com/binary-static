@@ -168,7 +168,7 @@ const Japan = () => (
                     row_class='hedging-assets invisible'
                     id='hedge_asset_amount'
                     label={it.L('Amount of above assets')}
-                    attributes={{maxLength: '20'}}
+                    attributes={{ maxLength: '20' }}
                 />
 
                 <FormRow type='select' id='motivation_circumstances' label={it.L('Motivation/Circumstances')}>

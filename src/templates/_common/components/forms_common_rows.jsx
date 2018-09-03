@@ -20,7 +20,7 @@ export const FirstName = ({ className, hint }) => (
         type='text'
         id='first_name'
         label={it.L('First name')}
-        attributes={{maxLength: '30', className: className || undefined, 'data-lpignore': true}}
+        attributes={{ maxLength: '30', className: className || undefined, 'data-lpignore': true }}
         hint={hint}
     />
 );
@@ -30,7 +30,7 @@ export const LastName = ({ className, hint }) => (
         type='text'
         id='last_name'
         label={it.L('Family name')}
-        attributes={{maxLength: '30', className: className || undefined, 'data-lpignore': true}}
+        attributes={{ maxLength: '30', className: className || undefined, 'data-lpignore': true }}
         hint={hint}
     />
 );
@@ -40,12 +40,12 @@ export const DateOfBirth = ({ className }) => (
         type='text'
         id='date_of_birth'
         label={it.L('Date of birth')}
-        attributes={{size: '12', readOnly: true, className: className || undefined, 'data-lpignore': true }}
+        attributes={{ size: '12', readOnly: true, className: className || undefined, 'data-lpignore': true }}
     />
 );
 
 export const Citizenship = ({ className }) => (
-    <FormRow type='select' id='citizen' label={it.L('Citizenship')} row_class={className} row_id='citizen_row' attributes={{single: 'single'}} />
+    <FormRow type='select' id='citizen' label={it.L('Citizenship')} row_class={className} row_id='citizen_row' attributes={{ single: 'single' }} />
 );
 
 export const Residence = () => (
@@ -74,7 +74,7 @@ export const AddressLine1 = ({ hint }) => (
         type='text'
         id='address_line_1'
         label={it.L('First line of home address')}
-        attributes={{maxLength: '70', 'data-lpignore': true}}
+        attributes={{ maxLength: '70', 'data-lpignore': true }}
         hint={hint}
     />
 );
@@ -84,7 +84,7 @@ export const AddressLine2 = ({ hint }) => (
         type='text'
         id='address_line_2'
         label={it.L('Second line of home address')}
-        attributes={{maxLength: '70', 'data-lpignore': true}}
+        attributes={{ maxLength: '70', 'data-lpignore': true }}
         hint={hint}
     />
 );
@@ -94,13 +94,13 @@ export const AddressCity = ({ hint }) => (
         type='text'
         id='address_city'
         label={it.L('Town/City')}
-        attributes={{maxLength: 35, 'data-lpignore': true}}
+        attributes={{ maxLength: 35, 'data-lpignore': true }}
         hint={hint}
     />
 );
 
 export const AddressState = () => (
-    <FormRow type='select' id='address_state' label={it.L('State/Province')} attributes={{single: 'single'}}/>
+    <FormRow type='select' id='address_state' label={it.L('State/Province')} attributes={{ single: 'single' }}/>
 );
 
 export const AddressPostcode = ({ hint }) => (
@@ -108,7 +108,7 @@ export const AddressPostcode = ({ hint }) => (
         type='text'
         id='address_postcode'
         label={it.L('Postal code/ZIP')}
-        attributes={{maxLength: '20', 'data-lpignore': true}}
+        attributes={{ maxLength: '20', 'data-lpignore': true }}
         hint={hint}
     />
 );
@@ -118,7 +118,7 @@ export const Phone = ({ hint }) => (
         type='text'
         id='phone'
         label={it.L('Telephone')}
-        attributes={{maxLength: '35', 'data-lpignore': true}}
+        attributes={{ maxLength: '35', 'data-lpignore': true }}
         hint={hint}
     />
 );
@@ -181,7 +181,7 @@ export const TaxInformationForm = () => (
                 <a id='tax_information_note_toggle' className='toggle-arrow' href='javascript:;'>{it.L('Read more.')}</a>
             </label>
 
-            <div id='tax_information_note' style={{display: 'none'}}>
+            <div id='tax_information_note' style={{ display: 'none' }}>
                 <p>{it.L('This requirement is mandated by the Common Reporting Standard (CRS) and the Foreign Account Tax Compliance Act (FATCA).')}</p>
                 <p>{it.L('Please enter your [_1]tax information[_2] below to continue.', '<a href="https://ec.europa.eu/taxation_customs/tin/tinByCountry.html" target="_blank">', '</a>')}</p>
                 <p>{it.L('Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe.')}</p>
@@ -194,7 +194,7 @@ export const TaxInformationForm = () => (
             label={it.L('Tax residence')}
             tooltip={it.L('Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
             className='invisible'
-            attributes={{multiple: 'multiple'}}
+            attributes={{ multiple: 'multiple' }}
         />
         <FormRow
             type='text'

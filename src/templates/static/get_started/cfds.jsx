@@ -18,7 +18,7 @@ const Cfds = () => (
                         id='sidebar-nav'
                         items={[
                             { id: 'what-cfds-trading',      href: '#what-cfds-trading',      text: it.L('What is CFD trading') },
-                            { id: 'how-trade-cfds',         href: '#how-trade-cfds',         text: it.L('How to trade CFDs')} ,
+                            { id: 'how-trade-cfds',         href: '#how-trade-cfds',         text: it.L('How to trade CFDs') } ,
                             { id: 'margin-policy',          href: '#margin-policy',          text: it.L('CFD margin policy') },
                             { id: 'contract-specification', href: '#contract-specification', text: it.L('CFD contract specifications') },
                         ]}

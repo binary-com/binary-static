@@ -12,7 +12,7 @@ const WithLayout = ({ children }) => {
     const className = `${it.current_route || ''}-content`;
     return (
         <div id='content' className={it.current_route ? className : undefined}>
-            <div id='page_info' style={{display: 'none'}}>
+            <div id='page_info' style={{ display: 'none' }}>
                 <Title />
                 <div id='content_class'>{className}</div>
             </div>

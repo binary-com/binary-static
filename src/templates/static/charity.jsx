@@ -52,7 +52,7 @@ const Charity = () => (
                             title   : it.L('Shelter Home’s Shelter Community Learning Centre 3'),
                             text    : it.L('The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future.'),
                             contacts: [
-                                { text: it.L('URL'), href: 'http://www.shelterhome.org', attr: {rel: 'noopener noreferrer'} },
+                                { text: it.L('URL'), href: 'http://www.shelterhome.org', attr: { rel: 'noopener noreferrer' } },
                             ],
                         },
                         {
@@ -63,7 +63,7 @@ const Charity = () => (
                                 {
                                     text: it.L('URL'),
                                     href: 'https://www.facebook.com/languagesclassesforrefugees',
-                                    attr: {rel: 'noopener noreferrer' },
+                                    attr: { rel: 'noopener noreferrer' },
                                 },
                                 {
                                     text  : it.L('Contact'),
