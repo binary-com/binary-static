@@ -368,7 +368,7 @@ const TermsAndConditions = () => (
 
         <h2 data-anchor>{it.L('R. Interpretation of Terms')}</h2>
         <ol>
-            <Li 
+            <Li
                 title={it.L('Account Balance')}
                 subtitle={it.L('Your account balance represents:')}
                 sub_list={[
@@ -389,7 +389,7 @@ const TermsAndConditions = () => (
             <Li title={it.L('Derivative')}                  subtitle={it.L('a financial instrument as defined in Article 2 Paragraph (5) of Regulation (EU) No 648/2012 of the European Parliament and of the Council (EMIR).')} />
             <Li title={it.L('Event')}                       subtitle={it.L('Event examples include circumstances whereby the type of Transaction, which your Order is related to, ceased to be offered, or a Corporate Event, or the insolvency of a Company whose shares are related to the subject matter of the Order, and others.')} />
             <Li title={it.L('Financial Instrument')}        subtitle={it.L('has the meaning attached to it by the Directive 2004/39/EC of the European Parliament and of the Council (MIFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MIFID II), whichever is in force.')} />
-            <Li title={it.L('Lot')}                         subtitle={it.L('a transaction unit representing a standardized quantity of the underlying instrument, as specified in the Product Disclosure and Specifications. On the Forex market 1 Lot constitutes the equivalent of 100,000 units of the base currency.')} />  
+            <Li title={it.L('Lot')}                         subtitle={it.L('a transaction unit representing a standardized quantity of the underlying instrument, as specified in the Product Disclosure and Specifications. On the Forex market 1 Lot constitutes the equivalent of 100,000 units of the base currency.')} />
             <Li title={it.L('Limit/Limit Price')}           subtitle={it.L('The price specified in your Limit Order.')} />
             <Li title={it.L('Limit Order')}                 subtitle={it.L('An Order to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price.')} />
             <Li title={it.L('Margin')}                      subtitle={it.L('The amount set aside by us from your Account Balance in order to open and maintain a Transaction, to cover your potential loss, if it occurs.')} />

@@ -24,6 +24,7 @@ module.exports = {
         'no-param-reassign'                 : ['error', { props: false }],
         'no-restricted-globals'             : 0,
         'no-script-url'                     : 0,
+        'no-trailing-spaces'                : ['error', { skipBlankLines: true }],
         'object-curly-spacing'              : ['error', 'always', { arraysInObjects: true, objectsInObjects: true }],
         'one-var'                           : ['error', { initialized: 'never', uninitialized: 'always' }],
         'prefer-destructuring'              : 0,
