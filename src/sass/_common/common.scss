@@ -15,6 +15,9 @@ body {
     .ui-widget {
         font-size: $FONT_SIZE_N;
     }
+    .mm-page {
+        overflow-x: hidden;
+    }
 }
 
 h1, h2, h3 {
@@ -508,6 +511,7 @@ ul.bullet.gr-row > li {
                         position: absolute;
                         margin-left: 0;
                         top: 37px;
+                        left: 0;
                         border-radius: $BORDER_RADIUS;
                         transition: margin-left 0.4s ease-in-out, width 0.2s 0.1s ease-in-out;
                     }
