@@ -124,59 +124,6 @@
             order: 1;
             display: inline-flex;
             border-right: 1px solid $COLOR_GRAY;
-
-            .acc-balance-container {
-                display: inline-flex;
-                align-items: center;
-
-                .acc-balance {
-                    display: flex;
-                    height: 100%;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: center;
-
-                    .acc-info {
-                        display: flex;
-                        height: 100%;
-                        flex-direction: column;
-                        align-items: flex-end;
-                        justify-content: center;
-                        border-right: 1px solid $COLOR_GRAY;
-
-                        p.acc-balance-accountid, p.acc-balance-currency {
-                            line-height: 0.5;
-                            color: $COLOR_LIGHT_BLACK;
-                            font-size: 0.875rem; //stylelint-disable-line number-max-precision
-                            margin: 0.5em 1rem;
-                            font-weight: 400;
-                            text-align: center;
-
-                            @media (max-width: 768px) {
-                                @include interpolate(font-size, 320px, 1440px, 10px, 14px);
-                            }
-                        }
-                    }
-                    p.acc-balance-amount {
-                        line-height: 100%;
-                        color: $COLOR_LIGHT_BLACK;
-                        font-size: 1rem;
-                        margin: 0.5rem 1rem;
-                        font-weight: 600;
-                        text-align: center;
-
-                        @media (max-width: 768px) {
-                            @include interpolate(font-size, 320px, 1440px, 10px, 14px);
-                        }
-                    }
-                }
-                button.btn {
-                    margin: 0 16px 0 4px;
-                    @media (max-width: 768px) {
-                        margin: 0 8px 0 4px;
-                    }
-                }
-            }
         }
         .notifications-toggle {
             justify-content: flex-end;

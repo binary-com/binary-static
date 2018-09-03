@@ -1,11 +1,79 @@
+.acc-balance-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .acc-balance {
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .acc-switcher-toggle {
+            position: relative;
+            height: 100%;
+        }
+        .acc-info {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            cursor: pointer;
+
+            &:hover {
+                background: $COLOR_BRANDBLUE_5;
+            }
+            p.acc-balance-accountid, p.acc-balance-currency {
+                line-height: 0.5;
+                color: $COLOR_LIGHT_BLACK;
+                font-size: 0.875rem; //stylelint-disable-line number-max-precision
+                margin: 0.5em 1rem;
+                font-weight: 400;
+                text-align: center;
+
+                @media (max-width: 768px) {
+                    @include interpolate(font-size, 320px, 1440px, 10px, 14px);
+                }
+            }
+        }
+        p.acc-balance-amount {
+            line-height: 100%;
+            color: $COLOR_LIGHT_BLACK;
+            font-size: 1rem;
+            padding: 8px 1rem;
+            font-weight: 600;
+            margin: 0;
+            text-align: center;
+            border-left: 1px solid $COLOR_GRAY;
+
+            @media (max-width: 768px) {
+                @include interpolate(font-size, 320px, 1440px, 10px, 14px);
+            }
+        }
+    }
+    button.btn {
+        margin: 0 16px 0 4px;
+        @media (max-width: 768px) {
+            margin: 0 8px 0 4px;
+        }
+    }
+}
+
 .acc-switcher-wrapper {
     position: absolute;
     opacity: 0;
     pointer-events: none;
-    background: $COLOR_WHITE;
+    background: $COLOR_LIGHT_GRAY;
     border: 1px solid $COLOR_GRAY;
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     transition: transform 0.25s ease, opacity 0.25s linear;
+    right: 0;
+    top: calc(100% + 4px);
+    width: 186px;
+    box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.14);
+    border-radius: $BORDER_RADIUS;
 
     &-enter, &-enter-done {
         opacity: 1;
@@ -15,38 +83,66 @@
     &-exit {
         opacity: 0;
         pointer-events: none;
-        transform: translateY(-30px);
+        transform: translateY(-20px);
     }
-    .acc-switcher-account {
-        cursor: pointer;
-        padding: 4px 16px;
-        position: relative;
+    .acc-switcher-items {
+        .acc-switcher-header {
+            margin: 0;
+            padding: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .acc-switcher-list {
+            margin: 0 8px 8px;
+            background: $COLOR_WHITE;
+            border: 1px solid $COLOR_GRAY;
+            border-radius: $BORDER_RADIUS;
 
-        &:before {
-            content: '\25EF';
-            font-size: 2.5rem;
-            top: 0;
-            position: absolute;
-            left: 0;
-            height: 100%;
-            width: 75px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        p.acc-switcher-accountid {
-            font-weight: 300;
-            font-size: 0.75rem;
-            line-height: 0.5;
-            padding-left: 3rem;
-        }
-        p.acc-switcher-currency {
-            font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
-            line-height: 0.5;
-            padding-left: 3rem;
-        }
-        &:hover {
-            background: $COLOR_GRAY;
+            .acc-switcher-account {
+                cursor: pointer;
+                padding: 12px 16px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .acc-switcher-accountid {
+                    font-weight: 300;
+                    font-size: 0.75rem;
+                    line-height: 0.5;
+                }
+                .acc-switcher-currency {
+                    font-size: 10px;
+                    line-height: 0.5;
+                    text-transform: uppercase;
+                    background: $COLOR_GRAY;
+                    border-radius: $BORDER_RADIUS;
+                    text-align: center;
+                    padding: 5px 0;
+                    width: 32px;
+                }
+                &:hover {
+                    background: $COLOR_BRANDBLUE_5;
+                }
+            }
+            .acc-logout {
+                border-top: 1px solid $COLOR_GRAY;
+                cursor: pointer;
+                font-size: 12px;
+                padding: 10px 16px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                .inline-icon {
+                    width: 16px;
+                    height: auto;
+                    margin-left: 8px;
+                }
+                &:hover {
+                    background: $COLOR_BRANDBLUE_5;
+                }
+            }
         }
     }
 }
