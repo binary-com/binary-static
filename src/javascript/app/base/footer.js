@@ -20,10 +20,7 @@ const Footer = (() => {
     };
 
     const showWarning = (should_show_warning) => {
-        const $footer = $('#footer-last');
-        $footer.find('p')[`${should_show_warning ? 'add' : 'remove'}Class`]('font-n');
-        $footer.find('.eu-only').setVisibility(should_show_warning);
-        $footer.setVisibility(1);
+        $('#footer-regulatory .eu-only').setVisibility(should_show_warning);
     };
 
     const clearNotification = () => {
