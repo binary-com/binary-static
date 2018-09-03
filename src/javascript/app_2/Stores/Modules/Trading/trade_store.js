@@ -235,6 +235,10 @@ export default class TradeStore extends BaseStore {
 
             this.is_query_string_applied = true;
 
+            if (/\bcontract_type\b/.test(Object.keys(new_state))) {
+                this.validateAllProperties();
+            }
+
             this.debouncedProposal();
         }
     }
@@ -244,6 +248,14 @@ export default class TradeStore extends BaseStore {
     @action.bound
     requestProposal() {
         const requests = createProposalRequests(this);
+
+        if (Object.values(this.validation_errors).some(e => e.length)) {
+            this.proposal_info     = {};
+            this.purchase_info     = {};
+            WS.forgetAll('proposal');
+            return;
+        }
+
         if (!isEmptyObject(requests)) {
             const proper_proposal_params_for_query_string = getProposalParametersName(requests);
 

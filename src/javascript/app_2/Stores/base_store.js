@@ -211,5 +211,17 @@ export default class BaseStore {
         validator.isPassed();
         this.setValidationErrorMessages(property, validator.errors.get(property));
     }
+
+    /**
+     * Validates all properties which validation rule has been set for.
+     *
+     */
+    @action
+    validateAllProperties() {
+        this.validation_errors = {};
+        Object.keys(this.validation_rules).forEach(p => {
+            this.validateProperty(p, this[p]);
+        });
+    }
 }
 

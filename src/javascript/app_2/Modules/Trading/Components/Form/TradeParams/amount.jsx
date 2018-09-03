@@ -8,7 +8,9 @@ import Dropdown                 from '../../../../../App/Components/Form/dropdow
 import Fieldset                 from '../../../../../App/Components/Form/fieldset.jsx';
 import InputField               from '../../../../../App/Components/Form/input_field.jsx';
 import Client                   from '../../../../../../_common/base/client_base';
-import { addComma }             from '../../../../../../_common/base/currency_base';
+import { 
+    addComma,
+    getDecimalPlaces }          from '../../../../../../_common/base/currency_base';
 import { localize }             from '../../../../../../_common/localize';
 
 const Amount = ({
@@ -61,14 +63,16 @@ const Amount = ({
                     />
                 }
                 <InputField
-                    type='number'
-                    name='amount'
-                    value={amount}
-                    onChange={onChange}
-                    is_float
-                    prefix={has_currency ? currency : null}
-                    is_nativepicker={is_nativepicker}
                     error_messages = {validation_errors.amount}
+                    fractional_digits={getDecimalPlaces(currency)}
+                    is_float
+                    is_nativepicker={is_nativepicker}
+                    max_length={10}
+                    name='amount'
+                    onChange={onChange}
+                    prefix={has_currency ? currency : null}
+                    type='number'
+                    value={amount}
                 />
             </div>
         </Fieldset>
