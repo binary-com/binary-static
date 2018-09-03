@@ -204,17 +204,19 @@ const FooterNormal = () => (
                 <div className='gr-row'>
                     <div className='gr-12'>
                         <div className='icon-row flex-row'>
-                            <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
-                                <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
-                            </a>
-                            <div className='lga-gamstop-icon-container'>
-                                <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
-                                    <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
+                            <div className='regulation-logos flex-row'>
+                                <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
+                                    <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                 </a>
-                                <div data-show='iom, malta, default' className='id-hide'>
-                                    <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
-                                        <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
+                                <div className='lga-gamstop-icon-container'>
+                                    <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
+                                        <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
                                     </a>
+                                    <div data-show='iom, malta, default' className='id-hide'>
+                                        <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
+                                            <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <SocialIcons
