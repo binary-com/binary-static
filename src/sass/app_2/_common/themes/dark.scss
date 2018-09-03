@@ -31,13 +31,18 @@ body.dark, .theme-wrapper.dark {
             .menu-right .acc-balance-container {
                 .acc-balance {
                     .acc-info {
-                        border-color: $COLOR_BRANDBLUE_85;
-
                         p {
                             color: $COLOR_BRANDBLUE_40;
                         }
+                        &:hover:not(.show) {
+                            background-color: $COLOR_BRANDBLUE_85;
+                        }
+                        &.show:after {
+                            background: $COLOR_WHITE;
+                        }
                     }
                     .acc-balance-amount {
+                        border-color: $COLOR_BRANDBLUE_85;
                         color: $COLOR_WHITE;
 
                         .symbols {

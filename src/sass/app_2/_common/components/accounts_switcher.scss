@@ -10,7 +10,7 @@
         align-items: center;
         justify-content: center;
 
-        .acc-switcher-toggle {
+        .acc-switcher-container {
             position: relative;
             height: 100%;
         }
@@ -22,10 +22,20 @@
             justify-content: center;
             cursor: pointer;
 
-            &:hover {
+            &:hover:not(.show) {
                 background: $COLOR_BRANDBLUE_5;
             }
+            &.show:after {
+                content: '';
+                height: 2px;
+                width: 100%;
+                background: $COLOR_BLUE;
+                position: absolute;
+                top: calc(100% - 2px);
+                left: 0;
+            }
             p.acc-balance-accountid, p.acc-balance-currency {
+                pointer-events: none;
                 line-height: 0.5;
                 color: $COLOR_LIGHT_BLACK;
                 font-size: 0.875rem; //stylelint-disable-line number-max-precision
@@ -61,36 +71,40 @@
     }
 }
 
-.acc-switcher-wrapper {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-    background: $COLOR_LIGHT_GRAY;
-    border: 1px solid $COLOR_GRAY;
-    transform: translateY(-20px);
-    transition: transform 0.25s ease, opacity 0.25s linear;
-    right: 0;
-    top: calc(100% + 4px);
-    width: 186px;
-    box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.14);
-    border-radius: $BORDER_RADIUS;
-
-    &-enter, &-enter-done {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-    }
-    &-exit {
+.acc-switcher {
+    &-wrapper {
+        position: absolute;
         opacity: 0;
         pointer-events: none;
+        background: $COLOR_LIGHT_GRAY;
+        border: 1px solid $COLOR_GRAY;
         transform: translateY(-20px);
+        transition: transform 0.25s ease, opacity 0.25s linear;
+        right: 0;
+        top: calc(100% + 4px);
+        width: 186px;
+        box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.14);
+        border-radius: $BORDER_RADIUS;
+
+        &-enter, &-enter-done {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        &-exit {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-20px);
+        }
     }
-    .acc-switcher-items {
+    &-items {
+        height: 100%;
+
         .acc-switcher-header {
             margin: 0;
-            padding: 8px;
-            font-size: 14px;
-            font-weight: 500;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 400;
         }
         .acc-switcher-list {
             margin: 0 8px 8px;
@@ -143,6 +157,47 @@
                     background: $COLOR_BRANDBLUE_5;
                 }
             }
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .acc-switcher {
+        &-wrapper {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+        }
+        &-items {
+            background: $COLOR_BRANDBLUE_95;
+            border-color: $COLOR_BRANDBLUE_85;
+        }
+        &-account:hover {
+            background-color: $COLOR_BRANDBLUE_85;
+        }
+        &-list {
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .acc-switcher-accountid {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            .acc-switcher-currency {
+                color: $COLOR_WHITE;
+                background: $COLOR_BRANDBLUE_75;
+            }
+            .acc-logout {
+                border-color: $COLOR_BRANDBLUE_85;
+
+                span {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+                &:hover {
+                    background-color: $COLOR_BRANDBLUE_85;
+                }
+            }
+        }
+        &-header {
+            color: $COLOR_BRANDBLUE_40;
         }
     }
 }

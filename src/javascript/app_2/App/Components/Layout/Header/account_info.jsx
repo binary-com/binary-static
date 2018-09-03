@@ -1,13 +1,14 @@
+import classNames        from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import AccountSwitcher   from '../../Elements/account_switcher2.jsx';
+import AccountSwitcher   from '../../Elements/account_switcher.jsx';
 import { localize }      from '../../../../../_common/localize';
 
 const AccountInfo = ({ balance, currency, loginid, is_dialog_on, toggleDialog }) => (
     <div className='acc-balance'>
-        <div className='acc-switcher-toggle'>
-            <div className='acc-info' onClick={toggleDialog}>
+        <div className='acc-switcher-container'>
+            <div className={classNames('acc-info', { 'show': is_dialog_on })} onClick={toggleDialog}>
                 <p className='acc-balance-currency'>{`${(currency || '').toUpperCase()} ${localize('Account')}`}</p>
                 <p className='acc-balance-accountid'>{loginid}</p>
             </div>
@@ -19,6 +20,7 @@ const AccountInfo = ({ balance, currency, loginid, is_dialog_on, toggleDialog })
             >
                 <div className='acc-switcher-wrapper'>
                     <AccountSwitcher
+                        is_visible={is_dialog_on}
                         toggle={toggleDialog}
                     />
                 </div>
