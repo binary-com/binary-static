@@ -25,14 +25,19 @@
             &:hover:not(.show) {
                 background: $COLOR_BRANDBLUE_5;
             }
-            &.show:after {
-                content: '';
-                height: 2px;
-                width: 100%;
-                background: $COLOR_BLUE;
-                position: absolute;
-                top: calc(100% - 2px);
-                left: 0;
+            &.show {
+                .select-arrow {
+                    transform: rotate(180deg);
+                }
+                &:after {
+                    content: '';
+                    height: 2px;
+                    width: 100%;
+                    background: $COLOR_BLUE;
+                    position: absolute;
+                    top: calc(100% - 2px);
+                    left: 0;
+                }
             }
             p.acc-balance-accountid, p.acc-balance-currency {
                 pointer-events: none;
@@ -42,10 +47,23 @@
                 margin: 0.5em 1rem;
                 font-weight: 400;
                 text-align: center;
+                padding-right: 16px;
 
                 @media (max-width: 768px) {
                     @include interpolate(font-size, 320px, 1440px, 10px, 14px);
                 }
+            }
+            .select-arrow {
+                pointer-events: none;
+                position: absolute;
+                top: 16px;
+                right: 8px;
+                line-height: 1;
+                transition: transform 0.25s ease;
+                transform: rotate(0);
+                transform-origin: 50% 45%;
+                color: $COLOR_GRAY;
+                font-size: 1.1rem;
             }
         }
         p.acc-balance-amount {

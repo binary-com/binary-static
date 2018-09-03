@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import AccountSwitcher   from '../../Elements/account_switcher.jsx';
+import { IconArrow }     from '../../../../Assets/Common';
 import { localize }      from '../../../../../_common/localize';
 
 const AccountInfo = ({ balance, currency, loginid, is_dialog_on, toggleDialog }) => (
@@ -11,6 +12,7 @@ const AccountInfo = ({ balance, currency, loginid, is_dialog_on, toggleDialog })
             <div className={classNames('acc-info', { 'show': is_dialog_on })} onClick={toggleDialog}>
                 <p className='acc-balance-currency'>{`${(currency || '').toUpperCase()} ${localize('Account')}`}</p>
                 <p className='acc-balance-accountid'>{loginid}</p>
+                <IconArrow className='select-arrow' />
             </div>
             <CSSTransition
                 in={is_dialog_on}
