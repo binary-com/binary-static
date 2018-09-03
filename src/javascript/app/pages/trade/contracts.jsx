@@ -126,7 +126,7 @@ class Contracts extends React.Component {
                     className={`contracts_dropdown ${open ? '' : 'hidden'}`}
                     ref={this.saveRef.bind(null, 'wrapper')}
                 >
-                    <div className={`mobile_close invisible ${open && is_mobile ? '': 'disabled'}`}>
+                    <div className={`mobile_close invisible ${open && is_mobile ? '' : 'disabled'}`}>
                         <span>{localize('Select Trade Type')}</span>
                         <span className='close' onClick={this.closeDropDown} />
                     </div>

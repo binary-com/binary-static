@@ -49,7 +49,7 @@ const List = ({
                         <div className='symbols'>
                             {Object.entries(submarket.symbols).map(([u_code, symbol]) => (
                                 <div
-                                    className={`symbol_name ${u_code===underlying ? 'active' : ''}`}
+                                    className={`symbol_name ${u_code === underlying ? 'active' : ''}`}
                                     key={u_code}
                                     id={u_code}
                                     onClick={onUnderlyingClick.bind(null, u_code, market_code)}
@@ -181,8 +181,8 @@ class Markets extends React.Component {
                 arr.push(key);
             }
         });
-        if (this.state.active_market !== arr[arr.length-1]) {
-            if (position <=10) {
+        if (this.state.active_market !== arr[arr.length - 1]) {
+            if (position <= 10) {
                 curr_market = arr[0];
             } else {
                 curr_market = arr[arr.length - 1];

@@ -29,6 +29,7 @@ module.exports = {
         'one-var'                           : ['error', { initialized: 'never', uninitialized: 'always' }],
         'prefer-destructuring'              : 0,
         'space-in-parens'                   : ['error', 'never'],
+        'space-infix-ops'                   : 'error',
         'space-unary-ops'                   : 'error',
         // react rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],

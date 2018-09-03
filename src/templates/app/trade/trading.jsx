@@ -145,7 +145,7 @@ const Trading = () => (
                                         <div className='big-col'>
                                             <select id='selected_tick' className='small_width_input'>
                                                 { Array.from(new Array(5)).map((x, idx) => (
-                                                    <option key={idx+1} value={idx+1}>{idx+1}</option>
+                                                    <option key={idx + 1} value={idx + 1}>{idx + 1}</option>
                                                 ))}
                                             </select>
                                         </div>
