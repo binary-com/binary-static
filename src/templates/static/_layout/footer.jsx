@@ -125,7 +125,7 @@ const FooterNormal = () => (
         <div id='footer-menu' className='primary-bg-color gr-padding-10'>
             <div className='container'>
                 <div className='gr-row gr-padding-10'>
-                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter'>
+                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter gr-padding-30'>
                         <div className='gr-row'>
                             <FooterColumn
                                 header={it.L('Our Company')}
