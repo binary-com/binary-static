@@ -21,11 +21,11 @@ const SocialIcons = ({ networks }) => (
 const StatusNotification = () => (
     <div id='status_notification'>
         <div id='status_notification_type'>
-            <img src={it.url_for('images/server_status/ic-warning.svg')}  alt='Information icon'/>
+            <img src={it.url_for('images/server_status/ic-warning.svg')}  alt='Information icon' />
         </div>
-        <p id='status_notification_text'/>
+        <p id='status_notification_text' />
         <div id='status_notification_close'>
-            <img src={it.url_for('images/server_status/ic-close.svg')}  alt='Warning icon'/>
+            <img src={it.url_for('images/server_status/ic-close.svg')}  alt='Warning icon' />
         </div>
     </div>
 );

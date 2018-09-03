@@ -41,7 +41,7 @@ const TypesOfAccounts = () => (
         <h1>{it.L('Types of MetaTrader 5 accounts')}</h1>
 
         <div id='loading_types'>
-            <Loading/>
+            <Loading />
         </div>
 
         <div id='content_types' className='invisible'>

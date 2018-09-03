@@ -172,7 +172,7 @@ class Contracts extends React.Component {
 }
 /* eslint-disable react/no-render-return-value */
 export const init = (contracts, contracts_tree, selected) => ReactDOM.render(
-    <Contracts contracts={contracts} contracts_tree={contracts_tree} selected={selected}/>,
+    <Contracts contracts={contracts} contracts_tree={contracts_tree} selected={selected} />,
     getElementById('contract_component')
 );
 /* eslint-enable react/no-render-return-value */

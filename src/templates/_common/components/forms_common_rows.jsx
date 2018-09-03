@@ -100,7 +100,7 @@ export const AddressCity = ({ hint }) => (
 );
 
 export const AddressState = () => (
-    <FormRow type='select' id='address_state' label={it.L('State/Province')} attributes={{ single: 'single' }}/>
+    <FormRow type='select' id='address_state' label={it.L('State/Province')} attributes={{ single: 'single' }} />
 );
 
 export const AddressPostcode = ({ hint }) => (

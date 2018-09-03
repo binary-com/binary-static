@@ -200,15 +200,15 @@ const BIEL = () => (
         <p>{it.L('Should you be unsatisfied with our response, you can also escalate your complaint to the Office of the Arbiter for Financial Services, who is independent from us. Complaints to the Arbiter for Financial Services should always be made in a prescribed form and addressed to the:')}</p>
         <address>
             <p>
-                Office of the Arbiter for Financial Services<br/>
-                1st floor, St Calcedonius Square<br/>
-                Floriana FRN1530<br/>
+                Office of the Arbiter for Financial Services<br />
+                1st floor, St Calcedonius Square<br />
+                Floriana FRN1530<br />
                 Malta
             </p>
 
             <p>
-                {it.L('Telephone')}: +356 (or 00356) 2124 9245<br/>
-                {it.L('E-mail')}: <a href='mailto:complaint.info@financialarbiter.org.mt'>complaint.info@financialarbiter.org.mt</a><br/>
+                {it.L('Telephone')}: +356 (or 00356) 2124 9245<br />
+                {it.L('E-mail')}: <a href='mailto:complaint.info@financialarbiter.org.mt'>complaint.info@financialarbiter.org.mt</a><br />
                 {it.L('Website')}: <a href='http://financialarbiter.org.mt/en/Pages/Home.aspx' target='_blank' rel='noopener noreferrer'>http://financialarbiter.org.mt/en/Pages/Home.aspx</a>
             </p>
         </address>
