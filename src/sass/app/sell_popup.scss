@@ -176,6 +176,9 @@
             #sell_details_audit {
                 border-left: none;
             }
+            @media only screen and (min-width: 767px) and (max-width: 768px) { /* ipad */
+                max-height: 450px;
+            }
         }
     }
 }
