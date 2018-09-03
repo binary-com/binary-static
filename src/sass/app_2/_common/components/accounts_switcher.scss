@@ -29,6 +29,9 @@
                 .select-arrow {
                     transform: rotate(180deg);
                 }
+                p.acc-balance-accountid, p.acc-balance-currency {
+                    font-weight: 500;
+                }
                 &:after {
                     content: '';
                     height: 2px;

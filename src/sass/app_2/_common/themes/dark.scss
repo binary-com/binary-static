@@ -37,8 +37,13 @@ body.dark, .theme-wrapper.dark {
                         &:hover:not(.show) {
                             background-color: $COLOR_BRANDBLUE_85;
                         }
-                        &.show:after {
-                            background: $COLOR_WHITE;
+                        &.show {
+                            p {
+                                color: $COLOR_WHITE;
+                            }
+                            &:after {
+                                background: $COLOR_WHITE;
+                            }
                         }
                     }
                     .acc-balance-amount {
