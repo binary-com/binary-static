@@ -8,11 +8,11 @@ const FooterColumn = ({ header, items }) => (
     </div>
 );
 
-const SocialIcons = ({ networks, is_centered }) => (
-    <div id='social-icons' className={`gr-padding-10 gr-row ${is_centered && 'gr-row-align-center' || ''}`}>
+const SocialIcons = ({ networks }) => (
+    <div id='social-icons' className='social-icons flex-row'>
         { networks.map((net, idx) => (
-            <a key={idx} href={net.href} target='_blank' className={`${is_centered ? 'gr-2' : 'gr-3'} gr-no-gutter-right`} rel='noopener noreferrer'>
-                <img className='responsive' src={it.url_for(`images/pages/footer/${net.media}.svg`)} />
+            <a key={idx} href={net.href} target='_blank' rel='noopener noreferrer'>
+                <img src={it.url_for(`images/pages/footer/${net.media}.svg`)} />
             </a>
         ))}
     </div>
@@ -125,7 +125,7 @@ const FooterNormal = () => (
         <div id='footer-menu' className='primary-bg-color gr-padding-10'>
             <div className='container'>
                 <div className='gr-row gr-padding-10'>
-                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter'>
+                    <div className='gr-6 gr-12-m gr-parent gr-no-gutter gr-padding-30'>
                         <div className='gr-row'>
                             <FooterColumn
                                 header={it.L('Our Company')}
@@ -143,12 +143,12 @@ const FooterNormal = () => (
                             <FooterColumn
                                 header={it.L('Education')}
                                 items={[
-                                    { text: it.L('Why Us?'),            href: it.url_for('why-us') },
-                                    { text: it.L('Getting Started'),    href: it.url_for('get-started') },
-                                    { text: it.L('Platform Tour'),      href: it.url_for('tour') },
-                                    { text: it.L('GamCare'),            href: 'http://www.gamcare.org.uk/',  className: 'id-hide', target: '_blank' },
-                                    { text: it.L('Academy'),            href: 'https://academy.binary.com',  className: 'academy', target: '_blank' },
-                                    { text: it.L('Webinars'),           href: 'https://academy.binary.com/en/events/',  className: 'id-hide', target: '_blank' },
+                                    { text: it.L('Why Us?'),         href: it.url_for('why-us') },
+                                    { text: it.L('Getting Started'), href: it.url_for('get-started') },
+                                    { text: it.L('Platform Tour'),   href: it.url_for('tour') },
+                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',             className: 'id-hide', target: '_blank' },
+                                    { text: it.L('Academy'),         href: 'https://academy.binary.com',             className: 'academy', target: '_blank' },
+                                    { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/',  className: 'id-hide', target: '_blank' },
                                 ]}
                             />
 
@@ -188,8 +188,8 @@ const FooterNormal = () => (
                                 items={[
                                     { text: it.L('Affiliate Programme'),     href: it.url_for('affiliate/signup') },
                                     { text: it.L('IB Programme'),            href: it.url_for('ib-programme/ib-signup') },
-                                    { text: it.L('API'),                     href: 'https://developers.binary.com',    target: '_blank' },
-                                    { text: it.L('Binary Shop'),             href: 'https://shop.binary.com',          target: '_blank' },
+                                    { text: it.L('API'),                     href: 'https://developers.binary.com', target: '_blank' },
+                                    { text: it.L('Binary Shop'),             href: 'https://shop.binary.com',       target: '_blank' },
                                     { text: it.L('Charitable Activities'),   href: it.url_for('charity') },
                                     { text: it.L('All Partnership Options'), href: it.url_for('partners') },
                                 ]}
@@ -199,66 +199,72 @@ const FooterNormal = () => (
                 </div>
             </div>
         </div>
-        <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10 gr-child'>
+        <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10'>
             <div className='container'>
                 <div className='gr-row'>
-                    <p id='regulatory-text' className='gr-9 gr-12-m gr-7-p gr-padding-10 gr-parent content-inverse-color no-margin'>
-                        {it.L(
-                            'In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK ([_1]). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. [_2] issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission ([_3]), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker\'s Licence no. 1010285 issued on 1 July 2017). View complete [_4]. Some products are not available in all countries. This website\'s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.',
-                            `<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank">${it.L('license reference no: 39172')}</a>`,
-                            'MGA/B2C/102/2000',
-                            `<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank">${it.L('license reference no: 39495')}</a>`,
-                            `<a href=${it.url_for('regulation')}>${it.L('Regulatory Information')}</a>`,
-                        )}
-                    </p>
-                    <div className='gr-3 gr-12-m gr-5-p center-text' id='social-networks'>
-                        <div className='gr-row gr-row-align-center-m gr-padding-10 gr-parent id-hide'>
-                            <div className='gr-5 gr-6-m'>
+                    <div className='gr-12'>
+                        <div className='icon-row flex-row'>
+                            <div className='regulation-logos flex-row id-hide'>
                                 <a href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
                                     <img id='iom_icon_footer' className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                 </a>
-                            </div>
-                            <div className='gr-7 gr-6-m'>
                                 <div className='lga-gamstop-icon-container'>
                                     <a href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
                                         <img id='lga_icon_footer' className='responsive' src={it.url_for('images/pages/footer/mga-logo-footer.svg')} />
                                     </a>
-                                    <div data-show='iom, malta, default' className='id-hide'>
+                                    <div data-show='iom, malta, default'>
                                         <a href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
                                             <img id='gamstop_icon_footer' className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
                                         </a>
                                     </div>
                                 </div>
                             </div>
+                            <SocialIcons
+                                networks={[
+                                    { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
+                                    { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
+                                    { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
+                                    { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
+                                    { media: 'telegram',    href: 'https://t.me/binarydotcom' },
+                                    { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
+                                ]}
+                            />
                         </div>
-
-                        <SocialIcons
-                            is_centered
-                            networks={[
-                                { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
-                                { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
-                                { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
-                                { media: 'telegram',    href: 'https://t.me/binarydotcom' },
-                                { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
-                            ]}
-                        />
                     </div>
                 </div>
-            </div>
-        </div>
-        <div id='footer-last' className='primary-bg-color invisible'>
-            <div className='container'>
-                <div className='gr-padding-10'>
-                    <p className='gambling content-inverse-color no-para-margin'>
-                        {it.L('[_1] offers complete trading solutions for binary options[_2] and CFDs[_3].', it.website_name, '<span class="eu-only invisible">', '</span>')}
-                    </p>
-                    <p className='gambling content-inverse-color no-para-margin'>
-                        {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive – please play responsibly. Read about [_1]Responsible Trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
-                    </p>
-                    <p className='gambling content-inverse-color no-para-margin invisible eu-only'>
-                        {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. [_1]Between 74-89% of retail investor accounts lose money when trading CFDs.[_2] You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.', '<strong>', '</strong>')}
-                    </p>
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        <p>
+                            {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156).')}
+                        </p>
+                        <p>
+                            {it.L('In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence [_1]reference no: 39172[_2]).', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39172" target="_blank" rel="noopener noreferrer">', '</a>')}
+                        </p>
+                        <p>
+                            {it.L('In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/B2C/102/2000 issued on 26 May 2015), for UK clients by (2) the UK Gambling Commission (licence [_1]reference no: 39495[_2]), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker\'s Licence no. 1010285 issued on 1 July 2017). View complete [_3]Regulatory Information[_2].', '<a href="https://secure.gamblingcommission.gov.uk/PublicRegister/Search/Detail/39495" target="_blank" rel="noopener noreferrer">', '</a>', `<a href="${it.url_for('regulation')}">`)}
+                        </p>
+                    </div>
+                </div>
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        <div className='about-binary'>
+                            <p>
+                                {it.L('Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about [_1]Responsible Trading[_2]. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18.', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        <div className='risk-warning'>
+                            <p>
+                                {it.L('Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset.')}
+                            </p>
+                            <p className='eu-only invisible'>
+                                {it.L('CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74-89% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money.')}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -266,6 +272,7 @@ const FooterNormal = () => (
         <StatusNotification />
     </div>
 );
+
 const Footer = () => (
     (it.language.toLowerCase() === 'ja') ? <FooterJA /> : <FooterNormal />
 );
