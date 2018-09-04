@@ -16,11 +16,12 @@ const getAccountInfo = (loginid) => {
         loginid,
         is_virtual,
         icon : account_type.toLowerCase(), // TODO: display the icon
-        title: account_type.toLowerCase() === 'virtual' ? localize('demo') : account_type,
+        title: account_type.toLowerCase() === 'virtual' ? localize('DEMO') : account_type,
     };
 };
 
 const makeAccountsList = () => Client.getAllLoginids().map(loginid => (
+    loginid !== Client.get('loginid') &&
     !Client.get('is_disabled', loginid) &&
     Client.get('token', loginid) ?
         getAccountInfo(loginid) :
@@ -74,24 +75,21 @@ class AccountSwitcher extends React.Component {
         if (!Client.isLoggedIn() || !(this.state.accounts_list.length > 0)) return false;
 
         return (
-            <div className='acc-switcher-items' ref={this.setWrapperRef}>
-                <h4 className='acc-switcher-header'>{localize('Accounts')}</h4>
-                <div className='acc-switcher-list'>
-                    {this.state.accounts_list.map((account) => (
-                        <React.Fragment key={account.loginid}>
-                            <div
-                                className={classNames('acc-switcher-account', account.icon)}
-                                onClick={this.switchAccount.bind(null, account.loginid)}
-                            >
-                                <span className='acc-switcher-accountid'>{account.loginid}</span>
-                                <span className='acc-switcher-currency'>{account.title}</span>
-                            </div>
-                        </React.Fragment>
-                    ))}
-                    <div className='acc-logout' onClick={requestLogout}>
-                        <span className='acc-logout-text'>{localize('Log out')}</span>
-                        <IconLogout className='drawer-icon'/>
-                    </div>
+            <div className='acc-switcher-list' ref={this.setWrapperRef}>
+                {this.state.accounts_list.map((account) => (
+                    <React.Fragment key={account.loginid}>
+                        <div
+                            className={classNames('acc-switcher-account', account.icon)}
+                            onClick={this.switchAccount.bind(null, account.loginid)}
+                        >
+                            <span className='acc-switcher-id'>{account.loginid}</span>
+                            <span className='acc-switcher-type'>{account.title}</span>
+                        </div>
+                    </React.Fragment>
+                ))}
+                <div className='acc-logout' onClick={requestLogout}>
+                    <span className='acc-logout-text'>{localize('Log out')}</span>
+                    <IconLogout className='drawer-icon'/>
                 </div>
             </div>
         );

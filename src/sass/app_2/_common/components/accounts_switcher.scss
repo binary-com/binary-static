@@ -29,7 +29,7 @@
                 .select-arrow {
                     transform: rotate(180deg);
                 }
-                p.acc-balance-accountid, p.acc-balance-currency {
+                p.acc-balance-id, p.acc-balance-type {
                     font-weight: 500;
                 }
                 &:after {
@@ -42,13 +42,13 @@
                     left: 0;
                 }
             }
-            p.acc-balance-accountid, p.acc-balance-currency {
+            p.acc-balance-id, p.acc-balance-type {
                 pointer-events: none;
                 line-height: 0.5;
                 color: $COLOR_LIGHT_BLACK;
                 font-size: 0.875rem; //stylelint-disable-line number-max-precision
                 margin: 0.5em 1rem;
-                font-weight: 400;
+                font-weight: 300;
                 text-align: center;
                 padding-right: 16px;
 
@@ -74,7 +74,7 @@
             color: $COLOR_LIGHT_BLACK;
             font-size: 1rem;
             padding: 8px 1rem;
-            font-weight: 600;
+            font-weight: 500;
             margin: 0;
             text-align: center;
             border-left: 1px solid $COLOR_GRAY;
@@ -103,8 +103,7 @@
         transition: transform 0.25s ease, opacity 0.25s linear;
         right: 0;
         top: calc(100% + 4px);
-        width: 186px;
-        box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.14);
+        width: 185px;
         border-radius: $BORDER_RADIUS;
 
         &-enter, &-enter-done {
@@ -118,65 +117,53 @@
             transform: translateY(-20px);
         }
     }
-    &-items {
+    &-list {
         height: 100%;
+        border-radius: $BORDER_RADIUS;
 
-        .acc-switcher-header {
-            margin: 0;
-            padding: 8px 16px;
-            font-size: 12px;
-            font-weight: 400;
-        }
-        .acc-switcher-list {
-            margin: 0 8px 8px;
-            background: $COLOR_WHITE;
-            border: 1px solid $COLOR_GRAY;
-            border-radius: $BORDER_RADIUS;
+        .acc-switcher-account {
+            cursor: pointer;
+            padding: 12px 16px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-            .acc-switcher-account {
-                cursor: pointer;
-                padding: 12px 16px;
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-
-                .acc-switcher-accountid {
-                    font-weight: 300;
-                    font-size: 0.75rem;
-                    line-height: 0.5;
-                }
-                .acc-switcher-currency {
-                    font-size: 10px;
-                    line-height: 0.5;
-                    text-transform: uppercase;
-                    background: $COLOR_GRAY;
-                    border-radius: $BORDER_RADIUS;
-                    text-align: center;
-                    padding: 5px 0;
-                    width: 32px;
-                }
-                &:hover {
-                    background: $COLOR_BRANDBLUE_5;
-                }
+            .acc-switcher-id {
+                font-weight: 300;
+                font-size: 0.75rem;
+                line-height: 0.5;
             }
-            .acc-logout {
-                border-top: 1px solid $COLOR_GRAY;
-                cursor: pointer;
-                font-size: 12px;
-                padding: 10px 16px;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
+            .acc-switcher-type {
+                font-size: 10px;
+                line-height: 0.5;
+                text-transform: uppercase;
+                background: $COLOR_GRAY;
+                border-radius: $BORDER_RADIUS;
+                text-align: center;
+                padding: 5px 0;
+                width: 32px;
+            }
+            &:hover {
+                background: $COLOR_BRANDBLUE_5;
+            }
+        }
+        .acc-logout {
+            border-top: 1px solid $COLOR_GRAY;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
 
-                .inline-icon {
-                    width: 16px;
-                    height: auto;
-                    margin-left: 8px;
-                }
-                &:hover {
-                    background: $COLOR_BRANDBLUE_5;
-                }
+            .inline-icon {
+                width: 16px;
+                height: auto;
+                margin-left: 8px;
+            }
+            &:hover {
+                background: $COLOR_BRANDBLUE_5;
             }
         }
     }
@@ -186,7 +173,7 @@
 .theme-wrapper.dark {
     .acc-switcher {
         &-wrapper {
-            background: $COLOR_BLUE;
+            background: $COLOR_BRANDBLUE_95;
             border-color: $COLOR_BRANDBLUE_85;
         }
         &-items {
@@ -199,10 +186,10 @@
         &-list {
             border-color: $COLOR_BRANDBLUE_85;
 
-            .acc-switcher-accountid {
+            .acc-switcher-id {
                 color: $COLOR_BRANDBLUE_40;
             }
-            .acc-switcher-currency {
+            .acc-switcher-type {
                 color: $COLOR_WHITE;
                 background: $COLOR_BRANDBLUE_75;
             }
