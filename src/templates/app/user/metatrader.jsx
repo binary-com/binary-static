@@ -3,6 +3,7 @@ import Loading from '../../_common/components/loading.jsx';
 import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
+/* eslint-disable react/jsx-no-target-blank */
 const AccountDesc = ({ title, description, account_type, items }) => {
     let types = '';
     if (account_type) {
@@ -542,5 +543,6 @@ const Metatrader = () => (
         </div>
     </React.Fragment>
 );
+/* eslint-enable react/jsx-no-target-blank */
 
 export default Metatrader;

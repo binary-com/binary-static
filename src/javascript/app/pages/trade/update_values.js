@@ -20,7 +20,7 @@ const updatePurchaseStatus = (final_price, pnl, profit, contract_status) => {
 };
 
 const updateContractBalance = (balance) => {
-    $('#contract_purchase_balance').html(localize('Account balance:')).append($('<p/>', { html: formatMoney(Client.get('currency'), balance)}));
+    $('#contract_purchase_balance').html(localize('Account balance:')).append($('<p/>', { html: formatMoney(Client.get('currency'), balance) }));
 };
 
 module.exports = {

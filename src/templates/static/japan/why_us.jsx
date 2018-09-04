@@ -13,7 +13,7 @@ const Section = ({ id, header, children }) => (
 
 const WhyUs = () => {
     const items = [
-        { id: 'sidebar-link-section-1', href: '#section-one',   text: it.L('Sharp prices'), className: 'selected'},
+        { id: 'sidebar-link-section-1', href: '#section-one',   text: it.L('Sharp prices'), className: 'selected' },
         { id: 'sidebar-link-section-2', href: '#section-two',   text: it.L('Flexible trades') },
         { id: 'sidebar-link-section-3', href: '#section-three', text: it.L('Controlled risk') },
         { id: 'sidebar-link-section-4', href: '#section-four',  text: it.L('{JAPAN ONLY}Your Funds') },

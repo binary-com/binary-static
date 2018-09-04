@@ -21,7 +21,7 @@ const AccountPrivacy = () => {
                 { li: it.L('Japan website Privacy Policy List item 4.7') },
                 { li: it.L('Japan website Privacy Policy List item 4.8') },
                 { li: it.L('Japan website Privacy Policy List item 4.9') },
-            ]},
+            ] },
         { header: it.L('Japan website Privacy Policy Bold list item 5'),  texts: [ { text: it.L('Japan website Privacy Policy Explanation of item 5') }] },
         { header: it.L('Japan website Privacy Policy Bold list item 6'),  texts: [ { text: it.L('Japan website Privacy Policy Explanation of item 6') }] },
         { header: it.L('Japan website Privacy Policy Bold list item 7'),  texts: [ { text: it.L('Japan website Privacy Policy Explanation of item 7') }] },

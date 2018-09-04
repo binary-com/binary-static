@@ -41,7 +41,7 @@ const TypesOfAccounts = () => (
         <h1>{it.L('Types of MetaTrader 5 accounts')}</h1>
 
         <div id='loading_types'>
-            <Loading/>
+            <Loading />
         </div>
 
         <div id='content_types' className='invisible'>
@@ -87,7 +87,7 @@ const TypesOfAccounts = () => (
 
             {/* toEnableMAM: remove 'invisible' from className */}
             <div className='gr-padding-10 gr-child invisible'>
-                <a href={it.url_for('multiple-accounts-manager')} target='_blank'>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
+                <a href={it.url_for('multiple-accounts-manager')}>*&nbsp;{it.L('Learn more about our Multiple Accounts Manager (MAM) facility for money managers')}</a>
             </div>
 
             <div className='gr-padding-30' />
@@ -102,19 +102,19 @@ const TypesOfAccounts = () => (
                                 [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Advanced') }, { text: it.L('Volatility Indices') }],
                             ],
                             tbody: [
-                                [{ text: <Row number={1}  text={it.L('Account currency')} />},       { text: it.L('USD') },                            { text: it.L('USD') },                            { text: it.L('USD/EUR') }],
-                                [{ text: <Row number={2}  text={it.L('Maximum leverage')} />},       { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:300') },            { text: it.L('Up to [_1]', '1:500') }],
-                                [{ text: <Row number={3}  text={it.L('Order execution')} />},        { text: it.L('Market') },                         { text: it.L('Market') },                         { text: it.L('Market') }],
-                                [{ text: <Row number={4}  text={it.L('Spread')} />},                 { text: it.L('Variable from [_1] pips', '1.2') }, { text: it.L('Variable from [_1] pips', '0.9') }, { text: it.L('Fixed') }],
-                                [{ text: <Row number={5}  text={it.L('Commission')} />},             { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
-                                [{ text: <Row number={6}  text={it.L('Minimum deposit')} />},        { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
-                                [{ text: <Row number={7}  text={it.L('Margin call')} />},            { text: '150%' },                                 { text: '150%' },                                 { text: '100%' }],
-                                [{ text: <Row number={8}  text={it.L('Stop out level')} />},         { text: '75%' },                                  { text: '75%' },                                  { text: '50%' }],
-                                [{ text: <Row number={9}  text={it.L('Number of assets')} />},       { text: '60+' },                                  { text: '70+' },                                  { text: '8' }],
-                                [{ text: <Row number={10} text={it.L('Maximum ticket size')} />},    { text: it.L('[_1] lots', '10') },                { text: it.L('[_1] lots', '20') },                { text: it.L('[_1] lots', '30') }],
-                                [{ text: <Row number={11} text={it.L('Minimum ticket size')} />},    { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={12} text={it.L('Step size')} />},              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} />}, { text: '24/7' },                                 { text: '24/7' },                                 { text: it.L('N/A') }],
+                                [{ text: <Row number={1}  text={it.L('Account currency')} /> },       { text: it.L('USD') },                            { text: it.L('USD') },                            { text: it.L('USD/EUR') }],
+                                [{ text: <Row number={2}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:300') },            { text: it.L('Up to [_1]', '1:500') }],
+                                [{ text: <Row number={3}  text={it.L('Order execution')} /> },        { text: it.L('Market') },                         { text: it.L('Market') },                         { text: it.L('Market') }],
+                                [{ text: <Row number={4}  text={it.L('Spread')} /> },                 { text: it.L('Variable from [_1] pips', '1.2') }, { text: it.L('Variable from [_1] pips', '0.9') }, { text: it.L('Fixed') }],
+                                [{ text: <Row number={5}  text={it.L('Commission')} /> },             { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
+                                [{ text: <Row number={6}  text={it.L('Minimum deposit')} /> },        { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
+                                [{ text: <Row number={7}  text={it.L('Margin call')} /> },            { text: '150%' },                                 { text: '150%' },                                 { text: '100%' }],
+                                [{ text: <Row number={8}  text={it.L('Stop out level')} /> },         { text: '75%' },                                  { text: '75%' },                                  { text: '50%' }],
+                                [{ text: <Row number={9}  text={it.L('Number of assets')} /> },       { text: '60+' },                                  { text: '70+' },                                  { text: '8' }],
+                                [{ text: <Row number={10} text={it.L('Maximum ticket size')} /> },    { text: it.L('[_1] lots', '10') },                { text: it.L('[_1] lots', '20') },                { text: it.L('[_1] lots', '30') }],
+                                [{ text: <Row number={11} text={it.L('Minimum ticket size')} /> },    { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
+                                [{ text: <Row number={12} text={it.L('Step size')} /> },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
+                                [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                 { text: '24/7' },                                 { text: it.L('N/A') }],
                             ],
                         }}
                     />
@@ -127,19 +127,19 @@ const TypesOfAccounts = () => (
                                 [{ text: '' }, { text: it.L('Standard') }, { text: it.L('Volatility Indices') }],
                             ],
                             tbody: [
-                                [{ text: <Row number={1}  text={it.L('Account currency')} />},       { text: it.L('EUR/GBP') },            { text: it.L('EUR') }],
-                                [{ text: <Row number={2}  text={it.L('Maximum leverage')} />},       { text: it.L('Up to [_1]', '1:30') }, { text: it.L('Up to [_1]', '1:500') }],
-                                [{ text: <Row number={3}  text={it.L('Order execution')} />},        { text: it.L('Market') },             { text: it.L('Market') }],
-                                [{ text: <Row number={4}  text={it.L('Spread')} />},                 { text: it.L('Variable') },           { text: it.L('Fixed') }],
-                                [{ text: <Row number={5}  text={it.L('Commission')} />},             { text: it.L('No') },                 { text: it.L('No') }],
-                                [{ text: <Row number={6}  text={it.L('Minimum deposit')} />},        { text: it.L('No') },                 { text: it.L('No') }],
-                                [{ text: <Row number={7}  text={it.L('Margin call')} />},            { text: '100%' },                     { text: '100%' }],
-                                [{ text: <Row number={8}  text={it.L('Stop out level')} />},         { text: '50%' },                      { text: '50%' }],
-                                [{ text: <Row number={9}  text={it.L('Number of assets')} />},       { text: '50+' },                      { text: '8' }],
-                                [{ text: <Row number={10} text={it.L('Maximum ticket size')} />},    { text: it.L('[_1] lots', '10') },    { text: it.L('[_1] lots', '30') }],
-                                [{ text: <Row number={11} text={it.L('Minimum ticket size')} />},    { text: it.L('[_1] lots', '0.01') },  { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={12} text={it.L('Step size')} />},              { text: it.L('[_1] lots', '0.01') },  { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} />}, { text: '24/7' },                     { text: it.L('N/A') }],
+                                [{ text: <Row number={1}  text={it.L('Account currency')} /> },       { text: it.L('EUR/GBP') },            { text: it.L('EUR') }],
+                                [{ text: <Row number={2}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:30') }, { text: it.L('Up to [_1]', '1:500') }],
+                                [{ text: <Row number={3}  text={it.L('Order execution')} /> },        { text: it.L('Market') },             { text: it.L('Market') }],
+                                [{ text: <Row number={4}  text={it.L('Spread')} /> },                 { text: it.L('Variable') },           { text: it.L('Fixed') }],
+                                [{ text: <Row number={5}  text={it.L('Commission')} /> },             { text: it.L('No') },                 { text: it.L('No') }],
+                                [{ text: <Row number={6}  text={it.L('Minimum deposit')} /> },        { text: it.L('No') },                 { text: it.L('No') }],
+                                [{ text: <Row number={7}  text={it.L('Margin call')} /> },            { text: '100%' },                     { text: '100%' }],
+                                [{ text: <Row number={8}  text={it.L('Stop out level')} /> },         { text: '50%' },                      { text: '50%' }],
+                                [{ text: <Row number={9}  text={it.L('Number of assets')} /> },       { text: '50+' },                      { text: '8' }],
+                                [{ text: <Row number={10} text={it.L('Maximum ticket size')} /> },    { text: it.L('[_1] lots', '10') },    { text: it.L('[_1] lots', '30') }],
+                                [{ text: <Row number={11} text={it.L('Minimum ticket size')} /> },    { text: it.L('[_1] lots', '0.01') },  { text: it.L('[_1] lots', '0.01') }],
+                                [{ text: <Row number={12} text={it.L('Step size')} /> },              { text: it.L('[_1] lots', '0.01') },  { text: it.L('[_1] lots', '0.01') }],
+                                [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                     { text: it.L('N/A') }],
                             ],
                         }}
                     />

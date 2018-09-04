@@ -57,7 +57,7 @@ const OpenSourceProjects = () => (
                     <List
                         id='sidebar-nav'
                         items={[
-                            { id: 'sidebar-link-section-1', href: '#open-source-projects-section', text: it.L('Open-source projects'), className: 'selected'},
+                            { id: 'sidebar-link-section-1', href: '#open-source-projects-section', text: it.L('Open-source projects'), className: 'selected' },
                             { id: 'sidebar-link-section-2', href: '#static-content',               text: it.L('Static content') },
                             { id: 'sidebar-link-section-3', href: '#perl-modules',                 text: it.L('Perl modules') },
                             { id: 'sidebar-link-section-4', href: '#translations',                 text: it.L('Translations') },

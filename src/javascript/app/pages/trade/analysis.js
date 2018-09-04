@@ -84,7 +84,7 @@ const TradingAnalysis = (() => {
                 const underlying_text   = $underlying.attr('data-text');
                 const tick              = $('#tick_count').val() || 100;
 
-                if (underlying !== $digit_underlying.val() && $digit_underlying.val() !== null ) {
+                if (underlying !== $digit_underlying.val() && $digit_underlying.val() !== null) {
                     $digit_underlying.find(`option[value="${underlying}"]`).prop('selected', true).trigger('change');
                     const $digit_underlying_dropdown = $digit_underlying.next('div.select-dropdown');
 
@@ -97,8 +97,7 @@ const TradingAnalysis = (() => {
                         });
                         $digit_underlying_list.filter(`[value='${underlying}']`).addClass('selected');
                     }
-                }
-                else {
+                } else {
                     GetTicks.request('', {
                         ticks_history: underlying,
                         count        : tick.toString(),
