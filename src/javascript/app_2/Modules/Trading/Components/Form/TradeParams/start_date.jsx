@@ -67,16 +67,16 @@ const StartDate = ({
 };
 
 StartDate.propTypes = {
-    is_minimized    : PropTypes.bool,
-    is_nativepicker : PropTypes.bool,
-    onChange        : PropTypes.func,
-    start_dates_list: MobxPropTypes.arrayOrObservableArray,
-    start_time      : PropTypes.string,
-    sessions        : MobxPropTypes.arrayOrObservableArray,
-    start_date      : PropTypes.oneOfType([
+    is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    onChange       : PropTypes.func,
+    sessions       : MobxPropTypes.arrayOrObservableArray,
+    start_date     : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    start_dates_list: MobxPropTypes.arrayOrObservableArray,
+    start_time      : PropTypes.string,
 };
 
 export default observer(StartDate);

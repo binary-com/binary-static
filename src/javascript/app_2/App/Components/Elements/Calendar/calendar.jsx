@@ -19,23 +19,23 @@ class Calendar extends React.PureComponent {
 
     // navigates to next or previous's month/year/decade/century
     navigators = {
-        nextMonth      : () => { this.navigateTo(1,   'months', true ); },
+        nextMonth      : () => { this.navigateTo(1,   'months', true); },
         previousMonth  : () => { this.navigateTo(1,   'months', false); },
-        nextYear       : () => { this.navigateTo(1,   'years',  true ); },
+        nextYear       : () => { this.navigateTo(1,   'years',  true); },
         previousYear   : () => { this.navigateTo(1,   'years',  false); },
-        nextDecade     : () => { this.navigateTo(10,  'years',  true ); },
+        nextDecade     : () => { this.navigateTo(10,  'years',  true); },
         previousDecade : () => { this.navigateTo(10,  'years',  false); },
-        nextCentury    : () => { this.navigateTo(100, 'years',  true ); },
+        nextCentury    : () => { this.navigateTo(100, 'years',  true); },
         previousCentury: () => { this.navigateTo(100, 'years',  false); },
-    }
+    };
 
     // selects a day, a month, a year, or a decade
     panelSelectors = {
         date  : (e, is_disabled) => { this.updateSelectedDate(e, is_disabled); },
-        month : (e) => { this.updateSelected(e, 'month' ); },
-        year  : (e) => { this.updateSelected(e, 'year'  ); },
+        month : (e) => { this.updateSelected(e, 'month'); },
+        year  : (e) => { this.updateSelected(e, 'year'); },
         decade: (e) => { this.updateSelected(e, 'decade'); },
-    }
+    };
 
     // sets Calendar active view
     calendarViews = {
@@ -43,7 +43,7 @@ class Calendar extends React.PureComponent {
         month : () => { this.setState({ calendar_view: 'month'  }); },
         year  : () => { this.setState({ calendar_view: 'year'   }); },
         decade: () => { this.setState({ calendar_view: 'decade' }); },
-    }
+    };
 
     navigateTo = (value, unit, is_add) => {
         const { date_format, max_date, min_date } = this.props;
@@ -57,7 +57,7 @@ class Calendar extends React.PureComponent {
         }
 
         this.setState({ calendar_date: moment.utc(new_date, date_format).format(date_format) }); // formatted date
-    }
+    };
 
     updateSelectedDate = (e, is_disabled) => {
         if (is_disabled) {
@@ -83,7 +83,7 @@ class Calendar extends React.PureComponent {
         if (onSelect) {
             onSelect(formatted_date);
         }
-    }
+    };
 
     updateSelected = (e, type) => {
         const view_map = {
@@ -99,7 +99,7 @@ class Calendar extends React.PureComponent {
             calendar_date: date,
             calendar_view: view_map[type],
         });
-    }
+    };
 
     resetCalendar = () => {
         const { date_format, start_date } = this.props;
@@ -110,7 +110,7 @@ class Calendar extends React.PureComponent {
             selected_date: '',
             calendar_view: 'date',
         });
-    }
+    };
 
     setToday = () => {
         const { date_format, onSelect } = this.props;
@@ -125,7 +125,7 @@ class Calendar extends React.PureComponent {
         if (onSelect) {
             onSelect(now, true);
         }
-    }
+    };
 
     isPeriodDisabled = (date, unit) => {
         const { max_date, min_date } = this.props;
@@ -134,7 +134,7 @@ class Calendar extends React.PureComponent {
         const end_of_period   = moment.utc(date).endOf(unit);
         return end_of_period.isBefore(moment.utc(min_date))
             || start_of_period.isAfter(moment.utc(max_date));
-    }
+    };
 
     render() {
         const { children, date_format, footer, has_today_btn, id, max_date, min_date, start_date } = this.props;

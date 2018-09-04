@@ -7,16 +7,19 @@ const DetailsGroup = ({
     items,
     title,
 }) => (
-    !title || isEmptyObject(items) ? '' :
-    <React.Fragment>
-        <div className='info-header'>{title}</div>
-        { Object.keys(items).map(key => (
-            <div className='info-item' key={key}>
-                <div>{key}</div>
-                <div>{items[key]}</div>
-            </div>
-        ))}
-    </React.Fragment>
+    !title || isEmptyObject(items)
+        ? ''
+        : (
+            <React.Fragment>
+                <div className='info-header'>{title}</div>
+                { Object.keys(items).map(key => (
+                    <div className='info-item' key={key}>
+                        <div>{key}</div>
+                        <div>{items[key]}</div>
+                    </div>
+                ))}
+            </React.Fragment>
+        )
 );
 
 DetailsGroup.propTypes = {

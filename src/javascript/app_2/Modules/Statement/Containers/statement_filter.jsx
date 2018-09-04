@@ -43,10 +43,10 @@ const Filter = ({
 Filter.propTypes = {
     date_from         : PropTypes.string,
     date_to           : PropTypes.string,
-    server_time       : PropTypes.object,
     handleDateChange  : PropTypes.func,
-    use_native_pickers: PropTypes.bool,
+    server_time       : PropTypes.object,
     today             : PropTypes.string,
+    use_native_pickers: PropTypes.bool,
 };
 
 export default connect(

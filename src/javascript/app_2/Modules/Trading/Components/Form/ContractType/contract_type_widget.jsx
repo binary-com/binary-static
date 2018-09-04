@@ -75,7 +75,7 @@ class ContractTypeWidget extends React.PureComponent {
                 className={container_classes.join(' ')}
             >
                 <div
-                    className={`contracts-popup-display ${this.state.is_dialog_open ? 'clicked': ''}`}
+                    className={`contracts-popup-display ${this.state.is_dialog_open ? 'clicked' : ''}`}
                     onClick={this.handleVisibility}
                     onBlur={this.handleVisibility}
                 >

@@ -7,16 +7,19 @@ class Tabs extends React.PureComponent {
     state = {
         active_tab_index: '1',
     };
+
     setActiveTab = (index) => {
-        this.setState({active_tab_index: index});
+        this.setState({ active_tab_index: index });
     };
+
     render() {
         const TabContents = this.props.list[this.state.active_tab_index].content;
         const tab_container_class = classNames('tab-container', this.props.alignment);
-        const tab_header_class = (icon_name) => classNames({
-            icon: icon_name },
+        const tab_header_class = (icon_name) => classNames(
+            { icon: icon_name },
             icon_name,
         );
+
         return (
             <div className={tab_container_class}>
                 <TabsWrapper
@@ -40,7 +43,7 @@ class Tabs extends React.PureComponent {
             </div>
         );
     }
-};
+}
 
 Tabs.propTypes = {
     alignment: PropTypes.string,

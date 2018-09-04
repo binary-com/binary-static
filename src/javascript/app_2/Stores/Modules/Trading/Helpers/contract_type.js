@@ -217,7 +217,7 @@ const ContractType = (() => {
     };
 
     const hours   = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
-    const minutes = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
+    const minutes = [...Array(12).keys()].map((a)=>`0${a * 5}`.slice(-2));
 
     const getValidTime = (sessions, compare_moment, start_moment) => {
         if (sessions && !isSessionAvailable(sessions, compare_moment)) {

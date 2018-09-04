@@ -6,6 +6,7 @@ const InkBar = ({ left, width }) => {
         left,
         width,
     };
+
     return (
         <span style={inkbar_style} className='inkbar' />
     );

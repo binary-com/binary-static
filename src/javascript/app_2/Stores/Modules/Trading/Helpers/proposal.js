@@ -60,12 +60,12 @@ const createProposalRequestForContract = (store, type_of_contract) => {
         ),
         ...(
             store.expiry_type === 'duration' ?
-            {
-                duration     : parseInt(store.duration),
-                duration_unit: store.duration_unit,
-            }
-            :
-            obj_expiry
+                {
+                    duration     : parseInt(store.duration),
+                    duration_unit: store.duration_unit,
+                }
+                :
+                obj_expiry
         ),
         ...(
             (store.barrier_count > 0 || store.form_components.indexOf('last_digit') !== -1) &&

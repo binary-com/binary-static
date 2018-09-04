@@ -1,7 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
 import PropTypes                      from 'prop-types';
-import StatementCard                  from '../Components/statement_card.jsx';
+import StatementCard                  from './statement_card.jsx';
 
 const StatementCardList = ({ data, onScroll, children }) => (
     <div className='card-list' onScroll={onScroll}>
@@ -15,12 +15,12 @@ const StatementCardList = ({ data, onScroll, children }) => (
 );
 
 StatementCardList.propTypes = {
-    data    : MobxPropTypes.arrayOrObservableArray,
-    onScroll: PropTypes.func,
     children: PropTypes.oneOfType([
         PropTypes.node,
         PropTypes.arrayOf(PropTypes.node),
     ]),
+    data    : MobxPropTypes.arrayOrObservableArray,
+    onScroll: PropTypes.func,
 };
 
 export default StatementCardList;

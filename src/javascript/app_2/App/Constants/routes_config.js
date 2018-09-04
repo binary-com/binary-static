@@ -1,13 +1,14 @@
-import { Redirect }           from 'react-router-dom';
-import { routes }             from '../../Constants';
+import { Redirect }    from 'react-router-dom';
+import { routes }      from '../../Constants';
 
-import { IconPortfolio,
-         IconStatement }      from '../../Assets/Header/NavBar';
-import ContractDetails        from '../../Modules/Contract';
-import Portfolio              from '../../Modules/Portfolio';
-import Settings               from '../../Modules/settings/settings.jsx';
-import Statement              from '../../Modules/Statement';
-import Trade                  from '../../Modules/Trading';
+import {
+    IconPortfolio,
+    IconStatement }    from '../../Assets/Header/NavBar';
+import ContractDetails from '../../Modules/Contract';
+import Portfolio       from '../../Modules/Portfolio';
+import Settings        from '../../Modules/settings/settings.jsx';
+import Statement       from '../../Modules/Statement';
+import Trade           from '../../Modules/Trading';
 
 // Settings Routes
 import AccountPassword        from '../../Modules/settings/sections/account_password.jsx';
@@ -34,7 +35,7 @@ const routes_config = [
         routes          : [
             { path: routes.personal,         component: PersonalDetails,        title: 'Personal Details' },
             { path: routes.financial,        component: FinancialAssessment,    title: 'Financial Assessment' },
-            { path: routes.account_password, component: AccountPassword,        title: 'Account Password'},
+            { path: routes.account_password, component: AccountPassword,        title: 'Account Password' },
             { path: routes.cashier_password, component: CashierPassword,        title: 'Cashier Password' },
             { path: routes.exclusion,        component: SelfExclusion,          title: 'Self Exclusion' },
             { path: routes.limits,           component: Limits,                 title: 'Account Limits' },

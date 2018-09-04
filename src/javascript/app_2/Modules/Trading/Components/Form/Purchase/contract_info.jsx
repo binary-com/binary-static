@@ -29,7 +29,7 @@ const ContractInfo = ({
                 :
                 <div className='purchase-info-wrapper'>
                     <span className='purchase-tooltip'>
-                        <Tooltip alignment='left' icon='info' message={proposal_info.message}/>
+                        <Tooltip alignment='left' icon='info' message={proposal_info.message} />
                     </span>
                     <div className='info-wrapper'>
                         <div>{localize('Stake')}:</div>

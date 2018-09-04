@@ -5,8 +5,8 @@ import {
 import LoginPrompt         from '../Elements/login_prompt.jsx';
 import { default_title }   from '../../Constants/app_config';
 import routes              from '../../../Constants/routes';
-import { redirectToLogin } from '../../../../_common/base/login';
 import Client              from '../../../../_common/base/client_base';
+import { redirectToLogin } from '../../../../_common/base/login';
 import { localize }        from '../../../../_common/localize';
 
 const RouteWithSubRoutes = route => {
@@ -17,7 +17,7 @@ const RouteWithSubRoutes = route => {
 
             // This if clause has been added just to remove '/index' from url in localhost env.
             if (route.path === routes.index) {
-                const {location} = props;
+                const { location } = props;
                 to = location.pathname.toLowerCase().replace(route.path, '');
             }
             result = <Redirect to={to} />;
@@ -26,7 +26,7 @@ const RouteWithSubRoutes = route => {
                 (route.is_authenticated && !Client.isLoggedIn()) ?
                     <LoginPrompt IconComponent={route.icon_component} onLogin={redirectToLogin} />
                     :
-                    <route.component {...props} routes={route.routes}/>
+                    <route.component {...props} routes={route.routes} />
             );
         }
 

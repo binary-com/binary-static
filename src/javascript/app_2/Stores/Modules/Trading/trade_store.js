@@ -1,28 +1,28 @@
-import debounce                         from 'lodash.debounce';
+import debounce                          from 'lodash.debounce';
 import {
     action,
     observable,
-    reaction }                          from 'mobx';
-import { processPurchase }              from './Actions/purchase';
-import * as Symbol                      from './Actions/symbol';
-import { 
+    reaction }                           from 'mobx';
+import { processPurchase }               from './Actions/purchase';
+import * as Symbol                       from './Actions/symbol';
+import {
     allowed_query_string_variables,
-    non_proposal_query_string_variable} from './Constants/query_string';
-import validation_rules                 from './Constants/validation_rules';
-import { setChartBarrier }              from './Helpers/chart';
-import ContractType                     from './Helpers/contract_type';
-import { convertDurationLimit }         from './Helpers/duration';
-import { processTradeParams }           from './Helpers/process';
+    non_proposal_query_string_variable } from './Constants/query_string';
+import validation_rules                  from './Constants/validation_rules';
+import { setChartBarrier }               from './Helpers/chart';
+import ContractType                      from './Helpers/contract_type';
+import { convertDurationLimit }          from './Helpers/duration';
+import { processTradeParams }            from './Helpers/process';
 import {
     createProposalRequests,
     getProposalInfo,
-    getProposalParametersName }         from './Helpers/proposal';
-import { pickDefaultSymbol }            from './Helpers/symbol';
-import BaseStore                        from '../../base_store';
-import { WS }                           from '../../../Services';
-import URLHelper                        from '../../../Utils/URL/url_helper';
-import Client                           from '../../../../_common/base/client_base';
-import { cloneObject, isEmptyObject }   from '../../../../_common/utility';
+    getProposalParametersName }          from './Helpers/proposal';
+import { pickDefaultSymbol }             from './Helpers/symbol';
+import BaseStore                         from '../../base_store';
+import { WS }                            from '../../../Services';
+import URLHelper                         from '../../../Utils/URL/url_helper';
+import Client                            from '../../../../_common/base/client_base';
+import { cloneObject, isEmptyObject }    from '../../../../_common/utility';
 
 export default class TradeStore extends BaseStore {
     // Control values
@@ -103,7 +103,7 @@ export default class TradeStore extends BaseStore {
         );
 
         if (Client.isLoggedIn) {
-            this.processNewValuesAsync({currency: Client.get('currency')});
+            this.processNewValuesAsync({ currency: Client.get('currency') });
         }
 
         // Adds intercept to change min_max value of duration validation
@@ -343,4 +343,4 @@ export default class TradeStore extends BaseStore {
     onUnmount() {
         this.is_trade_component_mounted = false;
     }
-};
+}

@@ -189,4 +189,4 @@ export default class ContractStore extends BaseStore {
     get is_valid_to_sell() {
         return isValidToSell(this.contract_info);
     }
-};
+}

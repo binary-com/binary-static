@@ -10,7 +10,7 @@ const AccountInfo = ({ balance, currency, loginid }) => (
         </div>
         { typeof balance !== 'undefined' &&
             <p className='acc-balance-amount'>
-                <i><span className={`symbols ${(currency || '').toLowerCase()}`}/></i>
+                <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
                 {balance}
             </p>
         }

@@ -17,10 +17,11 @@ const validate = (dvrs) => (target, key) => {
         }
 
         store.setValidationErrorMessages(property, validator.errors.get(property));
+
         return change;
     };
 
-    const spyDisposer = spy(({type, object: store, key: property}) => {
+    const spyDisposer = spy(({ type, object: store, key: property }) => {
         if (type !== 'add') {
             return;
         }

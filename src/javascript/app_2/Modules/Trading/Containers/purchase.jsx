@@ -94,16 +94,16 @@ const Purchase = ({
 Purchase.propTypes = {
     barrier_count         : PropTypes.number,
     currency              : PropTypes.string,
-    is_purchase_enabled   : PropTypes.bool,
     is_purchase_confirm_on: PropTypes.bool,
+    is_purchase_enabled   : PropTypes.bool,
     is_purchase_locked    : PropTypes.bool,
     is_trade_enabled      : PropTypes.bool,
     onClickPurchase       : PropTypes.func,
     onHoverPurchase       : PropTypes.func,
-    resetPurchase         : PropTypes.func,
-    togglePurchaseLock    : PropTypes.func,
     proposal_info         : PropTypes.object,
     purchase_info         : PropTypes.object,
+    resetPurchase         : PropTypes.func,
+    togglePurchaseLock    : PropTypes.func,
     trade_types           : PropTypes.object,
 };
 

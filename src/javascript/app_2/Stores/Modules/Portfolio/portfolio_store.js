@@ -41,7 +41,7 @@ export default class PortfolioStore extends BaseStore {
                 .map(pos => formatPortfolioPosition(pos))
                 .sort((pos1, pos2) => pos2.reference - pos1.reference); // new contracts first
         }
-    };
+    }
 
     @action.bound
     transactionHandler(response) {
@@ -62,7 +62,7 @@ export default class PortfolioStore extends BaseStore {
         } else if (act === 'sell') {
             this.removePositionById(contract_id);
         }
-    };
+    }
 
     @action.bound
     proposalOpenContractHandler(response) {
@@ -81,14 +81,11 @@ export default class PortfolioStore extends BaseStore {
 
         if (!proposal.is_valid_to_sell) {
             portfolio_position.status = 'no-resale';
-        }
-        else if (new_indicative > prev_indicative) {
+        } else if (new_indicative > prev_indicative) {
             portfolio_position.status = 'price-moved-up';
-        }
-        else if (new_indicative < prev_indicative) {
+        } else if (new_indicative < prev_indicative) {
             portfolio_position.status = 'price-moved-down';
-        }
-        else {
+        } else {
             portfolio_position.status = 'price-stable';
         }
     }

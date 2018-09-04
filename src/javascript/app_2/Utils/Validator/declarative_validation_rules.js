@@ -69,13 +69,13 @@ const validNumber = (value, opts) => {
         message = localize('Up to [_1] decimal places are allowed.', [options.decimals]);
     } else if ('min' in options && 'max' in options && +options.min === +options.max && +value !== +options.min) {
         is_ok   = false;
-        message = localize('Should be [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
+        message = localize('Should be [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
     } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
         is_ok   = false;
-        message = localize('Should be between [_1] and [_2]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined ), addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
+        message = localize('Should be between [_1] and [_2]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined), addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
     } else if ('min' in options && +value < +options.min) {
         is_ok   = false;
-        message = localize('Should be more than [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
+        message = localize('Should be more than [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
     } else if ('max' in options && isMoreThanMax(value, options)) {
         is_ok   = false;
         message = localize('Should be less than [_1]', [addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
@@ -104,7 +104,7 @@ export const pre_build_dvrs = {
     postcode     : { func: validPostCode,     message: 'Only letters, numbers, space, and hyphen are allowed.' },
     regular      : { func: validRegular,      message: '' },
     req          : { func: validRequired,     message: '' },
-    signup_token : { func: validEmailToken,   message: 'The length of token should be 8.'},
+    signup_token : { func: validEmailToken,   message: 'The length of token should be 8.' },
     tax_id       : { func: validTaxID,        message: 'Should start with letter or number, and may contain hyphen and underscore.' },
 };
 

@@ -51,9 +51,9 @@ Header.propTypes = {
     balance       : PropTypes.string,
     can_upgrade   : PropTypes.bool,
     currency      : PropTypes.string,
-    loginid       : PropTypes.string,
     is_dark_mode  : PropTypes.bool, // TODO: add dark theme handler
     is_logged_in  : PropTypes.bool,
+    loginid       : PropTypes.string,
     onClickUpgrade: PropTypes.func, // TODO: add click handler
 };
 

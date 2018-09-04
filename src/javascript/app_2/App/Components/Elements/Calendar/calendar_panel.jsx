@@ -2,7 +2,7 @@ import PropTypes      from 'prop-types';
 import React          from 'react';
 import {
     CalendarDays,
-    CalendarMonths, 
+    CalendarMonths,
     CalendarYears,
     CalendarDecades } from './panels';
 
@@ -19,7 +19,7 @@ export default function CalendarPanel(props) {
             { calendar_panel[props.calendar_view] }
         </div>
     );
-} 
+}
 
 CalendarPanel.propTypes = {
     calendar_view: PropTypes.string,

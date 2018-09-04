@@ -1,8 +1,7 @@
 import extend                             from 'extend';
+import ContractTypeHelper                 from './contract_type';
 import Client                             from '../../../../../_common/base/client_base';
 import { isEmptyObject }                  from '../../../../../_common/utility';
-
-import ContractTypeHelper                 from '../Helpers/contract_type';
 
 import * as ContractType                  from '../Actions/contract_type';
 import * as Currency                      from '../Actions/currency';

@@ -16,8 +16,8 @@ const ThemeWrapper = ({ children, is_dark_theme }) => {
 };
 
 ThemeWrapper.propTypes = {
-    is_dark_theme: PropTypes.bool,
     children     : PropTypes.node,
+    is_dark_theme: PropTypes.bool,
 };
 
 export default withRouter(connect(

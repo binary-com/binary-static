@@ -5,7 +5,11 @@ import { localize }     from '../../../../_common/localize';
 
 const Localize = ({ str, replacers }) => {
     const localized = localize(str);
-    if (!/\[_\d+\]/.test(localized)) return <React.Fragment>{localized}</React.Fragment>;
+
+    if (!/\[_\d+\]/.test(localized)) {
+        return <React.Fragment>{localized}</React.Fragment>;
+    }
+
     return (
         <React.Fragment>
             {fillTemplate(localized, replacers)}
@@ -14,8 +18,8 @@ const Localize = ({ str, replacers }) => {
 };
 
 Localize.propTypes = {
-    str      : PropTypes.string,
     replacers: PropTypes.object,
+    str      : PropTypes.string,
 };
 
 export default Localize;

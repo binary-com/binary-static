@@ -6,7 +6,7 @@ import { IconBell }      from '../../../../Assets/Header/NavBar';
 const ToggleNotificationsDrawer = () => (
     <ToggleDrawer
         alignment='right'
-        icon={<IconBell/>}
+        icon={<IconBell />}
         icon_class='notify-toggle'
     >
         <Notifications />

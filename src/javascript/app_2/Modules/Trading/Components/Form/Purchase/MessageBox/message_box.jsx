@@ -1,11 +1,12 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
-import { ErrorBalance,
-         ErrorGeneral,
-         ErrorLogin }       from './Templates';
 import PurchaseResult       from './purchase_result.jsx';
-import { getPropertyValue } from '../../../../../../../_common/utility';
+import {
+    ErrorBalance,
+    ErrorGeneral,
+    ErrorLogin }            from './Templates';
 import { IconClose }        from '../../../../../../Assets/Common/icon_close.jsx';
+import { getPropertyValue } from '../../../../../../../_common/utility';
 
 const MessageBox = ({ currency, purchase_info, onClick }) => {
     const has_error = !!purchase_info.error;
@@ -44,8 +45,8 @@ const MessageBox = ({ currency, purchase_info, onClick }) => {
 
 MessageBox.propTypes = {
     currency     : PropTypes.string,
-    purchase_info: PropTypes.object,
     onClick      : PropTypes.func,
+    purchase_info: PropTypes.object,
 };
 
 export default MessageBox;

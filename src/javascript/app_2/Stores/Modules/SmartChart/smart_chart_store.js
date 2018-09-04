@@ -115,4 +115,4 @@ export default class SmartChartStore extends BaseStore {
     wsSendRequest = (request_object) => (
         WS.sendRequest(request_object)
     );
-};
+}

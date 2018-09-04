@@ -14,7 +14,7 @@ export default function CalendarFooter({ footer, has_today_btn, onClick }) {
             }
         </div>
     );
-} 
+}
 
 CalendarFooter.propTypes = {
     footer       : PropTypes.string,

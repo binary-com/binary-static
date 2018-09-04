@@ -74,5 +74,5 @@ export class ChartBarrierStore {
     @computed
     get default_shade() {
         return DEFAULT_SHADES[this.barrier_count];
-    };
+    }
 }

@@ -46,10 +46,10 @@ const InputField = ({
 
             if (max_length && fractional_digits) {
                 has_valid_length = new RegExp(`^${signed_regex}(\\d{0,${max_length}})(\\.\\d{0,${fractional_digits}})?$`)
-                        .test(e.target.value);
+                    .test(e.target.value);
             }
 
-            if ((is_number || is_empty) && has_valid_length ) {
+            if ((is_number || is_empty) && has_valid_length) {
                 e.target.value = is_empty || is_signed || has_zero_at_end || is_scientific_notation
                     ? e.target.value
                     : +e.target.value;
@@ -64,7 +64,7 @@ const InputField = ({
 
     const input =
         <input
-            className={classNames({error: has_error})}
+            className={classNames({ error: has_error })}
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
             data-tip
@@ -105,8 +105,8 @@ InputField.propTypes = {
     error_messages   : MobxPropTypes.arrayOrObservableArray,
     fractional_digits: PropTypes.number,
     helper           : PropTypes.bool,
-    is_float         : PropTypes.bool,
     is_disabled      : PropTypes.string,
+    is_float         : PropTypes.bool,
     is_signed        : PropTypes.bool,
     label            : PropTypes.string,
     max_length       : PropTypes.number,

@@ -8,7 +8,7 @@ const Menu = ({ data }) => (
             data.map(group => (
                 <div key={group.title}>
                     <h2 className='settings-menu__group-header'>{group.title}</h2>
-                    <hr className='settings-menu__separator'/>
+                    <hr className='settings-menu__separator' />
                     <MenuList items={group.items} />
                 </div>
             ))
@@ -19,8 +19,8 @@ const Menu = ({ data }) => (
 Menu.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
-            title: PropTypes.string,
             items: PropTypes.array,
+            title: PropTypes.string,
         })
     ),
 };

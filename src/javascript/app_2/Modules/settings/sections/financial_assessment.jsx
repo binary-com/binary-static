@@ -1,6 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Section from '../components/section.jsx';
+import React     from 'react';
+import Section   from '../components/section.jsx';
 
 const FinancialAssessment = ({ title, description }) => (
     <Section title={title} description={description}>
@@ -9,8 +9,8 @@ const FinancialAssessment = ({ title, description }) => (
 );
 
 FinancialAssessment.propTypes = {
-    title      : PropTypes.string,
     description: PropTypes.string,
+    title      : PropTypes.string,
 };
 
 export default FinancialAssessment;

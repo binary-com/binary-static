@@ -61,8 +61,8 @@ class Portfolio extends React.Component {
 }
 
 Portfolio.propTypes = {
-    currency        : PropTypes.string,
     active_positions: MobxPropTypes.arrayOrObservableArray,
+    currency        : PropTypes.string,
     error           : PropTypes.string,
     history         : PropTypes.object,
     is_empty        : PropTypes.bool,
@@ -75,7 +75,7 @@ Portfolio.propTypes = {
 };
 
 export default connect(
-    ({modules, client, ui}) => ({
+    ({ modules, client, ui }) => ({
         currency        : client.currency,
         active_positions: modules.portfolio.active_positions,
         error           : modules.portfolio.error,

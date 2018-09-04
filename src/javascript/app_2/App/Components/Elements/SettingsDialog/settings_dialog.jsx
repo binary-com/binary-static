@@ -1,19 +1,17 @@
 import classNames      from 'classnames';
-import React           from 'react';
 import PropTypes       from 'prop-types';
-import { Tabs }        from '../Tabs/';
+import React           from 'react';
+import { Tabs }        from '../Tabs';
 import {
     ChartSettings,
     GeneralSettings,
-    LanguageSettings,
-    }                  from '../../../Containers/SettingsDialog';
+    LanguageSettings } from '../../../Containers/SettingsDialog';
 import { localize }    from '../../../../../_common/localize';
 
 class SettingsDialog extends React.PureComponent {
-
     setWrapperRef = (node) => {
         this.wrapper_ref = node;
-    }
+    };
 
     // TODO - Simplify this
     handleClickOutside = (event) => {
@@ -21,7 +19,7 @@ class SettingsDialog extends React.PureComponent {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.props.is_open && footer_settings_btn) {
             this.props.toggleDialog();
         }
-    }
+    };
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);

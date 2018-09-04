@@ -19,7 +19,7 @@ const ContractTypeDialog = ({
                 {children}
             </FullScreenDialog>
         </React.Fragment>
-    :
+        :
         <div className='contracts-popup-list'>
             <div className='list-container'>
                 {children}
@@ -30,8 +30,8 @@ const ContractTypeDialog = ({
 ContractTypeDialog.propTypes = {
     children : PropTypes.element,
     is_mobile: PropTypes.bool,
-    open     : PropTypes.bool,
     onClose  : PropTypes.func,
+    open     : PropTypes.bool,
 };
 
 export default ContractTypeDialog;

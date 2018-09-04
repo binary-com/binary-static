@@ -27,9 +27,9 @@ const ContractTypeItem = ({
 
 ContractTypeItem.propTypes = {
     contracts   : MobxPropTypes.arrayOrObservableArray,
+    handleSelect: PropTypes.func,
     name        : PropTypes.string,
     value       : PropTypes.string,
-    handleSelect: PropTypes.func,
 };
 
 export default ContractTypeItem;
