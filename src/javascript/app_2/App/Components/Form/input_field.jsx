@@ -41,14 +41,18 @@ const InputField = ({
             // This regex check whether there is any zero at the end of fractional part or not.
             const has_zero_at_end = new RegExp(`^${signed_regex}(\\d+)?\\.(\\d+)?[0]+$`)
                 .test(e.target.value);
+            
+            const is_scientific_notation = /e/.test(`${+e.target.value}`);
 
-            if ( max_length && fractional_digits) {
+            if (max_length && fractional_digits) {
                 has_valid_length = new RegExp(`^${signed_regex}(\\d{0,${max_length}})(\\.\\d{0,${fractional_digits}})?$`)
                         .test(e.target.value);
             }
 
             if ((is_number || is_empty) && has_valid_length ) {
-                e.target.value = is_empty || is_signed || has_zero_at_end ? e.target.value : +e.target.value;
+                e.target.value = is_empty || is_signed || has_zero_at_end || is_scientific_notation
+                    ? e.target.value
+                    : +e.target.value;
             } else if (!is_not_completed_number) {
                 e.target.value = value;
                 return;
