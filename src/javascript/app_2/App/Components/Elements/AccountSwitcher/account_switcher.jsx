@@ -1,13 +1,13 @@
 import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { UpgradeButton } from '../../Components/Layout/Header';
-import { IconLogout }    from '../../../Assets/Header/Drawer';
-import { requestLogout } from '../../../Services';
-import Client            from '../../../../_common/base/client_base';
-import GTM               from '../../../../_common/base/gtm';
-import SocketCache       from '../../../../_common/base/socket_cache';
-import { localize }      from '../../../../_common/localize';
+import { UpgradeButton } from './upgrade_button.jsx';
+import { IconLogout }    from '../../../../Assets/Header/Drawer';
+import { requestLogout } from '../../../../Services';
+import Client            from '../../../../../_common/base/client_base';
+import GTM               from '../../../../../_common/base/gtm';
+import SocketCache       from '../../../../../_common/base/socket_cache';
+import { localize }      from '../../../../../_common/localize';
 
 const getAccountInfo = (loginid) => {
     const currency     = Client.get('currency', loginid);
@@ -110,4 +110,4 @@ AccountSwitcher.propTypes = {
     toggle            : PropTypes.func,
 };
 
-export default AccountSwitcher;
+export { AccountSwitcher };

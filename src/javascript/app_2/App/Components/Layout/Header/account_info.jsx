@@ -1,11 +1,11 @@
-import classNames        from 'classnames';
-import { CSSTransition } from 'react-transition-group';
-import PropTypes         from 'prop-types';
-import React             from 'react';
-import AccountSwitcher   from '../../Elements/account_switcher.jsx';
-import { IconArrow }     from '../../../../Assets/Common';
-import { localize }      from '../../../../../_common/localize';
-import Client            from '../../../../../_common/base/client_base';
+import classNames          from 'classnames';
+import { CSSTransition }   from 'react-transition-group';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import { AccountSwitcher } from '../../Elements/AccountSwitcher';
+import { IconArrow }       from '../../../../Assets/Common';
+import { localize }        from '../../../../../_common/localize';
+import Client              from '../../../../../_common/base/client_base';
 
 const AccountInfo = ({
     balance,
