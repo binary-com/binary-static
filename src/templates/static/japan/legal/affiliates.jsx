@@ -194,7 +194,7 @@ const Affiliates = () => (
             />
         </ol>
 
-        <span style={{float: 'right'}}>{it.L('{JAPAN ONLY} Affiliate Program T&C Section Version Update')}</span>
+        <span style={{ float: 'right' }}>{it.L('{JAPAN ONLY} Affiliate Program T&C Section Version Update')}</span>
     </div>
 );
 

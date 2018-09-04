@@ -1,7 +1,7 @@
 import React from 'react';
 import { List } from '../../_common/components/elements.jsx';
 
-const InvisibleHeading = ({ headers=[] }) => (
+const InvisibleHeading = ({ headers = [] }) => (
     <div className='center-text' id='title'>
         { headers.map((header, idx) => (
             <h1 className={`${header.className} invisible`} key={idx}>{header.string}</h1>
@@ -27,7 +27,7 @@ const SideBar = ({ className, sidebar_items = [] }) => (
     </div>
 );
 
-const InvisibleImage = ({ classNames=[] }) => (
+const InvisibleImage = ({ classNames = [] }) => (
     <div className='gr-12 center-text' id='image'>
         { classNames.map((className,idx) => (
             <img className={`responsive invisible dept-image ${className}`} src={it.url_for(`images/pages/careers/${className}.svg`)} key={idx} />

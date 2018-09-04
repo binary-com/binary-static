@@ -3,6 +3,7 @@ import Loading from '../../_common/components/loading.jsx';
 import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
+/* eslint-disable react/jsx-no-target-blank */
 const AccountDesc = ({ title, description, account_type, items }) => {
     let types = '';
     if (account_type) {
@@ -69,6 +70,9 @@ const Metatrader = () => (
                 <h1>{it.L('MetaTrader 5 dashboard')}</h1>
             </div>
             <p id='page_msg' className='notice-msg center-text invisible' />
+            <p id='financial_authenticate_msg' className='notice-msg center-text invisible'>
+                {it.L('Please <a href="[_1]">authenticate</a> your account to continue trading.', it.url_for('user/authenticate'))}
+            </p>
             <div id='mt_loading'><Loading /></div>
             <div id='mt_account_management' className='gr-row invisible'>
                 <div id='mt_left_panel' className='gr-9 gr-12-t gr-12-p gr-12-m gr-no-gutter gr-gutter-right gr-no-gutter-p gr-no-gutter-m'>
@@ -201,7 +205,19 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
+                            ]}
+                        />
+                        <AccountDesc
+                            account_type={['maltainvest_standard']}
+                            title={it.L('Standard Account')}
+                            description={it.L('Our MetaTrader 5 Standard account is suitable for both new and experienced traders.')}
+                            items={[
+                                it.L('Leverage up to [_1]', '1:30'),
+                                it.L('Variable spreads'),
+                                it.L('Market execution'),
+                                it.L('No commission (excluding cryptocurrencies)'),
+                                it.L('Negative balance protection'),
                             ]}
                         />
                         <AccountDesc
@@ -212,7 +228,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:300'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                             ]}
                         />
                         <AccountDesc
@@ -223,7 +239,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:500'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                             ]}
                         />
                         <AccountDesc
@@ -256,7 +272,7 @@ const Metatrader = () => (
                                         <TypeGroup
                                             title={it.L('Step 1: Choose demo or real account')}
                                             types={[
-                                                { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with [_1] of virtual funds in a risk-free environment.', '$10,000') },
+                                                { type: 'demo', id: 'rbtn_demo', title: it.L('Demo'), desc: it.L('Practise your trading strategy with virtual funds in a risk-free environment.') },
                                                 { type: 'real', id: 'rbtn_real', title: it.L('Real'), desc: it.L('Trade with real funds and access to competitive trading conditions.') },
                                             ]}
                                         />
@@ -273,6 +289,7 @@ const Metatrader = () => (
                                         </TypeGroup>
                                     </div>
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
+                                    <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please <a href="[_1]">authenticate</a> your account within five days to continue trading.', it.url_for('user/authenticate'))}</p>
                                     <div className='center-text'>
                                         <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
                                             <span>{it.L('Cancel')}</span>
@@ -433,7 +450,7 @@ const Metatrader = () => (
 
                     <div id='frm_cashier'>
                         <div className='gr-row demo-only invisible'>
-                            <p className='gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30'>{it.L('This demo account comes with [_1] of virtual funds. Please [_2]contact our customer support team[_3] to replenish virtual funds if your account balance is empty.', '$10,000.00', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
+                            <p className='gr-8 gr-push-2 gr-12-m gr-push-0-m gr-padding-30'>{it.L('This demo account comes with [_1] of virtual funds. Please [_2]contact our customer support team[_3] to replenish virtual funds if your account balance is empty.', '<span class="symbols mt-currency" />10,000.00', `<a href="${it.url_for('contact')}">`, '</a>')}</p>
                         </div>
                         <div className='real-only invisible'>
                             <div className='gr-padding-20 gr-parent'>
@@ -510,11 +527,13 @@ const Metatrader = () => (
                         <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
                         <div id='msg_upgrade'>{it.L('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', it.url_for('new_account/realws'), it.website_name)}</div>
                         <div id='msg_real_financial'>
-                            <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 real account, please:')}</span>
+                            <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account, please:')}</span>
                             <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>
                             <ul className='bullet'>
+                                <li className='maltainvest invisible'>{it.L('Upgrade to [_1] <a href="[_2]">Financial Account</a>.', it.website_name, it.url_for('new_account/maltainvestws'))}</li>
                                 <li className='assessment invisible'>{it.L('Complete the <a href="[_1]">Financial Assessment</a>.', it.url_for('user/settings/assessmentws'))}</li>
-                                <li className='authenticate invisible'>{it.L('<a href="[_1]">Authenticate</a> your account by verifying your identity and address.', it.url_for('user/authenticate'))}</li>
+                                <li className='tax invisible'>{it.L('Complete your <a href="[_1]">Tax Information</a>.', it.url_for('user/settings/detailsws'))}</li>
+                                <li className='citizen invisible'>{it.L('Select <a href="[_1]">Citizenship</a>.', it.url_for('user/settings/detailsws'))}</li>
                             </ul>
                         </div>
                         <div id='msg_authenticate'>{it.L('To withdraw from MetaTrader 5 Financial Account please <a href="[_1]">Authenticate</a> your Binary account.', it.url_for('user/authenticate'))}</div>
@@ -524,5 +543,6 @@ const Metatrader = () => (
         </div>
     </React.Fragment>
 );
+/* eslint-enable react/jsx-no-target-blank */
 
 export default Metatrader;

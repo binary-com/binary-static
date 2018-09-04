@@ -12,6 +12,8 @@ const toISOFormat    = require('../../../../_common/string_util').toISOFormat;
 const FinancialAccOpening = (() => {
     const form_id = '#financial-form';
 
+    let get_settings;
+
     const onLoad = () => {
         if (Client.hasAccountType('financial') || !Client.get('residence')) {
             BinaryPjax.loadPreviousUrl();
@@ -22,28 +24,27 @@ const FinancialAccOpening = (() => {
 
         if (AccountOpening.redirectAccount()) return;
 
-        BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
-            if (!isEmptyObject(response.get_financial_assessment)) {
-                const keys = Object.keys(response.get_financial_assessment);
+        const req_financial_assessment = BinarySocket.send({ get_financial_assessment: 1 }).then((response) => {
+            const get_financial_assessment = response.get_financial_assessment;
+            if (!isEmptyObject(get_financial_assessment)) {
+                const keys = Object.keys(get_financial_assessment);
                 keys.forEach((key) => {
-                    const val = response.get_financial_assessment[key];
+                    const val = get_financial_assessment[key];
                     $(`#${key}`).val(val);
                 });
+
             }
         });
-
-        BinarySocket.wait('get_settings').then((response) => {
-            AccountOpening.populateForm(form_id, getValidations, true);
-            const get_settings = response.get_settings;
+        const req_settings = BinarySocket.wait('get_settings').then((response) => {
+            get_settings = response.get_settings;
             let $element,
                 value;
-
             Object.keys(get_settings).forEach((key) => {
                 $element = $(`#${key}`);
                 value    = get_settings[key];
                 if (key === 'date_of_birth') {
                     const moment_val = moment.utc(value * 1000);
-                    value = moment_val.format('DD MMM, YYYY');
+                    get_settings[key] = moment_val.format('DD MMM, YYYY');
                     $element.attr({
                         'data-value': toISOFormat(moment_val),
                         'type'      : 'text',
@@ -54,10 +55,15 @@ const FinancialAccOpening = (() => {
             });
         });
 
-        FormManager.handleSubmit({
-            form_selector       : form_id,
-            obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
-            fnc_response_handler: handleResponse,
+        Promise.all([req_settings, req_financial_assessment]).then(() => {
+            AccountOpening.populateForm(form_id, getValidations, true);
+
+            $('#date_of_birth').val(get_settings.date_of_birth);
+            FormManager.handleSubmit({
+                form_selector       : form_id,
+                obj_request         : { new_account_maltainvest: 1, accept_risk: 0 },
+                fnc_response_handler: handleResponse,
+            });
         });
 
         $('#tax_information_note_toggle').off('click').on('click', (e) => {
@@ -72,8 +78,9 @@ const FinancialAccOpening = (() => {
     const getValidations = () => {
         let validations =
               AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id), [
+                  { selector: '#citizen',                   validations: ['req'] },
                   { selector: '#tax_identification_number', validations: ['req', 'tax_id', ['length', { min: 1, max: 20 }]] },
-                  { selector: '#chk_tax_id',                validations: [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.')}]], exclude_request: 1 },
+                  { selector: '#chk_tax_id',                validations: [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]], exclude_request: 1 },
               ]);
         const place_of_birth = State.getResponse('get_settings.place_of_birth');
         if (place_of_birth) {
@@ -84,7 +91,8 @@ const FinancialAccOpening = (() => {
 
     const handleResponse = (response) => {
         if ('error' in response && response.error.code === 'show risk disclaimer') {
-            $('#financial-form').setVisibility(0);
+            $(form_id).setVisibility(0);
+            $('#client_message').setVisibility(0);
             const $financial_risk = $('#financial-risk');
             $financial_risk.setVisibility(1);
             $.scrollTo($financial_risk, 500, { offset: -10 });

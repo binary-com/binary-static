@@ -74,7 +74,7 @@ const Authenticate = (() => {
         }
         const $target      = $(event.target);
         const file_name    = event.target.files[0].name || '';
-        const display_name = file_name.length > 10 ? `${file_name.slice(0, 5)}..${file_name.slice(-5)}` : file_name;
+        const display_name = file_name.length > 20 ? `${file_name.slice(0, 10)}..${file_name.slice(-8)}` : file_name;
 
         $target.attr('data-status', '')
             .parent().find('label')
@@ -167,21 +167,23 @@ const Authenticate = (() => {
         $submit_table.children().remove();
         $files.each((i, e) => {
             if (e.files && e.files.length) {
-                const $e       = $(e);
-                const id       = $e.attr('id');
-                const type     = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
-                const name     = $e.attr('data-name');
-                const $inputs  = $e.closest('.fields').find('input[type="text"]');
-                const file_obj = {
+                const $e        = $(e);
+                const id        = $e.attr('id');
+                const type      = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
+                const name      = $e.attr('data-name');
+                const page_type = $e.attr('data-page-type');
+                const $inputs   = $e.closest('.fields').find('input[type="text"]');
+                const file_obj  = {
                     file     : e.files[0],
                     chunkSize: 16384, // any higher than this sends garbage data to websocket currently.
                     class    : id,
                     type,
                     name,
+                    page_type,
                 };
                 if ($inputs.length) {
                     file_obj.id_number = $($inputs[0]).val();
-                    file_obj.exp_date = $($inputs[1]).val();
+                    file_obj.exp_date  = $($inputs[1]).val();
                 }
                 fileTracker($e, true);
                 files.push(file_obj);
@@ -214,11 +216,13 @@ const Authenticate = (() => {
                     showError(file);
                 }
             });
-            if (is_any_file_error) {
+            const total_to_upload = response.length;
+            if (is_any_file_error || !total_to_upload) {
+                removeButtonLoading();
+                enableDisableSubmit();
                 return; // don't start submitting files until all front-end validation checks pass
             }
 
-            const total_to_upload = response.length;
             const isLastUpload = () => total_to_upload === idx_to_upload + 1;
             // sequentially send files
             const uploadFile = () => {
@@ -229,8 +233,15 @@ const Authenticate = (() => {
                     if (!api_response.error && !api_response.warning) {
                         $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
                         $(`#${api_response.passthrough.class}`).attr('type', 'hidden'); // don't allow users to change submitted files
-                        $(`label[for=${api_response.passthrough.class}] span`).attr('class', 'checked');
+                        $(`label[for=${api_response.passthrough.class}]`).removeClass('selected error').find('span').attr('class', 'checked');
                     }
+                    uploadNextFile();
+                }).catch((error) => {
+                    is_any_upload_failed = true;
+                    showError({
+                        message: error.message || localize('Failed'),
+                        class  : error.passthrough ? error.passthrough.class : '',
+                    });
                     uploadNextFile();
                 });
             };
@@ -259,6 +270,7 @@ const Authenticate = (() => {
                         filename      : f.file.name,
                         buffer        : fr.result,
                         documentType  : f.type,
+                        pageType      : f.page_type,
                         documentFormat: format,
                         documentId    : f.id_number || undefined,
                         expirationDate: f.exp_date || undefined,
@@ -334,8 +346,12 @@ const Authenticate = (() => {
             driverslicense: localize('Driving licence'),
         };
 
-        if (!(file.documentFormat || '').match(/^(PNG|JPG|JPEG|GIF|PDF)$/i)) {
-            return localize('Invalid document format: "[_1]"', [file.documentFormat]);
+        const accepted_formats_regex = /selfie/.test(file.passthrough.class)
+            ? /^(PNG|JPG|JPEG|GIF)$/i
+            : /^(PNG|JPG|JPEG|GIF|PDF)$/i;
+
+        if (!(file.documentFormat || '').match(accepted_formats_regex)) {
+            return localize('Invalid document format.');
         }
         if (file.buffer && file.buffer.byteLength >= 8 * 1024 * 1024) {
             return localize('File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]', [file.filename, '8MB']);
@@ -398,7 +414,7 @@ const Authenticate = (() => {
         if (response.warning || response.error) {
             is_any_upload_failed = true;
             showError({
-                message: response.message || response.error.message,
+                message: response.message || (response.error ? response.error.message : localize('Failed')),
                 class  : response.passthrough.class,
             });
         } else if (is_last_upload && !is_any_upload_failed) {

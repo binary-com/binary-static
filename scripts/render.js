@@ -13,7 +13,7 @@ require('babel-register')({
 
 const React          = require('react');
 const RenderHTML     = require('react-render-html');
-const ReactDOMServer = require('../node_modules/react-dom/server.js');
+const ReactDOMServer = require('../node_modules/react-dom/server.js'); // eslint-disable-line import/order
 
 const renderComponent = (context, path) => {
     const Component = require(path).default; // eslint-disable-line

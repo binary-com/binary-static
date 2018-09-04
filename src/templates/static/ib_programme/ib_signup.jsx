@@ -18,7 +18,7 @@ const Signup = () => (
             <div className='gr-padding-20 center-text'>
                 <h2 className='margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
-                    <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy. Just [_1]fill out the application form[_2]* and wait for our approval.', `<a href='${it.affiliate_signup_url}'>`, '</a>')} />
+                    <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy. Just [_1]fill out the application form[_2]* and wait for our approval.', `<a href='${it.affiliate_signup_url}' target="_blank">`, '</a>')} />
                     <Step circle_no='2' header={it.L('Promote [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise our MT5 service to your audience.')} />
                     <Step circle_no='3' header={it.L('Earn')}                          text={it.L('Earn a commission when your referred clients trade Forex and CFDs on our MT5 platform.')} />
                 </div>
@@ -112,7 +112,7 @@ const Signup = () => (
             <p className='mobile-text-small'>**{it.L('Cryptocurrencies commission per round trade. Example: A round trade of 1 lot of BTC/USD with spot price of 10,000 will pay USD 30 on standard account.')}</p>
             <p className='mobile-text-small'>***{it.L('Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account.')}</p>
             <div className='gr-padding-20 center-text'>
-                <a className='button' href={it.affiliate_signup_url}>
+                <a className='button' href={it.affiliate_signup_url} target='_blank' rel='noopener noreferrer'>
                     <span>{it.L('Apply Now')}</span>
                 </a>
             </div>

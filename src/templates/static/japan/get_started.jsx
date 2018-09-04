@@ -64,7 +64,7 @@ const GetStarted = () => (
             />
         </div>
 
-        <div className='gr-6 gr-12-m gr-parent contents' style={{display: 'none'}}>
+        <div className='gr-6 gr-12-m gr-parent contents' style={{ display: 'none' }}>
             <div id='content-how-to-open-an-account'>
                 <h1>{it.L('{JAPAN ONLY}How to Open an Account')}</h1>
                 <p>{it.L('{JAPAN ONLY}You can apply to open an account online. Simply click <a href="[_1]">here</a> to begin the process by opening a demo account.  Once you are familiar with our site and comfortable in your knowledge of binary options we invite you to upgrade to a Real Money Account.', it.url_for('home-jp'))}</p>

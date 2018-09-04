@@ -19,7 +19,6 @@ const ViewPopup = (() => {
         contract,
         is_sold,
         is_sell_clicked,
-        is_sold_before_expiry,
         chart_started,
         chart_init,
         chart_updated,
@@ -35,18 +34,17 @@ const ViewPopup = (() => {
     const hidden_class = 'invisible';
 
     const init = (button, onClose) => {
-        btn_view              = button;
-        contract_id           = $(btn_view).attr('contract_id');
-        contract              = {};
-        is_sold               = false;
-        is_sell_clicked       = false;
-        is_sold_before_expiry = false;
-        chart_started         = false;
-        chart_init            = false;
-        chart_updated         = false;
-        ticks_requested       = false;
-        sell_text_updated     = false;
-        $container            = '';
+        btn_view          = button;
+        contract_id       = $(btn_view).attr('contract_id');
+        contract          = {};
+        is_sold           = false;
+        is_sell_clicked   = false;
+        chart_started     = false;
+        chart_init        = false;
+        chart_updated     = false;
+        ticks_requested   = false;
+        sell_text_updated = false;
+        $container        = '';
 
         if (typeof onClose === 'function') {
             ViewPopupUI.setOnCloseFunction(onClose);
@@ -126,7 +124,6 @@ const ViewPopup = (() => {
 
         containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
         containerSetText('trade_details_start_date', epochToDateTime(contract.date_start));
-        containerSetText('trade_details_end_date', epochToDateTime(contract.date_expiry));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
         containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier, false, 3, 2));
         if (Lookback.isLookback(contract.contract_type)) {
@@ -144,12 +141,6 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const is_path_dependent_tick = +contract.is_path_dependent;
-
-        is_sold_before_expiry = is_path_dependent_tick
-            ? contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry
-            : contract.status === 'sold' || (contract.sell_time && contract.sell_time < contract.date_expiry);
-
         const final_price          = contract.sell_price || contract.bid_price;
         const is_started           = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended             = contract.status !== 'open' || contract.is_expired || contract.is_settleable;
@@ -192,20 +183,18 @@ const ViewPopup = (() => {
             }
         }
 
-        let current_spot      = contract.current_spot;
-        let current_spot_time = contract.current_spot_time;
-        if (is_ended) {
-            if (/^(tickhigh|ticklow)$/i.test(contract.contract_type)) {
-                current_spot      = is_sold_before_expiry ? contract.sell_spot : '';
-                current_spot_time = is_sold_before_expiry ? contract.sell_spot_time : '';
-            } else {
-                current_spot      = is_sold_before_expiry ? '' : contract.exit_tick;
-                current_spot_time = is_sold_before_expiry ? '' : contract.exit_tick_time;
-            }
+        let current_spot      = contract.status === 'sold' ? '' : contract.current_spot;
+        let current_spot_time = contract.status === 'sold' ? '' : contract.current_spot_time;
+        if (is_ended && contract.status !== 'sold') {
+            // for tick high/low contracts, only show exit tick information if contract lost (indicates highest/lowest tick)
+            const should_show_exit_tick = !/^(tickhigh|ticklow)$/i.test(contract.contract_type) || contract.status === 'lost';
+            current_spot      = should_show_exit_tick ? contract.exit_tick : '';
+            current_spot_time = should_show_exit_tick ? contract.exit_tick_time : '';
         }
 
         if (current_spot) {
             containerSetText('trade_details_current_spot > span', addComma(current_spot));
+            $('#trade_details_current_spot').parent().setVisibility(1);
         } else {
             $('#trade_details_current_spot').parent().setVisibility(0);
         }
@@ -216,6 +205,7 @@ const ViewPopup = (() => {
                 updateTimers();
             }
             containerSetText('trade_details_current_date', epochToDateTime(current_spot_time));
+            $('#trade_details_current_date').parent().setVisibility(1);
         } else {
             $('#trade_details_current_date').parent().setVisibility(0);
         }
@@ -260,7 +250,7 @@ const ViewPopup = (() => {
             }
         }
 
-        if (!is_sold && is_sold_before_expiry) {
+        if (!is_sold && contract.status === 'sold') {
             is_sold = true;
             if (!contract.tick_count) Highchart.showChart(contract, 'update');
             else TickDisplay.updateChart({ is_sold: true }, contract);
@@ -323,8 +313,12 @@ const ViewPopup = (() => {
             el_live_date.parentNode.setVisibility(0);
         }
 
-        containerSetText('trade_details_current_title', 'Contract Result');
-        containerSetText('trade_details_indicative_label', localize('Price'));
+        containerSetText('trade_details_current_title', localize('Contract Result'));
+        containerSetText('trade_details_indicative_label', localize('Payout'));
+        if (contract.status === 'sold') {
+            containerSetText('trade_details_end_label', localize('End Time'));
+            containerSetText('trade_details_end_date', epochToDateTime(contract.sell_time), '', true);
+        }
         if (Lookback.isLookback(contract.contract_type)) {
             containerSetText('trade_details_spot_label', localize('Close'));
             containerSetText('trade_details_spottime_label', localize('Close Time'));
@@ -347,8 +341,9 @@ const ViewPopup = (() => {
         sellSetVisibility(false);
         // showWinLossStatus(is_win);
         // don't show for japanese clients or contracts that are manually sold before starting
-        if (contract.audit_details && !isJPClient() &&
-            (!contract.sell_spot_time || contract.sell_spot_time > contract.date_start)) {
+        // Hide audit table for Lookback
+        if (contract.audit_details && !isJPClient() && !Lookback.isLookback(contract.contract_type) &&
+            (!contract.exit_tick_time || contract.exit_tick_time > contract.date_start)) {
             initAuditTable(0);
         }
     };
@@ -386,7 +381,7 @@ const ViewPopup = (() => {
             return;
         }
 
-        const div         = Utility.createElement('div', { id: 'sell_details_audit', class: 'gr-8 gr-12-m gr-no-gutter invisible' });
+        const div         = Utility.createElement('div', { id: 'sell_details_audit', class: 'gr-8 gr-12-p gr-12-m gr-no-gutter invisible' });
         const table       = Utility.createElement('table', { id: 'audit_header', class: 'gr-12' });
         const tr          = Utility.createElement('tr', { class: 'gr-row' });
         const th_previous = Utility.createElement('th', { class: 'gr-2 gr-3-t gr-3-p gr-3-m' });
@@ -522,18 +517,14 @@ const ViewPopup = (() => {
     const populateAuditTable = (show_audit_table) => {
         const contract_starts = createAuditTable('Starts');
         parseAuditResponse(contract_starts.table, contract.audit_details.contract_start).then(() => {
-            if (contract.audit_details.contract_start
-                // Hide audit table for Lookback.
-                && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
+            if (contract.audit_details.contract_start) {
                 createAuditHeader(contract_starts.table);
                 appendAuditLink('trade_details_entry_spot');
             } else {
                 contract_starts.div.remove();
             }
             // don't show exit tick information if missing or manual sold
-            if (contract.exit_tick_time && !is_sold_before_expiry
-                // Hide audit table for Lookback.
-                && !/^(LBHIGHLOW|LBFLOATPUT|LBFLOATCALL)/.test(contract.shortcode)) {
+            if (contract.audit_details.contract_end && contract.status !== 'sold') {
                 const contract_ends = createAuditTable('Ends');
                 parseAuditResponse(contract_ends.table, contract.audit_details.contract_end).then(() => {
                     if (contract.audit_details.contract_end) {
@@ -561,7 +552,7 @@ const ViewPopup = (() => {
         const longcode = contract.longcode;
 
         $container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode }));
-        const $sections  = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-m"></div></div>'));
+        const $sections  = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-p gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-p gr-12-m"></div></div>'));
         let [barrier_text, low_barrier_text] = ['Barrier', 'Low Barrier'];
         if (Lookback.isLookback(contract.contract_type)) {
             [barrier_text, low_barrier_text] =
@@ -580,8 +571,7 @@ const ViewPopup = (() => {
             ${createRow('Contract Type', '', 'trade_details_contract_type')}
             ${createRow('Transaction ID', '', 'trade_details_ref_id')}
             ${createRow('Start Time', '', 'trade_details_start_date')}
-            ${(!contract.tick_count ? createRow('End Time', '', 'trade_details_end_date') +
-                createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
+            ${(!contract.tick_count ? createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
             ${!Lookback.isLookback(contract.contract_type) ? createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${Reset.isReset(contract.contract_type) ? createRow('Reset Barrier', '', 'trade_details_reset_barrier', true) : ''}
@@ -596,6 +586,7 @@ const ViewPopup = (() => {
             ${createRow('Spot', 'trade_details_spot_label', 'trade_details_current_spot', 0, '<span></span>')}
             ${createRow('Spot Time', 'trade_details_spottime_label', 'trade_details_current_date')}
             ${createRow('Current Time', '', 'trade_details_live_date')}
+            ${!contract.tick_count ? createRow('', 'trade_details_end_label', 'trade_details_end_date', true) : ''}
             ${createRow('Indicative', 'trade_details_indicative_label', 'trade_details_indicative_price')}
             ${createRow('Profit/Loss', '', 'trade_details_profit_loss')}
             <tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>

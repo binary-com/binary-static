@@ -43,7 +43,7 @@ const urls = [
     ['service-announcements',              'monthly', 0.80, 'NOT-ja'],
     ['terms-and-conditions',               'monthly', 0.80, 'ja'],
     ['terms-and-conditions-jp',            'monthly', 0.80, 'NOT-ja'],
-//    ['user/browser-support',               'monthly', 0.80],
+    // ['user/browser-support',               'monthly', 0.80],
 
     ['liquidity-solutions',                'monthly', 0.80, 'ja'],
     ['multiple-accounts-manager',          'monthly', 0.80, 'ja'],

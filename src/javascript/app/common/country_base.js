@@ -1,6 +1,7 @@
 const createLanguageDropDown = require('./attach_dom/language_dropdown');
 const Client                 = require('../base/client');
 const BinarySocket           = require('../base/socket');
+const isLoginPages           = require('../../_common/base/login').isLoginPages;
 const getElementById         = require('../../_common/common_functions').getElementById;
 const Crowdin                = require('../../_common/crowdin');
 const Language               = require('../../_common/language');
@@ -8,7 +9,7 @@ const State                  = require('../../_common/storage').State;
 const applyToAllElements     = require('../../_common/utility').applyToAllElements;
 
 const checkClientsCountry = () => {
-    if (Crowdin.isInContext()) return;
+    if (Crowdin.isInContext() || isLoginPages()) return;
     BinarySocket.wait('website_status', 'authorize').then(() => {
         const website_status = State.getResponse('website_status');
         if (!website_status) return;
@@ -21,8 +22,11 @@ const checkClientsCountry = () => {
         } else {
             createLanguageDropDown(website_status);
         }
+        State.set('is_eu', isEuropeanCountries(clients_country));
     });
 };
+
+const isEuropeanCountries = (country) => (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(country));
 
 const limitLanguage = (lang) => {
     if (Language.get() !== lang) {
@@ -51,9 +55,6 @@ const checkLanguage = () => {
                 el.setVisibility(1);
             }
         });
-        if (Client.get('residence') !== 'jp') {
-            $('#topMenuCashier').hide();
-        }
     }
 };
 

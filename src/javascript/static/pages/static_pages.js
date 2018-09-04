@@ -1,4 +1,5 @@
 const tabListener  = require('@binary-com/binary-style').tabListener;
+const ImageSlider  = require('../../_common/image_slider');
 const MenuSelector = require('../../_common/menu_selector');
 const Scroll       = require('../../_common/scroll');
 const handleHash   = require('../../_common/utility').handleHash;
@@ -13,6 +14,10 @@ module.exports = {
     Careers: {
         onLoad: () => { tabListener(); handleHash(); $('.has-tabs').tabs(); },
     },
+    Locations: {
+        onLoad  : () => { ImageSlider.init(); },
+        onUnload: () => { ImageSlider.onUnMount(); },
+    },
     OpenSourceProjects: {
         onLoad  : () => { Scroll.sidebarScroll($('.open-source-projects')); },
         onUnload: () => { Scroll.offScroll(); },
@@ -23,9 +28,6 @@ module.exports = {
     },
     handleTab: {
         onLoad: () => { tabListener(); handleHash(); },
-    },
-    TypesOfAccounts: {
-        onLoad: () => { Scroll.goToHashSection(); return false; },
     },
     LandingPage: {
         onLoad: () => {

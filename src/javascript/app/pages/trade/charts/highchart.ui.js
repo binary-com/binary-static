@@ -8,26 +8,32 @@ const HighchartUI = (() => {
     const common_spot_style = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
 
     let txt_legend,
-        chart_options;
+        chart_options,
+        labels;
 
-    const labels = {
-        start_time  : `<div style="${common_time_style} border-style: solid;"></div> ${localize('Start time')} `,
-        entry_spot  : `<div style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></div> ${localize('Entry spot')} `,
-        reset_time  : `<div style="${common_time_style} border-color: #000; border-style: solid;"></div> ${localize('Reset time')} `,
-        exit_spot   : `<div style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></div> ${localize('Exit spot')} `,
-        end_time    : `<div style="${common_time_style} border-style: dashed;"></div> ${localize('End time')} `,
-        delay       : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
-        payout_range: `<span class="chart-payout-range"> ${localize('Payout range')} </span>`,
+    const setLabels = (params) => {
+        labels = labels || { // needs to be inside setLabels function so localize works
+            start_time  : `<span style="${common_time_style} border-style: solid;"></span> ${localize('Start Time')} `,
+            entry_spot  : `<span style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></span> ${localize('Entry Spot')} `,
+            reset_time  : `<span style="${common_time_style} border-color: #000; border-style: solid;"></span> ${localize('Reset Time')} `,
+            exit_spot   : `<span style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></span> ${localize('Exit Spot')} `,
+            end_time    : `<span style="${common_time_style} border-style: dashed;"></span> ${localize('End Time')} `,
+            delay       : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
+            payout_range: `<span class="chart-payout-range"> ${localize('Payout Range')} </span>`,
+        };
+
+        // display a guide for clients to know how we are marking entry and exit spots
+        txt_legend = (params.is_chart_delayed ? labels.delay : '') +
+            (params.is_sold_before_start ? '' : labels.start_time) +
+            (history ? (params.is_sold_before_start ? '' : labels.entry_spot) + (params.is_user_sold ? '' : labels.exit_spot) : '') +
+            (isReset(params.contract_type) ? labels.reset_time : '') +
+            labels.end_time +
+            (isCallputspread(params.contract_type) ? labels.payout_range : '');
     };
 
-    const setLabels = (chart_delayed, contract_type) => {
-        // display a guide for clients to know how we are marking entry and exit spots
-        txt_legend = (chart_delayed ? labels.delay : '') +
-            labels.start_time +
-            (history ? labels.entry_spot + labels.exit_spot : '') +
-            (isReset(contract_type) ? labels.reset_time : '') +
-            labels.end_time +
-            (isCallputspread(contract_type) ? labels.payout_range : '');
+    const updateLabels = (chart, params) => {
+        setLabels(params);
+        chart.setTitle(null, { text: txt_legend });
     };
 
     const setChartOptions = (params) => {
@@ -43,6 +49,7 @@ const HighchartUI = (() => {
                 events         : {
                     redraw: params.redrawHandler,
                 },
+                borderWidth: 0,
             },
             title: {
                 text : params.title,
@@ -56,6 +63,7 @@ const HighchartUI = (() => {
             subtitle: {
                 text   : txt_legend,
                 useHTML: true,
+                ...(params.user_sold && { style: { left: '180px' } }),
             },
             xAxis: {
                 labels: { overflow: 'justify', format: '{value:%H:%M:%S}' },
@@ -124,17 +132,6 @@ const HighchartUI = (() => {
         }
     );
 
-    const replaceExitLabelWithSell = (subtitle) => {
-        const subtitle_length = subtitle.childNodes.length;
-        const textnode        = document.createTextNode(` ${localize('Sell time')} `);
-        for (let i = 0; i < subtitle_length; i++) {
-            const item = subtitle.childNodes[i];
-            if (/End time/.test(item.nodeValue)) {
-                subtitle.replaceChild(textnode, item);
-            }
-        }
-    };
-
     const getPlotlineOptions = (params, type) => {
         const is_plotx = type === 'x';
         const options  = {
@@ -169,9 +166,9 @@ const HighchartUI = (() => {
 
     return {
         setLabels,
+        updateLabels,
         setChartOptions,
         getHighchartOptions,
-        replaceExitLabelWithSell,
         getPlotlineOptions,
         showError,
         getMarkerObject,

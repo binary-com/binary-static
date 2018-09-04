@@ -8,7 +8,7 @@ const DepositWithdraw = () => (
         <h1 id='heading' />
 
         <div id='loading_cashier'>
-            <Loading/>
+            <Loading />
         </div>
 
         <div id='messages' className='invisible'>
