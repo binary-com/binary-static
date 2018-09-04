@@ -32,9 +32,13 @@ module.exports = {
         'space-in-parens'                   : ['error', 'never'],
         'space-infix-ops'                   : 'error',
         'space-unary-ops'                   : 'error',
-        // react rules
+
+        // import rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],
+        'import/no-useless-path-segments'   : 'error',
         'import/order'                      : ['error', { groups: [['builtin', 'external'], 'sibling', 'parent'], 'newlines-between': 'ignore' }],
+
+        // react rules
         'jsx-quotes'                        : ['error', 'prefer-single'],
         'react/jsx-closing-bracket-location': ['error', { selfClosing: 'line-aligned', nonEmpty: 'line-aligned' }],
         'react/jsx-closing-tag-location'    : 'error',
