@@ -97,7 +97,7 @@
         position: absolute;
         opacity: 0;
         pointer-events: none;
-        background: $COLOR_LIGHT_GRAY;
+        background: $COLOR_WHITE;
         border: 1px solid $COLOR_GRAY;
         transform: translateY(-20px);
         transition: transform 0.25s ease, opacity 0.25s linear;
@@ -147,9 +147,21 @@
             &:hover {
                 background: $COLOR_BRANDBLUE_5;
             }
+            &:nth-last-child(2) {
+                border-bottom: 1px solid $COLOR_GRAY;
+            }
+        }
+        .acc-button {
+            padding: 8px;
+            border-bottom: 1px solid $COLOR_GRAY;
+
+            button.btn {
+                margin: 0;
+                width: 100%;
+                font-size: 14px;
+            }
         }
         .acc-logout {
-            border-top: 1px solid $COLOR_GRAY;
             cursor: pointer;
             font-size: 12px;
             padding: 10px 16px;
@@ -184,14 +196,18 @@
             background-color: $COLOR_BRANDBLUE_85;
         }
         &-list {
-            border-color: $COLOR_BRANDBLUE_85;
-
+            .acc-switcher-account {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
             .acc-switcher-id {
                 color: $COLOR_BRANDBLUE_40;
             }
             .acc-switcher-type {
                 color: $COLOR_WHITE;
                 background: $COLOR_BRANDBLUE_75;
+            }
+            .acc-button {
+                border-color: $COLOR_BRANDBLUE_85;
             }
             .acc-logout {
                 border-color: $COLOR_BRANDBLUE_85;

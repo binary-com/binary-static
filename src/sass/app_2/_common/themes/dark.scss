@@ -334,20 +334,6 @@ body.dark, .theme-wrapper.dark {
     .barspinner {
         @extend .barspinner.white;
     }
-    .acc-switcher-header {
-        border-color: $COLOR_BRANDBLUE_85;
-    }
-    .acc-switcher-list {
-        background: $COLOR_BLUE;
-
-        .acc-switcher-items {
-            color: $COLOR_BRANDBLUE_40;
-
-            .acc-switcher-account:hover {
-                background: $COLOR_BRANDBLUE_85;
-            }
-        }
-    }
     .card-list {
         &__card {
             background: $COLOR_BLUE;

@@ -7,8 +7,17 @@ import { IconArrow }     from '../../../../Assets/Common';
 import { localize }      from '../../../../../_common/localize';
 import Client            from '../../../../../_common/base/client_base';
 
-const AccountInfo = ({ balance, currency, loginid, is_dialog_on, toggleDialog }) => {
-    const account_type = !(Client.get('is_virtual', loginid)) && currency ? Client.getAccountTitle(loginid) : localize('Demo');
+const AccountInfo = ({
+    balance,
+    currency,
+    loginid,
+    is_dialog_on,
+    is_upgrade_enabled,
+    onClickUpgrade,
+    toggleDialog }) => {
+    const is_demo       = (Client.get('is_virtual', loginid));
+    const account_title = Client.getAccountTitle(loginid);
+    const account_type  = !(is_demo) && currency ? account_title : localize('Demo');
     return (
         <div className='acc-balance'>
             <div className='acc-switcher-container'>
@@ -27,6 +36,8 @@ const AccountInfo = ({ balance, currency, loginid, is_dialog_on, toggleDialog })
                         <AccountSwitcher
                             is_visible={is_dialog_on}
                             toggle={toggleDialog}
+                            is_upgrade_enabled={is_upgrade_enabled}
+                            onClickUpgrade={onClickUpgrade}
                         />
                     </div>
                 </CSSTransition>
@@ -42,11 +53,13 @@ const AccountInfo = ({ balance, currency, loginid, is_dialog_on, toggleDialog })
 };
 
 AccountInfo.propTypes = {
-    balance     : PropTypes.string,
-    currency    : PropTypes.string,
-    loginid     : PropTypes.string,
-    is_dialog_on: PropTypes.bool,
-    toggleDialog: PropTypes.func,
+    balance           : PropTypes.string,
+    currency          : PropTypes.string,
+    loginid           : PropTypes.string,
+    is_dialog_on      : PropTypes.bool,
+    is_upgrade_enabled: PropTypes.bool,
+    onClickUpgrade    : PropTypes.func,
+    toggleDialog      : PropTypes.func,
 };
 
 export { AccountInfo };

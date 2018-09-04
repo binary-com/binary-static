@@ -1,16 +1,15 @@
-import PropTypes               from 'prop-types';
-import React                   from 'react';
-import { withRouter }          from 'react-router';
+import PropTypes                from 'prop-types';
+import React                    from 'react';
+import { withRouter }           from 'react-router';
 import {
     AccountInfo,
     LoginButton,
     MenuLinks,
     ToggleMenuDrawer,
-    ToggleNotificationsDrawer,
-    UpgradeButton }            from '../../Components/Layout/Header';
-import header_links            from '../../Constants/header_links';
-import { connect }             from '../../../Stores/connect';
-import { formatMoney }         from '../../../../_common/base/currency_base';
+    ToggleNotificationsDrawer } from '../../Components/Layout/Header';
+import header_links             from '../../Constants/header_links';
+import { connect }              from '../../../Stores/connect';
+import { formatMoney }          from '../../../../_common/base/currency_base';
 
 const Header = ({
     balance,
@@ -34,12 +33,13 @@ const Header = ({
                         <React.Fragment>
                             <AccountInfo
                                 balance={formatMoney(currency, balance, true)}
+                                is_upgrade_enabled={can_upgrade}
+                                onClickUpgrade={onClickUpgrade}
                                 currency={currency}
                                 loginid={loginid}
                                 is_dialog_on={is_acc_switcher_on}
                                 toggleDialog={toggleAccountsDialog}
                             />
-                            { can_upgrade && <UpgradeButton onClick={onClickUpgrade} /> }
                         </React.Fragment>
                         :
                         <LoginButton />

@@ -1,6 +1,7 @@
 import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
+import { UpgradeButton } from '../../Components/Layout/Header';
 import { IconLogout }    from '../../../Assets/Header/Drawer';
 import { requestLogout } from '../../../Services';
 import Client            from '../../../../_common/base/client_base';
@@ -72,11 +73,12 @@ class AccountSwitcher extends React.Component {
     }
 
     render() {
-        if (!Client.isLoggedIn() || !(this.state.accounts_list.length > 0)) return false;
+        if (!Client.isLoggedIn()) return false;
 
         return (
             <div className='acc-switcher-list' ref={this.setWrapperRef}>
-                {this.state.accounts_list.map((account) => (
+                {(this.state.accounts_list.length > 0) &&
+                this.state.accounts_list.map((account) => (
                     <React.Fragment key={account.loginid}>
                         <div
                             className={classNames('acc-switcher-account', account.icon)}
@@ -87,6 +89,11 @@ class AccountSwitcher extends React.Component {
                         </div>
                     </React.Fragment>
                 ))}
+                {this.props.is_upgrade_enabled &&
+                    <div className='acc-button'>
+                        <UpgradeButton onClick={this.props.onClickUpgrade} />
+                    </div>
+                }
                 <div className='acc-logout' onClick={requestLogout}>
                     <span className='acc-logout-text'>{localize('Log out')}</span>
                     <IconLogout className='drawer-icon'/>
@@ -97,8 +104,10 @@ class AccountSwitcher extends React.Component {
 }
 
 AccountSwitcher.propTypes = {
-    is_visible: PropTypes.bool,
-    toggle    : PropTypes.func,
+    is_upgrade_enabled: PropTypes.bool,
+    is_visible        : PropTypes.bool,
+    onClickUpgrade    : PropTypes.func,
+    toggle            : PropTypes.func,
 };
 
 export default AccountSwitcher;
