@@ -1,16 +1,15 @@
-import PropTypes               from 'prop-types';
-import React                   from 'react';
-import { withRouter }          from 'react-router';
+import PropTypes                from 'prop-types';
+import React                    from 'react';
+import { withRouter }           from 'react-router';
 import {
     AccountInfo,
     LoginButton,
     MenuLinks,
     ToggleMenuDrawer,
-    ToggleNotificationsDrawer,
-    UpgradeButton }            from '../../Components/Layout/Header';
-import header_links            from '../../Constants/header_links';
-import { connect }             from '../../../Stores/connect';
-import { formatMoney }         from '../../../../_common/base/currency_base';
+    ToggleNotificationsDrawer } from '../../Components/Layout/Header';
+import header_links             from '../../Constants/header_links';
+import { connect }              from '../../../Stores/connect';
+import { formatMoney }          from '../../../../_common/base/currency_base';
 
 const Header = ({
     balance,
@@ -18,7 +17,9 @@ const Header = ({
     currency,
     loginid,
     is_logged_in,
+    is_acc_switcher_on,
     onClickUpgrade,
+    toggleAccountsDialog,
 }) => (
     <header className='header'>
         <div className='menu-items'>
@@ -32,10 +33,13 @@ const Header = ({
                         <React.Fragment>
                             <AccountInfo
                                 balance={formatMoney(currency, balance, true)}
+                                is_upgrade_enabled={can_upgrade}
+                                onClickUpgrade={onClickUpgrade}
                                 currency={currency}
                                 loginid={loginid}
+                                is_dialog_on={is_acc_switcher_on}
+                                toggleDialog={toggleAccountsDialog}
                             />
-                            { can_upgrade && <UpgradeButton onClick={onClickUpgrade} /> }
                         </React.Fragment>
                         :
                         <LoginButton />
@@ -48,24 +52,28 @@ const Header = ({
 );
 
 Header.propTypes = {
-    balance       : PropTypes.string,
-    can_upgrade   : PropTypes.bool,
-    currency      : PropTypes.string,
-    is_dark_mode  : PropTypes.bool, // TODO: add dark theme handler
-    is_logged_in  : PropTypes.bool,
-    loginid       : PropTypes.string,
-    onClickUpgrade: PropTypes.func, // TODO: add click handler
+    balance             : PropTypes.string,
+    can_upgrade         : PropTypes.bool,
+    currency            : PropTypes.string,
+    loginid             : PropTypes.string,
+    is_acc_switcher_on  : PropTypes.bool,
+    is_dark_mode        : PropTypes.bool, // TODO: add dark theme handler
+    is_logged_in        : PropTypes.bool,
+    onClickUpgrade      : PropTypes.func, // TODO: add click handler
+    toggleAccountsDialog: PropTypes.func,
 };
 
 // need to wrap withRouter around connect
 // to prevent updates on <MenuLinks /> from being blocked
 export default withRouter(connect(
     ({ ui, client }) => ({
-        is_dark_mode: ui.is_dark_mode_on,
-        balance     : client.balance,
-        can_upgrade : client.can_upgrade,
-        currency    : client.currency,
-        loginid     : client.loginid,
-        is_logged_in: client.is_logged_in,
+        balance             : client.balance,
+        can_upgrade         : client.can_upgrade,
+        currency            : client.currency,
+        loginid             : client.loginid,
+        is_acc_switcher_on  : ui.is_accounts_switcher_on,
+        is_dark_mode        : ui.is_dark_mode_on,
+        is_logged_in        : client.is_logged_in,
+        toggleAccountsDialog: ui.toggleAccountsDialog,
     })
 )(Header));

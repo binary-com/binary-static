@@ -64,7 +64,7 @@ const MenuDrawer = ({
                 />
             </React.Fragment>}
         </div>
-        { Client.isLoggedIn() &&
+        { !!(Client.isLoggedIn() && is_mobile) &&
             <div className='drawer-footer'>
                 <DrawerItem
                     icon={<IconLogout className='drawer-icon' />}
