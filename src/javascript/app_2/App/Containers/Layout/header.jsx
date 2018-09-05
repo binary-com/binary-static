@@ -16,15 +16,16 @@ const Header = ({
     can_upgrade,
     currency,
     loginid,
-    is_logged_in,
     is_acc_switcher_on,
+    is_logged_in,
+    is_mobile,
     onClickUpgrade,
     toggleAccountsDialog,
 }) => (
     <header className='header'>
         <div className='menu-items'>
             <div className='menu-left'>
-                <ToggleMenuDrawer />
+                {is_mobile && <ToggleMenuDrawer />}
                 <MenuLinks items={header_links} />
             </div>
             <div className='menu-right'>
@@ -58,6 +59,7 @@ Header.propTypes = {
     is_acc_switcher_on  : PropTypes.bool,
     is_dark_mode        : PropTypes.bool, // TODO: add dark theme handler
     is_logged_in        : PropTypes.bool,
+    is_mobile           : PropTypes.bool,
     loginid             : PropTypes.string,
     onClickUpgrade      : PropTypes.func, // TODO: add click handler
     toggleAccountsDialog: PropTypes.func,
@@ -74,6 +76,7 @@ export default withRouter(connect(
         loginid             : client.loginid,
         is_acc_switcher_on  : ui.is_accounts_switcher_on,
         is_dark_mode        : ui.is_dark_mode_on,
+        is_mobile           : ui.is_mobile,
         toggleAccountsDialog: ui.toggleAccountsDialog,
     })
 )(Header));
