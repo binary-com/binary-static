@@ -1,4 +1,5 @@
 const path           = require('path');
+const getApp2Aliases = require('./helpers').getApp2Aliases;
 const makeCacheGroup = require('./helpers').makeCacheGroup;
 const PATHS          = require('./paths');
 const getPlugins     = require('./plugins');
@@ -18,6 +19,12 @@ const app2Config = (grunt) => ({
                 ...makeCacheGroup('react_mobx'   , -10, 'node_modules', '(react|mobx)'),
                 ...makeCacheGroup('vendor'       , -20, 'node_modules'),
             },
+        },
+    },
+    resolve: {
+        alias: {
+            _common: path.resolve(PATHS.SRC, 'javascript/_common'),
+            ...getApp2Aliases(),
         },
     },
     externals: {
