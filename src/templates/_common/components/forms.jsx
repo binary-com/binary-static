@@ -30,7 +30,7 @@ export const FormRow = ({
     const getInnerElement = () => {
         if (type === 'select') {
             return (
-                <select id={id} className={`form_input ${className||''}`} {...attributes} >
+                <select id={id} className={`form_input ${className || ''}`} {...attributes} >
                     {children}
                 </select>
             );
@@ -120,7 +120,7 @@ export const SubmitButton = ({
             }
             <div className='gr-padding-10'>
                 { custom_btn_text &&
-                    <a className={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
+                    <a className={`button ${custom_btn_class || ''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
                         <span className='button'>{custom_btn_text}</span>
                     </a>
                 }
@@ -137,9 +137,9 @@ export const SubmitButton = ({
 
     if (!no_wrapper) {
         return (
-            <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className||''}`} id={id}>
+            <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className || ''}`} id={id}>
                 { !is_centered ?
-                    <div className={`${!is_left_align? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
+                    <div className={`${!is_left_align ? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
                         {content}
                     </div> :
                     content

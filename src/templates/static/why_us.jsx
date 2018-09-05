@@ -19,12 +19,12 @@ const WhyUs = () => (
                     <List
                         id='sidebar-nav'
                         items={[
-                            { id: 'sidebar-link-section-1', href: '#sharp-prices',         text: it.L('Sharp prices'), className: 'selected'},
-                            { id: 'sidebar-link-section-2', href: '#flexible-trades',      text: it.L('Flexible trades')},
-                            { id: 'sidebar-link-section-3', href: '#controlled-risk',      text: it.L('Controlled risk')},
-                            { id: 'sidebar-link-section-4', href: '#power-and-simplicity', text: it.L('Power & simplicity')},
-                            { id: 'sidebar-link-section-5', href: '#security',             text: it.L('Security'),     className: 'id-hide'},
-                            { id: 'sidebar-link-section-6', href: '#trust',                text: it.L('Trust')},
+                            { id: 'sidebar-link-section-1', href: '#sharp-prices',         text: it.L('Sharp prices'), className: 'selected' },
+                            { id: 'sidebar-link-section-2', href: '#flexible-trades',      text: it.L('Flexible trades') },
+                            { id: 'sidebar-link-section-3', href: '#controlled-risk',      text: it.L('Controlled risk') },
+                            { id: 'sidebar-link-section-4', href: '#power-and-simplicity', text: it.L('Power & simplicity') },
+                            { id: 'sidebar-link-section-5', href: '#security',             text: it.L('Security'),     className: 'id-hide' },
+                            { id: 'sidebar-link-section-6', href: '#trust',                text: it.L('Trust') },
                         ]}
                     />
                     <div className='center-text gr-padding-10 client_logged_out invisible'>

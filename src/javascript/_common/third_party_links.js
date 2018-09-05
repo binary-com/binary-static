@@ -42,8 +42,7 @@ const ThirdPartyLinks = (() => {
         let destination;
         try {
             destination = new URL(href);
-        }
-        catch (e) {
+        } catch (e) {
             return false;
         }
         return !!destination.host

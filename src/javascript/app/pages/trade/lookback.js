@@ -2,10 +2,9 @@ const Contract = require('./contract');
 const Defaults = require('./defaults');
 const localize = require('../../../_common/localize').localize;
 
-/*
+/**
  * Handles lookback option form
-**/
-
+ */
 const Lookback = (() => {
     const displayLookback = () => {
         const multiplier_element    = document.getElementById('multiplier_row');

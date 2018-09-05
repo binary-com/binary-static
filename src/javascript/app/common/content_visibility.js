@@ -97,14 +97,16 @@ const ContentVisibility = (() => {
     const parseMT5FinRule = (rule) => rule.match(/^mt5fin:(.+)$/)[1];
 
     const shouldShowElement = (
-            attr_str,
-            current_landing_company_shortcode,
-            client_has_mt_company,
-            mt5fin_company_shortcode
+        attr_str,
+        current_landing_company_shortcode,
+        client_has_mt_company,
+        mt5fin_company_shortcode
     ) => {
-        const { is_exclude,
-                names,
-                mt5fin_rules } = parseAttributeString(attr_str);
+        const {
+            is_exclude,
+            mt5fin_rules,
+            names,
+        } = parseAttributeString(attr_str);
         const rule_set = new Set(names);
 
         const rule_set_has_current = rule_set.has(current_landing_company_shortcode);

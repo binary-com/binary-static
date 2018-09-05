@@ -8,7 +8,7 @@ const ProfessionalClient = () => (
             <input id='chk_professional' type='checkbox' />
             <label htmlFor='chk_professional'>{it.L('I want to be treated as a professional client.')}&nbsp;</label>
             <a id='professional_info_toggle' className='toggle-arrow' href='javascript:;'>{it.L('What is this?')}</a>
-            <div id='professional_info' style={{display: 'none'}}>
+            <div id='professional_info' style={{ display: 'none' }}>
                 <div id='non_uk' className='invisible'>
                     <p>{it.L('Clients need to satisfy at least two of the following criteria in order to receive Professional Client status:')}</p>
                     <ul className='checked'>

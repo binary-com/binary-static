@@ -2,14 +2,14 @@ import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const DownloadBlock = ({
-   badge,
-   desc,
-   download,
-   href,
-   image,
-   os,
-   target,
-   title,
+    badge,
+    desc,
+    download,
+    href,
+    image,
+    os,
+    target,
+    title,
 }) => (
     <div className='gr-4 gr-6-m gr-padding-10'>
         <img className='gr-6 gr-centered' src={it.url_for(`images/pages/metatrader/icons/${image}.svg`)} />

@@ -35,12 +35,6 @@ const Header = (() => {
                     }
                 });
             }
-        } else { // logged-out
-            BinarySocket.wait('website_status').then(() => {
-                if (State.get('is_eu')) {
-                    displayNotification('In the EU, financial binary options are only available to professional investors.', false, 'MFSA_MESSAGE');
-                }
-            });
         }
     };
 
@@ -284,6 +278,8 @@ const Header = (() => {
                 document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
                 excluded_until       : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                                                 'contact'),
                 financial_limit      : () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                                             'user/security/self_exclusionws'),
+                mf_retail            : () => buildMessage('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                                  'contact'),
+                mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
                 required_fields      : () => buildMessage('Please complete your [_1]personal details[_2] before you proceed.', 'user/settings/detailsws'),
                 residence            : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                                                   'user/settings/detailsws'),
                 risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
@@ -291,7 +287,6 @@ const Header = (() => {
                 tnc                  : () => buildMessage('Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',                                  'user/tnc_approvalws'),
                 unwelcome            : () => buildMessage('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                    'contact'),
                 withdrawal_locked    : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
-                mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
             };
 
             const validations = {
@@ -302,6 +297,8 @@ const Header = (() => {
                 document_review      : () => hasStatus('document_under_review'),
                 excluded_until       : () => Client.get('excluded_until'),
                 financial_limit      : () => hasStatus('ukrts_max_turnover_limit_not_set'),
+                mf_retail            : () => Client.get('landing_company_shortcode') === 'maltainvest' && !hasStatus('professional'),
+                mt5_withdrawal_locked: () => hasStatus('mt5_withdrawal_locked'),
                 required_fields      : () => Client.isAccountOfType('financial') && hasMissingRequiredField(),
                 residence            : () => !Client.get('residence'),
                 risk                 : () => Client.getRiskAssessment(),
@@ -309,7 +306,6 @@ const Header = (() => {
                 tnc                  : () => Client.shouldAcceptTnc(),
                 unwelcome            : () => hasStatus('unwelcome'),
                 withdrawal_locked    : () => hasStatus('withdrawal_locked'),
-                mt5_withdrawal_locked: () => hasStatus('mt5_withdrawal_locked'),
             };
 
             // real account checks in order
@@ -328,6 +324,7 @@ const Header = (() => {
                 'withdrawal_locked',
                 'mt5_withdrawal_locked',
                 'unwelcome',
+                'mf_retail',
             ];
 
             // virtual checks
@@ -338,7 +335,11 @@ const Header = (() => {
             const checkStatus = (check_statuses) => {
                 const notified = check_statuses.some((check_type) => {
                     if (validations[check_type]()) {
-                        displayNotification(messages[check_type]());
+                        // show MF retail message on Trading pages only
+                        if (check_type === 'mf_retail' && !(State.get('is_trading') || State.get('is_mb_trading'))) {
+                            return false;
+                        }
+                        displayNotification(messages[check_type](), false, check_type === 'mf_retail' ? 'MF_RETAIL_MESSAGE' : '');
                         return true;
                     }
                     return false;

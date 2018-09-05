@@ -3,6 +3,7 @@ import Loading from '../../_common/components/loading.jsx';
 import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
+/* eslint-disable react/jsx-no-target-blank */
 const AccountDesc = ({ title, description, account_type, items }) => {
     let types = '';
     if (account_type) {
@@ -204,7 +205,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:1000'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                             ]}
                         />
                         <AccountDesc
@@ -215,7 +216,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:30'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                                 it.L('Negative balance protection'),
                             ]}
                         />
@@ -227,7 +228,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:300'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                             ]}
                         />
                         <AccountDesc
@@ -238,7 +239,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:500'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission'),
+                                it.L('No commission (excluding cryptocurrencies)'),
                             ]}
                         />
                         <AccountDesc
@@ -526,7 +527,7 @@ const Metatrader = () => (
                         <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
                         <div id='msg_upgrade'>{it.L('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', it.url_for('new_account/realws'), it.website_name)}</div>
                         <div id='msg_real_financial'>
-                            <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 real account, please:')}</span>
+                            <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account, please:')}</span>
                             <span id='msg_mam_account' className='invisible'>{it.L('To create a MAM real account, please:')}</span>
                             <ul className='bullet'>
                                 <li className='maltainvest invisible'>{it.L('Upgrade to [_1] <a href="[_2]">Financial Account</a>.', it.website_name, it.url_for('new_account/maltainvestws'))}</li>
@@ -542,5 +543,6 @@ const Metatrader = () => (
         </div>
     </React.Fragment>
 );
+/* eslint-enable react/jsx-no-target-blank */
 
 export default Metatrader;

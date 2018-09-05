@@ -66,7 +66,7 @@ exports.readFile = (path) => readFileAsync(path, 'utf8');
 const writefileAsync = util.promisify(fs.writeFile);
 exports.writeFile = async (path, data) => {
     await ensureDirectoryExistence(path);
-    return await writefileAsync(path, data);
+    return writefileAsync(path, data);
 };
 
 exports.isExcluded = (excludes, lang) => {

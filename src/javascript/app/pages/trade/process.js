@@ -144,18 +144,16 @@ const Process = (() => {
             }
         }
 
-        const available_contracts = getPropertyValue(contracts, ['contracts_for', 'available']);
-
         commonTrading.displayContractForms('contract_form_name_nav', contract_categories, formname);
 
-        processContractForm(available_contracts, formname);
+        processContractForm(formname);
 
         TradingAnalysis.request();
 
         commonTrading.hideFormOverlay();
     };
 
-    const processContractForm = (available_contracts = State.getResponse('contracts_for.available'), formname_to_set = getElementById('contract').value || Defaults.get('formname')) => {
+    const processContractForm = (formname_to_set = getElementById('contract').value || Defaults.get('formname')) => {
         setFormName(formname_to_set);
 
         // get updated formname

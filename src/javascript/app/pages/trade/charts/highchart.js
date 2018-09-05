@@ -424,12 +424,12 @@ const Highchart = (() => {
     const updateBarrier = () => {
         const { barrier, high_barrier, low_barrier } = contract;
         // Update barrier only if it doesn't equal previous value
-        if ( barrier && barrier !== prev_barriers[0] ) { // Batman: Good boy!
+        if (barrier && barrier !== prev_barriers[0]) { // Batman: Good boy!
             prev_barriers[0] = barrier;
             removePlotLine('barrier', 'y');
             drawBarrier();
-        } else if ( high_barrier && low_barrier
-            && (high_barrier !== prev_barriers[1] || low_barrier !== prev_barriers[0] )) {
+        } else if (high_barrier && low_barrier
+            && (high_barrier !== prev_barriers[1] || low_barrier !== prev_barriers[0])) {
             prev_barriers[1] = high_barrier;
             prev_barriers[0] = low_barrier;
             removePlotLine('high_barrier', 'y');

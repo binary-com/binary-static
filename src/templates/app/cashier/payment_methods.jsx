@@ -19,7 +19,7 @@ const TableValues = ({ value }) => {
     const values = Array.isArray(value) ? value : [value];
     return (
         <React.Fragment>
-            { values.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx}/>, e], null) }
+            { values.reduce((arr, e, inx) => arr === null ? [e] : [...arr, <br key={inx} />, e], null) }
         </React.Fragment>
     );
 };

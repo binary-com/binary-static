@@ -135,7 +135,8 @@ const BIEL = () => (
                     <li>{it.L('Negative Balance Protection')}
                         <p>{it.L('When using the MT5 Trading Platform, all our clients will be provided with margin monitoring functionality to protect you from encountering negative balances when trading under normal market conditions. As a trader, you should always, and at all times maintain the appropriate levels of margin in your trading account as the recommended method of your own risk management.')}</p>
                         <p>{it.L('If your usable margin drops below 100%, a margin call mode will be triggered and maintained till the level of 50%. In the event that your margin level is equal to, or drops below 50%, the Company will initiate the closing of your current open positions, starting from the most unprofitable until the required margin level is achieved. In such events, the positions will be automatically closed at the current market price at that point in time.')}</p>
-                        <p>{it.L('If you incur a negative balance through your trading activities, the Company will credit your account with the amount of the negative balance, provided that such debit was due to normal trading activity following this policy.')}</p>
+                        <p>{it.L('In exceptional circumstances, where there is a price change in the underlying that is sufficiently large and sudden, gapping can occur. In such cases, the automatic margin close-out protection might fail, causing your account balance to fall below zero. For this purpose, a Negative Balance Protection mechanism has been introduced. Negative Balance Protection provides a ‘backstop’ in case of extreme market conditions and ensures that your maximum losses from trading CFDs, including all related costs, are limited to the balance available on your CFD account. Therefore, you can never lose more money than the total sum invested for trading CFDs; if your CFD account balance falls below zero, the Company will compensate the negative balance as soon as possible without any additional cost to you.')}</p>
+                        <p>{it.L('Negative Balance Protection does not apply to clients categorized as professional traders, who can still lose more money than their available balance.')}</p>
                         <p>{it.L('The Company does not offer credit to its clients. You acknowledge and agree that you will not be dealing with us on credit.')}</p>
                     </li>
                 </ol>
@@ -199,15 +200,15 @@ const BIEL = () => (
         <p>{it.L('Should you be unsatisfied with our response, you can also escalate your complaint to the Office of the Arbiter for Financial Services, who is independent from us. Complaints to the Arbiter for Financial Services should always be made in a prescribed form and addressed to the:')}</p>
         <address>
             <p>
-                Office of the Arbiter for Financial Services<br/>
-                1st floor, St Calcedonius Square<br/>
-                Floriana FRN1530<br/>
+                Office of the Arbiter for Financial Services<br />
+                1st floor, St Calcedonius Square<br />
+                Floriana FRN1530<br />
                 Malta
             </p>
 
             <p>
-                {it.L('Telephone')}: +356 (or 00356) 2124 9245<br/>
-                {it.L('E-mail')}: <a href='mailto:complaint.info@financialarbiter.org.mt'>complaint.info@financialarbiter.org.mt</a><br/>
+                {it.L('Telephone')}: +356 (or 00356) 2124 9245<br />
+                {it.L('E-mail')}: <a href='mailto:complaint.info@financialarbiter.org.mt'>complaint.info@financialarbiter.org.mt</a><br />
                 {it.L('Website')}: <a href='http://financialarbiter.org.mt/en/Pages/Home.aspx' target='_blank' rel='noopener noreferrer'>http://financialarbiter.org.mt/en/Pages/Home.aspx</a>
             </p>
         </address>

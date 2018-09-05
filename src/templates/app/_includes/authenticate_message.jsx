@@ -83,7 +83,7 @@ const FileSelector = ({
                                             { type === 'poa' && (
                                                 <div className='gr-row form-row gr-centered'>
                                                     <div className='gr-12'>
-                                                        <input id={`add_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} data-name={document.name}/>
+                                                        <input id={`add_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} data-name={document.name} />
                                                         <label htmlFor={`add_file${j}`} className='button'>{it.L('Add')} <span className='add' /></label>
                                                     </div>
                                                 </div>
@@ -91,7 +91,7 @@ const FileSelector = ({
                                             { type === 'selfie' && (
                                                 <div className='gr-row form-row gr-centered'>
                                                     <div className='gr-12'>
-                                                        <input id={`selfie${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png' data-type='other' data-name={document.name} data-page-type='photo'/>
+                                                        <input id={`selfie${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png' data-type='other' data-name={document.name} data-page-type='photo' />
                                                         <label htmlFor={`selfie${j}`} className='button'>{it.L('Add')} <span className='add' /></label>
                                                     </div>
                                                 </div>

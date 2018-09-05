@@ -1,4 +1,5 @@
 import React from 'react';
+import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const BoxInner = ({ className = '', href, image, text }) => (
     <div className={`gr-6 center-text ${className}`}>
@@ -15,6 +16,25 @@ const BoxInner = ({ className = '', href, image, text }) => (
                 <p>{text}</p>
             </React.Fragment>
         }
+    </div>
+);
+
+const ValuesBox = ({ subheader, icon, paragraph }) => (
+    <div className='gr-6 gr-12-p gr-12-m'>
+        <div className='values-box'>
+            <div className={`icon-wrapper ${icon}`} />
+            <div className='content-wrapper'>
+                <div>
+                    <h4 className='values-box-subheader'>{subheader}</h4>
+                </div>
+                <SeparatorLine no_wrapper sub_class='header-line' />
+                <div>
+                    <p className='values-box-text'>
+                        {paragraph}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 );
 
@@ -44,6 +64,45 @@ const Index = () => (
                         <p>{it.L('Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available.')}</p>
                         <p>{it.L('[_1] has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide.', it.website_name)}</p>
                         <p>{it.L('When you trade with [_1], you can be assured that your deposits are held in a separate trust account and are not used for any other purpose.', it.website_name)}</p>
+                    </div>
+                </div>
+            </div>
+            <div className='gr-12'>
+                <SeparatorLine no_wrapper sub_class='gr-padding-10' />
+            </div>
+            <div className='gr-parent'>
+                <h1 className='center-text gr-padding-20' data-anchor>
+                    {it.L('Our values')}
+                </h1>
+                <div className='gr-row'>
+                    <ValuesBox
+                        subheader={it.L('Integrity')}
+                        icon='ic-intergrity'
+                        paragraph={it.L('We believe that we should always do the right thing. This includes serving our customers with honesty and transparency, settling all contracts by the book, and communicating in plain language that can be easily understood.')}
+                    />
+                    <ValuesBox
+                        subheader={it.L('Teamwork')}
+                        icon='ic-teamwork'
+                        paragraph={it.L('We value positive team players who can work together to overcome challenges and achieve common goals.')}
+                    />
+                    <ValuesBox
+                        subheader={it.L('Competence')}
+                        icon='ic-competence'
+                        paragraph={it.L('We love to work with smart and talented people who are eager to roll up their sleeves and get things done.')}
+                    />
+                    <ValuesBox
+                        subheader={it.L('Customer focus')}
+                        icon='ic-customer-focus'
+                        paragraph={it.L('We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible.')}
+                    />
+
+                    <div className='gr-12 center-text'>
+                        <p>{it.L('Want to be a part of our dynamic culture? Browse all our openings and see where you fit:')}</p>
+                    </div>
+                    <div className='center-element'>
+                        <a className='button-secondary' href={it.url_for('careers?anchor=open-positions')}>
+                            <span>{it.L('Open positions')}</span>
+                        </a>
                     </div>
                 </div>
             </div>
