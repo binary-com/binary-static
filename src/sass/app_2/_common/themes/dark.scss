@@ -31,13 +31,23 @@ body.dark, .theme-wrapper.dark {
             .menu-right .acc-balance-container {
                 .acc-balance {
                     .acc-info {
-                        border-color: $COLOR_BRANDBLUE_85;
-
                         p {
                             color: $COLOR_BRANDBLUE_40;
                         }
+                        &:hover:not(.show) {
+                            background-color: $COLOR_BRANDBLUE_85;
+                        }
+                        &.show {
+                            p {
+                                color: $COLOR_WHITE;
+                            }
+                            &:after {
+                                background: $COLOR_WHITE;
+                            }
+                        }
                     }
                     .acc-balance-amount {
+                        border-color: $COLOR_BRANDBLUE_85;
                         color: $COLOR_WHITE;
 
                         .symbols {
@@ -323,20 +333,6 @@ body.dark, .theme-wrapper.dark {
     }
     .barspinner {
         @extend .barspinner.white;
-    }
-    .acc-switcher-header {
-        border-color: $COLOR_BRANDBLUE_85;
-    }
-    .acc-switcher-list {
-        background: $COLOR_BLUE;
-
-        .acc-switcher-items {
-            color: $COLOR_BRANDBLUE_40;
-
-            .acc-switcher-account:hover {
-                background: $COLOR_BRANDBLUE_85;
-            }
-        }
     }
     .card-list {
         &__card {

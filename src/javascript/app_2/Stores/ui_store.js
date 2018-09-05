@@ -13,9 +13,10 @@ export default class UIStore extends BaseStore {
     @observable is_notifications_drawer_on = false;
     @observable is_portfolio_drawer_on     = false;
 
-    @observable is_dark_mode_on       = true;
-    @observable is_language_dialog_on = false;
-    @observable is_settings_dialog_on = false;
+    @observable is_dark_mode_on         = true;
+    @observable is_language_dialog_on   = false;
+    @observable is_settings_dialog_on   = false;
+    @observable is_accounts_switcher_on = false;
 
     // Purchase Controls
     @observable is_purchase_confirm_on = false;
@@ -60,6 +61,11 @@ export default class UIStore extends BaseStore {
     @computed
     get is_tablet() {
         return this.screen_width <= MAX_TABLET_WIDTH;
+    }
+
+    @action.bound
+    toggleAccountsDialog() {
+        this.is_accounts_switcher_on = !this.is_accounts_switcher_on;
     }
 
     @action.bound
