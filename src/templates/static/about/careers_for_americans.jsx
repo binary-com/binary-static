@@ -1,5 +1,5 @@
 import React from 'react';
-import CareersShared from '../about/careers_shared.jsx';
+import CareersShared from './careers_shared.jsx';
 import { InfoBox } from '../../_common/components/elements.jsx';
 
 

@@ -168,6 +168,7 @@ const texts = [
     'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.',
     'Please reload the page',
     'Trading is unavailable at this time.',
+    'Maximum multiplier of 1000.',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -609,6 +610,7 @@ const texts = [
     'We are reviewing your documents. For more details [_1]contact us[_2].',
     'Deposits and withdrawals have been disabled on your account. Please check your email for more details.',
     'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
+    'Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Withdrawals have been disabled on your account. Please check your email for more details.',
     'MT5 withdrawals have been disabled on your account. Please check your email for more details.',
     'Please complete your [_1]personal details[_2] before you proceed.',

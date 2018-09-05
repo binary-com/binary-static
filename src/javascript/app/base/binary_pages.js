@@ -1,5 +1,5 @@
 // ==================== _common ====================
-const TabSelector = require('../../_common/tab_selector');
+const TabSelector = require('../../_common/tab_selector'); // eslint-disable-line import/order
 
 // ==================== app ====================
 const LoggedInHandler         = require('./logged_in');
@@ -38,6 +38,7 @@ const TopUpVirtual            = require('../pages/user/account/top_up_virtual');
 const Accounts                = require('../pages/user/accounts');
 const LostPassword            = require('../pages/user/lost_password');
 const MetaTrader              = require('../pages/user/metatrader/metatrader');
+const TypesOfAccounts         = require('../pages/user/metatrader/types_of_accounts');
 const FinancialAccOpening     = require('../pages/user/new_account/financial_acc_opening');
 const JapanAccOpening         = require('../pages/user/new_account/japan_acc_opening');
 const RealAccOpening          = require('../pages/user/new_account/real_acc_opening');
@@ -118,6 +119,7 @@ const pages_config = {
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStarted.BinaryOptions },
     'careers'                : { module: StaticPages.Careers },
+    'cyberjaya'              : { module: StaticPages.Locations },
     'cfds'                   : { module: GetStarted.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
@@ -130,6 +132,8 @@ const pages_config = {
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
     'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
+    'labuan'                 : { module: StaticPages.Locations },
+    'malta'                  : { module: StaticPages.Locations },
     'metals'                 : { module: GetStarted.Metals },
     'new-account'            : { module: NewAccount,                     not_authenticated: true },
     'open-positions'         : { module: StaticPages.OpenPositions },
@@ -138,7 +142,7 @@ const pages_config = {
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'terms-and-conditions'   : { module: TermsAndConditions },
     'terms-and-conditions-jp': { module: TermsAndConditions },
-    'types-of-accounts'      : { module: StaticPages.TypesOfAccounts },
+    'types-of-accounts'      : { module: TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
     'why-us-jp'              : { module: WhyUs },

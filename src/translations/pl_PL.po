@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-08-28 05:25\n"
+"PO-Revision-Date: 2018-09-05 07:35\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -121,7 +121,7 @@ msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "Regulamin dot. interfejsu programistycznego aplikacji („API”) %1"
 
 msgid "%1 Introducing Broker (IB) Programme"
-msgstr "Przedstawiamy program dla brokerów (IB)"
+msgstr "%1 przedstawia program dla brokerów (IB)"
 
 msgid "%1 Please click the link below to restart the password recovery process."
 msgstr "%1 Aby ponownie rozpocząć proces odzyskiwania konta, kliknij poniższe łącze."
@@ -143,9 +143,6 @@ msgstr "Wartości %1 i %2 nie mogą być takie same."
 
 msgid "%1 and the bull/bear logo are registered trademarks."
 msgstr "%1 oraz logo z bykiem i niedźwiedziem to zastrzeżone znaki handlowe."
-
-msgid "%1 announces plans for an IPO on the blockchain."
-msgstr "Firma %1 ogłasza zamiar rozpoczęcia pierwszej oferty publicznej w bazie blockchain."
 
 msgid "%1 assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for you based on our best execution obligation."
 msgstr "%1 regularnie ocenia środki realizacji kontraktów (co najmniej raz w roku) celem osiągnięcia lepszych rezultatów zgodnie z naszym obowiązkiem zapewnienia najkorzystniejszej realizacji."
@@ -272,9 +269,6 @@ msgstr "%1 oferuje różnego rodzaju konta, aby zaspokoić różnorodne potrzeby
 
 msgid "%1 offers a variety of account types to cater to the diverse needs of traders everywhere, whether you’re an experienced trader or just starting out."
 msgstr "%1 oferuje różnego rodzaju konta, aby zaspokoić różnorodne potrzeby graczy na całym świecie, niezależnie od tego, czy jesteś doświadczonym czy początkującym graczem."
-
-msgid "%1 offers complete trading solutions for binary options%2 and CFDs%3."
-msgstr "%1 oferuje pełny zakres rozwiązań w zakresie handlowania opcjami binarnymi%2 i kontraktami na różnice kursowe%3."
 
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk)."
 msgstr "%1 oferuje kontrakty forex oraz kontrakty na różnice kursowe. Na portalu stosowany jest model hybrydowy, t.j. zawieranie transakcji na własny rachunek (dealing desk) oraz przy częściowym zabezpieczeniu oferowanym przez naszych dostawców płynności (no-dealing desk)."
@@ -418,7 +412,7 @@ msgid "(max)"
 msgstr "(maks.)"
 
 msgid "*Already registered as an affiliate? Send us an email at %1 instead."
-msgstr "*Jesteś już zarejestrowanym partnerem? Wyślij nam wiadomość e-mail na adres: %1"
+msgstr "*Jesteś już zarejestrowanym partnerem? Wyślij nam wiadomość e-mail na adres: %1."
 
 msgid "0-1 year"
 msgstr "0-1 rok"
@@ -688,7 +682,7 @@ msgid "About Us and Our Regulator"
 msgstr "O nas i o instytucji nas kontrolującej"
 
 msgid "About Us and These Terms"
-msgstr "O nas i o niniejszych Warunkach"
+msgstr "O nas i o niniejszych warunkach"
 
 msgid "Academy"
 msgstr "Akademia"
@@ -1237,7 +1231,7 @@ msgid "April"
 msgstr "Kwiecień"
 
 msgid "Are there any minimum client or volume conditions that I need to meet before I can withdraw my commissions?"
-msgstr "Czy muszę spełnić wymogi dot. minimalnej liczby klientów lub minimalnego obrotu, zanim wypłacę swoją prowizję?"
+msgstr "Czy muszę spełnić wymogi dot. minimalnej liczby klientów lub minimalnego obrotu zanim wypłacę swoją prowizję?"
 
 msgid "Are you a Payment Agent, or interested in acting as one?"
 msgstr "Czy jesteś pośrednikiem płatności lub chcesz nim zostać?"
@@ -1728,6 +1722,9 @@ msgstr "Doświadczenie w handlowaniu opcjami binarnymi"
 msgid "Binary Options Trading Frequency"
 msgstr "Częstotliwość handlowania opcjami binarnymi"
 
+msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
+msgstr "Handlowanie opcjami binarnymi zostało wyłączone na Twoim koncie. %1Skontaktuj się z działem obsługi klienta%2, aby uzyskać wsparcie."
+
 msgid "Binary Shop"
 msgstr "Sklep Binary"
 
@@ -1772,6 +1769,9 @@ msgstr "Urząd ds. Usług Finansowych (Malta Financial Services Authority) na Ma
 
 msgid "Binary's platform transacts on average %1 %2transactions%3 per second, 24/7"
 msgstr "Na platformie Binary.com dokonywanych jest średnio %1 %2transakcji%3 na sekundę, 24 godz. na dobę 7 dni w tygodniu"
+
+msgid "Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %1Responsible Trading%2. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18."
+msgstr ""
 
 msgid "Bitcoin"
 msgstr "Bitcoin"
@@ -1914,8 +1914,8 @@ msgstr "Polityka dot. depozytu zabezpieczającego w przypadku kontraktów CFD"
 msgid "CFDs"
 msgstr "Kontrakty CFD"
 
-msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. %1Between 74-89% of retail investor accounts lose money when trading CFDs.%2 You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
-msgstr "Kontrakty na różnice kursowe to skomplikowane instrumenty finansowe obarczone wysokim ryzykiem szybkiej utraty pieniędzy w związku z dźwignią finansową. %1 Między 74 a 89% inwestorów detalicznych traci pieniądze podczas handlowania kontraktami na różnice kursowe.%2 Należy zastanowić się, czy rozumiesz zasadę działania kontraktów CFD i czy możesz sobie pozwolić na wysokie ryzyko utraty pieniędzy."
+msgid "CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 74-89% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work and whether you can afford to take the high risk of losing your money."
+msgstr ""
 
 msgid "CFDs on commodities; and/or"
 msgstr "Kontrakty na różnice kursowe towarów; i/lub"
@@ -1953,6 +1953,15 @@ msgstr "Nie wiesz, kiedy kupować, a kiedy sprzedawać? Tutaj przedstawiamy pros
 msgid "Can't make heads or tails of currency pairs? Here is a simple way of looking at it:"
 msgstr "Nie wiesz, o co chodzi z tymi parami walutowymi? Tutaj przedstawiamy proste wyjaśnienie:"
 
+msgid "Can't miss in Cyberjaya"
+msgstr ""
+
+msgid "Can't miss in Labuan"
+msgstr ""
+
+msgid "Can't miss in Malta"
+msgstr ""
+
 msgid "Canada"
 msgstr "Kanada"
 
@@ -1967,6 +1976,15 @@ msgstr "Anuluj"
 
 msgid "Careers"
 msgstr "Praca"
+
+msgid "Careers - Cyberjaya"
+msgstr ""
+
+msgid "Careers - Labuan"
+msgstr ""
+
+msgid "Careers - Malta"
+msgstr ""
 
 msgid "Careers For Americans"
 msgstr "Oferty pracy dla obywateli USA"
@@ -2353,6 +2371,9 @@ msgstr "Porównaj konta MetaTrader 5 "
 msgid "Compensation Scheme"
 msgstr "System rekompensat"
 
+msgid "Competence"
+msgstr ""
+
 msgid "Competitive and transparent pricing"
 msgstr "Konkurencyjne i przejrzyste ceny"
 
@@ -2489,7 +2510,7 @@ msgid "Contract Type"
 msgstr "Rodzaj kontraktu"
 
 msgid "Contract for Difference."
-msgstr "Kontrakty na różnicę kursową."
+msgstr "Kontrakty na różnice kursowe."
 
 msgid "Contract has not started yet"
 msgstr "Kontrakt jeszcze się nie rozpoczął"
@@ -2692,6 +2713,9 @@ msgstr "Pary kryptowalut, takie jak Bitcoin, Ethereum, czy Litecoin."
 msgid "Cryptocurrency trading"
 msgstr "Handlowanie kryptowalutami"
 
+msgid "Cultural diversity"
+msgstr ""
+
 msgid "Currencies"
 msgstr "Waluty"
 
@@ -2731,11 +2755,29 @@ msgstr "Pracownicy obsługi klienta"
 msgid "Customer Support"
 msgstr "Obsługa klienta"
 
+msgid "Customer focus"
+msgstr ""
+
 msgid "Customer support"
 msgstr "Dział obsługi klienta"
 
+msgid "Cyberjaya"
+msgstr ""
+
 msgid "Cyberjaya Office"
 msgstr "Biuro w Cyberjaya"
+
+msgid "Cyberjaya expertly combines green lungs and modern amenities to give you the ultimate work-life balance."
+msgstr ""
+
+msgid "Cyberjaya is a pioneer tech hub that lies 30 minutes away from Kuala Lumpur. Established in 1997, Cyberjaya is the heartbeat of the Multimedia Super Corridor — a government-designated zone that aims to accelerate Malaysia’s push to achieve Vision 2020."
+msgstr ""
+
+msgid "Cyberjaya is also a pioneer green township that is designed for sustainable living. It has an urban environment where almost half of its total development area is reserved for public amenities and greenery. It has also taken measures to cut carbon emissions based on a low carbon city framework, becoming a model for sustainable future cities."
+msgstr ""
+
+msgid "Cyberjaya, Malaysia"
+msgstr ""
 
 msgid "D"
 msgstr "D"
@@ -3163,6 +3205,9 @@ msgstr "1 EUR za punkt"
 msgid "EUR Index – Measures the value of the Euro against a basket of five global currencies (USD, AUD, GBP, JPY, CAD), each weighted by 20%"
 msgstr "Indeks EUR – mierzy wartość euro w stosunku do koszyka pięciu światowych walut (USD, AUD, GBP, JPY, CAD), z których każda ma wagę 20%"
 
+msgid "EUR/GBP"
+msgstr "EUR/GBP"
+
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
 msgstr "Każda ze stron podejmie uzasadnione działania, których domaga się druga strona w celu wprowadzenia w życie postanowień i warunków niniejszej Umowy."
 
@@ -3538,6 +3583,9 @@ msgstr "Pary egzotyczne – składają się z jednej waluty głównej, którą n
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "Poszerzanie naszej sieci aktywnych partnerów na Twoim lokalnym rynku. Stosowanie swojej energii oraz umiejętności i wiedzy o lokalnej kulturze biznesowej, aby zapewnić szybki wzrost biznesowy firmy na całym świecie."
 
+msgid "Expats and international students make up more than 10% of Cyberjaya's vibrant population."
+msgstr ""
+
 msgid "Experience in an anti-fraud or risk management role"
 msgstr "Doświadczenie na stanowisku związanym z zapobieganiem wyłudzeniom i zarządzaniem ryzykiem"
 
@@ -3675,6 +3723,9 @@ msgstr "Skontaktuj się z nami: %1. Chętnie, odpowiemy na Twoje pytania."
 
 msgid "Female"
 msgstr "Female"
+
+msgid "Festivals galore"
+msgstr ""
 
 msgid "Fiat"
 msgstr "Fiducjarna"
@@ -4024,6 +4075,9 @@ msgstr "Start"
 msgid "Get USD 10,000.00"
 msgstr "Uzyskaj 10 000 USD"
 
+msgid "Get out of the city centre and enjoy the serenity of island life free from the excesses of commercialisation. Friendly, helpful locals are also never far off."
+msgstr ""
+
 msgid "Get paid by the 15th of every month. We’ve never missed a payment since we started our programme in March 2004."
 msgstr "Wypłata na Twoim koncie do 15-tego dnia każdego miesiąca. Od rozpoczęcia naszego programu partnerskiego w marciu 2004 r. ani razu nie spóźniliśmy się z płatnością."
 
@@ -4210,6 +4264,9 @@ msgstr "Zamknięcia-Wysoka"
 msgid "High-Low"
 msgstr "Wysoka-Niska"
 
+msgid "High-tech green township"
+msgstr ""
+
 msgid "High/Low Ticks"
 msgstr "Duże/małe zmiany ceny"
 
@@ -4239,6 +4296,9 @@ msgstr "Najważniejsze zalety"
 
 msgid "Hint: it would take approximately %1%2 to crack this password."
 msgstr "Podpowiedź: Złamanie tego hasła zajmie około %1%2."
+
+msgid "Historical Mediterranean island"
+msgstr ""
 
 msgid "Hits & Impression report: Displays your hit rate and click through rates"
 msgstr "Raport kliknięć i wyświetleń: przedstawia współczynnik klikalności"
@@ -4817,7 +4877,7 @@ msgid "In connection with this Agreement and all Transactions contemplated by th
 msgstr "W związku z niniejszą Umową oraz wszelkimi transakcjami zawieranymi na mocy niniejszej Umowy zgadzasz się sporządzić i dostarczyć wszelkie dodatkowe dokumenty i środki oraz wykonać wszelkie dodatkowe działania, które mogą być niezbędne lub stosowne do zrealizowania i wypełnienia wszystkich postanowień i warunków niniejszej Umowy. Zobowiązujesz się do pełnej współpracy podczas dochodzenia prowadzonego przez jakikolwiek organ regulacyjny i do niezwłocznego dostarczenia organowi nadzorczemu informacji i danych na jego wniosek, zgodnie z prawem, ordynacją, statusami, uchwałami czy przepisami mającymi zastosowanie w odniesieniu do Ciebie bądź Twojej jurysdykcji."
 
 msgid "In exceptional circumstances, where there is a price change in the underlying that is sufficiently large and sudden, gapping can occur. In such cases, the automatic margin close-out protection might fail, causing your account balance to fall below zero. For this purpose, a Negative Balance Protection mechanism has been introduced. Negative Balance Protection provides a ‘backstop’ in case of extreme market conditions and ensures that your maximum losses from trading CFDs, including all related costs, are limited to the balance available on your CFD account. Therefore, you can never lose more money than the total sum invested for trading CFDs; if your CFD account balance falls below zero, the Company will compensate the negative balance as soon as possible without any additional cost to you."
-msgstr ""
+msgstr "W wyjątkowych warunkach, jeśli nastąpi zmiana ceny aktywa bazowego, która jest wystarczająco duża i nagła, może wystąpić luka cenowa. W takich przypadkach ochrona polegająca na automatycznym zamykaniu zakładów może zawieść, w związku z czym saldo Twojego konta może paść poniżej zera. Dlatego wprowadzony został mechanizm ochrony ujemnego konta. Ochrona ujemnego konta zapewnia ochronę w przypadku ekstremalnych warunków rynkowych i gwarantuje, że maksymalne straty powstałe w wyniku handlowania kontraktami CFD, w tym wszystkie związane koszty, są ograniczone do wysokości środków zgromadzonych na saldzie konta CFD. W związku z tym nigdy nie możesz stracić więcej środków pieniężnych niż środki zainwestowane w kontrakty CFD. Jeśli środki zgromadzone na Twoim koncie CFD spadną poniżej zera, Firma zwróci Ci te środki tak szybko jak to możliwe bez żadnych dodatkowych kosztów po Twojej stronie."
 
 msgid "In executing orders on your behalf, %1 takes into consideration the following to achieve the best possible result for you:"
 msgstr "Wykonując zlecenia w Twoim imieniu, %1 bierze pod uwagę następujące aspekty w celu osiągnięcia najlepszego możliwego wyniku:"
@@ -4864,8 +4924,11 @@ msgstr "W polu „Dalsze instrukcje” prosimy podać sposób płatności i nume
 msgid "In the EU, financial binary options are only available to professional investors."
 msgstr "Na terenie UE finansowe opcje binarne są dostępne wyłącznie dla inwestorów profesjonalnych."
 
-msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (license no. IS/70156). In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (%1). In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. %2 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (%3), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %4. Some products are not available in all countries. This website's services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18."
-msgstr "W UE produkty finansowe są oferowane przez Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, objętą licencją i regulacjami Urzędu ds. Usług Finansowych na Malcie: Malta Financial Services Authority jako firma świadcząca usługi inwestycyjne kategorii 3 (licencja o numerze IS/70156). Wskaźniki zmienności są oferowane w Wielkiej Brytanii i na Wyspie Man przez spółkę Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Wyspa Man, Wyspy Brytyjskie; za wydawanie licencji i regulację odpowiada (1) Komisja Nadzoru Gier Hazardowych Wyspy Man, na Wyspach Brytyjskich (Gambling Supervision Commission); aktualna licencja na prowadzenie gier hazardowych została wydana 31 sierpnia 2017 r., i (2) Komisja ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission %1). W pozostałej części UE, w przypadku produktów inwestycyjnych, niniejsza witryna internetowa jest udostępniana przez spółkę Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, objętą licencją i nadzorem Urzędu ds. Usług Finansowych: Malta Financial Services Authority na Malcie jako dostawca usług finansowych kategorii 3 (Nr licencji: IS/70156), a w przypadku produktów hazardowych przez Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, objętą licencją i nadzorem (1) Urzędu ds. Gier Hazardowych: Malta Gaming Authority na Malcie (licencja o numerze: %2 wydana 1 sierpnia 2018 r.), w przypadku klientów ze Zjednoczonego Królestwa (2) Komisji ds. Gier Hazardowych w Zjednoczonym Królestwie (UK Gambling Commission %3), w przypadku klientów z Irlandii (3) Irlandzkich Władz Podatkowych i Celnych: Revenue Commissioners in Ireland (obecna licencja operatora o numerze: 1010285 wydana 1 lipca 2017 r. Zapoznaj się z pełną treścią dokumentu: %4. Niektóre produkty nie są dostępne we wszystkich krajach. Usługi oferowane za pośrednictwem niniejszej witryny są niedostępne w określonych krajach, takich jak: Stany Zjednoczone, Kanada, Kostaryka, Hongkong oraz dla osób poniżej 18 roku życia."
+msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (licence no. IS/70156)."
+msgstr ""
+
+msgid "In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
+msgstr ""
 
 msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A."
 msgstr "W Zjednoczonym Królestwie nasi klienci handlują za pośrednictwem Binary (IOM) Ltd oraz Binary Investments (Europe) Ltd. Na Wyspie Man nasi klienci handlują za pośrednictwem Binary (IOM) Ltd. W Japonii handel odbywa się za pośrednictwem Binary KK. W Unii Europejskiej (za wyjątkiem Zjednoczonego Królestwa), handlują za pośrednictwem Binary (Europa) Ltd oraz Binary Investments (Europa) Ltd. W pozostałych krajach handel odbywa się za pośrednictwem Binary (C.R.) S.A."
@@ -4896,6 +4959,9 @@ msgstr "W sytuacji, gdy Firma nie otrzyma od Ciebie zlecenia zamknięcia pozycji
 
 msgid "In the event that the Company is aware of an Affiliate who is in breach of any of the above provisions, the Company shall have the right, in addition to any other right or remedy available to it under this Agreement or applicable law, to immediately block the Affiliate's access to this Programme. The Affiliate hereby irrevocably waives its rights to, and shall indemnify the Company and any member of the Binary group of companies for, any claims or demands made against the Company or any member of the Binary group of companies, their directors, officers, shareholders, employees or against the %1 website in respect of such action taken by the Company."
 msgstr "Jeśli Firma uzyska informacje, że Partner narusza postanowienia jakiegokolwiek z powyższych postanowień, Firma ma prawo natychmiast zablokować dostęp Partnera do Programu, może też skorzystać z wszelkich innych praw lub środków zapobiegawczych nadanych jej na mocy niniejszej Umowy. Partner niniejszym zrzeka się nieodwołalnie praw do wszelkich roszczeń w stosunku do Firmy lub jakiejkolwiek spółki należącej do grupy Binary, jej kadry zarządzającej i kierowniczej, pracowników, udziałowców oraz roszczeń dotyczących strony %1 w przypadku takich działań podjętych przez Firmę, oraz zwalnia Firmę i wszelkie spółki należące do grupy Binary z odpowiedzialności za takie roszczenia."
+
+msgid "In the rest of the EU, Volatility Indices are offered by Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta; licensed and regulated by (1) the Malta Gaming Authority in Malta (licence no. MGA/B2C/102/2000 issued on 01 August 2018), for UK clients by (2) the UK Gambling Commission (licence %1reference no: 39495%2), and for Irish clients by (3) the Revenue Commissioners in Ireland (Remote Bookmaker's Licence no. 1010285 issued on 1 July 2017). View complete %3Regulatory Information%2."
+msgstr ""
 
 msgid "In the unlikely event of BIEL suffering an investment default and not being able to meet its obligations, BIEL is a member of the Malta Investor Compensation Scheme which covers the first €20,000 of any claim. Whether you are able to claim depends on the type of business and your personal circumstances."
 msgstr "BIEL jest członkiem programu Malta Investor Compensation Scheme i w mało prawdopodobnym przypadku straty inwestycyjnej firmy BIEL powodującej niemożliwość wywiązania się z zobowiązań przez BIEL, program ten zapewnia 20 000 € na pokrycie pierwszej części jakiegokolwiek roszczenia. To czy możesz wnieść roszczenie zależy od rodzaju działalności i Twojej konkretnej sytuacji."
@@ -4975,9 +5041,6 @@ msgstr "Technologie informacyjne"
 msgid "Inheritance"
 msgstr "Spadek"
 
-msgid "Initial Coin Offering (ICO)"
-msgstr "ICO (Initial Coin Offering)"
-
 msgid "Instant access"
 msgstr "Błyskawiczny dostęp"
 
@@ -4986,6 +5049,9 @@ msgstr "Instrukcje dla systemu Linux"
 
 msgid "Insufficient balance."
 msgstr "Niewystarczające saldo."
+
+msgid "Integrity"
+msgstr ""
 
 msgid "Intellectual Property Rights"
 msgstr "Prawa własności intelektualnej"
@@ -5716,6 +5782,12 @@ msgstr "L. Niewywiązanie się z zobowiązania"
 msgid "Labuan"
 msgstr "Labuan"
 
+msgid "Labuan is a federal territory made up of the main island, Labuan Island, and six other small islands off the coast of Sabah. Its name comes from the Malay word, 'labuhan' which means harbour. Formerly a part of the Brunei Sultanate, it was ceded to the British Crown in 1846, before joining Malaysia in 1963."
+msgstr ""
+
+msgid "Labuan, Malaysia"
+msgstr ""
+
 msgid "Ladders"
 msgstr "Drabiny"
 
@@ -5899,6 +5971,18 @@ msgstr "Litecoin vs dolar amerykański"
 msgid "Live Chat"
 msgstr "Czat na żywo"
 
+msgid "Living in Cyberjaya"
+msgstr ""
+
+msgid "Living in Labuan"
+msgstr ""
+
+msgid "Living in Malta"
+msgstr ""
+
+msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
+msgstr ""
+
 msgid "Lock Cashier"
 msgstr "Zablokuj sekcję Kasjer"
 
@@ -5991,6 +6075,9 @@ msgstr "Najmniejsza zmiana ceny"
 
 msgid "Lowest Tick Time"
 msgstr "Czas najmniejszej zmiany ceny"
+
+msgid "Lush living"
+msgstr ""
 
 msgid "M"
 msgstr "M"
@@ -6120,6 +6207,15 @@ msgstr "Male"
 
 msgid "Malta"
 msgstr "Malta"
+
+msgid "Malta celebrates a large number of religious festivities and cultural events every year, filling the streets with carts laden with traditional sweets and delicacies."
+msgstr ""
+
+msgid "Malta's natural attractions are absolutely breathtaking, from its sheer cliffs and lush valleys to its golden sandy beaches and underwater structures in clear blue seas."
+msgstr ""
+
+msgid "Malta's strategic location in the Mediterranean Sea saw it occupied by a number of foreign powers, including the Greeks, Romans, Arabs, French, and most recently, the British. It gained independence from the British in 1964, and joined the European Union in 2004. Today, Malta is a popular tourist destination and a high-income country powered by an industrialised, service-based economy."
+msgstr ""
 
 msgid "Manage MAM account"
 msgstr "Zarządzaj kontem MAM"
@@ -6282,6 +6378,9 @@ msgstr "Maksymalny dzienny obrót"
 
 msgid "Maximum leverage"
 msgstr "Maksymalna dźwignia"
+
+msgid "Maximum multiplier of 1000."
+msgstr ""
 
 msgid "Maximum number of contracts that can be open at the same time."
 msgstr "Maksymalna liczba kontraktów, które mogą być otwarte w tym samym czasie."
@@ -6535,6 +6634,9 @@ msgstr "Imię:"
 msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
 msgstr "Krajowy dowód osobisty lub dokument wydany przez dowolne władze zawierający Twoje zdjęcie, imię i nazwisko oraz datę urodzenia"
 
+msgid "Natural wonders"
+msgstr ""
+
 msgid "Nearest price reasonably available and quoted by %1 when our Price quotation reaches or goes beyond the level of your Stop Order."
 msgstr "Najwcześniejsza cena dostępna i kwotowana przez %1 w przypadku gdy nasze kwotowanie ceny osiąga lub przekracza poziom Twojego zlecenia Stop."
 
@@ -6548,7 +6650,7 @@ msgid "Negative Balance Protection"
 msgstr "Ochrona ujemnego salda"
 
 msgid "Negative Balance Protection does not apply to clients categorized as professional traders, who can still lose more money than their available balance."
-msgstr ""
+msgstr "Ochrona ujemnego salda nie ma zastosowania do klientów kategoryzowanych jako gracze profesjonalni, którzy mogą stracić więcej pieniędzy niż wynosi ich aktualne saldo."
 
 msgid "Negative balance protection"
 msgstr "Ochrona ujemnego salda"
@@ -6634,8 +6736,8 @@ msgstr "Żadna ze stron nie ponosi odpowiedzialności za częściowe lub całkow
 msgid "No Touch trades"
 msgstr "Zakłady typu „nie osiągnie”"
 
-msgid "No commission"
-msgstr "Brak prowizji"
+msgid "No commission (excluding cryptocurrencies)"
+msgstr "Brak komisji (z wyłączeniem kryptowalut)"
 
 msgid "No connection with Antisocial forces"
 msgstr "No connection with Antisocial forces"
@@ -6737,7 +6839,7 @@ msgid "Notification of Changes"
 msgstr "Powiadomienie o zmianach"
 
 msgid "Notwithstanding the above, you hereby declare that you are dealing with us outside the scope of your economic or professional activity and we will therefore treat you as an individual retail client for the purposes of EMIR compliance, unless advised otherwise."
-msgstr "Niezależnie od powyższego, niniejszym oświadczasz, że handlowanie na naszej platformie nie ma związku z Twoją działalnością zawodową ani zarobkową i w związku z tym, w celach związanych z zachowaniem zgodności z rozporządzeniem EMIR, mamy Cię traktować jako klienta indywidualnego, chyba że uzyskamy inne zalecenia."
+msgstr "Niezależnie od powyższego, niniejszym oświadczasz, że handlowanie na naszej platformie nie ma związku z Twoją działalnością zawodową ani zarobkową i w związku z tym, w celach związanych z zachowaniem zgodności z rozporządzeniem EMIR, mamy Cię traktować jako klienta detalicznego, chyba że uzyskamy inne zalecenia."
 
 msgid "Nov"
 msgstr "Listopad"
@@ -7105,6 +7207,9 @@ msgstr "Nasz ekran do handlowania jest prosty w obsłudze:"
 msgid "Our turnover-based commission plan depends on the payout probability for each contract. Contracts with higher returns for the client offer lower commissions to the affiliate."
 msgstr "Nasz plan prowizyjny oparty na wielkości obrotu zależy od prawdopodobieństwa wypłaty w przypadku każdego kontraktu. Kontrakty z wyższymi zwrotami dla klientów przynoszą niższą prowizję dla partnera."
 
+msgid "Our values"
+msgstr ""
+
 msgid "Our website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and their advertisements may submit cookies to your web browser which is beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites because their practices may differ from ours."
 msgstr "Nasza strona internetowa zawiera linki do innych stron i może zawierać reklamy banerowe lub ikonowe stron internetowych osób trzecich. Te strony i ich reklamy mogą umieszczać pliki cookie w Twojej przeglądarce, która jest poza naszą kontrolą. Nie jesteśmy odpowiedzialni za politykę prywatności takich stron ani za ich zawartość. Zachęcamy do zapoznania się z polityką prywatności takich stron internetowych, ponieważ ich praktyki mogą różnić się od naszych."
 
@@ -7198,8 +7303,8 @@ msgstr "Opatentowana technologia"
 msgid "Patents"
 msgstr "Patenty"
 
-msgid "Pay no commission on all metal contracts."
-msgstr "Nie płać żadnych komisji w przypadku wszystkich kontraktów opartych na metalach."
+msgid "Pay no commission (excluding cryptocurrencies) on all metal contracts."
+msgstr "Nie płać żadnych komisji (z wyjątkiem kryptowalut) od kontraktów na wszystkie metale."
 
 msgid "Pay-out"
 msgstr "Wypłata"
@@ -7827,6 +7932,9 @@ msgstr "Spread sprzedaży"
 
 msgid "Put a limit on your winnings. Once you have reached it put some aside and trade with the rest of the money."
 msgstr "Ustaw limit dla swoich wygranych. Kiedy zostanie osiągnięty, odłóż część i handluj resztą pieniędzy."
+
+msgid "Putrajaya"
+msgstr ""
 
 msgid "Q. Miscellaneous"
 msgstr "Q. Postanowienia różne"
@@ -8566,6 +8674,9 @@ msgstr "Zdolność stosowania języków programowania obiektowego (C++, Perl i J
 msgid "Skill in the use of financial information sources such as Bloomberg and Reuters"
 msgstr "Umiejętność wykorzystywania internetowych źródeł finansowych, takich jak Bloomberg i Reuters"
 
+msgid "Small island charm"
+msgstr ""
+
 msgid "SmartCharts"
 msgstr "Wykresy Smart"
 
@@ -8739,6 +8850,9 @@ msgstr "Krok 3: Jak kupić swoją pierwszą parę walutową"
 
 msgid "Step 3: Make your trade"
 msgstr "Krok 3: Dokonaj transakcji"
+
+msgid "Step outdoors and soak up the sun on one of Labuan's pristine beaches. There's also wreck diving, island hopping, kayaking, and deep sea fishing to look forward to."
+msgstr ""
 
 msgid "Step size"
 msgstr "Krok – wielkość"
@@ -9367,17 +9481,26 @@ msgstr "Po 1 października 2017 r. platforma MetaTrader nie będzie już obsług
 msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall deprive of the right to released form any responsibility, under this Agreement where it fails to duly notify the other Party on time."
 msgstr "Strona, która nie jest w stanie wypełnić swoich zobowiązań wynikających z niniejszej Umowy z powodu wystąpienia siły wyższej, w ciągu 5 dni roboczych od wystąpienia siły wyższej powiadomi o tym na piśmie drugą Stronę. Jeśli Strona nie powiadomi na czas drugiej Strony, zostanie pozbawiona prawa domagania się jakiejkolwiek odpowiedzialności."
 
+msgid "The Pearl of Borneo"
+msgstr ""
+
 msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has been prepared in accordance with the Capital Requirements Directive IV and the Capital Requirements Regulation. Read our Pillar 3 disclosure report to understand how we comply with market discipline as a market participant."
 msgstr "Raport firmy Binary Investments (Europe) Limited dotyczący ujawnienia informacji w zakresie Filaru 3 został przygotowany zgodnie z IV dyrektywą w sprawie wymogów kapitałowych oraz rozporządzeniem w sprawie wymogów kapitałowych. Zapoznaj się z naszym raportem dotyczącym ujawnienia informacji w zakresie Filaru 3, aby zrozumieć, w jaki sposób spełniamy wymogi dyscypliny rynkowej jako uczestnik rynku."
 
 msgid "The Policy is supplemented by Appendix A which provide further details to our considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy."
 msgstr "Niniejsza Polityka zostaje uzupełniona przez Załącznik A, który zawiera dalsze szczegóły związane z różnymi kategoriami aktywów. Załącznik A należy interpretować w powiązaniu z niniejszą Polityką."
 
+msgid "The Republic of Malta is an island country in Southern Europe — located approximately 80km south of Italy. Its rich, colourful history can be traced back thousands of years to the Neolithic period."
+msgstr ""
+
 msgid "The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future."
 msgstr "The Shelter Community Learning Centre 3 to szkoła publiczna dla dzieci, będących uchodźcami z Birmy, które razem ze swoimi rodzinami oczekują na repatriację do państwa trzeciego. Szkoła ma na celu zapewnienie tym dzieciom, z najbardziej narażonej grupie wiekowej, edukacji mającej przygotować je do przyszłego życia."
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
 msgstr "Konto standardowe jest odpowiednie dla szerokiego grona graczy, zarówno początkujących, jak i doświadczonych. Zapewnia Ci dźwignię na średnim poziomie oraz zmienne spready, które dają dużą elastyczność, niezależnie od tego, jaką pozycję chcesz zająć na rynku."
+
+msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
+msgstr "Konto standardowe jest odpowiednie dla różnych graczy, zarówno początkujących, jak i doświadczonych. Jest dostępne w EUR i GBP i ma w swojej ofercie niskie, różnorodne spready, jest pozbawione prowizji i dostępne są niskie wpłaty."
 
 msgid "The Stop Out Level applicable to your MT5 Real Account may differ from the default Stop Out Level published on our website."
 msgstr "Poziom Stop Out mający zastosowanie w odniesieniu do Twojego Prawdziwego konta MT5 może się różnić od domyślnego poziomu Stop Out publikowanego na naszej stronie internetowej."
@@ -9537,6 +9660,9 @@ msgstr "Rynek walutowy (Forex) to rynek, który charakteryzuje się największą
 
 msgid "The full version of our best execution policy is available on request."
 msgstr "Pełna wersja naszej Polityki najkorzystniejszej realizacji jest dostępna na wniosek."
+
+msgid "The great outdoors"
+msgstr ""
 
 msgid "The hours of closure of the market (for e.g., the hours over the weekend during which trading of certain transactions are not possible);"
 msgstr "Godziny zamknięcia rynku (na przykład godziny w trakcie weekendu, kiedy zawieranie określonych transakcji jest niemożliwe);"
@@ -9854,7 +9980,7 @@ msgid "This Document"
 msgstr "Niniejszy dokument"
 
 msgid "This Policy applies to retail and professional clients of %1 dealing in financial products offered by %1."
-msgstr "Polityka odnosi się zarówno do indywidualnych, jak i profesjonalnych klientów %1, handlujących produktami finansowymi oferowanymi przez %1."
+msgstr "Polityka odnosi się zarówno do detalicznych, jak i profesjonalnych klientów %1, handlujących produktami finansowymi oferowanymi przez %1."
 
 msgid "This Risk Disclosure Statement is not exhaustive and is not intended to constitute a comprehensive statement of all the risks to which you might be exposed to and does not describe all risks inherent to forex and contracts for differences that exist now or which may arise in the future. Its objective is rather to provide you with information for you to reasonably understand the risks associated with forex and contracts for differences offered by %1 in our interest to provide you with the best possible trading experience."
 msgstr "Oświadczenie dot. ujawnienia ryzyka nie jest wyczerpujące i nie stanowi pełnego oświadczenia o wszelkich rodzajach ryzyka, na które możesz być narażony lub narażona i nie opisuje wszystkich istniejących i moących wystąpić w przyszłości ryzyk związanych z kontraktami forex i kontraktami na różnice kursowe. Celem oświadczenia jest zapewnienie Ci informacji umożliwiających zrozumienie ryzyk związanych z kontraktami forex i kontraktami na różnice kursowe oferowanych przez %1 w naszym interesie, by zapewnić Ci najlepsze możliwe doświadczenie związane z handlowaniem."
@@ -10042,8 +10168,8 @@ msgstr "W celu zmiany imienia i nazwiska, daty urodzenia, kraju zamieszkania lub
 msgid "To create a MAM real account, please:"
 msgstr "Aby utworzyć konto MAM z prawdziwymi pieniędzmi:"
 
-msgid "To create a MetaTrader 5 real account, please:"
-msgstr "Aby utworzyć konto MetaTrader 5 z prawdziwymi pieniędzmi:"
+msgid "To create a MetaTrader 5 account, please:"
+msgstr "Aby utworzyć konto MetaTrader 5:"
 
 msgid "To disable two-factor authentication, please enter the code generated by the app below:"
 msgstr "Aby wyłączyć uwierzytelnianie dwuskładnikowe, wprowadź poniższy kod wygenerowany przez aplikację:"
@@ -10107,6 +10233,9 @@ msgstr "Aby wypłacić środki z Konta finansowego MetaTrader 5, proszę <a href
 
 msgid "Today"
 msgstr "Dziś"
+
+msgid "Today, Labuan is known as a flourishing financial centre and tax-free tourist destination. Its economy is driven primarily by its oil and gas resources, as well as its international investment and banking services. The latter has attracted thousands of companies to Labuan over the years, plus dozens of leading banks."
+msgstr ""
 
 msgid "Token"
 msgstr "Token"
@@ -10300,11 +10429,11 @@ msgstr "Limity handlowe i limity wypłat"
 msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "Handlowanie i dokonywanie wypłat zostało wyłączone na Twoim koncie. %1Skontaktuj się z działem obsługi klienta%2, aby uzyskać wsparcie."
 
+msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset."
+msgstr ""
+
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive - please play responsibly. Read about %1Responsible Trading%2."
 msgstr "Handlowanie opcjami binarnymi może nie być odpowiednie dla każdego, więc prosimy o upewnienie się, że w pełni rozumiesz związane z nim ryzyko. Twoje straty mogą przewyższyć Twój wkład początkowy, dodatkowo nie posiadasz żadnego interesu w odniesieniu do aktywów bazowych i nie jesteś jego właścicielem. W przypadku opcji binarnych, które stanowią produkt hazardowy, należy pamiętać, że hazard może uzależniać – prosimy o rozsądną grę. Dowiedz się więcej o %1Odpowiedzialnym handlu%2."
-
-msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset. In regards to binary options which are gambling products, remember that gambling can be addictive – please play responsibly. Read about %1Responsible Trading%2."
-msgstr "Handlowanie opcjami binarnymi może nie być odpowiednie dla każdego, więc prosimy o upewnienie się, że w pełni rozumiesz związane z nim ryzyko. Twoje straty mogą przewyższyć Twój wkład początkowy, dodatkowo nie posiadasz żadnego interesu w odniesieniu do aktywów bazowych. W przypadku opcji binarnych, które stanowią produkt hazardowy, należy pamiętać, że hazard może uzależniać – prosimy o rozsądną grę. Dowiedz się więcej o %1Odpowiedzialnym handlu%2."
 
 msgid "Trading cryptocurrencies on our MetaTrader 5 platform means taking a position on a cryptocurrency pair when you expect it to rise or fall in value so you can make a profit when your prediction is correct."
 msgstr "Handlowanie kryptowalutami na platformie MetaTrader 5 oznacza zajmowanie pozycji długiej lub krótkiej odnośnie zakupu pary kryptowalut, gdy spodziewasz się spadku lub wzrostu ich wartości, tak by zyskać, gdy Twoja prognoza okaże się poprawna."
@@ -10687,6 +10816,9 @@ msgstr "Rachunki za media (prąd, wodę, gaz, internet i telefon stacjonarny)"
 msgid "Validate address"
 msgstr "Zatwierdź adres"
 
+msgid "Variable"
+msgstr "Zmienna"
+
 msgid "Variable from %1 pips"
 msgstr "Zmienna od %1 najmniejszych zmian ceny"
 
@@ -10825,6 +10957,9 @@ msgstr "Oczekuje na pierwszą zmianę ceny."
 msgid "Waiting for exit tick."
 msgstr "Oczekuje na końcową zmianę ceny."
 
+msgid "Want to be a part of our dynamic culture? Browse all our openings and see where you fit:"
+msgstr ""
+
 msgid "Want to help us enhance the strength and security of our platform?"
 msgstr "Chcesz pomóc nam zwiększyć bezpieczeństwo i ulepszyć zabezpieczenia na naszej platformie?"
 
@@ -10854,6 +10989,9 @@ msgstr "Staramy się prowadzić rejestr rodzajów prowadzonej przez nas działal
 
 msgid "We also collect basic tax residence information for the purposes of CRS/FATCA compliance. The tax information you provide may only be disclosed to the authorities legally charged with collecting this information for CRS/FATCA reporting and only to the extent to which %1 is legally obliged to collect it from and disclose it to. We don’t use, disclose or process this information in any other way at any time."
 msgstr "Zbieramy również podstawowe informacje na temat rezydencji podatkowej, aby zapewnić zgodność z wymogami CRS/FATCA. Przekazywane nam informacje podatkowe będą ujawniane wyłącznie organom, które na mocy prawa zajmują się zbieraniem takich informacji na potrzeby raportowania CRS/FATCA i wyłącznie w zakresie, w którym %1 jest prawnie zobligowana do zbierania i ujawniania tych informacji. Informacje te nigdy nie będą przez nas wykorzystywane, ujawniane ani przetwarzane w żaden inny sposób."
+
+msgid "We always put our customers first and dedicate ourselves to building products and services that give them the best trading experience possible."
+msgstr ""
 
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
 msgstr "Chętnie podejmujemy współpracę z małymi, lokalnymi organizacjami charytatywnymi, którym możemy pomóc bezpośrednio. Jeśli chcesz porozmawiać na temat wsparcia Twojej organizacji charytatywnej, skontaktuj się z nami pod adresem %1."
@@ -10900,6 +11038,9 @@ msgstr "Sprawdzamy Twoje dokumenty. Skontaktujemy się w ciągu jednego dnia rob
 msgid "We are reviewing your documents. For more details %1contact us%2."
 msgstr "Sprawdzamy Twoje dokumenty. Aby uzyskać więcej informacji,  %1skontaktuj się z nami%2."
 
+msgid "We believe that we should always do the right thing. This includes serving our customers with honesty and transparency, settling all contracts by the book, and communicating in plain language that can be easily understood."
+msgstr ""
+
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr "Gromadzimy i oceniamy Twoje dane w celu profilowania Cię jako naszego klienta w odniesieniu do naszych produktów. Dokonujemy tego ręcznie przy wykorzystaniu przetwarzania automatycznego. Dzięki kategoryzacji będziemy mogli zapewniać Ci produkty i usługi najodpowiedniejsze dla Ciebie."
 
@@ -10938,6 +11079,9 @@ msgstr "Wszystkie gromadzone od Ciebie dane osobowe przechowujemy, zachowując n
 
 msgid "We look forward to hearing from you."
 msgstr "Czekamy na wiadomość."
+
+msgid "We love to work with smart and talented people who are eager to roll up their sleeves and get things done."
+msgstr ""
 
 msgid "We maintain customer balances in cash or cash equivalent. We ensure that 100% of each customer's balance is available for immediate withdrawal, subject to verification."
 msgstr "Utrzymujemy salda klientów w gotówce lub ekwiwalent pieniężny. Zapewniamy, że 100% salda każdego klienta jest dostępne do natychmiastowej wypłaty pod warunkiem pozytywnej weryfikacji."
@@ -11028,6 +11172,9 @@ msgstr "Stosujemy weryfikację tożsamości i środki natychmiastowego wykrywani
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection and law-enforcement agencies to address fraud issues."
 msgstr "Korzystamy z usług weryfikacji tożsamości i środków wykrywania nadużyć w czasie rzeczywistym w celu zapewnienia ochrony przed nieuprawnionym dostępem do konta. Monitorujemy także aktywność konta pod kątem oznak nietypowych zachować, które mogą wskazywać na oszustwa, a także współpracujemy z organami windykacji należności i organami ścigania w celu rozwiązania kwestii nadużyć finansowych."
+
+msgid "We value positive team players who can work together to overcome challenges and achieve common goals."
+msgstr ""
 
 msgid "We will act on any instructions given, or appearing to be given by you and received by us in relation to the margin trading services provided through the MT5 Trading Platform, as deemed instructed by you. However, it is not our obligation to act on any instructions deemed instructed by you, and we are not obligated to give you any reasons for declining to do so. Instructions received by us from you are deemed final and will not be revocable. It is your responsibility to ensure the genuineness and accuracy of the instructions given by you to us."
 msgstr "Będziemy postępować zgodnie z wszelkimi instrukcjami przekazanymi nam przez Ciebie lub, które wydają się być przekazane, które otrzymaliśmy i które dotyczą usług handlowania na kredyt oferowanych za pośrednictwem platformy handlowej MT5. Jednak do naszych zobowiązań nie należy postępowanie zgodnie z instrukcjami, które uznaje się za przekazane nam przez Ciebie, ani podanie Ci przyczyny odmowy postępowanie zgodnie z Twoimi instrukcjami. Otrzymane przez nas Twoje instrukcje uznaje się za ostatecznie i nieodwołalne. Twoim obowiązkiem jest dbać o autentyczność i dokładność przekazywanych nam instrukcji."
@@ -11642,7 +11789,7 @@ msgid "You are categorised as a professional client."
 msgstr "Zaklasyfikowano Cię jako klienta profesjonalnego."
 
 msgid "You are categorised as a retail client. Apply to be treated as a professional trader."
-msgstr "Zaklasyfikowano Cię jako klienta indywidualnego. Złóż wniosek o uznanie za profesjonalnego gracza."
+msgstr "Zaklasyfikowano Cię jako klienta detalicznego. Złóż wniosek o uznanie za profesjonalnego gracza."
 
 msgid "You are expecting the base currency to fall in value so you can buy it back at a lower price and make profit."
 msgstr "Spodziewasz się, że waluta bazowa straci na wartości, więc będzie możliwy zakup po niższej cenie i odniesienie zysku."
@@ -12405,12 +12552,6 @@ msgstr "inteligentne przekierowywanie wpływających zleceń o różnym rodzaju 
 
 msgid "letters"
 msgstr "litery"
-
-msgid "license reference no: 39172"
-msgstr "nr licencji: 39172"
-
-msgid "license reference no: 39495"
-msgstr "nr licencji 39495"
 
 msgid "logout"
 msgstr "Wyloguj"

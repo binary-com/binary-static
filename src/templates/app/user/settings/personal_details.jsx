@@ -69,9 +69,9 @@ const PersonalDetails = () => (
                 <FormRow type='label'  label={it.L('Gender')} is_bold id='lbl_gender' row_class='invisible JpAcc' />
                 <FormRow type='label'  label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_class='invisible RealAcc JpAcc' />
                 <FormRow type='label'  label={it.L('Citizenship')} id='lbl_citizen' row_id='row_lbl_citizen' row_class='invisible' />
-                <FormRow type='select' label={it.L('Citizenship')} id='citizen' row_id='row_citizen' row_class='invisible' attributes={{single: 'single'}} />
+                <FormRow type='select' label={it.L('Citizenship')} id='citizen' row_id='row_citizen' row_class='invisible' attributes={{ single: 'single' }} />
                 <FormRow type='label'  label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />
-                <FormRow type='select' label={it.L('Place of birth')} id='place_of_birth' row_id='row_place_of_birth' row_class='invisible' attributes={{single: 'single'}} />
+                <FormRow type='select' label={it.L('Place of birth')} id='place_of_birth' row_id='row_place_of_birth' row_class='invisible' attributes={{ single: 'single' }} />
                 <FormRow type='label'  label={it.L('Country of Residence')} is_bold id='lbl_country' row_id='row_country' />
                 <FormRow type='label'  label={it.L('Email address')} is_bold id='lbl_email' row_id='row_email' />
                 <FormRow type='label'  label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' />
@@ -105,12 +105,12 @@ const PersonalDetails = () => (
             </Fieldset>
 
             <Fieldset id='address_form' className='invisible JpAcc' legend={it.L('Address')}>
-                <FormRow type='label' label={it.L('Postal Code / ZIP')} id='lbl_address_postcode' attributes={{className: 'jp_value'}} />
-                <FormRow type='label' label={it.L('State/Province')} id='lbl_address_state' attributes={{className: 'jp_value'}} />
-                <FormRow type='label' label={it.L('Town/City')} id='lbl_address_city' attributes={{className: 'jp_value'}} />
-                <FormRow type='label' label={it.L('First line of home address')} id='lbl_address_line_1' attributes={{className: 'jp_value'}} />
-                <FormRow type='label' label={it.L('Second line of home address')} id='lbl_address_line_2' attributes={{className: 'jp_value'}} />
-                <FormRow type='label' label={it.L('Telephone')} id='lbl_phone' attributes={{className: 'jp_value'}} />
+                <FormRow type='label' label={it.L('Postal Code / ZIP')} id='lbl_address_postcode' attributes={{ className: 'jp_value' }} />
+                <FormRow type='label' label={it.L('State/Province')} id='lbl_address_state' attributes={{ className: 'jp_value' }} />
+                <FormRow type='label' label={it.L('Town/City')} id='lbl_address_city' attributes={{ className: 'jp_value' }} />
+                <FormRow type='label' label={it.L('First line of home address')} id='lbl_address_line_1' attributes={{ className: 'jp_value' }} />
+                <FormRow type='label' label={it.L('Second line of home address')} id='lbl_address_line_2' attributes={{ className: 'jp_value' }} />
+                <FormRow type='label' label={it.L('Telephone')} id='lbl_phone' attributes={{ className: 'jp_value' }} />
             </Fieldset>
 
             <Fieldset className='invisible JpAcc' legend={it.L('Status')}>

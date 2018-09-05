@@ -1,8 +1,8 @@
 /* global google */
 const scriptjs           = require('scriptjs');
-const localize           = require('../_common/localize').localize;
 const applyToAllElements = require('./utility').applyToAllElements;
 const createElement      = require('./utility').createElement;
+const localize           = require('../_common/localize').localize;
 const Client             = require('../app/base/client');
 
 const Geocoder = (() => {

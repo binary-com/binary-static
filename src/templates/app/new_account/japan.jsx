@@ -168,7 +168,7 @@ const Japan = () => (
                     row_class='hedging-assets invisible'
                     id='hedge_asset_amount'
                     label={it.L('Amount of above assets')}
-                    attributes={{maxLength: '20'}}
+                    attributes={{ maxLength: '20' }}
                 />
 
                 <FormRow type='select' id='motivation_circumstances' label={it.L('Motivation/Circumstances')}>
@@ -213,6 +213,7 @@ const Japan = () => (
 
                 <p className='gr-padding-10 gr-12'>{it.L('To begin Binary option trading, you will first need to read all these documents carefully to understand the structure, risk and other important things. Please confirm that you have read and understood the documents listed below checking the box. If you have any questions, please contact our customer support.')}</p>
 
+                { /* eslint-disable react/jsx-no-target-blank */ }
                 <Checkbox checkbox id='agree_warnings_and_policies' text={it.L('I confirm my agreement to the contents of all the documents listed below:')}>
                     <ul>
                         <li><a href={`${it.url_for('terms-and-conditions-jp')}?#account-warning`} target='_blank'>{it.L('{JAPAN ONLY}General Risk Warning')}</a></li>
@@ -223,6 +224,7 @@ const Japan = () => (
                         <li><a href={`${it.url_for('terms-and-conditions-jp')}?#account-antisocial`} target='_blank'>{it.L('No connection with Antisocial forces')}</a></li>
                     </ul>
                 </Checkbox>
+                { /* eslint-enable react/jsx-no-target-blank */ }
             </Fieldset>
 
             <Fieldset legend={it.L('Confirmation and understandings')}>
