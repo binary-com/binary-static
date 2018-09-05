@@ -1,7 +1,7 @@
 import PropTypes          from 'prop-types';
 import React              from 'react';
+import { connect }        from 'Stores/connect';
 import ContractTypeWidget from '../Components/Form/ContractType/contract_type_widget.jsx';
-import { connect }        from '../../../Stores/connect';
 
 const Contract = ({
     contract_type,

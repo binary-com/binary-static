@@ -1,6 +1,6 @@
-import React         from 'react';
-import { IconPortfolio } from '../../../Assets/Header/NavBar';
-import { localize }  from '../../../../_common/localize';
+import React             from 'react';
+import { localize }      from '_common/localize';
+import { IconPortfolio } from 'Assets/Header/NavBar';
 
 const EmptyPortfolioMessage = () => (
     // TODO: combine with statement component, once design is final

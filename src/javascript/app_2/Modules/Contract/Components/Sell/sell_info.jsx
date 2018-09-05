@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import Localize     from '../../../../App/Components/Elements/localize.jsx';
-import Money        from '../../../../App/Components/Elements/money.jsx';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '_common/localize';
+import Localize     from 'App/Components/Elements/localize.jsx';
+import Money        from 'App/Components/Elements/money.jsx';
 
 const SellInfo = ({
     contract_info,

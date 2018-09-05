@@ -1,11 +1,11 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import { connect }    from 'Stores/connect';
 import ServerTime     from '../server_time.jsx';
 import {
     ToggleFullScreen,
     TogglePortfolio,
     ToggleSettings }  from '../../Components/Layout/Footer';
-import { connect }    from '../../../Stores/connect';
 
 const Footer = ({
     is_logged_in,

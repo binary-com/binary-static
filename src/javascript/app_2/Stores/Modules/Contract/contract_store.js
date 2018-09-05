@@ -3,6 +3,8 @@ import {
     computed,
     extendObservable,
     observable }              from 'mobx';
+import { isEmptyObject }      from '_common/utility';
+import { WS }                 from 'Services';
 import { createChartBarrier } from './Helpers/chart_barriers';
 import { createChartMarkers } from './Helpers/chart_markers';
 import {
@@ -24,8 +26,6 @@ import {
     isUserSold,
     isValidToSell }           from './Helpers/logic';
 import BaseStore              from '../../base_store';
-import { WS }                 from '../../../Services';
-import { isEmptyObject }      from '../../../../_common/utility';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;

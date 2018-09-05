@@ -1,7 +1,7 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
+import { connect }     from 'Stores/connect';
 import SettingsControl from '../../Components/Elements/SettingsDialog/settings_control.jsx';
-import { connect }     from '../../../Stores/connect';
 
 const GeneralSettings = ({
     curr_language,

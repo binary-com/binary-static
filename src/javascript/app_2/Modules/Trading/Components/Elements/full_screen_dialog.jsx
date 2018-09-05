@@ -1,7 +1,7 @@
 import classNames    from 'classnames';
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import { IconClose } from '../../../../Assets/Common';
+import { IconClose } from 'Assets/Common';
 
 const FullScreenDialog = (props) => {
     const { title, visible, children } = props;

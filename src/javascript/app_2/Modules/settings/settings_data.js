@@ -1,3 +1,4 @@
+import { localize }           from '_common/localize';
 import AccountPassword        from './sections/account_password.jsx';
 import ApiToken               from './sections/api_token.jsx';
 import AuthorizedApplications from './sections/authorized_applications.jsx';
@@ -7,7 +8,6 @@ import Limits                 from './sections/limits.jsx';
 import LoginHistory           from './sections/login_history.jsx';
 import PersonalDetails        from './sections/personal_details.jsx';
 import SelfExclusion          from './sections/self_exclusion.jsx';
-import { localize }           from '../../../_common/localize';
 
 const data = [
     {

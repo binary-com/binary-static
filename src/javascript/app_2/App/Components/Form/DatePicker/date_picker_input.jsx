@@ -1,6 +1,6 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '_common/localize';
 
 export default function DatePickerInput(props) {
     return (

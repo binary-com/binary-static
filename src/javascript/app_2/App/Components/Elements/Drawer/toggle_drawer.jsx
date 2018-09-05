@@ -1,8 +1,8 @@
 import classNames  from 'classnames';
 import PropTypes   from 'prop-types';
 import React       from 'react';
+import { connect } from 'Stores/connect';
 import { Drawer }  from './drawer.jsx';
-import { connect } from '../../../../Stores/connect';
 
 class ToggleDrawer extends React.Component {
     showDrawer = () => {

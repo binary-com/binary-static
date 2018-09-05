@@ -1,6 +1,8 @@
 import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { withRouter }           from 'react-router';
+import { formatMoney }          from '_common/base/currency_base';
+import { connect }              from 'Stores/connect';
 import {
     AccountInfo,
     LoginButton,
@@ -8,8 +10,6 @@ import {
     ToggleMenuDrawer,
     ToggleNotificationsDrawer } from '../../Components/Layout/Header';
 import header_links             from '../../Constants/header_links';
-import { connect }              from '../../../Stores/connect';
-import { formatMoney }          from '../../../../_common/base/currency_base';
 
 const Header = ({
     balance,

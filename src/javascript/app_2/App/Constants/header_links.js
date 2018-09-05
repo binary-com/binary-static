@@ -1,10 +1,10 @@
 import React        from 'react';
+import { localize } from '_common/localize';
 import {
     IconPortfolio,
     IconStatement,
-    IconTrade }     from '../../Assets/Header/NavBar/index';
-import { routes }   from '../../Constants/index';
-import { localize } from '../../../_common/localize';
+    IconTrade }     from 'Assets/Header/NavBar/index';
+import { routes }   from 'Constants/index';
 
 const header_links = [
     {

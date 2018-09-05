@@ -1,7 +1,7 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import Money        from '../../../App/Components/Elements/money.jsx';
-import { localize } from '../../../../_common/localize';
+import { localize } from '_common/localize';
+import Money        from 'App/Components/Elements/money.jsx';
 
 const IndicativeCell = ({ amount, currency, status }) => {
     const status_class_name = status

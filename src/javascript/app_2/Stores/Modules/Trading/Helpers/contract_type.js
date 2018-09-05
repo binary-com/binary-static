@@ -1,4 +1,10 @@
 import moment                    from 'moment';
+import { localize }              from '_common/localize';
+import { toTitleCase }           from '_common/string_util';
+import {
+    cloneObject,
+    getPropertyValue }           from '_common/utility';
+import { WS }                    from 'Services';
 import { buildBarriersConfig }   from './barrier';
 import { buildDurationConfig }   from './duration';
 import {
@@ -7,12 +13,6 @@ import {
 import {
     getContractCategoriesConfig,
     getContractTypesConfig }     from '../Constants/contract';
-import { WS }                    from '../../../../Services';
-import { localize }              from '../../../../../_common/localize';
-import { toTitleCase }           from '../../../../../_common/string_util';
-import {
-    cloneObject,
-    getPropertyValue }           from '../../../../../_common/utility';
 
 const ContractType = (() => {
     let available_contract_types = {};

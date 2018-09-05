@@ -4,8 +4,8 @@ import {
     observable,
     reaction,
     toJS }               from 'mobx';
-import Validator         from '../Utils/Validator';
-import { isEmptyObject } from '../../_common/utility';
+import { isEmptyObject } from '_common/utility';
+import Validator         from 'Utils/Validator';
 
 /**
  * BaseStore class is the base class for all defined stores in the application. It handles some stuff such as:
@@ -150,7 +150,7 @@ export default class BaseStore {
 
         Object.keys(snapshot).forEach((k) => this[k] = snapshot[k]);
     }
-    
+
     /**
      * Sets validation error messages for an observable property of the store
      *

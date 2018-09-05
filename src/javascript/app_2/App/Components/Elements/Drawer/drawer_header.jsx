@@ -1,8 +1,8 @@
 import classNames    from 'classnames';
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import { IconClose } from '../../../../Assets/Common';
-import { localize }  from '../../../../../_common/localize';
+import { localize }  from '_common/localize';
+import { IconClose } from 'Assets/Common';
 
 export const DrawerHeader = ({
     alignment,
