@@ -35,9 +35,7 @@ const AccountOpening = (() => {
         if (State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest') {
             professionalClient.init(is_financial, false);
         }
-        if (Client.get('residence') !== 'jp') {
-            Geocoder.init(form_id);
-        }
+        Geocoder.init(form_id);
     };
 
     const getResidence = (form_id, getValidations) => {
@@ -66,7 +64,7 @@ const AccountOpening = (() => {
 
                 if (residence_value === res.value) {
                     residence_text = res.text;
-                    if (residence_value !== 'jp' && res.phone_idd && !$phone.val()) {
+                    if (res.phone_idd && !$phone.val()) {
                         $phone.val(`+${res.phone_idd}`);
                     }
                 }

@@ -8,7 +8,6 @@ const GetTicks         = require('../../trade/get_ticks');
 const Lookback         = require('../../trade/lookback');
 const Reset            = require('../../trade/reset');
 const ViewPopupUI      = require('../../user/view_popup/view_popup.ui');
-const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
 const addComma         = require('../../../common/currency').addComma;
 const localize         = require('../../../../_common/localize').localize;
@@ -124,9 +123,7 @@ const Highchart = (() => {
 
         HighchartUI.setLabels(getHighchartLabelParams());
 
-        const is_jp_client = isJPClient();
         const chart_options = {
-            is_jp_client,
             type,
             data,
             height    : el.parentElement.offsetHeight,
@@ -142,7 +139,7 @@ const Highchart = (() => {
         HighchartUI.setChartOptions(chart_options);
 
         return getHighstock((Highcharts) => {
-            Highcharts.setOptions(HighchartUI.getHighchartOptions(is_jp_client));
+            Highcharts.setOptions(HighchartUI.getHighchartOptions());
             if (!el) chart = null;
             else {
                 chart          = Highcharts.StockChart(el, HighchartUI.getChartOptions());
