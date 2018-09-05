@@ -1,7 +1,6 @@
 const BinarySocket   = require('../../../base/socket');
 const Client         = require('../../../base/client');
 const localize       = require('../../../../_common/localize').localize;
-const State          = require('../../../../_common/storage').State;
 const createElement  = require('../../../../_common/utility').createElement;
 const getElementById = require('../../../../_common/common_functions').getElementById;
 const toTitleCase    = require('../../../../_common/string_util').toTitleCase;
@@ -15,10 +14,8 @@ const WelcomePage = (() => {
                 Url.defaultRedirectUrl();
             }
 
-            const landing_company   = State.getResponse('landing_company');
-            const jp_account_status = State.getResponse('get_settings.jp_account_status.status');
             const upgrade_btn       = getElementById('upgrade_btn');
-            const upgrade_info      = Client.getUpgradeInfo(landing_company, jp_account_status);
+            const upgrade_info      = Client.getUpgradeInfo();
             const show_welcome_msg  = upgrade_info.can_upgrade;
 
             const setButtonLink = (url, msg) => {

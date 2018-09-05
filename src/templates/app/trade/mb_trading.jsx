@@ -14,26 +14,7 @@ const BuySellTemplate = () => (
                 <span className='base-value invisible' />
             </button>
         </div>
-        <div className='sell-price gr-12 gr-no-gutter-left'>
-            <span className='price-wrapper'>
-                <span className='value' />
-                <span className='base-value invisible' />
-            </span>
-        </div>
     </React.Fragment>
-);
-
-const PayoutItem = ({
-    className = '',
-    hint,
-    hint_class = '',
-    text,
-    value,
-}) => (
-    <div className={`${className} gr-3 nowrap`} value={value} unselectable='on'>
-        {text}
-        {hint && <div className={`hint ${hint_class}`}>{hint}</div>}
-    </div>
 );
 
 const FormItem = ({
@@ -71,7 +52,7 @@ const MBTrading = () => (
 
                         <div id='notifications_wrapper' className='gr-row' />
 
-                        <div className='ja-hide' id='panel'>
+                        <div id='panel'>
                             <div className='selection_wrapper less-margin-top'>
                                 <div className='trade_form'>
                                     <FormItem id='underlying' class_current='gr-row' class_list='gr-row' />
@@ -105,73 +86,15 @@ const MBTrading = () => (
                                 </div>
                             </div>
                         </div>
-                        <div className='invisible ja-show' id='ja-panel'>
-                            <div className='gr-row selection_wrapper'>
-                                <div id='trading_status' className='gr-4 gr-no-gutter-left'>
-                                    <div className='gr-row'>
-                                        <div className='gr-6 gr-no-gutter'>
-                                            <a className='button-secondary trading-status' href='javascript:;'>
-                                                <span className='selected' id='allow' />
-                                            </a>
-                                        </div>
-                                        <div className='gr-6 gr-no-gutter'>
-                                            <a className='button-secondary trading-status' href='javascript:;'>
-                                                <span id='disallow' />
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='trade_form gr-8 gr-no-gutter-left'>
-                                    <FormItem id='underlying' className='gr-12' class_current='gr-row' class_list='gr-row' />
-                                </div>
-                            </div>
-
-                            <div className='gr-row selection_wrapper'>
-                                <div className='trade_form gr-4 gr-no-gutter-left'>
-                                    <div id='currency_wrapper'>
-                                        <FormItem id='currency' />
-                                        <FormItem id='payout' exclude_list class_list='gr-12' />
-                                    </div>
-                                </div>
-                                <div className='gr-8 gr-no-gutter-left'>
-                                    <div className='trade_form'>
-                                        <FormItem id='period' class_list='gr-12' />
-                                    </div>
-                                    <div className='trade_form'>
-                                        <FormItem id='category' class_list='gr-12' />
-                                    </div>
-                                    <div className='trade_form no-margin'>
-                                        <FormItem id='payout_list' className='invisible gr-12' exclude_current class_list='gr-row'>
-                                            <PayoutItem value='+1'     text='+1'         className='plus' />
-                                            <PayoutItem value='+10'    text='+10'        className='plus' />
-                                            <PayoutItem value='50'     text='50' />
-                                            <PayoutItem value='100'    text='100'        hint={it.L('(max)')} hint_class='invisible ja-show' />
-                                            <PayoutItem value='-1'     text='-1'         className='minus' />
-                                            <PayoutItem value='-10'    text='-10'        className='minus' />
-                                            <PayoutItem value='ok'     text={it.L('OK')} className='green' />
-                                            <PayoutItem value='cancel' text={it.L('Cancel')} />
-                                        </FormItem>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div className='price-table gr-row'>
                             <div id='disable-overlay' className='invisible' />
                             <div className='prices-wrapper gr-12'>
                                 <div className='gr-row heading'>
                                     <div className='gr-4 barrier align-self-center'>{it.L('Barrier')}</div>
-                                    <div className='gr-8 ja-hide' id='category'>
+                                    <div className='gr-8' id='category'>
                                         <div className='current gr-12 gr-no-gutter-left' />
                                         <div className='list' />
-                                    </div>
-                                    <div className='gr-4 buy-price gr-no-gutter-left invisible ja-show'>
-                                        {it.L('Buy Price')}
-                                        <div className='hint sell-price'>{it.L('Sell Price')}</div>
-                                    </div>
-                                    <div className='gr-4 buy-price gr-no-gutter-left invisible ja-show'>
-                                        {it.L('Buy Price')}
-                                        <div className='hint sell-price'>{it.L('Sell Price')}</div>
                                     </div>
                                 </div>
                                 <div className='price-rows' />

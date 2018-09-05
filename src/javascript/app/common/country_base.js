@@ -1,12 +1,10 @@
 const createLanguageDropDown = require('./attach_dom/language_dropdown');
-const Client                 = require('../base/client');
 const BinarySocket           = require('../base/socket');
 const isLoginPages           = require('../../_common/base/login').isLoginPages;
 const getElementById         = require('../../_common/common_functions').getElementById;
 const Crowdin                = require('../../_common/crowdin');
 const Language               = require('../../_common/language');
 const State                  = require('../../_common/storage').State;
-const applyToAllElements     = require('../../_common/utility').applyToAllElements;
 
 const checkClientsCountry = () => {
     if (Crowdin.isInContext() || isLoginPages()) return;
@@ -14,10 +12,7 @@ const checkClientsCountry = () => {
         const website_status = State.getResponse('website_status');
         if (!website_status) return;
         const clients_country = website_status.clients_country;
-        // only limitLanguage for japanese if ip address is from japan and client is logged out or logged in with jp residence
-        if (clients_country === 'jp' && (!Client.isLoggedIn() || Client.get('residence') === 'jp')) {
-            limitLanguage('JA');
-        } else if (clients_country === 'id') {
+        if (clients_country === 'id') {
             limitLanguage('ID');
         } else {
             createLanguageDropDown(website_status);
@@ -47,14 +42,6 @@ const checkLanguage = () => {
         if (!regex.test(academy_href)) {
             $academy_link.attr('href', academy_href + regex);
         }
-    }
-    if (Client.isJPClient()) {
-        $('.ja-hide').setVisibility(0);
-        applyToAllElements('.ja-show', (el) => {
-            if (!/client_logged_(in|out)/.test(el.classList)) {
-                el.setVisibility(1);
-            }
-        });
     }
 };
 

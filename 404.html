@@ -15,7 +15,6 @@
         'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
         'id': 'id',
         'it': 'it',
-        'ja': 'jp',
         'ko': 'kr',
         'pl': 'po',
         'pt': 'br|mz|ao|pt|gw|pg|cv|st',
@@ -49,29 +48,11 @@
 
     const all_languages = ['en'].concat(Object.keys(langs));
     function redirect() {
-        var alternative_pages = ['home', 'why-us', 'tour', 'terms-and-conditions', 'signup', 'get-started'];
-        var redirect_to;
-        var alt_regex = new RegExp('(' + alternative_pages.map(function(page) { return page + '.html|' + page + '-jp.html' }).join('|') + ')', 'i');
-        if (alt_regex.test(href)) {
-            href = href.replace(alt_regex, function(match) {
-                if (/-jp/.test(match) && !/ja/i.test(lang)) {
-                    redirect_to = match.replace(/-jp/i, '');
-                } else if (!/-jp/.test(match) && /ja/i.test(lang)) {
-                    redirect_to = match.replace(/\.html/i, '-jp.html');
-                }
-                return redirect_to || match;
-            });
-        }
-
         // if language is wrong, we need to rebuild the url
         var lang_regex = new RegExp('/(' + all_languages.join('|') + ')/', 'i');
         if (!lang_regex.test(href)) {
-            redirect_to = redirect_to || '404';
-            href = getRoot() + '/' + lang.toLowerCase() + '/' + redirect_to.replace(/\.html/i, '') + '.html';
-        }
-
-        // if not alternate page, redirect to 404 page
-        if (!redirect_to) {
+            href = getRoot() + '/' + lang.toLowerCase() + '/' + '404.html';
+        } else {
             href = href.replace(new RegExp('(/' + lang + '/).*', 'i'), '$1404.html');
         }
 

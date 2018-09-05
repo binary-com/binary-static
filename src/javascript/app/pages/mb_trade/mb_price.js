@@ -1,5 +1,4 @@
 const MBContract      = require('./mb_contract');
-const MBDefaults      = require('./mb_defaults');
 const MBNotifications = require('./mb_notifications');
 const TradingAnalysis = require('../trade/analysis');
 const redrawChart     = require('../trade/charts/webtrader_chart').redrawChart;
@@ -109,11 +108,6 @@ const MBPrice = (() => {
         }
 
         const el_price_row = document.querySelector('#templates .price-row');
-        if (Client.isJPClient()) {
-            el_price_row.querySelectorAll('.base-value').forEach((el) => {
-                el.classList.remove('invisible');
-            });
-        }
         barriers.forEach((barrier) => {
             el_rows[barrier] = {};
             const el_row = el_price_row.cloneNode(true);
@@ -126,7 +120,6 @@ const MBPrice = (() => {
 
                 const order = contract_types[contract_type].order;
                 const el_buy  = el_row.querySelectorAll('.buy-price button')[order];
-                const el_sell = el_row.querySelectorAll('.sell-price .price-wrapper')[order];
 
                 el_buy.setAttribute('data-barrier', barrier);
                 el_buy.setAttribute('data-contract_type', contract_type);
@@ -136,15 +129,6 @@ const MBPrice = (() => {
                     dyn: el_buy.getElementsByClassName('dynamics')[0],
                     val: el_buy.getElementsByClassName('value')[0],
                 };
-                el_rows[barrier][contract_type].sell = {
-                    sell: el_sell,
-                    val : el_sell.getElementsByClassName('value')[0],
-                };
-
-                if (Client.isJPClient()) {
-                    el_rows[barrier][contract_type].buy.base_value  = el_buy.getElementsByClassName('base-value')[0];
-                    el_rows[barrier][contract_type].sell.base_value = el_sell.getElementsByClassName('base-value')[0];
-                }
 
                 updatePriceRow(getValues(prices[barrier][contract_type], contract_type));
             });
@@ -209,21 +193,12 @@ const MBPrice = (() => {
 
     const updatePriceRow = (values) => {
         const el_buy  = el_rows[values.barrier][values.contract_type].buy;
-        const el_sell = el_rows[values.barrier][values.contract_type].sell;
 
         el_buy.btn.classList[values.is_active ? 'remove' : 'add']('inactive');
         el_buy.btn[values.message ? 'setAttribute' : 'removeAttribute']('data-balloon', values.message);
         el_buy.btn[values.message ? 'setAttribute' : 'removeAttribute']('data-balloon-length', 'medium');
         el_buy.dyn.setAttribute('class', `dynamics ${values.ask_price_movement || ''}`);
         el_buy.val.textContent = formatPrice(values.ask_price);
-
-        el_sell.sell.classList[values.sell_price ? 'remove' : 'add']('inactive');
-        el_sell.val.textContent = formatPrice(values.sell_price);
-
-        if (Client.isJPClient()) {
-            el_buy.base_value.textContent  = formatPrice(values.ask_price / values.payout);
-            el_sell.base_value.textContent = formatPrice(values.sell_price / values.payout);
-        }
     };
 
     const processBuy = (e) => {
@@ -265,12 +240,6 @@ const MBPrice = (() => {
     };
 
     const sendBuyRequest = (barrier, contract_type) => {
-        if (MBDefaults.get('disable_trading')) {
-            MBNotifications.show({ text: 'You have disabled the trading.', uid: 'TRADING_DISABLED', dismissible: true });
-            return;
-        }
-        MBNotifications.hide('TRADING_DISABLED');
-
         const proposal = prices[barrier][contract_type];
         if (!proposal || proposal.error) return;
 
@@ -313,9 +282,7 @@ const MBPrice = (() => {
     };
 
     const hidePriceOverlay = () => {
-        if (!MBDefaults.get('disable_trading')) {
-            $('#disable-overlay').setVisibility(0);
-        }
+        $('#disable-overlay').setVisibility(0);
         $('#loading-overlay').setVisibility(0);
     };
 

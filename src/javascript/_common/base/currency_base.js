@@ -1,6 +1,5 @@
 const getLanguage      = require('../language').get;
 const localize         = require('../localize').localize;
-const State            = require('../storage').State;
 const getPropertyValue = require('../utility').getPropertyValue;
 
 let currencies_config = {};
@@ -41,11 +40,7 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const isJPClient = () => !!State.get('is_jp_client');
-
-const getFiatDecimalPlaces = () => isJPClient() ? 0 : 2;
-
-const calcDecimalPlaces = (currency) => isCryptocurrency(currency) ? 8 : getFiatDecimalPlaces();
+const calcDecimalPlaces = (currency) => isCryptocurrency(currency) ? 8 : 2;
 
 const getDecimalPlaces = (currency) => (
     // need to check currencies_config[currency] exists instead of || in case of 0 value

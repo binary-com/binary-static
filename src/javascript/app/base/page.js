@@ -20,7 +20,6 @@ const State            = require('../../_common/storage').State;
 const scrollToTop      = require('../../_common/scroll').scrollToTop;
 const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
-const AffiliatePopup   = require('../../static/japan/affiliate_popup');
 require('../../_common/lib/polyfills/array.includes');
 require('../../_common/lib/polyfills/string.includes');
 
@@ -106,8 +105,6 @@ const Page = (() => {
         if (!token || token.length !== 32) {
             return false;
         }
-
-        AffiliatePopup.show();
 
         const token_length  = token.length;
         const is_subsidiary = /\w{1}/.test(Url.param('s'));
