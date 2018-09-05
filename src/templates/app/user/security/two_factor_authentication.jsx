@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from '../../../_common/components/loading.jsx';
 
-const ErrorMessage = ({id}) => (
+const ErrorMessage = ({ id }) => (
     <React.Fragment>
         <p className='invisible notice-msg center-text' id={id} />
     </React.Fragment>
@@ -22,7 +22,7 @@ const OtpForm = () => (
     </React.Fragment>
 );
 
-const TwoFactorStatus = ({type}) => (
+const TwoFactorStatus = ({ type }) => (
     <div className='two-fa-status'>
         <div className='two-fa-status-container'>
             <img className='responsive two-fa-status-icon' src={it.url_for(`images/pages/settings/2fa-${type}.svg`)} />

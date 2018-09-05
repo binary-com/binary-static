@@ -55,10 +55,10 @@ Header.propTypes = {
     balance             : PropTypes.string,
     can_upgrade         : PropTypes.bool,
     currency            : PropTypes.string,
-    loginid             : PropTypes.string,
     is_acc_switcher_on  : PropTypes.bool,
     is_dark_mode        : PropTypes.bool, // TODO: add dark theme handler
     is_logged_in        : PropTypes.bool,
+    loginid             : PropTypes.string,
     onClickUpgrade      : PropTypes.func, // TODO: add click handler
     toggleAccountsDialog: PropTypes.func,
 };
@@ -70,10 +70,10 @@ export default withRouter(connect(
         balance             : client.balance,
         can_upgrade         : client.can_upgrade,
         currency            : client.currency,
+        is_logged_in        : client.is_logged_in,
         loginid             : client.loginid,
         is_acc_switcher_on  : ui.is_accounts_switcher_on,
         is_dark_mode        : ui.is_dark_mode_on,
-        is_logged_in        : client.is_logged_in,
         toggleAccountsDialog: ui.toggleAccountsDialog,
     })
 )(Header));

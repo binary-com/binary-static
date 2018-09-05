@@ -78,6 +78,7 @@ const Validation = (() => {
                         }
                         field.$error = $parent.find(`.${error_class}`);
                     }
+                    field.$submit_btn_error = $form.find('#msg_form');
 
                     const event = events_map[field.type];
 
@@ -98,7 +99,7 @@ const Validation = (() => {
         // need to init Dropdown after we have responses from ws
         const el_all_select = document.querySelectorAll('select:not([multiple]):not([single])');
         el_all_select.forEach((el) => {
-            if (el.id) {
+            if (el.id && el.length) {
                 Dropdown(`#${el.id}`);
             }
         });
@@ -164,13 +165,13 @@ const Validation = (() => {
             message = localize('Up to [_1] decimal places are allowed.', [options.decimals]);
         } else if ('min' in options && 'max' in options && +options.min === +options.max && +value !== +options.min) {
             is_ok   = false;
-            message = localize('Should be [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
+            message = localize('Should be [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
         } else if ('min' in options && 'max' in options && (+value < +options.min || isMoreThanMax(value, options))) {
             is_ok   = false;
-            message = localize('Should be between [_1] and [_2]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined ), addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
+            message = localize('Should be between [_1] and [_2]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined), addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
         } else if ('min' in options && +value < +options.min) {
             is_ok   = false;
-            message = localize('Should be more than [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined )]);
+            message = localize('Should be more than [_1]', [addComma(options.min, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
         } else if ('max' in options && isMoreThanMax(value, options)) {
             is_ok   = false;
             message = localize('Should be less than [_1]', [addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
@@ -270,6 +271,9 @@ const Validation = (() => {
     const clearError = (field) => {
         if (field.$error && field.$error.length) {
             field.$error.setVisibility(0);
+            if (field.$submit_btn_error && field.$submit_btn_error.length) {
+                field.$submit_btn_error.setVisibility(0);
+            }
         }
     };
 

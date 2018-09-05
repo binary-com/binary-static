@@ -22,7 +22,7 @@ const BinaryLink = ({ to, children, ...props }) => {
             <NavLink to={path} activeClassName='active' exact={route.exact} {...props}>
                 {children}
             </NavLink>
-        :
+            :
             <a href='javascript:;' {...props}>
                 {children}
             </a>

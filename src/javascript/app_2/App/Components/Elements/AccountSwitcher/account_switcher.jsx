@@ -13,6 +13,7 @@ const getAccountInfo = (loginid) => {
     const currency     = Client.get('currency', loginid);
     const is_virtual   = Client.get('is_virtual', loginid);
     const account_type = !is_virtual && currency ? currency : Client.getAccountTitle(loginid);
+
     return {
         loginid,
         is_virtual,
@@ -47,7 +48,7 @@ class AccountSwitcher extends React.Component {
 
     setWrapperRef = (node) => {
         this.wrapper_ref = node;
-    }
+    };
 
     switchAccount = (loginid) => {
         if (!loginid || !Client.get('token', loginid)) {
@@ -70,7 +71,7 @@ class AccountSwitcher extends React.Component {
             && this.props.is_visible && accounts_toggle_btn) {
             this.props.toggle();
         }
-    }
+    };
 
     render() {
         if (!Client.isLoggedIn()) return false;
@@ -96,7 +97,7 @@ class AccountSwitcher extends React.Component {
                 }
                 <div className='acc-logout' onClick={requestLogout}>
                     <span className='acc-logout-text'>{localize('Log out')}</span>
-                    <IconLogout className='drawer-icon'/>
+                    <IconLogout className='drawer-icon' />
                 </div>
             </div>
         );

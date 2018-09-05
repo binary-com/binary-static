@@ -17,23 +17,23 @@ class PopConfirm extends React.Component {
 
     setWrapperRef = (node) => {
         this.wrapper_ref = node;
-    }
+    };
 
     handleClickOutside = (event) => {
         if (this.wrapper_ref && !this.wrapper_ref.contains(event.target) && this.state.is_open) {
             this.setState({ is_open: false });
         }
-    }
+    };
 
     handleClose = () => {
         this.setState({ is_open: false });
-    }
+    };
 
     handleOpen = (event) => {
         if (!this.wrapper_ref.contains(event.target)) {
-            this.setState({ is_open: true});
+            this.setState({ is_open: true });
         }
-    }
+    };
 
     render() {
         const popconfirm_element = (
@@ -62,8 +62,8 @@ class PopConfirm extends React.Component {
 
 PopConfirm.propTypes = {
     alignment   : PropTypes.string,
-    children    : PropTypes.object,
     cancel_text : PropTypes.string,
+    children    : PropTypes.object,
     confirm_text: PropTypes.string,
     message     : PropTypes.string,
 };

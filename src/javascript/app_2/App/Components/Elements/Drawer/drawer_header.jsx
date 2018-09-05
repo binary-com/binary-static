@@ -20,7 +20,7 @@ export const DrawerHeader = ({
                         <h4>{localize('all notifications')}</h4>
                     </div>
                 </div>
-            :
+                :
                 <div className={drawer_header_class}>
                     <div className='icons btn-close' onClick={closeBtn}>
                         <IconClose />
@@ -29,7 +29,7 @@ export const DrawerHeader = ({
                         <div className='img' />
                     </div>
                 </div>
-        }
+            }
         </React.Fragment>
     );
 };

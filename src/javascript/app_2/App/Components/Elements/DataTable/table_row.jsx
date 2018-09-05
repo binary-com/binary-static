@@ -39,11 +39,11 @@ const TableRow = ({
 };
 
 TableRow.propTypes = {
-    to       : PropTypes.string,
     columns  : PropTypes.array,
     is_footer: PropTypes.bool,
     is_header: PropTypes.bool,
     row_obj  : PropTypes.object,
+    to       : PropTypes.string,
 };
 
 export default TableRow;

@@ -1,6 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Section from '../components/section.jsx';
+import React     from 'react';
+import Section   from '../components/section.jsx';
 
 const AuthorizedApplications = ({ title, description }) => (
     <Section title={title} description={description}>
@@ -9,8 +9,8 @@ const AuthorizedApplications = ({ title, description }) => (
 );
 
 AuthorizedApplications.propTypes = {
-    title      : PropTypes.string,
     description: PropTypes.string,
+    title      : PropTypes.string,
 };
 
 export default AuthorizedApplications;

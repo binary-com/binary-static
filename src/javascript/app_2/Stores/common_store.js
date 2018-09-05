@@ -6,10 +6,11 @@ import BaseStore           from './base_store';
 import { currentLanguage } from '../Utils/Language/index';
 
 export default class CommonStore extends BaseStore {
-    @observable server_time = moment.utc();
+    @observable server_time      = moment.utc();
     @observable current_language = currentLanguage;
-    @observable has_error = false;
-    @observable error     = {
+    @observable has_error        = false;
+
+    @observable error = {
         type   : 'info',
         message: '',
     };
@@ -22,4 +23,4 @@ export default class CommonStore extends BaseStore {
             message: error ? error.message : '',
         };
     }
-};
+}

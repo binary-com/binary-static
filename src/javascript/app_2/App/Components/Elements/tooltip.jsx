@@ -13,8 +13,8 @@ const Tooltip = ({
     return (
         <span className='tooltip' data-tooltip={message} data-tooltip-pos={alignment}>
             {icon ?
-                <i className={icon_class}/>
-            :
+                <i className={icon_class} />
+                :
                 children
             }
         </span>

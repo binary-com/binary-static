@@ -1,6 +1,6 @@
+import PropTypes                   from 'prop-types';
 import React                       from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import PropTypes                   from 'prop-types';
 import Menu                        from './components/menu/menu.jsx';
 import MobileDropdown              from './components/menu/mobile_dropdown.jsx';
 
@@ -65,8 +65,8 @@ Settings.propTypes = {
     match : PropTypes.object,
     routes: PropTypes.arrayOf(
         PropTypes.shape({
+            component: PropTypes.func,
             path     : PropTypes.string,
-            component: PropTypes.function,
         })
     ),
 };

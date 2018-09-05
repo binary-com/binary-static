@@ -2,11 +2,11 @@ import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import PortfolioDrawerCard            from './portfolio_drawer_card.jsx';
+import { IconClose }                  from '../../../../Assets/Common';
+import EmptyPortfolioMessage          from '../../../../Modules/Portfolio/Components/empty_portfolio_message.jsx';
 import { connect }                    from '../../../../Stores/connect';
 import { localize }                   from '../../../../../_common/localize';
-import PortfolioDrawerCard            from './portfolio_drawer_card.jsx';
-import EmptyPortfolioMessage          from '../../../../Modules/Portfolio/Components/empty_portfolio_message.jsx';
-import { IconClose }                  from '../../../../Assets/Common';
 
 class PortfolioDrawer extends React.Component {
     componentDidMount()    { this.props.onMount(); }
@@ -26,11 +26,9 @@ class PortfolioDrawer extends React.Component {
 
         if (error) {
             body_content = <p>{error}</p>;
-        }
-        else if (is_empty) {
+        } else if (is_empty) {
             body_content = <EmptyPortfolioMessage />;
-        }
-        else {
+        } else {
             body_content = active_positions.map((portfolio_position) => (
                 <PortfolioDrawerCard
                     key={portfolio_position.id}
@@ -58,19 +56,19 @@ class PortfolioDrawer extends React.Component {
             </div>
         );
     }
-};
+}
 
 PortfolioDrawer.propTypes = {
-    children              : PropTypes.any,
     active_positions      : MobxPropTypes.arrayOrObservableArray,
-    error                 : PropTypes.string,
+    children              : PropTypes.any,
     currency              : PropTypes.string,
+    error                 : PropTypes.string,
     is_empty              : PropTypes.bool,
     is_loading            : PropTypes.bool,
     is_portfolio_drawer_on: PropTypes.bool,
-    toggleDrawer          : PropTypes.func,
     onMount               : PropTypes.func,
     onUnmount             : PropTypes.func,
+    toggleDrawer          : PropTypes.func,
 };
 
 export default connect(

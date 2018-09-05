@@ -11,7 +11,7 @@ import {
     isStarted }         from '../../../../Stores/Modules/Contract/Helpers/logic';
 import { localize }     from '../../../../../_common/localize';
 
-const InfoBoxGeneral = ({ className, contract_info}) => {
+const InfoBoxGeneral = ({ className, contract_info }) => {
     const {
         buy_price,
         currency,
@@ -46,7 +46,7 @@ const InfoBoxGeneral = ({ className, contract_info}) => {
                     <div>{localize('Remaining Time')}</div>
                     <strong>
                         {is_started && date_expiry ?
-                            <RemainingTime end_time={date_expiry}/>
+                            <RemainingTime end_time={date_expiry} />
                             :
                             '-'
                         }

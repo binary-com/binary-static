@@ -23,7 +23,7 @@ export default class URLHelper {
      *
      * @return {Object} returns modified url object.
      */
-    static setQueryParam(params, url=null) {
+    static setQueryParam(params, url = null) {
         const url_object = url ? new URL(url) : window.location;
         const param_object = new URLSearchParams(url_object.search.slice(1));
         Object.keys(params).forEach((name) => {
@@ -31,7 +31,7 @@ export default class URLHelper {
 
             const value = params[name];
 
-            if ( value && typeof value !== 'object' && value !== '') {
+            if (value && typeof value !== 'object' && value !== '') {
                 param_object.append(name, params[name]);
             }
         });
@@ -55,14 +55,14 @@ export default class URLHelper {
      *
      * @return {Object} returns an iterator object of updated query string
      */
-    static updateQueryString(store, allowed_query_string_variables, set_query_string=false) {
+    static updateQueryString(store, allowed_query_string_variables, set_query_string = false) {
         const query_params = URLHelper.getQueryParams();
 
         if (!isEmptyObject(store)) {
 
             // create query string by default values in trade_store if the param doesn't exist in query string.
             allowed_query_string_variables
-                .filter(p => !query_params.get(p)).forEach( key => {
+                .filter(p => !query_params.get(p)).forEach(key => {
                     if (store[key]) {
                         if (set_query_string) {
                             URLHelper.setQueryParam({ [key]: store[key] });
@@ -81,7 +81,7 @@ export default class URLHelper {
      *
      * @param {string[]} keys - A list of variable's name which should be in url's query string.
      */
-    static pruneQueryString(keys=[]) {
+    static pruneQueryString(keys = []) {
         const query_params = URLHelper.getQueryParams();
 
         [...query_params].forEach(value => keys.indexOf(value[0]) <= -1 && query_params.delete(value[0]));

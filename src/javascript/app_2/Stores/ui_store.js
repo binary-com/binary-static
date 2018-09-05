@@ -1,8 +1,8 @@
 import {
     action,
+    autorun,
     computed,
-    observable,
-    autorun }          from 'mobx';
+    observable }       from 'mobx';
 import BaseStore       from './base_store';
 import {
     MAX_MOBILE_WIDTH,
@@ -71,7 +71,7 @@ export default class UIStore extends BaseStore {
     @action.bound
     toggleChartLayout() {
         this.is_chart_layout_default = !this.is_chart_layout_default;
-    };
+    }
 
     @action.bound
     toggleChartAssetInfo() {
@@ -117,21 +117,21 @@ export default class UIStore extends BaseStore {
     @action.bound
     togglePortfolioDrawer() { // show and hide Portfolio Drawer
         this.is_portfolio_drawer_on = !this.is_portfolio_drawer_on;
-    };
+    }
 
     @action.bound
     showMainDrawer() { // show main Drawer
         this.is_main_drawer_on = true;
-    };
+    }
 
     @action.bound
     showNotificationsDrawer() { // show nofitications Drawer
         this.is_notifications_drawer_on = true;
-    };
+    }
 
     @action.bound
     hideDrawers() { // hide both menu drawers
         this.is_main_drawer_on = false;
         this.is_notifications_drawer_on = false;
-    };
-};
+    }
+}

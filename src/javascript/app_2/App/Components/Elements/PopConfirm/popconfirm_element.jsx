@@ -47,8 +47,8 @@ PopConfirmElement.propTypes = {
     confirm_text: PropTypes.string,
     is_visible  : PropTypes.bool,
     message     : PropTypes.string,
-    onConfirm   : PropTypes.func,
     onClose     : PropTypes.func,
+    onConfirm   : PropTypes.func,
     wrapperRef  : PropTypes.func,
 };
 

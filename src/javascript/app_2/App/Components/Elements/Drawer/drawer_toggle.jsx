@@ -13,12 +13,12 @@ const DrawerToggle = ({
             toggled={to_toggle}
         />
     </div>
-    );
+);
 
 DrawerToggle.propTypes = {
     text     : PropTypes.string,
-    toggle   : PropTypes.func,
     to_toggle: PropTypes.bool,
+    toggle   : PropTypes.func,
 };
 
 export { DrawerToggle };

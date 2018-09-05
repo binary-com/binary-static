@@ -120,6 +120,7 @@ const MetaTraderUI = (() => {
     const updateAccount = (acc_type) => {
         updateListItem(acc_type);
         setCurrentAccount(acc_type);
+        showHideFinancialAuthenticate(acc_type);
     };
 
     const setMTAccountText = () => {
@@ -272,6 +273,7 @@ const MetaTraderUI = (() => {
             $form.find('.binary-balance').html(`${formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
             $form.find('.mt5-balance').html(`${formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
+            $form.find('.symbols.mt-currency').addClass(mt_currency.toLowerCase());
             $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
@@ -398,6 +400,7 @@ const MetaTraderUI = (() => {
         if (/\b(disabled|selected|existed)\b/.test($item.attr('class'))) return;
         $item.parents('.type-group').find(`.${box_class}.selected`).removeClass('selected');
         $item.addClass('selected');
+        $('#new_account_financial_authenticate_msg').setVisibility(0);
         const selected_acc_type = $item.attr('data-acc-type');
         const action            = `new_account${/mamm/.test(selected_acc_type) ? '_mam' : ''}`;
         if (/(demo|real)/.test(selected_acc_type)) {
@@ -439,7 +442,7 @@ const MetaTraderUI = (() => {
 
         let count = 0;
         Object.keys(accounts_info)
-            .filter(acc_type => !accounts_info[acc_type].is_demo)
+            .filter(acc_type => !accounts_info[acc_type].is_demo && accounts_info[acc_type].mt5_account_type !== 'mamm') // toEnableMAM: remove second check
             .forEach((acc_type) => {
                 count++;
                 const $acc  = $acc_template.clone();
@@ -532,6 +535,12 @@ const MetaTraderUI = (() => {
         $container.find('.has-mam').setVisibility(has_manager);
         if (!has_manager && $container.find('.acc-actions .has-mam').hasClass('selected')) {
             loadAction(defaultAction(acc_type));
+        }
+    };
+
+    const showHideFinancialAuthenticate = (acc_type) => {
+        if (MetaTraderConfig.hasAccount(acc_type) && accounts_info[acc_type].account_type === 'financial') {
+            $('#financial_authenticate_msg').setVisibility(!MetaTraderConfig.isAuthenticated());
         }
     };
 

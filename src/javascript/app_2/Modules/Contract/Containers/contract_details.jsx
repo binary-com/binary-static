@@ -21,11 +21,11 @@ class ContractDetails extends React.Component {
 
         return (
             !contract_id ?
-                <UILoader/>
+                <UILoader />
                 :
                 <React.Fragment>
                     <div className='contract-container'>
-                        <DetailsHeader status={this.props.display_status}/>
+                        <DetailsHeader status={this.props.display_status} />
                         <DetailsContents
                             buy_id={transaction_ids.buy}
                             details_expiry={this.props.details_expiry}
@@ -48,8 +48,8 @@ class ContractDetails extends React.Component {
 ContractDetails.propTypes = {
     contract_id    : PropTypes.string,
     contract_info  : PropTypes.object,
-    details_info   : PropTypes.object,
     details_expiry : PropTypes.object,
+    details_info   : PropTypes.object,
     display_status : PropTypes.string,
     onClickNewTrade: PropTypes.func,
     onMount        : PropTypes.func,

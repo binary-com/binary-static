@@ -31,14 +31,12 @@ export const fillTemplate = (template, replacers) => {
 
             res.push(React.cloneElement(wrapper, { key: index, children: before }));
             open_tag_id = null;
-        }
-        else {
+        } else {
             if (before.length) res.push(before);
 
             if (tag_id in replacers) {
                 res.push(replacers[tag_id]);
-            }
-            else {
+            } else {
                 open_tag_id = tag_id;
             }
         }
@@ -50,8 +48,7 @@ export const fillTemplate = (template, replacers) => {
         const last = arr[arr.length - 1];
         if (typeof last === 'string' && typeof current === 'string') {
             arr[arr.length - 1] = last + current;
-        }
-        else {
+        } else {
             arr.push(current);
         }
         return arr;

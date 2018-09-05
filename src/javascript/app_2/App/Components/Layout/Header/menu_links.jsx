@@ -26,8 +26,8 @@ MenuLinks.propTypes = {
         icon: PropTypes.shape({
             className: PropTypes.string,
         }),
-        text   : PropTypes.string,
         link_to: PropTypes.string,
+        text   : PropTypes.string,
     })),
 };
 

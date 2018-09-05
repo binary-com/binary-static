@@ -180,26 +180,26 @@ Duration.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
+    duration_min_max   : PropTypes.object,
     duration_unit      : PropTypes.string,
     duration_units_list: MobxPropTypes.arrayOrObservableArray,
-    duration_min_max   : PropTypes.object,
     expiry_date        : PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
     ]),
-    expiry_time      : PropTypes.string,
-    expiry_type      : PropTypes.string,
-    is_minimized     : PropTypes.bool,
-    is_nativepicker  : PropTypes.bool,
-    onChange         : PropTypes.func,
-    server_time      : PropTypes.object,
-    sessions         : MobxPropTypes.arrayOrObservableArray,
-    start_time       : PropTypes.string,
-    validation_errors: PropTypes.object,
-    start_date       : PropTypes.oneOfType([
+    expiry_time    : PropTypes.string,
+    expiry_type    : PropTypes.string,
+    is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    onChange       : PropTypes.func,
+    server_time    : PropTypes.object,
+    sessions       : MobxPropTypes.arrayOrObservableArray,
+    start_date     : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    start_time       : PropTypes.string,
+    validation_errors: PropTypes.object,
 };
 
 export default observer(Duration);

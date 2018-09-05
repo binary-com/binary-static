@@ -78,9 +78,10 @@ class Statement extends React.Component {
 }
 
 Statement.propTypes = {
-    has_selected_date: PropTypes.bool,
     data             : MobxPropTypes.arrayOrObservableArray,
     error            : PropTypes.string,
+    handleScroll     : PropTypes.func,
+    has_selected_date: PropTypes.bool,
     history          : PropTypes.object,
     is_empty         : PropTypes.bool,
     is_loading       : PropTypes.bool,
@@ -88,11 +89,10 @@ Statement.propTypes = {
     is_tablet        : PropTypes.bool,
     onMount          : PropTypes.func,
     onUnmount        : PropTypes.func,
-    handleScroll     : PropTypes.func,
 };
 
 export default connect(
-    ({modules, ui}) => ({
+    ({ modules, ui }) => ({
         is_empty         : modules.statement.is_empty,
         has_selected_date: modules.statement.has_selected_date,
         data             : modules.statement.data,

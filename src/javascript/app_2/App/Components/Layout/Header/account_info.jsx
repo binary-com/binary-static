@@ -1,11 +1,11 @@
 import classNames          from 'classnames';
-import { CSSTransition }   from 'react-transition-group';
 import PropTypes           from 'prop-types';
 import React               from 'react';
+import { CSSTransition }   from 'react-transition-group';
 import { AccountSwitcher } from '../../Elements/AccountSwitcher';
 import { IconArrow }       from '../../../../Assets/Common';
-import { localize }        from '../../../../../_common/localize';
 import Client              from '../../../../../_common/base/client_base';
+import { localize }        from '../../../../../_common/localize';
 
 const AccountInfo = ({
     balance,
@@ -14,10 +14,12 @@ const AccountInfo = ({
     is_dialog_on,
     is_upgrade_enabled,
     onClickUpgrade,
-    toggleDialog }) => {
+    toggleDialog,
+}) => {
     const is_demo       = (Client.get('is_virtual', loginid));
     const account_title = Client.getAccountTitle(loginid);
     const account_type  = !(is_demo) && currency ? account_title : localize('Demo');
+
     return (
         <div className='acc-balance'>
             <div className='acc-switcher-container'>
@@ -44,7 +46,7 @@ const AccountInfo = ({
             </div>
             { typeof balance !== 'undefined' &&
                 <p className='acc-balance-amount'>
-                    <i><span className={`symbols ${(currency || '').toLowerCase()}`}/></i>
+                    <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
                     {balance}
                 </p>
             }
@@ -55,9 +57,9 @@ const AccountInfo = ({
 AccountInfo.propTypes = {
     balance           : PropTypes.string,
     currency          : PropTypes.string,
-    loginid           : PropTypes.string,
     is_dialog_on      : PropTypes.bool,
     is_upgrade_enabled: PropTypes.bool,
+    loginid           : PropTypes.string,
     onClickUpgrade    : PropTypes.func,
     toggleDialog      : PropTypes.func,
 };

@@ -74,13 +74,13 @@ export default class StatementStore extends BaseStore {
 
     @action.bound
     handleScroll(event) {
-        const {scrollTop, scrollHeight, clientHeight} = event.target;
+        const { scrollTop, scrollHeight, clientHeight } = event.target;
         const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
 
         if (left_to_scroll < 2000) {
             this.fetchNextBatch();
         }
-    };
+    }
 
     @action.bound
     onMount() {

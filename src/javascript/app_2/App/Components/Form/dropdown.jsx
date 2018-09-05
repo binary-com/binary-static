@@ -85,7 +85,7 @@ class Dropdown extends React.Component {
                 className={`dropdown-container ${this.props.className ? this.props.className : ''} ${this.state.is_list_visible ? 'show' : ''}`}
             >
                 <div
-                    className={`dropdown-display ${this.state.is_list_visible ? 'clicked': ''}`}
+                    className={`dropdown-display ${this.state.is_list_visible ? 'clicked' : ''}`}
                     onClick={this.handleVisibility}
                     onBlur={this.handleVisibility}
                 >
@@ -152,19 +152,19 @@ const NativeSelect = ({
     <div className='select-wrapper'>
         <select name={name} value={value} onChange={onChange}>
             {Array.isArray(list) ?
-              list.map((item, idx) => (
-                  <option key={idx} value={item.value}>{item.text}</option>
-              ))
-            :
-            Object.keys(list).map(key => (
-                <React.Fragment key={key}>
-                    <optgroup label={key}>
-                        {list[key].map((item, idx) => (
-                            <option key={idx} value={item.value}>{item.text}</option>
-                        ))}
-                    </optgroup>
-                </React.Fragment>
-            ))}
+                list.map((item, idx) => (
+                    <option key={idx} value={item.value}>{item.text}</option>
+                ))
+                :
+                Object.keys(list).map(key => (
+                    <React.Fragment key={key}>
+                        <optgroup label={key}>
+                            {list[key].map((item, idx) => (
+                                <option key={idx} value={item.value}>{item.text}</option>
+                            ))}
+                        </optgroup>
+                    </React.Fragment>
+                ))}
         </select>
     </div>
 );

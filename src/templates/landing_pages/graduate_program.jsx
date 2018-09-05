@@ -3,12 +3,12 @@ import Layout from './_common/layout.jsx';
 
 const GraduateProgram = () => {
     const steps = [
-      { icon: 'one',    title: 'Send us your resume',                                       description: 'Begin your application for our graduate programme by uploading your resume. Be sure to include your contact details. Feel free to emphasise any awards, achievements, projects, and open-source contributions that will make you stand out.' },
-      { icon: 'two',    title: 'Phone screening',                                           description: 'If your resume meets our basic requirements, we\'ll call you to get a better picture of who you are and what your interests are.' },
-      { icon: 'three',  title: 'Technical test',                                            description: 'If you pass our phone screening, we\'ll invite you to a technical test either on-site or online. Depending on your qualifications and background, you\'ll be asked technical questions, which may require you to write code.' },
-      { icon: 'four',   title: 'Self-Assessment Topgrading Interview (SATI) Questionnaire', description: 'Once you\'ve passed our technical test, we\'ll send you a SATI to understand you better.' },
-      { icon: 'five',   title: `A Day @ ${it.website_name}`,                                description: `Do well on the SATI and earn yourself a trip to an all-day event at our office in Cyberjaya. This is an opportunity for you to learn more about what we do, experience our culture first-hand, meet potential team members, and ask us questions about life at ${it.website_name}. We’ll also put you through interviews and group exercises to assess your skills and cultural fit.` },
-      { icon: 'six',    title: 'Job offer',                                                 description: 'Aced your interviews and made a real impression on us? Congratulations! we\'ll contact you with an official offer to join our graduate programme.' },
+        { icon: 'one',    title: 'Send us your resume',                                       description: 'Begin your application for our graduate programme by uploading your resume. Be sure to include your contact details. Feel free to emphasise any awards, achievements, projects, and open-source contributions that will make you stand out.' },
+        { icon: 'two',    title: 'Phone screening',                                           description: 'If your resume meets our basic requirements, we\'ll call you to get a better picture of who you are and what your interests are.' },
+        { icon: 'three',  title: 'Technical test',                                            description: 'If you pass our phone screening, we\'ll invite you to a technical test either on-site or online. Depending on your qualifications and background, you\'ll be asked technical questions, which may require you to write code.' },
+        { icon: 'four',   title: 'Self-Assessment Topgrading Interview (SATI) Questionnaire', description: 'Once you\'ve passed our technical test, we\'ll send you a SATI to understand you better.' },
+        { icon: 'five',   title: `A Day @ ${it.website_name}`,                                description: `Do well on the SATI and earn yourself a trip to an all-day event at our office in Cyberjaya. This is an opportunity for you to learn more about what we do, experience our culture first-hand, meet potential team members, and ask us questions about life at ${it.website_name}. We’ll also put you through interviews and group exercises to assess your skills and cultural fit.` },
+        { icon: 'six',    title: 'Job offer',                                                 description: 'Aced your interviews and made a real impression on us? Congratulations! we\'ll contact you with an official offer to join our graduate programme.' },
     ];
 
     return (
@@ -214,7 +214,7 @@ const GraduateProgram = () => {
             </section>
 
             <footer className='center-text primary-bg-color content-inverse-color'>
-                <p>{('Browse all career opportunities at')} <a className='link' target='_blank' href={it.url_for('careers')} >{it.website_name}</a></p>
+                <p>{('Browse all career opportunities at')} <a className='link' href={it.url_for('careers')} >{it.website_name}</a></p>
             </footer>
         </Layout>
     );

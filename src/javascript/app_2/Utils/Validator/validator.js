@@ -2,9 +2,7 @@ import { pre_build_dvrs } from './declarative_validation_rules';
 import Error              from './errors';
 import { localize }       from '../../../_common/localize';
 
-
 class Validator {
-
     constructor(input, rules, store = null) {
         this.input  = input;
         this.rules  = rules;
@@ -34,14 +32,14 @@ class Validator {
         this.errors.add(attribute, message);
         this.error_count++;
     }
-    
+
     /**
      * Runs validator
      *
      * @return {boolean} Whether it passes; true = passes, false = fails
      */
     check() {
-        
+
         Object.keys(this.input).forEach(attribute => {
             if (!Object.prototype.hasOwnProperty.call(this.rules, attribute)) {
                 return;
@@ -51,7 +49,7 @@ class Validator {
                 const ruleObject = Validator.getRuleObject(rule);
 
                 if (!ruleObject.validator && typeof ruleObject.validator !== 'function') {
-                    return; 
+                    return;
                 }
 
                 if (ruleObject.options.condition && !ruleObject.options.condition(this.store)) {
@@ -71,16 +69,16 @@ class Validator {
         });
         return !this.error_count;
     }
-    
+
     /**
      * Determine if validation passes
-     * 
+     *
      * @return {boolean}
      */
     isPassed() {
         return this.check();
     }
- 
+
     /**
      * Converts the rule array to an object
      *

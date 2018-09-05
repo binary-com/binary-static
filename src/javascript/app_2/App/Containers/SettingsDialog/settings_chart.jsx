@@ -34,9 +34,9 @@ const ChartSettings = ({
 );
 
 ChartSettings.propTypes = {
-    is_layout_default   : PropTypes.bool,
     is_asset_visible    : PropTypes.bool,
     is_countdown_visible: PropTypes.bool,
+    is_layout_default   : PropTypes.bool,
     toggleAsset         : PropTypes.func,
     toggleCountdown     : PropTypes.func,
     toggleLayout        : PropTypes.func,

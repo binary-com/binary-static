@@ -1,7 +1,7 @@
 import classNames       from 'classnames';
 import PropTypes        from 'prop-types';
 import React            from 'react';
-import SettingsDialog   from '../../../Components/Elements/SettingsDialog/settings_dialog.jsx';
+import SettingsDialog   from '../../Elements/SettingsDialog/settings_dialog.jsx';
 import { IconSettings } from '../../../../Assets/Footer';
 
 const ToggleSettings = ({
@@ -19,7 +19,7 @@ const ToggleSettings = ({
                 onClick={toggleSettings}
                 className={toggle_settings_class}
             >
-                <IconSettings className='footer-icon'/>
+                <IconSettings className='footer-icon' />
             </a>
             <SettingsDialog
                 is_open={is_settings_visible}

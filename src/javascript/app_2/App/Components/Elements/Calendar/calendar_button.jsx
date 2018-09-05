@@ -12,7 +12,7 @@ export default function CalendarButton({ children, className, is_hidden, label, 
                 >
                     {label}
                     {children}
-                </span> 
+                </span>
             }
         </React.Fragment>
     );

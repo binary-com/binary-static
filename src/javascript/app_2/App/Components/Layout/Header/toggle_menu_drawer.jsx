@@ -6,7 +6,7 @@ import { IconHamburger } from '../../../../Assets/Header/NavBar';
 const ToggleMenuDrawer = () => (
     <ToggleDrawer
         alignment='left'
-        icon={<IconHamburger/>}
+        icon={<IconHamburger />}
         icon_class='menu-toggle'
     >
         <MenuDrawer />

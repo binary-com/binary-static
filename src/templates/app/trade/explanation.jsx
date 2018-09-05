@@ -141,7 +141,7 @@ const Explanation = () => (
         <div id='explanation_image' className='invisible'>
             <div className='gr-row'>
                 <div className='gr-2 hide-mobile' />
-                <div className='gr-4 gr-12-m padding-right' style={{margin: 'auto'}}>
+                <div className='gr-4 gr-12-m padding-right' style={{ margin: 'auto' }}>
                     <img id='explanation_image_1' className='responsive' />
                 </div>
                 <div className='gr-4 gr-12-m padding-left'>

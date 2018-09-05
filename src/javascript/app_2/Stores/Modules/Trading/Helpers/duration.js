@@ -9,7 +9,7 @@ const duration_maps = {
     d: { display: 'days',    order: 5, to_second: 60 * 60 * 24 },
 };
 
-const buildDurationConfig = (contract, durations = { min_max: {}, units_display: {} }) => {
+export const buildDurationConfig = (contract, durations = { min_max: {}, units_display: {} }) => {
     durations.min_max[contract.start_type]       = durations.min_max[contract.start_type] || {};
     durations.units_display[contract.start_type] = durations.units_display[contract.start_type] || [];
 
@@ -64,7 +64,7 @@ const getDurationFromString = (duration_string) => {
     };
 };
 
-const getExpiryType = (store) => {
+export const getExpiryType = (store) => {
     const { duration_unit, expiry_date, expiry_type } = store;
     const server_time = store.root_store.common.server_time;
 
@@ -79,7 +79,7 @@ const getExpiryType = (store) => {
     return contract_expiry_type;
 };
 
-const convertDurationLimit = (value, unit) => {
+export const convertDurationLimit = (value, unit) => {
     if (unit === 'm') {
         const minute = value / 60;
         return minute >= 1 ? Math.floor(minute) : 1;
@@ -92,10 +92,4 @@ const convertDurationLimit = (value, unit) => {
     }
 
     return value;
-};
-
-module.exports = {
-    buildDurationConfig,
-    convertDurationLimit,
-    getExpiryType,
 };

@@ -47,7 +47,7 @@ const JapanAccOpening = (() => {
         }
     };
 
-    const onUnload = () => { AccountOpening.showHidePulser(1);; };
+    const onUnload = () => { AccountOpening.showHidePulser(1); };
 
     return {
         onLoad,

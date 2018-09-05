@@ -1,4 +1,7 @@
 #footer {
+    .container {
+        max-width: 1200px;
+    }
     #footer-menu {
         h4 {
             font-size: $FONT_SIZE_S;
@@ -16,9 +19,32 @@
         text-decoration: underline;
     }
     #footer-regulatory {
-        #regulatory-text {
+        padding-bottom: 30px;
+        color: #a8a8a8; // stylelint-disable color-no-hex
+
+        a {
+            font-size: 13px !important;
+        }
+        p {
+            font-size: 13px;
+            font-weight: 100;
             text-align: justify;
-            font-size: $FONT_SIZE_XXS;
+            margin: 0 0 10px;
+        }
+        .about-binary {
+            border-top: 1px solid $COLOR_DARK_GRAY;
+            border-bottom: 1px solid $COLOR_DARK_GRAY;
+            padding: 10px 0;
+            margin-bottom: 10px;
+
+            p {
+                margin: 0;
+            }
+        }
+        .risk-warning {
+            p {
+                font-size: 16px;
+            }
         }
         #iom_icon_footer {
             max-width: 90px;
@@ -30,6 +56,17 @@
             max-width: 120px;
         }
         @media screen and (max-width: 480px) {
+            .icon-row {
+                flex-direction: column;
+
+                > * {
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                }
+            }
+            .social-icons {
+                margin-left: 0;
+            }
             #iom_icon_footer {
                 max-width: 110px;
             }
@@ -52,6 +89,11 @@
             z-index: 9999;
         }
     }
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
     .lga-gamstop-icon-container {
         height: 100%;
         display: flex;
@@ -63,21 +105,24 @@
             width: 100%;
         }
     }
-    #social-icons {
-        padding-right: 10px !important;
+    .social-icons {
+        margin-left: auto;
 
+        > *:not(:first-child) {
+            margin-left: 10px;
+        }
         img {
-            max-height: 35px;
+            height: 35px;
+            width: 35px;
         }
     }
-    #footer-last {
-        .gambling {
-            &, a {
-                text-align: justify;
-                font-size: $FONT_SIZE_XS;
-                font-weight: 400;
-                line-height: 110%;
-            }
+    .icon-row {
+        padding-top: 10px;
+        padding-bottom: 14px;
+    }
+    .regulation-logos {
+        > * {
+            margin-right: 20px;
         }
     }
     #end-note {

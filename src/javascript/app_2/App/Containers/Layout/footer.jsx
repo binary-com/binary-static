@@ -1,11 +1,10 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import ServerTime     from '../server_time.jsx';
 import {
     ToggleFullScreen,
     TogglePortfolio,
-    ToggleSettings,
-    }                 from '../../Components/Layout/Footer';
-import ServerTime     from '../../Containers/server_time.jsx';
+    ToggleSettings }  from '../../Components/Layout/Footer';
 import { connect }    from '../../../Stores/connect';
 
 const Footer = ({
@@ -38,8 +37,8 @@ const Footer = ({
 
 
 Footer.propTypes = {
-    is_logged_in              : PropTypes.bool,
     is_language_dialog_visible: PropTypes.bool,
+    is_logged_in              : PropTypes.bool,
     is_portfolio_drawer_on    : PropTypes.bool,
     is_settings_dialog_on     : PropTypes.bool,
     togglePortfolioDrawer     : PropTypes.func,

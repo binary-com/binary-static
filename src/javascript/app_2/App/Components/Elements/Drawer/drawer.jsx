@@ -4,7 +4,6 @@ import React            from 'react';
 import { DrawerHeader } from './drawer_header.jsx';
 import { connect }      from '../../../../Stores/connect';
 
-
 class Drawer extends React.Component {
     state = {
         is_this_drawer_on: false,
@@ -20,10 +19,10 @@ class Drawer extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.alignment==='left') {
-            this.setState({is_this_drawer_on: nextProps.is_main_drawer_on});
-        } else if (this.props.alignment==='right'){
-            this.setState({is_this_drawer_on: nextProps.is_notifications_drawer_on});
+        if (this.props.alignment === 'left') {
+            this.setState({ is_this_drawer_on: nextProps.is_main_drawer_on });
+        } else if (this.props.alignment === 'right'){
+            this.setState({ is_this_drawer_on: nextProps.is_notifications_drawer_on });
         }
     }
 

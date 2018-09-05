@@ -84,7 +84,7 @@ export default class BaseStore {
 
         if (properties && properties.length) {
             snapshot = properties.reduce(
-                (result, p) => Object.assign(result, { [p]: snapshot[p]}),
+                (result, p) => Object.assign(result, { [p]: snapshot[p] }),
                 {}
             );
         }
@@ -146,7 +146,7 @@ export default class BaseStore {
         const local_storage_snapshot = JSON.parse(localStorage.getItem(this.constructor.name, {}));
         const session_storage_snapshot = JSON.parse(sessionStorage.getItem(this.constructor.name, {}));
 
-        const snapshot = {...local_storage_snapshot, ...session_storage_snapshot};
+        const snapshot = { ...local_storage_snapshot, ...session_storage_snapshot };
 
         Object.keys(snapshot).forEach((k) => this[k] = snapshot[k]);
     }
@@ -159,7 +159,7 @@ export default class BaseStore {
      *
      */
     @action
-    setValidationErrorMessages( propertyName, messages) {
+    setValidationErrorMessages(propertyName, messages) {
         this.validation_errors[propertyName] = messages;
     }
 

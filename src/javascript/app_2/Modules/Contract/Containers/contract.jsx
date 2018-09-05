@@ -2,7 +2,7 @@ import { CSSTransition } from 'react-transition-group';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import ContractDetails   from './contract_details.jsx';
-import InfoBox           from '../Containers/info_box.jsx';
+import InfoBox           from './info_box.jsx';
 import SmartChart        from '../../SmartChart';
 import ErrorComponent    from '../../../App/Components/Elements/Errors';
 import { connect }       from '../../../Stores/connect';
@@ -21,7 +21,7 @@ const Contract = ({
             {
                 has_error ?
                     <ErrorComponent message={localize('Unknown Error!')} />
-                :
+                    :
                     <div className='trade-container'>
                         <div className='chart-container notice-msg'>
                             { symbol &&

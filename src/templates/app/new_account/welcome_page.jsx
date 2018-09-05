@@ -17,7 +17,7 @@ const WelcomePage = () => (
                 <div className='gr-6 gr-12-p gr-12-m gr-parent'>
                     <div className='box border-gray gr-padding-10'>
                         <div>
-                            <strong id='upgrade_title'/>
+                            <strong id='upgrade_title' />
                             <p id='upgrade_text' className='font-s'>{it.L('Upgrade your account and start trading using real money.')}</p>
                         </div>
                         <div className='box-item-end'>

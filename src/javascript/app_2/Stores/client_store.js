@@ -9,4 +9,4 @@ export default class ClientStore extends BaseStore {
     @observable currency     = Client.get('currency') || '';
     @observable upgrade_info = Client.getBasicUpgradeInfo();
     @observable can_upgrade  = this.upgrade_info.can_upgrade || this.upgrade_info.can_open_multi;
-};
+}
