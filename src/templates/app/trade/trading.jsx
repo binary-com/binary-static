@@ -23,11 +23,11 @@ const Trading = () => (
             <div className='row' id='contract_symbol_container'>
                 <div id='contract_markets_container'>
                     <div id='underlying_component' />
-                    <input type='hidden' id='underlying'/>
+                    <input type='hidden' id='underlying' />
                 </div>
                 <div id='contract_type_container'>
                     <div id='contract_component' />
-                    <input type='hidden' id='contract'/>
+                    <input type='hidden' id='contract' />
                 </div>
                 <div id='underlying_details'>
                     <span id='trading_worm_chart' />
@@ -145,7 +145,7 @@ const Trading = () => (
                                         <div className='big-col'>
                                             <select id='selected_tick' className='small_width_input'>
                                                 { Array.from(new Array(5)).map((x, idx) => (
-                                                    <option key={idx+1} value={idx+1}>{idx+1}</option>
+                                                    <option key={idx + 1} value={idx + 1}>{idx + 1}</option>
                                                 ))}
                                             </select>
                                         </div>

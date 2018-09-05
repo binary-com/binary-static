@@ -1,5 +1,4 @@
 import React from 'react';
-import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../../_common/components/tabs.jsx';
 import TermsAndConditions from './terms_and_conditions.jsx';
 import Contract from './contract.jsx';
 import AccountPrivacy from './account_privacy.jsx';
@@ -11,6 +10,7 @@ import EthicsAntisocial from './ethics_antisocial.jsx';
 import EthicsSolicitation from './ethics_solicitation.jsx';
 import EthicsLiability from './ethics_liability.jsx';
 import Affiliates from './affiliates.jsx';
+import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../../_common/components/tabs.jsx';
 
 const TAC = () => (
     <div className='invisible ja-show'>

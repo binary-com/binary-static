@@ -12,9 +12,9 @@ const FAQ = () => (
                     <List
                         id='sidebar-nav'
                         items={[
-                            { id: 'general',                  href: '#general',                  text: it.L('General')},
-                            { id: 'account-management',       href: '#account-management',       text: it.L('Account management')},
-                            { id: 'marketing-and-promotions', href: '#marketing-and-promotions', text: it.L('Marketing and promotions')},
+                            { id: 'general',                  href: '#general',                  text: it.L('General') },
+                            { id: 'account-management',       href: '#account-management',       text: it.L('Account management') },
+                            { id: 'marketing-and-promotions', href: '#marketing-and-promotions', text: it.L('Marketing and promotions') },
                         ]}
                     />
                 </div>

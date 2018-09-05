@@ -42,7 +42,7 @@ const Signup = () => (
                 </BoxRow>
 
                 <div className='gr-padding-30'>
-                    <a className='button' href={it.affiliate_signup_url} target='_blank'>
+                    <a className='button' href={it.affiliate_signup_url} target='_blank' rel='noopener noreferrer'>
                         <span>{it.L('Apply Now')}</span>
                     </a>
                 </div>
@@ -54,7 +54,7 @@ const Signup = () => (
                 <h2>{it.L('Types of affiliate commission plans')}</h2>
                 <p>{it.L('You can choose from two types of affiliate commission plans:')}</p>
             </div>
-    
+
             <TabContainer className='gr-padding-20 full-width' theme='light'>
                 <TabsSubtabs
                     id='commission_tabs'
@@ -158,7 +158,7 @@ const Signup = () => (
             <div className='container center-text gr-padding-30'>
                 <p>{it.L('Sign up for the [_1] Affiliate Programme today:', it.website_name)}</p>
                 <p>
-                    <a className='button' href={it.affiliate_signup_url} target='_blank'>
+                    <a className='button' href={it.affiliate_signup_url} target='_blank' rel='noopener noreferrer'>
                         <span>{it.L('Yes, I Want To Sign Up As An Affiliate')}</span>
                     </a>
                 </p>

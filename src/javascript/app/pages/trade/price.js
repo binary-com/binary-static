@@ -379,7 +379,7 @@ const Price = (() => {
                             setPriceContainersVisibility(position_is_visible);
                             first_price_proposal = false;
                         }
-                    }});
+                    } });
                 }
             });
         });

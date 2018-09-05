@@ -107,7 +107,7 @@ const Careers = () => {
                             <h1>{it.L('Our values')}</h1>
                         </div>
 
-                        <ColumnValues header={it.L('Integrity')} icon='ic-intergrity'/>
+                        <ColumnValues header={it.L('Integrity')} icon='ic-intergrity' />
                         <ColumnValues header={it.L('Teamwork')} icon='ic-teamwork' />
                         <ColumnValues header={it.L('Competence')} icon='ic-competence' />
                         <ColumnValues header={it.L('Customer focus')} icon='ic-customer-focus' />

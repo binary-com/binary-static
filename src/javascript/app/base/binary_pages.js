@@ -1,5 +1,5 @@
 // ==================== _common ====================
-const TabSelector = require('../../_common/tab_selector');
+const TabSelector = require('../../_common/tab_selector'); // eslint-disable-line import/order
 
 // ==================== app ====================
 const LoggedInHandler         = require('./logged_in');

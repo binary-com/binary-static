@@ -8,7 +8,7 @@ export const Section = ({ id, header, children }) => (
     </div>
 );
 
-export const HeaderSecondary = ({header, ...props}) => (
+export const HeaderSecondary = ({ header, ...props }) => (
     <React.Fragment>
         <SeparatorLine invisible show_mobile className='gr-padding-10' />
         <h3 className='secondary-color' {...props}>{header}</h3>

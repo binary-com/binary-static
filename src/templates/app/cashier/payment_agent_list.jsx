@@ -8,7 +8,7 @@ const Table = ({ trs }) => (
                 <td colSpan='1'>{tr.text}</td>
                 <td colSpan='3'>
                     { (tr.href || tr.mailto) ?
-                        <a href={`${tr.mailto ? 'mailto:' :''}${tr.placeholder}`} target='_blank'>
+                        <a href={`${tr.mailto ? 'mailto:' : ''}${tr.placeholder}`} target='_blank' rel='noopener noreferrer'>
                             {tr.placeholder}
                         </a>
                         : tr.placeholder

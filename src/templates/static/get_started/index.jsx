@@ -282,7 +282,7 @@ const Index = () => (
                                 <p>{it.L('Win the multiplier times the high minus low.')}</p>
                             </div>
                         </div>
-                        <SeparatorLine invisible/>
+                        <SeparatorLine invisible />
                         <p>{it.L('For example, let’s say the market has a low of 5,200 and a close of 6,000 over the contract duration, then a ‘Close-Low’ lookback with a multiplier of $2 would have a payout of:')}</p>
                         <div className='formula center-text'>
                             <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
