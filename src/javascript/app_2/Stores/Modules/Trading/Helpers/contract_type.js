@@ -244,11 +244,11 @@ const ContractType = (() => {
 
     const getExpiryDate = (expiry_date, start_date) => {
         const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
-        const moment_expiry = moment.utc(expiry_date);
+        const moment_expiry = moment.utc(expiry_date || undefined);
         // forward starting contracts should only show today and tomorrow as expiry date
         const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
         return {
-            expiry_date: is_invalid ? moment_start.format('YYYY-MM-DD') : expiry_date,
+            expiry_date: (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD'),
         };
     };
 
