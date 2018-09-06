@@ -175,7 +175,6 @@ const ContractType = (() => {
         };
     };
 
-    // TODO: use this getter function to dynamically compare min/max versus duration amount
     const getDurationMinMax = (contract_type, contract_start_type, contract_expiry_type) => {
         let duration_min_max = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type]) || {};
 
