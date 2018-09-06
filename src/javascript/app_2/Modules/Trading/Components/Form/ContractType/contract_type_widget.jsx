@@ -1,9 +1,9 @@
 import PropTypes             from 'prop-types';
 import React                 from 'react';
+import { IconArrow }         from 'Assets/Common';
+import { IconTradeCategory } from 'Assets/Trading/Categories';
 import ContractTypeDialog    from './contract_type_dialog.jsx';
 import ContractTypeList      from './contract_type_list.jsx';
-import { IconArrow }         from '../../../../../Assets/Common';
-import { IconTradeCategory } from '../../../../../Assets/Trading/Categories';
 
 class ContractTypeWidget extends React.PureComponent {
     constructor(props) {

@@ -4,14 +4,14 @@ import {
     observer }                  from 'mobx-react';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
-import Dropdown                 from '../../../../../App/Components/Form/dropdown.jsx';
-import Fieldset                 from '../../../../../App/Components/Form/fieldset.jsx';
-import InputField               from '../../../../../App/Components/Form/input_field.jsx';
-import Client                   from '../../../../../../_common/base/client_base';
+import Client                   from '_common/base/client_base';
 import {
     addComma,
-    getDecimalPlaces }          from '../../../../../../_common/base/currency_base';
-import { localize }             from '../../../../../../_common/localize';
+    getDecimalPlaces }          from '_common/base/currency_base';
+import { localize }             from '_common/localize';
+import Dropdown                 from 'App/Components/Form/dropdown.jsx';
+import Fieldset                 from 'App/Components/Form/fieldset.jsx';
+import InputField               from 'App/Components/Form/input_field.jsx';
 
 const Amount = ({
     amount,

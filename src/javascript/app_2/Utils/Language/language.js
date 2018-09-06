@@ -1,4 +1,4 @@
-import { get, getAll, urlFor } from '../../../_common/language';
+import { get, getAll, urlFor } from '_common/language';
 
 export const currentLanguage = get();
 

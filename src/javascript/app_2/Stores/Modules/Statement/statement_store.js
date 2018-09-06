@@ -3,10 +3,10 @@ import {
     computed,
     observable }                      from 'mobx';
 import moment                         from 'moment';
+import Client                         from '_common/base/client_base';
+import { WS }                         from 'Services';
 import { formatStatementTransaction } from './Helpers/format_response';
 import BaseStore                      from '../../base_store';
-import { WS }                         from '../../../Services';
-import Client                         from '../../../../_common/base/client_base';
 
 const batch_size = 100; // request response limit
 

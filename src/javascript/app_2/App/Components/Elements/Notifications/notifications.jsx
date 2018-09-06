@@ -1,8 +1,8 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
+import { localize }        from '_common/localize';
+import { IconBell }        from 'Assets/Header/NavBar';
 import { DrawerItem }      from '../Drawer';
-import { IconBell }        from '../../../../Assets/Header/NavBar';
-import { localize }        from '../../../../../_common/localize';
 
 const Notifications = ({ list }) => (
     <React.Fragment>

@@ -69,6 +69,8 @@ const getConfig = () => (
         root_path       : common.root_path,
         root_url        : `/${program.dev && !fs.existsSync(Path.join(common.root_path, 'scripts', 'CNAME')) ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`,
         sections        : ['app', 'static'],
+        app_js_files    : ['vendor', 'binary'],
+        app_2_js_files  : ['vendor', 'chartiq', 'react_mobx', 'smartcharts', 'binary_common', 'binary'],
     }
 );
 
@@ -141,6 +143,14 @@ const createUrlFinder = default_lang => {
     };
 };
 
+const generateJSFiles = async (config, static_hash, is_app_2) => Promise.all(
+    config[is_app_2 ? 'app_2_js_files' : 'app_js_files']
+        .map(js => `js/${is_app_2 ? 'app_2/' : ''}${js}${program.dev && js === 'binary' ? '' : '.min'}.js`)
+        .map(async js =>
+            `${config.root_url}${js}?${/binary/.test(js) ? static_hash : await fileHash(Path.join(config.dist_path, js))}`
+        )
+);
+
 const createContextBuilder = async () => {
     const config = getConfig();
 
@@ -150,21 +160,20 @@ const createContextBuilder = async () => {
             static_hash = await common.readFile(Path.join(config.dist_path, 'version'));
         } catch (e) { } // eslint-disable-line
     }
-    const vendor_hash  = await fileHash(Path.join(config.dist_path, 'js/vendor.min.js'));
-    const chartiq_hash = await fileHash(Path.join(config.dist_path, 'js/chartiq.min.js'));
+
     if (!is_translation) {
         await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
     }
 
-    const extra = is_app => ({
+    const app_2_js_files = await generateJSFiles(config, static_hash, true);
+    const app_js_files   = await generateJSFiles(config, static_hash, false);
+
+    const extra = is_app_2 => ({
         js_files: [
             `${config.root_url}js/texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
-            `${config.root_url}js/manifest.js?${static_hash}`,
-            `${config.root_url}js/vendor.min.js?${vendor_hash}`,
-            ...(is_app ? [`${config.root_url}js/chartiq.min.js?${chartiq_hash}`] : []),
-            `${config.root_url}js/binary${is_app ? '_app' : ''}${program.dev ? '' : '.min'}.js?${static_hash}`,
+            ...(is_app_2 ? app_2_js_files : app_js_files),
         ],
-        css_files: is_app ? [
+        css_files: is_app_2 ? [
             `${config.root_url}css/app_2.min.css?${static_hash}`,
             `${config.root_url}css/smartcharts.css?${static_hash}`,
         ] : [

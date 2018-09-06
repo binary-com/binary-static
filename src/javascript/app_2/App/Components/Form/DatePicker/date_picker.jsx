@@ -1,12 +1,12 @@
 import classNames      from 'classnames';
 import moment          from 'moment';
 import React           from 'react';
-import DatePickerInput from './date_picker_input.jsx';
-import { IconArrow }   from '../../../../Assets/Common';
-import Calendar        from '../../Elements/Calendar';
+import { IconArrow }   from 'Assets/Common';
 import {
     formatDate,
-    daysFromTodayTo }  from '../../../../Utils/Date';
+    daysFromTodayTo }  from 'Utils/Date';
+import DatePickerInput from './date_picker_input.jsx';
+import Calendar        from '../../Elements/Calendar';
 
 class DatePicker extends React.PureComponent {
     state = {

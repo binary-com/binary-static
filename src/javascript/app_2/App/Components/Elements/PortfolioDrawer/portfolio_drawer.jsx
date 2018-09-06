@@ -2,11 +2,11 @@ import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import { localize }                   from '_common/localize';
+import { IconClose }                  from 'Assets/Common';
+import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty_portfolio_message.jsx';
+import { connect }                    from 'Stores/connect';
 import PortfolioDrawerCard            from './portfolio_drawer_card.jsx';
-import { IconClose }                  from '../../../../Assets/Common';
-import EmptyPortfolioMessage          from '../../../../Modules/Portfolio/Components/empty_portfolio_message.jsx';
-import { connect }                    from '../../../../Stores/connect';
-import { localize }                   from '../../../../../_common/localize';
 
 class PortfolioDrawer extends React.Component {
     componentDidMount()    { this.props.onMount(); }

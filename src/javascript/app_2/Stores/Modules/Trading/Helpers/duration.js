@@ -1,5 +1,5 @@
 import moment       from 'moment';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '_common/localize';
 
 const duration_maps = {
     t: { display: 'ticks',   order: 1 },

@@ -1,9 +1,9 @@
 import classNames         from 'classnames';
 import moment             from 'moment';
 import React              from 'react';
+import { localize }       from '_common/localize';
+import { padLeft }        from '_common/string_util';
 import CalendarPanelTypes from './types';
-import { localize }       from '../../../../../../_common/localize';
-import { padLeft }        from '../../../../../../_common/string_util';
 
 const getDays = ({ calendar_date, date_format, max_date, min_date, start_date, onClick, selected_date }) => {
     const dates = [];

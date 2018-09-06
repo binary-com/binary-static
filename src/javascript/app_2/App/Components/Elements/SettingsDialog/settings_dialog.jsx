@@ -1,12 +1,12 @@
 import classNames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
+import { localize }    from '_common/localize';
 import { Tabs }        from '../Tabs';
 import {
     ChartSettings,
     GeneralSettings,
     LanguageSettings } from '../../../Containers/SettingsDialog';
-import { localize }    from '../../../../../_common/localize';
 
 class SettingsDialog extends React.PureComponent {
     setWrapperRef = (node) => {

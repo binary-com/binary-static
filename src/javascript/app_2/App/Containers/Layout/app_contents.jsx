@@ -1,8 +1,8 @@
-import classNames  from 'classnames';
-import ProptTypes  from 'prop-types';
-import React       from 'react';
+import classNames     from 'classnames';
+import ProptTypes     from 'prop-types';
+import React          from 'react';
 import { withRouter } from 'react-router';
-import { connect } from '../../../Stores/connect';
+import { connect }    from 'Stores/connect';
 
 const AppContents = ({ children, is_portfolio_drawer_on }) => (
     <div

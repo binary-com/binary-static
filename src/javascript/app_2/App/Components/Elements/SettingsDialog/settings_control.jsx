@@ -1,7 +1,7 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
+import { localize } from '_common/localize';
 import ToggleButton from '../toggle_button.jsx';
-import { localize } from '../../../../../_common/localize';
 
 const SettingsControl = ({
     children,

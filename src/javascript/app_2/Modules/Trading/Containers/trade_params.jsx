@@ -1,9 +1,9 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { form_components }            from '../../../Stores/Modules/Trading/Constants/ui';
-import { connect }                    from '../../../Stores/connect';
-import { getComponentProperties }     from '../../../Utils/React/component';
+import { connect }                    from 'Stores/connect';
+import { form_components }            from 'Stores/Modules/Trading/Constants/ui';
+import { getComponentProperties }     from 'Utils/React/component';
 
 class TradeParams extends React.Component {
     isVisible(component_name) {

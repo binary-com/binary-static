@@ -2,10 +2,10 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { withRouter }                 from 'react-router';
+import GTM                            from '_common/base/gtm';
+import { connect }                    from 'Stores/connect';
 import ErrorComponent                 from '../../Components/Elements/Errors';
 import BinaryRoutes                   from '../../Components/Routes';
-import { connect }                    from '../../../Stores/connect';
-import GTM                            from '../../../../_common/base/gtm';
 
 const Routes = (props) => {
     if (props.has_error) {

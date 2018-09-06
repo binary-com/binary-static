@@ -1,7 +1,7 @@
 import React             from 'react';
+import { IconHamburger } from 'Assets/Header/NavBar';
 import { ToggleDrawer }  from '../../Elements/Drawer';
 import MenuDrawer        from '../../../Containers/Drawer/menu_drawer.jsx';
-import { IconHamburger } from '../../../../Assets/Header/NavBar';
 
 const ToggleMenuDrawer = () => (
     <ToggleDrawer

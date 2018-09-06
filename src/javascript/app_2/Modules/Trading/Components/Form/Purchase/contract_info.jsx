@@ -1,9 +1,9 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import Money             from '../../../../../App/Components/Elements/money.jsx';
-import Tooltip           from '../../../../../App/Components/Elements/tooltip.jsx';
-import { IconTradeType } from '../../../../../Assets/Trading/Types';
-import { localize }      from '../../../../../../_common/localize';
+import { localize }      from '_common/localize';
+import Money             from 'App/Components/Elements/money.jsx';
+import Tooltip           from 'App/Components/Elements/tooltip.jsx';
+import { IconTradeType } from 'Assets/Trading/Types';
 
 const ContractInfo = ({
     barrier_count,

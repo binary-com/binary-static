@@ -2,7 +2,7 @@ import classNames   from 'classnames';
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '_common/localize';
 
 const DigitDisplay = ({
     digit_info = {},

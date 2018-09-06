@@ -1,9 +1,9 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import { connect }    from '../../Stores/connect';
+import { connect }    from 'Stores/connect';
 import {
     formatDuration,
-    getDiffDuration } from '../../Utils/Date';
+    getDiffDuration } from 'Utils/Date';
 
 const RemainingTime = ({
     end_time = null,

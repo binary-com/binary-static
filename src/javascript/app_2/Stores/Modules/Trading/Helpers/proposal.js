@@ -1,10 +1,10 @@
 import moment                              from 'moment';
+import { getDecimalPlaces }                from '_common/base/currency_base';
+import { isDeepEqual }                     from '_common/utility';
+import { convertToUnix }                   from 'Utils/Date';
 import {
     proposal_properties_alternative_names,
     removable_proposal_properties }        from '../Constants/query_string';
-import { convertToUnix }                   from '../../../../Utils/Date';
-import { getDecimalPlaces }                from '../../../../../_common/base/currency_base';
-import { isDeepEqual }                     from '../../../../../_common/utility';
 
 export const getProposalInfo = (store, response) => {
     const proposal = response.proposal || {};

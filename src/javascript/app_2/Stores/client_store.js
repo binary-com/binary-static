@@ -1,6 +1,6 @@
 import { observable } from 'mobx';
+import Client         from '_common/base/client_base';
 import BaseStore      from './base_store';
-import Client         from '../../_common/base/client_base';
 
 export default class ClientStore extends BaseStore {
     @observable balance;

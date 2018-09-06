@@ -1,5 +1,5 @@
 import moment       from 'moment';
-import { localize } from '../../../_common/localize';
+import { localize } from '_common/localize';
 
 /**
  * Convert epoch to moment object

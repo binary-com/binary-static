@@ -1,6 +1,6 @@
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import { IconClose } from '../../../Assets/Common';
+import { IconClose } from 'Assets/Common';
 
 // TODO: move to App/Components, Refactor svg, consider other types, more features;
 // when a general design and more icons for all messages is ready

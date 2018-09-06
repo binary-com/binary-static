@@ -1,7 +1,7 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import { connect }    from 'Stores/connect';
 import LanguageDialog from '../../Components/Elements/SettingsDialog/language_dialog.jsx';
-import { connect }    from '../../../Stores/connect';
 
 const LanguageSettings = ({
     hide,
