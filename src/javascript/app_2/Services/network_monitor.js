@@ -1,11 +1,21 @@
+import { action }              from 'mobx';
 import { BinarySocketGeneral } from './index';
 import NetworkMonitorBase      from '../../_common/base/network_monitor_base'; // eslint-disable-line import/order
 
-// TODO: implement a component to display network status and corresponding messages
+let common_store;
+
 const NetworkMonitor = (() => {
     const init = (store) => {
-        NetworkMonitorBase.init(BinarySocketGeneral.init(store));
+        NetworkMonitorBase.init(BinarySocketGeneral.init(store), updateStore);
+        common_store = store.common;
     };
+
+    const updateStore = action((status, is_online) => {
+        if (common_store) {
+            common_store.network_status    = status;
+            common_store.is_network_online = is_online;
+        }
+    });
 
     return {
         init,

@@ -15,6 +15,9 @@ export default class CommonStore extends BaseStore {
         message: '',
     };
 
+    @observable network_status = {};
+    @observable is_network_online = false;
+
     @action.bound
     setError(has_error, error) {
         this.has_error = has_error;

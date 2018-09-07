@@ -23,6 +23,7 @@ span.tooltip {
     &[data-tooltip] {
         position: relative;
         cursor: help;
+        display: block;
 
         &:hover:after, &:hover:before {
             opacity: 0.96;
