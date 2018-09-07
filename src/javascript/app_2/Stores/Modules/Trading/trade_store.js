@@ -161,6 +161,8 @@ export default class TradeStore extends BaseStore {
         if (proposal_id) {
             processPurchase(proposal_id, price).then(action((response) => {
                 console.log(response);
+                // TODO: make sure params are initialized as dataLayer variables
+                // or send data with this event
                 window.dataLayer.push({ event: 'contractPurchase' });
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
