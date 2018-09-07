@@ -175,7 +175,6 @@ const ContractType = (() => {
         };
     };
 
-    // TODO: use this getter function to dynamically compare min/max versus duration amount
     const getDurationMinMax = (contract_type, contract_start_type, contract_expiry_type) => {
         let duration_min_max = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type]) || {};
 
@@ -244,11 +243,11 @@ const ContractType = (() => {
 
     const getExpiryDate = (expiry_date, start_date) => {
         const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
-        const moment_expiry = moment.utc(expiry_date);
+        const moment_expiry = moment.utc(expiry_date || undefined);
         // forward starting contracts should only show today and tomorrow as expiry date
         const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
         return {
-            expiry_date: is_invalid ? moment_start.format('YYYY-MM-DD') : expiry_date,
+            expiry_date: (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD'),
         };
     };
 

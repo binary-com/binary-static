@@ -50,7 +50,7 @@ export const buildDurationConfig = (contract, durations = { min_max: {}, units_d
     return durations;
 };
 
-const convertDurationUnit = (value, from_unit, to_unit) => {
+export const convertDurationUnit = (value, from_unit, to_unit) => {
     if (!value || !from_unit || !to_unit) return null;
     if (from_unit === to_unit || !('to_second' in duration_maps[from_unit])) return value;
     return (value * duration_maps[from_unit].to_second) / duration_maps[to_unit].to_second;
