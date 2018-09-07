@@ -4,6 +4,7 @@ const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
 const FormManager      = require('../../../common/form_manager');
 const TrafficSource    = require('../../../common/traffic_source');
+const handleVerifyCode = require('../../../common/verification_code').handleVerifyCode;
 const makeOption       = require('../../../../_common/common_functions').makeOption;
 const localize         = require('../../../../_common/localize').localize;
 const LocalStore       = require('../../../../_common/storage').LocalStore;
@@ -11,11 +12,22 @@ const State            = require('../../../../_common/storage').State;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
+const getAppId         = require('../../../../config').getAppId;
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
 
     const onLoad = () => {
+        if (+getAppId() !== 1) { // TODO: update app_id to handle desktop
+            $(form).setVisibility(0);
+            handleVerifyCode(init);
+        } else {
+            init();
+        }
+    };
+
+    const init = () => {
+        $(form).setVisibility(1);
         BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
 
         bindValidation();

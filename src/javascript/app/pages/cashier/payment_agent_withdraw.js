@@ -4,8 +4,10 @@ const getDecimalPlaces     = require('../../common/currency').getDecimalPlaces;
 const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
 const FormManager          = require('../../common/form_manager');
 const validEmailToken      = require('../../common/form_validation').validEmailToken;
+const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
 const localize             = require('../../../_common/localize').localize;
 const getHashValue         = require('../../../_common/url').getHashValue;
+const getAppId             = require('../../../config').getAppId;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {
@@ -23,7 +25,8 @@ const PaymentAgentWithdraw = (() => {
 
     let $views,
         agent_name,
-        currency;
+        currency,
+        token;
 
     // -----------------------
     // ----- Agents List -----
@@ -40,10 +43,17 @@ const PaymentAgentWithdraw = (() => {
     };
 
     const checkToken = ($ddl_agents, pa_list) => {
-        const token = getHashValue('token');
+        token = token || getHashValue('token');
         if (!token) {
-            BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
-            setActiveView(view_ids.notice);
+            if (!+getAppId() !== 1) { // TODO: update app_id to handle desktop
+                handleVerifyCode((verification_code) => {
+                    token = verification_code;
+                    checkToken($ddl_agents, pa_list);
+                });
+            } else {
+                BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
+                setActiveView(view_ids.notice);
+            }
         } else if (!validEmailToken(token)) {
             showPageError('token_error');
         } else {
@@ -175,8 +185,13 @@ const PaymentAgentWithdraw = (() => {
         return true;
     };
 
+    const onUnload = () => {
+        token = '';
+    };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

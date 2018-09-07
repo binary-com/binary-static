@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormRow, Fieldset, SubmitButton } from '../../_common/components/forms.jsx';
+import FormVerificationCode from '../_includes/form_verification_code.jsx';
 
 const PaymentAgentWithdraw = () => (
     <React.Fragment>
@@ -25,6 +26,8 @@ const PaymentAgentWithdraw = () => (
                     </a>
                 </p>
             </div>
+
+            <FormVerificationCode />
 
             <form id='viewConfirm' className='viewItem invisible'>
                 <p>{it.L('Please confirm the transaction details in order to complete the transfer:')} </p>

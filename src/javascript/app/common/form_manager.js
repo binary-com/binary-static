@@ -18,7 +18,7 @@ const FormManager = (() => {
             if (Array.isArray(fields) && fields.length) {
                 if (needs_token) {
                     // eslint-disable-next-line no-param-reassign
-                    fields = fields.concat({ request_field: 'verification_code', value: getHashValue('token') });
+                    fields = fields.concat({ request_field: 'verification_code', value: getHashValue('token') || $('#txt_verification_code').val() });
                 }
                 forms[form_selector].fields = fields;
 
