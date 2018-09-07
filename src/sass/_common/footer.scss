@@ -46,15 +46,6 @@
                 font-size: 16px;
             }
         }
-        #iom_icon_footer {
-            max-width: 90px;
-        }
-        #lga_icon_footer {
-            max-width: 70px;
-        }
-        #gamstop_icon_footer {
-            max-width: 120px;
-        }
         @media screen and (max-width: 480px) {
             .icon-row {
                 flex-direction: column;
@@ -89,21 +80,29 @@
             z-index: 9999;
         }
     }
+    .iom-icon {
+        width: 90px;
+    }
+    .lga-icon {
+        width: 100px;
+    }
+    .gamstop-icon {
+        width: 109px;
+    }
+    .gamstop-icon.data-show-visible + .lga-icon {
+        width: 70px;
+        margin-bottom: 3px;
+        margin-left: -10px;
+    }
     .flex-row {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
     .lga-gamstop-icon-container {
-        height: 100%;
         display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-around;
-
-        div, a {
-            width: 100%;
-        }
+        align-items: flex-start;
+        flex-direction: column-reverse;
     }
     .social-icons {
         margin-left: auto;
