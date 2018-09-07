@@ -1,7 +1,7 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
+import { connect }  from 'Stores/connect';
 import SellButton   from '../Components/Sell/sell_button.jsx';
-import { connect }  from '../../../Stores/connect';
 
 const ContractSell = ({
     contract_info,

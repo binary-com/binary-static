@@ -1,6 +1,6 @@
+import { localize }       from '_common/localize';
 import { pre_build_dvrs } from './declarative_validation_rules';
 import Error              from './errors';
-import { localize }       from '../../../_common/localize';
 
 class Validator {
     constructor(input, rules, store = null) {

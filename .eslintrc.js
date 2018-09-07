@@ -38,7 +38,7 @@ module.exports = {
         // import rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],
         'import/no-useless-path-segments'   : 'error',
-        'import/order'                      : ['error', { groups: [['builtin', 'external'], 'sibling', 'parent'], 'newlines-between': 'ignore' }],
+        'import/order'                      : ['error', { groups: [['builtin', 'external'], 'internal', 'sibling', 'parent'], 'newlines-between': 'ignore' }],
         'import/prefer-default-export'      : 0,
 
         // react rules
@@ -68,6 +68,6 @@ module.exports = {
     settings: {
         react: {
             version: '16',
-        }
-    }
+        },
+    },
 };

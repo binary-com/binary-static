@@ -1,10 +1,10 @@
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
+import { localize } from '_common/localize';
+import Money        from 'App/Components/Elements/money.jsx';
+import IconFlag     from 'Assets/Contract/icon_flag.jsx';
 import SellInfo     from '../Sell/sell_info.jsx';
-import Money        from '../../../../App/Components/Elements/money.jsx';
-import IconFlag     from '../../../../Assets/Contract/icon_flag.jsx';
-import { localize } from '../../../../../_common/localize';
 
 const InfoBoxExpired = ({
     contract_info,

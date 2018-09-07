@@ -1,7 +1,7 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import { localize }   from '_common/localize';
 import CalendarButton from './calendar_button.jsx';
-import { localize }   from '../../../../../_common/localize';
 
 export default function CalendarFooter({ footer, has_today_btn, onClick }) {
     return (

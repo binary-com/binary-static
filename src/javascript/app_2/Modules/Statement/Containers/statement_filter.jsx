@@ -1,9 +1,9 @@
 import moment       from 'moment';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import DatePicker   from '../../../App/Components/Form/DatePicker';
-import { connect }  from '../../../Stores/connect';
-import { localize } from '../../../../_common/localize';
+import { localize } from '_common/localize';
+import DatePicker   from 'App/Components/Form/DatePicker';
+import { connect }  from 'Stores/connect';
 
 const Filter = ({
     date_from,

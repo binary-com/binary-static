@@ -3,12 +3,12 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { withRouter }                 from 'react-router-dom';
+import DataTable                      from 'App/Components/Elements/DataTable';
+import { getContractPath }            from 'App/Components/Routes/helpers';
+import { connect }                    from 'Stores/connect';
 import CardList                       from '../Components/card_list.jsx';
 import EmptyPortfolioMessage          from '../Components/empty_portfolio_message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
-import DataTable                      from '../../../App/Components/Elements/DataTable';
-import { getContractPath }            from '../../../App/Components/Routes/helpers';
-import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Portfolio extends React.Component {

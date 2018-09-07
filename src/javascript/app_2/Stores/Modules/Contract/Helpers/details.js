@@ -1,9 +1,9 @@
 import React                     from 'react';
-import Money                     from '../../../../App/Components/Elements/money.jsx';
-import { contract_type_display } from '../../../../Constants/contract';
-import { toGMTFormat }           from '../../../../Utils/Date';
-import { addComma }              from '../../../../../_common/base/currency_base';
-import { localize }              from '../../../../../_common/localize';
+import { addComma }              from '_common/base/currency_base';
+import { localize }              from '_common/localize';
+import Money                     from 'App/Components/Elements/money.jsx';
+import { contract_type_display } from 'Constants/contract';
+import { toGMTFormat }           from 'Utils/Date';
 
 export const getDetailsInfo = (contract_info) => {
     const {

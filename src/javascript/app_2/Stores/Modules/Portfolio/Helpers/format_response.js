@@ -1,4 +1,4 @@
-import { localize }    from '../../../../../_common/localize';
+import { localize } from '_common/localize';
 
 export const formatPortfolioPosition = (portfolio_pos) => {
     const purchase = parseFloat(portfolio_pos.buy_price);

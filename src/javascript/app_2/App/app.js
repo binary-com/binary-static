@@ -1,11 +1,11 @@
 import { configure }        from 'mobx';
 import React                from 'react';
 import { render }           from 'react-dom';
+import Client               from '_common/base/client_base';
+import NetworkMonitor       from 'Services/network_monitor';
+import RootStore            from 'Stores';
+import { setStorageEvents } from 'Utils/Events/storage';
 import App                  from './app.jsx';
-import NetworkMonitor       from '../Services/network_monitor';
-import RootStore            from '../Stores';
-import { setStorageEvents } from '../Utils/Events/storage';
-import Client               from '../../_common/base/client_base';
 
 configure({ enforceActions: true });
 

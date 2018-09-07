@@ -1,6 +1,6 @@
 import { action }              from 'mobx';
+import NetworkMonitorBase      from '_common/base/network_monitor_base'; // eslint-disable-line import/order
 import { BinarySocketGeneral } from './index';
-import NetworkMonitorBase      from '../../_common/base/network_monitor_base'; // eslint-disable-line import/order
 
 let common_store;
 

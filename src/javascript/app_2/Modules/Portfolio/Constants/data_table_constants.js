@@ -1,9 +1,9 @@
 import React            from 'react';
+import { localize }     from '_common/localize';
+import Money            from 'App/Components/Elements/money.jsx';
+import RemainingTime    from 'App/Containers/remaining_time.jsx';
 import ContractTypeCell from '../Components/contract_type_cell.jsx';
 import IndicativeCell   from '../Components/indicative_cell.jsx';
-import Money            from '../../../App/Components/Elements/money.jsx';
-import RemainingTime    from '../../../App/Containers/remaining_time.jsx';
-import { localize }     from '../../../../_common/localize';
 
 /* eslint-disable react/display-name, react/prop-types */
 export const getTableColumnsTemplate = (currency) => [

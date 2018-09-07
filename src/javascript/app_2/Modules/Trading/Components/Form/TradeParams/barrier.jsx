@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import Fieldset     from '../../../../../App/Components/Form/fieldset.jsx';
-import InputField   from '../../../../../App/Components/Form/input_field.jsx';
-import { localize } from '../../../../../../_common/localize';
+import { localize } from '_common/localize';
+import Fieldset     from 'App/Components/Form/fieldset.jsx';
+import InputField   from 'App/Components/Form/input_field.jsx';
 
 const Barrier = ({
     barrier_1,

@@ -1,7 +1,7 @@
 import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { isEmptyObject } from '../../../../../_common/utility';
+import { isEmptyObject } from '_common/utility';
 
 const DetailsGroup = ({
     items,

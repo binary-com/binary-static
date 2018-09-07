@@ -1,7 +1,7 @@
 import classNames             from 'classnames';
 import PropTypes              from 'prop-types';
 import React                  from 'react';
-import { IconQuickPortfolio } from '../../../../Assets/Footer';
+import { IconQuickPortfolio } from 'Assets/Footer';
 
 const TogglePortfolio = ({
     is_portfolio_drawer_on,

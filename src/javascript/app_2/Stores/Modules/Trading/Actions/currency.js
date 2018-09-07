@@ -1,7 +1,7 @@
+import { WS }            from 'Services';
 import {
     buildCurrenciesList,
     getDefaultCurrency } from '../Helpers/currency';
-import { WS }            from '../../../../Services';
 
 export const getCurrenciesAsync = async(currency) => {
     const response = await WS.payoutCurrencies();

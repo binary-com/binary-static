@@ -1,6 +1,6 @@
 import classNames       from 'classnames';
 import React            from 'react';
-import { IconMaximize } from '../../../../Assets/Footer';
+import { IconMaximize } from 'Assets/Footer';
 
 class ToggleFullScreen extends React.Component {
     constructor(props) {

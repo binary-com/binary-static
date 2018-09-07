@@ -1,4 +1,4 @@
-import { getAll as getAllLanguages } from '../../../_common/language';
+import { getAll as getAllLanguages } from '_common/language';
 
 /*
  * Retrieves basename from current url

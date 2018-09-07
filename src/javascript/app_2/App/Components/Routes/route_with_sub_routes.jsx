@@ -2,12 +2,12 @@ import React               from 'react';
 import {
     Redirect,
     Route }                from 'react-router-dom';
+import Client              from '_common/base/client_base';
+import { redirectToLogin } from '_common/base/login';
+import { localize }        from '_common/localize';
+import routes              from 'Constants/routes';
 import LoginPrompt         from '../Elements/login_prompt.jsx';
 import { default_title }   from '../../Constants/app_config';
-import routes              from '../../../Constants/routes';
-import Client              from '../../../../_common/base/client_base';
-import { redirectToLogin } from '../../../../_common/base/login';
-import { localize }        from '../../../../_common/localize';
 
 const RouteWithSubRoutes = route => {
     const renderFactory = props => {
