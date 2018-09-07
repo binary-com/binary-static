@@ -146,6 +146,8 @@ export default class TradeStore extends BaseStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
+        console.log(name, value);
+        window.dataLayer.push({ event: `contractParamChange-${name}`, contract: { [name]: value } });
         this.processNewValuesAsync({ [name]: value }, true);
     }
 
@@ -158,6 +160,8 @@ export default class TradeStore extends BaseStore {
     onPurchase(proposal_id, price) {
         if (proposal_id) {
             processPurchase(proposal_id, price).then(action((response) => {
+                console.log(response);
+                window.dataLayer.push({ event: 'contractPurchase' });
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
             }));
@@ -202,7 +206,8 @@ export default class TradeStore extends BaseStore {
         return new_state;
     }
 
-    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user) {
+    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
+        console.log(obj_new_values, is_changed_by_user);
         const new_state = this.updateStore(cloneObject(obj_new_values));
 
         if (is_changed_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {
