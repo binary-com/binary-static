@@ -157,13 +157,14 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    onPurchase(proposal_id, price) {
+    onPurchase(proposal_id, price, type) {
+        console.log(type);
         if (proposal_id) {
             processPurchase(proposal_id, price).then(action((response) => {
                 console.log(response);
                 // TODO: make sure params are initialized as dataLayer variables
                 // or send data with this event
-                window.dataLayer.push({ event: 'contractPurchase' });
+                window.dataLayer.push({ event: 'contractPurchase', contract: { type } });
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
             }));
