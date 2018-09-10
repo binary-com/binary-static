@@ -164,6 +164,14 @@ const MetaTrader = (() => {
                     return;
                 }
 
+                if (action === 'verify_password_reset_token') {
+                    MetaTraderUI.setToken($('#txt_verification_code').val());
+                    if (typeof actions_info[action].onSuccess === 'function') {
+                        actions_info[action].onSuccess({}, MetaTraderUI.$form());
+                    }
+                    return;
+                }
+
                 const req = makeRequestObject(acc_type, action);
                 BinarySocket.send(req).then((response) => {
                     if (response.error) {
