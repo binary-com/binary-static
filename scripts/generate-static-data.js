@@ -512,6 +512,7 @@ const texts = [
     'You should enter [_1] characters.',
     'Indicates required field',
     'Verification code is wrong. Please use the link sent to your email.',
+    'Invalid verification code.',
     'The password you entered is one of the world\'s most commonly used passwords. You should not be using this password.',
     'Hint: it would take approximately [_1][_2] to crack this password.',
     'thousand',

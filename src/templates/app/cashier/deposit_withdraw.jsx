@@ -1,5 +1,6 @@
 import React from 'react';
 import Loading from '../../_common/components/loading.jsx';
+import FormVerificationCode from '../_includes/form_verification_code.jsx';
 
 const gambling_link = '<a href=\'%\' target=\'_blank\' rel=\'noopener noreferrer\'>%</a>'.replace(/%/g, 'http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx');
 
@@ -40,6 +41,8 @@ const DepositWithdraw = () => (
             </div>
             <iframe id='cashier_iframe' src='' frameBorder='0' width='100%' scrolling='auto' />
         </div>
+
+        <FormVerificationCode />
 
         <form id='frm_ukgc' className='gr-row gr-parent invisible'>
             <div className='gr-2 gr-6-m gr-centered-m'>
