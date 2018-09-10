@@ -132,7 +132,7 @@ const PaymentAgentWithdraw = (() => {
             default: // error
                 if (response.echo_req.dry_run === 1) {
                     setActiveView(view_ids.form);
-                    $('#formMessage').setVisibility(1).html(response.error.message);
+                    $('#withdrawFormMessage').setVisibility(1).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
                     showPageError(localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="var url = location.href.split(\'#\')[0]; window.history.replaceState({ url }, document.title, url); window.location.reload();">', '</a>']));
                 } else {
