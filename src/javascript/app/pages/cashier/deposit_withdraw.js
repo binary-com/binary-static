@@ -48,26 +48,33 @@ const DepositWithdraw = (() => {
         }
     };
 
+    const sendWithdrawalEmail = (onResponse) => {
+        if (isEmptyObject(response_withdrawal)) {
+            BinarySocket.send({
+                verify_email: Client.get('email'),
+                type        : 'payment_withdraw',
+            }).then((response) => {
+                response_withdrawal = response;
+                if (typeof onResponse === 'function') {
+                    onResponse();
+                }
+            });
+        } else if (typeof onResponse === 'function') {
+            onResponse();
+        }
+    };
+
     const checkToken = () => {
         token = Url.getHashValue('token');
         if (+getAppId() !== 1) { // TODO: update app_id to handle desktop
+            sendWithdrawalEmail();
             $loading.remove();
             handleVerifyCode(() => {
                 token = $('#txt_verification_code').val();
                 getCashierURL();
             });
         } else if (!token) {
-            if (isEmptyObject(response_withdrawal)) {
-                BinarySocket.send({
-                    verify_email: Client.get('email'),
-                    type        : 'payment_withdraw',
-                }).then((response) => {
-                    response_withdrawal = response;
-                    handleWithdrawalResponse();
-                });
-            } else {
-                handleWithdrawalResponse();
-            }
+            sendWithdrawalEmail(handleWithdrawalResponse);
         } else if (!validEmailToken(token)) {
             showError('token_error');
         } else {

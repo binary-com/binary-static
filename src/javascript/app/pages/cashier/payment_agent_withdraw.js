@@ -45,13 +45,13 @@ const PaymentAgentWithdraw = (() => {
     const checkToken = ($ddl_agents, pa_list) => {
         token = token || getHashValue('token');
         if (!token) {
+            BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
             if (!+getAppId() !== 1) { // TODO: update app_id to handle desktop
                 handleVerifyCode((verification_code) => {
                     token = verification_code;
                     checkToken($ddl_agents, pa_list);
                 });
             } else {
-                BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
                 setActiveView(view_ids.notice);
             }
         } else if (!validEmailToken(token)) {
