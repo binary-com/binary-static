@@ -415,6 +415,19 @@ const Metatrader = () => (
                                             />
                                         </div>
                                     </form>
+                                    <form className='invisible' id='frm_verify_password_reset_token'>
+                                        <div className='gr-padding-10'>
+                                            <p className='no-margin'>{it.L('Please check your email for the verification code to complete the process.')}</p>
+                                            <FormRow is_two_rows type='text' label={it.L('Verification code')} id='txt_verification_code' attributes={{ autoComplete: 'off' }} />
+                                            <SubmitButton
+                                                no_wrapper
+                                                type='submit'
+                                                id='btn_submit_verify_password_reset_token'
+                                                text={it.L('Submit')}
+                                                attributes={{ action: 'verify_password_reset_token' }}
+                                            />
+                                        </div>
+                                    </form>
                                     <form className='invisible' id='frm_password_reset'>
                                         <FormRow is_two_rows type='select' id='ddl_reset_password_type' label={it.L('Password type')}>
                                             <option value='main'>{it.L('Main')}</option>

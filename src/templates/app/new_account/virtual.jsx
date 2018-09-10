@@ -1,10 +1,14 @@
 import React from 'react';
 import { FormRow, Fieldset } from '../../_common/components/forms.jsx';
+import FormVerificationCode from '../_includes/form_verification_code.jsx';
 
 const Virtual = () => (
     <div className='gr-12 static_full'>
         <h1>{it.L('Create New Virtual-money Account')}</h1>
-        <form id='virtual-form' className='gr-padding-10'>
+
+        <FormVerificationCode />
+
+        <form id='virtual-form' className='gr-padding-10 invisible'>
             <Fieldset legend={it.L('Details')}>
                 <FormRow
                     type='password'

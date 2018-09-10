@@ -561,6 +561,7 @@ const MetaTraderUI = (() => {
 
         $form   : () => $form,
         getToken: () => token,
+        setToken: (verification_code) => { token = verification_code; },
     };
 })();
 
