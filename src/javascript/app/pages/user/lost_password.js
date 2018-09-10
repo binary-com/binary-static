@@ -16,7 +16,7 @@ const LostPassword = (() => {
                 $(form_id).setVisibility(0);
                 handleVerifyCode(() => {
                     BinaryPjax.load(`${urlFor('user/reset_passwordws')}#token=${$('#txt_verification_code').val()}`);
-                });
+                }, false);
             } else {
                 $(form_id).html($('<div/>', { class: 'notice-msg', text: localize('Please check your email for the password reset link.') }));
             }
