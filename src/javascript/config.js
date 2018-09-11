@@ -28,6 +28,8 @@ const getAppId = () => {
     return app_id;
 };
 
+const isBinaryApp = () => +getAppId() === 14473; // Binary desktop app id
+
 const getSocketURL = () => {
     let server_url = window.localStorage.getItem('config.server_url');
     if (!server_url) {
@@ -73,5 +75,6 @@ const getSocketURL = () => {
 
 module.exports = {
     getAppId,
+    isBinaryApp,
     getSocketURL,
 };
