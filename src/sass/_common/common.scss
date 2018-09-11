@@ -306,11 +306,12 @@ _:-ms-fullscreen, :root #content-holder {
 }
 
 input[type=checkbox] {
-    margin-top: -5px;
-    margin-right: 5px;
+    margin: 5px 5px 5px 0;
+    padding: 7px;
+    cursor: pointer;
 
-    &#email_consent {
-        margin-top: 5px;
+    &#email_consent, &#chk_accept {
+        margin-left: 5px;
     }
 }
 
