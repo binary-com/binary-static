@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-09-10 09:05\n"
+"PO-Revision-Date: 2018-09-11 07:59\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "%1 %2 ชำระเงิน เมื่อ %3 ไม่แตะ Barrier กระทั่งสิ้นสุดที่ %4"
 
 msgid "%1 %2 payout if %3 ends on or between low and high values of Barrier at close on %4."
-msgstr "%1 %2 ชำระเงิน เมื่อ %3 สิ้นสุดหรืออยู่ระหว่างค่าต่ำสุดและค่าสูงสุดของ Barrier ณ เวลาปิดที่ %4"
+msgstr "%1 %2 ชำระเงิน เมื่อ %3 สิ้นสุด หรือ อยู่ระหว่างค่าต่ำสุดและค่าสูงสุดของ Barrier ณ เวลาปิดที่ %4"
 
 msgid "%1 %2 payout if %3 ends outside low and high values of Barrier at close on %4."
 msgstr "%1 %2 ชำระเงิน เมื่อ %3 สิ้นสุดนอกขอบเขต Barrier ต่ำสุดและสูงสุดและสิ้นสุดที่ %4"
@@ -4990,7 +4990,7 @@ msgid "Invalid email address."
 msgstr "อีเมล์ไม่ถูกต้อง"
 
 msgid "Invalid verification code."
-msgstr ""
+msgstr "รหัสยืนยันไม่ถูกต้อง"
 
 msgid "Investigate and reproduce client-reported issues"
 msgstr "ตรวจสอบวินิจฉัยและจำลองปัญหาที่ได้รับแจ้งจากลูกค้า"
@@ -6847,7 +6847,7 @@ msgid "Please check your email for the password reset link."
 msgstr "โปรดตรวจสอบอีเมล์ของท่านสำหรับลิงค์การตั้งค่ารหัสผ่านใหม่"
 
 msgid "Please check your email for the verification code to complete the process."
-msgstr ""
+msgstr "กรุณาตรวจสอบอีเมล์ของท่านสำหรับรหัสยืนยันเพื่อให้ขั้นตอนดำเนินการเสร็จสมบูรณ์"
 
 msgid "Please check your email for the verification link to complete the process."
 msgstr "โปรดตรวจสอบอีเมล์ของท่านสำหรับลิงค์การยืนยันเพื่อการดำเนินการให้สมบูรณ์"
@@ -7594,7 +7594,7 @@ msgid "Responsible for the risk management and derivatives pricing of the compan
 msgstr "รับผิดชอบในการบริหารความเสี่ยงและราคาอนุพันธ์ของบริษัทฯ รวมถึงการดำเนินงานและการดูแลปรับปรุงระบบ"
 
 msgid "Rest assured that your information will only be used for CRS/FATCA reporting purposes and will be kept safe."
-msgstr "โปรดมั่นใจว่า ข้อมูลของท่านจะถูกใช้เพื่อวัตถุประสงค์ในการรายงาน CRS/FATCA เท่านั้น และจะถูกเก็บเอาไว้อย่างปลอดภัย"
+msgstr "โปรดเชื่อมั่นว่า ข้อมูลของท่านจะถูกใช้เพื่อวัตถุประสงค์ในการรายงาน CRS/FATCA เท่านั้น และจะถูกเก็บเอาไว้อย่างปลอดภัย"
 
 msgid "Restrictions"
 msgstr "ข้อจำกัด"
@@ -10141,10 +10141,10 @@ msgid "Variable spreads"
 msgstr "สเปรดตัวแปร"
 
 msgid "Verification"
-msgstr ""
+msgstr "การตรวจสอบ"
 
 msgid "Verification code"
-msgstr ""
+msgstr "รหัสตรวจสอบ"
 
 msgid "Verification code is wrong. Please use the link sent to your email."
 msgstr "รหัสยืนยันไม่ถูกต้อง โปรดใช้ลิงค์ที่ส่งไปยังอีเมล์ของท่าน"
