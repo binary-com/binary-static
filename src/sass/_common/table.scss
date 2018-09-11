@@ -47,6 +47,7 @@ table {
 /* Flex table styling */
 .table-container {
     $md: 600px;
+    overflow-x: auto;
 
     th {
         @include BIDIR_VALUE(text-align, left, right);
