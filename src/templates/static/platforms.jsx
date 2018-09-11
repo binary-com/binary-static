@@ -17,7 +17,7 @@ const Platforms = ({
 }) => (
     <div className={`gr-row gr-padding-30 ${className || ''}`} data-show={data_show}>
         <div className='gr-4 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m center-text no-center-text-p-m'>
-            <img className='responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
+            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-8 gr-12-m gr-12-p'>
             <h3>{header}</h3>
@@ -49,7 +49,7 @@ const PlatformsSmall = ({
 }) => (
     <div className={`gr-6 gr-12-m gr-12-p center-text-p ${className || ''}`} data-show={data_show}>
         <div className='gr-12 gr-centered-m gr-centered-p'>
-            <img className='responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
+            <img className='platform responsive' src={it.url_for(`images/pages/${image_path}/${image}.png`)} />
         </div>
         <div className='gr-padding-30'>
             <h3>{header}</h3>
@@ -73,7 +73,7 @@ const Platform = () => (
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
         <div className='fill-bg-color gr-padding-30 invisible id-show'>
-            <div className='container gr-padding-30'>
+            <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
                     <span>{it.L('Introducing the new [_1] desktop app', it.website_name)}</span>
                     <span><img id='new_badge' src={it.url_for('images/pages/platforms/new_badge.svg')} /></span>
@@ -100,7 +100,7 @@ const Platform = () => (
                         </ul>
                     </div>
                     <div className='gr-7 gr-12-p gr-12-m center-text align-self-center'>
-                        <img src={it.url_for('images/pages/platforms/devices.svg')} />
+                        <img className='responsive' src={it.url_for('images/pages/platforms/devices.svg')} />
                     </div>
 
                 </div>
@@ -108,9 +108,9 @@ const Platform = () => (
                     <p>{it.L('Download our desktop app now:')}</p>
                     <div>
                         {/* TODO: update links when ready */}
-                        <span className='gr-gutter'><a href='https://github.com/morteza-binary/binary-desktop-installers/releases/download/v1.0.0/Binary.com-1.0.0-mac.zip' download><img src={it.url_for('images/pages/platforms/mac.svg')} /></a></span>
-                        <span className='gr-gutter'><a href='https://github.com/morteza-binary/binary-desktop-installers/releases/download/v1.0.0/Binary.com-Setup-1.0.0.exe' download><img src={it.url_for('images/pages/platforms/windows.svg')} /></a></span>
-                        <span className='gr-gutter'><a href='' download><img src={it.url_for('images/pages/platforms/linux.svg')} /></a></span>
+                        <span className='gr-gutter'><a href='' download><img className='download-app' src={it.url_for('images/pages/platforms/mac.svg')} /></a></span>
+                        <span className='gr-gutter'><a href='' download><img className='download-app' src={it.url_for('images/pages/platforms/windows.svg')} /></a></span>
+                        <span className='gr-gutter'><a href='' download><img className='download-app' src={it.url_for('images/pages/platforms/linux.svg')} /></a></span>
                     </div>
                 </div>
             </div>

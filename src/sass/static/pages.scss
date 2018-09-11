@@ -483,11 +483,17 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .platforms-content {
+    h2 {
+        line-height: 36px;
+    }
     #new_badge {
         position: relative;
         top: -15px;
     }
-    img.responsive {
+    img.download-app {
+        padding-bottom: 30px;
+    }
+    img.platform {
         max-height: 150px;
         width: auto;
 
