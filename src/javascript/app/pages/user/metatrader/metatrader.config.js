@@ -8,7 +8,7 @@ const GTM          = require('../../../../_common/base/gtm');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
 const urlFor       = require('../../../../_common/url').urlFor;
-const getAppId     = require('../../../../config').getAppId;
+const isBinaryApp  = require('../../../../config').isBinaryApp;
 
 const MetaTraderConfig = (() => {
     const mt_companies = {
@@ -191,7 +191,7 @@ const MetaTraderConfig = (() => {
             success_msg         : () => localize('Please check your email for further instructions.'),
             success_msg_selector: '#frm_verify_password_reset',
             onSuccess           : (response, $form) => {
-                if (+getAppId() !== 1) { // TODO: update app_id to handle desktop
+                if (isBinaryApp()) {
                     $form.find('#frm_verify_password_reset').setVisibility(0);
                     const action      = 'verify_password_reset_token';
                     const reset_token = `#frm_${action}`;

@@ -3,7 +3,7 @@ const FormManager      = require('../../common/form_manager');
 const handleVerifyCode = require('../../common/verification_code').handleVerifyCode;
 const localize         = require('../../../_common/localize').localize;
 const urlFor           = require('../../../_common/url').urlFor;
-const getAppId         = require('../../../config').getAppId;
+const isBinaryApp      = require('../../../config').isBinaryApp;
 
 const LostPassword = (() => {
     const form_id = '#frm_lost_password';
@@ -12,7 +12,7 @@ const LostPassword = (() => {
         if (response.verify_email) {
             $('#password_reset_description').setVisibility(0);
             $('#check_spam').setVisibility(1);
-            if (+getAppId() !== 1) { // TODO: update app_id to handle desktop
+            if (isBinaryApp()) {
                 $(form_id).setVisibility(0);
                 handleVerifyCode(() => {
                     BinaryPjax.load(`${urlFor('user/reset_passwordws')}#token=${$('#txt_verification_code').val()}`);
