@@ -94,7 +94,7 @@ function wsConnect() {
 }
 
 function getAppId() {
-    return localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
+    return localStorage.getItem('config.app_id') || (/desktop-app/i.test(window.location.href) ? '14473' : (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1'));
 }
 
 function wsSend(ws, request) {

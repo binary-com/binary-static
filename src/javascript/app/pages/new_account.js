@@ -6,7 +6,7 @@ const getElementById = require('../../_common/common_functions').getElementById;
 const localize       = require('../../_common/localize').localize;
 const State          = require('../../_common/storage').State;
 const urlFor         = require('../../_common/url').urlFor;
-const getAppId       = require('../../config').getAppId;
+const isBinaryApp    = require('../../config').isBinaryApp;
 
 const NewAccount = (() => {
     let clients_country,
@@ -56,7 +56,7 @@ const NewAccount = (() => {
             showError('error', response.error.message);
         } else {
             $(form_id).setVisibility(0);
-            if (+getAppId() !== 1) { // TODO: update app_id to handle desktop
+            if (isBinaryApp()) {
                 BinaryPjax.load(urlFor('new_account/virtualws'));
             } else {
                 $verify_email.setVisibility(1);
