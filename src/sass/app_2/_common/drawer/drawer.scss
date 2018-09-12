@@ -18,7 +18,7 @@ hr {
         left: 0;
         height: 100vh;
         z-index: 665;
-        transition: all 0.25s;
+        transition: all 0.25s ease;
         background: rgba(42, 48, 82, 0.6);
         overflow: hidden;
 
@@ -33,7 +33,7 @@ hr {
             box-sizing: border-box;
             width: 260px;
             height: 100%;
-            transition: all 0.25s;
+            transition: all 0.25s ease;
             background: $COLOR_WHITE;
 
             .drawer-items-container {
@@ -286,15 +286,35 @@ hr {
                     }
                 }
             }
-            &.visible {
-                box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
-
-                &.right, &.left {
-                    transform: none;
-                }
-            }
             @media (max-width: 768px) {
                 width: 100%;
+            }
+        }
+    }
+    &-enter, &-exit {
+        .drawer-bg {
+            box-shadow: none;
+
+            .drawer {
+                transition: transform 0.25s ease;
+
+                &.right {
+                    transform: translateX(100%);
+                }
+                &.left {
+                    transform: translateX(-100%);
+                }
+            }
+        }
+    }
+    &-enter-done {
+        .drawer-bg {
+            box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+
+            .drawer {
+                &.left, &.right {
+                    transform: translateX(0);
+                }
             }
         }
     }
