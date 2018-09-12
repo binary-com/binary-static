@@ -20,6 +20,7 @@ import {
 import { pickDefaultSymbol }             from './Helpers/symbol';
 import BaseStore                         from '../../base_store';
 import { WS }                            from '../../../Services';
+import GTM                               from '../../../Utils/gtm';
 import URLHelper                         from '../../../Utils/URL/url_helper';
 import Client                            from '../../../../_common/base/client_base';
 import { cloneObject, isEmptyObject }    from '../../../../_common/utility';
@@ -146,8 +147,6 @@ export default class TradeStore extends BaseStore {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
-        console.log(name, value);
-        window.dataLayer.push({ event: `contractParamChange-${name}`, contract: { [name]: value } });
         this.processNewValuesAsync({ [name]: value }, true);
     }
 
@@ -158,13 +157,13 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onPurchase(proposal_id, price, type) {
-        console.log(type);
         if (proposal_id) {
             processPurchase(proposal_id, price).then(action((response) => {
-                console.log(response);
-                // TODO: make sure params are initialized as dataLayer variables
-                // or send data with this event
-                window.dataLayer.push({ event: 'contractPurchase', contract: { type } });
+                if (this.proposal_info[type].id !== proposal_id) {
+                    throw new Error('Proposal ID does not match.');
+                }
+                // TODO: if (!Client.get('is_virtual')) {
+                GTM.pushPurchaseData({ ...this.proposal_requests[type], ...this.proposal_info[type] });
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
             }));
@@ -210,7 +209,6 @@ export default class TradeStore extends BaseStore {
     }
 
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
-        console.log(obj_new_values, is_changed_by_user);
         const new_state = this.updateStore(cloneObject(obj_new_values));
 
         if (is_changed_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {

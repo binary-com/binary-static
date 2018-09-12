@@ -5,7 +5,7 @@ import { withRouter }                 from 'react-router';
 import ErrorComponent                 from '../../Components/Elements/Errors';
 import BinaryRoutes                   from '../../Components/Routes';
 import { connect }                    from '../../../Stores/connect';
-import GTM                            from '../../../../_common/base/gtm';
+import GTM                            from '../../../Utils/gtm';
 
 const Routes = (props) => {
     if (props.has_error) {
