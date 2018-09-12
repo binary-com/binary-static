@@ -12,13 +12,13 @@ const State            = require('../../../../_common/storage').State;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
-const getAppId         = require('../../../../config').getAppId;
+const isBinaryApp      = require('../../../../config').isBinaryApp;
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
 
     const onLoad = () => {
-        if (+getAppId() !== 1) { // TODO: update app_id to handle desktop
+        if (isBinaryApp()) {
             $(form).setVisibility(0);
             handleVerifyCode(init);
         } else {
