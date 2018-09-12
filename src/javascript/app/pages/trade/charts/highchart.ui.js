@@ -57,7 +57,7 @@ const HighchartUI = (() => {
             },
             credits: { enabled: false },
             tooltip: {
-                xDateFormat  : (params.is_jp_client ? '%Y/%m/%d, %H:%M:%S' : '%A, %b %e, %H:%M:%S GMT'),
+                xDateFormat  : '%A, %b %e, %H:%M:%S GMT',
                 valueDecimals: display_decimals,
             },
             subtitle: {
@@ -122,15 +122,9 @@ const HighchartUI = (() => {
         }
     };
 
-    const getHighchartOptions = is_jp_client => (
-        {
-            // use comma as separator instead of space
-            lang  : { thousandsSep: ',' },
-            global: {
-                timezoneOffset: is_jp_client ? -9 * 60 : 0, // Converting chart time to JST.
-            },
-        }
-    );
+    const getHighchartOptions = () => ({
+        lang: { thousandsSep: ',' }, // use comma as separator instead of space
+    });
 
     const getPlotlineOptions = (params, type) => {
         const is_plotx = type === 'x';

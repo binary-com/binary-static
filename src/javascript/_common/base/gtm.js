@@ -10,7 +10,7 @@ const State          = require('../storage').State;
 const getAppId       = require('../../config').getAppId;
 
 const GTM = (() => {
-    const isGtmApplicable = () => (/^(1|1098)$/.test(getAppId()));
+    const isGtmApplicable = () => (/^(1|1098|14473)$/.test(getAppId()));
 
     const gtmDataLayerInfo = (data) => {
         const data_layer_info = {
@@ -24,7 +24,7 @@ const GTM = (() => {
             data_layer_info.visitorId = ClientBase.get('loginid');
         }
 
-        $.extend(true, data_layer_info, data);
+        Object.assign(data_layer_info, data);
 
         const event = data_layer_info.event;
         delete data_layer_info.event;
@@ -116,13 +116,13 @@ const GTM = (() => {
             bom_buy_price     : buy.buy_price,
             bom_payout        : buy.payout,
         };
-        $.extend(data, {
+        Object.assign(data, {
             bom_amount     : req.amount,
             bom_basis      : req.basis,
             bom_expiry_type: getElementById('expiry_type').value,
         });
         if (data.bom_expiry_type === 'duration') {
-            $.extend(data, {
+            Object.assign(data, {
                 bom_duration     : req.duration,
                 bom_duration_unit: req.duration_unit,
             });

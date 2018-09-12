@@ -68,7 +68,7 @@ function getParamValue(url, key) {
 }
 
 function allLanguages() {
-    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw', 'ach' ];
+    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw', 'ach' ];
 }
 
 function getLanguage() {
@@ -94,7 +94,7 @@ function wsConnect() {
 }
 
 function getAppId() {
-    return localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
+    return localStorage.getItem('config.app_id') || (/desktop-app/i.test(window.location.href) ? '14473' : (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1'));
 }
 
 function wsSend(ws, request) {

@@ -12,15 +12,9 @@ const setURL = (url) => {
     Language.reset();
 };
 
-const setJPClient = () => {
-    setURL(`${Url.websiteUrl()}ja/home-jp.html`);
-    Client.setJPFlag();
-};
-
 module.exports = {
     expect,
     setURL,
-    setJPClient,
     getApiToken: () => 'hhh9bfrbq0G3dRf',
     api        : new LiveApi({ websocket, appId: 1 }),
 };

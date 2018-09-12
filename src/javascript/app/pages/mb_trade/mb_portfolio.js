@@ -1,8 +1,8 @@
-const Client        = require('../base/client');
-const PortfolioInit = require('../pages/user/account/portfolio/portfolio.init');
-const State         = require('../../_common/storage').State;
+const Client        = require('../../base/client');
+const PortfolioInit = require('../../pages/user/account/portfolio/portfolio.init');
+const State         = require('../../../_common/storage').State;
 
-const JapanPortfolio = (() => {
+const MBPortfolio = (() => {
     let $portfolio;
 
     let is_portfolio_active = false;
@@ -45,4 +45,4 @@ const JapanPortfolio = (() => {
     };
 })();
 
-module.exports = JapanPortfolio;
+module.exports = MBPortfolio;

@@ -50,7 +50,7 @@ const Url = (() => {
         // url language might differ from passed language, so we will always replace using the url language
         const url_lang = (language ? urlLang().toLowerCase() : lang);
         const url = window.location.href;
-        const new_url = `${url.substring(0, url.indexOf(`/${url_lang}/`) + url_lang.length + 2)}${(normalizePath(path) || (`home${(lang === 'ja' ? '-jp' : '')}`))}.html${(pars ? `?${pars}` : '')}`;
+        const new_url = `${url.substring(0, url.indexOf(`/${url_lang}/`) + url_lang.length + 2)}${(normalizePath(path) || 'home')}.html${(pars ? `?${pars}` : '')}`;
         // replace old lang with new lang
         return urlForLanguage(lang, new_url);
     };

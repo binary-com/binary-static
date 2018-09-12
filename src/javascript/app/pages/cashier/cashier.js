@@ -16,9 +16,8 @@ const Cashier = (() => {
 
     const displayTopUpButton = () => {
         BinarySocket.wait('balance').then((response) => {
-            const currency  = response.balance.currency;
             const balance   = +response.balance.balance;
-            const can_topup = (currency !== 'JPY' && balance <= 1000) || (currency === 'JPY' && balance <= 100000);
+            const can_topup = balance <= 1000;
             const top_up_id = '#VRT_topup_link';
             const $a        = $(top_up_id);
             if (!$a) {
@@ -35,19 +34,11 @@ const Cashier = (() => {
         });
     };
 
-    // show this message to jp clients who are logged out or on their real account
-    const showUnavailableMessage = () => {
-        getElementById('message_cashier_unavailable').setVisibility(1);
-    };
-
     const onLoad = () => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize').then(() => {
                 if (Client.get('is_virtual')) {
                     displayTopUpButton();
-                } else if (Client.isJPClient()) { // we can't store this in a variable in upper scope because we need to wait for authorize
-                    showUnavailableMessage();
-                    return;
                 }
                 const residence = Client.get('residence');
                 if (residence) {
@@ -63,8 +54,6 @@ const Cashier = (() => {
                     getElementById('message_bitcoin_cash').setVisibility(1);
                 }
             });
-        } else if (Client.isJPClient()) {
-            showUnavailableMessage();
         }
         showContent();
     };

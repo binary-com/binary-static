@@ -3,10 +3,12 @@ const Client       = require('../../../base/client');
 const BinarySocket = require('../../../base/socket');
 const Dialog       = require('../../../common/attach_dom/dialog');
 const Currency     = require('../../../common/currency');
+const Validation   = require('../../../common/form_validation');
 const GTM          = require('../../../../_common/base/gtm');
 const localize     = require('../../../../_common/localize').localize;
 const State        = require('../../../../_common/storage').State;
 const urlFor       = require('../../../../_common/url').urlFor;
+const isBinaryApp  = require('../../../../config').isBinaryApp;
 
 const MetaTraderConfig = (() => {
     const mt_companies = {
@@ -188,6 +190,25 @@ const MetaTraderConfig = (() => {
             title               : localize('Verify Reset Password'),
             success_msg         : () => localize('Please check your email for further instructions.'),
             success_msg_selector: '#frm_verify_password_reset',
+            onSuccess           : (response, $form) => {
+                if (isBinaryApp()) {
+                    $form.find('#frm_verify_password_reset').setVisibility(0);
+                    const action      = 'verify_password_reset_token';
+                    const reset_token = `#frm_${action}`;
+                    $form.find(reset_token).setVisibility(1);
+                    Validation.init(reset_token, validations()[action]);
+                }
+            },
+        },
+        verify_password_reset_token: {
+            title    : localize('Verify Reset Password'),
+            onSuccess: (response, $form) => {
+                $form.find('#frm_verify_password_reset_token').setVisibility(0);
+                const action         = 'password_reset';
+                const password_reset = `#frm_${action}`;
+                $form.find(password_reset).setVisibility(1);
+                Validation.init(password_reset, validations()[action]);
+            },
         },
         revoke_mam: {
             title        : localize('Revoke MAM'),
@@ -326,6 +347,9 @@ const MetaTraderConfig = (() => {
                     type        : 'mt5_password_reset',
                 }),
         },
+        verify_password_reset_token: {
+            txt_verification_code: { id: '#txt_verification_code' },
+        },
         revoke_mam: {
             additional_fields:
                 acc_type => ({
@@ -378,6 +402,9 @@ const MetaTraderConfig = (() => {
             { selector: fields.password_reset.ddl_password_type.id,   validations: ['req'] },
             { selector: fields.password_reset.txt_new_password.id,    validations: ['req', ['password', 'mt']], re_check_field: fields.password_reset.txt_re_new_password.id },
             { selector: fields.password_reset.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_reset.txt_new_password.id }]] },
+        ],
+        verify_password_reset_token: [
+            { selector: fields.verify_password_reset_token.txt_verification_code.id, validations: [['req', { hide_asterisk: true }], 'token'], exclude_request: 1 },
         ],
         deposit: [
             { selector: fields.deposit.txt_amount.id, validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', min: () => getMinMT5TransferValue(Client.get('currency')), max: () => Math.min(State.getResponse('get_limits.remainder') || getMaxMT5TransferValue(Client.get('currency')), getMaxMT5TransferValue(Client.get('currency'))).toFixed(Currency.getDecimalPlaces(Client.get('currency'))), decimals: Currency.getDecimalPlaces(Client.get('currency')) }], ['custom', { func: () => (Client.get('balance') && (+Client.get('balance') >= +$(fields.deposit.txt_amount.id).val())), message: localize('You have insufficient funds in your Binary account, please <a href="[_1]">add funds</a>.', [urlFor('cashier')]) }]] },

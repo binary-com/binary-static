@@ -44,7 +44,7 @@ const Validation = (() => {
         const $form = $(`${form_selector}:visible`);
 
         if (needs_token) {
-            const token = getHashValue('token');
+            const token = getHashValue('token') || $('#txt_verification_code').val();
             if (!validEmailToken(token)) {
                 $form.replaceWith($('<div/>', { class: error_class, text: localize('Verification code is wrong. Please use the link sent to your email.') }));
                 return;
@@ -200,6 +200,7 @@ const Validation = (() => {
         number       : { func: validNumber,       message: '' },
         regular      : { func: validRegular,      message: '' },
         tax_id       : { func: validTaxID,        message: 'Should start with letter or number, and may contain hyphen and underscore.' },
+        token        : { func: validEmailToken,   message: 'Invalid verification code.' },
     };
 
     const pass_length = type => ({ min: (/^mt$/.test(type) ? 8 : 6), max: 25 });

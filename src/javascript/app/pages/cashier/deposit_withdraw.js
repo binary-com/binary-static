@@ -6,6 +6,7 @@ const showPopup         = require('../../common/attach_dom/popup');
 const Currency          = require('../../common/currency');
 const FormManager       = require('../../common/form_manager');
 const validEmailToken   = require('../../common/form_validation').validEmailToken;
+const handleVerifyCode  = require('../../common/verification_code').handleVerifyCode;
 const getElementById    = require('../../../_common/common_functions').getElementById;
 const localize          = require('../../../_common/localize').localize;
 const State             = require('../../../_common/storage').State;
@@ -13,6 +14,7 @@ const toTitleCase       = require('../../../_common/string_util').toTitleCase;
 const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
 const isEmptyObject     = require('../../../_common/utility').isEmptyObject;
+const isBinaryApp       = require('../../../config').isBinaryApp;
 
 const DepositWithdraw = (() => {
     const default_iframe_height = 700;
@@ -46,20 +48,33 @@ const DepositWithdraw = (() => {
         }
     };
 
+    const sendWithdrawalEmail = (onResponse) => {
+        if (isEmptyObject(response_withdrawal)) {
+            BinarySocket.send({
+                verify_email: Client.get('email'),
+                type        : 'payment_withdraw',
+            }).then((response) => {
+                response_withdrawal = response;
+                if (typeof onResponse === 'function') {
+                    onResponse();
+                }
+            });
+        } else if (typeof onResponse === 'function') {
+            onResponse();
+        }
+    };
+
     const checkToken = () => {
         token = Url.getHashValue('token');
-        if (!token) {
-            if (isEmptyObject(response_withdrawal)) {
-                BinarySocket.send({
-                    verify_email: Client.get('email'),
-                    type        : 'payment_withdraw',
-                }).then((response) => {
-                    response_withdrawal = response;
-                    handleWithdrawalResponse();
-                });
-            } else {
-                handleWithdrawalResponse();
-            }
+        if (isBinaryApp()) {
+            sendWithdrawalEmail();
+            $loading.remove();
+            handleVerifyCode(() => {
+                token = $('#txt_verification_code').val();
+                getCashierURL();
+            });
+        } else if (!token) {
+            sendWithdrawalEmail(handleWithdrawalResponse);
         } else if (!validEmailToken(token)) {
             showError('token_error');
         } else {
@@ -123,7 +138,7 @@ const DepositWithdraw = (() => {
     };
 
     const hideAll = (option) => {
-        $('#frm_withdraw, #frm_ukgc, #errors').setVisibility(0);
+        $('#verification_code_wrapper, #frm_withdraw, #frm_ukgc, #errors').setVisibility(0);
         if (option) {
             $(option).setVisibility(0);
         }
@@ -209,12 +224,6 @@ const DepositWithdraw = (() => {
                     break;
                 case 'ASK_FINANCIAL_RISK_APPROVAL':
                     showError('financial_risk_error');
-                    break;
-                case 'ASK_JP_KNOWLEDGE_TEST':
-                    showError('knowledge_test_error');
-                    break;
-                case 'JP_NOT_ACTIVATION':
-                    showError('activation_error');
                     break;
                 case 'ASK_AGE_VERIFICATION':
                     showError('age_error');

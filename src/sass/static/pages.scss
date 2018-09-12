@@ -143,34 +143,11 @@
     }
 }
 
-.why-us-jp-content ol {
-    &.split li {
-        text-indent: -1.1em;
-        list-style-type: none;
-
-        &:before {
-            counter-increment: mycounter;
-            content: counter(mycounter) '.\00A0\00A0';
-        }
-    }
-    &.start {
-        counter-reset: mycounter;
-    }
-}
-
 .faded {
     color: $COLOR_GRAY_SHADE;
     font-size: $FONT_SIZE_N;
     font-weight: 100;
     margin-bottom: 0;
-}
-
-.deposit-jp-content img.responsive {
-    width: 50%;
-}
-
-#affiliate-tnc-jp ol li ul li {
-    list-style-type: none !important;
 }
 
 .browser-support-content {
@@ -579,6 +556,8 @@ body #not_authenticated_financial ul.checked > li {
             padding: 5px 0;
             border-radius: $BORDER_RADIUS;
             width: 100%;
+            pointer-events: auto; // enable pointer events on label for input[type=file]
+            cursor: pointer;
 
             > span {
                 position: relative;

@@ -85,8 +85,8 @@ const BinaryPjax = (() => {
         // }
 
         event.preventDefault();
-        // check if url is not same as current
-        if (location.href !== url) {
+        // check if url is not same as current or if url has `anchor` query
+        if (location.href !== url || Url.paramsHash().anchor) {
             processUrl(url);
         }
     };

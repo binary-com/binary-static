@@ -1,10 +1,14 @@
 import React from 'react';
 import { FormRow, Fieldset } from '../../_common/components/forms.jsx';
+import FormVerificationCode from '../_includes/form_verification_code.jsx';
 
 const Virtual = () => (
     <div className='gr-12 static_full'>
         <h1>{it.L('Create New Virtual-money Account')}</h1>
-        <form id='virtual-form' className='gr-padding-10 ja-hide'>
+
+        <FormVerificationCode />
+
+        <form id='virtual-form' className='gr-padding-10 invisible'>
             <Fieldset legend={it.L('Details')}>
                 <FormRow
                     type='password'
@@ -32,9 +36,6 @@ const Virtual = () => (
                 <p className='errorfield invisible' id='error-account-opening' />
             </div>
         </form>
-        <div className='invisible ja-show'>
-            <p className='notice-msg center-text'>{it.L('Sorry, this feature is not available in your jurisdiction.')}</p>
-        </div>
     </div>
 );
 

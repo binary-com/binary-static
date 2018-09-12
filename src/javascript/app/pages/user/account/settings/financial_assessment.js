@@ -1,4 +1,3 @@
-const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
 const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
@@ -17,10 +16,6 @@ const FinancialAssessment = (() => {
     const form_selector = '#frm_assessment';
 
     const onLoad = () => {
-        if (Client.isJPClient()) {
-            BinaryPjax.loadPreviousUrl();
-        }
-
         $(form_selector).on('submit', (event) => {
             event.preventDefault();
             submitForm();
