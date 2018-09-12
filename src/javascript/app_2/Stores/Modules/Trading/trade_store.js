@@ -163,7 +163,17 @@ export default class TradeStore extends BaseStore {
                     throw new Error('Proposal ID does not match.');
                 }
                 // TODO: if (!Client.get('is_virtual')) {
-                GTM.pushPurchaseData({ ...this.proposal_requests[type], ...this.proposal_info[type] });
+                const contract_data = { ...this.proposal_requests[type], ...this.proposal_info[type] };
+                const settings_data = {
+                    theme           : this.root_store.ui.is_dark_mode_on ? 'dark' : 'light',
+                    portfolio_drawer: this.root_store.ui.is_portfolio_drawer_on ? 'open' : 'closed',
+                    purchase_confirm: this.root_store.ui.is_purchase_confirm_on ? 'enabled' : 'disabled',
+                    chart           : {
+                        toolbar_position: this.root_store.ui.is_chart_layout_default ? 'bottom' : 'left',
+                        chart_asset_info: this.root_store.ui.is_chart_asset_info_visible ? 'visible' : 'hidden',
+                    },
+                };
+                GTM.pushPurchaseData(contract_data, settings_data);
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
             }));
