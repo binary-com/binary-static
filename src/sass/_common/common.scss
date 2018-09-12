@@ -155,6 +155,11 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 label {
     line-height: 25px;
     pointer-events: none; // disable pointer event on label 
+
+    & * {
+        pointer-events: auto; // enable pointer event on label if there's any child
+        cursor: pointer;
+    }
 }
 
 /* used for form label in grid structure */
