@@ -18,7 +18,6 @@ hr {
         left: 0;
         height: 100vh;
         z-index: 665;
-        transition: all 0.25s ease;
         background: rgba(42, 48, 82, 0.6);
         overflow: hidden;
 
@@ -33,7 +32,7 @@ hr {
             box-sizing: border-box;
             width: 260px;
             height: 100%;
-            transition: all 0.25s ease;
+            transition: transform 0.25s ease;
             background: $COLOR_WHITE;
 
             .drawer-items-container {
@@ -296,8 +295,6 @@ hr {
             box-shadow: none;
 
             .drawer {
-                transition: transform 0.25s ease;
-
                 &.right {
                     transform: translateX(100%);
                 }

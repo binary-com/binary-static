@@ -52,7 +52,7 @@ class Drawer extends React.Component {
         return (
             <CSSTransition
                 in={is_this_drawer_on}
-                timeout={200}
+                timeout={150}
                 classNames='drawer-container'
                 unmountOnExit
             >
