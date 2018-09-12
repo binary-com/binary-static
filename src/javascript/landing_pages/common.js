@@ -93,8 +93,12 @@ function wsConnect() {
     return new WebSocket(`wss://${server_url}/websockets/v3?app_id=${getAppId()}&l=${getLanguage()}`);
 }
 
+function isBinaryApp() {
+    return (/desktop-app/i.test(window.location.href) || localStorage.getItem('config.is_desktop_app'));
+}
+
 function getAppId() {
-    return localStorage.getItem('config.app_id') || (/desktop-app/i.test(window.location.href) ? '14473' : (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1'));
+    return localStorage.getItem('config.app_id') || (isBinaryApp() ? '14473' : (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1'));
 }
 
 function wsSend(ws, request) {
