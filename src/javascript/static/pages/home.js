@@ -6,7 +6,7 @@ const urlFor       = require('../../_common/url').urlFor;
 const BinaryPjax   = require('../../app/base/binary_pjax');
 const BinarySocket = require('../../app/base/socket');
 const FormManager  = require('../../app/common/form_manager');
-const getAppId     = require('../../config').getAppId;
+const isBinaryApp  = require('../../config').isBinaryApp;
 
 const Home = (() => {
     let clients_country;
@@ -58,7 +58,7 @@ const Home = (() => {
         const error = response.error;
         if (error) {
             $('#signup_error').setVisibility(1).text(error.message);
-        } else if (+getAppId() !== 1) { // TODO: update app_id to handle desktop
+        } else if (isBinaryApp()) {
             BinaryPjax.load(urlFor('new_account/virtualws'));
         } else {
             $('.signup-box div').replaceWith($('<p/>', { text: localize('Thank you for signing up! Please check your email to complete the registration process.'), class: 'gr-10 gr-centered center-text' }));

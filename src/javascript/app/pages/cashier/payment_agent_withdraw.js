@@ -7,7 +7,7 @@ const validEmailToken      = require('../../common/form_validation').validEmailT
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
 const localize             = require('../../../_common/localize').localize;
 const getHashValue         = require('../../../_common/url').getHashValue;
-const getAppId             = require('../../../config').getAppId;
+const isBinaryApp          = require('../../../config').isBinaryApp;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {
@@ -46,7 +46,7 @@ const PaymentAgentWithdraw = (() => {
         token = token || getHashValue('token');
         if (!token) {
             BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
-            if (+getAppId() !== 1) { // TODO: update app_id to handle desktop
+            if (isBinaryApp()) {
                 handleVerifyCode((verification_code) => {
                     token = verification_code;
                     checkToken($ddl_agents, pa_list);

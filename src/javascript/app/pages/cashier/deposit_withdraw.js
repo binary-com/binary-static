@@ -14,7 +14,7 @@ const toTitleCase       = require('../../../_common/string_util').toTitleCase;
 const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
 const isEmptyObject     = require('../../../_common/utility').isEmptyObject;
-const getAppId          = require('../../../config').getAppId;
+const isBinaryApp       = require('../../../config').isBinaryApp;
 
 const DepositWithdraw = (() => {
     const default_iframe_height = 700;
@@ -66,7 +66,7 @@ const DepositWithdraw = (() => {
 
     const checkToken = () => {
         token = Url.getHashValue('token');
-        if (+getAppId() !== 1) { // TODO: update app_id to handle desktop
+        if (isBinaryApp()) {
             sendWithdrawalEmail();
             $loading.remove();
             handleVerifyCode(() => {
