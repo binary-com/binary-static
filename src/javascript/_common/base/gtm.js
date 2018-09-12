@@ -10,7 +10,8 @@ const State          = require('../storage').State;
 const getAppId       = require('../../config').getAppId;
 
 const GTM = (() => {
-    const isGtmApplicable = () => (/^(1|1098)$/.test(getAppId()));
+    // const isGtmApplicable = () => (/^(1|1098)$/.test(getAppId()));
+    const isGtmApplicable = () => true;
 
     const gtmDataLayerInfo = (data) => {
         const data_layer_info = {
@@ -38,9 +39,7 @@ const GTM = (() => {
     const pushDataLayer = (data) => {
         if (isGtmApplicable() && !Login.isLoginPages()) {
             const info   = gtmDataLayerInfo(data && typeof data === 'object' ? data : null);
-            dataLayer[0] = info.data;
-            dataLayer.push(info.data);
-            dataLayer.push({ event: info.event });
+            dataLayer.push({ event: info.event, ...info.data });
         }
     };
 
