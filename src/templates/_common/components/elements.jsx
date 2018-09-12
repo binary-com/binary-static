@@ -162,9 +162,14 @@ export const Tbody = ({ trs, tbody_id }) => (
                             {td.header}
                         </th>
                         :
-                        <td key={inx_td} className={td.className} id={td.id} {...(td.attributes || {})}>
-                            {td.text}
-                        </td>
+                        <React.Fragment>
+                            {td.custom_td && td.custom_td}
+                            {td.text &&
+                                <td key={inx_td} className={td.className} id={td.id} {...(td.attributes || {})}>
+                                    {td.text}
+                                </td>
+                            }
+                        </React.Fragment>
                 ))}
             </tr>
         ))}

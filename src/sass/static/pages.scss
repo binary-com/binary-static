@@ -179,6 +179,8 @@
 }
 
 #payment_methods {
+    overflow-y: hidden;
+
     h3:not(.no-margin) {
         margin: 35px 0 0;
     }
@@ -186,18 +188,84 @@
         thead {
             border-bottom: 1px solid $COLOR_DARK_GRAY;
         }
+        th {
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            &:nth-child(2) {
+                width: 140px;
+            }
+            &:nth-child(3), &:nth-child(4) {
+                width: 110px;
+            }
+            &:nth-child(5) {
+                min-width: 190px;
+                padding-left: 8px;
+            }
+        }
         td {
             vertical-align: middle;
-        }
-        th, td {
-            &:nth-child(2) { // for currency column
-                min-width: 150px;
+            position: relative;
+            padding: 10px;
+
+            div.td-list, div.td-description {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+
+                &.td-list {
+                    display: grid;
+                    grid-template-columns: 1.2fr 1fr 1fr 2.2fr 1fr;
+                    height: 0;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+
+                    &.active {
+                        height: 100%;
+                        opacity: 1;
+                    }
+                }
+                &.td-description {
+                    height: 100%;
+                    opacity: 0;
+                    transform: scale3d(1, 0, 0);
+                    transform-origin: bottom;
+                    transition: opacity 0.3s;
+
+                    &.active {
+                        transform: scale3d(1, 1, 1);
+                        transition: all 0.2s ease-in-out;
+                        opacity: 1;
+                    }
+                }
             }
-            &:nth-child(3), &:nth-child(4) { // for deposit and withdrawal columns
-                min-width: 100px;
-            }
-            &:nth-child(5) { // for processing time column
-                min-width: 200px;
+            &.toggler {
+                &:before {
+                    position: absolute;
+                    bottom: -3px;
+                    left: calc(50% - 106px);
+                    content: '\002303';
+                    padding: 5px;
+                    color: $COLOR_GRAY;
+                    transform-origin: center 35%;
+                    transform: rotate(180deg);
+                    transition: transform 0.2s ease-in;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 24px;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+                &.open {
+                    &:before {
+                        transform: rotate(0);
+                    }
+                }
             }
         }
     }

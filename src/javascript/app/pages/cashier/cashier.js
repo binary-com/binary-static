@@ -12,6 +12,13 @@ const Cashier = (() => {
     const showContent = () => {
         Client.activateByClientType();
         Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
+        $('.toggler').on('click', (e) => {
+            if ($(e.target)[0].nodeName === 'A') return;
+            e.preventDefault();
+            const $toggler = $(e.target).closest('.toggler');
+            $toggler.children().toggleClass('active');
+            $toggler.toggleClass('open');
+        });
     };
 
     const displayTopUpButton = () => {
