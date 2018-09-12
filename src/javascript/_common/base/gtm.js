@@ -13,33 +13,20 @@ const GTM = (() => {
     // const isGtmApplicable = () => (/^(1|1098)$/.test(getAppId()));
     const isGtmApplicable = () => true;
 
-    const gtmDataLayerInfo = (data) => {
-        const data_layer_info = {
-            language : getLanguage(),
-            pageTitle: pageTitle(),
-            pjax     : State.get('is_loaded_by_pjax'),
-            url      : document.URL,
-            event    : 'page_load',
-        };
-        if (ClientBase.isLoggedIn()) {
-            data_layer_info.visitorId = ClientBase.get('loginid');
-        }
-
-        Object.assign(true, data_layer_info, data);
-
-        const event = data_layer_info.event;
-        delete data_layer_info.event;
-
-        return {
-            event,
-            data: data_layer_info,
-        };
-    };
+    const getCommonVariables = () => ({
+        language : getLanguage(),
+        pageTitle: pageTitle(),
+        pjax     : State.get('is_loaded_by_pjax'),
+        url      : document.URL,
+        ...ClientBase.isLoggedIn() && { visitorId: ClientBase.get('loginid') },
+    });
 
     const pushDataLayer = (data) => {
         if (isGtmApplicable() && !Login.isLoginPages()) {
-            const info   = gtmDataLayerInfo(data && typeof data === 'object' ? data : null);
-            dataLayer.push({ event: info.event, ...info.data });
+            dataLayer.push({
+                ...getCommonVariables(),
+                ...data,
+            });
         }
     };
 

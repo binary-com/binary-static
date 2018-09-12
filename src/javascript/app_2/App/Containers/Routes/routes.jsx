@@ -12,7 +12,7 @@ const Routes = (props) => {
         return <ErrorComponent {...props.error} />;
     }
 
-    GTM.pushDataLayer(); // fire 'page_load' event
+    GTM.pushDataLayer({ event: 'page_load' });
 
     return <BinaryRoutes />;
 };
