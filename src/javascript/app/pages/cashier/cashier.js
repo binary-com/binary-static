@@ -1,8 +1,10 @@
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
+const isEuCountry      = require('../../common/country_base').isEuCountry;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getElementById   = require('../../../_common/common_functions').getElementById;
+const State            = require('../../../_common/storage').State;
 const urlFor           = require('../../../_common/url').urlFor;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
@@ -60,7 +62,20 @@ const Cashier = (() => {
 
     return {
         onLoad,
-        PaymentMethods: { onLoad: () => { showContent(); } },
+        PaymentMethods: {
+            onLoad: () => {
+                showContent();
+                BinarySocket.wait('website_status', 'authorize').then(() => {
+                    const residence = Client.get('residence');
+                    if ((!residence && State.get('is_eu')) || (residence && isEuCountry(residence))) {
+                        $('.eu-hide-parent').parent().setVisibility(0);
+                        $('.eu-hide').setVisibility(0);
+                    }
+                    getElementById('loading').setVisibility(0);
+                    getElementById('payment_methods_wrapper').setVisibility(1);
+                });
+            },
+        },
     };
 })();
 

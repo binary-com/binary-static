@@ -5,7 +5,7 @@ import SeparatorLine from '../_common/components/separator_line.jsx';
 import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
-    <div key={inx} className='gr-2 gr-4-m center-text' data-show={item.dataShow}>
+    <div key={inx} className={`gr-2 gr-4-m center-text ${item.className || ''}`} data-show={item.dataShow}>
         <img className='gr-12 gr-centered' src={it.url_for(`images/pages/home/payment/${item.image}.svg`)} />
     </div>
 ));
@@ -382,19 +382,19 @@ const Home = () => {
                                             { image: 'mastercard' },
                                             { image: 'bank_transfer' },
                                             { image: 'internet_bank_transfer' },
-                                            { image: 'paysec' },
+                                            { image: 'paysec',         className: 'eu-hide', dataShow: '-malta, -maltainvest' },
                                             { image: 'neteller' },
-                                            { image: 'fasapay' },
-                                            { image: 'perfect_money' },
+                                            { image: 'fasapay',        className: 'eu-hide', dataShow: '-malta, -maltainvest' },
+                                            { image: 'perfect_money',  className: 'eu-hide', dataShow: '-malta, -maltainvest' },
                                             { image: 'skrill' },
-                                            { image: 'qiwi' },
+                                            { image: 'qiwi',           className: 'eu-hide', dataShow: '-malta, -maltainvest' },
                                             { image: 'webmoney' },
-                                            { image: 'yandex' },
+                                            { image: 'yandex',         className: 'eu-hide', dataShow: '-malta, -maltainvest' },
                                             { image: 'paysafe' },
-                                            { image: 'ethereum_black', dataShow: '-malta, -maltainvest' },
-                                            { image: 'bitcoin', dataShow: '-malta, -maltainvest' },
-                                            { image: 'bitcoin_cash', dataShow: '-malta, -maltainvest' },
-                                            { image: 'litecoin', dataShow: '-malta, -maltainvest' },
+                                            { image: 'ethereum_black', className: 'eu-hide', dataShow: '-malta, -maltainvest' },
+                                            { image: 'bitcoin',        className: 'eu-hide', dataShow: '-malta, -maltainvest' },
+                                            { image: 'bitcoin_cash',   className: 'eu-hide', dataShow: '-malta, -maltainvest' },
+                                            { image: 'litecoin',       className: 'eu-hide', dataShow: '-malta, -maltainvest' },
                                         ]}
                                     />
                                 </div>
