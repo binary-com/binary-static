@@ -92,7 +92,6 @@ const GTM = (() => {
         const req  = response.echo_req.passthrough;
         const data = {
             event             : 'buy_contract',
-            visitorId         : ClientBase.get('loginid'),
             bom_symbol        : req.symbol,
             bom_market        : getElementById('contract_markets').value,
             bom_currency      : req.currency,
