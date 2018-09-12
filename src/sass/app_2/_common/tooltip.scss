@@ -23,6 +23,7 @@ span.tooltip {
     &[data-tooltip] {
         position: relative;
         cursor: help;
+        display: block;
 
         &:hover:after, &:hover:before {
             opacity: 0.96;
@@ -136,6 +137,11 @@ span.tooltip {
             background: rgba(255, 255, 255, 0.88);
             box-shadow: 0 2px 8px 0 rgba(20, 20, 20, 0.2);
             color: $COLOR_BLUE;
+        }
+        &[data-tooltip-pos=top] {
+            &:after {
+                border-top-color: rgba(255, 255, 255, 0.88);
+            }
         }
         &[data-tooltip-pos=right] {
             &:after {
