@@ -108,9 +108,9 @@ const Platform = () => (
                     <p>{it.L('Download our desktop app now:')}</p>
                     <div>
                         {/* TODO: update links when ready */}
-                        <span className='gr-gutter'><a href='' download><img className='download-app' src={it.url_for('images/pages/platforms/mac.svg')} /></a></span>
-                        <span className='gr-gutter'><a href='' download><img className='download-app' src={it.url_for('images/pages/platforms/windows.svg')} /></a></span>
-                        <span className='gr-gutter'><a href='' download><img className='download-app' src={it.url_for('images/pages/platforms/linux.svg')} /></a></span>
+                        <span className='gr-gutter'><a href='https://github.com/binary-com/binary-desktop-installers/releases/download/v1.0.4/Binary.com-1.0.4.dmg' download><img className='download-app' src={it.url_for('images/pages/platforms/mac.svg')} /></a></span>
+                        <span className='gr-gutter'><a href='https://github.com/binary-com/binary-desktop-installers/releases/download/v1.0.4/Binary.com-Setup-1.0.4.exe' download><img className='download-app' src={it.url_for('images/pages/platforms/windows.svg')} /></a></span>
+                        <span className='gr-gutter'><a href='https://github.com/binary-com/binary-desktop-installers/releases/download/v1.0.4/Binary.com-1.0.4-x86_64.AppImage' download><img className='download-app' src={it.url_for('images/pages/platforms/linux.svg')} /></a></span>
                     </div>
                 </div>
             </div>
