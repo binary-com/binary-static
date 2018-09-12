@@ -162,8 +162,15 @@ export default class TradeStore extends BaseStore {
                 if (this.proposal_info[type].id !== proposal_id) {
                     throw new Error('Proposal ID does not match.');
                 }
+                if (!response.buy) {
+                    throw new Error('No buy info in purchase response.');
+                }
                 // TODO: if (!Client.get('is_virtual')) {
-                const contract_data = { ...this.proposal_requests[type], ...this.proposal_info[type] };
+                const contract_data = {
+                    ...this.proposal_requests[type],
+                    ...this.proposal_info[type],
+                    buy_price: response.buy.buy_price,
+                };
                 const settings_data = {
                     theme           : this.root_store.ui.is_dark_mode_on ? 'dark' : 'light',
                     portfolio_drawer: this.root_store.ui.is_portfolio_drawer_on ? 'open' : 'closed',
