@@ -148,7 +148,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='paysec' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: 'hello' },
+                                        { td: 'PaySec was founded in 2014 to provide customers and merchants in the Asian region with a comprehensive range of payment methods through one payment gateway.' },
                                         { td_list: [
                                             { text: 'USD' },
                                             { text: '25 - 10,000' },
