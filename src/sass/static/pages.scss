@@ -188,6 +188,14 @@
         thead {
             border-bottom: 1px solid $COLOR_DARK_GRAY;
         }
+        tr {
+            position: relative;
+
+            .data-anchor-link {
+                position: absolute;
+                top: unset;
+            }
+        }
         th {
             padding-top: 10px;
             padding-bottom: 10px;

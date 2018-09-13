@@ -155,8 +155,8 @@ export const Select = ({ id, className, options }) => (
 export const Tbody = ({ trs, tbody_id }) => (
     <tbody id={tbody_id}>
         {trs && trs.map((tr, inx_tr) => (
-            <tr key={inx_tr}>
-                {tr.map((td, inx_td) => (
+            <tr key={inx_tr} data-anchor={tr.id || undefined}>
+                {(tr.row ? tr.row : tr).map((td, inx_td) => (
                     td.header ?
                         <th key={inx_td} className={td.className} id={td.id} {...td.balloon ? { 'data-balloon': td.balloon } : {}} {...(td.attributes || {})}>
                             {td.header}
