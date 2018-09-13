@@ -162,25 +162,15 @@ export default class TradeStore extends BaseStore {
                 if (this.proposal_info[type].id !== proposal_id) {
                     throw new Error('Proposal ID does not match.');
                 }
-                if (!response.buy) {
-                    throw new Error('No buy info in purchase response.');
+                if (response.buy) {
+                // TODO: !Client.get('is_virtual')
+                    const contract_data = {
+                        ...this.proposal_requests[type],
+                        ...this.proposal_info[type],
+                        buy_price: response.buy.buy_price,
+                    };
+                    GTM.pushPurchaseData(contract_data, this.root_store.ui);
                 }
-                // TODO: if (!Client.get('is_virtual')) {
-                const contract_data = {
-                    ...this.proposal_requests[type],
-                    ...this.proposal_info[type],
-                    buy_price: response.buy.buy_price,
-                };
-                const settings_data = {
-                    theme           : this.root_store.ui.is_dark_mode_on ? 'dark' : 'light',
-                    portfolio_drawer: this.root_store.ui.is_portfolio_drawer_on ? 'open' : 'closed',
-                    purchase_confirm: this.root_store.ui.is_purchase_confirm_on ? 'enabled' : 'disabled',
-                    chart           : {
-                        toolbar_position: this.root_store.ui.is_chart_layout_default ? 'bottom' : 'left',
-                        chart_asset_info: this.root_store.ui.is_chart_asset_info_visible ? 'visible' : 'hidden',
-                    },
-                };
-                GTM.pushPurchaseData(contract_data, settings_data);
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
             }));
