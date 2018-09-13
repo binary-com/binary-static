@@ -212,9 +212,6 @@
                 div:nth-child(4) {
                     min-width: 190px;
                 }
-                .td {
-                    padding: 0 !important;
-                }
             }
         }
         th {
@@ -250,7 +247,7 @@
                         transition: all 0.2s ease-in-out;
                         height: 100%;
                         opacity: 1;
-                        font-size: 1em;
+                        text-size-adjust: 100%; // prevent text-size from increasing
                     }
                 }
             }
@@ -275,6 +272,9 @@
                         transform: rotate(0);
                     }
                 }
+            }
+            .td {
+                padding: 0 !important;
             }
         }
     }
