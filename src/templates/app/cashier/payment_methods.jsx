@@ -55,7 +55,7 @@ const CustomTableData = ({ data }) => (
     <td colSpan={5} className='toggler'>
         {data.map((item, index) => (
             <div key={index} className={item.td ? 'td-description' : 'td-list active'}>
-                {item.td && <div className='td'>{item.td}</div>}
+                {item.td && <span className='td'>{item.td}</span>}
                 {item.td_list &&
                     item.td_list.map((td, inx_td) => (
                         <div className='td' key={inx_td}>{td.text}</div>
