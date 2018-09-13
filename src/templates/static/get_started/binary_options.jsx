@@ -176,7 +176,6 @@ const BinaryOptions = () => {
                             <ul className='checked'>
                                 <ListStrong header={it.L('Forex')}              text={it.L('Major and minor pairs, plus Smart FX indices')} />
                                 <ListStrong header={it.L('Indices')}            text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
-                                <ListStrong header={it.L('Stocks')}             text={it.L('Blue-chip stock contracts sourced from the over-the-counter market')} />
                                 <ListStrong header={it.L('Commodities')}        text={it.L('Major commodities such as gold, silver, and oil')} />
                                 <ListStrong header={it.L('Volatility Indices')} text={it.L('Our proprietary synthetic indices that simulate market forces')} />
                             </ul>
