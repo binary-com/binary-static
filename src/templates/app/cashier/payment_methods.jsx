@@ -52,11 +52,9 @@ const ReferenceLinks = ({ pdf_file, video_link }) => (
 );
 
 const CustomTableHead = ({ data }) => (
-    <th colSpan={5} className={'th-list'}>
+    <th colSpan={5} className='th-list'>
         {data.map((item, index) => (
-            <div key={index}>
-                {item.text}
-            </div>
+            <span key={index} className='th'>{item.text}</span>
         ))}
     </th>
 );
@@ -68,7 +66,7 @@ const CustomTableData = ({ data }) => (
                 {item.td && <span className='td'>{item.td}</span>}
                 {item.td_list &&
                     item.td_list.map((td, inx_td) => (
-                        <div className='td' key={inx_td}>{td.text}</div>
+                        <p className='td' key={inx_td}>{td.text}</p>
                     ))
                 }
             </div>
@@ -97,7 +95,7 @@ const PaymentMethods = () => {
     const not_applicable           = 'Not applicable';
     const blockchain_confirmations = '[_1] blockchain confirmations';
 
-    const createLink = (href) => `<a href="${href}" target="_blank" rel="noopener noreferrer">${href}</a>`;
+    const createLink = (href) => (`<a href="${href}" target="_blank" rel="noopener noreferrer">${href}</a>`);
 
     return (
         <div id='cashier-content'>
@@ -402,11 +400,15 @@ const PaymentMethods = () => {
                             thead: [
                                 [
                                     { text: it.L('Method') },
-                                    { text: it.L('Currencies') },
-                                    { text: it.L('Min Deposit') },
-                                    { text: it.L('Min Withdrawal') },
-                                    { text: `${it.L('Processing Time')}*` },
-                                    { text: it.L('Reference') },
+                                    { custom_th: <CustomTableHead data={[
+                                        { text: it.L('Currencies') },
+                                        { text: it.L('Min Deposit') },
+                                        { text: it.L('Min Withdrawal') },
+                                        { text: `${it.L('Processing Time')}*` },
+                                        { text: it.L('Reference') },
+                                    ]}
+                                    />,
+                                    },
                                 ],
                             ],
                             tbody: [
