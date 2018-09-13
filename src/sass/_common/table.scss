@@ -47,7 +47,6 @@ table {
 /* Flex table styling */
 .table-container {
     $md: 600px;
-    overflow-x: auto;
 
     th {
         @include BIDIR_VALUE(text-align, left, right);
@@ -72,6 +71,9 @@ table {
                 @extend td;
             }
         }
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+        overflow-x: auto;
     }
     @media (max-width: $md) {
         td {

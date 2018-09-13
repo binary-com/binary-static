@@ -633,6 +633,8 @@ body #not_authenticated_financial ul.checked > li {
             padding: 5px 0;
             border-radius: $BORDER_RADIUS;
             width: 100%;
+            pointer-events: auto; // enable pointer events on label for input[type=file]
+            cursor: pointer;
 
             > span {
                 position: relative;
