@@ -51,6 +51,16 @@ const ReferenceLinks = ({ pdf_file, video_link }) => (
     </React.Fragment>
 );
 
+const CustomTableHead = ({ data }) => (
+    <th colSpan={5} className={'th-list'}>
+        {data.map((item, index) => (
+            <div key={index}>
+                {item.text}
+            </div>
+        ))}
+    </th>
+);
+
 const CustomTableData = ({ data }) => (
     <td colSpan={5} className='toggler'>
         {data.map((item, index) => (
@@ -69,11 +79,15 @@ const CustomTableData = ({ data }) => (
 const PaymentMethods = () => {
     const head = [
         { text: it.L('Method') },
-        { text: it.L('Currencies') },
-        { text: it.L('Min-Max Deposit') },
-        { text: it.L('Min-Max Withdrawal') },
-        { text: `${it.L('Processing Time')}*` },
-        { text: it.L('Reference') },
+        { custom_th: <CustomTableHead data={[
+            { text: it.L('Currencies') },
+            { text: it.L('Min-Max Deposit') },
+            { text: it.L('Min-Max Withdrawal') },
+            { text: `${it.L('Processing Time')}*` },
+            { text: it.L('Reference') },
+        ]}
+        />,
+        },
     ];
 
     const deposit                  = 'Deposit: ';

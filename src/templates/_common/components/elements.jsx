@@ -190,7 +190,10 @@ export const Table = ({
                     { data.thead.map((row, tr_inx) => (
                         <tr key={tr_inx}>
                             {row.map((th, th_inx) => (
-                                <th key={th_inx} className={th.className} >{th.text}</th>
+                                th.custom_th ?
+                                    th.custom_th
+                                    :
+                                    <th key={th_inx} className={th.className}>{th.text}</th>
                             ))}
                         </tr>
                     ))}
