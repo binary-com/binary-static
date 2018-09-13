@@ -1,7 +1,7 @@
 import GTMBase from '../../_common/base/gtm';
 
 const GTM = (() => {
-    const pushPurchaseData = (contract_data, ui_store) => {
+    const pushPurchaseData = (contract_data, root_store) => {
         const data = {
             event   : 'buy_contract',
             contract: {
@@ -20,15 +20,18 @@ const GTM = (() => {
                 symbol       : contract_data.symbol,
             },
             settings: {
-                theme           : ui_store.is_dark_mode_on ? 'dark' : 'light',
-                portfolio_drawer: ui_store.is_portfolio_drawer_on ? 'open' : 'closed',
-                purchase_confirm: ui_store.is_purchase_confirm_on ? 'enabled' : 'disabled',
+                theme           : root_store.ui.is_dark_mode_on ? 'dark' : 'light',
+                portfolio_drawer: root_store.ui.is_portfolio_drawer_on ? 'open' : 'closed',
+                purchase_confirm: root_store.ui.is_purchase_confirm_on ? 'enabled' : 'disabled',
                 chart           : {
-                    toolbar_position: ui_store.is_chart_layout_default ? 'bottom' : 'left',
-                    chart_asset_info: ui_store.is_chart_asset_info_visible ? 'visible' : 'hidden',
+                    toolbar_position: root_store.ui.is_chart_layout_default ? 'bottom' : 'left',
+                    chart_asset_info: root_store.ui.is_chart_asset_info_visible ? 'visible' : 'hidden',
+                    chart_type      : root_store.modules.smart_chart.chart_type,
+                    granularity     : root_store.modules.smart_chart.granularity,
                 },
             },
         };
+        console.log(data);
         GTMBase.pushDataLayer(data);
     };
 

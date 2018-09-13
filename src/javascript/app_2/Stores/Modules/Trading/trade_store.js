@@ -169,7 +169,7 @@ export default class TradeStore extends BaseStore {
                         ...this.proposal_info[type],
                         buy_price: response.buy.buy_price,
                     };
-                    GTM.pushPurchaseData(contract_data, this.root_store.ui);
+                    GTM.pushPurchaseData(contract_data, this.root_store);
                 }
                 WS.forgetAll('proposal');
                 this.purchase_info = response;

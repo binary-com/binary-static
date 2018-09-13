@@ -20,6 +20,19 @@ export default class SmartChartStore extends BaseStore {
     @observable is_title_enabled = true;
     @observable is_contract_mode = false;
 
+    @observable chart_type;
+    @observable granularity;
+
+    @action.bound
+    updateChartType(chart_type) {
+        this.chart_type = chart_type;
+    }
+
+    @action.bound
+    updateGranularity(granularity) {
+        this.granularity = granularity;
+    }
+
     @action.bound
     setContractMode(is_contract_mode) {
         this.is_contract_mode = is_contract_mode;

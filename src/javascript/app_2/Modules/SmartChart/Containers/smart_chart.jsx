@@ -8,36 +8,12 @@ import { symbolChange } from '../Helpers/symbol';
 import { connect }      from '../../../Stores/connect';
 
 class Chart extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            chart_type : this.props.chart_type,
-            granularity: this.props.granularity,
-        };
-
-        this.updateChartType   = this.updateChartType.bind(this);
-        this.updateGranularity = this.updateGranularity.bind(this);
-    }
-
     componentWillUnmount() { this.props.onUnmount(); }
-
-    updateChartType(chart_type) {
-        if (this.state.chart_type !== chart_type) {
-            this.setState({ chart_type });
-        }
-    }
-
-    updateGranularity(granularity) {
-        if (this.state.granularity !== granularity) {
-            this.setState({ granularity });
-        }
-    }
 
     chartControlsWidgets = () => (
         <ControlWidgets
-            updateChartType={this.updateChartType}
-            updateGranularity={this.updateGranularity}
+            updateChartType={this.props.updateChartType}
+            updateGranularity={this.props.updateGranularity}
         />
     );
 
@@ -54,9 +30,9 @@ class Chart extends React.Component {
             <SmartChart
                 barriers={this.props.barriers_array}
                 chartControlsWidgets={this.chartControlsWidgets}
-                chartType={this.state.chart_type}
+                chartType={this.props.chart_type}
                 endEpoch={this.props.end_epoch}
-                granularity={this.state.granularity}
+                granularity={this.props.granularity}
                 id={this.props.chart_id}
                 isMobile={this.props.is_mobile}
                 requestAPI={this.props.wsSendRequest}
@@ -101,14 +77,18 @@ Chart.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
-        barriers_array  : modules.smart_chart.barriers_array,
-        is_title_enabled: modules.smart_chart.is_title_enabled,
-        markers_array   : modules.smart_chart.markers_array,
-        onUnmount       : modules.smart_chart.onUnmount,
-        settings        : modules.smart_chart.settings,
-        wsForget        : modules.smart_chart.wsForget,
-        wsSendRequest   : modules.smart_chart.wsSendRequest,
-        wsSubscribe     : modules.smart_chart.wsSubscribe,
-        is_mobile       : ui.is_mobile,
+        chart_type       : modules.smart_chart.chart_type,
+        granularity      : modules.smart_chart.granularity,
+        barriers_array   : modules.smart_chart.barriers_array,
+        is_title_enabled : modules.smart_chart.is_title_enabled,
+        markers_array    : modules.smart_chart.markers_array,
+        onUnmount        : modules.smart_chart.onUnmount,
+        settings         : modules.smart_chart.settings,
+        wsForget         : modules.smart_chart.wsForget,
+        wsSendRequest    : modules.smart_chart.wsSendRequest,
+        wsSubscribe      : modules.smart_chart.wsSubscribe,
+        updateChartType  : modules.smart_chart.updateChartType,
+        updateGranularity: modules.smart_chart.updateGranularity,
+        is_mobile        : ui.is_mobile,
     })
 )(Chart);
