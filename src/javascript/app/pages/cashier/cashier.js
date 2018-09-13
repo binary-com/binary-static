@@ -16,7 +16,7 @@ const Cashier = (() => {
         const anchor = paramsHash().anchor;
         let $toggler;
         if (anchor) {
-            $toggler = $(`[data-anchor=${anchor}`);
+            $toggler = $(`[data-anchor='${anchor}']`);
             $toggler.find('.td-description').addClass('active'); // toggle open description
             $toggler.find('.td-list').removeClass('active');
             $toggler.find('.toggler').addClass('open');
