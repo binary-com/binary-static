@@ -8,7 +8,10 @@ export default class ModulesStore {
     constructor(root_store) {
         this.contract    = new ContractStore({ root_store });
         this.portfolio   = new PortfolioStore({ root_store });
-        this.smart_chart = new SmartChartStore({ root_store });
+        this.smart_chart = new SmartChartStore({
+            root_store,
+            local_storage_properties: ['chart_type', 'granularity'],
+        });
         this.statement   = new StatementStore();
         this.trade       = new TradeStore({ root_store });
     }
