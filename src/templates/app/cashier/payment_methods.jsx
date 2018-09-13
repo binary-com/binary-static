@@ -57,8 +57,8 @@ const CustomTableData = ({ data }) => (
             <div key={index} className={item.td ? 'td-description' : 'td-list active'}>
                 {item.td && <div className='td'>{item.td}</div>}
                 {item.td_list &&
-                    item.td_list.map((tdi, inx_tdi) => (
-                        <div className='td' key={inx_tdi}>{tdi.text}</div>
+                    item.td_list.map((td, inx_td) => (
+                        <div className='td' key={inx_td}>{td.text}</div>
                     ))
                 }
             </div>
@@ -83,11 +83,14 @@ const PaymentMethods = () => {
     const not_applicable           = 'Not applicable';
     const blockchain_confirmations = '[_1] blockchain confirmations';
 
+    const createLink = (href) => `<a href="${href}" target="_blank" rel="noopener noreferrer">${href}</a>`;
+
     return (
         <div id='cashier-content'>
             <h1>{it.L('Available payment methods')}</h1>
             <div className='gr-12'>
                 <div id='payment_method_suggestions gr-padding-10' className='center-text'>
+
                     <div className='gr-padding-10 invisible upgrademessage'>
                         <a className='button' />
                     </div>
@@ -176,7 +179,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='visa' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more info, please visit [_1].', '<a href="http://visa.com" target="_blank">http://visa.com</a>') },
+                                        { td: it.L('Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more info, please visit [_1].', `${createLink('http://visa.com')}`) },
                                         { td_list: [
                                             { text: 'USD GBP EUR AUD' },
                                             { text: '10 - 10,000' },
@@ -195,7 +198,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='mastercard' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('Mastercard is an international company that processes payments made with Mastercard-branded credit and debit cards. For more info, please visit[_1].', '<a href="https://www.mastercard.us" target="_blank">https://www.mastercard.us</a>') },
+                                        { td: it.L('Mastercard is an international company that processes payments made with Mastercard-branded credit and debit cards. For more info, please visit [_1].', `${createLink('https://www.mastercard.us')}`) },
                                         { td_list: [
                                             { text: 'USD GBP EUR AUD' },
                                             { text: '10 - 10,000' },
@@ -227,7 +230,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='fasapay' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('FasaPay enables electronic money transfers for individuals and payment gateways for merchants. For more info, please visit [_1].', '<a href="https://www.fasapay.com" target="_blank">https://www.fasapay.com</a>') },
+                                        { td: it.L('FasaPay enables electronic money transfers for individuals and payment gateways for merchants. For more info, please visit [_1].', `${createLink('https://www.fasapay.com')}`) },
                                         { td_list: [
                                             { text: 'USD' },
                                             { text: '5 - 10,000' },
@@ -246,7 +249,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='perfect_money' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('Perfect Money allows individuals to make instant payments and money transfers securely on the Internet. For more info, please visit [_1].', '<a href="https://perfectmoney.is" target="_blank">https://perfectmoney.is</a>') },
+                                        { td: it.L('Perfect Money allows individuals to make instant payments and money transfers securely on the Internet. For more info, please visit [_1].', `${createLink('https://perfectmoney.is')}`) },
                                         { td_list: [
                                             { text: 'USD EUR' },
                                             { text: '5 - 10,000' },
@@ -265,7 +268,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='skrill' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('Skrill offers global payment solutions for individuals who wish to deposit funds, shop online, and transfer money to family and friends. For more info, please visit [_1].', '<a href="https://www.skrill.com" target="_blank">https://www.skrill.com</a>') },
+                                        { td: it.L('Skrill offers global payment solutions for individuals who wish to deposit funds, shop online, and transfer money to family and friends. For more info, please visit [_1].', `${createLink('https://www.skrill.com')}`) },
                                         { td_list: [
                                             { text: 'USD GBP EUR AUD' },
                                             { text: '5 - 10,000' },
@@ -284,7 +287,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='neteller' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('NETELLER provides businesses and individuals with a fast, simple, and secure way to transfer money online. For more info, please visit [_1].', '<a href="https://www.neteller.com" target="_blank">https://www.neteller.com</a>') },
+                                        { td: it.L('NETELLER provides businesses and individuals with a fast, simple, and secure way to transfer money online. For more info, please visit [_1].', `${createLink('https://www.neteller.com')}`) },
                                         { td_list: [
                                             { text: 'USD GBP EUR AUD' },
                                             { text: '5 - 10,000' },
@@ -303,7 +306,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='webmoney' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('WebMoney is an online payment settlement system that’s been operating since 1998. For more info, please visit [_1].', '<a href="https://www.wmtransfer.com" target="_blank">https://www.wmtransfer.com</a>') },
+                                        { td: it.L('WebMoney is an online payment settlement system that’s been operating since 1998. For more info, please visit [_1].', `${createLink('https://www.wmtransfer.com')}`) },
                                         { td_list: [
                                             { text: 'USD EUR' },
                                             { text: '5 - 10,000' },
@@ -322,7 +325,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='qiwi' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('Qiwi is a payment service provider that was founded in 2007. It provides individuals with a simple way to transfer money, receive payments, and pay online. For more info, please visit [_1].', '<a href="https://qiwi.com" target="_blank">https://qiwi.com</a>') },
+                                        { td: it.L('Qiwi is a payment service provider that was founded in 2007. It provides individuals with a simple way to transfer money, receive payments, and pay online. For more info, please visit [_1].', `${createLink('https://qiwi.com')}`) },
                                         { td_list: [
                                             { text: 'USD EUR' },
                                             { text: <TableValues value={['5 - 200 (USD)', '5 - 150 (EUR)']} /> },
@@ -341,7 +344,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='yandex' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('Yandex.Money is an electronic payment service provider that offers consumers an easy, safe, and reliable online payment method. For more info, please visit [_1].', '<a href="https://money.yandex.ru" target="_blank">https://money.yandex.ru</a>') },
+                                        { td: it.L('Yandex.Money is an electronic payment service provider that offers consumers an easy, safe, and reliable online payment method. For more info, please visit [_1].', `${createLink('https://money.yandex.ru')}`) },
                                         { td_list: [
                                             { text: 'USD' },
                                             { text: '25 - 10,000' },
@@ -360,7 +363,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='paysafe' /> },
                                     { custom_td: <CustomTableData data={[
-                                        { td: it.L('paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more info, please visit [_1].', '<a href="https://www.paysafecard.com" target="_blank">https://www.paysafecard.com</a>') },
+                                        { td: it.L('paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more info, please visit [_1].', `${createLink('https://www.paysafecard.com')}`) },
                                         { td_list: [
                                             { text: 'USD GBP EUR AUD' },
                                             { text: '5 - 1,000' },
@@ -398,7 +401,7 @@ const PaymentMethods = () => {
                                     row: [
                                         { text: <PaymentLogo logo='bitcoin' /> },
                                         { custom_td: <CustomTableData data={[
-                                            { td: it.L('Bitcoin is the world’s first decentralised cryptocurrency, created in 2009. For more info, please visit [_1].', '<a href="https://bitcoin.org" target="_blank">https://bitcoin.org</a>') },
+                                            { td: it.L('Bitcoin is the world’s first decentralised cryptocurrency, created in 2009. For more info, please visit [_1].', `${createLink('https://bitcoin.org')}`) },
                                             { td_list: [
                                                 { text: 'BTC' },
                                                 { text: '0.002' },
@@ -417,7 +420,7 @@ const PaymentMethods = () => {
                                     row: [
                                         { text: <PaymentLogo logo='bitcoin_cash' /> },
                                         { custom_td: <CustomTableData data={[
-                                            { td: it.L('Bitcoin Cash is a cryptocurrency that emerged from a fork of the original Bitcoin. For more info, please visit [_1].', '<a href="https://www.bitcoincash.org" target="_blank">https://www.bitcoincash.org</a>') },
+                                            { td: it.L('Bitcoin Cash is a cryptocurrency that emerged from a fork of the original Bitcoin. For more info, please visit [_1].', `${createLink('https://www.bitcoincash.org')}`) },
                                             { td_list: [
                                                 { text: 'BCH' },
                                                 { text: '0.01' },
@@ -436,7 +439,7 @@ const PaymentMethods = () => {
                                     row: [
                                         { text: <PaymentLogo logo='ethereum_black' /> },
                                         { custom_td: <CustomTableData data={[
-                                            { td: it.L('Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more info, please visit [_1].', '<a href="https://www.ethereum.org" target="_blank">https://www.ethereum.org</a>') },
+                                            { td: it.L('Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more info, please visit [_1].', `${createLink('https://www.ethereum.org')}`) },
                                             { td_list: [
                                                 { text: 'ETH' },
                                                 { text: '0.01' },
