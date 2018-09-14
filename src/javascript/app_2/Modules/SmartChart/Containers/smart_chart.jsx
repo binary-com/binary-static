@@ -77,18 +77,14 @@ Chart.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
-        chart_type       : modules.smart_chart.chart_type,
-        granularity      : modules.smart_chart.granularity,
-        barriers_array   : modules.smart_chart.barriers_array,
-        is_title_enabled : modules.smart_chart.is_title_enabled,
-        markers_array    : modules.smart_chart.markers_array,
-        onUnmount        : modules.smart_chart.onUnmount,
-        settings         : modules.smart_chart.settings,
-        wsForget         : modules.smart_chart.wsForget,
-        wsSendRequest    : modules.smart_chart.wsSendRequest,
-        wsSubscribe      : modules.smart_chart.wsSubscribe,
-        updateChartType  : modules.smart_chart.updateChartType,
-        updateGranularity: modules.smart_chart.updateGranularity,
-        is_mobile        : ui.is_mobile,
+        barriers_array  : modules.smart_chart.barriers_array,
+        is_title_enabled: modules.smart_chart.is_title_enabled,
+        markers_array   : modules.smart_chart.markers_array,
+        onUnmount       : modules.smart_chart.onUnmount,
+        settings        : modules.smart_chart.settings,
+        wsForget        : modules.smart_chart.wsForget,
+        wsSendRequest   : modules.smart_chart.wsSendRequest,
+        wsSubscribe     : modules.smart_chart.wsSubscribe,
+        is_mobile       : ui.is_mobile,
     })
 )(Chart);
