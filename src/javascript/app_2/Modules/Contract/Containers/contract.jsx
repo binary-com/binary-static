@@ -7,51 +7,81 @@ import SmartChart        from '../../SmartChart';
 import ErrorComponent    from '../../../App/Components/Elements/Errors';
 import { connect }       from '../../../Stores/connect';
 import { localize }      from '../../../../_common/localize';
+import { isDeepEqual }   from '../../../../_common/utility';
 
-const Contract = ({
-    chart_config = {},
-    is_mobile,
-    has_error,
-    match,
-    symbol,
-}) => {
-    const form_wrapper_class = is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
-    return (
-        <React.Fragment>
-            {
-                has_error ?
-                    <ErrorComponent message={localize('Unknown Error!')} />
-                    :
-                    <div className='trade-container'>
-                        <div className='chart-container notice-msg'>
-                            { symbol &&
-                                <SmartChart
-                                    InfoBox={<InfoBox />}
-                                    symbol={symbol}
-                                    {...chart_config}
-                                />
-                            }
-                        </div>
-                        <div className={form_wrapper_class}>
-                            <CSSTransition
-                                in={!has_error}
-                                timeout={400}
-                                classNames='contract-wrapper'
-                                unmountOnExit
-                            >
-                                <div className='contract-wrapper'>
-                                    <ContractDetails
-                                        contract_id={match.params.contract_id}
-                                        key={match.params.contract_id}
+class Contract extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log(props, this.props.chart_config);
+        this.state = {
+            chart: { ...this.props.chart_config },
+        };
+    }
+
+    componentDidUpdate() {
+        if (!isDeepEqual(this.props.chart_config, this.state.chart)) {
+            console.log('new state!', this.props.chart_config);
+            this.setState({ chart: { ...this.props.chart_config } });
+        }
+    }
+
+    updateChartType = (chart_type) => {
+        console.log('update chart type');
+        this.setState({ chart: { ...this.state.chart, chart_type } });
+    }
+
+    updateGranularity = (granularity) => {
+        console.log('update chart granularity');
+        this.setState({ chart: { ...this.state.chart, granularity } });
+    }
+
+    render() {
+        const {
+            is_mobile,
+            has_error,
+            match,
+            symbol,
+        } = this.props;
+        const form_wrapper_class = is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
+        return (
+            <React.Fragment>
+                {
+                    has_error ?
+                        <ErrorComponent message={localize('Unknown Error!')} />
+                        :
+                        <div className='trade-container'>
+                            <div className='chart-container notice-msg'>
+                                { symbol &&
+                                    <SmartChart
+                                        InfoBox={<InfoBox />}
+                                        symbol={symbol}
+                                        {...this.state.chart}
+                                        updateChartType={this.updateChartType}
+                                        updateGranularity={this.updateGranularity}
                                     />
-                                </div>
-                            </CSSTransition>
+                                }
+                            </div>
+                            <div className={form_wrapper_class}>
+                                <CSSTransition
+                                    in={!has_error}
+                                    timeout={400}
+                                    classNames='contract-wrapper'
+                                    unmountOnExit
+                                >
+                                    <div className='contract-wrapper'>
+                                        <ContractDetails
+                                            contract_id={match.params.contract_id}
+                                            key={match.params.contract_id}
+                                        />
+                                    </div>
+                                </CSSTransition>
+                            </div>
                         </div>
-                    </div>
-            }
-        </React.Fragment>
-    );
-};
+                }
+            </React.Fragment>
+        );
+    }
+}
 
 Contract.propTypes = {
     chart_config: PropTypes.object,
