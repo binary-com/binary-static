@@ -129,7 +129,7 @@ const PaymentMethods = () => {
                                 { text: '10 - 10,000' },
                                 { text: '10 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks pdf_file='Binary.com_Credit&Debit.pdf' video_link='https://youtu.be/n_qQbML_qAI' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_Credit_Debit.pdf' video_link='https://youtu.be/n_qQbML_qAI' /> },
                             ],
                             [
                                 { text: <PaymentLogo logo='mastercard' /> },
@@ -137,7 +137,7 @@ const PaymentMethods = () => {
                                 { text: '10 - 10,000' },
                                 { text: '10 - 10,000' },
                                 { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                { text: <ReferenceLinks pdf_file='Binary.com_Credit&Debit.pdf' video_link='https://youtu.be/n_qQbML_qAI' /> },
+                                { text: <ReferenceLinks pdf_file='Binary.com_Credit_Debit.pdf' video_link='https://youtu.be/n_qQbML_qAI' /> },
                             ],
                         ],
                     }}
