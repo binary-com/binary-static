@@ -131,7 +131,15 @@ const DatePicker = (() => {
                 $selector.attr({ type: 'date', 'data-picker': 'native' }).val($selector.attr('data-value')).removeClass('clear');
                 if ($selector.attr('readonly')) $selector.attr('data-readonly', 'readonly').removeAttr('readonly');
                 if (date_picker_conf.minDate !== undefined) $selector.attr('min', toDate(date_picker_conf.minDate));
-                if (date_picker_conf.maxDate !== undefined) $selector.attr('max', toDate(date_picker_conf.maxDate));
+                if (date_picker_conf.maxDate !== undefined) {
+                    const maxDate = toDate(date_picker_conf.maxDate);
+                    $selector.attr('max', maxDate);
+                    $selector.change((e) => {
+                        if (moment(e.target.value).isAfter(moment(maxDate))) {
+                            $selector.attr('data-value', maxDate).val(maxDate);
+                        }
+                    });
+                }
                 return;
             }
         }
