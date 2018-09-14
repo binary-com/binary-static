@@ -398,7 +398,7 @@ const commonTrading = (() => {
 
     const requireHighstock = callback => (
         require.ensure([], (require) => {
-            const Highstock = require('highstock-release');
+            const Highstock = require('highcharts/highstock');
             return callback(Highstock);
         }, 'highstock')
     );
