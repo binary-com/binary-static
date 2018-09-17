@@ -31,7 +31,6 @@ const GTM = (() => {
                 },
             },
         };
-        console.log(data);
         GTMBase.pushDataLayer(data);
     };
 

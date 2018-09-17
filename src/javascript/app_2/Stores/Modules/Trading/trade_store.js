@@ -162,8 +162,7 @@ export default class TradeStore extends BaseStore {
                 if (this.proposal_info[type].id !== proposal_id) {
                     throw new Error('Proposal ID does not match.');
                 }
-                if (response.buy) {
-                // TODO: !Client.get('is_virtual')
+                if (response.buy && !Client.get('is_virtual')) {
                     const contract_data = {
                         ...this.proposal_requests[type],
                         ...this.proposal_info[type],
