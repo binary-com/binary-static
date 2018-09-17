@@ -2,7 +2,7 @@ import classNames   from 'classnames';
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import { addComma } from '../../../../../_common/base/currency_base';
+import { addComma } from '_common/base/currency_base';
 
 const MarkerSpot = ({
     align,

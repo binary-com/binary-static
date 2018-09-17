@@ -2,7 +2,7 @@ import { isArrayLike } from 'mobx';
 import { observer }    from 'mobx-react';
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import { IconArrow }   from '../../../Assets/Common';
+import { IconArrow }   from 'Assets/Common';
 
 class Dropdown extends React.Component {
     constructor(props) {

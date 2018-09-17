@@ -3,10 +3,10 @@ import {
     autorun,
     computed,
     observable }       from 'mobx';
-import BaseStore       from './base_store';
 import {
     MAX_MOBILE_WIDTH,
-    MAX_TABLET_WIDTH } from '../Constants/ui';
+    MAX_TABLET_WIDTH } from 'Constants/ui';
+import BaseStore       from './base_store';
 
 export default class UIStore extends BaseStore {
     @observable is_main_drawer_on          = false;

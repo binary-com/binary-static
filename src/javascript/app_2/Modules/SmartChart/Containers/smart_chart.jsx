@@ -1,11 +1,11 @@
 import { SmartChart }   from '@binary-com/smartcharts';
 import PropTypes        from 'prop-types';
 import React            from 'react';
-import ChartMarker      from '../Components/Markers/marker.jsx';
+import { connect }      from 'Stores/connect';
 import ControlWidgets   from '../Components/control_widgets.jsx';
+import ChartMarker      from '../Components/Markers/marker.jsx';
 import TopWidgets       from '../Components/top_widgets.jsx';
 import { symbolChange } from '../Helpers/symbol';
-import { connect }      from '../../../Stores/connect';
 
 class Chart extends React.Component {
     componentWillUnmount() { this.props.onUnmount(); }

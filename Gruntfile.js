@@ -6,7 +6,9 @@ module.exports = function (grunt) {
         translations: { branch: 'translations', target_folder: 'translations', origin: 'git@github.com:binary-com/binary-static.git',             CNAME: 'staging.binary.com' },
     };
 
-    if (grunt.cli.tasks[0] === 'release') {
+    global.is_production = grunt.cli.tasks[0] === 'release';
+
+    if (global.is_production) {
         Object.keys(global.release_config).forEach(function (target) {
             if (grunt.option(target)) {
                 global.release_target = target;

@@ -1,4 +1,4 @@
-import { localize } from '../../../../../_common/localize';
+import { localize } from '_common/localize';
 
 /**
  * components can be undef or an array containing any of: 'start_date', 'barrier', 'last_digit'

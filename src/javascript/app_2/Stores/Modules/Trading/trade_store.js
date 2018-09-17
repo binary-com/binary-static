@@ -3,6 +3,11 @@ import {
     action,
     observable,
     reaction }                           from 'mobx';
+import Client                            from '_common/base/client_base';
+import { cloneObject, isEmptyObject }    from '_common/utility';
+import { WS }                            from 'Services';
+import GTM                               from 'Utils/gtm';
+import URLHelper                         from 'Utils/URL/url_helper';
 import { processPurchase }               from './Actions/purchase';
 import * as Symbol                       from './Actions/symbol';
 import {
@@ -19,11 +24,6 @@ import {
     getProposalParametersName }          from './Helpers/proposal';
 import { pickDefaultSymbol }             from './Helpers/symbol';
 import BaseStore                         from '../../base_store';
-import { WS }                            from '../../../Services';
-import GTM                               from '../../../Utils/gtm';
-import URLHelper                         from '../../../Utils/URL/url_helper';
-import Client                            from '../../../../_common/base/client_base';
-import { cloneObject, isEmptyObject }    from '../../../../_common/utility';
 
 export default class TradeStore extends BaseStore {
     // Control values

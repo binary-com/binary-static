@@ -2,8 +2,8 @@ import {
     action,
     observable }           from 'mobx';
 import moment              from 'moment';
+import { currentLanguage } from 'Utils/Language/index';
 import BaseStore           from './base_store';
-import { currentLanguage } from '../Utils/Language/index';
 
 export default class CommonStore extends BaseStore {
     @observable server_time      = moment.utc();
@@ -14,6 +14,9 @@ export default class CommonStore extends BaseStore {
         type   : 'info',
         message: '',
     };
+
+    @observable network_status = {};
+    @observable is_network_online = false;
 
     @action.bound
     setError(has_error, error) {

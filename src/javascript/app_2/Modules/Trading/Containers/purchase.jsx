@@ -1,15 +1,15 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
+import { localize }      from '_common/localize';
+import { isEmptyObject } from '_common/utility';
+import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
+import UILoader          from 'App/Components/Elements/ui_loader.jsx';
+import Button            from 'App/Components/Form/button.jsx';
+import Fieldset          from 'App/Components/Form/fieldset.jsx';
+import { connect }       from 'Stores/connect';
 import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
 import MessageBox        from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
-import { PopConfirm }    from '../../../App/Components/Elements/PopConfirm';
-import UILoader          from '../../../App/Components/Elements/ui_loader.jsx';
-import Button            from '../../../App/Components/Form/button.jsx';
-import Fieldset          from '../../../App/Components/Form/fieldset.jsx';
-import { connect }       from '../../../Stores/connect';
-import { localize }      from '../../../../_common/localize';
-import { isEmptyObject } from '../../../../_common/utility';
 
 const Purchase = ({
     barrier_count,

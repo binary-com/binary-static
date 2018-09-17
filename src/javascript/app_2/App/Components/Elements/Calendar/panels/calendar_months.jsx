@@ -1,8 +1,8 @@
 import classNames         from 'classnames';
 import moment             from 'moment';
 import React              from 'react';
+import { localize }       from '_common/localize';
 import CalendarPanelTypes from './types';
-import { localize }       from '../../../../../../_common/localize';
 
 const month_headers = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 

@@ -1,11 +1,11 @@
 import classNames      from 'classnames';
-import React           from 'react';
 import PropTypes       from 'prop-types';
-import { IconBack }    from '../../../../Assets/Common';
+import React           from 'react';
+import { localize }    from '_common/localize';
+import { IconBack }    from 'Assets/Common';
 import {
     getAllowedLanguages,
-    getURL }           from '../../../../Utils/Language/index';
-import { localize }    from '../../../../../_common/localize';
+    getURL }           from 'Utils/Language';
 
 const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
     const language_dialog_class = classNames('language-dialog-container', {

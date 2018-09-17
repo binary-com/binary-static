@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import Tooltip      from '../../../../App/Components/Elements/tooltip.jsx';
-import Button       from '../../../../App/Components/Form/button.jsx';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '_common/localize';
+import Tooltip      from 'App/Components/Elements/tooltip.jsx';
+import Button       from 'App/Components/Form/button.jsx';
 
 const SellButton = ({
     contract_info,

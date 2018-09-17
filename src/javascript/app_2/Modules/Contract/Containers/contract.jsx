@@ -1,13 +1,13 @@
 import { CSSTransition } from 'react-transition-group';
 import PropTypes         from 'prop-types';
 import React             from 'react';
+import { localize }      from '_common/localize';
+import { isDeepEqual }   from '_common/utility';
+import ErrorComponent    from 'App/Components/Elements/Errors';
+import { connect }       from 'Stores/connect';
 import ContractDetails   from './contract_details.jsx';
 import InfoBox           from './info_box.jsx';
 import SmartChart        from '../../SmartChart';
-import ErrorComponent    from '../../../App/Components/Elements/Errors';
-import { connect }       from '../../../Stores/connect';
-import { localize }      from '../../../../_common/localize';
-import { isDeepEqual }   from '../../../../_common/utility';
 
 class Contract extends React.Component {
     constructor(props) {

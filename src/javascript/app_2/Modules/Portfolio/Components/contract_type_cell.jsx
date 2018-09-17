@@ -1,8 +1,8 @@
 import React                     from 'react';
 import PropTypes                 from 'prop-types';
-import { contract_type_display } from '../../../Constants/contract';
-import { IconTradeType }         from '../../../Assets/Trading/Types';
-import { localize }              from '../../../../_common/localize';
+import { localize }              from '_common/localize';
+import { contract_type_display } from 'Constants/contract';
+import { IconTradeType }         from 'Assets/Trading/Types';
 
 const ContractTypeCell = ({ type }) => (
     <div className='contract-type'>

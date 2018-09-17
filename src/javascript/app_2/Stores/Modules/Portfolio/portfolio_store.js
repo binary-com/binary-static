@@ -2,9 +2,9 @@ import {
     action,
     computed,
     observable }                   from 'mobx';
+import { WS }                      from 'Services';
 import { formatPortfolioPosition } from './Helpers/format_response';
 import BaseStore                   from '../../base_store';
-import { WS }                      from '../../../Services';
 
 export default class PortfolioStore extends BaseStore {
     @observable data       = [];

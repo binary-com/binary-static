@@ -4,8 +4,8 @@ import {
 import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { isSessionAvailable }         from '../../../Stores/Modules/Trading/Helpers/start_date';
-import { localize }                   from '../../../../_common/localize';
+import { localize }                   from '_common/localize';
+import { isSessionAvailable }         from 'Stores/Modules/Trading/Helpers/start_date';
 
 class TimePickerDropdown extends React.Component {
     constructor(props) {

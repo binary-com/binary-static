@@ -3,14 +3,14 @@ import {
     action,
     computed,
     observable }              from 'mobx';
+import { isEmptyObject }      from '_common/utility';
+import { WS }                 from 'Services';
 import { ChartBarrierStore }  from './chart_barrier_store';
 import { ChartMarkerStore }   from './chart_marker_store';
 import {
     barriersObjectToArray,
     isBarrierSupported }      from './Helpers/barriers';
 import BaseStore              from '../../base_store';
-import { WS }                 from '../../../Services';
-import { isEmptyObject }      from '../../../../_common/utility';
 
 const tick_chart_types = [
     'mountain',
