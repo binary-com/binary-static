@@ -12,6 +12,14 @@ import BaseStore              from '../../base_store';
 import { WS }                 from '../../../Services';
 import { isEmptyObject }      from '../../../../_common/utility';
 
+const tick_chart_types = [
+    'mountain',
+    'line',
+    'colored_line',
+    'spline',
+    'baseline',
+];
+
 export default class SmartChartStore extends BaseStore {
     @observable symbol;
     @observable barriers = observable.object({});
@@ -31,6 +39,9 @@ export default class SmartChartStore extends BaseStore {
     @action.bound
     updateGranularity(granularity) {
         this.granularity = granularity;
+        if (granularity === 0 && !tick_chart_types.includes(this.chart_type)) {
+            this.chart_type = 'mountain';
+        }
     }
 
     @action.bound
