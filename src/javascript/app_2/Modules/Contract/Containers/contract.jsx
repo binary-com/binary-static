@@ -12,7 +12,6 @@ import { isDeepEqual }   from '../../../../_common/utility';
 class Contract extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props, this.props.chart_config);
         this.state = {
             chart: { ...this.props.chart_config },
         };
@@ -20,18 +19,15 @@ class Contract extends React.Component {
 
     componentDidUpdate() {
         if (!isDeepEqual(this.props.chart_config, this.state.chart)) {
-            console.log('new state!', this.props.chart_config);
             this.setState({ chart: { ...this.props.chart_config } });
         }
     }
 
     updateChartType = (chart_type) => {
-        console.log('update chart type');
         this.setState({ chart: { ...this.state.chart, chart_type } });
     }
 
     updateGranularity = (granularity) => {
-        console.log('update chart granularity');
         this.setState({ chart: { ...this.state.chart, granularity } });
     }
 
