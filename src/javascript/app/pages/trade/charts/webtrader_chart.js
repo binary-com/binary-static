@@ -47,7 +47,7 @@ const WebtraderChart = (() => {
     const initChart = () => {
         if (!State.get('is_chart_allowed')) return;
         if (!is_initialized) {
-            require.ensure(['highcharts/highstock'], () => {
+            require.ensure(['highstock-release'], () => {
                 require.ensure([], (require) => {
                     WebtraderCharts = require('@binary-com/webtrader-charts');
                     WebtraderCharts.init({
