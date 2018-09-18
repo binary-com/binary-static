@@ -24,6 +24,7 @@ const attachDateToPicker = (fncOnChange) => {
     $date_to
         .attr('data-value', toISOFormat(moment.utc()))
         .change(function() {
+            // wrap setTimeout to execute this chunk of code after the main event loop
             setTimeout(() => {
                 if (!dateValueChanged(this, 'date')) {
                     return false;
