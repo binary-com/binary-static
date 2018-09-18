@@ -230,6 +230,9 @@
         tbody tr {
             display: block;
 
+            .data-anchor-link {
+                display: none;
+            }
             td {
                 vertical-align: middle;
                 position: relative;
@@ -241,9 +244,9 @@
                     &.td-list {
                         height: 0;
                         opacity: 0;
-                        transition: opacity 0.3s;
 
                         &.active {
+                            transition: all 0.2s 0.2s;
                             height: 100%;
                             opacity: 1;
                         }
@@ -252,7 +255,7 @@
                         height: 0;
                         opacity: 0;
                         transform: translateY(40px);
-                        transition: opacity 0.3s;
+                        transition: all 0.2s ease-in;
 
                         &.active {
                             transform: translateY(0);
