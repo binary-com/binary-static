@@ -196,6 +196,14 @@ export default class TradeStore extends BaseStore {
                 }
 
                 this[key] = new_state[key];
+
+                // hack to solve the issue when validation is called on each property in intercept (base_store.js addRule action)
+                // when updating store from a snapshot, new barrier_1 is checked against barrier_2 in store (old one) which causes a false positive validation error (validation_rules.js)
+                // i don't like the idea of validating in intercept, as intercept doesn't know if the value is changed by the user or directly by logic
+                // can we just move validation from intercept to onChange for example? so we don't validate when loading from a snapshot
+                if (key === 'barrier_2' && new_state.barrier_1) {
+                    this.barrier_1 = new_state.barrier_1;
+                }
             }
         });
 
