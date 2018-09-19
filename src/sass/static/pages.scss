@@ -192,9 +192,7 @@
             position: relative;
 
             .data-anchor-link {
-                position: absolute;
-                top: 0;
-                right: 0;
+                display: none;
             }
             .th-list, .td-list {
                 display: grid;
@@ -214,13 +212,16 @@
                     min-width: 190px;
                 }
             }
+            .td-description {
+                display: flex;
+                align-items: center;
+            }
         }
         thead tr {
-            display: inline-table;
-
             th {
                 padding-top: 10px;
                 padding-bottom: 10px;
+                align-items: center;
 
                 &:nth-child(1) {
                     min-width: 100px;
@@ -228,18 +229,14 @@
             }
         }
         tbody tr {
-            display: block;
-
-            .data-anchor-link {
-                display: none;
-            }
             td {
-                vertical-align: middle;
                 position: relative;
                 padding: 10px;
 
                 div.td-list, div.td-description {
                     overflow: hidden;
+                    position: absolute;
+                    top: 0;
 
                     &.td-list {
                         height: 0;
@@ -252,27 +249,26 @@
                         }
                     }
                     &.td-description {
-                        height: 0;
+                        height: 100%;
                         opacity: 0;
                         transform: translateY(40px);
                         transition: all 0.2s ease-in;
+                        text-size-adjust: 100%; // prevent text-size from increasing
 
                         &.active {
                             transform: translateY(0);
                             transition: all 0.2s ease-in-out;
-                            height: 100%;
                             opacity: 1;
-                            text-size-adjust: 100%; // prevent text-size from increasing
                         }
                     }
                 }
                 &.toggler {
-                    &:before {
+                    &:after {
                         position: absolute;
-                        bottom: -10px;
+                        top: 80%;
                         left: calc(50% - 100px);
                         content: '\002303';
-                        padding: 5px;
+                        // padding: 5px;
                         color: $COLOR_BLUE;
                         transform-origin: center 35%;
                         transform: rotate(180deg);
@@ -283,7 +279,7 @@
                         cursor: pointer;
                     }
                     &.open {
-                        &:before {
+                        &:after {
                             transform: rotate(0);
                         }
                     }
