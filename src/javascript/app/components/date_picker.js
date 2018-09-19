@@ -122,14 +122,14 @@ const DatePicker = (() => {
         const date_picker_conf = date_pickers[selector].config_data;
 
         const checkMinMaxDate = () => {
-            // fix for iOS:
-            // sets the datepicker value to 'minDate' if the selected date is before 'minDate'
-            // or to 'maxDate' if the selected date is after 'maxDate' respectively
             ['minDate', 'maxDate'].forEach(type => {
                 if (date_picker_conf[type] !== undefined) {
                     const date = toDate(date_picker_conf[type]);
                     $selector.attr(type === 'minDate' ? 'min' : 'max', date);
                     $selector.change((e) => {
+                        // fix for iOS:
+                        // sets the datepicker value to 'minDate' if the selected date is before 'minDate'
+                        // or to 'maxDate' if the selected date is after 'maxDate' respectively
                         if (moment(e.target.value)[type === 'minDate' ? 'isBefore' : 'isAfter'](moment(date))) {
                             $selector.attr('data-value', date).val(date);
                         }

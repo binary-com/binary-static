@@ -24,17 +24,14 @@ const attachDateToPicker = (fncOnChange) => {
     $date_to
         .attr('data-value', toISOFormat(moment.utc()))
         .change(function() {
-            // wrap setTimeout to execute this chunk of code after the main event loop
-            setTimeout(() => {
-                if (!dateValueChanged(this, 'date')) {
-                    return false;
-                }
+            dateValueChanged(this, 'date').then((result) => {
+                if (!result) return false;
                 $('.table-container').remove();
                 if (typeof fncOnChange === 'function') {
                     fncOnChange();
                 }
                 return true;
-            }, 0);
+            });
         });
     DatePicker.init({
         selector: id_date_to,
