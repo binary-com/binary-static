@@ -59,7 +59,7 @@ const Metals = () => (
                     <HeaderSecondary header={it.L('Why you should trade precious metals with [_1]', it.website_name)} />
                     <ul className='checked'>
                         <ListStrong header={it.L('Competitive spreads')} text={it.L('Trade metals on competitive fixed and variable spreads.')} />
-                        <ListStrong header={it.L('Commission-free')}     text={it.L('Pay no commission (excluding cryptocurrencies) on all metal contracts.')} />
+                        <ListStrong header={it.L('Commission-free')}     text={it.L('Pay no commission on all metal contracts.')} />
                         <ListStrong header={it.L('Comprehensive')}       text={it.L('Trade all four precious metals on one platform.')} />
                     </ul>
                 </Section>
