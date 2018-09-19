@@ -57,7 +57,7 @@ const BinaryOptionsForMT5 = () => (
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
 
-                    <h3 className='secondary-color'>{it.L('Step 1: Log in to MT5 platform using MT5 Volatility Indices account')}</h3>
+                    <h3 className='secondary-color'>{it.L('Step 1: Log in to MT5 using your MT5 Volatility Indices account')}</h3>
                     <div>
                         <img className='responsive' src={it.url_for('images/pages/get-started/mt5/how-to-trade-binary/step-1.png')} />
                     </div>
@@ -91,7 +91,7 @@ const BinaryOptionsForMT5 = () => (
                     <div>
                         <img className='responsive' src={it.url_for('images/pages/get-started/mt5/how-to-trade-binary/step-4.png')} />
                     </div>
-                    <p>{it.L('Select any of the highlighted symbols above to open a live chart. Right click and click on "Chart Window" to open the live chart.')}</p>
+                    <p>{it.L('Select any of the highlighted symbols above to open a live chart. Right-click and choose \'Chart Window\' to open the live chart.')}</p>
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
 
