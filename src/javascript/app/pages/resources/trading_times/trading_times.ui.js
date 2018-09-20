@@ -38,14 +38,14 @@ const TradingTimesUI = (() => {
         });
         $date.val(localize('Today'));
         $date.change(function () {
-            if (!dateValueChanged(this, 'date')) {
-                return false;
-            }
-            $container.empty();
-            showLoadingImage($container[0]);
-            trading_times = null;
-            sendRequest($date.attr('data-value'), !active_symbols);
-            return true;
+            dateValueChanged(this, 'date').then(result => {
+                if (!result) return false;
+                $container.empty();
+                showLoadingImage($container[0]);
+                trading_times = null;
+                sendRequest($date.attr('data-value'), !active_symbols);
+                return true;
+            });
         });
 
         $container.tabs();
