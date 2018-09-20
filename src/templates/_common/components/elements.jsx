@@ -164,7 +164,7 @@ export const Tbody = ({ trs, tbody_id }) => (
                         :
                         <React.Fragment>
                             {td.custom_td && td.custom_td}
-                            {td.text &&
+                            {'text' in td &&
                                 <td key={inx_td} className={td.className} id={td.id} {...(td.attributes || {})}>
                                     {td.text}
                                 </td>
