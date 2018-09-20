@@ -397,163 +397,106 @@ const PaymentMethods = () => {
                         }}
                     />
 
-                    <TableTitle title={it.L('E-wallet')} />
-                    <Table
-                        data={{
-                            thead: [ head ],
-                            tbody: [
-                                {
-                                    id : 'bitcoin',
-                                    row: [
-                                        { text: <PaymentLogo logo='bitcoin' /> },
-                                        { custom_td: <CustomTableData data={[
-                                            { td: it.L('Bitcoin is the world’s first decentralised cryptocurrency, created in 2009. For more info, please visit [_1].', `${createLink('https://bitcoin.org')}`) },
-                                            { td_list: [
-                                                { text: 'BTC' },
-                                                { text: '0.002' },
-                                                { text: '0.0003' },
-                                                { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                                { text: <ReferenceLinks pdf_file='Binary.com_Bitcoin.pdf' video_link='https://youtu.be/StIW7CviBTw' /> },
-                                            ],
-                                            },
-                                        ]}
-                                        />,
-                                        },
-                                    ],
-                                },
-                                {
-                                    id : 'bitcoin-cash',
-                                    row: [
-                                        { text: <PaymentLogo logo='bitcoin_cash' /> },
-                                        { custom_td: <CustomTableData data={[
-                                            { td: it.L('Bitcoin Cash is a cryptocurrency that emerged from a fork of the original Bitcoin. For more info, please visit [_1].', `${createLink('https://www.bitcoincash.org')}`) },
-                                            { td_list: [
-                                                { text: 'BCH' },
-                                                { text: '0.01' },
-                                                { text: '0.003' },
-                                                { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                                { text: <ReferenceLinks pdf_file='Binary.com_BitcoinCash.pdf' video_link='https://youtu.be/jmTx7QMi-Tg' /> },
-                                            ],
-                                            },
-                                        ]}
-                                        />,
-                                        },
-                                    ],
-                                },
-                                {
-                                    id : 'ethereum-black',
-                                    row: [
-                                        { text: <PaymentLogo logo='ethereum_black' /> },
-                                        { custom_td: <CustomTableData data={[
-                                            { td: it.L('Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more info, please visit [_1].', `${createLink('https://www.ethereum.org')}`) },
-                                            { td_list: [
-                                                { text: 'ETH' },
-                                                { text: '0.01' },
-                                                { text: '0.01' },
-                                                { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                                { text: <ReferenceLinks pdf_file='Binary.com_Ethereum.pdf' video_link='https://youtu.be/B7EVLt3lIMs' /> },
-                                            ],
-                                            },
-                                        ]}
-                                        />,
-                                        },
-                                    ],
-                                },
-                                // {
-                                //     id : '',
-                                //     row: [
-                                //         { text: <PaymentLogo logo='' /> },
-                                //         { custom_td: <CustomTableData data={[
-                                //             { td: 'description' },
-                                //             { td_list: [
-                                //                 { text: 'ETC' },
-                                //                 { text: '0.002' },
-                                //                 { text: '0.002' },
-                                //                 { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                //             ],
-                                //             },
-                                //         ]}
-                                //         />,
-                                //         },
-                                //     ],
-                                // },
-                                {
-                                    id : 'litecoin',
-                                    row: [
-                                        { text: <PaymentLogo logo='litecoin' /> },
-                                        { custom_td: <CustomTableData data={[
-                                            { td: it.L('Litecoin is a cryptocurrency similar to Bitcoin, but capable of a higher transaction volume and faster confirmation times. For more info, please visit [_1].', '<a href="https://litecoin.org" target="_blank">https://litecoin.org</a>') },
-                                            { td_list: [
-                                                { text: 'LTC' },
-                                                { text: '0.1' },
-                                                { text: '0.02' },
-                                                { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                                { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/DJhP5UjKPpI' /> },
-                                            ],
-                                            },
-                                        ]}
-                                        />,
-                                        },
-                                    ],
-                                },
-                            ],
-                        }}
-                    />
-
                     <div data-show='-malta, -maltainvest' className='eu-hide'>
                         <TableTitle title={it.L('Cryptocurrencies')} withdrawal={it.L('Min Withdrawal')} />
                         <Table
                             data={{
-                                thead: [
-                                    [
-                                        { className: 'gr-padding-10', text: it.L('Method') },
-                                        { className: 'gr-padding-10', text: it.L('Currencies') },
-                                        { className: 'gr-padding-10', text: it.L('Min Deposit') },
-                                        { className: 'gr-padding-10', text: it.L('Min Withdrawal') },
-                                        { className: 'gr-padding-10', text: `${it.L('Processing Time')}*` },
-                                        { className: 'gr-padding-10', text: it.L('Reference') },
-                                    ],
-                                ],
+                                thead: [ head ],
                                 tbody: [
-                                    [
-                                        { text: <PaymentLogo logo='bitcoin' /> },
-                                        { text: 'BTC' },
-                                        { text: '0.002' },
-                                        { text: '0.0003' },
-                                        { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                        { text: <ReferenceLinks pdf_file='Binary.com_Bitcoin.pdf' video_link='https://youtu.be/StIW7CviBTw' /> },
-                                    ],
-                                    [
-                                        { text: <PaymentLogo logo='bitcoin_cash' /> },
-                                        { text: 'BCH' },
-                                        { text: '0.01' },
-                                        { text: '0.003' },
-                                        { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                        { text: <ReferenceLinks pdf_file='Binary.com_BitcoinCash.pdf' video_link='https://youtu.be/jmTx7QMi-Tg' /> },
-                                    ],
-                                    [
-                                        { text: <PaymentLogo logo='ethereum_black' /> },
-                                        { text: 'ETH' },
-                                        { text: '0.01' },
-                                        { text: '0.01' },
-                                        { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                        { text: <ReferenceLinks pdf_file='Binary.com_Ethereum.pdf' video_link='https://youtu.be/B7EVLt3lIMs' /> },
-                                    ],
-                                    // [
-                                    //     { text: <PaymentLogo logo='' /> },
-                                    //     { text: 'ETC' },
-                                    //     { text: '0.002' },
-                                    //     { text: '0.002' },
-                                    //     { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                    // ],
-                                    [
-                                        { text: <PaymentLogo logo='litecoin' /> },
-                                        { text: 'LTC' },
-                                        { text: '0.1' },
-                                        { text: '0.02' },
-                                        { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                        { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/DJhP5UjKPpI' /> },
-                                    ],
+                                    {
+                                        id : 'bitcoin',
+                                        row: [
+                                            { text: <PaymentLogo logo='bitcoin' /> },
+                                            { custom_td: <CustomTableData data={[
+                                                { td: it.L('Bitcoin is the world’s first decentralised cryptocurrency, created in 2009. For more info, please visit [_1].', `${createLink('https://bitcoin.org')}`) },
+                                                { td_list: [
+                                                    { text: 'BTC' },
+                                                    { text: '0.002' },
+                                                    { text: '0.0003' },
+                                                    { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                                    { text: <ReferenceLinks pdf_file='Binary.com_Bitcoin.pdf' video_link='https://youtu.be/StIW7CviBTw' /> },
+                                                ],
+                                                },
+                                            ]}
+                                            />,
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        id : 'bitcoin-cash',
+                                        row: [
+                                            { text: <PaymentLogo logo='bitcoin_cash' /> },
+                                            { custom_td: <CustomTableData data={[
+                                                { td: it.L('Bitcoin Cash is a cryptocurrency that emerged from a fork of the original Bitcoin. For more info, please visit [_1].', `${createLink('https://www.bitcoincash.org')}`) },
+                                                { td_list: [
+                                                    { text: 'BCH' },
+                                                    { text: '0.01' },
+                                                    { text: '0.003' },
+                                                    { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                                    { text: <ReferenceLinks pdf_file='Binary.com_BitcoinCash.pdf' video_link='https://youtu.be/jmTx7QMi-Tg' /> },
+                                                ],
+                                                },
+                                            ]}
+                                            />,
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        id : 'ethereum-black',
+                                        row: [
+                                            { text: <PaymentLogo logo='ethereum_black' /> },
+                                            { custom_td: <CustomTableData data={[
+                                                { td: it.L('Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more info, please visit [_1].', `${createLink('https://www.ethereum.org')}`) },
+                                                { td_list: [
+                                                    { text: 'ETH' },
+                                                    { text: '0.01' },
+                                                    { text: '0.01' },
+                                                    { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                                    { text: <ReferenceLinks pdf_file='Binary.com_Ethereum.pdf' video_link='https://youtu.be/B7EVLt3lIMs' /> },
+                                                ],
+                                                },
+                                            ]}
+                                            />,
+                                            },
+                                        ],
+                                    },
+                                    // {
+                                    //     id : '',
+                                    //     row: [
+                                    //         { text: <PaymentLogo logo='' /> },
+                                    //         { custom_td: <CustomTableData data={[
+                                    //             { td: 'description' },
+                                    //             { td_list: [
+                                    //                 { text: 'ETC' },
+                                    //                 { text: '0.002' },
+                                    //                 { text: '0.002' },
+                                    //                 { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                    //             ],
+                                    //             },
+                                    //         ]}
+                                    //         />,
+                                    //         },
+                                    //     ],
+                                    // },
+                                    {
+                                        id : 'litecoin',
+                                        row: [
+                                            { text: <PaymentLogo logo='litecoin' /> },
+                                            { custom_td: <CustomTableData data={[
+                                                { td: it.L('Litecoin is a cryptocurrency similar to Bitcoin, but capable of a higher transaction volume and faster confirmation times. For more info, please visit [_1].', '<a href="https://litecoin.org" target="_blank">https://litecoin.org</a>') },
+                                                { td_list: [
+                                                    { text: 'LTC' },
+                                                    { text: '0.1' },
+                                                    { text: '0.02' },
+                                                    { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                                    { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/DJhP5UjKPpI' /> },
+                                                ],
+                                                },
+                                            ]}
+                                            />,
+                                            },
+                                        ],
+                                    },
                                 ],
                             }}
                         />
