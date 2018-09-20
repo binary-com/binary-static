@@ -163,7 +163,7 @@ export const Tbody = ({ trs, tbody_id }) => (
                         </th>
 
                         :
-                        <td key={inx_td} colSpan={td.col_span || undefined} className={td.className} id={td.id} {...(td.attributes || {})}>
+                        <td key={inx_td} className={td.className} id={td.id} {...(td.attributes || {})}>
                             {td.text}
                             {td.custom_td}
                         </td>
