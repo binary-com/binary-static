@@ -120,6 +120,24 @@ const DatePicker = (() => {
     const checkWidth = (selector) => {
         const $selector        = $(selector);
         const date_picker_conf = date_pickers[selector].config_data;
+
+        const checkMinMaxDate = () => {
+            ['minDate', 'maxDate'].forEach(type => {
+                if (date_picker_conf[type] !== undefined) {
+                    const date = toDate(date_picker_conf[type]);
+                    $selector.attr(type === 'minDate' ? 'min' : 'max', date);
+                    $selector.change((e) => {
+                        // fix for iOS:
+                        // sets the datepicker value to 'minDate' if the selected date is before 'minDate'
+                        // or to 'maxDate' if the selected date is after 'maxDate' respectively
+                        if (moment(e.target.value)[type === 'minDate' ? 'isBefore' : 'isAfter'](moment(date))) {
+                            $selector.attr('data-value', date).val(date);
+                        }
+                    });
+                }
+            });
+        };
+
         if ($(window).width() < 770) {
             if (!date_picker_conf.native) {
                 hide(selector);
@@ -130,8 +148,7 @@ const DatePicker = (() => {
                 hide(selector);
                 $selector.attr({ type: 'date', 'data-picker': 'native' }).val($selector.attr('data-value')).removeClass('clear');
                 if ($selector.attr('readonly')) $selector.attr('data-readonly', 'readonly').removeAttr('readonly');
-                if (date_picker_conf.minDate !== undefined) $selector.attr('min', toDate(date_picker_conf.minDate));
-                if (date_picker_conf.maxDate !== undefined) $selector.attr('max', toDate(date_picker_conf.maxDate));
+                checkMinMaxDate();
                 return;
             }
         }
