@@ -59,11 +59,12 @@ const dateValueChanged = (element, type) => new Promise((resolve) => {
             value = element.value;
         }
         const data_value = element.getAttribute('data-value');
-        if (data_value === value &&
-            moment(data_value).isBetween(
-                moment(element.getAttribute('min')).utc(),
-                moment(element.getAttribute('max')).utc(), null, '[]') // inclusive minDate and maxDate
-        ) {
+
+        const checkMinMaxDate = () => (moment(data_value).isBetween(
+            moment(element.getAttribute('min')).utc(),
+            moment(element.getAttribute('max')).utc(), null, '[]')); // inclusive minDate and maxDate
+
+        if (data_value === value && (type === 'date' ? checkMinMaxDate() : true)) {
             resolve(false);
         }
         if (element.getAttribute('type') === type) {
