@@ -3,7 +3,6 @@ const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getElementById   = require('../../../_common/common_functions').getElementById;
-const paramsHash       = require('../../../_common/url').paramsHash;
 const urlFor           = require('../../../_common/url').urlFor;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
@@ -13,21 +12,6 @@ const Cashier = (() => {
     const showContent = () => {
         Client.activateByClientType();
         Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
-        const anchor = paramsHash().anchor;
-        let $toggler;
-        if (anchor) {
-            $toggler = $(`[data-anchor='${anchor}']`);
-            $toggler.find('.td-description').addClass('active'); // toggle open description
-            $toggler.find('.td-list').removeClass('active');
-            $toggler.find('.toggler').addClass('open');
-        }
-        $('.toggler').on('click', (e) => {
-            if ($(e.target)[0].nodeName === 'A') return;
-            e.preventDefault();
-            $toggler = $(e.target).closest('.toggler');
-            $toggler.children().toggleClass('active');
-            $toggler.toggleClass('open');
-        });
     };
 
     const displayTopUpButton = () => {
