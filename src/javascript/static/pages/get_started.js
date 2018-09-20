@@ -21,8 +21,4 @@ module.exports = {
         onLoad  : () => { MenuSelector.init(['what-forex-trading', 'how-to-trade-forex', 'margin-policy', 'contract-specification']); },
         onUnload: () => { MenuSelector.clean(); },
     },
-    BinaryOptionsForMT5: {
-        onLoad  : () => { MenuSelector.init(['what-are-binary-options', 'how-to-trade-binary']); },
-        onUnload: () => { MenuSelector.clean(); },
-    },
 };

@@ -102,7 +102,7 @@ const Index = () => (
                     </TabContent>
                     <TabContent id='mt5'>
                         <h2>{it.L('MetaTrader 5')}</h2>
-                        <p>{it.L('Trade Forex, Contracts for Difference (CFDs), and binary options on MetaTrader 5 - a multi-asset platform that offers outstanding trading possibilities and technical analysis tools.')}</p>
+                        <p>{it.L('Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools.')}</p>
 
                         <SeparatorLine invisible className='gr-padding-30' />
 
@@ -247,28 +247,6 @@ const Index = () => (
                                     image='mt5/contract-specification'
                                     header={it.L('Metals contract specifications')}
                                     text={it.L('Find out more about the costs and details of every metal pair we offer.')}
-                                />
-                            </div>
-                        </GetStartedSectionWrapper>
-                        <GetStartedSectionWrapper
-                            section_id='binary-options-mt5'
-                            section_header={it.L('Binary Options on MT5')}
-                            section_description={it.L('Explore a whole new world of binary options trading with the world\'s leading multi-asset platform. [_1]Create an MT5 account now[_2] to start trading.', `<a href=${it.url_for('user/metatrader')}>`, '</a>')}
-                        >
-                            <div className='gr-row'>
-                                <GetStartedSection
-                                    link='get-started/binary-options-mt5'
-                                    hash='what-are-binary-options'
-                                    image='mt5/what-binary-trading'
-                                    header={it.L('Introduction to binary options on MT5')}
-                                    text={it.L('Binary options trading is now available on our MT5 platform. Learn more about its benefits and available markets.')}
-                                />
-                                <GetStartedSection
-                                    link='get-started/binary-options-mt5'
-                                    hash='how-to-trade-binary'
-                                    image='mt5/how-trade-binary'
-                                    header={it.L('How to trade binary options on MT5')}
-                                    text={it.L('Follow our step-by-step guide to start trading binary options on MT5.')}
                                 />
                             </div>
                         </GetStartedSectionWrapper>

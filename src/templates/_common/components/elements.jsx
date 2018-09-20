@@ -155,21 +155,16 @@ export const Select = ({ id, className, options }) => (
 export const Tbody = ({ trs, tbody_id }) => (
     <tbody id={tbody_id}>
         {trs && trs.map((tr, inx_tr) => (
-            <tr key={inx_tr} data-anchor={tr.id || undefined}>
-                {(tr.row ? tr.row : tr).map((td, inx_td) => (
+            <tr key={inx_tr}>
+                {tr.map((td, inx_td) => (
                     td.header ?
                         <th key={inx_td} className={td.className} id={td.id} {...td.balloon ? { 'data-balloon': td.balloon } : {}} {...(td.attributes || {})}>
                             {td.header}
                         </th>
                         :
-                        <React.Fragment>
-                            {td.custom_td && td.custom_td}
-                            {'text' in td &&
-                                <td key={inx_td} className={td.className} id={td.id} {...(td.attributes || {})}>
-                                    {td.text}
-                                </td>
-                            }
-                        </React.Fragment>
+                        <td key={inx_td} className={td.className} id={td.id} {...(td.attributes || {})}>
+                            {td.text}
+                        </td>
                 ))}
             </tr>
         ))}
@@ -190,10 +185,7 @@ export const Table = ({
                     { data.thead.map((row, tr_inx) => (
                         <tr key={tr_inx}>
                             {row.map((th, th_inx) => (
-                                th.custom_th ?
-                                    th.custom_th
-                                    :
-                                    <th key={th_inx} className={th.className}>{th.text}</th>
+                                <th key={th_inx} className={th.className} >{th.text}</th>
                             ))}
                         </tr>
                     ))}

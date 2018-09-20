@@ -1,5 +1,4 @@
 import React from 'react';
-import PaymentLogo from '../_common/components/payment_logo.jsx';
 
 const Tour = () => (
     <div className='tour container'>
@@ -51,11 +50,9 @@ const Tour = () => (
                         <span>{it.L('View payment methods')}</span>
                     </a>
                     <p>{it.L('Trade with ease with [_1]\'s wide range of deposit and withdrawal methods. Your funds will be segregated and held in secure and licensed financial institutions.', it.website_name)}</p>
-                    <div data-show='-malta, -maltainvest' className='gr-12 gr-padding-30'>
-                        <div className='gr-row gr-row-align-center'>
-                            <PaymentLogo />
-                        </div>
-                    </div>
+                    <a data-show='-malta, -maltainvest' className='button' href={it.url_for('cashier/payment_methods')}>
+                        <img className='responsive' src={it.url_for('images/pages/tour/tour-flexible-banking.svg')} />
+                    </a>
                 </div>
             </div>
             <div className='section border-bottom'>

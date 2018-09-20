@@ -628,7 +628,6 @@ const texts = [
     'Ether Classic',
     'Litecoin',
     'Dai',
-    'Tether',
 
     // Authentication errors
     'Invalid document format.',
