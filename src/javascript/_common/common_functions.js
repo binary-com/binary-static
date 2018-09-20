@@ -51,10 +51,7 @@ const checkInput = (type, wrong_val) => {
  * if yes, update the data-value. if no, return false.
  */
 const dateValueChanged = (element, type) => new Promise((resolve) => {
-    // fix for iOS:
-    // wrap setImmediate to execute this chunk of code immediately after the main event execution is done
-    // this is to ensure selected date is always within minDate and maxDate value
-    setImmediate(() => {
+    const checkNewDateTime = () => {
         let value;
         if (element.selectedOptions) {
             value = element.selectedOptions[0].getAttribute('data-value');
@@ -62,9 +59,10 @@ const dateValueChanged = (element, type) => new Promise((resolve) => {
             value = element.value;
         }
         const data_value = element.getAttribute('data-value');
-        if (data_value === value ||
-            moment(data_value).isBefore(moment(element.getAttribute('min'))) ||
-            moment(data_value).isAfter(moment(element.getAttribute('max')))
+        if (data_value === value &&
+            moment(data_value).isBetween(
+                moment(element.getAttribute('min')).utc(),
+                moment(element.getAttribute('max')).utc(), null, '[]') // inclusive minDate and maxDate
         ) {
             resolve(false);
         }
@@ -72,7 +70,15 @@ const dateValueChanged = (element, type) => new Promise((resolve) => {
             element.setAttribute('data-value', value);
         }
         resolve(true);
-    });
+    };
+    if (type === 'date') {
+        // fix for iOS:
+        // wrap setImmediate to execute this chunk of code immediately after the main event execution is done
+        // this is to ensure selected date is always within minDate and maxDate value
+        setImmediate(checkNewDateTime);
+    } else {
+        checkNewDateTime();
+    }
 });
 
 const selectorExists = element => (typeof (element) !== 'undefined' && element !== null);
