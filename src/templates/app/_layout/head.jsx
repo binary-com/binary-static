@@ -18,6 +18,7 @@ const Head = () => (
         <meta property='og:title' content={it.broker_name} />
         <meta property='og:type' content='website' />
         <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
+        <meta name='format-detection' content='telephone=no' />
 
         <Title />
 
