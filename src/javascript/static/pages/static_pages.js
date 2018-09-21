@@ -48,6 +48,6 @@ module.exports = {
         onUnload: () => { MenuSelector.clean(); },
     },
     Tour: {
-        onLoad: () => { hideEU('tour'); },
+        onLoad: () => { hideEU(); },
     },
 };

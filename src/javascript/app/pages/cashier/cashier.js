@@ -80,7 +80,7 @@ const Cashier = (() => {
         PaymentMethods: {
             onLoad: () => {
                 showContent();
-                hideEU('payment_methods_wrapper');
+                hideEU();
             },
         },
     };
