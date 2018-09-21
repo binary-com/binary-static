@@ -618,7 +618,7 @@ li strong.margin-right {
     }
 }
 
-.no-capitalize > a {
+.no-capitalize, .no-capitalize > a {
     text-transform: none !important;
 }
 
