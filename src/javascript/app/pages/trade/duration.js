@@ -312,22 +312,22 @@ const Durations = (() => {
 
     const expiryDateOnChange = ($expiry_date) => {
         $expiry_date.off('change').on('change', function () {
-            if (!CommonFunctions.dateValueChanged(this, 'date')) {
-                return false;
-            }
-            let selected_value;
-            if ($(this).is('select')) {
-                selected_value = $(this).find('option:selected').attr('data-value');
-                $expiry_date.attr('data-value', selected_value);
-            } else {
-                selected_value = this.getAttribute('data-value');
-            }
-            const requested = selectEndDate(moment(selected_value));
-            if (requested < 1) {
-                commonTrading.timeIsValid($('#expiry_time'));
-                Price.processPriceRequest();
-            }
-            return true;
+            CommonFunctions.dateValueChanged(this, 'date').then(result => {
+                if (!result) return false;
+                let selected_value;
+                if ($(this).is('select')) {
+                    selected_value = $(this).find('option:selected').attr('data-value');
+                    $expiry_date.attr('data-value', selected_value);
+                } else {
+                    selected_value = this.getAttribute('data-value');
+                }
+                const requested = selectEndDate(moment(selected_value));
+                if (requested < 1) {
+                    commonTrading.timeIsValid($('#expiry_time'));
+                    Price.processPriceRequest();
+                }
+                return true;
+            });
         });
     };
 
