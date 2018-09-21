@@ -53,11 +53,11 @@ describe('CommonFunctions', () => {
 
     describe('.dateValueChanged()', () => {
         it('detects value hasn\'t changed', () => {
-            CommonFunctions.dateValueChanged(date_element, 'date').then(result => expect(result).to.eq(false));
+            expect(CommonFunctions.dateValueChanged(date_element, 'date')).to.eq(false);
         });
         it('detects value has changed', () => {
             date_element.value = '2017-06-22';
-            CommonFunctions.dateValueChanged(date_element, 'date').then(result => expect(result).to.eq(true));
+            expect(CommonFunctions.dateValueChanged(date_element, 'date')).to.eq(true);
         });
         it('correctly updates data-value to new value', () => {
             expect(date_element.getAttribute('data-value')).to.eq(date_element.value);
