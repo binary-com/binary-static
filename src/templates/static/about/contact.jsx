@@ -37,9 +37,11 @@ const Contact = () => (
                                     </div>
                                     <div className='gr-row'>
                                         <div className='gr-12' id='display_cs_telephone'>
-                                            {('+44 (0) 1666 800042')}
+                                            <a href='tel: +44 (0) 1666 800042'>
+                                                {('+44 (0) 1666 800042')}
+                                            </a>
                                             <br />
-                                            {it.L('[_1] (Toll Free)', '0800 011 9847')}
+                                            {it.L('[_1] (Toll Free)', '<a href="tel:0800 011 9847">0800 011 9847</a>')}
                                         </div>
                                     </div>
                                 </div>

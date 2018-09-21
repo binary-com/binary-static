@@ -53,15 +53,15 @@ const ReferenceLinks = ({ pdf_file, video_link }) => (
 );
 
 const CustomTableHead = ({ data }) => (
-    <th colSpan={5} className='th-list'>
+    <React.Fragment>
         {data.map((item, index) => (
             <span key={index} className='th'>{item.text}</span>
         ))}
-    </th>
+    </React.Fragment>
 );
 
 const CustomTableData = ({ data }) => (
-    <td colSpan={5} className='toggler'>
+    <React.Fragment>
         {data.map((item, index) => (
             <div key={index} className={item.td ? 'td-description' : 'td-list active'}>
                 {item.td && <span className='td'>{item.td}</span>}
@@ -72,13 +72,13 @@ const CustomTableData = ({ data }) => (
                 }
             </div>
         ))}
-    </td>
+    </React.Fragment>
 );
 
 const PaymentMethods = () => {
     const head = [
         { text: it.L('Method') },
-        { custom_th: <CustomTableHead data={[
+        { attributes: { colSpan: 5, className: 'th-list' }, custom_th : <CustomTableHead data={[
             { text: it.L('Currencies') },
             { text: it.L('Min-Max Deposit') },
             { text: it.L('Min-Max Withdrawal') },
@@ -128,7 +128,7 @@ const PaymentMethods = () => {
                                     id : 'bank-transfer',
                                     row: [
                                         { text: <PaymentLogo logo='bank_transfer' /> },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('Deposit and withdraw your funds via international bank wire transfer.') },
                                             { td_list: [
                                                 { text: 'USD GBP EUR AUD' },
@@ -147,7 +147,7 @@ const PaymentMethods = () => {
                                     id : 'internet-bank-transfer',
                                     row: [
                                         { text: <PaymentLogo logo='internet_bank_transfer' /> },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('Enjoy the simplicity of online banking to fund your [_1] account.', it.website_name) },
                                             { td_list: [
                                                 { text: 'USD GBP EUR' },
@@ -166,7 +166,7 @@ const PaymentMethods = () => {
                                     id : 'paysec',
                                     row: [
                                         { text: <PaymentLogo logo='paysec' />, className: 'eu-hide-parent' },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: 'PaySec was founded in 2014 to provide customers and merchants in the Asian region with a comprehensive range of payment methods through one payment gateway.' },
                                             { td_list: [
                                                 { text: 'USD' },
@@ -194,7 +194,7 @@ const PaymentMethods = () => {
                                     id : 'visa',
                                     row: [
                                         { text: <PaymentLogo logo='visa' /> },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more info, please visit [_1].', `${createLink('http://visa.com')}`) },
                                             { td_list: [
                                                 { text: 'USD GBP EUR AUD' },
@@ -213,7 +213,7 @@ const PaymentMethods = () => {
                                     id : 'mastercard',
                                     row: [
                                         { text: <PaymentLogo logo='mastercard' /> },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('Mastercard is an international company that processes payments made with Mastercard-branded credit and debit cards. For more info, please visit [_1].', `${createLink('https://www.mastercard.us')}`) },
                                             { td_list: [
                                                 { text: 'USD GBP EUR AUD' },
@@ -245,7 +245,7 @@ const PaymentMethods = () => {
                                     id : 'fasapay',
                                     row: [
                                         { text: <PaymentLogo logo='fasapay' />, className: 'eu-hide-parent' },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('FasaPay enables electronic money transfers for individuals and payment gateways for merchants. For more info, please visit [_1].', `${createLink('https://www.fasapay.com')}`) },
                                             { td_list: [
                                                 { text: 'USD' },
@@ -264,7 +264,7 @@ const PaymentMethods = () => {
                                     id : 'perfect-money',
                                     row: [
                                         { text: <PaymentLogo logo='perfect_money' />, className: 'eu-hide-parent' },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('Perfect Money allows individuals to make instant payments and money transfers securely on the Internet. For more info, please visit [_1].', `${createLink('https://perfectmoney.is')}`) },
                                             { td_list: [
                                                 { text: 'USD EUR' },
@@ -283,7 +283,7 @@ const PaymentMethods = () => {
                                     id : 'skrill',
                                     row: [
                                         { text: <PaymentLogo logo='skrill' /> },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('Skrill offers global payment solutions for individuals who wish to deposit funds, shop online, and transfer money to family and friends. For more info, please visit [_1].', `${createLink('https://www.skrill.com')}`) },
                                             { td_list: [
                                                 { text: 'USD GBP EUR AUD' },
@@ -302,7 +302,7 @@ const PaymentMethods = () => {
                                     id : 'neteller',
                                     row: [
                                         { text: <PaymentLogo logo='neteller' /> },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('NETELLER provides businesses and individuals with a fast, simple, and secure way to transfer money online. For more info, please visit [_1].', `${createLink('https://www.neteller.com')}`) },
                                             { td_list: [
                                                 { text: 'USD GBP EUR AUD' },
@@ -321,7 +321,7 @@ const PaymentMethods = () => {
                                     id : 'webmoney',
                                     row: [
                                         { text: <PaymentLogo logo='webmoney' /> },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('WebMoney is an online payment settlement system that’s been operating since 1998. For more info, please visit [_1].', `${createLink('https://www.wmtransfer.com')}`) },
                                             { td_list: [
                                                 { text: 'USD EUR' },
@@ -340,7 +340,7 @@ const PaymentMethods = () => {
                                     id : 'qiwi',
                                     row: [
                                         { text: <PaymentLogo logo='qiwi' />, className: 'eu-hide-parent' },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('Qiwi is a payment service provider that was founded in 2007. It provides individuals with a simple way to transfer money, receive payments, and pay online. For more info, please visit [_1].', `${createLink('https://qiwi.com')}`) },
                                             { td_list: [
                                                 { text: 'USD EUR' },
@@ -359,7 +359,7 @@ const PaymentMethods = () => {
                                     id : 'yandex',
                                     row: [
                                         { text: <PaymentLogo logo='yandex' />, className: 'eu-hide-parent' },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('Yandex.Money is an electronic payment service provider that offers consumers an easy, safe, and reliable online payment method. For more info, please visit [_1].', `${createLink('https://money.yandex.ru')}`) },
                                             { td_list: [
                                                 { text: 'USD' },
@@ -378,7 +378,7 @@ const PaymentMethods = () => {
                                     id : 'paysafe',
                                     row: [
                                         { text: <PaymentLogo logo='paysafe' /> },
-                                        { custom_td: <CustomTableData data={[
+                                        { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                             { td: it.L('paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more info, please visit [_1].', `${createLink('https://www.paysafecard.com')}`) },
                                             { td_list: [
                                                 { text: 'USD GBP EUR AUD' },
@@ -407,7 +407,7 @@ const PaymentMethods = () => {
                                         id : 'bitcoin',
                                         row: [
                                             { text: <PaymentLogo logo='bitcoin' /> },
-                                            { custom_td: <CustomTableData data={[
+                                            { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                                 { td: it.L('Bitcoin is the world’s first decentralised cryptocurrency, created in 2009. For more info, please visit [_1].', `${createLink('https://bitcoin.org')}`) },
                                                 { td_list: [
                                                     { text: 'BTC' },
@@ -426,7 +426,7 @@ const PaymentMethods = () => {
                                         id : 'bitcoin-cash',
                                         row: [
                                             { text: <PaymentLogo logo='bitcoin_cash' /> },
-                                            { custom_td: <CustomTableData data={[
+                                            { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                                 { td: it.L('Bitcoin Cash is a cryptocurrency that emerged from a fork of the original Bitcoin. For more info, please visit [_1].', `${createLink('https://www.bitcoincash.org')}`) },
                                                 { td_list: [
                                                     { text: 'BCH' },
@@ -445,7 +445,7 @@ const PaymentMethods = () => {
                                         id : 'ethereum-black',
                                         row: [
                                             { text: <PaymentLogo logo='ethereum_black' /> },
-                                            { custom_td: <CustomTableData data={[
+                                            { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                                 { td: it.L('Ether is a cryptocurrency that is used to pay for transactions on the Ethereum platform. For more info, please visit [_1].', `${createLink('https://www.ethereum.org')}`) },
                                                 { td_list: [
                                                     { text: 'ETH' },
@@ -464,7 +464,7 @@ const PaymentMethods = () => {
                                     //     id : '',
                                     //     row: [
                                     //         { text: <PaymentLogo logo='' /> },
-                                    //         { custom_td: <CustomTableData data={[
+                                    //         { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                     //             { td: 'description' },
                                     //             { td_list: [
                                     //                 { text: 'ETC' },
@@ -482,7 +482,7 @@ const PaymentMethods = () => {
                                         id : 'litecoin',
                                         row: [
                                             { text: <PaymentLogo logo='litecoin' /> },
-                                            { custom_td: <CustomTableData data={[
+                                            { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                                 { td: it.L('Litecoin is a cryptocurrency similar to Bitcoin, but capable of a higher transaction volume and faster confirmation times. For more info, please visit [_1].', '<a href="https://litecoin.org" target="_blank">https://litecoin.org</a>') },
                                                 { td_list: [
                                                     { text: 'LTC' },
