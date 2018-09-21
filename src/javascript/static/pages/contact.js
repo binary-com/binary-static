@@ -14,9 +14,17 @@ const Contact = (() => {
 
         Dropdown('#cs_telephone_number');
         $('#cs_telephone_number').on('change.cs', function () {
-            const val = $(this).val().split(',');
+            const val = $(this).val().split(',').map(raw_str => wrapNumberInLink(raw_str));
             $('#display_cs_telephone').html(val[0] + (val.length > 1 ? `<br />${val[1]}` : ''));
         });
+    };
+
+    const wrapNumberInLink = (raw_str) => {
+        const str = raw_str.trim();
+        const m = str.match(/ \(Toll Free\)/i);
+        const number = m ? str.slice(0, m.index) : str;
+        const append = m ? str.slice(m.index) : '';
+        return `<a href="tel:${number}">${number}</a>${append}`;
     };
 
     const isWeekday = (moment_obj) => !/^(0|6)$/.test(moment_obj.day()); // 0 for sunday and 6 for saturday

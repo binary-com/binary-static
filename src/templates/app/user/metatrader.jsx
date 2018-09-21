@@ -168,6 +168,10 @@ const Metatrader = () => (
                                     <img src={it.url_for('images/pages/metatrader/dashboard/windows.svg')} />
                                     <a href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' download>{it.L('Download for Windows')}</a>
                                 </li>
+                                <li>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/ea.svg')} />
+                                    <a href='https://s3.amazonaws.com/binary-mt5/Binary.ex5' download>{it.L('Download Expert Advisor')}</a>
+                                </li>
                                 <p className='badges'>
                                     <a href='https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
                                         <span className='app-store-badge' />

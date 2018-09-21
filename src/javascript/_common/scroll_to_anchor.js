@@ -53,7 +53,7 @@ const ScrollToAnchor = (() => {
         const els = document.querySelectorAll('[data-anchor]');
         els.forEach(el => {
             if (el.querySelector('.data-anchor-link')) return;
-            const title = el.innerText;
+            const title = el.getAttribute('data-anchor') === 'true' ? el.innerText : el.getAttribute('data-anchor'); // use data-anchor value else use innerText
             const id = encode(title);
             el.dataset.anchor = id;
             const anchor_link = makeAnchorLink(id);

@@ -112,6 +112,7 @@ const pages_config = {
     welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStarted.BinaryOptions },
+    'binary-options-mt5'     : { module: GetStarted.BinaryOptionsForMT5 },
     'careers'                : { module: StaticPages.Careers },
     'cyberjaya'              : { module: StaticPages.Locations },
     'cfds'                   : { module: GetStarted.CFDs },

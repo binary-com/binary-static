@@ -3,7 +3,7 @@ import ListNested from '../../../_common/components/list_nested.jsx';
 
 const Api = () => (
     <div>
-        <h2 data-anchor>{it.L('[_1] Application Program Interface ("API") Terms and Conditions', it.website_name)}</h2>
+        <h2 data-anchor='api-terms-and-conditions'>{it.L('[_1] Application Program Interface ("API") Terms and Conditions', it.website_name)}</h2>
         <p>{it.L('This document (the "Agreement") sets out the terms and conditions ("Terms") between "the Company" which is Binary Services Ltd ("we," "us," and "our"), and you (the person who registered for the [_1] Application Program Interface ("API"); "you", or "your").', it.website_name)}</p>
         <ol className='reset_ol'>
             <ListNested

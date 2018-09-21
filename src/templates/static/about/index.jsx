@@ -71,7 +71,7 @@ const Index = () => (
                 <SeparatorLine no_wrapper sub_class='gr-padding-10' />
             </div>
             <div className='gr-parent'>
-                <h1 className='center-text gr-padding-20' data-anchor>
+                <h1 className='center-text gr-padding-20' data-anchor='our-values'>
                     {it.L('Our values')}
                 </h1>
                 <div className='gr-row'>

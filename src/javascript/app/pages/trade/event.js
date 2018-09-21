@@ -176,11 +176,11 @@ const TradingEvents = (() => {
         $('#expiry_time')
             .on('focus click', () => { attachTimePicker('#expiry_time', 1); })
             .on('change input blur', function () {
-                if (!dateValueChanged(this, 'time')) {
-                    return false;
-                }
-                Durations.setTime(end_time_element.value, 1);
-                return true;
+                dateValueChanged(this, 'time').then(result => {
+                    if (!result) return false;
+                    Durations.setTime(end_time_element.value, 1);
+                    return true;
+                });
             });
 
         /*
@@ -222,19 +222,19 @@ const TradingEvents = (() => {
             $time_start
                 .on('focus click', () => { attachTimePicker('#time_start'); })
                 .on('change input blur', function () {
-                    if (!dateValueChanged(this, 'time')) {
-                        return false;
-                    }
-                    Defaults.set('time_start', time_start_element.value);
-                    let make_price_request = 1;
-                    if (Defaults.get('expiry_date')) {
-                        // if time changed, proposal will be sent there if not we should send it here
-                        make_price_request = Durations.selectEndDate(moment(Defaults.get('expiry_date'))) ? -1 : 1;
-                    }
-                    if (make_price_request > 0) {
-                        Price.processPriceRequest();
-                    }
-                    return true;
+                    dateValueChanged(this, 'time').then(result => {
+                        if (!result) return false;
+                        Defaults.set('time_start', time_start_element.value);
+                        let make_price_request = 1;
+                        if (Defaults.get('expiry_date')) {
+                            // if time changed, proposal will be sent there if not we should send it here
+                            make_price_request = Durations.selectEndDate(moment(Defaults.get('expiry_date'))) ? -1 : 1;
+                        }
+                        if (make_price_request > 0) {
+                            Price.processPriceRequest();
+                        }
+                        return true;
+                    });
                 });
         };
 

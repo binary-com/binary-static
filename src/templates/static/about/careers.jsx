@@ -193,7 +193,7 @@ const Careers = () => {
 
             <div className='container'>
                 <div className='gr-padding-30 center-text'>
-                    <h1 data-anchor>{it.L('Open positions')}</h1>
+                    <h1 data-anchor='open-positions'>{it.L('Open positions')}</h1>
                     <p>{it.L('[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we\'ve developed a number of exciting career opportunities in the following areas:', it.website_name)}</p>
                 </div>
                 <div className='gr-row'>
