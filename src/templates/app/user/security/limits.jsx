@@ -37,15 +37,15 @@ const Limits = () => {
                                 tbody: [
                                     [
                                         { text: open_position },
-                                        { id: 'open-positions' },
+                                        { text: '', id: 'open-positions' },
                                     ],
                                     [
                                         { text: account_balance },
-                                        { id: 'account-balance' },
+                                        { text: '', id: 'account-balance' },
                                     ],
                                     [
                                         { text: payout },
-                                        { id: 'payout' },
+                                        { text: '', id: 'payout' },
                                     ],
                                     [
                                         { className: 'gr-padding-10', id: 'gap' },

@@ -41,7 +41,7 @@ const PersonalDetails = () => (
 
         <form className='form gr-padding-10 invisible' id='frmPersonalDetails'>
             <Fieldset legend={it.L('Details')}>
-                <FormRow type='label'  label={it.L('Name')} is_bold id='lbl_name' row_class='invisible' row_id='row_name' />
+                <FormRow type='label'  label={it.L('Name')} is_bold id='lbl_name' row_class='invisible RealAcc' row_id='row_name' />
                 <FormRow type='label'  label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_class='invisible RealAcc' />
                 <FormRow type='label'  label={it.L('Citizenship')} id='lbl_citizen' row_id='row_lbl_citizen' row_class='invisible' />
                 <FormRow type='select' label={it.L('Citizenship')} id='citizen' row_id='row_citizen' row_class='invisible' attributes={{ single: 'single' }} />
