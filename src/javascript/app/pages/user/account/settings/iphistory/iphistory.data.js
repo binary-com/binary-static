@@ -14,6 +14,7 @@ const IPHistoryData = (() => {
             { name: 'IE',        regex: /msie\s([\d.]+[\d])/i },
             { name: 'IE',        regex: /trident\/\d+\.\d+;.*[rv:]+(\d+\.\d)/i },
             { name: 'Firefox',   regex: /firefox\/([\d\w.-]+)/i },
+            { name: 'Binary app', regex: /binary\.com V([\d.]+)/i },
         ];
         for (let i = 0; i < lookup.length; i++) {
             const info  = lookup[i];
