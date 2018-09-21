@@ -47,7 +47,6 @@ module.exports = {
         onUnload: () => { MenuSelector.clean(); },
     },
     Cloudflare: {
-        onLoad  : () => {},
-        onUnload: () => {},
+        onLoad: () => {},
     },
 };
