@@ -1,4 +1,3 @@
-const moment        = require('moment');
 const createElement = require('./utility').createElement;
 
 const jqueryuiTabsToDropdown = ($container) => {
@@ -50,30 +49,21 @@ const checkInput = (type, wrong_val) => {
  * function to check if new date is selected using native picker
  * if yes, update the data-value. if no, return false.
  */
-const dateValueChanged = (element, type) => new Promise((resolve) => {
-    // fix for iOS:
-    // wrap setImmediate to execute this chunk of code immediately after the main event execution is done
-    // this is to ensure selected date is always within minDate and maxDate value
-    setImmediate(() => {
-        let value;
-        if (element.selectedOptions) {
-            value = element.selectedOptions[0].getAttribute('data-value');
-        } else {
-            value = element.value;
-        }
-        const data_value = element.getAttribute('data-value');
-        if (data_value === value ||
-            moment(data_value).isBefore(moment(element.getAttribute('min'))) ||
-            moment(data_value).isAfter(moment(element.getAttribute('max')))
-        ) {
-            resolve(false);
-        }
-        if (element.getAttribute('type') === type) {
-            element.setAttribute('data-value', value);
-        }
-        resolve(true);
-    });
-});
+const dateValueChanged = (element, type) => {
+    let value;
+    if (element.selectedOptions) {
+        value = element.selectedOptions[0].getAttribute('data-value');
+    } else {
+        value = element.value;
+    }
+    if (element.getAttribute('data-value') === value) {
+        return false;
+    }
+    if (element.getAttribute('type') === type) {
+        element.setAttribute('data-value', value);
+    }
+    return true;
+};
 
 const selectorExists = element => (typeof (element) !== 'undefined' && element !== null);
 
