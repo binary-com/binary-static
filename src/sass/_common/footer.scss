@@ -20,14 +20,16 @@
     }
     #footer-regulatory {
         padding-bottom: 30px;
-        color: #a8a8a8; // stylelint-disable color-no-hex
 
-        a {
+        a, p {
             font-size: 13px !important;
+            font-weight: 100;
+        }
+        a {
+            color: $COLOR_GRAY;
         }
         p {
-            font-size: 13px;
-            font-weight: 100;
+            color: #a8a8a8; // stylelint-disable color-no-hex
             text-align: justify;
             margin: 0 0 10px;
         }
