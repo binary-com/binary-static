@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-09-21 05:33\n"
+"PO-Revision-Date: 2018-09-21 08:52\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -577,7 +577,7 @@ msgid "A list of payment methods you will accept from Clients"
 msgstr "Список методов оплаты, которые Вы будете принимать от Клиентов"
 
 msgid "A lookback contract has a payout that depends on the optimum high or low achieved by the market. The option allows the holder to \"look back\" over time to determine the payout."
-msgstr "Выплата в ретроспективном контракте зависит от оптимальной наибольшей или наименьшей цены, достигнутой за определённый период времени. Опцион позволяет владельцу \"оглянуться назад\" на некоторый период, чтобы установить выплату."
+msgstr "Выплата в контракте Lookback зависит от оптимальной наибольшей или наименьшей цены, достигнутой за определённый период времени. Опцион позволяет владельцу \"оглянуться назад\" на некоторый период, чтобы установить выплату."
 
 msgid "A native speaker with strong command of the English language, in both oral and written form"
 msgstr "Носитель языка с отличным знанием английского (в письменной и устной форме)"
@@ -730,7 +730,7 @@ msgid "Account Deposit Currency"
 msgstr "Валюта пополнения счёта"
 
 msgid "Account Equity"
-msgstr ""
+msgstr "Остаток средств на счету"
 
 msgid "Account Free Margin"
 msgstr "Свободная маржа счёта"
@@ -1078,7 +1078,7 @@ msgid "An Order to execute a Transaction to close an Open Position when the Pric
 msgstr "инструкция исполнить контракт с целью закрыть открытую позицию, когда цена достигнет указанного Вами уровня."
 
 msgid "An Order to open or close a position in the market identified by reference to an Underlying Instrument at the current price."
-msgstr ""
+msgstr "ордер или приказ с целью открытия или закрытия позиции на рынке, на определённом базовом инструменте и по текущей цене."
 
 msgid "An Order to open or close a transaction if and when a price quote becomes more favourable to you when compared against the current price."
 msgstr "инструкция открыть или закрыть контракт, если/когда цена котировки будет более благоприятна для Вас, по сравнению с текущей ценой."
@@ -1093,7 +1093,7 @@ msgid "An assertive, sales-driven personality, able to adapt quickly and achieve
 msgstr "Энергичная личность, ориентированная на продажи, способная быстро адаптироваться и достигать высоких результатов"
 
 msgid "An execution instruction given by you to us to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order etc."
-msgstr ""
+msgstr "исполнение нами инструкций, предоставленных Вами с целью открытия или закрытия позиции на рынке, со ссылкой на базовый инструмент, включая рыночный ордер, стоп-ордер, лимитный ордер и т. д."
 
 msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, Russian, and Indonesian"
 msgstr "Отличный интерфейс и поддержка на русском, английском, испанском, французском, немецком, португальском, китайском, итальянском, тайском, польском и индонезийском языках,"
@@ -1687,7 +1687,7 @@ msgid "Binary Options"
 msgstr "Бинарные опционы"
 
 msgid "Binary Options Real Account"
-msgstr ""
+msgstr "Реальный счёт для торговли бинарными опционами"
 
 msgid "Binary Options Trading Experience"
 msgstr "Опыт торговли бинарными опционами"
@@ -1757,6 +1757,9 @@ msgstr "В среднем, платформа Binary исполняет %1 %2к�
 
 msgid "Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %1Responsible Trading%2. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "Binary.com – это провайдер услуг в сфере онлайн торговли, удостоенный высоких наград и помогающий своим клиентам торговать на финансовых рынках посредством контрактов на бинарных опционах и CFD. Торговля бинарными опционами и CFD на Индексах волатильности относится к категории азартных игр. Пожалуйста, помните, что азартные игры могут перерасти в зависимость и играйте ответственно. Получите больше информации об %1ответственной торговле%2. Ряд продуктов доступен не во всех странах мира. Услуги данного сайта недоступны для лиц моложе 18 лет, а также в следующих странах: США, Канада, Коста-Рика, Гонконг."
+
+msgid "Binary.com recommends 1.1.1.1"
+msgstr ""
 
 msgid "Bitcoin"
 msgstr "Bitcoin"
@@ -2170,7 +2173,7 @@ msgid "Click on the <strong>X</strong> button at the top right to save and close
 msgstr "Нажмите кнопку <strong>X</strong> в правом верхнем углу, чтобы сохранить и закрыть."
 
 msgid "Client (or you)"
-msgstr ""
+msgstr "Клиент (или Вы)"
 
 msgid "Client Classification"
 msgstr "Классификация клиентов"
@@ -2295,6 +2298,9 @@ msgstr "закрыть или частично закрыть все или лю
 msgid "Closing price"
 msgstr "Цена закрытия"
 
+msgid "Cloudflare's public DNS service gives you more secure and faster web browsing."
+msgstr ""
+
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "Совместная работа со специалистами нашей команды IT над инновационными улучшениями технических возможностей и работы нашего сайта"
 
@@ -2350,7 +2356,7 @@ msgid "Compare MetaTrader 5 accounts"
 msgstr "Сравните счета на MetaTrader 5"
 
 msgid "Compensation Scheme"
-msgstr ""
+msgstr "Схема компенсации"
 
 msgid "Competence"
 msgstr ""
@@ -2554,7 +2560,7 @@ msgid "Contributors"
 msgstr "Соавторы"
 
 msgid "Control of Assets Rules"
-msgstr ""
+msgstr "Правила контроля активов"
 
 msgid "Controlled risk"
 msgstr "Контролируемый риск"
@@ -3451,7 +3457,7 @@ msgid "Even/Odd contracts will be refunded at the purchase price if the contract
 msgstr "Цена покупки контрактов Чётное/Нечётное будет возмещена, если контракт не истечёт в течение 5 минут."
 
 msgid "Event"
-msgstr ""
+msgstr "Обстоятельство"
 
 msgid "Event examples include circumstances whereby the type of Transaction, which your Order is related to, ceased to be offered, or a Corporate Event, or the insolvency of a Company whose shares are related to the subject matter of the Order, and others."
 msgstr "обстоятельства могут включать события, ввиду которых перестанет предлагаться тип контракта, к которому относится Ваш ордер, а также корпоративные мероприятия или неплатежеспособность Компании (акции которой являются объектом ордера) и другие ситуации."
@@ -5160,8 +5166,8 @@ msgstr "Мы обязуемся всегда и при любых обстоят
 msgid "It is prohibited to sell, transfer and/or acquire accounts to/from other clients. Transfer of funds among other clients is also prohibited."
 msgstr "Запрещается продавать, передавать и/или приобретать счета от других клиентов или другим клиентам. Передача средств между клиентами также запрещена."
 
-msgid "It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a blue 'Sell' button next to your trade in the portfolio."
-msgstr "Иногда бывает доступна кнопка досрочной продажи контракта, но только в случаях, когда может быть предложена справедливая рыночная цена. Если данная опция доступна, Вы увидите синюю кнопку \"Продать\" рядом с контрактом."
+msgid "It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a 'Sell' button inside the popup window, after clicking on the 'View' button next to your trade in the portfolio."
+msgstr ""
 
 msgid "It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed."
 msgstr "Каждый Клиент обязуется прочитать и понять данное юридическое соглашение, а также Правила и условия, в соответствии с которыми совершается приобретение финансовых контрактов на этом сайте."
@@ -5278,7 +5284,7 @@ msgid "Labuan"
 msgstr "Лабуан"
 
 msgid "Labuan is a federal territory made up of the main island, Labuan Island, and six other small islands off the coast of Sabah. Its name comes from the Malay word, 'labuhan' which means harbour. Formerly a part of the Brunei Sultanate, it was ceded to the British Crown in 1846, before joining Malaysia in 1963."
-msgstr ""
+msgstr "Лабуан является федеральной территорией, состоящей из основного острова Лабуан и шести мелких островов, входящих в штат Сабах. Название острова произошло от малазийского слова \"лабухан,\" что в переводе означает \"гавань\". Будучи частью султаната Бруней, данная территория была передана Великобритании в 1846 году, а в 1963 году официально присоединилась к Малайзии."
 
 msgid "Labuan, Malaysia"
 msgstr "Лабуан, Малайзия"
@@ -5428,7 +5434,7 @@ msgid "Limit Order"
 msgstr "Лимитный ордер"
 
 msgid "Limit/Limit Price"
-msgstr ""
+msgstr "Лимит/лимитная цена"
 
 msgid "Limitations on Liability"
 msgstr "Ограничение ответственности"
@@ -5458,7 +5464,7 @@ msgid "Litecoin"
 msgstr "Litecoin"
 
 msgid "Litecoin is a cryptocurrency similar to Bitcoin, but capable of a higher transaction volume and faster confirmation times. For more info, please visit %1."
-msgstr ""
+msgstr "Litecoin - это криптовалюта, похожая на Bitcoin, но позволяющая проводить более крупные транзакции и обладающая более коротким сроком подтверждения переводов. Подробную информацию можно получить здесь: %1."
 
 msgid "Litecoin vs US Dollar"
 msgstr "Litecoin против доллара США"
@@ -5521,10 +5527,10 @@ msgid "Long:"
 msgstr "Длинная позиция:"
 
 msgid "Lookbacks"
-msgstr "Ретроспективн. опционы"
+msgstr "Oпционы Lookback"
 
 msgid "Lookbacks options are currently only available for %1Volatility Indices%2."
-msgstr "В данное время Ретроспективн. опционы доступны только для %1Индексов волатильности%2."
+msgstr "В данное время опционы Lookback доступны только для %1Индексов волатильности%2."
 
 msgid "Loss"
 msgstr "Потери"
@@ -5788,7 +5794,7 @@ msgid "Market Opinions"
 msgstr "Информация о рынках"
 
 msgid "Market Order"
-msgstr ""
+msgstr "Рыночный ордер"
 
 msgid "Market execution"
 msgstr "Рыночное исполнение"
@@ -6130,7 +6136,7 @@ msgid "Natural wonders"
 msgstr ""
 
 msgid "Nearest price reasonably available and quoted by %1 when our Price quotation reaches or goes beyond the level of your Stop Order."
-msgstr ""
+msgstr "самая ранняя цена, которая доступна и предоставлена %1, когда наша котировка достигает или выходит за пределы Вашего уровня стоп-ордера."
 
 msgid "Need more information?"
 msgstr "Хотите получить больше информации?"
@@ -6214,7 +6220,7 @@ msgid "Next"
 msgstr "Далее"
 
 msgid "Next Available Price"
-msgstr ""
+msgstr "Следующая доступная цена"
 
 msgid "No"
 msgstr "Нет"
@@ -7983,6 +7989,9 @@ msgstr "Установка ограничений для пополнений и
 msgid "Set the length of your trade from 10 seconds to 365 days, whether you have a short-term or long-term view of the markets."
 msgstr "Установите длительность выбранного контракта, от 10 секунд до 365 дней, в зависимости от Вашего краткосрочного или долгосрочного прогноза."
 
+msgid "Set up %1 on your device now"
+msgstr ""
+
 msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
 msgstr "Проведение и управление рекламными кампаниями в социальных сетях, эффективно ориентированными на потенциальных клиентов и партнёров"
 
@@ -8877,6 +8886,9 @@ msgstr "Компания по своему единоличному усмотр
 msgid "The Company, under no circumstances shall provide Investment and/or Financial and/or Legal and/or Tax and/or Regulatory and/or other Investment advice or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written or video information, which we may publish on our website or provide to you in any other manner. We will endeavour to ensure the accuracy and completeness of this information but it will not constitute independent investment research or investment advice provided by us to you."
 msgstr ""
 
+msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
+msgstr ""
+
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr "Финансовые продукты, которые мы предлагаем, являются контрактами между Вами и нами. В этих контрактах, согласно конкретным условиям соответствующего контракта, с учетом комиссии или цены, которую Вы платите нам, мы обещаем платить Вам определенную сумму, если справочные активы или измерения имеют определенные показатели. Эти контракты, соответственно, не являются инструментами, которые мы содержим от Вашего имени или от защиты которых мы извлекаем выгоду в случае нашей несостоятельности. Аналогично, комиссия или цена, которую Вы платите, содержится не как деньги клиентов, а в качестве вознаграждения за наше обязательство выплаты."
 
@@ -9054,6 +9066,9 @@ msgstr "Период контракта – это временные рамки
 msgid "The cut-off time for performing Roll-overs and booking of the Roll-over Credit/Debit."
 msgstr "времени окончания ролловеров и бронирования ролловерного кредита/дебета."
 
+msgid "The default DNS services provided by your ISP can be slow and insecure. %1 recommends using Cloudflare's %2 DNS service that gives you a faster and more private way to browse the Internet."
+msgstr ""
+
 msgid "The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavour to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level."
 msgstr "Уровень стоп-аут, установленный на Вашем счету по умолчанию, указан на нашем вебсайте. Тем не менее, уровень стоп-аут по умолчанию может быть изменён по нашему единоличному усмотрению. Любые изменения уровня стоп-аут вступят в силу незамедлительно. Мы предпримем все разумные усилия, чтобы уведомить Вас об изменении уровня стоп-аут по умолчанию, опубликовав новый уровень стоп-аут на нашем вебсайте. Настоящим Вы обязуетесь регулярно следить за информацией на нашем сайте и узнавать уровень стоп-аут по умолчанию."
 
@@ -9175,7 +9190,7 @@ msgid "The personal information that we collect and hold is treated as confident
 msgstr "Собираемая и хранимая нами личная информация является конфиденциальной. Конфиденциальная информация не будет использоваться ни для каких иных целей, кроме предоставления Вам услуг торговли с использованием маржи, описанных в данном Соглашении. Конфиденциальная информация будет разглашена лишь в порядке и в случаях, предусмотренных законом. Также мы можем разглашать данную личную информацию следующим организациям: (i) другим компаниям, входящим в Binary Group; (ii) выбранной нами третьей стороне с целью предоставления нам помощи для обслуживания Вашего Реального счёта MT5; (iii) регулирующим органам по их обоснованной просьбе; (iv) выбранной нами третьей стороне, помогающей нам в осуществлении наших юридических или договорных прав по отношению к Вам, включая, но не ограничиваясь юридическими консультантами; (v) выбранной нами третьей стороне с целью расследования, предотвращения мошенничества или иной незаконной деятельности."
 
 msgid "The position in a market identified by reference to an Underlying Instrument, created by opening a Transaction as a result of placing a buy or sell Order to the extent that such position has not been closed in whole or in part by on opposite Order under this Agreement."
-msgstr ""
+msgstr "позиция на рынке со ссылкой на базовый инструмент, созданная в результате открытия контракта путём размещения ордера на покупку или продажу и не закрытая (в целом или частично) противоположным ордером в рамках данного Соглашения."
 
 msgid "The premier platform for trading binary options in the world's financial markets"
 msgstr "Ведущая платформа для торговли бинарными опционами на мировых финансовых рынках"
@@ -9190,7 +9205,7 @@ msgid "The price of your chosen investment appears on the platform/on your scree
 msgstr ""
 
 msgid "The price specified in your Limit Order."
-msgstr ""
+msgstr "цена, указанная в лимитном ордере."
 
 msgid "The profit is the difference between the purchase price (the stake) and the payout on a winning trade."
 msgstr "Прибыль - это разница между выплатой и ценой покупки (ставкой) выигравшего контракта."
@@ -10009,7 +10024,7 @@ msgid "Types of affiliate commission plans"
 msgstr "Виды планов партнёрских комиссионных"
 
 msgid "Types of lookbacks"
-msgstr "Виды ретроспективных опционов"
+msgstr "Виды опционов Lookback"
 
 msgid "Types of trades"
 msgstr "Виды контрактов"
@@ -10194,6 +10209,9 @@ msgstr "После прекращения действия или расторж
 msgid "Usage Limit"
 msgstr "Лимит использования"
 
+msgid "Use Cloudflare’s public DNS service for faster and more secure browsing."
+msgstr ""
+
 msgid "Use MT5’s comprehensive analysis tools for technical and fundamental analysis to predict price movement"
 msgstr ""
 
@@ -10363,19 +10381,19 @@ msgid "Vol 75"
 msgstr "Vol 75"
 
 msgid "Volatility 10 Index"
-msgstr ""
+msgstr "Индекс волатильн. 10"
 
 msgid "Volatility 100 Index"
-msgstr ""
+msgstr "Индекс волатильн. 100"
 
 msgid "Volatility 25 Index"
-msgstr ""
+msgstr "Индекс волатильн. 25"
 
 msgid "Volatility 50 Index"
-msgstr ""
+msgstr "Индекс волатильн. 50"
 
 msgid "Volatility 75 Index"
-msgstr ""
+msgstr "Индекс волатильн. 75"
 
 msgid "Volatility Indices"
 msgstr "Индексы волатильности"
@@ -10702,10 +10720,13 @@ msgid "What are binary options"
 msgstr "Что такое бинарные опционы"
 
 msgid "What are lookbacks"
-msgstr "Что такое ретроспективные опционы"
+msgstr "Что такое опционы Lookback"
 
 msgid "What is CFD trading"
 msgstr "Что такое торговля на CFD"
+
+msgid "What is DNS"
+msgstr ""
 
 msgid "What is Forex trading"
 msgstr "Что такое торговля на Forex"
@@ -10967,6 +10988,9 @@ msgstr "Преимущества торговли бинарными опцио�
 
 msgid "Why you should trade precious metals with %1"
 msgstr "Преимущества торговли драгоценными металлами на %1"
+
+msgid "Why you should use %1 instead of your ISP's default DNS service"
+msgstr ""
 
 msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
 msgstr "Максимальная выплата, если спот-котировка выше или равна вержнему барьеру."
@@ -11638,10 +11662,10 @@ msgid "Your %1 day withdrawal limit is currently %2 %3 (or equivalent in other c
 msgstr "Ваш дневной %1 лимит на вывод в настоящее время составляет %2 %3 (или эквивалентную сумму в другой валюте)."
 
 msgid "Your Account Equity minus your Total Margin."
-msgstr ""
+msgstr "остаток средств на Вашем счету минус общая сумма маржи."
 
 msgid "Your Account Equity refers to the sum of your Account Balance and the net of unrealised profit and loss."
-msgstr ""
+msgstr "Остаток средств на Вашем счету обозначает сумму баланса Вашего счёта и чистую сумму нереализованной прибыли и убытков."
 
 msgid "Your Client will receive an email notification informing him/her that the transfer has been processed."
 msgstr "Ваш клиент получит по электронной почте уведомление о том, что перевод был выполнен."
@@ -11665,16 +11689,16 @@ msgid "Your Property"
 msgstr "Ваша собственность"
 
 msgid "Your Real Money Account opened with %1 which you use to trade binary options with %1 Trading Platform and Binary Webtrader."
-msgstr ""
+msgstr "Ваш реальный счёт, открытый на %1 и используемый для торговли бинарными опционами на торговой платформе %1 и приложении Binary Webtrader."
 
 msgid "Your Real Money Account opened with the %1 MT5 Trading Platform licensed by MetaQuotes Software Corporation."
 msgstr ""
 
 msgid "Your account balance includes the Margin Requirement. The amount of your account balance in excess of the Margin Requirement is available for your withdrawal. The amount set aside for the Margin Requirement is not available for your withdrawal."
-msgstr ""
+msgstr "Баланс Вашего счёта включает Маржевые требования. Сумма баланса Вашего счёта, превышающая Маржевые требования, доступна для вывода. Сумма, оставленная для удовлетворения Маржевых требований, не может быть выведена со счёта."
 
 msgid "Your account balance represents:"
-msgstr ""
+msgstr "баланс Вашего счёта представляет собой:"
 
 msgid "Your account has no Login/Logout activity."
 msgstr "На Вашем счету нет активности входов/выходов."
@@ -11830,7 +11854,7 @@ msgid "a definite or indefinite period during which you wish to exclude yourself
 msgstr "определенный или неопределенный период, на который Вы желаете исключить себя из пользования сайтом."
 
 msgid "a financial instrument as defined in Article 2 Paragraph (5) of Regulation (EU) No 648/2012 of the European Parliament and of the Council (EMIR)."
-msgstr ""
+msgstr "финансовые инструменты, обозначенные в Статье 2, параграф (5) Правил (ЕС) № 648/2012 Правил регулирования инфраструктуры европейского финансового рынка (EMIR)."
 
 msgid "a limit on the amount of time you may trade in any given online session;"
 msgstr "лимит на время, которое Вы можете проводить в любой начатой сессии на сайте;"
@@ -11845,13 +11869,13 @@ msgid "a list of payment methods accepted;"
 msgstr "список доступных способов оплаты;"
 
 msgid "a natural person, legal person or organisation who opened an MT5 Real Account."
-msgstr ""
+msgstr "физическое, юридическое лицо или организация, открывшая реальный счёт MT5."
 
 msgid "a professional client as defined in the Directive 2004/39/EC of the European Parliament and of the Council (MiFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MiFID II), whichever is in force."
 msgstr ""
 
 msgid "a transaction unit representing a standardized quantity of the underlying instrument, as specified in the Product Disclosure and Specifications. On the Forex market 1 Lot constitutes the equivalent of 100,000 units of the base currency."
-msgstr ""
+msgstr "единица контракта, представляющая собой стандартное количество единиц базового инструмента, согласно Заявлению об ограничении ответственности и характеристикам активов. На рынке Forex 1 лот равен или эквивалентен 100 000 единицам базовой валюты."
 
 msgid "a) Access the MT5 Trading Platform through the direct link %1 from our web interface; or"
 msgstr ""
@@ -11914,7 +11938,7 @@ msgid "consolidating liquidity from several providers into a single stream of bl
 msgstr "консолидация ликвидности от нескольких поставщиков в единый поток котировок; а также"
 
 msgid "currency in which your MT5 Real Account will be operated."
-msgstr ""
+msgstr "валюта, в которой будут производиться все расчёты на Вашем реальном счету MT5."
 
 msgid "d) The timeframe or duration of the contract as defined by your order execution."
 msgstr "d) сроком продолжительности контракта, указанным при исполнении ордера."
@@ -12019,10 +12043,10 @@ msgid "name, email address and contact number;"
 msgstr "его имя, электронный адрес и контактный номер;"
 
 msgid "net of any other money credited to your MT5 Real Account and debited from your MT5 Real Account."
-msgstr ""
+msgstr "чистую сумму, начисленную на Ваш Реальный счёт MT5, за вычетом всех убытков."
 
 msgid "net of fund transfers between your Binary Options Real Account and your MT5 Real Account;"
-msgstr ""
+msgstr "чистую сумму, получившуюся в результате перечисления средств между Вашим реальным счётом Binary и Вашим Реальным счётом MT5;"
 
 msgid "net of realised profits credited to your MT5 Real Account and realised losses debited from your MT5 Real Account;"
 msgstr "чистую сумму полученной прибыли, начисленной на Ваш Реальный счёт MT5, за вычетом всех убытков;"
@@ -12061,7 +12085,7 @@ msgid "risk warnings and notices related to your transactions;"
 msgstr ""
 
 msgid "rules and regulations set out in the (Laws of Malta) <i>Investment Services Act (Control of Assets) Regulations, 1998 as amended,</i> or any subsequent regulation thereto."
-msgstr ""
+msgstr "правила и нормативы, установленные (согласно законодательству Мальты) в рамках <i>Акта об инвестиционных услугах, Investment Services Act (Контроль за активами), в 1998 г, со всеми последующими дополнениями,</i> или любых соответствующих нормативных положений."
 
 msgid "second"
 msgstr "сек."
@@ -12109,7 +12133,7 @@ msgid "the market conditions of the financial instruments that your orders are r
 msgstr "условиями рынка на финансовых инструментах, к которым относятся Ваши ордеры, что включает необходимость своевременного исполнения, возможность улучшения цены, ликвидность на рынке, размер Вашего ордера, а также его потенциальное влияние на общую прибыль."
 
 msgid "the scheme specified in the Investor Compensation Scheme Regulations (Laws of Malta/Subsidiary Legislation 370.09) for the purpose of paying compensation to the Investors."
-msgstr ""
+msgstr "схема, упомянутая в Правилах регулирования компенсационных выплат инвесторам (Законодательство Мальты/Производное право 370.09) с целью выплаты причитающейся компенсации инвесторам."
 
 msgid "the specific instructions that we receive from you;"
 msgstr "конкретными инструкциями, полученными от Вас;"
