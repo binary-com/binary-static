@@ -228,8 +228,10 @@ const PersonalDetails = (() => {
                     return;
                 }
                 const get_settings    = data.get_settings;
-                const has_required_mt = get_settings.tax_residence && get_settings.tax_identification_number &&
-                    get_settings.citizen;
+                const has_required_mt = (Client.get('landing_company_shortcode') === 'costarica' ?
+                    get_settings.citizen // only check Citizen if CR account
+                    :
+                    (get_settings.tax_residence && get_settings.tax_identification_number && get_settings.citizen));
                 if (redirect_url && has_required_mt) {
                     localStorage.removeItem('personal_details_redirect');
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
