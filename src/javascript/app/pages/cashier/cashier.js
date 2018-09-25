@@ -58,16 +58,20 @@ const Cashier = (() => {
                     displayTopUpButton();
                 }
                 const residence = Client.get('residence');
+                const currency  = Client.get('currency');
                 if (residence) {
                     BinarySocket.send({ paymentagent_list: residence }).then((response) => {
                         const list = getPropertyValue(response, ['paymentagent_list', 'list']);
                         if (list && list.length) {
-                            $('#payment-agent-section').setVisibility(1);
+                            const regex_currency = new RegExp(currency);
+                            if (!/^(UST|DAI)$/.test(currency) || list.find(pa => regex_currency.test(pa.currencies))) {
+                                $('#payment-agent-section').setVisibility(1);
+                            }
                         }
                     });
                 }
-                $(isCryptocurrency(Client.get('currency')) ? '.crypto_currency' : '.normal_currency').setVisibility(1);
-                if (/^BCH/.test(Client.get('currency'))) {
+                $(isCryptocurrency(currency) ? '.crypto_currency' : '.normal_currency').setVisibility(1);
+                if (/^BCH/.test(currency)) {
                     getElementById('message_bitcoin_cash').setVisibility(1);
                 }
             });
