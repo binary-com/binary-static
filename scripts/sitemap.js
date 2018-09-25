@@ -24,7 +24,6 @@ const urls = [
     ['about-us',                           'monthly', 0.80],
     ['binary-in-numbers',                  'monthly', 0.80],
     ['careers',                            'monthly', 0.80],
-    ['careers-for-americans',              'monthly', 0.80],
     ['contact',                            'monthly', 0.80],
     ['group-history',                      'monthly', 0.80],
     ['open-positions',                     'monthly', 0.80],

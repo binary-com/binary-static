@@ -106,6 +106,7 @@ const pages_config = {
     statementws              : { module: Statement,                  is_authenticated: true, needs_currency: true },
     tnc_approvalws           : { module: TNCApproval,                is_authenticated: true, only_real: true },
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
+    tour                     : { module: StaticPages.Tour },
     trading                  : { module: TradePage,                  needs_currency: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     two_factor_authentication: { module: TwoFactorAuthentication,    is_authenticated: true },

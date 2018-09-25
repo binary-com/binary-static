@@ -55,6 +55,9 @@ const Validation = (() => {
             forms[form_selector] = { $form };
             if (Array.isArray(fields) && fields.length) {
                 forms[form_selector].fields = fields;
+                const $btn_submit           = $form.find('button[type="submit"]');
+
+                let has_required = false;
                 fields.forEach((field) => {
                     field.$ = $form.find(field.selector);
                     if (!field.$.length || !field.validations) return;
@@ -71,6 +74,7 @@ const Validation = (() => {
                             if (!$label.length) $label = $parent.find('label');
                             if ($label.length && $label.find('span.required_field_asterisk').length === 0) {
                                 $($label[0]).append($('<span/>', { class: 'required_field_asterisk', text: '*' }));
+                                has_required = true;
                             }
                         }
                         if ($parent.find(`p.${error_class}`).length === 0) {
@@ -93,6 +97,10 @@ const Validation = (() => {
                         });
                     }
                 });
+                if (has_required && $form.find('.indicates-required').length === 0) {
+                    $btn_submit.parent().append($('<p/>', { class: 'hint' })
+                        .append($('<span/>', { class: 'required_field_asterisk no-margin indicates-required', text: '*' })).append($('<span/>', { text: ` ${localize('Indicates required field')}` })));
+                }
             }
         }
 
