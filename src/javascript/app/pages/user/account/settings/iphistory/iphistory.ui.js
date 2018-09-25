@@ -18,7 +18,7 @@ const IPHistoryUI = (() => {
         const action       = localize(data.action);
         const browser      = data.browser;
         let browser_string = browser ? `${browser.name} v${browser.version}` : 'Unknown';
-        const patt         = /^(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium) v[0-9.]+$/i;
+        const patt         = /^(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium|Binary app) v[0-9.]+$/i;
         if (!patt.test(browser_string) && browser_string !== 'Unknown') {
             browser_string = 'Error';
         }
