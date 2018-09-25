@@ -68,15 +68,15 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     updateProposal(response) {
-        this.contract_info = response.proposal_open_contract;
-
-        if (isEmptyObject(this.contract_info)) {
+        if ('error' in response) {
             this.has_error = true;
-        } else {
-            createChartBarrier(this.smart_chart, this.contract_info);
-            createChartMarkers(this.smart_chart, this.contract_info, this);
-            this.handleDigits();
+            this.contract_info = {};
+            return;
         }
+        this.contract_info = response.proposal_open_contract;
+        createChartBarrier(this.smart_chart, this.contract_info);
+        createChartMarkers(this.smart_chart, this.contract_info, this);
+        this.handleDigits();
     }
 
     @action.bound
