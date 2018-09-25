@@ -418,7 +418,7 @@ const MetaTraderUI = (() => {
                 $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
                 $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
-            $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_(vanuatu_standard|costarica)/.test(new_acc_type));
+            $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_vanuatu_standard/.test(new_acc_type));
         }
     };
 
