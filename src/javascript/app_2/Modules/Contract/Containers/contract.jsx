@@ -13,22 +13,22 @@ class Contract extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            chart: { ...this.props.chart_config },
+            chart_config: { ...this.props.chart_config },
         };
     }
 
     componentDidUpdate() {
-        if (!isDeepEqual(this.props.chart_config, this.state.chart)) {
-            this.setState({ chart: { ...this.props.chart_config } });
+        if (!isDeepEqual(this.props.chart_config, this.state.chart_config)) {
+            this.setState({ chart_config: { ...this.props.chart_config } });
         }
     }
 
     updateChartType = (chart_type) => {
-        this.setState({ chart: { ...this.state.chart, chart_type } });
+        this.setState({ chart_config: { ...this.state.chart_config, chart_type } });
     }
 
     updateGranularity = (granularity) => {
-        this.setState({ chart: { ...this.state.chart, granularity } });
+        this.setState({ chart_config: { ...this.state.chart_config, granularity } });
     }
 
     render() {
@@ -51,7 +51,7 @@ class Contract extends React.Component {
                                     <SmartChart
                                         InfoBox={<InfoBox />}
                                         symbol={symbol}
-                                        {...this.state.chart}
+                                        {...this.state.chart_config}
                                         updateChartType={this.updateChartType}
                                         updateGranularity={this.updateGranularity}
                                     />
