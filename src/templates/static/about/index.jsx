@@ -128,7 +128,7 @@ const Index = () => (
                         </Box>
                         <Box>
                             <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland')} />
-                            <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in English, Indonesian, Chinese, Polish, German, French, Spanish, Portuguese, Russian, and Thai')} />
+                            <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in English, Indonesian, Chinese, Polish, German, French, Spanish, Portuguese, Russian, Italian, Vietnamese and Thai')} />
                         </Box>
                     </div>
                 </div>
