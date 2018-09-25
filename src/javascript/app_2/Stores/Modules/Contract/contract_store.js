@@ -42,6 +42,7 @@ export default class ContractStore extends BaseStore {
     // -------------------
     @action.bound
     onMount(contract_id) {
+        console.log('%c onMount', 'color: green; font-weight: bold', contract_id);
         this.contract_id = contract_id;
         this.smart_chart = this.root_store.modules.smart_chart;
         this.smart_chart.setContractMode(true);
@@ -53,6 +54,7 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     onUnmount() {
+        console.log('%c onUnmount', 'color: red; font-weight: bold');
         this.forgetProposalOpenContract();
 
         this.contract_id       = null;
@@ -60,6 +62,7 @@ export default class ContractStore extends BaseStore {
         this.digits_info       = {};
         this.sell_info         = {};
         this.is_sell_requested = false;
+        this.has_error         = false;
 
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
@@ -68,6 +71,7 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     updateProposal(response) {
+        console.log(response);
         if ('error' in response) {
             this.has_error = true;
             this.contract_info = {};
