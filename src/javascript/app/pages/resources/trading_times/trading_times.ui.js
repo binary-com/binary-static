@@ -37,6 +37,18 @@ const TradingTimesUI = (() => {
             maxDate : 364,
         });
         $date.val(localize('Today'));
+        // Create a label to be friendlier
+        const $label = $('label[for=trading-date]');
+        $label.append('<span class=\'ux-date foot-note\'></span>');
+        if ($date.val() === '') {
+            $('span.ux-date').text(localize('Today'));
+            $date.val(moment().format('YYYY-MM-DD'));
+            $date.attr('value', moment.utc().toISOString().substring(0,10));
+        }
+        $date.change(() => {
+            $('span.ux-date').text(moment($date.val()).format('LL'));
+        });
+
         $date.change(function () {
             if (!dateValueChanged(this, 'date')) {
                 return false;
