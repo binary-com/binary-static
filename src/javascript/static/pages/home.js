@@ -33,6 +33,7 @@ const Home = (() => {
             socialLogin();
             if (State.get('is_eu')) {
                 $('.mfsa_message').slideDown(300);
+                $('.eu-hide').setVisibility(0);
             }
         });
     };

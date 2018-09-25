@@ -17,11 +17,11 @@ const checkClientsCountry = () => {
         } else {
             createLanguageDropDown(website_status);
         }
-        State.set('is_eu', isEuropeanCountries(clients_country));
+        State.set('is_eu', isEuCountry(clients_country));
     });
 };
 
-const isEuropeanCountries = (country) => (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(country));
+const isEuCountry = (country) => (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(country));
 
 const limitLanguage = (lang) => {
     if (Language.get() !== lang) {
@@ -47,5 +47,6 @@ const checkLanguage = () => {
 
 module.exports = {
     checkClientsCountry,
+    isEuCountry,
     checkLanguage,
 };

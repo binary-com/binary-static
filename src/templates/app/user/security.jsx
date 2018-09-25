@@ -42,6 +42,8 @@ const Security = () => (
                 <Column url='authorised_appsws' image='applications' header={it.L('Authorised Applications')} text={it.L('Manage your authorised applications.')} />
 
                 <Column url='two_factor_authentication' image='2fa' header={it.L('Two-Factor Authentication')} text={it.L('Enable two-factor authentication for an extra layer of security.')} />
+
+                <Column url='cloudflare_dns' image='1111' header={'1.1.1.1'} text={it.L('Use Cloudflare’s public DNS service for faster and more secure browsing.')} />
             </div>
         </div>
     </React.Fragment>

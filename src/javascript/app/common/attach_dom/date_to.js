@@ -23,15 +23,15 @@ const attachDateToPicker = (fncOnChange) => {
     const $date_to   = $(id_date_to);
     $date_to
         .attr('data-value', toISOFormat(moment.utc()))
-        .change(function() {
-            dateValueChanged(this, 'date').then((result) => {
-                if (!result) return false;
-                $('.table-container').remove();
-                if (typeof fncOnChange === 'function') {
-                    fncOnChange();
-                }
-                return true;
-            });
+        .change(function () {
+            if (!dateValueChanged(this, 'date')) {
+                return false;
+            }
+            $('.table-container').remove();
+            if (typeof fncOnChange === 'function') {
+                fncOnChange();
+            }
+            return true;
         });
     DatePicker.init({
         selector: id_date_to,

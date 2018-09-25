@@ -1,6 +1,7 @@
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
+const hideEU           = require('../../common/common_functions').hideEU;
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getElementById   = require('../../../_common/common_functions').getElementById;
 const paramsHash       = require('../../../_common/url').paramsHash;
@@ -76,7 +77,12 @@ const Cashier = (() => {
 
     return {
         onLoad,
-        PaymentMethods: { onLoad: () => { showContent(); } },
+        PaymentMethods: {
+            onLoad: () => {
+                showContent();
+                hideEU();
+            },
+        },
     };
 })();
 
