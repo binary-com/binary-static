@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-09-21 08:52\n"
+"PO-Revision-Date: 2018-09-25 03:25\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -24,8 +24,8 @@ msgstr "„API %1” oznacza zestaw procedur, protokołów, zasobów i narzędzi
 msgid "\"Account\" means Client Trading Account opened with Binary (V) Ltd."
 msgstr "„Konto” oznacza konto handlowe klienta otwarte przez Binary (V) Ltd."
 
-msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
-msgstr "Opcje „binarne” lub „cyfrowe” to opcje, które łączą się z wypłatą wcześniej ustalonej stałej kwoty w zależności od tego, czy dane wydarzenie wystąpi lub nie wystąpi w momencie wygaśnięcia opcji binarnej. Opcja binarna może wiązać się tylko z jednym z dwóch możliwych rezultatów i pozwala Ci podejmować proste decyzje „Tak lub Nie”. Podobnie jak tradycyjne opcje handlowe, opcje binarne oparte są na instrumencie bazowym, takim jak waluty, towary, indeksy lub akcje. Jednak to, co odróżnia je w znacznym stopniu od tradycyjnych opcji to m.in. fakt, że opcja może przynieść jedynie dwa rezultaty: w przypadku wystąpienia określonego wydarzenia klientowi zostaje wypłacony zysk albo klient traci zainwestowaną kwotę określaną przy zawieraniu każdej opcji."
+msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, or indices, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
+msgstr ""
 
 msgid "\"Client Agreement\" means the Agreement between the Client and the Company including but not limited to the Terms and Conditions, Order Execution Policy, and Slippage Policy."
 msgstr "„Umowa z klientem” oznacza umowę zawartą między Klientem a Firmą, w tym m. in. Regulamin, Politykę najkorzystniejszej realizacji i Politykę opóźnień rynkowych."
@@ -165,8 +165,8 @@ msgstr "Dokonano wpłaty %1 na konto o numerze %3. Identyfikator transakcji: %4"
 msgid "%1 does not charge any transfer fees."
 msgstr "%1 nie pobiera żadnych opłat za przelewy środków."
 
-msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
-msgstr "%1 umożliwia wszystkim łatwe działania na rynkach finansowych. Można zacząć handel głównymi walutami, akcjami, wskaźnikami i towarami od zaledwie 1 $."
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
+msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "Dzięki dbaniu o najwyższe standardy etyczne i jakość oferowanych usług firma %1 zyskała reputację, której może jej pozazdrościć konkurencja."
@@ -1782,9 +1782,6 @@ msgstr "Bitcoin vs dolar amerykański"
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Technologia blockchain – wszystkie kryptowaluty korzystają z różnych technologii blockchain (swego rodzaju rejestr publiczny) w celu oceny zapisów każdej transakcji."
 
-msgid "Blue-chip stock contracts sourced from the over-the-counter market"
-msgstr "Kontrakty oparte na akcjach dużych spółek z rynku pozagiełdowego"
-
 msgid "Both accounts need to be authenticated separately."
 msgstr "Oba konta należy zweryfikować oddzielnie."
 
@@ -2218,8 +2215,8 @@ msgstr "Klienci z pozostałych rejonów świata (z wyłączeniem określonych ju
 msgid "Clients may utilise this bonus only when a real money account is opened."
 msgstr "Klienci mogą skorzystać z tego bonusu tylko wtedy, gdy zostanie otwarte konto w prawdziwej walucie."
 
-msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived from any winnings and only deposits made shall be refunded. For clients registered with Binary (Europe) Ltd, all the funds from their MLT account will be transferred to the Malta Gaming Authority. In order to reclaim these funds, clients will need to contact the MGA directly."
-msgstr "Klienci muszą być świadomi, że uprawianie hazardu przez osoby niepełnoletnie jest przestępstwem. Jeśli po przeprowadzeniu weryfikacji wieku okaże się, że klient jest niepełnoletni, zostaną mu odebrane wszelkie wygrane i jedynie złożone depozyty zostaną mu zwrócone. W przypadku klientów posiadających konto zarejestrowane przez Binary (Europe) Ltd wszelkie środki z ich konta MLT zostaną przekazane do Urzędu ds. Gier Hazardowych: Malta Gaming Authority na Malcie. W celu odzyskania tych środków klient powinien skontaktować się bezpośrednio z tą instytucją."
+msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived of any winnings and only deposits made shall be refunded."
+msgstr ""
 
 msgid "Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, and contact email and personal telephone number."
 msgstr "Wypełniając formularz otwarcia konta, klienci muszą podać wszystkie wymagane dane, które określają ich tożsamość, w tym ważne dane identyfikacyjne, adres, adres e-mail do kontaktu i swój numer telefonu."
@@ -3036,9 +3033,6 @@ msgstr "Orzeczenie rozwodowe"
 
 msgid "Do not send Bitcoin to a Bitcoin Cash account (or Bitcoin Cash to a Bitcoin account). Doing so may lead to the loss of your funds."
 msgstr "Nie przesyłaj waluty bitcoin na konto z gotówką bitcoin (lub gotówki bitcoin na konto bitcoin), gdyż może to spowodować utratę Twoich środków."
-
-msgid "Do not trade more than you can afford."
-msgstr "Nie obstawiaj kwoty większej niż taka, na którą Cię stać."
 
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "Nie graj, gdy jesteś zmęczony(a) lub pod wpływem alkoholu."
@@ -3877,8 +3871,8 @@ msgstr "Na przykład, załóżmy, że w czasie trwania kontraktu cena niska na r
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product Disclosure Statement. This policy is an appendix to the overarching %1 Order Execution Policy and should be read in conjunction with the overarching %1 Order Execution Policy."
 msgstr "Aby uzyskać informacje na temat funkcji oraz zobaczyć wizualizację handlowania kontraktami Spot FX, które są w ofercie %1, przejdź do sekcji Oświadczenie dot. zapoznania się z produktem. Ta polityka stanowi załącznik do nadrzędnej Polityki %1 dot. realizacji zlecenia i należy ją czytać w połączeniu z tą nadrzędną polityką."
 
-msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as stocks and stock indices) are not open throughout the day and that trading may not be available when the markets are closed."
-msgstr "Dla notowań forex godziny zamknięcia są określane przez Firmę i przedstawiane na stronie internetowej w sekcji Godziny otwarcia rynku. W przypadku jakiegokolwiek sporu dotyczącego wartości rynkowych lub rozliczeniowych, decyzja Firmy jest decyzją ostateczną i wiążącą. Klienci powinni zauważyć, że niektóre rynki (np. rynek akcji i indeksów giełdowych) nie są otwarte w ciągu całego dnia i handlowanie może nie być dostępne w godzinach zamknięcia tych rynków."
+msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as indices) are not open throughout the day and that trading may not be available when the markets are closed."
+msgstr ""
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr "Dla Forex: Rynek forex to rynek obrotu pozagiełdowego, gdzie banki i inne instytucje finansowe handlują walutami między sobą bez centralnej instytucji rozliczeniowej. W związku z powyższym nie istnieje „oficjalna” cena źródłowa dla notowań forex. Różne kanały zawierają notowania z różnych banków międzynarodowych. W związku z tym ceny mogą się różnić między dostawcami, w zależności od tego, z którego banku uzyskują ceny."
@@ -4891,9 +4885,6 @@ msgstr "Przyjmujesz do wiadomości, że w przypadku Zlecenia Limit dołożymy ws
 msgid "In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at a price equal to the one you specified. However, if the specified price is unavailable, a less favourable price may be quoted. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
 msgstr "Przyjmujesz do wiadomości, że w przypadku zlecenia Stop będziemy dążyć do otwarcia/zamknięcia Transakcji po takiej samej cenie jak określona przez Ciebie lub lepszym. Jednak, jeśli określona cena będzie niedostępna, wówczas może zostać zakwotowana mniej korzystna cena. Przyjmujesz do wiadomości również, że w momencie wykonania zlecenia nasza cena sprzedaży/ofertowa może być dla Ciebie mniej korzystna."
 
-msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
-msgstr "W przypadku akcji i indeksów giełdowych ceny zamknięcia są odnotowywane przez odpowiedni oficjalny Kantor i obowiązują w odniesieniu do wszystkich rozliczeń (ostateczna cena rozliczenia może czasami być zgłoszona przez odpowiedni Kantor 30-90 minut po terminie zamknięcia rynku i może się różnić od najnowszych cen najmniejszych przyrostów ceny, które obowiązywały w momencie zamknięcia)."
-
 msgid "In the course of provision of services we shall, where applicable, conduct an appropriateness test in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
 msgstr "W trakcie świadczenia usług będziemy, w stosownych przypadkach, przeprowadzać ocenę zdolności w celu sprawdzenia, czy w naszej ocenie i na podstawie dostarczonych nam informacji posiadasz wystarczającą wiedzę i doświadczenie w dziedzinie inwestowania, aby zrozumieć ryzyka związane z określonym rodzajem produktów lub usług, które oferujemy lub których domagają się klienci."
 
@@ -5035,8 +5026,8 @@ msgstr "Audytor wewnętrzny"
 msgid "Internal audit"
 msgstr "Audyt wewnętrzny"
 
-msgid "International currency, stock index or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
-msgstr "Waluty międzynarodowe, indeksy giełdowe oraz ceny towarów są bardzo zmienne i trudne do przewidzenia. Z powodu tej zmienności oraz czynników w systemie wyceny faworyzujących portal (szczegóły poniżej), żaden kontrakt finansowy zakupiony w naszym systemie (niezależnie od tego czy wysokość wypłaty przekracza kwotę premii czy nie) nie może być uznany za bezpieczny kontrakt."
+msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
+msgstr ""
 
 msgid "Internet Trading Risks"
 msgstr "Ryzyko handlu przez internet"
@@ -5074,8 +5065,8 @@ msgstr "Sprawdzanie i odtwarzanie problemów zgłaszanych przez klientów"
 msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
 msgstr "Inwestowanie w złożone produkty finansowe, takie jak kontrakty na różnice kursowe (CFD) czy kontrakty FX może przynieść zarówno zyski, jak i straty. Ceny mogą ulegać zmianom i wahaniom w związku ze zmianami obowiązujących cen na rynku oraz warunków rynkowych, i wpływać na zwrot z Twojej inwestycji. Przed podjęciem decyzji inwestycyjnej należy zapoznać się z naszymi Dokumentami zawierającymi najważniejsze informacje, znajdującymi się na naszym portalu, zwracając szczególną uwagę na wysokość wymaganego depozytu zabezpieczającego dla poszczególnych oferowanych przez nas instrumentów. Produkty oferowane przez Binary Investments (Europe) Ltd są uznawane za „produkty złożone” i mogą być nieodpowiednie dla klientów detalicznych."
 
-msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices, stocks and commodities each of which have their own features and risks."
-msgstr "Inwestowanie w Kontrakty i handlowanie nimi naraża Cię na ryzyko związane z wydajnością instrumentu bazowego lub aktywów bazowych, na których oparty jest dany Kontrakt binarny, takich jak waluty obce, wskaźniki, akcje i towary, z których każdy ma swoje właściwości i wiąże się z innym ryzykiem."
+msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices and commodities each of which have their own features and risks."
+msgstr ""
 
 msgid "Investment"
 msgstr "Inwestowanie"
@@ -9022,8 +9013,8 @@ msgstr "Kod bonusowy można wprowadzić i aktywować w momencie otwarcia konta."
 msgid "The bonus will be added to the account when the required minimum deposit has been made via a single transaction. Clients who make multiple deposits in an attempt to accumulate the required deposit amount will not be eligible for this bonus."
 msgstr "Bonus zostanie dodany do Twojego konta, gdy dokonasz minimalnej wymaganej wpłaty w formie jednej transakcji. Klienci, którzy dokonują kilku wpłat w celu uzbierania wymaganej wartości wpłaty nie są objęci bonusem."
 
-msgid "The calculation of the price to be paid (or the payout to be received) for financial contracts on this site at the time the financial contract is purchased or sold will be based on the Company's best estimate of market price movements and the expected level of interest rates, implied volatilities and other market conditions during the life of the financial contract, and is based on complex mathematics. The calculation will include a bias in favour of the Company. The financial contract prices (or the payout amounts) offered to Clients speculating on market or index prices may differ substantially from prices available in the primary markets where stock indices or commodities or contracts thereupon are traded, due to the bias favouring the Company in the price calculation system referred to above."
-msgstr "Obliczanie ceny do zapłaty (lub wypłaty do otrzymania) dla umów finansowych na niniejszym portalu w momencie, gdy kontrakt finansowy jest nabywany lub sprzedawany odbywa się na podstawie najlepszych szacunków Firmy dot. zmian cen rynkowych i oczekiwanej wysokości odsetek, domyślnej zmienności i innych warunków rynkowych obowiązujących w czasie trwania kontraktu i opiera się na skomplikowanych obliczeniach matematycznych. Obliczenia wykonywane są na korzyść Firmy. Ceny kontraktów finansowych (lub kwoty do wypłaty) oferowane Klientom spekulującym na rynkach lub ceny wskaźników giełdowych mogą się różnić znacząco od cen dostępnych na rynkach finansowych, gdzie handluje się wskaźnikami giełdowymi, cenami towarów albo kontraktów, z powodu faworyzowania Firmy w systemie obliczania cen opisanym powyżej."
+msgid "The calculation of the price to be paid (or the payout to be received) for financial contracts on this site at the time the financial contract is purchased or sold will be based on the Company's best estimate of market price movements and the expected level of interest rates, implied volatilities and other market conditions during the life of the financial contract, and is based on complex mathematics. The calculation will include a bias in favour of the Company. The financial contract prices (or the payout amounts) offered to Clients speculating on market or index prices may differ substantially from prices available in the primary markets where commodities or contracts thereupon are traded, due to the bias favouring the Company in the price calculation system referred to above."
+msgstr ""
 
 msgid "The charting data made available to Clients by the Company is indicative only and may at times differ from the real market values. The Company's decision as to the calculation of a financial contract price will be final and binding. The Company allows the option to sell contracts before expiry time of some contracts but will not be obliged to do so and can suspend this option depending on the current market conditions. Contracts may be amended when the underlying asset value is adjusted by corporate actions during the contract period."
 msgstr "Dane przedstawiane Klientom na wykresach mają wyłącznie charakter informacyjny i mogą się różnić czasami od rzeczywistych wartości rynkowych. Decyzja Firmy dotycząca obliczania ceny kontraktu finansowego jest ostateczna i wiążąca. W przypadku niektórych kontraktów Firma dopuszcza możliwość sprzedania kontraktu przed datą jego wygaśnięcia, ale nie jest do tego zobowiązana i może zawiesić taką możliwość w zależności od sytuacji na rynku walutowym. Kontrakty podlegają zmianom w sytuacji, gdy wartość instrumentu bazowego zostaje zmieniona w czasie trwania kontraktu w wyniku działań przedsiębiorstwa."
@@ -9508,8 +9499,8 @@ msgstr "Dlatego stworzyliśmy ten przewodnik w trzech krokach, aby pomóc Ci zdo
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr "Niniejsza informacja nie wyjaśnia wszystkich ryzyk związanych z inwestowaniem lub z podobnymi produktami, ani jak takie ryzyka są powiązane z Twoimi indywidualnymi warunkami. Istotną kwestię stanowi zrozumienie ryzyka związanego z oferowanym przez nas produktem inwestycyjnym lub produktem hazardowym przed podjęciem decyzji o jego zakupie lub sprzedaży. W przypadku jakichkolwiek wątpliwości dotyczących ryzyka związanego z produktami inwestycyjnymi lub produktami hazardowymi, należy zasięgnąć porady eksperta."
 
-msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
-msgstr "Niniejsza informacja ma na celu poinformowanie Cię o ryzykach powiązanych z kontraktami inwestycyjnymi, w które możesz inwestować dzięki usługom oferowanym poprzez %1. Grupa Binary zapewnia szeroki wachlarz produktów, w tym Opcje binarne oparte na walutach obcych, wskaźnikach, akcjach i innych produktach inwestycyjnych („Produkty inwestycyjne”) i zakłady binarne, takie jak te związane z Wskaźnikami zmienności („Produkty hazardowe”)."
+msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
+msgstr ""
 
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Ta oferta nie łączy się z innymi ofertami."
@@ -9769,8 +9760,8 @@ msgstr "Handluj zgodnie ze swoją ulubioną strategią"
 msgid "Trade all four precious metals on one platform."
 msgstr "Handluj wszystkimi czterema metalami szlachetnymi na jednej platformie."
 
-msgid "Trade all major currencies, indices, stocks, and commodities."
-msgstr "Handluj wszystkimi głównymi walutami, wskaźnikami, akcjami i towarami."
+msgid "Trade all major currencies, indices, commodities, and volatility indices."
+msgstr ""
 
 msgid "Trade and manage multiple MT5 client accounts from a single interface."
 msgstr "Handluj i zarządzaj wieloma kontami klientów MT5, korzystając z jednego interfejsu."
@@ -10246,8 +10237,8 @@ msgstr "Korzystaj ze swojego unikatowego łącza partnerskiego i narzędzi marke
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "Korzystania z Aplikacji i zawartych w niej treści w celach marketingowych, demonstracyjnych i w celu udostępniania Aplikacji Użytkownika jego klientom; oraz    "
 
-msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
-msgstr "Korzystając z naszej strony internetowej, nasi klienci mogą handlować walutami, wskaźnikami, akcjami i towarami 24 godziny na dobę. Oferujemy najbardziej zróżnicowane ceny i najbogatszą gamę produktów."
+msgid "Using our website, customers can trade currencies, indices, commodities, and volatility indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
+msgstr ""
 
 msgid "Utilise a variety of tactics - both online and offline - to grow and support the company's network of partners in your designated market"
 msgstr "Stosowanie różnorodnych taktyk – zarówno online, jak i offline – w celu zapewnienia rozwoju sieci partnerów firmy na określonym rynku"
@@ -10459,11 +10450,11 @@ msgstr "Zawsze stawiamy naszych klientów na pierwszym miejscu i skupiamy się n
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
 msgstr "Chętnie podejmujemy współpracę z małymi, lokalnymi organizacjami charytatywnymi, którym możemy pomóc bezpośrednio. Jeśli chcesz porozmawiać na temat wsparcia Twojej organizacji charytatywnej, skontaktuj się z nami pod adresem %1."
 
-msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients, both services are in relation to financial derivative products relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
-msgstr "Na mocy ustawy Malta Investment Services Act (Cap. 370, zbiór ustaw Malty) („Ustawa”) za nadzór nad naszą firmą odpowiada Urząd ds. Usług Finansowych na Malcie: Malta Financial Services Authority („MFSA”), który zezwolił nam na prowadzenie działalności inwestycyjnej. Jesteśmy uprawnieni przez MFSA do realizowania transakcji na własny rachunek (np. występowanie w roli kontrahenta transakcji) i realizowania zleceń w imieniu innych klientów, co w obu przypadkach odnosi się do finansowych produktów pochodnych opartych na walutach obcych, wskaźnikach, akcjach i innych produktach finansowych lub aktywach („Produkty finansowe”). Nie posiadamy zezwolenia na oferowanie lub zapewnianie doradztwa inwestycyjnego lub jakichkolwiek innych usług inwestycyjnych za wyjątkiem usług opisanych powyżej i nie oferujemy takich usług. Jeśli wydaje Ci się, że potrzebujesz porady inwestycyjnej lub usług inwestycyjnych innych niż te opisane powyżej, powinieneś/powinnaś skontaktować się z niezależnym doradcą inwestycyjnym lub firmą doradztwa inwestycyjnego."
+msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients, both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
+msgstr ""
 
-msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
-msgstr "Na mocy ustawy Malta Investment Services Act (Cap. 370, zbiór ustaw Malty) („Ustawa”) za nadzór nad naszą firmą odpowiada Urząd ds. Usług Finansowych na Malcie: Malta Financial Services Authority („MFSA”), który zezwolił nam na prowadzenie działalności inwestycyjnej. Jesteśmy uprawnieni przez MFSA do realizowania transakcji na własny rachunek (np. występowanie w roli kontrahenta transakcji) i realizowania zleceń w imieniu innych osób, co w obu przypadkach odnosi się do finansowych produktów pochodnych opartych na walutach obcych, wskaźnikach, akcjach i innych produktach finansowych lub aktywach („Produkty finansowe”). Nie posiadamy zezwolenia na oferowanie lub zapewnianie doradztwa inwestycyjnego lub jakichkolwiek innych usług inwestycyjnych za wyjątkiem usług opisanych powyżej i nie oferujemy takich usług. Jeśli wydaje Ci się, że potrzebujesz porady inwestycyjnej lub usług inwestycyjnych innych niż te opisane powyżej, powinieneś/powinnaś skontaktować się z niezależnym doradcą inwestycyjnym lub firmą doradztwa inwestycyjnego."
+msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
+msgstr ""
 
 msgid "We are committed to making sure your personal data and transactions are secure:"
 msgstr "Staramy się zapewnić bezpieczeństwo Twoich danych osobowych i transakcji:"
@@ -11596,8 +11587,8 @@ msgstr "Należy zauważyć, że nasz obowiązek zapewnienia najkorzystniejszej r
 msgid "You should read these ST&Cs carefully as well as the Summary Order Execution Policy and Summary Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you."
 msgstr "Należy dokładnie zapoznać się z niniejszymi DW, jak również ze Streszczeniem polityki dot. realizacji zlecenia oraz Streszczeniem polityki dot. sporów, mającymi zastosowanie Szczegółami kontraktu oraz Informacją o narażeniu na ryzyko oraz wszelkimi innymi dokumentami, które zostały Ci dostarczone lub zostaną dostarczone w przyszłości."
 
-msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
-msgstr "Rozumiesz, że produkty oparte na generatorze losowych liczb („Wskaźniki zmienności”) są produktami hazardowymi, a produkty oparte na wskaźnikach rynków finansowych (forex, akcje, towary) są instrumentami finansowymi."
+msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, indices, commodities) are financial instruments."
+msgstr ""
 
 msgid "You want to buy a certain currency pair if you think the base currency will go up. The reverse holds true:"
 msgstr "Chcesz zakupić określoną parę walutową, jeśli sądzisz, że cena waluty bazowej wzrośnie. Istnieje też zależność odwrotna:"
@@ -11923,8 +11914,8 @@ msgstr "b) Pobierz i zainstaluj platformę handlową MT5, korzystając z łącza
 msgid "b) The price at which your order will be executed;"
 msgstr "b) Cena, po jakiej zostanie zrealizowane Twoje zlecenie;"
 
-msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading"
-msgstr "opcje binarne, forex, handel forex, handel online, obrót finansowy, handel opcjami binarnymi, handel indeksami, wskaźniki handlowe, transakcje rynku forex, towary, strategie opcji binarnych, broker opcji binarnych, zakład na opcję binarną, platforma transakcyjna opcji binarnych, strategia binarna, finanse, akcje, inwestycje, handlowanie"
+msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
+msgstr ""
 
 msgid "c) The time at which your order will be executed; and"
 msgstr "c) Czas realizacji Twojego zlecenia;"
