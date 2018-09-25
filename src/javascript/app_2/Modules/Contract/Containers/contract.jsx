@@ -17,10 +17,6 @@ class Contract extends React.Component {
         };
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return !isDeepEqual(nextProps, this.props) || !isDeepEqual(nextState, this.state);
-    }
-
     componentDidUpdate() {
         if (!isDeepEqual(this.props.chart_config, this.state.chart)) {
             this.setState({ chart: { ...this.props.chart_config } });
