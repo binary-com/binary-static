@@ -47,6 +47,9 @@ module.exports = {
         onLoad  : () => { MenuSelector.init(['general', 'account-management', 'marketing-and-promotions']); },
         onUnload: () => { MenuSelector.clean(); },
     },
+    Cloudflare: {
+        onLoad: () => {},
+    },
     Tour: {
         onLoad: () => { hideEU(); },
     },
