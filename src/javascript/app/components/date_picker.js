@@ -128,7 +128,10 @@ const DatePicker = (() => {
             }
             if (checkInput('date', 'not-a-date') && $selector.attr('data-picker') !== 'native') {
                 hide(selector);
-                $selector.attr({ type: 'date', 'data-picker': 'native' }).val($selector.attr('data-value')).removeClass('clear');
+                // Date fields don't accept placeholder, we use text just to show Default label, on the
+                // User's first attempt to interact with the field, we change the type of the field
+                // to Date. This way, we can keep consistency between desktop and mobile view
+                $selector.attr({ type: 'text', 'data-picker': 'native', 'onfocus': '(this.type=\'date\')'  }).val($selector.attr('data-value')).removeClass('clear');
                 if ($selector.attr('readonly')) $selector.attr('data-readonly', 'readonly').removeAttr('readonly');
                 if (date_picker_conf.minDate !== undefined) $selector.attr('min', toDate(date_picker_conf.minDate));
                 if (date_picker_conf.maxDate !== undefined) $selector.attr('max', toDate(date_picker_conf.maxDate));
