@@ -409,6 +409,7 @@ const MetaTraderUI = (() => {
             $form.find('#view_1 #btn_next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
+            $form.find('#new_account_no_deposit_bonus_msg').setVisibility(0);
         } else {
             const new_acc_type = newAccountGetType();
             displayAccountDescription(new_acc_type);
@@ -417,6 +418,7 @@ const MetaTraderUI = (() => {
                 $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
                 $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
+            $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_(vanuatu_standard|costarica)/.test(new_acc_type));
         }
     };
 

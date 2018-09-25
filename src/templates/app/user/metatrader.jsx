@@ -294,6 +294,7 @@ const Metatrader = () => (
                                     </div>
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
                                     <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please <a href="[_1]">authenticate</a> your account within five days to continue trading.', it.url_for('user/authenticate'))}</p>
+                                    <p id='new_account_no_deposit_bonus_msg' className='notice-msg center-text hint invisible'>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</p>
                                     <div className='center-text'>
                                         <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
                                             <span>{it.L('Cancel')}</span>
