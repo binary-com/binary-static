@@ -107,7 +107,7 @@ const Header = () => (
                                             ],
                                         },
                                         { text: it.L('Portfolio'),    href: it.url_for('user/portfoliows'),    className: 'ico-only-hide client_logged_in invisible' },
-                                        { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'), className: 'ico-only-hide client_logged_in invisible' },
+                                        { text: it.L('Profit Table'), href: it.url_for('user/profit_tablews'), className: 'ico-only-hide client_logged_in invisible wordwrap' },
                                         { text: it.L('Statement'),    href: it.url_for('user/statementws'),    className: 'client_logged_in invisible' },
                                         { text: it.L('Cashier'),      href: it.url_for('cashier'),             className: 'client_logged_in invisible', id: 'topMenuCashier' },
                                         {
