@@ -27,7 +27,7 @@ const BinaryOptionsForMT5 = () => (
                         <li>{it.L('Trade binary options and CFDs from the same powerful interface')}</li>
                         <li>{it.L('Use comprehensive technical analysis tools to predict price movements')}</li>
                         <li>{it.L('Monitor your trades easily with real-time visualisations')}</li>
-                        <li>{it.L('Access your trading history through our EA')}</li>
+                        <li>{it.L('Access your trading history through our Expert Advisors (EA)')}</li>
                     </ul>
 
                     <HeaderSecondary header={it.L('Available markets')} />
