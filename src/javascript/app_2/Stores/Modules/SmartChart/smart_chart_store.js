@@ -7,18 +7,11 @@ import { isEmptyObject }      from '_common/utility';
 import { WS }                 from 'Services';
 import { ChartBarrierStore }  from './chart_barrier_store';
 import { ChartMarkerStore }   from './chart_marker_store';
+import { tick_chart_types }   from './Constants/chart';
 import {
     barriersObjectToArray,
     isBarrierSupported }      from './Helpers/barriers';
 import BaseStore              from '../../base_store';
-
-const tick_chart_types = [
-    'mountain',
-    'line',
-    'colored_line',
-    'spline',
-    'baseline',
-];
 
 export default class SmartChartStore extends BaseStore {
     @observable symbol;
