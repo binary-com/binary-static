@@ -50,7 +50,7 @@ class Contract extends React.Component {
                         :
                         <div className='trade-container'>
                             <div className='chart-container notice-msg'>
-                                { symbol &&
+                                { symbol && this.state.chart_config.chart_type &&
                                     <SmartChart
                                         InfoBox={<InfoBox />}
                                         symbol={symbol}
