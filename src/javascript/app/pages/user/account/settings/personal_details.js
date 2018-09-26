@@ -229,8 +229,8 @@ const PersonalDetails = (() => {
                     return;
                 }
                 const get_settings    = data.get_settings;
-                const has_required_mt = (Client.get('landing_company_shortcode') === 'costarica' ?
-                    get_settings.citizen // only check Citizen if CR account
+                const has_required_mt = (State.getResponse('landing_company.config.tax_details_required') !== 1 ?
+                    get_settings.citizen // only check Citizen if tax details are not required
                     :
                     (get_settings.tax_residence && get_settings.tax_identification_number && get_settings.citizen));
                 if (redirect_url && has_required_mt) {
