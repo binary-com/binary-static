@@ -128,6 +128,7 @@ export default class ContractStore extends BaseStore {
     // ---------------------------
     @computed
     get chart_config() {
+        // TODO: currently this runs on each response, even if contract_info is deep equal previous one
         return getChartConfig(this.contract_info);
     }
 
