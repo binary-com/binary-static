@@ -347,7 +347,7 @@ const PersonalDetails = (() => {
 
     const onLoad = () => {
         currency = Client.get('currency');
-        BinarySocket.wait('get_account_status', 'get_settings', 'landing_company').then(() => {
+        BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.getResponse('get_settings');
 
