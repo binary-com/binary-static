@@ -229,8 +229,11 @@ const PersonalDetails = (() => {
                     return;
                 }
                 const get_settings    = data.get_settings;
-                const has_required_mt = get_settings.tax_residence && get_settings.tax_identification_number &&
-                    get_settings.citizen;
+                const has_required_mt = (/real_vanuatu_(standard|advanced)/.test(redirect_url) ?
+                    (get_settings.tax_residence && get_settings.tax_identification_number && get_settings.citizen)
+                    :
+                    get_settings.citizen // only check Citizen if user selects mt volatility account
+                );
                 if (redirect_url && has_required_mt) {
                     localStorage.removeItem('personal_details_redirect');
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
