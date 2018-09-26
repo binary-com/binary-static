@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-09-21 05:33\n"
+"PO-Revision-Date: 2018-09-26 01:53\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -19,14 +19,13 @@ msgid "404"
 msgstr "404"
 
 msgid "\"%1 API\" means the %1 proprietary set of programmatic routines, protocols, tools and resources created and maintained by %1 that allows you to use a registered Application to interface with the %1 trading platform."
-msgstr "\"%1 API\"이란 %1 트레이딩 플랫폼과 접속하기 위해 등록된 애플리케이션을 사용할 수 있도록 하는 %1로부터 만들어지고 관리되어지는 계획적 틀, 프로토콜, 도구와 자원의 %1 독점 세트입니다."
+msgstr "\"%1 API\"이란 %1 트레이딩 플랫폼과 접속하기 위해 등록된 애플리케이션을 사용할 수 있도록 하는 %1로부터 만들어지고 관리되어지는 계획적인 틀, 프로토콜, 도구와 자원의 %1 독점 세트입니다."
 
 msgid "\"Account\" means Client Trading Account opened with Binary (V) Ltd."
 msgstr "\"계좌\"는 Binary (V) Ltd를 통해 개설된 고객 거래 계좌를 의미합니다."
 
-msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, indexes or stocks, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
-msgstr "\"바이너리\" 또는 \"디지털\" 옵션은 바이너리 옵션 만료시에 이벤트 발생 유무에 따라 미리 결정된 고정된 금액을 지불하는 욥션입니다.\n"
-"바이너리 옵션은 나올 수 있는 두가지 결과 중 단 한개이며 간단하게 \"네 또는 아니오\"로 접근할 수 있습니다. 전통적인 옵션과 마찬가지로, 바이너리 옵션들은 화폐, 상품, 주가지수, 주식과 같은 기본자산에 근거합니다만, 전통적인 옵션들, 그리고 다른 종류들과 비교해서 가장 두드러지는 차이점은 옵션의 결과가 단 두가지뿐이라는 것입니다. 고객님들이 이벤트발생시 반환액을 받으시거나 또는 고객님께서 각 옵션에서 결정된 투자금액을 잃으시는 것입니다."
+msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, or indices, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
+msgstr ""
 
 msgid "\"Client Agreement\" means the Agreement between the Client and the Company including but not limited to the Terms and Conditions, Order Execution Policy, and Slippage Policy."
 msgstr ""
@@ -166,7 +165,7 @@ msgstr ""
 msgid "%1 does not charge any transfer fees."
 msgstr "%1는 어떠한 이체비용도 일절 요구하지 않습니다."
 
-msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
 msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
@@ -1056,7 +1055,7 @@ msgid "Alter the normal trading times for the affected market;"
 msgstr ""
 
 msgid "Alternatively, clients who are registered with both Binary (IOM) Ltd and Binary (Europe) Ltd, instead of submitting their dispute to IBAS, they can make use of the European Commission's Online Dispute Resolution (ODR) platform available %1here%2."
-msgstr ""
+msgstr "대안적으로, Binary (IOM) Ltd와 Binary (Europe) Ltd에 동시에 등록되어 있는 고객의 경우, IBAS에 논쟁 제기 대신에, %1여기%2에서 이용 가능한 유럽 위원회의 온라인 분쟁해결 (ODR) 플랫폼을 이용하실 수 있습니다."
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "본 회사가 고객의 계좌를 거절하거나 닫을 수 있는 권리가 있다하더라도, 본 회사는 미리 공표된 모든 계약상의 의무가 존중될 것이라는 것을 보증합니다."
@@ -1213,9 +1212,6 @@ msgstr ""
 
 msgid "Are you a money manager who wants to easily manage multiple client accounts? Our %1Multiple Accounts Manager (MAM)%2 application gives you the ability to view, track, and trade on behalf of all MT5 client accounts under your control."
 msgstr ""
-
-msgid "Are you ready?"
-msgstr "준비되셨나요?"
 
 msgid "Are you sure that you want to permanently delete the token"
 msgstr ""
@@ -1760,6 +1756,9 @@ msgstr "Binary의 플랫폼은 평균적으로 24시간 7일 내내 초당 %1%2�
 msgid "Binary.com is an award-winning online trading provider that helps its clients to trade on financial markets through binary options and CFDs. Trading binary options and CFDs on Volatility Indices is classified as a gambling activity. Remember that gambling can be addictive – please play responsibly. Learn more about %1Responsible Trading%2. Some products are not available in all countries. This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, or to persons under age 18."
 msgstr "Binary.com은 고객들로 하여금 바이너리 옵션과 CFD를 통해 금융 시장에서 거래할 수 있도록 도와주는 상을 수상한 온라인 트레이딩 제공자입니다. 변동성지수에서의 바이너리 옵션과 CFD 거래는 도박활동으로 분류됩니다. 도박은 중독성이 있다는 것을 기억하시기 바랍니다 - 책임감 있게 활동하시기 바랍니다. %1책임감 있는 거래%2에 대하여 더 자세히 알아보세요. 어떠한 상품은 국가에 따라 접근가능하지 않을 수도 있습니다. 본 웹사이트 서비스는 미국, 캐나다, 코스타리카, 홍콩에 제공되지 않으며 또한 18세 미만인 사람들을 위한 것이 아닙니다."
 
+msgid "Binary.com recommends 1.1.1.1"
+msgstr ""
+
 msgid "Bitcoin"
 msgstr "비트코인"
 
@@ -1779,9 +1778,6 @@ msgid "Bitcoin vs US Dollar"
 msgstr "비트코인 vs 미국 달러"
 
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
-msgstr ""
-
-msgid "Blue-chip stock contracts sourced from the over-the-counter market"
 msgstr ""
 
 msgid "Both accounts need to be authenticated separately."
@@ -1975,9 +1971,6 @@ msgstr ""
 
 msgid "Careers - Malta"
 msgstr ""
-
-msgid "Careers For Americans"
-msgstr "미국인들을 위한 커리어"
 
 msgid "Carefully handpicked network of liquidity providers allow us to pass on tight spreads and competitive margins to both retail and institutional clients"
 msgstr ""
@@ -2216,7 +2209,7 @@ msgstr ""
 msgid "Clients may utilise this bonus only when a real money account is opened."
 msgstr "고객께서는 현금계좌가 개설된 경우에만 이 보너스를 이용하실 수 있습니다."
 
-msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived from any winnings and only deposits made shall be refunded. For clients registered with Binary (Europe) Ltd, all the funds from their MLT account will be transferred to the Malta Gaming Authority. In order to reclaim these funds, clients will need to contact the MGA directly."
+msgid "Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived of any winnings and only deposits made shall be refunded."
 msgstr ""
 
 msgid "Clients must fill into the account opening form all requested details that establish their identity. Clients must give a valid identification, address, and contact email and personal telephone number."
@@ -2229,16 +2222,16 @@ msgid "Clients need to satisfy at least two of the following criteria in order t
 msgstr ""
 
 msgid "Clients registered with Binary (C.R.) S.A. can raise their unresolved disputes with the management by submitting an email to complaints@binary.com."
-msgstr "Binary (C.R.) S.A. 와 함께 등록된 고객들은 해결되지 않은 분쟁의 경우 complaints@binary.com으로 이메일을 제출함으로써 경영진에게 불만을 제기할 수 있습니다."
+msgstr "Binary (C.R.) S.A. 에 등록된 고객들의 경우 complaints@binary.com으로 이메일을 제출함으로써 경영진에게 미해결 분쟁에 대한 불만을 제기할 수 있습니다."
 
 msgid "Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority %1 by submitting an email to %2. UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %3website%4."
-msgstr "Binary (Europe) Ltd와 등록되어 있는 고객의 경우 %2에 이메일을 보냄으로써 몰타 게임 규제 당국 %1에 미해결 분쟁을 제기할 수 있습니다. Binary (Europe) Ltd와 등록되어 있는 영국 고객의 경우 ADR 기관의 %3웹사이트%4에서 조정 신청서를 작성함으로써 IBAS 기관에 미해결 분쟁에 대해 제기할 수 있습니다."
+msgstr "Binary (Europe) Ltd에 등록되어 있는 고객의 경우 %2에 이메일을 보냄으로써 몰타 게임 규제 당국 %1에 미해결 분쟁을 제기할 수 있습니다. Binary (Europe) Ltd에 등록되어 있는 영국 고객의 경우 ADR 기관의 %3웹사이트%4에서 조정 신청서를 작성함으로써 IBAS 기관에 미해결 분쟁을 제기할 수 있습니다."
 
 msgid "Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity's %1website%2."
-msgstr "Binary (IOM) Ltd와 등록된 고객들은 ADR 기관의 %1웹사이트%2에 조정 신청서를 작성함으로써 대안적 분쟁해결기관인 IBAS에 미해결 분쟁을 제기할 수 있습니다."
+msgstr "Binary (IOM) Ltd에 등록되어 있는 고객들은 대안적 분쟁해결기관인 IBAS와의 해결되지 않은 분쟁을 ADR 기관의 %1웹사이트%2에서 조정 신청서를 작성함으로써 제기할 수 있습니다."
 
 msgid "Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found %1here%2."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd에 등록되어 있는 고객의 경우 해결되지 않은 분쟁을 Office of the Arbiter for Financial Services를 통해 제기할 수 있습니다. Arbiter’s Office를 통한 분쟁제기에 대해 자세한 사항 및 안내를 %1여기%2를 통해 알아 보실 수 있습니다."
 
 msgid "Clients registered with any Binary Group company, and in particular with Binary (V) Ltd., Binary (C.R.). S.A., or Binary (Europe) Ltd can raise their unresolved disputes with management by submitting an email to <a href='mailto:%1'>%1</a>."
 msgstr ""
@@ -2295,6 +2288,9 @@ msgid "Closing or part-closing all, or any, of your Open Positions based on the 
 msgstr ""
 
 msgid "Closing price"
+msgstr ""
+
+msgid "Cloudflare's public DNS service gives you more secure and faster web browsing."
 msgstr ""
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
@@ -3031,9 +3027,6 @@ msgstr ""
 
 msgid "Do not send Bitcoin to a Bitcoin Cash account (or Bitcoin Cash to a Bitcoin account). Doing so may lead to the loss of your funds."
 msgstr ""
-
-msgid "Do not trade more than you can afford."
-msgstr "감당할 수 있는 범위를 벗어난 거래를 하지 마십시오."
 
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "피곤하거나 술기운이 있는 상태에서는 거래하지 마십시오."
@@ -3872,8 +3865,8 @@ msgstr "예를 들어, 시장에서 계약 진행기간동안 저가 5,200과 �
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product Disclosure Statement. This policy is an appendix to the overarching %1 Order Execution Policy and should be read in conjunction with the overarching %1 Order Execution Policy."
 msgstr ""
 
-msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as stocks and stock indices) are not open throughout the day and that trading may not be available when the markets are closed."
-msgstr "외환 가격제시에 관하여 종료시간은 본 웹사이트의 시장 개장 시간 부분에서 보여지는 것처럼 본 회사에 의해 정의됩니다. 시장가 또는 종가에 관련한 분쟁이 있는 경우, 본 회사의 결정이 최종적이고 구속력이 있습니다. 특정 시장 (주식과 주가지수시장같은) 은 낮시간에 열리지 않고 시장이 마감되었을 때 거래가 가능하지 않을 수 있다는 사실을 아셔야 합니다."
+msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as indices) are not open throughout the day and that trading may not be available when the markets are closed."
+msgstr ""
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
 msgstr ""
@@ -4457,9 +4450,6 @@ msgstr ""
 msgid "If a closing Transaction in the same market is entered into but with a higher number of lots, the original Open Position will be closed and a new Open Position will be entered into for the number of lots by which the new Transaction exceeds the Open Position."
 msgstr ""
 
-msgid "If all that sounds a bit daunting, you're right. But it's how we make sure we get the best people for our team."
-msgstr ""
-
 msgid "If an error is made in the calculation of your share of the revenue share, the Company reserves the right to correct such calculation at any time, and to reclaim from you any overpayment made by the Company to you (including, without limitation, by way of reducing future payments earned, revenue to cover any processed chargebacks) before you can start earning revenue again. In special cases, the Company reserves the right to exclude revenue sharing  on promotional funds deposited into the client's account by the Company."
 msgstr "발생한 이익에 대해 당신의 몫을 배분하는 과정에서 계산 오류가 생길 경우, 본 회사는 언제든지 이러한 오류를 바로 잡을 권리가 있으며, 본 회사에 의해(미래에  지불되는 금액을 축소하는 방법에 국한하지 않고) 당신에게 초과지불된 금액에 대해 당신이 다시 이익을 보기 시작하기 전에 반환 요청을 할 수 있습니다. 특별한 케이스의 경우, 본 회사는 해당 고객의 계좌로 입근된 프로모션 자금에 대해 이익분배를 제외할 수 있는 권리가 있습니다."
 
@@ -4523,9 +4513,6 @@ msgstr ""
 msgid "If we have reason to believe that your tax information is incomplete, we may contact you for clarification."
 msgstr ""
 
-msgid "If we're happy with your results, we'll contact you for an interview and then do background and reference checks."
-msgstr "귀하의 결과에 저희가 만족되면, 면접관련으로 연락을 드릴 것입니다. 그리고 신원조사와 추천서를 확인을 진행할 것입니다."
-
 msgid "If you are an affiliate of %1, you must also comply with the %1 Affiliate Programme Terms and Conditions."
 msgstr "귀하께서 %1의 제휴자인 경우, %1제휴 프로그램의 약관을 필수로 준수하셔야 합니다."
 
@@ -4549,9 +4536,6 @@ msgstr ""
 
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
 msgstr ""
-
-msgid "If you are, we'd love to hear from you."
-msgstr "만약 그러시다면, 저희는 귀하를 경청할 것입니다."
 
 msgid "If you ask to be treated as a Professional Client, you need to meet certain specified quantitative and qualitative criteria. On the basis of your request to be categorised as Professional, the Company undertakes an assessment of your expertise, knowledge and experience to determine whether you fall within this Category and whether you are able to make your own investment decisions and understand the risks involved. If the relevant criteria are not met, the Company reserves the right to choose whether to provide its services under this requested classification."
 msgstr ""
@@ -4599,9 +4583,6 @@ msgid "If you keep any positions open overnight, an interest adjustment will be 
 msgstr ""
 
 msgid "If you lose your cryptocurrencies as a result of exchanges and wallet providers being hacked or becoming insolvent, there is no assurance of a recourse. It is your responsibility to store your cryptocurrencies securely. %1 will not accept liability for any loss or damage that arise, directly or indirectly, from theft of your cryptocurrency or insolvency of exchanges and wallet providers that you use."
-msgstr ""
-
-msgid "If you meet our basic requirements, we'll send you a talent test."
 msgstr ""
 
 msgid "If you need assistance feel free to contact our <a href=\"%1\">Customer Support</a>."
@@ -4803,7 +4784,7 @@ msgid "In a nutshell, when you go long on the BTC/USD with Binary.com, you are n
 msgstr ""
 
 msgid "In accordance with applicable regulatory requirements, where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
-msgstr ""
+msgstr "적용되는 규제 요구사항에 따라, 당신을 위한 상품 또는 서비스의 적합성을 평가하기 위해 충분한 정보를 획득하는 것을 관리하지 않는 경우, 우리가 적합성을 평가할 위치에 있지 않다는 것을 당신에게 유사하게 공지할 것입니다."
 
 msgid "In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client's account may be frozen, suspended or cancelled."
 msgstr "모든 상황에서, 본 회사는 이 약관을 변경할 권리가 있습니다. 만약 본 회사가 이 약관을 변경할 것을 결정할 시, 저희 고객은 미리 공지를 받을 것이며 해당 결정에 대해 동의 또는 거절을 할 수 있습니다. 동의를 거절하는 것은 해당 계약에 대한 위반에 해당할 수 있으며 해당 고객의 계좌는 동결되거나 일시중지 또는 무효화될 수 있습니다."
@@ -4854,7 +4835,7 @@ msgid "In providing these services, we are bound by the Act, any applicable regu
 msgstr ""
 
 msgid "In providing these services, we are bound by the Act, any applicable regulations, bye-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
-msgstr ""
+msgstr "이 서비스를 제공함에 있어, 우리는 법, 적용되는 그 어떠한 규정, 내규, 라이센스 약관, 가이드라인, 거래 요구사항 및 타 조항 또는 마케팅 실행 (\"Rules\") 을 따릅니다. 이 보충약관과 규정사이에 충돌이 있는 경우, 후자의 규정에 따릅니다."
 
 msgid "In relation to Contracts that you enter into with us, we act as principal and not as agent on your behalf and we therefore act as the sole execution venue for the execution of your Contracts."
 msgstr ""
@@ -4886,11 +4867,8 @@ msgstr ""
 msgid "In the case of a Stop Order, you acknowledge that we will endeavour to open/close a Transaction at a price equal to the one you specified. However, if the specified price is unavailable, a less favourable price may be quoted. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
 msgstr ""
 
-msgid "In the case of single stock and stock index prices, the final closing price as reported by the relevant official Exchange shall apply for all settlements (this final settlement price may, at times, be reported by the relevant Exchange 30-90 minutes after the official closing time of the market, and may differ from the latest tick price that occurred at the closing time)."
-msgstr "개별주식과 주가지수가격에 관하여, 해당 관련 공식 거래보고에 의한 종가는 모든 합의에 적용됩니다 (이 최종 합의가는, 때때로, 공식 시장 종료시간에서 30에서 90분이 지난 후에 보고되어지며, 종료시간때에 표시된 최종 틱 가격과 다를 수 있습니다)."
-
 msgid "In the course of provision of services we shall, where applicable, conduct an appropriateness test in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
-msgstr ""
+msgstr "서비스를 제공함에 따라 우리는 당신이 특정 종류의 상품 또는 제공되거나 요구되어지는 서비스에 따를 수 있는 위험에 대해 충분히 숙지했는지 투자 영역에 대한 필요한 지식 및 경험이 있는지 확인하기 위해 당신이 제공한 정보에 근거하여 적용 가능한 곳에 우리의 시야로 적합성 시험을 시행할 것입니다."
 
 msgid "In the course of provision of services, we may, where applicable, conduct an appropriateness test, in accordance with our regulatory obligations, in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
 msgstr ""
@@ -5030,8 +5008,8 @@ msgstr ""
 msgid "Internal audit"
 msgstr "내부 감사"
 
-msgid "International currency, stock index or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
-msgstr "국제통화, 주가지수 또는 상품가격은 변동성이 높으며 예측하기 아주 어렵습니다. 이러한 변동성과 더불어 본 웹사이트 편향적인 가격 시스템에 따라(아래에 더 자세한 내용이 설명되어 있습니다), 저희의 시스템을 통해 구매되어진 어떤 금융 계약이라도(지불금액이 프리미엄 수준에 해당하더라도) 안전한 계약이라고 볼 수 없습니다."
+msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
+msgstr ""
 
 msgid "Internet Trading Risks"
 msgstr ""
@@ -5069,7 +5047,7 @@ msgstr ""
 msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
 msgstr ""
 
-msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices, stocks and commodities each of which have their own features and risks."
+msgid "Investing or trading in Contracts exposes you to the performance of the underlying or reference instrument or asset to which the Binary Contract refers including foreign exchange, indices and commodities each of which have their own features and risks."
 msgstr ""
 
 msgid "Investment"
@@ -5162,7 +5140,7 @@ msgstr ""
 msgid "It is prohibited to sell, transfer and/or acquire accounts to/from other clients. Transfer of funds among other clients is also prohibited."
 msgstr "계좌를 다른 고객에게 팔거나 전달하거나 또는 고객으로부터 계좌를 받는 일은 금지됩니다. 다른 고객들 사이에서 자금을 전달하는 행위도 금지됩니다."
 
-msgid "It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a blue 'Sell' button next to your trade in the portfolio."
+msgid "It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a 'Sell' button inside the popup window, after clicking on the 'View' button next to your trade in the portfolio."
 msgstr ""
 
 msgid "It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed."
@@ -6321,7 +6299,7 @@ msgid "Notification of Changes"
 msgstr ""
 
 msgid "Notwithstanding the above, you hereby declare that you are dealing with us outside the scope of your economic or professional activity and we will therefore treat you as an individual retail client for the purposes of EMIR compliance, unless advised otherwise."
-msgstr ""
+msgstr "상기사항에도 불구하고, 당신은 이에 우리와 거래할 시 당신의 경제적 또는 전문적 활동의 범위 밖에서 행동할 것에 대해 선언하며 우리는 그러므로 EMIR 준수 목적에 따라 다른 지시가 없는 경우 당신을 개인 소매 고객으로 대할 것입니다."
 
 msgid "Nov"
 msgstr "11월"
@@ -7931,9 +7909,6 @@ msgstr ""
 msgid "Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses."
 msgstr ""
 
-msgid "Send us a CV and a covering letter that describes your career interests."
-msgstr ""
-
 msgid "Send us your CV and cover letter. We'll compare your skills and experience with our requirements."
 msgstr ""
 
@@ -7983,6 +7958,9 @@ msgid "Set client deposit and loss limits"
 msgstr ""
 
 msgid "Set the length of your trade from 10 seconds to 365 days, whether you have a short-term or long-term view of the markets."
+msgstr ""
+
+msgid "Set up %1 on your device now"
 msgstr ""
 
 msgid "Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners"
@@ -8088,7 +8066,7 @@ msgid "Since all dealing on the %1 website is fully automated, our pricing and r
 msgstr ""
 
 msgid "Since we exclusively deal on own account in Financial Products this means that we act as the execution venue and accordingly all transactions entered into with us will be executed outside a regulated market (stock exchange) or multilateral trading facility."
-msgstr ""
+msgstr "우리는 금융상품과 관련하여 개인 계좌를 독점적으로 다루기에 이의 의미는 우리가 수행 시설로 역활할 것이며 따라서 우리와 연계되어 처리되어지는 거래는 규제되는 시장(증권 거래소) 또는 다각적 거래시설 밖에서 처리되어 진다는 것을 의미합니다."
 
 msgid "Since you feel the need to self-exclude, we strongly encourage you to exclude yourself from similar services that you may have signed up for."
 msgstr ""
@@ -8879,6 +8857,9 @@ msgstr ""
 msgid "The Company, under no circumstances shall provide Investment and/or Financial and/or Legal and/or Tax and/or Regulatory and/or other Investment advice or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written or video information, which we may publish on our website or provide to you in any other manner. We will endeavour to ensure the accuracy and completeness of this information but it will not constitute independent investment research or investment advice provided by us to you."
 msgstr ""
 
+msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
+msgstr ""
+
 msgid "The Financial Products that we offer to deal in are contracts entered into between you and us. Under these contracts and subject to the specific terms of the relevant contract, in consideration for the premium or price that you pay us, we promise to pay you a certain amount if the reference assets or measurements perform in a particular manner. These contracts accordingly are not instruments that we hold on your behalf and neither benefit from clients' assets protection in the event of our insolvency. Similarly the premium or price that you pay to take out a trade is not held as clients' money but as consideration for our undertaking to pay."
 msgstr ""
 
@@ -9011,8 +8992,8 @@ msgstr "계좌개설시에만 해당 보너스 코드를 입력하고 활성화�
 msgid "The bonus will be added to the account when the required minimum deposit has been made via a single transaction. Clients who make multiple deposits in an attempt to accumulate the required deposit amount will not be eligible for this bonus."
 msgstr "단일 거래를 통해 요구되어지는 최소 금액이 예금되어질 때 계좌에 해당 보너스가 입금됩니다. 요구되어지는 예금액을 맞추기 위해 다수의 입금을 하는 고객에게는 이 보너스를 적용받을 자격이 되지 않습니다."
 
-msgid "The calculation of the price to be paid (or the payout to be received) for financial contracts on this site at the time the financial contract is purchased or sold will be based on the Company's best estimate of market price movements and the expected level of interest rates, implied volatilities and other market conditions during the life of the financial contract, and is based on complex mathematics. The calculation will include a bias in favour of the Company. The financial contract prices (or the payout amounts) offered to Clients speculating on market or index prices may differ substantially from prices available in the primary markets where stock indices or commodities or contracts thereupon are traded, due to the bias favouring the Company in the price calculation system referred to above."
-msgstr "금융 계약이 구매되거나 판매되는 시간에 본 사이트의 금융 계약에 대해 지불되어야 할 (또는 받아야저야 할 지불금) 금액은 본 금융 계약기간동안의 시장조건과 이자 비율 기대치와 시장 가격 동향에 대한 본 회사의 최선적 판단에 따를 것이며 이는 복잡한 수학적 원리에 따릅니다. 이 계산은 본 회사에 호의적인 편향을 포함할 것입니다. 시장에 투기하는 고객들에게 지불되는 본 금융 계약의 가격 (또는 지불금의 액수) 또는 주가지수는 상품 또는 주가지수 또는 계약이 거래되는 발행시장에서 나타나는 가격과 상이하게 다를 수 있습니다. 이는 앞서 말씀드린 본 회사에 호의적으로 적용되는 가격 계산 시스템때문입니다."
+msgid "The calculation of the price to be paid (or the payout to be received) for financial contracts on this site at the time the financial contract is purchased or sold will be based on the Company's best estimate of market price movements and the expected level of interest rates, implied volatilities and other market conditions during the life of the financial contract, and is based on complex mathematics. The calculation will include a bias in favour of the Company. The financial contract prices (or the payout amounts) offered to Clients speculating on market or index prices may differ substantially from prices available in the primary markets where commodities or contracts thereupon are traded, due to the bias favouring the Company in the price calculation system referred to above."
+msgstr ""
 
 msgid "The charting data made available to Clients by the Company is indicative only and may at times differ from the real market values. The Company's decision as to the calculation of a financial contract price will be final and binding. The Company allows the option to sell contracts before expiry time of some contracts but will not be obliged to do so and can suspend this option depending on the current market conditions. Contracts may be amended when the underlying asset value is adjusted by corporate actions during the contract period."
 msgstr "본 회사를 통해 고객들께서 이용 가능한 차트 데이터는 오직 참고적이며 때때로 실제 시장 가격과 다를 수 있습니다. 금융 계약 가격의 계산에 관해 본 회사의 계산은 최종적이며 구속력을 지닐 것입니다. 본 회사는 몇몇 계약들의 만기 시간 이전에 계약을 판매하는 것을 허용합니다만 의무적인 것은 아니며 현 시장 상황에 따라 이러한 선택권을 중지시킬 수 있습니다. 기초자산 가치가 해당 계약 기간동안 기업 행위로 인해 조정될 때 계약은 개정될 수 있습니다."
@@ -9054,6 +9035,9 @@ msgid "The contract period is the timeframe of a trade. It is also called the du
 msgstr ""
 
 msgid "The cut-off time for performing Roll-overs and booking of the Roll-over Credit/Debit."
+msgstr ""
+
+msgid "The default DNS services provided by your ISP can be slow and insecure. %1 recommends using Cloudflare's %2 DNS service that gives you a faster and more private way to browse the Internet."
 msgstr ""
 
 msgid "The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavour to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level."
@@ -9345,10 +9329,10 @@ msgid "These ST&Cs form part of and need to be read together with the General Te
 msgstr ""
 
 msgid "These Supplementary Terms and Conditions (these \"ST&Cs\") apply solely to clients (\"you\") of Binary Investments (Europe) Ltd (\"BIEL\", \"we\" or \"us\") and will govern the relationship between you and us when trading Financial Products (as defined below) with us."
-msgstr ""
+msgstr "이 보충약관 (\"ST&Cs\") 은 Binary Investments (Europe) Ltd (\"BIEL\", \"we\" 또는 \"us\") 의 고객에게 단독으로 적용되며 우리와 금융상품 (아래에 상세히 정의되어 있음) 을 거래할 때에 당신과 우리 사이의 관계를 통치합니다."
 
 msgid "These Supplementary Terms and Conditions (these \"ST&Cs\") apply solely to clients (\"you\") of Binary Investments (Europe) Ltd (\"BIEL\", \"we\" or \"us\") and will govern the relationship between you and us when trading Financial Products (as defined in the Key Information documents %1here%2) with us."
-msgstr ""
+msgstr "이 보충약관 (\"ST&Cs\") 은 Binary Investments (Europe) Ltd (\"BIEL\", \"we\" 또는 \"us\") 의 고객에게 단독으로 적용되며 우리와 금융상품 (%1여기%2 핵심 정보문건에 상세히 정의되어 있음) 을 거래할 때에 당신과 우리 사이의 관계를 통치합니다."
 
 msgid "These Terms and Conditions may be supplemented from time to time by Supplementary Terms and Conditions applicable to a particular Company or products."
 msgstr "이 약관은 특정 회사 또는 제품에 적용될 수 있는 보충 약관에 의해 때때로 추가될 수 있습니다."
@@ -9494,7 +9478,7 @@ msgstr ""
 msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
 msgstr ""
 
-msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices, stocks and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
+msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
 msgstr ""
 
 msgid "This offer cannot be used in conjunction with any other offer."
@@ -9589,9 +9573,6 @@ msgstr ""
 
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "지원을 희망하시면 이력서와 커버레터를 %1로 제출해 주시기 바랍니다."
-
-msgid "To apply, please submit your CV and a cover letter to %1."
-msgstr ""
 
 msgid "To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:"
 msgstr ""
@@ -9755,8 +9736,8 @@ msgstr ""
 msgid "Trade all four precious metals on one platform."
 msgstr ""
 
-msgid "Trade all major currencies, indices, stocks, and commodities."
-msgstr "모든 주요 화폐, 인덱스, 주식 및 상품들을 거래하세요."
+msgid "Trade all major currencies, indices, commodities, and volatility indices."
+msgstr ""
 
 msgid "Trade and manage multiple MT5 client accounts from a single interface."
 msgstr "단일 인터페이스에서 다수의 MT5 고객 계정을 거래하고 관리하세요."
@@ -10196,6 +10177,9 @@ msgstr "계약 종결 또는 만기시, 어떠한 이유든간에, %1 API의 사
 msgid "Usage Limit"
 msgstr "사용 한도"
 
+msgid "Use Cloudflare’s public DNS service for faster and more secure browsing."
+msgstr ""
+
 msgid "Use MT5’s comprehensive analysis tools for technical and fundamental analysis to predict price movement"
 msgstr ""
 
@@ -10229,8 +10213,8 @@ msgstr ""
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
 msgstr "마케팅, 시연을 위한 목적 및 당신의 고객들에게 당신의 어플리케이션이 이용가능하도록 당신의 어플리케이션과 이의 내용을 사용, 실행, 전시합니다; 그리고    "
 
-msgid "Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
-msgstr "고객님들은 저희 회사에서 통화, 지수, 주식과 상품들을 24시간 7일 내내 거래하실 수 있습니다. 저희는 가장 유연한 가격과 가장 포괄적인 제품군을 형성하고 있습니다."
+msgid "Using our website, customers can trade currencies, indices, commodities, and volatility indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available."
+msgstr ""
 
 msgid "Utilise a variety of tactics - both online and offline - to grow and support the company's network of partners in your designated market"
 msgstr ""
@@ -10442,10 +10426,10 @@ msgstr ""
 msgid "We are always on the lookout for small, local charities where our contributions can make a direct impact. If you'd like to talk to us about supporting your charity, please contact us at %1."
 msgstr ""
 
-msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients, both services are in relation to financial derivative products relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
-msgstr "우리는 투자업을 이어가기 위해 몰타 투자서비스법 (Cap. 370, Laws of Malta) (the \"Act\") 아래 몰타 금융 서비스 당국 (\"MFSA\")으로부터 허가받았으며 규제되고 있습니다. 우리는 개인 계좌를 다룰수 있도록 그리고 타 고객들을 대신하여 주문을 실행할 수 있도록 MFSA로부터 인가받았으며 (예로써 거래에 있어 카운터파티로써 역할 및 제공), 두 서비스는 외환, 지수, 주식과 다른 금융상품 또는 자산 (\"금융상품\")과 관련되어 있는 파생금융상품에 관한 것입니다. 우리는 상기 명시된 사항을 제외하고는 다른 어떠한 투자조언 또는 다른 투자 서비스에 대해 제의 및 제공할 권한이 없습니다. 상기 명시된 부분을 제외한 투자조언 또는 투자 서비스가 필요하다고 느껴진다면 독립투자자문업자 또는 독립투자자문사에 연락하셔야 합니다."
+msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business.  We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other clients, both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
+msgstr ""
 
-msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices, stocks and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
+msgid "We are authorised and regulated by the Malta Financial Services Authority (\"MFSA\") under the Investment Services Act (Cap. 370, Laws of Malta) (the \"Act\") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets (\"Financial Products\"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm."
 msgstr ""
 
 msgid "We are committed to making sure your personal data and transactions are secure:"
@@ -10455,7 +10439,7 @@ msgid "We are currently accepting applications from skilled, ambitious affiliate
 msgstr ""
 
 msgid "We are entitled under the Rules to rely upon information provided by you. You should ensure that you provide us with accurate and complete information and notify us in the event that any information supplied to us changes. You should note that if you provide us with inaccurate information, or if you fail to notify us of any changes to information previously supplied by you, this may adversely affect the quality of the services that we can provide."
-msgstr ""
+msgstr "우리는 규정에 따라 당신이 우리에게 제공한 정보에 의존합니다. 당신은 우리에게 제공하는 정보가 정확하고 완전한 정보라는 것을 보장해야 하며 만약 어떠한 정보의 변경이 있을 경우 우리에게 공지해야 합니다. 만약 우리에게 부정확한 정보를 제공하는 경우, 또는 이전에 제공한 정보의 어떠한 변경에 대해 공지 하지 않은 경우, 우리가 당신에게 제공할 수 있는 서비스가 질적으로 불리하게 적용될 수 있습니다."
 
 msgid "We are licensed and regulated in the British Isles and in Malta since 2015."
 msgstr ""
@@ -10709,6 +10693,9 @@ msgstr "룩백은 무엇인가요?"
 msgid "What is CFD trading"
 msgstr "CFD 거래란 무엇인가요?"
 
+msgid "What is DNS"
+msgstr ""
+
 msgid "What is Forex trading"
 msgstr ""
 
@@ -10896,13 +10883,13 @@ msgid "Where the Company ascertains any mistakes or flaws related to deposits, o
 msgstr ""
 
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
-msgstr ""
+msgstr "당신이 제공한 정보에 근거하여 우리가 판단할 때 당신이 제안된 상품 및 투자에 관한 위험에 대해 이해할 수 있는 경험 및 지식을 습득하지 않았다고 여겨지는 경우, 우리는 당신에게 경고를 줄 것입니다. 이러한 경고는 웹사이트에 표시될 것입니다."
 
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you. Such a warning shall be displayed on the website."
 msgstr ""
 
 msgid "Where we do not manage to obtain sufficient information to assess the appropriateness of the product or service for you, we will similarly inform you that we are not in a position to assess appropriateness."
-msgstr ""
+msgstr "당신을 위한 상품 또는 서비스의 적합성을 평가하기 위해 충분한 정보를 획득하는 것을 관리하지 않는 경우, 우리가 적합성을 평가할 위치에 있지 않다는 것을 당신에게 유사하게 공지할 것입니다."
 
 msgid "Where you can go"
 msgstr "여러분이 갈 수 있는 곳"
@@ -10969,6 +10956,9 @@ msgstr "귀하께서 %1를 통해 바이너리 옵션거래를 해야 하는 이
 
 msgid "Why you should trade precious metals with %1"
 msgstr "귀하께서 %1를 통해 귀금속을 거래해야 하는 이유"
+
+msgid "Why you should use %1 instead of your ISP's default DNS service"
+msgstr ""
 
 msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
 msgstr ""
@@ -11573,7 +11563,7 @@ msgstr ""
 msgid "You should read these ST&Cs carefully as well as the Summary Order Execution Policy and Summary Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you."
 msgstr "본 보충 약관 및 약식 명령 실행 정책과 약식 분쟁 정책, 적용되는 계약의 세부사항과 위험 고시 공지사항 그리고 저희가 공급해 온 또는 미래에 귀하에게 공급해 드릴 추가적인 다른 문서들을 주의깊게 읽으셔야 합니다."
 
-msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, stocks, commodities) are financial instruments."
+msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, indices, commodities) are financial instruments."
 msgstr ""
 
 msgid "You want to buy a certain currency pair if you think the base currency will go up. The reverse holds true:"
@@ -11900,7 +11890,7 @@ msgstr ""
 msgid "b) The price at which your order will be executed;"
 msgstr ""
 
-msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading"
+msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr ""
 
 msgid "c) The time at which your order will be executed; and"
