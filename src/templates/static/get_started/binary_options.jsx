@@ -176,7 +176,6 @@ const BinaryOptions = () => {
                             <ul className='checked'>
                                 <ListStrong header={it.L('Forex')}              text={it.L('Major and minor pairs, plus Smart FX indices')} />
                                 <ListStrong header={it.L('Indices')}            text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
-                                <ListStrong header={it.L('Stocks')}             text={it.L('Blue-chip stock contracts sourced from the over-the-counter market')} />
                                 <ListStrong header={it.L('Commodities')}        text={it.L('Major commodities such as gold, silver, and oil')} />
                                 <ListStrong header={it.L('Volatility Indices')} text={it.L('Our proprietary synthetic indices that simulate market forces')} />
                             </ul>
@@ -315,7 +314,7 @@ const BinaryOptions = () => {
                                 { word: it.L('Resale price'),        dataAnchor: 'resale-price',        definition: it.L('The resale price indicates a contract\'s current market price. Resale prices are on a best-efforts basis and may not be available at all times after purchase. See \'Sell option\' for more details on selling contracts before expiry.') },
                                 { word: it.L('Return'),              dataAnchor: 'return',              definition: it.L('The return is the money realized when the contract expires (see \'Payout\').') },
                                 { word: it.L('Rise/Fall trades'),    dataAnchor: 'rise-fall-trades',    definition: it.L('These are trades where the trader predicts if a market will rise or fall at the end of a selected time period.') },
-                                { word: it.L('Sell option'),         dataAnchor: 'sell-option',         definition: it.L('It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a blue \'Sell\' button next to your trade in the portfolio.') },
+                                { word: it.L('Sell option'),         dataAnchor: 'sell-option',         definition: it.L('It is sometimes possible to sell an option before the expiry of a trade, but only if a fair price can be determined. If this option is available, you will see a \'Sell\' button inside the popup window, after clicking on the \'View\' button next to your trade in the portfolio.') },
                                 { word: it.L('Spot price'),          dataAnchor: 'spot-price',          definition: it.L('This is the current price at which an underlying can be bought or sold at a particular time.') },
                                 { word: it.L('Stake'),               dataAnchor: 'stake',               definition: it.L('The stake is the amount that a trader must pay to enter into a trade.') },
 
