@@ -30,7 +30,8 @@ const TradingTimesUI = (() => {
         }
 
         const date = moment.utc();
-        $date.attr('data-value', toISOFormat(date));
+        const isoFormattedDate = toISOFormat(date);
+        $date.attr('data-value', isoFormattedDate);
         DatePicker.init({
             selector: '#trading-date',
             minDate : 0,
@@ -42,8 +43,8 @@ const TradingTimesUI = (() => {
         $label.append('<span class=\'ux-date foot-note\'></span>');
         if ($date.val() === '') {
             $('span.ux-date').text(localize('Today'));
-            $date.val(moment().format('YYYY-MM-DD'));
-            $date.attr('value', moment.utc().toISOString().substring(0,10));
+            $date.val(isoFormattedDate);
+            $date.attr('value', isoFormattedDate);
         }
         $date.change(() => {
             $('span.ux-date').text(moment($date.val()).format('LL'));
