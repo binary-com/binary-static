@@ -243,7 +243,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:500'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission (excluding cryptocurrencies)'),
+                                it.L('No commission'),
                             ]}
                         />
                         <AccountDesc
