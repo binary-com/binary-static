@@ -1010,3 +1010,74 @@ body #not_authenticated_financial ul.checked > li {
 #contract-specification table td {
     white-space: nowrap;
 }
+
+.vpn-app {
+    .steps.steps-vertical {
+        @media (max-width: 480px) {
+            flex-direction: column;
+
+            .step:not(:first-child) {
+                margin-top: 2rem;
+            }
+        }
+        max-width: 603px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        padding-left: 15px;
+
+        .step {
+            position: relative;
+
+            &:not(:last-child) {
+                border-left: 1px solid $COLOR_LIGHT_GRAY;
+            }
+            .circle {
+                margin: 0;
+                position: absolute;
+                left: -20px;
+            }
+            .content {
+                padding: 8px 0 0 30px;
+                margin-left: 37px;
+
+                p {
+                    margin: 0;
+                    max-width: 269px;
+                    text-align: left;
+
+                    &:last-child, &:nth-child(2) {
+                        padding-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+    &-icon {
+        width: 83px;
+        height: 83px;
+        margin-top: -23px;
+        @media screen and (max-width: 480px) {
+            margin-top: 10px;
+        }
+    }
+    .column {
+        @media screen and (max-width: 480px) {
+            padding: 0;
+        }
+    }
+    .vertical-divider {
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
+        width: 1px;
+        background-color: $COLOR_LIGHT_GRAY;
+    }
+    .cta-download-heading {
+        margin-top: 50px;
+
+        h2 {
+            margin-bottom: 45px;
+        }
+    }
+}
