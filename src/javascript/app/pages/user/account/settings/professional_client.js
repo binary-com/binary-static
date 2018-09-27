@@ -16,9 +16,7 @@ const professionalClient = (() => {
 
     const init = (is_financial, is_page) => {
         is_in_page = !!is_page;
-        BinarySocket.wait('landing_company').then(() => {
-            populateProfessionalClient(is_financial);
-        });
+        populateProfessionalClient(is_financial);
     };
 
     const populateProfessionalClient = (is_financial) => {
