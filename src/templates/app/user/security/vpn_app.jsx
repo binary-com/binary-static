@@ -1,6 +1,19 @@
 
 import React from 'react';
 
+const Step  = ({
+    circle_number,
+    text,
+    imgSrc,
+}) => (
+    <div className='step'>
+        <div className='circle'>{circle_number}</div>
+        <div className='content gr-row gr-padding-10 gr-row-align-between'>
+            <p>{text}</p>
+            <img className='vpn-app-icon' src={imgSrc} />
+        </div>
+    </div>
+);
 const VPNApp = () => (
     <div className='vpn-app'>
         <h1>VPN app</h1>
@@ -9,27 +22,21 @@ const VPNApp = () => (
             <h2>{it.L('How it works')}</h2>
             <p>{it.L('Secure your internet connection in three easy steps:')}</p>
             <div className='steps steps-vertical'>
-                <div className='step'>
-                    <div className='circle'>1</div>
-                    <div className='content gr-row gr-padding-10 gr-row-align-between'>
-                        <p>{it.L('Download our VPN app for your preferred device')}</p>
-                        <img className='vpn-app-icon' src={it.url_for('images/pages/settings/2fa.svg')} />
-                    </div>
-                </div>
-                <div className='step'>
-                    <div className='circle'>2</div>
-                    <div className='content gr-row gr-padding-10 gr-row-align-between'>
-                        <p>{it.L('Activate the VPN service on the app')}</p>
-                        <img className='vpn-app-icon' src={it.url_for('images/pages/settings/2fa.svg')} />
-                    </div>
-                </div>
-                <div className='step'>
-                    <div className='circle'>3</div>
-                    <div className='content gr-row gr-padding-10 gr-row-align-between'>
-                        <p>{it.L('Browse and trade securely on your preferred device')}</p>
-                        <img className='vpn-app-icon' src={it.url_for('images/pages/settings/2fa.svg')} />
-                    </div>
-                </div>
+                <Step
+                    circle_number='1'
+                    text={it.L('Download our VPN app for your preferred device')}
+                    imgSrc={it.url_for('images/pages/settings/2fa.svg')}
+                />
+                <Step
+                    circle_number='2'
+                    text={it.L('Activate the VPN service on the app')}
+                    imgSrc={it.url_for('images/pages/settings/2fa.svg')}
+                />
+                <Step
+                    circle_number='3'
+                    text={it.L('Browse and trade securely on your preferred device')}
+                    imgSrc={it.url_for('images/pages/settings/2fa.svg')}
+                />
             </div>
         </div>
         <div className='border-bottom'>&nbsp;</div>

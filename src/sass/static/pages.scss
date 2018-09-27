@@ -1043,7 +1043,7 @@ body #not_authenticated_financial ul.checked > li {
 
                 p {
                     margin: 0;
-                    max-width: 269px;
+                    max-width: 270px;
                     text-align: left;
 
                     &:last-child, &:nth-child(2) {
@@ -1057,6 +1057,7 @@ body #not_authenticated_financial ul.checked > li {
         width: 83px;
         height: 83px;
         margin-top: -23px;
+        margin-bottom: 23px;
         @media screen and (max-width: 480px) {
             margin-top: 10px;
         }
