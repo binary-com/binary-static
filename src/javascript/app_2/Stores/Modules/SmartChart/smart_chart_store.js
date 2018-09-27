@@ -24,6 +24,11 @@ export default class SmartChartStore extends BaseStore {
     @observable chart_type = 'mountain';
     @observable granularity = 0;
 
+    constructor({ root_store }) {
+        const local_storage_properties = ['chart_type', 'granularity'];
+        super({ root_store, local_storage_properties });
+    }
+
     @action.bound
     updateChartType(chart_type) {
         this.chart_type = chart_type;
