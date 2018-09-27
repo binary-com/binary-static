@@ -3,7 +3,6 @@ import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { withRouter }                 from 'react-router';
 import { connect }                    from 'Stores/connect';
-import GTM                            from 'Utils/gtm';
 import ErrorComponent                 from '../../Components/Elements/Errors';
 import BinaryRoutes                   from '../../Components/Routes';
 
@@ -11,8 +10,6 @@ const Routes = (props) => {
     if (props.has_error) {
         return <ErrorComponent {...props.error} />;
     }
-
-    GTM.pushDataLayer({ event: 'page_load' });
 
     return <BinaryRoutes />;
 };

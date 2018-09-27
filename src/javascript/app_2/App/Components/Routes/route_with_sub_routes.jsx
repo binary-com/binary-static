@@ -6,6 +6,7 @@ import Client              from '_common/base/client_base';
 import { redirectToLogin } from '_common/base/login';
 import { localize }        from '_common/localize';
 import routes              from 'Constants/routes';
+import GTM                 from 'Utils/gtm';
 import LoginPrompt         from '../Elements/login_prompt.jsx';
 import { default_title }   from '../../Constants/app_config';
 
@@ -32,6 +33,7 @@ const RouteWithSubRoutes = route => {
 
         const title = route.title ? `${ localize(route.title) } | ` : '';
         document.title = `${ title }${ default_title }`;
+        GTM.pushDataLayer({ event: 'page_load' });
         return result;
     };
 
