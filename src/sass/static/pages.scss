@@ -150,34 +150,6 @@
     margin-bottom: 0;
 }
 
-.browser-support-content {
-    .li-boxes-content-icon {
-        display: block;
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        height: 10em;
-    }
-    #internet_explorer {
-        background-image: url('../images/pages/browser_support/ielogo.png');
-    }
-    #microsoft_edge {
-        background-image: url('../images/pages/browser_support/edgelogo.png');
-        background-size: 50%;
-    }
-    #firefox {
-        background-image: url('../images/pages/browser_support/firefoxlogo.png');
-    }
-    #safari {
-        background-image: url('../images/pages/browser_support/safarilogo.png');
-    }
-    #opera {
-        background-image: url('../images/pages/browser_support/operalogo.png');
-    }
-    #chrome {
-        background-image: url('../images/pages/browser_support/chromelogo.png');
-    }
-}
-
 #payment_methods {
     overflow-y: hidden;
 
