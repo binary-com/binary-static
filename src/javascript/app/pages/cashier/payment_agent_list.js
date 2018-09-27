@@ -29,9 +29,10 @@ const PaymentAgentList = (() => {
     };
 
     const sendRequest = (country) => {
+        const currency = Client.get('currency');
         BinarySocket.send({
             paymentagent_list: country,
-            currency         : Client.get('currency'),
+            ...(currency && { currency }),
         }).then((response) => {
             if (response.paymentagent_list) {
                 populateAgentsList(response.paymentagent_list.list);
