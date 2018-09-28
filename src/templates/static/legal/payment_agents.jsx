@@ -45,7 +45,7 @@ const PaymentAgents = () => (
             <li>{it.L('Where the Agent ceases to be competent and/or capable and/or adequate and/or qualified to effectively perform all its duties and/or obligations undertaken and agreed, under this Agreement, for any reason including but not limited to lack of knowledge, expertise, experience, skills and time shall immediately and/or without any delay notify the Company.')}
                 <p>{it.L('In providing its services, the Agent shall:')}</p>
                 <ul className='bullet'>
-                    <li>{it.L('use its best endeavours and diligence to transfer funds deposited to [_1] Agent Account to [_1] Client Account;', it.website_name)}</li>
+                    <li>{it.L('use its best endeavors and diligence to transfer funds deposited to [_1] Agent Account to [_1] Client Account;', it.website_name)}</li>
                     <li>{it.L('provide the Company with all and any information whatsoever that it may become aware of that may be harmful and/or adverse and/or detrimental for the Company and its reputation;')}</li>
                     <li>{it.L('follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;')}</li>
                     <li>{it.L('fairly and accurately describe its services to the Clients;')}</li>
