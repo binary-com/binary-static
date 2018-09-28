@@ -1,5 +1,6 @@
 const tabListener = require('@binary-com/binary-style').tabListener;
 const localize    = require('../../_common/localize').localize;
+const hideEU      = require('../../app/common/common_functions').hideEU;
 const TNCApproval = require('../../app/pages/user/tnc_approval');
 
 const TermsAndConditions = (() => {
@@ -22,6 +23,7 @@ const TermsAndConditions = (() => {
         window.onresize = checkWidth;
 
         $('.currentYear').text(new Date().getFullYear());
+        hideEU();
     };
 
     const handleActiveTab = () => {

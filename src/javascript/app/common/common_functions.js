@@ -8,6 +8,7 @@ const hideEU = () => {
         const residence = Client.get('residence');
         if ((!residence && State.get('is_eu')) || (residence && isEuCountry(residence))) {
             $('.eu-hide').setVisibility(0);
+            $('.eu-show').setVisibility(1);
             $('.eu-hide-parent').parent().setVisibility(0);
         }
     });
