@@ -6,7 +6,7 @@ const FormManager          = require('../../common/form_manager');
 const validEmailToken      = require('../../common/form_validation').validEmailToken;
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
 const localize             = require('../../../_common/localize').localize;
-const getHashValue         = require('../../../_common/url').getHashValue;
+const Url                  = require('../../../_common/url');
 const isBinaryApp          = require('../../../config').isBinaryApp;
 
 const PaymentAgentWithdraw = (() => {
@@ -43,7 +43,7 @@ const PaymentAgentWithdraw = (() => {
     };
 
     const checkToken = ($ddl_agents, pa_list) => {
-        token = token || getHashValue('token');
+        token = token || Url.getHashValue('token');
         if (!token) {
             BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
             if (isBinaryApp()) {
@@ -171,6 +171,10 @@ const PaymentAgentWithdraw = (() => {
                 showPageError('', 'withdrawal-locked-error');
             } else {
                 currency = Client.get('currency');
+                if (!currency || +Client.get('balance') === 0) {
+                    showPageError(localize('Please [_1]deposit[_2] to your account.', [`<a href='${`${Url.urlFor('cashier/forwardws')}?action=deposit`}'>`, '</a>']));
+                    return;
+                }
                 BinarySocket.send({
                     paymentagent_list: Client.get('residence'),
                     currency,
