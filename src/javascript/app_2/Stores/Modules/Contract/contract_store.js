@@ -85,7 +85,9 @@ export default class ContractStore extends BaseStore {
             return;
         }
         this.contract_info = response.proposal_open_contract;
-        this.chart_config = getChartConfig(this.contract_info);
+        if (isEnded(this.contract_info)) {
+            this.chart_config = getChartConfig(this.contract_info);
+        }
         createChartBarrier(this.smart_chart, this.contract_info);
         createChartMarkers(this.smart_chart, this.contract_info, this);
         this.handleDigits();
