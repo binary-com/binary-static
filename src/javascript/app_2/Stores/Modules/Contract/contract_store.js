@@ -33,6 +33,7 @@ export default class ContractStore extends BaseStore {
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
     @observable sell_info     = observable.object({});
+    @observable chart_config  = observable.object({});
 
     @observable has_error         = false;
     @observable is_sell_requested = false;
@@ -40,6 +41,16 @@ export default class ContractStore extends BaseStore {
     // -------------------
     // ----- Actions -----
     // -------------------
+    @action.bound
+    updateChartType(chart_type) {
+        this.chart_config.chart_type = chart_type;
+    }
+
+    @action.bound
+    updateGranularity(granularity) {
+        this.chart_config.granularity = granularity;
+    }
+
     @action.bound
     onMount(contract_id) {
         this.contract_id = contract_id;
@@ -74,6 +85,7 @@ export default class ContractStore extends BaseStore {
             return;
         }
         this.contract_info = response.proposal_open_contract;
+        this.chart_config = getChartConfig(this.contract_info);
         createChartBarrier(this.smart_chart, this.contract_info);
         createChartMarkers(this.smart_chart, this.contract_info, this);
         this.handleDigits();
@@ -125,11 +137,7 @@ export default class ContractStore extends BaseStore {
     // ---------------------------
     // ----- Computed values -----
     // ---------------------------
-    @computed
-    get chart_config() {
-        // TODO: currently this runs on each response, even if contract_info is deep equal previous one
-        return getChartConfig(this.contract_info);
-    }
+    // TODO: currently this runs on each response, even if contract_info is deep equal previous one
 
     @computed
     get details_expiry() {
