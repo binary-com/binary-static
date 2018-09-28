@@ -252,6 +252,7 @@ const texts = [
     'Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.',
     'Up to [_1] decimal places are allowed.',
     'Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.',
+    'Please [_1]deposit[_2] to your account.',
 
     // api_token
     'New token created.',

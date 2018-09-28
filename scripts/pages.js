@@ -92,7 +92,6 @@ module.exports = [
     ['regulation',                              'static/legal/regulation',                     'default',    'Regulation',                        'id'],
     ['responsible-trading',                     'static/responsible_trading',                  'full_width', 'Responsible Trading'],
     ['terms-and-conditions',                    'static/legal/tac',                            'default',    'Terms and Conditions'],
-    ['user/browser-support',                    'static/browser_support',                      'default',    'Login trouble'],
 
     ['liquidity-solutions',                     'static/partners/liquidity_solutions',         'full_width', 'Multi-asset Liquidity Solutions'],
     ['multiple-accounts-manager',               'static/partners/multiple_accounts_manager',   'full_width', 'Multiple Accounts Manager'],
