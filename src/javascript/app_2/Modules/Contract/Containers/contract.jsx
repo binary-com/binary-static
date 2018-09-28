@@ -17,9 +17,6 @@ class Contract extends React.Component {
         };
     }
 
-    componentDidMount()    { this.props.onMount(this.props.match.params.contract_id); }
-    componentWillUnmount() { this.props.onUnmount(); }
-
     componentDidUpdate() {
         if (!isDeepEqual(this.props.chart_config, this.state.chart_config)) {
             this.setState({ chart_config: { ...this.props.chart_config } });
@@ -96,7 +93,5 @@ export default connect(
         has_error   : modules.contract.has_error,
         is_mobile   : ui.is_mobile,
         symbol      : modules.contract.contract_info.underlying,
-        onMount     : modules.contract.onMount,
-        onUnmount   : modules.contract.onUnmount,
     })
 )(Contract);

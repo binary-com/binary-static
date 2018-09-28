@@ -9,6 +9,9 @@ import DetailsContents from '../Components/Details/details_contents.jsx';
 import DetailsHeader   from '../Components/Details/details_header.jsx';
 
 class ContractDetails extends React.Component {
+    componentDidMount()    { this.props.onMount(this.props.contract_id); }
+    componentWillUnmount() { this.props.onUnmount(); }
+
     render() {
         const {
             contract_id,
@@ -59,5 +62,7 @@ export default connect(
         details_info  : modules.contract.details_info,
         details_expiry: modules.contract.details_expiry,
         display_status: modules.contract.display_status,
+        onMount       : modules.contract.onMount,
+        onUnmount     : modules.contract.onUnmount,
     })
 )(ContractDetails);

@@ -60,7 +60,6 @@ export default class ContractStore extends BaseStore {
         this.digits_info       = {};
         this.sell_info         = {};
         this.is_sell_requested = false;
-        this.has_error         = false;
 
         this.smart_chart.removeBarriers();
         this.smart_chart.removeMarkers();
