@@ -1,5 +1,11 @@
 export const getChartConfig = (contract_info) => {
-    if (!isEnded(contract_info)) return {}; // don't limit the range for ongoing contracts until smartchart supports it
+    if (!isEnded(contract_info)) {
+        // don't limit the range for ongoing contracts until smartchart supports it
+        return {
+            chart_type : 'mountain',
+            granularity: 0,
+        };
+    }
 
     const start = contract_info.date_start;
     const end   = contract_info.date_expiry;

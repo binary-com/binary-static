@@ -13,13 +13,17 @@ class Contract extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            chart_config: { ...this.props.chart_config },
+            chart_config         : { ...this.props.chart_config },
+            is_chart_config_final: false, // chart breaks if rendered without epoch limits, then with
         };
     }
 
     componentDidUpdate() {
         if (!isDeepEqual(this.props.chart_config, this.state.chart_config)) {
-            this.setState({ chart_config: { ...this.props.chart_config } });
+            this.setState({
+                is_chart_config_final: !!this.props.contract_info,
+                chart_config         : { ...this.props.chart_config },
+            });
         }
     }
 
@@ -47,7 +51,7 @@ class Contract extends React.Component {
                         :
                         <div className='trade-container'>
                             <div className='chart-container notice-msg'>
-                                { symbol && this.state.chart_config.chart_type &&
+                                { symbol && this.state.is_chart_config_final &&
                                     <SmartChart
                                         InfoBox={<InfoBox />}
                                         symbol={symbol}
@@ -89,9 +93,10 @@ Contract.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
-        chart_config: modules.contract.chart_config,
-        has_error   : modules.contract.has_error,
-        is_mobile   : ui.is_mobile,
-        symbol      : modules.contract.contract_info.underlying,
+        chart_config : modules.contract.chart_config,
+        contract_info: modules.contract.contract_info,
+        has_error    : modules.contract.has_error,
+        is_mobile    : ui.is_mobile,
+        symbol       : modules.contract.contract_info.underlying,
     })
 )(Contract);
