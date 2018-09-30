@@ -7,6 +7,7 @@ import { isEmptyObject }      from '_common/utility';
 import { WS }                 from 'Services';
 import { ChartBarrierStore }  from './chart_barrier_store';
 import { ChartMarkerStore }   from './chart_marker_store';
+import { tick_chart_types }   from './Constants/chart';
 import {
     barriersObjectToArray,
     isBarrierSupported }      from './Helpers/barriers';
@@ -19,6 +20,27 @@ export default class SmartChartStore extends BaseStore {
 
     @observable is_title_enabled = true;
     @observable is_contract_mode = false;
+
+    @observable chart_type = 'mountain';
+    @observable granularity = 0;
+
+    constructor({ root_store }) {
+        const local_storage_properties = ['chart_type', 'granularity'];
+        super({ root_store, local_storage_properties });
+    }
+
+    @action.bound
+    updateChartType(chart_type) {
+        this.chart_type = chart_type;
+    }
+
+    @action.bound
+    updateGranularity(granularity) {
+        this.granularity = granularity;
+        if (granularity === 0 && !tick_chart_types.includes(this.chart_type)) {
+            this.chart_type = 'mountain';
+        }
+    }
 
     @action.bound
     setContractMode(is_contract_mode) {

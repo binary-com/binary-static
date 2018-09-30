@@ -37,7 +37,7 @@ const Purchase = ({
                 className='primary green'
                 has_effect
                 text={localize('Purchase')}
-                onClick={() => { onClickPurchase(info.id, info.stake); }}
+                onClick={() => { onClickPurchase(info.id, info.stake, type); }}
                 wrapperClassName='submit-section'
             />
         );
