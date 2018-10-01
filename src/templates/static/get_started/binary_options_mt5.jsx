@@ -25,8 +25,9 @@ const BinaryOptionsForMT5 = () => (
                     <HeaderSecondary header={it.L('Why you should trade binary options on MT5')} />
                     <ul className='checked gr-parent gr-padding-10'>
                         <li>{it.L('Trade binary options and CFDs from the same powerful interface')}</li>
-                        <li>{it.L('Use MT5’s comprehensive analysis tools for technical and fundamental analysis to predict price movement')}</li>
-                        <li>{it.L('Enjoy real-time visualisation and trading history with our Expert Advisor for binary options trading')}</li>
+                        <li>{it.L('Use comprehensive technical analysis tools to predict price movements')}</li>
+                        <li>{it.L('Monitor your trades easily with real-time visualisations')}</li>
+                        <li>{it.L('Access your trading history through our Expert Advisors (EA)')}</li>
                     </ul>
 
                     <HeaderSecondary header={it.L('Available markets')} />

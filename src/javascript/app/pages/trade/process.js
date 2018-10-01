@@ -30,7 +30,7 @@ const Process = (() => {
      */
     const processActiveSymbols = () => {
         BinarySocket.send({ active_symbols: 'brief' }).then((response) => {
-            if (response.active_symbols.length) {
+            if (response.active_symbols && response.active_symbols.length) {
                 // populate the Symbols object
                 Symbols.details(response);
 

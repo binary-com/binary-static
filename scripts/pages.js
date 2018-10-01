@@ -75,7 +75,6 @@ module.exports = [
     ['about-us',                                'static/about/index',                          'full_width', 'About Us'],
     ['binary-in-numbers',                       'static/about/binary_in_numbers',              'default',    'Binary in Numbers'],
     ['careers',                                 'static/about/careers',                        'full_width', 'Careers'],
-    ['careers-for-americans',                   'static/about/careers_for_americans',          'full_width', 'Careers For Americans'],
     ['contact',                                 'static/about/contact',                        'full_width', 'Contact Us'],
     ['cyberjaya',                               'static/about/cyberjaya',                      'full_width', 'Careers - Cyberjaya',                'ja'],
     ['labuan',                                  'static/about/labuan',                         'full_width', 'Careers - Labuan',                   'ja'],
@@ -93,7 +92,6 @@ module.exports = [
     ['regulation',                              'static/legal/regulation',                     'default',    'Regulation',                        'id'],
     ['responsible-trading',                     'static/responsible_trading',                  'full_width', 'Responsible Trading'],
     ['terms-and-conditions',                    'static/legal/tac',                            'default',    'Terms and Conditions'],
-    ['user/browser-support',                    'static/browser_support',                      'default',    'Login trouble'],
 
     ['liquidity-solutions',                     'static/partners/liquidity_solutions',         'full_width', 'Multi-asset Liquidity Solutions'],
     ['multiple-accounts-manager',               'static/partners/multiple_accounts_manager',   'full_width', 'Multiple Accounts Manager'],

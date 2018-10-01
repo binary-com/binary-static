@@ -24,10 +24,6 @@ const Settings = (() => {
                 $('#professional_client').setVisibility(1).find('p').text(localize(text));
             }
 
-            if (!State.getResponse('get_account_status.prompt_client_to_authenticate')) {
-                $('#authenticate').setVisibility(0);
-            }
-
             $('#settings_container').setVisibility(1);
         });
     };
