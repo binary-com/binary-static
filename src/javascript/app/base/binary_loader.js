@@ -69,7 +69,7 @@ const BinaryLoader = (() => {
 
     const afterContentChange = (e) => {
         Page.onLoad();
-        GTM.pushDataLayer();
+        GTM.pushDataLayer({ event: 'page_load' });
 
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {

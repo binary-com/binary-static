@@ -6,6 +6,7 @@ import {
 import Client                            from '_common/base/client_base';
 import { cloneObject, isEmptyObject }    from '_common/utility';
 import { WS }                            from 'Services';
+import GTM                               from 'Utils/gtm';
 import URLHelper                         from 'Utils/URL/url_helper';
 import { processPurchase }               from './Actions/purchase';
 import * as Symbol                       from './Actions/symbol';
@@ -155,9 +156,20 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    onPurchase(proposal_id, price) {
+    onPurchase(proposal_id, price, type) {
         if (proposal_id) {
             processPurchase(proposal_id, price).then(action((response) => {
+                if (this.proposal_info[type].id !== proposal_id) {
+                    throw new Error('Proposal ID does not match.');
+                }
+                if (response.buy && !Client.get('is_virtual')) {
+                    const contract_data = {
+                        ...this.proposal_requests[type],
+                        ...this.proposal_info[type],
+                        buy_price: response.buy.buy_price,
+                    };
+                    GTM.pushPurchaseData(contract_data, this.root_store);
+                }
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
             }));
@@ -208,7 +220,7 @@ export default class TradeStore extends BaseStore {
         return new_state;
     }
 
-    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user) {
+    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
         const new_state = this.updateStore(cloneObject(obj_new_values));
 
         if (is_changed_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {

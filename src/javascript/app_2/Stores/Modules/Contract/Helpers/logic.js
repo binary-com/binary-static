@@ -1,6 +1,4 @@
 export const getChartConfig = (contract_info) => {
-    if (!isEnded(contract_info)) return {}; // don't limit the range for ongoing contracts until smartchart supports it
-
     const start = contract_info.date_start;
     const end   = contract_info.date_expiry;
     const granularity = calculateGranularity(end - start);
