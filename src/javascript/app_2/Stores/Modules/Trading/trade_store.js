@@ -259,6 +259,7 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     requestProposal() {
+        this.server_time = this.root_store.common.server_time; // pass server_time from common_store
         const requests = createProposalRequests(this);
 
         if (Object.values(this.validation_errors).some(e => e.length)) {
