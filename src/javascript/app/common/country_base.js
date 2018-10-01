@@ -24,11 +24,11 @@ const checkClientsCountry = () => {
 
 // will return true for all clients with maltainvest/malta/iom financial/gaming landing company shortcode
 // needs to wait for website_status, authorize, and landing_company before being called
-// 'mt' and 'be' are part of EU but account opening is not offered so the landing company response won't include the expected shortcode.
+// 'mt' is part of EU but account opening is not offered so the landing company response won't include the expected shortcode.
 // we will use the fallback eu_excluded_regex for them.
 const isEuCountry = () => {
     const eu_shortcode_regex  = new RegExp('^(maltainvest|malta|iom)$');
-    const eu_excluded_regex   = new RegExp('^(mt|be)$');
+    const eu_excluded_regex   = new RegExp('^mt$');
     const financial_shortcode = State.getResponse('landing_company.financial_company.shortcode');
     const gaming_shortcode    = State.getResponse('landing_company.gaming_company.shortcode');
     const clients_country     = Client.get('residence') || State.getResponse('website_status.clients_country');
