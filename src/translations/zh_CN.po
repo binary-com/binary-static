@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-01 06:46\n"
+"PO-Revision-Date: 2018-10-01 07:38\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -6869,6 +6869,9 @@ msgid "Platinum vs US Dollar"
 msgstr "铂金兑美元"
 
 msgid "Please %1accept the updated Terms and Conditions%2 to lift your deposit and trading limits."
+msgstr "请%1接受更新条款和条件%2，以提高存款和交易限额。"
+
+msgid "Please %1accept the updated Terms and Conditions%2."
 msgstr ""
 
 msgid "Please %1authenticate%2 your account."
@@ -7782,7 +7785,7 @@ msgid "Saturday"
 msgstr "周六"
 
 msgid "Save in case of negligence, fraud, or default by the Company, the Company will not be liable in any way to any clients in the event of force majeure, or for the act of any Government or legal authority, or for the failure of or damage or destruction to its computer systems, data, or records or any part thereof, or for delays, losses, errors, or omissions resulting from the failure or mismanagement of any telecommunications, computer equipment or software by the client or any damages or losses deemed or alleged to have resulted from or been caused by this site or its content."
-msgstr ""
+msgstr "出现以下情况时，除非是由于公司疏忽、欺诈或违约而造成，公司不对任何客户承担任何责任：不可抗因素；政府或司法机关行为；全部或部分电脑系统数据和记录出现故障、损坏或毁坏；由客户造成的任何通信系统、电脑设备及软件的故障或管理不善导致的延迟、损失和错漏，或因本网站及其内容产生或导致的任何损坏以及其他损失，本公司概不负责。"
 
 msgid "Scalable"
 msgstr "可缩放"
@@ -8046,7 +8049,7 @@ msgid "Simply double-click the file to add the EA to your MT5 platform, then, he
 msgstr "只需双击该文件将 EA 添加到您的 MT5 平台, 然后到 \"导航\" 窗口查看 %1 EA 是否可用。"
 
 msgid "Since BIEL is a member of the Malta Investor Compensation Scheme, you are covered for the first €20,000 of any claim you may have in the unlikely event of BIEL suffering an investment default and not being able to meet its obligations. This protection is available only to retail clients. Neither professional clients nor eligible counterparties can benefit from this protection."
-msgstr ""
+msgstr "由于BIEL是马耳他投资者赔偿计划的成员，万一BIEL遭遇投资违约且无法履行其义务，您可能获得任何索赔的首€20,000赔款。此保险计划仅适用于零售客户。专业客户和符合条件的交易对手都不能从此项保险计划中受益。"
 
 msgid "Since all dealing on the %1 website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feed irregularities and latencies."
 msgstr "由于 %1 网站所有交易都完全自动化，我们的定价和风险管理算法必须充分考虑实时定价参数、数据传送不规则性和延迟等因素。"
@@ -8331,13 +8334,13 @@ msgid "Subject to any specific instructions which may be provided by you, when e
 msgstr "执行客户订单时，我们会在遵守您要求的同时采取一切合理措施，为您获取最佳结果。我们将从整体考虑各种因素，从而得出最佳结果的可能性，例如工具价格和执行成本，包括您直接产生的费用和执行订单相关的费用。"
 
 msgid "Subject to network latency, we endeavor to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price. This can happen under certain trading conditions when there are sharp price movements in the market. In that case the company has the right to execute the order at the first available price."
-msgstr ""
+msgstr "取决于网络速度，我们会尽力在您确认订单后的合理时间内以最接近您要求的价格执行您的订单。在您以指定价格确认订单后，我们不保证一定能够开始/结束交易。当市场价格出现剧烈波动时，这种情况可能会在某些交易条件下发生。一旦发生这种情况，公司有权以首个可用价格执行订单。"
 
 msgid "Subject to the applicable governing law and the Client Agreement, you represent and acknowledge that this Agreement shall be admissible as an evidence in any legal, judicial, administrative, arbitration or mediation proceedings."
 msgstr "在符合适用的管辖法和客户协议的前提下, 您同意并承认本协议应作为任何法律、司法、行政、仲裁或调解程序中的证据予以受理。"
 
 msgid "Subject to the availability and sufficiency of funds in your MT5 Real Account, you may withdraw your funds from your MT5 Real Account to your %1 account."
-msgstr ""
+msgstr "根据您MT5真实账户的资金可用性和充足性，您可以将资金从您的MT5真实账户提出并转移到%1账户。"
 
 msgid "Subject to the law and the terms and/or conditions and/or provisions and/or clauses of this Agreement, the Company shall not be liable, to the Agent for any matter arising out of or in relation to this Agreement."
 msgstr "除非依据法律和本协议的内容和/或条款的规定和/或条件，对所引起或与本协议有关的任何事项，本公司概不对代理承担责任。"
@@ -8601,7 +8604,7 @@ msgid "The <strong>start time</strong> is when the contract is processed by our 
 msgstr "合约<strong>开始时间</strong>即我们的服务器处理合约的时间。"
 
 msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices and cryptocurrencies."
-msgstr ""
+msgstr "高级账户为您提供极低的差价, 更高的票证大小, 并提供更多的产品。开始交易更多的外汇对、差价合约指数和加密货币。"
 
 msgid "The Affiliate's Obligations"
 msgstr "联盟的义务"
@@ -8664,7 +8667,7 @@ msgid "The Company does not guarantee that the %1 API it provides will function 
 msgstr "公司并不保证所提供的 %1 API运行时功能不会中断或出现错误。特别是，%1 API操作时可能会由于维护、更新或系统及网络故障而中断。公司不承担任何上述运作中断或错误所引起的赔偿责任。"
 
 msgid "The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 Trading Platform or otherwise is correct."
-msgstr ""
+msgstr "公司不对MT5交易平台或其它提供的任何定价或其他信息的正确性做任何明示或暗示的保证。"
 
 msgid "The Company does not offer any credit facilities or arrangement to its clients in normal trading circumstances. You acknowledge and agree that you will not be dealing with us on credit, regardless of the amount of your Account Balance and Transactions entered into with us."
 msgstr "正常交易情况下，公司不向客户提供任何信贷服务或安排。您确认并同意，无论您的账户余额和签订的交易金额是多少，您将不会向我们信用贷款。"
@@ -8682,7 +8685,7 @@ msgid "The Company ensures that complaints received will be investigated thoroug
 msgstr "公司确保将会对收到的投诉作出彻底和公平的调查。您可以通过向 %1 发送电子邮件提交投诉。"
 
 msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
-msgstr ""
+msgstr "公司制定了“强制平仓”政策，可以防止您的损失超过您存入的金额。 但是，当您的MT5真实账户的保证金水平达到止损水平时您的未平仓头寸未平仓，而且如果您的账户余额已是负余额，则公司可以自行决定是否通过贷记您的账户来免除您的负余额。负余额是通过汇总您持有的所有账户在24小时内发生的所有负余额而确定的。除非您是Binary投资（欧洲）有限公司的零售客户，您确认公司提供的负余额保护是由公司自行决定的，我们保留随时更改负余额保护的功能和资格标准的权利。 负余额保护的规定不适用于："
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "公司有权停止任何活动或交易，包括但不限于上述任何事件。"
@@ -8709,7 +8712,7 @@ msgid "The Company may also impose volume trading limits on Client accounts at i
 msgstr "公司还可自行决定对客户账户实行批量交易限制。交易量限制详情可以在账户的 \"安全和限制\" 部分查看。如果账户余额超过最大账户限额, 则必须提款以使余额小于限额。"
 
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavor to ensure affiliates are notified when changes have been made to the commission structure."
-msgstr ""
+msgstr "公司可能随时以其唯一、绝对自主权改变佣金结构。佣金结构发生更正时，我们将努力通知所有联盟成员。"
 
 msgid "The Company may change, suspend, terminate or discontinue any aspect of the %1 API, including the availability of any services, information features or functions accessible by means of the %1 API, on no less than seven days advance notice to you."
 msgstr "公司可能会预先7天通知您之后对%1 API服务，包括通过%1 API所提供的任何服务、信息功能或可访问与可用性作出更改、暂停、终止或中断措施。"
@@ -8730,7 +8733,7 @@ msgid "The Company may withhold payment of funds accumulated in a Client’s acc
 msgstr "当公司采取步骤验证是否符合这些条款时，公司可以扣留客户帐户的累积资金。"
 
 msgid "The Company may, at its sole discretion or as required by regulations in place conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. If you open an account with Binary (Europe) Ltd or Binary (IOM) Ltd, you’ll need to provide us with age verification documentation when you perform a deposit for the first time. You will also be required to provide KYC documentation to verify your identity for cumulative deposits and/or withdrawals of EUR 2,000.00. If you open an account with Binary Investments (Europe) Ltd, you’ll need to provide KYC documentation as part of your account opening process."
-msgstr ""
+msgstr "公司有权自行或根据“了解你的客户”法则要求客户提供身份证明（如经公证的护照复印件或其他公司在相关情形下认为必要的身份证明），也有权在得到充分的身份证明信息、身份与地址证明、基金来源和/或财富来源之前中止账户。如果您在 Binary（欧洲）有限公司或Binary (IOM) 有限公司开立账户，当您首次存入资金时须向我们提供年龄验证文件。累计存/提款额达到2,000欧元时还须提供KYC身份验证文件。如果您在 Binary Investments（欧洲）有限公司开立账户，开立账户时须提供KYC文件。"
 
 msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
 msgstr "公司根据\"原样\"和\"可用\"方式提供%1 API，且不承担任何类型的明示或默认保证。公司根据适用法律所允许的最大范围，不承担任何及所有保证和声明，包括但不限于任何适销性、某一特定用途适合性、标题、数据准确性和非侵权的默认保证。"
