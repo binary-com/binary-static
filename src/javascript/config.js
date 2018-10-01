@@ -13,7 +13,7 @@ const binary_desktop_app_id = 14473;
 
 const getAppId = () => {
     let app_id = null;
-    const user_app_id = ''; // you can insert Application ID of your registered application here
+    const user_app_id = '15034'; // you can insert Application ID of your registered application here
     const config_app_id = window.localStorage.getItem('config.app_id');
     if (config_app_id) {
         app_id = config_app_id;
@@ -70,9 +70,9 @@ const getSocketURL = () => {
         // TODO: in order to use connection_setup config, uncomment the above section and remove next lines
 
         const is_production = /www\.binary\.com/i.test(window.location.hostname);
-        const loginid       = window.localStorage.getItem('active_loginid');
-        const is_real       = loginid && !/^VRT/.test(loginid);
-        const server        = is_production && is_real ? 'green' : 'blue';
+        const loginid = window.localStorage.getItem('active_loginid');
+        const is_real = loginid && !/^VRT/.test(loginid);
+        const server = is_production && is_real ? 'green' : 'blue';
 
         server_url = `${server}.binaryws.com`;
     }

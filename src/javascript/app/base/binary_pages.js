@@ -1,5 +1,6 @@
 // ==================== _common ====================
-const TabSelector = require('../../_common/tab_selector'); // eslint-disable-line import/order
+// eslint-disable-line import/order
+import Download from '../../../templates/static/metatrader/download'; const TabSelector = require('../../_common/tab_selector');
 
 // ==================== app ====================
 const LoggedInHandler         = require('./logged_in');
@@ -47,6 +48,7 @@ const SetCurrency             = require('../pages/user/set_currency');
 const TelegramBot             = require('../pages/user/telegram_bot');
 const TNCApproval             = require('../pages/user/tnc_approval');
 const VideoFacility           = require('../pages/user/video_facility');
+const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
 
 // ==================== static ====================
 const Charity            = require('../../static/pages/charity');
@@ -140,6 +142,7 @@ const pages_config = {
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
+    download                 : { module: MetatraderDownloadUI },
 };
 /* eslint-enable max-len */
 
