@@ -1,39 +1,31 @@
-import OSDetect from '../../../../../templates/_common/os_detect';
+import { OSDetect, isDesktop } from '../../../../_common/os_detect';
 
 const toggleDownloadPage = target => {
-    document.querySelectorAll('.download-block').forEach(block => {
-        if (block.getAttribute('id') === target) {
-            block.classList.add('visible');
-            block.classList.remove('invisible');
-        } else {
-            block.classList.remove('visible');
-            block.classList.add('invisible');
-        }
-    });
-    document.querySelectorAll('.download-heading').forEach(heading => {
-        if (heading.getAttribute('id') === `${target}-heading`) {
-            heading.classList.add('visible');
-            heading.classList.remove('invisible');
-        } else {
-            heading.classList.remove('visible');
-            heading.classList.add('invisible');
-        }
-    });
-    document.querySelectorAll('.alternative-download-description').forEach(text => {
-        if (text.getAttribute('id') === `${target}-alternative-description`) {
-            text.classList.add('visible');
-            text.classList.remove('invisible');
-        } else {
-            text.classList.remove('visible');
-            text.classList.add('invisible');
-        }
-    });
+    if (isDesktop()) {
+        document.querySelectorAll('.download-block').forEach(block => {
+            block.setVisibility(block.getAttribute('id') === target);
+        });
+        document.querySelectorAll('.download-heading').forEach(heading => {
+            heading.setVisibility(heading.getAttribute('id') === `${target}-heading`);
+        });
+        document.querySelectorAll('.alternative-download-description').forEach(text => {
+            text.setVisibility(text.getAttribute('id') === `${target}-alternative-description`);
+        });
+    } else {
+        document.querySelectorAll('.desktop-apps').forEach(el => el.setVisibility(0));
+        document.querySelector('#mobile-apps')
+            .childNodes
+            .forEach(child => child.setVisibility(0));
+        document.querySelector(`#${target}-app`).setVisibility(1);
+        document.querySelector(`#${target}-heading`).setVisibility(1);
+        document.querySelector(`#${target}-description`).setVisibility(1);
+    }
 };
 const DownloadMetatrader = (() => {
     const onLoad = () => {
         const os = OSDetect();
 
-        // Hide or show a default Item based on navigator.platform
+        // Hide or show a default item based on navigator.platform
         toggleDownloadPage(os);
 
         // Listen for custom OS change requests

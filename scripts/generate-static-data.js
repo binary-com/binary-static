@@ -580,6 +580,7 @@ const texts = [
     'Please set [_1]country of residence[_2] before upgrading to a real-money account.',
     'Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
     'Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
+    'Please [_1]accept the updated Terms and Conditions[_2].',
     'Please [_1]accept the updated Terms and Conditions[_2] to lift your deposit and trading limits.',
     'Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
     'Connection error: Please check your internet connection.',
@@ -660,6 +661,12 @@ const texts = [
     'You have successfully disabled two-factor authentication for your account.',
     'Enable',
     'Disable',
+
+    // Download page
+    'Linux',
+    'Mac',
+    'Windows',
+    'Unknown OS',
 ];
 
 /* eslint-disable no-console */

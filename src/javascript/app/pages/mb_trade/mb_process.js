@@ -22,11 +22,7 @@ const MBProcess = (() => {
         contract_timeout;
 
     const getSymbols = () => {
-        const promises = [BinarySocket.wait('website_status')];
-        if (Client.isLoggedIn()) {
-            promises.push(BinarySocket.wait('landing_company'));
-        }
-        Promise.all(promises).then(() => {
+        BinarySocket.wait('website_status', 'landing_company').then(() => {
             const landing_company_obj = State.getResponse('landing_company');
             const allowed_markets     = Client.currentLandingCompany().legal_allowed_markets;
             if (Client.isLoggedIn() && allowed_markets && allowed_markets.indexOf('forex') === -1) {

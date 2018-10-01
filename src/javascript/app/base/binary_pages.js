@@ -1,6 +1,5 @@
 // ==================== _common ====================
-// eslint-disable-line import/order
-import Download from '../../../templates/static/metatrader/download'; const TabSelector = require('../../_common/tab_selector');
+const TabSelector = require('../../_common/tab_selector'); // eslint-disable-line import/order
 
 // ==================== app ====================
 const LoggedInHandler         = require('./logged_in');
@@ -14,6 +13,7 @@ const Endpoint                = require('../pages/endpoint');
 const MBTradePage             = require('../pages/mb_trade/mb_tradepage');
 const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
+const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
 const TradingTimesUI          = require('../pages/resources/trading_times/trading_times.ui');
 const NewAccount              = require('../pages/new_account');
 const TradePage               = require('../pages/trade/tradepage');
@@ -48,7 +48,6 @@ const SetCurrency             = require('../pages/user/set_currency');
 const TelegramBot             = require('../pages/user/telegram_bot');
 const TNCApproval             = require('../pages/user/tnc_approval');
 const VideoFacility           = require('../pages/user/video_facility');
-const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
 
 // ==================== static ====================
 const Charity            = require('../../static/pages/charity');
@@ -122,6 +121,7 @@ const pages_config = {
     'cfds'                   : { module: GetStarted.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
+    'download'               : { module: MetatraderDownloadUI },
     'faq'                    : { module: StaticPages.AffiliatesFAQ },
     'forex'                  : { module: GetStarted.Forex },
     'get-started'            : { module: TabSelector },
@@ -142,7 +142,6 @@ const pages_config = {
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
-    download                 : { module: MetatraderDownloadUI },
 };
 /* eslint-enable max-len */
 
