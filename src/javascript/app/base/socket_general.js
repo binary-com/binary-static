@@ -12,6 +12,7 @@ const GTM                  = require('../../_common/base/gtm');
 const Login                = require('../../_common/base/login');
 const localize             = require('../../_common/localize').localize;
 const State                = require('../../_common/storage').State;
+const LocalStore           = require('../../_common/storage').LocalStore;
 const urlFor               = require('../../_common/url').urlFor;
 const getPropertyValue     = require('../../_common/utility').getPropertyValue;
 
@@ -93,6 +94,7 @@ const BinarySocketGeneral = (() => {
                                 onAccept   : () => { Client.set('accepted_bch', 1); },
                             });
                         }
+                        LocalStore.remove('date_first_contact');
                     }
                 }
                 break;

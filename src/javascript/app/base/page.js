@@ -1,4 +1,5 @@
 const Cookies          = require('js-cookie');
+const moment           = require('moment');
 const Client           = require('./client');
 const Contents         = require('./contents');
 const Header           = require('./header');
@@ -17,6 +18,8 @@ const PushNotification = require('../../_common/lib/push_notification');
 const Localize         = require('../../_common/localize');
 const localize         = require('../../_common/localize').localize;
 const State            = require('../../_common/storage').State;
+const LocalStore       = require('../../_common/storage').LocalStore;
+const toISOFormat      = require('../../_common/string_util').toISOFormat;
 const scrollToTop      = require('../../_common/scroll').scrollToTop;
 const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
@@ -92,10 +95,14 @@ const Page = (() => {
                 checkLanguage();
                 RealityCheck.onLoad();
                 Menu.init();
+                LocalStore.remove('date_first_contact');
             });
         } else {
             checkLanguage();
             Menu.init();
+            if (!LocalStore.get('date_first_contact')) {
+                LocalStore.set('date_first_contact', toISOFormat(moment()));
+            }
         }
         TrafficSource.setData();
     };

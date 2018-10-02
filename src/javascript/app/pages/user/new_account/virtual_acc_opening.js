@@ -1,5 +1,6 @@
 const SelectMatcher    = require('@binary-com/binary-style').select2Matcher;
 const Cookies          = require('js-cookie');
+const moment           = require('moment');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
 const FormManager      = require('../../../common/form_manager');
@@ -9,6 +10,7 @@ const makeOption       = require('../../../../_common/common_functions').makeOpt
 const localize         = require('../../../../_common/localize').localize;
 const LocalStore       = require('../../../../_common/storage').LocalStore;
 const State            = require('../../../../_common/storage').State;
+const toISOFormat      = require('../../../../_common/string_util').toISOFormat;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
@@ -29,7 +31,6 @@ const VirtualAccOpening = (() => {
     const init = () => {
         $(form).setVisibility(1);
         BinarySocket.send({ residence_list: 1 }).then(response => handleResidenceList(response.residence_list));
-
         bindValidation();
         FormManager.handleSubmit({
             form_selector       : form,
@@ -86,6 +87,8 @@ const VirtualAccOpening = (() => {
             { selector: '#email_consent' },
             { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
             { request_field: 'new_account_virtual', value: 1 },
+            { request_field: 'signup_device', value: signup_device },
+            { request_field: 'date_first_contact', value: date_first_contact },
         ];
 
         if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium',   value: utm_data.utm_medium });
@@ -95,6 +98,12 @@ const VirtualAccOpening = (() => {
         if (gclid) req.push({ request_field: 'gclid_url', value: gclid });
 
         if (Cookies.get('affiliate_tracking')) req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
+
+        const mobile_devices = ['iPhone', 'iPad', 'Android'];
+        const date_first_contact = LocalStore.get('date_first_contact') != null ?
+            LocalStore.get('date_first_contact') :
+            toISOFormat(moment());
+        const signup_device = mobile_devices.some(item => item === navigator.platform) ? 'mobile' : 'desktop';
 
         FormManager.init(form, req, true);
     };
@@ -110,6 +119,7 @@ const VirtualAccOpening = (() => {
             State.set('skip_response', 'authorize');
             BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
                 if (!response_auth.error) {
+                    LocalStore.remove('date_first_contact');
                     Client.processNewAccount({
                         email       : new_account.email,
                         loginid     : new_account.client_id,
