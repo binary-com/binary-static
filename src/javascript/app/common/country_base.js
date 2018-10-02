@@ -1,4 +1,5 @@
 const createLanguageDropDown = require('./attach_dom/language_dropdown');
+const Client                 = require('../base/client');
 const BinarySocket           = require('../base/socket');
 const isLoginPages           = require('../../_common/base/login').isLoginPages;
 const getElementById         = require('../../_common/common_functions').getElementById;
@@ -8,7 +9,7 @@ const State                  = require('../../_common/storage').State;
 
 const checkClientsCountry = () => {
     if (Crowdin.isInContext() || isLoginPages()) return;
-    BinarySocket.wait('website_status', 'authorize').then(() => {
+    BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
         const website_status = State.getResponse('website_status');
         if (!website_status) return;
         const clients_country = website_status.clients_country;
@@ -17,11 +18,26 @@ const checkClientsCountry = () => {
         } else {
             createLanguageDropDown(website_status);
         }
-        State.set('is_eu', isEuCountry(clients_country));
     });
 };
 
-const isEuCountry = (country) => (/^(al|ad|at|by|be|ba|bg|hr|cy|cz|dk|ee|fo|fi|fr|de|gi|gr|hu|is|ie|im|it|ru|lv|li|lt|lu|mk|mt|md|mc|me|nl|no|pl|pt|ro|sm|sk|si|es|se|ch|ua|va)$/.test(country));
+
+// will return true for all clients with maltainvest/malta/iom financial/gaming landing company shortcode
+// needs to wait for website_status, authorize, and landing_company before being called
+// 'mt' is part of EU but account opening is not offered so the landing company response won't include the expected shortcode.
+// we will use the fallback eu_excluded_regex for them.
+const isEuCountry = () => {
+    const eu_shortcode_regex  = new RegExp('^(maltainvest|malta|iom)$');
+    const eu_excluded_regex   = new RegExp('^mt$');
+    const financial_shortcode = State.getResponse('landing_company.financial_company.shortcode');
+    const gaming_shortcode    = State.getResponse('landing_company.gaming_company.shortcode');
+    const clients_country     = Client.get('residence') || State.getResponse('website_status.clients_country');
+    return (
+        (financial_shortcode || gaming_shortcode) ?
+            (eu_shortcode_regex.test(financial_shortcode) || eu_shortcode_regex.test(gaming_shortcode)) :
+            eu_excluded_regex.test(clients_country)
+    );
+};
 
 const limitLanguage = (lang) => {
     if (Language.get() !== lang) {
