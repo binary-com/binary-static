@@ -208,6 +208,12 @@ export default class TradeStore extends BaseStore {
                 }
 
                 this[key] = new_state[key];
+
+                // validation is done in mobx intercept (base_store.js)
+                // when barrier_1 is set, it is compared with store.barrier_2 (which is not updated yet)
+                if (key === 'barrier_2' && new_state.barrier_1) {
+                    this.barrier_1 = new_state.barrier_1; // set it again, after barrier_2 is updated in store
+                }
             }
         });
 
