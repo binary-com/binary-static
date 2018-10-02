@@ -91,7 +91,7 @@ const pages_config = {
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
     payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
-    platforms                : { module: TabSelector },
+    platforms                : { module: StaticPages.Platforms },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },
