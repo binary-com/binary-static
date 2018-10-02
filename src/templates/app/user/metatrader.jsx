@@ -309,9 +309,9 @@ const Metatrader = () => (
                                 <div id='view_2' className='gr-row invisible'>
                                     <div className='gr-8 gr-12-m'>
                                         <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 30, autoComplete: 'off' }} />
-                                        <FormRow is_two_rows type='password' id='txt_main_pass'     label={it.L('Main password (trading access)')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                        <FormRow is_two_rows type='password' id='txt_main_pass'     label={it.L('Main password (trading access)')}       tooltip={it.L('Main password is used for full access to your MT5 account.')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_re_main_pass'  label={it.L('Verify main password')} />
-                                        <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password (read-only access)')} />
+                                        <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password (read-only access)')} tooltip={it.L('Investor password is used for limited access to your MT5 account in read-only mode.')} />
                                         <SubmitButton
                                             no_wrapper
                                             type='submit'
