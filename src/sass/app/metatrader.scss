@@ -15,6 +15,9 @@
     .flex {
         display: flex;
     }
+    [data-balloon]:before {
+        max-width: 100%;
+    }
     .get-started-link {
         display: block;
         padding: 10px 20px;
