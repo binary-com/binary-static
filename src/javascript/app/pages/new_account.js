@@ -1,5 +1,6 @@
 const BinaryPjax     = require('../base/binary_pjax');
 const BinarySocket   = require('../base/socket');
+const isEuCountry    = require('../common/country_base').isEuCountry;
 const FormManager    = require('../common/form_manager');
 const Login          = require('../../_common/base/login');
 const getElementById = require('../../_common/common_functions').getElementById;
@@ -23,8 +24,8 @@ const NewAccount = (() => {
         $login_btn    = $('#login');
         $verify_email = $('#verify_email');
 
-        BinarySocket.wait('website_status').then((response) => {
-            clients_country = response.website_status.clients_country;
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            clients_country = State.getResponse('website_status.clients_country');
 
             FormManager.init(form_id, [
                 { selector: '#email', validations: ['req', 'email'], request_field: 'verify_email' },
@@ -36,7 +37,7 @@ const NewAccount = (() => {
                 fnc_additional_check: checkCountry,
             });
             $('.error-msg').addClass('center-text'); // this element exist only after calling FormManager.init
-            if (State.get('is_eu')) {
+            if (isEuCountry()) {
                 $('.mfsa_message').slideDown(300);
             }
         });

@@ -5,7 +5,11 @@ const OrderExecution = () => (
         <h2 data-anchor='order-execution-policy'>{it.L('Order Execution Policy')}</h2>
 
         <h2 data-anchor='introduction'>{it.L('A. Introduction')}</h2>
-        <p>{it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', \'[_1]\' shall denote Binary (V) Ltd, or Binary Investments (Europe) Ltd.', it.website_name)}</p>
+        <p>{it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', \'[_1]\' shall denote:', it.website_name)}</p>
+        <p className='eu-hide'>{it.L('Binary (V) Ltd;')}</p>
+        <p className='eu-hide'>{it.L('Binary (FX) Ltd; or')}</p>
+        <p>{it.L('Binary Investments (Europe) Ltd.')}</p>
+
         <p>{it.L('Our Order Execution Policy (the "Policy") sets out the overview and approach of how [_1] executes orders on behalf of our clients.', it.website_name)}</p>
         <p>{it.L('The Policy is supplemented by Appendix A which provide further details to our considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy.')}</p>
 
@@ -16,7 +20,7 @@ const OrderExecution = () => (
         <p>{it.L('Best execution is the requirement to take all sufficient steps to obtain, when executing orders, the best possible result for you taking into account price, costs, speed, likelihood of execution and settlement, size, nature or any other consideration relevant (hereinafter referred to as the "execution factors") to the execution of the order.')}</p>
 
         <h2 data-anchor='client-instructions'>{it.L('D. Client Instructions')}</h2>
-        <p>{it.L('When we accept an order from you to open or close a transaction, or any other specific instructions in relation to your order, we will endeavour to follow your instructions as far as reasonably possible, acting in accordance with our duty of best execution in accordance with your instructions. These specific instructions include, but are not limited to:')}</p>
+        <p>{it.L('When we accept an order from you to open or close a transaction, or any other specific instructions in relation to your order, we will endeavor to follow your instructions as far as reasonably possible, acting in accordance with our duty of best execution in accordance with your instructions. These specific instructions include, but are not limited to:')}</p>
         <ul>
             <li>{it.L('a) The venue at which your order will be executed;')}</li>
             <li>{it.L('b) The price at which your order will be executed;')}</li>
@@ -24,7 +28,7 @@ const OrderExecution = () => (
             <li>{it.L('d) The timeframe or duration of the contract as defined by your order execution.')}</li>
         </ul>
         <p>{it.L('Where a particular venue has been specified in your instructions with respect to the execution of an order, we will not be responsible for the venue selection.')}</p>
-        <p>{it.L('Where a particular time or timeframe has been specified in a client\'s instructions with respect to the execution of an order, regardless of the price available, we will endeavour to execute the order at the specified time or over the specified timeframe in the best possible manner after taking all sufficient steps. However, we will not be responsible for any consequences related to pricing that resulted from the time or timeframe of the execution.')}</p>
+        <p>{it.L('Where a particular time or timeframe has been specified in a client\'s instructions with respect to the execution of an order, regardless of the price available, we will endeavor to execute the order at the specified time or over the specified timeframe in the best possible manner after taking all sufficient steps. However, we will not be responsible for any consequences related to pricing that resulted from the time or timeframe of the execution.')}</p>
         <p>{it.L('Aspects of a client order not affected by specific instructions are subject to the application of [_1]\'s Order Execution Policy. In the absence of specific instructions from our clients, we will exercise our own discretion in determining the factors that are required to be taken into account for the purpose of providing you with best execution, having regard to the execution criteria listed below:', it.website_name)}</p>
         <ul className='bullet'>
             <li>{it.L('the characteristics of the client;')}</li>
@@ -53,7 +57,7 @@ const OrderExecution = () => (
         <p>{it.L('Our determination of the relative importance of the execution factors may differ from yours during certain circumstances, acting in your interest in accordance with our obligation of best execution.')}</p>
 
         <h2 data-anchor='execution-venues'>{it.L('F. Execution Venues')}</h2>
-        <p>{it.L('[_1] offers forex and contracts for differences via the hybrid model, i.e., both dealing on own account (dealing desk) and partially hedging client orders with our liquidity providers (no-dealing desk).', it.website_name)}</p>
+        <p>{it.L('[_1] offers forex and contracts for differences via the hybrid model, i.e., dealing on own account (dealing desk – B-book) or partially hedging client orders with our liquidity providers (no-dealing desk – A-book).', it.website_name)}</p>
         <p>{it.L('When we deal on own account (dealing desk), we act as principal and not as an agent on your behalf and we therefore act as the execution venue.')}</p>
         <p>{it.L('Whilst we act as principal in respect of your orders, we also assess the execution venues that we use and upon which we place significant reliance to provide the best possible result for the execution of your orders. These venues typically consist of third party investment firms, brokers, and/or liquidity providers.')}</p>
         <p>{it.L('[_1] assesses the choice of external execution venues regularly (at least once a year) with the intention of achieving a better result for you based on our best execution obligation.', it.website_name)}</p>
