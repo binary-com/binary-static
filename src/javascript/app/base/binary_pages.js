@@ -54,6 +54,7 @@ const Contact            = require('../../static/pages/contact');
 const GetStarted         = require('../../static/pages/get_started');
 const Home               = require('../../static/pages/home');
 const JobDetails         = require('../../static/pages/job_details');
+const Platforms          = require('../../static/pages/platforms');
 const Regulation         = require('../../static/pages/regulation');
 const StaticPages        = require('../../static/pages/static_pages');
 const TermsAndConditions = require('../../static/pages/tnc');
@@ -91,7 +92,7 @@ const pages_config = {
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
     payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
-    platforms                : { module: StaticPages.Platforms },
+    platforms                : { module: Platforms },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },

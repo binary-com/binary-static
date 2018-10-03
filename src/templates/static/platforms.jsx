@@ -66,6 +66,12 @@ const PlatformsSmall = ({
     </div>
 );
 
+const DownloadApp = ({ image }) => (
+    <div className='download-app gr-2 gr-5-m gr-5-p gr-push-4 gr-push-1-p gr-push-1-m'>
+        <a id={`app_${image}`} download><img src={it.url_for(`images/pages/platforms/${image}.svg`)} /></a>
+    </div>
+);
+
 const Platform = () => (
     <div className='static_full'>
         <div className='container'>
@@ -106,10 +112,10 @@ const Platform = () => (
                 </div>
                 <div className='center-text'>
                     <p>{it.L('Download our desktop app now:')}</p>
-                    <div>
-                        <span className='gr-gutter'><a id='app_mac' download><img className='download-app' src={it.url_for('images/pages/platforms/mac.svg')} /></a></span>
-                        <span className='gr-gutter'><a id='app_windows' download><img className='download-app' src={it.url_for('images/pages/platforms/windows.svg')} /></a></span>
-                        <span className='gr-gutter'><a id='app_linux' download><img className='download-app' src={it.url_for('images/pages/platforms/linux.svg')} /></a></span>
+                    <div className='gr-row'>
+                        <DownloadApp push='4' image='mac' />
+                        <DownloadApp push='6' image='windows' />
+                        {/* <DownloadApp image='linux' /> */}
                     </div>
                 </div>
             </div>
