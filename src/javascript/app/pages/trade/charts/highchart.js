@@ -121,17 +121,26 @@ const Highchart = (() => {
             return null;
         }
 
-        HighchartUI.setLabels(getHighchartLabelParams());
+        HighchartUI.updateLabels(chart, getHighchartLabelParams());
+
+        const display_decimals = (history ? history.prices[0] : candles[0].open).split('.')[1].length || 3;
 
         const chart_options = {
-            type,
             data,
-            height    : el.parentElement.offsetHeight,
-            title     : localize(init_options.title),
-            decimals  : history ? history.prices[0] : candles[0].open,
-            entry_time: entry_tick_time ? entry_tick_time * 1000 : start_time * 1000,
+            display_decimals,
+            type,
+            entry_time: (entry_tick_time || start_time) * 1000,
             exit_time : exit_time ? exit_time * 1000 : null,
-            user_sold : contract.status === 'sold',
+            has_zone  : true,
+            height    : Math.max(el.parentElement.offsetHeight, 450),
+            radius    : 2,
+            title     : localize(init_options.title),
+            tooltip   : {
+                valueDecimals: display_decimals,
+                xDateFormat  : '%A, %b %e, %H:%M:%S GMT',
+            },
+            user_sold: contract.status === 'sold',
+            x_axis   : { label: { format: '{value:%H:%M:%S}', overflow: 'justify' } },
         };
         if (Callputspread.isCallputspread(contract.contract_type)) {
             $.extend(chart_options, Callputspread.getChartOptions(contract));
@@ -155,8 +164,10 @@ const Highchart = (() => {
     const getHighchartLabelParams = () => ({
         is_chart_delayed,
         contract_type       : contract.contract_type,
-        is_user_sold        : contract.status === 'sold',
+        is_forward_starting : purchase_time !== start_time,
         is_sold_before_start: sell_time < start_time,
+        is_user_sold        : contract.status === 'sold',
+        has_barrier         : !!(contract.barrier || contract.high_barrier),
     });
 
     // type 'x' is used to draw lines such as start and end times
@@ -362,7 +373,7 @@ const Highchart = (() => {
 
     // update the color zones with the correct entry_tick_time and draw barrier
     const selectEntryTickBarrier = () => {
-        if (chart && entry_tick_time && !is_entry_tick_barrier_selected) {
+        if (chart && entry_tick_time && !is_entry_tick_barrier_selected && (!sell_time || sell_time > start_time)) {
             is_entry_tick_barrier_selected = true;
             drawBarrier();
             updateZone('entry');

@@ -17,6 +17,7 @@ const ViewPopup = (() => {
     let contract_id,
         contract,
         is_sold,
+        is_sold_before_start,
         is_sell_clicked,
         chart_started,
         chart_init,
@@ -33,17 +34,18 @@ const ViewPopup = (() => {
     const hidden_class = 'invisible';
 
     const init = (button, onClose) => {
-        btn_view          = button;
-        contract_id       = $(btn_view).attr('contract_id');
-        contract          = {};
-        is_sold           = false;
-        is_sell_clicked   = false;
-        chart_started     = false;
-        chart_init        = false;
-        chart_updated     = false;
-        ticks_requested   = false;
-        sell_text_updated = false;
-        $container        = '';
+        btn_view             = button;
+        contract_id          = $(btn_view).attr('contract_id');
+        contract             = {};
+        is_sold              = false;
+        is_sold_before_start = false;
+        is_sell_clicked      = false;
+        chart_started        = false;
+        chart_init           = false;
+        chart_updated        = false;
+        ticks_requested      = false;
+        sell_text_updated    = false;
+        $container           = '';
 
         if (typeof onClose === 'function') {
             ViewPopupUI.setOnCloseFunction(onClose);
@@ -72,6 +74,7 @@ const ViewPopup = (() => {
         }
 
         $.extend(contract, response.proposal_open_contract);
+        is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
         // Lookback multiplier value
         multiplier = contract.multiplier;
 
@@ -83,6 +86,37 @@ const ViewPopup = (() => {
         showContract();
     };
 
+    const contract_type_display = {
+        ASIANU      : 'Asian Up',
+        ASIAND      : 'Asian Down',
+        CALL        : 'Higher',
+        CALLE       : 'Higher or equal',
+        PUT         : 'Lower',
+        PUTE        : 'Lower or equal',
+        DIGITMATCH  : 'Digit Matches',
+        DIGITDIFF   : 'Digit Differs',
+        DIGITODD    : 'Digit Odd',
+        DIGITEVEN   : 'Digit Even',
+        DIGITOVER   : 'Digit Over',
+        DIGITUNDER  : 'Digit Under',
+        EXPIRYMISS  : 'Ends Outside',
+        EXPIRYRANGE : 'Ends Between',
+        EXPIRYRANGEE: 'Ends Between',
+        LBFLOATCALL : 'Close-Low',
+        LBFLOATPUT  : 'High-Close',
+        LBHIGHLOW   : 'High-Low',
+        RANGE       : 'Stays Between',
+        RESETCALL   : 'Reset Call',
+        RESETPUT    : 'Reset Put',
+        UPORDOWN    : 'Goes Outside',
+        ONETOUCH    : 'Touches',
+        NOTOUCH     : 'Does Not Touch',
+        CALLSPREAD  : 'Call Spread',
+        PUTSPREAD   : 'Put Spread',
+        TICKHIGH    : 'High Tick',
+        TICKLOW     : 'Low Tick',
+    };
+
     const showContract = () => {
         setLoadingState(false);
 
@@ -90,39 +124,7 @@ const ViewPopup = (() => {
             $container = makeTemplate();
         }
 
-        const contract_type_display = {
-            ASIANU      : 'Asian Up',
-            ASIAND      : 'Asian Down',
-            CALL        : 'Higher',
-            CALLE       : 'Higher or equal',
-            PUT         : 'Lower',
-            PUTE        : 'Lower or equal',
-            DIGITMATCH  : 'Digit Matches',
-            DIGITDIFF   : 'Digit Differs',
-            DIGITODD    : 'Digit Odd',
-            DIGITEVEN   : 'Digit Even',
-            DIGITOVER   : 'Digit Over',
-            DIGITUNDER  : 'Digit Under',
-            EXPIRYMISS  : 'Ends Outside',
-            EXPIRYRANGE : 'Ends Between',
-            EXPIRYRANGEE: 'Ends Between',
-            LBFLOATCALL : 'Close-Low',
-            LBFLOATPUT  : 'High-Close',
-            LBHIGHLOW   : 'High-Low',
-            RANGE       : 'Stays Between',
-            RESETCALL   : 'Reset Call',
-            RESETPUT    : 'Reset Put',
-            UPORDOWN    : 'Goes Outside',
-            ONETOUCH    : 'Touches',
-            NOTOUCH     : 'Does Not Touch',
-            CALLSPREAD  : 'Call Spread',
-            PUTSPREAD   : 'Put Spread',
-            TICKHIGH    : 'High Tick',
-            TICKLOW     : 'Low Tick',
-        };
-
         containerSetText('trade_details_contract_type', localize(contract_type_display[contract.contract_type]));
-        containerSetText('trade_details_start_date', epochToDateTime(contract.date_start));
         containerSetText('trade_details_purchase_price', formatMoney(contract.currency, contract.buy_price));
         containerSetText('trade_details_multiplier', formatMoney(contract.currency, multiplier, false, 3, 2));
         if (Lookback.isLookback(contract.contract_type)) {
@@ -140,11 +142,18 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const final_price          = contract.sell_price || contract.bid_price;
-        const is_started           = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
-        const is_ended             = contract.status !== 'open' || contract.is_expired || contract.is_settleable;
-        const indicative_price     = final_price && is_ended ? final_price : (contract.bid_price || null);
-        const is_sold_before_start = contract.sell_time && contract.sell_time < contract.date_start;
+        const final_price      = contract.sell_price || contract.bid_price;
+        const is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
+        const is_ended         = contract.status !== 'open' || contract.is_expired || contract.is_settleable;
+        const indicative_price = final_price && is_ended ? final_price : (contract.bid_price || null);
+
+        if (is_sold_before_start) {
+            $('#trade_details_start_date').parent().setVisibility(0);
+            containerSetText('trade_details_purchase_time', epochToDateTime(contract.purchase_time), '', true);
+        } else {
+            $('#trade_details_purchase_time').parent().setVisibility(0);
+            containerSetText('trade_details_start_date', epochToDateTime(contract.date_start), '', true);
+        }
 
         if (Callputspread.isCallputspread(contract.contract_type)) {
             Callputspread.update(null, contract);
@@ -568,7 +577,8 @@ const ViewPopup = (() => {
             <tr id="contract_tabs"><th colspan="2" id="contract_information_tab">${localize('Contract Information')}</th></tr><tbody id="contract_information_content">
             ${createRow('Contract Type', '', 'trade_details_contract_type')}
             ${createRow('Transaction ID', '', 'trade_details_ref_id')}
-            ${createRow('Start Time', '', 'trade_details_start_date')}
+            ${createRow('Start Time', '', 'trade_details_start_date', true)}
+            ${createRow('Purchase Time', '', 'trade_details_purchase_time', true)}
             ${(!contract.tick_count ? createRow('Remaining Time', '', 'trade_details_live_remaining') : '')}
             ${!Lookback.isLookback(contract.contract_type) ? createRow('Entry Spot', '', 'trade_details_entry_spot', 0, '<span></span>') : ''}
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}

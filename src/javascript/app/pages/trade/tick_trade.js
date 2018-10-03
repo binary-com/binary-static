@@ -5,6 +5,7 @@ const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
+const ChartSettings        = require('../../common/chart_settings');
 const addComma             = require('../../../_common/base/currency_base').addComma;
 const CommonFunctions      = require('../../../_common/common_functions');
 const localize             = require('../../../_common/localize').localize;
@@ -40,8 +41,6 @@ const TickDisplay = (() => {
     const winning_color = 'rgba(46, 136, 54, 0.2)';
     const losing_color  = 'rgba(204, 0, 0, 0.1)';
 
-    const selected_tick_style = 'margin-left: 10px; display: inline-block; border-radius: 6px; background-color: orange; width:10px; height: 10px;';
-
     const color  = 'orange';
     const marker = {
         fillColor: color,
@@ -73,17 +72,29 @@ const TickDisplay = (() => {
             payout = parseFloat(data.payout);
         }
 
-        const minimize = data.show_contract_result;
-        const end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * 5);
-
         setXIndicators();
         requireHighstock((Highstock) => {
             Highcharts = Highstock;
             initializeChart({
-                minimize,
-                plot_from: data.previous_tick_epoch * 1000,
-                plot_to  : new Date(end_time * 1000).getTime(),
-                width    : data.width ? data.width : undefined,
+                display_decimals,
+                data         : [],
+                el           : id_render,
+                events       : { load: () => { plot(); } },
+                margin_top   : show_contract_result ? 30 : null,
+                has_animation: show_contract_result,
+                height       : show_contract_result ? 163 : null,
+                radius       : 4,
+                title        : show_contract_result ? '' : display_symbol,
+                tooltip      : {
+                    formatter() {
+                        const new_y = addComma(this.y.toFixed(display_decimals));
+                        const mom   = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
+                        return `${mom}<br/>${display_symbol} ${new_y}`;
+                    },
+                },
+                type  : 'line',
+                width : data.width ? data.width : (show_contract_result ? 394 : null),
+                x_axis: { labels: { enabled: false }, ...(show_contract_result ? { max: number_of_ticks + 1, min: 0, type: 'linear' } : {}) },
             }, options);
         });
     };
@@ -149,57 +160,17 @@ const TickDisplay = (() => {
     };
 
     const initializeChart = (config, data) => {
+        ChartSettings.setLabels({
+            contract_type: contract_category,
+            has_barrier  : should_set_barrier && contract_category !== 'highlowticks',
+            is_tick_trade: true,
+            shortcode    : contract.shortcode,
+        });
         Highcharts.setOptions({
             lang: { thousandsSep: ',' },
         });
-        chart = new Highcharts.Chart({
-            chart: {
-                type           : 'line',
-                renderTo       : id_render,
-                width          : config.width || (config.minimize ? 394 : null),
-                height         : config.minimize ? 143 : null,
-                backgroundColor: null,
-                events         : { load: () => plot(config.plot_from, config.plot_to) },
-                marginLeft     : 50,
-                marginRight    : 30,
-                marginTop      : 25,
-            },
-            credits: { enabled: false },
-            tooltip: {
-                formatter() {
-                    const new_y = addComma(this.y.toFixed(display_decimals));
-                    const mom   = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
-                    return `${mom}<br/>${display_symbol} ${new_y}`;
-                },
-            },
-            title: {
-                text : show_contract_result ? '' : display_symbol,
-                style: { fontSize: '16px' },
-            },
-            ...(contract_category === 'highlowticks' && { subtitle: { text: `<div style="${selected_tick_style}"></div> ${localize('Selected Tick')}`, useHTML: true } }),
-            xAxis: {
-                type  : 'linear',
-                min   : 0,
-                max   : number_of_ticks + 1,
-                labels: { enabled: false },
-            },
-            yAxis: {
-                opposite: false,
-                labels  : {
-                    align: 'left',
-                    x    : 0,
-                    formatter() {
-                        return addComma(this.value.toFixed(display_decimals));
-                    },
-                },
-                title: '',
-            },
-            series: [{
-                data: [],
-            }],
-            exporting: { enabled: false, enableImages: false },
-            legend   : { enabled: false },
-        });
+        ChartSettings.setChartOptions(config);
+        chart = new Highcharts.Chart(ChartSettings.getChartOptions());
         if (data) {
             dispatch(data);
         }
