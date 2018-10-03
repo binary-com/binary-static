@@ -1,6 +1,5 @@
 const Validation       = require('./form_validation');
 const BinarySocket     = require('../base/socket');
-const LocalStore       = require('../../_common/storage').LocalStore;
 const getHashValue     = require('../../_common/url').getHashValue;
 const isEmptyObject    = require('../../_common/utility').isEmptyObject;
 const showLoadingImage = require('../../_common/utility').showLoadingImage;

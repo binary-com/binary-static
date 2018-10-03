@@ -78,6 +78,9 @@ const VirtualAccOpening = (() => {
     const bindValidation = () => {
         // Add TrafficSource parameters
         const utm_data = TrafficSource.getData();
+        const mobile_devices = ['iPhone', 'iPad', 'Android'];
+        const date_first_contact = LocalStore.get('date_first_contact') || toISOFormat(moment());
+        const signup_device = mobile_devices.some(item => item === navigator.platform) ? 'mobile' : 'desktop';
 
         const req = [
             { selector: '#client_password', validations: ['req', 'password'], re_check_field: '#repeat_password' },
@@ -87,8 +90,8 @@ const VirtualAccOpening = (() => {
             { selector: '#email_consent' },
             { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
             { request_field: 'new_account_virtual', value: 1 },
-            { request_field: 'signup_device', value: signup_device },
-            { request_field: 'date_first_contact', value: date_first_contact },
+            { request_field: 'signup_device',       value: signup_device },
+            { request_field: 'date_first_contact',  value: date_first_contact },
         ];
 
         if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium',   value: utm_data.utm_medium });
@@ -98,12 +101,6 @@ const VirtualAccOpening = (() => {
         if (gclid) req.push({ request_field: 'gclid_url', value: gclid });
 
         if (Cookies.get('affiliate_tracking')) req.push({ request_field: 'affiliate_token', value: Cookies.getJSON('affiliate_tracking').t });
-
-        const mobile_devices = ['iPhone', 'iPad', 'Android'];
-        const date_first_contact = LocalStore.get('date_first_contact') != null ?
-            LocalStore.get('date_first_contact') :
-            toISOFormat(moment());
-        const signup_device = mobile_devices.some(item => item === navigator.platform) ? 'mobile' : 'desktop';
 
         FormManager.init(form, req, true);
     };

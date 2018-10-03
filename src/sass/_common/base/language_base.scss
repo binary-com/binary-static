@@ -74,6 +74,10 @@ body.ID {
     .id-hide {
         display: none !important;
     }
+    .id-show {
+        display: block !important;
+        visibility: visible;
+    }
 }
 
 body.IT, body.DE {

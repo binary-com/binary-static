@@ -17,10 +17,10 @@ const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
 const Localize         = require('../../_common/localize');
 const localize         = require('../../_common/localize').localize;
-const State            = require('../../_common/storage').State;
 const LocalStore       = require('../../_common/storage').LocalStore;
-const toISOFormat      = require('../../_common/string_util').toISOFormat;
+const State            = require('../../_common/storage').State;
 const scrollToTop      = require('../../_common/scroll').scrollToTop;
+const toISOFormat      = require('../../_common/string_util').toISOFormat;
 const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
 require('../../_common/lib/polyfills/array.includes');
@@ -95,7 +95,6 @@ const Page = (() => {
                 checkLanguage();
                 RealityCheck.onLoad();
                 Menu.init();
-                LocalStore.remove('date_first_contact');
             });
         } else {
             checkLanguage();

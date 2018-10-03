@@ -11,8 +11,8 @@ const updateBalance        = require('../pages/user/update_balance');
 const GTM                  = require('../../_common/base/gtm');
 const Login                = require('../../_common/base/login');
 const localize             = require('../../_common/localize').localize;
-const State                = require('../../_common/storage').State;
 const LocalStore           = require('../../_common/storage').LocalStore;
+const State                = require('../../_common/storage').State;
 const urlFor               = require('../../_common/url').urlFor;
 const getPropertyValue     = require('../../_common/utility').getPropertyValue;
 
