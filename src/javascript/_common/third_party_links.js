@@ -52,7 +52,7 @@ const ThirdPartyLinks = (() => {
             return false;
         }
         return !!destination.host
-            && !/^binary\.com$/.test(destination.host) // destination host is not binary domain
+            && !/^.*\.binary\.com$/.test(destination.host) // destination host is not binary subdomain
             && window.location.host !== destination.host;
     };
 
