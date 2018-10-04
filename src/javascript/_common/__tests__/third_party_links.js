@@ -7,8 +7,8 @@ describe('ThirdPartyLinks', () => {
             expect(AccountOpening.isThirdPartyLink('https://www.binary.com')).to.equal(false);
         });
         it('works for binary.com subdomains', () => {
-            expect(AccountOpening.isThirdPartyLink('https://www.style.binary.com')).to.equal(false);
-            expect(AccountOpening.isThirdPartyLink('https://login.binary.com/signup.php?lang=0')).to.equal(false);
+            expect(AccountOpening.isThirdPartyLink('https://www.style.binary.com')).to.equal(true);
+            expect(AccountOpening.isThirdPartyLink('https://login.binary.com/signup.php?lang=0')).to.equal(true);
         });
         it('works for special values', () => {
             expect(AccountOpening.isThirdPartyLink('javascript:;')).to.equal(false);
