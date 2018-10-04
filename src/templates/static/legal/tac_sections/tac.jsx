@@ -7,11 +7,15 @@ const Tac = () => (
         <p>{it.L('It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
-        <p>{it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term "the Company" shall denote either:')}</p>
-        <p className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}</p>
-        <p>{it.L('Binary (Europe) Ltd.,')}</p>
-        <p>{it.L('Binary Investments (Europe),')}</p>
-        <p>{it.L('Binary (IOM) Ltd., Binary (V) Ltd., Binary (FX) Ltd, or Binary (BVI) Ltd.')}</p>
+        <p>
+            {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term "the Company" shall denote either')}&nbsp;
+            <span className='eu-hide'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
+            <span className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+            <span className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
+            <span className='eu-hide'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
+            <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
+            <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
+        </p>
         <p>{it.L('These Terms and Conditions may be supplemented from time to time by Supplementary Terms and Conditions applicable to a particular Company or products.')}</p>
 
         <h2 data-anchor='introduction'>B. {it.L('Introduction')}</h2>
