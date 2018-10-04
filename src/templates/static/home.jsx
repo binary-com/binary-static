@@ -350,7 +350,7 @@ const Home = () => {
                         text={it.L('Expert analysis and learning resources.')}
                     />
                 </div>
-                <div className='center-text gr-padding-30'>
+                <div className='center-text gr-padding-30 academy'>
                     <a
                         className='button-secondary'
                         href='https://academy.binary.com'
