@@ -320,7 +320,7 @@ const MetaTraderConfig = (() => {
                 ),
         },
         password_change: {
-            ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type' },
+            ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type', is_radio: true },
             txt_old_password   : { id: '#txt_old_password',  request_field: 'old_password' },
             txt_new_password   : { id: '#txt_new_password',  request_field: 'new_password' },
             txt_re_new_password: { id: '#txt_re_new_password' },
