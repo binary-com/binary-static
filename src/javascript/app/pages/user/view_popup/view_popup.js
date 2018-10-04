@@ -200,7 +200,8 @@ const ViewPopup = (() => {
 
         if (current_spot_time) {
             if (window.time && current_spot_time > window.time.unix()) {
-                window.time = moment(current_spot_time).utc();
+                // epoch needs to be 13 digits before turning to moment
+                window.time = moment(+current_spot_time * 1000).utc();
                 updateTimers();
             }
             containerSetText('trade_details_current_date', epochToDateTime(current_spot_time));
