@@ -174,6 +174,7 @@ const PersonalDetails = (() => {
             const mt_acct_type      = localStorage.getItem('personal_details_redirect');
             const is_for_mt_citizen = !!mt_acct_type;                                                   // all mt account opening requires citizen
             const is_for_mt_tax     = /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2;  // demo and volatility mt accounts do not require tax info
+            const is_tax_req        = is_financial || (is_for_mt_tax && +State.getResponse('landing_company.config.tax_details_required') === 1);
 
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
@@ -186,13 +187,13 @@ const PersonalDetails = (() => {
                 { selector: '#place_of_birth',         validations: ['req'] },
                 { selector: '#account_opening_reason', validations: ['req'] },
 
-                { selector: '#tax_residence',  validations: (is_financial || is_for_mt_tax) ? ['req'] : '' },
+                { selector: '#tax_residence',  validations: (is_tax_req) ? ['req'] : '' },
                 { selector: '#citizen',        validations: (is_financial || is_gaming || is_for_mt_citizen) ? ['req'] : '' },
                 { selector: '#chk_tax_id',     validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
 
             const tax_id_validation  = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
-            if (is_financial || is_for_mt_tax) {
+            if (is_tax_req) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
@@ -228,8 +229,11 @@ const PersonalDetails = (() => {
                     return;
                 }
                 const get_settings    = data.get_settings;
-                const has_required_mt = get_settings.tax_residence && get_settings.tax_identification_number &&
-                    get_settings.citizen;
+                const has_required_mt = (/real_vanuatu_(standard|advanced)/.test(redirect_url) ?
+                    (get_settings.tax_residence && get_settings.tax_identification_number && get_settings.citizen)
+                    :
+                    get_settings.citizen // only check Citizen if user selects mt volatility account
+                );
                 if (redirect_url && has_required_mt) {
                     localStorage.removeItem('personal_details_redirect');
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });

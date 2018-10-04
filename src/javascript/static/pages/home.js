@@ -5,6 +5,7 @@ const TabSelector  = require('../../_common/tab_selector');
 const urlFor       = require('../../_common/url').urlFor;
 const BinaryPjax   = require('../../app/base/binary_pjax');
 const BinarySocket = require('../../app/base/socket');
+const isEuCountry  = require('../../app/common/country_base').isEuCountry;
 const FormManager  = require('../../app/common/form_manager');
 const isBinaryApp  = require('../../config').isBinaryApp;
 
@@ -14,8 +15,8 @@ const Home = (() => {
     const onLoad = () => {
         TabSelector.onLoad();
 
-        BinarySocket.wait('website_status').then((response) => {
-            clients_country = response.website_status.clients_country;
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            clients_country = State.getResponse('website_status.clients_country');
 
             // we need to initiate selector after it becoming visible
             TabSelector.repositionSelector();
@@ -31,8 +32,9 @@ const Home = (() => {
                 fnc_additional_check: checkCountry,
             });
             socialLogin();
-            if (State.get('is_eu')) {
+            if (isEuCountry()) {
                 $('.mfsa_message').slideDown(300);
+                $('.eu-hide').setVisibility(0);
             }
         });
     };
