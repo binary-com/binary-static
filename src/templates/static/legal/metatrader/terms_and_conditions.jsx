@@ -16,6 +16,7 @@ const TermsAndConditions = () => (
                 {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either', it.website_name)}&nbsp;
                 <span className='eu-hide'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
                 <span className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+                <span className='eu-hide'>{it.L('Binary (IOM) Ltd.,')}&nbsp;</span>
                 <span className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
                 <span className='eu-hide'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
                 <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
