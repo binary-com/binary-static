@@ -313,7 +313,7 @@ const Metatrader = () => (
                                         <FormRow is_two_rows type='password' id='txt_re_main_pass'  label={it.L('Verify main password')} />
                                         <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password (read-only access)')} tooltip={it.L('Share access to your account without any permission to trade.')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <SubmitButton
-                                            no_wrapper
+                                            is_centered
                                             type='submit'
                                             id='btn_submit_new_account'
                                             text={it.L('Create Account')}
