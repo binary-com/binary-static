@@ -7,11 +7,11 @@ const Tac = () => (
         <p>{it.L('It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
-        <p>{it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website, the term "the Company" shall denote either:')}</p>
-        <p className='eu-hide'>{it.L('Binary (C.R.) S.A.;')}</p>
-        <p>{it.L('Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. MGA/B2C/102/2000 dated 1 Aug 2018 and for UK clients by (2) the UK Gambling Commission;')}</p>
-        <p>{it.L('Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or')}</p>
-        <p>{it.L('Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 Aug 2012, and for UK clients by (2) the UK Gambling Commission.')}</p>
+        <p>{it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term "the Company" shall denote either:')}</p>
+        <p className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}</p>
+        <p>{it.L('Binary (Europe) Ltd.,')}</p>
+        <p>{it.L('Binary Investments (Europe),')}</p>
+        <p>{it.L('Binary (IOM) Ltd., Binary (V) Ltd., Binary (FX) Ltd, or Binary (BVI) Ltd.')}</p>
         <p>{it.L('These Terms and Conditions may be supplemented from time to time by Supplementary Terms and Conditions applicable to a particular Company or products.')}</p>
 
         <h2 data-anchor='introduction'>B. {it.L('Introduction')}</h2>
