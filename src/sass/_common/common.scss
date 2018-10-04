@@ -183,7 +183,8 @@ label {
         margin-bottom: 5px;
     }
     input, select {
-        width: calc(100% - 6px);
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
