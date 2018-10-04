@@ -5,10 +5,12 @@ const OrderExecution = () => (
         <h2 data-anchor='order-execution-policy'>{it.L('Order Execution Policy')}</h2>
 
         <h2 data-anchor='introduction'>{it.L('A. Introduction')}</h2>
-        <p>{it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', \'[_1]\' shall denote:', it.website_name)}</p>
-        <p className='eu-hide'>{it.L('Binary (V) Ltd,')}</p>
-        <p className='eu-hide'>{it.L('Binary (FX) Ltd, or')}</p>
-        <p>{it.L('Binary Investments (Europe) Ltd.')}</p>
+        <p>
+            {it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', \'[_1]\' shall denote', it.website_name)}&nbsp;
+            <span className='eu-hide'>{it.L('Binary (V) Ltd,')}&nbsp;</span>
+            <span className='eu-hide'>{it.L('Binary (FX) Ltd, or')}&nbsp;</span>
+            <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
+        </p>
 
         <p>{it.L('Our Order Execution Policy (the "Policy") sets out the overview and approach of how [_1] executes orders on behalf of our clients.', it.website_name)}</p>
         <p>{it.L('The Policy is supplemented by Appendix A which provide further details to our considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy.')}</p>

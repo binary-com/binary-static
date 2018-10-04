@@ -13,13 +13,13 @@ const TermsAndConditions = () => (
         <h2 data-anchor='introduction-and-scope-of-agreement'>{it.L('A. Introduction and Scope of Agreement')}</h2>
         <ol>
             <li>
-                {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either:', it.website_name)}
-                <div className='eu-hide'>{it.L('Binary (V) Ltd.,')}</div>
-                <div className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}</div>
-                <div className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}</div>
-                <div className='eu-hide'>{it.L('Binary (FX) Ltd.,')}</div>
-                <div>{it.L('Binary (Europe) Ltd, or')}</div>
-                <div>{it.L('Binary Investments (Europe) Ltd.')}</div>
+                {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either', it.website_name)}&nbsp;
+                <span className='eu-hide'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
+                <span className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+                <span className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
+                <span className='eu-hide'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
+                <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
+                <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
             </li>
 
             <li>{it.L('You understand that products based on a random number generator (the "Volatility Indices") are gambling products whereas products based on financial market indices (forex, indices, commodities) are financial instruments.')}</li>
