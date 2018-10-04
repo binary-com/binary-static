@@ -8,10 +8,12 @@ const Tac = () => (
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
         <p>{it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term "the Company" shall denote either:')}</p>
-        <p className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}</p>
-        <p>{it.L('Binary (Europe) Ltd.,')}</p>
-        <p>{it.L('Binary Investments (Europe),')}</p>
-        <p>{it.L('Binary (IOM) Ltd., Binary (V) Ltd., Binary (FX) Ltd, or Binary (BVI) Ltd.')}</p>
+        <div className='eu-hide'>{it.L('Binary (V) Ltd.,')}</div>
+        <div className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}</div>
+        <div className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}</div>
+        <div className='eu-hide'>{it.L('Binary (FX) Ltd.,')}</div>
+        <div>{it.L('Binary (Europe) Ltd, or')}</div>
+        <div>{it.L('Binary Investments (Europe) Ltd.')}</div>
         <p>{it.L('These Terms and Conditions may be supplemented from time to time by Supplementary Terms and Conditions applicable to a particular Company or products.')}</p>
 
         <h2 data-anchor='introduction'>B. {it.L('Introduction')}</h2>
