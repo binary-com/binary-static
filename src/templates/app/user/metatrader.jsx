@@ -387,13 +387,17 @@ const Metatrader = () => (
                                             <h3 className='secondary-color'>{it.L('Change password')}</h3>
                                         </div>
 
-                                        <FormRow is_two_rows type='custom' id='ddl_password_type' label={it.L('Password type')}>
-                                            <input type='radio' name='password_type' id='password_type_main' value='main' checked />
-                                            <label htmlFor='password_type_main'>{it.L('Main')}</label>
-                                            <br />
-                                            <input type='radio' name='password_type' id='password_type_investor' value='investor' />
-                                            <label htmlFor='password_type_investor'>{it.L('Investor')}</label>
-                                        </FormRow>
+                                        <FormRow
+                                            is_two_rows
+                                            type='radio'
+                                            id='ddl_password_type'
+                                            label={it.L('Password type')}
+                                            options={[
+                                                { value: 'main',     label: it.L('Main') },
+                                                { value: 'investor', label: it.L('Investor') },
+                                            ]}
+                                            default_option='main'
+                                        />
                                         <FormRow is_two_rows type='password' id='txt_old_password'    label={it.L('Current MT5 password')} />
                                         <FormRow is_two_rows type='password' id='txt_new_password'    label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_re_new_password' label={it.L('Verify new MT5 password')} />
