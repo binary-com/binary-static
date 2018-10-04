@@ -182,7 +182,7 @@ label {
         text-align: left;
         margin-bottom: 5px;
     }
-    input, select {
+    input:not([type='radio']), select {
         width: 100%;
         box-sizing: border-box;
     }
