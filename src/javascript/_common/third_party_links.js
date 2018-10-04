@@ -1,21 +1,12 @@
-const Client       = require('./base/client_base');
 const BinarySocket = require('../app/base/socket');
 const Dialog       = require('../app/common/attach_dom/dialog');
 const isEuCountry  = require('../app/common/country_base').isEuCountry;
-const State        = require('../_common/storage').State;
 
 const ThirdPartyLinks = (() => {
     const init = () => {
-        // show third-party website redirect notification for logged in maltainvest clients or
-        // logged in virtual clients with maltainvest financial landing company else
-        // logged out clients with EU IP address
+        // show third-party website redirect notification for logged in and logged out EU clients
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
-            if (Client.isLoggedIn()) {
-                if ((Client.get('landing_company_shortcode') === 'maltainvest' ||
-                    (Client.get('is_virtual') && State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest'))) {
-                    document.body.addEventListener('click', clickHandler);
-                }
-            } else if (isEuCountry()) {
+            if (isEuCountry()) {
                 document.body.addEventListener('click', clickHandler);
             }
         });
