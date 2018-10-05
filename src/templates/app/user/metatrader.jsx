@@ -394,8 +394,8 @@ const Metatrader = () => (
                                             className='password-type'
                                             label={it.L('Password type')}
                                             options={[
-                                                { value: 'main',     label: it.L('Main') },
-                                                { value: 'investor', label: it.L('Investor') },
+                                                { value: 'main',     label: it.L('Main'),     data_balloon_text: it.L('Access your account with full trading permission.') },
+                                                { value: 'investor', label: it.L('Investor'), data_balloon_text: it.L('Share access to your account without any permission to trade.') },
                                             ]}
                                             default_option='main'
                                         />
