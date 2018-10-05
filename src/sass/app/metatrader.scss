@@ -15,9 +15,6 @@
     .flex {
         display: flex;
     }
-    #frm_new_account [data-balloon]:before {
-        max-width: 100%; // balloon goes outside viewport
-    }
     .get-started-link {
         display: block;
         padding: 10px 20px;
