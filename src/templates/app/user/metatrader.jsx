@@ -391,6 +391,7 @@ const Metatrader = () => (
                                             is_two_rows
                                             type='radio'
                                             id='ddl_password_type'
+                                            className='password-type'
                                             label={it.L('Password type')}
                                             options={[
                                                 { value: 'main',     label: it.L('Main') },
