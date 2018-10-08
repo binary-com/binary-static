@@ -160,11 +160,14 @@ const TickDisplay = (() => {
     };
 
     const initializeChart = (config, data) => {
+        const has_reset_barrier = contract.entry_spot && contract.barrier &&
+            Reset.isReset(contract_category) && Reset.isNewBarrier(contract.entry_spot, contract.barrier);
         ChartSettings.setLabels({
-            contract_type: contract_category,
-            has_barrier  : should_set_barrier && contract_category !== 'highlowticks',
-            is_tick_trade: true,
-            shortcode    : contract.shortcode,
+            contract_type   : contract_category,
+            has_barrier     : should_set_barrier && contract_category !== 'highlowticks',
+            is_reset_barrier: has_reset_barrier,
+            is_tick_trade   : true,
+            shortcode       : contract.shortcode,
         });
         Highcharts.setOptions({
             lang: { thousandsSep: ',' },
@@ -485,6 +488,16 @@ const TickDisplay = (() => {
 
             CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Reset Barrier')}: ${reset_barrier}`);
             reset_spot_plotted = true;
+            ChartSettings.setLabels({
+                contract_type   : contract_category,
+                has_barrier     : true,
+                is_reset_barrier: true,
+                is_tick_trade   : true,
+                shortcode       : contract.shortcode,
+            });
+            if (chart) {
+                chart.setTitle(null, { text: ChartSettings.getSubtitle() });
+            }
         }
 
         evaluateContractOutcome();

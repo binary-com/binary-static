@@ -25,6 +25,7 @@ const ChartSettings = (() => {
             lowest_tick   : `<span style="${common_horizontal_line_style} border-color: #e98024; border-style: dashed;"></span> ${localize('Lowest Tick')} `,
             payout_range  : `<span class="chart-payout-range"> ${localize('Payout Range')} </span>`,
             purchase_time : `<span style="${common_vertical_line_style} border-color: #7cb5ec; border-style: solid;"></span> ${localize('Purchase Time')} `,
+            reset_barrier : `<span style="${common_horizontal_line_style} border-color: green; border-style: solid;"></span> ${localize('Reset Barrier')} `,
             reset_time    : `<span style="${common_vertical_line_style} border-color: #e98024; border-color: #000; border-style: solid;"></span> ${localize('Reset Time')} `,
             start_end_time: `<span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span> ${localize('Start/End Time')} `,
             selected_tick : `<span style="margin-left: 10px; display: inline-block; border-radius: 6px; background-color: orange; width:10px; height: 10px;"></span> ${localize('Selected Tick')}`,
@@ -32,7 +33,8 @@ const ChartSettings = (() => {
         };
 
         const is_high_low_ticks = params.contract_type === 'highlowticks';
-        const barrier           = params.is_tick_trade ? labels.barrier_line : labels.barrier_spot;
+        const barrier_style     = params.is_tick_trade ? labels.barrier_line : labels.barrier_spot;
+        const barrier           = params.is_reset_barrier ? labels.reset_barrier : barrier_style;
         const start_time        = is_high_low_ticks ? labels.start_end_time : labels.start_time;
         const highest_lowest    = /^tickhigh_/i.test(params.shortcode) ? labels.highest_tick : labels.lowest_tick;
         txt_subtitle = (params.is_chart_delayed ? labels.delay : '') +

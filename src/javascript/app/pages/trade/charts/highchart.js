@@ -161,8 +161,9 @@ const Highchart = (() => {
         });
     };
 
-    const getHighchartLabelParams = () => ({
+    const getHighchartLabelParams = (is_reset_barrier) => ({
         is_chart_delayed,
+        is_reset_barrier,
         contract_type       : contract.contract_type,
         is_forward_starting : purchase_time !== start_time,
         is_sold_before_start: sell_time < start_time,
@@ -409,6 +410,7 @@ const Highchart = (() => {
                     if (Reset.isNewBarrier(entry_spot, barrier)) {
                         addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot',   textBottom: contract_type !== 'RESETCALL', x: -60, align: 'right' }, 'y');
                         addPlotLine({ id: 'reset_barrier', value: +barrier,    label: `${localize('Reset Barrier')} (${addComma(barrier)})`, dashStyle: 'Solid', textBottom: contract_type === 'RESETCALL', x: -60, align: 'right' }, 'y');
+                        HighchartUI.updateLabels(chart, getHighchartLabelParams(true));
                     } else {
                         addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot', x: -60, align: 'right' }, 'y');
 
