@@ -147,7 +147,8 @@ const Download = () => {
                 <div className='gr-row' id='mobile-apps'>
                     <Heading system='android'>{it.L('MT5 for Android')}</Heading>
                     <Heading system='ios'>{it.L('MT5 for iOS')}</Heading>
-                    <p id='mobile-description' className='invisible'>{it.L('Access the markets anytime, anywhere using native apps for your iOS or Android devices.')}</p>
+                    <p id='ios-description' className='invisible'>{it.L('Access the markets anytime, anywhere from your iOS device.')}</p>
+                    <p id='android-description' className='invisible'>{it.L('Access the markets anytime, anywhere from your Android device.')}</p>
                     <div className='gr-2 gr-hide-m' />
                     <DownloadBlock
                         image='ios-device.png'
@@ -172,10 +173,10 @@ const Download = () => {
                 <h1>{it.L('MT5 for web platform')}</h1>
                 <p className='no-margin'>
                     {it.L(
-                        'Use the web platform from any Windows, mac, or Linux operating system – no download or installation required.'
+                        'Use the web platform from any Windows, MacOS, or Linux operating system – no download or installation required.'
                     )}
                 </p>
-                <p className='no-margin'>{it.L('We support and prefer to use the below browser platforms')}</p>
+                <p className='no-margin'>{it.L('We support the following web browsers:')}</p>
                 <div className='gr-row'>
                     <div className='gr-10 gr-push-1 gr-10-p gr-push-1-p gr-12-m gr-push-0-m gr-padding-30'>
                         <div className='gr-row browsers'>
