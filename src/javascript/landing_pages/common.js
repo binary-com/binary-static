@@ -98,7 +98,7 @@ function isBinaryApp() {
 }
 
 function getAppId() {
-    return localStorage.getItem('config.app_id') || (isBinaryApp() ? '14473' : (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1'));
+    return localStorage.getItem('config.app_id') || (isBinaryApp() ? '14473' : (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1')); // eslint-disable-line no-nested-ternary
 }
 
 function wsSend(ws, request) {
