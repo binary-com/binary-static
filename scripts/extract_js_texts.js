@@ -2,10 +2,12 @@
 
 /* eslint-disable no-console */
 const BabelParser = require('@babel/parser');
-const estraverse = require('estraverse');
-const fs         = require('fs');
-const Path       = require('path');
-const common     = require('./common');
+const color       = require('cli-color');
+const emphasize   = require('emphasize');
+const estraverse  = require('estraverse');
+const fs          = require('fs');
+const Path        = require('path');
+const common      = require('./common');
 
 const config = {
     base_folder         : './src/javascript/',
@@ -44,11 +46,7 @@ const parse = (app_name) => {
 
     process.stdout.write(common.messageEnd(Date.now() - start_time));
 
-    console.log(
-        '  strings:', Object.keys(source_strings).length,
-        '  invalid:', invalid_ranges.length,
-        '  ignored:', ignored_ranges.length,
-    );
+    printSummary();
 };
 
 const walker = (path) => {
@@ -75,13 +73,13 @@ const parseFile = (path_to_js_file) => {
     const parsed = BabelParser.parse(js_source, { ...config.parser_options, sourceFilename: path_to_js_file });
     estraverse.traverse(parsed, {
         enter: (node) => {
-            extractor(node);
+            extractor(node, js_source);
         },
         fallback: 'iteration',
     });
 };
 
-const extractor = (node) => {
+const extractor = (node, js_source) => {
     const is_function = (node.callee || {}).name === config.localize_method_name;
 
     if (node.type === 'CallExpression' && is_function) {
@@ -90,7 +88,12 @@ const extractor = (node) => {
         if (first_arg.value) {
             source_strings[first_arg.value] = true;
         } else {
-            (shouldIgnore(first_arg) ? ignored_ranges : invalid_ranges).push(first_arg.loc);
+            const should_ignore = shouldIgnore(first_arg);
+            (should_ignore ? ignored_ranges : invalid_ranges).push(first_arg.loc);
+
+            if (!should_ignore) {
+                report(first_arg, js_source);
+            }
         }
     }
 };
@@ -99,6 +102,55 @@ const shouldIgnore = (arg) => {
     const comments = (arg.trailingComments || []).map(c => c.value).join(' ');
     return new RegExp(`\\b${config.ignore_comment}\\b`).test(comments);
 };
+
+
+// --------------------------
+// ----- Error Reporter -----
+// --------------------------
+const gray = color.xterm(240);
+const red  = color.bold.xterm(160);
+
+const getLineNumber = (start_line, gutter_len, idx) => (
+    gray(`${start_line + idx + 1}${' '.repeat(gutter_len - 3 - (start_line + idx + 1).toString().length)} | `)
+);
+
+const report = (node, js_source) => {
+    const padding       = ' '.repeat(3);
+    const start_line    = node.loc.start.line;
+    const start_column  = node.loc.start.column;
+    const formatted_loc = gray(`:${start_line}:${start_column}`);
+    const file_name     = node.loc.filename.split(config.base_folder.substr(1))[1];
+
+    const code_start_line = start_line - 3;
+    const code_end_line   = node.loc.end.line;
+    const code_gutter_len = code_end_line.toString().length + 3;
+
+    console.log(red('\n\n>>'), color.underline(`${config.base_folder}${file_name}${formatted_loc}`));
+    console.log(red(`${padding}Expected string literal but found:`), color.yellow(js_source.substring(node.start, node.end)));
+    console.log(
+        js_source
+            .toString()
+            .split('\n')
+            .slice(code_start_line, code_end_line)
+            .map((line, idx) => `${padding}${getLineNumber(code_start_line, code_gutter_len, idx)}${emphasize.highlight('js', line).value}`)
+            .join('\n')
+    );
+    console.log(`${padding}${' '.repeat(start_column + code_gutter_len)}${color.bold.yellow('^')}`);
+};
+
+const printSummary = () => {
+    console.log(
+        color.cyanBright('\n Summary:\n'),
+        color.yellowBright(`${'='.repeat(16)}\n`),
+        `${color.green('strings:')}${formatValue(Object.keys(source_strings).length)}`,
+        `${'ignored:'}${formatValue(ignored_ranges.length)}`,
+        `${color.red('invalid:')}${formatValue(invalid_ranges.length)}`,
+    );
+};
+
+const formatValue = (value) => (
+    `${color.whiteBright(value.toLocaleString().padStart(8))}\n`
+);
 
 exports.parse    = parse;
 exports.getTexts = () => Object.keys(source_strings).sort();
