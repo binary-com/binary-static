@@ -29,24 +29,27 @@ const config = {
 };
 
 const source_strings = {};
-const invalid_ranges = [];
-const ignored_ranges = [];
+const ignored_list   = [];
+const invalid_list   = [];
 
-const parse = (app_name) => {
+const parse = (app_name, is_silent) => {
     if (!config.supported_apps.includes(app_name)) {
         const error_msg = `The app name '${app_name}' is not supported. Supported apps are: ${config.supported_apps.join(', ')}`;
         throw new Error(error_msg);
     }
 
-    process.stdout.write(common.messageStart('Extracting translation texts'));
+    if (!is_silent) {
+        process.stdout.write(common.messageStart('Extracting translation texts'));
+    }
     const start_time = Date.now();
 
-    walker(`${config.base_folder}_common`); // common for all 'supported_apps'
-    walker(`${config.base_folder}${app_name}`);
+    walker(Path.resolve(config.base_folder, '_common')); // common for all 'supported_apps'
+    walker(Path.resolve(config.base_folder, app_name));
 
-    process.stdout.write(common.messageEnd(Date.now() - start_time));
-
-    printSummary();
+    if (!is_silent) {
+        process.stdout.write(common.messageEnd(Date.now() - start_time));
+        printSummary();
+    }
 };
 
 const walker = (path) => {
@@ -89,7 +92,7 @@ const extractor = (node, js_source) => {
             source_strings[first_arg.value] = true;
         } else {
             const should_ignore = shouldIgnore(first_arg);
-            (should_ignore ? ignored_ranges : invalid_ranges).push(first_arg.loc);
+            (should_ignore ? ignored_list : invalid_list).push(first_arg.loc);
 
             if (!should_ignore) {
                 report(first_arg, js_source);
@@ -118,8 +121,8 @@ const report = (node, js_source) => {
     const padding       = ' '.repeat(3);
     const start_line    = node.loc.start.line;
     const start_column  = node.loc.start.column;
-    const formatted_loc = gray(`:${start_line}:${start_column}`);
     const file_name     = node.loc.filename.split(config.base_folder.substr(1))[1];
+    const formatted_loc = gray(`:${start_line}:${start_column}`);
 
     const code_start_line = start_line - 3;
     const code_end_line   = node.loc.end.line;
@@ -143,8 +146,8 @@ const printSummary = () => {
         color.cyanBright('\n Summary:\n'),
         color.yellowBright(`${'='.repeat(16)}\n`),
         `${color.green('strings:')}${formatValue(Object.keys(source_strings).length)}`,
-        `${'ignored:'}${formatValue(ignored_ranges.length)}`,
-        `${color.red('invalid:')}${formatValue(invalid_ranges.length)}`,
+        `${'ignored:'}${formatValue(ignored_list.length)}`,
+        `${color.red('invalid:')}${formatValue(invalid_list.length)}`,
     );
 };
 
@@ -152,7 +155,6 @@ const formatValue = (value) => (
     `${color.whiteBright(value.toLocaleString().padStart(8))}\n`
 );
 
-exports.parse    = parse;
-exports.getTexts = () => Object.keys(source_strings).sort();
-
-parse('app_2');
+exports.parse          = parse;
+exports.getTexts       = () => Object.keys(source_strings).sort();
+exports.getErrorsCount = () => invalid_list.length;
