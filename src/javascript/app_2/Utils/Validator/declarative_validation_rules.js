@@ -81,31 +81,39 @@ const validNumber = (value, opts) => {
         message = localize('Should be less than [_1]', [addComma(options.max, options.format_money ? getDecimalPlaces(Client.get('currency')) : undefined)]);
     }
 
-    pre_build_dvrs.number.message = message;
+    getPreBuildDVRs().number.message = message;
     return is_ok;
 };
 
 const isMoreThanMax = (value, options) =>
     (options.type === 'float' ? +value > +options.max : compareBigUnsignedInt(value, options.max) === 1);
 
-export const pre_build_dvrs = {
-    address      : { func: validAddress,      message: 'Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /' },
-    barrier      : { func: validBarrier,      message: 'Only numbers and these special characters are allowed: + - .' },
-    compare      : { func: validCompare,      message: 'The two passwords that you entered do not match.' },
-    email        : { func: validEmail,        message: 'Invalid email address.' },
-    general      : { func: validGeneral,      message: 'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.' },
-    length       : { func: validLength,       message: 'You should enter [_1] characters.' },
-    letter_symbol: { func: validLetterSymbol, message: 'Only letters, space, hyphen, period, and apostrophe are allowed.' },
-    min          : { func: validMin,          message: 'Minimum of [_1] characters required.' },
-    not_equal    : { func: validNotEqual,     message: '[_1] and [_2] cannot be the same.' },
+const initPreBuildDVRs = () => ({
+    address      : { func: validAddress,      message: localize('Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /') },
+    barrier      : { func: validBarrier,      message: localize('Only numbers and these special characters are allowed: + - .') },
+    compare      : { func: validCompare,      message: localize('The two passwords that you entered do not match.') },
+    email        : { func: validEmail,        message: localize('Invalid email address.') },
+    general      : { func: validGeneral,      message: localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.') },
+    length       : { func: validLength,       message: localize('You should enter [_1] characters.', ['[_1]']) },
+    letter_symbol: { func: validLetterSymbol, message: localize('Only letters, space, hyphen, period, and apostrophe are allowed.') },
+    min          : { func: validMin,          message: localize('Minimum of [_1] characters required.', ['[_1]']) },
+    not_equal    : { func: validNotEqual,     message: localize('[_1] and [_2] cannot be the same.', ['[_1]', '[_2]']) },
     number       : { func: validNumber,       message: '' },
-    password     : { func: validPassword,     message: 'Password should have lower and uppercase letters with numbers.' },
-    phone        : { func: validPhone,        message: 'Only numbers and spaces are allowed.' },
-    postcode     : { func: validPostCode,     message: 'Only letters, numbers, space, and hyphen are allowed.' },
+    password     : { func: validPassword,     message: localize('Password should have lower and uppercase letters with numbers.') },
+    phone        : { func: validPhone,        message: localize('Only numbers and spaces are allowed.') },
+    postcode     : { func: validPostCode,     message: localize('Only letters, numbers, space, and hyphen are allowed.') },
     regular      : { func: validRegular,      message: '' },
     req          : { func: validRequired,     message: '' },
-    signup_token : { func: validEmailToken,   message: 'The length of token should be 8.' },
-    tax_id       : { func: validTaxID,        message: 'Should start with letter or number, and may contain hyphen and underscore.' },
+    signup_token : { func: validEmailToken,   message: localize('The length of token should be 8.') },
+    tax_id       : { func: validTaxID,        message: localize('Should start with letter or number, and may contain hyphen and underscore.') },
+});
+
+let pre_build_dvrs;
+export const getPreBuildDVRs = () => {
+    if (!pre_build_dvrs) {
+        pre_build_dvrs = initPreBuildDVRs();
+    }
+    return pre_build_dvrs;
 };
 
-export const pass_length = type => ({ min: (/^mt$/.test(type) ? 8 : 6), max: 25 });
+export const getPasswordLengthConfig = type => ({ min: (/^mt$/.test(type) ? 8 : 6), max: 25 });

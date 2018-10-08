@@ -19,7 +19,7 @@ export const formatStatementTransaction = (transaction, currency) => {
         payout : isNaN(payout)  ? '-' : formatMoney(currency, payout,  should_exclude_currency),
         amount : isNaN(amount)  ? '-' : formatMoney(currency, amount,  should_exclude_currency),
         balance: isNaN(balance) ? '-' : formatMoney(currency, balance, should_exclude_currency),
-        desc   : localize(transaction.longcode.replace(/\n/g, '<br />')),
+        desc   : transaction.longcode.replace(/\n/g, '<br />'),
         id     : transaction.contract_id,
         app_id : transaction.app_id,
     };
