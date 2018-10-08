@@ -13,7 +13,7 @@ export const formatStatementTransaction = (transaction, currency) => {
     const should_exclude_currency = true;
 
     return {
-        action : localize(toTitleCase(transaction.action_type)),
+        action : localize(toTitleCase(transaction.action_type) /* localize-ignore */), // handled in static_strings_app_2.js: 'Buy', 'Sell', 'Deposit', 'Withdrawal'
         date   : `${date_str}\n${time_str}`,
         refid  : transaction.transaction_id,
         payout : isNaN(payout)  ? '-' : formatMoney(currency, payout,  should_exclude_currency),
