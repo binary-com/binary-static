@@ -7,6 +7,7 @@ import Client                            from '_common/base/client_base';
 import {
     getMinPayout,
     isCryptocurrency  }                  from '_common/base/currency_base';
+import BinarySocket                      from '_common/base/socket_base';
 import { cloneObject, isEmptyObject }    from '_common/utility';
 import { WS }                            from 'Services';
 import GTM                               from 'Utils/gtm';
@@ -146,7 +147,8 @@ export default class TradeStore extends BaseStore {
     @action.bound
     async init() {
         // To be sure that the website_status response has been received before processing trading page.
-        WS.subscribeWebsiteStatus(this.prepareTradeStore);
+        BinarySocket.wait('website_status')
+            .then(() => this.prepareTradeStore());
     }
 
     @action.bound
