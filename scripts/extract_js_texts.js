@@ -28,7 +28,7 @@ const config = {
     },
 };
 
-const source_strings = {};
+const source_strings = new Set();
 const ignored_list   = [];
 const invalid_list   = [];
 
@@ -39,7 +39,7 @@ const parse = (app_name, is_silent) => {
     }
 
     if (!is_silent) {
-        process.stdout.write(common.messageStart('Extracting translation texts'));
+        process.stdout.write(common.messageStart(`Extracting js texts (${app_name})`));
     }
     const start_time = Date.now();
 
@@ -48,7 +48,7 @@ const parse = (app_name, is_silent) => {
 
     if (!is_silent) {
         process.stdout.write(common.messageEnd(Date.now() - start_time));
-        printSummary();
+        printSummary(app_name);
     }
 };
 
@@ -89,7 +89,7 @@ const extractor = (node, js_source) => {
         const first_arg = node.arguments[0];
 
         if (first_arg.value) {
-            source_strings[first_arg.value] = true;
+            source_strings.add(first_arg.value);
         } else {
             const should_ignore = shouldIgnore(first_arg);
             (should_ignore ? ignored_list : invalid_list).push(first_arg.loc);
@@ -141,11 +141,11 @@ const report = (node, js_source) => {
     console.log(`${padding}${' '.repeat(start_column + code_gutter_len)}${color.bold.yellow('^')}`);
 };
 
-const printSummary = () => {
+const printSummary = (app_name) => {
     console.log(
-        color.cyanBright('\n Summary:\n'),
+        color.cyanBright(`\n Summary: (${app_name})\n`),
         color.yellowBright(`${'='.repeat(16)}\n`),
-        `${color.green('strings:')}${formatValue(Object.keys(source_strings).length)}`,
+        `${color.green('strings:')}${formatValue(source_strings.size)}`,
         `${'ignored:'}${formatValue(ignored_list.length)}`,
         `${color.red('invalid:')}${formatValue(invalid_list.length)}`,
     );
@@ -156,5 +156,5 @@ const formatValue = (value) => (
 );
 
 exports.parse          = parse;
-exports.getTexts       = () => Object.keys(source_strings).sort();
+exports.getTexts       = () => source_strings;
 exports.getErrorsCount = () => invalid_list.length;

@@ -3,6 +3,9 @@ const fs      = require('fs');
 const path    = require('path');
 const common  = require('./common');
 const GetText = require('./gettext');
+const extract = require('./extract_js_texts');
+
+const static_app_2 = require('./js_texts/static_strings_app_2');
 
 const texts = [
     'Day',
@@ -687,14 +690,29 @@ const texts = [
 const map           = {};
 const all_languages = [...common.languages, 'ach'].map(l => l.toLowerCase());
 
+const getAllTexts = () => {
+    extract.parse('app_2');
+
+    const unique_texts = new Set([
+        ...texts,
+        ...extract.getTexts(),
+        ...static_app_2,
+    ]);
+
+    return [...unique_texts];
+};
+
 const build = () => {
-    const gt = GetText.getInstance();
+    const all_texts = getAllTexts();
+    const gettext   = GetText.getInstance();
+
     all_languages.forEach(lang => {
-        gt.setLang(lang);
+        gettext.setLang(lang);
         map[lang] = {};
-        texts.forEach(text => {
+
+        all_texts.forEach(text => {
             const key         = text.replace(/[\s.]/g, '_');
-            const translation = gt.gettext(text, '[_1]', '[_2]', '[_3]', '[_4]');
+            const translation = gettext.gettext(text, '[_1]', '[_2]', '[_3]', '[_4]');
 
             if (translation !== text) {
                 map[lang][key] = translation;
