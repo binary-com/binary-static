@@ -117,6 +117,7 @@ const ChartSettings = (() => {
             },
             tooltip: {
                 ...(params.tooltip || {}),
+                useHTML: true,
             },
             xAxis: {
                 ...(params.x_axis || {}),
