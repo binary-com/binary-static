@@ -109,7 +109,7 @@ export default class TradeStore extends BaseStore {
 
         // Adds intercept to change min_max value of duration validation
         reaction(
-            ()=> [this.duration_min_max, this.contract_expiry_type, this.duration_unit],
+            ()=> [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
             () => {
                 this.changeDurationValidationRules();
             }
@@ -208,6 +208,12 @@ export default class TradeStore extends BaseStore {
                 }
 
                 this[key] = new_state[key];
+
+                // validation is done in mobx intercept (base_store.js)
+                // when barrier_1 is set, it is compared with store.barrier_2 (which is not updated yet)
+                if (key === 'barrier_2' && new_state.barrier_1) {
+                    this.barrier_1 = new_state.barrier_1; // set it again, after barrier_2 is updated in store
+                }
             }
         });
 
@@ -328,14 +334,20 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     changeDurationValidationRules() {
+        if (this.expiry_type === 'endtime') {
+            this.validation_errors.duration = [];
+            return;
+        }
+
         const index = this.validation_rules.duration.findIndex(item => item[0] === 'number');
         const limits = this.duration_min_max[this.contract_expiry_type] || false;
-        const duration_options = {
-            min: convertDurationLimit(+limits.min, this.duration_unit),
-            max: convertDurationLimit(+limits.max, this.duration_unit),
-        };
 
         if (limits) {
+            const duration_options = {
+                min: convertDurationLimit(+limits.min, this.duration_unit),
+                max: convertDurationLimit(+limits.max, this.duration_unit),
+            };
+
             if (index > -1) {
                 this.validation_rules.duration[index][1] = duration_options;
             } else {
