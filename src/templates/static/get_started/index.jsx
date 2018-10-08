@@ -2,6 +2,7 @@ import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
+
 const GetStartedSection = ({ link, hash, image, header, text }) => {
     const href = `${it.url_for(link)}#${hash}`;
     return (
@@ -41,6 +42,70 @@ const CTA = () => (
         </div>
     </div>
 );
+
+const VolatilityIndicesTable = () => {
+    const active_symbols = [
+        {
+            key             : 'r10',
+            label           : it.L('Volatility Indices 10'),
+            high_close_value: 86.85,
+            close_low_value : 87.91,
+            high_low_value  : 87.38,
+        },
+        {
+            key             : 'r_25',
+            label           : it.L('Volatility Indices 25'),
+            high_close_value: 88.24,
+            close_low_value : 86.92,
+            high_low_value  : 87.59,
+        },
+        {
+            key             : 'r50',
+            label           : it.L('Volatility Indices 50'),
+            high_close_value: 87.21,
+            close_low_value : 87.87,
+            high_low_value  : 87.54,
+        },
+        {
+            key             : 'r75',
+            label           : it.L('Volatility Indices 75'),
+            high_close_value: 87.88,
+            close_low_value : 87.27,
+            high_low_value  : 87.58,
+        },
+        {
+            key             : 'r100',
+            label           : it.L('Volatility Indices 100'),
+            high_close_value: 87.64,
+            close_low_value : 87.35,
+            high_low_value  : 87.49,
+        },
+    ];
+    return (
+        <div className='gr-padding-30 gr-parent'>
+            <table>
+                <thead>
+                    <tr>
+                        <th className='align-start'>{it.L('Volatility Indices')}</th>
+                        <th className='align-end'>{it.L('High - Close')}</th>
+                        <th className='align-end'>{it.L('Close - Low')}</th>
+                        <th className='align-end'>{it.L('High - Low')}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {active_symbols.map(item => (
+                        <tr key={item.key}>
+                            <td>{item.label}</td>
+                            <td className='align-end'>{Math.round(item.high_close_value)}</td>
+                            <td className='align-end'>{Math.round(item.close_low_value)}</td>
+                            <td className='align-end'>{Math.round(item.high_low_value)}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
+};
 
 const Index = () => (
     <div className='static_full get-started'>
@@ -310,6 +375,7 @@ const Index = () => (
                             <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
                         </div>
                         <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}#range-of-markets>`, '</a>')}</p>
+                        <VolatilityIndicesTable />
                         <CTA />
                     </TabContent>
                 </TabContentContainer>
