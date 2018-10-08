@@ -4,6 +4,10 @@ import {
     observable,
     reaction }                           from 'mobx';
 import Client                            from '_common/base/client_base';
+import {
+    getMinPayout,
+    isCryptocurrency  }                  from '_common/base/currency_base';
+import BinarySocket                      from '_common/base/socket_base';
 import { cloneObject, isEmptyObject }    from '_common/utility';
 import { WS }                            from 'Services';
 import GTM                               from 'Utils/gtm';
@@ -117,7 +121,7 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    async init() {
+    async prepareTradeStore() {
         const query_string_values = this.updateQueryString();
         this.smart_chart = this.root_store.modules.smart_chart;
 
@@ -138,6 +142,13 @@ export default class TradeStore extends BaseStore {
                 });
             }));
         }
+    }
+
+    @action.bound
+    async init() {
+        // To be sure that the website_status response has been received before processing trading page.
+        BinarySocket.wait('website_status')
+            .then(() => this.prepareTradeStore());
     }
 
     @action.bound
@@ -221,6 +232,13 @@ export default class TradeStore extends BaseStore {
     }
 
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
+        
+        // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa. The source of default values is the website_status response.
+        if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
+            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
+            obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
+        }
+
         const new_state = this.updateStore(cloneObject(obj_new_values));
 
         if (is_changed_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {
@@ -232,6 +250,7 @@ export default class TradeStore extends BaseStore {
                 is_purchase_enabled: false,
                 proposal_info      : {},
             });
+
 
             if (!this.smart_chart.is_contract_mode) {
                 const is_barrier_changed = 'barrier_1' in new_state || 'barrier_2' in new_state;
