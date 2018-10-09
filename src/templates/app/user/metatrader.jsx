@@ -195,7 +195,6 @@ const Metatrader = () => (
                         <span className='mt-login' />
                     </div>
 
-
                     <div className='account-desc'>
                         <AccountDesc
                             title={it.L('Choose an account')}
