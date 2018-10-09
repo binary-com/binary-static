@@ -16,6 +16,7 @@ const getPropertyValue = require('../../../../_common/utility').getPropertyValue
 
 const Highchart = (() => {
     let chart,
+        chart_options,
         chart_promise,
         options,
         response_id,
@@ -125,7 +126,7 @@ const Highchart = (() => {
 
         const display_decimals = (history ? history.prices[0] : candles[0].open).split('.')[1].length || 3;
 
-        const chart_options = {
+        chart_options = {
             data,
             display_decimals,
             type,
@@ -154,6 +155,7 @@ const Highchart = (() => {
                 chart          = Highcharts.StockChart(el, HighchartUI.getChartOptions());
                 is_initialized = true;
 
+                $(window).on('resize', updateHighchartOptions);
                 if (Callputspread.isCallputspread(contract.contract_type)) {
                     Callputspread.init(chart, contract);
                 }
@@ -182,6 +184,20 @@ const Highchart = (() => {
         chart[(`${type}Axis`)][0].removePlotLine(id);
     };
 
+    const updateHighchartOptions = () => {
+        if (chart && chart_options) {
+            HighchartUI.setChartOptions(chart_options);
+            chart.update(HighchartUI.getChartOptions());
+        }
+    };
+
+    const onClose = (fnc) => {
+        if (typeof fuc === 'function') {
+            fnc();
+        }
+        $(window).off('resize', updateHighchartOptions);
+    };
+
     const handleResponse = (response) => {
         const type  = response.msg_type;
         const error = response.error;
@@ -200,15 +216,17 @@ const Highchart = (() => {
                     const page_underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
                     if (page_underlying !== (tick || ohlc).symbol) {
                         ViewPopupUI.storeSubscriptionID(response_id, true);
-                        ViewPopupUI.setOnCloseFunction();
+                        ViewPopupUI.setOnCloseFunction(onClose);
                     } else {
-                        ViewPopupUI.setOnCloseFunction(GetTicks.request);
+                        ViewPopupUI.setOnCloseFunction(() => onClose(GetTicks.request));
                     }
                 } else {
                     ViewPopupUI.storeSubscriptionID(response_id, true);
-                    ViewPopupUI.setOnCloseFunction();
+                    ViewPopupUI.setOnCloseFunction(onClose);
                 }
                 is_response_id_set = true;
+            } else {
+                ViewPopupUI.setOnCloseFunction(onClose);
             }
             if (history || candles) {
                 const length = (history ? history.times : candles).length;

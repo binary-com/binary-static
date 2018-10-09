@@ -29,18 +29,26 @@
 }
 
 .highcharts-container {
-    .chart-delay {
-        display: block;
-        text-align: center;
-        margin-bottom: 0.2em;
-        color: $COLOR_RED;
-    }
-    .chart-payout-range {
-        margin-left: 10px;
+    .highcharts-subtitle {
+        > div {
+            &:not(.delay) {
+                display: inline-block;
+            }
+            .chart-delay {
+                display: block;
+                text-align: center;
+                margin-bottom: 0.2em;
+                color: $COLOR_RED;
+            }
+            .chart-payout-range {
+                margin-left: 10px;
+                margin-right: 5px;
 
-        &:before {
-            content: url('../images/pages/trade/chart_payout_range.svg');
-            display: inline-block;
+                &:before {
+                    content: url('../images/pages/trade/chart_payout_range.svg');
+                    display: inline-block;
+                }
+            }
         }
     }
     .highcharts-tooltip span {

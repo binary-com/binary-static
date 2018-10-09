@@ -8,28 +8,28 @@ const ChartSettings = (() => {
         labels,
         txt_subtitle;
 
-    const common_horizontal_line_style = 'margin-bottom: 3px; margin-left: 10px; height: 0; width: 20px; border: 0; border-bottom: 2px; display: inline-block;';
-    const common_vertical_line_style   = 'margin-bottom: -3px; margin-left: 10px; height: 15px; width: 5px; border: 0; border-left: 2px; display: inline-block;';
-    const common_spot_style            = 'margin-left: 10px; display: inline-block; border-radius: 6px;';
+    const common_horizontal_line_style = 'margin-bottom: 3px; margin-left: 10px; margin-right: 5px; height: 0; width: 20px; border: 0; border-bottom: 2px; display: inline-block;';
+    const common_vertical_line_style   = 'margin-bottom: -3px; margin-left: 10px; margin-right: 5px; height: 15px; width: 5px; border: 0; border-left: 2px; display: inline-block;';
+    const common_spot_style            = 'margin-left: 10px; margin-right: 5px; display: inline-block; border-radius: 6px;';
 
     // display a guide for clients to know what each line/spot in chart means
     const setLabels = (params) => {
         labels = labels || { // needs to be inside setLabels function so localize works
-            barrier_line  : `<span style="${common_horizontal_line_style} border-color: green; border-style: solid;"></span> ${localize('Barrier')} `,
-            barrier_spot  : `<span style="${common_horizontal_line_style} border-color: green; border-style: dotted;"></span> ${localize('Barrier')} `,
-            end_time      : `<span style="${common_vertical_line_style} border-color: #e98024; border-style: dashed;"></span> ${localize('End Time')} `,
-            entry_spot    : `<span style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></span> ${localize('Entry Spot')} `,
-            exit_spot     : `<span style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></span> ${localize('Exit Spot')} `,
-            delay         : `<span class="chart-delay"> ${localize('Charting for this underlying is delayed')} </span>`,
-            highest_tick  : `<span style="${common_horizontal_line_style} border-color: #e98024; border-style: dashed;"></span> ${localize('Highest Tick')} `,
-            lowest_tick   : `<span style="${common_horizontal_line_style} border-color: #e98024; border-style: dashed;"></span> ${localize('Lowest Tick')} `,
-            payout_range  : `<span class="chart-payout-range"> ${localize('Payout Range')} </span>`,
-            purchase_time : `<span style="${common_vertical_line_style} border-color: #7cb5ec; border-style: solid;"></span> ${localize('Purchase Time')} `,
-            reset_barrier : `<span style="${common_horizontal_line_style} border-color: green; border-style: solid;"></span> ${localize('Reset Barrier')} `,
-            reset_time    : `<span style="${common_vertical_line_style} border-color: #e98024; border-color: #000; border-style: solid;"></span> ${localize('Reset Time')} `,
-            start_end_time: `<span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span> ${localize('Start/End Time')} `,
-            selected_tick : `<span style="margin-left: 10px; display: inline-block; border-radius: 6px; background-color: orange; width:10px; height: 10px;"></span> ${localize('Selected Tick')}`,
-            start_time    : `<span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span> ${localize('Start Time')} `,
+            barrier_line  : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: green; border-style: solid;"></span>${localize('Barrier')}&nbsp;</div>`,
+            barrier_spot  : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: green; border-style: dotted;"></span>${localize('Barrier')}&nbsp;</div>`,
+            end_time      : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: dashed;"></span>${localize('End Time')}&nbsp;</div>`,
+            entry_spot    : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></span>${localize('Entry Spot')}&nbsp;</div>`,
+            exit_spot     : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></span>${localize('Exit Spot')}&nbsp;</div>`,
+            delay         : `<div class='nowrap gr-padding-10 gr-parent delay'><span class="chart-delay">${localize('Charting for this underlying is delayed')}&nbsp;</span></div>`,
+            highest_tick  : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: #e98024; border-style: dashed;"></span>${localize('Highest Tick')}&nbsp;</div>`,
+            lowest_tick   : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: #e98024; border-style: dashed;"></span>${localize('Lowest Tick')}&nbsp;</div>`,
+            payout_range  : `<div class='nowrap gr-padding-10 gr-parent'><span class="chart-payout-range"></span>${localize('Payout Range')}&nbsp;</div>`,
+            purchase_time : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #7cb5ec; border-style: solid;"></span>${localize('Purchase Time')}&nbsp;</div>`,
+            reset_barrier : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: green; border-style: solid;"></span>${localize('Reset Barrier')}&nbsp;</div>`,
+            reset_time    : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-color: #000; border-style: solid;"></span>${localize('Reset Time')}&nbsp;</div>`,
+            start_end_time: `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span>${localize('Start/End Time')}&nbsp;</div>`,
+            selected_tick : `<div class='nowrap gr-padding-10 gr-parent'><span style="margin-left: 10px; margin-right: 5px; display: inline-block; border-radius: 6px; background-color: orange; width:10px; height: 10px;"></span>${localize('Selected Tick')}&nbsp;</div>`,
+            start_time    : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span>${localize('Start Time')}&nbsp;</div>`,
         };
 
         const is_high_low_ticks = params.contract_type === 'highlowticks';
@@ -60,7 +60,7 @@ const ChartSettings = (() => {
                 height         : params.height,
                 marginLeft     : 70,
                 marginRight    : params.margin_right || 30,
-                marginTop      : params.margin_top || 70,
+                marginTop      : params.margin_top || (window.innerWidth <= 480 ? 120 : 70),
                 renderTo       : params.el,
                 ...(params.width && { type: params.width }),
             },
