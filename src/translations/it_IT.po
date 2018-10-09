@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-08 02:54\n"
+"PO-Revision-Date: 2018-10-09 02:13\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -3531,8 +3531,8 @@ msgstr "Esegue e aggiorna i piani di verifica manuale e automatica, garantisce l
 msgid "Execute your trade in seconds."
 msgstr "Esegui il tuo trade in pochi secondi."
 
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 or 10 ticks. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr "Metti in pratica la tua strategia di trading utilizzando i contratti Rise/Fall della durata di 5 o 10 tick. Con questi contratti bisogna prevedere se il mercato crescerà o decrescerà rispetto al livello attuale."
+msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
+msgstr ""
 
 msgid "Execution model and counterparty risk"
 msgstr "Modello di esecuzione e rischio della controparte"
@@ -6300,7 +6300,7 @@ msgid "Note: Payment Agent transfers are only available for accounts registered 
 msgstr "Nota: i trasferimenti tramite Agente di pagamento sono disponibili solo per gli account registrati con Binary (CR) SA. Le transazioni sono accettate solo in dollari americani."
 
 msgid "Note: This feature is not available if you logged in using a social network."
-msgstr ""
+msgstr "Nota: questa funzione non è disponibile se hai effettuato l'accesso tramite social network."
 
 msgid "Note: Transfer between accounts is not available on weekends."
 msgstr "Attenzione: i trasferimenti da un conto all'altro non sono possibili durante il weekend."
@@ -10713,7 +10713,7 @@ msgid "What is CFD trading"
 msgstr "Il trading su CFD"
 
 msgid "What is DNS"
-msgstr ""
+msgstr "Cos'è DNS"
 
 msgid "What is Forex trading"
 msgstr "Il trading Forex"
@@ -10755,7 +10755,7 @@ msgid "What's a stop out level and how is it applied"
 msgstr "Cos'è un livello di Stop Out e come viene applicato"
 
 msgid "When a self-exclusion limit is set on your %1 account registered with Binary (Europe) Ltd, your MT5 Real Account will be disabled until the self-exclusion limit on your %1 account is removed."
-msgstr ""
+msgstr "Se viene stabilito un limite di autoesclusione sul conto %1 registrato con Binary (Europe) Ltd, il conto reale MT5 del Cliente verrà disabilitato fino alla rimozione del limite di auto-esclusione dal conto %1."
 
 msgid "When are my commissions paid?"
 msgstr "Quando riceverò i pagamenti relativi alle mie commissioni?"
@@ -10788,7 +10788,7 @@ msgid "When using the MT5 Trading Platform, all our clients will be provided wit
 msgstr "Durante l'utilizzo della piattaforma di trading MT5, a tutti i nostri clienti verrà fornita un'opzione di monitoraggio del margine a protezione contro possibili saldi negativi mentre effettuano trading in condizioni di mercato normali. In quanto trader, i clienti devono sempre mantenere livelli di margine appropriati nei loro conti di trading, come metodo consigliato di gestione autonoma del rischio."
 
 msgid "When we accept an order from you to open or close a transaction, or any other specific instructions in relation to your order, we will endeavor to follow your instructions as far as reasonably possible, acting in accordance with our duty of best execution in accordance with your instructions. These specific instructions include, but are not limited to:"
-msgstr ""
+msgstr "Accettando gli ordini del Cliente relativo all'apertura o chiusura di un'operazione, o eventuali altre istruzioni relative all'ordine, ci impegniamo a seguirli nei limiti delle nostre facoltà agendo nel rispetto dell'obbligo di miglior esecuzione. Tali istruzioni specifiche includono (in via esemplificativa ma non esaustiva):"
 
 msgid "When we deal on own account (dealing desk), we act as principal and not as an agent on your behalf and we therefore act as the execution venue."
 msgstr "Quando trattiamo per nostro conto (dealing desk), agiamo come operatori principali e non come agenti a tuo nome e pertanto fungiamo da sede di esecuzione."
@@ -10830,7 +10830,7 @@ msgid "When you trade with %1, you can be assured that your deposits are held in
 msgstr "Quando fai trading con %1, puoi stare tranquillo poiché i fondi sono tenuti in account di fiducia separati e non vengono utilizzati per nessun altro scopo."
 
 msgid "When you transfer your money to us for trading purposes, your funds are deposited in your %1 account. If you choose to trade FX and CFDs you shall transfer funds from your %1 account to your MT5 Real Account. Such transfer shall not be regarded as a transfer from two different Accounts but as a transfer of funds from your centralised %1 account to the MT5 Real Account. No fund transfers shall be made to any other Account in the name of any third party."
-msgstr ""
+msgstr "Quando il Cliente trasferisce del denaro a noi a scopo di trading, i fondi vengono depositati nel suo conto %1. Scegliendo il trading su FX e CFD, il Cliente dovrà trasferire i fondi da questo conto a quello reale MT5. Tale trasferimento non è da considerarsi come trasferimento tra due conti diversi, bensì da un conto %1 centralizzato a un conto reale MT5. Non è consentito il trasferimento di fondi a qualsiasi altro conto in nome di parti terze."
 
 msgid "When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:"
 msgstr "Quando il tuo conto raggiunge il livello di liquidazione forzata, gli ordini e le posizioni vengono forzatamente chiusi nella sequenza di seguito riportata:"
@@ -10839,7 +10839,7 @@ msgid "When, as a result of political, economic, military or monetary events (in
 msgstr "Quando, in conseguenza di eventi politici, economici, militari o monetari (inclusa la insolita volatilità o mancata liquidità del mercato) o qualsiasi altra circostanza fuori dal controllo, dalla responsabilità e dal potere della Società, il funzionamento continuativo di questo sito non è ragionevolmente praticabile senza influenzare e pregiudicare in maniera materiale e negativa gli interessi dei Clienti o della Società, oppure se, secondo la Società, è impossibile calcolare un prezzo per i contratti finanziari."
 
 msgid "Where a particular time or timeframe has been specified in a client's instructions with respect to the execution of an order, regardless of the price available, we will endeavor to execute the order at the specified time or over the specified timeframe in the best possible manner after taking all sufficient steps. However, we will not be responsible for any consequences related to pricing that resulted from the time or timeframe of the execution."
-msgstr ""
+msgstr "Laddove il Cliente abbia specificato nelle istruzioni per l'esecuzione dell'ordine un particolare momento o intervallo di tempo, indipendentemente dal prezzo disponibile, ci impegneremo ad eseguire l'ordine rispettando le indicazioni di tempo fornite alle migliori condizioni possibili, dopo aver seguito le precedenti fasi necessarie. Tuttavia, decliniamo qualsiasi responsabilità circa i prezzi relativi al momento o all'intervallo di tempo scelti per l'esecuzione dell'ordine."
 
 msgid "Where a particular venue has been specified in your instructions with respect to the execution of an order, we will not be responsible for the venue selection."
 msgstr "Dove un preciso ambito è stato specificato nelle istruzioni per quanto riguarda l'esecuzione di un ordine, non saremo responsabili per la selezione del suddetto ambito."
@@ -10926,13 +10926,13 @@ msgid "Whilst we act as principal in respect of your orders, we also assess the 
 msgstr "Anche se agiamo in veste di principale rispetto ai tuoi ordini, valutiamo anche le sedi di esecuzione che usiamo e su cui facciamo significativo affidamento per fornire il miglior risultato possibile per l'esecuzione dei tuoi ordini. Questi luoghi solitamente consistono in società di investimento, broker e/o fornitori di liquidità terzi."
 
 msgid "Whilst we endeavor to close out your Open Positions if and when the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level."
-msgstr ""
+msgstr "Mentre ci impegniamo a chiudere eventuali posizioni aperte se e quando il livello di margine per il tuo conto reale MT5 raggiunge il livello di Stop Out o scende al di sotto di questo, non garantiamo invece che le tue posizioni aperte verranno chiuse quando il livello di margine per il tuo conto reale MT5 raggiunge il livello di Stop Out."
 
 msgid "Whilst we endeavor to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
-msgstr ""
+msgstr "Mentre ci impegniamo ad aprire o chiudere le operazioni a cui gli ordini dei clienti si riferiscono al prezzo richiesto (rispettando l'obbligo di migliore esecuzione), può capitare che, in conseguenza a un aumento della volatilità o del volume, gli ordini siano oggetto di slippage. Per slippage si intende la differenza tra il prezzo dell'ordine e il prezzo di esecuzione quando gli ordini vengono completati; in questo caso, l'ordine non viene eseguito al prezzo esatto espresso dal Cliente durante la compilazione dell'ordine. Lo slippage si verifica soprattutto nei momenti di volatilità estremamente elevata o contenuta, e coincide generalmente con la diffusione di informazioni fondamentali o periodi di liquidità limitata. Infine, si distingue tra slippage positivo (più favorevole per il Cliente) e slippage negativo (meno favorevole per il Cliente)."
 
 msgid "Whilst we endeavor to take all reasonable and sufficient steps, as required by applicable laws and regulations, to identify potential conflicts of interests between ourselves and our clients, or between one client and another, that arise in the course of providing the margin trading services as described in this Agreement, by establishing and implementing policies and procedures, it is possible that we may execute certain Transactions which may have other direct or indirect material interests."
-msgstr ""
+msgstr "Ci impegniamo ad adottare tutte le misure necessarie e ragionevoli, come richiesto dalla legge e dai regolamenti di riferimento, al fine di identificare possibili conflitti di interesse tra noi e il Cliente o tra clienti che potrebbero sorgere durante la fornitura dei servizi di trading a margine descritti nel presente Contratto, mettendo a punto e implementando adeguate politiche e procedure; tuttavia, è possibile che la Società effettui alcune operazioni sulla base di altri interessi materiali diretti o indiretti."
 
 msgid "Who can apply to be a Payment Agent?"
 msgstr "Chi può fare richiesta per diventare un Agente di pagamento?"
@@ -10965,7 +10965,7 @@ msgid "Why you should join the %1 IB Programme"
 msgstr "Perché conviene aderire al Programma IB di %1:"
 
 msgid "Why you should trade binary options on MT5"
-msgstr ""
+msgstr "I vantaggi del trading di opzioni binarie su MT5"
 
 msgid "Why you should trade binary options with %1"
 msgstr "I vantaggi del trading di opzioni binarie con %1"
@@ -10974,7 +10974,7 @@ msgid "Why you should trade precious metals with %1"
 msgstr "I vantaggi del trading in metalli preziosi con %1"
 
 msgid "Why you should use %1 instead of your ISP's default DNS service"
-msgstr ""
+msgstr "I vantaggi di %1 rispetto al servizio DNS standard di ISP"
 
 msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
 msgstr "Vinci il payout massimo se il punto di uscita è superiore o uguale alla barriera superiore."
@@ -11022,7 +11022,7 @@ msgid "With leverage, you can purchase 100 units of the same asset at a fraction
 msgstr "Con la leva, è possibile acquistare 100 unità dello stesso asset ad una frazione del costo."
 
 msgid "With regards to tracking your referrals accessing %1 via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavors to ensure that whenever a client is referred to %1 through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
-msgstr ""
+msgstr "In relazione al tracciamento dei referenti del Cliente che accedono a %1 attraverso i link sul nostro sito web oppure riportando l'ID di affiliato del Cliente durante il processo di registrazione, la Società si impegna a garantire, nei limiti delle sue facoltà, che ogni volta che gli utenti vengono ricondotti a %1 tramite questi link o ID di affiliato e sottoscrivono di conseguenza un contratto o effettuano operazioni con la Società in altro modo, tali utenti vengano identificati come referenti invitati dal Cliente. Solo i clienti taggati correttamente possono essere assegnati al Cliente, che ha la responsabilità di verificare la correttezza dei tag stessi."
 
 msgid "Withdraw"
 msgstr "Preleva"
@@ -11049,7 +11049,7 @@ msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr "Prelievo di fondi dal conto reale MT5"
 
 msgid "Withdrawal of funds from your MT5 Real Account can be made in a different currency from the one maintained in your %1 account subject to a 1% currency transfer fee charge."
-msgstr ""
+msgstr "Per il prelievo di fondi dal conto reale MT5 in una valuta differente da quella del conto %1 è prevista una commissione sul trasferimento dell'1%."
 
 msgid "Withdrawal: %1 working day"
 msgstr "Prelievo: %1 giorno lavorativo"
@@ -11104,7 +11104,7 @@ msgid "Written limits and self-exclusion"
 msgstr "Limiti scritti e auto esclusione"
 
 msgid "Yandex.Money is an electronic payment service provider that offers consumers an easy, safe, and reliable online payment method. For more info, please visit %1."
-msgstr ""
+msgstr "Yandex.Money e un fornitore di servizi di pagamento elettronici che offre metodi di pagamento facili, sicuri e affidabili. Per maggiori informazioni, visita il sito %1."
 
 msgid "Year"
 msgstr "Anno"
@@ -11185,7 +11185,7 @@ msgid "You acknowledge that, in the course of dealing under these Terms, you may
 msgstr "Accetti che, in caso di trattamento secondo i presenti Termini, puoi ottenere le informazioni confidenziali connesse alla Società e suo capogruppo, sussidiari, affiliati o terze parti. Tali informazioni confidenziali apparterranno esclusivamente alla Società."
 
 msgid "You acknowledge, understand, represent and warrant that you are aware of the functional limitations of the MT5 Trading Platform (for example, Wine, which is not a fully stable application, as disclosed by the MT5 Trading Platform Licensor on their website)."
-msgstr ""
+msgstr "Il Cliente accetta, comprende e garantisce di essere a conoscenza dei limiti funzionali della piattaforma di trading MT5 (relativi, per esempio, all'applicazione Wine, che non risulta totalmente affidabile come precisato dal licenziatario di MT5 sul suo sito web)."
 
 msgid "You act in breach of any warranty or representation made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
 msgstr "Agisci in violazione di qualsiasi garanzia o dichiarazione fatta in base al presente Accordo, e/o se le informazioni a noi fornite in relazione al presente Accordo sono, o diventano, false o fuorvianti;"
@@ -11278,7 +11278,7 @@ msgid "You are responsible for all third-party electronic transfer fees in respe
 msgstr "Il Cliente è responsabile di tutte le commissioni sui trasferimenti elettronici per le parti terze per quanto riguarda i pagamenti;"
 
 msgid "You are responsible for keeping your log-in details secure, the security of any linked email address, and the security (password protection, screen locking, etc) of any personal computer or device on which your account is accessible. We shall not be held responsible if there is unauthorised use of the account when we are not at fault."
-msgstr ""
+msgstr "Il Cliente ha la responsabilità di mantenere in sicurezza i propri dati di log-in, eventuali indirizzi e-mail collegati e il computer (nello specifico password, blocco schermo ecc) o altri dispositivi da cui è possibile accedere al conto. Decliniamo qualsiasi responsabilità in caso di utilizzo non autorizzato del conto che non rientri nelle potenziali colpe a noi imputabili."
 
 msgid "You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through %1, you may wish to seek independent advice."
 msgstr "Sei responsabile per la gestione fiscale e giuridica degli affari inclusa qualsiasi archiviazione e pagamento normativo e la conformità alle leggi e normative in vigore. Non forniamo alcuna consulenza normativa, fiscale o legale. Per qualsiasi dubbio connesso al trattamento fiscale o responsabilità sui Prodotti d'investimento o Prodotti d'azzardo disponibili attraverso %1, dovresti cercare una consulenza esterna."
@@ -11296,7 +11296,7 @@ msgid "You are warned of the following additional risks:"
 msgstr "Sei avvisato dei seguenti rischi aggiuntivi:"
 
 msgid "You are willing and financially able to sustain a total loss of funds resulting from a Transaction, which may exceed your initial deposit unless you are a retail customer of Binary Investments (Europe) Ltd;"
-msgstr ""
+msgstr "Il Cliente è in grado di sostenere finanziariamente e accetta di correre il rischio di un'eventuale perdita totale dei fondi in seguito a un'operazione che potrebbe superare il deposito iniziale, a meno che il Cliente non rientri nella categoria al dettaglio di Binary Investments (Europe) Ltd;"
 
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "Il Cliente di assume la responsabilità di garantire che i pagamenti a favore della Società vengano ricevuti correttamente con i dettagli specificati relativi al conto del Cliente."
@@ -11458,7 +11458,7 @@ msgid "You may develop Applications using the %1 API as soon as you register an 
 msgstr "Puoi sviluppare le Applicazioni utilizzando l'API di %1 non appena avrai registrato un Applicazione e avrai accettato di seguire i presenti Termini."
 
 msgid "You may make Margin Payments by transferring funds from your %1 account to your MT5 Real Account. In the event that there are insufficient funds in your %1 account to fund your MT5 Real Account, you may make Margin Payments by funding your %1 account and transferring the funds from your %1 account to your MT5 Real Account."
-msgstr ""
+msgstr "È possibile effettuare i pagamenti dei margini trasferendo fondi dal tuo conto %1 al tuo conto reale MT5. Nel caso in cui i fondi sul conto %1 siano insufficienti per finanziare quello reale MT5, puoi effettuare i pagamenti del margine finanziando il primo e poi trasferendo i fondi sul tuo conto reale MT5."
 
 msgid "You may not assign rights granted in this Agreement without the Company's prior written approval."
 msgstr "Non puoi assegnare diritti attribuiti con il presente Accordo senza la previa approvazione scritta della Società."
@@ -11488,7 +11488,7 @@ msgid "You may terminate this Agreement at any time, but only by giving the Comp
 msgstr "Potrai in qualsiasi momento risolvere il presente Accordo ma solo dando alla Società un preavviso di sette giorni. Il \"Preavviso scritto\" qui si riferisce al preavviso consegnato tramite lettera raccomandata o email."
 
 msgid "You may update your personal information at any time by logging in to the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information. You should note that if you provide us with inaccurate information, or if you fail to notify us of any changes to information previously supplied by you, this may adversely affect the quality of the services that we can provide."
-msgstr ""
+msgstr "Il Cliente può aggiornare in qualsiasi momento le informazioni personali accedendo alla sezione \"Impostazioni\" del proprio conto. È sua responsabilità assicurare che %1 venga aggiornata costantemente di eventuali modifiche nei dettagli personali. È importante essere consapevoli che, fornendo informazioni imprecise od omettendo di notificarne eventuali cambiamenti, potrebbe essere compromessa la qualità dei servizi da noi forniti."
 
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "Puoi prelevare l'importo del bonus dopo aver effettuato un turnover sul tuo account pari a 25 volte l'importo del bonus."
@@ -11581,7 +11581,7 @@ msgid "You should read these ST&Cs carefully as well as the Summary Order Execut
 msgstr "Dovresti leggere attentamente i presenti ST&C, così come il Riepilogo sulla politica per l'esecuzione degli ordini e il Riepilogo sulla politica dei conflitti, i Dettagli applicabili del contratto insieme alla Notifica sulla divulgazione dei rischi e qualsiasi altro documento da noi fornito o che ti verrà fornito in futuro."
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gambling products whereas products based on financial market indices (forex, indices, commodities) are financial instruments."
-msgstr ""
+msgstr "Il Cliente riconosce che i prodotti basati su un generatore casuale di numeri (gli \"indici di volatilità\") sono prodotti di gioco d'azzardo, mentre quelli basati sugli indici dei mercati finanziari (Forex, indici, materie prime) sono strumenti finanziari."
 
 msgid "You want to buy a certain currency pair if you think the base currency will go up. The reverse holds true:"
 msgstr "Acquisterai una determinata coppia valutaria quando ritieni che il valore della valuta base aumenterà. Lo stesso vale per la situazione opposta:"
@@ -11665,7 +11665,7 @@ msgid "Your MT5 Real Account password and login ID are unique and passwords are 
 msgstr "La password del tuo conto reale MT5 e le tue credenziali di accesso sono uniche; le password sono protette dalla funzione hash, così neanche il personale di %1 può visualizzarle. Per questo motivo, nel caso non ricordassi la tua password, noi non siamo in grado di recuperarla e dobbiamo inviartene una nuova al tuo indirizzo e-mail;"
 
 msgid "Your MT5 Real Account shall be funded by transferring funds from your %1 account, subject to the availability and sufficiency of funds in your %1 account. No fund transfers shall be made to any other account in the name of any third party."
-msgstr ""
+msgstr "Il conto reale del Cliente verrà finanziato attraverso un trasferimento di fondi dal suo conto %1, in base alla disponibilità e sufficienza di fondi di quest'ultimo. Nessun trasferimento di fondi può essere effettuato verso qualsiasi altro conto intestato a terzi."
 
 msgid "Your Property"
 msgstr "La tua proprietà"
