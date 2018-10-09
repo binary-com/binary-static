@@ -151,6 +151,4 @@ const ChartSettings = (() => {
     };
 })();
 
-
-
 module.exports = ChartSettings;
