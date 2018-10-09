@@ -55,7 +55,6 @@ const Home = (() => {
         return false;
     };
 
-
     const handler = (response) => {
         const error = response.error;
         if (error) {
@@ -71,7 +70,6 @@ const Home = (() => {
     const onUnload = () => {
         TabSelector.onUnload();
     };
-
 
     return {
         onLoad,
