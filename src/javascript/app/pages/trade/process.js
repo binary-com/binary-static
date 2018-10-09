@@ -47,7 +47,6 @@ const Process = (() => {
         });
     };
 
-
     /*
      * Function to call when market has changed
      */

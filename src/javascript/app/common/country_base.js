@@ -21,7 +21,6 @@ const checkClientsCountry = () => {
     });
 };
 
-
 // will return true for all clients with maltainvest/malta/iom financial/gaming landing company shortcode
 // needs to wait for website_status, authorize, and landing_company before being called
 // 'mt' is part of EU but account opening is not offered so the landing company response won't include the expected shortcode.

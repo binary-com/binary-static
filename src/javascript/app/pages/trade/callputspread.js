@@ -30,7 +30,6 @@ const constants = {
     barrier_series_name: 'barrier_points',
 };
 
-
 const Callputspread = (() => {
     const state = {
         el_slider               : null,
@@ -112,7 +111,6 @@ const Callputspread = (() => {
             .add();
     };
 
-
     /*
         Calc Functions (no side effects!):
     */
@@ -160,7 +158,6 @@ const Callputspread = (() => {
             bottom_label,
         };
     };
-
 
     /*
         PUBLIC API:
@@ -212,7 +209,6 @@ const Callputspread = (() => {
         update,
     };
 })();
-
 
 /*
     HELPER FUNCTIONS THAT RETURN SVG PATH:

@@ -150,7 +150,6 @@ const MBTradingEvents = (() => {
             return is_valid;
         };
 
-
         const $payout = $form.find('#payout');
         if ($payout.length) {
             const $payout_list = $form.find('#payout_list');

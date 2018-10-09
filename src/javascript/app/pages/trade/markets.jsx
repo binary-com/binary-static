@@ -41,7 +41,7 @@ const List = ({
                 {obj.name}
             </div>
             {Object.entries(obj.submarkets).sort((a, b) => submarketSort(a[0], b[0]))
-                .map(([key, submarket], idx_2) => (
+                .map(([key, submarket], idx_2) => (  // eslint-disable-line no-unused-vars
                     <div className='submarket' key={idx_2}>
                         <div className='submarket_name'>
                             {submarket.name}
@@ -103,7 +103,6 @@ class Markets extends React.Component {
         super(props);
         let market_symbol = Defaults.get('market');
         this.markets = Symbols.markets();
-
 
         this.underlyings = Symbols.getAllSymbols() || {};
         let underlying_symbol = Defaults.get('underlying');

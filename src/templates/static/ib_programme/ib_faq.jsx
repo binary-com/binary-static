@@ -31,7 +31,6 @@ const FAQ = () => (
                     <p>{it.L('It’s completely free to join our IB programme. We’ve never charged a fee and we never will.')}</p>
                 </Section>
 
-
                 <Section id='account-management' header={it.L('Account management')}>
                     <h3>{it.L('How do I register to become a [_1] IB?', it.website_name)}</h3>
                     <p>{it.L('Thank you for your interest in partnering with us. We’ve made it easy for you to apply online. Just fill out the [_1]online application form[_2] with all necessary details. If you are already registered as a [_3] affiliate, you can email us at [_4] instead. We will contact you directly if your application is successful.', `<a href='${it.affiliate_signup_url}'>`, '</a>', it.website_name, `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
@@ -42,7 +41,6 @@ const FAQ = () => (
                     <h3>{it.L('How can I withdraw my commissions?')}</h3>
                     <p>{it.L('IB commissions are credited directly into your MT5 account. You can transfer funds from your MT5 account to your [_1] Real Account, then withdraw the funds using your preferred withdrawal method.', it.website_name)}</p>
                 </Section>
-
 
                 <Section id='marketing-and-promotions' header={it.L('Marketing and promotions')}>
                     <h3>{it.L('Do you offer any advertising materials to your IBs?')}</h3>

@@ -108,7 +108,6 @@ const FileSelector = ({
     </div>
 );
 
-
 const AuthenticateMessage = () => (
     <React.Fragment>
         <p>{it.L('Authenticate your account by verifying your identity and address.')}</p>

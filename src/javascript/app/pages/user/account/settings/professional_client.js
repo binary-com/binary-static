@@ -4,7 +4,6 @@ const BinarySocket = require('../../../../base/socket');
 const FormManager  = require('../../../../common/form_manager');
 const State        = require('../../../../../_common/storage').State;
 
-
 const professionalClient = (() => {
     let is_in_page = false;
 
