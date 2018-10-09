@@ -223,7 +223,7 @@ const MetaTraderConfig = (() => {
                 response.binary_transaction_id,
             ]),
             prerequisites: () => new Promise((resolve) => {
-                if (Client.get('is_virtual')) {
+                if (Client.get('is_virtual') || /^MX/i.test(Client.get('loginid'))) {
                     resolve(needsRealMessage());
                 } else {
                     BinarySocket.send({ cashier_password: 1 }).then((response) => {
@@ -257,7 +257,7 @@ const MetaTraderConfig = (() => {
                 response.binary_transaction_id,
             ]),
             prerequisites: acc_type => new Promise((resolve) => {
-                if (Client.get('is_virtual')) {
+                if (Client.get('is_virtual') || /^MX/i.test(Client.get('loginid'))) {
                     resolve(needsRealMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
