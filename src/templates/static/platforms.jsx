@@ -1,6 +1,7 @@
 import React from 'react';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../_common/components/tabs.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
+import GTM from '../../javascript/_common/base/gtm';
 
 const Platforms = ({
     className,
