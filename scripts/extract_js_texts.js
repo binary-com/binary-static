@@ -28,9 +28,11 @@ const config = {
     },
 };
 
-const source_strings = new Set();
-const ignored_list   = [];
-const invalid_list   = [];
+const source_strings = {};
+const ignored_list   = {};
+const invalid_list   = {};
+
+let this_app_name;
 
 const parse = (app_name, is_silent) => {
     if (!config.supported_apps.includes(app_name)) {
@@ -43,12 +45,17 @@ const parse = (app_name, is_silent) => {
     }
     const start_time = Date.now();
 
+    this_app_name = app_name;
+    source_strings[this_app_name] = new Set();
+    ignored_list[this_app_name]   = [];
+    invalid_list[this_app_name]   = [];
+
     walker(Path.resolve(config.base_folder, '_common')); // common for all 'supported_apps'
     walker(Path.resolve(config.base_folder, app_name));
 
     if (!is_silent) {
         process.stdout.write(common.messageEnd(Date.now() - start_time));
-        printSummary(app_name);
+        printSummary();
     }
 };
 
@@ -89,10 +96,10 @@ const extractor = (node, js_source) => {
         const first_arg = node.arguments[0];
 
         if (first_arg.value) {
-            source_strings.add(first_arg.value);
+            source_strings[this_app_name].add(first_arg.value);
         } else {
             const should_ignore = shouldIgnore(first_arg);
-            (should_ignore ? ignored_list : invalid_list).push(first_arg.loc);
+            (should_ignore ? ignored_list : invalid_list)[this_app_name].push(first_arg.loc);
 
             if (!should_ignore) {
                 report(first_arg, js_source);
@@ -141,13 +148,13 @@ const report = (node, js_source) => {
     console.log(`${padding}${' '.repeat(start_column + code_gutter_len)}${color.bold.yellow('^')}`);
 };
 
-const printSummary = (app_name) => {
+const printSummary = () => {
     console.log(
-        color.cyanBright(`\n Summary: (${app_name})\n`),
+        color.cyanBright(`\n Summary: (${this_app_name})\n`),
         color.yellowBright(`${'='.repeat(16)}\n`),
-        `${color.green('strings:')}${formatValue(source_strings.size)}`,
-        `${'ignored:'}${formatValue(ignored_list.length)}`,
-        `${color.red('invalid:')}${formatValue(invalid_list.length)}`,
+        `${color.green('strings:')}${formatValue(source_strings[this_app_name].size)}`,
+        `${'ignored:'}${formatValue(ignored_list[this_app_name].length)}`,
+        `${color.red('invalid:')}${formatValue(invalid_list[this_app_name].length)}`,
     );
 };
 
@@ -156,5 +163,5 @@ const formatValue = (value) => (
 );
 
 exports.parse          = parse;
-exports.getTexts       = () => source_strings;
-exports.getErrorsCount = () => invalid_list.length;
+exports.getTexts       = (app_name = this_app_name) => source_strings[app_name];
+exports.getErrorsCount = (app_name = this_app_name) => invalid_list[app_name].length;
