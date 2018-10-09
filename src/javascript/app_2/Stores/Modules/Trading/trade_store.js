@@ -122,11 +122,22 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     async prepareTradeStore() {
-        const query_string_values = this.updateQueryString();
+        let query_string_values = this.updateQueryString();
         this.smart_chart = this.root_store.modules.smart_chart;
+        const active_symbols = await WS.activeSymbols();
+
+        // Checks for finding out that the current account has access to the defined symbol in quersy string or not.
+        const is_invalid_symbol = !!query_string_values.symbol &&
+            !active_symbols.active_symbols.find(s => s.symbol === query_string_values.symbol);
+
+        // Changes the symbol in query string to default symbol since the account doesn't have access to the defined symbol.
+        if (is_invalid_symbol) {
+            URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
+            query_string_values = this.updateQueryString();
+        }
 
         if (!this.symbol) {
-            const active_symbols = await WS.activeSymbols();
+
             await this.processNewValuesAsync({
                 symbol: pickDefaultSymbol(active_symbols.active_symbols),
                 ...query_string_values,
@@ -134,7 +145,7 @@ export default class TradeStore extends BaseStore {
         }
 
         if (this.symbol) {
-            ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
+            ContractType.buildContractTypesConfig(query_string_values.symbol || this.symbol).then(action(() => {
                 this.processNewValuesAsync({
                     ...ContractType.getContractValues(this),
                     ...ContractType.getContractCategories(),
@@ -232,7 +243,7 @@ export default class TradeStore extends BaseStore {
     }
 
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
-        
+
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa. The source of default values is the website_status response.
         if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
@@ -267,7 +278,7 @@ export default class TradeStore extends BaseStore {
 
             this.updateStore({
                 ...snapshot,
-                ...(this.is_query_string_applied ? {} : query_string_values),
+                ...(this.is_query_string_applied ? {} : query_string_values), // Applies the query string values again to set barriers.
             });
 
             this.is_query_string_applied = true;
