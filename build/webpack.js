@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 // const UnusedFilesWebpackPlugin = require('unused-files-webpack-plugin')['default'];
 
@@ -31,6 +32,13 @@ module.exports = function (grunt) {
                 warnings: false,
             },
         }),
+        ...(!grunt.option('analyze') ? [] : [
+            new BundleAnalyzerPlugin({
+                analyzerMode  : 'static',
+                reportFilename: path.resolve(__dirname, '../../report.html'),
+                openAnalyzer  : false,
+            }),
+        ]),
         // new UnusedFilesWebpackPlugin({
         //     patterns: [
         //         'src/javascript/**/*.*',
