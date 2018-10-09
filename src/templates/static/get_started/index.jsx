@@ -2,7 +2,6 @@ import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
-
 const GetStartedSection = ({ link, hash, image, header, text }) => {
     const href = `${it.url_for(link)}#${hash}`;
     return (
@@ -44,7 +43,7 @@ const CTA = () => (
 );
 
 const VolatilityIndicesTable = () => {
-    const active_symbols = [
+    const rtp_values = [
         {
             key             : 'r10',
             label           : it.L('Volatility Indices 10'),
@@ -82,23 +81,24 @@ const VolatilityIndicesTable = () => {
         },
     ];
     return (
-        <div className='gr-padding-30 gr-parent'>
+        <div className='gr-padding-30'>
+            <p className='center-text'>{it.L('Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m duration is around 87% on average')}</p>
             <table>
                 <thead>
                     <tr>
-                        <th className='align-start'>{it.L('Volatility Indices')}</th>
-                        <th className='align-end'>{it.L('High - Close')}</th>
-                        <th className='align-end'>{it.L('Close - Low')}</th>
-                        <th className='align-end'>{it.L('High - Low')}</th>
+                        <th>{it.L('Volatility Indices')}</th>
+                        <th>{it.L('High - Close')}</th>
+                        <th>{it.L('Close - Low')}</th>
+                        <th>{it.L('High - Low')}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {active_symbols.map(item => (
+                    {rtp_values.map(item => (
                         <tr key={item.key}>
-                            <td>{item.label}</td>
-                            <td className='align-end'>{Math.round(item.high_close_value)}</td>
-                            <td className='align-end'>{Math.round(item.close_low_value)}</td>
-                            <td className='align-end'>{Math.round(item.high_low_value)}</td>
+                            <td className='center-text'>{item.label}</td>
+                            <td className='center-text'>{Math.round(item.high_close_value)}</td>
+                            <td className='center-text'>{Math.round(item.close_low_value)}</td>
+                            <td className='center-text'>{Math.round(item.high_low_value)}</td>
                         </tr>
                     ))}
                 </tbody>
