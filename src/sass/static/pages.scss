@@ -150,34 +150,6 @@
     margin-bottom: 0;
 }
 
-.browser-support-content {
-    .li-boxes-content-icon {
-        display: block;
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        height: 10em;
-    }
-    #internet_explorer {
-        background-image: url('../images/pages/browser_support/ielogo.png');
-    }
-    #microsoft_edge {
-        background-image: url('../images/pages/browser_support/edgelogo.png');
-        background-size: 50%;
-    }
-    #firefox {
-        background-image: url('../images/pages/browser_support/firefoxlogo.png');
-    }
-    #safari {
-        background-image: url('../images/pages/browser_support/safarilogo.png');
-    }
-    #opera {
-        background-image: url('../images/pages/browser_support/operalogo.png');
-    }
-    #chrome {
-        background-image: url('../images/pages/browser_support/chromelogo.png');
-    }
-}
-
 #payment_methods {
     overflow-y: hidden;
 
@@ -572,12 +544,28 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .platforms-content {
-    img.responsive {
+    h2 {
+        line-height: 36px;
+    }
+    #new_badge {
+        position: relative;
+        top: -15px;
+    }
+    .download-app {
+        padding-bottom: 30px;
+    }
+    img.platform {
         max-height: 150px;
         width: auto;
 
         @media (max-width: 350px) {
             max-width: 290px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .no-center-text-p-m {
+            text-align: inherit;
+            padding-bottom: 30px;
         }
     }
 }
@@ -1033,8 +1021,32 @@ body #not_authenticated_financial ul.checked > li {
         height: 3rem;
         margin: 5px 0;
     }
+    #google-signup {
+        font-size: $FONT_SIZE_S;
+    }
 }
 
 #contract-specification table td {
     white-space: nowrap;
+}
+
+.select-options {
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    &::-webkit-scrollbar:vertical {
+        width: 11px;
+    }
+    &::-webkit-scrollbar:horizontal {
+        height: 11px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        border: 2px solid $COLOR_WHITE; /* should match background, can't be transparent */
+        background-color: $COLOR_LIGHT_GRAY;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $COLOR_WHITE;
+        border-radius: 8px;
+    }
 }

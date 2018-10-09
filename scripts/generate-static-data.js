@@ -252,6 +252,7 @@ const texts = [
     'Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.',
     'Up to [_1] decimal places are allowed.',
     'Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.',
+    'Please [_1]deposit[_2] to your account.',
 
     // api_token
     'New token created.',
@@ -579,7 +580,8 @@ const texts = [
     'Please set [_1]country of residence[_2] before upgrading to a real-money account.',
     'Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
     'Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
-    'Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
+    'Please [_1]accept the updated Terms and Conditions[_2].',
+    'Please [_1]accept the updated Terms and Conditions[_2] to lift your deposit and trading limits.',
     'Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
     'Connection error: Please check your internet connection.',
     'You have reached the rate limit of requests per second. Please try later.',
