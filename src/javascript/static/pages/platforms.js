@@ -25,8 +25,7 @@ const Platforms = (() => {
                     return true;
                 }
                 os_list.forEach(os => {
-                    if (os.download_url) return;
-                    if (os.url_test.test(asset.browser_download_url)) {
+                    if (!os.download_url && os.url_test.test(asset.browser_download_url)) {
                         os.download_url = asset.browser_download_url;
                     }
                 });
