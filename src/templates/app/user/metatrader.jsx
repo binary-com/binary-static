@@ -153,7 +153,9 @@ const Metatrader = () => (
                     <div className='mt-panel'>
                         <div className='mt-sidebar-button border-bottom'>
                             <div className='small-icon'>
-                                <img src={it.url_for('images/pages/metatrader/dashboard/binary-options.svg')} />
+                                <a href={it.url_for('get-started/binary-options-mt5')}>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/binary-options.svg')} />
+                                </a>
                             </div>
                             <div className='mt-link'>
                                 <a href={it.url_for('get-started/binary-options-mt5')}>
@@ -163,7 +165,9 @@ const Metatrader = () => (
                         </div>
                         <div className='mt-sidebar-button'>
                             <div className='small-icon'>
-                                <img src={it.url_for('images/pages/metatrader/dashboard/mt5.png')} />
+                                <a href={it.url_for('metatrader/download')}>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/mt5.png')} />
+                                </a>
                             </div>
                             <div className='mt-link'>
                                 <a href={it.url_for('metatrader/download')}>
