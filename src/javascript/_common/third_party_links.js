@@ -1,18 +1,15 @@
-const getPropertyValue = require('./utility').getPropertyValue;
-const Client           = require('./base/client_base');
-const BinarySocket     = require('../app/base/socket');
-const Dialog           = require('../app/common/attach_dom/dialog');
+const BinarySocket = require('../app/base/socket');
+const Dialog       = require('../app/common/attach_dom/dialog');
+const isEuCountry  = require('../app/common/country_base').isEuCountry;
 
 const ThirdPartyLinks = (() => {
     const init = () => {
-        if (Client.isLoggedIn()) {
-            BinarySocket.wait('authorize').then((response) => {
-                const landing_company_shortcode = getPropertyValue(response, ['authorize', 'landing_company_name']);
-                if (landing_company_shortcode === 'maltainvest') {
-                    document.body.addEventListener('click', clickHandler);
-                }
-            });
-        }
+        // show third-party website redirect notification for logged in and logged out EU clients
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            if (isEuCountry()) {
+                document.body.addEventListener('click', clickHandler);
+            }
+        });
     };
 
     const clickHandler = (e) => {
@@ -47,6 +44,7 @@ const ThirdPartyLinks = (() => {
         }
         return !!destination.host
             && !/^.*\.binary\.com$/.test(destination.host) // destination host is not binary subdomain
+            && !/www.(betonmarkets|xodds).com/.test(destination.host) // destination host is not binary old domain
             && window.location.host !== destination.host;
     };
 
