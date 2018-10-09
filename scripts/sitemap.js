@@ -12,7 +12,6 @@ program
     .description('Generate sitemap.xml')
     .parse(process.argv);
 
-
 const urls = [
     // path (without .html),               changefreq, priority, exclude languages
     // ==================== Section: "static" ====================

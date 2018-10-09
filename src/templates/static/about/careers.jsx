@@ -55,7 +55,6 @@ const ColumnValues = ({ gr, icon, header }) => (
     </div>
 );
 
-
 const ColumnLG = ({ center, image, text, link }) => (
     <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
         <div>
