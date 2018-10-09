@@ -138,7 +138,6 @@ const Guide = (() => {
         ];
     };
 
-
     return {
         init,
     };
