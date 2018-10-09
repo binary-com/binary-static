@@ -29,25 +29,30 @@ const DownloadBlock = ({
     target,
     title,
     children,
-}) => (
-    <div className='gr-4 gr-12-m gr-padding-10' id={`${os}-app`}>
-        <img
-            className='gr-12 gr-centered mt-mobile-phone'
-            src={it.url_for(`images/pages/metatrader/icons/${/[.]/.test(image) ? image : `${image.svg}`}`)}
-        />
-        <h3>{title}</h3>
-        <p>{desc}</p>
-        <DownloadButton
-            badge={badge}
-            href={href}
-            download={download}
-            target={target}
-            os={os}
-        >
-            {children}
-        </DownloadButton>
-    </div>
-);
+}) => {
+    const ios_link = `<a id='mobile-alt' data-target='android'>${it.L('Android')}</a>`;
+    const android_link = `<a id='mobile-alt' data-target='ios'>${it.L('iOS')}</a>`;
+    return (
+        <div className='gr-4 gr-12-m gr-padding-10' id={`${os}-app`}>
+            <img
+                className='gr-12 gr-centered mt-mobile-phone'
+                src={it.url_for(`images/pages/metatrader/icons/${/[.]/.test(image) ? image : `${image.svg}`}`)}
+            />
+            <h3>{title}</h3>
+            <p>{desc}</p>
+            <DownloadButton
+                badge={badge}
+                href={href}
+                download={download}
+                target={target}
+                os={os}
+            >
+                {children}
+            </DownloadButton>
+            <p className='mobile-alternative-download-description invisible' id={`${os}-alternative-description`}>{it.L('Looking for [_1] app?', os === 'ios' ? ios_link : android_link)}</p>
+        </div>
+    );
+};
 
 const DownloadButton = ({
     badge,
@@ -147,20 +152,20 @@ const Download = () => {
                 <div className='gr-row' id='mobile-apps'>
                     <Heading system='android'>{it.L('MT5 for Android')}</Heading>
                     <Heading system='ios'>{it.L('MT5 for iOS')}</Heading>
-                    <p id='ios-description' className='invisible'>{it.L('Access the markets anytime, anywhere from your iOS device.')}</p>
-                    <p id='android-description' className='invisible'>{it.L('Access the markets anytime, anywhere from your Android device.')}</p>
+                    <p id='ios-description' className='ios-description invisible gr-gutter-m'>{it.L('Access the markets anytime, anywhere from your iOS device.')}</p>
+                    <p id='android-description' className='android-description invisible gr-gutter-m'>{it.L('Access the markets anytime, anywhere from your Android device.')}</p>
                     <div className='gr-2 gr-hide-m' />
                     <DownloadBlock
                         image='ios-device.png'
                         os='ios'
-                        desc={it.L('All versions of iOS')}
+                        desc={it.L('All versions for iOS')}
                         target='_blank'
                         badge='app-store-badge'
                     />
                     <DownloadBlock
                         image='android-device.png'
                         os='android'
-                        desc={it.L('All versions of Android')}
+                        desc={it.L('All versions for Android')}
                         target='_blank'
                         badge='google-play-badge'
                     />

@@ -48,6 +48,12 @@ const isMobile = () => {
 };
 
 const OSDetect = () => {
+    // For testing purposes or more compatibility, if we set 'config.os'
+    // inside our localStorage, we ignore fetching information from
+    // navigator object and return what we have straight away.
+    if (localStorage.getItem('config.os')) {
+        return localStorage.getItem('config.os');
+    }
     if (typeof navigator !== 'undefined' && navigator.platform) {
         return Object.keys(systems)
             .map(os => {

@@ -12,6 +12,10 @@ const toggleDownloadPage = target => {
             text.setVisibility(text.getAttribute('id') === `${target}-alternative-description`);
         });
     } else {
+        document.querySelectorAll('.mobile-alternative-download-description')
+            .forEach(text => {
+                text.setVisibility(text.getAttribute('id') === `${target}-alternative-description`);
+            });
         document.querySelectorAll('.desktop-apps').forEach(el => el.setVisibility(0));
         document.querySelector('#mobile-apps')
             .childNodes
@@ -36,6 +40,16 @@ const DownloadMetatrader = (() => {
                 toggleDownloadPage(e.target.getAttribute('data-target'));
             });
         });
+
+        // Listen for mobile custom OS change request
+        document.querySelectorAll('#mobile-alt')
+            .forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleDownloadPage(e.target.getAttribute('data-target'));
+                });
+            });
     };
 
     return {
