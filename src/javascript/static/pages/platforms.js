@@ -1,6 +1,5 @@
 const getElementById = require('../../_common/common_functions').getElementById;
 const TabSelector    = require('../../_common/tab_selector');
-const GTM            = require('../../_common/base/gtm');
 
 const os_list = [
     {
@@ -36,9 +35,6 @@ const Platforms = (() => {
             os_list.forEach(os => {
                 const el_button = getElementById(`app_${os.name}`);
                 el_button.setAttribute('href', os.download_url);
-                el_button.addEventListener('click', () => {
-                    GTM.pushDataLayer({ event: `${os.name}_app_download`, test: 'testasd' });
-                });
             });
         });
     };
