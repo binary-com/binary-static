@@ -68,7 +68,6 @@ const AccountTransfer = (() => {
 
         showForm();
 
-
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
             el_transfer_fee.setVisibility(1);
         } else {

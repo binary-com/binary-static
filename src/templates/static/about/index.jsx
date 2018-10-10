@@ -46,7 +46,6 @@ const Box = ({ children }) => (
     </div>
 );
 
-
 const Index = () => (
     <div className='about-us box-inlay-borders static_full'>
         <div className='container section'>

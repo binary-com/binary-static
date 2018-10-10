@@ -13,13 +13,14 @@ const TermsAndConditions = () => (
         <h2 data-anchor='introduction-and-scope-of-agreement'>{it.L('A. Introduction and Scope of Agreement')}</h2>
         <ol>
             <li>
-                {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either:', it.website_name)}
-                <div className='eu-hide'>{it.L('Binary (V) Ltd.;')}</div>
-                <div className='eu-hide'>{it.L('Binary (C.R.) S.A.;')}</div>
-                <div className='eu-hide'>{it.L('Binary (BVI) Ltd.;')}</div>
-                <div className='eu-hide'>{it.L('Binary (FX) Ltd. ;')}</div>
-                <div>{it.L('Binary (Europe) Ltd; or')}</div>
-                <div>{it.L('Binary Investments (Europe) Ltd.')}</div>
+                {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either', it.website_name)}&nbsp;
+                <span className='eu-hide'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
+                <span className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+                <span className='eu-hide'>{it.L('Binary (IOM) Ltd.,')}&nbsp;</span>
+                <span className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
+                <span className='eu-hide'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
+                <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
+                <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
             </li>
 
             <li>{it.L('You understand that products based on a random number generator (the "Volatility Indices") are gambling products whereas products based on financial market indices (forex, indices, commodities) are financial instruments.')}</li>
@@ -390,7 +391,7 @@ const TermsAndConditions = () => (
         <h2 data-anchor='miscellaneous'>{it.L('Q. Miscellaneous')}</h2>
         <ol>
             <li>{it.L('You agree that in any Legal or Arbitration or Mediation or Regulatory or Administration or any other proceedings, initiated by you or by us, the Company’s records related to your dealings shall constitute evidence. Subject to the Laws and any Court or tribunal or Competent Authority or Government Authority Orders or requests or instructions or guidelines, you shall not object to the admission of such records because they are not originals, or in writing, or produced by computers or any other electronic systems whatsoever. You shall not rely on the Company to meet any of your disclosures or other obligations imposed by any Court or tribunal or Competent Authority or Government Authority.')}</li>
-            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2018 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-2018 Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
+            <li>{it.L('The [_1] website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2019 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: "Copyright 1999-2019 Binary Ltd. All rights reserved." These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. [_1] and the bull/bear logo are registered trademarks.', it.website_name)}</li>
             <li>{it.L('If any provision of this Agreement shall be held invalid or unenforceable by a court or regulatory body of competent jurisdiction, the remainder of this Agreement shall remain in full force and effect.')}</li>
             <li>{it.L('In connection with this Agreement and all Transactions contemplated by this Agreement, you agree to execute and deliver such additional documents and instruments, and to perform such additional acts as may be necessary or appropriate to effectuate, carry out, and perform all of the terms, provisions, and conditions of this Agreement. You shall cooperate fully with any investigation by any regulatory authority and promptly provide the regulatory authority with such information and records as may be requested in compliance with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident.')}</li>
         </ol>
