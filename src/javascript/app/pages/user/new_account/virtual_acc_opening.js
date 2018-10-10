@@ -78,9 +78,8 @@ const VirtualAccOpening = (() => {
     const bindValidation = () => {
         // Add TrafficSource parameters
         const utm_data = TrafficSource.getData();
-        const mobile_devices = ['iPhone', 'iPad', 'Android'];
+        const signup_device = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
         const date_first_contact = LocalStore.get('date_first_contact') || toISOFormat(moment());
-        const signup_device = mobile_devices.some(item => item === navigator.platform) ? 'mobile' : 'desktop';
 
         const req = [
             { selector: '#client_password', validations: ['req', 'password'], re_check_field: '#repeat_password' },
