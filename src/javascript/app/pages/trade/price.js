@@ -369,6 +369,7 @@ const Price = (() => {
                 } else {
                     BinarySocket.send(proposal, { callback: (response) => {
                         if (response.error && response.error.code === 'AlreadySubscribed' && !is_resubscribing) {
+                            commonTrading.showPriceOverlay();
                             // the already subscribed error from the second proposal request will trigger this error again
                             // and we will get stuck in a loop of resubscribing twice and getting this error again unless we resubscribe exactly once
                             is_resubscribing = true;
