@@ -37,6 +37,7 @@ const MetaTraderConfig = (() => {
 
     let $messages;
     const needsRealMessage = () => $messages.find(`#msg_${Client.hasAccountType('real') ? 'switch' : 'upgrade'}`).html();
+    const needsFinancialMessage = () => $messages.find('#msg_switch_financial').html();
 
     // currency equivalent to 1 USD
     // or 1 of donor currency if both accounts have the same currency
@@ -223,8 +224,10 @@ const MetaTraderConfig = (() => {
                 response.binary_transaction_id,
             ]),
             prerequisites: () => new Promise((resolve) => {
-                if (Client.get('is_virtual') || Client.get('landing_company_shortcode') === 'iom') {
+                if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
+                } else if (Client.get('landing_company_shortcode') === 'iom') {
+                    resolve(needsFinancialMessage());
                 } else {
                     BinarySocket.send({ cashier_password: 1 }).then((response) => {
                         if (!response.error && response.cashier_password === 1) {
@@ -257,8 +260,10 @@ const MetaTraderConfig = (() => {
                 response.binary_transaction_id,
             ]),
             prerequisites: acc_type => new Promise((resolve) => {
-                if (Client.get('is_virtual') || Client.get('landing_company_shortcode') === 'iom') {
+                if (Client.get('is_virtual')) {
                     resolve(needsRealMessage());
+                } else if (Client.get('landing_company_shortcode') === 'iom') {
+                    resolve(needsFinancialMessage());
                 } else if (accounts_info[acc_type].account_type === 'financial') {
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
                         resolve(!isAuthenticated() ? $messages.find('#msg_authenticate').html() : '');
@@ -429,6 +434,7 @@ const MetaTraderConfig = (() => {
         fields,
         validations,
         needsRealMessage,
+        needsFinancialMessage,
         hasAccount,
         getCurrency,
         isAuthenticated,
