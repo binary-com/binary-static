@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-09 10:03\n"
+"PO-Revision-Date: 2018-10-10 06:55\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -121,7 +121,7 @@ msgid "%1 Application Program Interface (\"API\") Terms and Conditions"
 msgstr "%1 ข้อตกลงและเงื่อนไขของ Application Program Interface (\"API\")"
 
 msgid "%1 Expert Advisor (EA)"
-msgstr "%1ที่ปรึกษาผู้เชี่ยวชาญ (EA)"
+msgstr "%1 ที่ปรึกษาผู้เชี่ยวชาญ (EA)"
 
 msgid "%1 Introducing Broker (IB) Programme"
 msgstr "%1 โปรแกรมโบรกเกอร์แนะนำ (IB)"
@@ -720,6 +720,9 @@ msgstr "สามารถเข้าถึงสภาพคล่องขอ
 
 msgid "Access to your personal data is strictly prohibited with the exception of key %1 personnel and only as needed in the performance of their duties."
 msgstr "การเข้าถึงข้อมูลส่วนบุคคลเป็นข้อห้ามอย่างเคร่งครัด ยกเว้นบุคคล %1 หลัก และเมื่อจำเป็นในการปฏิบัติงานตามหน้าที่ของบุคคลเหล่านี้เท่านั้น"
+
+msgid "Access your account with full trading permission."
+msgstr ""
 
 msgid "Access your trading history through our Expert Advisors (EA)"
 msgstr "เข้าถึงข้อมูลการซื้อขายในอดีตผ่านที่ปรึกษาผู้เชี่ยวชาญของเรา (EA)"
@@ -3533,7 +3536,7 @@ msgid "Execute your trade in seconds."
 msgstr "เริ่มการเทรดของท่านด้วยเวลาเพียงเสี้ยววินาที"
 
 msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr ""
+msgstr "ดำเนินกลยุทธ์ในการซื้อขายโดยใช้ประเภทของการซื้อขายแบบ ขึ้น/ลง ในระยะ 5  ช่วงราคา 10 ช่วงราคา 1 นาที หรือ 5 นาที ในสัญญาขึ้น/ลง ท่านจะต้องคาดการณ์ว่า ตลาดจะขึ้น หรือ จะลดลงจากระดับปัจจุบัน"
 
 msgid "Execution model and counterparty risk"
 msgstr "โมเดลในการดำเนินการและความเสี่ยง"
@@ -6299,7 +6302,7 @@ msgid "Note: Payment Agent transfers are only available for accounts registered 
 msgstr "ข้อสังเกต: ตัวแทนรับชำระเงินโอนมีเฉพาะบัญชีที่ลงทะเบียนกับ Binary (CR) SA. และมีธุรกรรมเป็นสกุลเงินดอลลาร์สหรัฐเท่านั้น"
 
 msgid "Note: This feature is not available if you logged in using a social network."
-msgstr "หมายเหตุ: จะไม่มีฟังก์ชั่นนี้ถ้าคุณลงชื่อเข้าใช้โดยใช้เครือข่ายสังคมหรือโซเชียลเน็ตเวิร์ค"
+msgstr "หมายเหตุ: จะไม่มีฟังก์ชั่นนี้ หากท่านลงชื่อเข้าระบบโดยใช้เครือข่ายสังคมออนไลน์"
 
 msgid "Note: Transfer between accounts is not available on weekends."
 msgstr "หมายเหตุ ไม่มีบริการโอนระหว่างบัญชีในช่วงวันหยุดสุดสัปดาห์"
@@ -7987,6 +7990,9 @@ msgstr "ชำระเงิน"
 msgid "Severability"
 msgstr "การโมฆะเป็นบางส่วน"
 
+msgid "Share access to your account without any permission to trade."
+msgstr ""
+
 msgid "Sharp prices"
 msgstr "ราคาเฉียบ"
 
@@ -8204,7 +8210,7 @@ msgid "Start trading"
 msgstr "เริ่มซื้อขาย"
 
 msgid "Start/End Time"
-msgstr ""
+msgstr "เวลาเริ่มต้น/สิ้นสุด"
 
 msgid "State/Province"
 msgstr "รัฐ/จังหวัด"
