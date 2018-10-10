@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-09-28 09:03\n"
+"PO-Revision-Date: 2018-10-08 02:56\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -136,7 +136,7 @@ msgid "%1 Shop introduced"
 msgstr "%1新商店"
 
 msgid "%1 account"
-msgstr ""
+msgstr "%1帳戶"
 
 msgid "%1 affiliate partners who wish to support a big group of Clients"
 msgstr "想要為大批客戶集團提供支持服務的%1聯盟成員"
@@ -277,7 +277,7 @@ msgid "%1 offers forex and contracts for differences via the hybrid model, i.e.,
 msgstr "%1通過混合模式提供外匯和差價合約，即通過自己的帳戶（交易員）和部分對沖客戶訂單與我們的流動率提供商（無交易員）進行交易。當總交易量超過預定的風險承受力層次限額時，客戶訂單通常被對沖。%1在兩種執行模式中都扮演您與我們簽訂交易的合約相對方，而不是像交易所的交易金融工具那樣與中央結算所訂立交易的合約相對方。因此，存在相對方風險。相對方風險是指客戶因為您簽訂的外匯和/或差價交易合約相對方在交易現金流最終結算前違反其義務而造成的損失風險。"
 
 msgid "%1 offers forex and contracts for differences via the hybrid model, i.e., dealing on own account (dealing desk – B-book) or partially hedging client orders with our liquidity providers (no-dealing desk – A-book)."
-msgstr ""
+msgstr "%1通過混合模式提供外匯和差價合約，即通過自己的帳戶（有處理平台B-book）和部分對沖客戶訂單與我們的流動率提供商（無處理平台A-book）進行交易。"
 
 msgid "%1 offers new ways to trade"
 msgstr "%1提供新的交易方式"
@@ -334,10 +334,10 @@ msgid "%1 seeks a sharp Copywriter to produce content that actively engages new 
 msgstr "%1 誠聘文筆犀利的文案，幫助製作網站內容並積極向世界各地新潛能客戶和當前客戶發佈資訊。"
 
 msgid "%1 shall act purely on an execution only basis, without the provision of any investment advice through our remote trading platform."
-msgstr ""
+msgstr "%1 需僅以執行為準, 不可通過我們的遠端交易平台提供任何投資建議。"
 
 msgid "%1 shall also act at times as a principal and at other times as an agent on your behalf for all Transactions entered into by you, depending on the company that you open your account with."
-msgstr ""
+msgstr "%1 還須根據您開立帳戶的公司，在您進行的所有交易中有時成為您的主導, 有時則成為您的代理 。"
 
 msgid "%1 supports %2 which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling."
 msgstr "%1支持%2。這是英國一家領先的慈善機構，致力於消除跟賭博有關的危害。該機構撥款資助教育活動、疾病預防和治療服務，並受委託協助人們進一步了解與賭博危害有關的研究專案。它也建立了一個全國性電話服務專線，向尋求幫助的賭徒提供保密性諮詢和情緒上的支持。"
@@ -693,11 +693,17 @@ msgstr "存取 MT5 儀表板"
 msgid "Access all available tools and features for trading on MT5, including Expert Advisors (EAs), charts, and order types"
 msgstr "存取所有可用的工具和功能包括專家顧問 (EAs)、圖表和訂單類型，以便在MT5交易"
 
+msgid "Access all our trading platforms and charting tools from a single app."
+msgstr "透過單一的應用程式存取我們所有的交易平台和圖表工具。"
+
 msgid "Access market quotes and trade execution from top-tier liquidity providers, including banks and non-banks."
 msgstr "通過頂級流動性提供商，包括銀行和非銀行機構存取市場報價和執行交易。"
 
 msgid "Access multi-asset liquidity from top-tier institutions."
 msgstr "頂級機構提供多種資產的流動性服務。"
+
+msgid "Access our products and services from a single app"
+msgstr "透過單個應用程式存取我們的產品和服務"
 
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "隨時隨地在iOS或Android裝置上使用原設應用程式存取市場。"
@@ -715,7 +721,7 @@ msgid "Access to your personal data is strictly prohibited with the exception of
 msgstr "除非%1的關鍵人員在執行職務時有此必要，我們嚴格禁止任何人存取您的個人資料。"
 
 msgid "Access your trading history through our Expert Advisors (EA)"
-msgstr ""
+msgstr "通過我們的專家顧問存取您的交易記錄"
 
 msgid "Account"
 msgstr "帳戶"
@@ -970,7 +976,7 @@ msgid "All four precious metals, plus energy."
 msgstr "所有四種貴重金屬，加上能源。"
 
 msgid "All fund transfers from your %1 account to your MT5 Real Account must be made by you."
-msgstr ""
+msgstr "所有將資金從%1帳戶轉移到您MT5真實帳戶的操作必須由您親自執行。"
 
 msgid "All information we obtain about you assists us in servicing you and your account. We know you may be concerned about what we do with this information."
 msgstr "我們獲得的關於您的所有資訊能幫助我們為您和您的帳戶提供服務。我們知道您可能會擔心我們處理這些資訊的方式。"
@@ -1000,7 +1006,7 @@ msgid "All payouts"
 msgstr "所有賠付額"
 
 msgid "All prices for financial products quoted on our website are real market prices and are hereby regarded as firm prices. Any slippage from the shown price is considered as consequential. You acknowledge that by accepting this Agreement, no frivolous quote is being offered to you by the Company."
-msgstr ""
+msgstr "我們網站上報出的所有金融產品價格都是真實的市場價格, 並視為固定價格。顯示價格的任何下跌都屬於間接的後果。通過接受本協議，您確認公司提供的報價沒有任何輕率成份。"
 
 msgid "All products traded on margin carry a high degree of risk and can result in losses as well as profits that exceed your initial deposit. The margin trading services described in this Agreement is not suitable for everyone. You acknowledge that the margin trading services described in this Agreement is designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us."
 msgstr "保證金交易的所有產品有很高的風險，可能導致虧損，也可能給您帶來超越起始資金存款的利潤。本協議所述的保證金交易服務並不適合所有人。您承認本協議所述的保證金交易服務專為在本協議所述交易類型中擁有淵博知識和豐富經驗的客戶提供。與我們簽訂本協議前，您充分了解相關的風險。"
@@ -1542,6 +1548,9 @@ msgstr "提供服務前，我們將履行監管義務，根據監管準則和您
 msgid "Before we open an account for you to trade or invest in Investment Products with BIEL, we are required to make an assessment of whether the Investment Products or services you have chosen are appropriate for you, and to warn you if, on the basis of the information you provide to us, any such product or service is not appropriate. Any decision to open an account and to use our products or services is yours. It is your responsibility to understand the risks involved with our products or services."
 msgstr "在為您開立 BIEL 帳戶、對投資產品進行交易或投資之前，我們必須先評估，看您所選擇的投資產品或服務對您是否合適。如果我們根據您所提供的資訊發現該產品或服務對您並不合適，我們必須提醒您。最後將由您自行決定是否開立帳戶，並使用我們的產品或服務。您必須完全了解使用我們產品和服務的風險，並承擔所有責任。"
 
+msgid "Beginner"
+msgstr "初學者"
+
 msgid "Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets."
 msgstr "與銀行間交易員享有相同的回報率。我們每日都對比銀行間選項市場來制訂基準價格。"
 
@@ -1602,17 +1611,17 @@ msgstr "Binary (BVI) Ltd"
 msgid "Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - %1view licence%2."
 msgstr "Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. 由英屬維爾京群島金融服務委員會授權和管理- %1查看許可證%2。"
 
-msgid "Binary (BVI) Ltd.;"
-msgstr ""
+msgid "Binary (BVI) Ltd.,"
+msgstr "Binary (BVI) Ltd.,"
 
 msgid "Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A."
 
+msgid "Binary (C.R.) S.A.,"
+msgstr "Binary (C.R.) S.A.,"
+
 msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
 msgstr "Binary (C.R.) S.A.，在哥斯大黎加註冊。全球其他地區的客戶(不包括某些國家如美國、加拿大、哥斯大黎加、香港)可在 Binary (CR) SA 開設帳戶。"
-
-msgid "Binary (C.R.) S.A.;"
-msgstr ""
 
 msgid "Binary (Europe) Limited"
 msgstr "Binary (歐洲) 有限公司"
@@ -1623,11 +1632,8 @@ msgstr "Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida M
 msgid "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 msgstr "Binary (Europe) Ltd & Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825"
 
-msgid "Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. MGA/B2C/102/2000 dated 1 Aug 2018 and for UK clients by (2) the UK Gambling Commission;"
-msgstr ""
-
-msgid "Binary (Europe) Ltd; or"
-msgstr ""
+msgid "Binary (Europe) Ltd, or"
+msgstr "Binary (Europe) Ltd, 或"
 
 msgid "Binary (FX) Ltd"
 msgstr "Binary (FX) Ltd"
@@ -1635,14 +1641,14 @@ msgstr "Binary (FX) Ltd"
 msgid "Binary (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
 msgstr "Binary (FX) Ltd, Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan"
 
-msgid "Binary (FX) Ltd. ;"
-msgstr ""
+msgid "Binary (FX) Ltd, or"
+msgstr "Binary (FX) Ltd, 或"
+
+msgid "Binary (FX) Ltd.,"
+msgstr "Binary (FX) Ltd.,"
 
 msgid "Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia. Licensed and regulated by the Labuan Financial Services Authority to carry on a money-broking business %1(licence no. MB/18/0024)%2."
 msgstr "Binary (FX) Ltd., 地址: Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Federal Territory of Labuan, Malaysia。由Labuan 金融服務管理局授予牌照執行資金經紀商業活動 %1(牌照編號MB/18/0024)%2和監管。"
-
-msgid "Binary (FX) Ltd; or"
-msgstr ""
 
 msgid "Binary (IOM) Limited"
 msgstr "Binary (IOM) Limited"
@@ -1653,20 +1659,20 @@ msgstr "Binary (IOM) Limited, First Floor, Millennium House, Victoria Road, Doug
 msgid "Binary (IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 msgstr "Binary(IOM) Ltd, First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW"
 
-msgid "Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 Aug 2012, and for UK clients by (2) the UK Gambling Commission."
-msgstr ""
+msgid "Binary (IOM) Ltd.,"
+msgstr "Binary (IOM) Ltd.,"
 
 msgid "Binary (V) Ltd"
 msgstr "Binary (V) Ltd"
 
+msgid "Binary (V) Ltd,"
+msgstr "Binary (V) Ltd,"
+
 msgid "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu. Licensed and regulated by the Vanuatu Financial Services Commission - %1view licence%2."
 msgstr "Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, Republic of Vanuatu。由瓦努阿圖金融服務委員會授權和管理- %1查看許可證%2。"
 
-msgid "Binary (V) Ltd.;"
-msgstr ""
-
-msgid "Binary (V) Ltd;"
-msgstr ""
+msgid "Binary (V) Ltd.,"
+msgstr "Binary (V) Ltd.,"
 
 msgid "Binary Bot"
 msgstr "Binary Bot"
@@ -1684,16 +1690,13 @@ msgid "Binary Group Services is searching for talented and motivated front-end d
 msgstr "二元期權集團服務組誠招具有才華和上進心、正尋求卓越工作機會的前端編程師。"
 
 msgid "Binary Group members are sometimes referred to collectively as \"%1\", \"us\" or \"we\"."
-msgstr ""
+msgstr "Binary 集團成員有時統稱為 「%1」、「我們的」 或 「我們」。"
 
 msgid "Binary Investments (Europe) Limited is entitled to provide services in another EU Member State through EU passporting rights. Refer to the map below for the list of EU countries that have access to %1 via EU passporting rights - freedom to provide cross border services."
 msgstr "Binary Investments (Europe) Limited 有權通過歐盟金融護照權利在另一歐盟成員國提供服務。 請參閱以下地圖查看有權通過歐盟金融護照（自由提供跨國界服務）權利訪問%1的歐盟國家清單。"
 
 msgid "Binary Investments (Europe) Ltd"
 msgstr "Binary Investments (Europe) Ltd"
-
-msgid "Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or"
-msgstr ""
 
 msgid "Binary Investments (Europe) Ltd aggregates the bid and ask prices from a pool of liquidity providers to determine and offer you the best available price of the instrument. The Company is always the final counterparty to your Transactions. The Company may execute orders on behalf of its clients, wherein the Company will act as a broker and pass on the order to the liquidity provider for execution. Alternatively, the Company may also keep the client’s order on its own account, wherein the Company will take the other side of the client’s trade. It is further noted that the Company may make a profit as a result of your losses and vice-versa. For further details please refer to our Conflicts of Interest Policy and Order Execution Policy."
 msgstr "Binary投資 (歐洲) 有限公司從流動性供應商池聚集出價和供價, 以向您確定和提供相關工具最優惠的價格。公司始終是您交易的最終對手。公司可以充當經紀人代表客戶執行訂單, 並將訂單傳遞給流動性提供商執行。另外, 公司也可以自行保留客戶的訂單, 成為客戶交易的另一方。進一步指出, 公司可能會因您蒙受損失而獲利, 反之亦然。有關詳細資訊, 請參閱我們的利益衝突政策和訂單執行政策。"
@@ -1705,7 +1708,7 @@ msgid "Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, 
 msgstr "Binary Investments (Europe) Ltd，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商(%1執照號碼為IS/70156%2)。"
 
 msgid "Binary Investments (Europe) Ltd."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd."
 
 msgid "Binary Investments (Europe) Ltd. is required to collect your tax information."
 msgstr "Binary投資 (歐洲) 有限公司需要收集您的稅務資訊。"
@@ -1903,7 +1906,7 @@ msgid "By submitting suggestions or other feedback regarding the %1 API to the C
 msgstr "通過對公司提交%1的API相關建議或其它反饋意見（簡稱為「貢獻」），您確認並同意︰"
 
 msgid "By using or interacting with our website, you are giving permission to the use of the Google Analytics User ID Feature, which allows Google to capture your %1 login ID such as VRTC1234 and MT1234. When this feature is enabled, no other personally identifiable information other than your %1 login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google."
-msgstr ""
+msgstr "通過使用網站或與網站互動，您同意允許使用Google分析使用者 ID 功能，從而允許Google捕獲您的 %1 登入識別碼 （例如，VRTC1234與MT1234 等）。 啟用此功能後，除%1登入識別碼 或其他可以讓Google連結到此類資訊的資料以外，將沒有任何其他個人識別資訊與Google共用或披露給Google。"
 
 msgid "By using the electronic trading system, including the MT5 Trading Platform, Clients accept full responsibility for the use of such platforms and for any orders transmitted via such platforms."
 msgstr "通過使用電子交易系統 (包括 MT5 交易平台), 客戶接受承擔使用此類平台以及通過此類平台執行任何訂單的全部責任。"
@@ -2064,11 +2067,11 @@ msgstr "圖表"
 msgid "Chart is not available for this underlying."
 msgstr "此標的工具圖表不可用。"
 
-msgid "Charting Platforms"
-msgstr "圖表平台"
-
 msgid "Charting for this underlying is delayed"
 msgstr "此標的資產的圖表資料已延遲"
+
+msgid "Charting platforms"
+msgstr "圖表平台"
 
 msgid "Check out some technical terms before you start."
 msgstr "在開始交易之前，請先了解一些專業詞彙。"
@@ -2212,7 +2215,7 @@ msgid "Clients from the rest of the world (excluding certain jurisdictions such 
 msgstr "全球其他地區想要進行差價合約交易的客戶 (不包括某些管轄區如美國、加拿大、日本和歐盟國家) 可在 Binary (FX) Ltd. 開設MetaTrader 5帳戶。%1不可在馬來西亞使用。"
 
 msgid "Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available."
-msgstr ""
+msgstr "客戶有機會考慮是否通過向 compliance@binary.com 發送電子郵件詢問更多資訊, 在這種情況下, 將提供有關利益衝突政策的進一步細節。"
 
 msgid "Clients may utilise this bonus only when a real money account is opened."
 msgstr "客戶只有開立真實帳戶後才能使用此獎金。"
@@ -2874,11 +2877,11 @@ msgstr "演示波動率指數"
 msgid "Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns"
 msgstr "按需迅速展示並同時運行思想/行動能力，執行有效的活動"
 
-msgid "Depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website, the term \"the Company\" shall denote either:"
-msgstr ""
+msgid "Depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term \"the Company\" shall denote either"
+msgstr "根據網站的開戶程式對客戶帳戶所附的管轄權和「關於我們」部分的詳細說明以及提供的產品類型, 「公司」一詞應表示"
 
-msgid "Depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website, the term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either:"
-msgstr ""
+msgid "Depending on the jurisdiction to which a Client's account has been attached in accordance with the account opening procedures of the website, the term 'we', 'us', 'our', 'ours', 'the Company', or '%1' shall denote either"
+msgstr "根據網站的開戶程式對客戶帳戶所附的管轄權, 「我們」、「我們的」、「公司」或「%1」等詞應表示"
 
 msgid "Depending on the level of risk that we are exposed to acting as your counterparty, we largely act in a principal capacity of your trades. As such, the execution venue will usually be %1. However, we may transmit your order to third party liquidity providers, in which case we will determine the execution venue ourselves on the basis described above."
 msgstr "基於我們作為您的交易相對方所接觸的風險層次，我們在您的交易中參與大部分的主要活動。因此，執行場所通常是在%1。然而，我們可能會將您的訂單轉給第三方流動性提供商。在這種情況下，我們將根據以上所述自行確定執行場所。"
@@ -2932,7 +2935,7 @@ msgid "Derivative"
 msgstr "衍生工具"
 
 msgid "Derivative investment instruments such as Binary Options and related markets can be highly volatile. The prices of the underlying instrument which a Binary Option refers to may fluctuate rapidly and over wide ranges and may reflect unforeseeable events or changes in conditions, none of which can be controlled by you or %1."
-msgstr ""
+msgstr "衍生投資工具如二元期權和相關市場的波動性很大。二元期權所涉及的基礎工具價格可能會快速起伏，且幅度很大，很可能反映出一些您或 %1 皆無法控制的不可預測事件或狀況變遷。"
 
 msgid "Description"
 msgstr "描述"
@@ -3101,6 +3104,9 @@ msgstr "Mac版下載"
 
 msgid "Download for Windows"
 msgstr "Windows版下載"
+
+msgid "Download our desktop app now:"
+msgstr "立刻下載我們的桌面應用程式:"
 
 msgid "Download the Android App"
 msgstr "下載Android應用程式"
@@ -3332,6 +3338,9 @@ msgstr "使用 SQL 資料庫、R/S-Plus、OLAP 和其他分析工具從事資料
 
 msgid "Enhance and proactively manage the company's social-media efforts, using a variety of channels to attract and nurture prospects, clients, partners, and recruits."
 msgstr "加強並主動管理公司的社交媒體宣傳，利用各種管道吸引和培育潛在使用者、客戶、合作夥伴和新員工。"
+
+msgid "Enhanced performance"
+msgstr "增強的性能"
 
 msgid "Enjoy a trading platform that's easy to navigate and use"
 msgstr "享受簡單操作、輕鬆瀏覽的交易平台"
@@ -3621,6 +3630,9 @@ msgstr "說明"
 msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform. %1Create an MT5 account now%2 to start trading."
 msgstr "加入全球首屈一指的多資產平台，探索全新的二元期權交易體驗。 %1立刻開立 MT5 帳戶%2 開始交易。"
 
+msgid "Explore all the trading platforms, apps, and tools we offer"
+msgstr "探索我們提供的所有交易平台、應用程式和工具"
+
 msgid "Explore our HackerOne bounty programme"
 msgstr "探索我們的HackerOne獎勵計劃"
 
@@ -3665,6 +3677,9 @@ msgstr "影響貴重金屬價格的因素"
 
 msgid "Failed"
 msgstr "失敗"
+
+msgid "Familiar with our website? Our desktop app is designed to give you the same intuitive experience."
+msgstr "對我們的網站很熟悉？我們的桌面應用程式設計為您提供相同的直觀體驗。"
 
 msgid "Familiarity with Perl, DBI, Mason, Moose, Sereal, Plack/PSGI, nginx, Javascript, MySQL/Postgres, Memcached, Redis, RabbitMQ, git"
 msgstr "熟悉Perl、DBI、Mason、Moose、Sereal、Plack/PSGI、nginx、Javascript、MySQL/Postgres、Memcached、Redis、RabbitMQ、git 等程式"
@@ -3756,6 +3771,9 @@ msgstr "需要通過金融風險批准。欲知詳細資訊，請聯繫<a href=\
 msgid "Financial derivatives that allow you to trade on the movement of underlying assets."
 msgstr "金融衍生產品讓你交易基礎資產的走勢。"
 
+msgid "Find a trading platform that suits your experience and preferred strategy – whether you’re a new or seasoned trader."
+msgstr "無論您是新手還是經驗豐富的交易員，請找個適合您的經驗和首選策略的交易平台-。"
+
 msgid "Find out more about the costs and details of each CFD asset we offer."
 msgstr "了解我們提供的每個差價合約資產的成本和詳細資料。"
 
@@ -3820,13 +3838,13 @@ msgid "Following file(s) were already uploaded: %1"
 msgstr "以下文檔已上載: %1"
 
 msgid "For Binary (C.R.) S.A., the applicable Jurisdiction shall be Costa Rica."
-msgstr ""
+msgstr "Binary (C.R.) S.A.適用的管轄權應為哥斯大黎加。"
 
 msgid "For Binary (IOM) Ltd, the applicable Jurisdiction shall be the Isle of Man."
-msgstr ""
+msgstr "Binary (IOM) Ltd適用的管轄權應為曼島。"
 
 msgid "For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta."
-msgstr ""
+msgstr "Binary Investments (Europe) Ltd 和 Binary (Europe) Ltd適用的管轄權應為馬爾他。"
 
 msgid "For Browser"
 msgstr "用於瀏覽器"
@@ -4567,7 +4585,7 @@ msgid "If you find any vulnerabilities in our %1open-source code%2, feel free to
 msgstr "如您在我們的%1開源代碼%2中發現任何漏洞，請隨時在GitHub提交引入請求。"
 
 msgid "If you have a positive balance in your MT5 Real Account, you may transfer such balance from your MT5 Real Account into your %1 account and then request a withdrawal as necessary for any amount available on your %1 account. The Company may withhold, deduct or refuse to make any such transfer or withdrawal, in whole or in part, if:"
-msgstr ""
+msgstr "如果您的 MT5 真實帳戶有剩餘款項, 您可以將此餘額從MT5 真實帳戶轉移到您的%1帳戶, 然後可根據需要請求提取%1帳戶裡可用的任何金額。如有以下情況, 公司可完全或部分扣留、扣除或拒絕進行任何上述轉移或提款："
 
 msgid "If you have entered into more than one Open Position in the same market, any closing Transaction that you place in the same market will close the Open Positions in the chronological order in which the Open Positions were first created on a first in first out basis."
 msgstr "如果您已在同一市場持有多個未平倉頭寸，您在同一市場完成任何平倉交易將使其他未平倉頭寸按建立時間先進先出順序平倉。"
@@ -4702,10 +4720,10 @@ msgid "If you would like more information on becoming a Payment Agent, please co
 msgstr "如您希望獲得成為付款代理的更詳細資料，請隨時通過<a href='mailto:%1'>%1</a>聯繫我們"
 
 msgid "If you would like to file a complaint with regards to our service, kindly contact us on complaints@binary.com, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details."
-msgstr ""
+msgstr "如果您想投訴我們的服務，請透過complaints@binary.com與我們聯繫並將一切有關投訴的細節提供給我們。我們將進行相關調查並予以回覆。除非在法律許可下需要延期，我們一般將會在收到所有相關詳細資訊後的十個工作天內提供最終回應。"
 
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us on complaints@binary.com by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
-msgstr ""
+msgstr "如果您想投訴關於此協定所述的保證金交易服務，請透過complaints@binary.com與我們聯繫並將一切有關投訴的細節提供給我們。我們將進行相關調查並予以回覆。我們一般將會在收到所有相關詳細資訊後1-2週內(不超過2個月) 提供最終回應。"
 
 msgid "If you're a broker we'd like to work with you. You will be introducing your clients to a unique and innovative product: the %1 trading platform. Your clients will love the %1 trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders."
 msgstr "如果您是經紀人, 我們想和您合作。您可向您的客戶推薦獨特和創新的產品: %1 交易平台。您的客戶會喜歡 %1 交易平台, 因為我們提供完整的二元期權交易體驗, 適於各種交易者的需求。"
@@ -4717,7 +4735,7 @@ msgid "If you're shortlisted, we'll send you a Self-Assessment Topgrading Interv
 msgstr "如果您進入初選名單，我們將向您發送一份自我評估精英面談 (SATI) 問卷。"
 
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
-msgstr ""
+msgstr "如果您的%1帳戶已關閉, 您的 MT5 真實帳戶也將自動關閉。"
 
 msgid "If your account is placed under margin call for an extended period of time, it will reach the stop out level where it is unable to sustain an open position. This will lead to your pending orders being cancelled and your open positions being forcibly closed (also known as “forced liquidation”)."
 msgstr "如果您的帳戶處於追加保證金通知延長期內，在無法繼續持倉時將達到強制平倉水平。這將導致您的待處理訂單被取消，以及持倉頭寸被強制平倉 （也稱為「強制清算」）。"
@@ -4783,7 +4801,7 @@ msgid "In accordance with applicable regulatory requirements, where we do not ma
 msgstr "根據適用的法規要求，當我們無法獲取足夠資訊來為您評估產品或服務的合適性時，我們也會通知您我們未能進行合適性評估。"
 
 msgid "In all circumstances, the Company reserves the right to make changes to these Terms and Conditions. If the Company elects to make any material changes to these Terms and Conditions, our clients will be notified in advance and shall either accept or decline to agree. Declining to agree shall result in a material breach of this agreement and the client's account may be frozen, suspended or cancelled. However, the client shall be allowed to withdraw any pending balance on account subject to KYC verification."
-msgstr ""
+msgstr "在任何情況下，公司保留對此條款和條件作出修改之權利。如公司選擇對此條款和條件作出任何具體修改，客戶將預先得到通知，也將可選擇接受或不同意接受。如果不同意，則會造成違反此協議，客戶的帳戶可能會被凍結、暫停或吊銷。但客戶可取回任何未決餘款，條件是必須經過KYV核實。"
 
 msgid "In any event of an error in current prices, published odds or trading software."
 msgstr "如發生任何目前價格、公佈賠率或交易軟件錯誤的事件。"
@@ -4840,7 +4858,7 @@ msgid "In relation to some Contracts, at the time at which you give us an order 
 msgstr "關於某一些合同，在您向我們購入時，有關交易產品可能剛好碰上市場或外匯停止運作。在此種情況下，我們將會根據一些因素如關聯市場的價格波動、其它市場影響因素和客戶自己的訂單資訊等而定出一個公平的標示價格。"
 
 msgid "In such an event, the Company may at its sole discretion (with or without notice) close out Client's open financial contracts at prices it considers fair and reasonable."
-msgstr ""
+msgstr "在此情況下，公司可以自行決定（無論是否給予通知）以其認為公平合理的價格對客戶的未結金融合約強行平倉。"
 
 msgid "In the 'Further Instructions' field please specify the payment method and account number to which the Agent will send the funds to."
 msgstr "請在「詳細說明」欄位指定支付方式及代理將轉帳的帳號。"
@@ -4858,10 +4876,10 @@ msgid "In the UK, our clients trade through Binary (IOM) Ltd and Binary Investme
 msgstr "在英國，我們的客戶通過 Binary (IOM) Ltd. 和 Binary Investments (Europe) Ltd. 進行交易。在曼島，他們通過 Binary (IOM) Ltd. 進行交易。在歐盟（除了英國），他們通過 Binary (Europe) Ltd 和 Binary Investments (Europe) Ltd. 進行交易。在全世界其他地區，他們通過 Binary (C.R.) S.A. 進行交易。"
 
 msgid "In the case of a Limit Order, you acknowledge that we will endeavor to open/close a Transaction at a level that is the same or better than the Limit you specified, subject to the availability of the Limit Price."
-msgstr ""
+msgstr "下限價訂單時, 您確認只要有可用的限價，我們將儘力以與您指定的水平相同或更好價格開盤/平倉。"
 
 msgid "In the case of a Stop Order, you acknowledge that we will endeavor to open/close a Transaction at a price equal to the one you specified. However, if the specified price is unavailable, a less favourable price may be quoted. You acknowledge that at the time of order execution, our bid/offer price may become less favourable to you."
-msgstr ""
+msgstr "如果是止損訂單，您確認我們將盡力以與您指定的相同價格開盤/平倉。但如果指定價格不可用，報出的價格可能會稍微不利。您確認，訂單執行期間，我們的買價/賣價可能對您不利。"
 
 msgid "In the course of provision of services we shall, where applicable, conduct an appropriateness test in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
 msgstr "提供服務的過程中，我們將根據您所提供的資訊和我們的觀察進行合適性測試，以確定您是否對投資領域擁有足夠知識和經驗，並且對相關指定提供或需求的產品或服務所冒的風險有充分了解。"
@@ -4928,9 +4946,6 @@ msgstr "指示性"
 
 msgid "Indices"
 msgstr "指數"
-
-msgid "Indonesia"
-msgstr "印度尼西亞"
 
 msgid "Industrial metals"
 msgstr "工業金屬"
@@ -5013,11 +5028,17 @@ msgstr "釋義"
 msgid "Interview process"
 msgstr "面試流程"
 
+msgid "Introducing the new %1 desktop app"
+msgstr "推出新的 %1 桌面應用程式"
+
 msgid "Introduction"
 msgstr "簡介"
 
 msgid "Introduction to binary options on MT5"
 msgstr "MT5 二元期權交易簡介"
+
+msgid "Intuitively simple"
+msgstr "直觀式簡易"
 
 msgid "Invalid amount, maximum is"
 msgstr "無效金額，最大是"
@@ -5998,7 +6019,7 @@ msgid "Monitor your portfolio in real time."
 msgstr "實時監測您的投資組合。"
 
 msgid "Monitor your trades easily with real-time visualisations"
-msgstr ""
+msgstr "使用即時可視化功能監控您的交易"
 
 msgid "Monitoring and review of this Policy"
 msgstr "監管和評估此政策"
@@ -6202,7 +6223,7 @@ msgid "No Touch trades"
 msgstr "「未觸及」交易"
 
 msgid "No commission"
-msgstr ""
+msgstr "不收佣金"
 
 msgid "No commission (excluding cryptocurrencies)"
 msgstr "不收佣金費 (不包括加密貨幣)"
@@ -6268,13 +6289,16 @@ msgid "Note:"
 msgstr "備註:"
 
 msgid "Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration."
-msgstr ""
+msgstr "注: 註冊後24小時內, 值10美元的無存款獎金將存入您的帳戶。"
 
 msgid "Note: For any enquiries regarding disabled or excluded accounts, please contact <a href=\"%1\">Customer Support</a>."
 msgstr "注: 如有任何關於禁用或隔離帳戶的查詢, 請與<a href=\"%1\">客服部</a>聯繫。"
 
 msgid "Note: Payment Agent transfers are only available for accounts registered with Binary (CR) SA. Transactions are accepted only in US dollars."
 msgstr "注意：僅在Binary (CR) SA註冊的帳號才能通過付款代理匯款。僅接受以美元進行所有交易。"
+
+msgid "Note: This feature is not available if you logged in using a social network."
+msgstr "注意: 如果您使用社交網路登入, 此功能不可用。"
 
 msgid "Note: Transfer between accounts is not available on weekends."
 msgstr "注意: 帳戶之間的轉帳週末期間不可用。"
@@ -6454,7 +6478,7 @@ msgid "Open Source"
 msgstr "開源"
 
 msgid "Open a %1 account through our website %2; and"
-msgstr ""
+msgstr "在我們的網站 %2開立 %1 帳戶; 和"
 
 msgid "Open a Financial Account"
 msgstr "開立金融帳戶"
@@ -6700,7 +6724,7 @@ msgid "PM"
 msgstr "下午"
 
 msgid "PPUKM Physiotherapy Charity Run 2018"
-msgstr ""
+msgstr "2018年PPUKM 理療慈善競走"
 
 msgid "Palladium vs US Dollar"
 msgstr "鈀金兌美元"
@@ -6867,8 +6891,11 @@ msgstr "平台"
 msgid "Platinum vs US Dollar"
 msgstr "鉑金兌美元"
 
-msgid "Please %1accept the updated Terms and Conditions%2 to lift your withdrawal and trading limits."
-msgstr "請%1接受條款和條件%2，以提高存取款限額。"
+msgid "Please %1accept the updated Terms and Conditions%2 to lift your deposit and trading limits."
+msgstr "請%1接受條款和條件%2，以提高存款和交易限額。"
+
+msgid "Please %1accept the updated Terms and Conditions%2."
+msgstr "請%1接受更新條款和條件%2。"
 
 msgid "Please %1authenticate%2 your account."
 msgstr "請%1驗證%2您的帳戶。"
@@ -7324,7 +7351,7 @@ msgid "Publish your name and logo (with or without a link to your Application) o
 msgstr "不必另外徵求同意，將您的名稱和徽標 （可包含應用程式連結，如需要）發佈到我們網站、新聞發布和宣傳材料;"
 
 msgid "Published in Chinese, English, French, German, Indonesian, Italian, Polish, Portuguese, Russian, Spanish, Thai and Vietnamese"
-msgstr ""
+msgstr "以中文、英文、法文、德文、印尼文、義大利文、波蘭文、葡萄牙文、俄文、西班牙文、泰文和越南文發表"
 
 msgid "Purchase"
 msgstr "買入"
@@ -7780,7 +7807,7 @@ msgid "Saturday"
 msgstr "星期六"
 
 msgid "Save in case of negligence, fraud, or default by the Company, the Company will not be liable in any way to any clients in the event of force majeure, or for the act of any Government or legal authority, or for the failure of or damage or destruction to its computer systems, data, or records or any part thereof, or for delays, losses, errors, or omissions resulting from the failure or mismanagement of any telecommunications, computer equipment or software by the client or any damages or losses deemed or alleged to have resulted from or been caused by this site or its content."
-msgstr ""
+msgstr "出現以下情況時，除非是由於公司疏忽，欺詐或違約而造成，公司不對任何客戶承擔任何責任：不可抗因素; 政府或司法機關行為; 全部或部分電腦系統和資料和記錄出現故障，損壞或毀壞; 由客戶造成的任何通訊系統，電腦設備及軟體的故障或管理不善導致的延遲，損失和錯漏，或因本網站及其內容產生或導致的任何損壞以及其他損失，本公司概不負責。"
 
 msgid "Scalable"
 msgstr "可縮放"
@@ -8044,7 +8071,7 @@ msgid "Simply double-click the file to add the EA to your MT5 platform, then, he
 msgstr "只需按兩下該文檔將 EA 新增到您的 MT5 平台, 然後到「導航」視窗檢視 %1 EA 是否可用。"
 
 msgid "Since BIEL is a member of the Malta Investor Compensation Scheme, you are covered for the first €20,000 of any claim you may have in the unlikely event of BIEL suffering an investment default and not being able to meet its obligations. This protection is available only to retail clients. Neither professional clients nor eligible counterparties can benefit from this protection."
-msgstr ""
+msgstr "由於BIEL是馬爾他投資者賠償計劃的成員，萬一BIEL遭遇投資違約且無法履行其義務，您可能獲得任何索賠的首€20000賠款。此保險計劃僅適用於零售客戶。專業客戶和符合條件的交易對手都不能從此項保險計劃中受益。"
 
 msgid "Since all dealing on the %1 website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feed irregularities and latencies."
 msgstr "由於 %1 網站所有交易都完全自動化，我們的訂價和風險管理算法必須充分考慮即時訂價參數、資料傳送不規則性和延遲等因素。"
@@ -8322,6 +8349,9 @@ msgstr "對市場行銷和廣告充滿熱忱，非常感興趣"
 msgid "Student"
 msgstr "Student"
 
+msgid "Study financial data to forecast market movements using our charting tools."
+msgstr "使用我們的圖表工具研究財務資料，以預測市場動向。"
+
 msgid "Su"
 msgstr "星期日"
 
@@ -8329,13 +8359,13 @@ msgid "Subject to any specific instructions which may be provided by you, when e
 msgstr "當我們執行客戶訂單時，在遵守您所提供的任何指令之同時，我們將採取一切合理措施以替您取得最佳結果。我們將根據整體的考慮因素來決定最佳結果的可能性，例如工具價格和跟執行有關的成本，包括您的直接與訂單執行相關的所有費用。"
 
 msgid "Subject to network latency, we endeavor to execute your Order within a reasonable time from the time you triggered the Order, at the Price nearest to your specified Price. We do not guarantee that a Transaction will be opened/closed following an Order being triggered by you at your specified Price. This can happen under certain trading conditions when there are sharp price movements in the market. In that case the company has the right to execute the order at the first available price."
-msgstr ""
+msgstr "取決於網絡速度，我們會盡力在您確認訂單後的合理時間內以最接近您要求的價格執行您的訂單。在您以指定價格確認訂單後，我們不保證一定能夠開始/結束交易。當市場價格出現劇烈波動時，這種情況可能會在某些交易條件下發生。一旦發生這種情況，公司有權以首個可用價格執行訂單。"
 
 msgid "Subject to the applicable governing law and the Client Agreement, you represent and acknowledge that this Agreement shall be admissible as an evidence in any legal, judicial, administrative, arbitration or mediation proceedings."
 msgstr "在符合適用的管轄法和客戶協定的前提下, 您同意並承認本協定應作為任何法律、司法、行政、仲裁或調解程式中的證據予以受理。"
 
 msgid "Subject to the availability and sufficiency of funds in your MT5 Real Account, you may withdraw your funds from your MT5 Real Account to your %1 account."
-msgstr ""
+msgstr "根據您MT5真實帳戶的資金可用性和充足性，您可以將資金從您的MT5真實帳戶提出並轉移到%1帳戶。"
 
 msgid "Subject to the law and the terms and/or conditions and/or provisions and/or clauses of this Agreement, the Company shall not be liable, to the Agent for any matter arising out of or in relation to this Agreement."
 msgstr "除非依據法律和本協議的內容和/或條款的規定和/或條件，對所引起或與本協議有關的任何事項，本公司概不對代理承擔責任。"
@@ -8550,8 +8580,8 @@ msgstr "%2帳號的%1密碼已更改。"
 msgid "The %1 website is protected by certain copyrights."
 msgstr "%1網站受版權保護。"
 
-msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2018 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2018 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
-msgstr "%1網站受版權保護。網站所包含的各種材料（包括但不限於所有文章、文字、圖像、標誌、整理材料、系統、代碼和設計）由 Binary Group 各公司版權（1999-2018年）所有。公司保留所有權利。可對此類材料進行受限複製和分佈，僅用於非商業目的，前提是所有復製材料都必須保持完整且須在明顯位置標註以下聲明：1999-2018 Binary 有限公司版權所有，並保留一切權利。未經 Binary Group 公司事先書面許可，不得基於商業目的或者以其他任何有償方式複製或者傳播這些材料。%1和牛/熊標誌是註冊商標。"
+msgid "The %1 website is protected by certain copyrights. The materials comprising the website (including without limitation all articles, text, images, logos, compilation, systems, code and design) are Copyright 1999-2019 Binary Group of companies. All rights reserved. Such materials may be copied and distributed on a limited basis for non-commercial purposes only, provided that any material copied remain intact and that all copies include the following notice in a clearly visible position: \"Copyright 1999-2019 Binary Ltd. All rights reserved.\" These materials may not be copied or redistributed for commercial purposes or for compensation of any kind without prior written permission from a member of the Binary Group. %1 and the bull/bear logo are registered trademarks."
+msgstr "%1網站受版權保護。網站所包含的各種材料（包括但不限於所有文章、文字、圖像、標誌、整理材料、系統、代碼和設計）由 Binary Group 各公司版權（1999-2019年）所有。公司保留所有權利。可對此類材料進行受限複製和分佈，僅用於非商業目的，前提是所有復製材料都必須保持完整且須在明顯位置標註以下聲明：1999-2019 Binary 有限公司版權所有，並保留一切權利。未經 Binary Group 公司事先書面許可，不得基於商業目的或者以其他任何有償方式複製或者傳播這些材料。%1和牛/熊標誌是註冊商標。"
 
 msgid "The %1 website's static content (CSS, Javascript) is available as the %2binary-static%3 open-source project on github. Would you like to re-skin the %1 website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes."
 msgstr "%1網站的靜態內容（CSS，Javascript）可在github以%2二進位靜態%3開源專案中使用。您是否想重新設定%1網站的面板設計，提高瀏覽器的相容性、網站的呈現速度或者Javascript效能？請分支處理專案並送上您所建議的代碼更改的提取要求。"
@@ -8599,7 +8629,7 @@ msgid "The <strong>start time</strong> is when the contract is processed by our 
 msgstr "合約<strong>開始時間</strong>即我們的伺服器處理合約的時間。"
 
 msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices and cryptocurrencies."
-msgstr ""
+msgstr "高級帳戶為您提供極低的差價, 更高的票證大小, 並提供更多的產品。開始交易更多的外匯對、差價合約指數和加密貨幣。"
 
 msgid "The Affiliate's Obligations"
 msgstr "聯盟的義務"
@@ -8662,7 +8692,7 @@ msgid "The Company does not guarantee that the %1 API it provides will function 
 msgstr "公司並不保證所提供的 %1 API運行時功能不會中斷或出現錯誤。特別是，%1 API操作時可能會由於維護、更新或系統及網絡故障而中斷。公司不承擔任何上述運作中斷或錯誤所引起的賠償責任。"
 
 msgid "The Company does not make any warranty, express or implied, that any pricing or other information provided through the MT5 Trading Platform or otherwise is correct."
-msgstr ""
+msgstr "公司不對MT5交易平台或其它提供的任何定價或其他資訊的正確性做任何明示或暗示的保證。"
 
 msgid "The Company does not offer any credit facilities or arrangement to its clients in normal trading circumstances. You acknowledge and agree that you will not be dealing with us on credit, regardless of the amount of your Account Balance and Transactions entered into with us."
 msgstr "正常交易情況下，公司不向客戶提供任何信貸服務或安排。您確認並同意，無論您的帳戶餘額和簽訂的交易金額是多少，您將不會向我們信用貸款。"
@@ -8680,7 +8710,7 @@ msgid "The Company ensures that complaints received will be investigated thoroug
 msgstr "公司確保將會對收到的投訴作出徹底和公平的調查。您可以通過向 %1 發送電子郵件提交投訴。"
 
 msgid "The Company has a Stop Out policy which prevents you from losing more than you have deposited. However, in the event that your Open Positions are not closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level, the Company, at its sole discretion, may waive your negative balance by crediting your account if your Account Balance goes into a negative balance. The negative balance is determined by aggregating all the negative balances incurred over a 24-hour period across all accounts held by you. You acknowledge that, unless you are a retail customer of Binary Investments (Europe) Ltd, the offer of the Negative Balance protection by the Company to you is at the Company’s sole discretion and we reserve the right to change the features and eligibility criteria of the Negative Balance Protection at any time. The provisions of the Negative Balance Protection do not apply:"
-msgstr ""
+msgstr "公司製定了「強制平倉」政策，可以防止您的損失超過您存入的金額。但是，當您的MT5真實帳戶的保證金水平達到止損水平時您的未平倉頭寸未平倉，而且如果您的帳戶餘額已是負餘額，則公司可以自行決定是否通過貸記您的帳戶來免除您的負餘額。負餘額是通過匯總您持有的所有帳戶在24小時內發生的所有負餘額而確定的。除非您是Binary投資(歐洲) 有限公司的零售客戶，您確認公司提供的負餘額保護是由公司自行決定的，我們保留隨時更改負餘額保護的功能和資格標準的權利。負餘額保護的規定不適用於："
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "公司有權及保留權利停止任何活動或交易，包括但不限於以上所述之任何發生事件。"
@@ -8707,7 +8737,7 @@ msgid "The Company may also impose volume trading limits on Client accounts at i
 msgstr "公司還可自行決定對客戶帳戶實行批量交易限制。交易量限制詳情可以在帳戶的「安全和限制」部分查看。如果帳戶餘額超過最大帳戶限額，則必須提款以使餘額小於限額。"
 
 msgid "The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavor to ensure affiliates are notified when changes have been made to the commission structure."
-msgstr ""
+msgstr "公司可能隨時以其唯一、絕對自主權改變傭金結構。傭金結構發生更正時，我們將努力通知所有聯盟成員。"
 
 msgid "The Company may change, suspend, terminate or discontinue any aspect of the %1 API, including the availability of any services, information features or functions accessible by means of the %1 API, on no less than seven days advance notice to you."
 msgstr "公司可能會預先7天通知您之後對%1 API服務，包括通過%1 API所提供的任何服務、資訊功能或可存取與可用性作出更改、暫停、終止或中斷措施。"
@@ -8728,7 +8758,7 @@ msgid "The Company may withhold payment of funds accumulated in a Client’s acc
 msgstr "當公司採取步驟驗證是否符合這些條款時，公司可以扣留客戶賬戶的累積資金。"
 
 msgid "The Company may, at its sole discretion or as required by regulations in place conduct appropriate \"Know Your Customer\" procedures and require a Client to provide proof of identity (such as notarized copy of passport or other means of identity verification as the Company deems required under the circumstances) and suspend an account until satisfactory identification information, evidence of identity and address, source of funds and/or source of wealth have been provided. If you open an account with Binary (Europe) Ltd or Binary (IOM) Ltd, you’ll need to provide us with age verification documentation when you perform a deposit for the first time. You will also be required to provide KYC documentation to verify your identity for cumulative deposits and/or withdrawals of EUR 2,000.00. If you open an account with Binary Investments (Europe) Ltd, you’ll need to provide KYC documentation as part of your account opening process."
-msgstr ""
+msgstr "公司有權自行或依據「了解你的客戶」法則的相關規定要求客戶提供身份證明（如經公證的護照複印件或其他公司在相關情形下認為必要的身份證明），也有權在得到滿意的身份證明資訊、身份與地址證明、基金來源和/或財富來源之前中止帳戶。如果您在 Binary（歐洲）有限公司或Binary (IOM) 有限公司開立帳戶，當您首次存入資金時須向我們提供年齡驗證文件。累計存/提款額達到2,000歐元時還須提供KYC身份驗證文件。如果您在 Binary Investments（歐洲）有限公司開立帳戶，開立帳戶時須提供KYC文件。"
 
 msgid "The Company provides the %1 API on an \"as is\" and \"as available\" basis with no warranties, either express or implied, of any kind. To the fullest extent permissible under applicable law, the Company disclaim any and all warranties and representations, including, without limitation, any implied warranties of merchantability, fitness for a particular purpose, title, accuracy of data, and non-infringement."
 msgstr "公司根據「原樣」和「可用」方式提供%1 API，且不承擔任何類型的明示或默認保證。公司根據適用法律所允許的最大範圍，不承擔任何及所有保證和聲明，包括但不限於任何適銷性、某一特定用途適合性、標題、資料準確性和非侵權的默認保證。"
@@ -8749,10 +8779,10 @@ msgid "The Company reserves the right in its sole discretion to refuse and/or ca
 msgstr "公司有權自行以任何理由拒絕和/或取消對任何人的服務，收取存款和/或取款費用的權利，該等理由包括但不限於："
 
 msgid "The Company reserves the right to cancel/reverse transactions or amend the contractual terms (including, but not limited to, entry and exit spot) in the case that any contracts are acquired or sold at prices that do not reflect fair market prices or that are acquired or sold at an abnormally low level of risk due to an undetected programming error, bug or glitch in our website software, market data feed or contract pricing latency, data feed error, stray quotes, incorrect pricing parameters, or manifest mis-calculation of prices or other obvious errors (\"Manifest Errors\"). Clients have a duty to report to the Company any such problems, errors or suspected system inadequacies that they may experience and may not abuse of or arbitrage such system problems or errors for profit. The Company will endeavor to resolve any such difficulties in the shortest time possible. Any amendments to the contractual terms (including, but not limited to, entry and exit spot) of Manifestly Erroneous contracts shall be reasonable and fair. Monies exchanged between oneself and the Company in connection with Manifestly Erroneous contracts shall be returned to the recipient according to the amendments made to the contractual terms (including, but not limited to, entry and exit spot)."
-msgstr ""
+msgstr "如果有任何合約是以不反映公平市場價格獲得或銷售或由於未被發現的編程錯誤、我們網站軟體中的bug 或故障、市場資料輸入或合約定價滯後、資料輸入錯誤、雜散引號、不正確的定價參數或清單計算錯誤或其他明顯的錯誤(「明顯錯誤」) 而以異常低的風險水平下獲取或銷售，公司保留取消/沖銷交易或修改合約條款(包括但不限於入市和退市現價) 的權利。客戶有責任向公司報告他們可能遇到的任何此類問題、錯誤或可疑系統缺陷, 不得濫用或套利此類系統問題或錯誤從中獲取利潤。公司將努力在最短的時間內解決任何此類問題。對明顯錯誤合約的條款 (包括但不限於入市和退市現價) 的任何修正須是合理和公平的。個人與公司之間就明顯的錯誤合約而對換的款項, 須按照合約條款 (包括但不限於入市和退市現價) 的修訂, 退還給收款人。"
 
 msgid "The Company reserves the right to change any part of this Agreement at any time. We will endeavor to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate programme after we have posted the changes will constitute binding acceptance of such changes."
-msgstr ""
+msgstr "公司有權隨時修改本協議的任何內容。我們會儘量把協議修改詳情通知聯盟成員，但是您承擔定期檢查本條款和條件的最終責任。該等修改公佈後，您繼續參加聯盟計劃的行為，將構成對該等修改的約束性接受。"
 
 msgid "The Company reserves the right to have in place risk limits, which affects the trading limits of all clients trading, and may not be limited solely to instruments and contract types."
 msgstr "公司保留設定將影響所有客戶交易限額的風險限額的權利, 且限制的交易類型不僅限於工具和合約。"
@@ -8779,7 +8809,7 @@ msgid "The Company shall not be in breach of its obligation under this Agreement
 msgstr "公司不可違反本協議項下的義務，並不須對任何因發生不可抗力事件所造成的本協議下無法或延遲履行義務承擔任何責任。"
 
 msgid "The Company shall not be liable to you in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate's business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever when such outcome is the consequence of any breach, non-performance, or non-observance by you of any of your obligations or warranties under this Agreement."
-msgstr ""
+msgstr "對於聯盟成員業務、收入或利潤、預期結餘或開支浪費、資料破壞或損害的任何直接或間接損失，或者任何間接或衍生性損失，如果此類後果是由於任何違反、不履行、或不遵守本協議所規定的任何義務或保證所造成，公司對您不承擔合約或其他（包括疏忽責任）責任。"
 
 msgid "The Company shall not be obliged to provide Professional Clients with the following:"
 msgstr "公司不可向專業客戶提供以下服務:"
@@ -8839,7 +8869,7 @@ msgid "The Company, exercising its absolute discretion, may accept or reject Age
 msgstr "公司擁有絕對自主權，可自行決定接受或拒絕代理的申請。如代理的申請被接受，我們須將代理使用的所有相關的適用資訊，包括但不限於姓名、地址、網站（如有）、電子郵件地址、電話號碼、佣金率和付款方法列入付款代理清單中，並在我們的網站<a href=\"%1\">www.binary.com</a>上披露。"
 
 msgid "The Company, under no circumstances shall provide Investment and/or Financial and/or Legal and/or Tax and/or Regulatory and/or other Investment advice or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written or video information, which we may publish on our website or provide to you in any other manner. We will endeavor to ensure the accuracy and completeness of this information but it will not constitute independent investment research or investment advice provided by us to you."
-msgstr ""
+msgstr "公司在任何情況下都不會提供投資和/或財務和/或法律和/或稅務和/或監管和/或其他投資建議, 或陳述與交易有關的意見。我們可能會陸續決定通過在我們網站上發布或以任何其他方式為您提供書面或視訊資料。我們將努力確保這些資料的準確性和完整性, 但這並不構成我們為您提供獨立的投資研究或投資建議。"
 
 msgid "The Domain Name System (DNS) allows you to access a website through a user-friendly web address such as %1, instead of a complicated IP address."
 msgstr "網域名稱系統 (DNS) 允許您通過方便使用的 web 位址 (如 %1) 而不是複雜的 IP 位址訪問網站, 。"
@@ -9010,13 +9040,13 @@ msgid "The company reserves the right to cancel/prohibit the use of this promoti
 msgstr "公司有權隨時自行取消/禁止使用本促銷。"
 
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP 25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months."
-msgstr ""
+msgstr "對每一個超過12個月沒有交易記錄的客戶帳戶，公司保留從收取費用日期開始收取每6個月高達25 美元/歐元/澳元/英鎊的帳戶休眠費用的權利。或者, 對於加密貨幣帳戶, 按照www.xe.com 發布的當前匯率或其他公認的數據提供商計算法收取相當於25美元的費用。"
 
 msgid "The company reserves the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr ""
+msgstr "對每一個超過12個月沒有交易記錄的客戶帳戶，公司保留收取每6個月高達25 美元/歐元/澳元/英鎊的帳戶休眠費用的權利。自帳戶中扣除費用前，客戶將會收到通知。如要將沒有活動、已關閉、被封或禁用的帳戶基金取回，客戶須聯繫我們的客服部。"
 
 msgid "The content on this website is subject to change at any time without notice and is provided for the sole purpose of assisting traders in making independent investment decisions. %1 has taken reasonable measures to ensure the accuracy of the information on the website."
-msgstr ""
+msgstr "公司有權隨時更改本網站內容, 恕不另行通知, 且其唯一目的僅為交易商在作出獨立投資決定時提供協助。%1 已採取合理措施確保網站上資訊的準確性。"
 
 msgid "The contract period is the timeframe of a trade. It is also called the duration."
 msgstr "合約期限是指交易的時間週期，即合約持續時間。"
@@ -9028,7 +9058,7 @@ msgid "The default DNS services provided by your ISP can be slow and insecure. %
 msgstr "ISP 提供的預設 DNS 服務可能緩慢且不安全。%1 建議使用 Cloudflare 的 %2 DNS 服務, 它為您提供更快、更私密的上網方式。"
 
 msgid "The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavor to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level."
-msgstr ""
+msgstr "我們在網站上公佈適用於您帳戶的默認強制平倉層級。然而，我們有絕對自由裁量權更改默認強制平倉層級。對強制平倉層級進行的任何更改將立即生效。我們將努力通過在我們的網站上發布修改後的默認強制平倉層級通知您已經更改默認強制平倉層級。定期查看我們的網站，並了解默認強制平倉層級是您的責任。"
 
 msgid "The duration is the length of a purchased trade (see 'contract period')."
 msgstr "期限是所買入交易的時間週期（參考「合約期限」）。"
@@ -9118,7 +9148,7 @@ msgid "The minimum required amount for using the account transfer facility is %1
 msgstr "使用帳戶資金轉移設施的最小金額為 %1。"
 
 msgid "The minimum spread (which is comprised of the market spread and our spread) published on our website is subject to alteration, at our absolute discretion. You acknowledge that whilst we endeavor to maintain a competitive spread, both market spread and our spread may widen significantly in some circumstances and such figures will be determined by us at our reasonable discretion."
-msgstr ""
+msgstr "在我們網站公佈的最低價差 （由市場點差與我們的點差組成）可能在我們絕對的自主權下更改。您確認，雖然我們努力保持價差競爭力，但在某些情況下市場點差和我們的點差可能會有顯著差距，這些數字將由我們根據合理的自主權確定。"
 
 msgid "The minimum ticket size refers to the minimum volume or number of lots."
 msgstr "最小票證大小是指最小交易量或手數。"
@@ -9133,7 +9163,7 @@ msgid "The opposite is true if you decide to sell or 'go short' on the US 100 in
 msgstr "相反的，如果您決定賣出美國100指數或持「空頭」頭寸，也是如此。這意味著只要美國100指數的價格持續下跌，您的利潤就會繼續增加。但是，如果價格上漲，您所蒙受的虧損也會增加。"
 
 msgid "The organisational and administrative arrangements established by the Company to prevent or manage the conflict are not sufficient to ensure, with reasonable confidence, that the risk of damage to the interest of the Client will be prevented. However, we aim to disclose the general nature or sources of conflicts of interest."
-msgstr ""
+msgstr "公司為防止或管理衝突而設立的組織和行政安排不足以確保有合理的信心防止客戶利益受損害的風險。然而, 我們的目的是要披露利益衝突的一般性質或來源。"
 
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
 msgstr "找不到您要求的頁面。它不再存在或輸入網址出錯。請檢查是否輸入錯誤。"
@@ -9225,14 +9255,14 @@ msgstr "%1代理帳戶收到的金額須由代理轉移到%1客戶帳戶。"
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "系統按先進先出的次序，即按照收到訂單的順序處理訂單，這是我們無法控制的。因此，您可能會發現很難或無法在某些市場條件下按照您的止損單規定的預期價位平倉。您設定的止損單雖然是有用的風險管理工具，卻不一定能按照您原先設想的數額限制損失。在極不穩定的交易條件下，由於市場情況可能無法執行這些指令，您的退出價格具不確定性。簡而言之，止損單是無法提供保證的，因為無法在所有市場情況下運作。"
 
-msgid "The term 'we', 'us', 'our', 'ours', 'the Company', '%1' shall denote:"
-msgstr ""
+msgid "The term 'we', 'us', 'our', 'ours', 'the Company', '%1' shall denote"
+msgstr "「我們」、「我們的」、「公司」、或 「%1」等詞指："
 
 msgid "The trading services described in this Agreement are OTC. This means that one or more of the underlying instruments in which you transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the Electronic Trading Platform as described in this Agreement."
 msgstr "本協定所描述的保證金交易服務為場外交易。這意味著，您與我們進行交易的一個或多個標的工具，雖然由交易所報價，但通過本協議所述電子交易平台交易時卻不是在交易所交易。"
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
-msgstr ""
+msgstr "通過本網站完成的交易以及客戶和本公司之間的關係由本公司註冊成立所在國（即「管轄地」）的法律管轄和解譯。對於可能出現的與之相關的任何糾紛，您同意司法管轄地法院擁有處置這些糾紛的專屬管轄權。因此，您不可撤銷地服從司法管轄地法院對與所有此類糾紛相關的司法管轄權，且您同意對本公司的任何索賠主張只能在司法管轄地法院提起。有關投訴和糾紛的詳細資訊，請參閱本公司的投訴和糾紛部份。"
 
 msgid "The two passwords that you entered do not match."
 msgstr "兩次輸入的密碼不相符。"
@@ -9253,7 +9283,7 @@ msgid "There are four types of Smart FX indices that you can trade:"
 msgstr "有四種類型的智能外匯指數可以交易："
 
 msgid "There are no charges for transferring money from your %1 account to your MT5 Real Account."
-msgstr ""
+msgstr "將資金從您的%1帳戶轉到您的MT5真實帳戶，不必支付任何費用。"
 
 msgid "There are no guaranteed profits in investment trading;"
 msgstr "投資交易不保證能獲利;"
@@ -9295,7 +9325,7 @@ msgid "There was some invalid character in an input field."
 msgstr "某字欄的輸入字元無效。"
 
 msgid "There will be no charges for fund transfers from your %1 account to your MT5 Real Account in the same currency. Should your %1 account and your MT5 Real Account be in different currencies, the Company reserves the rights to charge a 1% currency conversion fee."
-msgstr ""
+msgstr "用相同貨幣將資金從您的%1帳戶轉到您的MT5真實帳戶，不必支付任何費用。如果您的 %1 帳戶和您的 MT5 真實帳戶貨幣不相同, 公司保留收取1% 貨幣兌換費的權利。"
 
 msgid "Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is %1 %2 (or equivalent in other currency)."
 msgstr "因此您目前的即時最高取款額（要求您的帳戶有充足資金）為 %1 %2（或其他等值貨幣)。"
@@ -9373,7 +9403,7 @@ msgid "This Agreement is supplied to the Client in English. In the event that th
 msgstr "本協議給客戶提供英文版本。如果英文版本與本文件的任何翻譯版本有差異, 須以英文版本為準。"
 
 msgid "This Agreement is supplied to you in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail."
-msgstr ""
+msgstr "本協議給您提供英文版本。如果英文版本與本文件的任何翻譯版本有差異, 須以英文版本為準。"
 
 msgid "This Agreement may be terminated forthwith by either party on written notice to the other party if the other party is in material breach of the terms of the Agreement and, in the event of a breach capable of being remedied, fails to remedy the breach within 15 days of receipt of notice in writing of such breach."
 msgstr "如果一方嚴重違反本協議條款，且在能夠補救的情況下，於收到關於違約的書面通知後十五天內未能對該等違約進行補救，另一方可以通過書面通知的方式立即終止本協議。"
@@ -9406,7 +9436,7 @@ msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "在下列時候，該獎金將被處理，並記入客戶的帳戶中："
 
 msgid "This charity run is organized by The National University of Malaysia in conjunction with the International Day of Older Persons which is celebrated in October every year. The goal of the run is to raise awareness within local communities about the importance of physiotherapy for the elderly and to promote healthy lifestyles among Malaysians. The funds raised are used to buy and upgrade existing facilities for the rehabilitation of older patients."
-msgstr ""
+msgstr "這項慈善競走活動是由馬來西亞國立大學為配合每年十月慶祝的國際長者日主辦的。競走的目的是提高當地社區對老年人理療的重要性以及促進馬來西亞人健康生活方式的認識。籌集的資金用於購買和升級現有的老年患者康復設施。"
 
 msgid "This clause does not apply to Volatility Indices."
 msgstr "本條款不適用於波動率指數。"
@@ -9462,8 +9492,8 @@ msgstr "這是標的資產在特定時間可以買入或賣出的目前價格。
 msgid "This is why we've come up with the following three-step tutorial to help you bridge that gap and make your first trade:"
 msgstr "因此我們提出以下三步教程幫助您彌補這一差距, 讓您開始第一次交易:"
 
-msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into or sell an investment product or gambling product with us. If you are in any doubt about the risks involved with Investment Products or Gambling Products, you should seek professional advice."
-msgstr "此通知並不解說投資或相同產品存在的所有風險，以及這些風險如何跟您的個人情況相關。重要的是，您在決定進入我們市場、出售投資產品或進行博彩活動前，必須完全明白相關風險。如您對相關投資產品或博彩產品的風險有任何疑問，應尋求專業協助。"
+msgid "This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into any product with us. If you are in any doubt about the risks involved, you should seek professional advice."
+msgstr "此通知並不解說投資或相同產品存在的所有風險，以及這些風險如何跟您的個人情況相關。重要的是，您在決定透過我們交易任何產品前，必須完全明白相關風險。如您對相關風險有任何疑問，應尋求專業協助。"
 
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices and other investment products (\"Investment Products\") and binary bets such as those relating to the Volatility Indices (\"Gambling Products\")."
 msgstr "此通知提醒您通過 %1 所提供的服務進行投資的合約風險。 Binary 集團提供廣泛的產品，包括跟外匯、指數和其他投資產品（「投資產品」）相關的二元期權和跟波動率指數有關的二元博彩（「博彩產品」）。"
@@ -9601,7 +9631,7 @@ msgid "To learn more, read our %1Margin Policy%2 that further explains our margi
 msgstr "要了解關於保證金要求的更多資訊，請閱讀我們的%1保證金政策%2。"
 
 msgid "To open an MT5 Real Account for financial instruments, you must have an authenticated %1 account. If you open an MT5 Real Account with Binary (Europe) Ltd you will be able to trade only Volatility contracts for difference. An MT5 Real Account cannot be opened in the absence of a %1 account."
-msgstr ""
+msgstr "要為金融工具開立MT5真實帳戶，您必須擁有經過驗證的％1帳戶。如果您在Binary（Europe）Ltd開設MT5真實帳戶，您將只能交易波動率差價合約。如果沒有%1帳戶，就無法開立MT5真實帳戶。"
 
 msgid "To perform this action, please <a href=\"%1\">upgrade to %2 Real Account</a>."
 msgstr "如要執行此操作，請<a href=\"%1\">升級到 %2 真實帳戶</a>。"
@@ -9846,6 +9876,9 @@ msgstr "二元期權交易是投機活動，有很高的風險，可能會導致
 msgid "Trading is unavailable at this time."
 msgstr "此時無法交易。"
 
+msgid "Trading platforms"
+msgstr "交易平台"
+
 msgid "TradingView"
 msgstr "TradingView"
 
@@ -10054,7 +10087,7 @@ msgid "Under no circumstances shall the Company or its directors or employees be
 msgstr "在任何情況下，根據本協議，公司或其董事或僱員一概不對您或任何第三方直接或間接由於使用或不能使用%1 API或其任何內容的任何間接、特定、附帶、懲罰性或後果性損失或損害或任何理論下的任何其他類似損害（無論是在合同、侵權行為、嚴格賠償責任或任何其他理論）承擔賠償責任，即使已預先通知公司事件發生的可能性。"
 
 msgid "Under no circumstances shall we provide investment advice or recommendation to you or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written information, which we may publish on our website or provide to you in any other manner. We will endeavor to ensure the accuracy and completeness of this written information but it will not constitute investment advice or recommendation provided by us to you."
-msgstr ""
+msgstr "在任何情況下我們都不會對有關交易向您提供投資意見或建議或陳述觀點。我們可能會陸續通過在我們網站上公佈或以任何其他方式為您提供書面資訊。我們將努力確保此書面資訊的準確性和完整性，但這並不構成我們向您提供投資意見或建議。"
 
 msgid "Under the Rules, clients may be categorised into one of the following three categories:"
 msgstr "根據規則，客戶可分為以下三個類別："
@@ -10088,6 +10121,9 @@ msgstr "了解何時買入和賣出"
 
 msgid "Unemployed"
 msgstr "Unemployed"
+
+msgid "Unified ecosystem"
+msgstr "統一生態系統"
 
 msgid "United Kingdom"
 msgstr "英國"
@@ -10165,13 +10201,16 @@ msgid "Use appropriate terminology, taking into account the style and nuance of 
 msgstr "使用適當的術語，並須考慮到原文風格和細節"
 
 msgid "Use comprehensive technical analysis tools to predict price movements"
-msgstr ""
+msgstr "使用全面的技術分析工具預測價格變動"
 
 msgid "Use of Information"
 msgstr "資訊使用"
 
 msgid "Use of bid/ask prices: when the market is illiquid, the data feed may contain many bid and ask prices, without there actually being any traded price for quite a while. By taking an average of the bid/ask price (i.e. bid + ask, divided by 2), a market quote is generated that reflects the current market, without it actually being a traded price. Our system will generate prices from these bid and ask prices, whereas other websites might not. As a result, our website might display ticks that do not appear in the data feeds of other websites."
 msgstr "買入/賣出價格的使用：當市場無流動性時，資料源可能包含很多買入和賣價格，但實際上卻已很長時間沒有任何交易價格了。通過取買賣價格平均數的方法（即買入價+賣出價/2）可以產生一個反映目前市場狀況的市場報價，而不必為實際交易價格。我們的系統會利用這些買賣價格產生價格，但其他網站可能不會。所以，我們的網站顯示的價位在其他網站的資料源中可能並不會出現。"
+
+msgid "Use our native desktop app for a more secure and faster trading experience."
+msgstr "使用我們的本機桌面應用程式, 獲得更安全和更快的交易體驗。"
 
 msgid "Use the opportunity provided by our website to practice for free with our virtual money account facility. This will enable you to get used to the functionalities and rules of the website."
 msgstr "利用我們網站提供的機會，可以免費通過虛擬帳戶進行交易嘗試，同時熟悉本網站的各種功能和規則。"
@@ -10237,7 +10276,7 @@ msgid "Verify new password"
 msgstr "驗證新密碼"
 
 msgid "Version 47. Last modified 2018-09-28."
-msgstr ""
+msgstr "版本47。最後修改時間為 2018年09月28日。"
 
 msgid "Video Room Facility"
 msgstr "視訊室設施"
@@ -10459,7 +10498,7 @@ msgid "We do it again. BetOnMarkets.com follows up our 2007 award by being voted
 msgstr "我們再次得獎。 2007年獲獎之後，BetOnMarkets.com 又一次被《Shares Magazine》雜誌選為2008年度「最佳固定賠率金融交易提供商」。"
 
 msgid "We endeavor to open or close the Transaction to which your Order relates at the price reasonably available to us, acting in accordance with our duty of best execution. Best execution means that we must take all sufficient steps to obtain, when executing orders, the best possible result for you, taking into account the price, costs, speed, likelihood of execution and settlement, size, nature, or any other consideration relevant to the execution of the order."
-msgstr ""
+msgstr "我們按照最佳執行責任行事，努力以與您的訂單相關的合理可用價格開盤或平倉交易。最佳執行意味著我們在執行訂單時必須採取足夠措施，考慮價格、成本、速度、執行和結算的可能性、大小、性質或任何其他考慮因素以為您獲取最大效益。"
 
 msgid "We have a general duty to conduct our business with you honestly, fairly, and professionally and to act in your best interests when opening and closing Binary Options trades with you."
 msgstr "我們的常規義務是以誠實、公正和專業的方式對您提供業務上的服務，並在與您開立和結束二元期權交易時替您爭取最大的利益。"
@@ -10507,10 +10546,10 @@ msgid "We may, at our absolute discretion, accept a Stop Order or a Limit Order 
 msgstr "我們可以完全自主決定接受您的止損訂單或限價訂單。我們可能隨時在執行您的訂單時啟用其他類型的訂單（例如，追踪止損訂單）。"
 
 msgid "We may, at our absolute discretion, disregard your Order if an Event takes place resulting in it no longer being practicable to act on your Order after indicating an acceptance of your Order."
-msgstr ""
+msgstr "在表示接受您的訂單後，如果發生導致我們無法繼續執行您的訂單的事件， 我們可能自行決定忽略您的訂單。"
 
 msgid "We may, however, withhold your withdrawal request from your MT5 Real Account to your %1 account, in whole or in part, if:"
-msgstr ""
+msgstr "如果發生以下情況，我們可能將您從MT5真實帳戶轉到%1帳戶的提款請求保留全部或部分款項︰"
 
 msgid "We offer a market-based salary, annual performance bonus, health benefits, travel and internet allowances, and company trips. Enjoy a high standard of living, whether you're in Malta, or Malaysia."
 msgstr "我們提供市場化的薪酬、年度表現分紅、醫療保險、出差和網際網路零用金以及公司旅遊。不論您是在馬爾他或馬來西亞都能享受高水平生活。"
@@ -10543,13 +10582,13 @@ msgid "We recognise the importance of protecting your personal and financial inf
 msgstr "我們意識到保護您個人資訊和財務資訊的重要性。"
 
 msgid "We record and monitor telephone conversations and/or electronic communications involving transactions when dealing on own account and the provision of client order services that relate to the reception and execution of client orders. Recordings may also be used for quality and anti-fraud purposes."
-msgstr ""
+msgstr "我們在處理擁有的帳戶和向客戶提供涉及接收和執行客戶訂單等服務時錄音和監測涉及交易的電話交談和/或電子通信。錄音也可以用於改善品質和反欺詐用途。"
 
 msgid "We reserve the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every six months for every client account that has had no transaction recorded for a period of 12 consecutive months or more."
 msgstr "對每個連續12個月或以上沒有交易記錄的客戶帳戶，我們保留每6個月收取最高為25美元/歐元/澳元/英鎊帳戶休眠費的權利。"
 
 msgid "We reserve the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts."
-msgstr ""
+msgstr "對每一個超過12個月沒有交易記錄的客戶帳戶，我們保留收取每6個月高達25 美元/歐元/澳元/英鎊的帳戶休眠費用的權利。自帳戶中扣除費用前，客戶將會收到通知。如要將沒有活動、已關閉、被封或禁用的帳戶基金取回，客戶須聯繫我們的客服部。"
 
 msgid "We reserve the right to modify, supplement, or replace these Terms at any time. Any material changes will be notified to you. Your continued registration with the %1 API and your continued use of the %1 API will constitute binding acceptance of such changes."
 msgstr "我們保留隨時修改、補充或更換這些條款的權利。如有任何實際更改將會通知您。您繼續在%1 API註冊及繼續使用%1 API將構成您接受此類更改的約束力。"
@@ -10564,7 +10603,7 @@ msgid "We reserve the right to request further information from you whenever dee
 msgstr "我們保留在適當情況下酌情要求您提供進一步資訊的權利。例如，我們可能會要求您向我們發送其他可接受的文件以確認您的帳戶詳細資料或任何提款請求的真實性。"
 
 msgid "We reserve the right to void or amend the contractual terms of any Transactions that we reasonably believe are entered into at prices that do not reflect fair market prices or that are entered into at an abnormally low level of risk due to an obvious or palpable error (a “Manifest Error”). In deciding whether an error is a Manifest Error, we may take into account any relevant information, including the state of the underlying market at the time of the error and any error within, or lack of clarity of, any information source or pronouncement. You have a duty to report to us any such problems, errors, or suspected system inadequacies that you may experience and may not abuse or arbitrage such system problems or errors for profit. We will endeavor to resolve any such difficulties in the shortest time possible."
-msgstr ""
+msgstr "當我們合理相信有任何因明顯或可察覺錯誤（明顯錯誤）導致任何交易合約的購買或售出價格未能反映公平的市場價格或者以異常低的風險購買和售出，我們保留取消或修改合約條款的權利。在決定某個錯誤是否明顯錯誤時，我們可能考慮到任何相關信息，包括，發生錯誤時標的市場狀況、或任何信息來源或聲明有錯或缺乏明確性。您有義務向我們報告您所經歷的任何問題、錯誤或可能的系統缺陷，不得濫用系統缺陷盈利。我們將努力在最短時間內解決這些問題。"
 
 msgid "We segregate your funds and keep them in secure and licensed financial institutions."
 msgstr "我們將您的基金集合並保留在安全及擁有牌照的金融機構裡。"
@@ -10597,7 +10636,7 @@ msgid "We will monitor the effectiveness of our order execution arrangements and
 msgstr "我們將會對我們的訂單執行安排和政策有效性進行監督。我們將定期評估：我們替您進行合約交易的報價區域是否達到最佳執行效果，以及我們是否需要對執行安排作出變更。我們會檢查所選的個報價區域或其他因素是否會影響持續獲得最佳執行方案的能力，也會檢查有關的訂單執行安排和重大政策變更。如果有任何訂單執行安排或政策之重大變更，我們會通知您。"
 
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
-msgstr ""
+msgstr "我們將在可控制範圍內合理地努力，確保您通過 MT5 交易平台和所有電子交易指示所收到並由我們執行提供的所有電子資料均不會受到網絡延遲。"
 
 msgid "We're almost there"
 msgstr "快全部就緒了"
@@ -10714,7 +10753,7 @@ msgid "What's a stop out level and how is it applied"
 msgstr "甚麼是止損層次，如何使用它"
 
 msgid "When a self-exclusion limit is set on your %1 account registered with Binary (Europe) Ltd, your MT5 Real Account will be disabled until the self-exclusion limit on your %1 account is removed."
-msgstr ""
+msgstr "當您在Binary (歐洲) 有限公司註冊的%1帳戶設了自排除限制時, 您的 MT5 真實帳戶將被禁用, 直到%1帳戶的自排除限制已被移除。"
 
 msgid "When are my commissions paid?"
 msgstr "我的佣金是什麼時候支付的？"
@@ -10747,7 +10786,7 @@ msgid "When using the MT5 Trading Platform, all our clients will be provided wit
 msgstr "使用 MT5 交易平台時, 我們向所有客戶提供保證金監控功能, 以防止您在正常市場條件下交易時出現負餘額。作為交易者, 我們向您推荐一個風險管理方法，就是您的交易帳戶必須始終, 並隨時保持適當的保證金金額。"
 
 msgid "When we accept an order from you to open or close a transaction, or any other specific instructions in relation to your order, we will endeavor to follow your instructions as far as reasonably possible, acting in accordance with our duty of best execution in accordance with your instructions. These specific instructions include, but are not limited to:"
-msgstr ""
+msgstr "當我們收到您給的開盤或收盤交易訂單或任何其他關於訂單的具體指示，我們會努力盡可能合理地遵照您的指示並根據我們最佳執行責任行事。這些具體的指示包括，但不限於︰"
 
 msgid "When we deal on own account (dealing desk), we act as principal and not as an agent on your behalf and we therefore act as the execution venue."
 msgstr "當我們在自己帳戶（交易平台）上交易時，我們是委託人，而不是您的代理人，因此我們是執行場地。"
@@ -10789,7 +10828,7 @@ msgid "When you trade with %1, you can be assured that your deposits are held in
 msgstr "通過 %1 進行交易，我們保證您的訂金將由獨立信託帳戶保管，不會用在任何其他用途。"
 
 msgid "When you transfer your money to us for trading purposes, your funds are deposited in your %1 account. If you choose to trade FX and CFDs you shall transfer funds from your %1 account to your MT5 Real Account. Such transfer shall not be regarded as a transfer from two different Accounts but as a transfer of funds from your centralised %1 account to the MT5 Real Account. No fund transfers shall be made to any other Account in the name of any third party."
-msgstr ""
+msgstr "如果您把資金轉移給我們作交易用途, 該資金將存入您的%1帳戶。如果您選擇交易外匯和差價合約, 您必須把資金從%1帳戶轉到您的 MT5 真實帳戶。這種轉帳不屬於兩個不同的帳戶之間的轉帳, 而是把資金從您的%1總帳戶轉移到 MT5 真實帳戶。不可以任何第三方的名義向任何其他帳戶轉移資金。"
 
 msgid "When your account hits the forced liquidation level, your orders and positions are forcibly closed in the following sequence:"
 msgstr "當您的帳戶達到強制清算層次，您的訂單和頭寸將按以下順序強行平倉︰"
@@ -10798,7 +10837,7 @@ msgid "When, as a result of political, economic, military or monetary events (in
 msgstr "當政治、經濟、軍事或貨幣政策事件（包括市場非正常波動或喪失流動性）或其他不在本公司控制、責任及權力範圍之內的任何情形導致本網站在不對客戶或本公司利益產生重大負面影響或侵害的情況下無法繼續合理可行地運轉時，或者依公司之見，無法計算金融合約的價格時。"
 
 msgid "Where a particular time or timeframe has been specified in a client's instructions with respect to the execution of an order, regardless of the price available, we will endeavor to execute the order at the specified time or over the specified timeframe in the best possible manner after taking all sufficient steps. However, we will not be responsible for any consequences related to pricing that resulted from the time or timeframe of the execution."
-msgstr ""
+msgstr "如客戶在執行訂單指示中指定了時間或時間週期，不論是否有可用價格，我們將在採取所有足夠步驟後努力在指定時間或時間週期內盡可能以最佳方式執行訂單。然而，我們不對因執行時間或時間週期而引起價格相關的任何後果負責。"
 
 msgid "Where a particular venue has been specified in your instructions with respect to the execution of an order, we will not be responsible for the venue selection."
 msgstr "如您在執行訂單相關指示中指定了特定場地，我們不對場地選擇負責。"
@@ -10885,13 +10924,13 @@ msgid "Whilst we act as principal in respect of your orders, we also assess the 
 msgstr "作為您的訂單委託人，我們也對我們高度依賴的執行場地進行評估，以便為您的訂單執行提供最佳效益。這些場地通常由第三方投資公司、經紀人和/或流動性提供商組成。"
 
 msgid "Whilst we endeavor to close out your Open Positions if and when the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level."
-msgstr ""
+msgstr "雖然我們在您MT5真實帳戶保證金層次達到或低於止損層次時將盡力使您的持倉頭寸收盤，我們不保證當您MT5真實帳戶的保證金層次達到止損層次時將能夠使您的持倉頭寸收盤。"
 
 msgid "Whilst we endeavor to open or close the Transaction to which your orders relate at the requested price, acting in accordance with our duty of best execution, there are times when, due to an increase in volatility or volume, orders may be subject to slippage. The difference between the order price and execution price when orders are filled is known as slippage. This means that your order is not filled at the exact intended quoted price when you placed your order. Slippage is usually seen during periods of extremely high or low volatility and generally occurs during fundamental news releases or periods of limited liquidity. Slippages can result in either a positive slippage (more favourable to you) or a negative slippage (less favourable to you)."
-msgstr ""
+msgstr "雖然我們將按照最佳執行職責行事，致力以要求價格對您的訂單涉及交易進行開盤或收盤，但有時訂單可能會由於波動率或交易量增加而受滑移。交易完成時訂單價格和執行價格的區別被稱為滑移。這意味著當您下訂單時，您的訂單沒有依照確切的預期報價完成交易。滑移通常發生在股市波動率非常高或低的期間以及重大新聞發布期間或流動性有限的時期。滑移可分為正滑移 （對您較有利） 或負滑移 （對您不利）。"
 
 msgid "Whilst we endeavor to take all reasonable and sufficient steps, as required by applicable laws and regulations, to identify potential conflicts of interests between ourselves and our clients, or between one client and another, that arise in the course of providing the margin trading services as described in this Agreement, by establishing and implementing policies and procedures, it is possible that we may execute certain Transactions which may have other direct or indirect material interests."
-msgstr ""
+msgstr "雖然我們將按照適用的法律和規章，努力採取一切合理和足夠的步驟，通過建立和實施政策和程序，以在提供本協定所述的保證金交易服務期間確定我們和客戶之間或客戶與客戶之間潛在的利益衝突，但我們可能會執行某些可能有其他直接或間接物質利益的交易。"
 
 msgid "Who can apply to be a Payment Agent?"
 msgstr "誰能申請成為付款代理?"
@@ -10981,7 +11020,7 @@ msgid "With leverage, you can purchase 100 units of the same asset at a fraction
 msgstr "有了槓桿，您可以較低成本購買相同資產 100 個單位。"
 
 msgid "With regards to tracking your referrals accessing %1 via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavors to ensure that whenever a client is referred to %1 through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged."
-msgstr ""
+msgstr "對於通過您的網站連結或在註冊過程中引用您的聯盟會員ID 訪問%1的您所推薦客戶，公司將採用所有合理的方式進行跟蹤，確保任何通過這些連結或聯盟會員ID推薦到%1並執行後續合約交易或公司其他交易的客戶源自您的推薦。 但是，如果公司無法確定該客戶源自您的推薦，公司將不對您承擔任何責任。 只有帶適當標記的客戶才可以指派給您。 確保所有連結含正確標記是您的責任。"
 
 msgid "Withdraw"
 msgstr "取款"
@@ -11008,7 +11047,7 @@ msgid "Withdrawal of Funds from MT5 Real Account"
 msgstr "從MT5真實帳戶提出資金"
 
 msgid "Withdrawal of funds from your MT5 Real Account can be made in a different currency from the one maintained in your %1 account subject to a 1% currency transfer fee charge."
-msgstr ""
+msgstr "從您的MT5真實帳戶中提款時可以使用與您的％1帳戶不相同的貨幣，但須支付1％的貨幣轉帳費。"
 
 msgid "Withdrawal: %1 working day"
 msgstr "取款：%1 個工作日"
@@ -11143,7 +11182,7 @@ msgid "You acknowledge that, in the course of dealing under these Terms, you may
 msgstr "您確認，在執行這些條款時，您可能會獲得關於公司和其母、子公司、附屬公司或其他第三方的機密信息。這些機密信息須僅屬於公司。"
 
 msgid "You acknowledge, understand, represent and warrant that you are aware of the functional limitations of the MT5 Trading Platform (for example, Wine, which is not a fully stable application, as disclosed by the MT5 Trading Platform Licensor on their website)."
-msgstr ""
+msgstr "您確認、理解、聲明並保證您了解MT5交易平台的功能限制（例如，Wine，如MT5交易平台許可方在其網站上披露的，不是完全穩定的應用程式）。"
 
 msgid "You act in breach of any warranty or representation made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
 msgstr "您的行事違反本協定項下作出的任何保證或陳述，和/或向我們提供任何與本協定有關資料屬於或成為不實或誤導;"
@@ -11236,7 +11275,7 @@ msgid "You are responsible for all third-party electronic transfer fees in respe
 msgstr "付款時所有第三方電子轉帳費用由您承擔。"
 
 msgid "You are responsible for keeping your log-in details secure, the security of any linked email address, and the security (password protection, screen locking, etc) of any personal computer or device on which your account is accessible. We shall not be held responsible if there is unauthorised use of the account when we are not at fault."
-msgstr ""
+msgstr "您有責任確保登入詳細資訊的安全性，任何連結電子郵件地址的安全性以及可存取您帳戶的任何個人電腦的安全性（包括密碼保護、螢幕鎖定等）。如果發生非我們的過錯導致的未經授權使用帳戶，我們將不承擔任何責任。"
 
 msgid "You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through %1, you may wish to seek independent advice."
 msgstr "您須對您的稅務和法律相關事項自行負責，包括按照法規填寫任何表格和款項支付，以及遵守法律和法規。我們不提供任何法規、稅務或法律方面的忠告。如您對%1所提供的投資產品或博彩產品的稅務處理或責任有任何疑問，請向獨立機構尋求意見。"
@@ -11254,7 +11293,7 @@ msgid "You are warned of the following additional risks:"
 msgstr "我們向您提出警告，請注意以下額外風險："
 
 msgid "You are willing and financially able to sustain a total loss of funds resulting from a Transaction, which may exceed your initial deposit unless you are a retail customer of Binary Investments (Europe) Ltd;"
-msgstr ""
+msgstr "除非您是Binary Investments（Europe）Ltd的零售客戶，否則您同意並且在財務上能夠承擔因交易而導致的全部資金虧損，損失金額可能超過您的初始存款。"
 
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "您承擔確保公司將按照指定客戶帳戶詳細資料正確接收支付款項的責任。"
@@ -11416,7 +11455,7 @@ msgid "You may develop Applications using the %1 API as soon as you register an 
 msgstr "一旦您註冊好應用程式並同意遵守這些條款即可使用%1 API開發應用程式。"
 
 msgid "You may make Margin Payments by transferring funds from your %1 account to your MT5 Real Account. In the event that there are insufficient funds in your %1 account to fund your MT5 Real Account, you may make Margin Payments by funding your %1 account and transferring the funds from your %1 account to your MT5 Real Account."
-msgstr ""
+msgstr "支付保證金時您可以將資金從%1帳戶轉入您的MT5真實帳戶。如果您的%1帳戶內資金不足， 您可以先把資金存入%1帳戶， 再將資金從%1帳戶轉入MT5真實帳戶作為保證金支付。"
 
 msgid "You may not assign rights granted in this Agreement without the Company's prior written approval."
 msgstr "未經公司事先書面批准，您不得轉讓本協議授予的權利。"
@@ -11446,7 +11485,7 @@ msgid "You may terminate this Agreement at any time, but only by giving the Comp
 msgstr "您可以隨時終止本協議，但須預先給公司最少7天書面通知。「書面通知」在這裡包括普通信件郵寄或發送電子郵件通知。"
 
 msgid "You may update your personal information at any time by logging in to the \"Settings\" section of your account. It is your responsibility to ensure that %1 is promptly and continually informed of any change in your personal information. You should note that if you provide us with inaccurate information, or if you fail to notify us of any changes to information previously supplied by you, this may adversely affect the quality of the services that we can provide."
-msgstr ""
+msgstr "您可以隨時登入帳戶的「設定」部份更新您的個人資料。您應確保始終及時向%1告知您個人資料的任何變化。您須注意，如果給我們提供的資訊有錯誤，或是資訊有更改時沒通知我們，可能會嚴重影響我們所提供的服務品質。"
 
 msgid "You may withdraw the bonus amount once you have exceeded an account turnover of 25 times the bonus amount value."
 msgstr "一旦您帳戶的交易額超過獎勵金額的25倍，您就可以從帳戶中取出獎金。"
@@ -11617,13 +11656,13 @@ msgid "Your Existing Accounts"
 msgstr "您的目前帳戶"
 
 msgid "Your MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in your %1 account."
-msgstr ""
+msgstr "您的 MT5 真實帳戶以及所有付款和提款的貨幣必須與您的%1帳戶貨幣相同。"
 
 msgid "Your MT5 Real Account password and login ID are unique and passwords are hashed so that not even %1 staff can read them. This is the reason why we cannot retrieve your password and have to issue you with a new one to your email address if you cannot recall it;"
 msgstr "您的MT5真實帳戶密碼和登入ID都是唯一的，而且密碼已經被雜湊處理，即使是%1職員也無法看到它們。因此，在您忘記密碼後我們不能讀取您的密碼，而是必須向您的電子郵箱傳送新的密碼。"
 
 msgid "Your MT5 Real Account shall be funded by transferring funds from your %1 account, subject to the availability and sufficiency of funds in your %1 account. No fund transfers shall be made to any other account in the name of any third party."
-msgstr ""
+msgstr "您需從%1帳戶把資金轉入MT5真實帳戶，條件是您的%1帳戶是有效的並具足夠資金。不可向任何第三方名下帳戶轉入資金。"
 
 msgid "Your Property"
 msgstr "您的財產"
@@ -11944,19 +11983,19 @@ msgid "iOS"
 msgstr "iOS"
 
 msgid "in abnormal market conditions or exceptional market movements/volatility;"
-msgstr ""
+msgstr "在異常的市場情況下或有異常市場變動/波動性;"
 
 msgid "in the case of Professional Clients;"
-msgstr ""
+msgstr "如是專業客戶;"
 
 msgid "in the case of a client breaching any of the terms of this Agreement which results in a negative balance."
-msgstr ""
+msgstr "如果客戶違反本協議的任何條款, 導致負餘額。"
 
 msgid "in the case of a client opening any Transaction in relation to Prohibited Trades;"
-msgstr ""
+msgstr "如果客戶進行任何被禁止的交易;"
 
 msgid "in the case of a force majeure event;"
-msgstr ""
+msgstr "不可抗力事件；"
 
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "包括免責聲明和/或通知, 說明任何知識產權, 包括任何商標或標語均屬於公司所有，並嚴格禁止任何未經授權的使用。"
@@ -12001,7 +12040,7 @@ msgid "net of any other money credited to your MT5 Real Account and debited from
 msgstr "借記到您MT5真實帳戶的任何其他資金和從您MT5真實帳戶扣除後的淨值."
 
 msgid "net of fund transfers between your %1 account and your MT5 Real Account;"
-msgstr ""
+msgstr "您的%1帳戶及MT5真實帳戶之間基金轉讓淨值;"
 
 msgid "net of realised profits credited to your MT5 Real Account and realised losses debited from your MT5 Real Account;"
 msgstr "借記到您MT5真實帳戶的實現利潤和從您MT5真實帳戶扣除的實現虧損淨值;"
@@ -12124,7 +12163,7 @@ msgid "upon our request, he provides the Company with any and all information re
 msgstr "根據我們的要求, 他須按照公司的合理要求提供任何和所有資訊, 以完全滿足任何政府或任何其他當局的任何和所有指示或請求或規定或要求。"
 
 msgid "use its best endeavors and diligence to transfer funds deposited to %1 Agent Account to %1 Client Account;"
-msgstr ""
+msgstr "盡全力和責任將存入%1 代理帳戶的資金轉入%1 客戶帳戶。"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms; or"
 msgstr "使用或轉載%1 API（除非這些條款允許）或"
@@ -12145,7 +12184,7 @@ msgid "where the Agent is an individual, he has reached the age of 18 years or o
 msgstr "代理為個人, 已滿18歲或以上, 並有充分的能力簽訂本協定。"
 
 msgid "where the negative balance is connected to or a result of functional limitations and/or malfunction of the MT5 Trading Platform; and"
-msgstr ""
+msgstr "負餘額與MT5交易平台的功能限制和/或故障相關的結果; 和"
 
 msgid "with insider knowledge of any financial market or instrument."
 msgstr "對任何金融市場或工具具有內幕知識。"

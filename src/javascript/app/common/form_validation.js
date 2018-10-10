@@ -21,11 +21,10 @@ const Validation = (() => {
     };
 
     const getFieldType = ($field) => {
-        let type = null;
-        if ($field.length) {
-            type = $field.attr('type') === 'checkbox' ? 'checkbox' : $field.get(0).localName;
-        }
-        return type;
+        if (!$field.length) return null;
+        if ($field.find('input[type=radio]').length) return 'radio';
+        if ($field.attr('type') === 'checkbox') return 'checkbox';
+        return $field.get(0).localName;
     };
 
     const isChecked = field => field.$.is(':checked') ? '1' : '';
@@ -34,8 +33,12 @@ const Validation = (() => {
         let value;
         if (typeof options.value === 'function') {
             value = options.value();
+        } else if (field.type === 'checkbox') {
+            value = isChecked(field);
+        } else if (field.type === 'radio') {
+            value = field.$.find(`input[name=${field.selector.slice(1)}]:checked`).val();
         } else {
-            value = field.type === 'checkbox' ? isChecked(field) : field.$.val();
+            value = field.$.val();
         }
         return value || '';
     };
@@ -108,7 +111,10 @@ const Validation = (() => {
         const el_all_select = document.querySelectorAll('select:not([multiple]):not([single])');
         el_all_select.forEach((el) => {
             if (el.id && el.length) {
-                Dropdown(`#${el.id}`);
+                Dropdown(
+                    `#${el.id}`,
+                    !!el.getElementsByTagName('optgroup').length // have to explicitly pass true to enable option groups
+                );
             }
         });
     };
