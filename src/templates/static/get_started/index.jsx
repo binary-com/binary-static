@@ -42,70 +42,11 @@ const CTA = () => (
     </div>
 );
 
-const VolatilityIndicesTable = () => {
-    const rtp_values = [
-        {
-            key             : 'r10',
-            label           : it.L('Volatility Indices 10'),
-            high_close_value: 86.85,
-            close_low_value : 87.91,
-            high_low_value  : 87.38,
-        },
-        {
-            key             : 'r_25',
-            label           : it.L('Volatility Indices 25'),
-            high_close_value: 88.24,
-            close_low_value : 86.92,
-            high_low_value  : 87.59,
-        },
-        {
-            key             : 'r50',
-            label           : it.L('Volatility Indices 50'),
-            high_close_value: 87.21,
-            close_low_value : 87.87,
-            high_low_value  : 87.54,
-        },
-        {
-            key             : 'r75',
-            label           : it.L('Volatility Indices 75'),
-            high_close_value: 87.88,
-            close_low_value : 87.27,
-            high_low_value  : 87.58,
-        },
-        {
-            key             : 'r100',
-            label           : it.L('Volatility Indices 100'),
-            high_close_value: 87.64,
-            close_low_value : 87.35,
-            high_low_value  : 87.49,
-        },
-    ];
-    return (
-        <div className='gr-padding-30'>
-            <p className='center-text'>{it.L('Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m duration is around 87% on average')}</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>{it.L('Volatility Indices')}</th>
-                        <th>{it.L('High - Close')}</th>
-                        <th>{it.L('Close - Low')}</th>
-                        <th>{it.L('High - Low')}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {rtp_values.map(item => (
-                        <tr key={item.key}>
-                            <td className='center-text'>{item.label}</td>
-                            <td className='center-text'>{Math.round(item.high_close_value)}</td>
-                            <td className='center-text'>{Math.round(item.close_low_value)}</td>
-                            <td className='center-text'>{Math.round(item.high_low_value)}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    );
-};
+const VolatilityIndicesTable = () => (
+    <div className='gr-padding-10'>
+        <p>{it.L('Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m duration is around 87% on average')}</p>
+    </div>
+);
 
 const Index = () => (
     <div className='static_full get-started'>
