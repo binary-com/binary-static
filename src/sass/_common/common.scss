@@ -154,12 +154,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 /* form styles */
 label {
     line-height: 25px;
-    pointer-events: none; // disable pointer event on label 
-
-    & * {
-        pointer-events: auto; // enable pointer event on label if there's any child
-        cursor: pointer;
-    }
 }
 
 /* used for form label in grid structure */
@@ -182,8 +176,9 @@ label {
         text-align: left;
         margin-bottom: 5px;
     }
-    input, select {
-        width: calc(100% - 6px);
+    input:not([type='radio']), select {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 

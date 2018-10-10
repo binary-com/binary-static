@@ -663,6 +663,12 @@ const texts = [
     'You have successfully disabled two-factor authentication for your account.',
     'Enable',
     'Disable',
+
+    // Download page
+    'Linux',
+    'Mac',
+    'Windows',
+    'Unknown OS',
 ];
 
 /* eslint-disable no-console */
