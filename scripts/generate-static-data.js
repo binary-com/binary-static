@@ -687,35 +687,31 @@ const texts = [
 ];
 
 /* eslint-disable no-console */
-const map           = {};
 const all_languages = [...common.languages, 'ach'].map(l => l.toLowerCase());
-
-const getAllTexts = () => {
-    extract.parse('app_2');
-
-    const unique_texts = new Set([
-        ...texts,
-        ...extract.getTexts(),
-        ...static_app_2,
-    ]);
-
-    return [...unique_texts];
+const map = {
+    app  : {},
+    app_2: {},
 };
 
 const build = () => {
+    generateSources();
     const all_texts = getAllTexts();
     const gettext   = GetText.getInstance();
 
     all_languages.forEach(lang => {
         gettext.setLang(lang);
-        map[lang] = {};
+        Object.keys(map).forEach(app => { map[app][lang] = {}; });
 
         all_texts.forEach(text => {
             const key         = text.replace(/[\s.]/g, '_');
             const translation = gettext.gettext(text, '[_1]', '[_2]', '[_3]', '[_4]');
 
             if (translation !== text) {
-                map[lang][key] = translation;
+                Object.keys(map).forEach(app => {
+                    if (map[app].source.has(text)) {
+                        map[app][lang][key] = translation;
+                    }
+                });
             }
         });
     });
@@ -731,12 +727,37 @@ const generate = () => {
         process.stdout.write(color.cyan('    -'));
         process.stdout.write(` ${lang}.js ${'.'.repeat(15 - lang.length)}`);
 
-        const js_path = path.join(common.root_path, `${target_path}${lang}.js`);
-        const content = `const texts_json = {};\ntexts_json['${lang.toUpperCase()}'] = ${JSON.stringify(map[lang])};`;
-        fs.writeFileSync(js_path, content, 'utf8');
+        Object.keys(map).forEach(app => {
+            const js_path = path.join(common.root_path, `${target_path}${app !== 'app' ? `${app}/` : ''}${lang}.js`);
+            const content = `const texts_json = {};\ntexts_json['${lang.toUpperCase()}'] = ${JSON.stringify(map[app][lang])};`;
+            fs.writeFileSync(js_path, content, 'utf8');
+        });
 
         process.stdout.write(common.messageEnd());
     });
+};
+
+// ---------- Helpers ----------
+const generateSources = () => {
+    // app
+    map.app.source = new Set(texts);
+
+    // app_2
+    const app_name = 'app_2';
+    extract.parse(app_name);
+    const extracted_strings_app_2 = [...extract.getTexts(app_name)];
+    map.app_2.source = new Set([
+        ...extracted_strings_app_2,
+        ...static_app_2,
+    ]);
+};
+
+const getAllTexts = () => {
+    const unique_texts = new Set([
+        ...map.app.source,
+        ...map.app_2.source,
+    ]);
+    return [...unique_texts];
 };
 
 exports.build    = build;
