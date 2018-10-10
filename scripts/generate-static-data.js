@@ -83,6 +83,7 @@ const texts = [
     'Tick [_1]',
     'Ticks history returned an empty array.',
     'Chart is not available for this underlying.',
+    'Start/End Time',
 
     // trading page
     'year',

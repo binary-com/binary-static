@@ -49,7 +49,6 @@ const FAQ = () => (
                     <p>{it.L('Anyone aged 18 years old and above who is not the resident of a “restricted country” (as listed in our <a href=\'[_1]\'>Terms & Conditions</a>) can become a [_2] client.', it.url_for('terms-and-conditions'), it.website_name)}</p>
                 </Section>
 
-
                 <Section id='account-management-and-tracking' header={it.L('Account management and tracking')}>
                     <h3>{it.L('How can I become an affiliate?')}</h3>
                     <p>{it.L('It’s easy. Just go to the signup page and complete the <a href=\'[_1]\'>affiliate registration form</a>. We’ll review your application and get back to you if your application is successful.', it.affiliate_signup_url)}</p>
@@ -78,7 +77,6 @@ const FAQ = () => (
                     <p>{it.L('We prohibit the use of unauthorised incentives, gifts, and payments to encourage customer signups. If we have reason to believe that you have engaged in such activity, we reserve the right to withhold any payments due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval.')}</p>
                 </Section>
 
-
                 <Section id='marketing-and-promotions' header={it.L('Marketing and promotions')}>
                     <h3>{it.L('What advertising materials and marketing tools do you offer?')}</h3>
                     <p>{it.L('We have a tested and proven selection of advertising materials including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at [_1]. You can also use the Myaffiliates system to track and optimise your campaigns.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
@@ -98,7 +96,6 @@ const FAQ = () => (
                         <li>{it.L('Specific message the banner should include')}</li>
                     </ul>
                 </Section>
-
 
                 <Section id='support' header={it.L('Support')}>
                     <h3>{it.L('Where can I send my questions, comments, and suggestions?')}</h3>
