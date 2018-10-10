@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-10 06:52\n"
+"PO-Revision-Date: 2018-10-10 07:59\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -706,6 +706,12 @@ msgstr "Accès à la liquidité multi actifs des institutions de haut niveau."
 msgid "Access our products and services from a single app"
 msgstr "Accédez à nos produits et services à partir d’une seule application"
 
+msgid "Access the markets anytime, anywhere from your Android device."
+msgstr ""
+
+msgid "Access the markets anytime, anywhere from your iOS device."
+msgstr ""
+
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "Accéder au marchés n'importe quand et n'importe où utilisant des applications natives pour vos appareils IOS ou Android."
 
@@ -1027,17 +1033,11 @@ msgstr "Toutes les transactions qui se produisent sur le blockchain associé à 
 msgid "All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company’s responsibility hence the Company is not liable for such actions or results."
 msgstr "Toutes ouvertures ou fermetures imprévues de positions initiées par Expert Advisor, si elles se révèlent être dues à une erreur système ou non, sont en dehors de la responsabilité de la société ce qui signifie que l’entreprise n’est pas responsable de telles actions ou résultats."
 
-msgid "All versions of Android"
-msgstr "Toutes les versions d’Android"
+msgid "All versions for Android"
+msgstr ""
 
-msgid "All versions of Linux"
-msgstr "Toutes les versions de Linux"
-
-msgid "All versions of MacOS"
-msgstr "Toutes les versions de MacOS"
-
-msgid "All versions of iOS"
-msgstr "Toutes les versions d’iOS"
+msgid "All versions for iOS"
+msgstr ""
 
 msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr "Tous vos dépôts et retraits sont traités par %1 dans les 24 heures. Cependant, cela peut prendre plus de temps de traitement si requis par votre banque ou le service de transfert d'argent."
@@ -1738,6 +1738,9 @@ msgstr "Fréquence de Trading d’Options Binaires"
 msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "Le Trading d'Options Binaires a été désactivé sur votre compte. Veuillez %1contacter le support client%2 pour vous assister."
 
+msgid "Binary Options for MT5"
+msgstr ""
+
 msgid "Binary Options on MT5"
 msgstr "Options Binaires sur MT5"
 
@@ -1836,9 +1839,6 @@ msgstr "Marque de votre première voiture"
 
 msgid "Browser"
 msgstr "Navigateur"
-
-msgid "Browser platforms"
-msgstr "Plateformes de navigateur"
 
 msgid "But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade."
 msgstr "Mais si vous êtes nouveau sur le Forex ou le trading financier de toute sorte, il y a encore un long chemin à parcourir avant même d’acheter votre premier contrat. C’est pourquoi nous avons créé un tutoriel de base, étape par étape pour vous aider à combler ce fossé et faire votre premier trade."
@@ -3094,20 +3094,20 @@ msgstr "Télécharger"
 msgid "Download CSV"
 msgstr "Télécharger le fichier CSV"
 
-msgid "Download Expert Advisor"
-msgstr "Télécharger Expert-Conseil"
-
 msgid "Download MAM"
 msgstr "Télécharger MAM"
 
+msgid "Download MT5 for Linux"
+msgstr ""
+
+msgid "Download MT5 for Mac"
+msgstr ""
+
+msgid "Download MT5 for Windows"
+msgstr ""
+
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Télécharger MT5 pour votre ordinateur de bureau ou portable afin d'accéder à des outils puissants et des fonctions dont profitent des millions de traders."
-
-msgid "Download for Mac"
-msgstr "Télécharger pour Mac"
-
-msgid "Download for Windows"
-msgstr "Télécharger pour Windows"
 
 msgid "Download our desktop app now:"
 msgstr "Téléchargez notre application de bureau maintenant :"
@@ -3850,15 +3850,6 @@ msgstr "Pour Binary (IOM) Ltd, la juridiction applicable est l'Ile de Man."
 msgid "For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta."
 msgstr "Pour Binary Investments (Europe) Ltd et Binary (Europe) Ltd, la juridiction applicable est Malte."
 
-msgid "For Browser"
-msgstr "Pour navigateur"
-
-msgid "For Desktop"
-msgstr "Pour ordinateur de bureau"
-
-msgid "For Mobile"
-msgstr "Pour téléphone portable"
-
 msgid "For affiliate, partnership, and other marketing-related queries:"
 msgstr "Pour le programme d'affiliation, partenariat et autres requêtes axés sur le marketing :"
 
@@ -4128,6 +4119,9 @@ msgstr "Go long and short"
 
 msgid "Go short = sell"
 msgstr "Go short= vendre"
+
+msgid "Go to MT5 download page"
+msgstr ""
 
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "Aller au tableau de bord de MetaTrader 5"
@@ -4981,9 +4975,6 @@ msgstr "Héritage"
 msgid "Instant access"
 msgstr "Accès instantané"
 
-msgid "Instructions for Linux"
-msgstr "Instructions pour Linux"
-
 msgid "Insufficient balance."
 msgstr "Solde insuffisant."
 
@@ -5521,6 +5512,12 @@ msgstr "Lookbacks"
 msgid "Lookbacks options are currently only available for %1Volatility Indices%2."
 msgstr "Les options loockbacks sont actuellement seulement disponibles pour %1les Indices de volatilité%2."
 
+msgid "Looking for %1 app?"
+msgstr ""
+
+msgid "Looking for %1 or %2 Desktop apps?"
+msgstr ""
+
 msgid "Loss"
 msgstr "Pertes"
 
@@ -5620,20 +5617,38 @@ msgstr "Compte Réel MT5"
 msgid "MT5 Volatility Indices"
 msgstr "Indices de volatilité MT5"
 
+msgid "MT5 for Android"
+msgstr ""
+
+msgid "MT5 for Linux"
+msgstr ""
+
+msgid "MT5 for Mac"
+msgstr ""
+
+msgid "MT5 for Mobile"
+msgstr ""
+
+msgid "MT5 for Windows"
+msgstr ""
+
+msgid "MT5 for iOS"
+msgstr ""
+
+msgid "MT5 for web platform"
+msgstr ""
+
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr "Le compte d’argent réel MT5 pour le Forex et les CFD."
 
 msgid "MT5 real-money account for Volatility Indices only."
 msgstr "Le compte de monnaie réel MT5 pour les Indices de Volatilité seulement."
 
-msgid "MT5 trading platform links:"
-msgstr "Liens pour la plateforme de trading MT5 :"
-
 msgid "MT5 withdrawals have been disabled on your account. Please check your email for more details."
 msgstr "Les retraits MT5 ont été désactivés sur votre compte. Veuillez vérifier votre email pour plus de détails."
 
-msgid "MacOS"
-msgstr "MacOS"
+msgid "Mac"
+msgstr ""
 
 msgid "Made an impression in the first interview? We'll invite you to a second interview with our CEO and/or hiring manager."
 msgstr "Vous avez fait une bonne impression durant votre premier entretien ? Nous vous inviterons à une deuxième entrevue avec notre CEO et/ou le directeur des recrutement."
@@ -8209,6 +8224,9 @@ msgstr "Heure de début"
 msgid "Start trading"
 msgstr "Commencez à trader"
 
+msgid "Start trading MT5 on web platform"
+msgstr ""
+
 msgid "Start/End Time"
 msgstr ""
 
@@ -9439,6 +9457,9 @@ msgstr "Ce compte est désactivé"
 msgid "This account is excluded until %1"
 msgstr "Ce compte est exclu jusqu'à %1"
 
+msgid "This application only supports Windows operating systems."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "Ce bonus est uniquement valable pour les nouveaux clients. Les clients actuels ou les anciens clients ne peuvent pas en bénéficier. Les nouveaux clients n'ont droit à ce type de bonus seulement une fois. Ce bonus n'est valable qu'une seule fois pour chaque ménage."
 
@@ -9802,9 +9823,6 @@ msgstr "Tradez maintenant"
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "Tradez sur les marchés sous-jacents qui incluent le Forex, les indices, les matières premières et plus."
 
-msgid "Trade on web platform"
-msgstr "Tradez sur la plateforme web"
-
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "N'engagez que les fonds que vous pouvez vous permettre de perdre. N'utilisez jamais de fonds empruntés."
 
@@ -10146,6 +10164,9 @@ msgstr "Un diplôme universitaire en marketing, en communication, en journalisme
 
 msgid "University degree, preferably in Graphic Design or a related discipline"
 msgstr "Diplôme universitaire, de préférence en conception graphique ou dans une discipline pertinente"
+
+msgid "Unknown OS"
+msgstr ""
 
 msgid "Unless otherwise advised, we shall treat you as a Retail Client. You may also request by writing to us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. Professional Clients do not fall within the scope of the Investor Compensation Scheme. We reserve the right to accept or refuse any such request for change in classification."
 msgstr "Sauf conseillé autrement, nous vous traitons comme un Client de Détail. Vous pouvez aussi nous demander, par écrit, que nous changions la catégorie dans laquelle vous avez été classifié et ceci peut avoir un effet sur le niveau de protection que vous recevez. Les Clients Professionnels n'entrent pas dans le champ d'application du Régime d'Indemnisation de l'Investisseur. Nous nous réservons le droit d'accepter ou de refuser ce type de demande de changement de classification."
@@ -10618,11 +10639,11 @@ msgstr "Nous nous réservons le droit d'annuler ou d'amender les conditions cont
 msgid "We segregate your funds and keep them in secure and licensed financial institutions."
 msgstr "Nous séparons nos fonds et les gardons dans des institutions financières sécurisées et autorisées."
 
-msgid "We support and prefer to use the above browser platforms"
-msgstr "Nous supportons et préfèrons utiliser les plates-formes des navigateurs ci-dessus"
-
 msgid "We support hundreds of deposit and withdrawal options, including Bitcoin."
 msgstr "Nous supportons des centaines d’options de dépôt et de retrait, y compris Bitcoin."
+
+msgid "We support the following web browsers:"
+msgstr ""
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
 msgstr "Nous utilisons des services de vérification d'identité et des mesures de détection de fraude en temps réel pour mieux vous protéger contre les accès non autorisés à votre compte. Nous surveillons également l'activité du compte afin de déceler les signes d'une activité inhabituelle pouvant indiquer une fraude, et nous collaborons avec des services de renseignement et des organismes chargés de l'application de la loi pour traiter les problèmes de fraude."
@@ -11010,9 +11031,6 @@ msgstr "Gagnez jusqu'au gain maximum si le spot de sortie est entre la barrière
 
 msgid "Windows"
 msgstr "Windows"
-
-msgid "Windows 7 or later"
-msgstr "Windows 7 ou version ultérieure"
 
 msgid "Winning the contract"
 msgstr "Remporter le contrat"

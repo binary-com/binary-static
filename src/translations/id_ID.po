@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-10 06:55\n"
+"PO-Revision-Date: 2018-10-10 08:02\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -705,6 +705,12 @@ msgstr "Akses berbagai aset likuiditas dari institusi teratas."
 msgid "Access our products and services from a single app"
 msgstr "Akses produk dan layanan kami dari satu aplikasi"
 
+msgid "Access the markets anytime, anywhere from your Android device."
+msgstr ""
+
+msgid "Access the markets anytime, anywhere from your iOS device."
+msgstr ""
+
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "Akses pasar kapan saja, dimana saja menggunakan aplikasi iOS atau peralatan Android."
 
@@ -721,7 +727,7 @@ msgid "Access to your personal data is strictly prohibited with the exception of
 msgstr "Akses kedalam data pribadi Anda adalah terlarang kecuali pada petugas utama %1 yang memerlukan data tersebut dalam menjalankan tugas mereka."
 
 msgid "Access your account with full trading permission."
-msgstr ""
+msgstr "Akses akun Anda dengan pengaksesan trading penuh."
 
 msgid "Access your trading history through our Expert Advisors (EA)"
 msgstr "Mengakses riwayat trading Anda melalui Expert Advisor (EA) kami"
@@ -1026,17 +1032,11 @@ msgstr "Seluruh transaksi pada blockchain yang terkait dengan mata uang kripto m
 msgid "All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company’s responsibility hence the Company is not liable for such actions or results."
 msgstr "Semua pembukaan atau penutupan posisi yang tidak terduga yang diprakarsai oleh Expert Advisor, apakah relevan dengan kesalahan sistem atau sebaliknya, berada di luar lingkup tanggung jawab Perusahaan sehingga Perusahaan tidak bertanggung jawab atas tindakan atau hasil tersebut."
 
-msgid "All versions of Android"
-msgstr "Semua versi Android"
+msgid "All versions for Android"
+msgstr ""
 
-msgid "All versions of Linux"
-msgstr "Semua versi Linux"
-
-msgid "All versions of MacOS"
-msgstr "Semua versi MacOS"
-
-msgid "All versions of iOS"
-msgstr "Semua versi iOS"
+msgid "All versions for iOS"
+msgstr ""
 
 msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr "Semua deposit dan penarikan akan diproses oleh %1 dalam tempo 24 jam. Namun, mungkin akan terdapat proses lebih lanjut yang diperlukan oleh bank Anda atau layanan transfer dana."
@@ -1737,6 +1737,9 @@ msgstr "Trading Opsi Binary Frekuensi"
 msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "Trading Opsi Binary telah dibatalkan pada akun Anda. Silahkan %1hubungi customer support%2 untuk bantuan."
 
+msgid "Binary Options for MT5"
+msgstr ""
+
 msgid "Binary Options on MT5"
 msgstr "Opsi Binary pada MT5"
 
@@ -1835,9 +1838,6 @@ msgstr "Merek mobil pertama"
 
 msgid "Browser"
 msgstr "Browser"
-
-msgid "Browser platforms"
-msgstr "Platform browser"
 
 msgid "But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade."
 msgstr "Tapi jika Anda baru mengenal Forex atau trading finansial dalam bentuk apapun, masih ada jalan yang panjang sebelum Anda sebelum membeli kontrak pertama Anda. Inilah sebabnya mengapa kami membuat tutorial langkah-demi-langkah dasar untuk membantu Anda melakukan trading pertama Anda."
@@ -3093,20 +3093,20 @@ msgstr "Download"
 msgid "Download CSV"
 msgstr "Download CSV"
 
-msgid "Download Expert Advisor"
-msgstr "Unduh Expert Advisor"
-
 msgid "Download MAM"
 msgstr "Download MAM"
 
+msgid "Download MT5 for Linux"
+msgstr ""
+
+msgid "Download MT5 for Mac"
+msgstr ""
+
+msgid "Download MT5 for Windows"
+msgstr ""
+
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Download MT5 pada desktop atau laptop Anda untuk mengakses peralatan canggih dan fasilitas yang dinikmati oleh jutaan trader."
-
-msgid "Download for Mac"
-msgstr "Download untuk Mac"
-
-msgid "Download for Windows"
-msgstr "Download untuk Windows"
 
 msgid "Download our desktop app now:"
 msgstr "Unduh aplikasi desktop kami sekarang:"
@@ -3849,15 +3849,6 @@ msgstr "Untuk Binary (IOM) Ltd, yuridiksi yang berlaku adalah Isle of Man."
 msgid "For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta."
 msgstr "Untuk Binary Investments (Europe) Ltd dan Binary (Europe) Ltd, Yurisdiksi yang berlaku adalah Malta."
 
-msgid "For Browser"
-msgstr "Untuk Browser"
-
-msgid "For Desktop"
-msgstr "Untuk Desktop"
-
-msgid "For Mobile"
-msgstr "Untuk Mobile"
-
 msgid "For affiliate, partnership, and other marketing-related queries:"
 msgstr "Untuk afiliasi, kemitraan, dan pertanyaan terkait pemasaran lainnya:"
 
@@ -4127,6 +4118,9 @@ msgstr "Go long dan short"
 
 msgid "Go short = sell"
 msgstr "Go short = jual"
+
+msgid "Go to MT5 download page"
+msgstr ""
 
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "Kunjungi Dashboard MetaTrader 5"
@@ -4980,9 +4974,6 @@ msgstr "Warisan"
 msgid "Instant access"
 msgstr "Akses cepat"
 
-msgid "Instructions for Linux"
-msgstr "Instruksi untuk Linux"
-
 msgid "Insufficient balance."
 msgstr "Saldo tidak mencukupi."
 
@@ -5520,6 +5511,12 @@ msgstr "Lookback"
 msgid "Lookbacks options are currently only available for %1Volatility Indices%2."
 msgstr "Opsi Lookbacks hanya tersedia pada %1Indeks Volatilitas%2."
 
+msgid "Looking for %1 app?"
+msgstr ""
+
+msgid "Looking for %1 or %2 Desktop apps?"
+msgstr ""
+
 msgid "Loss"
 msgstr "Rugi"
 
@@ -5619,20 +5616,38 @@ msgstr "Akun Riil MT5"
 msgid "MT5 Volatility Indices"
 msgstr "Indeks Volatilitas MT5"
 
+msgid "MT5 for Android"
+msgstr ""
+
+msgid "MT5 for Linux"
+msgstr ""
+
+msgid "MT5 for Mac"
+msgstr ""
+
+msgid "MT5 for Mobile"
+msgstr ""
+
+msgid "MT5 for Windows"
+msgstr ""
+
+msgid "MT5 for iOS"
+msgstr ""
+
+msgid "MT5 for web platform"
+msgstr ""
+
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr "MT5 akun uang-riil untuk Forex dan CFD."
 
 msgid "MT5 real-money account for Volatility Indices only."
 msgstr "Akun uang-riil MT5 untuk Indeks Volatilitas saja."
 
-msgid "MT5 trading platform links:"
-msgstr "Berbagai link platform trading MT5:"
-
 msgid "MT5 withdrawals have been disabled on your account. Please check your email for more details."
 msgstr "Penarikan MT5 tidak tersedia pada akun Anda. Silahkan cek email untuk informasi lebih lanjut."
 
-msgid "MacOS"
-msgstr "MacOS"
+msgid "Mac"
+msgstr ""
 
 msgid "Made an impression in the first interview? We'll invite you to a second interview with our CEO and/or hiring manager."
 msgstr "Berhasil dalam wawancara pertama? Kami akan mengundang Anda untuk melakukan wawancara kedua dengan CEO dan/atau manajer perekrutan kami."
@@ -7990,7 +8005,7 @@ msgid "Severability"
 msgstr "Keterpisahan"
 
 msgid "Share access to your account without any permission to trade."
-msgstr ""
+msgstr "Berbagi akses akun Anda tanpa memberi pengaksesan trading."
 
 msgid "Sharp prices"
 msgstr "Harga akurat"
@@ -8207,6 +8222,9 @@ msgstr "Waktu mulai"
 
 msgid "Start trading"
 msgstr "Mulai trading"
+
+msgid "Start trading MT5 on web platform"
+msgstr ""
 
 msgid "Start/End Time"
 msgstr "Waktu Mulai/Akhir"
@@ -9439,6 +9457,9 @@ msgstr "Akun ini dinonaktifkan"
 msgid "This account is excluded until %1"
 msgstr "Akun ini di kecualikan hingga %1"
 
+msgid "This application only supports Windows operating systems."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "Bonus hanya berlaku untuk Pelanggan baru. Pelanggan lama tidak memenuhi syarat. Pelanggan baru hanya dapat memperoleh bonus sekali saja. Bonus ini tersedia sekali saja per alamat rumah."
 
@@ -9802,9 +9823,6 @@ msgstr "Trading sekarang"
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "Bertrading pada pasar dasar yang meliputi Forex, indeks, komoditas, dan banyak lagi."
 
-msgid "Trade on web platform"
-msgstr "Trading pada platform web"
-
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Bertradinglah menggunakan dana yang anda mampu. Jangan bertrading menggunakan dana pinjaman."
 
@@ -10146,6 +10164,9 @@ msgstr "Sarjana Pemasaran, Jurnalistik, Komunikasi atau disiplin bisnis terkait 
 
 msgid "University degree, preferably in Graphic Design or a related discipline"
 msgstr "Sarjana, diutamakan Desain Grafis atau disiplin yang terkait"
+
+msgid "Unknown OS"
+msgstr ""
 
 msgid "Unless otherwise advised, we shall treat you as a Retail Client. You may also request by writing to us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. Professional Clients do not fall within the scope of the Investor Compensation Scheme. We reserve the right to accept or refuse any such request for change in classification."
 msgstr "Kecuali disarankan, kami memperlakukan Anda sebagai Klien Ritel. Anda juga dapat meminta dengan menulis kepada kami untuk mengubah kategori di mana Anda telah diklasifikasikan dan ini mungkin memiliki efek pada tingkat perlindungan yang diberikan kepada Anda. Investor Profesional tidak tercakup dalam Skema Kompensasi Investor. Kami berhak untuk menerima atau menolak permintaan tersebut untuk perubahan klasifikasi."
@@ -10618,11 +10639,11 @@ msgstr "Kami berhak untuk membatalkan atau mengubah persyaratan kontrak dari set
 msgid "We segregate your funds and keep them in secure and licensed financial institutions."
 msgstr "Kami memisahkan dana Anda dan menyimpannya pada lembaga-lembaga keuangan yang aman dan berlisensi."
 
-msgid "We support and prefer to use the above browser platforms"
-msgstr "Kami mendukung dan lebih memilih untuk menggunakan platform browser di atas"
-
 msgid "We support hundreds of deposit and withdrawal options, including Bitcoin."
 msgstr "Kami mendukung ratusan pilihan deposit dan pencairan, termasuk Bitcoin."
+
+msgid "We support the following web browsers:"
+msgstr ""
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
 msgstr "Kami menggunakan pembuktian identitas dan mendeteksi tindakan penyalahgunaan secara langsung untuk membantu kami menjaga keamanan akun Anda dari akses yang tidak dibenarkan. Kami juga selalu memantau aktifitas penyalahgunaan dan bekerjasama dengan pihak berwajib untuk mengatasi masalah penipuan."
@@ -11011,9 +11032,6 @@ msgstr "Dapatkan hasil maksimum jika spot akhir berada diantara batasan bawah da
 
 msgid "Windows"
 msgstr "Windows"
-
-msgid "Windows 7 or later"
-msgstr "Windows 7 atau setelahnya"
 
 msgid "Winning the contract"
 msgstr "Raih keuntungan kontrak"
