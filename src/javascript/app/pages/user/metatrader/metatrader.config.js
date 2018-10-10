@@ -320,7 +320,7 @@ const MetaTraderConfig = (() => {
                 ),
         },
         password_change: {
-            ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type' },
+            ddl_password_type  : { id: '#ddl_password_type', request_field: 'password_type', is_radio: true },
             txt_old_password   : { id: '#txt_old_password',  request_field: 'old_password' },
             txt_new_password   : { id: '#txt_new_password',  request_field: 'new_password' },
             txt_re_new_password: { id: '#txt_re_new_password' },
@@ -330,7 +330,7 @@ const MetaTraderConfig = (() => {
                 }),
         },
         password_reset: {
-            ddl_password_type  : { id: '#ddl_reset_password_type', request_field: 'password_type' },
+            ddl_password_type  : { id: '#ddl_reset_password_type', request_field: 'password_type', is_radio: true },
             txt_new_password   : { id: '#txt_reset_new_password',  request_field: 'new_password' },
             txt_re_new_password: { id: '#txt_reset_re_new_password' },
             additional_fields  :
@@ -378,29 +378,29 @@ const MetaTraderConfig = (() => {
 
     const validations = () => ({
         new_account: [
-            { selector: fields.new_account.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: fields.new_account.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
-            { selector: fields.new_account.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account.txt_main_pass.id }]] },
-            { selector: fields.new_account.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+            { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
+            { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
+            { selector: fields.new_account.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
         ],
         new_account_mam: [
-            { selector: fields.new_account_mam.txt_name.id,          validations: ['req', 'letter_symbol', ['length', { min: 2, max: 30 }]] },
-            { selector: fields.new_account_mam.txt_manager_id.id,    validations: ['req', ['length', { min: 0, max: 15 }]] },
-            { selector: fields.new_account_mam.txt_main_pass.id,     validations: ['req', ['password', 'mt']] },
-            { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: ['req', ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
-            { selector: fields.new_account_mam.txt_investor_pass.id, validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
-            { selector: fields.new_account_mam.chk_tnc.id,           validations: ['req'] },
+            { selector: fields.new_account_mam.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 30 }]] },
+            { selector: fields.new_account_mam.txt_manager_id.id,    validations: [['req', { hide_asterisk: true }], ['length', { min: 0, max: 15 }]] },
+            { selector: fields.new_account_mam.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
+            { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
+            { selector: fields.new_account_mam.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+            { selector: fields.new_account_mam.chk_tnc.id,           validations: [['req', { hide_asterisk: true }]] },
         ],
         password_change: [
-            { selector: fields.password_change.ddl_password_type.id,   validations: ['req'] },
-            { selector: fields.password_change.txt_old_password.id,    validations: ['req'] },
-            { selector: fields.password_change.txt_new_password.id,    validations: ['req', ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
-            { selector: fields.password_change.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_change.txt_new_password.id }]] },
+            { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
+            { selector: fields.password_change.txt_old_password.id,    validations: [['req', { hide_asterisk: true }]] },
+            { selector: fields.password_change.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
+            { selector: fields.password_change.txt_re_new_password.id, validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.password_change.txt_new_password.id }]] },
         ],
         password_reset: [
-            { selector: fields.password_reset.ddl_password_type.id,   validations: ['req'] },
-            { selector: fields.password_reset.txt_new_password.id,    validations: ['req', ['password', 'mt']], re_check_field: fields.password_reset.txt_re_new_password.id },
-            { selector: fields.password_reset.txt_re_new_password.id, validations: ['req', ['compare', { to: fields.password_reset.txt_new_password.id }]] },
+            { selector: fields.password_reset.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
+            { selector: fields.password_reset.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], ['password', 'mt']], re_check_field: fields.password_reset.txt_re_new_password.id },
+            { selector: fields.password_reset.txt_re_new_password.id, validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.password_reset.txt_new_password.id }]] },
         ],
         verify_password_reset_token: [
             { selector: fields.verify_password_reset_token.txt_verification_code.id, validations: [['req', { hide_asterisk: true }], 'token'], exclude_request: 1 },
