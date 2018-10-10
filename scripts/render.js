@@ -170,7 +170,7 @@ const createContextBuilder = async () => {
 
     const extra = is_app_2 => ({
         js_files: [
-            `${config.root_url}js/texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
+            `${config.root_url}js/${is_app_2 ? 'app_2/' : ''}texts/{PLACEHOLDER_FOR_LANG}.js?${static_hash}`,
             ...(is_app_2 ? app_2_js_files : app_js_files),
         ],
         css_files: is_app_2 ? [
