@@ -13,6 +13,7 @@ const Endpoint                = require('../pages/endpoint');
 const MBTradePage             = require('../pages/mb_trade/mb_tradepage');
 const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
+const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
 const TradingTimesUI          = require('../pages/resources/trading_times/trading_times.ui');
 const NewAccount              = require('../pages/new_account');
 const TradePage               = require('../pages/trade/tradepage');
@@ -121,6 +122,7 @@ const pages_config = {
     'cfds'                   : { module: GetStarted.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
+    'download'               : { module: MetatraderDownloadUI },
     'faq'                    : { module: StaticPages.AffiliatesFAQ },
     'forex'                  : { module: GetStarted.Forex },
     'get-started'            : { module: TabSelector },

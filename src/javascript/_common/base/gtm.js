@@ -12,35 +12,20 @@ const getAppId       = require('../../config').getAppId;
 const GTM = (() => {
     const isGtmApplicable = () => (/^(1|1098|14473)$/.test(getAppId()));
 
-    const gtmDataLayerInfo = (data) => {
-        const data_layer_info = {
-            language : getLanguage(),
-            pageTitle: pageTitle(),
-            pjax     : State.get('is_loaded_by_pjax'),
-            url      : document.URL,
-            event    : 'page_load',
-        };
-        if (ClientBase.isLoggedIn()) {
-            data_layer_info.visitorId = ClientBase.get('loginid');
-        }
-
-        Object.assign(data_layer_info, data);
-
-        const event = data_layer_info.event;
-        delete data_layer_info.event;
-
-        return {
-            event,
-            data: data_layer_info,
-        };
-    };
+    const getCommonVariables = () => ({
+        language : getLanguage(),
+        pageTitle: pageTitle(),
+        pjax     : State.get('is_loaded_by_pjax'),
+        url      : document.URL,
+        ...ClientBase.isLoggedIn() && { visitorId: ClientBase.get('loginid') },
+    });
 
     const pushDataLayer = (data) => {
         if (isGtmApplicable() && !Login.isLoginPages()) {
-            const info   = gtmDataLayerInfo(data && typeof data === 'object' ? data : null);
-            dataLayer[0] = info.data;
-            dataLayer.push(info.data);
-            dataLayer.push({ event: info.event });
+            dataLayer.push({
+                ...getCommonVariables(),
+                ...data,
+            });
         }
     };
 
@@ -106,7 +91,6 @@ const GTM = (() => {
         const req  = response.echo_req.passthrough;
         const data = {
             event             : 'buy_contract',
-            visitorId         : ClientBase.get('loginid'),
             bom_symbol        : req.symbol,
             bom_market        : getElementById('contract_markets').value,
             bom_currency      : req.currency,

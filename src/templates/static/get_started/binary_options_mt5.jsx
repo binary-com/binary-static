@@ -72,6 +72,7 @@ const BinaryOptionsForMT5 = () => (
                                 <img className='responsive' src={it.url_for('images/pages/metatrader/dashboard/ea.svg')} />
                             </div>
                             <h3>{it.L('[_1] Expert Advisor (EA)', it.website_name)}</h3>
+                            <p><strong>{it.L('Note:')}</strong>&nbsp;{it.L('This application only supports Windows operating systems.')}</p>
                             <a className='button' href='https://s3.amazonaws.com/binary-mt5/Binary.ex5' download>
                                 <span>{it.L('Download')}</span>
                             </a>
