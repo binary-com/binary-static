@@ -89,8 +89,8 @@ const isMoreThanMax = (value, options) =>
     (options.type === 'float' ? +value > +options.max : compareBigUnsignedInt(value, options.max) === 1);
 
 const initPreBuildDVRs = () => ({
-    address      : { func: validAddress,      message: localize('Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /') },
-    barrier      : { func: validBarrier,      message: localize('Only numbers and these special characters are allowed: + - .') },
+    address      : { func: validAddress,      message: localize('Only letters, numbers, space, and these special characters are allowed: [_1]', ['- . \' # ; : ( ) , @ /']) },
+    barrier      : { func: validBarrier,      message: localize('Only numbers and these special characters are allowed: [_1]', ['+ - .']) },
     compare      : { func: validCompare,      message: localize('The two passwords that you entered do not match.') },
     email        : { func: validEmail,        message: localize('Invalid email address.') },
     general      : { func: validGeneral,      message: localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.') },
