@@ -378,7 +378,7 @@ const Price = (() => {
                             response.echo_req.passthrough.form_id === form_id) {
                             Price.display(response, Contract.contractType()[Contract.form()]);
                         }
-                        if (first_price_proposal) {
+                        if ((!response.error || response.error.code !== 'AlreadySubscribed') && first_price_proposal) {
                             commonTrading.hideOverlayContainer();
                             commonTrading.hidePriceOverlay();
                             setPriceContainersVisibility(position_is_visible);
