@@ -469,6 +469,7 @@ const texts = [
     // authorised_apps
     'You have not granted access to any applications.',
     'Permissions',
+    'Last Login',
     'Never',
     'Revoke access',
     'Are you sure that you want to permanently revoke access to the application',
