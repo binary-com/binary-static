@@ -1,9 +1,11 @@
 import React from 'react';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
-const Heading = ({ system }) => (
-    <h1 className='invisible download-heading gr-centered' id={`${system}-heading`}>
-        {it.L(`MT5 for ${system.replace(/^\w/, c => c.toUpperCase())}`)}
+const Heading = ({ system, children }) => (
+    <h1
+        className='invisible download-heading gr-centered'
+        id={`${system}-heading`}
+    > {children || it.L(`MT5 for ${system.replace(/^\w/, c => c.toUpperCase())}`)}
     </h1>
 );
 const AlternativeDescription = ({ system, alt1, alt2 }) => (

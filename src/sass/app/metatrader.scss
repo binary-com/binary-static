@@ -353,3 +353,17 @@
         display: flex;
     }
 }
+
+.mt-sidebar-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100px;
+    justify-content: space-around;
+
+    .small-icon {
+        img {
+            width: 76px;
+        }
+    }
+}
