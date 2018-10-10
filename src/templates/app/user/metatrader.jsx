@@ -444,10 +444,18 @@ const Metatrader = () => (
                                         </div>
                                     </form>
                                     <form className='invisible' id='frm_password_reset'>
-                                        <FormRow is_two_rows type='select' id='ddl_reset_password_type' label={it.L('Password type')}>
-                                            <option value='main'>{it.L('Main')}</option>
-                                            <option value='investor'>{it.L('Investor')}</option>
-                                        </FormRow>
+                                        <FormRow
+                                            is_two_rows
+                                            type='radio'
+                                            id='ddl_reset_password_type'
+                                            className='password-type'
+                                            label={it.L('Password type')}
+                                            options={[
+                                                { value: 'main',     label: it.L('Main'),     data_balloon_text: it.L('Access your account with full trading permission.') },
+                                                { value: 'investor', label: it.L('Investor'), data_balloon_text: it.L('Share access to your account without any permission to trade.') },
+                                            ]}
+                                            default_option='main'
+                                        />
                                         <FormRow is_two_rows type='password' id='txt_reset_new_password'    label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_reset_re_new_password' label={it.L('Verify new MT5 password')} />
                                         <SubmitButton
