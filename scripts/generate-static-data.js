@@ -750,6 +750,7 @@ const generateSources = () => {
         ...extracted_strings_app_2,
         ...static_app_2,
     ]);
+    writeExtractedStrings(app_name, extracted_strings_app_2);
 };
 
 const getAllTexts = () => {
@@ -758,6 +759,19 @@ const getAllTexts = () => {
         ...map.app_2.source,
     ]);
     return [...unique_texts];
+};
+
+const writeExtractedStrings = (app_name, extracted_strings) => {
+    const file_path = path.resolve(common.root_path, `scripts/js_texts/extracted_strings_${app_name}.js`);
+    const comments  = '// This is an auto-generated list of strings used in js code for debugging purpose only\n';
+    const contents  = `${comments}module.exports = ${singleQuoteArray(extracted_strings)}`;
+    fs.writeFileSync(file_path, contents, 'utf8');
+};
+
+// JSON.stringify uses double quotes, so in order to have the same style used in the code we wrap array items in single quote
+const singleQuoteArray = (texts_array) => {
+    const spaces = ' '.repeat(4);
+    return `[\n${spaces}'${texts_array.sort().map(str => str.replace(/'/g, '\\\'')).join(`',\n${spaces}'`)}',\n];\n`;
 };
 
 exports.build    = build;
