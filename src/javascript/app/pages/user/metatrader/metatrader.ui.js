@@ -294,6 +294,8 @@ const MetaTraderUI = (() => {
                     msg = MetaTraderConfig.needsRealMessage();
                 } else if (!Client.get('currency')) { // client should set currency before accessing fund management section
                     msg = $templates.find('#msg_set_currency').html();
+                } else if (Client.get('landing_company_shortcode') === 'iom') {
+                    msg = MetaTraderConfig.needsFinancialMessage();
                 }
                 if (msg) {
                     displayMainMessage(msg, false);
@@ -418,7 +420,8 @@ const MetaTraderUI = (() => {
                 $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
                 $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
-            $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_vanuatu_standard/.test(new_acc_type));
+            // uncomment to show No Deposit Bonus note
+            // $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_vanuatu_standard/.test(new_acc_type));
         }
     };
 

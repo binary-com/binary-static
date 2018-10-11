@@ -83,6 +83,7 @@ const texts = [
     'Tick [_1]',
     'Ticks history returned an empty array.',
     'Chart is not available for this underlying.',
+    'Start/End Time',
 
     // trading page
     'year',
@@ -661,6 +662,12 @@ const texts = [
     'You have successfully disabled two-factor authentication for your account.',
     'Enable',
     'Disable',
+
+    // Download page
+    'Linux',
+    'Mac',
+    'Windows',
+    'Unknown OS',
 ];
 
 /* eslint-disable no-console */

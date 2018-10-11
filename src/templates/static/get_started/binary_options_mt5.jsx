@@ -51,7 +51,7 @@ const BinaryOptionsForMT5 = () => (
                     <p>{it.L('Each index corresponds to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</p>
 
                     <HeaderSecondary header={it.L('Types of trades')} />
-                    <p>{it.L('Execute your trading strategy using the Rise/Fall trade type with a duration of 5 or 10 ticks. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level.')}</p>
+                    <p>{it.L('Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level.')}</p>
                 </Section>
                 <Section id='how-to-trade-binary' header={it.L('How to trade binary options on MT5')}>
                     <p>{it.L('Get started with the [_1] Expert Advisor (EA) for binary options trading on MT5 by following these steps:', it.website_name)}</p>
@@ -72,6 +72,7 @@ const BinaryOptionsForMT5 = () => (
                                 <img className='responsive' src={it.url_for('images/pages/metatrader/dashboard/ea.svg')} />
                             </div>
                             <h3>{it.L('[_1] Expert Advisor (EA)', it.website_name)}</h3>
+                            <p><strong>{it.L('Note:')}</strong>&nbsp;{it.L('This application only supports Windows operating systems.')}</p>
                             <a className='button' href='https://s3.amazonaws.com/binary-mt5/Binary.ex5' download>
                                 <span>{it.L('Download')}</span>
                             </a>
