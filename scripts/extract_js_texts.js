@@ -98,15 +98,23 @@ const extractor = (node, js_source) => {
     if (node.type === 'CallExpression' && is_function) {
         const first_arg = node.arguments[0];
 
-        if (first_arg.value) {
-            source_strings[this_app_name].add(first_arg.value);
+        if (first_arg.type === 'ArrayExpression') { // support for array of strings
+            first_arg.elements.forEach(item => { processNode(item, js_source); });
         } else {
-            const should_ignore = shouldIgnore(first_arg);
-            (should_ignore ? ignored_list : invalid_list)[this_app_name].push(first_arg.loc);
+            processNode(first_arg, js_source);
+        }
+    }
+};
 
-            if (!should_ignore) {
-                report(first_arg, js_source);
-            }
+const processNode = (node, js_source) => {
+    if (node.type === 'StringLiteral') {
+        source_strings[this_app_name].add(node.value);
+    } else {
+        const should_ignore = shouldIgnore(node);
+        (should_ignore ? ignored_list : invalid_list)[this_app_name].push(node.loc);
+
+        if (!should_ignore) {
+            report(node, js_source);
         }
     }
 };
