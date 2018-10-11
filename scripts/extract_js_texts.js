@@ -10,12 +10,12 @@ const Path        = require('path');
 const common      = require('./common');
 
 const config = {
-    base_folder         : './src/javascript/',
-    excluded_folders    : ['__tests__', '_common/lib'],
-    supported_apps      : ['app'],
-    localize_method_name: 'localize',
-    ignore_comment      : 'localize-ignore', // put /* localize-ignore */ right after the first argument to ignore
-    parser_options      : {
+    base_folder          : './src/javascript/',
+    excluded_folders     : ['__tests__', '_common/lib'],
+    supported_apps       : ['app'],
+    localize_method_names: ['localize', 'localizeKeepPlaceholders'],
+    ignore_comment       : 'localize-ignore', // put /* localize-ignore */ right after the first argument to ignore
+    parser_options       : {
         sourceType: 'module',
         plugins   : [
             'classProperties',
@@ -93,7 +93,7 @@ const parseFile = (path_to_js_file) => {
 };
 
 const extractor = (node, js_source) => {
-    const is_function = (node.callee || {}).name === config.localize_method_name;
+    const is_function = new RegExp(`^(${config.localize_method_names.join('|')})$`).test((node.callee || {}).name);
 
     if (node.type === 'CallExpression' && is_function) {
         const first_arg = node.arguments[0];
