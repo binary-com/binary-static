@@ -83,6 +83,7 @@ module.exports = [
     'Tick [_1]',
     'Ticks history returned an empty array.',
     'Chart is not available for this underlying.',
+    'Start/End Time',
 
     // trading page
     'year',
@@ -252,6 +253,7 @@ module.exports = [
     'Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.',
     'Up to [_1] decimal places are allowed.',
     'Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.',
+    'Please [_1]deposit[_2] to your account.',
 
     // api_token
     'New token created.',
@@ -321,30 +323,6 @@ module.exports = [
 
     // authenticate
     'This feature is not relevant to virtual-money accounts.',
-
-    // japan account opening
-    'Japan',
-    'Questions',
-    'True',
-    'False',
-    'There was some invalid character in an input field.',
-    'Please follow the pattern 3 numbers, a dash, followed by 4 numbers.',
-    'Score',
-    '{JAPAN ONLY}Take knowledge test',
-    '{JAPAN ONLY}Knowledge Test Result',
-    '{JAPAN ONLY}Knowledge Test',
-    '{JAPAN ONLY}Congratulations, you have pass the test, our Customer Support will contact you shortly.',
-    '{JAPAN ONLY}Sorry, you have failed the test, please try again after 24 hours.',
-    '{JAPAN ONLY}Dear customer, you are not allowed to take knowledge test until [_1]. Last test taken at [_2].',
-    '{JAPAN ONLY}Dear customer, you\'ve already completed the knowledge test, please proceed to next step.',
-    '{JAPAN ONLY}Please complete the following questions.',
-    '{JAPAN ONLY}The test is unavailable now, test can only be taken again on next business day with respect of most recent test.',
-    '{JAPAN ONLY}You need to finish all 20 questions.',
-    'Weekday',
-    '{JAPAN ONLY}Your Application is Being Processed.',
-    '{JAPAN ONLY}Your Application has Been Processed. Please Re-Login to Access Your Real-Money Account.',
-    'Processing your request...',
-    'Please check the above form for pending errors.',
 
     // contract types display names
     'Asian Up',
@@ -529,7 +507,6 @@ module.exports = [
     'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.',
     'Only letters, space, hyphen, period, and apostrophe are allowed.',
     'Only letters, numbers, and hyphen are allowed.',
-    'Only numbers, space, and hyphen are allowed.',
     'Only numbers and spaces are allowed.',
     'Only letters, numbers, space, and these special characters are allowed: - . \' # ; : ( ) , @ /',
     'The two passwords that you entered do not match.',
@@ -537,6 +514,7 @@ module.exports = [
     'You should enter [_1] characters.',
     'Indicates required field',
     'Verification code is wrong. Please use the link sent to your email.',
+    'Invalid verification code.',
     'The password you entered is one of the world\'s most commonly used passwords. You should not be using this password.',
     'Hint: it would take approximately [_1][_2] to crack this password.',
     'thousand',
@@ -544,6 +522,7 @@ module.exports = [
     'Should start with letter or number, and may contain hyphen and underscore.',
     'Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.',
     'Validate address',
+    'There was some invalid character in an input field.',
 
     // metatrader
     'Congratulations! Your [_1] Account has been created.',
@@ -602,7 +581,8 @@ module.exports = [
     'Please set [_1]country of residence[_2] before upgrading to a real-money account.',
     'Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
     'Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
-    'Please [_1]accept the updated Terms and Conditions[_2] to lift your withdrawal and trading limits.',
+    'Please [_1]accept the updated Terms and Conditions[_2].',
+    'Please [_1]accept the updated Terms and Conditions[_2] to lift your deposit and trading limits.',
     'Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',
     'Connection error: Please check your internet connection.',
     'You have reached the rate limit of requests per second. Please try later.',
@@ -651,6 +631,7 @@ module.exports = [
     'Ether Classic',
     'Litecoin',
     'Dai',
+    'Tether',
 
     // Authentication errors
     'Invalid document format.',
@@ -681,4 +662,10 @@ module.exports = [
     'You have successfully disabled two-factor authentication for your account.',
     'Enable',
     'Disable',
+
+    // Download page
+    'Linux',
+    'Mac',
+    'Windows',
+    'Unknown OS',
 ];
