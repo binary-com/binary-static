@@ -42,12 +42,6 @@ const CTA = () => (
     </div>
 );
 
-const VolatilityIndicesTable = () => (
-    <div className='gr-padding-10'>
-        <p>{it.L('Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m duration is around 87% on average')}</p>
-    </div>
-);
-
 const Index = () => (
     <div className='static_full get-started'>
         <h1 className='center-text'>{it.L('Get Started')}</h1>
@@ -316,7 +310,7 @@ const Index = () => (
                             <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
                         </div>
                         <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}#range-of-markets>`, '</a>')}</p>
-                        <VolatilityIndicesTable />
+                        <p>{it.L('Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m duration is around 87% on average')}</p>
                         <CTA />
                     </TabContent>
                 </TabContentContainer>
