@@ -78,7 +78,7 @@ const VirtualAccOpening = (() => {
     const bindValidation = () => {
         // Add TrafficSource parameters
         const utm_data = TrafficSource.getData();
-        const signup_device = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+        const signup_device = LocalStore.get('signup_device') || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
         const date_first_contact = LocalStore.get('date_first_contact') || toISOFormat(moment());
 
         const req = [
@@ -116,6 +116,7 @@ const VirtualAccOpening = (() => {
             BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
                 if (!response_auth.error) {
                     LocalStore.remove('date_first_contact');
+                    LocalStore.remove('signup_device');
                     Client.processNewAccount({
                         email       : new_account.email,
                         loginid     : new_account.client_id,

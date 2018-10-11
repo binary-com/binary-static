@@ -95,6 +95,7 @@ const BinarySocketGeneral = (() => {
                             });
                         }
                         LocalStore.remove('date_first_contact');
+                        LocalStore.remove('signup_device');
                     }
                 }
                 break;

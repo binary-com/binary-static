@@ -102,6 +102,9 @@ const Page = (() => {
             if (!LocalStore.get('date_first_contact')) {
                 LocalStore.set('date_first_contact', toISOFormat(moment()));
             }
+            if (!LocalStore.get('signup_device')) {
+                LocalStore.set('signup_device', /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop');
+            }
         }
         TrafficSource.setData();
     };
