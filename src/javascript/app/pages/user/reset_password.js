@@ -8,17 +8,16 @@ const ResetPassword = (() => {
         $('#container_reset_password').setVisibility(0);
         if (response.error) {
             const $form_error          = $('#form_error');
-            const reset_error_template = '[_1] Please click the link below to restart the password recovery process.';
             const error_code           = response.error.code;
 
             $('#msg_reset_password').setVisibility(0);
 
             let err_msg;
             if (error_code === 'SocialBased') {
-                err_msg = localize(response.error.message);
+                err_msg = response.error.message;
                 $form_error.find('a').setVisibility(0);
             } else { // special handling as backend return inconsistent format
-                err_msg = localize(reset_error_template, [error_code === 'InputValidationFailed' ? localize('There was some invalid character in an input field.') : localize(response.error.message)]);
+                err_msg = localize('[_1] Please click the link below to restart the password recovery process.', [error_code === 'InputValidationFailed' ? localize('There was some invalid character in an input field.') : response.error.message]);
             }
 
             $('#form_error_msg').text(err_msg);

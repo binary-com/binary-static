@@ -260,7 +260,7 @@ const SelfExclusion = (() => {
                 key !== 'set_self_exclusion' && (!(key in self_exclusion_data) || self_exclusion_data[key] != data[key]) // eslint-disable-line eqeqeq
             ));
             if (!is_changed) {
-                showFormMessage('You did not change anything.', false);
+                showFormMessage(localize('You did not change anything.'), false);
                 resolve(false);
             }
 
@@ -285,11 +285,11 @@ const SelfExclusion = (() => {
                 $error_fld.siblings('.error-msg').setVisibility(1).html(error_msg);
                 $.scrollTo($error_fld, 500, { offset: -10 });
             } else {
-                showFormMessage(localize(error_msg), false);
+                showFormMessage(error_msg, false);
             }
             return;
         }
-        showFormMessage('Your changes have been updated.', true);
+        showFormMessage(localize('Your changes have been updated.'), true);
         if ($('#exclude_until').attr('data-value')) {
             $('#gamstop_info_bottom').setVisibility(0);
             $('#ukgc_gamstop').setVisibility(is_gamstop_client);
@@ -313,10 +313,11 @@ const SelfExclusion = (() => {
         });
     };
 
-    const showFormMessage = (msg, is_success) => {
+    const showFormMessage = (localized_text, is_success) => {
+        const $ul = $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localized_text }));
         $('#msg_form')
             .attr('class', is_success ? 'success-msg' : error_class)
-            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
+            .html(is_success ? $ul : localized_text)
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);

@@ -16,7 +16,8 @@ const Statement = (() => {
         const balance    = parseFloat(statement.balance_after);
         const is_ico_bid = /binaryico/i.test(statement.shortcode); // TODO: remove ico exception when all ico contracts are removed
 
-        let action = toTitleCase(statement.action_type);
+        // action_type may be (buy|sell|deposit|withdrawal) from API
+        let action = localize(toTitleCase(statement.action_type) /* localize-ignore */);
         if (is_ico_bid) {
             action = /buy/i.test(statement.action_type) ? localize('Bid') : localize('Closed Bid');
         }
@@ -28,7 +29,7 @@ const Statement = (() => {
             payout : isNaN(payout) || is_ico_bid || !+payout ? '-' : formatMoney(currency, payout, true),
             amount : isNaN(amount) ? '-' : formatMoney(currency, amount, true),
             balance: isNaN(balance) ? '-' : formatMoney(currency, balance, true),
-            desc   : statement.longcode.replace(/\n/g, '<br />'),
+            desc   : statement.longcode.replace(/\n/g, '<br />'), // this comes localized from API
             id     : statement.contract_id,
             app_id : statement.app_id,
         };
