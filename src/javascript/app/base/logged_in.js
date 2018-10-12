@@ -10,7 +10,6 @@ const urlLang            = require('../../_common/language').urlLang;
 const isStorageSupported = require('../../_common/storage').isStorageSupported;
 const LocalStore         = require('../../_common/storage').LocalStore;
 const removeCookies      = require('../../_common/storage').removeCookies;
-const toISOFormat        = require('../../_common/string_util').toISOFormat;
 const paramsHash         = require('../../_common/url').paramsHash;
 const urlFor             = require('../../_common/url').urlFor;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
@@ -33,14 +32,15 @@ const LoggedInHandler = (() => {
             }
 
             // send marketing details to the backend, like when we open a new virtual account
-            // @see src/javascript/app/pages/user/new_account/virtual_acc_opening.js:82
+            // @see src/javascript/app/pages/user/new_account/virtual_acc_opening.js:bindValidation()
             const signup_device = LocalStore.get('signup_device') || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
-            const date_first_contact = LocalStore.get('date_first_contact') || toISOFormat(moment());
-            BinarySocket.send({
-                'set_settings'      : 1,
-                'signup_device'     : signup_device,
-                'date_first_contact': date_first_contact,
-            }).then(() => {
+            const date_first_contact = LocalStore.get('date_first_contact');
+            const payload = {
+                'set_settings' : 1,
+                'signup_device': signup_device,
+            };
+
+            BinarySocket.send(Object.assign(payload, date_first_contact ? { date_first_contact } : {})).then(() => {
                 // redirect back
                 let set_default = true;
                 if (redirect_url) {

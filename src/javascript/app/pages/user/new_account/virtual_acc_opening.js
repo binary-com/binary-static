@@ -79,7 +79,7 @@ const VirtualAccOpening = (() => {
         // Add TrafficSource parameters
         const utm_data = TrafficSource.getData();
         const signup_device = LocalStore.get('signup_device') || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
-        const date_first_contact = LocalStore.get('date_first_contact') || toISOFormat(moment());
+        const date_first_contact = LocalStore.get('date_first_contact');
 
         const req = [
             { selector: '#client_password', validations: ['req', 'password'], re_check_field: '#repeat_password' },
@@ -90,12 +90,11 @@ const VirtualAccOpening = (() => {
             { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
             { request_field: 'new_account_virtual', value: 1 },
             { request_field: 'signup_device',       value: signup_device },
-            { request_field: 'date_first_contact',  value: date_first_contact },
         ];
 
         if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium',   value: utm_data.utm_medium });
         if (utm_data.utm_campaign) req.push({ request_field: 'utm_campaign', value: utm_data.utm_campaign });
-
+        if (date_first_contact)    req.push({ request_field: 'date_first_contact',  value: date_first_contact });
         const gclid = LocalStore.get('gclid');
         if (gclid) req.push({ request_field: 'gclid_url', value: gclid });
 
