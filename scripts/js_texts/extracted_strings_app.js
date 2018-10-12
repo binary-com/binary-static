@@ -240,6 +240,7 @@ module.exports = [
     'Payout Range',
     'Pending',
     'Percentage',
+    'Permissions',
     'Please [_1]accept the updated Terms and Conditions[_2] to lift your deposit and trading limits.',
     'Please [_1]accept the updated Terms and Conditions[_2].',
     'Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
