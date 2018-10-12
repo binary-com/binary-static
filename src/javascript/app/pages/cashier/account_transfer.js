@@ -70,7 +70,7 @@ const AccountTransfer = (() => {
         showForm();
 
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
-            const transfer_fee = isStableCoin ? "0.2%": "1%";
+            const transfer_fee = isStableCoin(client_currency) ? '0.2%' : '1%';
             el_transfer_fee.setVisibility(1);
             elementTextContent(getElementById('transfer_fee_amount'), `${transfer_fee}`);
         } else {

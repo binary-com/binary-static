@@ -54,7 +54,7 @@ const setCurrencies = (website_status) => {
 // (currency in crypto_config) is a back-up in case website_status doesn't include the currency config, in some cases where it's disabled
 const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type'])) || (currency in crypto_config);
 
-const isStableCoin = currency => isCryptocurrency(currency) && getPropertyValue(currencies_config, [currency, 'stable']);
+const isStableCoin = currency => isCryptocurrency(currency) && getPropertyValue(crypto_config, [currency, 'stable']);
 
 const crypto_config = {
     BTC: { name: 'Bitcoin',       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, stable: false },
@@ -87,6 +87,7 @@ module.exports = {
     getDecimalPlaces,
     setCurrencies,
     isCryptocurrency,
+    isStableCoin,
     getCurrencyName,
     getMinWithdrawal,
     getMinPayout,
