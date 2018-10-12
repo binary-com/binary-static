@@ -207,6 +207,15 @@ const getStaticHash = () => {
     return static_hash;
 };
 
+class PromiseClass {
+    constructor() {
+        this.promise = new Promise((resolve, reject) => {
+            this.reject  = reject;
+            this.resolve = resolve;
+        });
+    }
+}
+
 module.exports = {
     showLoadingImage,
     getHighestZIndex,
@@ -222,4 +231,5 @@ module.exports = {
     applyToAllElements,
     findParent,
     getStaticHash,
+    PromiseClass,
 };
