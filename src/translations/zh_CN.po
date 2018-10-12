@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-08 02:55\n"
+"PO-Revision-Date: 2018-10-12 05:27\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -358,7 +358,7 @@ msgid "%1's CPAN contributions"
 msgstr "%1的 CPAN贡献"
 
 msgid "%1's IT Operations Group is responsible for the design, development and operation of the company's high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing."
-msgstr "1％的信息技术运营组负责公司高流量网络的设计、开发和运营。其职责范围包括硬件和软件部署、运行时间和可靠性测试、事件响应报告、网络安全、入侵检测和负载平衡。"
+msgstr "1％ 的信息技术运营组负责公司高流量网络的设计、开发和运营。其职责范围包括硬件和软件部署、运行时间和可靠性测试、事件响应报告、网络安全、入侵检测和负载平衡。"
 
 msgid "%1's Quantitative Analytics group is responsible for the pricing of binary options offered on its website, as well as the risk management and profitability of its options book. Since all dealing on the company's website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feeds irregularities and latencies."
 msgstr "％1的定量分析小组负责在二元期权网站提供定价，以及其期权书刊的风险管理和盈利分析。由于公司网站所有的交易都是全自动化运作，我们的价格和风险管理计算方法必须充分考虑到实时定价参数、不规范的数据输入和潜伏因素。"
@@ -705,6 +705,12 @@ msgstr "顶级机构提供多种资产的流动性服务。"
 msgid "Access our products and services from a single app"
 msgstr "透过单个应用程序访问我们的产品和服务"
 
+msgid "Access the markets anytime, anywhere from your Android device."
+msgstr "随时随地透过Android设备访问市场。"
+
+msgid "Access the markets anytime, anywhere from your iOS device."
+msgstr "随时随地透过iOS设备访问市场。"
+
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "随时随地在iOS或Android设备上使用原装应用能够程序访问市场。"
 
@@ -719,6 +725,9 @@ msgstr "通过保证金账户访问多个资产的流动性和后台功能"
 
 msgid "Access to your personal data is strictly prohibited with the exception of key %1 personnel and only as needed in the performance of their duties."
 msgstr "除非%1的关键人员在执行职务时有此必要，我们严格禁止任何人访问您的个人数据。"
+
+msgid "Access your account with full trading permission."
+msgstr "使用完整交易权限访问您的账户。"
 
 msgid "Access your trading history through our Expert Advisors (EA)"
 msgstr "通过我们的专家顾问访问您的交易记录"
@@ -1023,17 +1032,11 @@ msgstr "在与加密货币有关的区块链上发生的所有交易可能不受
 msgid "All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company’s responsibility hence the Company is not liable for such actions or results."
 msgstr "专家顾问发起的所有不可预见的头寸开仓或平仓, 无论是与系统出错有关或是由于其他原因, 都超出了公司的责任范围, 因此公司不承担此类行动或结果的责任。"
 
-msgid "All versions of Android"
-msgstr "所有Android版本"
+msgid "All versions for Android"
+msgstr "所有适用于Android的版本"
 
-msgid "All versions of Linux"
-msgstr "所有Linux版本"
-
-msgid "All versions of MacOS"
-msgstr "所有MacOS版本"
-
-msgid "All versions of iOS"
-msgstr "所有iOS版本"
+msgid "All versions for iOS"
+msgstr "所有适用于iOS的版本"
 
 msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr "%1将于24小时内处理您的所有存取款。但您的银行或汇款服务商可能需要额外的处理时间。"
@@ -1734,6 +1737,9 @@ msgstr "二元期权交易频率"
 msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "您的账户已被禁进行二元期权交易。请 %1联系客服部%2寻求帮助。"
 
+msgid "Binary Options for MT5"
+msgstr "MT5的二元期权"
+
 msgid "Binary Options on MT5"
 msgstr "MT5二元期权"
 
@@ -1832,9 +1838,6 @@ msgstr "第一辆车的品牌"
 
 msgid "Browser"
 msgstr "浏览器"
-
-msgid "Browser platforms"
-msgstr "浏览器平台"
 
 msgid "But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade."
 msgstr "但是，如果您是外汇或任何类型金融交易的新手，在您购买第一份合约之前还有很长的路要走。因此我们想出了一个基本的，一步一步的教程，以帮助您弥合差距，并开始第一次交易。"
@@ -3091,20 +3094,20 @@ msgstr "下载"
 msgid "Download CSV"
 msgstr "下载CSV"
 
-msgid "Download Expert Advisor"
-msgstr "下载专家顾问"
-
 msgid "Download MAM"
 msgstr "下载MAM"
 
+msgid "Download MT5 for Linux"
+msgstr "Linux版MT5下载"
+
+msgid "Download MT5 for Mac"
+msgstr "Mac版MT5下载"
+
+msgid "Download MT5 for Windows"
+msgstr "Windows版MT5下载"
+
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "MT5是强大的多功能交易工具，备受百万多名交易员的爱载，请下载到台式电脑或笔记本电脑上使用。"
-
-msgid "Download for Mac"
-msgstr "Mac版下载"
-
-msgid "Download for Windows"
-msgstr "Windows版下载"
 
 msgid "Download our desktop app now:"
 msgstr "立刻下载我们的桌面应用程序:"
@@ -3532,8 +3535,8 @@ msgstr "执行和更新手册和自动化测试计划、确保客户提出的问
 msgid "Execute your trade in seconds."
 msgstr "数秒内执行您的交易。"
 
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 or 10 ticks. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr "使用持续时间为5或10跳动点的上涨/下跌交易类型执行您的交易策略。买入上涨/下跌合约时，您必须预测当前市场价格是否会上涨或下跌。"
+msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
+msgstr "使用持续时间为5个跳动点、10个跳动点、1分钟或5分钟的上涨/下跌交易类型执行您的交易策略。买入上涨/下跌合约时，您必须预测当前市场价格是否会上涨或下跌。"
 
 msgid "Execution model and counterparty risk"
 msgstr "执行模型和交易对手风险"
@@ -3847,15 +3850,6 @@ msgstr "Binary (IOM) Ltd适用的管辖权应为马恩岛。"
 msgid "For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta."
 msgstr "Binary Investments (Europe) Ltd 和 Binary (Europe) Ltd适用的管辖权应为马耳他。"
 
-msgid "For Browser"
-msgstr "浏览器专用"
-
-msgid "For Desktop"
-msgstr "台式计算机专用"
-
-msgid "For Mobile"
-msgstr "手机专用"
-
 msgid "For affiliate, partnership, and other marketing-related queries:"
 msgstr "与联盟、合作伙伴和其他与市场营销相关的查询专用:"
 
@@ -4126,6 +4120,9 @@ msgstr "多头和空头头寸"
 msgid "Go short = sell"
 msgstr "空头头寸 = 卖出"
 
+msgid "Go to MT5 download page"
+msgstr "前往 MT5 下载页面"
+
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "前往MetaTrader 5 仪表板"
 
@@ -4367,7 +4364,7 @@ msgid "How to trade binary options"
 msgstr "二元期权如何交易"
 
 msgid "How to trade binary options on MT5"
-msgstr "如何在MT5进行二元期权交易?"
+msgstr "如何在MT5进行二元期权交易"
 
 msgid "How to trade cryptocurrencies"
 msgstr "加密货币如何交易"
@@ -4978,9 +4975,6 @@ msgstr "继承"
 msgid "Instant access"
 msgstr "即时访问"
 
-msgid "Instructions for Linux"
-msgstr "关于 Linux 的说明"
-
 msgid "Insufficient balance."
 msgstr "余额不足。"
 
@@ -5518,6 +5512,12 @@ msgstr "回顾"
 msgid "Lookbacks options are currently only available for %1Volatility Indices%2."
 msgstr "回顾选项目前仅适用于 %1波动指数%2。"
 
+msgid "Looking for %1 app?"
+msgstr "正在查找 %1 应用程序？"
+
+msgid "Looking for %1 or %2 Desktop apps?"
+msgstr "正在查找 %1 或 %2 桌面应用程序？"
+
 msgid "Loss"
 msgstr "亏损"
 
@@ -5617,20 +5617,38 @@ msgstr "MT5真实账户"
 msgid "MT5 Volatility Indices"
 msgstr "MT5波动率指数"
 
+msgid "MT5 for Android"
+msgstr "Android 版MT5"
+
+msgid "MT5 for Linux"
+msgstr "Linux 版MT5"
+
+msgid "MT5 for Mac"
+msgstr "Mac 版MT5"
+
+msgid "MT5 for Mobile"
+msgstr "移动设备版MT5"
+
+msgid "MT5 for Windows"
+msgstr "Windows版MT5"
+
+msgid "MT5 for iOS"
+msgstr "IOS 版MT5"
+
+msgid "MT5 for web platform"
+msgstr "网络平台版MT5"
+
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr "外汇和差价合约的MT5 真实资金账户。"
 
 msgid "MT5 real-money account for Volatility Indices only."
 msgstr "波动指数专用的MT5 真实资金账户。"
 
-msgid "MT5 trading platform links:"
-msgstr "MT5 交易平台链接:"
-
 msgid "MT5 withdrawals have been disabled on your account. Please check your email for more details."
 msgstr "您的MT5账户已被禁提款。请检查您的电子邮件, 以了解更多详情。"
 
-msgid "MacOS"
-msgstr "MacOS"
+msgid "Mac"
+msgstr "Mac"
 
 msgid "Made an impression in the first interview? We'll invite you to a second interview with our CEO and/or hiring manager."
 msgstr "在第一次面试中留下了深刻印象？我们将邀请您与首席执行官和/或招聘经理进行第二次面谈。"
@@ -7814,8 +7832,8 @@ msgstr "出现以下情况时，除非是由于公司疏忽、欺诈或违约而
 msgid "Scalable"
 msgstr "可缩放"
 
-msgid "Scan the QR code below with your authentication app (such as %1, %2, and %3)."
-msgstr "使用身份验证应用程序 (如 %1、%2和 %3) 扫描下面的 QR 代码。"
+msgid "Scan the QR code below with your authentication app. We recommend %1 or %2. Please note that %3 is not supported."
+msgstr "用您的身份验证应用程序扫描以下 QR 代码。建议使用 %1 或 %2。请注意,  %3不受支持。"
 
 msgid "Scope and Intent"
 msgstr "范围和目的"
@@ -7987,6 +8005,9 @@ msgstr "结算"
 
 msgid "Severability"
 msgstr "可分割性"
+
+msgid "Share access to your account without any permission to trade."
+msgstr "没有任何交易许可的情况下分享您的账户的访问权。"
 
 msgid "Sharp prices"
 msgstr "精准报价"
@@ -8203,6 +8224,12 @@ msgstr "开始时间"
 
 msgid "Start trading"
 msgstr "开始交易"
+
+msgid "Start trading MT5 on web platform"
+msgstr "透过网络平台开始MT5交易"
+
+msgid "Start/End Time"
+msgstr "开始/结束时间"
 
 msgid "State/Province"
 msgstr "州/省"
@@ -9432,6 +9459,9 @@ msgstr "此账户已禁用"
 msgid "This account is excluded until %1"
 msgstr "此账户已被隔离, 直到%1"
 
+msgid "This application only supports Windows operating systems."
+msgstr "此应用程序仅支持 Windows 操作系统。"
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "本奖金仅适用于新客户。现有或以往客户不符合条件。此类奖金新客户只能获取一次。此奖金每一个家庭仅能获得一次。"
 
@@ -9642,6 +9672,9 @@ msgstr "如要执行此操作，请<a href=\"%1\">升级到 %2 真实账户</a>�
 msgid "To perform this action, please set the %1currency%2 of your account."
 msgstr "要执行此操作, 请设置账户的%1货币%2。"
 
+msgid "To perform this action, please switch to your %1 Financial account"
+msgstr "如要执行此操作，请切换到 %1 金融账户"
+
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "如要执行此操作，请切换到 %1 真实账户。"
 
@@ -9794,9 +9827,6 @@ msgstr "立刻交易"
 
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "在包括外汇、指数、商品等在内的基本市场交易。"
-
-msgid "Trade on web platform"
-msgstr "网上平台交易"
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "根据您的风险承受能力进行交易。切勿借钱交易。"
@@ -10139,6 +10169,9 @@ msgstr "市场营销、 通信、新闻或其他相关专业学位"
 
 msgid "University degree, preferably in Graphic Design or a related discipline"
 msgstr "学士学位，平面设计或相关学科优先考虑"
+
+msgid "Unknown OS"
+msgstr "未知 OS"
 
 msgid "Unless otherwise advised, we shall treat you as a Retail Client. You may also request by writing to us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. Professional Clients do not fall within the scope of the Investor Compensation Scheme. We reserve the right to accept or refuse any such request for change in classification."
 msgstr "除非另行通知，我们将视您为零售客户。您也可通过书面形式要求我们更改类别，但这么做可能会影响到我们给您的保护级别。专业客户不在投资者赔偿计划的保护范围内。我们保留接受或拒绝任何改变类别请求的权利。"
@@ -10611,11 +10644,11 @@ msgstr "当我们合理相信有任何因明显或可察觉错误（明显错误
 msgid "We segregate your funds and keep them in secure and licensed financial institutions."
 msgstr "我们将您的基金集合并保留在安全及拥有牌照的金融机构里。"
 
-msgid "We support and prefer to use the above browser platforms"
-msgstr "我们支持并倾向于使用上述浏览器平台"
-
 msgid "We support hundreds of deposit and withdrawal options, including Bitcoin."
 msgstr "我们支持数以百计的存款和提款选项，包括比特币。"
+
+msgid "We support the following web browsers:"
+msgstr "我们支持以下网络浏览器:"
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
 msgstr "我们通过身份核实服务和实时防欺诈措施防止您的账户遭到非法访问。另外，我们还会对您的账户活动进行监控，来发现不正常的欺诈活动迹象。我们还会和征管机构及执法机关合作，应对欺诈问题。"
@@ -11003,9 +11036,6 @@ msgstr "如果退市现价介于低、高障碍之间, 其比例与高障碍及�
 
 msgid "Windows"
 msgstr "Windows"
-
-msgid "Windows 7 or later"
-msgstr "Windows 7 或更新版本"
 
 msgid "Winning the contract"
 msgstr "盈利合约"
