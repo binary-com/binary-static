@@ -110,17 +110,19 @@ const AuthorisedApps = (() => {
         if (elements.table) {
             return FlexTableUI.replace(data);
         }
-        const headers = localize(['Name', 'Permissions', 'Last Used']);
+        const localized_headers = localize(['Name', 'Permissions', 'Last Used']);
+        const header_columns    = ['name', 'permissions', 'last-used'];
         can_revoke    = /admin/.test((State.getResponse('authorize') || {}).scopes);
         if (can_revoke) {
-            headers.push('Action');
+            localized_headers.push(localize('Action'));
+            header_columns.push('action');
         }
         FlexTableUI.init({
             data,
             container: `#${element_ids.container}`,
-            header   : headers.map(localize),
+            header   : localized_headers,
             id       : element_ids.table,
-            cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
+            cols     : header_columns,
             style    : ($row, app) => {
                 if (can_revoke) {
                     $row.children('.action').first().append(createRevokeButton($row, app));
