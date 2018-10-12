@@ -1,3 +1,4 @@
+const localize     = require('./localize').localize;
 const BinarySocket = require('../app/base/socket');
 const Dialog       = require('../app/common/attach_dom/dialog');
 const isEuCountry  = require('../app/common/country_base').isEuCountry;
@@ -24,7 +25,7 @@ const ThirdPartyLinks = (() => {
             e.preventDefault();
             Dialog.confirm({
                 id     : 'third_party_redirect_dialog',
-                message: ['You will be redirected to a third-party website which is not owned by Binary.com.', 'Click OK to proceed.'],
+                message: localize(['You will be redirected to a third-party website which is not owned by Binary.com.', 'Click OK to proceed.']),
             }).then((should_proceed) => {
                 if (should_proceed) {
                     const link = window.open();

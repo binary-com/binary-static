@@ -36,7 +36,7 @@ const Statement = (() => {
 
     const generateCSV = (all_data) => {
         const columns  = ['date', 'ref', 'payout', 'action', 'desc', 'amount', 'balance'];
-        const header   = ['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit'].map(str => (localize(str)));
+        const header   = localize(['Date', 'Reference ID', 'Potential Payout', 'Action', 'Description', 'Credit/Debit']);
         const currency = Client.get('currency');
         header.push(localize('Balance') + (currency ? ` (${currency})` : ''));
         const sep = ',';

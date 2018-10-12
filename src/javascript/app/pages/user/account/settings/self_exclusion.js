@@ -267,7 +267,7 @@ const SelfExclusion = (() => {
             if ('timeout_until' in data || 'exclude_until' in data) {
                 Dialog.confirm({
                     id     : 'timeout_until_dialog',
-                    message: 'When you click "OK" you will be excluded from trading on the site until the selected date.',
+                    message: localize('When you click "OK" you will be excluded from trading on the site until the selected date.'),
                 }).then((response) => resolve(response));
             } else {
                 resolve(true);

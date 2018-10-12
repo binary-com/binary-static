@@ -73,8 +73,8 @@ const BinaryLoader = (() => {
 
     const error_messages = {
         login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
-        only_virtual: 'Sorry, this feature is available to virtual accounts only.',
-        only_real   : 'This feature is not relevant to virtual-money accounts.',
+        only_virtual: () => localize('Sorry, this feature is available to virtual accounts only.'),
+        only_real   : () => localize('This feature is not relevant to virtual-money accounts.'),
     };
 
     const loadHandler = (config) => {
@@ -88,9 +88,9 @@ const BinaryLoader = (() => {
                         if (response.error) {
                             displayMessage(error_messages.login());
                         } else if (config.only_virtual && !Client.get('is_virtual')) {
-                            displayMessage(error_messages.only_virtual);
+                            displayMessage(error_messages.only_virtual());
                         } else if (config.only_real && Client.get('is_virtual')) {
-                            displayMessage(error_messages.only_real);
+                            displayMessage(error_messages.only_real());
                         } else {
                             loadActiveScript(config);
                         }
@@ -124,7 +124,7 @@ const BinaryLoader = (() => {
         }
 
         const div_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
-        const div_notice    = createElement('p', { class: 'center-text notice-msg', html: localize(message) });
+        const div_notice    = createElement('p', { class: 'center-text notice-msg', html: message });
 
         div_container.appendChild(div_notice);
 
