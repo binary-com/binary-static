@@ -44,7 +44,7 @@ export const FormRow = ({
                         const option_id = `${id}_option_${i}`;
                         return (
                             <div key={value}>
-                                <input type='radio' name={id} id={option_id} value={value} checked={value === default_option} />
+                                <input type='radio' name={id} id={option_id} value={value} defaultChecked={value === default_option} />
                                 <label htmlFor={option_id}><span data-balloon={data_balloon_text} data-balloon-length='medium'>{label_text}</span></label>
                             </div>
                         );
