@@ -127,7 +127,7 @@ const Validation = (() => {
     const validRequired     = (value, options, field) => {
         if (value.length) return true;
         // else
-        validators_map.req.message = field.type === 'checkbox' ? 'Please select the checkbox.' : 'This field is required.';
+        validators_map.req.message = field.type === 'checkbox' ? localize('Please select the checkbox.') : localize('This field is required.');
         return false;
     };
     const validEmail        = value => /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/.test(value);

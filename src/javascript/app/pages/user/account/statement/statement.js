@@ -29,7 +29,7 @@ const Statement = (() => {
             payout : isNaN(payout) || is_ico_bid || !+payout ? '-' : formatMoney(currency, payout, true),
             amount : isNaN(amount) ? '-' : formatMoney(currency, amount, true),
             balance: isNaN(balance) ? '-' : formatMoney(currency, balance, true),
-            desc   : statement.longcode.replace(/\n/g, '<br />'), // this comes localized from API
+            desc   : localize(statement.longcode.replace(/\n/g, '<br />') /* localize-ignore */), // untranslated desc
             id     : statement.contract_id,
             app_id : statement.app_id,
         };

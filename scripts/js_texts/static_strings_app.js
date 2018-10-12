@@ -7,7 +7,6 @@
 module.exports = [
     'Day',
     'Month',
-    'Year',
     'Sorry, an error occurred while processing your request.',
     'Please [_1]log in[_2] or [_3]sign up[_4] to view this page.',
 
@@ -22,10 +21,7 @@ module.exports = [
     'Connecting to server',
 
     // account drop down
-    'Virtual Account',
     'Real Account',
-    'Investment Account',
-    'Gaming Account',
 
     // datepicker texts
     'Sunday',
@@ -94,7 +90,6 @@ module.exports = [
     'h',
     'hour',
     'hours',
-    'min',
     'minute',
     'minutes',
     'second',
@@ -104,7 +99,6 @@ module.exports = [
     'Loss',
     'Profit',
     'Payout',
-    'Units',
     'Stake',
     'Duration',
     'End Time',
@@ -120,13 +114,6 @@ module.exports = [
     'Even/Odd',
     'Over/Under',
     'Up/Down',
-    'Ends Between/Ends Outside',
-    'Touch/No Touch',
-    'Stays Between/Goes Outside',
-    'Asians',
-    'Reset Call/Reset Put',
-    'High/Low Ticks',
-    'Call Spread/Put Spread',
     'Potential Payout',
     'Maximum Payout',
     'Total Cost',
@@ -136,26 +123,17 @@ module.exports = [
     'Tick',
     'Buy price',
     'Final price',
-    'Long',
-    'Short',
-    'Chart',
-    'Portfolio',
-    'Explanation',
-    'Last Digit Stats',
     'Waiting for entry tick.',
     'Waiting for exit tick.',
     'Please log in.',
-    'All markets are closed now. Please try again later.',
     'Account balance:',
     'Try our [_1]Volatility Indices[_2].',
     'Try our other markets.',
-    'Session',
     'Crypto',
     'Fiat',
     'High',
     'Low',
     'Close',
-    'Payoff',
     'High-Close',
     'Close-Low',
     'High-Low',
@@ -181,12 +159,6 @@ module.exports = [
     'Therefore your current immediate maximum withdrawal (subject to your account having sufficient funds) is [_1] [_2] (or equivalent in other currency).',
     'Your [_1] day withdrawal limit is currently [_2] [_3] (or equivalent in other currency).',
     'You have already withdrawn the equivalent of [_1] [_2] in aggregate over the last [_3] days.',
-    'Contracts where the barrier is the same as entry spot.',
-    'Contracts where the barrier is different from the entry spot.',
-    'ATM',
-    'Non-ATM',
-    'Duration up to 7 days',
-    'Duration above 7 days',
 
     // personal details
     'This field is required.',
@@ -199,8 +171,6 @@ module.exports = [
     'Sorry, an error occurred while processing your account.',
     'Your changes have been updated successfully.',
     'Your settings have been updated successfully.',
-    'Female',
-    'Male',
     'Please select a country',
     'Please confirm that all the information above is true and complete.',
     'Your application to be treated as a professional client is being processed.',
@@ -232,20 +202,9 @@ module.exports = [
     'Settles',
     'Upcoming Events',
 
-    // back-end strings for trading times page
-    'Closes early (at 21:00)',
-    'Closes early (at 18:00)',
-    'New Year\'s Day',
-    'Christmas Day',
-    'Fridays',
-    'today',
-    'today, Fridays',
-
     // paymentagent_withdraw
     'Please select a payment agent',
     'Payment Agent services are not available in your country or in your preferred currency.',
-    'Invalid amount, minimum is',
-    'Invalid amount, maximum is',
     'Your request to withdraw [_1] [_2] from your account [_3] to Payment Agent [_4] account has been successfully processed.',
     'Up to [_1] decimal places are allowed.',
     'Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.',
@@ -283,10 +242,8 @@ module.exports = [
     'months',
     'weeks',
     'Your changes have been updated.',
-    'Please enter an integer value',
     'Session duration limit cannot be more than 6 weeks.',
     'You did not change anything.',
-    'Please select a valid date.',
     'Please select a valid time.',
     'Time out cannot be in the past.',
     'Time out must be after today.',
@@ -311,9 +268,6 @@ module.exports = [
     'Your account has no trading activity.',
     'Today',
     'Details',
-
-    // back-end string for statement page
-    'Virtual money credit to account',
 
     // authenticate
     'This feature is not relevant to virtual-money accounts.',
@@ -341,8 +295,6 @@ module.exports = [
     '[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].',
     '[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].',
     '[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].',
-    'M',
-    'D',
     'Higher',
     'Higher or equal',
     'Lower',
@@ -358,10 +310,6 @@ module.exports = [
     'Market is closed. Please try again later.',
     'This symbol is not active. Please try another symbol.',
     'Sorry, your account is not authorised for any further contract purchases.',
-    'Lots',
-    'Payout per lot = 1,000',
-    'This page is not available in the selected language.',
-    'Trading Window',
 
     // digit_info
     'Percentage',
@@ -381,7 +329,6 @@ module.exports = [
     'Your account has no Login/Logout activity.',
 
     // reality_check
-    'Please enter a number between [_1].',
     '[_1] days [_2] hours [_3] minutes',
     'Your trading statistics since [_1].',
 
@@ -416,8 +363,6 @@ module.exports = [
     'Contract Information',
     'Contract Result',
     'Current',
-    'Open',
-    'Closed',
     'Contract has not started yet',
     'Spot Time',
     'Spot Time (GMT)',
@@ -444,8 +389,6 @@ module.exports = [
     'View Chart',
     'Contract Starts',
     'Contract Ends',
-    'Start Time and Entry Spot',
-    'Exit Time and Exit Spot',
     'You can close this window without interrupting your trade.',
     'Selected Tick',
     'Highest Tick',
@@ -453,9 +396,6 @@ module.exports = [
     'Lowest Tick',
     'Lowest Tick Time',
     'Close Time',
-
-    // financial assessment
-    'Please select a value',
 
     // authorised_apps
     'You have not granted access to any applications.',
@@ -485,10 +425,6 @@ module.exports = [
     // account signup error
     'Sorry, account signup is not available in your country.',
 
-    // strings from back-end
-    'There was a problem accessing the server.',
-    'There was a problem accessing the server during purchase.',
-
     // form_validation
     'Should be a valid number.',
     'Should be more than [_1]',
@@ -511,12 +447,10 @@ module.exports = [
     'thousand',
     'million',
     'Should start with letter or number, and may contain hyphen and underscore.',
-    'Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.',
     'Validate address',
     'There was some invalid character in an input field.',
 
     // metatrader
-    'Congratulations! Your [_1] Account has been created.',
     'The [_1] password of account number [_2] has been changed.',
     '[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]',
     '[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]',
@@ -568,7 +502,6 @@ module.exports = [
     // header notification
     '[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',
     'Please set the [_1]currency[_2] of your account.',
-    'Please set your 30-day turnover limit in our [_1]self-exclusion facilities[_2] to remove deposit limits.',
     'Please set [_1]country of residence[_2] before upgrading to a real-money account.',
     'Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',
     'Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',
@@ -586,7 +519,6 @@ module.exports = [
     'MT5 withdrawals have been disabled on your account. Please check your email for more details.',
     'Please complete your [_1]personal details[_2] before you proceed.',
     'Account Authenticated',
-    'In the EU, financial binary options are only available to professional investors.',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
@@ -628,13 +560,11 @@ module.exports = [
     'Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).',
     'Expiry date is required for [_1].',
     'Passport',
-    'ID card',
     'Driving licence',
     'Front Side',
     'Reverse Side',
     'Front and reverse side photos of [_1] are required.',
     '[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.',
-    'Following file(s) were already uploaded: [_1]',
     'Checking',
     'Checked',
     'Pending',
@@ -652,31 +582,57 @@ module.exports = [
     'Disable',
 
     // Download page
-    'Linux',
-    'Mac',
-    'Windows',
     'Unknown OS',
 
-    /*
-    * API strings ignored by autogenerated localize
-    *
-    */
+    // -----------------------------
+    // Commented translation strings
+    // -----------------------------
+    'All markets are closed now. Please try again later.',
 
-    // action_type from statement call
+    // ---------------------------------------------
+    // API strings ignored by autogenerated localize
+    // ---------------------------------------------
+
+    // action_type from statement
     'Buy',
-    'Sell',
     'Deposit',
+    'Sell',
     'Withdrawal',
 
-    // market_specific[market][submarket].name from get_limits call
+    // longcode from statement
+    'Virtual money credit to account',
+
+    // market_specific[market][submarket].name from get_limits
     'Commodities',
-    'Minor Pairs',
-    'Major Pairs',
-    'Smart FX',
     'Indices',
+    'Major Pairs',
+    'Minor Pairs',
+    'Smart FX',
     'Volatility Indices',
 
-    // action from login_history call
+    // action from login_history
     'login',
     'logout',
+
+    // contract_category from contracts_for
+    'Asians',
+    'Call Spread/Put Spread',
+    'Ends Between/Ends Outside',
+    'High/Low Ticks',
+    'Reset Call/Reset Put',
+    'Stays Between/Goes Outside',
+    'Touch/No Touch',
+
+    // events[descrip] and events[dates] from trading_times
+    'Christmas Day',
+    'Closes early (at 18:00)',
+    'Closes early (at 21:00)',
+    'Fridays',
+    'New Year\'s Day',
+    'today',
+    'today, Fridays',
+
+    // error messages
+    'There was a problem accessing the server.',
+    'There was a problem accessing the server during purchase.',
 ];

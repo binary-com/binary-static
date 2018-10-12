@@ -296,7 +296,7 @@ const Authenticate = (() => {
 
                 fr.onerror = () => {
                     resolve({
-                        message: `Unable to read file ${f.file.name}`,
+                        message: localize('Unable to read file [_1]', [f.file.name]),
                         class  : f.class,
                     });
                 };

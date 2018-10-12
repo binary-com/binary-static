@@ -134,11 +134,11 @@ const Accounts = (() => {
         let markets_config;
 
         const initMarketsConfig = () => ({
-            commodities: 'Commodities',
-            forex      : 'Forex',
-            indices    : 'Indices',
-            stocks     : 'Stocks',
-            volidx     : 'Volatility Indices',
+            commodities: localize('Commodities'),
+            forex      : localize('Forex'),
+            indices    : localize('Indices'),
+            stocks     : localize('Stocks'),
+            volidx     : localize('Volatility Indices'),
         });
 
         return {

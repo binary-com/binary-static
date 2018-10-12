@@ -150,7 +150,7 @@ const SelfExclusion = (() => {
             checks.push(['number', options]);
 
             if (id === 'session_duration_limit') {
-                checks.push(['custom', { func: validSessionDuration, message: 'Session duration limit cannot be more than 6 weeks.' }]);
+                checks.push(['custom', { func: validSessionDuration, message: localize('Session duration limit cannot be more than 6 weeks.') }]);
             }
 
             validations.push({
@@ -168,9 +168,9 @@ const SelfExclusion = (() => {
                 exclude_if_empty: 1,
                 value           : getTimeout,
                 validations     : [
-                    ['custom', { func: () => ($(timeout_time_id).val() ? $(timeout_date_id).val().length : true),                         message: 'This field is required.' }],
-                    ['custom', { func: value => !value.length || getMoment(timeout_date_id).isAfter(moment().subtract(1, 'days'), 'day'), message: 'Time out must be after today.' }],
-                    ['custom', { func: value => !value.length || getMoment(timeout_date_id).isBefore(moment().add(6, 'weeks')),           message: 'Time out cannot be more than 6 weeks.' }],
+                    ['custom', { func: () => ($(timeout_time_id).val() ? $(timeout_date_id).val().length : true),                         message: localize('This field is required.') }],
+                    ['custom', { func: value => !value.length || getMoment(timeout_date_id).isAfter(moment().subtract(1, 'days'), 'day'), message: localize('Time out must be after today.') }],
+                    ['custom', { func: value => !value.length || getMoment(timeout_date_id).isBefore(moment().add(6, 'weeks')),           message: localize('Time out cannot be more than 6 weeks.') }],
                 ],
             },
             {
@@ -178,9 +178,9 @@ const SelfExclusion = (() => {
                 exclude_request: 1,
                 re_check_field : timeout_date_id,
                 validations    : [
-                    ['custom', { func: () => ($(timeout_date_id).val() && getMoment(timeout_date_id).isSame(moment(), 'day') ? $(timeout_time_id).val().length : true), message: 'This field is required.' }],
-                    ['custom', { func: value => !value.length || !$(timeout_date_id).attr('data-value') || (getTimeout() > moment().valueOf() / 1000), message: 'Time out cannot be in the past.' }],
-                    ['custom', { func: validTime, message: 'Please select a valid time.' }],
+                    ['custom', { func: () => ($(timeout_date_id).val() && getMoment(timeout_date_id).isSame(moment(), 'day') ? $(timeout_time_id).val().length : true), message: localize('This field is required.') }],
+                    ['custom', { func: value => !value.length || !$(timeout_date_id).attr('data-value') || (getTimeout() > moment().valueOf() / 1000), message: localize('Time out cannot be in the past.') }],
+                    ['custom', { func: validTime, message: localize('Please select a valid time.') }],
                 ],
             },
             {
@@ -188,8 +188,8 @@ const SelfExclusion = (() => {
                 exclude_if_empty: 1,
                 value           : () => getDate(exclude_until_id),
                 validations     : [
-                    ['custom', { func: value => !value.length || getMoment(exclude_until_id).isAfter(moment().add(6, 'months')), message: 'Exclude time cannot be less than 6 months.' }],
-                    ['custom', { func: value => !value.length || getMoment(exclude_until_id).isBefore(moment().add(5, 'years')), message: 'Exclude time cannot be for more than 5 years.' }],
+                    ['custom', { func: value => !value.length || getMoment(exclude_until_id).isAfter(moment().add(6, 'months')), message: localize('Exclude time cannot be less than 6 months.') }],
+                    ['custom', { func: value => !value.length || getMoment(exclude_until_id).isBefore(moment().add(5, 'years')), message: localize('Exclude time cannot be for more than 5 years.') }],
                 ],
             });
 

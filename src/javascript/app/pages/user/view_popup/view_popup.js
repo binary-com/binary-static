@@ -573,16 +573,16 @@ const ViewPopup = (() => {
 
         $container.prepend($('<div/>', { id: 'sell_bet_desc', class: 'popup_bet_desc drag-handle', text: longcode }));
         const $sections  = $('<div/>').append($('<div class="gr-row container"><div id="sell_details_chart_wrapper" class="gr-8 gr-12-p gr-12-m"></div><div id="sell_details_table" class="gr-4 gr-12-p gr-12-m"></div></div>'));
-        let [barrier_text, low_barrier_text] = ['Barrier', 'Low Barrier'];
+        let [barrier_text, low_barrier_text] = localize(['Barrier', 'Low Barrier']);
         if (Lookback.isLookback(contract.contract_type)) {
             [barrier_text, low_barrier_text] =
                 Lookback.getBarrierLabel(contract.contract_type, contract.barrier_count);
         } else if (contract.barrier_count > 1) {
-            barrier_text = 'High Barrier';
+            barrier_text = localize('High Barrier');
         } else if (/^DIGIT(MATCH|DIFF)$/.test(contract.contract_type)) {
-            barrier_text = 'Target';
+            barrier_text = localize('Target');
         } else if (/^(tickhigh|ticklow)$/i.test(contract.contract_type)) {
-            barrier_text = 'Selected Tick';
+            barrier_text = localize('Selected Tick');
         }
 
         $sections.find('#sell_details_table').append($(
@@ -597,7 +597,7 @@ const ViewPopup = (() => {
             ${createRow(barrier_text, '', 'trade_details_barrier', true)}
             ${Reset.isReset(contract.contract_type) ? createRow(localize('Reset Barrier'), '', 'trade_details_reset_barrier', true) : ''}
             ${(contract.barrier_count > 1 ? createRow(low_barrier_text, '', 'trade_details_barrier_low', true) : '')}
-            ${createRow(Callputspread.isCallputspread(contract.contract_type) ? 'Maximum payout' : 'Potential Payout', '', 'trade_details_payout')}
+            ${createRow(Callputspread.isCallputspread(contract.contract_type) ? localize('Maximum payout') : localize('Potential Payout'), '', 'trade_details_payout')}
             ${multiplier && Lookback.isLookback(contract.contract_type) ? createRow(localize('Multiplier'), '', 'trade_details_multiplier') : ''}
             ${createRow(localize('Purchase Price'), '', 'trade_details_purchase_price')}
             </tbody>

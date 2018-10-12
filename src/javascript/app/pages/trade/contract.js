@@ -161,7 +161,7 @@ const Contract = (() => {
                     }
                 } else {
                     trade_contract_forms[contract_category] =
-                        localize(current_obj.contract_category_display /* localize-ignore */); // handled in static_strings_app.js
+                        localize(current_obj.contract_category_display /* localize-ignore */); // handled in static_strings_app.js: Asian
                     if (contract_category === 'digits') {
                         trade_contract_forms.matchdiff = localize('Matches/Differs');
                         if (getLanguage() !== 'ID') {
