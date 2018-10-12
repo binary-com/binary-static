@@ -106,7 +106,6 @@ const fileHash = (path) => (
     })
 );
 
-
 /** **************************************
  * Factory functions
  */

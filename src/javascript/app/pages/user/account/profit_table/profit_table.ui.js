@@ -27,7 +27,6 @@ const ProfitTableUI = (() => {
             localize('Details'),
         ];
 
-
         currency = Client.get('currency');
 
         header[7] += currency ? ` (${currency})` : '';

@@ -93,8 +93,17 @@
     }
 }
 
-#mt_download .browsers img {
-    max-height: 100px;
+.mt-sidebar-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 110px;
+
+    & img {
+        max-width: 100%;
+        width: 72px;
+    }
 }
 
 #new_account_icon {
@@ -102,4 +111,44 @@
     background-repeat: no-repeat;
     background-position: 18px 6px;
     padding-left: 48px;
+}
+
+#mt_download {
+    a[data-type=alt-link] {
+        cursor: pointer;
+    }
+    p.no-margin {
+        margin: 0;
+    }
+    .browsers {
+        align-items: flex-start;
+
+        img {
+            max-width: 100px;
+
+            @media screen and (max-width: 480px) {
+                width: 40px;
+            }
+        }
+    }
+    .app-store-badge, .google-play-badge {
+        height: 56px;
+        width: 172px;
+    }
+    .mt-mobile-phone {
+        height: 397px;
+        width: auto;
+    }
+    .mt-desktop-screen-app {
+        @media screen and (max-width: 480px) {
+            & {
+                max-width: 100%;
+            }
+        }
+        max-width: 600px;
+        height: auto;
+    }
+    .alternative-download-description {
+        margin: 0;
+    }
 }

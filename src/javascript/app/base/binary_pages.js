@@ -13,6 +13,7 @@ const Endpoint                = require('../pages/endpoint');
 const MBTradePage             = require('../pages/mb_trade/mb_tradepage');
 const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
+const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
 const TradingTimesUI          = require('../pages/resources/trading_times/trading_times.ui');
 const NewAccount              = require('../pages/new_account');
 const TradePage               = require('../pages/trade/tradepage');
@@ -54,6 +55,7 @@ const Contact            = require('../../static/pages/contact');
 const GetStarted         = require('../../static/pages/get_started');
 const Home               = require('../../static/pages/home');
 const JobDetails         = require('../../static/pages/job_details');
+const Platforms          = require('../../static/pages/platforms');
 const Regulation         = require('../../static/pages/regulation');
 const StaticPages        = require('../../static/pages/static_pages');
 const TermsAndConditions = require('../../static/pages/tnc');
@@ -91,7 +93,7 @@ const pages_config = {
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
     payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
-    platforms                : { module: TabSelector },
+    platforms                : { module: Platforms },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },
@@ -120,6 +122,7 @@ const pages_config = {
     'cfds'                   : { module: GetStarted.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
+    'download'               : { module: MetatraderDownloadUI },
     'faq'                    : { module: StaticPages.AffiliatesFAQ },
     'forex'                  : { module: GetStarted.Forex },
     'get-started'            : { module: TabSelector },
