@@ -2,6 +2,7 @@ const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
 const isCryptocurrency   = require('../../common/currency').isCryptocurrency;
+const isStableCoin       = require('../../common/currency').isStableCoin;
 const getMinWithdrawal   = require('../../common/currency').getMinWithdrawal;
 const FormManager        = require('../../common/form_manager');
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
@@ -69,7 +70,9 @@ const AccountTransfer = (() => {
         showForm();
 
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
+            const transfer_fee = isStableCoin ? "0.2%": "1%";
             el_transfer_fee.setVisibility(1);
+            elementTextContent(getElementById('transfer_fee_amount'), `${transfer_fee}`);
         } else {
             el_transfer_info.setVisibility(1);
         }
