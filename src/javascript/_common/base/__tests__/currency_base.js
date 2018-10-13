@@ -102,4 +102,16 @@ describe('Currency', () => {
             expect(Currency.isCryptocurrency('ZZZ')).to.eq(false);
         });
     });
+
+    describe('.isStableCoin()', () => {
+        it('works as expected', () => {
+           expect(Currency.isStableCoin('DAI')).to.eq(true);
+           expect(Currency.isStableCoin('EUR')).to.eq(false);
+           expect(Currency.isStableCoin('BTC')).to.eq(false);
+        });
+
+        it('works with undefined currencies', () => {
+            expect(Currency.isStableCoin('ZZZ')).to.eq(false);
+        });
+    });
 });

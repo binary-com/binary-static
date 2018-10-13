@@ -54,16 +54,16 @@ const setCurrencies = (website_status) => {
 // (currency in crypto_config) is a back-up in case website_status doesn't include the currency config, in some cases where it's disabled
 const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type'])) || (currency in crypto_config);
 
-const isStableCoin = currency => isCryptocurrency(currency) && getPropertyValue(crypto_config, [currency, 'stable']);
+const isStableCoin = currency => isCryptocurrency(currency) && getPropertyValue(crypto_config, [currency, 'is_stable']);
 
 const crypto_config = {
-    BTC: { name: 'Bitcoin',       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, stable: false },
-    BCH: { name: 'Bitcoin Cash',  min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, stable: false },
-    ETH: { name: 'Ether',         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, stable: false },
-    ETC: { name: 'Ether Classic', min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, stable: false },
-    LTC: { name: 'Litecoin',      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, stable: false },
-    DAI: { name: 'Dai',           min_withdrawal: 0.002, pa_max_withdrawal: 2000, pa_min_withdrawal: 10,    stable: true },
-    UST: { name: 'Tether',        min_withdrawal: 0.002, pa_max_withdrawal: 2000, pa_min_withdrawal: 10,    stable: true },
+    BTC: { name: 'Bitcoin',       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, is_stable: false },
+    BCH: { name: 'Bitcoin Cash',  min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, is_stable: false },
+    ETH: { name: 'Ether',         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, is_stable: false },
+    ETC: { name: 'Ether Classic', min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, is_stable: false },
+    LTC: { name: 'Litecoin',      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002, is_stable: false },
+    DAI: { name: 'Dai',           min_withdrawal: 0.002, pa_max_withdrawal: 2000, pa_min_withdrawal: 10,    is_stable: true },
+    UST: { name: 'Tether',        min_withdrawal: 0.002, pa_max_withdrawal: 2000, pa_min_withdrawal: 10,    is_stable: true },
 };
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || 0.002 : 1);
