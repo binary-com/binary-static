@@ -1,6 +1,5 @@
 const SelectMatcher    = require('@binary-com/binary-style').select2Matcher;
 const Cookies          = require('js-cookie');
-const moment           = require('moment');
 const Client           = require('../../../base/client');
 const BinarySocket     = require('../../../base/socket');
 const FormManager      = require('../../../common/form_manager');
@@ -10,7 +9,6 @@ const makeOption       = require('../../../../_common/common_functions').makeOpt
 const localize         = require('../../../../_common/localize').localize;
 const LocalStore       = require('../../../../_common/storage').LocalStore;
 const State            = require('../../../../_common/storage').State;
-const toISOFormat      = require('../../../../_common/string_util').toISOFormat;
 const urlFor           = require('../../../../_common/url').urlFor;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
