@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-08 02:55\n"
+"PO-Revision-Date: 2018-10-12 05:26\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -706,6 +706,12 @@ msgstr "Acesse liquidez multi-ativo de instituições de primeira categoria."
 msgid "Access our products and services from a single app"
 msgstr ""
 
+msgid "Access the markets anytime, anywhere from your Android device."
+msgstr ""
+
+msgid "Access the markets anytime, anywhere from your iOS device."
+msgstr ""
+
 msgid "Access the markets anytime, anywhere using native apps for your iOS or Android devices."
 msgstr "Acesse os mercados em qualquer momento, de qualquer lugar, usando apicativos nativos para os seus dispositivos iOS e Android."
 
@@ -720,6 +726,9 @@ msgstr "Acesso a liquidez multiativo e funcionalidade de back-office através de
 
 msgid "Access to your personal data is strictly prohibited with the exception of key %1 personnel and only as needed in the performance of their duties."
 msgstr "O acesso aos seus dados pessoais é estritamente proibido, com a exceção do pessoal-chave da %1 e apenas conforme necessário no desempenho dos seus deveres."
+
+msgid "Access your account with full trading permission."
+msgstr ""
 
 msgid "Access your trading history through our Expert Advisors (EA)"
 msgstr ""
@@ -1024,17 +1033,11 @@ msgstr "Todas as transações que ocorrem na blockchain relacionadas com criptom
 msgid "All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company’s responsibility hence the Company is not liable for such actions or results."
 msgstr "Todas as aberturas ou fechamentos de posições não previstos e iniciados por consultores especializados, quer relevantes a erros do sistema ou outros, não serão abrangidos pela responsabilidade da Empresa. Portanto, a Empresa não se responsabiliza por tais ações ou resultados."
 
-msgid "All versions of Android"
-msgstr "Todas as versões do Android"
+msgid "All versions for Android"
+msgstr ""
 
-msgid "All versions of Linux"
-msgstr "Todas as versões do Linux"
-
-msgid "All versions of MacOS"
-msgstr "Todas as versões do MacOS"
-
-msgid "All versions of iOS"
-msgstr "Todas as versões do iOS"
+msgid "All versions for iOS"
+msgstr ""
 
 msgid "All your deposits and withdrawals are processed by %1 within 24 hours. However, there may be additional processing time required by your bank or money transfer service."
 msgstr "Todos os seus depósitos e retiradas são processados pela %1 dentro de 24 horas. No entanto, pode haver tempo de processamento adicional requerido pelo seu banco ou serviço de transferência de dinheiro."
@@ -1623,7 +1626,7 @@ msgid "Binary (C.R.) S.A.,"
 msgstr ""
 
 msgid "Binary (C.R.) S.A., registered in Costa Rica. Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their account opened with Binary (C.R.) S.A."
-msgstr ""
+msgstr "Binário (C.R.) S.A., registrados na Costa Rica. Os clientes do resto do mundo (excluindo alguns países como os EUA, Costa Rica, Hong Kong) terão sua conta aberta com o binário (C.R.) S.A."
 
 msgid "Binary (Europe) Limited"
 msgstr "Binary (Europe) Limited"
@@ -1736,8 +1739,11 @@ msgstr "Frequência de negociação de opções binárias"
 msgid "Binary Options Trading has been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr ""
 
-msgid "Binary Options on MT5"
+msgid "Binary Options for MT5"
 msgstr ""
+
+msgid "Binary Options on MT5"
+msgstr "Opções binárias na MT5"
 
 msgid "Binary Shop"
 msgstr "A loja Binary"
@@ -1773,7 +1779,7 @@ msgid "Binary options on MT5 are available exclusively on Volatility Indices whi
 msgstr ""
 
 msgid "Binary options trading is now available on our MT5 platform. Learn more about its benefits and available markets."
-msgstr ""
+msgstr "Está agora disponível na nossa plataforma MT5 a negociação de opções binárias. Aprenda mais sobre os seus benefícios e os mercados disponíveis."
 
 msgid "Binary options trading is relatively easy. You can purchase a contract in just three steps:"
 msgstr "A negociação de opções binárias é relativamente fácil. É possível comprar um contrato em apenas 3 passos:"
@@ -1834,9 +1840,6 @@ msgstr "Marca do primeiro carro"
 
 msgid "Browser"
 msgstr "Navegador"
-
-msgid "Browser platforms"
-msgstr "Plataformas de navegador"
 
 msgid "But if you are new to Forex or financial trading of any kind, there is still a long way to go before you even purchase your first contract. This is why we have come up with a basic, step-by-step tutorial to help you bridge that gap and make your first trade."
 msgstr "Mas, caso você seja principiante nas negociações de forex ou financeiras de qualquer tipo, ainda há um longo caminho antes de sequer comprar o seu primeiro contrato. É por essa razão que desenvolvemos um tutorial básico, passo-a-passo, para ajudá-lo a suprir as carências e chegar à sua primeira negociação. "
@@ -3092,20 +3095,20 @@ msgstr "Transferir"
 msgid "Download CSV"
 msgstr "Baixar CSV"
 
-msgid "Download Expert Advisor"
-msgstr ""
-
 msgid "Download MAM"
 msgstr "Baixar o GCM"
 
+msgid "Download MT5 for Linux"
+msgstr ""
+
+msgid "Download MT5 for Mac"
+msgstr ""
+
+msgid "Download MT5 for Windows"
+msgstr ""
+
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Baixe a MT5 para o seu desktop ou laptop para acessar as ferramentas e recursos poderosos desfrutados por milhões de negociadores."
-
-msgid "Download for Mac"
-msgstr "Baixar para Mac"
-
-msgid "Download for Windows"
-msgstr "Baixar para Windows"
 
 msgid "Download our desktop app now:"
 msgstr ""
@@ -3533,7 +3536,7 @@ msgstr "Executar e atualizar planos de teste manuais e automatizados, assegurar 
 msgid "Execute your trade in seconds."
 msgstr "Execute o seu contrato em segundos."
 
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 or 10 ticks. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
+msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
 msgstr ""
 
 msgid "Execution model and counterparty risk"
@@ -3630,7 +3633,7 @@ msgid "Explanation"
 msgstr "Explicação"
 
 msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform. %1Create an MT5 account now%2 to start trading."
-msgstr ""
+msgstr "Descubra um mundo totalmente novo de negociação de opções binárias com a principal plataforma multi-ativos do mundo. %1Crie uma conta MT5%2 para começar a negociar."
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr ""
@@ -3828,7 +3831,7 @@ msgid "Fluency with Linux administration"
 msgstr "Forte domínio da administração Linux"
 
 msgid "Follow our step-by-step guide to start trading binary options on MT5."
-msgstr ""
+msgstr "Siga o nosso guia detalhado para começar a negociar opções binárias na MT5."
 
 msgid "Follow the Law and These Terms"
 msgstr "Siga a lei e estes termos"
@@ -3847,15 +3850,6 @@ msgstr ""
 
 msgid "For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta."
 msgstr ""
-
-msgid "For Browser"
-msgstr "Para navegadores"
-
-msgid "For Desktop"
-msgstr "Para desktops"
-
-msgid "For Mobile"
-msgstr "Para celulares"
 
 msgid "For affiliate, partnership, and other marketing-related queries:"
 msgstr "Para afiliados, parcerias e outras questões relacionadas com marketing:"
@@ -4127,6 +4121,9 @@ msgstr "Assumir posição longa e curta"
 msgid "Go short = sell"
 msgstr "Assumir posição curta = vender"
 
+msgid "Go to MT5 download page"
+msgstr ""
+
 msgid "Go to MetaTrader 5 Dashboard"
 msgstr "Ir para o painel de controle da MetaTrader 5"
 
@@ -4368,7 +4365,7 @@ msgid "How to trade binary options"
 msgstr "Como negociar opções binárias"
 
 msgid "How to trade binary options on MT5"
-msgstr ""
+msgstr "Como negociar opções binárias na MT5"
 
 msgid "How to trade cryptocurrencies"
 msgstr "Como negociar criptomoedas"
@@ -4980,9 +4977,6 @@ msgstr "Herança"
 msgid "Instant access"
 msgstr "Acesso instantâneo"
 
-msgid "Instructions for Linux"
-msgstr "Instruções para Linux"
-
 msgid "Insufficient balance."
 msgstr "Saldo insuficiente."
 
@@ -5038,7 +5032,7 @@ msgid "Introduction"
 msgstr "Introdução"
 
 msgid "Introduction to binary options on MT5"
-msgstr ""
+msgstr "Introdução a opções binárias na MT5"
 
 msgid "Intuitively simple"
 msgstr ""
@@ -5520,6 +5514,12 @@ msgstr "Retrospectivos"
 msgid "Lookbacks options are currently only available for %1Volatility Indices%2."
 msgstr "Opções retroativas são atualmente apenas disponíveis em %1Índices Volatility%2."
 
+msgid "Looking for %1 app?"
+msgstr ""
+
+msgid "Looking for %1 or %2 Desktop apps?"
+msgstr ""
+
 msgid "Loss"
 msgstr "Perda"
 
@@ -5619,20 +5619,38 @@ msgstr "Conta real MT5"
 msgid "MT5 Volatility Indices"
 msgstr "Índices Volatility da MT5"
 
+msgid "MT5 for Android"
+msgstr ""
+
+msgid "MT5 for Linux"
+msgstr ""
+
+msgid "MT5 for Mac"
+msgstr ""
+
+msgid "MT5 for Mobile"
+msgstr ""
+
+msgid "MT5 for Windows"
+msgstr ""
+
+msgid "MT5 for iOS"
+msgstr ""
+
+msgid "MT5 for web platform"
+msgstr ""
+
 msgid "MT5 real-money account for Forex and CFDs."
 msgstr "Conta de dinheiro real MT5 para forex e CFDs."
 
 msgid "MT5 real-money account for Volatility Indices only."
 msgstr "Conta de dinheiro real MT5 somente para índices \"Volatility\"."
 
-msgid "MT5 trading platform links:"
-msgstr "Links da plataformas de negociação MT5:"
-
 msgid "MT5 withdrawals have been disabled on your account. Please check your email for more details."
 msgstr ""
 
-msgid "MacOS"
-msgstr "MacOS"
+msgid "Mac"
+msgstr ""
 
 msgid "Made an impression in the first interview? We'll invite you to a second interview with our CEO and/or hiring manager."
 msgstr "Fez uma boa impressão na primeira entrevista? Iremos convidá-lo para uma segunda entrevista com o nosso diretor e/ou gestor de recrutamento."
@@ -6727,7 +6745,7 @@ msgid "PM"
 msgstr "PM"
 
 msgid "PPUKM Physiotherapy Charity Run 2018"
-msgstr ""
+msgstr "Corrida de caridade de fisioteripa 2018 do PPUKM"
 
 msgid "Palladium vs US Dollar"
 msgstr "Paládio vs. Dólar americano"
@@ -7815,8 +7833,8 @@ msgstr ""
 msgid "Scalable"
 msgstr "Escalável"
 
-msgid "Scan the QR code below with your authentication app (such as %1, %2, and %3)."
-msgstr "Leia o código QR abaixo com o seu aplicativo de autenticação (tais como %1, %2 e %3)."
+msgid "Scan the QR code below with your authentication app. We recommend %1 or %2. Please note that %3 is not supported."
+msgstr ""
 
 msgid "Scope and Intent"
 msgstr "Âmbito e intenção"
@@ -7988,6 +8006,9 @@ msgstr "Liquida"
 
 msgid "Severability"
 msgstr "Separabilidade"
+
+msgid "Share access to your account without any permission to trade."
+msgstr ""
 
 msgid "Sharp prices"
 msgstr "Preços exatos"
@@ -8204,6 +8225,12 @@ msgstr "Hora de início"
 
 msgid "Start trading"
 msgstr "Começar a negociar"
+
+msgid "Start trading MT5 on web platform"
+msgstr ""
+
+msgid "Start/End Time"
+msgstr ""
 
 msgid "State/Province"
 msgstr "Estado/Província"
@@ -9433,6 +9460,9 @@ msgstr "Esta conta está desativada"
 msgid "This account is excluded until %1"
 msgstr "Esta conta está excluída até %1"
 
+msgid "This application only supports Windows operating systems."
+msgstr ""
+
 msgid "This bonus is only available to new clients. Existing or former clients do not qualify. New clients are eligible for this type of bonus only once. This bonus is available only once per household."
 msgstr "Este bônus está disponível apenas para novos clientes. Os clientes já existentes ou antigos não são qualificáveis. Novos clientes são elegíveis para este tipo de bônus apenas uma vez. Este bônus está disponível apenas uma vez para cada agregado familiar."
 
@@ -9440,7 +9470,7 @@ msgid "This bonus will be processed and credited to a client's account when:"
 msgstr "Este bônus será processado e creditado na conta do cliente quando:"
 
 msgid "This charity run is organized by The National University of Malaysia in conjunction with the International Day of Older Persons which is celebrated in October every year. The goal of the run is to raise awareness within local communities about the importance of physiotherapy for the elderly and to promote healthy lifestyles among Malaysians. The funds raised are used to buy and upgrade existing facilities for the rehabilitation of older patients."
-msgstr ""
+msgstr "Esta corrida de caridade é organizada pela Universidade Nacional da Malásia em conjunto com o dia internacional dos idosos que se comemora em outubro todos os anos. O objetivo da corrida é promover a sensibilização dentro das comunidades locais sobre a importância da fisioterapia para idosos e para promover estilos de vida saudáveis entre os malaios. Os fundos angariados são utilizados para comprar e melhorar as instalações existentes para a reabilitação de doentes mais idosos."
 
 msgid "This clause does not apply to Volatility Indices."
 msgstr "Esta cláusula não se aplica a Índices Volatility."
@@ -9643,6 +9673,9 @@ msgstr "Para executar esta ação <a href=\"%1\">atualize para uma conta real %2
 msgid "To perform this action, please set the %1currency%2 of your account."
 msgstr "Para executar esta ação, defina a %1moeda%2 da sua conta."
 
+msgid "To perform this action, please switch to your %1 Financial account"
+msgstr ""
+
 msgid "To perform this action, please switch to your %1 Real Account."
 msgstr "Para executar esta ação mude para a sua conta real %2."
 
@@ -9737,10 +9770,10 @@ msgid "Trade Forex and CFDs on our popular multi-asset platform."
 msgstr "Negocie forex e CFDs na nossa popular plataforma multi-ativos."
 
 msgid "Trade Forex, CFDs, and binary options with a powerful platform recognised as the global standard."
-msgstr ""
+msgstr "Negocie Forex, CFDs e opções binárias com uma poderosa plataforma, reconhecida como o padrão global."
 
 msgid "Trade Forex, Contracts for Difference (CFDs), and binary options on MetaTrader 5 - a multi-asset platform that offers outstanding trading possibilities and technical analysis tools."
-msgstr ""
+msgstr "Negocie Forex, contratos por diferenças (CFDs) e opções binárias na MetaTrader 5 - uma plataforma multi-ativos que proporciona excelentes possibilidades de negociação e ferramentas de análise técnica."
 
 msgid "Trade Now"
 msgstr "Negocie já"
@@ -9755,7 +9788,7 @@ msgid "Trade all four precious metals on one platform."
 msgstr "Negocie os quatro metais preciosos numa só plataforma."
 
 msgid "Trade all major currencies, indices, commodities, and volatility indices."
-msgstr ""
+msgstr "Negocie todos os principais índices, moedas, matérias-primas e índices Volatility."
 
 msgid "Trade and manage multiple MT5 client accounts from a single interface."
 msgstr "Gerencie e negocie com várias contas MT5 a partir de uma única interface."
@@ -9795,9 +9828,6 @@ msgstr "Negocie já"
 
 msgid "Trade on underlying markets that include Forex, indices, commodities, and more."
 msgstr "Negocie mercados subjacentes que incluem forex, índices, matérias-primas e mais."
-
-msgid "Trade on web platform"
-msgstr "Negocie na plataforma da Web"
 
 msgid "Trade only with money you can afford to lose. Do not trade with borrowed money."
 msgstr "Negocie apenas uma quantia de dinheiro que possa perder. Não jogue com dinheiro emprestado."
@@ -10140,6 +10170,9 @@ msgstr "Um diploma universitário em Marketing, Comunicações, Jornalismo ou ou
 
 msgid "University degree, preferably in Graphic Design or a related discipline"
 msgstr "Um grau universitário, de preferência em Desenho Gráfico ou numa disciplina relacionada"
+
+msgid "Unknown OS"
+msgstr ""
 
 msgid "Unless otherwise advised, we shall treat you as a Retail Client. You may also request by writing to us to change the category in which you have been classified and this may have an effect on the level of protection afforded to you. Professional Clients do not fall within the scope of the Investor Compensation Scheme. We reserve the right to accept or refuse any such request for change in classification."
 msgstr "Salvo indicação em contrário, iremos tratá-lo como um cliente não-profissional. Você pode também solicitar-nos, por escrito, a alteração da categoria em que foi classificado e isto poderá ter um efeito sobre o nível de proteção proporcionado a você. Clientes profissionais não são abrangidos pelo âmbito do sistema de indenização de investidores. Reservamos o direito de aceitar ou recusar qualquer solicitação de alteração na classificação."
@@ -10612,11 +10645,11 @@ msgstr ""
 msgid "We segregate your funds and keep them in secure and licensed financial institutions."
 msgstr "Segregamos todos os fundos de clientes e mantemo-los em instituições financeiras seguras e licenciadas."
 
-msgid "We support and prefer to use the above browser platforms"
-msgstr "Suportamos e preferimos usar as plataformas para navegadores acima"
-
 msgid "We support hundreds of deposit and withdrawal options, including Bitcoin."
 msgstr "Suportamos centenas de opções de depósito e retirada, incluindo Bitcoin."
+
+msgid "We support the following web browsers:"
+msgstr ""
 
 msgid "We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your account. We also monitor account activity for signs of unusual activity that might indicate fraud and work with collection agencies and low-enforcement agencies to address fraud issues."
 msgstr "Usamos serviços de verificação de identidade e medidas de detecção de fraude em tempo real para ajudar a protegê-lo de acessos não autorizados à sua conta. Também monitoramos a atividade das contas a fim de detectar sinais de atividades não habituais que possam indicar fraude e trabalhamos com agências de cobrança e de aplicação da lei para lidar com fraudes."
@@ -11004,9 +11037,6 @@ msgstr "Ganhe até o prêmio máximo se o preço de saída for entre a barreira 
 
 msgid "Windows"
 msgstr "Windows"
-
-msgid "Windows 7 or later"
-msgstr "Windows 7 ou posterior"
 
 msgid "Winning the contract"
 msgstr "Ganhar o Contrato"
