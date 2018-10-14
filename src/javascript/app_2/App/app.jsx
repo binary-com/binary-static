@@ -1,6 +1,7 @@
 import PropTypes                   from 'prop-types';
 import React                       from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { DevTools }                from 'mobx-react-devtools';
 import { MobxProvider }            from 'Stores/connect';
 import getBaseName                 from 'Utils/URL/base_name';
 import PortfolioDrawer             from './Components/Elements/PortfolioDrawer';
@@ -9,6 +10,7 @@ import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
 import ThemeWrapper                from './Containers/Layout/theme_wrapper.jsx';
 import Routes                      from './Containers/Routes/routes.jsx';
+
 
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
@@ -20,6 +22,7 @@ const App = ({ root_store }) => (
 
                 <AppContents>
                     <Routes />
+                    <DevTools />
                     <PortfolioDrawer />
                 </AppContents>
 
