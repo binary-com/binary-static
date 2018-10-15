@@ -145,7 +145,6 @@ const formatValue = (value, comment, sign) => (
     `${sign ? color.cyan(` ${sign} `) : ''}${color.whiteBright(value.toLocaleString().padStart(sign ? 5 : 8))} ${` (${comment})\n`}`
 );
 
-
 let gt_instance = null;
 exports.getInstance = () => {
     if (gt_instance) {

@@ -1,3 +1,5 @@
+@import './metatrader_download';
+
 #mt_account_management {
     margin: 0;
 
@@ -33,6 +35,16 @@
             display: inline-block;
             vertical-align: middle;
             margin-right: 10px;
+        }
+    }
+    .password-type {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 8px;
+
+        > *:not(:last-child) {
+            margin-right: 20px;
         }
     }
     #account_selector {
@@ -275,7 +287,7 @@
                     }
                     img {
                         height: 65px;
-                        flex: 1;
+                        margin: auto;
                     }
                     &.disabled, &.existed {
                         cursor: default;
@@ -349,5 +361,19 @@
 @media (max-width: 768px) {
     #mt_account_management .mobile-balance {
         display: flex;
+    }
+}
+
+.mt-sidebar-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100px;
+    justify-content: space-around;
+
+    .small-icon {
+        img {
+            width: 76px;
+        }
     }
 }
