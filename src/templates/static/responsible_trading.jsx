@@ -25,20 +25,20 @@ const ResponsibleTrading = () => (
             <p>{it.L('Clients who wish to self-exclude should be aware that the self-exclusion period is a minimum of six months and are given the option to extend it to a total of at least five years, immediately without any cooling-off period. When the self-exclusion period is set, the balance of funds in the client\'s account will be refunded to the client. At the end of the self-exclusion period, the self-exclusion remains in place, unless positive action is taken by the client in order to trade again.')}</p>
             <p>{it.L('Clients who do not wish to renew the self-exclusion and make a request to begin trading again, shall be given one day to cool off before being allowed access to the website. It is important to note that contact must be made to our customer services via telephone. Email contact is not sufficient.')}</p>
 
-            <div data-show='iom, malta, default' className='id-hide'>
+            <div className='invisible eu-show'>
                 <h2>GAMSTOP</h2>
                 <p>{it.L('If you are considering self-exclusion, you may wish to register with GAMSTOP.')}</p>
                 <p>{it.L('GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain.')}</p>
                 <p>{it.L('To find out more and to sign up with GAMSTOP, please visit [_1].', '<a target="_blank" rel="noopener noreferrer" href="https://www.gamstop.co.uk">www.gamstop.co.uk</a>')}</p>
+
+                <h2>{it.L('Underage Gambling')}</h2>
+                <p>{it.L('Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived of any winnings and only deposits made shall be refunded.')}</p>
+
+                <h2>{it.L('Filtering Controls')}</h2>
+                <p>{it.L('Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one\'s access to our site.')}</p>
+                <p>{it.L('[_1] supports [_2] which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling.', it.website_name, '<a target=\'_blank\' href=\'https://www.begambleaware.org/about-us/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
+                <p>{it.L('[_1] also provides links to an online quiz to assess a potential gambling problem and an online gambling calculator to see how much you can really spend.', '<a target=\'_blank\' href=\'https://www.begambleaware.org/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
             </div>
-
-            <h2>{it.L('Underage Gambling')}</h2>
-            <p>{it.L('Clients must be aware that underage gambling is an offence. If a client, upon age verification, is proven to be underage, they will be deprived of any winnings and only deposits made shall be refunded.')}</p>
-
-            <h2>{it.L('Filtering Controls')}</h2>
-            <p>{it.L('Our site can be filtered using a number of filtering systems available on the market which could be used to restrict one\'s access to our site.')}</p>
-            <p>{it.L('[_1] supports [_2] which is the leading charity in Britain committed to minimising gambling-related harm. The charity funds education, prevention and treatment services and commissions research to help people understand more about gambling-related harm. It also offers a national gambling helpline to offer confidential advice and emotional support to those that seek help about their gambling.', it.website_name, '<a target=\'_blank\' href=\'https://www.begambleaware.org/about-us/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
-            <p>{it.L('[_1] also provides links to an online quiz to assess a potential gambling problem and an online gambling calculator to see how much you can really spend.', '<a target=\'_blank\' href=\'https://www.begambleaware.org/\' rel=\'noopener noreferrer\'>BeGambleAware</a>')}</p>
 
             <h2>{it.L('Other Warnings & Regulatory Disclosures')}</h2>
             <p>{it.L('Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients.')}</p>
