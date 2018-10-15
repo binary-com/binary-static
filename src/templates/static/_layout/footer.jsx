@@ -56,7 +56,7 @@ const Footer = () => (
                                     { text: it.L('Why Us?'),         href: it.url_for('why-us') },
                                     { text: it.L('Getting Started'), href: it.url_for('get-started') },
                                     { text: it.L('Platform Tour'),   href: it.url_for('tour') },
-                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank' },
+                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', className: 'invisible eu-show' },
                                     { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
                                     { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
                                 ]}
@@ -122,8 +122,7 @@ const Footer = () => (
                                     <img className='responsive' src={it.url_for('images/pages/regulation/bvi.png')} />
                                 </a>
                                 <a className='labuan-icon' href='https://www.labuanibfc.com/' target='_blank' rel='noopener noreferrer'>
-                                    {/* TODO: update labuan image with white background for FSA */}
-                                    <img className='responsive' src={it.url_for('images/pages/regulation/labuan-logo.png')} />
+                                    <img className='responsive' src={it.url_for('images/pages/footer/labuan_FSA.svg')} />
                                 </a>
                             </div>
                             <SocialIcons
@@ -142,7 +141,7 @@ const Footer = () => (
                 <div className='gr-row'>
                     <div className='gr-12'>
                         <p>
-                            {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).', `<a href=${it.url_for('download/WS-Binary-Investments-Europe-Limited.pdf')} target="_blank" download="1">`, '</a>')}
+                            {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).', `<a href=${it.url_for('download/WS-Binary-Investments-Europe-Limited.pdf')} target="_blank">`, '</a>')}
                         </p>
                         <p>
                             {it.L('Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission ([_1]view licence[_2]), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission ([_3]licence no. SIBA/L/18/1114[_4]), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business ([_5]licence no. MB/18/0024[_6])',
@@ -169,7 +168,7 @@ const Footer = () => (
                                     <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                 </a>
                                 <div className='lga-gamstop-icon-container'>
-                                    <a className='gamstop-icon' data-show='iom, malta, default' href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
+                                    <a className='gamstop-icon' href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
                                         <img className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
                                     </a>
                                     <a className='lga-icon' href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
