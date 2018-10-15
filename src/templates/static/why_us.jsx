@@ -115,7 +115,7 @@ const WhyUs = () => (
                                     <div className='gr-6 gr-centered-m gr-padding-10'>
                                         <img className='responsive' src={it.url_for('images/pages/why-us/why-us-proven-record_1.svg')} />
                                     </div>
-                                    <div className='gr-6 gr-centered-m gr-padding-10'>
+                                    <div className='gr-6 gr-centered-m gr-padding-10 eu-show invisible'>
                                         <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                     </div>
                                 </div>
