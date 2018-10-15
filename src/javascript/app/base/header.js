@@ -2,7 +2,6 @@ const BinaryPjax          = require('./binary_pjax');
 const Client              = require('./client');
 const BinarySocket        = require('./socket');
 const showHidePulser      = require('../common/account_opening').showHidePulser;
-const checkClientsCountry = require('../common/country_base').checkClientsCountry;
 const MetaTrader          = require('../pages/user/metatrader/metatrader');
 const GTM                 = require('../../_common/base/gtm');
 const Login               = require('../../_common/base/login');
@@ -22,9 +21,6 @@ const Header = (() => {
     const onLoad = () => {
         populateAccountsList();
         bindClick();
-        if (!Login.isLoginPages()) {
-            checkClientsCountry();
-        }
         if (Client.isLoggedIn()) {
             getElementById('menu-top').classList.add('smaller-font', 'top-nav-menu');
             displayAccountStatus();

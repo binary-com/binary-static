@@ -1,19 +1,21 @@
-const Client               = require('./client');
-const Clock                = require('./clock');
-const Footer               = require('./footer');
-const Header               = require('./header');
-const BinarySocket         = require('./socket');
-const Dialog               = require('../common/attach_dom/dialog');
-const showPopup            = require('../common/attach_dom/popup');
-const setCurrencies        = require('../common/currency').setCurrencies;
-const SessionDurationLimit = require('../common/session_duration_limit');
-const updateBalance        = require('../pages/user/update_balance');
-const GTM                  = require('../../_common/base/gtm');
-const Login                = require('../../_common/base/login');
-const localize             = require('../../_common/localize').localize;
-const State                = require('../../_common/storage').State;
-const urlFor               = require('../../_common/url').urlFor;
-const getPropertyValue     = require('../../_common/utility').getPropertyValue;
+const Client                 = require('./client');
+const Clock                  = require('./clock');
+const Footer                 = require('./footer');
+const Header                 = require('./header');
+const BinarySocket           = require('./socket');
+const createLanguageDropDown = require('../common/attach_dom/language_dropdown');
+const Dialog                 = require('../common/attach_dom/dialog');
+const showPopup              = require('../common/attach_dom/popup');
+const setCurrencies          = require('../common/currency').setCurrencies;
+const SessionDurationLimit   = require('../common/session_duration_limit');
+const updateBalance          = require('../pages/user/update_balance');
+const Crowdin                = require('../../_common/crowdin');
+const GTM                    = require('../../_common/base/gtm');
+const Login                  = require('../../_common/base/login');
+const localize               = require('../../_common/localize').localize;
+const State                  = require('../../_common/storage').State;
+const urlFor                 = require('../../_common/url').urlFor;
+const getPropertyValue       = require('../../_common/utility').getPropertyValue;
 
 const BinarySocketGeneral = (() => {
     const onOpen = (is_ready) => {
@@ -41,6 +43,9 @@ const BinarySocketGeneral = (() => {
                     if (is_available && !BinarySocket.availability()) {
                         window.location.reload();
                         return;
+                    }
+                    if (!Crowdin.isInContext()) {
+                        createLanguageDropDown(response.website_status);
                     }
                     if (response.website_status.message) {
                         Footer.displayNotification(response.website_status.message);
