@@ -1,6 +1,7 @@
 const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
 const formatMoney      = require('../../../common/currency').formatMoney;
+const isStableCoin     = require('../../../common/currency').isStableCoin;
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
@@ -268,7 +269,9 @@ const MetaTraderUI = (() => {
         if (action === 'cashier') { // Manage Fund
             const client_currency = Client.get('currency');
             const mt_currency     = MetaTraderConfig.getCurrency(acc_type);
+            const transfer_fee = isStableCoin(client_currency) ? '0.5%' : '1%';
             cloneForm();
+            $form.find('.mt5_transfer_fee_amount').text(`${transfer_fee}`);
             $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
             $form.find('.binary-balance').html(`${formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
