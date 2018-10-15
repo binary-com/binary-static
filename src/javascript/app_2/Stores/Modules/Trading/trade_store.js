@@ -17,7 +17,7 @@ import * as Symbol                       from './Actions/symbol';
 import {
     allowed_query_string_variables,
     non_proposal_query_string_variable } from './Constants/query_string';
-import validation_rules                  from './Constants/validation_rules';
+import getValidationRules                from './Constants/validation_rules';
 import { setChartBarrier }               from './Helpers/chart';
 import ContractType                      from './Helpers/contract_type';
 import { convertDurationLimit }          from './Helpers/duration';
@@ -86,16 +86,13 @@ export default class TradeStore extends BaseStore {
     debouncedProposal = debounce(this.requestProposal, 500);
 
     constructor({ root_store }) {
-        const session_storage_properties = allowed_query_string_variables;
-        const options = {
-            root_store,
-            session_storage_properties,
-            validation_rules,
-        };
-
         URLHelper.pruneQueryString(allowed_query_string_variables);
 
-        super(options);
+        super({
+            root_store,
+            session_storage_properties: allowed_query_string_variables,
+            validation_rules          : getValidationRules(),
+        });
 
         Object.defineProperty(
             this,

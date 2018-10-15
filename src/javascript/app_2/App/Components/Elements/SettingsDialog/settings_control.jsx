@@ -1,6 +1,5 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import { localize } from '_common/localize';
 import ToggleButton from '../toggle_button.jsx';
 
 const SettingsControl = ({
@@ -12,7 +11,7 @@ const SettingsControl = ({
     toggle,
 }) => (
     <div className='settings-row' onClick={toggle || onClick}>
-        <span>{localize(name)}</span>
+        <span>{name}</span>
         {toggle ?
             <ToggleButton
                 toggled={to_toggle}

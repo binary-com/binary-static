@@ -4,7 +4,7 @@ import { localize }     from '_common/localize';
 import { fillTemplate } from 'Utils/Language/fill_template';
 
 const Localize = ({ str, replacers }) => {
-    const localized = localize(str);
+    const localized = localize(str /* localize-ignore */); // should be localized on the caller side
 
     if (!/\[_\d+\]/.test(localized)) {
         return <React.Fragment>{localized}</React.Fragment>;

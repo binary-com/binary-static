@@ -1,5 +1,3 @@
-import { localize } from '_common/localize';
-
 export const formatPortfolioPosition = (portfolio_pos) => {
     const purchase = parseFloat(portfolio_pos.buy_price);
     const payout   = parseFloat(portfolio_pos.payout);
@@ -7,7 +5,7 @@ export const formatPortfolioPosition = (portfolio_pos) => {
     return {
         reference  : +portfolio_pos.transaction_id,
         type       : portfolio_pos.contract_type,
-        details    : localize(portfolio_pos.longcode.replace(/\n/g, '<br />')),
+        details    : portfolio_pos.longcode.replace(/\n/g, '<br />'),
         payout,
         purchase,
         expiry_time: portfolio_pos.expiry_time,

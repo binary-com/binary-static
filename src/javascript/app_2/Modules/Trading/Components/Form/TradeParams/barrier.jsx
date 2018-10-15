@@ -37,7 +37,7 @@ const Barrier = ({
     }
     return (
         <Fieldset
-            header={localize(barrier_count > 1 ? 'Barriers' : 'Barrier')}
+            header={barrier_count > 1 ? localize('Barriers') : localize('Barrier')}
             icon='barriers'
         >
             <InputField

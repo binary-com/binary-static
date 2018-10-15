@@ -90,6 +90,9 @@ const Duration = ({
             </div>
         );
     }
+    const datepicker_footer = min_day > 1 ?
+        localize('The minimum duration is [_1] days', [min_day]) :
+        localize('The minimum duration is [_1] day',  [min_day]);
 
     const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
     if (duration_units_list.length === 1 && duration_unit === 't') {
@@ -131,7 +134,7 @@ const Duration = ({
                                 is_read_only
                                 is_clearable={false}
                                 is_nativepicker={is_nativepicker}
-                                footer={localize(`The minimum duration is [_1] day${min_day > 1 ? 's' : ''}`, [min_day])}
+                                footer={datepicker_footer}
                             /> :
                             <InputField
                                 type='number'

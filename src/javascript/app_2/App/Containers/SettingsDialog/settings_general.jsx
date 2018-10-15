@@ -1,5 +1,6 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
+import { localize }    from '_common/localize';
 import { connect }     from 'Stores/connect';
 import SettingsControl from '../../Components/Elements/SettingsDialog/settings_control.jsx';
 
@@ -16,23 +17,23 @@ const GeneralSettings = ({
     <div className='tab-content'>
         <div className='general-setting-container'>
             <SettingsControl
-                name='Language'
+                name={localize('Language')}
                 onClick={showLanguage}
             >
                 <i className={`flag ic-flag-${(curr_language || 'EN').toLowerCase()}`} />
             </SettingsControl>
             <SettingsControl
-                name='Dark Mode'
+                name={localize('Dark Mode')}
                 to_toggle={is_dark_mode}
                 toggle={toggleDarkMode}
             />
             <SettingsControl
-                name='Purchase Confirmation'
+                name={localize('Purchase Confirmation')}
                 to_toggle={is_purchase_confirmed}
                 toggle={togglePurchaseConfirmation}
             />
             <SettingsControl
-                name='Purchase Lock'
+                name={localize('Purchase Lock')}
                 to_toggle={is_purchase_locked}
                 toggle={togglePurchaseLock}
             />

@@ -3,6 +3,9 @@ const fs      = require('fs');
 const path    = require('path');
 const common  = require('./common');
 const GetText = require('./gettext');
+const extract = require('./extract_js_texts');
+
+const static_app_2 = require('./js_texts/static_strings_app_2');
 
 const texts = [
     'Day',
@@ -684,20 +687,31 @@ const texts = [
 ];
 
 /* eslint-disable no-console */
-const map           = {};
 const all_languages = [...common.languages, 'ach'].map(l => l.toLowerCase());
+const map = {
+    app  : {},
+    app_2: {},
+};
 
 const build = () => {
-    const gt = GetText.getInstance();
+    generateSources();
+    const all_texts = getAllTexts();
+    const gettext   = GetText.getInstance();
+
     all_languages.forEach(lang => {
-        gt.setLang(lang);
-        map[lang] = {};
-        texts.forEach(text => {
+        gettext.setLang(lang);
+        Object.keys(map).forEach(app => { map[app][lang] = {}; });
+
+        all_texts.forEach(text => {
             const key         = text.replace(/[\s.]/g, '_');
-            const translation = gt.gettext(text, '[_1]', '[_2]', '[_3]', '[_4]');
+            const translation = gettext.gettext(text, '[_1]', '[_2]', '[_3]', '[_4]');
 
             if (translation !== text) {
-                map[lang][key] = translation;
+                Object.keys(map).forEach(app => {
+                    if (map[app].source.has(text)) {
+                        map[app][lang][key] = translation;
+                    }
+                });
             }
         });
     });
@@ -713,12 +727,51 @@ const generate = () => {
         process.stdout.write(color.cyan('    -'));
         process.stdout.write(` ${lang}.js ${'.'.repeat(15 - lang.length)}`);
 
-        const js_path = path.join(common.root_path, `${target_path}${lang}.js`);
-        const content = `const texts_json = {};\ntexts_json['${lang.toUpperCase()}'] = ${JSON.stringify(map[lang])};`;
-        fs.writeFileSync(js_path, content, 'utf8');
+        Object.keys(map).forEach(app => {
+            const js_path = path.join(common.root_path, `${target_path}${app !== 'app' ? `${app}/` : ''}${lang}.js`);
+            const content = `const texts_json = {};\ntexts_json['${lang.toUpperCase()}'] = ${JSON.stringify(map[app][lang])};`;
+            fs.writeFileSync(js_path, content, 'utf8');
+        });
 
         process.stdout.write(common.messageEnd());
     });
+};
+
+// ---------- Helpers ----------
+const generateSources = () => {
+    // app
+    map.app.source = new Set(texts);
+
+    // app_2
+    const app_name = 'app_2';
+    extract.parse(app_name);
+    const extracted_strings_app_2 = [...extract.getTexts(app_name)];
+    map.app_2.source = new Set([
+        ...extracted_strings_app_2,
+        ...static_app_2,
+    ]);
+    writeExtractedStrings(app_name, extracted_strings_app_2);
+};
+
+const getAllTexts = () => {
+    const unique_texts = new Set([
+        ...map.app.source,
+        ...map.app_2.source,
+    ]);
+    return [...unique_texts];
+};
+
+const writeExtractedStrings = (app_name, extracted_strings) => {
+    const file_path = path.resolve(common.root_path, `scripts/js_texts/extracted_strings_${app_name}.js`);
+    const comments  = '// This is an auto-generated list of strings used in js code for debugging purpose only\n';
+    const contents  = `${comments}module.exports = ${singleQuoteArray(extracted_strings)}`;
+    fs.writeFileSync(file_path, contents, 'utf8');
+};
+
+// JSON.stringify uses double quotes, so in order to have the same style used in the code we wrap array items in single quote
+const singleQuoteArray = (texts_array) => {
+    const spaces = ' '.repeat(4);
+    return `[\n${spaces}'${texts_array.sort().map(str => str.replace(/'/g, '\\\'')).join(`',\n${spaces}'`)}',\n];\n`;
 };
 
 exports.build    = build;
