@@ -27,6 +27,7 @@ const config = {
         ],
     },
 };
+const methods_regex = new RegExp(`^(${config.localize_method_names.join('|')})$`);
 
 const source_strings = {};
 const ignored_list   = {};
@@ -93,9 +94,11 @@ const parseFile = (path_to_js_file) => {
 };
 
 const extractor = (node, js_source) => {
-    const is_function = new RegExp(`^(${config.localize_method_names.join('|')})$`).test((node.callee || {}).name);
+    const callee = node.callee || {};
+    const is_function   = node.type   === 'CallExpression'   && methods_regex.test(callee.name);                  // localize('...')
+    const is_expression = callee.type === 'MemberExpression' && methods_regex.test((callee.property || {}).name); // Localize.localize('...')
 
-    if (node.type === 'CallExpression' && is_function) {
+    if (is_function || is_expression) {
         const first_arg = node.arguments[0];
 
         if (first_arg.type === 'ArrayExpression') { // support for array of strings
