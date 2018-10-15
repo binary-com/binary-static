@@ -115,15 +115,15 @@ const Footer = () => (
                     <div className='gr-12'>
                         <div className='icon-row flex-row gr-child'>
                             <div className='regulation-logos flex-row'>
-                                <a className='vanuatu-icon' href='https://www.vfsc.vu/' target='_blank' rel='noopener noreferrer'>
+                                <span className='vanuatu-icon'>
                                     <img className='responsive' src={it.url_for('images/pages/regulation/vanuatu-logo.png')} />
-                                </a>
-                                <a className='bvi-icon' href='http://www.bvifsc.vg/' target='_blank' rel='noopener noreferrer'>
+                                </span>
+                                <span className='bvi-icon'>
                                     <img className='responsive' src={it.url_for('images/pages/regulation/bvi.png')} />
-                                </a>
-                                <a className='labuan-icon' href='https://www.labuanibfc.com/' target='_blank' rel='noopener noreferrer'>
+                                </span>
+                                <span className='labuan-icon'>
                                     <img className='responsive' src={it.url_for('images/pages/footer/labuan_FSA.svg')} />
-                                </a>
+                                </span>
                             </div>
                             <SocialIcons
                                 networks={[
@@ -154,7 +154,7 @@ const Footer = () => (
                         </p>
                         <fieldset className='fld-risk-warning'>
                             <legend>{it.L('Risk Warning')}</legend>
-                            <p>{it.L('The Financial Products offered via this website include binary options, contracts for difference ("CFDs") and other complex derivatives and financial products. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex financial products offered, please be sure to understand the risks involved and learn about [_1]Responsible Trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}</p>
+                            <p>{it.L('The financial products offered via this website include binary options, contracts for difference ("CFDs") and other complex derivatives and financial products. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex financial products offered, please be sure to understand the risks involved and learn about [_1]Responsible Trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}</p>
                         </fieldset>
                     </div>
                 </div>
