@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fieldset } from '../../_common/components/forms.jsx';
+import { Fieldset } from '../../_common/components/forms';
 
 const ProfessionalClient = () => (
     <Fieldset legend={it.L('Professional Client')} id='fs_professional' className='invisible'>

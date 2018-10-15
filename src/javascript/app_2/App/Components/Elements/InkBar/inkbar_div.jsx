@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import PropTypes  from 'prop-types';
 import React      from 'react';
-import { InkBar } from './inkbar.jsx';
+import { InkBar } from './inkbar';
 
 class InkBarDiv extends React.Component {
     constructor(props) {

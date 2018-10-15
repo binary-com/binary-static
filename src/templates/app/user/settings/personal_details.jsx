@@ -1,6 +1,6 @@
 import React from 'react';
-import AuthenticateMessageFinancial from '../../_includes/authenticate_message_financial.jsx';
-import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms.jsx';
+import AuthenticateMessageFinancial from '../../_includes/authenticate_message_financial';
+import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms';
 import {
     AccountOpeningReason,
     AddressLine1,
@@ -11,8 +11,8 @@ import {
     Phone,
     TaxInformationForm,
     GeocodeResponse,
-} from '../../../_common/components/forms_common_rows.jsx';
-import Loading from '../../../_common/components/loading.jsx';
+} from '../../../_common/components/forms_common_rows';
+import Loading from '../../../_common/components/loading';
 
 const Money = () => (
     <React.Fragment>

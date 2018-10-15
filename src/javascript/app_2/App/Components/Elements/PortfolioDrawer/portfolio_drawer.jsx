@@ -4,9 +4,9 @@ import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { localize }                   from '_common/localize';
 import { IconClose }                  from 'Assets/Common';
-import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty_portfolio_message.jsx';
+import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty_portfolio_message';
 import { connect }                    from 'Stores/connect';
-import PortfolioDrawerCard            from './portfolio_drawer_card.jsx';
+import PortfolioDrawerCard            from './portfolio_drawer_card';
 
 class PortfolioDrawer extends React.Component {
     componentDidMount()    { this.props.onMount(); }

@@ -4,7 +4,7 @@ import {
     PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
-import Tooltip                   from '../Elements/tooltip.jsx';
+import Tooltip                   from '../Elements/tooltip';
 
 const InputField = ({
     className,

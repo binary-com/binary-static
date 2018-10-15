@@ -1,8 +1,8 @@
 import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
-import AuthenticateMessageFinancial from '../_includes/authenticate_message_financial.jsx';
-import AuthenticateMessage from '../_includes/authenticate_message.jsx';
+import Loading from '../../_common/components/loading';
+import SeparatorLine from '../../_common/components/separator_line';
+import AuthenticateMessageFinancial from '../_includes/authenticate_message_financial';
+import AuthenticateMessage from '../_includes/authenticate_message';
 
 const Authenticate = () => (
     <React.Fragment>

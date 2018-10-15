@@ -1,3 +1,3 @@
-export * from './error_balance.jsx';
-export * from './error_general.jsx';
-export * from './error_login.jsx';
+export * from './error_balance';
+export * from './error_general';
+export * from './error_login';

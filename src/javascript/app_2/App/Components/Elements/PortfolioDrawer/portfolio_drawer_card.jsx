@@ -1,10 +1,10 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import ContractTypeCell    from 'Modules/Portfolio/Components/contract_type_cell.jsx';
-import Money               from '../money.jsx';
-import BinaryLink          from '../../Routes/binary_link.jsx';
+import ContractTypeCell    from 'Modules/Portfolio/Components/contract_type_cell';
+import Money               from '../money';
+import BinaryLink          from '../../Routes/binary_link';
 import { getContractPath } from '../../Routes/helpers';
-import RemainingTime       from '../../../Containers/remaining_time.jsx';
+import RemainingTime       from '../../../Containers/remaining_time';
 
 const PortfolioDrawerCard = ({
     currency,

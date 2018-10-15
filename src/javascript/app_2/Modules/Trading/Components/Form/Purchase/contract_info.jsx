@@ -1,8 +1,8 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
-import Money             from 'App/Components/Elements/money.jsx';
-import Tooltip           from 'App/Components/Elements/tooltip.jsx';
+import Money             from 'App/Components/Elements/money';
+import Tooltip           from 'App/Components/Elements/tooltip';
 import { IconTradeType } from 'Assets/Trading/Types';
 
 const ContractInfo = ({

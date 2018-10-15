@@ -1,1 +1,1 @@
-export * from './notifications.jsx';
+export * from './notifications';

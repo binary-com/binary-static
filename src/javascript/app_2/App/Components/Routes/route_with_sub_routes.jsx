@@ -6,7 +6,7 @@ import Client              from '_common/base/client_base';
 import { redirectToLogin } from '_common/base/login';
 import routes              from 'Constants/routes';
 import GTM                 from 'Utils/gtm';
-import LoginPrompt         from '../Elements/login_prompt.jsx';
+import LoginPrompt         from '../Elements/login_prompt';
 import { default_title }   from '../../Constants/app_config';
 
 const RouteWithSubRoutes = route => {

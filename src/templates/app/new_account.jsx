@@ -1,5 +1,5 @@
 import React from 'react';
-import MFSA  from '../_common/includes/mfsa.jsx';
+import MFSA  from '../_common/includes/mfsa';
 
 const NewAccount = () => (
     <React.Fragment>

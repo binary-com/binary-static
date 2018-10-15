@@ -1,6 +1,6 @@
 import React from 'react';
-import Wrapper from './wrapper.jsx';
-import { Table } from '../../../_common/components/elements.jsx';
+import Wrapper from './wrapper';
+import { Table } from '../../../_common/components/elements';
 
 const RcRow = ({ string, id }) => (
     <div className='gr-row gr-padding-10'>

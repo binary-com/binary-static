@@ -1,8 +1,8 @@
 import PropTypes            from 'prop-types';
 import React                from 'react';
 import { getPropertyValue } from '_common/utility';
-import { IconClose }        from 'Assets/Common/icon_close.jsx';
-import PurchaseResult       from './purchase_result.jsx';
+import { IconClose }        from 'Assets/Common/icon_close';
+import PurchaseResult       from './purchase_result';
 import {
     ErrorBalance,
     ErrorGeneral,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormRow, SubmitButton, Fieldset } from '../../_common/components/forms.jsx';
+import { FormRow, SubmitButton, Fieldset } from '../../_common/components/forms';
 
 const Row = ({ id }) => (
     <div className='gr-padding-10 gr-row'>

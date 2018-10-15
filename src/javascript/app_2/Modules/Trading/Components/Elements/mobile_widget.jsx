@@ -1,6 +1,6 @@
 import React            from 'react';
-import FullScreenDialog from './full_screen_dialog.jsx';
-import TradeParams      from '../../Containers/trade_params.jsx';
+import FullScreenDialog from './full_screen_dialog';
+import TradeParams      from '../../Containers/trade_params';
 
 class MobileWidget extends React.PureComponent {
     constructor(props) {

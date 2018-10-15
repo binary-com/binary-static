@@ -1,5 +1,5 @@
 import React from 'react';
-import BIEL from './biel.jsx';
+import BIEL from './biel';
 
 const Li = ({ title, subtitle, sub_list, paragraph }) => (
     <li><strong>{title}</strong> &mdash; {subtitle}

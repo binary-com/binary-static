@@ -3,10 +3,10 @@ import React                from 'react';
 import { CSSTransition }    from 'react-transition-group';
 import { getPropertyValue } from '_common/utility';
 import { connect }          from 'Stores/connect';
-import Test                 from './test.jsx';
-import FormLayout           from '../Components/Form/form_layout.jsx';
-import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
-import InfoBox              from '../../Contract/Containers/info_box.jsx';
+import Test                 from './test';
+import FormLayout           from '../Components/Form/form_layout';
+import ContractDetails      from '../../Contract/Containers/contract_details';
+import InfoBox              from '../../Contract/Containers/info_box';
 import SmartChart           from '../../SmartChart';
 
 class Trade extends React.Component {

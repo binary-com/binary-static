@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from '../../../_common/components/elements.jsx';
+import { Table } from '../../../_common/components/elements';
 
 const Limits = () => {
     const data_balloon = `<a href="javascript:;" data-balloon-length="xlarge" class='no-underline' data-balloon="%"><img src="${it.url_for('images/common/question_1.png')}"></a>`;

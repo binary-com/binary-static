@@ -1,5 +1,5 @@
 import React from 'react';
-import ListMultiline from '../../../_common/components/list_multiline.jsx';
+import ListMultiline from '../../../_common/components/list_multiline';
 
 const AccountPrivacy = () => {
     const items = [

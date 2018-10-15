@@ -1,6 +1,6 @@
 import React        from 'react';
 import PropTypes    from 'prop-types';
-import { TabsItem } from './tabs_item.jsx';
+import { TabsItem } from './tabs_item';
 
 class TabsWrapper extends React.PureComponent {
     constructor(props) {

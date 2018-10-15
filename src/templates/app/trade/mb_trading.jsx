@@ -1,7 +1,7 @@
 import React from 'react';
-import Analysis from './analysis.jsx';
-import Loading from '../../_common/components/loading.jsx';
-import Portfolio from '../user/portfolio.jsx';
+import Analysis from './analysis';
+import Loading from '../../_common/components/loading';
+import Portfolio from '../user/portfolio';
 
 const BuySellTemplate = () => (
     <React.Fragment>

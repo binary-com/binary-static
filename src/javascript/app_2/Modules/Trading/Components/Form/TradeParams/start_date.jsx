@@ -4,9 +4,9 @@ import {
 import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { localize }             from '_common/localize';
-import Dropdown                 from 'App/Components/Form/dropdown.jsx';
-import Fieldset                 from 'App/Components/Form/fieldset.jsx';
-import TimePicker               from 'App/Components/Form/time_picker.jsx';
+import Dropdown                 from 'App/Components/Form/dropdown';
+import Fieldset                 from 'App/Components/Form/fieldset';
+import TimePicker               from 'App/Components/Form/time_picker';
 
 /* TODO:
     1. update sessions list when the selected one doesn’t have any enabled time

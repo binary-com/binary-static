@@ -3,13 +3,13 @@ import { observer }     from 'mobx-react';
 import PropTypes        from 'prop-types';
 import React            from 'react';
 import { localize }     from '_common/localize';
-import Money            from 'App/Components/Elements/money.jsx';
-import RemainingTime    from 'App/Containers/remaining_time.jsx';
+import Money            from 'App/Components/Elements/money';
+import RemainingTime    from 'App/Containers/remaining_time';
 import {
     getIndicativePrice,
     isEnded,
     isStarted }         from 'Stores/Modules/Contract/Helpers/logic';
-import ContractSell     from '../../Containers/contract_sell.jsx';
+import ContractSell     from '../../Containers/contract_sell';
 
 const InfoBoxGeneral = ({ className, contract_info }) => {
     const {

@@ -1,8 +1,8 @@
 import React from 'react';
-import AuthenticateMessageFinancial from '../../_includes/authenticate_message_financial.jsx';
-import FinancialForm from '../../_includes/financial_form.jsx';
-import Loading from '../../../_common/components/loading.jsx';
-import { SubmitButton } from '../../../_common/components/forms.jsx';
+import AuthenticateMessageFinancial from '../../_includes/authenticate_message_financial';
+import FinancialForm from '../../_includes/financial_form';
+import Loading from '../../../_common/components/loading';
+import { SubmitButton } from '../../../_common/components/forms';
 
 const FinancialAssessment = () => (
     <div>

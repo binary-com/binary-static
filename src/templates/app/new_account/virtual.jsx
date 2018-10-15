@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormRow, Fieldset } from '../../_common/components/forms.jsx';
+import { FormRow, Fieldset } from '../../_common/components/forms';
 
 const Virtual = () => (
     <div className='gr-12 static_full'>

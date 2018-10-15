@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from '../_common/components/elements.jsx';
+import { List } from '../_common/components/elements';
 
 const Section = ({ className = '', id, header, children }) => (
     <div className={`section ${className}`}>

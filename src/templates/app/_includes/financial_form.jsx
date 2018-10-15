@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fieldset, FormRow } from '../../_common/components/forms.jsx';
+import { Fieldset, FormRow } from '../../_common/components/forms';
 
 const Experience = () => (
     <React.Fragment>

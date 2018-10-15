@@ -1,6 +1,6 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import IconError    from 'Assets/Common/icon_error.jsx';
+import IconError    from 'Assets/Common/icon_error';
 import { localize } from '_common/localize';
 
 const ErrorComponent = ({ type, message }) => (

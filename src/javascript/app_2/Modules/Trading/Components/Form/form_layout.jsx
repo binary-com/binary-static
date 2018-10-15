@@ -1,7 +1,7 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import ScreenLarge  from './screen_large.jsx';
-import ScreenSmall  from './screen_small.jsx';
+import ScreenLarge  from './screen_large';
+import ScreenSmall  from './screen_small';
 
 const FormLayout = ({
     is_contract_visible,

@@ -9,9 +9,9 @@ import {
     addComma,
     getDecimalPlaces }          from '_common/base/currency_base';
 import { localize }             from '_common/localize';
-import Dropdown                 from 'App/Components/Form/dropdown.jsx';
-import Fieldset                 from 'App/Components/Form/fieldset.jsx';
-import InputField               from 'App/Components/Form/input_field.jsx';
+import Dropdown                 from 'App/Components/Form/dropdown';
+import Fieldset                 from 'App/Components/Form/fieldset';
+import InputField               from 'App/Components/Form/input_field';
 
 const Amount = ({
     amount,

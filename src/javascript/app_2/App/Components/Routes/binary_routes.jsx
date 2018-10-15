@@ -1,5 +1,5 @@
 import React              from 'react';
-import RouteWithSubRoutes from './route_with_sub_routes.jsx';
+import RouteWithSubRoutes from './route_with_sub_routes';
 import getRoutesConfig    from '../../Constants/routes_config';
 
 

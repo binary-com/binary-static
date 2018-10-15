@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from '../../_common/components/elements.jsx';
+import { Table } from '../../_common/components/elements';
 
 const Button = ({ url, real, className, text }) => (
     <a href={it.url_for(url)} className={`toggle button ${real ? 'client_real' : 'client_logged_out'} invisible`}>

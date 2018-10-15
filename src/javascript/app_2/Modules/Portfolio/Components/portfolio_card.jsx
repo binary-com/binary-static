@@ -1,9 +1,9 @@
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { NavLink }         from 'react-router-dom';
-import Money               from 'App/Components/Elements/money.jsx';
+import Money               from 'App/Components/Elements/money';
 import { getContractPath } from 'App/Components/Routes/helpers';
-import RemainingTime       from 'App/Containers/remaining_time.jsx';
+import RemainingTime       from 'App/Containers/remaining_time';
 
 const PortfolioCard = ({
     currency,

@@ -1,8 +1,8 @@
 import React from 'react';
-import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
-import MFSA from '../_common/includes/mfsa.jsx';
-import SeparatorLine from '../_common/components/separator_line.jsx';
-import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
+import FormVerifyEmail from '../_common/includes/form_verify_email';
+import MFSA from '../_common/includes/mfsa';
+import SeparatorLine from '../_common/components/separator_line';
+import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs';
 
 const PaymentLogo = ({ items }) => items.map((item, inx) => (
     <div key={inx} className='gr-2 gr-4-m center-text' data-show={item.dataShow}>

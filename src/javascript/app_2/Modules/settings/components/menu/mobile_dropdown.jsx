@@ -2,7 +2,7 @@ import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { Switch, Route } from 'react-router-dom';
-import MenuItem          from './menu_item.jsx';
+import MenuItem          from './menu_item';
 
 class MobileDropdown extends React.Component {
     state = {

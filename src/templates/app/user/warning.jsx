@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormRow } from '../../_common/components/forms.jsx';
+import { FormRow } from '../../_common/components/forms';
 
 const Warning = () => (
     <React.Fragment>

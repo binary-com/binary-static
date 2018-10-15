@@ -1,1 +1,1 @@
-export default from './Containers/portfolio.jsx';
+export default from './Containers/portfolio';

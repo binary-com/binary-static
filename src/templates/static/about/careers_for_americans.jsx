@@ -1,6 +1,6 @@
 import React from 'react';
-import CareersShared from './careers_shared.jsx';
-import { InfoBox } from '../../_common/components/elements.jsx';
+import CareersShared from './careers_shared';
+import { InfoBox } from '../../_common/components/elements';
 
 
 const LgColumnLink = ({ image, title, text, section }) => (

@@ -1,7 +1,7 @@
 import React      from 'react';
-import Head       from './head.jsx';
-import GTMNoScript from './includes/google/gtm_no_script.jsx';
-import Loading    from '../_common/components/loading.jsx';
+import Head       from './head';
+import GTMNoScript from './includes/google/gtm_no_script';
+import Loading    from '../_common/components/loading';
 
 const BinaryApp = () => (
     <html>

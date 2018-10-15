@@ -1,8 +1,8 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import MobileWidget from '../Elements/mobile_widget.jsx';
-import ContractType from '../../Containers/contract_type.jsx';
-import Purchase     from '../../Containers/purchase.jsx';
+import MobileWidget from '../Elements/mobile_widget';
+import ContractType from '../../Containers/contract_type';
+import Purchase     from '../../Containers/purchase';
 
 const ScreenSmall = (/* { is_trade_enabled } */) => (
     <React.Fragment>

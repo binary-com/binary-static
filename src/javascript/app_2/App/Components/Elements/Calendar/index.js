@@ -1,1 +1,1 @@
-export default from './calendar.jsx';
+export default from './calendar';

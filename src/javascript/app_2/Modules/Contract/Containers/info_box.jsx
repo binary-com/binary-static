@@ -5,7 +5,7 @@ import React               from 'react';
 import { connect }         from 'Stores/connect';
 import { isDigitContract } from 'Stores/Modules/Contract/Helpers/digits';
 import { isEnded }         from 'Stores/Modules/Contract/Helpers/logic';
-import ContractError       from '../Components/contract_error.jsx';
+import ContractError       from '../Components/contract_error';
 import {
     InfoBoxDigit,
     InfoBoxExpired,

@@ -2,7 +2,7 @@ import classNames   from 'classnames';
 import PropTypes    from 'prop-types';
 import React        from 'react';
 import { localize } from '_common/localize';
-import Tooltip      from '../../Elements/tooltip.jsx';
+import Tooltip      from '../../Elements/tooltip';
 
 const NetworkStatus = ({ status }) => (
     <div className='network-status-wrapper'>

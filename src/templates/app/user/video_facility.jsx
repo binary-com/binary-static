@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
+import Loading from '../../_common/components/loading';
 
 const VideoFacility = () => {
     const support_link = '<a href=\'mailto:%\' rel=\'nofollow\'>%</a>'.replace(new RegExp('%', 'g'), 'authentications@binary.com');

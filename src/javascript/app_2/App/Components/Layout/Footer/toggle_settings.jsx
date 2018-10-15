@@ -2,7 +2,7 @@ import classNames       from 'classnames';
 import PropTypes        from 'prop-types';
 import React            from 'react';
 import { IconSettings } from 'Assets/Footer';
-import SettingsDialog   from '../../Elements/SettingsDialog/settings_dialog.jsx';
+import SettingsDialog   from '../../Elements/SettingsDialog/settings_dialog';
 
 const ToggleSettings = ({
     is_language_visible,

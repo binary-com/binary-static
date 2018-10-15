@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormRow, Fieldset, SubmitButton } from '../../../_common/components/forms.jsx';
+import { FormRow, Fieldset, SubmitButton } from '../../../_common/components/forms';
 
 const ChangePassword = () => (
     <React.Fragment>

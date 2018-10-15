@@ -1,7 +1,7 @@
 import classNames     from 'classnames';
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import { DrawerItem } from './drawer_item.jsx';
+import { DrawerItem } from './drawer_item';
 
 class DrawerItems extends React.Component {
     state = { is_collapsed: false };

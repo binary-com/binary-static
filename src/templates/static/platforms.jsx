@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../_common/components/tabs.jsx';
+import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../_common/components/tabs';
 
 const Platforms = ({
     className,

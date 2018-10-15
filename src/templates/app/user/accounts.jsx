@@ -1,7 +1,7 @@
 import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
-import { Table } from '../../_common/components/elements.jsx';
+import Loading from '../../_common/components/loading';
+import SeparatorLine from '../../_common/components/separator_line';
+import { Table } from '../../_common/components/elements';
 
 const Accounts = () => (
     <React.Fragment>

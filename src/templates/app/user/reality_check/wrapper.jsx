@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from './form.jsx';
+import Form from './form';
 
 const Wrapper = ({ children }) => (
     <React.Fragment>

@@ -1,6 +1,6 @@
 import React from 'react';
-import Loading from '../_common/components/loading.jsx';
-import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
+import Loading from '../_common/components/loading';
+import AntiClickjack from '../_common/includes/anti_clickjack';
 
 const LoggedIn = () => (
     <html>

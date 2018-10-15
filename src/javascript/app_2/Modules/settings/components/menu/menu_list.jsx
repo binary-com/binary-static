@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MenuItem from './menu_item.jsx';
+import MenuItem from './menu_item';
 
 const MenuList = ({ items }) => (
     <div>

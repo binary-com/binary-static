@@ -1,7 +1,7 @@
 import React      from 'react';
-import Tooltip    from '../../../javascript/app_2/App/Components/Elements/tooltip.jsx';
-import Button     from '../../../javascript/app_2/App/Components/Form/button.jsx';
-import InputField from '../../../javascript/app_2/App/Components/Form/input_field.jsx';
+import Tooltip    from '../../../javascript/app_2/App/Components/Elements/tooltip';
+import Button     from '../../../javascript/app_2/App/Components/Form/button';
+import InputField from '../../../javascript/app_2/App/Components/Form/input_field';
 
 const StyleGuide = () => (
     <div className='container'>

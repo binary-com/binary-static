@@ -2,7 +2,7 @@ import classNames     from 'classnames';
 import moment         from 'moment';
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import CalendarButton from './calendar_button.jsx';
+import CalendarButton from './calendar_button';
 
 export default function CalendarHeader({ calendar_date, isPeriodDisabled, onClick, onSelect, calendar_view }) {
     const is_date_view   = calendar_view === 'date';

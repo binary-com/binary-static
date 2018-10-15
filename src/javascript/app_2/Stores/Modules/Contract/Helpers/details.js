@@ -1,7 +1,7 @@
 import React                      from 'react';
 import { addComma }               from '_common/base/currency_base';
 import { localize }               from '_common/localize';
-import Money                      from 'App/Components/Elements/money.jsx';
+import Money                      from 'App/Components/Elements/money';
 import { getContractTypeDisplay } from 'Constants/contract';
 import { toGMTFormat }            from 'Utils/Date';
 

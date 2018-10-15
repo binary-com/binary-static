@@ -1,7 +1,7 @@
 import PropTypes   from 'prop-types';
 import React       from 'react';
 import { NavLink } from 'react-router-dom';
-import TableCell   from './table_cell.jsx';
+import TableCell   from './table_cell';
 
 const TableRow = ({
     to,

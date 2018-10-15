@@ -1,6 +1,6 @@
 import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
-import { FillBox } from '../../_common/components/elements.jsx';
+import SeparatorLine from '../../_common/components/separator_line';
+import { FillBox } from '../../_common/components/elements';
 
 let id_no;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tbody } from '../../_common/components/elements.jsx';
+import { Tbody } from '../../_common/components/elements';
 
 const Info = ({ header, text, doc }) => (
     <div className='gr-parent gr-padding-10'>

@@ -1,6 +1,6 @@
 import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
-import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
+import SeparatorLine from '../../_common/components/separator_line';
+import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs';
 
 const GetStartedSection = ({ link, hash, image, header, text }) => {
     const href = `${it.url_for(link)}#${hash}`;

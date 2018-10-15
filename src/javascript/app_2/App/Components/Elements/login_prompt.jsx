@@ -1,6 +1,6 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import Localize     from './localize.jsx';
+import Localize     from './localize';
 
 const LoginPrompt = ({
     IconComponent,

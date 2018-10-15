@@ -1,17 +1,17 @@
 import React from 'react';
-import ConflictsPolicy from './conflicts_policy.jsx';
-import Copyright from './copyright.jsx';
-import Datafeed from './datafeed.jsx';
-import OrderExecutionBinary from './order_execution.jsx';
-import OrderExecutionMT from './metatrader/order_execution.jsx';
-import RiskDisclaimerBinary from './risk_disclaimer.jsx';
-import MAM from './mam.jsx';
-import RiskDisclaimerMT from './metatrader/risk_disclaimer.jsx';
-import PaymentAgents from './payment_agents.jsx';
-import Privacy from './privacy.jsx';
-import TermsAndConditionsBinary from './terms_and_conditions.jsx';
-import TermsAndConditionsMT from './metatrader/terms_and_conditions.jsx';
-import { SidebarSubmenu, SidebarContent, SidebarContentContainer } from '../../_common/components/sidebar.jsx';
+import ConflictsPolicy from './conflicts_policy';
+import Copyright from './copyright';
+import Datafeed from './datafeed';
+import OrderExecutionBinary from './order_execution';
+import OrderExecutionMT from './metatrader/order_execution';
+import RiskDisclaimerBinary from './risk_disclaimer';
+import MAM from './mam';
+import RiskDisclaimerMT from './metatrader/risk_disclaimer';
+import PaymentAgents from './payment_agents';
+import Privacy from './privacy';
+import TermsAndConditionsBinary from './terms_and_conditions';
+import TermsAndConditionsMT from './metatrader/terms_and_conditions';
+import { SidebarSubmenu, SidebarContent, SidebarContentContainer } from '../../_common/components/sidebar';
 
 const Tac = () => (
     <div className='gr-row static_full'>

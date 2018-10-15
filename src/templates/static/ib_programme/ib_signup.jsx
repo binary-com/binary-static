@@ -1,7 +1,7 @@
 import React from 'react';
-import { BoxRow, Box } from '../../_common/components/box_row.jsx';
-import { Table } from '../../_common/components/elements.jsx';
-import Step from '../../_common/components/step.jsx';
+import { BoxRow, Box } from '../../_common/components/box_row';
+import { Table } from '../../_common/components/elements';
+import Step from '../../_common/components/step';
 
 const IBBox = ({ image, ...props }) => (
     <Box img_src={it.url_for(`images/pages/affiliates/${image}.svg`)} {...props} />

@@ -1,7 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import ContractTypeItem               from './contract_type_item.jsx';
+import ContractTypeItem               from './contract_type_item';
 
 const ContractTypeList = ({
     handleSelect,

@@ -1,6 +1,6 @@
 import React from 'react';
-import { List } from '../../_common/components/elements.jsx';
-import SignupTour from '../signup_tour.jsx';
+import { List } from '../../_common/components/elements';
+import SignupTour from '../signup_tour';
 
 const Box = ({ boxes }) => (
     <div className='gr-row center-text'>

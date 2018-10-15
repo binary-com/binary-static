@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from '../../_common/components/elements.jsx';
+import { List } from '../../_common/components/elements';
 
 const TextBlock = ({ text, children }) => (
     <div className='gr-8 gr-12-m'>

@@ -1,7 +1,7 @@
 import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
-import { FormRow, SubmitButton } from '../../_common/components/forms.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import Loading from '../../_common/components/loading';
+import { FormRow, SubmitButton } from '../../_common/components/forms';
+import SeparatorLine from '../../_common/components/separator_line';
 
 /* eslint-disable react/jsx-no-target-blank */
 const AccountDesc = ({ title, description, account_type, items }) => {

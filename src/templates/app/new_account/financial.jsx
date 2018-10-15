@@ -1,8 +1,8 @@
 import React from 'react';
-import FinancialForm from '../_includes/financial_form.jsx';
-import PepDeclaration from '../_includes/pep_declaration.jsx';
-import ProfessionalClient from '../_includes/professional_client.jsx';
-import { Fieldset, FormRow } from '../../_common/components/forms.jsx';
+import FinancialForm from '../_includes/financial_form';
+import PepDeclaration from '../_includes/pep_declaration';
+import ProfessionalClient from '../_includes/professional_client';
+import { Fieldset, FormRow } from '../../_common/components/forms';
 import {
     Salutation,
     FirstName,
@@ -23,7 +23,7 @@ import {
     Tnc,
     TaxInformationForm,
     GeocodeResponse,
-} from '../../_common/components/forms_common_rows.jsx';
+} from '../../_common/components/forms_common_rows';
 
 const Financial = () => (
     <div className='gr-12 static_full'>

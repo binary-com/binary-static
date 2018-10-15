@@ -1,7 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import React                          from 'react';
 import PropTypes                      from 'prop-types';
-import StatementCard                  from './statement_card.jsx';
+import StatementCard                  from './statement_card';
 
 const StatementCardList = ({ data, onScroll, children }) => (
     <div className='card-list' onScroll={onScroll}>

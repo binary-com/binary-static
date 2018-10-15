@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormRow, Fieldset } from '../../_common/components/forms.jsx';
+import { FormRow, Fieldset } from '../../_common/components/forms';
 import {
     FirstName,
     LastName,
@@ -13,7 +13,7 @@ import {
     SecretQuestion,
     SecretAnswer,
     ClientMessage,
-} from '../../_common/components/forms_common_rows.jsx';
+} from '../../_common/components/forms_common_rows';
 
 const Money = () => (
     <React.Fragment>

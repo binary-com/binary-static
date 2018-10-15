@@ -1,1 +1,1 @@
-export default from './portfolio_drawer.jsx';
+export default from './portfolio_drawer';

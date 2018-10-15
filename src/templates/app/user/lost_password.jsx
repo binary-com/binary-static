@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fieldset, FormRow, SubmitButton } from '../../_common/components/forms.jsx';
+import { Fieldset, FormRow, SubmitButton } from '../../_common/components/forms';
 
 const LostPassword = () => (
     <div className='static_full'>

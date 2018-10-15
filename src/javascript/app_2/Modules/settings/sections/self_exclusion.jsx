@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React     from 'react';
-import Section   from '../components/section.jsx';
+import Section   from '../components/section';
 
 const SelfExclusion = ({ title, description }) => (
     <Section title={title} description={description}>

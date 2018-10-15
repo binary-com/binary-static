@@ -1,6 +1,6 @@
 import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
-import Step from '../../_common/components/step.jsx';
+import SeparatorLine from '../../_common/components/separator_line';
+import Step from '../../_common/components/step';
 
 const Box = ({
     gr,

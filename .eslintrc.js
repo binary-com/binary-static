@@ -69,5 +69,13 @@ module.exports = {
         react: {
             version: '16',
         },
+        'import/resolver': {
+            node: {
+                extensions: [
+                    '.jsx',
+                    '.js'
+                ]
+            },
+        },
     },
 };

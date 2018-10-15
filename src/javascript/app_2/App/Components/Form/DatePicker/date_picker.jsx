@@ -5,7 +5,7 @@ import { IconArrow }   from 'Assets/Common';
 import {
     formatDate,
     daysFromTodayTo }  from 'Utils/Date';
-import DatePickerInput from './date_picker_input.jsx';
+import DatePickerInput from './date_picker_input';
 import Calendar        from '../../Elements/Calendar';
 
 class DatePicker extends React.PureComponent {

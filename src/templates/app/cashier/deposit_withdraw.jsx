@@ -1,5 +1,5 @@
 import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
+import Loading from '../../_common/components/loading';
 
 const gambling_link = '<a href=\'%\' target=\'_blank\' rel=\'noopener noreferrer\'>%</a>'.replace(/%/g, 'http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx');
 

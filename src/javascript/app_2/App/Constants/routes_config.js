@@ -7,20 +7,20 @@ import {
     IconStatement }    from 'Assets/Header/NavBar';
 import ContractDetails from 'Modules/Contract';
 import Portfolio       from 'Modules/Portfolio';
-import Settings        from 'Modules/settings/settings.jsx';
+import Settings        from 'Modules/settings/settings';
 import Statement       from 'Modules/Statement';
 import Trade           from 'Modules/Trading';
 
 // Settings Routes
-import AccountPassword        from 'Modules/settings/sections/account_password.jsx';
-import ApiToken               from 'Modules/settings/sections/api_token.jsx';
-import AuthorizedApplications from 'Modules/settings/sections/authorized_applications.jsx';
-import CashierPassword        from 'Modules/settings/sections/cashier_password.jsx';
-import FinancialAssessment    from 'Modules/settings/sections/financial_assessment.jsx';
-import Limits                 from 'Modules/settings/sections/limits.jsx';
-import LoginHistory           from 'Modules/settings/sections/login_history.jsx';
-import PersonalDetails        from 'Modules/settings/sections/personal_details.jsx';
-import SelfExclusion          from 'Modules/settings/sections/self_exclusion.jsx';
+import AccountPassword        from 'Modules/settings/sections/account_password';
+import ApiToken               from 'Modules/settings/sections/api_token';
+import AuthorizedApplications from 'Modules/settings/sections/authorized_applications';
+import CashierPassword        from 'Modules/settings/sections/cashier_password';
+import FinancialAssessment    from 'Modules/settings/sections/financial_assessment';
+import Limits                 from 'Modules/settings/sections/limits';
+import LoginHistory           from 'Modules/settings/sections/login_history';
+import PersonalDetails        from 'Modules/settings/sections/personal_details';
+import SelfExclusion          from 'Modules/settings/sections/self_exclusion';
 
 const initRoutesConfig = () => ([
     { path: routes.contract,  component: ContractDetails, title: localize('Contract Details'),  is_authenticated: true },

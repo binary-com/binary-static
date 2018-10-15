@@ -1,6 +1,6 @@
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import ToggleButton from '../toggle_button.jsx';
+import ToggleButton from '../toggle_button';
 
 const DrawerToggle = ({
     text,

@@ -1,10 +1,10 @@
 import React from 'react';
-import Head from './head.jsx';
-import Header from './header.jsx';
-import MobileMenu from './mobile_menu.jsx';
-import Footer from './footer.jsx';
-import Title from '../../_common/components/title.jsx';
-import Gtm from '../../_common/includes/gtm.jsx';
+import Head from './head';
+import Header from './header';
+import MobileMenu from './mobile_menu';
+import Footer from './footer';
+import Title from '../../_common/components/title';
+import Gtm from '../../_common/includes/gtm';
 
 const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 

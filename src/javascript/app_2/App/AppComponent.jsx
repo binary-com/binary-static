@@ -2,17 +2,17 @@ import PropTypes                   from 'prop-types';
 import React                       from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import DevTools                    from 'mobx-react-devtools';
-import getBaseName                 from 'Utils/URL/base_name';
+import ErrorBoundary               from 'App/Components/Elements/Errors/ErrorBoundary';
+import AppContents                 from 'App/Containers/Layout/app_contents';
+import Footer                      from 'App/Containers/Layout/footer';
+import Header                      from 'App/Containers/Layout/header';
+import ThemeWrapper                from 'App/Containers/Layout/theme_wrapper';
+import Routes                      from 'App/Containers/Routes/routes';
+import PortfolioDrawer             from 'App/Components/Elements/PortfolioDrawer';
 import { MobxProvider }            from 'Stores/connect';
-import ErrorBoundary               from './Components/Elements/Errors/error_boundary.jsx';
-import PortfolioDrawer             from './Components/Elements/PortfolioDrawer';
-import AppContents                 from './Containers/Layout/app_contents.jsx';
-import Footer                      from './Containers/Layout/footer.jsx';
-import Header                      from './Containers/Layout/header.jsx';
-import ThemeWrapper                from './Containers/Layout/theme_wrapper.jsx';
-import Routes                      from './Containers/Routes/routes.jsx';
+import getBaseName                 from 'Utils/URL/base_name';
 
-const App = ({ root_store }) => (
+const AppComponent = ({ root_store }) => (
     <Router basename={getBaseName()}>
         <MobxProvider store={root_store}>
             <ThemeWrapper>
@@ -35,8 +35,8 @@ const App = ({ root_store }) => (
     </Router>
 );
 
-App.propTypes = {
+AppComponent.propTypes = {
     root_store: PropTypes.object,
 };
 
-export default App;
+export default AppComponent;

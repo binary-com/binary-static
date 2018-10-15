@@ -1,16 +1,16 @@
 import React from 'react';
-import TermsAndConditions from './terms_and_conditions.jsx';
-import Contract from './contract.jsx';
-import AccountPrivacy from './account_privacy.jsx';
-import AccountAntisocial from './account_antisocial.jsx';
-import AccountRisk from './account_risk.jsx';
-import AccountWarning from './account_warning.jsx';
-import EthicsCode from './ethics_code.jsx';
-import EthicsAntisocial from './ethics_antisocial.jsx';
-import EthicsSolicitation from './ethics_solicitation.jsx';
-import EthicsLiability from './ethics_liability.jsx';
-import Affiliates from './affiliates.jsx';
-import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../../_common/components/tabs.jsx';
+import TermsAndConditions from './terms_and_conditions';
+import Contract from './contract';
+import AccountPrivacy from './account_privacy';
+import AccountAntisocial from './account_antisocial';
+import AccountRisk from './account_risk';
+import AccountWarning from './account_warning';
+import EthicsCode from './ethics_code';
+import EthicsAntisocial from './ethics_antisocial';
+import EthicsSolicitation from './ethics_solicitation';
+import EthicsLiability from './ethics_liability';
+import Affiliates from './affiliates';
+import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../../_common/components/tabs';
 
 const TAC = () => (
     <div className='invisible ja-show'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import SeparatorLine from '../../_common/components/separator_line';
 
 export const Section = ({ id, header, children }) => (
     <div className='sections invisible' id={id}>

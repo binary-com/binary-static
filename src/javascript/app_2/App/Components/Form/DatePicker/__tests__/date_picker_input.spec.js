@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import DatePickerInput from '../date_picker_input.jsx';
+import DatePickerInput from '../date_picker_input';
 
 // TODO: add tests
 describe('<DatePickerInput />', () => {

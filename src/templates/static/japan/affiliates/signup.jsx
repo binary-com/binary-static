@@ -1,5 +1,5 @@
 import React from 'react';
-import Main from './main.jsx';
+import Main from './main';
 
 const Signup = () => (
     <div className='gr-12 static_full'>

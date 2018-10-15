@@ -1,9 +1,9 @@
 import React from 'react';
-import Forex from './how_to_trade_mt5/forex.jsx';
-import Metals from './how_to_trade_mt5/metals.jsx';
-import CFDs from './how_to_trade_mt5/cfds.jsx';
-import Cryptocurrencies from './how_to_trade_mt5/cryptocurrencies.jsx';
-import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../_common/components/tabs.jsx';
+import Forex from './how_to_trade_mt5/forex';
+import Metals from './how_to_trade_mt5/metals';
+import CFDs from './how_to_trade_mt5/cfds';
+import Cryptocurrencies from './how_to_trade_mt5/cryptocurrencies';
+import { TabContainer, TabsSubtabs, TabContentContainer, TabContent } from '../../_common/components/tabs';
 
 const HowToTradeMT5 = () => (
     <div id='how_to_trade_mt5' className='static_full'>

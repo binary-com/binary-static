@@ -1,5 +1,5 @@
 import React from 'react';
-import { FillBox } from '../../_common/components/elements.jsx';
+import { FillBox } from '../../_common/components/elements';
 
 const SecurityTesting = () => (
     <div className='container'>

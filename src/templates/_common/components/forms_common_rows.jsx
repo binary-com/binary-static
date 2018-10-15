@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormRow } from './forms.jsx';
+import { FormRow } from './forms';
 
 export const Salutation = ({ className }) => (
     <FormRow

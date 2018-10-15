@@ -1,6 +1,6 @@
 import React from 'react';
-import GTM from '../_common/includes/gtm.jsx';
-import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
+import GTM from '../_common/includes/gtm';
+import FormVerifyEmail from '../_common/includes/form_verify_email';
 
 const style = () =>
     `body {

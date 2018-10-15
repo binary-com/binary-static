@@ -1,6 +1,6 @@
 import React from 'react';
-import SeparatorLine from '../../../_common/components/separator_line.jsx';
-import { List, Table } from '../../../_common/components/elements.jsx';
+import SeparatorLine from '../../../_common/components/separator_line';
+import { List, Table } from '../../../_common/components/elements';
 
 const Step = ({
     is_first,

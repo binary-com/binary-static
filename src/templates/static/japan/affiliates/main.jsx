@@ -1,5 +1,5 @@
 import React from 'react';
-import Register from '../../affiliates/register.jsx';
+import Register from '../../affiliates/register';
 
 const Main = () => (
     <React.Fragment>

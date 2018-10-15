@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table } from '../../_common/components/elements.jsx';
-import Loading from '../../_common/components/loading.jsx';
+import { Table } from '../../_common/components/elements';
+import Loading from '../../_common/components/loading';
 
 const Box = ({ image, text, title, className }) => (
     <div className={`gr-padding-10${className ? ` ${className}` : ''}`}>

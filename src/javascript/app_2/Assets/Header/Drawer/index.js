@@ -1,1 +1,1 @@
-export * from './icon_logout.jsx';
+export * from './icon_logout';

@@ -7,7 +7,7 @@ import SocketCache       from '_common/base/socket_cache';
 import { localize }      from '_common/localize';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import { requestLogout } from 'Services';
-import { UpgradeButton } from './upgrade_button.jsx';
+import { UpgradeButton } from './upgrade_button';
 
 const getAccountInfo = (loginid) => {
     const currency     = Client.get('currency', loginid);

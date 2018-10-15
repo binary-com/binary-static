@@ -6,10 +6,10 @@ import { withRouter }                 from 'react-router-dom';
 import DataTable                      from 'App/Components/Elements/DataTable';
 import { getContractPath }            from 'App/Components/Routes/helpers';
 import { connect }                    from 'Stores/connect';
-import CardList                       from '../Components/card_list.jsx';
-import EmptyPortfolioMessage          from '../Components/empty_portfolio_message.jsx';
+import CardList                       from '../Components/card_list';
+import EmptyPortfolioMessage          from '../Components/empty_portfolio_message';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
-import Loading                        from '../../../../../templates/_common/components/loading.jsx';
+import Loading                        from '../../../../../templates/_common/components/loading';
 
 class Portfolio extends React.Component {
     componentDidMount()    { this.props.onMount(); }

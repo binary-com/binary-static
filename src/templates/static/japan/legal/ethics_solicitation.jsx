@@ -1,5 +1,5 @@
 import React from 'react';
-import ListMultiLine from '../../../_common/components/list_multiline.jsx';
+import ListMultiLine from '../../../_common/components/list_multiline';
 
 const EthicsSolicitation = () => (
     <div className='gr-12 gr-padding-30 gr-no-gutter'>

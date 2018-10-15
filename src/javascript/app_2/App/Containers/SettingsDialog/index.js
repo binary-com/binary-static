@@ -1,3 +1,3 @@
-export ChartSettings    from './settings_chart.jsx';
-export GeneralSettings  from './settings_general.jsx';
-export LanguageSettings from './settings_language.jsx';
+export ChartSettings    from './settings_chart';
+export GeneralSettings  from './settings_general';
+export LanguageSettings from './settings_language';

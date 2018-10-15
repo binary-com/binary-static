@@ -1,6 +1,6 @@
 import React from 'react';
-import Loading from '../../../_common/components/loading.jsx';
-import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms.jsx';
+import Loading from '../../../_common/components/loading';
+import { FormRow, SubmitButton, Fieldset } from '../../../_common/components/forms';
 
 const ApiToken = () => (
     <React.Fragment>

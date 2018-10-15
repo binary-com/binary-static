@@ -26,6 +26,10 @@ const app2Config = (grunt) => ({
             _common: path.resolve(PATHS.SRC, 'javascript/_common'),
             ...getApp2Aliases(),
         },
+        extensions: [
+            '.jsx',
+            '.js',
+        ],
     },
     externals: {
         CIQ: 'CIQ',

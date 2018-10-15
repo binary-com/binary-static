@@ -1,3 +1,3 @@
-export * from './tabs.jsx';
-export * from './tabs_item.jsx';
-export * from './tabs_wrapper.jsx';
+export * from './tabs';
+export * from './tabs_item';
+export * from './tabs_wrapper';

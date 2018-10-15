@@ -1,10 +1,10 @@
 import React from 'react';
-import GoogleOptimizer from './includes/google/google_optimizer.jsx';
-import GTMScript from './includes/google/gtm_script.jsx';
-import URLHandler from './includes/url_handler.jsx';
-import Title from '../_common/components/title.jsx';
-import Favicons from '../_common/includes/favicons.jsx';
-import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
+import GoogleOptimizer from './includes/google/google_optimizer';
+import GTMScript from './includes/google/gtm_script';
+import URLHandler from './includes/url_handler';
+import Title from '../_common/components/title';
+import Favicons from '../_common/includes/favicons';
+import AntiClickjack from '../_common/includes/anti_clickjack';
 
 const Head = () => (
     <head>

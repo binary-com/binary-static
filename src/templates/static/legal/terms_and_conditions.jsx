@@ -1,11 +1,11 @@
 import React from 'react';
-import Affiliate from './tac_sections/affiliate.jsx';
-import Api from './tac_sections/api.jsx';
-import Biel from './tac_sections/biel.jsx';
-import Complaints from './tac_sections/complaints.jsx';
-import DepositBonus from './tac_sections/deposit_bonus.jsx';
-import Tac from './tac_sections/tac.jsx';
-import TradingRules from './tac_sections/trading_rules.jsx';
+import Affiliate from './tac_sections/affiliate';
+import Api from './tac_sections/api';
+import Biel from './tac_sections/biel';
+import Complaints from './tac_sections/complaints';
+import DepositBonus from './tac_sections/deposit_bonus';
+import Tac from './tac_sections/tac';
+import TradingRules from './tac_sections/trading_rules';
 
 const Section = ({
     id = '',

@@ -1,8 +1,8 @@
 import PropTypes                   from 'prop-types';
 import React                       from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
-import Menu                        from './components/menu/menu.jsx';
-import MobileDropdown              from './components/menu/mobile_dropdown.jsx';
+import Menu                        from './components/menu/menu';
+import MobileDropdown              from './components/menu/mobile_dropdown';
 
 import settings_data from './settings_data';
 

@@ -1,9 +1,9 @@
 import moment         from 'moment';
 import PropTypes      from 'prop-types';
 import React          from 'react';
-import CalendarFooter from './calendar_footer.jsx';
-import CalendarHeader from './calendar_header.jsx';
-import CalendarPanel  from './calendar_panel.jsx';
+import CalendarFooter from './calendar_footer';
+import CalendarHeader from './calendar_header';
+import CalendarPanel  from './calendar_panel';
 
 class Calendar extends React.PureComponent {
     constructor(props) {

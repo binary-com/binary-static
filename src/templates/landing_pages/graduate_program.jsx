@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from './_common/layout.jsx';
+import Layout from './_common/layout';
 
 const GraduateProgram = () => {
     const steps = [
