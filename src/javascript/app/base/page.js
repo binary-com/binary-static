@@ -5,7 +5,6 @@ const Header           = require('./header');
 const Footer           = require('./footer');
 const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
-const checkLanguage    = require('../common/country_base').checkLanguage;
 const TrafficSource    = require('../common/traffic_source');
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
 const Login            = require('../../_common/base/login');
@@ -89,12 +88,10 @@ const Page = (() => {
         }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
-                checkLanguage();
                 RealityCheck.onLoad();
                 Menu.init();
             });
         } else {
-            checkLanguage();
             Menu.init();
         }
         TrafficSource.setData();
