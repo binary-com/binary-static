@@ -106,18 +106,20 @@ const WhyUs = () => (
                                 <li>{it.L('We segregate your funds and keep them in secure and licensed financial institutions.')}</li>
                             </ul>
                         </div>
-                        <div className='gr-4 gr-12-m gr-parent'>
-                            <div className='gr-row gr-padding-20'>
-                                <div className='gr-11 gr-8-m gr-centered eu-show invisible'>
+                        <div className='gr-4 gr-12-m gr-padding-20'>
+                            <div className='gr-row invisible eu-show'>
+                                <div className='gr-12 gr-centered-m gr-8-m'>
                                     <img className='responsive' src={it.url_for('images/pages/why-us/mga-logo2.svg')} />
                                 </div>
-                                <div className='gr-parent gr-8-m gr-centered'>
-                                    <div className='gr-6 gr-centered-m gr-padding-10'>
-                                        <img className='responsive' src={it.url_for('images/pages/why-us/why-us-proven-record_1.svg')} />
-                                    </div>
-                                    <div className='gr-6 gr-centered-m gr-padding-10 eu-show invisible'>
-                                        <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
-                                    </div>
+                            </div>
+                            <div className='gr-row gr-padding-20'>
+                                <div className='gr-6 gr-centered-m gr-4-m'>
+                                    <img className='responsive' src={it.url_for('images/pages/why-us/why-us-proven-record_1.svg')} />
+                                </div>
+                            </div>
+                            <div className='gr-row invisible eu-show'>
+                                <div className='gr-6 gr-centered-m gr-4-m'>
+                                    <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                 </div>
                             </div>
                         </div>
