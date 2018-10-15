@@ -1,5 +1,6 @@
 import PropTypes       from 'prop-types';
 import React           from 'react';
+import { localize }    from '_common/localize';
 import { connect }     from 'Stores/connect';
 import SettingsControl from '../../Components/Elements/SettingsDialog/settings_control.jsx';
 
@@ -14,18 +15,18 @@ const ChartSettings = ({
     <div className='tab-content'>
         <div className='chart-setting-container'>
             <SettingsControl
-                name='Position'
+                name={localize('Position')}
                 toggle={toggleLayout}
                 to_toggle={!is_layout_default}
                 style='toggle-chart-layout'
             />
             <SettingsControl
-                name='Asset Information'
+                name={localize('Asset Information')}
                 toggle={toggleAsset}
                 to_toggle={is_asset_visible}
             />
             <SettingsControl
-                name='Scale Countdown'
+                name={localize('Scale Countdown')}
                 toggle={toggleCountdown}
                 to_toggle={is_countdown_visible}
             />

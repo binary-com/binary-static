@@ -1,7 +1,6 @@
 import classNames         from 'classnames';
 import moment             from 'moment';
 import React              from 'react';
-import { localize }       from '_common/localize';
 import { padLeft }        from '_common/string_util';
 import CalendarPanelTypes from './types';
 
@@ -64,7 +63,7 @@ export const CalendarDays = (props) => {
 
     return (
         <div className='calendar-date-panel'>
-            {week_headers.map((item, idx) => (<span key={idx} className='calendar-date-header'>{localize(item)}</span>))}
+            {week_headers.map((item, idx) => (<span key={idx} className='calendar-date-header'>{item}</span>))}
             {days}
         </div>
     );

@@ -75,9 +75,9 @@ const Purchase = ({
                         {is_purchase_confirm_on ?
                             <PopConfirm
                                 alignment='left'
-                                cancel_text='Cancel'
-                                confirm_text='Purchase'
-                                message='Are you sure you want to purchase this contract?'
+                                cancel_text={localize('Cancel')}
+                                confirm_text={localize('Purchase')}
+                                message={localize('Are you sure you want to purchase this contract?')}
                             >
                                 {purchase_button}
                             </PopConfirm>
