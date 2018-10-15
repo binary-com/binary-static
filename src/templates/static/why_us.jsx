@@ -108,7 +108,7 @@ const WhyUs = () => (
                         </div>
                         <div className='gr-4 gr-12-m gr-parent'>
                             <div className='gr-row gr-padding-20'>
-                                <div className='gr-11 gr-8-m gr-centered'>
+                                <div className='gr-11 gr-8-m gr-centered eu-show invisible'>
                                     <img className='responsive' src={it.url_for('images/pages/why-us/mga-logo2.svg')} />
                                 </div>
                                 <div className='gr-parent gr-8-m gr-centered'>
