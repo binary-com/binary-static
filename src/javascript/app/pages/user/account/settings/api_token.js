@@ -97,9 +97,9 @@ const APIToken = (() => {
             e.preventDefault();
             e.stopPropagation();
             Dialog.confirm({
-                id       : 'delete_token_dialog',
-                message  : `${message}: "${token.display_name}"?`,
-                onConfirm: () => {
+                id               : 'delete_token_dialog',
+                localized_message: `${message}: "${token.display_name}"?`,
+                onConfirm        : () => {
                     deleteToken(token.token);
                 },
             });

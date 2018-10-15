@@ -90,9 +90,9 @@ const AuthorisedApps = (() => {
         const $button = $('<button/>', { class: 'button', text: Messages.get().revoke_access });
         $button.on('click', () => {
             Dialog.confirm({
-                id       : 'apps_revoke_dialog',
-                message  : `${Messages.get().revoke_confirm}: '${app.name}'?`,
-                onConfirm: () => {
+                id               : 'apps_revoke_dialog',
+                localized_message: `${Messages.get().revoke_confirm}: '${app.name}'?`,
+                onConfirm        : () => {
                     BinarySocket.send({ revoke_oauth_app: app.id }).then((response) => {
                         if (response.error) {
                             displayError(response.error.message);

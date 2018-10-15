@@ -24,8 +24,8 @@ const ThirdPartyLinks = (() => {
         if (isThirdPartyLink(el_link.href)) {
             e.preventDefault();
             Dialog.confirm({
-                id     : 'third_party_redirect_dialog',
-                message: localize(['You will be redirected to a third-party website which is not owned by Binary.com.', 'Click OK to proceed.']),
+                id               : 'third_party_redirect_dialog',
+                localized_message: localize(['You will be redirected to a third-party website which is not owned by Binary.com.', 'Click OK to proceed.']),
             }).then((should_proceed) => {
                 if (should_proceed) {
                     const link = window.open();

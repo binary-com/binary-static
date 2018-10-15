@@ -17,8 +17,8 @@ const Dialog = (() => {
 
                     if (!el_dialog) return;
 
-                    const message = Array.isArray(options.message) ? options.message.join('<p />') : options.message;
-                    elementInnerHtml(container.querySelector('#dialog_message'), message);
+                    const localized_message = Array.isArray(options.message) ? options.message.join('<p />') : options.message;
+                    elementInnerHtml(container.querySelector('#dialog_message'), localized_message);
 
                     if (is_alert) {
                         el_btn_cancel.classList.add('invisible');

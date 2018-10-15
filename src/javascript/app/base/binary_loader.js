@@ -117,14 +117,14 @@ const BinaryLoader = (() => {
         }
     };
 
-    const displayMessage = (message) => {
+    const displayMessage = (localized_message) => {
         const content = container.querySelector('#content .container');
         if (!content) {
             return;
         }
 
         const div_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
-        const div_notice    = createElement('p', { class: 'center-text notice-msg', html: message });
+        const div_notice    = createElement('p', { class: 'center-text notice-msg', html: localized_message });
 
         div_container.appendChild(div_notice);
 
