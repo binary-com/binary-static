@@ -126,7 +126,7 @@ const PersonalDetails = (() => {
                     if (should_update_value || should_show_label) {
                         // if should show label, set the value of the non-label so that it doesn't count as missing information
                         $(should_show_label ? `#${key}` : el_key)
-                            .val(get_settings[key].split(','))
+                            .val(get_settings[key] ? get_settings[key].split(',') : '')
                             .trigger('change');
                     }
                 }
