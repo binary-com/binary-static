@@ -513,7 +513,7 @@ const Metatrader = () => (
                                             <CashierDesc title={it.L('Transfer funds to your MT5 account')} arrow_direction='right' desc={it.L('Transfer funds from your binary options account into your MetaTrader 5 account.')} />
 
                                             <div className='form'>
-                                                <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('[_1] transfer fee between different currencies', '<span className="mt5_transfer_fee_amount"></span>')} />
+                                                <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('[_1] transfer fee between different currencies, minimum 0.01 charges', '<span className="mt5_transfer_fee_amount"></span>')} />
                                                 <SubmitButton
                                                     is_centered
                                                     is_full_width
@@ -532,7 +532,7 @@ const Metatrader = () => (
                                             <CashierDesc title={it.L('Withdraw funds from your MT5 account')} arrow_direction='left' desc={it.L('Transfer funds from your MetaTrader 5 account into your binary options account.')} />
 
                                             <div className='form'>
-                                                <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('[_1] transfer fee between different currencies', '<span className="mt5_transfer_fee_amount"></span>')} />
+                                                <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('[_1] transfer fee between different currencies, minimum 0.01 charges', '<span className="mt5_transfer_fee_amount"></span>')} />
                                                 <FormRow is_two_rows type='password' id='txt_main_pass_wd' label={it.L('MetaTrader 5 main password')} />
                                                 <SubmitButton
                                                     is_centered
