@@ -1,5 +1,6 @@
 const BinarySocket = require('./socket');
 const Client       = require('../base/client');
+const hideEU       = require('../common/common_functions').hideEU;
 const isEuCountry  = require('../common/country_base').isEuCountry;
 const State        = require('../../_common/storage').State;
 
@@ -15,6 +16,7 @@ const Footer = (() => {
             } else {
                 showWarning(isEuCountry());
             }
+            hideEU();
         });
     };
 

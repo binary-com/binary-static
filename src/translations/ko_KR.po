@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-12 05:26\n"
+"PO-Revision-Date: 2018-10-15 02:37\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -3896,7 +3896,7 @@ msgid "For forex quotes the closing times are defined by the Company as shown in
 msgstr "외환 가격제시에 관하여 종료시간은 본 웹사이트의 시장 개장 시간 부분에서 나타나 있는 것으로 본 회사에 의해 정의됩니다. 시장가 또는 종가에 관한 분쟁이 있는 경우, 본 회사의 결정이 최종적이고 구속력이 있습니다. 고객은 특정 시장 (주가지수같은)은 낮시간에 개장되지 않고 시장이 마감된 경우 거래가 가능하지 않을 수 있다는 사실을 아셔야 합니다."
 
 msgid "For forex: The forex market is an OTC (over the counter) market, where banks and other major financial institutions trade currencies amongst themselves without there being any central clearing house. Accordingly, there is no 'official' price source for forex quotes. Different data feeds will contain quotes from a different sub-set of international banks. Accordingly prices may differ between providers, depending on which bank(s) they obtain prices from."
-msgstr ""
+msgstr "외환: 외환시장은 은행과 다른 주요 금융 기관들이 중앙청산소이 되지 않고도 그들 사이에서 통화를 거래하는 OTC (장외시장) 입니다. 따라서 외환 가격제시에 대하여 '공식' 가격 소스는 없습니다. 각기 다른 데이터피드들이 세계은행의 부분집합에서 출처한 제시된 가격을 포함할 것입니다. 따라서 제시되는 가격들이 출처된 은행들에 따라, 제공자들간의 가격이 다를 수 있습니다."
 
 msgid "For full contact details of %3, kindly check our %1Contact Us%2 page."
 msgstr "%3에 대한 세부 연락 정보를 보시려면, %1문의하기%2 페이지를 확인해 주세요."
@@ -5816,7 +5816,7 @@ msgid "Market volatility – Political, economic, or social instability may lead
 msgstr ""
 
 msgid "Market-closing times: Please refer to"
-msgstr ""
+msgstr "시장 종료 시간:"
 
 msgid "Marketing"
 msgstr "마케팅"
@@ -6617,7 +6617,7 @@ msgid "Our Policy"
 msgstr "우리의 정책"
 
 msgid "Our Prices are determined by reference to the price of the underlying instrument which is quoted on external exchanges or dealing facilities that we select at our discretion. Our IT infrastructure and price aggregator system facilitates the reception of quotes from shortlisted prime brokers who act as liquidity providers for us and the delivery of the quotes, derived with reference against relevant benchmark and markets, to you. You acknowledge that our Prices may differ from the bid and offer prices made available by external exchanges or dealing facilities and we are not liable for any losses that you incur arising from such differences. This clause does not apply to Volatility Indices."
-msgstr ""
+msgstr "우리의 가격은 우리의 재량으로 선택한 거래시설 또는 외부적 교환으로 외부 거래소나 또는 거래시설들에서 제시된 기초상품의 가격을 참고하여 결정됩니다. 본 사의 IT 인프라구조와 가격 수집 시스템은 본 회사의 유동성 제공자로 역할하는 최종 후보자 명단에 있는 최고의 브로커로부터 및 관련 벤치마크와 시장에 대하여 참조를 통해 파생되어진 인도된 제시가격의 수용을 가능하게 합니다. 귀하는 외부 거래소 또는 거래 시설들에서 적용되는 매수 및 매도가격과 우리의 가격이 다를 수 있음을 인정하며 이러한 차이로부터 당신에게 초래하는 그 어떠한 손실에도 우리는 법적 책임이 없습니다. 이 조항은 변동성지수에는 적용되지 않습니다."
 
 msgid "Our Volatility Indices account allows you to trade CFDs on Volatility Indices -- our proprietary synthetic assets that simulate market forces."
 msgstr ""
@@ -7712,6 +7712,9 @@ msgid "Retail Clients"
 msgstr "소매 고객"
 
 msgid "Return"
+msgstr ""
+
+msgid "Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m duration is around 87% on average."
 msgstr ""
 
 msgid "Returns above 100% on simple <a href='%1'>rise/fall</a> contracts."
@@ -9263,7 +9266,7 @@ msgid "The size of your instrument portfolio exceeds EUR 500,000 or its equivale
 msgstr ""
 
 msgid "The smoothing and filtering algorithms described above."
-msgstr ""
+msgstr "상기 설명된 스무딩 및 필터링 알고리즘."
 
 msgid "The spread is the difference between the ask and bid price."
 msgstr ""
@@ -10241,7 +10244,7 @@ msgid "Use of Information"
 msgstr "정보 사용 안내"
 
 msgid "Use of bid/ask prices: when the market is illiquid, the data feed may contain many bid and ask prices, without there actually being any traded price for quite a while. By taking an average of the bid/ask price (i.e. bid + ask, divided by 2), a market quote is generated that reflects the current market, without it actually being a traded price. Our system will generate prices from these bid and ask prices, whereas other websites might not. As a result, our website might display ticks that do not appear in the data feeds of other websites."
-msgstr ""
+msgstr "매수/매도 가격의 이용: 시장이 비유동적일때, 데이터 피드는 상당시간동안 실제로 거래된 가격으로 정해지지 않고 여러 매수 및 매도가격을 포함할 수 있습니다. 매수/매도 가격의 평균을 냄으로써 (예: 매수가격+매도가격을 2로 나눈 가격), 아직 실 거래가로 형성되지 않은 현재 시장가를 반영하는 시장 제시가가 생성됩니다. 우리 시스템은 이러한 매수 및 매도 가격으로부터 가격을 생성할 것이며 반면, 다른 웹사이트를 그렇지 않을 것입니다. 결과적으로, 우리 웹사이트에서는 다른 웹사이트의 데이터 피드에서 볼 수 없는 틱들이 보여질 수 있습니다."
 
 msgid "Use our native desktop app for a more secure and faster trading experience."
 msgstr ""
@@ -12083,7 +12086,7 @@ msgid "or"
 msgstr "또는"
 
 msgid "page for the exact time of settlement for all contracts. Other websites may adopt a different convention (for example some websites choose 4 o'clock NY time, or 5 o'clock London time). As a result, the open, high, low and closing prices displayed on our website may differ to those on other websites, due to the market-closing time convention."
-msgstr ""
+msgstr "페이지를 참고하셔서 계약의 정확한 정산 시간을 알아보세요. 다른 웹사이트들은 다른 관행이 있을 수 있습니다 (예를 들어 어떤 웹사이트는 뉴욕시간으로 4시정각을 선택하거나, 또는 런던시간으로 5시 정각을 선택할 수 있습니다). 결과적으로, 시장이 종료되는 시간이 다름에 따라 우리 웹사이트에 보여지는 시초가, 고가, 저가, 종가는 다른 웹사이트에서 보여지는 것과 다를 수 있습니다."
 
 msgid "paysafecard offers a voucher-based online payment method that does not require a bank account, credit card, or other personal information. For more info, please visit %1."
 msgstr ""

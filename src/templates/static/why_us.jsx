@@ -23,7 +23,7 @@ const WhyUs = () => (
                             { id: 'sidebar-link-section-2', href: '#flexible-trades',      text: it.L('Flexible trades') },
                             { id: 'sidebar-link-section-3', href: '#controlled-risk',      text: it.L('Controlled risk') },
                             { id: 'sidebar-link-section-4', href: '#power-and-simplicity', text: it.L('Power & simplicity') },
-                            { id: 'sidebar-link-section-5', href: '#security',             text: it.L('Security'),     className: 'id-hide' },
+                            { id: 'sidebar-link-section-5', href: '#security',             text: it.L('Security') },
                             { id: 'sidebar-link-section-6', href: '#trust',                text: it.L('Trust') },
                         ]}
                     />
@@ -96,7 +96,7 @@ const WhyUs = () => (
                     </div>
                 </Section>
 
-                <Section className='id-hide' id='security' header={it.L('Licensed, trusted, and secure')}>
+                <Section id='security' header={it.L('Licensed, trusted, and secure')}>
                     <div className='gr-row'>
                         <div className='gr-8 gr-12-m'>
                             <p>{it.L('With [_1], you can count on us to serve you with integrity and reliability.', it.website_name)}</p>
@@ -106,18 +106,20 @@ const WhyUs = () => (
                                 <li>{it.L('We segregate your funds and keep them in secure and licensed financial institutions.')}</li>
                             </ul>
                         </div>
-                        <div className='gr-4 gr-12-m gr-parent'>
-                            <div className='gr-row gr-padding-20'>
-                                <div className='gr-11 gr-8-m gr-centered'>
+                        <div className='gr-4 gr-12-m gr-padding-20'>
+                            <div className='gr-row invisible eu-show'>
+                                <div className='gr-12 gr-centered-m gr-8-m'>
                                     <img className='responsive' src={it.url_for('images/pages/why-us/mga-logo2.svg')} />
                                 </div>
-                                <div className='gr-parent gr-8-m gr-centered'>
-                                    <div className='gr-6 gr-centered-m gr-padding-10'>
-                                        <img className='responsive' src={it.url_for('images/pages/why-us/why-us-proven-record_1.svg')} />
-                                    </div>
-                                    <div className='gr-6 gr-centered-m gr-padding-10'>
-                                        <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
-                                    </div>
+                            </div>
+                            <div className='gr-row gr-padding-20'>
+                                <div className='gr-6 gr-centered-m gr-4-m'>
+                                    <img className='responsive' src={it.url_for('images/pages/why-us/why-us-proven-record_1.svg')} />
+                                </div>
+                            </div>
+                            <div className='gr-row invisible eu-show'>
+                                <div className='gr-6 gr-centered-m gr-4-m'>
+                                    <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                 </div>
                             </div>
                         </div>

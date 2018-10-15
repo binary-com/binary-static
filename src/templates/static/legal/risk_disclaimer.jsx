@@ -3,7 +3,7 @@ import React from 'react';
 const RiskDisclaimer = () => (
     <div>
         <h2 data-anchor='risk-disclaimer'>{it.L('Risk Disclaimer')}</h2>
-        <p>{it.L('This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through [_1]. Binary Group provides a wide range of products including Binary Options relating to foreign exchange, indices and other investment products ("Investment Products") and binary bets such as those relating to the Volatility Indices ("Gambling Products").', it.website_name)}</p>
+        <p>{it.L('This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through [_1].', it.website_name)}</p>
         <p>{it.L('Binary Group members are sometimes referred to collectively as "[_1]", "us" or "we".', it.website_name)}</p>
         <p>{it.L('This notice does not explain all of the risks involved in investments or similar products or how such risks relate to your personal circumstances. It is important that you fully understand the risks involved before making a decision to enter into any product with us. If you are in any doubt about the risks involved, you should seek professional advice.')}</p>
         <p>{it.L('If you choose to enter into a Contract with us, it is important that you remain aware of the risks involved, that you have adequate investment resources to bear such risks and that you monitor your positions carefully.')}</p>
@@ -13,7 +13,7 @@ const RiskDisclaimer = () => (
 
         <h4>{it.L('No Advice')}</h4>
         <p>{it.L('Our services are provided on an execution only basis. We do not provide investment advice in relation to our products or services. We sometimes provide factual information or research recommendations about a market, information about transaction procedures and information about the potential risks involved and how those risks may be minimised. However, any decision to use our products or services is made by you.')}</p>
-        <p>{it.L('You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of Investment Products or Gambling Products available through [_1], you may wish to seek independent advice.', it.website_name)}</p>
+        <p>{it.L('You are responsible for managing your tax and legal affairs including making any regulatory filings and payments and complying with applicable laws and regulations. We do not provide any regulatory, tax or legal advice. If you are in any doubt as to the tax treatment or liabilities of any products available through [_1], you may wish to seek independent advice.', it.website_name)}</p>
 
         <h4>{it.L('Appropriateness')}</h4>
         <p>{it.L('Investment Products to EEA Residents are provided by Binary Investments (Europe) Ltd ("BIEL") which is authorised and regulated by the Malta Financial Services Authority under the Malta Investment Services Act to deal on own account in Investment Products.')}</p>
