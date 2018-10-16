@@ -9,6 +9,8 @@ const ContentVisibility   = require('../common/content_visibility');
 const GTM                 = require('../../_common/base/gtm');
 const Login               = require('../../_common/base/login');
 const getElementById      = require('../../_common/common_functions').getElementById;
+const urlLang             = require('../../_common/language').urlLang;
+const localizeForLang     = require('../../_common/localize').forLang;
 const localize            = require('../../_common/localize').localize;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
@@ -31,6 +33,8 @@ const BinaryLoader = (() => {
                 true, 'STORAGE_NOT_SUPPORTED');
             getElementById('btn_login').classList.add('button-disabled');
         }
+
+        localizeForLang(urlLang());
 
         Page.showNotificationOutdatedBrowser();
 
