@@ -73,7 +73,7 @@ const DownloadApp = ({ image }) => (
 );
 
 const Platform = () => (
-    <div id='platforms' className='static_full'>
+    <div className='static_full'>
         <div className='container'>
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
