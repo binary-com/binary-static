@@ -621,6 +621,7 @@ const texts = [
     'Virtual',
     'Real',
     'Counterparty',
+    'Jurisdiction',
     'This account is disabled',
     'This account is excluded until [_1]',
 
