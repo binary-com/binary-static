@@ -48,6 +48,8 @@ const Accounts = (() => {
 
     const getCompanyName = account => Client.getLandingCompanyValue(account, landing_company, 'name');
 
+    const getCompanyCountry = account => Client.getLandingCompanyValue(account, landing_company, 'country');
+
     const populateNewAccounts = (upgrade_info) => {
         const new_account = upgrade_info;
         const account     = {
@@ -58,7 +60,11 @@ const Accounts = (() => {
 
         $(form_id).find('tbody')
             .append($('<tr/>')
-                .append($('<td/>').html($('<span/>', { text: new_account_title, 'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account)}` })))
+                .append($('<td/>').html($('<span/>', {
+                    text                 : new_account_title,
+                    'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
+                    'data-balloon-length': 'large',
+                })))
                 .append($('<td/>', { text: getAvailableMarkets(account) }))
                 .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
                 .append($('<td/>')
@@ -90,8 +96,10 @@ const Accounts = (() => {
         const account_type_prop = { text: Client.getAccountTitle(loginid) };
 
         if (!Client.isAccountOfType('virtual', loginid)) {
-            const company_name = getCompanyName(loginid);
-            account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
+            const company_name    = getCompanyName(loginid);
+            const company_country = getCompanyCountry(loginid);
+            account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}, ${localize('Jurisdiction')}: ${company_country}`;
+            account_type_prop['data-balloon-length'] = 'large';
         }
 
         const is_disabled    = Client.get('is_disabled', loginid);
@@ -155,9 +163,14 @@ const Accounts = (() => {
 
     const populateMultiAccount = () => {
         const currencies = getCurrencies(landing_company);
+        const account    = { real: 1 };
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
-                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 })}` })))
+                .append($('<td/>').html($('<span/>', {
+                    text                 : localize('Real Account'),
+                    'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
+                    'data-balloon-length': 'large',
+                })))
                 .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
