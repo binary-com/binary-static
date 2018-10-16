@@ -18,21 +18,24 @@
   * Open github to submit the PR
 
 ### Extracting texts from js code:
-Texts that used in js code would automatically be extracted during the translation update process (3rd step above: Updating the source file).
+Texts that are used in js code will automatically be extracted during the translation update process (3rd step above: Updating the source file).
 
-In order to make sure that the extractor code won't miss any string to push to translations, please:
+In order to make sure that no strings are missed by the extractor code while pushing to translations, please:
 
-1. Refactor the code so that the first argument passed to `localize()` method, be a string literal.
+1. Refactor the code so that the first argument passed to the `localize()` method is a string literal.
     i.e.
     ```js
     const text = localize(is_started ? 'Sell at market' : 'Sell');
     ```
-    could change to:
+    would change to:
     ```js
     const text = is_started ? localize('Sell at market') : localize('Sell');
     ```
 2. If there is no way to have the string literal in js code (i.e. API texts which are not translated), add them to `scripts/js_texts/static_strings_app.js`.
-3. At the end, when you're sure that a strings already been taken care of somewhere else, just put this comment `/* localize-ignore */` right after the first argument of `localize()` call to ignore it from tests.
+
+    Note: Regarding API texts, even if the string is translated automatically somewhere else we should still include it here to avoid missing it if that other string gets removed.
+
+3. At the end, when you're sure that a string has already been taken care of, just put this comment `/* localize-ignore */` right after the first argument of `localize()` call to ignore it from tests.
 
 ### `js_texts` folder contents:
 ```
@@ -40,10 +43,10 @@ js_texts:
     ├── extracted_strings_app.js
     └── static_strings_app.js
 ```
-- `extracted_strings_app.js`: Contains extracted strings. It's for debugging purpose only and shouldn't change manually.
+- `extracted_strings_app.js`: Contains extracted strings. It's for debugging purpose only and shouldn't be changed manually.
 - `static_strings_app.js` to handle those strings that don't exist in js code. e.g. API texts that are not localised, etc.
 
-During the translation update process, the source file `messages.pot` would be updated with all texts from both the above files.
+During the translation update process, the source file `messages.pot` will be updated with all texts from both the above files.
 
 ## Updating the Sitemap
 * List of paths to include in `sitemap.xml` is here: [config/sitemap_urls.js](config/sitemap_urls.js)
