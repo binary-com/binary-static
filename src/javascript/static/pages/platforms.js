@@ -1,5 +1,4 @@
-const isEuCountry    = require('../../app/common/country_base').isEuCountry;
-const BinarySocket   = require('../../_common/base/socket_base');
+const hideEU         = require('../../app/common/common_functions').hideEU;
 const getElementById = require('../../_common/common_functions').getElementById;
 const TabSelector    = require('../../_common/tab_selector');
 
@@ -39,11 +38,7 @@ const Platforms = (() => {
             });
         });
 
-        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
-            if (isEuCountry()) {
-                $('.eu-hide').setVisibility(0);
-            }
-        });
+        hideEU();
     };
 
     return {
