@@ -110,8 +110,8 @@ const AuthorisedApps = (() => {
         if (elements.table) {
             return FlexTableUI.replace(data);
         }
-        const localized_headers = localize(['Name', 'Permissions', 'Last Used']);
-        const header_columns    = ['name', 'permissions', 'last-used'];
+        const localized_headers = localize(['Name', 'Permissions', 'Last Login']);
+        const header_columns    = ['name', 'permissions', 'last-login'];
         can_revoke    = /admin/.test((State.getResponse('authorize') || {}).scopes);
         if (can_revoke) {
             localized_headers.push(localize('Action'));

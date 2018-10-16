@@ -166,6 +166,7 @@ module.exports = [
     'Jun',
     'June',
     'Jurisdiction',
+    'Last Login',
     'Last Used',
     'Litecoin',
     'Lock Cashier',
