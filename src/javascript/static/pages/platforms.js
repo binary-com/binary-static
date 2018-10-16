@@ -1,3 +1,5 @@
+const isEuCountry    = require('../../app/common/country_base').isEuCountry;
+const BinarySocket   = require('../../_common/base/socket_base');
 const getElementById = require('../../_common/common_functions').getElementById;
 const TabSelector    = require('../../_common/tab_selector');
 
@@ -35,6 +37,12 @@ const Platforms = (() => {
                 const el_button = getElementById(`app_${os.name}`);
                 el_button.setAttribute('href', os.download_url);
             });
+        });
+
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            if (isEuCountry()) {
+                $('.eu-hide').setVisibility(0);
+            }
         });
     };
 
