@@ -16,7 +16,7 @@ body {
     }
 }
 
-body.EN {
+body.EN, body.ID, body.RU {
     .calls_recording {
         display: block !important;
     }
@@ -56,27 +56,6 @@ body.FR {
     }
     #header .account-type {
         font-size: $FONT_SIZE_S;
-    }
-}
-
-/*Indonesian Language */
-body.ID {
-    .calls_recording {
-        display: block !important;
-    }
-    .regulatory-logo {
-        display: none !important;
-    }
-    #regulatory-text {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .id-hide {
-        display: none !important;
-    }
-    .id-show {
-        display: block !important;
-        visibility: visible;
     }
 }
 
@@ -122,9 +101,6 @@ body.RU {
         #expiry_type {
             max-width: 185px;
         }
-    }
-    .calls_recording {
-        display: block !important;
     }
     .ru-hide {
         display: none !important;
