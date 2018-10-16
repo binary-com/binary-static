@@ -25,7 +25,6 @@
                     'de': 'de|at|li',
                     'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
                     'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
-                    'id': 'id',
                     'it': 'it',
                     'ko': 'kr',
                     'pl': 'po',
@@ -81,6 +80,9 @@
                 }
                 var lang = getCookieItem('language');
                 if(lang) {
+                    if (/^id$/i.test(lang)) {
+                        lang = 'en';
+                    }
                     isDelayedRedirect();
                 } else {
                     var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
