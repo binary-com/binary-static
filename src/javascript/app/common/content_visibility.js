@@ -49,13 +49,16 @@ const ContentVisibility = (() => {
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize', 'landing_company').then(() => {
                 controlVisibility(
+                    'default',
                     State.getResponse('authorize.landing_company_name'),
                     MetaTrader.isEligible(),
                     State.getResponse('landing_company.mt_financial_company.shortcode')
                 );
             });
         } else {
-            controlVisibility('default', true);
+            BinarySocket.wait('website_status').then(() => {
+                controlVisibility(State.getResponse('website_status.clients_country'), 'default', true);
+            });
         }
     };
 
@@ -98,6 +101,7 @@ const ContentVisibility = (() => {
 
     const shouldShowElement = (
         attr_str,
+        clients_country,
         current_landing_company_shortcode,
         client_has_mt_company,
         mt5fin_company_shortcode
@@ -111,21 +115,23 @@ const ContentVisibility = (() => {
 
         const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
         const rule_set_has_mt      = rule_set.has(mt_company_rule);
+        const rule_set_has_country = rule_set.has(clients_country);
 
         let show_element = false;
 
         if (client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
         else if (is_exclude !== rule_set_has_current) show_element = true;
+        else if (is_exclude !== rule_set_has_country) show_element = true;
 
         if (mt5fin_rules.includes(mt5fin_company_shortcode)) show_element = !is_exclude;
 
         return show_element;
     };
 
-    const controlVisibility = (current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
+    const controlVisibility = (clients_country, current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
         document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str      = el.dataset.show;
-            if (shouldShowElement(attr_str, current_landing_company_shortcode, client_has_mt_company, mt5_login_list)) {
+            if (shouldShowElement(attr_str, clients_country, current_landing_company_shortcode, client_has_mt_company, mt5_login_list)) {
                 el.classList.add(visible_classname);
             } else {
                 const open_tab_url = new RegExp(`\\?.+_tabs=${el.id}`, 'i');
