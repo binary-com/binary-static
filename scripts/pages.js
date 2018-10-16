@@ -88,7 +88,7 @@ module.exports = [
     ['ib-programme/ib-signup',                  'static/ib_programme/ib_signup',               'full_width', 'IB programme'],
     ['ib-programme/ib-faq',                     'static/ib_programme/ib_faq',                  'default',    'IB programme FAQ'],
     ['legal/us_patents',                        'static/legal/us_patents',                     'default',    'US Patents'],
-    ['regulation',                              'static/legal/regulation',                     'default',    'Regulation',                        'id'],
+    ['regulation',                              'static/legal/regulation',                     'default',    'Regulation'],
     ['responsible-trading',                     'static/responsible_trading',                  'full_width', 'Responsible Trading'],
     ['terms-and-conditions',                    'static/legal/tac',                            'default',    'Terms and Conditions'],
 

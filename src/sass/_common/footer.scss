@@ -21,17 +21,26 @@
     #footer-regulatory {
         padding-bottom: 30px;
 
-        a, p {
+        a, p, .fld-risk-warning legend {
             font-size: 13px !important;
+        }
+        a, p {
             font-weight: 100;
         }
         a {
             color: $COLOR_GRAY;
         }
-        p {
+        p, .fld-risk-warning legend {
             color: #a8a8a8; // stylelint-disable color-no-hex
             text-align: justify;
             margin: 0 0 10px;
+        }
+        .fld-risk-warning {
+            border-color: $COLOR_DARK_GRAY;
+
+            legend {
+                text-transform: uppercase;
+            }
         }
         .about-binary {
             border-top: 1px solid $COLOR_DARK_GRAY;
@@ -101,6 +110,19 @@
     .regulation-logos {
         > * {
             margin-right: 20px;
+        }
+        .vanuatu-icon {
+            width: 160px;
+            margin-left: -30px;
+            margin-right: 0;
+        }
+        .bvi-icon {
+            width: 115px;
+            margin-left: -30px;
+            margin-right: 0;
+        }
+        .labuan-icon {
+            width: 120px;
         }
     }
     #end-note {
