@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-16 04:28\n"
+"PO-Revision-Date: 2018-10-16 08:13\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgid "\"Account\" means Client Trading Account opened with Binary (V) Ltd."
 msgstr "\"계좌\"는 Binary (V) Ltd를 통해 개설된 고객 거래 계좌를 의미합니다."
 
 msgid "\"Binary\" or \"digital\" options are options that pay a pre-determined, fixed amount, depending on whether or not an event occurs at the time the Binary Option expires. Binary Options can have only one of two possible outcomes and allow you to take a simple \"Yes or No\" approach. Like traditional options, Binary Options are based on an underlying asset such as currencies, commodities, or indices, however one of the most significant differences from traditional options, among others, is that there can be only two outcomes for the option, either the client is paid the return upon the occurrence of the event, or the client loses the investment amount as determined in each option."
-msgstr ""
+msgstr "\"바이너리\" 또는 \"디지털\" 옵션이라 함은 바이너리 옵션이 만기되는 시점에 이벤트 발생 유무에 따라 미리 결정된 고정 금액이 지불되는 것입니다. 바이너리 옵션은 단지 두가지 가능한 결과가 있으며 귀하로 하여금 단순한 \"Yes\" 또는 \"No\" 접근방식을 택할 수 있도록 합니다. 전통적인 옵션처럼 바이너리 옵션은 통화, 상품, 또는 지수와 같은 기초자산에 근거합니다만 다른 전통적인 옵션들 사이에서 가장 두드러지는 차이점 중 하나는 이벤트 발생시 수익금을 받거나 또는 각 옵션에 따라 결정된 투자 금액을 잃는 단 두가지 결과가 있다는 것입니다."
 
 msgid "\"Client Agreement\" means the Agreement between the Client and the Company including but not limited to the Terms and Conditions, Order Execution Policy, and Slippage Policy."
 msgstr ""
@@ -541,9 +541,6 @@ msgstr ""
 msgid "A broad array of HR-related administrative tasks"
 msgstr "다양한 인사관련 행정업무"
 
-msgid "A client is someone who has been referred through your unique affiliate link and who has deposited money into their %1 account. They must fulfil the following criteria:"
-msgstr ""
-
 msgid "A client that is not a Professional Client or Eligible Counterparty."
 msgstr ""
 
@@ -593,6 +590,9 @@ msgid "A preference and passion for Linux and open-source platforms"
 msgstr ""
 
 msgid "A proactive approach to solving problems and delivering client solutions"
+msgstr ""
+
+msgid "A referred client is someone who has been referred through your unique affiliate link and who has deposited money into their %1 account. They must fulfil the following criteria:"
 msgstr ""
 
 msgid "A strong and passionate interest in Marketing and Advertising"
@@ -892,11 +892,11 @@ msgstr "진화된 바이너리 옵션 거래 인터페이스"
 msgid "Advanced knowledge of software design principles"
 msgstr ""
 
-msgid "Advanced marketing tools"
-msgstr "발달된 마케팅 도구"
-
 msgid "Advanced multi-asset trading platform"
 msgstr "진화된 멀티 자산 트레이딩 플랫폼"
+
+msgid "Advanced referral tools"
+msgstr ""
 
 msgid "Advantages of CFD trading"
 msgstr ""
@@ -1111,10 +1111,10 @@ msgstr ""
 msgid "An execution instruction given by you to us to open or close a position in a market identified by reference to the Underlying Instrument, including Market Order, Stop Order, Limit Order etc."
 msgstr ""
 
-msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, Russian, and Indonesian"
+msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian"
 msgstr ""
 
-msgid "An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere"
+msgid "An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere"
 msgstr ""
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
@@ -1518,9 +1518,6 @@ msgstr ""
 
 msgid "Banking"
 msgstr "뱅킹"
-
-msgid "Banner placement"
-msgstr "배너 게재위치"
 
 msgid "Barrier"
 msgstr ""
@@ -1971,9 +1968,6 @@ msgstr ""
 
 msgid "Can be used to withdraw to payment agents, transfer funds between accounts, and set / clear cashier passwords."
 msgstr ""
-
-msgid "Can you customise a banner for my site?"
-msgstr "배너를 제 사이트에 맞게 제작할 수 있나요?"
 
 msgid "Can't figure it out on when to buy and sell? Here is a simple way of looking at it:"
 msgstr ""
@@ -2846,7 +2840,7 @@ msgid "Deep Perl expertise"
 msgstr ""
 
 msgid "Default"
-msgstr ""
+msgstr "채무불이행"
 
 msgid "Define your position"
 msgstr "위치를 설정하세요"
@@ -2947,9 +2941,6 @@ msgstr "설명"
 msgid "Design engaging, visually inspiring content for the company's website and many other forms of media, including both online and offline materials."
 msgstr ""
 
-msgid "Desired language"
-msgstr "희망 언어"
-
 msgid "Details"
 msgstr "상세정보"
 
@@ -3028,8 +3019,8 @@ msgstr ""
 msgid "Diverse platforms and account types"
 msgstr "다양한 플랫폼 및 계정 유형"
 
-msgid "Diversify your income stream through other partnership opportunities such as the <a href='%1'>Payment Agent Programme</a>."
-msgstr "<a href='%1'>지불 에이전트 프로그램</a>같은 다른 파트너쉽 기회들을 통해 귀하의 수익 스트림을 다양화하세요."
+msgid "Diversify your income stream through other partnership opportunities such as the <a href='%1'>Introducing Broker Programme</a>."
+msgstr ""
 
 msgid "Diversify your portfolio with all four types of precious metals that are widely known as \"safe haven\" investments: gold, silver, platinum, and palladium."
 msgstr ""
@@ -3046,7 +3037,7 @@ msgstr ""
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "피곤하거나 술기운이 있는 상태에서는 거래하지 마십시오."
 
-msgid "Do you offer any advertising materials to your IBs?"
+msgid "Do you offer any referral tools to your IBs?"
 msgstr ""
 
 msgid "Do you offer any tools to manage my clients’ trades?"
@@ -3146,7 +3137,7 @@ msgid "During fast markets (i.e. periods of very fast market movements), contrac
 msgstr "빠른 시장 (즉, 시장의 움직임이 아주 빠른 기간)에는, 일반적인 시장 조건보다 불리한 가격에 계약이 제공될 수 있습니다."
 
 msgid "During our application process, we may ask you for information about your background, experience as well your investment assets and earnings. We do not monitor on your behalf whether the amount of money you have sent to us or your profits or losses are consistent with that information. It is up to you to assess whether your investment resources are adequate for your investment activity with us and your risk appetite in the products and services you use."
-msgstr ""
+msgstr "어플리케이션 프로세스 과정에서, 본 회사는 귀하의 투자 자산 및 수입과 배경, 경험 또는 경력 및 배경에 대해 정보를 요구할 수 있습니다. 우리는 귀하를 대신하여 귀하께서 우리에게 전송한 금액의 액수 또는 귀하의 수익 또는 손실이 해당 정보와 일치하는지는 감시하지 않습니다. 귀하의 우리와의 투자활동과 귀하가 이용하는 상품과 서비스에 대해 귀하의 리스크 수용범위에 대하여 귀하의 투자 자원이 충분하지 평가하는 것은 귀하의 몫입니다."
 
 msgid "During the term of this Agreement, you grant us a royalty-free, non-exclusive, worldwide, irrevocable right, under all of your intellectual property rights, to:"
 msgstr "본 계약 기간동안, 당신은 우리에게 다음의 목적으로 당신의 모든 지적 재산권 아래 이용료가 없고, 비독점적이며, 전세계적, 변경할 수 없는 권리를 승인합니다:"
@@ -3735,9 +3726,6 @@ msgstr ""
 
 msgid "File Name"
 msgstr ""
-
-msgid "File format"
-msgstr "파일 형식"
 
 msgid "Filtering Controls"
 msgstr ""
@@ -5026,6 +5014,9 @@ msgstr "해석"
 msgid "Interview process"
 msgstr "인터뷰 과정"
 
+msgid "Introduce %1"
+msgstr ""
+
 msgid "Introducing the new %1 desktop app"
 msgstr ""
 
@@ -5138,7 +5129,7 @@ msgid "It is further noted that the Company shall be the sole owner of all right
 msgstr ""
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
-msgstr ""
+msgstr "귀하께서 취한 모든 포지션을 면밀히 모니터링하는 것은 중요합니다. 어느 활성화된 계약이 있는 기간에 귀하의 포지션들을 모니터링 하는 것은 귀하의 책임이며, 귀하의 계좌에 항상 접근할 수 있는 여건이 되어야 합니다."
 
 msgid "It is important that you refer your disputes to the appropriate ADR for the claims to be valid."
 msgstr "클레임이 유효할 수 있도록 귀하의 분쟁에 대하여 적절한 ADR을 참조하는 것은 중요합니다."
@@ -5297,6 +5288,9 @@ msgid "Last Digit Prediction"
 msgstr ""
 
 msgid "Last Digit Stats"
+msgstr ""
+
+msgid "Last Login"
 msgstr ""
 
 msgid "Last Used"
@@ -5484,9 +5478,6 @@ msgstr "로그인"
 
 msgid "Log in to your %1 affiliate account and go to: Finances → Payment instructions."
 msgstr ""
-
-msgid "Log in to your %1 affiliate account and go to: Marketing → All Media."
-msgstr "귀하의 %1 제휴 계정에 로그인하셔서 마케팅 → 모든 미디어에 접근하세요."
 
 msgid "Log in to your %1 affiliate account and go to: Reports → Detailed activity report"
 msgstr ""
@@ -5839,9 +5830,6 @@ msgstr ""
 msgid "Marketing and Promotion"
 msgstr "마케팅 및 프로모션"
 
-msgid "Marketing and promotions"
-msgstr "마케팅 및 홍보"
-
 msgid "Mastercard is an international company that processes payments made with Mastercard-branded credit and debit cards. For more info, please visit %1."
 msgstr ""
 
@@ -6158,7 +6146,7 @@ msgid "Need more information?"
 msgstr ""
 
 msgid "Need to Monitor Positions"
-msgstr ""
+msgstr "포지션 모니터링의 필요"
 
 msgid "Negative Balance Protection"
 msgstr ""
@@ -6901,9 +6889,6 @@ msgstr ""
 msgid "Pip stands for 'percentage in point' which is generally the fourth decimal place (i.e. 0.0001)."
 msgstr ""
 
-msgid "Pixel size"
-msgstr "픽셀 사이즈"
-
 msgid "Place of birth"
 msgstr ""
 
@@ -7330,12 +7315,6 @@ msgstr ""
 msgid "Prohibited Trades"
 msgstr "금지된 거래"
 
-msgid "Promote %1"
-msgstr "%1를 홍보하세요"
-
-msgid "Promote our products easily, and keep track of all your earnings with our nifty marketing tools."
-msgstr "저희의 제품을 쉽게 홍보하세요, 그리고 저희의 쓰기 좋은 마케팅 도구로 귀하의 모든 수입을 관리하세요."
-
 msgid "Proof of identity in your selfie must be clear, identifiable, and same as the one you submitted previously"
 msgstr ""
 
@@ -7528,6 +7507,9 @@ msgstr ""
 msgid "Receive your affiliate commission once your referred clients start trading on our platform."
 msgstr "귀하의 추천된 고객이 저희의 플랫폼에서 거래 시작 후 제휴 수수료를 받으세요."
 
+msgid "Recommend our products easily, and keep track of all your earnings with our nifty referral tools."
+msgstr ""
+
 msgid "Ref."
 msgstr ""
 
@@ -7535,6 +7517,9 @@ msgid "Refer new clients to our MetaTrader 5 platform and earn a commission on t
 msgstr ""
 
 msgid "Reference"
+msgstr ""
+
+msgid "Referral tools"
 msgstr ""
 
 msgid "Refers to the maximum volume or lots per order. Subject to change in respect to market conditions."
@@ -8184,12 +8169,6 @@ msgstr "스팸 - 우리는 스팸을 용납하지 않습니다"
 
 msgid "Specific Instructions"
 msgstr "구체적인 지시사항"
-
-msgid "Specific colours the banner should include"
-msgstr "배너가 포함 해야하는 특정 색상"
-
-msgid "Specific message the banner should include"
-msgstr "배너가 포함 해야하는 특정 문구"
 
 msgid "Speculate on the price movement of cryptocurrencies such as Bitcoin, Ethereum, and Litecoin without owning them."
 msgstr ""
@@ -8988,9 +8967,6 @@ msgstr ""
 
 msgid "The Stop Out Level applicable to your MT5 Real Account may differ from the default Stop Out Level published on our website."
 msgstr ""
-
-msgid "The URL of the site on which the banner is going to appear"
-msgstr "배너가 표시될 사이트의 URL"
 
 msgid "The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
 msgstr ""
@@ -10279,10 +10255,10 @@ msgstr ""
 msgid "Use two different exclusion types: 'Allocation' excludes a client from future trades only, while 'Full' also closes open positions and removes its balance from the master account. Clients can choose to close any open position."
 msgstr ""
 
-msgid "Use your unique affiliate link and the marketing tools we provide to advertise %1 to your audience."
-msgstr "귀하의 고유한 제휴 링크 및 %1의 홍보를 위해 저희가 제공해드리는 마케팅 툴을 이용하세요."
+msgid "Use your unique affiliate link and the referral tools we provide to introduce %1 to your audience."
+msgstr ""
 
-msgid "Use your unique affiliate link and the marketing tools we provide to advertise our MT5 service to your audience."
+msgid "Use your unique affiliate link and the referral tools we provide to introduce our MT5 service to your audience."
 msgstr ""
 
 msgid "Use, perform, and display your Application and its content for purposes of marketing, demonstrating, and making your Application available to our clients; and    "
@@ -10564,8 +10540,8 @@ msgstr "귀하를 위한 가장 나은 이익을 위해 Binary Option을 개설 
 msgid "We have a proven track record since we launched our platform in 2000."
 msgstr "저희는 2000년 플랫폼을 출시한 이래로 검증된 트랙 기록을 가지고 있습니다."
 
-msgid "We have a tested and proven selection of advertising materials including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at %1. You can also use the Myaffiliates system to track and optimise your campaigns."
-msgstr "저희는 귀하께서 이용하실 수 있도록 배너, 리뷰, 비디오, 그리고 텍스트 광고를 포함한 시험을 거치고 검증된 광고 자료를 가지고 있습니다. 만약 특정 항목을 귀하께서 선호하는 방식으로 맞추고 싶다면, %1의 저희 계정 관리자에게 연락주세요. 귀하께서는 또한 Myaffiliates 시스템을 사용하여 귀하의 캠페인을 추적하고 최적화할 수 있습니다."
+msgid "We have a tested and proven selection of referral tools including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at %1. You can also use the MyAffiliates system to track and optimise your campaigns."
+msgstr ""
 
 msgid "We have in place adequate internal procedures to ensure that you are in all cases treated fairly and that the risk of damage to client interests will be mitigated."
 msgstr "모든 상황에서 공정하게 대해지고 고객 자산이 입는 손실의 위험이 완화될 수 있도록 보장하기 위해 충분한 내부절차가 준비되어 있습니다."
@@ -10756,9 +10732,6 @@ msgstr "저희는 업계를 선도하는 저희 제휴 프로그램을 통해 �
 msgid "What about instant execution? In this case, your order is placed at the price that’s available at that time. Requotes are possible if the price fluctuates a great deal before the order execution is complete."
 msgstr ""
 
-msgid "What advertising materials and marketing tools do you offer?"
-msgstr "어떤 광고 자료와 마케팅 도구들을 제공하나요?"
-
 msgid "What are binary options"
 msgstr "바이너리 옵션이란 무엇인가요?"
 
@@ -10796,6 +10769,9 @@ msgid "What is this?"
 msgstr ""
 
 msgid "What kind of reports can I generate?"
+msgstr ""
+
+msgid "What referral tools do you offer?"
 msgstr ""
 
 msgid "What time is the market open for me to trade"
@@ -10908,9 +10884,6 @@ msgstr ""
 
 msgid "Where any procedure is involuntarily initiated against the Agent seeking or proposing liquidation, reorganisation, restructuring, an arrangement or composition, a freeze or moratorium, whatsoever in relation to itself or its debts in accordance with the law."
 msgstr ""
-
-msgid "Where are the advertising materials located?"
-msgstr "광고 자료들이 어디에 위치하고 있나요?"
 
 msgid "Where can I send my questions, comments, and suggestions?"
 msgstr "문의사항, 코멘트, 제안사항을 어디로 보내면 되나요?"
@@ -11169,9 +11142,6 @@ msgstr "예, 이해합니다"
 
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
 msgstr ""
-
-msgid "Yes. Please contact your affiliate manager with the following information:"
-msgstr "네 그렇습니다. 다음의 정보와 함께 제휴 관리자에게 연락해주시기 바랍니다:"
 
 msgid "You acknowledge and accept that a Transaction may be subject to market rules laid down in by-laws, rules, provisions, customs, and practices of an exchange, a market, a clearing house, a body or any other organisation involved in the execution, clearing, and/or settlement of said Transaction. Should any such organisation take decisions or measures which affect a Transaction or an Open Position, the Company shall be entitled to take any action (including closing any Open Position of the client) which it, at its sole discretion, considers reasonable. This clause does not apply to Volatility Indices."
 msgstr ""
@@ -11624,7 +11594,7 @@ msgid "You should not sign up to receive the trading services described in this 
 msgstr ""
 
 msgid "You should not trade or invest in Binary Options unless you know and understand the features risks involved and you may lose all the money invested."
-msgstr ""
+msgstr "관련되어 있는 위험들에 대해 이해하지 못하셨다면 바이너리 옵션 거래 또는 투자를 하지 않아야 합니다. 그렇지 않으면 투자한 모든 자금을 잃을 수도 있습니다."
 
 msgid "You should note that our duty to provide you with best execution does not apply to any gaming products that you place with us, where there is no underlying financial market."
 msgstr ""
