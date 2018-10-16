@@ -19,6 +19,7 @@ const os_list = [
 
 const Platforms = (() => {
     const onLoad = () => {
+        hideEU();
         TabSelector.onLoad();
         $.getJSON('https://api.github.com/repos/binary-com/binary-desktop-installers/releases/latest', (data = { assets: [] }) => {
             data.assets.some((asset) => {
@@ -37,8 +38,6 @@ const Platforms = (() => {
                 el_button.setAttribute('href', os.download_url);
             });
         });
-
-        hideEU();
     };
 
     return {
