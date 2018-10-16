@@ -269,7 +269,7 @@ const MetaTraderUI = (() => {
         if (action === 'cashier') { // Manage Fund
             const client_currency = Client.get('currency');
             const mt_currency     = MetaTraderConfig.getCurrency(acc_type);
-            const transfer_fee = isStableCoin(client_currency) ? '0.5%' : '1%';
+            const transfer_fee    = isStableCoin(client_currency) ? '0.5%' : '1%';
             cloneForm();
             $form.find('.mt5_transfer_fee_amount').text(`${transfer_fee}`);
             $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
