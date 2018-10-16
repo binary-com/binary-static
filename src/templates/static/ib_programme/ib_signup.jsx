@@ -19,7 +19,7 @@ const Signup = () => (
                 <h2 className='margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
                     <Step circle_no='1' header={it.L('Sign up')}                         text={it.L('Getting started is free and easy. Just [_1]fill out the application form[_2]* and wait for our approval.', `<a href='${it.affiliate_signup_url}' target="_blank">`, '</a>')} />
-                    <Step circle_no='2' header={it.L('Introduce [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the referral tools we provide to advertise our MT5 service to your audience.')} />
+                    <Step circle_no='2' header={it.L('Introduce [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the referral tools we provide to introduce our MT5 service to your audience.')} />
                     <Step circle_no='3' header={it.L('Earn')}                            text={it.L('Earn a commission when your referred clients trade Forex and CFDs on our MT5 platform.')} />
                 </div>
                 <p>{it.L('*Already registered as an affiliate? Send us an email at [_1] instead.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
