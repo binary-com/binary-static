@@ -26,7 +26,6 @@ module.exports = [
     ['resources/market_timesws',                'app/resources/trading_times',                 'default',    'Trading Times'],
     ['resources/economic_calendar',             'app/resources/economic_calendar',             'default',    'Economic Calendar'],
 
-
     ['user/accounts',                           'app/user/accounts',                           'default',    'Accounts'],
     ['user/authenticate',                       'app/user/authenticate',                       'default',    'Authenticate'],
     ['user/lost_passwordws',                    'app/user/lost_password',                      'default',    'Password Reset'],
@@ -89,7 +88,7 @@ module.exports = [
     ['ib-programme/ib-signup',                  'static/ib_programme/ib_signup',               'full_width', 'IB programme'],
     ['ib-programme/ib-faq',                     'static/ib_programme/ib_faq',                  'default',    'IB programme FAQ'],
     ['legal/us_patents',                        'static/legal/us_patents',                     'default',    'US Patents'],
-    ['regulation',                              'static/legal/regulation',                     'default',    'Regulation',                        'id'],
+    ['regulation',                              'static/legal/regulation',                     'default',    'Regulation'],
     ['responsible-trading',                     'static/responsible_trading',                  'full_width', 'Responsible Trading'],
     ['terms-and-conditions',                    'static/legal/tac',                            'default',    'Terms and Conditions'],
 
@@ -102,7 +101,7 @@ module.exports = [
 
     ['get-started',                             'static/get_started/index',                    'default',     'Get Started'],
     ['get-started/binary-options',              'static/get_started/binary_options',           'default',     'Binary Options'],
-    ['get-started/binary-options-mt5',      'static/get_started/binary_options_mt5',   'default',     'Binary Options on MT5'],
+    ['get-started/binary-options-mt5',          'static/get_started/binary_options_mt5',       'default',     'Binary Options on MT5'],
     ['get-started/cfds',                        'static/get_started/cfds',                     'default',     'CFDs'],
     ['get-started/cryptocurrencies',            'static/get_started/cryptocurrencies',         'default',     'Cryptocurrencies'],
     ['get-started/forex',                       'static/get_started/forex',                    'default',     'Forex'],

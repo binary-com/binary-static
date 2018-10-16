@@ -16,6 +16,7 @@ const getPropertyValue = require('../../../../_common/utility').getPropertyValue
 
 const Highchart = (() => {
     let chart,
+        chart_options,
         chart_promise,
         options,
         response_id,
@@ -121,17 +122,26 @@ const Highchart = (() => {
             return null;
         }
 
-        HighchartUI.setLabels(getHighchartLabelParams());
+        HighchartUI.updateLabels(chart, getHighchartLabelParams());
 
-        const chart_options = {
-            type,
+        const display_decimals = (history ? history.prices[0] : candles[0].open).split('.')[1].length || 3;
+
+        chart_options = {
             data,
-            height    : el.parentElement.offsetHeight,
-            title     : localize(init_options.title),
-            decimals  : history ? history.prices[0] : candles[0].open,
-            entry_time: entry_tick_time ? entry_tick_time * 1000 : start_time * 1000,
+            display_decimals,
+            type,
+            entry_time: (entry_tick_time || start_time) * 1000,
             exit_time : exit_time ? exit_time * 1000 : null,
-            user_sold : contract.status === 'sold',
+            has_zone  : true,
+            height    : Math.max(el.parentElement.offsetHeight, 450),
+            radius    : 2,
+            title     : localize(init_options.title),
+            tooltip   : {
+                valueDecimals: display_decimals,
+                xDateFormat  : '%A, %b %e, %H:%M:%S GMT',
+            },
+            user_sold: contract.status === 'sold',
+            x_axis   : { label: { format: '{value:%H:%M:%S}', overflow: 'justify' } },
         };
         if (Callputspread.isCallputspread(contract.contract_type)) {
             $.extend(chart_options, Callputspread.getChartOptions(contract));
@@ -145,6 +155,7 @@ const Highchart = (() => {
                 chart          = Highcharts.StockChart(el, HighchartUI.getChartOptions());
                 is_initialized = true;
 
+                $(window).on('resize', updateHighchartOptions);
                 if (Callputspread.isCallputspread(contract.contract_type)) {
                     Callputspread.init(chart, contract);
                 }
@@ -152,11 +163,14 @@ const Highchart = (() => {
         });
     };
 
-    const getHighchartLabelParams = () => ({
+    const getHighchartLabelParams = (is_reset_barrier) => ({
         is_chart_delayed,
+        is_reset_barrier,
         contract_type       : contract.contract_type,
-        is_user_sold        : contract.status === 'sold',
+        is_forward_starting : purchase_time !== start_time,
         is_sold_before_start: sell_time < start_time,
+        is_user_sold        : contract.status === 'sold',
+        has_barrier         : !!(contract.barrier || contract.high_barrier),
     });
 
     // type 'x' is used to draw lines such as start and end times
@@ -168,6 +182,20 @@ const Highchart = (() => {
     // Remove plotLines by id
     const removePlotLine = (id, type = 'y') => {
         chart[(`${type}Axis`)][0].removePlotLine(id);
+    };
+
+    const updateHighchartOptions = () => {
+        if (chart && chart_options) {
+            HighchartUI.setChartOptions(chart_options);
+            chart.update(HighchartUI.getChartOptions());
+        }
+    };
+
+    const onClose = (fnc) => {
+        if (typeof fuc === 'function') {
+            fnc();
+        }
+        $(window).off('resize', updateHighchartOptions);
     };
 
     const handleResponse = (response) => {
@@ -188,15 +216,17 @@ const Highchart = (() => {
                     const page_underlying = State.get('is_mb_trading') ? MBDefaults.get('underlying') : Defaults.get('underlying');
                     if (page_underlying !== (tick || ohlc).symbol) {
                         ViewPopupUI.storeSubscriptionID(response_id, true);
-                        ViewPopupUI.setOnCloseFunction();
+                        ViewPopupUI.setOnCloseFunction(onClose);
                     } else {
-                        ViewPopupUI.setOnCloseFunction(GetTicks.request);
+                        ViewPopupUI.setOnCloseFunction(() => onClose(GetTicks.request));
                     }
                 } else {
                     ViewPopupUI.storeSubscriptionID(response_id, true);
-                    ViewPopupUI.setOnCloseFunction();
+                    ViewPopupUI.setOnCloseFunction(onClose);
                 }
                 is_response_id_set = true;
+            } else {
+                ViewPopupUI.setOnCloseFunction(onClose);
             }
             if (history || candles) {
                 const length = (history ? history.times : candles).length;
@@ -362,7 +392,7 @@ const Highchart = (() => {
 
     // update the color zones with the correct entry_tick_time and draw barrier
     const selectEntryTickBarrier = () => {
-        if (chart && entry_tick_time && !is_entry_tick_barrier_selected) {
+        if (chart && entry_tick_time && !is_entry_tick_barrier_selected && (!sell_time || sell_time > start_time)) {
             is_entry_tick_barrier_selected = true;
             drawBarrier();
             updateZone('entry');
@@ -398,6 +428,7 @@ const Highchart = (() => {
                     if (Reset.isNewBarrier(entry_spot, barrier)) {
                         addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot',   textBottom: contract_type !== 'RESETCALL', x: -60, align: 'right' }, 'y');
                         addPlotLine({ id: 'reset_barrier', value: +barrier,    label: `${localize('Reset Barrier')} (${addComma(barrier)})`, dashStyle: 'Solid', textBottom: contract_type === 'RESETCALL', x: -60, align: 'right' }, 'y');
+                        HighchartUI.updateLabels(chart, getHighchartLabelParams(true));
                     } else {
                         addPlotLine({ id: 'barrier',       value: +entry_spot, label: `${localize('Barrier')} (${addComma(entry_spot)})`,    dashStyle: 'Dot', x: -60, align: 'right' }, 'y');
 
