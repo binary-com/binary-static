@@ -14,7 +14,7 @@ const FAQ = () => (
                         items={[
                             { id: 'general',                         href: '#general',                         text: it.L('General') },
                             { id: 'account-management-and-tracking', href: '#account-management-and-tracking', text: it.L('Account management and tracking') },
-                            { id: 'marketing-and-promotions',        href: '#marketing-and-promotions',        text: it.L('Marketing and promotions') },
+                            { id: 'referral-tools',                  href: '#referral-tools',                  text: it.L('Referral tools') },
                             { id: 'support',                         href: '#support',                         text: it.L('Support') },
                         ]}
                     />
@@ -30,8 +30,8 @@ const FAQ = () => (
                     <h3>{it.L('Why should I become a [_1] affiliate?', it.website_name)}</h3>
                     <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:', it.website_name)}</p>
                     <ul className='bullet'>
-                        <li>{it.L('An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, Russian, and Indonesian')}</li>
-                        <li>{it.L('An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere')}</li>
+                        <li>{it.L('An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian')}</li>
+                        <li>{it.L('An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere')}</li>
                         <li>{it.L('A competitive and flexible affiliate programme that can be adapted to your needs')}</li>
                     </ul>
 
@@ -39,7 +39,7 @@ const FAQ = () => (
                     <p>{it.L('Not at all. Joining our affiliate programme is completely free and always will be.')}</p>
 
                     <h3>{it.L('What is the definition of a referred client?')}</h3>
-                    <p>{it.L('A client is someone who has been referred through your unique affiliate link and who has deposited money into their [_1] account. They must fulfil the following criteria:', it.website_name)}</p>
+                    <p>{it.L('A referred client is someone who has been referred through your unique affiliate link and who has deposited money into their [_1] account. They must fulfil the following criteria:', it.website_name)}</p>
                     <ul className='bullet'>
                         <li>{it.L('Have not previously been a [_1] customer', it.website_name)}</li>
                         <li>{it.L('Aged 18 years old and above')}</li>
@@ -77,24 +77,9 @@ const FAQ = () => (
                     <p>{it.L('We prohibit the use of unauthorised incentives, gifts, and payments to encourage customer signups. If we have reason to believe that you have engaged in such activity, we reserve the right to withhold any payments due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval.')}</p>
                 </Section>
 
-                <Section id='marketing-and-promotions' header={it.L('Marketing and promotions')}>
-                    <h3>{it.L('What advertising materials and marketing tools do you offer?')}</h3>
-                    <p>{it.L('We have a tested and proven selection of advertising materials including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at [_1]. You can also use the Myaffiliates system to track and optimise your campaigns.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
-
-                    <h3>{it.L('Where are the advertising materials located?')}</h3>
-                    <p>{it.L('Log in to your [_1] affiliate account and go to: Marketing → All Media.', it.website_name)}</p>
-
-                    <h3>{it.L('Can you customise a banner for my site?')}</h3>
-                    <p>{it.L('Yes. Please contact your affiliate manager with the following information:')}</p>
-                    <ul className='bullet'>
-                        <li>{it.L('Pixel size')}</li>
-                        <li>{it.L('File format')}</li>
-                        <li>{it.L('Desired language')}</li>
-                        <li>{it.L('The URL of the site on which the banner is going to appear')}</li>
-                        <li>{it.L('Banner placement')}</li>
-                        <li>{it.L('Specific colours the banner should include')}</li>
-                        <li>{it.L('Specific message the banner should include')}</li>
-                    </ul>
+                <Section id='referral-tools' header={it.L('Referral tools')}>
+                    <h3>{it.L('What referral tools do you offer?')}</h3>
+                    <p>{it.L('We have a tested and proven selection of referral tools including banners, reviews, videos, and text ads for you to use. If you would like certain items to be customised to your preferences, please contact your account manager at [_1]. You can also use the MyAffiliates system to track and optimise your campaigns.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
                 </Section>
 
                 <Section id='support' header={it.L('Support')}>
