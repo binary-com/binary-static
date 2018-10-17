@@ -9,7 +9,7 @@ import App                  from './app.jsx';
 
 configure({ enforceActions: true });
 
-const initApp = () => {
+const initApp = async () => {
     Client.init();
 
     setStorageEvents();
@@ -18,7 +18,7 @@ const initApp = () => {
 
     NetworkMonitor.init(root_store);
 
-    root_store.modules.trade.init();
+    await root_store.modules.trade.init();
 
     const app = document.getElementById('binary_app');
     if (app) {
