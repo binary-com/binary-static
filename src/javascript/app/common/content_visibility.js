@@ -1,8 +1,9 @@
+const isEuCountry      = require('./country_base').isEuCountry;
 const Client           = require('../base/client');
 const BinarySocket     = require('../base/socket');
+const MetaTrader       = require('../pages/user/metatrader/metatrader');
 const State            = require('../../_common/storage').State;
 const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
-const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
 
 /*
     data-show attribute controls element visibility based on
@@ -150,6 +151,7 @@ const ContentVisibility = (() => {
         });
 
         updateTabDisplay();
+        hideEU();
     };
 
     return {

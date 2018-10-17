@@ -92,7 +92,7 @@ const AuthorisedApps = (() => {
         if (elements.table) {
             return FlexTableUI.replace(data);
         }
-        const headers = ['Name', 'Permissions', 'Last Used'];
+        const headers = ['Name', 'Permissions', 'Last Login'];
         can_revoke    = /admin/.test((State.getResponse('authorize') || {}).scopes);
         if (can_revoke) {
             headers.push('Action');

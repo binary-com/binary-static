@@ -15,7 +15,9 @@ import {
     AddressCity,
     AddressPostcode,
     AddressState,
+    Jurisdiction,
     Phone,
+    RiskDisclaimer,
     SecretQuestion,
     SecretAnswer,
     ClientMessage,
@@ -55,8 +57,9 @@ const Real = () => (
             </Fieldset>
 
             <PepDeclaration />
-
             <ProfessionalClient />
+            <Jurisdiction />
+            <RiskDisclaimer />
 
             <Tnc />
         </form>

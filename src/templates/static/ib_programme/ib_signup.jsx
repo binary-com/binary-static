@@ -18,9 +18,9 @@ const Signup = () => (
             <div className='gr-padding-20 center-text'>
                 <h2 className='margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
-                    <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy. Just [_1]fill out the application form[_2]* and wait for our approval.', `<a href='${it.affiliate_signup_url}' target="_blank">`, '</a>')} />
-                    <Step circle_no='2' header={it.L('Promote [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise our MT5 service to your audience.')} />
-                    <Step circle_no='3' header={it.L('Earn')}                          text={it.L('Earn a commission when your referred clients trade Forex and CFDs on our MT5 platform.')} />
+                    <Step circle_no='1' header={it.L('Sign up')}                         text={it.L('Getting started is free and easy. Just [_1]fill out the application form[_2]* and wait for our approval.', `<a href='${it.affiliate_signup_url}' target="_blank">`, '</a>')} />
+                    <Step circle_no='2' header={it.L('Introduce [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the referral tools we provide to introduce our MT5 service to your audience.')} />
+                    <Step circle_no='3' header={it.L('Earn')}                            text={it.L('Earn a commission when your referred clients trade Forex and CFDs on our MT5 platform.')} />
                 </div>
                 <p>{it.L('*Already registered as an affiliate? Send us an email at [_1] instead.', `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
             </div>
@@ -31,9 +31,9 @@ const Signup = () => (
                 <h2 className='margin-bottom-50'>{it.L('Why you should join the [_1] IB Programme', it.website_name)}</h2>
 
                 <BoxRow no_border>
-                    <IBBox title={it.L('Daily payouts')}            image='payment-icon'   text={it.L('Get your IB commission credited daily into your MT5 account.')} />
-                    <IBBox title={it.L('Advanced marketing tools')} image='marketing-icon' text={it.L('Track every click, impression, download, and signup to increase your conversions.')} />
-                    <IBBox title={it.L('Dedicated support')}        image='contact-icon'   text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
+                    <IBBox title={it.L('Daily payouts')}           image='payment-icon'   text={it.L('Get your IB commission credited daily into your MT5 account.')} />
+                    <IBBox title={it.L('Advanced referral tools')} image='marketing-icon' text={it.L('Track every click, impression, download, and signup to increase your conversions.')} />
+                    <IBBox title={it.L('Dedicated support')}       image='contact-icon'   text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
                 </BoxRow>
 
             </div>
@@ -131,9 +131,9 @@ const Signup = () => (
                         <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/account-icon.svg')} alt='account-icon' />
                         <p><strong>{it.L('Account management')}</strong></p>
                     </a>
-                    <a href={`${it.url_for('ib-programme/ib-faq')}#marketing-and-promotions`} className='gr-4 gr-6-m center-text faq-box'>
+                    <a href={`${it.url_for('ib-programme/ib-faq')}#referral-tools`} className='gr-4 gr-6-m center-text faq-box'>
                         <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/marketing-icon.svg')} alt='marketing-icon' />
-                        <p><strong>{it.L('Marketing and promotions')}</strong></p>
+                        <p><strong>{it.L('Referral tools')}</strong></p>
                     </a>
                 </div>
             </div>
