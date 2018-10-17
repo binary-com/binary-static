@@ -71,7 +71,7 @@ const Header = (() => {
             Client.getAllLoginids().forEach((loginid) => {
                 if (!Client.get('is_disabled', loginid) && Client.get('token', loginid)) {
                     const account_title  = Client.getAccountTitle(loginid);
-                    const is_real        = !Client.isAccountOfType('virtual', loginid);
+                    const is_real        = !Client.getAccountType(loginid); // this function only returns virtual/gaming/financial types
                     const currency       = Client.get('currency', loginid);
                     const localized_type = localize('[_1] Account', [is_real && currency ? currency : account_title]);
                     if (loginid === Client.get('loginid')) { // default account
