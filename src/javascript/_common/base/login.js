@@ -1,6 +1,7 @@
 const moment             = require('moment');
 const Client             = require('./client_base');
 const getLanguage        = require('../language').get;
+const isMobile           = require('../os_detect').isMobile;
 const isStorageSupported = require('../storage').isStorageSupported;
 const LocalStore         = require('../storage').LocalStore;
 const getAppId           = require('../../config').getAppId;
@@ -16,9 +17,9 @@ const Login = (() => {
     const loginUrl = () => {
         const server_url = localStorage.getItem('config.server_url');
         const language   = getLanguage();
-        const signup_device      = LocalStore.get('signup_device') || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+        const signup_device      = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
         const date_first_contact = moment(LocalStore.get('date_first_contact'), 'YYYY-mm-dd').valueOf();
-        const marketing_queries   = `${signup_device && `&signup_device=${signup_device}`}${date_first_contact && `&date_first_contact=${date_first_contact}`}`;
+        const marketing_queries   = `&signup_device=${signup_device}${date_first_contact && `&date_first_contact=${date_first_contact}`}`;
 
         return ((server_url && /qa/.test(server_url)) ?
             `https://www.${server_url.split('.')[1]}.com/oauth2/authorize?app_id=${getAppId()}&l=${language}` :
@@ -27,6 +28,7 @@ const Login = (() => {
     };
 
     const isLoginPages = () => /logged_inws|redirect/i.test(window.location.pathname);
+
     const socialLoginUrl = brand => (`${loginUrl()}&social_signup=${brand}`);
 
     return {

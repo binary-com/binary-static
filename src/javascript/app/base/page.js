@@ -16,6 +16,7 @@ const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
 const Localize         = require('../../_common/localize');
 const localize         = require('../../_common/localize').localize;
+const isMobile         = require('../../_common/os_detect').isMobile;
 const LocalStore       = require('../../_common/storage').LocalStore;
 const State            = require('../../_common/storage').State;
 const scrollToTop      = require('../../_common/scroll').scrollToTop;
@@ -100,7 +101,7 @@ const Page = (() => {
                 LocalStore.set('date_first_contact', toISOFormat(moment()));
             }
             if (!LocalStore.get('signup_device')) {
-                LocalStore.set('signup_device', /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop');
+                LocalStore.set('signup_device', (isMobile() ? 'mobile' : 'desktop'));
             }
         }
         TrafficSource.setData();

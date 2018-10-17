@@ -7,6 +7,7 @@ const TrafficSource    = require('../../../common/traffic_source');
 const handleVerifyCode = require('../../../common/verification_code').handleVerifyCode;
 const makeOption       = require('../../../../_common/common_functions').makeOption;
 const localize         = require('../../../../_common/localize').localize;
+const isMobile         = require('../../../../_common/os_detect').isMobile;
 const LocalStore       = require('../../../../_common/storage').LocalStore;
 const State            = require('../../../../_common/storage').State;
 const urlFor           = require('../../../../_common/url').urlFor;
@@ -76,7 +77,7 @@ const VirtualAccOpening = (() => {
     const bindValidation = () => {
         // Add TrafficSource parameters
         const utm_data = TrafficSource.getData();
-        const signup_device = LocalStore.get('signup_device') || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
+        const signup_device = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
         const date_first_contact = LocalStore.get('date_first_contact');
 
         const req = [
