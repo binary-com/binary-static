@@ -110,7 +110,7 @@ const Footer = () => (
             </div>
         </div>
         <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10'>
-            <div className='container' data-show="-malta, -maltainvest, -mt">
+            <div className='container' data-show='-malta, -maltainvest, -mt'>
                 <div className='gr-row'>
                     <div className='gr-12'>
                         <div className='icon-row flex-row gr-child'>

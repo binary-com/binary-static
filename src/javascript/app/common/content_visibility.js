@@ -59,7 +59,7 @@ const ContentVisibility = (() => {
             });
         } else {
             BinarySocket.wait('website_status').then(() => {
-                controlVisibility(client_is_logged_in, State.getResponse('website_status.clients_country'), 'default', true);
+                controlVisibility(client_is_logged_in, State.getResponse('website_status.clients_country'), 'default', false);
             });
         }
     };
@@ -122,19 +122,21 @@ const ContentVisibility = (() => {
 
         let show_element = false;
 
-        if (client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
-        else if (is_exclude !== rule_set_has_current) show_element = true;
+        if (client_is_logged_in && client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
+        else if (client_is_logged_in && is_exclude !== rule_set_has_current) show_element = true;
         else if (!client_is_logged_in && is_exclude !== rule_set_has_country) show_element = true;
 
-        if (mt5fin_rules.includes(mt5fin_company_shortcode)) show_element = !is_exclude;
+        if (client_is_logged_in && mt5fin_rules.includes(mt5fin_company_shortcode)) show_element = !is_exclude;
 
         return show_element;
     };
 
-    const controlVisibility = (client_is_logged_in, clients_country, current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
+    const controlVisibility = (client_is_logged_in, clients_country,
+        current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
         document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str      = el.dataset.show;
-            if (shouldShowElement(attr_str, client_is_logged_in, clients_country, current_landing_company_shortcode, client_has_mt_company, mt5_login_list)) {
+            if (shouldShowElement(attr_str, client_is_logged_in, clients_country,
+                current_landing_company_shortcode, client_has_mt_company, mt5_login_list)) {
                 el.classList.add(visible_classname);
             } else {
                 const open_tab_url = new RegExp(`\\?.+_tabs=${el.id}`, 'i');
