@@ -158,8 +158,9 @@ const PaymentMethods = () => {
                             },
                             {
                                 id : 'paysec',
+                                dataShow: '-malta, -maltainvest, -mt',
                                 row: [
-                                    { text: <PaymentLogo logo='paysec' />, className: 'eu-hide-parent' },
+                                    { text: <PaymentLogo logo='paysec' />},
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: 'PaySec was founded in 2014 to provide customers and merchants in the Asian region with a comprehensive range of payment methods through one payment gateway.' },
                                         { td_list: [
@@ -237,8 +238,9 @@ const PaymentMethods = () => {
                         tbody: [
                             {
                                 id : 'fasapay',
+                                dataShow: '-malta, -maltainvest, -mt',
                                 row: [
-                                    { text: <PaymentLogo logo='fasapay' />, className: 'eu-hide-parent' },
+                                    { text: <PaymentLogo logo='fasapay' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('FasaPay enables electronic money transfers for individuals and payment gateways for merchants. For more info, please visit [_1].', `${createLink('https://www.fasapay.com')}`) },
                                         { td_list: [
@@ -256,8 +258,9 @@ const PaymentMethods = () => {
                             },
                             {
                                 id : 'perfect-money',
+                                dataShow: '-malta, -maltainvest, -mt',
                                 row: [
-                                    { text: <PaymentLogo logo='perfect_money' />, className: 'eu-hide-parent' },
+                                    { text: <PaymentLogo logo='perfect_money' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('Perfect Money allows individuals to make instant payments and money transfers securely on the Internet. For more info, please visit [_1].', `${createLink('https://perfectmoney.is')}`) },
                                         { td_list: [
@@ -332,8 +335,9 @@ const PaymentMethods = () => {
                             },
                             {
                                 id : 'qiwi',
+                                dataShow: '-malta, -maltainvest, -mt',
                                 row: [
-                                    { text: <PaymentLogo logo='qiwi' />, className: 'eu-hide-parent' },
+                                    { text: <PaymentLogo logo='qiwi' />},
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('Qiwi is a payment service provider that was founded in 2007. It provides individuals with a simple way to transfer money, receive payments, and pay online. For more info, please visit [_1].', `${createLink('https://qiwi.com')}`) },
                                         { td_list: [
@@ -351,8 +355,9 @@ const PaymentMethods = () => {
                             },
                             {
                                 id : 'yandex',
+                                dataShow: '-malta, -maltainvest, -mt',
                                 row: [
-                                    { text: <PaymentLogo logo='yandex' />, className: 'eu-hide-parent' },
+                                    { text: <PaymentLogo logo='yandex' />},
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
                                         { td: it.L('Yandex.Money is an electronic payment service provider that offers consumers an easy, safe, and reliable online payment method. For more info, please visit [_1].', `${createLink('https://money.yandex.ru')}`) },
                                         { td_list: [
