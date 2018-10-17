@@ -10,9 +10,9 @@ const Tac = () => (
         <p>
             {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term "the Company" shall denote either')}&nbsp;
             <span data-show='-malta, -maltainvest, -mt'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
-            <span className='-malta, -maltainvest, -mt'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
-            <span className='-malta, -maltainvest, -mt'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
-            <span className='-malta, -maltainvest, -mt'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
+            <span data-show='-malta, -maltainvest, -mt'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+            <span data-show='-malta, -maltainvest, -mt'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
+            <span data-show='-malta, -maltainvest, -mt'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
             <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
             <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
         </p>
