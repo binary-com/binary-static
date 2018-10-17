@@ -8,7 +8,6 @@ const getElementById     = require('../../_common/common_functions').getElementB
 const getLanguage        = require('../../_common/language').get;
 const urlLang            = require('../../_common/language').urlLang;
 const isStorageSupported = require('../../_common/storage').isStorageSupported;
-const LocalStore         = require('../../_common/storage').LocalStore;
 const removeCookies      = require('../../_common/storage').removeCookies;
 const paramsHash         = require('../../_common/url').paramsHash;
 const urlFor             = require('../../_common/url').urlFor;
@@ -31,36 +30,25 @@ const LoggedInHandler = (() => {
                 Client.doLogout({ logout: 1 });
             }
 
-            // send marketing details to the backend, like when we open a new virtual account
-            // @see src/javascript/app/pages/user/new_account/virtual_acc_opening.js:bindValidation()
-            const signup_device = LocalStore.get('signup_device') || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? 'mobile' : 'desktop';
-            const date_first_contact = LocalStore.get('date_first_contact');
-            const payload = {
-                'set_settings' : 1,
-                'signup_device': signup_device,
-            };
-
-            BinarySocket.send(Object.assign(payload, date_first_contact ? { date_first_contact } : {})).then(() => {
-                // redirect back
-                let set_default = true;
-                if (redirect_url) {
-                    const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', '404'];
-                    const reg             = new RegExp(do_not_redirect.join('|'), 'i');
-                    if (!reg.test(redirect_url) && urlFor('') !== redirect_url) {
-                        set_default = false;
-                    }
+            // redirect back
+            let set_default = true;
+            if (redirect_url) {
+                const do_not_redirect = ['reset_passwordws', 'lost_passwordws', 'change_passwordws', 'home', '404'];
+                const reg             = new RegExp(do_not_redirect.join('|'), 'i');
+                if (!reg.test(redirect_url) && urlFor('') !== redirect_url) {
+                    set_default = false;
                 }
-                if (set_default) {
-                    const lang_cookie = urlLang(redirect_url) || Cookies.get('language');
-                    const language    = getLanguage();
-                    redirect_url      = Client.defaultRedirectUrl();
-                    if (lang_cookie && lang_cookie !== language) {
-                        redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
-                    }
+            }
+            if (set_default) {
+                const lang_cookie = urlLang(redirect_url) || Cookies.get('language');
+                const language    = getLanguage();
+                redirect_url      = Client.defaultRedirectUrl();
+                if (lang_cookie && lang_cookie !== language) {
+                    redirect_url = redirect_url.replace(new RegExp(`/${language}/`, 'i'), `/${lang_cookie.toLowerCase()}/`);
                 }
-                getElementById('loading_link').setAttribute('href', redirect_url);
-                window.location.href = redirect_url; // need to redirect not using pjax
-            });
+            }
+            getElementById('loading_link').setAttribute('href', redirect_url);
+            window.location.href = redirect_url; // need to redirect not using pjax
         });
     };
 
