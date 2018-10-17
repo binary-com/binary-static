@@ -176,7 +176,21 @@ const PaymentAgents = () => (
             <li>{it.L('It is noted that immediately upon termination of the relationship between the Company and the Agent, the Agent shall return to the Company any documents pertaining to the Company’s business whatsoever which are in the Agent’s possession.')}</li>
         </ol>
 
-        <h2 data-anchor='termination'>Q. {it.L('Termination')}</h2>
+        <h2 data-anchor='choice-of-law-and-venue'>Q. {it.L('Choice of Law and Venue')}</h2>
+        <ol>
+            <li>{it.L('The parties agree that this Agreement and the relationship between the parties is to be governed by and construed under the laws of Costa Rica. The parties further agree that all disputes shall be resolved exclusively in the courts of Costa Rica (the "Identified Courts").')}</li>
+            <li>{it.L('Each party hereby:')}
+                <ul className='bullet'>
+                    <li>{it.L('submits to the jurisdiction of the Identified Courts for any proceeding;')}</li>
+                    <li>{it.L('shall not commence any proceeding except in the Identified Courts;')}</li>
+                    <li>{it.L('waives, and shall not plead or make, any objection to the venue of any proceeding in the Identified Courts;')}</li>
+                    <li>{it.L('waives, and shall not plead or make, any claim that any proceeding brought in the Identified Courts has been brought in an improper or otherwise inconvenient forum; and')}</li>
+                    <li>{it.L('waives, and shall not plead or make, any claim that the Identified Courts lack personal jurisdiction over it.')}</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2 data-anchor='termination'>R. {it.L('Termination')}</h2>
         <p>{it.L('It is agreed and understood that any of the Parties may terminate this Agreement by giving 7 days written notice to the other Party.')}</p>
     </div>
 );
