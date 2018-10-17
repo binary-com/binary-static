@@ -391,14 +391,12 @@ const PaymentMethods = () => {
                     }}
                 />
                 <TableTitle
-                    data-show='-malta, -maltainvest'
-                    className='eu-hide'
+                    data-show='-malta, -maltainvest, -mt'
                     title={it.L('Cryptocurrencies')}
                     withdrawal={it.L('Min Withdrawal')}
                 />
                 <Table
-                    data-show='-malta, -maltainvest'
-                    className='eu-hide'
+                    data-show='-malta, -maltainvest, -mt'
                     data={{
                         thead: [
                             [

@@ -14,11 +14,11 @@ const TermsAndConditions = () => (
         <ol>
             <li>
                 {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either', it.website_name)}&nbsp;
-                <span className='eu-hide'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
-                <span className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
-                <span className='eu-hide'>{it.L('Binary (IOM) Ltd.,')}&nbsp;</span>
-                <span className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
-                <span className='eu-hide'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
+                <span data-show='-malta, -maltainvest, -mt'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
+                <span data-show='-malta, -maltainvest, -mt'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+                <span data-show='-malta, -maltainvest, -mt'>{it.L('Binary (IOM) Ltd.,')}&nbsp;</span>
+                <span data-show='-malta, -maltainvest, -mt'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
+                <span data-show='-malta, -maltainvest, -mt'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
                 <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
                 <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
             </li>
@@ -113,7 +113,7 @@ const TermsAndConditions = () => (
             <li>{it.L('Inactive/Dormant Accounts')}
                 <ol>
                     <li className='eu-hide'>{it.L('We reserve the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every six months for every client account that has had no transaction recorded for a period of 12 consecutive months or more.')}</li>
-                    <li className='invisible eu-show'>{it.L('We reserve the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts.')}</li>
+                    <li className='invisible' data-show='malta, maltainvest, mt'>{it.L('We reserve the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts.')}</li>
                 </ol>
             </li>
             <li>{it.L('Account Security')}

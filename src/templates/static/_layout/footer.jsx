@@ -56,7 +56,7 @@ const Footer = () => (
                                     { text: it.L('Why Us?'),         href: it.url_for('why-us') },
                                     { text: it.L('Getting Started'), href: it.url_for('get-started') },
                                     { text: it.L('Platform Tour'),   href: it.url_for('tour') },
-                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', className: 'invisible eu-show' },
+                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', className: 'invisible', dataShow: 'malta, maltainvest, mt' },
                                     { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
                                     { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
                                 ]}
@@ -159,7 +159,7 @@ const Footer = () => (
                     </div>
                 </div>
             </div>
-            <div className='container eu-show invisible'>
+            <div className='container invisible' data-show='malta, maltainvest, mt'>
                 <div className='gr-row'>
                     <div className='gr-12'>
                         <div className='icon-row flex-row'>
