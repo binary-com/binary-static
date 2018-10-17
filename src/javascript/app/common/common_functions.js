@@ -1,6 +1,5 @@
 const BinarySocket = require('../../app/base/socket');
 const isEuCountry  = require('../../app/common/country_base').isEuCountry;
-const isIndonesia  = require('../../app/common/country_base').isIndonesia;
 
 const hideEU = () => {
     BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
@@ -9,7 +8,6 @@ const hideEU = () => {
             $('.eu-show').setVisibility(1);
             $('.eu-hide-parent').parent().setVisibility(0);
         }
-        $('.id-show').setVisibility(isIndonesia());
     });
 };
 
