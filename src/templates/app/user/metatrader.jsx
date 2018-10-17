@@ -149,38 +149,31 @@ const Metatrader = () => (
                     <a href={`${it.url_for('get-started')}?get_started_tabs=mt5`} className='get-started-link'>{it.L('Get started with MT5')}</a>
                     <div className='mt-panel'>
                         <div id='account_desc' className='mt-container border-bottom' />
-                        <div className='mt-container'>
-                            <p>{it.L('MT5 trading platform links:')}</p>
-                            <ul className='platforms'>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/web.svg')} />
-                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Trade on web platform')}</a>
-                                </li>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/mac.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download>{it.L('Download for Mac')}</a>
-                                </li>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/linux.svg')} />
-                                    <a href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' rel='noopener noreferrer' target='_blank'>{it.L('Instructions for Linux')}</a>
-                                </li>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/windows.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' download>{it.L('Download for Windows')}</a>
-                                </li>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/ea.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/Binary.ex5' download>{it.L('Download Expert Advisor')}</a>
-                                </li>
-                                <p className='badges'>
-                                    <a href='https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
-                                        <span className='app-store-badge' />
-                                    </a>
-                                    <a href='https://download.mql5.com/cdn/mobile/mt5/android?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
-                                        <span className='google-play-badge' />
-                                    </a>
-                                </p>
-                            </ul>
+                    </div>
+                    <div className='mt-panel'>
+                        <div className='mt-sidebar-button border-bottom'>
+                            <div className='small-icon'>
+                                <a href={it.url_for('get-started/binary-options-mt5')}>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/binary-options.svg')} />
+                                </a>
+                            </div>
+                            <div className='mt-link'>
+                                <a href={it.url_for('get-started/binary-options-mt5')}>
+                                    {it.L('Binary Options for MT5')}
+                                </a>
+                            </div>
+                        </div>
+                        <div className='mt-sidebar-button'>
+                            <div className='small-icon'>
+                                <a href={it.url_for('metatrader/download')}>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/mt5.png')} />
+                                </a>
+                            </div>
+                            <div className='mt-link'>
+                                <a href={it.url_for('metatrader/download')}>
+                                    {it.L('Go to MT5 download page')}
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -560,6 +553,7 @@ const Metatrader = () => (
                     <div id='messages'>
                         <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
                         <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
+                        <div id='msg_switch_financial'>{it.L('To perform this action, please switch to your [_1] Financial account', it.website_name)}</div>
                         <div id='msg_upgrade'>{it.L('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', it.url_for('new_account/realws'), it.website_name)}</div>
                         <div id='msg_real_financial'>
                             <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account, please:')}</span>

@@ -8,7 +8,7 @@ const Complaints = () => (
             '<a href="https://idpc.org.mt/en/Pages/Home.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
         <p className='invisible eu-show'>{it.L('If your complaint relates to an outcome of a trade or a transaction and remains unresolved, it will turn into a dispute. Should you be unsatisfied with our response, you can choose to escalate your complaint to the regulator or to an alternative dispute resolution entity.')}</p>
-        <p className='id-hide'>{it.L('Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity\'s [_1]website[_2].',
+        <p className='invisible eu-show'>{it.L('Clients registered with Binary (IOM) Ltd can raise their unresolved disputes with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity\'s [_1]website[_2].',
             '<a href=\'https://www.ibas-uk.com\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')}
         </p>
         <p className='invisible eu-show'>{it.L('Clients registered with Binary (Europe) Ltd can raise their unresolved disputes with the Malta Gaming Authority [_1] by submitting an email to [_2]. UK clients registered with Binary (Europe) Ltd can submit their dispute with the alternative dispute resolution entity IBAS by filling the adjudication form on the ADR entity\'s [_3]website[_4].',
