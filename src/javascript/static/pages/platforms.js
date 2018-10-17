@@ -1,4 +1,3 @@
-const hideEU         = require('../../app/common/common_functions').hideEU;
 const getElementById = require('../../_common/common_functions').getElementById;
 const TabSelector    = require('../../_common/tab_selector');
 
@@ -19,7 +18,6 @@ const os_list = [
 
 const Platforms = (() => {
     const onLoad = () => {
-        hideEU();
         TabSelector.onLoad();
         $.getJSON('https://api.github.com/repos/binary-com/binary-desktop-installers/releases/latest', (data = { assets: [] }) => {
             data.assets.some((asset) => {
