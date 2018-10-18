@@ -181,7 +181,7 @@ const MetaTraderUI = (() => {
                 const mapping = {
                     balance : () => (isNaN(info) ? '' : formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
                     leverage: () => `1:${info}`,
-                    login   : () => (`${info} (${localize(/demo/.test(accounts_info[acc_type].account_type) ? 'Demo Account' : 'Real-Money Account')})`),
+                    login   : () => (`${info} (${/demo/.test(accounts_info[acc_type].account_type) ? localize('Demo Account') : localize('Real-Money Account')})`),
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
@@ -452,10 +452,10 @@ const MetaTraderUI = (() => {
                 count++;
                 const $acc  = $acc_template.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
-                const title = accounts_info[acc_type].short_title;
+                const image = accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '') || 'volatility_indices'; // image name can be (advanced|standard|volatility_indices)
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
-                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase().replace(/\s/g, '_').replace('mam_', '')}.svg`));
-                $acc.find('p').text(localize(title));
+                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${image}.svg`));
+                $acc.find('p').text(accounts_info[acc_type].short_title);
                 (/mam/.test(acc_type) ? $acc_template_mam : $acc_template_mt).append($acc);
             });
         $templates.find('.hl-types-of-accounts').setVisibility(count > 1);

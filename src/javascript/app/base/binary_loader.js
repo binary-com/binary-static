@@ -9,6 +9,8 @@ const ContentVisibility   = require('../common/content_visibility');
 const GTM                 = require('../../_common/base/gtm');
 const Login               = require('../../_common/base/login');
 const getElementById      = require('../../_common/common_functions').getElementById;
+const urlLang             = require('../../_common/language').urlLang;
+const localizeForLang     = require('../../_common/localize').forLang;
 const localize            = require('../../_common/localize').localize;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
@@ -31,6 +33,8 @@ const BinaryLoader = (() => {
                 true, 'STORAGE_NOT_SUPPORTED');
             getElementById('btn_login').classList.add('button-disabled');
         }
+
+        localizeForLang(urlLang());
 
         Page.showNotificationOutdatedBrowser();
 
@@ -73,8 +77,8 @@ const BinaryLoader = (() => {
 
     const error_messages = {
         login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
-        only_virtual: 'Sorry, this feature is available to virtual accounts only.',
-        only_real   : 'This feature is not relevant to virtual-money accounts.',
+        only_virtual: () => localize('Sorry, this feature is available to virtual accounts only.'),
+        only_real   : () => localize('This feature is not relevant to virtual-money accounts.'),
     };
 
     const loadHandler = (config) => {
@@ -88,9 +92,9 @@ const BinaryLoader = (() => {
                         if (response.error) {
                             displayMessage(error_messages.login());
                         } else if (config.only_virtual && !Client.get('is_virtual')) {
-                            displayMessage(error_messages.only_virtual);
+                            displayMessage(error_messages.only_virtual());
                         } else if (config.only_real && Client.get('is_virtual')) {
-                            displayMessage(error_messages.only_real);
+                            displayMessage(error_messages.only_real());
                         } else {
                             loadActiveScript(config);
                         }
@@ -117,14 +121,14 @@ const BinaryLoader = (() => {
         }
     };
 
-    const displayMessage = (message) => {
+    const displayMessage = (localized_message) => {
         const content = container.querySelector('#content .container');
         if (!content) {
             return;
         }
 
         const div_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
-        const div_notice    = createElement('p', { class: 'center-text notice-msg', html: localize(message) });
+        const div_notice    = createElement('p', { class: 'center-text notice-msg', html: localized_message });
 
         div_container.appendChild(div_notice);
 
