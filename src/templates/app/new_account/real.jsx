@@ -59,7 +59,9 @@ const Real = () => (
             <PepDeclaration />
             <ProfessionalClient />
             <Jurisdiction />
-            <RiskDisclaimer />
+            <div className='invisible' id='risk_disclaimer'>
+                <RiskDisclaimer />
+            </div>
 
             <Tnc />
         </form>
