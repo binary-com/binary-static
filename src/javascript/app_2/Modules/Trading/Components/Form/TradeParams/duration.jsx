@@ -47,22 +47,25 @@ const Duration = ({
     start_time,
     validation_errors,
 }) => {
-    const moment_now  = moment(server_time);
-    const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
-    const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
-    if (!now_date || moment_now.date() !== now_date.date() || (duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
-        if (duration_unit === 'd') {
-            min_day = new_min_day;
-            max_day = new_max_day;
+    if (duration_min_max[contract_expiry_type]) {
+        const moment_now  = moment(server_time);
+        const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
+        const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
+        if (!now_date || moment_now.date() !== now_date.date() || (duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
+            if (duration_unit === 'd') {
+                min_day = new_min_day;
+                max_day = new_max_day;
+            }
+
+            const moment_today = moment_now.clone().startOf('day');
+
+            now_date          = moment_now.clone();
+            min_date_duration = moment_today.clone().add(min_day || 1, 'd');
+            max_date_duration = moment_today.clone().add(max_day || 365, 'd');
+            min_date_expiry   = moment_today.clone();
         }
-
-        const moment_today = moment_now.clone().startOf('day');
-
-        now_date          = moment_now.clone();
-        min_date_duration = moment_today.clone().add(min_day || 1, 'd');
-        max_date_duration = moment_today.clone().add(max_day || 365, 'd');
-        min_date_expiry   = moment_today.clone();
     }
+
     const moment_expiry = moment.utc(expiry_date);
     const is_same_day   = moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day');
     if (is_same_day) {
