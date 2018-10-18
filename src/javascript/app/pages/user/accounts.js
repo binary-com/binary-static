@@ -9,7 +9,6 @@ const FormManager        = require('../../common/form_manager');
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const State              = require('../../../_common/storage').State;
-const toTitleCase        = require('../../../_common/string_util').toTitleCase;
 const urlFor             = require('../../../_common/url').urlFor;
 
 const Accounts = (() => {
@@ -57,11 +56,12 @@ const Accounts = (() => {
             real     : new_account.type === 'real',
             financial: new_account.type === 'financial',
         };
+        const new_account_title = new_account.type === 'financial' ? localize('Financial Account') : localize('Real Account');
 
         $(form_id).find('tbody')
             .append($('<tr/>')
                 .append($('<td/>').html($('<span/>', {
-                    text                 : localize(`${toTitleCase(new_account.type)} Account`),
+                    text                 : new_account_title,
                     'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
                     'data-balloon-length': 'large',
                 })))
@@ -93,7 +93,7 @@ const Accounts = (() => {
 
     const appendExistingAccounts = (loginid) => {
         const account_currency  = Client.get('currency', loginid);
-        const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
+        const account_type_prop = { text: Client.getAccountTitle(loginid) };
 
         if (!Client.isAccountOfType('virtual', loginid)) {
             const company_name    = getCompanyName(loginid);
@@ -138,15 +138,28 @@ const Accounts = (() => {
         return legal_allowed_markets;
     };
 
-    const markets = {
-        commodities: 'Commodities',
-        forex      : 'Forex',
-        indices    : 'Indices',
-        stocks     : 'Stocks',
-        volidx     : 'Volatility Indices',
-    };
+    const MarketsConfig = (() => {
+        let markets_config;
 
-    const getMarketName = market => localize(markets[market] || '');
+        const initMarketsConfig = () => ({
+            commodities: localize('Commodities'),
+            forex      : localize('Forex'),
+            indices    : localize('Indices'),
+            stocks     : localize('Stocks'),
+            volidx     : localize('Volatility Indices'),
+        });
+
+        return {
+            get: () => {
+                if (!markets_config) {
+                    markets_config = initMarketsConfig();
+                }
+                return markets_config;
+            },
+        };
+    })();
+
+    const getMarketName = market => MarketsConfig.get()[market] || '';
 
     const populateMultiAccount = () => {
         const currencies = getCurrencies(landing_company);
@@ -206,9 +219,9 @@ const Accounts = (() => {
         }
     };
 
-    const showError = (message) => {
+    const showError = (localized_text) => {
         $('#new_account_error').remove();
-        $('#new_account_opening').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localize(message) }));
+        $('#new_account_opening').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localized_text }));
     };
 
     const populateReq = () => {

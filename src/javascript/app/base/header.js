@@ -1,21 +1,22 @@
-const BinaryPjax          = require('./binary_pjax');
-const Client              = require('./client');
-const BinarySocket        = require('./socket');
-const showHidePulser      = require('../common/account_opening').showHidePulser;
-const MetaTrader          = require('../pages/user/metatrader/metatrader');
-const GTM                 = require('../../_common/base/gtm');
-const Login               = require('../../_common/base/login');
-const SocketCache         = require('../../_common/base/socket_cache');
-const elementInnerHtml    = require('../../_common/common_functions').elementInnerHtml;
-const elementTextContent  = require('../../_common/common_functions').elementTextContent;
-const getElementById      = require('../../_common/common_functions').getElementById;
-const localize            = require('../../_common/localize').localize;
-const State               = require('../../_common/storage').State;
-const toTitleCase         = require('../../_common/string_util').toTitleCase;
-const Url                 = require('../../_common/url');
-const applyToAllElements  = require('../../_common/utility').applyToAllElements;
-const createElement       = require('../../_common/utility').createElement;
-const findParent          = require('../../_common/utility').findParent;
+const BinaryPjax               = require('./binary_pjax');
+const Client                   = require('./client');
+const BinarySocket             = require('./socket');
+const showHidePulser           = require('../common/account_opening').showHidePulser;
+const MetaTrader               = require('../pages/user/metatrader/metatrader');
+const GTM                      = require('../../_common/base/gtm');
+const Login                    = require('../../_common/base/login');
+const SocketCache              = require('../../_common/base/socket_cache');
+const elementInnerHtml         = require('../../_common/common_functions').elementInnerHtml;
+const elementTextContent       = require('../../_common/common_functions').elementTextContent;
+const getElementById           = require('../../_common/common_functions').getElementById;
+const localize                 = require('../../_common/localize').localize;
+const localizeKeepPlaceholders = require('../../_common/localize').localizeKeepPlaceholders;
+const State                    = require('../../_common/storage').State;
+const Url                      = require('../../_common/url');
+const applyToAllElements       = require('../../_common/utility').applyToAllElements;
+const createElement            = require('../../_common/utility').createElement;
+const findParent               = require('../../_common/utility').findParent;
+const template                 = require('../../_common/utility').template;
 
 const Header = (() => {
     const onLoad = () => {
@@ -70,7 +71,7 @@ const Header = (() => {
             Client.getAllLoginids().forEach((loginid) => {
                 if (!Client.get('is_disabled', loginid) && Client.get('token', loginid)) {
                     const account_title  = Client.getAccountTitle(loginid);
-                    const is_real        = /real/i.test(account_title);
+                    const is_real        = !Client.getAccountType(loginid); // this function only returns virtual/gaming/financial types
                     const currency       = Client.get('currency', loginid);
                     const localized_type = localize('[_1] Account', [is_real && currency ? currency : account_title]);
                     if (loginid === Client.get('loginid')) { // default account
@@ -142,26 +143,32 @@ const Header = (() => {
                 return;
             }
 
-            const showUpgrade = (url, msg) => {
+            const showUpgrade = (url, localized_text) => {
                 applyToAllElements(upgrade_msg, (el) => {
                     el.setVisibility(1);
                     applyToAllElements('a', (ele) => {
-                        ele.html(createElement('span', { text: localize(msg) })).setVisibility(1).setAttribute('href', Url.urlFor(url));
+                        ele.html(createElement('span', { text: localized_text })).setVisibility(1).setAttribute('href', Url.urlFor(url));
                     }, '', el);
                 });
             };
 
-            const showUpgradeBtn = (url, msg) => {
+            const showUpgradeBtn = (url, localized_text) => {
                 applyToAllElements(upgrade_msg, (el) => {
                     el.setVisibility(1);
                     applyToAllElements('a.button', (ele) => {
-                        ele.html(createElement('span', { text: localize(msg) })).setVisibility(1).setAttribute('href', Url.urlFor(url));
+                        ele.html(createElement('span', { text: localized_text })).setVisibility(1).setAttribute('href', Url.urlFor(url));
                     }, '', el);
                 });
             };
 
             const upgrade_info     = Client.getUpgradeInfo();
             const show_upgrade_msg = upgrade_info.can_upgrade;
+            const upgrade_link_txt = upgrade_info.type === 'financial'
+                ? localize('Click here to open a Financial Account')
+                : localize('Click here to open a Real Account');
+            const upgrade_btn_txt  = upgrade_info.type === 'financial'
+                ? localize('Open a Financial Account')
+                : localize('Open a Real Account');
 
             if (Client.get('is_virtual')) {
                 applyToAllElements(upgrade_msg, (el) => {
@@ -174,8 +181,8 @@ const Header = (() => {
                 });
 
                 if (show_upgrade_msg) {
-                    showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
-                    showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+                    showUpgrade(upgrade_info.upgrade_link, upgrade_link_txt);
+                    showUpgradeBtn(upgrade_info.upgrade_link, upgrade_btn_txt);
                 } else {
                     applyToAllElements(upgrade_msg, (el) => {
                         applyToAllElements('a', (ele) => {
@@ -185,8 +192,8 @@ const Header = (() => {
                 }
             } else if (show_upgrade_msg) {
                 getElementById('virtual-wrapper').setVisibility(0);
-                showUpgrade(upgrade_info.upgrade_link, `Click here to open a ${toTitleCase(upgrade_info.type)} Account`);
-                showUpgradeBtn(upgrade_info.upgrade_link, `Open a ${toTitleCase(upgrade_info.type)} Account`);
+                showUpgrade(upgrade_info.upgrade_link, upgrade_link_txt);
+                showUpgradeBtn(upgrade_info.upgrade_link, upgrade_btn_txt);
 
                 if (/new_account/.test(window.location.href)) {
                     showHidePulser(0);
@@ -200,16 +207,15 @@ const Header = (() => {
 
     const showHideNewAccount = (upgrade_info) => {
         if (upgrade_info.can_upgrade || upgrade_info.can_open_multi) {
-            changeAccountsText(1, 'Create Account');
+            changeAccountsText(1, localize('Create Account'));
         } else {
-            changeAccountsText(0, 'Accounts List');
+            changeAccountsText(0, localize('Accounts List'));
         }
     };
 
-    const changeAccountsText = (add_new_style, text) => {
+    const changeAccountsText = (add_new_style, localized_text) => {
         const user_accounts = getElementById('user_accounts');
         user_accounts.classList[add_new_style ? 'add' : 'remove']('create_new_account');
-        const localized_text = localize(text);
         applyToAllElements('li', (el) => { elementTextContent(el, localized_text); }, '', user_accounts);
     };
 
@@ -263,28 +269,30 @@ const Header = (() => {
                 return required_fields.some(field => !get_settings[field]);
             };
 
-            const buildMessage = (string, path, hash = '') => localize(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
+            const buildMessage = (string, path, hash = '') => template(string, [`<a href="${Url.urlFor(path)}${hash}">`, '</a>']);
             const hasStatus = (string) => status.findIndex(s => s === string) < 0 ? Boolean(false) : Boolean(true);
 
             const has_no_tnc_limit = Client.get('landing_company_shortcode') === 'costarica';
 
             const messages = {
-                authenticate         : () => buildMessage('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',                                      'user/authenticate'),
+                authenticate         : () => buildMessage(localizeKeepPlaceholders('[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.'),                                      'user/authenticate'),
                 cashier_locked       : () => localize('Deposits and withdrawals have been disabled on your account. Please check your email for more details.'),
-                currency             : () => buildMessage('Please set the [_1]currency[_2] of your account.',                                                                                    'user/set-currency'),
-                document_needs_action: () => buildMessage('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.', 'user/authenticate'),
-                document_review      : () => buildMessage('We are reviewing your documents. For more details [_1]contact us[_2].',                                                               'contact'),
-                excluded_until       : () => buildMessage('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.',                                                 'contact'),
-                financial_limit      : () => buildMessage('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.',                                                             'user/security/self_exclusionws'),
-                mf_retail            : () => buildMessage('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                   'contact'),
+                currency             : () => buildMessage(localizeKeepPlaceholders('Please set the [_1]currency[_2] of your account.'),                                                                                    'user/set-currency'),
+                document_needs_action: () => buildMessage(localizeKeepPlaceholders('[_1]Your Proof of Identity or Proof of Address[_2] did not meet our requirements. Please check your email for further instructions.'), 'user/authenticate'),
+                document_review      : () => buildMessage(localizeKeepPlaceholders('We are reviewing your documents. For more details [_1]contact us[_2].'),                                                               'contact'),
+                excluded_until       : () => buildMessage(localizeKeepPlaceholders('Your account is restricted. Kindly [_1]contact customer support[_2] for assistance.'),                                                 'contact'),
+                financial_limit      : () => buildMessage(localizeKeepPlaceholders('Please set your [_1]30-day turnover limit[_2] to remove deposit limits.'),                                                             'user/security/self_exclusionws'),
+                mf_retail            : () => buildMessage(localizeKeepPlaceholders('Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                   'contact'),
                 mt5_withdrawal_locked: () => localize('MT5 withdrawals have been disabled on your account. Please check your email for more details.'),
-                required_fields      : () => buildMessage('Please complete your [_1]personal details[_2] before you proceed.', 'user/settings/detailsws'),
-                residence            : () => buildMessage('Please set [_1]country of residence[_2] before upgrading to a real-money account.',                                                   'user/settings/detailsws'),
-                risk                 : () => buildMessage('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.',                                   'user/settings/assessmentws'),
-                tax                  : () => buildMessage('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.',                                            'user/settings/detailsws'),
-                tnc                  : () => buildMessage(`Please [_1]accept the updated Terms and Conditions[_2]${has_no_tnc_limit ? '' : ' to lift your deposit and trading limits'}.`,        'user/tnc_approvalws'),
-                unwelcome            : () => buildMessage('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',                    'contact'),
+                required_fields      : () => buildMessage(localizeKeepPlaceholders('Please complete your [_1]personal details[_2] before you proceed.'),                                                                   'user/settings/detailsws'),
+                residence            : () => buildMessage(localizeKeepPlaceholders('Please set [_1]country of residence[_2] before upgrading to a real-money account.'),                                                   'user/settings/detailsws'),
+                risk                 : () => buildMessage(localizeKeepPlaceholders('Please complete the [_1]financial assessment form[_2] to lift your withdrawal and trading limits.'),                                   'user/settings/assessmentws'),
+                tax                  : () => buildMessage(localizeKeepPlaceholders('Please [_1]complete your account profile[_2] to lift your withdrawal and trading limits.'),                                            'user/settings/detailsws'),
+                unwelcome            : () => buildMessage(localizeKeepPlaceholders('Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.'),                    'contact'),
                 withdrawal_locked    : () => localize('Withdrawals have been disabled on your account. Please check your email for more details.'),
+                tnc                  : () => buildMessage(has_no_tnc_limit
+                    ? localizeKeepPlaceholders('Please [_1]accept the updated Terms and Conditions[_2].')
+                    : localizeKeepPlaceholders('Please [_1]accept the updated Terms and Conditions[_2] to lift your deposit and trading limits.'), 'user/tnc_approvalws'),
             };
 
             const validations = {
