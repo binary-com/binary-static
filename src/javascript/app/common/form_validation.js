@@ -208,7 +208,7 @@ const Validation = (() => {
             email        : { func: validEmail,        message: localize('Invalid email address.') },
             password     : { func: validPassword,     message: localize('Password should have lower and uppercase letters with numbers.') },
             general      : { func: validGeneral,      message: localize('Only letters, numbers, space, hyphen, period, and apostrophe are allowed.') },
-            address      : { func: validAddress,      message: localize('Only letters, numbers, space, and these special characters are allowed: [_1]', '- . \' # ; : ( ) , @ /') },
+            address      : { func: validAddress,      message: localize('Only letters, numbers, space, and these special characters are allowed: [_1]', ['- . \' # ; : ( ) , @ /']) },
             letter_symbol: { func: validLetterSymbol, message: localize('Only letters, space, hyphen, period, and apostrophe are allowed.') },
             postcode     : { func: validPostCode,     message: localize('Only letters, numbers, space, and hyphen are allowed.') },
             phone        : { func: validPhone,        message: localize('Only numbers and spaces are allowed.') },
