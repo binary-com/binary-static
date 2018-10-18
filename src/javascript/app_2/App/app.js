@@ -18,8 +18,6 @@ const initApp = () => {
 
     NetworkMonitor.init(root_store);
 
-    root_store.modules.trade.init();
-
     const app = document.getElementById('binary_app');
     if (app) {
         render(<App root_store={root_store} />, app);

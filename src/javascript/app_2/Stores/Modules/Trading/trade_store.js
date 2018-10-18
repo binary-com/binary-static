@@ -2,7 +2,8 @@ import debounce                          from 'lodash.debounce';
 import {
     action,
     observable,
-    reaction }                           from 'mobx';
+    reaction,
+    runInAction }                        from 'mobx';
 import Client                            from '_common/base/client_base';
 import {
     getMinPayout,
@@ -142,13 +143,6 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    async init() {
-        // To be sure that the website_status response has been received before processing trading page.
-        BinarySocket.wait('website_status')
-            .then(() => this.prepareTradeStore());
-    }
-
-    @action.bound
     onChange(e) {
         const { name, value } = e.target;
         if (!(name in this)) {
@@ -229,7 +223,7 @@ export default class TradeStore extends BaseStore {
     }
 
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
-        
+
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa. The source of default values is the website_status response.
         if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
@@ -374,13 +368,19 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    onMount() {
-        this.is_trade_component_mounted = true;
+    async onMount() {
+        // To be sure that the website_status response has been received before processing trading page.
+        await BinarySocket.wait('website_status');
+        await this.prepareTradeStore();
+        runInAction(() => {
+            this.is_trade_component_mounted = true;
+        });
         this.updateQueryString();
     }
 
     @action.bound
     onUnmount() {
+        WS.forgetAll('proposal');
         this.is_trade_component_mounted = false;
     }
 }
