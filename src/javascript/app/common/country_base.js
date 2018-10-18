@@ -1,25 +1,5 @@
-const createLanguageDropDown = require('./attach_dom/language_dropdown');
-const Client                 = require('../base/client');
-const BinarySocket           = require('../base/socket');
-const isLoginPages           = require('../../_common/base/login').isLoginPages;
-const getElementById         = require('../../_common/common_functions').getElementById;
-const Crowdin                = require('../../_common/crowdin');
-const Language               = require('../../_common/language');
-const State                  = require('../../_common/storage').State;
-
-const checkClientsCountry = () => {
-    if (Crowdin.isInContext() || isLoginPages()) return;
-    BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
-        const website_status = State.getResponse('website_status');
-        if (!website_status) return;
-        const clients_country = website_status.clients_country;
-        if (clients_country === 'id') {
-            limitLanguage('ID');
-        } else {
-            createLanguageDropDown(website_status);
-        }
-    });
-};
+const Client = require('../base/client');
+const State  = require('../../_common/storage').State;
 
 // will return true for all clients with maltainvest/malta/iom financial/gaming landing company shortcode
 // needs to wait for website_status, authorize, and landing_company before being called
@@ -38,30 +18,9 @@ const isEuCountry = () => {
     );
 };
 
-const limitLanguage = (lang) => {
-    if (Language.get() !== lang) {
-        window.location.href = Language.urlFor(lang); // need to redirect not using pjax
-    }
-    if (getElementById('select_language')) {
-        $('.languages').remove();
-        $('#gmt-clock').addClass('gr-6 gr-11-m').removeClass('gr-5 gr-6-m');
-        $('#contact-us').addClass('gr-5').removeClass('gr-2');
-    }
-};
-
-const checkLanguage = () => {
-    if (Language.get() === 'ID') {
-        const $academy_link = $('.academy a');
-        const academy_href  = $academy_link.attr('href');
-        const regex         = /id/;
-        if (!regex.test(academy_href)) {
-            $academy_link.attr('href', academy_href + regex);
-        }
-    }
-};
+const isIndonesia = () => State.getResponse('website_status.clients_country') === 'id';
 
 module.exports = {
-    checkClientsCountry,
     isEuCountry,
-    checkLanguage,
+    isIndonesia,
 };

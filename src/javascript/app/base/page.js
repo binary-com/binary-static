@@ -5,7 +5,6 @@ const Header           = require('./header');
 const Footer           = require('./footer');
 const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
-const checkLanguage    = require('../common/country_base').checkLanguage;
 const TrafficSource    = require('../common/traffic_source');
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
 const Login            = require('../../_common/base/login');
@@ -14,7 +13,6 @@ const getElementById   = require('../../_common/common_functions').getElementByI
 const Crowdin          = require('../../_common/crowdin');
 const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
-const Localize         = require('../../_common/localize');
 const localize         = require('../../_common/localize').localize;
 const State            = require('../../_common/storage').State;
 const scrollToTop      = require('../../_common/scroll').scrollToTop;
@@ -73,7 +71,6 @@ const Page = (() => {
             if (!Login.isLoginPages()) {
                 Language.setCookie(Language.urlLang());
             }
-            Localize.forLang(Language.urlLang());
             Header.onLoad();
             Footer.onLoad();
             Language.setCookie();
@@ -89,12 +86,10 @@ const Page = (() => {
         }
         if (Client.isLoggedIn()) {
             BinarySocket.wait('authorize', 'website_status', 'get_account_status').then(() => {
-                checkLanguage();
                 RealityCheck.onLoad();
                 Menu.init();
             });
         } else {
-            checkLanguage();
             Menu.init();
         }
         TrafficSource.setData();

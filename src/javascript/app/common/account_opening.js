@@ -6,12 +6,12 @@ const BinaryPjax         = require('../base/binary_pjax');
 const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
-const getElementById     = require('../../_common/common_functions').getElementById;
-const makeOption         = require('../../_common/common_functions').makeOption;
+const CommonFunctions    = require('../../_common/common_functions');
 const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
+const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
 const AccountOpening = (() => {
     const redirectAccount = () => {
@@ -32,7 +32,11 @@ const AccountOpening = (() => {
     const populateForm = (form_id, getValidations, is_financial) => {
         getResidence(form_id, getValidations);
         generateBirthDate();
-        if (State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest') {
+        const landing_company  = State.getResponse('landing_company');
+        const lc_to_upgrade_to = landing_company[is_financial ? 'financial_company' : 'gaming_company'] || landing_company.financial_company;
+        CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-name'), lc_to_upgrade_to.name);
+        CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-country'), lc_to_upgrade_to.country);
+        if (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'maltainvest') {
             professionalClient.init(is_financial, false);
         }
         Geocoder.init(form_id);
@@ -55,8 +59,8 @@ const AccountOpening = (() => {
             const $options               = $('<div/>');
             const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption({ text: res.text, value: res.value }));
-                $options_with_disabled.append(makeOption({
+                $options.append(CommonFunctions.makeOption({ text: res.text, value: res.value }));
+                $options_with_disabled.append(CommonFunctions.makeOption({
                     text       : res.text,
                     value      : res.value,
                     is_disabled: res.disabled,
@@ -92,7 +96,7 @@ const AccountOpening = (() => {
 
             if (/^(malta|maltainvest|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
                 const $citizen = $('#citizen');
-                getElementById('citizen_row').setVisibility(1);
+                CommonFunctions.getElementById('citizen_row').setVisibility(1);
                 if ($citizen.length) {
                     BinarySocket.wait('get_settings').then((response) => {
                         const citizen = response.get_settings.citizen;
@@ -198,7 +202,7 @@ const AccountOpening = (() => {
             { selector: '#phone',            validations: ['req', 'phone', ['length', { min: 6, max: 35, value: () => $('#phone').val().replace(/^\+/, '') }]] },
             { selector: '#secret_question',  validations: ['req'] },
             { selector: '#secret_answer',    validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
-            { selector: '#tnc',              validations: [['req', { message: 'Please accept the terms and conditions.' }]], exclude_request: 1 },
+            { selector: '#tnc',              validations: [['req', { message: localize('Please accept the terms and conditions.') }]], exclude_request: 1 },
 
             { request_field: 'residence',   value: Client.get('residence') },
             { request_field: 'client_type', value: () => ($('#chk_professional').is(':checked') ? 'professional' : 'retail') },

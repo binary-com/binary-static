@@ -4,7 +4,6 @@ const Dialog               = require('../../../../common/attach_dom/dialog');
 const FlexTableUI          = require('../../../../common/attach_dom/flextable');
 const FormManager          = require('../../../../common/form_manager');
 const localize             = require('../../../../../_common/localize').localize;
-const toTitleCase          = require('../../../../../_common/string_util').toTitleCase;
 
 const APIToken = (() => {
     const error_class = 'errorfield';
@@ -20,7 +19,7 @@ const APIToken = (() => {
 
         BinarySocket.send({ api_token: 1 }).then(populateTokensList);
 
-        const regex_msg = localize('Only [_1] are allowed.', [['letters', 'numbers', 'space', '_'].join(', ')]);
+        const regex_msg = localize('Only [_1] are allowed.', [[...localize(['letters', 'numbers', 'space']), '_'].join(', ')]);
         FormManager.init(form_id, [
             { selector: '#txt_name',           request_field: 'new_token',        validations: ['req', ['regular', { regex: /^[\w\s]+$/, message: regex_msg }], ['length', { min: 2, max: 32 }]] },
             { selector: '[id*="chk_scopes_"]', request_field: 'new_token_scopes', validations: [['req', { message: localize('Please select at least one scope') }]], value: getScopes },
@@ -39,7 +38,7 @@ const APIToken = (() => {
             showFormMessage(response.error.message, false);
             return;
         }
-        showFormMessage('New token created.', true);
+        showFormMessage(localize('New token created.'), true);
         $('#txt_name').val('');
 
         populateTokensList(response);
@@ -73,12 +72,11 @@ const APIToken = (() => {
 
         $table_container.setVisibility(1).empty();
 
-        const headers = ['Name', 'Token', 'Scopes', 'Last Used', 'Action'];
         FlexTableUI.init({
             id       : 'tokens_table',
             container: $table_container,
-            header   : headers.map(localize),
-            cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
+            header   : localize(['Name', 'Token', 'Scopes', 'Last Used', 'Action']),
+            cols     : ['name', 'token', 'scopes', 'last-used', 'action'],
             data     : tokens,
             formatter: formatToken,
             style    : ($row, token) => {
@@ -99,9 +97,9 @@ const APIToken = (() => {
             e.preventDefault();
             e.stopPropagation();
             Dialog.confirm({
-                id       : 'delete_token_dialog',
-                message  : `${message}: "${token.display_name}"?`,
-                onConfirm: () => {
+                id               : 'delete_token_dialog',
+                localized_message: `${message}: "${token.display_name}"?`,
+                onConfirm        : () => {
                     deleteToken(token.token);
                 },
             });
@@ -110,13 +108,13 @@ const APIToken = (() => {
     };
 
     const formatToken = (token) => {
-        const last_used = (token.last_used ? `${token.last_used} GMT` : localize('Never Used'));
-        const scopes    = token.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
+        const last_used_text   = (token.last_used ? `${token.last_used} GMT` : localize('Never Used'));
+        const localized_scopes = token.scopes.map(scope => $form.find(`label[for='chk_scopes_${scope}'] span`).text()).join(', ');
         return [
             token.display_name,
             token.token,
-            scopes,
-            last_used,
+            localized_scopes,
+            last_used_text,
             '',  // btn_delete
         ];
     };
@@ -139,17 +137,17 @@ const APIToken = (() => {
     // -----------------------------
     // ----- Message Functions -----
     // -----------------------------
-    const showErrorMessage = (msg) => {
+    const showErrorMessage = (localized_msg) => {
         $('#token_message').setVisibility(1)
             .find('p')
             .attr('class', error_class)
-            .html(localize(msg));
+            .html(localized_msg);
     };
 
-    const showFormMessage = (msg, is_success) => {
+    const showFormMessage = (localized_msg, is_success) => {
         $('#msg_form')
             .attr('class', is_success ? 'success-msg' : error_class)
-            .html(is_success ? `<ul class="checked"><li>${localize(msg)}</li></ul>` : localize(msg))
+            .html(is_success ? `<ul class="checked"><li>${localized_msg}</li></ul>` : localized_msg)
             .css('display', 'block')
             .delay(3000)
             .fadeOut(1000);

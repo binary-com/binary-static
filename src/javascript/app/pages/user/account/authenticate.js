@@ -101,8 +101,7 @@ const Authenticate = (() => {
         const $target = $(event.target);
         let default_text = toTitleCase($target.attr('id').split('_')[0]);
         if (default_text !== 'Add') {
-            default_text = default_text === 'Back' ? localize('Reverse Side')
-                : localize('Front Side');
+            default_text = default_text === 'Back' ? localize('Reverse Side') : localize('Front Side');
         }
         fileTracker($target, false);
         // Remove previously selected file and set the label
@@ -190,7 +189,7 @@ const Authenticate = (() => {
 
                 let display_name = name;
                 if (/front|back/.test(id)) {
-                    display_name += ` - ${localize(`${toTitleCase(/front/.test(id) ? 'Front' : 'Reverse')} Side`)}`;
+                    display_name += ` - ${/front/.test(id) ? localize('Front Side') : localize('Reverse Side')}`;
                 }
 
                 $submit_table.append($('<tr/>', { id: file_obj.type, class: id })
@@ -297,7 +296,7 @@ const Authenticate = (() => {
 
                 fr.onerror = () => {
                     resolve({
-                        message: `Unable to read file ${f.file.name}`,
+                        message: localize('Unable to read file [_1]', [f.file.name]),
                         class  : f.class,
                     });
                 };
