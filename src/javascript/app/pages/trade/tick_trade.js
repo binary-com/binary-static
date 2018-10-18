@@ -271,7 +271,7 @@ const TickDisplay = (() => {
                         value: high_low_barrier,
                         color: '#e98024',
                         label: {
-                            text : `${localize(/^tickhigh_/i.test(contract.shortcode) ? 'Highest Tick' : 'Lowest Tick')} (${addComma(high_low_barrier)})`,
+                            text : `${/^tickhigh_/i.test(contract.shortcode) ? localize('Highest Tick') : localize('Lowest Tick')} (${addComma(high_low_barrier)})`,
                             align: 'center',
                         },
                         width    : 2,
@@ -470,7 +470,7 @@ const TickDisplay = (() => {
 
         if (+entry_barrier !== +reset_barrier) {
             removePlotLine('tick-barrier', 'y');
-            
+
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-reset-barrier',
                 value : +reset_barrier,
@@ -527,7 +527,7 @@ const TickDisplay = (() => {
             label    : localize('Exit Spot'),
             dashStyle: 'Dash',
         };
-        
+
         add(x_indicators[indicator_key]);
     };
 
