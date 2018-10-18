@@ -4,7 +4,6 @@ import {
 import Validator from '../validator';
 
 const validate = (dvrs) => (target, key) => {
-
     const handler = (store, property, change) => {
         const validator = new Validator(
             { [property]: change.newValue },

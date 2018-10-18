@@ -4,15 +4,20 @@ import {
     observable,
     reaction }                           from 'mobx';
 import Client                            from '_common/base/client_base';
+import {
+    getMinPayout,
+    isCryptocurrency  }                  from '_common/base/currency_base';
+import BinarySocket                      from '_common/base/socket_base';
 import { cloneObject, isEmptyObject }    from '_common/utility';
 import { WS }                            from 'Services';
+import GTM                               from 'Utils/gtm';
 import URLHelper                         from 'Utils/URL/url_helper';
 import { processPurchase }               from './Actions/purchase';
 import * as Symbol                       from './Actions/symbol';
 import {
     allowed_query_string_variables,
     non_proposal_query_string_variable } from './Constants/query_string';
-import validation_rules                  from './Constants/validation_rules';
+import getValidationRules                from './Constants/validation_rules';
 import { setChartBarrier }               from './Helpers/chart';
 import ContractType                      from './Helpers/contract_type';
 import { convertDurationLimit }          from './Helpers/duration';
@@ -81,16 +86,13 @@ export default class TradeStore extends BaseStore {
     debouncedProposal = debounce(this.requestProposal, 500);
 
     constructor({ root_store }) {
-        const session_storage_properties = allowed_query_string_variables;
-        const options = {
-            root_store,
-            session_storage_properties,
-            validation_rules,
-        };
-
         URLHelper.pruneQueryString(allowed_query_string_variables);
 
-        super(options);
+        super({
+            root_store,
+            session_storage_properties: allowed_query_string_variables,
+            validation_rules          : getValidationRules(),
+        });
 
         Object.defineProperty(
             this,
@@ -108,7 +110,7 @@ export default class TradeStore extends BaseStore {
 
         // Adds intercept to change min_max value of duration validation
         reaction(
-            ()=> [this.duration_min_max, this.contract_expiry_type, this.duration_unit],
+            ()=> [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
             () => {
                 this.changeDurationValidationRules();
             }
@@ -116,7 +118,7 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    async init() {
+    async prepareTradeStore() {
         const query_string_values = this.updateQueryString();
         this.smart_chart = this.root_store.modules.smart_chart;
 
@@ -140,6 +142,13 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
+    async init() {
+        // To be sure that the website_status response has been received before processing trading page.
+        BinarySocket.wait('website_status')
+            .then(() => this.prepareTradeStore());
+    }
+
+    @action.bound
     onChange(e) {
         const { name, value } = e.target;
         if (!(name in this)) {
@@ -155,9 +164,20 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    onPurchase(proposal_id, price) {
+    onPurchase(proposal_id, price, type) {
         if (proposal_id) {
             processPurchase(proposal_id, price).then(action((response) => {
+                if (this.proposal_info[type].id !== proposal_id) {
+                    throw new Error('Proposal ID does not match.');
+                }
+                if (response.buy && !Client.get('is_virtual')) {
+                    const contract_data = {
+                        ...this.proposal_requests[type],
+                        ...this.proposal_info[type],
+                        buy_price: response.buy.buy_price,
+                    };
+                    GTM.pushPurchaseData(contract_data, this.root_store);
+                }
                 WS.forgetAll('proposal');
                 this.purchase_info = response;
             }));
@@ -196,13 +216,26 @@ export default class TradeStore extends BaseStore {
                 }
 
                 this[key] = new_state[key];
+
+                // validation is done in mobx intercept (base_store.js)
+                // when barrier_1 is set, it is compared with store.barrier_2 (which is not updated yet)
+                if (key === 'barrier_2' && new_state.barrier_1) {
+                    this.barrier_1 = new_state.barrier_1; // set it again, after barrier_2 is updated in store
+                }
             }
         });
 
         return new_state;
     }
 
-    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user) {
+    async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
+        
+        // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa. The source of default values is the website_status response.
+        if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
+            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
+            obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
+        }
+
         const new_state = this.updateStore(cloneObject(obj_new_values));
 
         if (is_changed_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {
@@ -214,6 +247,7 @@ export default class TradeStore extends BaseStore {
                 is_purchase_enabled: false,
                 proposal_info      : {},
             });
+
 
             if (!this.smart_chart.is_contract_mode) {
                 const is_barrier_changed = 'barrier_1' in new_state || 'barrier_2' in new_state;
@@ -316,14 +350,20 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     changeDurationValidationRules() {
+        if (this.expiry_type === 'endtime') {
+            this.validation_errors.duration = [];
+            return;
+        }
+
         const index = this.validation_rules.duration.findIndex(item => item[0] === 'number');
         const limits = this.duration_min_max[this.contract_expiry_type] || false;
-        const duration_options = {
-            min: convertDurationLimit(+limits.min, this.duration_unit),
-            max: convertDurationLimit(+limits.max, this.duration_unit),
-        };
 
         if (limits) {
+            const duration_options = {
+                min: convertDurationLimit(+limits.min, this.duration_unit),
+                max: convertDurationLimit(+limits.max, this.duration_unit),
+            };
+
             if (index > -1) {
                 this.validation_rules.duration[index][1] = duration_options;
             } else {

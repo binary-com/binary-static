@@ -1,7 +1,6 @@
 import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
-import { localize }        from '_common/localize';
 import { IconExclamation } from 'Assets/Common';
 
 const PopConfirmElement = ({
@@ -21,20 +20,20 @@ const PopConfirmElement = ({
         <div ref={wrapperRef} className={popconfirm_class}>
             <div className='popconfirm-title'>
                 <IconExclamation />
-                <h4>{localize(message)}</h4>
+                <h4>{message}</h4>
             </div>
             <div className='popconfirm-buttons'>
                 <div
                     className='btn flat effect'
                     onClick={onClose}
                 >
-                    <span>{localize(cancel_text)}</span>
+                    <span>{cancel_text}</span>
                 </div>
                 <div
                     className='btn flat effect'
                     onClick={onConfirm}
                 >
-                    <span>{localize(confirm_text)}</span>
+                    <span>{confirm_text}</span>
                 </div>
             </div>
         </div>

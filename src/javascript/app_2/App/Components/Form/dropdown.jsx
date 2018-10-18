@@ -18,7 +18,7 @@ class Dropdown extends React.Component {
     }
 
     getDisplayText = (list, value) => {
-        const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
+        const findInArray = (arr_list) => (arr_list.find(item => item.value === (typeof item.value === 'number' ? +value : value)) || {}).text;
         let text = '';
         if (isArrayLike(list)) {
             text = findInArray(list);

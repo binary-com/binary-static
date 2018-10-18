@@ -38,7 +38,6 @@ TradeParams.propTypes = {
     form_components: MobxPropTypes.arrayOrObservableArray,
     is_minimized   : PropTypes.bool,
     is_nativepicker: PropTypes.bool,
-    onChange       : PropTypes.func,
     server_time    : PropTypes.object,
     trade_store    : PropTypes.object,
 };
@@ -48,6 +47,5 @@ export default connect(
         server_time    : common.server_time,
         form_components: modules.trade.form_components,
         trade_store    : modules.trade,
-        onChange       : modules.trade.onChange,
     })
 )(TradeParams);

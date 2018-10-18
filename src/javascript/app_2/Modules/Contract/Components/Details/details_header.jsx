@@ -1,15 +1,16 @@
-import classNames        from 'classnames';
-import { observer }      from 'mobx-react';
-import PropTypes         from 'prop-types';
-import React             from 'react';
-import { localize }      from '_common/localize';
-import { header_config } from 'Stores/Modules/Contract/Constants/ui';
+import classNames          from 'classnames';
+import { observer }        from 'mobx-react';
+import PropTypes           from 'prop-types';
+import React               from 'react';
+import { getHeaderConfig } from 'Stores/Modules/Contract/Constants/ui';
 
 const DetailsHeader = ({ status }) => {
-    const title_purchased = localize(header_config.purchased.title);
-    const title_result = localize(header_config[status].title);
+    const header_config   = getHeaderConfig();
+    const title_purchased = header_config.purchased.title;
+    const title_result    = header_config[status].title;
     const icon_purchased  = header_config.purchased.icon;
-    const icon_result  = header_config[status].icon;
+    const icon_result     = header_config[status].icon;
+
     return (
         <div className={classNames('contract-header', status)}>
             <div className='header-wrapper'>
