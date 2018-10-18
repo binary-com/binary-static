@@ -17,7 +17,7 @@ const ResetPassword = (() => {
                 err_msg = response.error.message;
                 $form_error.find('a').setVisibility(0);
             } else { // special handling as backend return inconsistent format
-                err_msg = localize('[_1] Please click the link below to restart the password recovery process.', [error_code === 'InputValidationFailed' ? localize('There was some invalid character in an input field.') : response.error.message]);
+                err_msg = localize('[_1] Please click the link below to restart the password recovery process.', error_code === 'InputValidationFailed' ? localize('There was some invalid character in an input field.') : response.error.message);
             }
 
             $('#form_error_msg').text(err_msg);

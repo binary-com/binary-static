@@ -108,7 +108,7 @@ const Accounts = (() => {
         if (is_disabled) {
             txt_markets = localize('This account is disabled');
         } else if (excluded_until) {
-            txt_markets = localize('This account is excluded until [_1]', [moment(+excluded_until * 1000).format('YYYY-MM-DD HH:mm:ss Z')]);
+            txt_markets = localize('This account is excluded until [_1]', moment(+excluded_until * 1000).format('YYYY-MM-DD HH:mm:ss Z'));
         } else {
             txt_markets = getAvailableMarkets(loginid);
         }
