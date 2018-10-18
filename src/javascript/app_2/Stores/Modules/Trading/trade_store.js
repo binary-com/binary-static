@@ -1,37 +1,33 @@
-import debounce                       from 'lodash.debounce';
+import debounce                          from 'lodash.debounce';
 import {
     action,
     observable,
-    reaction,
-}                                     from 'mobx';
-import Client                         from '_common/base/client_base';
+    reaction }                           from 'mobx';
+import Client                            from '_common/base/client_base';
 import {
     getMinPayout,
-    isCryptocurrency,
-}                                     from '_common/base/currency_base';
-import BinarySocket                   from '_common/base/socket_base';
-import { cloneObject, isEmptyObject } from '_common/utility';
-import { WS }                         from 'Services';
-import GTM                            from 'Utils/gtm';
-import URLHelper                      from 'Utils/URL/url_helper';
-import { processPurchase }            from './Actions/purchase';
-import * as Symbol                    from './Actions/symbol';
+    isCryptocurrency  }                  from '_common/base/currency_base';
+import BinarySocket                      from '_common/base/socket_base';
+import { cloneObject, isEmptyObject }    from '_common/utility';
+import { WS }                            from 'Services';
+import GTM                               from 'Utils/gtm';
+import URLHelper                         from 'Utils/URL/url_helper';
+import { processPurchase }               from './Actions/purchase';
+import * as Symbol                       from './Actions/symbol';
 import {
     allowed_query_string_variables,
-    non_proposal_query_string_variable,
-}                                     from './Constants/query_string';
-import getValidationRules             from './Constants/validation_rules';
-import { setChartBarrier }            from './Helpers/chart';
-import ContractType                   from './Helpers/contract_type';
-import { convertDurationLimit }       from './Helpers/duration';
-import { processTradeParams }         from './Helpers/process';
+    non_proposal_query_string_variable } from './Constants/query_string';
+import getValidationRules                from './Constants/validation_rules';
+import { setChartBarrier }               from './Helpers/chart';
+import ContractType                      from './Helpers/contract_type';
+import { convertDurationLimit }          from './Helpers/duration';
+import { processTradeParams }            from './Helpers/process';
 import {
     createProposalRequests,
     getProposalInfo,
-    getProposalParametersName,
-}                                     from './Helpers/proposal';
-import { pickDefaultSymbol }          from './Helpers/symbol';
-import BaseStore                      from '../../base_store';
+    getProposalParametersName }          from './Helpers/proposal';
+import { pickDefaultSymbol }             from './Helpers/symbol';
+import BaseStore                         from '../../base_store';
 
 export default class TradeStore extends BaseStore {
     // Control values
@@ -105,7 +101,7 @@ export default class TradeStore extends BaseStore {
                 enumerable: false,
                 value     : false,
                 writable  : true,
-            },
+            }
         );
 
         if (Client.isLoggedIn) {
@@ -114,22 +110,17 @@ export default class TradeStore extends BaseStore {
 
         // Adds intercept to change min_max value of duration validation
         reaction(
-            () => [
-                this.contract_expiry_type,
-                this.duration_min_max,
-                this.duration_unit,
-                this.expiry_type,
-            ],
+            ()=> [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
             () => {
                 this.changeDurationValidationRules();
-            },
+            }
         );
     }
 
     @action.bound
     async prepareTradeStore() {
         const query_string_values = this.updateQueryString();
-        this.smart_chart          = this.root_store.modules.smart_chart;
+        this.smart_chart = this.root_store.modules.smart_chart;
 
         if (!this.symbol) {
             const active_symbols = await WS.activeSymbols();
@@ -138,13 +129,23 @@ export default class TradeStore extends BaseStore {
                 ...query_string_values,
             });
         }
+
+        if (this.symbol) {
+            ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
+                this.processNewValuesAsync({
+                    ...ContractType.getContractValues(this),
+                    ...ContractType.getContractCategories(),
+                    ...query_string_values,
+                });
+            }));
+        }
     }
 
     @action.bound
     async init() {
         // To be sure that the website_status response has been received before processing trading page.
-        await BinarySocket.wait('website_status');
-        await this.prepareTradeStore();
+        BinarySocket.wait('website_status')
+            .then(() => this.prepareTradeStore());
     }
 
     @action.bound
@@ -228,20 +229,16 @@ export default class TradeStore extends BaseStore {
     }
 
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
+        
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa. The source of default values is the website_status response.
-        if (is_changed_by_user &&
-            /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
-            isCryptocurrency(obj_new_values.currency) !==
-            isCryptocurrency(this.currency)
-        ) {
-            obj_new_values.amount = obj_new_values.amount ||
-                                    getMinPayout(obj_new_values.currency);
+        if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
+            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
+            obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
         }
 
         const new_state = this.updateStore(cloneObject(obj_new_values));
 
-        if (is_changed_by_user ||
-            /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {
+        if (is_changed_by_user || /\b(symbol|contract_types_list)\b/.test(Object.keys(new_state))) {
             if ('symbol' in new_state) {
                 await Symbol.onChangeSymbolAsync(new_state.symbol);
             }
@@ -251,9 +248,9 @@ export default class TradeStore extends BaseStore {
                 proposal_info      : {},
             });
 
+
             if (!this.smart_chart.is_contract_mode) {
-                const is_barrier_changed = 'barrier_1' in new_state ||
-                                           'barrier_2' in new_state;
+                const is_barrier_changed = 'barrier_1' in new_state || 'barrier_2' in new_state;
                 if (is_barrier_changed) {
                     this.smart_chart.updateBarriers(this.barrier_1, this.barrier_2);
                 } else {
@@ -261,7 +258,7 @@ export default class TradeStore extends BaseStore {
                 }
             }
 
-            const snapshot            = await processTradeParams(this, new_state);
+            const snapshot = await processTradeParams(this, new_state);
             const query_string_values = this.updateQueryString();
             snapshot.is_trade_enabled = true;
 
@@ -275,6 +272,8 @@ export default class TradeStore extends BaseStore {
             if (/\bcontract_type\b/.test(Object.keys(new_state))) {
                 this.validateAllProperties();
             }
+
+            this.debouncedProposal();
         }
     }
 
@@ -285,21 +284,20 @@ export default class TradeStore extends BaseStore {
         const requests = createProposalRequests(this);
 
         if (Object.values(this.validation_errors).some(e => e.length)) {
-            this.proposal_info = {};
-            this.purchase_info = {};
+            this.proposal_info     = {};
+            this.purchase_info     = {};
             WS.forgetAll('proposal');
             return;
         }
 
         if (!isEmptyObject(requests)) {
-            const proper_proposal_params_for_query_string = getProposalParametersName(
-                requests);
+            const proper_proposal_params_for_query_string = getProposalParametersName(requests);
 
             URLHelper.pruneQueryString(
                 [
                     ...proper_proposal_params_for_query_string,
                     ...non_proposal_query_string_variable,
-                ],
+                ]
             );
 
             this.proposal_requests = requests;
@@ -317,7 +315,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onProposalResponse(response) {
         const contract_type = response.echo_req.contract_type;
-        this.proposal_info  = {
+        this.proposal_info = {
             ...this.proposal_info,
             [contract_type]: getProposalInfo(this, response),
         };
@@ -341,7 +339,7 @@ export default class TradeStore extends BaseStore {
         const query_params = URLHelper.updateQueryString(
             this,
             allowed_query_string_variables,
-            this.is_trade_component_mounted,
+            this.is_trade_component_mounted
         );
 
         // update state values from query string
@@ -357,7 +355,7 @@ export default class TradeStore extends BaseStore {
             return;
         }
 
-        const index  = this.validation_rules.duration.findIndex(item => item[0] === 'number');
+        const index = this.validation_rules.duration.findIndex(item => item[0] === 'number');
         const limits = this.duration_min_max[this.contract_expiry_type] || false;
 
         if (limits) {
@@ -377,17 +375,6 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onMount() {
-        const query_string_values = this.updateQueryString();
-        if (this.symbol) {
-            ContractType.buildContractTypesConfig(this.symbol).then(action(async () => {
-                await this.processNewValuesAsync({
-                    ...ContractType.getContractValues(this),
-                    ...ContractType.getContractCategories(),
-                    ...query_string_values,
-                });
-                this.debouncedProposal();
-            }));
-        }
         this.is_trade_component_mounted = true;
         this.updateQueryString();
     }
@@ -395,6 +382,5 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onUnmount() {
         this.is_trade_component_mounted = false;
-        WS.forgetAll('proposal');
     }
 }

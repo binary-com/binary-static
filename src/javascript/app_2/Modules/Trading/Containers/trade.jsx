@@ -19,23 +19,23 @@ class Trade extends React.Component {
     }
 
     render() {
-        const contract_id        = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
+        const contract_id = getPropertyValue(this.props.purchase_info, ['buy', 'contract_id']);
         const form_wrapper_class = this.props.is_mobile ? 'mobile-wrapper' : 'sidebar-container desktop-only';
 
         return (
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container notice-msg'>
-                    {this.props.symbol &&
-                    <SmartChart
-                        chart_id={this.props.chart_id}
-                        InfoBox={<InfoBox is_trade_page />}
-                        onSymbolChange={this.props.onSymbolChange}
-                        symbol={this.props.symbol}
-                        chart_type={this.props.chart_type}
-                        granularity={this.props.granularity}
-                        updateChartType={this.props.updateChartType}
-                        updateGranularity={this.props.updateGranularity}
-                    />
+                    { this.props.symbol &&
+                        <SmartChart
+                            chart_id={this.props.chart_id}
+                            InfoBox={<InfoBox is_trade_page />}
+                            onSymbolChange={this.props.onSymbolChange}
+                            symbol={this.props.symbol}
+                            chart_type={this.props.chart_type}
+                            granularity={this.props.granularity}
+                            updateChartType={this.props.updateChartType}
+                            updateGranularity={this.props.updateGranularity}
+                        />
                     }
                     <Test />
                 </div>
@@ -95,5 +95,5 @@ export default connect(
         purchase_info    : modules.trade.purchase_info,
         symbol           : modules.trade.symbol,
         is_mobile        : ui.is_mobile,
-    }),
+    })
 )(Trade);
