@@ -69,7 +69,8 @@ const AccountTransfer = () => (
             <ul className='bullet'>
                 <li>{it.L('Transfer between accounts is not available on weekends')}</li>
                 <li>{it.L('You may only transfer funds between a fiat account and a cryptocurrency account')}</li>
-                <li>{it.L('Each transfer is subject to a [_1] transfer fee, minimum 0.01 charges', '<span id="transfer_fee_amount"></span>')}</li>
+                <li>{it.L('Authorised payment agents are exempted from paying any transfer fees')}</li>
+                <li>{it.L('Stablecoin transfers are subject to a [_1] fee or a minimum of [_2], whichever is higher. Other transfers are subject to a [_3] fee.', '0.5%', '$0.01', '1%')}</li>
                 <li>{it.L('Authorised payment agents are exempted from paying any transfer fees')}</li>
             </ul>
         </div>
