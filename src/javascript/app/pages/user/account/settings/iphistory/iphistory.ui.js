@@ -5,17 +5,11 @@ const localize             = require('../../../../../../_common/localize').local
 
 const IPHistoryUI = (() => {
     const container_selector = '#login-history-container';
-    const no_messages_error  = 'Your account has no Login/Logout activity.';
-
-    const init = () => {
-        const $title = $('#login_history-title').children().first();
-        $title.text(localize($title.text()));
-    };
 
     const formatRow = (data) => {
         const timestamp    = `${moment.unix(data.time).utc().format('YYYY-MM-DD HH:mm:ss').replace(' ', '\n')} GMT`;
-        const status       = localize(data.success ? 'Successful' : 'Failed');
-        const action       = localize(data.action);
+        const status       = data.success ? localize('Successful') : localize('Failed');
+        const action       = localize(data.action /* localize-ignore */);  // from login_history API call, can be (login|logout)
         const browser      = data.browser;
         let browser_string = browser ? `${browser.name} v${browser.version}` : 'Unknown';
         const patt         = /^(opera|chrome|safari|firefox|IE|Edge|SeaMonkey|Chromium|Binary app) v[0-9.]+$/i;
@@ -32,13 +26,11 @@ const IPHistoryUI = (() => {
     };
 
     const update = (history) => {
-        const headers = ['Date and Time', 'Action', 'Browser', 'IP Address', 'Status'];
-        const columns = ['timestamp', 'action', 'browser', 'ip', 'status'];
         FlexTableUI.init({
             id       : 'login-history-table',
             container: container_selector,
-            header   : headers.map(s => localize(s)),
-            cols     : columns,
+            header   : localize(['Date and Time', 'Action', 'Browser', 'IP Address', 'Status']),
+            cols     : ['timestamp', 'action', 'browser', 'ip', 'status'],
             data     : history,
             formatter: formatRow,
             style    : ($row) => {
@@ -46,7 +38,7 @@ const IPHistoryUI = (() => {
             },
         });
         if (!history.length) {
-            return FlexTableUI.displayError(localize(no_messages_error), 6);
+            return FlexTableUI.displayError(localize('Your account has no Login/Logout activity.'), 6);
         }
         return showLocalTimeOnHover('td.timestamp');
     };
@@ -61,7 +53,6 @@ const IPHistoryUI = (() => {
     };
 
     return {
-        init,
         clean,
         update,
         displayError,

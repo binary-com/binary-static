@@ -22,7 +22,7 @@ const LostPassword = (() => {
             }
         } else if (response.error) {
             const $form_error = $('#form_error');
-            $form_error.text(localize(response.error.message)).setVisibility(1);
+            $form_error.text(response.error.message).setVisibility(1);
             $('#email').one('input', () => $form_error.setVisibility(0)); // remove error message on input
         }
     };

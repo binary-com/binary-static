@@ -1,13 +1,13 @@
-const color  = require('cli-color');
-const expect = require('chai').expect;
-const texts  = require('../generate-static-data').texts;
+const color     = require('cli-color');
+const expect    = require('chai').expect;
+const texts_app = require('../js_texts/static_strings_app');
 
-describe('generate-static-data.js', () => {
+describe('scripts/js_texts/static_strings_app.js', () => {
     const all        = {};
     const duplicates = {};
 
     before(() => {
-        texts.forEach((str) => {
+        texts_app.forEach((str) => {
             if (all[str]) {
                 duplicates[str] = (duplicates[str] || 1) + 1;
             } else {

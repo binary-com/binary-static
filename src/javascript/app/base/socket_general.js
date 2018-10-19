@@ -65,7 +65,7 @@ const BinarySocketGeneral = (() => {
                     const is_active_tab = sessionStorage.getItem('active_tab') === '1';
                     if (getPropertyValue(response, ['error', 'code']) === 'SelfExclusion' && is_active_tab) {
                         sessionStorage.removeItem('active_tab');
-                        Dialog.alert({ id: 'authorize_error_alert', message: response.error.message });
+                        Dialog.alert({ id: 'authorize_error_alert', localized_message: response.error.message });
                     }
                     Client.sendLogoutRequest(is_active_tab);
                 } else if (!Login.isLoginPages() && !/authorize/.test(State.get('skip_response'))) {

@@ -7,16 +7,28 @@ const FlexTableUI          = require('../../../../common/attach_dom/flextable');
 const elementTextContent   = require('../../../../../_common/common_functions').elementTextContent;
 const localize             = require('../../../../../_common/localize').localize;
 const State                = require('../../../../../_common/storage').State;
-const toTitleCase          = require('../../../../../_common/string_util').toTitleCase;
 
 const AuthorisedApps = (() => {
     let can_revoke = false;
 
-    const messages = {
-        no_apps       : 'You have not granted access to any applications.',
-        revoke_confirm: 'Are you sure that you want to permanently revoke access to the application',
-        revoke_access : 'Revoke access',
-    };
+    const Messages = (() => {
+        let messages_map;
+
+        const initMessages = () => ({
+            no_apps       : localize('You have not granted access to any applications.'),
+            revoke_confirm: localize('Are you sure that you want to permanently revoke access to the application'),
+            revoke_access : localize('Revoke access'),
+        });
+
+        return {
+            get: () => {
+                if (!messages_map) {
+                    messages_map = initMessages();
+                }
+                return messages_map;
+            },
+        };
+    })();
 
     const element_ids = {
         container: 'applications-container',
@@ -52,15 +64,21 @@ const AuthorisedApps = (() => {
                 if (elements.loading) elements.loading.remove();
                 createTable(apps);
                 if (!apps.length) {
-                    FlexTableUI.displayError(localize(messages.no_apps), 7);
+                    FlexTableUI.displayError(Messages.get().no_apps, 7);
                 }
             }
         });
     };
 
     const formatApp = (app) => {
+        const localized_scopes = {
+            admin   : localize('Admin'),
+            payments: localize('Payments'),
+            read    : localize('Read'),
+            trade   : localize('Trade'),
+        };
         const last_used = app.last_used ? app.last_used.format('YYYY-MM-DD HH:mm:ss') : localize('Never');
-        const scopes    = app.scopes.map(scope => localize(toTitleCase(scope))).join(', ');
+        const scopes    = app.scopes.map(scope => localized_scopes[scope]).join(', ');
         const data      = [app.name, scopes, last_used];
         if (can_revoke) {
             data.push(''); // for the "Revoke App" button
@@ -69,12 +87,12 @@ const AuthorisedApps = (() => {
     };
 
     const createRevokeButton = (container, app) => {
-        const $button = $('<button/>', { class: 'button', text: localize(messages.revoke_access) });
+        const $button = $('<button/>', { class: 'button', text: Messages.get().revoke_access });
         $button.on('click', () => {
             Dialog.confirm({
-                id       : 'apps_revoke_dialog',
-                message  : `${localize(messages.revoke_confirm)}: '${app.name}'?`,
-                onConfirm: () => {
+                id               : 'apps_revoke_dialog',
+                localized_message: `${Messages.get().revoke_confirm}: '${app.name}'?`,
+                onConfirm        : () => {
                     BinarySocket.send({ revoke_oauth_app: app.id }).then((response) => {
                         if (response.error) {
                             displayError(response.error.message);
@@ -92,17 +110,19 @@ const AuthorisedApps = (() => {
         if (elements.table) {
             return FlexTableUI.replace(data);
         }
-        const headers = ['Name', 'Permissions', 'Last Login'];
+        const localized_headers = localize(['Name', 'Permissions', 'Last Login']);
+        const header_columns    = ['name', 'permissions', 'last-login'];
         can_revoke    = /admin/.test((State.getResponse('authorize') || {}).scopes);
         if (can_revoke) {
-            headers.push('Action');
+            localized_headers.push(localize('Action'));
+            header_columns.push('action');
         }
         FlexTableUI.init({
             data,
             container: `#${element_ids.container}`,
-            header   : headers.map(localize),
+            header   : localized_headers,
             id       : element_ids.table,
-            cols     : headers.map(title => title.toLowerCase().replace(/\s/g, '-')),
+            cols     : header_columns,
             style    : ($row, app) => {
                 if (can_revoke) {
                     $row.children('.action').first().append(createRevokeButton($row, app));

@@ -202,7 +202,7 @@ const AccountOpening = (() => {
             { selector: '#phone',            validations: ['req', 'phone', ['length', { min: 6, max: 35, value: () => $('#phone').val().replace(/^\+/, '') }]] },
             { selector: '#secret_question',  validations: ['req'] },
             { selector: '#secret_answer',    validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
-            { selector: '#tnc',              validations: [['req', { message: 'Please accept the terms and conditions.' }]], exclude_request: 1 },
+            { selector: '#tnc',              validations: [['req', { message: localize('Please accept the terms and conditions.') }]], exclude_request: 1 },
 
             { request_field: 'residence',   value: Client.get('residence') },
             { request_field: 'client_type', value: () => ($('#chk_professional').is(':checked') ? 'professional' : 'retail') },

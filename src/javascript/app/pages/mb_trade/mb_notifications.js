@@ -1,5 +1,3 @@
-const localize = require('../../../_common/localize').localize;
-
 /*
  * Notifications manages various notification messages
  *
@@ -8,9 +6,9 @@ const localize = require('../../../_common/localize').localize;
 const MBNotifications = (() => {
     /*
      * options: Object {
-     *     text       : {string}  message text to display
-     *     uid        : {string}  unique id to prevent duplicating the same message and also used to hide the message
-     *     dismissible: {boolean} dismissible messages can be hidden by client
+     *     localized_text: {string}  message text to display
+     *     uid           : {string}  unique id to prevent duplicating the same message and also used to hide the message
+     *     dismissible   : {boolean} dismissible messages can be hidden by client
      * }
      */
     const showErrorMessage = (options) => {
@@ -19,7 +17,7 @@ const MBNotifications = (() => {
 
         if (!options.uid || $this_uid.length === 0) {
             $note_wrapper.prepend(generateMessage(options));
-        } else if ($this_uid.html() !== options.text) {
+        } else if ($this_uid.html() !== options.localized_text) {
             $this_uid.replaceWith(generateMessage(options));
         }
 
@@ -29,7 +27,7 @@ const MBNotifications = (() => {
 
     const generateMessage = (options) => {
         const $message = $(`<div class="notice-msg gr-12 center-text${(options.dismissible ? ' dismissible' : '')}"
-            ${(options.uid ? ` id="${options.uid}"` : '')}>${localize(options.text)}
+            ${(options.uid ? ` id="${options.uid}"` : '')}>${options.localized_text}
                 ${(options.dismissible ? '<div class="notification-dismiss">x</div>' : '')}
             </div>`);
 

@@ -141,10 +141,10 @@ const TickDisplay = (() => {
         } else if (contract_category.match('digits')) {
             ticks_needed = number_of_ticks;
             x_indicators = {
-                _0: { label: localize('Tick [_1]', ['1']), id: 'start_tick' },
+                _0: { label: localize('Tick [_1]', '1'), id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label    : localize('Tick [_1]', [number_of_ticks]),
+                label    : localize('Tick [_1]', number_of_ticks),
                 id       : 'last_tick',
                 dashStyle: 'Dash',
             };
@@ -271,7 +271,7 @@ const TickDisplay = (() => {
                         value: high_low_barrier,
                         color: '#e98024',
                         label: {
-                            text : `${localize(/^tickhigh_/i.test(contract.shortcode) ? 'Highest Tick' : 'Lowest Tick')} (${addComma(high_low_barrier)})`,
+                            text : `${/^tickhigh_/i.test(contract.shortcode) ? localize('Highest Tick') : localize('Lowest Tick')} (${addComma(high_low_barrier)})`,
                             align: 'center',
                         },
                         width    : 2,
@@ -470,7 +470,7 @@ const TickDisplay = (() => {
 
         if (+entry_barrier !== +reset_barrier) {
             removePlotLine('tick-barrier', 'y');
-            
+
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-reset-barrier',
                 value : +reset_barrier,
@@ -527,7 +527,7 @@ const TickDisplay = (() => {
             label    : localize('Exit Spot'),
             dashStyle: 'Dash',
         };
-        
+
         add(x_indicators[indicator_key]);
     };
 

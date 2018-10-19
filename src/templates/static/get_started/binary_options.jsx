@@ -224,16 +224,13 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Higher/Lower')} text={it.L('Predict that the market will end higher or lower than a price target')} />
                         </SectionLarge>
 
-                        <SectionLarge dataAnchor='touch-no-touch' header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period.')} />
+                        <SectionLarge dataAnchor='touch-no-touch' header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Predict that the market will touch or not touch a target any time during the contract period.')} />
 
                         <SectionLarge dataAnchor='in-out' header={it.L('In/Out')} image='types-of-trades/in_out' text={it.L('There are two types of In/Out trades:')}>
                             <ListStrong header={it.L('Ends Between/Ends Outside')}  text={it.L('Predict that the market stops inside or outside two price targets at the end of the time period')} />
                             <ListStrong header={it.L('Stays Between/Goes Outside')} text={it.L('Predict that the market stays inside or goes outside two price targets any time during the contract period')} />
                         </SectionLarge>
-                        <SectionLarge dataAnchor='asians' header={it.L('Asians')} image='types-of-trades/asians' text={it.L('There are two types of Asians trades:')}>
-                            <ListStrong header={it.L('Up')}   text={it.L('Predict that the market will end higher than the average price')} />
-                            <ListStrong header={it.L('Down')} text={it.L('Predict that the market will end lower than the average price')} />
-                        </SectionLarge>
+                        <SectionLarge dataAnchor='asians' header={it.L('Asians')} image='types-of-trades/asians' text={it.L('Predict that the market will end higher or lower than the average price.')} />
                         <SectionLarge dataAnchor='digits' header={it.L('Digits')} image='types-of-trades/digits' text={it.L('Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:')}>
                             <ListStrong header={it.L('Matches/Differs')} text={it.L('Predict that the last digit will match or not match')} />
                             <ListStrong header={it.L('Even/Odd')}        text={it.L('Predict that the last digit is an even number or odd number after the last tick')} />

@@ -11,7 +11,7 @@ const ChangePassword = (() => {
     const init = () => {
         FormManager.init(form_id, [
             { selector: '#old_password',    validations: ['req', ['length', { min: 6, max: 25 }]] },
-            { selector: '#new_password',    validations: ['req', 'password', ['not_equal', { to: '#old_password', name1: 'Current password', name2: 'New password' }]], re_check_field: '#repeat_password' },
+            { selector: '#new_password',    validations: ['req', 'password', ['not_equal', { to: '#old_password', name1: localize('Current password'), name2: localize('New password') }]], re_check_field: '#repeat_password' },
             { selector: '#repeat_password', validations: ['req', ['compare', { to: '#new_password' }]], exclude_request: 1 },
 
             { request_field: 'change_password', value: 1 },
@@ -24,7 +24,7 @@ const ChangePassword = (() => {
 
     const handler = (response) => {
         if ('error' in response) {
-            $('#form_error').text(localize(response.error.message)).setVisibility(1);
+            $('#form_error').text(response.error.message).setVisibility(1);
         } else {
             $(form_id).setVisibility(0);
             $('#msg_success').setVisibility(1);

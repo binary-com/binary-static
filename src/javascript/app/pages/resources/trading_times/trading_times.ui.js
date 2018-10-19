@@ -160,7 +160,7 @@ const TradingTimesUI = (() => {
     const createEventsText = (events) => {
         let result = '';
         for (let i = 0; i < events.length; i++) {
-            result += `${(i > 0 ? '<br />' : '')}${localize(events[i].descrip)}: ${localize(events[i].dates)}`;
+            result += `${(i > 0 ? '<br />' : '')}${localize(events[i].descrip /* localize-ignore */)}: ${localize(events[i].dates /* localize-ignore */)}`; // handled in static_strings_app.js
         }
         return result.length > 0 ? result : '--';
     };

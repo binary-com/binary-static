@@ -77,7 +77,7 @@ const MBTick = (() => {
     const processTickStream = (response) => {
         if (response.msg_type === 'tick' && MBDefaults.get('underlying') === (response.echo_req.ticks || response.echo_req.ticks_history)) {
             if (getPropertyValue(response, 'error')) {
-                MBNotifications.show({ text: response.error.message, uid: 'TICK_ERROR' });
+                MBNotifications.show({ localized_text: response.error.message, uid: 'TICK_ERROR' });
                 return;
             }
 

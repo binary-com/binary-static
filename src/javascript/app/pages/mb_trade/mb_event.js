@@ -124,7 +124,7 @@ const MBTradingEvents = (() => {
                 error_msg = localize('Should be a valid number.');
             } else if (+payout_amount > max_client_amount) {
                 is_valid  = false;
-                error_msg = localize('Should be less than [_1]', [max_client_amount]);
+                error_msg = localize('Should be less than [_1]', max_client_amount);
             }
 
             // if value has decimal places
@@ -134,7 +134,7 @@ const MBTradingEvents = (() => {
                 // verify number of decimal places doesn't exceed the allowed decimal places according to the currency
                 is_valid = payout_amount.toString().replace(/^-?\d*\.?|0+$/, '').length <= allowed_decimals;
                 if (!is_valid) {
-                    error_msg = localize('Up to [_1] decimal places are allowed.', [allowed_decimals]);
+                    error_msg = localize('Up to [_1] decimal places are allowed.', allowed_decimals);
                 }
             }
 

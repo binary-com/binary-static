@@ -1,18 +1,18 @@
-const SelectMatcher    = require('@binary-com/binary-style').select2Matcher;
-const Cookies          = require('js-cookie');
-const Client           = require('../../../base/client');
-const BinarySocket     = require('../../../base/socket');
-const FormManager      = require('../../../common/form_manager');
-const TrafficSource    = require('../../../common/traffic_source');
-const handleVerifyCode = require('../../../common/verification_code').handleVerifyCode;
-const makeOption       = require('../../../../_common/common_functions').makeOption;
-const localize         = require('../../../../_common/localize').localize;
-const LocalStore       = require('../../../../_common/storage').LocalStore;
-const State            = require('../../../../_common/storage').State;
-const urlFor           = require('../../../../_common/url').urlFor;
-const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
-const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
-const isBinaryApp      = require('../../../../config').isBinaryApp;
+const SelectMatcher            = require('@binary-com/binary-style').select2Matcher;
+const Cookies                  = require('js-cookie');
+const Client                   = require('../../../base/client');
+const BinarySocket             = require('../../../base/socket');
+const FormManager              = require('../../../common/form_manager');
+const TrafficSource            = require('../../../common/traffic_source');
+const handleVerifyCode         = require('../../../common/verification_code').handleVerifyCode;
+const makeOption               = require('../../../../_common/common_functions').makeOption;
+const localize                 = require('../../../../_common/localize').localize;
+const localizeKeepPlaceholders = require('../../../../_common/localize').localizeKeepPlaceholders;
+const LocalStore               = require('../../../../_common/storage').LocalStore;
+const State                    = require('../../../../_common/storage').State;
+const urlFor                   = require('../../../../_common/url').urlFor;
+const Utility                  = require('../../../../_common/utility');
+const isBinaryApp              = require('../../../../config').isBinaryApp;
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
@@ -57,7 +57,7 @@ const VirtualAccOpening = (() => {
     };
 
     const handleWebsiteStatus = (website_status = {}, $residence) => {
-        if (!website_status || isEmptyObject(website_status)) return;
+        if (!website_status || Utility.isEmptyObject(website_status)) return;
         const clients_country = website_status.clients_country;
 
         // set residence value to client's country, detected by IP address from API
@@ -123,23 +123,23 @@ const VirtualAccOpening = (() => {
         }
 
         const showInvalidTokenMessage = () => {
-            const message = 'Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.';
+            const message = localizeKeepPlaceholders('Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.');
             return showFormError(message, '');
         };
 
         switch (error.code) {
             case 'InputValidationFailed': {
-                return getPropertyValue(response, ['error', 'details', 'verification_code']) ? showInvalidTokenMessage() : showError(error.message);
+                return Utility.getPropertyValue(response, ['error', 'details', 'verification_code']) ? showInvalidTokenMessage() : showError(error.message);
             }
             case 'InvalidToken': {
                 return showInvalidTokenMessage();
             }
             case 'duplicate email': {
-                const message = 'The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.';
+                const message = localizeKeepPlaceholders('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
                 return showFormError(message, 'user/lost_passwordws');
             }
             case 'PasswordError': {
-                return showError('Password is not strong enough.');
+                return showError(localize('Password is not strong enough.'));
             }
             default: {
                 return showError(error.message);
@@ -148,11 +148,11 @@ const VirtualAccOpening = (() => {
     };
 
     const showFormError = (message, url) => {
-        $('#virtual-form').html($('<p/>', { html: localize(message, [urlFor(url)]) }));
+        $('#virtual-form').html($('<p/>', { html: Utility.template(message, [urlFor(url)]) }));
     };
 
-    const showError = (message) => {
-        $('#error-account-opening').setVisibility(1).text(localize(message));
+    const showError = (localized_text) => {
+        $('#error-account-opening').setVisibility(1).text(localized_text);
     };
 
     return {
