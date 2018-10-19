@@ -20,6 +20,11 @@ const FinancialAssessment = (() => {
             event.preventDefault();
             submitForm();
         });
+        BinarySocket.wait('landing_company').then(() => {
+            if (/^(costarica|maltainvest)$/.test(Client.get('landing_company_shortcode'))) {
+                getElementById('risk_disclaimer').setVisibility(1);
+            }
+        });
 
         getFinancialAssessment();
     };
