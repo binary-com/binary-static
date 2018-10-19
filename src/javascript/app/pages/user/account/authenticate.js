@@ -180,8 +180,6 @@ const Authenticate = (() => {
                 // Check if PNG
                 if (isPng(e.files[0].name)) {
                     compressImg(e.files[0]).then(img => {
-                        console.log(img);
-                        // obj.documentFormat = f.file.name.substr(0, f.file.name.indexOf('.'));
                         const file_obj  = {
                             file     : img,
                             chunkSize: 16384, // any higher than this sends garbage data to websocket currently.
@@ -237,7 +235,6 @@ const Authenticate = (() => {
         let is_any_file_error = false;
         readFiles(files).then((response) => {
             response.forEach((file) => {
-                console.log(file);
                 if (file.message) {
                     is_any_file_error = true;
                     showError(file);
