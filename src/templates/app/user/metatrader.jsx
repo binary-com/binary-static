@@ -548,7 +548,7 @@ const Metatrader = () => (
                                 </div>
                             </div>
                             <div>
-                                <p className="hint">
+                                <p className='hint'>
                                     {it.L('*Stablecoin transfers are subject to a 0.5% fee or a minimum of $0.01, whichever is higher. Other transfers are subject to a 1% fee.')}
                                 </p>
                             </div>

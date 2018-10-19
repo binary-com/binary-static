@@ -1,7 +1,6 @@
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
-const Currency           = require('../../common/currency');
 const FormManager        = require('../../common/form_manager');
 const isCryptocurrency   = require('../../common/currency').isCryptocurrency;
 const getMinWithdrawal   = require('../../common/currency').getMinWithdrawal;
