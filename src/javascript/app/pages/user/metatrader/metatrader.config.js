@@ -11,27 +11,84 @@ const urlFor       = require('../../../../_common/url').urlFor;
 const isBinaryApp  = require('../../../../config').isBinaryApp;
 
 const MetaTraderConfig = (() => {
-    const mt_companies = {
-        financial: {
-            standard: { mt5_account_type: 'standard',      max_leverage: 1000, title: 'Standard' },
-            advanced: { mt5_account_type: 'advanced',      max_leverage: 300,  title: 'Advanced' },
-            mamm    : { mt5_account_type: 'mamm_advanced', max_leverage: 300,  title: 'MAM Advanced', is_real_only: 1 },
-        },
-        gaming: {
-            volatility: { mt5_account_type: '',     max_leverage: 500, title: 'Volatility Indices' },
-            mamm      : { mt5_account_type: 'mamm', max_leverage: 500, title: 'MAM Volatility Indices', is_real_only: 1 },
-        },
-    };
+    const configMtCompanies = (() => {
+        let mt_companies;
 
-    // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
-    const mt_financial_companies = {
-        financial: {
-            standard: { mt5_account_type: 'standard', max_leverage: 30, title: 'Standard' },
-        },
-        gaming: {
-            volatility: mt_companies.gaming.volatility,
-        },
-    };
+        const initMtCompanies = () => {
+            const standard_config = {
+                account_type: 'standard',
+                leverage    : 1000,
+                short_title : localize('Standard'),
+            };
+            const advanced_config = {
+                account_type: 'advanced',
+                leverage    : 300,
+                short_title : localize('Advanced'),
+            };
+            const volatility_config = {
+                account_type: '',
+                leverage    : 500,
+                short_title : localize('Volatility Indices'),
+            };
+
+            return ({
+                financial: {
+                    demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Standard'), short_title: standard_config.short_title },
+                    real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
+                    demo_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Demo Advanced'), short_title: advanced_config.short_title },
+                    real_advanced: { mt5_account_type: advanced_config.account_type, max_leverage: advanced_config.leverage, title: localize('Real Advanced'), short_title: advanced_config.short_title },
+                    real_mamm    : { mt5_account_type: 'mamm_advanced',              max_leverage: advanced_config.leverage, title: localize('MAM Advanced'),  short_title: advanced_config.short_title },
+                },
+                gaming: {
+                    demo_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Demo Volatility Indices'), short_title: volatility_config.short_title },
+                    real_volatility: { mt5_account_type: volatility_config.account_type, max_leverage: volatility_config.leverage, title: localize('Real Volatility Indices'), short_title: volatility_config.short_title },
+                    real_mamm      : { mt5_account_type: 'mamm',                         max_leverage: volatility_config.leverage, title: localize('MAM Volatility Indices') , short_title: volatility_config.short_title },
+                },
+            });
+        };
+
+        return {
+            get: () => {
+                if (!mt_companies) {
+                    mt_companies = initMtCompanies();
+                }
+                return mt_companies;
+            },
+        };
+    })();
+
+    const configMtFinCompanies = (() => {
+        let mt_financial_companies;
+
+        const initMtFinCompanies = () => {
+            const standard_config = {
+                account_type: 'standard',
+                leverage    : 30,
+                short_title : localize('Standard'),
+            };
+
+            return ({
+                // for financial mt company with shortcode maltainvest, only offer standard account with different leverage
+                financial: {
+                    demo_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Demo Standard'), short_title: standard_config.short_title },
+                    real_standard: { mt5_account_type: standard_config.account_type, max_leverage: standard_config.leverage, title: localize('Real Standard'), short_title: standard_config.short_title },
+                },
+                gaming: {
+                    demo_volatility: configMtCompanies.get().gaming.demo_volatility,
+                    real_volatility: configMtCompanies.get().gaming.real_volatility,
+                },
+            });
+        };
+
+        return {
+            get: () => {
+                if (!mt_financial_companies) {
+                    mt_financial_companies = initMtFinCompanies();
+                }
+                return mt_financial_companies;
+            },
+        };
+    })();
 
     const accounts_info = {};
 
@@ -128,8 +185,8 @@ const MetaTraderConfig = (() => {
 
                     if (is_volatility && !accounts_info[acc_type].is_demo && State.getResponse('landing_company.gaming_company.shortcode') === 'malta') {
                         Dialog.confirm({
-                            id     : 'confirm_new_account',
-                            message: ['Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?'],
+                            id               : 'confirm_new_account',
+                            localized_message: localize(['Trading Contracts for Difference (CFDs) on Volatility Indices may not be suitable for everyone. Please ensure that you fully understand the risks involved, including the possibility of losing all the funds in your MT5 account. Gambling can be addictive – please play responsibly.', 'Do you wish to continue?']),
                         }).then((is_ok) => {
                             if (!is_ok) {
                                 BinaryPjax.load(Client.defaultRedirectUrl());
@@ -149,9 +206,9 @@ const MetaTraderConfig = (() => {
                             }
                             message = message.map(str => str.replace(/{SPAIN ONLY}/, '')); // remove '{SPAIN ONLY}' from english strings
                             Dialog.confirm({
-                                id     : 'spain_cnmv_warning',
-                                ok_text: localize('Acknowledge'),
-                                message,
+                                id               : 'spain_cnmv_warning',
+                                ok_text          : localize('Acknowledge'),
+                                localized_message: message,
                             }).then((is_ok) => {
                                 if (!is_ok) {
                                     BinaryPjax.load(Client.defaultRedirectUrl());
@@ -386,20 +443,20 @@ const MetaTraderConfig = (() => {
             { selector: fields.new_account.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 30 }]] },
             { selector: fields.new_account.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
             { selector: fields.new_account.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account.txt_main_pass.id }]] },
-            { selector: fields.new_account.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+            { selector: fields.new_account.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
         ],
         new_account_mam: [
             { selector: fields.new_account_mam.txt_name.id,          validations: [['req', { hide_asterisk: true }], 'letter_symbol', ['length', { min: 2, max: 30 }]] },
             { selector: fields.new_account_mam.txt_manager_id.id,    validations: [['req', { hide_asterisk: true }], ['length', { min: 0, max: 15 }]] },
             { selector: fields.new_account_mam.txt_main_pass.id,     validations: [['req', { hide_asterisk: true }], ['password', 'mt']] },
             { selector: fields.new_account_mam.txt_re_main_pass.id,  validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.new_account_mam.txt_main_pass.id }]] },
-            { selector: fields.new_account_mam.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: 'Main password', name2: 'Investor password' }]] },
+            { selector: fields.new_account_mam.txt_investor_pass.id, validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.new_account_mam.txt_main_pass.id, name1: localize('Main password'), name2: localize('Investor password') }]] },
             { selector: fields.new_account_mam.chk_tnc.id,           validations: [['req', { hide_asterisk: true }]] },
         ],
         password_change: [
             { selector: fields.password_change.ddl_password_type.id,   validations: [['req', { hide_asterisk: true }]] },
             { selector: fields.password_change.txt_old_password.id,    validations: [['req', { hide_asterisk: true }]] },
-            { selector: fields.password_change.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: 'Current password', name2: 'New password' }]], re_check_field: fields.password_change.txt_re_new_password.id },
+            { selector: fields.password_change.txt_new_password.id,    validations: [['req', { hide_asterisk: true }], ['password', 'mt'], ['not_equal', { to: fields.password_change.txt_old_password.id, name1: localize('Current password'), name2: localize('New password') }]], re_check_field: fields.password_change.txt_re_new_password.id },
             { selector: fields.password_change.txt_re_new_password.id, validations: [['req', { hide_asterisk: true }], ['compare', { to: fields.password_change.txt_new_password.id }]] },
         ],
         password_reset: [
@@ -427,8 +484,6 @@ const MetaTraderConfig = (() => {
         State.getResponse('get_account_status').status.indexOf('authenticated') !== -1;
 
     return {
-        mt_companies,
-        mt_financial_companies,
         accounts_info,
         actions_info,
         fields,
@@ -438,8 +493,10 @@ const MetaTraderConfig = (() => {
         hasAccount,
         getCurrency,
         isAuthenticated,
-        setMessages   : ($msg) => { $messages = $msg; },
-        getAllAccounts: () => (
+        configMtCompanies   : configMtCompanies.get,
+        configMtFinCompanies: configMtFinCompanies.get,
+        setMessages         : ($msg) => { $messages = $msg; },
+        getAllAccounts      : () => (
             Object.keys(accounts_info)
                 .filter(acc_type => hasAccount(acc_type))
                 .sort(acc_type => (accounts_info[acc_type].is_demo ? 1 : -1)) // real first

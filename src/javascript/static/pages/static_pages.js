@@ -6,7 +6,6 @@ const handleHash   = require('../../_common/utility').handleHash;
 const BinaryPjax   = require('../../app/base/binary_pjax');
 const Client       = require('../../app/base/client');
 const Header       = require('../../app/base/header');
-const hideEU       = require('../../app/common/common_functions').hideEU;
 
 module.exports = {
     OpenPositions: {
@@ -49,8 +48,5 @@ module.exports = {
     },
     Cloudflare: {
         onLoad: () => {},
-    },
-    Tour: {
-        onLoad: () => { hideEU(); },
     },
 };
