@@ -1,3 +1,5 @@
+import Compressor from 'compressorjs';
+
 const DocumentUploader    = require('@binary-com/binary-document-uploader');
 const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
@@ -160,6 +162,7 @@ const Authenticate = (() => {
         if ($button.length && $button.find('.barspinner').length) { // it's still in submit process
             return;
         }
+
         // Disable submit button
         showButtonLoading();
         const files = [];
@@ -173,44 +176,68 @@ const Authenticate = (() => {
                 const name      = $e.attr('data-name');
                 const page_type = $e.attr('data-page-type');
                 const $inputs   = $e.closest('.fields').find('input[type="text"]');
-                const file_obj  = {
-                    file     : e.files[0],
-                    chunkSize: 16384, // any higher than this sends garbage data to websocket currently.
-                    class    : id,
-                    type,
-                    name,
-                    page_type,
-                };
-                if ($inputs.length) {
-                    file_obj.id_number = $($inputs[0]).val();
-                    file_obj.exp_date  = $($inputs[1]).val();
-                }
-                fileTracker($e, true);
-                files.push(file_obj);
 
-                let display_name = name;
-                if (/front|back/.test(id)) {
-                    display_name += ` - ${localize(`${toTitleCase(/front/.test(id) ? 'Front' : 'Reverse')} Side`)}`;
-                }
+                // Check if PNG
+                if (isPng(e.files[0].name)) {
+                    compressImg(e.files[0]).then(img => {
+                        console.log(img);
+                        // obj.documentFormat = f.file.name.substr(0, f.file.name.indexOf('.'));
+                        const file_obj  = {
+                            file     : img,
+                            chunkSize: 16384, // any higher than this sends garbage data to websocket currently.
+                            class    : id,
+                            type,
+                            name,
+                            page_type,
+                        };
+                        if ($inputs.length) {
+                            file_obj.id_number = $($inputs[0]).val();
+                            file_obj.exp_date  = $($inputs[1]).val();
+                        }
+                        fileTracker($e, true);
+                        files.push(file_obj);
 
-                $submit_table.append($('<tr/>', { id: file_obj.type, class: id })
-                    .append($('<td/>', { text: display_name }))                           // document type, e.g. Passport - Front Side
-                    .append($('<td/>', { text: e.files[0].name }))                        // file name, e.g. sample.pdf
-                    .append($('<td/>', { text: localize('Pending'), class: 'status' }))   // status of uploading file, first set to Pending
-                );
+                        let display_name = name;
+                        if (/front|back/.test(id)) {
+                            display_name += ` - ${localize(`${toTitleCase(/front/.test(id) ? 'Front' : 'Reverse')} Side`)}`;
+                        }
+
+                        $submit_table.append($('<tr/>', { id: file_obj.type, class: id })
+                            .append($('<td/>', { text: display_name }))                           // document type, e.g. Passport - Front Side
+                            .append($('<td/>', { text: img.name }))                        // file name, e.g. sample.pdf
+                            .append($('<td/>', { text: localize('Pending'), class: 'status' }))   // status of uploading file, first set to Pending
+                        );
+                        $submit_status.setVisibility(1);
+                        processFiles(files);
+                    });
+                }
             }
         });
         $submit_status.setVisibility(1);
         processFiles(files);
     };
 
+    const compressImg = (file) => new Promise((resolve) => {
+        (() => new Compressor(file, {
+            quality : 0.6,
+            mimeType: 'image/jpeg',
+            success(result) {
+                // returns compressed image
+                resolve(result);
+            },
+        }))();
+    });
+
+    const isPng = filename => (filename.split('.').pop().toLowerCase() === 'png');
+
     const processFiles = (files) => {
-        const uploader = new DocumentUploader({ connection: BinarySocket.get() }); // send 'debug: true' here for debugging
+        // const uploader = new DocumentUploader({ connection: BinarySocket.get() }); // send 'debug: true' here for debugging
 
         let idx_to_upload     = 0;
         let is_any_file_error = false;
         readFiles(files).then((response) => {
             response.forEach((file) => {
+                console.log(file);
                 if (file.message) {
                     is_any_file_error = true;
                     showError(file);
@@ -223,34 +250,34 @@ const Authenticate = (() => {
                 return; // don't start submitting files until all front-end validation checks pass
             }
 
-            const isLastUpload = () => total_to_upload === idx_to_upload + 1;
+            // const isLastUpload = () => total_to_upload === idx_to_upload + 1;
             // sequentially send files
             const uploadFile = () => {
                 const $status = $submit_table.find(`.${response[idx_to_upload].passthrough.class} .status`);
                 $status.text(`${localize('Submitting')}...`);
-                uploader.upload(response[idx_to_upload]).then((api_response) => {
-                    onResponse(api_response, isLastUpload());
-                    if (!api_response.error && !api_response.warning) {
-                        $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
-                        $(`#${api_response.passthrough.class}`).attr('type', 'hidden'); // don't allow users to change submitted files
-                        $(`label[for=${api_response.passthrough.class}]`).removeClass('selected error').find('span').attr('class', 'checked');
-                    }
-                    uploadNextFile();
-                }).catch((error) => {
-                    is_any_upload_failed = true;
-                    showError({
-                        message: error.message || localize('Failed'),
-                        class  : error.passthrough ? error.passthrough.class : '',
-                    });
-                    uploadNextFile();
-                });
+                // uploader.upload(response[idx_to_upload]).then((api_response) => {
+                //     onResponse(api_response, isLastUpload());
+                //     if (!api_response.error && !api_response.warning) {
+                //         $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
+                //         $(`#${api_response.passthrough.class}`).attr('type', 'hidden'); // don't allow users to change submitted files
+                //         $(`label[for=${api_response.passthrough.class}]`).removeClass('selected error').find('span').attr('class', 'checked');
+                //     }
+                //     uploadNextFile();
+                // }).catch((error) => {
+                //     is_any_upload_failed = true;
+                //     showError({
+                //         message: error.message || localize('Failed'),
+                //         class  : error.passthrough ? error.passthrough.class : '',
+                //     });
+                //     uploadNextFile();
+                // });
             };
-            const uploadNextFile = () => {
-                if (!isLastUpload()) {
-                    idx_to_upload += 1;
-                    uploadFile();
-                }
-            };
+            // const uploadNextFile = () => {
+            //     if (!isLastUpload()) {
+            //         idx_to_upload += 1;
+            //         uploadFile();
+            //     }
+            // };
             uploadFile();
         });
     };
@@ -291,7 +318,6 @@ const Authenticate = (() => {
                     } else {
                         $status.text(localize('Checked')).append($('<span/>', { class: 'checked' }));
                     }
-
                     resolve(obj);
                 };
 
@@ -301,6 +327,7 @@ const Authenticate = (() => {
                         class  : f.class,
                     });
                 };
+
                 // Reading file.
                 fr.readAsArrayBuffer(f.file);
             });
