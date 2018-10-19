@@ -53,6 +53,7 @@ const GTM = (() => {
             bom_country       : get_settings.country,
             bom_country_abbrev: get_settings.country_code,
             bom_email         : get_settings.email,
+            elevio_user_hash  : get_settings.user_hash,
             url               : window.location.href,
             bom_today         : Math.floor(Date.now() / 1000),
         };
