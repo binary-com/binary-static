@@ -33,7 +33,7 @@ const Reset = (() => {
         }
 
         CommonFunctions.getElementById('reset_time')
-            .html(localize('The reset time is [_1]', [reset_time_str]))
+            .html(localize('The reset time is [_1]', reset_time_str))
             .setAttribute('style', '');
     };
 
