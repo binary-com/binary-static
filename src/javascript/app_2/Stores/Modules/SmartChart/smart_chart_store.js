@@ -4,6 +4,7 @@ import {
     computed,
     observable }              from 'mobx';
 import { isEmptyObject }      from '_common/utility';
+import ServerTime             from '_common/base/server_time';
 import { WS }                 from 'Services';
 import { ChartBarrierStore }  from './chart_barrier_store';
 import { ChartMarkerStore }   from './chart_marker_store';
@@ -134,7 +135,13 @@ export default class SmartChartStore extends BaseStore {
         WS.forget('ticks_history', callback, match_values)
     );
 
-    wsSendRequest = (request_object) => (
-        WS.sendRequest(request_object)
-    );
+    wsSendRequest = (request_object) => {
+        if (request_object.time) {
+            return ServerTime.timePromise.then(() => ({
+                msg_type: 'time',
+                time    : ServerTime.get().unix(),
+            }));
+        }
+        return WS.sendRequest(request_object);
+    };
 }
