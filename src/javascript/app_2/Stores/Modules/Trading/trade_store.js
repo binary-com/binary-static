@@ -2,6 +2,7 @@ import debounce                          from 'lodash.debounce';
 import {
     action,
     observable,
+    runInAction,
     reaction }                           from 'mobx';
 import Client                            from '_common/base/client_base';
 import {
@@ -131,8 +132,8 @@ export default class TradeStore extends BaseStore {
         }
 
         if (this.symbol) {
-            ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
-                this.processNewValuesAsync({
+            ContractType.buildContractTypesConfig(this.symbol).then(action(async () => {
+                await this.processNewValuesAsync({
                     ...ContractType.getContractValues(this),
                     ...ContractType.getContractCategories(),
                     ...query_string_values,
@@ -142,11 +143,10 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    async init() {
-        // To be sure that the website_status response has been received before processing trading page.
-        BinarySocket.wait('website_status')
-            .then(() => this.prepareTradeStore());
-    }
+     init = async () => {
+         // To be sure that the website_status response has been received before processing trading page.
+         await BinarySocket.wait('website_status');
+     };
 
     @action.bound
     onChange(e) {
@@ -229,7 +229,7 @@ export default class TradeStore extends BaseStore {
     }
 
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
-        
+
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa. The source of default values is the website_status response.
         if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
@@ -282,7 +282,6 @@ export default class TradeStore extends BaseStore {
     @action.bound
     requestProposal() {
         const requests = createProposalRequests(this);
-
         if (Object.values(this.validation_errors).some(e => e.length)) {
             this.proposal_info     = {};
             this.purchase_info     = {};
@@ -374,8 +373,11 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    onMount() {
-        this.is_trade_component_mounted = true;
+    async onMount() {
+        await this.prepareTradeStore();
+        runInAction(() => {
+            this.is_trade_component_mounted = true;
+        });
         this.updateQueryString();
     }
 
