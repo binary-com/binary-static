@@ -1,4 +1,5 @@
 const BinarySocket = require('./socket_base');
+const localize     = require('../localize').localize;
 
 /*
  * Monitors the network status and initialises the WebSocket connection
@@ -6,11 +7,25 @@ const BinarySocket = require('./socket_base');
  * 2. offline: it is offline
  */
 const NetworkMonitorBase = (() => {
-    const status_config = {
-        online  : { class: 'online',  tooltip: 'Online' },
-        offline : { class: 'offline', tooltip: 'Offline' },
-        blinking: { class: 'blinker', tooltip: 'Connecting to server' },
-    };
+    const StatusConfig = (() => {
+        let status_config;
+
+        const initStatusConfig = () => ({
+            online  : { class: 'online',  tooltip: localize('Online') },
+            offline : { class: 'offline', tooltip: localize('Offline') },
+            blinking: { class: 'blinker', tooltip: localize('Connecting to server') },
+        });
+
+        return {
+            get: (status) => {
+                if (!status_config) {
+                    status_config = initStatusConfig();
+                }
+                return status_config[status];
+            },
+        };
+    })();
+
     const pendings = {};
     const pending_keys = {
         ws_init   : 'ws_init',
@@ -64,7 +79,7 @@ const NetworkMonitorBase = (() => {
         }
 
         if (typeof updateUI === 'function') {
-            updateUI(status_config[network_status], isOnline());
+            updateUI(StatusConfig.get(network_status), isOnline());
         }
     };
 

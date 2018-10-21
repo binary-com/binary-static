@@ -1,4 +1,3 @@
-const moment             = require('moment');
 const Client             = require('./client_base');
 const getLanguage        = require('../language').get;
 const isMobile           = require('../os_detect').isMobile;

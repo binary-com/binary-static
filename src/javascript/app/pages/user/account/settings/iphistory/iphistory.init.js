@@ -12,7 +12,6 @@ const IPHistoryInit = (() => {
     };
 
     const init = () => {
-        IPHistoryUI.init();
         const req = {
             login_history: '1',
             limit        : 50,

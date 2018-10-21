@@ -203,7 +203,7 @@ const AccountTransfer = (() => {
                         getElementById(messages.parent).setVisibility(1);
                         return;
                     }
-                    getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${localize(client_balance <= withdrawal_limit ? 'Current balance' : 'Withdrawal limit')}`;
+                    getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${client_balance <= withdrawal_limit ? localize('Current balance') : localize('Withdrawal limit')}`;
                     populateAccounts(accounts);
                 });
             }

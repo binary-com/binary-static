@@ -14,7 +14,6 @@ const getElementById   = require('../../_common/common_functions').getElementByI
 const Crowdin          = require('../../_common/crowdin');
 const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
-const Localize         = require('../../_common/localize');
 const localize         = require('../../_common/localize').localize;
 const isMobile         = require('../../_common/os_detect').isMobile;
 const LocalStore       = require('../../_common/storage').LocalStore;
@@ -76,7 +75,6 @@ const Page = (() => {
             if (!Login.isLoginPages()) {
                 Language.setCookie(Language.urlLang());
             }
-            Localize.forLang(Language.urlLang());
             Header.onLoad();
             Footer.onLoad();
             Language.setCookie();
