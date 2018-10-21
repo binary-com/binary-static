@@ -33,7 +33,7 @@ const TermsAndConditions = () => (
                 <TradingRules />
             </Section>
 
-            <Section sectionNum='3' link_id='deposit-bonus' data-show='-malta, -maltainvest, -mt'>
+            <Section sectionNum='3' link_id='deposit-bonus' data-show='-eucompany'>
                 <DepositBonus />
             </Section>
 
@@ -49,7 +49,7 @@ const TermsAndConditions = () => (
                 <Complaints />
             </Section>
 
-            <Section sectionNum='7' link_id='biel' className='invisible' data-show='malta, maltainvest, mt'>
+            <Section sectionNum='7' link_id='biel' className='invisible' data-show='eucompany'>
                 <Biel />
             </Section>
 

@@ -43,6 +43,7 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
 
 const visible_classname = 'data-show-visible';
 const mt_company_rule   = 'mtcompany';
+const eu_company_rule   = 'eucompany';
 
 const ContentVisibility = (() => {
     const init = () => {
@@ -88,18 +89,27 @@ const ContentVisibility = (() => {
             .filter(name => isMT5FinRule(name))
             .map(rule => parseMT5FinRule(rule));
 
+        const country_rules = names
+            .filter(name => isCountryRule(name))
+            .map(rule => parseCountryRule(rule));
+
         names = names.filter(name => !isMT5FinRule(name));
 
         return {
             is_exclude,
             names,
             mt5fin_rules,
+            country_rules,
         };
     };
 
     const isMT5FinRule = (rule) => /^mt5fin:/.test(rule);
 
     const parseMT5FinRule = (rule) => rule.match(/^mt5fin:(.+)$/)[1];
+
+    const isCountryRule = (rule) => /^country:/.test(rule);
+
+    const parseCountryRule = (rule) => rule.match(/^country:(.+)$/)[1];
 
     const shouldShowElement = (
         attr_str,
@@ -113,19 +123,26 @@ const ContentVisibility = (() => {
             is_exclude,
             mt5fin_rules,
             names,
+            country_rules,
         } = parseAttributeString(attr_str);
-        const rule_set = new Set(names);
+        const rule_set              = new Set(names);
+        const eu_company_shortcodes = ['malta', 'maltainvest', 'iom'];
+        const eu_country_shortcode  = 'mt';
 
         const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
         const rule_set_has_mt      = rule_set.has(mt_company_rule);
-        const rule_set_has_country = rule_set.has(clients_country);
+        const rule_set_has_eu      = rule_set.has(eu_company_rule);
 
         let show_element = false;
 
         if (client_is_logged_in && client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
         else if (client_is_logged_in && is_exclude !== rule_set_has_current) show_element = true;
-        else if (!client_is_logged_in && is_exclude !== rule_set_has_country) show_element = true;
-
+        else if (rule_set_has_eu  &&
+          ((client_is_logged_in && eu_company_shortcodes.indexOf(current_landing_company_shortcode) !== -1) ||
+          (!client_is_logged_in &&
+            eu_country_shortcode === clients_country))) show_element = is_exclude !== rule_set_has_eu;
+        else if (!client_is_logged_in &&
+          country_rules.length) show_element = is_exclude !== country_rules.includes(clients_country);
         if (client_is_logged_in && mt5fin_rules.includes(mt5fin_company_shortcode)) show_element = !is_exclude;
 
         return show_element;

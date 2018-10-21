@@ -6,49 +6,56 @@ describe('ContentVisibility', () => {
     describe('.parseAttributeString()', () => {
         it('works for a single inclusive', () => {
             expect(parseAttributeString('costarica')).to.deep.equal({
-                is_exclude  : false,
-                names       : ['costarica'],
-                mt5fin_rules: [],
+                is_exclude   : false,
+                names        : ['costarica'],
+                mt5fin_rules : [],
+                country_rules: [],
             });
         });
         it('works for two inclusive', () => {
             expect(parseAttributeString('mtcompany, costarica')).to.deep.equal({
-                is_exclude  : false,
-                names       : ['mtcompany', 'costarica'],
-                mt5fin_rules: [],
+                is_exclude   : false,
+                names        : ['mtcompany', 'costarica'],
+                mt5fin_rules : [],
+                country_rules: [],
             });
         });
         it('works for a single exclusive', () => {
             expect(parseAttributeString('-costarica')).to.deep.equal({
-                is_exclude  : true,
-                names       : ['costarica'],
-                mt5fin_rules: [],
+                is_exclude   : true,
+                names        : ['costarica'],
+                mt5fin_rules : [],
+                country_rules: [],
             });
         });
         it('works for two exclusive', () => {
             expect(parseAttributeString('-default, -costarica')).to.deep.equal({
-                is_exclude  : true,
-                names       : ['default', 'costarica'],
-                mt5fin_rules: [],
+                is_exclude   : true,
+                names        : ['default', 'costarica'],
+                mt5fin_rules : [],
+                country_rules: [],
             });
         });
         it('works for a single mt5 rule', () => {
             expect(parseAttributeString('mt5fin:vanuatu')).to.deep.equal({
-                is_exclude  : false,
-                names       : [],
-                mt5fin_rules: ['vanuatu'],
+                is_exclude   : false,
+                names        : [],
+                mt5fin_rules : ['vanuatu'],
+                country_rules: [],
             });
         });
         it('works for a mix of rules', () => {
             expect(parseAttributeString('-maltainvest,  -default, -mt5fin:vanuatu')).to.deep.equal({
-                is_exclude  : true,
-                names       : ['maltainvest', 'default'],
-                mt5fin_rules: ['vanuatu'],
+                is_exclude   : true,
+                names        : ['maltainvest', 'default'],
+                mt5fin_rules : ['vanuatu'],
+                country_rules: []
             });
             expect(parseAttributeString('maltainvest, mt5fin:vanuatu, costarica')).to.deep.equal({
-                is_exclude  : false,
-                names       : ['maltainvest', 'costarica'],
-                mt5fin_rules: ['vanuatu'],
+                is_exclude   : false,
+                names        : ['maltainvest', 'costarica'],
+                mt5fin_rules : ['vanuatu'],
+                country_rules: [],
             });
         });
     });
@@ -87,12 +94,12 @@ describe('ContentVisibility', () => {
             expect(shouldShowElement('-mt5fin:vanuatu', true, 'default', 'malta', true, '')).to.equal(true);
         });
         it('works with inclusive country check', () => {
-            expect(shouldShowElement('mt', false, 'mt', 'default', false)).to.equal(true);
-            expect(shouldShowElement('mt', false, 'br', 'default', false)).to.equal(false);
+            expect(shouldShowElement('country:mt', false, 'mt', 'default', false)).to.equal(true);
+            expect(shouldShowElement('country:mt', false, 'br', 'default', false)).to.equal(false);
         });
         it('works with exclusive country check', () => {
-            expect(shouldShowElement('-mt', false, 'mt', 'default', false)).to.equal(false);
-            expect(shouldShowElement('-mt', false, 'br', 'default', false)).to.equal(true);
+            expect(shouldShowElement('-country:mt', false, 'mt', 'default', false)).to.equal(false);
+            expect(shouldShowElement('-country:mt', false, 'br', 'default', false)).to.equal(true);
         });
     });
 });

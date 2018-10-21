@@ -56,7 +56,7 @@ const Footer = () => (
                                     { text: it.L('Why Us?'),         href: it.url_for('why-us') },
                                     { text: it.L('Getting Started'), href: it.url_for('get-started') },
                                     { text: it.L('Platform Tour'),   href: it.url_for('tour') },
-                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', className: 'invisible', dataShow: 'malta, maltainvest, mt' },
+                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', className: 'invisible', dataShow: 'eucompany' },
                                     { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
                                     { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
                                 ]}
@@ -110,7 +110,7 @@ const Footer = () => (
             </div>
         </div>
         <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10'>
-            <div className='container' data-show='-malta, -maltainvest, -mt'>
+            <div className='container' data-show='-eucompany'>
                 <div className='gr-row'>
                     <div className='gr-12'>
                         <div className='icon-row flex-row gr-child'>
@@ -159,7 +159,7 @@ const Footer = () => (
                     </div>
                 </div>
             </div>
-            <div className='container invisible' data-show='malta, maltainvest, mt'>
+            <div className='container invisible' data-show='eucompany'>
                 <div className='gr-row'>
                     <div className='gr-12'>
                         <div className='icon-row flex-row'>
