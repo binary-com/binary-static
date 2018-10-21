@@ -18,7 +18,7 @@ const Login = (() => {
         const server_url = localStorage.getItem('config.server_url');
         const language   = getLanguage();
         const signup_device      = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
-        const date_first_contact = moment(LocalStore.get('date_first_contact'), 'YYYY-mm-dd').valueOf();
+        const date_first_contact = LocalStore.get('date_first_contact');
         const marketing_queries   = `&signup_device=${signup_device}${date_first_contact && `&date_first_contact=${date_first_contact}`}`;
 
         return ((server_url && /qa/.test(server_url)) ?
