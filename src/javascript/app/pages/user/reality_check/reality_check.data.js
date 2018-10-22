@@ -32,7 +32,7 @@ const RealityCheckData = (() => {
         const profit_loss = +(data.sell_amount) - (+(data.buy_amount));
 
         return {
-            start_time_string: localize('Your trading statistics since [_1].', [`${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`]),
+            start_time_string: localize('Your trading statistics since [_1].', `${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`),
             login_time       : `${start_time.format('YYYY-MM-DD HH:mm:ss')} GMT`,
             current_time     : `${current_time.format('YYYY-MM-DD HH:mm:ss')} GMT`,
             session_duration : duration_string,

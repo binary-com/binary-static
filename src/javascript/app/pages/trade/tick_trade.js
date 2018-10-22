@@ -141,10 +141,10 @@ const TickDisplay = (() => {
         } else if (contract_category.match('digits')) {
             ticks_needed = number_of_ticks;
             x_indicators = {
-                _0: { label: localize('Tick [_1]', ['1']), id: 'start_tick' },
+                _0: { label: localize('Tick [_1]', '1'), id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label    : localize('Tick [_1]', [number_of_ticks]),
+                label    : localize('Tick [_1]', number_of_ticks),
                 id       : 'last_tick',
                 dashStyle: 'Dash',
             };
