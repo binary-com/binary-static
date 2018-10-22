@@ -80,6 +80,7 @@ const JobDetails = () => (
                                 { href: 'backend_developer',         string: it.L('Back-End Developer') },
                                 { href: 'frontend_developer',        string: it.L('Front-End Developer') },
                                 { href: 'senior_frontend_developer', string: it.L('Senior Front-End Developer') },
+                                { href: 'perl_developer',            string: it.L('Perl Developer')},
                                 { href: 'senior_perl_developer',     string: it.L('Senior Perl Developer') },
                             ]}
                         />
@@ -284,6 +285,38 @@ const JobDetails = () => (
                                     { text: it.L('Strong knowledge of developing cross-platform/browser-compatible applications for web and mobile') },
                                     { text: it.L('A preference and passion for Linux and open-source platforms') },
                                 ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='perl_developer'>
+                            <h1>{it.L('Perl Developer')}</h1>
+
+                            <p>{it.L('Binary.com’s IT team is responsible for the design, development, and operation of our high- traffic networks. As our Perl Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Develop and maintain world-class web applications.') },
+                                  { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and databases.') },
+                                  { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features.') },
+                                  { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability.') },
+                                  { text: it.L('Participate in all aspects of the product lifecycle.') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Deep Perl expertise.') },
+                                  { text: it.L('Expertise in Linux system administration.') },
+                                  { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL.') },
+                                  { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, nginx, JavaScript, Redis, and Git.') },
+                                  { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques.') },
+                                  { text: it.L('Event-driven programming in Perl.') },
+                                  { text: it.L('Passion for Linux, and other open-source platforms.') },
+                              ]}
                             />
                         </div>
 
