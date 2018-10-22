@@ -76,6 +76,8 @@ const JobDetails = () => (
                             className='information_technology'
                             sidebar_items={[
                                 { href: 'devops_engineer',            string: it.L('DevOps Engineer') },
+                                { href: 'system_administrator',      string: it.L('System Administrator') },
+                                { href: 'backend_developer',      string: it.L('Back-End Developer') },
                                 { href: 'senior_frontend_developer', string: it.L('Senior Front-End Developer') },
                                 { href: 'senior_perl_developer',     string: it.L('Senior Perl Developer') },
                             ]}
@@ -156,6 +158,79 @@ const JobDetails = () => (
                             />
                         </div>
 
+                        <div className='invisible' id='system_administrator'>
+                            <h1>{it.L('System Administrator')}</h1>
+
+                            <p>{it.L('The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks.')}</p>
+                            <p>{it.L('To excel, you must demonstrate a passion for open-source technologies. You must also have a burning desire to challenge yourself in a fast-paced environment.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Assist in the daily IT requirements of Malta office') },
+                                  { text: it.L('Plan and implement IT solutions to achieve desired results') },
+                                  { text: it.L('Keep up with the latest developments in IT and maintain knowledge relevant to the requirements of the business') },
+                                  { text: it.L('Plan and implement methods of best practices in IT security') },
+                                  { text: it.L('Review and maintain third-party services used by the company') },
+                                  { text: it.L('Recommend alternatives to redundant or obsolete systems') },
+                                  { text: it.L('Manage and maintain all software, hardware, and associated peripherals including printers, copiers, and phones') },
+                                  { text: it.L('Manage IT assets and maintain an up-to-date asset registry') },
+                                  { text: it.L('Liaise with external suppliers to ensure purchases are made at the most cost-efficient rate') },
+                                  { text: it.L('Prepare and present proposals for the provisioning of IT-related systems and services') },
+                                  { text: it.L('Provide onsite support to all employees with the necessary hardware and software required for their jobs') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('A diploma or degree in Computer Science or Information Technology, or good experience in the field of IT operations/administration') },
+                                  { text: it.L('Exceptional English communication skills (both oral and written)') },
+                                  { text: it.L('Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks.') },
+                                  { text: it.L('Hands-on experience in systems and network security. Experience with Fortigate or similar devices (e.g.Cisco, Mikrotik)') },
+                                  { text: it.L('Knowledge of Mac or Linux Technologies and associated security risks') },
+                                  { text: it.L('Knowledge of VPN concepts and prior experience of setting up site-to-site networks') },
+                                  { text: it.L('Experience with +DRAC is a plus') },
+                                  { text: it.L('Experience in ARUBA or similar enterprise WiFi AP management is a plus.') },
+                                  { text: it.L('Experience in end-user device security audit and policy implementation is a plus') },
+                                  { text: it.L('The willingness to learn new skills') },
+                              ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='backend_developer'>
+                            <h1>{it.L('Back-End Developer')}</h1>
+
+                            <p>{it.L('Binary.com’s IT team is responsible for the design, development, and operation of our high-traffic networks. As our Senior Back-End Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Develop and maintain world-class web applications.') },
+                                  { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and Databases.') },
+                                  { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features.') },
+                                  { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability.') },
+                                  { text: it.L('Participate in all aspects of the product lifecycle.') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, and a willingness to become highly proficient with Perl.') },
+                                  { text: it.L('Expertise in Linux system administration.') },
+                                  { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL.') },
+                                  { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, NGINX, JavaScript, Redis, and Git.') },
+                                  { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques.') },
+                                  { text: it.L('Passion for Linux and other open-source platforms.') },
+                              ]}
+                            />
+                        </div>
+
                         <div className='invisible' id='senior_frontend_developer'>
                             <h1>{it.L('Senior Front-End Developer')}</h1>
 
@@ -200,6 +275,7 @@ const JobDetails = () => (
                                 ]}
                             />
                         </div>
+
                     </div>
 
                     <div className='quality_assurance'>
