@@ -84,6 +84,7 @@ const JobDetails = () => (
                                 { href: 'senior_perl_developer',               string: it.L('Senior Perl Developer') },
                                 { href: 'cryptocurrency_blockchain_developer', string: it.L('Cryptocurrency/Blockchain Developer')},
                                 { href: 'security_researcher',                 string: it.L('Security Researcher') },
+                                { href: 'ui_ux_designer',                      string: it.L('UI/UX Designer') },
                             ]}
                         />
 
@@ -207,7 +208,7 @@ const JobDetails = () => (
                         <div className='invisible' id='backend_developer'>
                             <h1>{it.L('Back-End Developer')}</h1>
 
-                            <p>{it.L('Binary.com’s IT team is responsible for the design, development, and operation of our high-traffic networks. As our Senior Back-End Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.')}</p>
+                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high-traffic networks. As our Senior Back-End Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
                               text={it.L('Responsibilities:')}
@@ -238,7 +239,7 @@ const JobDetails = () => (
                         <div className='invisible' id='frontend_developer'>
                             <h1>{it.L('Front-End Developer')}</h1>
 
-                            <p>{it.L('Binary.com’s IT team is responsible for the design, development, and operation of our websites, applications, and high-traffic networks. As our Front-End Developer, you will be taking on the challenge of developing and maintaining advanced applications and interfaces that connect clients with our patented trading system.')}</p>
+                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our websites, applications, and high-traffic networks. As our Front-End Developer, you will be taking on the challenge of developing and maintaining advanced applications and interfaces that connect clients with our patented trading system.', it.website_name)}</p>
                             <p>{it.L('You will also test and debug complex technical and UI issues related to our trading platform (that processes over one million transactions per day), based on feedback from our clients and customer service team.')}</p>
 
                             <UlText
@@ -293,7 +294,7 @@ const JobDetails = () => (
                         <div className='invisible' id='perl_developer'>
                             <h1>{it.L('Perl Developer')}</h1>
 
-                            <p>{it.L('Binary.com’s IT team is responsible for the design, development, and operation of our high- traffic networks. As our Perl Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.')}</p>
+                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high- traffic networks. As our Perl Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
                               text={it.L('Responsibilities:')}
@@ -347,7 +348,7 @@ const JobDetails = () => (
                         <div className='invisible' id='cryptocurrency_blockchain_developer'>
                             <h1>{it.L('Cryptocurrency/Blockchain Developer')}</h1>
 
-                            <p>{it.L('Binary.com’s IT team is responsible for the design, development, and operation of our system infrastructure and high-traffic networks. As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.')}</p>
+                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our system infrastructure and high-traffic networks. As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
                               text={it.L('You will:')}
@@ -382,7 +383,7 @@ const JobDetails = () => (
                         <div className='invisible' id='security_researcher'>
                             <h1>{it.L('Security Researcher')}</h1>
 
-                            <p>{it.L('Binary.com’s IT team is responsible for the design, development, and operation of our high-traffic web applications. As our Security Researcher, we expect you to stay informed about the latest security bulletins and findings, and actively monitor our software development pipeline to find and raise potential security issues.')}</p>
+                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high-traffic web applications. As our Security Researcher, we expect you to stay informed about the latest security bulletins and findings, and actively monitor our software development pipeline to find and raise potential security issues.', it.website_name)}</p>
 
                             <p>{it.L('As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at https://tech.binary.com/ You will also assist our developers in understanding and patching the bugs that you find.')}</p>
 
@@ -417,6 +418,43 @@ const JobDetails = () => (
                                   { text: it.L('Knowledge of the latest industry trends and best practices in information security') },
                                   { text: it.L('Extensive experience in bug bounty programmes such as HackerOne, Bugcrowd, and Cobalt') },
                                   { text: it.L('OSCP, CEH, Security+, CISSP, or any GIAC certification is an advantage') },
+                              ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='ui_ux_designer'>
+                            <h1>{it.L('UI/UX Designer')}</h1>
+
+                            <p>{it.L('[_1]\'s UI/UX team explores the many ways that we can design better product experiences for our users. As our UI/UX Designer, you’ll play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.', it.website_name)}</p>
+
+                            <p>{it.L('You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Conduct research using a variety of qualitative and quantitative methods') },
+                                  { text: it.L('Create user personas; define user task flows and UI specifications; and run A/B tests to understand user behaviours and their most pressing needs.') },
+                                  { text: it.L('Be involved in every phase of product development, from concept to execution to launch to give the product a distinct and consistent visual identity, as well as ensure that it fully serves the needs of the end user.') },
+                                  { text: it.L('Create and update style guides to establish and maintain a consistent visual identity across our product ecosystem.') },
+                                  { text: it.L('Create visual elements for websites and applications, including icons and images.') },
+                                  { text: it.L('Create and maintain wireframes and mockups for new and existing products.') },
+                                  { text: it.L('Keep up with the latest trends and techniques in design, UI, and UX.') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Proven UI and UX experience with a strong portfolio of work.') },
+                                  { text: it.L('Ability to conduct end-to-end UX research, including usability testing, and A/B testing.') },
+                                  { text: it.L('Experience in interpreting complex concepts and processes to develop intuitive and logical user flows and usage scenarios.') },
+                                  { text: it.L('Extensive experience in creating interactive UI elements for web and mobile apps.') },
+                                  { text: it.L('Proficiency in designing intuitive and cohesive screens, pages, and visual elements that work as intended.') },
+                                  { text: it.L('Proficiency in Photoshop, Illustrator, Sketch, and other design and wireframing software.') },
+                                  { text: it.L('Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps.') },
+                                  { text: it.L('Bachelor’s degree in graphic design, interaction design, visual communication, multimedia, or equivalent.') },
                               ]}
                             />
                         </div>
