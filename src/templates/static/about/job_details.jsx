@@ -75,9 +75,10 @@ const JobDetails = () => (
                         <SideBar
                             className='information_technology'
                             sidebar_items={[
-                                { href: 'devops_engineer',            string: it.L('DevOps Engineer') },
+                                { href: 'devops_engineer',           string: it.L('DevOps Engineer') },
                                 { href: 'system_administrator',      string: it.L('System Administrator') },
-                                { href: 'backend_developer',      string: it.L('Back-End Developer') },
+                                { href: 'backend_developer',         string: it.L('Back-End Developer') },
+                                { href: 'frontend_developer',        string: it.L('Front-End Developer') },
                                 { href: 'senior_frontend_developer', string: it.L('Senior Front-End Developer') },
                                 { href: 'senior_perl_developer',     string: it.L('Senior Perl Developer') },
                             ]}
@@ -227,6 +228,38 @@ const JobDetails = () => (
                                   { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, NGINX, JavaScript, Redis, and Git.') },
                                   { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques.') },
                                   { text: it.L('Passion for Linux and other open-source platforms.') },
+                              ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='frontend_developer'>
+                            <h1>{it.L('Front-End Developer')}</h1>
+
+                            <p>{it.L('Binary.com’s IT team is responsible for the design, development, and operation of our websites, applications, and high-traffic networks. As our Front-End Developer, you will be taking on the challenge of developing and maintaining advanced applications and interfaces that connect clients with our patented trading system.')}</p>
+                            <p>{it.L('You will also test and debug complex technical and UI issues related to our trading platform (that processes over one million transactions per day), based on feedback from our clients and customer service team.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Develop and maintain advanced features, tools, and applications according to best practices in UI/UX, front-end development and hybrid mobile application development.') },
+                                  { text: it.L('Test and debug our ever-evolving product line to improve their speed, scalability, and usability across multiple browsers, devices, and web standards.') },
+                                  { text: it.L('Stay on top of the latest JavaScript frameworks, libraries, and tools in order to apply them when necessary to solve challenges related to web and mobile development.') },
+                                  { text: it.L('Ensure the design and development of each page or product is consistent with our style guide, and that everything works as planned with each release.') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Extensive knowledge in advanced coding techniques, cross-platform development, and hybrid mobile app development.') },
+                                  { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques.') },
+                                  { text: it.L('Extensive experience of JavaScript, HTML, CSS, AJAX, and JSON.') },
+                                  { text: it.L('Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular.') },
+                                  { text: it.L('Experience with package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus), and APIs (WebSocket).') },
+                                  { text: it.L('Familiarity with testing and debugging processes, including unit testing and UI testing.') },
+                                  { text: it.L('Passion for Linux and other open-source platforms') },
                               ]}
                             />
                         </div>
