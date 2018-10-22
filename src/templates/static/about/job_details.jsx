@@ -75,7 +75,7 @@ const JobDetails = () => (
                         <SideBar
                             className='information_technology'
                             sidebar_items={[
-                                { href: 'devops_manager',            string: it.L('DevOps Manager') },
+                                { href: 'devops_engineer',            string: it.L('DevOps Engineer') },
                                 { href: 'senior_frontend_developer', string: it.L('Senior Front-End Developer') },
                                 { href: 'senior_perl_developer',     string: it.L('Senior Perl Developer') },
                             ]}
@@ -115,35 +115,43 @@ const JobDetails = () => (
 
                 <div className='gr-9 gr-padding-10 gr-12-m gr-12-p sections'>
                     <div className='information_technology'>
-                        <div className='invisible' id='devops_manager'>
-                            <h1>{it.L('DevOps Manager')}</h1>
+                        <div className='invisible' id='devops_engineer'>
+                            <h1>{it.L('DevOps Engineer')}</h1>
 
-                            <p>{it.L('[_1]\'s IT Operations Group is responsible for the design, development and operation of the company\'s high-traffic networks. Its responsibilities include hardware and software deployment, up-time and reliability testing, incident response reporting, network security, intrusion detection, and load balancing.', it.website_name)}</p>
-                            <p>{it.L('As our DevOps Manager/Team Lead, you\'ll be responsible for the training, development and direction of a world class Linux-based Systems Administration team.')}</p>
-                            <p>{it.L('To be considered for this mission critical leadership role, you\'ll need to demonstrate a passion for open source technologies and a desire to test your talents in a dynamic and challenging work environment.')}</p>
+                            <p>{it.L('[_1]\'s IT team is responsible for the design, development and operation of our high-traffic web applications.', it.website_name)}</p>
+                            <p>{it.L('As our DevOps Engineer, you will have a critical role in our approach to our infrastructure and operations. The stability and scalability of our applications have a direct impact on our bottom line. This means that you will be taking on a mission critical role.')}</p>
+                            <p>{it.L('To excel, you must demonstrate a passion for open-source technologies. You must also have a burning desire to challenge yourself in a fast-paced environment.')}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
+                                    { text: it.L('Collaborate with a team of world-class, Linux-based Devops Engineers') },
                                     { text: it.L('Translate the ongoing business needs of the company into a suitable IT infrastructure') },
-                                    { text: it.L('Monitor hardware and software deployment and manage our worldwide network of servers and office networks') },
-                                    { text: it.L('Oversee incident responses for our production servers and take the necessary measures to correct and enhance IT operations') },
-                                    { text: it.L('Manage security, intrusion detection, DDoS protection and PCI compliance measures related to each of our deployed servers') },
-                                    { text: it.L('Conduct disaster and recovery planning and execution') },
+                                    { text: it.L('Monitor hardware and software deployment, including our worldwide network of servers and office networks') },
+                                    { text: it.L('Oversee incident responses for our production servers') },
+                                    { text: it.L('Take necessary measures to correct and enhance IT operations') },
+                                    { text: it.L('Manage security, intrusion detection, DDoS protection, and PCI compliance measures for each deployed server') },
+                                    { text: it.L('Conduct disaster and recovery planning, as well as their execution') },
+                                    { text: it.L('Improve our automation (Chef, etc.)') },
+                                    { text: it.L('Keep our infrastructure up-to-date with current cutting edge developments') },
                                 ]}
                             />
 
                             <UlText
-                                text={it.L('Requirements:')}
+                                text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Expertise in cloud solutions') },
-                                    { text: it.L('Experience with, and enthusiasm for, Linux and open-source products such as Apache, mod proxy, mod_perl, Squid, Bind, DHCP, iptables and Postfix') },
-                                    { text: it.L('Familiarity with virtualization concepts (openvz / Xen / vmware)') },
-                                    { text: it.L('Knowledge of hardware and software firewalls, intrusion detection methods, security systems and DDoS protection') },
-                                    { text: it.L('Extensive experience with TCP/IP networking, VPNs and IPSEC') },
-                                    { text: it.L('Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP') },
+                                    { text: it.L('Expertise in cloud solutions and infrastructure virtualization, including AWS, Google Cloud Platform, and KVM') },
+                                    { text: it.L('Experience with Linux and open-source applications such as rsyslog, DHCP, iptables, Postfix, NGINX, and initialization systems such as systemd and SysVinit') },
+                                    { text: it.L('Extensive experience with TCP/IP networking, VPNs, and IPsec') },
+                                    { text: it.L('Knowledge of hardware and software firewalls, intrusion detection methods, security systems, and DDoS protection') },
+                                    { text: it.L('Thorough knowledge of bash scripting, and experience with the Perl scripting language') },
+                                    { text: it.L('Experience in Chef, Ansible, SaltStack, or similar configuration management tools') },
+                                    { text: it.L('Experience in site reliability engineering (SRE)') },
+                                    { text: it.L('Experience in managing round-the-clock operations for incident resolution, including alerts, rotations, and escalations') },
+                                    { text: it.L('Experience designing and working with high-availability web service architecture') },
+                                    { text: it.L('Experience in application containerization') },
                                 ]}
                             />
                         </div>
