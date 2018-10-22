@@ -14,10 +14,16 @@
     opacity: 0;
     z-index: -1;
 
-    &.show {
-        pointer-events: auto;
-        opacity: 1;
+    &-enter, &-exit {
+        transform: none;
+        pointer-events: none;
+        z-index: -1;
+        opacity: 0;
+    }
+    &-enter-done {
         transform: translateY(-15%) scale(1, 1);
+        opacity: 1;
+        pointer-events: auto;
         z-index: 1;
     }
     .settings-dialog-container {
@@ -94,7 +100,6 @@
         opacity: 0;
         transition: all 0.3s ease 0.15s;
         overflow: hidden;
-        overflow-y: scroll;
 
         &.show {
             pointer-events: auto;
@@ -254,6 +259,10 @@
                 background: $COLOR_BLUE;
                 color: $COLOR_BRANDBLUE_40;
                 border-color: $COLOR_BRANDBLUE_85;
+
+                svg {
+                    stroke: $COLOR_BRANDBLUE_40;
+                }
             }
             .language-row {
                 background: $COLOR_BLUE;
