@@ -1,10 +1,10 @@
 import PropTypes                    from 'prop-types';
 import React                        from 'react';
 import { BrowserRouter as Router }  from 'react-router-dom';
-import getBaseName                 from 'Utils/URL/base_name';
-import{ MobxProvider }             from 'Stores/connect';
-import ErrorBoundary                  from './Components/Elements/Errors/error_boundary.jsx';
+import getBaseName                  from 'Utils/URL/base_name';
+import { MobxProvider }             from 'Stores/connect';
 import LandingCompanyTradingAllowed from 'App/Middlewares/prevent_blacklisted_landing_companies';
+import ErrorBoundary                from './Components/Elements/Errors/error_boundary.jsx';
 import PortfolioDrawer              from './Components/Elements/PortfolioDrawer';
 import AppContents                  from './Containers/Layout/app_contents.jsx';
 import Footer                       from './Containers/Layout/footer.jsx';
@@ -32,7 +32,7 @@ const App = ({ root_store }) => (
                         <DevTools />
                         <PortfolioDrawer />
                     </AppContents>
-                    <DenialOfServiceModal />
+                    <DenialOfServiceModal show={!LandingCompanyTradingAllowed()} />
                 </ErrorBoundary>
 
                 <footer id='footer'>
