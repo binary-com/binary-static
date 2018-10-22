@@ -12,7 +12,6 @@ import ThemeWrapper                 from './Containers/Layout/theme_wrapper.jsx'
 import Routes                       from './Containers/Routes/routes.jsx';
 import DenialOfServiceModal         from './Components/Elements/DenialOfServiceModal';
 
-
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
         <MobxProvider store={root_store}>
@@ -20,18 +19,11 @@ const App = ({ root_store }) => (
                 <div id='header'>
                     <Header />
                 </div>
-                {
-                    LandingCompanyTradingAllowed() &&
-                    <AppContents>
-                        <Routes />
-                        <PortfolioDrawer />
-                    </AppContents>
-                }
-                {
-                    !LandingCompanyTradingAllowed() &&
-                    <DenialOfServiceModal />
-                }
-
+                <AppContents>
+                    <Routes />
+                    <PortfolioDrawer />
+                </AppContents>
+                <DenialOfServiceModal show={!LandingCompanyTradingAllowed()} />
                 <footer id='footer'>
                     <Footer />
                 </footer>

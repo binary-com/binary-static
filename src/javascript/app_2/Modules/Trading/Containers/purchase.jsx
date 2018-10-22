@@ -7,6 +7,7 @@ import UILoader          from 'App/Components/Elements/ui_loader.jsx';
 import Button            from 'App/Components/Form/button.jsx';
 import Fieldset          from 'App/Components/Form/fieldset.jsx';
 import { connect }       from 'Stores/connect';
+import landingCompanyAllowed from 'App/Middlewares/prevent_blacklisted_landing_companies';
 import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
 import MessageBox        from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
@@ -28,7 +29,7 @@ const Purchase = ({
 }) => (
     Object.keys(trade_types).map((type, idx) => {
         const info        = proposal_info[type] || {};
-        const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id;
+        const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !landingCompanyAllowed();
 
         const purchase_button = (
             <Button
