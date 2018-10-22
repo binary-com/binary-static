@@ -75,13 +75,14 @@ const JobDetails = () => (
                         <SideBar
                             className='information_technology'
                             sidebar_items={[
-                                { href: 'devops_engineer',           string: it.L('DevOps Engineer') },
-                                { href: 'system_administrator',      string: it.L('System Administrator') },
-                                { href: 'backend_developer',         string: it.L('Back-End Developer') },
-                                { href: 'frontend_developer',        string: it.L('Front-End Developer') },
-                                { href: 'senior_frontend_developer', string: it.L('Senior Front-End Developer') },
-                                { href: 'perl_developer',            string: it.L('Perl Developer')},
-                                { href: 'senior_perl_developer',     string: it.L('Senior Perl Developer') },
+                                { href: 'devops_engineer',                     string: it.L('DevOps Engineer') },
+                                { href: 'system_administrator',                string: it.L('System Administrator') },
+                                { href: 'backend_developer',                   string: it.L('Back-End Developer') },
+                                { href: 'frontend_developer',                  string: it.L('Front-End Developer') },
+                                { href: 'senior_frontend_developer',           string: it.L('Senior Front-End Developer') },
+                                { href: 'perl_developer',                      string: it.L('Perl Developer')},
+                                { href: 'senior_perl_developer',               string: it.L('Senior Perl Developer') },
+                                { href: 'cryptocurrency_blockchain_developer', string: it.L('Cryptocurrency/Blockchain Developer')},
                             ]}
                         />
 
@@ -339,6 +340,41 @@ const JobDetails = () => (
                                     { text: it.L('The ability to write high-quality, self-documenting code, using test-driven development techniques') },
                                     { text: it.L('A preference and passion for Linux and open-source platforms') },
                                 ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='cryptocurrency_blockchain_developer'>
+                            <h1>{it.L('Cryptocurrency/Blockchain Developer')}</h1>
+
+                            <p>{it.L('Binary.com’s IT team is responsible for the design, development, and operation of our system infrastructure and high-traffic networks. As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.')}</p>
+
+                            <UlText
+                              text={it.L('You will:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Design and develop applications and platforms based on blockchain technology') },
+                                  { text: it.L('Work closely with both technical and non-technical teams to develop and integrate blockchain solutions for our business') },
+                                  { text: it.L('Provide technical leadership on cryptocurrencies and blockchain technology') },
+                                  { text: it.L('Research and evaluate blockchain technologies and solutions to identify use cases and implementation') },
+                                  { text: it.L('Write robust, high-quality, and production-ready code for our websites and applications') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, and a willingness to become highly proficient with Perl') },
+                                  { text: it.L('Experience with Solidity and the development of Dapps') },
+                                  { text: it.L('Excellent understanding of Bitcoin or other cryptocurrencies') },
+                                  { text: it.L('Understanding of cryptography, including asymmetric, symmetric, hash functions, and encryption/signatures') },
+                                  { text: it.L('Familiarity with concepts such as blockchain confirmations, multisig, and HD wallets') },
+                                  { text: it.L('Knowledge of coloured coins and Ethereum tokens, including ERC20/23/223') },
+                                  { text: it.L('Experience with Bitcoin or Geth RPC APIs is a plus') },
+                                  { text: it.L('Knowledge of hashing algorithms, including SHA and scrypt') },
+                                  { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques') },
+                                  { text: it.L('Passion for Linux and other open-source platforms') },
+                              ]}
                             />
                         </div>
 
