@@ -1,8 +1,7 @@
 import React from 'react';
 
 const InterviewPopup = () => (
-    // <div id='interview_popup_container' className='invisible'>
-    <div id='interview_popup_container'>
+    <div id='interview_popup_container' className='invisible'>
         <div className='popup'>
             <div className='popup__head'>
                 <img className='popup__present_img' src={it.url_for('images/interview_popup/present.svg')} alt='$30 present' />
@@ -17,10 +16,10 @@ const InterviewPopup = () => (
                 </p>
                 <div className='popup__options'>
                     <div className='popup__secondary_options'>
-                        <a href='#' id='interview_no_thanks'>No thanks</a>
-                        <a href='#' id='interview_ask_later'>Ask me later</a>
+                        <a href={'javascript:void(0);'} id='interview_no_thanks'>No thanks</a>
+                        <a href={'javascript:void(0);'} id='interview_ask_later'>Ask me later</a>
                     </div>
-                    <a href='#' id='interview_interested' className='button' target='_blank' rel='noopener noreferrer'>
+                    <a href={'javascript:void(0);'} id='interview_interested' className='button' target='_blank' rel='noopener noreferrer'>
                         <span>I’m interested</span>
                     </a>
                 </div>
