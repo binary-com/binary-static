@@ -28,12 +28,15 @@ const KeepSafe = () => (
                     <p>{it.L('Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:')}</p>
                 </div>
                 <div className='gr-row'>
-                    <Box icon='desktop_app'   text={it.L('Download the [_1]desktop app[_2] for the most secure way to access the [_3] website.', `<a href="${it.url_for('platforms')}">`, '</a>', it.website_name)} className='desktop-app invisible' />
-                    <Box icon='two_factor'    text={it.L('Enable [_1]two-factor authentication[_2] on your account.', `<a href="${it.url_for('user/security/two_factor_authentication')}">`, '</a>')} />
-                    <Box icon='cashier_lock'  text={it.L('Set a [_1]cashier lock password[_2] to prevent unauthorised access to your cashier.', `<a href="${it.url_for('user/security/cashier_passwordws')}">`, '</a>')} />
-                    <Box icon='cloudfare'     text={it.L('Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at [_1].', `<a href="${it.url_for('user/security/cloudflare_dns')}">https://1.1.1.1/</a>`)} />
-                    <Box icon='login_history' text={it.L('Monitor recent logins to your account using the [_1]login history[_2] facility.', `<a href="${it.url_for('user/security/iphistoryws')}">`, '</a>')} />
-                    <Box icon='login_history' text={it.L('Set a [_1]strong password[_2].', `<a href="${it.url_for('user/security/change_passwordws')}">`, '</a>')} />
+                    <Box icon='desktop_app'      text={it.L('Download the [_1]desktop app[_2] for the most secure way to access the [_3] website.', `<a href="${it.url_for('platforms')}">`, '</a>', it.website_name)} className='desktop-app invisible' />
+                    <Box icon='two_factor'       text={it.L('Enable [_1]two-factor authentication[_2] on your account.', `<a href="${it.url_for('user/security/two_factor_authentication')}">`, '</a>')} />
+                    <Box icon='cashier_lock'     text={it.L('Set a [_1]cashier lock password[_2] to prevent unauthorised access to your cashier.', `<a href="${it.url_for('user/security/cashier_passwordws')}">`, '</a>')} />
+                    <Box icon='cloudfare'        text={it.L('Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at [_1].', `<a href="${it.url_for('user/security/cloudflare_dns')}">https://1.1.1.1/</a>`)} />
+                    <Box icon='login_history'    text={it.L('Monitor recent logins to your account using the [_1]login history[_2] facility.', `<a href="${it.url_for('user/security/iphistoryws')}">`, '</a>')} />
+                    <Box icon='account_password' text={it.L('Use different passwords for your email and [_1] account and set a [_2]strong password[_3].', it.website_name, `<a href="${it.url_for('user/security/change_passwordws')}">`, '</a>')} />
+                    <Box icon='browser'          text={it.L('Keep your web browser [_1]up-to-date[_2].', '<a href="https://www.whatbrowser.org/" target="_blank">', '</a>')} />
+                    <Box icon='no_share'         text={it.L('Don’t share your [_1] account or payment methods with any other person.', it.website_name)} />
+                    <Box icon='antivirus'        text={it.L('Install antivirus software (such as Avast Free Antivirus for [_1]Windows[_2] and [_3]Mac[_4]) on your computer.', '<a href="https://www.avast.com/en-gb/free-antivirus-download" target="_blank">', '</a>', '<a href="https://www.avast.com/en-gb/free-mac-security" target="_blank">', '</a>')} />
                 </div>
             </div>
 
