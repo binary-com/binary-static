@@ -294,7 +294,7 @@ const Careers = () => {
             </div>
             <div className='container'>
                 <div className='center-text'>
-                    <p>{it.L('Please read this [_1]privacy policy[_2] before submitting your application.', `<a href="${it.url_for('terms-and-conditions?anchor=job-applicant-policy#privacy')}">`, '</a>')}</p>
+                    <p>{it.L('Please read this [_1]privacy policy[_2] before submitting your application.', `<a href="${it.url_for('careers/privacy-policy')}">`, '</a>')}</p>
                 </div>
             </div>
             <div className='footer-email secondary-bg-color'>
