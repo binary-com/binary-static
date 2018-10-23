@@ -68,6 +68,7 @@ const JobDetails = () => (
                                 { className: 'human_resources',        string: it.L('Human Resources') },
                                 { className: 'administrator',          string: it.L('Administrator') },
                                 { className: 'internal_audit',         string: it.L('Internal Audit') },
+                                { classname: 'human_resources',        string: it.L('Human Resource') }
                             ]}
                         />
                     </div>
@@ -114,6 +115,14 @@ const JobDetails = () => (
                                 { href: 'payments_and_compliance_analyst', string: 'Payments and Compliance Analyst' },
                                 { href: 'risk_management_executive',       string: 'Risk Management Executive' },
                             ]}
+                        />
+
+                        <SideBar
+                          className='human_resources'
+                          sidebar_items={[
+                              { href: 'hr_operations_executive',            string: 'HR Operations Executive' },
+                              { href: 'talent_acquisition_executive', string: 'Talent Acquisition Executive' },
+                          ]}
                         />
                     </div>
                 </div>
@@ -758,7 +767,7 @@ const JobDetails = () => (
                         </div>
                     </div>
 
-                    <div className='accounting_payments'>
+                    <div className='accounting'>
                         <div className='invisible' id='accounts_and_payments_executive'>
                             <h1>{it.L('Accounts and Payments Executive')}</h1>
 
@@ -795,7 +804,7 @@ const JobDetails = () => (
                         </div>
                     </div>
 
-                    <div className='compliance_and_risk_management'>
+                    <div className='compliance'>
                         <div className='invisible' id='compliance_executive'>
                             <h1>{it.L('Compliance Executive')}</h1>
 
@@ -939,6 +948,74 @@ const JobDetails = () => (
                         </div>
                     </div>
 
+                    <div className='human_resources'>
+                        <div className='invisible' id='hr_operations_executive'>
+                            <h1>{it.L('HR Operations Executive')}</h1>
+
+                            <p>{it.L('The Human Resource Operations team manages essential human resource functions such as managing expats, processing work permits, onboarding, managing payroll, compiling compensation studies, and overseeing performance appraisals.')}</p>
+
+                            <p>{it.L('They also manage our suppliers and contractors, as well as general administrative duties and procedures. As our Human Resource Operations Executive, you will be counted on to lead, execute, and support a wide range of HR-related and administrative tasks to ensure the smooth operations of our offices worldwide.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Support our global recruitment and talent management needs, including onboarding, processing work permits, and expat management.') },
+                                  { text: it.L('Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees.') },
+                                  { text: it.L('Administer key human resource activities such as performance appraisals.') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('An advanced/higher/graduate diploma or bachelor’s degree.') },
+                                  { text: it.L('Extensive experience in Microsoft Office applications, as well as popular HR management and payroll systems.') },
+                                  { text: it.L('Well-honed organisational, administrative, and accounting skills.') },
+                                  { text: it.L('Excellent oral and written communication skills in English and Bahasa Malaysia.') },
+                                  { text: it.L('Relevant work experience in a related field, such as managing and onboarding expats, processing work permits, and dealing with Malaysian governmental authorities will be a plus.') },
+                              ]}
+                            />
+
+                        </div>
+
+                        <div className='invisible' id='talent_acquisition_executive'>
+                            <h1>{it.L('Talent Acquisition Executive')}</h1>
+
+                            <p>{it.L('The Recruitment team plays a challenging role in the company by sourcing and selecting quality applicants that will contribute to the company growth.')}</p>
+
+                            <UlText
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Support our global recruitment and talent management needs') },
+                                  { text: it.L('Schedule and coordinate interviews with candidates') },
+                                  { text: it.L('Develop and update job descriptions and specifications') },
+                                  { text: it.L('Assist and participate in recruitment activities including career fairs and campus recruitment') },
+                                  { text: it.L('Build our applicant database by researching and contacting various sources (eg: universities and job portals)') },
+                                  { text: it.L('Work alongside the HR Operations team in coordinating with the government linked bodies') },
+                                  { text: it.L('Assisting to prepare monthly/yearly recruitment analytics and hiring status report') },
+                                  { text: it.L('Collaborate with the marketing and design team to create recruitment branding materials') },
+                                  { text: it.L('Assist in organizing online technical tests') },
+                                  { text: it.L('Provide additional assistance to team when needed') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('A university degree, or other relevant professional qualifications') },
+                                  { text: it.L('Work experience as a Recruiter in the IT industry or similar role is an advantage') },
+                                  { text: it.L('Excellent communication (both oral and written) and interpersonal skills') },
+                                  { text: it.L('Strong decision-making skills') },
+                                  { text: it.L('Ability to quickly learn new systems and procedures') },
+                                  { text: it.L('Ability to work independently') },
+                              ]}
+                            />
+                        </div>
+                    </div>
+
                     <div className='customer_support'>
                         <div className='invisible' id='customer_support_executive'>
                             <h1>{it.L('Customer Support Executive')}</h1>
@@ -971,53 +1048,6 @@ const JobDetails = () => (
                                     { text: it.L('A university degree in marketing or computer science is a plus') },
                                 ]}
                             />
-                        </div>
-                    </div>
-
-                    <div className='human_resources'>
-                        <div className='invisible' id='human_resource_executive'>
-                            <h1>{it.L('Human Resource Executive')}</h1>
-
-                            <p>{it.L('In order to support its continued growth, the Human Resources Group at [_1] is seeking to place a highly competent administrator in a senior recruitment role. Please note that this is not a position suitable for an HR generalist, but should be of keen interest to a high level administrator with extensive experience in the global recruitment of managers and single technical contributors. A background in financial services and experience in the recruitment of senior professionals in IT and Quantitative Analytics would be ideal.', it.website_name)}</p>
-
-                            <UlText
-                                text={it.L('Duties and Responsibilities:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('In this newly created role, to be based on our offices in Cyberjaya, Malaysia, you will be responsible for:') },
-                                    { text: it.L('Supporting the Group\'s global recruiting and talent management needs') },
-                                    { text: it.L('Advising senior managers regarding salary negotiations and job offers') },
-                                    { text: it.L('Administering the company\'s semi-annual performance appraisal process') },
-                                    { text: it.L('A broad array of HR-related administrative tasks') },
-                                ]}
-                            />
-
-                            <p>{it.L('Qualified applicants should have global experience in recruitment administration, excellent administrative skills, and the ability to work in a fast-paced entrepreneurial environment. We are seeking a true professional capable of making an impact by supporting and advancing HR best practices throughout the company\'s global operations.')}</p>
-                        </div>
-                    </div>
-
-                    <div className='administrator'>
-                        <div className='invisible' id='administrative_executive'>
-                            <h1>{it.L('Administrative Executive')}</h1>
-
-                            <p>{it.L('[_1] is seeking a junior to mid-career professional with exceptional administrative and organization skills to join its General Affairs Team.', it.website_name)}</p>
-
-                            <UlText text={it.L('Duties and Responsibilities:')} />
-                            <p>{it.L('As a General Affairs Executive, you will provide administrative support to several departments in areas related to vendor management, event planning, accounting, and human resources administration to name a few.')}</p>
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('An Advanced/Higher/Graduate Diploma or a Bachelor\'s Degree') },
-                                    { text: it.L('Relevant work experience in a related field (financial services preferred)') },
-                                    { text: it.L('Effective PC skills with extensive experience in MS Office applications') },
-                                    { text: it.L('Well-developed organizational, administrative, and/or accounting skills') },
-                                    { text: it.L('Excellent written and verbal communication skills in both English and Bahasa Malaysia') },
-                                ]}
-                            />
-
-                            <p>{it.L('Fresh graduates who meet our basic requirements and are passionate about pursuing a professional career in administrative services are welcome to apply.')}</p>
                         </div>
                     </div>
 

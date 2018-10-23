@@ -97,16 +97,16 @@ const JobDescriptions = () => (
             />
 
             <Row
-                id='accounting_payments'
-                title={it.L('Accounts/Payments')}
+                id='accounting'
+                title={it.L('Accounts/ Payments')}
                 sections={[
                     { header: it.L('Accounts And Payments Executive'), subsection: 'accounts_and_payments_executive', text: it.L('Responsible for the processing of client payments, assisting with the management accounts of the companies within our group, and more.') },
                 ]}
             />
 
             <Row
-                id='compliance_and_risk_management'
-                title={it.L('Compliance and Risk Management\n')}
+                id='compliance'
+                title={it.L('Compliance and Risk Management')}
                 sections={[
                     { header: it.L('Compliance Executive'), subsection: 'compliance_executive', text: it.L('Ensuring that the Binary Group of companies are in full compliance with the legal and regulatory regimes to which they are subject.') },
                     { header: it.L('Anti-Fraud Officer'),   subsection: 'anti_fraud_officer',   text: it.L('Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions.') },
@@ -123,26 +123,18 @@ const JobDescriptions = () => (
             />
 
             <Row
+              id='human_resources'
+              title={it.L('Human Resource')}
+              sections={[
+                  { header: it.L('HR Operations Executive'), subsection: 'hr_operations_executive', text: it.L('Responsible for supporting the Group\'s global recruiting and talent management needs and a broad array of HR-related administrative tasks.') },
+              ]}
+            />
+
+            <Row
                 id='customer_support'
                 title={it.L('Customer Support')}
                 sections={[
                     { header: it.L('Customer Support Executive'), subsection: 'customer_support_executive', text: it.L('As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues.') },
-                ]}
-            />
-
-            <Row
-                id='human_resources'
-                title={it.L('Human Resources')}
-                sections={[
-                    { header: it.L('Human Resource Executive'), subsection: 'human_resource_executive', text: it.L('Responsible for supporting the Group\'s global recruiting and talent management needs and a broad array of HR-related administrative tasks.') },
-                ]}
-            />
-
-            <Row
-                id='administrator'
-                title={it.L('Administrator')}
-                sections={[
-                    { header: it.L('Administrative Executive'), subsection: 'administrative_executive', text: it.L('Provide administrative support in areas related to vendor management, event planning, accounting, and human resources administration.') },
                 ]}
             />
 
