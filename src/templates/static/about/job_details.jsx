@@ -62,11 +62,9 @@ const JobDetails = () => (
                                 { className: 'quality_assurance',      string: it.L('Quality Assurance') },
                                 { className: 'quantitative_analysis',  string: it.L('Quantitative Analysis') },
                                 { className: 'marketing',              string: it.L('Marketing') },
-                                { className: 'accounting',             string: it.L('Accounting') },
-                                { className: 'compliance',             string: it.L('Compliance') },
+                                { className: 'accounting',             string: it.L('Accounts/ Payments') },
+                                { className: 'compliance',             string: it.L('Compliance and Risk Management') },
                                 { className: 'customer_support',       string: it.L('Customer Support') },
-                                { className: 'human_resources',        string: it.L('Human Resources') },
-                                { className: 'administrator',          string: it.L('Administrator') },
                                 { className: 'internal_audit',         string: it.L('Internal Audit') },
                                 { classname: 'human_resources',        string: it.L('Human Resource') }
                             ]}
@@ -527,7 +525,7 @@ const JobDetails = () => (
                             />
 
                             <UlText
-                              text={it.L('Requirements:')}
+                              text={it.L('Preferences:')}
                               className='bullet'
                               items={[
                                   { text: it.L('An advanced university degree in physics, financial engineering, or mathematics is preferred') },
