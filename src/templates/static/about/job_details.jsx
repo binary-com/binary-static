@@ -759,22 +759,36 @@ const JobDetails = () => (
 
                     <div className='accounting'>
                         <div className='invisible' id='accounts_and_payments_executive'>
-                            <h1>{it.L('Accounts And Payments Executive')}</h1>
+                            <h1>{it.L('Accounts and Payments Executive')}</h1>
 
-                            <UlText text={it.L('Duties and Responsibilities:')} />
-                            <p>{it.L('As an Accounts And Payments Executive, you will be responsible for the processing of client payments, handling and resolving client payment queries, assisting with the management accounts of the companies within our group, performing reconciliations, preparing reports, and constantly liaising with all other departments within the company in relation to client payments and accounts. You will work within a multi-national team, using the proprietary accounting and backoffice systems provided by the company.')}</p>
+                            <p>{it.L('Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day.')}</p>
+
+                            <p>{it.L('They also generate monthly management accounts, annual audited accounts, and reconcile all transactions. As our Accounts &amp; Payments Executive, you will be able to contribute to all these key areas and increase the efficiency of our financial operations.')}</p>
 
                             <UlText
-                                text={it.L('Requirements:')}
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Process client payments, as well as handle and resolve client payment queries.') },
+                                  { text: it.L('Track and manage transactions and accounts using proprietary and non-proprietary software and systems.') },
+                                  { text: it.L('Process transactions for clients who make deposits and withdrawals using a wide range of third-party payment services, including bank wire, credit card, and e-currency.') },
+                                  { text: it.L('Perform reconciliations of all transactions that take place through third-party payment services and banks.') },
+                                  { text: it.L('Assist in management accounting for all companies within the Binary Ltd. group.') },
+                                  { text: it.L('Work closely with the affiliate marketing team to process affiliate commission payments on a monthly basis.') },
+                                  { text: it.L('Constantly liaise with all internal departments such as Customer Support and Marketing on account and payment matters.') },
+                              ]}
+                            />
+
+                            <UlText
+                                text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Life-long career interest in the Accounting field') },
-                                    { text: it.L('A degree major in Accounting or other relevant professional qualifications') },
-                                    { text: it.L('At least 1 year working experience is required for this position') },
-                                    { text: it.L('Excellent English language (written and oral) communication skills') },
-                                    { text: it.L('Excellent IT/office skills') },
-                                    { text: it.L('Ability to work in a multicultural and international environment') },
-                                    { text: it.L('Motivated, accurate, organized and a self-starter') },
+                                    { text: it.L('A lifelong interest in accounting, and an aptitude for numbers.') },
+                                    { text: it.L('A university degree with a major in accounting, or other relevant professional qualifications.') },
+                                    { text: it.L('At least one year of work experience in a similar role.') },
+                                    { text: it.L('Proficiency with popular office applications such as Microsoft Excel, accounting software, and databases.') },
+                                    { text: it.L('In-depth knowledge of accounting principles, best practices, standards, and regulations.') },
+                                    { text: it.L('Ability to quickly learn new (proprietary) systems and procedures.') },
                                 ]}
                             />
                         </div>
