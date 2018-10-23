@@ -7,6 +7,7 @@ const UsbPage = () => (
         css_files={[
             'https://style.binary.com/binary.css',
             'https://style.binary.com/binary.more.css',
+            'https://academy.binary.com/css/grid.css',
             it.url_for('css/usbstyle.css'),
         ]}
         js_files={[
