@@ -129,6 +129,20 @@
     .act {
         flex: 0.8 1 35px;
     }
+    #account_statistics {
+        margin: 30px 0;
+        border: 1px solid $COLOR_LIGHT_GRAY;
+
+        div {
+            align-self: center;
+            padding: 20px;
+        }
+        p {
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.5;
+        }
+    }
 }
 
 #profit-table-container, #statement-container {

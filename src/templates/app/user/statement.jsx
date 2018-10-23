@@ -8,6 +8,23 @@ const Statement = () => (
                 <h1>{it.L('Statement')}</h1>
                 <p className='notice-msg center-text invisible' id='error-msg' />
             </div>
+            <div id='account_statistics' className='gr-row invisible'>
+                <div className='gr-3'>
+                    <p>{it.L('Account statistics')}</p>
+                </div>
+                <div className='gr-3'>
+                    <span className='hint'>{it.L('Total deposits')}</span>
+                    <p id='total_deposits' />
+                </div>
+                <div className='gr-3'>
+                    <span className='hint'>{it.L('Total withdrawals')}</span>
+                    <p id='total_withdrawals' />
+                </div>
+                <div className='gr-3 fill-bg-color'>
+                    <span className='hint'>{it.L('Net deposits')}</span>
+                    <p id='net_deposits' />
+                </div>
+            </div>
             <div className='gr-row gr-padding-10 invisible' id='util_row'>
                 <div className='gr-12 gr-12-m'>
                     <div className='gr-row gr-gutter-right gr-row-align-right'>
