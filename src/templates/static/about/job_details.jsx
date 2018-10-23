@@ -634,26 +634,18 @@ const JobDetails = () => (
                         <div className='invisible' id='graphic_designers'>
                             <h1>{it.L('Graphic Designers')}</h1>
 
-                            <p>{it.L('[_1] is looking to recruit highly skilled, experienced designers who are passionate about developing attractive visuals for both online and offline applications.', it.website_name)}</p>
-                            <p>{it.L('Create the graphics required to support our global marketing and advertising campaigns. The team\'s creative efforts span a number of channels, including online marketing, affiliate networks, print advertising, tradeshows, special events, and promotional projects.')}</p>
-                            <p>{it.L('Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years.')}</p>
+                            <p>{it.L('[_1] UI/UX team explores the many ways that we can design better product experiences for our users. As our Graphic Designer, you will develop high-impact graphics and visual elements such as images and icons for our websites and applications. You will play an essential role in creating user interface assets that bring our products and users closer together.', it.website_name)}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Work directly with members of our marketing and IT teams to produce graphics for the company website, blog, social media outlets, and marketing materials') },
-                                    { text: it.L('Create content to support our international marketing campaigns in a variety of different formats and languages') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Strong, passionate interest in Graphic Design, Marketing, and Advertising') },
-                                    { text: it.L('Ability to communicate fluently in the English language, in both oral and written forms') },
-                                    { text: it.L('University degree, preferably in Graphic Design or a related discipline') },
+                                    { text: it.L('Design logos, icons, and other visuals for our websites and applications.') },
+                                    { text: it.L('Lay out mockups and wireframes for app screens and web pages.') },
+                                    { text: it.L('Come up with cohesive design solutions that can achieve our business/product goals and satisfy user needs.') },
+                                    { text: it.L('Communicate with a wide range of technical and non-technical teams to understand the unique selling points of our products, concepts, user flows, and usage scenarios.') },
+                                    { text: it.L('Incorporate our brand identity into new products, pages, and features.') },
+                                    { text: it.L('Keep up with the latest trends and techniques in design, UI, and UX.') },
                                 ]}
                             />
 
@@ -661,10 +653,13 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('UX / UI experience') },
-                                    { text: it.L('Web design / development experience') },
-                                    { text: it.L('Prior knowledge and experience with the financial industry') },
-                                    { text: it.L('Ability to speak multiple languages') },
+                                    { text: it.L('Proven graphic design experience with a strong portfolio of work in branding, advertising, and marketing.') },
+                                    { text: it.L('Ability to communicate and present your ideas and work in a clear, descriptive manner.') },
+                                    { text: it.L('Experience in interpreting complex concepts and processes to create design solutions that help our users achieve their goals.') },
+                                    { text: it.L('Strong understanding of colours, typography, identity design, and branding.') },
+                                    { text: it.L('Creative flair and versatility in developing concepts, graphics, and layouts for a wide range of media.') },
+                                    { text: it.L('Proficiency in Photoshop, Illustrator, InDesign, Sketch, and other design and wireframing software.') },
+                                    { text: it.L('Bachelor’s degree in graphic design, visual communication, multimedia, or equivalent.') },
                                 ]}
                             />
                         </div>
