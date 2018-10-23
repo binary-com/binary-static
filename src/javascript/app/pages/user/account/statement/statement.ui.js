@@ -45,8 +45,8 @@ const StatementUI = (() => {
     const createStatementRow = (transaction) => {
         const statement_data = Statement.getStatementData(transaction, Client.get('currency'));
         all_data.push($.extend({}, statement_data, {
-            action: localize(statement_data.action),
-            desc  : localize(statement_data.desc),
+            action: statement_data.action,
+            desc  : statement_data.desc,
         }));
         const credit_debit_type = (parseFloat(transaction.amount) >= 0) ? 'profit' : 'loss';
 
@@ -54,7 +54,7 @@ const StatementUI = (() => {
             statement_data.date,
             `<span ${showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id])}>${statement_data.ref}</span>`,
             statement_data.payout,
-            localize(statement_data.action),
+            statement_data.action,
             '',
             statement_data.amount,
             statement_data.balance,
@@ -63,7 +63,7 @@ const StatementUI = (() => {
 
         $statement_row.children('.credit').addClass(credit_debit_type);
         $statement_row.children('.date').addClass('pre');
-        $statement_row.children('.desc').html(`${localize(statement_data.desc)}<br>`);
+        $statement_row.children('.desc').html(`${statement_data.desc}<br>`);
 
         // create view button and append
         if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {

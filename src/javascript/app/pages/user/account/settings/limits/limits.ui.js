@@ -1,4 +1,5 @@
 const Client           = require('../../../../../base/client');
+const getMarkets       = require('../../../../../common/active_symbols').getMarkets;
 const Table            = require('../../../../../common/attach_dom/table');
 const formatMoney      = require('../../../../../common/currency').formatMoney;
 const elementInnerHtml = require('../../../../../../_common/common_functions').elementInnerHtml;
@@ -22,14 +23,14 @@ const LimitsUI = (() => {
         }
     };
 
-    const appendRowTable = (name, turnover_limit, padding, font_weight) => {
+    const appendRowTable = (localized_name, turnover_limit, padding, font_weight) => {
         const $new_row = $('<tr/>', { class: 'flex-tr' })
-            .append($('<td/>', { class: 'flex-tr-child', style: `padding-left: ${padding}; font-weight: ${font_weight};`, text: localize(name) }))
+            .append($('<td/>', { class: 'flex-tr-child', style: `padding-left: ${padding}; font-weight: ${font_weight};`, text: localized_name }))
             .append($('<td/>', { html: turnover_limit }));
         $client_limits.append($new_row);
     };
 
-    const fillLimitsTable = (limits) => {
+    const fillLimitsTable = (limits, response_active_symbols) => {
         const currency = Client.get('currency');
 
         if (currency) {
@@ -47,16 +48,13 @@ const LimitsUI = (() => {
         setText(payout, 'payout' in limits ? formatMoney(currency, limits.payout, 1) : '');
 
         if (limits.market_specific) {
-            Object.keys(limits.market_specific).forEach((key) => {
-                const object = limits.market_specific[key];
-                if (object.length && object.length > 0) {
-                    appendRowTable(localize(key.charAt(0).toUpperCase() + key.slice(1)), '', 'auto', 'bold');
-                    Object.keys(object).forEach((c) => {
-                        appendRowTable(object[c].name, object[c].turnover_limit !== 'null' ? formatMoney(currency, object[c].turnover_limit, 1) : 0, '25px', 'normal');
-                    });
-                } else {
-                    appendRowTable(object.name, object.turnover_limit !== 'null' ? formatMoney(currency, object.turnover_limit, 1) : 0, 'auto', 'bold');
-                }
+            const markets = getMarkets(response_active_symbols.active_symbols);
+            Object.keys(limits.market_specific).forEach((market) => {
+                appendRowTable(markets[market].name, '', 'auto', 'bold');
+                limits.market_specific[market].forEach((submarket) => {
+                    // submarket name could be (Commodities|Minor Pairs|Major Pairs|Smart FX|Indices|Volatility Indices)
+                    appendRowTable(localize(submarket.name /* localize-ignore */), submarket.turnover_limit !== 'null' ? formatMoney(currency, submarket.turnover_limit, 1) : 0, '25px', 'normal');
+                });
             });
         } else {
             const tr = findParent(getElementById('market_specific'), 'tr');

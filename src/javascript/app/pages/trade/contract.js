@@ -130,7 +130,8 @@ const Contract = (() => {
 
                 const type = current_obj.contract_type;
                 if (!getPropertyValue(contract_type[contract_category], type)) {
-                    contract_type[contract_category][type] = localize(current_obj.contract_display);
+                    contract_type[contract_category][type] =
+                        localize(current_obj.contract_display /* localize-ignore */); // handled in static_strings_app.js
                 }
             }
         });
@@ -158,7 +159,8 @@ const Contract = (() => {
                         trade_contract_forms.higherlower = localize('Higher/Lower');
                     }
                 } else {
-                    trade_contract_forms[contract_category] = localize(current_obj.contract_category_display);
+                    trade_contract_forms[contract_category] =
+                        localize(current_obj.contract_category_display /* localize-ignore */); // handled in static_strings_app.js: Asian
                     if (contract_category === 'digits') {
                         trade_contract_forms.matchdiff = localize('Matches/Differs');
                         trade_contract_forms.evenodd   = localize('Even/Odd');
