@@ -97,9 +97,7 @@ const JobDetails = () => (
                         <SideBar
                             className='marketing'
                             sidebar_items={[
-                                { href: 'marketing_project_coordinator', string: it.L('Marketing Project Coordinator') },
-                                { href: 'social_media_executive',        string: it.L('Social Media Executive') },
-                                { href: 'affiliate_manager',             string: it.L('Affiliate Manager') },
+                                { href: 'affiliate_country_manager',             string: it.L('Affiliate/Country Manager') },
                                 { href: 'graphic_designers',             string: it.L('Graphic Designers') },
                                 { href: 'marketing_executives',          string: it.L('Marketing Executives') },
                                 { href: 'copywriter',                    string: it.L('Copywriter') },
@@ -533,32 +531,21 @@ const JobDetails = () => (
                     </div>
 
                     <div className='marketing'>
-                        <div className='invisible' id='marketing_project_coordinator'>
-                            <h1>{it.L('Marketing Project Coordinator')}</h1>
+                        <div className='invisible' id='affiliate_country_manager'>
+                            <h1>{it.L('Affiliate/Country Manager')}</h1>
 
-                            <p>{it.L('[_1] seeks a Project Coordinator to help drive the production of promotional content and rollout of marketing campaigns, designed to engage new prospects and current customers based throughout the globe.', it.website_name)}</p>
-                            <p>{it.L('Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years.')}</p>
-
-                            <UlText
-                                text={it.L('Duties and Responsibilities:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Work with senior staff to coordinate project delivery; develop and update schedules; maintain task lists; and hold team members accountable for assigned deliverables') },
-                                    { text: it.L('Prepare project requirements, as needed to clarify expectations and deliverables') },
-                                    { text: it.L('Document department processes, to enhance the marketing team\'s ability to execute repeated tasks efficiently and effectively') },
-                                    { text: it.L('Assist marketing team members with additional tasks and initiatives') },
-                                ]}
-                            />
+                            <p>{it.L('The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in Russian-speaking countries. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide.')}</p>
+                            <p>{it.L('You are also expected to help us promote our cutting-edge trading platform that has been one of the most recognised in the binary options trading industry for over 18 years.')}</p>
 
                             <UlText
-                                text={it.L('Requirements:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Exceptional organizational skills; detail orientation; strong work ethic; and efficient multi-tasking capabilities') },
-                                    { text: it.L('Effective interpersonal skills, with the ability to mediate situations, resolve disputes, and implement effective solutions') },
-                                    { text: it.L('Strong, passionate interest in Marketing and Advertising') },
-                                    { text: it.L('The ability to communicate fluently in English, in both oral and written form') },
-                                    { text: it.L('A university degree in Marketing, Communication, Business Administration, or related discipline') },
+                                    { text: it.L('Recruit, train, and nurture affiliates and IBs in Russian-speaking countries, leveraging your direct knowledge and experience of the local market') },
+                                    { text: it.L('Drive rapid growth and business development to support the company&#39;s sales and marketing objectives') },
+                                    { text: it.L('Coordinate business development activities and generate high-quality partnership leads') },
+                                    { text: it.L('Adapt affiliate marketing tactics and promotional materials as needed to localise all content for maximum effectiveness') },
+                                    { text: it.L('Utilise a variety of tactics – both online and offline – to grow and support the company’s network of partners in your designated market') },
                                 ]}
                             />
 
@@ -566,91 +553,12 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Previous knowledge and experience in Marketing or Advertising') },
-                                    { text: it.L('Related experience in the financial services industry') },
-                                    { text: it.L('The ability to speak multiple languages') },
-                                ]}
-                            />
-                        </div>
-
-                        <div className='invisible' id='social_media_executive'>
-                            <h1>{it.L('Social Media Executive')}</h1>
-
-                            <p>{it.L('[_1] seeks a Social Media Executive to enhance and proactively manage the company\'s social-media efforts. This role requires effective utilisation of a variety of social media channels to attract and nurture prospects, clients, partners, and recruits based throughout the world.', it.website_name)}</p>
-                            <p>{it.L('Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years.')}</p>
-
-                            <UlText
-                                text={it.L('Duties and Responsibilities:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Develop and maintain a consistent, engaging brand voice throughout all social-media channels') },
-                                    { text: it.L('Leverage social-media tools and channels to identify, engage, and convert potential new customers and partners') },
-                                    { text: it.L('Strengthen relationships with current clients and foster greater loyalty through a variety of social-media outlets') },
-                                    { text: it.L('Develop content as necessary to promote the company through social media') },
-                                    { text: it.L('Set up and manage social-media advertising campaigns, effectively micro-targeting potential clients and partners') },
-                                    { text: it.L('Brainstorm new ways of using social media to connect meaningfully with prospects, clients, and partners') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('A strong and passionate interest in Social Media, Marketing, and Advertising') },
-                                    { text: it.L('The ability to communicate effectively in English, in both oral and written form') },
-                                    { text: it.L('A university degree in Marketing, Communication, Business Administration, or related discipline') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Preferences:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Significant experience in Social Media, Marketing, and / or Advertising') },
-                                    { text: it.L('Knowledge and experience with the financial services industry') },
-                                    { text: it.L('The ability to speak multiple languages') },
-                                ]}
-                            />
-                        </div>
-
-                        <div className='invisible' id='affiliate_manager'>
-                            <h1>{it.L('Affiliate Manager')}</h1>
-
-                            <p>{it.L('[_1] now seeks Affiliate Managers to drive rapid growth and business development in key areas of the world. Successful recruits for this telecommuting role will actively increase [_1]\'s market presence, expanding its network of affiliate partners from particular countries, geographic regions, and / or languages as needed.', it.website_name)}</p>
-                            <p>{it.L('We are currently accepting applications from skilled, ambitious affiliate marketers based virtually all over the globe. Each applicant\'s skills and experience will be evaluated against the company\'s potential for growth in a particular segment, to determine the best-fit business cases for engagement.')}</p>
-                            <p>{it.L('Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide.')}</p>
-                            <p>{it.L('Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years.')}</p>
-
-                            <UlText
-                                text={it.L('Duties and Responsibilities:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Responsible for recruiting, training, and nurturing affiliates from particular countries, geographic regions, and / or languages, leveraging your direct knowledge and experience of the local market') },
-                                    { text: it.L('Drive rapid growth and business development, to support the company\'s sales and marketing objectives') },
-                                    { text: it.L('Coordinate business-development activities and generate high-quality partnership leads') },
-                                    { text: it.L('Adapt affiliate-marketing tactics and promotional materials as needed, to localise all content for maximum effectiveness') },
-                                    { text: it.L('Utilise a variety of tactics - both online and offline - to grow and support the company\'s network of partners in your designated market') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('At least five years of experience with affiliate marketing, growth hacking, business development, and other closely related skills') },
+                                    { text: it.L('Bachelor’s degree in marketing, business administration, or related discipline') },
+                                    { text: it.L('At least 5 years of experience in affiliate marketing, growth hacking, business development, and other closely-related skills') },
                                     { text: it.L('An assertive, sales-driven personality, able to adapt quickly and achieve powerful results') },
-                                    { text: it.L('Strong oral and written communication skills in both the regional language and English') },
-                                    { text: it.L('A Bachelor\'s degree in Marketing, Business Administration, or related discipline') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Preferences:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Knowledge and experience with the financial services industry and / or binary options trading') },
-                                    { text: it.L('Prior knowledge and experience with IT development') },
-                                    { text: it.L('The ability to speak multiple languages') },
+                                    { text: it.L('Strong oral and written communication skills in both the regional language(s) and English') },
+                                    { text: it.L('Knowledge and experience in the financial services industry and/or binary options trading') },
+                                    { text: it.L('IT knowledge or experience is preferred') },
                                 ]}
                             />
                         </div>
