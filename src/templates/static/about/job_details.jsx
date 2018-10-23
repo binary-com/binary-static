@@ -728,14 +728,15 @@ const JobDetails = () => (
                         <div className='invisible' id='proofreader'>
                             <h1>{it.L('Proofreader')}</h1>
 
-                            <p>{it.L('[_1] is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface. You\'ll work with colleagues in IT, Customer Support and Marketing to provide localised text and translation services.', it.website_name)}</p>
+                            <p>{it.L('[_1] is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface.', it.website_name)}</p>
+
+                            <p>{it.L('You\'ll work with colleagues in IT, Customer Support and Marketing to provide localised text and translation services. This position will report to our Head of Translations.')}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
-                                paragraph= {it.L('Under the supervision of [_1]\'s Translation Project Manager, you will:', it.website_name)}
                                 items={[
-                                    { text: it.L('Proofread and correct the content appearing on the company\'s website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa') },
+                                    { text: it.L('Proofread and correct the content appearing on the company&#39;s website, blog, social media outlets, and marketing materials, from English to the regional language and vice versa') },
                                     { text: it.L('Use appropriate terminology, taking into account the style and nuance of the original text') },
                                     { text: it.L('Maintain adequate speed and volume of output') },
                                     { text: it.L('Process website content translations when a full time translator is unavailable') },
@@ -744,12 +745,13 @@ const JobDetails = () => (
                             />
 
                             <UlText
-                                text={it.L('Requirements:')}
+                                text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Strong command of the English language, in both oral and written form') },
-                                    { text: it.L('Previous experience with financial and/or binary options trading websites') },
-                                    { text: it.L('A university degree or accredited translation certification preferred') },
+                                    { text: it.L('Preferably a native speaker with good command of English (oral and written)') },
+                                    { text: it.L('Will work with our simple web-based translation tool') },
+                                    { text: it.L('Previous experience with financial/binary options website services is preferred') },
+                                    { text: it.L('A university degree or accredited translation certification preferred.') },
                                 ]}
                             />
                         </div>
