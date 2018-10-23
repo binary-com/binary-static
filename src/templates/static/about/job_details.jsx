@@ -97,9 +97,9 @@ const JobDetails = () => (
                         <SideBar
                             className='marketing'
                             sidebar_items={[
-                                { href: 'affiliate_country_manager',             string: it.L('Affiliate/Country Manager') },
+                                { href: 'affiliate_country_manager',     string: it.L('Affiliate/Country Manager') },
+                                { href: 'technical_marketing_executive', string: it.L('Technical Marketing Executive') },
                                 { href: 'graphic_designers',             string: it.L('Graphic Designers') },
-                                { href: 'marketing_executives',          string: it.L('Marketing Executives') },
                                 { href: 'copywriter',                    string: it.L('Copywriter') },
                                 { href: 'translator',                    string: it.L('Translator') },
                                 { href: 'proofreader',                   string: it.L('Proofreader') },
@@ -563,6 +563,38 @@ const JobDetails = () => (
                             />
                         </div>
 
+                        <div className='invisible' id='technical_marketing_executive'>
+                            <h1>{it.L('Technical Marketing Executive')}</h1>
+
+                            <p>{it.L('The Marketing team oversees all our marketing initiatives, such as our partnership programmes, social media presence, webinars, PPC, SEO, and email marketing. As our Technical Marketing Executive, you will act on data-driven information and assist in troubleshooting issues to further nurture and grow our client base.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Act as first and second level support for our traders by offering them solutions through basic coding and troubleshooting techniques') },
+                                  { text: it.L('Engage in market development to grow the client base for existing products and platforms of the company') },
+                                  { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors for our client base') },
+                                  { text: it.L('Support overall development, planning and execution of the team’s digital marketing efforts in accordance to the marketing objectives of respective projects') },
+                                  { text: it.L('Contribute creative ideas to further the company’s dynamic branding effort') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Exceptional English communication skills (both oral and written)') },
+                                  { text: it.L('Creative and analytical thinking that leads to actionable tactics and measurable results') },
+                                  { text: it.L('An intermediate understanding of the interaction of information technology and client servicing aspects within the B2B and B2C environments') },
+                                  { text: it.L('University degree in Marketing, Mathematics, IT/Programming or any related field') },
+                                  { text: it.L('Considerable knowledge in creating meaningful analytics from raw data, with the goal of influencing clients to take action') },
+                                  { text: it.L('A broad foundation in HTML, CSS, Websocket API or MQL programming to develop solutions and answer queries') },
+                                  { text: it.L('A keen eye to identify new trends in marketing, evaluate new technologies and ensure the brand is at the forefront of industry developments') },
+                              ]}
+                            />
+                        </div>
+
                         <div className='invisible' id='graphic_designers'>
                             <h1>{it.L('Graphic Designers')}</h1>
 
@@ -597,46 +629,6 @@ const JobDetails = () => (
                                     { text: it.L('Web design / development experience') },
                                     { text: it.L('Prior knowledge and experience with the financial industry') },
                                     { text: it.L('Ability to speak multiple languages') },
-                                ]}
-                            />
-                        </div>
-
-                        <div className='invisible' id='marketing_executives'>
-                            <h1>{it.L('Marketing Executives')}</h1>
-
-                            <p>{it.L('[_1] is seeking several highly skilled Marketing Executives, eager to contribute their energy, passion, and specialised strengths in connecting with prospects and clients based throughout the globe.', it.website_name)}</p>
-                            <p>{it.L('Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years.')}</p>
-
-                            <UlText
-                                text={it.L('Duties and Responsibilities:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Assist senior members of the marketing team in implementing a broad array of promotional campaigns') },
-                                    { text: it.L('Produce content for the company\'s website, blog, social media outlets, and marketing materials') },
-                                    { text: it.L('Adapt communication appropriately to suit a variety of different formats and target audiences') },
-                                    { text: it.L('Demonstrate the ability to think / act quickly and multi-task as needed to execute effective campaigns') },
-                                    { text: it.L('Contribute your ideas, energy, and creativity to further the company\'s dynamic branding efforts') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('A strong and passionate interest in Marketing and Advertising') },
-                                    { text: it.L('Exceptional communication skills in English, in both oral and written form') },
-                                    { text: it.L('A university degree in Marketing, Journalism, Communications, or other business-related discipline') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Preferences:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Ability to speak, read, and write multiple languages') },
-                                    { text: it.L('Firsthand knowledge of other cultures through direct experience') },
-                                    { text: it.L('Previous experience in the financial services industry') },
-                                    { text: it.L('Prior knowledge and experience in Information Technology and/or Software Development') },
                                 ]}
                             />
                         </div>
