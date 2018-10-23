@@ -56,7 +56,7 @@ const JobDescriptions = () => (
 
             <Row
                 id='information_technology'
-                title={it.L('Information Technology')}
+                title={it.L('IT')}
                 sections={[
                     { header: it.L('DevOps Manager / Team Lead'), subsection: 'devops_manager',            text: it.L('Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing.') },
                     { header: it.L('Senior Front-End Developer'), subsection: 'senior_frontend_developer', text: it.L('Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base.') },

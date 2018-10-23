@@ -58,7 +58,7 @@ const JobDetails = () => (
                     <div className='gr-12 gr-padding-10'>
                         <InvisibleHeading
                             headers={[
-                                { className: 'information_technology', string: it.L('Information Technology') },
+                                { className: 'information_technology', string: it.L('IT') },
                                 { className: 'quality_assurance',      string: it.L('Quality Assurance') },
                                 { className: 'quantitative_analysis',  string: it.L('Quantitative Analysis') },
                                 { className: 'marketing',              string: it.L('Marketing') },
