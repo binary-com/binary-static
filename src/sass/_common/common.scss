@@ -754,17 +754,18 @@ label + input {
                 padding: 20px 15px;
             }
             &__body {
-                padding: 20px 15px;
+                padding: 20px 15px 7px;
             }
             &__options {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 font-size: 16px;
             }
-            &__separator {
-                margin: 0 20px;
+            &__secondary_options {
+                font-size: 12px;
             }
             #interview_interested {
-                margin-top: 20px;
+                font-size: 20px;
+                margin: 5px 0 30px;
             }
         }
         p {
