@@ -100,7 +100,7 @@ const JobDetails = () => (
                                 { href: 'affiliate_country_manager',     string: it.L('Affiliate/Country Manager') },
                                 { href: 'technical_marketing_executive', string: it.L('Technical Marketing Executive') },
                                 { href: 'marketing_executive',           string: it.L('Marketing Executive') },
-                                { href: 'graphic_designers',             string: it.L('Graphic Designers') },
+                                { href: 'graphics_designer',             string: it.L('Graphics Designer') },
                                 { href: 'copywriter',                    string: it.L('Copywriter') },
                                 { href: 'translator',                    string: it.L('Translator') },
                                 { href: 'proofreader',                   string: it.L('Proofreader') },
@@ -631,8 +631,8 @@ const JobDetails = () => (
                             />
                         </div>
 
-                        <div className='invisible' id='graphic_designers'>
-                            <h1>{it.L('Graphic Designers')}</h1>
+                        <div className='invisible' id='graphics_designer'>
+                            <h1>{it.L('Graphics Designer')}</h1>
 
                             <p>{it.L('[_1] UI/UX team explores the many ways that we can design better product experiences for our users. As our Graphic Designer, you will develop high-impact graphics and visual elements such as images and icons for our websites and applications. You will play an essential role in creating user interface assets that bring our products and users closer together.', it.website_name)}</p>
 
@@ -667,28 +667,17 @@ const JobDetails = () => (
                         <div className='invisible' id='copywriter'>
                             <h1>{it.L('Copywriter')}</h1>
 
-                            <p>{it.L('[_1] seeks a sharp Copywriter to produce content that actively engages new prospects and current customers based throughout the world.', it.website_name)}</p>
-                            <p>{it.L('Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years.')}</p>
+                            <p>{it.L('[_1] Marketing team oversees all our marketing and advertising initiatives, such as our affiliate programme, social media presence, webinars, and emails. As our Copywriter, you will help us to craft copy and content that engages our audiences –– both online and offline.', it.website_name)}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Create clear, concise and engaging content for display on the company\'s website, blog, social media outlets, and marketing materials') },
-                                    { text: it.L('Develop text that promotes the company\'s product offerings in a variety of formats') },
-                                    { text: it.L('Educate prospects, clients, and partners regarding the benefits of [_1]\'s innovative online trading platform', it.website_name) },
-                                    { text: it.L('Adapt tone of voice as appropriate to suit specified target audiences') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('The ability to translate information into clear, concise, and engaging content') },
-                                    { text: it.L('Effective English language skills, with precise attention to detail regarding punctuation, spelling, grammar, and syntax') },
-                                    { text: it.L('The ability to multi-task, balance deadlines, and reliably deliver high-quality content') },
-                                    { text: it.L('University degree in Marketing, Communications, Journalism, or related discipline') },
+                                    { text: it.L('Create clear, concise, and engaging content for the company’s website, email newsletters, blog, social media channels, and other marketing materials') },
+                                    { text: it.L('Adapt brand messaging, voice, and tone of content as needed to suit specific audiences, business objectives, and the channel of delivery') },
+                                    { text: it.L('Edit, proofread, and improve content from other team members') },
+                                    { text: it.L('Follow established workflows for content deliverables') },
+                                    { text: it.L('Work closely with other departments to create marketing communication materials such as ads, product announcements, guides, job descriptions, and more') },
                                 ]}
                             />
 
@@ -696,9 +685,12 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('The ability to speak and write in multiple languages') },
-                                    { text: it.L('Knowledge and experience in the financial services industry') },
-                                    { text: it.L('A background in IT development') },
+                                    { text: it.L('Accomplished writing and editing skills with at least five years editorial experience in digital advertising or online media') },
+                                    { text: it.L('Thorough knowledge of web writing best practices') },
+                                    { text: it.L('Experience in content strategy –– i.e. planning, creating, publishing, and updating content for small and large websites') },
+                                    { text: it.L('Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax') },
+                                    { text: it.L('Ability to translate complex, technical information into clear, attractive benefits') },
+                                    { text: it.L('Capacity to multitask, balance deadlines, and reliably deliver high-quality content') },
                                 ]}
                             />
                         </div>
