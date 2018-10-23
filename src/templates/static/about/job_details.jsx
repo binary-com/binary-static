@@ -89,7 +89,7 @@ const JobDetails = () => (
                         <SideBar
                             className='quantitative_analysis'
                             sidebar_items={[
-                                { href: 'quantitative_analyst',   string: it.L('Quantitative Analyst') },
+                                { href: 'quantitative_analyst',     string: it.L('Quantitative Analyst') },
                                 { href: 'financial_market_analyst', string: it.L('Financial Market Analyst') },
                             ]}
                         />
@@ -99,6 +99,7 @@ const JobDetails = () => (
                             sidebar_items={[
                                 { href: 'affiliate_country_manager',     string: it.L('Affiliate/Country Manager') },
                                 { href: 'technical_marketing_executive', string: it.L('Technical Marketing Executive') },
+                                { href: 'marketing_executive',           string: it.L('Marketing Executive') },
                                 { href: 'graphic_designers',             string: it.L('Graphic Designers') },
                                 { href: 'copywriter',                    string: it.L('Copywriter') },
                                 { href: 'translator',                    string: it.L('Translator') },
@@ -591,6 +592,41 @@ const JobDetails = () => (
                                   { text: it.L('Considerable knowledge in creating meaningful analytics from raw data, with the goal of influencing clients to take action') },
                                   { text: it.L('A broad foundation in HTML, CSS, Websocket API or MQL programming to develop solutions and answer queries') },
                                   { text: it.L('A keen eye to identify new trends in marketing, evaluate new technologies and ensure the brand is at the forefront of industry developments') },
+                              ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='marketing_executive'>
+                            <h1>{it.L('Marketing Executive')}</h1>
+
+                            <p>{it.L('The Marketing team oversees all our marketing and advertising initiatives, such as our affiliate programme, social media presence, webinars, and emails. As our Marketing Executive, you will coordinate and execute marketing campaigns across a variety of channels, and continuously identify the best ways to reach current and prospective customers.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Plan, coordinate, and execute a wide range of promotional campaigns') },
+                                  { text: it.L('Monitor campaigns using key metrics and submit reports on campaign performance') },
+                                  { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors') },
+                                  { text: it.L('Produce content for websites, blogs, social media, and marketing materials') },
+                                  { text: it.L('Maintain relationships with clients and partners to drive retention and loyalty') },
+                                  { text: it.L('Contribute ideas, energy, and creativity to further the company’s dynamic branding efforts') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Exceptional English communication skills (both oral and written)') },
+                                  { text: it.L('Creative and analytical thinking that leads to actionable tactics and results') },
+                                  { text: it.L('Knowledge of affiliate marketing, email marketing, and basic HTML') },
+                                  { text: it.L('University degree in marketing, journalism, communication, or a business-related discipline') },
+                                  { text: it.L('Passion for advertising and marketing') },
+                                  { text: it.L('Experience in the financial services industry') },
+                                  { text: it.L('Experience in content writing is welcome') },
+                                  { text: it.L('Ability to speak multiple languages is preferred') },
+                                  { text: it.L('Interest in IT or software development') },
                               ]}
                             />
                         </div>
