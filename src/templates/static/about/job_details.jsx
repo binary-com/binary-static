@@ -89,8 +89,8 @@ const JobDetails = () => (
                         <SideBar
                             className='quantitative_analysis'
                             sidebar_items={[
-                                { href: 'quantitative_developer', string: it.L('Quantitative Developer') },
                                 { href: 'quantitative_analyst',   string: it.L('Quantitative Analyst') },
+                                { href: 'financial_market_analyst', string: it.L('Financial Market Analyst') },
                             ]}
                         />
 
@@ -454,40 +454,6 @@ const JobDetails = () => (
                     </div>
 
                     <div className='quantitative_analysis'>
-                        <div className='invisible' id='quantitative_developer'>
-                            <h1>{it.L('Quantitative Developer')}</h1>
-
-                            <p>{it.L('The [_1] Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk.', it.website_name)}</p>
-                            <p>{it.L('Since all dealing on the [_1] website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feed irregularities and latencies.', it.website_name)}</p>
-                            <p>{it.L('As a developer in the [_1] Quant Group, you will be responsible for the implementation and maintenance of the company\'s risk management and derivatives pricing software. You and the members of your team will develop software designed to study the market micro-structure, optimize existing code, manage financial data feeds and ensure the continuous running of our automated trading platform.', it.website_name)}</p>
-
-                            <UlText
-                                text={it.L('Duties and Responsibilities:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Work closely with other members of the team to develop software that would drive prices on our trading platform') },
-                                    { text: it.L('Review, develop and enhance codes used in option pricing and real time risk management programs') },
-                                    { text: it.L('Creating interfaces and tools to access market information, real-time and historical analysis of trading strategies') },
-                                    { text: it.L('Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools') },
-                                    { text: it.L('Monitor and optimize website trading activity') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('An advanced university degree in Mathematics, Physics or Engineering') },
-                                    { text: it.L('Advanced knowledge of software design principles') },
-                                    { text: it.L('Perl knowledge and/or readiness to learn is a must') },
-                                    { text: it.L('Experience with programming languages like Perl, Python, or Ruby coupled with the ability to produce high quality, self-documenting code, using test driven development techniques') },
-                                    { text: it.L('A preference and passion for Linux and open-source platforms') },
-                                    { text: it.L('Experience with languages like C/C++/R/Python/VBA/Mat lab/SQL would be a plus') },
-                                    { text: it.L('Knowledge of probability theory, numerical methods, Monte-Carlo simulation, statistical modeling, and time series analysis would be a plus') },
-                                ]}
-                            />
-                        </div>
-
                         <div className='invisible' id='quantitative_analyst'>
                             <h1>{it.L('Quantitative Analyst')}</h1>
 
@@ -523,6 +489,45 @@ const JobDetails = () => (
                                     { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters.') },
                                     { text: it.L('Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus.') },
                                 ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='financial_market_analyst'>
+                            <h1>{it.L('Financial Market Analyst')}</h1>
+
+                            <p>{it.L('As our Senior Financial Market Analyst, you will manage the day-to-day risk of our trading books, conduct complex quantitative analysis, carry out performance testing, develop advanced data analytics tools, and support other related operations that have a direct impact on the profitability and future growth of our company.')}</p>
+                            <p>{it.L('This includes decisions on new markets to launch in, and the spreads and margins we might offer. You must also be able to analyse and interpret large volumes of data, and communicate your research and findings in a clear and concise manner –– either in written reports or presentations.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs') },
+                                  { text: it.L('Create data analytics tools for trading/quantitative analysis') },
+                                  { text: it.L('Conduct performance testing including backtesting, stress testing analysis, and benchmarking') },
+                                  { text: it.L('Develop risk management models and algorithms using MATLAB/Python/R/C++') },
+                                  { text: it.L('Manage day-to-day risk of our trading books') },
+                                  { text: it.L('Set up liquidity connections via bridges and gateways for MT4 and MT5 brokers') },
+                                  { text: it.L('Conduct research on competitors and industry trends to identify new products and potential markets') },
+                                  { text: it.L('Develop mathematical/statistical models for pricing and risk management for all products.') },
+                                  { text: it.L('Use advanced data analytics skills to study trends/pattern in financial markets.') },
+                                  { text: it.L('Help in developing advanced risk management tools for various markets (forex, equities, commodities)') },
+                                  { text: it.L('Prepare daily, weekly, and monthly financial reports') },
+                                  { text: it.L('Generate periodic and special reports on client trading activity and significant trends that impact our client behaviour') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Requirements:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('An advanced university degree in physics, financial engineering, or mathematics is preferred') },
+                                  { text: it.L('Experience in Forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
+                                  { text: it.L('Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc.') },
+                                  { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters') },
+                                  { text: it.L('Strong analytical skills and the ability to communicate your findings in a clear, concise, and effective manner') },
+                                  { text: it.L('Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus.') },
+                              ]}
                             />
                         </div>
                     </div>
