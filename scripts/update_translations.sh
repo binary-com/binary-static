@@ -36,6 +36,19 @@ git checkout translations &&
 git fetch upstream translations &&
 git reset --hard upstream/translations &&
 
+# TODO: To be removed once new-app merged into master
+confirm "Include latest strings from 'new-app' branch?" &&
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    message "Updating new-app branch" &&
+    git fetch upstream new-app:new-app -f &&
+    message "Updating js string files from new-app (static, extracted)"
+    # Checking out the latest strings directly from new-app branch
+    # js texts of new-app can't get extracted here since its node package requirements is different from master
+    git checkout new-app -- scripts/js_texts/*_app_2.js &&
+    git commit -a -m "Update app_2 js strings"
+fi &&
+
 confirm "Include the master changes as well? (merge master into translations)" &&
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

@@ -5,12 +5,17 @@ const common  = require('./common');
 const GetText = require('./gettext');
 const extract = require('./extract_js_texts');
 
-const static_app = require('./js_texts/static_strings_app');
+const static_app      = require('./js_texts/static_strings_app');
+const static_app_2    = require('./js_texts/static_strings_app_2');
+const extracted_app_2 = require('./js_texts/extracted_strings_app_2');
 
 const all_languages = [...common.languages, 'ach'].map(l => l.toLowerCase());
 const map = {
     app: {
         static: static_app,
+    },
+    app_2: {
+        static: static_app_2,
     },
 };
 
@@ -61,8 +66,13 @@ const generate = () => {
 // ---------- Helpers ----------
 const generateSources = () => {
     Object.keys(map).forEach(app => {
-        extract.parse(app);
-        const extracted_strings = [...extract.getTexts(app)];
+        let extracted_strings;
+        if (app === 'app_2') { // TODO: To be removed once new-app merged into master
+            extracted_strings = extracted_app_2; // don't parse app_2 for now as it needs different node packages
+        } else {
+            extract.parse(app);
+            extracted_strings = [...extract.getTexts(app)];
+        }
 
         map[app].source = new Set([
             ...extracted_strings,
