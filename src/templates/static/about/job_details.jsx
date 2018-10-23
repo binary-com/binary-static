@@ -79,9 +79,7 @@ const JobDetails = () => (
                                 { href: 'system_administrator',                string: it.L('System Administrator') },
                                 { href: 'backend_developer',                   string: it.L('Back-End Developer') },
                                 { href: 'frontend_developer',                  string: it.L('Front-End Developer') },
-                                { href: 'senior_frontend_developer',           string: it.L('Senior Front-End Developer') },
                                 { href: 'perl_developer',                      string: it.L('Perl Developer')},
-                                { href: 'senior_perl_developer',               string: it.L('Senior Perl Developer') },
                                 { href: 'cryptocurrency_blockchain_developer', string: it.L('Cryptocurrency/Blockchain Developer')},
                                 { href: 'security_researcher',                 string: it.L('Security Researcher') },
                                 { href: 'ui_ux_designer',                      string: it.L('UI/UX Designer') },
@@ -268,29 +266,6 @@ const JobDetails = () => (
                             />
                         </div>
 
-                        <div className='invisible' id='senior_frontend_developer'>
-                            <h1>{it.L('Senior Front-End Developer')}</h1>
-
-                            <p>{it.L('Binary Group Services is searching for talented and motivated front-end developers who are looking for a chance to excel.')}</p>
-                            <p>{it.L('If you have the skill set we seek, you\'ll become a valued member of a highly competent front end development team engaged in driving our binary options trading systems to new heights.')}</p>
-
-                            <UlText text={it.L('Duties and Responsibilities:')} />
-                            <p>{it.L('As a Senior Front-End Developer, you\'ll be tasked with writing robust, high-quality, production-ready code; refactoring and optimizing a large and complex legacy code base; and contributing to the architecture that drives our high-traffic global website.')}</p>
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Extensive experience in the application of advanced coding principles and standards') },
-                                    { text: it.L('The ability to write high-quality, self-documenting code, using test-driven development techniques') },
-                                    { text: it.L('Extensive knowledge of Javascript, HTML, CSS, AJAX, JSON') },
-                                    { text: it.L('Experience working with client-side JavaScript frameworks such as jQuery, ReactJS, and/or AngularJS') },
-                                    { text: it.L('Strong knowledge of developing cross-platform/browser-compatible applications for web and mobile') },
-                                    { text: it.L('A preference and passion for Linux and open-source platforms') },
-                                ]}
-                            />
-                        </div>
-
                         <div className='invisible' id='perl_developer'>
                             <h1>{it.L('Perl Developer')}</h1>
 
@@ -320,28 +295,6 @@ const JobDetails = () => (
                                   { text: it.L('Event-driven programming in Perl.') },
                                   { text: it.L('Passion for Linux, and other open-source platforms.') },
                               ]}
-                            />
-                        </div>
-
-                        <div className='invisible' id='senior_perl_developer'>
-                            <h1>{it.L('Senior Perl Developer')}</h1>
-
-                            <p>{it.L('Binary Group Services is searching for talented and motivated Perl developers who are looking for a chance to excel. If you have the skill set we seek, you\'ll become a valued member of a highly competent back-end development team engaged in driving our binary options trading systems to new heights.')}</p>
-
-                            <UlText text={it.L('Duties and Responsibilities:')} />
-                            <p>{it.L('As a Senior Perl Developer, you\'ll be tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website.')}</p>
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Deep Perl expertise') },
-                                    { text: it.L('Fluency with Linux administration') },
-                                    { text: it.L('Familiarity with Perl, DBI, Mason, Moose, Sereal, Plack/PSGI, nginx, Javascript, MySQL/Postgres, Memcached, Redis, RabbitMQ, git') },
-                                    { text: it.L('Experience with relational database design and/or open-source RDBMS (Postgres, MySQL, etc.) systems') },
-                                    { text: it.L('The ability to write high-quality, self-documenting code, using test-driven development techniques') },
-                                    { text: it.L('A preference and passion for Linux and open-source platforms') },
-                                ]}
                             />
                         </div>
 
@@ -462,33 +415,39 @@ const JobDetails = () => (
                     </div>
 
                     <div className='quality_assurance'>
-                        <div className='invisible' id='quality_assurance_engineer'>
-                            <h1>{it.L('Quality Assurance Engineer')}</h1>
+                        <div className='invisible' id='software_tester'>
+                            <h1>{it.L('Software Tester')}</h1>
+
+                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our websites, applications, and high-traffic networks. As our Software Tester, we rely on you to run high-quality tests to ensure the stability, quality, and usability of our website and codebase with each software release.', it.website_name)}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Execute and update manual and automated test plans') },
-                                    { text: it.L('Work with members of the QA team to ensure the integrity of releases') },
-                                    { text: it.L('Investigate and reproduce client-reported issues') },
+                                    { text: it.L('Test the Binary.com website, applications, backend, and back-office systems.') },
+                                    { text: it.L('Work closely with the rest of the QA and IT teams to plan, design, and execute several types of testing based on different objectives.') },
+                                    { text: it.L('Create, execute, and update manual and automated test plans.') },
+                                    { text: it.L('Plan and integrate various types of testing into our existing workflow.') },
+                                    { text: it.L('Ensure the integrity of releases by coordinating testing activities.') },
+                                    { text: it.L('Track and document thoroughly the bugs that you find.') },
+                                    { text: it.L('Investigate, reproduce, identify, document, and resolve issues reported by our clients and the customer support team.') },
                                 ]}
                             />
 
                             <UlText
-                                text={it.L('Requirements:')}
+                                text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A Bachelor\'s degree in Computer Science, or an equivalent combination of technical education, training and work experience') },
-                                    { text: it.L('2-3 years of applicable experience in a web application testing role') },
-                                    { text: it.L('Hands-on test automation experience a plus') },
-                                    { text: it.L('The ability to work in a Linux/Unix based environment') },
-                                    { text: it.L('Proficiency in a scripting language - Perl preferred') },
-                                    { text: it.L('Excellent oral and written communication skills') },
-                                    { text: it.L('Strong analytical and problem solving abilities') },
-                                    { text: it.L('Experience with Postgres or another RDBMS a plus') },
-                                    { text: it.L('Strong attention to detail') },
-                                    { text: it.L('Experience with Git') },
+                                    { text: it.L('Bachelor’s degree in computer science, or an equivalent combination of technical education, training, and work experience.') },
+                                    { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques.') },
+                                    { text: it.L('Minimum two years experience in a software or web application testing role.') },
+                                    { text: it.L('Experience designing and executing test plans (both automated and manual).') },
+                                    { text: it.L('Extensive knowledge of JavaScript , AJAX, JSON, CSS.') },
+                                    { text: it.L('Proficiency with one or more scripting languages, such as Python, PHP or C/C++. Perl is preferred.') },
+                                    { text: it.L('Experience with agile development methods such as Scrum or Kanban.') },
+                                    { text: it.L('Experience with Postgres or another RDBMS is a plus.') },
+                                    { text: it.L('Familiarity with Git.') },
+                                    { text: it.L('Passion for Linux and other open-source platforms.') },
                                 ]}
                             />
                         </div>

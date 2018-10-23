@@ -68,7 +68,7 @@ const JobDescriptions = () => (
                 id='quality_assurance'
                 title={it.L('Quality Assurance')}
                 sections={[
-                    { header: it.L('Quality Assurance Engineer'), subsection: 'quality_assurance_engineer', text: it.L('Execute and update manual and automated test plans, ensure the integrity of releases, investigate and reproduce client-reported issues.'), className: 'nowrap' },
+                    { header: it.L('Software Tester'), subsection: 'software_tester', text: it.L('Execute and update manual and automated test plans, ensure the integrity of releases, investigate and reproduce client-reported issues.'), className: 'nowrap' },
                 ]}
             />
 
