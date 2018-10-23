@@ -698,26 +698,29 @@ const JobDetails = () => (
                         <div className='invisible' id='translator'>
                             <h1>{it.L('Translator')}</h1>
 
-                            <p>{it.L('[_1] is seeking qualified translation professionals familiar with specific target markets, languages, and cultures. By delivering high-quality translation to support our customers in a particular language, you will serve as the company\'s voice to clients in certain key areas of the world. You\'ll work with colleagues in IT, Customer Support, and Marketing to provide localised text and translation services through a web-based tool. This position will report to our Translation Project Manager.', it.website_name)}</p>
+                            <p>{it.L('[_1] is seeking a qualified translation professional who is familiar with specific target markets, languages, and cultures. By delivering a high level of translation and customer support services, you will be the company’s voice to our clients.', it.website_name)}</p>
+
+                            <p>{it.L('You’ll work with colleagues in IT, Customer Support and Marketing to provide localized text and document translation services on our global website <a href=\'https://www.binary.com\' target=\'_blank\'>www.binary.com</a>. This position will report to our Head of Translations.')}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Process website content translations regularly and efficiently, delivering high-quality work on a dependable basis') },
-                                    { text: it.L('Assist in the proofreading and recording of video presentations') },
+                                    { text: it.L('Process website content translations regularly and efficiently') },
                                     { text: it.L('Ensure compliance with quality control standards governing website content') },
+                                    { text: it.L('Assist in the proofreading and recording of video presentations') },
+                                    { text: it.L('Proofread existing content used on the company’s blogs and social media outlets') },
                                 ]}
                             />
 
                             <UlText
-                                text={it.L('Requirements:')}
+                                text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A native speaker with strong command of the English language, in both oral and written form') },
-                                    { text: it.L('Ability to work with a simple web-based translation tool') },
-                                    { text: it.L('Previous experience with financial / binary options website services') },
-                                    { text: it.L('A university degree or accredited translation certification preferred') },
+                                    { text: it.L('Preferably a native speaker with good command of English (oral and written)') },
+                                    { text: it.L('Will work with our simple web-based translation tool') },
+                                    { text: it.L('Previous experience with financial/binary options website services is preferred') },
+                                    { text: it.L('A university degree or accredited translation certification preferred.') },
                                 ]}
                             />
                         </div>
