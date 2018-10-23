@@ -17,21 +17,22 @@ const Statement = (() => {
         const is_ico_bid = /binaryico/i.test(statement.shortcode); // TODO: remove ico exception when all ico contracts are removed
 
         // action_type may be (buy|sell|deposit|withdrawal) from API
-        let action = localize(toTitleCase(statement.action_type) /* localize-ignore */);
+        let localized_action = localize(toTitleCase(statement.action_type) /* localize-ignore */);
         if (is_ico_bid) {
-            action = /buy/i.test(statement.action_type) ? localize('Bid') : localize('Closed Bid');
+            localized_action = /buy/i.test(statement.action_type) ? localize('Bid') : localize('Closed Bid');
         }
 
         return {
-            action,
-            date   : `${date_str}\n${time_str}`,
-            ref    : statement.transaction_id,
-            payout : isNaN(payout) || is_ico_bid || !+payout ? '-' : formatMoney(currency, payout, true),
-            amount : isNaN(amount) ? '-' : formatMoney(currency, amount, true),
-            balance: isNaN(balance) ? '-' : formatMoney(currency, balance, true),
-            desc   : localize(statement.longcode.replace(/\n/g, '<br />') /* localize-ignore */), // untranslated desc
-            id     : statement.contract_id,
-            app_id : statement.app_id,
+            localized_action,
+            action_type: statement.action_type,
+            date       : `${date_str}\n${time_str}`,
+            ref        : statement.transaction_id,
+            payout     : isNaN(payout) || is_ico_bid || !+payout ? '-' : formatMoney(currency, payout, true),
+            amount     : isNaN(amount) ? '-' : formatMoney(currency, amount, true),
+            balance    : isNaN(balance) ? '-' : formatMoney(currency, balance, true),
+            desc       : localize(statement.longcode.replace(/\n/g, '<br />') /* localize-ignore */), // untranslated desc
+            id         : statement.contract_id,
+            app_id     : statement.app_id,
         };
     };
 
