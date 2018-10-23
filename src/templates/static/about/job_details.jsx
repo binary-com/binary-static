@@ -940,29 +940,33 @@ const JobDetails = () => (
                     </div>
 
                     <div className='customer_support'>
-                        <div className='invisible' id='global_customer_service_representatives'>
-                            <h1>{it.L('Global Customer Service Representatives')}</h1>
-                            <p>{it.L('[_1] has several exceptional career opportunities for Customer Service Professionals.', it.website_name)}</p>
-                            <p>{it.L('As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues.')}</p>
+                        <div className='invisible' id='customer_support_executive'>
+                            <h1>{it.L('Customer Support Executive')}</h1>
+
+                            <p>{it.L('As our Customer Support Executive, you will serve as the voice of the company, and help our customers resolve and reduce the issues they’re facing with our products and services. The frontline is essential to our business and you are expected to deliver world-class customer service that creates customer loyalty and promotes business growth.')}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Resolve complex customer care issues in the best interest of our global clients and the company') },
-                                    { text: it.L('Respond to client queries using our state of the art telephone and electronic mail') },
-                                    { text: it.L('Work to expand our international client base by applying creative marketing and customer support strategies') },
-                                    { text: it.L('Collaborate with members of our IT Group to identify innovative ways to improve our website\'s capability and performance') },
+                                    { text: it.L('Resolve complex customer care issues through careful investigation and in keeping with existing policies and procedures') },
+                                    { text: it.L('Communicate solutions to customer issues in a clear, concise, friendly, and timely manner') },
+                                    { text: it.L('Respond to customer enquiries by phone, email, social media, and live chat daily') },
+                                    { text: it.L('Process applications and customer documentation according to relevant policies and regulations') },
+                                    { text: it.L('File records and documents of customer interactions according to existing guidelines') },
+                                    { text: it.L('Identify new marketing opportunities through customer feedback and contribute ideas to expand our global customer base') },
+                                    { text: it.L('Collaborate with members of our IT team to identify new ways to improve our products and services for customers') },
+                                    { text: it.L('Be part of a 24/7 rotating shift schedule, alternating with Customer Support team members around the world') },
                                 ]}
                             />
 
                             <UlText
-                                text={it.L('Requirements:')}
+                                text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
                                     { text: it.L('Excellent English language skills, both oral and written') },
-                                    { text: it.L('Proficiency in a second language (oral and written) is preferred') },
-                                    { text: it.L('Previous work experience in a client service and/or marketing role') },
+                                    { text: it.L('Proficiency in a second language (both oral and written) is preferred') },
+                                    { text: it.L('Previous work experience in a customer service and/or marketing role') },
                                     { text: it.L('Experience in the financial services industry is preferred') },
                                     { text: it.L('A university degree in marketing or computer science is a plus') },
                                 ]}

@@ -126,7 +126,7 @@ const JobDescriptions = () => (
                 id='customer_support'
                 title={it.L('Customer Support')}
                 sections={[
-                    { header: it.L('Customer Service Representatives'), subsection: 'global_customer_service_representatives', text: it.L('As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues.') },
+                    { header: it.L('Customer Support Executive'), subsection: 'customer_support_executive', text: it.L('As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues.') },
                 ]}
             />
 
