@@ -903,6 +903,42 @@ const JobDetails = () => (
                         </div>
                     </div>
 
+                    <div className='internal_audit'>
+                        <div className='invisible' id='internal_audit_executive'>
+                            <h1>{it.L('Internal Audit Executive')}</h1>
+
+                            <p>{it.L('The Internal Audit team is the catalyst for improving our organisation’s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Evaluate and improve the effectiveness of internal controls, risk management, regulatory compliance, financial and operational processes') },
+                                  { text: it.L('Assist in preparing audit plans and programmes which includes functions, activities, objectives, scopes, and methodology') },
+                                  { text: it.L('Perform audit assignments and identify control gaps and opportunities for improvement') },
+                                  { text: it.L('Summarise audit findings and work with department heads on the proposed solutions') },
+                                  { text: it.L('Prepare reports expressing audit opinions on the adequacy and effectiveness of the internal controls and operational efficiency') },
+                                  { text: it.L('Follow up on the recommendations and timeline for corrective actions with department heads') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('A university degree in Accounting/Finance or its equivalent') },
+                                  { text: it.L('Exceptional English communication skills (both oral and written)') },
+                                  { text: it.L('A strong understanding of internal controls and business processes') },
+                                  { text: it.L('Creative and analytical thinking that leads to actionable solutions and outcomes') },
+                                  { text: it.L('Good reporting skills with a keen eye for detail') },
+                                  { text: it.L('Ability to work independently') },
+                                  { text: it.L('Advanced knowledge of Microsoft Office') },
+                                  { text: it.L('Experience in IT auditing or in-depth knowledge of computer systems is an advantage') },
+                              ]}
+                            />
+                        </div>
+                    </div>
+
                     <div className='customer_support'>
                         <div className='invisible' id='global_customer_service_representatives'>
                             <h1>{it.L('Global Customer Service Representatives')}</h1>
@@ -981,27 +1017,6 @@ const JobDetails = () => (
                         </div>
                     </div>
 
-                    <div className='internal_audit'>
-                        <div className='invisible' id='internal_auditor'>
-                            <h1>{it.L('Internal Auditor')}</h1>
-
-                            <p>{it.L('We are looking for energetic and enthusiastic individuals who love challenges, are detail-oriented and highly analytical to join our Internal Audit team.')}</p>
-
-                            <UlText text={it.L('Duties and Responsibilities:')} />
-                            <p>{it.L('As Internal Auditor, you will perform unique, risk-based internal audits on the Binary Ltd. Group of companies. You will also be involved in risk management, evaluation of regulatory compliance, as well as work with the Head of Departments to improve business processes and support the realization of audit recommendations.')}</p>
-
-                            <UlText
-                                text={it.L('Requirements:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('A degree in Accounting or Finance, and at least three years of experience working in Internal Audit or Corporate Governance') },
-                                    { text: it.L('Strong MS Office skills and experience working with accounting software and databases') },
-                                    { text: it.L('Proven knowledge of auditing standards, procedures, laws, rules and regulations are an added advantage') },
-                                    { text: it.L('IT audit experience is a plus') },
-                                ]}
-                            />
-                        </div>
-                    </div>
                 </div>
             </div>
 

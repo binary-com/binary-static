@@ -114,6 +114,15 @@ const JobDescriptions = () => (
             />
 
             <Row
+              id='internal_audit'
+              title={it.L('Internal Audit')}
+              last
+              sections={[
+                  { header: it.L('Internal Audit Executive'), subsection: 'internal_audit_executive', text: it.L('Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes.') },
+              ]}
+            />
+
+            <Row
                 id='customer_support'
                 title={it.L('Customer Support')}
                 sections={[
@@ -137,14 +146,6 @@ const JobDescriptions = () => (
                 ]}
             />
 
-            <Row
-                id='internal_audit'
-                title={it.L('Internal Audit')}
-                last
-                sections={[
-                    { header: it.L('Internal Auditor'), subsection: 'internal_auditor', text: it.L('Involved in evaluation of regulatory compliance and risk management. Work with the Head of Departments to improve business processes.') },
-                ]}
-            />
         </div>
     </div>
 );
