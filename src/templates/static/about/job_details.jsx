@@ -491,31 +491,37 @@ const JobDetails = () => (
                         <div className='invisible' id='quantitative_analyst'>
                             <h1>{it.L('Quantitative Analyst')}</h1>
 
-                            <p>{it.L('[_1]\'s Quantitative Analytics group is responsible for the pricing of binary options offered on its website, as well as the risk management and profitability of its options book. Since all dealing on the company\'s website is fully automated, our pricing and risk management algorithms must take full account of real-time pricing parameters, data feeds irregularities and latencies.', it.website_name)}</p>
+                            <p>{it.L('[_1]\'s Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company’s options book.', it.website_name)}</p>
+
+                            <p>{it.L('The work that you do is complex, challenging, and essential to our future.')}</p>
+
+                            <p>{it.L('We process over a million transactions each day, and manage a book of exotic options which exceeds the complexity of the typical derivatives desk.')}</p>
+
+                            <p>{it.L('Since all transactions on the [_1] website are fully automated, our pricing and risk management algorithms must fully consider critical factors such as real-time pricing parameters, data feed irregularities, and latencies.', it.website_name)}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Develop derivatives pricing, risk management models and algorithms using C/C++, R, MATLAB, Perl, Python and Java') },
-                                    { text: it.L('Review, develop and enhance Perl, C++ and R codes used in options pricing, volatility forecasts, and risk management program') },
-                                    { text: it.L('Maintain accurate system pricing parameters') },
-                                    { text: it.L('Engage in data mining using SQL databases, R/S-Plus, OLAP and other analytical tools') },
-                                    { text: it.L('Monitor website trading activity and minimize abuse') },
-                                    { text: it.L('Generate periodic and special reports summarizing client trading trends') },
+                                    { text: it.L('Develop derivatives pricing, risk management models, and algorithms using C/C++, R, MATLAB, Perl, Python, and Java.') },
+                                    { text: it.L('Review, develop, and enhance Perl, C++, and R codes used in options pricing, volatility forecasts, and risk management programs.') },
+                                    { text: it.L('Maintain accurate system pricing parameters.') },
+                                    { text: it.L('Perform data mining using SQL databases, R/S-Plus, OLAP, and other analytical tools.') },
+                                    { text: it.L('Monitor website trading activity and minimise abuse.') },
+                                    { text: it.L('Generate periodic and special reports that summarise client trading trends.') },
                                 ]}
                             />
 
                             <UlText
-                                text={it.L('Requirements:')}
+                                text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('To qualify, you\'ll need an advanced university degree in Physics, Financial Engineering or Mathematics') },
-                                    { text: it.L('Experience in exotic options pricing, volatility forecasts, high-frequency trading and the analysis of market inefficiencies') },
-                                    { text: it.L('Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modeling') },
-                                    { text: it.L('Skill in the application of object-oriented programming languages (C++, Perl and Java) coupled with the ability to produce high quality code') },
-                                    { text: it.L('Skill in the use of financial information sources such as Bloomberg and Reuters') },
-                                    { text: it.L('Relevant experience in the use of Quant programming libraries and frameworks (Quantlib, PricingPartners, FINCAD, and NumeriX), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus') },
+                                    { text: it.L('An advanced university degree in Physics, Financial Engineering or Mathematics.') },
+                                    { text: it.L('Experience in exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies.') },
+                                    { text: it.L('Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modelling.') },
+                                    { text: it.L('Expertise in the application of object-oriented programming languages (C++, Perl, and Java), coupled with the ability to produce high-quality code.') },
+                                    { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters.') },
+                                    { text: it.L('Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus.') },
                                 ]}
                             />
                         </div>
