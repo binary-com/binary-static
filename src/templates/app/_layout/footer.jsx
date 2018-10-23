@@ -127,7 +127,7 @@ const Footer = () => (
                             </div>
                             <SocialIcons
                                 networks={[
-                                    { media: 'youtube',     href: 'https://www.youtube.com/user/Binarydotcom' },
+                                    { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
                                     { media: 'google-plus', href: 'https://plus.google.com/+Binarydotcom' },
                                     { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
                                     { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
@@ -178,7 +178,7 @@ const Footer = () => (
                             </div>
                             <SocialIcons
                                 networks={[
-                                    { media: 'youtube',     href: 'https://www.youtube.com/user/Binarydotcom' },
+                                    { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
                                     { media: 'google-plus', href: 'https://plus.google.com/+Binarydotcom' },
                                     { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
                                     { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
