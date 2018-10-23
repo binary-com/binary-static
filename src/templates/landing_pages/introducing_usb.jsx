@@ -177,7 +177,7 @@ const UsbPage = () => (
         <div id='get-started' className='primary-bg-color section-md'>
             <div className='container center-text'>
                 <div className='row'>
-                    <div className='col'>
+                    <div className='col mb-bottom-30'>
                         <h2 className='section-title content-inverse-color'>{('How do I start?')}</h2>
                         <p className='content-inverse-color'>{('Start buying USB and store the tokens in a compatible wallet for future transactions:')}</p>
                     </div>
@@ -284,7 +284,7 @@ const UsbPage = () => (
         <div id='tech' className='section-md dark-grey-bg'>
             <div className='container'>
                 <div className='row'>
-                    <div className='col center-text'>
+                    <div className='col center-text mb-bottom-30'>
                         <h2 className='section-title primary-color'>{('Technical implementation')}</h2>
                         <p>{('Our USB token is powered by secure and transparent blockchain technology:')}</p>
                     </div>
