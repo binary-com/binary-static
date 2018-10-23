@@ -110,8 +110,8 @@ const JobDetails = () => (
                         <SideBar
                             className='compliance'
                             sidebar_items={[
-                                { href: 'compliance_executive', string: 'Compliance Executive' },
-                                { href: 'anti_fraud_officer',   string: 'Anti-Fraud Officer' },
+                                { href: 'compliance_executive',            string: 'Compliance Executive' },
+                                { href: 'payments_and_compliance_analyst', string: 'Payments and Compliance Analyst' },
                             ]}
                         />
                     </div>
@@ -798,66 +798,69 @@ const JobDetails = () => (
                         <div className='invisible' id='compliance_executive'>
                             <h1>{it.L('Compliance Executive')}</h1>
 
-                            <p>{it.L('In order to support its continued growth, [_1] is seeking to recruit and place a qualified Compliance Executive. In this newly created role, to be based in Malta, the incumbent will report to our Head of Regulatory and Legal Compliance', it.website_name)}</p>
+                            <p>{it.L('As our Compliance Executive, you must ensure that our group companies worldwide conduct their business operations in full compliance with relevant laws and regulations –– both national and international.')}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Ensuring that the Binary Group of companies are in full compliance with the regulatory regimes to which they are subject') },
-                                    { text: it.L('Working closely with the Head of Compliance to implement Know your Client (KYC), Anti-Money Laundering (AML), and data protection regulations') },
-                                    { text: it.L('Preparing the periodic and special reports required to ensure legal and regulatory compliance in the jurisdictions within which we operate') },
-                                    { text: it.L('Assisting the Head of Compliance in applying for the licenses required for group companies in new jurisdictions') },
-                                    { text: it.L('Assisting with the regulatory and statutory audit of Binary Group companies worldwide') },
+                                    { text: it.L('Work with the Head of Compliance to ensure group companies comply with AML, KYC, and Data Protection laws and regulations') },
+                                    { text: it.L('Plan and direct internal programmes and policies to empower all departments with the knowledge, awareness, and practices of regulatory compliance') },
+                                    { text: it.L('Track laws and regulations that may affect all group companies and implement necessary changes to internal policies in order to manage and mitigate our risk and exposure') },
+                                    { text: it.L('Screen and approve website content and marketing promotions') },
+                                    { text: it.L('Review and monitor business contracts and agreements entered into by group companies worldwide') },
+                                    { text: it.L('Assist with regulatory audits and annual statutory audits of group companies worldwide') },
                                 ]}
                             />
 
                             <UlText
-                                text={it.L('Requirements:')}
+                                text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A tertiary level education') },
-                                    { text: it.L('A full understanding of, and a keen interest in, corporate legal compliance') },
-                                    { text: it.L('Experience working within an international environment') },
-                                    { text: it.L('The ability to acquire knowledge of compliance matters in a multitude of international jurisdictions') },
-                                    { text: it.L('A proactive approach to solving problems and delivering client solutions') },
-                                    { text: it.L('Work experience in a similar role') },
+                                    { text: it.L('A bachelor’s degree in commerce or any business-related field, law, or risk management.') },
+                                    { text: it.L('A good understanding of, and keen interest in corporate, legal or regulatory compliance') },
+                                    { text: it.L('Thorough understanding of Anti-Money Laundering (AML) and Know Your Customer (KYC) processes') },
+                                    { text: it.L('The ability to draft and review legal documents, and prepare licence applications') },
+                                    { text: it.L('A proactive approach in problem-solving') },
+                                    { text: it.L('The ability to absorb and understand varied compliance matters in a number of international jurisdictions') },
+                                    { text: it.L('Excellent communication and interpersonal skills') },
+                                    { text: it.L('Excellent proficiency in spoken and written English.') },
+                                    { text: it.L('A Diploma in Financial Crime, Risk Management and Compliance (ICA) will be an advantage') },
                                 ]}
                             />
                         </div>
 
-                        <div className='invisible' id='anti_fraud_officer'>
-                            <h1>{it.L('Anti-Fraud Officer')}</h1>
+                        <div className='invisible' id='payments_and_compliance_analyst'>
+                            <h1>{it.L('Payments and Compliance Analyst')}</h1>
 
-                            <p>{it.L('[_1]\'s principal Anti-Fraud Officer is responsible for the exercise of exceptional client relationship management skills applied to the prevention of fraudulent activities in payments processing and business transactions. He or she will be expected to partner with our payments and compliance teams in resolving payment queries; administering chargebacks; conducting anti-money laundering audits, and implement a broad array of fraud prevention measures.', it.website_name)}</p>
+                            <p>{it.L('You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments.')}</p>
 
                             <UlText
-                                text={it.L('Duties and Responsibilities:')}
+                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Effectively monitor daily client activity') },
-                                    { text: it.L('Audit deposit patterns and take action on fraud or abuse') },
-                                    { text: it.L('Review suspicious account transactions') },
-                                    { text: it.L('Follow up on rejected deposits') },
-                                    { text: it.L('Run daily payments reports and report suspected fraud') },
-                                    { text: it.L('Liaise with banks and payment providers') },
-                                    { text: it.L('Set client deposit and loss limits') },
-                                    { text: it.L('Analyze data regarding fraud, risk assessment, and anti-money laundering') },
-                                    { text: it.L('Document account chargebacks') },
-                                    { text: it.L('Manage the company\'s cashier system') },
-                                    { text: it.L('Update the Anti-Fraud Manual and other related documents') },
+                                    { text: it.L('Monitor fraud and money laundering patterns in deposit and withdrawal behaviour') },
+                                    { text: it.L('Work closely with the Head of Payments to proactively suggest improvements to cashier setup, including customer activity from an AML and anti-fraud perspective and overall fraud and payment performances (card success rates, chargebacks, etc.)') },
+                                    { text: it.L('Work closely with customer support, compliance, and payment teams') },
+                                    { text: it.L('Support the payments team in certain daily analysis where needed') },
+                                    { text: it.L('Approve e-wallet payouts and withdrawal rules') },
+                                    { text: it.L('Coordinate with Payment System Service Providers in offering cryptocurrencies and digital wallets as a payment method') },
+                                    { text: it.L('Research new Payment Systems that are available in the market') },
                                 ]}
                             />
 
                             <UlText
-                                text={it.L('Requirements:')}
+                                text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Excellent English language skills (both oral and written)') },
-                                    { text: it.L('Experience in an anti-fraud or risk management role') },
-                                    { text: it.L('Effective analytical and administrative skills') },
-                                    { text: it.L('A detail orientation with the ability to detect patterns') },
-                                    { text: it.L('A university degree in a related field is a plus') },
+                                    { text: it.L('A bachelor’s degree in commerce or any business-related field, IT-related field or criminology') },
+                                    { text: it.L('Good understanding of the link between payments functionality, as well as money laundering and fraud prevention') },
+                                    { text: it.L('Aptitude for working in an international environment') },
+                                    { text: it.L('Ability to acquire knowledge of varied AML matters in a multitude of international jurisdictions') },
+                                    { text: it.L('Proactive approach in problem-solving and solution delivery') },
+                                    { text: it.L('Proficiency in Microsoft Excel is required') },
+                                    { text: it.L('Excellent proficiency in spoken and written English.') },
+                                    { text: it.L('Knowledge of payment transaction analysis, in particular e-wallets/cryptocurrencies will be considered an advantage') },
                                 ]}
                             />
                         </div>
