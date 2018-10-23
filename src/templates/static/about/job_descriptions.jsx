@@ -58,7 +58,7 @@ const JobDescriptions = () => (
                 id='information_technology'
                 title={it.L('IT')}
                 sections={[
-                    { header: it.L('DevOps Manager / Team Lead'), subsection: 'devops_manager',            text: it.L('Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing.') },
+                    { header: it.L('DevOps Engineer'), subsection: 'devops_engineer',            text: it.L('Responsibilities include hardware and software deployment, network security, intrusion detection, and load balancing.') },
                     { header: it.L('Senior Front-End Developer'), subsection: 'senior_frontend_developer', text: it.L('Tasked with writing robust, high-quality, production-ready code as well as refactoring and optimizing a large and complex legacy code base.') },
                     { header: it.L('Senior Perl Developer'),      subsection: 'senior_perl_developer',     text: it.L('Tasked with writing robust, high-quality, production-ready code and contributing to the architecture that drives our high-traffic global website.'), className: 'one-line nowrap' },
                 ]}
