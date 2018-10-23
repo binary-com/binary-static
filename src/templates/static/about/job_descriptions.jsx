@@ -97,16 +97,16 @@ const JobDescriptions = () => (
             />
 
             <Row
-                id='accounting'
-                title={it.L('Accounting')}
+                id='accounting_payments'
+                title={it.L('Accounts/Payments')}
                 sections={[
                     { header: it.L('Accounts And Payments Executive'), subsection: 'accounts_and_payments_executive', text: it.L('Responsible for the processing of client payments, assisting with the management accounts of the companies within our group, and more.') },
                 ]}
             />
 
             <Row
-                id='compliance'
-                title={it.L('Compliance')}
+                id='compliance_and_risk_management'
+                title={it.L('Compliance and Risk Management\n')}
                 sections={[
                     { header: it.L('Compliance Executive'), subsection: 'compliance_executive', text: it.L('Ensuring that the Binary Group of companies are in full compliance with the legal and regulatory regimes to which they are subject.') },
                     { header: it.L('Anti-Fraud Officer'),   subsection: 'anti_fraud_officer',   text: it.L('Exercise exceptional client relationship management skills to prevent fraudulent activities in payments processing and business transactions.') },

@@ -108,10 +108,11 @@ const JobDetails = () => (
                         />
 
                         <SideBar
-                            className='compliance'
+                            className='compliance_and_risk_management'
                             sidebar_items={[
                                 { href: 'compliance_executive',            string: 'Compliance Executive' },
                                 { href: 'payments_and_compliance_analyst', string: 'Payments and Compliance Analyst' },
+                                { href: 'risk_management_executive',       string: 'Risk Management Executive' },
                             ]}
                         />
                     </div>
@@ -757,7 +758,7 @@ const JobDetails = () => (
                         </div>
                     </div>
 
-                    <div className='accounting'>
+                    <div className='accounting_payments'>
                         <div className='invisible' id='accounts_and_payments_executive'>
                             <h1>{it.L('Accounts and Payments Executive')}</h1>
 
@@ -794,7 +795,7 @@ const JobDetails = () => (
                         </div>
                     </div>
 
-                    <div className='compliance'>
+                    <div className='compliance_and_risk_management'>
                         <div className='invisible' id='compliance_executive'>
                             <h1>{it.L('Compliance Executive')}</h1>
 
@@ -862,6 +863,42 @@ const JobDetails = () => (
                                     { text: it.L('Excellent proficiency in spoken and written English.') },
                                     { text: it.L('Knowledge of payment transaction analysis, in particular e-wallets/cryptocurrencies will be considered an advantage') },
                                 ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='risk_management_executive'>
+                            <h1>{it.L('Risk Management Executive')}</h1>
+
+                            <p>{it.L('As our Risk Management Executive, we will depend on you to identify, analyse, and take necessary measures to reduce or eliminate risks faced by the organisation.')}</p>
+
+                            <UlText
+                              text={it.L('Responsibilities:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Observe internal policies, procedures, and guidelines on all matters that concern risk management') },
+                                  { text: it.L('Investigate client accounts that have been flagged by existing fraud controls and processes') },
+                                  { text: it.L('Monitor client’s user behaviour on our trading platform') },
+                                  { text: it.L('Review and analyse suspicious client activities') },
+                                  { text: it.L('Review and approve KYC documents') },
+                                  { text: it.L('Verify and approve client withdrawal requests') },
+                                  { text: it.L('Block and unblock client accounts in line with internal guidelines') },
+                                  { text: it.L('Evaluate existing procedures and policies and suggest improvements') },
+                                  { text: it.L('Prepare reports on investigations and resolved issues') },
+                                  { text: it.L('Handle chargeback disputes') },
+                              ]}
+                            />
+
+                            <UlText
+                              text={it.L('Preferences:')}
+                              className='bullet'
+                              items={[
+                                  { text: it.L('Degree in finance or economics, law, risk management, business studies, or management') },
+                                  { text: it.L('Thorough understanding of AML and fraud processes and applications') },
+                                  { text: it.L('Strong analytical capabilities that have been proven in a prior capacity, or a keen interest to move into this area') },
+                                  { text: it.L('Self-driven and flexible attitude towards task rotations') },
+                                  { text: it.L('Organisational skills and the ability to work proactively') },
+                                  { text: it.L('High-level of integrity, reliability and work ethic') },
+                              ]}
                             />
                         </div>
                     </div>
