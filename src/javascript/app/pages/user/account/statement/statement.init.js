@@ -53,11 +53,13 @@ const StatementInit = (() => {
     };
 
     const getAccountStatistics = () => {
-        // only show Account Statistics to MLT/MX clients
-        if (!/^MLT|MX/.test(Client.get('loginid'))) return;
+        BinarySocket.wait('landing_company').then(() => {
+            // only show Account Statistics to MLT/MX clients
+            if (!/malta|iom/.test(Client.get('landing_company_shortcode'))) return;
 
-        BinarySocket.send({ account_statistics: 1 }).then(response => {
-            StatementUI.updateAccountStatistics(response);
+            BinarySocket.send({ account_statistics: 1 }).then(response => {
+                StatementUI.updateAccountStatistics(response.account_statistics);
+            });
         });
     };
 

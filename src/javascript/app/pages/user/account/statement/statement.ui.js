@@ -1,8 +1,7 @@
 const Statement   = require('./statement');
 const Client      = require('../../../../base/client');
-const formatMoney = require('../../../../common/currency').formatMoney;
-
 const Table       = require('../../../../common/attach_dom/table');
+const formatMoney = require('../../../../common/currency').formatMoney;
 const showTooltip = require('../../../../common/get_app_details').showTooltip;
 const localize    = require('../../../../../_common/localize').localize;
 const downloadCSV = require('../../../../../_common/utility').downloadCSV;
@@ -95,12 +94,12 @@ const StatementUI = (() => {
             `Statement_${Client.get('loginid')}_latest${$('#rows_count').text()}_${window.time.replace(/\s/g, '_').replace(/:/g, '')}.csv`);
     };
 
-    const updateAccountStatistics = ({ account_statistics }) => {
+    const updateAccountStatistics = (account_statistics) => {
         const { currency, total_deposits, total_withdrawals } = account_statistics;
 
         $('#total_deposits').html(formatMoney(currency, total_deposits));
         $('#total_withdrawals').html(formatMoney(currency, total_withdrawals));
-        $('#net_deposit').html(formatMoney(currency, total_deposits - total_withdrawals));
+        $('#net_deposit').html(formatMoney(currency, +total_deposits - +total_withdrawals));
 
         $('#account_statistics').setVisibility(1);
     };
