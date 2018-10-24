@@ -4,8 +4,8 @@ import Header from './header.jsx';
 import MobileMenu from './mobile_menu.jsx';
 import Footer from './footer.jsx';
 import Gtm from '../../_common/includes/gtm.jsx';
-import Title from '../../_common/components/title.jsx';
 import InterviewPopup from '../../_common/components/interview_popup.jsx';
+import Title from '../../_common/components/title.jsx';
 
 const CONTENT_PLACEHOLDER = 'CONTENT_PLACEHOLDER';
 
