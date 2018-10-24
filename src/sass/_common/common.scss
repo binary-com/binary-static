@@ -713,7 +713,7 @@ label + input {
                 margin: 0;
             }
             #interview_no_thanks {
-                color: $COLOR_NAV; /* stylelint-disable color-no-hex */
+                color: $COLOR_NAV;
             }
         }
         &__secondary_options {
@@ -733,9 +733,6 @@ label + input {
     h1, h2 {
         text-align: center;
         line-height: 1.15;
-    }
-    b {
-        font-weight: bold;
     }
     @media screen and (max-width: 768px) {
         h1 {
