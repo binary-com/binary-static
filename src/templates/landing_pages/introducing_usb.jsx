@@ -60,7 +60,7 @@ const UsbPage = () => (
                     <div className='col'>
                         <div className='header-content'>
                             <h1 className='header-title content-inverse-color ft-300'>{('Welcome to the future')}</h1>
-                            <span className='header-sub secondary-color'>{('Introducing USB<')}</span>
+                            <span className='header-sub secondary-color'>{('Introducing USB')}</span>
                             <span className='header-sub content-inverse-color'>{('A stablecoin backed by the US Dollar')}</span>
                         </div>
                     </div>
