@@ -1,14 +1,15 @@
 import React                from 'react';
 import PropTypes            from 'prop-types';
+import { getAccountOfType } from '_common/base/client_base';
 import { localize }         from '_common/localize';
 import URL                  from '_common/url';
 import FullPageModal        from 'App/Components/Elements/FullPageModal/full_page_modal.jsx';
-import { getAccountOfType } from '_common/base/client_base';
 import { switchAccount }    from 'Services/Helpers/switch_account';
 
 const onConfirm = () => {
     switchAccount(getAccountOfType('virtual').loginid);
 };
+
 const onCancel  = () => {
     window.location.href = URL.urlFor('trading');
 };
