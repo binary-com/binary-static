@@ -647,6 +647,18 @@ label + input {
     }
 }
 
+.notice-circle {
+    width: 16px;
+    height: 16px;
+    border: 2px solid $COLOR_BLUE_SHADE;
+    border-radius: 50%;
+    color: $COLOR_BLUE_SHADE;
+    line-height: 16px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+}
+
 @media (max-width: 768px) {
     .show_mobile {
         &[data-balloon]:before, &[data-balloon]:after {
