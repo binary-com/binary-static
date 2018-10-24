@@ -66,7 +66,7 @@ const JobDetails = () => (
                                 { className: 'compliance',             string: it.L('Compliance and Risk Management') },
                                 { className: 'customer_support',       string: it.L('Customer Support') },
                                 { className: 'internal_audit',         string: it.L('Internal Audit') },
-                                { classname: 'human_resources',        string: it.L('Human Resource') }
+                                { classname: 'human_resources',        string: it.L('Human Resource') },
                             ]}
                         />
                     </div>
@@ -78,8 +78,8 @@ const JobDetails = () => (
                                 { href: 'system_administrator',                string: it.L('System Administrator') },
                                 { href: 'backend_developer',                   string: it.L('Back-End Developer') },
                                 { href: 'frontend_developer',                  string: it.L('Front-End Developer') },
-                                { href: 'perl_developer',                      string: it.L('Perl Developer')},
-                                { href: 'cryptocurrency_blockchain_developer', string: it.L('Cryptocurrency/Blockchain Developer')},
+                                { href: 'perl_developer',                      string: it.L('Perl Developer') },
+                                { href: 'cryptocurrency_blockchain_developer', string: it.L('Cryptocurrency/Blockchain Developer') },
                                 { href: 'security_researcher',                 string: it.L('Security Researcher') },
                                 { href: 'ui_ux_designer',                      string: it.L('UI/UX Designer') },
                             ]}
@@ -116,11 +116,11 @@ const JobDetails = () => (
                         />
 
                         <SideBar
-                          className='human_resources'
-                          sidebar_items={[
-                              { href: 'hr_operations_executive',            string: 'HR Operations Executive' },
-                              { href: 'talent_acquisition_executive',       string: 'Talent Acquisition Executive' },
-                          ]}
+                            className='human_resources'
+                            sidebar_items={[
+                                { href: 'hr_operations_executive',      string: 'HR Operations Executive' },
+                                { href: 'talent_acquisition_executive', string: 'Talent Acquisition Executive' },
+                            ]}
                         />
                     </div>
                 </div>
@@ -175,38 +175,38 @@ const JobDetails = () => (
                             <p>{it.L('To excel, you must demonstrate a passion for open-source technologies. You must also have a burning desire to challenge yourself in a fast-paced environment.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Assist in the daily IT requirements of Malta office') },
-                                  { text: it.L('Plan and implement IT solutions to achieve desired results') },
-                                  { text: it.L('Keep up with the latest developments in IT and maintain knowledge relevant to the requirements of the business') },
-                                  { text: it.L('Plan and implement methods of best practices in IT security') },
-                                  { text: it.L('Review and maintain third-party services used by the company') },
-                                  { text: it.L('Recommend alternatives to redundant or obsolete systems') },
-                                  { text: it.L('Manage and maintain all software, hardware, and associated peripherals including printers, copiers, and phones') },
-                                  { text: it.L('Manage IT assets and maintain an up-to-date asset registry') },
-                                  { text: it.L('Liaise with external suppliers to ensure purchases are made at the most cost-efficient rate') },
-                                  { text: it.L('Prepare and present proposals for the provisioning of IT-related systems and services') },
-                                  { text: it.L('Provide onsite support to all employees with the necessary hardware and software required for their jobs') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Assist in the daily IT requirements of Malta office') },
+                                    { text: it.L('Plan and implement IT solutions to achieve desired results') },
+                                    { text: it.L('Keep up with the latest developments in IT and maintain knowledge relevant to the requirements of the business') },
+                                    { text: it.L('Plan and implement methods of best practices in IT security') },
+                                    { text: it.L('Review and maintain third-party services used by the company') },
+                                    { text: it.L('Recommend alternatives to redundant or obsolete systems') },
+                                    { text: it.L('Manage and maintain all software, hardware, and associated peripherals including printers, copiers, and phones') },
+                                    { text: it.L('Manage IT assets and maintain an up-to-date asset registry') },
+                                    { text: it.L('Liaise with external suppliers to ensure purchases are made at the most cost-efficient rate') },
+                                    { text: it.L('Prepare and present proposals for the provisioning of IT-related systems and services') },
+                                    { text: it.L('Provide onsite support to all employees with the necessary hardware and software required for their jobs') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('A diploma or degree in Computer Science or Information Technology, or good experience in the field of IT operations/administration') },
-                                  { text: it.L('Exceptional English communication skills (both oral and written)') },
-                                  { text: it.L('Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks.') },
-                                  { text: it.L('Hands-on experience in systems and network security. Experience with Fortigate or similar devices (e.g.Cisco, Mikrotik)') },
-                                  { text: it.L('Knowledge of Mac or Linux Technologies and associated security risks') },
-                                  { text: it.L('Knowledge of VPN concepts and prior experience of setting up site-to-site networks') },
-                                  { text: it.L('Experience with +DRAC is a plus') },
-                                  { text: it.L('Experience in ARUBA or similar enterprise WiFi AP management is a plus.') },
-                                  { text: it.L('Experience in end-user device security audit and policy implementation is a plus') },
-                                  { text: it.L('The willingness to learn new skills') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('A diploma or degree in Computer Science or Information Technology, or good experience in the field of IT operations/administration') },
+                                    { text: it.L('Exceptional English communication skills (both oral and written)') },
+                                    { text: it.L('Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks.') },
+                                    { text: it.L('Hands-on experience in systems and network security. Experience with Fortigate or similar devices (e.g.Cisco, Mikrotik)') },
+                                    { text: it.L('Knowledge of Mac or Linux Technologies and associated security risks') },
+                                    { text: it.L('Knowledge of VPN concepts and prior experience of setting up site-to-site networks') },
+                                    { text: it.L('Experience with +DRAC is a plus') },
+                                    { text: it.L('Experience in ARUBA or similar enterprise WiFi AP management is a plus.') },
+                                    { text: it.L('Experience in end-user device security audit and policy implementation is a plus') },
+                                    { text: it.L('The willingness to learn new skills') },
+                                ]}
                             />
                         </div>
 
@@ -216,28 +216,28 @@ const JobDetails = () => (
                             <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high-traffic networks. As our Senior Back-End Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Develop and maintain world-class web applications.') },
-                                  { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and Databases.') },
-                                  { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features.') },
-                                  { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability.') },
-                                  { text: it.L('Participate in all aspects of the product lifecycle.') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Develop and maintain world-class web applications.') },
+                                    { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and Databases.') },
+                                    { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features.') },
+                                    { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability.') },
+                                    { text: it.L('Participate in all aspects of the product lifecycle.') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, and a willingness to become highly proficient with Perl.') },
-                                  { text: it.L('Expertise in Linux system administration.') },
-                                  { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL.') },
-                                  { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, NGINX, JavaScript, Redis, and Git.') },
-                                  { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques.') },
-                                  { text: it.L('Passion for Linux and other open-source platforms.') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, and a willingness to become highly proficient with Perl.') },
+                                    { text: it.L('Expertise in Linux system administration.') },
+                                    { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL.') },
+                                    { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, NGINX, JavaScript, Redis, and Git.') },
+                                    { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques.') },
+                                    { text: it.L('Passion for Linux and other open-source platforms.') },
+                                ]}
                             />
                         </div>
 
@@ -248,28 +248,28 @@ const JobDetails = () => (
                             <p>{it.L('You will also test and debug complex technical and UI issues related to our trading platform (that processes over one million transactions per day), based on feedback from our clients and customer service team.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Develop and maintain advanced features, tools, and applications according to best practices in UI/UX, front-end development and hybrid mobile application development.') },
-                                  { text: it.L('Test and debug our ever-evolving product line to improve their speed, scalability, and usability across multiple browsers, devices, and web standards.') },
-                                  { text: it.L('Stay on top of the latest JavaScript frameworks, libraries, and tools in order to apply them when necessary to solve challenges related to web and mobile development.') },
-                                  { text: it.L('Ensure the design and development of each page or product is consistent with our style guide, and that everything works as planned with each release.') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Develop and maintain advanced features, tools, and applications according to best practices in UI/UX, front-end development and hybrid mobile application development.') },
+                                    { text: it.L('Test and debug our ever-evolving product line to improve their speed, scalability, and usability across multiple browsers, devices, and web standards.') },
+                                    { text: it.L('Stay on top of the latest JavaScript frameworks, libraries, and tools in order to apply them when necessary to solve challenges related to web and mobile development.') },
+                                    { text: it.L('Ensure the design and development of each page or product is consistent with our style guide, and that everything works as planned with each release.') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Extensive knowledge in advanced coding techniques, cross-platform development, and hybrid mobile app development.') },
-                                  { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques.') },
-                                  { text: it.L('Extensive experience of JavaScript, HTML, CSS, AJAX, and JSON.') },
-                                  { text: it.L('Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular.') },
-                                  { text: it.L('Experience with package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus), and APIs (WebSocket).') },
-                                  { text: it.L('Familiarity with testing and debugging processes, including unit testing and UI testing.') },
-                                  { text: it.L('Passion for Linux and other open-source platforms') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Extensive knowledge in advanced coding techniques, cross-platform development, and hybrid mobile app development.') },
+                                    { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques.') },
+                                    { text: it.L('Extensive experience of JavaScript, HTML, CSS, AJAX, and JSON.') },
+                                    { text: it.L('Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular.') },
+                                    { text: it.L('Experience with package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus), and APIs (WebSocket).') },
+                                    { text: it.L('Familiarity with testing and debugging processes, including unit testing and UI testing.') },
+                                    { text: it.L('Passion for Linux and other open-source platforms') },
+                                ]}
                             />
                         </div>
 
@@ -279,29 +279,29 @@ const JobDetails = () => (
                             <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high- traffic networks. As our Perl Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Develop and maintain world-class web applications.') },
-                                  { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and databases.') },
-                                  { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features.') },
-                                  { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability.') },
-                                  { text: it.L('Participate in all aspects of the product lifecycle.') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Develop and maintain world-class web applications.') },
+                                    { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and databases.') },
+                                    { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features.') },
+                                    { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability.') },
+                                    { text: it.L('Participate in all aspects of the product lifecycle.') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Deep Perl expertise.') },
-                                  { text: it.L('Expertise in Linux system administration.') },
-                                  { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL.') },
-                                  { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, nginx, JavaScript, Redis, and Git.') },
-                                  { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques.') },
-                                  { text: it.L('Event-driven programming in Perl.') },
-                                  { text: it.L('Passion for Linux, and other open-source platforms.') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Deep Perl expertise.') },
+                                    { text: it.L('Expertise in Linux system administration.') },
+                                    { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL.') },
+                                    { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, nginx, JavaScript, Redis, and Git.') },
+                                    { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques.') },
+                                    { text: it.L('Event-driven programming in Perl.') },
+                                    { text: it.L('Passion for Linux, and other open-source platforms.') },
+                                ]}
                             />
                         </div>
 
@@ -311,32 +311,32 @@ const JobDetails = () => (
                             <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our system infrastructure and high-traffic networks. As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
-                              text={it.L('You will:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Design and develop applications and platforms based on blockchain technology') },
-                                  { text: it.L('Work closely with both technical and non-technical teams to develop and integrate blockchain solutions for our business') },
-                                  { text: it.L('Provide technical leadership on cryptocurrencies and blockchain technology') },
-                                  { text: it.L('Research and evaluate blockchain technologies and solutions to identify use cases and implementation') },
-                                  { text: it.L('Write robust, high-quality, and production-ready code for our websites and applications') },
-                              ]}
+                                text={it.L('You will:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Design and develop applications and platforms based on blockchain technology') },
+                                    { text: it.L('Work closely with both technical and non-technical teams to develop and integrate blockchain solutions for our business') },
+                                    { text: it.L('Provide technical leadership on cryptocurrencies and blockchain technology') },
+                                    { text: it.L('Research and evaluate blockchain technologies and solutions to identify use cases and implementation') },
+                                    { text: it.L('Write robust, high-quality, and production-ready code for our websites and applications') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, and a willingness to become highly proficient with Perl') },
-                                  { text: it.L('Experience with Solidity and the development of Dapps') },
-                                  { text: it.L('Excellent understanding of Bitcoin or other cryptocurrencies') },
-                                  { text: it.L('Understanding of cryptography, including asymmetric, symmetric, hash functions, and encryption/signatures') },
-                                  { text: it.L('Familiarity with concepts such as blockchain confirmations, multisig, and HD wallets') },
-                                  { text: it.L('Knowledge of coloured coins and Ethereum tokens, including ERC20/23/223') },
-                                  { text: it.L('Experience with Bitcoin or Geth RPC APIs is a plus') },
-                                  { text: it.L('Knowledge of hashing algorithms, including SHA and scrypt') },
-                                  { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques') },
-                                  { text: it.L('Passion for Linux and other open-source platforms') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, and a willingness to become highly proficient with Perl') },
+                                    { text: it.L('Experience with Solidity and the development of Dapps') },
+                                    { text: it.L('Excellent understanding of Bitcoin or other cryptocurrencies') },
+                                    { text: it.L('Understanding of cryptography, including asymmetric, symmetric, hash functions, and encryption/signatures') },
+                                    { text: it.L('Familiarity with concepts such as blockchain confirmations, multisig, and HD wallets') },
+                                    { text: it.L('Knowledge of coloured coins and Ethereum tokens, including ERC20/23/223') },
+                                    { text: it.L('Experience with Bitcoin or Geth RPC APIs is a plus') },
+                                    { text: it.L('Knowledge of hashing algorithms, including SHA and scrypt') },
+                                    { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques') },
+                                    { text: it.L('Passion for Linux and other open-source platforms') },
+                                ]}
                             />
                         </div>
 
@@ -350,35 +350,35 @@ const JobDetails = () => (
                             <p>{it.L('You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Check our systems against the latest attacks, vulnerabilities, and mitigations') },
-                                  { text: it.L('Identify attack vectors') },
-                                  { text: it.L('Conduct security reviews of production infrastructure') },
-                                  { text: it.L('Build security tools and processes for critical infrastructure monitoring, protection, and mitigation') },
-                                  { text: it.L('Perform regular pentesting of our web applications') },
-                                  { text: it.L('Monitor our automated security scripts and utilise them to identify threats') },
-                                  { text: it.L('Manage our bug bounty programme') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Check our systems against the latest attacks, vulnerabilities, and mitigations') },
+                                    { text: it.L('Identify attack vectors') },
+                                    { text: it.L('Conduct security reviews of production infrastructure') },
+                                    { text: it.L('Build security tools and processes for critical infrastructure monitoring, protection, and mitigation') },
+                                    { text: it.L('Perform regular pentesting of our web applications') },
+                                    { text: it.L('Monitor our automated security scripts and utilise them to identify threats') },
+                                    { text: it.L('Manage our bug bounty programme') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Experience with web application security and testing, security monitoring, and intrusion detection') },
-                                  { text: it.L('Experience with fuzzing and finding edge cases in validation') },
-                                  { text: it.L('Understanding of encryption fundamentals and the OWASP Top 10') },
-                                  { text: it.L('A good understanding of attacks and mitigations such as timing, injection (e.g. form parameter/SQL), side-channel, DoS, buffer overflows and DNS cache poisoning') },
-                                  { text: it.L('Able to assess the security impact of bugs and API inconsistencies') },
-                                  { text: it.L('Familiarity with industry standard tools such as Burp Suit and Metasploit') },
-                                  { text: it.L('Experience in writing custom code and scripts to investigate security threats') },
-                                  { text: it.L('A clear understanding of the OSI model, TCP/IP, and other industry-standard network defense concepts') },
-                                  { text: it.L('Knowledge of the latest industry trends and best practices in information security') },
-                                  { text: it.L('Extensive experience in bug bounty programmes such as HackerOne, Bugcrowd, and Cobalt') },
-                                  { text: it.L('OSCP, CEH, Security+, CISSP, or any GIAC certification is an advantage') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Experience with web application security and testing, security monitoring, and intrusion detection') },
+                                    { text: it.L('Experience with fuzzing and finding edge cases in validation') },
+                                    { text: it.L('Understanding of encryption fundamentals and the OWASP Top 10') },
+                                    { text: it.L('A good understanding of attacks and mitigations such as timing, injection (e.g. form parameter/SQL), side-channel, DoS, buffer overflows and DNS cache poisoning') },
+                                    { text: it.L('Able to assess the security impact of bugs and API inconsistencies') },
+                                    { text: it.L('Familiarity with industry standard tools such as Burp Suit and Metasploit') },
+                                    { text: it.L('Experience in writing custom code and scripts to investigate security threats') },
+                                    { text: it.L('A clear understanding of the OSI model, TCP/IP, and other industry-standard network defense concepts') },
+                                    { text: it.L('Knowledge of the latest industry trends and best practices in information security') },
+                                    { text: it.L('Extensive experience in bug bounty programmes such as HackerOne, Bugcrowd, and Cobalt') },
+                                    { text: it.L('OSCP, CEH, Security+, CISSP, or any GIAC certification is an advantage') },
+                                ]}
                             />
                         </div>
 
@@ -390,32 +390,32 @@ const JobDetails = () => (
                             <p>{it.L('You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Conduct research using a variety of qualitative and quantitative methods') },
-                                  { text: it.L('Create user personas; define user task flows and UI specifications; and run A/B tests to understand user behaviours and their most pressing needs.') },
-                                  { text: it.L('Be involved in every phase of product development, from concept to execution to launch to give the product a distinct and consistent visual identity, as well as ensure that it fully serves the needs of the end user.') },
-                                  { text: it.L('Create and update style guides to establish and maintain a consistent visual identity across our product ecosystem.') },
-                                  { text: it.L('Create visual elements for websites and applications, including icons and images.') },
-                                  { text: it.L('Create and maintain wireframes and mockups for new and existing products.') },
-                                  { text: it.L('Keep up with the latest trends and techniques in design, UI, and UX.') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Conduct research using a variety of qualitative and quantitative methods') },
+                                    { text: it.L('Create user personas; define user task flows and UI specifications; and run A/B tests to understand user behaviours and their most pressing needs.') },
+                                    { text: it.L('Be involved in every phase of product development, from concept to execution to launch to give the product a distinct and consistent visual identity, as well as ensure that it fully serves the needs of the end user.') },
+                                    { text: it.L('Create and update style guides to establish and maintain a consistent visual identity across our product ecosystem.') },
+                                    { text: it.L('Create visual elements for websites and applications, including icons and images.') },
+                                    { text: it.L('Create and maintain wireframes and mockups for new and existing products.') },
+                                    { text: it.L('Keep up with the latest trends and techniques in design, UI, and UX.') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Proven UI and UX experience with a strong portfolio of work.') },
-                                  { text: it.L('Ability to conduct end-to-end UX research, including usability testing, and A/B testing.') },
-                                  { text: it.L('Experience in interpreting complex concepts and processes to develop intuitive and logical user flows and usage scenarios.') },
-                                  { text: it.L('Extensive experience in creating interactive UI elements for web and mobile apps.') },
-                                  { text: it.L('Proficiency in designing intuitive and cohesive screens, pages, and visual elements that work as intended.') },
-                                  { text: it.L('Proficiency in Photoshop, Illustrator, Sketch, and other design and wireframing software.') },
-                                  { text: it.L('Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps.') },
-                                  { text: it.L('Bachelor’s degree in graphic design, interaction design, visual communication, multimedia, or equivalent.') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Proven UI and UX experience with a strong portfolio of work.') },
+                                    { text: it.L('Ability to conduct end-to-end UX research, including usability testing, and A/B testing.') },
+                                    { text: it.L('Experience in interpreting complex concepts and processes to develop intuitive and logical user flows and usage scenarios.') },
+                                    { text: it.L('Extensive experience in creating interactive UI elements for web and mobile apps.') },
+                                    { text: it.L('Proficiency in designing intuitive and cohesive screens, pages, and visual elements that work as intended.') },
+                                    { text: it.L('Proficiency in Photoshop, Illustrator, Sketch, and other design and wireframing software.') },
+                                    { text: it.L('Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps.') },
+                                    { text: it.L('Bachelor’s degree in graphic design, interaction design, visual communication, multimedia, or equivalent.') },
+                                ]}
                             />
                         </div>
 
@@ -506,35 +506,35 @@ const JobDetails = () => (
                             <p>{it.L('This includes decisions on new markets to launch in, and the spreads and margins we might offer. You must also be able to analyse and interpret large volumes of data, and communicate your research and findings in a clear and concise manner –– either in written reports or presentations.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs') },
-                                  { text: it.L('Create data analytics tools for trading/quantitative analysis') },
-                                  { text: it.L('Conduct performance testing including backtesting, stress testing analysis, and benchmarking') },
-                                  { text: it.L('Develop risk management models and algorithms using MATLAB/Python/R/C++') },
-                                  { text: it.L('Manage day-to-day risk of our trading books') },
-                                  { text: it.L('Set up liquidity connections via bridges and gateways for MT4 and MT5 brokers') },
-                                  { text: it.L('Conduct research on competitors and industry trends to identify new products and potential markets') },
-                                  { text: it.L('Develop mathematical/statistical models for pricing and risk management for all products.') },
-                                  { text: it.L('Use advanced data analytics skills to study trends/pattern in financial markets.') },
-                                  { text: it.L('Help in developing advanced risk management tools for various markets (forex, equities, commodities)') },
-                                  { text: it.L('Prepare daily, weekly, and monthly financial reports') },
-                                  { text: it.L('Generate periodic and special reports on client trading activity and significant trends that impact our client behaviour') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Create mathematical/statistical models for pricing, analyse fat tails to assess margin requirements, and manage the risk for exotic options, Forex, and CFDs') },
+                                    { text: it.L('Create data analytics tools for trading/quantitative analysis') },
+                                    { text: it.L('Conduct performance testing including backtesting, stress testing analysis, and benchmarking') },
+                                    { text: it.L('Develop risk management models and algorithms using MATLAB/Python/R/C++') },
+                                    { text: it.L('Manage day-to-day risk of our trading books') },
+                                    { text: it.L('Set up liquidity connections via bridges and gateways for MT4 and MT5 brokers') },
+                                    { text: it.L('Conduct research on competitors and industry trends to identify new products and potential markets') },
+                                    { text: it.L('Develop mathematical/statistical models for pricing and risk management for all products.') },
+                                    { text: it.L('Use advanced data analytics skills to study trends/pattern in financial markets.') },
+                                    { text: it.L('Help in developing advanced risk management tools for various markets (forex, equities, commodities)') },
+                                    { text: it.L('Prepare daily, weekly, and monthly financial reports') },
+                                    { text: it.L('Generate periodic and special reports on client trading activity and significant trends that impact our client behaviour') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('An advanced university degree in physics, financial engineering, or mathematics is preferred') },
-                                  { text: it.L('Experience in Forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
-                                  { text: it.L('Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc.') },
-                                  { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters') },
-                                  { text: it.L('Strong analytical skills and the ability to communicate your findings in a clear, concise, and effective manner') },
-                                  { text: it.L('Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus.') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('An advanced university degree in physics, financial engineering, or mathematics is preferred') },
+                                    { text: it.L('Experience in Forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
+                                    { text: it.L('Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc.') },
+                                    { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters') },
+                                    { text: it.L('Strong analytical skills and the ability to communicate your findings in a clear, concise, and effective manner') },
+                                    { text: it.L('Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus.') },
+                                ]}
                             />
                         </div>
                     </div>
@@ -578,29 +578,29 @@ const JobDetails = () => (
                             <p>{it.L('The Marketing team oversees all our marketing initiatives, such as our partnership programmes, social media presence, webinars, PPC, SEO, and email marketing. As our Technical Marketing Executive, you will act on data-driven information and assist in troubleshooting issues to further nurture and grow our client base.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Act as first and second level support for our traders by offering them solutions through basic coding and troubleshooting techniques') },
-                                  { text: it.L('Engage in market development to grow the client base for existing products and platforms of the company') },
-                                  { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors for our client base') },
-                                  { text: it.L('Support overall development, planning and execution of the team’s digital marketing efforts in accordance to the marketing objectives of respective projects') },
-                                  { text: it.L('Contribute creative ideas to further the company’s dynamic branding effort') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Act as first and second level support for our traders by offering them solutions through basic coding and troubleshooting techniques') },
+                                    { text: it.L('Engage in market development to grow the client base for existing products and platforms of the company') },
+                                    { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors for our client base') },
+                                    { text: it.L('Support overall development, planning and execution of the team’s digital marketing efforts in accordance to the marketing objectives of respective projects') },
+                                    { text: it.L('Contribute creative ideas to further the company’s dynamic branding effort') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Exceptional English communication skills (both oral and written)') },
-                                  { text: it.L('Creative and analytical thinking that leads to actionable tactics and measurable results') },
-                                  { text: it.L('An intermediate understanding of the interaction of information technology and client servicing aspects within the B2B and B2C environments') },
-                                  { text: it.L('University degree in Marketing, Mathematics, IT/Programming or any related field') },
-                                  { text: it.L('Considerable knowledge in creating meaningful analytics from raw data, with the goal of influencing clients to take action') },
-                                  { text: it.L('A broad foundation in HTML, CSS, Websocket API or MQL programming to develop solutions and answer queries') },
-                                  { text: it.L('A keen eye to identify new trends in marketing, evaluate new technologies and ensure the brand is at the forefront of industry developments') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Exceptional English communication skills (both oral and written)') },
+                                    { text: it.L('Creative and analytical thinking that leads to actionable tactics and measurable results') },
+                                    { text: it.L('An intermediate understanding of the interaction of information technology and client servicing aspects within the B2B and B2C environments') },
+                                    { text: it.L('University degree in Marketing, Mathematics, IT/Programming or any related field') },
+                                    { text: it.L('Considerable knowledge in creating meaningful analytics from raw data, with the goal of influencing clients to take action') },
+                                    { text: it.L('A broad foundation in HTML, CSS, Websocket API or MQL programming to develop solutions and answer queries') },
+                                    { text: it.L('A keen eye to identify new trends in marketing, evaluate new technologies and ensure the brand is at the forefront of industry developments') },
+                                ]}
                             />
                         </div>
 
@@ -610,32 +610,32 @@ const JobDetails = () => (
                             <p>{it.L('The Marketing team oversees all our marketing and advertising initiatives, such as our affiliate programme, social media presence, webinars, and emails. As our Marketing Executive, you will coordinate and execute marketing campaigns across a variety of channels, and continuously identify the best ways to reach current and prospective customers.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Plan, coordinate, and execute a wide range of promotional campaigns') },
-                                  { text: it.L('Monitor campaigns using key metrics and submit reports on campaign performance') },
-                                  { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors') },
-                                  { text: it.L('Produce content for websites, blogs, social media, and marketing materials') },
-                                  { text: it.L('Maintain relationships with clients and partners to drive retention and loyalty') },
-                                  { text: it.L('Contribute ideas, energy, and creativity to further the company’s dynamic branding efforts') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Plan, coordinate, and execute a wide range of promotional campaigns') },
+                                    { text: it.L('Monitor campaigns using key metrics and submit reports on campaign performance') },
+                                    { text: it.L('Perform market research and analysis to uncover trends, prospects, partners, and competitors') },
+                                    { text: it.L('Produce content for websites, blogs, social media, and marketing materials') },
+                                    { text: it.L('Maintain relationships with clients and partners to drive retention and loyalty') },
+                                    { text: it.L('Contribute ideas, energy, and creativity to further the company’s dynamic branding efforts') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Exceptional English communication skills (both oral and written)') },
-                                  { text: it.L('Creative and analytical thinking that leads to actionable tactics and results') },
-                                  { text: it.L('Knowledge of affiliate marketing, email marketing, and basic HTML') },
-                                  { text: it.L('University degree in marketing, journalism, communication, or a business-related discipline') },
-                                  { text: it.L('Passion for advertising and marketing') },
-                                  { text: it.L('Experience in the financial services industry') },
-                                  { text: it.L('Experience in content writing is welcome') },
-                                  { text: it.L('Ability to speak multiple languages is preferred') },
-                                  { text: it.L('Interest in IT or software development') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Exceptional English communication skills (both oral and written)') },
+                                    { text: it.L('Creative and analytical thinking that leads to actionable tactics and results') },
+                                    { text: it.L('Knowledge of affiliate marketing, email marketing, and basic HTML') },
+                                    { text: it.L('University degree in marketing, journalism, communication, or a business-related discipline') },
+                                    { text: it.L('Passion for advertising and marketing') },
+                                    { text: it.L('Experience in the financial services industry') },
+                                    { text: it.L('Experience in content writing is welcome') },
+                                    { text: it.L('Ability to speak multiple languages is preferred') },
+                                    { text: it.L('Interest in IT or software development') },
+                                ]}
                             />
                         </div>
 
@@ -774,17 +774,17 @@ const JobDetails = () => (
                             <p>{it.L('They also generate monthly management accounts, annual audited accounts, and reconcile all transactions. As our Accounts &amp; Payments Executive, you will be able to contribute to all these key areas and increase the efficiency of our financial operations.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Process client payments, as well as handle and resolve client payment queries.') },
-                                  { text: it.L('Track and manage transactions and accounts using proprietary and non-proprietary software and systems.') },
-                                  { text: it.L('Process transactions for clients who make deposits and withdrawals using a wide range of third-party payment services, including bank wire, credit card, and e-currency.') },
-                                  { text: it.L('Perform reconciliations of all transactions that take place through third-party payment services and banks.') },
-                                  { text: it.L('Assist in management accounting for all companies within the Binary Ltd. group.') },
-                                  { text: it.L('Work closely with the affiliate marketing team to process affiliate commission payments on a monthly basis.') },
-                                  { text: it.L('Constantly liaise with all internal departments such as Customer Support and Marketing on account and payment matters.') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Process client payments, as well as handle and resolve client payment queries.') },
+                                    { text: it.L('Track and manage transactions and accounts using proprietary and non-proprietary software and systems.') },
+                                    { text: it.L('Process transactions for clients who make deposits and withdrawals using a wide range of third-party payment services, including bank wire, credit card, and e-currency.') },
+                                    { text: it.L('Perform reconciliations of all transactions that take place through third-party payment services and banks.') },
+                                    { text: it.L('Assist in management accounting for all companies within the Binary Ltd. group.') },
+                                    { text: it.L('Work closely with the affiliate marketing team to process affiliate commission payments on a monthly basis.') },
+                                    { text: it.L('Constantly liaise with all internal departments such as Customer Support and Marketing on account and payment matters.') },
+                                ]}
                             />
 
                             <UlText
@@ -879,33 +879,33 @@ const JobDetails = () => (
                             <p>{it.L('As our Risk Management Executive, we will depend on you to identify, analyse, and take necessary measures to reduce or eliminate risks faced by the organisation.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Observe internal policies, procedures, and guidelines on all matters that concern risk management') },
-                                  { text: it.L('Investigate client accounts that have been flagged by existing fraud controls and processes') },
-                                  { text: it.L('Monitor client’s user behaviour on our trading platform') },
-                                  { text: it.L('Review and analyse suspicious client activities') },
-                                  { text: it.L('Review and approve KYC documents') },
-                                  { text: it.L('Verify and approve client withdrawal requests') },
-                                  { text: it.L('Block and unblock client accounts in line with internal guidelines') },
-                                  { text: it.L('Evaluate existing procedures and policies and suggest improvements') },
-                                  { text: it.L('Prepare reports on investigations and resolved issues') },
-                                  { text: it.L('Handle chargeback disputes') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Observe internal policies, procedures, and guidelines on all matters that concern risk management') },
+                                    { text: it.L('Investigate client accounts that have been flagged by existing fraud controls and processes') },
+                                    { text: it.L('Monitor client’s user behaviour on our trading platform') },
+                                    { text: it.L('Review and analyse suspicious client activities') },
+                                    { text: it.L('Review and approve KYC documents') },
+                                    { text: it.L('Verify and approve client withdrawal requests') },
+                                    { text: it.L('Block and unblock client accounts in line with internal guidelines') },
+                                    { text: it.L('Evaluate existing procedures and policies and suggest improvements') },
+                                    { text: it.L('Prepare reports on investigations and resolved issues') },
+                                    { text: it.L('Handle chargeback disputes') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Degree in finance or economics, law, risk management, business studies, or management') },
-                                  { text: it.L('Thorough understanding of AML and fraud processes and applications') },
-                                  { text: it.L('Strong analytical capabilities that have been proven in a prior capacity, or a keen interest to move into this area') },
-                                  { text: it.L('Self-driven and flexible attitude towards task rotations') },
-                                  { text: it.L('Organisational skills and the ability to work proactively') },
-                                  { text: it.L('High-level of integrity, reliability and work ethic') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Degree in finance or economics, law, risk management, business studies, or management') },
+                                    { text: it.L('Thorough understanding of AML and fraud processes and applications') },
+                                    { text: it.L('Strong analytical capabilities that have been proven in a prior capacity, or a keen interest to move into this area') },
+                                    { text: it.L('Self-driven and flexible attitude towards task rotations') },
+                                    { text: it.L('Organisational skills and the ability to work proactively') },
+                                    { text: it.L('High-level of integrity, reliability and work ethic') },
+                                ]}
                             />
                         </div>
                     </div>
@@ -917,31 +917,31 @@ const JobDetails = () => (
                             <p>{it.L('The Internal Audit team is the catalyst for improving our organisation’s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Evaluate and improve the effectiveness of internal controls, risk management, regulatory compliance, financial and operational processes') },
-                                  { text: it.L('Assist in preparing audit plans and programmes which includes functions, activities, objectives, scopes, and methodology') },
-                                  { text: it.L('Perform audit assignments and identify control gaps and opportunities for improvement') },
-                                  { text: it.L('Summarise audit findings and work with department heads on the proposed solutions') },
-                                  { text: it.L('Prepare reports expressing audit opinions on the adequacy and effectiveness of the internal controls and operational efficiency') },
-                                  { text: it.L('Follow up on the recommendations and timeline for corrective actions with department heads') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Evaluate and improve the effectiveness of internal controls, risk management, regulatory compliance, financial and operational processes') },
+                                    { text: it.L('Assist in preparing audit plans and programmes which includes functions, activities, objectives, scopes, and methodology') },
+                                    { text: it.L('Perform audit assignments and identify control gaps and opportunities for improvement') },
+                                    { text: it.L('Summarise audit findings and work with department heads on the proposed solutions') },
+                                    { text: it.L('Prepare reports expressing audit opinions on the adequacy and effectiveness of the internal controls and operational efficiency') },
+                                    { text: it.L('Follow up on the recommendations and timeline for corrective actions with department heads') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('A university degree in Accounting/Finance or its equivalent') },
-                                  { text: it.L('Exceptional English communication skills (both oral and written)') },
-                                  { text: it.L('A strong understanding of internal controls and business processes') },
-                                  { text: it.L('Creative and analytical thinking that leads to actionable solutions and outcomes') },
-                                  { text: it.L('Good reporting skills with a keen eye for detail') },
-                                  { text: it.L('Ability to work independently') },
-                                  { text: it.L('Advanced knowledge of Microsoft Office') },
-                                  { text: it.L('Experience in IT auditing or in-depth knowledge of computer systems is an advantage') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('A university degree in Accounting/Finance or its equivalent') },
+                                    { text: it.L('Exceptional English communication skills (both oral and written)') },
+                                    { text: it.L('A strong understanding of internal controls and business processes') },
+                                    { text: it.L('Creative and analytical thinking that leads to actionable solutions and outcomes') },
+                                    { text: it.L('Good reporting skills with a keen eye for detail') },
+                                    { text: it.L('Ability to work independently') },
+                                    { text: it.L('Advanced knowledge of Microsoft Office') },
+                                    { text: it.L('Experience in IT auditing or in-depth knowledge of computer systems is an advantage') },
+                                ]}
                             />
                         </div>
                     </div>
@@ -955,25 +955,25 @@ const JobDetails = () => (
                             <p>{it.L('They also manage our suppliers and contractors, as well as general administrative duties and procedures. As our Human Resource Operations Executive, you will be counted on to lead, execute, and support a wide range of HR-related and administrative tasks to ensure the smooth operations of our offices worldwide.')}</p>
 
                             <UlText
-                              text={it.L('Responsibilities:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Support our global recruitment and talent management needs, including onboarding, processing work permits, and expat management.') },
-                                  { text: it.L('Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees.') },
-                                  { text: it.L('Administer key human resource activities such as performance appraisals.') },
-                              ]}
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Support our global recruitment and talent management needs, including onboarding, processing work permits, and expat management.') },
+                                    { text: it.L('Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees.') },
+                                    { text: it.L('Administer key human resource activities such as performance appraisals.') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('An advanced/higher/graduate diploma or bachelor’s degree.') },
-                                  { text: it.L('Extensive experience in Microsoft Office applications, as well as popular HR management and payroll systems.') },
-                                  { text: it.L('Well-honed organisational, administrative, and accounting skills.') },
-                                  { text: it.L('Excellent oral and written communication skills in English and Bahasa Malaysia.') },
-                                  { text: it.L('Relevant work experience in a related field, such as managing and onboarding expats, processing work permits, and dealing with Malaysian governmental authorities will be a plus.') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('An advanced/higher/graduate diploma or bachelor’s degree.') },
+                                    { text: it.L('Extensive experience in Microsoft Office applications, as well as popular HR management and payroll systems.') },
+                                    { text: it.L('Well-honed organisational, administrative, and accounting skills.') },
+                                    { text: it.L('Excellent oral and written communication skills in English and Bahasa Malaysia.') },
+                                    { text: it.L('Relevant work experience in a related field, such as managing and onboarding expats, processing work permits, and dealing with Malaysian governmental authorities will be a plus.') },
+                                ]}
                             />
 
                         </div>
@@ -984,32 +984,32 @@ const JobDetails = () => (
                             <p>{it.L('The Recruitment team plays a challenging role in the company by sourcing and selecting quality applicants that will contribute to the company growth.')}</p>
 
                             <UlText
-                              className='bullet'
-                              items={[
-                                  { text: it.L('Support our global recruitment and talent management needs') },
-                                  { text: it.L('Schedule and coordinate interviews with candidates') },
-                                  { text: it.L('Develop and update job descriptions and specifications') },
-                                  { text: it.L('Assist and participate in recruitment activities including career fairs and campus recruitment') },
-                                  { text: it.L('Build our applicant database by researching and contacting various sources (eg: universities and job portals)') },
-                                  { text: it.L('Work alongside the HR Operations team in coordinating with the government linked bodies') },
-                                  { text: it.L('Assisting to prepare monthly/yearly recruitment analytics and hiring status report') },
-                                  { text: it.L('Collaborate with the marketing and design team to create recruitment branding materials') },
-                                  { text: it.L('Assist in organizing online technical tests') },
-                                  { text: it.L('Provide additional assistance to team when needed') },
-                              ]}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Support our global recruitment and talent management needs') },
+                                    { text: it.L('Schedule and coordinate interviews with candidates') },
+                                    { text: it.L('Develop and update job descriptions and specifications') },
+                                    { text: it.L('Assist and participate in recruitment activities including career fairs and campus recruitment') },
+                                    { text: it.L('Build our applicant database by researching and contacting various sources (eg: universities and job portals)') },
+                                    { text: it.L('Work alongside the HR Operations team in coordinating with the government linked bodies') },
+                                    { text: it.L('Assisting to prepare monthly/yearly recruitment analytics and hiring status report') },
+                                    { text: it.L('Collaborate with the marketing and design team to create recruitment branding materials') },
+                                    { text: it.L('Assist in organizing online technical tests') },
+                                    { text: it.L('Provide additional assistance to team when needed') },
+                                ]}
                             />
 
                             <UlText
-                              text={it.L('Preferences:')}
-                              className='bullet'
-                              items={[
-                                  { text: it.L('A university degree, or other relevant professional qualifications') },
-                                  { text: it.L('Work experience as a Recruiter in the IT industry or similar role is an advantage') },
-                                  { text: it.L('Excellent communication (both oral and written) and interpersonal skills') },
-                                  { text: it.L('Strong decision-making skills') },
-                                  { text: it.L('Ability to quickly learn new systems and procedures') },
-                                  { text: it.L('Ability to work independently') },
-                              ]}
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('A university degree, or other relevant professional qualifications') },
+                                    { text: it.L('Work experience as a Recruiter in the IT industry or similar role is an advantage') },
+                                    { text: it.L('Excellent communication (both oral and written) and interpersonal skills') },
+                                    { text: it.L('Strong decision-making skills') },
+                                    { text: it.L('Ability to quickly learn new systems and procedures') },
+                                    { text: it.L('Ability to work independently') },
+                                ]}
                             />
                         </div>
                     </div>

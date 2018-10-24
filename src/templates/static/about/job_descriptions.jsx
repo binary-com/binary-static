@@ -116,25 +116,25 @@ const JobDescriptions = () => (
                 sections={[
                     { header: it.L('Compliance Executive'),            subsection: 'compliance_executive',            text: it.L('As our Compliance Executive, you must ensure that our group companies worldwide conduct their business operations in full compliance with relevant laws and regulations –– both national and international.') },
                     { header: it.L('Risk Management Executive'),       subsection: 'risk_management_executive',       text: it.L('You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments.') },
-                    { header: it.L('Payments and Compliance Analyst'), subsection: 'payments_and_compliance_analyst', text: it.L('As our Risk Management Executive, we will depend on you to identify, analyse, and take necessary measures to reduce or eliminate risks faced by the organisation.') }
+                    { header: it.L('Payments and Compliance Analyst'), subsection: 'payments_and_compliance_analyst', text: it.L('As our Risk Management Executive, we will depend on you to identify, analyse, and take necessary measures to reduce or eliminate risks faced by the organisation.') },
                 ]}
             />
 
             <Row
-              id='internal_audit'
-              title={it.L('Internal Audit')}
-              sections={[
-                  { header: it.L('Internal Audit Executive'), subsection: 'internal_audit_executive', text: it.L('The Internal Audit team is the catalyst for improving our organisation’s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.') },
-              ]}
+                id='internal_audit'
+                title={it.L('Internal Audit')}
+                sections={[
+                    { header: it.L('Internal Audit Executive'), subsection: 'internal_audit_executive', text: it.L('The Internal Audit team is the catalyst for improving our organisation’s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform.') },
+                ]}
             />
 
             <Row
-              id='human_resources'
-              title={it.L('Human Resource')}
-              sections={[
-                  { header: it.L('HR Operations Executive'),       subsection: 'hr_operations_executive',      text: it.L('As our Human Resource Operations Executive, you will be counted on to lead, execute, and support a wide range of HR-related and administrative tasks to ensure the smooth operations of our offices worldwide.') },
-                  { header : it.L('Talent Acquisition Executive'), subsection: 'talent_acquisition_executive', text: it.L('The Recruitment team plays a challenging role in the company by sourcing and selecting quality applicants that will contribute to the company growth.') },
-              ]}
+                id='human_resources'
+                title={it.L('Human Resource')}
+                sections={[
+                    { header: it.L('HR Operations Executive'),      subsection: 'hr_operations_executive',      text: it.L('As our Human Resource Operations Executive, you will be counted on to lead, execute, and support a wide range of HR-related and administrative tasks to ensure the smooth operations of our offices worldwide.') },
+                    { header: it.L('Talent Acquisition Executive'), subsection: 'talent_acquisition_executive', text: it.L('The Recruitment team plays a challenging role in the company by sourcing and selecting quality applicants that will contribute to the company growth.') },
+                ]}
             />
 
             <Row
