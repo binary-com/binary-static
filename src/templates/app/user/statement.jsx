@@ -22,7 +22,7 @@ const Statement = () => (
                 </div>
                 <div className='gr-3 gr-12-m fill-bg-color'>
                     <span className='hint'>{it.L('Net deposit')}</span>
-                    <p id='net_deposits' />
+                    <p id='net_deposit' />
                 </div>
             </div>
             <div className='gr-row gr-padding-10 invisible' id='util_row'>
