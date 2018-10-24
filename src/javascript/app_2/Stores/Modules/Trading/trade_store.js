@@ -132,6 +132,26 @@ export default class TradeStore extends BaseStore {
 
         // Changes the symbol in query string to default symbol since the account doesn't have access to the defined symbol.
         if (is_invalid_symbol) {
+            this.root_store.ui.addToastMessage({
+                message: 'Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec viverra eleifend lacus. Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec viverra eleifend lacus.',
+                delay  : 100000,
+                type   : 'info',
+            });
+            this.root_store.ui.addToastMessage({
+                message: 'The specific broker is not availbe for your account2',
+                delay  : 100000,
+                type   : 'error',
+            });
+            this.root_store.ui.addToastMessage({
+                message: 'The specific broker is not availbe for your account2',
+                delay  : 100000,
+                type   : 'success',
+            });
+            this.root_store.ui.addToastMessage({
+                message: 'The specific broker is not availbe for your account2',
+                delay  : 100000,
+                type   : 'warning',
+            });
             URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
             query_string_values = this.updateQueryString();
         }
