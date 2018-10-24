@@ -2,6 +2,7 @@ const Cookies          = require('js-cookie');
 const moment           = require('moment');
 const ClientBase       = require('./client_base');
 const Login            = require('./login');
+const ServerTime       = require('./server_time');
 const BinarySocket     = require('./socket_base');
 const getElementById   = require('../common_functions').getElementById;
 const isVisible        = require('../common_functions').isVisible;
@@ -89,7 +90,7 @@ const GTM = (() => {
         BinarySocket.send({ statement: 1, limit: 1 }).then((response) => {
             const last_transaction_timestamp = getPropertyValue(response, ['statement', 'transactions', '0', 'transaction_time']);
             pushDataLayer({
-                bom_transaction_in_last_30d: !!last_transaction_timestamp && moment(last_transaction_timestamp * 1000).isAfter(moment().subtract(30, 'days')),
+                bom_transaction_in_last_30d: !!last_transaction_timestamp && moment(last_transaction_timestamp * 1000).isAfter(ServerTime.get().subtract(30, 'days')),
             });
         });
     };
