@@ -107,7 +107,7 @@ const JobDetails = () => (
                         />
 
                         <SideBar
-                            className='compliance_and_risk_management'
+                            className='compliance'
                             sidebar_items={[
                                 { href: 'compliance_executive',            string: 'Compliance Executive' },
                                 { href: 'payments_and_compliance_analyst', string: 'Payments and Compliance Analyst' },
@@ -119,7 +119,7 @@ const JobDetails = () => (
                           className='human_resources'
                           sidebar_items={[
                               { href: 'hr_operations_executive',            string: 'HR Operations Executive' },
-                              { href: 'talent_acquisition_executive', string: 'Talent Acquisition Executive' },
+                              { href: 'talent_acquisition_executive',       string: 'Talent Acquisition Executive' },
                           ]}
                         />
                     </div>
