@@ -1,6 +1,26 @@
 import React from 'react';
 import Loading from '../../_common/components/loading.jsx';
 
+const AccountStatistics = () => (
+    <div id='account_statistics' className='gr-row invisible'>
+        <div className='gr-3 gr-12-m'>
+            <p className='title'>{it.L('Account statistics')}</p>
+        </div>
+        <div className='gr-3 gr-12-m'>
+            <span className='hint'>{it.L('Total deposits')}</span>
+            <p id='total_deposits' />
+        </div>
+        <div className='gr-3 gr-12-m'>
+            <span className='hint'>{it.L('Total withdrawals')}</span>
+            <p id='total_withdrawals' />
+        </div>
+        <div className='gr-3 gr-12-m fill-bg-color'>
+            <span className='hint'>{it.L('Net deposit')}</span>
+            <p id='net_deposit' />
+        </div>
+    </div>
+);
+
 const Statement = () => (
     <React.Fragment>
         <div id='statement-container'>
@@ -8,23 +28,7 @@ const Statement = () => (
                 <h1>{it.L('Statement')}</h1>
                 <p className='notice-msg center-text invisible' id='error-msg' />
             </div>
-            <div id='account_statistics' className='gr-row invisible'>
-                <div className='gr-3 gr-12-m'>
-                    <p className='title'>{it.L('Account statistics')}</p>
-                </div>
-                <div className='gr-3 gr-12-m'>
-                    <span className='hint'>{it.L('Total deposits')}</span>
-                    <p id='total_deposits' />
-                </div>
-                <div className='gr-3 gr-12-m'>
-                    <span className='hint'>{it.L('Total withdrawals')}</span>
-                    <p id='total_withdrawals' />
-                </div>
-                <div className='gr-3 gr-12-m fill-bg-color'>
-                    <span className='hint'>{it.L('Net deposit')}</span>
-                    <p id='net_deposit' />
-                </div>
-            </div>
+            <AccountStatistics />
             <div className='gr-row gr-padding-10 invisible' id='util_row'>
                 <div className='gr-12 gr-12-m'>
                     <div className='gr-row gr-gutter-right gr-row-align-right'>
