@@ -8,7 +8,7 @@ const Column = ({
     text,
     url,
 }) => (
-    <div className={`gr-3 gr-6-m gr-parent ${className}`} id={id}>
+    <div className={`gr-3 gr-6-m gr-no-gutter gr-parent ${className}`} id={id}>
         <div className='gr-8 gr-padding-10'>
             <a href={it.url_for(`user/security/${url}`)}>
                 <img className='responsive' src={it.url_for(`images/pages/settings/${image}.svg`)} />
@@ -25,8 +25,20 @@ const Security = () => (
     <React.Fragment>
         <div className='invisible' id='settings_container'>
             <h1>{it.L('Security')}</h1>
+            <div className='gr-12 gr-padding-10 fill-bg-color primary-color round-box'>
+                <div className='gr-row'>
+                    <div className='align-self-center'>
+                        <div className='notice-circle'>i</div>
+                    </div>
+                    <div className='gr-11 gr-9-m gr-no-gutter'>
+                        <p className='no-margin'>
+                            {it.L('Explore ways to enhance your account security and manage your trading risk.')}&nbsp;<a href={it.url_for('keep-safe')}>{it.L('Learn more')}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-            <div className='gr-row'>
+            <div className='gr-row gr-padding-30'>
                 <Column className='invisible' id='change_password' url='change_passwordws' image='account_password' header={it.L('Account Password')} text={it.L('Change your main login password.')} />
 
                 <Column className='real invisible' url='cashier_passwordws' image='cashier_password' header={it.L('Cashier Password')} text={it.L('Change the password used for deposits and withdrawals.')} />
@@ -42,8 +54,6 @@ const Security = () => (
                 <Column url='authorised_appsws' image='applications' header={it.L('Authorised Applications')} text={it.L('Manage your authorised applications.')} />
 
                 <Column url='two_factor_authentication' image='2fa' header={it.L('Two-Factor Authentication')} text={it.L('Enable two-factor authentication for an extra layer of security.')} />
-
-                <Column url='cloudflare_dns' image='1111' header={'1.1.1.1'} text={it.L('Use Cloudflare’s public DNS service for faster and more secure browsing.')} />
             </div>
         </div>
     </React.Fragment>

@@ -138,6 +138,15 @@
     }
 }
 
+#settings_container {
+    .round-box {
+        border-radius: $BORDER_RADIUS;
+    }
+    .notice-circle {
+        margin: auto 15px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .api_token, #applications-container {
         table td, table th {

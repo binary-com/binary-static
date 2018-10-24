@@ -24,15 +24,8 @@
         }
     }
     .notice-circle {
-        width: 16px;
-        height: 16px;
-        border: 2px solid $COLOR_RED;
-        border-radius: 50%;
+        border-color: $COLOR_RED;
         color: $COLOR_RED;
-        line-height: 16px;
-        font-size: 14px;
-        text-align: center;
-        margin: 0 auto;
     }
     #step-2 {
         background-image: url('../images/pages//get-started/mt5/how-to-trade-binary/step-2-bg.png');
