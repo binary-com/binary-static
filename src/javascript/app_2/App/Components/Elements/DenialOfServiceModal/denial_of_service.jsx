@@ -1,25 +1,31 @@
-import React         from 'react';
-import PropTypes     from 'prop-types';
-import { localize }  from '_common/localize';
-import FullPageModal from '../FullPageModal/full_page_modal.jsx';
+import React                from 'react';
+import PropTypes            from 'prop-types';
+import { localize }         from '_common/localize';
+import URL                  from '_common/url';
+import FullPageModal        from 'App/Components/Elements/FullPageModal/full_page_modal.jsx';
+import { getAccountOfType } from '_common/base/client_base';
+import { switchAccount }    from 'Services/Helpers/switch_account';
 
-class DenialOfServiceModal extends React.Component {
-    onConfirm = () => {
-        window.location.href = '/';
-    };
+const onConfirm = () => {
+    switchAccount(getAccountOfType('virtual').loginid);
+};
+const onCancel  = () => {
+    window.location.href = URL.urlFor('trading');
+};
 
-    render = () => (<FullPageModal
-        title={localize('Access denied.')}
-        body={localize('Sorry, you cannot access this application at the current time. That is all we know.')}
-        buttonText={localize('Visit main website')}
-        onConfirm={this.onConfirm}
-        show={this.props.show}
-    />);
-}
+const DenialOfServiceModal = ({ show }) => (
+    <FullPageModal
+        title={localize('Whoops!')}
+        body={localize('Sorry, Only virtual accounts can access this feature at the moment.')}
+        confirmButtonText={localize('Continue with my virtual account')}
+        cancelButtonText={localize('Visit main website')}
+        onConfirm={onConfirm}
+        onCancel={onCancel}
+        show={show}
+    />
+);
 
 DenialOfServiceModal.propTypes = {
-    show: PropTypes.oneOfType([
-        PropTypes.bool, PropTypes.func,
-    ]),
+    show: PropTypes.bool,
 };
 export default DenialOfServiceModal;

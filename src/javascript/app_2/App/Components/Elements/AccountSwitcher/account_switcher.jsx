@@ -2,11 +2,10 @@ import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import Client            from '_common/base/client_base';
-import GTM               from '_common/base/gtm';
-import SocketCache       from '_common/base/socket_cache';
 import { localize }      from '_common/localize';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import { requestLogout } from 'Services';
+import { switchAccount } from 'Services/Helpers/switch_account';
 import { UpgradeButton } from './upgrade_button.jsx';
 
 const getAccountInfo = (loginid) => {
@@ -50,20 +49,10 @@ class AccountSwitcher extends React.Component {
         this.wrapper_ref = node;
     };
 
-    switchAccount = (loginid) => {
-        if (!loginid || !Client.get('token', loginid)) {
-            return;
-        }
-        sessionStorage.setItem('active_tab', '1');
-        // set local storage
+    doSwitch(loginid) {
         this.props.toggle();
-        GTM.setLoginFlag();
-        Client.set('cashier_confirmed', 0);
-        Client.set('accepted_bch', 0);
-        Client.set('loginid', loginid);
-        SocketCache.clear();
-        window.location.reload();
-    };
+        switchAccount(loginid);
+    }
 
     handleClickOutside = (event) => {
         const accounts_toggle_btn = !(event.target.classList.contains('acc-info'));
@@ -83,7 +72,7 @@ class AccountSwitcher extends React.Component {
                     <React.Fragment key={account.loginid}>
                         <div
                             className={classNames('acc-switcher-account', account.icon)}
-                            onClick={this.switchAccount.bind(null, account.loginid)}
+                            onClick={() => this.doSwitch(account.loginid)}
                         >
                             <span className='acc-switcher-id'>{account.loginid}</span>
                             <span className='acc-switcher-type'>{account.title}</span>
@@ -91,9 +80,9 @@ class AccountSwitcher extends React.Component {
                     </React.Fragment>
                 ))}
                 {this.props.is_upgrade_enabled &&
-                    <div className='acc-button'>
-                        <UpgradeButton onClick={this.props.onClickUpgrade} />
-                    </div>
+                <div className='acc-button'>
+                    <UpgradeButton onClick={this.props.onClickUpgrade} />
+                </div>
                 }
                 <div className='acc-logout' onClick={requestLogout}>
                     <span className='acc-logout-text'>{localize('Log out')}</span>

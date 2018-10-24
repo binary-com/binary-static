@@ -1,54 +1,4 @@
-.dark {
-    .FullPageModal {
-        background-color: rgba(42, 48, 82, 0.8);
-
-        .ModalDialog {
-            background-color: $COLOR_BRANDBLUE_95;
-            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
-
-            p, h1 {
-                color: $COLOR_BRANDBLUE_40;
-            }
-            .btn {
-                background-color: $COLOR_BRANDBLUE_95;
-
-                &:hover {
-                    background-color: $COLOR_BRANDBLUE_75;
-                }
-                span {
-                    color: $COLOR_WHITE;
-                    font-size: 12px;
-                }
-            }
-        }
-    }
-}
-
-.light {
-    .FullPageModal {
-        background-color: rgba(255, 255, 255, 0.8);
-
-        .ModalDialog {
-            background-color: $COLOR_WHITE;
-            box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.16);
-
-            p, h1 {
-                color: rgb(92, 92, 92);
-            }
-            .btn {
-                &:hover {
-                    background-color: $COLOR_BRANDBLUE_5;
-                }
-                span {
-                    color: $COLOR_BRANDBLUE_95;
-                    font-size: 12px;
-                }
-            }
-        }
-    }
-}
-
-.FullPageModal {
+.full-page-modal {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -63,7 +13,7 @@
     right: 0;
     bottom: 0;
 
-    .ModalDialog {
+    .modal-dialog {
         max-width: 456px;
         height: 190px;
         padding: 16px;
@@ -86,6 +36,12 @@
             flex-grow: 2;
             font-size: 12px;
         }
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
         .btn {
             margin: 0;
             box-shadow: none;
@@ -98,9 +54,59 @@
     }
 }
 
+.dark {
+    .full-page-modal {
+        background-color: rgba(42, 48, 82, 0.8);
+
+        .modal-dialog {
+            background-color: $COLOR_BRANDBLUE_95;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+
+            p, h1 {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            .btn {
+                background-color: $COLOR_BRANDBLUE_95;
+
+                &:hover {
+                    background-color: $COLOR_BRANDBLUE_75;
+                }
+                span {
+                    color: $COLOR_WHITE;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.light {
+    .full-page-modal {
+        background-color: rgba(255, 255, 255, 0.8);
+
+        .modal-dialog {
+            background-color: $COLOR_WHITE;
+            box-shadow: 0 2px 8px 0 rgba(42, 48, 82, 0.16);
+
+            p, h1 {
+                color: rgb(92, 92, 92);
+            }
+            .btn {
+                &:hover {
+                    background-color: $COLOR_BRANDBLUE_5;
+                }
+                span {
+                    color: $COLOR_BRANDBLUE_95;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 480px) {
-    .FullPageModal {
-        .ModalDialog {
+    .full-page-modal {
+        .modal-dialog {
             width: 100vw;
             height: 100vh;
         }
