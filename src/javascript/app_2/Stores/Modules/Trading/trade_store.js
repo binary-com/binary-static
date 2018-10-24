@@ -229,8 +229,8 @@ export default class TradeStore extends BaseStore {
     }
 
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
-
-        // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa. The source of default values is the website_status response.
+        // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
+        // The source of default values is the website_status response.
         if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
             obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
@@ -375,6 +375,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     async onMount() {
         await this.prepareTradeStore();
+        this.debouncedProposal();
         runInAction(() => {
             this.is_trade_component_mounted = true;
         });
@@ -383,6 +384,7 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onUnmount() {
+        WS.forgetAll('proposal');
         this.is_trade_component_mounted = false;
     }
 }
