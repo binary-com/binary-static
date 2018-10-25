@@ -1,7 +1,15 @@
 import React     from 'react';
 import PropTypes from 'prop-types';
 
-const FullPageModal = ({ title, body, onConfirm, confirmButtonText, onCancel, cancelButtonText, show }) => {
+const FullPageModal = ({
+    body,
+    cancel_button_text,
+    confirm_button_text,
+    onConfirm,
+    onCancel,
+    show,
+    title,
+}) => {
     if (show) {
         return (
             <div className='full-page-modal'>
@@ -13,13 +21,13 @@ const FullPageModal = ({ title, body, onConfirm, confirmButtonText, onCancel, ca
                             className='btn flat effect primary'
                             onClick={onCancel}
                         >
-                            <span>{cancelButtonText}</span>
+                            <span>{cancel_button_text}</span>
                         </div>
                         <div
                             className='btn flat effect primary'
                             onClick={onConfirm}
                         >
-                            <span>{confirmButtonText}</span>
+                            <span>{confirm_button_text}</span>
                         </div>
                     </div>
                 </div>
@@ -31,12 +39,13 @@ const FullPageModal = ({ title, body, onConfirm, confirmButtonText, onCancel, ca
 };
 
 FullPageModal.propTypes = {
-    body             : PropTypes.string,
-    cancelButtonText : PropTypes.string,
-    confirmButtonText: PropTypes.string,
-    onCancel         : PropTypes.func,
-    onConfirm        : PropTypes.func,
-    title            : PropTypes.string,
+    body               : PropTypes.string,
+    cancel_button_text : PropTypes.string,
+    confirm_button_text: PropTypes.string,
+    onCancel           : PropTypes.func,
+    onConfirm          : PropTypes.func,
+    show               : PropTypes.bool,
+    title              : PropTypes.string,
 };
 
 export default FullPageModal;

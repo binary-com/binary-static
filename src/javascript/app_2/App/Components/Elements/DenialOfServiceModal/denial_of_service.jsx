@@ -18,8 +18,8 @@ const DenialOfServiceModal = ({ show }) => (
     <FullPageModal
         title={localize('Whoops!')}
         body={localize('Sorry, Only virtual accounts can access this feature at the moment.')}
-        confirmButtonText={localize('Continue with my virtual account')}
-        cancelButtonText={localize('Visit main website')}
+        confirm_button_text={localize('Continue with my virtual account')}
+        cancel_button_text={localize('Visit main website')}
         onConfirm={onConfirm}
         onCancel={onCancel}
         show={show}

@@ -1,9 +1,9 @@
 import PropTypes                   from 'prop-types';
 import React                       from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { isClientAllowedToVisit }  from 'App/Middlewares/is_client_allowed_to_visit';
 import getBaseName                 from 'Utils/URL/base_name';
 import { MobxProvider }            from 'Stores/connect';
-import { isVirtualAccount }        from 'App/Middlewares/is_virtual_account';
 import ErrorBoundary               from './Components/Elements/Errors/error_boundary.jsx';
 import PortfolioDrawer             from './Components/Elements/PortfolioDrawer';
 import AppContents                 from './Containers/Layout/app_contents.jsx';
@@ -31,7 +31,7 @@ const App = ({ root_store }) => (
                         <DevTools />
                         <PortfolioDrawer />
                     </AppContents>
-                    <DenialOfServiceModal show={!isVirtualAccount()} />
+                    <DenialOfServiceModal show={!isClientAllowedToVisit()} />
                 </ErrorBoundary>
 
                 <footer id='footer'>
