@@ -88,7 +88,7 @@ const JobDetails = () => (
                         <SideBar
                             className='quantitative_analysis'
                             sidebar_items={[
-                                { href: 'quantitative_analyst',     string: it.L('Quantitative Analyst') },
+                                { href: 'quantitative_analyst',      string: it.L('Quantitative Analyst') },
                                 { href: 'financial_markets_analyst', string: it.L('Financial Markets Analyst') },
                             ]}
                         />
