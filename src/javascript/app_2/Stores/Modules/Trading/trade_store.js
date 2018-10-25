@@ -4,7 +4,6 @@ import {
     observable,
     runInAction,
     reaction }                           from 'mobx';
-import Client                            from '_common/base/client_base';
 import {
     getMinPayout,
     isCryptocurrency  }                  from '_common/base/currency_base';
@@ -52,7 +51,7 @@ export default class TradeStore extends BaseStore {
     @observable basis           = '';
     @observable basis_list      = [];
     @observable currencies_list = {};
-    @observable currency        = Client.get('currency');
+    @observable currency        = this.root_store.client.get('currency');
 
     // Duration
     @observable duration            = 5;
@@ -105,8 +104,11 @@ export default class TradeStore extends BaseStore {
             }
         );
 
-        if (Client.isLoggedIn) {
-            this.processNewValuesAsync({ currency: Client.get('currency') });
+        /** Define Root Store for messaging between stores. */
+        this.root_store = root_store;
+
+        if (this.root_store.client.isLoggedIn) {
+            this.processNewValuesAsync({ currency: this.root_store.client.get('currency') });
         }
 
         // Adds intercept to change min_max value of duration validation
@@ -183,7 +185,7 @@ export default class TradeStore extends BaseStore {
                 if (this.proposal_info[type].id !== proposal_id) {
                     throw new Error('Proposal ID does not match.');
                 }
-                if (response.buy && !Client.get('is_virtual')){
+                if (response.buy && !this.root_store.client.get('is_virtual')){
                     const contract_data = {
                         ...this.proposal_requests[type],
                         ...this.proposal_info[type],

@@ -3,8 +3,8 @@ import PropTypes           from 'prop-types';
 import React               from 'react';
 import { CSSTransition }   from 'react-transition-group';
 import { IconArrow }       from 'Assets/Common';
-import Client              from '_common/base/client_base';
 import { localize }        from '_common/localize';
+import { connect }         from 'Stores/connect';
 import { AccountSwitcher } from '../../Elements/AccountSwitcher';
 
 const AccountInfo = ({
@@ -15,9 +15,10 @@ const AccountInfo = ({
     is_upgrade_enabled,
     onClickUpgrade,
     toggleDialog,
+    client,
 }) => {
-    const is_demo       = (Client.get('is_virtual', loginid));
-    const account_title = Client.getAccountTitle(loginid);
+    const is_demo       = (client.get('is_virtual', loginid));
+    const account_title = client.getAccountTitle(loginid);
     const account_type  = !(is_demo) && currency ? account_title : localize('Demo');
 
     return (
@@ -44,11 +45,11 @@ const AccountInfo = ({
                     </div>
                 </CSSTransition>
             </div>
-            { typeof balance !== 'undefined' &&
-                <p className='acc-balance-amount'>
-                    <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
-                    {balance}
-                </p>
+            {typeof balance !== 'undefined' &&
+            <p className='acc-balance-amount'>
+                <i><span className={`symbols ${(currency || '').toLowerCase()}`} /></i>
+                {balance}
+            </p>
             }
         </div>
     );
@@ -56,6 +57,7 @@ const AccountInfo = ({
 
 AccountInfo.propTypes = {
     balance           : PropTypes.string,
+    client            : PropTypes.object,
     currency          : PropTypes.string,
     is_dialog_on      : PropTypes.bool,
     is_upgrade_enabled: PropTypes.bool,
@@ -64,4 +66,8 @@ AccountInfo.propTypes = {
     toggleDialog      : PropTypes.func,
 };
 
-export { AccountInfo };
+const account_info = connect(
+    ({ client }) => ({ client }),
+)(AccountInfo);
+
+export { account_info as AccountInfo };

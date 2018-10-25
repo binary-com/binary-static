@@ -1,18 +1,16 @@
 import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import Client            from '_common/base/client_base';
 import { localize }      from '_common/localize';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import { requestLogout } from 'Services';
-import { switchAccount } from 'Services/Helpers/switch_account';
 import { connect }       from 'Stores/connect';
 import { UpgradeButton } from './upgrade_button.jsx';
 
-const getAccountInfo = (loginid) => {
-    const currency     = Client.get('currency', loginid);
-    const is_virtual   = Client.get('is_virtual', loginid);
-    const account_type = !is_virtual && currency ? currency : Client.getAccountTitle(loginid);
+const getAccountInfo = (loginid, client) => {
+    const currency     = client.get('currency', loginid);
+    const is_virtual   = client.get('is_virtual', loginid);
+    const account_type = !is_virtual && currency ? currency : client.getAccountTitle(loginid);
 
     return {
         loginid,
@@ -22,11 +20,11 @@ const getAccountInfo = (loginid) => {
     };
 };
 
-const makeAccountsList = () => Client.getAllLoginids().map(loginid => (
-    loginid !== Client.get('loginid') &&
-    !Client.get('is_disabled', loginid) &&
-    Client.get('token', loginid) ?
-        getAccountInfo(loginid) :
+const makeAccountsList = (client) => client.getAllLoginids().map(loginid => (
+    loginid !== client.get('loginid') &&
+    !client.get('is_disabled', loginid) &&
+    client.get('token', loginid) ?
+        getAccountInfo(loginid, client) :
         undefined
 )).filter(account => account);
 
@@ -34,7 +32,7 @@ class AccountSwitcher extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            accounts_list: makeAccountsList(),
+            accounts_list: makeAccountsList(props.client),
         };
     }
 
@@ -50,9 +48,9 @@ class AccountSwitcher extends React.Component {
         this.wrapper_ref = node;
     };
 
-    doSwitch(loginid) {
+    doSwitch(loginid, client) {
         this.props.toggle();
-        switchAccount(loginid, this.props.client, this.props.modules);
+        client.switchAccount(loginid, this.props.client, this.props.modules);
     }
 
     handleClickOutside = (event) => {
@@ -64,7 +62,8 @@ class AccountSwitcher extends React.Component {
     };
 
     render() {
-        if (!Client.isLoggedIn()) return false;
+        const { client } = this.props;
+        if (!client.is_logged_in) return false;
 
         return (
             <div className='acc-switcher-list' ref={this.setWrapperRef}>
@@ -73,7 +72,7 @@ class AccountSwitcher extends React.Component {
                     <React.Fragment key={account.loginid}>
                         <div
                             className={classNames('acc-switcher-account', account.icon)}
-                            onClick={() => this.doSwitch(account.loginid)}
+                            onClick={() => this.doSwitch(account.loginid, client)}
                         >
                             <span className='acc-switcher-id'>{account.loginid}</span>
                             <span className='acc-switcher-type'>{account.title}</span>

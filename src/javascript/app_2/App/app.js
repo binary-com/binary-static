@@ -1,20 +1,15 @@
 import { configure }        from 'mobx';
 import React                from 'react';
 import { render }           from 'react-dom';
-import Client               from '_common/base/client_base';
 import NetworkMonitor       from 'Services/network_monitor';
-import RootStore            from 'Stores';
+import root_store            from 'Stores';
 import { setStorageEvents } from 'Utils/Events/storage';
 import App                  from './app.jsx';
 
 configure({ enforceActions: true });
 
 const initApp = () => {
-    Client.init();
-
     setStorageEvents();
-
-    const root_store = new RootStore();
 
     NetworkMonitor.init(root_store);
 

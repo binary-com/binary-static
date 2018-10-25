@@ -2,7 +2,7 @@ import React               from 'react';
 import {
     Redirect,
     Route }                from 'react-router-dom';
-import Client              from '_common/base/client_base';
+import store               from 'Stores';
 import { redirectToLogin } from '_common/base/login';
 import routes              from 'Constants/routes';
 import GTM                 from 'Utils/gtm';
@@ -23,7 +23,7 @@ const RouteWithSubRoutes = route => {
             result = <Redirect to={to} />;
         } else {
             result = (
-                (route.is_authenticated && !Client.isLoggedIn()) ?
+                (route.is_authenticated && !store.client.is_logged_in) ?
                     <LoginPrompt IconComponent={route.icon_component} onLogin={redirectToLogin} />
                     :
                     <route.component {...props} routes={route.routes} />

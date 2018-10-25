@@ -42,7 +42,9 @@ export default class UIStore extends BaseStore {
 
         super({ local_storage_properties });
         window.addEventListener('resize', this.handleResize);
-        autorun(() => document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark'));
+        window.onload = () => {
+            autorun(() => document && document.body.classList[this.is_dark_mode_on ? 'add' : 'remove']('dark'));
+        };
     }
 
     @action.bound

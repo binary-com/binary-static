@@ -32,6 +32,7 @@ const Header = ({
                 <div className='acc-balance-container'>
                     { is_logged_in ?
                         <React.Fragment>
+                            <h1>{is_logged_in}</h1>
                             <AccountInfo
                                 balance={formatMoney(currency, balance, true)}
                                 is_upgrade_enabled={can_upgrade}

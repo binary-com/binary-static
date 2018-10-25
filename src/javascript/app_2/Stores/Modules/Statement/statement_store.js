@@ -1,9 +1,9 @@
 import {
     action,
     computed,
-    observable }                      from 'mobx';
+    observable,
+}                                     from 'mobx';
 import moment                         from 'moment';
-import Client                         from '_common/base/client_base';
 import { WS }                         from 'Services';
 import { formatStatementTransaction } from './Helpers/format_response';
 import BaseStore                      from '../../base_store';
@@ -18,11 +18,16 @@ export default class StatementStore extends BaseStore {
     @observable date_to        = '';
     @observable error          = '';
 
+    constructor({ root_store }) {
+        super();
+        this.root_store = root_store;
+    }
+
     @action.bound
     clearTable() {
-        this.data            = [];
-        this.has_loaded_all  = false;
-        this.is_loading      = false;
+        this.data           = [];
+        this.has_loaded_all = false;
+        this.is_loading     = false;
     }
 
     @action.bound
@@ -42,8 +47,8 @@ export default class StatementStore extends BaseStore {
             this.data.length,
             {
                 ...this.date_from && { date_from: moment(this.date_from).unix() },
-                ...this.date_to   && { date_to: moment(this.date_to).add(1, 'd').subtract(1, 's').unix() },
-            }
+                ...this.date_to && { date_to: moment(this.date_to).add(1, 'd').subtract(1, 's').unix() },
+            },
         ).then(this.statementHandler);
     }
 
@@ -54,7 +59,7 @@ export default class StatementStore extends BaseStore {
             return;
         }
 
-        const currency = Client.get('currency');
+        const currency               = Client.get('currency');
         const formatted_transactions = response.statement.transactions
             .map(transaction => formatStatementTransaction(transaction, currency));
 
@@ -75,7 +80,7 @@ export default class StatementStore extends BaseStore {
     @action.bound
     handleScroll(event) {
         const { scrollTop, scrollHeight, clientHeight } = event.target;
-        const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
+        const left_to_scroll                            = scrollHeight - (scrollTop + clientHeight);
 
         if (left_to_scroll < 2000) {
             this.fetchNextBatch();
@@ -92,7 +97,6 @@ export default class StatementStore extends BaseStore {
         this.clearTable();
         this.clearDateFilter();
     }
-
 
     @computed
     get is_empty() {

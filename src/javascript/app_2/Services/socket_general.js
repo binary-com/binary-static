@@ -1,5 +1,4 @@
 import { action, flow }     from 'mobx';
-import Client               from '_common/base/client_base';
 import { setCurrencies }    from '_common/base/currency_base';
 import Login                from '_common/base/login';
 import ServerTime           from '_common/base/server_time';
@@ -18,7 +17,7 @@ const BinarySocketGeneral = (() => {
         // Header.hideNotification();
         if (is_ready) {
             if (!Login.isLoginPages()) {
-                if (!Client.isValidLoginid()) {
+                if (!client_store.is_valid_loginid) {
                     requestLogout();
                     return;
                 }
@@ -41,22 +40,22 @@ const BinarySocketGeneral = (() => {
                     }
                     requestLogout();
                 } else if (!Login.isLoginPages() && !/authorize/.test(State.get('skip_response'))) {
-                    if (response.authorize.loginid !== Client.get('loginid')) {
+                    if (response.authorize.loginid !== client_store.get('loginid')) {
                         requestLogout();
                     } else {
-                        Client.responseAuthorize(response);
+                        client_store.responseAuthorize(response);
                         setBalance(response.authorize.balance);
                         WS.subscribeBalance(ResponseHandlers.balance);
                         WS.getSettings();
                         WS.getAccountStatus();
                         WS.payoutCurrencies();
                         WS.mt5LoginList();
-                        setResidence(response.authorize.country || Client.get('residence'));
-                        if (!Client.get('is_virtual')) {
+                        setResidence(response.authorize.country || client_store.get('residence'));
+                        if (!client_store.get('is_virtual')) {
                             WS.getSelfExclusion();
                         }
                         BinarySocket.sendBuffered();
-                        if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
+                        if (/bch/i.test(response.authorize.currency) && !client_store.get('accepted_bch')) {
                             // showPopup({
                             //     url        : urlFor('user/warning'),
                             //     popup_id   : 'warning_popup',
@@ -78,7 +77,7 @@ const BinarySocketGeneral = (() => {
             case 'get_settings':
                 if (response.get_settings) {
                     setResidence(response.get_settings.country_code);
-                    Client.set('email', response.get_settings.email);
+                    client_store.set('email', response.get_settings.email);
                     // GTM.eventHandler(response.get_settings);
                     // if (response.get_settings.is_authenticated_payment_agent) {
                     //     $('#topMenuPaymentAgent').setVisibility(1);
@@ -91,14 +90,14 @@ const BinarySocketGeneral = (() => {
 
     const setResidence = (residence) => {
         if (residence) {
-            Client.set('residence', residence);
+            client_store.set('residence', residence);
             WS.landingCompany(residence);
         }
     };
 
     const setBalance = flow(function* (balance) {
         yield BinarySocket.wait('website_status');
-        Client.set('balance', balance);
+        client_store.set('balance', balance);
         client_store.balance = balance;
     });
 
