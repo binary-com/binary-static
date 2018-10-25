@@ -265,8 +265,8 @@ const Careers = () => {
                                     circle_no='1'
                                 />
                                 <CareerStep
-                                  text={it.L('If you score well on the SATI, we\'ll send you a talent test. Do well on the talent test and and we\'ll invite you for an interview with a member of our recruitment team.')}
-                                  circle_no='2'
+                                    text={it.L('If you score well on the SATI, we\'ll send you a talent test. Do well on the talent test and and we\'ll invite you for an interview with a member of our recruitment team.')}
+                                    circle_no='2'
                                 />
                                 <CareerStep
                                     text={it.L('If you\'re shortlisted, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire.')}
