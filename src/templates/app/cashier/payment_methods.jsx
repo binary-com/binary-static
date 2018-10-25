@@ -158,7 +158,7 @@ const PaymentMethods = () => {
                             },
                             {
                                 id      : 'paysec',
-                                dataShow: '-malta, -maltainvest, -mt',
+                                dataShow: '-malta, -maltainvest, -iom, -country:mt',
                                 row     : [
                                     { text: <PaymentLogo logo='paysec' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
@@ -238,7 +238,7 @@ const PaymentMethods = () => {
                         tbody: [
                             {
                                 id      : 'fasapay',
-                                dataShow: '-malta, -maltainvest, -mt',
+                                dataShow: '-malta, -maltainvest, -iom, -country:mt',
                                 row     : [
                                     { text: <PaymentLogo logo='fasapay' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
@@ -258,7 +258,7 @@ const PaymentMethods = () => {
                             },
                             {
                                 id      : 'perfect-money',
-                                dataShow: '-malta, -maltainvest, -mt',
+                                dataShow: '-malta, -maltainvest, -iom, -country:mt',
                                 row     : [
                                     { text: <PaymentLogo logo='perfect_money' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
@@ -335,7 +335,7 @@ const PaymentMethods = () => {
                             },
                             {
                                 id      : 'qiwi',
-                                dataShow: '-malta, -maltainvest, -mt',
+                                dataShow: '-malta, -maltainvest, -iom, -country:mt',
                                 row     : [
                                     { text: <PaymentLogo logo='qiwi' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
@@ -355,7 +355,7 @@ const PaymentMethods = () => {
                             },
                             {
                                 id      : 'yandex',
-                                dataShow: '-malta, -maltainvest, -mt',
+                                dataShow: '-malta, -maltainvest, -iom, -country:mt',
                                 row     : [
                                     { text: <PaymentLogo logo='yandex' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
@@ -396,12 +396,12 @@ const PaymentMethods = () => {
                     }}
                 />
                 <TableTitle
-                    data-show='-malta, -maltainvest, -mt'
+                    data-show='-malta, -maltainvest, -iom, -country:mt'
                     title={it.L('Cryptocurrencies')}
                     withdrawal={it.L('Min Withdrawal')}
                 />
                 <Table
-                    data-show='-malta, -maltainvest, -mt'
+                    data-show='-malta, -maltainvest, -iom, -country:mt'
                     data={{
                         thead: [
                             [

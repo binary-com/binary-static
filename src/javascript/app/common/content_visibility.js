@@ -49,10 +49,15 @@ const ContentVisibility = (() => {
         const client_is_logged_in = Client.isLoggedIn();
         if (client_is_logged_in) {
             BinarySocket.wait('authorize', 'landing_company').then(() => {
+                const is_virtual =  State.getResponse('authorize.is_virtual');
+                const landing_company = is_virtual ?
+                    State.getResponse('landing_company.gaming_company.shortcode') ||
+                    State.getResponse('landing_company.financial_company.shortcode') :
+                    State.getResponse('authorize.landing_company_name');
                 controlVisibility(
                     client_is_logged_in,
                     'default',
-                    State.getResponse('authorize.landing_company_name'),
+                    landing_company,
                     MetaTrader.isEligible(),
                     State.getResponse('landing_company.mt_financial_company.shortcode')
                 );
@@ -132,10 +137,10 @@ const ContentVisibility = (() => {
         let show_element = false;
 
         if (client_is_logged_in && client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
-        else if (client_is_logged_in && is_exclude !== rule_set_has_current) show_element = true;
+        else if (client_is_logged_in && (is_exclude !== rule_set_has_current)) show_element = true;
 
-        if (country_rules.length) show_element = is_exclude !== country_rules.includes(clients_country);
-
+        if (!client_is_logged_in &&
+          country_rules.length) show_element = is_exclude !== country_rules.includes(clients_country);
 
         if (client_is_logged_in && mt5fin_rules.includes(mt5fin_company_shortcode)) show_element = !is_exclude;
 
