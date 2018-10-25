@@ -4,10 +4,9 @@ const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
 const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
-const formatMoney      = require('../../../../common/currency').formatMoney;
 const FormManager      = require('../../../../common/form_manager');
-const Geocoder         = require('../../../../../_common/geocoder');
 const CommonFunctions  = require('../../../../../_common/common_functions');
+const Geocoder         = require('../../../../../_common/geocoder');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
@@ -21,8 +20,7 @@ const PersonalDetails = (() => {
     let editable_fields,
         is_virtual,
         residence,
-        get_settings_data,
-        currency;
+        get_settings_data;
 
     const init = () => {
         editable_fields   = {};
@@ -45,24 +43,6 @@ const PersonalDetails = (() => {
             $tax_information_info.setVisibility(0); // hide tax info
             $tax_info_declaration.setVisibility(0); // hide tax info declaration
         }
-    };
-
-    const showHideLabel = (get_settings) => {
-        ['place_of_birth', 'account_opening_reason', 'citizen'].forEach((id) => {
-            if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
-                if (get_settings[id]) {
-                    // we have to show text here instead of relying on displayGetSettingsData()
-                    // since it prioritizes showing data instead of label
-                    const $label = $(`#lbl_${id}`);
-                    $label.text(get_settings[id]);
-                    $(`#row_${id}`).setVisibility(0);
-                    $(`#row_lbl_${id}`).setVisibility(1);
-                } else {
-                    $(`#row_lbl_${id}`).setVisibility(0);
-                    $(`#row_${id}`).setVisibility(1);
-                }
-            }
-        });
     };
 
     const showHideMissingDetails = () => {
@@ -93,8 +73,6 @@ const PersonalDetails = (() => {
                 get_settings.citizen;
         }
 
-        showHideLabel(get_settings);
-
         displayGetSettingsData(get_settings);
 
         if (is_virtual) {
@@ -119,36 +97,50 @@ const PersonalDetails = (() => {
         showHideMissingDetails();
     };
 
-    const displayGetSettingsData = (data, populate = true) => {
-        let el_key,
-            data_key;
-        Object.keys(data).forEach((key) => {
-            el_key = document.getElementById(key) || document.getElementById(`lbl_${key}`);
+    const show_label_if_any_value = ['account_opening_reason', 'citizen', 'place_of_birth'];
+
+    const displayGetSettingsData = (get_settings, populate = true) => {
+        let el_id,
+            el_key,
+            has_label,
+            should_show_label,
+            should_update_value;
+        Object.keys(get_settings).forEach((key) => {
+            has_label           = show_label_if_any_value.indexOf(key) !== -1;
+            should_show_label   = has_label && get_settings[key];               // if we have a value for any of these fields, show them as label
+            el_id               = `${should_show_label ? 'lbl_' : ''}${key}`;
+            el_key              = CommonFunctions.getElementById(el_id);
             if (el_key) {
-                data_key             = /format_money/.test(el_key.className) && data[key] !== null ? formatMoney(currency, data[key]) : (data[key] || '');
-                editable_fields[key] = data_key;
+                editable_fields[key] = get_settings[key];
                 if (populate) {
+                    should_update_value = /select|text/i.test(el_key.type);
+                    if (has_label) {
+                        CommonFunctions.getElementById(`row_${el_id}`).setVisibility(1);
+                    }
                     if (el_key.type === 'checkbox') {
-                        el_key.checked = !!data_key;
-                    } else if (/select|text/i.test(el_key.type)) {
-                        $(el_key)
-                            .val(data_key.split(','))
+                        el_key.checked = !!get_settings[key];
+                    } else if (!should_update_value) { // for all non (checkbox|select|text) elements
+                        const localized_text = (document.querySelector(`#${key} option[value="${get_settings[key]}"]`) || {}).innerText || get_settings[key];
+                        CommonFunctions.elementInnerHtml(el_key, localized_text || '-');
+                    }
+                    if (should_update_value || should_show_label) {
+                        // if should show label, set the value of the non-label so that it doesn't count as missing information
+                        $(should_show_label ? `#${key}` : el_key)
+                            .val(get_settings[key] ? get_settings[key].split(',') : '')
                             .trigger('change');
-                    } else if (key !== 'country') {
-                        CommonFunctions.elementInnerHtml(el_key, data_key ? localize(data_key) : '-');
                     }
                 }
             }
         });
-        if (data.country) {
-            $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'lbl_country' })));
-            $('#lbl_country').text(data.country);
+        if (get_settings.country) {
+            $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'country' })));
+            $('#country').text(get_settings.country);
         }
     };
 
     const additionalCheck = (data) => {
         if (!isChanged(data)) {
-            showFormMessage('You did not change anything.', false);
+            showFormMessage(localize('You did not change anything.'), false);
             return false;
         }
         return true;
@@ -247,14 +239,15 @@ const PersonalDetails = (() => {
             });
         }
         showFormMessage(is_error ?
-            (getPropertyValue(response, ['error', 'message']) || 'Sorry, an error occurred while processing your account.') :
-            'Your settings have been updated successfully.', !is_error);
+            (getPropertyValue(response, ['error', 'message']) || localize('Sorry, an error occurred while processing your account.')) :
+            localize('Your settings have been updated successfully.'), !is_error);
     };
 
-    const showFormMessage = (msg, is_success) => {
+    const showFormMessage = (localized_text, is_success) => {
+        const $ul = $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localized_text }));
         $('#formMessage')
             .attr('class', is_success ? 'success-msg' : 'errorfield')
-            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
+            .html(is_success ? $ul : localized_text)
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
@@ -300,7 +293,7 @@ const PersonalDetails = (() => {
                             .val(residence);
                     }
                 } else {
-                    $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence', single: 'single' }));
+                    $('#country').parent().replaceWith($('<select/>', { id: 'residence', single: 'single' }));
                     const $residence = $('#residence');
                     $options_with_disabled.prepend($('<option/>', { text: localize('Please select a country'), value: '' }));
                     $residence.html($options_with_disabled.html());
@@ -349,7 +342,6 @@ const PersonalDetails = (() => {
     );
 
     const onLoad = () => {
-        currency = Client.get('currency');
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.getResponse('get_settings');

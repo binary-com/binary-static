@@ -19,9 +19,9 @@ const CashierPassword = (() => {
     };
 
     const updatePage = (config) => {
-        $('legend').text(localize(config.legend));
-        $('#lockInfo').text(localize(config.info));
-        $form.find('button').html(localize(config.button));
+        $('legend').text(config.legend);
+        $('#lockInfo').text(config.info);
+        $form.find('button').html(config.button);
     };
 
     const init = (response) => {
@@ -31,16 +31,16 @@ const CashierPassword = (() => {
             return;
         } else if (locked) {
             updatePage({
-                legend: 'Unlock Cashier',
-                info  : 'Your cashier is locked as per your request - to unlock it, please enter the password.',
-                button: 'Unlock Cashier',
+                legend: localize('Unlock Cashier'),
+                info  : localize('Your cashier is locked as per your request - to unlock it, please enter the password.'),
+                button: localize('Unlock Cashier'),
             });
             $('#repeat_password_row').setVisibility(0);
         } else {
             updatePage({
-                legend: 'Lock Cashier',
-                info  : 'An additional password can be used to restrict access to the cashier.',
-                button: 'Update',
+                legend: localize('Lock Cashier'),
+                info  : localize('An additional password can be used to restrict access to the cashier.'),
+                button: localize('Update'),
             });
             $('#repeat_password_row').setVisibility(1);
         }
@@ -69,9 +69,9 @@ const CashierPassword = (() => {
             } else {
                 let message = response.error.message;
                 if (response.error.code === 'InputValidationFailed') {
-                    message = 'Sorry, you have entered an incorrect cashier password';
+                    message = localize('Sorry, you have entered an incorrect cashier password');
                 }
-                $form_error.text(localize(message)).setVisibility(1);
+                $form_error.text(message).setVisibility(1);
             }
         } else {
             $form.setVisibility(0);

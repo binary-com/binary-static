@@ -1050,3 +1050,21 @@ body #not_authenticated_financial ul.checked > li {
         border-radius: 8px;
     }
 }
+
+.keep-safe-container {
+    .box {
+        &.bordered {
+            border: 1px solid $COLOR_GRAY;
+            height: 100%;
+
+            > div {
+                display: inline-flex;
+                padding: 20px;
+
+                img {
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+}

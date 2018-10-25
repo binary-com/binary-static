@@ -13,7 +13,6 @@ const getElementById   = require('../../_common/common_functions').getElementByI
 const Crowdin          = require('../../_common/crowdin');
 const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
-const Localize         = require('../../_common/localize');
 const localize         = require('../../_common/localize').localize;
 const State            = require('../../_common/storage').State;
 const scrollToTop      = require('../../_common/scroll').scrollToTop;
@@ -72,7 +71,6 @@ const Page = (() => {
             if (!Login.isLoginPages()) {
                 Language.setCookie(Language.urlLang());
             }
-            Localize.forLang(Language.urlLang());
             Header.onLoad();
             Footer.onLoad();
             Language.setCookie();
@@ -152,7 +150,7 @@ const Page = (() => {
         const src = '//browser-update.org/update.min.js';
         if (document.querySelector(`script[src*="${src}"]`)) return;
         window.$buoop = {
-            vs     : { i: 11, f: -4, o: -4, s: 9, c: -4 },
+            vs     : { i: 11, f: -4, o: -4, s: 9, c: 65 },
             api    : 4,
             l      : Language.get().toLowerCase(),
             url    : 'https://whatbrowser.org/',

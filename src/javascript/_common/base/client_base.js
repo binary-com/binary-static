@@ -1,6 +1,7 @@
 const moment           = require('moment');
 const isCryptocurrency = require('./currency_base').isCryptocurrency;
 const SocketCache      = require('./socket_cache');
+const localize         = require('../localize').localize;
 const LocalStore       = require('../storage').LocalStore;
 const State            = require('../storage').State;
 const getPropertyValue = require('../utility').getPropertyValue;
@@ -111,13 +112,30 @@ const ClientBase = (() => {
             !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
     };
 
-    const types_map = {
-        virtual  : 'Virtual',
-        gaming   : 'Gaming',
-        financial: 'Investment',
-    };
+    const TypesMapConfig = (() => {
+        let types_map_config;
 
-    const getAccountTitle = loginid => types_map[getAccountType(loginid)] || 'Real';
+        const initTypesMap = () => ({
+            default  : localize('Real'),
+            financial: localize('Investment'),
+            gaming   : localize('Gaming'),
+            virtual  : localize('Virtual'),
+        });
+
+        return {
+            get: () => {
+                if (!types_map_config) {
+                    types_map_config = initTypesMap();
+                }
+                return types_map_config;
+            },
+        };
+    })();
+
+    const getAccountTitle = loginid => {
+        const types_map = TypesMapConfig.get();
+        return (types_map[getAccountType(loginid)] || types_map.default);
+    };
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;

@@ -46,7 +46,4 @@ module.exports = {
         onLoad  : () => { MenuSelector.init(['general', 'account-management', 'referral-tools']); },
         onUnload: () => { MenuSelector.clean(); },
     },
-    Cloudflare: {
-        onLoad: () => {},
-    },
 };
