@@ -150,7 +150,7 @@ const Page = (() => {
         const src = '//browser-update.org/update.min.js';
         if (document.querySelector(`script[src*="${src}"]`)) return;
         window.$buoop = {
-            vs     : { i: 11, f: -4, o: -4, s: 9, c: -4 },
+            vs     : { i: 11, f: -4, o: -4, s: 9, c: 65 },
             api    : 4,
             l      : Language.get().toLowerCase(),
             url    : 'https://whatbrowser.org/',

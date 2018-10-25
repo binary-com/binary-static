@@ -129,12 +129,47 @@
     .act {
         flex: 0.8 1 35px;
     }
+    #account_statistics {
+        margin: 30px 0;
+        border: 1px solid $COLOR_LIGHT_GRAY;
+
+        div {
+            align-self: center;
+            padding: 20px;
+
+            @media (max-width: 480px) {
+                padding: 10px 20px;
+            }
+            @media (max-width: 576px) {
+                padding: 10px;
+            }
+        }
+        p {
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.5;
+
+            &:not(.title) {
+                margin-top: 5px;
+            }
+        }
+    }
 }
 
 #profit-table-container, #statement-container {
     #date_to {
         width: 100%;
         box-sizing: border-box;
+    }
+}
+
+#settings_container {
+    .round-box {
+        border-radius: $BORDER_RADIUS;
+    }
+    .notice-circle {
+        margin: auto 15px;
     }
 }
 
