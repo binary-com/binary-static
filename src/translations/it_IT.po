@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-24 06:30\n"
+"PO-Revision-Date: 2018-10-25 05:48\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -307,7 +307,7 @@ msgid "%1 provides institutional clients around the world with market quotes and
 msgstr "%1 fornisce i clienti istituzionali di tutto il mondo con delle quotazioni di mercato e delle esecuzioni di trade in un'ampia gamma di asset, incluse le coppie di valute principali, i metalli spot, gli indici CFD e le cripto valute popolari."
 
 msgid "%1 provides virtual-money facilities to practise your trading strategy with virtual funds. Switch to your virtual-money account using the drop-down box in the top-right corner of the screen."
-msgstr ""
+msgstr "%1 fornisce servizi basati sul denaro elettronico per sperimentare le tue strategie di trading con fondi virtuali. Passa al tuo conto virtuale utilizzando il riquadro a discesa nell'angolo superiore destro dello schermo."
 
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1 ti offre la migliore esecuzione utilizzando un metodo di aggregazione intelligente per la gestione degli ordini in entrata. Il metodo di aggregazione intelligente funziona con:"
@@ -799,6 +799,9 @@ msgid "Account opening reason"
 msgstr "Motivo dell'apertura dell'account"
 
 msgid "Account security"
+msgstr "Sicurezza del conto"
+
+msgid "Account statistics"
 msgstr ""
 
 msgid "Accounting"
@@ -2413,7 +2416,7 @@ msgid "Confidentiality"
 msgstr "Riservatezza"
 
 msgid "Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at %1."
-msgstr ""
+msgstr "Configura PC e telefono cellulare per utilizzare il DNS di Cloudflare seguendo le istruzioni riportate su %1."
 
 msgid "Confirm"
 msgstr "Conferma"
@@ -3076,7 +3079,7 @@ msgid "Don't have an account?"
 msgstr "Non hai ancora un conto?"
 
 msgid "Don’t share your %1 account or payment methods with any other person."
-msgstr ""
+msgstr "Con condividere il tuo conto %1 o i tuoi mezzi di pagamento con nessun'altra persona."
 
 msgid "Don’t worry, you can simply <a href='%1'>reset your password</a>."
 msgstr "Nessun problema, puoi <a href='%1'>reimpostare la tua password</a> con facilità."
@@ -3109,7 +3112,7 @@ msgid "Download our desktop app now:"
 msgstr "Scarica subito la nostra app per il desktop:"
 
 msgid "Download the %1desktop app%2 for the most secure way to access the %3 website."
-msgstr ""
+msgstr "Scarica l'%1app per il desktop%2 per accedere al sito web %3 nel modo più sicuro."
 
 msgid "Download the Android App"
 msgstr "Scarica l'app per Android"
@@ -3307,7 +3310,7 @@ msgid "Enable"
 msgstr "Abilita"
 
 msgid "Enable %1two-factor authentication%2 on your account."
-msgstr ""
+msgstr "Attiva l'%1autenticazione a due fattori%2 sul tuo conto."
 
 msgid "Enable two-factor authentication for an extra layer of security."
 msgstr "Abilita l'autenticazione a due fattori per un ulteriore livello di sicurezza."
@@ -3634,7 +3637,7 @@ msgid "Explore our HackerOne bounty programme"
 msgstr "Esplora il nostro programma di ricompensa HackerOne"
 
 msgid "Explore ways to enhance your account security and manage your trading risk."
-msgstr ""
+msgstr "Scopri come migliorare la sicurezza del tuo conto e gestire il rischio connesso al trading."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Ampia esperienza nell'applicazione di principi di sviluppo e standard avanzati"
@@ -4962,7 +4965,7 @@ msgid "Inheritance"
 msgstr "Eredità"
 
 msgid "Install antivirus software (such as Avast Free Antivirus for %1Windows%2 and %3Mac%4) on your computer."
-msgstr ""
+msgstr "Installa sul tuo computer un software antivirus (come Avast Free Antivirus per %1Windows%2 e %3Mac%4)."
 
 msgid "Instant access"
 msgstr "Accesso istantaneo"
@@ -5214,7 +5217,7 @@ msgid "Keep up with breaking news and events on global markets."
 msgstr "Rimani al passo con gli eventi e le ultime notizie dai mercati di tutto il mondo."
 
 msgid "Keep your web browser %1up-to-date%2."
-msgstr ""
+msgstr "Mantieni il tuo web browser %1aggiornato%2."
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
 msgstr "Stare al passo con le notizie di mercato e le tendenze di un certo settore può essere di grande aiuto, soprattutto se sei solo agli inizi."
@@ -6027,7 +6030,7 @@ msgid "Monitor hardware and software deployment and manage our worldwide network
 msgstr "Monitorare l'hardware e il software e gestire la nostra rete mondiale di server e reti di uffici"
 
 msgid "Monitor recent logins to your account using the %1login history%2 facility."
-msgstr ""
+msgstr "Monitora gli accessi recenti al tuo conto usando la funzione %1cronologia dei login%2."
 
 msgid "Monitor the movements of your favourite assets and markets at the same time."
 msgstr "Controlla contemporaneamente i movimenti dei tuoi asset e mercati preferiti."
@@ -6172,6 +6175,9 @@ msgstr "Né il Cliente né i suoi parenti stretti o qualsiasi soggetto in suo co
 
 msgid "Net Annual Income"
 msgstr "Reddito annuale netto"
+
+msgid "Net deposits"
+msgstr ""
 
 msgid "Net profit"
 msgstr "Profitto netto"
@@ -7122,7 +7128,7 @@ msgid "Practice your trading strategies in a risk-free environment by using virt
 msgstr "Fai pratica con le tue strategie di trading in un ambiente privo di rischi utilizzando fondi virtuali."
 
 msgid "Practise with virtual funds"
-msgstr ""
+msgstr "Sperimenta la tua strategia con fondi virtuali"
 
 msgid "Practise your trading strategy with virtual funds in a risk-free environment."
 msgstr "Sperimenta la tua strategia di trading utilizzando fondi virtuali in un ambiente privo di rischi."
@@ -7980,7 +7986,7 @@ msgid "Set Currency"
 msgstr "Imposta la valuta"
 
 msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
-msgstr ""
+msgstr "Imposta una %1password di blocco della cassa%2 per evitare accessi non autorizzati."
 
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Imposta una o più barriere per definire la tua posizione e visualizzare il pagamento che riceverai."
@@ -8667,16 +8673,16 @@ msgid "The Agent shall further undertake to perform all necessary due diligence 
 msgstr "L'Agente si impegna altresì ad adottare tutte le necessarie misure di due diligence nei confronti dei clienti, e la Società ha la facoltà di richiedere all'Agente, in qualsiasi momento, informazioni e documentazione relative ai clienti per verificare la conformità all'AML della Società."
 
 msgid "The Agent shall not be authorized to offer its services, under this Agreement, to clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"%1\">www.binary.com.</a>"
-msgstr ""
+msgstr "Ai sensi del presente contratto, l'Agente non è autorizzato a fornire i propri servizi ai clienti che risiedono nei paesi sottoposti a limitazioni come indicato nei nostri termini e condizioni, modificati periodicamente e pubblicati sul nostro sito web <a href=\"%1\">www.binary.com.</a>"
 
 msgid "The Agent shall not produce any copies of any Confidential Information or any content based on the concepts contained within the Confidential Information for personal use or for distribution, without the Company’s request."
-msgstr ""
+msgstr "L'Agente non deve produrre copie di nessuna informazione riservata o del contenuto basato sui concetti espressi all'interno di tali informazioni per uso personale o per distribuzione senza previa richiesta della Società."
 
 msgid "The Agent shall not:"
 msgstr "L' Agente non deve:"
 
 msgid "The Agent shall provide any and all information and documentation, required in the context of the due diligence that the Company shall conduct, from time to time. The Company, complying with the law and providing its services under this Agreement, shall be entitled, at any time, to request from the Agent to provide all and any due diligence information and documentation related to itself and any other person connected or associated with it for the purposes of this Agreement."
-msgstr ""
+msgstr "L'Agente dovrà periodicamente fornire tutte le informazioni e la documentazione richieste nell'ambito della due diligence che sarà effettuata dalla Società. Quest'ultima, in conformità con le norme e la fornitura dei propri servizi previsti dal presente Contratto, avrà il diritto, in qualsiasi momento, di richiedere all'Agente di fornire tutte le informazioni e la documentazione di due diligence relative alla Società stessa e a qualsiasi altra persona collegata o associata a essa, ai fini del presente contratto."
 
 msgid "The Agent shall submit an application including the following information:"
 msgstr "L'Agente dovrà presentare una richiesta che includa le seguenti informazioni:"
@@ -9728,8 +9734,14 @@ msgstr "Margine totale"
 msgid "Total Profit/Loss"
 msgstr "Profitto/Perdita totale"
 
+msgid "Total deposits"
+msgstr ""
+
 msgid "Total net revenue per month (USD)"
 msgstr "Ricavo netto totale al mese (USD)"
+
+msgid "Total withdrawals"
+msgstr ""
 
 msgid "Touch/No Touch"
 msgstr "Tocca/Non Tocca"

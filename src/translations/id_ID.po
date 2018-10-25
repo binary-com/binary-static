@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-24 06:32\n"
+"PO-Revision-Date: 2018-10-25 05:49\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -307,7 +307,7 @@ msgid "%1 provides institutional clients around the world with market quotes and
 msgstr "%1 menyediakan pelanggan institusi diseluruh dunia dengan kutipan pasar dan eksekusi trading di berbagai aset, termasuk pasangan mata uang mayor, logam, indeks CFD dan mata uang crypto populer."
 
 msgid "%1 provides virtual-money facilities to practise your trading strategy with virtual funds. Switch to your virtual-money account using the drop-down box in the top-right corner of the screen."
-msgstr ""
+msgstr "%1 menyediakan fasilitas dana virtual untuk melatih strategi trading Anda. Beralih ke akun dana virtual Anda menggunakan menu di sudut kanan atas layar."
 
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1 menyediakan eksekusi terbaik dengan memanfaatkan metode agregasi cerdas ketika mengelola pesanan yang masuk. Metode agregasi cerdas bekerja dengan:"
@@ -799,6 +799,9 @@ msgid "Account opening reason"
 msgstr "Alasan pedaftaran akun"
 
 msgid "Account security"
+msgstr "Keamanan akun"
+
+msgid "Account statistics"
 msgstr ""
 
 msgid "Accounting"
@@ -2413,7 +2416,7 @@ msgid "Confidentiality"
 msgstr "Kerahasiaan"
 
 msgid "Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at %1."
-msgstr ""
+msgstr "Konfigurasikan PC dan ponsel Anda untuk menggunakan DNS Cloudflare dengan mengikuti petunjuk di %1."
 
 msgid "Confirm"
 msgstr "Lanjutkan"
@@ -3076,7 +3079,7 @@ msgid "Don't have an account?"
 msgstr "Belum memiliki akun?"
 
 msgid "Don’t share your %1 account or payment methods with any other person."
-msgstr ""
+msgstr "Jangan berbagi informasi mengenai akun %1 atau metode pembayaran Anda kepada siapapun."
 
 msgid "Don’t worry, you can simply <a href='%1'>reset your password</a>."
 msgstr "Jangan khawatir, Anda hanya perlu <a href='%1'>mereset kata sandi Anda</a>."
@@ -3109,7 +3112,7 @@ msgid "Download our desktop app now:"
 msgstr "Unduh aplikasi desktop kami sekarang:"
 
 msgid "Download the %1desktop app%2 for the most secure way to access the %3 website."
-msgstr ""
+msgstr "Unduh %1aplikasi desktop%2 untuk cara yang paling aman dalam mengakses situs %3."
 
 msgid "Download the Android App"
 msgstr "Download Aplikasi Android"
@@ -3307,7 +3310,7 @@ msgid "Enable"
 msgstr "Aktifkan"
 
 msgid "Enable %1two-factor authentication%2 on your account."
-msgstr ""
+msgstr "Aktifkan %1autentikasi dua faktor%2 pada akun Anda."
 
 msgid "Enable two-factor authentication for an extra layer of security."
 msgstr "Aktifkan autentikasi dua faktor untuk lapisan keamanan ekstra."
@@ -3634,7 +3637,7 @@ msgid "Explore our HackerOne bounty programme"
 msgstr "Jelajahi program HackerOne yang kami sediakan"
 
 msgid "Explore ways to enhance your account security and manage your trading risk."
-msgstr ""
+msgstr "Jelajahi berbagai cara untuk meningkatkan keamanan akun dan mengelola risiko trading Anda."
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Berpengalaman luas dalam penerapan prinsip-prinsip coding canggih dan standar"
@@ -4960,7 +4963,7 @@ msgid "Inheritance"
 msgstr "Warisan"
 
 msgid "Install antivirus software (such as Avast Free Antivirus for %1Windows%2 and %3Mac%4) on your computer."
-msgstr ""
+msgstr "Instal perangkat lunak antivirus (seperti Avast Free Antivirus untuk %1Windows%2 dan %3Mac% 4) pada komputer Anda."
 
 msgid "Instant access"
 msgstr "Akses cepat"
@@ -6171,6 +6174,9 @@ msgstr "Anda, anggota keluarga atau klien yang dapat Anda kontrol tidak berhak u
 msgid "Net Annual Income"
 msgstr "Penghasilan Bersih Tahunan"
 
+msgid "Net deposits"
+msgstr ""
+
 msgid "Net profit"
 msgstr "Laba bersih"
 
@@ -6265,7 +6271,7 @@ msgid "No modification or amendment of any or all clauses or provisions of this 
 msgstr "Tidak ada modifikasi atau amandemen terhadap setiap atau semua ketentuan atau ketentuan dalam Persetujuan ini yang berlaku kecuali jika penerimaan yang jelas dan tegas dari amandemen tersebut oleh kedua Pihak."
 
 msgid "No open positions."
-msgstr "Tidak terdapat open position."
+msgstr "Tidak tersedia posisi berjalan."
 
 msgid "No payout if exit spot is above or equal to the upper barrier."
 msgstr "Tidak ada hasil jika spot akhir adalah diatas atau sama dengan batasan atas."
@@ -9727,8 +9733,14 @@ msgstr "Total Margin"
 msgid "Total Profit/Loss"
 msgstr "Total Untung/Rugi"
 
+msgid "Total deposits"
+msgstr ""
+
 msgid "Total net revenue per month (USD)"
 msgstr "Total pendapatan bersih per bulan (USD)"
+
+msgid "Total withdrawals"
+msgstr ""
 
 msgid "Touch/No Touch"
 msgstr "Touch/No Touch"
