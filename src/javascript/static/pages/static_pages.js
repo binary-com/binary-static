@@ -6,7 +6,6 @@ const handleHash   = require('../../_common/utility').handleHash;
 const BinaryPjax   = require('../../app/base/binary_pjax');
 const Client       = require('../../app/base/client');
 const Header       = require('../../app/base/header');
-const hideEU       = require('../../app/common/common_functions').hideEU;
 
 module.exports = {
     OpenPositions: {
@@ -40,17 +39,11 @@ module.exports = {
         },
     },
     AffiliatesFAQ: {
-        onLoad  : () => { MenuSelector.init(['general', 'account-management-and-tracking', 'marketing-and-promotions', 'support']); },
+        onLoad  : () => { MenuSelector.init(['general', 'account-management-and-tracking', 'referral-tools', 'support']); },
         onUnload: () => { MenuSelector.clean(); },
     },
     IBProgrammeFAQ: {
-        onLoad  : () => { MenuSelector.init(['general', 'account-management', 'marketing-and-promotions']); },
+        onLoad  : () => { MenuSelector.init(['general', 'account-management', 'referral-tools']); },
         onUnload: () => { MenuSelector.clean(); },
-    },
-    Cloudflare: {
-        onLoad: () => {},
-    },
-    Tour: {
-        onLoad: () => { hideEU(); },
     },
 };

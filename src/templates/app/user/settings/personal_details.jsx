@@ -41,16 +41,16 @@ const PersonalDetails = () => (
 
         <form className='form gr-padding-10 invisible' id='frmPersonalDetails'>
             <Fieldset legend={it.L('Details')}>
-                <FormRow type='label'  label={it.L('Name')} is_bold id='lbl_name' row_class='invisible RealAcc' row_id='row_name' />
-                <FormRow type='label'  label={it.L('Date of birth')} is_bold id='lbl_date_of_birth' row_class='invisible RealAcc' />
+                <FormRow type='label'  label={it.L('Name')} is_bold id='name' row_class='invisible RealAcc' row_id='row_name' />
+                <FormRow type='label'  label={it.L('Date of birth')} is_bold id='date_of_birth' row_class='invisible RealAcc' />
                 <FormRow type='label'  label={it.L('Citizenship')} id='lbl_citizen' row_id='row_lbl_citizen' row_class='invisible' />
                 <FormRow type='select' label={it.L('Citizenship')} id='citizen' row_id='row_citizen' row_class='invisible' attributes={{ single: 'single' }} />
                 <FormRow type='label'  label={it.L('Place of birth')} id='lbl_place_of_birth' row_id='row_lbl_place_of_birth' row_class='invisible' />
                 <FormRow type='select' label={it.L('Place of birth')} id='place_of_birth' row_id='row_place_of_birth' row_class='invisible' attributes={{ single: 'single' }} />
-                <FormRow type='label'  label={it.L('Country of Residence')} is_bold id='lbl_country' row_id='row_country' />
-                <FormRow type='label'  label={it.L('Email address')} is_bold id='lbl_email' row_id='row_email' />
+                <FormRow type='label'  label={it.L('Country of Residence')} is_bold id='country' row_id='row_country' />
+                <FormRow type='label'  label={it.L('Email address')} is_bold id='email' row_id='row_email' />
                 <FormRow type='label'  label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' />
-                <AccountOpeningReason  row_id='row_account_opening_reason' row_class='invisible' />
+                <AccountOpeningReason row_id='row_account_opening_reason' row_class='invisible' />
             </Fieldset>
 
             <Fieldset id='tax_information_form' className='invisible RealAcc' legend={it.L('Tax Information')}>

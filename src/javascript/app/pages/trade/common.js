@@ -313,7 +313,7 @@ const commonTrading = (() => {
             const market = ActiveSymbols.getSymbols()[Defaults.get('underlying')].market;
             const map_to_section_id = {
                 forex      : 'forex',
-                indices    : 'otc-stocks-and-indices',
+                indices    : 'indices',
                 stocks     : 'otc-stocks-and-indices',
                 commodities: 'commodities',
                 volidx     : 'volatility-indices',

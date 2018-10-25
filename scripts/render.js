@@ -27,16 +27,16 @@ const renderComponent = (context, path) => {
     return result;
 };
 
-const color                = require('cli-color');
-const Spinner              = require('cli-spinner').Spinner;
-const program              = require('commander');
-const Crypto               = require('crypto');
-const fs                   = require('fs');
-const Path                 = require('path');
-const Url                  = require('url');
-const common               = require('./common');
-const generate_static_data = require('./generate-static-data');
-const Gettext              = require('./gettext');
+const color          = require('cli-color');
+const Spinner        = require('cli-spinner').Spinner;
+const program        = require('commander');
+const Crypto         = require('crypto');
+const fs             = require('fs');
+const Path           = require('path');
+const Url            = require('url');
+const common         = require('./common');
+const js_translation = require('./js_translation');
+const Gettext        = require('./gettext');
 
 program
     .version('0.2.1')
@@ -256,8 +256,8 @@ createDirectories();
     try {
         if (program.jsTranslations) {
             Gettext.getInstance();
-            generate_static_data.build();
-            generate_static_data.generate();
+            js_translation.build();
+            js_translation.generate();
             return;
         }
 
@@ -297,7 +297,7 @@ createDirectories();
 
         if (program.translations) {
             const gettext = Gettext.getInstance();
-            generate_static_data.build();
+            js_translation.build();
             gettext.update_translations();
         }
     } catch (e) {

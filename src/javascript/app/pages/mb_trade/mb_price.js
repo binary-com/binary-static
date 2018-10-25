@@ -96,9 +96,9 @@ const MBPrice = (() => {
             is_unwelcome = /unwelcome/.test(response.get_account_status.status);
             if (is_unwelcome) {
                 MBNotifications.show({
-                    text       : localize('Sorry, your account is not authorised for any further contract purchases.'),
-                    uid        : 'UNWELCOME',
-                    dismissible: false,
+                    localized_text: localize('Sorry, your account is not authorised for any further contract purchases.'),
+                    uid           : 'UNWELCOME',
+                    dismissible   : false,
                 });
             }
         });
@@ -205,7 +205,7 @@ const MBPrice = (() => {
         e.preventDefault();
 
         if (!Client.isLoggedIn()) {
-            MBNotifications.show({ text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
+            MBNotifications.show({ localized_text: localize('Please log in.'), uid: 'LOGIN_ERROR', dismissible: true });
             return;
         }
 
@@ -267,7 +267,7 @@ const MBPrice = (() => {
         BinarySocket.send(req).then((response) => {
             if (response.error) {
                 hidePriceOverlay();
-                MBNotifications.show({ text: response.error.message, uid: 'BUY_ERROR', dismissible: true });
+                MBNotifications.show({ localized_text: response.error.message, uid: 'BUY_ERROR', dismissible: true });
             } else {
                 MBNotifications.hide('BUY_ERROR');
                 ViewPopup.init($('<div />', { contract_id: response.buy.contract_id }).get(0));

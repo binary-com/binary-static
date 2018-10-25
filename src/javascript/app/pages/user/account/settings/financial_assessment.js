@@ -20,6 +20,11 @@ const FinancialAssessment = (() => {
             event.preventDefault();
             submitForm();
         });
+        BinarySocket.wait('landing_company').then(() => {
+            if (/^(costarica|maltainvest)$/.test(Client.get('landing_company_shortcode'))) {
+                getElementById('risk_disclaimer').setVisibility(1);
+            }
+        });
 
         getFinancialAssessment();
     };
@@ -77,7 +82,7 @@ const FinancialAssessment = (() => {
             });
             if (Object.keys(financial_assessment).length === 0) has_changed = true;
             if (!has_changed) {
-                showFormMessage('You did not change anything.', false);
+                showFormMessage(localize('You did not change anything.'), false);
                 setTimeout(() => { $btn_submit.removeAttr('disabled'); }, 1000);
                 return;
             }
@@ -90,9 +95,9 @@ const FinancialAssessment = (() => {
             BinarySocket.send(data).then((response) => {
                 $btn_submit.removeAttr('disabled');
                 if (response.error) {
-                    showFormMessage('Sorry, an error occurred while processing your request.', false);
+                    showFormMessage(localize('Sorry, an error occurred while processing your request.'), false);
                 } else {
-                    showFormMessage('Your changes have been updated successfully.', true);
+                    showFormMessage(localize('Your changes have been updated successfully.'), true);
                     // need to remove financial_assessment_not_complete from status if any
                     BinarySocket.send({ get_account_status: 1 }).then(() => {
                         Header.displayAccountStatus();
@@ -113,7 +118,7 @@ const FinancialAssessment = (() => {
         }
     };
 
-    const showFormMessage = (msg, is_success) => {
+    const showFormMessage = (localized_msg, is_success) => {
         const redirect_url = localStorage.getItem('financial_assessment_redirect');
         if (is_success && /metatrader/i.test(redirect_url)) {
             localStorage.removeItem('financial_assessment_redirect');
@@ -128,7 +133,7 @@ const FinancialAssessment = (() => {
         } else {
             $('#msg_form')
                 .attr('class', is_success ? 'success-msg' : 'errorfield')
-                .html(is_success ? $('<ul/>', { class: 'checked', style: 'display: inline-block;' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
+                .html(is_success ? $('<ul/>', { class: 'checked', style: 'display: inline-block;' }).append($('<li/>', { text: localized_msg })) : localized_msg)
                 .css('display', 'block')
                 .delay(5000)
                 .fadeOut(1000);

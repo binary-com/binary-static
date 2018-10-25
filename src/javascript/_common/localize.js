@@ -24,8 +24,22 @@ const Localize = (() => {
         Array.isArray(text) ? text.map(t => doLocalize(t, params)) : doLocalize(text, params)
     );
 
+    /**
+     * Localizes the text, but doesn't replace placeholders
+     * The localized text through this method should replace the placeholders later. e.g. using template()
+     * @param  {String} text - text to be localized
+     * @return {String} the localized text having the original placeholders ([_1], ...)
+     */
+    const localizeKeepPlaceholders = (text) => (
+        localize(
+            text /* localize-ignore */,
+            [...new Set(text.match(/\[_(\d+)]/g).sort())]
+        )
+    );
+
     return {
         localize,
+        localizeKeepPlaceholders,
         forLang: localizeForLang,
     };
 })();

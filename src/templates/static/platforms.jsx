@@ -78,7 +78,7 @@ const Platform = () => (
             <h1 className='center-text'>{it.L('Platforms')}</h1>
             <p className='center-text gr-padding-20 gr-parent'>{it.L('Explore all the trading platforms, apps, and tools we offer')}</p>
         </div>
-        <div className='fill-bg-color gr-padding-30 invisible id-show'>
+        <div className='fill-bg-color gr-padding-30 invisible desktop-app'>
             <div className='container gr-padding-30 gr-child'>
                 <h2 className='primary-color center-text'>
                     <span>{it.L('Introducing the new [_1] desktop app', it.website_name)}</span>
@@ -120,7 +120,7 @@ const Platform = () => (
                 </div>
             </div>
         </div>
-        <div className='gr-padding-30 gr-child invisible id-show' />
+        <div className='gr-padding-30 gr-child invisible desktop-app' />
         <div className='container'>
             <h2 className='primary-color center-text gr-padding-30 gr-child'>{it.L('Trading platforms')}</h2>
             <p className='center-text gr-padding-30 gr-parent'>{it.L('Find a trading platform that suits your experience and preferred strategy – whether you’re a new or seasoned trader.')}</p>

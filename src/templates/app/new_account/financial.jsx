@@ -16,7 +16,9 @@ import {
     AddressCity,
     AddressState,
     AddressPostcode,
+    Jurisdiction,
     Phone,
+    RiskDisclaimer,
     SecretQuestion,
     SecretAnswer,
     ClientMessage,
@@ -64,12 +66,8 @@ const Financial = () => (
             <ProfessionalClient />
             <FinancialForm />
             <PepDeclaration />
-
-            <fieldset>
-                <div className='gr-12'>
-                    <p>{it.L('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.')}</p>
-                </div>
-            </fieldset>
+            <Jurisdiction />
+            <RiskDisclaimer />
 
             <Tnc />
         </form>

@@ -18,6 +18,9 @@ const isEuCountry = () => {
     );
 };
 
+const isIndonesia = () => State.getResponse('website_status.clients_country') === 'id';
+
 module.exports = {
     isEuCountry,
+    isIndonesia,
 };
