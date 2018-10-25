@@ -2,6 +2,8 @@ const DocumentUploader    = require('@binary-com/binary-document-uploader');
 const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
 const BinarySocket        = require('../../../base/socket');
+const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
+const CompressImage       = require('../../../../_common/image_utility').compressImg;
 const localize            = require('../../../../_common/localize').localize;
 const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 const Url                 = require('../../../../_common/url');
@@ -167,6 +169,11 @@ const Authenticate = (() => {
         $submit_table.children().remove();
         $files.each((i, e) => {
             if (e.files && e.files.length) {
+                ConvertToBase64(e.files[0]).then((img)=> {
+                    CompressImage(img).then((result)=>{
+                        console.log(result);
+                    });
+                });
                 const $e        = $(e);
                 const id        = $e.attr('id');
                 const type      = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
@@ -251,7 +258,7 @@ const Authenticate = (() => {
                     uploadFile();
                 }
             };
-            uploadFile();
+            // uploadFile();
         });
     };
 
