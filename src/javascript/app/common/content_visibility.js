@@ -1,4 +1,3 @@
-const isEuCountry      = require('./country_base').isEuCountry;
 const Client           = require('../base/client');
 const BinarySocket     = require('../base/socket');
 const MetaTrader       = require('../pages/user/metatrader/metatrader');
