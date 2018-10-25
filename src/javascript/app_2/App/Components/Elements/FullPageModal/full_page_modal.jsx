@@ -1,10 +1,13 @@
-import React     from 'react';
-import PropTypes from 'prop-types';
+import React       from 'react';
+import PropTypes   from 'prop-types';
+import { connect } from 'Stores/connect';
 
 const FullPageModal = ({
     body,
     cancel_button_text,
+    client,
     confirm_button_text,
+    modules,
     onConfirm,
     onCancel,
     show,
@@ -25,7 +28,7 @@ const FullPageModal = ({
                         </div>
                         <div
                             className='btn flat effect primary'
-                            onClick={onConfirm}
+                            onClick={() => onConfirm(client, modules)}
                         >
                             <span>{confirm_button_text}</span>
                         </div>
@@ -48,4 +51,8 @@ FullPageModal.propTypes = {
     title              : PropTypes.string,
 };
 
-export default FullPageModal;
+const full_page_modal = connect(
+    ({ client, modules }) => ({ client, modules }),
+)(FullPageModal);
+
+export default full_page_modal;

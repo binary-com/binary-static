@@ -1,7 +1,6 @@
 import PropTypes                   from 'prop-types';
 import React                       from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { isClientAllowedToVisit }  from 'App/Middlewares/is_client_allowed_to_visit';
 import getBaseName                 from 'Utils/URL/base_name';
 import { MobxProvider }            from 'Stores/connect';
 import ErrorBoundary               from './Components/Elements/Errors/error_boundary.jsx';
@@ -31,7 +30,7 @@ const App = ({ root_store }) => (
                         <DevTools />
                         <PortfolioDrawer />
                     </AppContents>
-                    <DenialOfServiceModal show={!isClientAllowedToVisit()} />
+                    <DenialOfServiceModal />
                 </ErrorBoundary>
 
                 <footer id='footer'>

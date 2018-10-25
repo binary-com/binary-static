@@ -6,6 +6,7 @@ import { localize }      from '_common/localize';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import { requestLogout } from 'Services';
 import { switchAccount } from 'Services/Helpers/switch_account';
+import { connect }       from 'Stores/connect';
 import { UpgradeButton } from './upgrade_button.jsx';
 
 const getAccountInfo = (loginid) => {
@@ -51,7 +52,7 @@ class AccountSwitcher extends React.Component {
 
     doSwitch(loginid) {
         this.props.toggle();
-        switchAccount(loginid);
+        switchAccount(loginid, this.props.client, this.props.modules);
     }
 
     handleClickOutside = (event) => {
@@ -94,10 +95,18 @@ class AccountSwitcher extends React.Component {
 }
 
 AccountSwitcher.propTypes = {
+    client            : PropTypes.object,
     is_upgrade_enabled: PropTypes.bool,
     is_visible        : PropTypes.bool,
+    modules           : PropTypes.object,
     onClickUpgrade    : PropTypes.func,
     toggle            : PropTypes.func,
 };
 
-export { AccountSwitcher };
+const account_switcher = connect(
+    ({ client, modules }) => ({
+        client, modules,
+    }),
+)(AccountSwitcher);
+
+export { account_switcher as AccountSwitcher };

@@ -5,12 +5,13 @@ import { localize }         from '_common/localize';
 import URL                  from '_common/url';
 import FullPageModal        from 'App/Components/Elements/FullPageModal/full_page_modal.jsx';
 import { switchAccount }    from 'Services/Helpers/switch_account';
+import { connect }          from 'Stores/connect';
 
-const onConfirm = () => {
-    switchAccount(getAccountOfType('virtual').loginid);
+const onConfirm = (client, modules) => {
+    switchAccount(getAccountOfType('virtual').loginid, client, modules);
 };
 
-const onCancel  = () => {
+const onCancel = () => {
     window.location.href = URL.urlFor('trading');
 };
 
@@ -29,4 +30,10 @@ const DenialOfServiceModal = ({ show }) => (
 DenialOfServiceModal.propTypes = {
     show: PropTypes.bool,
 };
-export default DenialOfServiceModal;
+
+const denial_of_service = connect(
+    ({ client }) => ({
+        show: !client.is_client_allowed_to_visit,
+    }),
+)(DenialOfServiceModal);
+export default denial_of_service;

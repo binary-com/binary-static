@@ -111,7 +111,7 @@ export default class TradeStore extends BaseStore {
 
         // Adds intercept to change min_max value of duration validation
         reaction(
-            ()=> [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
+            () => [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
             () => {
                 this.changeDurationValidationRules();
             }
@@ -119,12 +119,25 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
+    refresh () {
+        this.symbol = null;
+        WS.forgetAll('proposal');
+    }
+
+    @action.bound
     async prepareTradeStore() {
-        const query_string_values = this.updateQueryString();
+        let query_string_values = this.updateQueryString();
         this.smart_chart = this.root_store.modules.smart_chart;
 
         if (!this.symbol) {
             const active_symbols = await WS.activeSymbols();
+
+            const is_invalid_symbol = !!query_string_values.symbol &&
+                !active_symbols.active_symbols.find(s => s.symbol === query_string_values.symbol);
+            if (is_invalid_symbol) {
+                URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
+                query_string_values = this.updateQueryString();
+            }
             await this.processNewValuesAsync({
                 symbol: pickDefaultSymbol(active_symbols.active_symbols),
                 ...query_string_values,
@@ -132,7 +145,7 @@ export default class TradeStore extends BaseStore {
         }
 
         if (this.symbol) {
-            ContractType.buildContractTypesConfig(this.symbol).then(action(async () => {
+            ContractType.buildContractTypesConfig(query_string_values.symbol || this.symbol).then(action(async () => {
                 await this.processNewValuesAsync({
                     ...ContractType.getContractValues(this),
                     ...ContractType.getContractCategories(),

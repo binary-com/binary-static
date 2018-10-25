@@ -41,7 +41,7 @@ export default class URLHelper {
         if (!url) {
             window.history.replaceState(null, null, `?${param_object.toString()}`);
         } else {
-            url_object.seach = param_object.toString();
+            url_object.search = param_object.toString();
         }
 
         return url_object;
