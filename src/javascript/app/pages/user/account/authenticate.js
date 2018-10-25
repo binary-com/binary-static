@@ -174,6 +174,7 @@ const Authenticate = (() => {
                         console.log(result);
                     });
                 });
+
                 const $e        = $(e);
                 const id        = $e.attr('id');
                 const type      = `${($e.attr('data-type') || '').replace(/\s/g, '_').toLowerCase()}`;
@@ -205,6 +206,7 @@ const Authenticate = (() => {
                     .append($('<td/>', { text: e.files[0].name }))                        // file name, e.g. sample.pdf
                     .append($('<td/>', { text: localize('Pending'), class: 'status' }))   // status of uploading file, first set to Pending
                 );
+
             }
         });
         $submit_status.setVisibility(1);
