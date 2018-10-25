@@ -149,7 +149,7 @@ const ContentVisibility = (() => {
 
     const controlVisibility = (client_is_logged_in, clients_country,
         current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
-            document.querySelectorAll('[data-show]').forEach(el => {
+        document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str      = el.dataset.show;
             if (shouldShowElement(attr_str, client_is_logged_in, clients_country,
                 current_landing_company_shortcode, client_has_mt_company, mt5_login_list)) {
