@@ -7,10 +7,10 @@ const FullPageModal = ({
     confirm_button_text,
     onConfirm,
     onCancel,
-    show,
+    visible,
     title,
 }) => {
-    if (show) {
+    if (visible) {
         return (
             <div className='full-page-modal'>
                 <div className='modal-dialog'>
@@ -44,8 +44,8 @@ FullPageModal.propTypes = {
     confirm_button_text: PropTypes.string,
     onCancel           : PropTypes.func,
     onConfirm          : PropTypes.func,
-    show               : PropTypes.bool,
     title              : PropTypes.string,
+    visible            : PropTypes.bool,
 };
 
 export default FullPageModal;

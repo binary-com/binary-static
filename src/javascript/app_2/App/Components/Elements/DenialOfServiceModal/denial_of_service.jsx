@@ -14,7 +14,7 @@ const onCancel  = () => {
     window.location.href = URL.urlFor('trading');
 };
 
-const DenialOfServiceModal = ({ show }) => (
+const DenialOfServiceModal = ({ visible }) => (
     <FullPageModal
         title={localize('Whoops!')}
         body={localize('Sorry, Only virtual accounts can access this feature at the moment.')}
@@ -22,11 +22,11 @@ const DenialOfServiceModal = ({ show }) => (
         cancel_button_text={localize('Visit main website')}
         onConfirm={onConfirm}
         onCancel={onCancel}
-        show={show}
+        visible={visible}
     />
 );
 
 DenialOfServiceModal.propTypes = {
-    show: PropTypes.bool,
+    visible: PropTypes.bool,
 };
 export default DenialOfServiceModal;

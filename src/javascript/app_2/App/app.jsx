@@ -31,7 +31,7 @@ const App = ({ root_store }) => (
                         <DevTools />
                         <PortfolioDrawer />
                     </AppContents>
-                    <DenialOfServiceModal show={!isClientAllowedToVisit()} />
+                    <DenialOfServiceModal visible={!isClientAllowedToVisit()} />
                 </ErrorBoundary>
 
                 <footer id='footer'>
