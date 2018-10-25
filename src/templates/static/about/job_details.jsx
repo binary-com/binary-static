@@ -66,7 +66,7 @@ const JobDetails = () => (
                                 { className: 'compliance',             string: it.L('Compliance and Risk Management') },
                                 { className: 'customer_support',       string: it.L('Customer Support') },
                                 { className: 'internal_audit',         string: it.L('Internal Audit') },
-                                { classname: 'human_resources',        string: it.L('Human Resource') },
+                                { className: 'human_resources',        string: it.L('Human Resources') },
                             ]}
                         />
                     </div>
@@ -89,7 +89,7 @@ const JobDetails = () => (
                             className='quantitative_analysis'
                             sidebar_items={[
                                 { href: 'quantitative_analyst',     string: it.L('Quantitative Analyst') },
-                                { href: 'financial_market_analyst', string: it.L('Financial Market Analyst') },
+                                { href: 'financial_markets_analyst', string: it.L('Financial Markets Analyst') },
                             ]}
                         />
 
@@ -178,7 +178,7 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Assist in the daily IT requirements of Malta office') },
+                                    { text: it.L('Assist in the daily IT requirements of our offices') },
                                     { text: it.L('Plan and implement IT solutions to achieve desired results') },
                                     { text: it.L('Keep up with the latest developments in IT and maintain knowledge relevant to the requirements of the business') },
                                     { text: it.L('Plan and implement methods of best practices in IT security') },
@@ -198,12 +198,12 @@ const JobDetails = () => (
                                 items={[
                                     { text: it.L('A diploma or degree in Computer Science or Information Technology, or good experience in the field of IT operations/administration') },
                                     { text: it.L('Exceptional English communication skills (both oral and written)') },
-                                    { text: it.L('Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks.') },
+                                    { text: it.L('Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks') },
                                     { text: it.L('Hands-on experience in systems and network security. Experience with Fortigate or similar devices (e.g.Cisco, Mikrotik)') },
                                     { text: it.L('Knowledge of Mac or Linux Technologies and associated security risks') },
                                     { text: it.L('Knowledge of VPN concepts and prior experience of setting up site-to-site networks') },
                                     { text: it.L('Experience with +DRAC is a plus') },
-                                    { text: it.L('Experience in ARUBA or similar enterprise WiFi AP management is a plus.') },
+                                    { text: it.L('Experience in ARUBA or similar enterprise WiFi AP management is a plus') },
                                     { text: it.L('Experience in end-user device security audit and policy implementation is a plus') },
                                     { text: it.L('The willingness to learn new skills') },
                                 ]}
@@ -219,11 +219,11 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Develop and maintain world-class web applications.') },
-                                    { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and Databases.') },
-                                    { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features.') },
-                                    { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability.') },
-                                    { text: it.L('Participate in all aspects of the product lifecycle.') },
+                                    { text: it.L('Develop and maintain world-class web applications') },
+                                    { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and Databases') },
+                                    { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features') },
+                                    { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability') },
+                                    { text: it.L('Participate in all aspects of the product lifecycle') },
                                 ]}
                             />
 
@@ -231,12 +231,12 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, and a willingness to become highly proficient with Perl.') },
-                                    { text: it.L('Expertise in Linux system administration.') },
-                                    { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL.') },
-                                    { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, NGINX, JavaScript, Redis, and Git.') },
-                                    { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques.') },
-                                    { text: it.L('Passion for Linux and other open-source platforms.') },
+                                    { text: it.L('Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, and a willingness to become highly proficient with Perl') },
+                                    { text: it.L('Expertise in Linux system administration') },
+                                    { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL') },
+                                    { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, NGINX, JavaScript, Redis, and Git') },
+                                    { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques') },
+                                    { text: it.L('Passion for Linux and other open-source platforms') },
                                 ]}
                             />
                         </div>
@@ -251,10 +251,10 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Develop and maintain advanced features, tools, and applications according to best practices in UI/UX, front-end development and hybrid mobile application development.') },
-                                    { text: it.L('Test and debug our ever-evolving product line to improve their speed, scalability, and usability across multiple browsers, devices, and web standards.') },
-                                    { text: it.L('Stay on top of the latest JavaScript frameworks, libraries, and tools in order to apply them when necessary to solve challenges related to web and mobile development.') },
-                                    { text: it.L('Ensure the design and development of each page or product is consistent with our style guide, and that everything works as planned with each release.') },
+                                    { text: it.L('Develop and maintain advanced features, tools, and applications according to best practices in UI/UX, front-end development and hybrid mobile application development') },
+                                    { text: it.L('Test and debug our ever-evolving product line to improve their speed, scalability, and usability across multiple browsers, devices, and web standards') },
+                                    { text: it.L('Stay on top of the latest JavaScript frameworks, libraries, and tools in order to apply them when necessary to solve challenges related to web and mobile development') },
+                                    { text: it.L('Ensure the design and development of each page or product is consistent with our style guide, and that everything works as planned with each release') },
                                 ]}
                             />
 
@@ -262,12 +262,12 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Extensive knowledge in advanced coding techniques, cross-platform development, and hybrid mobile app development.') },
-                                    { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques.') },
-                                    { text: it.L('Extensive experience of JavaScript, HTML, CSS, AJAX, and JSON.') },
-                                    { text: it.L('Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular.') },
-                                    { text: it.L('Experience with package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus), and APIs (WebSocket).') },
-                                    { text: it.L('Familiarity with testing and debugging processes, including unit testing and UI testing.') },
+                                    { text: it.L('Extensive knowledge in advanced coding techniques, cross-platform development, and hybrid mobile app development') },
+                                    { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques') },
+                                    { text: it.L('Extensive experience of JavaScript, HTML, CSS, AJAX, and JSON') },
+                                    { text: it.L('Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular') },
+                                    { text: it.L('Experience with package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus), and APIs (WebSocket)') },
+                                    { text: it.L('Familiarity with testing and debugging processes, including unit testing and UI testing') },
                                     { text: it.L('Passion for Linux and other open-source platforms') },
                                 ]}
                             />
@@ -282,11 +282,11 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Develop and maintain world-class web applications.') },
-                                    { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and databases.') },
-                                    { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features.') },
-                                    { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability.') },
-                                    { text: it.L('Participate in all aspects of the product lifecycle.') },
+                                    { text: it.L('Develop and maintain world-class web applications') },
+                                    { text: it.L('Build, maintain, and optimise the technology that powers our servers, applications, and databases') },
+                                    { text: it.L('Work closely with other teams to come up with effective architecture to support the deployment of new products and features') },
+                                    { text: it.L('Troubleshoot and debug problems in existing applications, and find new ways to improve their speed, functionality, and scalability') },
+                                    { text: it.L('Participate in all aspects of the product lifecycle') },
                                 ]}
                             />
 
@@ -294,13 +294,13 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Deep Perl expertise.') },
-                                    { text: it.L('Expertise in Linux system administration.') },
-                                    { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL.') },
-                                    { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, nginx, JavaScript, Redis, and Git.') },
-                                    { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques.') },
-                                    { text: it.L('Event-driven programming in Perl.') },
-                                    { text: it.L('Passion for Linux, and other open-source platforms.') },
+                                    { text: it.L('Deep Perl expertise') },
+                                    { text: it.L('Expertise in Linux system administration') },
+                                    { text: it.L('Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL') },
+                                    { text: it.L('Familiarity with Perl DBI, Moose, PSGI/Plack, nginx, JavaScript, Redis, and Git') },
+                                    { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques') },
+                                    { text: it.L('Event-driven programming in Perl') },
+                                    { text: it.L('Passion for Linux, and other open-source platforms') },
                                 ]}
                             />
                         </div>
@@ -385,7 +385,7 @@ const JobDetails = () => (
                         <div className='invisible' id='ui_ux_designer'>
                             <h1>{it.L('UI/UX Designer')}</h1>
 
-                            <p>{it.L('[_1]\'s UI/UX team explores the many ways that we can design better product experiences for our users. As our UI/UX Designer, you’ll play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.', it.website_name)}</p>
+                            <p>{it.L('[_1]\'s UI/UX team explores the many ways that we can design better product experiences for our users. As our UI/UX Designer, you will play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.', it.website_name)}</p>
 
                             <p>{it.L('You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue.')}</p>
 
@@ -394,12 +394,12 @@ const JobDetails = () => (
                                 className='bullet'
                                 items={[
                                     { text: it.L('Conduct research using a variety of qualitative and quantitative methods') },
-                                    { text: it.L('Create user personas; define user task flows and UI specifications; and run A/B tests to understand user behaviours and their most pressing needs.') },
-                                    { text: it.L('Be involved in every phase of product development, from concept to execution to launch to give the product a distinct and consistent visual identity, as well as ensure that it fully serves the needs of the end user.') },
-                                    { text: it.L('Create and update style guides to establish and maintain a consistent visual identity across our product ecosystem.') },
-                                    { text: it.L('Create visual elements for websites and applications, including icons and images.') },
-                                    { text: it.L('Create and maintain wireframes and mockups for new and existing products.') },
-                                    { text: it.L('Keep up with the latest trends and techniques in design, UI, and UX.') },
+                                    { text: it.L('Create user personas; define user task flows and UI specifications; and run A/B tests to understand user behaviours and their most pressing needs') },
+                                    { text: it.L('Be involved in every phase of product development, from concept to execution to launch to give the product a distinct and consistent visual identity, as well as ensure that it fully serves the needs of the end user') },
+                                    { text: it.L('Create and update style guides to establish and maintain a consistent visual identity across our product ecosystem') },
+                                    { text: it.L('Create visual elements for websites and applications, including icons and images') },
+                                    { text: it.L('Create and maintain wireframes and mockups for new and existing products') },
+                                    { text: it.L('Keep up with the latest trends and techniques in design, UI, and UX') },
                                 ]}
                             />
 
@@ -407,14 +407,14 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Proven UI and UX experience with a strong portfolio of work.') },
-                                    { text: it.L('Ability to conduct end-to-end UX research, including usability testing, and A/B testing.') },
-                                    { text: it.L('Experience in interpreting complex concepts and processes to develop intuitive and logical user flows and usage scenarios.') },
-                                    { text: it.L('Extensive experience in creating interactive UI elements for web and mobile apps.') },
-                                    { text: it.L('Proficiency in designing intuitive and cohesive screens, pages, and visual elements that work as intended.') },
-                                    { text: it.L('Proficiency in Photoshop, Illustrator, Sketch, and other design and wireframing software.') },
-                                    { text: it.L('Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps.') },
-                                    { text: it.L('Bachelor’s degree in graphic design, interaction design, visual communication, multimedia, or equivalent.') },
+                                    { text: it.L('Proven UI and UX experience with a strong portfolio of work') },
+                                    { text: it.L('Ability to conduct end-to-end UX research, including usability testing, and A/B testing') },
+                                    { text: it.L('Experience in interpreting complex concepts and processes to develop intuitive and logical user flows and usage scenarios') },
+                                    { text: it.L('Extensive experience in creating interactive UI elements for web and mobile apps') },
+                                    { text: it.L('Proficiency in designing intuitive and cohesive screens, pages, and visual elements that work as intended') },
+                                    { text: it.L('Proficiency in Photoshop, Illustrator, Sketch, and other design and wireframing software') },
+                                    { text: it.L('Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps') },
+                                    { text: it.L('Bachelor’s degree in graphic design, interaction design, visual communication, multimedia, or equivalent') },
                                 ]}
                             />
                         </div>
@@ -431,13 +431,13 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Test the [_1] website, applications, backend, and back-office systems.', it.website_name) },
-                                    { text: it.L('Work closely with the rest of the QA and IT teams to plan, design, and execute several types of testing based on different objectives.') },
-                                    { text: it.L('Create, execute, and update manual and automated test plans.') },
-                                    { text: it.L('Plan and integrate various types of testing into our existing workflow.') },
-                                    { text: it.L('Ensure the integrity of releases by coordinating testing activities.') },
-                                    { text: it.L('Track and document thoroughly the bugs that you find.') },
-                                    { text: it.L('Investigate, reproduce, identify, document, and resolve issues reported by our clients and the customer support team.') },
+                                    { text: it.L('Test the [_1] website, applications, backend, and back-office systems', it.website_name) },
+                                    { text: it.L('Work closely with the rest of the QA and IT teams to plan, design, and execute several types of testing based on different objectives') },
+                                    { text: it.L('Create, execute, and update manual and automated test plans') },
+                                    { text: it.L('Plan and integrate various types of testing into our existing workflow') },
+                                    { text: it.L('Ensure the integrity of releases by coordinating testing activities') },
+                                    { text: it.L('Track and document thoroughly the bugs that you find') },
+                                    { text: it.L('Investigate, reproduce, identify, document, and resolve issues reported by our clients and the customer support team') },
                                 ]}
                             />
 
@@ -445,16 +445,16 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Bachelor’s degree in computer science, or an equivalent combination of technical education, training, and work experience.') },
-                                    { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques.') },
-                                    { text: it.L('Minimum two years experience in a software or web application testing role.') },
-                                    { text: it.L('Experience designing and executing test plans (both automated and manual).') },
-                                    { text: it.L('Extensive knowledge of JavaScript , AJAX, JSON, CSS.') },
-                                    { text: it.L('Proficiency with one or more scripting languages, such as Python, PHP or C/C++. Perl is preferred.') },
-                                    { text: it.L('Experience with agile development methods such as Scrum or Kanban.') },
-                                    { text: it.L('Experience with Postgres or another RDBMS is a plus.') },
-                                    { text: it.L('Familiarity with Git.') },
-                                    { text: it.L('Passion for Linux and other open-source platforms.') },
+                                    { text: it.L('Bachelor’s degree in computer science, or an equivalent combination of technical education, training, and work experience') },
+                                    { text: it.L('Ability to write high-quality, self-documenting code using test-driven development techniques') },
+                                    { text: it.L('Minimum two years experience in a software or web application testing role') },
+                                    { text: it.L('Experience designing and executing test plans (both automated and manual)') },
+                                    { text: it.L('Extensive knowledge of JavaScript , AJAX, JSON, CSS') },
+                                    { text: it.L('Proficiency with one or more scripting languages, such as Python, PHP or C/C++. Perl is preferred') },
+                                    { text: it.L('Experience with agile development methods such as Scrum or Kanban') },
+                                    { text: it.L('Experience with Postgres or another RDBMS is a plus') },
+                                    { text: it.L('Familiarity with Git') },
+                                    { text: it.L('Passion for Linux and other open-source platforms') },
                                 ]}
                             />
                         </div>
@@ -476,12 +476,12 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Develop derivatives pricing, risk management models, and algorithms using C/C++, R, MATLAB, Perl, Python, and Java.') },
-                                    { text: it.L('Review, develop, and enhance Perl, C++, and R codes used in options pricing, volatility forecasts, and risk management programs.') },
-                                    { text: it.L('Maintain accurate system pricing parameters.') },
-                                    { text: it.L('Perform data mining using SQL databases, R/S-Plus, OLAP, and other analytical tools.') },
-                                    { text: it.L('Monitor website trading activity and minimise abuse.') },
-                                    { text: it.L('Generate periodic and special reports that summarise client trading trends.') },
+                                    { text: it.L('Develop derivatives pricing, risk management models, and algorithms using C/C++, R, MATLAB, Perl, Python, and Java') },
+                                    { text: it.L('Review, develop, and enhance Perl, C++, and R codes used in options pricing, volatility forecasts, and risk management programs') },
+                                    { text: it.L('Maintain accurate system pricing parameters') },
+                                    { text: it.L('Perform data mining using SQL databases, R/S-Plus, OLAP, and other analytical tools') },
+                                    { text: it.L('Monitor website trading activity and minimise abuse') },
+                                    { text: it.L('Generate periodic and special reports that summarise client trading trends') },
                                 ]}
                             />
 
@@ -489,20 +489,20 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('An advanced university degree in Physics, Financial Engineering or Mathematics.') },
-                                    { text: it.L('Experience in exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies.') },
-                                    { text: it.L('Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modelling.') },
-                                    { text: it.L('Expertise in the application of object-oriented programming languages (C++, Perl, and Java), coupled with the ability to produce high-quality code.') },
-                                    { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters.') },
-                                    { text: it.L('Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus.') },
+                                    { text: it.L('An advanced university degree in Physics, Financial Engineering or Mathematics') },
+                                    { text: it.L('Experience in exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies') },
+                                    { text: it.L('Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modelling') },
+                                    { text: it.L('Expertise in the application of object-oriented programming languages (C++, Perl, and Java), coupled with the ability to produce high-quality code') },
+                                    { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters') },
+                                    { text: it.L('Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus') },
                                 ]}
                             />
                         </div>
 
-                        <div className='invisible' id='financial_market_analyst'>
-                            <h1>{it.L('Financial Market Analyst')}</h1>
+                        <div className='invisible' id='financial_markets_analyst'>
+                            <h1>{it.L('Financial Markets Analyst')}</h1>
 
-                            <p>{it.L('As our Senior Financial Market Analyst, you will manage the day-to-day risk of our trading books, conduct complex quantitative analysis, carry out performance testing, develop advanced data analytics tools, and support other related operations that have a direct impact on the profitability and future growth of our company.')}</p>
+                            <p>{it.L('As our Senior Financial Markets Analyst, you will manage the day-to-day risk of our trading books, conduct complex quantitative analysis, carry out performance testing, develop advanced data analytics tools, and support other related operations that have a direct impact on the profitability and future growth of our company.')}</p>
                             <p>{it.L('This includes decisions on new markets to launch in, and the spreads and margins we might offer. You must also be able to analyse and interpret large volumes of data, and communicate your research and findings in a clear and concise manner –– either in written reports or presentations.')}</p>
 
                             <UlText
@@ -516,8 +516,8 @@ const JobDetails = () => (
                                     { text: it.L('Manage day-to-day risk of our trading books') },
                                     { text: it.L('Set up liquidity connections via bridges and gateways for MT4 and MT5 brokers') },
                                     { text: it.L('Conduct research on competitors and industry trends to identify new products and potential markets') },
-                                    { text: it.L('Develop mathematical/statistical models for pricing and risk management for all products.') },
-                                    { text: it.L('Use advanced data analytics skills to study trends/pattern in financial markets.') },
+                                    { text: it.L('Develop mathematical/statistical models for pricing and risk management for all products') },
+                                    { text: it.L('Use advanced data analytics skills to study trends/pattern in financial markets') },
                                     { text: it.L('Help in developing advanced risk management tools for various markets (forex, equities, commodities)') },
                                     { text: it.L('Prepare daily, weekly, and monthly financial reports') },
                                     { text: it.L('Generate periodic and special reports on client trading activity and significant trends that impact our client behaviour') },
@@ -533,7 +533,7 @@ const JobDetails = () => (
                                     { text: it.L('Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc.') },
                                     { text: it.L('Experience in using financial information sources such as Bloomberg and Reuters') },
                                     { text: it.L('Strong analytical skills and the ability to communicate your findings in a clear, concise, and effective manner') },
-                                    { text: it.L('Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus.') },
+                                    { text: it.L('Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus') },
                                 ]}
                             />
                         </div>
@@ -543,15 +543,14 @@ const JobDetails = () => (
                         <div className='invisible' id='affiliate_country_manager'>
                             <h1>{it.L('Affiliate/Country Manager')}</h1>
 
-                            <p>{it.L('The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in Russian-speaking countries. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide.')}</p>
+                            <p>{it.L('The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in the countries where Binary Group targets to be represented. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide.')}</p>
                             <p>{it.L('You are also expected to help us promote our cutting-edge trading platform that has been one of the most recognised in the binary options trading industry for over 18 years.')}</p>
 
                             <UlText
-                                text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Recruit, train, and nurture affiliates and IBs in Russian-speaking countries, leveraging your direct knowledge and experience of the local market') },
-                                    { text: it.L('Drive rapid growth and business development to support the company&#39;s sales and marketing objectives') },
+                                    { text: it.L('Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market') },
+                                    { text: it.L('Drive rapid growth and business development to support the company\'s sales and marketing objectives') },
                                     { text: it.L('Coordinate business development activities and generate high-quality partnership leads') },
                                     { text: it.L('Adapt affiliate marketing tactics and promotional materials as needed to localise all content for maximum effectiveness') },
                                     { text: it.L('Utilise a variety of tactics – both online and offline – to grow and support the company’s network of partners in your designated market') },
@@ -648,12 +647,12 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Design logos, icons, and other visuals for our websites and applications.') },
-                                    { text: it.L('Lay out mockups and wireframes for app screens and web pages.') },
-                                    { text: it.L('Come up with cohesive design solutions that can achieve our business/product goals and satisfy user needs.') },
-                                    { text: it.L('Communicate with a wide range of technical and non-technical teams to understand the unique selling points of our products, concepts, user flows, and usage scenarios.') },
-                                    { text: it.L('Incorporate our brand identity into new products, pages, and features.') },
-                                    { text: it.L('Keep up with the latest trends and techniques in design, UI, and UX.') },
+                                    { text: it.L('Design logos, icons, and other visuals for our websites and applications') },
+                                    { text: it.L('Lay out mockups and wireframes for app screens and web pages') },
+                                    { text: it.L('Come up with cohesive design solutions that can achieve our business/product goals and satisfy user needs') },
+                                    { text: it.L('Communicate with a wide range of technical and non-technical teams to understand the unique selling points of our products, concepts, user flows, and usage scenarios') },
+                                    { text: it.L('Incorporate our brand identity into new products, pages, and features') },
+                                    { text: it.L('Keep up with the latest trends and techniques in design, UI, and UX') },
                                 ]}
                             />
 
@@ -661,13 +660,13 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Proven graphic design experience with a strong portfolio of work in branding, advertising, and marketing.') },
-                                    { text: it.L('Ability to communicate and present your ideas and work in a clear, descriptive manner.') },
-                                    { text: it.L('Experience in interpreting complex concepts and processes to create design solutions that help our users achieve their goals.') },
-                                    { text: it.L('Strong understanding of colours, typography, identity design, and branding.') },
-                                    { text: it.L('Creative flair and versatility in developing concepts, graphics, and layouts for a wide range of media.') },
-                                    { text: it.L('Proficiency in Photoshop, Illustrator, InDesign, Sketch, and other design and wireframing software.') },
-                                    { text: it.L('Bachelor’s degree in graphic design, visual communication, multimedia, or equivalent.') },
+                                    { text: it.L('Proven graphic design experience with a strong portfolio of work in branding, advertising, and marketing') },
+                                    { text: it.L('Ability to communicate and present your ideas and work in a clear, descriptive manner') },
+                                    { text: it.L('Experience in interpreting complex concepts and processes to create design solutions that help our users achieve their goals') },
+                                    { text: it.L('Strong understanding of colours, typography, identity design, and branding') },
+                                    { text: it.L('Creative flair and versatility in developing concepts, graphics, and layouts for a wide range of media') },
+                                    { text: it.L('Proficiency in Photoshop, Illustrator, InDesign, Sketch, and other design and wireframing software') },
+                                    { text: it.L('Bachelor’s degree in graphic design, visual communication, multimedia, or equivalent') },
                                 ]}
                             />
                         </div>
@@ -728,7 +727,7 @@ const JobDetails = () => (
                                     { text: it.L('Preferably a native speaker with good command of English (oral and written)') },
                                     { text: it.L('Will work with our simple web-based translation tool') },
                                     { text: it.L('Previous experience with financial/binary options website services is preferred') },
-                                    { text: it.L('A university degree or accredited translation certification preferred.') },
+                                    { text: it.L('A university degree or accredited translation certification preferred') },
                                 ]}
                             />
                         </div>
@@ -759,7 +758,7 @@ const JobDetails = () => (
                                     { text: it.L('Preferably a native speaker with good command of English (oral and written)') },
                                     { text: it.L('Will work with our simple web-based translation tool') },
                                     { text: it.L('Previous experience with financial/binary options website services is preferred') },
-                                    { text: it.L('A university degree or accredited translation certification preferred.') },
+                                    { text: it.L('A university degree or accredited translation certification preferred') },
                                 ]}
                             />
                         </div>
@@ -777,13 +776,13 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Process client payments, as well as handle and resolve client payment queries.') },
-                                    { text: it.L('Track and manage transactions and accounts using proprietary and non-proprietary software and systems.') },
-                                    { text: it.L('Process transactions for clients who make deposits and withdrawals using a wide range of third-party payment services, including bank wire, credit card, and e-currency.') },
-                                    { text: it.L('Perform reconciliations of all transactions that take place through third-party payment services and banks.') },
-                                    { text: it.L('Assist in management accounting for all companies within the Binary Ltd. group.') },
-                                    { text: it.L('Work closely with the affiliate marketing team to process affiliate commission payments on a monthly basis.') },
-                                    { text: it.L('Constantly liaise with all internal departments such as Customer Support and Marketing on account and payment matters.') },
+                                    { text: it.L('Process client payments, as well as handle and resolve client payment queries') },
+                                    { text: it.L('Track and manage transactions and accounts using proprietary and non-proprietary software and systems') },
+                                    { text: it.L('Process transactions for clients who make deposits and withdrawals using a wide range of third-party payment services, including bank wire, credit card, and e-currency') },
+                                    { text: it.L('Perform reconciliations of all transactions that take place through third-party payment services and banks') },
+                                    { text: it.L('Assist in management accounting for all companies within the Binary Ltd. group') },
+                                    { text: it.L('Work closely with the affiliate marketing team to process affiliate commission payments on a monthly basis') },
+                                    { text: it.L('Constantly liaise with all internal departments such as Customer Support and Marketing on account and payment matters') },
                                 ]}
                             />
 
@@ -791,12 +790,12 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A lifelong interest in accounting, and an aptitude for numbers.') },
-                                    { text: it.L('A university degree with a major in accounting, or other relevant professional qualifications.') },
-                                    { text: it.L('At least one year of work experience in a similar role.') },
-                                    { text: it.L('Proficiency with popular office applications such as Microsoft Excel, accounting software, and databases.') },
-                                    { text: it.L('In-depth knowledge of accounting principles, best practices, standards, and regulations.') },
-                                    { text: it.L('Ability to quickly learn new (proprietary) systems and procedures.') },
+                                    { text: it.L('A lifelong interest in accounting, and an aptitude for numbers') },
+                                    { text: it.L('A university degree with a major in accounting, or other relevant professional qualifications') },
+                                    { text: it.L('At least one year of work experience in a similar role') },
+                                    { text: it.L('Proficiency with popular office applications such as Microsoft Excel, accounting software, and databases') },
+                                    { text: it.L('In-depth knowledge of accounting principles, best practices, standards, and regulations') },
+                                    { text: it.L('Ability to quickly learn new (proprietary) systems and procedures') },
                                 ]}
                             />
                         </div>
@@ -806,13 +805,13 @@ const JobDetails = () => (
                         <div className='invisible' id='compliance_executive'>
                             <h1>{it.L('Compliance Executive')}</h1>
 
-                            <p>{it.L('As our Compliance Executive, you must ensure that our group companies worldwide conduct their business operations in full compliance with relevant laws and regulations –– both national and international.')}</p>
+                            <p>{it.L('As our Compliance Executive, you must ensure that our group of companies worldwide conduct their business operations in full compliance with relevant laws and regulations –– both national and international.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Work with the Head of Compliance to ensure group companies comply with AML, KYC, and Data Protection laws and regulations') },
+                                    { text: it.L('Work with the Head of Compliance to ensure group of companies comply with AML, KYC, and Data Protection laws and regulations') },
                                     { text: it.L('Plan and direct internal programmes and policies to empower all departments with the knowledge, awareness, and practices of regulatory compliance') },
                                     { text: it.L('Track laws and regulations that may affect all group companies and implement necessary changes to internal policies in order to manage and mitigate our risk and exposure') },
                                     { text: it.L('Screen and approve website content and marketing promotions') },
@@ -825,14 +824,14 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('A bachelor’s degree in commerce or any business-related field, law, or risk management.') },
+                                    { text: it.L('A bachelor’s degree in commerce or any business-related field, law, or risk management') },
                                     { text: it.L('A good understanding of, and keen interest in corporate, legal or regulatory compliance') },
                                     { text: it.L('Thorough understanding of Anti-Money Laundering (AML) and Know Your Customer (KYC) processes') },
                                     { text: it.L('The ability to draft and review legal documents, and prepare licence applications') },
                                     { text: it.L('A proactive approach in problem-solving') },
                                     { text: it.L('The ability to absorb and understand varied compliance matters in a number of international jurisdictions') },
                                     { text: it.L('Excellent communication and interpersonal skills') },
-                                    { text: it.L('Excellent proficiency in spoken and written English.') },
+                                    { text: it.L('Excellent proficiency in spoken and written English') },
                                     { text: it.L('A Diploma in Financial Crime, Risk Management and Compliance (ICA) will be an advantage') },
                                 ]}
                             />
@@ -867,7 +866,7 @@ const JobDetails = () => (
                                     { text: it.L('Ability to acquire knowledge of varied AML matters in a multitude of international jurisdictions') },
                                     { text: it.L('Proactive approach in problem-solving and solution delivery') },
                                     { text: it.L('Proficiency in Microsoft Excel is required') },
-                                    { text: it.L('Excellent proficiency in spoken and written English.') },
+                                    { text: it.L('Excellent proficiency in spoken and written English') },
                                     { text: it.L('Knowledge of payment transaction analysis, in particular e-wallets/cryptocurrencies will be considered an advantage') },
                                 ]}
                             />
@@ -958,9 +957,9 @@ const JobDetails = () => (
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Support our global recruitment and talent management needs, including onboarding, processing work permits, and expat management.') },
-                                    { text: it.L('Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees.') },
-                                    { text: it.L('Administer key human resource activities such as performance appraisals.') },
+                                    { text: it.L('Support our global recruitment and talent management needs, including onboarding, processing work permits, and expat management') },
+                                    { text: it.L('Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees') },
+                                    { text: it.L('Administer key human resource activities such as performance appraisals') },
                                 ]}
                             />
 
@@ -968,11 +967,11 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('An advanced/higher/graduate diploma or bachelor’s degree.') },
-                                    { text: it.L('Extensive experience in Microsoft Office applications, as well as popular HR management and payroll systems.') },
-                                    { text: it.L('Well-honed organisational, administrative, and accounting skills.') },
-                                    { text: it.L('Excellent oral and written communication skills in English and Bahasa Malaysia.') },
-                                    { text: it.L('Relevant work experience in a related field, such as managing and onboarding expats, processing work permits, and dealing with Malaysian governmental authorities will be a plus.') },
+                                    { text: it.L('An advanced/higher/graduate diploma or bachelor’s degree') },
+                                    { text: it.L('Extensive experience in Microsoft Office applications, as well as popular HR management and payroll systems') },
+                                    { text: it.L('Well-honed organisational, administrative, and accounting skills') },
+                                    { text: it.L('Excellent oral and written communication skills in English and Bahasa Malaysia') },
+                                    { text: it.L('Relevant work experience in a related field, such as managing and onboarding expats, processing work permits, and dealing with Malaysian governmental authorities will be a plus') },
                                 ]}
                             />
 

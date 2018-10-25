@@ -64,10 +64,10 @@ const JobDescriptions = () => (
                     { header: it.L('Front-End Developer'),  subsection: 'frontend_developer',   text: it.L('As our Front-End Developer, you will be taking on the challenge of developing and maintaining advanced applications and interfaces that connect clients with our patented trading system.') },
                     { header: it.L('Perl Developer'),       subsection: 'perl_developer',       text: it.L('As our Perl Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.'), className: 'one-line nowrap' },
 
-                    { header: it.L('Cryptocurrency/Blockchain Developer'), subsection: 'cryptocurrency_Blockchain_developer', text: it.L('As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.'), className: 'one-line nowrap' },
+                    { header: it.L('Cryptocurrency/Blockchain Developer'), subsection: 'cryptocurrency_blockchain_developer', text: it.L('As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.'), className: 'one-line nowrap' },
 
                     { header: it.L('Security Researcher'), subsection: 'security_researcher', text: it.L('As our Security Researcher, we expect you to stay informed about the latest security bulletins and findings, and actively monitor our software development pipeline to find and raise potential security issues.'), className: 'one-line nowrap' },
-                    { header: it.L('UI/UX Designer'),      subsection: 'ui_ux_designer',      text: it.L('As our UI/UX Designer, you’ll play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.'), className: 'one-line nowrap' },
+                    { header: it.L('UI/UX Designer'),      subsection: 'ui_ux_designer',      text: it.L('As our UI/UX Designer, you will play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.'), className: 'one-line nowrap' },
                 ]}
             />
 
@@ -84,7 +84,7 @@ const JobDescriptions = () => (
                 title={it.L('Quantitative Analysis')}
                 sections={[
                     { header: it.L('Quantitative Analyst'),     subsection: 'quantitative_analyst',     text: it.L('[_1] Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company’s options book.', it.website_name) },
-                    { header: it.L('Financial Market Analyst'), subsection: 'financial_market_analyst', text: it.L('As our Senior Financial Market Analyst, you will manage the day-to-day risk of our trading books, conduct complex quantitative analysis, carry out performance testing, develop advanced data analytics tools, and support other related operations that have a direct impact on the profitability and future growth of our company.') },
+                    { header: it.L('Financial Markets Analyst'), subsection: 'financial_markets_analyst', text: it.L('As our Senior Financial Markets Analyst, you will manage the day-to-day risk of our trading books, conduct complex quantitative analysis, carry out performance testing, develop advanced data analytics tools, and support other related operations that have a direct impact on the profitability and future growth of our company.') },
                 ]}
             />
 
@@ -92,7 +92,7 @@ const JobDescriptions = () => (
                 id='marketing'
                 title={it.L('Marketing')}
                 sections={[
-                    { header: it.L('Affiliate/Country Manager'),     subsection: 'affiliate_country_manager',     text: it.L('The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in Russian-speaking countries. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide.') },
+                    { header: it.L('Affiliate/Country Manager'),     subsection: 'affiliate_country_manager',     text: it.L('The Country Manager is expected to acquire, service, manage, and expand our network of active affiliates in the countries where Binary Group targets to be represented. You will also contribute your energy, skills, and knowledge of the local business culture to increase our rapid growth rate worldwide.') },
                     { header: it.L('Technical Marketing Executive'), subsection: 'technical_marketing_executive', text: it.L('As our Technical Marketing Executive, you will act on data-driven information and assist in troubleshooting issues to further nurture and grow our client base.') },
                     { header: it.L('Marketing Executive'),           subsection: 'marketing_executive',           text: it.L('As our Marketing Executive, you will coordinate and execute marketing campaigns across a variety of channels, and continuously identify the best ways to reach current and prospective customers.') },
                     { header: it.L('Graphics Designer'),             subsection: 'graphics_designer',             text: it.L('As our Graphic Designer, you will develop high-impact graphics and visual elements such as images and icons for our websites and applications. You will play an essential role in creating user interface assets that bring our products and users closer together.') },
@@ -114,7 +114,7 @@ const JobDescriptions = () => (
                 id='compliance'
                 title={it.L('Compliance and Risk Management')}
                 sections={[
-                    { header: it.L('Compliance Executive'),            subsection: 'compliance_executive',            text: it.L('As our Compliance Executive, you must ensure that our group companies worldwide conduct their business operations in full compliance with relevant laws and regulations –– both national and international.') },
+                    { header: it.L('Compliance Executive'),            subsection: 'compliance_executive',            text: it.L('As our Compliance Executive, you must ensure that our group of companies worldwide conduct their business operations in full compliance with relevant laws and regulations –– both national and international.') },
                     { header: it.L('Risk Management Executive'),       subsection: 'risk_management_executive',       text: it.L('You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments.') },
                     { header: it.L('Payments and Compliance Analyst'), subsection: 'payments_and_compliance_analyst', text: it.L('As our Risk Management Executive, we will depend on you to identify, analyse, and take necessary measures to reduce or eliminate risks faced by the organisation.') },
                 ]}
