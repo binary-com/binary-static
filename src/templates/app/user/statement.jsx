@@ -23,7 +23,7 @@ const Statement = () => (
                 <AccountStatisticsBox title={it.L('Account statistics')} />
                 <AccountStatisticsBox id='total_deposits'    heading={it.L('Total deposits')} />
                 <AccountStatisticsBox id='total_withdrawals' heading={it.L('Total withdrawals')} />
-                <AccountStatisticsBox id='net_deposit'       heading={it.L('Net deposit')} className='fill-bg-color' />
+                <AccountStatisticsBox id='net_deposits'      heading={it.L('Net deposits')} className='fill-bg-color' />
             </div>
             <div className='gr-row gr-padding-10 invisible' id='util_row'>
                 <div className='gr-12 gr-12-m'>

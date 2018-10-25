@@ -99,7 +99,7 @@ const StatementUI = (() => {
 
         $('#total_deposits').html(formatMoney(currency, total_deposits));
         $('#total_withdrawals').html(formatMoney(currency, total_withdrawals));
-        $('#net_deposit').html(formatMoney(currency, +total_deposits - +total_withdrawals));
+        $('#net_deposits').html(formatMoney(currency, +total_deposits - +total_withdrawals));
         $('#account_statistics').setVisibility(1);
     };
 
