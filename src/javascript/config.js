@@ -25,7 +25,8 @@ const getAppId = () => {
         app_id = 1159;
     } else {
         window.localStorage.removeItem('config.default_app_id');
-        app_id = 1;
+        const is_new_app = /\/app\//.test(window.location.pathname);
+        app_id = is_new_app ? 15265 : 1;
     }
     return app_id;
 };
