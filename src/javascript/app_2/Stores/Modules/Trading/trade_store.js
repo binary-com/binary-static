@@ -2,6 +2,7 @@ import debounce                          from 'lodash.debounce';
 import {
     action,
     observable,
+    runInAction,
     reaction }                           from 'mobx';
 import Client                            from '_common/base/client_base';
 import {
@@ -17,7 +18,7 @@ import * as Symbol                       from './Actions/symbol';
 import {
     allowed_query_string_variables,
     non_proposal_query_string_variable } from './Constants/query_string';
-import validation_rules                  from './Constants/validation_rules';
+import getValidationRules                from './Constants/validation_rules';
 import { setChartBarrier }               from './Helpers/chart';
 import ContractType                      from './Helpers/contract_type';
 import { convertDurationLimit }          from './Helpers/duration';
@@ -86,16 +87,13 @@ export default class TradeStore extends BaseStore {
     debouncedProposal = debounce(this.requestProposal, 500);
 
     constructor({ root_store }) {
-        const session_storage_properties = allowed_query_string_variables;
-        const options = {
-            root_store,
-            session_storage_properties,
-            validation_rules,
-        };
-
         URLHelper.pruneQueryString(allowed_query_string_variables);
 
-        super(options);
+        super({
+            root_store,
+            session_storage_properties: allowed_query_string_variables,
+            validation_rules          : getValidationRules(),
+        });
 
         Object.defineProperty(
             this,
@@ -165,8 +163,8 @@ export default class TradeStore extends BaseStore {
         }
 
         if (this.symbol) {
-            ContractType.buildContractTypesConfig(query_string_values.symbol || this.symbol).then(action(() => {
-                this.processNewValuesAsync({
+            ContractType.buildContractTypesConfig(query_string_values.symbol || this.symbol).then(action(async () => {
+                await this.processNewValuesAsync({
                     ...ContractType.getContractValues(this),
                     ...ContractType.getContractCategories(),
                     ...query_string_values,
@@ -177,10 +175,9 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     async init() {
-        // To be sure that the website_status response has been received before processing trading page.
-        BinarySocket.wait('website_status')
-            .then(() => this.prepareTradeStore());
-    }
+         // To be sure that the website_status response has been received before processing trading page.
+         await BinarySocket.wait('website_status');
+     };
 
     @action.bound
     onChange(e) {
@@ -263,8 +260,8 @@ export default class TradeStore extends BaseStore {
     }
 
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
-
-        // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa. The source of default values is the website_status response.
+        // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
+        // The source of default values is the website_status response.
         if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
             obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
@@ -408,13 +405,18 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    onMount() {
-        this.is_trade_component_mounted = true;
+    async onMount() {
+        await this.prepareTradeStore();
+        this.debouncedProposal();
+        runInAction(() => {
+            this.is_trade_component_mounted = true;
+        });
         this.updateQueryString();
     }
 
     @action.bound
     onUnmount() {
+        WS.forgetAll('proposal');
         this.is_trade_component_mounted = false;
     }
 }
