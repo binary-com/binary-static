@@ -5,7 +5,7 @@ const getPlugins     = require('./plugins');
 
 const appConfig = (grunt) => ({
     entry: {
-        [global.is_production ? 'binary.min' : 'binary']: path.resolve(PATHS.SRC, 'javascript'),
+        [global.is_release ? 'binary.min' : 'binary']: path.resolve(PATHS.SRC, 'javascript'),
     },
     output: {
         path: path.resolve(PATHS.DIST, 'js'),

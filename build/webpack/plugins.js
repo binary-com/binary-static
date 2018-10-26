@@ -16,7 +16,7 @@ const getPlugins = (app, grunt) => ([
 
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale/, /ja/),
 
-    ...(global.is_production
+    ...(global.is_release
         ? [
             new webpack.DefinePlugin({
                 '__REACT_DEVTOOLS_GLOBAL_HOOK__': '({ isDisabled: true })',

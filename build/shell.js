@@ -72,7 +72,7 @@ module.exports = function (grunt) {
                     if(!err) {
                         var origin = stdout.replace('\n', '');
                         grunt.log.ok(`Remote origin: ${origin}`);
-                        if (global.is_production) {
+                        if (global.is_release) {
                             if (!global.release_target) {
                                 grunt.fail.fatal(error_missing_target);
                             } else if (origin !== global.release_info.origin) {
