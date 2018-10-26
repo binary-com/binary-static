@@ -11,7 +11,6 @@ const Toast = ({
     data,
     removeToastMessage,
 }) => {
-    let animation_class_name = 'toast__bounce-enter';
     const destroy = () => removeToastMessage(data);
 
     if (!data.auto_close) {
