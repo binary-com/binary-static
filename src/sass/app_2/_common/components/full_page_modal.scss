@@ -14,9 +14,9 @@
     bottom: 0;
 
     .modal-dialog {
-        max-width: 456px;
-        height: 190px;
-        padding: 16px;
+        width: 560px;
+        height: 160px;
+        padding: 24px 8px 8px;
         border-radius: 4px;
         box-sizing: border-box;
         display: flex;
@@ -26,11 +26,11 @@
 
         p, h1 {
             text-align: left;
+            padding: 0 16px;
         }
         h1 {
             font-size: 16px;
-            margin: 4px 0 20px;
-            padding: 0;
+            margin: 4px 0;
         }
         p {
             flex-grow: 2;
@@ -38,7 +38,7 @@
         }
         .modal-footer {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             width: 100%;
         }
@@ -50,13 +50,17 @@
             align-items: center;
             justify-content: center;
             align-self: flex-end;
+
+            span {
+                font-weight: bold;
+            }
         }
     }
 }
 
 .dark {
     .full-page-modal {
-        background-color: rgba(42, 48, 82, 0.8);
+        background-color: rgba(31, 36, 61, 0.8);
 
         .modal-dialog {
             background-color: $COLOR_BRANDBLUE_95;
@@ -104,7 +108,7 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 560px) {
     .full-page-modal {
         .modal-dialog {
             width: 100vw;
