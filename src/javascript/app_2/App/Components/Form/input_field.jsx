@@ -32,7 +32,7 @@ const InputField = ({
             const is_empty = !e.target.value || e.target.value === '';
             const signed_regex = is_signed ? '[\\+-]?' : '';
 
-            const is_number = new RegExp(`^${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}(?<=\\d)(?<!-0)$`)
+            const is_number = new RegExp(`^${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}(\\d*)?(?!([-0])).|^$`)
                 .test(e.target.value);
 
             const is_not_completed_number = is_float && new RegExp(`^${signed_regex}(\\.|\\d+\\.)?$`)
@@ -41,7 +41,7 @@ const InputField = ({
             // This regex check whether there is any zero at the end of fractional part or not.
             const has_zero_at_end = new RegExp(`^${signed_regex}(\\d+)?\\.(\\d+)?[0]+$`)
                 .test(e.target.value);
-            
+
             const is_scientific_notation = /e/.test(`${+e.target.value}`);
 
             if (max_length && fractional_digits) {
