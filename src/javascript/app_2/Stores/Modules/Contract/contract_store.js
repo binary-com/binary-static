@@ -119,9 +119,10 @@ export default class ContractStore extends BaseStore {
     @action.bound
     handleSell(response) {
         if (response.error) {
-            this.sell_info         = {
+            this.sell_info = {
                 error_message: response.error.message,
             };
+
             this.is_sell_requested = false;
         } else {
             this.forgetProposalOpenContract();
