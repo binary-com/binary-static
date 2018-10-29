@@ -49,7 +49,7 @@ const ContentVisibility = (() => {
         const client_is_logged_in = Client.isLoggedIn();
         if (client_is_logged_in) {
             BinarySocket.wait('authorize', 'landing_company').then(() => {
-                const is_virtual =  State.getResponse('authorize.is_virtual');
+                const is_virtual      = State.getResponse('authorize.is_virtual');
                 const landing_company = is_virtual ?
                     State.getResponse('landing_company.gaming_company.shortcode') ||
                     State.getResponse('landing_company.financial_company.shortcode') :
