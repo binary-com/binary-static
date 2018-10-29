@@ -371,7 +371,7 @@ export default class TradeStore extends BaseStore {
             return;
         }
 
-        const index = this.validation_rules.duration.findIndex(item => item[0] === 'number');
+        const index = this.validation_rules.duration.rules.findIndex(item => item[0] === 'number');
         const limits = this.duration_min_max[this.contract_expiry_type] || false;
 
         if (limits) {
@@ -381,9 +381,9 @@ export default class TradeStore extends BaseStore {
             };
 
             if (index > -1) {
-                this.validation_rules.duration[index][1] = duration_options;
+                this.validation_rules.duration.rules[index][1] = duration_options;
             } else {
-                this.validation_rules.duration.push(['number', duration_options]);
+                this.validation_rules.duration.rules.push(['number', duration_options]);
             }
             this.validateProperty('duration', this.duration);
         }
