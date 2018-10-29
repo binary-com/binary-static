@@ -29,6 +29,8 @@ export default class UIStore extends BaseStore {
 
     @observable screen_width = window.innerWidth;
 
+    @observable toast_messages = [];
+
     constructor() {
         const local_storage_properties = [
             'is_chart_asset_info_visible',
@@ -133,5 +135,23 @@ export default class UIStore extends BaseStore {
     hideDrawers() { // hide both menu drawers
         this.is_main_drawer_on = false;
         this.is_notifications_drawer_on = false;
+    }
+
+    @action.bound
+    addToastMessage(toast_message) {
+        this.toast_messages.push(toast_message);
+    }
+
+    @action.bound
+    removeToastMessage(toast_message) {
+        const index = this.toast_messages.indexOf(toast_message);
+        if (index > -1) {
+            this.toast_messages.splice(index, 1);
+        }
+    }
+
+    @action.bound
+    removeAllToastMessages() {
+        this.toast_messages = [];
     }
 }
