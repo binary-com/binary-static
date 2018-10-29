@@ -169,8 +169,8 @@ const Authenticate = (() => {
         $submit_table.children().remove();
         $files.each((i, e) => {
             if (e.files && e.files.length) {
-                ConvertToBase64(e.files[0]).then((img)=> {
-                    CompressImage(img).then((result)=>{
+                ConvertToBase64(e.files[0]).then((img) => {
+                    CompressImage(img).then((result) => {
                         console.log(result);
                     });
                 });
@@ -206,7 +206,6 @@ const Authenticate = (() => {
                     .append($('<td/>', { text: e.files[0].name }))                        // file name, e.g. sample.pdf
                     .append($('<td/>', { text: localize('Pending'), class: 'status' }))   // status of uploading file, first set to Pending
                 );
-
             }
         });
         $submit_status.setVisibility(1);
