@@ -30,9 +30,9 @@ const InputField = ({
     const changeValue = (e) => {
         if (type === 'number') {
             const is_empty = !e.target.value || e.target.value === '';
-            const signed_regex = is_signed ? '[\\+-]?' : '';
+            const signed_regex = is_signed ? '(?!^\\-0$)^[\\+-]?' : '^';
 
-            const is_number = new RegExp(`^${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}(\\d*)?(?!([-0])).|^$`)
+            const is_number = new RegExp(`${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}$`)
                 .test(e.target.value);
 
             const is_not_completed_number = is_float && new RegExp(`^${signed_regex}(\\.|\\d+\\.)?$`)
