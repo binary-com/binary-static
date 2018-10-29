@@ -29,12 +29,12 @@ ToastMessage.propTypes = {
     removeToastMessage: PropTypes.func,
     toast_messages    : PropTypes.arrayOf(
         PropTypes.shape({
-            auto_close  : PropTypes.bool,
-            closeOnClick: PropTypes.bool,
-            delay       : PropTypes.number,
-            message     : PropTypes.node,
-            position    : PropTypes.string,
-            type        : PropTypes.string,
+            closeOnClick : PropTypes.bool,
+            delay        : PropTypes.number,
+            is_auto_close: PropTypes.bool,
+            message      : PropTypes.node,
+            position     : PropTypes.string,
+            type         : PropTypes.string,
         }),
     ),
 };

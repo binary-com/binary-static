@@ -22,11 +22,13 @@ const initApp = () => {
     BinarySocket.wait('authorize').then(() => {
         root_store.modules.trade.init();
 
-        const app = document.getElementById('binary_app');
-        if (app) {
-            render(<App root_store={root_store} />, app);
-        }
     });
+    
+    const app = document.getElementById('binary_app');
+
+    if (app) {
+        render(<App root_store={root_store} />, app);
+    }
 };
 
 export default initApp;
