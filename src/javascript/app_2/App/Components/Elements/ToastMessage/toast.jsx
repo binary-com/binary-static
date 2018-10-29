@@ -43,7 +43,7 @@ const Toast = ({
 
 Toast.propTypes = {
     data: PropTypes.shape({
-        closeOnClick : PropTypes.bool,
+        closeOnClick : PropTypes.func,
         delay        : PropTypes.number,
         is_auto_close: PropTypes.bool,
         message      : PropTypes.node,
