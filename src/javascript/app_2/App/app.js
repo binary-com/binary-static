@@ -2,7 +2,7 @@ import { configure }        from 'mobx';
 import React                from 'react';
 import { render }           from 'react-dom';
 import Client               from '_common/base/client_base';
-import BinarySocket         from '_common/base/socket_base';
+// import BinarySocket         from '_common/base/socket_base';
 import NetworkMonitor       from 'Services/network_monitor';
 import RootStore            from 'Stores';
 import { setStorageEvents } from 'Utils/Events/storage';
@@ -19,10 +19,7 @@ const initApp = () => {
 
     NetworkMonitor.init(root_store);
 
-    BinarySocket.wait('authorize').then(() => {
-        root_store.modules.trade.init();
-
-    });
+    root_store.modules.trade.init();
     
     const app = document.getElementById('binary_app');
 
