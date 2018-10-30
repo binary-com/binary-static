@@ -10,7 +10,6 @@ const handleVerifyCode  = require('../../common/verification_code').handleVerify
 const getElementById    = require('../../../_common/common_functions').getElementById;
 const localize          = require('../../../_common/localize').localize;
 const State             = require('../../../_common/storage').State;
-const toTitleCase       = require('../../../_common/string_util').toTitleCase;
 const Url               = require('../../../_common/url');
 const template          = require('../../../_common/utility').template;
 const isEmptyObject     = require('../../../_common/utility').isEmptyObject;
@@ -95,7 +94,7 @@ const DepositWithdraw = (() => {
         const action   = Url.param('action');
         if (/^(withdraw|deposit)$/.test(action)) {
             cashier_type = action;
-            $heading.text(`${localize(toTitleCase(action))} ${Client.get('currency') || ''}`);
+            $heading.text(`${action === 'withdraw' ? localize('Withdraw') : localize('Deposit')} ${Client.get('currency') || ''}`);
         }
     };
 
@@ -165,17 +164,17 @@ const DepositWithdraw = (() => {
         let error_fields;
         if (details) {
             error_fields = {
-                province: 'State/Province',
-                country : 'Country',
-                city    : 'Town/City',
-                street  : 'First line of home address',
-                pcode   : 'Postal Code / ZIP',
-                phone   : 'Telephone',
-                email   : 'Email address',
+                province: localize('State/Province'),
+                country : localize('Country'),
+                city    : localize('Town/City'),
+                street  : localize('First line of home address'),
+                pcode   : localize('Postal Code / ZIP'),
+                phone   : localize('Telephone'),
+                email   : localize('Email address'),
             };
         }
         const $el     = $(`#${msg_id}`);
-        const err_msg = template($el.html(), [localize(details ? error_fields[details] : 'details')]);
+        const err_msg = template($el.html(), [details ? error_fields[details] : localize('details')]);
         $el.html(err_msg);
         showMessage(msg_id);
     };

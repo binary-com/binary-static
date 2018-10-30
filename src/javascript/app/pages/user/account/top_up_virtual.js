@@ -17,7 +17,7 @@ const TopUpVirtual = (() => {
 
         BinarySocket.send({ topup_virtual: '1' }).then((response) => {
             if (response.error) {
-                showMessage(localize(response.error.message), false);
+                showMessage(response.error.message, false);
             } else {
                 showMessage(
                     localize('[_1] [_2] has been credited into your virtual account: [_3].', [

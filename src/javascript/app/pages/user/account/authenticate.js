@@ -101,8 +101,7 @@ const Authenticate = (() => {
         const $target = $(event.target);
         let default_text = toTitleCase($target.attr('id').split('_')[0]);
         if (default_text !== 'Add') {
-            default_text = default_text === 'Back' ? localize('Reverse Side')
-                : localize('Front Side');
+            default_text = default_text === 'Back' ? localize('Reverse Side') : localize('Front Side');
         }
         fileTracker($target, false);
         // Remove previously selected file and set the label
@@ -190,7 +189,7 @@ const Authenticate = (() => {
 
                 let display_name = name;
                 if (/front|back/.test(id)) {
-                    display_name += ` - ${localize(`${toTitleCase(/front/.test(id) ? 'Front' : 'Reverse')} Side`)}`;
+                    display_name += ` - ${/front/.test(id) ? localize('Front Side') : localize('Reverse Side')}`;
                 }
 
                 $submit_table.append($('<tr/>', { id: file_obj.type, class: id })
@@ -297,7 +296,7 @@ const Authenticate = (() => {
 
                 fr.onerror = () => {
                     resolve({
-                        message: `Unable to read file ${f.file.name}`,
+                        message: localize('Unable to read file [_1]', f.file.name),
                         class  : f.class,
                     });
                 };
@@ -358,27 +357,27 @@ const Authenticate = (() => {
         }
         if (!file.documentId && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
             onErrorResolved('id_number', file.passthrough.class);
-            return localize('ID number is required for [_1].', [doc_name[file.documentType]]);
+            return localize('ID number is required for [_1].', doc_name[file.documentType]);
         }
         if (file.documentId && !/^[\w\s-]{0,30}$/.test(file.documentId)) {
             onErrorResolved('id_number', file.passthrough.class);
-            return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).', [doc_name[file.documentType]]);
+            return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).', doc_name[file.documentType]);
         }
         if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
             onErrorResolved('exp_date', file.passthrough.class);
-            return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
+            return localize('Expiry date is required for [_1].', doc_name[file.documentType]);
         }
         // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
         if (!is_action_needed) {
             if (file.documentType === 'proofid' && file_checks.proofid &&
                 (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
                 onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
-                return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
+                return localize('Front and reverse side photos of [_1] are required.', doc_name.proofid);
             }
             if (file.documentType === 'driverslicense' && file_checks.driverslicense &&
                 (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
                 onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
-                return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
+                return localize('Front and reverse side photos of [_1] are required.', doc_name.driverslicense);
             }
         }
 

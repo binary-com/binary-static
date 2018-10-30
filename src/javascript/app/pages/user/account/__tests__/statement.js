@@ -22,7 +22,9 @@ describe('Statement', () => {
             .and.to.be.a('string');
         expect(statement_data).to.have.property('payout')
             .and.to.be.a('string');
-        expect(statement_data).to.have.property('action')
+        expect(statement_data).to.have.property('localized_action')
+            .and.to.be.a('string');
+        expect(statement_data).to.have.property('action_type')
             .and.to.be.a('string');
         expect(statement_data).to.have.property('amount')
             .and.to.be.a('string');
