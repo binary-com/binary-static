@@ -30,13 +30,10 @@ const convertToBase64 = (file) => new Promise((resolve) => {
     };
 });
 
-const isLargeImg = img => ((img.buffer && img.buffer.byteLength >= 2 * 1024 * 1024));
-
 const isImageType = filename => (/\.(gif|jpg|jpeg|tiff|png)$/i).test(filename);
 
 module.exports = {
     compressImg,
     convertToBase64,
-    isLargeImg,
     isImageType,
 };
