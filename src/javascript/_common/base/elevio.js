@@ -1,13 +1,31 @@
-const ClientBase   = require('./client_base');
-const BinarySocket = require('./socket_base');
+const ClientBase       = require('./client_base');
+const BinarySocket     = require('./socket_base');
+const elementInnerHtml = require('../common_functions').elementInnerHtml;
+const State            = require('../storage').State;
 
 const Elevio = (() => {
+    const available_countries = ['in', 'lk', 'ng', 'za'];
+
     const init = () => {
-        window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
-            // window._elev.setLanguage(lang);
-            setUserInfo(elev);
+        BinarySocket.wait('website_status').then(() => {
+            if (isAvailable()) {
+                window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
+                    // window._elev.setLanguage(lang);
+                    setUserInfo(elev);
+
+                    const el_elevio_styles = document.getElementsByClassName('elevio-styles')[0];
+                    if (el_elevio_styles) {
+                        // we have to update the style since the launcher element gets updates even after elevio's 'ready' event fired
+                        elementInnerHtml(el_elevio_styles, `${elementInnerHtml(el_elevio_styles)} ._elevio_launcher {display: block;}`);
+                    }
+                });
+            }
         });
     };
+
+    const isAvailable = () => (
+        new RegExp(`^(${available_countries.join('|')})$`, 'i').test(State.getResponse('website_status.clients_country'))
+    );
 
     const setUserInfo = (elev) => {
         if (ClientBase.isLoggedIn()) {
@@ -31,6 +49,7 @@ const Elevio = (() => {
 
     return {
         init,
+        isAvailable,
         createComponent,
     };
 })();
