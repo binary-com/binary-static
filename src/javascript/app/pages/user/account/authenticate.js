@@ -197,7 +197,7 @@ const Authenticate = (() => {
 
                 $submit_table.append($('<tr/>', { id: file_obj.type, class: id })
                     .append($('<td/>', { text: display_name }))                           // document type, e.g. Passport - Front Side
-                    .append($('<td/>', { text: e.files[0].name }))                        // file name, e.g. sample.pdf
+                    .append($('<td/>', { text: e.files[0].name, class: 'filename' }))     // file name, e.g. sample.pdf
                     .append($('<td/>', { text: localize('Pending'), class: 'status' }))   // status of uploading file, first set to Pending
                 );
             }
@@ -269,12 +269,14 @@ const Authenticate = (() => {
             const promise = new Promise((resolve) => {
                 if (isImageType(f.file.name)) {
                     const $status = $submit_table.find(`.${f.class} .status`);
+                    const $filename = $submit_table.find(`.${f.class} .filename`);
                     $status.text(`${localize('Compressing Image')}...`);
 
                     ConvertToBase64(f.file).then((img) => {
                         CompressImage(img).then((compressed_img) => {
                             const file_arr = f;
                             file_arr.file = compressed_img;
+                            $filename.text(file_arr.file.name);
                             resolve(file_arr);
                         });
                     });
