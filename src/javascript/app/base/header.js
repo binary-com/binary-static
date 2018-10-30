@@ -73,7 +73,7 @@ const Header = (() => {
                     const account_title  = Client.getAccountTitle(loginid);
                     const is_real        = !Client.getAccountType(loginid); // this function only returns virtual/gaming/financial types
                     const currency       = Client.get('currency', loginid);
-                    const localized_type = localize('[_1] Account', [is_real && currency ? currency : account_title]);
+                    const localized_type = localize('[_1] Account', is_real && currency ? currency : account_title);
                     if (loginid === Client.get('loginid')) { // default account
                         applyToAllElements('.account-type', (el) => { elementInnerHtml(el, localized_type); });
                         applyToAllElements('.account-id', (el) => { elementInnerHtml(el, loginid); });

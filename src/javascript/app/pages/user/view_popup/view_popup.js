@@ -756,7 +756,7 @@ const ViewPopup = (() => {
             containerSetText('contract_sell_message',
                 `${localize('You have sold this contract at [_1] [_2]', [contract.currency, response.sell.sold_for])}
                 <br />
-                ${localize('Your transaction reference number is [_1]', [response.sell.transaction_id])}`);
+                ${localize('Your transaction reference number is [_1]', response.sell.transaction_id)}`);
         }
         getContract('no-subscribe');
     };

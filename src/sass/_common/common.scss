@@ -647,6 +647,18 @@ label + input {
     }
 }
 
+.notice-circle {
+    width: 16px;
+    height: 16px;
+    border: 2px solid $COLOR_BLUE_SHADE;
+    border-radius: 50%;
+    color: $COLOR_BLUE_SHADE;
+    line-height: 16px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 auto;
+}
+
 @media (max-width: 768px) {
     .show_mobile {
         &[data-balloon]:before, &[data-balloon]:after {
@@ -655,6 +667,123 @@ label + input {
         }
         &[data-balloon-length=medium]:before {
             width: 120px;
+        }
+    }
+}
+
+/* TODO: remove when UX research is finished */
+#interview_popup_container {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.5);
+
+    .popup {
+        width: calc(100vw - 20px);
+        max-width: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $COLOR_WHITE;
+        box-shadow: 0 2px 31px 0 rgba(0, 0, 0, 0.82);
+        border-radius: 10px;
+        overflow: hidden;
+
+        &__head {
+            box-sizing: border-box;
+            padding: 20px 25px;
+            background-image: url('../images/interview_popup/bg-shape.svg');
+            background-size: 100%;
+            background-position: bottom;
+            background-repeat: no-repeat;
+
+            h1 {
+                color: $COLOR_WHITE;
+                margin: 0;
+            }
+        }
+        &__present_img {
+            margin: 0 auto 20px;
+            height: 130px;
+            display: block;
+            transform: translateX(-10px);
+        }
+        &__body {
+            padding: 20px 35px 30px;
+        }
+        &__options {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            * {
+                margin: 0;
+            }
+            #interview_no_thanks {
+                color: $COLOR_NAV;
+            }
+        }
+        &__secondary_options {
+            display: flex;
+            flex-direction: row;
+            line-height: 20px;
+        }
+        &__separator {
+            display: inline-block;
+            vertical-align: text-bottom;
+            width: 2px;
+            height: 20px;
+            margin: 0 15px;
+            background: $COLOR_NAV;
+        }
+    }
+    h1, h2 {
+        text-align: center;
+        line-height: 1.15;
+    }
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        .popup {
+            max-width: 340px;
+
+            &__present_img {
+                height: 100px;
+            }
+            &__head {
+                padding: 20px 15px;
+            }
+            &__body {
+                padding: 20px 15px 7px;
+            }
+            &__options {
+                flex-direction: column-reverse;
+                font-size: 16px;
+            }
+            &__secondary_options {
+                font-size: 12px;
+            }
+            #interview_interested {
+                font-size: 20px;
+                margin: 5px 0 30px;
+            }
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+    @media screen and (max-width: 360px) {
+        .popup__head {
+            background-size: 120%;
         }
     }
 }

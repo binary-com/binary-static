@@ -2,6 +2,7 @@ const BinarySocket   = require('../../app/base/socket');
 const isIndonesia    = require('../../app/common/country_base').isIndonesia;
 const getElementById = require('../../_common/common_functions').getElementById;
 const TabSelector    = require('../../_common/tab_selector');
+const isBinaryApp    = require('../../config').isBinaryApp;
 
 const os_list = [
     {
@@ -21,7 +22,7 @@ const os_list = [
 const Platforms = (() => {
     const onLoad = () => {
         BinarySocket.wait('website_status').then(() => {
-            $('.id-show').setVisibility(isIndonesia());
+            $('.desktop-app').setVisibility(isIndonesia() && !isBinaryApp());
         });
         TabSelector.onLoad();
         $.getJSON('https://api.github.com/repos/binary-com/binary-desktop-installers/releases/latest', (data = { assets: [] }) => {

@@ -59,6 +59,7 @@ const Footer = () => (
                                     { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', className: 'invisible eu-show' },
                                     { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
                                     { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
+                                    { text: it.L('Keep Safe'),       href: it.url_for('keep-safe'),                 className: 'client_logged_out invisible' },
                                 ]}
                             />
 
@@ -128,7 +129,7 @@ const Footer = () => (
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
+                                    { media: 'google-plus', href: 'https://plus.google.com/+Binarydotcom' },
                                     { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
                                     { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },
@@ -179,7 +180,7 @@ const Footer = () => (
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
+                                    { media: 'google-plus', href: 'https://plus.google.com/+Binarydotcom' },
                                     { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
                                     { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },

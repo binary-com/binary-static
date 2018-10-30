@@ -19,7 +19,7 @@ const APIToken = (() => {
 
         BinarySocket.send({ api_token: 1 }).then(populateTokensList);
 
-        const regex_msg = localize('Only [_1] are allowed.', [[...localize(['letters', 'numbers', 'space']), '_'].join(', ')]);
+        const regex_msg = localize('Only [_1] are allowed.', [...localize(['letters', 'numbers', 'space']), '_'].join(', '));
         FormManager.init(form_id, [
             { selector: '#txt_name',           request_field: 'new_token',        validations: ['req', ['regular', { regex: /^[\w\s]+$/, message: regex_msg }], ['length', { min: 2, max: 32 }]] },
             { selector: '[id*="chk_scopes_"]', request_field: 'new_token_scopes', validations: [['req', { message: localize('Please select at least one scope') }]], value: getScopes },
@@ -65,7 +65,7 @@ const APIToken = (() => {
             return;
         } else if (tokens.length >= max_tokens) {
             $form.setVisibility(0);
-            showErrorMessage(localize('The maximum number of tokens ([_1]) has been reached.', [max_tokens]));
+            showErrorMessage(localize('The maximum number of tokens ([_1]) has been reached.', max_tokens));
         } else {
             $form.setVisibility(1);
         }
