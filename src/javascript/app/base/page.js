@@ -7,6 +7,7 @@ const Menu             = require('./menu');
 const BinarySocket     = require('./socket');
 const TrafficSource    = require('../common/traffic_source');
 const RealityCheck     = require('../pages/user/reality_check/reality_check');
+const Elevio           = require('../../_common/base/elevio');
 const Login            = require('../../_common/base/login');
 const elementInnerHtml = require('../../_common/common_functions').elementInnerHtml;
 const getElementById   = require('../../_common/common_functions').getElementById;
@@ -25,6 +26,7 @@ const Page = (() => {
     const init = () => {
         State.set('is_loaded_by_pjax', false);
         Url.init();
+        Elevio.init();
         PushNotification.init();
         onDocumentReady();
         Crowdin.init();
