@@ -1,7 +1,7 @@
-const ClientBase       = require('./client_base');
-const BinarySocket     = require('./socket_base');
-const elementInnerHtml = require('../common_functions').elementInnerHtml;
-const State            = require('../storage').State;
+const ClientBase    = require('./client_base');
+const BinarySocket  = require('./socket_base');
+const State         = require('../storage').State;
+const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
     const available_countries = ['in', 'lk', 'ng', 'za'];
@@ -12,12 +12,8 @@ const Elevio = (() => {
                 window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
                     // window._elev.setLanguage(lang);
                     setUserInfo(elev);
-
-                    const el_elevio_styles = document.getElementsByClassName('elevio-styles')[0];
-                    if (el_elevio_styles) {
-                        // we have to update the style since the launcher element gets updates even after elevio's 'ready' event fired
-                        elementInnerHtml(el_elevio_styles, `${elementInnerHtml(el_elevio_styles)} ._elevio_launcher {display: block;}`);
-                    }
+                    setTranslations(elev);
+                    makeLauncherVisible();
                 });
             }
         });
@@ -26,6 +22,12 @@ const Elevio = (() => {
     const isAvailable = () => (
         new RegExp(`^(${available_countries.join('|')})$`, 'i').test(State.getResponse('website_status.clients_country'))
     );
+
+    const makeLauncherVisible = () => {
+        // we have to add the style since the launcher element gets updates even after elevio's 'ready' event fired
+        const el_launcher_style = createElement('style', { html: '._elevio_launcher {display: block;}' });
+        document.head.appendChild(el_launcher_style);
+    };
 
     const setUserInfo = (elev) => {
         if (ClientBase.isLoggedIn()) {
@@ -43,6 +45,16 @@ const Elevio = (() => {
                 elev.setUser(user_obj);
             });
         }
+    };
+
+    const setTranslations = (elev) => {
+        elev.setTranslations({
+            modules: {
+                support: {
+                    thankyou: 'Thank you, we\'ll get back to you within 24 hours', // Elevio is available only on EN for now
+                },
+            },
+        });
     };
 
     const createComponent = (type) => window._elev.component({ type }); // eslint-disable-line no-underscore-dangle

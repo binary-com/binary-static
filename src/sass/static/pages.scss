@@ -331,10 +331,6 @@
     }
 }
 
-._elevio_launcher {
-    display: none;
-}
-
 #content.contact-2-content {
     margin-top: 0;
 
@@ -362,6 +358,9 @@
                     svg {
                         display: none;
                     }
+                }
+                input {
+                    background: transparent !important;
                 }
             }
         }
@@ -434,6 +433,39 @@
                 align-self: flex-end;
                 padding-top: 10px;
             }
+        }
+    }
+}
+
+._elevio_launcher {
+    display: none;
+}
+
+// override elevio styles for both in page contents and popup
+body #_elev_io {
+    * {
+        font-family: $FONT-STACK;
+    }
+    ._nr4k9 { // suggestion title
+        display: block;
+        margin-bottom: 20px;
+        color: $COLOR_BLUE;
+        font-size: 22px;
+        font-weight: 300;
+    }
+    ._1b4vy:hover { // category titles
+        color: $COLOR_BLUE;
+    }
+    ._elevio_articlelink > div { // links
+        color: $COLOR_BLUE;
+        text-decoration: none;
+        font-weight: 700;
+
+        > div {
+            background: none;
+        }
+        &:hover {
+            text-decoration: underline;
         }
     }
 }
