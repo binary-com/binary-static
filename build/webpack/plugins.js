@@ -1,5 +1,7 @@
 const CircularDependencyPlugin = require('circular-dependency-plugin');
+const ManifestPlugin           = require('webpack-manifest-plugin');
 const path                     = require('path');
+const SWPrecachedWebpackPlugin = require('sw-precache-webpack-plugin');
 const webpack                  = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const PATHS                    = require('./paths');
@@ -15,6 +17,26 @@ const getPlugins = (app, grunt) => ([
     }),
 
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale/, /ja/),
+
+    ...(app === 'app_2'
+        ? [
+            new ManifestPlugin({
+                fileName  : 'asset-manifest.json',
+                publicPath: 'js/app_2/',
+            }),
+
+            new SWPrecachedWebpackPlugin({
+                cachedId                     : 'app_2',
+                dontCacheBustUrlsMatching    : /\.\w{8}\./,
+                filename                     : 'service-worker.js',
+                minify                       : false,
+                navigateFallback             : '/',
+                publicPath                   : '/js/app_2/',
+                staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+            }),
+        ]
+        : []
+    ),
 
     ...(global.is_production
         ? [
