@@ -88,7 +88,7 @@ const SocketCache = (() => {
         return response;
     };
 
-    const makeKey = (source_obj, msg_type) => {
+    const makeKey = (source_obj = {}, msg_type = '') => {
         let key = msg_type || Object.keys(source_obj).find(type => config[type]);
 
         if (key && !isEmptyObject(source_obj)) {
