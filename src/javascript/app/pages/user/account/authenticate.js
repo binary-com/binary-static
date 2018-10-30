@@ -212,18 +212,17 @@ const Authenticate = (() => {
         let files_to_process = [];
         let idx_to_upload     = 0;
         let is_any_file_error = false;
-        compressImageFiles(files).then((response) => {
-            files_to_process = response;
+        compressImageFiles(files).then((files_arr) => {
+            files_to_process = files_arr;
 
-            readFiles(files_to_process).then((response) => {
-                console.log(response);
-                response.forEach((file) => {
+            readFiles(files_to_process).then((processed_files) => {
+                processed_files.forEach((file) => {
                     if (file.message) {
                         is_any_file_error = true;
                         showError(file);
                     }
                 });
-                const total_to_upload = response.length;
+                const total_to_upload = processed_files.length;
                 if (is_any_file_error || !total_to_upload) {
                     removeButtonLoading();
                     enableDisableSubmit();
@@ -233,9 +232,9 @@ const Authenticate = (() => {
                 const isLastUpload = () => total_to_upload === idx_to_upload + 1;
                 // sequentially send files
                 const uploadFile = () => {
-                    const $status = $submit_table.find(`.${response[idx_to_upload].passthrough.class} .status`);
+                    const $status = $submit_table.find(`.${processed_files[idx_to_upload].passthrough.class} .status`);
                     $status.text(`${localize('Submitting')}...`);
-                    uploader.upload(response[idx_to_upload]).then((api_response) => {
+                    uploader.upload(processed_files[idx_to_upload]).then((api_response) => {
                         onResponse(api_response, isLastUpload());
                         if (!api_response.error && !api_response.warning) {
                             $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
@@ -258,7 +257,7 @@ const Authenticate = (() => {
                         uploadFile();
                     }
                 };
-                // uploadFile();
+                uploadFile();
             });
         });
     };
@@ -272,9 +271,9 @@ const Authenticate = (() => {
                     $status.text(`${localize('Compressing Image')}...`);
 
                     ConvertToBase64(f.file).then((img) => {
-                        CompressImage(img).then((result) => {
+                        CompressImage(img).then((compressed_img) => {
                             const file_arr = f;
-                            file_arr.file = result;
+                            file_arr.file = compressed_img;
                             resolve(file_arr);
                         });
                     });
