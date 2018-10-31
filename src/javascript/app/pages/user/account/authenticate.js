@@ -208,14 +208,10 @@ const Authenticate = (() => {
 
     const processFiles = (files) => {
         const uploader = new DocumentUploader({ connection: BinarySocket.get() }); // send 'debug: true' here for debugging
-
-        let files_to_process  = [];
         let idx_to_upload     = 0;
         let is_any_file_error = false;
 
-        compressImageFiles(files).then((files_arr) => {
-            files_to_process = files_arr;
-
+        compressImageFiles(files).then((files_to_process) => {
             readFiles(files_to_process).then((processed_files) => {
                 processed_files.forEach((file) => {
                     if (file.message) {
