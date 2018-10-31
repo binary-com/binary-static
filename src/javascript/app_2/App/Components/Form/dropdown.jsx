@@ -1,9 +1,10 @@
-import { isArrayLike } from 'mobx';
-import { observer }    from 'mobx-react';
-import PropTypes       from 'prop-types';
-import React           from 'react';
-import SimpleBar       from 'simplebar-react';
-import { IconArrow }   from 'Assets/Common';
+import { isArrayLike }   from 'mobx';
+import { observer }      from 'mobx-react';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { CSSTransition } from 'react-transition-group';
+import SimpleBar         from 'simplebar-react';
+import { IconArrow }     from 'Assets/Common';
 
 class Dropdown extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class Dropdown extends React.Component {
     }
 
     getDisplayText = (list, value) => {
-        const findInArray = (arr_list) => (arr_list.find(item => item.value === value) || {}).text;
+        const findInArray = (arr_list) => (arr_list.find(item => item.value === (typeof item.value === 'number' ? +value : value)) || {}).text;
         let text = '';
         if (isArrayLike(list)) {
             text = findInArray(list);
@@ -95,31 +96,38 @@ class Dropdown extends React.Component {
                     </span>
                 </div>
                 <IconArrow className='select-arrow' />
-                <div className='dropdown-list'>
-                    <div className='list-container'>
-                        <SimpleBar style={{ 'height': '100%' }}>
-                            {isArrayLike(this.props.list) ?
-                                <Items
-                                    items={this.props.list}
-                                    name={this.props.name}
-                                    value={this.props.value}
-                                    handleSelect={this.handleSelect}
-                                /> :
-                                Object.keys(this.props.list).map(key => (
-                                    <React.Fragment key={key}>
-                                        <div className='list-label'><span>{key}</span></div>
-                                        <Items
-                                            items={this.props.list[key]}
-                                            name={this.props.name}
-                                            value={this.props.value}
-                                            handleSelect={this.handleSelect}
-                                        />
-                                    </React.Fragment>
-                                ))
-                            }
-                        </SimpleBar>
+                <CSSTransition
+                    in={this.state.is_list_visible}
+                    timeout={100}
+                    classNames='dropdown-list'
+                    unmountOnExit
+                >
+                    <div className='dropdown-list'>
+                        <div className='list-container'>
+                            <SimpleBar style={{ 'height': '100%' }}>
+                                {isArrayLike(this.props.list) ?
+                                    <Items
+                                        items={this.props.list}
+                                        name={this.props.name}
+                                        value={this.props.value}
+                                        handleSelect={this.handleSelect}
+                                    /> :
+                                    Object.keys(this.props.list).map(key => (
+                                        <React.Fragment key={key}>
+                                            <div className='list-label'><span>{key}</span></div>
+                                            <Items
+                                                items={this.props.list[key]}
+                                                name={this.props.name}
+                                                value={this.props.value}
+                                                handleSelect={this.handleSelect}
+                                            />
+                                        </React.Fragment>
+                                    ))
+                                }
+                            </SimpleBar>
+                        </div>
                     </div>
-                </div>
+                </CSSTransition>
             </div>
         );
     }

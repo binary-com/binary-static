@@ -1,6 +1,5 @@
 import moment                    from 'moment';
 import { localize }              from '_common/localize';
-import { toTitleCase }           from '_common/string_util';
 import {
     cloneObject,
     getPropertyValue }           from '_common/utility';
@@ -12,7 +11,8 @@ import {
     isSessionAvailable }         from './start_date';
 import {
     getContractCategoriesConfig,
-    getContractTypesConfig }     from '../Constants/contract';
+    getContractTypesConfig,
+    getLocalizedBasis }          from '../Constants/contract';
 
 const ContractType = (() => {
     let available_contract_types = {};
@@ -88,7 +88,7 @@ const ContractType = (() => {
 
                 if (!sub_cats) return;
 
-                sub_cats[sub_cats.indexOf(type)] = { value: type, text: localize(contract_types[type].title) };
+                sub_cats[sub_cats.indexOf(type)] = { value: type, text: contract_types[type].title };
 
                 // populate available contract types
                 available_contract_types[type] = cloneObject(contract_types[type]);
@@ -288,8 +288,9 @@ const ContractType = (() => {
 
     const getBasis = (contract_type, basis) => {
         const arr_basis  = getPropertyValue(available_contract_types, [contract_type, 'basis']) || {};
+        const localized_basis = getLocalizedBasis();
         const basis_list = arr_basis.reduce((cur, bas) => (
-            [...cur, { text: localize(toTitleCase(bas)), value: bas }]
+            [...cur, { text: localized_basis[bas], value: bas }]
         ), []);
 
         return {

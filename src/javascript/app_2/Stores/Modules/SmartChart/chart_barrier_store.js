@@ -51,6 +51,7 @@ export class ChartBarrierStore {
 
     @action.bound
     updateBarriers(high, low) {
+        this.relative       = /^[+-]/.test(high);
         this.high = +high || undefined;
         this.low  = +low  || undefined;
     }

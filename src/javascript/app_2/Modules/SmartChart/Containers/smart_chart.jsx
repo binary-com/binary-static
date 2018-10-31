@@ -8,36 +8,12 @@ import TopWidgets       from '../Components/top_widgets.jsx';
 import { symbolChange } from '../Helpers/symbol';
 
 class Chart extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            chart_type : this.props.chart_type,
-            granularity: this.props.granularity,
-        };
-
-        this.updateChartType   = this.updateChartType.bind(this);
-        this.updateGranularity = this.updateGranularity.bind(this);
-    }
-
     componentWillUnmount() { this.props.onUnmount(); }
-
-    updateChartType(chart_type) {
-        if (this.state.chart_type !== chart_type) {
-            this.setState({ chart_type });
-        }
-    }
-
-    updateGranularity(granularity) {
-        if (this.state.granularity !== granularity) {
-            this.setState({ granularity });
-        }
-    }
 
     chartControlsWidgets = () => (
         <ControlWidgets
-            updateChartType={this.updateChartType}
-            updateGranularity={this.updateGranularity}
+            updateChartType={this.props.updateChartType}
+            updateGranularity={this.props.updateGranularity}
         />
     );
 
@@ -54,9 +30,9 @@ class Chart extends React.Component {
             <SmartChart
                 barriers={this.props.barriers_array}
                 chartControlsWidgets={this.chartControlsWidgets}
-                chartType={this.state.chart_type}
+                chartType={this.props.chart_type}
                 endEpoch={this.props.end_epoch}
-                granularity={this.state.granularity}
+                granularity={this.props.granularity}
                 id={this.props.chart_id}
                 isMobile={this.props.is_mobile}
                 requestAPI={this.props.wsSendRequest}

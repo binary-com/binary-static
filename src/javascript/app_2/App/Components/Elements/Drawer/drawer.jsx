@@ -1,6 +1,7 @@
 import classNames       from 'classnames';
 import PropTypes        from 'prop-types';
 import React            from 'react';
+import { CSSTransition }   from 'react-transition-group';
 import { connect }      from 'Stores/connect';
 import { DrawerHeader } from './drawer_header.jsx';
 
@@ -43,36 +44,36 @@ class Drawer extends React.Component {
         const { is_this_drawer_on } = this.state;
         const { alignment, closeBtn, children } = this.props;
 
-        const visibility = {
-            visibility: `${!is_this_drawer_on ? 'hidden' : 'visible'}`,
-        };
         const drawer_bg_class = classNames('drawer-bg', {
             'show': is_this_drawer_on,
         });
-        const drawer_class = classNames('drawer', {
-            'visible': is_this_drawer_on,
-        }, alignment);
+        const drawer_class = classNames('drawer', alignment);
 
         return (
-            <aside className='drawer-container'>
-                <div
-                    className={drawer_bg_class}
-                    style={visibility}
-                    onClick={this.handleClickOutside}
-                >
+            <CSSTransition
+                in={is_this_drawer_on}
+                timeout={150}
+                classNames='drawer-container'
+                unmountOnExit
+            >
+                <aside className='drawer-container'>
                     <div
-                        ref={this.setRef}
-                        className={drawer_class}
-                        style={visibility}
+                        className={drawer_bg_class}
+                        onClick={this.handleClickOutside}
                     >
-                        <DrawerHeader
-                            alignment={alignment}
-                            closeBtn={closeBtn}
-                        />
-                        {children}
+                        <div
+                            ref={this.setRef}
+                            className={drawer_class}
+                        >
+                            <DrawerHeader
+                                alignment={alignment}
+                                closeBtn={closeBtn}
+                            />
+                            {children}
+                        </div>
                     </div>
-                </div>
-            </aside>
+                </aside>
+            </CSSTransition>
         );
     }
 }

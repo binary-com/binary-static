@@ -61,6 +61,30 @@ footer {
     }
 }
 
+.network-status {
+    &-wrapper {
+        border-left: 1px solid $COLOR_DARK_WHITE;
+        height: 14px;
+    }
+    &-circle {
+        background: $COLOR_DARK_GRAY;
+        width: 10px;
+        height: 10px;
+        margin: 2px 16px;
+        border-radius: 50%;
+
+        &.online {
+            background: $COLOR_LIGHT_GREEN;
+        }
+        &.offline {
+            background: $COLOR_LIGHT_RED;
+        }
+        &.blinker {
+            background: $COLOR_DARK_GRAY;
+        }
+    }
+}
+
 .ic-settings {
     &.active {
         background: $COLOR_GRAY;
