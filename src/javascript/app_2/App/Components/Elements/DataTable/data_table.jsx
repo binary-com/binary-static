@@ -29,8 +29,22 @@ class DataTable extends React.PureComponent {
             columns,
             footer,
             getRowLink,
+            is_empty,
             onScroll,
         } = this.props;
+
+        const TableData =
+            <React.Fragment>
+                {this.props.data_source.map((row_obj, id) =>
+                    <TableRow
+                        row_obj={row_obj}
+                        columns={columns}
+                        key={id}
+                        to={getRowLink && getRowLink(row_obj)}
+                    />
+                )}
+                {children}
+            </React.Fragment>;
 
         return (
             <div className='table'>
@@ -42,17 +56,13 @@ class DataTable extends React.PureComponent {
                     onScroll={onScroll}
                     ref={el => { this.el_table_body = el; }}
                 >
-                    <SimpleBar>
-                        {this.props.data_source.map((row_obj, id) =>
-                            <TableRow
-                                row_obj={row_obj}
-                                columns={columns}
-                                key={id}
-                                to={getRowLink && getRowLink(row_obj)}
-                            />
-                        )}
-                        {children}
-                    </SimpleBar>
+                    {is_empty ?
+                        TableData
+                        :
+                        <SimpleBar>
+                            {TableData}
+                        </SimpleBar>
+                    }
                 </div>
 
                 {this.props.footer &&
