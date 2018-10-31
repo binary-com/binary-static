@@ -93,7 +93,7 @@ export default class ContractStore extends BaseStore {
             this.contract_info = {};
             return;
         }
-        if (isEmptyObject(response)) {
+        if (isEmptyObject(response.proposal_open_contract)) {
             this.has_error     = true;
             this.error_message = localize('Contract does not exist or does not belong to this client.');
             this.contract_info = {};
