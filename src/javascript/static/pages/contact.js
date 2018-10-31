@@ -11,11 +11,16 @@ const Contact = (() => {
         $chat_button      = $('#chat_button');
         $chat_unavailable = $('#live_chat_unavailable');
         showHideLiveChat();
+        initPhoneNumber();
+    };
 
+    const initPhoneNumber = (is_one_line) => {
         Dropdown('#cs_telephone_number');
         $('#cs_telephone_number').on('change.cs', function () {
-            const val = $(this).val().split(',').map(raw_str => wrapNumberInLink(raw_str));
-            $('#display_cs_telephone').html(val[0] + (val.length > 1 ? `<br />${val[1]}` : ''));
+            const val = $(this).val().split(',').map(raw_str => (
+                is_one_line ? `<span>${wrapNumberInLink(raw_str)}</span>` : wrapNumberInLink(raw_str)
+            ));
+            $('#display_cs_telephone').html(val[0] + (val.length > 1 ? `${is_one_line ? '' : '<br />'}${val[1]}` : ''));
         });
     };
 
@@ -70,6 +75,7 @@ const Contact = (() => {
     return {
         onLoad,
         onUnload,
+        initPhoneNumber,
     };
 })();
 
