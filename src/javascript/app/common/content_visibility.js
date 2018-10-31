@@ -46,25 +46,30 @@ const mt_company_rule   = 'mtcompany';
 
 const ContentVisibility = (() => {
     const init = () => {
-        const client_is_logged_in = Client.isLoggedIn();
-        if (client_is_logged_in) {
+        const is_client_logged_in = Client.isLoggedIn();
+        if (is_client_logged_in) {
             BinarySocket.wait('authorize', 'landing_company').then(() => {
-                const is_virtual      = State.getResponse('authorize.is_virtual');
-                const landing_company = is_virtual ?
-                    State.getResponse('landing_company.gaming_company.shortcode') ||
-                    State.getResponse('landing_company.financial_company.shortcode') :
-                    State.getResponse('authorize.landing_company_name');
-                controlVisibility(
-                    client_is_logged_in,
-                    'default',
-                    landing_company,
-                    MetaTrader.isEligible(),
-                    State.getResponse('landing_company.mt_financial_company.shortcode')
-                );
+                const is_virtual      = Client.get('is_virtual');
+                const current_landing_company_shortcode = is_virtual ?
+                    (State.getResponse('landing_company.gaming_company.shortcode') ||
+                    State.getResponse('landing_company.financial_company.shortcode')) :
+                    Client.get('landing_company_shortcode');
+                controlVisibility({
+                    is_client_logged_in,
+                    clients_country       : 'default',
+                    current_landing_company_shortcode,
+                    client_has_mt_company : MetaTrader.isEligible(),
+                    mt_financial_shortocde: State.getResponse('landing_company.mt_financial_company.shortcode'),
+                });
             });
         } else {
             BinarySocket.wait('website_status').then(() => {
-                controlVisibility(client_is_logged_in, State.getResponse('website_status.clients_country'), 'default', false);
+                controlVisibility({
+                    is_client_logged_in,
+                    clients_country                  : State.getResponse('website_status.clients_country'),
+                    current_landing_company_shortcode: 'default',
+                    client_has_mt_company            : false,
+                });
             });
         }
     };
@@ -117,11 +122,7 @@ const ContentVisibility = (() => {
 
     const shouldShowElement = (
         attr_str,
-        client_is_logged_in,
-        clients_country,
-        current_landing_company_shortcode,
-        client_has_mt_company,
-        mt5fin_company_shortcode
+        params
     ) => {
         const {
             is_exclude,
@@ -131,28 +132,27 @@ const ContentVisibility = (() => {
         } = parseAttributeString(attr_str);
         const rule_set = new Set(names);
 
-        const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
+        const rule_set_has_current = rule_set.has(params.current_landing_company_shortcode);
         const rule_set_has_mt      = rule_set.has(mt_company_rule);
 
         let show_element = false;
 
-        if (client_is_logged_in && client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
-        else if (client_is_logged_in && (is_exclude !== rule_set_has_current)) show_element = true;
+        if (params.is_client_logged_in && params.client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
+        else if (params.is_client_logged_in && (is_exclude !== rule_set_has_current)) show_element = true;
 
-        if (!client_is_logged_in &&
-          country_rules.length) show_element = is_exclude !== country_rules.includes(clients_country);
+        if (!params.is_client_logged_in &&
+          country_rules.length) show_element = is_exclude !== country_rules.includes(params.clients_country);
 
-        if (client_is_logged_in && mt5fin_rules.includes(mt5fin_company_shortcode)) show_element = !is_exclude;
+        if (params.is_client_logged_in &&
+          mt5fin_rules.includes(params.mt_financial_shortocde)) show_element = !is_exclude;
 
         return show_element;
     };
 
-    const controlVisibility = (client_is_logged_in, clients_country,
-        current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
+    const controlVisibility = (params) => {
         document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str      = el.dataset.show;
-            if (shouldShowElement(attr_str, client_is_logged_in, clients_country,
-                current_landing_company_shortcode, client_has_mt_company, mt5_login_list)) {
+            if (shouldShowElement(attr_str, params)) {
                 el.classList.add(visible_classname);
             } else {
                 const open_tab_url = new RegExp(`\\?.+_tabs=${el.id}`, 'i');
