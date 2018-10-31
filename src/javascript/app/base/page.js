@@ -1,4 +1,5 @@
 const Cookies          = require('js-cookie');
+const moment           = require('moment');
 const Client           = require('./client');
 const Contents         = require('./contents');
 const Header           = require('./header');
@@ -14,8 +15,11 @@ const Crowdin          = require('../../_common/crowdin');
 const Language         = require('../../_common/language');
 const PushNotification = require('../../_common/lib/push_notification');
 const localize         = require('../../_common/localize').localize;
+const isMobile         = require('../../_common/os_detect').isMobile;
+const LocalStore       = require('../../_common/storage').LocalStore;
 const State            = require('../../_common/storage').State;
 const scrollToTop      = require('../../_common/scroll').scrollToTop;
+const toISOFormat      = require('../../_common/string_util').toISOFormat;
 const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
 require('../../_common/lib/polyfills/array.includes');
@@ -91,6 +95,12 @@ const Page = (() => {
             });
         } else {
             Menu.init();
+            if (!LocalStore.get('date_first_contact')) {
+                LocalStore.set('date_first_contact', toISOFormat(moment()));
+            }
+            if (!LocalStore.get('signup_device')) {
+                LocalStore.set('signup_device', (isMobile() ? 'mobile' : 'desktop'));
+            }
         }
         TrafficSource.setData();
     };

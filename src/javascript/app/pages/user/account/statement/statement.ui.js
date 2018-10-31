@@ -1,6 +1,7 @@
 const Statement   = require('./statement');
 const Client      = require('../../../../base/client');
 const Table       = require('../../../../common/attach_dom/table');
+const formatMoney = require('../../../../common/currency').formatMoney;
 const showTooltip = require('../../../../common/get_app_details').showTooltip;
 const localize    = require('../../../../../_common/localize').localize;
 const downloadCSV = require('../../../../../_common/utility').downloadCSV;
@@ -45,7 +46,7 @@ const StatementUI = (() => {
     const createStatementRow = (transaction) => {
         const statement_data = Statement.getStatementData(transaction, Client.get('currency'));
         all_data.push($.extend({}, statement_data, {
-            action: statement_data.action,
+            action: statement_data.localized_action,
             desc  : statement_data.desc,
         }));
         const credit_debit_type = (parseFloat(transaction.amount) >= 0) ? 'profit' : 'loss';
@@ -54,7 +55,7 @@ const StatementUI = (() => {
             statement_data.date,
             `<span ${showTooltip(statement_data.app_id, oauth_apps[statement_data.app_id])}>${statement_data.ref}</span>`,
             statement_data.payout,
-            statement_data.action,
+            statement_data.localized_action,
             '',
             statement_data.amount,
             statement_data.balance,
@@ -66,7 +67,7 @@ const StatementUI = (() => {
         $statement_row.children('.desc').html(`${statement_data.desc}<br>`);
 
         // create view button and append
-        if (statement_data.action === 'Sell' || statement_data.action === 'Buy') {
+        if (/^(buy|sell)$/i.test(statement_data.action_type)) {
             const $view_button = $('<button/>', { class: 'button open_contract_details', text: localize('View'), contract_id: statement_data.id });
             $statement_row.children('.desc,.details').append($view_button);
         }
@@ -93,12 +94,22 @@ const StatementUI = (() => {
             `Statement_${Client.get('loginid')}_latest${$('#rows_count').text()}_${window.time.replace(/\s/g, '_').replace(/:/g, '')}.csv`);
     };
 
+    const updateAccountStatistics = (account_statistics) => {
+        const { currency, total_deposits, total_withdrawals } = account_statistics;
+
+        $('#total_deposits').html(formatMoney(currency, total_deposits));
+        $('#total_withdrawals').html(formatMoney(currency, total_withdrawals));
+        $('#net_deposits').html(formatMoney(currency, +total_deposits - +total_withdrawals));
+        $('#account_statistics').setVisibility(1);
+    };
+
     return {
         clearTableContent,
         createEmptyStatementTable,
         updateStatementTable,
         errorMessage,
         exportCSV,
+        updateAccountStatistics,
 
         setOauthApps: values => (oauth_apps = values),
     };

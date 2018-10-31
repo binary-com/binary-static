@@ -1,5 +1,6 @@
 const StatementUI          = require('./statement.ui');
 const ViewPopup            = require('../../view_popup/view_popup');
+const Client               = require('../../../../base/client');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
 const DateTo               = require('../../../../common/attach_dom/date_to');
@@ -49,6 +50,15 @@ const StatementInit = (() => {
         transactions_consumed += chunk.length;
         $('#rows_count').text(transactions_consumed);
         return chunk;
+    };
+
+    const getAccountStatistics = () => {
+        // only show Account Statistics to MLT/MX clients
+        if (!/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) return;
+
+        BinarySocket.send({ account_statistics: 1 }).then(response => {
+            StatementUI.updateAccountStatistics(response.account_statistics);
+        });
     };
 
     const statementHandler = (response) => {
@@ -138,6 +148,7 @@ const StatementInit = (() => {
         });
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
+        getAccountStatistics();
     };
 
     const onLoad = () => {
