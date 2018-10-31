@@ -6,6 +6,7 @@ import {
 }                             from 'mobx';
 import { isEmptyObject }      from '_common/utility';
 import { WS }                 from 'Services';
+import { localize }           from '_common/localize';
 import { createChartBarrier } from './Helpers/chart_barriers';
 import { createChartMarkers } from './Helpers/chart_markers';
 import {
@@ -58,10 +59,10 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     onMount(contract_id) {
-        this.has_error = false;
+        this.has_error     = false;
         this.error_message = '';
-        this.contract_id = contract_id;
-        this.smart_chart = this.root_store.modules.smart_chart;
+        this.contract_id   = contract_id;
+        this.smart_chart   = this.root_store.modules.smart_chart;
         this.smart_chart.setContractMode(true);
 
         if (contract_id) {
@@ -89,6 +90,12 @@ export default class ContractStore extends BaseStore {
         if ('error' in response) {
             this.has_error     = true;
             this.error_message = response.error.message;
+            this.contract_info = {};
+            return;
+        }
+        if (isEmptyObject(response)) {
+            this.has_error     = true;
+            this.error_message = localize('Contract does not exist or does not belong to this client.');
             this.contract_info = {};
             return;
         }
