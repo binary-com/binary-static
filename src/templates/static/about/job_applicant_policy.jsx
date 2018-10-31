@@ -4,7 +4,7 @@ const JobApplicantPrivacyPolicy = () =>  (
     <div className='container'>
         <h2 data-anchor='job-applicant-policy'>{it.L('Job applicant privacy policy')}</h2>
         <p>{it.L('Binary Group (hereinafter referred to as \'Binary Group of companies\', \'the Company\') is commited to protecting the privacy and security of the applicant\'s personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant\' personal data, and how long it keeps them and other relevant information about the applicant\'s data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as \'GDPR\') and Data Protection Act 2018.')}</p>
-        <p>{it.L('This privacy notice is only applicable to the job applicant residing in the EU.')}</p>
+        <p>{it.L('This privacy notice only applies to job applicants residing in the EU.')}</p>
         <p>{it.L('The Company is required under data protection legislation to notify the applicant of the information contained in this privacy notice. As such, it is important that the applicant read this notice, together with any other privacy notice that the Company may provide for the applicant on specific occasions when the Company is collectiong or processing personal data about the applicant, so that the applicant is aware of how and why the Company is using such information.')}</p>
 
         <h2 data-anchor='interpretations'>{it.L('Interpretations')}</h2>
