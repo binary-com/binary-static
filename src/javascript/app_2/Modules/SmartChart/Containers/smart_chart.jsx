@@ -1,11 +1,14 @@
-import { SmartChart }   from '@binary-com/smartcharts';
+import { SmartChart, setSmartChartsPublicPath }   from '@binary-com/smartcharts';
 import PropTypes        from 'prop-types';
 import React            from 'react';
+import Url              from '_common/url';
 import { connect }      from 'Stores/connect';
 import ControlWidgets   from '../Components/control_widgets.jsx';
 import ChartMarker      from '../Components/Markers/marker.jsx';
 import TopWidgets       from '../Components/top_widgets.jsx';
 import { symbolChange } from '../Helpers/symbol';
+
+setSmartChartsPublicPath(Url.urlForStatic('js/app_2/'));
 
 class Chart extends React.Component {
     componentWillUnmount() { this.props.onUnmount(); }
