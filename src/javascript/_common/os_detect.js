@@ -42,10 +42,7 @@ const isDesktop = () => {
     return !!['windows', 'mac', 'linux'].find(system => system === os);
 };
 
-const isMobile = () => {
-    const os = OSDetect();
-    return !!['ios', 'android'].find(system => system === os);
-};
+const isMobile = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const OSDetect = () => {
     // For testing purposes or more compatibility, if we set 'config.os'
