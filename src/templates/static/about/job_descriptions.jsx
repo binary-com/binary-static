@@ -86,7 +86,7 @@ const JobDescriptions = () => (
                 id='quantitative_analysis'
                 title={it.L('Quantitative Analysis')}
                 sections={[
-                    { header: it.L('Quantitative Analyst'),      subsection: 'quantitative_analyst',     text: it.L('[_1] Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company’s options book.', it.website_name) },
+                    { header: it.L('Quantitative Analyst'),      subsection: 'quantitative_analyst',      text: it.L('[_1] Quantitative Analytics team is responsible for the pricing of our binary options. You will join them in managing the risk and profitability of the company’s options book.', it.website_name) },
                     { header: it.L('Financial Markets Analyst'), subsection: 'financial_markets_analyst', text: it.L('As our Senior Financial Markets Analyst, you will manage the day-to-day risk of our trading books, conduct complex quantitative analysis, carry out performance testing, develop advanced data analytics tools, and support other related operations that have a direct impact on the profitability and future growth of our company.') },
                 ]}
             />
