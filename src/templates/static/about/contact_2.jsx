@@ -24,7 +24,7 @@ const Contact2 = () => (
 
                 <div className='gr-row'>
                     <div className='gr-7 gr-8-t gr-12-p gr-12-m gr-centered gr-padding-30'>
-                        <h1 className='center-text'>{it.L('Can\'t find what you search for?')}</h1>
+                        <h1 className='center-text'>{it.L('Can\'t find what you\'re searching for?')}</h1>
                         <div className='gr-row phone-container'>
                             <div className='gr-col'>
                                 <img className='responsive' src={it.url_for('images/pages/contact_2/contact-icon.svg')} />
