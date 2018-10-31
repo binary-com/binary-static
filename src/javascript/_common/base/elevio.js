@@ -1,4 +1,5 @@
 const ClientBase    = require('./client_base');
+const GTM           = require('./gtm');
 const BinarySocket  = require('./socket_base');
 const State         = require('../storage').State;
 const createElement = require('../utility').createElement;
@@ -13,6 +14,7 @@ const Elevio = (() => {
                     // window._elev.setLanguage(lang);
                     setUserInfo(elev);
                     setTranslations(elev);
+                    addEventListenerGTM();
                     makeLauncherVisible();
                 });
             }
@@ -22,6 +24,12 @@ const Elevio = (() => {
     const isAvailable = () => (
         new RegExp(`^(${available_countries.join('|')})$`, 'i').test(State.getResponse('website_status.clients_country'))
     );
+
+    const addEventListenerGTM = () => {
+        window._elev.on('widget:opened', () => { // eslint-disable-line no-underscore-dangle
+            GTM.pushDataLayer({ event: 'elevio_widget_opened' });
+        });
+    };
 
     const makeLauncherVisible = () => {
         // we have to add the style since the launcher element gets updates even after elevio's 'ready' event fired
