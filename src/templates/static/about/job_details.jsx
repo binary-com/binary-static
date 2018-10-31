@@ -80,6 +80,7 @@ const JobDetails = () => (
                                 { href: 'frontend_developer',                  string: it.L('Front-End Developer') },
                                 { href: 'perl_developer',                      string: it.L('Perl Developer') },
                                 { href: 'cryptocurrency_blockchain_developer', string: it.L('Cryptocurrency/Blockchain Developer') },
+                                { href: 'postgresql_database_administrator',   string: it.L('PostgreSQL Database Administrator (DBA)') },
                                 { href: 'security_researcher',                 string: it.L('Security Researcher') },
                                 { href: 'ui_ux_designer',                      string: it.L('UI/UX Designer') },
                             ]}
@@ -213,7 +214,7 @@ const JobDetails = () => (
                         <div className='invisible' id='backend_developer'>
                             <h1>{it.L('Back-End Developer')}</h1>
 
-                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high-traffic networks. As our Senior Back-End Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
+                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high-traffic networks. As our Back-End Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.', it.website_name)}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
@@ -336,6 +337,55 @@ const JobDetails = () => (
                                     { text: it.L('Knowledge of hashing algorithms, including SHA and scrypt') },
                                     { text: it.L('Ability to produce high-quality, self-documenting code by using test-driven development (TDD) techniques') },
                                     { text: it.L('Passion for Linux and other open-source platforms') },
+                                ]}
+                            />
+                        </div>
+
+                        <div className='invisible' id='postgresql_database_administrator'>
+
+                            <h1>{it.L('PostgreSQL Database Administrator (DBA)')}</h1>
+
+                            <p>{it.L('[_1]\'s  IT team is responsible for the design, development, and operation of our high-traffic networks. As our PostgreSQL Database Administrator, you will plan, implement, and manage the database systems that are essential to the architecture of our high-traffic binary options trading platform.', it.website_name)}</p>
+
+                            <UlText
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Plan, install, and configure world-class database systems that meet business objectives and the needs of end users') },
+                                    { text: it.L('Assist backend developers in writing production-ready SQL code') },
+                                    { text: it.L('Plan and carry out the upgrade and migration of databases as needed') },
+                                    { text: it.L('Develop, implement, and test database backup and recovery plans') },
+                                    { text: it.L('Manage database security by controlling access to data through authentication, authorisation, and auditing') },
+                                    { text: it.L('Perform tests to ensure database performance and security, as well as data integrity') },
+                                    { text: it.L('Document and administer database policies, procedures, and standards') },
+                                    { text: it.L('Plan and execute data extraction for efficient loading in data warehouse, and ensure extracted data is useful and properly formatted') },
+                                    { text: it.L('Troubleshoot and debug problems in existing database systems, and find new ways to improve their speed, functionality, and scalability') },
+                                ]}
+                            />
+
+                            <UlText
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    {
+                                        type             : 'nested',
+                                        text             : it.L('Experience as a Postgres DBA, with advanced hands-on knowledge of'),
+                                        subitemsClassName: 'bullet',
+                                        subitems         : [
+                                            { text: it.L('Database Setup,') },
+                                            { text: it.L('Security,') },
+                                            { text: it.L('Replication,') },
+                                            { text: it.L('Performance Tuning,') },
+                                            { text: it.L('Disaster Recovery,') },
+                                            { text: it.L('SQL,') },
+                                            { text: it.L('Stored Procedures') },
+                                        ],
+                                    },
+                                    { text: it.L('Experience with database testing tools such as pgTAP') },
+                                    { text: it.L('Experience with data extraction and reporting for data warehouse/cube') },
+                                    { text: it.L('Knowledge of Linux system administration, including configuration and automation tools such as Chef as well as Shell scripting is preferred') },
+                                    { text: it.L('Knowledge of scripting language and Perl in particular is a plus') },
+                                    { text: it.L('Experience with Multidimensional Expressions (MDX) is an advantage') },
                                 ]}
                             />
                         </div>
