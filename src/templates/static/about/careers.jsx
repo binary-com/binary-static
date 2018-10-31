@@ -196,14 +196,14 @@ const Careers = () => {
                     <p>{it.L('[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we\'ve developed a number of exciting career opportunities in the following areas:', it.website_name)}</p>
                 </div>
                 <div className='gr-row'>
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=information_technology#devops_engineer`}                    text={it.L('IT')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=quality_assurance#software_tester`}             text={it.L('Quality Assurance')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=quantitative_analysis#quantitative_analyst`}             text={it.L('Quantitative Analysis')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=marketing#affiliate_country_manager`}                  text={it.L('Marketing')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=accounting#accounts_and_payments_executive`}               text={it.L('Accounts/Payments')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=compliance#compliance_executive`}                          text={it.L('Compliance and Risk Management')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=internal_audit#internal_audit_executive`}                          text={it.L('Internal Audit')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=human_resources#hr_operations_executive`}                 text={it.L('Human Resource')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=information_technology#devops_engineer`}      text={it.L('IT')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=quality_assurance#software_tester`}           text={it.L('Quality Assurance')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=quantitative_analysis#quantitative_analyst`}  text={it.L('Quantitative Analysis')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=marketing#affiliate_country_manager`}         text={it.L('Marketing')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=accounting#accounts_and_payments_executive`}  text={it.L('Accounts/Payments')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=compliance#compliance_executive`}             text={it.L('Compliance and Risk Management')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=internal_audit#internal_audit_executive`}     text={it.L('Internal Audit')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=human_resources#hr_operations_executive`}     text={it.L('Human Resource')} />
                     <Box gr='gr-6' href={`${url_open_positions}?dept=customer_support#customer_support_executive`} text={it.L('Customer Support')} />
                 </div>
 

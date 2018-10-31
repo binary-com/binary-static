@@ -410,10 +410,10 @@ const JobDetails = () => (
                                 className='bullet'
                                 items={[
                                     {
-                                        type             : 'nested',
-                                        text             : it.L('Experience as a Postgres DBA, with advanced hands-on knowledge of'),
-                                        subitemsClassName: 'bullet',
-                                        subitems         : [
+                                        type              : 'nested',
+                                        text              : it.L('Experience as a Postgres DBA, with advanced hands-on knowledge of'),
+                                        subitems_className: 'bullet',
+                                        subitems          : [
                                             { text: it.L('Database Setup,') },
                                             { text: it.L('Security,') },
                                             { text: it.L('Replication,') },
