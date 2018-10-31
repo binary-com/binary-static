@@ -80,8 +80,8 @@ const JobDetails = () => (
                                 { href: 'frontend_developer',                  string: it.L('Front-End Developer') },
                                 { href: 'perl_developer',                      string: it.L('Perl Developer') },
                                 { href: 'cryptocurrency_blockchain_developer', string: it.L('Cryptocurrency/Blockchain Developer') },
-                                { href: 'postgresql_database_administrator',   string: it.L('PostgreSQL Database Administrator (DBA)') },
                                 { href: 'security_researcher',                 string: it.L('Security Researcher') },
+                                { href: 'postgresql_database_administrator',   string: it.L('PostgreSQL Database Administrator (DBA)') },
                                 { href: 'ui_ux_designer',                      string: it.L('UI/UX Designer') },
                             ]}
                         />
@@ -341,6 +341,48 @@ const JobDetails = () => (
                             />
                         </div>
 
+                        <div className='invisible' id='security_researcher'>
+                            <h1>{it.L('Security Researcher')}</h1>
+
+                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high-traffic web applications. As our Security Researcher, we expect you to stay informed about the latest security bulletins and findings, and actively monitor our software development pipeline to find and raise potential security issues.', it.website_name)}</p>
+
+                            <p>{it.L('As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at [_1] You will also assist our developers in understanding and patching the bugs that you find.', '<a href=\'https://tech.binary.com/\' target=\'_blank\'>https://tech.binary.com/</a>')}</p>
+
+                            <p>{it.L('You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats.')}</p>
+
+                            <UlText
+                                text={it.L('Responsibilities:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Check our systems against the latest attacks, vulnerabilities, and mitigations') },
+                                    { text: it.L('Identify attack vectors') },
+                                    { text: it.L('Conduct security reviews of production infrastructure') },
+                                    { text: it.L('Build security tools and processes for critical infrastructure monitoring, protection, and mitigation') },
+                                    { text: it.L('Perform regular pentesting of our web applications') },
+                                    { text: it.L('Monitor our automated security scripts and utilise them to identify threats') },
+                                    { text: it.L('Manage our bug bounty programme') },
+                                ]}
+                            />
+
+                            <UlText
+                                text={it.L('Preferences:')}
+                                className='bullet'
+                                items={[
+                                    { text: it.L('Experience with web application security and testing, security monitoring, and intrusion detection') },
+                                    { text: it.L('Experience with fuzzing and finding edge cases in validation') },
+                                    { text: it.L('Understanding of encryption fundamentals and the OWASP Top 10') },
+                                    { text: it.L('A good understanding of attacks and mitigations such as timing, injection (e.g. form parameter/SQL), side-channel, DoS, buffer overflows and DNS cache poisoning') },
+                                    { text: it.L('Able to assess the security impact of bugs and API inconsistencies') },
+                                    { text: it.L('Familiarity with industry standard tools such as Burp Suit and Metasploit') },
+                                    { text: it.L('Experience in writing custom code and scripts to investigate security threats') },
+                                    { text: it.L('A clear understanding of the OSI model, TCP/IP, and other industry-standard network defense concepts') },
+                                    { text: it.L('Knowledge of the latest industry trends and best practices in information security') },
+                                    { text: it.L('Extensive experience in bug bounty programmes such as HackerOne, Bugcrowd, and Cobalt') },
+                                    { text: it.L('OSCP, CEH, Security+, CISSP, or any GIAC certification is an advantage') },
+                                ]}
+                            />
+                        </div>
+
                         <div className='invisible' id='postgresql_database_administrator'>
 
                             <h1>{it.L('PostgreSQL Database Administrator (DBA)')}</h1>
@@ -386,48 +428,6 @@ const JobDetails = () => (
                                     { text: it.L('Knowledge of Linux system administration, including configuration and automation tools such as Chef as well as Shell scripting is preferred') },
                                     { text: it.L('Knowledge of scripting language and Perl in particular is a plus') },
                                     { text: it.L('Experience with Multidimensional Expressions (MDX) is an advantage') },
-                                ]}
-                            />
-                        </div>
-
-                        <div className='invisible' id='security_researcher'>
-                            <h1>{it.L('Security Researcher')}</h1>
-
-                            <p>{it.L('[_1]\'s IT team is responsible for the design, development, and operation of our high-traffic web applications. As our Security Researcher, we expect you to stay informed about the latest security bulletins and findings, and actively monitor our software development pipeline to find and raise potential security issues.', it.website_name)}</p>
-
-                            <p>{it.L('As a strong proponent of open source, we encourage publication of findings, methods, and tools via GitHub and our technical blog at [_1] You will also assist our developers in understanding and patching the bugs that you find.', '<a href=\'https://tech.binary.com/\' target=\'_blank\'>https://tech.binary.com/</a>')}</p>
-
-                            <p>{it.L('You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats.')}</p>
-
-                            <UlText
-                                text={it.L('Responsibilities:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Check our systems against the latest attacks, vulnerabilities, and mitigations') },
-                                    { text: it.L('Identify attack vectors') },
-                                    { text: it.L('Conduct security reviews of production infrastructure') },
-                                    { text: it.L('Build security tools and processes for critical infrastructure monitoring, protection, and mitigation') },
-                                    { text: it.L('Perform regular pentesting of our web applications') },
-                                    { text: it.L('Monitor our automated security scripts and utilise them to identify threats') },
-                                    { text: it.L('Manage our bug bounty programme') },
-                                ]}
-                            />
-
-                            <UlText
-                                text={it.L('Preferences:')}
-                                className='bullet'
-                                items={[
-                                    { text: it.L('Experience with web application security and testing, security monitoring, and intrusion detection') },
-                                    { text: it.L('Experience with fuzzing and finding edge cases in validation') },
-                                    { text: it.L('Understanding of encryption fundamentals and the OWASP Top 10') },
-                                    { text: it.L('A good understanding of attacks and mitigations such as timing, injection (e.g. form parameter/SQL), side-channel, DoS, buffer overflows and DNS cache poisoning') },
-                                    { text: it.L('Able to assess the security impact of bugs and API inconsistencies') },
-                                    { text: it.L('Familiarity with industry standard tools such as Burp Suit and Metasploit') },
-                                    { text: it.L('Experience in writing custom code and scripts to investigate security threats') },
-                                    { text: it.L('A clear understanding of the OSI model, TCP/IP, and other industry-standard network defense concepts') },
-                                    { text: it.L('Knowledge of the latest industry trends and best practices in information security') },
-                                    { text: it.L('Extensive experience in bug bounty programmes such as HackerOne, Bugcrowd, and Cobalt') },
-                                    { text: it.L('OSCP, CEH, Security+, CISSP, or any GIAC certification is an advantage') },
                                 ]}
                             />
                         </div>

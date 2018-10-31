@@ -58,7 +58,7 @@ const JobDescriptions = () => (
                 id='information_technology'
                 title={it.L('IT')}
                 sections={[
-                    { header: it.L('DevOps Engineer'),      subsection: 'devops_engineer',      text: it.L('As our DevOps Engineer, you will have a critical role in our approach to our infrastructure and operations. The stability and scalability of our applications have a direct impact on our bottom line. This means that you will be taking on a mission critical role.\n') },
+                    { header: it.L('DevOps Engineer'),      subsection: 'devops_engineer',      text: it.L('As our DevOps Engineer, you will have a critical role in our approach to our infrastructure and operations. The stability and scalability of our applications have a direct impact on our bottom line. This means that you will be taking on a mission critical role.') },
                     { header: it.L('System Administrator'), subsection: 'system_administrator', text: it.L('The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks.') },
                     { header: it.L('Back-End Developer'),   subsection: 'backend_developer',    text: it.L('As our Back-End Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.') },
                     { header: it.L('Front-End Developer'),  subsection: 'frontend_developer',   text: it.L('As our Front-End Developer, you will be taking on the challenge of developing and maintaining advanced applications and interfaces that connect clients with our patented trading system.') },
@@ -67,9 +67,10 @@ const JobDescriptions = () => (
                     { header: it.L('Cryptocurrency/Blockchain Developer'), subsection: 'cryptocurrency_blockchain_developer', text: it.L('As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.'), className: 'one-line nowrap' },
 
                     { header: it.L('Security Researcher'), subsection: 'security_researcher', text: it.L('As our Security Researcher, we expect you to stay informed about the latest security bulletins and findings, and actively monitor our software development pipeline to find and raise potential security issues.'), className: 'one-line nowrap' },
-                    { header: it.L('UI/UX Designer'),      subsection: 'ui_ux_designer',      text: it.L('As our UI/UX Designer, you will play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.'), className: 'one-line nowrap' },
 
                     { header: it.L('PostgreSQL Database Administrator (DBA)'), subsection: 'postgresql_database_administrator', text: it.L('As our PostgreSQL Database Administrator, you will plan, implement, and manage the database systems that are essential to the architecture of our high-traffic binary options trading platform.'), className: 'one-line nowrap' },
+
+                    { header: it.L('UI/UX Designer'),      subsection: 'ui_ux_designer',      text: it.L('As our UI/UX Designer, you will play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.'), className: 'one-line nowrap' },
                 ]}
             />
 
