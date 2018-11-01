@@ -7,11 +7,15 @@ const Tac = () => (
         <p>{it.L('It is the responsibility of each Client to read and understand this legal notice and the terms and conditions pursuant to which an acquisition of financial contracts via this site is governed.')}</p>
 
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
-        <p>{it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website, the term "the Company" shall denote either:')}</p>
-        <p className='eu-hide'>{it.L('Binary (C.R.) S.A.;')}</p>
-        <p>{it.L('Binary (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, licensed and regulated by (1) the Malta Gaming Authority in Malta for the Gaming products, licence no. MGA/B2C/102/2000 dated 1 Aug 2018 and for UK clients by (2) the UK Gambling Commission;')}</p>
-        <p>{it.L('Binary Investments (Europe) Ltd Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated by the Malta Financial Services Authority for Investment products, holder of a Category 3 Investment Services licence no. IS/ 70156 issued on 19 May 2015; or')}</p>
-        <p>{it.L('Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles, licensed and regulated by (1) the Gambling Supervision Commission in the Isle of Man, British Isles, current online gambling licence issued on 31 Aug 2012, and for UK clients by (2) the UK Gambling Commission.')}</p>
+        <p>
+            {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term "the Company" shall denote either')}&nbsp;
+            <span className='eu-hide'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
+            <span className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+            <span className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
+            <span className='eu-hide'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
+            <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
+            <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
+        </p>
         <p>{it.L('These Terms and Conditions may be supplemented from time to time by Supplementary Terms and Conditions applicable to a particular Company or products.')}</p>
 
         <h2 data-anchor='introduction'>B. {it.L('Introduction')}</h2>
@@ -43,7 +47,7 @@ const Tac = () => (
         <p>{it.L('Acquisition of financial contracts through this site must be effected in accordance with the terms and conditions presented on the pages of this site. Acquisition of a financial contract is completed when the financial contract has been customised, the premium (or the payout, as the case may be) has been calculated and payment has been verified.')}</p>
 
         <h2 data-anchor='clients-liability'>F. {it.L('Client\'s Liability')}</h2>
-        <p>{it.L('Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client\'s family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remain fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client\'s failure to perform or settle such a transaction. In regards to customers of Binary (IOM) Ltd., online gambling debts are enforceable in law in the Isle of Man.')}</p>
+        <p>{it.L('Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client\'s family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remain fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client\'s failure to perform or settle such a transaction. [_1]In regards to customers of Binary (IOM) Ltd., online gambling debts are enforceable in law in the Isle of Man.[_2]', '<span class="invisible eu-show">', '</a>')}</p>
 
         <h2 data-anchor='customer-funds'>G. {it.L('Customer Funds')}</h2>
         <p>{it.L('Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients.')}</p>

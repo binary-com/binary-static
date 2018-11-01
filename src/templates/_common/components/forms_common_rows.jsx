@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormRow } from './forms.jsx';
+import { Fieldset, FormRow } from './forms.jsx';
 
 export const Salutation = ({ className }) => (
     <FormRow
@@ -162,6 +162,22 @@ export const Tnc = () => (
 
         <button className='button' type='submit'>{it.L('Open Account')}</button>
     </div>
+);
+
+export const Jurisdiction = () => (
+    <Fieldset legend={it.L('Jurisdiction and Choice of Law')}>
+        <div className='gr-12'>
+            <p>{it.L('Your account will be opened with [_1], and will be subject to the jurisdiction and laws of [_2].', '<span id="lc-name"></span>', '<span id="lc-country"></span>')}</p>
+        </div>
+    </Fieldset>
+);
+
+export const RiskDisclaimer = () => (
+    <fieldset>
+        <div className='gr-12'>
+            <p>{it.L('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.')}</p>
+        </div>
+    </fieldset>
 );
 
 export const ClientMessage = () => (

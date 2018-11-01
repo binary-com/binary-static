@@ -26,7 +26,7 @@ const NetworkMonitor = (() => {
 
         if (el_status && el_tooltip) {
             el_status.setAttribute('class', status.class);
-            el_tooltip.setAttribute('data-balloon', `${localize('Network status')}: ${localize(status.tooltip)}`);
+            el_tooltip.setAttribute('data-balloon', `${localize('Network status')}: ${status.tooltip}`);
         }
     };
 

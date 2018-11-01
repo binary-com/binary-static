@@ -1,19 +1,22 @@
-const Client               = require('./client');
-const Clock                = require('./clock');
-const Footer               = require('./footer');
-const Header               = require('./header');
-const BinarySocket         = require('./socket');
-const Dialog               = require('../common/attach_dom/dialog');
-const showPopup            = require('../common/attach_dom/popup');
-const setCurrencies        = require('../common/currency').setCurrencies;
-const SessionDurationLimit = require('../common/session_duration_limit');
-const updateBalance        = require('../pages/user/update_balance');
-const GTM                  = require('../../_common/base/gtm');
-const Login                = require('../../_common/base/login');
-const localize             = require('../../_common/localize').localize;
-const State                = require('../../_common/storage').State;
-const urlFor               = require('../../_common/url').urlFor;
-const getPropertyValue     = require('../../_common/utility').getPropertyValue;
+const Client                 = require('./client');
+const Clock                  = require('./clock');
+const Footer                 = require('./footer');
+const Header                 = require('./header');
+const BinarySocket           = require('./socket');
+const createLanguageDropDown = require('../common/attach_dom/language_dropdown');
+const Dialog                 = require('../common/attach_dom/dialog');
+const showPopup              = require('../common/attach_dom/popup');
+const setCurrencies          = require('../common/currency').setCurrencies;
+const SessionDurationLimit   = require('../common/session_duration_limit');
+const updateBalance          = require('../pages/user/update_balance');
+const Crowdin                = require('../../_common/crowdin');
+const GTM                    = require('../../_common/base/gtm');
+const Login                  = require('../../_common/base/login');
+const localize               = require('../../_common/localize').localize;
+const LocalStore           = require('../../_common/storage').LocalStore;
+const State                  = require('../../_common/storage').State;
+const urlFor                 = require('../../_common/url').urlFor;
+const getPropertyValue       = require('../../_common/utility').getPropertyValue;
 
 const BinarySocketGeneral = (() => {
     const onOpen = (is_ready) => {
@@ -42,6 +45,9 @@ const BinarySocketGeneral = (() => {
                         window.location.reload();
                         return;
                     }
+                    if (!Crowdin.isInContext()) {
+                        createLanguageDropDown(response.website_status);
+                    }
                     if (response.website_status.message) {
                         Footer.displayNotification(response.website_status.message);
                     } else {
@@ -60,7 +66,7 @@ const BinarySocketGeneral = (() => {
                     const is_active_tab = sessionStorage.getItem('active_tab') === '1';
                     if (getPropertyValue(response, ['error', 'code']) === 'SelfExclusion' && is_active_tab) {
                         sessionStorage.removeItem('active_tab');
-                        Dialog.alert({ id: 'authorize_error_alert', message: response.error.message });
+                        Dialog.alert({ id: 'authorize_error_alert', localized_message: response.error.message });
                     }
                     Client.sendLogoutRequest(is_active_tab);
                 } else if (!Login.isLoginPages() && !/authorize/.test(State.get('skip_response'))) {
@@ -93,6 +99,8 @@ const BinarySocketGeneral = (() => {
                                 onAccept   : () => { Client.set('accepted_bch', 1); },
                             });
                         }
+                        LocalStore.remove('date_first_contact');
+                        LocalStore.remove('signup_device');
                     }
                 }
                 break;

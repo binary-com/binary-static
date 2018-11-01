@@ -1,18 +1,16 @@
-const getPropertyValue = require('./utility').getPropertyValue;
-const Client           = require('./base/client_base');
-const BinarySocket     = require('../app/base/socket');
-const Dialog           = require('../app/common/attach_dom/dialog');
+const localize     = require('./localize').localize;
+const BinarySocket = require('../app/base/socket');
+const Dialog       = require('../app/common/attach_dom/dialog');
+const isEuCountry  = require('../app/common/country_base').isEuCountry;
 
 const ThirdPartyLinks = (() => {
     const init = () => {
-        if (Client.isLoggedIn()) {
-            BinarySocket.wait('authorize').then((response) => {
-                const landing_company_shortcode = getPropertyValue(response, ['authorize', 'landing_company_name']);
-                if (landing_company_shortcode === 'maltainvest') {
-                    document.body.addEventListener('click', clickHandler);
-                }
-            });
-        }
+        // show third-party website redirect notification for logged in and logged out EU clients
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            if (isEuCountry()) {
+                document.body.addEventListener('click', clickHandler);
+            }
+        });
     };
 
     const clickHandler = (e) => {
@@ -26,8 +24,8 @@ const ThirdPartyLinks = (() => {
         if (isThirdPartyLink(el_link.href)) {
             e.preventDefault();
             Dialog.confirm({
-                id     : 'third_party_redirect_dialog',
-                message: ['You will be redirected to a third-party website which is not owned by Binary.com.', 'Click OK to proceed.'],
+                id               : 'third_party_redirect_dialog',
+                localized_message: localize(['You will be redirected to a third-party website which is not owned by Binary.com.', 'Click OK to proceed.']),
             }).then((should_proceed) => {
                 if (should_proceed) {
                     const link = window.open();
@@ -47,6 +45,7 @@ const ThirdPartyLinks = (() => {
         }
         return !!destination.host
             && !/^.*\.binary\.com$/.test(destination.host) // destination host is not binary subdomain
+            && !/www.(betonmarkets|xodds).com/.test(destination.host) // destination host is not binary old domain
             && window.location.host !== destination.host;
     };
 

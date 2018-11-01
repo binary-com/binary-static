@@ -42,11 +42,11 @@ const Footer = () => (
                                 items={[
                                     { text: it.L('About Us'),               href: it.url_for('about-us') },
                                     { text: it.L('Contact Us'),             href: it.url_for('contact'),           className: 'gr-hide gr-show-m' },
-                                    { text: it.L('Regulatory Information'), href: it.url_for('regulation'),        className: 'id-hide ar-hide' },
+                                    { text: it.L('Regulatory Information'), href: it.url_for('regulation') },
                                     { text: it.L('Group History'),          href: it.url_for('group-history') },
                                     { text: it.L('Binary in Numbers'),      href: it.url_for('binary-in-numbers') },
                                     { text: it.L('Careers'),                href: it.url_for('careers') },
-                                    { text: it.L('Patents'),                href: it.url_for('legal/us_patents'), className: 'id-hide' },
+                                    { text: it.L('Patents'),                href: it.url_for('legal/us_patents') },
                                 ]}
                             />
 
@@ -56,9 +56,10 @@ const Footer = () => (
                                     { text: it.L('Why Us?'),         href: it.url_for('why-us') },
                                     { text: it.L('Getting Started'), href: it.url_for('get-started') },
                                     { text: it.L('Platform Tour'),   href: it.url_for('tour') },
-                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',             className: 'id-hide', target: '_blank' },
-                                    { text: it.L('Academy'),         href: 'https://academy.binary.com',             className: 'academy', target: '_blank' },
-                                    { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/',  className: 'id-hide', target: '_blank' },
+                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', className: 'invisible eu-show' },
+                                    { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
+                                    { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
+                                    { text: it.L('Keep Safe'),       href: it.url_for('keep-safe'),                 className: 'client_logged_out invisible' },
                                 ]}
                             />
 
@@ -110,16 +111,65 @@ const Footer = () => (
             </div>
         </div>
         <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10'>
-            <div className='container'>
+            <div className='container eu-hide'>
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        <div className='icon-row flex-row gr-child'>
+                            <div className='regulation-logos flex-row'>
+                                <span className='vanuatu-icon'>
+                                    <img className='responsive' src={it.url_for('images/pages/regulation/vanuatu-logo.png')} />
+                                </span>
+                                <span className='bvi-icon'>
+                                    <img className='responsive' src={it.url_for('images/pages/regulation/bvi.png')} />
+                                </span>
+                                <span className='labuan-icon'>
+                                    <img className='responsive' src={it.url_for('images/pages/footer/labuan_FSA.svg')} />
+                                </span>
+                            </div>
+                            <SocialIcons
+                                networks={[
+                                    { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
+                                    { media: 'google-plus', href: 'https://plus.google.com/+Binarydotcom' },
+                                    { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
+                                    { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
+                                    { media: 'telegram',    href: 'https://t.me/binarydotcom' },
+                                    { media: 'reddit',      href: 'https://www.reddit.com/r/binarydotcom/' },
+                                ]}
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        <p>
+                            {it.L('In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).', `<a href=${it.url_for('download/WS-Binary-Investments-Europe-Limited.pdf')} target="_blank">`, '</a>')}
+                        </p>
+                        <p>
+                            {it.L('Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission ([_1]view licence[_2]), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission ([_3]licence no. SIBA/L/18/1114[_4]), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business ([_5]licence no. MB/18/0024[_6])',
+                                '<a href="https://www.vfsc.vu/wp-content/uploads/2015/12/List-of-Licensees-under-Dealers-in-Securities-Licensing-Act-CAP-70-18.11.2016.pdf" target="_blank" rel="noopener noreferrer">', '</a>',
+                                `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>',
+                                `<a href=${it.url_for('download/regulation/Labuan-license.pdf')} target="_blank">`, '</a>')}
+                        </p>
+                        <p>
+                            {it.L('This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, Japan, or to persons under age 18.')}
+                        </p>
+                        <fieldset className='fld-risk-warning'>
+                            <legend>{it.L('Risk Warning')}</legend>
+                            <p>{it.L('The financial products offered via this website include binary options, contracts for difference ("CFDs") and other complex derivatives and financial products. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex financial products offered, please be sure to understand the risks involved and learn about [_1]Responsible Trading[_2].', `<a href="${it.url_for('responsible-trading')}">`, '</a>')}</p>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            <div className='container eu-show invisible'>
                 <div className='gr-row'>
                     <div className='gr-12'>
                         <div className='icon-row flex-row'>
-                            <div className='regulation-logos flex-row id-hide'>
+                            <div className='regulation-logos flex-row'>
                                 <a className='iom-icon' href='https://www.gov.im/gambling/' target='_blank' rel='noopener noreferrer'>
                                     <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                 </a>
                                 <div className='lga-gamstop-icon-container'>
-                                    <a className='gamstop-icon' data-show='iom, malta, default' href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
+                                    <a className='gamstop-icon' href='https://www.gamstop.co.uk' target='_blank' rel='noopener noreferrer'>
                                         <img className='responsive' src={it.url_for('images/pages/footer/gamstop.svg')} />
                                     </a>
                                     <a className='lga-icon' href='https://www.authorisation.mga.org.mt/verification.aspx?lang=EN&company=a5fd1edc-d072-4c26-b0cd-ab3fa0f0cc40&details=1' target='_blank' rel='noopener noreferrer'>
@@ -130,7 +180,7 @@ const Footer = () => (
                             <SocialIcons
                                 networks={[
                                     { media: 'youtube',     href: 'https://www.youtube.com/user/BinaryTradingVideos' },
-                                    { media: 'google-plus', href: 'https://plus.google.com/106251151552682209951' },
+                                    { media: 'google-plus', href: 'https://plus.google.com/+Binarydotcom' },
                                     { media: 'facebook',    href: 'https://www.facebook.com/binarydotcom' },
                                     { media: 'twitter',     href: 'https://twitter.com/Binarydotcom' },
                                     { media: 'telegram',    href: 'https://t.me/binarydotcom' },

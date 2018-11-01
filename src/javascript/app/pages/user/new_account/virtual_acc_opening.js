@@ -1,18 +1,19 @@
-const SelectMatcher    = require('@binary-com/binary-style').select2Matcher;
-const Cookies          = require('js-cookie');
-const Client           = require('../../../base/client');
-const BinarySocket     = require('../../../base/socket');
-const FormManager      = require('../../../common/form_manager');
-const TrafficSource    = require('../../../common/traffic_source');
-const handleVerifyCode = require('../../../common/verification_code').handleVerifyCode;
-const makeOption       = require('../../../../_common/common_functions').makeOption;
-const localize         = require('../../../../_common/localize').localize;
-const LocalStore       = require('../../../../_common/storage').LocalStore;
-const State            = require('../../../../_common/storage').State;
-const urlFor           = require('../../../../_common/url').urlFor;
-const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
-const isEmptyObject    = require('../../../../_common/utility').isEmptyObject;
-const isBinaryApp      = require('../../../../config').isBinaryApp;
+const SelectMatcher            = require('@binary-com/binary-style').select2Matcher;
+const Cookies                  = require('js-cookie');
+const Client                   = require('../../../base/client');
+const BinarySocket             = require('../../../base/socket');
+const FormManager              = require('../../../common/form_manager');
+const TrafficSource            = require('../../../common/traffic_source');
+const handleVerifyCode         = require('../../../common/verification_code').handleVerifyCode;
+const makeOption               = require('../../../../_common/common_functions').makeOption;
+const localize                 = require('../../../../_common/localize').localize;
+const localizeKeepPlaceholders = require('../../../../_common/localize').localizeKeepPlaceholders;
+const isMobile                 = require('../../../../_common/os_detect').isMobile;
+const LocalStore               = require('../../../../_common/storage').LocalStore;
+const State                    = require('../../../../_common/storage').State;
+const urlFor                   = require('../../../../_common/url').urlFor;
+const Utility                  = require('../../../../_common/utility');
+const isBinaryApp              = require('../../../../config').isBinaryApp;
 
 const VirtualAccOpening = (() => {
     const form = '#virtual-form';
@@ -57,7 +58,7 @@ const VirtualAccOpening = (() => {
     };
 
     const handleWebsiteStatus = (website_status = {}, $residence) => {
-        if (!website_status || isEmptyObject(website_status)) return;
+        if (!website_status || Utility.isEmptyObject(website_status)) return;
         const clients_country = website_status.clients_country;
 
         // set residence value to client's country, detected by IP address from API
@@ -77,6 +78,8 @@ const VirtualAccOpening = (() => {
     const bindValidation = () => {
         // Add TrafficSource parameters
         const utm_data = TrafficSource.getData();
+        const signup_device = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
+        const date_first_contact = LocalStore.get('date_first_contact');
 
         const req = [
             { selector: '#client_password', validations: ['req', 'password'], re_check_field: '#repeat_password' },
@@ -86,11 +89,12 @@ const VirtualAccOpening = (() => {
             { selector: '#email_consent' },
             { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
             { request_field: 'new_account_virtual', value: 1 },
+            { request_field: 'signup_device',       value: signup_device },
         ];
 
         if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium',   value: utm_data.utm_medium });
         if (utm_data.utm_campaign) req.push({ request_field: 'utm_campaign', value: utm_data.utm_campaign });
-
+        if (date_first_contact)    req.push({ request_field: 'date_first_contact',  value: date_first_contact });
         const gclid = LocalStore.get('gclid');
         if (gclid) req.push({ request_field: 'gclid_url', value: gclid });
 
@@ -110,6 +114,8 @@ const VirtualAccOpening = (() => {
             State.set('skip_response', 'authorize');
             BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
                 if (!response_auth.error) {
+                    LocalStore.remove('date_first_contact');
+                    LocalStore.remove('signup_device');
                     Client.processNewAccount({
                         email       : new_account.email,
                         loginid     : new_account.client_id,
@@ -123,23 +129,23 @@ const VirtualAccOpening = (() => {
         }
 
         const showInvalidTokenMessage = () => {
-            const message = 'Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.';
+            const message = localizeKeepPlaceholders('Your token has expired or is invalid. Please click <a href="[_1]">here</a> to restart the verification process.');
             return showFormError(message, '');
         };
 
         switch (error.code) {
             case 'InputValidationFailed': {
-                return getPropertyValue(response, ['error', 'details', 'verification_code']) ? showInvalidTokenMessage() : showError(error.message);
+                return Utility.getPropertyValue(response, ['error', 'details', 'verification_code']) ? showInvalidTokenMessage() : showError(error.message);
             }
             case 'InvalidToken': {
                 return showInvalidTokenMessage();
             }
             case 'duplicate email': {
-                const message = 'The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.';
+                const message = localizeKeepPlaceholders('The email address provided is already in use. If you forgot your password, please try our <a href="[_1]">password recovery tool</a> or contact our customer service.');
                 return showFormError(message, 'user/lost_passwordws');
             }
             case 'PasswordError': {
-                return showError('Password is not strong enough.');
+                return showError(localize('Password is not strong enough.'));
             }
             default: {
                 return showError(error.message);
@@ -148,11 +154,11 @@ const VirtualAccOpening = (() => {
     };
 
     const showFormError = (message, url) => {
-        $('#virtual-form').html($('<p/>', { html: localize(message, [urlFor(url)]) }));
+        $('#virtual-form').html($('<p/>', { html: Utility.template(message, [urlFor(url)]) }));
     };
 
-    const showError = (message) => {
-        $('#error-account-opening').setVisibility(1).text(localize(message));
+    const showError = (localized_text) => {
+        $('#error-account-opening').setVisibility(1).text(localized_text);
     };
 
     return {

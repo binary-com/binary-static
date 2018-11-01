@@ -40,12 +40,11 @@ const ValuesBox = ({ subheader, icon, paragraph }) => (
 
 const Box = ({ children }) => (
     <div className='gr-6 gr-12-m'>
-        <div className='gr-row'>
+        <div className='gr-row full-height'>
             {children}
         </div>
     </div>
 );
-
 
 const Index = () => (
     <div className='about-us box-inlay-borders static_full'>

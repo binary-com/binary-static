@@ -224,16 +224,13 @@ const BinaryOptions = () => {
                             <ListStrong header={it.L('Higher/Lower')} text={it.L('Predict that the market will end higher or lower than a price target')} />
                         </SectionLarge>
 
-                        <SectionLarge dataAnchor='touch-no-touch' header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Choose the Touch/No touch trade if you want to predict the market touching or not touching a target any time during the contract period.')} />
+                        <SectionLarge dataAnchor='touch-no-touch' header={it.L('Touch/No touch')} image='types-of-trades/touch_notouch' text={it.L('Predict that the market will touch or not touch a target any time during the contract period.')} />
 
                         <SectionLarge dataAnchor='in-out' header={it.L('In/Out')} image='types-of-trades/in_out' text={it.L('There are two types of In/Out trades:')}>
                             <ListStrong header={it.L('Ends Between/Ends Outside')}  text={it.L('Predict that the market stops inside or outside two price targets at the end of the time period')} />
                             <ListStrong header={it.L('Stays Between/Goes Outside')} text={it.L('Predict that the market stays inside or goes outside two price targets any time during the contract period')} />
                         </SectionLarge>
-                        <SectionLarge dataAnchor='asians' header={it.L('Asians')} image='types-of-trades/asians' text={it.L('There are two types of Asians trades:')}>
-                            <ListStrong header={it.L('Up')}   text={it.L('Predict that the market will end higher than the average price')} />
-                            <ListStrong header={it.L('Down')} text={it.L('Predict that the market will end lower than the average price')} />
-                        </SectionLarge>
+                        <SectionLarge dataAnchor='asians' header={it.L('Asians')} image='types-of-trades/asians' text={it.L('Predict that the market will end higher or lower than the average price.')} />
                         <SectionLarge dataAnchor='digits' header={it.L('Digits')} image='types-of-trades/digits' text={it.L('Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:')}>
                             <ListStrong header={it.L('Matches/Differs')} text={it.L('Predict that the last digit will match or not match')} />
                             <ListStrong header={it.L('Even/Odd')}        text={it.L('Predict that the last digit is an even number or odd number after the last tick')} />
@@ -299,9 +296,9 @@ const BinaryOptions = () => {
 
                                 { word: it.L('Entry spot price'),    dataAnchor: 'entry-spot-price',    definition: it.L('The entry spot price is the starting price of the trade purchased by a trader.') },
                                 { word: it.L('Expiry price'),        dataAnchor: 'expiry-price',        definition: it.L('The expiry price is the price of the underlying when the contract expires.') },
-                                { word: it.L('Forex'),               dataAnchor: 'barriers',            definition: it.L('In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar.') },
-                                { word: it.L('GMT'),                 dataAnchor: 'forex',               definition: it.L('GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the [_1] site use GMT all year round.', it.website_name) },
-                                { word: it.L('Higher/Lower trades'), dataAnchor: 'gmt',                 definition: it.L('These are trades where the trader predicts if a market will finish higher or lower than a specified price target.') },
+                                { word: it.L('Forex'),               dataAnchor: 'forex',               definition: it.L('In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar.') },
+                                { word: it.L('GMT'),                 dataAnchor: 'gmt',                 definition: it.L('GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the [_1] site use GMT all year round.', it.website_name) },
+                                { word: it.L('Higher/Lower trades'), dataAnchor: 'barriers',            definition: it.L('These are trades where the trader predicts if a market will finish higher or lower than a specified price target.') },
                                 { word: it.L('Indices'),             dataAnchor: 'indices',             definition: it.L('Stock market indices measure the value of a selection of companies in the stock market.') },
                                 { word: it.L('In/Out trades'),       dataAnchor: 'in-out-trades',       definition: it.L('These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also \'Stays Between/Goes Outside trades\').') },
                                 { word: it.L('Market exit price'),   dataAnchor: 'market-exit-price',   definition: it.L('The market exit price is the price in effect at the end of the contract period.') },
