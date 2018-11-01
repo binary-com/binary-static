@@ -151,10 +151,6 @@ export default class TradeStore extends BaseStore {
         }
 
         if (!this.symbol) {
-            const active_symbols = await WS.activeSymbols();
-
-            const is_invalid_symbol = !!query_string_values.symbol &&
-                !active_symbols.active_symbols.find(s => s.symbol === query_string_values.symbol);
             if (is_invalid_symbol) {
                 URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
                 query_string_values = this.updateQueryString();
