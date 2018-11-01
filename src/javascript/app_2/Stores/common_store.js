@@ -20,6 +20,11 @@ export default class CommonStore extends BaseStore {
     @observable is_socket_opened = false;
 
     @action.bound
+    setIsSocketOpened(is_socket_opened) {
+        this.is_socket_opened = is_socket_opened;
+    }
+
+    @action.bound
     setError(has_error, error) {
         this.has_error = has_error;
         this.error     = {

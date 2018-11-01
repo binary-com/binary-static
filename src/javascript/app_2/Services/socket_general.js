@@ -1,19 +1,23 @@
-import { action, flow, runInAction } from 'mobx';
-import Client                        from '_common/base/client_base';
-import { setCurrencies }             from '_common/base/currency_base';
-import Login                         from '_common/base/login';
-import ServerTime                    from '_common/base/server_time';
-import BinarySocket                  from '_common/base/socket_base';
-import { State }                     from '_common/storage';
-import { getPropertyValue }          from '_common/utility';
-import { requestLogout }             from './logout';
-import WS                            from './ws_methods';
+import { action, flow }     from 'mobx';
+import Client               from '_common/base/client_base';
+import { setCurrencies }    from '_common/base/currency_base';
+import Login                from '_common/base/login';
+import ServerTime           from '_common/base/server_time';
+import BinarySocket         from '_common/base/socket_base';
+import { State }            from '_common/storage';
+import { getPropertyValue } from '_common/utility';
+import { requestLogout }    from './logout';
+import WS                   from './ws_methods';
 
 let client_store,
     common_store;
 
 // TODO: update commented statements to the corresponding functions from app_2
 const BinarySocketGeneral = (() => {
+    const onDisconnect = () => {
+        common_store.setIsSocketOpened(false);
+    };
+
     const onOpen = (is_ready) => {
         // Header.hideNotification();
         if (is_ready) {
@@ -25,7 +29,7 @@ const BinarySocketGeneral = (() => {
                 WS.subscribeWebsiteStatus(ResponseHandlers.websiteStatus);
             }
             ServerTime.init(action('setTime', () => { common_store.server_time = ServerTime.get(); }));
-            runInAction(() => { common_store.is_socket_opened = true; });
+            common_store.setIsSocketOpened(true);
         }
     };
 
@@ -129,10 +133,6 @@ const BinarySocketGeneral = (() => {
             // no default
         }
     };
-
-    const onDisconnect = action(() => {
-        common_store.is_socket_opened = false;
-    });
 
     const init = (store) => {
         client_store = store.client;
