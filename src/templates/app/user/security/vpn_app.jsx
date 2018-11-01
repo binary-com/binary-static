@@ -15,7 +15,7 @@ const Step = ({
 );
 const VPNApp = () => (
     <div className='vpn-app'>
-        <h1>{it.L('VPN app')}</h1>
+        <h1>{it.L('VPN App')}</h1>
         <p>{it.L('Establish a secure, encrypted connection to a virtual private network (VPN) server using our VPN app to protect your data and privacy.')}</p>
         <div className='center-text'>
             <h2>{it.L('How it works')}</h2>
