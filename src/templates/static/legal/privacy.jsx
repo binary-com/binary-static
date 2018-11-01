@@ -1,25 +1,5 @@
 import React from 'react';
 
-const BinaryVPNPolicy = () => (
-    <React.Fragment>
-        <h2 data-anchor='binary-vpn'>{it.L('[_1] VPN', it.website_name)}</h2>
-        <p>{it.L('We recognize the importance of security and protecting your personal information. As such, we have outlined our privacy practices regarding your use of the [_1] VPN app.', it.website_name)}</p>
-
-        <h2 data-anchor='privacy'>{it.L('Privacy')}</h2>
-        <p>{it.L('We respect the privacy of our app users. [_1] does not monitor you or your use of the app, including its contents unless we have reason to believe that such action is necessary to conform to legal requirements or comply with legal processes.', it.website_name)}</p>
-
-        <h2 data-anchor='data-collection'>{it.L('Data Collection')}</h2>
-        <p>{it.L('This app does not collect personally identifiable information about you.')}</p>
-        <p>{it.L('However, please note that the app may generate log files and record the IP addresses of the websites you visited, login attempts, and device information such as the manufacturer, model, operating system and browser. This information is gathered in the unlikely event that an investigation is required.')}</p>
-
-        <h2 data-anchor='indemnification'>{it.L('Indemnification')}</h2>
-        <p>{it.L('You further agree to indemnify [_1], its parents, subsidiaries, affiliates, officers and employees against any claims, demands, or damages, including reasonable attorney fees that are asserted by any third party due to, or arising out of, your use of the app.', it.website_name)}</p>
-
-        <h2 data-anchor='changes-to-privacy-notice'>{it.L('Changes to this privacy notice')}</h2>
-        <p>{it.L('If we update this privacy notice, we will notify you of any changes and request your further consent.')}</p>
-    </React.Fragment>
-);
-
 const Privacy = () => (
     <div>
         <h2 data-anchor='security-and-privacy'>{it.L('Security and Privacy')}</h2>
@@ -92,8 +72,6 @@ const Privacy = () => (
             <h2 data-anchor='complaints'>{it.L('Complaints')}</h2>
             <p>{it.L('For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our [_1]Complaints and Disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions?anchor=complaints-and-disputes#legal-binary')}>`, '</a>')}</p>
         </div>
-        <br />
-        <BinaryVPNPolicy />
     </div>
 );
 
