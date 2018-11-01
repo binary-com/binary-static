@@ -58,7 +58,7 @@ const JobApplicantPrivacyPolicy = () =>  (
         <p>{it.L('The applicant has the right to lodge a complaint to the Data Protection Commissioner in Malta should the applicant believe that the Company has failed to comply with the requirements of EU General Data Protection Regulation 2016/679 or the Data Protection Act 2018 with regards to the applicant\'s personal data.')}</p>
 
         <h2 data-anchor='changes-to-this-policy'>{it.L('Changes to this privacy policy')}</h2>
-        <p>{it.L('The Company reserves the right to update this privacy policy at any time and will provide the applicant with a new privacy policy when substantial amendments and updates are made. The Company may also notify the applicant in other ways from time to time about the processing of your the applicant\'s personal information.')}</p>
+        <p>{it.L('The Company reserves the right to update this privacy policy at any time and will provide the applicant with a new privacy policy when substantial amendments and updates are made. The Company may also notify the applicant in other ways from time to time about the processing of the applicant\'s personal information.')}</p>
         <p>{it.L('Should the applicant have any questions about this privacy policy or if the applicant would like to exercise any of their rights, they should contact the Company\'s Data Protection Officer (DPO) by [_1].', '<a href="mailto:dpo@binary.com">dpo@binary.com</a>')}</p>
     </div>
 );
