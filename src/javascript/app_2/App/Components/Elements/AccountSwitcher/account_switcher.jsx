@@ -2,11 +2,10 @@ import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import Client            from '_common/base/client_base';
-import GTM               from '_common/base/gtm';
-import SocketCache       from '_common/base/socket_cache';
 import { localize }      from '_common/localize';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import { requestLogout } from 'Services';
+import { connect }       from 'Stores/connect';
 import { UpgradeButton } from './upgrade_button.jsx';
 
 const getAccountInfo = (loginid) => {
@@ -50,20 +49,10 @@ class AccountSwitcher extends React.Component {
         this.wrapper_ref = node;
     };
 
-    switchAccount = (loginid) => {
-        if (!loginid || !Client.get('token', loginid)) {
-            return;
-        }
-        sessionStorage.setItem('active_tab', '1');
-        // set local storage
+    doSwitch(loginid, client) {
         this.props.toggle();
-        GTM.setLoginFlag();
-        Client.set('cashier_confirmed', 0);
-        Client.set('accepted_bch', 0);
-        Client.set('loginid', loginid);
-        SocketCache.clear();
-        window.location.reload();
-    };
+        client.switchAccount(loginid);
+    }
 
     handleClickOutside = (event) => {
         const accounts_toggle_btn = !(event.target.classList.contains('acc-info'));
@@ -83,7 +72,7 @@ class AccountSwitcher extends React.Component {
                     <React.Fragment key={account.loginid}>
                         <div
                             className={classNames('acc-switcher-account', account.icon)}
-                            onClick={this.switchAccount.bind(null, account.loginid)}
+                            onClick={() => this.doSwitch(account.loginid, this.props.client)}
                         >
                             <span className='acc-switcher-id'>{account.loginid}</span>
                             <span className='acc-switcher-type'>{account.title}</span>
@@ -91,9 +80,9 @@ class AccountSwitcher extends React.Component {
                     </React.Fragment>
                 ))}
                 {this.props.is_upgrade_enabled &&
-                    <div className='acc-button'>
-                        <UpgradeButton onClick={this.props.onClickUpgrade} />
-                    </div>
+                <div className='acc-button'>
+                    <UpgradeButton onClick={this.props.onClickUpgrade} />
+                </div>
                 }
                 <div className='acc-logout' onClick={requestLogout}>
                     <span className='acc-logout-text'>{localize('Log out')}</span>
@@ -105,10 +94,18 @@ class AccountSwitcher extends React.Component {
 }
 
 AccountSwitcher.propTypes = {
+    client            : PropTypes.object,
     is_upgrade_enabled: PropTypes.bool,
     is_visible        : PropTypes.bool,
+    modules           : PropTypes.object,
     onClickUpgrade    : PropTypes.func,
     toggle            : PropTypes.func,
 };
 
-export { AccountSwitcher };
+const account_switcher = connect(
+    ({ client, modules }) => ({
+        client, modules,
+    }),
+)(AccountSwitcher);
+
+export { account_switcher as AccountSwitcher };

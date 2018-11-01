@@ -12,12 +12,12 @@ import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
 import ThemeWrapper                from './Containers/Layout/theme_wrapper.jsx';
 import Routes                      from './Containers/Routes/routes.jsx';
+import DenialOfServiceModal        from './Components/Elements/DenialOfServiceModal';
 
 // Conditionally loading mobx only on development builds.
 // see https://github.com/mobxjs/mobx-react-devtools/issues/66
 const { Fragment } = React;
-const DevTools = process.env.NODE_ENV !== 'production' ? require('mobx-react-devtools').default : Fragment;
-
+const DevTools     = process.env.NODE_ENV !== 'production' ? require('mobx-react-devtools').default : Fragment;
 
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
@@ -33,6 +33,7 @@ const App = ({ root_store }) => (
                         <PortfolioDrawer />
                         <ToastMessage position={POSITIONS.TOP_RIGHT} />
                     </AppContents>
+                    <DenialOfServiceModal />
                 </ErrorBoundary>
 
                 <footer id='footer'>

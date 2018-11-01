@@ -3,7 +3,8 @@ import {
     intercept,
     observable,
     reaction,
-    toJS }               from 'mobx';
+    toJS,
+}                        from 'mobx';
 import { isEmptyObject } from '_common/utility';
 import Validator         from 'Utils/Validator';
 
@@ -19,6 +20,7 @@ export default class BaseStore {
 
     @observable
     validation_rules = {};
+
 
     /**
      * An enum object to define LOCAL_STORAGE and SESSION_STORAGE
@@ -58,7 +60,7 @@ export default class BaseStore {
             writable  : true,
         });
 
-        this.root_store = root_store;
+        this.root_store                 = root_store;
         this.local_storage_properties   = local_storage_properties || [];
         this.session_storage_properties = session_storage_properties || [];
         this.setValidationRules(validation_rules);
@@ -85,7 +87,7 @@ export default class BaseStore {
         if (properties && properties.length) {
             snapshot = properties.reduce(
                 (result, p) => Object.assign(result, { [p]: snapshot[p] }),
-                {}
+                {},
             );
         }
 
@@ -101,7 +103,7 @@ export default class BaseStore {
         if (this.local_storage_properties.length) {
             reaction(
                 () => this.local_storage_properties.map(i => this[i]),
-                () => this.saveToStorage(this.local_storage_properties, BaseStore.STORAGES.LOCAL_STORAGE)
+                () => this.saveToStorage(this.local_storage_properties, BaseStore.STORAGES.LOCAL_STORAGE),
             );
         }
     }
@@ -115,7 +117,7 @@ export default class BaseStore {
         if (this.session_storage_properties.length) {
             reaction(
                 () => this.session_storage_properties.map(i => this[i]),
-                () => this.saveToStorage(this.session_storage_properties, BaseStore.STORAGES.SESSION_STORAGE)
+                () => this.saveToStorage(this.session_storage_properties, BaseStore.STORAGES.SESSION_STORAGE),
             );
         }
     }
@@ -143,7 +145,7 @@ export default class BaseStore {
      */
     @action
     retrieveFromStorage() {
-        const local_storage_snapshot = JSON.parse(localStorage.getItem(this.constructor.name, {}));
+        const local_storage_snapshot   = JSON.parse(localStorage.getItem(this.constructor.name, {}));
         const session_storage_snapshot = JSON.parse(sessionStorage.getItem(this.constructor.name, {}));
 
         const snapshot = { ...local_storage_snapshot, ...session_storage_snapshot };
@@ -170,7 +172,7 @@ export default class BaseStore {
      *
      */
     @action
-    setValidationRules(rules = {}){
+    setValidationRules(rules = {}) {
         Object.keys(rules).forEach(key => {
             this.addRule(key, rules[key]);
         });
@@ -184,7 +186,7 @@ export default class BaseStore {
      *
      */
     @action
-    addRule(property, rules){
+    addRule(property, rules) {
         this.validation_rules[property] = rules;
 
         intercept(this, property, change => {
@@ -214,7 +216,7 @@ export default class BaseStore {
         const validator = new Validator(
             inputs,
             validation_rules,
-            this
+            this,
         );
 
         validator.isPassed();
