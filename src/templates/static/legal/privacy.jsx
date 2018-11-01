@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BinaryVPNPolicy = () => (
-    <React.Fragment>
+    <div className='eu-hide'>
         <h2 data-anchor='binary-vpn'>{it.L('[_1] VPN', it.website_name)}</h2>
         <p>{it.L('We recognize the importance of security and protecting your personal information. As such, we have outlined our privacy practices regarding your use of the [_1] VPN app.', it.website_name)}</p>
 
@@ -17,7 +17,7 @@ const BinaryVPNPolicy = () => (
 
         <h2 data-anchor='changes-to-privacy-notice'>{it.L('Changes to this privacy notice')}</h2>
         <p>{it.L('If we update this privacy notice, we will notify you of any changes and request your further consent.')}</p>
-    </React.Fragment>
+    </div>
 );
 
 const Privacy = () => (
