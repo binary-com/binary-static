@@ -63,7 +63,8 @@ const VPNApp = () => (
                         <a
                             className='button'
                             href='https://play.google.com/store/apps/details?id=com.binary.outline.android.client'
-                            rel='nofollow noopener'
+                            rel='noopener noreferrer nofollow'
+                            target='_blank'
                             title={it.L('Download Binary VPN app For Android')}
                         >
                             <img src={it.url_for('images/pages/vpn/btn-android.svg')} />
