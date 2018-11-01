@@ -2,12 +2,14 @@ import debounce                          from 'lodash.debounce';
 import {
     action,
     observable,
+    runInAction,
     reaction }                           from 'mobx';
 import Client                            from '_common/base/client_base';
 import {
     getMinPayout,
     isCryptocurrency  }                  from '_common/base/currency_base';
 import BinarySocket                      from '_common/base/socket_base';
+import { localize }                      from '_common/localize';
 import { cloneObject, isEmptyObject }    from '_common/utility';
 import { WS }                            from 'Services';
 import GTM                               from 'Utils/gtm';
@@ -119,11 +121,26 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     async prepareTradeStore() {
-        const query_string_values = this.updateQueryString();
+        let query_string_values = this.updateQueryString();
         this.smart_chart = this.root_store.modules.smart_chart;
+        const active_symbols = await WS.activeSymbols();
+
+        // Checks for finding out that the current account has access to the defined symbol in quersy string or not.
+        const is_invalid_symbol = !!query_string_values.symbol &&
+            !active_symbols.active_symbols.find(s => s.symbol === query_string_values.symbol);
+
+        // Changes the symbol in query string to default symbol since the account doesn't have access to the defined symbol.
+        if (is_invalid_symbol) {
+            this.root_store.ui.addToastMessage({
+                message: localize('Certain trade parameters have been changed due to your account settings.'),
+                type   : 'info',
+            });
+            URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
+            query_string_values = this.updateQueryString();
+        }
 
         if (!this.symbol) {
-            const active_symbols = await WS.activeSymbols();
+
             await this.processNewValuesAsync({
                 symbol: pickDefaultSymbol(active_symbols.active_symbols),
                 ...query_string_values,
@@ -131,8 +148,8 @@ export default class TradeStore extends BaseStore {
         }
 
         if (this.symbol) {
-            ContractType.buildContractTypesConfig(this.symbol).then(action(() => {
-                this.processNewValuesAsync({
+            ContractType.buildContractTypesConfig(query_string_values.symbol || this.symbol).then(action(async () => {
+                await this.processNewValuesAsync({
                     ...ContractType.getContractValues(this),
                     ...ContractType.getContractCategories(),
                     ...query_string_values,
@@ -142,11 +159,10 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    async init() {
+    init  = async () => {
         // To be sure that the website_status response has been received before processing trading page.
-        BinarySocket.wait('website_status')
-            .then(() => this.prepareTradeStore());
-    }
+        await BinarySocket.wait('website_status');
+    };
 
     @action.bound
     onChange(e) {
@@ -170,7 +186,7 @@ export default class TradeStore extends BaseStore {
                 if (this.proposal_info[type].id !== proposal_id) {
                     throw new Error('Proposal ID does not match.');
                 }
-                if (response.buy && !Client.get('is_virtual')) {
+                if (response.buy) {
                     const contract_data = {
                         ...this.proposal_requests[type],
                         ...this.proposal_info[type],
@@ -229,8 +245,8 @@ export default class TradeStore extends BaseStore {
     }
 
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
-        
-        // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa. The source of default values is the website_status response.
+        // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
+        // The source of default values is the website_status response.
         if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
             obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
@@ -264,7 +280,7 @@ export default class TradeStore extends BaseStore {
 
             this.updateStore({
                 ...snapshot,
-                ...(this.is_query_string_applied ? {} : query_string_values),
+                ...(this.is_query_string_applied ? {} : query_string_values), // Applies the query string values again to set barriers.
             });
 
             this.is_query_string_applied = true;
@@ -355,7 +371,7 @@ export default class TradeStore extends BaseStore {
             return;
         }
 
-        const index = this.validation_rules.duration.findIndex(item => item[0] === 'number');
+        const index = this.validation_rules.duration.rules.findIndex(item => item[0] === 'number');
         const limits = this.duration_min_max[this.contract_expiry_type] || false;
 
         if (limits) {
@@ -365,22 +381,27 @@ export default class TradeStore extends BaseStore {
             };
 
             if (index > -1) {
-                this.validation_rules.duration[index][1] = duration_options;
+                this.validation_rules.duration.rules[index][1] = duration_options;
             } else {
-                this.validation_rules.duration.push(['number', duration_options]);
+                this.validation_rules.duration.rules.push(['number', duration_options]);
             }
             this.validateProperty('duration', this.duration);
         }
     }
 
     @action.bound
-    onMount() {
-        this.is_trade_component_mounted = true;
+    async onMount() {
+        await this.prepareTradeStore();
+        this.debouncedProposal();
+        runInAction(() => {
+            this.is_trade_component_mounted = true;
+        });
         this.updateQueryString();
     }
 
     @action.bound
     onUnmount() {
+        WS.forgetAll('proposal');
         this.is_trade_component_mounted = false;
     }
 }
