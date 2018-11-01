@@ -37,6 +37,9 @@ class EventBus {
         }
 
         this.eventList[event].forEach(listener => listener.callback(payload));
+
+        // remove once methods.
+        this.eventList[event] = this.eventList[event].filter(listener => !listener.once);
         return true;
     }
 }
