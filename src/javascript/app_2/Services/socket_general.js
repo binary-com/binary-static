@@ -1,13 +1,13 @@
-import { action, flow }     from 'mobx';
-import Client               from '_common/base/client_base';
-import { setCurrencies }    from '_common/base/currency_base';
-import Login                from '_common/base/login';
-import ServerTime           from '_common/base/server_time';
-import BinarySocket         from '_common/base/socket_base';
-import { State }            from '_common/storage';
-import { getPropertyValue } from '_common/utility';
-import { requestLogout }    from './logout';
-import WS                   from './ws_methods';
+import { action, flow, runInAction } from 'mobx';
+import Client                        from '_common/base/client_base';
+import { setCurrencies }             from '_common/base/currency_base';
+import Login                         from '_common/base/login';
+import ServerTime                    from '_common/base/server_time';
+import BinarySocket                  from '_common/base/socket_base';
+import { State }                     from '_common/storage';
+import { getPropertyValue }          from '_common/utility';
+import { requestLogout }             from './logout';
+import WS                            from './ws_methods';
 
 let client_store,
     common_store;
@@ -25,6 +25,7 @@ const BinarySocketGeneral = (() => {
                 WS.subscribeWebsiteStatus(ResponseHandlers.websiteStatus);
             }
             ServerTime.init(action('setTime', () => { common_store.server_time = ServerTime.get(); }));
+            runInAction(() => { common_store.is_socket_opened = true; });
         }
     };
 
@@ -129,11 +130,16 @@ const BinarySocketGeneral = (() => {
         }
     };
 
+    const onDisconnect = action(() => {
+        common_store.is_socket_opened = false;
+    });
+
     const init = (store) => {
         client_store = store.client;
         common_store = store.common;
 
         return {
+            onDisconnect,
             onOpen,
             onMessage,
         };

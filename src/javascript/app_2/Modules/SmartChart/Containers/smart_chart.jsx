@@ -42,7 +42,7 @@ class Chart extends React.Component {
                 startEpoch={this.props.start_epoch}
                 symbol={this.props.symbol}
                 topWidgets={this.topWidgets}
-                isConnectionOpened={this.props.is_network_online}
+                isConnectionOpened={this.props.is_socket_opened}
             >
                 { this.props.markers_array.map((marker, idx) => (
                     <ChartMarker
@@ -78,15 +78,15 @@ Chart.propTypes = {
 
 export default connect(
     ({ modules, ui, common }) => ({
-        is_network_online: common.is_network_online,
-        barriers_array   : modules.smart_chart.barriers_array,
-        is_title_enabled : modules.smart_chart.is_title_enabled,
-        markers_array    : modules.smart_chart.markers_array,
-        onUnmount        : modules.smart_chart.onUnmount,
-        settings         : modules.smart_chart.settings,
-        wsForget         : modules.smart_chart.wsForget,
-        wsSendRequest    : modules.smart_chart.wsSendRequest,
-        wsSubscribe      : modules.smart_chart.wsSubscribe,
-        is_mobile        : ui.is_mobile,
+        is_socket_opened: common.is_socket_opened,
+        barriers_array  : modules.smart_chart.barriers_array,
+        is_title_enabled: modules.smart_chart.is_title_enabled,
+        markers_array   : modules.smart_chart.markers_array,
+        onUnmount       : modules.smart_chart.onUnmount,
+        settings        : modules.smart_chart.settings,
+        wsForget        : modules.smart_chart.wsForget,
+        wsSendRequest   : modules.smart_chart.wsSendRequest,
+        wsSubscribe     : modules.smart_chart.wsSubscribe,
+        is_mobile       : ui.is_mobile,
     })
 )(Chart);
