@@ -5,7 +5,7 @@ const State         = require('../storage').State;
 const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
-    const available_countries = ['in', 'lk', 'ng', 'za'];
+    const available_countries = ['at', 'au', 'gb', 'in', 'lk', 'ng', 'nl', 'nz', 'za'];
 
     const init = () => {
         BinarySocket.wait('website_status').then(() => {
