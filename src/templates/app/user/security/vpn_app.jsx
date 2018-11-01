@@ -3,19 +3,19 @@ import React from 'react';
 const Step = ({
     circle_number,
     text,
-    imgSrc,
+    img_src,
 }) => (
     <div className='step'>
         <div className='circle'>{circle_number}</div>
         <div className='content gr-row gr-padding-10 gr-row-align-between'>
             <p>{text}</p>
-            <img className='vpn-app-icon' src={imgSrc} />
+            <img className='vpn-app-icon' src={it.url_for(`images/pages/vpn/${img_src}`)} />
         </div>
     </div>
 );
 const VPNApp = () => (
     <div className='vpn-app'>
-        <h1>VPN app</h1>
+        <h1>{it.L('VPN app')}</h1>
         <p>{it.L('Establish a secure, encrypted connection to a virtual private network (VPN) server using our VPN app to protect your data and privacy.')}</p>
         <div className='center-text'>
             <h2>{it.L('How it works')}</h2>
@@ -24,17 +24,17 @@ const VPNApp = () => (
                 <Step
                     circle_number='1'
                     text={it.L('Download our VPN app for your preferred device')}
-                    imgSrc={it.url_for('images/pages/vpn/ic-devices.svg')}
+                    img_src='ic-devices.svg'
                 />
                 <Step
                     circle_number='2'
                     text={it.L('Activate the VPN service on the app')}
-                    imgSrc={it.url_for('images/pages/vpn/ic-activate.svg')}
+                    img_src='ic-activate.svg'
                 />
                 <Step
                     circle_number='3'
                     text={it.L('Browse and trade securely on your preferred device')}
-                    imgSrc={it.url_for('images/pages/vpn/ic-browse.svg')}
+                    img_src='ic-browse.svg'
                 />
             </div>
         </div>
