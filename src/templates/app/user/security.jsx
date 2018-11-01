@@ -57,7 +57,7 @@ const Security = () => (
 
                 <Column url='cloudflare_dns' image='1111' header={'1.1.1.1'} text={it.L('Use Cloudflare’s public DNS service for faster and more secure browsing.')} />
 
-                <Column url='vpn_app' image='2fa' header={'VPN'} text={it.L('Establish a secure Internet connection and protect your privacy.')} />
+                <Column url='vpn_app' image='vpn' header={'VPN'} text={it.L('Establish a secure Internet connection and protect your privacy.')} />
             </div>
         </div>
     </React.Fragment>
