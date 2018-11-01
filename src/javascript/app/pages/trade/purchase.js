@@ -17,6 +17,7 @@ const urlFor                   = require('../../../_common/url').urlFor;
 const createElement            = require('../../../_common/utility').createElement;
 const getPropertyValue         = require('../../../_common/utility').getPropertyValue;
 const template                 = require('../../../_common/utility').template;
+const Login                    = require('../../../_common/base/login');
 
 /*
  * Purchase object that handles all the functions related to
@@ -36,22 +37,23 @@ const Purchase = (() => {
         purchase_data = details;
         status        = '';
 
-        const receipt            = details.buy;
-        const passthrough        = details.echo_req.passthrough;
-        const container          = CommonFunctions.getElementById('contract_confirmation_container');
-        const message_container  = CommonFunctions.getElementById('confirmation_message');
-        const heading            = CommonFunctions.getElementById('contract_purchase_heading');
-        const descr              = CommonFunctions.getElementById('contract_purchase_descr');
-        const barrier_element    = CommonFunctions.getElementById('contract_purchase_barrier');
-        const reference          = CommonFunctions.getElementById('contract_purchase_reference');
-        const chart              = CommonFunctions.getElementById('trade_tick_chart');
-        const payout             = CommonFunctions.getElementById('contract_purchase_payout');
-        const cost               = CommonFunctions.getElementById('contract_purchase_cost');
-        const profit             = CommonFunctions.getElementById('contract_purchase_profit');
-        const spots              = CommonFunctions.getElementById('contract_purchase_spots');
-        const confirmation_error = CommonFunctions.getElementById('confirmation_error');
-        const contracts_list     = CommonFunctions.getElementById('contracts_list');
-        const button             = CommonFunctions.getElementById('contract_purchase_button');
+        const receipt             = details.buy;
+        const passthrough         = details.echo_req.passthrough;
+        const container           = CommonFunctions.getElementById('contract_confirmation_container');
+        const message_container   = CommonFunctions.getElementById('confirmation_message');
+        const heading             = CommonFunctions.getElementById('contract_purchase_heading');
+        const descr               = CommonFunctions.getElementById('contract_purchase_descr');
+        const barrier_element     = CommonFunctions.getElementById('contract_purchase_barrier');
+        const reference           = CommonFunctions.getElementById('contract_purchase_reference');
+        const chart               = CommonFunctions.getElementById('trade_tick_chart');
+        const payout              = CommonFunctions.getElementById('contract_purchase_payout');
+        const cost                = CommonFunctions.getElementById('contract_purchase_cost');
+        const profit              = CommonFunctions.getElementById('contract_purchase_profit');
+        const spots               = CommonFunctions.getElementById('contract_purchase_spots');
+        const confirmation_error  = CommonFunctions.getElementById('confirmation_error');
+        const authorization_error = CommonFunctions.getElementById('authorization_error');
+        const contracts_list      = CommonFunctions.getElementById('contracts_list');
+        const button              = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
         const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
@@ -62,23 +64,31 @@ const Purchase = (() => {
         if (error) {
             container.style.display = 'block';
             message_container.hide();
-            confirmation_error.show();
-            let message = error.message;
-            if (/RestrictedCountry/.test(error.code)) {
-                let additional_message = '';
-                if (/FinancialBinaries/.test(error.code)) {
-                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
-                } else if (/Random/.test(error.code)) {
-                    additional_message = localize('Try our other markets.');
+            if (/AuthorizationRequired/.test(error.code)) {
+                $(authorization_error).setVisibility(true);
+                const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
+                authorization_error_btn_login.removeEventListener('click', loginOnClick);
+                authorization_error_btn_login.addEventListener('click', loginOnClick);
+            } else {
+                $(confirmation_error).setVisibility(true);
+                let message = error.message;
+                if (/RestrictedCountry/.test(error.code)) {
+                    let additional_message = '';
+                    if (/FinancialBinaries/.test(error.code)) {
+                        additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
+                    } else if (/Random/.test(error.code)) {
+                        additional_message = localize('Try our other markets.');
+                    }
+                    message = `${error.message}. ${additional_message}`;
                 }
-                message = `${error.message}. ${additional_message}`;
+                CommonFunctions.elementInnerHtml(confirmation_error, message);
             }
-            CommonFunctions.elementInnerHtml(confirmation_error, message);
         } else {
             CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';
             message_container.show();
-            confirmation_error.hide();
+            $(authorization_error).setVisibility(false);
+            $(confirmation_error).setVisibility(false);
 
             CommonFunctions.elementTextContent(heading, localize('Contract Confirmation'));
             CommonFunctions.elementTextContent(descr, receipt.longcode);
@@ -211,6 +221,11 @@ const Purchase = (() => {
     };
 
     const makeBold = d => `<strong>${d}</strong>`;
+
+    const loginOnClick = (e) => {
+        e.preventDefault();
+        Login.redirectToLogin();
+    };
 
     const updateSpotList = () => {
         const $spots = $('#contract_purchase_spots');
