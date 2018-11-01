@@ -84,10 +84,19 @@ const SubscriptionManager = (() => {
         const subscribers = sub_info.subscribers;
         if (subscribers.length) {
             if (
-                // remove subscription info when first response returned error
-                // or not a subscription (i.e. subscribed proposal_open_contract for an expired contract)
-                // check msg_type to filter out those calls which don't return stream `id` on first response (tick_history, ...)
-                !sub_info.stream_id && (response.error || response.msg_type === sub_info.msg_type)
+                // it is the first response
+                !sub_info.stream_id &&
+                    (
+                        // the first response returned error
+                        response.error
+                        || (
+                            // not a subscription (i.e. subscribed proposal_open_contract for an expired contract)
+                            // also to filter out streams with no stream id but later it will continue streaming (i.e. proposal_open_contract without contract id)
+                            !isEmptyObject(response[response.msg_type]) &&
+                            // check msg_type to filter out those calls which don't return stream `id` on first response (tick_history, ...)
+                            response.msg_type === sub_info.msg_type
+                        )
+                    )
                 ||
                 // remove when response isn't first and response has no stream_id
                 !stream_id && sub_info.stream_id
