@@ -43,35 +43,25 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
 
 const visible_classname = 'data-show-visible';
 const mt_company_rule   = 'mtcompany';
+const mt_country        = 'mt';
 
 const ContentVisibility = (() => {
     const init = () => {
-        const is_client_logged_in = Client.isLoggedIn();
-        if (is_client_logged_in) {
-            BinarySocket.wait('authorize', 'landing_company').then(() => {
-                const is_virtual      = Client.get('is_virtual');
-                const current_landing_company_shortcode = is_virtual ?
-                    (State.getResponse('landing_company.gaming_company.shortcode') ||
-                    State.getResponse('landing_company.financial_company.shortcode')) :
-                    Client.get('landing_company_shortcode');
-                controlVisibility({
-                    is_client_logged_in,
-                    clients_country       : 'default',
-                    current_landing_company_shortcode,
-                    client_has_mt_company : MetaTrader.isEligible(),
-                    mt_financial_shortocde: State.getResponse('landing_company.mt_financial_company.shortcode'),
-                });
+        BinarySocket.wait('authorize', 'landing_company', 'website_status').then(() => {
+            const is_virtual                = Client.isLoggedIn() && Client.get('is_virtual');
+            const clients_country           = State.getResponse('website_status.clients_country');
+            const client_is_mt_country      = clients_country === mt_country;
+            const landing_company_shortcode = is_virtual ?
+                (State.getResponse('landing_company.financial_company.shortcode') ||
+                State.getResponse('landing_company.gaming_company.shortcode') ||
+                (client_is_mt_country ? 'malta' : 'default')) :
+                Client.get('landing_company_shortcode') || (client_is_mt_country ? 'malta' : 'default');
+            controlVisibility({
+                landing_company_shortcode,
+                client_has_mt_company : MetaTrader.isEligible(),
+                mt_financial_shortocde: State.getResponse('landing_company.mt_financial_company.shortcode'),
             });
-        } else {
-            BinarySocket.wait('website_status').then(() => {
-                controlVisibility({
-                    is_client_logged_in,
-                    clients_country                  : State.getResponse('website_status.clients_country'),
-                    current_landing_company_shortcode: 'default',
-                    client_has_mt_company            : false,
-                });
-            });
-        }
+        });
     };
 
     const generateParsingErrorMessage = (reason, attr_str) => (
@@ -98,27 +88,18 @@ const ContentVisibility = (() => {
             .filter(name => isMT5FinRule(name))
             .map(rule => parseMT5FinRule(rule));
 
-        const country_rules = names
-            .filter(name => isCountryRule(name))
-            .map(rule => parseCountryRule(rule));
-
         names = names.filter(name => !isMT5FinRule(name));
 
         return {
             is_exclude,
             names,
             mt5fin_rules,
-            country_rules,
         };
     };
 
     const isMT5FinRule = (rule) => /^mt5fin:/.test(rule);
 
     const parseMT5FinRule = (rule) => rule.match(/^mt5fin:(.+)$/)[1];
-
-    const isCountryRule = (rule) => /^country:/.test(rule);
-
-    const parseCountryRule = (rule) => rule.match(/^country:(.+)$/)[1];
 
     const shouldShowElement = (
         attr_str,
@@ -128,23 +109,18 @@ const ContentVisibility = (() => {
             is_exclude,
             mt5fin_rules,
             names,
-            country_rules,
         } = parseAttributeString(attr_str);
         const rule_set = new Set(names);
 
-        const rule_set_has_current = rule_set.has(params.current_landing_company_shortcode);
+        const rule_set_has_current = rule_set.has(params.landing_company_shortcode);
         const rule_set_has_mt      = rule_set.has(mt_company_rule);
 
         let show_element = false;
 
-        if (params.is_client_logged_in && params.client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
-        else if (params.is_client_logged_in && (is_exclude !== rule_set_has_current)) show_element = true;
+        if (params.client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
+        else if ((is_exclude !== rule_set_has_current)) show_element = true;
 
-        if (!params.is_client_logged_in &&
-          country_rules.length) show_element = is_exclude !== country_rules.includes(params.clients_country);
-
-        if (params.is_client_logged_in &&
-          mt5fin_rules.includes(params.mt_financial_shortocde)) show_element = !is_exclude;
+        if (mt5fin_rules.includes(params.mt_financial_shortocde)) show_element = !is_exclude;
 
         return show_element;
     };
