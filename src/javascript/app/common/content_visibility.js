@@ -118,7 +118,7 @@ const ContentVisibility = (() => {
         let show_element = false;
 
         if (params.client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
-        else if ((is_exclude !== rule_set_has_current)) show_element = true;
+        else if (is_exclude !== rule_set_has_current) show_element = true;
 
         if (mt5fin_rules.includes(params.mt_financial_shortocde)) show_element = !is_exclude;
 

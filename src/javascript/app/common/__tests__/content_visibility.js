@@ -57,113 +57,113 @@ describe('ContentVisibility', () => {
         it('works with inclusive landing companies', () => {
             expect(shouldShowElement('costarica', {
                 landing_company_shortcode: 'costarica',
-                client_has_mt_company: false,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(true);
             expect(shouldShowElement('costarica', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: false,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(false);
             expect(shouldShowElement('default, costarica', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: false,
-                mt_financial_shortocde: ''
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : '',
             })).to.equal(false);
             expect(shouldShowElement('default, malta', {
                 landing_company_shortcode: 'maltainvest',
-                client_has_mt_company: false,
-                mt_financial_shortocde: ''
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : '',
             })).to.equal(false);
             expect(shouldShowElement('costarica, malta', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: false,
-                mt_financial_shortocde: ''
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : '',
             })).to.equal(true);
         });
         it('works with exclusive landing companies', () => {
             expect(shouldShowElement('-costarica', {
                 landing_company_shortcode: 'costarica',
-                client_has_mt_company: false,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(false);
             expect(shouldShowElement('-costarica', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: false,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(true);
             expect(shouldShowElement('-maltainvest, -costarica', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: false,
-                mt_financial_shortocde: ''
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : '',
             })).to.equal(true);
             expect(shouldShowElement('-malta, -maltainvest', {
                 landing_company_shortcode: 'maltainvest',
-                client_has_mt_company: false,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(false);
             expect(shouldShowElement('-costarica, -malta', {
                 landing_company_shortcode: 'costarica',
-                client_has_mt_company: false,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(false);
         });
         it('works with inclusive mtcompany check', () => {
             expect(shouldShowElement('mtcompany', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: true,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : true,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(true);
             expect(shouldShowElement('malta, mtcompany', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: true,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : true,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(true);
             expect(shouldShowElement('maltainvest, mtcompany', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: false,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(false);
         });
         it('works with exclusive mtcompany check', () => {
             expect(shouldShowElement('-mtcompany', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: true,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : true,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(false);
             expect(shouldShowElement('-malta, -mtcompany', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: true,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : true,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(false);
             expect(shouldShowElement('-maltainvest, -mtcompany', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: false,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : false,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(true);
         });
         it('works with inclusive mt5fin rule', () => {
             expect(shouldShowElement('mt5fin:vanuatu', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: true,
-                mt_financial_shortocde: ''
+                client_has_mt_company    : true,
+                mt_financial_shortocde   : '',
             })).to.equal(false);
             expect(shouldShowElement('mt5fin:vanuatu', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: true,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : true,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(true);
         });
         it('works with exclusive mt5fin rule', () => {
             expect(shouldShowElement('-mt5fin:vanuatu', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: true,
-                mt_financial_shortocde: 'vanuatu'
+                client_has_mt_company    : true,
+                mt_financial_shortocde   : 'vanuatu',
             })).to.equal(false);
             expect(shouldShowElement('-mt5fin:vanuatu', {
                 landing_company_shortcode: 'malta',
-                client_has_mt_company: true,
-                mt_financial_shortocde: ''
+                client_has_mt_company    : true,
+                mt_financial_shortocde   : '',
             })).to.equal(true);
         });
     });
