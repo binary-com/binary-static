@@ -70,7 +70,7 @@ const getConfig = () => (
         root_url        : `/${program.dev && !fs.existsSync(Path.join(common.root_path, 'scripts', 'CNAME')) ? 'binary-static/' : ''}${program.branch ? `${program.branch}/` : ''}`,
         sections        : ['app', 'static'],
         app_js_files    : ['vendor', 'binary'],
-        app_2_js_files  : ['vendor', 'chartiq', 'react_mobx', 'smartcharts', 'binary_common', 'binary'],
+        app_2_js_files  : ['vendor', 'react_mobx', 'smartcharts', 'binary_common', 'binary'],
     }
 );
 
