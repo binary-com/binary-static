@@ -67,6 +67,7 @@ module.exports = [
     // ==================== Section: "static" ====================
     ['404',                                     'static/404',                                  'full_width', '404'],
     ['home',                                    'static/home',                                 'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
+    ['keep-safe',                               'static/keep_safe',                            'full_width', 'Keep Safe'],
     ['tour',                                    'static/tour',                                 'full_width', 'Tour'],
     ['why-us',                                  'static/why_us',                               'full_width', 'Why Us'],
     ['platforms',                               'static/platforms',                            'full_width', 'Trading Platforms'],
@@ -74,7 +75,9 @@ module.exports = [
     ['about-us',                                'static/about/index',                          'full_width', 'About Us'],
     ['binary-in-numbers',                       'static/about/binary_in_numbers',              'default',    'Binary in Numbers'],
     ['careers',                                 'static/about/careers',                        'full_width', 'Careers'],
+    ['careers/privacy-policy',                  'static/about/job_applicant_policy',           'full_width', 'Job Applicant Privacy Policy'],
     ['contact',                                 'static/about/contact',                        'full_width', 'Contact Us'],
+    ['contact-2',                               'static/about/contact_2',                      'full_width', 'Contact Us'],
     ['cyberjaya',                               'static/about/cyberjaya',                      'full_width', 'Careers - Cyberjaya',                'ja'],
     ['labuan',                                  'static/about/labuan',                         'full_width', 'Careers - Labuan',                   'ja'],
     ['malta',                                   'static/about/malta',                          'full_width', 'Careers - Malta',                    'ja'],

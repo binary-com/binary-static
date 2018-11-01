@@ -331,6 +331,145 @@
     }
 }
 
+#content.contact-2-content {
+    margin-top: 0;
+
+    #top_banner, #elevio_menu_container {
+        display: flex;
+        justify-content: center;
+    }
+    #top_banner {
+        background: url('../images/pages/contact_2/banner-bg.svg');
+        min-height: 300px;
+
+        .search {
+            width: 600px;
+            max-width: 95%;
+
+            div#_elev_io_placebo {
+                border: 1px solid $COLOR_CONTROL_BORDER;
+                border-radius: $BORDER_RADIUS;
+                background-color: $COLOR_WHITE;
+
+                > span._10b1r { // search icon
+                    background: url('../images/pages/contact_2/search-icon.svg') center no-repeat;
+                    width: 30px;
+
+                    svg {
+                        display: none;
+                    }
+                }
+                input {
+                    background: transparent !important;
+                }
+            }
+        }
+    }
+    #elevio_menu_container {
+        background: $COLOR_LIGHT_GRAY;
+        padding: 20px;
+
+        #elevio_element_menu {
+            ._cnzpc {
+                padding: 0;
+            }
+            ._elevio_module_icon {
+                background-color: $COLOR_WHITE;
+                padding: 40px;
+                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+                border-radius: $BORDER_RADIUS;
+                max-width: unset;
+                flex: auto;
+                margin: 20px;
+
+                ._d9ggd { // icon
+                    width: 32px;
+                    height: 32px;
+                    box-shadow: none;
+                    background-color: transparent !important;
+                    background-size: contain;
+                    margin-bottom: 20px;
+
+                    svg {
+                        display: none;
+                    }
+                }
+                ._1bt1k { // text
+                    font-size: $FONT_SIZE_L;
+                }
+                &:hover {
+                    ._1bt1k { // text
+                        color: $COLOR_BLUE_SHADE !important;
+                    }
+                }
+            }
+            ._elevio_module_icon_1 ._d9ggd { // Help Content
+                background: url('../images/pages/contact_2/content-icon.svg') no-repeat center;
+            }
+            ._elevio_module_icon_6 ._d9ggd { // Submit a Ticket
+                background: url('../images/pages/contact_2/ticket-icon.svg') no-repeat center;
+            }
+            ._elevio_module_icon_10 { // Call Us
+                display: none;
+            }
+        }
+    }
+    .phone-container {
+        align-items: center;
+        justify-content: center;
+
+        label {
+            margin-bottom: 5px;
+        }
+        .number-container {
+            margin-left: 30px;
+
+            #cs_telephone_number {
+                width: 100%;
+                min-width: 160px;
+            }
+            #display_cs_telephone {
+                line-height: 1.5rem;
+                align-self: flex-end;
+                padding-top: 10px;
+            }
+        }
+    }
+}
+
+._elevio_launcher {
+    display: none;
+}
+
+// override elevio styles for both in page contents and popup
+body #_elev_io {
+    * {
+        font-family: $FONT-STACK;
+    }
+    ._nr4k9 { // suggestion title
+        display: block;
+        margin-bottom: 20px;
+        color: $COLOR_BLUE;
+        font-size: 22px;
+        font-weight: 300;
+    }
+    ._1b4vy:hover { // category titles
+        color: $COLOR_BLUE;
+    }
+    ._elevio_articlelink > div { // links
+        color: $COLOR_BLUE;
+        text-decoration: none;
+        font-weight: 700;
+
+        > div {
+            background: none;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
 #content {
     &.cyberjaya, &.malta, &.labuan {
         &-content {
@@ -1048,5 +1187,23 @@ body #not_authenticated_financial ul.checked > li {
     &::-webkit-scrollbar-track {
         background-color: $COLOR_WHITE;
         border-radius: 8px;
+    }
+}
+
+.keep-safe-container {
+    .box {
+        &.bordered {
+            border: 1px solid $COLOR_GRAY;
+            height: 100%;
+
+            > div {
+                display: inline-flex;
+                padding: 20px;
+
+                img {
+                    padding-right: 20px;
+                }
+            }
+        }
     }
 }
