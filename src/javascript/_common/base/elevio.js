@@ -5,7 +5,7 @@ const State         = require('../storage').State;
 const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
-    const available_countries = ['at', 'au', 'gb', 'in', 'lk', 'my', 'ng', 'nl', 'nz', 'za'];
+    const excluded_countries = ['br', 'id', 'ru'];
 
     const init = () => {
         BinarySocket.wait('website_status').then(() => {
@@ -22,7 +22,7 @@ const Elevio = (() => {
     };
 
     const isAvailable = () => (
-        new RegExp(`^(${available_countries.join('|')})$`, 'i').test(State.getResponse('website_status.clients_country'))
+        !new RegExp(`^(${excluded_countries.join('|')})$`, 'i').test(State.getResponse('website_status.clients_country'))
     );
 
     const addEventListenerGTM = () => {
