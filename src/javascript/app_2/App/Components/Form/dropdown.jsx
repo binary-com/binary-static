@@ -3,6 +3,7 @@ import { observer }      from 'mobx-react';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
+import SimpleBar         from 'simplebar-react';
 import { IconArrow }     from 'Assets/Common';
 
 class Dropdown extends React.Component {
@@ -103,25 +104,27 @@ class Dropdown extends React.Component {
                 >
                     <div className='dropdown-list'>
                         <div className='list-container'>
-                            {isArrayLike(this.props.list) ?
-                                <Items
-                                    items={this.props.list}
-                                    name={this.props.name}
-                                    value={this.props.value}
-                                    handleSelect={this.handleSelect}
-                                /> :
-                                Object.keys(this.props.list).map(key => (
-                                    <React.Fragment key={key}>
-                                        <div className='list-label'><span>{key}</span></div>
-                                        <Items
-                                            items={this.props.list[key]}
-                                            name={this.props.name}
-                                            value={this.props.value}
-                                            handleSelect={this.handleSelect}
-                                        />
-                                    </React.Fragment>
-                                ))
-                            }
+                            <SimpleBar style={{ 'height': '100%' }}>
+                                {isArrayLike(this.props.list) ?
+                                    <Items
+                                        items={this.props.list}
+                                        name={this.props.name}
+                                        value={this.props.value}
+                                        handleSelect={this.handleSelect}
+                                    /> :
+                                    Object.keys(this.props.list).map(key => (
+                                        <React.Fragment key={key}>
+                                            <div className='list-label'><span>{key}</span></div>
+                                            <Items
+                                                items={this.props.list[key]}
+                                                name={this.props.name}
+                                                value={this.props.value}
+                                                handleSelect={this.handleSelect}
+                                            />
+                                        </React.Fragment>
+                                    ))
+                                }
+                            </SimpleBar>
                         </div>
                     </div>
                 </CSSTransition>
