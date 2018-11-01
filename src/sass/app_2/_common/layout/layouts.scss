@@ -269,6 +269,10 @@
                                         border-bottom-left-radius: $BORDER_RADIUS;
                                     }
                                 }
+                                &.list-container {
+                                    border-right-width: 1px;
+                                    border-radius: $BORDER_RADIUS;
+                                }
                             }
                             input:last-child {
                                 border-right-width: 1px;
