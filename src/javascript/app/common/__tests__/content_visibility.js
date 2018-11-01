@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const { parseAttributeString,
-    shouldShowElement } = require('../content_visibility').__test__;
+        shouldShowElement } = require('../content_visibility').__test__;
 
 describe('ContentVisibility', () => {
     describe('.parseAttributeString()', () => {

@@ -48,7 +48,7 @@ const Tac = () => (
                             { id: 'order-execution-mt',     text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'payment-agents', text: it.L('Payment Agents'), dataShow: '-maltainvest, -malta' },
+                    { id: 'payment-agents', text: it.L('Payment Agents'), dataShow: '-maltainvest, -malta, -iom' },
                 ]}
             />
         </div>

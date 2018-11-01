@@ -41,16 +41,16 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
             data-show='Costarica'         -> throws error
 */
 
-const visible_classname = 'data-show-visible';
-const mt_company_rule   = 'mtcompany';
-const mt_country        = 'mt';
+const visible_classname    = 'data-show-visible';
+const mt_company_rule      = 'mtcompany';
+const mt_country_shortcode = 'mt';
 
 const ContentVisibility = (() => {
     const init = () => {
         BinarySocket.wait('authorize', 'landing_company', 'website_status').then(() => {
             const is_virtual                = Client.isLoggedIn() && Client.get('is_virtual');
             const clients_country           = State.getResponse('website_status.clients_country');
-            const client_is_mt_country      = clients_country === mt_country;
+            const client_is_mt_country      = clients_country === mt_country_shortcode;
             const landing_company_shortcode = is_virtual ?
                 (State.getResponse('landing_company.financial_company.shortcode') ||
                 State.getResponse('landing_company.gaming_company.shortcode') ||
