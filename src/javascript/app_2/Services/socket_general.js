@@ -14,6 +14,10 @@ let client_store,
 
 // TODO: update commented statements to the corresponding functions from app_2
 const BinarySocketGeneral = (() => {
+    const onDisconnect = () => {
+        common_store.setIsSocketOpened(false);
+    };
+
     const onOpen = (is_ready) => {
         // Header.hideNotification();
         if (is_ready) {
@@ -25,6 +29,7 @@ const BinarySocketGeneral = (() => {
                 WS.subscribeWebsiteStatus(ResponseHandlers.websiteStatus);
             }
             ServerTime.init(action('setTime', () => { common_store.server_time = ServerTime.get(); }));
+            common_store.setIsSocketOpened(true);
         }
     };
 
@@ -134,6 +139,7 @@ const BinarySocketGeneral = (() => {
         common_store = store.common;
 
         return {
+            onDisconnect,
             onOpen,
             onMessage,
         };
