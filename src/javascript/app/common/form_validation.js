@@ -211,7 +211,7 @@ const Validation = (() => {
             address      : { func: validAddress,      message: localize('Only letters, numbers, space, and these special characters are allowed: [_1]', '- . \' # ; : ( ) , @ /') },
             letter_symbol: { func: validLetterSymbol, message: localize('Only letters, space, hyphen, period, and apostrophe are allowed.') },
             postcode     : { func: validPostCode,     message: localize('Only letters, numbers, space, and hyphen are allowed.') },
-            phone        : { func: validPhone,        message: localize('Only + in front with numbers, hyphens and spaces are allowed.') },
+            phone        : { func: validPhone,        message: localize('Only numbers, hyphens, and spaces are allowed.') },
             compare      : { func: validCompare,      message: localize('The two passwords that you entered do not match.') },
             not_equal    : { func: validNotEqual,     message: localizeKeepPlaceholders('[_1] and [_2] cannot be the same.') },
             min          : { func: validMin,          message: localizeKeepPlaceholders('Minimum of [_1] characters required.') },
