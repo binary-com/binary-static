@@ -1210,6 +1210,11 @@ body #not_authenticated_financial ul.checked > li {
 
 .vpn-app {
     .steps.steps-vertical {
+        max-width: 603px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        padding-left: 15px;
         @media (max-width: 480px) {
             flex-direction: column;
 
@@ -1217,11 +1222,6 @@ body #not_authenticated_financial ul.checked > li {
                 margin-top: 2rem;
             }
         }
-        max-width: 603px;
-        margin-left: auto;
-        margin-right: auto;
-        flex-direction: column;
-        padding-left: 15px;
 
         .step {
             position: relative;
@@ -1265,11 +1265,11 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
     .vertical-divider {
+        width: 1px;
+        background-color: $COLOR_LIGHT_GRAY;
         @media screen and (max-width: 480px) {
             display: none;
         }
-        width: 1px;
-        background-color: $COLOR_LIGHT_GRAY;
     }
     .cta-download-heading {
         margin-top: 50px;
