@@ -1,7 +1,6 @@
-
 import React from 'react';
 
-const Step  = ({
+const Step = ({
     circle_number,
     text,
     imgSrc,
@@ -25,47 +24,49 @@ const VPNApp = () => (
                 <Step
                     circle_number='1'
                     text={it.L('Download our VPN app for your preferred device')}
-                    imgSrc={it.url_for('images/pages/settings/2fa.svg')}
+                    imgSrc={it.url_for('images/pages/vpn/ic-devices.svg')}
                 />
                 <Step
                     circle_number='2'
                     text={it.L('Activate the VPN service on the app')}
-                    imgSrc={it.url_for('images/pages/settings/2fa.svg')}
+                    imgSrc={it.url_for('images/pages/vpn/ic-activate.svg')}
                 />
                 <Step
                     circle_number='3'
                     text={it.L('Browse and trade securely on your preferred device')}
-                    imgSrc={it.url_for('images/pages/settings/2fa.svg')}
+                    imgSrc={it.url_for('images/pages/vpn/ic-browse.svg')}
                 />
             </div>
         </div>
         <div className='border-bottom'>&nbsp;</div>
         <div className='cta-download-heading center-text'>
             <h2>{it.L('Download our VPN app now')}</h2>
-            <img src='https://placehold.it/300x200' />
         </div>
         <div className='mobile-app gr-row gr-row-align-around'>
             <div className='full-width gr-row gr-row-align-around gr-padding-20'>
                 <div className='column gr-gutter-right'>
-                    <p className='small-tex right'>{it.L('For Desktop')}</p>
                     <div className='gr-padding-10'>
-                        <a className='button' href='#'>
-                            <img src='https://placehold.it/120x37' />
-                        </a>
-                        <a className='button' href='#'>
-                            <img src='https://placehold.it/120x37' />
+                        <a
+                            className='button'
+                            href='https://binary.la/vpn/BinaryVPN.exe'
+                            rel='nofollow noopener'
+                            title={it.L('Download Binary VPN app for Windows Desktop')}
+                            download
+                        >
+                            <img src={it.url_for('images/pages/vpn/btn-windows.svg')} />
                         </a>
                     </div>
                 </div>
                 <div className='vertical-divider' />
                 <div className='column gr-gutter-left'>
-                    <p className='small-tex right'>{it.L('For Mobile')}</p>
                     <div className='gr-padding-10'>
-                        <a className='button' href='#'>
-                            <img src='https://placehold.it/120x37' />
-                        </a>
-                        <a className='button' href='#'>
-                            <img src='https://placehold.it/120x37' />
+                        <a
+                            className='button'
+                            href='https://play.google.com/store/apps/details?id=com.binary.outline.android.client'
+                            rel='nofollow noopener'
+                            title={it.L('Download Binary VPN app For Android')}
+                        >
+                            <img src={it.url_for('images/pages/vpn/btn-android.svg')} />
                         </a>
                     </div>
                 </div>
