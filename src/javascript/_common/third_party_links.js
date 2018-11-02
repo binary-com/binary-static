@@ -25,9 +25,13 @@ const ThirdPartyLinks = (() => {
         if (isTelegramLink(el_link.href)) {
             e.preventDefault();
             // show a popup to remind clients to have Telegram app installed on their device
-            Dialog.alert({
+            Dialog.confirm({
                 id               : 'telegram',
                 localized_message: localize(['Please ensure that you have the Telegram app installed on your device.', 'Click OK to proceed.']),
+            }).then((should_proceed) => {
+                if (should_proceed) {
+                    openThirdPartyLink(el_link.href);
+                }
             });
         }
     };
@@ -47,12 +51,16 @@ const ThirdPartyLinks = (() => {
                 localized_message: localize(['You will be redirected to a third-party website which is not owned by Binary.com.', 'Click OK to proceed.']),
             }).then((should_proceed) => {
                 if (should_proceed) {
-                    const link = window.open();
-                    link.opener = null;
-                    link.location = el_link.href;
+                    openThirdPartyLink(el_link.href);
                 }
             });
         }
+    };
+
+    const openThirdPartyLink = (href) => {
+        const link = window.open();
+        link.opener = null;
+        link.location = href;
     };
 
     const isTelegramLink = (href) => /t\.me/.test(href);
