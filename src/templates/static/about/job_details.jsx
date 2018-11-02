@@ -691,7 +691,7 @@ const JobDetails = () => (
                         <div className='invisible' id='graphics_designer'>
                             <h1>{it.L('Graphics Designer')}</h1>
 
-                            <p>{it.L('[_1] UI/UX team explores the many ways that we can design better product experiences for our users. As our Graphic Designer, you will develop high-impact graphics and visual elements such as images and icons for our websites and applications. You will play an essential role in creating user interface assets that bring our products and users closer together.', it.website_name)}</p>
+                            <p>{it.L('[_1]\'s UI/UX team explores the many ways that we can design better product experiences for our users. As our Graphic Designer, you will develop high-impact graphics and visual elements such as images and icons for our websites and applications. You will play an essential role in creating user interface assets that bring our products and users closer together.', it.website_name)}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
