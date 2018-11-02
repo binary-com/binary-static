@@ -1207,3 +1207,75 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
 }
+
+.vpn-app {
+    .steps.steps-vertical {
+        max-width: 603px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        padding-left: 15px;
+        @media (max-width: 480px) {
+            flex-direction: column;
+
+            .step:not(:first-child) {
+                margin-top: 2rem;
+            }
+        }
+
+        .step {
+            position: relative;
+            min-height: 135px;
+
+            &:not(:last-child) {
+                border-left: 1px solid $COLOR_LIGHT_GRAY;
+            }
+            .circle {
+                margin: 0;
+                position: absolute;
+                left: -20px;
+            }
+            .content {
+                padding: 8px 0 0 30px;
+                margin-left: 37px;
+
+                p {
+                    margin: 0;
+                    max-width: 270px;
+                    text-align: left;
+
+                    &:last-child, &:nth-child(2) {
+                        padding-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+    &-icon {
+        width: 83px;
+        margin-bottom: 23px;
+        @media screen and (max-width: 480px) {
+            margin-top: 10px;
+            transform: scale(0.85);
+        }
+    }
+    .column {
+        @media screen and (max-width: 480px) {
+            padding: 0;
+        }
+    }
+    .vertical-divider {
+        width: 1px;
+        background-color: $COLOR_LIGHT_GRAY;
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
+    }
+    .cta-download-heading {
+        margin-top: 50px;
+
+        h2 {
+            margin-bottom: 45px;
+        }
+    }
+}
