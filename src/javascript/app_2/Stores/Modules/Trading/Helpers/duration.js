@@ -1,15 +1,15 @@
 import moment       from 'moment';
-import { localize } from '../../../../../_common/localize';
+import { localize } from '_common/localize';
 
-const duration_maps = {
-    t: { display: 'ticks',   order: 1 },
-    s: { display: 'seconds', order: 2, to_second: 1 },
-    m: { display: 'minutes', order: 3, to_second: 60 },
-    h: { display: 'hours',   order: 4, to_second: 60 * 60 },
-    d: { display: 'days',    order: 5, to_second: 60 * 60 * 24 },
-};
+const getDurationMaps = () => ({
+    t: { display: localize('ticks'),   order: 1 },
+    s: { display: localize('seconds'), order: 2, to_second: 1 },
+    m: { display: localize('minutes'), order: 3, to_second: 60 },
+    h: { display: localize('hours'),   order: 4, to_second: 60 * 60 },
+    d: { display: localize('days'),    order: 5, to_second: 60 * 60 * 24 },
+});
 
-const buildDurationConfig = (contract, durations = { min_max: {}, units_display: {} }) => {
+export const buildDurationConfig = (contract, durations = { min_max: {}, units_display: {} }) => {
     durations.min_max[contract.start_type]       = durations.min_max[contract.start_type] || {};
     durations.units_display[contract.start_type] = durations.units_display[contract.start_type] || [];
 
@@ -25,6 +25,9 @@ const buildDurationConfig = (contract, durations = { min_max: {}, units_display:
     durations.units_display[contract.start_type].forEach(obj => {
         arr_units.push(obj.value);
     });
+
+    const duration_maps = getDurationMaps();
+
     if (/^tick|daily$/.test(contract.expiry_type)) {
         if (arr_units.indexOf(obj_min.unit) === -1) {
             arr_units.push(obj_min.unit);
@@ -44,15 +47,23 @@ const buildDurationConfig = (contract, durations = { min_max: {}, units_display:
     durations.units_display[contract.start_type] = arr_units
         .sort((a, b) => (duration_maps[a].order > duration_maps[b].order ? 1 : -1))
         .reduce((o, c) => (
-            [...o, { text: localize(duration_maps[c].display), value: c }]
+            [...o, { text: duration_maps[c].display, value: c }]
         ), []);
 
     return durations;
 };
 
-const convertDurationUnit = (value, from_unit, to_unit) => {
-    if (!value || !from_unit || !to_unit) return null;
-    if (from_unit === to_unit || !('to_second' in duration_maps[from_unit])) return value;
+export const convertDurationUnit = (value, from_unit, to_unit) => {
+    if (!value || !from_unit || !to_unit) {
+        return null;
+    }
+
+    const duration_maps = getDurationMaps();
+
+    if (from_unit === to_unit || !('to_second' in duration_maps[from_unit])) {
+        return value;
+    }
+
     return (value * duration_maps[from_unit].to_second) / duration_maps[to_unit].to_second;
 };
 
@@ -64,7 +75,7 @@ const getDurationFromString = (duration_string) => {
     };
 };
 
-const getExpiryType = (store) => {
+export const getExpiryType = (store) => {
     const { duration_unit, expiry_date, expiry_type } = store;
     const server_time = store.root_store.common.server_time;
 
@@ -79,20 +90,17 @@ const getExpiryType = (store) => {
     return contract_expiry_type;
 };
 
-const convertDurationLimit = (value, unit) => {
+export const convertDurationLimit = (value, unit) => {
     if (unit === 'm') {
         const minute = value / 60;
         return minute >= 1 ? Math.floor(minute) : 1;
     } else if (unit === 'h') {
-        const hour = value / 3600;
+        const hour = value / (60 * 60);
         return hour >= 1 ? Math.floor(hour) : 1;
+    } else if (unit === 'd') {
+        const day = value / (60 * 60 * 24);
+        return day >= 1 ? Math.floor(day) : 1;
     }
 
     return value;
-};
-
-module.exports = {
-    buildDurationConfig,
-    convertDurationLimit,
-    getExpiryType,
 };

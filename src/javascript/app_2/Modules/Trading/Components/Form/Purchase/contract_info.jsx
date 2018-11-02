@@ -1,9 +1,9 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import Money             from '../../../../../App/Components/Elements/money.jsx';
-import Tooltip           from '../../../../../App/Components/Elements/tooltip.jsx';
-import { IconTradeType } from '../../../../../Assets/Trading/Types';
-import { localize }      from '../../../../../../_common/localize';
+import { localize }      from '_common/localize';
+import Money             from 'App/Components/Elements/money.jsx';
+import Tooltip           from 'App/Components/Elements/tooltip.jsx';
+import { IconTradeType } from 'Assets/Trading/Types';
 
 const ContractInfo = ({
     barrier_count,
@@ -29,7 +29,7 @@ const ContractInfo = ({
                 :
                 <div className='purchase-info-wrapper'>
                     <span className='purchase-tooltip'>
-                        <Tooltip alignment='left' icon='info' message={proposal_info.message}/>
+                        <Tooltip alignment='left' icon='info' message={proposal_info.message} />
                     </span>
                     <div className='info-wrapper'>
                         <div>{localize('Stake')}:</div>

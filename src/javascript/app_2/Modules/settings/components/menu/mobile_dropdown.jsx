@@ -13,7 +13,7 @@ class MobileDropdown extends React.Component {
         this.setState({
             is_open: !this.state.is_open,
         });
-    }
+    };
 
     componentWillReceiveProps() {
         this.setState({
@@ -55,10 +55,10 @@ class MobileDropdown extends React.Component {
 MobileDropdown.propTypes = {
     all_items: PropTypes.arrayOf(
         PropTypes.shape({
-            title      : PropTypes.string,
             description: PropTypes.string,
             img_src    : PropTypes.string,
             path       : PropTypes.string,
+            title      : PropTypes.string,
         })
     ),
     children: PropTypes.element,

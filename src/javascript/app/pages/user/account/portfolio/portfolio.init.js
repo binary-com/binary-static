@@ -91,7 +91,7 @@ const PortfolioInit = (() => {
         if (data.portfolio.contracts.length !== 0) {
             /**
              * User has at least one contract
-             **/
+             */
             $('#portfolio-no-contract').hide();
             $.each(data.portfolio.contracts, (ci, c) => {
                 // TODO: remove ico exception when all ico contracts are removed

@@ -10,4 +10,4 @@ export default class RootStore {
         this.modules = new ModulesStore(this);
         this.ui      = new UIStore();
     }
-};
+}

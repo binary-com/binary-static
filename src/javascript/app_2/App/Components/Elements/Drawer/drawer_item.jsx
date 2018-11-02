@@ -1,7 +1,7 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import { connect }    from 'Stores/connect';
 import { BinaryLink } from '../../Routes';
-import { connect }    from '../../../../Stores/connect';
 
 class DrawerItem extends React.Component {
     drawerItemClicked = () => {
@@ -20,11 +20,11 @@ class DrawerItem extends React.Component {
                     <a href='javascript:;' onClick={custom_action}>
                         <span>{icon}{text}</span>
                     </a>
-                :
+                    :
                     <BinaryLink to={link_to}>
                         <span>{icon}{text}</span>
                     </BinaryLink>
-              }
+                }
             </div>
         );
     }
@@ -33,11 +33,11 @@ class DrawerItem extends React.Component {
 DrawerItem.propTypes = {
     collapseItems: PropTypes.func,
     custom_action: PropTypes.func,
+    hideDrawers  : PropTypes.func,
     href         : PropTypes.string,
     icon         : PropTypes.node,
-    text         : PropTypes.string,
-    hideDrawers  : PropTypes.func,
     link_to      : PropTypes.string,
+    text         : PropTypes.string,
 };
 
 const drawer_item_component = connect(({ ui }) => ({

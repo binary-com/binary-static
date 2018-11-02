@@ -4,8 +4,8 @@ import {
     observable,
     reaction,
     toJS }               from 'mobx';
-import Validator         from '../Utils/Validator';
-import { isEmptyObject } from '../../_common/utility';
+import { isEmptyObject } from '_common/utility';
+import Validator         from 'Utils/Validator';
 
 /**
  * BaseStore class is the base class for all defined stores in the application. It handles some stuff such as:
@@ -84,7 +84,7 @@ export default class BaseStore {
 
         if (properties && properties.length) {
             snapshot = properties.reduce(
-                (result, p) => Object.assign(result, { [p]: snapshot[p]}),
+                (result, p) => Object.assign(result, { [p]: snapshot[p] }),
                 {}
             );
         }
@@ -146,11 +146,11 @@ export default class BaseStore {
         const local_storage_snapshot = JSON.parse(localStorage.getItem(this.constructor.name, {}));
         const session_storage_snapshot = JSON.parse(sessionStorage.getItem(this.constructor.name, {}));
 
-        const snapshot = {...local_storage_snapshot, ...session_storage_snapshot};
+        const snapshot = { ...local_storage_snapshot, ...session_storage_snapshot };
 
         Object.keys(snapshot).forEach((k) => this[k] = snapshot[k]);
     }
-    
+
     /**
      * Sets validation error messages for an observable property of the store
      *
@@ -159,7 +159,7 @@ export default class BaseStore {
      *
      */
     @action
-    setValidationErrorMessages( propertyName, messages) {
+    setValidationErrorMessages(propertyName, messages) {
         this.validation_errors[propertyName] = messages;
     }
 
@@ -202,14 +202,38 @@ export default class BaseStore {
      */
     @action
     validateProperty(property, value) {
+        const trigger = this.validation_rules[property].trigger;
+        const inputs = { [property]: value !== undefined ? value : this[property] };
+        const validation_rules = { [property]: (this.validation_rules[property].rules || []) };
+
+        if (!!trigger && Object.hasOwnProperty.call(this, trigger)) {
+            inputs[trigger] = this[trigger];
+            validation_rules[trigger] = this.validation_rules[trigger].rules || [];
+        }
+
         const validator = new Validator(
-            { [property]: value !== undefined ? value : this[property] },
-            { [property]: this.validation_rules[property] },
+            inputs,
+            validation_rules,
             this
         );
 
         validator.isPassed();
-        this.setValidationErrorMessages(property, validator.errors.get(property));
+
+        Object.keys(inputs).forEach(key => {
+            this.setValidationErrorMessages(key, validator.errors.get(key));
+        });
+    }
+
+    /**
+     * Validates all properties which validation rule has been set for.
+     *
+     */
+    @action
+    validateAllProperties() {
+        this.validation_errors = {};
+        Object.keys(this.validation_rules).forEach(p => {
+            this.validateProperty(p, this[p]);
+        });
     }
 }
 

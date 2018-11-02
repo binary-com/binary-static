@@ -2,17 +2,14 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { withRouter }                 from 'react-router';
+import { connect }                    from 'Stores/connect';
 import ErrorComponent                 from '../../Components/Elements/Errors';
 import BinaryRoutes                   from '../../Components/Routes';
-import { connect }                    from '../../../Stores/connect';
-import GTM                            from '../../../../_common/base/gtm';
 
 const Routes = (props) => {
     if (props.has_error) {
         return <ErrorComponent {...props.error} />;
     }
-
-    GTM.pushDataLayer(); // fire 'page_load' event
 
     return <BinaryRoutes />;
 };

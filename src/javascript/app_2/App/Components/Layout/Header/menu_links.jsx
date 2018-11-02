@@ -1,8 +1,8 @@
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import Url            from '_common/url';
 import InkBarDiv      from '../../Elements/InkBar';
 import { BinaryLink } from '../../Routes';
-import Url            from '../../../../../_common/url';
 
 const MenuLinks = ({ items }) => (
     <React.Fragment>
@@ -26,8 +26,8 @@ MenuLinks.propTypes = {
         icon: PropTypes.shape({
             className: PropTypes.string,
         }),
-        text   : PropTypes.string,
         link_to: PropTypes.string,
+        text   : PropTypes.string,
     })),
 };
 

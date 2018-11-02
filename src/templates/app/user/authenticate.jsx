@@ -9,7 +9,7 @@ const Authenticate = () => (
         <h1>{it.L('Authentication')}</h1>
         <div id='authentication-message'>
             <div id='loading_authenticate'>
-                <Loading/>
+                <Loading />
             </div>
 
             <p id='fully_authenticated' className='invisible'>

@@ -1,6 +1,6 @@
 import { observable } from 'mobx';
+import Client         from '_common/base/client_base';
 import BaseStore      from './base_store';
-import Client         from '../../_common/base/client_base';
 
 export default class ClientStore extends BaseStore {
     @observable balance;
@@ -9,4 +9,4 @@ export default class ClientStore extends BaseStore {
     @observable currency     = Client.get('currency') || '';
     @observable upgrade_info = Client.getBasicUpgradeInfo();
     @observable can_upgrade  = this.upgrade_info.can_upgrade || this.upgrade_info.can_open_multi;
-};
+}

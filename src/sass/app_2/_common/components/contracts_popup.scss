@@ -64,12 +64,6 @@ div.contracts-popup-container {
         &.mobile-only {
             z-index: 99;
         }
-        & > div.contracts-popup-list {
-            right: 0;
-            max-height: 100%;
-            opacity: 1;
-            pointer-events: auto;
-        }
         & > .clicked {
             border-color: $COLOR_BLUE;
         }
@@ -114,11 +108,13 @@ div.contracts-popup-container {
         }
     }
     .contracts-popup-list {
-        right: -50%;
+        right: 0;
         width: 100%;
         pointer-events: none;
         position: absolute;
-        transition: all 0.3s ease 0.15s;
+        transition: transform 0.25s ease, opacity 0.25s;
+        transform: translateX(50%);
+        user-select: none;
         opacity: 0;
         height: 0;
         z-index: 999;
@@ -203,6 +199,18 @@ div.contracts-popup-container {
                     }
                 }
             }
+        }
+        &-enter, &-exit {
+            transform: translateX(50%);
+            pointer-events: none;
+            opacity: 0;
+            height: 0;
+        }
+        &-enter-done {
+            transform: translateX(0);
+            max-height: 100%;
+            opacity: 1;
+            pointer-events: auto;
         }
     }
     .contracts-modal-list {

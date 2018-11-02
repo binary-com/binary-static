@@ -1,6 +1,7 @@
-import PropTypes        from 'prop-types';
-import React            from 'react';
-import FullScreenDialog from '../../Elements/full_screen_dialog.jsx';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { CSSTransition } from 'react-transition-group';
+import FullScreenDialog  from '../../Elements/full_screen_dialog.jsx';
 
 const ContractTypeDialog = ({
     children,
@@ -19,19 +20,26 @@ const ContractTypeDialog = ({
                 {children}
             </FullScreenDialog>
         </React.Fragment>
-    :
-        <div className='contracts-popup-list'>
-            <div className='list-container'>
-                {children}
+        :
+        <CSSTransition
+            in={open}
+            timeout={100}
+            classNames='contracts-popup-list'
+            unmountOnExit
+        >
+            <div className='contracts-popup-list'>
+                <div className='list-container'>
+                    {children}
+                </div>
             </div>
-        </div>
+        </CSSTransition>
 );
 
 ContractTypeDialog.propTypes = {
     children : PropTypes.element,
     is_mobile: PropTypes.bool,
-    open     : PropTypes.bool,
     onClose  : PropTypes.func,
+    open     : PropTypes.bool,
 };
 
 export default ContractTypeDialog;

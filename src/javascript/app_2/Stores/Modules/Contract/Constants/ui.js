@@ -1,9 +1,10 @@
-import React    from 'react';
-import IconFlag from '../../../../Assets/Contract/icon_flag.jsx';
-import IconTick from '../../../../Assets/Contract/icon_tick.jsx';
+import React        from 'react';
+import { localize } from '_common/localize';
+import IconFlag     from 'Assets/Contract/icon_flag.jsx';
+import IconTick     from 'Assets/Contract/icon_tick.jsx';
 
-export const header_config = {
-    purchased: { title: 'Contract Purchased', icon: <IconTick /> },
-    won      : { title: 'Contract Won',       icon: <IconFlag /> },
-    lost     : { title: 'Contract Lost',      icon: <IconFlag /> },
-};
+export const getHeaderConfig = () => ({
+    purchased: { title: localize('Contract Purchased'), icon: <IconTick /> },
+    won      : { title: localize('Contract Won'),       icon: <IconFlag /> },
+    lost     : { title: localize('Contract Lost'),      icon: <IconFlag /> },
+});

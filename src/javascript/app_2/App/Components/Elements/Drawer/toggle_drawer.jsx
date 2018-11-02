@@ -1,8 +1,8 @@
 import classNames  from 'classnames';
 import PropTypes   from 'prop-types';
 import React       from 'react';
+import { connect } from 'Stores/connect';
 import { Drawer }  from './drawer.jsx';
-import { connect } from '../../../../Stores/connect';
 
 class ToggleDrawer extends React.Component {
     showDrawer = () => {
@@ -40,19 +40,19 @@ class ToggleDrawer extends React.Component {
 }
 
 ToggleDrawer.propTypes = {
-    alignment              : PropTypes.string,
-    footer                 : PropTypes.func,
-    hideDrawers            : PropTypes.func,
-    icon_class             : PropTypes.string,
-    showMainDrawer         : PropTypes.func,
-    showNotificationsDrawer: PropTypes.func,
-    icon                   : PropTypes.shape({
-        className: PropTypes.string,
-    }),
-    children: PropTypes.oneOfType([
+    alignment: PropTypes.string,
+    children : PropTypes.oneOfType([
         PropTypes.array,
         PropTypes.object,
     ]),
+    footer     : PropTypes.func,
+    hideDrawers: PropTypes.func,
+    icon       : PropTypes.shape({
+        className: PropTypes.string,
+    }),
+    icon_class             : PropTypes.string,
+    showMainDrawer         : PropTypes.func,
+    showNotificationsDrawer: PropTypes.func,
 };
 
 const drawer_component = connect(

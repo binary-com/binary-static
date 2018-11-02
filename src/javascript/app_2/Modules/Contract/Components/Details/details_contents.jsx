@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react';
 import PropTypes    from 'prop-types';
 import React        from 'react';
+import { localize } from '_common/localize';
 import DetailsGroup from './details_group.jsx';
-import { localize } from '../../../../../_common/localize';
 
 const DetailsContents = ({
     buy_id,

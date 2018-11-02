@@ -1,8 +1,8 @@
 import classNames    from 'classnames';
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import { IconClose } from '../../../../Assets/Common';
-import { localize }  from '../../../../../_common/localize';
+import { localize }  from '_common/localize';
+import { IconClose } from 'Assets/Common';
 
 export const DrawerHeader = ({
     alignment,
@@ -20,7 +20,7 @@ export const DrawerHeader = ({
                         <h4>{localize('all notifications')}</h4>
                     </div>
                 </div>
-            :
+                :
                 <div className={drawer_header_class}>
                     <div className='icons btn-close' onClick={closeBtn}>
                         <IconClose />
@@ -29,7 +29,7 @@ export const DrawerHeader = ({
                         <div className='img' />
                     </div>
                 </div>
-        }
+            }
         </React.Fragment>
     );
 };

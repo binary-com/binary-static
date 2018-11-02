@@ -1,6 +1,6 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { IconTradeType } from '../Types/';
+import { IconTradeType } from '../Types';
 
 const IconTradeCategory = ({ category }) => {
     let IconCategory;

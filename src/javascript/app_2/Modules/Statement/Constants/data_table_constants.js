@@ -1,6 +1,6 @@
 import React        from 'react';
+import { localize } from '_common/localize';
 import AmountCell   from '../Components/amount_cell.jsx';
-import { localize } from '../../../../_common/localize';
 
 /* eslint-disable react/display-name, react/prop-types */
 export const getTableColumnsTemplate = () =>

@@ -12,4 +12,4 @@ export default class ModulesStore {
         this.statement   = new StatementStore();
         this.trade       = new TradeStore({ root_store });
     }
-};
+}

@@ -7,6 +7,7 @@ const MBProcess           = require('./mb_process');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
 const BinaryPjax          = require('../../base/binary_pjax');
 const Client              = require('../../base/client');
+const Header              = require('../../base/header');
 const BinarySocket        = require('../../base/socket');
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
 const JapanPortfolio      = require('../../japan/portfolio');
@@ -32,6 +33,7 @@ const MBTradePage = (() => {
     };
 
     const init = () => {
+        Header.displayAccountStatus();
         if (/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) {
             if (getLanguage() === 'JA') {
                 $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: localize('This page is not available in the selected language.') })));
@@ -98,6 +100,9 @@ const MBTradePage = (() => {
     };
 
     const onUnload = () => {
+        if (!/trading/.test(window.location.href)) {
+            Header.hideNotification('MF_RETAIL_MESSAGE');
+        }
         cleanupChart();
         State.set('is_chart_allowed', false);
         JapanPortfolio.hide();

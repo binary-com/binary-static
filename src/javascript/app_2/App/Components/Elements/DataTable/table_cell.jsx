@@ -9,11 +9,11 @@ const TableCell = ({ col_index, children }) => (
 );
 
 TableCell.propTypes = {
-    col_index: PropTypes.string,
-    children : PropTypes.oneOfType([
+    children: PropTypes.oneOfType([
         PropTypes.node,
         PropTypes.string,
     ]),
+    col_index: PropTypes.string,
 };
 
 export default TableCell;

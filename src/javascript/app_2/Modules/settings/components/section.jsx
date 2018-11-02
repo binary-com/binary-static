@@ -10,12 +10,12 @@ const Section = ({ title, description, children }) => (
 );
 
 Section.propTypes = {
-    title      : PropTypes.string,
-    description: PropTypes.string,
-    children   : PropTypes.oneOfType([
+    children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
     ]),
+    description: PropTypes.string,
+    title      : PropTypes.string,
 };
 
 export default Section;

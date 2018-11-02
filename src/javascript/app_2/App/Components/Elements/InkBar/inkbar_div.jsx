@@ -35,14 +35,14 @@ class InkBarDiv extends React.Component {
     onClick = (e) => {
         if (!e.target) return;
         this.updateInkbarPosition(e.target.closest('a'));
-    }
+    };
 
     clearInkBar = () => {
         this.setState({
             left : 0,
             width: 0,
         });
-    }
+    };
 
     updateInkbarPosition = (el) => {
         if (!el) return;
@@ -53,7 +53,7 @@ class InkBarDiv extends React.Component {
         if (this.state.left !== left) {
             this.setState({ left });
         }
-    }
+    };
 
     render() {
         const { className, ...other_props } = this.props;
@@ -64,7 +64,7 @@ class InkBarDiv extends React.Component {
 
         return (
             <div ref={(node) => this.node = node} {...props}>
-                { 
+                {
                     React.Children.map(this.props.children, child => (
                         React.cloneElement(child, {
                             onClick: this.onClick,
@@ -75,11 +75,11 @@ class InkBarDiv extends React.Component {
             </div>
         );
     }
-};
+}
 
 InkBarDiv.propTypes = {
-    className: PropTypes.string,
     children : PropTypes.array,
+    className: PropTypes.string,
 };
 
 export default InkBarDiv;

@@ -2,15 +2,21 @@ import {
     action,
     computed,
     extendObservable,
-    observable }              from 'mobx';
+    observable,
+}                             from 'mobx';
+import { isEmptyObject }      from '_common/utility';
+import { WS }                 from 'Services';
+import { localize }           from '_common/localize';
 import { createChartBarrier } from './Helpers/chart_barriers';
 import { createChartMarkers } from './Helpers/chart_markers';
 import {
     getDetailsExpiry,
-    getDetailsInfo }          from './Helpers/details';
+    getDetailsInfo,
+}                             from './Helpers/details';
 import {
     getDigitInfo,
-    isDigitContract }         from './Helpers/digits';
+    isDigitContract,
+}                             from './Helpers/digits';
 import {
     getChartConfig,
     getDisplayStatus,
@@ -22,10 +28,9 @@ import {
     isSoldBeforeStart,
     isStarted,
     isUserSold,
-    isValidToSell }           from './Helpers/logic';
+    isValidToSell,
+}                             from './Helpers/logic';
 import BaseStore              from '../../base_store';
-import { WS }                 from '../../../Services';
-import { isEmptyObject }      from '../../../../_common/utility';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;
@@ -33,21 +38,35 @@ export default class ContractStore extends BaseStore {
     @observable contract_info = observable.object({});
     @observable digits_info   = observable.object({});
     @observable sell_info     = observable.object({});
+    @observable chart_config  = observable.object({});
 
     @observable has_error         = false;
+    @observable error_message     = '';
     @observable is_sell_requested = false;
 
     // -------------------
     // ----- Actions -----
     // -------------------
     @action.bound
+    updateChartType(chart_type) {
+        this.chart_config.chart_type = chart_type;
+    }
+
+    @action.bound
+    updateGranularity(granularity) {
+        this.chart_config.granularity = granularity;
+    }
+
+    @action.bound
     onMount(contract_id) {
-        this.contract_id = contract_id;
-        this.smart_chart = this.root_store.modules.smart_chart;
+        this.has_error     = false;
+        this.error_message = '';
+        this.contract_id   = contract_id;
+        this.smart_chart   = this.root_store.modules.smart_chart;
         this.smart_chart.setContractMode(true);
 
         if (contract_id) {
-            WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, true);
+            WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
     }
 
@@ -68,15 +87,25 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     updateProposal(response) {
-        this.contract_info = response.proposal_open_contract;
-
-        if (isEmptyObject(this.contract_info)) {
-            this.has_error = true;
-        } else {
-            createChartBarrier(this.smart_chart, this.contract_info);
-            createChartMarkers(this.smart_chart, this.contract_info, this);
-            this.handleDigits();
+        if ('error' in response) {
+            this.has_error     = true;
+            this.error_message = response.error.message;
+            this.contract_info = {};
+            return;
         }
+        if (isEmptyObject(response.proposal_open_contract)) {
+            this.has_error     = true;
+            this.error_message = localize('Contract does not exist or does not belong to this client.');
+            this.contract_info = {};
+            return;
+        }
+        this.contract_info = response.proposal_open_contract;
+        if (isEnded(this.contract_info)) {
+            this.chart_config = getChartConfig(this.contract_info);
+        }
+        createChartBarrier(this.smart_chart, this.contract_info);
+        createChartMarkers(this.smart_chart, this.contract_info, this);
+        this.handleDigits();
     }
 
     @action.bound
@@ -100,6 +129,7 @@ export default class ContractStore extends BaseStore {
             this.sell_info = {
                 error_message: response.error.message,
             };
+
             this.is_sell_requested = false;
         } else {
             this.forgetProposalOpenContract();
@@ -125,10 +155,7 @@ export default class ContractStore extends BaseStore {
     // ---------------------------
     // ----- Computed values -----
     // ---------------------------
-    @computed
-    get chart_config() {
-        return getChartConfig(this.contract_info);
-    }
+    // TODO: currently this runs on each response, even if contract_info is deep equal previous one
 
     @computed
     get details_expiry() {
@@ -189,4 +216,4 @@ export default class ContractStore extends BaseStore {
     get is_valid_to_sell() {
         return isValidToSell(this.contract_info);
     }
-};
+}

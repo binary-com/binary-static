@@ -2,7 +2,7 @@ import classNames     from 'classnames';
 import PropTypes      from 'prop-types';
 import React          from 'react';
 import { withRouter } from 'react-router';
-import { connect }    from '../../../Stores/connect';
+import { connect }    from 'Stores/connect';
 
 const ThemeWrapper = ({ children, is_dark_theme }) => {
     const theme_wrapper_class = classNames('theme-wrapper', {
@@ -16,8 +16,8 @@ const ThemeWrapper = ({ children, is_dark_theme }) => {
 };
 
 ThemeWrapper.propTypes = {
-    is_dark_theme: PropTypes.bool,
     children     : PropTypes.node,
+    is_dark_theme: PropTypes.bool,
 };
 
 export default withRouter(connect(

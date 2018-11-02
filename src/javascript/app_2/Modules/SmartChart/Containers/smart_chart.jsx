@@ -1,43 +1,22 @@
-import { SmartChart }   from '@binary-com/smartcharts';
+import { SmartChart, setSmartChartsPublicPath }   from '@binary-com/smartcharts';
 import PropTypes        from 'prop-types';
 import React            from 'react';
-import ChartMarker      from '../Components/Markers/marker.jsx';
+import Url              from '_common/url';
+import { connect }      from 'Stores/connect';
 import ControlWidgets   from '../Components/control_widgets.jsx';
+import ChartMarker      from '../Components/Markers/marker.jsx';
 import TopWidgets       from '../Components/top_widgets.jsx';
 import { symbolChange } from '../Helpers/symbol';
-import { connect }      from '../../../Stores/connect';
+
+setSmartChartsPublicPath(Url.urlForStatic('js/app_2/'));
 
 class Chart extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            chart_type : this.props.chart_type,
-            granularity: this.props.granularity,
-        };
-
-        this.updateChartType   = this.updateChartType.bind(this);
-        this.updateGranularity = this.updateGranularity.bind(this);
-    }
-
     componentWillUnmount() { this.props.onUnmount(); }
-
-    updateChartType(chart_type) {
-        if (this.state.chart_type !== chart_type) {
-            this.setState({ chart_type });
-        }
-    }
-
-    updateGranularity(granularity) {
-        if (this.state.granularity !== granularity) {
-            this.setState({ granularity });
-        }
-    }
 
     chartControlsWidgets = () => (
         <ControlWidgets
-            updateChartType={this.updateChartType}
-            updateGranularity={this.updateGranularity}
+            updateChartType={this.props.updateChartType}
+            updateGranularity={this.props.updateGranularity}
         />
     );
 
@@ -54,9 +33,9 @@ class Chart extends React.Component {
             <SmartChart
                 barriers={this.props.barriers_array}
                 chartControlsWidgets={this.chartControlsWidgets}
-                chartType={this.state.chart_type}
+                chartType={this.props.chart_type}
                 endEpoch={this.props.end_epoch}
-                granularity={this.state.granularity}
+                granularity={this.props.granularity}
                 id={this.props.chart_id}
                 isMobile={this.props.is_mobile}
                 requestAPI={this.props.wsSendRequest}
@@ -66,6 +45,7 @@ class Chart extends React.Component {
                 startEpoch={this.props.start_epoch}
                 symbol={this.props.symbol}
                 topWidgets={this.topWidgets}
+                isConnectionOpened={this.props.is_socket_opened}
             >
                 { this.props.markers_array.map((marker, idx) => (
                     <ChartMarker
@@ -86,8 +66,8 @@ Chart.propTypes = {
     end_epoch       : PropTypes.number,
     granularity     : PropTypes.number,
     InfoBox         : PropTypes.node,
-    is_title_enabled: PropTypes.bool,
     is_mobile       : PropTypes.bool,
+    is_title_enabled: PropTypes.bool,
     markers_array   : PropTypes.array,
     onSymbolChange  : PropTypes.func,
     onUnmount       : PropTypes.func,
@@ -100,7 +80,8 @@ Chart.propTypes = {
 };
 
 export default connect(
-    ({ modules, ui }) => ({
+    ({ modules, ui, common }) => ({
+        is_socket_opened: common.is_socket_opened,
         barriers_array  : modules.smart_chart.barriers_array,
         is_title_enabled: modules.smart_chart.is_title_enabled,
         markers_array   : modules.smart_chart.markers_array,

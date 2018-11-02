@@ -1,17 +1,17 @@
 import classNames      from 'classnames';
-import React           from 'react';
 import PropTypes       from 'prop-types';
-import { IconBack }    from '../../../../Assets/Common';
-import { localize }    from '../../../../../_common/localize';
+import React           from 'react';
+import { localize }    from '_common/localize';
+import { IconBack }    from 'Assets/Common';
 import {
     getAllowedLanguages,
-    getURL,
-}                      from '../../../../Utils/Language/index';
+    getURL }           from 'Utils/Language';
 
 const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
     const language_dialog_class = classNames('language-dialog-container', {
         'show': is_visible && is_settings_on,
     });
+
     return (
         <div className={language_dialog_class}>
             <div className='language-header' onClick={hide}>
@@ -35,9 +35,9 @@ const LanguageDialog = ({ hide, is_visible, is_settings_on }) => {
 };
 
 LanguageDialog.propTypes = {
+    hide          : PropTypes.func,
     is_settings_on: PropTypes.bool,
     is_visible    : PropTypes.bool,
-    hide          : PropTypes.func,
 };
 
 export default LanguageDialog;

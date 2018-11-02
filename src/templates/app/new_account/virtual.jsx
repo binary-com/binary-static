@@ -3,7 +3,7 @@ import { FormRow, Fieldset } from '../../_common/components/forms.jsx';
 
 const Virtual = () => (
     <div className='gr-12 static_full'>
-        <h1>{it.L('Create New Account')}</h1>
+        <h1>{it.L('Create New Virtual-money Account')}</h1>
         <form id='virtual-form' className='gr-padding-10 ja-hide'>
             <Fieldset legend={it.L('Details')}>
                 <FormRow
@@ -15,7 +15,7 @@ const Virtual = () => (
 
                 <FormRow type='password' id='repeat_password' label={it.L('Re-enter password')} />
 
-                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{single: 'single'}}  />
+                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{ single: 'single' }}  />
 
                 <FormRow
                     type='checkbox'
@@ -28,7 +28,7 @@ const Virtual = () => (
             </Fieldset>
 
             <div className='center-text'>
-                <button className='button' type='submit'>{it.L('Create New Account')}</button>
+                <button className='button' type='submit'>{it.L('Create New Virtual-money Account')}</button>
                 <p className='errorfield invisible' id='error-account-opening' />
             </div>
         </form>

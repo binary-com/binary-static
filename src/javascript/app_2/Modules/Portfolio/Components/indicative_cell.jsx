@@ -1,12 +1,13 @@
-import React                     from 'react';
-import PropTypes                 from 'prop-types';
-import Money                     from '../../../App/Components/Elements/money.jsx';
-import { localize }              from '../../../../_common/localize';
+import PropTypes    from 'prop-types';
+import React        from 'react';
+import { localize } from '_common/localize';
+import Money        from 'App/Components/Elements/money.jsx';
 
 const IndicativeCell = ({ amount, currency, status }) => {
     const status_class_name = status
         ? `indicative--${status}`
         : undefined;
+
     return (
         <div className={status_class_name}>
             <Money amount={amount} currency={currency} />

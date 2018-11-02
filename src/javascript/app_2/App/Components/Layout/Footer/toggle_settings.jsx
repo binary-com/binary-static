@@ -1,8 +1,9 @@
-import classNames       from 'classnames';
-import PropTypes        from 'prop-types';
-import React            from 'react';
-import SettingsDialog   from '../../../Components/Elements/SettingsDialog/settings_dialog.jsx';
-import { IconSettings } from '../../../../Assets/Footer';
+import classNames        from 'classnames';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { CSSTransition } from 'react-transition-group';
+import { IconSettings }  from 'Assets/Footer';
+import SettingsDialog    from '../../Elements/SettingsDialog/settings_dialog.jsx';
 
 const ToggleSettings = ({
     is_language_visible,
@@ -19,13 +20,20 @@ const ToggleSettings = ({
                 onClick={toggleSettings}
                 className={toggle_settings_class}
             >
-                <IconSettings className='footer-icon'/>
+                <IconSettings className='footer-icon' />
             </a>
-            <SettingsDialog
-                is_open={is_settings_visible}
-                is_language_dialog_visible={is_language_visible}
-                toggleDialog={toggleSettings}
-            />
+            <CSSTransition
+                in={is_settings_visible}
+                timeout={100}
+                classNames='settings-dialog'
+                unmountOnExit
+            >
+                <SettingsDialog
+                    is_open={is_settings_visible}
+                    is_language_dialog_visible={is_language_visible}
+                    toggleDialog={toggleSettings}
+                />
+            </CSSTransition>
         </React.Fragment>
     );
 };

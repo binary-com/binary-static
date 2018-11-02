@@ -1,7 +1,7 @@
 import classNames    from 'classnames';
 import PropTypes     from 'prop-types';
 import React         from 'react';
-import { IconClose } from '../../../../Assets/Common';
+import { IconClose } from 'Assets/Common';
 
 const FullScreenDialog = (props) => {
     const { title, visible, children } = props;
@@ -10,8 +10,7 @@ const FullScreenDialog = (props) => {
         if (props.visible) {
             document.body.classList.add('no-scroll');
             document.getElementById('binary_app').classList.add('no-scroll');
-        }
-        else {
+        } else {
             document.body.classList.remove('no-scroll');
             document.getElementById('binary_app').classList.remove('no-scroll');
         }

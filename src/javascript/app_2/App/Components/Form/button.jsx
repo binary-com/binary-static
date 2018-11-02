@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React     from 'react';
 
 const Button = ({
-    className = '',
     children,
+    className = '',
     has_effect,
     id,
     is_disabled,
@@ -24,8 +24,8 @@ const Button = ({
 };
 
 Button.propTypes = {
-    className       : PropTypes.string,
     children        : PropTypes.object,
+    className       : PropTypes.string,
     has_effect      : PropTypes.bool,
     id              : PropTypes.string,
     is_disabled     : PropTypes.bool,

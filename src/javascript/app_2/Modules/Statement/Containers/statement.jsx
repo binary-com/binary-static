@@ -3,13 +3,13 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { withRouter }                 from 'react-router-dom';
+import DataTable                      from 'App/Components/Elements/DataTable';
+import { getContractPath }            from 'App/Components/Routes/helpers';
+import { connect }                    from 'Stores/connect';
 import Filter                         from './statement_filter.jsx';
 import StatementCardList              from '../Components/statement_card_list.jsx';
 import EmptyStatementMessage          from '../Components/empty_statement_message.jsx';
 import { getTableColumnsTemplate }    from '../Constants/data_table_constants';
-import DataTable                      from '../../../App/Components/Elements/DataTable';
-import { getContractPath }            from '../../../App/Components/Routes/helpers';
-import { connect }                    from '../../../Stores/connect';
 import Loading                        from '../../../../../templates/_common/components/loading.jsx';
 
 class Statement extends React.Component {
@@ -66,7 +66,8 @@ class Statement extends React.Component {
                                 data_source={data}
                                 columns={columns}
                                 onScroll={handleScroll}
-                                getRowLink={(row_obj) => getContractPath(row_obj.id)}
+                                getRowLink={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
+                                is_empty={is_empty}
                             >
                                 {renderGUI()}
                             </DataTable>
@@ -78,9 +79,10 @@ class Statement extends React.Component {
 }
 
 Statement.propTypes = {
-    has_selected_date: PropTypes.bool,
     data             : MobxPropTypes.arrayOrObservableArray,
     error            : PropTypes.string,
+    handleScroll     : PropTypes.func,
+    has_selected_date: PropTypes.bool,
     history          : PropTypes.object,
     is_empty         : PropTypes.bool,
     is_loading       : PropTypes.bool,
@@ -88,11 +90,10 @@ Statement.propTypes = {
     is_tablet        : PropTypes.bool,
     onMount          : PropTypes.func,
     onUnmount        : PropTypes.func,
-    handleScroll     : PropTypes.func,
 };
 
 export default connect(
-    ({modules, ui}) => ({
+    ({ modules, ui }) => ({
         is_empty         : modules.statement.is_empty,
         has_selected_date: modules.statement.has_selected_date,
         data             : modules.statement.data,

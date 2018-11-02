@@ -2,14 +2,14 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 // import { CSSTransition }   from 'react-transition-group';
+import { connect }         from 'Stores/connect';
+import { isDigitContract } from 'Stores/Modules/Contract/Helpers/digits';
+import { isEnded }         from 'Stores/Modules/Contract/Helpers/logic';
 import ContractError       from '../Components/contract_error.jsx';
 import {
     InfoBoxDigit,
     InfoBoxExpired,
     InfoBoxGeneral }       from '../Components/InfoBox';
-import { connect }         from '../../../Stores/connect';
-import { isDigitContract } from '../../../Stores/Modules/Contract/Helpers/digits';
-import { isEnded }         from '../../../Stores/Modules/Contract/Helpers/logic';
 
 const InfoBox = ({
     // is_contract_mode,

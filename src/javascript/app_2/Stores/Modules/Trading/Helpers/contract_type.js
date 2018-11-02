@@ -1,4 +1,9 @@
 import moment                    from 'moment';
+import { localize }              from '_common/localize';
+import {
+    cloneObject,
+    getPropertyValue }           from '_common/utility';
+import { WS }                    from 'Services';
 import { buildBarriersConfig }   from './barrier';
 import { buildDurationConfig }   from './duration';
 import {
@@ -6,13 +11,8 @@ import {
     isSessionAvailable }         from './start_date';
 import {
     getContractCategoriesConfig,
-    getContractTypesConfig }     from '../Constants/contract';
-import { WS }                    from '../../../../Services';
-import { localize }              from '../../../../../_common/localize';
-import { toTitleCase }           from '../../../../../_common/string_util';
-import {
-    cloneObject,
-    getPropertyValue }           from '../../../../../_common/utility';
+    getContractTypesConfig,
+    getLocalizedBasis }          from '../Constants/contract';
 
 const ContractType = (() => {
     let available_contract_types = {};
@@ -88,7 +88,7 @@ const ContractType = (() => {
 
                 if (!sub_cats) return;
 
-                sub_cats[sub_cats.indexOf(type)] = { value: type, text: localize(contract_types[type].title) };
+                sub_cats[sub_cats.indexOf(type)] = { value: type, text: contract_types[type].title };
 
                 // populate available contract types
                 available_contract_types[type] = cloneObject(contract_types[type]);
@@ -175,7 +175,6 @@ const ContractType = (() => {
         };
     };
 
-    // TODO: use this getter function to dynamically compare min/max versus duration amount
     const getDurationMinMax = (contract_type, contract_start_type, contract_expiry_type) => {
         let duration_min_max = getPropertyValue(available_contract_types, [contract_type, 'config', 'durations', 'min_max', contract_start_type]) || {};
 
@@ -217,7 +216,7 @@ const ContractType = (() => {
     };
 
     const hours   = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
-    const minutes = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
+    const minutes = [...Array(12).keys()].map((a)=>`0${a * 5}`.slice(-2));
 
     const getValidTime = (sessions, compare_moment, start_moment) => {
         if (sessions && !isSessionAvailable(sessions, compare_moment)) {
@@ -244,11 +243,11 @@ const ContractType = (() => {
 
     const getExpiryDate = (expiry_date, start_date) => {
         const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
-        const moment_expiry = moment.utc(expiry_date);
+        const moment_expiry = moment.utc(expiry_date || undefined);
         // forward starting contracts should only show today and tomorrow as expiry date
         const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
         return {
-            expiry_date: is_invalid ? moment_start.format('YYYY-MM-DD') : expiry_date,
+            expiry_date: (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD'),
         };
     };
 
@@ -289,8 +288,9 @@ const ContractType = (() => {
 
     const getBasis = (contract_type, basis) => {
         const arr_basis  = getPropertyValue(available_contract_types, [contract_type, 'basis']) || {};
+        const localized_basis = getLocalizedBasis();
         const basis_list = arr_basis.reduce((cur, bas) => (
-            [...cur, { text: localize(toTitleCase(bas)), value: bas }]
+            [...cur, { text: localized_basis[bas], value: bas }]
         ), []);
 
         return {

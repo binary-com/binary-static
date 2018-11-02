@@ -2,9 +2,9 @@ import React from 'react';
 
 const URLHandler = () => (
     <React.Fragment>
-        <script 
+        <script
             type='text/javascript'
-            dangerouslySetInnerHTML={{__html: `
+            dangerouslySetInnerHTML={{ __html: `
                 (function(l) {
                     if (l.search) {
                         var query = {};
@@ -25,7 +25,7 @@ const URLHandler = () => (
                         }
                     }
                 }(window.location));
-            `}}
+            ` }}
         />
     </React.Fragment>
 );

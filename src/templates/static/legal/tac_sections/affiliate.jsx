@@ -29,7 +29,7 @@ const Affiliate = () => (
                     { text: it.L('Comply with the applicable laws, rules, and regulations (including, but not limited to, advertising, data protection and privacy laws, rules, and regulations) of the jurisdiction(s) in which you operate or target your business.') },
                     { text: it.L('Ensure that any historical trading records and performance figures presented to your referrals related to trading on the website [_1] are accurate and not misleading.', it.website_name) },
                     { text: it.L('All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals.') },
-                    { text: it.L('You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third persons or external parties.') },
+                    { text: it.L('You shall avoid disclosure or unauthorized use of any confidential information that may come to your knowledge or possession to third clients or external parties.') },
                 ]}
             />
 
@@ -37,14 +37,14 @@ const Affiliate = () => (
                 header={it.L('Restrictions')}
                 items={[
                     { text: it.L('You shall not encourage your referrals to take out any form of loans to be able to make deposits and/or place trades.') },
-                    { text: it.L('You shall not target any of your marketing, advertising, and promotional activities to any persons unless they are over 18 years old, or for Estonian residents whereby they have to be over 21 years old.') },
+                    { text: it.L('You shall not target any of your marketing, advertising, and promotional activities to any clients unless they are over 18 years old, or for Estonian residents whereby they have to be over 21 years old.') },
                     { text: it.L('You shall not hold or pool your referrals\' funds or third party funds into your own account held with [_1].',it.website_name) },
                     { text: it.L('You shall not resort to high-pressure sales tactics or false promises.') },
                     { text: it.L('You shall not encourage your referrals to make deposits or place any trades where the purpose of that action is (whether in whole or in part) to increase affiliate commissions rather than to benefit your referrals\' trading performance and profitability.') },
                     { text: it.L('You shall not place trades on your referrals\' behalf.') },
                     { text: it.L('You shall not purchase or register keywords, search terms or other identifiers for use in any search engine, portal, sponsored advertising service or other search or referral service which are identical or similar to any of the Company\'s trademarks or trade names that include the word "[_1]" or any variation thereof.',it.website_name) },
                     { text: it.L('You must ensure that you do not place digital advertisements on websites providing unauthorised access to copyrighted content.') },
-                    { text: it.L('Neither you, your direct relatives, or any persons you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled persons.') },
+                    { text: it.L('Neither you, your direct relatives, or any clients you control are eligible to become clients, and you shall not be entitled to any share of net revenue or any other remuneration from the Company in relation to such relatives, friends, or controlled clients.') },
                     { text: it.L('You shall not develop and implement marketing, advertising, and promotional activities which infringe any applicable laws, rules, regulations, or codes of practice relating to marketing, advertising, and promotional activities applicable under the authority of any regulatory body of the jurisdiction(s) in which you operate or target your business.') },
                 ]}
             >
@@ -148,11 +148,11 @@ const Affiliate = () => (
             <ListNested
                 header={it.L('General')}
                 items={[
-                        { text: it.L('This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter.') },
-                        { text: it.L('No delay, neglect, or forbearance on the part of either party in enforcing against the other party any term or condition of this Agreement shall either be or be deemed to be a waiver or in any way prejudice any right of that party under this Agreement.') },
-                        { text: it.L('If any provision of this Agreement is held to be void or unenforceable in whole or part, the impugned provision (or part thereof) shall be deemed to be deleted from this Agreement and the remaining provisions (including the remainder of the affected provision) shall continue to be valid and applicable.') },
-                        { text: it.L('Any notice given or made under this Agreement to the Company shall be by email to [_1]. The Company shall send you any notices given or made under this Agreement to the email address supplied on your application form or such other email address as notified by you to the Company.','affiliates@binary.com') },
-                        { text: it.L('Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to and finally determined by an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. You are also responsible for any and all costs related to such arbitration.') },
+                    { text: it.L('This Agreement contains the entire agreement between the parties with respect to its subject matter and supersedes all previous agreements and understandings between the parties with respect to its subject matter.') },
+                    { text: it.L('No delay, neglect, or forbearance on the part of either party in enforcing against the other party any term or condition of this Agreement shall either be or be deemed to be a waiver or in any way prejudice any right of that party under this Agreement.') },
+                    { text: it.L('If any provision of this Agreement is held to be void or unenforceable in whole or part, the impugned provision (or part thereof) shall be deemed to be deleted from this Agreement and the remaining provisions (including the remainder of the affected provision) shall continue to be valid and applicable.') },
+                    { text: it.L('Any notice given or made under this Agreement to the Company shall be by email to [_1]. The Company shall send you any notices given or made under this Agreement to the email address supplied on your application form or such other email address as notified by you to the Company.','affiliates@binary.com') },
+                    { text: it.L('Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to and finally determined by an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. You are also responsible for any and all costs related to such arbitration.') },
                 ]}
             />
         </ol>

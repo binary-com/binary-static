@@ -5,7 +5,7 @@ css:
   - 'cssmin'
 
 js:
-  - 'webpack:build'
+  - 'webpack:all'
   - 'babel:landing_pages'
 
 test:

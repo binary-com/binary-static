@@ -3,13 +3,16 @@ const fs      = require('fs');
 const path    = require('path');
 const common  = require('./common');
 const GetText = require('./gettext');
+const extract = require('./extract_js_texts');
+
+const static_app_2 = require('./js_texts/static_strings_app_2');
 
 const texts = [
     'Day',
     'Month',
     'Year',
     'Sorry, an error occurred while processing your request.',
-    'Please [_1]log in[_2] or [_3]sign up[_2] to view this page.',
+    'Please [_1]log in[_2] or [_3]sign up[_4] to view this page.',
 
     // top bar
     'Click here to open a Real Account',
@@ -76,15 +79,13 @@ const texts = [
     'Time is in the wrong format.',
 
     // highchart localization text
-    'Start time',
-    'Entry spot',
     'Purchase Time',
-    'Exit spot',
-    'End time',
-    'Sell time',
     'Charting for this underlying is delayed',
-    'Reset time',
-    'Payout range',
+    'Reset Time',
+    'Payout Range',
+    'Tick [_1]',
+    'Ticks history returned an empty array.',
+    'Chart is not available for this underlying.',
 
     // trading page
     'year',
@@ -168,6 +169,9 @@ const texts = [
     'Purchase',
     'Purchase request sent',
     'Add +/– to define a barrier offset. For example, +0.005 means a barrier that\'s 0.005 higher than the entry spot.',
+    'Please reload the page',
+    'Trading is unavailable at this time.',
+    'Maximum multiplier of 1000.',
 
     // limits
     'Your account is fully authenticated and your withdrawal limits have been lifted.',
@@ -356,6 +360,8 @@ const texts = [
     'Digit Under',
     'Call Spread',
     'Put Spread',
+    'High Tick',
+    'Low Tick',
 
     // multi_barriers_trading
     '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
@@ -447,7 +453,6 @@ const texts = [
     'Open',
     'Closed',
     'Contract has not started yet',
-    'Price',
     'Spot Time',
     'Spot Time (GMT)',
     'Current Time',
@@ -481,6 +486,7 @@ const texts = [
     'Highest Tick Time',
     'Lowest Tick',
     'Lowest Tick Time',
+    'Close Time',
 
     // financial assessment
     'Please select a value',
@@ -521,6 +527,7 @@ const texts = [
     'Should be a valid number.',
     'Should be more than [_1]',
     'Should be less than [_1]',
+    'Should be [_1]',
     'Should be between [_1] and [_2]',
     'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.',
     'Only letters, space, hyphen, period, and apostrophe are allowed.',
@@ -581,6 +588,9 @@ const texts = [
     'Please check your email for further instructions.',
     'Revoke MAM',
     'Manager successfully revoked',
+    '{SPAIN ONLY}You are about to purchase a product that is not simple and may be difficult to understand: Contracts for Difference and Forex. As a general rule, the CNMV considers that such products are not appropriate for retail clients, due to their complexity.',
+    '{SPAIN ONLY}However, Binary Investments (Europe) Ltd has assessed your knowledge and experience and deems the product appropriate for you.',
+    '{SPAIN ONLY}This is a product with leverage. You should be aware that losses may be higher than the amount initially paid to purchase the product.',
 
     // account_transfer
     'Min',
@@ -603,9 +613,12 @@ const texts = [
     'We are reviewing your documents. For more details [_1]contact us[_2].',
     'Deposits and withdrawals have been disabled on your account. Please check your email for more details.',
     'Trading and deposits have been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
+    'Binary Options Trading has been disabled on your account. Kindly [_1]contact customer support[_2] for assistance.',
     'Withdrawals have been disabled on your account. Please check your email for more details.',
+    'MT5 withdrawals have been disabled on your account. Please check your email for more details.',
     'Please complete your [_1]personal details[_2] before you proceed.',
     'Account Authenticated',
+    'In the EU, financial binary options are only available to professional investors.',
 
     // browser-update message
     'Your web browser ([_1]) is out of date and may affect your trading experience. Proceed at your own risk. [_2]Update browser[_3]',
@@ -643,10 +656,10 @@ const texts = [
     'Dai',
 
     // Authentication errors
-    'Invalid document format: "[_1]"',
+    'Invalid document format.',
     'File ([_1]) size exceeds the permitted limit. Maximum allowed file size: [_2]',
     'ID number is required for [_1].',
-    'Only letters, numbers, space, underscore, and hyphen are allowed for ID number.',
+    'Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).',
     'Expiry date is required for [_1].',
     'Passport',
     'ID card',
@@ -674,20 +687,31 @@ const texts = [
 ];
 
 /* eslint-disable no-console */
-const map           = {};
 const all_languages = [...common.languages, 'ach'].map(l => l.toLowerCase());
+const map = {
+    app  : {},
+    app_2: {},
+};
 
 const build = () => {
-    const gt = GetText.getInstance();
+    generateSources();
+    const all_texts = getAllTexts();
+    const gettext   = GetText.getInstance();
+
     all_languages.forEach(lang => {
-        gt.setLang(lang);
-        map[lang] = {};
-        texts.forEach(text => {
+        gettext.setLang(lang);
+        Object.keys(map).forEach(app => { map[app][lang] = {}; });
+
+        all_texts.forEach(text => {
             const key         = text.replace(/[\s.]/g, '_');
-            const translation = gt.gettext(text, '[_1]', '[_2]', '[_3]', '[_4]');
+            const translation = gettext.gettext(text, '[_1]', '[_2]', '[_3]', '[_4]');
 
             if (translation !== text) {
-                map[lang][key] = translation;
+                Object.keys(map).forEach(app => {
+                    if (map[app].source.has(text)) {
+                        map[app][lang][key] = translation;
+                    }
+                });
             }
         });
     });
@@ -703,12 +727,51 @@ const generate = () => {
         process.stdout.write(color.cyan('    -'));
         process.stdout.write(` ${lang}.js ${'.'.repeat(15 - lang.length)}`);
 
-        const js_path = path.join(common.root_path, `${target_path}${lang}.js`);
-        const content = `const texts_json = {};\ntexts_json['${lang.toUpperCase()}'] = ${JSON.stringify(map[lang])};`;
-        fs.writeFileSync(js_path, content, 'utf8');
+        Object.keys(map).forEach(app => {
+            const js_path = path.join(common.root_path, `${target_path}${app !== 'app' ? `${app}/` : ''}${lang}.js`);
+            const content = `const texts_json = {};\ntexts_json['${lang.toUpperCase()}'] = ${JSON.stringify(map[app][lang])};`;
+            fs.writeFileSync(js_path, content, 'utf8');
+        });
 
         process.stdout.write(common.messageEnd());
     });
+};
+
+// ---------- Helpers ----------
+const generateSources = () => {
+    // app
+    map.app.source = new Set(texts);
+
+    // app_2
+    const app_name = 'app_2';
+    extract.parse(app_name);
+    const extracted_strings_app_2 = [...extract.getTexts(app_name)];
+    map.app_2.source = new Set([
+        ...extracted_strings_app_2,
+        ...static_app_2,
+    ]);
+    writeExtractedStrings(app_name, extracted_strings_app_2);
+};
+
+const getAllTexts = () => {
+    const unique_texts = new Set([
+        ...map.app.source,
+        ...map.app_2.source,
+    ]);
+    return [...unique_texts];
+};
+
+const writeExtractedStrings = (app_name, extracted_strings) => {
+    const file_path = path.resolve(common.root_path, `scripts/js_texts/extracted_strings_${app_name}.js`);
+    const comments  = '// This is an auto-generated list of strings used in js code for debugging purpose only\n';
+    const contents  = `${comments}module.exports = ${singleQuoteArray(extracted_strings)}`;
+    fs.writeFileSync(file_path, contents, 'utf8');
+};
+
+// JSON.stringify uses double quotes, so in order to have the same style used in the code we wrap array items in single quote
+const singleQuoteArray = (texts_array) => {
+    const spaces = ' '.repeat(4);
+    return `[\n${spaces}'${texts_array.sort().map(str => str.replace(/'/g, '\\\'')).join(`',\n${spaces}'`)}',\n];\n`;
 };
 
 exports.build    = build;

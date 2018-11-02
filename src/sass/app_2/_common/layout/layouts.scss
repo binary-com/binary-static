@@ -138,6 +138,9 @@
                     div.cq-chart-controls {
                         box-shadow: none;
                     }
+                    div.ciq-asset-information {
+                        z-index: 0;
+                    }
                 }
                 div.cq-chart-controls {
                     border-right: 1px solid $COLOR_GRAY;
@@ -265,6 +268,10 @@
                                         border-top-left-radius: $BORDER_RADIUS;
                                         border-bottom-left-radius: $BORDER_RADIUS;
                                     }
+                                }
+                                &.list-container {
+                                    border-right-width: 1px;
+                                    border-radius: $BORDER_RADIUS;
                                 }
                             }
                             input:last-child {

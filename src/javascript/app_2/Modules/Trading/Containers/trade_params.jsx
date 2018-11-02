@@ -1,9 +1,9 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { form_components }            from '../../../Stores/Modules/Trading/Constants/ui';
-import { connect }                    from '../../../Stores/connect';
-import { getComponentProperties }     from '../../../Utils/React/component';
+import { connect }                    from 'Stores/connect';
+import { form_components }            from 'Stores/Modules/Trading/Constants/ui';
+import { getComponentProperties }     from 'Utils/React/component';
 
 class TradeParams extends React.Component {
     isVisible(component_name) {
@@ -38,7 +38,6 @@ TradeParams.propTypes = {
     form_components: MobxPropTypes.arrayOrObservableArray,
     is_minimized   : PropTypes.bool,
     is_nativepicker: PropTypes.bool,
-    onChange       : PropTypes.func,
     server_time    : PropTypes.object,
     trade_store    : PropTypes.object,
 };
@@ -48,6 +47,5 @@ export default connect(
         server_time    : common.server_time,
         form_components: modules.trade.form_components,
         trade_store    : modules.trade,
-        onChange       : modules.trade.onChange,
     })
 )(TradeParams);

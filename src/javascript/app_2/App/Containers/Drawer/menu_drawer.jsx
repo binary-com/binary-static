@@ -1,16 +1,18 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { DrawerItem,
-         DrawerToggle }  from '../../Components/Elements/Drawer';
-import { IconLogout }    from '../../../Assets/Header/Drawer';
-import { IconTrade,
-         IconPortfolio,
-         IconStatement } from '../../../Assets/Header/NavBar';
-import routes            from '../../../Constants/routes';
-import { requestLogout } from '../../../Services';
-import { connect }       from '../../../Stores/connect';
-import Client            from '../../../../_common/base/client_base';
-import { localize }      from '../../../../_common/localize';
+import Client            from '_common/base/client_base';
+import { localize }      from '_common/localize';
+import { IconLogout }    from 'Assets/Header/Drawer';
+import {
+    IconTrade,
+    IconPortfolio,
+    IconStatement }      from 'Assets/Header/NavBar';
+import routes            from 'Constants/routes';
+import { requestLogout } from 'Services';
+import { connect }       from 'Stores/connect';
+import {
+    DrawerItem,
+    DrawerToggle }       from '../../Components/Elements/Drawer';
 
 const MenuDrawer = ({
     is_dark_mode,
@@ -62,10 +64,10 @@ const MenuDrawer = ({
                 />
             </React.Fragment>}
         </div>
-        { Client.isLoggedIn() &&
+        { !!(Client.isLoggedIn() && is_mobile) &&
             <div className='drawer-footer'>
                 <DrawerItem
-                    icon={<IconLogout className='drawer-icon'/>}
+                    icon={<IconLogout className='drawer-icon' />}
                     text={localize('Logout')}
                     custom_action={() => {
                         if (is_portfolio_drawer_on) {

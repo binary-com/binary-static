@@ -7,6 +7,7 @@ const Contract             = require('./contract');
 const Defaults             = require('./defaults');
 const getLookBackFormula   = require('./lookback').getFormula;
 const isLookback           = require('./lookback').isLookback;
+const Client               = require('../../base/client');
 const BinarySocket         = require('../../base/socket');
 const formatMoney          = require('../../common/currency').formatMoney;
 const CommonFunctions      = require('../../../_common/common_functions');
@@ -23,7 +24,7 @@ const getPropertyValue     = require('../../../_common/utility').getPropertyValu
  *
  * Usage:
  *
- * `socket.send(Price.proposal())` to send price proposal to sever
+ * `socket.send(Price.proposal())` to send price proposal to server
  * `Price.display()` to display the price details returned from server
  */
 const Price = (() => {
@@ -60,6 +61,11 @@ const Price = (() => {
 
         if (multiplier && CommonFunctions.isVisible(multiplier) && multiplier.value) {
             proposal.amount = multiplier.value;
+            if (multiplier.value > 1000) {
+                proposal.error = {
+                    message: localize('Maximum multiplier of 1000.'),
+                };
+            }
         }
 
         if (amount_type && CommonFunctions.isVisible(amount_type) && amount_type.value
@@ -170,16 +176,6 @@ const Price = (() => {
             return;
         }
 
-        // hide all containers except current one
-        if (position === 'middle') {
-            if ($('#price_container_top').is(':visible') || $('#price_container_bottom').is(':visible')) {
-                $('#price_container_top').fadeOut(0);
-                $('#price_container_bottom').fadeOut(0);
-            }
-        } else if ($('#price_container_middle').is(':visible')) {
-            $('#price_container_middle').fadeOut(0);
-        }
-
         const container = CommonFunctions.getElementById(`price_container_${position}`);
         if (!container) return;
         if (!$(container).is(':visible')) {
@@ -252,7 +248,8 @@ const Price = (() => {
             comment.show();
             error.hide();
             if (isLookback(type)) {
-                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${getLookBackFormula(type)}`);
+                const multiplier_value = formatMoney(Client.get('currency'), proposal.multiplier, false, 3, 2);
+                CommonFunctions.elementInnerHtml(comment, `${localize('Payout')}: ${getLookBackFormula(type, multiplier_value)}`);
             } else {
                 commonTrading.displayCommentPrice(comment, (currency.value || currency.getAttribute('value')), proposal.ask_price, proposal.payout);
             }
@@ -353,18 +350,49 @@ const Price = (() => {
 
         processForgetProposalOpenContract();
         processForgetProposals().then(() => {
+            const position_is_visible = {
+                top   : false,
+                middle: false,
+                bottom: false,
+            };
+            let first_price_proposal = true;
             Object.keys(types || {}).forEach((type_of_contract) => {
-                BinarySocket.send(Price.proposal(type_of_contract), { callback: (response) => {
-                    if (response.error && response.error.code === 'AlreadySubscribed') {
-                        BinarySocket.send({ forget_all: 'proposal' });
-                    } else if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
-                        response.echo_req.passthrough.form_id === form_id) {
-                        Price.display(response, Contract.contractType()[Contract.form()]);
-                    }
-                    commonTrading.hideOverlayContainer();
+                const position = commonTrading.contractTypeDisplayMapping(type_of_contract);
+                const proposal = Price.proposal(type_of_contract);
+                position_is_visible[position] = true;
+
+                if (proposal.error) {
+                    proposal.echo_req = proposal;
+                    Price.display(proposal, Contract.contractType()[Contract.form()]);
                     commonTrading.hidePriceOverlay();
-                } });
+                } else {
+                    BinarySocket.send(proposal, { callback: (response) => {
+                        if (response.error && response.error.code === 'AlreadySubscribed') {
+                            BinarySocket.send({ forget_all: 'proposal' });
+                        } else if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
+                            response.echo_req.passthrough.form_id === form_id) {
+                            Price.display(response, Contract.contractType()[Contract.form()]);
+                        }
+                        if (first_price_proposal) {
+                            commonTrading.hideOverlayContainer();
+                            commonTrading.hidePriceOverlay();
+                            setPriceContainersVisibility(position_is_visible);
+                            first_price_proposal = false;
+                        }
+                    } });
+                }
             });
+        });
+    };
+
+    const setPriceContainersVisibility = (position_is_visible) => {
+        Object.keys(position_is_visible).forEach(position => {
+            const container = CommonFunctions.getElementById(`price_container_${position}`);
+            if (position_is_visible[position]) {
+                $(container).fadeIn(0);
+            } else {
+                $(container).fadeOut(0);
+            }
         });
     };
 

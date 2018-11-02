@@ -51,6 +51,7 @@ export class ChartBarrierStore {
 
     @action.bound
     updateBarriers(high, low) {
+        this.relative       = /^[+-]/.test(high);
         this.high = +high || undefined;
         this.low  = +low  || undefined;
     }
@@ -74,5 +75,5 @@ export class ChartBarrierStore {
     @computed
     get default_shade() {
         return DEFAULT_SHADES[this.barrier_count];
-    };
+    }
 }

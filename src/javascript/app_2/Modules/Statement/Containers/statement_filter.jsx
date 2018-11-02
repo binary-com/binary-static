@@ -1,9 +1,9 @@
 import moment       from 'moment';
 import PropTypes    from 'prop-types';
 import React        from 'react';
-import DatePicker   from '../../../App/Components/Form/DatePicker';
-import { connect }  from '../../../Stores/connect';
-import { localize } from '../../../../_common/localize';
+import { localize } from '_common/localize';
+import DatePicker   from 'App/Components/Form/DatePicker';
+import { connect }  from 'Stores/connect';
 
 const Filter = ({
     date_from,
@@ -43,10 +43,10 @@ const Filter = ({
 Filter.propTypes = {
     date_from         : PropTypes.string,
     date_to           : PropTypes.string,
-    server_time       : PropTypes.object,
     handleDateChange  : PropTypes.func,
-    use_native_pickers: PropTypes.bool,
+    server_time       : PropTypes.object,
     today             : PropTypes.string,
+    use_native_pickers: PropTypes.bool,
 };
 
 export default connect(

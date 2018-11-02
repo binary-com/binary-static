@@ -33,10 +33,6 @@ div.dropdown-container {
             color: $COLOR_BLUE;
         }
     }
-    &.show > div.dropdown-list {
-        transform: scale(1, 1);
-        opacity: 1;
-    }
     &.show > .clicked {
         border-color: $COLOR_BLUE;
     }
@@ -48,7 +44,8 @@ div.dropdown-container {
         bottom: -8px;
         width: 100%;
         position: absolute;
-        transition: all 0.25s;
+        transition: transform 0.25s ease, opacity 0.25s linear;
+        user-select: none;
         opacity: 0;
         transform: scale(1, 0);
         z-index: 999;
@@ -104,6 +101,14 @@ div.dropdown-container {
                     font-weight: 500;
                 }
             }
+        }
+        &-enter, &-exit {
+            transform: scale(1, 0);
+            opacity: 0;
+        }
+        &-enter-done {
+            transform: scale(1, 1);
+            opacity: 1;
         }
     }
     .select-arrow {

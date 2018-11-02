@@ -18,8 +18,8 @@ const CardList = ({ data, currency }) => (
 );
 
 CardList.propTypes = {
-    data    : MobxPropTypes.arrayOrObservableArray,
     currency: PropTypes.string,
+    data    : MobxPropTypes.arrayOrObservableArray,
 };
 
 export default CardList;

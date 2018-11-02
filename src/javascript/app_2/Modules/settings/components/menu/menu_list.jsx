@@ -21,10 +21,10 @@ const MenuList = ({ items }) => (
 MenuList.propTypes = {
     items: PropTypes.arrayOf(
         PropTypes.shape({
-            title      : PropTypes.string,
             description: PropTypes.string,
             img_src    : PropTypes.string,
             path       : PropTypes.string,
+            title      : PropTypes.string,
         })
     ),
 };

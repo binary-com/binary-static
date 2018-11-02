@@ -70,7 +70,7 @@ const crypto_config = {
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || 0.002 : 1);
 
- // @param {String} limit = max|min
+// @param {String} limit = max|min
 const getPaWithdrawalLimit = (currency, limit) => {
     if (isCryptocurrency(currency)) {
         return getPropertyValue(crypto_config, [currency, `pa_${limit}_withdrawal`]);
@@ -78,7 +78,7 @@ const getPaWithdrawalLimit = (currency, limit) => {
     return limit === 'max' ? 2000 : 10;
 };
 
-const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '');
+const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '' /* localize-ignore */); // to refactor on master
 
 const getMinPayout = currency => getPropertyValue(currencies_config, [currency, 'stake_default']);
 

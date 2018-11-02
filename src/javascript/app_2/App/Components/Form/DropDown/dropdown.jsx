@@ -1,7 +1,10 @@
-import { isArrayLike } from 'mobx';
-import { observer }    from 'mobx-react';
-import PropTypes       from 'prop-types';
-import React           from 'react';
+import { isArrayLike }   from 'mobx';
+import { observer }      from 'mobx-react';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { CSSTransition } from 'react-transition-group';
+import SimpleBar         from 'simplebar-react';
+import { IconArrow }     from 'Assets/Common';
 import {
     getDisplayText,
     getItemFromValue,
@@ -9,7 +12,6 @@ import {
     getPrevIndex,
     getNextIndex,
     updateItemClass }  from './helpers';
-import { IconArrow }   from '../../../../Assets/Common';
 
 class Dropdown extends React.Component {
     constructor(props) {
@@ -125,7 +127,7 @@ class Dropdown extends React.Component {
                 className={`dropdown-container ${this.props.className ? this.props.className : ''} ${this.state.is_list_visible ? 'show' : ''}`}
             >
                 <div
-                    className={`dropdown-display ${this.state.is_list_visible ? 'clicked': ''}`}
+                    className={`dropdown-display ${this.state.is_list_visible ? 'clicked' : ''}`}
                     onClick={this.handleVisibility}
                     tabIndex='0'
                     onKeyDown={this.onKeyPressed}
@@ -135,29 +137,38 @@ class Dropdown extends React.Component {
                     </span>
                 </div>
                 <IconArrow className='select-arrow' />
-                <div className='dropdown-list'>
-                    <div className='list-container'>
-                        {isArrayLike(this.props.list) ?
-                            <Items
-                                items={this.props.list}
-                                name={this.props.name}
-                                value={this.props.value}
-                                handleSelect={this.handleSelect}
-                            /> :
-                            Object.keys(this.props.list).map(key => (
-                                <React.Fragment key={key}>
-                                    <div className='list-label'><span>{key}</span></div>
+                <CSSTransition
+                    in={this.state.is_list_visible}
+                    timeout={100}
+                    classNames='dropdown-list'
+                    unmountOnExit
+                >
+                    <div className='dropdown-list'>
+                        <div className='list-container'>
+                            <SimpleBar style={{ 'height': '100%' }}>
+                                {isArrayLike(this.props.list) ?
                                     <Items
-                                        items={this.props.list[key]}
+                                        items={this.props.list}
                                         name={this.props.name}
                                         value={this.props.value}
                                         handleSelect={this.handleSelect}
-                                    />
-                                </React.Fragment>
-                            ))
-                        }
+                                    /> :
+                                    Object.keys(this.props.list).map(key => (
+                                        <React.Fragment key={key}>
+                                            <div className='list-label'><span>{key}</span></div>
+                                            <Items
+                                                items={this.props.list[key]}
+                                                name={this.props.name}
+                                                value={this.props.value}
+                                                handleSelect={this.handleSelect}
+                                            />
+                                        </React.Fragment>
+                                    ))
+                                }
+                            </SimpleBar>
+                        </div>
                     </div>
-                </div>
+                </CSSTransition>
             </div>
         );
     }
@@ -193,19 +204,19 @@ const NativeSelect = ({
     <div className='select-wrapper'>
         <select name={name} value={value} onChange={onChange}>
             {Array.isArray(list) ?
-              list.map((item, idx) => (
-                  <option key={idx} value={item.value}>{item.text}</option>
-              ))
-            :
-            Object.keys(list).map(key => (
-                <React.Fragment key={key}>
-                    <optgroup label={key}>
-                        {list[key].map((item, idx) => (
-                            <option key={idx} value={item.value}>{item.text}</option>
-                        ))}
-                    </optgroup>
-                </React.Fragment>
-            ))}
+                list.map((item, idx) => (
+                    <option key={idx} value={item.value}>{item.text}</option>
+                ))
+                :
+                Object.keys(list).map(key => (
+                    <React.Fragment key={key}>
+                        <optgroup label={key}>
+                            {list[key].map((item, idx) => (
+                                <option key={idx} value={item.value}>{item.text}</option>
+                            ))}
+                        </optgroup>
+                    </React.Fragment>
+                ))}
         </select>
     </div>
 );

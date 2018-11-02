@@ -23,11 +23,11 @@ const Trading = () => (
             <div className='row' id='contract_symbol_container'>
                 <div id='contract_markets_container'>
                     <div id='underlying_component' />
-                    <input type='hidden' id='underlying'/>
+                    <input type='hidden' id='underlying' />
                 </div>
                 <div id='contract_type_container'>
                     <div id='contract_component' />
-                    <input type='hidden' id='contract'/>
+                    <input type='hidden' id='contract' />
                 </div>
                 <div id='underlying_details'>
                     <span id='trading_worm_chart' />
@@ -36,7 +36,7 @@ const Trading = () => (
                 <a className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</a>
             </div>
             <div className='row clear' id='contract_form_content_wrapper'>
-                <div className='col row-inner'>
+                <div className='col row-inner gr-6 gr-12-p gr-12-m gr-no-gutter'>
                     <div id='contract_container' className='col row'>
                         <div id='loading_container3' className='overlay_container' />
                         <div id='contract_form_container' className='col'>
@@ -145,7 +145,7 @@ const Trading = () => (
                                         <div className='big-col'>
                                             <select id='selected_tick' className='small_width_input'>
                                                 { Array.from(new Array(5)).map((x, idx) => (
-                                                    <option key={idx+1} value={idx+1}>{idx+1}</option>
+                                                    <option key={idx + 1} value={idx + 1}>{idx + 1}</option>
                                                 ))}
                                             </select>
                                         </div>
@@ -188,7 +188,7 @@ const Trading = () => (
                         </div>
                     </div>
                 </div>
-                <div id='contract_prices_container' className='col row-inner'>
+                <div id='contract_prices_container' className='col row-inner gr-6 gr-12-p gr-12-m gr-no-gutter'>
                     <div id='contract_confirmation_container' className='overlay_container col'>
                         <a className='close' id='close_confirmation_container' />
                         <div id='confirmation_message_container'>

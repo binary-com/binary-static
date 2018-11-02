@@ -203,11 +203,18 @@ const findParent = (el, selector) => {
 
 let static_hash;
 const getStaticHash = () => {
-    // TODO: update when splitting the release process
-    const scripts_selector = ['.min.js', '.js', '_app.min.js', '_app.js'].map(s => `script[src*="binary${s}"]`).join(',');
-    static_hash = static_hash || (document.querySelector(scripts_selector).getAttribute('src') || '').split('?')[1];
+    static_hash = static_hash || (document.querySelector('script[src*="binary"]').getAttribute('src') || '').split('?')[1];
     return static_hash;
 };
+
+class PromiseClass {
+    constructor() {
+        this.promise = new Promise((resolve, reject) => {
+            this.reject  = reject;
+            this.resolve = resolve;
+        });
+    }
+}
 
 module.exports = {
     showLoadingImage,
@@ -224,4 +231,5 @@ module.exports = {
     applyToAllElements,
     findParent,
     getStaticHash,
+    PromiseClass,
 };

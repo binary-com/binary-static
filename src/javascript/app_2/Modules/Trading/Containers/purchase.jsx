@@ -1,15 +1,15 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
+import { localize }      from '_common/localize';
+import { isEmptyObject } from '_common/utility';
+import { PopConfirm }    from 'App/Components/Elements/PopConfirm';
+import UILoader          from 'App/Components/Elements/ui_loader.jsx';
+import Button            from 'App/Components/Form/button.jsx';
+import Fieldset          from 'App/Components/Form/fieldset.jsx';
+import { connect }       from 'Stores/connect';
 import ContractInfo      from '../Components/Form/Purchase/contract_info.jsx';
 import MessageBox        from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock      from '../Components/Form/Purchase/PurchaseLock';
-import { PopConfirm }    from '../../../App/Components/Elements/PopConfirm';
-import UILoader          from '../../../App/Components/Elements/ui_loader.jsx';
-import Button            from '../../../App/Components/Form/button.jsx';
-import Fieldset          from '../../../App/Components/Form/fieldset.jsx';
-import { connect }       from '../../../Stores/connect';
-import { localize }      from '../../../../_common/localize';
-import { isEmptyObject } from '../../../../_common/utility';
 
 const Purchase = ({
     barrier_count,
@@ -37,7 +37,7 @@ const Purchase = ({
                 className='primary green'
                 has_effect
                 text={localize('Purchase')}
-                onClick={() => { onClickPurchase(info.id, info.stake); }}
+                onClick={() => { onClickPurchase(info.id, info.stake, type); }}
                 wrapperClassName='submit-section'
             />
         );
@@ -75,9 +75,9 @@ const Purchase = ({
                         {is_purchase_confirm_on ?
                             <PopConfirm
                                 alignment='left'
-                                cancel_text='Cancel'
-                                confirm_text='Purchase'
-                                message='Are you sure you want to purchase this contract?'
+                                cancel_text={localize('Cancel')}
+                                confirm_text={localize('Purchase')}
+                                message={localize('Are you sure you want to purchase this contract?')}
                             >
                                 {purchase_button}
                             </PopConfirm>
@@ -94,16 +94,16 @@ const Purchase = ({
 Purchase.propTypes = {
     barrier_count         : PropTypes.number,
     currency              : PropTypes.string,
-    is_purchase_enabled   : PropTypes.bool,
     is_purchase_confirm_on: PropTypes.bool,
+    is_purchase_enabled   : PropTypes.bool,
     is_purchase_locked    : PropTypes.bool,
     is_trade_enabled      : PropTypes.bool,
     onClickPurchase       : PropTypes.func,
     onHoverPurchase       : PropTypes.func,
-    resetPurchase         : PropTypes.func,
-    togglePurchaseLock    : PropTypes.func,
     proposal_info         : PropTypes.object,
     purchase_info         : PropTypes.object,
+    resetPurchase         : PropTypes.func,
+    togglePurchaseLock    : PropTypes.func,
     trade_types           : PropTypes.object,
 };
 

@@ -1,13 +1,13 @@
-import { CSSTransition }    from 'react-transition-group';
 import PropTypes            from 'prop-types';
 import React                from 'react';
+import { CSSTransition }    from 'react-transition-group';
+import { getPropertyValue } from '_common/utility';
+import { connect }          from 'Stores/connect';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form_layout.jsx';
 import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
 import InfoBox              from '../../Contract/Containers/info_box.jsx';
 import SmartChart           from '../../SmartChart';
-import { connect }          from '../../../Stores/connect';
-import { getPropertyValue } from '../../../../_common/utility';
 
 class Trade extends React.Component {
     componentDidMount() {
@@ -31,6 +31,10 @@ class Trade extends React.Component {
                             InfoBox={<InfoBox is_trade_page />}
                             onSymbolChange={this.props.onSymbolChange}
                             symbol={this.props.symbol}
+                            chart_type={this.props.chart_type}
+                            granularity={this.props.granularity}
+                            updateChartType={this.props.updateChartType}
+                            updateGranularity={this.props.updateGranularity}
                         />
                     }
                     <Test />
@@ -77,15 +81,19 @@ Trade.propTypes = {
 
 export default connect(
     ({ modules, ui }) => ({
-        is_contract_mode: modules.smart_chart.is_contract_mode,
-        chart_id        : modules.trade.chart_id,
-        is_trade_enabled: modules.trade.is_trade_enabled,
-        onClickNewTrade : modules.trade.onClickNewTrade,
-        onMount         : modules.trade.onMount,
-        onSymbolChange  : modules.trade.onChange,
-        onUnmount       : modules.trade.onUnmount,
-        purchase_info   : modules.trade.purchase_info,
-        symbol          : modules.trade.symbol,
-        is_mobile       : ui.is_mobile,
+        chart_type       : modules.smart_chart.chart_type,
+        granularity      : modules.smart_chart.granularity,
+        is_contract_mode : modules.smart_chart.is_contract_mode,
+        updateChartType  : modules.smart_chart.updateChartType,
+        updateGranularity: modules.smart_chart.updateGranularity,
+        chart_id         : modules.trade.chart_id,
+        is_trade_enabled : modules.trade.is_trade_enabled,
+        onClickNewTrade  : modules.trade.onClickNewTrade,
+        onMount          : modules.trade.onMount,
+        onSymbolChange   : modules.trade.onChange,
+        onUnmount        : modules.trade.onUnmount,
+        purchase_info    : modules.trade.purchase_info,
+        symbol           : modules.trade.symbol,
+        is_mobile        : ui.is_mobile,
     })
 )(Trade);

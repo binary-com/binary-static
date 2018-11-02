@@ -1,10 +1,10 @@
 import moment                              from 'moment';
+import { getDecimalPlaces }                from '_common/base/currency_base';
+import { isDeepEqual }                     from '_common/utility';
+import { convertToUnix }                   from 'Utils/Date';
 import {
     proposal_properties_alternative_names,
     removable_proposal_properties }        from '../Constants/query_string';
-import { convertToUnix }                   from '../../../../Utils/Date';
-import { getDecimalPlaces }                from '../../../../../_common/base/currency_base';
-import { isDeepEqual }                     from '../../../../../_common/utility';
 
 export const getProposalInfo = (store, response) => {
     const proposal = response.proposal || {};
@@ -40,7 +40,7 @@ const createProposalRequestForContract = (store, type_of_contract) => {
     const obj_expiry = {};
     if (store.expiry_type === 'endtime') {
         const expiry_date = moment.utc(store.expiry_date);
-        const start_date  = moment.unix(store.start_date || store.server_time).utc();
+        const start_date  = moment.unix(store.start_date || (store.root_store.common.server_time / 1000)).utc();
         const is_same_day = expiry_date.isSame(start_date, 'day');
         const expiry_time = is_same_day ? store.expiry_time : '23:59:59';
         obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
@@ -60,12 +60,12 @@ const createProposalRequestForContract = (store, type_of_contract) => {
         ),
         ...(
             store.expiry_type === 'duration' ?
-            {
-                duration     : parseInt(store.duration),
-                duration_unit: store.duration_unit,
-            }
-            :
-            obj_expiry
+                {
+                    duration     : parseInt(store.duration),
+                    duration_unit: store.duration_unit,
+                }
+                :
+                obj_expiry
         ),
         ...(
             (store.barrier_count > 0 || store.form_components.indexOf('last_digit') !== -1) &&

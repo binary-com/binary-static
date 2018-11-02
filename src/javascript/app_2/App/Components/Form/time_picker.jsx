@@ -4,14 +4,14 @@ import {
 import moment                         from 'moment';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { isSessionAvailable }         from '../../../Stores/Modules/Trading/Helpers/start_date';
-import { localize }                   from '../../../../_common/localize';
+import { localize }                   from '_common/localize';
+import { isSessionAvailable }         from 'Stores/Modules/Trading/Helpers/start_date';
 
 class TimePickerDropdown extends React.Component {
     constructor(props) {
         super(props);
         this.hours    = [...Array(24).keys()].map((a)=>`0${a}`.slice(-2));
-        this.minutes  = [...Array(12).keys()].map((a)=>`0${a*5}`.slice(-2));
+        this.minutes  = [...Array(12).keys()].map((a)=>`0${a * 5}`.slice(-2));
         this.state    = {
             is_hour_selected  : false,
             is_minute_selected: false,
@@ -175,7 +175,7 @@ class TimePicker extends React.Component {
     };
 
     render() {
-        const prefix_class='time-picker';
+        const prefix_class = 'time-picker';
         const {
             is_nativepicker,
             value,
@@ -192,38 +192,38 @@ class TimePicker extends React.Component {
             >
                 {
                     is_nativepicker
-                    ? <input
-                        type='time'
-                        id={`${prefix_class}-input`}
-                        value={value}
-                        onChange={this.handleChange}
-                        name={name}
-                    />
-                    : (
-                        <React.Fragment>
-                            <input
-                                ref={this.saveRef}
-                                type='text'
-                                readOnly
-                                id={`${prefix_class}-input`}
-                                className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
-                                value={value}
-                                onClick={this.toggleDropDown}
-                                name={name}
-                                placeholder={placeholder}
-                            />
-                            <TimePickerDropdown
-                                className={`${this.state.is_open ? 'active' : ''}${is_align_right ? ' from-right' : '' }`}
-                                toggle={this.toggleDropDown}
-                                onChange={this.handleChange}
-                                preClass={prefix_class}
-                                start_date={start_date}
-                                value={value}
-                                sessions={sessions}
-                                is_clearable={this.props.is_clearable}
-                            />
-                        </React.Fragment>
-                    )
+                        ? <input
+                            type='time'
+                            id={`${prefix_class}-input`}
+                            value={value}
+                            onChange={this.handleChange}
+                            name={name}
+                        />
+                        : (
+                            <React.Fragment>
+                                <input
+                                    ref={this.saveRef}
+                                    type='text'
+                                    readOnly
+                                    id={`${prefix_class}-input`}
+                                    className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
+                                    value={value}
+                                    onClick={this.toggleDropDown}
+                                    name={name}
+                                    placeholder={placeholder}
+                                />
+                                <TimePickerDropdown
+                                    className={`${this.state.is_open ? 'active' : ''}${is_align_right ? ' from-right' : '' }`}
+                                    toggle={this.toggleDropDown}
+                                    onChange={this.handleChange}
+                                    preClass={prefix_class}
+                                    start_date={start_date}
+                                    value={value}
+                                    sessions={sessions}
+                                    is_clearable={this.props.is_clearable}
+                                />
+                            </React.Fragment>
+                        )
                 }
             </div>
         );
@@ -231,34 +231,34 @@ class TimePicker extends React.Component {
 }
 
 TimePicker.propTypes = {
-    is_nativepicker: PropTypes.bool,
     is_align_right : PropTypes.bool,
     is_clearable   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
     name           : PropTypes.string,
     onChange       : PropTypes.func,
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
-    value          : PropTypes.string,
     sessions       : MobxPropTypes.arrayOrObservableArray,
     start_date     : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    value: PropTypes.string,
 };
 
 TimePickerDropdown.propTypes = {
     className   : PropTypes.string,
+    is_clearable: PropTypes.bool,
     onChange    : PropTypes.func,
     preClass    : PropTypes.string,
-    toggle      : PropTypes.func,
-    value       : PropTypes.string,
-    value_split : PropTypes.bool,
-    is_clearable: PropTypes.bool,
     sessions    : MobxPropTypes.arrayOrObservableArray,
     start_date  : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    toggle     : PropTypes.func,
+    value      : PropTypes.string,
+    value_split: PropTypes.bool,
 };
 
 export default observer(TimePicker);

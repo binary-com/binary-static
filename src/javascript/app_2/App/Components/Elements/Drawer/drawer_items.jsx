@@ -36,7 +36,7 @@ class DrawerItems extends React.Component {
                 >
                     <div className='items-group'>
                         {items.map((item, idx) => (
-                            <DrawerItem key={idx} {...item} collapseItems={this.collapseItems}/>
+                            <DrawerItem key={idx} {...item} collapseItems={this.collapseItems} />
                         ))}
                     </div>
                 </div>

@@ -30,14 +30,14 @@ class TabsWrapper extends React.PureComponent {
             const left = bounds.left - rootBounds.left;
             const right = rootBounds.right - bounds.right;
 
-            sizes[key] = {left, right};
+            sizes[key] = { left, right };
         });
-        this.setState({sizes});
-    }
+        this.setState({ sizes });
+    };
 
     getUnderlineStyle = () => {
         if (this.props.active == null || Object.keys(this.state.sizes).length === 0) {
-            return {left: '0', right: '100%'};
+            return { left: '0', right: '100%' };
         }
         const size = this.state.sizes[this.props.active];
         return {
@@ -45,7 +45,7 @@ class TabsWrapper extends React.PureComponent {
             right     : `${size.right}px`,
             transition: 'left 0.2s, right 0.25s',
         };
-    }
+    };
 
     render() {
         return (
@@ -72,8 +72,8 @@ class TabsWrapper extends React.PureComponent {
 TabsWrapper.propTypes = {
     active      : PropTypes.string,
     children    : PropTypes.node,
-    toggleDialog: PropTypes.func,
     onChange    : PropTypes.func,
+    toggleDialog: PropTypes.func,
 };
 
 export { TabsWrapper };

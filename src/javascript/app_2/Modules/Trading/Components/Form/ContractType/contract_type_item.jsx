@@ -1,7 +1,7 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
-import { IconTradeCategory }          from '../../../../../Assets/Trading/Categories';
+import { IconTradeCategory }          from 'Assets/Trading/Categories';
 
 const ContractTypeItem = ({
     contracts,
@@ -27,9 +27,9 @@ const ContractTypeItem = ({
 
 ContractTypeItem.propTypes = {
     contracts   : MobxPropTypes.arrayOrObservableArray,
+    handleSelect: PropTypes.func,
     name        : PropTypes.string,
     value       : PropTypes.string,
-    handleSelect: PropTypes.func,
 };
 
 export default ContractTypeItem;

@@ -452,9 +452,16 @@
             bottom: 0;
             color: $COLOR_WHITE;
             box-sizing: border-box;
-            display: block;
             background-color: $COLOR_ORANGE;
             width: 100%;
+            display: flex;  /* fix for iOS */
+            justify-content: center;
+            align-items: center;
+
+            p {
+                margin: 0;
+                padding-left: 3px;
+            }
         }
         #confirmation_message {
             padding-bottom: 34px;
@@ -491,9 +498,14 @@
             }
         }
         #contract_purchase_spots {
-            height: 110px;
             overflow: hidden;
+            padding-top: 10px;
+            padding-bottom: 5px;
 
+            .col {
+                margin-bottom: 0;
+                line-height: 1.5;
+            }
             &.won {
                 background-color: rgba(46, 136, 54, 0.2);
             }

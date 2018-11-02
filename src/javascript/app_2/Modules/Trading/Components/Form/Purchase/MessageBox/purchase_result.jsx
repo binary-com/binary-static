@@ -1,8 +1,8 @@
 import classNames      from 'classnames';
 import PropTypes       from 'prop-types';
 import React           from 'react';
-import { toGMTFormat } from '../../../../../../Utils/Date';
-import { localize }    from '../../../../../../../_common/localize';
+import { localize }    from '_common/localize';
+import { toGMTFormat } from 'Utils/Date';
 
 const PurchaseResult = ({ currency, purchase_info }) => (
     <div className='purchase-result-wrapper'>

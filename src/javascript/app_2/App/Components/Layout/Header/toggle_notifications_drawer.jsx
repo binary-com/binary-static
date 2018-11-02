@@ -1,12 +1,12 @@
 import React             from 'react';
-import { Notifications } from '../../Elements/Notifications';
+import { IconBell }      from 'Assets/Header/NavBar';
 import { ToggleDrawer }  from '../../Elements/Drawer';
-import { IconBell }      from '../../../../Assets/Header/NavBar';
+import { Notifications } from '../../Elements/Notifications';
 
 const ToggleNotificationsDrawer = () => (
     <ToggleDrawer
         alignment='right'
-        icon={<IconBell/>}
+        icon={<IconBell />}
         icon_class='notify-toggle'
     >
         <Notifications />

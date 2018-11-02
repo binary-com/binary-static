@@ -1,6 +1,5 @@
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import { localize } from '../../../../_common/localize';
+import PropTypes from 'prop-types';
+import React     from 'react';
 
 class Popover extends React.Component {
     constructor(props) {
@@ -13,8 +12,8 @@ class Popover extends React.Component {
     render() {
         const popover = (
             <div className={`popover ${this.state.is_open ? 'open' : ''} ${this.props.alignment ? this.props.alignment : ''}`}>
-                { this.props.title && <div className='popover-title'>{localize(this.props.title)}</div> }
-                { this.props.subtitle && <div className='popover-subtitle'>{localize(this.props.subtitle)}</div> }
+                { this.props.title && <div className='popover-title'>{this.props.title}</div> }
+                { this.props.subtitle && <div className='popover-subtitle'>{this.props.subtitle}</div> }
             </div>
         );
 

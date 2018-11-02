@@ -1,21 +1,22 @@
 import {
     action,
+    autorun,
     computed,
-    observable,
-    autorun }          from 'mobx';
-import BaseStore       from './base_store';
+    observable }       from 'mobx';
 import {
     MAX_MOBILE_WIDTH,
-    MAX_TABLET_WIDTH } from '../Constants/ui';
+    MAX_TABLET_WIDTH } from 'Constants/ui';
+import BaseStore       from './base_store';
 
 export default class UIStore extends BaseStore {
     @observable is_main_drawer_on          = false;
     @observable is_notifications_drawer_on = false;
     @observable is_portfolio_drawer_on     = false;
 
-    @observable is_dark_mode_on       = true;
-    @observable is_language_dialog_on = false;
-    @observable is_settings_dialog_on = false;
+    @observable is_dark_mode_on         = true;
+    @observable is_language_dialog_on   = false;
+    @observable is_settings_dialog_on   = false;
+    @observable is_accounts_switcher_on = false;
 
     // Purchase Controls
     @observable is_purchase_confirm_on = false;
@@ -27,6 +28,8 @@ export default class UIStore extends BaseStore {
     @observable is_chart_layout_default     = true;
 
     @observable screen_width = window.innerWidth;
+
+    @observable toast_messages = [];
 
     constructor() {
         const local_storage_properties = [
@@ -63,9 +66,14 @@ export default class UIStore extends BaseStore {
     }
 
     @action.bound
+    toggleAccountsDialog() {
+        this.is_accounts_switcher_on = !this.is_accounts_switcher_on;
+    }
+
+    @action.bound
     toggleChartLayout() {
         this.is_chart_layout_default = !this.is_chart_layout_default;
-    };
+    }
 
     @action.bound
     toggleChartAssetInfo() {
@@ -111,21 +119,39 @@ export default class UIStore extends BaseStore {
     @action.bound
     togglePortfolioDrawer() { // show and hide Portfolio Drawer
         this.is_portfolio_drawer_on = !this.is_portfolio_drawer_on;
-    };
+    }
 
     @action.bound
     showMainDrawer() { // show main Drawer
         this.is_main_drawer_on = true;
-    };
+    }
 
     @action.bound
     showNotificationsDrawer() { // show nofitications Drawer
         this.is_notifications_drawer_on = true;
-    };
+    }
 
     @action.bound
     hideDrawers() { // hide both menu drawers
         this.is_main_drawer_on = false;
         this.is_notifications_drawer_on = false;
-    };
-};
+    }
+
+    @action.bound
+    addToastMessage(toast_message) {
+        this.toast_messages.push(toast_message);
+    }
+
+    @action.bound
+    removeToastMessage(toast_message) {
+        const index = this.toast_messages.indexOf(toast_message);
+        if (index > -1) {
+            this.toast_messages.splice(index, 1);
+        }
+    }
+
+    @action.bound
+    removeAllToastMessages() {
+        this.toast_messages = [];
+    }
+}

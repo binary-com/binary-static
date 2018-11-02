@@ -1,13 +1,12 @@
-import extend                             from 'extend';
-import Client                             from '../../../../../_common/base/client_base';
-import { isEmptyObject }                  from '../../../../../_common/utility';
+import extend             from 'extend';
+import Client             from '_common/base/client_base';
+import { isEmptyObject }  from '_common/utility';
+import ContractTypeHelper from './contract_type';
 
-import ContractTypeHelper                 from '../Helpers/contract_type';
-
-import * as ContractType                  from '../Actions/contract_type';
-import * as Currency                      from '../Actions/currency';
-import * as Duration                      from '../Actions/duration';
-import * as StartDate                     from '../Actions/start_date';
+import * as ContractType  from '../Actions/contract_type';
+import * as Currency      from '../Actions/currency';
+import * as Duration      from '../Actions/duration';
+import * as StartDate     from '../Actions/start_date';
 
 export const processTradeParams = async(store, new_state) => {
     const snapshot = store.getSnapshot();

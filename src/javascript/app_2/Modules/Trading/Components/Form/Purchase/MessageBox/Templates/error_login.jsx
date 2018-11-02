@@ -1,7 +1,7 @@
 import React               from 'react';
-import Button              from '../../../../../../../App/Components/Form/button.jsx';
-import { redirectToLogin } from '../../../../../../../../_common/base/login';
-import { localize }        from '../../../../../../../../_common/localize';
+import { redirectToLogin } from '_common/base/login';
+import { localize }        from '_common/localize';
+import Button              from 'App/Components/Form/button.jsx';
 
 const ErrorLogin = () => (
     <div className='purchase-login-wrapper'>

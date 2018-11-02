@@ -1,6 +1,6 @@
 import React               from 'react';
-import Button              from '../../../../../../../App/Components/Form/button.jsx';
-import { localize }        from '../../../../../../../../_common/localize';
+import { localize }        from '_common/localize';
+import Button              from 'App/Components/Form/button.jsx';
 
 const ErrorBalance = () => (
     <div className='purchase-login-wrapper'>

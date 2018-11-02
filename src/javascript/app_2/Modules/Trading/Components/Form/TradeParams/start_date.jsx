@@ -3,10 +3,10 @@ import {
     observer }                  from 'mobx-react';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
-import Dropdown                 from '../../../../../App/Components/Form/DropDown';
-import Fieldset                 from '../../../../../App/Components/Form/fieldset.jsx';
-import TimePicker               from '../../../../../App/Components/Form/time_picker.jsx';
-import { localize }             from '../../../../../../_common/localize';
+import { localize }             from '_common/localize';
+import Dropdown                 from 'App/Components/Form/Dropdown';
+import Fieldset                 from 'App/Components/Form/fieldset.jsx';
+import TimePicker               from 'App/Components/Form/time_picker.jsx';
 
 /* TODO:
     1. update sessions list when the selected one doesn’t have any enabled time
@@ -67,16 +67,16 @@ const StartDate = ({
 };
 
 StartDate.propTypes = {
-    is_minimized    : PropTypes.bool,
-    is_nativepicker : PropTypes.bool,
-    onChange        : PropTypes.func,
-    start_dates_list: MobxPropTypes.arrayOrObservableArray,
-    start_time      : PropTypes.string,
-    sessions        : MobxPropTypes.arrayOrObservableArray,
-    start_date      : PropTypes.oneOfType([
+    is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    onChange       : PropTypes.func,
+    sessions       : MobxPropTypes.arrayOrObservableArray,
+    start_date     : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    start_dates_list: MobxPropTypes.arrayOrObservableArray,
+    start_time      : PropTypes.string,
 };
 
 export default observer(StartDate);

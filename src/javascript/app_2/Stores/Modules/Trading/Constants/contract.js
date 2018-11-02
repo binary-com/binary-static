@@ -1,4 +1,10 @@
-import { localize } from '../../../../../_common/localize';
+import { localize } from '_common/localize';
+
+export const getLocalizedBasis = () => ({
+    payout    : localize('Payout'),
+    stake     : localize('Stake'),
+    multiplier: localize('Multiplier'),
+});
 
 /**
  * components can be undef or an array containing any of: 'start_date', 'barrier', 'last_digit'

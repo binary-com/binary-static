@@ -55,7 +55,7 @@ const Main = () => (
             <h2>{it.L('{JAPAN ONLY}A True Partnership')}</h2>
 
             <p>{it.L('{JAPAN ONLY}We offer an informative and entertaining way to advertise online; including text ads, customer landing pages and invitations to promotional and educational events for your site visitors.')}</p>
-            <p>{it.L('{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with [_1] and begins trading. ', it.broker_name)}<span>{it.L('Please see our <a href=[_1]>terms and conditions</a> for details of payout qualifications.', it.url_for('terms-and-conditions-jp') )}</span></p>
+            <p>{it.L('{JAPAN ONLY}If you introduce our website to potential clients, you will earn as soon as one of them opens a real account with [_1] and begins trading. ', it.broker_name)}<span>{it.L('Please see our <a href=[_1]>terms and conditions</a> for details of payout qualifications.', it.url_for('terms-and-conditions-jp'))}</span></p>
             <p>{it.L('{JAPAN ONLY}After we complete mandatory regulatory checks on your website, you will be approved as an affiliate, and provided with everything necessary for you to start right away.')}</p>
             <p>{it.L('{JAPAN ONLY}So, what are you waiting for? Please join us as an affiliate today.')}</p>
         </div>

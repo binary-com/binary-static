@@ -12,17 +12,9 @@
     }
     &-pdf {
         background-image: url('../images/common/reference/pdf.svg');
-
-        &.payment-methods__reference--disabled {
-            background-image: url('../images/common/reference/pdf_disabled.svg');
-        }
     }
     &-video {
         background-image: url('../images/common/reference/youtube.svg');
-
-        &.payment-methods__reference--disabled {
-            background-image: url('../images/common/reference/youtube_disabled.svg');
-        }
     }
 }
 
@@ -83,6 +75,70 @@
     @media screen and (max-width: 480px) {
         .border-bottom, .border-right-top, .border-right-bottom {
             border: none;
+        }
+    }
+}
+
+.box-overlay-image {
+    margin-bottom: 2rem;
+
+    .box-wrapper {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+
+        &.right {
+            flex-direction: row-reverse;
+
+            .box-content {
+                left: 25%;
+            }
+        }
+        .box-img {
+            width: 60%;
+        }
+        .box-content {
+            padding: 1rem 0;
+            border: 1px solid $COLOR_GRAY;
+            width: 300px;
+            background: $COLOR_WHITE;
+            left: 45%;
+            position: absolute;
+
+            h4 {
+                text-align: left;
+                margin: 0 1rem;
+            }
+            .box-headerline {
+                border-color: $COLOR_ORANGE;
+                border-bottom-width: 2px;
+                margin: 10px 1rem 0;
+                width: 75px;
+            }
+            .box-text {
+                text-align: left;
+                margin: 0.5rem 1rem;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+
+            &.right {
+                flex-direction: column;
+
+                .box-content {
+                    left: unset;
+                }
+            }
+            .box-img {
+                width: 100%;
+            }
+            .box-content {
+                position: relative;
+                width: 100%;
+                left: unset;
+            }
         }
     }
 }
@@ -237,6 +293,50 @@
     }
 }
 
+#content {
+    &.cyberjaya, &.malta, &.labuan {
+        &-content {
+            margin-top: 0;
+        }
+    }
+}
+
+.location {
+    &-cyberjaya, &-labuan, &-malta {
+        .introduction {
+            h1 {
+                color: $COLOR_ORANGE;
+                font-size: 2.25rem;
+            }
+            h2 {
+                color: $COLOR_ORANGE;
+                font-size: 1.75rem;
+            }
+            h4.subheader {
+                font-style: italic;
+                font-size: $FONT_SIZE_L;
+            }
+            p.no-margin-top {
+                margin-top: 0;
+            }
+            @media (max-width: 768px) {
+                p {
+                    text-align: center;
+
+                    &.no-margin-top {
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+        .living, .misc {
+            h2 {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
 .regulation-content {
     .gray-line {
         border: 1px solid $COLOR_LIGHT_GRAY;
@@ -248,6 +348,12 @@
     }
     .background-gray {
         margin-top: -30px;
+    }
+    .margin-right-0 {
+        margin-right: 0 !important;
+    }
+    .margin-left-0 {
+        margin-left: 0 !important;
     }
 }
 
@@ -300,6 +406,57 @@ body #not_authenticated_financial ul.checked > li {
     }
     .white-bg {
         background-color: $COLOR_WHITE;
+    }
+}
+
+.about-us-content {
+    .about-us .values-box {
+        display: flex;
+        align-items: flex-start;
+        margin: 8px;
+
+        .icon-wrapper {
+            margin-right: 1.5rem;
+
+            &.ic-intergrity:before {
+                content: url('../images/pages/careers/ic-intergrity.svg');
+                width: 60px;
+                height: 60px;
+            }
+            &.ic-competence:before {
+                content: url('../images/pages/careers/ic-competence.svg');
+                width: 60px;
+                height: 60px;
+            }
+            &.ic-customer-focus:before {
+                content: url('../images/pages/careers/ic-customer-focus.svg');
+                width: 60px;
+                height: 60px;
+            }
+            &.ic-teamwork:before {
+                content: url('../images/pages/careers/ic-teamwork.svg');
+                width: 60px;
+                height: 60px;
+            }
+        }
+        &-subheader {
+            font-size: $FONT_SIZE_L;
+            font-weight: normal;
+            text-transform: capitalize;
+        }
+        .header-line {
+            border: 2px solid $COLOR_ORANGE;
+            width: 50px;
+        }
+    }
+    .fill-text {
+        padding: 1em 0;
+    }
+    .center-element {
+        margin: 0 auto;
+    }
+    .btn-margin-top {
+        margin-top: 1.5em;
     }
 }
 
@@ -546,6 +703,9 @@ body #not_authenticated_financial ul.checked > li {
                 }
             }
         }
+        .center-element {
+            margin: 0 auto;
+        }
         .margin-top-100 {
             margin-top: 100px;
         }
@@ -562,6 +722,25 @@ body #not_authenticated_financial ul.checked > li {
         }
         .fill-text {
             padding: 1em 0;
+        }
+        .values-box {
+            border: 2px solid $COLOR_ORANGE;
+            margin: 0 4px;
+
+            &-icon {
+                max-width: 60px;
+                padding: 8px 36px 0px;
+                margin-top: -36px;
+                background: $COLOR_WHITE;
+            }
+            &-subheader {
+                font-size: $FONT_SIZE_L;
+                font-weight: normal;
+                text-transform: capitalize;
+            }
+            @media (max-width: 768px) {
+                margin-bottom: 2.5rem;
+            }
         }
         .box-container {
             &.padding {
@@ -652,6 +831,24 @@ body #not_authenticated_financial ul.checked > li {
                 color: $COLOR_WHITE;
                 padding: 20px 0;
                 text-align: center;
+            }
+        }
+        .location-section {
+            padding-bottom: 10px;
+
+            @media (max-width: 480px) {
+                padding-bottom: 0;
+
+                .fill-text {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        .values-group {
+            margin-bottom: 20px;
+
+            h1 {
+                margin-bottom: 30px;
             }
         }
     }

@@ -1,9 +1,9 @@
 import { observer }   from 'mobx-react';
 import PropTypes      from 'prop-types';
 import React          from 'react';
+import { localize }   from '_common/localize';
 import DigitDisplay   from './digit_display.jsx';
 import InfoBoxExpired from './info_box_expired.jsx';
-import { localize }   from '../../../../../_common/localize';
 
 const InfoBoxDigit = ({
     contract_info,

@@ -5,12 +5,13 @@ import {
 import moment                   from 'moment';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
-import Datepicker               from '../../../../../App/Components/Form/DatePicker';
-import Dropdown                 from '../../../../../App/Components/Form/DropDown';
-import Fieldset                 from '../../../../../App/Components/Form/fieldset.jsx';
-import InputField               from '../../../../../App/Components/Form/input_field.jsx';
-import TimePicker               from '../../../../../App/Components/Form/time_picker.jsx';
-import { localize }             from '../../../../../../_common/localize';
+import { localize }             from '_common/localize';
+import Datepicker               from 'App/Components/Form/DatePicker';
+import Dropdown                 from 'App/Components/Form/Dropdown';
+import Fieldset                 from 'App/Components/Form/fieldset.jsx';
+import InputField               from 'App/Components/Form/input_field.jsx';
+import TimePicker               from 'App/Components/Form/time_picker.jsx';
+import { convertDurationUnit }  from 'Stores/Modules/Trading/Helpers/duration';
 
 /* TODO:
       1. disable days other than today and tomorrow if start date is forward starting
@@ -24,9 +25,12 @@ let now_date,
     min_date_duration,
     max_date_duration,
     min_date_expiry,
+    min_day,
+    max_day,
     start_date_time;
 
 const Duration = ({
+    contract_expiry_type,
     duration,
     duration_unit,
     duration_units_list,
@@ -43,15 +47,25 @@ const Duration = ({
     start_time,
     validation_errors,
 }) => {
-    const moment_now = moment(server_time);
-    if (!now_date || moment_now.date() !== now_date.date()) {
-        const moment_today = moment_now.clone().startOf('day');
+    if (duration_min_max[contract_expiry_type]) {
+        const moment_now  = moment(server_time);
+        const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
+        const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
+        if (!now_date || moment_now.date() !== now_date.date() || (duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
+            if (duration_unit === 'd') {
+                min_day = new_min_day;
+                max_day = new_max_day;
+            }
 
-        now_date          = moment_now.clone();
-        min_date_duration = moment_today.clone().add(1, 'd');
-        max_date_duration = moment_today.clone().add(365, 'd');
-        min_date_expiry   = moment_today.clone();
+            const moment_today = moment_now.clone().startOf('day');
+
+            now_date          = moment_now.clone();
+            min_date_duration = moment_today.clone().add(min_day || 1, 'd');
+            max_date_duration = moment_today.clone().add(max_day || 365, 'd');
+            min_date_expiry   = moment_today.clone();
+        }
     }
+
     const moment_expiry = moment.utc(expiry_date);
     const is_same_day   = moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day');
     if (is_same_day) {
@@ -79,6 +93,9 @@ const Duration = ({
             </div>
         );
     }
+    const datepicker_footer = min_day > 1 ?
+        localize('The minimum duration is [_1] days', [min_day]) :
+        localize('The minimum duration is [_1] day',  [min_day]);
 
     const has_end_time = expiry_list.find(expiry => expiry.value === 'endtime');
     if (duration_units_list.length === 1 && duration_unit === 't') {
@@ -116,11 +133,11 @@ const Duration = ({
                                 max_date={max_date_duration}
                                 mode='duration'
                                 onChange={onChange}
-                                value={duration || duration_min_max.min}
+                                value={duration || min_day}
                                 is_read_only
                                 is_clearable={false}
                                 is_nativepicker={is_nativepicker}
-                                footer={localize('The minimum duration is 1 day')}
+                                footer={datepicker_footer}
                             /> :
                             <InputField
                                 type='number'
@@ -176,30 +193,31 @@ const Duration = ({
 
 // ToDo: Refactor Duration.jsx and date_picker.jsx
 Duration.propTypes = {
-    duration: PropTypes.oneOfType([
+    contract_expiry_type: PropTypes.string,
+    duration            : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    duration_min_max   : PropTypes.object,
     duration_unit      : PropTypes.string,
     duration_units_list: MobxPropTypes.arrayOrObservableArray,
-    duration_min_max   : PropTypes.object,
     expiry_date        : PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
     ]),
-    expiry_time      : PropTypes.string,
-    expiry_type      : PropTypes.string,
-    is_minimized     : PropTypes.bool,
-    is_nativepicker  : PropTypes.bool,
-    onChange         : PropTypes.func,
-    server_time      : PropTypes.object,
-    sessions         : MobxPropTypes.arrayOrObservableArray,
-    start_time       : PropTypes.string,
-    validation_errors: PropTypes.object,
-    start_date       : PropTypes.oneOfType([
+    expiry_time    : PropTypes.string,
+    expiry_type    : PropTypes.string,
+    is_minimized   : PropTypes.bool,
+    is_nativepicker: PropTypes.bool,
+    onChange       : PropTypes.func,
+    server_time    : PropTypes.object,
+    sessions       : MobxPropTypes.arrayOrObservableArray,
+    start_date     : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),
+    start_time       : PropTypes.string,
+    validation_errors: PropTypes.object,
 };
 
 export default observer(Duration);
