@@ -210,9 +210,9 @@ const Trading = () => (
                                 <div id='trade_tick_chart' />
                                 <div id='contract_purchase_balance' />
                             </div>
-                            <div id='confirmation_error' className='invisible' />
-                            <div id='authorization_error' className='invisible'>
-                                <div className='center-text'>
+                            <div id='confirmation_error' className='center-text invisible' />
+                            <div id='authorization_error_container' className='center-text invisible'>
+                                <div className='authorization_error'>
                                     <h3 id='authorization_error_text'>{it.L('Ready to trade?')}</h3>
                                     <a className='button' href={it.url_for('new-account')}>
                                         <span>{it.L('Open A Free Account')}</span>

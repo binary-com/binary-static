@@ -51,7 +51,7 @@ const Purchase = (() => {
         const profit              = CommonFunctions.getElementById('contract_purchase_profit');
         const spots               = CommonFunctions.getElementById('contract_purchase_spots');
         const confirmation_error  = CommonFunctions.getElementById('confirmation_error');
-        const authorization_error = CommonFunctions.getElementById('authorization_error');
+        const authorization_error = CommonFunctions.getElementById('authorization_error_container');
         const contracts_list      = CommonFunctions.getElementById('contracts_list');
         const button              = CommonFunctions.getElementById('contract_purchase_button');
 
