@@ -11,6 +11,25 @@ const ThirdPartyLinks = (() => {
                 document.body.addEventListener('click', clickHandler);
             }
         });
+        document.body.addEventListener('click', checkTelegram);
+    };
+
+    const checkTelegram = (e) => {
+        if (!e.target) return;
+        const el_link = e.target.closest('a');
+        if (!el_link) return;
+
+        const dialog = document.querySelector('#telegram');
+        if (dialog && dialog.contains(el_link)) return;
+
+        if (isTelegramLink(el_link.href)) {
+            e.preventDefault();
+            // show a popup to remind clients to have Telegram app installed on their device
+            Dialog.alert({
+                id               : 'telegram',
+                localized_message: localize(['Please ensure that you have the Telegram app installed on your device.', 'Click OK to proceed.']),
+            });
+        }
     };
 
     const clickHandler = (e) => {
@@ -35,6 +54,8 @@ const ThirdPartyLinks = (() => {
             });
         }
     };
+
+    const isTelegramLink = (href) => /t\.me/.test(href);
 
     const isThirdPartyLink = (href) => {
         let destination;
