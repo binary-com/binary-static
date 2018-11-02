@@ -99,7 +99,7 @@ const Page = (() => {
             Menu.init();
             if (!LocalStore.get('date_first_contact')) {
                 BinarySocket.wait('time').then((response) => {
-                    LocalStore.set('date_first_contact', toISOFormat(moment().utc(response.time)));
+                    LocalStore.set('date_first_contact', toISOFormat(moment(response.time * 1000).utc()));
                 });
             }
             if (!LocalStore.get('signup_device')) {
