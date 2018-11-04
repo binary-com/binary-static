@@ -5,6 +5,7 @@ import { localize }         from '_common/localize';
 import URL                  from '_common/url';
 import FullPageModal        from 'App/Components/Elements/FullPageModal/full_page_modal.jsx';
 import { connect }          from 'Stores/connect';
+import Localize             from 'App/Components/Elements/localize.jsx';
 
 const onConfirm = (client) => {
     client.switchAccount(getAccountOfType('virtual').loginid);
@@ -17,13 +18,14 @@ const onCancel = () => {
 const DenialOfServiceModal = ({ client, show }) => (
     <FullPageModal
         title={localize('Whoops!')}
-        body={localize('Sorry, Only virtual accounts can access this feature at the moment.')}
         confirm_button_text={localize('Continue with my virtual account')}
         cancel_button_text={localize('Visit main website')}
         onConfirm={() => onConfirm(client)}
         onCancel={onCancel}
         show={show}
-    />
+    >
+        <Localize str='Sorry, Only virtual accounts can access this feature at the moment.' />
+    </FullPageModal>
 );
 
 DenialOfServiceModal.propTypes = {

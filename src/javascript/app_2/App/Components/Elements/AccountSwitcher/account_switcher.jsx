@@ -49,9 +49,9 @@ class AccountSwitcher extends React.Component {
         this.wrapper_ref = node;
     };
 
-    doSwitch(loginid, client) {
+    doSwitch() {
         this.props.toggle();
-        client.switchAccount(loginid);
+        this.props.client.switchAccount(this.props.loginid);
     }
 
     handleClickOutside = (event) => {
@@ -72,7 +72,7 @@ class AccountSwitcher extends React.Component {
                     <React.Fragment key={account.loginid}>
                         <div
                             className={classNames('acc-switcher-account', account.icon)}
-                            onClick={() => this.doSwitch(account.loginid, this.props.client)}
+                            onClick={this.doSwitch}
                         >
                             <span className='acc-switcher-id'>{account.loginid}</span>
                             <span className='acc-switcher-type'>{account.title}</span>
@@ -97,14 +97,13 @@ AccountSwitcher.propTypes = {
     client            : PropTypes.object,
     is_upgrade_enabled: PropTypes.bool,
     is_visible        : PropTypes.bool,
-    modules           : PropTypes.object,
     onClickUpgrade    : PropTypes.func,
     toggle            : PropTypes.func,
 };
 
 const account_switcher = connect(
-    ({ client, modules }) => ({
-        client, modules,
+    ({ client }) => ({
+        client,
     }),
 )(AccountSwitcher);
 
