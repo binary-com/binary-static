@@ -98,7 +98,9 @@ const Page = (() => {
         } else {
             Menu.init();
             if (!LocalStore.get('date_first_contact')) {
-                LocalStore.set('date_first_contact', toISOFormat(moment()));
+                BinarySocket.wait('time').then((response) => {
+                    LocalStore.set('date_first_contact', toISOFormat(moment(response.time * 1000).utc()));
+                });
             }
             if (!LocalStore.get('signup_device')) {
                 LocalStore.set('signup_device', (isMobile() ? 'mobile' : 'desktop'));

@@ -50,6 +50,7 @@ module.exports = [
     'Closed Bid',
     'Closes',
     'Commodities',
+    'Compressing Image',
     'Connecting to server',
     'Connection error: Please check your internet connection.',
     'Contract',
