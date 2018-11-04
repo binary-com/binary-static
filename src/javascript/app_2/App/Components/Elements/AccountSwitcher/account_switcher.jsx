@@ -49,9 +49,9 @@ class AccountSwitcher extends React.Component {
         this.wrapper_ref = node;
     };
 
-    doSwitch() {
+    async doSwitch(loginid) {
         this.props.toggle();
-        this.props.client.switchAccount(this.props.loginid);
+        await this.props.client.switchAccount(loginid);
     }
 
     handleClickOutside = (event) => {
@@ -72,7 +72,7 @@ class AccountSwitcher extends React.Component {
                     <React.Fragment key={account.loginid}>
                         <div
                             className={classNames('acc-switcher-account', account.icon)}
-                            onClick={this.doSwitch}
+                            onClick={this.doSwitch.bind(this, account.loginid)}
                         >
                             <span className='acc-switcher-id'>{account.loginid}</span>
                             <span className='acc-switcher-type'>{account.title}</span>
