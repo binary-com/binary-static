@@ -34,7 +34,7 @@ $header-height: 40px;
     }
     &__body {
         height: calc(100% - #{$header-height});
-        padding: 8px 10px;
+        padding: 8px 0;
         box-sizing: border-box;
         overflow-y: auto;
     }
@@ -61,6 +61,7 @@ $header-height: 40px;
     & &-card {
         box-sizing: border-box;
         padding: 8px;
+        margin: 0 10px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr auto;
