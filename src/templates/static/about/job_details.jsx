@@ -724,7 +724,7 @@ const JobDetails = () => (
                         <div className='invisible' id='copywriter'>
                             <h1>{it.L('Copywriter')}</h1>
 
-                            <p>{it.L('[_1] Marketing team oversees all our marketing and advertising initiatives, such as our affiliate programme, social media presence, webinars, and emails. As our Copywriter, you will help us to craft copy and content that engages our audiences –– both online and offline.', it.website_name)}</p>
+                            <p>{it.L('[_1]\'s Marketing team oversees all our marketing and advertising initiatives, such as our affiliate programme, social media presence, webinars, and emails. As our Copywriter, you will help us to craft copy and content that engages our audiences –– both online and offline.', it.website_name)}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
