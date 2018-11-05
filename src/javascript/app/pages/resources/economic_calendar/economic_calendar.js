@@ -1,5 +1,7 @@
-const loadScript  = require('scriptjs');
-const getLanguage = require('../../../../_common/language').get;
+const loadScript   = require('scriptjs');
+const BinarySocket = require('../../../../app/base/socket');
+const isEuCountry  = require('../../../../app/common/country_base').isEuCountry;
+const getLanguage  = require('../../../../_common/language').get;
 
 const EconomicCalendar = (() => {
     let is_loaded;
@@ -7,6 +9,13 @@ const EconomicCalendar = (() => {
     const onLoad = () => {
 
         const curr_language = getLanguage().toLowerCase();
+
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            const footer_el = $('.calendar-footer');
+            if (isEuCountry() && footer_el) {
+                footer_el.setVisibility(1);
+            }
+        });
 
         if (!is_loaded) {
             loadScript.get('https://c.mql5.com/js/widgets/calendar/widget.v3.js', () => {

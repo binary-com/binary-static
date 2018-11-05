@@ -1046,6 +1046,76 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+#content.economic_calendar-content {
+    .calendar-container {
+        position: relative;
+
+        .calendar-footer {
+            position: absolute;
+            display: flex;
+            width: calc(100% - 2px);
+            border: 1px solid $COLOR_GRAY;
+            border-top-width: 0;
+            height: 30px;
+            justify-content: space-between;
+            background: $COLOR_WHITE;
+            align-items: center;
+            bottom: 0;
+
+            span.desc {
+                outline: 0;
+                display: block;
+                padding: 1px 70px 6px 30px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            a {
+                font-size: $FONT_SIZE_S;
+                color: $COLOR_LIGHTER_BLUE;
+                text-decoration: underline;
+                font-weight: 400;
+
+                &.logo {
+                    text-indent: -9999px;
+                    position: absolute;
+                    left: 6px;
+                    top: 3px;
+                    height: 24px;
+                    width: 24px;
+                    background: url('https://c.mql5.com/i/calendar/mt_logo1_x1.png') no-repeat top left;
+                }
+                &.social-links {
+                    i {
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        vertical-align: top;
+                        background: url('https://c.mql5.com/i/calendar/widget-icons-social-sharing.png');
+
+                        &.fb {
+                            background-position: -21px 0;
+                        }
+                        &.twitter {
+                            background-position: 0 0;
+                        }
+                    }
+                }
+            }
+            .left {
+                margin-left: 8px;
+            }
+            .right {
+                margin-right: 8px;
+
+                a {
+                    padding: 0 2px;
+                }
+            }
+        }
+    }
+}
+
 .welcome-content {
     .box-grid .box {
         display: flex;
