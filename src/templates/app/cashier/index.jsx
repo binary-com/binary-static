@@ -21,8 +21,19 @@ const DepositWithdraw = ({ id, is_payment_agent, show_upgrade }) => (
 );
 
 const CashierNote = ({ text }) => (
-    <div className='invisible client_logged_in cashier-note'>
-        <p>{text}</p>
+    <div className='gr-padding-20 invisible client_logged_in'>
+        <div className='gr-12 gr-padding-10 fill-bg-color primary-color'>
+            <div className='gr-row'>
+                <div className='gr-1 gr-2-t gr-2-p gr-2-m align-self-center'>
+                    <div className='notice-circle'>i</div>
+                </div>
+                <div className='gr-11 gr-9-t gr-9-p gr-9-m gr-no-gutter'>
+                    <p className='no-margin'>
+                        {text}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 );
 

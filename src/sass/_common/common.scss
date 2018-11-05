@@ -791,19 +791,3 @@ label + input {
         }
     }
 }
-
-.cashier-note {
-    background-color: $COLOR_LIGHT_GRAY;
-    color: $COLOR_BLUE;
-    display: inline-flex;
-    align-items: center;
-    margin: 1em 0;
-
-    &:before {
-        content: 'ⓘ';
-        margin-left: 1em;
-    }
-    > *:first-child {
-        margin: 1em;
-    }
-}
