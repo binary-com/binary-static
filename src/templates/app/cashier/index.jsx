@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DepositWithdraw = ({ id, is_payment_agent, show_upgrade }) => (
-    <div className='gr-5 gr-12-m'>
+    <div className='gr-4 gr-12-m'>
         <div className='gr-padding-10 client_real invisible gr-parent'>
             <a className='toggle button client_real invisible' href={it.url_for(is_payment_agent ? '/cashier/payment_agent_listws' : '/cashier/forwardws?action=deposit')} id={id}>
                 <span className='deposit'>{it.L('Deposit')}</span>
@@ -17,6 +17,12 @@ const DepositWithdraw = ({ id, is_payment_agent, show_upgrade }) => (
                 <a className='button' />
             </div>
         }
+    </div>
+);
+
+const CashierNote = ({ text }) => (
+    <div className='invisible client_logged_in cashier-note'>
+        <p>{it.L(text)}</p>
     </div>
 );
 
@@ -40,10 +46,10 @@ const Cashier = () => (
                 <div className='gr-2 gr-4-m'>
                     <img className='responsive' id='virtual_money_icon' src={it.url_for('images/pages/cashier/virtual_topup.svg')} />
                 </div>
-                <div className='gr-5 gr-12-m'>
+                <div className='gr-6 gr-12-m'>
                     <span>{it.L('You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00.')}</span>
                 </div>
-                <div className='gr-5 gr-12-m invisible'>
+                <div className='gr-4 gr-12-m invisible'>
                     <a className='toggle button' id='VRT_topup_link'>
                         <span>{it.L('Get USD 10,000.00')}</span>
                     </a>
@@ -64,12 +70,14 @@ const Cashier = () => (
                         <img className='responsive' id='payment_methods_icon' src={it.url_for('images/pages/cashier/payment-methods.svg')} />
                     </a>
                 </div>
-                <div className='gr-5 gr-12-m'>
+                <div className='gr-6 gr-12-m'>
                     <span className='invisible normal_currency client_logged_out'>{it.L('Deposit or withdraw to your account via bank wire, credit card, or e-wallet.')}</span>
                     <span className='invisible crypto_currency'>{it.L('Manage the funds in your cryptocurrency account.')}</span>
+                    &nbsp;
                     <a className='invisible normal_currency client_logged_out' href={it.url_for('cashier/payment_methods')} id='view_payment_methods'>
-                        <p>{it.L('View available payment methods')}</p>
+                        <span>{it.L('View available payment methods')}</span>
                     </a>
+                    <CashierNote text='Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.' />
                 </div>
                 <DepositWithdraw show_upgrade id='deposit_btn_cashier' />
             </div>
@@ -85,9 +93,9 @@ const Cashier = () => (
                         <img className='responsive' id='payment_agent_icon' src={it.url_for('images/pages/cashier/payment-agents.svg')} />
                     </a>
                 </div>
-                <div className='gr-5 gr-12-m'>
+                <div className='gr-6 gr-12-m'>
                     <span>{it.L('For e-wallets or local currencies not supported by [_1].', it.website_name)}</span>
-                    <p className='faded'>{it.L('Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent')}</p>
+                    <CashierNote text='Withdrawal via payment agent is available only if you deposit exclusively via payment agent.' />
                 </div>
                 <DepositWithdraw is_payment_agent />
             </div>
