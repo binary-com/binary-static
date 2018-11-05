@@ -5,12 +5,12 @@ import MenuItem  from './menu_item.jsx';
 const MenuList = ({ items }) => (
     <div>
         {
-            items.map(({ title, description, svg, path }, i) => (
+            items.map(({ title, description, Icon, path }, i) => (
                 <MenuItem
                     key={i}
                     title={title}
                     description={description}
-                    svg={svg}
+                    Icon={Icon}
                     path={path}
                 />
             ))
@@ -22,8 +22,8 @@ MenuList.propTypes = {
     items: PropTypes.arrayOf(
         PropTypes.shape({
             description: PropTypes.string,
+            Icon       : PropTypes.func,
             path       : PropTypes.string,
-            svg        : PropTypes.string,
             title      : PropTypes.string,
         }),
     ),

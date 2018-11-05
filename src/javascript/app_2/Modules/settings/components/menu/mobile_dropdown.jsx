@@ -29,7 +29,7 @@ class MobileDropdown extends React.Component {
                 <div className='mobile-dropdown__button' onClick={this.toggleOpen}>
                     <Switch>
                         {
-                            all_items.map(({ title, description, path, svg }) => (
+                            all_items.map(({ title, description, path, Icon }) => (
                                 <Route
                                     key={path}
                                     path={path}
@@ -37,7 +37,7 @@ class MobileDropdown extends React.Component {
                                         <MenuItem
                                             title={title}
                                             description={description}
-                                            svg={svg}
+                                            Icon={Icon}
                                         />
                                     }
                                 />
@@ -56,8 +56,8 @@ MobileDropdown.propTypes = {
     all_items: PropTypes.arrayOf(
         PropTypes.shape({
             description: PropTypes.string,
+            Icon       : PropTypes.func,
             path       : PropTypes.string,
-            svg        : PropTypes.string,
             title      : PropTypes.string,
         }),
     ),
