@@ -31,7 +31,8 @@ const Authenticate = (() => {
                     init();
                     const language            = getLanguage();
                     const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
-                    const $not_authenticated  = $('#not_authenticated').setVisibility(1);
+                    const $not_authenticated  = $('#not_authenticated');
+                    $not_authenticated.setVisibility(1);
                     let link = `https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`;
                     if (Client.isAccountOfType('financial')) {
                         $('#not_authenticated_financial').setVisibility(1);
