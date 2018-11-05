@@ -30,8 +30,8 @@ const Authenticate = () => (
 
             <div id='success-message' className='center-text invisible'>
                 <SeparatorLine className='gr-padding-10' invisible />
-                <h2>{it.L('Thank you for submitting the required documents')}</h2>
-                <p>{it.L('We are reviewing your documents and will get back to you within one working day.')}</p>
+                <h2>{it.L('Thank you for uploading the necessary documents')}</h2>
+                <p>{it.L('We will review your documents and get back to you with the results within 24 hours.')}<br />{it.L('Your patience is much appreciated.')}</p>
             </div>
 
             <p className='center-text notice-msg invisible' id='error_message' />
