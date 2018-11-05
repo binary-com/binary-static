@@ -114,6 +114,9 @@
     .new-width {
         min-width: 100px;
     }
+    #date_to {
+        width: 100%;
+    }
 }
 
 #statement-container {
@@ -159,8 +162,14 @@
 
 #profit-table-container, #statement-container {
     #date_to {
-        width: 100%;
         box-sizing: border-box;
+    }
+    #download_to, #download_from {
+        width: auto;
+
+        &#download_to {
+            margin-left: 26px;
+        }
     }
 }
 
