@@ -11,6 +11,7 @@ const EconomicCalendar = () => (
                     <Loading />
                 </div>
                 <div className='calendar-footer invisible'>
+                    {/* Update anchor links below in case they become outdated */}
                     <div className='left'>
                         <a href='https://www.mql5.com?utm_source=calendar.widget&amp;utm_medium=logo&amp;utm_term=mql5.website&amp;utm_content=visit.mql5.website&amp;utm_campaign=202.calendar.widget' className='logo' target='_blank' rel='noopener noreferrer'>MQL5</a>
                         <span className='desc'>

@@ -10,13 +10,6 @@ const EconomicCalendar = (() => {
 
         const curr_language = getLanguage().toLowerCase();
 
-        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
-            const $footer_el = $('.calendar-footer');
-            if (isEuCountry() && $footer_el) {
-                $footer_el.setVisibility(1);
-            }
-        });
-
         if (!is_loaded) {
             loadScript.get('https://c.mql5.com/js/widgets/calendar/widget.v3.js', () => {
                 populateCalendar(curr_language);
@@ -31,6 +24,10 @@ const EconomicCalendar = (() => {
         new economicCalendar({ width: '100%', height: '500px', mode: 2, lang }); // eslint-disable-line new-cap, no-new, no-undef
         const loader = $('#economicCalendarWidget').find('.barspinner');
         if (loader) loader.remove();
+
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            $('.calendar-footer').setVisibility(isEuCountry());
+        });
     };
 
     return {
