@@ -13,9 +13,9 @@ const commonConfig = (grunt) => ({
         filename     : '[name].js',
         chunkFilename: '[name].min.js',
         publicPath   : () => (
-            (global.is_production || grunt.file.exists(PATHS.ROOT, 'scripts/CNAME') ? '' : '/binary-static') +
-            (global.branch ? `/${global.branch_prefix}${global.branch}` : '') +
-            '/js/'
+            `${(global.is_production || grunt.file.exists(PATHS.ROOT, 'scripts/CNAME') ? '' : '/binary-static') +
+            (global.branch ? `/${global.branch_prefix}${global.branch}` : '')
+            }/js/`
         ),
     },
     optimization: {
@@ -47,6 +47,23 @@ const commonConfig = (grunt) => ({
                         'transform-class-properties',
                     ],
                 },
+            },
+            {
+                test: /\.svg$/,
+                use : [
+                    'babel-loader',
+                    {
+                        loader : 'react-svg-loader',
+                        options: {
+                            svgo: {
+                                plugins: [
+                                    { removeTitle: false },
+                                ],
+                                floatPrecision: 2,
+                            },
+                        },
+                    },
+                ],
             },
         ],
     },
