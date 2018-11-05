@@ -58,8 +58,9 @@ body.FR {
         .price_container {
             .contract_heading {
                 font-size: $FONT_SIZE_S;
-                padding-top: 4.5em;
-                width: 120px;
+                background-size: 36px;
+                padding-top: 46px;
+                width: 110px;
             }
         }
     }
@@ -105,8 +106,9 @@ body.RU {
         }
         .price_container .price_wrapper .contract_heading {
             font-size: $FONT_SIZE_S;
-            padding-top: 3.5em;
-            width: 120px !important;
+            background-size: 36px;
+            padding-top: 46px;
+            width: 110px !important;
         }
         #expiry_type {
             max-width: 185px;
@@ -140,8 +142,9 @@ body.DE {
         }
         .contract_heading {
             font-size: $FONT_SIZE_S;
-            padding-top: 4em;
-            width: 120px;
+            background-size: 36px;
+            padding-top: 46px;
+            width: 110px;
         }
     }
 }
