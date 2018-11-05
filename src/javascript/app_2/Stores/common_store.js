@@ -1,6 +1,7 @@
 import {
     action,
-    observable }           from 'mobx';
+    observable,
+}                          from 'mobx';
 import moment              from 'moment';
 import { currentLanguage } from 'Utils/Language/index';
 import BaseStore           from './base_store';
@@ -15,9 +16,9 @@ export default class CommonStore extends BaseStore {
         message: '',
     };
 
-    @observable network_status = {};
+    @observable network_status    = {};
     @observable is_network_online = false;
-    @observable is_socket_opened = false;
+    @observable is_socket_opened  = false;
 
     @action.bound
     setIsSocketOpened(is_socket_opened) {
@@ -31,5 +32,13 @@ export default class CommonStore extends BaseStore {
             type   : error ? error.type : 'info',
             message: error ? error.message : '',
         };
+    }
+
+    @action.bound
+    showError(message) {
+        this.setError(true, {
+            message,
+            type: 'error',
+        });
     }
 }
