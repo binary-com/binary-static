@@ -22,7 +22,7 @@ const DepositWithdraw = ({ id, is_payment_agent, show_upgrade }) => (
 
 const CashierNote = ({ text }) => (
     <div className='invisible client_logged_in cashier-note'>
-        <p>{it.L(text)}</p>
+        <p>{text}</p>
     </div>
 );
 
@@ -77,7 +77,7 @@ const Cashier = () => (
                     <a className='invisible normal_currency client_logged_out' href={it.url_for('cashier/payment_methods')} id='view_payment_methods'>
                         <span>{it.L('View available payment methods')}</span>
                     </a>
-                    <CashierNote text='Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.' />
+                    <CashierNote text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
                 </div>
                 <DepositWithdraw show_upgrade id='deposit_btn_cashier' />
             </div>
@@ -95,7 +95,7 @@ const Cashier = () => (
                 </div>
                 <div className='gr-6 gr-12-m'>
                     <span>{it.L('For e-wallets or local currencies not supported by [_1].', it.website_name)}</span>
-                    <CashierNote text='Withdrawal via payment agent is available only if you deposit exclusively via payment agent.' />
+                    <CashierNote text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
                 </div>
                 <DepositWithdraw is_payment_agent />
             </div>
