@@ -11,9 +11,9 @@ const EconomicCalendar = (() => {
         const curr_language = getLanguage().toLowerCase();
 
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
-            const footer_el = $('.calendar-footer');
-            if (isEuCountry() && footer_el) {
-                footer_el.setVisibility(1);
+            const $footer_el = $('.calendar-footer');
+            if (isEuCountry() && $footer_el) {
+                $footer_el.setVisibility(1);
             }
         });
 
