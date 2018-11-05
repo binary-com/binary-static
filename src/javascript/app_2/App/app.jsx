@@ -34,7 +34,7 @@ const App = ({ root_store }) => (
                         <PortfolioDrawer />
                         <ToastMessage position={POSITIONS.TOP_RIGHT} />
                     </AppContents>
-                    <DenialOfServiceModal visible={!isClientAllowedToVisit()} />
+                    <DenialOfServiceModal is_visible={!isClientAllowedToVisit()} />
                 </ErrorBoundary>
 
                 <footer id='footer'>

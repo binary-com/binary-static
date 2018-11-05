@@ -2,20 +2,20 @@ import React     from 'react';
 import PropTypes from 'prop-types';
 
 const FullPageModal = ({
-    body,
     cancel_button_text,
+    children,
     confirm_button_text,
     onConfirm,
     onCancel,
-    visible,
+    is_visible,
     title,
 }) => {
-    if (visible) {
+    if (is_visible) {
         return (
             <div className='full-page-modal'>
                 <div className='modal-dialog'>
                     <h1>{title}</h1>
-                    <p>{body}</p>
+                    <p>{children}</p>
                     <div className='modal-footer'>
                         <div
                             className='btn flat effect primary'
@@ -42,10 +42,10 @@ FullPageModal.propTypes = {
     body               : PropTypes.string,
     cancel_button_text : PropTypes.string,
     confirm_button_text: PropTypes.string,
+    is_visible         : PropTypes.bool,
     onCancel           : PropTypes.func,
     onConfirm          : PropTypes.func,
     title              : PropTypes.string,
-    visible            : PropTypes.bool,
 };
 
 export default FullPageModal;
