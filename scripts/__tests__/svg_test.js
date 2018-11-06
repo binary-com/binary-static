@@ -1,9 +1,8 @@
-const path = require('path');
-const fs   = require('fs');
+const path   = require('path');
+const fs     = require('fs');
 const expect = require('chai').expect;
 
 describe('check svg file format', () => {
-
     it('should be valid svgs', () => {
         function fetchSvgs(dir) {
             const directory = fs.readdirSync(dir);
@@ -16,13 +15,16 @@ describe('check svg file format', () => {
         }
 
         const flatten = arr => {
-            let index;
-            while ((index = arr.findIndex(el => Array.isArray(el))) > -1) { //eslint-disable-line
+            const index = arr.findIndex(el => Array.isArray(el));
+            if (index > -1) {
                 arr.splice(index, 1, ...arr[index]);
+                return flatten(arr);
             }
+
             return arr;
         };
-        const svgs    = fetchSvgs(path.resolve(__dirname, '../../src/images'));
+
+        const svgs = fetchSvgs(path.resolve(__dirname, '../../src/images'));
 
         flatten(svgs)
             .filter(item => !!item)
@@ -31,7 +33,10 @@ describe('check svg file format', () => {
                 if (stats.isSymbolicLink()) return;
                 const file = fs.readFileSync(path.resolve(item), 'utf-8');
                 expect(file).to.be.a('string');
-                expect(file).to.match(/(?!\n)(<svg)(.*)(>).*(<\/\s?svg)>/i, `unoptimized svg at ${item}\n Please run the following command on your terminal and commit the result: \n svgo ${item} \n`);
+                expect(file)
+                    .to
+                    .match(/(?!\n)(<svg)(.*)(>).*(<\/\s?svg)>/i,
+                        `unoptimized svg at ${item}\n Please run the following command on your terminal and commit the result: \n svgo ${item} \n`);
             });
     });
 });
