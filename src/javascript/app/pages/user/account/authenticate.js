@@ -5,11 +5,11 @@ const BinarySocket        = require('../../../base/socket');
 const CompressImage       = require('../../../../_common/image_utility').compressImg;
 const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
 const isImageType         = require('../../../../_common/image_utility').isImageType;
+const getLanguage         = require('../../../../_common/language').get;
 const localize            = require('../../../../_common/localize').localize;
 const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 const Url                 = require('../../../../_common/url');
 const showLoadingImage    = require('../../../../_common/utility').showLoadingImage;
-const getLanguage         = require('../../../../_common/language').get;
 
 const Authenticate = (() => {
     let is_action_needed     = false;
