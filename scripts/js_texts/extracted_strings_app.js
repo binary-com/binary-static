@@ -257,6 +257,7 @@ module.exports = [
     'Please complete your [_1]personal details[_2] before you proceed.',
     'Please confirm that all the information above is true and complete.',
     'Please confirm that you are not a politically exposed person.',
+    'Please ensure that you have the Telegram app installed on your device.',
     'Please enter a valid Login ID.',
     'Please log in.',
     'Please reload the page',
