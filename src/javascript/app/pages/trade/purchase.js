@@ -9,6 +9,7 @@ const updateValues             = require('./update_values');
 const Client                   = require('../../base/client');
 const BinarySocket             = require('../../base/socket');
 const formatMoney              = require('../../common/currency').formatMoney;
+const Login                    = require('../../../_common/base/login');
 const CommonFunctions          = require('../../../_common/common_functions');
 const localize                 = require('../../../_common/localize').localize;
 const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
@@ -17,7 +18,6 @@ const urlFor                   = require('../../../_common/url').urlFor;
 const createElement            = require('../../../_common/utility').createElement;
 const getPropertyValue         = require('../../../_common/utility').getPropertyValue;
 const template                 = require('../../../_common/utility').template;
-const Login                    = require('../../../_common/base/login');
 
 /*
  * Purchase object that handles all the functions related to
