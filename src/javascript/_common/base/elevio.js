@@ -5,14 +5,12 @@ const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
     const init = () => {
-        BinarySocket.wait('website_status').then(() => {
-            window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
-                // window._elev.setLanguage(lang);
-                setUserInfo(elev);
-                setTranslations(elev);
-                addEventListenerGTM();
-                makeLauncherVisible();
-            });
+        window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
+            // window._elev.setLanguage(lang);
+            setUserInfo(elev);
+            setTranslations(elev);
+            addEventListenerGTM();
+            makeLauncherVisible();
         });
     };
 
