@@ -1046,6 +1046,76 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+#content.economic_calendar-content {
+    .calendar-container {
+        position: relative;
+
+        .calendar-footer {
+            position: absolute;
+            display: flex;
+            width: calc(100% - 2px);
+            border: 1px solid $COLOR_GRAY;
+            border-top-width: 0;
+            height: 30px;
+            justify-content: space-between;
+            background: $COLOR_WHITE;
+            align-items: center;
+            bottom: 0;
+
+            span.desc {
+                outline: 0;
+                display: block;
+                padding: 1px 70px 6px 30px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            a {
+                font-size: $FONT_SIZE_S;
+                color: $COLOR_LIGHTER_BLUE;
+                text-decoration: underline;
+                font-weight: 400;
+
+                &.logo {
+                    text-indent: -9999px;
+                    position: absolute;
+                    left: 6px;
+                    top: 3px;
+                    height: 24px;
+                    width: 24px;
+                    background: url('https://c.mql5.com/i/calendar/mt_logo1_x1.png') no-repeat top left;
+                }
+                &.social-links {
+                    i {
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        vertical-align: top;
+                        background: url('https://c.mql5.com/i/calendar/widget-icons-social-sharing.png');
+
+                        &.fb {
+                            background-position: -21px 0;
+                        }
+                        &.twitter {
+                            background-position: 0 0;
+                        }
+                    }
+                }
+            }
+            .left {
+                margin-left: 8px;
+            }
+            .right {
+                margin-right: 8px;
+
+                a {
+                    padding: 0 2px;
+                }
+            }
+        }
+    }
+}
+
 .welcome-content {
     .box-grid .box {
         display: flex;
@@ -1204,6 +1274,78 @@ body #not_authenticated_financial ul.checked > li {
                     padding-right: 20px;
                 }
             }
+        }
+    }
+}
+
+.vpn-app {
+    .steps.steps-vertical {
+        max-width: 603px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        padding-left: 15px;
+        @media (max-width: 480px) {
+            flex-direction: column;
+
+            .step:not(:first-child) {
+                margin-top: 2rem;
+            }
+        }
+
+        .step {
+            position: relative;
+            min-height: 135px;
+
+            &:not(:last-child) {
+                border-left: 1px solid $COLOR_LIGHT_GRAY;
+            }
+            .circle {
+                margin: 0;
+                position: absolute;
+                left: -20px;
+            }
+            .content {
+                padding: 8px 0 0 30px;
+                margin-left: 37px;
+
+                p {
+                    margin: 0;
+                    max-width: 270px;
+                    text-align: left;
+
+                    &:last-child, &:nth-child(2) {
+                        padding-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+    &-icon {
+        width: 83px;
+        margin-bottom: 23px;
+        @media screen and (max-width: 480px) {
+            margin-top: 10px;
+            transform: scale(0.85);
+        }
+    }
+    .column {
+        @media screen and (max-width: 480px) {
+            padding: 0;
+        }
+    }
+    .vertical-divider {
+        width: 1px;
+        background-color: $COLOR_LIGHT_GRAY;
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
+    }
+    .cta-download-heading {
+        margin-top: 50px;
+
+        h2 {
+            margin-bottom: 45px;
         }
     }
 }
