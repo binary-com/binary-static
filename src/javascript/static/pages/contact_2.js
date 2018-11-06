@@ -7,7 +7,7 @@ const Contact = (() => {
         window._elev.on('ready', embedElevioComponents); // eslint-disable-line no-underscore-dangle
 
         $('#contact_2_loading').remove();
-        $('#contact_2').setVisibility(true);
+        $('#contact_2').setVisibility(1);
     };
 
     const embedElevioComponents = () => {
