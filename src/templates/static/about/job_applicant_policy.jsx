@@ -10,8 +10,8 @@ const JobApplicantPrivacyPolicy = () =>  (
         <h2 data-anchor='interpretations'>{it.L('Interpretations')}</h2>
         <p>{it.L('The following terms shall have the meaning set out below and cognate terms shall be construed accordingly:')}</p>
         <p><strong>&#39;{it.L('Data Controller')}&#39;</strong> {it.L('shall mean the Binary Group of companies. This means that the Company is responsible for deciding how it holds and uses any personal data about the applicant.')}</p>
-        <p><strong>&#39;{it.L('Data Protection Act (DPA)')}&#39;</strong> {it.L('shall mean shall mean Data Protection Act 2018, Chapter 440 of the Laws of Malta.')}</p>
-        <p><strong>&#39;{it.L('Data Subject')}&#39;</strong> {it.L('shall mean shall mean the applicant, whose personal data is collected by the Company.')}</p>
+        <p><strong>&#39;{it.L('Data Protection Act (DPA)')}&#39;</strong> {it.L('shall mean Data Protection Act 2018, Chapter 440 of the Laws of Malta.')}</p>
+        <p><strong>&#39;{it.L('Data Subject')}&#39;</strong> {it.L('shall mean the applicant, whose personal data is collected by the Company.')}</p>
         <p><strong>&#39;{it.L('GDPR')}&#39;</strong> {it.L('shall mean EU General Data Protection Regulation 2016/679.')}</p>
         <p><strong>&#39;{it.L('Personal Data')}&#39;</strong> {it.L('means any identifiable information relating to the applicant.')}</p>
         <p><strong>&#39;{it.L('Processing')}&#39;</strong> {it.L('shall mean any operation which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, restriction, erasure, or destruction, etc..')}</p>
