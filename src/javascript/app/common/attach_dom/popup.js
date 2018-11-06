@@ -3,6 +3,7 @@ const getElementById = require('../../../_common/common_functions').getElementBy
 const createElement  = require('../../../_common/utility').createElement;
 
 const cache = {};
+const popup_queue = [];
 
 const showPopup = (options) => {
     if (cache[options.url]) {
@@ -25,7 +26,19 @@ const callback = (options) => {
     const div      = createElement('div', { html: cache[options.url] });
     const lightbox = createElement('div', { id: options.popup_id, class: 'lightbox' });
     lightbox.appendChild(div.querySelector(options.content_id));
-    document.body.appendChild(lightbox);
+    lightbox.addEventListener('DOMNodeRemoved', (e) => {
+        if (!popup_queue.length || e.target.className !== 'lightbox') return;
+        document.body.appendChild(popup_queue.pop()); // show popup in queue
+    });
+
+    const has_lightbox = document.querySelector('.lightbox');
+    if (has_lightbox) {
+        // store this popup in queue to show it after the previous popup has been removed
+        // to avoid having multiple popup showing at the same time
+        popup_queue.push(lightbox);
+    } else {
+        document.body.appendChild(lightbox);
+    }
 
     if (options.validations) {
         Validation.init(options.form_id, options.validations);
