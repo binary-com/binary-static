@@ -1,21 +1,13 @@
 const initPhoneNumber = require('./contact').initPhoneNumber;
 const Elevio          = require('../../_common/base/elevio');
-const BinarySocket    = require('../../_common/base/socket_base');
-const BinaryPjax      = require('../../app/base/binary_pjax');
 
 const Contact = (() => {
     const onLoad = () => {
-        BinarySocket.wait('website_status').then(() => {
-            if (Elevio.isAvailable()) {
-                initPhoneNumber(true);
-                window._elev.on('ready', embedElevioComponents); // eslint-disable-line no-underscore-dangle
+        initPhoneNumber(true);
+        window._elev.on('ready', embedElevioComponents); // eslint-disable-line no-underscore-dangle
 
-                $('#contact_2_loading').remove();
-                $('#contact_2').setVisibility(true);
-            } else {
-                BinaryPjax.load('contact', true);
-            }
-        });
+        $('#contact_2_loading').remove();
+        $('#contact_2').setVisibility(1);
     };
 
     const embedElevioComponents = () => {
