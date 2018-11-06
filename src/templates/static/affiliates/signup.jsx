@@ -13,7 +13,7 @@ const Signup = () => (
         <div className='container'>
             <h1>{it.L('[_1] Affiliate Programme', it.website_name)}</h1>
             <p>
-                {it.L('Join the Binary.com Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform.')}
+                {it.L('Join the [_1] Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform.', it.website_name)}
             </p>
 
             <div className='gr-padding-20'>
@@ -153,7 +153,7 @@ const Signup = () => (
                             <h3 className='gr-padding-20'>
                                 <span>{it.L('Cost per acquisition (CPA) for EU affiliates only')}</span>
                             </h3>
-                            <p className='mobile-text-small'>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open a <span className=\'bold\'>real money investment account</span> through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU.')}</p>
+                            <p className='mobile-text-small'>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open a [_1] real money investment account [_2] through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU.', '<strong>', '</strong>')}</p>
                             <p className='mobile-text-small'>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
                         </TabContent>
                     </TabContentContainer>
