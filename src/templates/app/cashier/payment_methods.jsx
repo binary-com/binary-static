@@ -7,8 +7,8 @@ const Button = ({ url, real, className, text }) => (
     </a>
 );
 
-const TableTitle = ({ title, className }) => (
-    <h3 className={`gr-padding-10${className ? ` ${className}` : ''}`}>{title}</h3>
+const TableTitle = ({ title, className, dataShow }) => (
+    <h3 className={`gr-padding-10${className ? ` ${className}` : ''}`} data-show={dataShow}>{title}</h3>
 );
 
 const PaymentLogo = ({ logo }) => (
@@ -396,12 +396,12 @@ const PaymentMethods = () => {
                     }}
                 />
                 <TableTitle
-                    data-show='-eucountry'
+                    dataShow='-eucountry'
                     title={it.L('Cryptocurrencies')}
                     withdrawal={it.L('Min Withdrawal')}
                 />
                 <Table
-                    data-show='-eucountry'
+                    dataShow='-eucountry'
                     data={{
                         thead: [
                             [
