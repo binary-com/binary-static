@@ -72,6 +72,7 @@ const Page = (() => {
     const onLoad = () => {
         if (State.get('is_loaded_by_pjax')) {
             Url.reset();
+            updateLinksURL('#content');
         } else {
             init();
             if (!Login.isLoginPages()) {
@@ -81,6 +82,7 @@ const Page = (() => {
             Footer.onLoad();
             Language.setCookie();
             Menu.makeMobileMenu();
+            updateLinksURL('body');
             recordAffiliateExposure();
             endpointNotification();
         }
@@ -176,6 +178,12 @@ const Page = (() => {
         if (document.body) {
             document.body.appendChild(createElement('script', { src }));
         }
+    };
+
+    const updateLinksURL = (container_selector) => {
+        $(container_selector).find(`a[href*=".${Url.getDefaultDomain()}"]`).each(function() {
+            $(this).attr('href', Url.urlForCurrentDomain($(this).attr('href')));
+        });
     };
 
     return {
