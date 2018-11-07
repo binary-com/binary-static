@@ -14,7 +14,7 @@ const ConflictsPolicy = () => (
 
         <h2 data-anchor='disclosure-general'>{it.L('Disclosure: general')}</h2>
         <p>{it.L('The organisational and administrative arrangements established by the Company to prevent or manage the conflict are not sufficient to ensure, with reasonable confidence, that the risk of damage to the interest of the Client will be prevented. However, we aim to disclose the general nature or sources of conflicts of interest.')}</p>
-        <p className='invisible eu-show'>{it.L('Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available.')}</p>
+        <p className='invisible' data-show='eucountry'>{it.L('Clients have the opportunity to consider whether to ask for more information by sending an email to compliance@binary.com, in which case further details of the conflicts of interest policy will be made available.')}</p>
     </div>
 );
 

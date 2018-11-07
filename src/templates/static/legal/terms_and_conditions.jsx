@@ -32,7 +32,7 @@ const TermsAndConditions = () => (
                 <TradingRules />
             </Section>
 
-            <Section sectionNum='3' link_id='deposit-bonus' className='eu-hide'>
+            <Section sectionNum='3' link_id='deposit-bonus' data-show='-eucountry'>
                 <DepositBonus />
             </Section>
 
@@ -44,7 +44,7 @@ const TermsAndConditions = () => (
                 <Api />
             </Section>
 
-            <Section sectionNum='6' link_id='biel' className='invisible eu-show'>
+            <Section sectionNum='6' link_id='biel' className='invisible' data-show='eucountry'>
                 <Biel />
             </Section>
 

@@ -299,7 +299,7 @@ const Careers = () => {
                     </div>
                 </div>
             </div>
-            <div className='container eu-show invisible'>
+            <div className='container' data-show='eucountry'>
                 <div className='center-text'>
                     <p>{it.L('Please read this [_1]privacy policy[_2] before submitting your application.', `<a href="${it.url_for('careers/privacy-policy')}">`, '</a>')}</p>
                 </div>

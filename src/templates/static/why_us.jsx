@@ -107,7 +107,7 @@ const WhyUs = () => (
                             </ul>
                         </div>
                         <div className='gr-4 gr-12-m gr-padding-20'>
-                            <div className='gr-row invisible eu-show'>
+                            <div className='gr-row' data-show='eucountry'>
                                 <div className='gr-12 gr-centered-m gr-8-m'>
                                     <img className='responsive' src={it.url_for('images/pages/why-us/mga-logo2.svg')} />
                                 </div>
@@ -117,7 +117,7 @@ const WhyUs = () => (
                                     <img className='responsive' src={it.url_for('images/pages/why-us/why-us-proven-record_1.svg')} />
                                 </div>
                             </div>
-                            <div className='gr-row invisible eu-show'>
+                            <div className='gr-row' data-show='eucountry'>
                                 <div className='gr-6 gr-centered-m gr-4-m'>
                                     <img className='responsive' src={it.url_for('images/pages/footer/isle-of-man.png')} />
                                 </div>
