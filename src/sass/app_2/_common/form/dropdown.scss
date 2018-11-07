@@ -17,6 +17,9 @@ div.dropdown-container {
             padding-left: 8px;
             font-weight: 300;
         }
+        &:active, &:focus {
+            outline: none;
+        }
         &:hover {
             border-color: $COLOR_BLUE;
 
@@ -93,7 +96,7 @@ div.dropdown-container {
                     vertical-align: middle;
                 }
                 &:hover, &.highlighted {
-                    background-color: $COLOR_BRANDBLUE_5;
+                    background-color: $COLOR_LIGHT_GRAY;
                 }
                 &.selected span {
                     background-color: $COLOR_BRANDBLUE_5;
@@ -146,7 +149,6 @@ div.dropdown-container {
 
             &:hover, &:focus, &:active {
                 border-color: $COLOR_WHITE;
-                outline: none;
             }
         }
         &.show > .clicked {
@@ -165,7 +167,7 @@ div.dropdown-container {
                     background: $COLOR_BRANDBLUE_85;
                 }
                 &:hover, &.highlighted {
-                    background: $COLOR_BRANDBLUE_85;
+                    background: $COLOR_BRANDBLUE_95;
                 }
             }
         }

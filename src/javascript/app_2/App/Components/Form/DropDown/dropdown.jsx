@@ -11,7 +11,7 @@ import {
     getValueFromIndex,
     getPrevIndex,
     getNextIndex,
-    updateItemClass }  from './helpers';
+}  from './helpers';
 
 class Dropdown extends React.Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class Dropdown extends React.Component {
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.state = {
             is_list_visible: false,
-            curr_index     : getItemFromValue(this.props.list, this.props.value),
+            curr_index     : getItemFromValue(this.props.list, this.props.value).number,
         };
     }
 
@@ -50,20 +50,15 @@ class Dropdown extends React.Component {
         }
         event.preventDefault();
         const index = getItemFromValue(this.props.list, this.props.value);
-        const value = getValueFromIndex(this.props.list, index.number);
+        const value = getValueFromIndex(this.props.list, this.state.curr_index);
         const handleToggle = () => {
             if (this.state.is_list_visible) {
                 this.props.onChange({ target: { name: this.props.name, value } });
-            } else {
-                this.handleVisibility();
             }
+            this.handleVisibility();
         };
-        this.setState({ curr_index: index.number });
-        let curr_value;
         switch (event.keyCode) {
             case 13: // Enter is pressed
-                handleToggle();
-                break;
             case 32: // Space is pressed
                 handleToggle();
                 break;
@@ -71,16 +66,12 @@ class Dropdown extends React.Component {
                 if (this.state.is_list_visible) {
                     const prev_index = getPrevIndex(this.state.curr_index, index.length);
                     this.setState({ curr_index: prev_index });
-                    curr_value = getValueFromIndex(this.props.list, this.state.curr_index).toString();
-                    updateItemClass(event.target, curr_value);
                 }
                 break;
             case 40: // Down Arrow is pressed
                 if (this.state.is_list_visible) {
                     const next_index = getNextIndex(this.state.curr_index, index.length);
                     this.setState({ curr_index: next_index });
-                    curr_value = getValueFromIndex(this.props.list, this.state.curr_index).toString();
-                    updateItemClass(event.target, curr_value);
                 }
                 break;
             default:
@@ -148,6 +139,7 @@ class Dropdown extends React.Component {
                             <SimpleBar style={{ 'height': '100%' }}>
                                 {isArrayLike(this.props.list) ?
                                     <Items
+                                        highlightedIdx={this.state.curr_index}
                                         items={this.props.list}
                                         name={this.props.name}
                                         value={this.props.value}
@@ -157,6 +149,7 @@ class Dropdown extends React.Component {
                                         <React.Fragment key={key}>
                                             <div className='list-label'><span>{key}</span></div>
                                             <Items
+                                                highlightedIdx={this.state.curr_index}
                                                 items={this.props.list[key]}
                                                 name={this.props.name}
                                                 value={this.props.value}
@@ -179,11 +172,12 @@ const Items = ({
     name,
     value,
     handleSelect,
+    highlightedIdx,
 }) => (
     items.map((item, idx) => (
         <React.Fragment key={idx}>
             <div
-                className={`list-item ${ value === item.value ? 'selected' : ''}`}
+                className={`list-item ${ value === item.value ? 'selected' : ''} ${highlightedIdx === idx ? 'highlighted' : ''}`}
                 key={idx}
                 name={name}
                 value={item.value}

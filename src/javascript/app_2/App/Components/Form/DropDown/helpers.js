@@ -51,9 +51,3 @@ export const getNextIndex = (index, length) => {
     const next_index = (index + 1) === length ? 0 : index + 1;
     return next_index;
 };
-
-export const updateItemClass = (element, value) => {
-    const list = element.nextSibling.nextSibling.children[0].children || [];
-    Array.from(list).map(item => item.classList.remove('highlighted'));
-    Array.from(list).find(item => item.getAttribute('value') === value).classList.add('highlighted');
-};
