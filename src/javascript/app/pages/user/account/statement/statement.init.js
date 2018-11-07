@@ -214,6 +214,15 @@ const StatementInit = (() => {
                 }
             });
         });
+
+        $('#go_back_btn').off('click').on('click', (e) => {
+            e.preventDefault();
+            $container.setVisibility(0);
+            $('#statement-container').setVisibility(1);
+            $(download_from_id).val('').removeAttr('data-value');;
+            $(download_to_id).val('').removeAttr('data-value');
+            $request_statement_btn.addClass('button-disabled').off('click');
+        });
     };
 
     return {

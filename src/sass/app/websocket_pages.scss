@@ -133,11 +133,15 @@
         flex: 0.8 1 35px;
     }
     #account_statistics {
-        margin: 30px 0;
         border: 1px solid $COLOR_LIGHT_GRAY;
+        margin: 30px 0;
+        @media (max-width: 480px) {
+            margin-bottom: 10px;
+        }
 
         div {
-            align-self: center;
+            display: flex;
+            justify-content: center;
             padding: 20px;
 
             @media (max-width: 480px) {
@@ -158,18 +162,34 @@
             }
         }
     }
+    #download_statement_btn {
+        margin-bottom: 0;
+        margin-left: auto;
+
+        @media (max-width: 480px) {
+            margin: 20px 0;
+        }
+    }
+}
+
+#download_statement_container {
+    min-height: 400px;
+
+    #download_to, #download_from {
+        display: inline;
+
+        @media (max-width: 480px) {
+            display: block;
+            margin-left: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
 }
 
 #profit-table-container, #statement-container {
     #date_to {
         box-sizing: border-box;
-    }
-    #download_to, #download_from {
-        width: auto;
-
-        &#download_to {
-            margin-left: 26px;
-        }
     }
 }
 
