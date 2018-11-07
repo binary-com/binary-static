@@ -2,6 +2,7 @@ const { expect, setURL } = require('./tests_common');
 const Url                = require('../url');
 
 describe('Url', () => {
+    setURL('https://www.binary.com');
     const website_url  = Url.websiteUrl();
     const language     = 'en';
     const query_string = 'market=forex&duration_amount=5&no_value=';
