@@ -5,6 +5,7 @@ const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
     const init = () => {
+        if (!window._elev) return;
         window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
             // window._elev.setLanguage(lang);
             setUserInfo(elev);
