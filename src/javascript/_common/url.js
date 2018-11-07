@@ -1,7 +1,8 @@
-const urlForLanguage = require('./language').urlFor;
-const urlLang        = require('./language').urlLang;
-const createElement  = require('./utility').createElement;
-const isEmptyObject  = require('./utility').isEmptyObject;
+const urlForLanguage         = require('./language').urlFor;
+const urlLang                = require('./language').urlLang;
+const createElement          = require('./utility').createElement;
+const isEmptyObject          = require('./utility').isEmptyObject;
+const getCurrentBinaryDomain = require('../config').getCurrentBinaryDomain;
 require('url-polyfill');
 
 const Url = (() => {
@@ -55,6 +56,28 @@ const Url = (() => {
         return urlForLanguage(lang, new_url);
     };
 
+    const host_map = {
+        'bot.binary.com': 'www.binary.bot',
+    };
+
+    const urlForCurrentDomain = (href) => {
+        const current_domain = getCurrentBinaryDomain();
+
+        if (!current_domain) {
+            return href; // don't change when domain is not supported
+        }
+
+        const url_object     = new URL(href);
+        if (Object.keys(host_map).includes(url_object.hostname)) {
+            url_object.hostname = host_map[url_object.hostname];
+        } else {
+            // to keep all non-Binary links unchanged, we use default domain for all Binary links in the codebase (javascript and templates)
+            url_object.hostname = url_object.hostname.replace(new RegExp(`\\.${Url.getDefaultDomain()}`, 'i'), `.${current_domain}`);
+        }
+
+        return url_object.href;
+    };
+
     const urlForStatic = (path = '') => {
         if (!static_host || static_host.length === 0) {
             static_host = document.querySelector('script[src*="binary.min.js"],script[src*="binary.js"]');
@@ -105,13 +128,15 @@ const Url = (() => {
         getLocation,
         paramsHashToString,
         urlFor,
+        urlForCurrentDomain,
         urlForStatic,
         getSection,
         getHashValue,
         updateParamsWithoutReload,
 
-        param     : name => paramsHash()[name],
-        websiteUrl: () => 'https://www.binary.com/',
+        param           : name => paramsHash()[name],
+        websiteUrl      : () => `${location.protocol}//${location.hostname}/`,
+        getDefaultDomain: () => 'binary.com',
     };
 })();
 

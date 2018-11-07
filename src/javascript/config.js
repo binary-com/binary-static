@@ -8,6 +8,13 @@
  * git update-index --assume-unchanged src/javascript/config.js
  *
  */
+const domain_app_ids = { // these domains also being used in '_common/url.js' as supported domains
+    'binary.com': 1,
+    'binary.me' : 15284,
+};
+
+const getCurrentBinaryDomain = () =>
+    Object.keys(domain_app_ids).find(domain => new RegExp(`.${domain}$`, 'i').test(window.location.hostname));
 
 const binary_desktop_app_id = 14473;
 
@@ -29,7 +36,7 @@ const getAppId = () => {
         app_id = user_app_id;
     } else {
         window.localStorage.removeItem('config.default_app_id');
-        app_id = 1;
+        app_id = domain_app_ids[getCurrentBinaryDomain()] || 1;
     }
     return app_id;
 };
@@ -80,6 +87,7 @@ const getSocketURL = () => {
 };
 
 module.exports = {
+    getCurrentBinaryDomain,
     getAppId,
     isBinaryApp,
     getSocketURL,

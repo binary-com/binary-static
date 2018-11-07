@@ -29,10 +29,10 @@ const Authenticate = (() => {
                 if (!/authenticated/.test(status)) {
                     init();
                     const $not_authenticated = $('#not_authenticated').setVisibility(1);
-                    let link = 'https://marketing.binary.com/authentication/2017_Authentication_Process.pdf';
+                    let link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/2017_Authentication_Process.pdf');
                     if (Client.isAccountOfType('financial')) {
                         $('#not_authenticated_financial').setVisibility(1);
-                        link = 'https://marketing.binary.com/authentication/2017_MF_Authentication_Process.pdf';
+                        link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/2017_MF_Authentication_Process.pdf');
                     }
                     $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
                 } else if (!/age_verification/.test(status)) {
