@@ -44,7 +44,7 @@ const TermsAndConditions = () => (
                 <Api />
             </Section>
 
-            <Section sectionNum='6' link_id='biel' className='invisible' data-show='eucountry'>
+            <Section sectionNum='6' link_id='biel' data-show='eucountry'>
                 <Biel />
             </Section>
 
