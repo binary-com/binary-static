@@ -1,4 +1,5 @@
 import React from 'react';
+import { DatePicker } from '../../_common/components/elements.jsx';
 import Loading from '../../_common/components/loading.jsx';
 
 const ProfitTable = () => (
@@ -8,11 +9,8 @@ const ProfitTable = () => (
                 <h1>{it.L('Profit Table')}</h1>
                 <p className='notice-msg center-text invisible' id='error-msg' />
             </div>
-            <div className='gr-padding-10 invisible' id='util_row'>
-                <div className='gr-row container gr-row-align-left-m gr-row-align-right'>
-                    <label className='gr-gutter-right'>{it.L('Show all historical transactions up to')}:</label>
-                    <input type='text' id='date_to' size='20' readOnly='readonly' className='no-margin' />
-                </div>
+            <div id='util_row' className='gr-padding-10 container gr-row gr-row-align-right gr-row-align-left-m invisible'>
+                <DatePicker id='date_to' text={it.L('Show all historical transactions up to')} />
             </div>
             <Loading />
         </div>

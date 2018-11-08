@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, DatePicker } from '../../_common/components/elements.jsx';
 import Loading from '../../_common/components/loading.jsx';
 
 const AccountStatisticsBox = ({ id, title, heading, className }) => (
@@ -10,19 +11,6 @@ const AccountStatisticsBox = ({ id, title, heading, className }) => (
         }
         { id && <p id={id} /> }
     </div>
-);
-
-const DatePicker = ({ className, id, text }) => (
-    <div className={className || undefined}>
-        <label htmlFor={id} className='gr-gutter-right'>{text}:</label>
-        <input type='text' id={id} size='20' readOnly='readonly' className='no-margin' />
-    </div>
-);
-
-const Button = ({ children, className, href, id, text }) => (
-    <a id={id} href={href || undefined} className={className || undefined}>
-        { children || <span>{text}</span> }
-    </a>
 );
 
 const Statement = () => (
