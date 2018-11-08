@@ -30,22 +30,22 @@ const InputField = ({
     const changeValue = (e) => {
         if (type === 'number') {
             const is_empty = !e.target.value || e.target.value === '';
-            const signed_regex = is_signed ? '[\\+-]?' : '';
+            const signed_regex = is_signed ? '(?!^([-+]0)$|^[-+]?$)^[+-]?' : '^';
 
-            const is_number = new RegExp(`^${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}(?<=\\d)(?<!-0)$`)
+            const is_number = new RegExp(`${signed_regex}(\\d*)?${is_float ? '(\\.\\d+)?' : ''}$`)
                 .test(e.target.value);
 
-            const is_not_completed_number = is_float && new RegExp(`^${signed_regex}(\\.|\\d+\\.)?$`)
+            const is_not_completed_number = is_float && new RegExp(`${signed_regex}(\\.|\\d+\\.)?$`)
                 .test(e.target.value);
 
             // This regex check whether there is any zero at the end of fractional part or not.
-            const has_zero_at_end = new RegExp(`^${signed_regex}(\\d+)?\\.(\\d+)?[0]+$`)
+            const has_zero_at_end = new RegExp(`${signed_regex}(\\d+)?\\.(\\d+)?[0]+$`)
                 .test(e.target.value);
-            
+
             const is_scientific_notation = /e/.test(`${+e.target.value}`);
 
             if (max_length && fractional_digits) {
-                has_valid_length = new RegExp(`^${signed_regex}(\\d{0,${max_length}})(\\.\\d{0,${fractional_digits}})?$`)
+                has_valid_length = new RegExp(`${signed_regex}(\\d{0,${max_length}})(\\.\\d{0,${fractional_digits}})?$`)
                     .test(e.target.value);
             }
 

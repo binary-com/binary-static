@@ -2,17 +2,21 @@ import {
     action,
     computed,
     extendObservable,
-    observable }              from 'mobx';
+    observable,
+}                             from 'mobx';
 import { isEmptyObject }      from '_common/utility';
 import { WS }                 from 'Services';
+import { localize }           from '_common/localize';
 import { createChartBarrier } from './Helpers/chart_barriers';
 import { createChartMarkers } from './Helpers/chart_markers';
 import {
     getDetailsExpiry,
-    getDetailsInfo }          from './Helpers/details';
+    getDetailsInfo,
+}                             from './Helpers/details';
 import {
     getDigitInfo,
-    isDigitContract }         from './Helpers/digits';
+    isDigitContract,
+}                             from './Helpers/digits';
 import {
     getChartConfig,
     getDisplayStatus,
@@ -24,7 +28,8 @@ import {
     isSoldBeforeStart,
     isStarted,
     isUserSold,
-    isValidToSell }           from './Helpers/logic';
+    isValidToSell,
+}                             from './Helpers/logic';
 import BaseStore              from '../../base_store';
 
 export default class ContractStore extends BaseStore {
@@ -36,6 +41,7 @@ export default class ContractStore extends BaseStore {
     @observable chart_config  = observable.object({});
 
     @observable has_error         = false;
+    @observable error_message     = '';
     @observable is_sell_requested = false;
 
     // -------------------
@@ -53,12 +59,14 @@ export default class ContractStore extends BaseStore {
 
     @action.bound
     onMount(contract_id) {
-        this.contract_id = contract_id;
-        this.smart_chart = this.root_store.modules.smart_chart;
+        this.has_error     = false;
+        this.error_message = '';
+        this.contract_id   = contract_id;
+        this.smart_chart   = this.root_store.modules.smart_chart;
         this.smart_chart.setContractMode(true);
 
         if (contract_id) {
-            WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, true);
+            WS.subscribeProposalOpenContract(this.contract_id, this.updateProposal, false);
         }
     }
 
@@ -80,7 +88,14 @@ export default class ContractStore extends BaseStore {
     @action.bound
     updateProposal(response) {
         if ('error' in response) {
-            this.has_error = true;
+            this.has_error     = true;
+            this.error_message = response.error.message;
+            this.contract_info = {};
+            return;
+        }
+        if (isEmptyObject(response.proposal_open_contract)) {
+            this.has_error     = true;
+            this.error_message = localize('Contract does not exist or does not belong to this client.');
             this.contract_info = {};
             return;
         }
@@ -114,6 +129,7 @@ export default class ContractStore extends BaseStore {
             this.sell_info = {
                 error_message: response.error.message,
             };
+
             this.is_sell_requested = false;
         } else {
             this.forgetProposalOpenContract();

@@ -17,7 +17,10 @@ const GTM = (() => {
         pageTitle: pageTitle(),
         pjax     : State.get('is_loaded_by_pjax'),
         url      : document.URL,
-        ...ClientBase.isLoggedIn() && { visitorId: ClientBase.get('loginid') },
+        ...ClientBase.isLoggedIn() && {
+            visitorId: ClientBase.get('loginid'),
+            bom_email: ClientBase.get('email'),
+        },
     });
 
     const pushDataLayer = (data) => {

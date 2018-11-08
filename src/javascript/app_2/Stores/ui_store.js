@@ -33,6 +33,8 @@ export default class UIStore extends BaseStore {
 
     @observable screen_width = window.innerWidth;
 
+    @observable toast_messages = [];
+
     constructor() {
         const local_storage_properties = [
             'is_chart_asset_info_visible',
@@ -153,5 +155,23 @@ export default class UIStore extends BaseStore {
     @action.bound
     setPWAPromptEvent(e) {
         this.pwa_prompt_event = e;
+    }
+
+    @action.bound
+    addToastMessage(toast_message) {
+        this.toast_messages.push(toast_message);
+    }
+
+    @action.bound
+    removeToastMessage(toast_message) {
+        const index = this.toast_messages.indexOf(toast_message);
+        if (index > -1) {
+            this.toast_messages.splice(index, 1);
+        }
+    }
+
+    @action.bound
+    removeAllToastMessages() {
+        this.toast_messages = [];
     }
 }

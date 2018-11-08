@@ -1,7 +1,9 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
+import SimpleBar                      from 'simplebar-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import TableRow                       from './table_row.jsx';
+
 
 /* TODO:
       1. implement sorting by column (ASC/DESC)
@@ -27,29 +29,40 @@ class DataTable extends React.PureComponent {
             columns,
             footer,
             getRowLink,
+            is_empty,
             onScroll,
         } = this.props;
+
+        const TableData =
+            <React.Fragment>
+                {this.props.data_source.map((row_obj, id) =>
+                    <TableRow
+                        row_obj={row_obj}
+                        columns={columns}
+                        key={id}
+                        to={getRowLink && getRowLink(row_obj)}
+                    />
+                )}
+                {children}
+            </React.Fragment>;
 
         return (
             <div className='table'>
                 <div className='table__head' ref={el => { this.el_table_head = el; }}>
                     <TableRow columns={columns} is_header />
                 </div>
-
                 <div
                     className='table__body'
                     onScroll={onScroll}
                     ref={el => { this.el_table_body = el; }}
                 >
-                    {this.props.data_source.map((row_obj, id) =>
-                        <TableRow
-                            row_obj={row_obj}
-                            columns={columns}
-                            key={id}
-                            to={getRowLink && getRowLink(row_obj)}
-                        />
-                    )}
-                    {children}
+                    {is_empty ?
+                        TableData
+                        :
+                        <SimpleBar>
+                            {TableData}
+                        </SimpleBar>
+                    }
                 </div>
 
                 {this.props.footer &&
