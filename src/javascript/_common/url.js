@@ -56,6 +56,7 @@ const Url = (() => {
         return urlForLanguage(lang, new_url);
     };
 
+    const default_domain = 'binary.com';
     const host_map = {
         'bot.binary.com': 'www.binary.bot',
     };
@@ -67,12 +68,16 @@ const Url = (() => {
             return href; // don't change when domain is not supported
         }
 
-        const url_object     = new URL(href);
+        const url_object = new URL(href);
         if (Object.keys(host_map).includes(url_object.hostname)) {
             url_object.hostname = host_map[url_object.hostname];
-        } else {
+        } else if (url_object.hostname.indexOf(default_domain) !== -1) {
             // to keep all non-Binary links unchanged, we use default domain for all Binary links in the codebase (javascript and templates)
-            url_object.hostname = url_object.hostname.replace(new RegExp(`\\.${Url.getDefaultDomain()}`, 'i'), `.${current_domain}`);
+            url_object.hostname = url_object.hostname.replace(new RegExp(`\\.${default_domain}`, 'i'), `.${current_domain}`);
+        } else if (/^mailto:/.test(href)) {
+            return href.replace(new RegExp(`${default_domain}$`, 'i'), `${current_domain}`);
+        } else {
+            return href;
         }
 
         return url_object.href;
@@ -136,7 +141,9 @@ const Url = (() => {
 
         param           : name => paramsHash()[name],
         websiteUrl      : () => `${location.protocol}//${location.hostname}/`,
-        getDefaultDomain: () => 'binary.com',
+        getDefaultDomain: () => default_domain,
+        getHostMap      : () => host_map,
+        resetStaticHost : () => { static_host = undefined; },
     };
 })();
 

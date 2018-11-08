@@ -23,6 +23,7 @@ const scrollToTop      = require('../../_common/scroll').scrollToTop;
 const toISOFormat      = require('../../_common/string_util').toISOFormat;
 const Url              = require('../../_common/url');
 const createElement    = require('../../_common/utility').createElement;
+const isProduction     = require('../../config').isProduction;
 require('../../_common/lib/polyfills/array.includes');
 require('../../_common/lib/polyfills/string.includes');
 
@@ -150,7 +151,7 @@ const Page = (() => {
     const endpointNotification = () => {
         const server = localStorage.getItem('config.server_url');
         if (server && server.length > 0) {
-            const message = `${(/www\.binary\.com/i.test(window.location.hostname) ? '' :
+            const message = `${(isProduction() ? '' :
                 `${localize('This is a staging server - For testing purposes only')} - `)}
                 ${localize('The server <a href="[_1]">endpoint</a> is: [_2]', [Url.urlFor('endpoint'), server])}`;
 
