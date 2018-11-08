@@ -152,7 +152,7 @@ const StatementInit = (() => {
         getAccountStatistics();
 
         BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
-            if (isEuCountry()) {
+            if (isEuCountry() && !Client.get('is_virtual')) {
                 initDownloadStatement();
             }
         });
