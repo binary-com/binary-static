@@ -92,9 +92,10 @@ function runTests(url) {
                     expect(Url.urlForCurrentDomain(`https://${host}/${path_query_hash}`)).to.eq(`https://${host_map[host]}/${path_query_hash}`);
                 });
             });
-            it('updates email links correctly', () => {
-                const domain = url.replace(/^https:\/\/www\./, '');
-                expect(Url.urlForCurrentDomain('mailto:affiliates@binary.com')).to.eq(`mailto:affiliates@${domain}`);
+            it('doesn\'t update email links', () => {
+                ['mailto:affiliates@binary.com', 'mailto:email@otherdomain.com'].forEach(email_link => {
+                    expect(Url.urlForCurrentDomain(email_link)).to.eq(email_link);
+                });
             });
             it('doesn\'t update the third party domains', () => {
                 expect(Url.urlForCurrentDomain('https://www.otherdomain.com')).to.eq('https://www.otherdomain.com');

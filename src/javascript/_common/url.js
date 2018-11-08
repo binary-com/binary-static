@@ -74,8 +74,6 @@ const Url = (() => {
         } else if (url_object.hostname.indexOf(default_domain) !== -1) {
             // to keep all non-Binary links unchanged, we use default domain for all Binary links in the codebase (javascript and templates)
             url_object.hostname = url_object.hostname.replace(new RegExp(`\\.${default_domain}`, 'i'), `.${current_domain}`);
-        } else if (/^mailto:/.test(href)) {
-            return href.replace(new RegExp(`${default_domain}$`, 'i'), `${current_domain}`);
         } else {
             return href;
         }
