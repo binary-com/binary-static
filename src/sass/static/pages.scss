@@ -331,7 +331,7 @@
     }
 }
 
-#content.contact-2-content {
+#content.contact-content {
     margin-top: 0;
 
     #top_banner, #elevio_menu_container {
@@ -339,7 +339,7 @@
         justify-content: center;
     }
     #top_banner {
-        background: url('../images/pages/contact_2/banner-bg.svg');
+        background: url('../images/pages/contact/banner-bg.svg');
         min-height: 300px;
 
         .search {
@@ -352,7 +352,7 @@
                 background-color: $COLOR_WHITE;
 
                 > span._10b1r { // search icon
-                    background: url('../images/pages/contact_2/search-icon.svg') center no-repeat;
+                    background: url('../images/pages/contact/search-icon.svg') center no-repeat;
                     width: 30px;
 
                     svg {
@@ -404,10 +404,10 @@
                 }
             }
             ._elevio_module_icon_1 ._d9ggd { // Help Content
-                background: url('../images/pages/contact_2/content-icon.svg') no-repeat center;
+                background: url('../images/pages/contact/content-icon.svg') no-repeat center;
             }
             ._elevio_module_icon_6 ._d9ggd { // Submit a Ticket
-                background: url('../images/pages/contact_2/ticket-icon.svg') no-repeat center;
+                background: url('../images/pages/contact/ticket-icon.svg') no-repeat center;
             }
             ._elevio_module_icon_10 { // Call Us
                 display: none;
@@ -439,6 +439,11 @@
 
 ._elevio_launcher {
     display: none;
+
+    ._6byvm._zvdyj {
+        bottom: 8px !important;
+        right: 8px !important;
+    }
 }
 
 // override elevio styles for both in page contents and popup
