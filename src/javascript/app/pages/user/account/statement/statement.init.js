@@ -169,19 +169,22 @@ const StatementInit = (() => {
     };
 
     const initDownloadStatement = () => {
-        const $container             = $('#download_statement_container');
-        const $request_statement_btn = $('#request_statement_btn');
-        const $success_msg           = $container.find('.success-msg');
-        const $error_msg             = $container.find('.error-msg');
-        const download_from_id       = '#download_from';
-        const download_to_id         = '#download_to';
+        const $statement_container    = $('#statement-container');
+        const $ds_container           = $('#download-statement-container');
+        const $download_statement_btn = $('#download_statement_btn');
+        const $request_statement_btn  = $('#request_statement_btn');
+        const $success_msg            = $ds_container.find('.success-msg');
+        const $error_msg              = $ds_container.find('.error-msg');
 
-        $('#download_statement_btn').setVisibility(1);
-        $('#download_statement_btn').off('click').on('click', (e) => {
+        const download_from_id        = '#download_from';
+        const download_to_id          = '#download_to';
+
+        $download_statement_btn.setVisibility(1);
+        $download_statement_btn.off('click').on('click', (e) => {
             e.preventDefault();
 
-            $('#statement-container').setVisibility(0);
-            $container.setVisibility(1);
+            $statement_container.setVisibility(0);
+            $ds_container.setVisibility(1);
 
             DateTo.attachDateRangePicker(download_from_id, download_to_id, () => {
                 $success_msg.setVisibility(0);
@@ -217,11 +220,13 @@ const StatementInit = (() => {
 
         $('#go_back_btn').off('click').on('click', (e) => {
             e.preventDefault();
-            $container.setVisibility(0);
-            $('#statement-container').setVisibility(1);
+            $ds_container.setVisibility(0);
+            $statement_container.setVisibility(1);
+            $success_msg.setVisibility(0);
+            $error_msg.setVisibility(0);
+            $request_statement_btn.addClass('button-disabled').off('click');
             $(download_from_id).val('').removeAttr('data-value');;
             $(download_to_id).val('').removeAttr('data-value');
-            $request_statement_btn.addClass('button-disabled').off('click');
         });
     };
 

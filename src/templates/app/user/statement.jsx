@@ -12,6 +12,19 @@ const AccountStatisticsBox = ({ id, title, heading, className }) => (
     </div>
 );
 
+const DatePicker = ({ className, id, text }) => (
+    <div className={className}>
+        <label htmlFor={id} className='gr-gutter-right'>{text}:</label>
+        <input type='text' id={id} size='20' readOnly='readonly' className='no-margin' />
+    </div>
+);
+
+const Button = ({ children, className, href, id, text }) => (
+    <a id={id} href={href || undefined} className={className}>
+        { children || <span>{text}</span> }
+    </a>
+);
+
 const Statement = () => (
     <React.Fragment>
         <div id='statement-container'>
@@ -29,11 +42,8 @@ const Statement = () => (
             <div id='util_row' className='gr-row gr-padding-10 gr-parent invisible container'>
                 <div className='gr-12 gr-12-m'>
                     <div className='gr-row gr-row-align-right gr-row-align-left-m gr-row-align-middle'>
-                        <div>
-                            <label className='label_form gr-gutter-right'>{it.L('Show all historical transactions up to')}:</label>
-                            <input type='text' id='date_to' size='20' readOnly='readonly' className='no-margin' />
-                        </div>
-                        <button className='button-secondary invisible' id='download_statement_btn'>{it.L('Download your statement')}</button>
+                        <DatePicker id='date_to' text={it.L('Show all historical transactions up to')} />
+                        <Button id='download_statement_btn' className='button-secondary invisible' text={it.L('Download your statement')} />
                     </div>
                 </div>
                 <div className='gr-12 gr-12-m align-end'>
@@ -43,30 +53,22 @@ const Statement = () => (
             <Loading />
         </div>
 
-        <div id='download_statement_container' className='invisible'>
+        <div id='download-statement-container' className='invisible'>
             <div className='page-title'>
                 <h1>{it.L('Download your statement')}</h1>
             </div>
             <p>{it.L('Please select the date range of your statement:')}</p>
             <div className='gr-row gr-row-align-center-m'>
-                <div className='gr-4 gr-5-t gr-5-p gr-12-m gr-padding-10'>
-                    <label htmlFor='date_to'>{it.L('From')}:</label>
-                    <input type='text' id='download_from' size='20' readOnly='readonly' />
-                </div>
-                <div className='gr-4 gr-5-t gr-5-p gr-12-m gr-padding-10'>
-                    <label htmlFor='date_to'>{it.L('To')}:</label>
-                    <input type='text' id='download_to' size='20' readOnly='readonly' />
-                </div>
+                <DatePicker className='gr-4 gr-5-t gr-5-p gr-12-m gr-padding-10' id='download_from' text={it.L('From')} />
+                <DatePicker className='gr-4 gr-5-t gr-5-p gr-12-m gr-padding-10' id='download_to'   text={it.L('To')} />
                 <div className='gr-12 gr-padding-30'>
                     <div className='gr-row gr-row-align-center-m container'>
-                        <a id='request_statement_btn' className='button button-disabled no-margin'>
-                            <span>{it.L('Request your statement')}</span>
-                        </a>
-                        <a id='go_back_btn' href='javascript:;' className='gr-gutter-right gr-gutter-left'>
+                        <Button id='request_statement_btn' className='button button-disabled no-margin' text={it.L('Request your statement')} />
+                        <Button id='go_back_btn' href='javascript:;' className='gr-gutter-right gr-gutter-left'>
                             <div className='gr-row gr-padding-10 container'>
                                 <span className='gr-hide gr-show-m'>{('<<')}&nbsp;</span>{it.L('Back to Statement')}
                             </div>
-                        </a>
+                        </Button>
                     </div>
                     <p className='success-msg invisible'>{it.L('Your statement has been sent to your email address.')}</p>
                     <p className='error-msg invisible'>{it.L('There was an error processing your request.')}</p>
