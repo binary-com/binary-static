@@ -114,9 +114,6 @@
     .new-width {
         min-width: 100px;
     }
-    #date_to {
-        width: 100%;
-    }
 }
 
 #statement-container {
@@ -136,7 +133,7 @@
         border: 1px solid $COLOR_LIGHT_GRAY;
         margin: 30px 0;
         @media (max-width: 480px) {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         div {
