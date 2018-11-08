@@ -4,6 +4,7 @@ const GTM = (() => {
     const pushPurchaseData = (contract_data, root_store) => {
         const data = {
             event   : 'buy_contract',
+            bom_ui  : 'new',
             contract: {
                 amount       : contract_data.amount,
                 barrier1     : contract_data.barrier,
