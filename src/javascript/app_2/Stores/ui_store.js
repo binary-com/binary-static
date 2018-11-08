@@ -27,6 +27,10 @@ export default class UIStore extends BaseStore {
     @observable is_chart_countdown_visible  = false;
     @observable is_chart_layout_default     = true;
 
+    // PWA event and config
+    @observable is_install_button_visible = false;
+    @observable pwa_prompt_event          = null;
+
     @observable screen_width = window.innerWidth;
 
     constructor() {
@@ -133,5 +137,21 @@ export default class UIStore extends BaseStore {
     hideDrawers() { // hide both menu drawers
         this.is_main_drawer_on = false;
         this.is_notifications_drawer_on = false;
+    }
+
+    @action.bound
+    showInstallButton() {
+        this.is_install_button_visible = true;
+    }
+
+    @action.bound
+    hideInstallButton() {
+        this.is_install_button_visible = false;
+        this.pwa_prompt_event = null;
+    }
+
+    @action.bound
+    setPWAPromptEvent(e) {
+        this.pwa_prompt_event = e;
     }
 }

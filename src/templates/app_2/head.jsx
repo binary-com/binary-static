@@ -18,6 +18,7 @@ const Head = () => (
         <meta name='keywords' content={` ${it.L('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading')}`} />
         <meta name='author' content={it.broker_name} />
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+        <meta name='theme-color' content='#2a3052' />
         <meta name='dcterms.rightsHolder' content={it.broker_name} />
         <meta name='dcterms.rights' content={it.broker_name} />
         <meta name='google-site-verification' content='roReCEK-wNa1EMA6ZM9a4zCOQOMqxfJjvfsZMC9qh_k' />
@@ -29,7 +30,7 @@ const Head = () => (
 
         <Title />
 
-        <link rel='manifest' href={`${it.root_url}manifest.json`} />
+        <link rel='manifest' href={it.url_for(`/${it.language.toLowerCase()}/app/manifest.json`)} />
         <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} async />
 
         <Favicons />

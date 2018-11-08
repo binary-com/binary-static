@@ -4,7 +4,9 @@ const path                     = require('path');
 const SWPrecachedWebpackPlugin = require('sw-precache-webpack-plugin');
 const webpack                  = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const publicPathFactory        = require('./helpers').publicPathFactory;
 const PATHS                    = require('./paths');
+const languages                = require('../../scripts/common').languages;
 
 const getPlugins = (app, grunt) => ([
     new CircularDependencyPlugin({
@@ -21,19 +23,23 @@ const getPlugins = (app, grunt) => ([
     ...(app === 'app_2'
         ? [
             new ManifestPlugin({
-                fileName  : 'asset-manifest.json',
-                publicPath: 'js/app_2/',
+                fileName: 'asset-manifest.json',
             }),
 
-            new SWPrecachedWebpackPlugin({
-                cachedId                     : 'app_2',
-                dontCacheBustUrlsMatching    : /\.\w{8}\./,
-                filename                     : 'service-worker.js',
-                minify                       : false,
-                navigateFallback             : '/',
-                publicPath                   : '/js/app_2/',
+            ...(languages.map(lang => new SWPrecachedWebpackPlugin({
+                cachedId                 : 'app_2',
+                dontCacheBustUrlsMatching: /\.\w{8}\./,
+                minify                   : false,
+                navigateFallback         : `${lang.toLowerCase()}/app/index.html`,
+                filepath                 : path.resolve(PATHS.DIST, `${lang.toLowerCase()}/app/service-worker.js`),
+                // TODO uncomment the below lines when this card(https://trello.com/c/FHvQREm8) has been done.
+                // staticFileGlobs          : [
+                //     path.resolve(PATHS.DIST, `${lang.toLowerCase()}/app/index.html`),
+                // ],
+                // mergeStaticsConfig           : true,
+                // stripPrefixMulti             : { [path.join(PATHS.DIST, `${lang.toLowerCase()}/app/`)]: `/${lang.toLowerCase()}/app/` },
                 staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
-            }),
+            }))),
         ]
         : []
     ),
