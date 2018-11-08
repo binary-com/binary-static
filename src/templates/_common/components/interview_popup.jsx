@@ -3,7 +3,7 @@ import HTMLComment from './html_comment.jsx';
 
 const InterviewPopup = () => (
     <div id='interview_popup_container' className='invisible'>
-        <HTMLComment> googleoff: all </HTMLComment>{/* https://support.google.com/gsa/answer/6329153?hl=en#82542 */}
+        <HTMLComment>googleoff: all</HTMLComment>{/* https://support.google.com/gsa/answer/6329153?hl=en#82542 */}
         <div className='popup'>
             <div className='popup__head'>
                 <img className='popup__present_img' src={it.url_for('images/interview_popup/present.svg')} alt='$30 present' />
@@ -26,7 +26,7 @@ const InterviewPopup = () => (
                 </div>
             </div>
         </div>
-        <HTMLComment> googleon: all </HTMLComment>
+        <HTMLComment>googleon: all</HTMLComment>
     </div>
 );
 
