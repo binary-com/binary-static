@@ -6,7 +6,7 @@ module.exports = {
                 src: [
                     'index.html',
                     '404.html',
-                    'sitemap.xml',
+                    'sitemap*.xml',
                     'robots.txt'
                 ],
                 dest: global.dist
