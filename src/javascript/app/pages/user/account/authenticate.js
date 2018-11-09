@@ -5,6 +5,7 @@ const BinarySocket        = require('../../../base/socket');
 const CompressImage       = require('../../../../_common/image_utility').compressImg;
 const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
 const isImageType         = require('../../../../_common/image_utility').isImageType;
+const getLanguage         = require('../../../../_common/language').get;
 const localize            = require('../../../../_common/localize').localize;
 const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 const Url                 = require('../../../../_common/url');
@@ -28,11 +29,14 @@ const Authenticate = (() => {
                 is_action_needed = /document_needs_action/.test(response.get_account_status.status);
                 if (!/authenticated/.test(status)) {
                     init();
-                    const $not_authenticated = $('#not_authenticated').setVisibility(1);
-                    let link = 'https://marketing.binary.com/authentication/2017_Authentication_Process.pdf';
+                    const language            = getLanguage();
+                    const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
+                    const $not_authenticated  = $('#not_authenticated');
+                    $not_authenticated.setVisibility(1);
+                    let link = `https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`;
                     if (Client.isAccountOfType('financial')) {
                         $('#not_authenticated_financial').setVisibility(1);
-                        link = 'https://marketing.binary.com/authentication/2017_MF_Authentication_Process.pdf';
+                        link = 'https://marketing.binary.com/authentication/MF_Authentication_Process.pdf';
                     }
                     $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
                 } else if (!/age_verification/.test(status)) {
