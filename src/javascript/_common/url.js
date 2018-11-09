@@ -57,8 +57,9 @@ const Url = (() => {
     };
 
     const default_domain = 'binary.com';
-    const host_map = {
-        'bot.binary.com': 'www.binary.bot',
+    const host_map = { // the exceptions regarding updating the URLs
+        'bot.binary.com'       : 'www.binary.bot',
+        'developers.binary.com': 'developers.binary.com', // same, shouldn't change
     };
 
     const urlForCurrentDomain = (href) => {
