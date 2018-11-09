@@ -1,29 +1,19 @@
 const ClientBase    = require('./client_base');
 const GTM           = require('./gtm');
 const BinarySocket  = require('./socket_base');
-const State         = require('../storage').State;
 const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
-    const excluded_countries = ['br', 'id', 'ru'];
-
     const init = () => {
-        BinarySocket.wait('website_status').then(() => {
-            if (isAvailable()) {
-                window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
-                    // window._elev.setLanguage(lang);
-                    setUserInfo(elev);
-                    setTranslations(elev);
-                    addEventListenerGTM();
-                    makeLauncherVisible();
-                });
-            }
+        if (!window._elev) return;
+        window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
+            // window._elev.setLanguage(lang);
+            setUserInfo(elev);
+            setTranslations(elev);
+            addEventListenerGTM();
+            makeLauncherVisible();
         });
     };
-
-    const isAvailable = () => (
-        !new RegExp(`^(${excluded_countries.join('|')})$`, 'i').test(State.getResponse('website_status.clients_country'))
-    );
 
     const addEventListenerGTM = () => {
         window._elev.on('widget:opened', () => { // eslint-disable-line no-underscore-dangle
@@ -69,7 +59,6 @@ const Elevio = (() => {
 
     return {
         init,
-        isAvailable,
         createComponent,
     };
 })();

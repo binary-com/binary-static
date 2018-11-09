@@ -1,3 +1,5 @@
+require('canvas-toBlob');
+
 const compressImg = (image) => new Promise((resolve) => {
     const img = new Image();
     img.src = image.src;
@@ -22,12 +24,14 @@ const compressImg = (image) => new Promise((resolve) => {
 
         canvas.toBlob((blob) => {
             const filename = image.filename.replace(/\.[^/.]+$/, '.jpg');
-            const file = new File([blob], filename, {
-                type            : 'image/jpeg',
-                lastModifiedDate: Date.now(),
+            const file = new Blob([blob], {
+                type: 'image/jpeg',
             });
+            file.lastModifiedDate = Date.now();
+            file.name = filename;
             resolve(file);
         }, 'image/jpeg', 0.9); // <----- set quality here
+
     };
 });
 
