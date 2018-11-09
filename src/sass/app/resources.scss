@@ -37,6 +37,9 @@
         &.has-tabs.ui-tabs .ui-tabs-panel {
             padding: 0;
         }
+        .table-container {
+            overflow-x: auto;
+        }
         th {
             width: calc(100% / 7);
 

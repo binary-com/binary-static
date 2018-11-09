@@ -1,7 +1,21 @@
 const { expect, setURL } = require('./tests_common');
 const Url                = require('../url');
 
+const urls = [
+    'https://www.binary.com',
+    'https://www.binary.me',
+];
+
 describe('Url', () => {
+    urls.forEach(url => {
+        describe(url, () => {
+            runTests(url);
+        });
+    });
+});
+
+function runTests(url) {
+    setURL(url);
     const website_url  = Url.websiteUrl();
     const language     = 'en';
     const query_string = 'market=forex&duration_amount=5&no_value=';
@@ -28,7 +42,7 @@ describe('Url', () => {
 
     describe('.getLocation()', () => {
         it('works as expected', () => {
-            expect(Url.getLocation().hostname).to.eq('www.binary.com');
+            expect(Url.getLocation().hostname).to.eq(url.replace(/^https:\/\//, ''));
         });
     });
 
@@ -63,7 +77,47 @@ describe('Url', () => {
         });
     });
 
+    if (!/binary.com/.test(url)) {
+        describe('.urlForCurrentDomain()', () => {
+            const path_query_hash = 'path/to/file.html?q=value&n=1#hash';
+
+            it('updates domain correctly', () => {
+                expect(Url.urlForCurrentDomain('https://www.binary.com/')).to.eq(`${url}/`);
+                expect(Url.urlForCurrentDomain(`https://www.binary.com/${path_query_hash}`)).to.eq(`${url}/${path_query_hash}`);
+            });
+            it('updates host maps correctly', () => {
+                const host_map = Url.getHostMap();
+                Object.keys(host_map).forEach(host => {
+                    expect(Url.urlForCurrentDomain(`https://${host}/`)).to.eq(`https://${host_map[host]}/`);
+                    expect(Url.urlForCurrentDomain(`https://${host}/${path_query_hash}`)).to.eq(`https://${host_map[host]}/${path_query_hash}`);
+                });
+            });
+            it('doesn\'t update email links', () => {
+                ['mailto:affiliates@binary.com', 'mailto:email@otherdomain.com'].forEach(email_link => {
+                    expect(Url.urlForCurrentDomain(email_link)).to.eq(email_link);
+                });
+            });
+            it('doesn\'t update the third party domains', () => {
+                expect(Url.urlForCurrentDomain('https://www.otherdomain.com')).to.eq('https://www.otherdomain.com');
+                expect(Url.urlForCurrentDomain('https://www.otherdomain.com/')).to.eq('https://www.otherdomain.com/');
+                expect(Url.urlForCurrentDomain('https://subdomain.otherdomain.com/')).to.eq('https://subdomain.otherdomain.com/');
+                expect(Url.urlForCurrentDomain('mailto:email@otherdomain.com')).to.eq('mailto:email@otherdomain.com');
+            });
+            it('doesn\'t update when current domain is not supported', () => {
+                setURL('https://user.github.io/');
+                ['https://www.binary.com', 'https://www.binary.com/', 'https://bot.binary.com', 'mailto:affiliates@binary.com'].forEach(u => {
+                    expect(Url.urlForCurrentDomain(u)).to.eq(u);
+                });
+                setURL(url); // reset for the next test
+            });
+        });
+    }
+
     describe('.urlForStatic()', () => {
+        before(() => {
+            Url.resetStaticHost();
+        });
+
         it('returns base path as default', () => {
             expect(Url.urlForStatic()).to.eq(website_url);
         });
@@ -85,7 +139,7 @@ describe('Url', () => {
 
     describe('.websiteUrl()', () => {
         it('returns expected value', () => {
-            expect(website_url).to.eq('https://www.binary.com/');
+            expect(website_url).to.eq(`${url}/`);
         });
     });
-});
+}
