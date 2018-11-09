@@ -3,7 +3,7 @@ import React from 'react';
 const Complaints = () => (
     <div>
         <h2 data-anchor='complaints-and-disputes'>{it.L('Complaints and Disputes')}</h2>
-        <p>{it.L('If you would like to file a complaint with regards to our service, kindly contact us on complaints@binary.com, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details.')}</p>
+        <p>{it.L('If you would like to file a complaint with regards to our service, kindly contact us on [_1], providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details.', '<a href=\'mailto:complaints@binary.com\'>complaints@binary.com</a>')}</p>
         <p className='invisible eu-show'>{it.L('If your complaint relates to our data processing practices, you may formally submit a complaint to the Information and Data Protection Commissioner (Malta) on the entity’s [_1]website[_2].',
             '<a href="https://idpc.org.mt/en/Pages/Home.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
