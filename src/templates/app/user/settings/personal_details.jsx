@@ -72,7 +72,7 @@ const PersonalDetails = () => (
                 <FormRow type='checkbox' label={it.L('Receive emails on [_1] products, services, and events', it.website_name)} id='email_consent' label_row_id='email_consent_label' />
             </Fieldset>
 
-            <SubmitButton id='btn_update' msg_id='formMessage' type='submit' text={it.L('Update')} />
+            <SubmitButton is_centered id='btn_update' msg_id='formMessage' type='submit' text={it.L('Update')} />
         </form>
 
         <p className='required invisible RealAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}</p>
