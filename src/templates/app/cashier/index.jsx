@@ -20,8 +20,8 @@ const DepositWithdraw = ({ id, is_payment_agent, show_upgrade }) => (
     </div>
 );
 
-const CashierNote = ({ text }) => (
-    <div className='gr-padding-20 invisible client_real'>
+export const CashierNote = ({ text }) => (
+    <div className='gr-padding-20 invisible cashier_note'>
         <div className='gr-12 gr-padding-10 fill-bg-color primary-color'>
             <div className='gr-row'>
                 <div className='gr-1 gr-2-t gr-2-p gr-2-m align-self-center'>

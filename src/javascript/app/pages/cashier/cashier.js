@@ -28,6 +28,7 @@ const Cashier = (() => {
             $toggler.children().toggleClass('active');
             $toggler.toggleClass('open');
         });
+        $('.cashier_note').setVisibility(Client.isLoggedIn() && !Client.get('is_virtual') && !isCryptocurrency(Client.get('currency')));
     };
 
     const displayTopUpButton = () => {
