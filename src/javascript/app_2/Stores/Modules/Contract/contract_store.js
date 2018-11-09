@@ -102,6 +102,9 @@ export default class ContractStore extends BaseStore {
         this.contract_info = response.proposal_open_contract;
         if (isEnded(this.contract_info)) {
             this.chart_config = getChartConfig(this.contract_info);
+        } else {
+            delete this.chart_config.end_epoch;
+            delete this.chart_config.start_epoch;
         }
         createChartBarrier(this.smart_chart, this.contract_info);
         createChartMarkers(this.smart_chart, this.contract_info, this);
