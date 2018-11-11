@@ -28,6 +28,7 @@ describe('check svg file format', () => {
 
         flatten(svgs)
             .filter(item => !!item)
+            .filter(item => item !== path.resolve(__dirname, '../../src/images/pages/regulation/map.svg'))
             .forEach(item => {
                 const stats = fs.statSync(path.resolve(item));
                 if (stats.isSymbolicLink()) return;

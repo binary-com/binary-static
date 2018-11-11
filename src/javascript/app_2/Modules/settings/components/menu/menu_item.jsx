@@ -26,7 +26,7 @@ const MenuItem = ({ title, Icon, description,  path }) => {
 
 MenuItem.propTypes = {
     description: PropTypes.string,
-    Icon       : PropTypes.func,
+    Icon       : PropTypes.element,
     path       : PropTypes.string,
     title      : PropTypes.string,
 };
