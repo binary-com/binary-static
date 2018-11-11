@@ -11,7 +11,7 @@ import {
     isCryptocurrency,
 }                                     from '_common/base/currency_base';
 import BinarySocket                   from '_common/base/socket_base';
-import { localize }                      from '_common/localize';
+import { localize }                   from '_common/localize';
 import { cloneObject, isEmptyObject } from '_common/utility';
 import { WS }                         from 'Services';
 import GTM                            from 'Utils/gtm';
@@ -134,7 +134,11 @@ export default class TradeStore extends BaseStore {
     async prepareTradeStore() {
         let query_string_values = this.updateQueryString();
         this.smart_chart        = this.root_store.modules.smart_chart;
-        const active_symbols = await WS.activeSymbols();
+        const active_symbols    = await WS.activeSymbols();
+
+        if (!active_symbols.active_symbols || active_symbols.active_symbols.length === 0) {
+            this.root_store.common.showError(localize('Trading is unavailable at this time.'));
+        }
 
         // Checks for finding out that the current account has access to the defined symbol in quersy string or not.
         const is_invalid_symbol = !!query_string_values.symbol &&
@@ -174,7 +178,7 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    init  = async () => {
+    init = async () => {
         // To be sure that the website_status response has been received before processing trading page.
         await BinarySocket.wait('website_status');
     };
