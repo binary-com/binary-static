@@ -12,7 +12,7 @@ import Footer                      from './Containers/Layout/footer.jsx';
 import Header                      from './Containers/Layout/header.jsx';
 import ThemeWrapper                from './Containers/Layout/theme_wrapper.jsx';
 import Routes                      from './Containers/Routes/routes.jsx';
-import DenialOfServiceModal        from './Components/Elements/DenialOfServiceModal';
+import DenialOfServiceModal        from './Containers/DenialOfServiceModal';
 
 const App = ({ root_store }) => (
     <Router basename={getBaseName()}>
