@@ -52,7 +52,7 @@ class Dropdown extends React.Component {
         const index = getItemFromValue(this.props.list, this.props.value);
         const value = getValueFromIndex(this.props.list, this.state.curr_index);
         const handleToggle = () => {
-            if (this.state.is_list_visible) {
+            if (this.state.is_list_visible && this.props.value !== value) {
                 this.props.onChange({ target: { name: this.props.name, value } });
             }
             this.handleVisibility();
