@@ -80,7 +80,15 @@ class Dropdown extends React.Component {
         // For char presses, we do a search for the item:
         if (event.key.length === 1) {
             const char = event.key.toLowerCase();
-            const idx = this.props.list.findIndex(x => x.text[0].toLowerCase() === char);
+            const firstChars = this.props.list.map(x => x.text[0].toLowerCase());
+            let idx;
+            // Tapping the same character again jumps to the next match:
+            if (this.state.curr_index) {
+                idx = firstChars.indexOf(char, this.state.curr_index + 1);
+            }
+            if (idx === undefined || idx === -1) {
+                idx = firstChars.indexOf(char);
+            }
             if (idx >= 0) {
                 this.setState({ curr_index: idx });
             }
