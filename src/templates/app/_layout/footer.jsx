@@ -42,11 +42,11 @@ const Footer = () => (
                                 items={[
                                     { text: it.L('About Us'),               href: it.url_for('about-us') },
                                     { text: it.L('Contact Us'),             href: it.url_for('contact'),           className: 'gr-hide gr-show-m' },
-                                    { text: it.L('Regulatory Information'), href: it.url_for('regulation') },
                                     { text: it.L('Group History'),          href: it.url_for('group-history') },
                                     { text: it.L('Binary in Numbers'),      href: it.url_for('binary-in-numbers') },
                                     { text: it.L('Careers'),                href: it.url_for('careers') },
                                     { text: it.L('Patents'),                href: it.url_for('legal/us_patents') },
+                                    { text: it.L('Contact Us'),             href: it.url_for('contact') },
                                 ]}
                             />
 
@@ -77,10 +77,11 @@ const Footer = () => (
                             <FooterColumn
                                 header={it.L('Legal')}
                                 items={[
-                                    { text: it.L('Terms and Conditions'), href: it.url_for('terms-and-conditions') },
-                                    { text: it.L('Security and Privacy'), href: it.url_for('terms-and-conditions'), param: '?anchor=security-and-privacy#privacy' },
-                                    { text: it.L('Responsible Trading'),  href: it.url_for('responsible-trading') },
-                                    { text: it.L('Complaints'),           href: it.url_for('terms-and-conditions?anchor=complaints-and-disputes#legal-binary') },
+                                    { text: it.L('Regulatory Information'), href: it.url_for('regulation') },
+                                    { text: it.L('Terms and Conditions'),   href: it.url_for('terms-and-conditions') },
+                                    { text: it.L('Security and Privacy'),   href: it.url_for('terms-and-conditions'), param: '?anchor=security-and-privacy#privacy' },
+                                    { text: it.L('Responsible Trading'),    href: it.url_for('responsible-trading') },
+                                    { text: it.L('Complaints'),             href: it.url_for('terms-and-conditions?anchor=complaints-and-disputes#legal-binary') },
                                 ]}
                             />
 
