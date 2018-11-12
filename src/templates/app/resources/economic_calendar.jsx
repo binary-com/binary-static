@@ -25,9 +25,6 @@ const EconomicCalendar = () => (
                 </div>
             </div>
         </div>
-        <p className='hint'>
-            * {it.L('Disclaimer: The Economic Calendar tool is a third-party application developed by MetaQuotes Software Corp. and its data can change without prior notice.')}
-        </p>
         <SeparatorLine className='gr-padding-10' invisible />
     </div>
 );
