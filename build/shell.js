@@ -108,6 +108,18 @@ module.exports = function (grunt) {
                 stdout: false
             }
         },
+        release_translations: {
+            command: [
+                prompt('Starting the release to \'translations\'\n'),
+                'git fetch upstream translations:translations',
+                'git checkout translations',
+                'grunt release --translations --color',
+                'git checkout master',
+            ].join(' && '),
+            options: {
+                stdout: true
+            }
+        },
         reset_ghpages: {
             command: grunt.option('staging') && grunt.option('reset') ?
                 [
