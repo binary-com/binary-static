@@ -55,12 +55,12 @@ const UsbPage = () => (
         </div>
         <div className='section-md primary-bg-color coin-section'>
             <div className='container center-text'>
-                <div className='gr-row align-items-center'>
+                <div className='gr-row gr-row-align-middle'>
                     <div className='gr-2 gr-12-m gr-12-p'>
                         <img className='usb-coin' src={it.url_for('images/usb_page/usb-coin-logo.png')} alt='USB' />
                     </div>
                     <div className='gr-10 gr-12-m gr-12-p'>
-                        <p className='content-inverse-color ft-400'>{it.L('Guaranteed by [_1] USB is a digital currency pegged to the US Dollar on a one-to-one basis. Send and receive payments with the peace of mind that your currency is backed by the strength of [_1] balance sheet.', it.broker_name)}</p>
+                        <p className='content-inverse-color ft-400'>{it.L('Guaranteed by [_1], USB is a digital currency pegged to the US Dollar on a one-to-one basis. Send and receive payments with the peace of mind that your currency is backed by the strength of [_1] balance sheet.', it.broker_name)}</p>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@ const UsbPage = () => (
                 </div>
             </div>
             <div className='container center-text'>
-                <div className='gr-row justify-content-center'>
+                <div className='gr-row gr-row-align-center'>
                     <div className='gr-9'>
                         <div className='separator-md' />
                         <div className='video-container'>
@@ -84,7 +84,7 @@ const UsbPage = () => (
                         <div className='separator-md' />
                     </div>
                 </div>
-                <div className='gr-row justify-content-center'>
+                <div className='gr-row gr-row-align-center'>
                     <div className='gr-12'>
                         <p>{it.L('Explore the possibilities of a new generation of cryptocurrency')}</p>
                     </div>
@@ -101,7 +101,7 @@ const UsbPage = () => (
                 </div>
             </div>
             <div className='container center-text'>
-                <div className='gr-row justify-content-between'>
+                <div className='gr-row gr-row-align-between'>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-redeem' />
                         <h3 className='ft-400'>{it.L('Fully backed by US Dollar')}</h3>
@@ -110,12 +110,12 @@ const UsbPage = () => (
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-redeem-usd' />
                         <h3 className='ft-400'>{it.L('Redeem for USD anytime')}</h3>
-                        <p>{it.L('To redeem USB for USD, complete the [_1] KYC check, then perform the conversion using our ', it.broker_name)}<a href='https://www.binary.com/en/cashier/account_transfer.html'>{it.L('transfer between accounts')}</a> {it.L('facility.')}</p>
+                        <p>{it.L('To redeem USB for USD, complete the [_1] KYC check, then perform the conversion using our ', it.broker_name)}<a href={it.url_for('cashier/account_transfer')}>{it.L('transfer between accounts')}</a> {it.L('facility.')}</p>
                     </div>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-peaceofmind' />
                         <h3 className='ft-400'>{it.L('Peace of mind')}</h3>
-                        <p>{it.L('USB is backed by [_1] –– a profitable, 18-year-old company with', it.broker_name)} <a href='https://www.binary.com/en/binary-in-numbers.html'>{it.L('annual turnover exceeding USD 1 billion')}</a>.</p>
+                        <p>{it.L('USB is backed by [_1] –– a profitable, 18-year-old company with', it.broker_name)} <a href={it.url_for('binary-in-numbers')}>{it.L('annual turnover exceeding USD 1 billion')}</a>.</p>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@ const UsbPage = () => (
                 </div>
             </div>
             <div className='container center-text'>
-                <div className='gr-row justify-content-between'>
+                <div className='gr-row gr-row-align-between'>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-clients' />
                         <h3 className='ft-400'>{it.L('[_1] clients', it.broker_name)}</h3>
@@ -166,7 +166,7 @@ const UsbPage = () => (
                 </div>
             </div>
             <div className='container center-text'>
-                <div className='gr-row justify-content-between'>
+                <div className='gr-row gr-row-align-between'>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-buy' />
                         <h3 className='ft-400 content-inverse-color'>{it.L('Buy')}</h3>
@@ -175,7 +175,7 @@ const UsbPage = () => (
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-hold' />
                         <h3 className='ft-400 content-inverse-color'>{('Hold')}</h3>
-                        <p className='content-inverse-color'>{it.L('Hold your USB in any ERC20-compatible wallet, such as')} <a className='content-inverse-color' href='https://trustwalletapp.com/'>{it.L('Trust Wallet')}</a>.</p>
+                        <p className='content-inverse-color'>{it.L('Hold your USB in any ERC20-compatible wallet, such as')} <a className='content-inverse-color' href='https://trustwalletapp.com/' target='_blank' rel='noopener noreferrer'>{it.L('Trust Wallet')}</a>.</p>
                     </div>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-trade' />
@@ -271,7 +271,7 @@ const UsbPage = () => (
                 </div>
             </div>
             <div className='container center-text'>
-                <div className='gr-row justify-content-between'>
+                <div className='gr-row gr-row-align-between'>
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-contract' />
                         <h3 className='ft-400'>{it.L('Contract address')}</h3>
@@ -285,7 +285,7 @@ const UsbPage = () => (
                     <div className='gr-3 gr-12-t gr-12-m gr-12-p mb-bottom-30'>
                         <div className='icon-xl icon-source-code' />
                         <h3 className='ft-400'>{it.L('Source code')}</h3>
-                        <p>{it.L('The source code of the USB token can be freely')} <a href='http://etherscan.io/address/0xaf8bef28181aa864b3b60cc88d1f3788c1025ecb'>{it.L('audited on Etherscan')}</a>.</p>
+                        <p>{it.L('The source code of the USB token can be freely')} <a href='http://etherscan.io/address/0xaf8bef28181aa864b3b60cc88d1f3788c1025ecb' target='_blank' rel='noopener noreferrer'>{it.L('audited on Etherscan')}</a>.</p>
                     </div>
                 </div>
             </div>

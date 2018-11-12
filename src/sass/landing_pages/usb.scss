@@ -203,63 +203,51 @@
 }
 
 .icon-buy {
-    background: url('../images/usb_page/buy.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/buy.svg');
 }
 
 .icon-trade {
-    background: url('../images/usb_page/trade.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/trade.svg');
 }
 
 .icon-clients {
-    background: url('../images/usb_page/clients.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/clients.svg');
 }
 
 .icon-contract {
-    background: url('../images/usb_page/contract.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/contract.svg');
 }
 
 .icon-crypto-traders {
-    background: url('../images/usb_page/crypto-traders.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/crypto-traders.svg');
 }
 
 .icon-hold {
-    background: url('../images/usb_page/hold.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/hold.svg');
 }
 
 .icon-online-business {
-    background: url('../images/usb_page/online-business.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/online-business.svg');
 }
 
 .icon-peaceofmind {
-    background: url('../images/usb_page/peaceofmind.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/peaceofmind.svg');
 }
 
 .icon-redeem {
-    background: url('../images/usb_page/redeem.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/redeem.svg');
 }
 
 .icon-redeem-usd {
-    background: url('../images/usb_page/redeem-usd.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/redeem-usd.svg');
 }
 
 .icon-source-code {
-    background: url('../images/usb_page/source-code.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/source-code.svg');
 }
 
 .icon-supply {
-    background: url('../images/usb_page/supply.svg') no-repeat;
-    background-position: center;
+    background-image: url('../images/usb_page/supply.svg');
 }
 
 /* SVG */
@@ -276,7 +264,6 @@
     height: 0px;
     position: relative;
     padding-bottom: 56.19%;
-    //box-shadow: 0 3px 28px 0 rgba(0, 0, 0, 0.03), 0 3px 28px 0 rgba(0, 0, 0, 0.3);
 }
 
 .video-container iframe, .video-container object, .video-container embed {
