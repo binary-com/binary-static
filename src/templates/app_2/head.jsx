@@ -23,7 +23,7 @@ const Head = () => (
         <meta name='google-site-verification' content='roReCEK-wNa1EMA6ZM9a4zCOQOMqxfJjvfsZMC9qh_k' />
         <meta property='og:title' content={it.broker_name} />
         <meta property='og:type' content='website' />
-        <meta property='og:image' content={it.url_for('app/images/common/og_image.gif')} />
+        <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
 
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' />
 

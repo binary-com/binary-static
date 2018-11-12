@@ -8,7 +8,7 @@ const getSection = (grunt) => {
     const section = grunt.option('section') || Constants.config.default_section;
 
     if (!Constants.config.valid_sections.includes(section)) {
-        grunt.fail.fatal(`Unknown section: '${section}'.\nValid sections are: ${Constants.config.valid_sections.join(', ')}`);
+        grunt.fail.fatal(`Unknown section: '${section}'.\nValid sections are: ${Constants.config.valid_sections.join(', ')}.`);
     }
 
     return section;
@@ -30,6 +30,7 @@ const generateCompileCommand = (params) => (
             params || '',
             global.branch ? `-b ${global.branch_prefix}${global.branch}` : '',
             global.path ? `-p ${global.path}` : '',
+            `-s ${global.section}`,
         ],
     ].join(' ')
 );
