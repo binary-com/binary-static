@@ -2,8 +2,8 @@
  * Notifications manages various notification messages
  *
  */
-const CommonFunctions = require('../../../_common/common_functions');
 const Login           = require('../../../_common/base/login');
+const CommonFunctions = require('../../../_common/common_functions');
 
 const MBNotifications = (() => {
     /*
