@@ -41,7 +41,6 @@ const Footer = () => (
                                 header={it.L('Our Company')}
                                 items={[
                                     { text: it.L('About Us'),               href: it.url_for('about-us') },
-                                    { text: it.L('Contact Us'),             href: it.url_for('contact'),           className: 'gr-hide gr-show-m' },
                                     { text: it.L('Group History'),          href: it.url_for('group-history') },
                                     { text: it.L('Binary in Numbers'),      href: it.url_for('binary-in-numbers') },
                                     { text: it.L('Careers'),                href: it.url_for('careers') },
