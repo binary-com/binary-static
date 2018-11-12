@@ -155,7 +155,7 @@ const Careers = () => {
             <div className='container'>
                 <div className='gr-row gr-padding-30'>
                     <Box
-                        gr='gr-3 gr-6-p'
+                        gr='gr-4 gr-6-p'
                         padding='20'
                         icon='images/pages/careers/tb-icon.svg'
                         href='https://tech.binary.com'
@@ -163,7 +163,7 @@ const Careers = () => {
                         target='_blank'
                     />
                     <Box
-                        gr='gr-3 gr-6-p'
+                        gr='gr-4 gr-6-p'
                         padding='20'
                         icon='images/pages/careers/bb-icon.svg'
                         href='https://blog.binary.com'
@@ -171,7 +171,7 @@ const Careers = () => {
                         target='_blank'
                     />
                     <Box
-                        gr='gr-3 gr-6-p'
+                        gr='gr-4 gr-6-p'
                         padding='20'
                         icon='images/pages/careers/cc-icon.svg'
                         href='https://my.wobb.co/users/companies/binary-group-services-sdn-bhd'
@@ -179,12 +179,21 @@ const Careers = () => {
                         target='_blank'
                     />
                     <Box
-                        gr='gr-3 gr-6-p'
+                        gr='gr-6 gr-6-p'
                         padding='20'
                         icon='images/pages/careers/eh-icon.svg'
                         href={it.url_for('download/binary-employee-handbook.pdf')}
                         download
                         text={it.L('Employee handbook')}
+                        target='_blank'
+                    />
+                    <Box
+                        gr='gr-6 gr-12-p'
+                        padding='20'
+                        icon='images/pages/careers/eh-icon.svg'
+                        href={it.url_for('download/binary-employee-handbook.pdf')}
+                        download
+                        text={it.L('Expat handbook')}
                         target='_blank'
                     />
                 </div>
