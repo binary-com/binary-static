@@ -14,8 +14,8 @@ const MBNotifications = (() => {
      * }
      */
     const showErrorMessage = (options) => {
-        const $note_wrapper = getContainer();
-        const $this_uid     = $note_wrapper.find(`#${options.uid}`);
+        const $note_wrapper          = getContainer();
+        const $this_uid              = $note_wrapper.find(`#${options.uid}`);
         const $login_error_container = CommonFunctions.getElementById('login_error_container');
         $login_error_container.setVisibility(0);
 
