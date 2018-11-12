@@ -76,6 +76,15 @@ class Dropdown extends React.Component {
                 break;
             default:
         }
+
+        // For char presses, we do a search for the item:
+        if (event.key.length === 1) {
+            const char = event.key.toLowerCase();
+            const idx = this.props.list.findIndex(x => x.text[0].toLowerCase() === char);
+            if (idx >= 0) {
+                this.setState({ curr_index: idx });
+            }
+        }
     }
 
     setWrapperRef(node) {
