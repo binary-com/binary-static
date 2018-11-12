@@ -33,10 +33,10 @@ const Authenticate = (() => {
                     const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
                     const $not_authenticated  = $('#not_authenticated');
                     $not_authenticated.setVisibility(1);
-                    let link = `https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`;
+                    let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
                     if (Client.isAccountOfType('financial')) {
                         $('#not_authenticated_financial').setVisibility(1);
-                        link = 'https://marketing.binary.com/authentication/MF_Authentication_Process.pdf';
+                        link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
                     }
                     $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
                 } else if (!/age_verification/.test(status)) {

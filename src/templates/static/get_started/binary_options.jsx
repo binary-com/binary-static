@@ -172,7 +172,7 @@ const BinaryOptions = () => {
                             <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/define-position.svg')} />
                         </div>
 
-                        <CircleHeader className='gr-padding-10' header={it.L('Underlying market')} text={it.L('Choose from five available markets:')}>
+                        <CircleHeader className='gr-padding-10' header={it.L('Underlying market')} text={it.L('Choose from four available markets:')}>
                             <ul className='checked'>
                                 <ListStrong header={it.L('Forex')}              text={it.L('Major and minor pairs, plus Smart FX indices')} />
                                 <ListStrong header={it.L('Indices')}            text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
