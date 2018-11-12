@@ -417,7 +417,11 @@
     .phone-container {
         align-items: center;
         justify-content: center;
+        margin: 0 10px;
 
+        div.gr-col:first-child {
+            flex: 1; // fix for Firefox and MSEdge
+        }
         label {
             margin-bottom: 5px;
         }
