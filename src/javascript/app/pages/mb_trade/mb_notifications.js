@@ -2,6 +2,8 @@
  * Notifications manages various notification messages
  *
  */
+const CommonFunctions = require('../../../_common/common_functions');
+const Login           = require('../../../_common/base/login');
 
 const MBNotifications = (() => {
     /*
@@ -14,14 +16,24 @@ const MBNotifications = (() => {
     const showErrorMessage = (options) => {
         const $note_wrapper = getContainer();
         const $this_uid     = $note_wrapper.find(`#${options.uid}`);
+        const $login_error_container = CommonFunctions.getElementById('login_error_container');
+        $login_error_container.setVisibility(0);
 
-        if (!options.uid || $this_uid.length === 0) {
-            $note_wrapper.prepend(generateMessage(options));
-        } else if ($this_uid.html() !== options.localized_text) {
-            $this_uid.replaceWith(generateMessage(options));
+        if (/LOGIN_ERROR/.test(options.uid)) {
+            $login_error_container.setVisibility(1);
+            const login_error_btn_login = CommonFunctions.getElementById('login_error_btn_login');
+            login_error_btn_login.removeEventListener('click', loginOnClick);
+            login_error_btn_login.addEventListener('click', loginOnClick);
+        } else {
+            if (!options.uid || $this_uid.length === 0) {
+                $note_wrapper.prepend(generateMessage(options));
+            } else if ($this_uid.html() !== options.localized_text) {
+                $this_uid.replaceWith(generateMessage(options));
+            }
+
+            $.scrollTo($note_wrapper, 500, { offset: -5 });
         }
 
-        $.scrollTo($note_wrapper, 500, { offset: -5 });
         hideSpinnerShowTrading();
     };
 
@@ -46,6 +58,11 @@ const MBNotifications = (() => {
 
     const dismissMessage = (obj) => {
         $(obj).remove();
+    };
+
+    const loginOnClick = (e) => {
+        e.preventDefault();
+        Login.redirectToLogin();
     };
 
     const getContainer = () => $('#notifications_wrapper');
