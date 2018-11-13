@@ -36,6 +36,7 @@ const Url                  = require('url');
 const common               = require('./common');
 const generate_static_data = require('./generate-static-data');
 const Gettext              = require('./gettext');
+const compileManifests     = require('./render_manifest').compileManifests;
 
 program
     .version('0.2.1')
@@ -64,6 +65,7 @@ if (is_translation && (program.dev || program.path)) {
 const getConfig = () => (
     {
         add_translations: false,
+        branch          : program.branch,
         dist_path       : Path.join(common.root_path, 'dist', (program.branch || '')),
         languages       : program.branch === 'translations' ? ['ACH'] : common.languages,
         root_path       : common.root_path,
@@ -89,6 +91,7 @@ const createDirectories = () => {
         language = lang.toLowerCase();
         mkdir(Path.join(config.dist_path, language));
         mkdir(Path.join(config.dist_path, `${language}/pjax`));
+        compileManifests(config.dist_path, language, config.branch);
     });
 };
 
@@ -127,7 +130,7 @@ const createUrlFinder = default_lang => {
             new_url = '/home';
         }
 
-        if (/^\/?(images|js|css|scripts|download)/.test(new_url)) {
+        if (/(^\/?(images|js|css|scripts|download))|(manifest\.json)/.test(new_url)) {
             return Path.join(config.root_url, new_url);
         }
 

@@ -1,5 +1,5 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const PATHS          = require('./paths');
+const UglifyJsPlugin    = require('uglifyjs-webpack-plugin');
+const publicPathFactory = require('./helpers').publicPathFactory;
 
 const commonConfig = (grunt) => ({
     devtool: false, // handled by SourceMapDevToolPlugin
@@ -12,11 +12,7 @@ const commonConfig = (grunt) => ({
     output: {
         filename     : '[name].js',
         chunkFilename: '[name].min.js',
-        publicPath   : () => (
-            (global.is_production || grunt.file.exists(PATHS.ROOT, 'scripts/CNAME') ? '' : '/binary-static') +
-            (global.branch ? `/${global.branch_prefix}${global.branch}` : '') +
-            '/js/'
-        ),
+        publicPath   : publicPathFactory(grunt),
     },
     optimization: {
         namedChunks: true,
