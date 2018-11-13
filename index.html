@@ -47,8 +47,12 @@
             }
             function redirect() {
                 window.location.href = (lang || 'en').toLowerCase() + '/' +
-                    (getCookieItem('loginid') ? (lang === 'ja' ? 'multi_barriers_trading' : 'trading') : 'home' + (lang === 'ja' ? '-jp' : '')) +
-                    '.html' + window.location.search;
+                    (
+                        /^\/app\//.test(window.location.pathname)
+                            ? ''
+                            : (getCookieItem('loginid') ? (lang === 'ja' ? 'multi_barriers_trading' : 'trading') : 'home' + (lang === 'ja' ? '-jp' : '')) + '.html'
+                    )
+                    + window.location.search;
             }
             function isDelayedRedirect() {
                 if(isGtmApplicable() && !redirectTimeOut) {

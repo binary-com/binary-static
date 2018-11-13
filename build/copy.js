@@ -15,7 +15,6 @@ module.exports = function (grunt) {
         ]),
 
         // This branch
-        { expand: true, cwd:  './',                src: ['index.html'],          dest: global.dist },
         { expand: true, cwd: 'src/javascript/',    src: ['manifest.json'],       dest: global.dist },
         { expand: true, cwd: 'src/download/fonts', src: ['binary_symbols.woff'], dest: `${global.dist}/download/fonts/` },
 
@@ -29,6 +28,7 @@ module.exports = function (grunt) {
         app: {
             files: [
                 ...common,
+                { expand: true, cwd:  './', src: ['index.html'], dest: global.dist },
 
                 // app, static
                 { expand: true, cwd: 'src/download/',                  src: ['**'],              dest: `${global.dist}/download/` },
@@ -43,6 +43,7 @@ module.exports = function (grunt) {
         app_2: {
             files: [
                 ...common,
+                { expand: true, cwd:  './', src: ['index.html'], dest: global.dist_app_2 },
 
                 // app_2
                 { expand: true, cwd: 'src/images/app_2',                     src: ['**'],   dest: `${global.dist_app_2}/images/` },
