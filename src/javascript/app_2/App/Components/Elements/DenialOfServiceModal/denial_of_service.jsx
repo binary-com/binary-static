@@ -24,7 +24,7 @@ const DenialOfServiceModal = ({ is_visible }) => (
         onCancel={onCancel}
         is_visible={is_visible}
     >
-        <Localize str='Sorry, Only virtual accounts can access this feature at the moment.' />
+        <Localize str='Sorry, only virtual and Costa Rica accounts can access this feature at the moment.' />
     </FullPageModal>
 );
 
