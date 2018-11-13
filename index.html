@@ -48,7 +48,7 @@
             function redirect() {
                 window.location.href = (lang || 'en').toLowerCase() + '/' +
                     (
-                        /^\/app\//.test(window.location.pathname)
+                        /\/app\//.test(window.location.pathname)
                             ? ''
                             : (getCookieItem('loginid') ? (lang === 'ja' ? 'multi_barriers_trading' : 'trading') : 'home' + (lang === 'ja' ? '-jp' : '')) + '.html'
                     )
