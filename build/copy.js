@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                 { expand: true, cwd: `${global.node_modules_paths.binary_style}/src/images/favicons`, src: ['**'], dest: `${global.dist_app_2}/images/favicons/` },
 
                 // ChartIQ dependencies
-                { expand: true, cwd: `${global.node_modules_paths.smartcharts}/dist/`, src: ['*.smartcharts.*'],  dest: `${global.dist_app_2}/js/` },
+                { expand: true, cwd: `${global.node_modules_paths.smartcharts}/dist/`, src: ['*.smartcharts.*'],  dest: `${global.dist_app_2}/js/smartcharts/` },
                 { expand: true, cwd: `${global.node_modules_paths.smartcharts}/dist/`, src: ['smartcharts.css*'], dest: `${global.dist_app_2}/css/` },
             ],
         },
