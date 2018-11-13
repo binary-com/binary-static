@@ -25,11 +25,11 @@ const Contact = () => (
                 <div className='gr-row'>
                     <div className='gr-7 gr-8-t gr-12-p gr-12-m gr-centered gr-padding-30'>
                         <h2 className='center-text'>{it.L('Can\'t find what you\'re searching for?')}</h2>
-                        <div className='gr-row phone-container'>
-                            <div className='gr-col'>
-                                <img className='responsive' src={it.url_for('images/pages/contact_2/contact-icon.svg')} />
+                        <div className='gr-row gr-row-align-middle gr-row-align-center phone-container'>
+                            <div className='gr-2 gr-4-m center-text'>
+                                <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
                             </div>
-                            <div className='gr-col gr-adapt number-container'>
+                            <div className='gr-10 gr-11-m gr-8-p gr-8-t number-container'>
                                 <div className='gr-row gr-centered-m'>
                                     <div className='gr-adapt'>
                                         <label htmlFor='cs_telephone_number'><strong>{it.L('Telephone:')}</strong></label>
