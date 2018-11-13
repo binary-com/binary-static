@@ -111,7 +111,7 @@ module.exports = function (grunt) {
         release_translations: {
             command: [
                 prompt('Starting the release to \'translations\'\n'),
-                'git fetch upstream translations:translations',
+                'git fetch origin translations:translations',
                 'git checkout translations',
                 'grunt release --translations --color',
                 'git checkout master',
