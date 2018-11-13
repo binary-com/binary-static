@@ -18,6 +18,9 @@ module.exports = function (grunt) {
         global.release_info  = global.release_config[global.release_target];
         global.branch_prefix = '';
         global.branch        = global.release_info.target_folder;
+        if (global.release_target === 'staging') {
+            grunt.option('cleanup', true); // always cleanup when releasing to staging
+        }
     } else {
         global.branch_prefix = 'br_';
         global.branch        = grunt.option('branch');
@@ -38,6 +41,12 @@ module.exports = function (grunt) {
             pattern: 'grunt-*',
             config : require('./package.json'),
             scope  : 'devDependencies',
+        },
+        postProcess: function(config) {
+            // release to translations automatically after releasing to staging, since staging release is always with 'cleanup'
+            if (global.release_target === 'staging') {
+                config.aliases.release.push('shell:release_translations');
+            }
         },
     });
 };
