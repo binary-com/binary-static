@@ -6,7 +6,7 @@ const toISOFormat      = require('../../../_common/string_util').toISOFormat;
 
 const getDatePickerValue = (selector) => {
     const val = $(selector).attr('data-value');
-    return val ? moment.utc(val).unix() + (24 * (60 * 60)) : 0;
+    return val ? moment.utc(val).unix() : 0;
 };
 
 const getDateToFrom = () => {
@@ -14,7 +14,7 @@ const getDateToFrom = () => {
     let date_to,
         date_from;
     if (date_to_val) {
-        date_to   = getDatePickerValue('#date_to');
+        date_to   = moment.utc(date_to_val).unix() + (24 * (60 * 60));
         date_from = 0;
     }
     return {
