@@ -6,7 +6,8 @@ import { connect }    from 'Stores/connect';
 
 const ThemeWrapper = ({ children, is_dark_theme }) => {
     const theme_wrapper_class = classNames('theme-wrapper', {
-        dark: is_dark_theme,
+        dark : is_dark_theme,
+        light: !is_dark_theme,
     });
     return (
         <div id='theme_wrapper' className={theme_wrapper_class}>
@@ -23,5 +24,5 @@ ThemeWrapper.propTypes = {
 export default withRouter(connect(
     ({ ui }) => ({
         is_dark_theme: ui.is_dark_mode_on,
-    })
+    }),
 )(ThemeWrapper));
