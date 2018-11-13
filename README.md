@@ -86,7 +86,7 @@ In order to remove the created folders from your gh-pages, you can use either:
 ## Release
 
 ```
-grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
+grunt release --staging=1|--production=1|--translations=1 [--section=all|app|app_2] [--cleanup] [--reset]
 ```
 (The value is needed when more than one option is used)
 
@@ -95,6 +95,8 @@ grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
   - In order to prevent accidentally releasing to the wrong target, it is mandatory to provide one of these parameters.
   - Your remote origin will be checked to be the correct target of the given parameter.
   - Your current branch will be checked to be the correct branch of the given parameter.
+- `--section` [optional]
+  - To specify the section to be released. Defaults to 'all'.
 - `--cleanup` [optional]
   - Create CNAME file with proper value according to remote origin
   - Deploy to gh-pages with the option `add: false`
