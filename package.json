@@ -83,7 +83,6 @@
     "jsdom-global": "2.1.1",
     "load-grunt-config": "0.19.2",
     "load-grunt-tasks": "3.5.2",
-    "mobx-react-devtools": "^6.0.3",
     "mocha": "3.5.3",
     "mock-local-storage": "1.0.5",
     "node-gettext": "2.0.0",
@@ -104,7 +103,7 @@
   "dependencies": {
     "@binary-com/binary-document-uploader": "2.4.1",
     "@binary-com/binary-style": "0.2.10",
-    "@binary-com/smartcharts": "0.2.9",
+    "@binary-com/smartcharts": "0.3.2",
     "@binary-com/webtrader-charts": "0.4.2",
     "babel-polyfill": "6.26.0",
     "classnames": "2.2.5",
@@ -126,10 +125,10 @@
     "prop-types": "15.6.1",
     "react": "16.4.1",
     "react-dom": "16.4.1",
-    "react-perfect-scrollbar": "1.0.0",
     "react-router-dom": "4.2.2",
     "react-transition-group": "2.4.0",
     "scriptjs": "2.5.8",
+    "simplebar-react": "0.0.1-beta.4",
     "url-polyfill": "1.0.9",
     "web-push-notifications": "3.2.15"
   }

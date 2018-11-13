@@ -2,6 +2,7 @@ import classNames                     from 'classnames';
 import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
+import SimpleBar                      from 'simplebar-react';
 import { localize }                   from '_common/localize';
 import { IconClose }                  from 'Assets/Common';
 import EmptyPortfolioMessage          from 'Modules/Portfolio/Components/empty_portfolio_message.jsx';
@@ -51,7 +52,9 @@ class PortfolioDrawer extends React.Component {
                     </div>
                 </div>
                 <div className='portfolio-drawer__body'>
-                    {body_content}
+                    <SimpleBar style={{ height: '100%' }}>
+                        {body_content}
+                    </SimpleBar>
                 </div>
             </div>
         );

@@ -67,6 +67,7 @@ class Statement extends React.Component {
                                 columns={columns}
                                 onScroll={handleScroll}
                                 getRowLink={(row_obj) => row_obj.id ? getContractPath(row_obj.id) : undefined}
+                                is_empty={is_empty}
                             >
                                 {renderGUI()}
                             </DataTable>

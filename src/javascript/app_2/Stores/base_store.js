@@ -202,14 +202,26 @@ export default class BaseStore {
      */
     @action
     validateProperty(property, value) {
+        const trigger = this.validation_rules[property].trigger;
+        const inputs = { [property]: value !== undefined ? value : this[property] };
+        const validation_rules = { [property]: (this.validation_rules[property].rules || []) };
+
+        if (!!trigger && Object.hasOwnProperty.call(this, trigger)) {
+            inputs[trigger] = this[trigger];
+            validation_rules[trigger] = this.validation_rules[trigger].rules || [];
+        }
+
         const validator = new Validator(
-            { [property]: value !== undefined ? value : this[property] },
-            { [property]: this.validation_rules[property] },
+            inputs,
+            validation_rules,
             this
         );
 
         validator.isPassed();
-        this.setValidationErrorMessages(property, validator.errors.get(property));
+
+        Object.keys(inputs).forEach(key => {
+            this.setValidationErrorMessages(key, validator.errors.get(key));
+        });
     }
 
     /**

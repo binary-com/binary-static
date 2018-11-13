@@ -57,7 +57,12 @@ class Validator {
                     return;
                 }
 
-                const is_valid = ruleObject.validator(this.input[attribute], ruleObject.options, this.store);
+                const is_valid = ruleObject.validator(
+                    this.input[attribute],
+                    ruleObject.options,
+                    this.store,
+                    this.input
+                );
 
                 if (!is_valid) {
                     this.addFailure(attribute, ruleObject);

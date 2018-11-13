@@ -7,9 +7,11 @@ import routes          from 'Constants/routes';
 import { connect }     from 'Stores/connect';
 import DetailsContents from '../Components/Details/details_contents.jsx';
 import DetailsHeader   from '../Components/Details/details_header.jsx';
+import ErrorComponent  from '../../../App/Components/Elements/Errors';
 
 class ContractDetails extends React.Component {
-    componentDidMount()    { this.props.onMount(this.props.contract_id); }
+    componentDidMount() { this.props.onMount(this.props.contract_id); }
+
     componentWillUnmount() { this.props.onUnmount(); }
 
     render() {
@@ -19,10 +21,8 @@ class ContractDetails extends React.Component {
             transaction_ids,
         } = this.props.contract_info;
 
-        return (
-            !contract_id ?
-                <UILoader />
-                :
+        if (contract_id && !this.props.has_error) {
+            return (
                 <React.Fragment>
                     <div className='contract-container'>
                         <DetailsHeader status={this.props.display_status} />
@@ -41,7 +41,16 @@ class ContractDetails extends React.Component {
                         </Link>
                     </div>
                 </React.Fragment>
+            );
+        } else if (!contract_id && !this.props.has_error) {
+            return (
+                <UILoader />
+            );
+        }
+        return (
+            <ErrorComponent message={this.props.error_message} />
         );
+        
     }
 }
 
@@ -51,6 +60,8 @@ ContractDetails.propTypes = {
     details_expiry : PropTypes.object,
     details_info   : PropTypes.object,
     display_status : PropTypes.string,
+    error_message  : PropTypes.string,
+    has_error      : PropTypes.bool,
     onClickNewTrade: PropTypes.func,
     onMount        : PropTypes.func,
     onUnmount      : PropTypes.func,
@@ -62,7 +73,9 @@ export default connect(
         details_info  : modules.contract.details_info,
         details_expiry: modules.contract.details_expiry,
         display_status: modules.contract.display_status,
+        error_message : modules.contract.error_message,
+        has_error     : modules.contract.has_error,
         onMount       : modules.contract.onMount,
         onUnmount     : modules.contract.onUnmount,
-    })
+    }),
 )(ContractDetails);

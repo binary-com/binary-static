@@ -35,7 +35,7 @@ const validPhone        = value => /^\+?[0-9\s]*$/.test(value);
 const validRegular      = (value, options) => options.regex.test(value);
 const validEmailToken   = value => value.trim().length === 8;
 const validTaxID        = value => /^[a-zA-Z0-9]*[\w-]*$/.test(value);
-const validBarrier      = value => /^[+-]\d+\.?\d*$/.test(value);
+const validBarrier      = value => /^[+-]?\d+\.?\d*$/.test(value);
 
 const validCompare  = (value, options) => value === $(options.to).val();
 const validNotEqual = (value, options) => value !== $(options.to).val();

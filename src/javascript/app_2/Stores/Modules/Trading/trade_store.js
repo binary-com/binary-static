@@ -1,34 +1,39 @@
-import debounce                          from 'lodash.debounce';
+import debounce                       from 'lodash.debounce';
 import {
     action,
     observable,
     runInAction,
-    reaction }                           from 'mobx';
-import Client                            from '_common/base/client_base';
+    reaction,
+}                                     from 'mobx';
+import Client                         from '_common/base/client_base';
 import {
     getMinPayout,
-    isCryptocurrency  }                  from '_common/base/currency_base';
-import BinarySocket                      from '_common/base/socket_base';
-import { cloneObject, isEmptyObject }    from '_common/utility';
-import { WS }                            from 'Services';
-import GTM                               from 'Utils/gtm';
-import URLHelper                         from 'Utils/URL/url_helper';
-import { processPurchase }               from './Actions/purchase';
-import * as Symbol                       from './Actions/symbol';
+    isCryptocurrency,
+}                                     from '_common/base/currency_base';
+import BinarySocket                   from '_common/base/socket_base';
+import { localize }                   from '_common/localize';
+import { cloneObject, isEmptyObject } from '_common/utility';
+import { WS }                         from 'Services';
+import GTM                            from 'Utils/gtm';
+import URLHelper                      from 'Utils/URL/url_helper';
+import { processPurchase }            from './Actions/purchase';
+import * as Symbol                    from './Actions/symbol';
 import {
     allowed_query_string_variables,
-    non_proposal_query_string_variable } from './Constants/query_string';
-import getValidationRules                from './Constants/validation_rules';
-import { setChartBarrier }               from './Helpers/chart';
-import ContractType                      from './Helpers/contract_type';
-import { convertDurationLimit }          from './Helpers/duration';
-import { processTradeParams }            from './Helpers/process';
+    non_proposal_query_string_variable,
+}                                     from './Constants/query_string';
+import getValidationRules             from './Constants/validation_rules';
+import { setChartBarrier }            from './Helpers/chart';
+import ContractType                   from './Helpers/contract_type';
+import { convertDurationLimit }       from './Helpers/duration';
+import { processTradeParams }         from './Helpers/process';
 import {
     createProposalRequests,
     getProposalInfo,
-    getProposalParametersName }          from './Helpers/proposal';
-import { pickDefaultSymbol }             from './Helpers/symbol';
-import BaseStore                         from '../../base_store';
+    getProposalParametersName,
+}                                     from './Helpers/proposal';
+import { pickDefaultSymbol }          from './Helpers/symbol';
+import BaseStore                      from '../../base_store';
 
 export default class TradeStore extends BaseStore {
     // Control values
@@ -102,7 +107,7 @@ export default class TradeStore extends BaseStore {
                 enumerable: false,
                 value     : false,
                 writable  : true,
-            }
+            },
         );
 
         if (Client.isLoggedIn) {
@@ -111,20 +116,39 @@ export default class TradeStore extends BaseStore {
 
         // Adds intercept to change min_max value of duration validation
         reaction(
-            ()=> [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
+            () => [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
             () => {
                 this.changeDurationValidationRules();
-            }
+            },
         );
     }
 
     @action.bound
     async prepareTradeStore() {
-        const query_string_values = this.updateQueryString();
-        this.smart_chart = this.root_store.modules.smart_chart;
+        let query_string_values = this.updateQueryString();
+        this.smart_chart        = this.root_store.modules.smart_chart;
+        const active_symbols    = await WS.activeSymbols();
+
+        if (!active_symbols.active_symbols || active_symbols.active_symbols.length === 0) {
+            this.root_store.common.showError(localize('Trading is unavailable at this time.'));
+        }
+
+        // Checks for finding out that the current account has access to the defined symbol in quersy string or not.
+        const is_invalid_symbol = !!query_string_values.symbol &&
+            !active_symbols.active_symbols.find(s => s.symbol === query_string_values.symbol);
+
+        // Changes the symbol in query string to default symbol since the account doesn't have access to the defined symbol.
+        if (is_invalid_symbol) {
+            this.root_store.ui.addToastMessage({
+                message: localize('Certain trade parameters have been changed due to your account settings.'),
+                type   : 'info',
+            });
+            URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
+            query_string_values = this.updateQueryString();
+        }
 
         if (!this.symbol) {
-            const active_symbols = await WS.activeSymbols();
+
             await this.processNewValuesAsync({
                 symbol: pickDefaultSymbol(active_symbols.active_symbols),
                 ...query_string_values,
@@ -132,7 +156,7 @@ export default class TradeStore extends BaseStore {
         }
 
         if (this.symbol) {
-            ContractType.buildContractTypesConfig(this.symbol).then(action(async () => {
+            ContractType.buildContractTypesConfig(query_string_values.symbol || this.symbol).then(action(async () => {
                 await this.processNewValuesAsync({
                     ...ContractType.getContractValues(this),
                     ...ContractType.getContractCategories(),
@@ -143,10 +167,10 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-     init = async () => {
-         // To be sure that the website_status response has been received before processing trading page.
-         await BinarySocket.wait('website_status');
-     };
+    init = async () => {
+        // To be sure that the website_status response has been received before processing trading page.
+        await BinarySocket.wait('website_status');
+    };
 
     @action.bound
     onChange(e) {
@@ -170,7 +194,7 @@ export default class TradeStore extends BaseStore {
                 if (this.proposal_info[type].id !== proposal_id) {
                     throw new Error('Proposal ID does not match.');
                 }
-                if (response.buy && !Client.get('is_virtual')) {
+                if (response.buy) {
                     const contract_data = {
                         ...this.proposal_requests[type],
                         ...this.proposal_info[type],
@@ -248,7 +272,6 @@ export default class TradeStore extends BaseStore {
                 proposal_info      : {},
             });
 
-
             if (!this.smart_chart.is_contract_mode) {
                 const is_barrier_changed = 'barrier_1' in new_state || 'barrier_2' in new_state;
                 if (is_barrier_changed) {
@@ -258,13 +281,13 @@ export default class TradeStore extends BaseStore {
                 }
             }
 
-            const snapshot = await processTradeParams(this, new_state);
+            const snapshot            = await processTradeParams(this, new_state);
             const query_string_values = this.updateQueryString();
             snapshot.is_trade_enabled = true;
 
             this.updateStore({
                 ...snapshot,
-                ...(this.is_query_string_applied ? {} : query_string_values),
+                ...(this.is_query_string_applied ? {} : query_string_values), // Applies the query string values again to set barriers.
             });
 
             this.is_query_string_applied = true;
@@ -282,9 +305,10 @@ export default class TradeStore extends BaseStore {
     @action.bound
     requestProposal() {
         const requests = createProposalRequests(this);
+
         if (Object.values(this.validation_errors).some(e => e.length)) {
-            this.proposal_info     = {};
-            this.purchase_info     = {};
+            this.proposal_info = {};
+            this.purchase_info = {};
             WS.forgetAll('proposal');
             return;
         }
@@ -296,7 +320,7 @@ export default class TradeStore extends BaseStore {
                 [
                     ...proper_proposal_params_for_query_string,
                     ...non_proposal_query_string_variable,
-                ]
+                ],
             );
 
             this.proposal_requests = requests;
@@ -314,7 +338,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onProposalResponse(response) {
         const contract_type = response.echo_req.contract_type;
-        this.proposal_info = {
+        this.proposal_info  = {
             ...this.proposal_info,
             [contract_type]: getProposalInfo(this, response),
         };
@@ -338,7 +362,7 @@ export default class TradeStore extends BaseStore {
         const query_params = URLHelper.updateQueryString(
             this,
             allowed_query_string_variables,
-            this.is_trade_component_mounted
+            this.is_trade_component_mounted,
         );
 
         // update state values from query string
@@ -354,7 +378,7 @@ export default class TradeStore extends BaseStore {
             return;
         }
 
-        const index = this.validation_rules.duration.findIndex(item => item[0] === 'number');
+        const index  = this.validation_rules.duration.rules.findIndex(item => item[0] === 'number');
         const limits = this.duration_min_max[this.contract_expiry_type] || false;
 
         if (limits) {
@@ -364,9 +388,9 @@ export default class TradeStore extends BaseStore {
             };
 
             if (index > -1) {
-                this.validation_rules.duration[index][1] = duration_options;
+                this.validation_rules.duration.rules[index][1] = duration_options;
             } else {
-                this.validation_rules.duration.push(['number', duration_options]);
+                this.validation_rules.duration.rules.push(['number', duration_options]);
             }
             this.validateProperty('duration', this.duration);
         }

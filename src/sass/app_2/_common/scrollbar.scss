@@ -1,105 +1,111 @@
-/*
- * Container style
- */
-.ps {
-    overflow: hidden !important;
-    overflow-anchor: none;
-    -ms-overflow-style: none;
-    touch-action: auto;
-    -ms-touch-action: auto;
-}
-
-/*
- * Scrollbar rail styles
- */
-.ps__rail-x {
-    display: none;
-    opacity: 0;
-    transition: background-color 0.2s linear, opacity 0.2s linear;
-    height: 15px;
-    /* there must be 'bottom' or 'top' for ps__rail-x */
-    bottom: 0px;
-    /* please don't change 'position' */
-    position: absolute;
-}
-
-.ps__rail-y {
-    display: none;
-    opacity: 0;
-    transition: background-color 0.2s linear, opacity 0.2s linear;
-    width: 15px;
-    /* there must be 'right' or 'left' for ps__rail-y */
-    right: 0;
-    /* please don't change 'position' */
-    position: absolute;
-}
-
-.ps--active-x > .ps__rail-x, .ps--active-y > .ps__rail-y {
-    display: block;
-    background-color: transparent;
-}
-
-.ps:hover > .ps__rail-x, .ps:hover > .ps__rail-y, .ps--focus > .ps__rail-x, .ps--focus > .ps__rail-y, .ps--scrolling-x > .ps__rail-x, .ps--scrolling-y > .ps__rail-y {
-    opacity: 0.6;
-    z-index: 999;
-}
-
-.ps__rail-x:hover, .ps__rail-y:hover, .ps__rail-x:focus, .ps__rail-y:focus {
-    background-color: #eee; /* stylelint-disable-line color-no-hex */
-    opacity: 0.9;
-}
-
-/*
- * Scrollbar thumb styles
- */
-.ps__thumb-x {
-    background-color: #aaa; /* stylelint-disable-line color-no-hex */
-    border-radius: 6px;
-    transition: background-color 0.2s linear, height 0.2s ease-in-out;
-    -webkit-transition: background-color 0.2s linear, height 0.2s ease-in-out;
-    height: 6px;
-    /* there must be 'bottom' for ps__thumb-x */
-    bottom: 2px;
-    /* please don't change 'position' */
-    position: absolute;
-}
-
-.ps__thumb-y {
-    background-color: #aaa; /* stylelint-disable-line color-no-hex */
-    border-radius: 6px;
-    transition: background-color 0.2s linear, width 0.2s ease-in-out;
-    -webkit-transition: background-color 0.2s linear, width 0.2s ease-in-out;
-    width: 6px;
-    /* there must be 'right' for ps__thumb-y */
-    right: 2px;
-    /* please don't change 'position' */
-    position: absolute;
-}
-
-.ps__rail-x:hover > .ps__thumb-x, .ps__rail-x:focus > .ps__thumb-x {
-    background-color: #999; /* stylelint-disable-line color-no-hex */
-    height: 11px;
-}
-
-.ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y {
-    background-color: #999; /* stylelint-disable-line color-no-hex */
-    width: 11px;
-}
-
-/* MS supports */
-@supports (-ms-overflow-style: none) {
-    .ps {
-        overflow: auto !important;
-    }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .ps {
-        overflow: auto !important;
-    }
-}
-
 .scrollbar-container {
     position: relative;
     height: 100%;
+}
+
+[data-simplebar] {
+    position: relative;
+    z-index: 0;
+    overflow: hidden !important;
+    max-height: inherit;
+    -webkit-overflow-scrolling: touch; /* Trigger native scrolling for mobile, if not supported, plugin is used. */
+}
+
+[data-simplebar='init'] {
+    display: flex;
+}
+
+[data-simplebar] .simplebar-scroll-content, [data-simplebar] .simplebar-content {
+    overflow: hidden;
+}
+
+[data-simplebar='init'] .simplebar-scroll-content, [data-simplebar='init'] .simplebar-content {
+    overflow: scroll;
+}
+
+.simplebar-scroll-content {
+    overflow-x: hidden !important;
+    min-width: 100% !important;
+    max-height: inherit !important;
+    box-sizing: content-box !important;
+}
+
+.simplebar-content {
+    overflow-y: hidden !important;
+    box-sizing: border-box !important;
+    min-height: 100% !important;
+}
+
+.simplebar-track {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 11px;
+    pointer-events: none;
+}
+
+.simplebar-scrollbar {
+    position: absolute;
+    right: 2px;
+    width: 7px;
+    min-height: 10px;
+}
+
+.simplebar-scrollbar:before {
+    position: absolute;
+    content: '';
+    background: $COLOR_BLACK;
+    border-radius: 7px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+}
+
+.simplebar-track .simplebar-scrollbar.visible:before {
+    /* When hovered, remove all transitions from drag handle */
+    opacity: 0.5;
+    transition: opacity 0 linear;
+}
+
+.simplebar-track.vertical {
+    top: 0;
+}
+
+.simplebar-track.vertical .simplebar-scrollbar:before {
+    top: 2px;
+    bottom: 2px;
+}
+
+.simplebar-track.horizontal {
+    left: 0;
+    width: auto;
+    height: 11px;
+}
+
+.simplebar-track.horizontal .simplebar-scrollbar:before {
+    height: 100%;
+    left: 2px;
+    right: 2px;
+}
+
+.horizontal.simplebar-track .simplebar-scrollbar {
+    right: auto;
+    left: 0;
+    top: 2px;
+    height: 7px;
+    min-height: 0;
+    min-width: 10px;
+    width: auto;
+}
+
+/* Rtl support */
+[data-simplebar-direction='rtl'] .simplebar-track {
+    right: auto;
+    left: 0;
+}
+
+[data-simplebar-direction='rtl'] .simplebar-track.horizontal {
+    right: 0;
 }

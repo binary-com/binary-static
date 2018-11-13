@@ -1,11 +1,14 @@
-import { SmartChart }   from '@binary-com/smartcharts';
+import { SmartChart, setSmartChartsPublicPath }   from '@binary-com/smartcharts';
 import PropTypes        from 'prop-types';
 import React            from 'react';
+import Url              from '_common/url';
 import { connect }      from 'Stores/connect';
 import ControlWidgets   from '../Components/control_widgets.jsx';
 import ChartMarker      from '../Components/Markers/marker.jsx';
 import TopWidgets       from '../Components/top_widgets.jsx';
 import { symbolChange } from '../Helpers/symbol';
+
+setSmartChartsPublicPath(Url.urlForStatic('js/app_2/'));
 
 class Chart extends React.Component {
     componentWillUnmount() { this.props.onUnmount(); }
@@ -42,6 +45,7 @@ class Chart extends React.Component {
                 startEpoch={this.props.start_epoch}
                 symbol={this.props.symbol}
                 topWidgets={this.topWidgets}
+                isConnectionOpened={this.props.is_socket_opened}
             >
                 { this.props.markers_array.map((marker, idx) => (
                     <ChartMarker
@@ -76,7 +80,8 @@ Chart.propTypes = {
 };
 
 export default connect(
-    ({ modules, ui }) => ({
+    ({ modules, ui, common }) => ({
+        is_socket_opened: common.is_socket_opened,
         barriers_array  : modules.smart_chart.barriers_array,
         is_title_enabled: modules.smart_chart.is_title_enabled,
         markers_array   : modules.smart_chart.markers_array,

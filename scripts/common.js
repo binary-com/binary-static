@@ -27,7 +27,7 @@ exports.sections_config = {
     },
     app_2: {
         path     : 'app',
-        js_files : ['vendor', 'chartiq', 'react_mobx', 'smartcharts', 'binary_common', 'binary'],
+        js_files : ['vendor', 'react_mobx', 'smartcharts', 'binary_common', 'binary'],
         css_files: ['app_2.min', 'smartcharts'],
         has_pjax : false,
     },

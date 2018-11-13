@@ -27,9 +27,6 @@ const app2Config = (grunt) => ({
             ...getApp2Aliases(),
         },
     },
-    externals: {
-        CIQ: 'CIQ',
-    },
     plugins: getPlugins('app_2', grunt),
 });
 

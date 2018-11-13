@@ -164,8 +164,13 @@
                 height: 26px;
             }
             .input-field i .symbols {
-                height: 23px;
-                line-height: 23px;
+                top: 0;
+                left: 0;
+                height: 24px;
+                line-height: 24px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
             }
             .dropdown-display {
                 height: 24px;
