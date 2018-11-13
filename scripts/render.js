@@ -160,11 +160,11 @@ const createUrlFinder = (default_lang, section_path, root_url = getConfig().root
     }
 );
 
-const generateJSFilesList = async (config, section, static_hash) => Promise.all(
+const generateJSFilesList = async (config, section, section_static_hash) => Promise.all(
     common.sections_config[section].js_files
         .map(js => Path.join(common.sections_config[section].path, 'js', `${js}${program.dev && js === 'binary' ? '' : '.min'}.js`))
         .map(async js =>
-            `${config.root_url}${js}?${/binary/.test(js) ? static_hash : await fileHash(Path.join(config.dist_path, js))}`
+            `${config.root_url}${js}?${/binary/.test(js) ? section_static_hash : await fileHash(Path.join(config.dist_path, js))}`
         )
 );
 
@@ -172,41 +172,46 @@ const generateCSSFilesList = (config, sections, static_hash) => (
     sections.reduce((acc, section) => ({
         ...acc,
         [section]: common.sections_config[section].css_files
-            .map(css => Path.join(config.root_url, common.sections_config[section].path, 'css', `${css}.css?${static_hash}`)),
+            .map(css => Path.join(config.root_url, common.sections_config[section].path, 'css', `${css}.css?${static_hash[section]}`)),
     }), {})
 );
 
 const createContextBuilder = async (sections) => {
     const config = getConfig();
 
-    let static_hash = Math.random().toString(36).substring(2, 10);
-    if (program.path) {
-        try {
-            static_hash = await common.readFile(Path.join(config.dist_path, 'version'));
-        } catch (e) { } // eslint-disable-line
-    }
-
-    if (!is_translation) {
-        await common.writeFile(Path.join(config.dist_path, 'version'), static_hash, 'utf8');
-    }
-
-    // prepare files list for all applicable sections
+    const static_hash   = {};
     const js_files_list = {};
+
     await Promise.all(sections.map(async section => {
-        js_files_list[section] = await generateJSFilesList(config, section, static_hash);
+        // create new hash for each section or use an existing one if there is any
+        static_hash[section] = Math.random().toString(36).substring(2, 10);
+        const version_path = Path.join(config.dist_path, common.sections_config[section].path, 'version');
+        if (program.path) {
+            try {
+                static_hash[section] = await common.readFile(version_path);
+            } catch (e) { } // eslint-disable-line
+        }
+
+        if (!is_translation) {
+            await common.writeFile(version_path, static_hash[section], 'utf8');
+        }
+
+        // prepare js files list for all applicable sections
+        js_files_list[section] = await generateJSFilesList(config, section, static_hash[section]);
     }));
 
+    // prepare css files list for all applicable sections
     const css_files_list = generateCSSFilesList(config, sections, static_hash);
 
     const extra = section => ({
         js_files: [
-            Path.join(config.root_url, common.sections_config[section].path, 'js', 'texts', `{PLACEHOLDER_FOR_LANG}.js?${static_hash}`),
+            Path.join(config.root_url, common.sections_config[section].path, 'js', 'texts', `{PLACEHOLDER_FOR_LANG}.js?${static_hash[section]}`),
             ...js_files_list[section],
         ],
         css_files  : css_files_list[section],
         languages  : config.languages,
         broker_name: 'Binary.com',
-        static_hash,
+        static_hash: static_hash[section],
     });
 
     return {
