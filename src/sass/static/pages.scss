@@ -919,6 +919,12 @@ body #not_authenticated_financial ul.checked > li {
         .column-margin {
             margin: 0 0 1em;
         }
+        .gr-padding-20-m {
+            @media (max-width: 768px) {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        }
         .header-line {
             border-color: $COLOR_ORANGE;
             border-width: 3px;
