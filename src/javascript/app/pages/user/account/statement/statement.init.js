@@ -191,7 +191,7 @@ const StatementInit = (() => {
                 $error_msg.setVisibility(0);
 
                 const date_from  = DateTo.getDatePickerValue(download_from_id);
-                const date_to    = DateTo.getDatePickerValue(download_to_id);
+                const date_to    = DateTo.getDatePickerValue(download_to_id, true);
                 const can_submit = date_from && date_to;
 
                 if (can_submit) {

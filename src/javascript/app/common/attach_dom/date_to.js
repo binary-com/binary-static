@@ -4,9 +4,10 @@ const dateValueChanged = require('../../../_common/common_functions').dateValueC
 const localize         = require('../../../_common/localize').localize;
 const toISOFormat      = require('../../../_common/string_util').toISOFormat;
 
-const getDatePickerValue = (selector) => {
+const getDatePickerValue = (selector, is_end_of_day) => {
     const val = $(selector).attr('data-value');
-    return val ? moment.utc(val).unix() : 0;
+    const getEpochTime = () => is_end_of_day ? moment.utc(val).endOf('day').unix() : moment.utc(val).unix();
+    return val ? getEpochTime() : 0;
 };
 
 const getDateToFrom = () => {
@@ -75,7 +76,7 @@ const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
 
     const getMinDate = (e) => {
         const date = new Date(e.getAttribute('data-value'));
-        return new Date(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate() + 1}`);
+        return new Date(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
     };
 
     $date_from.change(function() { onChange(this, initDatePicker(date_to_id, { minDate: getMinDate(this) })); });
