@@ -5,7 +5,7 @@ import Client               from '_common/base/client_base';
 import NetworkMonitor       from 'Services/network_monitor';
 import RootStore            from 'Stores';
 import { setStorageEvents } from 'Utils/Events/storage';
-import App                  from './app.jsx';
+import Router               from './router.jsx';
 
 configure({ enforceActions: true });
 
@@ -22,7 +22,7 @@ const initApp = () => {
     const app = document.getElementById('binary_app');
 
     if (app) {
-        render(<App root_store={root_store} />, app);
+        render(<Router root_store={root_store} />, app);
     }
 };
 

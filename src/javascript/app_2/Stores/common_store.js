@@ -41,4 +41,10 @@ export default class CommonStore extends BaseStore {
             type: 'error',
         });
     }
+
+    @action.bound
+    setLanguage(lang) {
+        // update history object
+        this.current_language = lang;
+    }
 }
