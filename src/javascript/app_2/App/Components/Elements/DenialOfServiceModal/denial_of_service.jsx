@@ -24,7 +24,7 @@ const DenialOfServiceModal = ({ is_visible }) => (
         onCancel={onCancel}
         is_visible={is_visible}
     >
-        <Localize str="You're not allowed to access this feature with your real money account at the moment" />
+        <Localize str='You are not allowed to access this feature with your real money account at the moment.' />
     </FullPageModal>
 );
 
