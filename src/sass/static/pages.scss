@@ -417,6 +417,11 @@
     .phone-container {
         align-items: center;
         justify-content: center;
+        @media (max-width: 480px) {
+            img {
+                width: 56%;
+            }
+        }
 
         label {
             margin-bottom: 5px;
