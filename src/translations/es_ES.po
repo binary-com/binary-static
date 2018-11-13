@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-11-08 05:44\n"
+"PO-Revision-Date: 2018-11-13 01:42\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -71,9 +71,6 @@ msgstr "$50.001 - $100.000"
 
 msgid "$500,001 - $1,000,000"
 msgstr "$500.001 - $1.000.000"
-
-msgid "%1 %2 has been credited into your virtual account: %3."
-msgstr "%1 %2 se han acreditado en su cuenta de dinero virtual %3."
 
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "Pago de %1 %2 si %3 no toca la barrera hasta el cierre en %4."
@@ -170,6 +167,9 @@ msgstr "%1 no cobra ninguna tarifa de transferencia."
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
 msgstr "%1 proporciona a todo el mundo una forma fácil de participar en los mercados financieros. Comercie con tan poco como $1 en las principales divisas, acciones, índices, materias primas e índices de volatilidad."
+
+msgid "%1 has been credited into your virtual account: %2."
+msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 se ha ganado una reputación envidiable por nuestro compromiso con altos estándares éticos y la calidad de la experiencia comercial que ofrecemos."
@@ -845,7 +845,7 @@ msgid "Action"
 msgstr "Acción"
 
 msgid "Activate the VPN service on the app"
-msgstr ""
+msgstr "Active el servicio de VPN en la aplicación"
 
 msgid "Active trading clients"
 msgstr "Clientes de operación activos"
@@ -1176,7 +1176,7 @@ msgid "Any disputes, controversy, or claims that arise out of or relating to thi
 msgstr "Cualquier disputa, controversia o reclamación que surja de o esté relacionada con este Acuerdo en contra de la Compañía será enviada a y finalmente resuelta por una empresa de arbitraje seleccionada por la Compañía. El idioma que se utilizará en el procedimiento arbitral será el inglés. La sentencia sobre el laudo dictado por los árbitros puede darse por cualquier tribunal con jurisdicción. Usted también es responsable de cualquier y todos los costos relacionados a dicho arbitraje."
 
 msgid "Any event capable to have a material adverse effect on the Agent’s ability to perform any of its duties and obligations in accordance with this Agreement."
-msgstr ""
+msgstr "Cualquier suceso capaz de tener un efecto material adverso sobre la habilidad del Agente de llevar a cabo cualquiera de sus tareas y obligaciones de acuerdo con el presente Acuerdo."
 
 msgid "Any failure on your part to maintain the security of any security devices or procedures used in or in association with the %1 API;"
 msgstr "Cualquier fallo por su parte de mantener la seguridad de cualquier dispositivos de seguridad o procedimiento usado en o en asociación con la API de %1;"
@@ -1209,7 +1209,7 @@ msgid "Appendix - Product Specific Policies"
 msgstr "Anexo - Políticas específicas de productos"
 
 msgid "Applicant's rights"
-msgstr ""
+msgstr "Derechos del solicitante"
 
 msgid "Applications"
 msgstr "Aplicaciones"
@@ -1979,6 +1979,9 @@ msgstr "CFD sobre materias primas; y/o"
 msgid "CFDs on indices."
 msgstr "CFD sobre índices."
 
+msgid "CPA (EU only)"
+msgstr ""
+
 msgid "Call Spread"
 msgstr "Call Spread"
 
@@ -2150,11 +2153,14 @@ msgstr "Elija una cuenta"
 msgid "Choose from 100+ tradable instruments, backed by award-winning technology and innovation since 2000."
 msgstr "Elija entre más de 100 instrumentos operables, con respaldo de una tecnología premiada e innovación desde el año 2000."
 
-msgid "Choose from five available markets:"
-msgstr "Escoja entre cinco mercados disponibles:"
+msgid "Choose from four available markets:"
+msgstr ""
 
 msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy."
 msgstr "Escoja entre más de un millón de posibles variaciones de operación en cualquier momento y personalice sus operaciones según su estrategia preferida."
+
+msgid "Choose from the following affiliate commission plans:"
+msgstr ""
 
 msgid "Choose from three main trade types:"
 msgstr "Escoja entre tres tipos de operación principales:"
@@ -2603,6 +2609,9 @@ msgstr "Copyright"
 msgid "Copywriter"
 msgstr "Copywriter"
 
+msgid "Cost per acquisition (CPA) for EU affiliates only"
+msgstr ""
+
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "Costos - los costos asociados a la ejecución de su orden comprenden predominantemente el spread, es decir, la diferencia entre su precio de compra y nuestro precio de venta."
 
@@ -2841,10 +2850,10 @@ msgid "Data Subject"
 msgstr ""
 
 msgid "Data retention"
-msgstr ""
+msgstr "Retención de datos"
 
 msgid "Data will be stored in a range of different places, including on the applicant's application record, in HR management systems, and on other IT systems (including email)."
-msgstr ""
+msgstr "Se almacenarán datos en diferentes lugares, incluidos el registro de solicitudes del solicitante, los sistemas de gestión de Recursos Humanos, y otros sistemas informáticos (incluido el correo electrónico)."
 
 msgid "Date"
 msgstr "Fecha"
@@ -3135,10 +3144,10 @@ msgid "Download"
 msgstr "Descargar"
 
 msgid "Download Binary VPN app For Android"
-msgstr ""
+msgstr "Descargue la app de VPN de Binary para Android"
 
 msgid "Download Binary VPN app for Windows Desktop"
-msgstr ""
+msgstr "Descargue la app de VPN de Binary para la versión de escritorio de Windows"
 
 msgid "Download CSV"
 msgstr "Descargar CSV"
@@ -3159,10 +3168,10 @@ msgid "Download MT5 for your desktop or laptop to access the powerful tools and 
 msgstr "Descargue MT5 para su computador de escritorio o portátil para acceder a las potentes herramientas y características que disfrutan millones de operadores."
 
 msgid "Download our VPN app for your preferred device"
-msgstr ""
+msgstr "Descargar nuestra app de VPN para el dispositivo de su preferencia"
 
 msgid "Download our VPN app now"
-msgstr ""
+msgstr "Descargue nuestra aplicación de VPN ahora"
 
 msgid "Download our desktop app now:"
 msgstr "Descargue nuestra aplicación para escritorio ahora:"
@@ -3237,7 +3246,7 @@ msgid "EUR/GBP"
 msgstr "EUR/GBP"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions of this Agreement."
-msgstr ""
+msgstr "Cada Parte cumplirá con aquello que razonablemente sea requerido por la otra Parte para dar validez a las disposiciones de este Acuerdo."
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the terms of this Agreement."
 msgstr "Cada una de las Partes hará todo lo posible para cumplir con cualquier requerimiento razonable de la otra Parte para dar cumplimiento a los términos de este contrato."
@@ -3272,6 +3281,9 @@ msgstr "Gane"
 msgid "Earn $30 to trade on %1"
 msgstr "Gane $30 para operar en %1"
 
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU."
+msgstr ""
+
 msgid "Earn a commission on each client’s MT5 trading activity – paid out daily."
 msgstr "Gane comisiones diarias por cada operación de sus clientes en la plataforma MT5."
 
@@ -3287,6 +3299,9 @@ msgstr "Gane comisiones por las operaciones de clientes a los que haya recomenda
 msgid "Earn commissions by introducing new customers to %1."
 msgstr "Gane comisiones introduciendo nuevos clientes a %1."
 
+msgid "Earn increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
+msgstr ""
+
 msgid "Earn money for any verifiable errors that you find."
 msgstr "Gane dinero por encontrar los errores verificables."
 
@@ -3295,9 +3310,6 @@ msgstr "Reciba pagos de hasta USD 50.000. Las pérdidas solo están limitadas a 
 
 msgid "Earn the same proportional return on stakes of all values."
 msgstr "Obtenga las mismas ganancias proporcionales en apuestas de cualquier valor."
-
-msgid "Earn up to 35% commission with an award-winning binary options trading platform."
-msgstr "Gane comisiones de hasta 35% a través de una galardonada plataforma opciones binarias."
 
 msgid "Ebooks, videos, and more"
 msgstr "Libros electrónicos, videos y más"
@@ -3459,7 +3471,7 @@ msgid "Equity is the sum of your balance and floating profit and loss (PnL). Mar
 msgstr "El capital corresponde a la suma de su saldo y de sus ganancias y pérdidas flotantes (P&L). El nivel de margen es la relación entre el capital y el margen. Cuando esa proporción alcance un porcentaje específico (generalmente el 100%), se producirá una llamada de margen de su cuenta. Esto no afecta su capacidad de abrir nuevas posiciones, sino que sirve para alertarle que su P&L flotante se está moviendo hacia abajo. No obstante, se recomienda agregar fondos a su cuenta para mantener sus posiciones abiertas. Como alternativa, puede cerrar las posiciones que estén generando pérdidas."
 
 msgid "Establish a secure Internet connection and protect your privacy."
-msgstr ""
+msgstr "Establezca una conexión segura a Internet y proteja su privacidad."
 
 msgid "Establish a secure, encrypted connection to a virtual private network (VPN) server using our VPN app to protect your data and privacy."
 msgstr ""
@@ -4148,8 +4160,8 @@ msgstr "Cómo empezar"
 msgid "Getting started"
 msgstr "Introducción"
 
-msgid "Getting started is free and easy – just %1fill out the application form%2, choose from two types of commission plans and wait for our approval."
-msgstr "Comenzar es gratis y fácil – solo %1complete el formulario de solicitud%2, elija uno de los dos tipos de planes de comisiones y aguarde nuestra aprobación."
+msgid "Getting started is free and easy – just %1fill out the application form%2, choose your preferred commission plan and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "Comenzar es fácil y gratis: solo %1llene este formulario%2 y espere nuestra aprobación."
@@ -4778,8 +4790,8 @@ msgstr "Si usted desea retirar fondos de su Cuenta Real MT5 y/o cerrar su Cuenta
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr "Si desea más información sobre cómo convertirse en un Agente de Pago, por favor contáctenos en <a href='mailto:%1'>%1</a>"
 
-msgid "If you would like to file a complaint with regards to our service, kindly contact us on complaints@binary.com, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details."
-msgstr "Si desea realizar un reclamo con respecto a nuestro servicio, contáctenos a través de complaints@binary.com y bríndenos todos los detalles relevantes. Investigaremos su reclamo y le daremos una respuesta. Por lo general, envíamos una respuesta final dentro de un plazo de 10 días hábiles (a menos se requiera una extensión y sea permitida por la ley) luego de haber recibido todos los detalles pretinentes."
+msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details."
+msgstr ""
 
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us on complaints@binary.com by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgstr ""
@@ -5267,6 +5279,9 @@ msgstr "Únase a nuestro equipo de profesionales brillantes y talentosos. Trabaj
 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Únase a nuestro equipo de profesionales brillantes y talentosos. Trabaje en colaboración con nosotros para promover una plataforma de alta tecnología que es una de las más reconocidas en la industria del comercio con opciones binarias desde hace más de 15 años."
+
+msgid "Join the %1 Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform."
+msgstr ""
 
 msgid "Jul"
 msgstr "Jul"
@@ -7397,9 +7412,6 @@ msgstr "Perdido / Ganado"
 
 msgid "Profit Table"
 msgstr "Tabla de ganancias"
-
-msgid "Profit from increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
-msgstr "Obtenga beneficios de pagos cada vez más altos con tasas de comisión por niveles que le recompensan con base en los ingresos netos generados por sus clientes referidos."
 
 msgid "Profit or Loss"
 msgstr "Ganancias o pérdidas"
@@ -11517,9 +11529,6 @@ msgstr ""
 
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "Usted tiene la responsabilidad de asegurarse de que los pagos realizados a la Compañía sean recibidos correctamente con los detalles especificados de la Cuenta del cliente."
-
-msgid "You can choose from two types of affiliate commission plans:"
-msgstr "Puede elegir entre dos tipos de planes de comisiones:"
 
 msgid "You can close this window without interrupting your trade."
 msgstr "Puede cerrar esta ventana sin interrumpir su operación."

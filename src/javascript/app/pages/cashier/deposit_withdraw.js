@@ -1,19 +1,20 @@
-const setShouldRedirect = require('../user/account/settings/cashier_password').setShouldRedirect;
-const BinaryPjax        = require('../../base/binary_pjax');
-const Client            = require('../../base/client');
-const BinarySocket      = require('../../base/socket');
-const showPopup         = require('../../common/attach_dom/popup');
-const Currency          = require('../../common/currency');
-const FormManager       = require('../../common/form_manager');
-const validEmailToken   = require('../../common/form_validation').validEmailToken;
-const handleVerifyCode  = require('../../common/verification_code').handleVerifyCode;
-const getElementById    = require('../../../_common/common_functions').getElementById;
-const localize          = require('../../../_common/localize').localize;
-const State             = require('../../../_common/storage').State;
-const Url               = require('../../../_common/url');
-const template          = require('../../../_common/utility').template;
-const isEmptyObject     = require('../../../_common/utility').isEmptyObject;
-const isBinaryApp       = require('../../../config').isBinaryApp;
+const setShouldRedirect      = require('../user/account/settings/cashier_password').setShouldRedirect;
+const BinaryPjax             = require('../../base/binary_pjax');
+const Client                 = require('../../base/client');
+const BinarySocket           = require('../../base/socket');
+const showPopup              = require('../../common/attach_dom/popup');
+const Currency               = require('../../common/currency');
+const FormManager            = require('../../common/form_manager');
+const validEmailToken        = require('../../common/form_validation').validEmailToken;
+const handleVerifyCode       = require('../../common/verification_code').handleVerifyCode;
+const getElementById         = require('../../../_common/common_functions').getElementById;
+const localize               = require('../../../_common/localize').localize;
+const State                  = require('../../../_common/storage').State;
+const Url                    = require('../../../_common/url');
+const template               = require('../../../_common/utility').template;
+const isEmptyObject          = require('../../../_common/utility').isEmptyObject;
+const getCurrentBinaryDomain = require('../../../config').getCurrentBinaryDomain;
+const isBinaryApp            = require('../../../config').isBinaryApp;
 
 const DepositWithdraw = (() => {
     const default_iframe_height = 700;
@@ -256,7 +257,7 @@ const DepositWithdraw = (() => {
     };
 
     const setFrameHeight = (e) => {
-        if (!/www\.binary\.com/i.test(e.origin)) {
+        if (!new RegExp(`www\\.${getCurrentBinaryDomain()}`, 'i').test(e.origin)) {
             $iframe.height(+e.data || default_iframe_height);
         }
     };
