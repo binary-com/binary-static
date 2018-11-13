@@ -179,7 +179,7 @@ const Careers = () => {
                         target='_blank'
                     />
                     <Box
-                        gr='gr-6 gr-6-p gr-padding-20-m'
+                        gr='gr-6 gr-6-p padding-20-m'
                         icon='images/pages/careers/eh-icon.svg'
                         href={it.url_for('download/binary-employee-handbook.pdf')}
                         download
@@ -187,7 +187,7 @@ const Careers = () => {
                         target='_blank'
                     />
                     <Box
-                        gr='gr-6 gr-12-p gr-padding-20-m'
+                        gr='gr-6 gr-12-p padding-20-m'
                         icon='images/pages/careers/eh-icon.svg'
                         href={it.url_for('download/binary-expat-handbook.pdf')}
                         download
