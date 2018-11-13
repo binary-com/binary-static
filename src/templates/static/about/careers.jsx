@@ -191,7 +191,7 @@ const Careers = () => {
                         gr='gr-6 gr-12-p'
                         padding='20'
                         icon='images/pages/careers/eh-icon.svg'
-                        href={it.url_for('download/binary-employee-handbook.pdf')}
+                        href={it.url_for('download/binary-expat-handbook.pdf')}
                         download
                         text={it.L('Expat handbook')}
                         target='_blank'
