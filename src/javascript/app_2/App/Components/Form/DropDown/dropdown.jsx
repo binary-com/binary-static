@@ -5,6 +5,13 @@ import React             from 'react';
 import { CSSTransition } from 'react-transition-group';
 import SimpleBar         from 'simplebar-react';
 import { IconArrow }     from 'Assets/Common';
+import {
+    getDisplayText,
+    getItemFromValue,
+    getValueFromIndex,
+    getPrevIndex,
+    getNextIndex,
+}  from './helpers';
 
 class Dropdown extends React.Component {
     constructor(props) {
@@ -15,22 +22,9 @@ class Dropdown extends React.Component {
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.state = {
             is_list_visible: false,
+            curr_index     : getItemFromValue(this.props.list, this.props.value).number,
         };
     }
-
-    getDisplayText = (list, value) => {
-        const findInArray = (arr_list) => (arr_list.find(item => item.value === (typeof item.value === 'number' ? +value : value)) || {}).text;
-        let text = '';
-        if (isArrayLike(list)) {
-            text = findInArray(list);
-        } else {
-            Object.keys(list).some(key => {
-                text = findInArray(list[key]);
-                return text;
-            });
-        }
-        return text;
-    };
 
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
@@ -45,6 +39,60 @@ class Dropdown extends React.Component {
             this.props.onChange({ target: { name: this.props.name, value: item.value } });
         }
         this.handleVisibility();
+    }
+
+    onKeyPressed = (event) => {
+        if (event.keyCode === 9) { // Tab is pressed
+            if (this.state.is_list_visible) {
+                this.handleVisibility();
+            }
+            return;
+        }
+        event.preventDefault();
+        const index = getItemFromValue(this.props.list, this.props.value);
+        const value = getValueFromIndex(this.props.list, this.state.curr_index);
+        const handleToggle = () => {
+            if (this.state.is_list_visible && this.props.value !== value) {
+                this.props.onChange({ target: { name: this.props.name, value } });
+            }
+            this.handleVisibility();
+        };
+        switch (event.keyCode) {
+            case 13: // Enter is pressed
+            case 32: // Space is pressed
+                handleToggle();
+                break;
+            case 38: // Up Arrow is pressed
+                if (this.state.is_list_visible) {
+                    const prev_index = getPrevIndex(this.state.curr_index, index.length);
+                    this.setState({ curr_index: prev_index });
+                }
+                break;
+            case 40: // Down Arrow is pressed
+                if (this.state.is_list_visible) {
+                    const next_index = getNextIndex(this.state.curr_index, index.length);
+                    this.setState({ curr_index: next_index });
+                }
+                break;
+            default:
+        }
+
+        // For char presses, we do a search for the item:
+        if (event.key.length === 1) {
+            const char = event.key.toLowerCase();
+            const firstChars = this.props.list.map(x => x.text[0].toLowerCase());
+            let idx;
+            // Tapping the same character again jumps to the next match:
+            if (this.state.curr_index) {
+                idx = firstChars.indexOf(char, this.state.curr_index + 1);
+            }
+            if (idx === undefined || idx === -1) {
+                idx = firstChars.indexOf(char);
+            }
+            if (idx >= 0) {
+                this.setState({ curr_index: idx });
+            }
+        }
     }
 
     setWrapperRef(node) {
@@ -89,10 +137,11 @@ class Dropdown extends React.Component {
                 <div
                     className={`dropdown-display ${this.state.is_list_visible ? 'clicked' : ''}`}
                     onClick={this.handleVisibility}
-                    onBlur={this.handleVisibility}
+                    tabIndex='0'
+                    onKeyDown={this.onKeyPressed}
                 >
                     <span name={this.props.name} value={this.props.value}>
-                        {this.getDisplayText(this.props.list, this.props.value)}
+                        {getDisplayText(this.props.list, this.props.value)}
                     </span>
                 </div>
                 <IconArrow className='select-arrow' />
@@ -107,6 +156,7 @@ class Dropdown extends React.Component {
                             <SimpleBar style={{ 'height': '100%' }}>
                                 {isArrayLike(this.props.list) ?
                                     <Items
+                                        highlightedIdx={this.state.curr_index}
                                         items={this.props.list}
                                         name={this.props.name}
                                         value={this.props.value}
@@ -116,6 +166,7 @@ class Dropdown extends React.Component {
                                         <React.Fragment key={key}>
                                             <div className='list-label'><span>{key}</span></div>
                                             <Items
+                                                highlightedIdx={this.state.curr_index}
                                                 items={this.props.list[key]}
                                                 name={this.props.name}
                                                 value={this.props.value}
@@ -138,11 +189,12 @@ const Items = ({
     name,
     value,
     handleSelect,
+    highlightedIdx,
 }) => (
     items.map((item, idx) => (
         <React.Fragment key={idx}>
             <div
-                className={`list-item ${ value === item.value ? 'selected' : ''}`}
+                className={`list-item ${ value === item.value ? 'selected' : ''} ${highlightedIdx === idx ? 'highlighted' : ''}`}
                 key={idx}
                 name={name}
                 value={item.value}
