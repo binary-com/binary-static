@@ -33,7 +33,7 @@ const Tac = () => (
                     { id: 'privacy',          text: it.L('Security and Privacy') },
                     { id: 'conflicts-policy', text: it.L('Conflicts Policy') },
                     { id: 'copyright',        text: it.L('Copyright') },
-                    { id: 'complaints',       text: it.L('Complaints and Disputes')},
+                    { id: 'complaints',       text: it.L('Complaints and Disputes') },
                     {
                         id     : 'risk',
                         text   : it.L('Risk Disclaimer'),
