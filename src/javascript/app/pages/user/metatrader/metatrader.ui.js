@@ -2,6 +2,7 @@ const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
 const formatMoney      = require('../../../common/currency').formatMoney;
 const Validation       = require('../../../common/form_validation');
+const getTransferFee   = require('../../../../_common/base/currency_base').getTransferFee;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
@@ -277,7 +278,12 @@ const MetaTraderUI = (() => {
             $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
-            $form.find('#txt_amount_deposit, #txt_amount_withdrawal').siblings('.hint').setVisibility(client_currency !== mt_currency);
+            const should_show_transfer_fee = client_currency !== mt_currency;
+            if (should_show_transfer_fee) {
+                $('#transfer_fee_to').text(getTransferFee(client_currency, mt_currency));
+                $('#transfer_fee_from').text(getTransferFee(mt_currency, client_currency));
+            }
+            $form.find('#txt_amount_deposit, #txt_amount_withdrawal').siblings('.hint').setVisibility(should_show_transfer_fee);
 
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {

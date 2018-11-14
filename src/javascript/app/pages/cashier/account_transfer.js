@@ -26,6 +26,7 @@ const AccountTransfer = (() => {
         el_transfer_to,
         el_reset_transfer,
         el_transfer_fee,
+        el_fee_amount,
         el_transfer_info,
         el_success_form,
         client_balance,
@@ -56,6 +57,9 @@ const AccountTransfer = (() => {
         }
         if (fragment_transfer_to.childElementCount > 1) {
             el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
+            el_transfer_to.addEventListener('change', () => {
+                setTransferFeeAmount();
+            });
         } else {
             const label = createElement('label', { 'data-value': fragment_transfer_to.innerText });
             label.appendChild(document.createTextNode(fragment_transfer_to.innerText));
@@ -68,10 +72,15 @@ const AccountTransfer = (() => {
         showForm();
 
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
+            setTransferFeeAmount();
             el_transfer_fee.setVisibility(1);
         } else {
             el_transfer_info.setVisibility(1);
         }
+    };
+
+    const setTransferFeeAmount = () => {
+        elementTextContent(el_fee_amount, Currency.getTransferFee(client_currency, el_transfer_to.value.match(/\((\w+)\)/)[1]));
     };
 
     const hasError = (response) => {
@@ -159,6 +168,7 @@ const AccountTransfer = (() => {
         }
 
         el_transfer_fee   = getElementById('transfer_fee');
+        el_fee_amount     = getElementById('transfer_fee_amount');
         el_transfer_info  = getElementById('transfer_info');
         el_success_form   = getElementById('success_form');
         el_reset_transfer = getElementById('reset_transfer');

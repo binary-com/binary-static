@@ -79,7 +79,9 @@ const CryptoConfig = (() => {
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(CryptoConfig.get(), [currency, 'min_withdrawal']) || 0.002 : 1);
 
-const getMinTransfer = currency => getPropertyValue(currencies_config, [currency, 'limits', 'transfer_between_accounts', 'min']) || getMinWithdrawal(currency);
+const getMinTransfer = currency => getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'min']) || getMinWithdrawal(currency);
+
+const getTransferFee = (currency_from, currency_to) => getPropertyValue(currencies_config, [currency_from, 'transfer_between_accounts', 'fees', currency_to]) || '1%';
 
 // @param {String} limit = max|min
 const getPaWithdrawalLimit = (currency, limit) => {
@@ -103,6 +105,7 @@ module.exports = {
     getCurrencyName,
     getMinWithdrawal,
     getMinTransfer,
+    getTransferFee,
     getMinPayout,
     getPaWithdrawalLimit,
     getCurrencies: () => currencies_config,
