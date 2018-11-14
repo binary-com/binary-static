@@ -25,11 +25,11 @@ const Contact = () => (
                 <div className='gr-row'>
                     <div className='gr-7 gr-8-t gr-12-p gr-12-m gr-centered gr-padding-30'>
                         <h2 className='center-text'>{it.L('Can\'t find what you\'re searching for?')}</h2>
-                        <div className='gr-row phone-container'>
-                            <div className='gr-col'>
-                                <img className='responsive' src={it.url_for('images/pages/contact_2/contact-icon.svg')} />
+                        <div className='gr-row gr-row-align-middle gr-row-align-center phone-container'>
+                            <div className='gr-2 gr-4-m center-text'>
+                                <img className='responsive' src={it.url_for('images/pages/contact/contact-icon.svg')} />
                             </div>
-                            <div className='gr-col gr-adapt number-container'>
+                            <div className='gr-10 gr-11-m gr-8-p gr-8-t number-container'>
                                 <div className='gr-row gr-centered-m'>
                                     <div className='gr-adapt'>
                                         <label htmlFor='cs_telephone_number'><strong>{it.L('Telephone:')}</strong></label>
@@ -37,7 +37,6 @@ const Contact = () => (
                                             id='cs_telephone_number'
                                             options={[
                                                 { text: it.L('Australia'),      value: it.L('[_1] (Toll Free)', '+61 (02) 8294 5448, 1800 093570') },
-                                                { text: it.L('Canada'),         value: '+1 (450) 823 1002' },
                                                 { text: it.L('Ireland'),        value: it.L('[_1] (Toll Free)', '+353 (0) 76 888 7500, 1800931084') },
                                                 { text: it.L('Poland'),         value: '+48 58 881 00 02' },
                                                 { text: it.L('Russia'),         value: it.L('[_1] (Toll Free)', '8 10 8002 8553011') },
