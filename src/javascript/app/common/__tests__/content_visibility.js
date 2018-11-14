@@ -1,4 +1,6 @@
 const expect = require('chai').expect;
+const State  = require('../../../_common/storage').State;
+
 const { parseAttributeString,
         shouldShowElement } = require('../content_visibility').__test__;
 
@@ -85,6 +87,42 @@ describe('ContentVisibility', () => {
         it('works with exclusive mt5fin rule', () => {
             expect(shouldShowElement('-mt5fin:vanuatu', 'malta', true, 'vanuatu')).to.equal(false);
             expect(shouldShowElement('-mt5fin:vanuatu', 'malta', true, '')).to.equal(true);
+        });
+        it('works with inclusive eucountry rule (eu-client)', () => {
+            const landing_company = { landing_company: { financial_company: { name: 'Binary Investments (Europe) Ltd', shortcode: 'maltainvest' }, gaming_company: { name: 'Binary (Europe) Ltd', shortcode: 'malta' } }, msg_type: 'landing_company' };
+            State.set(['response', 'landing_company'], landing_company);
+            State.set(['response', 'website_status', 'website_status', 'clients_country'], [ 'nl' ]);
+            expect(shouldShowElement('eucountry', 'malta', true, '')).to.equal(true);
+        });
+        it('works with exclusive eucountry rule (eu-client)', () => {
+            const landing_company = { landing_company: { financial_company: { name: 'Binary Investments (Europe) Ltd', shortcode: 'maltainvest' }, gaming_company: { name: 'Binary (Europe) Ltd', shortcode: 'malta' } }, msg_type: 'landing_company' };
+            State.set(['response', 'landing_company'], landing_company);
+            State.set(['response', 'website_status', 'website_status', 'clients_country'], [ 'nl' ]);
+            expect(shouldShowElement('-eucountry', 'malta', true, '')).to.equal(false);
+        });
+        it('works with inclusive eucountry rule (non-eu-client)', () => {
+            const landing_company = { landing_company: { gaming_company: { shortcode: 'costarica' } }, msg_type: 'landing_company' };
+            State.set(['response', 'landing_company'], landing_company);
+            State.set(['response', 'website_status', 'website_status', 'clients_country'], [ 'br' ]);
+            expect(shouldShowElement('eucountry', 'costarica', true, '')).to.equal(false);
+        });
+        it('works with exclusive eucountry rule (non-eu-client)', () => {
+            const landing_company = { landing_company: { gaming_company: { shortcode: 'costarica' } }, msg_type: 'landing_company' };
+            State.set(['response', 'landing_company'], landing_company);
+            State.set(['response', 'website_status', 'website_status', 'clients_country'], [ 'br' ]);
+            expect(shouldShowElement('-eucountry', 'costarica', true, '')).to.equal(true);
+        });
+        it('works with inclusive eucountry rule mt country', () => {
+            const landing_company = {};
+            State.set(['response', 'landing_company'], landing_company);
+            State.set(['response', 'website_status', 'website_status', 'clients_country'], [ 'mt' ]);
+            expect(shouldShowElement('eucountry', '', true, '')).to.equal(true);
+        });
+        it('works with exclusive eucountry rule mt country', () => {
+            const landing_company = {};
+            State.set(['response', 'landing_company'], landing_company);
+            State.set(['response', 'website_status', 'website_status', 'clients_country'], [ 'mt' ]);
+            expect(shouldShowElement('-eucountry', '', true, '')).to.equal(false);
         });
     });
 });
