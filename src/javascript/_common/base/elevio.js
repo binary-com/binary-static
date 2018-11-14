@@ -1,13 +1,18 @@
 const ClientBase    = require('./client_base');
 const GTM           = require('./gtm');
 const BinarySocket  = require('./socket_base');
+const getLanguage   = require('../language').get;
 const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
     const init = () => {
         if (!window._elev) return;
         window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
-            // window._elev.setLanguage(lang);
+            const available_elev_languages = ['id'];
+            const current_language         = getLanguage().toLowerCase();
+            if (available_elev_languages.indexOf(current_language) !== -1) {
+                window._elev.setLanguage(current_language);
+            }
             setUserInfo(elev);
             setTranslations(elev);
             addEventListenerGTM();

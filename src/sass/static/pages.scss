@@ -415,19 +415,14 @@
         }
     }
     .phone-container {
-        align-items: center;
-        justify-content: center;
-        margin: 0 10px;
-
-        div.gr-col:first-child {
-            flex: 1; // fix for Firefox and MSEdge
+        img {
+            width: 70px;
+            height: 70px;
         }
-        label {
+        label, select {
             margin-bottom: 5px;
         }
         .number-container {
-            margin-left: 30px;
-
             #cs_telephone_number {
                 width: 100%;
                 min-width: 160px;
@@ -435,7 +430,11 @@
             #display_cs_telephone {
                 line-height: 1.5rem;
                 align-self: flex-end;
-                padding-top: 10px;
+                margin-top: 5px;
+
+                * ~ span {
+                    margin-top: 5px;
+                }
             }
         }
     }
@@ -949,6 +948,13 @@ body #not_authenticated_financial ul.checked > li {
         .box-container {
             &.padding {
                 padding: 5px 15px;
+
+                &-20-m {
+                    @media (max-width: 768px) {
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                    }
+                }
             }
             > [class*='gr-padding'] {
                 padding-bottom: 0;
