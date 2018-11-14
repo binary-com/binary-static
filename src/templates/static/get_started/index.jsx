@@ -33,13 +33,12 @@ const GetStartedSectionWrapper = ({
         <div className='gr-padding-30 gr-parent' id={section_id}>
             <h2>{section_header}</h2>
             <p>{section_description}</p>
-            <div className='gr-row'>
-                <div className='gr-12'>
-                    { section_button_url &&
-                    <a className='button' href={it.url_for(section_button_url)}><span>{section_button_text}</span></a>
-                    }
-                </div>
-            </div>
+            { section_button_url &&
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        <a className='button' href={it.url_for(section_button_url)}><span>{section_button_text}</span></a>
+                    </div>
+                </div> }
             {children}
         </div>
         <SeparatorLine invisible className='gr-padding-30' />
