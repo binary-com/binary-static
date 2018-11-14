@@ -143,6 +143,12 @@ const WhyUs = () => (
                         <div className='gr-3 gr-5-m gr-centered-m gr-padding-20 align-self-center'>
                             <img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')} />
                         </div>
+                        <div className='gr-2 gr-4-m gr-centered gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/gb.svg')} />
+                        </div>
+                        <div className='gr-2 gr-4-m gr-centered gr-padding-20 align-self-center'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/gbfa.svg')} />
+                        </div>
                     </div>
                     <p>{it.L('[_1] is the award-winning industry pioneer in online options trading. We boast:', it.website_name)}</p>
                     <ul className='checked'>
