@@ -948,6 +948,13 @@ body #not_authenticated_financial ul.checked > li {
         .box-container {
             &.padding {
                 padding: 5px 15px;
+
+                &-20-m {
+                    @media (max-width: 768px) {
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                    }
+                }
             }
             > [class*='gr-padding'] {
                 padding-bottom: 0;
