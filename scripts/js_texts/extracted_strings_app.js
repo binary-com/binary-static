@@ -227,7 +227,7 @@ module.exports = [
     'Only letters, numbers, space, hyphen, period, and apostrophe are allowed.',
     'Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).',
     'Only letters, space, hyphen, period, and apostrophe are allowed.',
-    'Only numbers and spaces are allowed.',
+    'Only numbers, hyphens, and spaces are allowed.',
     'Open a Financial Account',
     'Open a Real Account',
     'Opens',
