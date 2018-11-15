@@ -2,9 +2,11 @@ import React from 'react';
 import Analysis from './analysis.jsx';
 import Portfolio from '../user/portfolio.jsx';
 import Loading from '../../_common/components/loading.jsx';
+import MFSA from '../../_common/includes/mfsa.jsx';
 
 const Trading = () => (
     <React.Fragment>
+        <MFSA />
         <div id='trading_socket_container'>
             <div id='notifications_wrapper' />
             <div id='loading_container' className='overlay_container' />

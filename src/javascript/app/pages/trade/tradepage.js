@@ -13,6 +13,7 @@ const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
 const Guide             = require('../../common/guide');
 const State             = require('../../../_common/storage').State;
+const isEuCountry       = require('../../common/country_base').isEuCountry;
 
 const TradePage = (() => {
     let events_initialized = 0;
@@ -55,6 +56,17 @@ const TradePage = (() => {
                         return curr_element;
                     });
                     if ($currency.next().attr('id') === $currency.attr('id')) $currency.next().eq(0).remove();
+                }
+            });
+
+            BinarySocket.wait('website_status', 'landing_company').then(() => {
+                const financialShortcode = State.getResponse('landing_company.financial_company.shortcode');
+                const showMfsaMessage = ((!Client.isLoggedIn() && isEuCountry()) || financialShortcode === 'maltainvest');
+                if (showMfsaMessage) {
+                    $('.mfsa_message')
+                        .removeClass('container')
+                        .attr('style', 'margin-bottom: 30px');
+                    $('#professional-cta').setVisibility(1);
                 }
             });
         });
