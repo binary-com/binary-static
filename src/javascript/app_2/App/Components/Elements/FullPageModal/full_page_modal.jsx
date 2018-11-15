@@ -1,9 +1,9 @@
-import React       from 'react';
-import PropTypes   from 'prop-types';
+import React     from 'react';
+import PropTypes from 'prop-types';
 
 const FullPageModal = ({
-    children,
     cancel_button_text,
+    children,
     confirm_button_text,
     onConfirm,
     onCancel,

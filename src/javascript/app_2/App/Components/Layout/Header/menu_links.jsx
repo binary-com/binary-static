@@ -7,7 +7,7 @@ import { BinaryLink } from '../../Routes';
 const MenuLinks = ({ items }) => (
     <React.Fragment>
         <div className='navbar-icons binary-logo'>
-            <img className='logo-img' src={Url.urlForStatic('images/app_2/header/symbol.svg')} alt='Binary.com' />
+            <img className='logo-img' src={Url.urlForStatic('images/header/symbol.svg')} alt='Binary.com' />
         </div>
         { !!items.length &&
             <InkBarDiv className='menu-links'>

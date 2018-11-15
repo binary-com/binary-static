@@ -8,7 +8,7 @@ import {
     addComma,
     getDecimalPlaces }          from '_common/base/currency_base';
 import { localize }             from '_common/localize';
-import Dropdown                 from 'App/Components/Form/dropdown.jsx';
+import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
 
