@@ -1,5 +1,4 @@
 import extend             from 'extend';
-import Client             from '_common/base/client_base';
 import { isEmptyObject }  from '_common/utility';
 import ContractTypeHelper from './contract_type';
 

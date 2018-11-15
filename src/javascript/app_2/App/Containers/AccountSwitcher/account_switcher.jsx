@@ -2,8 +2,8 @@ import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
-import { IconLogout }    from 'Assets/Header/Drawer';
-import { requestLogout } from 'Services';
+import { IconLogout }    from 'Assets/Header/Drawer/index';
+import { requestLogout } from 'Services/index';
 import { connect }       from 'Stores/connect';
 import { UpgradeButton } from './upgrade_button.jsx';
 

@@ -28,7 +28,8 @@ export default class ClientStore extends BaseStore {
 
     @computed
     get is_client_allowed_to_visit() {
-        return !!(!this.is_logged_in || this.is_virtual);
+        return !!(!this.is_logged_in || this.is_virtual || this.current_account.landing_company_shortcode ===
+            'costarica');
     }
 
     @computed
@@ -147,6 +148,13 @@ export default class ClientStore extends BaseStore {
         return account_type;
     }
 
+    getAccountOfType(type, only_enabled) {
+
+        return this.getAccount(
+            this.all_loginids.find(loginid => this.isAccountOfType(type, loginid, only_enabled))
+        );
+    }
+
     getAccountInfo(loginid = this.loginid) {
         const account      = this.getAccount(loginid);
         const currency     = account.currency;
@@ -159,5 +167,14 @@ export default class ClientStore extends BaseStore {
             icon : account_type.toLowerCase(), // TODO: display the icon
             title: account_type.toLowerCase() === 'virtual' ? localize('DEMO') : account_type,
         };
+    }
+
+    isAccountOfType(type, loginid = this.loginid, only_enabled = false) {
+        const this_type = this.getAccountType(loginid);
+        return ((
+            (type === 'virtual' && this_type === 'virtual') ||
+            (type === 'real' && this_type !== 'virtual') ||
+            type === this_type) &&
+            (only_enabled ? !this.isDisabled(loginid) : true));
     }
 }

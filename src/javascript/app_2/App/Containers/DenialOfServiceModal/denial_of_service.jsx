@@ -1,14 +1,13 @@
 import React                from 'react';
 import PropTypes            from 'prop-types';
-import { getAccountOfType } from '_common/base/client_base';
 import { localize }         from '_common/localize';
 import URL                  from '_common/url';
 import FullPageModal        from 'App/Components/Elements/FullPageModal/full_page_modal.jsx';
 import { connect }          from 'Stores/connect';
 import Localize             from 'App/Components/Elements/localize.jsx';
 
-const onConfirm = (client) => {
-    client.switchAccount(getAccountOfType('virtual').loginid);
+const onConfirm = async (client) => {
+    await client.switchAccount(client.getAccountOfType('virtual').loginid);
 };
 
 const onCancel = () => {

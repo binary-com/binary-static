@@ -4,7 +4,7 @@ import React               from 'react';
 import { CSSTransition }   from 'react-transition-group';
 import { IconArrow }       from 'Assets/Common';
 import { localize }        from '_common/localize';
-import { AccountSwitcher } from '../../Elements/AccountSwitcher';
+import { AccountSwitcher } from '../../../Containers/AccountSwitcher';
 
 const AccountInfo = ({
     balance,

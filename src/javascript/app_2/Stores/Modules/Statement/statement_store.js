@@ -4,7 +4,6 @@ import {
     observable,
 }                                     from 'mobx';
 import moment                         from 'moment';
-import Client                         from '_common/base/client_base';
 import { WS }                         from 'Services';
 import eventBus                       from 'Services/event_bus';
 import { formatStatementTransaction } from './Helpers/format_response';
