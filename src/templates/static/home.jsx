@@ -318,13 +318,13 @@ const Home = () => {
                         <div className='gr-12 align-self-center'>
                             <div className='gr-row gr-row-align-center'>
                                 <div className='gr-2 gr-hide-m gr-hide-p' />
-                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbfa.svg')} /></div>
-                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')} /></div>
-                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')} /></div>
-                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')} /></div>
-                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gb.svg')} /></div>
-                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')} /></div>
-                                <div className='gr-2 gr-3-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')} /></div>
+                                <div className='gr-1 gr-3-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')} /></div>
+                                <div className='gr-1 gr-3-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')} /></div>
+                                <div className='gr-1 gr-3-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')} /></div>
+                                <div className='gr-1 gr-2-p gr-3-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')} /></div>
+                                <div className='gr-2 gr-4-p gr-6-m align-self-center gr-padding-10 opwa-margin'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')} /></div>
+                                <div className='gr-1 gr-3-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbfa.svg')} /></div>
+                                <div className='gr-1 gr-3-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gb.svg')} /></div>
                                 <div className='gr-2 gr-hide-m gr-hide-p' />
                             </div>
                         </div>
