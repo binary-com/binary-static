@@ -415,19 +415,14 @@
         }
     }
     .phone-container {
-        align-items: center;
-        justify-content: center;
-        margin: 0 10px;
-
-        div.gr-col:first-child {
-            flex: 1; // fix for Firefox and MSEdge
+        img {
+            width: 70px;
+            height: 70px;
         }
-        label {
+        label, select {
             margin-bottom: 5px;
         }
         .number-container {
-            margin-left: 30px;
-
             #cs_telephone_number {
                 width: 100%;
                 min-width: 160px;
@@ -435,7 +430,11 @@
             #display_cs_telephone {
                 line-height: 1.5rem;
                 align-self: flex-end;
-                padding-top: 10px;
+                margin-top: 5px;
+
+                * ~ span {
+                    margin-top: 5px;
+                }
             }
         }
     }
@@ -483,6 +482,48 @@ body #_elev_io {
     &.cyberjaya, &.malta, &.labuan {
         &-content {
             margin-top: 0;
+        }
+    }
+    &.cyberjaya-content, &.careers-content {
+        .box-container {
+            &.padding {
+                padding: 5px 15px;
+            }
+            > [class*='gr-padding'] {
+                padding-bottom: 0;
+
+                @media (max-width: 768px) {
+                    padding-bottom: unset;
+                }
+            }
+            .box {
+                background: $COLOR_WHITE;
+
+                &.bordered {
+                    border: 1px solid $COLOR_GRAY;
+                    height: 100%;
+                }
+                .items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        padding-top: 20px;
+                        width: 50px;
+                    }
+                    p {
+                        font-weight: 600;
+                        color: $COLOR_BLUE;
+                    }
+                    > .box-item-end {
+                        padding: 0 30px;
+                    }
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                    }
+                }
+            }
         }
     }
 }
@@ -944,44 +985,6 @@ body #not_authenticated_financial ul.checked > li {
             }
             @media (max-width: 768px) {
                 margin-bottom: 2.5rem;
-            }
-        }
-        .box-container {
-            &.padding {
-                padding: 5px 15px;
-            }
-            > [class*='gr-padding'] {
-                padding-bottom: 0;
-
-                @media (max-width: 768px) {
-                    padding-bottom: unset;
-                }
-            }
-            .box {
-                &.bordered {
-                    border: 1px solid $COLOR_GRAY;
-                    height: 100%;
-                }
-                .items {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    img {
-                        padding-top: 20px;
-                        width: 50px;
-                    }
-                    p {
-                        font-weight: 600;
-                        color: $COLOR_BLUE;
-                    }
-                    > .box-item-end {
-                        padding: 0 30px;
-                    }
-                    @media (max-width: 768px) {
-                        justify-content: center;
-                    }
-                }
             }
         }
         h4 {
