@@ -1,6 +1,5 @@
 const expect = require('chai').expect;
 const State  = require('../../../_common/storage').State;
-
 const { parseAttributeString,
         shouldShowElement } = require('../content_visibility').__test__;
 
