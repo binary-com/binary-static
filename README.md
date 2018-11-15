@@ -82,11 +82,20 @@ In order to remove the created folders from your gh-pages, you can use either:
   - `grunt shell:compile_dev --path=about-us` to re-compile only template(s) which serve about-us path in URL.
 - To fix eslint errors run `npm run eslint`
 
+### Sections
+The codebase is divided into different sections. Passing `--section=[all|app|app_2]` to almost all grunt commands causes to run it on the specified section (excluding tests since it should run on the whole source code).
+
+Current sections are:
+- `app` represents current version of the website including `app`, `static`, `landing_pages` folders in the source code.
+- `app_2` is the next version which its source code is mainly inside the `app_2` folders.
+- `all` denotes to all available sections and is the default value if `--section` is not specified.
+
+Although section is mandatory for release, but it is optional for the rest of commands as there is a default value (`all`).
 
 ## Release
 
 ```
-grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
+grunt release --staging=1|--production=1|--translations=1 --section=all|app|app_2 [--cleanup] [--reset]
 ```
 (The value is needed when more than one option is used)
 
@@ -95,6 +104,8 @@ grunt release --staging=1|--production=1|--translations=1 [--cleanup] [--reset]
   - In order to prevent accidentally releasing to the wrong target, it is mandatory to provide one of these parameters.
   - Your remote origin will be checked to be the correct target of the given parameter.
   - Your current branch will be checked to be the correct branch of the given parameter.
+- `--section` (mandatory)
+  - In order to prevent accidentally releases, it is mandatory to specify the section.
 - `--cleanup` [optional]
   - Create CNAME file with proper value according to remote origin
   - Deploy to gh-pages with the option `add: false`
