@@ -37,12 +37,11 @@ const Head = () => (
         { it.only_ja && it.language.toLowerCase() === 'en' &&
             <meta name='robots' content='noindex' />
         }
-        { !it.only_ja &&
-            it.languages
-                .filter(lang => lang.toLowerCase() !== 'ja' && lang !== it.language)
-                .map((lang, inx) => (
-                    <link key={inx} rel='alternate' href={it.url_for(it.current_path, lang.toLowerCase())} hrefLang={lang} />
-                ))
+        { it.languages
+            .filter(lang => lang !== it.language)
+            .map((lang, inx) => (
+                <link key={inx} rel='alternate' href={it.url_for(it.current_path, lang.toLowerCase())} hrefLang={lang} />
+            ))
         }
 
         { it.css_files.map((css_file, inx) => (
