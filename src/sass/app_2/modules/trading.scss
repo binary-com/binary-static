@@ -13,19 +13,19 @@
             width: 16px;
         }
         &.start-time:before {
-            background-image: url('../images/app_2/sidebar/ic_watch_later.svg');
+            background-image: url('../images/sidebar/ic_watch_later.svg');
         }
         &.trade-duration:before {
-            background-image: url('../images/app_2/sidebar/ic_timelapse.svg');
+            background-image: url('../images/sidebar/ic_timelapse.svg');
         }
         &.invest-amount:before {
-            background-image: url('../images/app_2/sidebar/ic_monetization.svg');
+            background-image: url('../images/sidebar/ic_monetization.svg');
         }
         &.barriers:before {
-            background-image: url('../images/app_2/sidebar/ic_barrier.svg');
+            background-image: url('../images/sidebar/ic_barrier.svg');
         }
         &.digits:before {
-            background-image: url('../images/app_2/sidebar/ic_digit.svg');
+            background-image: url('../images/sidebar/ic_digit.svg');
         }
     }
     input:not([readonly]) {
@@ -333,7 +333,7 @@
                         color: $COLOR_LIGHT_RED;
 
                         &:after {
-                            content: url('../images/app_2/purchase/ic_pricedown.svg');
+                            content: url('../images/purchase/ic_pricedown.svg');
                             position: absolute;
                             top: 2px;
                             right: 0.5rem;
@@ -343,7 +343,7 @@
                         color: $COLOR_LIGHT_BLUE;
 
                         &:after {
-                            content: url('../images/app_2/purchase/ic_priceup.svg');
+                            content: url('../images/purchase/ic_priceup.svg');
                             position: absolute;
                             top: 2px;
                             right: 0.5rem;

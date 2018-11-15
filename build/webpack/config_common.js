@@ -3,7 +3,7 @@ const PATHS          = require('./paths');
 
 const commonConfig = (grunt) => ({
     devtool: false, // handled by SourceMapDevToolPlugin
-    mode   : global.is_production ? 'production' : 'development',
+    mode   : global.is_release ? 'production' : 'development',
     stats  : {
         chunks    : false,
         maxModules: 0,
@@ -13,7 +13,7 @@ const commonConfig = (grunt) => ({
         filename     : '[name].js',
         chunkFilename: '[name].min.js',
         publicPath   : () => (
-            (global.is_production || grunt.file.exists(PATHS.ROOT, 'scripts/CNAME') ? '' : '/binary-static') +
+            (global.is_release || grunt.file.exists(PATHS.ROOT, 'scripts/CNAME') ? '' : '/binary-static') +
             (global.branch ? `/${global.branch_prefix}${global.branch}` : '') +
             '/js/'
         ),

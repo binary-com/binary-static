@@ -271,11 +271,11 @@ div.datepicker-container {
             pointer-events: auto;
         }
         &.picker-calendar-icon:before {
-            background-image: url('../images/app_2/common/calendar.svg');
+            background-image: url('../images/common/calendar.svg');
             background-repeat: no-repeat;
         }
         &.close-circle-icon:before {
-            background-image: url('../images/app_2/common/close_circle.svg');
+            background-image: url('../images/common/close_circle.svg');
             background-repeat: no-repeat;
         }
     }

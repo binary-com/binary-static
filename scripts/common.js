@@ -5,6 +5,7 @@ const util  = require('util');
 
 exports.root_path = require('app-root-path').path;
 
+// ---------- Pages config ----------
 exports.pages = require('./pages.js').map(p => ({
     save_as      : p[0],
     tpl_path     : p[1],
@@ -13,8 +14,26 @@ exports.pages = require('./pages.js').map(p => ({
     excludes     : p[4],
     only_ja      : p[4] && /^NOT-ja,en$/.test(p[4]),
     current_route: p[0].replace(/^(.+)\//, ''),
+    section      : p[5] || '',
 }));
 
+// ---------- Sections ----------
+exports.sections_config = {
+    '': { // '' is the default section when no 'section' specified in pages.js (to avoid adding 'app' as section for all)
+        path     : '',
+        js_files : ['vendor', 'binary'],
+        css_files: ['common.min', 'app.min', 'static.min'],
+        has_pjax : true,
+    },
+    app_2: {
+        path     : 'app',
+        js_files : ['vendor', 'react_mobx', 'smartcharts', 'binary_common', 'binary'],
+        css_files: ['app_2.min', 'smartcharts'],
+        has_pjax : false,
+    },
+};
+
+// ---------- Languages ----------
 exports.languages = ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'JA', 'KO', 'PL', 'PT', 'RU', 'TH', 'VI', 'ZH_CN', 'ZH_TW'];
 
 const affiliates_signup_language_map = { // object used instead of array to prevent accidental index changes
@@ -35,6 +54,7 @@ const affiliates_signup_language_map = { // object used instead of array to prev
 };
 exports.getAffiliateSignupLanguage = (lang = '') => (affiliates_signup_language_map[lang.toUpperCase()] || 0);
 
+// ---------- Helpers ----------
 exports.print = (text) => {
     process.stdout.clearLine();
     process.stdout.cursorTo(0);

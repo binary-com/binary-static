@@ -76,7 +76,7 @@ hr {
                             div.img:before {
                                 display: block;
                                 content: ' ';
-                                background-image: url('../images/app_2/header/binary_logo_light.svg');
+                                background-image: url('../images/header/binary_logo_light.svg');
                                 background-size: 138px 32px;
                                 height: 32px;
                                 width: 138px;
@@ -359,7 +359,7 @@ hr {
                         border-color: $COLOR_BRANDBLUE_85;
                     }
                     &.brand-logo div.img:before {
-                        background-image: url('../images/app_2/header/binary_logo_dark.svg');
+                        background-image: url('../images/header/binary_logo_dark.svg');
                     }
                 }
             }

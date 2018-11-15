@@ -11,22 +11,28 @@ const getPlugins     = require('./webpack/plugins');
 module.exports = function (grunt) {
     const common_config = commonConfig(grunt);
 
-    const app   = webpackMerge.smart(common_config, appConfig(grunt));
-    const app_2 = webpackMerge.smart(common_config, app2Config(grunt));
+    const config = {
+        app  : [webpackMerge.smart(common_config, appConfig(grunt))],
+        app_2: [webpackMerge.smart(common_config, app2Config(grunt))],
+        get all() {
+            return [
+                ...this.app,
+                ...this.app_2,
+            ];
+        },
+    };
 
-    const all   = [app, app_2];
+    const section = config[global.section];
 
-    const watch = all.map(config => webpackMerge(config, {
+    const watch_config = {
         watch: true,
         optimization: {
             minimize: false,
         },
-    }));
+    };
 
     return {
-        app,
-        app_2,
-        all,
-        watch,
+        section,
+        watch: section.map(conf => webpackMerge(conf, watch_config)),
     };
 };

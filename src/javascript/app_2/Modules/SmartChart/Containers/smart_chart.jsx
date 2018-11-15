@@ -8,7 +8,7 @@ import ChartMarker      from '../Components/Markers/marker.jsx';
 import TopWidgets       from '../Components/top_widgets.jsx';
 import { symbolChange } from '../Helpers/symbol';
 
-setSmartChartsPublicPath(Url.urlForStatic('js/app_2/'));
+setSmartChartsPublicPath(Url.urlForStatic('js/smartcharts/'));
 
 class Chart extends React.Component {
     componentWillUnmount() { this.props.onUnmount(); }
