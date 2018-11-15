@@ -56,7 +56,7 @@ MobileDropdown.propTypes = {
     all_items: PropTypes.arrayOf(
         PropTypes.shape({
             description: PropTypes.string,
-            Icon       : PropTypes.func,
+            Icon       : PropTypes.element,
             path       : PropTypes.string,
             title      : PropTypes.string,
         }),
