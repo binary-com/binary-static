@@ -310,21 +310,22 @@ const Home = () => {
             </div>
 
             <div className='gr-padding-10 fill-bg-color'>
-                <div className='container gr-padding-20'>
+                <div className='gr-padding-20 award-icons'>
                     <div className='gr-row'>
                         <div className='gr-12 align-self-center center-text gr-padding-10'>
                             <h3 className='no-margin'>{it.L('Award-winning trading excellence')}</h3>
                         </div>
                         <div className='gr-12 align-self-center'>
                             <div className='gr-row gr-row-align-center'>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10 gr-no-gutter'><img className='responsive' src={it.url_for('images/pages/home/awards/gbfa.svg')} /></div>
-                                <div className='gr-3 gr-4-m align-self-center gr-padding-10 gr-no-gutter'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')} /></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10 gr-no-gutter'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')} /></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10 gr-no-gutter'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')} /></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10 gr-no-gutter'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')} /></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10 gr-no-gutter'><img className='responsive' src={it.url_for('images/pages/home/awards/gb.svg')} /></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10 gr-no-gutter'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')} /></div>
-                                <div className='gr-1 gr-hide-m' />
+                                <div className='gr-2 gr-hide-m gr-hide-p' />
+                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbfa.svg')} /></div>
+                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')} /></div>
+                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')} /></div>
+                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')} /></div>
+                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gb.svg')} /></div>
+                                <div className='gr-1 gr-2-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')} /></div>
+                                <div className='gr-2 gr-3-p gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')} /></div>
+                                <div className='gr-2 gr-hide-m gr-hide-p' />
                             </div>
                         </div>
                     </div>

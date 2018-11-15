@@ -102,6 +102,15 @@
             }
         }
     }
+    .award-icons {
+        max-width: 1280px;
+        margin: 0 auto;
+
+        img {
+            height: 100px;
+            width: auto;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
