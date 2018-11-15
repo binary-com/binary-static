@@ -4,9 +4,7 @@ const ClientBase         = require('../../_common/base/client_base');
 const GTM                = require('../../_common/base/gtm');
 const SocketCache        = require('../../_common/base/socket_cache');
 const getElementById     = require('../../_common/common_functions').getElementById;
-const urlLang            = require('../../_common/language').urlLang;
 const removeCookies      = require('../../_common/storage').removeCookies;
-const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
 const applyToAllElements = require('../../_common/utility').applyToAllElements;
 const getPropertyValue   = require('../../_common/utility').getPropertyValue;
@@ -17,10 +15,6 @@ const Client = (() => {
             window.location.href = options.redirect_url || defaultRedirectUrl(); // need to redirect not using pjax
         }
     };
-
-    const shouldShowJP = (el) => (
-        isJPClient() ? (!/ja-hide/.test(el.classList) || /ja-show/.test(el.classList)) : !/ja-show/.test(el.classList)
-    );
 
     const activateByClientType = (section_id) => {
         const topbar_class = getElementById('topbar').classList;
@@ -35,9 +29,7 @@ const Client = (() => {
                 client_logged_in.classList.add('gr-centered');
 
                 applyToAllElements('.client_logged_in', (el) => {
-                    if (shouldShowJP(el)) {
-                        el.setVisibility(1);
-                    }
+                    el.setVisibility(1);
                 });
 
                 if (ClientBase.get('is_virtual')) {
@@ -46,9 +38,7 @@ const Client = (() => {
                     topbar_class.remove(primary_bg_color_dark);
                 } else {
                     applyToAllElements('.client_real', (el) => {
-                        if (shouldShowJP(el)) {
-                            el.setVisibility(1);
-                        }
+                        el.setVisibility(1);
                     }, '', el_section);
                     topbar_class.add(primary_bg_color_dark);
                     topbar_class.remove(secondary_bg_color);
@@ -56,9 +46,7 @@ const Client = (() => {
             });
         } else {
             applyToAllElements('.client_logged_out', (el) => {
-                if (shouldShowJP(el)) {
-                    el.setVisibility(1);
-                }
+                el.setVisibility(1);
             }, '', el_section);
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
@@ -100,7 +88,6 @@ const Client = (() => {
             const upgrade_link_map = {
                 realws       : ['costarica', 'iom', 'malta'],
                 maltainvestws: ['maltainvest'],
-                japanws      : ['japan'],
             };
             upgrade_link = Object.keys(upgrade_link_map).find(link =>
                 upgrade_link_map[link].indexOf(upgrade_info.can_upgrade_to) !== -1
@@ -113,14 +100,7 @@ const Client = (() => {
         });
     };
 
-    const defaultRedirectUrl = () => urlFor(isJPClient() ? 'multi_barriers_trading' : 'trading');
-
-    const setJPFlag = () => {
-        const is_jp_client = urlLang() === 'ja' || ClientBase.get('residence') === 'jp';
-        State.set('is_jp_client', is_jp_client); // accessible by files that cannot call Client
-    };
-
-    const isJPClient = () => State.get('is_jp_client');
+    const defaultRedirectUrl = () => urlFor('trading');
 
     return Object.assign({
         processNewAccount,
@@ -129,8 +109,6 @@ const Client = (() => {
         doLogout,
         getUpgradeInfo,
         defaultRedirectUrl,
-        setJPFlag,
-        isJPClient,
     }, ClientBase);
 })();
 

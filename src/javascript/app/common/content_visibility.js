@@ -1,8 +1,9 @@
+const isEuCountry      = require('./country_base').isEuCountry;
 const Client           = require('../base/client');
 const BinarySocket     = require('../base/socket');
+const MetaTrader       = require('../pages/user/metatrader/metatrader');
 const State            = require('../../_common/storage').State;
 const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
-const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
 
 /*
     data-show attribute controls element visibility based on
@@ -122,6 +123,16 @@ const ContentVisibility = (() => {
         return show_element;
     };
 
+    const hideEU = () => {
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            if (isEuCountry()) {
+                $('.eu-hide').setVisibility(0);
+                $('.eu-show').setVisibility(1);
+                $('.eu-hide-parent').parent().setVisibility(0);
+            }
+        });
+    };
+
     const controlVisibility = (current_landing_company_shortcode, client_has_mt_company, mt5_login_list) => {
         document.querySelectorAll('[data-show]').forEach(el => {
             const attr_str      = el.dataset.show;
@@ -139,6 +150,7 @@ const ContentVisibility = (() => {
         });
 
         updateTabDisplay();
+        hideEU();
     };
 
     return {

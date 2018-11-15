@@ -14,16 +14,22 @@ const PaymentAgentTransfer = (() => {
     const onLoad = () => {
         PaymentAgentTransferUI.initValues();
         BinarySocket.wait('get_settings', 'balance').then(() => {
+            const currency = Client.get('currency');
+            if (!currency || +Client.get('balance') === 0) {
+                $('#pa_transfer_loading').remove();
+                $('#no_balance_error').setVisibility(1);
+                return;
+            }
             is_authenticated_payment_agent = State.getResponse('get_settings.is_authenticated_payment_agent');
             if (is_authenticated_payment_agent) {
                 BinarySocket.send({
                     paymentagent_list: Client.get('residence'),
-                    currency         : Client.get('currency'),
+                    currency,
                 }).then((response) => {
                     const pa_values = response.paymentagent_list.list.filter(
                         (a) => a.paymentagent_loginid === Client.get('loginid')
                     )[0];
-                    init(pa_values);
+                    init(pa_values, currency);
                 });
             } else {
                 setFormVisibility(false);
@@ -31,20 +37,10 @@ const PaymentAgentTransfer = (() => {
         });
     };
 
-    const init = (pa) => {
-        const form_id     = '#frm_paymentagent_transfer';
-        const $no_bal_err = $('#no_balance_error');
-        const currency    = Client.get('currency');
-
+    const init = (pa, currency) => {
+        const form_id = '#frm_paymentagent_transfer';
         $form_error = $('#form_error');
 
-        if (!currency || +Client.get('balance') === 0) {
-            $('#pa_transfer_loading').remove();
-            $no_bal_err.setVisibility(1);
-            return;
-        }
-
-        $no_bal_err.setVisibility(0);
         setFormVisibility(true);
         PaymentAgentTransferUI.updateFormView(currency);
 
@@ -54,7 +50,7 @@ const PaymentAgentTransfer = (() => {
         ];
 
         FormManager.init(form_id, [
-            { selector: '#client_id', validations: ['req', ['regular', { regex: /^\w+\d+$/, message: 'Please enter a valid Login ID.' }]], request_field: 'transfer_to' },
+            { selector: '#client_id', validations: ['req', ['regular', { regex: /^\w+\d+$/, message: localize('Please enter a valid Login ID.') }]], request_field: 'transfer_to' },
             { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min: pa ? pa.min_withdrawal : 10, max: pa ? pa.max_withdrawal : 2000 }], ['custom', { func: () => +Client.get('balance') >= +$('#amount').val(), message: localize('Insufficient balance.') }]] },
 
             { request_field: 'dry_run', value: 1 },

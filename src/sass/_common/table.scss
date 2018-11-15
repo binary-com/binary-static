@@ -64,6 +64,17 @@ table {
     .w-80 {
         width: 80px;
     }
+    tr {
+        div {
+            .td {
+                display: table-cell;
+                @extend td;
+            }
+        }
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+        overflow-x: auto;
+    }
     @media (max-width: $md) {
         td {
             padding-left: 5px !important;

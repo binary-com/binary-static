@@ -3,13 +3,11 @@ const Client           = require('../../../../base/client');
 const BinarySocket     = require('../../../../base/socket');
 const FormManager      = require('../../../../common/form_manager');
 const localize         = require('../../../../../_common/localize').localize;
-const toTitleCase      = require('../../../../../_common/string_util').toTitleCase;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
 
 const TwoFactorAuthentication = (() => {
     const form_id = '#frm_two_factor_auth';
     const state = ['disabled', 'enabled'];
-    const default_res_error_msg = 'Sorry, an error occurred while processing your request.';
 
     let $btn_submit,
         $form,
@@ -17,7 +15,7 @@ const TwoFactorAuthentication = (() => {
         $qrcode_loading,
         $qrcode_key,
         current_state,
-        next_state;
+        localized_default_error;
 
     const onLoad = () => {
         $btn_submit         = $('#btn_submit');
@@ -32,6 +30,7 @@ const TwoFactorAuthentication = (() => {
     const init = () => {
         BinarySocket.send({ account_security: 1, totp_action: 'status' }).then((res) => {
             $two_factor_loading.setVisibility(0);
+            localized_default_error = localize('Sorry, an error occurred while processing your request.');
 
             if (res.error) {
                 handleError('status', res.error.message);
@@ -39,10 +38,10 @@ const TwoFactorAuthentication = (() => {
             }
 
             current_state = state[res.account_security.totp.is_enabled];
-            next_state    = state[+(!res.account_security.totp.is_enabled)].slice(0, -1);
+            const next_state = state[+(!res.account_security.totp.is_enabled)].slice(0, -1);
 
             $(`#${current_state}`).setVisibility(1);
-            $btn_submit.text(localize(toTitleCase(next_state)));
+            $btn_submit.text(current_state === 'enabled' ? localize('Disable') : localize('Enable'));
             $form.setVisibility(1);
 
             FormManager.init(form_id, [
@@ -102,26 +101,29 @@ const TwoFactorAuthentication = (() => {
 
     const handleSubmitResponse = (res) => {
         if ('error' in res) {
-            showFormMessage(getPropertyValue(res, ['error', 'message']) || default_res_error_msg);
+            showFormMessage(getPropertyValue(res, ['error', 'message']));
         } else {
             $('#otp').val('');
-            showFormMessage(`You have successfully ${next_state}d two-factor authentication for your account.`, true);
+            const localized_text = current_state === 'disabled' ?
+                localize('You have successfully enabled two-factor authentication for your account.') :
+                localize('You have successfully disabled two-factor authentication for your account.');
+            showFormMessage(localized_text, true);
         }
     };
 
-    const handleError = (id, err_msg) => {
-        $(`#${id}_error`).text(localize(err_msg || default_res_error_msg)).setVisibility(1);
+    const handleError = (id, localized_text) => {
+        $(`#${id}_error`).text(localized_text || localized_default_error).setVisibility(1);
     };
 
-    const showFormMessage = (msg, is_success) => {
+    const showFormMessage = (localized_text, is_success) => {
         if (is_success) {
             $(`${form_id}_success`)
-                .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })))
+                .html($('<ul/>', { class: 'checked' }).append($('<li/>', { text: localized_text })))
                 .css('display', 'block')
                 .delay(3000)
                 .fadeOut(1000, resetComponent);
         } else {
-            $(`${form_id}_error`).text(localize(msg));
+            $(`${form_id}_error`).text(localized_text || localized_default_error);
         }
     };
 

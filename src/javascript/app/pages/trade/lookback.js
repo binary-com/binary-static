@@ -39,11 +39,11 @@ const Lookback = (() => {
 
     const getBarrierLabel = (type) => {
         const barrier_map = {
-            LBFLOATCALL: ['Low'],
-            LBFLOATPUT : ['High'],
-            LBHIGHLOW  : ['High', 'Low'],
+            LBFLOATCALL: localize(['Low']),
+            LBFLOATPUT : localize(['High']),
+            LBHIGHLOW  : localize(['High', 'Low']),
         };
-        return barrier_map[type] || ['Barrier'];
+        return barrier_map[type] || localize(['Barrier']);
     };
 
     return {
