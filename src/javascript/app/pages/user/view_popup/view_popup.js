@@ -240,6 +240,9 @@ const ViewPopup = (() => {
                 `${formatMoney(contract.currency, contract.profit)}<span class="percent">(${(contract.profit_percentage > 0 ? '+' : '')}${addComma(contract.profit_percentage, 2)}%)</span>`,
                 { class: (contract.profit >= 0 ? 'profit' : 'loss') }
             );
+        } else if (!contract.sell_price && is_ended) {
+            containerSetText('trade_details_profit_loss', localize('Waiting for contract settlement.'));
+
         } else {
             containerSetText('trade_details_profit_loss', '-', { class: 'loss' });
         }
