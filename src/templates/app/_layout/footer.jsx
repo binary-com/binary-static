@@ -80,7 +80,6 @@ const Footer = () => (
                                     { text: it.L('Terms and Conditions'),   href: it.url_for('terms-and-conditions') },
                                     { text: it.L('Security and Privacy'),   href: it.url_for('terms-and-conditions'), param: '?anchor=security-and-privacy#privacy' },
                                     { text: it.L('Responsible Trading'),    href: it.url_for('responsible-trading') },
-                                    { text: it.L('Complaints'),             href: it.url_for('terms-and-conditions?anchor=complaints-and-disputes#legal-binary') },
                                 ]}
                             />
 
