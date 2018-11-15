@@ -24,6 +24,16 @@ export default class StatementStore extends BaseStore {
         super({ root_store });
     }
 
+    @computed
+    get is_empty() {
+        return !this.is_loading && this.data.length === 0;
+    }
+
+    @computed
+    get has_selected_date() {
+        return !!(this.date_from || this.date_to);
+    }
+
     @action.bound
     clearTable() {
         this.data           = [];
@@ -60,9 +70,9 @@ export default class StatementStore extends BaseStore {
             return;
         }
 
-        const currency               = Client.get('currency');
         const formatted_transactions = response.statement.transactions
-            .map(transaction => formatStatementTransaction(transaction, currency));
+            .map(transaction => formatStatementTransaction(transaction,
+                this.root_store.client.current_account.currency));
 
         this.data           = [...this.data, ...formatted_transactions];
         this.has_loaded_all = formatted_transactions.length < batch_size;
@@ -103,15 +113,5 @@ export default class StatementStore extends BaseStore {
         eventBus.ignore('ClientAccountHasSwitched');
         this.clearTable();
         this.clearDateFilter();
-    }
-
-    @computed
-    get is_empty() {
-        return !this.is_loading && this.data.length === 0;
-    }
-
-    @computed
-    get has_selected_date() {
-        return !!(this.date_from || this.date_to);
     }
 }

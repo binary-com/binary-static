@@ -5,7 +5,6 @@ import {
     runInAction,
     reaction,
 }                                     from 'mobx';
-import Client                         from '_common/base/client_base';
 import {
     getMinPayout,
     isCryptocurrency,
@@ -58,7 +57,6 @@ export default class TradeStore extends BaseStore {
     @observable basis           = '';
     @observable basis_list      = [];
     @observable currencies_list = {};
-    @observable currency        = Client.get('currency');
 
     // Duration
     @observable duration            = 5;
@@ -111,8 +109,8 @@ export default class TradeStore extends BaseStore {
             },
         );
 
-        if (Client.isLoggedIn) {
-            this.processNewValuesAsync({ currency: Client.get('currency') });
+        if (this.root_store.client.is_logged_in) {
+            this.processNewValuesAsync({ currency: this.root_store.client.current_account.currency });
         }
 
         // Adds intercept to change min_max value of duration validation
@@ -266,8 +264,12 @@ export default class TradeStore extends BaseStore {
     async processNewValuesAsync(obj_new_values = {}, is_changed_by_user = false) {
         // Sets the default value to Amount when Currency has changed from Fiat to Crypto and vice versa.
         // The source of default values is the website_status response.
-        if (is_changed_by_user && /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
-            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)) {
+        if (is_changed_by_user &&
+            /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
+            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(
+                this.root_store.client.current_account.currency
+            )
+        ) {
             obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
         }
 

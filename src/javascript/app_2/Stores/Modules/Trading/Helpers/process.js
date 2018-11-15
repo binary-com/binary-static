@@ -11,7 +11,7 @@ import * as StartDate     from '../Actions/start_date';
 export const processTradeParams = async(store, new_state) => {
     const snapshot = store.getSnapshot();
 
-    if (!Client.get('currency') && isEmptyObject(store.currencies_list)) {
+    if (!store.root_store.client.currency && isEmptyObject(store.currencies_list)) {
         extendOrReplace(snapshot, await Currency.getCurrenciesAsync(store.currency));
     }
 

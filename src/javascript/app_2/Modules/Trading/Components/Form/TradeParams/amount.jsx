@@ -4,7 +4,6 @@ import {
     observer }                  from 'mobx-react';
 import PropTypes                from 'prop-types';
 import React                    from 'react';
-import Client                   from '_common/base/client_base';
 import {
     addComma,
     getDecimalPlaces }          from '_common/base/currency_base';
@@ -35,7 +34,7 @@ const Amount = ({
             </div>
         );
     }
-    const has_currency = Client.get('currency');
+    const has_currency = currency;
     const amount_container_class = classNames('amount-container', {
         'three-columns': !has_currency,
     });

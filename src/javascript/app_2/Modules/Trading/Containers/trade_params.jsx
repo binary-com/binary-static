@@ -24,6 +24,7 @@ class TradeParams extends React.Component {
                         {
                             server_time: this.props.server_time,
                         },
+                        this.props.client_store,
                     )}
                 />
             ));
@@ -35,6 +36,7 @@ class TradeParams extends React.Component {
 }
 
 TradeParams.propTypes = {
+    client_store   : PropTypes.object,
     form_components: MobxPropTypes.arrayOrObservableArray,
     is_minimized   : PropTypes.bool,
     is_nativepicker: PropTypes.bool,
@@ -43,9 +45,10 @@ TradeParams.propTypes = {
 };
 
 export default connect(
-    ({ common, modules }) => ({
+    ({ common, modules, client }) => ({
         server_time    : common.server_time,
         form_components: modules.trade.form_components,
         trade_store    : modules.trade,
+        client_store   : client,
     })
 )(TradeParams);

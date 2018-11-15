@@ -311,6 +311,7 @@ const ClientBase = (() => {
         setNewAccount,
         currentLandingCompany,
         shouldCompleteTax,
+        getAllAccountsObject,
         getMT5AccountType,
         getBasicUpgradeInfo,
         getLandingCompanyValue,

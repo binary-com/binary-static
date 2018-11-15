@@ -22,7 +22,7 @@ const BinarySocketGeneral = (() => {
         // Header.hideNotification();
         if (is_ready) {
             if (!Login.isLoginPages()) {
-                if (!Client.isValidLoginid()) {
+                if (!client_store.is_valid_login) {
                     requestLogout();
                     return;
                 }
@@ -46,7 +46,7 @@ const BinarySocketGeneral = (() => {
                     }
                     requestLogout();
                 } else if (!Login.isLoginPages() && !/authorize/.test(State.get('skip_response'))) {
-                    if (response.authorize.loginid !== Client.get('loginid')) {
+                    if (response.authorize.loginid !== client_store.loginid) {
                         requestLogout();
                     } else {
                         Client.responseAuthorize(response);
@@ -56,12 +56,12 @@ const BinarySocketGeneral = (() => {
                         WS.getAccountStatus();
                         WS.payoutCurrencies();
                         WS.mt5LoginList();
-                        setResidence(response.authorize.country || Client.get('residence'));
-                        if (!Client.get('is_virtual')) {
+                        setResidence(response.authorize.country || client_store.current_account.residence);
+                        if (!client_store.is_virtual) {
                             WS.getSelfExclusion();
                         }
                         BinarySocket.sendBuffered();
-                        if (/bch/i.test(response.authorize.currency) && !Client.get('accepted_bch')) {
+                        if (/bch/i.test(response.authorize.currency) && !client_store.current_account.accepted_bch) {
                             // showPopup({
                             //     url        : urlFor('user/warning'),
                             //     popup_id   : 'warning_popup',
