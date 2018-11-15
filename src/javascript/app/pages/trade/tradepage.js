@@ -59,14 +59,14 @@ const TradePage = (() => {
                 }
             });
 
-            BinarySocket.wait('landing_company').then(() => {
+            BinarySocket.wait('website_status', 'landing_company').then(() => {
                 const financialShortcode = State.getResponse('landing_company.financial_company.shortcode');
                 const showMfsaMessage = ((!Client.isLoggedIn() && isEuCountry()) || financialShortcode === 'maltainvest');
                 if (showMfsaMessage) {
+                    $('#professional-cta').setVisibility(1);
                     $('.mfsa_message')
                         .removeClass('container')
                         .attr('style', 'margin-bottom: 40px');
-                    $('#professional-cta').setVisibility(1);
                 }
             });
         });
