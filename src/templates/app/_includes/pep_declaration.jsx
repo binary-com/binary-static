@@ -15,7 +15,7 @@ const PepDeclaration = () => (
                     {it.L('What is this?')}
                 </span>
             </label>
-        </div>git
+        </div>
     </Fieldset>
 );
 
