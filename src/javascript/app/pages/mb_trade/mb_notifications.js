@@ -1,9 +1,10 @@
+const Login           = require('../../../_common/base/login');
+const CommonFunctions = require('../../../_common/common_functions');
+
 /*
  * Notifications manages various notification messages
  *
  */
-const Login           = require('../../../_common/base/login');
-const CommonFunctions = require('../../../_common/common_functions');
 
 const MBNotifications = (() => {
     /*
@@ -14,13 +15,13 @@ const MBNotifications = (() => {
      * }
      */
     const showErrorMessage = (options) => {
-        const $note_wrapper          = getContainer();
-        const $this_uid              = $note_wrapper.find(`#${options.uid}`);
-        const $login_error_container = CommonFunctions.getElementById('login_error_container');
-        $login_error_container.setVisibility(0);
+        const $note_wrapper            = getContainer();
+        const $this_uid                = $note_wrapper.find(`#${options.uid}`);
+        const el_login_error_container = CommonFunctions.getElementById('login_error_container');
+        el_login_error_container.setVisibility(0);
 
         if (/LOGIN_ERROR/.test(options.uid)) {
-            $login_error_container.setVisibility(1);
+            el_login_error_container.setVisibility(1);
             const login_error_btn_login = CommonFunctions.getElementById('login_error_btn_login');
             login_error_btn_login.removeEventListener('click', loginOnClick);
             login_error_btn_login.addEventListener('click', loginOnClick);
