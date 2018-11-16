@@ -183,7 +183,6 @@ const Careers = () => {
                         padding='20'
                         icon='images/pages/careers/eh-icon.svg'
                         href={it.url_for('download/binary-employee-handbook.pdf')}
-                        download
                         text={it.L('Employee handbook')}
                         target='_blank'
                     />
