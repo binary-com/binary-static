@@ -62,15 +62,15 @@ const TradePage = (() => {
             BinarySocket.wait('website_status', 'landing_company').then(() => {
                 const is_logged_in = Client.isLoggedIn();
                 const is_eu = isEuCountry();
-                const is_malta = State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest';
+                const is_maltainvest = Client.get('landing_company_shortcode') === 'maltainvest';
 
-                if ((!is_logged_in && is_eu) || (is_logged_in && is_malta)) {
-                    if ((is_logged_in && is_eu) || (is_logged_in && is_malta)) {
-                        $('#professional-cta').setVisibility(1);
-                    }
+                if ((is_logged_in && is_eu) || (is_maltainvest)) {
+                    $('#professional-cta').setVisibility(1);
+                }
+                if ((!is_logged_in && is_eu) || (is_logged_in && is_maltainvest)) {
                     $('.mfsa_message')
                         .removeClass('container')
-                        .attr('style', 'margin-bottom: 40px'); // hello
+                        .attr('style', 'margin-bottom: 40px');
                 }
             });
         });
