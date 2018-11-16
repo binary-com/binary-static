@@ -11,9 +11,9 @@ const ViewPopup         = require('../user/view_popup/view_popup');
 const Client            = require('../../base/client');
 const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
+const isEuCountry       = require('../../common/country_base').isEuCountry;
 const Guide             = require('../../common/guide');
 const State             = require('../../../_common/storage').State;
-const isEuCountry       = require('../../common/country_base').isEuCountry;
 
 const TradePage = (() => {
     let events_initialized = 0;
