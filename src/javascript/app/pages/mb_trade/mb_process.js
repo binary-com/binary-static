@@ -10,7 +10,6 @@ const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
-const getLanguage      = require('../../../_common/language').get;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const urlForStatic     = require('../../../_common/url').urlForStatic;
@@ -23,7 +22,7 @@ const MBProcess = (() => {
         contract_timeout;
 
     const getSymbols = () => {
-        BinarySocket.wait('website_status').then((website_status) => {
+        BinarySocket.wait('website_status', 'landing_company').then(() => {
             const landing_company_obj = State.getResponse('landing_company');
             const allowed_markets     = Client.currentLandingCompany().legal_allowed_markets;
             if (Client.isLoggedIn() && allowed_markets && allowed_markets.indexOf('forex') === -1) {
@@ -34,10 +33,8 @@ const MBProcess = (() => {
                 active_symbols: 'brief',
                 product_type  : 'multi_barrier',
             };
-            if (landing_company_obj) {
-                req.landing_company = landing_company_obj.financial_company ? landing_company_obj.financial_company.shortcode : 'japan';
-            } else if (website_status.website_status.clients_country === 'jp' || getLanguage() === 'JA') {
-                req.landing_company = 'japan';
+            if (landing_company_obj && landing_company_obj.financial_company) {
+                req.landing_company = landing_company_obj.financial_company.shortcode;
             }
             BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {
                 if (!response.active_symbols || !response.active_symbols.length) {
@@ -55,15 +52,14 @@ const MBProcess = (() => {
      */
     const processActiveSymbols = (data) => {
         if (getPropertyValue(data, 'error')) {
-            MBNotifications.show({ text: data.error.message, uid: 'ACTIVE_SYMBOLS' });
+            MBNotifications.show({ localized_text: data.error.message, uid: 'ACTIVE_SYMBOLS' });
             return;
         }
 
         // populate the Symbols object
         MBSymbols.details(data);
 
-        const is_show_all  = Client.isLoggedIn() && !Client.isJPClient();
-        const symbols_list = is_show_all ? MBSymbols.getAllSymbols() : MBSymbols.underlyings().major_pairs;
+        const symbols_list = MBSymbols.getAllSymbols();
         let symbol         = MBDefaults.get('underlying');
 
         if (!symbol || !symbols_list[symbol]) {
@@ -86,7 +82,7 @@ const MBProcess = (() => {
             populateUnderlyings(symbol);
 
             if (symbol && !symbols_list[symbol].is_active) {
-                MBNotifications.show({ text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
+                MBNotifications.show({ localized_text: localize('This symbol is not active. Please try another symbol.'), uid: 'SYMBOL_INACTIVE' });
             } else {
                 processMarketUnderlying();
             }
@@ -100,7 +96,7 @@ const MBProcess = (() => {
         const $list = $underlyings.find('.list');
         $list.empty();
         $underlyings.find('.current').html($('<div/>', { class: 'gr-row' })
-            .append($('<span/>', { class: 'nav-caret ja-hide' }))
+            .append($('<span/>', { class: 'nav-caret' }))
             .append($('<img/>', { class: 'gr-3 gr-no-gutter-m' }))
             .append($('<span/>', { class: 'name gr-6 gr-5-m align-self-center' }))
             .append($('<span/>', { class: 'gr-3 gr-4-m align-self-center still', id: 'spot' })));
@@ -126,7 +122,7 @@ const MBProcess = (() => {
     const handleMarketClosed = () => {
         $(selectors).setVisibility(0);
         hideShowMbTrading('hide');
-        MBNotifications.show({ text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
+        MBNotifications.show({ localized_text: localize('Market is closed. Please try again later.'), uid: 'MARKET_CLOSED' });
         symbols_timeout = setTimeout(() => { getSymbols(); }, 30000);
     };
 
@@ -193,7 +189,7 @@ const MBProcess = (() => {
      */
     const processContract = (contracts, should_send_proposal) => {
         if (getPropertyValue(contracts, 'error')) {
-            MBNotifications.show({ text: contracts.error.message, uid: contracts.error.code });
+            MBNotifications.show({ localized_text: contracts.error.message, uid: contracts.error.code });
             // Hide trading form but still display the chart
             $('#period').parents('.selection_wrapper').setVisibility(0);
             $(`.price-table, ${Client.isLoggedIn() ? '#tab_explanation' : '#trade_analysis'}`).setVisibility(0);
@@ -242,7 +238,7 @@ const MBProcess = (() => {
             proposal_array: 1,
             subscribe     : 1,
             basis         : 'payout',
-            amount        : Client.isJPClient() ? (parseInt(payout) || 1) * 1000 : payout,
+            amount        : payout,
             currency      : MBContract.getCurrency(),
             symbol        : MBDefaults.get('underlying'),
             passthrough   : { req_id: MBPrice.getReqId() },
@@ -285,7 +281,7 @@ const MBProcess = (() => {
 
         // all barriers expired
         if (all_expired) {
-            MBNotifications.show({ text: `${localize('All barriers in this trading window are expired')}.`, uid: 'ALL_EXPIRED' });
+            MBNotifications.show({ localized_text: `${localize('All barriers in this trading window are expired')}.`, uid: 'ALL_EXPIRED' });
             MBPrice.hidePriceOverlay();
         } else {
             MBNotifications.hide('ALL_EXPIRED');
@@ -297,7 +293,7 @@ const MBProcess = (() => {
         if (response.passthrough.req_id === req_id) {
             if (response.error) {
                 const error_message = response.error.error ? response.error.error.message : response.error.message;
-                MBNotifications.show({ text: error_message, uid: 'PROPOSAL', dismissible: false });
+                MBNotifications.show({ localized_text: error_message, uid: 'PROPOSAL', dismissible: false });
                 return;
             }
             MBNotifications.hide('PROPOSAL');

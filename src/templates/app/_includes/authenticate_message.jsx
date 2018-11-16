@@ -32,9 +32,6 @@ const FileSelector = ({
                                 <li key={i}>{instruction}</li>
                             ))}
                         </ul>
-                        <p className='learn_more'>
-                            <a href='#' target='_blank'>{it.L('Learn more')}</a>
-                        </p>
                     </div>
                     <div className='gr-5 gr-12-m'>
                         <p className='font-s'>
@@ -108,10 +105,15 @@ const FileSelector = ({
     </div>
 );
 
-
 const AuthenticateMessage = () => (
     <React.Fragment>
         <p>{it.L('Authenticate your account by verifying your identity and address.')}</p>
+
+        <p>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
+
+        <p className='learn_more'>
+            <a className='button' href='#' target='_blank'><span>{it.L('View Guide')}</span></a>
+        </p>
 
         <FileSelector
             heading={it.L('1. Proof of identity')}

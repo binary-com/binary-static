@@ -55,7 +55,6 @@ const ColumnValues = ({ gr, icon, header }) => (
     </div>
 );
 
-
 const ColumnLG = ({ center, image, text, link }) => (
     <div className={`gr-4 gr-12-m${center ? ' center-text' : ''}`}>
         <div>
@@ -184,7 +183,6 @@ const Careers = () => {
                         padding='20'
                         icon='images/pages/careers/eh-icon.svg'
                         href={it.url_for('download/binary-employee-handbook.pdf')}
-                        download
                         text={it.L('Employee handbook')}
                         target='_blank'
                     />
@@ -193,7 +191,7 @@ const Careers = () => {
 
             <div className='container'>
                 <div className='gr-padding-30 center-text'>
-                    <h1 data-anchor>{it.L('Open positions')}</h1>
+                    <h1 data-anchor='open-positions'>{it.L('Open positions')}</h1>
                     <p>{it.L('[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we\'ve developed a number of exciting career opportunities in the following areas:', it.website_name)}</p>
                 </div>
                 <div className='gr-row'>
@@ -293,7 +291,11 @@ const Careers = () => {
                     </div>
                 </div>
             </div>
-
+            <div className='container eu-show invisible'>
+                <div className='center-text'>
+                    <p>{it.L('Please read this [_1]privacy policy[_2] before submitting your application.', `<a href="${it.url_for('careers/privacy-policy')}">`, '</a>')}</p>
+                </div>
+            </div>
             <div className='footer-email secondary-bg-color'>
                 <div className='container'>
                     <p>{it.L('To apply, please submit your CV and a cover letter to [_1]','<a href="mailto:hr@binary.com" rel="nofollow">hr@binary.com.</a>')}</p>

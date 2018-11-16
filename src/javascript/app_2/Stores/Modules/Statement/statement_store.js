@@ -93,7 +93,6 @@ export default class StatementStore extends BaseStore {
         this.clearDateFilter();
     }
 
-
     @computed
     get is_empty() {
         return !this.is_loading && this.data.length === 0;

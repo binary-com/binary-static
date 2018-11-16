@@ -5,7 +5,6 @@ const BinarySocket     = require('../../../base/socket');
 const Validation       = require('../../../common/form_validation');
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
-const toTitleCase      = require('../../../../_common/string_util').toTitleCase;
 const getPropertyValue = require('../../../../_common/utility').getPropertyValue;
 
 const MetaTrader = (() => {
@@ -40,7 +39,8 @@ const MetaTrader = (() => {
     const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
     const setMTCompanies = () => {
-        mt_companies = mt_companies || MetaTraderConfig[State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest' ? 'mt_financial_companies' : 'mt_companies'];
+        const is_financial = State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest';
+        mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
 
     const isEligible = () => {
@@ -57,24 +57,20 @@ const MetaTrader = (() => {
     };
 
     const addAccount = (company) => {
-        ['demo', 'real'].forEach((type) => {
-            Object.keys(mt_companies[company]).forEach((acc_type) => {
-                const company_info     = mt_companies[company][acc_type];
-                const mt5_account_type = company_info.mt5_account_type;
-                const title            = localize(`${toTitleCase(type)} ${company_info.title}`);
-                const is_demo          = type === 'demo';
+        Object.keys(mt_companies[company]).forEach((acc_type) => {
+            const company_info     = mt_companies[company][acc_type];
+            const mt5_account_type = company_info.mt5_account_type;
+            const is_demo          = /^demo_/.test(acc_type);
+            const type             = is_demo ? 'demo' : 'real';
 
-                if (!(is_demo && company_info.is_real_only)) {
-                    accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
-                        title,
-                        is_demo,
-                        mt5_account_type,
-                        account_type: is_demo ? 'demo' : company,
-                        max_leverage: company_info.max_leverage,
-                        short_title : company_info.title,
-                    };
-                }
-            });
+            accounts_info[`${type}_${mt_company[company]}${mt5_account_type ? `_${mt5_account_type}` : ''}`] = {
+                is_demo,
+                mt5_account_type,
+                account_type: is_demo ? 'demo' : company,
+                max_leverage: company_info.max_leverage,
+                short_title : company_info.short_title,
+                title       : company_info.title,
+            };
         });
     };
 
@@ -133,7 +129,11 @@ const MetaTrader = (() => {
 
         Object.keys(fields[action]).forEach((field) => {
             const field_obj = fields[action][field];
-            if (field_obj.request_field) {
+            if (!field_obj.request_field) return;
+
+            if (field_obj.is_radio) {
+                req[field_obj.request_field] = MetaTraderUI.$form().find(`input[name=${field_obj.id.slice(1)}]:checked`).val();
+            } else {
                 req[field_obj.request_field] = MetaTraderUI.$form().find(field_obj.id).val();
             }
         });
@@ -161,6 +161,14 @@ const MetaTrader = (() => {
             MetaTraderUI.postValidate(acc_type, action).then((is_ok) => {
                 if (!is_ok) {
                     MetaTraderUI.enableButton(action);
+                    return;
+                }
+
+                if (action === 'verify_password_reset_token') {
+                    MetaTraderUI.setToken($('#txt_verification_code').val());
+                    if (typeof actions_info[action].onSuccess === 'function') {
+                        actions_info[action].onSuccess({}, MetaTraderUI.$form());
+                    }
                     return;
                 }
 

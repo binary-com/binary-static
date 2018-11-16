@@ -1,6 +1,4 @@
 const AssetIndex       = require('./asset_index');
-const BinaryPjax       = require('../../../base/binary_pjax');
-const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
 const Table            = require('../../../common/attach_dom/table');
 const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
@@ -14,11 +12,6 @@ const AssetIndexUI = (() => {
         market_columns;
 
     const onLoad = () => {
-        if (isJPClient()) {
-            BinaryPjax.loadPreviousUrl();
-            return;
-        }
-
         $container  = $('#asset-index');
         asset_index = market_columns = undefined;
         active_symbols = undefined;

@@ -7,8 +7,10 @@ describe('extract_js_texts.js', () => {
 
     before(function (done) {
         this.timeout(60000);
-        extract.parse('app_2', true);
-        errors_count = extract.getErrorsCount();
+        errors_count = ['app', 'app_2'].reduce((acc, app) => {
+            extract.parse(app, true);
+            return acc +  extract.getErrorsCount();
+        }, 0);
         done();
     });
 
@@ -25,6 +27,7 @@ describe('extract_js_texts.js', () => {
 \t1. Please check the errors and refactor the code accordingly.
 \t2. If there is no way to have the string literal in js code (i.e. API texts),
 \t   add them to 'scripts/js_texts/static_strings_[app/app_2].js'.
+\t   add them to 'scripts/js_texts/static_strings_app.js'.
 \t3. At the end, when you're sure that a strings already been taken care of somewhere else,
 \t   just put this comment /* localize-ignore */ right after the first argument of localize() call to ignore it.`
                 )

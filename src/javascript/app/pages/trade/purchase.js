@@ -1,20 +1,22 @@
-const Contract           = require('./contract');
-const getLookBackFormula = require('./lookback').getFormula;
-const isLookback         = require('./lookback').isLookback;
-const isCallputspread    = require('./callputspread').isCallputspread;
-const Symbols            = require('./symbols');
-const Tick               = require('./tick');
-const TickDisplay        = require('./tick_trade');
-const updateValues       = require('./update_values');
-const Client             = require('../../base/client');
-const BinarySocket       = require('../../base/socket');
-const formatMoney        = require('../../common/currency').formatMoney;
-const CommonFunctions    = require('../../../_common/common_functions');
-const localize           = require('../../../_common/localize').localize;
-const padLeft            = require('../../../_common/string_util').padLeft;
-const urlFor             = require('../../../_common/url').urlFor;
-const createElement      = require('../../../_common/utility').createElement;
-const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
+const Contract                 = require('./contract');
+const getLookBackFormula       = require('./lookback').getFormula;
+const isLookback               = require('./lookback').isLookback;
+const isCallputspread          = require('./callputspread').isCallputspread;
+const Symbols                  = require('./symbols');
+const Tick                     = require('./tick');
+const TickDisplay              = require('./tick_trade');
+const updateValues             = require('./update_values');
+const Client                   = require('../../base/client');
+const BinarySocket             = require('../../base/socket');
+const formatMoney              = require('../../common/currency').formatMoney;
+const CommonFunctions          = require('../../../_common/common_functions');
+const localize                 = require('../../../_common/localize').localize;
+const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
+const padLeft                  = require('../../../_common/string_util').padLeft;
+const urlFor                   = require('../../../_common/url').urlFor;
+const createElement            = require('../../../_common/utility').createElement;
+const getPropertyValue         = require('../../../_common/utility').getPropertyValue;
+const template                 = require('../../../_common/utility').template;
 
 /*
  * Purchase object that handles all the functions related to
@@ -227,7 +229,17 @@ const Purchase = (() => {
                 }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
                     const is_won = +tick_config.selected_tick_number === +tick_config.winning_tick_number;
-                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), localize(`Tick [_1] is ${is_won ? '' : 'not'} the ${tick_config.is_tick_high ? 'highest' : 'lowest'} tick`, [tick_config.selected_tick_number]));
+                    let localized_text;
+                    if (tick_config.is_tick_high) {
+                        localized_text = is_won
+                            ? localizeKeepPlaceholders('Tick [_1] is the highest tick')
+                            : localizeKeepPlaceholders('Tick [_1] is not the highest tick');
+                    } else {
+                        localized_text = is_won
+                            ? localizeKeepPlaceholders('Tick [_1] is the lowest tick')
+                            : localizeKeepPlaceholders('Tick [_1] is not the lowest tick');
+                    }
+                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), template(localized_text, [tick_config.selected_tick_number]));
                 }
             }
         }

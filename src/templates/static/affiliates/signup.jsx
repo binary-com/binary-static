@@ -13,15 +13,15 @@ const Signup = () => (
         <div className='container'>
             <h1>{it.L('[_1] Affiliate Programme', it.website_name)}</h1>
             <p>
-                {it.L('Earn up to 35% commission with an award-winning binary options trading platform.')}
+                {it.L('Join the [_1] Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform.', it.website_name)}
             </p>
 
             <div className='gr-padding-20'>
                 <h2 className='center-text margin-bottom-50'>{it.L('How it works')}</h2>
                 <div className='steps'>
-                    <Step circle_no='1' header={it.L('Sign up')}                       text={it.L('Getting started is free and easy – just [_1]fill out the application form[_2], choose from two types of commission plans and wait for our approval.', `<a href='${it.affiliate_signup_url}' target="_blank">` ,'</a>')} />
-                    <Step circle_no='2' header={it.L('Promote [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the marketing tools we provide to advertise [_1] to your audience.', it.website_name)} />
-                    <Step circle_no='3' header={it.L('Earn')}                          text={it.L('Receive your affiliate commission once your referred clients start trading on our platform.')} />
+                    <Step circle_no='1' header={it.L('Sign up')}                         text={it.L('Getting started is free and easy – just [_1]fill out the application form[_2], choose your preferred commission plan and wait for our approval.', `<a href='${it.affiliate_signup_url}' target="_blank">` ,'</a>')} />
+                    <Step circle_no='2' header={it.L('Introduce [_1]', it.website_name)} text={it.L('Use your unique affiliate link and the referral tools we provide to introduce [_1] to your audience.', it.website_name)} />
+                    <Step circle_no='3' header={it.L('Earn')}                            text={it.L('Receive your affiliate commission once your referred clients start trading on our platform.')} />
                 </div>
             </div>
         </div>
@@ -36,9 +36,9 @@ const Signup = () => (
                     <AffiliateBox title={it.L('Dedicated support')}        image='contact-icon'          text={it.L('Contact our dedicated affiliate support team for help and suggestions.')} />
                 </BoxRow>
                 <BoxRow bottom_row>
-                    <AffiliateBox title={it.L('Advanced marketing tools')} image='marketing-icon'        text={it.L('Promote our products easily, and keep track of all your earnings with our nifty marketing tools.')} />
-                    <AffiliateBox title={it.L('High conversions')}         image='conversion-icon'       text={it.L('We’ve paid millions in commission to date through our industry-leading affiliate programme.')} />
-                    <AffiliateBox title={it.L('Multiple opportunities')}   image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the <a href=\'[_1]\'>Payment Agent Programme</a>.', it.url_for('payment-agent'))} />
+                    <AffiliateBox title={it.L('Advanced referral tools')} image='marketing-icon'        text={it.L('Recommend our products easily, and keep track of all your earnings with our nifty referral tools.')} />
+                    <AffiliateBox title={it.L('High conversions')}        image='conversion-icon'       text={it.L('We’ve paid millions in commission to date through our industry-leading affiliate programme.')} />
+                    <AffiliateBox title={it.L('Multiple opportunities')}  image='diversify-income-icon' text={it.L('Diversify your income stream through other partnership opportunities such as the <a href=\'[_1]\'>Introducing Broker Programme</a>.', it.url_for('ib-programme/ib-signup'))} />
                 </BoxRow>
 
                 <div className='gr-padding-30'>
@@ -52,7 +52,7 @@ const Signup = () => (
         <div className='container gr-padding-20'>
             <div className='center-text'>
                 <h2>{it.L('Types of affiliate commission plans')}</h2>
-                <p>{it.L('You can choose from two types of affiliate commission plans:')}</p>
+                <p>{it.L('Choose from the following affiliate commission plans:')}</p>
             </div>
 
             <TabContainer className='gr-padding-20 full-width' theme='light'>
@@ -62,13 +62,14 @@ const Signup = () => (
                     items={[
                         { id: 'revenue_share',   text: it.L('Revenue share') },
                         { id: 'turnover',        text: it.L('Turnover') },
+                        { id: 'cpa_eu_only',     text: it.L('CPA (EU only)') },
                         { id: 'commission_tabs_selector', className: 'tab-selector' },
                     ]}
                 />
                 <div className='tab-content'>
                     <TabContentContainer>
                         <TabContent id='revenue_share'>
-                            <p className='mobile-text-small'>{it.L('Profit from increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients.')}</p>
+                            <p className='mobile-text-small'>{it.L('Earn increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients.')}</p>
                             <div className='gr-padding-20 center-text table-container'>
                                 <Table
                                     data={{
@@ -148,6 +149,13 @@ const Signup = () => (
                             </div>
                             <p className='mobile-text-small'>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
                         </TabContent>
+                        <TabContent id='cpa_eu_only'>
+                            <h3 className='gr-padding-20'>
+                                <span>{it.L('Cost per acquisition (CPA) for EU affiliates only')}</span>
+                            </h3>
+                            <p className='mobile-text-small'>{it.L('Earn USD 100 in commission for each successful referral. Your referred client must open a [_1]real money investment account[_2] through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU.', '<strong>', '</strong>')}</p>
+                            <p className='mobile-text-small'>{it.L('All commissions are credited into your account by the 15th of every month.')}</p>
+                        </TabContent>
                     </TabContentContainer>
                 </div>
             </TabContainer>
@@ -177,9 +185,9 @@ const Signup = () => (
                     <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/account-icon.svg')} alt='account-icon' />
                     <p><strong>{it.L('Account management and tracking')}</strong></p>
                 </a>
-                <a href={`${it.url_for('affiliate/faq')}#marketing-and-promotions`} className='gr-3 gr-6-m center-text faq-box'>
+                <a href={`${it.url_for('affiliate/faq')}#referral-tools`} className='gr-3 gr-6-m center-text faq-box'>
                     <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/marketing-icon.svg')} alt='marketing-icon' />
-                    <p><strong>{it.L('Marketing and promotions')}</strong></p>
+                    <p><strong>{it.L('Referral tools')}</strong></p>
                 </a>
                 <a href={`${it.url_for('affiliate/faq')}#support`} className='gr-3 gr-6-m center-text faq-box'>
                     <img className='fixed-height-img' src={it.url_for('images/pages/affiliates/support-faq-icon.svg')} alt='support-faq-icon' />
