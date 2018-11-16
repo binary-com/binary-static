@@ -245,7 +245,7 @@ const ViewPopup = (() => {
         }
 
         if (!contract.sell_price && is_ended) {
-            containerSetText('trade_details_profit_loss', localize('Waiting for contract settlement.'), { class: '' });
+            containerSetText('trade_details_profit_loss', localize('Waiting for contract settlement.'), { class: 'pending' });
         }
 
         if (!is_started) {
