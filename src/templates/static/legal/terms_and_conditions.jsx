@@ -2,7 +2,6 @@ import React from 'react';
 import Affiliate from './tac_sections/affiliate.jsx';
 import Api from './tac_sections/api.jsx';
 import Biel from './tac_sections/biel.jsx';
-import Complaints from './tac_sections/complaints.jsx';
 import DepositBonus from './tac_sections/deposit_bonus.jsx';
 import Tac from './tac_sections/tac.jsx';
 import TradingRules from './tac_sections/trading_rules.jsx';
@@ -45,15 +44,11 @@ const TermsAndConditions = () => (
                 <Api />
             </Section>
 
-            <Section sectionNum='6' link_id='complaints-disputes'>
-                <Complaints />
-            </Section>
-
-            <Section sectionNum='7' link_id='biel' className='invisible eu-show'>
+            <Section sectionNum='6' link_id='biel' className='invisible eu-show'>
                 <Biel />
             </Section>
 
-            <Section sectionNum='8' id='tnc_accept' link_id='accept' className='tnc_accept invisible'>
+            <Section sectionNum='7' id='tnc_accept' link_id='accept' className='tnc_accept invisible'>
                 <div className='gr-9 gr-12-m gr-centered center-text'>
                     <p>{it.L('By clicking OK, you confirm that you have read and accepted Terms & Conditions.')}</p>
                     <button className='button' id='btn_accept'>{it.L('OK')}</button>
