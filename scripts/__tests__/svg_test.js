@@ -1,6 +1,11 @@
 const path   = require('path');
 const fs     = require('fs');
 const expect = require('chai').expect;
+const common = require('../common');
+
+const ignored_files = [
+    'src/images/pages/regulation/map.svg',
+];
 
 describe('check svg file format', () => {
     it('should be valid svgs', () => {
@@ -24,11 +29,12 @@ describe('check svg file format', () => {
             return arr;
         };
 
-        const svgs = fetchSvgs(path.resolve(__dirname, '../../src/images'));
+        const svgs = fetchSvgs(path.resolve(common.root_path, 'src/images'));
+        path.resolve(common.root_path);
 
         flatten(svgs)
             .filter(item => !!item)
-            .filter(item => item !== path.resolve(__dirname, '../../src/images/pages/regulation/map.svg'))
+            .filter(item => !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item))
             .forEach(item => {
                 const stats = fs.statSync(path.resolve(item));
                 if (stats.isSymbolicLink()) return;
