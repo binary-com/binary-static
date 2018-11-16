@@ -70,7 +70,8 @@ const TradePage = (() => {
                 if ((!is_logged_in && is_eu) || (is_logged_in && is_maltainvest)) {
                     $('.mfsa_message')
                         .removeClass('container')
-                        .addClass('margin-bottom-40');
+                        .addClass('margin-bottom-40')
+                        .slideDown(300);
                 }
             });
         });
