@@ -120,7 +120,7 @@ const AuthenticateMessage = () => (
             allowed_documents={[
                 it.L('Passport'),
                 it.L('Driving licence'),
-                it.L('National ID card or any government issued document which contains a photo, your name, and date of birth'),
+                it.L('National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth'),
             ]}
             instructions={[
                 it.L('Must be a clear, colour photo or scanned image'),
