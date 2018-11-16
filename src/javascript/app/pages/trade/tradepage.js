@@ -64,13 +64,13 @@ const TradePage = (() => {
                 const is_eu = isEuCountry();
                 const is_maltainvest = Client.get('landing_company_shortcode') === 'maltainvest';
 
-                if ((is_logged_in && is_eu) || (is_maltainvest)) {
+                if (is_maltainvest) {
                     $('#professional-cta').setVisibility(1);
                 }
                 if ((!is_logged_in && is_eu) || (is_logged_in && is_maltainvest)) {
                     $('.mfsa_message')
                         .removeClass('container')
-                        .attr('style', 'margin-bottom: 40px');
+                        .addClass('margin-bottom-40');
                 }
             });
         });
