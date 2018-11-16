@@ -340,6 +340,7 @@ const ViewPopup = (() => {
 
         containerSetText('trade_details_current_title', localize('Contract Result'));
         containerSetText('trade_details_indicative_label', localize('Payout'));
+        containerSetText('trade_details_profit_loss_label', localize('Profit/Loss'));
         if (contract.status === 'sold') {
             containerSetText('trade_details_end_label', localize('End Time'));
             containerSetText('trade_details_end_date', epochToDateTime(contract.sell_time), '', true);
@@ -612,7 +613,7 @@ const ViewPopup = (() => {
             ${createRow(localize('Current Time'), '', 'trade_details_live_date')}
             ${!contract.tick_count ? createRow('', 'trade_details_end_label', 'trade_details_end_date', true) : ''}
             ${createRow(localize('Indicative'), 'trade_details_indicative_label', 'trade_details_indicative_price')}
-            ${createRow(localize('Profit/Loss'), '', 'trade_details_profit_loss')}
+            ${createRow(localize('Potential Profit/Loss'), 'trade_details_profit_loss_label', 'trade_details_profit_loss')}
             <tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>
             </table>
             <div id="errMsg" class="notice-msg ${hidden_class}"></div>
