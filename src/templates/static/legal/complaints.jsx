@@ -20,7 +20,7 @@ const Complaints = () => (
         <p data-show='eucountry'>{it.L('Clients registered with Binary Investments (Europe) Ltd can raise their unresolved disputes with the Office of the Arbiter for Financial Services. Contact details and guidance on making a complaint with the Arbiter’s Office can be found [_1]here[_2].',
             '<a href="https://financialarbiter.org.mt" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
-        <p className='invisible eu-show'>{it.L('It is important that you refer your disputes to the appropriate ADR for the claims to be valid.')}</p>
+        <p data-show='eucountry'>{it.L('It is important that you refer your disputes to the appropriate ADR for the claims to be valid.')}</p>
     </div>
 );
 
