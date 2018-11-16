@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-11-14 06:18\n"
+"PO-Revision-Date: 2018-11-16 02:02\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -519,9 +519,6 @@ msgstr "Uma PPE é uma pessoa que desempenha ou que tenha desempenhado funções
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Um agente de pagamentos atua como um serviço de câmbios entre o Cliente (isto é, o nosso cliente) e a %1. O agente de pagamentos processa depósitos e retiradas para clientes que desejam usar uma solução de carteira-eletrônica específica ou moeda local não disponibilizada pela %1. As taxas de transferência são custeadas pelo Cliente."
 
-msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
-msgstr "Uma pessoa politicamente exposta é um indivíduo a quem é ou já foi confiada uma função pública proeminente, incluindo os seus familiares diretos ou pessoas conhecidas como estando estreitamente associadas a tais indivíduos, mas que não inclui funcionários de nível média ou júniores. Tais individuos incluem chefes de estado, ministros, secretários parlamentares, deputados, juízes, embaixadores, altos funcionários do governo, pessoal dos altos quadros das forças armadas, comissões de auditoria dos conselhos de administração de bancos centrais e diretores de empresas de estados. Os \"familiares diretos\" dos exemplos acima também serão considerados pessoas politicamente expostas e isso inclui os seus cônjuges/parceiros, pais e filhos. Além disso, \"pessoas conhecidas como estando estreitamente associadas\" a pessoas politicamente expostas incluem os seus parceiros de negócio, que serão considerados como tal. Como regra geral, uma pessoa considerada pessoa politicamente exposta e a quem deixou de ser confiada uma função pública proeminente há pelo menos 12 meses já não se qualifica como pessoa politicamente exposta."
-
 msgid "A Professional Client receives a lower degree of client protection due to the following:"
 msgstr "Os clientes profissionais recebem um menor grau de proteção devido ao seguinte:"
 
@@ -588,6 +585,9 @@ msgstr "Um falante nativo com bom domínio de inglês, tanto na forma oral como 
 
 msgid "A panel featuring industry leaders awards BetOnMarkets.com 'Financial Betting Operator of the Year' over two other finalists. It's a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
 msgstr "Um painel de líderes da indústria premiou a BetOnMarkets.com como \"Melhor Operador de Apostas Financeiras do Ano\", em frente de dois outros finalistas. Esta foi uma grande vitória para a nossa marca e mais um reconhecimento do nosso serviço mundialmente campeão. Dez anos mais tarde, continuamos cada vez mais fortes."
+
+msgid "A politically exposed person (PEP) is an individual who is or has been entrusted with a prominent public function. Family members and close associates of such individuals are also considered as PEPs. A PEP who has ceased to be entrusted with a prominent public function for at least 12 months no longer qualifies as a PEP."
+msgstr ""
 
 msgid "A preference and passion for Linux and open-source platforms"
 msgstr "Uma preferência e paixão por Linux e plataformas de código aberto"
@@ -1127,7 +1127,7 @@ msgstr "Uma instrução de execução enviada por você para abrir ou fechar uma
 msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian"
 msgstr ""
 
-msgid "An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere"
+msgid "An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere"
 msgstr ""
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
@@ -4790,7 +4790,7 @@ msgstr "Se você quiser retirar fundos da sua conta real MT5 e/ou fechar a sua c
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr "Caso você deseje mais informações sobre como se tornar um agente de pagamentos, contate-nos em <a href='mailto:%1'>%1</a>"
 
-msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details."
+msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within %2 working days from receipt of all relevant details."
 msgstr ""
 
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us on complaints@binary.com by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
@@ -6240,8 +6240,8 @@ msgstr "Nome do seu animal de estimação"
 msgid "Name:"
 msgstr "Nome:"
 
-msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
-msgstr "Cartão de identificação nacional ou qualquer documento emitido pelo governo que contenha uma fotografia, o seu nome e a sua data de nascimento"
+msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
+msgstr ""
 
 msgid "Natural wonders"
 msgstr ""
@@ -9468,8 +9468,8 @@ msgstr ""
 msgid "The trading services described in this Agreement are OTC. This means that one or more of the underlying instruments in which you transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the Electronic Trading Platform as described in this Agreement."
 msgstr "Os serviços de negociação descritos neste Acordo são realizados em mercados de balcão. Isto significa que um ou mais dos instrumentos que você normalmente negocia conosco, apesar de serem cotados em bolsa, não são negociados numa bolsa quando transacionados através da plataforma de negociação eletrônica, conforme descrito neste Acordo."
 
-msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
-msgstr "As transações efetuadas neste site e as relações entre os Clientes e a Empresa devem ser regidos e interpretados de acordo com as leis do país de incorporação da Empresa (a \"Jurisdição\"). Você aceita que os tribunais da Jurisdição terão competência exclusiva para dirimir quaisquer litígios que possam surgir em relação às mesmas. Para esse fim, você submete-se de forma irrevogável à competência dos tribunais da Jurisdição em relação a qualquer litígio e concorda que qualquer ação contra a Empresa será intentada somente perante os tribunais da Jurisdição. Para mais informações sobre reclamações e disputas, por favor consulte a seção de Reclamações e Disputas da Empresa."
+msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's %1Complaints and Disputes%2 section."
+msgstr ""
 
 msgid "The two passwords that you entered do not match."
 msgstr "As palavras-chave que introduziu não coincidem."
@@ -10930,7 +10930,7 @@ msgstr "Não estamos obrigados a realizar testes de adequação, nem de lhe forn
 msgid "We’re projected to register over 197 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 789 million."
 msgstr "Projeta-se que vamos registar mais de 197 milhões de transações este ano, levando o número total de contratos que foram comprados e vendidos na nossa plataforma desde a sua criação para mais de 789 milhões."
 
-msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgid "We’ve grown in size over the years – both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
 msgstr ""
 
 msgid "We’ve paid millions in commission to date through our industry-leading affiliate programme."
