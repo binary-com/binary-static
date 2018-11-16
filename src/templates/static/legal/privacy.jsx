@@ -70,7 +70,7 @@ const Privacy = () => (
             <p>{it.L('For full contact details of [_3], kindly check our [_1]Contact Us[_2] page.', `<a href=${it.url_for('contact')}>`, '</a>', it.website_name)}</p>
 
             <h2 data-anchor='complaints'>{it.L('Complaints')}</h2>
-            <p>{it.L('For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our [_1]Complaints and Disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions?anchor=complaints-and-disputes#legal-binary')}>`, '</a>')}</p>
+            <p>{it.L('For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our [_1]Complaints and Disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions#complaints')}>`, '</a>')}</p>
         </div>
     </div>
 );
