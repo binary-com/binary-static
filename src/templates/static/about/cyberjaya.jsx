@@ -47,6 +47,20 @@ const Cyberjaya = () =>  (
                             ]}
                         />
                     </div>
+                    <div className='gr-4 gr-6-p padding-20-m gr-8-m box-container gr-centered'>
+                        <div className='box bordered'>
+                            <a href={it.url_for('download/binary-expat-handbook.pdf')} target='_blank' rel='noopener noreferrer'>
+                                <div className='items'>
+                                    <div>
+                                        <img src={it.url_for('/images/pages/careers/ex-icon.svg')} />
+                                    </div>
+                                    <div className='box-item-end'>
+                                        <p className='center-text'>{it.L('Expat handbook')}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
