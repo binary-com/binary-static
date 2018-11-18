@@ -11,7 +11,7 @@ const ProfitTable = () => (
             <div className='gr-padding-10 invisible' id='util_row'>
                 <div className='gr-row gr-gutter-right gr-row-align-right'>
                     <div className='label_form gr-gutter-right'>
-                        <label htmlFor='date_to'>{it.L('Show all historical transactions up to')}:</label>
+                        <label>{it.L('Show all historical transactions up to')}:</label>
                     </div>
                     <div className='gr-gutter-right'>
                         <input type='text' id='date_to' size='20' readOnly='readonly' />

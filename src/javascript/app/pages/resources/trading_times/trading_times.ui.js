@@ -1,6 +1,5 @@
 const moment           = require('moment');
 const TradingTimes     = require('./trading_times');
-const isJPClient       = require('../../../base/client').isJPClient;
 const BinarySocket     = require('../../../base/socket');
 const Table            = require('../../../common/attach_dom/table');
 const DatePicker       = require('../../../components/date_picker');
@@ -31,13 +30,32 @@ const TradingTimesUI = (() => {
         }
 
         const date = moment.utc();
-        $date.attr('data-value', toISOFormat(date));
+        const isoFormattedDate = toISOFormat(date);
+        $date.attr('data-value', isoFormattedDate);
         DatePicker.init({
             selector: '#trading-date',
             minDate : 0,
             maxDate : 364,
         });
         $date.val(localize('Today'));
+        if ($(window).width() < 480) {
+            // Create a label to be friendlier
+            const $label = $('label[for=trading-date]');
+            $label.append($('<span/>', { class: 'ux-date foot-note' }));
+            if (!$date.val()) {
+                $('span.ux-date').text(localize('Today'));
+                $date.val(isoFormattedDate);
+                $date.attr('value', isoFormattedDate);
+            }
+            $date.change(() => {
+                const diffInDays = moment().diff(moment($date.val()), 'days', true);
+                if (diffInDays < 0 || diffInDays >= 1) {
+                    $('span.ux-date').text('');
+                } else {
+                    $('span.ux-date').text('Today');
+                }
+            });
+        }
         $date.change(function () {
             if (!dateValueChanged(this, 'date')) {
                 return false;
@@ -57,11 +75,9 @@ const TradingTimesUI = (() => {
 
         $('#errorMsg').setVisibility(0);
 
-        const is_japan_trading = isJPClient();
-
         const markets = trading_times.markets;
 
-        const $ul       = $('<ul/>', { class: is_japan_trading ? 'invisible' : '' });
+        const $ul       = $('<ul/>');
         const $contents = $('<div/>');
 
         for (let m = 0; m < markets.length; m++) {
@@ -69,14 +85,12 @@ const TradingTimesUI = (() => {
 
             // contents
             const $market = $('<div/>', { id: tab_id });
-            $market.append(createMarketTables(markets[m], is_japan_trading));
+            $market.append(createMarketTables(markets[m]));
             if ($market.find('table tr').length) {
                 $contents.append($market);
 
                 // tabs
-                if (!is_japan_trading) {
-                    $ul.append($('<li/>').append($('<a/>', { href: `#${tab_id}`, text: markets[m].name, id: 'outline' })));
-                }
+                $ul.append($('<li/>').append($('<a/>', { href: `#${tab_id}`, text: markets[m].name, id: 'outline' })));
             }
         }
 
@@ -88,7 +102,7 @@ const TradingTimesUI = (() => {
         $container.tabs();
     };
 
-    const createMarketTables = (market, is_japan_trading) => {
+    const createMarketTables = (market) => {
         const $market_tables = $('<div/>');
 
         // submarkets of this market
@@ -96,14 +110,6 @@ const TradingTimesUI = (() => {
         let should_populate;
         for (let s = 0; s < submarkets.length; s++) {
             should_populate = true;
-            // display only "Major Pairs" for Japan
-            if (is_japan_trading) {
-                const submarket_info = TradingTimes.getSubmarketInfo(active_symbols, submarkets[s].name);
-                if (submarket_info.length === 0 || submarket_info[0].submarket !== 'major_pairs') {
-                    should_populate = false;
-                }
-            }
-
             if (should_populate) {
                 // submarket table
                 const $submarket_table = createEmptyTable(`${market.name}-${s}`);
@@ -154,7 +160,7 @@ const TradingTimesUI = (() => {
     const createEventsText = (events) => {
         let result = '';
         for (let i = 0; i < events.length; i++) {
-            result += `${(i > 0 ? '<br />' : '')}${localize(events[i].descrip)}: ${localize(events[i].dates)}`;
+            result += `${(i > 0 ? '<br />' : '')}${localize(events[i].descrip /* localize-ignore */)}: ${localize(events[i].dates /* localize-ignore */)}`; // handled in static_strings_app.js
         }
         return result.length > 0 ? result : '--';
     };
@@ -178,9 +184,6 @@ const TradingTimesUI = (() => {
 
     const sendRequest = (date, should_request_active_symbols) => {
         const req = { active_symbols: 'brief' };
-        if (isJPClient()) {
-            req.landing_company = 'japan';
-        }
         if (should_request_active_symbols) {
             BinarySocket.wait('authorize').then(() => {
                 BinarySocket.send(req, { msg_type: 'active_symbols' }).then((response) => {

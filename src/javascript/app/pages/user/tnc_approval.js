@@ -19,7 +19,7 @@ const TNCApproval = (() => {
         const $tnc_msg   = $container.find('#tnc_message');
         $tnc_msg.html(template($tnc_msg.html(), [
             landing_company,
-            urlFor(Client.get('residence') === 'jp' ? 'terms-and-conditions-jp' : 'terms-and-conditions'),
+            urlFor('terms-and-conditions'),
         ]));
         $container.find('#tnc_loading').remove();
         $container.find('#tnc_approval').setVisibility(1);

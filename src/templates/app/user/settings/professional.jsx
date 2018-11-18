@@ -22,7 +22,7 @@ const Professional = () => (
             <form className='form gr-padding-10 invisible' id='frm_professional'>
                 <ProfessionalClient />
 
-                <SubmitButton msg_id='form_message' type='submit' text={it.L('Submit')} />
+                <SubmitButton is_centered msg_id='form_message' type='submit' text={it.L('Submit')} />
             </form>
         </div>
     </div>
