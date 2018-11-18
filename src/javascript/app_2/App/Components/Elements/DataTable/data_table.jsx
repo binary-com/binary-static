@@ -4,7 +4,6 @@ import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import TableRow                       from './table_row.jsx';
 
-
 /* TODO:
       1. implement sorting by column (ASC/DESC)
       2. implement filtering per column

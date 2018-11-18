@@ -63,7 +63,7 @@ const TypesOfAccounts = () => (
                 className='hide-maltainvest'
                 image='advanced'
                 title={it.L('Advanced')}
-                text={it.L('The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices, futures and cryptocurrencies.')}
+                text={it.L('The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices and cryptocurrencies.')}
             />
             <Box
                 image='volatility_indices'

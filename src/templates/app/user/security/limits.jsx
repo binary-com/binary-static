@@ -37,15 +37,15 @@ const Limits = () => {
                                 tbody: [
                                     [
                                         { text: open_position },
-                                        { id: 'open-positions' },
+                                        { text: '', id: 'open-positions' },
                                     ],
                                     [
                                         { text: account_balance },
-                                        { id: 'account-balance' },
+                                        { text: '', id: 'account-balance' },
                                     ],
                                     [
                                         { text: payout },
-                                        { id: 'payout' },
+                                        { text: '', id: 'payout' },
                                     ],
                                     [
                                         { className: 'gr-padding-10', id: 'gap' },
@@ -65,7 +65,7 @@ const Limits = () => {
                 </div>
                 <div id='limits_error' />
             </div>
-            <div className='invisible ja-hide' id='withdrawal-limits'>
+            <div className='invisible' id='withdrawal-limits'>
                 <h2 id='withdrawal-title'>{it.L('Withdrawal Limits')}</h2>
                 <div>
                     <p id='withdrawal-limit' />

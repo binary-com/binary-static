@@ -41,13 +41,11 @@ const Cashier = () => (
                     <img className='responsive' id='virtual_money_icon' src={it.url_for('images/pages/cashier/virtual_topup.svg')} />
                 </div>
                 <div className='gr-5 gr-12-m'>
-                    <span className='ja-hide'>{it.L('You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00.')}</span>
-                    <span className='invisible ja-show'>{it.L('{JAPAN ONLY}You can request more virtual money if your virtual balance falls below JPY 100,000.')}</span>
+                    <span>{it.L('You can top up your virtual account with an additional USD 10,000.00 if your balance falls below USD 1,000.00.')}</span>
                 </div>
                 <div className='gr-5 gr-12-m invisible'>
                     <a className='toggle button' id='VRT_topup_link'>
-                        <span className='ja-hide'>{it.L('Get USD 10,000.00')}</span>
-                        <span className='invisible ja-show'>{it.L('{JAPAN ONLY}Get JPY 1,000,000')}</span>
+                        <span>{it.L('Get USD 10,000.00')}</span>
                     </a>
                 </div>
             </div>
@@ -55,7 +53,7 @@ const Cashier = () => (
 
         <div className='gr-padding-10 client_virtual invisible' />
 
-        <div className='gr-padding-10 table-body ja-hide'>
+        <div className='gr-padding-10 table-body'>
             <h3 className='gr-padding-10'>
                 <span className='invisible normal_currency client_logged_out'>{it.L('Bank wire, credit card, e-wallet')}</span>
                 <span className='invisible crypto_currency'>{it.L('Cryptocurrency')}</span>
@@ -77,9 +75,9 @@ const Cashier = () => (
             </div>
         </div>
 
-        <div className='gr-padding-10 ja-hide' />
+        <div className='gr-padding-10' />
 
-        <div className='gr-padding-10 table-body ja-hide payment-agent invisible' id='payment-agent-section'>
+        <div className='gr-padding-10 table-body payment-agent invisible' id='payment-agent-section'>
             <h3 className='gr-padding-10'>{it.L('Payment Agent')}</h3>
             <div className='gr-row'>
                 <div className='gr-2 gr-4-m'>

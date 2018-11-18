@@ -6,13 +6,12 @@ const util  = require('util');
 exports.root_path = require('app-root-path').path;
 
 // ---------- Pages config ----------
-exports.pages = require('./pages.js').map(p => ({
+exports.pages = require('./config/pages.js').map(p => ({
     save_as      : p[0],
     tpl_path     : p[1],
     layout       : p[2],
     title        : p[3],
     excludes     : p[4],
-    only_ja      : p[4] && /^NOT-ja,en$/.test(p[4]),
     current_route: p[0].replace(/^(.+)\//, ''),
     section      : p[5] || '',
 }));
@@ -34,7 +33,7 @@ exports.sections_config = {
 };
 
 // ---------- Languages ----------
-exports.languages = ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'JA', 'KO', 'PL', 'PT', 'RU', 'TH', 'VI', 'ZH_CN', 'ZH_TW'];
+exports.languages = ['EN', 'DE', 'ES', 'FR', 'ID', 'IT', 'KO', 'PL', 'PT', 'RU', 'TH', 'VI', 'ZH_CN', 'ZH_TW'];
 
 const affiliates_signup_language_map = { // object used instead of array to prevent accidental index changes
     EN   : 0,
@@ -50,7 +49,6 @@ const affiliates_signup_language_map = { // object used instead of array to prev
     ZH_CN: 10,
     ZH_TW: 11,
     TH   : 12,
-    JA   : 13,
 };
 exports.getAffiliateSignupLanguage = (lang = '') => (affiliates_signup_language_map[lang.toUpperCase()] || 0);
 
@@ -61,7 +59,7 @@ exports.print = (text) => {
     process.stdout.write(text);
 };
 
-exports.messageStart = (msg, no_pad) => `${color.cyan('>')} ${msg} ${no_pad ? '' : '.'.repeat(33 - msg.length)}`;
+exports.messageStart = (msg, no_pad) => `${color.cyan('>')} ${msg} ${no_pad ? '' : '.'.repeat((this.languages.length + 18) - msg.length)}`;
 exports.messageEnd   = (duration, no_new_line) => (
     `${color.green(' ✓ Done')}${duration ? color.blackBright(`  (${duration.toLocaleString().padStart(6)} ms)`) : ''}${no_new_line ? '' : '\n'}`
 );

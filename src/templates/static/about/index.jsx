@@ -40,12 +40,11 @@ const ValuesBox = ({ subheader, icon, paragraph }) => (
 
 const Box = ({ children }) => (
     <div className='gr-6 gr-12-m'>
-        <div className='gr-row'>
+        <div className='gr-row full-height'>
             {children}
         </div>
     </div>
 );
-
 
 const Index = () => (
     <div className='about-us box-inlay-borders static_full'>
@@ -56,13 +55,12 @@ const Index = () => (
                 </h1>
                 <div className='gr-row'>
                     <div className='gr-6 gr-12-m gr-padding-20'>
-                        <img className='mac ja-hide' src={it.url_for('images/pages/about/mac.svg')} />
-                        <img className='mac invisible ja-show responsive' src={it.url_for('images/pages/about/mac-ja.png')} />
+                        <img className='mac' src={it.url_for('images/pages/about/mac.svg')} />
                     </div>
                     <div className='gr-1 gr-hide-t gr-hide-p gr-hide-m' />
                     <div className='gr-5 gr-12-m'>
                         <p>{it.L('Founded in 1999, [_1] is one of the oldest and most respected names in online binary trading.', it.website_name)}</p>
-                        <p>{it.L('Using our website, customers can trade currencies, indices, stocks and commodities 24/7. We have the most flexible pricing and the most comprehensive suite of products available.')}</p>
+                        <p>{it.L('Using our website, customers can trade currencies, indices, commodities, and volatility indices 24/7. We have the most flexible pricing and the most comprehensive suite of products available.')}</p>
                         <p>{it.L('[_1] has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide.', it.website_name)}</p>
                         <p>{it.L('When you trade with [_1], you can be assured that your deposits are held in a separate trust account and are not used for any other purpose.', it.website_name)}</p>
                     </div>
@@ -72,7 +70,7 @@ const Index = () => (
                 <SeparatorLine no_wrapper sub_class='gr-padding-10' />
             </div>
             <div className='gr-parent'>
-                <h1 className='center-text gr-padding-20' data-anchor>
+                <h1 className='center-text gr-padding-20' data-anchor='our-values'>
                     {it.L('Our values')}
                 </h1>
                 <div className='gr-row'>
@@ -128,8 +126,8 @@ const Index = () => (
                             <BoxInner className='border-right-bottom gr-padding-30' href='/contact' image='locations' text={it.L('<a href=\'[_1]\'>Offices</a> in Malta and Malaysia', it.url_for('contact'))} />
                         </Box>
                         <Box>
-                            <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, Ireland, and Japan')} />
-                            <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in English, Indonesian, Chinese, Polish, German, French, Spanish, Portuguese, Russian, and Thai')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' image='license' text={it.L('Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland')} />
+                            <BoxInner className='gr-padding-30' image='languages' text={it.L('Published in Chinese, English, French, German, Indonesian, Italian, Polish, Portuguese, Russian, Spanish, Thai and Vietnamese')} />
                         </Box>
                     </div>
                 </div>
@@ -138,7 +136,7 @@ const Index = () => (
         <div className='container'>
             <div className='gr-parent'>
                 <p>{it.L('[_1] is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href=\'[_2]\'>visit our history page</a>.', it.website_name, it.url_for('group-history'))}</p>
-                <p>{it.L('In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In Japan, they trade through Binary KK. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A.')}</p>
+                <p>{it.L('In the UK, our clients trade through Binary (IOM) Ltd and Binary Investments (Europe) Ltd. In the Isle of Man, they trade through Binary (IOM) Ltd. In the European Union (except UK), they trade through Binary (Europe) Ltd and Binary Investments (Europe) Ltd. In the rest of the world, they trade through Binary (C.R.) S.A.')}</p>
             </div>
         </div>
     </div>

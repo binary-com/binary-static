@@ -30,6 +30,7 @@ const getPropertyValue     = require('../../../_common/utility').getPropertyValu
 const Price = (() => {
     let type_display_id_mapping = {};
     let form_id                 = 0;
+    let is_resubscribing        = false;
 
     const createProposal = (type_of_contract) => {
         const proposal = {
@@ -297,7 +298,7 @@ const Price = (() => {
      * Function to process and calculate price based on current form
      * parameters or change in form parameters
      */
-    const processPriceRequest = () => {
+    const processPriceRequest = (has_resubscribed) => {
         Price.incrFormId();
         commonTrading.showPriceOverlay();
         let types = Contract.contractType()[Contract.form()];
@@ -367,13 +368,17 @@ const Price = (() => {
                     commonTrading.hidePriceOverlay();
                 } else {
                     BinarySocket.send(proposal, { callback: (response) => {
-                        if (response.error && response.error.code === 'AlreadySubscribed') {
-                            BinarySocket.send({ forget_all: 'proposal' });
+                        if (response.error && response.error.code === 'AlreadySubscribed' && !is_resubscribing) {
+                            commonTrading.showPriceOverlay();
+                            // the already subscribed error from the second proposal request will trigger this error again
+                            // and we will get stuck in a loop of resubscribing twice and getting this error again unless we resubscribe exactly once
+                            is_resubscribing = true;
+                            processPriceRequest(true);
                         } else if (response.echo_req && response.echo_req !== null && response.echo_req.passthrough &&
                             response.echo_req.passthrough.form_id === form_id) {
                             Price.display(response, Contract.contractType()[Contract.form()]);
                         }
-                        if (first_price_proposal) {
+                        if ((!response.error || response.error.code !== 'AlreadySubscribed') && first_price_proposal) {
                             commonTrading.hideOverlayContainer();
                             commonTrading.hidePriceOverlay();
                             setPriceContainersVisibility(position_is_visible);
@@ -382,6 +387,10 @@ const Price = (() => {
                     } });
                 }
             });
+            if (has_resubscribed) {
+                // after we have resubscribed once, we can clear this for the next usage
+                is_resubscribing = false;
+            }
         });
     };
 

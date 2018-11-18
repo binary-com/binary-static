@@ -21,11 +21,24 @@ const GetStartedSection = ({ link, hash, image, header, text }) => {
     );
 };
 
-const GetStartedSectionWrapper = ({ section_id, section_header, section_description, children }) => (
+const GetStartedSectionWrapper = ({
+    section_id,
+    section_header,
+    section_description,
+    section_button_url  = '',
+    section_button_text = '',
+    children,
+}) => (
     <React.Fragment>
         <div className='gr-padding-30 gr-parent' id={section_id}>
             <h2>{section_header}</h2>
             <p>{section_description}</p>
+            { section_button_url &&
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        <a className='button' href={it.url_for(section_button_url)}><span>{section_button_text}</span></a>
+                    </div>
+                </div> }
             {children}
         </div>
         <SeparatorLine invisible className='gr-padding-30' />
@@ -102,7 +115,7 @@ const Index = () => (
                     </TabContent>
                     <TabContent id='mt5'>
                         <h2>{it.L('MetaTrader 5')}</h2>
-                        <p>{it.L('Trade Forex and Contracts for Difference (CFDs) with highly-competitive leverage. MetaTrader 5 is a multi-asset platform offering outstanding trading possibilities and technical analysis tools.')}</p>
+                        <p>{it.L('Trade Forex, Contracts for Difference (CFDs), and binary options on MetaTrader 5 - a multi-asset platform that offers outstanding trading possibilities and technical analysis tools.')}</p>
 
                         <SeparatorLine invisible className='gr-padding-30' />
 
@@ -250,6 +263,30 @@ const Index = () => (
                                 />
                             </div>
                         </GetStartedSectionWrapper>
+                        <GetStartedSectionWrapper
+                            section_id='binary-options-mt5'
+                            section_header={it.L('Binary Options on MT5')}
+                            section_description={it.L('Explore a whole new world of binary options trading with the world\'s leading multi-asset platform.')}
+                            section_button_url='user/metatrader'
+                            section_button_text={it.L('Create an MT5 account now')}
+                        >
+                            <div className='gr-row'>
+                                <GetStartedSection
+                                    link='get-started/binary-options-mt5'
+                                    hash='what-are-binary-options'
+                                    image='mt5/what-binary-trading'
+                                    header={it.L('Introduction to binary options on MT5')}
+                                    text={it.L('Binary options trading is now available on our MT5 platform. Learn more about its benefits and available markets.')}
+                                />
+                                <GetStartedSection
+                                    link='get-started/binary-options-mt5'
+                                    hash='how-to-trade-binary'
+                                    image='mt5/how-trade-binary'
+                                    header={it.L('How to trade binary options on MT5')}
+                                    text={it.L('Follow our step-by-step guide to start trading binary options on MT5.')}
+                                />
+                            </div>
+                        </GetStartedSectionWrapper>
                         <CTA />
                     </TabContent>
                     <TabContent id='lookback'>
@@ -287,7 +324,8 @@ const Index = () => (
                         <div className='formula center-text'>
                             <span>{it.L('2 * (6,000 – 5,200) = $1600')}</span>
                         </div>
-                        <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}#range-of-markets>`, '</a>')}</p>
+                        <p>{it.L('Lookbacks options are currently only available for [_1]Volatility Indices[_2].', `<a href=${it.url_for('get-started/binary-options')}?anchor=volatility-indices#range-of-markets>`, '</a>')}</p>
+                        <p>{it.L('Return to player (RTP) % for lookbacks for a multiplier of 1 and 1m duration is around 87% on average.')}</p>
                         <CTA />
                     </TabContent>
                 </TabContentContainer>

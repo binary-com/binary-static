@@ -28,7 +28,6 @@ class Statement extends React.Component {
             handleScroll,
         } = this.props;
 
-
         if (error) return <p>{error}</p>;
 
         const columns = getTableColumnsTemplate();

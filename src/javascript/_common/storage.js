@@ -1,6 +1,7 @@
-const Cookies          = require('js-cookie');
-const getPropertyValue = require('./utility').getPropertyValue;
-const isEmptyObject    = require('./utility').isEmptyObject;
+const Cookies                = require('js-cookie');
+const getPropertyValue       = require('./utility').getPropertyValue;
+const isEmptyObject          = require('./utility').isEmptyObject;
+const getCurrentBinaryDomain = require('../config').getCurrentBinaryDomain;
 
 const getObject = function (key) {
     return JSON.parse(this.getItem(key) || '{}');
@@ -119,7 +120,7 @@ const CookieStorage = function (cookie_name, cookie_domain) {
 
     this.initialized = false;
     this.cookie_name = cookie_name;
-    this.domain      = cookie_domain || (/\.binary\.com/i.test(hostname) ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
+    this.domain      = cookie_domain || (getCurrentBinaryDomain() ? `.${hostname.split('.').slice(-2).join('.')}` : hostname);
     this.path        = '/';
     this.expires     = new Date('Thu, 1 Jan 2037 12:00:00 GMT');
     this.value       = {};

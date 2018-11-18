@@ -2,6 +2,10 @@ const DocumentUploader    = require('@binary-com/binary-document-uploader');
 const Client              = require('../../../base/client');
 const displayNotification = require('../../../base/header').displayNotification;
 const BinarySocket        = require('../../../base/socket');
+const CompressImage       = require('../../../../_common/image_utility').compressImg;
+const ConvertToBase64     = require('../../../../_common/image_utility').convertToBase64;
+const isImageType         = require('../../../../_common/image_utility').isImageType;
+const getLanguage         = require('../../../../_common/language').get;
 const localize            = require('../../../../_common/localize').localize;
 const toTitleCase         = require('../../../../_common/string_util').toTitleCase;
 const Url                 = require('../../../../_common/url');
@@ -25,11 +29,14 @@ const Authenticate = (() => {
                 is_action_needed = /document_needs_action/.test(response.get_account_status.status);
                 if (!/authenticated/.test(status)) {
                     init();
-                    const $not_authenticated = $('#not_authenticated').setVisibility(1);
-                    let link = 'https://marketing.binary.com/authentication/2017_Authentication_Process.pdf';
+                    const language            = getLanguage();
+                    const language_based_link = ['ID', 'RU', 'PT'].includes(language) ? `_${language}` : '';
+                    const $not_authenticated  = $('#not_authenticated');
+                    $not_authenticated.setVisibility(1);
+                    let link = Url.urlForCurrentDomain(`https://marketing.binary.com/authentication/Authentication_Process${language_based_link}.pdf`);
                     if (Client.isAccountOfType('financial')) {
                         $('#not_authenticated_financial').setVisibility(1);
-                        link = 'https://marketing.binary.com/authentication/2017_MF_Authentication_Process.pdf';
+                        link = Url.urlForCurrentDomain('https://marketing.binary.com/authentication/MF_Authentication_Process.pdf');
                     }
                     $not_authenticated.find('.learn_more').setVisibility(1).find('a').attr('href', link);
                 } else if (!/age_verification/.test(status)) {
@@ -101,8 +108,7 @@ const Authenticate = (() => {
         const $target = $(event.target);
         let default_text = toTitleCase($target.attr('id').split('_')[0]);
         if (default_text !== 'Add') {
-            default_text = default_text === 'Back' ? localize('Reverse Side')
-                : localize('Front Side');
+            default_text = default_text === 'Back' ? localize('Reverse Side') : localize('Front Side');
         }
         fileTracker($target, false);
         // Remove previously selected file and set the label
@@ -190,12 +196,12 @@ const Authenticate = (() => {
 
                 let display_name = name;
                 if (/front|back/.test(id)) {
-                    display_name += ` - ${localize(`${toTitleCase(/front/.test(id) ? 'Front' : 'Reverse')} Side`)}`;
+                    display_name += ` - ${/front/.test(id) ? localize('Front Side') : localize('Reverse Side')}`;
                 }
 
                 $submit_table.append($('<tr/>', { id: file_obj.type, class: id })
                     .append($('<td/>', { text: display_name }))                           // document type, e.g. Passport - Front Side
-                    .append($('<td/>', { text: e.files[0].name }))                        // file name, e.g. sample.pdf
+                    .append($('<td/>', { text: e.files[0].name, class: 'filename' }))     // file name, e.g. sample.pdf
                     .append($('<td/>', { text: localize('Pending'), class: 'status' }))   // status of uploading file, first set to Pending
                 );
             }
@@ -206,53 +212,82 @@ const Authenticate = (() => {
 
     const processFiles = (files) => {
         const uploader = new DocumentUploader({ connection: BinarySocket.get() }); // send 'debug: true' here for debugging
-
         let idx_to_upload     = 0;
         let is_any_file_error = false;
-        readFiles(files).then((response) => {
-            response.forEach((file) => {
-                if (file.message) {
-                    is_any_file_error = true;
-                    showError(file);
+
+        compressImageFiles(files).then((files_to_process) => {
+            readFiles(files_to_process).then((processed_files) => {
+                processed_files.forEach((file) => {
+                    if (file.message) {
+                        is_any_file_error = true;
+                        showError(file);
+                    }
+                });
+                const total_to_upload = processed_files.length;
+                if (is_any_file_error || !total_to_upload) {
+                    removeButtonLoading();
+                    enableDisableSubmit();
+                    return; // don't start submitting files until all front-end validation checks pass
+                }
+
+                const isLastUpload = () => total_to_upload === idx_to_upload + 1;
+                // sequentially send files
+                const uploadFile = () => {
+                    const $status = $submit_table.find(`.${processed_files[idx_to_upload].passthrough.class} .status`);
+                    $status.text(`${localize('Submitting')}...`);
+                    uploader.upload(processed_files[idx_to_upload]).then((api_response) => {
+                        onResponse(api_response, isLastUpload());
+                        if (!api_response.error && !api_response.warning) {
+                            $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
+                            $(`#${api_response.passthrough.class}`).attr('type', 'hidden'); // don't allow users to change submitted files
+                            $(`label[for=${api_response.passthrough.class}]`).removeClass('selected error').find('span').attr('class', 'checked');
+                        }
+                        uploadNextFile();
+                    }).catch((error) => {
+                        is_any_upload_failed = true;
+                        showError({
+                            message: error.message || localize('Failed'),
+                            class  : error.passthrough ? error.passthrough.class : '',
+                        });
+                        uploadNextFile();
+                    });
+                };
+                const uploadNextFile = () => {
+                    if (!isLastUpload()) {
+                        idx_to_upload += 1;
+                        uploadFile();
+                    }
+                };
+                uploadFile();
+            });
+        });
+    };
+
+    const compressImageFiles = (files) => {
+        const promises = [];
+        files.forEach((f) => {
+            const promise = new Promise((resolve) => {
+                if (isImageType(f.file.name)) {
+                    const $status = $submit_table.find(`.${f.class} .status`);
+                    const $filename = $submit_table.find(`.${f.class} .filename`);
+                    $status.text(`${localize('Compressing Image')}...`);
+
+                    ConvertToBase64(f.file).then((img) => {
+                        CompressImage(img).then((compressed_img) => {
+                            const file_arr = f;
+                            file_arr.file = compressed_img;
+                            $filename.text(file_arr.file.name);
+                            resolve(file_arr);
+                        });
+                    });
+                } else {
+                    resolve(f);
                 }
             });
-            const total_to_upload = response.length;
-            if (is_any_file_error || !total_to_upload) {
-                removeButtonLoading();
-                enableDisableSubmit();
-                return; // don't start submitting files until all front-end validation checks pass
-            }
-
-            const isLastUpload = () => total_to_upload === idx_to_upload + 1;
-            // sequentially send files
-            const uploadFile = () => {
-                const $status = $submit_table.find(`.${response[idx_to_upload].passthrough.class} .status`);
-                $status.text(`${localize('Submitting')}...`);
-                uploader.upload(response[idx_to_upload]).then((api_response) => {
-                    onResponse(api_response, isLastUpload());
-                    if (!api_response.error && !api_response.warning) {
-                        $status.text(localize('Submitted')).append($('<span/>', { class: 'checked' }));
-                        $(`#${api_response.passthrough.class}`).attr('type', 'hidden'); // don't allow users to change submitted files
-                        $(`label[for=${api_response.passthrough.class}]`).removeClass('selected error').find('span').attr('class', 'checked');
-                    }
-                    uploadNextFile();
-                }).catch((error) => {
-                    is_any_upload_failed = true;
-                    showError({
-                        message: error.message || localize('Failed'),
-                        class  : error.passthrough ? error.passthrough.class : '',
-                    });
-                    uploadNextFile();
-                });
-            };
-            const uploadNextFile = () => {
-                if (!isLastUpload()) {
-                    idx_to_upload += 1;
-                    uploadFile();
-                }
-            };
-            uploadFile();
+            promises.push(promise);
         });
+
+        return Promise.all(promises);
     };
 
     // Returns file promise.
@@ -297,7 +332,7 @@ const Authenticate = (() => {
 
                 fr.onerror = () => {
                     resolve({
-                        message: `Unable to read file ${f.file.name}`,
+                        message: localize('Unable to read file [_1]', f.file.name),
                         class  : f.class,
                     });
                 };
@@ -358,27 +393,27 @@ const Authenticate = (() => {
         }
         if (!file.documentId && required_docs.indexOf(file.documentType.toLowerCase()) !== -1)  {
             onErrorResolved('id_number', file.passthrough.class);
-            return localize('ID number is required for [_1].', [doc_name[file.documentType]]);
+            return localize('ID number is required for [_1].', doc_name[file.documentType]);
         }
         if (file.documentId && !/^[\w\s-]{0,30}$/.test(file.documentId)) {
             onErrorResolved('id_number', file.passthrough.class);
-            return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).', [doc_name[file.documentType]]);
+            return localize('Only letters, numbers, space, underscore, and hyphen are allowed for ID number ([_1]).', doc_name[file.documentType]);
         }
         if (!file.expirationDate && required_docs.indexOf(file.documentType.toLowerCase()) !== -1) {
             onErrorResolved('exp_date', file.passthrough.class);
-            return localize('Expiry date is required for [_1].', [doc_name[file.documentType]]);
+            return localize('Expiry date is required for [_1].', doc_name[file.documentType]);
         }
         // These checks will only be executed when the user uploads the files for the first time, otherwise skipped.
         if (!is_action_needed) {
             if (file.documentType === 'proofid' && file_checks.proofid &&
                 (file_checks.proofid.front_file ^ file_checks.proofid.back_file)) { // eslint-disable-line no-bitwise
                 onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
-                return localize('Front and reverse side photos of [_1] are required.', [doc_name.proofid]);
+                return localize('Front and reverse side photos of [_1] are required.', doc_name.proofid);
             }
             if (file.documentType === 'driverslicense' && file_checks.driverslicense &&
                 (file_checks.driverslicense.front_file ^ file_checks.driverslicense.back_file)) { // eslint-disable-line no-bitwise
                 onErrorResolved(null, file.passthrough.class, getReverseClass(file.passthrough.class));
-                return localize('Front and reverse side photos of [_1] are required.', [doc_name.driverslicense]);
+                return localize('Front and reverse side photos of [_1] are required.', doc_name.driverslicense);
             }
         }
 

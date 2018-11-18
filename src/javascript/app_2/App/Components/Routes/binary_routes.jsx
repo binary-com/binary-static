@@ -1,16 +1,9 @@
-import React                  from 'react';
-import { Switch, withRouter } from 'react-router-dom';
-import RouteWithSubRoutes     from './route_with_sub_routes.jsx';
-import getRoutesConfig        from '../../Constants/routes_config';
+import React              from 'react';
+import RouteWithSubRoutes from './route_with_sub_routes.jsx';
+import getRoutesConfig    from '../../Constants/routes_config';
 
-const BinaryRoutes = (props) => (
-    <Switch>
-        {
-            getRoutesConfig(props.match).map((route, idx) => (
-                <RouteWithSubRoutes key={idx} {...route} />
-            ))
-        }
-    </Switch>
-);
+const BinaryRoutes = () => getRoutesConfig().map((route, idx) => (
+    <RouteWithSubRoutes key={idx} {...route} />
+));
 
-export default withRouter(BinaryRoutes);
+export default BinaryRoutes;

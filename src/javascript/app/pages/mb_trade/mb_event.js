@@ -32,8 +32,6 @@ const MBTradingEvents = (() => {
         hidden_class = 'invisible';
         border_class = 'primary-border-color';
 
-        const is_jp_client = Client.isJPClient();
-
         $(document).on('click', (e) => {
             if ($(e.target).parents('#payout_list').length) return;
             makeListsInvisible();
@@ -97,20 +95,18 @@ const MBTradingEvents = (() => {
                 MBDefaults.set('period', period);
                 MBProcess.processPriceRequest();
                 $('.remaining-time').removeClass('alert');
-                MBContract.displayRemainingTime(true, is_jp_client);
+                MBContract.displayRemainingTime(true);
             });
-            if (!is_jp_client) {
-                const $header_cur = $form.find('.header-current');
-                $period.on('mouseover', (e) => {
-                    e.stopPropagation();
-                    $header_cur.addClass(border_class);
-                }).on('mouseleave', (e) => {
-                    e.stopPropagation();
-                    if ($period.find('.list').hasClass(hidden_class)) {
-                        $header_cur.removeClass(border_class);
-                    }
-                });
-            }
+            const $header_cur = $form.find('.header-current');
+            $period.on('mouseover', (e) => {
+                e.stopPropagation();
+                $header_cur.addClass(border_class);
+            }).on('mouseleave', (e) => {
+                e.stopPropagation();
+                if ($period.find('.list').hasClass(hidden_class)) {
+                    $header_cur.removeClass(border_class);
+                }
+            });
         }
 
         const validatePayout = (payout_amount, $error_wrapper) => {
@@ -128,7 +124,7 @@ const MBTradingEvents = (() => {
                 error_msg = localize('Should be a valid number.');
             } else if (+payout_amount > max_client_amount) {
                 is_valid  = false;
-                error_msg = localize('Should be less than [_1]', [max_client_amount]);
+                error_msg = localize('Should be less than [_1]', max_client_amount);
             }
 
             // if value has decimal places
@@ -138,7 +134,7 @@ const MBTradingEvents = (() => {
                 // verify number of decimal places doesn't exceed the allowed decimal places according to the currency
                 is_valid = payout_amount.toString().replace(/^-?\d*\.?|0+$/, '').length <= allowed_decimals;
                 if (!is_valid) {
-                    error_msg = localize('Up to [_1] decimal places are allowed.', [allowed_decimals]);
+                    error_msg = localize('Up to [_1] decimal places are allowed.', allowed_decimals);
                 }
             }
 
@@ -154,18 +150,13 @@ const MBTradingEvents = (() => {
             return is_valid;
         };
 
-
         const $payout = $form.find('#payout');
         if ($payout.length) {
             const $payout_list = $form.find('#payout_list');
 
-            const appendActualPayout = (payout) => {
-                $payout.find('.current').append($('<div/>', { class: 'hint', text: localize('Payout') }).append($('<span/>', { id: 'actual_payout', html: Currency.formatMoney('JPY', payout * 1000) })));
-            };
-
             const client_currency = Client.get('currency') || MBDefaults.get('currency');
             const is_crypto       = Currency.isCryptocurrency(client_currency);
-            let old_value         = Currency.getMinPayout(client_currency);
+            const old_value       = Currency.getMinPayout(client_currency);
             if (!$payout.attr('value')) {
                 const amount   = `payout${is_crypto ? '_crypto' : ''}`;
                 let payout_def = MBDefaults.get(amount);
@@ -175,44 +166,25 @@ const MBTradingEvents = (() => {
                 $payout.value = payout_def;
                 MBDefaults.set(amount, payout_def);
                 $payout.attr('value', payout_def);
-                if (is_jp_client) {
-                    $payout.find('.current').html(payout_def);
-                    appendActualPayout(payout_def);
-                }
             }
-            if (is_jp_client) {
-                $payout.find('.current').on('click', function () {
-                    old_value      = +this.childNodes[0].nodeValue;
-                    const $list    = $(`#${$(this).parent().attr('id')}_list`);
-                    const $sublist = $list.find('.list');
-                    if ($list.hasClass(hidden_class)) {
-                        makeListsInvisible();
+            const $panel = $('#panel');
+            $payout
+                .on('click', function() { $(this).select(); })
+                .on('keypress', onlyNumericOnKeypress)
+                .on('input', debounce((e) => {
+                    const payout   = e.target.value;
+                    const currency = MBDefaults.get('currency');
+                    if (validatePayout(payout, $panel)) {
+                        $panel.find('#err_payout').remove();
+                        $payout.removeClass('error');
+                        e.target.setAttribute('value', payout);
+                        MBDefaults.set(`payout${Currency.isCryptocurrency(currency) ? '_crypto' : ''}`, payout);
+                        MBProcess.processPriceRequest();
+                    } else {
+                        $payout.addClass('error');
+                        MBPrice.showPriceOverlay();
                     }
-                    $list.toggleClass(hidden_class);
-                    $sublist.toggleClass(hidden_class);
-                    $category.toggleClass(hidden_class);
-                    $period.toggleClass(hidden_class);
-                });
-            } else {
-                const $panel = $('#panel');
-                $payout
-                    .on('click', function() { $(this).select(); })
-                    .on('keypress', onlyNumericOnKeypress)
-                    .on('input', debounce((e) => {
-                        const payout   = e.target.value;
-                        const currency = MBDefaults.get('currency');
-                        if (validatePayout(payout, $panel)) {
-                            $panel.find('#err_payout').remove();
-                            $payout.removeClass('error');
-                            e.target.setAttribute('value', payout);
-                            MBDefaults.set(`payout${Currency.isCryptocurrency(currency) ? '_crypto' : ''}`, payout);
-                            MBProcess.processPriceRequest();
-                        } else {
-                            $payout.addClass('error');
-                            MBPrice.showPriceOverlay();
-                        }
-                    }));
-            }
+                }));
             if ($payout_list.length) {
                 $payout_list.on('click', '> .list > div', debounce(function () {
                     const payout = +MBDefaults.get(`payout${Currency.isCryptocurrency(MBDefaults.get('currency')) ? '_crypto' : ''}`);
@@ -220,9 +192,6 @@ const MBTradingEvents = (() => {
                     let new_payout;
                     if (/\+|-/.test(value)) {
                         new_payout = payout + parseInt(value);
-                        if (new_payout < 1 && is_jp_client) {
-                            new_payout = 1;
-                        }
                     } else if (/ok|cancel/.test(value)) {
                         if (value === 'cancel') new_payout = old_value || 10;
                         makeListsInvisible();
@@ -234,9 +203,6 @@ const MBTradingEvents = (() => {
                         $('.price-table').setVisibility(1);
                         MBDefaults.set('payout', new_payout);
                         $payout.attr('value', new_payout).find('.current').html(new_payout);
-                        if (is_jp_client) {
-                            appendActualPayout(new_payout);
-                        }
                         MBProcess.processPriceRequest();
                     }
                 }));
@@ -250,43 +216,15 @@ const MBTradingEvents = (() => {
                 const currency = $(this).attr('value');
                 MBContract.setCurrentItem($currency, currency);
                 MBDefaults.set('currency', currency);
-                if (is_jp_client) {
-                    MBProcess.processPriceRequest();
-                } else {
-                    const is_crypto = Currency.isCryptocurrency(currency);
-                    let amount      = MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`);
-                    if (!amount) {
-                        amount = Currency.getMinPayout(currency);
-                        MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, amount);
-                    }
-                    $payout
-                        .val(amount).attr('value', amount)
-                        .trigger('input'); // payout will call processPriceRequest
+                const is_crypto = Currency.isCryptocurrency(currency);
+                let amount      = MBDefaults.get(`payout${is_crypto ? '_crypto' : ''}`);
+                if (!amount) {
+                    amount = Currency.getMinPayout(currency);
+                    MBDefaults.set(`payout${is_crypto ? '_crypto' : ''}`, amount);
                 }
-            });
-        }
-
-        const $trading_status   = $('.trading-status');
-        const $allow_trading    = $trading_status.find('#allow');
-        const $disallow_trading = $trading_status.find('#disallow');
-        const setTradingStatus  = (is_enabled) => {
-            if (is_enabled) {
-                MBPrice.hidePriceOverlay();
-                MBNotifications.hide('TRADING_DISABLED');
-                $disallow_trading.removeClass('selected');
-                $allow_trading.addClass('selected');
-            } else {
-                MBPrice.showPriceOverlay();
-                $allow_trading.removeClass('selected');
-                $disallow_trading.addClass('selected');
-            }
-        };
-        if ($trading_status.length) {
-            setTradingStatus(0);
-            $trading_status.on('click', (e) => {
-                const status = e.target.getAttribute('id');
-                MBDefaults.set('disable_trading', status === 'disallow');
-                setTradingStatus(status === 'allow');
+                $payout
+                    .val(amount).attr('value', amount)
+                    .trigger('input'); // payout will call processPriceRequest
             });
         }
     };

@@ -43,5 +43,4 @@ const RouteWithSubRoutes = route => {
     />;
 };
 
-
 export default RouteWithSubRoutes;

@@ -18,6 +18,9 @@ const initGlobals = (grunt) => {
         global.release_info  = global.release_config[global.release_target];
         global.branch_prefix = '';
         global.branch        = global.release_info.target_folder;
+        if (global.release_target === 'staging') {
+            grunt.option('cleanup', true); // always cleanup when releasing to staging
+        }
     } else {
         global.branch_prefix = Constants.config.branch_prefix;
         global.branch        = grunt.option('branch');

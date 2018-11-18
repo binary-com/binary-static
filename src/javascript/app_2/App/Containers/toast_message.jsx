@@ -23,7 +23,6 @@ class ToastMessage extends React.Component {
     }
 }
 
-
 ToastMessage.propTypes = {
     position          : PropTypes.string,
     removeToastMessage: PropTypes.func,

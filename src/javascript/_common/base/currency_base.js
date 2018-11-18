@@ -1,6 +1,5 @@
 const getLanguage      = require('../language').get;
 const localize         = require('../localize').localize;
-const State            = require('../storage').State;
 const getPropertyValue = require('../utility').getPropertyValue;
 
 let currencies_config = {};
@@ -41,11 +40,7 @@ const addComma = (num, decimal_points, is_crypto) => {
     ));
 };
 
-const isJPClient = () => !!State.get('is_jp_client');
-
-const getFiatDecimalPlaces = () => isJPClient() ? 0 : 2;
-
-const calcDecimalPlaces = (currency) => isCryptocurrency(currency) ? 8 : getFiatDecimalPlaces();
+const calcDecimalPlaces = (currency) => isCryptocurrency(currency) ? 8 : 2;
 
 const getDecimalPlaces = (currency) => (
     // need to check currencies_config[currency] exists instead of || in case of 0 value
@@ -57,28 +52,44 @@ const setCurrencies = (website_status) => {
 };
 
 // (currency in crypto_config) is a back-up in case website_status doesn't include the currency config, in some cases where it's disabled
-const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type'])) || (currency in crypto_config);
+const isCryptocurrency = currency => /crypto/i.test(getPropertyValue(currencies_config, [currency, 'type'])) || (currency in CryptoConfig.get());
 
-const crypto_config = {
-    BTC: { name: 'Bitcoin',       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-    BCH: { name: 'Bitcoin Cash',  min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-    ETH: { name: 'Ether',         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-    ETC: { name: 'Ether Classic', min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-    LTC: { name: 'Litecoin',      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-    DAI: { name: 'Dai',           min_withdrawal: 0.002, pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
-};
+const CryptoConfig = (() => {
+    let crypto_config;
 
-const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(crypto_config, [currency, 'min_withdrawal']) || 0.002 : 1);
+    const initCryptoConfig = () => ({
+        BTC: { name: localize('Bitcoin'),       min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        BCH: { name: localize('Bitcoin Cash'),  min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        ETH: { name: localize('Ether'),         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        ETC: { name: localize('Ether Classic'), min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        LTC: { name: localize('Litecoin'),      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
+        DAI: { name: localize('Dai'),           min_withdrawal: 0.02, pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        UST: { name: localize('Tether'),        min_withdrawal: 0.02, pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+    });
+
+    return {
+        get: () => {
+            if (!crypto_config) {
+                crypto_config = initCryptoConfig();
+            }
+            return crypto_config;
+        },
+    };
+})();
+
+const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(CryptoConfig.get(), [currency, 'min_withdrawal']) || 0.002 : 1);
+
+const getMinTransfer = currency => getPropertyValue(currencies_config, [currency, 'limits', 'transfer_between_accounts', 'min']) || getMinWithdrawal(currency);
 
 // @param {String} limit = max|min
 const getPaWithdrawalLimit = (currency, limit) => {
     if (isCryptocurrency(currency)) {
-        return getPropertyValue(crypto_config, [currency, `pa_${limit}_withdrawal`]);
+        return getPropertyValue(CryptoConfig.get(), [currency, `pa_${limit}_withdrawal`]); // pa_min_withdrawal and pa_max_withdrawal used here
     }
-    return limit === 'max' ? 2000 : 10;
+    return limit === 'max' ? 2000 : 10; // limits for fiat currency
 };
 
-const getCurrencyName = currency => localize(getPropertyValue(crypto_config, [currency, 'name']) || '' /* localize-ignore */); // to refactor on master
+const getCurrencyName = currency => getPropertyValue(CryptoConfig.get(), [currency, 'name']) || '';
 
 const getMinPayout = currency => getPropertyValue(currencies_config, [currency, 'stake_default']);
 
@@ -91,6 +102,7 @@ module.exports = {
     isCryptocurrency,
     getCurrencyName,
     getMinWithdrawal,
+    getMinTransfer,
     getMinPayout,
     getPaWithdrawalLimit,
     getCurrencies: () => currencies_config,

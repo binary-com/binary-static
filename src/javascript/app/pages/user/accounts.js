@@ -9,7 +9,6 @@ const FormManager        = require('../../common/form_manager');
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
 const State              = require('../../../_common/storage').State;
-const toTitleCase        = require('../../../_common/string_util').toTitleCase;
 const urlFor             = require('../../../_common/url').urlFor;
 
 const Accounts = (() => {
@@ -49,16 +48,23 @@ const Accounts = (() => {
 
     const getCompanyName = account => Client.getLandingCompanyValue(account, landing_company, 'name');
 
+    const getCompanyCountry = account => Client.getLandingCompanyValue(account, landing_company, 'country');
+
     const populateNewAccounts = (upgrade_info) => {
         const new_account = upgrade_info;
         const account     = {
             real     : new_account.type === 'real',
             financial: new_account.type === 'financial',
         };
+        const new_account_title = new_account.type === 'financial' ? localize('Financial Account') : localize('Real Account');
 
         $(form_id).find('tbody')
             .append($('<tr/>')
-                .append($('<td/>').html($('<span/>', { text: localize(`${toTitleCase(new_account.type)} Account`), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName(account)}` })))
+                .append($('<td/>').html($('<span/>', {
+                    text                 : new_account_title,
+                    'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
+                    'data-balloon-length': 'large',
+                })))
                 .append($('<td/>', { text: getAvailableMarkets(account) }))
                 .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
                 .append($('<td/>')
@@ -87,11 +93,13 @@ const Accounts = (() => {
 
     const appendExistingAccounts = (loginid) => {
         const account_currency  = Client.get('currency', loginid);
-        const account_type_prop = { text: localize(Client.getAccountTitle(loginid)) };
+        const account_type_prop = { text: Client.getAccountTitle(loginid) };
 
         if (!Client.isAccountOfType('virtual', loginid)) {
-            const company_name = getCompanyName(loginid);
-            account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}`;
+            const company_name    = getCompanyName(loginid);
+            const company_country = getCompanyCountry(loginid);
+            account_type_prop['data-balloon'] = `${localize('Counterparty')}: ${company_name}, ${localize('Jurisdiction')}: ${company_country}`;
+            account_type_prop['data-balloon-length'] = 'large';
         }
 
         const is_disabled    = Client.get('is_disabled', loginid);
@@ -100,7 +108,7 @@ const Accounts = (() => {
         if (is_disabled) {
             txt_markets = localize('This account is disabled');
         } else if (excluded_until) {
-            txt_markets = localize('This account is excluded until [_1]', [moment(+excluded_until * 1000).format('YYYY-MM-DD HH:mm:ss Z')]);
+            txt_markets = localize('This account is excluded until [_1]', moment(+excluded_until * 1000).format('YYYY-MM-DD HH:mm:ss Z'));
         } else {
             txt_markets = getAvailableMarkets(loginid);
         }
@@ -130,21 +138,39 @@ const Accounts = (() => {
         return legal_allowed_markets;
     };
 
-    const markets = {
-        commodities: 'Commodities',
-        forex      : 'Forex',
-        indices    : 'Indices',
-        stocks     : 'Stocks',
-        volidx     : 'Volatility Indices',
-    };
+    const MarketsConfig = (() => {
+        let markets_config;
 
-    const getMarketName = market => localize(markets[market] || '');
+        const initMarketsConfig = () => ({
+            commodities: localize('Commodities'),
+            forex      : localize('Forex'),
+            indices    : localize('Indices'),
+            stocks     : localize('Stocks'),
+            volidx     : localize('Volatility Indices'),
+        });
+
+        return {
+            get: () => {
+                if (!markets_config) {
+                    markets_config = initMarketsConfig();
+                }
+                return markets_config;
+            },
+        };
+    })();
+
+    const getMarketName = market => MarketsConfig.get()[market] || '';
 
     const populateMultiAccount = () => {
         const currencies = getCurrencies(landing_company);
+        const account    = { real: 1 };
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
-                .append($('<td/>').html($('<span/>', { text: localize('Real Account'), 'data-balloon': `${localize('Counterparty')}: ${getCompanyName({ real: 1 })}` })))
+                .append($('<td/>').html($('<span/>', {
+                    text                 : localize('Real Account'),
+                    'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
+                    'data-balloon-length': 'large',
+                })))
                 .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
                 .append($('<td/>', { class: 'account-currency' }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
@@ -193,9 +219,9 @@ const Accounts = (() => {
         }
     };
 
-    const showError = (message) => {
+    const showError = (localized_text) => {
         $('#new_account_error').remove();
-        $('#new_account_opening').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localize(message) }));
+        $('#new_account_opening').find('button').parent().append($('<p/>', { class: 'error-msg', id: 'new_account_error', text: localized_text }));
     };
 
     const populateReq = () => {

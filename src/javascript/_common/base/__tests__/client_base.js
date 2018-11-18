@@ -164,14 +164,6 @@ describe('ClientBase', () => {
             expect(ugprade_info.type).to.eq('financial');
             expect(ugprade_info.can_open_multi).to.eq(false);
         });
-        it('returns as expected for accounts that can upgrade to japan', () => {
-            State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ 'japan' ]);
-            const ugprade_info = Client.getBasicUpgradeInfo();
-            expect(ugprade_info.can_upgrade).to.eq(true);
-            expect(ugprade_info.can_upgrade_to).to.eq('japan');
-            expect(ugprade_info.type).to.eq('real');
-            expect(ugprade_info.can_open_multi).to.eq(false);
-        });
         it('returns as expected for multi account opening', () => {
             State.set(['response', 'authorize', 'authorize', 'upgradeable_landing_companies'], [ 'costarica' ]);
             Client.set('landing_company_shortcode', 'costarica');

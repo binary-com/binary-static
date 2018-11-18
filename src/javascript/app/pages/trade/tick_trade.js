@@ -5,6 +5,7 @@ const Tick                 = require('./tick');
 const updatePurchaseStatus = require('./update_values').updatePurchaseStatus;
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const BinarySocket         = require('../../base/socket');
+const ChartSettings        = require('../../common/chart_settings');
 const addComma             = require('../../../_common/base/currency_base').addComma;
 const CommonFunctions      = require('../../../_common/common_functions');
 const localize             = require('../../../_common/localize').localize;
@@ -40,8 +41,6 @@ const TickDisplay = (() => {
     const winning_color = 'rgba(46, 136, 54, 0.2)';
     const losing_color  = 'rgba(204, 0, 0, 0.1)';
 
-    const selected_tick_style = 'margin-left: 10px; display: inline-block; border-radius: 6px; background-color: orange; width:10px; height: 10px;';
-
     const color  = 'orange';
     const marker = {
         fillColor: color,
@@ -73,17 +72,32 @@ const TickDisplay = (() => {
             payout = parseFloat(data.payout);
         }
 
-        const minimize = data.show_contract_result;
-        const end_time = parseInt(data.contract_start) + parseInt((number_of_ticks + 2) * 5);
-
         setXIndicators();
         requireHighstock((Highstock) => {
             Highcharts = Highstock;
+            const is_small_width     = window.innerWidth < 480;
+            const overlay_margin_top = is_small_width ? 70 : 40;
+            const overlay_height     = is_small_width ? 200 : 170;
             initializeChart({
-                minimize,
-                plot_from: data.previous_tick_epoch * 1000,
-                plot_to  : new Date(end_time * 1000).getTime(),
-                width    : data.width ? data.width : undefined,
+                display_decimals,
+                data         : [],
+                el           : id_render,
+                events       : { load: () => { plot(); } },
+                margin_top   : show_contract_result ? overlay_margin_top : null,
+                has_animation: show_contract_result,
+                height       : show_contract_result ? overlay_height : null,
+                radius       : 4,
+                title        : show_contract_result ? '' : display_symbol,
+                tooltip      : {
+                    formatter() {
+                        const new_y = addComma(this.y.toFixed(display_decimals));
+                        const mom   = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
+                        return `<div class='tooltip-body'>${mom}<br/>${display_symbol} ${new_y}</div>`;
+                    },
+                },
+                type  : 'line',
+                width : data.width ? data.width : (show_contract_result ? 394 : null),
+                x_axis: { labels: { enabled: false }, ...(show_contract_result ? { max: number_of_ticks + 1, min: 0, type: 'linear' } : {}) },
             }, options);
         });
     };
@@ -127,10 +141,10 @@ const TickDisplay = (() => {
         } else if (contract_category.match('digits')) {
             ticks_needed = number_of_ticks;
             x_indicators = {
-                _0: { label: localize('Tick [_1]', ['1']), id: 'start_tick' },
+                _0: { label: localize('Tick [_1]', '1'), id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label    : localize('Tick [_1]', [number_of_ticks]),
+                label    : localize('Tick [_1]', number_of_ticks),
                 id       : 'last_tick',
                 dashStyle: 'Dash',
             };
@@ -149,57 +163,20 @@ const TickDisplay = (() => {
     };
 
     const initializeChart = (config, data) => {
+        const has_reset_barrier = contract.entry_spot && contract.barrier &&
+            Reset.isReset(contract_category) && Reset.isNewBarrier(contract.entry_spot, contract.barrier);
+        ChartSettings.setLabels({
+            contract_type   : contract_category,
+            has_barrier     : should_set_barrier && contract_category !== 'highlowticks',
+            is_reset_barrier: has_reset_barrier,
+            is_tick_trade   : true,
+            shortcode       : contract.shortcode,
+        });
         Highcharts.setOptions({
             lang: { thousandsSep: ',' },
         });
-        chart = new Highcharts.Chart({
-            chart: {
-                type           : 'line',
-                renderTo       : id_render,
-                width          : config.width || (config.minimize ? 394 : null),
-                height         : config.minimize ? 143 : null,
-                backgroundColor: null,
-                events         : { load: () => plot(config.plot_from, config.plot_to) },
-                marginLeft     : 50,
-                marginRight    : 30,
-                marginTop      : 25,
-            },
-            credits: { enabled: false },
-            tooltip: {
-                formatter() {
-                    const new_y = addComma(this.y.toFixed(display_decimals));
-                    const mom   = moment.utc(applicable_ticks[this.x].epoch * 1000).format('dddd, MMM D, HH:mm:ss');
-                    return `${mom}<br/>${display_symbol} ${new_y}`;
-                },
-            },
-            title: {
-                text : show_contract_result ? '' : display_symbol,
-                style: { fontSize: '16px' },
-            },
-            ...(contract_category === 'highlowticks' && { subtitle: { text: `<div style="${selected_tick_style}"></div> ${localize('Selected Tick')}`, useHTML: true } }),
-            xAxis: {
-                type  : 'linear',
-                min   : 0,
-                max   : number_of_ticks + 1,
-                labels: { enabled: false },
-            },
-            yAxis: {
-                opposite: false,
-                labels  : {
-                    align: 'left',
-                    x    : 0,
-                    formatter() {
-                        return addComma(this.value.toFixed(display_decimals));
-                    },
-                },
-                title: '',
-            },
-            series: [{
-                data: [],
-            }],
-            exporting: { enabled: false, enableImages: false },
-            legend   : { enabled: false },
-        });
+        ChartSettings.setChartOptions(config);
+        chart = new Highcharts.Chart(ChartSettings.getChartOptions());
         if (data) {
             dispatch(data);
         }
@@ -294,7 +271,7 @@ const TickDisplay = (() => {
                         value: high_low_barrier,
                         color: '#e98024',
                         label: {
-                            text : `${localize(/^tickhigh_/i.test(contract.shortcode) ? 'Highest Tick' : 'Lowest Tick')} (${addComma(high_low_barrier)})`,
+                            text : `${/^tickhigh_/i.test(contract.shortcode) ? localize('Highest Tick') : localize('Lowest Tick')} (${addComma(high_low_barrier)})`,
                             align: 'center',
                         },
                         width    : 2,
@@ -493,7 +470,7 @@ const TickDisplay = (() => {
 
         if (+entry_barrier !== +reset_barrier) {
             removePlotLine('tick-barrier', 'y');
-            
+
             chart.yAxis[0].addPlotLine({
                 id    : 'tick-reset-barrier',
                 value : +reset_barrier,
@@ -514,6 +491,16 @@ const TickDisplay = (() => {
 
             CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Reset Barrier')}: ${reset_barrier}`);
             reset_spot_plotted = true;
+            ChartSettings.setLabels({
+                contract_type   : contract_category,
+                has_barrier     : true,
+                is_reset_barrier: true,
+                is_tick_trade   : true,
+                shortcode       : contract.shortcode,
+            });
+            if (chart) {
+                chart.setTitle(null, { text: ChartSettings.getSubtitle() });
+            }
         }
 
         evaluateContractOutcome();

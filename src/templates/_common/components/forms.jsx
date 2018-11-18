@@ -26,6 +26,8 @@ export const FormRow = ({
     attributes = {},
     input_prefix,
     children,
+    options,
+    default_option,
 }) => {
     const getInnerElement = () => {
         if (type === 'select') {
@@ -33,6 +35,21 @@ export const FormRow = ({
                 <select id={id} className={`form_input ${className || ''}`} {...attributes} >
                     {children}
                 </select>
+            );
+        }
+        if (type === 'radio') {
+            return (
+                <div id={id} className={className}>
+                    {options.map(({ value, label: label_text, data_balloon_text }, i) => {
+                        const option_id = `${id}_option_${i}`;
+                        return (
+                            <div key={value}>
+                                <input type='radio' name={id} id={option_id} value={value} defaultChecked={value === default_option} />
+                                <label htmlFor={option_id}><span data-balloon={data_balloon_text} data-balloon-length='medium'>{label_text}</span></label>
+                            </div>
+                        );
+                    })}
+                </div>
             );
         }
         if (['text', 'password', 'number', 'checkbox'].includes(type)) {

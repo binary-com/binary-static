@@ -1,14 +1,9 @@
 import React from 'react';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 import MFSA from '../_common/includes/mfsa.jsx';
+import PaymentLogo from '../_common/components/payment_logo.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
 import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
-
-const PaymentLogo = ({ items }) => items.map((item, inx) => (
-    <div key={inx} className='gr-2 gr-4-m center-text' data-show={item.dataShow}>
-        <img className='gr-12 gr-centered' src={it.url_for(`images/pages/home/payment/${item.image}.svg`)} />
-    </div>
-));
 
 const Arrows = ({ direction, parent }) => (
     <div className='align-self-center gr-1 gr-hide-p'>
@@ -355,7 +350,7 @@ const Home = () => {
                         text={it.L('Expert analysis and learning resources.')}
                     />
                 </div>
-                <div className='center-text gr-padding-30'>
+                <div className='center-text gr-padding-30 academy'>
                     <a
                         className='button-secondary'
                         href='https://academy.binary.com'
@@ -374,31 +369,9 @@ const Home = () => {
                         <p className='center-text'>{it.L('We support hundreds of deposit and withdrawal options, including Bitcoin.')}</p>
 
                         <div className='gr-12 gr-padding-30'>
-                            <a href={it.url_for('cashier/payment_methods')}>
-                                <div className='gr-row gr-row-align-center'>
-                                    <PaymentLogo
-                                        items={[
-                                            { image: 'visa' },
-                                            { image: 'mastercard' },
-                                            { image: 'bank_transfer' },
-                                            { image: 'internet_bank_transfer' },
-                                            { image: 'paysec' },
-                                            { image: 'neteller' },
-                                            { image: 'fasapay' },
-                                            { image: 'perfect_money' },
-                                            { image: 'skrill' },
-                                            { image: 'qiwi' },
-                                            { image: 'webmoney' },
-                                            { image: 'yandex' },
-                                            { image: 'paysafe' },
-                                            { image: 'ethereum_black', dataShow: '-malta, -maltainvest' },
-                                            { image: 'bitcoin', dataShow: '-malta, -maltainvest' },
-                                            { image: 'bitcoin_cash', dataShow: '-malta, -maltainvest' },
-                                            { image: 'litecoin', dataShow: '-malta, -maltainvest' },
-                                        ]}
-                                    />
-                                </div>
-                            </a>
+                            <div className='gr-row gr-row-align-center'>
+                                <PaymentLogo />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -20,16 +20,27 @@
     }
     #footer-regulatory {
         padding-bottom: 30px;
-        color: #a8a8a8; // stylelint-disable color-no-hex
 
-        a {
+        a, p, .fld-risk-warning legend {
             font-size: 13px !important;
         }
-        p {
-            font-size: 13px;
+        a, p {
             font-weight: 100;
+        }
+        a {
+            color: $COLOR_GRAY;
+        }
+        p, .fld-risk-warning legend {
+            color: #a8a8a8; // stylelint-disable color-no-hex
             text-align: justify;
             margin: 0 0 10px;
+        }
+        .fld-risk-warning {
+            border-color: $COLOR_DARK_GRAY;
+
+            legend {
+                text-transform: uppercase;
+            }
         }
         .about-binary {
             border-top: 1px solid $COLOR_DARK_GRAY;
@@ -46,38 +57,6 @@
                 font-size: 16px;
             }
         }
-        #iom_icon_footer {
-            max-width: 90px;
-        }
-        #lga_icon_footer {
-            max-width: 70px;
-        }
-        #gamstop_icon_footer {
-            max-width: 120px;
-        }
-        @media screen and (max-width: 480px) {
-            .icon-row {
-                flex-direction: column;
-
-                > * {
-                    margin-right: 0;
-                    margin-bottom: 20px;
-                }
-            }
-            .social-icons {
-                margin-left: 0;
-            }
-            #iom_icon_footer {
-                max-width: 110px;
-            }
-            #lga_icon_footer {
-                max-width: 80px;
-            }
-            #gamstop_icon_footer {
-                max-width: 130px;
-            }
-        }
-
         #ratelimit-error-message, #site-status-message {
             position: fixed;
             top: 0;
@@ -89,21 +68,29 @@
             z-index: 9999;
         }
     }
+    .iom-icon {
+        width: 90px;
+    }
+    .lga-icon {
+        width: 100px;
+    }
+    .gamstop-icon {
+        width: 109px;
+    }
+    .gamstop-icon.data-show-visible + .lga-icon {
+        width: 70px;
+        margin-bottom: 3px;
+        margin-left: -10px;
+    }
     .flex-row {
         display: flex;
         flex-direction: row;
         align-items: center;
     }
     .lga-gamstop-icon-container {
-        height: 100%;
         display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-around;
-
-        div, a {
-            width: 100%;
-        }
+        align-items: flex-start;
+        flex-direction: column-reverse;
     }
     .social-icons {
         margin-left: auto;
@@ -124,6 +111,19 @@
         > * {
             margin-right: 20px;
         }
+        .vanuatu-icon {
+            width: 160px;
+            margin-left: -30px;
+            margin-right: 0;
+        }
+        .bvi-icon {
+            width: 115px;
+            margin-left: -30px;
+            margin-right: 0;
+        }
+        .labuan-icon {
+            width: 120px;
+        }
     }
     #end-note {
         line-height: 25px;
@@ -142,7 +142,7 @@
         padding: 10px 7px;
         position: fixed;
         bottom: 8px;
-        right: 8px;
+        right: 78px; // right space for elevio launcher
         left: 8px;
         border-radius: 5px;
         z-index: 1000;
@@ -161,6 +161,19 @@
             &:hover {
                 cursor: pointer;
             }
+        }
+    }
+    @media screen and (max-width: 590px) {
+        .icon-row {
+            flex-direction: column;
+
+            > * {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        .social-icons {
+            margin-left: 0;
         }
     }
 }

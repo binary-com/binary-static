@@ -149,34 +149,31 @@ const Metatrader = () => (
                     <a href={`${it.url_for('get-started')}?get_started_tabs=mt5`} className='get-started-link'>{it.L('Get started with MT5')}</a>
                     <div className='mt-panel'>
                         <div id='account_desc' className='mt-container border-bottom' />
-                        <div className='mt-container'>
-                            <p>{it.L('MT5 trading platform links:')}</p>
-                            <ul className='platforms'>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/web.svg')} />
-                                    <a href='https://trade.mql5.com/trade?servers=Binary.com-Server&amp;trade_server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>{it.L('Trade on web platform')}</a>
-                                </li>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/mac.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binary-mt5.dmg' download>{it.L('Download for Mac')}</a>
-                                </li>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/linux.svg')} />
-                                    <a href='https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux' rel='noopener noreferrer' target='_blank'>{it.L('Instructions for Linux')}</a>
-                                </li>
-                                <li>
-                                    <img src={it.url_for('images/pages/metatrader/dashboard/windows.svg')} />
-                                    <a href='https://s3.amazonaws.com/binary-mt5/binarycom_mt5.exe' download>{it.L('Download for Windows')}</a>
-                                </li>
-                                <p className='badges'>
-                                    <a href='https://download.mql5.com/cdn/mobile/mt5/ios?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
-                                        <span className='app-store-badge' />
-                                    </a>
-                                    <a href='https://download.mql5.com/cdn/mobile/mt5/android?server=Binary.com-Server' rel='noopener noreferrer' target='_blank'>
-                                        <span className='google-play-badge' />
-                                    </a>
-                                </p>
-                            </ul>
+                    </div>
+                    <div className='mt-panel'>
+                        <div className='mt-sidebar-button border-bottom'>
+                            <div className='small-icon'>
+                                <a href={it.url_for('get-started/binary-options-mt5')}>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/binary-options.svg')} />
+                                </a>
+                            </div>
+                            <div className='mt-link'>
+                                <a href={it.url_for('get-started/binary-options-mt5')}>
+                                    {it.L('Binary Options for MT5')}
+                                </a>
+                            </div>
+                        </div>
+                        <div className='mt-sidebar-button'>
+                            <div className='small-icon'>
+                                <a href={it.url_for('metatrader/download')}>
+                                    <img src={it.url_for('images/pages/metatrader/dashboard/mt5.png')} />
+                                </a>
+                            </div>
+                            <div className='mt-link'>
+                                <a href={it.url_for('metatrader/download')}>
+                                    {it.L('Go to MT5 download page')}
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -190,7 +187,6 @@ const Metatrader = () => (
                         <span className='mt-type' />
                         <span className='mt-login' />
                     </div>
-
 
                     <div className='account-desc'>
                         <AccountDesc
@@ -239,7 +235,7 @@ const Metatrader = () => (
                                 it.L('Leverage up to [_1]', '1:500'),
                                 it.L('Fixed spreads'),
                                 it.L('Market execution'),
-                                it.L('No commission (excluding cryptocurrencies)'),
+                                it.L('No commission'),
                             ]}
                         />
                         <AccountDesc
@@ -290,6 +286,9 @@ const Metatrader = () => (
                                     </div>
                                     <p id='new_account_msg' className='notice-msg center-text invisible' />
                                     <p id='new_account_financial_authenticate_msg' className='invisible notice-msg hint'>{it.L('You may proceed but please <a href="[_1]">authenticate</a> your account within five days to continue trading.', it.url_for('user/authenticate'))}</p>
+                                    <p id='new_account_no_deposit_bonus_msg' className='center-text hint invisible'>
+                                        <strong>{it.L('Note: A no deposit bonus worth USD 10 will be credited into your account within 24 hours after registration.')}</strong>
+                                    </p>
                                     <div className='center-text'>
                                         <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
                                             <span>{it.L('Cancel')}</span>
@@ -300,13 +299,13 @@ const Metatrader = () => (
                                     </div>
                                 </div>
                                 <div id='view_2' className='gr-row invisible'>
-                                    <div className='gr-8 gr-12-m'>
+                                    <div className='container gr-8 gr-12-m'>
                                         <FormRow is_two_rows type='text'     id='txt_name'          label={it.L('Name')} attributes={{ maxLength: 30, autoComplete: 'off' }} />
-                                        <FormRow is_two_rows type='password' id='txt_main_pass'     label={it.L('Main password (trading access)')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
+                                        <FormRow is_two_rows type='password' id='txt_main_pass'     label={it.L('Main password')}     tooltip={it.L('Access your account with full trading permission.')}             hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_re_main_pass'  label={it.L('Verify main password')} />
-                                        <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password (read-only access)')} />
+                                        <FormRow is_two_rows type='password' id='txt_investor_pass' label={it.L('Investor password')} tooltip={it.L('Share access to your account without any permission to trade.')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <SubmitButton
-                                            no_wrapper
+                                            is_centered
                                             type='submit'
                                             id='btn_submit_new_account'
                                             text={it.L('Create Account')}
@@ -380,10 +379,18 @@ const Metatrader = () => (
                                             <h3 className='secondary-color'>{it.L('Change password')}</h3>
                                         </div>
 
-                                        <FormRow is_two_rows type='select' id='ddl_password_type' label={it.L('Password type')}>
-                                            <option value='main'>{it.L('Main')}</option>
-                                            <option value='investor'>{it.L('Investor')}</option>
-                                        </FormRow>
+                                        <FormRow
+                                            is_two_rows
+                                            type='radio'
+                                            id='ddl_password_type'
+                                            className='password-type'
+                                            label={it.L('Password type')}
+                                            options={[
+                                                { value: 'main',     label: it.L('Main'),     data_balloon_text: it.L('Access your account with full trading permission.') },
+                                                { value: 'investor', label: it.L('Investor'), data_balloon_text: it.L('Share access to your account without any permission to trade.') },
+                                            ]}
+                                            default_option='main'
+                                        />
                                         <FormRow is_two_rows type='password' id='txt_old_password'    label={it.L('Current MT5 password')} />
                                         <FormRow is_two_rows type='password' id='txt_new_password'    label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_re_new_password' label={it.L('Verify new MT5 password')} />
@@ -415,11 +422,32 @@ const Metatrader = () => (
                                             />
                                         </div>
                                     </form>
+                                    <form className='invisible' id='frm_verify_password_reset_token'>
+                                        <div className='gr-padding-10'>
+                                            <p className='no-margin'>{it.L('Please check your email for the verification code to complete the process.')}</p>
+                                            <FormRow is_two_rows type='text' label={it.L('Verification code')} id='txt_verification_code' attributes={{ autoComplete: 'off' }} />
+                                            <SubmitButton
+                                                no_wrapper
+                                                type='submit'
+                                                id='btn_submit_verify_password_reset_token'
+                                                text={it.L('Submit')}
+                                                attributes={{ action: 'verify_password_reset_token' }}
+                                            />
+                                        </div>
+                                    </form>
                                     <form className='invisible' id='frm_password_reset'>
-                                        <FormRow is_two_rows type='select' id='ddl_reset_password_type' label={it.L('Password type')}>
-                                            <option value='main'>{it.L('Main')}</option>
-                                            <option value='investor'>{it.L('Investor')}</option>
-                                        </FormRow>
+                                        <FormRow
+                                            is_two_rows
+                                            type='radio'
+                                            id='ddl_reset_password_type'
+                                            className='password-type'
+                                            label={it.L('Password type')}
+                                            options={[
+                                                { value: 'main',     label: it.L('Main'),     data_balloon_text: it.L('Access your account with full trading permission.') },
+                                                { value: 'investor', label: it.L('Investor'), data_balloon_text: it.L('Share access to your account without any permission to trade.') },
+                                            ]}
+                                            default_option='main'
+                                        />
                                         <FormRow is_two_rows type='password' id='txt_reset_new_password'    label={it.L('New MT5 password')} hint={it.L('Minimum eight characters. Must contain numbers, and mix of upper and lower case letters.')} />
                                         <FormRow is_two_rows type='password' id='txt_reset_re_new_password' label={it.L('Verify new MT5 password')} />
                                         <SubmitButton
@@ -525,6 +553,7 @@ const Metatrader = () => (
                     <div id='messages'>
                         <div id='msg_set_currency'>{it.L('To perform this action, please set the [_1]currency[_2] of your account.', `<a href="${it.url_for('user/set-currency')}">`, '</a>')}</div>
                         <div id='msg_switch'>{it.L('To perform this action, please switch to your [_1] Real Account.', it.website_name)}</div>
+                        <div id='msg_switch_financial'>{it.L('To perform this action, please switch to your [_1] Financial account', it.website_name)}</div>
                         <div id='msg_upgrade'>{it.L('To perform this action, please <a href="[_1]">upgrade to [_2] Real Account</a>.', it.url_for('new_account/realws'), it.website_name)}</div>
                         <div id='msg_real_financial'>
                             <span id='msg_metatrader_account' className='invisible'>{it.L('To create a MetaTrader 5 account, please:')}</span>

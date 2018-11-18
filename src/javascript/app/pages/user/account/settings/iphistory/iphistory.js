@@ -1,13 +1,7 @@
 const IPHistoryInit = require('./iphistory.init');
-const BinaryPjax    = require('../../../../../base/binary_pjax');
-const isJPClient    = require('../../../../../base/client').isJPClient;
 
 const IPHistory = (() => {
     const onLoad = () => {
-        if (isJPClient()) {
-            BinaryPjax.loadPreviousUrl();
-            return;
-        }
         IPHistoryInit.init();
     };
 

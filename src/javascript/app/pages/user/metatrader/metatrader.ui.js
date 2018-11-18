@@ -181,7 +181,7 @@ const MetaTraderUI = (() => {
                 const mapping = {
                     balance : () => (isNaN(info) ? '' : formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
                     leverage: () => `1:${info}`,
-                    login   : () => (`${info} (${localize(/demo/.test(accounts_info[acc_type].account_type) ? 'Demo Account' : 'Real-Money Account')})`),
+                    login   : () => (`${info} (${/demo/.test(accounts_info[acc_type].account_type) ? localize('Demo Account') : localize('Real-Money Account')})`),
                 };
                 $(this).html(typeof mapping[key] === 'function' ? mapping[key]() : info);
             });
@@ -236,7 +236,7 @@ const MetaTraderUI = (() => {
                 .setVisibility(1);
 
             if (action === 'manage_password') {
-                $form.find('button[type="submit"]').append(accounts_info[acc_type].info.login ? ` ${localize('for account [_1]', [accounts_info[acc_type].info.login])}` : '');
+                $form.find('button[type="submit"]').append(accounts_info[acc_type].info.login ? ` ${localize('for account [_1]', accounts_info[acc_type].info.login)}` : '');
                 if (!token) {
                     $form.find('#frm_verify_password_reset').setVisibility(1);
                 } else if (!Validation.validEmailToken(token)) {
@@ -294,6 +294,8 @@ const MetaTraderUI = (() => {
                     msg = MetaTraderConfig.needsRealMessage();
                 } else if (!Client.get('currency')) { // client should set currency before accessing fund management section
                     msg = $templates.find('#msg_set_currency').html();
+                } else if (Client.get('landing_company_shortcode') === 'iom') {
+                    msg = MetaTraderConfig.needsFinancialMessage();
                 }
                 if (msg) {
                     displayMainMessage(msg, false);
@@ -409,6 +411,7 @@ const MetaTraderUI = (() => {
             $form.find('#view_1 #btn_next').addClass('button-disabled');
             $form.find('#view_1 .step-2').setVisibility(1);
             displayMessage('#new_account_msg', (selected_acc_type === 'real' && Client.get('is_virtual')) ? MetaTraderConfig.needsRealMessage() : '', true);
+            $form.find('#new_account_no_deposit_bonus_msg').setVisibility(0);
         } else {
             const new_acc_type = newAccountGetType();
             displayAccountDescription(new_acc_type);
@@ -417,6 +420,8 @@ const MetaTraderUI = (() => {
                 $form.find('#view_1 #btn_next')[error_msg ? 'addClass' : 'removeClass']('button-disabled');
                 $form.find('#view_1 #btn_cancel').removeClass('invisible');
             });
+            // uncomment to show No Deposit Bonus note
+            // $form.find('#new_account_no_deposit_bonus_msg').setVisibility(/real_vanuatu_standard/.test(new_acc_type));
         }
     };
 
@@ -447,10 +452,10 @@ const MetaTraderUI = (() => {
                 count++;
                 const $acc  = $acc_template.clone();
                 const type  = acc_type.split('_').slice(1).join('_');
-                const title = accounts_info[acc_type].short_title;
+                const image = accounts_info[acc_type].mt5_account_type.replace(/mamm(_)*/, '') || 'volatility_indices'; // image name can be (advanced|standard|volatility_indices)
                 $acc.find('.mt5_type_box').attr({ id: `rbtn_${type}`, 'data-acc-type': type })
-                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${title.toLowerCase().replace(/\s/g, '_').replace('mam_', '')}.svg`));
-                $acc.find('p').text(localize(title));
+                    .find('img').attr('src', urlForStatic(`/images/pages/metatrader/icons/acc_${image}.svg`));
+                $acc.find('p').text(accounts_info[acc_type].short_title);
                 (/mam/.test(acc_type) ? $acc_template_mam : $acc_template_mt).append($acc);
             });
         $templates.find('.hl-types-of-accounts').setVisibility(count > 1);
@@ -561,6 +566,7 @@ const MetaTraderUI = (() => {
 
         $form   : () => $form,
         getToken: () => token,
+        setToken: (verification_code) => { token = verification_code; },
     };
 })();
 

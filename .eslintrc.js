@@ -34,6 +34,7 @@ module.exports = {
         'space-in-parens'                   : ['error', 'never'],
         'space-infix-ops'                   : 'error',
         'space-unary-ops'                   : 'error',
+        'no-multiple-empty-lines'           : ['error', { 'max': 1, 'maxEOF': 1 }],
 
         // import rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],

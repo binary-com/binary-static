@@ -4,10 +4,9 @@ const BinaryPjax       = require('../../../../base/binary_pjax');
 const Client           = require('../../../../base/client');
 const Header           = require('../../../../base/header');
 const BinarySocket     = require('../../../../base/socket');
-const formatMoney      = require('../../../../common/currency').formatMoney;
 const FormManager      = require('../../../../common/form_manager');
-const Geocoder         = require('../../../../../_common/geocoder');
 const CommonFunctions  = require('../../../../../_common/common_functions');
+const Geocoder         = require('../../../../../_common/geocoder');
 const localize         = require('../../../../../_common/localize').localize;
 const State            = require('../../../../../_common/storage').State;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
@@ -19,21 +18,15 @@ const PersonalDetails = (() => {
     let is_for_new_account = false;
 
     let editable_fields,
-        is_jp_client,
         is_virtual,
         residence,
-        get_settings_data,
-        currency;
+        get_settings_data;
 
     const init = () => {
         editable_fields   = {};
         get_settings_data = {};
         is_virtual        = Client.get('is_virtual');
         residence         = Client.get('residence');
-        is_jp_client      = residence === 'jp'; // we need to check with residence so we know which fields will be present in get_settings response
-        if (is_jp_client && !is_virtual) {
-            showHideTaxMessage();
-        }
     };
 
     const showHideTaxMessage = () => {
@@ -52,26 +45,6 @@ const PersonalDetails = (() => {
         }
     };
 
-    const showHideLabel = (get_settings) => {
-        if (!is_jp_client) {
-            ['place_of_birth', 'account_opening_reason', 'citizen'].forEach((id) => {
-                if (Object.prototype.hasOwnProperty.call(get_settings, id)) {
-                    if (get_settings[id]) {
-                        // we have to show text here instead of relying on displayGetSettingsData()
-                        // since it prioritizes showing data instead of label
-                        const $label = $(`#lbl_${id}`);
-                        $label.text(get_settings[id]);
-                        $(`#row_${id}`).setVisibility(0);
-                        $(`#row_lbl_${id}`).setVisibility(1);
-                    } else {
-                        $(`#row_lbl_${id}`).setVisibility(0);
-                        $(`#row_${id}`).setVisibility(1);
-                    }
-                }
-            });
-        }
-    };
-
     const showHideMissingDetails = () => {
         const validations = getValidations();
         const has_missing_field = validations.find((validation) => /req/.test(validation.validations) && $(validation.selector).val() === '');
@@ -85,7 +58,7 @@ const PersonalDetails = (() => {
         // for subaccounts, back-end sends loginid of the master account as name
         const hide_name            = accounts.some(loginid => new RegExp(loginid, 'i').test(get_settings.first_name)) || is_virtual;
         if (!hide_name) {
-            get_settings.name = is_jp_client ? get_settings.last_name : `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
+            get_settings.name = `${(get_settings.salutation || '')} ${(get_settings.first_name || '')} ${(get_settings.last_name || '')}`;
         }
 
         if (get_settings.place_of_birth) {
@@ -100,29 +73,10 @@ const PersonalDetails = (() => {
                 get_settings.citizen;
         }
 
-        showHideLabel(get_settings);
-
         displayGetSettingsData(get_settings);
 
         if (is_virtual) {
             $(real_acc_elements).remove();
-        } else if (is_jp_client) {
-            const jp_settings = get_settings.jp_settings;
-            switch (jp_settings.gender) {
-                case 'f':
-                    jp_settings.gender = localize('Female');
-                    break;
-                case 'm':
-                    jp_settings.gender = localize('Male');
-                    break;
-                default:
-                    break;
-            }
-            displayGetSettingsData(jp_settings);
-            if (jp_settings.hedge_asset !== null && jp_settings.hedge_asset_amount !== null) {
-                $('.hedge').setVisibility(1);
-            }
-            $('.JpAcc').setVisibility(1);
         } else {
             $(real_acc_elements).setVisibility(1);
             showHideTaxMessage();
@@ -137,46 +91,56 @@ const PersonalDetails = (() => {
             fnc_additional_check: additionalCheck,
             enable_button       : true,
         });
-        if (!is_virtual && !is_jp_client) {
+        if (!is_virtual) {
             Geocoder.validate(form_id);
         }
         showHideMissingDetails();
     };
 
-    const displayGetSettingsData = (data, populate = true) => {
-        let el_key,
-            el_lbl_key,
-            data_key;
-        Object.keys(data).forEach((key) => {
-            el_key     = document.getElementById(key);
-            el_lbl_key = document.getElementById(`lbl_${key}`);
-            // prioritise labels for japan account
-            el_key = is_jp_client ? (el_lbl_key || el_key) : (el_key || el_lbl_key);
+    const show_label_if_any_value = ['account_opening_reason', 'citizen', 'place_of_birth'];
+
+    const displayGetSettingsData = (get_settings, populate = true) => {
+        let el_id,
+            el_key,
+            has_label,
+            should_show_label,
+            should_update_value;
+        Object.keys(get_settings).forEach((key) => {
+            has_label           = show_label_if_any_value.indexOf(key) !== -1;
+            should_show_label   = has_label && get_settings[key];               // if we have a value for any of these fields, show them as label
+            el_id               = `${should_show_label ? 'lbl_' : ''}${key}`;
+            el_key              = CommonFunctions.getElementById(el_id);
             if (el_key) {
-                data_key             = /format_money/.test(el_key.className) && data[key] !== null ? formatMoney(currency, data[key]) : (data[key] || '');
-                editable_fields[key] = data_key;
+                editable_fields[key] = get_settings[key];
                 if (populate) {
+                    should_update_value = /select|text/i.test(el_key.type);
+                    if (has_label) {
+                        CommonFunctions.getElementById(`row_${el_id}`).setVisibility(1);
+                    }
                     if (el_key.type === 'checkbox') {
-                        el_key.checked = !!data_key;
-                    } else if (/select|text/i.test(el_key.type)) {
-                        $(el_key)
-                            .val(data_key.split(','))
+                        el_key.checked = !!get_settings[key];
+                    } else if (!should_update_value) { // for all non (checkbox|select|text) elements
+                        const localized_text = (document.querySelector(`#${key} option[value="${get_settings[key]}"]`) || {}).innerText || get_settings[key];
+                        CommonFunctions.elementInnerHtml(el_key, localized_text || '-');
+                    }
+                    if (should_update_value || should_show_label) {
+                        // if should show label, set the value of the non-label so that it doesn't count as missing information
+                        $(should_show_label ? `#${key}` : el_key)
+                            .val(get_settings[key] ? get_settings[key].split(',') : '')
                             .trigger('change');
-                    } else if (key !== 'country') {
-                        CommonFunctions.elementInnerHtml(el_key, data_key ? localize(data_key) : '-');
                     }
                 }
             }
         });
-        if (data.country) {
-            $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'lbl_country' })));
-            $('#lbl_country').text(data.country);
+        if (get_settings.country) {
+            $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'country' })));
+            $('#country').text(get_settings.country);
         }
     };
 
     const additionalCheck = (data) => {
-        if (!isChanged(data) && (!data.jp_settings || !isChanged(data.jp_settings))) {
-            showFormMessage('You did not change anything.', false);
+        if (!isChanged(data)) {
+            showFormMessage(localize('You did not change anything.'), false);
             return false;
         }
         return true;
@@ -185,34 +149,13 @@ const PersonalDetails = (() => {
     const isChanged = (data) => {
         const compare_data = $.extend({}, data);
         return Object.keys(compare_data).some(key => (
-            key !== 'set_settings' && key !== 'jp_settings' && editable_fields[key] !== compare_data[key]
+            key !== 'set_settings' && editable_fields[key] !== compare_data[key]
         ));
     };
 
     const getValidations = () => {
         let validations;
-        const data = get_settings_data;
-        if (is_jp_client) {
-            validations = [
-                { request_field: 'address_line_1',   value: data.address_line_1 },
-                { request_field: 'address_line_2',   value: data.address_line_2 },
-                { request_field: 'address_city',     value: data.address_city },
-                { request_field: 'address_state',    value: data.address_state },
-                { request_field: 'address_postcode', value: data.address_postcode },
-                { request_field: 'phone',            value: data.phone },
-
-                { selector: '#email_consent' },
-
-                { selector: '#hedge_asset_amount',       validations: ['req', 'number'], parent_node: 'jp_settings' },
-                { selector: '#hedge_asset',              validations: ['req'],           parent_node: 'jp_settings' },
-                { selector: '#motivation_circumstances', validations: ['req'],           parent_node: 'jp_settings' },
-                { selector: '#account_opening_reason',   validations: ['req'] },
-
-            ];
-            $(form_id).find('select').each(function () {
-                validations.push({ selector: `#${$(this).attr('id')}`, validations: ['req'], parent_node: 'jp_settings' });
-            });
-        } else if (is_virtual) {
+        if (is_virtual) {
             validations = [
                 { selector: '#email_consent' },
                 { selector: '#residence', validations: ['req'] },
@@ -223,6 +166,7 @@ const PersonalDetails = (() => {
             const mt_acct_type      = localStorage.getItem('personal_details_redirect');
             const is_for_mt_citizen = !!mt_acct_type;                                                   // all mt account opening requires citizen
             const is_for_mt_tax     = /real/.test(mt_acct_type) && mt_acct_type.split('_').length > 2;  // demo and volatility mt accounts do not require tax info
+            const is_tax_req        = is_financial || (is_for_mt_tax && +State.getResponse('landing_company.config.tax_details_required') === 1);
 
             validations = [
                 { selector: '#address_line_1',         validations: ['req', 'address'] },
@@ -231,17 +175,17 @@ const PersonalDetails = (() => {
                 { selector: '#address_state',          validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol'] },
                 { selector: '#address_postcode',       validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
                 { selector: '#email_consent' },
-                { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 6, max: 35, value: () => $('#phone').val().replace(/^\+/, '')  }]] },
+                { selector: '#phone',                  validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
                 { selector: '#place_of_birth',         validations: ['req'] },
                 { selector: '#account_opening_reason', validations: ['req'] },
 
-                { selector: '#tax_residence',  validations: (is_financial || is_for_mt_tax) ? ['req'] : '' },
+                { selector: '#tax_residence',  validations: (is_tax_req) ? ['req'] : '' },
                 { selector: '#citizen',        validations: (is_financial || is_gaming || is_for_mt_citizen) ? ['req'] : '' },
                 { selector: '#chk_tax_id',     validations: is_financial ? [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]] : '', exclude_request: 1 },
             ];
 
             const tax_id_validation  = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
-            if (is_financial || is_for_mt_tax) {
+            if (is_tax_req) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
@@ -276,9 +220,14 @@ const PersonalDetails = (() => {
                     BinaryPjax.loadPreviousUrl();
                     return;
                 }
-                const get_settings    = data.get_settings;
-                const has_required_mt = get_settings.tax_residence && get_settings.tax_identification_number &&
-                    get_settings.citizen;
+                const get_settings        = data.get_settings;
+                const is_tax_req          = +State.getResponse('landing_company.config.tax_details_required') === 1;
+                const is_for_mt_financial = /real_vanuatu_(standard|advanced)/.test(redirect_url);
+                const has_required_mt     = ((is_for_mt_financial && is_tax_req) ?
+                    (get_settings.tax_residence && get_settings.tax_identification_number && get_settings.citizen)
+                    :
+                    get_settings.citizen // only check Citizen if user selects mt volatility account
+                );
                 if (redirect_url && has_required_mt) {
                     localStorage.removeItem('personal_details_redirect');
                     $.scrollTo($('h1#heading'), 500, { offset: -10 });
@@ -292,14 +241,15 @@ const PersonalDetails = (() => {
             });
         }
         showFormMessage(is_error ?
-            (getPropertyValue(response, ['error', 'message']) || 'Sorry, an error occurred while processing your account.') :
-            'Your settings have been updated successfully.', !is_error);
+            (getPropertyValue(response, ['error', 'message']) || localize('Sorry, an error occurred while processing your account.')) :
+            localize('Your settings have been updated successfully.'), !is_error);
     };
 
-    const showFormMessage = (msg, is_success) => {
+    const showFormMessage = (localized_text, is_success) => {
+        const $ul = $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localized_text }));
         $('#formMessage')
             .attr('class', is_success ? 'success-msg' : 'errorfield')
-            .html(is_success ? $('<ul/>', { class: 'checked' }).append($('<li/>', { text: localize(msg) })) : localize(msg))
+            .html(is_success ? $ul : localized_text)
             .css('display', 'block')
             .delay(5000)
             .fadeOut(1000);
@@ -345,7 +295,7 @@ const PersonalDetails = (() => {
                             .val(residence);
                     }
                 } else {
-                    $('#lbl_country').parent().replaceWith($('<select/>', { id: 'residence', single: 'single' }));
+                    $('#country').parent().replaceWith($('<select/>', { id: 'residence', single: 'single' }));
                     const $residence = $('#residence');
                     $options_with_disabled.prepend($('<option/>', { text: localize('Please select a country'), value: '' }));
                     $residence.html($options_with_disabled.html());
@@ -364,47 +314,36 @@ const PersonalDetails = (() => {
         new Promise((resolve) => {
             const states = response.states_list;
 
-            if (is_jp_client) {
-                const state_text =
-                          (states.filter(state => state.value === get_settings_data.address_state)[0] || {}).text;
-                $('#lbl_address_state').text(state_text || get_settings_data.address_state);
+            const address_state = '#address_state';
+            let $field          = $(address_state);
+
+            $field.empty();
+
+            if (states && states.length > 0) {
+                $field.append($('<option/>', { value: '', text: localize('Please select') }));
+                states.forEach((state) => {
+                    $field.append($('<option/>', { value: state.value, text: state.text }));
+                });
             } else {
-                const address_state = '#address_state';
-                let $field          = $(address_state);
-
-                $field.empty();
-
-                if (states && states.length > 0) {
-                    $field.append($('<option/>', { value: '', text: localize('Please select') }));
-                    states.forEach((state) => {
-                        $field.append($('<option/>', { value: state.value, text: state.text }));
-                    });
-                } else {
-                    $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35', 'data-lpignore': true }));
-                    $field = $(address_state);
-                }
-                $field.val(get_settings_data.address_state);
-
-                if (states && states.length > 0) {
-                    $('#address_state').select2({
-                        matcher(params, data) {
-                            return SelectMatcher(params, data);
-                        },
-                    });
-                }
+                $field.replaceWith($('<input/>', { id: address_state.replace('#', ''), name: 'address_state', type: 'text', maxlength: '35', 'data-lpignore': true }));
+                $field = $(address_state);
             }
+            $field.val(get_settings_data.address_state);
 
-            if (is_jp_client && !is_virtual) {
-                // detect hedging needs to be called after FormManager.init
-                // or all previously bound event listeners on form elements will be removed
-                CommonFunctions.detectHedging($('#trading_purpose'), $('.hedge'));
+            if (states && states.length > 0) {
+                $('#address_state').select2({
+                    matcher(params, data) {
+                        return SelectMatcher(params, data);
+                    },
+                });
             }
+            $field.val(get_settings_data.address_state);
+
             resolve();
         })
     );
 
     const onLoad = () => {
-        currency = Client.get('currency');
         BinarySocket.wait('get_account_status', 'get_settings').then(() => {
             init();
             get_settings_data = State.getResponse('get_settings');

@@ -10,12 +10,12 @@ const Path        = require('path');
 const common      = require('./common');
 
 const config = {
-    base_folder         : './src/javascript/',
-    excluded_folders    : ['__tests__', '_common/lib'],
-    supported_apps      : ['app', 'app_2'],
-    localize_method_name: 'localize',
-    ignore_comment      : 'localize-ignore', // put /* localize-ignore */ right after the first argument to ignore
-    parser_options      : {
+    base_folder          : './src/javascript/',
+    excluded_folders     : ['__tests__', '_common/lib'],
+    supported_apps       : ['app', 'app_2'],
+    localize_method_names: ['localize', 'localizeKeepPlaceholders'],
+    ignore_comment       : 'localize-ignore', // put /* localize-ignore */ right after the first argument to ignore
+    parser_options       : {
         sourceType: 'module',
         plugins   : [
             'classProperties',
@@ -27,6 +27,7 @@ const config = {
         ],
     },
 };
+const methods_regex = new RegExp(`^(${config.localize_method_names.join('|')})$`);
 
 const source_strings = {};
 const ignored_list   = {};
@@ -52,6 +53,9 @@ const parse = (app_name, is_silent) => {
 
     walker(Path.resolve(config.base_folder, '_common')); // common for all 'supported_apps'
     walker(Path.resolve(config.base_folder, app_name));
+    if (app_name === 'app') {
+        walker(Path.resolve(config.base_folder, 'static'));
+    }
 
     if (!is_silent) {
         process.stdout.write(common.messageEnd(Date.now() - start_time));
@@ -90,20 +94,30 @@ const parseFile = (path_to_js_file) => {
 };
 
 const extractor = (node, js_source) => {
-    const is_function = (node.callee || {}).name === config.localize_method_name;
+    const callee = node.callee || {};
+    const is_function   = node.type   === 'CallExpression'   && methods_regex.test(callee.name);                  // localize('...')
+    const is_expression = callee.type === 'MemberExpression' && methods_regex.test((callee.property || {}).name); // Localize.localize('...')
 
-    if (node.type === 'CallExpression' && is_function) {
+    if (is_function || is_expression) {
         const first_arg = node.arguments[0];
 
-        if (first_arg.value) {
-            source_strings[this_app_name].add(first_arg.value);
+        if (first_arg.type === 'ArrayExpression') { // support for array of strings
+            first_arg.elements.forEach(item => { processNode(item, js_source); });
         } else {
-            const should_ignore = shouldIgnore(first_arg);
-            (should_ignore ? ignored_list : invalid_list)[this_app_name].push(first_arg.loc);
+            processNode(first_arg, js_source);
+        }
+    }
+};
 
-            if (!should_ignore) {
-                report(first_arg, js_source);
-            }
+const processNode = (node, js_source) => {
+    if (node.type === 'StringLiteral') {
+        source_strings[this_app_name].add(node.value);
+    } else {
+        const should_ignore = shouldIgnore(node);
+        (should_ignore ? ignored_list : invalid_list)[this_app_name].push(node.loc);
+
+        if (!should_ignore) {
+            report(node, js_source);
         }
     }
 };
@@ -112,7 +126,6 @@ const shouldIgnore = (arg) => {
     const comments = (arg.trailingComments || []).map(c => c.value).join(' ');
     return new RegExp(`\\b${config.ignore_comment}\\b`).test(comments);
 };
-
 
 // --------------------------
 // ----- Error Reporter -----

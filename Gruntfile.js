@@ -12,5 +12,11 @@ module.exports = function (grunt) {
             config : require('./package.json'),
             scope  : 'devDependencies',
         },
+        postProcess: function(config) {
+            // release to translations automatically after releasing to staging, since staging release is always with 'cleanup'
+            if (global.release_target === 'staging') {
+                config.aliases.release.push('shell:release_translations');
+            }
+        },
     });
 };

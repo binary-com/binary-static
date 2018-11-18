@@ -1,22 +1,21 @@
 const BinaryPjax   = require('../../../../base/binary_pjax');
 const Client       = require('../../../../base/client');
 const BinarySocket = require('../../../../base/socket');
-const localize     = require('../../../../../_common/localize').localize;
+const FormManager  = require('../../../../common/form_manager');
 const State        = require('../../../../../_common/storage').State;
-
 
 const professionalClient = (() => {
     let is_in_page = false;
 
     const onLoad = () => {
-        BinarySocket.wait('get_account_status', 'landing_company').then(() => {
+        BinarySocket.wait('get_settings', 'get_account_status', 'landing_company').then(() => {
             init(Client.isAccountOfType('financial'), true);
         });
     };
 
     const init = (is_financial, is_page) => {
         is_in_page = !!is_page;
-        BinarySocket.wait('landing_company').then(() => { populateProfessionalClient(is_financial); });
+        populateProfessionalClient(is_financial);
     };
 
     const populateProfessionalClient = (is_financial) => {
@@ -71,27 +70,13 @@ const professionalClient = (() => {
 
         if (is_in_page) {
             $('#loading').remove();
-            $('#frm_professional')
-                .off('submit')
-                .on('submit', (e) => {
-                    e.preventDefault();
-                    if ($chk_professional.is(':checked')) {
-                        BinarySocket.wait('get_settings').then((res) => {
-                            BinarySocket.send(populateReq(res.get_settings)).then((response) => {
-                                if (response.error) {
-                                    $error.text(response.error.message).setVisibility(1);
-                                } else {
-                                    BinarySocket.send({ get_account_status: 1 }).then(() => {
-                                        populateProfessionalClient(true);
-                                    });
-                                }
-                            });
-                        });
-                    } else {
-                        $error.text(localize('This field is required.')).setVisibility(1);
-                    }
-                })
-                .setVisibility(1);
+            $('#frm_professional').setVisibility(1);
+            FormManager.init('#frm_professional', [{ selector: '#chk_professional', exclude_request: 1, validations: [['req', { hide_asterisk: true }]] }]);
+            FormManager.handleSubmit({
+                form_selector       : '#frm_professional',
+                obj_request         : populateReq(State.getResponse('get_settings')),
+                fnc_response_handler: handleResponse,
+            });
         }
 
         $(document).on('keydown click', (e) => {
@@ -117,6 +102,16 @@ const professionalClient = (() => {
         }
 
         return req;
+    };
+
+    const handleResponse = (response) => {
+        if (response.error) {
+            $('#form_message').text(response.error.message).setVisibility(1);
+        } else {
+            BinarySocket.send({ get_account_status: 1 }).then(() => {
+                populateProfessionalClient(true);
+            });
+        }
     };
 
     return {

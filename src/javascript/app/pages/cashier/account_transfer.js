@@ -1,8 +1,7 @@
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
-const isCryptocurrency   = require('../../common/currency').isCryptocurrency;
-const getMinWithdrawal   = require('../../common/currency').getMinWithdrawal;
+const Currency           = require('../../common/currency');
 const FormManager        = require('../../common/form_manager');
 const elementTextContent = require('../../../_common/common_functions').elementTextContent;
 const getElementById     = require('../../../_common/common_functions').getElementById;
@@ -68,7 +67,6 @@ const AccountTransfer = (() => {
 
         showForm();
 
-
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
             el_transfer_fee.setVisibility(1);
         } else {
@@ -94,15 +92,13 @@ const AccountTransfer = (() => {
         getElementById(messages.error).setVisibility(1);
     };
 
-    const getDecimals = () => (isCryptocurrency(client_currency) ? 8 : 2);
-
     const showForm = () => {
         elementTextContent(document.querySelector(`${form_id_hash} #currency`), client_currency);
 
         getElementById(form_id).setVisibility(1);
 
         FormManager.init(form_id_hash, [
-            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: getDecimals(), min: getMinWithdrawal(client_currency), max: Math.min(+withdrawal_limit, +client_balance), format_money: true }]] },
+            { selector: '#amount', validations: [['req', { hide_asterisk: true }], ['number', { type: 'float', decimals: Currency.getDecimalPlaces(client_currency), min: Currency.getMinTransfer(client_currency), max: Math.min(+withdrawal_limit, +client_balance), format_money: true }]] },
 
             { request_field: 'transfer_between_accounts', value: 1 },
             { request_field: 'account_from',              value: client_loginid },
@@ -171,7 +167,7 @@ const AccountTransfer = (() => {
         BinarySocket.wait('balance').then((response) => {
             client_balance   = +getPropertyValue(response, ['balance', 'balance']);
             client_currency  = Client.get('currency');
-            const min_amount = getMinWithdrawal(client_currency);
+            const min_amount = Currency.getMinTransfer(client_currency);
             if (!client_balance || client_balance < min_amount) {
                 getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {
@@ -204,7 +200,7 @@ const AccountTransfer = (() => {
                         getElementById(messages.parent).setVisibility(1);
                         return;
                     }
-                    getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${localize(client_balance <= withdrawal_limit ? 'Current balance' : 'Withdrawal limit')}`;
+                    getElementById('range_hint').textContent = `${localize('Min')}: ${min_amount} ${localize('Max')}: ${client_balance <= withdrawal_limit ? localize('Current balance') : localize('Withdrawal limit')}`;
                     populateAccounts(accounts);
                 });
             }

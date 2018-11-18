@@ -39,11 +39,11 @@ module.exports = {
         },
     },
     AffiliatesFAQ: {
-        onLoad  : () => { MenuSelector.init(['general', 'account-management-and-tracking', 'marketing-and-promotions', 'support']); },
+        onLoad  : () => { MenuSelector.init(['general', 'account-management-and-tracking', 'referral-tools', 'support']); },
         onUnload: () => { MenuSelector.clean(); },
     },
     IBProgrammeFAQ: {
-        onLoad  : () => { MenuSelector.init(['general', 'account-management', 'marketing-and-promotions']); },
+        onLoad  : () => { MenuSelector.init(['general', 'account-management', 'referral-tools']); },
         onUnload: () => { MenuSelector.clean(); },
     },
 };

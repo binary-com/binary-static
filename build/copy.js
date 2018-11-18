@@ -6,8 +6,8 @@ module.exports = function (grunt) {
                 expand: true,
                 src: [
                     '404.html',
-                    'robots.txt',
-                    'sitemap.xml',
+                    'sitemap*.xml',
+                    'robots.txt'
                 ],
                 dest: 'dist'
             },

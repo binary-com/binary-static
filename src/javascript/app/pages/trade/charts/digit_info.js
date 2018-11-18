@@ -3,6 +3,7 @@ const getHighstock   = require('../common').requireHighstock;
 const Symbols        = require('../symbols');
 const BinarySocket   = require('../../../base/socket');
 const localize       = require('../../../../_common/localize').localize;
+const template       = require('../../../../_common/utility').template;
 
 const DigitInfo = (() => {
     let spots          = [];
@@ -104,7 +105,7 @@ const DigitInfo = (() => {
         underlyings = underlyings.sort();
         let elem    = '';
         for (let i = 0; i < underlyings.length; i++) {
-            elem += `<option value="${underlyings[i]}">${localize(symbols[underlyings[i]])}</option>`;
+            elem += `<option value="${underlyings[i]}">${symbols[underlyings[i]]}</option>`;
         }
         $('#digit_underlying').html($(elem)).val(underlying);
         $('#digit_domain').text(domain.charAt(0).toUpperCase() + domain.slice(1));
@@ -162,7 +163,7 @@ const DigitInfo = (() => {
 
             const getTitle = () => (
                 {
-                    text: localize($('#last_digit_title').html(), [new_spots.length, $('#digit_underlying option:selected').text()]),
+                    text: template($('#last_digit_title').html(), [new_spots.length, $('#digit_underlying option:selected').text()]),
                 }
             );
 

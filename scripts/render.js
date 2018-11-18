@@ -26,17 +26,17 @@ const renderComponent = (context, path) => {
     );
 };
 
-const color                = require('cli-color');
-const Spinner              = require('cli-spinner').Spinner;
-const program              = require('commander');
-const Crypto               = require('crypto');
-const fs                   = require('fs');
-const Path                 = require('path');
-const Url                  = require('url');
-const common               = require('./common');
-const generate_static_data = require('./generate-static-data');
-const Gettext              = require('./gettext');
-const build_config         = require('../build/config/constants').config;
+const color          = require('cli-color');
+const Spinner        = require('cli-spinner').Spinner;
+const program        = require('commander');
+const Crypto         = require('crypto');
+const fs             = require('fs');
+const Path           = require('path');
+const Url            = require('url');
+const common         = require('./common');
+const js_translation = require('./js_translation');
+const Gettext        = require('./gettext');
+const build_config   = require('../build/config/constants').config;
 
 program
     .version('0.2.2')
@@ -123,7 +123,6 @@ const fileHash = (path) => (
         fd.pipe(hash);
     })
 );
-
 
 /** **************************************
  * Factory functions
@@ -253,12 +252,10 @@ async function compile(page) {
             language       : lang.toUpperCase(),
             root_url       : config.root_url,
             section        : page.section,
-            only_ja        : page.only_ja,
             current_path   : page.save_as,
             current_route  : page.current_route,
             is_pjax_request: false,
 
-            japan_docs_url        : 'https://japan-docs.binary.com',
             affiliate_signup_url  : `https://login.binary.com/signup.php?lang=${affiliate_language_code}`,
             affiliate_password_url: `https://login.binary.com/password-reset.php?lang=${affiliate_language_code}`,
             affiliate_email       : 'affiliates@binary.com',
@@ -317,8 +314,8 @@ const getFilteredPages = () => {
     try {
         if (program.jsTranslations) {
             Gettext.getInstance();
-            generate_static_data.build();
-            generate_static_data.generate();
+            js_translation.build();
+            js_translation.generate();
             return;
         }
 
@@ -360,7 +357,7 @@ const getFilteredPages = () => {
 
         if (program.translations) {
             const gettext = Gettext.getInstance();
-            generate_static_data.build();
+            js_translation.build();
             gettext.update_translations();
         }
     } catch (e) {
