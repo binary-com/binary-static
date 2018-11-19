@@ -22,14 +22,21 @@ export default class ClientStore extends BaseStore {
 
     constructor() {
         super();
-        Client.init();
         this.init();
     }
 
+    /**
+     * Temporary property. should be removed once we are fully migrated from the old app.
+     *
+     * @returns {boolean}
+     */
     @computed
     get is_client_allowed_to_visit() {
-        return !!(!this.is_logged_in || this.is_virtual || this.current_account.landing_company_shortcode ===
-            'costarica');
+        return !!(
+            !this.is_logged_in ||
+            this.is_virtual ||
+            this.current_account.landing_company_shortcode === 'costarica'
+        );
     }
 
     @computed
@@ -88,11 +95,20 @@ export default class ClientStore extends BaseStore {
     }
 
     /**
-     * Switch to the given loginid account.
+     * Store Values relevant to the loginid to local storage.
      *
      * @param loginid
-     * @param client
-     * @param modules
+     */
+    static resetLocalStorageValues(loginid) {
+        Client.set('cashier_confirmed', 0);
+        Client.set('accepted_bch', 0);
+        Client.set('loginid', loginid);
+    }
+
+    /**
+     * Switch to the given loginid account.
+     *
+     * @param {string} loginid
      */
     @action.bound
     async switchAccount(loginid) {
@@ -102,9 +118,7 @@ export default class ClientStore extends BaseStore {
         sessionStorage.setItem('active_tab', '1');
         // set local storage
         GTM.setLoginFlag();
-        Client.set('cashier_confirmed', 0);
-        Client.set('accepted_bch', 0);
-        Client.set('loginid', loginid);
+        ClientStore.resetLocalStorageValues(loginid);
         this.loginid = loginid;
         SocketCache.clear();
         await BinarySocket.send({ 'authorize': this.getAccount(loginid).token }, { forced: true });
@@ -114,6 +128,10 @@ export default class ClientStore extends BaseStore {
         });
     }
 
+    /**
+     * We initially fetch things from local storage, and then do everything inside the store.
+     * This will probably be the only place we are fetching data from Client_base.
+     */
     @action.bound
     init() {
         this.loginid      = Client.get('loginid');
@@ -124,22 +142,52 @@ export default class ClientStore extends BaseStore {
             : '';
     }
 
+    /**
+     * Check if account is disabled or not
+     *
+     * @param loginid
+     * @returns {string}
+     */
     isDisabled(loginid = this.loginid) {
         return this.getAccount(loginid).is_disabled;
     }
 
+    /**
+     * Get accounts token from given login id.
+     *
+     * @param loginid
+     * @returns {string}
+     */
     getToken(loginid = this.loginid) {
         return this.getAccount(loginid).token;
     }
 
+    /**
+     * Get account object from given login id
+     *
+     * @param loginid
+     * @returns {object}
+     */
     getAccount(loginid = this.loginid) {
         return this.accounts[loginid];
     }
 
+    /**
+     * Burrowed from `Client_base::getAccountTitle()`
+     *
+     * @param {string} loginid || current login id
+     * @returns {string}
+     */
     getAccountTitle(loginid = this.loginid) {
         return types_map[this.getAccountType(loginid)] || 'Real';
     }
 
+    /**
+     * Burrowed from `Client_base::getAccountType()`
+     *
+     * @param {string} loginid || current login id
+     * @returns {string}
+     */
     getAccountType(loginid = this.loginid) {
         let account_type;
         if (/^VR/.test(loginid)) account_type = 'virtual';
@@ -148,13 +196,24 @@ export default class ClientStore extends BaseStore {
         return account_type;
     }
 
+    /**
+     * Burrowed from `Client_base::getAccountOfType()`
+     * @param type
+     * @param only_enabled
+     * @returns {*}
+     */
     getAccountOfType(type, only_enabled) {
-
         return this.getAccount(
-            this.all_loginids.find(loginid => this.isAccountOfType(type, loginid, only_enabled))
+            this.all_loginids.find(loginid => this.isAccountOfType(type, loginid, only_enabled)),
         );
     }
 
+    /**
+     * Get information required by account switcher
+     *
+     * @param loginid
+     * @returns {{loginid: *, is_virtual: (number|number|*), icon: string, title: *}}
+     */
     getAccountInfo(loginid = this.loginid) {
         const account      = this.getAccount(loginid);
         const currency     = account.currency;
@@ -169,6 +228,14 @@ export default class ClientStore extends BaseStore {
         };
     }
 
+    /**
+     * Burrowed from `Client_base::isAccountOfType()`
+     *
+     * @param type
+     * @param loginid
+     * @param only_enabled
+     * @returns {boolean}
+     */
     isAccountOfType(type, loginid = this.loginid, only_enabled = false) {
         const this_type = this.getAccountType(loginid);
         return ((
