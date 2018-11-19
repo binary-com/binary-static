@@ -235,7 +235,7 @@ const ViewPopup = (() => {
         containerSetText('trade_details_ref_id', `${contract.transaction_ids.buy} (${localize('Buy')}) ${contract.transaction_ids.sell ? `<br>${contract.transaction_ids.sell} (${localize('Sell')})` : ''}`);
         containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
-        if (!is_ended && final_price) {
+        if (final_price) {
             containerSetText('trade_details_profit_loss',
                 `${formatMoney(contract.currency, contract.profit)}<span class="percent">(${(contract.profit_percentage > 0 ? '+' : '')}${addComma(contract.profit_percentage, 2)}%)</span>`,
                 { class: (contract.profit >= 0 ? 'profit' : 'loss') }
