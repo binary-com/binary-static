@@ -95,12 +95,13 @@ Although section is mandatory for release, but it is optional for the rest of co
 ## Release
 
 ```
-grunt release --staging=1|--production=1|--translations=1 --section=app|app_2 [--cleanup] [--reset]
+grunt release --{release type}=1 --section=app|app_2 [--cleanup] [--reset]
 ```
 (The value is needed when more than one option is used)
 
 ### Parameters:
-- `--staging` or `--production` or `--translations` (mandatory)
+- `{release type}` (mandatory)
+  - Should be one of `staging`, `production`, `translations`, `nex_beta`, `nex_production`.
   - In order to prevent accidentally releasing to the wrong target, it is mandatory to provide one of these parameters.
   - Your remote origin will be checked to be the correct target of the given parameter.
   - Your current branch will be checked to be the correct branch of the given parameter.
