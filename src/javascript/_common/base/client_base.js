@@ -74,8 +74,6 @@ const ClientBase = (() => {
 
     const getAllLoginids = () => Object.keys(getAllAccountsObject());
 
-    const getAccount = (loginid = current_loginid) => getAllAccountsObject()[loginid];
-
     const getAccountType = (loginid = current_loginid) => {
         let account_type;
         if (/^VR/.test(loginid))          account_type = 'virtual';
@@ -319,7 +317,6 @@ const ClientBase = (() => {
         getAccountType,
         isAccountOfType,
         getAccountOfType,
-        getAccount,
         hasAccountType,
         hasCurrencyType,
         getAccountTitle,
