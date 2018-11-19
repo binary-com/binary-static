@@ -6,7 +6,6 @@ import { localize }        from '_common/localize';
 import { AccountSwitcher } from 'App/Containers/AccountSwitcher';
 import { IconArrow }       from 'Assets/Common';
 
-
 const AccountInfo = ({
     balance,
     currency,
