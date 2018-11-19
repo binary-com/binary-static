@@ -45,11 +45,6 @@ export default class ClientStore extends BaseStore {
     }
 
     @computed
-    get valid_accounts() {
-        return this.active_accounts.filter(account => account.token);
-    }
-
-    @computed
     get current_account() {
         return this.accounts[this.loginid];
     }
