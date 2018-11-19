@@ -4,8 +4,10 @@ const getDecimalPlaces     = require('../../common/currency').getDecimalPlaces;
 const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLimit;
 const FormManager          = require('../../common/form_manager');
 const validEmailToken      = require('../../common/form_validation').validEmailToken;
+const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
 const localize             = require('../../../_common/localize').localize;
-const getHashValue         = require('../../../_common/url').getHashValue;
+const Url                  = require('../../../_common/url');
+const isBinaryApp          = require('../../../config').isBinaryApp;
 
 const PaymentAgentWithdraw = (() => {
     const view_ids  = {
@@ -23,7 +25,8 @@ const PaymentAgentWithdraw = (() => {
 
     let $views,
         agent_name,
-        currency;
+        currency,
+        token;
 
     // -----------------------
     // ----- Agents List -----
@@ -40,10 +43,17 @@ const PaymentAgentWithdraw = (() => {
     };
 
     const checkToken = ($ddl_agents, pa_list) => {
-        const token = getHashValue('token');
+        token = token || Url.getHashValue('token');
         if (!token) {
             BinarySocket.send({ verify_email: Client.get('email'), type: 'paymentagent_withdraw' });
-            setActiveView(view_ids.notice);
+            if (isBinaryApp()) {
+                handleVerifyCode((verification_code) => {
+                    token = verification_code;
+                    checkToken($ddl_agents, pa_list);
+                });
+            } else {
+                setActiveView(view_ids.notice);
+            }
         } else if (!validEmailToken(token)) {
             showPageError('token_error');
         } else {
@@ -122,7 +132,7 @@ const PaymentAgentWithdraw = (() => {
             default: // error
                 if (response.echo_req.dry_run === 1) {
                     setActiveView(view_ids.form);
-                    $('#formMessage').setVisibility(1).html(response.error.message);
+                    $('#withdrawFormMessage').setVisibility(1).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
                     showPageError(localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="var url = location.href.split(\'#\')[0]; window.history.replaceState({ url }, document.title, url); window.location.reload();">', '</a>']));
                 } else {
@@ -161,6 +171,10 @@ const PaymentAgentWithdraw = (() => {
                 showPageError('', 'withdrawal-locked-error');
             } else {
                 currency = Client.get('currency');
+                if (!currency || +Client.get('balance') === 0) {
+                    showPageError(localize('Please [_1]deposit[_2] to your account.', [`<a href='${`${Url.urlFor('cashier/forwardws')}?action=deposit`}'>`, '</a>']));
+                    return;
+                }
                 BinarySocket.send({
                     paymentagent_list: Client.get('residence'),
                     currency,
@@ -175,8 +189,13 @@ const PaymentAgentWithdraw = (() => {
         return true;
     };
 
+    const onUnload = () => {
+        token = '';
+    };
+
     return {
         onLoad,
+        onUnload,
     };
 })();
 

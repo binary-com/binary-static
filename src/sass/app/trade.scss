@@ -411,8 +411,7 @@
             }
         }
         #contract_purchase_reference {
-            margin-bottom: 10px;
-            padding: 7px;
+            padding-top: 7px;
         }
         #confirmation_error {
             padding: 20px;
@@ -465,6 +464,26 @@
         }
         #confirmation_message {
             padding-bottom: 34px;
+
+            #contract_highlowtick {
+                margin-top: 10px;
+            }
+            div.button {
+                padding-top: 7px;
+            }
+            #trade_tick_chart {
+                .highcharts-tooltip span {
+                    top: 1px !important;
+                    left: 2px !important;
+
+                    .tooltip-body {
+                        background-color: $COLOR_WHITE;
+                        padding: 6px;
+                        margin-bottom: -14px;
+                        margin-right: -14px;
+                    }
+                }
+            }
         }
         #contract_purchase_descr {
             background-color: $COLOR_WHITE;
@@ -473,6 +492,9 @@
             padding: 10px;
             text-align: justify;
             line-height: 1.4em;
+        }
+        #contract_purchase_button {
+            margin-top: 10px;
         }
         #contract_purchase_profit_list, #contract_purchase_spots .row {
             padding: 3px 0;

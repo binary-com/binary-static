@@ -6,7 +6,6 @@ const BinarySocket         = require('../../../../base/socket');
 const DateTo               = require('../../../../common/attach_dom/date_to');
 const addTooltip           = require('../../../../common/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common/get_app_details').buildOauthApps;
-const getLanguage          = require('../../../../../_common/language').get;
 const localize             = require('../../../../../_common/localize').localize;
 
 const StatementInit = (() => {
@@ -53,6 +52,15 @@ const StatementInit = (() => {
         return chunk;
     };
 
+    const getAccountStatistics = () => {
+        // only show Account Statistics to MLT/MX clients
+        if (!/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) return;
+
+        BinarySocket.send({ account_statistics: 1 }).then(response => {
+            StatementUI.updateAccountStatistics(response.account_statistics);
+        });
+    };
+
     const statementHandler = (response) => {
         if (response.error) {
             StatementUI.errorMessage(response.error.message);
@@ -82,13 +90,12 @@ const StatementInit = (() => {
                             .append($('<p/>', { class: 'notice-msg center-text', text: localize('Your account has no trading activity.') }))));
             } else {
                 $('#util_row').setVisibility(1);
-                if (getLanguage() === 'JA' && Client.get('residence') === 'jp') {
-                    $('#download_csv')
-                        .setVisibility(1)
-                        .find('a')
-                        .unbind('click')
-                        .click(() => { StatementUI.exportCSV(); });
-                }
+                // uncomment to enable export to CSV
+                // $('#download_csv')
+                //     .setVisibility(1)
+                //     .find('a')
+                //     .off('click')
+                //     .on('click', () => { StatementUI.exportCSV(); });
             }
         }
         showLocalTimeOnHover('td.date');
@@ -141,6 +148,7 @@ const StatementInit = (() => {
         });
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
+        getAccountStatistics();
     };
 
     const onLoad = () => {

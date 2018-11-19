@@ -1,8 +1,8 @@
 import React from 'react';
 
 const BIEL = () => (
-    <div>
-        <h2 data-anchor>{it.L('Supplementary Terms and Conditions for Financial Products Offered by Binary Investments (Europe) Ltd')}</h2>
+    <div className='invisible eu-show'>
+        <h2 data-anchor='supplementary-terms-and-conditions-biel'>{it.L('Supplementary Terms and Conditions for Financial Products Offered by Binary Investments (Europe) Ltd')}</h2>
         <p>{it.L('These Supplementary Terms and Conditions (these "ST&Cs") apply solely to clients ("you") of Binary Investments (Europe) Ltd ("BIEL", "we" or "us") and will govern the relationship between you and us when trading Financial Products (as defined below) with us.')}</p>
         <p>{it.L('Under these Terms, you may enter into transactions in the following investments and instruments, all of which are Over-the-Counter (“OTC”) products:')}</p>
         <ol>
@@ -15,15 +15,15 @@ const BIEL = () => (
         <p>{it.L('The Company does not provide and is not authorised to provide investment advice. The Company will not make personal recommendations or advise on the merits of buying and/or selling in particular investments.')}</p>
         <p>{it.L('You acknowledge that any explanation, trading recommendations, independent investment research, market commentary or any other information provided by the Company, is provided to you as marketing communication and/or educational material, for information purposes only, and does not construe any personal advice on the merits of investing.')}</p>
 
-        <h2 data-anchor>{it.L('About Us and Our Regulator')}</h2>
+        <h2 data-anchor='about-us-and-our-regulator'>{it.L('About Us and Our Regulator')}</h2>
         <p>{it.L('BIEL is a company established in Malta under registration number C70156 and having its registered office at Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta.')}</p>
-        <p>{it.L('We are authorised and regulated by the Malta Financial Services Authority ("MFSA") under the Investment Services Act (Cap. 370, Laws of Malta) (the "Act") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices, stocks and other financial products or assets ("Financial Products"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm.')}</p>
+        <p>{it.L('We are authorised and regulated by the Malta Financial Services Authority ("MFSA") under the Investment Services Act (Cap. 370, Laws of Malta) (the "Act") to carry on investment business. We are authorised by the MFSA to deal on own account (i.e. offer and act as counterparty to trades) and to execute orders on behalf of other persons, both services are in relation to financial derivative products relating to foreign exchange, indices and other financial products or assets ("Financial Products"). We are not authorised to and do not offer or provide investment advice or any other investment services other than those described above. Should you feel that you require investment advice or investment services other than those described above then you should contact an independent financial advisor or firm.')}</p>
         <p>{it.L('In providing these services, we are bound by the Act, any applicable regulations, by-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the "Rules"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail.')}</p>
         
-        <h2 data-anchor>{it.L('Restrictions')}</h2>
+        <h2 data-anchor='restrictions'>{it.L('Restrictions')}</h2>
         <p>{it.L('Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd.')}</p>
 
-        <h2 data-anchor>{it.L('Risk Acknowledgement')}</h2>
+        <h2 data-anchor='risk-acknowledgement'>{it.L('Risk Acknowledgement')}</h2>
         <p>{it.L('By entering into an agreement with us, you understand that CFDs are highly speculative, complex products and carry a high degree of risk, especially those traded on margin. Whilst you may generate profit and increase your capital, you may also expose yourself to losing the entire sum invested and your loss may exceed your deposit. The products attaching this Agreement are not appropriate for everyone. You acknowledge that the trading services described in this Agreement are designed for clients who are knowledgeable and experienced in the types of transactions described in this Agreement and you fully understand the associated risks before entering into this Agreement with us.')}</p>
         <p>{it.L('As a Client and Trader, you acknowledge, recognise and understand that:')}</p>
         <ol>
@@ -35,36 +35,23 @@ const BIEL = () => (
         </ol>
         <p>{it.L('You should not sign up to receive the trading services described in this Agreement unless you understand their nature and the associated risks.')}</p>
 
-        <h2 data-anchor>{it.L('Provision of Service')}</h2>
-        <p>{it.L('The Company, under no circumstances shall provide Investment and/or Financial and/or Legal and/or Tax and/or Regulatory and/or other Investment advice or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written or video information, which we may publish on our website or provide to you in any other manner. We will endeavour to ensure the accuracy and completeness of this information but it will not constitute independent investment research or investment advice provided by us to you.')}</p>
+        <h2 data-anchor='provision-of-service'>{it.L('Provision of Service')}</h2>
+        <p>{it.L('The Company, under no circumstances shall provide Investment and/or Financial and/or Legal and/or Tax and/or Regulatory and/or other Investment advice or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written or video information, which we may publish on our website or provide to you in any other manner. We will endeavor to ensure the accuracy and completeness of this information but it will not constitute independent investment research or investment advice provided by us to you.')}</p>
         <p>{it.L('Binary Investments (Europe) Ltd aggregates the bid and ask prices from a pool of liquidity providers to determine and offer you the best available price of the instrument. The Company is always the final counterparty to your Transactions. The Company may execute orders on behalf of its clients, wherein the Company will act as a broker and pass on the order to the liquidity provider for execution. Alternatively, the Company may also keep the client’s order on its own account, wherein the Company will take the other side of the client’s trade. It is further noted that the Company may make a profit as a result of your losses and vice-versa. For further details please refer to our Conflicts of Interest Policy and Order Execution Policy.')}</p>
         <p>{it.L('The provision of the trading services described in this Agreement utilises a third-party system acquired via a non-exclusive, non-transferable, non-sub-licensable, terminable licence from the third-party system provider/licensor (the "MT5 Trading Platform"). You acknowledge that when providing trading services, described in this Agreement to you, we may decide to change our third–party system provider/licensor and use a different Trading Platform, other than the MT5 Trading Platform. Hence, in such cases we may decide to use an entirely new third–party system provider/licensor (hereinafter referred to as the “new Trading Platform”) or to introduce an additional third–party system provider/licensor (hereinafter referred to as the “additional Trading Platform”).')}</p>
         <p>{it.L('If we decide to introduce a new Trading Platform, we shall provide you with a relevant notice within 30 days before we introduce the new Trading Platform or the additional Trading Platform. In such a notice, we will outline information including but not limited to features and operations of the new Trading Platform. Thus, using our backup database on the MT5 Trading Platform we shall integrate all data to the new Trading Platform, including but not limited to open trades, historical trades/data, and Accounts.')}</p>
 
-        <h2 data-anchor>{it.L('Account Management')}</h2>
+        <h2 data-anchor='account-management'>{it.L('Account Management')}</h2>
         <ol>
             <li><strong>{it.L('Opening an MT5 Real Account')}</strong>
                 <p>{it.L('To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:')}</p>
                 <ol>
-                    <li>{it.L('Open a Binary Options Real Account through our website [_1]; and', `<a href=${it.url_for('new-account')} target="_blank">www.binary.com</a>`)}</li>
+                    <li>{it.L('Open a [_1] account through our website [_2]; and', it.website_name, `<a href=${it.url_for('new-account')} target="_blank">www.binary.com</a>`)}</li>
                     <li>
                         <p>{it.L('a) Access the MT5 Trading Platform through the direct link [_1] from our web interface; or', `<a href=${it.url_for('platforms')} target="_blank">https://www.binary.com/en/platforms.html</a>`)}</p>
                         <p>{it.L('b) Download and install the MT5 Trading Platform through the link [_1]', `<a href=${it.url_for('user/metatrader')} target="_blank">https://www.binary.com/en/user/metatrader.html</a>`)}</p>
                     </li>
                 </ol>
-            </li>
-            <li><strong>{it.L('Secure Access')}</strong>
-                <p>{it.L('We are committed to making sure your personal data and transactions are secure:')}</p>
-                <ol>
-                    <li>{it.L('Your MT5 Real Account password and login ID are unique and passwords are hashed so that not even the employees at Binary Investments (Europe) Ltd can read/access them. This is the reason why we cannot retrieve your password and shall issue you with a new one to your email address if you cannot recall it;')}</li>
-                    <li>{it.L('It is your responsibility to keep your password and login ID confidential. You agree that you will not disclose your password and login ID to any other person;')}</li>
-                    <li>{it.L('All credit card details are submitted directly to the Visa/MasterCard network using the latest SSL encryption technology, in accordance with bank policies;')}</li>
-                    <li>{it.L('Our information security policies are based on industry best practices in access control and business continuity; and')}</li>
-                    <li>{it.L('We use identity verification services and real-time fraud detection measures to help protect you from unauthorised access to your Account. We also monitor Account activity for signs of unusual activity that might indicate fraud and work with collection agencies and law-enforcement agencies to address fraud issues.')}</li>
-                </ol>
-                <p>{it.L('The Company will rely on the transactions and other instructions entered into and/or given by your username and password, and as a Client, you are bound by any transaction or expense incurred in reliance on such order and/or instructions.')}</p>
-                <p>{it.L('You are to immediately notify us if you become aware of the loss, theft or disclosure to third parties of your login details.')}</p>
-                <p>{it.L('If the Company believes that unauthorised persons are using an account, it reserves the right to, without prior notice, suspend the Client’s rights to use the Trading Facility.')}</p>
             </li>
             <li><strong>{it.L('Client Classification')}</strong>
                 <ol>
@@ -109,7 +96,7 @@ const BIEL = () => (
             <li><strong>{it.L('Payments & Withdrawals')}</strong>
                 <ol>
                     <li>{it.L('Funding of MT5 Real Account')}
-                        <p>{it.L('When you transfer your money to us for trading purposes, your funds are deposited in your Binary Options Real Account. If you choose to trade FX and CFDs you shall transfer funds from your Binary Options Real Account to your MT5 Real Account. Such transfer shall not be regarded as a transfer from two different Accounts but as a transfer of funds from your centralised Binary Options Real Account to the MT5 Real Account. No fund transfers shall be made to any other Account in the name of any third party.')}</p>
+                        <p>{it.L('When you transfer your money to us for trading purposes, your funds are deposited in your [_1] account. If you choose to trade FX and CFDs you shall transfer funds from your [_1] account to your MT5 Real Account. Such transfer shall not be regarded as a transfer from two different Accounts but as a transfer of funds from your centralised [_1] account to the MT5 Real Account. No fund transfers shall be made to any other Account in the name of any third party.', it.website_name)}</p>
                         <p>{it.L('As our Client, you agree to comply with the following when making payments to the Company:')}</p>
                         <ol>
                             <li>{it.L('Deposits and/or payments due are to be made in the currency chosen by you from the ones specified by the Company from time to time;')}</li>
@@ -117,10 +104,10 @@ const BIEL = () => (
                             <li>{it.L('Payments made to the Company will only be deemed to have been received once the Company receives cleared funds; ')}</li>
                             <li>{it.L('You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details.')}</li>
                         </ol>
-                        <p>{it.L('There are no charges for transferring money from your Binary Options Real Account to your MT5 Real Account. ')}</p>
+                        <p>{it.L('There are no charges for transferring money from your [_1] account to your MT5 Real Account.', it.website_name)}</p>
                     </li>
                     <li>{it.L('Transfer of Funds from the MT5 Real Account')}
-                        <p>{it.L('If you have a positive balance in your MT5 Real Account, you may transfer such balance from your MT5 Real Account into your Binary Options Real Account and then request a withdrawal as necessary for any amount available on your Binary Options Real Account. The Company may withhold, deduct or refuse to make any such transfer or withdrawal, in whole or in part, if:')}</p>
+                        <p>{it.L('If you have a positive balance in your MT5 Real Account, you may transfer such balance from your MT5 Real Account into your [_1] account and then request a withdrawal as necessary for any amount available on your [_1] account. The Company may withhold, deduct or refuse to make any such transfer or withdrawal, in whole or in part, if:', it.website_name)}</p>
                         <ol>
                             <li>{it.L('You have Open Positions on the Account showing a loss;')}</li>
                             <li>{it.L('Such transfer would result in your Account Equity being less than zero; ')}</li>
@@ -130,7 +117,7 @@ const BIEL = () => (
                             <li>{it.L('There is any amount outstanding from you to us; and/or')}</li>
                             <li>{it.L('We are required to do so in accordance with any relevant Law or Regulation.')}</li>
                         </ol>
-                        <p>{it.L('Your MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in your Binary Options Real Account.')}</p>
+                        <p>{it.L('Your MT5 Real Account as well as all payments and withdrawals therefrom must be made in the same currency as maintained in your [_1] account.', it.website_name)}</p>
                     </li>
                     <li>{it.L('Negative Balance Protection')}
                         <p>{it.L('When using the MT5 Trading Platform, all our clients will be provided with margin monitoring functionality to protect you from encountering negative balances when trading under normal market conditions. As a trader, you should always, and at all times maintain the appropriate levels of margin in your trading account as the recommended method of your own risk management.')}</p>
@@ -141,15 +128,12 @@ const BIEL = () => (
                     </li>
                 </ol>
             </li>
-            <li><strong>{it.L('Dormant and Inactive Accounts')}</strong>
-                <p>{it.L('The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP 25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months. If a Client\'s account is with Binary (Europe) Ltd., and his account has had no activity for a period of thirty months, and the Client cannot be located or contacted, the Company shall remit the balance of the account to the Malta Gaming Authority. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts.')}</p>
-            </li>
             <li><strong>{it.L('Account Closure')}</strong>
                 <p>{it.L('If you wish to withdraw funds from your MT5 Real Account and/or close your MT5 Real Account, you may notify us by contacting our helpdesk at [_1]. Your MT5 Real Account may be closed if you do not have any Open Positions and all amounts due to us have been settled.', '<a href="mailto:support@binary.com">support@binary.com</a>')}</p>
             </li>
         </ol>
 
-        <h2 data-anchor>{it.L('Market Execution')}</h2>
+        <h2 data-anchor='market-execution'>{it.L('Market Execution')}</h2>
         <p>{it.L('On the MT5 Trading Platform, you will benefit from Direct Market Access that gives you the opportunity to receive the best possible price in the market at a specified time, without having to use a dealing desk.')}</p>
         <p>{it.L('As a result, your trades are executed at market as follows:')}</p>
         <ol>
@@ -160,7 +144,7 @@ const BIEL = () => (
         <p>{it.L('Please be advised that prices can change very quickly in the market, so the execution price may not necessarily be visible instantly once the order has been filled.')}</p>
         <p>{it.L('Also consider that your internet connection can influence what price is displayed after the trade has been executed.')}</p>
 
-        <h2 data-anchor>{it.L('Expert Advisors')}</h2>
+        <h2 data-anchor='expert-advisors'>{it.L('Expert Advisors')}</h2>
         <p>{it.L('Expert Advisors, including any additional functions/plug-ins of trading operations provided by or developed using Expert Advisors, are applications developed using the MetaQuotes Language which can be used to analyse price charts and automate your trades.')}</p>
         <p>{it.L('Expert Advisors made available on the MT5 Trading Platform, are owned by MetaQuotes Software Corporation (the MT5 Trading Platform Licensor) and shall remain the exclusive property of MetaQuotes Software Corporation.')}</p>
         <p>{it.L('The Company is an independent legal entity and is not affiliated with the MT5 Trading Platform. MT5 is not owned, controlled, or operated by the Company. Therefore, the Company does not provide any warranties related to any MT5 product or service and has not reviewed or verified any performance results that may be presented and/or described on this website in relation to MT5.')}</p>
@@ -184,7 +168,7 @@ const BIEL = () => (
         <p>{it.L('The Company does not accept any liability for any inconsistencies or results related to Clients utilizing Expert Advisors on the MT5 Trading Platform. Clients are liable for their use of Expert Advisors and the trading activity they conduct. The Company takes a neutral position on Clients’ use of Expert Advisors.')}</p>
         <p>{it.L('All unforeseen openings or closings of positions initiated by the Expert Advisor, whether relevant to system error or otherwise, are out of the scope of the Company’s responsibility hence the Company is not liable for such actions or results.')}</p>
 
-        <h2 data-anchor>{it.L('Clients\' Money')}</h2>
+        <h2 data-anchor='clients-money'>{it.L('Clients\' Money')}</h2>
         <p>{it.L('The Company treats the money deposited or earned as a result of profitable transactions by the client as ‘Client Money’ and in accordance with the Control of Assets Rules. Client Money is held in accounts segregated and designated as clients’ monies accounts, clearly separated from the Company\'s money.')}</p>
         <p>{it.L('The client acknowledges and agrees that:')}</p>
         <ol>
@@ -193,7 +177,7 @@ const BIEL = () => (
             <li>{it.L('The Company may use the Client Money for the purposes of meeting obligations incurred by the Company in connection with the margining, guaranteeing, securing, transferring, adjusting or settling of your dealings in derivatives.')}</li>
         </ol>
 
-        <h2 data-anchor>{it.L('Complaints')}</h2>
+        <h2 data-anchor='complaints'>{it.L('Complaints')}</h2>
         <p>{it.L('The Company ensures that complaints received will be investigated thoroughly and fairly. You may submit your complaint by sending an email to [_1].', '<a href="mailto:complaints@binary.com">complaints@binary.com</a>')}</p>
         <p>{it.L('Binary Investments (Europe) Ltd shall review your complaint and provide you with the outcome of the investigation as promptly as possible, and at most within 15 days of the submission date. If we are unable to provide you with the final response within this time, due to an ongoing investigation of your complaint, we shall inform you of that fact and the anticipated timeframe to resolve the issue.')}</p>
         <p>{it.L('If your complaint relates to the outcome of an investment or transaction and remains unresolved, it will turn into a dispute. Before contacting the Office of the Arbiter, we strongly recommend trying to resolve your concern with us.')}</p>
@@ -213,7 +197,7 @@ const BIEL = () => (
             </p>
         </address>
 
-        <h2 data-anchor>{it.L('Governing law and jurisdiction')}</h2>
+        <h2 data-anchor='governing-law-and-jurisdiction'>{it.L('Governing law and jurisdiction')}</h2>
         <p>{it.L('These ST&Cs are to be governed by and construed in accordance with Maltese law and the parties hereto agree to submit to the non-exclusive jurisdiction of the Maltese courts.')}</p>
     </div>
 );

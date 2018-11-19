@@ -1,7 +1,8 @@
-const Client         = require('../../app/base/client');
-const getLanguage    = require('../language').get;
-const urlForStatic   = require('../url').urlForStatic;
-const Pushwoosh      = require('web-push-notifications').Pushwoosh;
+const Pushwoosh              = require('web-push-notifications').Pushwoosh;
+const getLanguage            = require('../language').get;
+const urlForCurrentDomain    = require('../url').urlForCurrentDomain;
+const Client                 = require('../../app/base/client');
+const getCurrentBinaryDomain = require('../../config').getCurrentBinaryDomain;
 
 const BinaryPushwoosh = (() => {
     const pw = new Pushwoosh();
@@ -9,7 +10,7 @@ const BinaryPushwoosh = (() => {
     let initialised = false;
 
     const init = () => {
-        if (!/^(www|staging)\.binary\.com$/.test(window.location.hostname)) return;
+        if (!getCurrentBinaryDomain()) return;
 
         if (!initialised) {
             pw.push(['init', {
@@ -17,7 +18,7 @@ const BinaryPushwoosh = (() => {
                 applicationCode         : 'D04E6-FA474',
                 safariWebsitePushID     : 'web.com.binary',
                 defaultNotificationTitle: 'Binary.com',
-                defaultNotificationImage: 'https://style.binary.com/images/logo/logomark.png',
+                defaultNotificationImage: urlForCurrentDomain('https://style.binary.com/images/logo/logomark.png'),
             }]);
             initialised = true;
             sendTags();
@@ -42,7 +43,7 @@ const BinaryPushwoosh = (() => {
     };
 
     return {
-        init: init,
+        init,
     };
 })();
 

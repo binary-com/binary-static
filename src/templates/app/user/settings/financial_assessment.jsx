@@ -3,6 +3,7 @@ import AuthenticateMessageFinancial from '../../_includes/authenticate_message_f
 import FinancialForm from '../../_includes/financial_form.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 import { SubmitButton } from '../../../_common/components/forms.jsx';
+import { RiskDisclaimer } from '../../../_common/components/forms_common_rows.jsx';
 
 const FinancialAssessment = () => (
     <div>
@@ -30,9 +31,9 @@ const FinancialAssessment = () => (
 
             <FinancialForm />
 
-            <fieldset>
-                <p className='gr-12'>{it.L('The financial trading services contained within this site are only suitable for customers who are able to bear the loss of all the money they invest and who understand and have experience of the risk involved in the acquistion of financial contracts. Transactions in financial contracts carry a high degree of risk. If purchased contracts expire worthless, you will suffer a total loss of your investment, which consists of the contract premium.')}</p>
-            </fieldset>
+            <div className='invisible' id='risk_disclaimer'>
+                <RiskDisclaimer />
+            </div>
 
             <SubmitButton text={it.L('Update')} is_centered type='submit' />
         </form>

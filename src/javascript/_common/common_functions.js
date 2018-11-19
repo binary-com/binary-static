@@ -1,12 +1,5 @@
 const createElement = require('./utility').createElement;
 
-// show hedging value if trading purpose is set to hedging else hide it
-const detectHedging = ($purpose, $hedging) => {
-    $purpose.change(() => {
-        $hedging.setVisibility($purpose.val() === 'Hedging');
-    });
-};
-
 const jqueryuiTabsToDropdown = ($container) => {
     const $ddl = $('<select/>');
     $container.find('li a').each(function () {
@@ -98,7 +91,6 @@ const getVisibleElement = (class_name, parent = document) =>
     Array.from(parent.getElementsByClassName(class_name)).find((el) => isVisible(el));
 
 module.exports = {
-    detectHedging,
     jqueryuiTabsToDropdown,
     makeOption,
     isVisible,
