@@ -7,7 +7,7 @@ import { connect }   from 'Stores/connect';
 import Localize      from 'App/Components/Elements/localize.jsx';
 
 const onConfirm = async (client) => {
-    await client.switchAccount(client.getAccountOfType('virtual').loginid);
+    await client.switchAccount(client.virtual_account_loginid);
 };
 
 const onCancel = () => {

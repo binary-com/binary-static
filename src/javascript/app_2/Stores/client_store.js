@@ -265,25 +265,31 @@ export default class ClientStore extends BaseStore {
             (only_enabled ? !this.isDisabled(loginid) : true));
     }
 
+    @computed
+    get virtual_account_loginid() {
+        return this.all_loginids
+            .filter(loginid => !!this.accounts[loginid].is_virtual)
+            .reduce(loginid => loginid);
+    }
+
     @action.bound
     registerReactions() {
         // Switch account reactions.
         reaction(
             () => this.loginid,
-            async (loginid) => {
-                if (!loginid || !this.getAccount(loginid).token) {
+            async (params, reaction) => {
+                if (!this.loginid || !this.getToken()) {
                     return;
                 }
                 sessionStorage.setItem('active_tab', '1');
                 // set local storage
                 GTM.setLoginFlag();
-                this.resetLocalStorageValues(loginid);
+                this.resetLocalStorageValues(this.loginid);
                 SocketCache.clear();
-                await BinarySocket.send({ 'authorize': this.getAccount(loginid).token }, { forced: true });
+                await BinarySocket.send({ 'authorize': this.getToken() }, { forced: true });
                 await this.init();
-                eventBus.dispatch('ClientAccountHasSwitched', {
-                    loginid,
-                });
+                eventBus.dispatch('ClientAccountHasSwitched', { loginid: this.loginid });
+                reaction.dispose();
             },
             {
                 name: 'accountSwitchedReaction',
