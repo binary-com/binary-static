@@ -9,6 +9,11 @@ module.exports = {
                     path.resolve(__dirname, '..'),
                 ],
             },
+            alias: {
+                map: [
+                    ['Images', path.resolve(__dirname, '../../images')],
+                ],
+            }
         },
     },
 };

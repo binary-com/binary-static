@@ -1,13 +1,12 @@
 import PropTypes   from 'prop-types';
 import React       from 'react';
 import { NavLink } from 'react-router-dom';
-import Url         from '_common/url';
 
 // TODO: use BinaryLink once it supports nested routes
-const MenuItem = ({ title, description, img_src, path }) => {
+const MenuItem = ({ title, Icon, description,  path }) => {
     const itemContent = (
         <React.Fragment>
-            <img className='menu-item__img' src={Url.urlForStatic(img_src)} />
+            <Icon />
             <div className='menu-item__content'>
                 <div className='menu-item__title'>{title}</div>
                 <div className='menu-item__description'>{description}</div>
@@ -27,7 +26,7 @@ const MenuItem = ({ title, description, img_src, path }) => {
 
 MenuItem.propTypes = {
     description: PropTypes.string,
-    img_src    : PropTypes.string,
+    Icon       : PropTypes.element,
     path       : PropTypes.string,
     title      : PropTypes.string,
 };
