@@ -1,12 +1,12 @@
 module.exports = function (grunt) {
-    var colors = {
+    const colors = {
         error: '\\033[0;31m',
         info : '\\033[0;32m',
         warn : '\\033[1;33m',
         reset: '\\033[0m',
     };
-    var prompt = (message, type) => (`echo "${colors[type || 'info']}>>${colors.reset} ${message}"`);
-    var ghpagesCommand = () => (
+    const prompt = (message, type) => (`echo "${colors[type || 'info']}>>${colors.reset} ${message}"`);
+    const ghpagesCommand = () => (
         [
             `cd ${process.cwd()}/.grunt/grunt-gh-pages/gh-pages/${global.is_release ? global.release_info.clone_folder : 'main'}`,
             prompt('Updating...'),
@@ -14,6 +14,7 @@ module.exports = function (grunt) {
             'git reset --hard origin/gh-pages --quiet'
         ].join(' && ')
     );
+    const release_branch = global.release_info ? global.release_info.branch : '';
 
     return {
         compile_dev: {
@@ -96,6 +97,23 @@ module.exports = function (grunt) {
                         grunt.log.ok('Current branch: ' + branch);
                         if (branch !== global.release_info.branch) {
                             grunt.fail.fatal(`Current branch is not correct.\nIn order to release to ${global.release_target.toUpperCase()}, please checkout the "${global.release_info.branch}" branch.`);
+                        }
+                    }
+                    cb();
+                },
+                stdout: false
+            }
+        },
+        check_updated: {
+            command: `git fetch origin ${release_branch} -q && git rev-list HEAD...origin/${release_branch} --count`,
+            options: {
+                callback: function (err, stdout, stderr, cb) {
+                    if(!err) {
+                        const diff = stdout.replace('\n', '');
+                        if (!diff) {
+                            grunt.log.ok('Local branch is updated to the latest commit on origin.');
+                        } else {
+                            grunt.fail.fatal(`Local branch (${global.release_info.branch}) has ${diff} commits difference with the latest commit on origin. Please update and try again.`);
                         }
                     }
                     cb();
