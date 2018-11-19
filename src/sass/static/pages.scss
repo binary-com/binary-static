@@ -1344,6 +1344,8 @@ body #not_authenticated_financial ul.checked > li {
     .column {
         @media screen and (max-width: 480px) {
             padding: 0;
+            width: 100%;
+            text-align: center;
         }
     }
     .vertical-divider {
