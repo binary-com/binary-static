@@ -34,6 +34,10 @@ const getSection = (grunt) => {
     return section;
 };
 
+const getGhpagesCloneFolder = () => ( // clone each repo to a unique folder to prevent local cache issues when releasing
+    `.grunt/grunt-gh-pages/gh-pages/${/^.*:(.*)\.git$/g.exec(global.release_info.target_repo)[1].replace(/\//g, '__')}`
+);
+
 const getDistPath = () => `dist${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}`;
 
 const generateCompileCommand = (params) => (
@@ -53,6 +57,7 @@ module.exports = {
     isRelease,
     getReleaseTarget,
     getSection,
+    getGhpagesCloneFolder,
     getDistPath,
     generateCompileCommand,
 };

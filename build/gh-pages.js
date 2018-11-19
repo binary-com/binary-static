@@ -7,10 +7,8 @@ module.exports = function (grunt) {
                 branch : 'gh-pages',
                 message: global.is_release ? `Release to ${global.release_target}` : `Deploy to ${global.branch || 'gh-pages'}`,
                 ...(global.is_release && {
-                    repo: global.release_info.target_repo || global.release_info.origin,
-                    get clone() { // clone each repo to a unique folder to prevent local cache issues
-                        return `.grunt/grunt-gh-pages/gh-pages/${/^.*:(.*)\.git$/g.exec(this.repo)[1].replace(/\//g, '__')}`;
-                    },
+                    repo : global.release_info.target_repo,
+                    clone: global.release_info.clone_folder,
                 }),
             },
             src: global.branch ? [global.branch_prefix + global.branch + '/**'] : ['**', '!' + (global.branch_prefix || 'br_') + '*/**']

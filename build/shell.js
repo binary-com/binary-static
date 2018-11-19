@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     var prompt = (message, type) => (`echo "${colors[type || 'info']}>>${colors.reset} ${message}"`);
     var ghpagesCommand = () => (
         [
-            `cd ${process.cwd()}/.grunt/grunt-gh-pages/gh-pages/main`,
+            `cd ${process.cwd()}/.grunt/grunt-gh-pages/gh-pages/${global.is_release ? global.release_info.clone_folder : 'main'}`,
             prompt('Updating...'),
             'git fetch origin gh-pages --quiet',
             'git reset --hard origin/gh-pages --quiet'
