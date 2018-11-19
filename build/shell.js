@@ -1,5 +1,4 @@
 module.exports = function (grunt) {
-    var error_missing_target = `Target is required: use ${Object.keys(global.release_config).map(t => `--${t}`).join(' or ')} to do a release.`;
     var colors = {
         error: '\\033[0;31m',
         info : '\\033[0;32m',
@@ -73,14 +72,12 @@ module.exports = function (grunt) {
                         var origin = stdout.replace('\n', '');
                         grunt.log.ok(`Remote origin: ${origin}`);
                         if (global.is_release) {
-                            if (!global.release_target) {
-                                grunt.fail.fatal(error_missing_target);
-                            } else if (origin !== global.release_info.origin) {
-                                grunt.fail.fatal(`Your remote origin does not match the ${global.release_target.toUpperCase()} repository.`);
+                            if (origin !== global.release_info.origin) {
+                                grunt.fail.fatal(`Your remote origin does not match the required repository for '--${global.release_target}'.\nShould be: ${global.release_config[global.release_target].origin}`);
                             }
                         } else {
                             // origin cannot be one of release targets, when it's not a release
-                            if (Object.keys(global.release_config).some(target => global.release_config[target].origin === origin)) {
+                            if (Object.keys(global.release_config).some(target => global.release_config[target].origin === origin || global.release_config[target].target_repo === origin)) {
                                 grunt.fail.fatal(`Your remote origin should be your fork.`);
                             }
                         }
@@ -97,9 +94,7 @@ module.exports = function (grunt) {
                     if(!err) {
                         var branch = stdout.replace('\n', '');
                         grunt.log.ok('Current branch: ' + branch);
-                        if (!global.release_target) {
-                            grunt.fail.fatal(error_missing_target);
-                        } else if (branch !== global.release_info.branch) {
+                        if (branch !== global.release_info.branch) {
                             grunt.fail.fatal(`Current branch is not correct.\nIn order to release to ${global.release_target.toUpperCase()}, please checkout the "${global.release_info.branch}" branch.`);
                         }
                     }
@@ -113,7 +108,7 @@ module.exports = function (grunt) {
                 prompt('Starting the release to \'translations\'\n'),
                 'git fetch origin translations:translations',
                 'git checkout translations',
-                'grunt release --translations --color',
+                'grunt release --translations --section=app --color',
                 'git checkout master',
             ].join(' && '),
             options: {

@@ -9,7 +9,6 @@ const initGlobals = (grunt) => {
     // ----- release info -----
     global.is_release = Helpers.isRelease(grunt);
     if (global.is_release) {
-        Helpers.checkSection(grunt); // To prevent mistakes, section is mandatory when releasing
         global.release_target = Helpers.getReleaseTarget(grunt);
     }
 
