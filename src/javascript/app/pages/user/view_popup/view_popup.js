@@ -155,10 +155,9 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const final_price      = contract.sell_price || contract.bid_price;
         const is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended         = contract.status !== 'open' || contract.is_expired || contract.is_settleable;
-        const indicative_price = final_price && is_ended ? final_price : (contract.bid_price || null);
+        const indicative_price = contract.sell_price || (contract.bid_price || null);
 
         if (is_sold_before_start) {
             $('#trade_details_start_date').parent().setVisibility(0);
@@ -235,13 +234,13 @@ const ViewPopup = (() => {
         containerSetText('trade_details_ref_id', `${contract.transaction_ids.buy} (${localize('Buy')}) ${contract.transaction_ids.sell ? `<br>${contract.transaction_ids.sell} (${localize('Sell')})` : ''}`);
         containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
-        if (final_price) {
+        if (is_ended && !contract.sell_price) {
+            containerSetText('trade_details_profit_loss', localize('Waiting for contract settlement.'), { class: 'pending' });
+        } else if (contract.sell_price || contract.bid_price) {
             containerSetText('trade_details_profit_loss',
                 `${formatMoney(contract.currency, contract.profit)}<span class="percent">(${(contract.profit_percentage > 0 ? '+' : '')}${addComma(contract.profit_percentage, 2)}%)</span>`,
                 { class: (contract.profit >= 0 ? 'profit' : 'loss') }
             );
-        } else if (is_ended && !contract.sell_price) {
-            containerSetText('trade_details_profit_loss', localize('Waiting for contract settlement.'), { class: 'pending' });
         } else {
             containerSetText('trade_details_profit_loss', '-', { class: 'loss' });
         }
