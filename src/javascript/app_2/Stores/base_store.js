@@ -21,7 +21,6 @@ export default class BaseStore {
     @observable
     validation_rules = {};
 
-
     /**
      * An enum object to define LOCAL_STORAGE and SESSION_STORAGE
      */

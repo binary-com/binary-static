@@ -277,7 +277,7 @@ export default class ClientStore extends BaseStore {
         // Switch account reactions.
         reaction(
             () => this.loginid,
-            async (params, reaction) => {
+            async (params, reactionHandler) => {
                 if (!this.loginid || !this.getToken()) {
                     return;
                 }
@@ -289,7 +289,7 @@ export default class ClientStore extends BaseStore {
                 await BinarySocket.send({ 'authorize': this.getToken() }, { forced: true });
                 await this.init();
                 eventBus.dispatch('ClientAccountHasSwitched', { loginid: this.loginid });
-                reaction.dispose();
+                reactionHandler.dispose();
             },
             {
                 name: 'accountSwitchedReaction',
