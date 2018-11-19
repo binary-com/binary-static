@@ -14,6 +14,7 @@ const BinarySocket      = require('../../base/socket');
 const isEuCountry       = require('../../common/country_base').isEuCountry;
 const Guide             = require('../../common/guide');
 const State             = require('../../../_common/storage').State;
+const getPropertyValue  = require('../../../_common/utility').getPropertyValue;
 
 const TradePage = (() => {
     let events_initialized = 0;
@@ -63,15 +64,25 @@ const TradePage = (() => {
                 const is_logged_in = Client.isLoggedIn();
                 const is_eu = isEuCountry();
                 const is_maltainvest = Client.get('landing_company_shortcode') === 'maltainvest';
-
-                if (is_maltainvest) {
-                    $('#professional-cta').setVisibility(1);
-                }
-                if ((!is_logged_in && is_eu) || (is_logged_in && is_maltainvest)) {
+                const show_msfa_message = () => {
                     $('.mfsa_message')
                         .removeClass('container')
                         .addClass('margin-bottom-40')
                         .slideDown(300);
+                };
+                
+                if (is_eu) {
+                    if (is_logged_in && is_maltainvest) {
+                        BinarySocket.wait('get_account_status').then((response) => {
+                            const is_professional = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional');
+                            if (!is_professional) {
+                                $('#professional-cta').setVisibility(1);
+                                show_msfa_message();
+                            }
+                        });
+                    } else if (!is_logged_in) {
+                        show_msfa_message();
+                    }
                 }
             });
         });
