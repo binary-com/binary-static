@@ -12,7 +12,6 @@ class EventBus {
         return true;
     }
 
-
     addEvent(event, callback, once) {
         this.eventList[event].push({
             callback,
@@ -27,7 +26,6 @@ class EventBus {
     once(event, callback) {
         this.listen(event, callback, true);
     }
-
 
     dispatch(event, payload = {}) {
         if (typeof this.eventList[event] === 'undefined'

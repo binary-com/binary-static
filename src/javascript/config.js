@@ -25,7 +25,7 @@ const binary_desktop_app_id = 14473;
 
 const getAppId = () => {
     let app_id = null;
-    const user_app_id   = '15034'; // you can insert Application ID of your registered application here
+    const user_app_id   = ''; // you can insert Application ID of your registered application here
     const config_app_id = window.localStorage.getItem('config.app_id');
     const is_new_app    = /\/app\//.test(window.location.pathname);
     if (config_app_id) {
