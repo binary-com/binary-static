@@ -1,12 +1,12 @@
-import { observable, computed, action } from 'mobx';
-import Client                           from '_common/base/client_base';
-import GTM                              from '_common/base/gtm';
-import * as SocketCache                 from '_common/base/socket_cache';
-import BinarySocket                     from '_common/base/socket_base';
-import eventBus                         from 'Services/event_bus';
-import BaseStore                        from './base_store';
-import { localize }                     from '../../_common/localize';
-import { isEmptyObject }                from '../../_common/utility';
+import { observable, computed, action, reaction } from 'mobx';
+import GTM                                        from '_common/base/gtm';
+import * as SocketCache                           from '_common/base/socket_cache';
+import BinarySocket                               from '_common/base/socket_base';
+import eventBus                                   from 'Services/event_bus';
+import { LocalStore, State }                      from '_common/storage';
+import BaseStore                                  from './base_store';
+import { localize }                               from '../../_common/localize';
+import { isEmptyObject }                          from '../../_common/utility';
 
 const types_map = {
     virtual  : 'Virtual',
@@ -19,6 +19,42 @@ export default class ClientStore extends BaseStore {
     @observable upgrade_info;
     @observable accounts;
     @observable balance;
+    @observable storage_key = 'client.accounts';
+
+    /**
+     * Burrowed from `Client_base::getBasicUpgradeInfo()`
+     * @returns {{type: *, can_upgrade: boolean, can_upgrade_to: *, can_open_multi: boolean}}
+     */
+    getBasicUpgradeInfo = () => {
+        const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
+
+        let can_open_multi = false;
+        let type,
+            can_upgrade_to;
+
+        if ((upgradeable_landing_companies || []).length) {
+            can_open_multi   = upgradeable_landing_companies.indexOf(
+                this.current_account.landing_company_shortcode) !==
+                -1;
+            // only show upgrade message to landing companies other than current
+            const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
+                landing_company !== this.current_account.landing_company_shortcode &&
+                upgradeable_landing_companies.indexOf(landing_company) !== -1
+            ));
+
+            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
+            if (can_upgrade_to) {
+                type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
+            }
+        }
+
+        return {
+            type,
+            can_upgrade: !!can_upgrade_to,
+            can_upgrade_to,
+            can_open_multi,
+        };
+    };
 
     constructor() {
         super();
@@ -33,9 +69,7 @@ export default class ClientStore extends BaseStore {
     @computed
     get is_client_allowed_to_visit() {
         return !!(
-            !this.is_logged_in ||
-            this.is_virtual ||
-            this.current_account.landing_company_shortcode === 'costarica'
+            !this.is_logged_in || this.is_virtual || this.current_account.landing_company_shortcode === 'costarica'
         );
     }
 
@@ -46,7 +80,7 @@ export default class ClientStore extends BaseStore {
 
     @computed
     get current_account() {
-        return this.accounts[this.loginid];
+        return this.accounts[this.loginid] || {};
     }
 
     @computed
@@ -94,10 +128,12 @@ export default class ClientStore extends BaseStore {
      *
      * @param loginid
      */
-    static resetLocalStorageValues(loginid) {
-        Client.set('cashier_confirmed', 0);
-        Client.set('accepted_bch', 0);
-        Client.set('loginid', loginid);
+    @action.bound
+    resetLocalStorageValues(loginid) {
+        this.accounts[loginid].cashier_confirmed = 0;
+        this.accounts[loginid].accepted_bch      = 0;
+        LocalStore.setObject(this.storage_key, this.accounts);
+        LocalStore.set('active_loginid', loginid);
     }
 
     /**
@@ -107,20 +143,7 @@ export default class ClientStore extends BaseStore {
      */
     @action.bound
     async switchAccount(loginid) {
-        if (!loginid || !this.getAccount(loginid).token) {
-            return;
-        }
-        sessionStorage.setItem('active_tab', '1');
-        // set local storage
-        GTM.setLoginFlag();
-        ClientStore.resetLocalStorageValues(loginid);
         this.loginid = loginid;
-        SocketCache.clear();
-        await BinarySocket.send({ 'authorize': this.getAccount(loginid).token }, { forced: true });
-        await this.init();
-        eventBus.dispatch('ClientAccountHasSwitched', {
-            loginid,
-        });
     }
 
     /**
@@ -129,12 +152,14 @@ export default class ClientStore extends BaseStore {
      */
     @action.bound
     init() {
-        this.loginid      = Client.get('loginid');
-        this.upgrade_info = Client.getBasicUpgradeInfo();
-        this.accounts     = Client.getAllAccountsObject();
+        this.loginid      = LocalStore.get('active_loginid');
+        this.accounts     = LocalStore.getObject(this.storage_key);
+        this.upgrade_info = this.getBasicUpgradeInfo();
         this.balance      = this.current_account && this.current_account.balance
             ? this.current_account.balance.toString()
             : '';
+
+        this.registerReactions();
     }
 
     /**
@@ -197,7 +222,7 @@ export default class ClientStore extends BaseStore {
      * @param only_enabled
      * @returns {*}
      */
-    getAccountOfType(type, only_enabled) {
+    getAccountOfType(type, only_enabled = true) {
         return this.getAccount(
             this.all_loginids.find(loginid => this.isAccountOfType(type, loginid, only_enabled)),
         );
@@ -238,5 +263,31 @@ export default class ClientStore extends BaseStore {
             (type === 'real' && this_type !== 'virtual') ||
             type === this_type) &&
             (only_enabled ? !this.isDisabled(loginid) : true));
+    }
+
+    @action.bound
+    registerReactions() {
+        // Switch account reactions.
+        reaction(
+            () => this.loginid,
+            async (loginid) => {
+                if (!loginid || !this.getAccount(loginid).token) {
+                    return;
+                }
+                sessionStorage.setItem('active_tab', '1');
+                // set local storage
+                GTM.setLoginFlag();
+                this.resetLocalStorageValues(loginid);
+                SocketCache.clear();
+                await BinarySocket.send({ 'authorize': this.getAccount(loginid).token }, { forced: true });
+                await this.init();
+                eventBus.dispatch('ClientAccountHasSwitched', {
+                    loginid,
+                });
+            },
+            {
+                name: 'accountSwitchedReaction',
+            },
+        );
     }
 }
