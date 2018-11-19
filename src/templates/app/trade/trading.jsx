@@ -65,7 +65,7 @@ const Trading = () => (
                                                 <select id='duration_units' className='medium_width_input' />
                                             </div>
                                             <div id='duration_wrapper' className='hint'>
-                                                <span id='duration_tooltip'>{it.L('Duration')}</span>: <span id='duration_minimum' />-<span id='duration_maximum' />
+                                                <span id='duration_tooltip'>{it.L('Duration')}</span>: <span id='duration_minimum' />-<span id='duration_maximum' /> <span id='duration_unit' />
                                             </div>
                                             <div id='expiry_type_endtime'>
                                                 <input id='expiry_date' type='text' data-lpignore='true' readOnly='readonly' autoComplete='off' />

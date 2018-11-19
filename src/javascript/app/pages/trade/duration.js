@@ -279,8 +279,8 @@ const Durations = (() => {
         let unit_value           = Defaults.get('duration_amount') || unit_min_value;
         Dropdown('#duration_units');
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_minimum'), unit_min_value);
-        CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), DurationMap.get(unit.value, +unit_min_value > 1));
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_maximum'), unit_max_value);
+        CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), DurationMap.get(unit.value, +unit_max_value > 1));
         if (selected_duration.amount && selected_duration.unit > unit_value) {
             unit_value = selected_duration.amount;
         }
