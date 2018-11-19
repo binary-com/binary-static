@@ -30,7 +30,6 @@ describe('check svg file format', () => {
         };
 
         const svgs = fetchSvgs(path.resolve(common.root_path, 'src/images'));
-        path.resolve(common.root_path);
 
         flatten(svgs)
             .filter(item => !!item)
