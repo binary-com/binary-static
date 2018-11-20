@@ -1,13 +1,15 @@
-const Cookies        = require('js-cookie');
-const moment         = require('moment');
-const ClientBase     = require('./client_base');
-const Login          = require('./login');
-const BinarySocket   = require('./socket_base');
-const getElementById = require('../common_functions').getElementById;
-const isVisible      = require('../common_functions').isVisible;
-const getLanguage    = require('../language').get;
-const State          = require('../storage').State;
-const getAppId       = require('../../config').getAppId;
+const Cookies          = require('js-cookie');
+const moment           = require('moment');
+const ClientBase       = require('./client_base');
+const Login            = require('./login');
+const ServerTime       = require('./server_time');
+const BinarySocket     = require('./socket_base');
+const getElementById   = require('../common_functions').getElementById;
+const isVisible        = require('../common_functions').isVisible;
+const getLanguage      = require('../language').get;
+const State            = require('../storage').State;
+const getPropertyValue = require('../utility').getPropertyValue;
+const getAppId         = require('../../config').getAppId;
 
 const GTM = (() => {
     const isGtmApplicable = () => (/^(1|1098|14473)$/.test(getAppId()));
@@ -49,6 +51,7 @@ const GTM = (() => {
 
         const data = {
             visitorId         : ClientBase.get('loginid'),
+            bom_account_type  : ClientBase.getAccountType(),
             bom_currency      : ClientBase.get('currency'),
             bom_country       : get_settings.country,
             bom_country_abbrev: get_settings.country_code,
@@ -82,6 +85,14 @@ const GTM = (() => {
         } else {
             pushDataLayer(data);
         }
+
+        // check if there are any transactions in the last 30 days for UX interview selection
+        BinarySocket.send({ statement: 1, limit: 1 }).then((response) => {
+            const last_transaction_timestamp = getPropertyValue(response, ['statement', 'transactions', '0', 'transaction_time']);
+            pushDataLayer({
+                bom_transaction_in_last_30d: !!last_transaction_timestamp && moment(last_transaction_timestamp * 1000).isAfter(ServerTime.get().subtract(30, 'days')),
+            });
+        });
     };
 
     const pushPurchaseData = (response) => {

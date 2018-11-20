@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-23 06:29\n"
+"PO-Revision-Date: 2018-11-16 02:03\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -71,9 +71,6 @@ msgstr "$50,001 - $100,000"
 
 msgid "$500,001 - $1,000,000"
 msgstr "$500,001 - $1,000,000"
-
-msgid "%1 %2 has been credited into your virtual account: %3."
-msgstr "%1 %2 зачислено на Ваш демо-счет: %3."
 
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "Получите выплату %1 %2, если %3 не коснётся заданного барьера на момент закрытия %4."
@@ -170,6 +167,9 @@ msgstr "%1 не берет комиссий за перевод."
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
 msgstr "%1 открывает Вам простой способ работы на финансовых рынках. Заключайте сделки на сумму от $1 USD на ведущих валютных парах, сырьевых рынках и индексах волатильности."
+
+msgid "%1 has been credited into your virtual account: %2."
+msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 заслужил завидную репутацию за стремление к высоким этическим стандартам и качество предоставляемого нами торгового опыта."
@@ -305,6 +305,9 @@ msgstr "%1 предлагает услуги делового партнерст
 
 msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
 msgstr "%1 предоставляет институциональным клиентам по всему миру рыночные котировки и исполнение контрактов на множестве активов, включая основные валютные пары, металлы, контракты на разницу (CFD) на индексах и популярные криптовалюты."
+
+msgid "%1 provides virtual-money facilities to practise your trading strategy with virtual funds. Switch to your virtual-money account using the drop-down box in the top-right corner of the screen."
+msgstr "%1 предоставляет площадку для работы с виртуальными валютами, чтобы отточить Вашу стратегию торговли виртуальными валютами. Перейдите на виртуальный счёт, воспользовавшись меню в правом верхнем углу экрана."
 
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1 предоставляет Вам наилучшее исполнение, используя метод разумной агрегации при управлении поступающими ордерами. Метод разумной агрегации действует следующим образом:"
@@ -516,9 +519,6 @@ msgstr "Политически значимое лицо (ПЗЛ) – это ч�
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Платежный Агент выступает в роли посредника между нашим Клиентом и %1. Платежный агент обрабатывает пополнение и вывод средств для Клиентов, которые желают использовать определённые электронные кошельки или местную валюту, не предложенную на %1. Комиссию за перевод оплачивает Клиент."
 
-msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
-msgstr "Политически-значимое лицо (ПЗЛ) - это человек, который выполняет или ранее выполнял значительные политические функции, а также его/её ближайших родственников, членов семьи или близких ему людей, но не включая сотрудников среднего звена и младших сотрудников. К данным лицам относятся главы государства, министры, секретари и члены парламента, судьи, послы, высокопоставленные государственные служащие, старшие офицеры, аудиторские комитеты правления центральных банков, директора государственных корпораций. “Близкие родственники” вышеперечисленных лиц также являются ПЗЛ, что относится к их супругам/партнёрам, родителям и детям. Также к “лицам, приближенным к ПЗЛ,” относятся их партнёры по бизнесу, которые также будут считаться таковыми. Как правило, человек, считающийся ПЗЛ и не выполняющий значительной политической функции в течение минимум двенадцати месяцев не квалифицируется как ПЗЛ."
-
 msgid "A Professional Client receives a lower degree of client protection due to the following:"
 msgstr "Профессиональный клиент получает более низкий уровень клиентской защиты, ввиду следующих причин:"
 
@@ -584,6 +584,9 @@ msgstr "Носитель языка с отличным знанием англ�
 
 msgid "A panel featuring industry leaders awards BetOnMarkets.com 'Financial Betting Operator of the Year' over two other finalists. It's a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
 msgstr "Жюри с участием лидеров в данной индустрии награждает BetOnMarkets.com премией в номинации ‘Financial Betting Operator of the Year’ (финансовый оператор года по беттингу), предпочтя нас двум другим финалистам. Это большая победа для нашего бренда и важный знак признания нашего сервиса. Десять лет спустя мы не останавливаемся на достигнутом."
+
+msgid "A politically exposed person (PEP) is an individual who is or has been entrusted with a prominent public function. Family members and close associates of such individuals are also considered as PEPs. A PEP who has ceased to be entrusted with a prominent public function for at least 12 months no longer qualifies as a PEP."
+msgstr ""
 
 msgid "A preference and passion for Linux and open-source platforms"
 msgstr "Знание и заинтересованность в Linux, а также в платформах с открытым исходным кодом"
@@ -795,6 +798,12 @@ msgstr "Необходима проверка возраста. Пожалуйс
 msgid "Account opening reason"
 msgstr "Причина открытия счёта"
 
+msgid "Account security"
+msgstr "Безопасность счёта"
+
+msgid "Account statistics"
+msgstr "Статистика счёта"
+
 msgid "Accounting"
 msgstr "Бухгалтерия"
 
@@ -833,6 +842,9 @@ msgstr "Приобретение финансовых контрактов на 
 
 msgid "Action"
 msgstr "Акт"
+
+msgid "Activate the VPN service on the app"
+msgstr "Активируйте услугу VPN"
 
 msgid "Active trading clients"
 msgstr "Активные клиенты"
@@ -948,8 +960,8 @@ msgstr "Работники сельского, лесного и рыбного 
 msgid "Alert"
 msgstr "Оповещение"
 
-msgid "All %1 registered or unregistered proprietary rights including but not limited to patents, trademarks, trade secrets, domain names, URL, pricing information and/or other proprietary rights materials, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, processes, procedures whatsoever shall solely remain with the Company."
-msgstr "Все зарегистрированные или незарегистрированные права на собственность %1, включая, но не ограничиваясь патентами, торговыми марками, торговыми секретами, доменными именами, URL, информацией о ценообразовании и/или иные материалы, идеи, концепции, форматы, предложения, наработки, методы реализации, программы, техника, методика, ноу-хау, оборудование, процессы и любые процедуры, на которые распространяется право собственности, должны единолично принадлежать Компании."
+msgid "All %1 registered or unregistered proprietary rights including but not limited to patents, trademarks, trade secrets, domain names, URL, pricing information or other proprietary rights materials, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, processes, procedures whatsoever shall solely remain with the Company."
+msgstr "Все зарегистрированные или незарегистрированные права на собственность %1, включая, но не ограничиваясь патентами, торговыми марками, торговыми секретами, доменными именами, URL, информацией о ценообразовании или иные материалы, идеи, концепции, форматы, предложения, наработки, методы реализации, программы, техника, методика, ноу-хау, оборудование, процессы и любые процедуры, на которые распространяется право собственности, должны единолично принадлежать Компании."
 
 msgid "All Partnership Options"
 msgstr "Все варианты сотрудничества"
@@ -1113,8 +1125,8 @@ msgstr "исполнение нами инструкций, предоставл
 msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian"
 msgstr "Отличный интерфейс и поддержка на русском, английском, испанском, французском, немецком, португальском, китайском, итальянском, тайском и польском языке"
 
-msgid "An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere"
-msgstr "интуитивно-понятная веб платформа, доступная для трейдеров любого уровня, в любое время и из любой точки земного шара"
+msgid "An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere"
+msgstr ""
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "Анализ и тестирование предложенных доменов и поддоменов."
@@ -1137,11 +1149,14 @@ msgstr "Еще одна крупная награда: в этот раз мы �
 msgid "Answer to secret question"
 msgstr "Ответ на секретный вопрос"
 
+msgid "Anti-Corruption"
+msgstr "Против коррупции"
+
 msgid "Anti-Fraud Officer"
 msgstr "Специалист по борьбе с мошенничеством"
 
-msgid "Anti-Money Laundering policy"
-msgstr "Политика, направленная против отмывания денег"
+msgid "Anti-Money Laundering Policy"
+msgstr "Политика против отмывания денег"
 
 msgid "Anticipated Account Turnover"
 msgstr "Ожидаемый объем покупок на счету"
@@ -1157,6 +1172,9 @@ msgstr "Информация о любых изменениях в правил�
 
 msgid "Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to and finally determined by an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. You are also responsible for any and all costs related to such arbitration."
 msgstr "Любые споры, разногласия и претензии, возникающие по отношению к Компании в рамках или в связи с данным Соглашением, будут направленны и рассмотрены арбитражным судом, выбранным Компанией. Арбитражные разбирательства будут проводиться на английском языке. Решение, вынесенное судьёй (судьями), может быть исполнено любым судом в соответствующей юрисдикции. Вы также несёте финансовую ответственность за любые расходы на данные арбитражные разбирательства."
+
+msgid "Any event capable to have a material adverse effect on the Agent’s ability to perform any of its duties and obligations in accordance with this Agreement."
+msgstr "в случае возникновения любых событий, способных оказать негативное влияние на способность Агента исполнять любые из его обязательств в рамках данного Соглашения."
 
 msgid "Any failure on your part to maintain the security of any security devices or procedures used in or in association with the %1 API;"
 msgstr "Неспособность с Вашей стороны поддерживать безопасность любого устройства защиты или процедур, применимых на сайте или в отношении интерфейса прикладного программирования (API) %1;"
@@ -1187,6 +1205,9 @@ msgstr "Любой человек, обладающий потенциалом �
 
 msgid "Appendix - Product Specific Policies"
 msgstr "Приложение – Политика в отношении определённых продуктов"
+
+msgid "Applicant's rights"
+msgstr "Права заявителя"
 
 msgid "Applications"
 msgstr "Приложения"
@@ -1319,6 +1340,9 @@ msgstr "Помимо трёх основных вышеперечисленны�
 
 msgid "Ask"
 msgstr "Аск"
+
+msgid "Ask me later"
+msgstr "Спросите меня позже"
 
 msgid "Ask price"
 msgstr "Цена аск"
@@ -1680,6 +1704,9 @@ msgstr "Робот Binary Bot"
 msgid "Binary Bot released"
 msgstr "Запущен робот Binary Bot"
 
+msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
+msgstr "Binary Group (далее именуемая \"Группой компаний Binary Group\" или \"Компания\") стремится защищать безопасность и конфиденциальность частной информации заявителей. Данное уведомление о конфиденциальности устанавливает виды информации, которые Компания запрашивает у заявителя. Также уведомление определяет порядок сбора и использования личной информации заявителя, как долго хранить эти данные и другие соответствующие сведения о заявителе, согласно Общему регламенту по защите данных (EU) 2016/679 (далее именуемый ОРЗД или GDPR), а также Акту о защите информации от 2018 года."
+
 msgid "Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 
@@ -1735,7 +1762,7 @@ msgid "Binary Options Trading has been disabled on your account. Kindly %1contac
 msgstr "На Вашем счету заблокирована торговля бинарными опционами. Пожалуйста, свяжитесь со %1службой поддержки%2 для получения помощи."
 
 msgid "Binary Options for MT5"
-msgstr "Бтнарные лпционы для MT5"
+msgstr "Бинарные опционы для МТ5"
 
 msgid "Binary Options on MT5"
 msgstr "Бинарные опционы на MT5"
@@ -1832,6 +1859,9 @@ msgstr "Предложение новых способов использова�
 
 msgid "Brand of first car"
 msgstr "Марка первой машины"
+
+msgid "Browse and trade securely on your preferred device"
+msgstr "Работайте и безопасно торгуйте с любого устройства"
 
 msgid "Browser"
 msgstr "Браузер"
@@ -1947,6 +1977,9 @@ msgstr "CFD на сырьевых товарах;"
 msgid "CFDs on indices."
 msgstr "CFD на индексах."
 
+msgid "CPA (EU only)"
+msgstr ""
+
 msgid "Call Spread"
 msgstr "Колл спред"
 
@@ -1971,6 +2004,9 @@ msgstr "Может использоваться для вывода денег �
 msgid "Can't figure it out on when to buy and sell? Here is a simple way of looking at it:"
 msgstr "Не знаете, когда покупать или продавать? Предлагаем простое объяснение:"
 
+msgid "Can't find what you're searching for?"
+msgstr "Не можете найти нужную информацию?"
+
 msgid "Can't make heads or tails of currency pairs? Here is a simple way of looking at it:"
 msgstr "Плохо разбираетесь в динамике валютных пар? Прочтите наше пояснение:"
 
@@ -1982,9 +2018,6 @@ msgstr "Важные события в Лабуане"
 
 msgid "Can't miss in Malta"
 msgstr "Важные события на Мальте"
-
-msgid "Canada"
-msgstr "Канада"
 
 msgid "Canadian Dollar vs Japanese Yen"
 msgstr "Канадский доллар против японской иены"
@@ -2052,6 +2085,9 @@ msgstr "Изменить пароль для пополнения счёта и 
 msgid "Change your main login password."
 msgstr "Изменить основной пароль."
 
+msgid "Changes to this privacy policy"
+msgstr "Изменения в политике конфиденциальности"
+
 msgid "Charitable Activities"
 msgstr "Благотворительность"
 
@@ -2085,6 +2121,9 @@ msgstr "Проверка"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "Руководители, высокопоставленные чиновники и работники законодательных органов"
 
+msgid "Choice of Law and Venue"
+msgstr "Выбор законодательства и территории"
+
 msgid "Choose Scopes:"
 msgstr "Выберите условия:"
 
@@ -2109,11 +2148,14 @@ msgstr "Выберите счёт"
 msgid "Choose from 100+ tradable instruments, backed by award-winning technology and innovation since 2000."
 msgstr "Выберите один из 100+ инструментов и торгуйте с признанным технологическим новатором, действующим с 2000 года."
 
-msgid "Choose from five available markets:"
-msgstr "Выберите один из пяти доступных рынков:"
+msgid "Choose from four available markets:"
+msgstr ""
 
 msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy."
 msgstr "Выберите один из миллиона доступных контрактов и задайте настройки согласно Вашей стратегии."
+
+msgid "Choose from the following affiliate commission plans:"
+msgstr ""
 
 msgid "Choose from three main trade types:"
 msgstr "Выберите один из трёх основных видов контрактов:"
@@ -2385,6 +2427,9 @@ msgstr "Соблюдать действующие нормы и законы (в
 msgid "Comprehensive"
 msgstr "Универсальность"
 
+msgid "Compressing Image"
+msgstr "Уменьшение изображения"
+
 msgid "Computer system and method for speculating on a financial market"
 msgstr "Компьютерная система и методы спекуляций на финансовом рынке"
 
@@ -2396,6 +2441,9 @@ msgstr "Подготовка и проведение плана аварийно
 
 msgid "Confidentiality"
 msgstr "Конфиденциальность"
+
+msgid "Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at %1."
+msgstr "Измените конфигурацию своего ПК и мобильного телефона на Cloudflare DNS, выполнив инструкции на %1."
 
 msgid "Confirm"
 msgstr "Подтвердить"
@@ -2556,6 +2604,9 @@ msgstr "Авторское право"
 msgid "Copywriter"
 msgstr "Автор статей"
 
+msgid "Cost per acquisition (CPA) for EU affiliates only"
+msgstr ""
+
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "Расходы – расходы исполнения Вашего ордера, преимущественно включающие спред (т.е. разницу между нашей ценой бид и ценой исполнения)."
 
@@ -2615,6 +2666,9 @@ msgstr "Откройте новый виртуальный счёт"
 
 msgid "Create account with Google"
 msgstr "Откройте счёт через Google"
+
+msgid "Create an MT5 account now"
+msgstr ""
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Создание чёткого, точного и интересного контента для вебсайта, блога, публикаций в соц. сетях и маркетинговых материалов компании"
@@ -2775,14 +2829,29 @@ msgstr "Дневной лимит на объём покупок"
 msgid "Dash vs US Dollar"
 msgstr "Dash против доллара США"
 
+msgid "Data Controller"
+msgstr "Оператор персональных данных"
+
 msgid "Data Feed"
 msgstr "Котировки"
+
+msgid "Data Protection Act (DPA)"
+msgstr "Акт о защите информации"
 
 msgid "Data Protection Officer"
 msgstr "Сотрудник, отвечающий за защиту данных"
 
 msgid "Data Retention"
 msgstr "Удерживание данных"
+
+msgid "Data Subject"
+msgstr "Субъект данных "
+
+msgid "Data retention"
+msgstr "Удерживание данных"
+
+msgid "Data will be stored in a range of different places, including on the applicant's application record, in HR management systems, and on other IT systems (including email)."
+msgstr "Информация будет храниться в различных местах, включая базу заявлений, базу отдела кадров, а также другие IT системы (включая базу электронных сообщений)."
 
 msgid "Date"
 msgstr "Дата"
@@ -2988,9 +3057,6 @@ msgstr "Отключить"
 msgid "Disclaimer"
 msgstr "Заявление"
 
-msgid "Disclaimer: The Economic Calendar tool is a third-party application developed by MetaQuotes Software Corp. and its data can change without prior notice. %1 is not responsible for the content or accuracy of its data, or for any loss or damage of any sort resulting from its data."
-msgstr "Ограничение ответственности: Экономический календарь − это приложение, предоставляемое и разработанное третьей стороной − MetaQuotes Software Corp. Данные в приложении могут меняться без предварительного уведомления. %1 не несёт ответственности за содержание или точность данных, а также любые убытки, связанные с ними."
-
 msgid "Disclaimers"
 msgstr "Отказ от ответственности"
 
@@ -3023,6 +3089,9 @@ msgstr "Не переводите Bitcoin на счёт Bitcoin Cash (или Bit
 
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "Не покупайте контракты, если Вы устали или находитесь под действием алкоголя."
+
+msgid "Do you have 40 minutes for an interview?"
+msgstr "У Вас найдётся 40 минут на интервью?"
 
 msgid "Do you offer any referral tools to your IBs?"
 msgstr "Предоставляете ли вы своим ПБ инструменты для реферралов (привлечения клиентов на сайт)?"
@@ -3057,6 +3126,9 @@ msgstr "не коснется"
 msgid "Don't have an account?"
 msgstr "У Вас ещё нет счёта?"
 
+msgid "Don’t share your %1 account or payment methods with any other person."
+msgstr "Не делитесь данным и Вашем счёте %1 или платёжных методов с другими лицами."
+
 msgid "Don’t worry, you can simply <a href='%1'>reset your password</a>."
 msgstr "Не переживайте и просто <a href='%1'>измените пароль</a>."
 
@@ -3065,6 +3137,12 @@ msgstr "Неактивные счета"
 
 msgid "Download"
 msgstr "Скачать"
+
+msgid "Download Binary VPN app For Android"
+msgstr "Загрузите приложение Binary VPN для Android"
+
+msgid "Download Binary VPN app for Windows Desktop"
+msgstr "Загрузите приложение Binary VPN для Windows и ПК"
 
 msgid "Download CSV"
 msgstr "Загрузить CSV"
@@ -3084,8 +3162,17 @@ msgstr "Загрузить MT5 для Windows"
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "Загрузите MT5 для настольного компьютера или ноутбука; получите доступ к мощным инструментам и функциям, используемым миллионами трейдеров."
 
+msgid "Download our VPN app for your preferred device"
+msgstr "Загрузите приложение VPN для нужного устройства"
+
+msgid "Download our VPN app now"
+msgstr "Загрузите приложение VPN сейчас"
+
 msgid "Download our desktop app now:"
 msgstr "Скачать приложение для ПК:"
+
+msgid "Download the %1desktop app%2 for the most secure way to access the %3 website."
+msgstr ""
 
 msgid "Download the Android App"
 msgstr "Загрузить для Android"
@@ -3153,8 +3240,8 @@ msgstr "Индекс EUR, измеряющий значение евро про�
 msgid "EUR/GBP"
 msgstr "EUR/GBP"
 
-msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
-msgstr "Каждая Сторона должна предпринять все разумные меры, заявленные другой Стороной для соблюдения всех положений и условий данного Соглашения."
+msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions of this Agreement."
+msgstr ""
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the terms of this Agreement."
 msgstr "Каждая Сторона должна предпринять все разумные меры, заявленные другой Стороной для соблюдения всех положений и условий данного Соглашения."
@@ -3186,6 +3273,12 @@ msgstr "При каждом перечислении взимается коми
 msgid "Earn"
 msgstr "Зарабатывайте"
 
+msgid "Earn $30 to trade on %1"
+msgstr ""
+
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU."
+msgstr ""
+
 msgid "Earn a commission on each client’s MT5 trading activity – paid out daily."
 msgstr "Зарабатывайте комиссии с торговой деятельности каждого клиента на MT5. Комиссия выплачивается ежедневно."
 
@@ -3201,6 +3294,9 @@ msgstr "Получайте комиссионные от торговой дея
 msgid "Earn commissions by introducing new customers to %1."
 msgstr "Получайте комиссию, приводя новых клиентов на платформу %1."
 
+msgid "Earn increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
+msgstr ""
+
 msgid "Earn money for any verifiable errors that you find."
 msgstr "Зарабатывайте деньги на любых доказанных ошибках, которые Вы обнаружите."
 
@@ -3209,9 +3305,6 @@ msgstr "Заработайте выплату до 50 000 USD. Убыток ог
 
 msgid "Earn the same proportional return on stakes of all values."
 msgstr "Получайте прибыль, пропорциональную Вашей инвестиции."
-
-msgid "Earn up to 35% commission with an award-winning binary options trading platform."
-msgstr "Зарабатывайте комиссионные в размере до 35%, благодаря первоклассной платформе для торговли бинарными опционами."
 
 msgid "Ebooks, videos, and more"
 msgstr "Эл. книги, видео и многое другое"
@@ -3281,6 +3374,9 @@ msgstr "Статус занятости"
 
 msgid "Enable"
 msgstr "Активировать"
+
+msgid "Enable %1two-factor authentication%2 on your account."
+msgstr ""
 
 msgid "Enable two-factor authentication for an extra layer of security."
 msgstr "Активировать двухступенчатую проверку для дополнительной безопасности."
@@ -3368,6 +3464,12 @@ msgstr "Равно"
 
 msgid "Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions."
 msgstr "Остаток средств на счету – это сумма Вашего баланса, плавающей прибыли и убытка (PnL). Уровень маржи – это соотношение остатка на счету с маржей. Когда это соотношение достигает определённого процента (как правило, 100%), к Вашему счёту будет применено маржевое требование. Это не влияет на Вашу способность открывать новые позиции, но служит предупреждением, что Ваша плавающая прибыли и убыток снижается. Тем не менее, рекомендуется внести на счёт средства, чтобы сохранять позиции открытыми. Также Вы можете закрыть проигрышные позиции."
+
+msgid "Establish a secure Internet connection and protect your privacy."
+msgstr ""
+
+msgid "Establish a secure, encrypted connection to a virtual private network (VPN) server using our VPN app to protect your data and privacy."
+msgstr ""
 
 msgid "Estimated Net Worth"
 msgstr "Собственный капитал"
@@ -3534,6 +3636,9 @@ msgstr "Экзотические пары, которые включают од�
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "Расширьте нашу сеть активных партнёров на местном рынке. Используйте свою энергию, навыки и знания местной бизнес-культуры, чтобы поддержать наш стремительный рост на мировом рынке."
 
+msgid "Expat handbook"
+msgstr ""
+
 msgid "Expats and international students make up more than 10% of Cyberjaya's vibrant population."
 msgstr "Более 10% от населения Киберджайи составляют иностранные работники и международные студенты."
 
@@ -3597,14 +3702,17 @@ msgstr "Цена при окончании"
 msgid "Explanation"
 msgstr "Объяснение"
 
-msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform. %1Create an MT5 account now%2 to start trading."
-msgstr "Погрузитесь в захватывающий мир торговли бинарными опционами на ведущей многоактивной платформе. %1Откройте счёт на MT5 прямо сейчас%2 и начните торговлю."
+msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform."
+msgstr ""
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr "Познакомьтесь со всеми предлагаемыми нами торговыми платформами, приложениями и инструментами"
 
 msgid "Explore our HackerOne bounty programme"
 msgstr "Ознакомьтесь с нашей поощрительной программой HackerOne"
+
+msgid "Explore ways to enhance your account security and manage your trading risk."
+msgstr ""
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "Большой опыт применения принципов и стандартов усовершенствованного кодирования"
@@ -3984,6 +4092,9 @@ msgstr "Индекс GBP, измеряющий значение британск
 msgid "GBP/USD currency pair and its bid-ask price."
 msgstr "Цена бид и аск на паре GBP/USD."
 
+msgid "GDPR"
+msgstr ""
+
 msgid "GMT"
 msgstr "GMT"
 
@@ -4047,8 +4158,8 @@ msgstr "С чего начать"
 msgid "Getting started"
 msgstr "С чего начать"
 
-msgid "Getting started is free and easy – just %1fill out the application form%2, choose from two types of commission plans and wait for our approval."
-msgstr "Начните с простого первого шага – %1заполните анкету регистрации%2, выберите один из двух видов расчёта комиссионных и дождитесь одобрения Вашей заявки."
+msgid "Getting started is free and easy – just %1fill out the application form%2, choose your preferred commission plan and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "Начните с простого первого шага – %1заполните анкету регистрации%2* и дождитесь одобрения Вашей заявки."
@@ -4266,6 +4377,9 @@ msgstr "Как сменить способ оплаты?"
 msgid "How can I withdraw my commissions?"
 msgstr "Как можно вывести комиссии?"
 
+msgid "How can we help?"
+msgstr ""
+
 msgid "How do I know how much I have earned?"
 msgstr "Как узнать, сколько я заработал(а)?"
 
@@ -4368,6 +4482,9 @@ msgstr "Я осознаю все сопряжённые риски и согла
 msgid "I want to be treated as a professional client."
 msgstr "Я хочу стать профессиональным клиентом."
 
+msgid "I'm interested"
+msgstr ""
+
 msgid "I. Quotes"
 msgstr "I. Котировки"
 
@@ -4422,11 +4539,11 @@ msgstr "Если закрывающий контракт на том же акт
 msgid "If an error is made in the calculation of your share of the revenue share, the Company reserves the right to correct such calculation at any time, and to reclaim from you any overpayment made by the Company to you (including, without limitation, by way of reducing future payments earned, revenue to cover any processed chargebacks) before you can start earning revenue again. In special cases, the Company reserves the right to exclude revenue sharing  on promotional funds deposited into the client's account by the Company."
 msgstr "Если происходит ошибка в расчете Вашей доли чистой выручки, Компания оставляет за собой право корректировать такие расчеты в любое время и отзывать сделанные чрезмерные выплаты (включая, но не ограничиваясь уменьшением будущих выплат, чтобы компенсировать любые произведенные чрезмерные выплаты, прежде чем Вы снова начнете получать прибыль). В особых случаях Компания оставляет за собой право исключать предоставление доли чистой выручки от средств, происходящих от бонусов или других рекламных акций, которые были внесены на клиентский счет."
 
-msgid "If any provision and/or term and/or clause of this Agreement be held invalid or void or unenforceable whatsoever by any court or Arbitration or regulatory body or competent authority or any other authority or law whatsoever in any jurisdiction in which the Agent provide its services, the remainder of this Agreement shall remain in full force and effect."
-msgstr "Если любые пункты, положения и/или условия данного Соглашения будут признаны недействительными, не имеющими юридической силы или неисполнимыми любым судом, арбитражем или регулирующим органом или компетентным учреждением, а также любым другим органом или законом, действующим в любой юрисдикции, в которой будут предоставляться услуги в рамках данного Соглашения, все остальные положения данного Соглашения должны сохранять полную силу и продолжать действовать."
-
 msgid "If any provision of these Terms is found to be illegal, void, or unenforceable, the unenforceable provision will be modified so as to render it enforceable to the maximum extent possible in order to effect the intention of the provision; if a term cannot be so modified, it will be severed and the remaining provisions of these Terms will not be affected in any way."
 msgstr "Если любое положение данных Правил будет признано незаконным, недействительным или неосуществимым, данное положение будет изменено с целью сделать его осуществимым в максимально возможной мере, чтобы сохранить суть данного положения; если положение не может быть изменено, оно будет исключено из Соглашения, не затрагивая остальные положения данных Правил."
+
+msgid "If any provision of this Agreement is held to be invalid, void or unenforceable whatsoever by any court or Arbitration or regulatory body or competent authority or any other authority or law whatsoever in any jurisdiction in which the Agent provide its services, the remainder of this Agreement shall remain in full force and effect."
+msgstr ""
 
 msgid "If any provision of this Agreement is held to be void or unenforceable in whole or part, the impugned provision (or part thereof) shall be deemed to be deleted from this Agreement and the remaining provisions (including the remainder of the affected provision) shall continue to be valid and applicable."
 msgstr "Если какой-либо из пунктов данного Соглашения становится частично или полностью недействительным или неприменимым, данный пункт (или его часть) будет считаться удаленным из данного Соглашения, в то время как остальные пункты (включая действующую часть затронутого пункта) будут оставаться действительными и применимыми."
@@ -4671,8 +4788,8 @@ msgstr "Если Вы хотите вывести средства с Реаль
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr "Если Вы хотите получить больше информации о том, как стать Платежным агентом, обратитесь к нам по адресу <a href='mailto:%1'>%1</a>"
 
-msgid "If you would like to file a complaint with regards to our service, kindly contact us on complaints@binary.com, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details."
-msgstr "Если Вы хотите подать жалобу относительно обслуживания, пожалуйста, свяжитесь с нами по адресу complaints@binary.com, предоставив имеющие отношение к жалобе данные. Мы рассмотрим Ваш запрос и предоставим ответ на него. Как правило, окончательный ответ предоставляется в течение 10 рабочих дней с момента получения соответствующей информации (если для рассмотрения запроса не потребуется дополнительное время, предусмотренное законом)."
+msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within %2 working days from receipt of all relevant details."
+msgstr ""
 
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us on complaints@binary.com by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgstr "Если Вы хотите отправить жалобу относительно услуг торговли с использованием маржи, перечисленных в данном Соглашении, пожалуйста, свяжитесь с нами по адресу complaints@binary.com и укажите соответствующие детали Вашей жалобы. Мы проведём расследование по Вашему запросу и предоставим Вам ответ. Как правило, данная процедура занимает от одной до двух недель (наибольший срок рассмотрения жалоб составляет до двух месяцев) с момента получения всей соответствующей информации."
@@ -4778,6 +4895,9 @@ msgstr "Исполняя ордеры от Вашего имени, %1 учит�
 
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr "На рынке Forex трейдеры могут заключать контракты, основанные на цене одной валюты по отношению к другой. Например, если трейдер выбирает контракт \"Повышение\" на EUR/USD, он делает прогноз, что цена евро поднимется по отношению к американскому доллару."
+
+msgid "In light of the EU General Data Protection Regulation 2016/679 and the Data Protection Act 2018, the applicant is entitled to a number of rights with regards to the applicant's personal data; namely, the following rights:"
+msgstr ""
 
 msgid "In order to access Telegram Bot, please <a href=\"%1\">generate an API Token</a> and enter it in the input box below."
 msgstr "Чтобы получить доступ к Telegram Bot, <a href=\"%1\">сгенерируйте токен API</a> и введите его ниже."
@@ -4929,6 +5049,9 @@ msgstr "Информацион. технологии"
 msgid "Inheritance"
 msgstr "Наследование"
 
+msgid "Install antivirus software (such as Avast Free Antivirus for %1Windows%2 and %3Mac%4) on your computer."
+msgstr ""
+
 msgid "Instant access"
 msgstr "Мгновенный доступ"
 
@@ -4976,6 +5099,9 @@ msgstr "О риске"
 
 msgid "Interpretation"
 msgstr "Интерпретация"
+
+msgid "Interpretations"
+msgstr ""
 
 msgid "Interview process"
 msgstr "Процесс интервью"
@@ -5058,6 +5184,9 @@ msgstr "Выпущенный на Ваше имя"
 msgid "It is a condition of using the website that:"
 msgstr "Условия использования сайта:"
 
+msgid "It is agreed and understood that any of the Parties may terminate this Agreement by giving 7 days written notice to the other Party."
+msgstr ""
+
 msgid "It is agreed and understood that the Commencement date of this Agreement means the date on which the Agent account is approved by the Company."
 msgstr "Настоящим Стороны пришли к пониманию и договорились о том, что под датой начала данного Соглашения следует понимать дату, в которую счёт агента будет одобрен Компанией."
 
@@ -5067,23 +5196,23 @@ msgstr "Настоящим стороны признают и соглашают
 msgid "It is agreed that Confidential Information shall be considered as confidential even after the termination of the business relationship established under this Agreement or any other agreement or arrangement between the Parties."
 msgstr "Настоящим Стороны соглашаются, что конфиденциальная информация должна считаться конфиденциальной даже после прекращения деловых отношений в рамках данного Соглашения или любых других соглашений, достигнутых между Сторонами."
 
-msgid "It is agreed that any Withdrawals through the Agent shall be made as follows:"
-msgstr "Настоящим Стороны соглашаются, что любой вывод средств через Агента должен производиться следующим образом:"
-
 msgid "It is agreed that any deposits through the Agent shall be made as follows:  "
 msgstr "Настоящим Стороны соглашаются, что любое пополнение счёта через Агента должно производиться следующим образом:  "
 
-msgid "It is agreed that on the Commencement Date of this Agreement and on the date of each transaction as per Section B, the Agent represents and warrants that:"
-msgstr "Настоящим Стороны соглашаются, что на момент начала действия данного Соглашения и в день исполнения каждого контракта, как указано в разделе B, Агент обязуется и гарантирует нижеследующее:"
+msgid "It is agreed that any withdrawals through the Agent shall be made as follows:"
+msgstr ""
 
-msgid "It is agreed that the Company shall not be responsible or liable for any matter arising out of or in relation to the use and/or operation whatsoever of any website owned or used whatsoever by the Agent. It is understood that the Agent shall indemnify the Company for all and any losses that the Company may suffer arising out of, or in relation to the use or operations of any website used or owned by the Agent."
-msgstr "Настоящим Стороны соглашаются, что Компания не должна нести ответственности за любые ситуации, возникающие в отношении использования и/или любой работы на любом вебсайте, принадлежащим или использующимся Агентом. Следует понимать, что Агент должен возместить любой убыток, который может понести Компания в связи с использованием или работой любого сайта, принадлежащего Агенту."
+msgid "It is agreed that on the Commencement Date of this Agreement and on the date of each transaction, the Agent represents and warrants that:"
+msgstr ""
 
-msgid "It is further agreed and understood that the Agent shall not use any domain name that includes the name, %1 and/or any derivation or variation of this name, able to give the impression to the average and/or reasonable Client that the Company and the Agent is the same Person."
-msgstr "В дальнейшем Стороны признают и соглашаются, что Агент не должен пользоваться доменными именами, включающими название %1 и/или любые его производные, способные создать у Клиента ощущение, что Компания и Агент являются единым лицом."
+msgid "It is agreed that the Company shall not be responsible or liable for any matter arising out of or in relation to the use and operation of any website owned or used by the Agent. It is understood that the Agent shall indemnify the Company for all and any losses that the Company may suffer arising out of, or in relation to the use or operations of any website used or owned by the Agent."
+msgstr ""
 
-msgid "It is further noted that the Company shall be the sole owner of all rights or titles or interests whatsoever of data and/or other information generated and/or produced and/or distributed by or through %1 electronic systems and other electronic systems used by %1, including any modifications."
-msgstr "Настоящим подчёркивается, что компания является единоличным владельцем всех прав, званий или любых процентов, а также данных и/или иной информации, созданной, полученной или переданной порталом %1, электронными системами и иными системами, применяющимися %1, включая любые изменения."
+msgid "It is further agreed and understood that the Agent shall not use any domain name that includes the name %1 and any derivation or variation of this name able to give the impression that the Company and the Agent are the same Person."
+msgstr ""
+
+msgid "It is further noted that the Company shall be the sole owner of all rights or titles or interests whatsoever of data and other information generated or produced and distributed by or through %1 electronic systems and other electronic systems used by %1, including any modifications."
+msgstr ""
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
 msgstr "Важно, чтобы Вы тщательно контролировали все свои позиции. Контроль позиций является Вашей ответственностью. Также Вы всегда должны иметь возможность доступа к своим счетам в период, когда у Вас есть открытые контракты."
@@ -5133,14 +5262,23 @@ msgstr "Янв"
 msgid "January"
 msgstr "Январь"
 
+msgid "Job Applicant Privacy Policy"
+msgstr ""
+
 msgid "Job Details"
 msgstr "Описание вакансии"
+
+msgid "Job applicant privacy policy"
+msgstr ""
 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Присоединяйтесь к нашей команде ярких и талантливых специалистов. Работайте вместе с нами над улучшением и продвижением нашей высокотехнологичной платформы, ставшей одной из самых популярных платформ в индустрии торговли бинарными опционами на протяжении более 15 лет."
 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Присоединяйтесь к нашей команде ярких и талантливых специалистов. Работайте вместе с нами над продвижением нашей высокотехнологичной платформы, ставшей одной из самых популярных платформ в индустрии торговли бинарными опционами на протяжении более 15 лет."
+
+msgid "Join the %1 Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform."
+msgstr ""
 
 msgid "Jul"
 msgstr "Июл"
@@ -5163,11 +5301,20 @@ msgstr "Юрисдикция и законодательство"
 msgid "K. Electronic Trading Platform and Transactions"
 msgstr "K. Электронная торговая платформа и контракты"
 
+msgid "Keep Safe"
+msgstr ""
+
+msgid "Keep safe"
+msgstr ""
+
 msgid "Keep track of your authorised applications."
 msgstr "Следите за доступными приложениями."
 
 msgid "Keep up with breaking news and events on global markets."
 msgstr "Будьте в курсе всех срочных новостей и событий на мировых рынках."
+
+msgid "Keep your web browser %1up-to-date%2."
+msgstr ""
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
 msgstr "Знание рыночных новостей и трендов в определённом секторе может очень Вам пригодиться, особенно если Вы только начали свою торговую деятельность."
@@ -5282,6 +5429,9 @@ msgstr "Узнайте больше о возможности Менеджера
 
 msgid "Learn more about our corporate culture"
 msgstr "Узнайте больше о нашей корпоративной культуре"
+
+msgid "Learn more about submitting essential documents with our handy infographic:"
+msgstr ""
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "Изучите основы торговли Meta активами на нашей платформе MetaTrader 5."
@@ -5616,9 +5766,6 @@ msgstr "Поддержание точных параметров системы 
 msgid "Maintain adequate speed and volume of output"
 msgstr "Поддержание адекватной скорости и объёма работы"
 
-msgid "Major Pairs"
-msgstr "Основные пары"
-
 msgid "Major and minor pairs, plus Smart FX indices"
 msgstr "Основные и вторичные пары плюс индексы Smart FX"
 
@@ -5934,9 +6081,6 @@ msgstr "Минимум:"
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "Работники горнодобывающей промышленности, строительства, производства и транспорта"
 
-msgid "Minor Pairs"
-msgstr "Вторичные пары"
-
 msgid "Minor pairs"
 msgstr "Вторичные пары"
 
@@ -5978,6 +6122,9 @@ msgstr "Мониторинг и оптимизация торговой акти
 
 msgid "Monitor hardware and software deployment and manage our worldwide network of servers and office networks"
 msgstr "Мониторинг внедрения аппаратного и программного обеспечения, а также управление нашей мировой сетью серверов и учрежденческой сетью"
+
+msgid "Monitor recent logins to your account using the %1login history%2 facility."
+msgstr ""
 
 msgid "Monitor the movements of your favourite assets and markets at the same time."
 msgstr "Одновременно следите за динамикой интересующих Вас активов и рынков."
@@ -6090,8 +6237,8 @@ msgstr "Имя домашнего животного"
 msgid "Name:"
 msgstr "Имя:"
 
-msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
-msgstr "Национальное удостоверение личности или любой документ, выпущенный государством и содержащий фотографию, Ваше имя и дату рождения"
+msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
+msgstr ""
 
 msgid "Natural wonders"
 msgstr ""
@@ -6122,6 +6269,9 @@ msgstr "Вы, Ваши прямые родственники и контроли
 
 msgid "Net Annual Income"
 msgstr "Чистый годовой доход"
+
+msgid "Net deposits"
+msgstr ""
 
 msgid "Net profit"
 msgstr "Чистая прибыль"
@@ -6189,8 +6339,8 @@ msgstr "Нет"
 msgid "No Advice"
 msgstr "Отсутствие консультаций"
 
-msgid "No Party shall be deemed liable for a partial or complete failure to meet its obligations, under this Agreement, in case of force majeure events including but not limited to civil war, unrest, insurrection, international intervention, any governmental actions, exchange controls, nationalizations, devaluations, forfeitures, natural disasters, act of God and other inevitable and/or unforeseeable and/or unanticipated and/or unpredicted events, not depending on the will of the Parties."
-msgstr "Ни одна из сторон не будет нести ответственность за частичную или полную невозможность выполнять свои обязательства в рамках данного Соглашения, в случае возникновения форс-мажорных обстоятельств, включая, но не ограничиваясь гражданской войной, беспорядками, гос. переворотами, вторжениями извне, любыми правительственными действиями, валютными ограничениями, национализацией, девальвацией, конфискацией, стихийными бедствиями, природными катастрофами и иными непредотвратимыми, непредвиденными, неожиданными и/или непредсказуемыми обстоятельствами, не зависящими от воли Сторон."
+msgid "No Party shall be deemed liable for a partial or complete failure to meet its obligations, under this Agreement, in case of force majeure events including but not limited to civil war, unrest, insurrection, international intervention, any governmental actions, exchange controls, nationalizations, devaluations, forfeitures, natural disasters, act of God and other inevitable or unforeseeable or unanticipated or unpredicted events, not depending on the will of the Parties."
+msgstr ""
 
 msgid "No Touch trades"
 msgstr "Контракты Нет касания"
@@ -6227,6 +6377,9 @@ msgstr "Вы не получите выплаты, если спот-котир�
 
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering which may have several effects on Clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of Clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
 msgstr "Запрещается использовать данный сайт с целью отмывания капитала. Компания применяет передовые процедуры предотвращения отмывания денежных средств. Все транзакции проверяются в целях предотвращения отмывания денежных средств, что может иметь различные последствия для клиентов. Компания оставляет за собой право отказывать в сотрудничестве, прекращать сотрудничество и аннулировать транзакции Клиентов, которые не принимают или не соблюдают данные меры по предотвращению отмывания денег. Принимаемые Компанией средства не должны происходить от криминальной деятельности. Компания обязана уведомлять о подозрительных транзакциях компетентные органы."
+
+msgid "No thanks"
+msgstr ""
 
 msgid "No, there are no minimum requirements to withdraw your IB commissions."
 msgstr "Нет, у нас нет никаких минимальных требований для ПБ, которые необходимо соблюсти перед выводом комиссионных."
@@ -6268,7 +6421,7 @@ msgid "Note: Payment Agent transfers are only available for accounts registered 
 msgstr "Примечание: Переводы через Платежных агентов доступны лишь для счетов, зарегистрированных на Binary (CR) SA. Транзакции принимаются только в долларах США."
 
 msgid "Note: This feature is not available if you logged in using a social network."
-msgstr "Примечание: Данная функция не доступна, если Вы вошли на сайт через соц. сети."
+msgstr "Примечание: Данная функция недоступна, если Вы вошли на сайт через соц. сети."
 
 msgid "Note: Transfer between accounts is not available on weekends."
 msgstr "Примечание: переход между счетами недоступен в выходные."
@@ -6423,8 +6576,8 @@ msgstr "Для номера ID разрешены только буквы, ци�
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
 msgstr "Допускаются только буквы латинского алфавита, пробелы, дефисы, точки или апострофы."
 
-msgid "Only numbers and spaces are allowed."
-msgstr "Разрешены только цифры и пробелы."
+msgid "Only numbers, hyphens, and spaces are allowed."
+msgstr ""
 
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Разрешается иметь только один счет на человека. Вывод средств или компенсация не может перечисляться на счета, открытые на вымышленное имя, или на множественные счета, открытые одним и тем же лицом."
@@ -6640,7 +6793,7 @@ msgid "Our website contains links to other websites and may contain banner or ic
 msgstr "Наш сайт содержит ссылки на другие сайты и может содержать баннеры или рекламные объявления, имеющие отношение к третьим лицам. Эти сайты и объявления могут сохранить куки на Вашем браузере, и мы не имеем контроля над возможностью таких действий. Мы не несем ответственности за политику конфиденциальности или содержание таких сайтов. Мы рекомендуем ознакомиться с правилами и политикой таких сайтов, так как их правила могут отличаться от наших."
 
 msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)"
-msgstr ""
+msgstr "За пределами ЕС финансовые процедуры осуществляются компанией Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, компанией Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, деятельность которой регулируется Комиссией по предоставлению финансовых услуг Вануату (%1см. лицензию%2), компанией Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, деятельность которой регулируется Комиссией по предоставлению финансовых услуг на Британских Виргинских островах (%3лицензия номер SIBA/L/18/1114%4), а также Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, регулируемой Управлением финансовых услуг Лабуана для ведения брокерской деятельности (%5лицензия номер MB/18/0024%6)"
 
 msgid "Over $1,000,000"
 msgstr "Свыше $1,000,000"
@@ -6813,6 +6966,9 @@ msgstr "Разрешения"
 msgid "Personal Care, Sales and Service Workers"
 msgstr "Работники в сфере личной гигиены, продаж и обслуживания"
 
+msgid "Personal Data"
+msgstr ""
+
 msgid "Personal Data and Privacy"
 msgstr "Личные данные и конфиденциальность"
 
@@ -6918,6 +7074,9 @@ msgstr "Пожалуйста подтвердите, что Вы не являе
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "Просим подтвердить данные транзакции для завершения перевода:"
 
+msgid "Please ensure that you have the Telegram app installed on your device."
+msgstr ""
+
 msgid "Please enter a valid Login ID."
 msgstr "Пожалуйста, введите правильное имя пользователя."
 
@@ -6968,6 +7127,9 @@ msgstr "Пожалуйста, укажите идентификационный 
 
 msgid "Please provide us with the following information:"
 msgstr "Пожалуйста, предоставьте нам следующую информацию:"
+
+msgid "Please read this %1privacy policy%2 before submitting your application."
+msgstr ""
 
 msgid "Please reload the page"
 msgstr "Пожалуйста, перезагрузите страницу"
@@ -7070,6 +7232,9 @@ msgstr "Демо-счёт с восполняемым виртуальным к�
 
 msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
 msgstr "Отрабатывайте свои торговые стратегии в безопасной среде, пользуясь виртуальными средствами."
+
+msgid "Practise with virtual funds"
+msgstr ""
 
 msgid "Practise your trading strategy with virtual funds in a risk-free environment."
 msgstr "Отточите свою торговую стратегию с виртуальными средствами, совершенно без риска."
@@ -7203,6 +7368,9 @@ msgstr "Регулярный и качественный перевода веб
 msgid "Process website content translations when a full time translator is unavailable"
 msgstr "Выполнение перевода контента вебсайта, когда недоступен постоянный переводчик"
 
+msgid "Processing"
+msgstr ""
+
 msgid "Processing Time"
 msgstr "Обработка заявки"
 
@@ -7241,9 +7409,6 @@ msgstr "Плюс/Минус"
 
 msgid "Profit Table"
 msgstr "Анализ счета"
-
-msgid "Profit from increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
-msgstr "Получайте прибыль от растущих выплат в рамках уровневой и лестничной системы расчёта комиссионных, которые определяют Вашу выплату на основе чистой прибыли, полученной от привлечённых Вами клиентов."
 
 msgid "Profit or Loss"
 msgstr "Прибыль/убыток"
@@ -7316,6 +7481,9 @@ msgstr "Время покупки"
 
 msgid "Purchase request sent"
 msgstr "Запрос на покупку отправлен"
+
+msgid "Purpose of collecting Personal Data"
+msgstr ""
 
 msgid "Put Spread"
 msgstr "Пут спред"
@@ -7803,6 +7971,9 @@ msgstr "Сек."
 msgid "Secret question"
 msgstr "Секретный вопрос"
 
+msgid "Secure your internet connection in three easy steps:"
+msgstr ""
+
 msgid "Security"
 msgstr "Безопасность"
 
@@ -7926,6 +8097,9 @@ msgstr "Длительность сессии:"
 msgid "Set Currency"
 msgstr "Укажите валюту"
 
+msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
+msgstr ""
+
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "Установите барьер(ы), чтобы определить позицию и узнать возможную выплату."
 
@@ -7995,6 +8169,12 @@ msgstr "Значение должно быть больше %1"
 msgid "Should start with letter or number, and may contain hyphen and underscore."
 msgstr "Должно начинаться с буквы или цифры; может содержать дефис и нижнее подчёркивание."
 
+msgid "Should the applicant have any questions about this privacy policy or if the applicant would like to exercise any of their rights, they should contact the Company's Data Protection Officer (DPO) by %1."
+msgstr ""
+
+msgid "Should the applicant's application be successful and an employment with the Binary Group be accepted, the applicant's data will be retained until the cessation of their employment. A separate privacy policy for employees will be made available to the applicant after entering employment with the Company."
+msgstr ""
+
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "Если такие расходы не будут покрыты средствами на Вашем счету, мы оставляем за собой право применить другие альтернативные способы получения оплаты, как, например: задержка комиссий на время, пока оплата не будет полностью произведена."
 
@@ -8062,9 +8242,6 @@ msgid "Skrill offers global payment solutions for individuals who wish to deposi
 msgstr ""
 
 msgid "Small island charm"
-msgstr ""
-
-msgid "Smart FX"
 msgstr ""
 
 msgid "SmartCharts"
@@ -8334,17 +8511,14 @@ msgstr "Согласно действующему законодательств
 msgid "Subject to the availability and sufficiency of funds in your MT5 Real Account, you may withdraw your funds from your MT5 Real Account to your %1 account."
 msgstr ""
 
-msgid "Subject to the law and the terms and/or conditions and/or provisions and/or clauses of this Agreement, the Company shall not be liable, to the Agent for any matter arising out of or in relation to this Agreement."
-msgstr "В рамках действующего законодательства, правил, условий и положений данного Соглашения, Компания не должна нести ответственности перед Агентом за любые обстоятельства, возникающие ввиду или в связи с данным Соглашением."
+msgid "Subject to the law and the terms and conditions of this Agreement, the Company shall not be liable, to the Agent for any matter arising out of or in relation to this Agreement."
+msgstr ""
 
 msgid "Subject to the law and the terms of the Client Agreement, the Company shall not be liable to you or your Money Manager for any matter arising out of or in relation to this Agreement."
 msgstr "Согласно действующему законодательству и условиям данного Соглашения, Компания не должна нести ответственность перед Вами или Вашим фондовым менеджером в любых вопросах, возникающих в отношении действия данного Соглашения."
 
 msgid "Subject to the law, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the Agent or Client for any loss, damage or debt whatsoever arising directly or indirectly out of, or in connection with this Agreement. The Agent agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses including all and any legal fees incurred arising out of his failure to comply with any and all of his obligations set forth in this Agreement."
 msgstr "Согласно закону, Компания, а также её руководители, представители, управляющие, сотрудники или агенты не несут ответственности перед Агентом или Клиентом за любые потери, ущерб или задолженности, прямо или косвенно возникающие в результате или в связи с данным Соглашением. Настоящим Агент соглашается оградить Компанию, её руководителей, представителей, управляющих, сотрудников или агентов от любой ответственности, потерь, убытков, затрат или расходов (включая соответствующий гонорар юриста), возникающих в результате несоблюдения им любых обязанностей, перечисленных в данном Соглашении."
-
-msgid "Subject to the provisions of Sections J and N of this Agreement, it is agreed and understood that any of the Parties may terminate this Agreement by giving 7 days written notice to the other Party."
-msgstr "Согласно положениям разделов J и N данного Соглашения, Стороны соглашаются и признают, что любая из Сторон имеет право расторгнуть данное Соглашение, предоставив другой Стороне предварительное письменное уведомление за 7 дней до расторжения."
 
 msgid "Submit"
 msgstr "Подтвердить"
@@ -8601,38 +8775,44 @@ msgstr "Расширенный счёт предоставляет Вам узк
 msgid "The Affiliate's Obligations"
 msgstr "Обязанности Партнера"
 
-msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
-msgstr "Настоящим Агент соглашается компенсировать Компании любые убытки, которые может понести Компания в вязи с мошенническими действиями, упущениями, любой небрежностью, ненадлежащим или умышленным неисполнением обязанностей, а также нарушением данного Соглашения."
+msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions, negligence, misconduct, wilful default and/or breach of this Agreement."
+msgstr ""
 
-msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
-msgstr "Агент может предоставлять свои услуги Клиентам Компании, которые хотят вносить на счёт или выводить со счёта средства, пользуясь услугами Агента. В частности, Агент может предоставлять свои услуги Клиентам, желающим пользоваться электронным кошельками (e-wallet) или способами электронных платежей, отличными от тех, которыми пользуется Компания (далее именуемых “электронными платежами”) и/или местными валютами, отличными от валют, принимаемыми Компанией (далее именуемых “местными валютами”) и/или денежными переводами в местные банки (далее именуемыми “банковскими переводами”)."
+msgid "The Agent may provide its services to clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide its services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
+msgstr ""
 
-msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
-msgstr "Агент обязуется и гарантирует полное соблюдение любых законов, относящихся к политике против отмывания денег, а также любым программам финансовых или экономических санкций в юрисдикциях, в которых он работает."
+msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a jurisdiction in which he operates."
+msgstr ""
 
-msgid "The Agent shall not be authorized to offer its services, under this Agreement, to Clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"%1\">www.binary.com.</a>"
-msgstr "Агенту не разрешается предлагать свои услуги в рамках данного Соглашения клиентам, проживающим в запрещённых странах, перечисленных в наших правилах и условиях (подлежащих внесению периодических изменений и дополнений), опубликованных на нашем вебсайте <a href=\"%1\">www.binary.com.</a>"
+msgid "The Agent shall further undertake to perform all necessary due diligence measures on its clients and the Company shall be entitiled, at any time, to request from the Agent to provide all information and documentation relating to its clients for the purposes of the Company's AML compliance."
+msgstr ""
 
-msgid "The Agent shall not produce any copies of any Confidential Information and/or any content based on the concepts contained within the Confidential Information for personal use and/or for distribution, without the Company’s request."
-msgstr "Агент не должен делать копий любой конфиденциальной информации, а также любого контента на основе концепций о конфиденциальной информации, предназначенной для личного использования и/или распространения, без предварительного разрешения Компании."
+msgid "The Agent shall not be authorized to offer its services, under this Agreement, to clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"%1\">www.binary.com.</a>"
+msgstr ""
+
+msgid "The Agent shall not produce any copies of any Confidential Information or any content based on the concepts contained within the Confidential Information for personal use or for distribution, without the Company’s request."
+msgstr ""
 
 msgid "The Agent shall not:"
 msgstr "Агент обязуется не предпринимать следующие действия:"
 
-msgid "The Agent shall provide any and all information and documentation, required in the context of the due diligence that the Company shall conduct, from time to time. The Company, complying with the law and providing its services under this Agreement, shall be entitled, at any time, to request from the Agent to provide all and any due diligence information and documentation related to itself and any other person connected and/or associated with it for the purposes of this Agreement."
-msgstr "Агент обязуется предоставлять полную информацию и документы, необходимые в рамках юридической проверки, которую должна периодически выполнять Компания. Компания, действующая в рамках закона и предоставляющая услуги в рамках данного Соглашения, имеет право в любое время запросить от Агента предоставить любую информацию и документы относительно себя и любых других лиц, связанных и/или относящихся к данному Соглашению."
+msgid "The Agent shall provide any and all information and documentation, required in the context of the due diligence that the Company shall conduct, from time to time. The Company, complying with the law and providing its services under this Agreement, shall be entitled, at any time, to request from the Agent to provide all and any due diligence information and documentation related to itself and any other person connected or associated with it for the purposes of this Agreement."
+msgstr ""
 
 msgid "The Agent shall submit an application including the following information:"
 msgstr "Агент должен подать заявление, включающее следующую информацию:"
 
-msgid "The Agent shall treat all information related to the Company and Client including but not limited to Client identity, financial status, trading or transaction performance, as well as Company’s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the “Confidential Information”)."
-msgstr "Агент обязуется считать всю информацию, относящуюся к Компании и Клиенту, включая, но не ограничиваясь данными о личности Клиента, его финансовом статусе, торговой деятельности или заключаемых контрактах, а также бизнес планах Компании, ценовых ориентирах, идеях, концепциях, форматах, предложениях, разработках, договорённостях, программах, технологиях, методиках, ноу-хау, оборудовании, а также любых конфиденциальных аспектах (далее именуемых “Конфиденциальной информацией”)."
+msgid "The Agent shall treat all information related to the Company and the client including but not limited to client's identity, financial status, trading or transaction performance, as well as Company’s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the “Confidential Information”)."
+msgstr ""
 
-msgid "The Agent shall upon demand provide the Company with all requested information and/or documentation in regards with its operations and competence including but not limited to its registration and/or incorporation, memberships, authorisations, knowledge, expertise and experience."
-msgstr "Агент обязуется по требованию предоставить Компании любую запрошенную информацию и/или документы в отношении его деятельности и квалификации, включая, но не ограничиваясь данными о его регистрации, инкорпорации, членстве, лицензирования на ведение данной деятельности, знаниях, квалификации и опыте."
+msgid "The Agent shall upon demand provide the Company with all requested information and documentation in regards with its operations and competence including but not limited to its registration, incorporation, memberships, authorisations, knowledge, expertise and experience."
+msgstr ""
 
-msgid "The Agent thereinafter, shall transfer the requested sum to the Client. It is noted that these transactions fall out of the scope of this Agreement and as result the Company shall not be liable against the Agent and/or Client and/or any other person, under contract or tort law or any other applicable law, for any conflicts or potential conflicts arising out of or in connection with such transactions."
-msgstr "Настоящим Агент обязуется переводить Клиенту запрошенные суммы. Данные транзакции не входят в сферу действия данного Соглашения и в результате Компания не должна нести ответственности перед Агентом и/или Клиентом, а также любым другим лицом, связанным договорными обязательствами, гражданским правом или любыми другими применимыми законами за любые фактические или потенциальные конфликты, возникающие в связи с данными переводами средств."
+msgid "The Agent thereinafter, shall transfer the requested sum to the client. It is noted that these transactions fall out of the scope of this Agreement and as result the Company shall not be liable against the Agent and the client or any other person, under contract or tort law or any other applicable law, for any dispute or potential dispute arising out of or in connection with such transactions."
+msgstr ""
+
+msgid "The Agent undertakes to the Company that it shall comply with, and the service will be performed in accordance with any applicable anti-corruption laws."
+msgstr ""
 
 msgid "The Agent will send you the withdrawal amount (minus the commission) via your preferred payment method."
 msgstr "Агент вышлет Вам выведенную сумму (минус комиссия) тем способом, который Вы предпочитаете."
@@ -8643,14 +8823,14 @@ msgstr "Среднее"
 msgid "The Client shall accept the risk of using any additional functions provided by the Expert Advisor on the MT5 Trading Platform. The Company has no responsibility for the outcome of such trading and reserves the right to accept or reject the use of such functions with absolute discretion."
 msgstr "Клиент должен согласиться с любыми рисками, сопряженными с использованием любых дополнительных функций, предоставляемых Expert Advisor на торговой платформе MT5. Компания не несёт ответственности за результаты таковых контрактов и оставляет за собой право по собственному единоличному усмотрению принимать или отклонять применение данных функций."
 
-msgid "The Client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his %1 Account (hereinafter referred to as the “%1 Agent Account”)."
-msgstr "Клиент может перевести Агенту средства для пополнения счёта, используя электронные платежи и банковские переводы. Получая средства, Агент должен впоследствии внести средства на свой счёт %1 (далее именуемый “счётом Агента на %1”)."
-
 msgid "The Client, before using the trading robots or Expert Advisors and forward trade, should test it on a demo Account. "
 msgstr "Перед применением торговых роботов или Expert Advisors и последующей торговлей клиент должен протестировать их на демо-счёте. "
 
-msgid "The Company and Agent (hereinafter referred to as “the Parties”) desire to enter into this Agreement whereby the Company will offer to its Clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement."
-msgstr "Компания и Агент (далее совместно именуемые как “Стороны”) вступают в данное Соглашение, в рамках которого Компания предлагает своим Клиентам местные услуги обработки платежей посредством Агента на территории, указанной в Разделе D данного Соглашения."
+msgid "The Company and Agent (hereinafter referred to as “the Parties”) desire to enter into this Agreement whereby the Company will offer to its clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement."
+msgstr ""
+
+msgid "The Company collects, stores, and processes a range of information about the applicant, such as, but not limited to:"
+msgstr ""
 
 msgid "The Company does not accept any liability for any inconsistencies or results related to Clients utilizing Expert Advisors on the MT5 Trading Platform. Clients are liable for their use of Expert Advisors and the trading activity they conduct. The Company takes a neutral position on Clients’ use of Expert Advisors."
 msgstr "Компания не несёт никакой ответственности за любое несоответствие или результаты торговли клиентов, использующих Expert Advisors на Торговой платформе MT5. Клиенты самостоятельно несут ответственность за использование Expert Advisors и свою торговую деятельность. Компания занимает нейтральную позицию в отношении использования клиентом Expert Advisors."
@@ -8694,11 +8874,17 @@ msgstr "Компания не несёт ответственности за у�
 msgid "The Company is not under any obligation of confidentiality with respect to the Contributions;"
 msgstr "Компания не несёт никаких обязательств в отношении конфиденциальности данных Дополнений;"
 
+msgid "The Company is required under data protection legislation to notify the applicant of the information contained in this privacy notice. As such, it is important that the applicant read this notice, together with any other privacy notice that the Company may provide for the applicant on specific occasions when the Company is collectiong or processing personal data about the applicant, so that the applicant is aware of how and why the Company is using such information."
+msgstr ""
+
 msgid "The Company is the sole owner of all rights or titles or interests whatsoever in and to all %1 electronic systems including but not limited to any and all software, e-mail and email management software, including any modifications."
 msgstr "Компания является единственным владельцем всех прав и полномочий, а также любых процентов, а также электронных систем %1, включая, но не ограничиваясь любым программным обеспечением, e-mail-ами и соответствующими программами управления электронной перепиской, включая любые модификации."
 
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error free service, and will not be liable for the consequences of any such errors or interruptions."
 msgstr "Компания не ручается, что вебсайт %1 будет всегда функционировать без прерывания связи, не обязуется предоставлять свои услуги без каких-либо ошибок, а также не несет ответственности за последствия любых таких ошибок или проблем со связью."
+
+msgid "The Company may also collect personal data about the applicant from third parties, such as further references supplied by former employers and information from criminal records checks. "
+msgstr ""
 
 msgid "The Company may also impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
 msgstr "Компания также может по своему единоличному усмотрению ввести лимиты для клиентских счетов в отношении объёма торговли. Информацию о лимитах на объём торговли можно найти в разделе Безопасность и ограничения Вашего счёта. Если баланс счёта превышает максимальный разрешенный размер, необходимо вывести часть средств для соблюдения требования к максимально допустимому балансу счёта."
@@ -8708,6 +8894,9 @@ msgstr ""
 
 msgid "The Company may change, suspend, terminate or discontinue any aspect of the %1 API, including the availability of any services, information features or functions accessible by means of the %1 API, on no less than seven days advance notice to you."
 msgstr "Компания может изменить, приостановить, прервать и прекратить любой аспект работы API %1, в том числе доступность любых услуг, информационных характеристик или функций, предоставляемых через API %1, посредством отправки Вам письменного уведомления не менее чем за семь дней до вступления в силу данных изменений."
+
+msgid "The Company may collect this information in a variety of ways. Data is collected and contained in CVs or resumes, via Self-Assessment Topgrading Questionnaires/Interview (SATI), or through interviews or other forms of assessment, including online tests."
+msgstr ""
 
 msgid "The Company may from time to time inform you about changes on the website, new services and promotions. If you, however, wish to opt out of such a service and do not wish to receive any direct marketing data you can either unsubscribe to the service or email our customer support team. If you decide to opt in again into receiving promotional material, you can also do so by contacting us."
 msgstr "Компания может время от времени информировать Вас об изменениях на сайте, новых услугах и акциях. Если Вы, тем не менее, хотите отказаться от такой услуги и не желаете получать какую-либо информацию рекламного содержания, Вы можете либо отказаться от подписки на сервис по ссылке в сообщении, либо обратиться по электронной почте в нашу службу поддержки. Если Вы решите снова получать нашу рассылку, то можете возобновить подписку, связавшись с нами."
@@ -8760,6 +8949,9 @@ msgstr "Компания оставляет за собой право отка�
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "Компания оставляет за собой право останавливать операции на данном сайте или в его отдельных разделах:"
 
+msgid "The Company reserves the right to update this privacy policy at any time and will provide the applicant with a new privacy policy when substantial amendments and updates are made. The Company may also notify the applicant in other ways from time to time about the processing of the applicant's personal information."
+msgstr ""
+
 msgid "The Company reserves the right to void, delay, or withhold payment of commission fees to you in situations including a suspected breach of a law or a breach of the terms and conditions of this Agreement."
 msgstr "Компания оставляет за собой право аннулировать, приостановить или отменить выплату Вам комиссионных в случае подозрения в нарушении закона, а также правил и условий данного Соглашения."
 
@@ -8769,8 +8961,17 @@ msgstr "Компания предполагает, что информация, 
 msgid "The Company shall be entitled to exercise any of its rights or fulfil any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies."
 msgstr "Компания имеет право действовать в соответствии с любыми своими правами и обязанностями, указанными в Соглашении (включая, но не ограничиваясь своими платежными обязательствами), от лица любой организации в составе Binary Group."
 
+msgid "The Company shall ensure the confidentiality of all Personal Data provided by the applicant at all times and is protected against any accidental loss or disclosure, destruction, and abuse. The Company shall also ensure that such Personal Data is only processed and stored as necessary for the purposes specified in this privacy policy and all applicable Data Protection Laws."
+msgstr ""
+
+msgid "The Company shall further disclose information about the applicant to any third-party parties' service providers within the Binary Group. The Company shall ensure that a data sharing agreement is in place and that the applicant's data is held securely and in line with GDPR requirements. The Company shall further disclose information about the applicant when it is legally obligated to do so."
+msgstr ""
+
 msgid "The Company shall have no liability arising from orders, investment decisions or purchases of third party goods or services (including financial instruments and currency) based on information published on or furnished through the %1 API;"
 msgstr "Компания не несёт ответственности в отношении ордеров, инвестиционных решений, а также покупки товаров или услуг сторонних компаний (включая финансовые инструменты и валюты) на основе информации, опубликованной или предоставленной посредством API %1;"
+
+msgid "The Company shall have the right to suspend or terminate this Agreement with immediete effect, should the Company have reasonable suspicion that the Agent is undertaking any practices that in breach of any applicable anti-corruption laws."
+msgstr ""
 
 msgid "The Company shall not be in breach of its obligation under this Agreement and shall not be held liable for any failure of or delay in performing its obligations under this Agreement if such failure or delay is the result of the occurrence of a Force Majeure Event."
 msgstr "Компания не должна рассматриваться в качестве нарушителя своих обязательств по данному Соглашению и не должна нести ответственность за неисполнение или несвоевременное исполнение её обязательств по данному Соглашению, если таковое неисполнение или несвоевременное исполнение обязательств вызвано возникновением форс-мажорных обстоятельств."
@@ -8784,8 +8985,8 @@ msgstr "Компания не несёт обязательств по пред�
 msgid "The Company shall not be responsible or liable for any advice on financial services provided by the Agent to any Client."
 msgstr "Компания не должна нести ответственности за любые советы относительно финансовых услуг, предоставляемых Агентом любому Клиенту."
 
-msgid "The Company shall not be responsible or liable to the Client for any fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default made by the Agent. Likewise, the Company shall not be responsible and/or liable to the Client if any terms and/or conditions and/or provisions of this Agreement are breached by the Agent."
-msgstr "Компания не должна нести ответственности перед Клиентом за любые мошеннические действия или упущения, а также любую небрежность, нарушение или умышленное неисполнение обязательств со стороны Агента. Аналогичным образом, Компания не должна нести ответственности или обязательств перед Клиентом в случае нарушения Агентом любых правил, условий и положений данного Соглашения."
+msgid "The Company shall not be responsible or liable to the Client for any fraudulent acts or omissions, negligence, misconduct or wilful default made by the Agent. Likewise, the Company shall not be responsible and/or liable to the Client if any terms and conditions of this Agreement are breached by the Agent."
+msgstr ""
 
 msgid "The Company shall not be responsible or liable to you for any negligence, misconduct, fraudulent acts and omissions made by you or your Money Manager."
 msgstr "Компания не несёт перед Вами ответственности за любую небрежность, неправомерное поведение, мошеннические действия и упущения, допущенные Вами или Вашим фондовым менеджером."
@@ -8811,6 +9012,9 @@ msgstr "Компания получает рыночные данные от п�
 msgid "The Company treats the money deposited or earned as a result of profitable transactions by the client as ‘Client Money’ and in accordance with the Control of Assets Rules. Client Money is held in accounts segregated and designated as clients’ monies accounts, clearly separated from the Company's money."
 msgstr "Компания считает средства, внесённые или заработанные клиентами в результате прибыльных контрактов, \"деньгами клиентов\" и относится к ним согласно правилам контроля за активами. Деньги клиентов хранятся на счетах, специально предназначенных для хранения денег клиентов и отделённых от собственных средств Компании."
 
+msgid "The Company typically collects and uses the applicant's Personal Data for the purposes of the legitimate interests pursued by the Binary Group, such as making decisions about the person to employ and the salary and other benefits to offer; and complying with our the Company's legal obligations, such as conducting necessary checks in relation to the right to work in the a specific jurisdiction and making any reasonable adjustments for disabled employees. "
+msgstr ""
+
 msgid "The Company will assess your knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "Компания оценит ваши знания и опыт, сопоставив их с требованиями к запрашиваемым услугам/инвестиционным продуктам."
 
@@ -8832,8 +9036,8 @@ msgstr "Компания по своему усмотрению решает, о
 msgid "The Company's Obligations"
 msgstr "Обязательства Компании"
 
-msgid "The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href=\"%1\">www.binary.com</a>."
-msgstr "Компания по своему единоличному усмотрению может принять или отклонить заявку Агента. Если заявка Агента будет принята, мы должны получить всю необходимую информацию, включая, но не ограничиваясь именем, адресом, вебсайтом (если таковой имеется), электронным адресом, номером телефона, размером комиссий и способами оплаты, применимыми данным Агентом в списке агентов, опубликованном на нашем сайте <a href=\"%1\">www.binary.com</a>."
+msgid "The Company, exercising its absolute discretion, may accept or reject the Agent’s application. Where the Agent’s application is accepted, the Company shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by the Agent in the Payment Agent list which is disclosed on the Company's website, <a href=\"%1\">www.binary.com</a>."
+msgstr ""
 
 msgid "The Company, under no circumstances shall provide Investment and/or Financial and/or Legal and/or Tax and/or Regulatory and/or other Investment advice or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written or video information, which we may publish on our website or provide to you in any other manner. We will endeavor to ensure the accuracy and completeness of this information but it will not constitute independent investment research or investment advice provided by us to you."
 msgstr "Ни при каких обстоятельствах Компания не представляет Вам инвестиционных, финансовых, налоговых, регулятивных советов или иных рекомендаций, а также не выражает своего мнения относительно заключаемых вами контрактов. Время от времени мы можем предоставлять вам письменную или видео информацию, которая может быть опубликована на нашем сайте или предоставлена вам в любом другом виде. Мы обязуемся предпринять все разумные усилия, чтобы гарантировать точность и полноту данной информации, которая не должна рассматриваться в качестве инвестиционного совета или наших рекомендаций для вас."
@@ -8883,8 +9087,8 @@ msgstr "маржевого требования;"
 msgid "The MetaTrader platform will no longer support Windows XP, Windows 2003, and Windows Vista after 01 October, 2017."
 msgstr "Платформа MetaTrader больше не будет поддерживать Windows XP, Windows 2003 и Windows Vista после 1 октября 2017 г."
 
-msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall deprive of the right to released form any responsibility, under this Agreement where it fails to duly notify the other Party on time."
-msgstr "Сторона, не способная выполнить свои обязательства в рамках данного Соглашения, ввиду возникновения форс-мажорных обстоятельств, должна в письменной форме уведомить другую сторону в течение пяти рабочих дней после возникновения такового обстоятельства. Если одна из сторон не сможет своевременно и должным образом уведомить вторую сторону, она лишится права не нести ответственности за таковые действия."
+msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall be deprived of the right to release from any responsibility, under this Agreement where it fails to duly notify the other Party on time."
+msgstr ""
 
 msgid "The Pearl of Borneo"
 msgstr "Жемчужина Борнео"
@@ -8946,8 +9150,20 @@ msgstr "сумма от баланса Вашего счёта, заблокир
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "Процедуры по предотвращению отмывания капитала могут иметь следующие последствия для Клиентов:"
 
-msgid "The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
-msgstr "Заявление должно быть рассмотрено и принято нашими отделами маркетинга и нормативно-правового соответствия. Следует учесть, что, следуя требованиям политики против отмывания денег и проводя проверку, в соответствии с законами и правилами, наш отдел нормативно-правового соответствия должен запрашивать или собирать всю необходимую информацию и документы, перечисленные в Разделе H."
+msgid "The applicant has the right to lodge a complaint to the Data Protection Commissioner in Malta should the applicant believe that the Company has failed to comply with the requirements of EU General Data Protection Regulation 2016/679 or the Data Protection Act 2018 with regards to the applicant's personal data."
+msgstr ""
+
+msgid "The applicant is further afforded the rights to:"
+msgstr ""
+
+msgid "The applicant is under no statutory or contractual obligation to provide data to Binary Group during the recruitment process. However, should the applicant elect not to provide any necessary information, the Company may not be able to proceed with their application."
+msgstr ""
+
+msgid "The applicant's personal data shall be stored for a period of six months should the applicant be unsuccessful or decline in accepting employment with the Binary Group. At the expiry of that period, the applicant's data is deleted or destroyed unless the Company is required to further retain the applicant's information to exercise or defend any legal claims."
+msgstr ""
+
+msgid "The application shall be reviewed and assessed by the Company's compliance and marketing departments. It is noted that the Company's compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
+msgstr ""
 
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
 msgstr "Цена аск валютной пары определяет, какое количество валюты котировки необходимо для покупки одной единицы основной валюты. Это соотношение называется обменным курсом валют."
@@ -8981,6 +9197,9 @@ msgstr "Настоящим клиент признаёт и соглашаетс
 
 msgid "The client has reached a turnover that is 5 times the bonus amount"
 msgstr "Объём покупок Клиента превышает сумму бонуса в 5 раз"
+
+msgid "The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his %1 Account (hereinafter referred to as the “%1 Agent Account”)."
+msgstr ""
 
 msgid "The commission you will charge Clients on deposits and withdrawals"
 msgstr "Комиссия, которую Вы будете взимать с Клиентов при пополнении и снятии средств"
@@ -9052,7 +9271,7 @@ msgid "The filtering algorithm may for example be similar to the \"Bollinger Ban
 msgstr "Алгоритм фильтрации может быть похож на систему волатильности 'Полосы Боллинджера', то есть вокруг текущих рыночных значений определяются волны краткосрочной волатильности, а котировки, явно выходящие за пределы данных волн, исключаются."
 
 msgid "The financial products offered via this website include binary options, contracts for difference (\"CFDs\") and other complex derivatives and financial products. Trading binary options may not be suitable for everyone. Trading CFDs carries a high level of risk since leverage can work both to your advantage and disadvantage. As a result, the products offered on this website may not be suitable for all investors because of the risk of losing all of your invested capital. You should never invest money that you cannot afford to lose, and never trade with borrowed money. Before trading in the complex financial products offered, please be sure to understand the risks involved and learn about %1Responsible Trading%2."
-msgstr ""
+msgstr "Финансовые продукты, предоставленные на данном сайте, включают бинарные опционы, контракты на разницу (или \"CFD\"), а также другие комплексные продукты и финансовые продукты. Торговля бинарными опционами подходит далеко не для всех. Торговля CFD предполагает высокий уровень риска, так как кредитный рычаг может сыграть не только в Вашу пользу, но и против Вас. В результате, продукты, предложенные на данном сайте, могут подходить не каждому инвестору, ввиду риска потерять весь инвестированный капитал. Настоятельно рекомендуем не инвестировать деньги, которые Вы не можете позволить себе потерять, а также не торговать на деньги, взятые в долг. Перед началом работы с предложенными нами комплексными инвестиционными продуктами, пожалуйста, оцените все сопряженные риски и ознакомьтесь с условиями %1ответственной торговли%2."
 
 msgid "The financial trading services contained within this site are only suitable for Clients who are able to bear the loss of all the money they invest and who understand and have experience of the risks involved in the acquisition of financial contracts."
 msgstr "Финансовые услуги, предлагаемые на этом сайте, подходят только для Клиентов, способных нести ответственность за возможную потерю всех инвестированных финансовых средств, осознающих риск и имеющих опыт риска, связанного с приобретением финансовых контрактов."
@@ -9062,6 +9281,9 @@ msgstr "Услуги финансового трейдинга на данном
 
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "Первый шаг: установите параметры контракта. Настройте пять параметров, чтобы получить цену контракта:"
+
+msgid "The following terms shall have the meaning set out below and cognate terms shall be construed accordingly:"
+msgstr ""
 
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "Рынок обмена иностранных валют (Forex) – крупнейший и наиболее ликвидный мировой рынок, где трейдеры могут ежедневно заключают контракты на триллионы долларов."
@@ -9135,6 +9357,9 @@ msgstr ""
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
 msgstr "Не удается найти запрашиваемую страницу. Либо она более не существует, либо введен неверный адрес. Пожалуйста, проверьте правильность адреса."
 
+msgid "The parties agree that this Agreement and the relationship between the parties is to be governed by and construed under the laws of Costa Rica. The parties further agree that all disputes shall be resolved exclusively in the courts of Costa Rica (the \"Identified Courts\"). Each party hereby: (i) submits to the jurisdiction of the Identified Courts for any proceeding; (ii) shall not commence any proceeding except in the Identified Courts; (iii) waives, and shall not plead or make, any objection to the venue of any proceeding in the Identified Courts; (iv) waives, and shall not plead or make, any claim that any proceeding brought in the Identified Courts has been brought in an improper or otherwise inconvenient forum; and (v) waives, and shall not plead or make, any claim that the Identified Courts lack personal jurisdiction over it."
+msgstr ""
+
 msgid "The password you entered is one of the world's most commonly used passwords. You should not be using this password."
 msgstr "Введённый Вами пароль является одним из самых популярных в мире. Не пользуйтесь данным паролем."
 
@@ -9192,6 +9417,18 @@ msgstr "Прибыль – это сумма, которую трейдер по
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect."
 msgstr "Компания также сохраняет за собой право вносить изменения в условия предоставления услуг в любое время, по мере необходимости. Любое изменение не будет влиять на уже исполненные контракты и будет применяться лишь по отношению к контрактам, приобретённым после внесения изменений. Компания обязуется уведомлять Клиента заблаговременно, до вступления в силу каких-либо изменений."
 
+msgid "The right to be informed of the use of their personal data. This privacy policy is dedicated for this purpose."
+msgstr ""
+
+msgid "The right to erase or delete their personal information subject to the data retention practice of the Binary Group."
+msgstr ""
+
+msgid "The right to rectify their personal data should the Company hold any information about the applicant that is incomplete or inaccurate."
+msgstr ""
+
+msgid "The right to request access to their data from the Company."
+msgstr ""
+
 msgid "The same concept applies to our cryptocurrency pairs."
 msgstr "Аналогичная концепция справедлива в отношении криптовалютных пар."
 
@@ -9216,8 +9453,8 @@ msgstr "Спреды и их преимущества"
 msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "Ставка – это цена, которую должен заплатить трейдер за приобретение контракта."
 
-msgid "The sum received in the %1 Agent Account shall be transferred by the Agent to the %1 Client Account."
-msgstr "Сумма, полученная на счёт Агента на %1, должна быть переведена Агентом на счёт Клиента на %1."
+msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective %1 Client's Account."
+msgstr ""
 
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "Система размещает ордеры в порядке их поступления, т.е. в том порядке, в котором они были получены, что находится вне нашего контроля. В результате закрытие контракта по цене, установленной в Вашем стоп-приказе, может оказаться сложным или невозможным, ввиду определённых рыночных условий. Размещение стоп-приказа является полезным инструментом управления риском, который не всегда может ограничить Ваши потери запланированным размером убытка (в случае высокой волатильности на рынке, так как исполнение Вашего приказа может оказаться невозможным при определённых рыночных условиях, и цена на выходе из контракта окажется неопределённой). Иными словами, стоп-приказ не даёт никаких гарантий, так как он не может быть исполнен при абсолютно любых условиях на рынке."
@@ -9228,8 +9465,8 @@ msgstr "Термин \"мы\", \"наш\", \"наши\", \"нас\", \"нами\
 msgid "The trading services described in this Agreement are OTC. This means that one or more of the underlying instruments in which you transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the Electronic Trading Platform as described in this Agreement."
 msgstr "Услуги торговли, перечисленные в данном Соглашении, осуществляются на внебиржевом рынке. Это означает, что по условиям данного Соглашения, один или несколько инструментов, на которых Вы заключаете с нами контракты, ссылаются на биржи, но не торгуются непосредственно на бирже во время осуществления контрактов на электронной торговой платформе."
 
-msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
-msgstr "Транзакции, производимые на данном сайте, а также отношения между Клиентами и Компанией регулируются и толкуются в соответствии с законодательством страны регистрации Компании (\"Юрисдикции\"). Вы соглашаетесь, что суды данных стран будут единственными инстанциями, которые имеют право регулировать любые споры и несогласия, которые могут возникнуть между сторонами. С этой целью Вы обязуетесь безоговорочно подчиняться решению суда определенной Юрисдикции относительного любого иска и соглашаетесь, что любая претензия, которую Вы можете иметь к Компании, будет решаться в суде Юрисдикции. Для дальнейшей информации по жалобам и искам смотрите секцию Компании \"Жалобы и иски\"."
+msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's %1Complaints and Disputes%2 section."
+msgstr ""
 
 msgid "The two passwords that you entered do not match."
 msgstr "Введенные пароли не совпадают."
@@ -9354,14 +9591,14 @@ msgstr "Данное Соглашение выражает полное согл
 msgid "This Agreement governs your use of our API unless you have executed another agreement with the Company that expressly governs your use of our API."
 msgstr "Данное Соглашение устанавливает и регулирует порядок использования Вами нашего API (если Вы не заключили с Компанией другого соглашения, регулирующего порядок использования Вами нашего API)."
 
-msgid "This Agreement is between Binary (C.R) S.A. (hereinafter referred to as “the Company” or “%1”, “we”, “us”, “our”, “ours”, “it”, “its”) and Payment Agent (hereinafter referred to as “the Agent”, “he”, “his”, “him”, “himself”, “it”, “its”, “itself”), both of whom agree to be bound by this Agreement."
-msgstr "Данное Соглашение действует между Binary (C.R) S.A. (далее именуемой “Компания,” “%1”, “мы”, “нас”, “наш”, “наши”, “нами”, “её”) и платёжным агентом (далее именуемым “Агент”, “он”, “его”, “им”), которые соглашаются выполнять данное Соглашение."
+msgid "This Agreement is between Binary (C.R) S.A. (hereinafter referred to as “the Company” or “%1“) and Payment Agent (hereinafter referred to as “the Agent”), both of whom agree to be bound by this Agreement."
+msgstr ""
 
 msgid "This Agreement is between Binary (V) Ltd (hereinafter referred to as 'the Company') and Client who authorises a Multi-Account Manager (hereinafter referred to as 'Money Manager') to manage the Account on behalf of the Client, both of whom agree to bound by this Agreement as a supplement to the Client Agreement."
 msgstr "Настоящее Соглашение заключается между Binary (V) Ltd (далее именуемой \"Компания\") и Клиентом, который предоставляет полномочия Менеджеру множественных счетов (далее именуемому \"фондовым менеджером\") управлять счётом от имени Клиента. Обе стороны соглашаются соблюдать данное Соглашение в качестве дополнительного договора к Клиентскому соглашению."
 
-msgid "This Agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy or misspelling and as a result by misunderstanding or misinterpretation of any of the terms and/or conditions and/or clauses and/or provisions of any translated versions of this Agreement."
-msgstr "Данное Соглашение предоставляется Агенту на английском языке. В случае обнаружения несоответствия между английской версией и любым переводом данного документа, английская версия должна иметь преимущественную силу. Компания не несёт ответственности за любые потери или убытки, вызванные ошибкой, неточностью данных, а также неправильным или недостаточным пониманием любых правил, условий, а также пунктов или положений в любом переводе данного Соглашения."
+msgid "This Agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy or misspelling and as a result by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this Agreement."
+msgstr ""
 
 msgid "This Agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail."
 msgstr "Данное Соглашение предоставляется Клиенту на английском языке. В случае расхождения между английской версией Соглашения и любым переводом, английская версия документа должна иметь преимущественную силу."
@@ -9465,8 +9702,14 @@ msgstr "Данное положение не объясняет все возм�
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1."
 msgstr ""
 
+msgid "This obligation encompasses the prohibition of unlawful payments or the granting of any form of unlawful benefits to public officials, business partners, employees, family members or any other partners."
+msgstr ""
+
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Это предложение не может быть использовано совместно с другим предложением."
+
+msgid "This privacy notice only applies to job applicants residing in the EU."
+msgstr ""
 
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "Данное предложение распространяется только на новых клиентов. Настоящие или бывшие клиенты не могут им воспользоваться. Предложением можно воспользоваться только один раз."
@@ -9484,7 +9727,7 @@ msgid "This website does not collect personally identifying information about yo
 msgstr "Данный сайт не собирает сведений, идентифицирующих личность, за исключением случаев, когда Вы сознательно предоставляете таковую информацию. Вы можете пользоваться технологией под названием \"куки\" для предоставления определённой информации на сайте."
 
 msgid "This website’s services are not made available in certain countries such as the USA, Canada, Costa Rica, Hong Kong, Japan, or to persons under age 18."
-msgstr ""
+msgstr "Услуги данного вебсайта недоступны в ряде стран, включая США, Канаду, Коста-Рику, Гонконг, Японию, а также не распространяются на лиц моложе 18 лет."
 
 msgid "Thorough knowledge of bash scripting, as well as experience with scripting languages such as Perl and PHP"
 msgstr "Глубокие знания создания скриптов на bash, а также опыт работы с языками скриптов, как Perl и PHP"
@@ -9660,8 +9903,14 @@ msgstr "Общая маржа"
 msgid "Total Profit/Loss"
 msgstr "Общая прибыль/убыток"
 
+msgid "Total deposits"
+msgstr ""
+
 msgid "Total net revenue per month (USD)"
 msgstr "Общая чистая прибыль за месяц (USD)"
+
+msgid "Total withdrawals"
+msgstr ""
 
 msgid "Touch/No Touch"
 msgstr "Касание/Нет касания"
@@ -9828,6 +10077,9 @@ msgstr "Лимиты на торговлю и вывод"
 msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "На Вашем счету заблокирована торговля и пополнение. Пожалуйста, свяжитесь со %1службой поддержки%2 для получения помощи."
 
+msgid "Trading binary options and CFDs can involve substantial risks. Do not trade with money you cannot afford to lose, and never trade with borrowed money. Learn about %1Responsible Trading%2."
+msgstr ""
+
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset."
 msgstr "Торговля бинарными опционами подходит далеко не для всех, поэтому просим Вас убедиться, что Вы полностью осознаёте все возможные риски. Ваши убытки могут превысить сумму первоначального пополнения счёта, а Вы не получаете никаких процентов с активов, на которых заключаете контракты."
 
@@ -9841,6 +10093,9 @@ msgid "Trading in Binary Options is speculative and involves a high degree of ri
 msgstr "Торговля бинарными опционами является спекулятивной деятельностью и сопровождается высоким риском, что может привести к потере всех инвестиций. Таким образом, торговля бинарными опционами подходит только для лиц, которые понимают и готовы взять на себя экономические, юридические и иные риски, связанные с такими сделками. Вы должны быть уверены, что торговля бинарными опционами подходит для Вас в свете ваших инвестиционных условий и отношения к риску в торговле. Вы не должны участвовать в спекулятивной торговле бинарными опционами, если не понимаете основные аспекты такой торговли и рисков. Если у Вас есть какие-либо сомнения относительно того, подходит ли Вам торговля бинарными опционами, пожалуйста, обратитесь за независимой консультацией к специалисту в области инвестиционного консалтинга. %1 не предлагает таких консультаций. Принимая во внимание Ваши личные обстоятельства и инвестиционные ресурсы, Вы обязуетесь уделять особое внимание и делать осторожные выводы самостоятельно, как перед подачей заявки на операции с бинарным опционами на %1, так и перед выполнением индивидуального заказа. В случае, если Вы не понимаете все риски, связанные с открытием торгового счета на %1 или приобретением любого индивидуального заказа, Вам следует обратиться за советом и консультацией к независимому инвестиционному консультанту. Если вы по-прежнему не осознаёте риски в торговле бинарными опционами, рекомендуем Вам воздержаться от торговли."
 
 msgid "Trading is unavailable at this time."
+msgstr ""
+
+msgid "Trading on %1 can become addictive. If you feel the need to exclude yourself from the website, please use the %2self-exclusion facilities%3."
 msgstr ""
 
 msgid "Trading platforms"
@@ -9978,6 +10233,9 @@ msgstr "Виды планов партнёрских комиссионных"
 msgid "Types of lookbacks"
 msgstr "Виды опционов Lookback"
 
+msgid "Types of personal data collected"
+msgstr ""
+
 msgid "Types of trades"
 msgstr "Виды контрактов"
 
@@ -10083,6 +10341,9 @@ msgstr "Базовый инструмент"
 msgid "Underlying market"
 msgstr "Основной инструмент"
 
+msgid "Understand the risks"
+msgstr ""
+
 msgid "Understand the simple idea behind binary options and their advantages over other financial instruments."
 msgstr "Поймите основные принципы бинарных опционов и их преимущества, по сравнению с другими финансовыми инструментами."
 
@@ -10158,9 +10419,6 @@ msgstr "После прекращения действия или расторж
 msgid "Usage Limit"
 msgstr "Лимит использования"
 
-msgid "Use Cloudflare’s public DNS service for faster and more secure browsing."
-msgstr ""
-
 msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes, starting from 0.01 lots"
 msgstr "Пользуйтесь различными методами распределения (напр., по остатку на счету, балансу, нечётному числу и лоту), чтобы распределить объём контрактов, начиная с 0.01 лота"
 
@@ -10168,6 +10426,9 @@ msgid "Use appropriate terminology, taking into account the style and nuance of 
 msgstr "Использование соответствующей терминологии, учитывая стиль и особенности оригинального текста"
 
 msgid "Use comprehensive technical analysis tools to predict price movements"
+msgstr ""
+
+msgid "Use different passwords for your email and %1 account and set a %2strong password%3."
 msgstr ""
 
 msgid "Use of Information"
@@ -10208,6 +10469,12 @@ msgstr "Счёт за коммунальные услуги"
 
 msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr "Счета за коммунальные услуги (электричество, вода, газ, интернет и стационарный телефон)"
+
+msgid "VPN App"
+msgstr ""
+
+msgid "VPN app"
+msgstr ""
 
 msgid "Validate address"
 msgstr "Проверка адреса"
@@ -10256,6 +10523,9 @@ msgstr "Просмотр"
 
 msgid "View Chart"
 msgstr "Просмотр графика"
+
+msgid "View Guide"
+msgstr ""
 
 msgid "View Statement"
 msgstr "Смотреть историю счета"
@@ -10310,9 +10580,6 @@ msgstr "Виртуальный"
 
 msgid "Virtual Account"
 msgstr "Демо-счет"
-
-msgid "Virtual money credit to account"
-msgstr "Виртуальный кредит на счёт"
 
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more info, please visit %1."
 msgstr "Visa является международной компанией, поддерживающей цифровые платежи по всему миру, преимущественно посредством кредитных и дебетовых карт, являющихся их брендом. Более подробная информация: %1."
@@ -10611,6 +10878,9 @@ msgstr "Почти готово"
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "Мы получаем патенты в категории \"Система компьютерной торговли и метод спекуляций на финансовых рынках\" и \"Система компьютерной торговли для предложения спекуляций на рынках\". Патенты демонстрируют наше стремление к инновациям и лидерству."
 
+msgid "We're looking for users of %1 to participate in a %240-minute video or phone interview%3. To qualify, just answer a few short questions. If selected, you will receive an email or a phone call from one of our researchers."
+msgstr ""
+
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "Мы очень гордимся этой наградой. Мы стремимся предлагать этичный и ориентированный на клиентов опыт торговли, а получение этой премии подтверждает, что BetOnMarkets является надежным брендом, который прислушивается ко всем своим клиентам: опытным трейдерам и новичкам. Мы предлагаем обслуживание клиентов на английском, индонезийском, русском, китайском и испанском языках."
 
@@ -10656,8 +10926,8 @@ msgstr "Мы не обязаны проводить тест на проверк
 msgid "We’re projected to register over 197 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 789 million."
 msgstr "Количество контрактов в этом году способно превысить 197 млн., а общее количество контрактов, заключённых на нашей платформе с момента основания, превысит 789 млн."
 
-msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "За последние годы мы значительно выросли в размерах, как в отношении количества сотрудников так и в отношении числа действующих офисов. На данный момент в трех офисах в Малайзии и на Мальте трудится более %1 человек. В этом году мы ожидаем дальнейший рост наших ресурсов, чтобы соответствовать растущему спросу на наши продукты и услуги."
+msgid "We’ve grown in size over the years – both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr ""
 
 msgid "We’ve paid millions in commission to date through our industry-leading affiliate programme."
 msgstr "На данный момент мы выплатили миллионы комиссионных в рамках нашей успешной партнёрской программы."
@@ -10728,11 +10998,11 @@ msgstr "Когда выплачивается комиссия?"
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr "Когда клиенты, направленные Партнером, открывают счёт на сайте любого представителя Binary Group, мы будем обладать правом собственности на базу данных, содержащую имена, контактные данные, а также любые другие данные о клиентах, привлеченных Партнером."
 
-msgid "When the Client requests a withdrawal from his %1 Account, such request shall be automatically proceeded and as a result the requested sum shall be transferred from the %1 Client Account to %1 Agent Account. However, it is noted that where the Client reaches its withdrawal limits, a withdrawal request shall not automatically be proceeded before the required authentication process is conducted."
-msgstr "Когда Клиент запрашивает вывод средств со своего счёта на %1, данный запрос должен быть автоматически передан, а указанная сумма должна быть переведена со счёта Клиента на %1 на счёт Агента на %1. Тем не менее, в случае, когда клиент достигает лимита на вывод средств, запрос на вывод не должен быть автоматически обработан до проведения процесса аутентификации."
-
 msgid "When the Client's Cash Account with us is credited or charged with the net amount of the results of a transaction."
 msgstr "когда на финансовый счёт клиента на нашем сайте начисляются средства или списывается итоговый результат контракта."
+
+msgid "When the client requests a withdrawal from his %1 Account, such request shall be automatically proceeded and as a result the requested sum shall be transferred from his %1 Account to the %1 Agent Account. However, it is noted that where the client reaches its withdrawal limits, a withdrawal request shall not be automatically proceeded before the required authentication process is conducted."
+msgstr ""
 
 msgid "When the order hits the liquidity provider’s server, or our server in case the order is taken on our own books, it is fulfilled."
 msgstr "Когда ордер достигнет предложения на сервере поставщика ликвидности или на нашем сервере, если ордер находится в рамках нашего стакана цен, он будет исполнен."
@@ -10833,17 +11103,17 @@ msgstr "Где готовые помочь коллеги станут Вам в
 msgid "Where teamwork and a collaborative culture form the platform for personal and corporate growth."
 msgstr "Где командная работа и культура сотрудничества создают платформу для персонального и корпоративного роста."
 
-msgid "Where the Agent acts in breach of any warranty or representation or promise made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
-msgstr "в случае, если Агент нарушил любые условия, обязательства или обещания в рамках данного Соглашения, а также в случае, если любая информация, предоставленная нам в рамках данного Соглашения, является или станет ложной или недостоверной;"
+msgid "Where the Agent acts in breach of any warranty or representation or promise made under this Agreement, and any information provided to the Company in connection with this Agreement is, or becomes, untrue or misleading;"
+msgstr ""
 
 msgid "Where the Agent becomes incapable to pay his debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law, where the Agent is an individual;"
 msgstr "в случае, если Агент не в состоянии выплатить свои долговые обязательства в должное время, является банкротом или неплатёжеспособным в рамках любого или всех применимых законов о банкротстве, если Агент является физическим лицом;"
 
-msgid "Where the Agent ceases to be competent and/or capable and/or adequate and/or qualified to effectively perform all its duties and/or obligations undertaken and agreed, under this Agreement, for any reason including but not limited to lack of knowledge, expertise, experience, skills and time shall immediately and/or without any delay notify the Company."
-msgstr "В случаях, если агент утратит компетенцию, возможность и/или соответствующую квалификацию эффективно исполнять все свои обязательства, принятые и оговоренные в рамках данного Соглашения (по любой причине, включая, но не ограничиваясь недостатком знаний, опыта, квалификации, навыков и времени), он обязуется незамедлительно уведомить об этом Компанию."
+msgid "Where the Agent ceases to be competent, capable, adequate or qualified to effectively perform all its duties and obligations undertaken and agreed, under this Agreement, for any reason including but not limited to lack of knowledge, expertise, experience, skills and time, the Agent shall notify the Company immediately and without any delay notify the Company."
+msgstr ""
 
-msgid "Where the Agent fails to comply with its obligations and/or fails to perform any of its duties or other provisions under this Agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company."
-msgstr "если Агент не может исполнять свои обязательства и/или не в состоянии выполнять любые обязательства или иные положения данного Соглашения и таковое несоблюдение длится минимум один рабочий день после получения уведомления о неисполнении от Компании;"
+msgid "Where the Agent fails to comply with its obligations or fails to perform any of its duties or other provisions under this Agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company."
+msgstr ""
 
 msgid "Where the Agent is dissolved, or deregistered from any records of a formal register whatsoever. Furthermore, where any procedure is initiated, seeking or intending or proposing the Agent’s dissolution or deregistration from any records of a formal register. "
 msgstr "в случае ликвидации Агента или аннулирования его законной регистрации; если будет начат любой процесс, имеющий целью, предполагающий или подразумевающий ликвидацию Агента, а также прекращение его юридической регистрации; "
@@ -10851,14 +11121,14 @@ msgstr "в случае ликвидации Агента или аннулир�
 msgid "Where the Agent omits or fails or refuse whatsoever to provide the Company with evidence of his identity or any other evidence as required by the law in relation to Anti-Money Laundering within a reasonable time, the Company reserve the right to cease to deal with him."
 msgstr "Если Агент избегает или отказывается в разумные сроки предоставлять Компании документы, подтверждающие его личность или любые другие доказательства, необходимые в рамках закона против отмывания денег, Компания оставляет за собой право прекратить дальнейшую работу с ним."
 
-msgid "Where the Agent owns, or operates website/s, shall:"
-msgstr "Если Агент владеет или управляет вебсайтом, он обязуется:"
+msgid "Where the Agent owns, or operates website/s, the Agent shall:"
+msgstr ""
 
 msgid "Where the Client’s obligations to the Company are due and payable, the Company shall cease to treat as Client Money the amount equal to the amount of such obligations;"
 msgstr "В случае необходимости погашения обязательств клиента перед Компанией, Компания имеет полномочия вычесть из денег клиента сумму, равную размеру таковых обязательств;"
 
-msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
-msgstr "В случае, если Компания обнаружит любые ошибки или упущения в отношении процедур пополнения счёта или вывода средств на или со счёта Агента на %1, а также счёта Клиента на %1, Агент обязуется предпринять все необходимые меры, чтобы в разумные сроки исправить данные ошибки или недочёты."
+msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 client account, the Company shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
+msgstr ""
 
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
 msgstr "В случаях, когда на основе информации, предоставленной Вами, мы сочтём, что Вы не обладаете знаниями и опытом, достаточными для оценки рисков, связанных с инвестициями на предлагаемом рынке, мы сделаем Вам предупреждение. Такое предупреждение будет отображено на сайте."
@@ -11253,9 +11523,6 @@ msgstr ""
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "Вы несёте полную ответственность и обязуетесь убедиться, что платежи, выполненные Компании, будут должным образом получены с указанием соответствующих данных счёта клиента."
 
-msgid "You can choose from two types of affiliate commission plans:"
-msgstr "Вы можете выбрать один из двух планов выплаты партнёрских комиссионных:"
-
 msgid "You can close this window without interrupting your trade."
 msgstr "Вы можете закрыть данное окно без ущерба Вашей торговле."
 
@@ -11649,6 +11916,9 @@ msgstr "Ваш счет полностью авторизован. Вы може
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "Ваш счёт заблокирован. Пожалуйста, свяжитесь с нашей %1cлужбой поддержки%2 для получения дальнейшей помощи."
 
+msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
+msgstr ""
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "Ваш рабочий счет не должен использоваться в качестве банковского хранилища, и пополнение счета должно производиться только с целью использования средств для приобретения контрактов. Компания не является финансовым органом, а Клиенты не получают проценты на свои депозиты. Если Вы совершаете повторные пополнения и вывод денег без приобретения контрактов, мы оставляем за собой право применения к Вашим счетам, без предварительного уведомления, любых банковских сборов, которые мы можем понести до закрытия счетов."
 
@@ -11826,14 +12096,20 @@ msgstr "злоупотреблять или использовать интер�
 msgid "alerting Clients of a potential trading opportunity;"
 msgstr "уведомление клиентов о потенциальной торговой возможности;"
 
+msgid "all measures required to obtain and maintain in full force and effect, all authority and/or powers and/or consents and/or licences and/or authorities to enter into and perform this Agreement;"
+msgstr ""
+
+msgid "all reasonable steps are taken to comply with the law or Rules whatsoever applicable to the jurisdiction in which the Agent resides;"
+msgstr ""
+
 msgid "and"
 msgstr "и"
 
 msgid "any Client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer’s policies; and that"
 msgstr "любой Клиент, работающий в банковском и/или финансовом секторе, должен проводить сделки лишь через вебсайт и при отсутствии возражений со стороны своего работодателя, а также в соответствии с правилами своего работодателя;"
 
-msgid "any information which he provides or has provided to the Company in relation to his financial position, domicile or other matters whatsoever is accurate and not misleading."
-msgstr "любая информация, которую он предоставил Компании относительно своего финансового положения, места проживания или в отношении других аспектов, является точной и достоверной;"
+msgid "any information provided or has provided to the Company in relation to the Agent's financial position, domicile or other matters is accurate and not misleading."
+msgstr ""
 
 msgid "any instance where the Company believes that person's activities at this site may be illegal in that person's country or state;"
 msgstr "любой случай, когда Компания считает, что деятельность человека на этом сайте может быть незаконной в регионе или государстве проживания человека;"
@@ -11865,9 +12141,6 @@ msgstr "бинарные опционы, форекс, торговля на ф�
 msgid "c) The time at which your order will be executed; and"
 msgstr "c) временем исполнения Вашего ордера; и"
 
-msgid "capable to have a material adverse effect on the Agent’s ability to perform any of its duties and/or obligations in accordance with this Agreement."
-msgstr "в случае возможного негативного влияния на способность Агента исполнять любые из его обязательств в рамках данного Соглашения."
-
 msgid "compensation under Investor Compensation Scheme."
 msgstr "компенсации в рамках Схемы компенсации инвесторам."
 
@@ -11889,14 +12162,20 @@ msgstr "дн."
 msgid "details"
 msgstr "подробности"
 
+msgid "details of the applicant's about the applicant's remuneration, including entitlement to benefits such as pensions or insurance cover, if applicable;"
+msgstr ""
+
+msgid "details of the identity of the the applicant's reference, including their name and contract details, comprising email address and telephone number; and"
+msgstr ""
+
 msgid "e.g. frontend.binaryws.com"
 msgstr "напр., frontend.binaryws.com"
 
 msgid "educational material;"
 msgstr "образовательные материалы;"
 
-msgid "engage in misleading or illusory or deceptive advertising;"
-msgstr "запускать вводящую в заблуждение, обманчивую или мошенническую рекламу;"
+msgid "engage in misleading or illusory or deceptive advertising or promises;"
+msgstr ""
 
 msgid "engage in misleading or illusory or deceptive conduct; "
 msgstr "предпринимать вводящие в заблуждение, обманчивые или мошеннические действия; "
@@ -11904,11 +12183,11 @@ msgstr "предпринимать вводящие в заблуждение, �
 msgid "execution of trades automatically on their behalf;"
 msgstr "автоматическое исполнение контрактов от их имени;"
 
-msgid "fairly and accurately describe its services to the Clients;"
-msgstr "честно и точно рассказывать о своих услугах Клиентам;"
+msgid "fairly and accurately describe its services to the clients;"
+msgstr ""
 
-msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
-msgstr "соблюдать, внедрять и соответствовать всем предписаниям в отношении бизнеса, политики и/или процедур Компании, которые подлежат периодическому внесению изменений и дополнений;"
+msgid "follow, comply and implement with all business-related directions, policies and procedures of the Company as amended or re-enacted or replaced from time to time;"
+msgstr ""
 
 msgid "for account %1"
 msgstr "для счёта %1"
@@ -11922,14 +12201,8 @@ msgstr "ч."
 msgid "has the meaning attached to it by the Directive 2004/39/EC of the European Parliament and of the Council (MIFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MIFID II), whichever is in force."
 msgstr "данный термин имеет значение, указанное Директивой 2004/39/EC Европейского парламента, а также Советом (MIFID) или последующей Директивой 2014/65/EU Европейского парламента и Советом (MIFID II), какое бы из вышеперечисленных положений не имело преимущественную силу."
 
-msgid "he has all necessary authority and/or powers and/or consents and/or licences and/or authorisations and has taken all necessary actions to enable himself to lawfully enter into and perform this Agreement;"
-msgstr "он обладает всеми необходимыми полномочиями, разрешениями, лицензиями и/или правом и предпринял все необходимые действия, чтобы законно заключить и действовать в рамках данного Соглашения;"
-
-msgid "he takes all measures required to obtain and maintain in full force and effect, all authority and/or powers and/or consents and/or licences and/or authorities to enter into and perform this Agreement;"
-msgstr "он предпримет все необходимые меры, чтобы полностью поддерживать и сохранять все свои полномочия, лицензии и разрешения вступать и действовать в рамках данного Соглашения;"
-
-msgid "he takes all reasonable steps to comply with the law or Rules whatsoever applicable to the jurisdiction in which he resides;"
-msgstr "он предпримет все разумные шаги, чтобы соответствовать любым нормам и законам, действующим в стране его проживания;"
+msgid "he has all necessary authority, powers, consents, licences or authorisations and has taken all necessary actions to enable himself to lawfully enter into and perform this Agreement;"
+msgstr ""
 
 msgid "hour"
 msgstr "час."
@@ -11958,6 +12231,12 @@ msgstr "в случае возникновения форс-мажорных о�
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "поместить соответствующий отказ от ответственности или уведомление о том, что все права на интеллектуальную собственность, включая торговую марку и любые слоганы, принадлежат Компании, а любое их несанкционированное использование строго запрещено."
 
+msgid "information about medical or health conditions, including whether or not the applicant has a disability for which the Company needs to make reasonable adjustments."
+msgstr ""
+
+msgid "information about the applicant's nationality;"
+msgstr ""
+
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr "умное распределение поступающих ордеров по различным моделям исполнения, на основе конфигураций и алгоритмов, установленных согласно факторам наилучшего исполнения."
 
@@ -11973,6 +12252,9 @@ msgstr "выход"
 msgid "managing of various aspects of online trading such as sending orders to the platform;"
 msgstr "управление различными аспектами онлайн торговли, например, отправка ордеров на платформу;"
 
+msgid "means any identifiable information relating to the applicant."
+msgstr ""
+
 msgid "million"
 msgstr "млн."
 
@@ -11982,8 +12264,8 @@ msgstr "мин."
 msgid "minutes"
 msgstr "мин."
 
-msgid "misrepresent its services provided to the Clients;"
-msgstr "искажать услуги, предоставляемые Клиентам;"
+msgid "misrepresent its services provided to the clients;"
+msgstr ""
 
 msgid "month"
 msgstr "мес."
@@ -12018,17 +12300,20 @@ msgstr "Paysafecard предоставляет способ онлайн опл�
 msgid "perform its services and other obligations hereunder at its own cost and risk."
 msgstr "выполнять свои услуги и иные обязательства, перечисленные в рамках данного Соглашения, своими силами и за свой счёт."
 
-msgid "prepare and publish any material or place any advertisements which refer to the Company and/or to its relationship with Company without an authorisation to be given by the Company; "
-msgstr "готовить и публиковать любые материалы, а также размещать любую рекламу, относящуюся к Компании и/или отношению Агента к Компании без получения предварительного разрешения от Компании; "
+msgid "prepare and publish any material or place any advertisements which refer to the Company and its relationship with the Company without an authorisation to be given by the Company; "
+msgstr ""
 
-msgid "provide the Company with all and any information whatsoever that it may become aware of that may be harmful and/or adverse and/or detrimental for the Company and its reputation;"
-msgstr "предоставлять Компании любую имеющуюся у него информацию, которая может оказать пагубное или негативное влияние на Компанию и её репутацию;"
+msgid "provide the Company with all and any information whatsoever that it may become aware of that may be harmful, adverse or detrimental to the Company and its reputation;"
+msgstr ""
 
-msgid "receive the approval of the Company to include any information in relation to the Company;"
-msgstr "получить разрешение Компании размещать любую информацию, относящуюся к Компании;"
+msgid "receive the approval of the Company to include any information in relation to the Company; and"
+msgstr ""
 
 msgid "represent itself as a representative of the Company or as an authorised Person by the Company in its advertising activities;"
 msgstr "представляться в качестве представителя Компании или лица, уполномоченного Компанией с целью рекламной деятельности;"
+
+msgid "restrict the further processing of their personal data, as well as in certain circumstances; and"
+msgstr ""
 
 msgid "risk warnings and notices related to transactions and investments in the proposed instruments;"
 msgstr "предупреждения и уведомления о риске, относящиеся к контрактам и инвестициям в предложенные инструменты;"
@@ -12044,6 +12329,21 @@ msgstr "сек."
 
 msgid "seconds"
 msgstr "сек."
+
+msgid "shall mean Data Protection Act 2018, Chapter 440 of the Laws of Malta."
+msgstr ""
+
+msgid "shall mean EU General Data Protection Regulation 2016/679."
+msgstr ""
+
+msgid "shall mean any operation which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, restriction, erasure, or destruction, etc.."
+msgstr ""
+
+msgid "shall mean the Binary Group of companies. This means that the Company is responsible for deciding how it holds and uses any personal data about the applicant."
+msgstr ""
+
+msgid "shall mean the applicant, whose personal data is collected by the Company."
+msgstr ""
 
 msgid "shall mean these Terms and Conditions regulating the provision of services."
 msgstr "означают текущие правили и условия, регулирующие предоставление наших услуг."
@@ -12062,6 +12362,9 @@ msgstr "нарушающей любые законы, нормы, противо
 
 msgid "the aggregate of all Margin Requirements in your MT5 Real Account."
 msgstr "совокупность всех Маржевых требований на Вашем реальном счету MT5."
+
+msgid "the applicant's personal details, including name, address, and contract details, comprising email address and telephone number, date of birth, and gender;"
+msgstr ""
 
 msgid "the characteristics of financial instruments that are the subject of that order;"
 msgstr "характеристика финансовых инструментов, относящихся к данному ордеру;"
@@ -12084,14 +12387,17 @@ msgstr "разница между ценой бид и ценой аск фин�
 msgid "the market conditions of the financial instruments that your orders are related to, which includes the need for timely execution, availability of price improvement, liquidity of the market, size of your order, and the potential impact on total consideration."
 msgstr "условиями рынка на финансовых инструментах, к которым относятся Ваши ордеры, что включает необходимость своевременного исполнения, возможность улучшения цены, ликвидность на рынке, размер Вашего ордера, а также его потенциальное влияние на общую прибыль."
 
+msgid "the provisions of this Agreement or any Orders and any applicable laws will not be breached or violated;"
+msgstr ""
+
+msgid "the right to data portability"
+msgstr ""
+
 msgid "the scheme specified in the Investor Compensation Scheme Regulations (Laws of Malta/Subsidiary Legislation 370.09) for the purpose of paying compensation to the Investors."
 msgstr "схема, упомянутая в Правилах регулирования компенсационных выплат инвесторам (Законодательство Мальты/Производное право 370.09) с целью выплаты причитающейся компенсации инвесторам."
 
 msgid "the specific instructions that we receive from you;"
 msgstr "конкретными инструкциями, полученными от Вас;"
-
-msgid "the terms and/or conditions and/or clauses and/or provisions of this Agreement, Orders whatsoever, the applicable law or any other law will not be breached or violated;"
-msgstr "правила, условия и положения данного Соглашения, а также любые распоряжения не подразумевают нарушения применимого законодательства или любых других законов;"
 
 msgid "the underlying currency, or Financial Instrument, on which the price of the CFD is based."
 msgstr "основная валюта или финансовый инструмент, на котором основана цена CFD."
@@ -12117,11 +12423,11 @@ msgstr "сегодня, по пятницам"
 msgid "trailing stops; and"
 msgstr "скользящие стоп-приказы;"
 
-msgid "upon our request, he provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
-msgstr "по нашему запросу он обязуется предоставить Компании всю информацию, необходимую для соответствия всем требованиям и предписаниям любого правительства и уполномоченных органов;"
+msgid "upon our request, the Agent provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
+msgstr ""
 
-msgid "use its best endeavors and diligence to transfer funds deposited to %1 Agent Account to %1 Client Account;"
-msgstr "прилагать максимум усилий и стараний для перевода средств со счёта Агента на %1 на счёт Клиента на %1;"
+msgid "use its best endeavors and diligence to transfer funds deposited to %1 Agent Account to its respective %1 client account;"
+msgstr ""
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms; or"
 msgstr "использовать или воспроизводить API %1, за исключением случаев, разрешенных данными Правилами, а также"
@@ -12129,8 +12435,11 @@ msgstr "использовать или воспроизводить API %1, з�
 msgid "use the %1 API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy."
 msgstr "использовать API %1 в любых целях, нарушающих любой закон или установленные нормы, права любого лица, включая, но не ограничиваясь правом на интеллектуальную собственность, правом на сохранение конфиденциальности или охрану сфер личной жизни, а также в иных целях, противоречащих данным Правилам политики конфиденциальности."
 
-msgid "use the Company’s name and/or Trademark in its advertising activities without a written authorisation to be given by the Company;"
-msgstr "пользоваться именем и/или торговой маркой компании в рамках её рекламной деятельности без получения предварительного письменного разрешения Компании;"
+msgid "use the Company’s name or Trademark in its advertising activities without a written authorisation to be given by the Company;"
+msgstr ""
+
+msgid "virtual money credit to account"
+msgstr ""
 
 msgid "week"
 msgstr "нед."

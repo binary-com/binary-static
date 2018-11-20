@@ -63,8 +63,8 @@ const CryptoConfig = (() => {
         ETH: { name: localize('Ether'),         min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
         ETC: { name: localize('Ether Classic'), min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
         LTC: { name: localize('Litecoin'),      min_withdrawal: 0.002, pa_max_withdrawal: 5,    pa_min_withdrawal: 0.002 },
-        DAI: { name: localize('Dai'),           min_withdrawal: 0.002, pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
-        UST: { name: localize('Tether'),        min_withdrawal: 0.002, pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        DAI: { name: localize('Dai'),           min_withdrawal: 0.02, pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
+        UST: { name: localize('Tether'),        min_withdrawal: 0.02, pa_max_withdrawal: 2000, pa_min_withdrawal: 10 },
     });
 
     return {
@@ -79,12 +79,14 @@ const CryptoConfig = (() => {
 
 const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(CryptoConfig.get(), [currency, 'min_withdrawal']) || 0.002 : 1);
 
+const getMinTransfer = currency => getPropertyValue(currencies_config, [currency, 'limits', 'transfer_between_accounts', 'min']) || getMinWithdrawal(currency);
+
 // @param {String} limit = max|min
 const getPaWithdrawalLimit = (currency, limit) => {
     if (isCryptocurrency(currency)) {
-        return getPropertyValue(CryptoConfig.get(), [currency, `pa_${limit}_withdrawal`]);
+        return getPropertyValue(CryptoConfig.get(), [currency, `pa_${limit}_withdrawal`]); // pa_min_withdrawal and pa_max_withdrawal used here
     }
-    return limit === 'max' ? 2000 : 10;
+    return limit === 'max' ? 2000 : 10; // limits for fiat currency
 };
 
 const getCurrencyName = currency => getPropertyValue(CryptoConfig.get(), [currency, 'name']) || '';
@@ -100,6 +102,7 @@ module.exports = {
     isCryptocurrency,
     getCurrencyName,
     getMinWithdrawal,
+    getMinTransfer,
     getMinPayout,
     getPaWithdrawalLimit,
     getCurrencies: () => currencies_config,

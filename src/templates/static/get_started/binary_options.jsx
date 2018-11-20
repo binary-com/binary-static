@@ -172,7 +172,7 @@ const BinaryOptions = () => {
                             <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/define-position.svg')} />
                         </div>
 
-                        <CircleHeader className='gr-padding-10' header={it.L('Underlying market')} text={it.L('Choose from five available markets:')}>
+                        <CircleHeader className='gr-padding-10' header={it.L('Underlying market')} text={it.L('Choose from four available markets:')}>
                             <ul className='checked'>
                                 <ListStrong header={it.L('Forex')}              text={it.L('Major and minor pairs, plus Smart FX indices')} />
                                 <ListStrong header={it.L('Indices')}            text={it.L('All major worldwide stock indices sourced from the over-the-counter market')} />
@@ -296,9 +296,9 @@ const BinaryOptions = () => {
 
                                 { word: it.L('Entry spot price'),    dataAnchor: 'entry-spot-price',    definition: it.L('The entry spot price is the starting price of the trade purchased by a trader.') },
                                 { word: it.L('Expiry price'),        dataAnchor: 'expiry-price',        definition: it.L('The expiry price is the price of the underlying when the contract expires.') },
-                                { word: it.L('Forex'),               dataAnchor: 'barriers',            definition: it.L('In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar.') },
-                                { word: it.L('GMT'),                 dataAnchor: 'forex',               definition: it.L('GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the [_1] site use GMT all year round.', it.website_name) },
-                                { word: it.L('Higher/Lower trades'), dataAnchor: 'gmt',                 definition: it.L('These are trades where the trader predicts if a market will finish higher or lower than a specified price target.') },
+                                { word: it.L('Forex'),               dataAnchor: 'forex',               definition: it.L('In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar.') },
+                                { word: it.L('GMT'),                 dataAnchor: 'gmt',                 definition: it.L('GMT stands for Greenwich Mean Time, the official time used in the UK during winter. In summer, the UK changes to British Summer Time, which is GMT + 1 hour. All times on the [_1] site use GMT all year round.', it.website_name) },
+                                { word: it.L('Higher/Lower trades'), dataAnchor: 'barriers',            definition: it.L('These are trades where the trader predicts if a market will finish higher or lower than a specified price target.') },
                                 { word: it.L('Indices'),             dataAnchor: 'indices',             definition: it.L('Stock market indices measure the value of a selection of companies in the stock market.') },
                                 { word: it.L('In/Out trades'),       dataAnchor: 'in-out-trades',       definition: it.L('These are trades where the trader selects a low and high barrier, and predicts if the market will stay within these barriers or go outside them (see also \'Stays Between/Goes Outside trades\').') },
                                 { word: it.L('Market exit price'),   dataAnchor: 'market-exit-price',   definition: it.L('The market exit price is the price in effect at the end of the contract period.') },

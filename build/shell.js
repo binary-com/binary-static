@@ -108,25 +108,40 @@ module.exports = function (grunt) {
                 stdout: false
             }
         },
+        release_translations: {
+            command: [
+                prompt('Starting the release to \'translations\'\n'),
+                'git fetch origin translations:translations',
+                'git checkout translations',
+                'grunt release --translations --color',
+                'git checkout master',
+            ].join(' && '),
+            options: {
+                stdout: true
+            }
+        },
         reset_ghpages: {
-            command: grunt.option('staging') && grunt.option('reset') ?
-                [
-                    ghpagesCommand(),
-                    prompt('Resetting to the first commit...'),
-                    'git reset $(git rev-list --max-parents=0 --abbrev-commit HEAD) --quiet',
-                    prompt('Removing .gitignore...'),
-                    'rm -f .gitignore',
-                    'git add .gitignore',
-                    prompt('Adding CNAME...'),
-                    `echo '${global.release_config.staging.CNAME}' > CNAME`,
-                    'git add CNAME',
-                    'git commit -m "Add CNAME" --quiet',
-                    prompt('Pushing to origin...'),
-                    'git push origin gh-pages -f --quiet',
-                    prompt('Cleaning up...'),
-                    'git reset --hard origin/gh-pages --quiet'
-                ].join(' && ') :
-                prompt('Reset runs only on staging.', 'warn'),
+            command: grunt.option('reset') ?
+                (grunt.option('staging') ?
+                    [
+                        ghpagesCommand(),
+                        prompt('Resetting to the first commit...'),
+                        'git reset $(git rev-list --max-parents=0 --abbrev-commit HEAD) --quiet',
+                        prompt('Removing .gitignore...'),
+                        'rm -f .gitignore',
+                        'git add .gitignore',
+                        prompt('Adding CNAME...'),
+                        `echo '${global.release_config.staging.CNAME}' > CNAME`,
+                        'git add CNAME',
+                        'git commit -m "Add CNAME" --quiet',
+                        prompt('Pushing to origin...'),
+                        'git push origin gh-pages -f --quiet',
+                        prompt('Cleaning up...'),
+                        'git reset --hard origin/gh-pages --quiet'
+                    ].join(' && ') :
+                    prompt('Reset runs only on staging.', 'warn')
+                ) :
+                prompt('Reset did not run.'),
             options: {
                 stdout: true
             }

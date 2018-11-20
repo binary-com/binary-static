@@ -52,8 +52,10 @@ const VideoFacility           = require('../pages/user/video_facility');
 // ==================== static ====================
 const Charity            = require('../../static/pages/charity');
 const Contact            = require('../../static/pages/contact');
+const Contact2           = require('../../static/pages/contact_2');
 const GetStarted         = require('../../static/pages/get_started');
 const Home               = require('../../static/pages/home');
+const KeepSafe           = require('../../static/pages/keep_safe');
 const JobDetails         = require('../../static/pages/job_details');
 const Platforms          = require('../../static/pages/platforms');
 const Regulation         = require('../../static/pages/regulation');
@@ -73,7 +75,6 @@ const pages_config = {
     cashier                  : { module: Cashier },
     cashier_passwordws       : { module: CashierPassword,            is_authenticated: true, only_real: true },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
-    cloudflare_dns           : { module: StaticPages.Cloudflare,     is_authenticated: true },
     charity                  : { module: Charity },
     contact                  : { module: Contact },
     detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
@@ -117,6 +118,7 @@ const pages_config = {
     'binary-options'         : { module: GetStarted.BinaryOptions },
     'binary-options-mt5'     : { module: GetStarted.BinaryOptionsForMT5 },
     'careers'                : { module: StaticPages.Careers },
+    'contact-2'              : { module: Contact2 },
     'cyberjaya'              : { module: StaticPages.Locations },
     'cfds'                   : { module: GetStarted.CFDs },
     'contract-specifications': { module: TabSelector },
@@ -129,6 +131,7 @@ const pages_config = {
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
     'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
+    'keep-safe'              : { module: KeepSafe },
     'labuan'                 : { module: StaticPages.Locations },
     'malta'                  : { module: StaticPages.Locations },
     'metals'                 : { module: GetStarted.Metals },

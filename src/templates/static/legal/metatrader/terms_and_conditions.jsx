@@ -14,11 +14,11 @@ const TermsAndConditions = () => (
         <ol>
             <li>
                 {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website, the term \'we\', \'us\', \'our\', \'ours\', \'the Company\', or \'[_1]\' shall denote either', it.website_name)}&nbsp;
-                <span className='eu-hide'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
-                <span className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
-                <span className='eu-hide'>{it.L('Binary (IOM) Ltd.,')}&nbsp;</span>
-                <span className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
-                <span className='eu-hide'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (IOM) Ltd.,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
+                <span data-show='-eucountry'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
                 <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
                 <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
             </li>
@@ -112,8 +112,8 @@ const TermsAndConditions = () => (
             </li>
             <li>{it.L('Inactive/Dormant Accounts')}
                 <ol>
-                    <li className='eu-hide'>{it.L('We reserve the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every six months for every client account that has had no transaction recorded for a period of 12 consecutive months or more.')}</li>
-                    <li className='invisible eu-show'>{it.L('We reserve the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts.')}</li>
+                    <li data-show='-eucountry'>{it.L('We reserve the right to charge a dormant fee of up to USD/EUR/AUD/GBP25 every six months for every client account that has had no transaction recorded for a period of 12 consecutive months or more.')}</li>
+                    <li data-show='eucountry'>{it.L('We reserve the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts.')}</li>
                 </ol>
             </li>
             <li>{it.L('Account Security')}
@@ -188,7 +188,7 @@ const TermsAndConditions = () => (
                     <li>{it.L('If the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, this will be classified as an Event of Default. In such circumstances, Open Positions are automatically closed in the following order: (i) the server analyses clients\' Orders that are not under execution at the moment; (ii) the server deletes Orders with the largest Margin; (iii) if your Margin Level is still under the Stop Out Level, the next order is deleted (orders without margin requirements are not deleted); (iv) if your Margin Level is still under the Stop Out Level, the server closes a position with the largest loss; (v) Open Positions are closed until your Margin Level becomes higher than the Stop Out Level.')}</li>
                     <li>{it.L('The default Stop Out Level applicable to your Account is published on our website. However, the default Stop Out Level is subject to alteration at our absolute discretion. Any changes to the Stop Out Level will take effect immediately. We will endeavor to notify you of an alteration to the default Stop Out Level by publishing the revised default Stop Out Level on our website. It is your responsibility to check our website regularly and remain informed about the default Stop Out Level.')}</li>
                     <li>{it.L('The Stop Out Level applicable to your MT5 Real Account may differ from the default Stop Out Level published on our website.')}</li>
-                    <li className='eu-hide'>
+                    <li data-show='-eucountry'>
                         {it.L('Negative Balance Protection')}
                         <ol>
                             <li>

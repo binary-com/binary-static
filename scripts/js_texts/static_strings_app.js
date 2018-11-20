@@ -23,15 +23,7 @@ module.exports = [
     'Withdrawal',
 
     // longcode from statement
-    'Virtual money credit to account',
-
-    // market_specific[market][submarket].name from get_limits
-    'Commodities',
-    'Indices',
-    'Major Pairs',
-    'Minor Pairs',
-    'Smart FX',
-    'Volatility Indices',
+    'virtual money credit to account',
 
     // action from login_history
     'login',

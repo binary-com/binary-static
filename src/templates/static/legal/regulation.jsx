@@ -165,7 +165,7 @@ const Regulation = () => {
                 </div>
             </Box>
 
-            <div className='invisible eu-show'>
+            <div data-show='eucountry'>
                 <Box header={it.L('Binary (Europe) Limited')} >
                     <p>{it.L('Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - [_1]\'s Volatility Indices) by the Malta Gaming Authority in Malta (licence no [_2]) and for UK clients by the UK Gambling Commission - [_3]view licence[_4].', it.website_name, 'MGA/B2C/102/2000', '<a href="https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495" target="_blank">', '</a>')}</p>
                     <p>{it.L('European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Limited.')}</p>

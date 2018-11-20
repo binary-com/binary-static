@@ -8,6 +8,7 @@ const handleVerifyCode         = require('../../../common/verification_code').ha
 const makeOption               = require('../../../../_common/common_functions').makeOption;
 const localize                 = require('../../../../_common/localize').localize;
 const localizeKeepPlaceholders = require('../../../../_common/localize').localizeKeepPlaceholders;
+const isMobile                 = require('../../../../_common/os_detect').isMobile;
 const LocalStore               = require('../../../../_common/storage').LocalStore;
 const State                    = require('../../../../_common/storage').State;
 const urlFor                   = require('../../../../_common/url').urlFor;
@@ -77,6 +78,8 @@ const VirtualAccOpening = (() => {
     const bindValidation = () => {
         // Add TrafficSource parameters
         const utm_data = TrafficSource.getData();
+        const signup_device = LocalStore.get('signup_device') || (isMobile() ? 'mobile' : 'desktop');
+        const date_first_contact = LocalStore.get('date_first_contact');
 
         const req = [
             { selector: '#client_password', validations: ['req', 'password'], re_check_field: '#repeat_password' },
@@ -86,11 +89,12 @@ const VirtualAccOpening = (() => {
             { selector: '#email_consent' },
             { request_field: 'utm_source',          value: TrafficSource.getSource(utm_data) },
             { request_field: 'new_account_virtual', value: 1 },
+            { request_field: 'signup_device',       value: signup_device },
         ];
 
         if (utm_data.utm_medium)   req.push({ request_field: 'utm_medium',   value: utm_data.utm_medium });
         if (utm_data.utm_campaign) req.push({ request_field: 'utm_campaign', value: utm_data.utm_campaign });
-
+        if (date_first_contact)    req.push({ request_field: 'date_first_contact',  value: date_first_contact });
         const gclid = LocalStore.get('gclid');
         if (gclid) req.push({ request_field: 'gclid_url', value: gclid });
 
@@ -110,6 +114,8 @@ const VirtualAccOpening = (() => {
             State.set('skip_response', 'authorize');
             BinarySocket.send({ authorize: new_account.oauth_token }, { forced: true }).then((response_auth) => {
                 if (!response_auth.error) {
+                    LocalStore.remove('date_first_contact');
+                    LocalStore.remove('signup_device');
                     Client.processNewAccount({
                         email       : new_account.email,
                         loginid     : new_account.client_id,

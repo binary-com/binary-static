@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-10-23 06:30\n"
+"PO-Revision-Date: 2018-11-16 02:04\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -71,9 +71,6 @@ msgstr "50,001 - 100,000 เหรียญสหรัฐ"
 
 msgid "$500,001 - $1,000,000"
 msgstr "500,001 - 1,000,000 เหรียญสหรัฐ"
-
-msgid "%1 %2 has been credited into your virtual account: %3."
-msgstr "%1 %2 ได้ถูกเพิ่มเข้าในบัญชีทดลองของท่านแล้ว: %3"
 
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "%1 %2 ชำระเงิน เมื่อ %3 ไม่แตะ Barrier กระทั่งสิ้นสุดที่ %4"
@@ -170,6 +167,9 @@ msgstr "%1 ไม่ถูกเรียกเก็บค่าธรรมเ
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
 msgstr "%1 ให้วิธีการที่ง่ายสำหรับทุกคนในการเป็นส่วนหนึ่งของตลาดการเงินต่างๆ ท่านสามารถเทรดด้วยเงินเริ่มต้นขั้นต่ำเพียง 1 เหรียญสหรัฐ กับสกุลเงินหลักต่างๆ ดัชนีต่างๆ สินค้าโภคภัณฑ์ต่างๆ และดัชนีผันผวนต่างๆ "
+
+msgid "%1 has been credited into your virtual account: %2."
+msgstr "%1 ได้ถูกเพิ่มเข้าในบัญชีเสมือนของคุณแล้ว: %2"
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 ซึ่งมีชื่อเสียงอย่างกว้างขวางจากพันธสัญญาของเราที่มีมาตรฐานระดับสูงและคุณภาพจากประสบการณ์ความเชี่ยวชาญในการซื้อขายที่เรามี"
@@ -305,6 +305,9 @@ msgstr "%1 มีบริการพันธกิจทางธุรกิ
 
 msgid "%1 provides institutional clients around the world with market quotes and trade execution across a wide range of assets, including major currency pairs, spot metals, CFD indices and popular cryptocurrencies."
 msgstr "%1 นำเสนอราคาตลาดและการดำเนินการการซื้อขายหลากหลายผลิตภัณฑ์ รวมถึงคู่สกุลเงินหลักต่างๆ โลหะมีค่า ดัชนี CFD และเงินดิจิทัลที่เป็นที่นิยมให้แก่ลูกค้าสถาบันทั่วโลก"
+
+msgid "%1 provides virtual-money facilities to practise your trading strategy with virtual funds. Switch to your virtual-money account using the drop-down box in the top-right corner of the screen."
+msgstr "%1ให้คุณได้ใช้เงินเสมือนเพื่อฝึกฝนกลยุทธ์ในการซื้อขายด้วยเงินเสมือน สลับเป็นบัญชีเงินเสมือนโดยใช้กล่องแบบดึงลงบนมุมด้านขวาบนของหน้าจอ"
 
 msgid "%1 provides you best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
 msgstr "%1 นำเสนอการประมวลผลที่ดีที่สุดในการจัดการคำสั่งซื้อโดยวิธีการรวมกันอย่างชาญฉลาด ซึ่งมีกลไกการทำงาน"
@@ -517,9 +520,6 @@ msgstr "บุคคลที่เกี่ยวข้องกับการ
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "ตัวแทนรับชำระเงินเป็นเหมือนตัวกลางแลกเปลี่ยนระหว่างลูกค้าและ %1 ตัวแทนรับชำระเงินอำนวยความสะดวกในการฝากเงินและถอนเงินให้กับลูกค้าที่ปรารถนาจะใช้ช่องทางกระเป๋าเงินอิเล็กทรอนิกส์ หรือ สกุลเงินท้องถิ่น ที่ไม่ได้บริการโดย %1 โดยค่าธรรมเนียมการโอนเงินรับผิดชอบโดยลูกค้าผู้ทำธุรกรรม"
 
-msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
-msgstr "บุคคลที่เกี่ยวข้องกับการเมือง (PEP) เป็นบุคคลที่ได้รับมอบหมายในการปฏิบัติงานสาธารณะที่โดดเด่น รวมถึงสมาชิกครอบครัวใกล้ชิด หรือ บุคคลที่ทราบว่าเป็นเพื่อนร่วมงานที่ใกล้ชิดของผู้นั้น แต่ไม่รวมเจ้าหน้าที่ระดับกลาง หรือ ระดับล่างกว่า บุคคลดังกล่าวรวมถึงผู้นำรัฐ รัฐมนตรี เลขาธิการรัฐสภา สมาชิกรัฐสภา ผู้พิพากษา นักการทูต ข้าราชการอาวุโส เจ้าหน้าที่ระดับสูงในกองทัพ คณะกรรมการตรวจสอบของคณะกรรมการธนาคารกลาง และผู้อำนวยการของบริษัทรัฐวิสาหกิจ \"สมาชิกครอบครัวใกล้ชิด\" ตามตัวอย่างข้างต้นจะถูกพิจารณาว่าเป็น PEP ด้วย และรวมถึงคู่สมรส บิดามารดา และบุตร นอกจากนี้ \"บุคคลที่ทราบว่าเป็นเพื่อนร่วมงานใกล้ชิด\" ของ PEP รวมถึง หุ้นส่วนทางธุรกิจจะถูกพิจารณาว่าเป็นด้วยเช่นกัน โดยทั่วๆ ไป บุคคลที่ถูกพิจารณว่าเป็น PEP และหยุดการรับมอบหมายในการปฏิบัติงานสาธารณะที่โดดเด่นเป็นระยะเวลาอย่างน้อยสิบสองเดือนไม่ถือว่ามีคุณสมบัติเป็น PEP ต่อไป"
-
 msgid "A Professional Client receives a lower degree of client protection due to the following:"
 msgstr "ลูกค้าที่มีความเชี่ยวชาญ (Professional Client) ได้รับกลไกการกำกับดูแลลูกค้าในระดับที่ต่ำกว่าด้วยเหตุผลต่อไปนี้"
 
@@ -585,6 +585,9 @@ msgstr "เป็นเจ้าของภาษาผู้ซึ่งมี
 
 msgid "A panel featuring industry leaders awards BetOnMarkets.com 'Financial Betting Operator of the Year' over two other finalists. It's a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
 msgstr "เหล่าคณะผู้นำในอุตสาหกรรมมอบรางวัล Financial Betting Operator of the Year ให้กับ BetOnMarkets.com สิ่งนี้ คือ ชัยชนะหลักของแบรนด์ของพวกเราและการยอมรับของบริการระดับโลกของพวกเรา สิบปีที่ผ่านมาจากจุดแข็งสู่จุดแข็งที่ยั่งยืน"
+
+msgid "A politically exposed person (PEP) is an individual who is or has been entrusted with a prominent public function. Family members and close associates of such individuals are also considered as PEPs. A PEP who has ceased to be entrusted with a prominent public function for at least 12 months no longer qualifies as a PEP."
+msgstr ""
 
 msgid "A preference and passion for Linux and open-source platforms"
 msgstr "มีความสนใจและความมุ่งมั่นในระบบปฏิบัติการลินุกซ์และโอเพ่นซอส"
@@ -796,6 +799,12 @@ msgstr "ต้องการตรวจสอบอายุของบัญ
 msgid "Account opening reason"
 msgstr "เหตุผลในการเปิดบัญชี"
 
+msgid "Account security"
+msgstr "ความปลอดภัยของบัญชี"
+
+msgid "Account statistics"
+msgstr "สถิติของบัญชี"
+
 msgid "Accounting"
 msgstr "การบัญชี"
 
@@ -834,6 +843,9 @@ msgstr "การได้มาของสัญญาทางการเง
 
 msgid "Action"
 msgstr "การกระทำ"
+
+msgid "Activate the VPN service on the app"
+msgstr "เปิดใช้บริการ VPN บนแอพพลิเคชัน"
 
 msgid "Active trading clients"
 msgstr "ลูกค้าปัจจุบัน"
@@ -949,8 +961,8 @@ msgstr "เกษตรกร เจ้าหน้าที่ป่าไม�
 msgid "Alert"
 msgstr "การแจ้งเตือน"
 
-msgid "All %1 registered or unregistered proprietary rights including but not limited to patents, trademarks, trade secrets, domain names, URL, pricing information and/or other proprietary rights materials, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, processes, procedures whatsoever shall solely remain with the Company."
-msgstr "กรรมสิทธิ์ที่ลงทะเบียน หรือ ไม่ลงทะเบียนของ %1ทั้งหมด รวมถึงสิทธิบัตร เครื่องหมายการค้า ความลับทางการค้า ชื่อโดเมน URL ข้อมูลด้านราคา และ/หรือ เอกสารทางด้านกรรมสิทธิ์อื่นๆ ไอเดีย แนวคิด รูปแบบ คำแนะนำ การพัฒนา การจัดการ โปรแกรม เทคนิค หลักการ ความรู้เชิงปฏิบัติ อุปกรณ์ กระบวนการ แนวทางปฏิบัติ ไม่ว่าอะไรก็ตามจะต้องคงอยู่กับบริษัทฯ เท่านั้น"
+msgid "All %1 registered or unregistered proprietary rights including but not limited to patents, trademarks, trade secrets, domain names, URL, pricing information or other proprietary rights materials, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, processes, procedures whatsoever shall solely remain with the Company."
+msgstr "กรรมสิทธิ์ที่ลงทะเบียน หรือ ไม่ลงทะเบียนของ %1ทั้งหมด รวมถึงสิทธิบัตร เครื่องหมายการค้า ความลับทางการค้า ชื่อโดเมน URL ข้อมูลด้านราคา หรือ เอกสารทางด้านกรรมสิทธิ์อื่นๆ ไอเดีย แนวคิด รูปแบบ คำแนะนำ การพัฒนา การจัดการ โปรแกรม เทคนิค หลักการ ความรู้เชิงปฏิบัติ อุปกรณ์ กระบวนการ แนวทางปฏิบัติ ไม่ว่าอะไรก็ตามจะต้องคงอยู่กับบริษัทฯ เท่านั้น"
 
 msgid "All Partnership Options"
 msgstr "ประเภทของรายการพันธมิตร"
@@ -1114,8 +1126,8 @@ msgstr "คำสั่งของท่านที่ส่งให้เร
 msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian"
 msgstr "การอุทธรณ์ระหว่างประเทศโดยรองรับภาษาต่างๆ ทั่วโลก ได้แก่ ภาษาอังกฤษ ภาษาสเปน ภาษาฝรั่งเศส ภาษาเยอรมัน ภาษาโปรตุเกส ภาษาจีน ภาษาอิตาเลียน ภาษาไทย และภาษารัสเซีย"
 
-msgid "An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere"
-msgstr "แพลตฟอร์มใช้งานบนเว็บที่ใช้งานง่าย ที่มีไว้พร้อมใช้งานได้ทันทีสำหรับนักลงทุนทุกระดับ ทุกเวลา และทุกที่"
+msgid "An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere"
+msgstr ""
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "วิเคราะห์และทดสอบโดเมนและโดเมนย่อยที่อยู่ในขอบเขตงาน"
@@ -1138,11 +1150,14 @@ msgstr "รางวัลสำคัญอีกหนึ่งรางวั
 msgid "Answer to secret question"
 msgstr "คำตอบสำหรับคำถามส่วนตัว"
 
+msgid "Anti-Corruption"
+msgstr "การป้องกันและปราบปรามการทุจริต"
+
 msgid "Anti-Fraud Officer"
 msgstr "เจ้าหน้าที่ป้องกันการทุจริต"
 
-msgid "Anti-Money Laundering policy"
-msgstr "นโยบายต่อต้านการฟอกเงิน"
+msgid "Anti-Money Laundering Policy"
+msgstr "นโยบายป้องกันและปราบปรามการฟอกเงิน"
 
 msgid "Anticipated Account Turnover"
 msgstr "ปริมาณการซื้อขายที่คาดการณ์เอาไว้ของบัญชี"
@@ -1154,10 +1169,13 @@ msgid "Any amendments to the contractual terms of Manifestly Erroneous contracts
 msgstr "การแก้ไขเพิ่มเติมในเงื่อนไขสัญญาของสัญญาที่มีข้อผิดพลาดชัดแจ้งจะต้องสมเหตุสมผลและยุติธรรม เงินที่แลกเปลี่ยนระหว่างท่านกับเราที่เกี่ยวข้องกับสัญญาที่มีข้อผิดพลาดชัดแจ้งจะต้องถูกส่งคืนให้ผู้รับตามที่แก้ไขไว้ในการแก้ไขเพิ่มเติมของเงื่อนไขและข้อกำหนดของสัญญานี้"
 
 msgid "Any changes in our privacy policy or security statement will be posted on this website. For any material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such changes on your account."
-msgstr "การเปลี่ยนแปลงใดๆ ในนโยบายความเป็นส่วนตัว หรือ ข้อความด้านความปลอดภัยของพวกเรานั้น จะนำไปประกาศบนหน้าเว็บไซต์ ในกรณีที่มีการแก้ไขหลักๆ ที่กระทบด้านเศรษฐศาสตร์ของการใช้ข้อมูลส่วนบุคคลของท่าน เราจะดำเนินการขออนุญาตจากท่านเป็นลายลักษณ์อักษรก่อนกระทำการเปลี่ยนแปลงนั้นกับบัญชีของท่าน"
+msgstr "การเปลี่ยนแปลงใดๆ ในนโยบายการรักษาข้อมูลส่วนบุคคล หรือ ข้อความด้านความปลอดภัยของพวกเรานั้น จะนำไปประกาศบนหน้าเว็บไซต์ ในกรณีที่มีการแก้ไขหลักๆ ที่กระทบด้านเศรษฐศาสตร์ของการใช้ข้อมูลส่วนบุคคลของท่าน เราจะดำเนินการขออนุญาตจากท่านเป็นลายลักษณ์อักษรก่อนกระทำการเปลี่ยนแปลงนั้นกับบัญชีของท่าน"
 
 msgid "Any disputes, controversy, or claims that arise out of or relating to this Agreement against the Company will be referred to and finally determined by an arbitration firm selected by the Company. The language to be used in the arbitral proceedings will be English. Judgement upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. You are also responsible for any and all costs related to such arbitration."
 msgstr "ข้อคัดค้านใดๆ ข้อโต้เถียงอย่างรุนแรงใดๆ หรือ การอ้างถึงผล หรือ สิ่งที่เกี่ยวข้องกับข้อตกลงนี้ บริษัทฯ จะอ้างอิงถึงและเป็นการถึงที่สุดโดยอนุญาโตตุลาการที่ถูกสรรหาโดยบริษัทฯ ภาษาที่ใช้ในการพิจารณาคดีจะเป็นภาษาอังกฤษ การตัดสินจะดำเนินการโดยคณะอนุญาโตตุลาการที่มีอำนาจในการตัดสินคดีตามกฎหมาย ท่านเป็นผู้รับผิดชอบค่าใช้จ่ายที่เกี่ยวข้องทั้งหมด หรือ บางส่วนในการตัดสินข้อพิพาทนั้น"
+
+msgid "Any event capable to have a material adverse effect on the Agent’s ability to perform any of its duties and obligations in accordance with this Agreement."
+msgstr "เหตุการณ์ใดๆ สามารถทำให้มีผลเสียอย่างมากต่อความสามารถของตัวแทนฯ ในการปฏิบัติหน้าที่ และ ภาระผูกพันตามข้อตกลงนี้"
 
 msgid "Any failure on your part to maintain the security of any security devices or procedures used in or in association with the %1 API;"
 msgstr "ข้อผิดพลาดใดๆ ในส่วนของท่านที่เกี่ยวข้องกับการปรับปรุงความปลอดภัยของอุปกรณ์ความปลอดภัยต่างๆ หรือ กระบวนวิธีที่ใช้ใน หรือ ร่วมใน API ของ %1"
@@ -1188,6 +1206,9 @@ msgstr "บุคคลผู้ซึ่งมีศักยภาพที่
 
 msgid "Appendix - Product Specific Policies"
 msgstr "ภาคผนวก - นโยบายจำเพาะของผลิตภัณฑ์"
+
+msgid "Applicant's rights"
+msgstr "สิทธิของผู้สมัคร"
 
 msgid "Applications"
 msgstr "แอพพลิเคชัน"
@@ -1320,6 +1341,9 @@ msgstr "นอกจากประเภทของการซื้อขา
 
 msgid "Ask"
 msgstr "ถาม"
+
+msgid "Ask me later"
+msgstr "ถามภายหลัง"
 
 msgid "Ask price"
 msgstr "ราคาเสนอขาย"
@@ -1681,6 +1705,9 @@ msgstr "Binary Bot"
 msgid "Binary Bot released"
 msgstr "ใช้ Binary Bot"
 
+msgid "Binary Group (hereinafter referred to as 'Binary Group of companies', 'the Company') is commited to protecting the privacy and security of the applicant's personal information. This privacy notice sets out the types of data that the Company collects on the applicant. It also sets out how the Company collect and use the applicant' personal data, and how long it keeps them and other relevant information about the applicant's data in accordance with the General Data Protection Regulation (EU) 2016/679 (hereafter referred to as 'GDPR') and Data Protection Act 2018."
+msgstr "Binary Group (ต่อไปเรียกว่า 'กลุ่มบริษัทในเครือไบนารี', 'บริษัทฯ') มีความมุ่งมั่นในการป้องกันข้อมูลส่วนบุคคลและความปลอดภัยของข้อมูลส่วนบุคคลของผู้สมัคร นโยบายนี้ได้กำหนดประเภทของข้อมูลที่บริษัทฯ เก็บรวบรวมจากผู้สมัคร และยังได้กำหนดวิธีการที่บริษัทเก็บรวบรวม และใช้ข้อมูลส่วนบุคคลของผู้สมัคร และระยะเวลาที่จะเก็บข้อมูลเหล่านั้น หรือข้อมูลที่เกี่ยวของอื่นๆเกี่ยวกับข้อมูลของผู้สมัครตามระเบียบการป้องกันข้อมูลพื้นฐานของสหภาพยุโรป ฉบับที่ 2016/679 (ต่อจากนี้เรียกว่า ' GDPR') และพระราชบัญญัติคุ้มครองข้อมูล ค.ศ. 2018"
+
 msgid "Binary Group Services Sdn. Bhd., C-13, iTech Tower, Jalan Impact, Cyber 6, 63000 Cyberjaya, Selangor Darul Ehsan"
 msgstr "Binary Group Services Sdn. Bhd. ตั้งอยู่ที่ C-13 อาคาร iTech ถนน Impact, Cyber 6, 63000 ไซเบอร์จายา Selangor Darul Ehsan"
 
@@ -1834,6 +1861,9 @@ msgstr "ระดมสมองเพื่อกำหนดแนวทาง
 msgid "Brand of first car"
 msgstr "ยี่ห้องของรถยนต์คันแรก"
 
+msgid "Browse and trade securely on your preferred device"
+msgstr "ค้นดูและซื้อขายอย่างปลอดภัยบนอุปกรณ์ที่คุณต้องการ"
+
 msgid "Browser"
 msgstr "เบราเซอร์"
 
@@ -1948,6 +1978,9 @@ msgstr "CFDs สินค้าโภคภัณฑ์ และ/หรือ"
 msgid "CFDs on indices."
 msgstr "CFDs ของดัชนีต่างๆ"
 
+msgid "CPA (EU only)"
+msgstr "CPA (EU เท่านั้น)"
+
 msgid "Call Spread"
 msgstr "คอลสเปรด"
 
@@ -1972,6 +2005,9 @@ msgstr "สามารถถอนเงินเพื่อชำระกั
 msgid "Can't figure it out on when to buy and sell? Here is a simple way of looking at it:"
 msgstr "ไม่รู้ว่าเมื่อไรจะซื้อหรือขาย ใช่หรือไม่? นี่เป็นวิธีการดูง่ายๆ"
 
+msgid "Can't find what you're searching for?"
+msgstr "ไม่พบสิ่งที่คุณกำลังค้นหาใช่หรือไม่"
+
 msgid "Can't make heads or tails of currency pairs? Here is a simple way of looking at it:"
 msgstr "ไม่สามารถบอกหัวหรือก้อยของคู่สกุลเงิน ใช่หรือไม่? นี่เป็นวิธีการดูง่ายๆ"
 
@@ -1983,9 +2019,6 @@ msgstr "พลาดไม่ได้ ที่ลาบวน"
 
 msgid "Can't miss in Malta"
 msgstr "พลาดไม่ได้ ที่มอลตา"
-
-msgid "Canada"
-msgstr "แคนาดา"
 
 msgid "Canadian Dollar vs Japanese Yen"
 msgstr "ดอลลาร์แคนาดา เทียบกับ เงินเยนญี่ปุ่น"
@@ -2053,6 +2086,9 @@ msgstr "เปลี่ยนรหัสผ่านเพื่อใช้ใ
 msgid "Change your main login password."
 msgstr "แก้ไขรหัสผ่านหลักของท่าน"
 
+msgid "Changes to this privacy policy"
+msgstr "เปลี่ยนนโยบายการรักษาข้อมูลส่วนบุคคลนี้"
+
 msgid "Charitable Activities"
 msgstr "กิจกรรมเพื่อสาธารณกุศล"
 
@@ -2086,6 +2122,9 @@ msgstr "กำลังตรวจสอบ"
 msgid "Chief Executives, Senior Officials and Legislators"
 msgstr "ผู้บริหารระดับสูง เจ้าหน้าที่อาวุโส และสมาชิกของสภานิติบัญญัติ"
 
+msgid "Choice of Law and Venue"
+msgstr "หลักในการเลือกกฎหมายและสถานที่"
+
 msgid "Choose Scopes:"
 msgstr "กำหนดขอบเขต:"
 
@@ -2110,11 +2149,14 @@ msgstr "เลือกบัญชี"
 msgid "Choose from 100+ tradable instruments, backed by award-winning technology and innovation since 2000."
 msgstr "เลือกจากเครื่องมือที่ซื้อขายได้มากกว่า 100 เครื่องมือ ที่สนับสนุนโดยเทคโนโลยีและนวัตกรรมที่ได้รับรางวัลตั้งแต่ปี พ.ศ. 2543 (ค.ศ. 2000)"
 
-msgid "Choose from five available markets:"
-msgstr "เลือกจากตลาดที่มีอยู่ 5 แห่ง"
+msgid "Choose from four available markets:"
+msgstr "เลือกจากตลาดที่มีอยู่สี่แห่ง:"
 
 msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy."
 msgstr "เลือกจากการซื้อขายหลากหลายแบบที่มีมากกว่าหนึ่งล้านแบบเมื่อใดก็ได้ และปรับแต่งการซื้อขายของท่านตามกลยุทธ์ที่ท่านต้องการ"
+
+msgid "Choose from the following affiliate commission plans:"
+msgstr "เลือกจากแผนค่าคอมมิชชันของพันธมิตรต่อไปนี้"
 
 msgid "Choose from three main trade types:"
 msgstr "เลือกจากประเภทการซื้อขายหลักสามประเภท"
@@ -2288,7 +2330,7 @@ msgid "Closing price"
 msgstr "ราคาปิด"
 
 msgid "Cloudflare's public DNS service gives you more secure and faster web browsing."
-msgstr "บริการ DNS สาธารณะของ Cloudflare ช่วยให้คุณค้นดูบนเว็บไซต์ได้ปลอดภัยกว่า และเร็วกว่า"
+msgstr "บริการ DNS สาธารณะของ Cloudflare ช่วยให้ท่านค้นดูบนเว็บไซต์ได้ปลอดภัยกว่าและรวดเร็วกว่า"
 
 msgid "Collaborate with members of our IT Group to identify innovative ways to improve our website's capability and performance"
 msgstr "ประสานงานกับสมาชิกของแผนกเทคโนโลยีสารสนเทศของเราเพื่อออกแบบและกำหนดวิธีใหม่ในการปรับปรุงเว็บไซต์ของบริษัทฯ ในด้านศักยภาพและสมรรถนะของระบบ"
@@ -2309,7 +2351,7 @@ msgid "Commission rates"
 msgstr "อัตราค่าคอมมิชชัน"
 
 msgid "Commission structure"
-msgstr "โครงสร้างคอมมิชชัน"
+msgstr "โครงสร้างผลตอบแทน"
 
 msgid "Commission-free"
 msgstr "ไม่มีค่าธรรมเนียม"
@@ -2386,6 +2428,9 @@ msgstr "สอดคล้องกับกฎหมายต่างๆ ห�
 msgid "Comprehensive"
 msgstr "อย่างครอบคลุม"
 
+msgid "Compressing Image"
+msgstr "ภาพที่ถูกย่อขนาด"
+
 msgid "Computer system and method for speculating on a financial market"
 msgstr "ระเบียบวิธีและระบบคอมพิวเตอร์สำหรับการเก็งกำไรในตลาดการเงิน"
 
@@ -2397,6 +2442,9 @@ msgstr "จัดทำแผนป้องกันภัยพิบัติ
 
 msgid "Confidentiality"
 msgstr "การรักษาความลับ"
+
+msgid "Configure your PC and mobile phone to use the Cloudflare DNS by following the instructions at %1."
+msgstr "ตั้งค่าคอมพิวเตอร์ส่วนบุคคลของท่านและโทรศัพท์มือถือของท่านเพื่อใช้ Cloudflare DNS โดยทำตามคำแนะนำ %1"
 
 msgid "Confirm"
 msgstr "ยืนยัน"
@@ -2557,6 +2605,9 @@ msgstr "ลิขสิทธิ์"
 msgid "Copywriter"
 msgstr "กอปปี้ไรท์เตอร์หรือ ผู้เขียนต้นฉบับ"
 
+msgid "Cost per acquisition (CPA) for EU affiliates only"
+msgstr "ค่าใช้จ่ายต่อการได้ลูกค้ามา (CPA) สำหรับพันธมิตรในสหภาพยุโรปเท่านั้น"
+
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "ต้นทุน - ต้นทุนของการดำเนินการคำสั่งซื้อของท่าน ประกอบด้วยสเปรดเป็นหลัก ซึ่งคือ ความแตกต่างระหว่างราคาเสนอซื้อและราคาเสนอขายของเรา"
 
@@ -2616,6 +2667,9 @@ msgstr "สร้างบัญชีเงินเสมือนใหม่
 
 msgid "Create account with Google"
 msgstr "สร้างบัญชีด้วยบัญชีของ Google"
+
+msgid "Create an MT5 account now"
+msgstr "สร้างบัญชี MT5 ตอนนี้"
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "ผลิตเนื้อหาที่เกี่ยวข้อง ที่มีความกระชับ ชัดเจน สำหรับใช้ในเว็บไซต์ของบริษัทฯ บล็อก สื่อสังคมช่องทางต่างๆ และสื่อการตลาด"
@@ -2776,14 +2830,29 @@ msgstr "วงเงินซื้อขายต่อวัน"
 msgid "Dash vs US Dollar"
 msgstr "เงินดิจิทัล Dash เทียบกับ ดอลลาร์สหรัฐ"
 
+msgid "Data Controller"
+msgstr "ผู้ควบคุมข้อมูล"
+
 msgid "Data Feed"
 msgstr "ฟีดข้อมูล"
+
+msgid "Data Protection Act (DPA)"
+msgstr "กฎหมายการป้องกันข้อมูล (DPA)"
 
 msgid "Data Protection Officer"
 msgstr "เจ้าหน้าที่ดูแลข้อมูล"
 
 msgid "Data Retention"
 msgstr "การเก็บรักษาข้อมูล"
+
+msgid "Data Subject"
+msgstr "เจ้าของข้อมูล"
+
+msgid "Data retention"
+msgstr "การเก็บรักษาข้อมูล"
+
+msgid "Data will be stored in a range of different places, including on the applicant's application record, in HR management systems, and on other IT systems (including email)."
+msgstr "ข้อมูลจะถูกเก็บไว้ในสถานที่ต่างๆ แตกต่างกัน รวมถึงข้อมูลของผู้สมัครงาน ในระบบการบริหารทรัพยากรบุคคล และระบบงานสารสนเทศอื่นๆ (รวมถึงในอีเมล์)"
 
 msgid "Date"
 msgstr "วันที่"
@@ -2989,9 +3058,6 @@ msgstr "ปิดใช้งาน"
 msgid "Disclaimer"
 msgstr "ข้อสงวนสิทธิ์"
 
-msgid "Disclaimer: The Economic Calendar tool is a third-party application developed by MetaQuotes Software Corp. and its data can change without prior notice. %1 is not responsible for the content or accuracy of its data, or for any loss or damage of any sort resulting from its data."
-msgstr "ข้อสงวนสิทธิ์: เครื่องมือปฏิทินทางเศรษฐกิจเป็นซอฟท์แวร์อื่นที่พัฒนาโดย MetaQuotes Software Corp. และข้อมูลสามารถเปลี่ยนแปลงได้โดยไม่มีการแจ้งให้ทราบล่วงหน้า %1จะไม่รับผิดชอบต่อเนื้อหา หรือ ความถูกต้องของข้อมูล หรือความสูญเสีย หรือ ความเสียหายอันเกิดมาจากข้อมูลเหล่านี้"
-
 msgid "Disclaimers"
 msgstr "ข้อสงวนสิทธิ์"
 
@@ -3024,6 +3090,9 @@ msgstr "โปรดอย่าส่งบิทคอยน์ไปยัง
 
 msgid "Do not trade when you are tired or are under the influence of alcohol."
 msgstr "โปรดอย่าเทรดเมื่อท่านเหนื่อยล้า หรือ เมื่อท่านอยู่ในภาวะที่มีแอลกอฮอล์"
+
+msgid "Do you have 40 minutes for an interview?"
+msgstr "คุณมี 40 นาทีสำหรับการสัมภาษณ์หรือไม่"
 
 msgid "Do you offer any referral tools to your IBs?"
 msgstr "ท่านมีเครื่องมืออ้างอิงใด ๆ ให้กับ IBs ของท่านหรือไม่?"
@@ -3058,6 +3127,9 @@ msgstr "ไม่แตะ"
 msgid "Don't have an account?"
 msgstr "ยังไม่มีบัญชีใช่ไหม?"
 
+msgid "Don’t share your %1 account or payment methods with any other person."
+msgstr "อย่าแบ่งปันบัญชี %1 หรือวิธีการชำระเงินให้แก่ผู้อื่น"
+
 msgid "Don’t worry, you can simply <a href='%1'>reset your password</a>."
 msgstr "ไม่ต้องกังวล ท่านสามารถ<a href='%1'>ตั้งค่ารหัสผ่านใหม่</a>ได้อย่างง่ายดาย"
 
@@ -3066,6 +3138,12 @@ msgstr "บัญชีไม่เคลื่อนไหว และ บั�
 
 msgid "Download"
 msgstr "ดาวน์โหลด"
+
+msgid "Download Binary VPN app For Android"
+msgstr "ดาวน์โหลดแอพพลิเคชัน Binary VPN สำหรับแอนดรอยด์"
+
+msgid "Download Binary VPN app for Windows Desktop"
+msgstr "ดาวน์โหลดแอพพลิเคชัน Binary VPN สำหรับเครื่องเดสก์ทอปที่ใช้วินโดว์ส"
 
 msgid "Download CSV"
 msgstr "ดาวน์โหลด CSV"
@@ -3085,8 +3163,17 @@ msgstr "ดาวน์โหลด MT5 สำหรับระบบปฏิ�
 msgid "Download MT5 for your desktop or laptop to access the powerful tools and features enjoyed by millions of traders."
 msgstr "ดาวน์โหลด MT5 สำหรับเครื่องคอมพิวเตอร์เดสก์ทอป หรือ โน๊ตบุ๊กเพื่อใช้เครื่องมืออันทรงพลังและรูปแบบที่ล้านเทรดเดอร์พึงปรารถนา"
 
+msgid "Download our VPN app for your preferred device"
+msgstr "ดาวน์โหลดแอพพลิเคชัน VPN บนอุปกรณ์ที่ท่านต้องการ"
+
+msgid "Download our VPN app now"
+msgstr "ดาวน์โหลดแอพพลิเคชัน VPN ของเราตอนนี้เลย"
+
 msgid "Download our desktop app now:"
 msgstr "ดาวน์โหลดแอพพลิเคชันสำหรับเดสก์ท็อปของเราตอนนี้:"
+
+msgid "Download the %1desktop app%2 for the most secure way to access the %3 website."
+msgstr "ดาวน์โหลด%1dแอพบนเดสก์ทอป%2ซึ่งเป็นวิธีที่ปลอดภัยที่สุดในการเข้าถึงเว็บไซต์ %3"
 
 msgid "Download the Android App"
 msgstr "ดาวน์โหลดแอนดรอยด์แอพพลิเคชัน"
@@ -3154,8 +3241,8 @@ msgstr "ดัชนี EUR - วัดค่าของยูโรต่อ 5
 msgid "EUR/GBP"
 msgstr "EUR/GBP"
 
-msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions and/or terms and/or clauses of this Agreement."
-msgstr "แต่ละฝ่ายจะต้องปฏิบัติในสิ่งที่ร้องขอโดยคู่สัญญาอีกฝ่ายหนึ่งอย่างสมควรเพื่อให้เกิดผลตามข้อกำหนด และ/หรือ เงื่อนไข และ/หรือ ข้อความในสัญญานี้"
+msgid "Each Party shall do anything reasonably required by the other Party to give effect to the provisions of this Agreement."
+msgstr "แต่ละฝ่ายจะต้องปฏิบัติในสิ่งที่บันทึกเป็นข้อตกลงโดยอีกฝ่ายอย่างสมควรเพื่อให้เกิดผลตามการบังคับใช้เงื่อนไขของข้อตกลงนี้"
 
 msgid "Each Party shall do anything reasonably required by the other Party to give effect to the terms of this Agreement."
 msgstr "แต่ละฝ่ายจะต้องปฏิบัติในสิ่งที่บันทึกเป็นข้อตกลงโดยอีกฝ่ายอย่างสมควรเพื่อให้เกิดผลตามเงื่อนไขของข้อตกลงนี้"
@@ -3187,6 +3274,12 @@ msgstr "การโอนเงินแต่ละครั้ง มี %1 �
 msgid "Earn"
 msgstr "รับรายได้"
 
+msgid "Earn $30 to trade on %1"
+msgstr "ได้รับ 30 เหรียญสหรัฐ เพื่อซื้อขายบน %1"
+
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU."
+msgstr "รับค่าคอมมิชชัน 100 เหรียญสหรัฐสำหรับการอ้างอิงลูกค้าใหม่ที่ประสบความสำเร็จแต่ละราย ลูกค้าที่ได้รับการเชิญจะต้องเปิด %1 บัญชีลงทุนเงินจริง %2 ผ่านทางลิงค์พันธมิตรเฉพาะและฝากเงินจำนวน 100 เหรียญสหรัฐ หรือ มากกว่า (ครั้งเดียว หรือ ยอดรวมสะสม) ในบัญชี แผนคอมมิชชันนี้มีให้สำหรับพันธมิตรในสหภาพยุโรปเท่านั้น"
+
 msgid "Earn a commission on each client’s MT5 trading activity – paid out daily."
 msgstr "ได้รับคอมมิชชั่นจากกิจกรรมซื้อขาย MT5 ของลูกค้าแต่ละคน และได้รับเงินรายวัน"
 
@@ -3202,17 +3295,17 @@ msgstr "รับค่าคอมมิชชั่นในกิจกรร
 msgid "Earn commissions by introducing new customers to %1."
 msgstr "ท่านจะได้รับผลตอบแทนเมื่อท่านแนะนำลูกค้าใหม่ให้ %1"
 
+msgid "Earn increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
+msgstr "รายได้จากการจ่ายค่าตอบแทนที่สูงขึ้นจากอัตราคอมมิชชั่นที่ให้เงินรางวัลเป็นชั้นๆ และเป็นขั้นแก่ท่านขึ้นอยู่กับรายได้สุทธิที่ได้มาจากลูกค้าที่ได้รับการเชิญ"
+
 msgid "Earn money for any verifiable errors that you find."
 msgstr "ท่านสามารถมีรายได้จากข้อผิดพลาดใดๆ ที่มีการพิสูจน์ได้ที่ท่านพบ"
 
 msgid "Earn payouts up to USD 50,000. Losses are limited to your initial stake and nothing more."
-msgstr "ได้รับเงินสูงถึง 50,000 ดอลลาร์สหรัฐ การขาดทุนจำกัดอยู่เพียงเงินต้นเท่านั้น และไม่มากไปกว่าจำนวนเงินที่วางเดิมพัน"
+msgstr "ได้รับเงินสูงถึง 50,000 เหรียญสหรัฐ การขาดทุนจำกัดอยู่เพียงเงินต้นเท่านั้น และไม่มากไปกว่าจำนวนเงินที่วางเดิมพัน"
 
 msgid "Earn the same proportional return on stakes of all values."
 msgstr "ได้ผลตอบแทนต่อเงินที่ลงไปของมูลค่าทั้งหมดเป็นสัดส่วนเดียวกัน"
-
-msgid "Earn up to 35% commission with an award-winning binary options trading platform."
-msgstr "รับค่าคอมมิชชั่นถึง 35% จากแพลตฟอร์มซื้อขายไบนารีออปชั่นที่ได้รับรางวัล"
 
 msgid "Ebooks, videos, and more"
 msgstr "หนังสืออิเล็กทรอนิกส์ วีดีโอ และอื่นๆ"
@@ -3282,6 +3375,9 @@ msgstr "สถานะการจ้างงาน"
 
 msgid "Enable"
 msgstr "เปิดใช้งาน"
+
+msgid "Enable %1two-factor authentication%2 on your account."
+msgstr "เปิดใช้งาน%1การรับรองโดยใช้ 2 ตัวแปร%2บนบัญชีของท่าน"
 
 msgid "Enable two-factor authentication for an extra layer of security."
 msgstr "เปิดการรับรองโดยใช้ 2 ตัวแปรเพื่อความปลอดภัยอีกระดับหนึ่ง"
@@ -3370,6 +3466,12 @@ msgstr "เท่ากับ"
 msgid "Equity is the sum of your balance and floating profit and loss (PnL). Margin level is the ratio of equity to margin. When that ratio reaches a specified percentage (usually 100%), your account will be placed under margin call. This does not affect your ability to open new positions; it serves to alert you that your floating PnL is moving lower. However, it is recommended to add funds to your account in order to keep your positions open. Alternatively, you may close losing positions."
 msgstr "ทุน (Equity) คือ ผลรวมของยอดดุลคงเหลือและกำไรและขาดทุนลอย (PnL) ระดับมาร์จิน คือ สัดส่วนของทุนต่อมาร์จิน เมื่อสัดส่วนนั้นถึงร้อยละที่ระบุ (โดยปกติ 100%) บัญชีของท่านจะถูกวางไว้ภายใต้มาร์จินคอล สิ่งนี้จะไม่กระทบต่อความสามารถในการเพิ่มตำแหน่งใหม่ของท่าน เพื่อทำหน้าที่เตือนว่า PnL ลอยของท่านกำลังเคลื่อนต่ำลง อย่างไรก็ตาม แนะนำให้เพิ่มเงินทุนในบัญชีของท่านเพื่อรักษาตำแหน่งเปิดเอาไว้ หรือ ท่านอาจจะปิดตำแหน่งที่กำลังจะขาดทุน"
 
+msgid "Establish a secure Internet connection and protect your privacy."
+msgstr "สร้างการเชื่อมต่ออินเทอร์เนตที่ปลอดภัยและป้องกันข้อมูลส่วนบุคคลของท่าน"
+
+msgid "Establish a secure, encrypted connection to a virtual private network (VPN) server using our VPN app to protect your data and privacy."
+msgstr "สร้างการเชื่อมต่อที่ปลอดภัย และมีการเข้ารหัสกับเซิร์ฟเวอร์ของเครือข่ายเสมือนส่วนตัว (VPN) โดยใช้แอพพลิเคชัน VPN ของเราเพื่อปกป้องข้อมูลและความเป็นส่วนตัวของท่าน"
+
 msgid "Estimated Net Worth"
 msgstr "ประมาณการมูลค่าสุทธิ"
 
@@ -3422,7 +3524,7 @@ msgid "Euro vs US Dollar"
 msgstr "เงินยูโร เทียบกับ ดอลลาร์สหรัฐ"
 
 msgid "European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Limited."
-msgstr "ผู้อยู่อาศัยในสหภาพยุโรปที่ต้องการซื้อขายผลิตภัณฑ์การพนันจะมีบัญชีเปิดกับบริษัท Binary (Europe) Ltd"
+msgstr "ผู้ที่พำนักอาศัยในสหภาพยุโรปที่ต้องการซื้อขายผลิตภัณฑ์การพนันจะมีบัญชีที่เปิดไว้กับบริษัท Binary (Europe) Ltd"
 
 msgid "European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd."
 msgstr "ผู้อยู่อาศัยในสหภาพยุโรปที่ต้องการซื้อขายผลิตภัณฑ์การลงทุนจะมีบัญชีเปิดกับบริษัท Binary (Europe) Ltd"
@@ -3535,6 +3637,9 @@ msgstr "คู่แปลกใหม่ – ประกอบด้วยส�
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "ขยายเครือข่ายพันธมิตรที่แข็งขันของเราในตลาดท้องถิ่นของท่าน เสริมสร้างกำลัง ทักษะ และความรู้ของกิจการในท้องถิ่นเพื่อทำให้องค์กรมีการเติบโตอย่างรวดเร็วในระดับโลก"
 
+msgid "Expat handbook"
+msgstr "คู่มือชาวต่างชาติ"
+
 msgid "Expats and international students make up more than 10% of Cyberjaya's vibrant population."
 msgstr "ในไซเบอร์จายาเป็นชาวต่างชาติและนักศึกษาต่างชาติมากกว่า 10% ของประชากร"
 
@@ -3598,14 +3703,17 @@ msgstr "ราคาที่หมดอายุ"
 msgid "Explanation"
 msgstr "คำอธิบาย"
 
-msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform. %1Create an MT5 account now%2 to start trading."
-msgstr "สำรวจโลกใหม่ทั้งหมดในการซื้อขายไบนารีออปชันกับแพลตฟอร์มแบบหลากหลายสินทรัพย์ชั้นนำของโลก %1Cสร้างบัญชี MT5 เดี๋ยวนี้%2 เพื่อเริ่มซื้อขาย"
+msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform."
+msgstr "สำรวจโลกใหม่ของการซื้อขายไบนารีออปชัน ด้วยแพลตฟอร์มหลายสินทรัพย์ชั้นนำของโลก"
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr "สำรวจทุกแพลตฟอร์มซื้อขาย แอพพลิเคชัน และเครื่องมือของเรา"
 
 msgid "Explore our HackerOne bounty programme"
 msgstr "ศึกษาโปรแกรม HackerOne ที่มีจำนวนมากของเรา"
+
+msgid "Explore ways to enhance your account security and manage your trading risk."
+msgstr "สำรวจวิธีที่จะเพิ่มความปลอดภัยของบัญชีและจัดการความเสี่ยงในการซื้อขาย"
 
 msgid "Extensive experience in the application of advanced coding principles and standards"
 msgstr "มีประสบการณ์ ความรู้ความเข้าใจเกี่ยวกับมาตรฐานและหลักการพัฒนาโปรแกรมขั้นสูง"
@@ -3662,7 +3770,7 @@ msgid "Family name"
 msgstr "นามสกุล"
 
 msgid "FasaPay enables electronic money transfers for individuals and payment gateways for merchants. For more info, please visit %1."
-msgstr "FasaPay ดำเนินการโอนเงินอิเล็กทรอนิกส์สำหรับบุคคลหรือเป็นเกตเวย์การจ่ายเงินสำหรับร้านค้า สำหรับข้อมูลเพิ่มเติม โปรดไปที่ %1"
+msgstr "FasaPay ดำเนินการโอนเงินอิเล็กทรอนิกส์สำหรับบุคคลหรือเป็นเกตเวย์การรับชำระเงินสำหรับร้านค้า สำหรับข้อมูลเพิ่มเติม โปรดเยี่ยมชม %1"
 
 msgid "Favourite artist"
 msgstr "ศิลปินที่ท่านโปรดปราน"
@@ -3710,7 +3818,7 @@ msgid "Final price"
 msgstr "ราคาสุดท้าย"
 
 msgid "Finally, make your prediction: will the market price end up higher or lower than the entry spot at the end of the contract? If you need to review a previous transaction, you may browse your full transaction history via the 'History' tab."
-msgstr "สุดท้ายคือการคาดการณ์ ราคาตลาดจะปิดที่สูงกว่าหรือต่ำกว่าสปอตเริ่มต้นเมื่อสิ้นสุดสัญญา ถ้าคุณต้องการตรวจดูธุรกรรมที่ผ่านมา คุณสามารถดูประวัติธุรกรรมทั้งหมดของคุณผ่านทางแท๊บ 'ประวัติ'"
+msgstr "สุดท้าย คือ การคาดการณ์ของท่าน ราคาตลาดจะปิดที่สูงกว่าหรือต่ำกว่าสปอตเริ่มต้นเมื่อสิ้นสุดสัญญา หากท่านต้องการตรวจดูธุรกรรมที่ผ่านมา ท่านสามารถดูประวัติธุรกรรมทั้งหมดของท่านผ่านทางแท็บ 'การใช้งานย้อนหลัง'"
 
 msgid "Finance"
 msgstr "การเงิน"
@@ -3985,6 +4093,9 @@ msgstr "ดัชนี GBP - วัดค่าของเงินปอน�
 msgid "GBP/USD currency pair and its bid-ask price."
 msgstr "คู่สกุลเงิน GBP/USD และราคาจะซื้อจะขาย"
 
+msgid "GDPR"
+msgstr "GDPR"
+
 msgid "GMT"
 msgstr "GMT"
 
@@ -4048,8 +4159,8 @@ msgstr "เริ่มต้น"
 msgid "Getting started"
 msgstr "เริ่มต้น"
 
-msgid "Getting started is free and easy – just %1fill out the application form%2, choose from two types of commission plans and wait for our approval."
-msgstr "เริ่มต้นง่าย และ ไม่มีค่าใช้จ่าย เพียงเค่ %1 กรอกใบสมัคร %2 เลือกหนึ่งในสองของแผนคอมมิชชั่นที่ท่านปรารถนา และรอการอนุมัติจากเรา"
+msgid "Getting started is free and easy – just %1fill out the application form%2, choose your preferred commission plan and wait for our approval."
+msgstr "เริ่มต้นง่ายและไม่มีค่าใช้จ่าย เพียงแค่ %1fกรอกใบสมัคร%2 เลือกแผนคอมมิชชั่นที่ต้องการ และรอการอนุมัติจากเรา"
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "เริ่มต้นง่าย และ ไม่มีค่าใช้จ่าย เพียงแค่%1กรอกใบสมัคร%2* และรอการอนุมัติจากเรา"
@@ -4267,6 +4378,9 @@ msgstr "ฉันจะเปลี่ยนแปลงการชำระเ
 msgid "How can I withdraw my commissions?"
 msgstr "จะถอนคอมมิชชั่นได้อย่างไร?"
 
+msgid "How can we help?"
+msgstr "ให้เราช่วยอะไรท่านได้บ้าง?"
+
 msgid "How do I know how much I have earned?"
 msgstr "ฉันจะทราบได้อย่างไรว่าฉันได้รับเงิน หรือ ทำเงินได้เท่าไร?"
 
@@ -4369,6 +4483,9 @@ msgstr "ข้าพเจ้าเข้าใจถึงความเสี
 msgid "I want to be treated as a professional client."
 msgstr "ฉันต้องการได้รับการปฏิบัติเสมือนเป็นลูกค้าผู้มีความเชี่ยวชาญ (Professional Client) คนหนึ่ง"
 
+msgid "I'm interested"
+msgstr "ฉันสนใจ"
+
 msgid "I. Quotes"
 msgstr "I. ราคา"
 
@@ -4423,11 +4540,11 @@ msgstr "ถ้ามีธุรกรรมที่กำลังจะปิ
 msgid "If an error is made in the calculation of your share of the revenue share, the Company reserves the right to correct such calculation at any time, and to reclaim from you any overpayment made by the Company to you (including, without limitation, by way of reducing future payments earned, revenue to cover any processed chargebacks) before you can start earning revenue again. In special cases, the Company reserves the right to exclude revenue sharing  on promotional funds deposited into the client's account by the Company."
 msgstr "หากมีข้อผิดพลาดในการคำนวณส่วนแบ่งของรายได้ บริษัทฯ สงวนสิทธิ์ในการแก้ไขการคำนวณนั้นๆ ณ เวลาใดๆ และบริษัทฯ จะพิจารณาเพื่อดำเนินการเรียกคืนเงินเกินที่ได้จ่ายให้ท่าน (รวมถึง การปราศจากข้อจำกัด การลดจำนวนเงินที่ท่านจะได้รับในอนาคต รายได้ที่ครอบคลุมกระบวนการชำระเงิน) ก่อนที่ท่านจะเริ่มรับรู้รายได้อีกครั้ง ในกรณีพิเศษ ต่างๆ บริษัทฯ สงวนสิทธิ์ในการแยกเงินได้ที่เกิดจากส่วนของการส่งเสริมการตลาดที่ต้องจัดสรรให้กับบัญชีลูกค้า"
 
-msgid "If any provision and/or term and/or clause of this Agreement be held invalid or void or unenforceable whatsoever by any court or Arbitration or regulatory body or competent authority or any other authority or law whatsoever in any jurisdiction in which the Agent provide its services, the remainder of this Agreement shall remain in full force and effect."
-msgstr "หากข้อกำหนด และ/หรือ เงื่อนไข และ/หรือข้อความใดๆ ของสัญญานี้ ถือว่าไม่มีผลบังคับใช้ หรือ เป็นโมฆะ หรือ ไม่สามารถบังคับใช้ได้ไม่ว่าเหตุผลอะไรก็ตามโดยศาล หรือ อนุญาโตตุลาการ หรือ หน่วยงานที่มีอำนาจควบคุม หรือ พนักงานเจ้าหน้าที่ หรือเจ้าหน้าที่ผู้มีอำนาจอื่นๆ หรือกฎหมาย ไม่ว่าใครก็ตามในพื้นที่เขตอำนาจตามกฎหมายที่ตัวแทนให้บริการอยู่ ส่วนที่เหลือของสัญญาจะยังคงมีผลบังคับใช้และสมบูรณ์"
-
 msgid "If any provision of these Terms is found to be illegal, void, or unenforceable, the unenforceable provision will be modified so as to render it enforceable to the maximum extent possible in order to effect the intention of the provision; if a term cannot be so modified, it will be severed and the remaining provisions of these Terms will not be affected in any way."
 msgstr "หากข้อกำหนดของข้อตกลงเหล่านี้พบว่ามีการดำเนินการผิดกฎหมาย ยกเลิก หรือบังคับใช้ไม่ได้ ข้อกำหนดที่บังคับใช้ไม่ได้นั้นจะถูกแก้ไขเพื่อให้บังคับใช้ได้ หรือขยายผลให้มากที่สุดเพื่อเป็นไปตามวัตถุประสงค์ของข้อกำหนด และหากข้อตกลงใดๆ ไม่สามารถแก้ไขได้ ผลของเงื่อนไขเหล่านั้นจะไม่ถูกบังคับผลที่เกิดขึ้นเช่นกัน"
+
+msgid "If any provision of this Agreement is held to be invalid, void or unenforceable whatsoever by any court or Arbitration or regulatory body or competent authority or any other authority or law whatsoever in any jurisdiction in which the Agent provide its services, the remainder of this Agreement shall remain in full force and effect."
+msgstr "หากข้อกำหนดของสัญญานี้ ถือว่าไม่มีผลบังคับใช้ หรือ เป็นโมฆะ หรือ ไม่สามารถบังคับใช้ได้ไม่ว่าเหตุผลอะไรก็ตามโดยศาล หรือ อนุญาโตตุลาการ หรือ หน่วยงานที่มีอำนาจควบคุม หรือ พนักงานเจ้าหน้าที่ หรือเจ้าหน้าที่ผู้มีอำนาจอื่นๆ หรือกฎหมาย ไม่ว่าใครก็ตามในพื้นที่เขตอำนาจตามกฎหมายที่ตัวแทนฯ ให้บริการอยู่ ส่วนที่เหลือของสัญญาจะยังคงมีผลบังคับใช้และสมบูรณ์"
 
 msgid "If any provision of this Agreement is held to be void or unenforceable in whole or part, the impugned provision (or part thereof) shall be deemed to be deleted from this Agreement and the remaining provisions (including the remainder of the affected provision) shall continue to be valid and applicable."
 msgstr "หากเงื่อนไขของข้อตกลงนี้ถูกยกเลิก หรือ ไม่สามารถบังคับใช้ได้ทั้งหมด หรือบางส่วน เงื่อนไขที่ขัดแย้ง (หรือ ส่วนนั้น) จะถือว่า ถูกลบจากข้อตกลงและเงื่อนไข และเงื่อนไขข้อตกลงที่เหลือ (รวมถึงเงื่อนไขที่มีผล) จะยังถูกต้องและสามารถใช้ได้ต่อไป"
@@ -4672,8 +4789,8 @@ msgstr "หากท่านปรารถนาที่จะถอนหล
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr "หากท่านต้องการทราบข้อมูลเพิ่มเติมในการเป็นตัวแทนชำระเงิน โปรดติดต่อเราที่ <a href='mailto:%1'>%1</a>"
 
-msgid "If you would like to file a complaint with regards to our service, kindly contact us on complaints@binary.com, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details."
-msgstr "หากท่านต้องการแจ้งข้อปรับปรุง หรือร้องทุกข์เกี่ยวกับบริการของเรา โปรดติดต่อเราที่ complaints@binary.com และให้รายละเอียดที่เกี่ยวข้องกับประสบการณ์ที่ท่านพบ เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน เวลาที่ใช้ในการดำเนินการเพื่อให้มีคำตอบสุดท้าย ภายใน 10 วันทำการ (นอกจากว่า มีการขยายผลตามที่กฎหมายอนุญาต) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
+msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within %2 working days from receipt of all relevant details."
+msgstr ""
 
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us on complaints@binary.com by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgstr "หากท่านต้องการแจ้งข้อปรับปรุง หรือร้องทุกข์เกี่ยวกับบริการซื้อขายมาร์จินของเราที่กำหนดในข้อตกลงนี้ โปรดติดต่อเราที่ complaints@binary.com และให้รายละเอียดที่เกี่ยวข้องกับเหตุการณ์ที่ท่านพบ เราจะดำเนินการตรวจสอบและแจ้งกลับให้ท่านทราบต่อข้อร้องเรียนของท่าน เวลาที่ใช้ในการดำเนินการตามปกติ คือ ประมาณ 1-2 สัปดาห์ (และมากที่สุด คือ ภายใน 2 เดือน) เมื่อได้รับเอกสารและรายละเอียดที่เกี่ยวข้องทั้งหมด"
@@ -4779,6 +4896,9 @@ msgstr "ในการดำเนินการตามคำสั่งซ
 
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr "ในตลาดแลกเปลี่ยนเงินตรา นักลงทุนสามารถกำหนดสัญญาเพื่อราคาที่เปลี่ยนแปลงของหนึ่งสกุลเงินที่สัมพันธ์กับอีกสกุลเงินหนึ่ง เช่น หากนักลงทุนกำหนด ค่าเงินสูงขึ้น ของตลาด EUR/USD คือ พวกเขากำลังทำนายว่า มูลค่าของเงินยูโร จะเพิ่มขึ้นที่สัมพันธ์กับมูลค่าของเงินดอลลาร์สหรัฐ"
+
+msgid "In light of the EU General Data Protection Regulation 2016/679 and the Data Protection Act 2018, the applicant is entitled to a number of rights with regards to the applicant's personal data; namely, the following rights:"
+msgstr "จากระเบียบการป้องกันข้อมูลพื้นฐานของสหภาพยุโรป ฉบับที่ 2016/679 (EU General Data Protection Regulation 2016/679) และพระราชบัญญัติคุ้มครองข้อมูล ค.ศ. 2018 ผู้สมัครจะมีสิทธิ์ที่เกี่ยวข้องกับข้อมูลส่วนบุคคล ดังต่อไปนี้"
 
 msgid "In order to access Telegram Bot, please <a href=\"%1\">generate an API Token</a> and enter it in the input box below."
 msgstr "เพื่อเข้าถึง Telegram Bot กรุณา<a href=\"%1\">สร้างโทเค่น API</a>และใส่ลงไปในช่องด้านล่าง"
@@ -4930,6 +5050,9 @@ msgstr "เทคโนโลยีสารสนเทศ"
 msgid "Inheritance"
 msgstr "มรดก"
 
+msgid "Install antivirus software (such as Avast Free Antivirus for %1Windows%2 and %3Mac%4) on your computer."
+msgstr "ติดตั้งซอฟต์แวร์ป้องกันไวรัส (เช่น Avast Free Antivirus สำหรับ %1Windows%2และ%3Mac%4) บนคอมพิวเตอร์ของคุณ"
+
 msgid "Instant access"
 msgstr "เข้าถึงได้ทันที"
 
@@ -4977,6 +5100,9 @@ msgstr "ความเสี่ยงของการซื้อขายท
 
 msgid "Interpretation"
 msgstr "การแปลความ"
+
+msgid "Interpretations"
+msgstr "การตีความ"
 
 msgid "Interview process"
 msgstr "กระบวนการสัมภาษณ์"
@@ -5059,6 +5185,9 @@ msgstr "ออกเอกสารภายใต้ชื่อของท่
 msgid "It is a condition of using the website that:"
 msgstr "เงื่อนไขหนึ่งของการใช้เว็บไซต์:"
 
+msgid "It is agreed and understood that any of the Parties may terminate this Agreement by giving 7 days written notice to the other Party."
+msgstr "เป็นที่ยอมรับและเข้าใจว่า แต่ละฝ่ายอาจยุติสัญญานี้ได้โดยบอกกล่าวเป็นลายลักษณ์อักษรล่วงหน้า 7 วันให้อีกฝ่ายทราบ"
+
 msgid "It is agreed and understood that the Commencement date of this Agreement means the date on which the Agent account is approved by the Company."
 msgstr "เป็นที่ยอมรับและเข้าใจว่า วันเริ่มของสัญญานี้ หมายถึง วันที่บัญชีตัวแทนได้รับการอนุมัติจากบริษัทฯ"
 
@@ -5068,23 +5197,23 @@ msgstr "เป็นที่ยอมรับและเข้าใจว่
 msgid "It is agreed that Confidential Information shall be considered as confidential even after the termination of the business relationship established under this Agreement or any other agreement or arrangement between the Parties."
 msgstr "เป็นที่ยอมรับว่า ข้อมูลที่เป็นความลับ จะถือว่า เป็นความลับ ถึงแม้จะเป็นเวลาหลังจากการยกเลิกความสัมพันธ์ทางธุรกิจที่สร้างขึ้นภายใต้สัญญานี้ หรือสัญญาอื่นๆใด หรือข้อตกลงระหว่างคู่สัญญา"
 
-msgid "It is agreed that any Withdrawals through the Agent shall be made as follows:"
-msgstr "การถอนหลักประกันใดๆ ผ่านตัวแทนจะต้องดำเนินการ ดังต่อไปนี้"
-
 msgid "It is agreed that any deposits through the Agent shall be made as follows:  "
 msgstr "การฝากหลักประกันใดๆ ผ่านตัวแทนจะต้องดำเนินการ ดังต่อไปนี้"
 
-msgid "It is agreed that on the Commencement Date of this Agreement and on the date of each transaction as per Section B, the Agent represents and warrants that:"
-msgstr "เป็นที่ยอมรับว่า ในวันเริ่มต้นสัญญาและในวันของธุรกรรมแต่ละอันตาม ข้อ B ตัวแทนรับรอง และ ยืนยันว่า"
+msgid "It is agreed that any withdrawals through the Agent shall be made as follows:"
+msgstr "การถอนหลักประกันใดๆ ผ่านตัวแทนฯ จะต้องดำเนินการ ดังต่อไปนี้"
 
-msgid "It is agreed that the Company shall not be responsible or liable for any matter arising out of or in relation to the use and/or operation whatsoever of any website owned or used whatsoever by the Agent. It is understood that the Agent shall indemnify the Company for all and any losses that the Company may suffer arising out of, or in relation to the use or operations of any website used or owned by the Agent."
-msgstr "บริษัทฯ จะไม่รับผิดชอบ หรือ รับผิดในเรื่องใดๆ ที่เกิดขึ้นจาก หรือ เกี่ยวข้องกับการใช้ และ/หรือ การดำเนินงานอะไรก็ตามของเว็บไซต์ที่ตัวแทนฯ เป็นเจ้าของ หรือใช้ เป็นที่เข้าใจว่า ตัวแทนฯ จะชดใช้ความเสียหายให้แก่บริษัทฯ สำหรับความสูญเสียใดๆ หรือ ทั้งหมดที่บริษัทฯ จะต้องประสบที่เกิดขึ้นจาก หรือ เกียวข้องกับการใช้หรือดำเนินการของเว็บไซต์ที่ตัวแทนฯ เป็นเจ้าของ หรือใช้งาน"
+msgid "It is agreed that on the Commencement Date of this Agreement and on the date of each transaction, the Agent represents and warrants that:"
+msgstr "เป็นที่ยอมรับว่า ในวันเริ่มต้นสัญญาและในวันของธุรกรรมแต่ละรายกา ตัวแทนฯ ให้การรับรอง และ ยืนยันว่า"
 
-msgid "It is further agreed and understood that the Agent shall not use any domain name that includes the name, %1 and/or any derivation or variation of this name, able to give the impression to the average and/or reasonable Client that the Company and the Agent is the same Person."
-msgstr "เป็นที่ยอมรับและเข้าใจต่อไปอีกว่า ตัวแทนฯ จะไม่ใช้ชื่อโดเมนที่มีชื่อ %1และ/หรือ ที่มีต้นกำเนิดจาก หรือ ดัดแปลงจากชื่อนี้ หรือที่สามารถให้เกิดความเข้าใจแก่ลูกค้าทั่วๆ ไป และ/หรือ ลูกค้าที่มีเหตุมีผลว่า บริษัทฯ และตัวแทนฯ เป็นบุคคลเดียวกัน"
+msgid "It is agreed that the Company shall not be responsible or liable for any matter arising out of or in relation to the use and operation of any website owned or used by the Agent. It is understood that the Agent shall indemnify the Company for all and any losses that the Company may suffer arising out of, or in relation to the use or operations of any website used or owned by the Agent."
+msgstr "บริษัทฯ จะไม่รับผิดชอบ หรือ รับผิดในเรื่องใดๆ ที่เกิดขึ้นจาก หรือ เกี่ยวข้องกับการใช้ และ การดำเนินงานของเว็บไซต์ใดๆ ที่ตัวแทนฯ เป็นเจ้าของ หรือใช้งาน เป็นที่เข้าใจว่า ตัวแทนฯ จะชดใช้ความเสียหายให้แก่บริษัทฯ สำหรับความสูญเสียใดๆ หรือ ทั้งหมดที่บริษัทฯ จะต้องประสบที่เกิดขึ้นจาก หรือ เกียวข้องกับการใช้หรือดำเนินการของเว็บไซต์ที่ตัวแทนฯ เป็นเจ้าของ หรือใช้งาน"
 
-msgid "It is further noted that the Company shall be the sole owner of all rights or titles or interests whatsoever of data and/or other information generated and/or produced and/or distributed by or through %1 electronic systems and other electronic systems used by %1, including any modifications."
-msgstr "เป็นที่ทราบว่า บริษัทฯ เป็นเจ้าของแต่เพียงผู้เดียวของสิทธิ์ทุกอย่าง หรือ ชื่อเรื่อง หรือ ผลประโยชน์ใดๆ ก็ตามของข้อมูล และ/หรือข้อมูลอื่นๆ ที่สร้างขึ้น และ/หรือ ผลิต และ/หรือ เผยแพร่โดย หรือ ผ่านทางระบบอิเล็ทรอนิกส์ของ %1 หรือ ระบบอิเล็ทรอนิกส์อื่นๆ ที่ %1ใช้ รวมถึงส่วนที่มีการแก้ไขเพิ่มเติม"
+msgid "It is further agreed and understood that the Agent shall not use any domain name that includes the name %1 and any derivation or variation of this name able to give the impression that the Company and the Agent are the same Person."
+msgstr "เป็นที่ยอมรับและเข้าใจต่อไปอีกว่า ตัวแทนฯ จะไม่ใช้ชื่อโดเมนที่มีชื่อ %1และการสร้างคำใดๆ หรือ คำแปลงของชื่อที่มีต้นกำเนิดจาก หรือ ดัดแปลงจากชื่อนี้ หรือชื่อที่สามารถทำให้เกิดความเข้าใจแก่ลูกค้าทั่วๆ ไป ให้เข้าใจว่า บริษัทฯ และตัวแทนฯ เป็นบุคคลเดียวกัน"
+
+msgid "It is further noted that the Company shall be the sole owner of all rights or titles or interests whatsoever of data and other information generated or produced and distributed by or through %1 electronic systems and other electronic systems used by %1, including any modifications."
+msgstr "เป็นที่ทราบว่า บริษัทฯ เป็นเจ้าของแต่เพียงผู้เดียวของสิทธิ์ทุกอย่าง หรือ ชื่อเรื่อง หรือ ผลประโยชน์ใดๆ ก็ตามของข้อมูล และข้อมูลอื่นๆ ที่สร้างขึ้น หรือ ผลิต และเผยแพร่โดย หรือ ผ่านทางระบบอิเล็ทรอนิกส์ของ %1 หรือ ระบบอิเล็ทรอนิกส์อื่นๆ ที่ %1ใช้ รวมถึงส่วนที่มีการแก้ไขเพิ่มเติม"
 
 msgid "It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts."
 msgstr "มันเป็นสิ่งสำคัญที่ท่านพึงสังเกตการณ์อย่างใกล้ชิด มันเป็นความรับผิดชอบในการดูแลหน้าที่ในระหว่างการเปิดสัญญาใดๆ ท่านควรจะหมั่นตรวจสอบบัญชีของท่าน"
@@ -5134,14 +5263,23 @@ msgstr "ม.ค."
 msgid "January"
 msgstr "มกราคม"
 
+msgid "Job Applicant Privacy Policy"
+msgstr "นโยบายการรักษาข้อมูลส่วนบุคคลของผู้สมัครงาน"
+
 msgid "Job Details"
 msgstr "รายละเอียดงาน"
+
+msgid "Job applicant privacy policy"
+msgstr "นโยบายการรักษาข้อมูลส่วนบุคคลของผู้สมัครงาน"
 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to enhance and promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "ร่วมเป็นส่วนหนึ่งของทีมอันสดใสของเรา การมีความสามารถอย่างมืออาชีพ การทำงานร่วมกันเพื่อช่วยส่งเสริมแพลตฟอร์มที่มีความทันสมัย ซึ่งเป็นหนึ่งในองค์กรที่ได้รับการยอมรับในสาขาการซื้อขายไบนารีออปชั่น เป็นเวลามากกว่า 15 ปี"
 
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "ร่วมเป็นส่วนหนึ่งของทีมอันสดใสของเรา การมีความสามารถอย่างมืออาชีพ การทำงานร่วมกันเพื่อช่วยส่งเสริมแพลตฟอร์มที่มีความทันสมัย ซึ่งเป็นหนึ่งในองค์กรที่ได้รับการยอมรับในสาขาการซื้อขายไบนารีออปชั่น เป็นเวลามากกว่า 15 ปี"
+
+msgid "Join the %1 Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform."
+msgstr "เข้าร่วมในโปรแกรมพันธมิตร %1และรับคอมมิชชันโดยอ้างอิงลูกค้าใหม่ให้เข้ามาใช้บริการแพลตฟอร์มการซื้อขายไบนารีออปชันที่ได้รับรางวัลของเรา"
 
 msgid "Jul"
 msgstr "ก.ค."
@@ -5164,11 +5302,20 @@ msgstr "เขตอำนาจศาลและกฎหมายบังค
 msgid "K. Electronic Trading Platform and Transactions"
 msgstr "K. แพลตฟอร์มการซื้อขายอิเล็กทรอนิกส์และธุรกรรมอิเล็กทรอนิกส์"
 
+msgid "Keep Safe"
+msgstr "รักษาความปลอดภัย"
+
+msgid "Keep safe"
+msgstr "รักษาความปลอดภัย"
+
 msgid "Keep track of your authorised applications."
 msgstr "บันทึกการใช้งานแอพพลิเคชันของท่าน"
 
 msgid "Keep up with breaking news and events on global markets."
 msgstr "ตามให้ทันข่าวล่ามาแรงและเหตุการณ์ในตลาดโลก"
+
+msgid "Keep your web browser %1up-to-date%2."
+msgstr "ทำให้เว็บเบราว์เซอร์ %1uอัพเดท%2เสมอ"
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
 msgstr "ติดตามข่าว และแนวโน้มของตลาดในกลุ่มผลิตภัณฑ์ที่ท่านสนใจ จะช่วยท่านได้อย่างมหาศาล โดยเฉพาะเมื่อท่านเพิ่งเริ่มลงทุน"
@@ -5283,6 +5430,9 @@ msgstr "เรียนรู้เพิ่มเติมเกี่ยวก
 
 msgid "Learn more about our corporate culture"
 msgstr "ศึกษาเพิ่มเติมเกี่ยวกับวัฒนธรรมองค์กรของเรา"
+
+msgid "Learn more about submitting essential documents with our handy infographic:"
+msgstr "เรียนรู้เพิ่มเติมเกี่ยวกับการส่งเอกสารที่จำเป็นด้วยข้อมูลภาพที่เป็นประโยชน์ของเรา:"
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "เรียนรู้แนวคิดพื้นฐานของการซื้อขายสินทรัพย์ Meta ใน MetaTrader 5"
@@ -5617,9 +5767,6 @@ msgstr "ปรับปรุงตัวแปรราคาที่แม่
 msgid "Maintain adequate speed and volume of output"
 msgstr "ปรับปรุงความเร็วและปริมาณของผลลัพธ์ที่เพียงพอ"
 
-msgid "Major Pairs"
-msgstr "คู่หลัก"
-
 msgid "Major and minor pairs, plus Smart FX indices"
 msgstr "คู่หลัก คู่รอง และดัชนี Smart FX"
 
@@ -5935,9 +6082,6 @@ msgstr "ค่าต่ำสุด:"
 msgid "Mining, Construction, Manufacturing and Transport Workers"
 msgstr "เจ้าหน้าที่เหมือง ก่อสร้าง อุตสาหกรรม และการขนส่ง"
 
-msgid "Minor Pairs"
-msgstr "คู่รอง"
-
 msgid "Minor pairs"
 msgstr "คู่รอง"
 
@@ -5979,6 +6123,9 @@ msgstr "สังเกตการณ์และปรับปรุงกา
 
 msgid "Monitor hardware and software deployment and manage our worldwide network of servers and office networks"
 msgstr "ดูแลการติดตั้งฮาร์ดแวร์และซอฟท์แวร์และบริหารจัดการเครื่องแม่ข่ายที่อยู่ในเครือข่ายทั่วโลกและเครือข่ายของสำนักงาน"
+
+msgid "Monitor recent logins to your account using the %1login history%2 facility."
+msgstr "ตรวจสอบการลงชื่อเข้าใช้ในบัญชีของคุณล่าสุดโดยใช้เครื่องมือ%1loประวัติการเข้าใช้%2"
 
 msgid "Monitor the movements of your favourite assets and markets at the same time."
 msgstr "ติดตามการเคลื่อนไหวของสินทรัพย์และตลาดที่ท่านโปรดปรานในเวลาเดียวกัน"
@@ -6091,8 +6238,8 @@ msgstr "ชื่อของสัตว์เลี้ยงของท่า
 msgid "Name:"
 msgstr "ชื่อ:"
 
-msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
-msgstr "บัตรประจำตัวประชาชน หรือ เอกสารใดๆ ที่ออกโดยรัฐบาล ซึ่งมีรูปถ่าย ชื่อของท่าน และแสดงวันเดือนปีเกิดของท่าน"
+msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
+msgstr ""
 
 msgid "Natural wonders"
 msgstr "สิ่งมหัศจรรย์ทางธรรมชาติ"
@@ -6123,6 +6270,9 @@ msgstr "ไม่ว่าท่าน เครือญาติโดยต�
 
 msgid "Net Annual Income"
 msgstr "รายได้สุทธิต่อปี"
+
+msgid "Net deposits"
+msgstr "เงินฝากสุทธิ"
 
 msgid "Net profit"
 msgstr "กำไรสุทธิ"
@@ -6190,8 +6340,8 @@ msgstr "ไม่ใช่"
 msgid "No Advice"
 msgstr "ไม่มีคำแนะนำ"
 
-msgid "No Party shall be deemed liable for a partial or complete failure to meet its obligations, under this Agreement, in case of force majeure events including but not limited to civil war, unrest, insurrection, international intervention, any governmental actions, exchange controls, nationalizations, devaluations, forfeitures, natural disasters, act of God and other inevitable and/or unforeseeable and/or unanticipated and/or unpredicted events, not depending on the will of the Parties."
-msgstr "จะไม่มีคู่สัญญาฝ่ายใดที่จะต้องรับผิดชอบต่อความล้มเหลวบางส่วน หรือ ทั้งหมดในการดำเนินการตามข้อผูกมัดภายใต้สัญญานี้ ในกรณีที่มีเหตุการณ์สุดวิสัย รวมถึงแต่ไม่จำกัดเพียง สงครามกลางเมือง สถานการณ์ความไม่สงบ จราจล การแทรกแซงของนานาชาติ หรือ การดำเนินการใดของรัฐบาล การแลกเปลี่ยนการควบคุม การโอนเป็นของรัฐ การลดค่าเงิน การริบทรัพย์ ภัยธรรมชาติ หรือปรากฎการณ์ธรรมชาติ และเหตุการณ์อื่นๆ ที่หลีกเลี่ยงไม่ได้ และ/หรือไม่สามารถเห็นล่วงหน้าได้ และ/หรือผิดคาด และ/หรือไม่สามารถคาดการณ์ได้ และไม่ได้ขึ้นอยู่กับเจตจำนงของคู่สัญญา"
+msgid "No Party shall be deemed liable for a partial or complete failure to meet its obligations, under this Agreement, in case of force majeure events including but not limited to civil war, unrest, insurrection, international intervention, any governmental actions, exchange controls, nationalizations, devaluations, forfeitures, natural disasters, act of God and other inevitable or unforeseeable or unanticipated or unpredicted events, not depending on the will of the Parties."
+msgstr "จะไม่มีคู่สัญญาฝ่ายใดที่จะต้องรับผิดชอบต่อความล้มเหลวบางส่วน หรือ ทั้งหมดในการดำเนินการตามข้อผูกมัดภายใต้สัญญานี้ ในกรณีที่มีเหตุการณ์สุดวิสัย รวมถึงแต่ไม่จำกัดเพียง สงครามกลางเมือง สถานการณ์ความไม่สงบ จราจล การแทรกแซงของนานาชาติ หรือ การดำเนินการใดของรัฐบาล การแลกเปลี่ยนการควบคุม การโอนเป็นของรัฐ การลดค่าเงิน การริบทรัพย์ ภัยธรรมชาติ หรือปรากฎการณ์ธรรมชาติ และเหตุการณ์อื่นๆ ที่หลีกเลี่ยงไม่ได้ หรือ ไม่สามารถเห็นล่วงหน้าได้ หรือ ผิดคาด หรือ ไม่สามารถคาดการณ์ได้ และไม่ได้ขึ้นอยู่กับเจตจำนงของคู่สัญญา"
 
 msgid "No Touch trades"
 msgstr "การซื้อขายแบบไม่แตะเส้น"
@@ -6228,6 +6378,9 @@ msgstr "ไม่มีการชำระเงิน หากสปอต�
 
 msgid "No person shall abuse this site for the purpose of money laundering. The Company employs best-practice anti-money laundering procedures. All transactions are checked to prevent money laundering which may have several effects on Clients. The Company reserves the right to refuse to do business with, to discontinue to do business with, and to reverse the transactions of Clients who do not accept or adhere to these anti-money laundering processes. Acceptable funds should not originate from criminal activity. The Company is bound to report suspicious transactions to relevant authorities."
 msgstr "ไม่ควรมีการใช้ช่องทางของเว็บไซต์นี้ในทางที่ผิดเพื่อวัตถุประสงค์การฟอกเงิน บริษัทฯ มีหลักการและปฏิบัติตามระเบียบวิธีป้องกันการฟอกเงิน ทุกธุรกรรมมีการตรวจสอบเพื่อป้องกันการฟอกเงินซึ่งจะมีผลกระทบต่อลูกค้า บริษัทฯ สงวนสิทธิ์ในการปฏิเสธ หรือ ดำเนินธุรกิจ การระงับการดำเนินธุรกิจ และการยกเลิกธุรกรรมของลูกค้าที่ไม่ยอมรับ หรือ ไม่ปฏิบัติตามกระบวนการป้องกันการฟอกเงิน เงินทุนที่ใช้ในธุรกรรมจะต้องไม่ได้มาจากผลได้ หรือ การกระทำที่ผิดกฎหมาย บริษัทฯ มีหน้าที่รายงานธุรกรรมที่น่าสงสัยกับหน่วยงานต่างๆ ที่เกี่ยวข้อง"
+
+msgid "No thanks"
+msgstr "ไม่ ขอบคุณ"
 
 msgid "No, there are no minimum requirements to withdraw your IB commissions."
 msgstr "ไม่ และไม่มีจำนวนขั้นต่ำในการถอนเงินค่าคอมมิชชั่น IB ของท่าน"
@@ -6424,8 +6577,8 @@ msgstr "เฉพาะตัวอักษร ตัวเลข เว้น�
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
 msgstr "ตัวอักษร ช่องว่าง ขีดกลาง จุด และ เครื่องหมายอัญประกาศ ( ' ) เท่านั้น ที่สามารถใช้ได้"
 
-msgid "Only numbers and spaces are allowed."
-msgstr "ตัวเลข และช่องว่างเท่านั้นที่อนุญาต"
+msgid "Only numbers, hyphens, and spaces are allowed."
+msgstr "อนุญาตเฉพาะตัวเลข เครื่องหมายขีดกลาง และช่องว่างเท่านั้น"
 
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "อนุญาตให้มีบัญชีเพียง 1 บัญชีต่อบุคคล จะไม่มีการถอน และ/หรือ คืนเงินจากบัญชีที่เปิดด้วยชื่อที่ไม่ถูกต้อง หรือ หลายๆบัญชีที่เปิดโดยคนเดียวกัน"
@@ -6638,7 +6791,7 @@ msgid "Our values"
 msgstr "ค่านิยมของเรา"
 
 msgid "Our website contains links to other websites and may contain banner or icon advertisements related to third-party websites. These websites and their advertisements may submit cookies to your web browser which is beyond our control. We are not responsible for the privacy practices or the content of such websites. We encourage you to read the privacy policies of these websites because their practices may differ from ours."
-msgstr "เว็ยไซต์ของเรามีลิงค์ไปยังเว็บไซต์อื่นและอาจจะมีแบนเนอร์ หรือ ไอคอนโฆษณาที่เกี่ยวกับเว็บไซต์ภายนอกอื่นๆ เว็บไซต์เหล่านี้และโฆษณาต่างๆ อาจจะส่งคุกกี้ให้กับเว็บเบราเซอร์ของท่าน ซึ่งเป็นสิ่งที่อยู่นอกเหนือการควบคุมของเรา เราไม่รับผิดชอบต่อแนวปฏิบัติในเรื่องความเป็นส่วนตัว หรือ เนื้อหาของเว็บไซต์ดังกล่าว เราขอให้ท่านอ่านนโยบายความเป็นส่วนตัวของเว็บไซต์เหล่านั้น เนื่องจากการปฏิบัติอาจมีความแตกต่างกับแนวปฏิบัติของเรา"
+msgstr "เว็ยไซต์ของเรามีลิงค์ไปยังเว็บไซต์อื่นและอาจจะมีแบนเนอร์ หรือ ไอคอนโฆษณาที่เกี่ยวกับเว็บไซต์ภายนอกอื่นๆ เว็บไซต์เหล่านี้และโฆษณาต่างๆ อาจจะส่งคุกกี้ให้กับเว็บเบราเซอร์ของท่าน ซึ่งเป็นสิ่งที่อยู่นอกเหนือการควบคุมของบริษัทฯ บริษัทฯ ไม่รับผิดชอบต่อแนวปฏิบัติในเรื่องความเป็นส่วนตัว หรือ เนื้อหาของเว็บไซต์ดังกล่าว บริษัทฯ ขอให้ท่านอ่านนโยบายการรักษาข้อมูลส่วนบุคคลของเว็บไซต์เหล่านั้น เนื่องจากการปฏิบัติอาจมีความแตกต่างกับแนวปฏิบัติของบริษัทฯ"
 
 msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)"
 msgstr "พื้นที่นอกสหภาพยุโรปนั้น บริษัท Binary (C.R.) S.A. เป็นผู้ให้บริการผลิตภัณฑ์ทางการเงิน มีที่ตั้งอยู่ที่ ชั้น 5 อาคาร 6 Centro Ejecutivo La Sabana, Sabana Sur, San José คอสตาริกา บริษัท Binary (V) Ltd ตั้งอยู่ที่อาคาร Govant, Port Vila, ตู้ปณ 1276 วานูอาตู ซึ่งได้รับการรับรองจาก Vanuatu Financial Services Commission (%1 ดูใบรับรอง %2) บริษัท Binary (BVI) Ltd มีที่ตั้งอยู่ที่ ชั้น 2 อาคาร O’Neal Marketing Associates, Wickham’s Cay II, ตู้ปณ 3174, Road Town, Tortola VB1110 หมู่เกาะบริติชเวอร์จิน ซึ่งได้รับการรับรองจาก  British Virgin Islands Financial Services Commission (%3 ใบรับรองเลขที่ SIBA/L/18/1114%4) และบริษัท Binary (FX) Ltd. ตั้งอยู่ที่ ล็อต F16 ชั้น 1 Paragon Labuan ถนน Tun Mustapha 87000 ลาบวน มาเลเซีย ซึ่งได้รับการรับรองจาก Labuan Financial Services Authority ในการดำเนินการธุรกิจตัวแทนด้านการเงิน (%5 ใบรับรองเลขที่ MB/18/0024%6)"
@@ -6814,6 +6967,9 @@ msgstr "สิทธิ์"
 msgid "Personal Care, Sales and Service Workers"
 msgstr "พนักงานดูแลด้านสุขภาพ นักขาย และผู้ให้บริการต่างๆ"
 
+msgid "Personal Data"
+msgstr "ข้อมูลส่วนบุคคล"
+
 msgid "Personal Data and Privacy"
 msgstr "ข้อมูลส่วนบุคคลและความเป็นส่วนตัว"
 
@@ -6919,6 +7075,9 @@ msgstr "โปรดยืนยันว่า ท่านไม่ใช่�
 msgid "Please confirm the transaction details in order to complete the transfer:"
 msgstr "โปรดยืนยันรายละเอียดของธุรกรรมเพื่อทำให้การโอนสมบูรณ์:"
 
+msgid "Please ensure that you have the Telegram app installed on your device."
+msgstr "โปรดตรวจให้แน่ใจว่า ท่านมีแอพพลิเคชัน Telegram ติดตั้งในอุปกรณ์ที่ท่านใช้งาน"
+
 msgid "Please enter a valid Login ID."
 msgstr "โปรดป้อนรหัสผู้ใช้งานที่ถูกต้อง"
 
@@ -6969,6 +7128,9 @@ msgstr "โปรดกรอกหมายเลขประจำตัวผ
 
 msgid "Please provide us with the following information:"
 msgstr "โปรดให้ข้อมูลดังต่อไปนี้"
+
+msgid "Please read this %1privacy policy%2 before submitting your application."
+msgstr "โปรดอ่าน%1นโยบายการรักษาข้อมูลส่วนบุคคล%2นี้ ก่อนส่งใบสมัครของท่าน"
 
 msgid "Please reload the page"
 msgstr "โปรดโหลดหน้านี้อีกครั้ง"
@@ -7071,6 +7233,9 @@ msgstr "บัญชีทดลองใช้มีเงินเครดิ
 
 msgid "Practice your trading strategies in a risk-free environment by using virtual funds."
 msgstr "ฝึกวางยุทธศาสตร์การซื้อขายในสภาพที่ไม่มีความเสี่ยงโดยใช้เงินทุนทดลอง"
+
+msgid "Practise with virtual funds"
+msgstr "ฝึกฝนด้วยเงินเสมือน"
 
 msgid "Practise your trading strategy with virtual funds in a risk-free environment."
 msgstr "ฝึกฝนการวางกลยุทธการซื้อขายของท่านโดยใช้เงินทุนเสมือน ปราศจากความเสี่ยงใดๆ"
@@ -7204,6 +7369,9 @@ msgstr "รับผิดชอบในการแปลเนื้อหา
 msgid "Process website content translations when a full time translator is unavailable"
 msgstr "ช่วยแปลเนื้อหาของเว็บไซต์ เมื่อนักแปลประจำไม่ว่าง"
 
+msgid "Processing"
+msgstr "การประมวลผล"
+
 msgid "Processing Time"
 msgstr "เวลาในการประมวลผล"
 
@@ -7242,9 +7410,6 @@ msgstr "กำไร / ขาดทุน"
 
 msgid "Profit Table"
 msgstr "ตารางกำไร"
-
-msgid "Profit from increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
-msgstr "กำไรจากการจ่ายเงินที่สูงขึ้นจากอัตราคอมมิชชั่นที่ให้เงินรางวัลเป็นระดับขั้น ขึ้นอยู่กับรายได้สุทธิที่ได้มาจากลูกค้าที่ได้รับการอ้างอิงเพื่อใช้งานระบบ"
 
 msgid "Profit or Loss"
 msgstr "กำไรหรือขาดทุน"
@@ -7317,6 +7482,9 @@ msgstr "เวลาซื้อ"
 
 msgid "Purchase request sent"
 msgstr "คำขอสั่งซื้อได้ถูกส่งแล้ว"
+
+msgid "Purpose of collecting Personal Data"
+msgstr "วัตถุประสงค์ของการเก็บรวบรวมส่วนบุคคล"
 
 msgid "Put Spread"
 msgstr "พุทสเปรด"
@@ -7775,7 +7943,7 @@ msgid "Scalable"
 msgstr "ปรับขนาดได้"
 
 msgid "Scan the QR code below with your authentication app. We recommend %1 or %2. Please note that %3 is not supported."
-msgstr "สแกน QR code ด้านล่างด้วยแอพของคุณ เราขอแนะนำให้ใช้ %1 หรือ %2 โปรดทราบว่าไม่มีการรองรับการใช้งานของ %3"
+msgstr "สแกน QR code ด้านล่างด้วยแอพพลิเคชันของท่าน เราขอแนะนำให้ใช้ %1 หรือ %2 และไม่รองรับการใช้งาน %3"
 
 msgid "Scope and Intent"
 msgstr "ขอบเขตและความปรารถนา"
@@ -7803,6 +7971,9 @@ msgstr "วินาที"
 
 msgid "Secret question"
 msgstr "คำถามลับ"
+
+msgid "Secure your internet connection in three easy steps:"
+msgstr "การสร้างความปลอดภัยในการเชื่อมต่อทางอินเทอร์เน็ตของท่าน ทำได้ง่ายๆ เพียง 3 ขั้นตอน"
 
 msgid "Security"
 msgstr "หลักทรัพย์"
@@ -7927,6 +8098,9 @@ msgstr "รอบระยะเวลาการซื้อขาย:"
 msgid "Set Currency"
 msgstr "ตั้งค่าสกุลเงิน"
 
+msgid "Set a %1cashier lock password%2 to prevent unauthorised access to your cashier."
+msgstr "ตั้ง%1cรหัสผ่านเพื่อล็อกแคชเชียร์%2เพื่อป้องกันการเข้าถึงแคชเชียร์ที่ไม่ได้รับอนุญาต"
+
 msgid "Set barrier(s) to define your position and trigger the payout you'll receive."
 msgstr "ตั้งค่า Barrier เพื่อกำหนดตำแหน่งของท่าน และกำหนดผลของตัวเงินที่ท่านจะได้รับ"
 
@@ -7996,6 +8170,12 @@ msgstr "ควรมีค่ามากกว่า %1"
 msgid "Should start with letter or number, and may contain hyphen and underscore."
 msgstr "ควรเริ่มต้นด้วยอักษร หรือ ตัวเลข และอาจประกอบด้วยเครื่องหมายขีดกลาง และขีดล่าง"
 
+msgid "Should the applicant have any questions about this privacy policy or if the applicant would like to exercise any of their rights, they should contact the Company's Data Protection Officer (DPO) by %1."
+msgstr "หากผู้สมัครมีคำถามเกี่ยวกับนโยบายการรักษาข้อมูลส่วนบุคคลของผู้สมัคร หรือ ต้องการใช้สิทธิ์ใดๆ ก็ตาม ผู้สมัครควรติดต่อเจ้าหน้าที่ด้านการป้องกันข้อมูลของบริษัทฯ (DPO) ทาง %1"
+
+msgid "Should the applicant's application be successful and an employment with the Binary Group be accepted, the applicant's data will be retained until the cessation of their employment. A separate privacy policy for employees will be made available to the applicant after entering employment with the Company."
+msgstr "หากใบสมัครของผู้สมัครผ่านและได้รับการจ้างงานกับเครือไบนารี ข้อมูลของผู้สมัครจะถูกเก็บไว้จนกระทั่งสิ้นสุดสถานะการจ้างงาน โดยมีนโยบายการรักษาข้อมูลส่วนบุคคลต่างหากสำหรับพนักงานและได้ไว้ให้แก่ผู้สมัครหลังจากที่ได้เข้าทำงานกับบริษัทฯ แล้ว"
+
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "ค่าใช้จ่ายเหล่านี้ไม่ครอบคลุมในการรวมเข้าในบัญชีของท่าน พวกเราขอสงวนสิทธิ์ในการตรวจสอบทางเลือกอื่นๆ สำหรับการชำระเงิน ตัวอย่างเช่น หากบัญชีของท่านมีการแนะนำบัญชีอื่นที่มีการซื้อขาย พวกเราจะชำระค่านายหน้าของบัญชีเหล่านี้กระทั่งบัญชีเหล่านั้นจะไม่ได้ใช้งาน"
 
@@ -8064,9 +8244,6 @@ msgstr "Skrill ให้โซลูชั่นในการชำระเ�
 
 msgid "Small island charm"
 msgstr "เสน่ห์ของเกาะเล็ก ๆ"
-
-msgid "Smart FX"
-msgstr "Smart FX"
 
 msgid "SmartCharts"
 msgstr "SmartCharts"
@@ -8335,8 +8512,8 @@ msgstr "ภายใต้กฎหมายที่เกี่ยวข้อ
 msgid "Subject to the availability and sufficiency of funds in your MT5 Real Account, you may withdraw your funds from your MT5 Real Account to your %1 account."
 msgstr "ขึ้นอยู่กับเงินทุนที่มีอยู่และเพียงพอในบัญชี MT5 จริงของท่าน ท่านอาจจะถอนเงินของท่านออกจากบัญชี MT5 จริงไปยังบัญชี %1"
 
-msgid "Subject to the law and the terms and/or conditions and/or provisions and/or clauses of this Agreement, the Company shall not be liable, to the Agent for any matter arising out of or in relation to this Agreement."
-msgstr "ภายใต้กฎหมาย และเงื่อนไข และ/หรือ ข้อตกลง และ/หรือ ข้อกำหนด และ/หรือ ข้อความในสัญญานี้ บริษัทฯ จะไม่รับผิดชอบต่อตัวแทนในเรื่องใดๆ ก็ตามที่เกิดขึ้นจาก หรือ เกี่ยวข้องกับสัญญานี้"
+msgid "Subject to the law and the terms and conditions of this Agreement, the Company shall not be liable, to the Agent for any matter arising out of or in relation to this Agreement."
+msgstr "ภายใต้กฎหมาย และเงื่อนไขและข้อตกลงของสัญญานี้ บริษัทฯ จะไม่รับผิดชอบต่อตัวแทนในเรื่องใดๆ ก็ตามที่เกิดขึ้นจาก หรือ เกี่ยวข้องกับสัญญานี้"
 
 msgid "Subject to the law and the terms of the Client Agreement, the Company shall not be liable to you or your Money Manager for any matter arising out of or in relation to this Agreement."
 msgstr "ภายใต้กฎหมายและข้อตกลงของลูกค้า บริษัทฯ จะไม่มีรับผิดชอบต่อท่าน หรือ ผู้จัดการการเงินของท่าน ในเรื่องใดๆ ก็ตามที่เกิดขึ้นจาก หรือ ในส่วนที่เกี่ยวข้องกับข้อตกลงนี้"
@@ -8344,9 +8521,6 @@ msgstr "ภายใต้กฎหมายและข้อตกลงขอ
 msgid "Subject to the law, neither the Company nor any of its directors, officers, managers, employees, or agents shall be liable to the Agent or Client for any loss, damage or debt whatsoever arising directly or indirectly out of, or in connection with this Agreement. The Agent agrees to indemnify the Company and its directors, officers, managers, employees, or agents from, and against, any and all liabilities, losses, damages, costs, and expenses including all and any legal fees incurred arising out of his failure to comply with any and all of his obligations set forth in this Agreement."
 msgstr "ภายใต้กฎหมาย บริษัทฯ กรรมการฯ เจ้าหน้าที่ ผู้จัดการ พนักงาน หรือตัวแทน จะไม่รับผิดชอบให้แก่ตัวแทนและลูกค้า\n"
 "ต่อความสูญเสีย เสียหาย หรือ หนี้ที่เกิดขึ้นกับท่านทั้งทางตรงและทางอ้อมจาก หรือ เชื่อมโยงกับสัญญานี้ ตัวแทนฯ ตกลงที่จะชดเชยบริษัทฯ และกรรมการฯ เจ้าหน้าที่ ผู้จัดการ พนักงาน หรือ ตัวแทนฯ จาก และ/หรือ ต่อหนี้สิน ความสูญเสีย เสียหาย ต้นทุน หรือค่าใช้จ่ายใดๆ รวมถึงค่าธรรมเนียมทนายที่เหมาะสมที่เกิดขึ้นจากความล้มเหลวในการปฏิบัติตามข้อผูกมัดใดๆ หรือ ทั้งหมดที่อยู่ในสัญญานี้"
-
-msgid "Subject to the provisions of Sections J and N of this Agreement, it is agreed and understood that any of the Parties may terminate this Agreement by giving 7 days written notice to the other Party."
-msgstr "ภายใต้ข้อกำหนดของข้อ J และ N ของสัญญานี้ เป็นที่ยอมรับและเข้าใจว่า คู่สัญญาฝ่ายใดอาจจะยกเลิกสัญญานี้โดยการแจ้งเป็นลายลักษณ์อักษรให้แก่อีกฝ่ายภายใน 7 วัน"
 
 msgid "Submit"
 msgstr "ส่ง"
@@ -8535,7 +8709,7 @@ msgid "The %1 Order Execution Policy."
 msgstr "นโยบายการดำเนินการคำสั่งซื้อของ %1"
 
 msgid "The %1 Privacy and Security Policy;"
-msgstr "นโยบายความปลอดภัยและความเป็นส่วนตัวของ %1"
+msgstr "นโยบายความปลอดภัยและนโยบายการรักษาข้อมูลส่วนบุคคลของ %1"
 
 msgid "The %1 Quantitative Analytics group is responsible for the pricing of binary options offered on our website, as well as the risk management and profitability of its options book. Processing over a million transactions each day, the company manages a book of exotic options which arguably exceeds in complexity that of the typical derivatives desk."
 msgstr "กลุ่มงานการวิเคราะห์เชิงปริมาณของ %1 รับผิดชอบต่อราคาของไบนารีออปชั่นที่ประกาศบนเว็บไซต์ของเรา โดยอยู่บนพื้นฐานของการประเมินความเสี่ยงและความสามารถในการทำกำไรของออปชั่น มากกว่าล้านธุรกรรมที่ประมวลผลในแต่ละวัน ประเภทออปชั่นต่างประเทศ ล้วนเป็นหลักฐานที่พิสูจน์ให้เห็นถึงการบริหารความซับซ้อนของอนุพันธ์ทั่วๆ ไป"
@@ -8603,38 +8777,44 @@ msgstr "บัญชีขั้นสูงมีสเปรดน้อย �
 msgid "The Affiliate's Obligations"
 msgstr "หน้าที่ความรับผิดชอบของพันธมิตร"
 
-msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default and/or breach of this Agreement."
-msgstr "ตัวแทนตกลงที่ชดใช้แก่บริษัทฯ สำหรับความเสียหายใดๆ หรือ ทั้งหมด ซึ่งอาจเกิดกับบริษัทฯ จาก หรือเกี่ยวข้องกับพฤติกรรมฉ้อโกงหรือการละเลย และ/หรือความประมาทใดๆ และ/หรือการประพฤติมิชอบ และ/หรือการเพิกเฉยอย่างจงใจ และ/หรือการละเมิดสัญญานี้"
+msgid "The Agent agrees to indemnify the Company for all and any losses that the Company may suffer arising out of, or in connection with its fraudulent acts or omissions, negligence, misconduct, wilful default and/or breach of this Agreement."
+msgstr "ตัวแทนตกลงที่ชดใช้แก่บริษัทฯ สำหรับความเสียหายใดๆ หรือ ทั้งหมด ซึ่งอาจเกิดกับบริษัทฯ จาก หรือ เกี่ยวข้องกับพฤติกรรมฉ้อโกง หรือ การละเลย ความประมาทใดๆ การประพฤติมิชอบ การเพิกเฉยอย่างจงใจ และ/หรือการละเมิดสัญญานี้"
 
-msgid "The Agent may provide its services to Clients of the Company who desire to deposit and/or withdraw money using the Agent. Especially, the Agent may provide its services to Clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) and/or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and/or local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
-msgstr "ตัวแทนอาจให้บริการแก่ลูกค้าของบริษัทฯ ที่ต้องการฝาก หรือถอนเงินโดยใช้ตัวแทน โดยเฉพาะอย่างยิ่ง ตัวแทนอาจให้บริการแก่ลูกค้าที่ตั้งใจจะใช้กระเป๋าเงินอิเล็กทรอนิกส์ หรือการชำระเงินอิเล็กทรอนิกส์ ที่นอกเหนือจากวิธีการชำระเงินที่บริษัทฯ ใช้ (ต่อไปนี้เรียกว่า \"การชำระเงินอิเล็กทรอนิกส์\") และ/หรือสกุลเงินท้องถิ่นนอกเหนือจากที่บริษัทฯ ยอมรับ (ซึ่งต่อไปนี้ เรียกว่า \"สกุลเงินท้องถิ่น\") และ/หรือการโอนเงินผ่านธนาคารท้องถิ่น (ต่อไปนี้เรียกว่า \"โอนเงินผ่านธนาคาร\")"
+msgid "The Agent may provide its services to clients of the Company who desire to deposit and/or withdraw money using the Agent. The Agent may provide its services to clients who intend to use e-wallet or e-payment methods other than those used by the Company (hereinafter referred to as the “e-payments”) or local currencies other than those accepted by the Company (hereinafter referred to as the “local currencies”) and local bank wire transfers (hereinafter referred to as the “bank wire transfers”)."
+msgstr "ตัวแทนฯ อาจให้บริการแก่ลูกค้าของบริษัทฯ ที่ต้องการฝาก หรือถอนเงินโดยใช้ตัวแทนฯ ตัวแทนฯ อาจให้บริการแก่ลูกค้าที่ตั้งใจจะใช้กระเป๋าเงินอิเล็กทรอนิกส์ หรือ การชำระเงินอิเล็กทรอนิกส์ ที่นอกเหนือจากวิธีการชำระเงินที่บริษัทฯ ใช้ (ต่อไปนี้เรียกว่า \"การชำระเงินอิเล็กทรอนิกส์\") หรือ สกุลเงินท้องถิ่นนอกเหนือจากที่บริษัทฯ ยอมรับ (ซึ่งต่อไปนี้ เรียกว่า \"สกุลเงินท้องถิ่น\") และ การโอนเงินผ่านธนาคารท้องถิ่น (ต่อไปนี้เรียกว่า \"โอนเงินผ่านธนาคาร\")"
 
-msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a Jurisdiction in which he operates."
+msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a jurisdiction in which he operates."
 msgstr "ตัวแทนรับรองและรับประกันว่า ได้ปฏิบัติตามและจะปฏิบัติตามกฎหมายทั้งหมดที่เกี่ยวกับการฟอกเงิน รวมถึงโปรแกรมสภาพบังคับทางการเงินและเศรษฐกิจของเขตพื้นที่ที่ตัวแทนดำเนินงานอยู่"
 
-msgid "The Agent shall not be authorized to offer its services, under this Agreement, to Clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"%1\">www.binary.com.</a>"
-msgstr "ตัวแทนจะไม่ได้รับอนุญาตให้มีการให้บริการภายใต้ตกลงนี้แก่ลูกค้าลูกค้าที่พำนักอยู่ในประเทศที่ถูกจำกัดตามที่ระบุไว้ในข้อกำหนดและเงื่อนไข (ซึ่งมีการแก้ไขเป็นครั้งคราว) ซึ่งมีการเผยแพร่บนเว็บไซต์ของเรา <a href=\"%1\"> www.binary.com</a>"
+msgid "The Agent shall further undertake to perform all necessary due diligence measures on its clients and the Company shall be entitiled, at any time, to request from the Agent to provide all information and documentation relating to its clients for the purposes of the Company's AML compliance."
+msgstr "ตัวแทนฯ รับผิดชอบต่อการสอบทานธุรกิจของลูกค้า และบริษัทฯ มีสิทธิ์ในทุกขณะที่จะร้องขอต่อตัวแทนฯ เพื่อให้ข้อมูลและส่งมอบเอกสารที่เกี่ยวข้องของลูกค้าต่อบริษัทฯ ตามวัตถุประสงค์ของการ ปฏิบัติตามนโยบายป้องกันและปราบปรามการฟอกเงินของบริษัทฯ"
 
-msgid "The Agent shall not produce any copies of any Confidential Information and/or any content based on the concepts contained within the Confidential Information for personal use and/or for distribution, without the Company’s request."
-msgstr "ตัวแทนฯ จะไม่ทำสำเนาของข้อมูลความลับ และ/หรือ เนื้อหาใด ๆ ตามแนวคิดที่อยู่ในข้อมูลลับสำหรับใช้ส่วนบุคคล และ/หรือ เผยแพร่โดยที่ไม่มีการร้องขอจากบริษัทฯ"
+msgid "The Agent shall not be authorized to offer its services, under this Agreement, to clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"%1\">www.binary.com.</a>"
+msgstr "ตัวแทนฯ จะไม่ได้รับอนุญาตให้มีการให้บริการภายใต้ตกลงนี้แก่ลูกค้าลูกค้าที่พำนักอยู่ในประเทศที่ถูกจำกัดตามที่ระบุไว้ในข้อกำหนดและเงื่อนไข (ซึ่งมีการแก้ไขเป็นครั้งคราว) ซึ่งมีการเผยแพร่บนเว็บไซต์ของบริษัทฯ <a href=\"%1\"> www.binary.com</a>"
+
+msgid "The Agent shall not produce any copies of any Confidential Information or any content based on the concepts contained within the Confidential Information for personal use or for distribution, without the Company’s request."
+msgstr "ตัวแทนฯ จะไม่ทำสำเนาของข้อมูลความลับ หรือ เนื้อหาใด ๆ ตามแนวคิดที่อยู่ในข้อมูลลับสำหรับใช้ส่วนบุคคล หรือ เผยแพร่โดยที่ไม่มีการร้องขอจากบริษัทฯ"
 
 msgid "The Agent shall not:"
 msgstr "ตัวแทนฯ จะไม่"
 
-msgid "The Agent shall provide any and all information and documentation, required in the context of the due diligence that the Company shall conduct, from time to time. The Company, complying with the law and providing its services under this Agreement, shall be entitled, at any time, to request from the Agent to provide all and any due diligence information and documentation related to itself and any other person connected and/or associated with it for the purposes of this Agreement."
-msgstr "ตัวแทนจะต้องให้ข้อมูลและเอกสารต่างๆ ที่กำหนดในบริบทของการตรวจสอบวิเคราะห์สถานะซึ่งบริษัทฯ จะต้องดำเนินการเป็นครั้งคราว บริษัทฯ ซึ่งปฏิบัติตามกฎหมาย และให้การบริการภายใต้ข้อตกลงนี้ จะมีสิทธิ์ไม่ว่าเวลาใดก็ตามที่จะร้องขอจากตัวแทนให้มอบข้อมูลการตรวจสอบวิเคราะห์สถานะและเอกสารทั้งหมดหรือบางอย่าง ที่เกี่ยวข้องกับบริษัทฯ และบุคคลอื่นที่เชื่อมโยง และ/หรือสัมพันธ์กับบริษัทฯ เพื่อวัตถุประสงค์ของสัญญานี้"
+msgid "The Agent shall provide any and all information and documentation, required in the context of the due diligence that the Company shall conduct, from time to time. The Company, complying with the law and providing its services under this Agreement, shall be entitled, at any time, to request from the Agent to provide all and any due diligence information and documentation related to itself and any other person connected or associated with it for the purposes of this Agreement."
+msgstr "ตัวแทนจะต้องให้ข้อมูลและเอกสารต่างๆ ที่กำหนดในบริบทของการตรวจสอบวิเคราะห์สถานะซึ่งบริษัทฯ จะต้องดำเนินการเป็นครั้งคราว บริษัทฯ ซึ่งปฏิบัติตามกฎหมาย และให้การบริการภายใต้ข้อตกลงนี้ จะมีสิทธิ์ไม่ว่าเวลาใดก็ตามที่จะร้องขอจากตัวแทนให้มอบข้อมูลการตรวจสอบวิเคราะห์สถานะและเอกสารทั้งหมดหรือบางอย่าง ที่เกี่ยวข้องกับบริษัทฯ และบุคคลอื่นที่เชื่อมโยง หรือ สัมพันธ์กับบริษัทฯ เพื่อวัตถุประสงค์ของสัญญานี้"
 
 msgid "The Agent shall submit an application including the following information:"
 msgstr "ตัวแทนฯ จะส่งใบสมัคร รวมถึงข้อมูลต่อไปนี้"
 
-msgid "The Agent shall treat all information related to the Company and Client including but not limited to Client identity, financial status, trading or transaction performance, as well as Company’s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the “Confidential Information”)."
-msgstr "ตัวแทนปฏิบัติต่อข้อมูลทุกๆ ชนิดที่เกี่ยวข้องกับบริษัทและลูกค้า รวมถึง แต่ไม่จำกัดเฉพาะข้อมูลแสดงตัวบุคคลของลูกค้า สถานะทางการเงิน การดำเนินงานทางการซื้อขาย หรือธุรกรรม ตลอดจน แผนธุรกิจของบริษัท ระดับราคา ความคิด แนวคิด รูปแบบ ข้อเสนอแนะ การพัฒนา การเตรียมการ โปรแกรม เทคนิค วิธี ความรู้ อุปกรณ์ หรือไม่ว่าอะไรก็ตาม ในลักษณะที่เป็นความลับ (ต่อไปเรียกว่า \"ข้อมูลลับ\")"
+msgid "The Agent shall treat all information related to the Company and the client including but not limited to client's identity, financial status, trading or transaction performance, as well as Company’s business plans, price points, ideas, concepts, formats, suggestions, developments, arrangements, programs, techniques, methodologies, knowhow, equipment, whatsoever as confidential (hereinafter referred to as the “Confidential Information”)."
+msgstr "ตัวแทนฯ ปฏิบัติต่อข้อมูลทุกๆ ชนิดที่เกี่ยวข้องกับบริษัทฯ และลูกค้า รวมถึง แต่ไม่จำกัดเฉพาะข้อมูลแสดงตัวบุคคลของลูกค้า สถานะทางการเงิน การดำเนินงานทางการซื้อขาย หรือธุรกรรม ตลอดจน แผนธุรกิจของบริษัทฯ ระดับราคา ความคิด แนวคิด รูปแบบ ข้อเสนอแนะ การพัฒนา การเตรียมการ โปรแกรม เทคนิค วิธี ความรู้ อุปกรณ์ หรือไม่ว่าอะไรก็ตาม ในลักษณะที่เป็นความลับ (ต่อไปเรียกว่า \"ข้อมูลลับ\")"
 
-msgid "The Agent shall upon demand provide the Company with all requested information and/or documentation in regards with its operations and competence including but not limited to its registration and/or incorporation, memberships, authorisations, knowledge, expertise and experience."
-msgstr "เมื่อมีการร้องขอ ตัวแทนฯ จะให้ข้อมูล และ/หรือ เอกสารที่ร้องขอทั้งหมดแก่บริษัท ที่เกี่ยวข้องกับการดำเนินงานและอำนาจหน้าที่ รวมถึงแต่ไม่จำกัดเพียง การจดทะเบียน และ/หรือ การรวมเข้าเป็นบริษัท สมาชิกภาพ อำนาจที่ได้รับมอบหมาย ความรู้ ความเชี่ยวชาญ และประสบการณ์"
+msgid "The Agent shall upon demand provide the Company with all requested information and documentation in regards with its operations and competence including but not limited to its registration, incorporation, memberships, authorisations, knowledge, expertise and experience."
+msgstr "เมื่อมีการร้องขอ ตัวแทนฯ จะให้ข้อมูล และ เอกสารที่ร้องขอทั้งหมดแก่บริษัท ที่เกี่ยวข้องกับการดำเนินงานและอำนาจหน้าที่ รวมถึงแต่ไม่จำกัดเพียง การจดทะเบียน การรวมเข้าเป็นบริษัท สมาชิกภาพ อำนาจที่ได้รับมอบหมาย ความรู้ ความเชี่ยวชาญ และประสบการณ์"
 
-msgid "The Agent thereinafter, shall transfer the requested sum to the Client. It is noted that these transactions fall out of the scope of this Agreement and as result the Company shall not be liable against the Agent and/or Client and/or any other person, under contract or tort law or any other applicable law, for any conflicts or potential conflicts arising out of or in connection with such transactions."
-msgstr "ตัวแทนตั้งแต่นี้ต่อไปจะโอนจำนวนที่ร้องขอให้แก่ลูกค้า ให้สังเกตว่า ธุรกรรมเหล่านี้ไม่อยู่ภายในขอบเขตของสัญญานี้ ฉะนั้น บริษัทฯ จะไม่รับผิดชอบตามกฎหมายต่อตัวแทน และ/หรือลูกค้า และ/หรือบุคคลใดๆ ภายใต้สัญญาหรือกฎหมาย หรือกฎหมายอื่นใดที่เกี่ยวข้อง สำหรับความขัดแย้ง ความขัดแย้งที่อาจเกิดขึ้น ซึ่งเกิดจาก หรือเชื่อมโยงกับธุรกรรมดังกล่าว"
+msgid "The Agent thereinafter, shall transfer the requested sum to the client. It is noted that these transactions fall out of the scope of this Agreement and as result the Company shall not be liable against the Agent and the client or any other person, under contract or tort law or any other applicable law, for any dispute or potential dispute arising out of or in connection with such transactions."
+msgstr "ตั้งแต่นี้ต่อไป เมื่อตัวแทนฯ จะโอนจำนวนที่ร้องขอให้แก่ลูกค้า โปรดทราบว่า ธุรกรรมเหล่านี้ไม่อยู่ภายในขอบเขตของสัญญานี้ ฉะนั้น บริษัทฯ จะไม่รับผิดชอบตามกฎหมายต่อตัวแทน และ ลูกค้า หรือ บุคคลใดๆ ภายใต้สัญญา หรือ กฎหมาย หรือ กฎหมายอื่นใดที่เกี่ยวข้อง สำหรับข้อร้องเรียน หรือ ข้อร้องเรียนที่อาจเกิดขึ้น ซึ่งเกิดจาก หรือ เชื่อมโยงกับธุรกรรมดังกล่าว"
+
+msgid "The Agent undertakes to the Company that it shall comply with, and the service will be performed in accordance with any applicable anti-corruption laws."
+msgstr "ตัวแทนฯ ให้คำสัญญาต่อบริษัทฯ ว่า จะปฏิบัติตาม และดำเนินการต่างๆ ตามกฎหมายว่าด้วยการป้องกันและปราบปรามการทุจริต"
 
 msgid "The Agent will send you the withdrawal amount (minus the commission) via your preferred payment method."
 msgstr "ตัวแทนรับชำระเงินจะส่งจำนวนเงินที่ถอนให้ท่าน (ลบค่าคอมมิชชั่น) ผ่านช่องทางการชำระเงินที่ท่านแสดงความประสงค์"
@@ -8645,14 +8825,14 @@ msgstr "ค่าเฉลี่ย"
 msgid "The Client shall accept the risk of using any additional functions provided by the Expert Advisor on the MT5 Trading Platform. The Company has no responsibility for the outcome of such trading and reserves the right to accept or reject the use of such functions with absolute discretion."
 msgstr "ลูกค้าจะยอมรับความเสี่ยงของการใช้งานฟังก์ชันต่างๆ ที่ดำเนินการโดย Expert Advisor ที่อยู่ในแพลตฟอร์มซื้อขาย MT5 บริษัทฯ ไม่รับผิดชอบต่อผลใดๆ ที่เกิดขึ้นจากการซื้อขาย และสงวนสิทธิ์ในการยอมรับ หรือ ปฏิเสธ การใช้งานตามดุลยพินิจ"
 
-msgid "The Client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his %1 Account (hereinafter referred to as the “%1 Agent Account”)."
-msgstr "ลูกค้าที่ใช้การชำระเงินอิเล็กทรอนิกส์ และการโอนเงินผ่านธนาคารอาจทำการฝากเงินกับตัวแทนฯ​ได้ หลังจากตัวแทนฯ รับฝากหลักทรัพย์ใดๆ จะทำการฝากเงินเข้าบัญชี %1 (ต่อไปนี้เรียกว่า \"บัญชีตัวแทน %1\")"
-
 msgid "The Client, before using the trading robots or Expert Advisors and forward trade, should test it on a demo Account. "
 msgstr "ก่อนการใช้หุ่นยนต์ซื้อขาย หรือ Expert Advisors และการซื้อขายล่วงหน้า ลูกค้าควรทดลองใช้งานฟังก์ชันดังกล่าวจากบัญชีทดลองใช้เสียก่อน"
 
-msgid "The Company and Agent (hereinafter referred to as “the Parties”) desire to enter into this Agreement whereby the Company will offer to its Clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement."
-msgstr "บริษัทฯ และตัวแทนฯ (ต่อไปนี้เรียกว่า \"คู่สัญญา\") ต้องการเข้าสู่สัญญานี้โดยบริษัทฯ จะเสนอบริการในการชำระเงินในท้องถิ่นผ่านตัวแทนฯ ภายในพื้นที่ที่ระบุไว้ในส่วน ง ของสัญญานี้"
+msgid "The Company and Agent (hereinafter referred to as “the Parties”) desire to enter into this Agreement whereby the Company will offer to its clients local payment processing services through the Agent within a territory as specified in Section D of this Agreement."
+msgstr "บริษัทฯ และตัวแทนฯ (ต่อไปนี้เรียกว่า \"คู่สัญญา\") ต้องการเข้าสู่สัญญานี้โดยบริษัทฯ จะเสนอบริการในการชำระเงินในท้องถิ่นผ่านตัวแทนฯ ภายในพื้นที่ที่ระบุไว้ในส่วน D ของสัญญานี้"
+
+msgid "The Company collects, stores, and processes a range of information about the applicant, such as, but not limited to:"
+msgstr "บริษัทฯ ดำเนินการรวบรวม เก็บรักษา และประเมินผลข้อมูลของผู้สมัคร รวมถึง"
 
 msgid "The Company does not accept any liability for any inconsistencies or results related to Clients utilizing Expert Advisors on the MT5 Trading Platform. Clients are liable for their use of Expert Advisors and the trading activity they conduct. The Company takes a neutral position on Clients’ use of Expert Advisors."
 msgstr "บริษัทฯ ปฏิเสธความรับผิดชอบใดๆ ต่อความไม่ต้องกันของระบบ หรือ ผลลัพธ์จากการใช้งานผ่าน Expert Advisors ของแพลตฟอร์ม MT5 ลูกค้ามีหน้าที่รับผิดชอบต่อการใช้งาน Expert Advisors และการใช้งานการซื้อขายที่เกิดขึ้น บริษัทฯ เป็นกลางต่อการใช้งาน Expert Advisors ของลูกค้า"
@@ -8696,11 +8876,17 @@ msgstr "บริษัทฯ ไม่รับผิดชอบความ�
 msgid "The Company is not under any obligation of confidentiality with respect to the Contributions;"
 msgstr "บริษัทฯ ไม่อยู่ภายใต้ข้อผูกพันใดๆ ของการรักษาความลับจากผลงานที่เกิดขึ้น"
 
+msgid "The Company is required under data protection legislation to notify the applicant of the information contained in this privacy notice. As such, it is important that the applicant read this notice, together with any other privacy notice that the Company may provide for the applicant on specific occasions when the Company is collectiong or processing personal data about the applicant, so that the applicant is aware of how and why the Company is using such information."
+msgstr "บริษัทฯ มีหน้าที่ปฏิบัติตามกฎหมายภายใต้กฎระเบียบการป้องกันข้อมูลในการแจ้งแก่ผู้สมัครถึงข้อมูลที่เกี่ยวข้องกับนโยบายการรักษาข้อมูลส่วนบุคคลนี้ ดังนั้น ผู้สมัครควรจะให้ความสำคัญและอ่านข้อกำหนดของนโยบายฯ นี้ควบคู่ไปกับนโยบายความเป็นส่วนบุคคลอื่นฯ ที่บริษัทฯ ได้นำเรียนต่อผู้สมัครในโอกาสต่างๆ และเมื่อบริษัทฯ ได้ดำเนินการรวบรวมหรือ ประเมินผลข้อมูลส่วนบุคคลเกี่ยวกับผู้สมัคร เพื่อผู้สมัครจะได้รับทราบว่า บริษัทฯ กำลังใช้ข้อมูลดังกล่าวอย่างไรและด้วยความประสงค์ใด"
+
 msgid "The Company is the sole owner of all rights or titles or interests whatsoever in and to all %1 electronic systems including but not limited to any and all software, e-mail and email management software, including any modifications."
 msgstr "บริษัทฯ เป็นเจ้าของแต่เพียงผู้เดียวในสิทธิ์ หรือ กรรมสิทธิ์ หรือ ผลประโยชน์ อะไรก็ตามในและต่อระบบอิเล็กทรอนิกส์ของ%1รวมถึงแต่ไม่จำกัดเพียงซอฟท์แวร์ อีเมล์ และซอฟท์แวร์การจัดการอีเมล์ บางอย่างหรือทั้งหมด รวมถึงการปรับเปลี่ยนใดๆ ด้วย"
 
 msgid "The Company makes no claims that the %1 website will be uninterrupted or provide an error free service, and will not be liable for the consequences of any such errors or interruptions."
 msgstr "บริษัทฯ ปฏิเสธในการอ้างสิทธิ์ที่ว่า เว็บไซต์ %1 จะไม่มีการถูกรบกวน หรือ เป็นบริการที่ปราศจากข้อผิดพลาด และไม่มีผลผูกพันต่อภาระหนี้ที่อาจเป็นผลมาจากข้อผิดพลาด หรือการขัดจังหวะใดๆ"
+
+msgid "The Company may also collect personal data about the applicant from third parties, such as further references supplied by former employers and information from criminal records checks. "
+msgstr "บริษัทฯ เก็บรักษาข้อมูลส่วนบุคคลของผู้สมัครจากบุคคลภายนอก เช่น การอ้างอิงเพิ่มเติมจากนายจ้างเดิมและข้อมูลประวัติอาชญากรรม "
 
 msgid "The Company may also impose volume trading limits on Client accounts at its sole discretion. Trading volume limits can be viewed in the Security & Limits section of your account. If the account balance exceeds the maximum account size, then withdrawals must be made to bring the balance down to under this limit."
 msgstr "บริษัทฯ อาจกำหนดข้อจำกัดการซื้อขายใดๆ กับบัญชีลูกค้าด้วยดุลยพินิจของบริษัทฯ โดยสามารถเรียกดูข้อกำหนดปริมาณการซื้อขายได้ในส่วนของข้อจำกัดและความปลอดภัยของบัญชีของท่าน หากยอดคงเหลือบัญชีเกินขนาดบัญชีสูงสุด จะต้องมีการถอนเพื่อทำให้ยอดคงเหลือกลับมาเป็นไปตามข้อจำกัด"
@@ -8710,6 +8896,9 @@ msgstr "บริษัทฯ อาจดำเนินการเปลี�
 
 msgid "The Company may change, suspend, terminate or discontinue any aspect of the %1 API, including the availability of any services, information features or functions accessible by means of the %1 API, on no less than seven days advance notice to you."
 msgstr "บริษัทฯ อาจทำการเปลี่ยนแปลง ระงับ ยุติ หรือ ยับยั้งการใช้ %1 API ต่างๆ รวมถึงการเปิดให้บริการระบบ ข้อมูล หรือ บริการต่างๆ บนเว็บ ตาม %1 API โดยเรียนให้ท่านทราบไม่น้อยกว่า 7 วันทำการ"
+
+msgid "The Company may collect this information in a variety of ways. Data is collected and contained in CVs or resumes, via Self-Assessment Topgrading Questionnaires/Interview (SATI), or through interviews or other forms of assessment, including online tests."
+msgstr "บริษัทฯ ดำเนินการเก็บรวบรวมข้อมูลเหล่านี้ในวิธีการต่างกัน ข้อมูลที่รวบรวมและมีเนื้อหาในจากประวัติย่อส่วนบุคคล หรือ รีซูเม่ แบบสอบถามเพื่อประเมินลักษณะและระดับทักษะส่วนบุคคล/การสัมภาษณ์ (SATI) หรือ ตลอดจนการสัมภาษณ์ หรือ ในรูปแบบการประเมินผลอื่นๆ รวมถึงการทำแบบทดสอบออนไลน์"
 
 msgid "The Company may from time to time inform you about changes on the website, new services and promotions. If you, however, wish to opt out of such a service and do not wish to receive any direct marketing data you can either unsubscribe to the service or email our customer support team. If you decide to opt in again into receiving promotional material, you can also do so by contacting us."
 msgstr "บริษัทฯ อาจจะแจ้งท่านให้ทราบเกี่ยวกับการเปลี่ยนแปลงใดๆ ในเว็บไซต์ การเพิ่มบริการใหม่ๆ และการส่งเสริมการขาย หากท่านไม่ประสงค์ที่จะรับข้อมูล หรือ สื่อทางการตลาดใดๆ ท่านสามารถเลือกไม่รับข่าวสารข้อมูล หรือ ส่งอีเมล์แจ้งให้กับฝ่ายลูกค้าสัมพันธ์ทราบ และหากท่านประสงค์จะรับข้อมูลการตลาดอีกครั้ง ท่านสามารถกระทำได้เช่นกันโดยติดต่อทีมงานของเรา"
@@ -8762,6 +8951,9 @@ msgstr "บริษัทฯ สงวนสิทธิ์ในการป�
 msgid "The Company reserves the right to suspend the operation of this site or sections thereof:"
 msgstr "บริษัทฯ สงวนสิทธิ์ในการระงับการปฏิบัติการของเว็บไซต์นี้ หรือ ส่วนที่เกี่ยวข้อง"
 
+msgid "The Company reserves the right to update this privacy policy at any time and will provide the applicant with a new privacy policy when substantial amendments and updates are made. The Company may also notify the applicant in other ways from time to time about the processing of the applicant's personal information."
+msgstr "บริษัทฯ สงวนสิทธิ์ในการปรับปรุงนโยบายความเป็นส่วนตัว ณ เวลาใดๆ ที่เหมาะสม และจะให้ข้อมูลกับผู้สมัครได้ทราบถึงนโยบายการรักษาข้อมูลส่วนบุคคลที่มีการปรับปรุงใหม่ในสาระสำคัญ หรือ เมื่อมีการแก้ไขใดๆ ทั้งบริษัทฯ ยังดำเนินการประกาศข้อมูลเหล่านี้ให้ผู้สมัครทราบในวิธีการอื่นๆ เป็นระยะ เกี่ยวกับกระบวนการในการรักษาข้อมูลส่วนบุคคลของผู้สมัคร"
+
 msgid "The Company reserves the right to void, delay, or withhold payment of commission fees to you in situations including a suspected breach of a law or a breach of the terms and conditions of this Agreement."
 msgstr "บริษัทฯ สงวนสิทธิ์ในการยกเลิก ยับยั้ง หรือ ถอนการชำระเงินค่าธรรมเนียมนายหน้าให้ท่านหากพบ หรือ มีข้อสงสัยในพฤติการณ์ฝ่าฝืนกฎหมาย หรือ ข้อตกลงและเงื่อนไขต่างๆ ในข้อตกลงนี้"
 
@@ -8769,10 +8961,19 @@ msgid "The Company shall assume that the information provided by the client is a
 msgstr "บริษัทฯ จะเชื่อว่า ข้อมูลที่ได้รับจากลูกค้าเป็นข้อมูลที่ถูกต้องสมบูรณ์ บริษัทฯ จะไม่รับผิดชอบต่อความไม่ถูกต้อง หรือ ความคลาดเคลื่อนของข้อมูลดังกล่าว"
 
 msgid "The Company shall be entitled to exercise any of its rights or fulfil any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies."
-msgstr "บริษัทฯ จะมีสิทธิ์ในการดำเนินการตามสิทธิ์ หรือ กระทำการตามข้อผูกพันหลังจากนี้ (รวมถึงข้อผูกพันในการชำระเงิน) กับสมาชิกของบริษัทในเครือ Binary"
+msgstr "บริษัทฯ จะมีสิทธิ์ในการดำเนินการตามสิทธิ์ หรือ กระทำการตามข้อผูกพันหลังจากนี้ (รวมถึงข้อผูกพันในการชำระเงิน) กับสมาชิกของบริษัทในเครือไบนารี"
+
+msgid "The Company shall ensure the confidentiality of all Personal Data provided by the applicant at all times and is protected against any accidental loss or disclosure, destruction, and abuse. The Company shall also ensure that such Personal Data is only processed and stored as necessary for the purposes specified in this privacy policy and all applicable Data Protection Laws."
+msgstr "บริษัทฯ ดำรงไว้ซึ่งการรักษาความลับของข้อมูลส่วนบุคคลที่ผู้สมัครได้มอบให้กับบริษัทฯ ซึ่งจะได้รับการคุ้มครองต่อการสูญหายจากเหตุบังเอิญ หรือ การถูกเปิดเผยต่อภายนอก การทำลายข้อมูล และรวมถึงการนำข้อมูลไปใช้ในทางที่ผิด บริษัทฯ ดำรงไว้ซึ่งการรักษาข้อมูลส่วนบุคคลและการนำไปใช้ที่เกิดจากวัตถุประสงค์ที่ระบุไว้ในนโยบายการรักษาข้อมูลส่วนบุคคลนี้ และภายใต้กฎหมายการคุ้มครองข้อมูลเท่านั้น"
+
+msgid "The Company shall further disclose information about the applicant to any third-party parties' service providers within the Binary Group. The Company shall ensure that a data sharing agreement is in place and that the applicant's data is held securely and in line with GDPR requirements. The Company shall further disclose information about the applicant when it is legally obligated to do so."
+msgstr "บริษัทฯ จะเปิดเผยข้อมูลเกี่ยวกับผู้สมัครให้กับบุคคลที่สามที่เป็นผู้ให้บริการภายในเครือไบนารี บริษัทฯ จะดำรงไว้ซึ่งข้อตกลงในการให้ข้อมูลในที่ที่ปลอดภัย และเป็นไปตามแนวทางของข้อกำหนดความต้องการ GDPR บริษัทฯ จะเปิดเผยข้อมูลเกี่ยวกับผู้สมัครก็ต่อเมื่อมีข้อบัญญัติตามกฎหมายที่อนุญาตและกำหนดให้ดำเนินการได้"
 
 msgid "The Company shall have no liability arising from orders, investment decisions or purchases of third party goods or services (including financial instruments and currency) based on information published on or furnished through the %1 API;"
 msgstr "บริษัทฯ จะไม่มีส่วนรับผิดชอบต่อคำสั่งที่เกิดขึ้น การตัดสินใจในการลงทุน หรือ การซื้อสินค้า หรือ บริการจากบุคคลที่ 3 (รวมถึงเครื่องมือทางการเงิน และ สกุลเงิน) ขึ้นกับข้อมูลที่เผยแพร่ หรือ ประกอบเกิดขึ้นผ่าน API ของ API"
+
+msgid "The Company shall have the right to suspend or terminate this Agreement with immediete effect, should the Company have reasonable suspicion that the Agent is undertaking any practices that in breach of any applicable anti-corruption laws."
+msgstr "บริษัทฯ สงวนสิทธิ์ในการระงับ หรือ บอกเลิกสัญญาฉบับนี้โดยให้มีผลทันที หากเมื่อบริษัทฯ มีหลักฐานในข้อสงสัยว่าตัวแทนฯ ได้มีการปฏิบัติเกี่ยวกับการละเมิดต่อกฎหมายว่าด้วยการป้องกันและปราบปรามการทุจริต"
 
 msgid "The Company shall not be in breach of its obligation under this Agreement and shall not be held liable for any failure of or delay in performing its obligations under this Agreement if such failure or delay is the result of the occurrence of a Force Majeure Event."
 msgstr "บริษัทฯ จะต้องไม่ละเมิดข้อผูกมัดภายใต้ข้อตกลงนี้ และจะไม่รับผิดชอบตามกฎหมายต่อความล้มเหลว หรือ ความล่าช้า ในการดำเนินการตามภาระผูกพันภายใต้ข้อตกลงนี้ หากความล้มเหลว หรือ ความล่าช้า ดังกล่าวเป็นผลจากเหตุการณ์สุดวิสัย"
@@ -8786,8 +8987,8 @@ msgstr "บริษัทฯ ไม่ได้กำหนดให้ลู�
 msgid "The Company shall not be responsible or liable for any advice on financial services provided by the Agent to any Client."
 msgstr "บริษัทฯ จะไม่รับผิดชอบ หรือ รับผิดใดๆ ต่อคำแนะนำทางด้านการบริการทางการเงินที่ตัวแทนฯ แจ้งให้แก่ลูกค้า"
 
-msgid "The Company shall not be responsible or liable to the Client for any fraudulent acts or omissions and/or any type of negligence and/or misconduct and/or wilful default made by the Agent. Likewise, the Company shall not be responsible and/or liable to the Client if any terms and/or conditions and/or provisions of this Agreement are breached by the Agent."
-msgstr "บริษัทฯ จะไม่รับผิดชอบ หรือ รับผิดใดๆ ต่อลูกค้าสำหรับการกระทำทุจริต หรือ การละเว้น และ/หรือการละเลยใดๆ และ/หรือ การประพฤติผิด และ/หรือ การเพิกเฉยอย่างจงใจ ของตัวแทนฯ ในทำนองเดียวกัน บริษัทฯ จะไม่รับผิดชอบ และ/หรือรับผิดใดๆ ต่อลูกค้า หากตัวแทนละเมิดข้อตกลง และ/หรือ เงื่อนไข และ/หรือข้อกำหนดของสัญญานี้"
+msgid "The Company shall not be responsible or liable to the Client for any fraudulent acts or omissions, negligence, misconduct or wilful default made by the Agent. Likewise, the Company shall not be responsible and/or liable to the Client if any terms and conditions of this Agreement are breached by the Agent."
+msgstr "บริษัทฯ จะไม่รับผิดชอบ หรือ รับผิดใดๆ ต่อลูกค้าสำหรับการกระทำทุจริต หรือ การละเว้น หรือ การละเลยใดๆ การประพฤติผิด หรือ การเพิกเฉยอย่างจงใจ ของตัวแทนฯ ในทำนองเดียวกัน บริษัทฯ จะไม่รับผิดชอบ และ/หรือรับผิดใดๆ ต่อลูกค้า หากตัวแทนฯ ละเมิดข้อตกลงและเงื่อนไขของสัญญานี้"
 
 msgid "The Company shall not be responsible or liable to you for any negligence, misconduct, fraudulent acts and omissions made by you or your Money Manager."
 msgstr "บริษัทฯ จะไม่รับผิดชอบ หรือ รับผิดชอบตามกฎหมายต่อการกระทำของท่าน หรือ ผู้จัดการการเงินของท่านที่ทำโดยประมาท เป็นการประพฤติมิชอบ การทุจริตฉ้อโกง หรือ เจตนาละเลย"
@@ -8808,10 +9009,13 @@ msgid "The Company shall treat each applicant as a Retail Client at the time of 
 msgstr "บริษัทฯ จะปฏิบัติต่อผู้สมัครแต่ละรายเฉกเช่น ลูกค้ารายย่อย (Retail Client) ในขณะที่เปิดบัญชี นอกจากว่า ลูกค้าได้มีการร้องขอให้ปรับสถานะของลูกค้าเป็น Professional Client อย่างไรก็ตาม หากลูกค้าพอใจต่อการเป็น Eligible Counterparty บริษัทฯ อาจจะปรับสถานะของลูกค้า ทั้งนี้จะต้องทำความตกลงร่วมกัน"
 
 msgid "The Company sources market data from prime brokers who act as liquidity providers, thus executing your Transactions through a pool of aggregated liquidity from top tier banks. The services offered by the Company do not include physical delivery of foreign currency by us or the prime brokers to yourselves. You acknowledge and agree that such data is proprietary to us and any such provider, and you will not retransmit, redistribute, publish, disclose, or display in whole or in part such data to third parties. You represent and warrant that you will only use such data for purposes of facilitating your entry into Transactions with us on your MT5 Real Account in accordance with this Agreement and not for any other purpose. This clause does not apply to Volatility Indices."
-msgstr "บริษัทฯ สรรหาข้อมูลทางการตลาดจากโบรกเกอร์ชั้นนำที่ทำหน้าที่เป็นผู้ให้บริการสภาพคล่อง เราจึงดำเนินการธุรกรรมของท่านผ่านทางกลุ่มของสภาพคล่องโดยรวมจากธนาคารชั้นนำ บริการของบริษัทฯ ไม่รวมถึงการส่งธนบัตรเงินสกุลต่างประเทศของเรา หรือ โบรกเกอร์ชั้นนำให้แก่ท่าน ท่านรับทราบ และยินยอมว่า ข้อมูลดังกล่าวเป็นกรรมสิทธิ์ของเราและผู้ให้บริการดังกล่าว และท่านจะไม่ส่งต่อ แจกจ่าย เผยแพร่ เปิดเผย หรือ แสดงข้อมูลดังกล่าวทั้งหมด หรือ บางส่วนแก่บุคคลที่สาม ท่านรับรองและรับประกันว่า ท่านจะใช้ข้อมูลดังกล่าวเพื่อวัตถุประสงค์ในการอำนวยความสะดวกในการเข้าสู่การทำธุรกรรมกับเราบนบัญชี MT5 จริงของท่านตามสัญญานี้เท่านั้น และไม่ใช่เพื่อวัตถุประสงค์อื่นใด ข้อนี้ไม่ใช้กับดัชนีผันผวน"
+msgstr "บริษัทฯ สรรหาข้อมูลทางการตลาดจากโบรกเกอร์ชั้นนำที่ทำหน้าที่เป็นผู้ให้บริการสภาพคล่อง บริษัทฯ จึงดำเนินการธุรกรรมของท่านผ่านทางกลุ่มของสภาพคล่องโดยรวมจากธนาคารชั้นนำ บริการของบริษัทฯ ไม่รวมถึงการส่งธนบัตรเงินสกุลต่างประเทศของเรา หรือ โบรกเกอร์ชั้นนำให้แก่ท่าน ท่านรับทราบ และยินยอมว่า ข้อมูลดังกล่าวเป็นกรรมสิทธิ์ของบริษัทฯ และผู้ให้บริการดังกล่าว และท่านจะไม่ส่งต่อ แจกจ่าย เผยแพร่ เปิดเผย หรือ แสดงข้อมูลดังกล่าวทั้งหมด หรือ บางส่วนแก่บุคคลที่สาม ท่านรับรองและรับประกันว่า ท่านจะใช้ข้อมูลดังกล่าวเพื่อวัตถุประสงค์ในการอำนวยความสะดวกในการเข้าสู่การทำธุรกรรมกับเราบนบัญชี MT5 จริงของท่านตามสัญญานี้เท่านั้น และไม่ใช่เพื่อวัตถุประสงค์อื่นใด ข้อนี้ไม่ใช้กับดัชนีผันผวน"
 
 msgid "The Company treats the money deposited or earned as a result of profitable transactions by the client as ‘Client Money’ and in accordance with the Control of Assets Rules. Client Money is held in accounts segregated and designated as clients’ monies accounts, clearly separated from the Company's money."
 msgstr "บริษัทฯ ถือว่า เงินที่ฝากเข้ามา หรือ ได้รับในบัญชีจากธุรกรรมที่มีกำไร ถือเป็น 'เงินลูกค้า' และสอดคล้องกับ Control of Assets Rules เงินลูกค้าที่อยู่ในบัญชีถูกแยกและกำหนดเป็นเงินของบัญชีลูกค้า แยกออกจากเงินในบริษัทฯ อย่างชัดเจน"
+
+msgid "The Company typically collects and uses the applicant's Personal Data for the purposes of the legitimate interests pursued by the Binary Group, such as making decisions about the person to employ and the salary and other benefits to offer; and complying with our the Company's legal obligations, such as conducting necessary checks in relation to the right to work in the a specific jurisdiction and making any reasonable adjustments for disabled employees. "
+msgstr "โดยทั่วไปแล้ว บริษัทฯ เก็บบันทึกข้อมูลและใช้ข้อมูลส่วนบุคคลของผู้สมัครตามบรรทัดฐานของกฎหมายเพื่อดำเนินภารกิจในเครือไบนารีให้ลุล่วง เช่น ในการตัดสินใจเพื่อจ้างงานแก่บุคลากรใดๆ การกำหนดเงินเดือนและผลตอบแทนอื่นๆ และการปฏิบัติตามข้อกำหนดทางกฎหมายที่บริษัทฯ มีหน้าที่ต้องใช้ข้อมูลดังกล่าวในการดำเนินการ ได้แก่ การตรวจสอบพื้นฐานเพื่อตรวจสอบสิทธิ์ในการได้รับการจ้างงานตามที่กฎหมายกำหนดไว้ และการดำเนินการที่เหมาะสม หรือ การปรับเปลี่ยนการปฏิบัติให้เหมาะสมต่อพนักงานทุพพลภาพ"
 
 msgid "The Company will assess your knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "บริษัทฯ จะประเมินความรู้และประสบการณ์ของท่านเพื่อพิจารณาการลงทุนและผลิตภัณฑ์ที่เหมาะสมกับท่าน"
@@ -8834,8 +9038,8 @@ msgstr "การตัดสินของบริษัทฯ ถือเ�
 msgid "The Company's Obligations"
 msgstr "หน้าที่ของบริษัทฯ"
 
-msgid "The Company, exercising its absolute discretion, may accept or reject Agent’s Application. Where Agent’s Application is accepted, we shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by such Agent in the Payment Agent list which is disclosed on our website, <a href=\"%1\">www.binary.com</a>."
-msgstr "ในการพิจารณาโดยใช้ดุลยพินิจ บริษัทฯ อาจจะยอมรับ หรือ ปฏิเสธซอฟท์แวร์ของตัวแทนฯ เมื่อมีการยอมรับแอพพลิเคชั่นของตัวแทนฯ เราจะรวมข้อมูลที่เกี่ยวข้อง รวมถึง ชื่อ ที่อยู่ เว็บไซต์ (ถ้ามี) อีเมล์ หมายเลขโทรศัพท์ อัตราคอมมิชชั่น และวิธีการชำระเงินที่ใช้โดยตัวแทนฯ ดังกล่าว ไว้ในรายการตัวแทนการชำระเงิน ซึ่งถูกเปิดเผยบนเว็บไซต์ของเรา <a href=\"%1\">www.binary.com</a>"
+msgid "The Company, exercising its absolute discretion, may accept or reject the Agent’s application. Where the Agent’s application is accepted, the Company shall include all relevant information including but not limited to name, address, website (if available), email address, telephone number, commission rates and payment methods used by the Agent in the Payment Agent list which is disclosed on the Company's website, <a href=\"%1\">www.binary.com</a>."
+msgstr "ในการพิจารณาโดยใช้ดุลยพินิจ บริษัทฯ อาจจะยอมรับ หรือ ปฏิเสธแอพพลิเคชันของตัวแทนฯ หากเมื่อมีการยอมรับแอพพลิเคชั่นของตัวแทนฯ แล้ว บริษัทฯ จะรวมข้อมูลที่เกี่ยวข้อง รวมถึง ชื่อ ที่อยู่ เว็บไซต์ (ถ้ามี) อีเมล์ หมายเลขโทรศัพท์ อัตราคอมมิชชั่น และวิธีการชำระเงินที่ใช้โดยตัวแทนฯ ดังกล่าว ไว้ในรายการตัวแทนการชำระเงิน ซึ่งถูกเปิดเผยบนเว็บไซต์ของบริษัทฯ <a href=\"%1\">www.binary.com</a>"
 
 msgid "The Company, under no circumstances shall provide Investment and/or Financial and/or Legal and/or Tax and/or Regulatory and/or other Investment advice or state an opinion in relation to a Transaction. From time to time, we may decide to provide you with written or video information, which we may publish on our website or provide to you in any other manner. We will endeavor to ensure the accuracy and completeness of this information but it will not constitute independent investment research or investment advice provided by us to you."
 msgstr "ไม่ว่าในสถานการณ์ใด บริษัทฯ ไม่ได้ทำหน้าที่ให้คำปรึกษาการลงทุน และ/หรือ คำแนะนำทางการเงิน และ/หรือ คำแนะนำทางกฎหมาย และ/หรือ ภาษี และ/หรือ คำแนะนำทางระเบียบกฎเกณฑ์ และ/หรือ คำแนะนำการลงทุนอื่นๆ หรือให้ความคิดเห็นที่เกี่ยวข้องกับธุรกรรมหนึ่งๆ ใดๆ ในบางกรณี เราอาจตัดสินใจให้ข้อมูลเป็นลายลักษณ์อักษร หรือ ข้อมูลทางวิดีโอ แก่ท่านเป็นครั้งเป็นคราว ซึ่งเราอาจเผยแพร่บนเว็บไซต์ของเรา หรือให้ท่านลักษณะอื่น เราจะพยายามทำให้แน่ใจว่า ข้อมูลมีความถูกต้องและครบถ้วน แต่จะไม่ถือเป็นคำปรึกษา หรือ คำแนะนำด้านการลงทุนของเราให้แก่ท่าน"
@@ -8885,8 +9089,8 @@ msgstr "เงื่อนไขของมาร์จิน"
 msgid "The MetaTrader platform will no longer support Windows XP, Windows 2003, and Windows Vista after 01 October, 2017."
 msgstr "แพลตฟอร์ม MetaTrader จะไม่รองรับระบบปฏิบัติการ Windows XP, Windows 2003 และ Windows Vista หลังจาก 1 ตุลาคม พ.ศ. 2560 (ค.ศ. 2017)"
 
-msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall deprive of the right to released form any responsibility, under this Agreement where it fails to duly notify the other Party on time."
-msgstr "คู่สัญญาที่ไม่สามารถตอบสนองข้อผูกมัดภายใต้สัญญานี้ได้เนื่องจากเหตุการณ์สุดวิสัยจะต้องแจ้งเป็นลายลักษณ์อักษรให้แก่อีกฝ่ายภายใน 5 วันทำการหลังจากเหตุการณ์นั้นเกิดขึ้น คู่สัญญาจะเพิกถอนสิทธิ์ในการถูกปลดปล่อยจากความรับผิดชอบใดๆ ภายใต้สัญญานี้ ถ้าไม่ได้แจ้งให้แก่อีกฝ่ายทราบตามเวลาที่กำหนด"
+msgid "The Party which is not able to meet its obligations, under this Agreement due to force majeure events shall, within 5 business days after such event has occurred, inform, in writing, the other Party. The Party shall be deprived of the right to release from any responsibility, under this Agreement where it fails to duly notify the other Party on time."
+msgstr "คู่สัญญาที่ไม่สามารถตอบสนองข้อผูกมัดภายใต้สัญญานี้ได้เนื่องจากเหตุการณ์สุดวิสัยจะต้องแจ้งเป็นลายลักษณ์อักษรให้แก่อีกฝ่ายภายใน 5 วันทำการหลังจากเหตุการณ์นั้นเกิดขึ้น คู่สัญญาจะถูกเพิกถอนสิทธิ์ในการปลดปล่อยจากความรับผิดชอบใดๆ ภายใต้สัญญานี้ ถ้าไม่ได้แจ้งให้แก่อีกฝ่ายทราบตามเวลาที่กำหนด"
 
 msgid "The Pearl of Borneo"
 msgstr "ไข่มุกของบอร์เนียว"
@@ -8895,7 +9099,7 @@ msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has
 msgstr "Pillar 3 รายงานที่เปิดเผยข้อมูล Binary Investments (Europe) Limited ได้มีการจัดเตรียมตามเงื่อนไขหลักเกณฑ์ของ Capital Requirements Directive IV และ Capital Requirements Regulation ศึกษา Pillar 3 รายงานที่เปิดเผยข้อมูล เพื่อทำความเข้าใจว่า พวกเราปฏิบัติตามหลักการของตลาดประหนึ่งสมาชิกของตลาด"
 
 msgid "The Policy is supplemented by Appendix A which provide further details to our considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy."
-msgstr "นโยบายที่แสดงในภาคผนวก A ให้ข้อมูลเพิ่มเติมเพื่อการพิจารณาของเรา ที่เกี่ยวข้องกับประเภทของสินทรัพย์ที่แตกต่างกัน ท่านควรศึกษาภาคผนวก A ควบคู่กับนโยบายนี้"
+msgstr "นโยบายที่แสดงในภาคผนวก A ให้ข้อมูลเพิ่มเติมเพื่อการพิจารณาของบริษัทฯ ที่เกี่ยวข้องกับประเภทของสินทรัพย์ที่แตกต่างกัน ท่านควรศึกษาภาคผนวก A ควบคู่กับนโยบายฯ นี้"
 
 msgid "The Republic of Malta is an island country in Southern Europe — located approximately 80km south of Italy. Its rich, colourful history can be traced back thousands of years to the Neolithic period."
 msgstr "สาธารณรัฐมอลตาเป็นประเทศที่เป็นเกาะในทางตอนใต้ของยุโรป ตั้งอยู่ในระยะ 80 กิโลเมตร ทางตอนใต้ของอิตาลี เป็นเมืองแห่งประวัติศาสตร์ มีสีสันตระกานตา สามารถย้อนรอยสู่ช่วงพันปีไปในยุคสมัยหินใหม่"
@@ -8910,7 +9114,7 @@ msgid "The Standard account is suitable for a wide range of traders, both new or
 msgstr "บัญชีมาตรฐานมีความเหมาะสมกับนักลงทุนหลากหลายประเภท ทั้งนักลงทุนใหม่ หรือ นักลงทุนที่มีประสบการณ์ ซึ่งมีในรูปของสกุลเงิน EUR และ GBP และให้สเปรดทั้งคงที่และยืดหยุ่น ปราศจากค่าคอมมิชชั่นและจำนวนเงินที่ต้องฝากเป็นหลักประกันขั้นต่ำ"
 
 msgid "The Stop Out Level applicable to your MT5 Real Account may differ from the default Stop Out Level published on our website."
-msgstr "ระดับยุติการซื้อขายที่ใช้กับบัญชี MT5 จริงของท่าน อาจจะแตกต่างจากระดับยุติการซื้อขายที่เป็นค่าเริ่มต้นที่แจ้งไว้บนเว็บไซต์ของเรา"
+msgstr "ระดับยุติการซื้อขายที่ใช้กับบัญชี MT5 จริงของท่าน อาจจะแตกต่างจากระดับยุติการซื้อขายที่เป็นค่าเริ่มต้นที่แจ้งไว้บนเว็บไซต์ของบริษัทฯ"
 
 msgid "The Volatility Indices account allows you to trade CFDs on Volatility Indices – our proprietary synthetic assets that mimic real-world market volatility and are available for trading 24/7."
 msgstr "บัญชีดัชนีผันผวนอนุญาตให้ท่านได้ซื้อขาย CFD จากดัชนีผันผวน ซึ่งดัชนีนี้เป็นดัชนีกรรมสิทธิ์ของเราที่พัฒนาขึ้นเอง ซึ่งจำลองความผันผวนตามกลไกตลาดจริง และสามารถซื้อขายได้ตลอด 24 ชั่วโมง ตลอด 7 วัน"
@@ -8948,8 +9152,20 @@ msgstr "เงินที่เราสำรองจากยอดเงิ
 msgid "The anti-money laundering processes have the following effects on Clients:"
 msgstr "กระบวนการป้องกันและปราบปรามการฟอกเงินมีผลกระทบต่อไปนี้กับลูกค้า:"
 
-msgid "The application shall be reviewed and assessed by our compliance and marketing departments. It is noted that our compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
-msgstr "ใบสมัครจะต้องได้รับการพิจารณาและประเมินโดยฝ่ายกำกับดูแล และฝ่ายการตลาด โดยขอเรียนให้ทราบว่า ฝ่ายกำกับดูแลระเบียบของเราปฏิบัติตามและดำเนินการตามนโยบายการป้องกันการฟอกเงิน และตรวจสอบวิเคราะห์สถานะตามกฎหมายและกฎระเบียบ และจะร้องขอและรวบรวบข้อมูลและเอกสารที่จำเป็นตามหมวด H"
+msgid "The applicant has the right to lodge a complaint to the Data Protection Commissioner in Malta should the applicant believe that the Company has failed to comply with the requirements of EU General Data Protection Regulation 2016/679 or the Data Protection Act 2018 with regards to the applicant's personal data."
+msgstr "ผู้สมัครมีสิทธิ์ในการบันทึกข้อร้องเรียนต่อคณะกรรมการป้องกันข้อมูลของประเทศมอลตา หากผู้สมัครพบว่า บริษัทฯ ดำเนินการขัดต่อข้อกำหนดที่บัญญัติไว้ในระเบียบการป้องกันข้อมูลพื้นฐานของสหภาพยุโรป ฉบับที่ 2016/679 หรือ พระราชบัญญัติการป้องกันข้อมูล ค.ศ. 2018 ที่เกี่ยวข้องกับการรักษาข้อมูลส่วนบุคคลของผู้สมัคร"
+
+msgid "The applicant is further afforded the rights to:"
+msgstr "ผู้สมัครมีสิทธิ์ที่เกี่ยวข้องต่อไปนี้"
+
+msgid "The applicant is under no statutory or contractual obligation to provide data to Binary Group during the recruitment process. However, should the applicant elect not to provide any necessary information, the Company may not be able to proceed with their application."
+msgstr "ผู้สมัครไม่ได้มีหน้าที่ตามกฎหมาย หรือ ตามสัญญาที่จะต้องให้ข้อมูลแก่เครือไบนารีในระหว่างกระบวนการสรรหาบุคลากรของบริษัทฯ อย่างไรก็ตาม ผู้สมัครที่ตั้งจะไม่ให้ข้อมูลที่จำเป็นดังกล่าวต่อบริษัทฯ บริษัทฯ อาจจะไม่สามารถดำเนินกระบวนการสรรหาบุคลากรของผู้สมัครต่อไปได้"
+
+msgid "The applicant's personal data shall be stored for a period of six months should the applicant be unsuccessful or decline in accepting employment with the Binary Group. At the expiry of that period, the applicant's data is deleted or destroyed unless the Company is required to further retain the applicant's information to exercise or defend any legal claims."
+msgstr "เมื่อผู้สมัครยังไม่ได้รับการคัดเลือก หรือ การตอบรับให้เข้าทำงานกับเครือไบนารี ข้อมูลส่วนบุคคลของผู้สมัครจะถูกเก็บรักษาไว้เป็นระยะเวลา 6 เดือน เมื่อครบกำหนดเวลาที่ใบสมัครนั้นหมดอายุ ข้อมูลใบสมัครจะถูกนำออกจากระบบ หรือ ถูกทำลาย และหากเป็นไปได้ในกรณีอื่น กล่าวคือ บริษัทฯ ต้องการเก็บประวัติของท่านผู้สมัครไว้เพื่อดำเนินการต่อไป หรือ เพื่อนำไปใช้ในกระบวนการทางกฎหมาย"
+
+msgid "The application shall be reviewed and assessed by the Company's compliance and marketing departments. It is noted that the Company's compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
+msgstr "ใบสมัครจะต้องได้รับการพิจารณาและประเมินโดยฝ่ายกำกับดูแล และฝ่ายการตลาดของบริษัทฯ โดยขอเรียนให้ทราบว่า ฝ่ายกำกับดูแลระเบียบของบริษัทฯ ปฏิบัติตามและดำเนินการตามนโยบายการป้องกันการฟอกเงิน และตรวจสอบวิเคราะห์สถานะตามกฎหมายและกฎระเบียบ และจะร้องขอและรวบรวบข้อมูลและเอกสารที่จำเป็นตามหมวด H"
 
 msgid "The ask price of the currency pair indicates how much of the quote currency is required to buy one unit of base currency. This is more commonly known as the exchange rate."
 msgstr "ราคาประมูลของคู่สกุลเงินบ่งชี้ว่า จะต้องใช้สกุลเงินที่เสนอราคาจำนวนเท่าไรเพื่อที่จะซื้อสกุลเงินฐานหนึ่งหน่วย ซึ่งเป็นที่รู้จักทั่วไป คือ อัตราแลกเปลี่ยน"
@@ -8983,6 +9199,9 @@ msgstr "ลูกค้ารับทราบ และ ยอมรับว�
 
 msgid "The client has reached a turnover that is 5 times the bonus amount"
 msgstr "ลูกค้าที่มีปริมาณการซื้อขายหลักทรัพย์เป็นไปตามที่กำหนดจะได้รับโบนัส 5 เท่า"
+
+msgid "The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his %1 Account (hereinafter referred to as the “%1 Agent Account”)."
+msgstr "ลูกค้าที่ใช้การชำระเงินอิเล็กทรอนิกส์ และการโอนเงินผ่านธนาคารอาจทำการฝากเงินกับตัวแทนฯ​ได้ หลังจากตัวแทนฯ รับฝากหลักทรัพย์ใดๆ จะทำการฝากเงินเข้าบัญชี %1 (ต่อไปนี้เรียกว่า \"บัญชีตัวแทน %1\")"
 
 msgid "The commission you will charge Clients on deposits and withdrawals"
 msgstr "ค่านายหน้าจะถูกคำนวณจากลูกค้าเมื่อฝากเงินและถอนเงิน"
@@ -9065,6 +9284,9 @@ msgstr "บริการการซื้อขายทางการเง
 msgid "The first step is to set the parameters of your trade. There are five trade parameters you need to adjust in order to receive a price for the contract:"
 msgstr "ขั้นตอนแรก คือ การตั้งค่าตัวแปรของการซื้อขายของท่าน มีห้าตัวแปรการซื้อขายที่ท่านจะต้องปรับแต่งเพื่อให้ได้รับราคาของสัญญา"
 
+msgid "The following terms shall have the meaning set out below and cognate terms shall be construed accordingly:"
+msgstr "คำต่อไปนี้ได้กำหนดนิยามและรากศัพท์ไว้ ดังนี้"
+
 msgid "The foreign exchange market (Forex) is the world's most liquid and most traded market, where trades worth trillions are completed each day."
 msgstr "ตลาดแลกเปลี่ยนเงินตราต่างประเทศ หรือ ฟอเร็กซ์ เป็นตลาดที่มีสภาพคล่องมากที่สุดในโลก และมีการซื้อขายมากที่สุดเช่นกัน มูลค่าซื้อขายในแต่ละวันสูงถึงระดับล้านล้าน"
 
@@ -9137,6 +9359,16 @@ msgstr "การดำเนินการบริหารจัดการ
 msgid "The page you requested could not be found. Either it no longer exists or the address is wrong. Please check for any typos."
 msgstr "ไม่พบหน้าที่ท่านเรียก หรือ หน้าดังกล่าวได้ถูกนำออกจากระบบ หรือ ท่านเรียกที่อยู่ไม่ถูกต้อง โปรดตรวจสอบตัวสะกด"
 
+msgid "The parties agree that this Agreement and the relationship between the parties is to be governed by and construed under the laws of Costa Rica. The parties further agree that all disputes shall be resolved exclusively in the courts of Costa Rica (the \"Identified Courts\"). Each party hereby: (i) submits to the jurisdiction of the Identified Courts for any proceeding; (ii) shall not commence any proceeding except in the Identified Courts; (iii) waives, and shall not plead or make, any objection to the venue of any proceeding in the Identified Courts; (iv) waives, and shall not plead or make, any claim that any proceeding brought in the Identified Courts has been brought in an improper or otherwise inconvenient forum; and (v) waives, and shall not plead or make, any claim that the Identified Courts lack personal jurisdiction over it."
+msgstr "คู่สัญญายินยอมต่อข้อตกลงในสัญญานี้และความสัมพันธ์ระหว่างคู่สัญญาได้รับการรับรองและเกิดขึ้นภายใต้กฎหมายของประเทศคอสตาริกา\n"
+"คู่สัญญาต่างยินยอมว่า บรรดาข้อร้องเรียนต่างๆ จะดำเนินการพิจารณาโดยของระบบศาลยุติธรรมของประเทศคอสตาริกา (\"ศาลที่กำหนด\")\n"
+"ทั้งนี้คู่สัญญาแต่ละฝ่ายยินยอมในการ\n"
+"(ก) ส่งสำนวนให้ศาลที่กำหนดในการพิจารณาคดีใดๆ\n"
+"(ข) จะไม่มีการพิจารณาคดีใดๆ ในศาลอื่น ยกเว้นศาลที่กำหนด\n"
+"(ค) งดเว้น และจะไม่อุทธรณ์ หรือ ดำเนินการคัดค้านใดๆ ต่อสถานที่ของการพิจารณาคดีใดๆ ณ ศาลที่กำหนด\n"
+"(ง) งดเว้น และจะไม่อุทธรณ์ หรือ ดำเนินการเรียกร้องใดๆ โดยเกี่ยวข้องกับการพิจารณาคดี ณ ศาลที่กำหนดนั้นไม่เหมาะสม หรือ ได้รับความไม่สะดวก และ\n"
+"(จ) งดเว้น และจะไม่อุทธรณ์ หรือ ดำเนินการเรียกร้องใดๆ โดยเกี่ยวข้องกับศาลที่กำหนดนั้นเป็นเขตอำนาจศาลเฉพาะฝ่าย"
+
 msgid "The password you entered is one of the world's most commonly used passwords. You should not be using this password."
 msgstr "รหัสผ่านที่ท่านใส่เป็นหนึ่งในรหัสผ่านที่พบบ่อยที่สุดในโลก เพื่อความปลอดภัย ท่านควรไม่จะใช้รหัสผ่านนี้"
 
@@ -9194,6 +9426,18 @@ msgstr "ผลกำไร คือ เงินที่ถูกรับร�
 msgid "The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company's responsibility to notify Clients before any changes to its terms come into effect."
 msgstr "สิทธิ์ในการแก้ไข หรือ เปลี่ยนแปลง กฎและขอบเขตของบริการ รายละเอียดที่เปลี่ยนแปลงในการปฏิบัติการจะไม่มีผลย้อนหลัง และจะใช้เฉพาะสัญญาทางการเงินหลังจากข้อเปลี่ยนแปลงนั้น บริษัทฯ มีหน้าที่แจ้งข้อเปลี่ยนแปลงให้ลูกค้าทราบก่อนที่เงื่อนไขเหล่านั้นจะมีผล"
 
+msgid "The right to be informed of the use of their personal data. This privacy policy is dedicated for this purpose."
+msgstr "สิทธิ์ในการได้รับการบอกกล่าวถึงการนำข้อมูลส่วนบุคคลไปใช้ นโยบายการรักษาข้อมูลส่วนบุคคลนั้นสนองต่อวัตถุประสงค์ในข้อนี้"
+
+msgid "The right to erase or delete their personal information subject to the data retention practice of the Binary Group."
+msgstr "สิทธิ์ในการลบ หรือ นำข้อมูลส่วนบุคคลออกจากระบบนั้นขึ้นกับแนวทางการปฏิบัติในการสงวนรักษาข้อมูลที่กำหนดในเครือไบนารี"
+
+msgid "The right to rectify their personal data should the Company hold any information about the applicant that is incomplete or inaccurate."
+msgstr "สิทธิ์ในการแก้ไขข้อมูลส่วนบุคคลให้ถูกต้อง กล่าวคือ บริษัทฯ สามารถเก็บข้อมูลใดๆ เกี่ยวกับผู้สมัครแม้ว่า ข้อมูลมีความไม่สมบูรณ์ หรือ พร่องในข้อเท็จจริง"
+
+msgid "The right to request access to their data from the Company."
+msgstr "สิทธิ์ในการได้รับการเข้าถึงข้อมูลส่วนบุคคลของบริษัทฯ"
+
 msgid "The same concept applies to our cryptocurrency pairs."
 msgstr "แนวคิดเดียวกันใช้กับคู่เงินดิจิทัลของเรา"
 
@@ -9220,8 +9464,8 @@ msgstr "สเปรด ทำไมถึงมีความสำคัญ"
 msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr "เงินเดิมพัน คือ จำนวนเงินที่ผู้ทำการซื้อขายต้องชำระเพื่อเริ่มการซื้อขาย"
 
-msgid "The sum received in the %1 Agent Account shall be transferred by the Agent to the %1 Client Account."
-msgstr "จำนวนรวมที่ได้รับในบัญชีตัวแทนฯ ของ %1 จะถูกโอนโดยตัวแทนไปยังบัญชีลูกค้าของ %1"
+msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective %1 Client's Account."
+msgstr "จำนวนรวมที่ได้รับในบัญชีตัวแทนฯ ของ %1 จะถูกโอนตามลำดับโดยตัวแทนฯ ไปยังบัญชีลูกค้าของ %1"
 
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "ระบบกรอกข้อมูลสั่งซื้อในลักษณะเข้าก่อนออกก่อน คือ ตามลำดับของคำสั่งซื้อที่ได้รับ และสิ่งนี้อยู่นอกการควบคุมของเรา ดังนั้น ท่านอาจเห็นได้ยาก หรือ เป็นไปไม่ได้ที่จะปิดโพซิชั่นที่ราคาที่ตั้งใจไว้ตามที่กำหนดเงื่อนไขเอาไว้ในคำสั่งยุติการสั่งซื้อในช่วงสภาพตลาดบางเวลา การที่ท่านวางคำสั่งยุติการสั่งซื้อ ถึงแม้ว่าจะเป็นเครื่องมือที่เป็นประโยชน์ในการบริหารความเสี่ยง แต่อาจจะไม่ได้จำกัดการขาดทุนให้เป็นตามจำนวนที่กำหนดไว้ ในกรณีของสภาพการซื้อขายที่เปลี่ยนแปลงแบบทันทีทันใด เพราะสภาพตลาดอาจจะทำให้เป็นไปไม่ได้ที่จะดำเนินการคำสั่งซื้อดังกล่าว และมีความไม่แน่นอนเกี่ยวกับราคาออกที่เป็นไปได้ โดยย่อ คือ คำสั่งยุติการสั่งซื้อไม่ได้มีการรับประกันเพราะไม่สามารถดำเนินการตามสภาพใดๆ ก็ตามของตลาด"
@@ -9232,8 +9476,8 @@ msgstr "คำว่า 'เรา' 'ของเรา' 'พวกเรา' '�
 msgid "The trading services described in this Agreement are OTC. This means that one or more of the underlying instruments in which you transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the Electronic Trading Platform as described in this Agreement."
 msgstr "บริการซื้อขายที่อธิบายในสัญญาข้อตกลงนี้ คือ OTC เป็นการดำเนินการผ่านเคาน์เตอร์ นั่นหมายถึง มีเครื่องมืออ้างอิงหนึ่งอย่างหรือมากกว่าทำธุรกรรมกับเราอยู่ ถึงแม้ว่าจะมีการให้ราคาในตลาดหลักทรัพย์ จะไม่มีการซื้อขายบนตลาดหลักทรัพย์เมื่อมีการทำธุรกรรมผ่านแพลตฟอร์มการซื้อขายอิเล็กทรอนิกส์ตามที่อธิบายในสัญญาข้อตกลงนี้"
 
-msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
-msgstr "ธุรกรรมที่เกิดขึ้นในเว็บไซต์นี้และความสัมพันธ์ระหว่างลูกค้าและบริษัทฯ ถูกกำกับและเกิดขึ้นตามกฎหมายของประเทศนั้นที่เป็นที่ตั้งบริษัทฯ (\"เขตอำนาจตามกฎหมาย\") ท่านยินยอมต่อการดำเนินการของศาลในเขตอำนาจตามกฎหมาย หากมีข้อโต้แย้งใดๆ เกิดขึ้นระหว่างกัน โดยอาศัยอำนาจศาลในการดำเนินการต่อข้อโต้แย้งใดๆ สำหรับข้อมูลเพิ่มเติมในการสื่อสารข้อพิพาท ข้อโต้แย้ง ให้ศึกษาจากข้อมูลใน Company's Complaints and Disputes"
+msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's %1Complaints and Disputes%2 section."
+msgstr ""
 
 msgid "The two passwords that you entered do not match."
 msgstr "รหัสผ่านที่ท่านป้อนสองครั้งไม่เหมือนกัน"
@@ -9358,14 +9602,14 @@ msgstr "ข้อตกลงฉบับนี้บันทึกข้อต
 msgid "This Agreement governs your use of our API unless you have executed another agreement with the Company that expressly governs your use of our API."
 msgstr "ข้อตกลงนี้ครอบคลุมการใช้งาน API ของเรา นอกเสียจากว่า ท่านได้เห็นชอบกับข้อตกลงอื่นของบริษัทฯ ที่เกี่ยวข้องกับการใช้ API ของเราโดยท่าน"
 
-msgid "This Agreement is between Binary (C.R) S.A. (hereinafter referred to as “the Company” or “%1”, “we”, “us”, “our”, “ours”, “it”, “its”) and Payment Agent (hereinafter referred to as “the Agent”, “he”, “his”, “him”, “himself”, “it”, “its”, “itself”), both of whom agree to be bound by this Agreement."
-msgstr "ข้อตกลงนี้มีระหว่าง Binary (C.R) S.A. (ต่อไปเรียกว่า \"บริษัทฯ\" หรือ \"%1\" \"เรา\" \"ของเรา\" \"พวกเรา\" \"ของพวกเรา\") และตัวแทนชำระเงิน (ต่อไปเรียกว่า \"ตัวแทน\" \"เขา\" \"ของเขา\" \"เขาเอง\" \"พวกเขา\" \"ของพวกเขา\") ซึ่งทั้งสองนั้นตกลงที่จะผูกพันตามสัญญานี้"
+msgid "This Agreement is between Binary (C.R) S.A. (hereinafter referred to as “the Company” or “%1“) and Payment Agent (hereinafter referred to as “the Agent”), both of whom agree to be bound by this Agreement."
+msgstr "ข้อตกลงนี้มีระหว่าง Binary (C.R) S.A. (ต่อไปเรียกว่า \"บริษัทฯ\" หรือ \"%1\") และตัวแทนชำระเงิน (ต่อไปเรียกว่า \"ตัวแทนฯ\") ซึ่งทั้งสองนั้นตกลงที่จะผูกพันตามสัญญานี้"
 
 msgid "This Agreement is between Binary (V) Ltd (hereinafter referred to as 'the Company') and Client who authorises a Multi-Account Manager (hereinafter referred to as 'Money Manager') to manage the Account on behalf of the Client, both of whom agree to bound by this Agreement as a supplement to the Client Agreement."
 msgstr "ข้อตกลงนี้มีระหว่าง Binary (V) Ltd (ต่อไปนี้เรียกว่า 'บริษัทฯ') และลูกค้าที่ให้อำนาจผู้จัดการหลายบัญชี (ต่อไปเรียกว่า 'ผู้จัดการการเงิน') เพื่อจัดการบัญชีในนามของลูกค้า โดยทั้งสองตกลงที่จะผูกพันตามข้อตกลงนี้ โดยถือเป็นข้อตกลงเสริมของข้อตกลงของลูกค้า"
 
-msgid "This Agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy or misspelling and as a result by misunderstanding or misinterpretation of any of the terms and/or conditions and/or clauses and/or provisions of any translated versions of this Agreement."
-msgstr "ข้อตกลงนี้มีให้ไว้แก่ตัวแทนฯ เป็นภาษาอังกฤษ ในกรณีที่มีความแตกต่างระหว่างเวอร์ชันภาษาอังกฤษและเวอร์ชั่นที่ถูกแปลของเอกสารนี้ ให้ถือเอาเวอร์ชันภาษาอังกฤษเป็นหลัก เราจะไม่รับผิดชอบต่อความเสียหาย หรือ สูญเสียที่เกิดจากข้อผิดพลาด ความไม่ถูกต้อง หรือ สะกดผิด และที่เกิดจากความเข้าใจผิด หรือการแปลผิด ของข้อตกลงใดๆ และ/หรือ เงื่อนไขใดๆ และ/หรือ ข้อความ และ/หรือ ข้อกำหนดของเวอร์ชั่นที่ถูกแปลของสัญญานี้"
+msgid "This Agreement is supplied to the Agent in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail. The Company shall not be liable for any loss or damage whatsoever caused by an error, inaccuracy or misspelling and as a result by misunderstanding or misinterpretation of any of the terms or conditions or clauses or provisions of any translated versions of this Agreement."
+msgstr "ข้อตกลงนี้มีให้ไว้แก่ตัวแทนฯ เป็นภาษาอังกฤษ ในกรณีที่มีความแตกต่างระหว่างเวอร์ชันภาษาอังกฤษและเวอร์ชั่นที่ถูกแปลของเอกสารนี้ ให้ถือเอาเวอร์ชันภาษาอังกฤษเป็นหลัก เราจะไม่รับผิดชอบต่อความเสียหาย หรือ สูญเสียที่เกิดจากข้อผิดพลาด ความไม่ถูกต้อง หรือ สะกดผิด และที่เกิดจากความเข้าใจผิด หรือการแปลผิด ของข้อตกลงใดๆ หรือ เงื่อนไขใดๆ หรือ ข้อความ หรือ ข้อกำหนดของเวอร์ชั่นที่ถูกแปลของสัญญานี้"
 
 msgid "This Agreement is supplied to the Client in English. In the event that there is a difference between the English version and any translated versions of this document, the English version shall prevail."
 msgstr "ข้อตกลงนี้ทำขึ้นให้แก่ลูกค้าเป็นภาษาอังกฤษ ในกรณีที่มีความแตกต่างระหว่างฉบับภาษาอังกฤษ และฉบับอื่นๆ ที่ถูกแปลขึ้น ให้ถือเอาฉบับภาษาอังกฤษเป็นหลัก"
@@ -9469,8 +9713,14 @@ msgstr "ข้อสังเกตนี้ไม่ได้ชี้แจง
 msgid "This notice provides you with information about the risks associated with investment contracts, which you may invest in through services provided to you through %1."
 msgstr "การบอกกล่าวในเพื่อแจ้งให้ท่านทราบข้อมูลเกี่ยวกับความเสี่ยงที่เกี่ยวข้องในการลงทุน ซึ่งท่านอาจจะลงทุนผ่านช่องทางการให้บริการของ %1"
 
+msgid "This obligation encompasses the prohibition of unlawful payments or the granting of any form of unlawful benefits to public officials, business partners, employees, family members or any other partners."
+msgstr "หน้าที่ความรับผิดชอบรวมถึงการปฏิบัติตามกฎหมายการชำระเงิน หรือ การห้ามในการให้ผลประโยชน์ใดๆ ทุกรูปแบบที่ผิดกฎหมายต่อเจ้าหน้าที่ราชการ พันธมิตรทางการค้า พนักงาน สมาชิกในครอบครัว หรือ คู่ค้าต่างๆ"
+
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "ข้อเสนอนี้ไม่สามารถใช้ร่วมกับข้อเสนออื่นๆ"
+
+msgid "This privacy notice only applies to job applicants residing in the EU."
+msgstr "นโยบายการรักษาข้อมูลส่วนบุคคลนี้ใช้กับงานที่มีผู้สมัครอยู่ในภูมิภาคยุโรป"
 
 msgid "This promotion is only available to new Clients. Existing or former Clients do not qualify. It is only available once to each Client."
 msgstr "การส่งเสริมการขายนี้จัดขึ้นเฉพาะลูกค้ารายใหม่เท่านั้น ลูกค้าเดิมไม่สามารถใช้ได้ ขอสงวนสิทธิ์สำหรับลูกค้าแต่ละราย"
@@ -9664,8 +9914,14 @@ msgstr "กำไรทั้งหมด"
 msgid "Total Profit/Loss"
 msgstr "รวมกำไร/ขาดทุน"
 
+msgid "Total deposits"
+msgstr "เงินฝากทั้งหมด"
+
 msgid "Total net revenue per month (USD)"
 msgstr "รายได้สุทธิต่อเดือน (ดอลลาร์สหรัฐ)"
+
+msgid "Total withdrawals"
+msgstr "เงินถอนทั้งหมด"
 
 msgid "Touch/No Touch"
 msgstr "Touch/No Touch"
@@ -9832,6 +10088,9 @@ msgstr "วงเงินซื้อขายและถอนเงิน"
 msgid "Trading and deposits have been disabled on your account. Kindly %1contact customer support%2 for assistance."
 msgstr "ได้มีการปิดการใช้งานในการซื้อขายและฝากเงินในบัญชีของท่าน โปรด%1ติดต่อฝ่ายบริการลูกค้า%2เพื่อดำเนินการต่อไป"
 
+msgid "Trading binary options and CFDs can involve substantial risks. Do not trade with money you cannot afford to lose, and never trade with borrowed money. Learn about %1Responsible Trading%2."
+msgstr "การซื้อขายไบนารีออปชันและ CFD มีความเสี่ยงอย่างมาก อย่าซื้อขายด้วยเงินที่คุณไม่อาจสูญเสียได้ และอย่าซื้อขายด้วยเงินที่ยืมมา เรียนรู้เพิ่มเติมเกี่ยวกับ%1การซื้อขายอย่างรับผิดชอบ%2"
+
 msgid "Trading binary options may not be suitable for everyone, so please ensure that you fully understand the risks involved. Your losses can exceed your initial deposit and you do not own or have any interest in the underlying asset."
 msgstr "การซื้อขายไบนารีออปชันอาจไม่เหมาะสมสำหรับทุกๆ คน ดังนั้นโปรดพิจารณาว่า ท่านเข้าใจความเสี่ยงทั้งหมดที่เกี่ยวข้อง การขาดทุนของท่านอาจสูงกว่าจำนวนเงินฝากในครั้งแรก และท่านไม่ได้เป็นเจ้าของ หรือ ได้รับผลประโยชน์ใดๆ จากผลิตภัณฑ์อ้างอิงที่ท่านได้ซื้อขาย"
 
@@ -9846,6 +10105,9 @@ msgstr "การซื้อขายไบนารีออปชั่นเ
 
 msgid "Trading is unavailable at this time."
 msgstr "ไม่สามารถทำการซื้อขายได้ในขณะนี้"
+
+msgid "Trading on %1 can become addictive. If you feel the need to exclude yourself from the website, please use the %2self-exclusion facilities%3."
+msgstr "การซื้อขายบน%1สามารถทำให้เสพติดได้ หากคุณต้องการพักจากเว็บไซต์ โปรดใช้%2sเครื่องมือสำหรับพักการซื้อขาย%3"
 
 msgid "Trading platforms"
 msgstr "แพลตฟอร์มการซื้อขาย"
@@ -9982,6 +10244,9 @@ msgstr "ประเภทของแผนค่าคอมมิชชัน
 msgid "Types of lookbacks"
 msgstr "ประเภทของ Lookback"
 
+msgid "Types of personal data collected"
+msgstr "ประเภทข้อมูลส่วนบุคคลที่รวบรวม"
+
 msgid "Types of trades"
 msgstr "ประเภทของการซื้อขาย"
 
@@ -10087,6 +10352,9 @@ msgstr "ผลิตภัณฑ์อ้างอิง"
 msgid "Underlying market"
 msgstr "ตลาดผลิตภัณฑ์อ้างอิง"
 
+msgid "Understand the risks"
+msgstr "เข้าใจความเสี่ยง"
+
 msgid "Understand the simple idea behind binary options and their advantages over other financial instruments."
 msgstr "เข้าใจแนวคิดง่ายๆ เบื้องหลังไบนารีออปชัน และข้อได้เปรียบเหนือตราสารการเงินอื่นๆ"
 
@@ -10162,9 +10430,6 @@ msgstr "หากมีการหมดอายุ หรือ การย�
 msgid "Usage Limit"
 msgstr "วงเงินที่ใช้"
 
-msgid "Use Cloudflare’s public DNS service for faster and more secure browsing."
-msgstr "ใช้บริการ DNS สาธารณะของ Cloudflare เพื่อการค้นดูที่เร็วขึ้นและปลอดภัยมากขึ้น"
-
 msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) to distribute trade volumes, starting from 0.01 lots"
 msgstr "ใช้วิธีการในการปันส่วนที่หลากหลาย (เช่น หุ้น ยอดเงินคงเหลือ คู่ และ ล็อต) เพื่อกระจายจำนวนการซื้อขายเริ่มต้นจาก 0.01 ล็อต"
 
@@ -10173,6 +10438,9 @@ msgstr "ใช้คำศัพท์ที่เหมาะสม พิจ�
 
 msgid "Use comprehensive technical analysis tools to predict price movements"
 msgstr "ใช้เครื่องมือวิเคราะห์ทางเทคนิคที่ครอบคลุมการคาดการณ์การเคลื่อนไหวของราคา"
+
+msgid "Use different passwords for your email and %1 account and set a %2strong password%3."
+msgstr "ใช้รหัสผ่านที่แตกต่างกันสำหรับอีเมลและบัญชี %1 และตั้ง%2sรหัสผ่านที่รัดกุม%3"
 
 msgid "Use of Information"
 msgstr "การใช้งานข้อมูล"
@@ -10212,6 +10480,12 @@ msgstr "ใบแจ้งหนี้ค่าสาธารณูปโภค
 
 msgid "Utility bills (electricity, water, gas, broadband and landline)"
 msgstr "ใบแจ้งหนี้ค่าสาธารณูปโภค (ไฟฟ้า น้ำ น้ำมัน อินเทอร์เน็ตบรอดแบนด์ และโทรศัพท์พื้นฐาน)"
+
+msgid "VPN App"
+msgstr "แอพพลิเคชัน VPN"
+
+msgid "VPN app"
+msgstr "แอพพลิเคชัน VPN"
 
 msgid "Validate address"
 msgstr "ตรวจสอบที่อยู่"
@@ -10260,6 +10534,9 @@ msgstr "ดู"
 
 msgid "View Chart"
 msgstr "ดูแผนภูมิ"
+
+msgid "View Guide"
+msgstr "ดูคำแนะนำ"
 
 msgid "View Statement"
 msgstr "ดูรายการเดินบัญชี"
@@ -10314,9 +10591,6 @@ msgstr "เสมือน"
 
 msgid "Virtual Account"
 msgstr "บัญชีทดลองใช้"
-
-msgid "Virtual money credit to account"
-msgstr "เครดิตเงินเสมือนไปยังบัญชี"
 
 msgid "Visa is an international company that supports digital payments around the world, most commonly through their brand of credit and debit cards. For more info, please visit %1."
 msgstr "Visa เป็นบริษัทสากลที่สนับสนุนการชำระเงินดิจิทัลทั่วโลก โดยแบรนด์ส่วนใหญ่ใช้ระบบวีซ่าในรูปแบบบัตรเครดิตหรือบัตรเดบิต สำหรับข้อมูลเพิ่มเติม โปรดเยี่ยมชมที่ %1"
@@ -10615,6 +10889,9 @@ msgstr "เราใกล้จะถึงแล้ว"
 msgid "We're granted patents for 'Computer trading system and method for speculating on a financial market' and 'Computer trading system for offering custom financial market speculations'. The patents show our ability to innovate and stay ahead of the pack."
 msgstr "พวกเราได้รับสิทธิบัตรสำหรับ 'ระบบคอมพิวเตอร์สำหรับการซื้อขายและวิธีในการเก็งกำไรในตลาดการเงิน' และ 'ระบบคอมพิวเตอร์สำหรับการซื้อขายที่นำเสนอการเก็งกำไรในตลาดการเงิน' สิทธิบัตรแสดงถึงความสามารถของพวกเราในการสร้างสรรค์และนำหน้าตลาด"
 
+msgid "We're looking for users of %1 to participate in a %240-minute video or phone interview%3. To qualify, just answer a few short questions. If selected, you will receive an email or a phone call from one of our researchers."
+msgstr "เรากำลังหาผู้ใช้ %1ที่จะเข้าร่วมใน%24การสัมภาษณ์ทางวีดีโอหรือโทรศัพท์ 40 นาที%3 เพียงแค่ตอบคำถามสั้นๆไม่กี่คำถามเพื่อเข้าร่วม หากได้รับเลือก คุณจะได้รับอีเมลหรือโทรศัพท์จากนักวิจัยของเรา"
+
 msgid "We're really proud of this award. We're strongly committed to offering an ethical and customer-focused trading experience, and the award shows that BetOnMarkets is a trusted brand that listens and caters to customers, whether they are experienced traders or novices. We offer customer services in English, Indonesian, Russian, Chinese and Spanish."
 msgstr "พวกเรามีความภูมิใจในรางวัลนี้มาก พวกเราให้คำสัญญาอย่างแน่วแน่ในการทำให้ท่านมีประสบการณ์การซื้อขายอย่างมีจริยธรรม รางวัลนี้แสดงว่า BetOnMarkets เป็นแบรนด์ที่ได้รับความไว้วางใจ รับฟังและดูแลลูกค้า ผู้ซึ่งมีประสบการณ์ในการลงทุนมาแล้ว หรือ นักลงทุนมือใหม่ พวกเรามีทีมงานลูกค้าสัมพันธ์ที่สามารถสื่อสารกับท่านได้ด้วยภาษาอังกฤษ ภาษาอินโดนีเซีย ภาษารัสเซีย ภาษาจีน และภาษาสเปน"
 
@@ -10660,8 +10937,8 @@ msgstr "เราไม่มีข้อผูกมัดในการดำ
 msgid "We’re projected to register over 197 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 789 million."
 msgstr "บริษัทฯ คาดการณ์ว่าจะมีการลงทะเบียนใช้งานมากกว่า 197 ล้านธุรกรรมในปีนี้ ซึ่งทำให้จำนวนสัญญาที่ถูกซื้อและขายบนแพลตฟอร์มของเราตั้งแต่ก่อตั้งมีมากกว่า 789 ล้าน"
 
-msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "เราเจริญเติบโตในช่วงเวลาหลายปี ทั้งด้านกำลังคนและสำนักงาน ขณะนี้เรามีพนักงานมากกว่า %1 คน จากสำนักงาน 3 แห่งในประเทศมาเลเซีย และประเทศมอลตา เราคาดการณ์ถึงการเติบโตของจำนวนพนักงานต่อไปในปีนี้เพื่อรองรับปริมาณความต้องการของสินค้าและบริการของเราที่เพิ่มมากขึ้น"
+msgid "We’ve grown in size over the years – both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr ""
 
 msgid "We’ve paid millions in commission to date through our industry-leading affiliate programme."
 msgstr "เราได้จ่ายค่าคอมมิชชันจำนวนหลายล้านผ่านทางโปรแกรมพันธมิตรชั้นนำของวงการ"
@@ -10732,11 +11009,11 @@ msgstr "จะมีการจ่ายคอมมิชชันเมื่
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr "เมื่อมีการอ้างอิงข้อมูลลูกค้าจากพันธมิตรกับสมาชิกในเครือ Binary พวกเราถือกรรมสิทธิ์ของฐานข้อมูลที่ประกอบด้วยชื่อ ข้อมูลติดต่อ และข้อมูลลูกค้าที่ได้จากการอ้างอิงของพันธมิตร"
 
-msgid "When the Client requests a withdrawal from his %1 Account, such request shall be automatically proceeded and as a result the requested sum shall be transferred from the %1 Client Account to %1 Agent Account. However, it is noted that where the Client reaches its withdrawal limits, a withdrawal request shall not automatically be proceeded before the required authentication process is conducted."
-msgstr "เมื่อลูกค้าขอถอนเงินจากบัญชี %1ของเขา คำร้องขอจะถูกดำเนินการโดยอัตโนมัติ และจำนวนเงินที่ขอจะถูกโอนจากบัญชีลูกค้า %1ไปยังบัญชีตัวแทนฯ %1 อย่างไรก็ตาม เป็นที่สังเกตว่า เมื่อลูกค้าถึงระดับจำกัดในการถอนแล้ว คำร้องขอในการถอนจะไม่ถูกดำเนินการโดยอัตโนมัติก่อนที่จะมีการดำเนินตามกระบวนการตรวจสอบที่กำหนด"
-
 msgid "When the Client's Cash Account with us is credited or charged with the net amount of the results of a transaction."
 msgstr "เมื่อบัญชีเงินสดของลูกค้าถูกเครดิต หรือ ถูกสั่งจ่ายเงินด้วยมูลค่าสุทธิของธุรกรรม"
+
+msgid "When the client requests a withdrawal from his %1 Account, such request shall be automatically proceeded and as a result the requested sum shall be transferred from his %1 Account to the %1 Agent Account. However, it is noted that where the client reaches its withdrawal limits, a withdrawal request shall not be automatically proceeded before the required authentication process is conducted."
+msgstr "เมื่อลูกค้าขอถอนเงินจากบัญชี %1ของเขา คำร้องขอจะถูกดำเนินการโดยอัตโนมัติ และจำนวนเงินที่ขอจะถูกโอนจากบัญชี %1ของเขาไปยังบัญชีตัวแทนฯ %1 อย่างไรก็ตาม เป็นที่สังเกตว่า เมื่อลูกค้าใช้วงเงินในการถอนครบแล้ว คำร้องขอในการถอนจะไม่ถูกดำเนินการโดยอัตโนมัติก่อนที่จะมีการดำเนินตามกระบวนการตรวจสอบที่กำหนด"
 
 msgid "When the order hits the liquidity provider’s server, or our server in case the order is taken on our own books, it is fulfilled."
 msgstr "เมื่อคำสั่งถูกส่งเข้ามาประมวลผลที่เครื่องแม่ข่ายที่ให้บริการ หรือ เครื่องแม่ข่ายของเรา ในกรณีที่คำสั่งถูกดำเนินการ ถือว่าสิ้นสุดบรรลุเป้าหมาย"
@@ -10837,17 +11114,17 @@ msgstr "เป็นที่ซึ่งให้ความช่วยเห
 msgid "Where teamwork and a collaborative culture form the platform for personal and corporate growth."
 msgstr "เป็นที่ซึ่งมีการทำงานเป็นทีมและมีวัฒนธรรมของการทำงานร่วมกันเพื่อสร้างการเจริญเติบตัวของปัจเจกชนและระดับองค์กร"
 
-msgid "Where the Agent acts in breach of any warranty or representation or promise made under this Agreement, and/or if any information provided to us in connection with this Agreement is, or becomes, untrue or misleading;"
-msgstr "เมื่อตัวแทนฯ ละเมิดการรับประกัน หรือ รับรอง หรือ คำสัญญาที่กระทำในข้อตกลงนี้ และ/หรือ ข้อมูลใดๆ ที่ไว้กับเราที่เกี่ยวข้องกับข้อตกลงนี้ไม่จริง หรือ กลายเป็นไม่จริง"
+msgid "Where the Agent acts in breach of any warranty or representation or promise made under this Agreement, and any information provided to the Company in connection with this Agreement is, or becomes, untrue or misleading;"
+msgstr "เมื่อตัวแทนฯ ละเมิดการรับประกัน หรือ รับรอง หรือ คำสัญญาที่กระทำในข้อตกลงนี้ และ ข้อมูลใดๆ ที่ไว้กับบริษัทฯ ที่เกี่ยวข้องกับข้อตกลงนี้ไม่จริง หรือ กลายเป็นไม่จริง"
 
 msgid "Where the Agent becomes incapable to pay his debts as they fall due, or is bankrupt or insolvent, as defined under any and all applicable bankruptcy or insolvency law, where the Agent is an individual;"
 msgstr "เมื่อตัวแทนฯ ไม่สามารถจ่ายหนี้เมื่อถึงกำหนดเวลา หรือ ล้มละลาย หรือ เป็นบุคคลล้มละลาย ตามที่นิยามเอาไว้ในกฎหมายเกี่ยวกับการล้มละลาย หรือ การเป็นบุคคลล้มละลายที่เกี่ยวข้อง ที่ตัวแทนฯ เป็นบุคคล"
 
-msgid "Where the Agent ceases to be competent and/or capable and/or adequate and/or qualified to effectively perform all its duties and/or obligations undertaken and agreed, under this Agreement, for any reason including but not limited to lack of knowledge, expertise, experience, skills and time shall immediately and/or without any delay notify the Company."
-msgstr "เมื่อตัวแทนฯ สิ้นสุดการมีอำนาจ และ/หรือ ความสามารถ และ/หรือ เพียงพอ และ/หรือ ขาดคุณสมบัติที่จะปฏิบัติหน้าที่ทั้งหมด และ/หรือ ข้อผูกมัดที่ได้รับหน้าที่เอาไว้และตกลงภายใต้ข้อตกลงนี้ ด้วยเหตุผลใดๆ ก็ตามที่รวมถึง การขาดความรู้ ความชำนาญ ประสบการณ์ ทักษะ และเวลา จะต้องมีการแจ้งแก่บริษัทฯ ทันที และ/หรือโดยไม่รอช้า"
+msgid "Where the Agent ceases to be competent, capable, adequate or qualified to effectively perform all its duties and obligations undertaken and agreed, under this Agreement, for any reason including but not limited to lack of knowledge, expertise, experience, skills and time, the Agent shall notify the Company immediately and without any delay notify the Company."
+msgstr "เมื่อตัวแทนฯ สิ้นสุดการมีอำนาจ ความสามารถ เพียงพอ หรือ ขาดคุณสมบัติที่จะปฏิบัติหน้าที่ทั้งหมด และ ข้อผูกมัดที่ได้รับหน้าที่เอาไว้และตกลงภายใต้ข้อตกลงนี้ ด้วยเหตุผลใดๆ ก็ตามที่รวมถึง การขาดความรู้ ความชำนาญ ประสบการณ์ ทักษะ และเวลา ตัวแทนฯ จะต้องแจ้งแก่บริษัทฯ ทันที โดยปราศจากความล่าช้าใดๆ ในการบอกกล่าวต่อบริษัทฯ"
 
-msgid "Where the Agent fails to comply with its obligations and/or fails to perform any of its duties or other provisions under this Agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company."
-msgstr "เมื่อตัวแทนฯ ล้มเหลวที่จะปฏิบัติตามข้อผูกมัด และ/หรือ ล้มเหลวที่จะปฏิบัติตามหน้าที่ หรือ ข้อกำหนดอื่นๆ ภายใต้ข้อตกลงนี้ และความล้มเหลวดังกล่าวยังคงดำเนินต่อไปอย่างน้อยอีกหนึ่งวันทำการหลังจากได้รับประกาศแจ้งเกี่ยวกับการไม่ปฏิบัติตามที่กำหนดจากบริษัทฯ"
+msgid "Where the Agent fails to comply with its obligations or fails to perform any of its duties or other provisions under this Agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company."
+msgstr "เมื่อตัวแทนฯ ล้มเหลวที่จะปฏิบัติตามข้อผูกมัด หรือ ล้มเหลวที่จะปฏิบัติตามหน้าที่ หรือ ข้อกำหนดอื่นๆ ภายใต้ข้อตกลงนี้ และความล้มเหลวดังกล่าวยังคงดำเนินต่อไปอย่างน้อยอีกหนึ่งวันทำการหลังจากได้รับประกาศแจ้งเกี่ยวกับการไม่ปฏิบัติตามที่กำหนดจากบริษัทฯ"
 
 msgid "Where the Agent is dissolved, or deregistered from any records of a formal register whatsoever. Furthermore, where any procedure is initiated, seeking or intending or proposing the Agent’s dissolution or deregistration from any records of a formal register. "
 msgstr "เมื่อตัวแทนฯ บกพร่องในหน้าที่ หรือ ถูกถอดออกจากการลงทะเบียนจากบันทึกใดๆ ของทะเบียนทางการ หรือ อะไรก็ตาม นอกจากนี้ ที่มีการริเริ่มกระบวนการในการหา หรือ ตั้งใจ หรือ นำเสนอการยุบตัวแทนฯ หรือ ถอดออกจากการลงทะเบียนจากบันทึกใดๆ ของทะเบียนทางการ "
@@ -10855,13 +11132,13 @@ msgstr "เมื่อตัวแทนฯ บกพร่องในหน�
 msgid "Where the Agent omits or fails or refuse whatsoever to provide the Company with evidence of his identity or any other evidence as required by the law in relation to Anti-Money Laundering within a reasonable time, the Company reserve the right to cease to deal with him."
 msgstr "เมื่อตัวแทนฯ ละเลย หรือ ล้มเหลว หรือ ปฏิเสธ หรือ อะไรก็ตามที่จะให้หลักฐานยืนยันตัวตนแก่บริษัทฯ หรือ หลักฐานอื่นๆตามที่กำหนดโดยกฎหมายที่เกี่ยวกับการฟอกเงินภายในเวลาที่เหมาะสม บริษัทฯ สงวนสิทธิ์ที่จะหยุดติดต่อกับตัวแทนฯ นั้น"
 
-msgid "Where the Agent owns, or operates website/s, shall:"
-msgstr "เมื่อตัวแทนฯ เป็นเจ้าของ หรือ ทำเว็บไซต์ จะ"
+msgid "Where the Agent owns, or operates website/s, the Agent shall:"
+msgstr "เมื่อตัวแทนฯ เป็นเจ้าของ หรือ ดำเนินการทางเว็บไซต์ ตัวแทนฯ จะ"
 
 msgid "Where the Client’s obligations to the Company are due and payable, the Company shall cease to treat as Client Money the amount equal to the amount of such obligations;"
 msgstr "เมื่อมีภาระหน้าที่ใดๆ ของลูกค้าต่อบริษัทฯ ครบกำหนดชำระ และได้ชำระ บริษัทฯ จะยุติสถานะการถือว่า เป็นเงินของลูกค้าในจำนวนที่เท่ากับจำนวนที่ต้องชำระตามหน้าที่"
 
-msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 Client Account, shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
+msgid "Where the Company ascertains any mistakes or flaws related to deposits, or withdrawals from or to %1 Agent Account or %1 client account, the Company shall, within a reasonable time, take all corrective measures to rectify such mistakes or flaws."
 msgstr "เมื่อบริษัทฯ ตรวจสอบจนแน่ใจในข้อผิดพลาด หรือ ข้อบกพร่องที่เกี่ยวกับการฝากเงิน หรือ ถอนเงินจาก หรือ ไปยัง%1 บัญชีตัวแทนฯ หรือ %1 บัญชีลูกค้าแล้ว บริษัทฯ จะใช้มาตรการแก้ไขทั้งหมดเพื่อแก้ไขข้อผิดพลาด หรือ ข้อบกพร่องดังกล่าวให้ถูกต้องภายในเวลาที่เหมาะสม"
 
 msgid "Where we consider, on the basis of the information provided by you that you do not possess the knowledge and experience to appreciate the risks associated with an investment in the proposed instrument, we will issue a warning to you.  Such a warning shall be displayed on the website."
@@ -11257,9 +11534,6 @@ msgstr "ท่านยินดีและมีศักยภาพในก
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "ท่านพึงทราบถึงความรับผิดชอบต่อการชำระเงินต่อบริษัทฯ ตามข้อมูลที่ปรากฏในรายละเอียดบัญชีลูกค้า"
 
-msgid "You can choose from two types of affiliate commission plans:"
-msgstr "ท่านสามารถเลือกแผนค่าคอมมิชชันของพันธมิตรนายหน้าออนไลน์ในสองประเภทนี้"
-
 msgid "You can close this window without interrupting your trade."
 msgstr "ท่านสามารถปิดหน้าต่างนี้ได้โดยไม่ขัดจังหวะการซื้อขายของท่าน"
 
@@ -11653,6 +11927,9 @@ msgstr "บัญชีของท่านได้รับการยืน
 msgid "Your account is restricted. Kindly %1contact customer support%2 for assistance."
 msgstr "บัญชีของท่านถูกระงับ โปรด %1ติดต่อฝ่ายลูกค้าสัมพันธ์%2 เพื่อดำเนินการต่อไป"
 
+msgid "Your account security is of paramount importance to us. Please consider the following initiatives and tools to enhance your account security:"
+msgstr "ความปลอดภัยของบัญชีมีความสำคัญยิ่งต่อเรา โปรดพิจารณาความริเริ่มและเครื่องมือต่อไปนี้เพื่อเพิ่มความปลอดภัยของบัญชี:"
+
 msgid "Your account should not be used as a banking facility and deposits should only be made with a view to using funds to place contracts. The Company is not a financial institution, Clients will not receive interest on deposits. Should you make repeated deposits and withdrawals without commensurate contracts being placed, we reserve the right to pass on to your accounts, without prior notice, any bank charges we have incurred before closing the account."
 msgstr "บัญชีของท่านไม่ควรใช้สำหรับการอำนวยความสะดวกในการฝากเงิน และการฝากเงินควรดำเนินการเมื่อท่านต้องการลงเงินในสัญญา บริษัทฯ ไม่ได้ประพฤติเยี่ยงสถาบันการเงิน ลูกค้าจะไม่ได้รับดอกเบี้ยจากการฝากเงิน ในการดำเนินการของท่านไม่ว่าจะฝากเงิน หรือ ถอนเงินปราศจากสัญญาที่มีสัดส่วนเงินที่พอดีกัน ทางบริษัทฯ ขอสงวนสิทธิ์ในการดำเนินการกับบัญชีของท่าน โดยไม่ต้องแจ้งให้ทราบล่วงหน้า รวมถึงค่าธรรมเนียมต่างๆ ของธนาคารที่เกิดขึ้นก่อนการปิดบัญชี"
 
@@ -11830,14 +12107,20 @@ msgstr "ใช้ Application Programme Interface (API) ของ %1 อย่�
 msgid "alerting Clients of a potential trading opportunity;"
 msgstr "แจ้งให้ลูกค้าทราบถึงโอกาสในการทำกำไร"
 
+msgid "all measures required to obtain and maintain in full force and effect, all authority and/or powers and/or consents and/or licences and/or authorities to enter into and perform this Agreement;"
+msgstr "มาตรการต่างๆ ที่จำเป็นที่จะให้ได้มาและรักษาอำนาจอันชอบธรรมที่จำเป็นทั้งหมด และ/หรือ อำนาจ และ/หรือ ความยินยอม และ/หรือ ใบอนุญาต และ/หรือ การอนุญาตที่ยังมีผลและบังคับใช้เพื่อเข้าสู่และปฏิบัติตามข้อตกลงนี้"
+
+msgid "all reasonable steps are taken to comply with the law or Rules whatsoever applicable to the jurisdiction in which the Agent resides;"
+msgstr "การดำเนินการตามขั้นตอนที่จำเป็นทั้งหมดเพื่อปฏิบัติตามกฎหมาย หรือ หลักเกณฑ์ใดๆ ก็ตามที่เกี่ยวข้องกับเขตพื้นที่ตามกฎหมายที่ตัวแทนฯ พำนักอยู่"
+
 msgid "and"
 msgstr "และ"
 
 msgid "any Client that is employed in the banking and/or finance sector must only conduct trades through the website with the knowledge of his/her employer and in accordance with the employer’s policies; and that"
 msgstr "ท่านลูกค้าที่เป็นพนักงานในหน่วยงานการธนาคาร และ/หรือ สถาบันการเงินกำหนดให้ซื้อขายผ่านทางเว็บไซต์ด้วยความความรู้ของหน่วยงานในสังกัดของเขา/เธอ ที่เป็นไปตามนโยบายของนายจ้าง และ"
 
-msgid "any information which he provides or has provided to the Company in relation to his financial position, domicile or other matters whatsoever is accurate and not misleading."
-msgstr "ข้อมูลใดๆ ที่ให้ หรือ ได้ให้ไว้กับบริษัทฯ ที่เกี่ยวข้องกับสถานะการเงิน ภูมิลำเนา หรือเรื่องอื่นๆ ใดๆ ก็ตาม ที่ถูกต้องและไม่ทำให้เข้าใจผิด"
+msgid "any information provided or has provided to the Company in relation to the Agent's financial position, domicile or other matters is accurate and not misleading."
+msgstr "ข้อมูลใดๆ ที่ให้ หรือ ได้ให้ไว้กับบริษัทฯ ที่เกี่ยวข้องกับสถานะการเงิน ภูมิลำเนา หรือเรื่องอื่นๆ ใดๆ ก็ตาม ของตัวแทนฯ จะต้องเป็นข้อมูลที่ถูกต้องและไม่ทำให้เข้าใจผิด"
 
 msgid "any instance where the Company believes that person's activities at this site may be illegal in that person's country or state;"
 msgstr "กรณีตัวอย่างใดๆ ซึ่งบริษัทฯ เชื่อว่า กิจกรรมต่างๆ ที่ได้กระทำในเว็บไซต์อาจจะไม่ชอบด้วยกฎหมายของประเทศ หรือ รัฐนั้นๆ"
@@ -11869,9 +12152,6 @@ msgstr "ไบนารีออปชั่น ฟอเร็กซ์ กา�
 msgid "c) The time at which your order will be executed; and"
 msgstr "ค) เวลาที่คำสั่งซื้อของท่านจะถูกประมวลผล และ"
 
-msgid "capable to have a material adverse effect on the Agent’s ability to perform any of its duties and/or obligations in accordance with this Agreement."
-msgstr "สามารถทำให้มีผลเสียอย่างมากต่อความสามารถของตัวแทนฯ ในการทำหน้าที่ และ/หรือ ภาระผูกพันตามข้อตกลงนี้"
-
 msgid "compensation under Investor Compensation Scheme."
 msgstr "ค่าตอบแทนภายใต้แผนค่าตอบแทนต่อนักลงทุน (Investor Compensation Scheme)"
 
@@ -11893,14 +12173,20 @@ msgstr "วัน"
 msgid "details"
 msgstr "รายละเอียด"
 
+msgid "details of the applicant's about the applicant's remuneration, including entitlement to benefits such as pensions or insurance cover, if applicable;"
+msgstr "รายละเอียดข้อมูลของผู้สมัครเกี่ยวกับค่าตอบแทนของผู้สมัครนั้น รวมถึงสิทธิ์ในผลประโยชน์ต่างๆ เช่น สวัสดิการ หรือ ประกันสุขภาพ (ถ้ามี)"
+
+msgid "details of the identity of the the applicant's reference, including their name and contract details, comprising email address and telephone number; and"
+msgstr "รายละเอียดข้อมูลของผู้สมัครเกี่ยวกับข้อมูลจำเพาะของผู้อ้างอิง ได้แก่ ชื่อ-สกุล รายละเอียดการว่าจ้าง อีเมล์ และหมายเลขโทรศัพท์ที่ใช้ติดต่อ"
+
 msgid "e.g. frontend.binaryws.com"
 msgstr "เช่น frontend.binaryws.com"
 
 msgid "educational material;"
 msgstr "แหล่งความรู้"
 
-msgid "engage in misleading or illusory or deceptive advertising;"
-msgstr "ทำให้เข้าใจผิด หรือ จอมปลอม หรือเป็นโฆษณาหลอกลวง"
+msgid "engage in misleading or illusory or deceptive advertising or promises;"
+msgstr "ทำให้เข้าใจผิด หรือ จอมปลอม หรือเป็นโฆษณาหลอกลวง หรือ ให้คำมั่นสัญญา"
 
 msgid "engage in misleading or illusory or deceptive conduct; "
 msgstr "ทำให้เข้าใจผิด หรือ จอมปลอม หรือชักชวนไปในทางหลอกลวง"
@@ -11908,11 +12194,11 @@ msgstr "ทำให้เข้าใจผิด หรือ จอมปล�
 msgid "execution of trades automatically on their behalf;"
 msgstr "ดำเนินการซื้อขายอย่างอัตโนมัติในนามของพวกเขา"
 
-msgid "fairly and accurately describe its services to the Clients;"
+msgid "fairly and accurately describe its services to the clients;"
 msgstr "มีความยุติธรรม และแม่นยำในการให้ข้อมูลกับลูกค้า"
 
-msgid "follow and/or implement and/or comply with all business-related directions and/or policies and/or procedures of the Company as amended and/or re-enacted and/or replaced from time to time;"
-msgstr "ทำตาม และ/หรือ การนำไปปฏิบัติ และ/หรือ ปฏิบัติตามแนวทางที่เกี่ยวข้องกับธุรกิจทั้งหมด และ/หรือ นโยบาย และ/หรือ กระบวนการของบริษัทฯ ที่ได้แก้ไข และ/หรือ ทำซ้ำ และ/หรือ ทดแทนเป็นครั้งคราว"
+msgid "follow, comply and implement with all business-related directions, policies and procedures of the Company as amended or re-enacted or replaced from time to time;"
+msgstr "ทำตาม สอดคล้องต่อ และการนำไปปฏิบัติตามแนวทางที่เกี่ยวข้องกับธุรกิจทั้งหมด นโยบายทั้งหมด และกระบวนการของบริษัทฯ ตามที่ได้แก้ไข หรือ ทำซ้ำ หรือ ทดแทนเป็นครั้งคราว"
 
 msgid "for account %1"
 msgstr "สำหรับบัญชี %1"
@@ -11926,14 +12212,8 @@ msgstr "ชม."
 msgid "has the meaning attached to it by the Directive 2004/39/EC of the European Parliament and of the Council (MIFID) or subsequent Directive 2014/65/EU of the European Parliament and of the Council (MIFID II), whichever is in force."
 msgstr "มีความหมายตาม Directive 2004/39/EC ของรัฐสภาและคณะกรรมการยุโรป (MiFID) หรือ บทบัญญัติที่เกี่ยวข้อง Directive 2014/65/EU ของรัฐสภาและคณะกรรมการยุโรป (MiFID II) ที่มีบังคับใช้"
 
-msgid "he has all necessary authority and/or powers and/or consents and/or licences and/or authorisations and has taken all necessary actions to enable himself to lawfully enter into and perform this Agreement;"
-msgstr "เขามีอำนาจอันชอบธรรมที่จำเป็นทั้งหมด และ/หรือ อำนาจ และ/หรือ ความยินยอม และ/หรือ ใบอนุญาต และ/หรือ การอนุญาต และได้ดำเนินการตามขั้นตอนที่จำเป็นทั้งหมดเพื่อให้สามารถเข้าสู่และปฏิบัติตามข้อตกลงนี้ได้อย่างถูกกฎหมาย"
-
-msgid "he takes all measures required to obtain and maintain in full force and effect, all authority and/or powers and/or consents and/or licences and/or authorities to enter into and perform this Agreement;"
-msgstr "เขาได้ดำเนินการตามมาตรการทั้งหมดที่จำเป็นที่จะให้ได้มาและรักษาอำนาจอันชอบธรรมที่จำเป็นทั้งหมด และ/หรือ อำนาจ และ/หรือ ความยินยอม และ/หรือ ใบอนุญาต และ/หรือ การอนุญาตที่ยังมีผลและบังคับใช้เพื่อเข้าสู่และปฏิบัติตามข้อตกลงนี้"
-
-msgid "he takes all reasonable steps to comply with the law or Rules whatsoever applicable to the jurisdiction in which he resides;"
-msgstr "เขาได้ดำเนินการตามขั้นตอนที่จำเป็นทั้งหมดเพื่อปฏิบัติตามกฎหมาย หรือ หลักเกณฑ์ใดๆ ก็ตามที่เกี่ยวข้องกับเขตพื้นที่ตามกฎหมายที่เขาอาศัยอยู่"
+msgid "he has all necessary authority, powers, consents, licences or authorisations and has taken all necessary actions to enable himself to lawfully enter into and perform this Agreement;"
+msgstr "เขามีอำนาจอันชอบธรรมที่จำเป็นทั้งหมด กำลัง ความยินยอม ใบอนุญาต หรือ การอนุญาต และได้ดำเนินการตามขั้นตอนที่จำเป็นทั้งหมดเพื่อให้สามารถเข้าสู่และปฏิบัติตามข้อตกลงนี้ได้อย่างถูกกฎหมาย"
 
 msgid "hour"
 msgstr "ชั่วโมง"
@@ -11962,6 +12242,12 @@ msgstr "ในกรณีที่เกิดเหตุสุดวิสั
 msgid "include a disclaimer and/or notice that any intellectual property rights including any Trademark or slogan whatsoever belong to the Company and any unauthorised use is strictly prohibited."
 msgstr "รวมถึงการสงวนสิทธิ์ และ/หรือ ประกาศว่า สิทธิ์ของทรัพย์สินทางปัญญา รวมถึงเครื่องหมายการค้า หรือ คำขวัญอะไรก็ตามเป็นของบริษัทฯ และห้ามมิให้ใช้โดยไม่ได้รับอนุญาต"
 
+msgid "information about medical or health conditions, including whether or not the applicant has a disability for which the Company needs to make reasonable adjustments."
+msgstr "ข้อมูลเกี่ยวกับการรักษา หรือ การวินิจฉัยทางการแพทย์ของผู้สมัคร รวมถึงข้อมูลความบกพร่องทางร่างกาย ทุพพลภาพ ซึ่งบริษัทฯ สามารถดำเนินการอย่างสมเหตุสมผลได้"
+
+msgid "information about the applicant's nationality;"
+msgstr "ข้อมูลเกี่ยวกับสัญชาติของผู้สมัคร"
+
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
 msgstr "การจัดการประมวลผลคำสั่งประเภทต่างๆ อย่างชาญฉลาด โดยอาศัยอัลกอริธึ่มและการตั้งค่าโดยใช้องค์ประกอบการดำเนินการที่ดีที่สุด"
 
@@ -11977,6 +12263,9 @@ msgstr "ออกจากระบบ"
 msgid "managing of various aspects of online trading such as sending orders to the platform;"
 msgstr "การจัดการซื้อขายออนไลน์ประเภทต่างๆ เช่น การส่งคำสั่งไปยังแพลตฟอร์ม"
 
+msgid "means any identifiable information relating to the applicant."
+msgstr "หมายถึง ข้อมูลที่ระบุตัวตนได้ที่เกี่ยวข้องกับผู้สมัคร"
+
 msgid "million"
 msgstr "ล้าน"
 
@@ -11986,7 +12275,7 @@ msgstr "นาที"
 msgid "minutes"
 msgstr "นาที"
 
-msgid "misrepresent its services provided to the Clients;"
+msgid "misrepresent its services provided to the clients;"
 msgstr "ให้ข้อมูลผิดเกี่ยวกับการบริการแก่ลูกค้าของบริษัทฯ"
 
 msgid "month"
@@ -12022,17 +12311,20 @@ msgstr "paysafecard เสนอวิธีการชำระเงินอ
 msgid "perform its services and other obligations hereunder at its own cost and risk."
 msgstr "ดำเนินการให้บริการและภาระผูกพันอื่น ๆ ตามคุณค่าและความเสี่ยง"
 
-msgid "prepare and publish any material or place any advertisements which refer to the Company and/or to its relationship with Company without an authorisation to be given by the Company; "
-msgstr "เตรียมการและเผยแพร่เนื้อหา เอกสารใดๆ หรือ ทำการโฆษณาซึ่งอ้างถึงบริษัทฯ และ/หรือ ความสัมพันธ์กับบริษัทฯ โดยไม่ได้รับความยินยอมจากบริษัทฯ"
+msgid "prepare and publish any material or place any advertisements which refer to the Company and its relationship with the Company without an authorisation to be given by the Company; "
+msgstr "เตรียมการและเผยแพร่เนื้อหา เอกสารใดๆ หรือ ทำการโฆษณาซึ่งอ้างถึงบริษัทฯ และ ความสัมพันธ์กับบริษัทฯ โดยไม่ได้รับความยินยอมจากบริษัทฯ"
 
-msgid "provide the Company with all and any information whatsoever that it may become aware of that may be harmful and/or adverse and/or detrimental for the Company and its reputation;"
-msgstr "ให้ข้อมูลทั้งหมดหรือข้อมูลใดๆ แก่บริษัทฯ หรืออะไรก็ตามที่รับทราบว่า อาจจะเป็นอันตราย และ/หรือ เป็นผลร้าย และ/หรือ ก่อให้เกิดความเสียหายแก่บริษัทฯ ตลอดจนชื่อเสียง"
+msgid "provide the Company with all and any information whatsoever that it may become aware of that may be harmful, adverse or detrimental to the Company and its reputation;"
+msgstr "ให้ข้อมูลทั้งหมดหรือข้อมูลใดๆ แก่บริษัทฯ หรืออะไรก็ตามที่รับทราบว่า อาจจะเป็นอันตราย เป็นผลร้าย หรือ ก่อให้เกิดความเสียหายแก่บริษัทฯ และตลอดจนชื่อเสียงของบริษัทฯ"
 
-msgid "receive the approval of the Company to include any information in relation to the Company;"
-msgstr "ได้รับการอนุมัติจากบริษัทฯ รวมถึงการอนุมัติข้อมูลใด ๆ เกี่ยวกับบริษัทฯ"
+msgid "receive the approval of the Company to include any information in relation to the Company; and"
+msgstr "ได้รับการอนุมัติจากบริษัทฯ รวมถึงการอนุมัติข้อมูลใด ๆ เกี่ยวกับบริษัทฯ และ"
 
 msgid "represent itself as a representative of the Company or as an authorised Person by the Company in its advertising activities;"
 msgstr "แสดงตนว่า เป็นตัวแทนของบริษัทฯ หรือ เป็นบุคคลที่ได้รับอนุญาตจากบริษัทฯ ในการโฆษณา"
+
+msgid "restrict the further processing of their personal data, as well as in certain circumstances; and"
+msgstr "จำกัดการนำข้อมูลส่วนบุคคลไปใช้งาน เช่นเดียวกับกรณีเฉพาะต่างๆ และ"
 
 msgid "risk warnings and notices related to transactions and investments in the proposed instruments;"
 msgstr "คำเตือนความเสี่ยงและคำบอกกล่าวที่เกี่ยวข้องกับธุรกรรมและการลงทุนในเครื่องมือการลงทุนที่นำเสนอแก่ท่าน"
@@ -12048,6 +12340,21 @@ msgstr "วินาที"
 
 msgid "seconds"
 msgstr "วินาที"
+
+msgid "shall mean Data Protection Act 2018, Chapter 440 of the Laws of Malta."
+msgstr "จะหมายถึง พระราชบัญญัติคุ้มครองข้อมูล พ.ศ. 2561/ค.ศ. 2018 (Data Protection Act 2018) บทที่ 440 ในกฎหมายของประเทศมอลตา"
+
+msgid "shall mean EU General Data Protection Regulation 2016/679."
+msgstr "จะหมายถึง ระเบียบการป้องกันข้อมูลพื้นฐานของสหภาพยุโรป ฉบับที่ 2016/679 (EU General Data Protection Regulation 2016/679)"
+
+msgid "shall mean any operation which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, restriction, erasure, or destruction, etc.."
+msgstr "จะหมายถึง ปฏิบัติการใดๆ ซึ่งดำเนินต่อข้อมูลส่วนบุคคล หรือ ชุดข้อมูลส่วนบุคคล ไม่ว่าในการดำเนินการอัตโนมัติ ได้แก่ การเก็บรวบรวมข้อมูล การบันทึกข้อมูล การจัดการข้อมูล การจัดทำโครงสร้างข้อมูล การจัดเก็บข้อมูลในสื่อสำหรับเก็บบันทึก การนำข้อมูลมาดัดแปลงใช้งาน หรือ การปรับปรุงข้อมูล การกำหนดข้อจำกัดของการเก็บข้อมูล การลบทะเบียนข้อมูล หรือ การทำลายข้อมูล ฯลฯ"
+
+msgid "shall mean the Binary Group of companies. This means that the Company is responsible for deciding how it holds and uses any personal data about the applicant."
+msgstr "จะหมายถึง บริษัทฯ ต่างๆ ในเครือไบนารี โดยบริษัทฯ รับผิดชอบในการตัดสินใจเพื่อเก็บรักษา และ นำข้อมูลส่วนบุคคลต่างๆ ของผู้สมัครไปใช้ในกิจกรรมต่างๆ"
+
+msgid "shall mean the applicant, whose personal data is collected by the Company."
+msgstr "จะหมายถึง ผู้สมัคร ซึ่งได้ให้ข้อมูลส่วนบุคคลไว้กับบริษัทฯ"
 
 msgid "shall mean these Terms and Conditions regulating the provision of services."
 msgstr "จะหมายถึง ข้อตกลงและเงื่อนไข เหล่านี้ที่เกี่ยวข้องกับการให้บริการต่างๆ"
@@ -12066,6 +12373,9 @@ msgstr "ซึ่งโต้แย้งกับกฎหมายใดๆ �
 
 msgid "the aggregate of all Margin Requirements in your MT5 Real Account."
 msgstr "ผลรวมของข้อกำหนดมาร์จินทั้งหมดของบัญชี MT5 จริงของท่าน"
+
+msgid "the applicant's personal details, including name, address, and contract details, comprising email address and telephone number, date of birth, and gender;"
+msgstr "ข้อมูลส่วนบุคคลของผู้สมัคร ได้แก่ ชื่อตัว ชื่อสกุล ที่อยู่ รายละเอียดสัญญาจ้าง อีเมล์ หมายเหขโทรศัพท์ วันเกิด และเพศ"
 
 msgid "the characteristics of financial instruments that are the subject of that order;"
 msgstr "ลักษณะของเครื่องมือทางการเงินซึ่งเป็นส่วนหนึ่งในการส่งคำสั่งซื้อ"
@@ -12088,14 +12398,17 @@ msgstr "ความแตกต่างระหว่างราคาเส
 msgid "the market conditions of the financial instruments that your orders are related to, which includes the need for timely execution, availability of price improvement, liquidity of the market, size of your order, and the potential impact on total consideration."
 msgstr "ในเงื่อนไขของตลาดเครื่องมือทางการเงินซึ่งคำสั่งซื้อของท่านสัมพันธ์กับปัจจัยเล่านี้ การสั่งประมวลผลในเวลาที่เหมาะสม ราคาที่มีในตลาด สภาพคล่องของตลาด ปริมาณของคำสั่งซื้อของท่าน และปัจจัยที่มีผลต่อการพิจารณาในภาพรวม"
 
+msgid "the provisions of this Agreement or any Orders and any applicable laws will not be breached or violated;"
+msgstr "ข้อกำหนดของสัญญานี้ หรือ คำสั่งใดๆ และกฎหมายที่บังคับใช้ใดๆ จะไม่ถือว่า ถูกละเมิด หรือ ฝ่าฝืน"
+
+msgid "the right to data portability"
+msgstr "สิทธิ์ในการเคลื่อนย้ายข้อมูล"
+
 msgid "the scheme specified in the Investor Compensation Scheme Regulations (Laws of Malta/Subsidiary Legislation 370.09) for the purpose of paying compensation to the Investors."
 msgstr "แผนที่ระบุอยู่ใน Investor Compensation Scheme Regulations (Laws of Malta/Subsidiary Legislation 370.09) มีวัตถุประสงค์เพื่อการจ่ายค่าตอบแทนให้กับนักลงทุน"
 
 msgid "the specific instructions that we receive from you;"
 msgstr "คำสั่งเฉพาะที่พวกเราได้รับจากท่าน"
-
-msgid "the terms and/or conditions and/or clauses and/or provisions of this Agreement, Orders whatsoever, the applicable law or any other law will not be breached or violated;"
-msgstr "ข้อกำหนด และ/หรือ เงื่อนไข และ/หรือ ข้อความ และ/หรือ ข้อกำหนดของข้อตกลงนี้ คำสั่ง หรืออะไรก็ตาม กฎหมายที่เกี่ยวข้อง หรือ กฎหมายอื่นๆ จะไม่ถูกละเมิด หรือ ฝ่าฝืน"
 
 msgid "the underlying currency, or Financial Instrument, on which the price of the CFD is based."
 msgstr "สกุลเงินของผลิตภัณฑ์อ้างอิง หรือ เครื่องมือทางการเงิน ใช้ราคา CFD เป็นหลัก"
@@ -12121,20 +12434,23 @@ msgstr "วันนี้วันศุกร์"
 msgid "trailing stops; and"
 msgstr "การเลื่อนจุดตัดขาดทุน และ"
 
-msgid "upon our request, he provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
-msgstr "เมื่อได้มีการร้องขอ เขาให้ข้อมูลใดๆ หรือ ทั้งหมดแก่บริษัทฯ ตามที่กำหนดอย่างเหมาะสมเพื่อตอบสนองความต้องการ คำร้อง หรือ คำสั่งซื้อ หรือ ข้อกำหนดใดๆ หรือ ทั้งหมด หรือ อะไรก็ตามของเจ้าหน้าที่รัฐบาล หรือ ผู้มีอำนาจอื่นๆ"
+msgid "upon our request, the Agent provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
+msgstr "เมื่อได้มีการร้องขอ ตัวแทนฯ ให้ข้อมูลใดๆ หรือ ทั้งหมดแก่บริษัทฯ ตามที่กำหนดอย่างเหมาะสมเพื่อตอบสนองความต้องการ คำร้อง หรือ คำสั่งซื้อ หรือ ข้อกำหนดใดๆ หรือ ทั้งหมด หรือ อะไรก็ตามของเจ้าหน้าที่รัฐบาล หรือ ผู้มีอำนาจอื่นๆ"
 
-msgid "use its best endeavors and diligence to transfer funds deposited to %1 Agent Account to %1 Client Account;"
-msgstr "ใช้ความพยายามอย่างสุดความสามารถและความมานะในการโอนเงินหลักประกันไปยัง %1 บัญชีตัวแทนไปยัง %1 บัญชีลูกค้า"
+msgid "use its best endeavors and diligence to transfer funds deposited to %1 Agent Account to its respective %1 client account;"
+msgstr "ใช้ความพยายามอย่างสุดความสามารถและความมานะในการโอนเงินหลักประกันไปยัง %1 บัญชีตัวแทนฯ ตามลำดับไปยัง %1 บัญชีลูกค้า"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms; or"
 msgstr "ใช้ หรือทำ API ของ %1 ใหม่ โดยได้รับอนุญาตภายใต้ข้อตกลงเหล่านี้ หรือ"
 
 msgid "use the %1 API for any purpose that violates any law or regulation, any right of any person, including but not limited to intellectual property rights, rights of privacy or rights of personality, or in any manner inconsistent with these Terms or privacy policy."
-msgstr "API ของ %1 สำหรับวัตถุประสงค์ต่างๆ ที่ฝ่าฝืนกฎหมาย หรือ หลักเกณฑ์ และ สิทธิส่วนบุคคลต่างๆ รวมถึง ทรัพย์สินทางปัญญาต่างๆ สิทธิ์ส่วนบุคคล หรือ สิทธิ์ตามสภาพบุคคล หรือ นิติบุคคล หรือ กิจอื่นๆ ที่ขัดแย้งต่อข้อตกลงและเงื่อนไข หรือนโยบายความเป็นส่วนตัว"
+msgstr "API ของ %1 สำหรับวัตถุประสงค์ต่างๆ ที่ฝ่าฝืนกฎหมาย หรือ หลักเกณฑ์ และ สิทธิส่วนบุคคลต่างๆ รวมถึง ทรัพย์สินทางปัญญาต่างๆ สิทธิ์ส่วนบุคคล หรือ สิทธิ์ตามสภาพบุคคล หรือ นิติบุคคล หรือ กิจอื่นๆ ที่ขัดแย้งต่อข้อตกลงและเงื่อนไข หรือนโยบายการรักษาข้อมูลส่วนบุคคล"
 
-msgid "use the Company’s name and/or Trademark in its advertising activities without a written authorisation to be given by the Company;"
-msgstr "ใช้ชื่อของบริษัทฯ และ/หรือ เครื่องหมายการค้าในกิจกรรมโฆษณา โดยไม่มีได้รับอนุญาตเป็นลายลักษณ์อักษรจากบริษัทฯ"
+msgid "use the Company’s name or Trademark in its advertising activities without a written authorisation to be given by the Company;"
+msgstr "ใช้ชื่อของบริษัทฯ หรือ เครื่องหมายการค้าในกิจกรรมโฆษณา โดยไม่มีได้รับอนุญาตเป็นลายลักษณ์อักษรจากบริษัทฯ"
+
+msgid "virtual money credit to account"
+msgstr "เครดิตเงินเสมือนไปยังบัญชี"
 
 msgid "week"
 msgstr "สัปดาห์"

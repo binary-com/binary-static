@@ -13,23 +13,37 @@ program
     .description('Generate sitemap.xml')
     .parse(process.argv);
 
-const url_prefix = 'https://www.binary.com/';
-const filename   = 'sitemap.xml';
-let excluded     = 0;
+const config = [
+    {
+        url_prefix : 'https://www.binary.com/',
+        filename   : 'sitemap.xml',
+        lang_filter: '^(?!id$)',
+    },
+    {
+        url_prefix : 'https://www.binary.me/',
+        filename   : 'sitemap.id.xml',
+        lang_filter: '^id$',
+    },
+];
+let excluded;
 
-const createSitemap = () => {
+const getApplicableLanguages = (lang_filter) => common.languages.filter(lang => new RegExp(lang_filter, 'i').test(lang));
+
+const createSitemap = (conf) => {
+    excluded = 0;
+
     const sitemap = Sitemap.createSitemap({
-        hostname : url_prefix,
+        hostname : conf.url_prefix,
         cacheTime: 600000,
     });
 
-    common.languages
+    getApplicableLanguages(conf.lang_filter)
         .map(lang => lang.toLowerCase())
         .forEach((lang) => {
             urls.forEach((entry) => {
                 if (!common.isExcluded(entry[3], lang)) {
                     sitemap.add({
-                        url       : `${url_prefix}${lang}/${entry[0]}.html`,
+                        url       : `${conf.url_prefix}${lang}/${entry[0]}.html`,
                         changefreq: entry[1],
                         priority  : entry[2],
                     });
@@ -39,15 +53,19 @@ const createSitemap = () => {
             });
         });
 
-    fs.writeFileSync(Path.join(common.root_path, filename), sitemap.toString());
+    fs.writeFileSync(Path.join(common.root_path, conf.filename), sitemap.toString());
 };
 
-const start = Date.now();
-process.stdout.write(common.messageStart(`Generating ${filename}`));
-createSitemap();
-process.stdout.write(common.messageEnd(Date.now() - start));
+config.forEach((conf) => {
+    const start = Date.now();
+    process.stdout.write(common.messageStart(`Generating ${conf.filename}`));
 
-// Report details
-const langs_count = common.languages.length;
-const total_count = langs_count * urls.length - excluded;
-console.log(`  ${color.green(total_count)} URL nodes total (${color.cyan(langs_count)} Languages ${color.yellowBright('*')} ${color.cyan(urls.length)} URLs ${color.yellowBright('-')} ${color.cyan(excluded)} Excluded)`); // eslint-disable-line no-console
+    createSitemap(conf);
+
+    process.stdout.write(common.messageEnd(Date.now() - start));
+
+    // Report details
+    const langs_count = getApplicableLanguages(conf.lang_filter).length;
+    const total_count = langs_count * urls.length - excluded;
+    console.log(`  ${color.green(total_count)} URL nodes total (${color.cyan(langs_count)} Languages ${color.yellowBright('*')} ${color.cyan(urls.length)} URLs ${color.yellowBright('-')} ${color.cyan(excluded)} Excluded)\n`); // eslint-disable-line no-console
+});

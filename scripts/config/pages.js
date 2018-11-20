@@ -45,6 +45,7 @@ module.exports = [
     ['user/security/self_exclusionws',          'app/user/security/self_exclusion',            'default',    'Self Exclusion'],
     ['user/security/two_factor_authentication', 'app/user/security/two_factor_authentication', 'default',    'Two-Factor Authentication'],
     ['user/security/cloudflare_dns',            'app/user/security/cloudflare_dns',            'default',    'Binary.com recommends 1.1.1.1'],
+    ['user/security/vpn_app',                   'app/user/security/vpn_app',                   'default',    'VPN app'],
     ['user/set-currency',                       'app/user/set_currency',                       'default',    'Set Currency'],
     ['user/settingsws',                         'app/user/settings',                           'default',    'Settings'],
     ['user/settings/assessmentws',              'app/user/settings/financial_assessment',      'default',    'Financial Assessment'],
@@ -67,6 +68,7 @@ module.exports = [
     // ==================== Section: "static" ====================
     ['404',                                     'static/404',                                  'full_width', '404'],
     ['home',                                    'static/home',                                 'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
+    ['keep-safe',                               'static/keep_safe',                            'full_width', 'Keep Safe'],
     ['tour',                                    'static/tour',                                 'full_width', 'Tour'],
     ['why-us',                                  'static/why_us',                               'full_width', 'Why Us'],
     ['platforms',                               'static/platforms',                            'full_width', 'Trading Platforms'],
@@ -74,7 +76,9 @@ module.exports = [
     ['about-us',                                'static/about/index',                          'full_width', 'About Us'],
     ['binary-in-numbers',                       'static/about/binary_in_numbers',              'default',    'Binary in Numbers'],
     ['careers',                                 'static/about/careers',                        'full_width', 'Careers'],
+    ['careers/privacy-policy',                  'static/about/job_applicant_policy',           'full_width', 'Job Applicant Privacy Policy'],
     ['contact',                                 'static/about/contact',                        'full_width', 'Contact Us'],
+    ['contact-2',                               'static/about/contact_2',                      'full_width', 'Contact Us'],
     ['cyberjaya',                               'static/about/cyberjaya',                      'full_width', 'Careers - Cyberjaya',                'ja'],
     ['labuan',                                  'static/about/labuan',                         'full_width', 'Careers - Labuan',                   'ja'],
     ['malta',                                   'static/about/malta',                          'full_width', 'Careers - Malta',                    'ja'],
@@ -114,5 +118,6 @@ module.exports = [
     // ==================== Section: "landing_pages" ====================
     // ['graduates',                               'landing_pages/graduate_program',              null,        'Binary.com Graduate Program',        'NOT-en'],
     // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
-    ['landing/signup-frame',                    'landing_pages/signup_frame',                  null,        'Sign up'],
+    ['introducing-usb',                            'landing_pages/usb',                           null,        'Introducing USB',                    'NOT-en'],
+    ['landing/signup-frame',                       'landing_pages/signup_frame',                  null,        'Sign up'],
 ];

@@ -21,11 +21,24 @@ const GetStartedSection = ({ link, hash, image, header, text }) => {
     );
 };
 
-const GetStartedSectionWrapper = ({ section_id, section_header, section_description, children }) => (
+const GetStartedSectionWrapper = ({
+    section_id,
+    section_header,
+    section_description,
+    section_button_url  = '',
+    section_button_text = '',
+    children,
+}) => (
     <React.Fragment>
         <div className='gr-padding-30 gr-parent' id={section_id}>
             <h2>{section_header}</h2>
             <p>{section_description}</p>
+            { section_button_url &&
+                <div className='gr-row'>
+                    <div className='gr-12'>
+                        <a className='button' href={it.url_for(section_button_url)}><span>{section_button_text}</span></a>
+                    </div>
+                </div> }
             {children}
         </div>
         <SeparatorLine invisible className='gr-padding-30' />
@@ -253,7 +266,9 @@ const Index = () => (
                         <GetStartedSectionWrapper
                             section_id='binary-options-mt5'
                             section_header={it.L('Binary Options on MT5')}
-                            section_description={it.L('Explore a whole new world of binary options trading with the world\'s leading multi-asset platform. [_1]Create an MT5 account now[_2] to start trading.', `<a href=${it.url_for('user/metatrader')}>`, '</a>')}
+                            section_description={it.L('Explore a whole new world of binary options trading with the world\'s leading multi-asset platform.')}
+                            section_button_url='user/metatrader'
+                            section_button_text={it.L('Create an MT5 account now')}
                         >
                             <div className='gr-row'>
                                 <GetStartedSection
