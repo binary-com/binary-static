@@ -47,6 +47,12 @@ const Client = (() => {
             applyToAllElements('.client_logged_out', (el) => {
                 el.setVisibility(1);
             }, '', el_section);
+            applyToAllElements('.client_logged_in', (el) => {
+                el.setVisibility(0);
+            }, '', el_section);
+            applyToAllElements('#client-logged-in', (el) => {
+                el.setVisibility(0);
+            }, '', el_section);
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
         }
