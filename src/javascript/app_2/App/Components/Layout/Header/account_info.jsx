@@ -2,9 +2,9 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { CSSTransition }   from 'react-transition-group';
-import { localize }        from '_common/localize';
 import { AccountSwitcher } from 'App/Containers/AccountSwitcher';
 import { IconArrow }       from 'Assets/Common';
+import Localize            from '../../Elements/localize.jsx';
 
 const AccountInfo = ({
     balance,
@@ -19,7 +19,9 @@ const AccountInfo = ({
     <div className='acc-balance'>
         <div className='acc-switcher-container'>
             <div className={classNames('acc-info', { 'show': is_dialog_on })} onClick={toggleDialog}>
-                <p className='acc-balance-type'>{localize('[_1] Account', [(account_type || '')])}</p>
+                <p className='acc-balance-type'>
+                    <Localize str={`${account_type} Account`} />
+                </p>
                 <p className='acc-balance-id'>{loginid}</p>
                 <IconArrow className='select-arrow' />
             </div>

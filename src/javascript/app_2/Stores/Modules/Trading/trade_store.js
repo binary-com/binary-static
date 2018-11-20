@@ -3,8 +3,8 @@ import {
     action,
     observable,
     runInAction,
-    reaction,
-}                                     from 'mobx';
+    reaction, computed,
+} from 'mobx';
 import {
     getMinPayout,
     isCryptocurrency,
@@ -89,6 +89,13 @@ export default class TradeStore extends BaseStore {
     chart_id = 1;
 
     debouncedProposal = debounce(this.requestProposal, 500);
+    @action.bound
+    init = async () => {
+        // To be sure that the website_status response has been received before processing trading page.
+        await BinarySocket.wait('website_status');
+    };
+
+    proposal_requests = {};
 
     constructor({ root_store }) {
         URLHelper.pruneQueryString(allowed_query_string_variables);
@@ -110,7 +117,11 @@ export default class TradeStore extends BaseStore {
         );
 
         if (this.root_store.client.is_logged_in) {
-            this.processNewValuesAsync({ currency: this.root_store.client.current_account.currency });
+            this.processNewValuesAsync(
+                {
+                    currency: this.root_store.client.accounts[this.root_store.client.loginid].currency,
+                },
+            );
         }
 
         // Adds intercept to change min_max value of duration validation
@@ -120,6 +131,11 @@ export default class TradeStore extends BaseStore {
                 this.changeDurationValidationRules();
             },
         );
+    }
+
+    @computed
+    get currency() {
+        return this.root_store.client.currency;
     }
 
     @action.bound
@@ -174,12 +190,6 @@ export default class TradeStore extends BaseStore {
             }));
         }
     }
-
-    @action.bound
-    init = async () => {
-        // To be sure that the website_status response has been received before processing trading page.
-        await BinarySocket.wait('website_status');
-    };
 
     @action.bound
     onChange(e) {
@@ -267,7 +277,7 @@ export default class TradeStore extends BaseStore {
         if (is_changed_by_user &&
             /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(
-                this.root_store.client.current_account.currency
+                this.root_store.client.accounts[this.root_store.client.loginid].currency,
             )
         ) {
             obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
@@ -312,8 +322,6 @@ export default class TradeStore extends BaseStore {
             this.debouncedProposal();
         }
     }
-
-    proposal_requests = {};
 
     @action.bound
     requestProposal() {

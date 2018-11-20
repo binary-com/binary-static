@@ -49,7 +49,7 @@ const BinarySocketGeneral = (() => {
                     if (response.authorize.loginid !== client_store.loginid) {
                         requestLogout();
                     } else {
-                        Client.responseAuthorize(response);
+                        client_store.responseAuthorize(response);
                         setBalance(response.authorize.balance);
                         WS.subscribeBalance(ResponseHandlers.balance);
                         WS.getSettings();
@@ -104,7 +104,6 @@ const BinarySocketGeneral = (() => {
     const setBalance = flow(function* (balance) {
         yield BinarySocket.wait('website_status');
         Client.set('balance', balance);
-        client_store.balance = balance;
     });
 
     const handleError = (response) => {

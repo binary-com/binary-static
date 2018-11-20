@@ -112,7 +112,7 @@ Purchase.propTypes = {
 export default connect(
     ({ modules, ui, client }) => ({
         barrier_count             : modules.trade.barrier_count,
-        currency                  : modules.trade.currency,
+        currency                  : client.currency,
         is_purchase_enabled       : modules.trade.is_purchase_enabled,
         is_trade_enabled          : modules.trade.is_trade_enabled,
         onClickPurchase           : modules.trade.onPurchase,
