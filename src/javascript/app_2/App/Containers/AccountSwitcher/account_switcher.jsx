@@ -2,10 +2,10 @@ import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
-import { IconLogout }    from 'Assets/Header/Drawer/index';
+import { IconLogout }    from 'Assets/Header/Drawer';
 import { requestLogout } from 'Services/index';
 import { connect }       from 'Stores/connect';
-import { UpgradeButton } from './upgrade_button.jsx';
+import { UpgradeButton } from 'App/Components/Elements/AccountSwitcher/upgrade_button.jsx';
 
 const makeAccountsList = ({ client }) => client.all_loginids.map(id => (
     id !== client.loginid &&

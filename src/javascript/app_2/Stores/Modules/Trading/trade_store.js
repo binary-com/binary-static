@@ -119,7 +119,7 @@ export default class TradeStore extends BaseStore {
         if (this.root_store.client.is_logged_in) {
             this.processNewValuesAsync(
                 {
-                    currency: this.root_store.client.accounts[this.root_store.client.loginid].currency,
+                    currency: this.currency,
                 },
             );
         }
@@ -277,7 +277,7 @@ export default class TradeStore extends BaseStore {
         if (is_changed_by_user &&
             /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
             isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(
-                this.root_store.client.accounts[this.root_store.client.loginid].currency,
+                this.currency,
             )
         ) {
             obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);

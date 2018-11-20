@@ -18,11 +18,11 @@ export default class ClientStore extends BaseStore {
     @observable loginid;
     @observable upgrade_info;
     @observable accounts;
-    @observable storage_key = 'client.accounts';
+    storage_key = 'client.accounts';
     @observable switched    = '';
 
     /**
-     * Burrowed from `Client_base::getBasicUpgradeInfo()`
+     * Borrowed from `Client_base::getBasicUpgradeInfo()`
      * @returns {{type: *, can_upgrade: boolean, can_upgrade_to: *, can_open_multi: boolean}}
      */
     getBasicUpgradeInfo = () => {
@@ -230,7 +230,7 @@ export default class ClientStore extends BaseStore {
     }
 
     /**
-     * Burrowed from `Client_base::getAccountTitle()`
+     * Borrowed from `Client_base::getAccountTitle()`
      *
      * @param {string} loginid || current login id
      * @returns {string}
@@ -240,7 +240,7 @@ export default class ClientStore extends BaseStore {
     }
 
     /**
-     * Burrowed from `Client_base::getAccountType()`
+     * Borrowed from `Client_base::getAccountType()`
      *
      * @param {string} loginid || current login id
      * @returns {string}
@@ -254,7 +254,7 @@ export default class ClientStore extends BaseStore {
     }
 
     /**
-     * Burrowed from `Client_base::getAccountOfType()`
+     * Borrowed from `Client_base::getAccountOfType()`
      * @param type
      * @param only_enabled
      * @returns {*}
@@ -286,7 +286,7 @@ export default class ClientStore extends BaseStore {
     }
 
     /**
-     * Burrowed from `Client_base::isAccountOfType()`
+     * Borrowed from `Client_base::isAccountOfType()`
      *
      * @param type
      * @param loginid
