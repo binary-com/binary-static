@@ -1,15 +1,16 @@
-import PropTypes                from 'prop-types';
-import React                    from 'react';
-import { withRouter }           from 'react-router';
-import { formatMoney }          from '_common/base/currency_base';
-import { connect }              from 'Stores/connect';
+import PropTypes       from 'prop-types';
+import React           from 'react';
+import { withRouter }  from 'react-router';
+import { formatMoney } from '_common/base/currency_base';
+import { connect }     from 'Stores/connect';
 import {
     AccountInfo,
     LoginButton,
     MenuLinks,
     ToggleMenuDrawer,
-    ToggleNotificationsDrawer } from '../../Components/Layout/Header';
-import header_links             from '../../Constants/header_links';
+    ToggleNotificationsDrawer,
+}                      from '../../Components/Layout/Header';
+import header_links    from '../../Constants/header_links';
 
 const Header = ({
     balance,
@@ -19,18 +20,19 @@ const Header = ({
     is_acc_switcher_on,
     is_logged_in,
     is_mobile,
+    is_tablet,
     onClickUpgrade,
     toggleAccountsDialog,
 }) => (
     <header className='header'>
         <div className='menu-items'>
             <div className='menu-left'>
-                {is_mobile && <ToggleMenuDrawer />}
+                {(is_mobile || is_tablet) && <ToggleMenuDrawer />}
                 <MenuLinks items={header_links} />
             </div>
             <div className='menu-right'>
                 <div className='acc-balance-container'>
-                    { is_logged_in ?
+                    {is_logged_in ?
                         <React.Fragment>
                             <AccountInfo
                                 balance={formatMoney(currency, balance, true)}
@@ -60,6 +62,7 @@ Header.propTypes = {
     is_dark_mode        : PropTypes.bool, // TODO: add dark theme handler
     is_logged_in        : PropTypes.bool,
     is_mobile           : PropTypes.bool,
+    is_tablet           : PropTypes.bool,
     loginid             : PropTypes.string,
     onClickUpgrade      : PropTypes.func, // TODO: add click handler
     toggleAccountsDialog: PropTypes.func,
@@ -77,6 +80,7 @@ export default withRouter(connect(
         is_acc_switcher_on  : ui.is_accounts_switcher_on,
         is_dark_mode        : ui.is_dark_mode_on,
         is_mobile           : ui.is_mobile,
+        is_tablet           : ui.is_tablet,
         toggleAccountsDialog: ui.toggleAccountsDialog,
-    })
+    }),
 )(Header));

@@ -17,6 +17,7 @@ import {
 const MenuDrawer = ({
     is_dark_mode,
     is_mobile,
+    is_tablet,
     is_portfolio_drawer_on,
     // is_purchase_confirmed,
     is_purchase_locked,
@@ -27,7 +28,7 @@ const MenuDrawer = ({
 }) => (
     <div className='drawer-items-container'>
         <div className='list-items-container'>
-            { is_mobile &&
+            { (is_mobile || is_tablet) &&
             <React.Fragment>
                 <DrawerItem
                     text={localize('Trade')}
@@ -87,6 +88,7 @@ MenuDrawer.propTypes = {
     is_portfolio_drawer_on    : PropTypes.bool,
     is_purchase_confirmed     : PropTypes.bool,
     is_purchase_locked        : PropTypes.bool,
+    is_tablet                 : PropTypes.bool,
     toggleDarkMode            : PropTypes.func,
     togglePortfolioDrawer     : PropTypes.func,
     togglePurchaseConfirmation: PropTypes.func,
@@ -97,6 +99,7 @@ export default connect(
     ({ ui }) => ({
         is_dark_mode              : ui.is_dark_mode_on,
         is_mobile                 : ui.is_mobile,
+        is_tablet                 : ui.is_tablet,
         is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
         is_purchase_confirmed     : ui.is_purchase_confirm_on,
         is_purchase_locked        : ui.is_purchase_lock_on,
