@@ -115,15 +115,15 @@ const Footer = () => (
                     <div className='gr-12'>
                         <div className='icon-row flex-row gr-child'>
                             <div className='regulation-logos flex-row'>
-                                <span className='vanuatu-icon'>
+                                <a className='vanuatu-icon' href='https://www.vfsc.vu/' target='_blank' rel='noopener noreferrer'>
                                     <img className='responsive' src={it.url_for('images/pages/regulation/vanuatu-logo.png')} />
-                                </span>
-                                <span className='bvi-icon'>
+                                </a>
+                                <a className='bvi-icon' href='http://www.bvifsc.vg/' target='_blank' rel='noopener noreferrer'>
                                     <img className='responsive' src={it.url_for('images/pages/regulation/bvi.png')} />
-                                </span>
-                                <span className='labuan-icon'>
+                                </a>
+                                <a className='labuan-icon' href='https://www.labuanibfc.com/' target='_blank' rel='noopener noreferrer'>
                                     <img className='responsive' src={it.url_for('images/pages/footer/labuan_FSA.svg')} />
-                                </span>
+                                </a>
                             </div>
                             <SocialIcons
                                 networks={[
