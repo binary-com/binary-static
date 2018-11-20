@@ -122,7 +122,7 @@ const Careers = () => {
                 <div className='fill-bg-color location-section'>
                     <div className='container gr-row gr-padding-20 center-text'>
                         <div className='gr-12 gr-padding-20'>
-                            <h1 data-anchor='our-locations'>{it.L('Our locations')}</h1>
+                            <h1>{it.L('Our locations')}</h1>
                         </div>
                         <ColumnLG image='malta@1'   text={it.L('Malta')}               link={it.url_for('malta')} />
                         <ColumnLG image='my@2'      text={it.L('Cyberjaya, Malaysia')} link={it.url_for('cyberjaya')} />
