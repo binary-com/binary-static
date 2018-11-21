@@ -155,10 +155,9 @@ const ViewPopup = (() => {
     };
 
     const update = () => {
-        const final_price      = contract.sell_price || contract.bid_price;
         const is_started       = !contract.is_forward_starting || contract.current_spot_time > contract.date_start;
         const is_ended         = contract.status !== 'open' || contract.is_expired || contract.is_settleable;
-        const indicative_price = final_price && is_ended ? final_price : (contract.bid_price || null);
+        const indicative_price = contract.sell_price || (contract.bid_price || null);
 
         if (is_sold_before_start) {
             $('#trade_details_start_date').parent().setVisibility(0);
@@ -235,7 +234,9 @@ const ViewPopup = (() => {
         containerSetText('trade_details_ref_id', `${contract.transaction_ids.buy} (${localize('Buy')}) ${contract.transaction_ids.sell ? `<br>${contract.transaction_ids.sell} (${localize('Sell')})` : ''}`);
         containerSetText('trade_details_indicative_price', indicative_price ? formatMoney(contract.currency, indicative_price) : '-');
 
-        if (final_price) {
+        if (is_ended && !contract.sell_price) {
+            containerSetText('trade_details_profit_loss', localize('Waiting for contract settlement.'), { class: 'pending' });
+        } else if (contract.sell_price || contract.bid_price) {
             containerSetText('trade_details_profit_loss',
                 `${formatMoney(contract.currency, contract.profit)}<span class="percent">(${(contract.profit_percentage > 0 ? '+' : '')}${addComma(contract.profit_percentage, 2)}%)</span>`,
                 { class: (contract.profit >= 0 ? 'profit' : 'loss') }
@@ -337,6 +338,7 @@ const ViewPopup = (() => {
 
         containerSetText('trade_details_current_title', localize('Contract Result'));
         containerSetText('trade_details_indicative_label', localize('Payout'));
+        containerSetText('trade_details_profit_loss_label', localize('Profit/Loss'));
         if (contract.status === 'sold') {
             containerSetText('trade_details_end_label', localize('End Time'));
             containerSetText('trade_details_end_date', epochToDateTime(contract.sell_time), '', true);
@@ -609,7 +611,7 @@ const ViewPopup = (() => {
             ${createRow(localize('Current Time'), '', 'trade_details_live_date')}
             ${!contract.tick_count ? createRow('', 'trade_details_end_label', 'trade_details_end_date', true) : ''}
             ${createRow(localize('Indicative'), 'trade_details_indicative_label', 'trade_details_indicative_price')}
-            ${createRow(localize('Profit/Loss'), '', 'trade_details_profit_loss')}
+            ${createRow(localize('Potential Profit/Loss'), 'trade_details_profit_loss_label', 'trade_details_profit_loss')}
             <tr><td colspan="2" class="last_cell" id="trade_details_message">&nbsp;</td></tr>
             </table>
             <div id="errMsg" class="notice-msg ${hidden_class}"></div>

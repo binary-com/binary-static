@@ -9,15 +9,20 @@ const initGlobals = (grunt) => {
     // ----- release info -----
     global.is_release = Helpers.isRelease(grunt);
     if (global.is_release) {
-        Helpers.checkSection(grunt); // To prevent mistakes, section is mandatory when releasing
         global.release_target = Helpers.getReleaseTarget(grunt);
     }
 
     // ----- branch info -----
     if (global.release_target) {
-        global.release_info  = global.release_config[global.release_target];
+        global.release_info = global.release_config[global.release_target];
+        if (!global.release_info.target_repo) {
+            global.release_info.target_repo = global.release_info.origin;
+        }
+        global.release_info.clone_folder = Helpers.getGhpagesCloneFolder();
+
         global.branch_prefix = '';
         global.branch        = global.release_info.target_folder;
+
         if (global.release_target === 'staging') {
             grunt.option('cleanup', true); // always cleanup when releasing to staging
         }

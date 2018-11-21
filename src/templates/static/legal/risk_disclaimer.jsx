@@ -23,7 +23,7 @@ const RiskDisclaimer = () => (
         <h4>{it.L('Need to Monitor Positions')}</h4>
         <p>{it.L('It is important that you monitor all of your positions closely. It is your responsibility to monitor your positions and during the period that you have any open Contracts, you should always have the ability to access your Accounts.')}</p>
 
-        <div className='invisible eu-show'>
+        <div data-show='eucountry'>
             <h4>{it.L('Default')}</h4>
             <p>{it.L('Since BIEL is a member of the Malta Investor Compensation Scheme, you are covered for the first €20,000 of any claim you may have in the unlikely event of BIEL suffering an investment default and not being able to meet its obligations. This protection is available only to retail clients. Neither professional clients nor eligible counterparties can benefit from this protection.')}</p>
         </div>

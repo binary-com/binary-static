@@ -2,23 +2,41 @@ const Constants = require('./constants');
 
 const isRelease = (grunt) => grunt.cli.tasks[0] === 'release';
 
-const getReleaseTarget = (grunt) => Object.keys(global.release_config).find(grunt.option);
+const getReleaseTarget = (grunt) => {
+    const release_target = Object.keys(global.release_config).find(grunt.option);
+
+    if (!release_target) {
+        grunt.fail.fatal(`Release target is wrong or not specified.\nValid targets are: ${Object.keys(global.release_config).map(t => `\n  --${t}`).join('')}`);
+    }
+
+    return release_target;
+};
+
+const validateSection = (grunt, section) => {
+    let valid_sections = Constants.config.valid_sections;
+
+    if (isRelease(grunt)) {
+        valid_sections = global.release_info.valid_sections;
+
+        if (!grunt.option('section')) { // To prevent mistakes, section is mandatory when releasing
+            grunt.fail.fatal(`It is mandatory to specify the section when releasing. (--section=...)\nValid sections are: ${valid_sections.join(', ')}`);
+        }
+    }
+
+    if (!valid_sections.includes(section)) {
+        grunt.fail.fatal(`Unknown or wrong section: '${section}'.\nValid sections are: ${valid_sections.join(', ')}.`);
+    }
+};
 
 const getSection = (grunt) => {
     const section = grunt.option('section') || Constants.config.default_section;
-
-    if (!Constants.config.valid_sections.includes(section)) {
-        grunt.fail.fatal(`Unknown section: '${section}'.\nValid sections are: ${Constants.config.valid_sections.join(', ')}.`);
-    }
-
+    validateSection(grunt, section);
     return section;
 };
 
-const checkSection = (grunt) => {
-    if (!grunt.option('section')) {
-        grunt.fail.fatal(`It is mandatory to specify the section when releasing.\nValid sections are: ${Constants.config.valid_sections.join(', ')}`);
-    }
-};
+const getGhpagesCloneFolder = () => ( // clone each repo to a unique folder to prevent local cache issues when releasing
+    `.grunt/grunt-gh-pages/gh-pages/${/^.*:(.*)\.git$/g.exec(global.release_info.target_repo)[1].replace(/\//g, '__')}`
+);
 
 const getDistPath = () => `dist${global.branch ? `/${global.branch_prefix}${global.branch}` : ''}`;
 
@@ -39,7 +57,7 @@ module.exports = {
     isRelease,
     getReleaseTarget,
     getSection,
-    checkSection,
+    getGhpagesCloneFolder,
     getDistPath,
     generateCompileCommand,
 };

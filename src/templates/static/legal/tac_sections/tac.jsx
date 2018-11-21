@@ -9,10 +9,10 @@ const Tac = () => (
         <h2 data-anchor='interpretation'>A. {it.L('Interpretation')}</h2>
         <p>
             {it.L('Depending on the jurisdiction to which a Client\'s account has been attached in accordance with the account opening procedures of the website and as detailed in the About Us section of the website and the type of products offered, the term "the Company" shall denote either')}&nbsp;
-            <span className='eu-hide'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
-            <span className='eu-hide'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
-            <span className='eu-hide'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
-            <span className='eu-hide'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
+            <span data-show='-eucountry'>{it.L('Binary (V) Ltd.,')}&nbsp;</span>
+            <span data-show='-eucountry'>{it.L('Binary (C.R.) S.A.,')}&nbsp;</span>
+            <span data-show='-eucountry'>{it.L('Binary (BVI) Ltd.,')}&nbsp;</span>
+            <span data-show='-eucountry'>{it.L('Binary (FX) Ltd.,')}&nbsp;</span>
             <span>{it.L('Binary (Europe) Ltd, or')}&nbsp;</span>
             <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
         </p>
@@ -40,21 +40,21 @@ const Tac = () => (
         <p>{it.L('The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the "Jurisdiction"). You agree that the Jurisdiction\'s courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company\'s [_1]Complaints and Disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions#complaints')}>`, '</a>')}</p>
         <p>{it.L('For Binary Investments (Europe) Ltd and Binary (Europe) Ltd, the applicable Jurisdiction shall be Malta.')}</p>
         <p>{it.L('For Binary (IOM) Ltd, the applicable Jurisdiction shall be the Isle of Man.')}</p>
-        <p className='eu-hide'>{it.L('For Binary (C.R.) S.A., the applicable Jurisdiction shall be Costa Rica.')}</p>
+        <p data-show='-eucountry'>{it.L('For Binary (C.R.) S.A., the applicable Jurisdiction shall be Costa Rica.')}</p>
 
         <h2 data-anchor='contracts'>E. {it.L('Contracts')}</h2>
         <p>{it.L('The Company does not provide a market amongst or between Clients for investments, securities, derivatives or speculations. Each financial contract purchased by a Client via this site is an individual agreement between that Client and the Company and is not a security, nor is it transferable, negotiable or assignable to or with any third party.')}</p>
         <p>{it.L('Acquisition of financial contracts through this site must be effected in accordance with the terms and conditions presented on the pages of this site. Acquisition of a financial contract is completed when the financial contract has been customised, the premium (or the payout, as the case may be) has been calculated and payment has been verified.')}</p>
 
         <h2 data-anchor='clients-liability'>F. {it.L('Client\'s Liability')}</h2>
-        <p>{it.L('Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client\'s family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remain fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client\'s failure to perform or settle such a transaction. [_1]In regards to customers of Binary (IOM) Ltd., online gambling debts are enforceable in law in the Isle of Man.[_2]', '<span class="invisible eu-show">', '</a>')}</p>
+        <p>{it.L('Clients agree to be fully and personally liable for the due settlement of every transaction entered into under their account with the Company. This includes any transactions entered into by members of the Client\'s family or entourage who have gained access to the account. Clients are responsible for ensuring that they alone control access to the account, and that no minors are granted access to trading on the website. In any case, Clients remain fully liable for any and all positions traded on their account, and for any credit card transactions entered into the site for their account. Each Client also indemnifies the Company in respect to all costs and losses of any kind, whatsoever as may be incurred by the Company as a result, direct or indirect, of the Client\'s failure to perform or settle such a transaction. [_1]In regards to customers of Binary (IOM) Ltd., online gambling debts are enforceable in law in the Isle of Man.[_2]', '<span data-show="eucountry">', '</span>')}</p>
 
         <h2 data-anchor='customer-funds'>G. {it.L('Customer Funds')}</h2>
         <p>{it.L('Money collected from Clients are not invested in any securities, futures, currencies, derivatives or other investments, on behalf of Clients.')}</p>
-        <p className='invisible eu-show'>{it.L('We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency. To learn more, please refer [_1]here[_2].',
+        <p data-show='eucountry'>{it.L('We are required by our licence to inform you about what happens to funds which we hold on account for you, and the extent to which funds are protected in the event of insolvency. To learn more, please refer [_1]here[_2].',
             '<a href="http://www.gamblingcommission.gov.uk/for-the-public/Your-rights/Protection-of-customer-funds.aspx" target="_blank" rel="noopener noreferrer">', '</a>')}
         </p>
-        <p className='invisible eu-show'>{it.L('The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level: medium protection.')}</p>
+        <p data-show='eucountry'>{it.L('The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission\'s requirements for the segregation of customer funds at the level: medium protection.')}</p>
         <p>{it.L('The company has various deposit methods available, each with their own timing for deposits, some of which might not be available for withdrawals. Full details of deposits and withdrawals methods available including settlement times are available <a href=\'[_1]\'>here.</a>',
             it.url_for('cashier/payment_methods'))}
         </p>
@@ -111,9 +111,8 @@ const Tac = () => (
         <p>{it.L('The right is also reserved to amend or change the rules and scope of this service from time to time. Any change to the rules made whilst the site is in operation will not apply retrospectively and will only apply to acquisitions of financial contracts made after such change. It is the Company\'s responsibility to notify Clients before any changes to its terms come into effect.')}</p>
 
         <h2 data-anchor='dormant-and-inactive-accounts'>K. {it.L('Dormant and Inactive Accounts')}</h2>
-        <p className='eu-hide'>{it.L('The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP 25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months.')}</p>
-        <p className='invisible eu-show'>{it.L('The company reserves the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts.')}</p>
-
+        <p data-show='-eucountry'>{it.L('The company reserves the right to charge a dormant fee of up to USD/EUR/AUD/GBP 25 or, for the cryptocurrency accounts, the equivalent of USD25 as calculated in accordance with the current exchange rate published by www.xe.com, or another recognized data provider, as on the date of charging of the fee, every 6 months for every Client account that has had no transaction recorded for over 12 months.')}</p>
+        <p data-show='eucountry'>{it.L('The company reserves the right to charge a dormant fee of up to USD/EUR/GBP 25 every 6 months for every Client account that has had no transaction recorded for over 12 months. Clients will be notified before the fee is deducted from the account. Clients need to contact our helpdesk to recover funds from inactive, closed, blocked or excluded accounts.')}</p>
         <h2 data-anchor='liability'>L. {it.L('Liability')}</h2>
         <p>{it.L('Save in case of negligence, fraud, or default by the Company, the Company will not be liable in any way to any clients in the event of force majeure, or for the act of any Government or legal authority, or for the failure of or damage or destruction to its computer systems, data, or records or any part thereof, or for delays, losses, errors, or omissions resulting from the failure or mismanagement of any telecommunications, computer equipment or software by the client or any damages or losses deemed or alleged to have resulted from or been caused by this site or its content.')}</p>
 

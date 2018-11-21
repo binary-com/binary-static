@@ -63,7 +63,6 @@
      * @return {boolean} if window.location.href doesn't contain app.html it will return false immediately
      */
     function handleReactUrl() {
-
         var l = window.location;
 
         // if the url is not related to new app, returns false.
@@ -100,7 +99,6 @@
     var href = window.location.href;
 
     if (!handleReactUrl()) {
-
         var lang = href.split('/').slice(3).find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 }) || getCookieItem('language');
         if (lang && all_languages.indexOf(lang.toLowerCase()) > -1) {
             redirect();
