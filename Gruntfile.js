@@ -9,8 +9,8 @@ module.exports = function (grunt) {
         configPath: process.cwd() + '/build',
         loadGruntTasks: {
             pattern: 'grunt-*',
-            config : require('./package.json'),
             scope  : 'devDependencies',
+            config : require('./package.json'),
         },
         postProcess: function(config) {
             // release to translations automatically after releasing to staging, since staging release is always with 'cleanup'
