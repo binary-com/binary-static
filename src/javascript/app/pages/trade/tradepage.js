@@ -60,25 +60,22 @@ const TradePage = (() => {
                 }
             });
 
-            BinarySocket.wait('website_status', 'landing_company').then(() => {
-                const is_logged_in = Client.isLoggedIn();
-                const is_eu = isEuCountry();
-                const is_maltainvest = Client.get('landing_company_shortcode') === 'maltainvest';
-                const showMfsaMessage = () => $('.mfsa_message')
-                    .removeClass('container')
-                    .addClass('margin-bottom-40')
-                    .slideDown(300);
-
-                if (is_eu) {
-                    if (is_logged_in) {
-                        BinarySocket.wait('get_account_status').then((response) => {
-                            const is_professional = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional');
-                            if (is_maltainvest && !is_professional) {
-                                showMfsaMessage();
-                            }
-                        });
-                    } else {
-                        showMfsaMessage();
+            const is_logged_in = Client.isLoggedIn();
+            const required_api_calls = ['website_status', 'landing_company'];
+            if (is_logged_in) {
+                required_api_calls.push('get_account_status');
+            }
+            
+            BinarySocket.wait(...required_api_calls).then((response) => {
+                if (isEuCountry()) {
+                    const isMaltainvest = () => Client.get('landing_company_shortcode') === 'maltainvest';
+                    const isProfessional = () => (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional');
+                    // show MFSA message to MF non-professional clients or logged out EU clients
+                    if (!is_logged_in || (isMaltainvest() && !isProfessional())) {
+                        $('.mfsa_message')
+                            .removeClass('container')
+                            .addClass('margin-bottom-40')
+                            .slideDown(300);
                     }
                 }
             });
