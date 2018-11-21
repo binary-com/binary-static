@@ -7,12 +7,12 @@ const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
     const init = () => {
-        if (!window._elev) return;
+        if (!window._elev) return; // eslint-disable-line no-underscore-dangle
         window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
             const available_elev_languages = ['id'];
             const current_language         = getLanguage().toLowerCase();
             if (available_elev_languages.indexOf(current_language) !== -1) {
-                window._elev.setLanguage(current_language);
+                window._elev.setLanguage(current_language); // eslint-disable-line no-underscore-dangle
             }
             setUserInfo(elev);
             setTranslations(elev);
