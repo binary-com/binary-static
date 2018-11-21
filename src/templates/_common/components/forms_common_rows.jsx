@@ -118,7 +118,7 @@ export const Phone = ({ hint }) => (
         type='text'
         id='phone'
         label={it.L('Telephone')}
-        attributes={{ maxLength: '35', 'data-lpignore': true }}
+        attributes={{ 'data-lpignore': true }}
         hint={hint}
     />
 );

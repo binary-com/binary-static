@@ -7,8 +7,8 @@ const OrderExecution = () => (
         <h2 data-anchor='introduction'>{it.L('A. Introduction')}</h2>
         <p>
             {it.L('The term \'we\', \'us\', \'our\', \'ours\', \'the Company\', \'[_1]\' shall denote', it.website_name)}&nbsp;
-            <span className='eu-hide'>{it.L('Binary (V) Ltd,')}&nbsp;</span>
-            <span className='eu-hide'>{it.L('Binary (FX) Ltd, or')}&nbsp;</span>
+            <span data-show='-eucountry'>{it.L('Binary (V) Ltd,')}&nbsp;</span>
+            <span data-show='-eucountry'>{it.L('Binary (FX) Ltd, or')}&nbsp;</span>
             <span>{it.L('Binary Investments (Europe) Ltd.')}</span>
         </p>
 

@@ -13,7 +13,7 @@ const ThirdPartyLinks = (() => {
 
     const clickHandler = (e) => {
         if (!e.target) return;
-        const el_link = e.target.closest('a');
+        const el_link = e.target.closest('a') || e.target.closest('area');
         if (!el_link) return;
 
         const href = el_link.href;

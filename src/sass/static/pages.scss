@@ -484,6 +484,48 @@ body #_elev_io {
             margin-top: 0;
         }
     }
+    &.cyberjaya-content, &.careers-content {
+        .box-container {
+            &.padding {
+                padding: 5px 15px;
+            }
+            > [class*='gr-padding'] {
+                padding-bottom: 0;
+
+                @media (max-width: 768px) {
+                    padding-bottom: unset;
+                }
+            }
+            .box {
+                background: $COLOR_WHITE;
+
+                &.bordered {
+                    border: 1px solid $COLOR_GRAY;
+                    height: 100%;
+                }
+                .items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        padding-top: 20px;
+                        width: 50px;
+                    }
+                    p {
+                        font-weight: 600;
+                        color: $COLOR_BLUE;
+                    }
+                    > .box-item-end {
+                        padding: 0 30px;
+                    }
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .location {
@@ -945,44 +987,6 @@ body #not_authenticated_financial ul.checked > li {
                 margin-bottom: 2.5rem;
             }
         }
-        .box-container {
-            &.padding {
-                padding: 5px 15px;
-            }
-            > [class*='gr-padding'] {
-                padding-bottom: 0;
-
-                @media (max-width: 768px) {
-                    padding-bottom: unset;
-                }
-            }
-            .box {
-                &.bordered {
-                    border: 1px solid $COLOR_GRAY;
-                    height: 100%;
-                }
-                .items {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    img {
-                        padding-top: 20px;
-                        width: 50px;
-                    }
-                    p {
-                        font-weight: 600;
-                        color: $COLOR_BLUE;
-                    }
-                    > .box-item-end {
-                        padding: 0 30px;
-                    }
-                    @media (max-width: 768px) {
-                        justify-content: center;
-                    }
-                }
-            }
-        }
         h4 {
             color: $COLOR_BLUE;
         }
@@ -1340,6 +1344,8 @@ body #not_authenticated_financial ul.checked > li {
     .column {
         @media screen and (max-width: 480px) {
             padding: 0;
+            width: 100%;
+            text-align: center;
         }
     }
     .vertical-divider {

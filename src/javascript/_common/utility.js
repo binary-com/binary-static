@@ -75,6 +75,34 @@ const isEmptyObject = (obj) => {
 
 const cloneObject = obj => (!isEmptyObject(obj) ? extend(true, Array.isArray(obj) ? [] : {}, obj) : obj);
 
+const isDeepEqual = (a, b) => {
+    if (typeof a !== typeof b) {
+        return false;
+    } else if (Array.isArray(a)) {
+        return isEqualArray(a, b);
+    } else if (a && b && typeof a === 'object') {
+        return isEqualObject(a, b);
+    }
+    // else
+    return a === b;
+};
+
+const isEqualArray = (arr1, arr2) => (
+    arr1 === arr2 ||
+    (
+        arr1.length === arr2.length &&
+        arr1.every((value, idx) => isDeepEqual(value, arr2[idx]))
+    )
+);
+
+const isEqualObject = (obj1, obj2) => (
+    obj1 === obj2 ||
+    (
+        Object.keys(obj1).length === Object.keys(obj2).length &&
+        Object.keys(obj1).every(key => isDeepEqual(obj1[key], obj2[key]))
+    )
+);
+
 const getPropertyValue = (obj, k) => {
     let keys = k;
     if (!Array.isArray(keys)) keys = [keys];
@@ -181,9 +209,18 @@ const findParent = (el, selector) => {
 
 let static_hash;
 const getStaticHash = () => {
-    static_hash = static_hash || (document.querySelector('script[src*="binary.min.js"],script[src*="binary.js"]').getAttribute('src') || '').split('?')[1];
+    static_hash = static_hash || (document.querySelector('script[src*="binary"]').getAttribute('src') || '').split('?')[1];
     return static_hash;
 };
+
+class PromiseClass {
+    constructor() {
+        this.promise = new Promise((resolve, reject) => {
+            this.reject  = reject;
+            this.resolve = resolve;
+        });
+    }
+}
 
 module.exports = {
     showLoadingImage,
@@ -192,6 +229,7 @@ module.exports = {
     template,
     isEmptyObject,
     cloneObject,
+    isDeepEqual,
     getPropertyValue,
     handleHash,
     clearable,
@@ -199,4 +237,5 @@ module.exports = {
     applyToAllElements,
     findParent,
     getStaticHash,
+    PromiseClass,
 };
