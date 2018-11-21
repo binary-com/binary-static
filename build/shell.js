@@ -1,20 +1,20 @@
 module.exports = function (grunt) {
-    var error_missing_target = `Target is required: use ${Object.keys(global.release_config).map(t => `--${t}`).join(' or ')} to do a release.`;
-    var colors = {
+    const colors = {
         error: '\\033[0;31m',
         info : '\\033[0;32m',
         warn : '\\033[1;33m',
         reset: '\\033[0m',
     };
-    var prompt = (message, type) => (`echo "${colors[type || 'info']}>>${colors.reset} ${message}"`);
-    var ghpagesCommand = () => (
+    const prompt = (message, type) => (`echo "${colors[type || 'info']}>>${colors.reset} ${message}"`);
+    const ghpagesCommand = () => (
         [
-            `cd ${process.cwd()}/.grunt/grunt-gh-pages/gh-pages/main`,
+            `cd ${process.cwd()}/.grunt/grunt-gh-pages/gh-pages/${global.is_release ? global.release_info.clone_folder : 'main'}`,
             prompt('Updating...'),
             'git fetch origin gh-pages --quiet',
             'git reset --hard origin/gh-pages --quiet'
         ].join(' && ')
     );
+    const release_branch = global.release_info ? global.release_info.branch : '';
 
     return {
         compile_dev: {
@@ -72,15 +72,13 @@ module.exports = function (grunt) {
                     if(!err) {
                         var origin = stdout.replace('\n', '');
                         grunt.log.ok(`Remote origin: ${origin}`);
-                        if (grunt.cli.tasks[0] === 'release') {
-                            if (!global.release_target) {
-                                grunt.fail.fatal(error_missing_target);
-                            } else if (origin !== global.release_info.origin) {
-                                grunt.fail.fatal(`Your remote origin does not match the ${global.release_target.toUpperCase()} repository.`);
+                        if (global.is_release) {
+                            if (origin !== global.release_info.origin) {
+                                grunt.fail.fatal(`Your remote origin does not match the required repository for '--${global.release_target}'.\nShould be: ${global.release_config[global.release_target].origin}`);
                             }
                         } else {
                             // origin cannot be one of release targets, when it's not a release
-                            if (Object.keys(global.release_config).some(target => global.release_config[target].origin === origin)) {
+                            if (Object.keys(global.release_config).some(target => global.release_config[target].origin === origin || global.release_config[target].target_repo === origin)) {
                                 grunt.fail.fatal(`Your remote origin should be your fork.`);
                             }
                         }
@@ -97,10 +95,25 @@ module.exports = function (grunt) {
                     if(!err) {
                         var branch = stdout.replace('\n', '');
                         grunt.log.ok('Current branch: ' + branch);
-                        if (!global.release_target) {
-                            grunt.fail.fatal(error_missing_target);
-                        } else if (branch !== global.release_info.branch) {
+                        if (branch !== global.release_info.branch) {
                             grunt.fail.fatal(`Current branch is not correct.\nIn order to release to ${global.release_target.toUpperCase()}, please checkout the "${global.release_info.branch}" branch.`);
+                        }
+                    }
+                    cb();
+                },
+                stdout: false
+            }
+        },
+        check_updated: {
+            command: `git fetch origin ${release_branch} -q && git rev-list HEAD...origin/${release_branch} --count`,
+            options: {
+                callback: function (err, stdout, stderr, cb) {
+                    if(!err) {
+                        const diff = stdout.replace('\n', '');
+                        if (+diff === 0) {
+                            grunt.log.ok('Local branch is updated to the latest commit on origin.');
+                        } else {
+                            grunt.fail.fatal(`Local branch (${global.release_info.branch}) has ${diff} commits difference with the latest commit on origin. Please update and try again.`);
                         }
                     }
                     cb();
@@ -113,7 +126,7 @@ module.exports = function (grunt) {
                 prompt('Starting the release to \'translations\'\n'),
                 'git fetch origin translations:translations',
                 'git checkout translations',
-                'grunt release --translations --color',
+                'grunt release --translations --section=app --color',
                 'git checkout master',
             ].join(' && '),
             options: {

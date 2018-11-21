@@ -1,6 +1,7 @@
 const BinarySocket       = require('./socket');
 const RealityCheckData   = require('../pages/user/reality_check/reality_check.data');
 const ClientBase         = require('../../_common/base/client_base');
+const GTM                = require('../../_common/base/gtm');
 const SocketCache        = require('../../_common/base/socket_cache');
 const getElementById     = require('../../_common/common_functions').getElementById;
 const removeCookies      = require('../../_common/storage').removeCookies;
@@ -56,7 +57,11 @@ const Client = (() => {
         if (show_login_page) {
             sessionStorage.setItem('showLoginPage', 1);
         }
-        BinarySocket.send({ logout: '1' });
+        BinarySocket.send({ logout: '1' }).then((response) => {
+            if (response.logout === 1) {
+                GTM.pushDataLayer({ event: 'log_out' });
+            }
+        });
     };
 
     const doLogout = (response) => {
