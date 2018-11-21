@@ -3,7 +3,6 @@ import moment                                     from 'moment';
 import GTM                                        from '_common/base/gtm';
 import * as SocketCache                           from '_common/base/socket_cache';
 import BinarySocket                               from '_common/base/socket_base';
-import eventBus                                   from 'Services/event_bus';
 import { LocalStore, State }                      from '_common/storage';
 import BaseStore                                  from './base_store';
 import { localize }                               from '../../_common/localize';
@@ -18,42 +17,9 @@ export default class ClientStore extends BaseStore {
     @observable loginid;
     @observable upgrade_info;
     @observable accounts;
-    storage_key = 'client.accounts';
-    @observable switched    = '';
-
-    /**
-     * Borrowed from `Client_base::getBasicUpgradeInfo()`
-     * @returns {{type: *, can_upgrade: boolean, can_upgrade_to: *, can_open_multi: boolean}}
-     */
-    getBasicUpgradeInfo = () => {
-        const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
-
-        let can_open_multi = false;
-        let type,
-            can_upgrade_to;
-
-        if ((upgradeable_landing_companies || []).length) {
-            can_open_multi   = upgradeable_landing_companies.indexOf(
-                this.accounts[this.loginid].landing_company_shortcode) !== -1;
-            // only show upgrade message to landing companies other than current
-            const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
-                landing_company !== this.accounts[this.loginid].landing_company_shortcode &&
-                upgradeable_landing_companies.indexOf(landing_company) !== -1
-            ));
-
-            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
-            if (can_upgrade_to) {
-                type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
-            }
-        }
-
-        return {
-            type,
-            can_upgrade: !!can_upgrade_to,
-            can_upgrade_to,
-            can_open_multi,
-        };
-    };
+    storage_key                  = 'client.accounts';
+    @observable switched         = '';
+    @observable switch_broadcast = false;
 
     constructor() {
         super();
@@ -137,6 +103,40 @@ export default class ClientStore extends BaseStore {
     }
 
     /**
+     * Borrowed from `Client_base::getBasicUpgradeInfo()`
+     * @returns {{type: *, can_upgrade: boolean, can_upgrade_to: *, can_open_multi: boolean}}
+     */
+    getBasicUpgradeInfo = () => {
+        const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
+
+        let can_open_multi = false;
+        let type,
+            can_upgrade_to;
+
+        if ((upgradeable_landing_companies || []).length) {
+            can_open_multi   = upgradeable_landing_companies.indexOf(
+                this.accounts[this.loginid].landing_company_shortcode) !== -1;
+            // only show upgrade message to landing companies other than current
+            const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
+                landing_company !== this.accounts[this.loginid].landing_company_shortcode &&
+                upgradeable_landing_companies.indexOf(landing_company) !== -1
+            ));
+
+            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
+            if (can_upgrade_to) {
+                type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
+            }
+        }
+
+        return {
+            type,
+            can_upgrade: !!can_upgrade_to,
+            can_upgrade_to,
+            can_open_multi,
+        };
+    };
+
+    /**
      * Store Values relevant to the loginid to local storage.
      *
      * @param loginid
@@ -161,7 +161,7 @@ export default class ClientStore extends BaseStore {
     }
 
     @action.bound
-    updateAccountList (account_list) {
+    updateAccountList(account_list) {
         account_list.forEach((account) => {
             this.accounts[account.loginid].excluded_until = account.excluded_until || '';
             Object.keys(account).forEach((param) => {
@@ -302,6 +302,11 @@ export default class ClientStore extends BaseStore {
     }
 
     @action.bound
+    broadcastAccountChange() {
+        this.switch_broadcast = true;
+    }
+
+    @action.bound
     registerReactions() {
         // Switch account reactions.
         reaction(
@@ -315,7 +320,7 @@ export default class ClientStore extends BaseStore {
                 SocketCache.clear();
                 await BinarySocket.send({ 'authorize': this.getToken() }, { forced: true });
                 await this.init();
-                eventBus.dispatch('ClientAccountHasSwitched', { loginid: switched });
+                this.broadcastAccountChange();
                 reactionHandler.dispose();
             },
             {

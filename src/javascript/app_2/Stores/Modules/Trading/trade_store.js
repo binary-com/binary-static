@@ -15,7 +15,6 @@ import { cloneObject, isEmptyObject } from '_common/utility';
 import { WS }                         from 'Services';
 import GTM                            from 'Utils/gtm';
 import URLHelper                      from 'Utils/URL/url_helper';
-import eventBus                       from 'Services/event_bus';
 import { processPurchase }            from './Actions/purchase';
 import * as Symbol                    from './Actions/symbol';
 import {
@@ -87,6 +86,9 @@ export default class TradeStore extends BaseStore {
 
     // Chart
     chart_id = 1;
+
+    // account switcher
+    accountSwitcherDisposer = null;
 
     debouncedProposal = debounce(this.requestProposal, 500);
     @action.bound
@@ -419,11 +421,16 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     async onMount() {
-        eventBus.listen('ClientAccountHasSwitched', async () => {
-            await this.refresh();
-            await this.prepareTradeStore();
-            this.debouncedProposal();
-        });
+        this.accountSwitcherDisposer = reaction(
+            () => this.root_store.client.switch_broadcast,
+            async (switched) => {
+                if (switched !== true) return;
+                await this.refresh();
+                await this.prepareTradeStore();
+                this.debouncedProposal();
+                // reactionListener.dispose()
+            },
+        );
         await this.prepareTradeStore();
         this.debouncedProposal();
         runInAction(() => {
@@ -434,7 +441,7 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onUnmount() {
-        eventBus.ignore('ClientAccountHasSwitched');
+        this.accountSwitcherDisposer();
         WS.forgetAll('proposal');
         this.is_trade_component_mounted = false;
     }

@@ -1,11 +1,10 @@
 import {
     action,
     computed,
-    observable,
-}                                     from 'mobx';
+    observable, reaction,
+} from 'mobx';
 import moment                         from 'moment';
 import { WS }                         from 'Services';
-import eventBus                       from 'Services/event_bus';
 import { formatStatementTransaction } from './Helpers/format_response';
 import BaseStore                      from '../../base_store';
 
@@ -18,6 +17,8 @@ export default class StatementStore extends BaseStore {
     @observable date_from      = '';
     @observable date_to        = '';
     @observable error          = '';
+
+    accountSwitcherDisposer = null;
 
     constructor({ root_store }) {
         super({ root_store });
@@ -71,7 +72,7 @@ export default class StatementStore extends BaseStore {
 
         const formatted_transactions = response.statement.transactions
             .map(transaction => formatStatementTransaction(transaction,
-                this.root_store.client.current_account.currency));
+                this.root_store.client.currency));
 
         this.data           = [...this.data, ...formatted_transactions];
         this.has_loaded_all = formatted_transactions.length < batch_size;
@@ -99,17 +100,21 @@ export default class StatementStore extends BaseStore {
 
     @action.bound
     onMount() {
-        eventBus.listen('ClientAccountHasSwitched', () => {
-            this.clearTable();
-            this.clearDateFilter();
-            this.fetchNextBatch();
-        });
+        this.accountSwitcherDisposer = reaction(
+            () => this.root_store.client.switch_broadcast,
+            (switched) => {
+                if (switched !== true) return;
+                this.clearTable();
+                this.clearDateFilter();
+                this.fetchNextBatch();
+            },
+        );
         this.fetchNextBatch();
     }
 
     @action.bound
     onUnmount() {
-        eventBus.ignore('ClientAccountHasSwitched');
+        this.accountSwitcherDisposer();
         this.clearTable();
         this.clearDateFilter();
     }
