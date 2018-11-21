@@ -1,13 +1,12 @@
-import { observable, computed, action, reaction } from 'mobx';
-import moment                                     from 'moment';
-import GTM                                        from '_common/base/gtm';
-import * as SocketCache                           from '_common/base/socket_cache';
-import BinarySocket                               from '_common/base/socket_base';
-import { LocalStore }                             from '_common/storage';
+import { observable, computed, action, reaction, trace } from 'mobx';
+import moment                                            from 'moment';
+import GTM                                               from '_common/base/gtm';
+import * as SocketCache                                  from '_common/base/socket_cache';
+import BinarySocket                                      from '_common/base/socket_base';
+import { LocalStore }                                    from '_common/storage';
 import {
     getUpgradeInfo,
-    getAccountType,
-    getAccountTitle }                             from '_common/base/client_base';
+    getAccountTitle }                                    from '_common/base/client_base';
 import BaseStore                                  from './base_store';
 import { localize }                               from '../../_common/localize';
 
@@ -56,8 +55,8 @@ export default class ClientStore extends BaseStore {
     }
 
     @computed
-    get account_type() {
-        return getAccountType(this.loginid);
+    get account_title() {
+        return getAccountTitle(this.loginid);
     }
 
     @computed
@@ -143,8 +142,13 @@ export default class ClientStore extends BaseStore {
      * @param {string} loginid
      */
     @action.bound
-    async switchAccount(loginid) {
+    switchAccount(loginid) {
         this.switched = loginid;
+    }
+
+    @action.bound
+    switchEndSignal() {
+        this.switch_broadcast = false;
     }
 
     /**

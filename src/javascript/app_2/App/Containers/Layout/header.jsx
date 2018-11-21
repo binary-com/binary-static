@@ -73,7 +73,7 @@ Header.propTypes = {
 // to prevent updates on <MenuLinks /> from being blocked
 export default withRouter(connect(
     ({ ui, client }) => ({
-        account_type        : client.account_type,
+        account_type        : client.account_title,
         balance             : client.balance,
         can_upgrade         : client.can_upgrade,
         currency            : client.currency,

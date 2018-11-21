@@ -151,7 +151,6 @@ export default class TradeStore extends BaseStore {
         let query_string_values = this.updateQueryString();
         this.smart_chart        = this.root_store.modules.smart_chart;
         const active_symbols    = await WS.activeSymbols();
-
         if (!active_symbols.active_symbols || active_symbols.active_symbols.length === 0) {
             this.root_store.common.showError(localize('Trading is unavailable at this time.'));
         }
@@ -423,12 +422,11 @@ export default class TradeStore extends BaseStore {
     async onMount() {
         this.accountSwitcherDisposer = reaction(
             () => this.root_store.client.switch_broadcast,
-            async (switched) => {
-                if (switched !== true) return;
+            async () => {
                 await this.refresh();
                 await this.prepareTradeStore();
                 this.debouncedProposal();
-                // reactionListener.dispose()
+                this.root_store.client.switchEndSignal();
             },
         );
         await this.prepareTradeStore();

@@ -49,7 +49,6 @@ const BinarySocketGeneral = (() => {
                         requestLogout();
                     } else {
                         client_store.responseAuthorize(response);
-                        setBalance(response.authorize.balance);
                         WS.subscribeBalance(ResponseHandlers.balance);
                         WS.getSettings();
                         WS.getAccountStatus();

@@ -102,11 +102,11 @@ export default class StatementStore extends BaseStore {
     onMount() {
         this.accountSwitcherDisposer = reaction(
             () => this.root_store.client.switch_broadcast,
-            (switched) => {
-                if (switched !== true) return;
+            () => {
                 this.clearTable();
                 this.clearDateFilter();
                 this.fetchNextBatch();
+                this.root_store.client.switchEndSignal();
             },
         );
         this.fetchNextBatch();
