@@ -232,10 +232,6 @@ const Header = (() => {
         } else {
             $(msg_notification).slideDown(500, () => { if (is_error) msg_notification.classList.add('error'); });
         }
-
-        if (!(Client.isLoggedIn() && is_error)) {
-            msg_notification.setVisibility(0);
-        }
     };
 
     const hideNotification = (msg_code) => {
