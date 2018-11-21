@@ -44,6 +44,8 @@ const Client = (() => {
                 }
             });
         } else {
+            const el_topbar_msg = getElementById('topbar-msg');
+            const el_menu_top   = getElementById('menu-top');
             applyToAllElements('.client_logged_out', (el) => {
                 el.setVisibility(1);
             }, '', el_section);
@@ -53,9 +55,12 @@ const Client = (() => {
             applyToAllElements('#client-logged-in', (el) => {
                 el.setVisibility(0);
             }, '', el_section);
-            applyToAllElements('#topbar-msg', (el) => {
-                el.setVisibility(0);
-            }, '', el_section);
+            if (el_topbar_msg) {
+                el_topbar_msg.setVisibility(0);
+            }
+            if (el_menu_top) {
+                el_menu_top.classList.remove('smaller-font', 'top-nav-menu');
+            }
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
         }
