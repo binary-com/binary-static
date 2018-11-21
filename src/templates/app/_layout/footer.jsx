@@ -113,7 +113,7 @@ const Footer = () => (
             <div className='container' data-show='-eucountry'>
                 <div className='gr-row'>
                     <div className='gr-12'>
-                        <div className='icon-row flex-row gr-child'>
+                        <div className='icon-row flex-row'>
                             <div className='regulation-logos flex-row'>
                                 <a className='vanuatu-icon' href='https://www.vfsc.vu/' target='_blank' rel='noopener noreferrer'>
                                     <img className='responsive' src={it.url_for('images/pages/regulation/vanuatu-logo.png')} />
