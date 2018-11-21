@@ -8,12 +8,10 @@ const TickDisplay              = require('./tick_trade');
 const updateValues             = require('./update_values');
 const Client                   = require('../../base/client');
 const BinarySocket             = require('../../base/socket');
-const isEuCountry              = require('../../common/country_base').isEuCountry;
 const formatMoney              = require('../../common/currency').formatMoney;
 const CommonFunctions          = require('../../../_common/common_functions');
 const localize                 = require('../../../_common/localize').localize;
 const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
-const State                    = require('../../../_common/storage').State;
 const padLeft                  = require('../../../_common/string_util').padLeft;
 const urlFor                   = require('../../../_common/url').urlFor;
 const createElement            = require('../../../_common/utility').createElement;
@@ -66,36 +64,21 @@ const Purchase = (() => {
             message_container.hide();
             confirmation_error.show();
 
-            const required_api_calls = ['authorize', 'website_status', 'landing_company'];
-            const is_logged_in = Client.isLoggedIn();
-            if (is_logged_in) {
-                required_api_calls.push('get_account_status');
-            }
-
-            let message = error.message;
-            BinarySocket.wait(...required_api_calls).then(() => {
-                const is_eu = isEuCountry();
-                const is_maltainvest = Client.get('landing_company_shortcode') === 'maltainvest';
-                const is_no_mfp_client_error = /NoMFProfessionalClient/.test(error.code);
-               
-                if (is_eu && is_no_mfp_client_error) {
-                    if (is_logged_in && is_maltainvest) {
-                        const is_professional = (State.getResponse('get_account_status.status') || []).includes('professional');
-                        if (!is_professional) {
-                            message = localize('[_1][_2]In the EU, financial binary options are only available to professional investors.[_3][_4][_5]Apply now as a professional investor[_6][_7][_8]', ['<div class="gr-row font-style-normal">', '<div class="gr-12 gr-padding-20">', '</div>', '<div class="gr-12 gr-padding-20">', `<a id="btn_professional" class="button" href="${urlFor('user/settings/professional')}"><span>`, '</span></a>', '</div>', '</div>']);
-                        }
-                    }
-                } else if (/RestrictedCountry/.test(error.code)) {
-                    let additional_message = '';
-                    if (/FinancialBinaries/.test(error.code)) {
-                        additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
-                    } else if (/Random/.test(error.code)) {
-                        additional_message = localize('Try our other markets.');
-                    }
-                    message = `${error.message}. ${additional_message}`;
+            let message;
+            if (/NoMFProfessionalClient/.test(error.code)) {
+                message = localize('[_1][_2]In the EU, financial binary options are only available to professional investors.[_3][_4][_5]Apply now as a professional investor[_6][_7][_8]', ['<div class="gr-row font-style-normal">', '<div class="gr-12 gr-padding-20">', '</div>', '<div class="gr-12 gr-padding-20">', `<a id="btn_professional" class="button" href="${urlFor('user/settings/professional')}"><span>`, '</span></a>', '</div>', '</div>']);
+            } else if (/RestrictedCountry/.test(error.code)) {
+                let additional_message = '';
+                if (/FinancialBinaries/.test(error.code)) {
+                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
+                } else if (/Random/.test(error.code)) {
+                    additional_message = localize('Try our other markets.');
                 }
-                CommonFunctions.elementInnerHtml(confirmation_error, message);
-            });
+                message = `${error.message}. ${additional_message}`;
+            } else {
+                message = error.message;
+            }
+            CommonFunctions.elementInnerHtml(confirmation_error, message);
         } else {
             CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';
