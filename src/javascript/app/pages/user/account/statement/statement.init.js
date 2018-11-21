@@ -231,7 +231,7 @@ const StatementInit = (() => {
             $success_msg.setVisibility(0);
             $error_msg.setVisibility(0);
             $request_statement_btn.addClass('button-disabled').off('click');
-            $(download_from_id).val('').removeAttr('data-value');;
+            $(download_from_id).val('').removeAttr('data-value');
             $(download_to_id).val('').removeAttr('data-value');
         });
     };
