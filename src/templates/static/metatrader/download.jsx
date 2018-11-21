@@ -106,8 +106,8 @@ const DesktopDownloadBlock = ({
 
 const Download = () => {
     const windows_link = `<a data-type='alt-link' data-target='windows' id='enable-windows-alt-link'>${it.L('Windows')}</a>`;
-    const linux_link   = `<a data-type='alt-link' data-target='linux' id='enable-linux-alt-link'>${it.L('Linux')}</a>`;;
-    const mac_link     = `<a data-type='alt-link' data-target='mac' id='enable-mac-alt-link'>${it.L('Mac')}</a>`;;
+    const linux_link   = `<a data-type='alt-link' data-target='linux' id='enable-linux-alt-link'>${it.L('Linux')}</a>`;
+    const mac_link     = `<a data-type='alt-link' data-target='mac' id='enable-mac-alt-link'>${it.L('Mac')}</a>`;
     return (
         <div id='mt_download' className='static_full center-text'>
             <div className='gr-padding-20 desktop-apps'>
