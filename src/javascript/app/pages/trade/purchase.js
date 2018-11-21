@@ -65,12 +65,12 @@ const Purchase = (() => {
             container.style.display = 'block';
             message_container.hide();
             if (/AuthorizationRequired/.test(error.code)) {
-                $(authorization_error).setVisibility(1);
+                authorization_error.setVisibility(1);
                 const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
                 authorization_error_btn_login.removeEventListener('click', loginOnClick);
                 authorization_error_btn_login.addEventListener('click', loginOnClick);
             } else {
-                $(confirmation_error).setVisibility(1);
+                confirmation_error.setVisibility(1);
                 let message = error.message;
                 if (/RestrictedCountry/.test(error.code)) {
                     let additional_message = '';
@@ -87,8 +87,8 @@ const Purchase = (() => {
             CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';
             message_container.show();
-            $(authorization_error).setVisibility(0);
-            $(confirmation_error).setVisibility(0);
+            authorization_error.setVisibility(0);
+            confirmation_error.setVisibility(0);
 
             CommonFunctions.elementTextContent(heading, localize('Contract Confirmation'));
             CommonFunctions.elementTextContent(descr, receipt.longcode);
