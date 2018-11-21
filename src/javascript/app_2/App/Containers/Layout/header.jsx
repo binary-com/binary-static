@@ -1,16 +1,15 @@
-import PropTypes       from 'prop-types';
-import React           from 'react';
-import { withRouter }  from 'react-router';
-import { formatMoney } from '_common/base/currency_base';
-import { connect }     from 'Stores/connect';
+import PropTypes                from 'prop-types';
+import React                    from 'react';
+import { withRouter }           from 'react-router';
+import { formatMoney }          from '_common/base/currency_base';
+import { connect }              from 'Stores/connect';
 import {
     AccountInfo,
     LoginButton,
     MenuLinks,
     ToggleMenuDrawer,
-    ToggleNotificationsDrawer,
-}                      from '../../Components/Layout/Header';
-import header_links    from '../../Constants/header_links';
+    ToggleNotificationsDrawer } from 'App/Components/Layout/Header';
+import header_links             from 'App/Constants/header_links';
 
 const Header = ({
     balance,
