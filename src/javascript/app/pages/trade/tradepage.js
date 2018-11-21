@@ -74,7 +74,6 @@ const TradePage = (() => {
                         BinarySocket.wait('get_account_status').then((response) => {
                             const is_professional = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional');
                             if (is_maltainvest && !is_professional) {
-                                $('#professional-cta').setVisibility(1);
                                 showMfsaMessage();
                             }
                         });
