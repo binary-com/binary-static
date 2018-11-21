@@ -20,8 +20,8 @@ module.exports = function (grunt) {
         app: {
             files: [
                 ...common,
-                { expand: true, cwd:  'src/root_files/app', src: ['**'],        dest: 'dist' }, // top level
-                { expand: true, cwd:  'src/root_files/app', src: ['index.html'], dest: global.dist },
+                { expand: true, cwd:  'src/root_files/app', src: ['**', '!index.html'], dest: 'dist' }, // top level
+                { expand: true, cwd:  'src/root_files/app', src: ['index.html'],        dest: global.dist },
 
                 // app, static
                 { expand: true, cwd: 'src/download/',                  src: ['**'],              dest: `${global.dist}/download/` },
