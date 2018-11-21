@@ -34,8 +34,7 @@ export default class ClientStore extends BaseStore {
 
         if ((upgradeable_landing_companies || []).length) {
             can_open_multi   = upgradeable_landing_companies.indexOf(
-                this.accounts[this.loginid].landing_company_shortcode) !==
-                -1;
+                this.accounts[this.loginid].landing_company_shortcode) !== -1;
             // only show upgrade message to landing companies other than current
             const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
                 landing_company !== this.accounts[this.loginid].landing_company_shortcode &&
