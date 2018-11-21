@@ -1,5 +1,4 @@
 import { action, flow }     from 'mobx';
-import Client               from '_common/base/client_base';
 import { setCurrencies }    from '_common/base/currency_base';
 import Login                from '_common/base/login';
 import ServerTime           from '_common/base/server_time';
@@ -83,7 +82,7 @@ const BinarySocketGeneral = (() => {
             case 'get_settings':
                 if (response.get_settings) {
                     setResidence(response.get_settings.country_code);
-                    Client.set('email', response.get_settings.email);
+                    client_store.setEmail(response.get_settings.email);
                     // GTM.eventHandler(response.get_settings);
                     // if (response.get_settings.is_authenticated_payment_agent) {
                     //     $('#topMenuPaymentAgent').setVisibility(1);
@@ -96,14 +95,14 @@ const BinarySocketGeneral = (() => {
 
     const setResidence = (residence) => {
         if (residence) {
-            Client.set('residence', residence);
+            client_store.setResidence(residence);
             WS.landingCompany(residence);
         }
     };
 
     const setBalance = flow(function* (balance) {
         yield BinarySocket.wait('website_status');
-        Client.set('balance', balance);
+        client_store.setBalance(balance);
     });
 
     const handleError = (response) => {

@@ -1,6 +1,5 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import Client            from '_common/base/client_base';
 import { localize }      from '_common/localize';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import {
@@ -16,6 +15,7 @@ import {
 
 const MenuDrawer = ({
     is_dark_mode,
+    is_logged_in,
     is_mobile,
     is_portfolio_drawer_on,
     // is_purchase_confirmed,
@@ -27,7 +27,7 @@ const MenuDrawer = ({
 }) => (
     <div className='drawer-items-container'>
         <div className='list-items-container'>
-            { is_mobile &&
+            {is_mobile &&
             <React.Fragment>
                 <DrawerItem
                     text={localize('Trade')}
@@ -64,25 +64,26 @@ const MenuDrawer = ({
                 />
             </React.Fragment>}
         </div>
-        { !!(Client.isLoggedIn() && is_mobile) &&
-            <div className='drawer-footer'>
-                <DrawerItem
-                    icon={<IconLogout className='drawer-icon' />}
-                    text={localize('Logout')}
-                    custom_action={() => {
-                        if (is_portfolio_drawer_on) {
-                            togglePortfolioDrawer(); // TODO: hide drawer inside logout, once it is a mobx action
-                        }
-                        requestLogout();
-                    }}
-                />
-            </div>
+        {!!(is_logged_in && is_mobile) &&
+        <div className='drawer-footer'>
+            <DrawerItem
+                icon={<IconLogout className='drawer-icon' />}
+                text={localize('Logout')}
+                custom_action={() => {
+                    if (is_portfolio_drawer_on) {
+                        togglePortfolioDrawer(); // TODO: hide drawer inside logout, once it is a mobx action
+                    }
+                    requestLogout();
+                }}
+            />
+        </div>
         }
     </div>
 );
 
 MenuDrawer.propTypes = {
     is_dark_mode              : PropTypes.bool,
+    is_logged_in              : PropTypes.bool,
     is_mobile                 : PropTypes.bool,
     is_portfolio_drawer_on    : PropTypes.bool,
     is_purchase_confirmed     : PropTypes.bool,
@@ -94,7 +95,8 @@ MenuDrawer.propTypes = {
 };
 
 export default connect(
-    ({ ui }) => ({
+    ({ ui, client }) => ({
+        is_logged_in              : client.is_logged_in,
         is_dark_mode              : ui.is_dark_mode_on,
         is_mobile                 : ui.is_mobile,
         is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
@@ -104,5 +106,5 @@ export default connect(
         togglePortfolioDrawer     : ui.togglePortfolioDrawer,
         togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
         togglePurchaseLock        : ui.togglePurchaseLock,
-    })
+    }),
 )(MenuDrawer);

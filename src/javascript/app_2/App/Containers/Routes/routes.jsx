@@ -11,19 +11,21 @@ const Routes = (props) => {
         return <ErrorComponent {...props.error} />;
     }
 
-    return <BinaryRoutes />;
+    return <BinaryRoutes is_logged_in={props.is_logged_in} />;
 };
 
 Routes.propTypes = {
-    error    : MobxPropTypes.objectOrObservableObject,
-    has_error: PropTypes.bool,
+    error       : MobxPropTypes.objectOrObservableObject,
+    has_error   : PropTypes.bool,
+    is_logged_in: PropTypes.bool,
 };
 
 // need to wrap withRouter around connect
 // to prevent updates on <BinaryRoutes /> from being blocked
 export default withRouter(connect(
-    ({ common }) => ({
-        error    : common.error,
-        has_error: common.has_error,
-    })
+    ({ common, client }) => ({
+        error       : common.error,
+        has_error   : common.has_error,
+        is_logged_in: client.is_logged_in,
+    }),
 )(Routes));

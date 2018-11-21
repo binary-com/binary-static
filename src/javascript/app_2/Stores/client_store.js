@@ -3,15 +3,13 @@ import moment                                     from 'moment';
 import GTM                                        from '_common/base/gtm';
 import * as SocketCache                           from '_common/base/socket_cache';
 import BinarySocket                               from '_common/base/socket_base';
-import { LocalStore, State }                      from '_common/storage';
+import { LocalStore }                             from '_common/storage';
+import {
+    getUpgradeInfo,
+    getAccountType,
+    getAccountTitle }                             from '_common/base/client_base';
 import BaseStore                                  from './base_store';
 import { localize }                               from '../../_common/localize';
-
-const types_map = {
-    virtual  : 'Virtual',
-    gaming   : 'Gaming',
-    financial: 'Investment',
-};
 
 export default class ClientStore extends BaseStore {
     @observable loginid;
@@ -59,7 +57,7 @@ export default class ClientStore extends BaseStore {
 
     @computed
     get account_type() {
-        return this.getAccountType();
+        return getAccountType(this.loginid);
     }
 
     @computed
@@ -103,40 +101,6 @@ export default class ClientStore extends BaseStore {
     }
 
     /**
-     * Borrowed from `Client_base::getBasicUpgradeInfo()`
-     * @returns {{type: *, can_upgrade: boolean, can_upgrade_to: *, can_open_multi: boolean}}
-     */
-    getBasicUpgradeInfo = () => {
-        const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
-
-        let can_open_multi = false;
-        let type,
-            can_upgrade_to;
-
-        if ((upgradeable_landing_companies || []).length) {
-            can_open_multi   = upgradeable_landing_companies.indexOf(
-                this.accounts[this.loginid].landing_company_shortcode) !== -1;
-            // only show upgrade message to landing companies other than current
-            const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
-                landing_company !== this.accounts[this.loginid].landing_company_shortcode &&
-                upgradeable_landing_companies.indexOf(landing_company) !== -1
-            ));
-
-            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
-            if (can_upgrade_to) {
-                type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
-            }
-        }
-
-        return {
-            type,
-            can_upgrade: !!can_upgrade_to,
-            can_upgrade_to,
-            can_open_multi,
-        };
-    };
-
-    /**
      * Store Values relevant to the loginid to local storage.
      *
      * @param loginid
@@ -151,13 +115,12 @@ export default class ClientStore extends BaseStore {
 
     @action.bound
     responseAuthorize(response) {
-        const authorize                                       = response.authorize;
-        this.accounts[this.loginid].email                     = authorize.email;
-        this.accounts[this.loginid].currency                  = authorize.currency;
-        this.accounts[this.loginid].is_virtual                = +authorize.is_virtual;
+        this.accounts[this.loginid].email                     = response.authorize.email;
+        this.accounts[this.loginid].currency                  = response.authorize.currency;
+        this.accounts[this.loginid].is_virtual                = +response.authorize.is_virtual;
         this.accounts[this.loginid].session_start             = parseInt(moment().valueOf() / 1000);
-        this.accounts[this.loginid].landing_company_shortcode = authorize.landing_company_name;
-        this.updateAccountList(authorize.account_list);
+        this.accounts[this.loginid].landing_company_shortcode = response.authorize.landing_company_name;
+        this.updateAccountList(response.authorize.account_list);
     }
 
     @action.bound
@@ -192,7 +155,7 @@ export default class ClientStore extends BaseStore {
     init() {
         this.loginid      = LocalStore.get('active_loginid');
         this.accounts     = LocalStore.getObject(this.storage_key);
-        this.upgrade_info = this.getBasicUpgradeInfo();
+        this.upgrade_info = getUpgradeInfo(this.accounts[this.loginid]);
         this.switched     = '';
 
         this.registerReactions();
@@ -229,42 +192,6 @@ export default class ClientStore extends BaseStore {
     }
 
     /**
-     * Borrowed from `Client_base::getAccountTitle()`
-     *
-     * @param {string} loginid || current login id
-     * @returns {string}
-     */
-    getAccountTitle(loginid = this.loginid) {
-        return types_map[this.getAccountType(loginid)] || 'Real';
-    }
-
-    /**
-     * Borrowed from `Client_base::getAccountType()`
-     *
-     * @param {string} loginid || current login id
-     * @returns {string}
-     */
-    getAccountType(loginid = this.loginid) {
-        let account_type = '';
-        if (/^VR/.test(loginid)) account_type = 'virtual';
-        else if (/^MF/.test(loginid)) account_type = 'financial';
-        else if (/^MLT|MX/.test(loginid)) account_type = 'gaming';
-        return account_type;
-    }
-
-    /**
-     * Borrowed from `Client_base::getAccountOfType()`
-     * @param type
-     * @param only_enabled
-     * @returns {*}
-     */
-    getAccountOfType(type, only_enabled = true) {
-        return this.getAccount(
-            this.all_loginids.find(loginid => this.isAccountOfType(type, loginid, only_enabled)),
-        );
-    }
-
-    /**
      * Get information required by account switcher
      *
      * @param loginid
@@ -274,7 +201,7 @@ export default class ClientStore extends BaseStore {
         const account      = this.getAccount(loginid);
         const currency     = account.currency;
         const is_virtual   = account.is_virtual;
-        const account_type = !is_virtual && currency ? currency : this.getAccountTitle(loginid);
+        const account_type = !is_virtual && currency ? currency : getAccountTitle(loginid);
 
         return {
             loginid,
@@ -282,23 +209,6 @@ export default class ClientStore extends BaseStore {
             icon : account_type.toLowerCase(), // TODO: display the icon
             title: account_type.toLowerCase() === 'virtual' ? localize('DEMO') : account_type,
         };
-    }
-
-    /**
-     * Borrowed from `Client_base::isAccountOfType()`
-     *
-     * @param type
-     * @param loginid
-     * @param only_enabled
-     * @returns {boolean}
-     */
-    isAccountOfType(type, loginid = this.loginid, only_enabled = false) {
-        const this_type = this.getAccountType(loginid);
-        return ((
-            (type === 'virtual' && this_type === 'virtual') ||
-            (type === 'real' && this_type !== 'virtual') ||
-            type === this_type) &&
-            (only_enabled ? !this.isDisabled(loginid) : true));
     }
 
     @action.bound
@@ -327,5 +237,20 @@ export default class ClientStore extends BaseStore {
                 name: 'accountSwitchedReaction',
             },
         );
+    }
+
+    @action.bound
+    setBalance(balance) {
+        this.accounts[this.loginid].balance = balance;
+    }
+
+    @action.bound
+    setResidence(residence) {
+        this.accounts[this.loginid].residence = residence;
+    }
+
+    @action.bound
+    setEmail(email) {
+        this.accounts[this.loginid].email = email;
     }
 }

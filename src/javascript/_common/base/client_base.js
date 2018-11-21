@@ -76,17 +76,17 @@ const ClientBase = (() => {
 
     const getAccountType = (loginid = current_loginid) => {
         let account_type;
-        if (/^VR/.test(loginid))          account_type = 'virtual';
-        else if (/^MF/.test(loginid))     account_type = 'financial';
+        if (/^VR/.test(loginid)) account_type = 'virtual';
+        else if (/^MF/.test(loginid)) account_type = 'financial';
         else if (/^MLT|MX/.test(loginid)) account_type = 'gaming';
         return account_type;
     };
 
     const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
-        const this_type   = getAccountType(loginid);
+        const this_type = getAccountType(loginid);
         return ((
             (type === 'virtual' && this_type === 'virtual') ||
-            (type === 'real'    && this_type !== 'virtual') ||
+            (type === 'real' && this_type !== 'virtual') ||
             type === this_type) &&
             (only_enabled ? !get('is_disabled', loginid) : true));
     };
@@ -139,8 +139,8 @@ const ClientBase = (() => {
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
-        set('email',      authorize.email);
-        set('currency',   authorize.currency);
+        set('email', authorize.email);
+        set('currency', authorize.currency);
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
@@ -181,10 +181,10 @@ const ClientBase = (() => {
         SocketCache.clear();
         localStorage.setItem('GTM_new_account', '1');
 
-        set('token',      options.token,       options.loginid);
-        set('email',      options.email,       options.loginid);
+        set('token', options.token, options.loginid);
+        set('email', options.email, options.loginid);
         set('is_virtual', +options.is_virtual, options.loginid);
-        set('loginid',    options.loginid);
+        set('loginid', options.loginid);
 
         return true;
     };
@@ -198,13 +198,14 @@ const ClientBase = (() => {
         return landing_company_response[landing_company_prop] || {};
     };
 
-    const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
+    const shouldCompleteTax = () => isAccountOfType('financial') &&
+        !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
     // remove manager id or master distinction from group
     // remove EUR or GBP distinction from group
     const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/_(\d+|master|EUR|GBP)/, '') : '');
 
-    const getBasicUpgradeInfo = () => {
+    const getUpgradeInfo      = (account) => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
 
         let can_open_multi = false;
@@ -212,13 +213,11 @@ const ClientBase = (() => {
             can_upgrade_to;
 
         if ((upgradeable_landing_companies || []).length) {
-            const current_landing_company = get('landing_company_shortcode');
-
-            can_open_multi = upgradeable_landing_companies.indexOf(current_landing_company) !== -1;
-
+            can_open_multi   = upgradeable_landing_companies.indexOf(
+                account.landing_company_shortcode) !== -1;
             // only show upgrade message to landing companies other than current
             const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
-                landing_company !== current_landing_company &&
+                landing_company !== account.landing_company_shortcode &&
                 upgradeable_landing_companies.indexOf(landing_company) !== -1
             ));
 
@@ -235,6 +234,7 @@ const ClientBase = (() => {
             can_open_multi,
         };
     };
+    const getBasicUpgradeInfo = () => getUpgradeInfo(getAllAccountsObject()[current_loginid]);
 
     const getLandingCompanyValue = (loginid, landing_company, key) => {
         let landing_company_object;
@@ -278,7 +278,8 @@ const ClientBase = (() => {
     };
 
     const canTransferFundsTo = (to_loginid) => {
-        if (to_loginid === current_loginid || get('is_virtual', to_loginid) || get('is_virtual') || get('is_disabled', to_loginid)) {
+        if (to_loginid === current_loginid || get('is_virtual', to_loginid) || get('is_virtual') ||
+            get('is_disabled', to_loginid)) {
             return false;
         }
         const from_currency = get('currency');
@@ -289,7 +290,7 @@ const ClientBase = (() => {
         // only transfer to other accounts that have the same currency as current account if one is maltainvest and one is malta
         if (from_currency === to_currency) {
             // these landing companies are allowed to transfer funds to each other if they have the same currency
-            const same_cur_allowed = {
+            const same_cur_allowed     = {
                 maltainvest: 'malta',
                 malta      : 'maltainvest',
             };
@@ -331,6 +332,7 @@ const ClientBase = (() => {
         getBasicUpgradeInfo,
         getLandingCompanyValue,
         getRiskAssessment,
+        getUpgradeInfo,
         canTransferFunds,
         hasCostaricaAccount,
     };
