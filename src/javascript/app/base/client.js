@@ -51,6 +51,7 @@ const Client = (() => {
                 el.setVisibility(0);
             }, '', el_section);
             getElementById('topbar-msg').setVisibility(0);
+            getElementById('msg_notification').setVisibility(0);
             getElementById('menu-top').classList.remove('smaller-font', 'top-nav-menu');
 
             applyToAllElements('.client_logged_out', (el) => {
