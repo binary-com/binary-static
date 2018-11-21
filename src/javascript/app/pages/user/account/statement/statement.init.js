@@ -190,31 +190,37 @@ const StatementInit = (() => {
                 $success_msg.setVisibility(0);
                 $error_msg.setVisibility(0);
 
-                const date_from  = DateTo.getDatePickerValue(download_from_id);
-                const date_to    = DateTo.getDatePickerValue(download_to_id, true);
-                const can_submit = date_from && date_to;
+                setTimeout(() => {
+                    // need to wrap with setTimeout 0 to execute this chunk of code right
+                    // after datepicker value are updated with newly selected date,
+                    // otherwise we will get the previously selected date
+                    // More info: https://javascript.info/settimeout-setinterval#settimeout-0
+                    const date_from  = DateTo.getDatePickerValue(download_from_id);
+                    const date_to    = DateTo.getDatePickerValue(download_to_id, true);
+                    const can_submit = date_from && date_to;
 
-                if (can_submit) {
-                    $request_statement_btn.removeClass('button-disabled')
-                        .on('click', (evt) => {
-                            evt.preventDefault();
-                            BinarySocket.send({
-                                request_report: 1,
-                                report_type   : 'statement',
-                                date_from,
-                                date_to,
-                            }).then((response) => {
-                                if (response.error) {
-                                    $error_msg.setVisibility(1);
-                                } else {
-                                    $success_msg.setVisibility(1);
-                                }
-                                $request_statement_btn.addClass('button-disabled').off('click');
+                    if (can_submit) {
+                        $request_statement_btn.removeClass('button-disabled')
+                            .on('click', (evt) => {
+                                evt.preventDefault();
+                                BinarySocket.send({
+                                    request_report: 1,
+                                    report_type   : 'statement',
+                                    date_from,
+                                    date_to,
+                                }).then((response) => {
+                                    if (response.error) {
+                                        $error_msg.setVisibility(1);
+                                    } else {
+                                        $success_msg.setVisibility(1);
+                                    }
+                                    $request_statement_btn.addClass('button-disabled').off('click');
+                                });
                             });
-                        });
-                } else {
-                    $request_statement_btn.addClass('button-disabled').off('click');
-                }
+                    } else {
+                        $request_statement_btn.addClass('button-disabled').off('click');
+                    }
+                }, 0);
             });
         });
 
