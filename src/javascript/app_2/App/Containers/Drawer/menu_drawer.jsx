@@ -1,20 +1,13 @@
-import PropTypes         from 'prop-types';
-import React             from 'react';
-import Client            from '_common/base/client_base';
-import { localize }      from '_common/localize';
-import {
-    DrawerItem,
-    DrawerToggle,
-}                        from 'App/Components/Elements/Drawer';
-import { IconLogout }    from 'Assets/Header/Drawer';
-import {
-    IconTrade,
-    IconPortfolio,
-    IconStatement,
-}                        from 'Assets/Header/NavBar';
-import routes            from 'Constants/routes';
-import { requestLogout } from 'Services';
-import { connect }       from 'Stores/connect';
+import PropTypes                                   from 'prop-types';
+import React                                       from 'react';
+import Client                                      from '_common/base/client_base';
+import { localize }                                from '_common/localize';
+import { DrawerItem, DrawerToggle }                from 'App/Components/Elements/Drawer';
+import { IconLogout }                              from 'Assets/Header/Drawer';
+import { IconTrade, IconPortfolio, IconStatement } from 'Assets/Header/NavBar';
+import routes                                      from 'Constants/routes';
+import { requestLogout }                           from 'Services';
+import { connect }                                 from 'Stores/connect';
 
 const MenuDrawer = ({
     is_dark_mode,
