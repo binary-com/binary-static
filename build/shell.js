@@ -110,7 +110,7 @@ module.exports = function (grunt) {
                 callback: function (err, stdout, stderr, cb) {
                     if(!err) {
                         const diff = stdout.replace('\n', '');
-                        if (!diff) {
+                        if (+diff === 0) {
                             grunt.log.ok('Local branch is updated to the latest commit on origin.');
                         } else {
                             grunt.fail.fatal(`Local branch (${global.release_info.branch}) has ${diff} commits difference with the latest commit on origin. Please update and try again.`);
