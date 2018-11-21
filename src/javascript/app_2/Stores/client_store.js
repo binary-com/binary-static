@@ -1,13 +1,11 @@
 import { observable, computed, action, reaction } from 'mobx';
 import moment                                     from 'moment';
-import {
-    getUpgradeInfo,
-    getAccountTitle }                             from '_common/base/client_base';
+import { getAccountTitle }                        from '_common/base/client_base';
 import GTM                                        from '_common/base/gtm';
 import * as SocketCache                           from '_common/base/socket_cache';
 import BinarySocket                               from '_common/base/socket_base';
 import { localize }                               from '_common/localize';
-import { LocalStore }                             from '_common/storage';
+import { LocalStore, State }                      from '_common/storage';
 import BaseStore                                  from './base_store';
 
 export default class ClientStore extends BaseStore {
@@ -113,6 +111,33 @@ export default class ClientStore extends BaseStore {
     }
 
     @action.bound
+    getBasicUpgradeInfo() {
+        const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
+        let can_open_multi                  = false;
+        let type,
+            can_upgrade_to;
+        if ((upgradeable_landing_companies || []).length) {
+            can_open_multi   = upgradeable_landing_companies.indexOf(
+                this.accounts[this.loginid].landing_company_shortcode) !== -1;
+            const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
+                landing_company !== this.accounts[this.loginid].landing_company_shortcode &&
+                upgradeable_landing_companies.indexOf(landing_company) !== -1
+            ));
+            can_upgrade_to   = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
+            if (can_upgrade_to) {
+                type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
+            }
+        }
+
+        return {
+            type,
+            can_upgrade: !!can_upgrade_to,
+            can_upgrade_to,
+            can_open_multi,
+        };
+    }
+
+    @action.bound
     responseAuthorize(response) {
         this.accounts[this.loginid].email                     = response.authorize.email;
         this.accounts[this.loginid].currency                  = response.authorize.currency;
@@ -159,7 +184,7 @@ export default class ClientStore extends BaseStore {
     init() {
         this.loginid      = LocalStore.get('active_loginid');
         this.accounts     = LocalStore.getObject(this.storage_key);
-        this.upgrade_info = getUpgradeInfo(this.accounts[this.loginid]);
+        this.upgrade_info = this.getBasicUpgradeInfo();
         this.switched     = '';
 
         this.registerReactions();

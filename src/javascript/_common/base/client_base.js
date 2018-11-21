@@ -205,22 +205,18 @@ const ClientBase = (() => {
     // remove EUR or GBP distinction from group
     const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/_(\d+|master|EUR|GBP)/, '') : '');
 
-    const getUpgradeInfo      = (account) => {
+    const getBasicUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
-
-        let can_open_multi = false;
+        let can_open_multi                  = false;
         let type,
             can_upgrade_to;
-
         if ((upgradeable_landing_companies || []).length) {
-            can_open_multi   = upgradeable_landing_companies.indexOf(
-                account.landing_company_shortcode) !== -1;
-            // only show upgrade message to landing companies other than current
+            const current_landing_company = get('landing_company_shortcode');
+            can_open_multi                = upgradeable_landing_companies.indexOf(current_landing_company) !== -1;
             const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
-                landing_company !== account.landing_company_shortcode &&
+                landing_company !== current_landing_company &&
                 upgradeable_landing_companies.indexOf(landing_company) !== -1
             ));
-
             can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
             if (can_upgrade_to) {
                 type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
@@ -234,7 +230,6 @@ const ClientBase = (() => {
             can_open_multi,
         };
     };
-    const getBasicUpgradeInfo = () => getUpgradeInfo(getAllAccountsObject()[current_loginid]);
 
     const getLandingCompanyValue = (loginid, landing_company, key) => {
         let landing_company_object;
@@ -332,7 +327,6 @@ const ClientBase = (() => {
         getBasicUpgradeInfo,
         getLandingCompanyValue,
         getRiskAssessment,
-        getUpgradeInfo,
         canTransferFunds,
         hasCostaricaAccount,
     };
