@@ -50,15 +50,12 @@ const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
     const $date_from = $(date_from_id);
     const $date_to   = $(date_to_id);
 
-    const onChange = (e, additionalFnc) => {
+    const onChange = (e) => {
         if (!dateValueChanged(e, 'date')) {
             return false;
         }
         if (typeof fncOnChange === 'function') {
             fncOnChange();
-        }
-        if (typeof additionalFnc === 'function') {
-            additionalFnc();
         }
         return true;
     };
@@ -74,13 +71,11 @@ const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
         if ($datepicker.attr('data-picker') !== 'native') $datepicker.attr('placeholder', localize('Select date'));
     };
 
-    const getMinDate = (e) => {
-        const date = new Date(e.getAttribute('data-value'));
-        return new Date(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
-    };
-
-    $date_from.change(function() { onChange(this, initDatePicker(date_to_id, { minDate: getMinDate(this) })); });
-    $date_to.change(function() { onChange(this); });
+    $date_from.change((e) => {
+        onChange(e.currentTarget);
+        initDatePicker(date_to_id, { minDate: new Date(e.target.value) }); // reset date_to datepicker with new min_date
+    });
+    $date_to.change((e) => { onChange(e.currentTarget); });
 
     initDatePicker(date_from_id);
     initDatePicker(date_to_id);
