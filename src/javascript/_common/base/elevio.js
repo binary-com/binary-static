@@ -2,6 +2,7 @@ const ClientBase    = require('./client_base');
 const GTM           = require('./gtm');
 const BinarySocket  = require('./socket_base');
 const getLanguage   = require('../language').get;
+const localize      = require('../localize').localize;
 const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
@@ -54,7 +55,7 @@ const Elevio = (() => {
         elev.setTranslations({
             modules: {
                 support: {
-                    thankyou: 'Thank you, we\'ll get back to you within 24 hours', // Elevio is available only on EN for now
+                    thankyou: localize('Thank you, we\'ll get back to you within 24 hours'),
                 },
             },
         });
