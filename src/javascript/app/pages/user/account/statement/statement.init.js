@@ -210,7 +210,7 @@ const StatementInit = (() => {
                                     date_to,
                                 }).then((response) => {
                                     if (response.error) {
-                                        $error_msg.setVisibility(1);
+                                        $error_msg.text(response.error.message).setVisibility(1);
                                     } else {
                                         $success_msg.setVisibility(1);
                                     }

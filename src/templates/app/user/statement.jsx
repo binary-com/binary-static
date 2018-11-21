@@ -59,7 +59,7 @@ const Statement = () => (
                         </Button>
                     </div>
                     <p className='success-msg invisible'>{it.L('Your statement has been sent to your email address.')}</p>
-                    <p className='error-msg invisible'>{it.L('There was an error processing your request.')}</p>
+                    <p className='error-msg invisible' />
                 </div>
             </div>
         </div>
