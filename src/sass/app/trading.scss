@@ -54,6 +54,12 @@ a.previous-wrapper {
     color: $COLOR_RED;
 }
 
+.pending {
+    color: $COLOR_BLACK;
+    font-weight: 400;
+    font-style: italic;
+}
+
 #notifications_wrapper {
     .notice-msg {
         margin-bottom: 5px;
