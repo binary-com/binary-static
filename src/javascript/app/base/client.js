@@ -53,6 +53,9 @@ const Client = (() => {
             applyToAllElements('#client-logged-in', (el) => {
                 el.setVisibility(0);
             }, '', el_section);
+            applyToAllElements('#topbar-msg', (el) => {
+                el.setVisibility(0);
+            }, '', el_section);
             topbar_class.add(primary_bg_color_dark);
             topbar_class.remove(secondary_bg_color);
         }
