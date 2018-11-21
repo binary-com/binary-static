@@ -47,9 +47,6 @@ const attachDateToPicker = (fncOnChange) => {
 };
 
 const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
-    const $date_from = $(date_from_id);
-    const $date_to   = $(date_to_id);
-
     const onChange = (e) => {
         if (!dateValueChanged(e, 'date')) {
             return false;
@@ -67,15 +64,16 @@ const attachDateRangePicker = (date_from_id, date_to_id, fncOnChange) => {
             maxDate : 0,
             ...opts,
         });
-        $datepicker.val('').removeAttr('data-value');
         if ($datepicker.attr('data-picker') !== 'native') $datepicker.attr('placeholder', localize('Select date'));
+        $datepicker.change((e) => {
+            onChange(e.currentTarget);
+            if (!$datepicker.is($(date_to_id))) {
+                // reset date_to datepicker with new min_date
+                $(date_to_id).val('').removeAttr('data-value');
+                initDatePicker(date_to_id, { minDate: new Date(e.target.value) });
+            }
+        });
     };
-
-    $date_from.change((e) => {
-        onChange(e.currentTarget);
-        initDatePicker(date_to_id, { minDate: new Date(e.target.value) }); // reset date_to datepicker with new min_date
-    });
-    $date_to.change((e) => { onChange(e.currentTarget); });
 
     initDatePicker(date_from_id);
     initDatePicker(date_to_id);
