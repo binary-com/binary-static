@@ -2,25 +2,27 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import Client            from '_common/base/client_base';
 import { localize }      from '_common/localize';
+import {
+    DrawerItem,
+    DrawerToggle,
+}                        from 'App/Components/Elements/Drawer';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import {
     IconTrade,
     IconPortfolio,
-    IconStatement }      from 'Assets/Header/NavBar';
+    IconStatement,
+}                        from 'Assets/Header/NavBar';
 import routes            from 'Constants/routes';
 import { requestLogout } from 'Services';
 import { connect }       from 'Stores/connect';
-import {
-    DrawerItem,
-    DrawerToggle }       from '../../Components/Elements/Drawer';
 
 const MenuDrawer = ({
     is_dark_mode,
     is_mobile,
-    is_tablet,
     is_portfolio_drawer_on,
     // is_purchase_confirmed,
     is_purchase_locked,
+    is_tablet,
     toggleDarkMode,
     togglePortfolioDrawer,
     togglePurchaseLock,
@@ -28,7 +30,7 @@ const MenuDrawer = ({
 }) => (
     <div className='drawer-items-container'>
         <div className='list-items-container'>
-            { (is_mobile || is_tablet) &&
+            {(is_mobile || is_tablet) &&
             <React.Fragment>
                 <DrawerItem
                     text={localize('Trade')}
@@ -65,19 +67,19 @@ const MenuDrawer = ({
                 />
             </React.Fragment>}
         </div>
-        { !!(Client.isLoggedIn() && is_mobile) &&
-            <div className='drawer-footer'>
-                <DrawerItem
-                    icon={<IconLogout className='drawer-icon' />}
-                    text={localize('Logout')}
-                    custom_action={() => {
-                        if (is_portfolio_drawer_on) {
-                            togglePortfolioDrawer(); // TODO: hide drawer inside logout, once it is a mobx action
-                        }
-                        requestLogout();
-                    }}
-                />
-            </div>
+        {!!(Client.isLoggedIn() && is_mobile) &&
+        <div className='drawer-footer'>
+            <DrawerItem
+                icon={<IconLogout className='drawer-icon' />}
+                text={localize('Logout')}
+                custom_action={() => {
+                    if (is_portfolio_drawer_on) {
+                        togglePortfolioDrawer(); // TODO: hide drawer inside logout, once it is a mobx action
+                    }
+                    requestLogout();
+                }}
+            />
+        </div>
         }
     </div>
 );
@@ -99,13 +101,13 @@ export default connect(
     ({ ui }) => ({
         is_dark_mode              : ui.is_dark_mode_on,
         is_mobile                 : ui.is_mobile,
-        is_tablet                 : ui.is_tablet,
         is_portfolio_drawer_on    : ui.is_portfolio_drawer_on,
         is_purchase_confirmed     : ui.is_purchase_confirm_on,
         is_purchase_locked        : ui.is_purchase_lock_on,
+        is_tablet                 : ui.is_tablet,
         toggleDarkMode            : ui.toggleDarkMode,
         togglePortfolioDrawer     : ui.togglePortfolioDrawer,
         togglePurchaseConfirmation: ui.togglePurchaseConfirmation,
         togglePurchaseLock        : ui.togglePurchaseLock,
-    })
+    }),
 )(MenuDrawer);
