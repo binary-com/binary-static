@@ -54,11 +54,12 @@ const Signup = () => (
                         ],
                         tbody: [
                             [
-                                { text: `${it.L('Forex')}*`, attributes: { rowSpan: 2 } },
+                                { text: `${it.L('Forex & Metals')}*`, attributes: { rowSpan: 1 } },
                                 { text: it.L('Standard') },
                                 { text: it.L('[_1] per lot', '10') },
                             ],
                             [
+                                { text: `${it.L('Forex')}*`, attributes: { rowSpan: 1 } },
                                 { text: it.L('Advanced') },
                                 { text: it.L('[_1] per lot', '5') },
                             ],
@@ -67,6 +68,7 @@ const Signup = () => (
                                 { text: it.L('Standard') },
                                 { text: it.L('[_1] per lot', '0.3%') },
                             ],
+                            [],
                             [
                                 { text: `${it.L('Volatility Indices')}***`, attributes: { rowSpan: 8 } },
                                 { text: it.L('Vol 10') },
