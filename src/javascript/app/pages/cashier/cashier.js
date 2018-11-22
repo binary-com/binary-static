@@ -28,12 +28,19 @@ const Cashier = (() => {
             $toggler.children().toggleClass('active');
             $toggler.toggleClass('open');
         });
-        $('.cashier_note').setVisibility(
-            Client.isLoggedIn() &&                          // only show to logged-in clients
-            !Client.get('is_virtual') &&                    // only show to real accounts
-            !isCryptocurrency(Client.get('currency')) &&    // only show to fiat currencies
-            /^(vn|ng|lk|id)$/.test(Client.get('residence')) // only show to Vietnam, Nigeria, Sri Lanka, Indonesia
-        );
+        showCashierNote();
+    };
+
+    const showCashierNote = () => {
+        // TODO: remove `wait` & residence check to release to all countries
+        BinarySocket.wait('authorize').then(() => {
+            $('.cashier_note').setVisibility(
+                Client.isLoggedIn() &&                          // only show to logged-in clients
+                !Client.get('is_virtual') &&                    // only show to real accounts
+                !isCryptocurrency(Client.get('currency')) &&    // only show to fiat currencies
+                /^(vn|ng|lk|id)$/.test(Client.get('residence')) // only show to Vietnam, Nigeria, Sri Lanka, Indonesia
+            );
+        });
     };
 
     const displayTopUpButton = () => {
