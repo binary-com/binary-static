@@ -2,16 +2,17 @@ const ClientBase    = require('./client_base');
 const GTM           = require('./gtm');
 const BinarySocket  = require('./socket_base');
 const getLanguage   = require('../language').get;
+const localize      = require('../localize').localize;
 const createElement = require('../utility').createElement;
 
 const Elevio = (() => {
     const init = () => {
-        if (!window._elev) return;
+        if (!window._elev) return; // eslint-disable-line no-underscore-dangle
         window._elev.on('load', (elev) => { // eslint-disable-line no-underscore-dangle
             const available_elev_languages = ['id'];
             const current_language         = getLanguage().toLowerCase();
             if (available_elev_languages.indexOf(current_language) !== -1) {
-                window._elev.setLanguage(current_language);
+                window._elev.setLanguage(current_language); // eslint-disable-line no-underscore-dangle
             }
             setUserInfo(elev);
             setTranslations(elev);
@@ -54,7 +55,7 @@ const Elevio = (() => {
         elev.setTranslations({
             modules: {
                 support: {
-                    thankyou: 'Thank you, we\'ll get back to you within 24 hours', // Elevio is available only on EN for now
+                    thankyou: localize('Thank you, we\'ll get back to you within 24 hours'),
                 },
             },
         });

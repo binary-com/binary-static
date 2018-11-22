@@ -34,7 +34,6 @@ const Home = (() => {
             socialLogin();
             if (isEuCountry()) {
                 $('.mfsa_message').slideDown(300);
-                $('.eu-hide').setVisibility(0);
             }
         });
     };
