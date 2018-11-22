@@ -66,7 +66,18 @@ const Purchase = (() => {
 
             let message;
             if (/NoMFProfessionalClient/.test(error.code)) {
-                message = localize('[_1][_2]In the EU, financial binary options are only available to professional investors.[_3][_4][_5]Apply now as a professional investor[_6][_7][_8]', ['<div class="gr-row font-style-normal">', '<div class="gr-12 gr-padding-20">', '</div>', '<div class="gr-12 gr-padding-20">', `<a id="btn_professional" class="button" href="${urlFor('user/settings/professional')}"><span>`, '</span></a>', '</div>', '</div>']);
+                const row_element = createElement('div', { class: 'gr-row font-style-normal' });
+                const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
+                const message_element = columnElement({ text: localize('In the EU, financial binary options are only available to professional investors.') });
+                const button_element = createElement('a', { class: 'button', href: urlFor('user/settings/professional') });
+                const cta_element = columnElement();
+
+                button_element.appendChild(createElement('span', { text: localize('Apply now as a professional investor') }));
+                cta_element.appendChild(button_element);
+                row_element.appendChild(message_element);
+                row_element.appendChild(cta_element);
+
+                message = row_element.outerHTML;
             } else if (/RestrictedCountry/.test(error.code)) {
                 let additional_message = '';
                 if (/FinancialBinaries/.test(error.code)) {
