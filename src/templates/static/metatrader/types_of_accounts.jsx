@@ -114,7 +114,7 @@ const TypesOfAccounts = () => (
                                 [{ text: <Row number={10} text={it.L('Maximum ticket size')} /> },    { text: it.L('[_1] lots', '10') },                { text: it.L('[_1] lots', '20') },                { text: it.L('[_1] lots', '30') }],
                                 [{ text: <Row number={11} text={it.L('Minimum ticket size')} /> },    { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
                                 [{ text: <Row number={12} text={it.L('Step size')} /> },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                 { text: 'NA' },                                 { text: it.L('N/A') }],
+                                [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                 { text: 'NA' },                                   { text: it.L('N/A') }],
                             ],
                         }}
                     />
