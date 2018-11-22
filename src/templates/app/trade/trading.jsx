@@ -222,7 +222,6 @@ const Trading = () => (
                                 </div>
                             </div>
                         </div>
-                        <div id='confirmation_message_endelement' />
                     </div>
                     <div className='row-inner' id='contracts_list'>
                         <div id='loading_container2' className='overlay_container' />

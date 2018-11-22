@@ -7,9 +7,9 @@ const Tick                     = require('./tick');
 const TickDisplay              = require('./tick_trade');
 const updateValues             = require('./update_values');
 const Client                   = require('../../base/client');
+const Header                   = require('../../base/header');
 const BinarySocket             = require('../../base/socket');
 const formatMoney              = require('../../common/currency').formatMoney;
-const Login                    = require('../../../_common/base/login');
 const CommonFunctions          = require('../../../_common/common_functions');
 const localize                 = require('../../../_common/localize').localize;
 const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
@@ -222,10 +222,7 @@ const Purchase = (() => {
 
     const makeBold = d => `<strong>${d}</strong>`;
 
-    const loginOnClick = (e) => {
-        e.preventDefault();
-        Login.redirectToLogin();
-    };
+    const loginOnClick = (e) => Header.loginOnClick(e);
 
     const updateSpotList = () => {
         const $spots = $('#contract_purchase_spots');
