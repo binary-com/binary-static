@@ -20,8 +20,7 @@ const TopUpVirtual = (() => {
                 showMessage(response.error.message, false);
             } else {
                 showMessage(
-                    localize('[_1] [_2] has been credited into your virtual account: [_3].', [
-                        response.topup_virtual.currency,
+                    localize('[_1] has been credited into your virtual account: [_2].', [
                         formatMoney(response.topup_virtual.currency, response.topup_virtual.amount),
                         Client.get('loginid'),
                     ]),

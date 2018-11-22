@@ -1,7 +1,8 @@
-const localize     = require('./localize').localize;
-const BinarySocket = require('../app/base/socket');
-const Dialog       = require('../app/common/attach_dom/dialog');
-const isEuCountry  = require('../app/common/country_base').isEuCountry;
+const localize               = require('./localize').localize;
+const BinarySocket           = require('../app/base/socket');
+const Dialog                 = require('../app/common/attach_dom/dialog');
+const isEuCountry            = require('../app/common/country_base').isEuCountry;
+const getCurrentBinaryDomain = require('../config').getCurrentBinaryDomain;
 
 const ThirdPartyLinks = (() => {
     const init = () => {
@@ -12,7 +13,7 @@ const ThirdPartyLinks = (() => {
 
     const clickHandler = (e) => {
         if (!e.target) return;
-        const el_link = e.target.closest('a');
+        const el_link = e.target.closest('a') || e.target.closest('area');
         if (!el_link) return;
 
         const href = el_link.href;
@@ -77,7 +78,7 @@ const ThirdPartyLinks = (() => {
             return false;
         }
         return !!destination.host
-            && !/^.*\.binary\.com$/.test(destination.host) // destination host is not binary subdomain
+            && !new RegExp(`^.*\\.${getCurrentBinaryDomain() || 'binary\\.com'}$`).test(destination.host) // destination host is not binary subdomain
             && !/www.(betonmarkets|xodds).com/.test(destination.host) // destination host is not binary old domain
             && window.location.host !== destination.host;
     };

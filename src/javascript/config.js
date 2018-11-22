@@ -8,13 +8,26 @@
  * git update-index --assume-unchanged src/javascript/config.js
  *
  */
+const domain_app_ids = { // these domains also being used in '_common/url.js' as supported "production domains"
+    'binary.com': 1,
+    'binary.me' : 15284,
+};
+
+const getCurrentBinaryDomain = () =>
+    Object.keys(domain_app_ids).find(domain => new RegExp(`.${domain}$`, 'i').test(window.location.hostname));
+
+const isProduction = () => {
+    const all_domains = Object.keys(domain_app_ids).map(domain => `www\\.${domain.replace('.', '\\.')}`);
+    return new RegExp(`^(${all_domains.join('|')})$`, 'i').test(window.location.hostname);
+};
 
 const binary_desktop_app_id = 14473;
 
 const getAppId = () => {
     let app_id = null;
-    const user_app_id = ''; // you can insert Application ID of your registered application here
+    const user_app_id   = ''; // you can insert Application ID of your registered application here
     const config_app_id = window.localStorage.getItem('config.app_id');
+    const is_new_app    = /\/app\//.test(window.location.pathname);
     if (config_app_id) {
         app_id = config_app_id;
     } else if (/desktop-app/i.test(window.location.href) || window.localStorage.getItem('config.is_desktop_app')) {
@@ -27,9 +40,14 @@ const getAppId = () => {
     } else if (user_app_id.length) {
         window.localStorage.setItem('config.default_app_id', user_app_id); // it's being used in endpoint chrome extension - please do not remove
         app_id = user_app_id;
+    } else if (/localhost/i.test(window.location.hostname)) {
+        app_id = 1159;
+    } else if (is_new_app) {
+        window.localStorage.removeItem('config.default_app_id');
+        app_id = 15265;
     } else {
         window.localStorage.removeItem('config.default_app_id');
-        app_id = 1;
+        app_id = domain_app_ids[getCurrentBinaryDomain()] || 1;
     }
     return app_id;
 };
@@ -69,10 +87,9 @@ const getSocketURL = () => {
 
         // TODO: in order to use connection_setup config, uncomment the above section and remove next lines
 
-        const is_production = /www\.binary\.com/i.test(window.location.hostname);
         const loginid       = window.localStorage.getItem('active_loginid');
         const is_real       = loginid && !/^VRT/.test(loginid);
-        const server        = is_production && is_real ? 'green' : 'blue';
+        const server        = isProduction() && is_real ? 'green' : 'blue';
 
         server_url = `${server}.binaryws.com`;
     }
@@ -80,6 +97,8 @@ const getSocketURL = () => {
 };
 
 module.exports = {
+    getCurrentBinaryDomain,
+    isProduction,
     getAppId,
     isBinaryApp,
     getSocketURL,

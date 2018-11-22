@@ -41,7 +41,6 @@ const Footer = () => (
                                 header={it.L('Our Company')}
                                 items={[
                                     { text: it.L('About Us'),               href: it.url_for('about-us') },
-                                    { text: it.L('Contact Us'),             href: it.url_for('contact'),           className: 'gr-hide gr-show-m' },
                                     { text: it.L('Group History'),          href: it.url_for('group-history') },
                                     { text: it.L('Binary in Numbers'),      href: it.url_for('binary-in-numbers') },
                                     { text: it.L('Careers'),                href: it.url_for('careers') },
@@ -56,7 +55,7 @@ const Footer = () => (
                                     { text: it.L('Why Us?'),         href: it.url_for('why-us') },
                                     { text: it.L('Getting Started'), href: it.url_for('get-started') },
                                     { text: it.L('Platform Tour'),   href: it.url_for('tour') },
-                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', className: 'invisible eu-show' },
+                                    { text: it.L('GamCare'),         href: 'http://www.gamcare.org.uk/',            target: '_blank', dataShow: 'eucountry' },
                                     { text: it.L('Academy'),         href: 'https://academy.binary.com',            target: '_blank' },
                                     { text: it.L('Webinars'),        href: 'https://academy.binary.com/en/events/', target: '_blank' },
                                     { text: it.L('Keep Safe'),       href: it.url_for('keep-safe'),                 className: 'client_logged_out invisible' },
@@ -81,7 +80,6 @@ const Footer = () => (
                                     { text: it.L('Terms and Conditions'),   href: it.url_for('terms-and-conditions') },
                                     { text: it.L('Security and Privacy'),   href: it.url_for('terms-and-conditions'), param: '?anchor=security-and-privacy#privacy' },
                                     { text: it.L('Responsible Trading'),    href: it.url_for('responsible-trading') },
-                                    { text: it.L('Complaints'),             href: it.url_for('terms-and-conditions?anchor=complaints-and-disputes#legal-binary') },
                                 ]}
                             />
 
@@ -112,7 +110,7 @@ const Footer = () => (
             </div>
         </div>
         <div id='footer-regulatory' className='primary-bg-color-dark gr-padding-10'>
-            <div className='container eu-hide'>
+            <div className='container' data-show='-eucountry'>
                 <div className='gr-row'>
                     <div className='gr-12'>
                         <div className='icon-row flex-row gr-child'>
@@ -161,7 +159,7 @@ const Footer = () => (
                     </div>
                 </div>
             </div>
-            <div className='container eu-show invisible'>
+            <div className='container' data-show='eucountry'>
                 <div className='gr-row'>
                     <div className='gr-12'>
                         <div className='icon-row flex-row'>

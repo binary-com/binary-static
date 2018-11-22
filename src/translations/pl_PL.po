@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-11-08 05:45\n"
+"PO-Revision-Date: 2018-11-21 02:00\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Polish\n"
 "MIME-Version: 1.0\n"
@@ -71,9 +71,6 @@ msgstr "50 001 $ - 100 000 $"
 
 msgid "$500,001 - $1,000,000"
 msgstr "500 001 $ - 1 000 000 $"
-
-msgid "%1 %2 has been credited into your virtual account: %3."
-msgstr "%2 %1 zostało odjęte z Twojego konta wirtualnego: %3."
 
 msgid "%1 %2 payout if %3 does not touch Barrier through close on %4."
 msgstr "Wypłata w wysokości %2 %1, jeśli %3 nie osiągnie limitu aż do zamknięcia %4."
@@ -170,6 +167,9 @@ msgstr "%1 nie pobiera żadnych opłat za przelewy środków."
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
 msgstr "%1 umożliwia wszystkim łatwe działania na rynkach finansowych. Można zacząć handel głównymi walutami, wskaźnikami, towarami i wskaźnikami zmienności od zaledwie 1 $."
+
+msgid "%1 has been credited into your virtual account: %2."
+msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "Dzięki dbaniu o najwyższe standardy etyczne i jakość oferowanych usług firma %1 zyskała reputację, której może jej pozazdrościć konkurencja."
@@ -519,9 +519,6 @@ msgstr "PEP to osoba, która wykonuje lub wykonywała znaczącą funkcję public
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "Pośrednik płatności działa jako kantor wymiany walut między Klientem (naszym klientem) a %1. Pośrednik płatności przetwarza wpłaty i wypłaty dla klientów, którzy chcą korzystać z określonych e-portfeli lub lokalnych walut niedostępnych na %1. Opłaty za przelewy są pokrywane przez Klienta."
 
-msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
-msgstr "Osoba zajmująca eksponowane stanowisko polityczne (PEP) to osoba, która sprawuje lub sprawowała znaczącą funkcję publiczną lub osoba, której bliski członek rodziny lub osoba uznana za bliskiego współpracownika sprawuje lub sprawowała taką funkcję, z wyłączeniem urzędników niższego lub średniego szczebla. Do takich osób zalicza się: przywódców państw, ministrów, sekretarzy parlamentarnych, posłów parlamentarnych, sędziów, ambasadorów, wysokiej rangi urzędników rządowych, wysokiej rangi wojskowych, członków komitetów ds. audytu w radach banków centralnych, dyrektorów spółek skarbu państwa. Za PEP uważa się również „bliskich członków rodziny” wyżej wymienionych osób, czyli np. małżonków i partnerów, rodziców, czy dzieci. Dodatkowo, „osoba uznana za bliskiego współpracownika” PEP rozumiana jest m. in. jako partner biznesowy. Co do zasady, osoba, która według powyższej definicji kwalifikuje się jako PEP, ale która nie sprawuje już znaczącej funkcji publicznej przez okres co najmniej dwunastu miesięczny nie jest już uznawana za PEP."
-
 msgid "A Professional Client receives a lower degree of client protection due to the following:"
 msgstr "Klientom profesjonalnym zapewniamy ochronę na niższym poziomie z następujących przyczyn:"
 
@@ -587,6 +584,9 @@ msgstr "Kandydat, dla którego jęz. angielski jest językiem ojczystym i który
 
 msgid "A panel featuring industry leaders awards BetOnMarkets.com 'Financial Betting Operator of the Year' over two other finalists. It's a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
 msgstr "Panel ukazujący, że BetOnMarkets.com jest liderem rynku przed dwoma innymi finalistami z tytułem „Operator zakładów finansowych roku”. To wielkie wyróżnienie dla naszej marki i kolejne uznanie naszych usług w zakresie zakładów finansowych. Od dziesięciu lat skutecznie pracujemy nad naszym sukcesem."
+
+msgid "A politically exposed person (PEP) is an individual who is or has been entrusted with a prominent public function. Family members and close associates of such individuals are also considered as PEPs. A PEP who has ceased to be entrusted with a prominent public function for at least 12 months no longer qualifies as a PEP."
+msgstr ""
 
 msgid "A preference and passion for Linux and open-source platforms"
 msgstr "Chęć pracy w systemie Linux i z wykorzystaniem platform typu open-source i preferowanie takich rozwiązań"
@@ -1062,6 +1062,9 @@ msgstr "Klienci mogą korzystać z e-portfela, co nie jest możliwe bezpośredni
 msgid "Allow equals"
 msgstr "Zezwól na wartość równą"
 
+msgid "Already have an account?"
+msgstr ""
+
 msgid "Already have an account? %1Log in%2 here"
 msgstr "Masz już konto? %1Zaloguj się%2 tutaj"
 
@@ -1125,8 +1128,8 @@ msgstr "Wydane przez Ciebie instrukcje otwarcia lub zamknięcia pozycji na rynku
 msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian"
 msgstr "Jest dostępna na całym świecie i posiada interfejs w wielu językach: angielskim, hiszpańskim, francuskim, niemieckim, portugalskim, chińskim, włoskim, tajskim, polskim i rosyjskim"
 
-msgid "An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere"
-msgstr "Intuicyjna platforma internetowa dostępna dla graczy bez przerwy –– wszędzie i o każdej porze"
+msgid "An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere"
+msgstr ""
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
 msgstr "Analizuj i testuj domeny i poddomeny wymienione w zakresie zadań."
@@ -1977,6 +1980,9 @@ msgstr "Kontrakty na różnice kursowe towarów; i/lub"
 msgid "CFDs on indices."
 msgstr "Kontrakty na różnice kursowe wskaźników."
 
+msgid "CPA (EU only)"
+msgstr ""
+
 msgid "Call Spread"
 msgstr "Spread zakupu"
 
@@ -2015,9 +2021,6 @@ msgstr "Atrakcje w Labuan"
 
 msgid "Can't miss in Malta"
 msgstr "Atrakcje na Malcie"
-
-msgid "Canada"
-msgstr "Kanada"
 
 msgid "Canadian Dollar vs Japanese Yen"
 msgstr "Dolar kanadyjski vs jen japoński"
@@ -2149,11 +2152,14 @@ msgid "Choose from 100+ tradable instruments, backed by award-winning technology
 msgstr "Wybieraj spośród ponad 100 instrumentów, którymi można handlować, popartymi u\n"
 "honorowaną nagrodami technologią i innowacją od 2000 r."
 
-msgid "Choose from five available markets:"
-msgstr "Wybierz spośród pięciu dostępnych rynków:"
+msgid "Choose from four available markets:"
+msgstr ""
 
 msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy."
 msgstr "Wybieraj w dowolnej chwili z ponad miliona różnorodnych zakładów i dostosuj swoje zakłady do preferowanej strategii handlowej."
+
+msgid "Choose from the following affiliate commission plans:"
+msgstr ""
 
 msgid "Choose from three main trade types:"
 msgstr "Wybierz spośród trzech głównych rodzajów zakładów:"
@@ -2602,6 +2608,9 @@ msgstr "Prawa autorskie"
 msgid "Copywriter"
 msgstr "Copywriter"
 
+msgid "Cost per acquisition (CPA) for EU affiliates only"
+msgstr ""
+
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "Koszty – koszty realizacji Twojego zlecenia składające się głównie ze spreadu, t.j. różnicy między ceną sprzedaży a ceną ofertową."
 
@@ -2661,6 +2670,9 @@ msgstr "Utwórz nowe konto z wirtualnymi pieniędzmi"
 
 msgid "Create account with Google"
 msgstr "Utwórz konto z Google"
+
+msgid "Create an MT5 account now"
+msgstr ""
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "Tworzenie przejrzystych, zwięzłych i interesujących treści, które będą umieszczane na firmowej stronie internetowej, na blogach, w mediach społecznościowych i w materiałach marketingowych"
@@ -3049,9 +3061,6 @@ msgstr "Wyłącz"
 msgid "Disclaimer"
 msgstr "Zastrzeżenie"
 
-msgid "Disclaimer: The Economic Calendar tool is a third-party application developed by MetaQuotes Software Corp. and its data can change without prior notice. %1 is not responsible for the content or accuracy of its data, or for any loss or damage of any sort resulting from its data."
-msgstr "Zastrzeżenie: Kalendarz ekonomiczny to aplikacja zewnętrzna stworzona przez MetaQuotes Software Corp. Dane w nim przedstawiane mogą ulegać zmianom bez wcześniejszego powiadomienia. %1 nie ponosi odpowiedzialności za treść i dokładność danych przedstawianych w tej aplikacji, ani za żadne straty czy szkody wynikające z użycia tych danych."
-
 msgid "Disclaimers"
 msgstr "Zastrzeżenia"
 
@@ -3271,6 +3280,9 @@ msgstr "Zarabiaj"
 msgid "Earn $30 to trade on %1"
 msgstr "Zarób 30$ na zakup zakładów na %1"
 
+msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU."
+msgstr ""
+
 msgid "Earn a commission on each client’s MT5 trading activity – paid out daily."
 msgstr "Zarabiaj prowizję za każdego klienta handlującego na MT5 – wypłacaną codziennie."
 
@@ -3286,6 +3298,9 @@ msgstr "Zarabiaj prowizje za aktywność handlową klientów, którym poleciłe�
 msgid "Earn commissions by introducing new customers to %1."
 msgstr "Zarabiaj prowizje, dostarczając %1 nowych klientów."
 
+msgid "Earn increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
+msgstr ""
+
 msgid "Earn money for any verifiable errors that you find."
 msgstr "Zarabiaj pieniądze za każdy potwierdzony błąd, który znajdziesz."
 
@@ -3294,9 +3309,6 @@ msgstr "Zyskaj wypłatę w wysokości do 50 000 USD. Straty są ograniczone wył
 
 msgid "Earn the same proportional return on stakes of all values."
 msgstr "Odnoś taki sam proporcjonalny zysk od stawek o dowolnej wartości."
-
-msgid "Earn up to 35% commission with an award-winning binary options trading platform."
-msgstr "Zarabiaj prowizje wynoszące do 35% dzięki uhonorowanej nagrodami platformie do handlu opcjami binarnymi."
 
 msgid "Ebooks, videos, and more"
 msgstr "Ebooki, nagrania i wiele więcej"
@@ -3628,6 +3640,9 @@ msgstr "Pary egzotyczne – składają się z jednej waluty głównej, którą n
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "Poszerzanie naszej sieci aktywnych partnerów na Twoim lokalnym rynku. Stosowanie swojej energii oraz umiejętności i wiedzy o lokalnej kulturze biznesowej, aby zapewnić szybki wzrost biznesowy firmy na całym świecie."
 
+msgid "Expat handbook"
+msgstr ""
+
 msgid "Expats and international students make up more than 10% of Cyberjaya's vibrant population."
 msgstr "Osoby z zagranicy i studenci stanowią ponad 10% populacji Cyberjayi."
 
@@ -3691,8 +3706,8 @@ msgstr "Cena wygaśnięcia"
 msgid "Explanation"
 msgstr "Wyjaśnienie"
 
-msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform. %1Create an MT5 account now%2 to start trading."
-msgstr "Poznaj zupełnie nowy świat opcji binarnych dzięki wiodącej światowej platformie do handlu różnymi aktywami. %1Utwórz konto MT5 już teraz%2, aby rozpocząć handlowanie."
+msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform."
+msgstr ""
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr "Poznaj wszystkie oferowane przez nas platformy handlowe, aplikacje i narzędzia"
@@ -4147,8 +4162,8 @@ msgstr "Rozpoczynanie"
 msgid "Getting started"
 msgstr "Rozpoczynanie"
 
-msgid "Getting started is free and easy – just %1fill out the application form%2, choose from two types of commission plans and wait for our approval."
-msgstr "Start jest szybki i prosty – wystarczy %1wypełnić formularz aplikacyjny%2, wybrać jeden z dwóch planów prowizyjnych i poczekać na jego zatwierdzenie."
+msgid "Getting started is free and easy – just %1fill out the application form%2, choose your preferred commission plan and wait for our approval."
+msgstr ""
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "Start jest szybki i prosty. Wystarczy wypełnić formularz aplikacyjny i poczekać na jego zatwierdzenie."
@@ -4777,8 +4792,8 @@ msgstr "Jeżeli chcesz wypłacić środki ze swojego konta Prawdziwego konta MT5
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr "Jeśli chcesz uzyskać więcej informacji na temat pośredników płatności, skontaktuj się z nami, wysyłając wiadomość na: <a href='mailto:%1'>%1</a>"
 
-msgid "If you would like to file a complaint with regards to our service, kindly contact us on complaints@binary.com, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details."
-msgstr "Jeśli chcą Państwo złożyć skargę dotyczącą naszych usług, prosimy o kontakt na adres: complaints@binary.com i przedstawienie wszelkich istotnych szczegółów dotyczących Państwa skargi. Rozpatrzymy ją i wyślemy Państwu odpowiedź. Ostateczna odpowiedź jest z reguły wysyłana w przeciągu 10 dni roboczych (chyba że potrzebne będzie wydłużenie terminu zgodnie z obowiązującym prawem) od otrzymania wszystkich niezbędnych informacji."
+msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within %2 working days from receipt of all relevant details."
+msgstr ""
 
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us on complaints@binary.com by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgstr "Jeśli chcą Państwo złożyć skargę dotyczącą naszych usług w zakresie zawierania zakładów na kredyt opisanych w niniejszej Umowie, prosimy o kontakt na adres: complaints@binary.com i przedstawienie wszelkich istotnych szczegółów dotyczących Państwa skargi. Rozpatrzymy ją i wyślemy Państwu odpowiedź. Ostateczna odpowiedź jest z reguły wysyłana w terminie od jednego do dwóch tygodni (najpóźniej w przeciągu dwóch miesięcy) od otrzymania wszystkich niezbędnych informacji."
@@ -5098,6 +5113,9 @@ msgstr "Proces rekrutacyjny"
 msgid "Introduce %1"
 msgstr "Przedstawiamy %1"
 
+msgid "Introducing USB"
+msgstr ""
+
 msgid "Introducing the new %1 desktop app"
 msgstr "Przedstawiamy nową aplikację %1 na komputery stacjonarne"
 
@@ -5266,6 +5284,9 @@ msgstr "Dołącz do naszego zespołu utalentowanych specjalistów. Współpracuj
 msgid "Join our team of bright, talented professionals. Work collaboratively with us to promote a high-tech platform that has been one of the most recognised in the binary options trading industry for over 15 years."
 msgstr "Dołącz do naszego zespołu utalentowanych specjalistów. Współpracuj z nami w celu promowania naszej nowoczesnej platformy, która od ponad 15 lat jest jedną z najlepiej rozpoznawalnych platform w branży handlu opcjami binarnymi."
 
+msgid "Join the %1 Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform."
+msgstr ""
+
 msgid "Jul"
 msgstr "Lipiec"
 
@@ -5417,7 +5438,7 @@ msgid "Learn more about our corporate culture"
 msgstr "Dowiedz się więcej o naszej kulturze korporacyjnej"
 
 msgid "Learn more about submitting essential documents with our handy infographic:"
-msgstr ""
+msgstr "Dowiedz się więcej o wysyłaniu niezbędnych dokumentów – zapoznaj się z naszą przydatną infografiką:"
 
 msgid "Learn the basic concepts of trading Meta assets on MetaTrader 5."
 msgstr "Poznaj podstawowe pojęcia z zakresu handlowania aktywami Meta na platformie MetaTrader 5."
@@ -5568,6 +5589,9 @@ msgstr "Zablokuj sekcję Kasjer"
 
 msgid "Log in"
 msgstr "Zaloguj się"
+
+msgid "Log in here"
+msgstr ""
 
 msgid "Log in to your %1 affiliate account and go to: Finances → Payment instructions."
 msgstr "Zaloguj się na swoje konto partnerskie %1 i przejdź do sekcji: Finanse → Instrukcje płatności."
@@ -6223,8 +6247,8 @@ msgstr "Imię Twojego zwierzątka"
 msgid "Name:"
 msgstr "Imię:"
 
-msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
-msgstr "Krajowy dowód osobisty lub dokument wydany przez dowolne władze zawierający Twoje zdjęcie, imię i nazwisko oraz datę urodzenia"
+msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
+msgstr ""
 
 msgid "Natural wonders"
 msgstr "Cuda natury"
@@ -6562,14 +6586,17 @@ msgstr "W przypadku numeru ID (%1) akceptowane są wyłącznie litery, cyfry, zn
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
 msgstr "Dozwolone są tylko litery, spacja, myślniki, kropki i apostrof."
 
-msgid "Only numbers and spaces are allowed."
-msgstr "Dozwolone są liczby i spacje."
+msgid "Only numbers, hyphens, and spaces are allowed."
+msgstr ""
 
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "Dozwolone jest tylko jedno konto dla danej osoby. Wypłaty i/lub zwroty nie mogą być gromadzone na kontach otwartych pod fałszywym nazwiskiem ani na wielu kontach otwartych przez tę samą osobę."
 
 msgid "Oops... Page Not Available"
 msgstr "Ups... Strona jest niedostępna"
+
+msgid "Open A Free Account"
+msgstr ""
 
 msgid "Open Account"
 msgstr "Otwórz konto"
@@ -7204,6 +7231,9 @@ msgstr "Możliwa wypłata"
 msgid "Potential Profit"
 msgstr "Możliwy zysk"
 
+msgid "Potential Profit/Loss"
+msgstr ""
+
 msgid "Potential profit"
 msgstr "Możliwy zysk"
 
@@ -7396,9 +7426,6 @@ msgstr "Zysk / Strata"
 msgid "Profit Table"
 msgstr "Tabela zysków"
 
-msgid "Profit from increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
-msgstr "Skorzystaj z rosnących wypłat i pionowych i poziomych stawek prowizji, które nagradzają Twoje starania w zależności od przychodu netto wygenerowanego przez klientów, którym poleciłeś/-aś naszą ofertę."
-
 msgid "Profit or Loss"
 msgstr "Zysk lub strata"
 
@@ -7551,6 +7578,9 @@ msgstr "Przeczytaj blog firmy %1"
 
 msgid "Read the %1 tech blog"
 msgstr "Przeczytaj blog techniczny %1"
+
+msgid "Ready to trade?"
+msgstr ""
 
 msgid "Real"
 msgstr "Prawdziwe"
@@ -8162,7 +8192,7 @@ msgid "Should the applicant have any questions about this privacy policy or if t
 msgstr "Jeśli kandydat ma jakiekolwiek pytania odnośnie polityki prywatności lub jeśli chciałby skorzystać z jakichkolwiek swoich praw, powinien skontaktować się z firmowym Inspektor ds. ochrony danych (DPO) za pośrednictwem %1."
 
 msgid "Should the applicant's application be successful and an employment with the Binary Group be accepted, the applicant's data will be retained until the cessation of their employment. A separate privacy policy for employees will be made available to the applicant after entering employment with the Company."
-msgstr ""
+msgstr "Jeśli kandydat przejdzie pozytywnie proces rekrutacyjny i zaakceptuje ofertę zatrudnienia w Binary Group, dane kandydata będą przechowywane do momentu zakończenia zatrudnienia. Oddzielna polityka prywatności dla pracowników zostanie udostępniona kandydatowi po rozpoczęciu zatrudnienia z Firmie."
 
 msgid "Should these expenses not be covered by funds in your account we reserve the right to investigate other alternative means for obtaining payment, for example: should your account have generated purchasing accounts, we will hold payment of commission for these accounts until such a time as the account for damages has been cleared."
 msgstr "W przypadku gdy takie koszty nie będą mogły być pokryte z funduszy na koncie Partnera, zastrzegamy sobie prawo do sprawdzenia dostępności środków alternatywnych w celu otrzymania płatności, np. jeżeli dane konto wygenerowało aktywne konta, na których dokonano zakupów, będziemy wstrzymywać wypłaty prowizji dla tych kont do momentu, gdy rachunek za szkody zostanie uregulowany."
@@ -8686,6 +8716,9 @@ msgstr "Dziękujemy za przesłanie wymaganych dokumentów"
 msgid "Thank you for your interest in partnering with us. We’ve made it easy for you to apply online. Just fill out the %1online application form%2 with all necessary details. If you are already registered as a %3 affiliate, you can email us at %4 instead. We will contact you directly if your application is successful."
 msgstr "Dziękujemy za zainteresowanie naszym programem partnerskim. Możesz w prosty sposób aplikować online. Wystarczy wypełnić formularz aplikacyjny online%2, podając niezbędne dane. Jeśli jesteś już zarejestrowanym partnerem %3, możesz zamiast tego wysłać nam wiadomość e-mail na adres: %4. Skontaktujemy się z Tobą bezpośrednio, jeśli Twoja aplikacja zostanie zaakceptowana."
 
+msgid "Thank you, we'll get back to you within 24 hours"
+msgstr ""
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "API %1 jest obarczone limitami użytkowania w celu zapobiegania nadużyciom i wykorzystywania API %1 do innych celów. Limity użytkowania mogą zostać zmienione w przyszłości bez powiadomienia. W przypadku stałego przekraczania limitu użytkowania lub innych nadużyć, możemy zablokować Twój dostęp do API %1."
 
@@ -9002,7 +9035,7 @@ msgid "The Company treats the money deposited or earned as a result of profitabl
 msgstr "Firma traktuje pieniądze wpłacane i zarabiane przez klienta w wyniku korzystnych transakcji jako „Pieniądze klienta”, zgodnie z zasadami kontroli aktywów. Pieniądze klienta są przechowywane na oddzielnych kontach wydzielonych jako konta z pieniędzmi klienta, oddzielonych od pieniędzy Firmy."
 
 msgid "The Company typically collects and uses the applicant's Personal Data for the purposes of the legitimate interests pursued by the Binary Group, such as making decisions about the person to employ and the salary and other benefits to offer; and complying with our the Company's legal obligations, such as conducting necessary checks in relation to the right to work in the a specific jurisdiction and making any reasonable adjustments for disabled employees. "
-msgstr ""
+msgstr "Firma zazwyczaj gromadzi i wykorzystuje Dane osobowe kandydata dla potrzeb wynikających ze słusznych interesów Binary Group, takich jak decyzje o zatrudnieniu i oferowanym wynagrodzeniu i innych korzyściach, oraz w celu sprostania obowiązkom prawnym Firmy, takim jak przeprowadzanie niezbędnych kontroli w zakresie prawa do pracy na terenie określonej jurysdykcji i wprowadzenie rozsądnych dostosowań dla niepełnosprawnych pracowników. "
 
 msgid "The Company will assess your knowledge and experience versus the appropriateness of the requested service/investment product."
 msgstr "Firma oceni, czy Twoja wiedza i Twoje doświadczenie są wystarczające, aby zakupić wybraną usługę/produkt inwestycyjny."
@@ -9149,7 +9182,7 @@ msgid "The applicant is under no statutory or contractual obligation to provide 
 msgstr "Kandydat nie podlega żadnym ustawowym ani umownym zobowiązaniom do przekazania danych grupie Binary Group podczas procesu rekrutacyjnego. Jednak, jeśli kandydat zdecyduje się nie podawać niezbędnych informacji, wówczas Firma może nie być w stanie kontynuować jego procesu aplikacyjnego."
 
 msgid "The applicant's personal data shall be stored for a period of six months should the applicant be unsuccessful or decline in accepting employment with the Binary Group. At the expiry of that period, the applicant's data is deleted or destroyed unless the Company is required to further retain the applicant's information to exercise or defend any legal claims."
-msgstr ""
+msgstr "Dane osobowe kandydata będą przechowywane przez okres sześciu miesięcy, jeśli kandydat nie otrzyma oferty pracy lub odrzuci ofertę zatrudnienia w Binary Group. Po upływie tego okresu dane kandydata zostaną usunięte lub zniszczone, chyba że Firma będzie zobowiązana do dalszego przechowywania danych kandydata, aby zrealizować jakiekolwiek roszczenia prawne bądź obronić się przed nimi."
 
 msgid "The application shall be reviewed and assessed by the Company's compliance and marketing departments. It is noted that the Company's compliance department following and implementing the Anti-Money Laundering Policy and conducting due diligence in accordance with the law and Regulations shall request and collect all required information and documentation as per Section H."
 msgstr "Wniosek zostanie sprawdzony i oceniony przez działy Firmy ds. zgodności i marketingu. Dział Firmy ds. zgodności przestrzega polityki dot. przeciwdziałania praniu brudnych pieniędzy i wprowadza ją w życie, a przeprowadzając ocenę należytej staranności, zgodnie z prawem i rozporządzeniami może wnioskować o dostarczenie informacji i dokumentów opisanych w sekcji H i gromadzić takie informacje i dokumenty."
@@ -9454,8 +9487,8 @@ msgstr "Terminy: „my”, „nas”, „nasze”, „Firma”, „%1” itp. oz
 msgid "The trading services described in this Agreement are OTC. This means that one or more of the underlying instruments in which you transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the Electronic Trading Platform as described in this Agreement."
 msgstr "Usługi handlowania opisane w niniejszej Umowie są przeprowadzane na rynku obrotu pozagiełdowego. Oznacza to, że w przypadku co najmniej jednego instrumentu bazowego, którym handlujesz za pośrednictwem naszej platformy, mimo, że jest on kwotowany na rynku walutowym, jak opisano w niniejszej Umowie, gdy transakcja zostaje zawarta za pośrednictwem platformy handlu elektronicznego, handel nim nie odbywa się na rynku walutowym."
 
-msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
-msgstr "Transakcje zawierane na niniejszym portalu, jak również relacje między Klientami a Firmą podlegają prawu państwa, w którym znajduje się siedziba Firmy („Jurysdykcja”). Użytkownik zgadza się, aby sądy podlegające tej Jurysdykcji miały wyłączne prawdo rozstrzygania wszelkich sporów, które mogą powstać w odniesieniu do niniejszej Umowy. W tych celach użytkownik nieodwołalnie poddaje się orzecznictwu sądów niniejszej Jurysdykcji w odniesieniu do wszelkich sporów oraz zgadza się, że wszelkie roszczenia, jakie użytkownik może mieć względem Firmy będą rozpatrywane przed sądami niniejszej Jurysdykcji. Więcej informacji na temat skarg i sporów można znaleźć w sekcji Skargi i spory."
+msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's %1Complaints and Disputes%2 section."
+msgstr ""
 
 msgid "The two passwords that you entered do not match."
 msgstr "Wprowadzone hasła nie są identyczne."
@@ -10514,7 +10547,7 @@ msgid "View Chart"
 msgstr "Zobacz wykres"
 
 msgid "View Guide"
-msgstr ""
+msgstr "Zobacz przewodnik"
 
 msgid "View Statement"
 msgstr "Zobacz oświadczenie"
@@ -10623,6 +10656,9 @@ msgstr "Krok – wolumen"
 
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
+
+msgid "Waiting for contract settlement."
+msgstr ""
 
 msgid "Waiting for entry tick."
 msgstr "Oczekuje na pierwszą zmianę ceny."
@@ -10915,8 +10951,8 @@ msgstr "Nie mamy obowiązku przeprowadzenia oceny zdolności ani przedstawienia 
 msgid "We’re projected to register over 197 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 789 million."
 msgstr "W tym roku spodziewamy się zarejestrować ponad 197 mln transakcji, co da łączną liczbę kupionych i sprzedanych kontraktów na naszej platformie od momentu założenia firmy wynoszącą 789 mln."
 
-msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
-msgstr "W ciągu ostatnich lat nasza firma rozwinęła się, biorąc pod uwagę zarówno liczbę pracowników, jak i liczbę biur. Obecnie zatrudniamy ponad %1 osób w naszych trzech biurach w Malezji i na Malcie. W tym roku spodziewamy się dalszego wzrostu liczny pracowników, który pozwoli nam obsłużyć rosnący popyt na nasze produkty i usługi."
+msgid "We’ve grown in size over the years – both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgstr ""
 
 msgid "We’ve paid millions in commission to date through our industry-leading affiliate programme."
 msgstr "Do dnia dzisiejszego w ramach naszego programu partnerskiego wypłaciliśmy prowizje o łącznej wysokości kilku milionów."
@@ -11511,9 +11547,6 @@ msgstr "Jesteś skłonny/skłonna ponieść całkowitą stratę środków pieni�
 
 msgid "You bear the responsibility of ensuring that payments made to the Company are correctly received with the specified Client’s Account details."
 msgstr "Twoim obowiązkiem jest zagwarantowanie, że płatność na rzecz Firmy wpłynie na określone Konto klienta."
-
-msgid "You can choose from two types of affiliate commission plans:"
-msgstr "Możesz wybrać jeden z dwóch dostępnych planów prowizyjnych dla partnerów:"
 
 msgid "You can close this window without interrupting your trade."
 msgstr "Możesz zamknąć te okno; nie będzie to miało żadnego wpływu na zakład."
