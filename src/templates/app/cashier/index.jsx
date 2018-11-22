@@ -21,13 +21,13 @@ const DepositWithdraw = ({ id, is_payment_agent, show_upgrade }) => (
 );
 
 export const CashierNote = ({ text }) => (
-    <div className='gr-padding-20 invisible cashier_note'>
-        <div className='gr-12 gr-padding-10 fill-bg-color primary-color'>
-            <div className='gr-row'>
-                <div className='gr-1 gr-2-t gr-2-p gr-2-m align-self-center'>
-                    <div className='notice-circle'>i</div>
+    <div className='gr-padding-10 invisible cashier_note'>
+        <div className='gr-12 color-dark-white'>
+            <div className='gr-row gr-row-align-middle'>
+                <div className='gr-adapt gr-no-gutter-left'>
+                    <div className='notice-circle faded'>i</div>
                 </div>
-                <div className='gr-11 gr-9-t gr-9-p gr-9-m gr-no-gutter'>
+                <div className='gr-11 gr-9-t gr-9-p gr-9-m gr-no-gutter align-start'>
                     <p className='no-margin'>
                         {text}
                     </p>

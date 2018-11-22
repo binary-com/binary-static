@@ -661,6 +661,11 @@ label + input {
     font-size: 14px;
     text-align: center;
     margin: 0 auto;
+
+    &.faded {
+        border-color: $COLOR_GRAY_SHADE;
+        font-weight: 400;
+    }
 }
 
 @media (max-width: 768px) {
