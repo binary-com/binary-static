@@ -3,7 +3,6 @@ const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getElementById   = require('../../../_common/common_functions').getElementById;
-const State            = require('../../../_common/storage').State;
 const paramsHash       = require('../../../_common/url').paramsHash;
 const urlFor           = require('../../../_common/url').urlFor;
 const getPropertyValue = require('../../../_common/utility').getPropertyValue;
@@ -29,14 +28,12 @@ const Cashier = (() => {
             $toggler.children().toggleClass('active');
             $toggler.toggleClass('open');
         });
-        BinarySocket.wait('website_status').then(() => {
-            $('.cashier_note').setVisibility(
-                Client.isLoggedIn() &&                       // only show to logged-in clients
-                !Client.get('is_virtual') &&                 // only show to real accounts
-                !isCryptocurrency(Client.get('currency')) && // only show to fiat currencies
-                /^(vn|ng|lk|id)$/.test(State.getResponse('website_status.clients_country')) // only show to Vietnam, Nigeria, Sri Lanka, Indonesia
-            );
-        });
+        $('.cashier_note').setVisibility(
+            Client.isLoggedIn() &&                          // only show to logged-in clients
+            !Client.get('is_virtual') &&                    // only show to real accounts
+            !isCryptocurrency(Client.get('currency')) &&    // only show to fiat currencies
+            /^(vn|ng|lk|id)$/.test(Client.get('residence')) // only show to Vietnam, Nigeria, Sri Lanka, Indonesia
+        );
     };
 
     const displayTopUpButton = () => {
