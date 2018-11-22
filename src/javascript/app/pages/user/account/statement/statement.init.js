@@ -201,6 +201,7 @@ const StatementInit = (() => {
 
                     if (can_submit) {
                         $request_statement_btn.removeClass('button-disabled')
+                            .off('click')
                             .on('click', (evt) => {
                                 evt.preventDefault();
                                 BinarySocket.send({
