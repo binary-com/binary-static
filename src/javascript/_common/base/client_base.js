@@ -76,17 +76,17 @@ const ClientBase = (() => {
 
     const getAccountType = (loginid = current_loginid) => {
         let account_type;
-        if (/^VR/.test(loginid)) account_type = 'virtual';
-        else if (/^MF/.test(loginid)) account_type = 'financial';
+        if (/^VR/.test(loginid))          account_type = 'virtual';
+        else if (/^MF/.test(loginid))     account_type = 'financial';
         else if (/^MLT|MX/.test(loginid)) account_type = 'gaming';
         return account_type;
     };
 
     const isAccountOfType = (type, loginid = current_loginid, only_enabled = false) => {
-        const this_type = getAccountType(loginid);
+        const this_type   = getAccountType(loginid);
         return ((
             (type === 'virtual' && this_type === 'virtual') ||
-            (type === 'real' && this_type !== 'virtual') ||
+            (type === 'real'    && this_type !== 'virtual') ||
             type === this_type) &&
             (only_enabled ? !get('is_disabled', loginid) : true));
     };
@@ -139,8 +139,8 @@ const ClientBase = (() => {
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
-        set('email', authorize.email);
-        set('currency', authorize.currency);
+        set('email',      authorize.email);
+        set('currency',   authorize.currency);
         set('is_virtual', +authorize.is_virtual);
         set('session_start', parseInt(moment().valueOf() / 1000));
         set('landing_company_shortcode', authorize.landing_company_name);
@@ -181,10 +181,10 @@ const ClientBase = (() => {
         SocketCache.clear();
         localStorage.setItem('GTM_new_account', '1');
 
-        set('token', options.token, options.loginid);
-        set('email', options.email, options.loginid);
+        set('token',      options.token,       options.loginid);
+        set('email',      options.email,       options.loginid);
         set('is_virtual', +options.is_virtual, options.loginid);
-        set('loginid', options.loginid);
+        set('loginid',    options.loginid);
 
         return true;
     };
@@ -207,16 +207,21 @@ const ClientBase = (() => {
 
     const getBasicUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
-        let can_open_multi                  = false;
+
+        let can_open_multi = false;
         let type,
             can_upgrade_to;
         if ((upgradeable_landing_companies || []).length) {
             const current_landing_company = get('landing_company_shortcode');
-            can_open_multi                = upgradeable_landing_companies.indexOf(current_landing_company) !== -1;
+
+            can_open_multi = upgradeable_landing_companies.indexOf(current_landing_company) !== -1;
+
+            // only show upgrade message to landing companies other than current
             const canUpgrade = (...landing_companies) => landing_companies.find(landing_company => (
                 landing_company !== current_landing_company &&
                 upgradeable_landing_companies.indexOf(landing_company) !== -1
             ));
+
             can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
             if (can_upgrade_to) {
                 type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
@@ -285,7 +290,7 @@ const ClientBase = (() => {
         // only transfer to other accounts that have the same currency as current account if one is maltainvest and one is malta
         if (from_currency === to_currency) {
             // these landing companies are allowed to transfer funds to each other if they have the same currency
-            const same_cur_allowed     = {
+            const same_cur_allowed = {
                 maltainvest: 'malta',
                 malta      : 'maltainvest',
             };
