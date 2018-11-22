@@ -221,7 +221,7 @@ const Metatrader = () => (
                             title={it.L('Advanced Account')}
                             description={it.L('Our MetaTrader 5 Advanced account provides you with tight spreads, higher ticket size and offers more products.')}
                             items={[
-                                it.L('Leverage up to [_1]', '1:300'),
+                                it.L('Leverage up to [_1]', '1:100'),
                                 it.L('Variable spreads'),
                                 it.L('Market execution'),
                                 it.L('No commission'),
