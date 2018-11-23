@@ -80,7 +80,7 @@ const AccountTransfer = (() => {
     };
 
     const setTransferFeeAmount = () => {
-        elementTextContent(el_fee_amount, Currency.getTransferFee(client_currency, el_transfer_to.value.match(/\((\w+)\)/)[1]));
+        elementTextContent(el_fee_amount, Currency.getTransferFee(client_currency, (el_transfer_to.value || el_transfer_to.getAttribute('data-value') || '').match(/\((\w+)\)/)[1]));
     };
 
     const hasError = (response) => {
