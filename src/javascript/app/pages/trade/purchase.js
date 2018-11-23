@@ -65,31 +65,38 @@ const Purchase = (() => {
             confirmation_error.show();
 
             let message;
-            if (/NoMFProfessionalClient/.test(error.code)) {
-                const row_element = createElement('div', { class: 'gr-row font-style-normal' });
-                const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
-                const message_element = columnElement({ text: localize('In the EU, financial binary options are only available to professional investors.') });
-                const button_element = createElement('a', { class: 'button', href: urlFor('user/settings/professional') });
-                const cta_element = columnElement();
-
-                button_element.appendChild(createElement('span', { text: localize('Apply now as a professional investor') }));
-                cta_element.appendChild(button_element);
-                row_element.appendChild(message_element);
-                row_element.appendChild(cta_element);
-
-                message = row_element.outerHTML;
-            } else if (/RestrictedCountry/.test(error.code)) {
-                let additional_message = '';
-                if (/FinancialBinaries/.test(error.code)) {
-                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
-                } else if (/Random/.test(error.code)) {
-                    additional_message = localize('Try our other markets.');
+            BinarySocket.wait('get_account_status').then((response) => {
+                if (/NoMFProfessionalClient/.test(error.code)) {
+                    const has_professional_requested = (getPropertyValue(response, 'get_account_status.status') || []).includes('professional_requested');
+                    if (has_professional_requested) {
+                        message = localize('Your application to be treated as a professional client is being processed.');
+                    } else {
+                        const row_element = createElement('div', { class: 'gr-row font-style-normal' });
+                        const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
+                        const message_element = columnElement({ text: localize('In the EU, financial binary options are only available to professional investors.') });
+                        const button_element = createElement('a', { class: 'button', href: urlFor('user/settings/professional') });
+                        const cta_element = columnElement();
+    
+                        button_element.appendChild(createElement('span', { text: localize('Apply now as a professional investor') }));
+                        cta_element.appendChild(button_element);
+                        row_element.appendChild(message_element);
+                        row_element.appendChild(cta_element);
+    
+                        message = row_element.outerHTML;
+                    }
+                } else if (/RestrictedCountry/.test(error.code)) {
+                    let additional_message = '';
+                    if (/FinancialBinaries/.test(error.code)) {
+                        additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
+                    } else if (/Random/.test(error.code)) {
+                        additional_message = localize('Try our other markets.');
+                    }
+                    message = `${error.message}. ${additional_message}`;
+                } else {
+                    message = error.message;
                 }
-                message = `${error.message}. ${additional_message}`;
-            } else {
-                message = error.message;
-            }
-            CommonFunctions.elementInnerHtml(confirmation_error, message);
+                CommonFunctions.elementInnerHtml(confirmation_error, message);
+            });
         } else {
             CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';

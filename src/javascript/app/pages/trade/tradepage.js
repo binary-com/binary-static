@@ -13,7 +13,9 @@ const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
 const isEuCountry       = require('../../common/country_base').isEuCountry;
 const Guide             = require('../../common/guide');
+const localize          = require('../../../_common/localize').localize;
 const State             = require('../../../_common/storage').State;
+const createElement     = require('../../../_common/utility').createElement;
 const getPropertyValue  = require('../../../_common/utility').getPropertyValue;
 
 const TradePage = (() => {
@@ -69,10 +71,19 @@ const TradePage = (() => {
             BinarySocket.wait(...required_api_calls).then((response) => {
                 if (isEuCountry()) {
                     const isMaltainvest = () => Client.get('landing_company_shortcode') === 'maltainvest';
-                    const isProfessional = () => (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional');
+                    const account_status = (getPropertyValue(response, ['get_account_status', 'status']) || []);
+                    const isProfessional = () => account_status.includes('professional');
+                    const hasRequestedProfessional = () => account_status.includes('professional_requested');
                     // show MFSA message to MF non-professional clients or logged out EU clients
                     if (!is_logged_in || (isMaltainvest() && !isProfessional())) {
-                        $('.mfsa_message')
+                        const mfsa_message = $('.mfsa_message');
+                        if (hasRequestedProfessional()) {
+                            const div_container = createElement('div', { class: 'notice-msg center-text gr-parent gr-child' });
+                            const p_notice = createElement('p', { text: localize('Your application to be treated as a professional client is being processed.') });
+                            div_container.appendChild(p_notice);
+                            mfsa_message.html(div_container.outerHTML);
+                        }
+                        mfsa_message
                             .removeClass('container')
                             .addClass('margin-bottom-40')
                             .slideDown(300);
