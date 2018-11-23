@@ -419,6 +419,17 @@
             vertical-align: middle;
             line-height: $FONT_SIZE_XL;
         }
+        #authorization_error_container {
+            vertical-align: middle;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+
+            .authorization_error {
+                width: 100%;
+            }
+        }
         .price_container#price_container_top {
             margin-bottom: 1rem;
         }
@@ -593,7 +604,9 @@
             border-radius: 0 0 0 $BORDER_RADIUS;
         }
         #confirmation_message_container {
-            padding-top: 15px;
+            padding: 15px 0;
+            height: 90%;
+            height: calc(100% - 30px);
         }
     }
     #contract_prices_container .price_container .price_wrapper {
