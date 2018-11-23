@@ -4,6 +4,13 @@ const Note = ({ text }) => (
     <p className='hint'><strong>{it.L('Note')}: </strong>{text}</p>
 );
 
+const Duration = ({ link }) => (
+    <React.Fragment>
+        <h3>{it.L('Contract duration')}</h3>
+        <p>{it.L('Please refer to the [_1]asset index[_2] for each asset’s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#${link}' target='_blank'>`, '</a>')}</p>
+    </React.Fragment>
+);
+
 const Explanation = () => (
     <div className='gr-parent'>
         {/* ========== Winning ========== */}
@@ -292,8 +299,21 @@ const Explanation = () => (
 
         {/* ========== Duration ========== */}
         <div id='explanation_duration'>
-            <h3>{it.L('Contract duration')}</h3>
-            <p>{it.L('Please refer to the [_1]asset index[_2] for each asset’s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}'>`, '</a>')}</p>
+            <div id='duration_forex' className='invisible'>
+                <Duration link='market-forex' />
+            </div>
+
+            <div id='duration_indices' className='invisible'>
+                <Duration link='market-indices' />
+            </div>
+
+            <div id='duration_commodities' className='invisible'>
+                <Duration link='market-commodities' />
+            </div>
+
+            <div id='duration_volidx' className='invisible'>
+                <Duration link='market-volidx' />
+            </div>
         </div>
 
         {/* ========== Note ========== */}
