@@ -68,10 +68,10 @@ const TradePage = (() => {
                 required_api_calls.push('get_account_status');
             }
             
-            BinarySocket.wait(...required_api_calls).then((response) => {
+            BinarySocket.wait(...required_api_calls).then(() => {
                 if (isEuCountry()) {
                     const isMaltainvest = () => Client.get('landing_company_shortcode') === 'maltainvest';
-                    const account_status = (getPropertyValue(response, ['get_account_status', 'status']) || []);
+                    const account_status = State.getResponse('get_account_status.status') || [];
                     const isProfessional = () => account_status.includes('professional');
                     const hasRequestedProfessional = () => account_status.includes('professional_requested');
                     // show MFSA message to MF non-professional clients or logged out EU clients
