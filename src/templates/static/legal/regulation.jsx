@@ -169,10 +169,10 @@ const Regulation = () => {
                             padding='5'
                             center
                             border='border-dark-gray'
+                            className='margin-top-1-em'
                             image='images/pages/regulation/pillar.svg'
                             href={it.url_for('/download/BIEL-RTS28.pdf')}
                             target='_blank'
-                            download
                             text={it.L('Annual Best Execution Disclosure 2017')}
                         />
                     </div>
