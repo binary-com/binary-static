@@ -22,11 +22,11 @@ $TOAST_BORDER_COLOR_SUCCESS   : rgb(76, 175, 80);  // #4CAF50
 $TOAST_BORDER_COLOR_WARNING   : rgb(255, 193, 7);  // #FFC107
 
 // SVG files configs
-$IC_CLOSE_NORMAL: url('../images/app_2/common/toast/ic_close_normal.svg');
-$IC_ERROR       : url('../images/app_2/common/toast/ic_error.svg');
-$IC_INFO        : url('../images/app_2/common/toast/ic_info.svg');
-$IC_SUCCESS     : url('../images/app_2/common/toast/ic_success.svg');
-$IC_WARNING     : url('../images/app_2/common/toast/ic_warning.svg');
+$IC_CLOSE_NORMAL: url('../images/common/toast/ic_close_normal.svg');
+$IC_ERROR       : url('../images/common/toast/ic_error.svg');
+$IC_INFO        : url('../images/common/toast/ic_info.svg');
+$IC_SUCCESS     : url('../images/common/toast/ic_success.svg');
+$IC_WARNING     : url('../images/common/toast/ic_warning.svg');
 
 .toast {
     z-index: 9999;

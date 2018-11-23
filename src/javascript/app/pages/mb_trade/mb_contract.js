@@ -1,12 +1,12 @@
-const moment        = require('moment');
-const MBDefaults    = require('./mb_defaults');
-const Client        = require('../../base/client');
-const SocketCache   = require('../../../_common/base/socket_cache');
-const getLanguage   = require('../../../_common/language').get;
-const localize      = require('../../../_common/localize').localize;
-const padLeft       = require('../../../_common/string_util').padLeft;
-const toTitleCase   = require('../../../_common/string_util').toTitleCase;
-const isEmptyObject = require('../../../_common/utility').isEmptyObject;
+const moment                   = require('moment');
+const MBDefaults               = require('./mb_defaults');
+const Client                   = require('../../base/client');
+const SocketCache              = require('../../../_common/base/socket_cache');
+const getLanguage              = require('../../../_common/language').get;
+const localize                 = require('../../../_common/localize').localize;
+const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
+const padLeft                  = require('../../../_common/string_util').padLeft;
+const isEmptyObject            = require('../../../_common/utility').isEmptyObject;
 
 /*
  * Contract object mocks the trading form we have on our website
@@ -23,27 +23,40 @@ const MBContract = (() => {
 
     const hidden_class = 'invisible';
 
-    const duration_map = {
-        m: 'minute',
-        h: 'h',
-        d: 'day',
-        W: 'week',
-        M: 'month',
-        Y: 'year',
-    };
+    const DurationMap = (() => {
+        let duration_map;
 
-    const durationText = (duration, is_jp_client) => {
+        const initDurationMap = () => ({
+            m: localize(['minute', 'minutes']),
+            h: localize(['h']),
+            d: localize(['day', 'days']),
+            W: localize(['week', 'weeks']),
+            M: localize(['month', 'months']),
+            Y: localize(['year', 'years']),
+        });
+
+        return {
+            get: (key) => {
+                if (!duration_map) {
+                    duration_map = initDurationMap();
+                }
+                return key ? duration_map[key] : duration_map;
+            },
+        };
+    })();
+
+    const durationText = (duration) => {
         let dur = duration;
-        if (dur && is_jp_client) {
+        if (dur) {
             dur = dur.replace(/([a-z])/, '$1<br>');
-            Object.keys(duration_map).forEach((key) => {
-                dur = dur.replace(key, localize(duration_map[key] + (+dur[0] === 1 || /h/.test(key) ? '' : 's')));
+            Object.keys(DurationMap.get()).forEach((key) => {
+                dur = dur.replace(key, DurationMap.get(key)[+dur[0] === 1 || /h/.test(key) ? 0 : 1]);
             });
         }
         return dur.toUpperCase();
     };
 
-    const periodText = (trading_period, is_jp_client) => {
+    const periodText = (trading_period) => {
         let date_start,
             date_expiry,
             duration;
@@ -58,20 +71,15 @@ const MBContract = (() => {
         }
         duration = duration ? duration.replace('0d', '1d') : '';
 
-        const toDate = (date) => {
-            let text_value = moment.utc(date * 1000)
-                .utcOffset(is_jp_client ? '+09:00' : '+00:00')
-                .locale(getLanguage().toLowerCase());
-            if (is_jp_client) {
-                text_value = text_value.format('MMM Do, HH:mm').replace(/08:59/, '09:00«');
-            } else {
-                text_value = text_value.format('HH:mm');
-            }
-            return text_value;
-        };
+        const toDate = (date) => (
+            moment
+                .utc(date * 1000)
+                .locale(getLanguage().toLowerCase())
+                .format('HH:mm')
+        );
         return {
-            end     : is_jp_client ? toDate(date_expiry) : `${[toDate(date_start), toDate(date_expiry)].join('-')} GMT`,
-            duration: durationText(duration, is_jp_client),
+            end     : `${[toDate(date_start), toDate(date_expiry)].join('-')} GMT`,
+            duration: durationText(duration),
         };
     };
 
@@ -99,23 +107,14 @@ const MBContract = (() => {
         if (should_rebuild) {
             $list.empty();
         }
-        const is_jp_client = Client.isJPClient();
 
-        const duration_class    = 'gr-3 gr-no-gutter';
-        const end_time_class    = is_jp_client ? 'gr-6 gr-5-m' : 'gr-6';
-        const remain_time_class = is_jp_client ? 'gr-3 gr-4-m gr-no-gutter' : 'gr-6';
         const makeItem = (period) => {
-            const text = periodText(period, is_jp_client);
+            const text = periodText(period);
 
             const $div_period      = $('<div/>', { value: period, class: 'gr-row' });
 
-            const $div_end_time    = $('<div/>', { class: `end ${end_time_class}`, text: text.end });
-            const $div_remain_time = $('<div/>', { class: `remaining-time ${remain_time_class}` });
-
-            if (is_jp_client) {
-                const $div_duration = $('<div/>', { class: `duration ${duration_class}`, html: text.duration });
-                $div_period.append($div_duration);
-            }
+            const $div_end_time    = $('<div/>', { class: 'end gr-6', text: text.end });
+            const $div_remain_time = $('<div/>', { class: 'remaining-time gr-6' });
 
             $div_period.append($div_end_time).append($div_remain_time);
 
@@ -133,7 +132,7 @@ const MBContract = (() => {
                 }
             });
             MBDefaults.set('period', $period.attr('value'));
-            displayRemainingTime(true, is_jp_client);
+            displayRemainingTime(true);
         } else { // update options
             let existing_array  = [];
             const missing_array = [];
@@ -171,7 +170,28 @@ const MBContract = (() => {
         }
     };
 
-    const displayRemainingTime = (should_recalculate, is_jp_client) => {
+    const RemainingTimeUnits = (() => {
+        let duration_units;
+
+        const initDurationUnits = () => ({
+            month : localize(['Month',  'Months']),
+            day   : localize(['Day',    'Days']),
+            hour  : localize(['Hour',   'Hours']),
+            minute: localize(['Minute', 'Minutes']),
+            second: localize(['Second', 'Seconds']),
+        });
+
+        return {
+            get: (key, is_singular) => {
+                if (!duration_units) {
+                    duration_units = initDurationUnits();
+                }
+                return duration_units[key][is_singular ? 0 : 1];
+            },
+        };
+    })();
+
+    const displayRemainingTime = (should_recalculate) => {
         if (typeof $durations === 'undefined' || should_recalculate) {
             // period_value = MBDefaults.get('period');
             $period    = $('#period');
@@ -207,22 +227,16 @@ const MBContract = (() => {
             Object.keys(all_durations).forEach((key) => {
                 if (/month|day/.test(key)) {
                     if (all_durations[key]) {
-                        if (is_jp_client) {
-                            duration_unit_to_show = key[0];
-                            remaining_month_day_string
-                                .push(all_durations[key] + localize(toTitleCase(duration_unit_to_show)));
-                        } else {
-                            duration_unit_to_show = all_durations[key] === 1 ? key : `${key}s`;
-                            remaining_month_day_string
-                                .push(`${all_durations[key]} ${localize(toTitleCase(duration_unit_to_show))}`);
-                        }
+                        duration_unit_to_show = RemainingTimeUnits.get(key, all_durations[key] === 1);
+                        remaining_month_day_string
+                            .push(`${all_durations[key]} ${duration_unit_to_show}`);
                     }
                 } else {
                     remaining_time_string.push(padLeft(all_durations[key] || 0, 2, '0'));
                 }
             });
 
-            $count_down_timer.text(`${remaining_month_day_string.join(is_jp_client ? '' : ' ')} ${remaining_time_string.join(':')}`);
+            $count_down_timer.text(`${remaining_month_day_string.join(' ')} ${remaining_time_string.join(':')}`);
         });
         current_time_left = parseInt($period.attr('value').split('_')[1]) - window.time.unix();
         if (current_time_left < 120) {
@@ -230,7 +244,7 @@ const MBContract = (() => {
             $('.price-button').addClass('inactive');
         }
         if (remaining_timeout) clearRemainingTimeout();
-        remaining_timeout = setTimeout(() => { displayRemainingTime(false, is_jp_client); }, 500);
+        remaining_timeout = setTimeout(() => { displayRemainingTime(false); }, 500);
     };
 
     const clearRemainingTimeout = () => { clearTimeout(remaining_timeout); };
@@ -263,20 +277,12 @@ const MBContract = (() => {
         }
         if ($list.children().length === 0) {
             const default_value = MBDefaults.get('category');
-            const is_jp_client  = Client.isJPClient();
             categories.forEach((category, idx) => {
                 if (available_contracts.find(contract => contract.contract_category === category.value)) {
                     const is_current = (!default_value && idx === 0) || category.value === default_value;
-                    let el_contract_type;
-                    if (is_jp_client) {
-                        el_contract_type =
-                            `<span class="contract-type gr-6 ${category.type1}"><span>${localize(getTemplate(category.type1).name)}</span></span>
-                             <span class="contract-type gr-6 ${category.type2} negative-color"><span>${localize(getTemplate(category.type2).name)}</span></span>`;
-                    } else {
-                        el_contract_type =
-                            `<div class="category-wrapper gr-6"><div class="contract-type ${category.type2}" /><div>${localize(getTemplate(category.type2).name)}</div></div>
-                             <div class="category-wrapper gr-6"><div class="contract-type ${category.type1} negative-color" /><div>${localize(getTemplate(category.type1).name)}</div></div>`;
-                    }
+                    const el_contract_type =
+                        `<div class="category-wrapper gr-6"><div class="contract-type ${category.type2}" /><div>${TemplatesConfig.get(category.type2).name}</div></div>
+                         <div class="category-wrapper gr-6"><div class="contract-type ${category.type1} negative-color" /><div>${TemplatesConfig.get(category.type1).name}</div></div>`;
                     const $current   = $('<div/>', {
                         value: category.value,
                         html : el_contract_type,
@@ -308,62 +314,71 @@ const MBContract = (() => {
         return contracts;
     };
 
-    const getTemplate = (contract_type) => {
-        const is_jp_client = Client.isJPClient();
-        const templates = {
-            PUT: {
-                opposite   : 'CALLE',
-                order      : is_jp_client ? 0 : 1,
-                name       : 'Lower',
-                description: '[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].',
-            },
+    const TemplatesConfig = (() => {
+        let templates_config;
+
+        const initTemplatesConfig = () => ({
             CALLE: {
                 opposite   : 'PUT',
-                order      : is_jp_client ? 1 : 0,
-                name       : 'Higher',
-                description: '[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].',
+                order      : 0,
+                name       : localize('Higher'),
+                description: localizeKeepPlaceholders('[_1] [_2] payout if [_3] is strictly higher than or equal to Barrier at close on [_4].'),
+            },
+            PUT: {
+                opposite   : 'CALLE',
+                order      : 1,
+                name       : localize('Lower'),
+                description: localizeKeepPlaceholders('[_1] [_2] payout if [_3] is strictly lower than Barrier at close on [_4].'),
             },
             ONETOUCH: {
                 opposite   : 'NOTOUCH',
                 order      : 0,
-                name       : 'Touches',
-                description: '[_1] [_2] payout if [_3] touches Barrier through close on [_4].',
+                name       : localize('Touches'),
+                description: localizeKeepPlaceholders('[_1] [_2] payout if [_3] touches Barrier through close on [_4].'),
             },
             NOTOUCH: {
                 opposite   : 'ONETOUCH',
                 order      : 1,
-                name       : 'Does Not Touch',
-                description: '[_1] [_2] payout if [_3] does not touch Barrier through close on [_4].',
+                name       : localize('Does Not Touch'),
+                description: localizeKeepPlaceholders('[_1] [_2] payout if [_3] does not touch Barrier through close on [_4].'),
             },
             EXPIRYRANGEE: {
                 opposite   : 'EXPIRYMISS',
                 order      : 0,
-                name       : 'Ends Between',
-                description: '[_1] [_2] payout if [_3] ends on or between low and high values of Barrier at close on [_4].',
+                name       : localize('Ends Between'),
+                description: localizeKeepPlaceholders('[_1] [_2] payout if [_3] ends on or between low and high values of Barrier at close on [_4].'),
             },
             EXPIRYMISS: {
                 opposite   : 'EXPIRYRANGEE',
                 order      : 1,
-                name       : 'Ends Outside',
-                description: '[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].',
+                name       : localize('Ends Outside'),
+                description: localizeKeepPlaceholders('[_1] [_2] payout if [_3] ends outside low and high values of Barrier at close on [_4].'),
             },
             RANGE: {
                 opposite   : 'UPORDOWN',
                 order      : 0,
-                name       : 'Stays Between',
-                description: '[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].',
+                name       : localize('Stays Between'),
+                description: localizeKeepPlaceholders('[_1] [_2] payout if [_3] stays between low and high values of Barrier through close on [_4].'),
             },
             UPORDOWN: {
                 opposite   : 'RANGE',
                 order      : 1,
-                name       : 'Goes Outside',
-                description: '[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].',
+                name       : localize('Goes Outside'),
+                description: localizeKeepPlaceholders('[_1] [_2] payout if [_3] goes outside of low and high values of Barrier through close on [_4].'),
+            },
+        });
+
+        return {
+            get: (contract_type) => {
+                if (!templates_config) {
+                    templates_config = initTemplatesConfig();
+                }
+                return contract_type ? templates_config[contract_type] : templates_config;
             },
         };
-        return contract_type ? templates[contract_type] : templates;
-    };
+    })();
 
-    const getCurrency = () => (Client.get('currency') || $('#currency').attr('value') || 'JPY');
+    const getCurrency = () => (Client.get('currency') || $('#currency').attr('value') || 'USD');
 
     const setCurrentItem = ($container, value, is_underlying) => {
         const $selected = $container.find(`.list [value="${value}"]`);
@@ -387,9 +402,9 @@ const MBContract = (() => {
         populateOptions,
         displayRemainingTime,
         getCurrentContracts,
-        getTemplate,
         getCurrency,
         setCurrentItem,
+        getTemplate         : TemplatesConfig.get,
         getRemainingTime    : () => current_time_left,
         getContractsResponse: () => contracts_for_response,
         setContractsResponse: (contracts_for) => { contracts_for_response = contracts_for; },

@@ -1,18 +1,20 @@
-const setShouldRedirect = require('../user/account/settings/cashier_password').setShouldRedirect;
-const BinaryPjax        = require('../../base/binary_pjax');
-const Client            = require('../../base/client');
-const BinarySocket      = require('../../base/socket');
-const showPopup         = require('../../common/attach_dom/popup');
-const Currency          = require('../../common/currency');
-const FormManager       = require('../../common/form_manager');
-const validEmailToken   = require('../../common/form_validation').validEmailToken;
-const getElementById    = require('../../../_common/common_functions').getElementById;
-const localize          = require('../../../_common/localize').localize;
-const State             = require('../../../_common/storage').State;
-const toTitleCase       = require('../../../_common/string_util').toTitleCase;
-const Url               = require('../../../_common/url');
-const template          = require('../../../_common/utility').template;
-const isEmptyObject     = require('../../../_common/utility').isEmptyObject;
+const setShouldRedirect      = require('../user/account/settings/cashier_password').setShouldRedirect;
+const BinaryPjax             = require('../../base/binary_pjax');
+const Client                 = require('../../base/client');
+const BinarySocket           = require('../../base/socket');
+const showPopup              = require('../../common/attach_dom/popup');
+const Currency               = require('../../common/currency');
+const FormManager            = require('../../common/form_manager');
+const validEmailToken        = require('../../common/form_validation').validEmailToken;
+const handleVerifyCode       = require('../../common/verification_code').handleVerifyCode;
+const getElementById         = require('../../../_common/common_functions').getElementById;
+const localize               = require('../../../_common/localize').localize;
+const State                  = require('../../../_common/storage').State;
+const Url                    = require('../../../_common/url');
+const template               = require('../../../_common/utility').template;
+const isEmptyObject          = require('../../../_common/utility').isEmptyObject;
+const getCurrentBinaryDomain = require('../../../config').getCurrentBinaryDomain;
+const isBinaryApp            = require('../../../config').isBinaryApp;
 
 const DepositWithdraw = (() => {
     const default_iframe_height = 700;
@@ -46,20 +48,33 @@ const DepositWithdraw = (() => {
         }
     };
 
+    const sendWithdrawalEmail = (onResponse) => {
+        if (isEmptyObject(response_withdrawal)) {
+            BinarySocket.send({
+                verify_email: Client.get('email'),
+                type        : 'payment_withdraw',
+            }).then((response) => {
+                response_withdrawal = response;
+                if (typeof onResponse === 'function') {
+                    onResponse();
+                }
+            });
+        } else if (typeof onResponse === 'function') {
+            onResponse();
+        }
+    };
+
     const checkToken = () => {
         token = Url.getHashValue('token');
-        if (!token) {
-            if (isEmptyObject(response_withdrawal)) {
-                BinarySocket.send({
-                    verify_email: Client.get('email'),
-                    type        : 'payment_withdraw',
-                }).then((response) => {
-                    response_withdrawal = response;
-                    handleWithdrawalResponse();
-                });
-            } else {
-                handleWithdrawalResponse();
-            }
+        if (isBinaryApp()) {
+            sendWithdrawalEmail();
+            $loading.remove();
+            handleVerifyCode(() => {
+                token = $('#txt_verification_code').val();
+                getCashierURL();
+            });
+        } else if (!token) {
+            sendWithdrawalEmail(handleWithdrawalResponse);
         } else if (!validEmailToken(token)) {
             showError('token_error');
         } else {
@@ -80,7 +95,7 @@ const DepositWithdraw = (() => {
         const action   = Url.param('action');
         if (/^(withdraw|deposit)$/.test(action)) {
             cashier_type = action;
-            $heading.text(`${localize(toTitleCase(action))} ${Client.get('currency') || ''}`);
+            $heading.text(`${action === 'withdraw' ? localize('Withdraw') : localize('Deposit')} ${Client.get('currency') || ''}`);
         }
     };
 
@@ -123,7 +138,7 @@ const DepositWithdraw = (() => {
     };
 
     const hideAll = (option) => {
-        $('#frm_withdraw, #frm_ukgc, #errors').setVisibility(0);
+        $('#verification_code_wrapper, #frm_withdraw, #frm_ukgc, #errors').setVisibility(0);
         if (option) {
             $(option).setVisibility(0);
         }
@@ -150,17 +165,17 @@ const DepositWithdraw = (() => {
         let error_fields;
         if (details) {
             error_fields = {
-                province: 'State/Province',
-                country : 'Country',
-                city    : 'Town/City',
-                street  : 'First line of home address',
-                pcode   : 'Postal Code / ZIP',
-                phone   : 'Telephone',
-                email   : 'Email address',
+                province: localize('State/Province'),
+                country : localize('Country'),
+                city    : localize('Town/City'),
+                street  : localize('First line of home address'),
+                pcode   : localize('Postal Code / ZIP'),
+                phone   : localize('Telephone'),
+                email   : localize('Email address'),
             };
         }
         const $el     = $(`#${msg_id}`);
-        const err_msg = template($el.html(), [localize(details ? error_fields[details] : 'details')]);
+        const err_msg = template($el.html(), [details ? error_fields[details] : localize('details')]);
         $el.html(err_msg);
         showMessage(msg_id);
     };
@@ -210,12 +225,6 @@ const DepositWithdraw = (() => {
                 case 'ASK_FINANCIAL_RISK_APPROVAL':
                     showError('financial_risk_error');
                     break;
-                case 'ASK_JP_KNOWLEDGE_TEST':
-                    showError('knowledge_test_error');
-                    break;
-                case 'JP_NOT_ACTIVATION':
-                    showError('activation_error');
-                    break;
                 case 'ASK_AGE_VERIFICATION':
                     showError('age_error');
                     break;
@@ -248,7 +257,7 @@ const DepositWithdraw = (() => {
     };
 
     const setFrameHeight = (e) => {
-        if (!/www\.binary\.com/i.test(e.origin)) {
+        if (!new RegExp(`www\\.${getCurrentBinaryDomain()}`, 'i').test(e.origin)) {
             $iframe.height(+e.data || default_iframe_height);
         }
     };

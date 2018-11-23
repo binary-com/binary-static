@@ -7,7 +7,6 @@ describe('Currency', () => {
             AUD: { fractional_digits: 2, type: 'fiat' },
             EUR: { fractional_digits: 2, type: 'fiat' },
             GBP: { fractional_digits: 2, type: 'fiat' },
-            JPY: { fractional_digits: 0, type: 'fiat' },
             USD: { fractional_digits: 2, type: 'fiat' },
             BTC: { fractional_digits: 8, type: 'crypto' },
         }
@@ -22,8 +21,6 @@ describe('Currency', () => {
             expect(Currency.formatMoney('GBP', '123.55')).to.eq(`${Currency.formatCurrency('GBP')}123.55`);
             expect(Currency.formatMoney('EUR', '123.55')).to.eq(`${Currency.formatCurrency('EUR')}123.55`);
             expect(Currency.formatMoney('AUD', '123.55')).to.eq(`${Currency.formatCurrency('AUD')}123.55`);
-            expect(Currency.formatMoney('JPY', '123.55')).to.eq(`${Currency.formatCurrency('JPY')}124`);
-            expect(Currency.formatMoney('JPY', '1234.55')).to.eq(`${Currency.formatCurrency('JPY')}1,235`);
             expect(Currency.formatMoney('BTC', '0.005432110')).to.eq(`${Currency.formatCurrency('BTC')}0.00543211`);
             expect(Currency.formatMoney('BTC', '0.005432116')).to.eq(`${Currency.formatCurrency('BTC')}0.00543212`);
             expect(Currency.formatMoney('BTC', '0.00000001')).to.eq(`${Currency.formatCurrency('BTC')}0.00000001`);
@@ -77,7 +74,6 @@ describe('Currency', () => {
             expect(Currency.getDecimalPlaces('AUD')).to.eq(2);
             expect(Currency.getDecimalPlaces('EUR')).to.eq(2);
             expect(Currency.getDecimalPlaces('GBP')).to.eq(2);
-            expect(Currency.getDecimalPlaces('JPY')).to.eq(0);
             expect(Currency.getDecimalPlaces('USD')).to.eq(2);
             expect(Currency.getDecimalPlaces('BTC')).to.eq(8);
         });
@@ -98,7 +94,6 @@ describe('Currency', () => {
             expect(Currency.isCryptocurrency('AUD')).to.eq(false);
             expect(Currency.isCryptocurrency('EUR')).to.eq(false);
             expect(Currency.isCryptocurrency('GBP')).to.eq(false);
-            expect(Currency.isCryptocurrency('JPY')).to.eq(false);
             expect(Currency.isCryptocurrency('USD')).to.eq(false);
             expect(Currency.isCryptocurrency('BTC')).to.eq(true);
         });

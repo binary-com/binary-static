@@ -3,13 +3,13 @@ import ListNested from '../../../_common/components/list_nested.jsx';
 
 const Affiliate = () => (
     <div>
-        <h2 data-anchor>{it.L('[_1] Affiliate Programme Terms and Conditions', it.website_name)}</h2>
+        <h2 data-anchor='affiliate-terms-and-conditions'>{it.L('[_1] Affiliate Programme Terms and Conditions', it.website_name)}</h2>
         <ol className='reset_ol'>
             <ListNested
                 header={it.L('This Document')}
                 items={[
                     { text: it.L('This document (the "Agreement") sets out the terms and conditions between "the Company" which is Binary Services Ltd, and you (the person who applied for this programme; "you", "your", or "Affiliate"), in relation to your application to setup an affiliate account (and membership of the affiliate programme if your application is deemed successful).') },
-                    { text: it.L('The Company reserves the right to change any part of this Agreement at any time. We will endeavour to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate programme after we have posted the changes will constitute binding acceptance of such changes.') },
+                    { text: it.L('The Company reserves the right to change any part of this Agreement at any time. We will endeavor to ensure affiliates are notified when changes have been made to this Agreement, but it is ultimately your responsibility to check these terms and conditions regularly. Your continued participation in our affiliate programme after we have posted the changes will constitute binding acceptance of such changes.') },
                 ]}
             />
 
@@ -25,7 +25,7 @@ const Affiliate = () => (
             <ListNested
                 header={it.L('The Affiliate\'s Obligations')}
                 items={[
-                    { text: it.L('Provide such information to the licensee as they may reasonably require in order to enable the licensee to comply with their information reporting and other obligations to the UK Gambling Commission.') },
+                    { text: it.L('Provide such information to the licensee as they may reasonably require in order to enable the licensee to comply with their information reporting and other obligations.') },
                     { text: it.L('Comply with the applicable laws, rules, and regulations (including, but not limited to, advertising, data protection and privacy laws, rules, and regulations) of the jurisdiction(s) in which you operate or target your business.') },
                     { text: it.L('Ensure that any historical trading records and performance figures presented to your referrals related to trading on the website [_1] are accurate and not misleading.', it.website_name) },
                     { text: it.L('All affiliate activities must be conducted in a professional and proper manner. You shall be expected to act with good faith and integrity in your relationships with your referrals, and always act in the best interests of your referrals.') },
@@ -59,10 +59,10 @@ const Affiliate = () => (
                     { text: it.L('You and the Company are independent contractors, and nothing in this Agreement will create any partnership, joint venture, agency, franchise, sales representative, or employment relationship between us. You will have no authority to make or accept any offers or representations on our behalf. You will not make any statement, whether on your website or otherwise, that reasonably would contradict anything in this paragraph.') },
                     { text: it.L('We reserve the right to refuse your referrals\' application to open an account (or to close their accounts), as deemed necessary, to comply with any requirements we may periodically establish and/or that may be required under applicable laws, rules, and regulations.') },
                     { text: it.L('The Company will provide advertising collaterals with links containing affiliate IDs which may be modified by us from time to time.') },
-                    { text: it.L('With regards to tracking your referrals accessing [_1] via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavours to ensure that whenever a client is referred to [_1] through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged.', it.website_name) },
+                    { text: it.L('With regards to tracking your referrals accessing [_1] via the links on your website or by quoting your affiliate IDs during the sign-up process, the Company shall use all reasonable endeavors to ensure that whenever a client is referred to [_1] through these links or affiliate IDs, and they subsequently place a contract or otherwise transact with the Company, the relevant client is identified as originating from your referral. However, the Company shall not be liable to you in any way if the Company is unable to identify a client as originating from your referral. Only properly tagged clients can be assigned to you. It is your responsibility to ensure that all links are properly tagged.', it.website_name) },
                     { text: it.L('The Company shall be entitled to exercise any of its rights or fulfil any of its obligations hereunder (including, but not limited to, its payment obligations) through any member of the Binary group of companies.') },
                     { text: it.L('The Company reserves the right to void, delay, or withhold payment of commission fees to you in situations including a suspected breach of a law or a breach of the terms and conditions of this Agreement.') },
-                    { text: it.L('The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavour to ensure affiliates are notified when changes have been made to the commission structure.') },
+                    { text: it.L('The Company may change the commission structure at any time at its sole and absolute discretion. We will endeavor to ensure affiliates are notified when changes have been made to the commission structure.') },
                 ]}
             />
 
@@ -117,7 +117,7 @@ const Affiliate = () => (
                 header={it.L('Indemnity and Liability')}
                 items={[
                     { text: it.L('You shall indemnify on demand and hold the Company harmless from, and against any and all losses, demands, claims, damages, costs, expenses (including, but not limited to, consequential losses, loss of profit, and reasonable legal costs, if applicable), and liabilities suffered or incurred, directly, or indirectly, by the Company in consequence of any breach, non-performance, or non-observance by you of any of your obligations or warranties under this Agreement.') },
-                    { text: it.L('The Company shall not be liable to you in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate\'s business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever.') },
+                    { text: it.L('The Company shall not be liable to you in contract, or otherwise (including liability for negligence) for any loss, whether direct or indirect, of the Affiliate\'s business, revenue or profits, anticipated savings, or wasted expenditure, corruption, or destruction of data or for any indirect or consequential loss whatsoever when such outcome is the consequence of any breach, non-performance, or non-observance by you of any of your obligations or warranties under this Agreement.') },
                 ]}
             />
 

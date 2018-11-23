@@ -68,7 +68,7 @@ function getParamValue(url, key) {
 }
 
 function allLanguages() {
-    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'ja', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw', 'ach' ];
+    return [ 'en', 'de', 'es', 'fr', 'id', 'it', 'ko', 'pl', 'pt', 'ru', 'th', 'vi', 'zh_cn', 'zh_tw', 'ach' ];
 }
 
 function getLanguage() {
@@ -93,8 +93,21 @@ function wsConnect() {
     return new WebSocket(`wss://${server_url}/websockets/v3?app_id=${getAppId()}&l=${getLanguage()}`);
 }
 
+function isBinaryApp() {
+    return (/desktop-app/i.test(window.location.href) || localStorage.getItem('config.is_desktop_app'));
+}
+
 function getAppId() {
-    return localStorage.getItem('config.app_id') || (/staging\.binary\.com/i.test(window.location.hostname) ? '1098' : '1');
+    if (localStorage.getItem('config.app_id')) {
+        return localStorage.getItem('config.app_id');
+    }
+    if (isBinaryApp()) {
+        return '14473';
+    }
+    if (/staging\.binary\.com/i.test(window.location.hostname)) {
+        return '1098';
+    }
+    return '1';
 }
 
 function wsSend(ws, request) {

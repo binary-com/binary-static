@@ -35,7 +35,8 @@ const Header = ({
         e.preventDefault();
 
         setPWAPromptEvent(e);
-        showInstallButton();
+        // TODO Uncomment the below line whenever the design of showing installation prompt gets ready.
+        // showInstallButton();
 
     });
 

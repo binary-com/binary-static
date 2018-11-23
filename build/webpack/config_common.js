@@ -3,7 +3,7 @@ const publicPathFactory = require('./helpers').publicPathFactory;
 
 const commonConfig = (grunt) => ({
     devtool: false, // handled by SourceMapDevToolPlugin
-    mode   : global.is_production ? 'production' : 'development',
+    mode   : global.is_release ? 'production' : 'development',
     stats  : {
         chunks    : false,
         maxModules: 0,
@@ -43,6 +43,23 @@ const commonConfig = (grunt) => ({
                         'transform-class-properties',
                     ],
                 },
+            },
+            {
+                test: /\.svg$/,
+                use : [
+                    'babel-loader',
+                    {
+                        loader : 'react-svg-loader',
+                        options: {
+                            svgo: {
+                                plugins: [
+                                    { removeTitle: false },
+                                ],
+                                floatPrecision: 2,
+                            },
+                        },
+                    },
+                ],
             },
         ],
     },

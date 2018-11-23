@@ -36,7 +36,6 @@ export const getDetailsExpiry = (store) => {
 
     const {
         contract_info,
-        currency,
         end_spot,
         end_spot_time,
         indicative_price,
@@ -53,6 +52,6 @@ export const getDetailsExpiry = (store) => {
             [localize('Exit Spot')]     : end_spot ? addComma(end_spot) : '-',
             [localize('Exit Spot Time')]: end_spot_time ? toGMTFormat(+end_spot_time * 1000) : '-',
         }),
-        [localize('Payout')]: <Money amount={indicative_price} currency={currency} />,
+        [localize('Payout')]: <Money amount={indicative_price} currency={contract_info.currency} />,
     };
 };

@@ -35,7 +35,7 @@ const Head = () => (
 
         <Title />
 
-        <link rel='manifest' href={it.url_for(`/${it.language.toLowerCase()}/app/manifest.json`)} />
+        <link rel='manifest' href={it.url_for(`/${it.language.toLowerCase()}/manifest.json`, it.language.toLowerCase(), 'app_2')} />
         <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} async />
 
         <Favicons />
@@ -43,12 +43,11 @@ const Head = () => (
         { it.only_ja && it.language.toLowerCase() === 'en' &&
             <meta name='robots' content='noindex' />
         }
-        { !it.only_ja &&
-            it.languages
-                .filter(lang => lang.toLowerCase() !== 'ja' && lang !== it.language)
-                .map((lang, inx) => (
-                    <link key={inx} rel='alternate' href={it.url_for(it.current_path, lang.toLowerCase())} hrefLang={lang} />
-                ))
+        { it.languages
+            .filter(lang => lang !== it.language)
+            .map((lang, inx) => (
+                <link key={inx} rel='alternate' href={it.url_for(it.current_path, lang.toLowerCase())} hrefLang={lang} />
+            ))
         }
 
         { it.css_files.map((css_file, inx) => (

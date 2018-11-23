@@ -246,13 +246,26 @@ const Durations = (() => {
         return obj;
     };
 
-    const duration_map = {
-        t: 'tick',
-        s: 'second',
-        m: 'minute',
-        h: 'hour',
-        d: 'day',
-    };
+    const DurationMap = (() => {
+        let duration_map;
+
+        const initDurationMap = () => ({
+            t: localize(['tick',   'ticks']),
+            s: localize(['second', 'seconds']),
+            m: localize(['minute', 'minutes']),
+            h: localize(['hour',   'hours']),
+            d: localize(['day',    'days']),
+        });
+
+        return {
+            get: (unit, is_plural) => {
+                if (!duration_map) {
+                    duration_map = initDurationMap();
+                }
+                return duration_map[unit][is_plural ? 1 : 0];
+            },
+        };
+    })();
 
     const durationPopulate = () => {
         const unit          = CommonFunctions.getElementById('duration_units');
@@ -266,7 +279,7 @@ const Durations = (() => {
         let unit_value           = Defaults.get('duration_amount') || unit_min_value;
         Dropdown('#duration_units');
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_minimum'), unit_min_value);
-        CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), localize(duration_map[unit.value] + (+unit_min_value > 1 ? 's' : '')));
+        CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_unit'), DurationMap.get(unit.value, +unit_min_value > 1));
         CommonFunctions.elementTextContent(CommonFunctions.getElementById('duration_maximum'), unit_max_value);
         if (selected_duration.amount && selected_duration.unit > unit_value) {
             unit_value = selected_duration.amount;

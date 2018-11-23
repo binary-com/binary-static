@@ -33,11 +33,14 @@ const makeCacheGroup = (name, priority, ...matches) => ({
     },
 });
 
-const publicPathFactory = (grunt) => () => (
-    (global.is_production || grunt.file.exists(PATHS.ROOT, 'scripts/CNAME') ? '' : '/binary-static') +
-    (global.branch ? `/${global.branch_prefix}${global.branch}` : '') +
-    '/js/'
-);
+const publicPathFactory = (grunt, section) => () => {
+    const section_final_path = section === 'app_2' ? '/app/js/' : '/js/';
+    return (
+        (global.is_production || grunt.file.exists(PATHS.ROOT, 'scripts/CNAME') ? '' : '/binary-static') +
+        (global.branch ? `/${global.branch_prefix}${global.branch}` : '') +
+        section_final_path
+    );
+};
 
 module.exports = {
     getApp2Aliases,

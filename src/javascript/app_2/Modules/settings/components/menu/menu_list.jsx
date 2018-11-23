@@ -1,16 +1,16 @@
-import React from 'react';
+import React     from 'react';
 import PropTypes from 'prop-types';
-import MenuItem from './menu_item.jsx';
+import MenuItem  from './menu_item.jsx';
 
 const MenuList = ({ items }) => (
     <div>
         {
-            items.map(({ title, description, img_src, path }, i) => (
+            items.map(({ title, description, Icon, path }, i) => (
                 <MenuItem
                     key={i}
                     title={title}
                     description={description}
-                    img_src={img_src}
+                    Icon={Icon}
                     path={path}
                 />
             ))
@@ -22,10 +22,10 @@ MenuList.propTypes = {
     items: PropTypes.arrayOf(
         PropTypes.shape({
             description: PropTypes.string,
-            img_src    : PropTypes.string,
+            Icon       : PropTypes.element,
             path       : PropTypes.string,
             title      : PropTypes.string,
-        })
+        }),
     ),
 };
 

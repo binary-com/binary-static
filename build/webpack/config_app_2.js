@@ -7,11 +7,11 @@ const getPlugins        = require('./plugins');
 
 const app2Config = (grunt) => ({
     entry: {
-        [global.is_production ? 'binary.min' : 'binary']: path.resolve(PATHS.SRC, 'javascript', 'app_2'),
+        [global.is_release ? 'binary.min' : 'binary']: path.resolve(PATHS.SRC, 'javascript', 'app_2'),
     },
     output: {
-        path      : path.resolve(PATHS.DIST, 'js', 'app_2'),
-        publicPath: path.join(publicPathFactory(grunt)(), 'app_2/'),
+        path      : path.resolve(PATHS.DIST, 'app/js'),
+        publicPath: publicPathFactory(grunt, 'app_2')(),
     },
     optimization: {
         splitChunks: {

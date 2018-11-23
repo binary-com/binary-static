@@ -84,7 +84,6 @@ const OpenSourceProjects = () => (
                     text={it.L('The [_1] website\'s static content (CSS, Javascript) is available as the [_2]binary-static[_3] open-source project on github. Would you like to re-skin the [_1] website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes.', it.website_name, '<a target=\'_blank\' href=\'https://github.com/binary-com/binary-static\' rel=\'noopener noreferrer\'>', '</a>') }
                 />
 
-
                 <Section
                     id='perl-modules'
                     image='4.svg'

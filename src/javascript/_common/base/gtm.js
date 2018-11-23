@@ -1,13 +1,15 @@
-const Cookies        = require('js-cookie');
-const moment         = require('moment');
-const ClientBase     = require('./client_base');
-const Login          = require('./login');
-const BinarySocket   = require('./socket_base');
-const getElementById = require('../common_functions').getElementById;
-const isVisible      = require('../common_functions').isVisible;
-const getLanguage    = require('../language').get;
-const State          = require('../storage').State;
-const getAppId       = require('../../config').getAppId;
+const Cookies          = require('js-cookie');
+const moment           = require('moment');
+const ClientBase       = require('./client_base');
+const Login            = require('./login');
+const ServerTime       = require('./server_time');
+const BinarySocket     = require('./socket_base');
+const getElementById   = require('../common_functions').getElementById;
+const isVisible        = require('../common_functions').isVisible;
+const getLanguage      = require('../language').get;
+const State            = require('../storage').State;
+const getPropertyValue = require('../utility').getPropertyValue;
+const getAppId         = require('../../config').getAppId;
 
 const GTM = (() => {
     const isGtmApplicable = () => (/^(1|1098|14473)$/.test(getAppId()));
@@ -41,7 +43,6 @@ const GTM = (() => {
         if (!isGtmApplicable()) return;
         const is_login       = localStorage.getItem('GTM_login')       === '1';
         const is_new_account = localStorage.getItem('GTM_new_account') === '1';
-        if (!is_login && !is_new_account) return;
 
         localStorage.removeItem('GTM_login');
         localStorage.removeItem('GTM_new_account');
@@ -53,15 +54,16 @@ const GTM = (() => {
 
         const data = {
             visitorId         : ClientBase.get('loginid'),
+            bom_account_type  : ClientBase.getAccountType(),
             bom_currency      : ClientBase.get('currency'),
             bom_country       : get_settings.country,
             bom_country_abbrev: get_settings.country_code,
             bom_email         : get_settings.email,
             url               : window.location.href,
             bom_today         : Math.floor(Date.now() / 1000),
-            event             : is_new_account ? 'new_account' : 'log_in',
         };
         if (is_new_account) {
+            data.event = 'new_account';
             data.bom_date_joined = data.bom_today;
         }
         if (!ClientBase.get('is_virtual')) {
@@ -72,6 +74,7 @@ const GTM = (() => {
         }
 
         if (is_login) {
+            data.event = 'log_in';
             BinarySocket.wait('mt5_login_list').then((response) => {
                 (response.mt5_login_list || []).forEach((obj) => {
                     const acc_type = (ClientBase.getMT5AccountType(obj.group) || '')
@@ -85,6 +88,14 @@ const GTM = (() => {
         } else {
             pushDataLayer(data);
         }
+
+        // check if there are any transactions in the last 30 days for UX interview selection
+        BinarySocket.send({ statement: 1, limit: 1 }).then((response) => {
+            const last_transaction_timestamp = getPropertyValue(response, ['statement', 'transactions', '0', 'transaction_time']);
+            pushDataLayer({
+                bom_transaction_in_last_30d: !!last_transaction_timestamp && moment(last_transaction_timestamp * 1000).isAfter(ServerTime.get().subtract(30, 'days')),
+            });
+        });
     };
 
     const pushPurchaseData = (response) => {
@@ -94,6 +105,7 @@ const GTM = (() => {
         const req  = response.echo_req.passthrough;
         const data = {
             event             : 'buy_contract',
+            bom_ui            : 'legacy',
             bom_symbol        : req.symbol,
             bom_market        : getElementById('contract_markets').value,
             bom_currency      : req.currency,

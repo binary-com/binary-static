@@ -4,7 +4,6 @@ const TabSelector = require('../../_common/tab_selector'); // eslint-disable-lin
 // ==================== app ====================
 const LoggedInHandler         = require('./logged_in');
 const Redirect                = require('./redirect');
-const KnowledgeTest           = require('../japan/knowledge_test/knowledge_test');
 const AccountTransfer         = require('../pages/cashier/account_transfer');
 const Cashier                 = require('../pages/cashier/cashier');
 const DepositWithdraw         = require('../pages/cashier/deposit_withdraw');
@@ -14,6 +13,7 @@ const Endpoint                = require('../pages/endpoint');
 const MBTradePage             = require('../pages/mb_trade/mb_tradepage');
 const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
 const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
+const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
 const TradingTimesUI          = require('../pages/resources/trading_times/trading_times.ui');
 const NewAccount              = require('../pages/new_account');
 const TradePage               = require('../pages/trade/tradepage');
@@ -40,7 +40,6 @@ const LostPassword            = require('../pages/user/lost_password');
 const MetaTrader              = require('../pages/user/metatrader/metatrader');
 const TypesOfAccounts         = require('../pages/user/metatrader/types_of_accounts');
 const FinancialAccOpening     = require('../pages/user/new_account/financial_acc_opening');
-const JapanAccOpening         = require('../pages/user/new_account/japan_acc_opening');
 const RealAccOpening          = require('../pages/user/new_account/real_acc_opening');
 const VirtualAccOpening       = require('../pages/user/new_account/virtual_acc_opening');
 const WelcomePage             = require('../pages/user/new_account/welcome_page');
@@ -51,13 +50,14 @@ const TNCApproval             = require('../pages/user/tnc_approval');
 const VideoFacility           = require('../pages/user/video_facility');
 
 // ==================== static ====================
-const GetStartedJP       = require('../../static/japan/get_started');
-const HomeJP             = require('../../static/japan/home');
 const Charity            = require('../../static/pages/charity');
 const Contact            = require('../../static/pages/contact');
+const Contact2           = require('../../static/pages/contact_2');
 const GetStarted         = require('../../static/pages/get_started');
 const Home               = require('../../static/pages/home');
+const KeepSafe           = require('../../static/pages/keep_safe');
 const JobDetails         = require('../../static/pages/job_details');
+const Platforms          = require('../../static/pages/platforms');
 const Regulation         = require('../../static/pages/regulation');
 const StaticPages        = require('../../static/pages/static_pages');
 const TermsAndConditions = require('../../static/pages/tnc');
@@ -75,7 +75,6 @@ const pages_config = {
     cashier                  : { module: Cashier },
     cashier_passwordws       : { module: CashierPassword,            is_authenticated: true, only_real: true },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
-    two_factor_authentication: { module: TwoFactorAuthentication,    is_authenticated: true },
     charity                  : { module: Charity },
     contact                  : { module: Contact },
     detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
@@ -85,8 +84,6 @@ const pages_config = {
     forwardws                : { module: DepositWithdraw,            is_authenticated: true, only_real: true },
     home                     : { module: Home,                       not_authenticated: true },
     iphistoryws              : { module: IPHistory,                  is_authenticated: true },
-    japanws                  : { module: JapanAccOpening,            is_authenticated: true, only_virtual: true },
-    knowledge_testws         : { module: KnowledgeTest,              is_authenticated: true, only_virtual: true },
     landing_page             : { module: StaticPages.LandingPage,    is_authenticated: true, only_virtual: true },
     limitsws                 : { module: Limits,                     is_authenticated: true, only_real: true, needs_currency: true },
     logged_inws              : { module: LoggedInHandler },
@@ -97,7 +94,7 @@ const pages_config = {
     multi_barriers_trading   : { module: MBTradePage,                needs_currency: true },
     payment_agent_listws     : { module: PaymentAgentList,           is_authenticated: true },
     payment_methods          : { module: Cashier.PaymentMethods },
-    platforms                : { module: TabSelector },
+    platforms                : { module: Platforms },
     portfoliows              : { module: Portfolio,                  is_authenticated: true, needs_currency: true },
     profit_tablews           : { module: ProfitTable,                is_authenticated: true, needs_currency: true },
     professional             : { module: professionalClient,         is_authenticated: true, only_real: true },
@@ -114,24 +111,27 @@ const pages_config = {
     top_up_virtualws         : { module: TopUpVirtual,               is_authenticated: true, only_virtual: true },
     trading                  : { module: TradePage,                  needs_currency: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
+    two_factor_authentication: { module: TwoFactorAuthentication,    is_authenticated: true },
     virtualws                : { module: VirtualAccOpening,          not_authenticated: true },
     welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStarted.BinaryOptions },
+    'binary-options-mt5'     : { module: GetStarted.BinaryOptionsForMT5 },
     'careers'                : { module: StaticPages.Careers },
+    'contact-2'              : { module: Contact2 },
     'cyberjaya'              : { module: StaticPages.Locations },
     'cfds'                   : { module: GetStarted.CFDs },
     'contract-specifications': { module: TabSelector },
     'cryptocurrencies'       : { module: GetStarted.Cryptocurrencies },
+    'download'               : { module: MetatraderDownloadUI },
     'faq'                    : { module: StaticPages.AffiliatesFAQ },
     'forex'                  : { module: GetStarted.Forex },
     'get-started'            : { module: TabSelector },
-    'get-started-jp'         : { module: GetStartedJP },
-    'home-jp'                : { module: HomeJP,                     not_authenticated: true },
     'how-to-trade-mt5'       : { module: TabSelector },
     'ib-faq'                 : { module: StaticPages.IBProgrammeFAQ },
     'ib-signup'              : { module: TabSelector },
     'job-details'            : { module: JobDetails },
+    'keep-safe'              : { module: KeepSafe },
     'labuan'                 : { module: StaticPages.Locations },
     'malta'                  : { module: StaticPages.Locations },
     'metals'                 : { module: GetStarted.Metals },
@@ -141,11 +141,9 @@ const pages_config = {
     'payment-agent'          : { module: StaticPages.PaymentAgent },
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
     'terms-and-conditions'   : { module: TermsAndConditions },
-    'terms-and-conditions-jp': { module: TermsAndConditions },
     'types-of-accounts'      : { module: TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
-    'why-us-jp'              : { module: WhyUs },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
 };
 /* eslint-enable max-len */

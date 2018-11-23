@@ -1,4 +1,5 @@
 import React from 'react';
+import Complaints from './complaints.jsx';
 import ConflictsPolicy from './conflicts_policy.jsx';
 import Copyright from './copyright.jsx';
 import Datafeed from './datafeed.jsx';
@@ -32,6 +33,7 @@ const Tac = () => (
                     { id: 'privacy',          text: it.L('Security and Privacy') },
                     { id: 'conflicts-policy', text: it.L('Conflicts Policy') },
                     { id: 'copyright',        text: it.L('Copyright') },
+                    { id: 'complaints',       text: it.L('Complaints and Disputes') },
                     {
                         id     : 'risk',
                         text   : it.L('Risk Disclaimer'),
@@ -48,7 +50,7 @@ const Tac = () => (
                             { id: 'order-execution-mt',     text: it.L('MetaTrader') },
                         ],
                     },
-                    { id: 'payment-agents', text: it.L('Payment Agents') },
+                    { id: 'payment-agents', text: it.L('Payment Agents'), dataShow: '-eucountry' },
                 ]}
             />
         </div>
@@ -81,6 +83,10 @@ const Tac = () => (
 
                 <SidebarContent id='copyright'>
                     <Copyright />
+                </SidebarContent>
+
+                <SidebarContent id='complaints'>
+                    <Complaints />
                 </SidebarContent>
 
                 <SidebarContent id='risk-binary'>
