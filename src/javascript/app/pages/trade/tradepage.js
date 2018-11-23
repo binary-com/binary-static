@@ -16,7 +16,6 @@ const Guide             = require('../../common/guide');
 const localize          = require('../../../_common/localize').localize;
 const State             = require('../../../_common/storage').State;
 const createElement     = require('../../../_common/utility').createElement;
-const getPropertyValue  = require('../../../_common/utility').getPropertyValue;
 
 const TradePage = (() => {
     let events_initialized = 0;
