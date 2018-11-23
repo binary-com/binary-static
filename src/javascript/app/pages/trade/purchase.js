@@ -7,6 +7,7 @@ const Tick                     = require('./tick');
 const TickDisplay              = require('./tick_trade');
 const updateValues             = require('./update_values');
 const Client                   = require('../../base/client');
+const Header                   = require('../../base/header');
 const BinarySocket             = require('../../base/socket');
 const formatMoney              = require('../../common/currency').formatMoney;
 const CommonFunctions          = require('../../../_common/common_functions');
@@ -36,22 +37,23 @@ const Purchase = (() => {
         purchase_data = details;
         status        = '';
 
-        const receipt            = details.buy;
-        const passthrough        = details.echo_req.passthrough;
-        const container          = CommonFunctions.getElementById('contract_confirmation_container');
-        const message_container  = CommonFunctions.getElementById('confirmation_message');
-        const heading            = CommonFunctions.getElementById('contract_purchase_heading');
-        const descr              = CommonFunctions.getElementById('contract_purchase_descr');
-        const barrier_element    = CommonFunctions.getElementById('contract_purchase_barrier');
-        const reference          = CommonFunctions.getElementById('contract_purchase_reference');
-        const chart              = CommonFunctions.getElementById('trade_tick_chart');
-        const payout             = CommonFunctions.getElementById('contract_purchase_payout');
-        const cost               = CommonFunctions.getElementById('contract_purchase_cost');
-        const profit             = CommonFunctions.getElementById('contract_purchase_profit');
-        const spots              = CommonFunctions.getElementById('contract_purchase_spots');
-        const confirmation_error = CommonFunctions.getElementById('confirmation_error');
-        const contracts_list     = CommonFunctions.getElementById('contracts_list');
-        const button             = CommonFunctions.getElementById('contract_purchase_button');
+        const receipt             = details.buy;
+        const passthrough         = details.echo_req.passthrough;
+        const container           = CommonFunctions.getElementById('contract_confirmation_container');
+        const message_container   = CommonFunctions.getElementById('confirmation_message');
+        const heading             = CommonFunctions.getElementById('contract_purchase_heading');
+        const descr               = CommonFunctions.getElementById('contract_purchase_descr');
+        const barrier_element     = CommonFunctions.getElementById('contract_purchase_barrier');
+        const reference           = CommonFunctions.getElementById('contract_purchase_reference');
+        const chart               = CommonFunctions.getElementById('trade_tick_chart');
+        const payout              = CommonFunctions.getElementById('contract_purchase_payout');
+        const cost                = CommonFunctions.getElementById('contract_purchase_cost');
+        const profit              = CommonFunctions.getElementById('contract_purchase_profit');
+        const spots               = CommonFunctions.getElementById('contract_purchase_spots');
+        const confirmation_error  = CommonFunctions.getElementById('confirmation_error');
+        const authorization_error = CommonFunctions.getElementById('authorization_error_container');
+        const contracts_list      = CommonFunctions.getElementById('contracts_list');
+        const button              = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
         const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
@@ -66,34 +68,41 @@ const Purchase = (() => {
 
             let message;
             BinarySocket.wait('get_account_status').then((response) => {
-                if (/NoMFProfessionalClient/.test(error.code)) {
-                    const has_professional_requested = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional_requested');
-                    if (has_professional_requested) {
-                        message = localize('Your application to be treated as a professional client is being processed.');
-                    } else {
-                        const row_element = createElement('div', { class: 'gr-row font-style-normal' });
-                        const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
-                        const message_element = columnElement({ text: localize('In the EU, financial binary options are only available to professional investors.') });
-                        const button_element = createElement('a', { class: 'button', href: urlFor('user/settings/professional') });
-                        const cta_element = columnElement();
-    
-                        button_element.appendChild(createElement('span', { text: localize('Apply now as a professional investor') }));
-                        cta_element.appendChild(button_element);
-                        row_element.appendChild(message_element);
-                        row_element.appendChild(cta_element);
-    
-                        message = row_element.outerHTML;
-                    }
-                } else if (/RestrictedCountry/.test(error.code)) {
-                    let additional_message = '';
-                    if (/FinancialBinaries/.test(error.code)) {
-                        additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
-                    } else if (/Random/.test(error.code)) {
-                        additional_message = localize('Try our other markets.');
-                    }
-                    message = `${error.message}. ${additional_message}`;
+                if (/AuthorizationRequired/.test(error.code)) {
+                    authorization_error.setVisibility(1);
+                    const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
+                    authorization_error_btn_login.removeEventListener('click', loginOnClick);
+                    authorization_error_btn_login.addEventListener('click', loginOnClick);
                 } else {
+                    confirmation_error.setVisibility(1);
                     message = error.message;
+                    if (/NoMFProfessionalClient/.test(error.code)) {
+                        const has_professional_requested = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional_requested');
+                        if (has_professional_requested) {
+                            message = localize('Your application to be treated as a professional client is being processed.');
+                        } else {
+                            const row_element = createElement('div', { class: 'gr-row font-style-normal' });
+                            const columnElement = (extra_attributes = {}) => createElement('div', { class: 'gr-12 gr-padding-20', ...extra_attributes });
+                            const message_element = columnElement({ text: localize('In the EU, financial binary options are only available to professional investors.') });
+                            const button_element = createElement('a', { class: 'button', href: urlFor('user/settings/professional') });
+                            const cta_element = columnElement();
+        
+                            button_element.appendChild(createElement('span', { text: localize('Apply now as a professional investor') }));
+                            cta_element.appendChild(button_element);
+                            row_element.appendChild(message_element);
+                            row_element.appendChild(cta_element);
+        
+                            message = row_element.outerHTML;
+                        }
+                    } else if (/RestrictedCountry/.test(error.code)) {
+                        let additional_message = '';
+                        if (/FinancialBinaries/.test(error.code)) {
+                            additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
+                        } else if (/Random/.test(error.code)) {
+                            additional_message = localize('Try our other markets.');
+                        }
+                        message = `${error.message}. ${additional_message}`;
+                    }
                 }
                 CommonFunctions.elementInnerHtml(confirmation_error, message);
             });
@@ -101,7 +110,8 @@ const Purchase = (() => {
             CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';
             message_container.show();
-            confirmation_error.hide();
+            authorization_error.setVisibility(0);
+            confirmation_error.setVisibility(0);
 
             CommonFunctions.elementTextContent(heading, localize('Contract Confirmation'));
             CommonFunctions.elementTextContent(descr, receipt.longcode);
@@ -234,6 +244,8 @@ const Purchase = (() => {
     };
 
     const makeBold = d => `<strong>${d}</strong>`;
+
+    const loginOnClick = (e) => Header.loginOnClick(e);
 
     const updateSpotList = () => {
         const $spots = $('#contract_purchase_spots');

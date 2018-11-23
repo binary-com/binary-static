@@ -315,6 +315,7 @@ module.exports = [
     'Seconds',
     'Select Asset',
     'Select Trade Type',
+    'Select date',
     'Select your market and underlying asset',
     'Select your trade type',
     'Selected Tick',

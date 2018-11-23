@@ -76,14 +76,14 @@ const TradePage = (() => {
                     const hasRequestedProfessional = () => account_status.includes('professional_requested');
                     // show MFSA message to MF non-professional clients or logged out EU clients
                     if (!is_logged_in || (isMaltainvest() && !isProfessional())) {
-                        const mfsa_message = $('.mfsa_message');
+                        const $mfsa_message = $('.mfsa_message');
                         if (hasRequestedProfessional()) {
                             const div_container = createElement('div', { class: 'notice-msg center-text gr-parent gr-child' });
                             const p_notice = createElement('p', { text: localize('Your application to be treated as a professional client is being processed.') });
                             div_container.appendChild(p_notice);
-                            mfsa_message.html(div_container.outerHTML);
+                            $mfsa_message.html(div_container.outerHTML);
                         }
-                        mfsa_message
+                        $mfsa_message
                             .removeClass('container')
                             .addClass('margin-bottom-40')
                             .slideDown(300);
