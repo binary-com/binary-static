@@ -162,6 +162,20 @@ const Regulation = () => {
                             <FillBox padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' download text={it.L('FX')} />
                         </div>
                     </div>
+
+                    <h3>{it.L('MiFID II RTS 28')}</h3>
+                    <div>
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            image='images/pages/regulation/pillar.svg'
+                            href={it.url_for('/download/BIEL-RTS28.pdf')}
+                            target='_blank'
+                            download
+                            text={it.L('Annual Best Execution Disclosure 2017')}
+                        />
+                    </div>
                 </div>
             </Box>
 
