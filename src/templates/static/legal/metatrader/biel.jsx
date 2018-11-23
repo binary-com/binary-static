@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BIEL = () => (
-    <div className='invisible eu-show'>
+    <div data-show='eucountry'>
         <h2 data-anchor='supplementary-terms-and-conditions-biel'>{it.L('Supplementary Terms and Conditions for Financial Products Offered by Binary Investments (Europe) Ltd')}</h2>
         <p>{it.L('These Supplementary Terms and Conditions (these "ST&Cs") apply solely to clients ("you") of Binary Investments (Europe) Ltd ("BIEL", "we" or "us") and will govern the relationship between you and us when trading Financial Products (as defined below) with us.')}</p>
         <p>{it.L('Under these Terms, you may enter into transactions in the following investments and instruments, all of which are Over-the-Counter (“OTC”) products:')}</p>
