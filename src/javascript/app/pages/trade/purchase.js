@@ -67,7 +67,7 @@ const Purchase = (() => {
             let message;
             BinarySocket.wait('get_account_status').then((response) => {
                 if (/NoMFProfessionalClient/.test(error.code)) {
-                    const has_professional_requested = (getPropertyValue(response, 'get_account_status.status') || []).includes('professional_requested');
+                    const has_professional_requested = (getPropertyValue(response, ['get_account_status', 'status']) || []).includes('professional_requested');
                     if (has_professional_requested) {
                         message = localize('Your application to be treated as a professional client is being processed.');
                     } else {
