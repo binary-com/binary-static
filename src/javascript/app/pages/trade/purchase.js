@@ -67,13 +67,13 @@ const Purchase = (() => {
             confirmation_error.show();
 
             let message;
-            BinarySocket.wait('get_account_status').then((response) => {
-                if (/AuthorizationRequired/.test(error.code)) {
-                    authorization_error.setVisibility(1);
-                    const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
-                    authorization_error_btn_login.removeEventListener('click', loginOnClick);
-                    authorization_error_btn_login.addEventListener('click', loginOnClick);
-                } else {
+            if (/AuthorizationRequired/.test(error.code)) {
+                authorization_error.setVisibility(1);
+                const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
+                authorization_error_btn_login.removeEventListener('click', loginOnClick);
+                authorization_error_btn_login.addEventListener('click', loginOnClick);
+            } else {
+                BinarySocket.wait('get_account_status').then((response) => {
                     confirmation_error.setVisibility(1);
                     message = error.message;
                     if (/NoMFProfessionalClient/.test(error.code)) {
@@ -103,9 +103,9 @@ const Purchase = (() => {
                         }
                         message = `${error.message}. ${additional_message}`;
                     }
-                }
-                CommonFunctions.elementInnerHtml(confirmation_error, message);
-            });
+                    CommonFunctions.elementInnerHtml(confirmation_error, message);
+                });
+            }
         } else {
             CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';
