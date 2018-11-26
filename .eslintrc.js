@@ -19,6 +19,8 @@ module.exports = {
         'eol-last'                          : ['error', 'always'],
         'func-names'                        : ['error', 'never'],
         'keyword-spacing'                   : ['error', { after: true }],
+        'lines-between-class-members'       : ['error', 'always', { exceptAfterSingleLine: true }],
+        'no-extra-semi'                     : 'error',
         'no-console'                        : 'error',
         'no-else-return'                    : ['error', { allowElseIf: true }],
         'no-multi-assign'                   : 0,
@@ -37,7 +39,8 @@ module.exports = {
         // import rules
         'import/no-extraneous-dependencies' : [0, { extensions: ['.jsx'] }],
         'import/no-useless-path-segments'   : 'error',
-        'import/order'                      : ['error', { groups: [['builtin', 'external'], 'sibling', 'parent'], 'newlines-between': 'ignore' }],
+        'import/order'                      : ['error', { groups: [['builtin', 'external'], 'internal', 'sibling', 'parent'], 'newlines-between': 'ignore' }],
+        'import/prefer-default-export'      : 0,
 
         // react rules
         'jsx-quotes'                        : ['error', 'prefer-single'],
@@ -66,6 +69,6 @@ module.exports = {
     settings: {
         react: {
             version: '16',
-        }
-    }
+        },
+    },
 };

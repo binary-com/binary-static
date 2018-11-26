@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-11-14 05:56\n"
+"PO-Revision-Date: 2018-11-26 02:23\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -167,6 +167,9 @@ msgstr "%1不收取任何转账费用。"
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
 msgstr "%1让每个人都能轻松参与金融市场。您可交易各主要货币、指数、大宗商品和波动率指数，投资门槛低至1美元。"
+
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
+msgstr "%1让每个人都能轻松参与金融市场。您可交易各主要货币、股票指数和大宗商品，投资门槛低至1美元。"
 
 msgid "%1 has been credited into your virtual account: %2."
 msgstr "%1 已记入您的虚拟账户: %2。"
@@ -480,9 +483,6 @@ msgstr "<a href=\"%1\">返回交易页面</a>"
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>成立于</a>1999年10月"
 
-msgid "<a href='%1'>Offices</a> in Malta and Malaysia"
-msgstr "<a href='%1'>公司</a>位于马耳他和马来西亚"
-
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>合适性测试:警告:</strong>为了给您提供服务，我们必须向您获取信息，以便确定产品或服务是否适合您（也就是说，看您是否拥有足够经验和知识，并了解相关的风险）。"
 
@@ -518,9 +518,6 @@ msgstr "PEP是被委托进行特出公众任务的个人。此身份包括了PEP
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "付款代理人扮演客户（即我们的顾客）和 %1之间的兑换员。付款代理人负责为希望使用某一特定电子錢包方法或%1不支持的本地货币的客户处理充值和提款事宜。汇款费用由客户支付。"
-
-msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
-msgstr "政治公众人士(PEP) 是被委托进行特出公众任务的个人。此身份包括了其直系亲属和众所周知为其亲近的人，但不包括中级或初级官员。所指个人包括国家首长、部长、国会秘书、国会议员、法官、大使、高级政府官员、军事高层官员、中央银行的审计委员、国营企业董事等。以上各例的直系亲属也都属于政治公众人士，包括其配偶/伴侣、父母和孩子。再者，众所周知的与政治公众人士有亲密关系的人士包括其商业合伙人也属于政治公众人士。一般来说，已经停止被委托进行特出公众任务为期超过十二个月的个人不属于政治公众人士。"
 
 msgid "A Professional Client receives a lower degree of client protection due to the following:"
 msgstr "由于以下原因, 专业客户会收到程度较低的客户端保护:"
@@ -587,6 +584,9 @@ msgstr "英语为母语，有较强的口语和写作水平"
 
 msgid "A panel featuring industry leaders awards BetOnMarkets.com 'Financial Betting Operator of the Year' over two other finalists. It's a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
 msgstr "BetOnMarkets.com 淘汰了其他两个决赛对手，赢得由行业领袖专家团评选的“年度最佳金融投注运营商”奖项。这对我们的品牌来说是一场很重大的胜利，并进一步肯定了我们首屈一指的卓越服务。十年过去了，我们的实力越来越强。"
+
+msgid "A politically exposed person (PEP) is an individual who is or has been entrusted with a prominent public function. Family members and close associates of such individuals are also considered as PEPs. A PEP who has ceased to be entrusted with a prominent public function for at least 12 months no longer qualifies as a PEP."
+msgstr "政治公众人物(PEP) 是指正在或曾经被赋予重要公共职能的个人。这些人的家庭成员和亲密同伙也被视为 PEP。如果一名PEP已停止其重要公共职能至少12个月，将不再合格为PEP。"
 
 msgid "A preference and passion for Linux and open-source platforms"
 msgstr "对使用Linux和开源平台充满热忱，并将其作为首选"
@@ -1062,6 +1062,9 @@ msgstr "允许客户使用 %1不直接提供的电子货币"
 msgid "Allow equals"
 msgstr "允许等值"
 
+msgid "Already have an account?"
+msgstr "已经有账户？"
+
 msgid "Already have an account? %1Log in%2 here"
 msgstr "已经有账户？此处%1登录%2"
 
@@ -1085,6 +1088,9 @@ msgstr "另外，在Binary（IOM）有限公司和Binary（欧洲）有限公司
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "尽管公司拥有并保留所有拒绝或关闭客户账户的权利，但公司保证所有开出的合同义务都必须执行。"
+
+msgid "Always keep your web browser up-to-date. We recommend using the latest version of %1Google Chrome%2."
+msgstr "请让您的网络浏览器始终保持最新状态。我们建议您使用最新版本的 %1Google Chrome%2。"
 
 msgid "Amount"
 msgstr "金额"
@@ -1125,7 +1131,7 @@ msgstr "您在参考相关工具包括市场订单、止损单、限价单等之
 msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian"
 msgstr "提供国际化界面，支持的语言包括英语、西班牙语、法语、德语、葡萄牙语、中文、意大利语、泰语、波兰语和俄语"
 
-msgid "An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere"
+msgid "An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere"
 msgstr "直观的、基于互联网的平台, 可以随时随地向所有级别的交易员提供服务"
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
@@ -1517,6 +1523,9 @@ msgstr "返回 IB计划"
 
 msgid "Back to Menu"
 msgstr "返回菜单"
+
+msgid "Back to Statement"
+msgstr "回到月结单"
 
 msgid "Back-office support"
 msgstr "后台支持"
@@ -2524,6 +2533,9 @@ msgstr "合约开始时间"
 msgid "Contract Type"
 msgstr "合约类型"
 
+msgid "Contract duration"
+msgstr "合约期限"
+
 msgid "Contract for Difference."
 msgstr "差价合约。"
 
@@ -2667,6 +2679,9 @@ msgstr "开立新的虚拟货币账户。"
 
 msgid "Create account with Google"
 msgstr "开立Google账户"
+
+msgid "Create an MT5 account now"
+msgstr "立即开立MT5账户"
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "为公司网站、博客、社交媒体和营销材料创作清晰、简洁、引人入胜的内容"
@@ -3055,9 +3070,6 @@ msgstr "禁用"
 msgid "Disclaimer"
 msgstr "免责声明"
 
-msgid "Disclaimer: The Economic Calendar tool is a third-party application developed by MetaQuotes Software Corp. and its data can change without prior notice. %1 is not responsible for the content or accuracy of its data, or for any loss or damage of any sort resulting from its data."
-msgstr "免责声明: 经济日历工具是由 MetaQuotes 软件公司开发的第三方应用程序。其数据可能会在没有事先通知的情况下随时更改。%1 对其数据的内容或准确性不承担任何责任, 也不对其数据所产生的任何类型损失或损害承担任何责任。"
-
 msgid "Disclaimers"
 msgstr "免责声明"
 
@@ -3177,6 +3189,9 @@ msgstr "下载 %1桌面应用程序%2 以获得 %3 网站最安全的访问方�
 
 msgid "Download the Android App"
 msgstr "下载 Android 应用程序"
+
+msgid "Download your statement"
+msgstr "下载月结单"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推动快速增长和业务发展，以支持公司的销售和市场营销目标"
@@ -3637,6 +3652,9 @@ msgstr "奇异货币对 - 由非美元主要货币与新兴经济体货币配对
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "扩大我们在您当地市场的活跃联盟机构网络。贡献您对当地商业文化的力量、技能和知识，帮助我们在全球进一步快速增长。"
 
+msgid "Expat handbook"
+msgstr "外籍人士手册"
+
 msgid "Expats and international students make up more than 10% of Cyberjaya's vibrant population."
 msgstr "Cyberjaya的活跃人口有10% 以上是外籍人士和国际学生。"
 
@@ -3700,8 +3718,8 @@ msgstr "到期价格"
 msgid "Explanation"
 msgstr "说明"
 
-msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform. %1Create an MT5 account now%2 to start trading."
-msgstr "加入全球首屈一指的多资产平台，探索全新的二元期权交易体验。%1立刻开立 MT5账户%2 开始交易。"
+msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform."
+msgstr "透过全球顶尖的多资产平台探索全新的二元期权交易市场。"
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr "探索我们提供的所有交易平台、应用程序和工具"
@@ -4044,6 +4062,9 @@ msgstr "星期五"
 
 msgid "Fridays"
 msgstr "星期五"
+
+msgid "From"
+msgstr "从"
 
 msgid "Front Side"
 msgstr "前侧"
@@ -4786,8 +4807,8 @@ msgstr "如果您想从MT5真实账户提款和/或关闭您的MT5真实账户�
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr "如您希望获取成为付款代理的更多详情，请随时通过<a href='mailto:%1'>%1</a> 联系我们"
 
-msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details."
-msgstr "如果您想投诉我们的服务，请透过%1与我们联系并提供所有相关的细节。我们将进行调查并予以答复。除非在法律许可下需要延期，一般会在收到所有相关信息后的十个工作天内提供最终回应。"
+msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within %2 working days from receipt of all relevant details."
+msgstr "如果您想投诉我们的服务，请在%1与我们联系并提供所有相关的细节。我们将进行调查并予以答复，一般会在收到所有信息后的%2个工作日内提供最终回应。"
 
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us on complaints@binary.com by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgstr "如果您想投诉关于此协议所述的保证金交易服务，请透过complaints@binary.com与我们联系并提供所有相关的细节。我们将进行调查并予以答复，一般会在收到所有信息后的2周至2月内提供最终回应。"
@@ -5107,6 +5128,9 @@ msgstr "面试流程"
 msgid "Introduce %1"
 msgstr "介绍%1"
 
+msgid "Introducing USB"
+msgstr "推出USB"
+
 msgid "Introducing the new %1 desktop app"
 msgstr "推出新的 %1 桌面应用程序"
 
@@ -5310,9 +5334,6 @@ msgstr "跟踪您的授权应用程序。"
 
 msgid "Keep up with breaking news and events on global markets."
 msgstr "跟上全球市场的突发新闻和事件。"
-
-msgid "Keep your web browser %1up-to-date%2."
-msgstr "让您的 web 浏览器保持%1更新%2。"
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
 msgstr "跟上某个行业的市场新闻和趋势，可以为您提供很大的帮助，特别是如果您刚刚入门。"
@@ -5580,6 +5601,9 @@ msgstr "锁定收银台"
 
 msgid "Log in"
 msgstr "登录"
+
+msgid "Log in here"
+msgstr "此处登录"
 
 msgid "Log in to your %1 affiliate account and go to: Finances → Payment instructions."
 msgstr "登录您的 %1 联盟账号并前往：财务→ 付款说明。"
@@ -6235,8 +6259,8 @@ msgstr "您宠物的名字"
 msgid "Name:"
 msgstr "姓名:"
 
-msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
-msgstr "包含您的照片、姓名和出生日期的国民身份证或任何政府出具的文件"
+msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
+msgstr "包含您的照片、姓名和出生日期的国民身份证、身分本或任何政府出具的文件"
 
 msgid "Natural wonders"
 msgstr "自然奇观"
@@ -6487,6 +6511,9 @@ msgstr "十月"
 msgid "October"
 msgstr "十月"
 
+msgid "Offices in Malta and Malaysia"
+msgstr "公司位于马耳他和马来西亚"
+
 msgid "Offline"
 msgstr "离线"
 
@@ -6575,13 +6602,16 @@ msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
 msgstr "只允许字母、空格、连字符、句号和省略号。"
 
 msgid "Only numbers, hyphens, and spaces are allowed."
-msgstr ""
+msgstr "只允许数字、连字符和空格。"
 
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "每人只能开立一个账户。使用假名开立账户或属于同一客户的多个账户不能提取款项和/或退款。"
 
 msgid "Oops... Page Not Available"
 msgstr "抱歉！找不到页面"
+
+msgid "Open A Free Account"
+msgstr "开立免费账户"
 
 msgid "Open Account"
 msgstr "开户"
@@ -7129,6 +7159,9 @@ msgstr "请提供以下信息："
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "提交申请前, 请阅读此 %1隐私政策%2。"
 
+msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
+msgstr "要了解每个资产基于交易类型的最低和最高合约期限，请参阅 %1资产指数%2。"
+
 msgid "Please reload the page"
 msgstr "请重新加载页面"
 
@@ -7161,6 +7194,9 @@ msgstr "请选择复选框。"
 
 msgid "Please select the currency of this account:"
 msgstr "请选择此账户的币种："
+
+msgid "Please select the date range of your statement:"
+msgstr "请选择月结单的日期范围:"
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "升级到真实资金账户前请先设置%1居住国%2。"
@@ -7215,6 +7251,9 @@ msgstr "可能的赔付额"
 
 msgid "Potential Profit"
 msgstr "潜在利润"
+
+msgid "Potential Profit/Loss"
+msgstr "潜在利润/亏损"
 
 msgid "Potential profit"
 msgstr "潜在利润"
@@ -7562,6 +7601,9 @@ msgstr "阅读％1公司博客"
 msgid "Read the %1 tech blog"
 msgstr "阅读％1技术博客"
 
+msgid "Ready to trade?"
+msgstr "已经准备好开始交易了吗？"
+
 msgid "Real"
 msgstr "真实"
 
@@ -7720,6 +7762,9 @@ msgstr "表示您的投资组合中未平仓合约的最大数量。您投资组
 
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一既定交易日您可以买入的最大合约数量。"
+
+msgid "Request your statement"
+msgstr "索取您的月结单"
 
 msgid "Requirements"
 msgstr "需求"
@@ -8011,6 +8056,9 @@ msgstr "选择上方突出显示的任何符号以打开实时图表。右键单
 
 msgid "Select currency"
 msgstr "选择货币"
+
+msgid "Select date"
+msgstr "选择日期"
 
 msgid "Select market:"
 msgstr "选择市场："
@@ -8495,6 +8543,9 @@ msgstr "Student"
 msgid "Study financial data to forecast market movements using our charting tools."
 msgstr "使用我们的图表工具研究财务数据，以预测市场动向。"
 
+msgid "Style guide"
+msgstr "风格指南"
+
 msgid "Su"
 msgstr "星期日"
 
@@ -8696,6 +8747,9 @@ msgstr "感谢您提交所需的文件"
 msgid "Thank you for your interest in partnering with us. We’ve made it easy for you to apply online. Just fill out the %1online application form%2 with all necessary details. If you are already registered as a %3 affiliate, you can email us at %4 instead. We will contact you directly if your application is successful."
 msgstr "谢谢您对我们的合作感兴趣。我们已经使您可以轻松在网上申请。只需填写 %1在线申请表%2 并输入所有必要的细节。如果您已经注册为 %3 联盟会员, 您可以给我们发送电子邮件到 %4 。您的申请批准后, 我们将直接与您联系。"
 
+msgid "Thank you, we'll get back to you within 24 hours"
+msgstr "谢谢, 我们会在24小时内回复您"
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "%1 API的使用受到限制，以防止%1 API被滥用和/或改变用途。将来这些使用限制可能不另行通知而更改。如果你持续超出使用限制，或以其他方式滥用该服务，我们可能会阻止您访问%1 API。"
 
@@ -8768,8 +8822,8 @@ msgstr "<strong>开始时间</strong> 就是我们的服务器处理合约交易
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合约<strong>开始时间</strong>即我们的服务器处理合约的时间。"
 
-msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices and cryptocurrencies."
-msgstr "高级账户为您提供极低的差价, 更高的票证大小, 并提供更多的产品。开始交易更多的外汇对、差价合约指数和加密货币。"
+msgid "The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers."
+msgstr "高级账户为您提供较低的价差、更高的票据大小, 并提供包括主要货币对和奇异货币对等各种外汇货币选项。它是直接处理 (STP) 账户类型, 可直接透过不同的提供商获得外汇流动性。"
 
 msgid "The Affiliate's Obligations"
 msgstr "联盟的义务"
@@ -9465,8 +9519,8 @@ msgstr "“我们”、“我们的”、“公司”、或 “%1” 等词指�
 msgid "The trading services described in this Agreement are OTC. This means that one or more of the underlying instruments in which you transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the Electronic Trading Platform as described in this Agreement."
 msgstr "本协议所描述的交易服务为场外交易。这意味着，您与我们进行交易的一个或多个标的工具，虽然由交易所报价，但通过本协议所述电子交易平台交易时却不是在交易所交易。"
 
-msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
-msgstr "通过本网站完成的交易以及客户和本公司之间的关系由本公司注册所在国（即“管辖地”）的法律管辖和解释。对于可能出现的任何相关纠纷，您认同管辖地法院有作出相应处置的专属管辖权。因此，您不可撤销地服从管辖地法院对所有此类纠纷的司法管辖权，且您同意，对本公司的任何索赔只能在管辖地法院提起。详细信息请参阅本公司的投诉和纠纷部分。"
+msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's %1Complaints and Disputes%2 section."
+msgstr "通过本网站完成的交易以及客户和本公司之间的关系由本公司注册所在国（即“管辖地”）的法律管辖和解释。对于可能出现的任何相关纠纷，您认同管辖地法院有作出相应处置的专属管辖权。因此，您不可撤销地服从管辖地法院对所有此类纠纷的司法管辖权，且您同意，对本公司的任何索赔只能在管辖地法院提起。详细信息请参阅本公司的%1投诉和纠纷%2部分。"
 
 msgid "The two passwords that you entered do not match."
 msgstr "两次输入的密码不一致。"
@@ -9797,6 +9851,9 @@ msgstr "提示:"
 
 msgid "Title"
 msgstr "职务"
+
+msgid "To"
+msgstr "到"
 
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "如有意申请，请将您的简历和求职信发送到%1"
@@ -10178,6 +10235,9 @@ msgstr "风险透明化和潜在奖励"
 
 msgid "Trust"
 msgstr "信任"
+
+msgid "Trusted by traders since 2000"
+msgstr "自2000年以来备受交易员信赖"
 
 msgid "Try Binary Bot"
 msgstr "试试 Binary Bot"
@@ -10635,6 +10695,9 @@ msgstr "量额步骤"
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 
+msgid "Waiting for contract settlement."
+msgstr "等待合约结算。"
+
 msgid "Waiting for entry tick."
 msgstr "正在等待进场跳动点。"
 
@@ -10926,7 +10989,7 @@ msgstr "我们没有义务进行适当性测试, 也没有义务向您提供任�
 msgid "We’re projected to register over 197 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 789 million."
 msgstr "我们预计今年将有超过1亿9700万笔交易, 成立以来我们平台的购入和售出合约总数超过7亿8900万。"
 
-msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgid "We’ve grown in size over the years – both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
 msgstr "多年来，无论在人力和办公室方面， 我们的规模不断扩大。目前在马来西亚和马耳他这两个国家有三个办事处和%1名员工以上。预计今年的员工人数将进一步增长, 以满足我们产品和服务需求的增加。"
 
 msgid "We’ve paid millions in commission to date through our industry-leading affiliate programme."
@@ -12007,6 +12070,9 @@ msgstr "交易期持续时间限制将于%1秒内结束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的设置已成功更新。"
 
+msgid "Your statement has been sent to your email address."
+msgstr "月结单已发送到您的电子邮件地址。"
+
 msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
 msgstr "您的代币已过期或失效。请点击%1此处%2重启验证程序。"
 
@@ -12138,6 +12204,9 @@ msgstr "b）您的订单执行价格;"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr "二元期权、外汇、外汇交易、在线交易、金融交易、二元期权交易、指数交易、交易指数、外汇交易、交易大宗商品、二元期权策略、二元经纪、二元投注、二元期权交易平台、二元策略、金融、投资、交易"
+
+msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading"
+msgstr "二元期权、外汇、外汇交易、在线交易、金融交易、二元期权交易、指数交易、交易指数、外汇交易、交易大宗商品、二元期权策略、二元经纪、二元投注、二元期权交易平台、二元策略、金融、股票、投资、交易"
 
 msgid "c) The time at which your order will be executed; and"
 msgstr "c) 您的订单执行时间;"
