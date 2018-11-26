@@ -155,7 +155,7 @@ export const Select = ({ id, className, options }) => (
 export const Tbody = ({ trs, tbody_id }) => (
     <tbody id={tbody_id}>
         {trs && trs.map((tr, inx_tr) => (
-            <tr key={inx_tr} data-anchor={tr.id || undefined}>
+            <tr key={inx_tr} data-anchor={tr.id || undefined} data-show={tr.dataShow}>
                 {(tr.row ? tr.row : tr).map((td, inx_td) => (
                     td.header ?
                         <th key={inx_td} className={td.className} id={td.id} {...td.balloon ? { 'data-balloon': td.balloon } : {}} {...(td.attributes || {})}>
@@ -179,9 +179,10 @@ export const Table = ({
     data,
     scroll,
     tbody_id,
+    dataShow,
 }) => {
     const content = (
-        <table id={id} className={className}>
+        <table id={id} className={className} data-show={dataShow}>
             { data.thead &&
                 <thead>
                     { data.thead.map((row, tr_inx) => (
@@ -229,3 +230,16 @@ export const Table = ({
             content
     );
 };
+
+export const DatePicker = ({ className, id, text }) => (
+    <div className={className || undefined}>
+        <label htmlFor={id} className='gr-gutter-right'>{text}:</label>
+        <input type='text' id={id} size='20' readOnly='readonly' className='no-margin' />
+    </div>
+);
+
+export const Button = ({ children, className, href, id, text }) => (
+    <a id={id} href={href || undefined} className={className || undefined}>
+        { children || <span>{text}</span> }
+    </a>
+);

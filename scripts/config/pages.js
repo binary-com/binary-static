@@ -1,5 +1,5 @@
 module.exports = [
-    // url pathname,                           template file path,                             layout,       title,                               exclude languages
+    // url pathname,                           template file path,                             layout,       title,                               exclude languages, section (if differs from default)
     // ==================== Section: "app" ====================
     ['cashier',                                 'app/cashier/index',                           'default',    'Cashier'],
     ['cashier/account_transfer',                'app/cashier/account_transfer',                'default',    'Transfer Between Accounts'],
@@ -65,6 +65,10 @@ module.exports = [
     ['logged_inws',                             'app/logged_in',                               null],
     ['redirect',                                'app/logged_in',                               null,         'Redirecting...'],
 
+    // ==================== Section: "app_2" ====================
+    // According to its section path ('app') would be saved to: /app/{lang}/index.html
+    ['index',                                   'app_2/app',                                   null,         'Trusted by traders since 2000',     null, 'app_2'],
+
     // ==================== Section: "static" ====================
     ['404',                                     'static/404',                                  'full_width', '404'],
     ['home',                                    'static/home',                                 'full_width', 'Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices'],
@@ -79,9 +83,9 @@ module.exports = [
     ['careers/privacy-policy',                  'static/about/job_applicant_policy',           'full_width', 'Job Applicant Privacy Policy'],
     ['contact',                                 'static/about/contact',                        'full_width', 'Contact Us'],
     ['contact-2',                               'static/about/contact_2',                      'full_width', 'Contact Us'],
-    ['cyberjaya',                               'static/about/cyberjaya',                      'full_width', 'Careers - Cyberjaya',                'ja'],
-    ['labuan',                                  'static/about/labuan',                         'full_width', 'Careers - Labuan',                   'ja'],
-    ['malta',                                   'static/about/malta',                          'full_width', 'Careers - Malta',                    'ja'],
+    ['cyberjaya',                               'static/about/cyberjaya',                      'full_width', 'Careers - Cyberjaya'],
+    ['labuan',                                  'static/about/labuan',                         'full_width', 'Careers - Labuan'],
+    ['malta',                                   'static/about/malta',                          'full_width', 'Careers - Malta'],
     ['group-history',                           'static/about/group_history',                  'full_width', 'Group History'],
     ['open-positions',                          'static/about/job_descriptions',               'full_width', 'Open Positions'],
     ['open-positions/job-details',              'static/about/job_details',                    'full_width', 'Job Details'],
@@ -115,8 +119,11 @@ module.exports = [
     ['metatrader/how-to-trade-mt5',             'static/metatrader/how_to_trade_mt5',          'default',     'How to Trade in MetaTrader 5'],
     ['metatrader/types-of-accounts',            'static/metatrader/types_of_accounts',         'default',     'Types of MetaTrader 5 accounts'],
 
+    ['style-guide',                             'static/new_layout/style_guide',               'full_width',  'Style guide'],
+
     // ==================== Section: "landing_pages" ====================
     // ['graduates',                               'landing_pages/graduate_program',              null,        'Binary.com Graduate Program',        'NOT-en'],
     // ['hackathon',                               'landing_pages/hackathon',                     null,        'Hackathon Competition',              'NOT-en'],
-    ['landing/signup-frame',                    'landing_pages/signup_frame',                  null,        'Sign up'],
+    ['introducing-usb',                            'landing_pages/usb',                           null,        'Introducing USB',                    'NOT-en'],
+    ['landing/signup-frame',                       'landing_pages/signup_frame',                  null,        'Sign up'],
 ];
