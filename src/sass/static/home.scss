@@ -106,15 +106,26 @@
         max-width: 1280px;
         margin: 0 auto;
 
+        .award-icon {
+            height: 120px;
+            padding-bottom: 30px;
+        }
         img {
-            height: 100px;
+            max-height: 120px;
             width: auto;
         }
-        .opwa-margin {
-            @media screen and (min-width: 979px) {
-                margin-right: -30px;
-                margin-left: 10px;
-            }
+        .caption {
+            font-size: $FONT_SIZE_XXS;
+            line-height: 1.5;
+            text-align: center;
+            width: 100%;
+            display: inline-flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-top: auto;
+        }
+        @media screen and (max-width: 768px) {
+            padding: 0 10px;
         }
     }
 }
