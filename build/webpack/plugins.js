@@ -32,7 +32,7 @@ const getPlugins = (app, grunt) => ([
                 minify                   : false,
                 navigateFallback         : '',
                 filepath                 : path.resolve(PATHS.DIST, `app/${lang.toLowerCase()}/service-worker.js`),
-                // TODO uncomment the below lines when this card(https://trello.com/c/FHvQREm8) has been done.
+                // TODO Uncomment below lines when changing the release process order to execute `js` task after `render`
                 // staticFileGlobs          : [
                 //     path.resolve(PATHS.DIST, `app/${lang.toLowerCase()}/index.html`),
                 // ],
