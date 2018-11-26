@@ -63,7 +63,7 @@ const TypesOfAccounts = () => (
                 className='hide-maltainvest'
                 image='advanced'
                 title={it.L('Advanced')}
-                text={it.L('The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers.')}
+                text={it.L('The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices and cryptocurrencies.')}
             />
             <Box
                 image='volatility_indices'
@@ -103,7 +103,7 @@ const TypesOfAccounts = () => (
                             ],
                             tbody: [
                                 [{ text: <Row number={1}  text={it.L('Account currency')} /> },       { text: it.L('USD') },                            { text: it.L('USD') },                            { text: it.L('USD/EUR') }],
-                                [{ text: <Row number={2}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:100') },            { text: it.L('Up to [_1]', '1:500') }],
+                                [{ text: <Row number={2}  text={it.L('Maximum leverage')} /> },       { text: it.L('Up to [_1]', '1:1000') },           { text: it.L('Up to [_1]', '1:300') },            { text: it.L('Up to [_1]', '1:500') }],
                                 [{ text: <Row number={3}  text={it.L('Order execution')} /> },        { text: it.L('Market') },                         { text: it.L('Market') },                         { text: it.L('Market') }],
                                 [{ text: <Row number={4}  text={it.L('Spread')} /> },                 { text: it.L('Variable from [_1] pips', '1.2') }, { text: it.L('Variable from [_1] pips', '0.9') }, { text: it.L('Fixed') }],
                                 [{ text: <Row number={5}  text={it.L('Commission')} /> },             { text: it.L('No') },                             { text: it.L('No') },                             { text: it.L('No') }],
@@ -114,7 +114,7 @@ const TypesOfAccounts = () => (
                                 [{ text: <Row number={10} text={it.L('Maximum ticket size')} /> },    { text: it.L('[_1] lots', '10') },                { text: it.L('[_1] lots', '20') },                { text: it.L('[_1] lots', '30') }],
                                 [{ text: <Row number={11} text={it.L('Minimum ticket size')} /> },    { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
                                 [{ text: <Row number={12} text={it.L('Step size')} /> },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') },              { text: it.L('[_1] lots', '0.01') }],
-                                [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                 { text: 'N/A' },                                  { text: it.L('N/A') }],
+                                [{ text: <Row number={13} text={it.L('Cryptocurrency trading')} /> }, { text: '24/7' },                                 { text: '24/7' },                                 { text: it.L('N/A') }],
                             ],
                         }}
                     />
