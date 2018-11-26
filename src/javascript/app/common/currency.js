@@ -8,7 +8,7 @@ const getCurrencyList = (currencies) => {
 
     currencies.forEach((currency) => {
         const is_crypto_currency = CurrencyBase.isCryptocurrency(currency);
-        const currency_name      = is_crypto_currency ? `${currency} (${CurrencyBase.getCurrencyName(currency)})` : currency;
+        const currency_name      = is_crypto_currency ? `${CurrencyBase.getCurrencyName(currency)} (${currency})` : currency;
         (is_crypto_currency ? $cryptocurrencies : $fiat_currencies)
             .append($('<option/>', { value: currency, text: currency_name }));
     });
