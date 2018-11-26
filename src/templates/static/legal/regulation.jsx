@@ -143,7 +143,7 @@ const Regulation = () => {
                             padding='5'
                             center
                             border='border-dark-gray'
-                            image='images/pages/regulation/pillar.svg'
+                            image='images/pages/regulation/pdf-icon.svg'
                             href={it.url_for('/download/BIEL_Pillar_3_Report_20180601.pdf')}
                             target='_blank'
                             download
@@ -169,8 +169,8 @@ const Regulation = () => {
                             padding='5'
                             center
                             border='border-dark-gray'
-                            className='margin-top-1-em'
-                            image='images/pages/regulation/pillar.svg'
+                            className='margin-top-17'
+                            image='images/pages/regulation/pdf-icon.svg'
                             href={it.url_for('/download/BIEL-RTS28.pdf')}
                             target='_blank'
                             text={it.L('Annual Best Execution Disclosure 2017')}
