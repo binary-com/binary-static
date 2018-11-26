@@ -1,33 +1,37 @@
 import React from 'react';
+import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const DepositWithdraw = ({ id, is_payment_agent, show_upgrade }) => (
-    <div className='gr-4 gr-12-m'>
-        <div className='gr-padding-10 client_real invisible gr-parent'>
-            <a className='toggle button client_real invisible' href={it.url_for(is_payment_agent ? '/cashier/payment_agent_listws' : '/cashier/forwardws?action=deposit')} id={id}>
-                <span className='deposit'>{it.L('Deposit')}</span>
-            </a>
-        </div>
-        <div className='gr-padding-10 client_real invisible'>
-            <a className='toggle button client_real invisible' href={it.url_for(is_payment_agent ? '/paymentagent/withdrawws' : '/cashier/forwardws?action=withdraw')}>
-                <span className='withdraw'>{it.L('Withdraw')}</span>
-            </a>
-        </div>
-        { show_upgrade &&
-            <div className='gr-padding-10 invisible upgrademessage'>
-                <a className='button' />
+    <div className='gr-2 gr-12-m'>
+        <SeparatorLine className='gr-parent gr-hide gr-show-m gr-padding-10' invisible />
+        <div className='gr-row gr-row-align-left gr-row-align-right-m'>
+            <div className='gr-adapt gr-no-gutter-m client_real invisible gr-parent'>
+                <a className='toggle button client_real invisible' href={it.url_for(is_payment_agent ? '/cashier/payment_agent_listws' : '/cashier/forwardws?action=deposit')} id={id}>
+                    <span className='deposit'>{it.L('Deposit')}</span>
+                </a>
             </div>
-        }
+            <div className='gr-adapt client_real invisible'>
+                <a className='toggle button client_real invisible' href={it.url_for(is_payment_agent ? '/paymentagent/withdrawws' : '/cashier/forwardws?action=withdraw')}>
+                    <span className='withdraw'>{it.L('Withdraw')}</span>
+                </a>
+            </div>
+            { show_upgrade &&
+                <div className='gr-adapt invisible upgrademessage'>
+                    <a className='button' />
+                </div>
+            }
+        </div>
     </div>
 );
 
-export const CashierNote = ({ text }) => (
-    <div className='gr-padding-10 invisible cashier_note'>
+export const CashierNote = ({ text, className }) => (
+    <div className={`gr-padding-10 gr-child invisible cashier_note ${className}`}>
         <div className='gr-12 color-dark-white'>
             <div className='gr-row gr-row-align-middle'>
-                <div className='gr-adapt gr-no-gutter-left'>
+                <div className='gr-adapt gr-1-m gr-no-gutter-left'>
                     <div className='notice-circle faded'>i</div>
                 </div>
-                <div className='gr-11 gr-9-t gr-9-p gr-9-m gr-no-gutter align-start'>
+                <div className='gr-11 gr-9-t gr-9-p gr-11-m gr-no-gutter align-start'>
                     <p className='no-margin'>
                         {text}
                     </p>
@@ -81,15 +85,16 @@ const Cashier = () => (
                         <img className='responsive' id='payment_methods_icon' src={it.url_for('images/pages/cashier/payment-methods.svg')} />
                     </a>
                 </div>
-                <div className='gr-6 gr-12-m'>
+                <div className='gr-6 gr-8-m'>
                     <span className='invisible normal_currency client_logged_out'>{it.L('Deposit or withdraw to your account via bank wire, credit card, or e-wallet.')}</span>
                     <span className='invisible crypto_currency'>{it.L('Manage the funds in your cryptocurrency account.')}</span>
                     &nbsp;
                     <a className='invisible normal_currency client_logged_out' href={it.url_for('cashier/payment_methods')} id='view_payment_methods'>
                         <span>{it.L('View available payment methods')}</span>
                     </a>
-                    <CashierNote text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
+                    <CashierNote className='gr-hide-m' text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
                 </div>
+                <CashierNote className='gr-12 gr-hide gr-show-m' text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
                 <DepositWithdraw show_upgrade id='deposit_btn_cashier' />
             </div>
         </div>
@@ -104,10 +109,11 @@ const Cashier = () => (
                         <img className='responsive' id='payment_agent_icon' src={it.url_for('images/pages/cashier/payment-agents.svg')} />
                     </a>
                 </div>
-                <div className='gr-6 gr-12-m'>
+                <div className='gr-6 gr-8-m'>
                     <span>{it.L('For e-wallets or local currencies not supported by [_1].', it.website_name)}</span>
-                    <CashierNote text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
+                    <CashierNote className='gr-hide-m' text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
                 </div>
+                <CashierNote className='gr-12 gr-hide gr-show-m' text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
                 <DepositWithdraw is_payment_agent />
             </div>
         </div>
