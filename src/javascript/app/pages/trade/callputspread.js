@@ -30,7 +30,6 @@ const constants = {
     barrier_series_name: 'barrier_points',
 };
 
-
 const Callputspread = (() => {
     const state = {
         el_slider               : null,
@@ -112,7 +111,6 @@ const Callputspread = (() => {
             .add();
     };
 
-
     /*
         Calc Functions (no side effects!):
     */
@@ -161,7 +159,6 @@ const Callputspread = (() => {
         };
     };
 
-
     /*
         PUBLIC API:
     */
@@ -194,8 +191,8 @@ const Callputspread = (() => {
     );
 
     const getChartOptions = (contract) => ({
-        marginRight  : calcMarginRight(contract),
-        redrawHandler: () => update(),
+        events      : { redraw: () => update() },
+        margin_right: calcMarginRight(contract),
     });
 
     const update = (chart, contract) => {
@@ -212,7 +209,6 @@ const Callputspread = (() => {
         update,
     };
 })();
-
 
 /*
     HELPER FUNCTIONS THAT RETURN SVG PATH:

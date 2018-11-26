@@ -73,11 +73,11 @@ class ContractTypeWidget extends React.PureComponent {
             <div
                 ref={this.setWrapperRef}
                 className={container_classes.join(' ')}
+                tabIndex='0'
             >
                 <div
                     className={`contracts-popup-display ${this.state.is_dialog_open ? 'clicked' : ''}`}
                     onClick={this.handleVisibility}
-                    onBlur={this.handleVisibility}
                 >
                     <IconTradeCategory category={this.props.value} />
                     <span name={this.props.name} value={this.props.value}>

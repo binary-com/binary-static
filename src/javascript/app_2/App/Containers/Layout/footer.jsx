@@ -38,7 +38,6 @@ const Footer = ({
     </React.Fragment>
 );
 
-
 Footer.propTypes = {
     is_language_dialog_visible: PropTypes.bool,
     is_logged_in              : PropTypes.bool,

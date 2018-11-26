@@ -1,8 +1,8 @@
 const Client           = require('../base/client');
 const BinarySocket     = require('../base/socket');
+const MetaTrader       = require('../pages/user/metatrader/metatrader');
 const State            = require('../../_common/storage').State;
 const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
-const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
 
 /*
     data-show attribute controls element visibility based on
@@ -43,20 +43,18 @@ const MetaTrader       = require('../../app/pages/user/metatrader/metatrader');
 
 const visible_classname = 'data-show-visible';
 const mt_company_rule   = 'mtcompany';
+const eu_country_rule   = 'eucountry';
 
 const ContentVisibility = (() => {
     const init = () => {
-        if (Client.isLoggedIn()) {
-            BinarySocket.wait('authorize', 'landing_company').then(() => {
-                controlVisibility(
-                    State.getResponse('authorize.landing_company_name'),
-                    MetaTrader.isEligible(),
-                    State.getResponse('landing_company.mt_financial_company.shortcode')
-                );
-            });
-        } else {
-            controlVisibility('default', true);
-        }
+        BinarySocket.wait('authorize', 'landing_company', 'website_status').then(() => {
+            const current_landing_company_shortcode = State.getResponse('authorize.landing_company_name');
+            controlVisibility(
+                current_landing_company_shortcode,
+                MetaTrader.isEligible(),
+                State.getResponse('landing_company.mt_financial_company.shortcode')
+            );
+        });
     };
 
     const generateParsingErrorMessage = (reason, attr_str) => (
@@ -92,6 +90,19 @@ const ContentVisibility = (() => {
         };
     };
 
+    const isEuCountry = () => {
+        const eu_shortcode_regex  = new RegExp('^(maltainvest|malta|iom)$');
+        const eu_excluded_regex   = new RegExp('^mt$');
+        const financial_shortcode = State.getResponse('landing_company.financial_company.shortcode');
+        const gaming_shortcode    = State.getResponse('landing_company.gaming_company.shortcode');
+        const clients_country     = Client.get('residence') || State.getResponse('website_status.clients_country');
+        return (
+            (financial_shortcode || gaming_shortcode) ?
+                (eu_shortcode_regex.test(financial_shortcode) || eu_shortcode_regex.test(gaming_shortcode)) :
+                eu_excluded_regex.test(clients_country)
+        );
+    };
+
     const isMT5FinRule = (rule) => /^mt5fin:/.test(rule);
 
     const parseMT5FinRule = (rule) => rule.match(/^mt5fin:(.+)$/)[1];
@@ -109,13 +120,16 @@ const ContentVisibility = (() => {
         } = parseAttributeString(attr_str);
         const rule_set = new Set(names);
 
-        const rule_set_has_current = rule_set.has(current_landing_company_shortcode);
-        const rule_set_has_mt      = rule_set.has(mt_company_rule);
+        const is_eu_country           = isEuCountry();
+        const rule_set_has_current    = rule_set.has(current_landing_company_shortcode);
+        const rule_set_has_mt         = rule_set.has(mt_company_rule);
+        const rule_set_has_eu_country = rule_set.has(eu_country_rule);
 
         let show_element = false;
 
         if (client_has_mt_company && rule_set_has_mt) show_element = !is_exclude;
         else if (is_exclude !== rule_set_has_current) show_element = true;
+        if (rule_set_has_eu_country && is_eu_country) show_element = !is_exclude;
 
         if (mt5fin_rules.includes(mt5fin_company_shortcode)) show_element = !is_exclude;
 

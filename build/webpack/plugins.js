@@ -30,21 +30,27 @@ const getPlugins = (app, grunt) => ([
                 cachedId                 : 'app_2',
                 dontCacheBustUrlsMatching: /\.\w{8}\./,
                 minify                   : false,
-                navigateFallback         : `${lang.toLowerCase()}/app/index.html`,
-                filepath                 : path.resolve(PATHS.DIST, `${lang.toLowerCase()}/app/service-worker.js`),
-                // TODO uncomment the below lines when this card(https://trello.com/c/FHvQREm8) has been done.
+                navigateFallback         : '',
+                filepath                 : path.resolve(PATHS.DIST, `app/${lang.toLowerCase()}/service-worker.js`),
+                // TODO Uncomment below lines when changing the release process order to execute `js` task after `render`
                 // staticFileGlobs          : [
-                //     path.resolve(PATHS.DIST, `${lang.toLowerCase()}/app/index.html`),
+                //     path.resolve(PATHS.DIST, `app/${lang.toLowerCase()}/index.html`),
                 // ],
                 // mergeStaticsConfig           : true,
-                // stripPrefixMulti             : { [path.join(PATHS.DIST, `${lang.toLowerCase()}/app/`)]: `/${lang.toLowerCase()}/app/` },
+                // stripPrefixMulti             : { [path.join(PATHS.DIST, `app/${lang.toLowerCase()}/`)]: `/app/${lang.toLowerCase()}/` },
                 staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+                logger(message) {
+                    if (message.indexOf('Total precache size is') === 0) {
+                        // This message occurs for every build and is a bit too noisy.
+                        return;
+                    }
+                    console.log(message);
+                },
             }))),
         ]
         : []
     ),
-
-    ...(global.is_production
+    ...(global.is_release
         ? [
             new webpack.DefinePlugin({
                 '__REACT_DEVTOOLS_GLOBAL_HOOK__': '({ isDisabled: true })',

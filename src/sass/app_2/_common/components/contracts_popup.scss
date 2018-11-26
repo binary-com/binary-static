@@ -51,12 +51,13 @@ div.contracts-popup-container {
             padding: 0;
             font-weight: 300;
         }
-        &:hover {
+        &:hover, &:focus {
             border-color: $COLOR_BLUE;
+            outline: none;
         }
     }
     &:active, &:focus, &.show {
-        outline: 0;
+        outline: none;
         border-radius: 4px;
     }
     &.show {
@@ -260,7 +261,7 @@ div.contracts-popup-container {
                 background: $COLOR_BLUE;
             }
         }
-        &:hover {
+        &:hover, &:focus, &:active {
             border-color: $COLOR_WHITE;
         }
         .list-container {

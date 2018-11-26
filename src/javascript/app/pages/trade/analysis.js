@@ -3,7 +3,7 @@ const Defaults       = require('./defaults');
 const getActiveTab   = require('./get_active_tab').getActiveTab;
 const GetTicks       = require('./get_ticks');
 const MBDefaults     = require('../mb_trade/mb_defaults');
-const JapanPortfolio = require('../../japan/portfolio');
+const MBPortfolio    = require('../mb_trade/mb_portfolio');
 const getElementById = require('../../../_common/common_functions').getElementById;
 const getLanguage    = require('../../../_common/language').get;
 const State          = require('../../../_common/storage').State;
@@ -67,14 +67,14 @@ const TradingAnalysis = (() => {
         $('#trade_analysis').find('li').removeClass('active');
         $(`#${current_tab}`).addClass('active');
         toggleActiveAnalysisTabs();
-        JapanPortfolio.init();
+        MBPortfolio.init();
         if (State.get('is_mb_trading')) {
             showChart();
         }
         if (current_tab === 'tab_portfolio') {
-            JapanPortfolio.show();
+            MBPortfolio.show();
         } else {
-            JapanPortfolio.hide();
+            MBPortfolio.hide();
             if (current_tab === 'tab_graph') {
                 showChart();
             } else if (current_tab === 'tab_last_digit') {
@@ -176,8 +176,12 @@ const TradingAnalysis = (() => {
     const showExplanation = () => {
         const $container = $('#tab_explanation-content');
 
-        $container.find('#explanation_winning > div, #explanation_explain > div, #explanation_image').setVisibility(0);
-        $container.find(`#explanation_winning, #winning_${form_name}, #explanation_explain, #explain_${form_name}`).setVisibility(1);
+        $container.find('#explanation_winning > div, #explanation_explain > div, #explanation_image, #explanation_note, #explanation_note > div, #explanation_duration > div').setVisibility(0);
+        $container.find(`#explanation_winning, #winning_${form_name}, #explanation_explain, #explain_${form_name}, #duration_${Defaults.get('market')}`).setVisibility(1);
+
+        if ($container.find(`#note_${form_name}`).length) {
+            $(`#explanation_note, #note_${form_name}`).setVisibility(1);
+        }
 
         const images = {
             risefall: {

@@ -3,6 +3,7 @@ const Client         = require('../../../base/client');
 const BinarySocket   = require('../../../base/socket');
 const AccountOpening = require('../../../common/account_opening');
 const FormManager    = require('../../../common/form_manager');
+const getElementById = require('../../../../_common/common_functions').getElementById;
 const State          = require('../../../../_common/storage').State;
 
 const RealAccOpening = (() => {
@@ -13,6 +14,10 @@ const RealAccOpening = (() => {
             if (AccountOpening.redirectAccount()) return;
 
             BinarySocket.wait('landing_company').then(() => {
+                if (State.getResponse('authorize.upgradeable_landing_companies').indexOf('costarica') !== -1) {
+                    getElementById('risk_disclaimer').setVisibility(1);
+                }
+
                 AccountOpening.populateForm(form_id, getValidations, false);
 
                 FormManager.handleSubmit({

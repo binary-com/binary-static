@@ -11,7 +11,6 @@ describe('Language', () => {
         FR   : 'Français',
         ID   : 'Indonesia',
         IT   : 'Italiano',
-        JA   : '日本語',
         PL   : 'Polish',
         PT   : 'Português',
         RU   : 'Русский',

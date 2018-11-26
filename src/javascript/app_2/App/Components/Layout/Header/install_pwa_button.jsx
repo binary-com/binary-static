@@ -11,8 +11,6 @@ const InstallPWAButton = ({
     const showPrompt = () => {
         if (prompt_event) {
             prompt_event.prompt();
-
-
             prompt_event.userChoice
                 .then(choice_result => {
                     if (choice_result.outcome === 'accepted') {

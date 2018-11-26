@@ -215,21 +215,21 @@ body.dark, .theme-wrapper.dark {
         // TODO: refactor to inline SVG and change colors with CSS
         .portfolio-card {
             &__purchase:before {
-                background-image: url('../images/app_2/portfolio/ic_purchase_dark.svg');
+                background-image: url('../images/portfolio/ic_purchase_dark.svg');
             }
             &__payout:before {
-                background-image: url('../images/app_2/statement/ic_payout_dark.svg');
+                background-image: url('../images/statement/ic_payout_dark.svg');
             }
             &__indicative--price-stable:before {
-                background-image: url('../images/app_2/portfolio/ic_price_stable_dark.svg');
+                background-image: url('../images/portfolio/ic_price_stable_dark.svg');
             }
         }
         .statement-card {
             &__payout:before {
-                background-image: url('../images/app_2/statement/ic_payout_dark.svg');
+                background-image: url('../images/statement/ic_payout_dark.svg');
             }
             &__balance:before {
-                background-image: url('../images/app_2/statement/ic_wallet_dark.svg');
+                background-image: url('../images/statement/ic_wallet_dark.svg');
             }
         }
         .login-message-wrapper {
@@ -318,7 +318,7 @@ body.dark, .theme-wrapper.dark {
     }
     // tooltip
     span.tooltip i.question:after {
-        content: url('../images/app_2/common/tooltip/ic_tooltip_question_dark.svg ');
+        content: url('../images/common/tooltip/ic_tooltip_question_dark.svg ');
     }
     // common inline icons
     .inline-icon {

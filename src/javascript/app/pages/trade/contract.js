@@ -1,5 +1,4 @@
 const getFormNameBarrierCategory = require('./common').getFormNameBarrierCategory;
-const getLanguage                = require('../../../_common/language').get;
 const localize                   = require('../../../_common/localize').localize;
 const getPropertyValue           = require('../../../_common/utility').getPropertyValue;
 const isEmptyObject              = require('../../../_common/utility').isEmptyObject;
@@ -131,7 +130,8 @@ const Contract = (() => {
 
                 const type = current_obj.contract_type;
                 if (!getPropertyValue(contract_type[contract_category], type)) {
-                    contract_type[contract_category][type] = localize(current_obj.contract_display);
+                    contract_type[contract_category][type] =
+                        localize(current_obj.contract_display /* localize-ignore */); // handled in static_strings_app.js
                 }
             }
         });
@@ -159,13 +159,12 @@ const Contract = (() => {
                         trade_contract_forms.higherlower = localize('Higher/Lower');
                     }
                 } else {
-                    trade_contract_forms[contract_category] = localize(current_obj.contract_category_display);
+                    trade_contract_forms[contract_category] =
+                        localize(current_obj.contract_category_display /* localize-ignore */); // handled in static_strings_app.js: Asian
                     if (contract_category === 'digits') {
                         trade_contract_forms.matchdiff = localize('Matches/Differs');
-                        if (getLanguage() !== 'ID') {
-                            trade_contract_forms.evenodd   = localize('Even/Odd');
-                            trade_contract_forms.overunder = localize('Over/Under');
-                        }
+                        trade_contract_forms.evenodd   = localize('Even/Odd');
+                        trade_contract_forms.overunder = localize('Over/Under');
                     } else if (contract_category === 'lookback') {
                         trade_contract_forms.lookbackhigh    = localize('High-Close');
                         trade_contract_forms.lookbacklow     = localize('Close-Low');

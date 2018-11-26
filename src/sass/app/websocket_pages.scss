@@ -92,21 +92,6 @@
     }
 }
 
-#knowledge-test-container {
-    #knowledge-test-msg {
-        white-space: pre-line;
-    }
-    .kv-pairs {
-        width: auto;
-        margin-left: 15px;
-        margin-bottom: 10px;
-
-        td {
-            border: none;
-        }
-    }
-}
-
 #profit-table-container {
     th {
         padding-right: 8px;
@@ -144,12 +129,74 @@
     .act {
         flex: 0.8 1 35px;
     }
+    #account_statistics {
+        border: 1px solid $COLOR_LIGHT_GRAY;
+        margin: 30px 0;
+        @media (max-width: 480px) {
+            margin-bottom: 20px;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            padding: 10px 20px;
+
+            @media (max-width: 480px) {
+                padding: 10px 20px;
+            }
+            @media (max-width: 576px) {
+                padding: 10px;
+            }
+        }
+        p {
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.5;
+
+            &:not(.title) {
+                margin-top: 5px;
+            }
+        }
+    }
+    #download_statement_btn {
+        margin-bottom: 0;
+        margin-left: auto;
+
+        @media (max-width: 480px) {
+            margin: 20px 0;
+        }
+    }
+}
+
+#download-statement-container {
+    min-height: 400px;
+
+    #download_to, #download_from {
+        display: inline;
+        max-width: 220px;
+
+        @media (max-width: 480px) {
+            display: block;
+            margin-left: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
 }
 
 #profit-table-container, #statement-container {
     #date_to {
-        width: 100%;
         box-sizing: border-box;
+    }
+}
+
+#settings_container {
+    .round-box {
+        border-radius: $BORDER_RADIUS;
+    }
+    .notice-circle {
+        margin: auto 15px;
     }
 }
 

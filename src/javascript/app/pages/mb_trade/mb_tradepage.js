@@ -1,7 +1,7 @@
 const MBContract          = require('./mb_contract');
 const MBDisplayCurrencies = require('./mb_currency');
-const MBDefaults          = require('./mb_defaults');
 const MBTradingEvents     = require('./mb_event');
+const MBPortfolio         = require('./mb_portfolio');
 const MBPrice             = require('./mb_price');
 const MBProcess           = require('./mb_process');
 const cleanupChart        = require('../trade/charts/webtrader_chart').cleanupChart;
@@ -10,10 +10,7 @@ const Client              = require('../../base/client');
 const Header              = require('../../base/header');
 const BinarySocket        = require('../../base/socket');
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
-const JapanPortfolio      = require('../../japan/portfolio');
 const getElementById      = require('../../../_common/common_functions').getElementById;
-const getLanguage         = require('../../../_common/language').get;
-const localize            = require('../../../_common/localize').localize;
 const State               = require('../../../_common/storage').State;
 const urlFor              = require('../../../_common/url').urlFor;
 const findParent          = require('../../../_common/utility').findParent;
@@ -25,7 +22,7 @@ const MBTradePage = (() => {
     const onLoad = () => {
         State.set('is_mb_trading', true);
         BinarySocket.wait('authorize').then(init);
-        if (!Client.isLoggedIn()) {
+        if (!Client.isLoggedIn() || !Client.get('residence')) { // if client is logged out or they don't have residence set
             BinarySocket.wait('website_status').then(() => {
                 BinarySocket.send({ landing_company: State.getResponse('website_status.clients_country') });
             });
@@ -35,21 +32,10 @@ const MBTradePage = (() => {
     const init = () => {
         Header.displayAccountStatus();
         if (/^(malta|iom)$/.test(Client.get('landing_company_shortcode'))) {
-            if (getLanguage() === 'JA') {
-                $('#content').empty().html($('<div/>', { class: 'container' }).append($('<p/>', { class: 'notice-msg center-text', text: localize('This page is not available in the selected language.') })));
-            } else {
-                BinaryPjax.load(urlFor('trading'));
-            }
+            BinaryPjax.load(urlFor('trading'));
             return;
         }
-        if (Client.isJPClient()) {
-            disableTrading();
-            $('#panel').remove();
-        } else {
-            MBDefaults.set('disable_trading', 0);
-            $('#ja-panel').remove();
-            showCurrency(Client.get('currency'));
-        }
+        showCurrency(Client.get('currency'));
 
         BinarySocket.wait('landing_company', 'active_symbols').then(() => {
             if (events_initialized === 0) {
@@ -89,12 +75,6 @@ const MBTradePage = (() => {
         }
     };
 
-    const disableTrading = () => {
-        MBDefaults.set('disable_trading', 1);
-        $('#allow').removeClass('selected');
-        $('#disallow').addClass('selected');
-    };
-
     const reload = () => {
         window.location.reload();
     };
@@ -105,7 +85,7 @@ const MBTradePage = (() => {
         }
         cleanupChart();
         State.set('is_chart_allowed', false);
-        JapanPortfolio.hide();
+        MBPortfolio.hide();
         State.remove('is_mb_trading');
         events_initialized = 0;
         MBContract.onUnload();

@@ -1,20 +1,19 @@
 const BinarySocket = require('./socket');
 const Client       = require('../base/client');
+const isEuCountry  = require('../common/country_base').isEuCountry;
 const State        = require('../../_common/storage').State;
 
 const Footer = (() => {
     const onLoad = () => {
-        BinarySocket.wait('website_status', 'authorize').then(() => {
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
             // show CFD warning to logged in maltainvest clients or
             // logged in virtual clients with maltainvest financial landing company or
             // logged out clients with EU IP address
             if (Client.isLoggedIn()) {
-                BinarySocket.wait('landing_company').then(() => {
-                    showWarning((Client.get('landing_company_shortcode') === 'maltainvest' ||
-                        (Client.get('is_virtual') && State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest')));
-                });
+                showWarning((Client.get('landing_company_shortcode') === 'maltainvest' ||
+                    (Client.get('is_virtual') && State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest')));
             } else {
-                showWarning(State.get('is_eu'));
+                showWarning(isEuCountry());
             }
         });
     };
