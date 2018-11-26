@@ -63,22 +63,23 @@ const GTM = (() => {
             url               : window.location.href,
             bom_today         : Math.floor(Date.now() / 1000),
         };
-        if (is_new_account) {
+
+        if (is_login) {
+            data.event = 'log_in';
+        } else if (is_account_switch) {
+            data.event = 'account_switch';
+        } else if (is_new_account) {
             data.event = 'new_account';
             data.bom_date_joined = data.bom_today;
         }
+
         if (!ClientBase.get('is_virtual')) {
             data.bom_age       = parseInt((moment().unix() - get_settings.date_of_birth) / 31557600);
             data.bom_firstname = get_settings.first_name;
             data.bom_lastname  = get_settings.last_name;
             data.bom_phone     = get_settings.phone;
         }
-        if (is_login) {
-            data.event = 'log_in';
-        }
-        if (is_account_switch) {
-            data.event = 'account_switch';
-        }
+
         if (is_login || is_account_switch) {
             BinarySocket.wait('mt5_login_list').then((response) => {
                 (response.mt5_login_list || []).forEach((obj) => {
