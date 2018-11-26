@@ -61,9 +61,9 @@ const DepositWithdrawButton = ({ id, is_payment_agent, show_upgrade, is_virtual 
 export const CashierNote = ({ text, className }) => (
     <div className={`gr-padding-10 gr-child invisible cashier_note ${className}`}>
         <div className='gr-12 color-dark-white'>
-            <div className='gr-row gr-row-align-middle'>
+            <div className='gr-row'>
                 <div className='gr-adapt gr-1-m gr-no-gutter-left'>
-                    <div className='notice-circle faded'>i</div>
+                    <div className='notice-circle faded margin-top-3'>i</div>
                 </div>
                 <div className='gr-11 gr-9-t gr-9-p gr-11-m gr-no-gutter align-start'>
                     <p className='no-margin'>

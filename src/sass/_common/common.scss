@@ -666,6 +666,9 @@ label + input {
         border-color: $COLOR_GRAY_SHADE;
         font-weight: 400;
     }
+    &.margin-top-3 {
+        margin-top: 3px;
+    }
 }
 
 @media (max-width: 768px) {
