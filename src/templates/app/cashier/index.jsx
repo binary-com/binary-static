@@ -59,7 +59,7 @@ const DepositWithdrawButton = ({ id, is_payment_agent, show_upgrade, is_virtual 
 );
 
 export const CashierNote = ({ text, className }) => (
-    <div className={`gr-padding-10 gr-child invisible cashier_note ${className}`}>
+    <div className={`gr-padding-10 invisible cashier_note ${className || ''}`}>
         <div className='gr-12 color-dark-white'>
             <div className='gr-row'>
                 <div className='gr-adapt gr-1-m gr-no-gutter-left'>
@@ -121,9 +121,9 @@ const Cashier = () => (
                     <a className='invisible normal_currency client_logged_out' href={it.url_for('cashier/payment_methods')} id='view_payment_methods'>
                         <span>{it.L('View available payment methods')}</span>
                     </a>
-                    <CashierNote className='gr-hide-m' text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
+                    <CashierNote className='gr-hide-m gr-child' text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
                 </div>
-                <CashierNote className='gr-12 gr-hide gr-show-m' text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
+                <CashierNote className='gr-12 gr-hide gr-show-m gr-child' text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
                 <DepositWithdrawButton show_upgrade id='deposit_btn_cashier' />
             </div>
         </div>
@@ -141,9 +141,9 @@ const Cashier = () => (
                 />
                 <div className='gr-6 gr-8-m'>
                     <span>{it.L('For e-wallets or local currencies not supported by [_1].', it.website_name)}</span>
-                    <CashierNote className='gr-hide-m' text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
+                    <CashierNote className='gr-hide-m gr-child' text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
                 </div>
-                <CashierNote className='gr-12 gr-hide gr-show-m' text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
+                <CashierNote className='gr-12 gr-hide gr-show-m gr-child' text={it.L('Withdrawal via payment agent is available only if you deposit exclusively via payment agent.')} />
                 <DepositWithdrawButton is_payment_agent />
             </div>
         </div>
