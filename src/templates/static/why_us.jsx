@@ -127,27 +127,34 @@ const WhyUs = () => (
                 </Section>
 
                 <Section id='trust' header={it.L('Go with the leader')}>
-                    <div className='gr-row'>
-                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')} />
+                    <div className='gr-row awards-section'>
+                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/t2w-2010.svg')} />
+                            <span className='caption'>{it.L('Trade2Win')}</span>
                         </div>
-                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')} />
+                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/gbfr-2012.svg')} />
+                            <span className='caption'>{it.L('Global Banking and Finance Review')}</span>
                         </div>
-                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')} />
+                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/egr-2015.svg')} />
+                            <span className='caption'>{it.L('EGR Operator Awards')}</span>
                         </div>
-                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')} />
+                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/mena-2016.svg')} />
+                            <span className='caption'>{it.L('16th Mena Financial Forum & Expo')}</span>
                         </div>
-                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards/gb.svg')} />
+                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/opm-2017.svg')} />
+                            <span className='caption'>{it.L('Online Personal Wealth Awards')}</span>
                         </div>
-                        <div className='gr-3 gr-5-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')} />
+                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/gbf-2018.svg')} />
+                            <span className='caption'>{it.L('Global Banking & Finance Awards')}</span>
                         </div>
-                        <div className='gr-2 gr-4-m gr-centered-m gr-padding-20 align-self-center'>
-                            <img className='responsive' src={it.url_for('images/pages/home/awards/gbfa.svg')} />
+                        <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
+                            <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2018.svg')} />
+                            <span className='caption'>{it.L('Global Brands Magazine')}</span>
                         </div>
                     </div>
                     <p>{it.L('[_1] is the award-winning industry pioneer in online options trading. We boast:', it.website_name)}</p>
