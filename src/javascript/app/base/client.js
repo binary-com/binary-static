@@ -45,6 +45,15 @@ const Client = (() => {
                 }
             });
         } else {
+            applyToAllElements('.client_logged_in', (el) => {
+                el.setVisibility(0);
+            }, '', el_section);
+            applyToAllElements('#client-logged-in', (el) => {
+                el.setVisibility(0);
+            }, '', el_section);
+            getElementById('topbar-msg').setVisibility(0);
+            getElementById('menu-top').classList.remove('smaller-font', 'top-nav-menu');
+
             applyToAllElements('.client_logged_out', (el) => {
                 el.setVisibility(1);
             }, '', el_section);
