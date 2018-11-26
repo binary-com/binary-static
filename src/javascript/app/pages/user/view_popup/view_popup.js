@@ -767,6 +767,9 @@ const ViewPopup = (() => {
         if (response.error) {
             if (response.error.code !== 'AlreadySubscribed' && response.echo_req.contract_id === contract_id) {
                 showErrorPopup(response, response.error.message);
+                if (response.error.code === 'InvalidToken') {
+                    window.location.reload();
+                }
             }
             return;
         }
