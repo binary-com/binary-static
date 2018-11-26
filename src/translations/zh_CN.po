@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-11-21 02:01\n"
+"PO-Revision-Date: 2018-11-23 03:30\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -167,6 +167,9 @@ msgstr "%1不收取任何转账费用。"
 
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
 msgstr "%1让每个人都能轻松参与金融市场。您可交易各主要货币、指数、大宗商品和波动率指数，投资门槛低至1美元。"
+
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
+msgstr "%1让每个人都能轻松参与金融市场。您可交易各主要货币、股票指数和大宗商品，投资门槛低至1美元。"
 
 msgid "%1 has been credited into your virtual account: %2."
 msgstr "%1 已记入您的虚拟账户: %2。"
@@ -479,9 +482,6 @@ msgstr "<a href=\"%1\">返回交易页面</a>"
 
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>成立于</a>1999年10月"
-
-msgid "<a href='%1'>Offices</a> in Malta and Malaysia"
-msgstr "<a href='%1'>公司</a>位于马耳他和马来西亚"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>合适性测试:警告:</strong>为了给您提供服务，我们必须向您获取信息，以便确定产品或服务是否适合您（也就是说，看您是否拥有足够经验和知识，并了解相关的风险）。"
@@ -1063,7 +1063,7 @@ msgid "Allow equals"
 msgstr "允许等值"
 
 msgid "Already have an account?"
-msgstr ""
+msgstr "已经有账户？"
 
 msgid "Already have an account? %1Log in%2 here"
 msgstr "已经有账户？此处%1登录%2"
@@ -1088,6 +1088,9 @@ msgstr "另外，在Binary（IOM）有限公司和Binary（欧洲）有限公司
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "尽管公司拥有并保留所有拒绝或关闭客户账户的权利，但公司保证所有开出的合同义务都必须执行。"
+
+msgid "Always keep your web browser up-to-date. We recommend using the latest version of %1Google Chrome%2."
+msgstr "请让您的网络浏览器始终保持最新状态。我们建议您使用最新版本的 %1Google Chrome%2。"
 
 msgid "Amount"
 msgstr "金额"
@@ -1520,6 +1523,9 @@ msgstr "返回 IB计划"
 
 msgid "Back to Menu"
 msgstr "返回菜单"
+
+msgid "Back to Statement"
+msgstr ""
 
 msgid "Back-office support"
 msgstr "后台支持"
@@ -3181,6 +3187,9 @@ msgstr "下载 %1桌面应用程序%2 以获得 %3 网站最安全的访问方�
 msgid "Download the Android App"
 msgstr "下载 Android 应用程序"
 
+msgid "Download your statement"
+msgstr ""
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推动快速增长和业务发展，以支持公司的销售和市场营销目标"
 
@@ -4050,6 +4059,9 @@ msgstr "星期五"
 
 msgid "Fridays"
 msgstr "星期五"
+
+msgid "From"
+msgstr ""
 
 msgid "Front Side"
 msgstr "前侧"
@@ -5114,7 +5126,7 @@ msgid "Introduce %1"
 msgstr "介绍%1"
 
 msgid "Introducing USB"
-msgstr ""
+msgstr "推出USB"
 
 msgid "Introducing the new %1 desktop app"
 msgstr "推出新的 %1 桌面应用程序"
@@ -5319,9 +5331,6 @@ msgstr "跟踪您的授权应用程序。"
 
 msgid "Keep up with breaking news and events on global markets."
 msgstr "跟上全球市场的突发新闻和事件。"
-
-msgid "Keep your web browser %1up-to-date%2."
-msgstr "让您的 web 浏览器保持%1更新%2。"
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
 msgstr "跟上某个行业的市场新闻和趋势，可以为您提供很大的帮助，特别是如果您刚刚入门。"
@@ -5591,7 +5600,7 @@ msgid "Log in"
 msgstr "登录"
 
 msgid "Log in here"
-msgstr ""
+msgstr "此处登录"
 
 msgid "Log in to your %1 affiliate account and go to: Finances → Payment instructions."
 msgstr "登录您的 %1 联盟账号并前往：财务→ 付款说明。"
@@ -6499,6 +6508,9 @@ msgstr "十月"
 msgid "October"
 msgstr "十月"
 
+msgid "Offices in Malta and Malaysia"
+msgstr "公司位于马耳他和马来西亚"
+
 msgid "Offline"
 msgstr "离线"
 
@@ -6596,7 +6608,7 @@ msgid "Oops... Page Not Available"
 msgstr "抱歉！找不到页面"
 
 msgid "Open A Free Account"
-msgstr ""
+msgstr "开立免费账户"
 
 msgid "Open Account"
 msgstr "开户"
@@ -7177,6 +7189,9 @@ msgstr "请选择复选框。"
 msgid "Please select the currency of this account:"
 msgstr "请选择此账户的币种："
 
+msgid "Please select the date range of your statement:"
+msgstr ""
+
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "升级到真实资金账户前请先设置%1居住国%2。"
 
@@ -7232,7 +7247,7 @@ msgid "Potential Profit"
 msgstr "潜在利润"
 
 msgid "Potential Profit/Loss"
-msgstr ""
+msgstr "潜在利润/亏损"
 
 msgid "Potential profit"
 msgstr "潜在利润"
@@ -7581,7 +7596,7 @@ msgid "Read the %1 tech blog"
 msgstr "阅读％1技术博客"
 
 msgid "Ready to trade?"
-msgstr ""
+msgstr "已经准备好开始交易了吗？"
 
 msgid "Real"
 msgstr "真实"
@@ -7741,6 +7756,9 @@ msgstr "表示您的投资组合中未平仓合约的最大数量。您投资组
 
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一既定交易日您可以买入的最大合约数量。"
+
+msgid "Request your statement"
+msgstr ""
 
 msgid "Requirements"
 msgstr "需求"
@@ -8032,6 +8050,9 @@ msgstr "选择上方突出显示的任何符号以打开实时图表。右键单
 
 msgid "Select currency"
 msgstr "选择货币"
+
+msgid "Select date"
+msgstr ""
 
 msgid "Select market:"
 msgstr "选择市场："
@@ -8515,6 +8536,9 @@ msgstr "Student"
 
 msgid "Study financial data to forecast market movements using our charting tools."
 msgstr "使用我们的图表工具研究财务数据，以预测市场动向。"
+
+msgid "Style guide"
+msgstr "风格指南"
 
 msgid "Su"
 msgstr "星期日"
@@ -9822,6 +9846,9 @@ msgstr "提示:"
 msgid "Title"
 msgstr "职务"
 
+msgid "To"
+msgstr ""
+
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "如有意申请，请将您的简历和求职信发送到%1"
 
@@ -10202,6 +10229,9 @@ msgstr "风险透明化和潜在奖励"
 
 msgid "Trust"
 msgstr "信任"
+
+msgid "Trusted by traders since 2000"
+msgstr "自2000年以来备受交易员信赖"
 
 msgid "Try Binary Bot"
 msgstr "试试 Binary Bot"
@@ -10660,7 +10690,7 @@ msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 
 msgid "Waiting for contract settlement."
-msgstr ""
+msgstr "等待合约结算。"
 
 msgid "Waiting for entry tick."
 msgstr "正在等待进场跳动点。"
@@ -12034,6 +12064,9 @@ msgstr "交易期持续时间限制将于%1秒内结束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的设置已成功更新。"
 
+msgid "Your statement has been sent to your email address."
+msgstr ""
+
 msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
 msgstr "您的代币已过期或失效。请点击%1此处%2重启验证程序。"
 
@@ -12165,6 +12198,9 @@ msgstr "b）您的订单执行价格;"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr "二元期权、外汇、外汇交易、在线交易、金融交易、二元期权交易、指数交易、交易指数、外汇交易、交易大宗商品、二元期权策略、二元经纪、二元投注、二元期权交易平台、二元策略、金融、投资、交易"
+
+msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading"
+msgstr "二元期权、外汇、外汇交易、在线交易、金融交易、二元期权交易、指数交易、交易指数、外汇交易、交易大宗商品、二元期权策略、二元经纪、二元投注、二元期权交易平台、二元策略、金融、股票、投资、交易"
 
 msgid "c) The time at which your order will be executed; and"
 msgstr "c) 您的订单执行时间;"
