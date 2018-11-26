@@ -42,7 +42,7 @@ const StartDate = ({
         >
             <Dropdown
                 name='start_date'
-                value={start_date}
+                value={parseInt(start_date)}
                 list={start_dates_list}
                 onChange={onChange}
                 is_nativepicker={is_nativepicker}
@@ -55,7 +55,7 @@ const StartDate = ({
                         name='start_time'
                         value={start_time}
                         placeholder='12:00'
-                        start_date={start_date}
+                        start_date={parseInt(start_date)}
                         sessions={sessions}
                         is_clearable={false}
                         is_nativepicker={is_nativepicker}
