@@ -1,12 +1,12 @@
 import PropTypes            from 'prop-types';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Redirect }         from 'react-router-dom';
 import { localize }         from '_common/localize';
 import Button               from 'App/Components/Form/button.jsx';
 import { IconStatement }    from 'Assets/Header/NavBar';
 import { routes }           from 'Constants/index';
 
-class EmptyStatementMessage extends Component {
+class EmptyStatementMessage extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
