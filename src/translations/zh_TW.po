@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-11-23 03:31\n"
+"PO-Revision-Date: 2018-11-26 02:23\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -1525,7 +1525,7 @@ msgid "Back to Menu"
 msgstr "返回功能表"
 
 msgid "Back to Statement"
-msgstr ""
+msgstr "回到月結單"
 
 msgid "Back-office support"
 msgstr "後台支援"
@@ -2532,6 +2532,9 @@ msgstr "合約開始時間"
 msgid "Contract Type"
 msgstr "合約類型"
 
+msgid "Contract duration"
+msgstr "合約期限"
+
 msgid "Contract for Difference."
 msgstr "差價合約。"
 
@@ -3187,7 +3190,7 @@ msgid "Download the Android App"
 msgstr "下載Android應用程式"
 
 msgid "Download your statement"
-msgstr ""
+msgstr "下載您的月結單"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
@@ -4060,7 +4063,7 @@ msgid "Fridays"
 msgstr "星期五"
 
 msgid "From"
-msgstr ""
+msgstr "從"
 
 msgid "Front Side"
 msgstr "前側"
@@ -7155,6 +7158,9 @@ msgstr "請提供以下資訊："
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "提交申請前, 請閱讀此 %1隱私政策%2。"
 
+msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
+msgstr "要瞭解每個資產基於交易類型的最低和最高合約期限，請參閱 %1資產指數%2。"
+
 msgid "Please reload the page"
 msgstr "請重新載入頁面"
 
@@ -7189,7 +7195,7 @@ msgid "Please select the currency of this account:"
 msgstr "請選擇此帳戶的幣種："
 
 msgid "Please select the date range of your statement:"
-msgstr ""
+msgstr "請選擇月結單的日期範圍:"
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "升級到真實資金帳戶前請先設定%1居住國%2。"
@@ -7756,7 +7762,7 @@ msgid "Represents the maximum volume of contracts that you may purchase in any g
 msgstr "表示任一指定交易日您可以買入的最大合約數量。"
 
 msgid "Request your statement"
-msgstr ""
+msgstr "索取您的月結單"
 
 msgid "Requirements"
 msgstr "要求"
@@ -8050,7 +8056,7 @@ msgid "Select currency"
 msgstr "選擇貨幣"
 
 msgid "Select date"
-msgstr ""
+msgstr "選擇日期"
 
 msgid "Select market:"
 msgstr "選擇市場:"
@@ -8814,8 +8820,8 @@ msgstr "<strong>開始時間</strong>就是我們的伺服器處理合約交易�
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合約<strong>開始時間</strong>即我們的伺服器處理合約的時間。"
 
-msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices and cryptocurrencies."
-msgstr "高級帳戶為您提供極低的差價, 更高的票證大小, 並提供更多的產品。開始交易更多的外匯對、差價合約指數和加密貨幣。"
+msgid "The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers."
+msgstr "高級帳戶為您提供較低的價差、更高的票據大小, 並提供包括主要貨幣對和奇異貨幣對等各種外匯貨幣選項。它是直接處理 (STP) 帳戶類型, 可直接透過不同的提供商獲得外匯流動性。"
 
 msgid "The Affiliate's Obligations"
 msgstr "聯盟的義務"
@@ -9844,7 +9850,7 @@ msgid "Title"
 msgstr "職稱"
 
 msgid "To"
-msgstr ""
+msgstr "到"
 
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "如有意申請，請將您的履歷和求職信傳到%1"
@@ -12061,7 +12067,7 @@ msgid "Your settings have been updated successfully."
 msgstr "您的設定已成功更新。"
 
 msgid "Your statement has been sent to your email address."
-msgstr ""
+msgstr "月結單已發送到您的電子郵件地址。"
 
 msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
 msgstr "您的代幣已過期或失效。請點選%1此處%2重啟驗證程序。"
