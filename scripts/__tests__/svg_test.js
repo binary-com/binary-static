@@ -1,22 +1,25 @@
-const path   = require('path');
-const fs     = require('fs');
-const expect = require('chai').expect;
-const common = require('../common');
+const path          = require('path');
+const fs            = require('fs');
+const expect        = require('chai').expect;
+const { promisify } = require('util');
+const common        = require('../common');
 
 const ignored_files = [
     'src/images/pages/regulation/map.svg',
 ];
 
 describe('check svg file format', () => {
-    it('should be valid svgs', () => {
-        function fetchSvgs(dir) {
-            const directory = fs.readdirSync(dir);
-            return directory.map(file => {
+    it('should be valid svgs', async () => {
+        const readDirAsync = promisify(fs.readdir);
+
+        async function fetchSvgs(dir) {
+            const directory = await readDirAsync(dir);
+            return await Promise.all(directory.map(async file => { // eslint-disable-line
                 if (fs.statSync(path.join(dir, file)).isDirectory()) {
-                    return fetchSvgs(path.join(dir, file));
+                    return await fetchSvgs(path.join(dir, file)); //eslint-disable-line
                 }
                 return file.match(/.*\.(svg)$/ig) ? path.join(dir, file) : false;
-            });
+            }));
         }
 
         const flatten = arr => {
@@ -29,7 +32,7 @@ describe('check svg file format', () => {
             return arr;
         };
 
-        const svgs = fetchSvgs(path.resolve(common.root_path, 'src/images'));
+        const svgs = await fetchSvgs(path.resolve(common.root_path, 'src/images'));
 
         flatten(svgs)
             .filter(item => !!item)
@@ -42,7 +45,8 @@ describe('check svg file format', () => {
                 expect(file)
                     .to
                     .match(/(?!\n)(<svg)(.*)(>).*(<\/\s?svg)>/i,
-                        `unoptimized svg at ${item}\n Please run the following command on your terminal and commit the result: \n svgo ${item} \n`);
+                        `unoptimized svg at ${item}\n Please run the following command on your terminal and commit the result: \n svgo ${item} \n`,
+                    );
             });
     });
 });
