@@ -377,6 +377,7 @@ const Header = (() => {
         displayNotification,
         hideNotification,
         displayAccountStatus,
+        loginOnClick,
     };
 })();
 
