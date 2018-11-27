@@ -1,4 +1,5 @@
 import React from 'react';
+import { CashierNote } from './index.jsx';
 import { Table } from '../../_common/components/elements.jsx';
 
 const Button = ({ url, real, className, text }) => (
@@ -110,6 +111,7 @@ const PaymentMethods = () => {
                     <Button url='cashier/forwardws?action=deposit'  real className='deposit'  text={it.L('Deposit')} />
                     <Button url='cashier/forwardws?action=withdraw' real className='withdraw' text={it.L('Withdraw')} />
                 </p>
+                <CashierNote className='gr-parent' text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
             </div>
 
             <div id='payment_methods' className='table-container'>

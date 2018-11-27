@@ -50,7 +50,7 @@
         // if language is wrong, we need to rebuild the url
         var lang_regex = new RegExp('/(' + all_languages.join('|') + ')/', 'i');
         if (!lang_regex.test(href)) {
-            href = getRoot() + 'app/' + lang.toLowerCase() + '/' + '404';
+            href = getRoot() + '/app/' + lang.toLowerCase() + '/' + '404';
         } else {
             href = href.replace(new RegExp('(/' + lang + '/).*', 'i'), 'app$1404');
         }

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-11-22 03:57\n"
+"PO-Revision-Date: 2018-11-26 09:09\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -1149,6 +1149,9 @@ msgstr "关于欺诈、风险评估和反洗钱数据分析"
 msgid "Android"
 msgstr "Android"
 
+msgid "Annual Best Execution Disclosure 2017"
+msgstr ""
+
 msgid "Another major award. This time we're nominated by the online readers of Global Banking and Finance Review and judged by a panel of industry experts and analysts who recognise our 13 years of platform reliability, range of trades, pricing, customer service and extensive knowledge."
 msgstr "这是我们赢得的另一大奖项。该奖项由《Global Banking and Finance Review》杂志的在线读者提名，并由行业专家和分析师评审团评选得出。这是对我们13年来的平台可靠性、交易品种范围、定价、客户服务和专业程度的认可。"
 
@@ -1523,6 +1526,9 @@ msgstr "返回 IB计划"
 
 msgid "Back to Menu"
 msgstr "返回菜单"
+
+msgid "Back to Statement"
+msgstr "回到月结单"
 
 msgid "Back-office support"
 msgstr "后台支持"
@@ -2530,6 +2536,9 @@ msgstr "合约开始时间"
 msgid "Contract Type"
 msgstr "合约类型"
 
+msgid "Contract duration"
+msgstr "合约期限"
+
 msgid "Contract for Difference."
 msgstr "差价合约。"
 
@@ -3183,6 +3192,9 @@ msgstr "下载 %1桌面应用程序%2 以获得 %3 网站最安全的访问方�
 
 msgid "Download the Android App"
 msgstr "下载 Android 应用程序"
+
+msgid "Download your statement"
+msgstr "下载月结单"
 
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推动快速增长和业务发展，以支持公司的销售和市场营销目标"
@@ -4053,6 +4065,9 @@ msgstr "星期五"
 
 msgid "Fridays"
 msgstr "星期五"
+
+msgid "From"
+msgstr "从"
 
 msgid "Front Side"
 msgstr "前侧"
@@ -6046,6 +6061,9 @@ msgstr "金属交易让您推测特定金属资产的价格变动，以便在资
 msgid "Method"
 msgstr "方式"
 
+msgid "MiFID II RTS 28"
+msgstr ""
+
 msgid "Min"
 msgstr "最小"
 
@@ -6435,9 +6453,6 @@ msgstr "注意: 如果您使用社交网络登录, 此功能不可用。"
 
 msgid "Note: Transfer between accounts is not available on weekends."
 msgstr "注意: 账户之间的转账周末期间不可用。"
-
-msgid "Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent"
-msgstr "注意：您必须完全通过付款代理存款才可使用付款代理提款"
 
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "注： 您只能拥有一个法定货币账户以及每种加密货币一个账户。"
@@ -7147,6 +7162,9 @@ msgstr "请提供以下信息："
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "提交申请前, 请阅读此 %1隐私政策%2。"
 
+msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
+msgstr "要了解每个资产基于交易类型的最低和最高合约期限，请参阅 %1资产指数%2。"
+
 msgid "Please reload the page"
 msgstr "请重新加载页面"
 
@@ -7179,6 +7197,9 @@ msgstr "请选择复选框。"
 
 msgid "Please select the currency of this account:"
 msgstr "请选择此账户的币种："
+
+msgid "Please select the date range of your statement:"
+msgstr "请选择月结单的日期范围:"
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "升级到真实资金账户前请先设置%1居住国%2。"
@@ -7745,6 +7766,9 @@ msgstr "表示您的投资组合中未平仓合约的最大数量。您投资组
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一既定交易日您可以买入的最大合约数量。"
 
+msgid "Request your statement"
+msgstr "索取您的月结单"
+
 msgid "Requirements"
 msgstr "需求"
 
@@ -8036,6 +8060,9 @@ msgstr "选择上方突出显示的任何符号以打开实时图表。右键单
 msgid "Select currency"
 msgstr "选择货币"
 
+msgid "Select date"
+msgstr "选择日期"
+
 msgid "Select market:"
 msgstr "选择市场："
 
@@ -8152,6 +8179,9 @@ msgstr "可分割性"
 
 msgid "Share access to your account without any permission to trade."
 msgstr "没有任何交易许可的情况下分享您的账户的访问权。"
+
+msgid "Sharing your payment method with another client is prohibited and can cause delays in your withdrawals."
+msgstr ""
 
 msgid "Sharp prices"
 msgstr "精准报价"
@@ -8798,8 +8828,8 @@ msgstr "<strong>开始时间</strong> 就是我们的服务器处理合约交易
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合约<strong>开始时间</strong>即我们的服务器处理合约的时间。"
 
-msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices and cryptocurrencies."
-msgstr "高级账户为您提供极低的差价, 更高的票证大小, 并提供更多的产品。开始交易更多的外汇对、差价合约指数和加密货币。"
+msgid "The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers."
+msgstr "高级账户为您提供较低的价差、更高的票据大小, 并提供包括主要货币对和奇异货币对等各种外汇货币选项。它是直接处理 (STP) 账户类型, 可直接透过不同的提供商获得外汇流动性。"
 
 msgid "The Affiliate's Obligations"
 msgstr "联盟的义务"
@@ -9827,6 +9857,9 @@ msgstr "提示:"
 
 msgid "Title"
 msgstr "职务"
+
+msgid "To"
+msgstr "到"
 
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "如有意申请，请将您的简历和求职信发送到%1"
@@ -11316,6 +11349,9 @@ msgstr "从MT5真实账户提出资金"
 msgid "Withdrawal of funds from your MT5 Real Account can be made in a different currency from the one maintained in your %1 account subject to a 1% currency transfer fee charge."
 msgstr "从您的MT5真实账户中提款时可以使用与您的％1账户不相同的货币，但须支付1％的货币转账费。"
 
+msgid "Withdrawal via payment agent is available only if you deposit exclusively via payment agent."
+msgstr ""
+
 msgid "Withdrawal: %1 working day"
 msgstr "取款：%1 个工作日"
 
@@ -12042,6 +12078,9 @@ msgstr "交易期持续时间限制将于%1秒内结束。"
 
 msgid "Your settings have been updated successfully."
 msgstr "您的设置已成功更新。"
+
+msgid "Your statement has been sent to your email address."
+msgstr "月结单已发送到您的电子邮件地址。"
 
 msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
 msgstr "您的代币已过期或失效。请点击%1此处%2重启验证程序。"

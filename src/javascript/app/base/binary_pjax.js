@@ -1,4 +1,5 @@
 const defaultRedirectUrl = require('./client').defaultRedirectUrl;
+const isLoggedIn         = require('./client').isLoggedIn;
 const getElementById     = require('../../_common/common_functions').getElementById;
 const getLanguage        = require('../../_common/language').get;
 const State              = require('../../_common/storage').State;
@@ -88,6 +89,12 @@ const BinaryPjax = (() => {
         // check if url is not same as current or if url has `anchor` query
         if (location.href !== url || Url.paramsHash().anchor) {
             processUrl(url);
+        }
+
+        // workaround to remove non-error notification msg for chrome bug where users logout from different browser window
+        const msg_notification_el = getElementById('msg_notification');
+        if (!isLoggedIn() && !msg_notification_el.classList.contains('error')) {
+            msg_notification_el.setVisibility(0);
         }
     };
 
