@@ -698,9 +698,17 @@ body #not_authenticated_financial ul.checked > li {
             background-color: $COLOR_WHITE;
         }
         th, td {
-            text-align: center !important;
+            text-align: center;
             padding: 20px;
             border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+
+            @media screen and (max-width: 500px) {
+                text-align: left !important;
+
+                &:last-child {
+                    padding-top: 0;
+                }
+            }
         }
     }
     #note .hint {
