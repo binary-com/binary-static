@@ -38,7 +38,7 @@ const Labuan = () =>  (
                                 },
                                 {
                                     url    : 'images/pages/careers/labuan/international-school.jpg',
-                                    caption: it.L('Labuan has several national schools and one international school. It also has the only matriculation college in East Malaysia. Pre-university students from Sabah, Sarawak, and Labuan are required to attend this matriculation college before they continue their studies at a public university.')}`,
+                                    caption: it.L('Labuan has several national schools and one international school. It also has the only matriculation college in East Malaysia. Pre-university students from Sabah, Sarawak, and Labuan are required to attend this matriculation college before they continue their studies at a public university.'),
                                 },
                                 {
                                     url    : 'images/pages/careers/labuan/seafood.jpg',
