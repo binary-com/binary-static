@@ -147,7 +147,7 @@ const TabCircles = ({ id, number }) => (
     </div>
 );
 
-const ButtonSocial = ({id, icon, text}) => (
+const ButtonSocial = ({ id, icon, text }) => (
     <button id={id || undefined} className='button-white'>
         <span className={icon}>{it.L(text)}</span>
     </button>
