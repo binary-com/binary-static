@@ -34,15 +34,15 @@ const Labuan = () =>  (
                             images={[
                                 {
                                     url    : 'images/pages/careers/labuan/island-paradise.jpg',
-                                    caption: 'Living on an island paradise has its perks. Labuan is one of those rare gems that has yet to undergo excessive commercialisation, thus retaining its small-town charm and tight-knit community vibe. Labuan welcomes tourists throughout the year as the island enjoys good weather all year round, with average daily temperature between 28 and 32 degrees Celsius.',
+                                    caption: it.L('Living on an island paradise has its perks. Labuan is one of those rare gems that has yet to undergo excessive commercialisation, thus retaining its small-town charm and tight-knit community vibe. Labuan welcomes tourists throughout the year as the island enjoys good weather all year round, with average daily temperature between 28 and 32 degrees Celsius.'),
                                 },
                                 {
                                     url    : 'images/pages/careers/labuan/international-school.jpg',
-                                    caption: 'Labuan has several national schools and one international school. It also has the only matriculation college in East Malaysia. Pre-university students from Sabah, Sarawak, and Labuan are required to attend this matriculation college before they continue their studies at a public university.',
+                                    caption: it.L('Labuan has several national schools and one international school. It also has the only matriculation college in East Malaysia. Pre-university students from Sabah, Sarawak, and Labuan are required to attend this matriculation college before they continue their studies at a public university.'),
                                 },
                                 {
                                     url    : 'images/pages/careers/labuan/seafood.jpg',
-                                    caption: 'As expected, the seafood is affordable and simply amazing. Locals absolutely adore crayfish which they refer to as \'satak\'. Despite being a small island, Labuan still offers so much in terms of culture; you can explore the island\'s rich history at the Labuan Museum, Peace Park, the Chimney, and Labuan Square. The island also has a vibrant nightlife.',
+                                    caption: it.L('As expected, the seafood is affordable and simply amazing. Locals absolutely adore crayfish which they refer to as \'satak\'. Despite being a small island, Labuan still offers so much in terms of culture; you can explore the island\'s rich history at the Labuan Museum, Peace Park, the Chimney, and Labuan Square. The island also has a vibrant nightlife.'),
                                 },
                             ]}
                         />
