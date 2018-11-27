@@ -2,6 +2,7 @@ const BinarySocket = require('./socket');
 const Client       = require('../base/client');
 const isEuCountry  = require('../common/country_base').isEuCountry;
 const State        = require('../../_common/storage').State;
+const LocalStore   = require('../../_common/storage').LocalStore;
 
 const Footer = (() => {
     const onLoad = () => {
@@ -28,16 +29,25 @@ const Footer = (() => {
     };
     
     const displayNotification = (message) => {
-        const $status_notification = $('#status_notification');
-        const $status_message_text = $('#status_notification_text');
-        const $close_icon = $('#status_notification_close');
+        const last_closed_time = (LocalStore.get('status_notification_close_time') || 0);
+        const time_difference = Math.abs(Date.now() - last_closed_time);
+        const required_period = 30 * 60 * 1000;
 
-        $status_notification.css('display', 'flex');
-        $status_message_text.html(message);
+        if (time_difference > required_period || message !== LocalStore.get('status_notification_message')) {
+            const $status_message_text = $('#status_notification_text');
+            const $close_icon = $('#status_notification_close');
+            const $status_notification = $('#status_notification');
 
-        $close_icon.off('click').on('click', () => {
-            $status_notification.slideUp(200);
-        });
+            $status_notification.css('display', 'flex');
+            $status_message_text.html(message);
+            $close_icon
+                .off('click')
+                .on('click', () => {
+                    $status_notification.slideUp(200);
+                    LocalStore.set('status_notification_close_time', Date.now());
+                });
+            LocalStore.set('status_notification_message', message);
+        }
     };
 
     return {
