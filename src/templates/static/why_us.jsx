@@ -142,7 +142,7 @@ const WhyUs = () => (
                         </div>
                         <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
                             <img className='responsive' src={it.url_for('images/pages/home/awards/mena-2016.svg')} alt='16th Mena Financial Forum & Expo 2016' />
-                            <span className='caption'>{it.L('16th Mena Financial Forum & Expo')}</span>
+                            <span className='caption'>{it.L('16th MENA Financial Forum & Expo')}</span>
                         </div>
                         <div className='award-icon gr-padding-20 align-self-center horizontal-margin'>
                             <img className='responsive' src={it.url_for('images/pages/home/awards/opm-2017.svg')} alt='Online Personal Wealth Awards 2017' />
