@@ -1,24 +1,34 @@
-// list of trade's options that should be used in query string of trade page url.
-export const allowed_query_string_variables = [
-    'amount',
-    'barrier_1',
-    'barrier_2',
-    'basis',
-    'contract_start_type',
-    'contract_type',
-    'duration',
-    'duration_unit',
-    'expiry_date',
-    'expiry_type',
-    'last_digit',
-    'start_date',
-    'symbol',
-];
+import ContractType from '../Helpers/contract_type';
 
-export const non_proposal_query_string_variable = [
-    'contract_start_type',
-    'expiry_type',
-];
+// list of trade's options that should be used in query string of trade page url.
+export const getAllowedQueryStringVariables = (start_date) => {
+    const { contract_start_type } = ContractType.getStartType(start_date);
+    return [
+        'amount',
+        'barrier_1',
+        'barrier_2',
+        'basis',
+        'contract_start_type',
+        'contract_type',
+        'duration',
+        'duration_unit',
+        'expiry_date',
+        'expiry_type',
+        'last_digit',
+        'start_date',
+        ...(contract_start_type === 'forward' ? ['start_time'] : []),
+        'symbol',
+    ];
+};
+
+export const getNonProposalQueryStringVariables = (start_date) => {
+    const { contract_start_type } = ContractType.getStartType(start_date);
+    return [
+        'contract_start_type',
+        'expiry_type',
+        ...(contract_start_type === 'forward' ? ['start_time'] : []),
+    ];
+};
 
 export const proposal_properties_alternative_names = {
     barrier    : is_digit => is_digit ? 'last_digit' : 'barrier_1',

@@ -240,46 +240,4 @@ export default class BaseStore {
             this.validateProperty(p, this[p]);
         });
     }
-
-    @action.bound
-    onSwitchAccount(listener) {
-        this.switchAccountDisposer = when(
-            () => this.root_store.client.switch_broadcast,
-            async () => {
-                try {
-                    const result = this.switch_account_listener();
-                    if (result && result.then && typeof result.then === 'function') {
-                        result.then(() => {
-                            this.root_store.client.switchEndSignal();
-                            this.onSwitchAccount(this.switch_account_listener);
-                        });
-                    } else {
-                        throw new Error('Switching account listeners are required to return a promise.');
-                    }
-                } catch (error) {
-                    // there is no listener currently active. so we can just ignore the error raised from treating
-                    // a null object as a function. Although, in development mode, we throw a console error.
-                    if (!isProduction()) {
-                        console.error(error); // eslint-disable-line
-                    }
-                }
-            },
-        );
-        this.switch_account_listener = listener;
-    }
-
-    @action.bound
-    disposeSwitchAccount() {
-        if (typeof this.switchAccountDisposer === 'function') {
-            this.switchAccountDisposer();
-        }
-        this.switch_account_listener = null;
-    }
-
-    @action.bound
-    onUnmount() {
-        this.disposeSwitchAccount();
-    }
-
 }
-

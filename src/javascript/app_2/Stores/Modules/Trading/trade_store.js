@@ -18,8 +18,9 @@ import URLHelper                         from 'Utils/URL/url_helper';
 import { processPurchase }               from './Actions/purchase';
 import * as Symbol                       from './Actions/symbol';
 import {
-    allowed_query_string_variables,
-    non_proposal_query_string_variable } from './Constants/query_string';
+    getAllowedQueryStringVariables,
+    getNonProposalQueryStringVariables,
+}                                        from './Constants/query_string';
 import getValidationRules                from './Constants/validation_rules';
 import { setChartBarrier }               from './Helpers/chart';
 import ContractType                      from './Helpers/contract_type';
@@ -93,11 +94,11 @@ export default class TradeStore extends BaseStore {
     };
 
     constructor({ root_store }) {
-        URLHelper.pruneQueryString(allowed_query_string_variables);
+        URLHelper.pruneQueryString(getAllowedQueryStringVariables());
 
         super({
             root_store,
-            session_storage_properties: allowed_query_string_variables,
+            session_storage_properties: getAllowedQueryStringVariables(),
             validation_rules          : getValidationRules(),
         });
 
@@ -115,6 +116,15 @@ export default class TradeStore extends BaseStore {
             () => [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
             () => {
                 this.changeDurationValidationRules();
+            },
+        );
+        // Adds intercept to update query strings and session storage properties 'start_time with '00:00'
+        reaction(
+            () => this.contract_start_type,
+            () => {
+                if (this.contract_start_type === 'spot') {
+                    this.start_time = '00:00';
+                }
             },
         );
     }
@@ -233,7 +243,7 @@ export default class TradeStore extends BaseStore {
 
                 // Add changes to queryString of the url
                 if (
-                    allowed_query_string_variables.indexOf(key) !== -1 &&
+                    getAllowedQueryStringVariables(this.start_date).indexOf(key) !== -1 &&
                     this.is_trade_component_mounted
                 ) {
                     URLHelper.setQueryParam({ [key]: new_state[key] });
@@ -319,7 +329,7 @@ export default class TradeStore extends BaseStore {
             URLHelper.pruneQueryString(
                 [
                     ...proper_proposal_params_for_query_string,
-                    ...non_proposal_query_string_variable,
+                    ...getNonProposalQueryStringVariables(this.start_date),
                 ],
             );
 
@@ -361,7 +371,7 @@ export default class TradeStore extends BaseStore {
         // Update the url's query string by default values of the store
         const query_params = URLHelper.updateQueryString(
             this,
-            allowed_query_string_variables,
+            getAllowedQueryStringVariables(this.start_date),
             this.is_trade_component_mounted,
         );
 
