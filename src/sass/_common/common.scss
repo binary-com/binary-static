@@ -690,7 +690,6 @@ label + input {
         }
         td {
             display: block;
-            text-align: left !important;
 
             &:before {
                 content: attr(datath);
