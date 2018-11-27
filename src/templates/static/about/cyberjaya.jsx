@@ -34,15 +34,15 @@ const Cyberjaya = () =>  (
                             images={[
                                 {
                                     url    : 'images/pages/careers/cyberjaya/companies.jpg',
-                                    caption: {it.L('As a high-tech knowledge hub, Cyberjaya enjoys the presence of several multinational companies and private universities. This has created a vibrant, thriving community thanks to the many expats and international students who call Cyberjaya home.')},
+                                    caption: `${it.L('As a high-tech knowledge hub, Cyberjaya enjoys the presence of several multinational companies and private universities. This has created a vibrant, thriving community thanks to the many expats and international students who call Cyberjaya home.')}`,
                                 },
                                 {
                                     url    : 'images/pages/careers/cyberjaya/food.jpg',
-                                    caption: {it.L('If you call yourself a foodie, you’ll be blown away by the sheer number of choices in town. From Middle Eastern, Indian, Japanese, and international cuisine to essential local fare such as Malay, Chinese, and mamak — you can expect to satisfy any cravings you may have.')},
+                                    caption: `${it.L('If you call yourself a foodie, you’ll be blown away by the sheer number of choices in town. From Middle Eastern, Indian, Japanese, and international cuisine to essential local fare such as Malay, Chinese, and mamak — you can expect to satisfy any cravings you may have.')}`,
                                 },
                                 {
                                     url    : 'images/pages/careers/cyberjaya/lower-cost-living.jpg',
-                                    caption: {it.L('Malaysia\'s lower cost of living compared to most western countries means that you can enjoy a high quality of life. You’ll also find easy access to world-class healthcare, plus several international schools, colleges, and universities that offer globally-recognised programmes.')},
+                                    caption: `${it.L('Malaysia\'s lower cost of living compared to most western countries means that you can enjoy a high quality of life. You’ll also find easy access to world-class healthcare, plus several international schools, colleges, and universities that offer globally-recognised programmes.')}`,
                                 },
                             ]}
                         />
