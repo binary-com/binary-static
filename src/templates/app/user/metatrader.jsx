@@ -487,16 +487,16 @@ const Metatrader = () => (
                                         <h3 className='secondary-color'>{it.L('How to manage your funds')}</h3>
                                         <p className='hint'>{it.L('Deposits and withdrawals for your MetaTrader 5 account always pass through your binary options account.')}</p>
                                         <div className='gr-row'>
-                                            <div className='gr-5'>
+                                            <div className='gr-5 gr-no-gutter-m'>
                                                 <img src={it.url_for('images/pages/metatrader/dashboard/binary_wallet.svg')} />
                                                 <div className='binary-account gr-padding-10' />
                                                 <div className='binary-balance gr-padding-10 gr-parent' />
                                                 <a className='secondary-color hint' href={it.url_for('cashier')}>{it.L('Add funds')}</a>
                                             </div>
-                                            <div className='gr-2 gr-padding-20'>
+                                            <div className='gr-2 gr-padding-20 gr-no-gutter-m'>
                                                 <img src={it.url_for('images/pages/metatrader/dashboard/transfer.svg')} />
                                             </div>
-                                            <div className='gr-5'>
+                                            <div className='gr-5 gr-no-gutter-m gr-gutter-left-m'>
                                                 <img src={it.url_for('images/pages/metatrader/dashboard/mt5_wallet.svg')} />
                                                 <div className='mt5-account gr-padding-10' />
                                                 <div className='mt5-balance gr-padding-10 gr-parent' />
