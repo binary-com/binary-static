@@ -18,7 +18,7 @@ const Cfds = () => (
                         id='sidebar-nav'
                         items={[
                             { id: 'what-cfds-trading',      href: '#what-cfds-trading',      text: it.L('What is CFD trading') },
-                            { id: 'how-trade-cfds',         href: '#how-trade-cfds',         text: it.L('How to trade CFDs')} ,
+                            { id: 'how-trade-cfds',         href: '#how-trade-cfds',         text: it.L('How to trade CFDs') } ,
                             { id: 'margin-policy',          href: '#margin-policy',          text: it.L('CFD margin policy') },
                             { id: 'contract-specification', href: '#contract-specification', text: it.L('CFD contract specifications') },
                         ]}
@@ -53,7 +53,7 @@ const Cfds = () => (
                     <HeaderSecondary header={it.L('How to calculate your profits and losses')} />
                     <p>{it.L('Let\'s say a US 100 contract is worth USD 1 per point in the underlying asset. If you decide to \'go long\' on the US 100, and the asset price rises by 10 points, that represents a USD 10 profit for you.')}</p>
                     <p>{it.L('However, if the asset price falls by 10 points, that represents a USD 10 loss for you.')}</p>
-                    <p>{it.L('To learn more, please read our <a href=\'[_1]\'>CFD contract specifications</a>.', '#contract-specification' )}</p>
+                    <p>{it.L('To learn more, please read our <a href=\'[_1]\'>CFD contract specifications</a>.', '#contract-specification')}</p>
 
                     <HeaderSecondary header={it.L('How to close a position')} />
                     <p>{it.L('When you decide to close an open contract, you only need to take the opposite position in order to close the contract.')}</p>

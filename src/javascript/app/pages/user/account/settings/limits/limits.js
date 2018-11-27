@@ -8,7 +8,9 @@ const Limits = (() => {
                 if (response.error) {
                     LimitsInit.limitsError(response.error);
                 } else {
-                    LimitsInit.limitsHandler(response, response_get_account_status);
+                    BinarySocket.send({ active_symbols: 'brief' }).then((response_active_symbols) => { // this is to get localized texts for the name of the market_specific limits
+                        LimitsInit.limitsHandler(response, response_get_account_status, response_active_symbols);
+                    });
                 }
             });
         });

@@ -1,0 +1,352 @@
+// Dark Theme for Global Layout
+body.dark, .theme-wrapper.dark {
+    background: $COLOR_BLUE;
+
+    header, footer, .app-contents {
+        background: $COLOR_BLUE;
+    }
+    header {
+        border-color: $COLOR_BRANDBLUE_85;
+
+        .menu-items {
+            .menu-links a {
+                &.active {
+                    span {
+                        color: $COLOR_WHITE;
+                    }
+                    &:after {
+                        background-color: $COLOR_WHITE;
+                    }
+                }
+                &:hover {
+                    background-color: $COLOR_BRANDBLUE_85;
+                }
+                span {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+            .menu-left .binary-logo, .menu-right {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+            .menu-right .acc-balance-container {
+                .acc-balance {
+                    .acc-info {
+                        p {
+                            color: $COLOR_BRANDBLUE_40;
+                        }
+                        &:hover:not(.show) {
+                            background-color: $COLOR_BRANDBLUE_85;
+                        }
+                        &.show {
+                            p {
+                                color: $COLOR_WHITE;
+                            }
+                            &:after {
+                                background: $COLOR_WHITE;
+                            }
+                        }
+                    }
+                    .acc-balance-amount {
+                        border-color: $COLOR_BRANDBLUE_85;
+                        color: $COLOR_WHITE;
+
+                        .symbols {
+                            background: $COLOR_BLUE;
+                        }
+                    }
+                }
+            }
+        }
+        .inkbar {
+            background-color: $COLOR_WHITE;
+        }
+    }
+    .app-contents {
+        color: $COLOR_WHITE;
+        background: $COLOR_BLUE;
+
+        fieldset {
+            background: $COLOR_BRANDBLUE_95;
+            color: $COLOR_WHITE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            div.fieldset-header {
+                span.field-info.left {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+            input, select {
+                background: $COLOR_BLUE;
+                color: $COLOR_WHITE;
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+            div.submit-section button.btn:disabled {
+                box-shadow: 0 2px 2px 0 $COLOR_BRANDBLUE_85;
+                background: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_75;
+            }
+            .symbols {
+                color: $COLOR_WHITE;
+                background: $COLOR_BRANDBLUE_95;
+                border-radius: 0;
+            }
+        }
+        div.purchase-wrapper {
+            div.purchase-error {
+                background: $COLOR_BRANDBLUE_95;
+                border-color: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_40;
+
+                a {
+                    color: $COLOR_BRANDBLUE_40;
+
+                    &:hover {
+                        color: $COLOR_WHITE;
+                        font-weight: 500;
+                    }
+                }
+                div.purchase-result-wrapper {
+                    color: $COLOR_WHITE;
+
+                    span.label {
+                        color: $COLOR_BRANDBLUE_40;
+                    }
+                }
+                div.purchase-login-wrapper {
+                    color: $COLOR_WHITE;
+                }
+            }
+            fieldset.purchase-option div.box .left-column .type-wrapper {
+                background: $COLOR_BRANDBLUE_75;
+
+                .type {
+                    path, rect {
+                        fill: $COLOR_WHITE;
+
+                        &.transparent {
+                            fill: $COLOR_BRANDBLUE_75;
+                        }
+                    }
+                    .stroke-white {
+                        stroke: $COLOR_WHITE;
+                    }
+                }
+            }
+            div.purchase-lock-container {
+                background: $COLOR_BRANDBLUE_95;
+                border-color: $COLOR_BRANDBLUE_85;
+
+                .lock-container svg.ic-lock {
+                    rect, path {
+                        stroke: $COLOR_WHITE;
+                    }
+                    circle {
+                        fill: $COLOR_WHITE;
+                    }
+                }
+                h4 {
+                    color: $COLOR_WHITE;
+                }
+                span.lock-message {
+                    background: $COLOR_BRANDBLUE_40;
+                    color: $COLOR_BRANDBLUE_95;
+                }
+                button.btn {
+                    background: transparent;
+                }
+            }
+            .error-info-wrapper span {
+                color: $COLOR_WHITE;
+            }
+        }
+        .portfolio.container {
+            background: $COLOR_BLUE;
+        }
+        .portfolio-empty, .statement-empty {
+            span {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            button.btn span {
+                color: unset;
+            }
+        }
+        .statement.container {
+            .statement-filter {
+                background: $COLOR_BLUE;
+                color: $COLOR_BRANDBLUE_40;
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+            .statement__content {
+                background: $COLOR_BLUE;
+            }
+        }
+        .table {
+            border-color: $COLOR_BRANDBLUE_85;
+
+            &__head, &__foot {
+                background: $COLOR_BRANDBLUE_95;
+            }
+            &__head, &__foot, &__row {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+            &__body {
+                a.table__row:hover {
+                    background: $COLOR_BRANDBLUE_85;
+                }
+                .table__row {
+                    &, &:active, &:visited {
+                        color: $COLOR_BRANDBLUE_40;
+                    }
+                }
+            }
+            &__cell {
+                color: $COLOR_BRANDBLUE_40;
+            }
+        }
+        .card-list__card {
+            background-color: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+        }
+        .statement, .portfolio {
+            &-card__header {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+        }
+        // TODO: refactor to inline SVG and change colors with CSS
+        .portfolio-card {
+            &__purchase:before {
+                background-image: url('../images/portfolio/ic_purchase_dark.svg');
+            }
+            &__payout:before {
+                background-image: url('../images/statement/ic_payout_dark.svg');
+            }
+            &__indicative--price-stable:before {
+                background-image: url('../images/portfolio/ic_price_stable_dark.svg');
+            }
+        }
+        .statement-card {
+            &__payout:before {
+                background-image: url('../images/statement/ic_payout_dark.svg');
+            }
+            &__balance:before {
+                background-image: url('../images/statement/ic_wallet_dark.svg');
+            }
+        }
+        .login-message-wrapper {
+            .message a {
+                color: $COLOR_BRANDBLUE_40;
+
+                &:hover {
+                    color: $COLOR_WHITE;
+                }
+            }
+        }
+        .chart-container {
+            .cq-context {
+                div.cq-chart-controls {
+                    border: none;
+                    border-right: 1px solid $COLOR_BRANDBLUE_85;
+                    border-top: 1px solid $COLOR_BRANDBLUE_85;
+
+                    @media (max-width: 768px) {
+                        border: 1px solid $COLOR_BRANDBLUE_85;
+                    }
+                }
+            }
+            .cq-modal-dropdown .cq-categorical-display .ic-icon.icon-close-menu {
+                svg {
+                    g path {
+                        fill: $COLOR_BRANDBLUE_40;
+                    }
+                }
+            }
+        }
+        .mobile-widget {
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .fieldset-minimized {
+                color: $COLOR_BRANDBLUE_40;
+
+                &__basis {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        .error-container p {
+            color: $COLOR_BRANDBLUE_40;
+        }
+    }
+    footer {
+        border-color: $COLOR_BRANDBLUE_85;
+        color: $COLOR_BRANDBLUE_40;
+
+        .footer-links a {
+            span {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            &.active, &:hover {
+                background: $COLOR_BRANDBLUE_85;
+
+                &:after {
+                    background: $COLOR_WHITE;
+                }
+            }
+        }
+        .server-time, .network-status-wrapper {
+            border-color: $COLOR_BRANDBLUE_85;
+        }
+    }
+    // inline trade-types icons
+    .type-wrapper {
+        background: $COLOR_BRANDBLUE_75;
+
+        .type {
+            path, rect {
+                fill: $COLOR_WHITE;
+
+                &.transparent {
+                    fill: $COLOR_BRANDBLUE_75;
+                }
+            }
+            .stroke-white {
+                stroke: $COLOR_WHITE;
+            }
+        }
+    }
+    // tooltip
+    span.tooltip i.question:after {
+        content: url('../images/common/tooltip/ic_tooltip_question_dark.svg ');
+    }
+    // common inline icons
+    .inline-icon {
+        @include colorIcon($COLOR_BRANDBLUE_40, none);
+
+        &.active {
+            @include colorIcon($COLOR_BLUE, $COLOR_WHITE, $COLOR_WHITE);
+        }
+        &.disabled {
+            @include colorIcon($COLOR_BRANDBLUE_75, none);
+        }
+    }
+    .barspinner {
+        @extend .barspinner.white;
+    }
+    .card-list {
+        &__card {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            div[class*='-card__header'] {
+                background: $COLOR_BRANDBLUE_95;
+                border-color: $COLOR_BRANDBLUE_85;
+                color: $COLOR_BRANDBLUE_40;
+            }
+            div[class*='-card__body'] {
+                color: $COLOR_BRANDBLUE_40;
+            }
+        }
+    }
+}

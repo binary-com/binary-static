@@ -1,0 +1,227 @@
+.acc-balance-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .acc-balance {
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .acc-switcher-container {
+            position: relative;
+            height: 100%;
+        }
+        .acc-info {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            cursor: pointer;
+
+            &:hover:not(.show) {
+                background: $COLOR_BRANDBLUE_5;
+            }
+            &.show {
+                .select-arrow {
+                    transform: rotate(180deg);
+                }
+                p.acc-balance-id, p.acc-balance-type {
+                    font-weight: 500;
+                }
+                &:after {
+                    content: '';
+                    height: 2px;
+                    width: 100%;
+                    background: $COLOR_BLUE;
+                    position: absolute;
+                    top: calc(100% - 2px);
+                    left: 0;
+                }
+            }
+            p.acc-balance-id, p.acc-balance-type {
+                pointer-events: none;
+                line-height: 0.5;
+                color: $COLOR_LIGHT_BLACK;
+                font-size: 0.875rem; //stylelint-disable-line number-max-precision
+                margin: 0.5em 1rem;
+                font-weight: 300;
+                text-align: center;
+                padding-right: 16px;
+
+                @media (max-width: 768px) {
+                    @include interpolate(font-size, 320px, 1440px, 10px, 14px);
+                }
+            }
+            .select-arrow {
+                pointer-events: none;
+                position: absolute;
+                top: 16px;
+                right: 8px;
+                line-height: 1;
+                transition: transform 0.25s ease;
+                transform: rotate(0);
+                transform-origin: 50% 45%;
+                color: $COLOR_GRAY;
+                font-size: 1.1rem;
+            }
+        }
+        p.acc-balance-amount {
+            line-height: 100%;
+            color: $COLOR_LIGHT_BLACK;
+            font-size: 1rem;
+            padding: 8px 1rem;
+            font-weight: 500;
+            margin: 0;
+            text-align: center;
+            border-left: 1px solid $COLOR_GRAY;
+
+            @media (max-width: 768px) {
+                @include interpolate(font-size, 320px, 1440px, 10px, 14px);
+            }
+        }
+    }
+    button.btn {
+        margin: 0 16px 0 4px;
+        @media (max-width: 768px) {
+            margin: 0 8px 0 4px;
+        }
+    }
+}
+
+.acc-switcher {
+    &-wrapper {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        background: $COLOR_WHITE;
+        border: 1px solid $COLOR_GRAY;
+        transform: translateY(-20px);
+        transition: transform 0.25s ease, opacity 0.25s linear;
+        right: 0;
+        top: calc(100% + 4px);
+        width: 185px;
+        border-radius: $BORDER_RADIUS;
+
+        &-enter, &-enter-done {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        &-exit {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-20px);
+        }
+    }
+    &-list {
+        height: 100%;
+        border-radius: $BORDER_RADIUS;
+
+        .acc-switcher-account {
+            cursor: pointer;
+            padding: 12px 16px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .acc-switcher-id {
+                font-weight: 300;
+                font-size: 0.75rem;
+                line-height: 0.5;
+            }
+            .acc-switcher-type {
+                font-size: 10px;
+                line-height: 0.5;
+                text-transform: uppercase;
+                background: $COLOR_GRAY;
+                border-radius: $BORDER_RADIUS;
+                text-align: center;
+                padding: 5px 0;
+                width: 32px;
+            }
+            &:hover {
+                background: $COLOR_BRANDBLUE_5;
+            }
+            &:nth-last-child(2) {
+                border-bottom: 1px solid $COLOR_GRAY;
+            }
+        }
+        .acc-button {
+            padding: 8px;
+            border-bottom: 1px solid $COLOR_GRAY;
+
+            button.btn {
+                margin: 0;
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+        .acc-logout {
+            cursor: pointer;
+            font-size: 12px;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .inline-icon {
+                width: 16px;
+                height: auto;
+                margin-left: 8px;
+            }
+            &:hover {
+                background: $COLOR_BRANDBLUE_5;
+            }
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .acc-switcher {
+        &-wrapper {
+            background: $COLOR_BRANDBLUE_95;
+            border-color: $COLOR_BRANDBLUE_85;
+        }
+        &-items {
+            background: $COLOR_BRANDBLUE_95;
+            border-color: $COLOR_BRANDBLUE_85;
+        }
+        &-account:hover {
+            background-color: $COLOR_BRANDBLUE_85;
+        }
+        &-list {
+            .acc-switcher-account {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+            .acc-switcher-id {
+                color: $COLOR_BRANDBLUE_40;
+            }
+            .acc-switcher-type {
+                color: $COLOR_WHITE;
+                background: $COLOR_BRANDBLUE_75;
+            }
+            .acc-button {
+                border-color: $COLOR_BRANDBLUE_85;
+            }
+            .acc-logout {
+                border-color: $COLOR_BRANDBLUE_85;
+
+                span {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+                &:hover {
+                    background-color: $COLOR_BRANDBLUE_85;
+                }
+            }
+        }
+        &-header {
+            color: $COLOR_BRANDBLUE_40;
+        }
+    }
+}

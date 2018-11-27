@@ -6,7 +6,7 @@ const VideoFacility = () => {
 
     return (
         <React.Fragment>
-            < div className='static_full'>
+            <div className='static_full'>
                 <h1>{it.L('Video Room Facility')}</h1>
 
                 <div id='loading'><Loading /></div>

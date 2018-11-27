@@ -1,20 +1,23 @@
-const Contract           = require('./contract');
-const getLookBackFormula = require('./lookback').getFormula;
-const isLookback         = require('./lookback').isLookback;
-const isCallputspread    = require('./callputspread').isCallputspread;
-const Symbols            = require('./symbols');
-const Tick               = require('./tick');
-const TickDisplay        = require('./tick_trade');
-const updateValues       = require('./update_values');
-const Client             = require('../../base/client');
-const BinarySocket       = require('../../base/socket');
-const formatMoney        = require('../../common/currency').formatMoney;
-const CommonFunctions    = require('../../../_common/common_functions');
-const localize           = require('../../../_common/localize').localize;
-const padLeft            = require('../../../_common/string_util').padLeft;
-const urlFor             = require('../../../_common/url').urlFor;
-const createElement      = require('../../../_common/utility').createElement;
-const getPropertyValue   = require('../../../_common/utility').getPropertyValue;
+const Contract                 = require('./contract');
+const getLookBackFormula       = require('./lookback').getFormula;
+const isLookback               = require('./lookback').isLookback;
+const isCallputspread          = require('./callputspread').isCallputspread;
+const Symbols                  = require('./symbols');
+const Tick                     = require('./tick');
+const TickDisplay              = require('./tick_trade');
+const updateValues             = require('./update_values');
+const Client                   = require('../../base/client');
+const Header                   = require('../../base/header');
+const BinarySocket             = require('../../base/socket');
+const formatMoney              = require('../../common/currency').formatMoney;
+const CommonFunctions          = require('../../../_common/common_functions');
+const localize                 = require('../../../_common/localize').localize;
+const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
+const padLeft                  = require('../../../_common/string_util').padLeft;
+const urlFor                   = require('../../../_common/url').urlFor;
+const createElement            = require('../../../_common/utility').createElement;
+const getPropertyValue         = require('../../../_common/utility').getPropertyValue;
+const template                 = require('../../../_common/utility').template;
 
 /*
  * Purchase object that handles all the functions related to
@@ -34,22 +37,23 @@ const Purchase = (() => {
         purchase_data = details;
         status        = '';
 
-        const receipt            = details.buy;
-        const passthrough        = details.echo_req.passthrough;
-        const container          = CommonFunctions.getElementById('contract_confirmation_container');
-        const message_container  = CommonFunctions.getElementById('confirmation_message');
-        const heading            = CommonFunctions.getElementById('contract_purchase_heading');
-        const descr              = CommonFunctions.getElementById('contract_purchase_descr');
-        const barrier_element    = CommonFunctions.getElementById('contract_purchase_barrier');
-        const reference          = CommonFunctions.getElementById('contract_purchase_reference');
-        const chart              = CommonFunctions.getElementById('trade_tick_chart');
-        const payout             = CommonFunctions.getElementById('contract_purchase_payout');
-        const cost               = CommonFunctions.getElementById('contract_purchase_cost');
-        const profit             = CommonFunctions.getElementById('contract_purchase_profit');
-        const spots              = CommonFunctions.getElementById('contract_purchase_spots');
-        const confirmation_error = CommonFunctions.getElementById('confirmation_error');
-        const contracts_list     = CommonFunctions.getElementById('contracts_list');
-        const button             = CommonFunctions.getElementById('contract_purchase_button');
+        const receipt             = details.buy;
+        const passthrough         = details.echo_req.passthrough;
+        const container           = CommonFunctions.getElementById('contract_confirmation_container');
+        const message_container   = CommonFunctions.getElementById('confirmation_message');
+        const heading             = CommonFunctions.getElementById('contract_purchase_heading');
+        const descr               = CommonFunctions.getElementById('contract_purchase_descr');
+        const barrier_element     = CommonFunctions.getElementById('contract_purchase_barrier');
+        const reference           = CommonFunctions.getElementById('contract_purchase_reference');
+        const chart               = CommonFunctions.getElementById('trade_tick_chart');
+        const payout              = CommonFunctions.getElementById('contract_purchase_payout');
+        const cost                = CommonFunctions.getElementById('contract_purchase_cost');
+        const profit              = CommonFunctions.getElementById('contract_purchase_profit');
+        const spots               = CommonFunctions.getElementById('contract_purchase_spots');
+        const confirmation_error  = CommonFunctions.getElementById('confirmation_error');
+        const authorization_error = CommonFunctions.getElementById('authorization_error_container');
+        const contracts_list      = CommonFunctions.getElementById('contracts_list');
+        const button              = CommonFunctions.getElementById('contract_purchase_button');
 
         const error      = details.error;
         const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
@@ -60,23 +64,31 @@ const Purchase = (() => {
         if (error) {
             container.style.display = 'block';
             message_container.hide();
-            confirmation_error.show();
-            let message = error.message;
-            if (/RestrictedCountry/.test(error.code)) {
-                let additional_message = '';
-                if (/FinancialBinaries/.test(error.code)) {
-                    additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/volidx-markets')}" >`, '</a>']);
-                } else if (/Random/.test(error.code)) {
-                    additional_message = localize('Try our other markets.');
+            if (/AuthorizationRequired/.test(error.code)) {
+                authorization_error.setVisibility(1);
+                const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
+                authorization_error_btn_login.removeEventListener('click', loginOnClick);
+                authorization_error_btn_login.addEventListener('click', loginOnClick);
+            } else {
+                confirmation_error.setVisibility(1);
+                let message = error.message;
+                if (/RestrictedCountry/.test(error.code)) {
+                    let additional_message = '';
+                    if (/FinancialBinaries/.test(error.code)) {
+                        additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
+                    } else if (/Random/.test(error.code)) {
+                        additional_message = localize('Try our other markets.');
+                    }
+                    message = `${error.message}. ${additional_message}`;
                 }
-                message = `${error.message}. ${additional_message}`;
+                CommonFunctions.elementInnerHtml(confirmation_error, message);
             }
-            CommonFunctions.elementInnerHtml(confirmation_error, message);
         } else {
             CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';
             message_container.show();
-            confirmation_error.hide();
+            authorization_error.setVisibility(0);
+            confirmation_error.setVisibility(0);
 
             CommonFunctions.elementTextContent(heading, localize('Contract Confirmation'));
             CommonFunctions.elementTextContent(descr, receipt.longcode);
@@ -85,7 +97,7 @@ const Purchase = (() => {
 
             const currency = Client.get('currency');
             let formula, multiplier;
-            const {contract_type} = passthrough;
+            const { contract_type } = passthrough;
             if (isLookback(contract_type)) {
                 multiplier = formatMoney(currency, passthrough.amount, false, 3, 2);
                 formula    = getLookBackFormula(contract_type, multiplier);
@@ -196,7 +208,7 @@ const Purchase = (() => {
                     status = contract.status;
                     profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
-                    if (contract.sell_spot_time && +contract.sell_spot_time < contract.date_expiry) {
+                    if (contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
                         TickDisplay.updateChart({ is_sold: true }, contract);
                     }
                     // force to sell the expired contract, in order to get the final status
@@ -209,6 +221,8 @@ const Purchase = (() => {
     };
 
     const makeBold = d => `<strong>${d}</strong>`;
+
+    const loginOnClick = (e) => Header.loginOnClick(e);
 
     const updateSpotList = () => {
         const $spots = $('#contract_purchase_spots');
@@ -227,7 +241,17 @@ const Purchase = (() => {
                 }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
                     const is_won = +tick_config.selected_tick_number === +tick_config.winning_tick_number;
-                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), localize(`Tick [_1] is ${is_won ? '' : 'not'} the ${tick_config.is_tick_high ? 'highest' : 'lowest'} tick`, [tick_config.selected_tick_number]));
+                    let localized_text;
+                    if (tick_config.is_tick_high) {
+                        localized_text = is_won
+                            ? localizeKeepPlaceholders('Tick [_1] is the highest tick')
+                            : localizeKeepPlaceholders('Tick [_1] is not the highest tick');
+                    } else {
+                        localized_text = is_won
+                            ? localizeKeepPlaceholders('Tick [_1] is the lowest tick')
+                            : localizeKeepPlaceholders('Tick [_1] is not the lowest tick');
+                    }
+                    CommonFunctions.elementTextContent(CommonFunctions.getElementById('contract_highlowtick'), template(localized_text, [tick_config.selected_tick_number]));
                 }
             }
         }
@@ -264,7 +288,7 @@ const Purchase = (() => {
                     }
                 }
 
-                const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row': ''}` });
+                const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row' : ''}` });
 
                 const el1 = createElement('div', { class: 'col', text: `${localize('Tick')} ${current_tick_count}` });
                 fragment.appendChild(el1);

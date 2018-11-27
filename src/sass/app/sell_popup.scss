@@ -64,11 +64,14 @@
             #sell_details_chart_wrapper {
                 border-right: 1px solid $COLOR_DARK_GRAY;
                 margin-right: -1px;
-                padding: 0;
+                padding: 10px 0;
 
                 .error-msg {
                     text-align: center;
                     margin: 1em 0;
+                }
+                @media screen and (max-width: 768px) {
+                    border-right: none;
                 }
             }
             #sell_details_table, #sell_details_audit {
@@ -166,9 +169,15 @@
                         line-height: 25px;
                     }
                 }
+                @media screen and (max-width: 768px) {
+                    border-left: none;
+                }
             }
             #sell_details_audit {
                 border-left: none;
+            }
+            @media only screen and (min-width: 767px) and (max-width: 768px) { /* ipad */
+                max-height: 450px;
             }
         }
     }

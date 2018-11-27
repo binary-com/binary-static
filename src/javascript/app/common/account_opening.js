@@ -6,11 +6,12 @@ const BinaryPjax         = require('../base/binary_pjax');
 const Client             = require('../base/client');
 const BinarySocket       = require('../base/socket');
 const professionalClient = require('../pages/user/account/settings/professional_client');
-const makeOption         = require('../../_common/common_functions').makeOption;
+const CommonFunctions    = require('../../_common/common_functions');
 const Geocoder           = require('../../_common/geocoder');
 const localize           = require('../../_common/localize').localize;
 const State              = require('../../_common/storage').State;
 const urlFor             = require('../../_common/url').urlFor;
+const getPropertyValue   = require('../../_common/utility').getPropertyValue;
 
 const AccountOpening = (() => {
     const redirectAccount = () => {
@@ -31,12 +32,14 @@ const AccountOpening = (() => {
     const populateForm = (form_id, getValidations, is_financial) => {
         getResidence(form_id, getValidations);
         generateBirthDate();
-        if (State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest') {
+        const landing_company  = State.getResponse('landing_company');
+        const lc_to_upgrade_to = landing_company[is_financial ? 'financial_company' : 'gaming_company'] || landing_company.financial_company;
+        CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-name'), lc_to_upgrade_to.name);
+        CommonFunctions.elementTextContent(CommonFunctions.getElementById('lc-country'), lc_to_upgrade_to.country);
+        if (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'maltainvest') {
             professionalClient.init(is_financial, false);
         }
-        if (Client.get('residence') !== 'jp') {
-            Geocoder.init(form_id);
-        }
+        Geocoder.init(form_id);
     };
 
     const getResidence = (form_id, getValidations) => {
@@ -53,13 +56,19 @@ const AccountOpening = (() => {
             const residence_value = Client.get('residence') || '';
             let residence_text    = '';
 
-            const $options = $('<div/>');
+            const $options               = $('<div/>');
+            const $options_with_disabled = $('<div/>');
             residence_list.forEach((res) => {
-                $options.append(makeOption({ text: res.text, value: res.value, is_disabled: res.disabled }));
+                $options.append(CommonFunctions.makeOption({ text: res.text, value: res.value }));
+                $options_with_disabled.append(CommonFunctions.makeOption({
+                    text       : res.text,
+                    value      : res.value,
+                    is_disabled: res.disabled,
+                }));
 
                 if (residence_value === res.value) {
                     residence_text = res.text;
-                    if (residence_value !== 'jp' && res.phone_idd && !$phone.val()) {
+                    if (res.phone_idd && !$phone.val()) {
                         $phone.val(`+${res.phone_idd}`);
                     }
                 }
@@ -85,8 +94,29 @@ const AccountOpening = (() => {
                 });
             }
 
+            if (/^(malta|maltainvest|iom)$/.test(State.getResponse('authorize.upgradeable_landing_companies'))) {
+                const $citizen = $('#citizen');
+                CommonFunctions.getElementById('citizen_row').setVisibility(1);
+                if ($citizen.length) {
+                    BinarySocket.wait('get_settings').then((response) => {
+                        const citizen = response.get_settings.citizen;
+                        if (citizen) {
+                            const txt_citizen = (residence_list.find(obj => obj.value === citizen) || {}).text;
+                            $citizen.replaceWith($('<span/>', { text: txt_citizen || citizen, 'data-value': citizen }));
+                        } else {
+                            $citizen.html($options.html()).val(residence_value);
+                        }
+                        $citizen.select2({
+                            matcher(params, data) {
+                                return SelectMatcher(params, data);
+                            },
+                        });
+                    });
+                }
+            }
+
             if ($tax_residence) {
-                $tax_residence.html($options.html()).promise().done(() => {
+                $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                     setTimeout(() => {
                         $tax_residence.select2()
                             .val(getTaxResidence() || residence_value).trigger('change')
@@ -169,10 +199,10 @@ const AccountOpening = (() => {
             { selector: '#address_city',     validations: ['req', 'letter_symbol', ['length', { min: 1, max: 35 }]] },
             { selector: '#address_state',    validations: $('#address_state').prop('nodeName') === 'SELECT' ? '' : ['letter_symbol', ['length', { min: 0, max: 35 }]] },
             { selector: '#address_postcode', validations: [Client.get('residence') === 'gb' ? 'req' : '', 'postcode', ['length', { min: 0, max: 20 }]] },
-            { selector: '#phone',            validations: ['req', 'phone', ['length', { min: 6, max: 35, value: () => $('#phone').val().replace(/^\+/, '') }]] },
+            { selector: '#phone',            validations: ['req', 'phone', ['length', { min: 8, max: 35, value: () => $('#phone').val().replace(/\D/g,'') }]] },
             { selector: '#secret_question',  validations: ['req'] },
             { selector: '#secret_answer',    validations: ['req', 'general', ['length', { min: 4, max: 50 }]] },
-            { selector: '#tnc',              validations: [['req', { message: 'Please accept the terms and conditions.' }]], exclude_request: 1 },
+            { selector: '#tnc',              validations: [['req', { message: localize('Please accept the terms and conditions.') }]], exclude_request: 1 },
 
             { request_field: 'residence',   value: Client.get('residence') },
             { request_field: 'client_type', value: () => ($('#chk_professional').is(':checked') ? 'professional' : 'retail') },
@@ -191,7 +221,7 @@ const AccountOpening = (() => {
             id;
         $(form_id).find('select, input[type=checkbox]').each(function () {
             id = $(this).attr('id');
-            if (!/^(tnc|address_state|chk_professional|chk_tax_id)$/.test(id)) {
+            if (!/^(tnc|address_state|chk_professional|chk_tax_id|citizen)$/.test(id)) {
                 validation = { selector: `#${id}`, validations: ['req'] };
                 if (id === 'not_pep') {
                     validation.exclude_request = 1;

@@ -57,7 +57,7 @@ const OpenSourceProjects = () => (
                     <List
                         id='sidebar-nav'
                         items={[
-                            { id: 'sidebar-link-section-1', href: '#open-source-projects-section', text: it.L('Open-source projects'), className: 'selected'},
+                            { id: 'sidebar-link-section-1', href: '#open-source-projects-section', text: it.L('Open-source projects'), className: 'selected' },
                             { id: 'sidebar-link-section-2', href: '#static-content',               text: it.L('Static content') },
                             { id: 'sidebar-link-section-3', href: '#perl-modules',                 text: it.L('Perl modules') },
                             { id: 'sidebar-link-section-4', href: '#translations',                 text: it.L('Translations') },
@@ -83,7 +83,6 @@ const OpenSourceProjects = () => (
                     header_2={it.L('Improve [_1]\'s front-end content', it.website_name)}
                     text={it.L('The [_1] website\'s static content (CSS, Javascript) is available as the [_2]binary-static[_3] open-source project on github. Would you like to re-skin the [_1] website, or improve browser compatibility, site rendering speed, or Javascript performance? Please fork the project and submit pull-requests of your suggested code changes.', it.website_name, '<a target=\'_blank\' href=\'https://github.com/binary-com/binary-static\' rel=\'noopener noreferrer\'>', '</a>') }
                 />
-
 
                 <Section
                     id='perl-modules'

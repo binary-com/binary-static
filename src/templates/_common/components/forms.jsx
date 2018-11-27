@@ -26,16 +26,33 @@ export const FormRow = ({
     attributes = {},
     input_prefix,
     children,
+    options,
+    default_option,
 }) => {
     const getInnerElement = () => {
         if (type === 'select') {
             return (
-                <select id={id} className={`form_input ${className||''}`} {...attributes} >
+                <select id={id} className={`form_input ${className || ''}`} {...attributes} >
                     {children}
                 </select>
             );
         }
-        if (['text', 'password', 'number', 'checkbox'].indexOf(type) !== -1) {
+        if (type === 'radio') {
+            return (
+                <div id={id} className={className}>
+                    {options.map(({ value, label: label_text, data_balloon_text }, i) => {
+                        const option_id = `${id}_option_${i}`;
+                        return (
+                            <div key={value}>
+                                <input type='radio' name={id} id={option_id} value={value} defaultChecked={value === default_option} />
+                                <label htmlFor={option_id}><span data-balloon={data_balloon_text} data-balloon-length='medium'>{label_text}</span></label>
+                            </div>
+                        );
+                    })}
+                </div>
+            );
+        }
+        if (['text', 'password', 'number', 'checkbox'].includes(type)) {
             return (
                 <React.Fragment>
                     {input_prefix}
@@ -43,7 +60,6 @@ export const FormRow = ({
                         type={type}
                         className={className}
                         id={id}
-                        maxLength={type === 'password' ? 25 : undefined}
                         {...attributes}
                     />
                     {type === 'checkbox' && spaced ?
@@ -121,7 +137,7 @@ export const SubmitButton = ({
             }
             <div className='gr-padding-10'>
                 { custom_btn_text &&
-                    <a className={`button ${custom_btn_class||''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
+                    <a className={`button ${custom_btn_class || ''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
                         <span className='button'>{custom_btn_text}</span>
                     </a>
                 }
@@ -138,9 +154,9 @@ export const SubmitButton = ({
 
     if (!no_wrapper) {
         return (
-            <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className||''}`} id={id}>
+            <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className || ''}`} id={id}>
                 { !is_centered ?
-                    <div className={`${!is_left_align? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
+                    <div className={`${!is_left_align ? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
                         {content}
                     </div> :
                     content

@@ -3,11 +3,10 @@ import React from 'react';
 const Column = ({
     header,
     image,
-    ja_hide,
     text,
     url,
 }) => (
-    <div className={`gr-3 gr-6-m gr-parent${ja_hide ? ' ja-hide' : ''}`}>
+    <div className='gr-3 gr-6-m gr-parent'>
         <div className='gr-8 gr-padding-10'>
             <a href={it.url_for(`resources/${url}`)}>
                 <img className='responsive' src={it.url_for(`images/pages/resources/${image}-icon.svg`)} />
@@ -28,7 +27,6 @@ const Resources = () => (
             <Column
                 header={it.L('Asset Index')}
                 image='asset-index'
-                ja_hide='1'
                 text={it.L('View the full list of assets, contract types and durations.')}
                 url='asset_indexws'
             />

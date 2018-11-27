@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style id="antiClickjack">body{display:none !important;}</style>
+        <script type="text/javascript">
+            if (self === top) {
+                var antiClickjack = document.getElementById("antiClickjack");
+                antiClickjack.parentNode.removeChild(antiClickjack);
+            } else {
+                top.location = self.location;
+            }
+        </script>
+        <title>Binary.com</title>
+        <meta charset="utf-8" />
+        <meta name="google-site-verification" content="Myh35QddfEArh0686LcO2zMjrgv0C7L4FCBU0k0oZvU" />
+        <script type="text/javascript">
+            var redirectTimeOut;
+            function getCookieItem(sKey) {
+                'use strict';
+                if (!sKey) { return null; }
+                return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+            }
+            function getLanguage(country) {
+                var langs = {
+                    'de': 'de|at|li',
+                    'es': 'ar|bo|cl|co|cr|cu|do|ec|sv|gt|hn|mx|ni|pa|py|pr|es|uy|ve',
+                    'fr': 'fr|ad|bj|bf|cf|cg|ga|gn|ml|mc|ne|sn|tg',
+                    'it': 'it',
+                    'ko': 'kr',
+                    'pl': 'po',
+                    'pt': 'br|mz|ao|pt|gw|pg|cv|st',
+                    'ru': 'ru|ua|by|kz',
+                    'th': 'th',
+                    'vi': 'vn',
+                    'zh_tw': 'tw|mo',
+                    'zh_cn': 'cn',
+                };
+                var conLang = 'en';
+                if(country) {
+                    Object.keys(langs).map(function(l) {
+                        if((new RegExp(langs[l], 'i')).test(country)) conLang = l;
+                    });
+                }
+                return conLang;
+            }
+            function redirect() {
+                var loginid      = localStorage.getItem('active_loginid');
+                var client_info  = JSON.parse(localStorage.getItem('client.accounts') || '{}')[loginid];
+                var is_logged_in = client_info && client_info['token'];
+                window.location.href = (lang || 'en').toLowerCase() + '/' + (is_logged_in ? 'trading' : 'home') + '.html' + window.location.search;
+            }
+            function isDelayedRedirect() {
+                if(isGtmApplicable() && !redirectTimeOut) {
+                    redirectTimeOut = setTimeout(redirect, 5000);
+                } else {
+                    clearTimeout(redirectTimeOut);
+                    redirect();
+                }
+            }
+            function isGtmApplicable() {
+                return /(www|staging)\.binary\.com/i.test(window.location.hostname);
+            }
+            function pushEvent() {
+                if(isGtmApplicable()) {
+                    dataLayer.push({
+                        'event': 'page_load',
+                        'eventCallback': function() {
+                            isDelayedRedirect();
+                        }
+                    });
+                }
+            }
+
+            if(/^https:\/\/staging\.binary\.com\/translations\//i.test(window.location.href)) {
+                window.location.href = 'ach/home.html'; // in-context translation
+            } else {
+                if(document.referrer) {
+                    localStorage.setItem('index_referrer', document.referrer);
+                }
+                var lang = getCookieItem('language');
+                if(lang) {
+                    if (/^id$/i.test(lang)) {
+                        lang = 'en';
+                    }
+                    isDelayedRedirect();
+                } else {
+                    var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
+                    ws.onopen = function(e) {
+                        ws.send(JSON.stringify({'website_status': '1'}));
+                    };
+                    ws.onmessage = function(msg) {
+                        var response = JSON.parse(msg.data);
+                        if(response.msg_type === 'website_status') {
+                            if(!response.error && response.hasOwnProperty('website_status')) {
+                                lang = getLanguage(response.website_status.clients_country);
+                            }
+                            ws.close();
+                            isDelayedRedirect();
+                        }
+                    };
+                }
+            }
+        </script>
+    </head>
+    <body onload="pushEvent()">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MZWFF7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script data-cfasync="false">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MZWFF7');</script>
+<!-- End Google Tag Manager -->
+    </body>
+</html>

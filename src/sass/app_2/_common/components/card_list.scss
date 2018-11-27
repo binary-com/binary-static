@@ -1,0 +1,17 @@
+.card-list {
+    overflow: auto; // fixes margin collapse
+
+    & &__card { // keep & for higher specificity
+        display: block;
+        text-decoration: none;
+        max-width: 450px;
+        margin: 0.6rem auto;
+        background-color: $COLOR_WHITE;
+        border: 1px solid $COLOR_GRAY;
+        border-radius: 4px;
+        color: $COLOR_BLACK;
+    }
+    a.card-list__card {
+        cursor: pointer;
+    }
+}

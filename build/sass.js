@@ -1,14 +1,32 @@
-module.exports = {
-    all: {
-        options: {
-            style: 'expanded'
-        },
+module.exports = function (grunt) {
+    const options = {
+        style: 'expanded',
+    };
+
+    const generateConfig = (src, dest) => ({
+        options,
         files: [{
             expand: true,
             cwd   : 'src/sass',
-            src   : ['*.scss'],
-            dest  : global.dist + '/css',
+            src,
+            dest,
             ext   : '.css',
         }]
-    }
+    });
+
+    const config = {
+        app  : generateConfig(['*.scss', '!app_2.scss'], `${global.dist}/css`),
+        app_2: generateConfig(['app_2.scss'],            `${global.dist_app_2}/css`),
+        get all() {
+            return {
+                options,
+                files: [
+                    ...this.app.files,
+                    ...this.app_2.files,
+                ],
+            };
+        },
+    };
+
+    return { [global.section]: config[global.section] };
 };

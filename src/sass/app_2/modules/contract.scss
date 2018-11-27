@@ -1,0 +1,338 @@
+.contract-container {
+    font-size: 0.85rem;
+    border-radius: $BORDER_RADIUS;
+    position: relative;
+
+    .contract-header {
+        max-height: 2rem;
+        overflow: hidden;
+        border-radius: 4px 4px 0 0;
+        border: 1px solid $COLOR_GRAY;
+
+        .header-wrapper {
+            transition: transform 0.4s ease;
+            transform: translateY(-32px);
+
+            .header-result, .header-purchased {
+                display: flex;
+                align-items: center;
+                padding: 0 10px;
+                color: $COLOR_WHITE;
+                font-weight: bold;
+                line-height: 2rem;
+
+                svg {
+                    display: inline-block;
+                    margin-right: 7px;
+                }
+            }
+        }
+        &.purchased {
+            .header-wrapper .header-purchased {
+                color: $COLOR_LIGHT_GREEN;
+                background-color: $COLOR_LIGHT_GRAY;
+                opacity: 1;
+                transition: opacity 0.4s linear;
+            }
+        }
+        &.won {
+            .header-wrapper {
+                transform: none;
+
+                .header-result {
+                    background-color: $COLOR_LIGHT_GREEN;
+                }
+                .header-purchased {
+                    opacity: 0;
+                }
+            }
+        }
+        &.lost {
+            .header-wrapper {
+                transform: none;
+
+                .header-result {
+                    background-color: $COLOR_LIGHT_RED;
+                }
+                .header-purchased {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+    .contract-contents {
+        padding: 10px;
+        font-size: 0.75rem;
+        border: 1px solid $COLOR_GRAY;
+        border-top-width: 0;
+        border-radius: 0 0 4px 4px;
+
+        .longcode {
+            font-weight: 300;
+            text-align: center;
+            line-height: 1.1rem;
+        }
+        .ref-number, .info-header {
+            margin-top: 10px;
+            font-weight: 300;
+            text-align: center;
+            background-color: $COLOR_LIGHT_GRAY;
+            line-height: 1.7rem;
+        }
+        .info-header {
+            font-weight: bold;
+        }
+        .info-item {
+            display: flex;
+            padding: 7px 0;
+            border-bottom: 1px solid $COLOR_GRAY;
+
+            > div {
+                align-self: center;
+
+                &:first-child {
+                    font-weight: 300;
+                    flex-grow: 1;
+                    color: $COLOR_LIGHT_BLACK;
+                }
+                &:last-child {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+$CONTRACT_INFO_BOX_PADDING: 15px;
+
+.info-box-container {
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    right: 10px;
+    transform: none;
+    opacity: 1;
+    transition: transform 0.4s ease, opacity 0.4s linear;
+
+    &-enter {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 0;
+    }
+    &-exit {
+        transform: translateY(calc(-100% - 20px));
+        opacity: 0;
+    }
+    .info-box {
+        position: relative;
+        border: 1px solid $COLOR_GRAY;
+        border-radius: $BORDER_RADIUS;
+        padding: $CONTRACT_INFO_BOX_PADDING;
+        background: rgba(255, 255, 255, 0.9);
+        font-weight: 300;
+
+        .expired {
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
+
+                .color1-fill {
+                    fill: $COLOR_LIGHT_GREEN;
+                }
+            }
+            .pl-value {
+                color: $COLOR_LIGHT_GREEN;
+                font-weight: bold;
+                font-size: 1rem;
+                line-height: 1.5rem;
+
+                .percentage {
+                    display: inline-block;
+                    margin-left: 7px;
+                }
+            }
+            &.lost {
+                .pl-value {
+                    color: $COLOR_LIGHT_RED;
+                }
+                svg .color1-fill {
+                    fill: $COLOR_LIGHT_RED;
+                }
+            }
+            .sell-info {
+                margin-right: 20px;
+                text-align: center;
+                line-height: 1.2rem;
+            }
+        }
+        .general {
+            display: flex;
+            align-items: center;
+            line-height: 1.4rem;
+
+            .values {
+                margin-left: 10px;
+                margin-right: 20px;
+                text-align: right;
+                font-weight: bold;
+
+                .profit {
+                    color: $COLOR_LIGHT_GREEN;
+                }
+                .loss {
+                    color: $COLOR_LIGHT_RED;
+                }
+            }
+            .sell {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin: -$CONTRACT_INFO_BOX_PADDING;
+                margin-left: $CONTRACT_INFO_BOX_PADDING;
+                padding: $CONTRACT_INFO_BOX_PADDING;
+                border-left: 1px solid $COLOR_GRAY;
+
+                .tooltip {
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                    line-height: 0;
+
+                    &:before {
+                        width: 350px;
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+        .digits {
+            display: flex;
+            align-items: center;
+
+            .digit-title {
+                font-weight: bold;
+                max-width: min-content;
+            }
+            .digit-list {
+                display: flex;
+                margin: 0 25px 0 10px;
+
+                .digit-info {
+                    margin: 0 4px;
+                    text-align: center;
+
+                    .digit-value {
+                        width: 32px;
+                        height: 32px;
+                        margin-bottom: 5px;
+                        border: 2px solid $COLOR_LIGHT_GREEN;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $COLOR_LIGHT_GREEN;
+                        font-size: 1rem;
+                        font-weight: bold;
+
+                        &.loss {
+                            border-color: $COLOR_LIGHT_RED;
+                            color: $COLOR_LIGHT_RED;
+                        }
+                        &.last {
+                            background-color: $COLOR_LIGHT_GREEN;
+                            color: $COLOR_WHITE;
+
+                            &.loss {
+                                background-color: $COLOR_LIGHT_RED;
+                            }
+                        }
+                        &:empty {
+                            border-color: $COLOR_DARK_WHITE;
+                        }
+                    }
+                    .tick-number {
+                        line-height: 0.6rem;
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+            .expired {
+                margin-right: -25px;
+            }
+        }
+    }
+    .message {
+        margin-top: 5px;
+        border: 1px solid $COLOR_LIGHT_RED;
+        border-radius: $BORDER_RADIUS;
+        padding: 10px;
+        background-color: rgba(244, 67, 54, 0.16);
+        display: flex;
+        align-items: center;
+
+        .message-icon {
+            margin-right: 10px;
+        }
+        .message-text {
+            flex-grow: 1;
+        }
+        .message-close {
+            cursor: pointer;
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .contract-container {
+        color: $COLOR_BRANDBLUE_40;
+
+        .contract-header {
+            border-color: $COLOR_BRANDBLUE_85;
+
+            &.purchased {
+                .header-wrapper .header-purchased {
+                    background-color: $COLOR_BRANDBLUE_95;
+                }
+            }
+            &.won {
+                .header-wrapper .header-result {
+                    background-color: $COLOR_GREEN;
+                }
+            }
+        }
+        .contract-contents {
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .ref-number, .info-header {
+                background-color: $COLOR_BRANDBLUE_95;
+            }
+            .info-item {
+                border-bottom-color: $COLOR_BRANDBLUE_85;
+
+                > div:first-child {
+                    color: $COLOR_BRANDBLUE_40;
+                }
+            }
+        }
+    }
+    .info-box-container {
+        .info-box {
+            background: rgba(42, 48, 82, 0.6);
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .general .sell {
+                border-left-color: $COLOR_BRANDBLUE_85;
+
+                .btn:disabled {
+                    background: $COLOR_BRANDBLUE_85;
+                    color: $COLOR_BRANDBLUE_75 !important;
+                }
+            }
+        }
+    }
+}

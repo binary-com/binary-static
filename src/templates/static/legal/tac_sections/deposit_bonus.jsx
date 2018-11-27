@@ -2,7 +2,7 @@ import React from 'react';
 
 const DepositBonus = () => (
     <div>
-        <h2 data-anchor>{it.L('Deposit Bonus')}</h2>
+        <h2 data-anchor='deposit-bonus'>{it.L('Deposit Bonus')}</h2>
         <p>{it.L('This bonus will be processed and credited to a client\'s account when:')}</p>
         <ol>
             <li>{it.L('The required minimum deposit has been made by the client AND')}</li>
@@ -17,7 +17,7 @@ const DepositBonus = () => (
         <p>{it.L('The company reserves the right to cancel/prohibit the use of this promotion at its own discretion at any time.')}</p>
         <a id='free-bonus' href='javascript:;' />
 
-        <h2 data-anchor>{it.L('Free Bonus')}</h2>
+        <h2 data-anchor='free-bonus'>{it.L('Free Bonus')}</h2>
         <ol>
             <li>{it.L('The bonus code can only be entered and activated upon account opening.')}</li>
             <li>{it.L('It will be released to your account upon approval.')}</li>

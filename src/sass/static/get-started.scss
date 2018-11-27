@@ -24,81 +24,18 @@
         }
     }
     .notice-circle {
-        width: 16px;
-        height: 16px;
-        border: 2px solid $COLOR_RED;
-        border-radius: 50%;
+        border-color: $COLOR_RED;
         color: $COLOR_RED;
-        line-height: 16px;
-        font-size: 14px;
-        text-align: center;
-        margin: 0 auto;
     }
-}
+    #step-2 {
+        background-image: url('../images/pages//get-started/mt5/how-to-trade-binary/step-2-bg.png');
+        height: 311px;
 
-.get-started-jp {
-    .section {
-        min-height: 224px;
-        height: calc(100% - 20px);
-        margin: 0 10px 20px;
-
-        a {
-            display: block;
-            color: $COLOR_WHITE;
-            background: $COLOR_BLACK;
-            text-decoration: none;
-
-            &:hover .section-header {
-                background: $COLOR_DARK_GREEN;
-            }
+        > div {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
         }
-        .section-header {
-            padding: 10px;
-            font-weight: normal;
-        }
-        .section-info {
-            font-size: $FONT_SIZE_N;
-        }
-    }
-    .link-size-box {
-        display: table-cell;
-        vertical-align: middle;
-        height: 36px;
-        min-width: 198px;
-        padding: 10px;
-    }
-    .section-header {
-        min-height: 75px;
-    }
-    .section-jp {
-        min-height: 0;
-        background-color: $COLOR_BLACK;
-    }
-    /* stylelint-disable selector-list-comma-newline-after, selector-list-comma-space-after */
-    #how-to-open-an-account-img, #options-basic-knowledge-img, #summary-of-specifications-img,
-    #identification-documents-img, #trading-guide-img, #pre-contract-documents-img {
-        height: 80px;
-        background: no-repeat center;
-        background-size: cover;
-    }
-    /* stylelint-enable selector-list-comma-newline-after, selector-list-comma-space-after */
-    #how-to-open-an-account-img {
-        background-image: url('../images/pages/get-started-jp/open_acc.svg');
-    }
-    #options-basic-knowledge-img {
-        background-image: url('../images/pages/get-started-jp/knowledge.svg');
-    }
-    #summary-of-specifications-img {
-        background-image: url('../images/pages/get-started-jp/summary.svg');
-    }
-    #identification-documents-img {
-        background-image: url('../images/pages/get-started-jp/id.svg');
-    }
-    #trading-guide-img {
-        background-image: url('../images/pages/get-started-jp/guide.svg');
-    }
-    #pre-contract-documents-img {
-        background-image: url('../images/pages/get-started-jp/contract.svg');
     }
 }
 

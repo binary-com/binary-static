@@ -1,10 +1,10 @@
 const Contract = require('./contract');
 const Defaults = require('./defaults');
+const localize = require('../../../_common/localize').localize;
 
-/*
+/**
  * Handles lookback option form
-**/
-
+ */
 const Lookback = (() => {
     const displayLookback = () => {
         const multiplier_element    = document.getElementById('multiplier_row');
@@ -26,15 +26,10 @@ const Lookback = (() => {
     };
 
     const getFormula = (type = '', mul) => {
-        const value_map = {
-            Multiplier: mul,
-        };
-        const regex = /Multiplier/g;
-        const replacer = (str) => value_map[str] || str;
         const formulaMapping = {
-            LBFLOATPUT : 'Multiplier x (High - Close)'.replace(regex, replacer),
-            LBFLOATCALL: 'Multiplier x (Close - Low)'.replace(regex, replacer),
-            LBHIGHLOW  : 'Multiplier x (High - Low)'.replace(regex, replacer),
+            LBFLOATPUT : `${mul} x (${localize('High')} - ${localize('Close')})`,
+            LBFLOATCALL: `${mul} x (${localize('Close')} - ${localize('Low')})`,
+            LBHIGHLOW  : `${mul} x (${localize('High')} - ${localize('Low')})`,
         };
 
         return formulaMapping[type.toUpperCase()];
@@ -44,11 +39,11 @@ const Lookback = (() => {
 
     const getBarrierLabel = (type) => {
         const barrier_map = {
-            LBFLOATCALL: ['Low'],
-            LBFLOATPUT : ['High'],
-            LBHIGHLOW  : ['High', 'Low'],
+            LBFLOATCALL: localize(['Low']),
+            LBFLOATPUT : localize(['High']),
+            LBHIGHLOW  : localize(['High', 'Low']),
         };
-        return barrier_map[type] || ['Barrier'];
+        return barrier_map[type] || localize(['Barrier']);
     };
 
     return {

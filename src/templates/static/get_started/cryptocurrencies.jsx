@@ -1,6 +1,6 @@
 import React from 'react';
-import { List, Table } from '../../_common/components/elements.jsx';
 import { BuySellCurrency, Section, HeaderSecondary, NavButtons, MtBox } from './common.jsx';
+import { List, Table } from '../../_common/components/elements.jsx';
 
 const hundredth = '0.01';
 const tenth     = '0.10';

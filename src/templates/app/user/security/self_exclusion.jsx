@@ -56,7 +56,6 @@ const SelfExclusion = () => (
                     type='custom'
                     id='timeout_until_date'
                     label={it.L('Time out until')}
-                    row_class='ja-hide'
                     hint={it.L('Please enter date in the format DD MMM, YYYY HH:mm (local time).')}
                 >
                     <div className='gr-row'>

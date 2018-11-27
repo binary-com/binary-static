@@ -2,8 +2,8 @@ const Client      = require('../../base/client');
 const formatMoney = require('../../common/currency').formatMoney;
 const localize    = require('../../../_common/localize').localize;
 
-const updatePurchaseStatus = (final_price, pnl, profit, contract_status) => {
-    $('#contract_purchase_heading').text(localize(contract_status));
+const updatePurchaseStatus = (final_price, pnl, profit, localized_contract_status) => {
+    $('#contract_purchase_heading').text(localized_contract_status);
     const $payout  = $('#contract_purchase_payout');
     const $cost    = $('#contract_purchase_cost');
     const $profit  = $('#contract_purchase_profit');
@@ -20,7 +20,7 @@ const updatePurchaseStatus = (final_price, pnl, profit, contract_status) => {
 };
 
 const updateContractBalance = (balance) => {
-    $('#contract_purchase_balance').html(`${localize('Account balance:')} ${formatMoney(Client.get('currency'), balance)}`);
+    $('#contract_purchase_balance').html(localize('Account balance:')).append($('<p/>', { html: formatMoney(Client.get('currency'), balance) }));
 };
 
 module.exports = {

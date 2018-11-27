@@ -1,13 +1,9 @@
 import React from 'react';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
+import MFSA from '../_common/includes/mfsa.jsx';
+import PaymentLogo from '../_common/components/payment_logo.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
 import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
-
-const PaymentLogo = ({ items }) => items.map((item, inx) => (
-    <div key={inx} className='gr-2 gr-4-m center-text' data-show={item.dataShow}>
-        <img className='gr-12 gr-centered' src={it.url_for(`images/pages/home/payment/${item.image}.svg`)} />
-    </div>
-));
 
 const Arrows = ({ direction, parent }) => (
     <div className='align-self-center gr-1 gr-hide-p'>
@@ -164,12 +160,13 @@ const Home = () => {
 
     return (
         <React.Fragment>
+            <MFSA />
             <div id='banner'>
-                <div className='container gr-padding-30'>
+                <div className='container gr-padding-20'>
                     <h1 className='dark center-text gr-padding-20 gr-child'>{it.L('Online Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
                     <p className='center-text gr-padding-10'>{it.L('Trade 24/7, even on weekends.')}</p>
 
-                    <div className='gr-padding-30 gr-11-m gr-centered'>
+                    <div className='gr-padding-30 gr-11-m gr-centered gr-child'>
                         <FormVerifyEmail
                             className='secondary-bg-color'
                             dark_button
@@ -178,7 +175,7 @@ const Home = () => {
                             text={it.L('Create Free Account')}
                         />
 
-                        <div className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
+                        <div id='social-signup' className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
                             <div className='section-divider gr-padding-20'>
                                 <div className='align-self-center border-bottom-light-gray' />
                                 <div className='circle'>{it.L('or')}</div>
@@ -250,7 +247,7 @@ const Home = () => {
                             </TabContent>
                         </TabContentContainer>
                     </div>
-                    <TabCircles number={2} id='account_tabs_circles'/>
+                    <TabCircles number={2} id='account_tabs_circles' />
                 </TabContainer>
 
                 <div className='center-text gr-padding-20 gr-parent'>
@@ -260,7 +257,7 @@ const Home = () => {
                     </a>
                 </div>
 
-                <SeparatorLine className='gr-padding-30' show_mobile/>
+                <SeparatorLine className='gr-padding-30' show_mobile />
             </div>
 
             <div id='market_tabs_container' className='container'>
@@ -325,7 +322,7 @@ const Home = () => {
                             </TabContent>
                         </TabContentContainer>
                     </div>
-                    <TabCircles number={6} id='market_tabs_circles'/>
+                    <TabCircles number={6} id='market_tabs_circles' />
                 </TabContainer>
                 <h3 className='center-text gr-padding-30'>{it.L('Choose from 100+ tradable instruments, backed by award-winning technology and innovation since 2000.')}</h3>
             </div>
@@ -339,11 +336,11 @@ const Home = () => {
                         <div className='gr-9 gr-12-m align-self-center'>
                             <div className='gr-row gr-row-align-center'>
                                 <div className='gr-1 gr-hide-m border-right' />
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')}/></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')}/></div>
-                                <div className='gr-3 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')}/></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')}/></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')}/></div>
+                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')} /></div>
+                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')} /></div>
+                                <div className='gr-3 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')} /></div>
+                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')} /></div>
+                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')} /></div>
                                 <div className='gr-1 gr-hide-m' />
                             </div>
                         </div>
@@ -371,7 +368,7 @@ const Home = () => {
                         text={it.L('Expert analysis and learning resources.')}
                     />
                 </div>
-                <div className='center-text gr-padding-30'>
+                <div className='center-text gr-padding-30 academy'>
                     <a
                         className='button-secondary'
                         href='https://academy.binary.com'
@@ -382,7 +379,7 @@ const Home = () => {
                     </a>
                 </div>
 
-                <SeparatorLine className='gr-padding-30' show_mobile/>
+                <SeparatorLine className='gr-padding-30' show_mobile />
 
                 <div id='payment_methods'>
                     <div className='gr-12 gr-padding-20'>
@@ -390,31 +387,9 @@ const Home = () => {
                         <p className='center-text'>{it.L('We support hundreds of deposit and withdrawal options, including Bitcoin.')}</p>
 
                         <div className='gr-12 gr-padding-30'>
-                            <a href={it.url_for('cashier/payment_methods')}>
-                                <div className='gr-row gr-row-align-center'>
-                                    <PaymentLogo
-                                        items={[
-                                            { image: 'visa' },
-                                            { image: 'mastercard' },
-                                            { image: 'bank_transfer' },
-                                            { image: 'internet_bank_transfer' },
-                                            { image: 'paysec' },
-                                            { image: 'neteller' },
-                                            { image: 'fasapay' },
-                                            { image: 'perfect_money' },
-                                            { image: 'skrill' },
-                                            { image: 'qiwi' },
-                                            { image: 'webmoney' },
-                                            { image: 'yandex' },
-                                            { image: 'paysafe' },
-                                            { image: 'ethereum_black', dataShow: '-malta, -maltainvest' },
-                                            { image: 'bitcoin', dataShow: '-malta, -maltainvest' },
-                                            { image: 'bitcoin_cash', dataShow: '-malta, -maltainvest' },
-                                            { image: 'litecoin', dataShow: '-malta, -maltainvest' },
-                                        ]}
-                                    />
-                                </div>
-                            </a>
+                            <div className='gr-row gr-row-align-center'>
+                                <PaymentLogo />
+                            </div>
                         </div>
                     </div>
                 </div>

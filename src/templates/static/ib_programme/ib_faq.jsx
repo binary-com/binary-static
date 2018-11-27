@@ -12,9 +12,9 @@ const FAQ = () => (
                     <List
                         id='sidebar-nav'
                         items={[
-                            { id: 'general',                  href: '#general',                  text: it.L('General')},
-                            { id: 'account-management',       href: '#account-management',       text: it.L('Account management')},
-                            { id: 'marketing-and-promotions', href: '#marketing-and-promotions', text: it.L('Marketing and promotions')},
+                            { id: 'general',            href: '#general',            text: it.L('General') },
+                            { id: 'account-management', href: '#account-management', text: it.L('Account management') },
+                            { id: 'referral-tools',     href: '#referral-tools',     text: it.L('Referral tools') },
                         ]}
                     />
                 </div>
@@ -31,7 +31,6 @@ const FAQ = () => (
                     <p>{it.L('It’s completely free to join our IB programme. We’ve never charged a fee and we never will.')}</p>
                 </Section>
 
-
                 <Section id='account-management' header={it.L('Account management')}>
                     <h3>{it.L('How do I register to become a [_1] IB?', it.website_name)}</h3>
                     <p>{it.L('Thank you for your interest in partnering with us. We’ve made it easy for you to apply online. Just fill out the [_1]online application form[_2] with all necessary details. If you are already registered as a [_3] affiliate, you can email us at [_4] instead. We will contact you directly if your application is successful.', `<a href='${it.affiliate_signup_url}'>`, '</a>', it.website_name, `<a href='mailto:${it.affiliate_email}'>${it.affiliate_email}</a>`)}</p>
@@ -43,9 +42,8 @@ const FAQ = () => (
                     <p>{it.L('IB commissions are credited directly into your MT5 account. You can transfer funds from your MT5 account to your [_1] Real Account, then withdraw the funds using your preferred withdrawal method.', it.website_name)}</p>
                 </Section>
 
-
-                <Section id='marketing-and-promotions' header={it.L('Marketing and promotions')}>
-                    <h3>{it.L('Do you offer any advertising materials to your IBs?')}</h3>
+                <Section id='referral-tools' header={it.L('Referral tools')}>
+                    <h3>{it.L('Do you offer any referral tools to your IBs?')}</h3>
                     <p>{it.L('Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the [_1] MT5 platform.', it.website_name)}</p>
 
                     <h3>{it.L('Are there any minimum client or volume conditions that I need to meet before I can withdraw my commissions?')}</h3>

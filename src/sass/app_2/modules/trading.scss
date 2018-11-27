@@ -1,0 +1,512 @@
+.binary-app {
+    overflow: hidden;
+
+    .notice-msg {
+        background: unset;
+    }
+    .icon {
+        &:before {
+            content: '';
+            display: block;
+            background-size: 16px 16px;
+            height: 16px;
+            width: 16px;
+        }
+        &.start-time:before {
+            background-image: url('../images/sidebar/ic_watch_later.svg');
+        }
+        &.trade-duration:before {
+            background-image: url('../images/sidebar/ic_timelapse.svg');
+        }
+        &.invest-amount:before {
+            background-image: url('../images/sidebar/ic_monetization.svg');
+        }
+        &.barriers:before {
+            background-image: url('../images/sidebar/ic_barrier.svg');
+        }
+        &.digits:before {
+            background-image: url('../images/sidebar/ic_digit.svg');
+        }
+    }
+    input:not([readonly]) {
+        &:hover {
+            border-color: $COLOR_BLUE;
+        }
+        &:active, &:focus {
+            outline: 0;
+            border-color: $COLOR_BLUE;
+        }
+    }
+    fieldset {
+        background-color: $COLOR_LIGHT_GRAY;
+        border-radius: $BORDER_RADIUS;
+        border: 1px solid $COLOR_GRAY;
+        padding: 1vh 4px;
+
+        input, select {
+            width: 100%;
+            height: 32px;
+            font-weight: 300;
+            align-self: center;
+            appearance: none;
+            box-sizing: border-box;
+            background: $COLOR_WHITE;
+        }
+        .select-wrapper {
+            position: relative;
+
+            &:after {
+                content: '\25bc';
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 8px;
+                font-size: 12px;
+                transform: translateY(-50%);
+            }
+        }
+        select {
+            margin: 8px 0;
+            display: block;
+
+            &:hover {
+                border-color: $COLOR_BLUE;
+            }
+            &:active, &:focus {
+                outline: 0;
+                border-color: $COLOR_BLUE;
+                box-shadow: 0 0 0 2px rgba(42, 48, 82, 0.2);
+            }
+        }
+        .symbols {
+            font-size: inherit;
+            position: absolute;
+            display: block;
+            text-align: center;
+            z-index: 1;
+            color: $COLOR_LIGHT_BLACK;
+        }
+        .clock-header, .fieldset-header, .stake-wrapper {
+            span.field-info {
+                position: absolute;
+                color: $COLOR_BLUE;
+                font-size: 0.7rem;
+                font-weight: 400;
+                margin: 5px 0 12px;
+
+                &.icon {
+                    display: inline-flex;
+                    align-items: center;
+                    top: -3px;
+
+                    &:before {
+                        margin-right: 5px;
+                    }
+                }
+                &.left {
+                    left: 5px;
+                }
+                &.right {
+                    top: -3px;
+                    right: 5px;
+                    font-size: 0.5625rem; /* stylelint-disable-line number-max-precision */
+                }
+            }
+        }
+        .clock-header, .fieldset-header {
+            height: 1.5rem;
+            position: relative;
+        }
+        .error-info-wrapper {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+            span {
+                padding: 5px 5px 5px 8px;
+                line-height: normal;
+                background-color: rgba($COLOR_LIGHT_ORANGE, 0.16);
+                display: block;
+                color: $COLOR_BLUE;
+                margin-bottom: 10px;
+                font-weight: 300;
+                border: 1px solid $COLOR_LIGHT_ORANGE;
+                border-radius: $BORDER_RADIUS;
+            }
+        }
+        .purchase-info-wrapper {
+            line-height: 0.9rem;
+            padding-bottom: 1vh;
+            border: 0;
+
+            .info-wrapper {
+                display: flex;
+
+                div:last-child {
+                    margin-left: 4px;
+                }
+            }
+            .purchase-tooltip {
+                float: right;
+                margin-top: -4px;
+            }
+        }
+        &.trade-types {
+            border: 0;
+            padding: 0;
+            background: transparent;
+        }
+        @media screen and (max-height: 800px) {
+            .fieldset-header {
+                margin-bottom: -8px;
+            }
+            input, input.datepicker-display, .time-picker #time-picker-input.time-picker-input {
+                height: 26px;
+            }
+            .input-field i .symbols {
+                top: 0;
+                left: 0;
+                height: 24px;
+                line-height: 24px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+            .dropdown-display {
+                height: 24px;
+
+                span {
+                    line-height: 25px;
+                }
+            }
+            .select-arrow {
+                top: 6px;
+            }
+        }
+    }
+    div.purchase-wrapper {
+        position: relative;
+
+        div.purchase-error {
+            position: absolute;
+            top: 0;
+            min-height: 245px;
+            height: calc(100% - 2px);
+            width: calc(100% - 6px);
+            left: 2px;
+            z-index: 2;
+            border: 1px solid $COLOR_GRAY;
+            border-radius: $BORDER_RADIUS;
+            background: $COLOR_LIGHT_GRAY;
+            display: flex;
+            align-items: center;
+
+            .close-btn-container {
+                position: absolute;
+                cursor: pointer;
+                right: 2px;
+                top: 2px;
+
+                .ic-close {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            div.purchase-result-wrapper {
+                padding: 16px;
+
+                div {
+                    line-height: 1.5;
+                    font-size: 10px;
+
+                    strong {
+                        margin-bottom: 0.5rem;
+                        font-size: 12px;
+                    }
+                    .label {
+                        margin-right: 4px;
+                        font-size: 10px;
+                    }
+                    .buy-price, .payout {
+                        i.symbols {
+                            position: relative;
+                            display: inline-flex;
+                        }
+                    }
+                }
+            }
+            div.purchase-login-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+
+                button.btn {
+                    margin: 0 auto;
+
+                    span {
+                        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                        text-transform: uppercase;
+                    }
+                }
+                .info-text {
+                    font-weight: 300;
+                }
+                p {
+                    line-height: 100%;
+                    margin-bottom: 0;
+                    font-size: 10px;
+                    font-weight: 300;
+                }
+                a {
+                    text-decoration: none;
+                    color: $COLOR_LIGHT_BLACK;
+
+                    span.info-text {
+                        padding: 5px 10px 10px;
+                        font-weight: 500;
+                        color: $COLOR_SKY_BLUE;
+                    }
+                    &:hover, &:focus, &:active {
+                        text-decoration: underline;
+                        color: $COLOR_LIGHT_BLACK;
+                    }
+                }
+            }
+            div.purchase-error-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                max-height: 187px;
+                height: 100%;
+                width: 100%;
+            }
+            span.info-text {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.5rem 1.5rem;
+                text-align: center;
+            }
+        }
+        fieldset.purchase-option {
+            padding-top: 1.5vh;
+            padding-bottom: 1.5vh;
+            min-height: 100px;
+
+            div.box {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                position: relative;
+                min-height: 71px;
+
+                .left-column, .right-column {
+                    position: relative;
+                    align-self: flex-start;
+                    display: flex;
+                    justify-content: center;
+
+                    span {
+                        display: block;
+                    }
+                }
+                h4.trade-type {
+                    position: absolute;
+                    display: flex;
+                    padding: 0;
+                    font-weight: 300;
+                    text-transform: capitalize;
+                    text-align: center;
+                    top: 24px;
+                    margin-top: 0.7rem;
+                    line-height: 16px;
+                    max-width: 50px;
+                    word-spacing: 0;
+                }
+                div.amount {
+                    position: relative;
+
+                    &.down {
+                        color: $COLOR_LIGHT_RED;
+
+                        &:after {
+                            content: url('../images/purchase/ic_pricedown.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    &.up {
+                        color: $COLOR_LIGHT_BLUE;
+
+                        &:after {
+                            content: url('../images/purchase/ic_priceup.svg');
+                            position: absolute;
+                            top: 2px;
+                            right: 0.5rem;
+                        }
+                    }
+                    span.symbols {
+                        left: 0;
+                        top: 6px;
+                        font-size: 0.88rem;
+                        color: inherit;
+                    }
+                    span.payout {
+                        font-weight: 600;
+                    }
+                }
+                span:not(.purchase-return):not(.symbols) {
+                    position: relative;
+                }
+                span.purchase-return {
+                    color: $COLOR_ORANGE;
+                }
+                .symbols {
+                    position: relative;
+                    display: inline;
+
+                    &:before {
+                        margin-right: 1px;
+                    }
+                }
+            }
+            div.submit-section {
+                display: grid;
+                grid-template-columns: 1fr;
+
+                button.btn {
+                    text-transform: uppercase;
+                    margin: 0;
+                    width: 100%;
+                    height: 4vh;
+                    min-height: 25px;
+                    max-height: 35px;
+
+                    &:not([disabled]) {
+                        box-shadow: 1px 3px 4px 0 rgba(76, 175, 80, 0.14), 1px 3px 4px 0 rgba(76, 175, 80, 0.14);
+                    }
+                    span {
+                        font-size: 12px;
+                    }
+                }
+
+            }
+            span.tooltip:before {
+                max-width: unset;
+                width: 250px;
+                white-space: normal;
+            }
+            &:not(:only-child) {
+                &:nth-last-child(2) {
+                    border-bottom: 1px;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    margin-bottom: 0 !important;
+                }
+                &:nth-last-child(1) {
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                    margin-bottom: 0 !important;
+                }
+            }
+            div.block-ui {
+                background: rgba(255, 255, 255, 0.6);
+                border-radius: 4px;
+                border: 1px solid $COLOR_GRAY;
+                width: calc(100% - 6px);
+                height: calc(100% - 2px);
+            }
+            div.purchase-lock-container {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $COLOR_LIGHT_GRAY;
+                opacity: 0.95;
+                min-height: 245px;
+                width: calc(100% - 6px);
+                height: calc(100% - 2px);
+                z-index: 3;
+                top: 0;
+                left: 2px;
+                right: 0;
+                flex-direction: column;
+                bottom: 0;
+                border-radius: $BORDER_RADIUS;
+                border: 1px solid $COLOR_GRAY;
+
+                .lock-container svg.ic-lock {
+                    width: 64px;
+                    height: 64px;
+                }
+                button.btn {
+                    height: 32px;
+                    margin: 0 1rem 1.5rem;
+                    width: 90px;
+                    line-height: 100%;
+                }
+                h4 {
+                    margin: 2px 8px 8px;
+                    padding: 0;
+                    text-transform: capitalize;
+                }
+                span.lock-message {
+                    background: $COLOR_GRAY;
+                    padding: 8px;
+                    margin: 1rem 1rem 0;
+                    border-radius: $BORDER_RADIUS;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+    .calendar {
+        width: 192px;
+
+        .calendar-input, .calendar-footer {
+            font-size: 12px;
+        }
+        .calendar-date-panel, .calendar-month-panel, .calendar-year-panel, .calendar-decade-panel, .calendar-century-panel {
+            display: grid;
+            grid-gap: 2px;
+            padding: 8px 12px;
+            height: 226px;
+
+            .calendar-date, .calendar-month, .calendar-year, .calendar-decade {
+                font-size: 10px;
+
+                &.calendar-date {
+                    width: 20px;
+                }
+                &-header {
+                    width: 20px;
+                }
+            }
+        }
+    }
+    div.datepicker-container {
+        .datepicker-display, .datepicker-native-overlay {
+            font-size: 12px;
+        }
+    }
+    .time-picker #time-picker-input.time-picker-input {
+        font-size: 12px;
+    }
+    .fullscreen-dialog {
+        &__content .contracts-modal-list {
+            margin-top: 4px;
+
+            fieldset {
+                margin-bottom: 1rem;
+
+                div:not(.fieldset-header) {
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+}

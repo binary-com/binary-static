@@ -166,8 +166,8 @@ const Barriers = (() => {
     */
     const validateBarrier = () => {
         const barrier_element      = getElementById('barrier');
-        const empty                = isNaN(parseFloat(barrier_element.value))||parseFloat(barrier_element.value) === 0;
         const barrier_high_element = getElementById('barrier_high');
+        const empty = isNaN(parseFloat(barrier_element.value)) || parseFloat(barrier_element.value) === 0;
 
         if (isVisible(barrier_element) && empty) {
             barrier_element.classList.add('error-field');

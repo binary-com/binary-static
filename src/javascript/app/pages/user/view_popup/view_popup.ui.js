@@ -101,7 +101,7 @@ const ViewPopupUI = (() => {
             $('.inpage_popup_content', con).html(data);
         }
         const body = $(document.body);
-        con.css('position', 'fixed').css('z-index', getHighestZIndex() + 100);
+        con.css('position', 'absolute').css('z-index', getHighestZIndex() + 100);
         body.append(con);
         con.show();
         // $('html').addClass('no-scroll');

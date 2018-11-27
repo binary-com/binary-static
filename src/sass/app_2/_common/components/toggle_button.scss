@@ -1,0 +1,76 @@
+.toggle-button {
+    background: $COLOR_GRAY;
+    border-radius: 32px;
+    transition: all 0.4s ease;
+    outline: 0;
+    display: block;
+    width: 32px;
+    height: 16px;
+    position: relative;
+    cursor: pointer;
+
+    &.toggled {
+        background: $COLOR_LIGHT_GREEN;
+
+        &:after {
+            left: 17px;
+        }
+    }
+    &:after {
+        border-radius: 50%;
+        background: $COLOR_WHITE;
+        transition: all 0.2s ease;
+        top: 1px;
+        left: 1px;
+        position: relative;
+        display: block;
+        content: '';
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.toggle-chart-layout {
+    border-radius: 4px;
+    border: 2px solid $COLOR_GRAY;
+    padding: 2px;
+    transition: all 0.4s ease;
+    outline: 0;
+    display: block;
+    width: 16px;
+    height: 12px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 4px;
+
+    &.toggled:after {
+        top: 0;
+        height: 100%;
+        width: 4px;
+    }
+    &:after {
+        background: $COLOR_BLUE;
+        left: 0;
+        top: 70%;
+        position: relative;
+        border-radius: 4px;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 4px;
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .toggle-button:not(.toggled) {
+        background: $COLOR_BRANDBLUE_85;
+    }
+    .toggle-chart-layout {
+        border-color: $COLOR_BRANDBLUE_85;
+
+        &:after {
+            background: $COLOR_WHITE;
+        }
+    }
+}

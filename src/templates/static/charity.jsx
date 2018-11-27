@@ -48,11 +48,19 @@ const Charity = () => (
                     country={it.L('Malaysia')}
                     charities={[
                         {
+                            image   : 'charity_run',
+                            title   : it.L('PPUKM Physiotherapy Charity Run 2018'),
+                            text    : it.L('This charity run is organized by The National University of Malaysia in conjunction with the International Day of Older Persons which is celebrated in October every year. The goal of the run is to raise awareness within local communities about the importance of physiotherapy for the elderly and to promote healthy lifestyles among Malaysians. The funds raised are used to buy and upgrade existing facilities for the rehabilitation of older patients.'),
+                            contacts: [
+                                { text: it.L('URL'), href: 'https://www.ppukm.ukm.my/physio-run', attr: { rel: 'noopener noreferrer' } },
+                            ],
+                        },
+                        {
                             image   : 'learning_centre',
                             title   : it.L('Shelter Home’s Shelter Community Learning Centre 3'),
                             text    : it.L('The Shelter Community Learning Centre 3 is a community school for Myanmar refugee children who are awaiting repatriation with their families to a third country. The school aims to provide these children – who are at their most vulnerable age – with an education which will prepare them for the future.'),
                             contacts: [
-                                { text: it.L('URL'), href: 'http://www.shelterhome.org', attr: {rel: 'noopener noreferrer'} },
+                                { text: it.L('URL'), href: 'http://www.shelterhome.org', attr: { rel: 'noopener noreferrer' } },
                             ],
                         },
                         {
@@ -63,7 +71,7 @@ const Charity = () => (
                                 {
                                     text: it.L('URL'),
                                     href: 'https://www.facebook.com/languagesclassesforrefugees',
-                                    attr: {rel: 'noopener noreferrer' },
+                                    attr: { rel: 'noopener noreferrer' },
                                 },
                                 {
                                     text  : it.L('Contact'),

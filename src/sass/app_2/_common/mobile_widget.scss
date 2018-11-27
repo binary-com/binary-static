@@ -1,0 +1,46 @@
+.mobile-widget {
+    border: 1px solid $COLOR_GRAY;
+    border-radius: 4px;
+    padding: 10px 5px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    grid-template-areas: 'a b' 'c d';
+    font-size: 0.7rem;
+
+    &:hover, &:focus, &:active {
+        cursor: pointer;
+        border: solid 1px $COLOR_BLUE;
+    }
+    .fieldset-minimized {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 5px;
+        white-space: pre-line;
+
+        &.amount {
+            grid-area: c;
+        }
+        &.barrier1 {
+            grid-area: b;
+        }
+        &.barrier2 {
+            grid-area: d;
+        }
+        .icon {
+            display: block;
+            margin-right: 5px;
+        }
+        .symbols:before {
+            margin-right: 1px;
+            position: static;
+            display: inline;
+            font-size: 1em;
+        }
+        &__basis {
+            font-weight: bold;
+            color: $COLOR_BLUE;
+        }
+    }
+}

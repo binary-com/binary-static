@@ -1,4 +1,4 @@
-const localize       = require('../../../../../_common/localize').localize;
+const localize = require('../../../../../_common/localize').localize;
 
 const PaymentAgentTransferUI = (() => {
     let $paymentagent_transfer,
@@ -29,7 +29,7 @@ const PaymentAgentTransferUI = (() => {
 
     const showNotes = () => { $notes_transfer.setVisibility(1); };
 
-    const showTransferError = (err) => { $confirm_transfer.find('#msg_form').text(localize(err)).setVisibility(1); };
+    const showTransferError = (err) => { $confirm_transfer.find('#msg_form').text(err).setVisibility(1); };
 
     const updateFormView = (currency) => { $paymentagent_transfer.find('label[for="amount"]').text(`${localize('Amount')} ${currency}`); };
 
@@ -49,8 +49,7 @@ const PaymentAgentTransferUI = (() => {
     };
 
     const updateDoneView = (from_id, to_id, amount, currency) => {
-        const template_string = 'Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.';
-        const confirm_msg     = localize(template_string, [
+        const confirm_msg     = localize('Your request to transfer [_1] [_2] from [_3] to [_4] has been successfully processed.', [
             amount,
             currency,
             from_id,

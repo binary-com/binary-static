@@ -1,10 +1,14 @@
 import React from 'react';
 import { FormRow, Fieldset } from '../../_common/components/forms.jsx';
+import FormVerificationCode from '../_includes/form_verification_code.jsx';
 
 const Virtual = () => (
     <div className='gr-12 static_full'>
-        <h1>{it.L('Create New Account')}</h1>
-        <form id='virtual-form' className='gr-padding-10 ja-hide'>
+        <h1>{it.L('Create New Virtual-money Account')}</h1>
+
+        <FormVerificationCode />
+
+        <form id='virtual-form' className='gr-padding-10 invisible'>
             <Fieldset legend={it.L('Details')}>
                 <FormRow
                     type='password'
@@ -15,7 +19,7 @@ const Virtual = () => (
 
                 <FormRow type='password' id='repeat_password' label={it.L('Re-enter password')} />
 
-                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{single: 'single'}}  />
+                <FormRow type='select' id='residence' className='invisible' label={it.L('Country of residence')} attributes={{ single: 'single' }}  />
 
                 <FormRow
                     type='checkbox'
@@ -28,13 +32,10 @@ const Virtual = () => (
             </Fieldset>
 
             <div className='center-text'>
-                <button className='button' type='submit'>{it.L('Create New Account')}</button>
+                <button className='button' type='submit'>{it.L('Create New Virtual-money Account')}</button>
                 <p className='errorfield invisible' id='error-account-opening' />
             </div>
         </form>
-        <div className='invisible ja-show'>
-            <p className='notice-msg center-text'>{it.L('Sorry, this feature is not available in your jurisdiction.')}</p>
-        </div>
     </div>
 );
 

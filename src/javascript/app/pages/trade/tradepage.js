@@ -8,7 +8,6 @@ const TradingEvents     = require('./event');
 const Price             = require('./price');
 const Process           = require('./process');
 const ViewPopup         = require('../user/view_popup/view_popup');
-const BinaryPjax        = require('../../base/binary_pjax');
 const Client            = require('../../base/client');
 const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
@@ -26,10 +25,6 @@ const TradePage = (() => {
     };
 
     const init = () => {
-        if (Client.isJPClient()) {
-            BinaryPjax.load('multi_barriers_trading');
-            return;
-        }
         State.set('is_trading', true);
         Price.clearFormId();
         if (events_initialized === 0) {
@@ -38,6 +33,7 @@ const TradePage = (() => {
         }
 
         BinarySocket.wait('authorize').then(() => {
+            Header.displayAccountStatus();
             if (Client.get('is_virtual')) {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
             }
@@ -82,6 +78,9 @@ const TradePage = (() => {
     };
 
     const onUnload = () => {
+        if (!/trading/.test(window.location.href)) {
+            Header.hideNotification('MF_RETAIL_MESSAGE');
+        }
         State.remove('is_trading');
         events_initialized = 0;
         Process.forgetTradingStreams();

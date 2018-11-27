@@ -1,8 +1,10 @@
 const moment       = require('moment');
 const BinarySocket = require('./socket_base');
+const PromiseClass = require('../utility').PromiseClass;
 
 const ServerTime = (() => {
     let clock_started = false;
+    const pending = new PromiseClass();
     let server_time,
         client_time,
         get_time_interval,
@@ -46,6 +48,7 @@ const ServerTime = (() => {
             }
         };
         updateTime();
+        pending.resolve();
         update_time_interval = setInterval(updateTime, 1000);
     };
 
@@ -54,6 +57,7 @@ const ServerTime = (() => {
     return {
         init,
         get,
+        timePromise: pending.promise,
     };
 })();
 

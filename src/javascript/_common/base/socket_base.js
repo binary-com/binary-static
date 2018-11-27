@@ -1,10 +1,11 @@
 const ClientBase       = require('./client_base');
-const SocketCache      = require('../base/socket_cache');
+const SocketCache      = require('./socket_cache');
 const getLanguage      = require('../language').get;
 const State            = require('../storage').State;
 const cloneObject      = require('../utility').cloneObject;
 const getPropertyValue = require('../utility').getPropertyValue;
 const isEmptyObject    = require('../utility').isEmptyObject;
+const PromiseClass     = require('../utility').PromiseClass;
 const getAppId         = require('../../config').getAppId;
 const getSocketURL     = require('../../config').getSocketURL;
 
@@ -291,14 +292,5 @@ const BinarySocketBase = (() => {
         removeOnDisconnect: () => { delete config.onDisconnect; },
     };
 })();
-
-class PromiseClass {
-    constructor() {
-        this.promise = new Promise((resolve, reject) => {
-            this.reject  = reject;
-            this.resolve = resolve;
-        });
-    }
-}
 
 module.exports = BinarySocketBase;

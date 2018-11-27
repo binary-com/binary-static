@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import Symbols from './symbols';
 // Should be remove in the future
 import Defaults from './defaults';
-import {getElementById} from '../../../_common/common_functions';
-import {localize} from '../../../_common/localize';
+import { getElementById } from '../../../_common/common_functions';
+import { localize } from '../../../_common/localize';
 
 function scrollToPosition (element, to, duration) {
     const requestAnimationFrame = window.requestAnimationFrame ||
@@ -41,7 +41,7 @@ const List = ({
                 {obj.name}
             </div>
             {Object.entries(obj.submarkets).sort((a, b) => submarketSort(a[0], b[0]))
-                .map(([key, submarket], idx_2) => (
+                .map(([key, submarket], idx_2) => ( // eslint-disable-line no-unused-vars
                     <div className='submarket' key={idx_2}>
                         <div className='submarket_name'>
                             {submarket.name}
@@ -49,14 +49,14 @@ const List = ({
                         <div className='symbols'>
                             {Object.entries(submarket.symbols).map(([u_code, symbol]) => (
                                 <div
-                                    className={`symbol_name ${u_code===underlying ? 'active' : ''}`}
+                                    className={`symbol_name ${u_code === underlying ? 'active' : ''}`}
                                     key={u_code}
                                     id={u_code}
                                     onClick={onUnderlyingClick.bind(null, u_code, market_code)}
                                 >
                                     {symbol.display}
                                 </div>
-                        ))}
+                            ))}
                         </div>
                     </div>
                 ))}
@@ -103,7 +103,6 @@ class Markets extends React.Component {
         super(props);
         let market_symbol = Defaults.get('market');
         this.markets = Symbols.markets();
-
 
         this.underlyings = Symbols.getAllSymbols() || {};
         let underlying_symbol = Defaults.get('underlying');
@@ -154,7 +153,7 @@ class Markets extends React.Component {
     };
 
     getCurrentUnderlying = () => {
-        const { underlying: {name: underlying} } = this.state;
+        const { underlying: { name: underlying } } = this.state;
         const max_char = window.innerWidth <= 767 ? 15 : 25;
         if (underlying.length > max_char) {
             return `${underlying.substr(0, max_char)}...`;
@@ -171,7 +170,7 @@ class Markets extends React.Component {
     }
 
     handleScroll = (e) => {
-        const {market_nodes, list} = this.references;
+        const { market_nodes, list } = this.references;
         const position = e.target.scrollTop + list.offsetTop;
         const arr = [];
         let curr_market = null;
@@ -181,20 +180,20 @@ class Markets extends React.Component {
                 arr.push(key);
             }
         });
-        if (this.state.active_market !== arr[arr.length-1]) {
-            if (position <=10) {
+        if (this.state.active_market !== arr[arr.length - 1]) {
+            if (position <= 10) {
                 curr_market = arr[0];
             } else {
                 curr_market = arr[arr.length - 1];
             }
-            this.setState({active_market: curr_market});
+            this.setState({ active_market: curr_market });
         }
 
         this.stickyHeader(position);
     }
 
     openDropdown = () => {
-        this.setState({open: true});
+        this.setState({ open: true });
         Object.values(this.references.market_nodes).forEach((node) => {
             node.classList.remove('put_under');
             node.removeAttribute('style');
@@ -242,50 +241,42 @@ class Markets extends React.Component {
 
     scrollToElement = (id, duration = 120, offset = 0) => {
         // handleScroll is triggered automatically which sets the active market.
-        const {list} = this.references;
+        const { list } = this.references;
         const to_offset = getElementById(id).offsetTop - list.offsetTop - offset;
         scrollToPosition(list, to_offset, duration);
     }
 
     stickyHeader = (position) => {
-        let curr, prev, next;
-        const {market_nodes} = this.references;
-        const market_keys = Object.keys(market_nodes);
-        const TITLE_HEIGHT = 40;
-        Object.values(market_nodes).forEach((node, idx) => {
-            if (node.dataset.offsetTop <= position
-                && +node.dataset.offsetHeight + +node.dataset.offsetTop > position) {
-                curr = node;
-                prev = idx > 0 ? market_nodes[market_keys[idx-1]] : null;
-                next = idx < market_keys.length ? market_nodes[market_keys[idx+1]] : null;
-            }
-        });
-
+        const { market_nodes } = this.references;
         const class_sticky = 'sticky';
         const class_under = 'put_under';
+        const TITLE_HEIGHT = 40;
         const DEFAULT_TOP = this.references.list.offsetTop;
 
-        if (curr) {
-            curr.children[0].removeAttribute('style');
-            curr.removeAttribute('style');
-            curr.children[0].classList.remove(class_under);
-            const diff = (+curr.dataset.offsetHeight + +curr.dataset.offsetTop) - position;
-            if (diff > 0 && diff < TITLE_HEIGHT) {
-                curr.children[0].style.top = `${DEFAULT_TOP - (TITLE_HEIGHT - diff)}px`;
-                curr.children[0].classList.add(class_under);
-            }
-            curr.children[0].classList.add(class_sticky);
-            curr.style.paddingTop = `${TITLE_HEIGHT}px`;
+        const current_viewed_node = Object.values(market_nodes).find(node => (
+            node.dataset.offsetTop <= position
+                && +node.dataset.offsetHeight + +node.dataset.offsetTop > position
+        ));
+
+        if (current_viewed_node !== this.references.last_viewed_node) {
+            Object.values(market_nodes).forEach(node => {
+                node.removeAttribute('style');
+                node.children[0].removeAttribute('style');
+                node.children[0].classList.remove(class_under, class_sticky);
+            });
+            this.references.last_viewed_node = current_viewed_node;
         }
-        if (prev) {
-            prev.removeAttribute('style');
-            prev.children[0].removeAttribute('style');
-            prev.children[0].classList.remove(class_under, class_sticky);
+
+        const diff = (+current_viewed_node.dataset.offsetHeight + +current_viewed_node.dataset.offsetTop) - position;
+        if (diff > 0 && diff < TITLE_HEIGHT) {
+            current_viewed_node.children[0].style.top = `${DEFAULT_TOP - (TITLE_HEIGHT - diff)}px`;
+            current_viewed_node.children[0].classList.add(class_under);
+        } else {
+            current_viewed_node.children[0].removeAttribute('style');
+            current_viewed_node.children[0].classList.remove(class_under);
         }
-        if (next) {
-            next.children[0].classList.remove(class_sticky, class_under);
-            next.removeAttribute('style');
-        }
+        current_viewed_node.children[0].classList.add(class_sticky);
+        current_viewed_node.style.paddingTop = `${TITLE_HEIGHT}px`;
     }
 
     saveMarketRef = (market, node) => {
@@ -297,12 +288,12 @@ class Markets extends React.Component {
         node.dataset.offsetHeight = node.offsetHeight;
     }
 
-    searchSymbols = ({target: {value: query}}) => {
-        this.setState({query});
+    searchSymbols = ({ target: { value: query } }) => {
+        this.setState({ query });
         scrollToPosition(this.references.list, 0, 0);
         const markets_all = this.markets_all;
         if (!query) {
-            this.setState({markets: markets_all});
+            this.setState({ markets: markets_all });
             return;
         }
         const filter_markets = [];
@@ -339,16 +330,17 @@ class Markets extends React.Component {
         // nothing found
         if (!filter_markets.length) return;
 
-        this.setState({markets: filter_markets, active_market: filter_markets[0][0]});
+        this.setState({ markets: filter_markets, active_market: filter_markets[0][0] });
     }
 
     /* eslint-disable no-shadow */
     scrollToMarket = (key) => {
-        const {list} = this.references;
+        const { list } = this.references;
         const node = this.references.market_nodes[key];
         const offset = node.dataset.offsetTop - list.offsetTop;
-        scrollToPosition(list, offset, 250);
+        scrollToPosition(list, offset, 0);
     }
+
     /* eslint-enable no-shadow */
     /* eslint-enable no-undef */
     render () {

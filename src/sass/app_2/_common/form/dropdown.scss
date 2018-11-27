@@ -1,0 +1,175 @@
+div.dropdown-container {
+    position: relative;
+    margin: 8px 0 0;
+
+    .dropdown-display {
+        background: $COLOR_WHITE;
+        height: 30px;
+        cursor: pointer;
+        border: solid 1px $COLOR_GRAY;
+        border-radius: $BORDER_RADIUS;
+
+        span {
+            font-size: inherit;
+            text-transform: capitalize;
+            line-height: 32px;
+            vertical-align: middle;
+            padding-left: 8px;
+            font-weight: 300;
+        }
+        &:active, &:focus {
+            outline: none;
+        }
+        &:hover {
+            border-color: $COLOR_BLUE;
+
+            & + .select-arrow {
+                color: $COLOR_BLUE;
+            }
+        }
+    }
+    &:active, &:focus, &.show {
+        outline: none;
+        border-radius: $BORDER_RADIUS;
+
+        .select-arrow {
+            color: $COLOR_BLUE;
+        }
+    }
+    &.show > .clicked {
+        border-color: $COLOR_BLUE;
+    }
+    &.show > .select-arrow {
+        transform: rotate(180deg);
+    }
+    .dropdown-list {
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        position: absolute;
+        transition: transform 0.25s ease, opacity 0.25s linear;
+        user-select: none;
+        opacity: 0;
+        transform: scale(1, 0);
+        z-index: 999;
+
+        .list-container {
+            position: absolute;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 2;
+            cursor: pointer;
+            background: $COLOR_WHITE;
+            border-radius: $BORDER_RADIUS;
+            border: 1px solid $COLOR_GRAY;
+
+            .list-label {
+                pointer-events: none;
+                padding-left: 8px;
+                line-height: 32px;
+                height: 32px;
+
+                span {
+                    text-transform: capitalize;
+                    color: $COLOR_GRAY;
+                    font-size: inherit;
+                    font-weight: 300;
+                }
+            }
+            .list-item {
+                width: 100%;
+                font-size: 1rem;
+
+                span {
+                    text-transform: capitalize;
+                    display: block;
+                    pointer-events: none;
+                    vertical-align: middle;
+                    padding-left: 8px;
+                    font-weight: 300;
+                }
+                * {
+                    height: 32px;
+                    line-height: 32px !important;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                &:hover, &.highlighted {
+                    background-color: $COLOR_LIGHT_GRAY;
+                }
+                &.selected span {
+                    background-color: $COLOR_BRANDBLUE_5;
+                    color: $COLOR_BLUE;
+                    font-weight: 500;
+                }
+            }
+        }
+        &-enter, &-exit {
+            transform: scale(1, 0);
+            opacity: 0;
+        }
+        &-enter-done {
+            transform: scale(1, 1);
+            opacity: 1;
+        }
+    }
+    .select-arrow {
+        display: inline-block;
+        font-style: normal;
+        vertical-align: baseline;
+        text-align: center;
+        text-transform: none;
+        text-rendering: optimizeLegibility;
+        position: absolute;
+        pointer-events: none;
+        top: 9px;
+        right: 6px;
+        line-height: 1;
+        transition: transform 0.2s ease;
+        transform: rotate(0deg);
+        transform-origin: 50% 45%;
+        color: $COLOR_GRAY;
+        font-size: 1.1rem;
+
+        &:before {
+            content: '\002303';
+            display: block;
+            height: 0.53em; // center content glyph
+        }
+    }
+}
+
+// Dark Theme
+.theme-wrapper.dark {
+    .dropdown-container {
+        .dropdown-display {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &.show > .clicked {
+            border-color: $COLOR_WHITE;
+        }
+        .list-container {
+            background: $COLOR_BLUE;
+            border-color: $COLOR_BRANDBLUE_85;
+
+            .list-item {
+                color: $COLOR_BRANDBLUE_40;
+
+                &.selected span {
+                    color: $COLOR_WHITE;
+                    font-weight: 600;
+                    background: $COLOR_BRANDBLUE_85;
+                }
+                &:hover, &.highlighted {
+                    background: $COLOR_BRANDBLUE_95;
+                }
+            }
+        }
+    }
+}

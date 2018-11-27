@@ -22,7 +22,7 @@ const SetCurrency = (() => {
         if (Client.get('currency')) {
             if (is_new_account) {
                 $('#set_currency_loading').remove();
-                $('.has_currency, #set_currency').setVisibility(1);
+                $('#deposit_btn, #set_currency').setVisibility(1);
             } else {
                 BinaryPjax.loadPreviousUrl();
             }
@@ -97,7 +97,7 @@ const SetCurrency = (() => {
                             } else {
                                 Header.populateAccountsList(); // update account title
                                 $('.select_currency').setVisibility(0);
-                                $('.has_currency').setVisibility(1);
+                                $('#deposit_btn').setVisibility(1);
                             }
                         }
                     });

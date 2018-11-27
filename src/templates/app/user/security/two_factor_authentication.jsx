@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from '../../../_common/components/loading.jsx';
 
-const ErrorMessage = ({id}) => (
+const ErrorMessage = ({ id }) => (
     <React.Fragment>
         <p className='invisible notice-msg center-text' id={id} />
     </React.Fragment>
@@ -22,7 +22,7 @@ const OtpForm = () => (
     </React.Fragment>
 );
 
-const TwoFactorStatus = ({type}) => (
+const TwoFactorStatus = ({ type }) => (
     <div className='two-fa-status'>
         <div className='two-fa-status-container'>
             <img className='responsive two-fa-status-icon' src={it.url_for(`images/pages/settings/2fa-${type}.svg`)} />
@@ -49,7 +49,7 @@ const TwoFactorAuthentication = () => (
                     <div className='step'>
                         <div className='circle'>1</div>
                         <div className='content'>
-                            <p>{it.L('Scan the QR code below with your authentication app (such as [_1], [_2], and [_3]).', '<strong>Google Authenticator</strong>', '<strong>Authy</strong>', '<strong>Duo Mobile</strong>')}</p>
+                            <p>{it.L('Scan the QR code below with your authentication app. We recommend [_1] or [_2]. Please note that [_3] is not supported.', '<strong>Authy</strong>', '<strong>Google Authenticator</strong>', '<strong>Duo Mobile</strong>')}</p>
                             <p>{it.L('If you are unable to scan the QR code, you can manually enter this code instead:')} <strong><span id='qrcode_key' /></strong></p>
                             <div id='qrcode_loading'><Loading /></div>
                             <ErrorMessage id='generate_error' />

@@ -1,16 +1,24 @@
 const rewrite     = require('connect-modrewrite');
 const serveIndex  = require('serve-index');
 const serveStatic = require('serve-static');
+const languages   = require('../scripts/common').languages;
 
 module.exports = function (grunt) {
+    lang_regex = languages.join('|').toLowerCase();
+
     return {
         livereload: {
             options: {
-                hostname  : '127.0.0.1',
+                hostname  : '0.0.0.0',
                 port      : 443,
                 protocol  : 'https',
                 base      : 'dist',
-                open      : 'https://localhost.localdomain',
+                open      : {
+                    appName: {
+                        app: 'Google\ Chrome'
+                    },
+                    target : 'https://localhost',
+                },
                 middleware: (connect, options) => {
                     const middlewares = [
                         require('connect-livereload')(),
@@ -18,6 +26,8 @@ module.exports = function (grunt) {
 
                     const rules = [
                         '^/binary-static/(.*)$ /$1',
+                        `^/app/(${lang_regex})/index(\\.html)?/(.*)$ /app/$1/$2 [L]`,
+                        `^/app/(${lang_regex})/.*$ /app/$1/ [L]`,
                     ];
                     middlewares.push(rewrite(rules));
 

@@ -31,6 +31,16 @@
         #notifications_wrapper {
             margin-left: 0;
         }
+        #login_error_container {
+            width: 100%;
+            padding: 15px;
+            background-color: $COLOR_WHITE;
+            border: 1px solid $COLOR_GRAY;
+
+            .login_error {
+                width: 100%;
+            }
+        }
         #panel {
             margin-left: 10px;
 
@@ -200,84 +210,6 @@
                 }
             }
         }
-        #ja-panel {
-            #currency_wrapper, #payout {
-                height: 103px;
-            }
-            #currency_wrapper .hint {
-                font-weight: normal;
-                font-size: $FONT_SIZE_XXS;
-                width: 100%;
-                background-color: transparent;
-            }
-            #payout .current {
-                font-size: $FONT_SIZE_XXL;
-                font-weight: bold;
-                height: 62px;
-                display: block;
-                line-height: 32px;
-                padding-top: 35px !important;
-            }
-            #payout_list {
-                height: 103px;
-                background: $COLOR_WHITE;
-
-                .list {
-                    background: $COLOR_WHITE;
-
-                    > div {
-                        padding: 19px 10px !important;
-                        height: 49px;
-                        border-right: 2px solid $COLOR_WHITE;
-                        margin-bottom: 5px;
-
-                        &:nth-child(4n) {
-                            border-right: none;
-                        }
-                        &.plus {
-                            color: $COLOR_WHITE;
-                            background: $COLOR_RED;
-                        }
-                        &.minus {
-                            color: $COLOR_WHITE;
-                            background: $COLOR_LIGHT_BLUE;
-                        }
-                        &.green {
-                            color: $COLOR_WHITE;
-                            background: $COLOR_GREEN;
-                        }
-                        .hint {
-                            font-size: 75%;
-                        }
-                    }
-                }
-            }
-            #currency {
-                position: absolute;
-                width: 100%;
-                height: initial;
-
-                .current {
-                    height: 15px;
-                    line-height: 15px;
-                    padding-top: 35px;
-                }
-                #currency .list > div {
-                    height: 15px;
-
-                    &:hover {
-                        height: 15px;
-                    }
-                }
-            }
-            .gr-row .gr-no-gutter-left {
-                padding-right: 0;
-
-                &:first-child {
-                    padding-right: 5px;
-                }
-            }
-        }
         .trade_form {
             &:not(.no-margin) {
                 margin-top: 5px;
@@ -369,10 +301,24 @@
                 }
             }
         }
-        .ja-hide + .price-table {
+        .price-table {
+            position: relative;
+            font-size: $FONT_SIZE_N;
+
             margin-top: 10px;
             margin-left: 0;
 
+            #disable-overlay {
+                position: absolute;
+                top: 81px;
+                z-index: 1;
+                width: 100%;
+                height: calc(100% - 81px);
+                background-color: rgba(242, 242, 242, 0.5);
+            }
+            #loading-overlay {
+                width: 100%;
+            }
             .prices-wrapper {
                 .heading {
                     font-weight: bold;
@@ -400,34 +346,9 @@
                 .price-row:nth-child(odd) {
                     background-color: $COLOR_WHITE;
                 }
-                .sell-price {
-                    display: none;
-                }
                 .buy-price {
                     margin-top: 5px;
                 }
-            }
-            #disable-overlay {
-                top: 81px;
-                height: calc(100% - 81px);
-            }
-        }
-        .price-table {
-            position: relative;
-            font-size: $FONT_SIZE_N;
-
-            #disable-overlay {
-                position: absolute;
-                top: 53px;
-                z-index: 1;
-                width: 100%;
-                height: calc(100% - 43px);
-                background-color: rgba(242, 242, 242, 0.5);
-            }
-            #loading-overlay {
-                width: 100%;
-            }
-            .prices-wrapper {
                 .heading > div {
                     line-height: 20px;
                     text-align: center;
@@ -443,22 +364,8 @@
                     display: flex;
                     align-self: center;
                 }
-                .sell-price {
-                    font-size: $FONT_SIZE_XS;
-                    line-height: 10px;
-
-                    &.hint {
-                        font-size: $FONT_SIZE_XXS;
-                    }
-                }
-                .price-rows .sell-price {
-                    height: 10px;
-                }
                 .price-row div:last-child .buy-price .price-button {
                     background: $COLOR_RED;
-                }
-                .price-row:nth-child(odd) {
-                    background: $COLOR_LIGHT_GRAY;
                 }
                 .base-value {
                     font-size: $FONT_SIZE_XXS;
@@ -540,51 +447,6 @@
                 }
             }
         }
-        #trading_status {
-            margin: 0;
-            display: flex;
-
-            div > div {
-                &:first-child {
-                    padding-right: 2px;
-                }
-                &:nth-child(2) {
-                    padding-left: 2px;
-                }
-                .trading-status {
-                    height: 40px;
-                    display: block;
-
-                    span {
-                        padding: 9px 0;
-                        width: 100%;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        height: 31px;
-                        line-height: 31px;
-
-                        &#allow {
-                            background-image: svg-icon('unlock', $COLOR_BLACK);
-
-                            &.selected {
-                                background-image: svg-icon('unlock', $COLOR_WHITE);
-                            }
-                        }
-                        &#disallow {
-                            background-image: svg-icon('lock', $COLOR_BLACK);
-
-                            &.selected {
-                                background-image: svg-icon('lock', $COLOR_WHITE);
-                            }
-                        }
-                        &.selected {
-                            color: $COLOR_WHITE;
-                            background-color: $COLOR_BLUE;
-                        }
-                    }
-                }
-            }
-        }
         .remaining-time {
             color: $COLOR_BLACK;
             line-height: 20px;
@@ -612,7 +474,7 @@
                 margin-left: 0;
 
             }
-            .ja-hide + .price-table {
+            .price-table {
                 margin-left: -10px;
             }
         }
@@ -624,15 +486,12 @@
                 .price-row .price-button {
                     font-size: $FONT_SIZE_N;
                 }
-            }
-            .sell-price {
-                font-size: $FONT_SIZE_XXS;
+                .prices-wrapper .heading > div {
+                    padding: 5px 0;
+                }
             }
             .heading, #category {
                 font-size: $FONT_SIZE_S;
-            }
-            .price-table .prices-wrapper .heading > div {
-                padding: 5px 0;
             }
             #payout .hint {
                 line-height: 15px;

@@ -10,15 +10,7 @@
     }
 }
 
-@media screen and (max-width: 959px) {
-    .home-jp-content {
-        #banner {
-            background-position-x: 0;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 767) and (max-width: 768px) {
     .center-text-p {
         text-align: center;
     }
@@ -30,9 +22,6 @@
         overflow: scroll;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
-        overflow-x: auto;
-    }
-    .table-container {
         overflow-x: auto;
     }
     .welcome-content {
@@ -64,11 +53,6 @@
     }
     #end-note {
         display: none;
-    }
-    .home-jp-content {
-        #banner {
-            background-position-x: 15%;
-        }
     }
     #content .content-tab-container.light .tab-menu-wrap ul.tm-ul li.tm-li a {
         font-size: $FONT_SIZE_S;

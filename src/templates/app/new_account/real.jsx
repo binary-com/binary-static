@@ -7,6 +7,7 @@ import {
     FirstName,
     LastName,
     DateOfBirth,
+    Citizenship,
     Residence,
     AccountOpeningReason,
     AddressLine1,
@@ -14,7 +15,9 @@ import {
     AddressCity,
     AddressPostcode,
     AddressState,
+    Jurisdiction,
     Phone,
+    RiskDisclaimer,
     SecretQuestion,
     SecretAnswer,
     ClientMessage,
@@ -31,7 +34,8 @@ const Real = () => (
                 <FirstName />
                 <LastName />
                 <DateOfBirth />
-                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{single: 'single'}} />
+                <Citizenship className='invisible' />
+                <FormRow type='select' id='place_of_birth' label={it.L('Place of birth')} attributes={{ single: 'single' }} />
                 <Residence />
                 <AccountOpeningReason />
             </Fieldset>
@@ -53,8 +57,11 @@ const Real = () => (
             </Fieldset>
 
             <PepDeclaration />
-
             <ProfessionalClient />
+            <Jurisdiction />
+            <div className='invisible' id='risk_disclaimer'>
+                <RiskDisclaimer />
+            </div>
 
             <Tnc />
         </form>

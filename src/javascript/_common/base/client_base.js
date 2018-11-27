@@ -1,6 +1,7 @@
 const moment           = require('moment');
 const isCryptocurrency = require('./currency_base').isCryptocurrency;
 const SocketCache      = require('./socket_cache');
+const localize         = require('../localize').localize;
 const LocalStore       = require('../storage').LocalStore;
 const State            = require('../storage').State;
 const getPropertyValue = require('../utility').getPropertyValue;
@@ -111,13 +112,30 @@ const ClientBase = (() => {
             !get('is_virtual', loginid) && !isCryptocurrency(get('currency', loginid)));
     };
 
-    const types_map = {
-        virtual  : 'Virtual',
-        gaming   : 'Gaming',
-        financial: 'Investment',
-    };
+    const TypesMapConfig = (() => {
+        let types_map_config;
 
-    const getAccountTitle = loginid => types_map[getAccountType(loginid)] || 'Real';
+        const initTypesMap = () => ({
+            default  : localize('Real'),
+            financial: localize('Investment'),
+            gaming   : localize('Gaming'),
+            virtual  : localize('Virtual'),
+        });
+
+        return {
+            get: () => {
+                if (!types_map_config) {
+                    types_map_config = initTypesMap();
+                }
+                return types_map_config;
+            },
+        };
+    })();
+
+    const getAccountTitle = loginid => {
+        const types_map = TypesMapConfig.get();
+        return (types_map[getAccountType(loginid)] || types_map.default);
+    };
 
     const responseAuthorize = (response) => {
         const authorize = response.authorize;
@@ -182,7 +200,9 @@ const ClientBase = (() => {
 
     const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
-    const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/_(\d+|master)/, '') : ''); // remove manager id or master distinction from group
+    // remove manager id or master distinction from group
+    // remove EUR or GBP distinction from group
+    const getMT5AccountType = group => (group ? group.replace('\\', '_').replace(/_(\d+|master|EUR|GBP)/, '') : '');
 
     const getBasicUpgradeInfo = () => {
         const upgradeable_landing_companies = State.getResponse('authorize.upgradeable_landing_companies');
@@ -202,7 +222,7 @@ const ClientBase = (() => {
                 upgradeable_landing_companies.indexOf(landing_company) !== -1
             ));
 
-            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest', 'japan');
+            can_upgrade_to = canUpgrade('costarica', 'iom', 'malta', 'maltainvest');
             if (can_upgrade_to) {
                 type = can_upgrade_to === 'maltainvest' ? 'financial' : 'real';
             }

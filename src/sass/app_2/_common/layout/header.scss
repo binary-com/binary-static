@@ -1,0 +1,139 @@
+.header {
+    position: fixed;
+    z-index: 99;
+    box-sizing: border-box;
+    width: 100%;
+    height: $HEADER_HEIGHT;
+    top: 0;
+    border-bottom: 1px solid $COLOR_GRAY;
+    background-color: $COLOR_WHITE;
+
+    .menu-items {
+        display: flex;
+        position: relative;
+        box-sizing: border-box;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        .navbar-icons {
+            cursor: pointer;
+            padding: 6px 10px;
+            align-self: center;
+
+            &.binary-logo {
+                border-left: 1px solid $COLOR_GRAY;
+                box-sizing: border-box;
+                display: flex;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+            &.notify-toggle {
+                order: 2;
+                order: 2;
+                padding: 5px 12px;
+                width: 20px;
+            }
+        }
+        .menu-left {
+            justify-content: flex-start;
+            order: -1;
+            display: inline-flex;
+            flex: 1;
+
+            .menu-toggle {
+                align-self: center;
+                display: flex;
+
+                img {
+                    width: 24px;
+                    height: auto;
+                }
+            }
+            .menu-links {
+                height: 100%;
+                align-self: center;
+
+                a {
+                    height: 100%;
+                    padding: 0 12px;
+                    text-decoration: none;
+                    position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    transition: background-color 0.3s;
+
+                    span {
+                        font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
+                        font-weight: 300;
+                        text-transform: capitalize;
+                        color: $COLOR_LIGHT_BLACK;
+                        padding: 14px 18px 12px 34px;
+                        position: relative;
+
+                        &:before {
+                            position: absolute;
+                            top: 15px;
+                            left: 12px;
+                        }
+                        &:after {
+                            display: block;
+                            content: attr(title);
+                            font-weight: 400;
+                            height: 0;
+                            overflow: hidden;
+                            visibility: hidden;
+                        }
+                    }
+                    &:hover {
+                        background-color: $COLOR_GRAY;
+                    }
+                    &.active {
+                        & > span[title] {
+                            font-weight: 500;
+                        }
+                    }
+                    &:hover, &.active {
+                        .inline-icon {
+                            @extend .inline-icon.active;
+                        }
+                    }
+                    .inline-icon {
+                        position: absolute;
+                        left: 10px;
+                        top: 13px;
+                    }
+                }
+                @media (max-width: 980px) {
+                    display: none;
+                }
+            }
+        }
+        .menu-right {
+            justify-content: flex-end;
+            order: 1;
+            display: inline-flex;
+            border-right: 1px solid $COLOR_GRAY;
+        }
+        .notifications-toggle {
+            justify-content: flex-end;
+            align-self: center;
+        }
+    }
+}
+
+.has-inkbar {
+    position: relative;
+
+    .inkbar {
+        display: block;
+        position: absolute;
+        content: '';
+        height: 2px;
+        bottom: 0;
+        background-color: $COLOR_BLUE;
+        transition: all 0.3s;
+    }
+}

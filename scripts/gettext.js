@@ -37,7 +37,7 @@ Gettext.prototype.dnpgettext = function (domain, msg_txt, msg_id, msg_id_plural,
 const createGettextInstance = () => {
     const translations_dir = 'src/translations/';
     const locales = [
-        'en',   'ach_UG', 'de_DE', 'es_ES', 'fr_FR', 'id_ID', 'it_IT', 'ja_JP',
+        'en',   'ach_UG', 'de_DE', 'es_ES', 'fr_FR', 'id_ID', 'it_IT',
         'ko_KR', 'pl_PL', 'pt_PT', 'ru_RU', 'th_TH', 'vi_VN', 'zh_CN', 'zh_TW',
     ];
 
@@ -116,7 +116,7 @@ const createGettextInstance = () => {
             process.stdout.write(common.messageEnd(Date.now() - start_time, true));
             process.stdout.write(`  (messages.pot: ${source_strings.length.toLocaleString()} entries)\n`);
 
-            printList('New strings', new_strings, 'greenBright');
+            printList('New strings',     new_strings, 'greenBright');
             printList('Deleted strings', old_strings, 'redBright');
 
             console.log(
@@ -145,13 +145,11 @@ const formatValue = (value, comment, sign) => (
     `${sign ? color.cyan(` ${sign} `) : ''}${color.whiteBright(value.toLocaleString().padStart(sign ? 5 : 8))} ${` (${comment})\n`}`
 );
 
-
 let gt_instance = null;
 exports.getInstance = () => {
-    if (gt_instance) {
-        return gt_instance;
+    if (!gt_instance) {
+        gt_instance = createGettextInstance();
     }
 
-    gt_instance = createGettextInstance();
     return gt_instance;
 };
