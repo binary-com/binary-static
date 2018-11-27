@@ -1,7 +1,8 @@
 import {
     action,
     computed,
-    observable, reaction,
+    observable,
+    when,
 } from 'mobx';
 import moment                         from 'moment';
 import { WS }                         from 'Services';
@@ -100,7 +101,7 @@ export default class StatementStore extends BaseStore {
 
     @action.bound
     onMount() {
-        this.accountSwitcherDisposer = reaction(
+        this.accountSwitcherDisposer = when(
             () => this.root_store.client.switch_broadcast,
             () => {
                 this.clearTable();

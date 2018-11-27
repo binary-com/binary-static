@@ -3,7 +3,7 @@ import {
     action,
     observable,
     runInAction,
-    reaction, computed,
+    reaction, computed, when,
 } from 'mobx';
 import {
     getMinPayout,
@@ -420,7 +420,7 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     async onMount() {
-        this.accountSwitcherDisposer = reaction(
+        this.accountSwitcherDisposer = when(
             () => this.root_store.client.switch_broadcast,
             async () => {
                 await this.refresh();

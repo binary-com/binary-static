@@ -1,18 +1,18 @@
-import { observable, computed, action, reaction } from 'mobx';
-import moment                                     from 'moment';
-import { getAccountTitle }                        from '_common/base/client_base';
-import GTM                                        from '_common/base/gtm';
-import * as SocketCache                           from '_common/base/socket_cache';
-import BinarySocket                               from '_common/base/socket_base';
-import { localize }                               from '_common/localize';
-import { LocalStore, State }                      from '_common/storage';
+import { observable, computed, action, when } from 'mobx';
+import moment                                           from 'moment';
+import { getAccountTitle }                              from '_common/base/client_base';
+import GTM                                              from '_common/base/gtm';
+import * as SocketCache                                 from '_common/base/socket_cache';
+import BinarySocket                                     from '_common/base/socket_base';
+import { localize }                                     from '_common/localize';
+import { LocalStore, State }                            from '_common/storage';
 import BaseStore                                  from './base_store';
 
+const storage_key                  = 'client.accounts';
 export default class ClientStore extends BaseStore {
     @observable loginid;
     @observable upgrade_info;
     @observable accounts;
-    storage_key                  = 'client.accounts';
     @observable switched         = '';
     @observable switch_broadcast = false;
 
@@ -106,7 +106,7 @@ export default class ClientStore extends BaseStore {
     resetLocalStorageValues(loginid) {
         this.accounts[loginid].cashier_confirmed = 0;
         this.accounts[loginid].accepted_bch      = 0;
-        LocalStore.setObject(this.storage_key, this.accounts);
+        LocalStore.setObject(storage_key, this.accounts);
         LocalStore.set('active_loginid', loginid);
     }
 
@@ -183,7 +183,7 @@ export default class ClientStore extends BaseStore {
     @action.bound
     init() {
         this.loginid      = LocalStore.get('active_loginid');
-        this.accounts     = LocalStore.getObject(this.storage_key);
+        this.accounts     = LocalStore.getObject(storage_key);
         this.upgrade_info = this.getBasicUpgradeInfo();
         this.switched     = '';
 
@@ -248,19 +248,18 @@ export default class ClientStore extends BaseStore {
     @action.bound
     registerReactions() {
         // Switch account reactions.
-        reaction(
+        when(
             () => this.switched,
-            async (switched, reactionHandler) => {
-                if (!switched || !switched.length || !this.getAccount(switched).token) return;
+            async () => {
+                if (!this.switched || !this.switched.length || !this.getAccount(this.switched).token) return;
                 sessionStorage.setItem('active_tab', '1');
                 // set local storage
                 GTM.setLoginFlag();
-                this.resetLocalStorageValues(switched);
+                this.resetLocalStorageValues(this.switched);
                 SocketCache.clear();
                 await BinarySocket.send({ 'authorize': this.getToken() }, { forced: true });
                 await this.init();
                 this.broadcastAccountChange();
-                reactionHandler.dispose();
             },
             {
                 name: 'accountSwitchedReaction',
