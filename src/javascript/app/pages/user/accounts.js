@@ -15,12 +15,26 @@ const Accounts = (() => {
     let landing_company;
     const form_id = '#new_accounts';
 
-    const onLoad = () => {
-        const table_headers = {
+    const TableHeaders = (() => {
+        let table_headers;
+
+        const initTableHeaders = () => ({
             account             : localize('Account'),
             available_markets   : localize('Available Markets'),
             available_currencies: localize('Available Currencies'),
+        });
+
+        return {
+            get: () => {
+                if (!table_headers) {
+                    table_headers = initTableHeaders();
+                }
+                return table_headers;
+            },
         };
+    })();
+
+    const onLoad = () => {
         if (!Client.get('residence')) {
             // ask client to set residence first since cannot wait landing_company otherwise
             BinaryPjax.load(urlFor('user/settings/detailsws'));
@@ -33,12 +47,12 @@ const Accounts = (() => {
             let element_to_show = '#no_new_accounts_wrapper';
             const upgrade_info  = Client.getUpgradeInfo();
             if (upgrade_info.can_upgrade) {
-                populateNewAccounts(upgrade_info, table_headers);
+                populateNewAccounts(upgrade_info);
                 element_to_show = '#new_accounts_wrapper';
             }
 
             if (upgrade_info.can_open_multi) {
-                populateMultiAccount(table_headers);
+                populateMultiAccount();
             } else {
                 doneLoading(element_to_show);
             }
@@ -55,9 +69,10 @@ const Accounts = (() => {
 
     const getCompanyCountry = account => Client.getLandingCompanyValue(account, landing_company, 'country');
 
-    const populateNewAccounts = (upgrade_info, table_headers) => {
-        const new_account = upgrade_info;
-        const account     = {
+    const populateNewAccounts = (upgrade_info) => {
+        const table_headers = TableHeaders.get();
+        const new_account   = upgrade_info;
+        const account       = {
             real     : new_account.type === 'real',
             financial: new_account.type === 'financial',
         };
@@ -165,9 +180,10 @@ const Accounts = (() => {
 
     const getMarketName = market => MarketsConfig.get()[market] || '';
 
-    const populateMultiAccount = (table_headers) => {
-        const currencies = getCurrencies(landing_company);
-        const account    = { real: 1 };
+    const populateMultiAccount = () => {
+        const table_headers = TableHeaders.get();
+        const currencies    = getCurrencies(landing_company);
+        const account       = { real: 1 };
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
                 .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
