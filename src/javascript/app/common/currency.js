@@ -7,8 +7,10 @@ const getCurrencyList = (currencies) => {
     const $cryptocurrencies = $('<optgroup/>', { label: localize('Crypto') });
 
     currencies.forEach((currency) => {
-        (CurrencyBase.isCryptocurrency(currency) ? $cryptocurrencies : $fiat_currencies)
-            .append($('<option/>', { value: currency, text: currency }));
+        const is_crypto_currency = CurrencyBase.isCryptocurrency(currency);
+        const currency_name      = is_crypto_currency ? `${CurrencyBase.getCurrencyName(currency)} (${currency})` : currency;
+        (is_crypto_currency ? $cryptocurrencies : $fiat_currencies)
+            .append($('<option/>', { value: currency, text: currency_name }));
     });
 
     return $currencies.append($fiat_currencies.children().length ? $fiat_currencies : '').append($cryptocurrencies.children().length ? $cryptocurrencies : '');
