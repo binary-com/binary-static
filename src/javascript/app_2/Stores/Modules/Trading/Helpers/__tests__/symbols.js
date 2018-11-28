@@ -101,7 +101,7 @@ describe('pickDefaultSymbol', () => {
         expect(pickDefaultSymbol(active_symbols)).to.eql('R_10');
     });
 
-    it('It Returns the default symbol if active symbols has value', () => {
+    it('It Returns the default symbol if active symbols has no value', () => {
         expect(pickDefaultSymbol()).to.eql('');
     });
 
