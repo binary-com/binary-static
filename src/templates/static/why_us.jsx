@@ -14,7 +14,7 @@ const Section = ({ className = '', id, header, children }) => (
 const WhyUs = () => (
     <div className='container'>
         <div className='why-us static_full gr-row'>
-            <div className='gr-3 gr-hide-m sidebar-container'>
+            <div className='gr-3 gr-hide-p gr-hide-m sidebar-container'>
                 <div className='sidebar'>
                     <List
                         id='sidebar-nav'
@@ -34,7 +34,7 @@ const WhyUs = () => (
                     </div>
                 </div>
             </div>
-            <div className='gr-9 gr-12-m gr-parent'>
+            <div className='gr-9 gr-12-p gr-12-m gr-parent'>
                 <Section id='sharp-prices' header={it.L('Why pay more?')}>
                     <p>{it.L('[_1]\'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.', it.website_name)}</p>
                     <div className='gr-row'>
