@@ -1,55 +1,35 @@
-import PropTypes            from 'prop-types';
-import React, { PureComponent } from 'react';
-import { Redirect }         from 'react-router-dom';
-import { localize }         from '_common/localize';
-import Button               from 'App/Components/Form/button.jsx';
-import { IconStatement }    from 'Assets/Header/NavBar';
-import { routes }           from 'Constants/index';
+import PropTypes         from 'prop-types';
+import React             from 'react';
+import { Link }          from 'react-router-dom';
+import { localize }      from '_common/localize';
+import Button            from 'App/Components/Form/button.jsx';
+import { IconStatement } from 'Assets/Header/NavBar';
+import { routes }        from 'Constants/index';
 
-class EmptyStatementMessage extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            redirect: false,
-        };
-    }
-
-    setRedirect() {
-        this.setState({
-            redirect: true,
-        });
-    }
-
-    renderRedirect() {
-        return this.state.redirect &&
-            <Redirect to={routes.trade} />;
-    }
-
-    render = () => (
-        <React.Fragment>
-            {this.renderRedirect()}
-            <div className='statement-empty'>
-                <IconStatement className='statement-empty__icon' />
-                <span className='statement-empty__text'>
-                    {
-                        !this.props.has_selected_date ?
-                            localize('Your account has no trading activity.')
-                            :
-                            localize('Your account has no trading activity for the selected period.')
-                    }
-                </span>
+const EmptyStatementMessage = ({ has_selected_date }) => (
+    <React.Fragment>
+        <div className='statement-empty'>
+            <IconStatement className='statement-empty__icon' />
+            <span className='statement-empty__text'>
                 {
-                    !this.props.has_selected_date &&
+                    !has_selected_date ?
+                        localize('Your account has no trading activity.')
+                        :
+                        localize('Your account has no trading activity for the selected period.')
+                }
+            </span>
+            {
+                !has_selected_date &&
+                <Link to={routes.trade}>
                     <Button
                         className='secondary orange'
                         text={localize('Trade now')}
-                        onClick={this.setRedirect.bind(this)}
                     />
-                }
-            </div>
-        </React.Fragment>
-    );
-}
+                </Link>
+            }
+        </div>
+    </React.Fragment>
+);
 
 EmptyStatementMessage.propTypes = {
     has_selected_date: PropTypes.bool,
