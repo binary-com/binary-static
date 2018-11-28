@@ -701,12 +701,15 @@ body #not_authenticated_financial ul.checked > li {
             text-align: center;
             padding: 20px;
             border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+        }
+        &.responsive {
+            th, td {
+                @media screen and (max-width: 500px) {
+                    text-align: left !important;
 
-            @media screen and (max-width: 500px) {
-                text-align: left !important;
-
-                &:last-child {
-                    padding-top: 0;
+                    &:last-child {
+                        padding-top: 0;
+                    }
                 }
             }
         }
