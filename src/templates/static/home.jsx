@@ -317,31 +317,31 @@ const Home = () => {
                         </div>
                         <div className='award-icons'>
                             <div className='award-icon'>
-                                <img className='responsive' src={it.url_for('images/pages/home/awards/t2w-2010.svg')} />
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/t2w-2010.svg')} alt='Trade2Win Award' />
                                 <span className='caption'>{it.L('Trade2Win')}</span>
                             </div>
                             <div className='award-icon'>
-                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbfr-2012.svg')} />
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbfr-2012.svg')} alt='Global Banking and Finance Review 2012' />
                                 <span className='caption'>{it.L('Global Banking and Finance Review')}</span>
                             </div>
                             <div className='award-icon'>
-                                <img className='responsive' src={it.url_for('images/pages/home/awards/egr-2015.svg')} />
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/egr-2015.svg')} alt='EGR Operator Awards 2015' />
                                 <span className='caption'>{it.L('EGR Operator Awards')}</span>
                             </div>
                             <div className='award-icon'>
-                                <img className='responsive' src={it.url_for('images/pages/home/awards/mena-2016.svg')} />
-                                <span className='caption'>{it.L('16th Mena Financial Forum & Expo')}</span>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/mena-2016.svg')} alt='16th MENA Financial Forum & Expo 2016' />
+                                <span className='caption'>{it.L('16th MENA Financial Forum & Expo')}</span>
                             </div>
                             <div className='award-icon'>
-                                <img className='responsive' src={it.url_for('images/pages/home/awards/opm-2017.svg')} />
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/opm-2017.svg')} alt='Online Personal Wealth Awards 2017' />
                                 <span className='caption'>{it.L('Online Personal Wealth Awards')}</span>
                             </div>
                             <div className='award-icon'>
-                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbf-2018.svg')} />
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbf-2018.svg')} alt='Global Banking & Finance Awards 2018' />
                                 <span className='caption'>{it.L('Global Banking & Finance Awards')}</span>
                             </div>
                             <div className='award-icon'>
-                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2018.svg')} />
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2018.svg')} alt='Global Brands Magazine 2018' />
                                 <span className='caption'>{it.L('Global Brands Magazine')}</span>
                             </div>
                         </div>
