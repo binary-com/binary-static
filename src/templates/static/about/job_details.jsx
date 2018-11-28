@@ -925,22 +925,24 @@ const JobDetails = () => (
                         <div className='invisible' id='risk_management_executive'>
                             <h1>{it.L('Risk Management Executive')}</h1>
 
-                            <p>{it.L('As our Risk Management Executive, we will depend on you to identify, analyse, and take necessary measures to reduce or eliminate risks faced by the organisation.')}</p>
+                            <p>{it.L('As our Risk Management Executive, we will depend on you to devise and execute effective analyses to identify potential risks to the Company and design and implement measures to eliminate such risks.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Observe internal policies, procedures, and guidelines on all matters that concern risk management') },
                                     { text: it.L('Investigate client accounts that have been flagged by existing fraud controls and processes') },
-                                    { text: it.L('Monitor client’s user behaviour on our trading platform') },
+                                    { text: it.L('Scrutinise clients’ user behaviour on our trading platform') },
                                     { text: it.L('Review and analyse suspicious client activities') },
                                     { text: it.L('Review and approve KYC documents') },
-                                    { text: it.L('Verify and approve client withdrawal requests') },
-                                    { text: it.L('Block and unblock client accounts in line with internal guidelines') },
-                                    { text: it.L('Evaluate existing procedures and policies and suggest improvements') },
+                                    { text: it.L('Verify and approve clients’ deposit and withdrawal requests') },
+                                    { text: it.L('Create strategies against potential risks that might arise due to disruptive innovation') },
+                                    { text: it.L('Evaluate existing procedures and policies with respect to risk management and suggest improvements') },
+                                    { text: it.L('Maintain trackable records of investigations in AML-CTF-related matters') },
+                                    { text: it.L('Provide guidance to the Company’s operational teams and act as internal second line support for AML-CTF, anti-fraud, and authentication purposes') },
+                                    { text: it.L('Adhere to internal policies, procedures, and guidelines on all matters that concern risk management') },
                                     { text: it.L('Prepare reports on investigations and resolved issues') },
-                                    { text: it.L('Handle chargeback disputes') },
+                                    { text: it.L('Handle chargeback disputes and review regulatory complaints') },
                                 ]}
                             />
 
@@ -948,12 +950,17 @@ const JobDetails = () => (
                                 text={it.L('Preferences:')}
                                 className='bullet'
                                 items={[
-                                    { text: it.L('Degree in finance or economics, law, risk management, business studies, or management') },
-                                    { text: it.L('Thorough understanding of AML and fraud processes and applications') },
-                                    { text: it.L('Strong analytical capabilities that have been proven in a prior capacity, or a keen interest to move into this area') },
-                                    { text: it.L('Self-driven and flexible attitude towards task rotations') },
+                                    { text: it.L('Degree in Finance, Economics, Law, Risk Management, Criminology, Business Studies, or Management') },
+                                    { text: it.L('A firm grasp of AML-CTF regulations, typologies, and red flags, as well as fraud processes and applications') },
+                                    { text: it.L('Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area') },
+                                    { text: it.L('An eagerness for robust risk management to keep up with the increasing pace of information exchange') },
+                                    { text: it.L('Self-motivation and flexibility in task rotations') },
+                                    { text: it.L('An aptitude to handle thrilling challenges as well as repetitive tasks as might be needed') },
+                                    { text: it.L('The ability to make rational decisions even based on limited information') },
                                     { text: it.L('Organisational skills and the ability to work proactively') },
-                                    { text: it.L('High-level of integrity, reliability and work ethic') },
+                                    { text: it.L('A high level of integrity, reliability, and work ethic') },
+                                    { text: it.L('Proficiency in Excel and big data analysis') },
+                                    { text: it.L('An excellent command of spoken and written English') },
                                 ]}
                             />
                         </div>
