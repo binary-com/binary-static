@@ -1,14 +1,14 @@
-import { observable, computed, action, when } from 'mobx';
-import moment                                           from 'moment';
-import { getAccountTitle }                              from '_common/base/client_base';
-import GTM                                              from '_common/base/gtm';
-import * as SocketCache                                 from '_common/base/socket_cache';
-import BinarySocket                                     from '_common/base/socket_base';
-import { localize }                                     from '_common/localize';
-import { LocalStore, State }                            from '_common/storage';
-import BaseStore                                  from './base_store';
+import { getAccountTitle }                    from '_common/base/client_base';
+import GTM                                    from '_common/base/gtm';
+import BinarySocket                           from '_common/base/socket_base';
+import * as SocketCache                       from '_common/base/socket_cache';
+import { localize }                           from '_common/localize';
+import { LocalStore, State }                  from '_common/storage';
+import { action, computed, observable, when } from 'mobx';
+import moment                                 from 'moment';
+import BaseStore                              from './base_store';
 
-const storage_key                  = 'client.accounts';
+const storage_key = 'client.accounts';
 export default class ClientStore extends BaseStore {
     @observable loginid;
     @observable upgrade_info;
@@ -16,9 +16,10 @@ export default class ClientStore extends BaseStore {
     @observable switched         = '';
     @observable switch_broadcast = false;
 
-    constructor() {
-        super();
+    constructor(root_store) {
+        super({ root_store });
         this.init();
+
     }
 
     @computed
@@ -60,7 +61,18 @@ export default class ClientStore extends BaseStore {
     @computed
     get currency() {
         return this.accounts[this.loginid] ?
-            this.accounts[this.loginid].currency : '';
+            this.accounts[this.loginid].currency : this.default_currency;
+    }
+
+    @computed
+    get default_currency() {
+        if (!this.root_store.modules.trade.currencies_list) {
+            return '';
+        }
+        if (Object.keys(this.root_store.modules.trade.currencies_list).length === 0) {
+            return '';
+        }
+        return this.root_store.modules.trade.currencies_list.Fiat[0].text;
     }
 
     @computed
