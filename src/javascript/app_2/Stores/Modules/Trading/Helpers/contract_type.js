@@ -1,18 +1,11 @@
-import moment                    from 'moment';
-import { localize }              from '_common/localize';
-import {
-    cloneObject,
-    getPropertyValue }           from '_common/utility';
-import { WS }                    from 'Services';
-import { buildBarriersConfig }   from './barrier';
-import { buildDurationConfig }   from './duration';
-import {
-    buildForwardStartingConfig,
-    isSessionAvailable }         from './start_date';
-import {
-    getContractCategoriesConfig,
-    getContractTypesConfig,
-    getLocalizedBasis }          from '../Constants/contract';
+import { localize }                                                               from '_common/localize';
+import { cloneObject, getPropertyValue }                                          from '_common/utility';
+import moment                                                                     from 'moment';
+import { WS }                                                                     from 'Services';
+import { getContractCategoriesConfig, getContractTypesConfig, getLocalizedBasis } from '../Constants/contract';
+import { buildBarriersConfig }                                                    from './barrier';
+import { buildDurationConfig }                                                    from './duration';
+import { buildForwardStartingConfig, isSessionAvailable }                         from './start_date';
 
 const ContractType = (() => {
     let available_contract_types = {};
@@ -25,85 +18,91 @@ const ContractType = (() => {
 
         available_contract_types = {};
         available_categories = cloneObject(contract_categories); // To preserve the order (will clean the extra items later in this function)
+        if (!r.contracts_for.available) {
+            this.root_store.ui.addToastMessage({
+                message: localize('Certain trade parameters have been changed due to your account settings.'),
+                type   : 'error',
+            });
+        } else {
+            r.contracts_for.available.forEach((contract) => {
+                const type = Object.keys(contract_types).find(key => (
+                    contract_types[key].trade_types.indexOf(contract.contract_type) !== -1 &&
+                    (typeof contract_types[key].barrier_count === 'undefined' || +contract_types[key].barrier_count === contract.barriers) // To distinguish betweeen Rise/Fall & Higher/Lower
+                ));
 
-        r.contracts_for.available.forEach((contract) => {
-            const type = Object.keys(contract_types).find(key => (
-                contract_types[key].trade_types.indexOf(contract.contract_type) !== -1 &&
-                (typeof contract_types[key].barrier_count === 'undefined' || +contract_types[key].barrier_count === contract.barriers) // To distinguish betweeen Rise/Fall & Higher/Lower
-            ));
+                if (!type) return; // ignore unsupported contract types
 
-            if (!type) return; // ignore unsupported contract types
-
-            /*
-            add to this config if a value you are looking for does not exist yet
-            accordingly create a function to retrieve the value
-            config: {
-                has_spot: 1,
-                durations: {
-                    min_max: {
-                        spot: {
-                            tick    : { min: 5,     max: 10 },    // value in ticks, as cannot convert to seconds
-                            intraday: { min: 18000, max: 86400 }, // all values converted to seconds
-                            daily   : { min: 86400, max: 432000 },
+                /*
+                add to this config if a value you are looking for does not exist yet
+                accordingly create a function to retrieve the value
+                config: {
+                    has_spot: 1,
+                    durations: {
+                        min_max: {
+                            spot: {
+                                tick    : { min: 5,     max: 10 },    // value in ticks, as cannot convert to seconds
+                                intraday: { min: 18000, max: 86400 }, // all values converted to seconds
+                                daily   : { min: 86400, max: 432000 },
+                            },
+                            forward: {
+                                intraday: { min: 18000, max: 86400 },
+                            },
                         },
-                        forward: {
-                            intraday: { min: 18000, max: 86400 },
+                        units_display: {
+                            spot: [
+                                { text: 'ticks',   value: 't' },
+                                { text: 'seconds', value: 's' },
+                                { text: 'minutes', value: 'm' },
+                                { text: 'hours',   value: 'h' },
+                                { text: 'days',    value: 'd' },
+                            ],
+                            forward: [
+                                { text: 'days',    value: 'd' },
+                            ],
                         },
                     },
-                    units_display: {
-                        spot: [
-                            { text: 'ticks',   value: 't' },
-                            { text: 'seconds', value: 's' },
-                            { text: 'minutes', value: 'm' },
-                            { text: 'hours',   value: 'h' },
-                            { text: 'days',    value: 'd' },
-                        ],
-                        forward: [
-                            { text: 'days',    value: 'd' },
-                        ],
+                    forward_starting_dates: [
+                        { text: 'Mon - 19 Mar, 2018', value: 1517356800, sessions: [{ open: obj_moment, close: obj_moment }] },
+                        { text: 'Tue - 20 Mar, 2018', value: 1517443200, sessions: [{ open: obj_moment, close: obj_moment }] },
+                        { text: 'Wed - 21 Mar, 2018', value: 1517529600, sessions: [{ open: obj_moment, close: obj_moment }] },
+                    ],
+                    trade_types: {
+                        'CALL': 'Higher',
+                        'PUT' : 'Lower',
                     },
-                },
-                forward_starting_dates: [
-                    { text: 'Mon - 19 Mar, 2018', value: 1517356800, sessions: [{ open: obj_moment, close: obj_moment }] },
-                    { text: 'Tue - 20 Mar, 2018', value: 1517443200, sessions: [{ open: obj_moment, close: obj_moment }] },
-                    { text: 'Wed - 21 Mar, 2018', value: 1517529600, sessions: [{ open: obj_moment, close: obj_moment }] },
-                ],
-                trade_types: {
-                    'CALL': 'Higher',
-                    'PUT' : 'Lower',
-                },
-                barriers: {
-                    count   : 2,
-                    tick    : { high_barrier: '+1.12', low_barrier : '-1.12' },
-                    intraday: { high_barrier: '+2.12', low_barrier : '-2.12' },
-                    daily   : { high_barrier: 1111,    low_barrier : 1093 },
-                },
-            }
-            */
+                    barriers: {
+                        count   : 2,
+                        tick    : { high_barrier: '+1.12', low_barrier : '-1.12' },
+                        intraday: { high_barrier: '+2.12', low_barrier : '-2.12' },
+                        daily   : { high_barrier: 1111,    low_barrier : 1093 },
+                    },
+                }
+                */
 
-            if (!available_contract_types[type]) {
-                // extend contract_categories to include what is needed to create the contract list
-                const sub_cats = available_categories[Object.keys(available_categories)
-                    .find(key => available_categories[key].indexOf(type) !== -1)];
+                if (!available_contract_types[type]) {
+                    // extend contract_categories to include what is needed to create the contract list
+                    const sub_cats = available_categories[Object.keys(available_categories)
+                        .find(key => available_categories[key].indexOf(type) !== -1)];
 
-                if (!sub_cats) return;
+                    if (!sub_cats) return;
 
-                sub_cats[sub_cats.indexOf(type)] = { value: type, text: contract_types[type].title };
+                    sub_cats[sub_cats.indexOf(type)] = { value: type, text: contract_types[type].title };
 
-                // populate available contract types
-                available_contract_types[type] = cloneObject(contract_types[type]);
-            }
-            const config = available_contract_types[type].config || {};
+                    // populate available contract types
+                    available_contract_types[type] = cloneObject(contract_types[type]);
+                }
+                const config = available_contract_types[type].config || {};
 
-            // set config values
-            config.has_spot               = config.has_spot || contract.start_type === 'spot';
-            config.durations              = buildDurationConfig(contract, config.durations);
-            config.trade_types            = buildTradeTypesConfig(contract, config.trade_types);
-            config.barriers               = buildBarriersConfig(contract, config.barriers);
-            config.forward_starting_dates = buildForwardStartingConfig(contract, config.forward_starting_dates);
+                // set config values
+                config.has_spot               = config.has_spot || contract.start_type === 'spot';
+                config.durations              = buildDurationConfig(contract, config.durations);
+                config.trade_types            = buildTradeTypesConfig(contract, config.trade_types);
+                config.barriers               = buildBarriersConfig(contract, config.barriers);
+                config.forward_starting_dates = buildForwardStartingConfig(contract, config.forward_starting_dates);
 
-            available_contract_types[type].config = config;
-        });
+                available_contract_types[type].config = config;
+            });
+        }
 
         // cleanup categories
         Object.keys(available_categories).forEach((key) => {
