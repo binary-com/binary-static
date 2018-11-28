@@ -683,6 +683,25 @@ label + input {
     }
 }
 
+@media screen and (max-width: 500px) {
+    .responsive {
+        thead {
+            display: none !important;
+        }
+        td {
+            display: block;
+
+            &:before {
+                content: attr(datath);
+                font-weight: bold;
+                display: inline-block;
+                width: 100%;
+                text-align: left !important;
+            }
+        }
+    }
+}
+
 /* TODO: remove when UX research is finished */
 #interview_popup_container {
     height: 100vh;
