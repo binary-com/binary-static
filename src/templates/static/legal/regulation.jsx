@@ -143,7 +143,7 @@ const Regulation = () => {
                             padding='5'
                             center
                             border='border-dark-gray'
-                            image='images/pages/regulation/pillar.svg'
+                            image='images/pages/regulation/pdf-icon.svg'
                             href={it.url_for('/download/BIEL_Pillar_3_Report_20180601.pdf')}
                             target='_blank'
                             download
@@ -162,10 +162,24 @@ const Regulation = () => {
                             <FillBox padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' download text={it.L('FX')} />
                         </div>
                     </div>
+
+                    <h3>{it.L('MiFID II RTS 28')}</h3>
+                    <div>
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/pdf-icon.svg'
+                            href={it.url_for('/download/BIEL-RTS28.pdf')}
+                            target='_blank'
+                            text={it.L('Annual Best Execution Disclosure 2017')}
+                        />
+                    </div>
                 </div>
             </Box>
 
-            <div className='invisible eu-show'>
+            <div data-show='eucountry'>
                 <Box header={it.L('Binary (Europe) Limited')} >
                     <p>{it.L('Binary (Europe) Limited, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated (for gambling products only - [_1]\'s Volatility Indices) by the Malta Gaming Authority in Malta (licence no [_2]) and for UK clients by the UK Gambling Commission - [_3]view licence[_4].', it.website_name, 'MGA/B2C/102/2000', '<a href="https://secure.gamblingcommission.gov.uk/gccustomweb/PublicRegister/PRSearch.aspx?ExternalAccountId=39495" target="_blank">', '</a>')}</p>
                     <p>{it.L('European Union residents who wish to trade gambling products will have their accounts opened with Binary (Europe) Limited.')}</p>

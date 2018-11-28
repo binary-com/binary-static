@@ -60,6 +60,9 @@ const Url = (() => {
     const host_map = { // the exceptions regarding updating the URLs
         'bot.binary.com'       : 'www.binary.bot',
         'developers.binary.com': 'developers.binary.com', // same, shouldn't change
+        'academy.binary.com'   : 'academy.binary.com',
+        'tech.binary.com'      : 'tech.binary.com',
+        'blog.binary.com'      : 'blog.binary.com',
     };
 
     const urlForCurrentDomain = (href) => {
@@ -84,7 +87,7 @@ const Url = (() => {
 
     const urlForStatic = (path = '') => {
         if (!static_host || static_host.length === 0) {
-            static_host = document.querySelector('script[src*="binary.min.js"],script[src*="binary.js"]');
+            static_host = document.querySelector('script[src*="vendor.min.js"]');
             if (static_host) {
                 static_host = static_host.getAttribute('src');
             }

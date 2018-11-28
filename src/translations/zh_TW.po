@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-11-09 09:44\n"
+"PO-Revision-Date: 2018-11-27 05:15\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -168,8 +168,11 @@ msgstr "%1不收取任何轉帳費用。"
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, indices, commodities, and volatility indices."
 msgstr "%1讓每個人都能輕鬆參與金融市場。可交易各主要貨幣、指數、商品和波動率指數，投資門檻低至1美元。"
 
+msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
+msgstr "%1讓每個人都能輕鬆參與金融市場。可交易各主要貨幣、股票指數和商品，投資門檻低至1美元。"
+
 msgid "%1 has been credited into your virtual account: %2."
-msgstr ""
+msgstr "%1 已記入您的虛擬帳戶: %2。"
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 竭誠達到極高的道德標準和優質的交易體驗，因此獲得了令人羨慕的聲譽。"
@@ -480,9 +483,6 @@ msgstr "<a href=\"%1\">返回交易頁面</a>"
 msgid "<a href='%1'>Founded</a> October 1999"
 msgstr "<a href='%1'>成立於</a>1999年10月"
 
-msgid "<a href='%1'>Offices</a> in Malta and Malaysia"
-msgstr "<a href='%1'>公司</a>位於馬爾他和馬來西亞"
-
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>合適性測試:警告:</strong>為了給您提供服務，我們必須向您獲取資訊，以便評估某項產品或服務對您是否合適（就是說要看您是否擁有足夠經驗和知識來了解相關的風險）。"
 
@@ -518,9 +518,6 @@ msgstr "PEP是被委託進行特出公眾任務的個人。此身份包括了PEP
 
 msgid "A Payment Agent acts like an exchange between the Client (that is, our customer) and %1. The Payment Agent processes deposits and withdrawals for Clients who wish to use a specific e-wallet method or local currency that is not offered by %1. The transfer fees are borne by the Client."
 msgstr "付款代理人扮演客戶（即我們的顧客）和 %1之間的兌換員。如果客戶希望使用某種特定電子錢包方式或1%不支持的本地貨幣，付款代理人將負責為客戶處理充值和提款事宜。匯款費用由客戶支付。"
-
-msgid "A Politically Exposed Person (PEP) is an individual who is or has been entrusted with a prominent public function including his/her immediate family members or persons known to be close associates of such persons, but does not include middle ranking or more junior officials. Such individuals include Heads of State, Ministers, Parliamentary Secretaries, Members of Parliament, Judges, Ambassadors, Senior Government Officials, High Ranking Officers in the Armed Forces, Audit Committees of the boards of central banks, and Directors of state-owned corporations. The “immediate family members” of the above examples will also be considered as PEP, and these include their spouses/partners, parents, and children. Additionally, “persons known to be close associates” of PEPs include their business partners, will also be considered as such. As a general rule, a person considered to be a PEP and who has ceased to be entrusted with a prominent public function for a period of at least twelve months no longer qualifies as a PEP."
-msgstr "政治公眾人士(PEP) 是被委託進行特出公眾任務的個人。此身份包括了其直系親屬和眾所周知為其親近的人，但不包括中級或初級官員。所指個人包括國家首長、部長、國會秘書、國會議員、法官、大使、高級政府官員、軍事高層官員、中央銀行的審計委員、國營企業董事等。以上各例的直系親屬也都屬於政治公眾人士，包括其配偶/伴侶、父母和孩子。再者，眾所周知的與政治公眾人士有親密關係的人士包括其商業合夥人也屬於政治公眾人士。一般來說，已經停止被委託進行特出公眾任務為期超過十二個月的個人不屬於政治公眾人士。"
 
 msgid "A Professional Client receives a lower degree of client protection due to the following:"
 msgstr "由於以下原因, 專業客戶會收到程度較低的用戶端保護:"
@@ -587,6 +584,9 @@ msgstr "母語為英語，口語、寫作皆非常流利"
 
 msgid "A panel featuring industry leaders awards BetOnMarkets.com 'Financial Betting Operator of the Year' over two other finalists. It's a major victory for our brand and further recognition of our world-beating service. Ten years on, and going from strength to strength."
 msgstr "BetOnMarkets.com 淘汰了其他兩個決賽對手，贏得由行業領袖專家團評選的「年度最佳金融投注運營商」獎項。這對我們的品牌來說是一場很重大的勝利，並進一步肯定了我們首屈一指的卓越服務。十年過去了，我們的實力越來越強。"
+
+msgid "A politically exposed person (PEP) is an individual who is or has been entrusted with a prominent public function. Family members and close associates of such individuals are also considered as PEPs. A PEP who has ceased to be entrusted with a prominent public function for at least 12 months no longer qualifies as a PEP."
+msgstr "政治公眾人物(PEP) 是指正在或曾經被賦予重要公共職能的個人。這些人的家庭成員和親密同夥也被視為 PEP。如果一名PEP已停止其重要公共職能至少12個月，將不再合格為PEP。"
 
 msgid "A preference and passion for Linux and open-source platforms"
 msgstr "偏好并熱衷於使用Linux和開源平台"
@@ -1062,6 +1062,9 @@ msgstr "允許客戶使用%1並不直接提供之電子貨幣"
 msgid "Allow equals"
 msgstr "允許等值"
 
+msgid "Already have an account?"
+msgstr "已經有帳戶？"
+
 msgid "Already have an account? %1Log in%2 here"
 msgstr "已經有帳戶？ 此處%1登入%2"
 
@@ -1085,6 +1088,9 @@ msgstr "另外，在Binary(IOM)有限公司和Binary(歐洲)有限公司都註�
 
 msgid "Although the Company has and retains all rights to refuse or to close a Client's account, the Company does warrant that all contractual obligations already made, shall be honoured."
 msgstr "儘管公司擁有及保留所有拒絕或關閉客戶帳戶的權利，但公司保證所有開出的合同義務都必須執行。"
+
+msgid "Always keep your web browser up-to-date. We recommend using the latest version of %1Google Chrome%2."
+msgstr "請讓您的網絡瀏覽器始終保持最新狀態。我們建議您使用最新版本的 %1Google Chrome%2。"
 
 msgid "Amount"
 msgstr "金額"
@@ -1125,7 +1131,7 @@ msgstr "您在參考相關工具包括市場訂單、止損單、限價單等之
 msgid "An international appeal with multilingual support in English, Spanish, French, German, Portuguese, Chinese, Italian, Thai, Polish, and Russian"
 msgstr "提供國際化界面，支援的語言包括英語、西班牙語、法語、德語、葡萄牙語、中文、義大利語、泰語、波蘭語和俄語"
 
-msgid "An intuitive, web-based platform that’s instantly available to traders of all levels –– anytime, anywhere"
+msgid "An intuitive, web-based platform that’s instantly available to traders of all levels – anytime, anywhere"
 msgstr "直觀的、基於互聯網的平台, 可以隨時隨地向所有級別的交易員提供服務"
 
 msgid "Analyse and test the domains and subdomains listed in the scope."
@@ -1142,6 +1148,9 @@ msgstr "關於欺詐、風險評估和反洗錢資料分析"
 
 msgid "Android"
 msgstr "Android"
+
+msgid "Annual Best Execution Disclosure 2017"
+msgstr "2017年年度最佳執行披露"
 
 msgid "Another major award. This time we're nominated by the online readers of Global Banking and Finance Review and judged by a panel of industry experts and analysts who recognise our 13 years of platform reliability, range of trades, pricing, customer service and extensive knowledge."
 msgstr "這是我們贏得的另一大獎項。該獎項由《Global Banking and Finance Review》雜誌的線上讀者提名，並由行業專家和分析師評審團評選得出。這是對我們13年來的平台可靠性、交易品種範圍、定價、客戶服務和專業程度的認可。"
@@ -1284,6 +1293,9 @@ msgstr "身為 %1 定量組編程師，您將負責實施和維護公司的風�
 msgid "As a first step, please send us an application with:"
 msgstr "首先，請向我們提出申請，並附上："
 
+msgid "As a high-tech knowledge hub, Cyberjaya enjoys the presence of several multinational companies and private universities. This has created a vibrant, thriving community thanks to the many expats and international students who call Cyberjaya home."
+msgstr ""
+
 msgid "As a member of our global Client Service Team you will serve as the voice of our customers by resolving and reducing client service issues."
 msgstr "身為我們全球客戶服務團隊成員之一，您將代表公司與客戶聯繫，解決並減少客戶支持方面的問題。"
 
@@ -1304,6 +1316,9 @@ msgstr "我們擁有您和我們之間%1的API和其全部元素、組件和可�
 
 msgid "As conclusion, keeping up with market news and trends in a certain sector can help you always "
 msgstr "結論是，跟上某個行業的市場新聞和趨勢一定會給您提供幫助 "
+
+msgid "As expected, the seafood is affordable and simply amazing. Locals absolutely adore crayfish which they refer to as 'satak'. Despite being a small island, Labuan still offers so much in terms of culture; you can explore the island's rich history at the Labuan Museum, Peace Park, the Chimney, and Labuan Square. The island also has a vibrant nightlife."
+msgstr ""
 
 msgid "As long as you follow these Terms, we grant you a limited, non-exclusive, non-assignable, non-transferable, terminable license to use the %1 API to develop, test, and support your Application, and to let your customers use your integration of the %1 API within your Application."
 msgstr "只要您遵循這些條款，我們准許您有限、非獨占、不可分配、不可轉讓、可終止地使用%1的API開發、測試和支持您的應用程式，並讓您的客戶在該應用程式中使用%1的API集成。"
@@ -1517,6 +1532,9 @@ msgstr "返回 IB計劃"
 
 msgid "Back to Menu"
 msgstr "返回功能表"
+
+msgid "Back to Statement"
+msgstr "回到月結單"
 
 msgid "Back-office support"
 msgstr "後台支援"
@@ -1978,7 +1996,7 @@ msgid "CFDs on indices."
 msgstr "指數差價合約。"
 
 msgid "CPA (EU only)"
-msgstr ""
+msgstr "每行動成本 (僅限歐盟區)"
 
 msgid "Call Spread"
 msgstr "買權價差"
@@ -2018,9 +2036,6 @@ msgstr "大好機會盡在Labuan"
 
 msgid "Can't miss in Malta"
 msgstr "大好機會盡在馬爾他"
-
-msgid "Canada"
-msgstr "加拿大"
 
 msgid "Canadian Dollar vs Japanese Yen"
 msgstr "加元兌日圓"
@@ -2152,13 +2167,13 @@ msgid "Choose from 100+ tradable instruments, backed by award-winning technology
 msgstr "自2000年起至今，有100多項交易工具供選擇，以屢獲殊榮、陸續創新的技術為後盾。"
 
 msgid "Choose from four available markets:"
-msgstr ""
+msgstr "從四個可用市場中選擇:"
 
 msgid "Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy."
 msgstr "隨時從一百多萬個交易選項中挑選，並按照您傾向的策略自定義交易。"
 
 msgid "Choose from the following affiliate commission plans:"
-msgstr ""
+msgstr "從以下聯盟佣金計劃中選擇:"
 
 msgid "Choose from three main trade types:"
 msgstr "從三種主要交易類型中挑選："
@@ -2526,6 +2541,9 @@ msgstr "合約開始時間"
 msgid "Contract Type"
 msgstr "合約類型"
 
+msgid "Contract duration"
+msgstr "合約期限"
+
 msgid "Contract for Difference."
 msgstr "差價合約。"
 
@@ -2608,7 +2626,7 @@ msgid "Copywriter"
 msgstr "文案"
 
 msgid "Cost per acquisition (CPA) for EU affiliates only"
-msgstr ""
+msgstr "僅適用于歐盟區聯盟的每行動成本 (CPA)"
 
 msgid "Costs - the costs of executing your order comprised predominantly of spread, i.e., the difference between our bid and our offer price."
 msgstr "費用 - 您的訂單執行費用主要由價差，即我們的標價和我們提供的價格之間的區別組成。"
@@ -2669,6 +2687,9 @@ msgstr "開立新的虛擬貨幣帳戶"
 
 msgid "Create account with Google"
 msgstr "開立Google帳戶"
+
+msgid "Create an MT5 account now"
+msgstr "立刻開立MT5帳戶"
 
 msgid "Create clear, concise and engaging content for display on the company's website, blog, social media outlets, and marketing materials"
 msgstr "為公司網站、部落格、社交媒體和行銷材料增添清晰、簡潔、引人入勝的內容"
@@ -3057,9 +3078,6 @@ msgstr "禁用"
 msgid "Disclaimer"
 msgstr "免責聲明"
 
-msgid "Disclaimer: The Economic Calendar tool is a third-party application developed by MetaQuotes Software Corp. and its data can change without prior notice. %1 is not responsible for the content or accuracy of its data, or for any loss or damage of any sort resulting from its data."
-msgstr "免責聲明: 經濟日曆工具是由 MetaQuotes 軟體公司開發的第三方應用程式。其資料可能會在沒有事先通知的情況下隨時更改。%1 不對其資料的內容或準確性承擔責任, 也不對其資料所產生的任何類型損失或損害承擔任何責任。"
-
 msgid "Disclaimers"
 msgstr "免責聲明"
 
@@ -3180,6 +3198,9 @@ msgstr "下載 %1桌面應用程式%2 以獲得 %3 網站最安全的存取方�
 msgid "Download the Android App"
 msgstr "下載Android應用程式"
 
+msgid "Download your statement"
+msgstr "下載您的月結單"
+
 msgid "Drive rapid growth and business development, to support the company's sales and marketing objectives"
 msgstr "推動快速增長和業務發展，以支援公司的銷售和市場行銷目標"
 
@@ -3280,7 +3301,7 @@ msgid "Earn $30 to trade on %1"
 msgstr "賺取30美元在%1交易"
 
 msgid "Earn USD 100 in commission for each successful referral. Your referred client must open a %1real money investment account%2 through your unique affiliate link and deposit a total of USD 100 or more (one-time or accumulative) in the account. This commission plan is only available to affiliates based in the EU."
-msgstr ""
+msgstr "每次推薦成功可獲得100美元佣金。您推薦的客戶必須通過您專用的聯盟連結開立％1真實貨幣投資帳戶％2，並在帳戶中存入總計100美元或更多（一次性或累計）的資金。該佣金計劃僅適用於歐盟區的聯盟成員。"
 
 msgid "Earn a commission on each client’s MT5 trading activity – paid out daily."
 msgstr "在每個客戶進行 MT5 交易時賺取每天支付的佣金。"
@@ -3298,7 +3319,7 @@ msgid "Earn commissions by introducing new customers to %1."
 msgstr "通過介紹新客戶給 %1，以賺取佣金。"
 
 msgid "Earn increasingly higher payouts with tiered and laddered commission rates that reward you based on the net revenue generated by your referred clients."
-msgstr ""
+msgstr "通過您介紹的客戶產生的淨收入，賺取分級和梯級佣金率，讓您的收入日益增加。"
 
 msgid "Earn money for any verifiable errors that you find."
 msgstr "找出錯誤并經過驗證，即可賺取收入。"
@@ -3639,6 +3660,9 @@ msgstr "奇異貨幣對 - 由非美元主要貨幣與新興經濟體貨幣配對
 msgid "Expand our network of active affiliates in your local market. Contribute your energy, skills, and knowledge of the local business culture to help further our rapid rate of growth worldwide."
 msgstr "擴大我們在您當地市場的活躍聯盟機構網路。 貢獻您對當地商業文化的力量、技能和知識，幫助我們在全球進一步快速增長。"
 
+msgid "Expat handbook"
+msgstr "外籍人士手冊"
+
 msgid "Expats and international students make up more than 10% of Cyberjaya's vibrant population."
 msgstr "Cyber​​jaya的活躍人口有10% 以上是外籍人士和國際學生。"
 
@@ -3702,8 +3726,8 @@ msgstr "到期價格"
 msgid "Explanation"
 msgstr "說明"
 
-msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform. %1Create an MT5 account now%2 to start trading."
-msgstr "加入全球首屈一指的多資產平台，探索全新的二元期權交易體驗。 %1立刻開立 MT5 帳戶%2 開始交易。"
+msgid "Explore a whole new world of binary options trading with the world's leading multi-asset platform."
+msgstr "透過全球頂尖的多資產平台探索全新的二元期權交易市場。"
 
 msgid "Explore all the trading platforms, apps, and tools we offer"
 msgstr "探索我們提供的所有交易平台、應用程式和工具"
@@ -4047,6 +4071,9 @@ msgstr "星期五"
 msgid "Fridays"
 msgstr "星期五"
 
+msgid "From"
+msgstr "從"
+
 msgid "Front Side"
 msgstr "前側"
 
@@ -4159,7 +4186,7 @@ msgid "Getting started"
 msgstr "開始交易"
 
 msgid "Getting started is free and easy – just %1fill out the application form%2, choose your preferred commission plan and wait for our approval."
-msgstr ""
+msgstr "用法簡易，隨時可以免費開始使用，只需%1填寫申請表%2, 選好自己傾向的佣金計劃，然後等待我們批准。"
 
 msgid "Getting started is free and easy. Just %1fill out the application form%2* and wait for our approval."
 msgstr "用法簡易，隨時可以免費開始使用，只需%1填寫申請表%2*, 然後等待我們批准。"
@@ -4623,6 +4650,9 @@ msgstr "如果無法掃描 QR 代碼, 可以手動輸入此代碼取代:"
 msgid "If you ask to be treated as a Professional Client, you need to meet certain specified quantitative and qualitative criteria. On the basis of your request to be categorised as Professional, the Company undertakes an assessment of your expertise, knowledge and experience to determine whether you fall within this Category and whether you are able to make your own investment decisions and understand the risks involved. If the relevant criteria are not met, the Company reserves the right to choose whether to provide its services under this requested classification."
 msgstr "如果您要求被視為專業客戶, 您需要滿足某些特定的定量和定性標準。一旦您要求分類成為專業客戶, 公司會對您的專業技能、知識和經驗進行評估, 以確定您是否屬於此類別, 以及您是否能夠作出自己的投資決定和了解所涉及的風險。如果不符合有關標準, 公司有權選擇是否根據您所要求的分類提供服務。"
 
+msgid "If you call yourself a foodie, you’ll be blown away by the sheer number of choices in town. From Middle Eastern, Indian, Japanese, and international cuisine to essential local fare such as Malay, Chinese, and mamak — you can expect to satisfy any cravings you may have."
+msgstr ""
+
 msgid "If you choose to be treated as a Professional Client, we’ll regard you as having the required market knowledge and experience. As such, we’ll take steps to ensure that your request for Professional Client status meets the above criteria, including a request for the following:"
 msgstr "如果您選擇成為專業客戶, 我們將視您已具備所需的市場知識和經驗。因此, 我們將採取步驟, 確保您對成為專業客戶的請求符合上述標準, 包括以下要求:"
 
@@ -4788,8 +4818,8 @@ msgstr "如果您想從MT5真實帳戶提款和/或關閉您的MT5真實帳戶�
 msgid "If you would like more information on becoming a Payment Agent, please contact us at <a href='mailto:%1'>%1</a>"
 msgstr "如您希望獲得成為付款代理的更詳細資料，請隨時通過<a href='mailto:%1'>%1</a>聯繫我們"
 
-msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within 10 working days (unless a further extension is required as permissible by law) from receipt of all relevant details."
-msgstr ""
+msgid "If you would like to file a complaint with regards to our service, kindly contact us on %1, providing any relevant details relating to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within %2 working days from receipt of all relevant details."
+msgstr "如果您想投訴我們的服務，請在%1與我們聯繫並將一切有關投訴的細節提供給我們。我們將進行相關調查並予以回覆。我們一般將會在收到所有相關詳細資訊後%2個工作日內提供最終回應。"
 
 msgid "If you would like to file a complaint with regards to the margin trading services described in this Agreement, kindly contact us on complaints@binary.com by providing the relevant details related to your complaint. We shall investigate your enquiry and a response will be given to your enquiry. We will usually provide a final response within one to two weeks (and at most within two months) from the receipt of all relevant details."
 msgstr "如果您想投訴關於此協定所述的保證金交易服務，請透過complaints@binary.com與我們聯繫並將一切有關投訴的細節提供給我們。我們將進行相關調查並予以回覆。我們一般將會在收到所有相關詳細資訊後1-2週內(不超過2個月) 提供最終回應。"
@@ -4942,7 +4972,7 @@ msgid "In the EU, financial products are offered by Binary Investments (Europe) 
 msgstr "歐盟國家的金融產品交易由Binary Investments (Europe) Ltd提供，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構授予執照及監管為3級投資服務提供商，(執照號碼為IS/70156)。"
 
 msgid "In the EU, financial products are offered by Binary Investments (Europe) Ltd., Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta, regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority (%1licence no. IS/70156%2)."
-msgstr "歐盟國家的金融產品交易由Binary Investments (Europe) Ltd提供，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構監管為3級投資服務提供商，(%1執照號碼為IS/70156%2)。"
+msgstr "歐盟國家的金融產品交易由Binary Investments (Europe) Ltd提供，地址為Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta，由馬爾他金融服務機構監管為3級投資服務提供商, (%1執照號碼為IS/70156%2)。"
 
 msgid "In the Isle of Man and the UK, Volatility Indices are offered by Binary (IOM) Ltd., First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles; licensed and regulated respectively by (1) the Gambling Supervision Commission in the Isle of Man (current licence issued on 31 August 2017) and by (2) the Gambling Commission in the UK (licence %1reference no: 39172%2)."
 msgstr "英國和曼島的波動率指數交易由Binary (IOM) Ltd. 提供，地址為：First Floor, Millennium House, Victoria Road, Douglas, IM2 4RW, Isle of Man, British Isles；(1) 由不列顛群島曼島投資監管委員會授予執照和監管，目前線上博彩執照於2012 年8 月31 日頒發；及(2) 由英國博彩委員會授予執照和監管(執照 %1編號: 39172%2)-"
@@ -5108,6 +5138,9 @@ msgstr "面試流程"
 
 msgid "Introduce %1"
 msgstr "介紹%1"
+
+msgid "Introducing USB"
+msgstr "推出USB"
 
 msgid "Introducing the new %1 desktop app"
 msgstr "推出新的 %1 桌面應用程式"
@@ -5278,7 +5311,7 @@ msgid "Join our team of bright, talented professionals. Work collaboratively wit
 msgstr "加入我們卓越、才華洋溢的專業人才團隊。 與我們共同合作促進一個15年來在二元期權交易行業中最受認可的高科技平臺。"
 
 msgid "Join the %1 Affiliate Programme and earn commission by referring new clients to our award-winning binary options trading platform."
-msgstr ""
+msgstr "加入％1聯盟計劃，向我們屢獲殊榮的二元期權交易平台推薦新客戶並賺取佣金。"
 
 msgid "Jul"
 msgstr "七月"
@@ -5312,9 +5345,6 @@ msgstr "跟蹤您的授權應用程式。"
 
 msgid "Keep up with breaking news and events on global markets."
 msgstr "跟上全球市場的突發新聞和事件。"
-
-msgid "Keep your web browser %1up-to-date%2."
-msgstr "讓您的 web 瀏覽器保持%1更新%2。"
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
 msgstr "跟上某個行業的市場新聞和趨勢，可以為您提供很大的幫助，特別是如果您剛剛入門。"
@@ -5369,6 +5399,9 @@ msgstr "十二、違約事件"
 
 msgid "Labuan"
 msgstr "納閩"
+
+msgid "Labuan has several national schools and one international school. It also has the only matriculation college in East Malaysia. Pre-university students from Sabah, Sarawak, and Labuan are required to attend this matriculation college before they continue their studies at a public university."
+msgstr ""
 
 msgid "Labuan is a federal territory made up of the main island, Labuan Island, and six other small islands off the coast of Sabah. Its name comes from the Malay word, 'labuhan' which means harbour. Formerly a part of the Brunei Sultanate, it was ceded to the British Crown in 1846, before joining Malaysia in 1963."
 msgstr "Labuan是聯邦直轄區，由主要島嶼、Labuan島和沙巴沿岸六個其他小島組成。它的名字來自馬來語, 'labuhan'的意思是海港。它以前是文萊蘇丹國的一部分。1846年被割讓給英國王室，並於1963年加入馬來西亞。"
@@ -5514,6 +5547,9 @@ msgstr "由馬爾他、英國、曼島和愛爾蘭相關機構授予執照和監
 msgid "Licensed, trusted, and secure"
 msgstr "有牌照、備受信賴、及安全"
 
+msgid "Life in Malta moves at a slower pace with a number of colourful festivities and religious holidays that you can look forward to every year. Some of the most popular ones include the Notte Bianca, the Malta Jazz Festival, Christmas, and Easter. Malta has no shortage of museums, archaeological sites, and other places of interest if you’re looking for a culture fix."
+msgstr ""
+
 msgid "Life-long career interest in the Accounting field"
 msgstr "有興趣長期從事會計工作"
 
@@ -5574,6 +5610,9 @@ msgstr "住在Labuan"
 msgid "Living in Malta"
 msgstr "住在Malta"
 
+msgid "Living on an island paradise has its perks. Labuan is one of those rare gems that has yet to undergo excessive commercialisation, thus retaining its small-town charm and tight-knit community vibe. Labuan welcomes tourists throughout the year as the island enjoys good weather all year round, with average daily temperature between 28 and 32 degrees Celsius."
+msgstr ""
+
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "馬來西亞的智能花園城市僅10分鐘路程, 提供令人驚嘆的綠色環境和精緻結構。"
 
@@ -5582,6 +5621,9 @@ msgstr "鎖定收銀台"
 
 msgid "Log in"
 msgstr "登入"
+
+msgid "Log in here"
+msgstr "此處登入"
 
 msgid "Log in to your %1 affiliate account and go to: Finances → Payment instructions."
 msgstr "登入您的%1 聯盟帳號並前往：財務 → 付款說明。"
@@ -5802,11 +5844,17 @@ msgstr "直接影響當地社區"
 msgid "Malaysia"
 msgstr "馬來西亞"
 
+msgid "Malaysia's lower cost of living compared to most western countries means that you can enjoy a high quality of life. You’ll also find easy access to world-class healthcare, plus several international schools, colleges, and universities that offer globally-recognised programmes."
+msgstr ""
+
 msgid "Malta"
 msgstr "馬爾他"
 
 msgid "Malta celebrates a large number of religious festivities and cultural events every year, filling the streets with carts laden with traditional sweets and delicacies."
 msgstr "馬爾他每年有頻密的宗教慶典和文化活動, 街道上全是滿載傳統糖果和美食的手推車。"
+
+msgid "Malta is one of the most densely-populated countries in the world with the smallest capital (Valletta) in the European Union. Maltese and English are the country's official languages, while Italian is also widely spoken. Malta has plenty of sunshine throughout the year and enjoys a mild climate."
+msgstr ""
 
 msgid "Malta's natural attractions are absolutely breathtaking, from its sheer cliffs and lush valleys to its golden sandy beaches and underwater structures in clear blue seas."
 msgstr "不論是陡峭的懸崖和郁鬱蔥蔥的山谷, 或​​是金色沙灘和清澈的藍色海水下的建築物，馬爾他的自然魅力絕對迷人。"
@@ -6036,6 +6084,9 @@ msgstr "金屬交易讓您推測特定金屬資產的價格變動，以便在資
 msgid "Method"
 msgstr "方式"
 
+msgid "MiFID II RTS 28"
+msgstr "MiFID II RTS 28"
+
 msgid "Min"
 msgstr "最小"
 
@@ -6237,8 +6288,8 @@ msgstr "您寵物的名字"
 msgid "Name:"
 msgstr "姓名:"
 
-msgid "National ID card or any government issued document which contains a photo, your name, and date of birth"
-msgstr "包含您的照片、姓名和出生日期的國民身份證或任何政府出具的文檔"
+msgid "National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth"
+msgstr "包含您的照片、姓名和出生日期的國民身份證、身份本或任何政府出具的文檔"
 
 msgid "Natural wonders"
 msgstr "自然奇觀"
@@ -6426,9 +6477,6 @@ msgstr "注意: 如果您使用社交網路登入, 此功能不可用。"
 msgid "Note: Transfer between accounts is not available on weekends."
 msgstr "注意: 帳戶之間的轉帳週末期間不可用。"
 
-msgid "Note: Withdrawal via payment agent is available only if you deposit exclusively via payment agent"
-msgstr "注意:您必須完全通過付款代理存款才可使用付款代理提款"
-
 msgid "Note: You can only have one fiat currency account and one of each cryptocurrency account."
 msgstr "注： 您只能擁有一個法定貨幣帳戶以及每種加密貨幣一個帳戶。"
 
@@ -6488,6 +6536,9 @@ msgstr "十月"
 
 msgid "October"
 msgstr "十月"
+
+msgid "Offices in Malta and Malaysia"
+msgstr "公司位於馬爾他和馬來西亞"
 
 msgid "Offline"
 msgstr "離線"
@@ -6576,14 +6627,17 @@ msgstr "ID 號(%1) 只允許字母、數位、空格、底線和連字號。"
 msgid "Only letters, space, hyphen, period, and apostrophe are allowed."
 msgstr "只允許字母、空格、連字號、句號和所有格號。"
 
-msgid "Only numbers and spaces are allowed."
-msgstr "只允許數字和空格。"
+msgid "Only numbers, hyphens, and spaces are allowed."
+msgstr "只允許數字、連字符和空格。"
 
 msgid "Only one account is allowed per person. No withdrawals and/or refunds may be collected on accounts opened in false names or on multiple accounts opened by the same person."
 msgstr "每人只能開立一個帳戶。使用假名開立的帳戶或同一人開立的多個帳戶將不會提取款項和/或退款。"
 
 msgid "Oops... Page Not Available"
 msgstr "抱歉!找不到頁面"
+
+msgid "Open A Free Account"
+msgstr "開設免費帳戶"
 
 msgid "Open Account"
 msgstr "開戶"
@@ -6793,7 +6847,7 @@ msgid "Our website contains links to other websites and may contain banner or ic
 msgstr "我們的網站含有其他網站連結，且可能含有第三方網站的橫幅或圖示廣告。這些網站及其廣告可能會向您的網頁瀏覽器寫入 cookies，這不在我們所能控制的範圍內。我們並不對這些網站的隱私規範和內容負責。由於他們的隱私政策可能與我們並不相同，所以我們建議您了解他們的隱私政策。"
 
 msgid "Outside the EU, financial products are offered by Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica, Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu, regulated by the Vanuatu Financial Services Commission (%1view licence%2), Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands, regulated by the British Virgin Islands Financial Services Commission (%3licence no. SIBA/L/18/1114%4), and Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia, regulated by the Labuan Financial Services Authority to carry on a money-broking business (%5licence no. MB/18/0024%6)"
-msgstr "歐盟以外地區，金融產品由Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica和Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu提供服務，受瓦努阿圖金融服務委員會監管（％1查看執照％2），或由Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands提供服務，受英屬維爾京群島金融服務委員會監管（％3執照編號SIBA/L/18/1114％4）以及由Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia提供服務，受納閩金融服務管理局監管，並開展貨幣經紀業務（％5執照編號MB/18/0024％6）"
+msgstr "歐盟以外地區，金融產品由Binary (C.R.) S.A., 5th Floor, Building 6 Centro Ejecutivo La Sabana, Sabana Sur, San José, Costa Rica和Binary (V) Ltd, Govant Building, Port Vila, PO Box 1276, Vanuatu提供服務，受瓦努阿圖金融服務委員會監管 (%1查看執照%2) ，或由Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands提供服務，受英屬維爾京群島金融服務委員會監管 (%3執照編號SIBA/L/18/1114%4) 以及由Binary (FX) Ltd., Lot No. F16, First Floor, Paragon Labuan, Jalan Tun Mustapha, 87000 Labuan, Malaysia提供服務，受納閩金融服務管理局監管，並開展貨幣經紀業務 (%5執照編號MB/18/0024%6)"
 
 msgid "Over $1,000,000"
 msgstr "大於$1,000,000"
@@ -7131,6 +7185,9 @@ msgstr "請提供以下資訊："
 msgid "Please read this %1privacy policy%2 before submitting your application."
 msgstr "提交申請前, 請閱讀此 %1隱私政策%2。"
 
+msgid "Please refer to the %1asset index%2 for each asset’s minimum and maximum contract durations based on trade type."
+msgstr "要瞭解每個資產基於交易類型的最低和最高合約期限，請參閱 %1資產指數%2。"
+
 msgid "Please reload the page"
 msgstr "請重新載入頁面"
 
@@ -7163,6 +7220,9 @@ msgstr "請選擇核取方塊。"
 
 msgid "Please select the currency of this account:"
 msgstr "請選擇此帳戶的幣種："
+
+msgid "Please select the date range of your statement:"
+msgstr "請選擇月結單的日期範圍:"
 
 msgid "Please set %1country of residence%2 before upgrading to a real-money account."
 msgstr "升級到真實資金帳戶前請先設定%1居住國%2。"
@@ -7217,6 +7277,9 @@ msgstr "可能的賠付額"
 
 msgid "Potential Profit"
 msgstr "潛在利潤"
+
+msgid "Potential Profit/Loss"
+msgstr "潛在利潤/虧損"
 
 msgid "Potential profit"
 msgstr "潛在利潤"
@@ -7563,6 +7626,9 @@ msgstr "閱讀％1公司部落格"
 msgid "Read the %1 tech blog"
 msgstr "閱讀％1技術部落格"
 
+msgid "Ready to trade?"
+msgstr "已經準備好開始交易了嗎？"
+
 msgid "Real"
 msgstr "真實"
 
@@ -7721,6 +7787,9 @@ msgstr "表示您的投資組合中未平倉合約的最大數量。您投資組
 
 msgid "Represents the maximum volume of contracts that you may purchase in any given trading day."
 msgstr "表示任一指定交易日您可以買入的最大合約數量。"
+
+msgid "Request your statement"
+msgstr "索取您的月結單"
 
 msgid "Requirements"
 msgstr "要求"
@@ -8013,6 +8082,9 @@ msgstr "選擇上方突出顯示的任何符號以打開即時圖表。按右鍵
 msgid "Select currency"
 msgstr "選擇貨幣"
 
+msgid "Select date"
+msgstr "選擇日期"
+
 msgid "Select market:"
 msgstr "選擇市場:"
 
@@ -8129,6 +8201,9 @@ msgstr "可分割性"
 
 msgid "Share access to your account without any permission to trade."
 msgstr "沒有任何交易許可的情況下共用您的帳戶的存取權。"
+
+msgid "Sharing your payment method with another client is prohibited and can cause delays in your withdrawals."
+msgstr "禁止與其他客戶共用付款方式, 這可能會導致延遲取款。"
 
 msgid "Sharp prices"
 msgstr "精準報價"
@@ -8496,6 +8571,9 @@ msgstr "Student"
 msgid "Study financial data to forecast market movements using our charting tools."
 msgstr "使用我們的圖表工具研究財務資料，以預測市場動向。"
 
+msgid "Style guide"
+msgstr "風格指南"
+
 msgid "Su"
 msgstr "星期日"
 
@@ -8697,6 +8775,9 @@ msgstr "感謝您提交所需的文檔"
 msgid "Thank you for your interest in partnering with us. We’ve made it easy for you to apply online. Just fill out the %1online application form%2 with all necessary details. If you are already registered as a %3 affiliate, you can email us at %4 instead. We will contact you directly if your application is successful."
 msgstr "謝謝您對我們的合作感興趣。我們已經使您可以輕鬆在網上申請。只需填寫 %1線上申請表%2 並輸入所有必要的資料。如果您已經註冊為 %3 聯盟會員, 您可以給我們發送電子郵件到 %4 。您的申請批准後, 我們將直接與您聯繫。"
 
+msgid "Thank you, we'll get back to you within 24 hours"
+msgstr "謝謝, 我們會在24小時內回覆您"
+
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "%1 API的使用受到限制，以防止%1 API被濫用和/或改變用途。將來這些使用限制可能不另行通知而更改。如果你持續超出使用限制，或以其他方式濫用該服務，我們可能會阻止您存取%1 API。"
 
@@ -8769,8 +8850,8 @@ msgstr "<strong>開始時間</strong>就是我們的伺服器處理合約交易�
 msgid "The <strong>start time</strong> is when the contract is processed by our servers."
 msgstr "合約<strong>開始時間</strong>即我們的伺服器處理合約的時間。"
 
-msgid "The Advanced account provides you with tight spreads, higher ticket size and offers more products. Start trading on more forex pairs, CFD indices and cryptocurrencies."
-msgstr "高級帳戶為您提供極低的差價, 更高的票證大小, 並提供更多的產品。開始交易更多的外匯對、差價合約指數和加密貨幣。"
+msgid "The Advanced account provides you with tight spreads, higher ticket size and offers a variety of FX pairs from majors to exotics. It is a straight through processing (STP) account with direct access to FX liquidity from various providers."
+msgstr "高級帳戶為您提供較低的價差、更高的票據大小, 並提供包括主要貨幣對和奇異貨幣對等各種外匯貨幣選項。它是直接處理 (STP) 帳戶類型, 可直接透過不同的提供商獲得外匯流動性。"
 
 msgid "The Affiliate's Obligations"
 msgstr "聯盟的義務"
@@ -9234,6 +9315,9 @@ msgstr "公司有權隨時更改本網站內容, 恕不另行通知, 且其唯�
 msgid "The contract period is the timeframe of a trade. It is also called the duration."
 msgstr "合約期限是指交易的時間週期，即合約持續時間。"
 
+msgid "The cost of living in Malta is relatively affordable; food and public transportation are much cheaper than what you'll find in a major European city. Malta offers free healthcare but queues at public healthcare facilities are less than ideal. Fortunately, health insurance is easily affordable and provides you with access to private clinics and hospitals."
+msgstr ""
+
 msgid "The cut-off time for performing Roll-overs and booking of the Roll-over Credit/Debit."
 msgstr "執行翻滾及翻滾借/貸預訂截止時間。"
 
@@ -9465,8 +9549,8 @@ msgstr "「我們」、「我們的」、「公司」、或 「%1」等詞指：
 msgid "The trading services described in this Agreement are OTC. This means that one or more of the underlying instruments in which you transact with us, though quoted on an exchange, are not traded on an exchange when transacted through the Electronic Trading Platform as described in this Agreement."
 msgstr "本協定所描述的保證金交易服務為場外交易。這意味著，您與我們進行交易的一個或多個標的工具，雖然由交易所報價，但通過本協議所述電子交易平台交易時卻不是在交易所交易。"
 
-msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's Complaints and Disputes section."
-msgstr "通過本網站完成的交易以及客戶和本公司之間的關係由本公司註冊成立所在國（即「管轄地」）的法律管轄和解譯。對於可能出現的與之相關的任何糾紛，您同意司法管轄地法院擁有處置這些糾紛的專屬管轄權。因此，您不可撤銷地服從司法管轄地法院對與所有此類糾紛相關的司法管轄權，且您同意對本公司的任何索賠主張只能在司法管轄地法院提起。有關投訴和糾紛的詳細資訊，請參閱本公司的投訴和糾紛部份。"
+msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's %1Complaints and Disputes%2 section."
+msgstr "通過本網站完成的交易以及客戶和本公司之間的關係由本公司註冊成立所在國（即「管轄地」）的法律管轄和解譯。對於可能出現的與之相關的任何糾紛，您同意司法管轄地法院擁有處置這些糾紛的專屬管轄權。因此，您不可撤銷地服從司法管轄地法院對與所有此類糾紛相關的司法管轄權，且您同意對本公司的任何索賠主張只能在司法管轄地法院提起。有關投訴和糾紛的詳細資訊，請參閱本公司的%1投訴和糾紛%2部份。"
 
 msgid "The two passwords that you entered do not match."
 msgstr "兩次輸入的密碼不相符。"
@@ -9797,6 +9881,9 @@ msgstr "提示:"
 
 msgid "Title"
 msgstr "職稱"
+
+msgid "To"
+msgstr "到"
 
 msgid "To apply, please submit your CV and a cover letter to %1"
 msgstr "如有意申請，請將您的履歷和求職信傳到%1"
@@ -10178,6 +10265,9 @@ msgstr "透明風險和潛在獎勵"
 
 msgid "Trust"
 msgstr "信任"
+
+msgid "Trusted by traders since 2000"
+msgstr "自2000年以來備受交易員信賴"
 
 msgid "Try Binary Bot"
 msgstr "試試Binary Bot"
@@ -10635,6 +10725,9 @@ msgstr "量額步驟"
 msgid "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 msgstr "Vs 407 zrnaf nalguvat fcrpvny gb lbh lbh znl pbcl lbhe nccyvpngvba gb wl+ebg13@ovanel.pbz sbe snfg-genpx pbafvqrengvba."
 
+msgid "Waiting for contract settlement."
+msgstr "等待合約結算。"
+
 msgid "Waiting for entry tick."
 msgstr "等待買入價跳動。"
 
@@ -10926,7 +11019,7 @@ msgstr "我們沒有義務進行適當性測試, 也沒有義務向您提供任�
 msgid "We’re projected to register over 197 million transactions this year, bringing the total number of contracts that were bought and sold on our platform since inception to over 789 million."
 msgstr "我們預計今年將有超過1億9700萬筆交易, 成立以來我們平台的購入和售出合約總數超過7億8900萬。"
 
-msgid "We’ve grown in size over the years –– both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
+msgid "We’ve grown in size over the years – both in terms of manpower and offices. We currently have over %1 employees across three offices in Malaysia and Malta. Further growth in headcount is expected this year to cater to the increased demand in our products and services."
 msgstr "多年來，無論在人力和辦公室方面， 我們的規模不斷擴大。目前在馬來西亞和馬爾他這兩個國家有三個辦事處和%1名員工以上。預計今年的員工人數將進一步增長, 以滿足我們產品和服務需求的增加。"
 
 msgid "We’ve paid millions in commission to date through our industry-leading affiliate programme."
@@ -11279,6 +11372,9 @@ msgstr "從MT5真實帳戶提出資金"
 
 msgid "Withdrawal of funds from your MT5 Real Account can be made in a different currency from the one maintained in your %1 account subject to a 1% currency transfer fee charge."
 msgstr "從您的MT5真實帳戶中提款時可以使用與您的％1帳戶不相同的貨幣，但須支付1％的貨幣轉帳費。"
+
+msgid "Withdrawal via payment agent is available only if you deposit exclusively via payment agent."
+msgstr "必須完全通過付款代理存款才可使用付款代理提款."
 
 msgid "Withdrawal: %1 working day"
 msgstr "取款：%1 個工作日"
@@ -12006,6 +12102,9 @@ msgstr "交易期持續時間限制將於%1秒內結束。"
 msgid "Your settings have been updated successfully."
 msgstr "您的設定已成功更新。"
 
+msgid "Your statement has been sent to your email address."
+msgstr "月結單已發送到您的電子郵件地址。"
+
 msgid "Your token has expired or is invalid. Please click %1here%2 to restart the verification process."
 msgstr "您的代幣已過期或失效。請點選%1此處%2重啟驗證程序。"
 
@@ -12137,6 +12236,9 @@ msgstr "b）您的訂單執行價格;"
 
 msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, investment, trading"
 msgstr "二元期權、外匯、外匯交易、線上交易、金融交易、二元期權交易、指數交易、交易指數、外匯交易、交易商品、二元期權策略、二元經紀、二元投注、二元期權交易平台、二元策略、金融、投資、交易"
+
+msgid "binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading"
+msgstr "二元期權、外匯、外匯交易、線上交易、金融交易、二元期權交易、指數交易、交易指數、外匯交易、交易商品、二元期權策略、二元經紀、二元投注、二元期權交易平台、二元策略、金融、股票、投資、交易"
 
 msgid "c) The time at which your order will be executed; and"
 msgstr "c）您的訂單執行時間;"

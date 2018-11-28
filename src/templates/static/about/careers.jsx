@@ -183,7 +183,6 @@ const Careers = () => {
                         padding='20'
                         icon='images/pages/careers/eh-icon.svg'
                         href={it.url_for('download/binary-employee-handbook.pdf')}
-                        download
                         text={it.L('Employee handbook')}
                         target='_blank'
                     />
@@ -291,7 +290,7 @@ const Careers = () => {
                     </div>
                 </div>
             </div>
-            <div className='container eu-show invisible'>
+            <div className='container' data-show='eucountry'>
                 <div className='center-text'>
                     <p>{it.L('Please read this [_1]privacy policy[_2] before submitting your application.', `<a href="${it.url_for('careers/privacy-policy')}">`, '</a>')}</p>
                 </div>
