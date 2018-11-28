@@ -553,7 +553,7 @@ const JobDetails = () => (
                             <h1>{it.L('Financial Markets Analyst')}</h1>
 
                             <p>{it.L('As our Senior Financial Markets Analyst, you will manage the day-to-day risk of our trading books, conduct complex quantitative analysis, carry out performance testing, develop advanced data analytics tools, and support other related operations that have a direct impact on the profitability and future growth of our company.')}</p>
-                            <p>{it.L('This includes decisions on new markets to launch in, and the spreads and margins we might offer. You must also be able to analyse and interpret large volumes of data, and communicate your research and findings in a clear and concise manner –– either in written reports or presentations.')}</p>
+                            <p>{it.L('This includes decisions on new markets to launch in, and the spreads and margins we might offer. You must also be able to analyse and interpret large volumes of data, and communicate your research and findings in a clear and concise manner - either in written reports or presentations.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
@@ -724,7 +724,7 @@ const JobDetails = () => (
                         <div className='invisible' id='copywriter'>
                             <h1>{it.L('Copywriter')}</h1>
 
-                            <p>{it.L('[_1]\'s Marketing team oversees all our marketing and advertising initiatives, such as our affiliate programme, social media presence, webinars, and emails. As our Copywriter, you will help us to craft copy and content that engages our audiences –– both online and offline.', it.website_name)}</p>
+                            <p>{it.L('[_1]\'s Marketing team oversees all our marketing and advertising initiatives, such as our affiliate programme, social media presence, webinars, and emails. As our Copywriter, you will help us to craft copy and content that engages our audiences - both online and offline.', it.website_name)}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
@@ -744,7 +744,7 @@ const JobDetails = () => (
                                 items={[
                                     { text: it.L('Accomplished writing and editing skills with at least five years editorial experience in digital advertising or online media') },
                                     { text: it.L('Thorough knowledge of web writing best practices') },
-                                    { text: it.L('Experience in content strategy –– i.e. planning, creating, publishing, and updating content for small and large websites') },
+                                    { text: it.L('Experience in content strategy - i.e. planning, creating, publishing, and updating content for small and large websites') },
                                     { text: it.L('Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax') },
                                     { text: it.L('Ability to translate complex, technical information into clear, attractive benefits') },
                                     { text: it.L('Capacity to multitask, balance deadlines, and reliably deliver high-quality content') },
@@ -855,7 +855,7 @@ const JobDetails = () => (
                         <div className='invisible' id='compliance_executive'>
                             <h1>{it.L('Compliance Executive')}</h1>
 
-                            <p>{it.L('As our Compliance Executive, you must ensure that our group of companies worldwide conduct their business operations in full compliance with relevant laws and regulations –– both national and international.')}</p>
+                            <p>{it.L('As our Compliance Executive, you must ensure that our group of companies worldwide conduct their business operations in full compliance with relevant laws and regulations - both national and international.')}</p>
 
                             <UlText
                                 text={it.L('Responsibilities:')}
