@@ -128,10 +128,10 @@ class Markets extends React.Component {
                 symbol: underlying_symbol,
                 name  : this.underlyings[underlying_symbol],
             },
-            markets             : markets_arr,
-            active_market       : market_symbol,
-            query               : '',
-            openDropdownScrollId: 0,
+            markets                : markets_arr,
+            active_market          : market_symbol,
+            query                  : '',
+            open_dropdown_scroll_id: 0,
         };
         this.el_underlying.value = underlying_symbol;
     }
@@ -201,7 +201,7 @@ class Markets extends React.Component {
             e.scrollTop -= 1;
         };
         this.setState({
-            openDropdownScrollId: setInterval(forceScroll.bind(null, element), 300),
+            open_dropdown_scroll_id: setInterval(forceScroll.bind(null, element), 300),
         });
         setTimeout(() => {
             this.closeScrollMonitor();
@@ -209,9 +209,9 @@ class Markets extends React.Component {
     }
 
     closeScrollMonitor = () => {
-        clearInterval(this.state.openDropdownScrollId);
+        clearInterval(this.state.open_dropdown_scroll_id);
         this.setState({
-            openDropdownScrollId: 0,
+            open_dropdown_scroll_id: 0,
         });
     }
 
