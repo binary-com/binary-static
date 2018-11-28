@@ -504,8 +504,8 @@ const PaymentMethods = () => {
                                         { td: it.L('Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more info, please visit [_1].', '<a href="https://litecoin.org" target="_blank">https://tether.to</a>') },
                                         { td_list: [
                                             { text: 'UST' },
-                                            { text: '0.002' },
-                                            { text: '0.002' },
+                                            { text: '1' },
+                                            { text: '1' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks /> },
                                         ],
