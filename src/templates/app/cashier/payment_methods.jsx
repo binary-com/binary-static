@@ -97,6 +97,7 @@ const PaymentMethods = () => {
     const blockchain_confirmations = '[_1] blockchain confirmations';
 
     const createLink = (href) => (`<a href="${href}" target="_blank" rel="noopener noreferrer">${href}</a>`);
+    const createMailTo = (email) => (`<a href="mailto:${email}">${email}</a>`);
 
     return (
         <div id='cashier-content'>
@@ -230,7 +231,7 @@ const PaymentMethods = () => {
                 />
 
                 <div className='gr-padding-10'>
-                    <p className='hint'>{it.L('Note:')} {it.L('Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, kindly contact [_1].', 'payments@binary.com')}</p>
+                    <p className='hint'>{it.L('Note:')} {it.L('Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, kindly contact [_1].', `${createMailTo('payments@binary.com')}`)}</p>
                 </div>
 
                 <TableTitle title={it.L('E-wallet')} />
