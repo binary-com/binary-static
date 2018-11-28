@@ -4,9 +4,9 @@ import { Fieldset } from '../../_common/components/forms.jsx';
 const ProfessionalClient = () => (
     <Fieldset legend={it.L('Professional Client')} id='fs_professional' className='invisible'>
         <div className='gr-padding-10 gr-12'>
-            <p>{it.L('By default, all clients are treated as retail. Do you prefer to be treated as a professional client if you match the necessary criteria?')}</p>
+            <p>{it.L('By default, all clients are treated as retail.')}</p>
             <input id='chk_professional' type='checkbox' />
-            <label htmlFor='chk_professional'>{it.L('I want to be treated as a professional client.')}&nbsp;</label>
+            <label htmlFor='chk_professional'>{it.L('I meet the requirements to be treated as a professional client.')}&nbsp;</label>
             <a id='professional_info_toggle' className='toggle-arrow' href='javascript:;'>{it.L('What is this?')}</a>
             <div id='professional_info' style={{ display: 'none' }}>
                 <div id='non_uk' className='invisible'>
