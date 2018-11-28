@@ -11,6 +11,7 @@ const localizeKeepPlaceholders = require('../../../../_common/localize').localiz
 const isMobile                 = require('../../../../_common/os_detect').isMobile;
 const LocalStore               = require('../../../../_common/storage').LocalStore;
 const State                    = require('../../../../_common/storage').State;
+const getHashValue             = require('../../../../_common/url').getHashValue;
 const urlFor                   = require('../../../../_common/url').urlFor;
 const Utility                  = require('../../../../_common/utility');
 const isBinaryApp              = require('../../../../config').isBinaryApp;
@@ -19,7 +20,9 @@ const VirtualAccOpening = (() => {
     const form = '#virtual-form';
 
     const onLoad = () => {
-        if (isBinaryApp()) {
+        if (Client.isLoggedIn() && getHashValue('token') !== '') {
+            handleLoggedInWithToken();
+        } else if (isBinaryApp()) {
             $(form).setVisibility(0);
             handleVerifyCode(init);
         } else {
@@ -36,6 +39,29 @@ const VirtualAccOpening = (() => {
             form_selector       : form,
             fnc_response_handler: handleNewAccount,
         });
+    };
+
+    const handleLoggedInWithToken = () => {
+        const rowDiv = (element) => {
+            const row_element = Utility.createElement('div', { class: 'gr-padding-10' });
+            row_element.appendChild(element);
+            return row_element;
+        };
+        const container_element = Utility.createElement('div', { class: 'center-text' });
+        const error_msg = Utility.createElement('div', {
+            class: 'center-text notice-msg',
+            text : localize('This page is only available to logged out clients.'),
+        });
+        const logout_cta = Utility.createElement('button');
+        const logout_span = Utility.createElement('span', { text: localize ('Sign out') });
+
+        logout_cta.addEventListener('click', () => { Client.doLogout({ logout: 1 }); });
+        logout_cta.appendChild(logout_span);
+        container_element.appendChild(rowDiv(error_msg));
+        container_element.appendChild(rowDiv(logout_cta));
+
+        $(form).replaceWith(container_element);
+        $(form).setVisibility(1);
     };
 
     const handleResidenceList = (residence_list) => {
