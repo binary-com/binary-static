@@ -127,7 +127,7 @@ const Header = (() => {
 
         sessionStorage.setItem('active_tab', '1');
         // set local storage
-        GTM.setLoginFlag('2');
+        GTM.setLoginFlag('account_switch');
         Client.set('cashier_confirmed', 0);
         Client.set('accepted_bch', 0);
         Client.set('loginid', loginid);

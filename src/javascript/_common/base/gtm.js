@@ -41,8 +41,7 @@ const GTM = (() => {
 
     const eventHandler = (get_settings) => {
         if (!isGtmApplicable()) return;
-        const is_login          = localStorage.getItem('GTM_login')       === '1';
-        const is_account_switch = localStorage.getItem('GTM_login')       === '2';
+        const login_event       = localStorage.getItem('GTM_login');
         const is_new_account    = localStorage.getItem('GTM_new_account') === '1';
 
         localStorage.removeItem('GTM_login');
@@ -64,11 +63,7 @@ const GTM = (() => {
             bom_today         : Math.floor(Date.now() / 1000),
         };
 
-        if (is_login) {
-            data.event = 'log_in';
-        } else if (is_account_switch) {
-            data.event = 'account_switch';
-        } else if (is_new_account) {
+        if (is_new_account) {
             data.event = 'new_account';
             data.bom_date_joined = data.bom_today;
         }
@@ -80,7 +75,8 @@ const GTM = (() => {
             data.bom_phone     = get_settings.phone;
         }
 
-        if (is_login || is_account_switch) {
+        if (login_event) {
+            data.event = login_event;
             BinarySocket.wait('mt5_login_list').then((response) => {
                 (response.mt5_login_list || []).forEach((obj) => {
                     const acc_type = (ClientBase.getMT5AccountType(obj.group) || '')
@@ -171,7 +167,7 @@ const GTM = (() => {
         eventHandler,
         pushPurchaseData,
         mt5NewAccount,
-        setLoginFlag: (flag) => { if (isGtmApplicable()) localStorage.setItem('GTM_login', flag); },
+        setLoginFlag: (event_name) => { if (isGtmApplicable()) localStorage.setItem('GTM_login', event_name); },
     };
 })();
 
