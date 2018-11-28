@@ -160,6 +160,9 @@ const BinarySocketGeneral = (() => {
             case 'InvalidAppID':
                 Header.displayNotification(response.error.message, true, 'INVALID_APP_ID');
                 break;
+            case 'InvalidToken':
+                window.location.reload();
+                break;
             case 'DisabledClient':
                 showNoticeMessage(response.error.message);
                 break;
