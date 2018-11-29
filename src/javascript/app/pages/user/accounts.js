@@ -1,15 +1,16 @@
-const moment             = require('moment');
-const setIsForNewAccount = require('./account/settings/personal_details').setIsForNewAccount;
-const getCurrencies      = require('./get_currency').getCurrencies;
-const BinaryPjax         = require('../../base/binary_pjax');
-const Client             = require('../../base/client');
-const BinarySocket       = require('../../base/socket');
-const getCurrencyList    = require('../../common/currency').getCurrencyList;
-const FormManager        = require('../../common/form_manager');
-const getElementById     = require('../../../_common/common_functions').getElementById;
-const localize           = require('../../../_common/localize').localize;
-const State              = require('../../../_common/storage').State;
-const urlFor             = require('../../../_common/url').urlFor;
+const moment              = require('moment');
+const setIsForNewAccount  = require('./account/settings/personal_details').setIsForNewAccount;
+const getCurrencies       = require('./get_currency').getCurrencies;
+const BinaryPjax          = require('../../base/binary_pjax');
+const Client              = require('../../base/client');
+const BinarySocket        = require('../../base/socket');
+const getCurrencyNameList = require('../../common/currency').getCurrencyNameList;
+const getCurrencyList     = require('../../common/currency').getCurrencyList;
+const FormManager         = require('../../common/form_manager');
+const getElementById      = require('../../../_common/common_functions').getElementById;
+const localize            = require('../../../_common/localize').localize;
+const State               = require('../../../_common/storage').State;
+const urlFor              = require('../../../_common/url').urlFor;
 
 const Accounts = (() => {
     let landing_company;
@@ -76,7 +77,9 @@ const Accounts = (() => {
             real     : new_account.type === 'real',
             financial: new_account.type === 'financial',
         };
-        const new_account_title = new_account.type === 'financial' ? localize('Financial Account') : localize('Real Account');
+        const new_account_title    = new_account.type === 'financial' ? localize('Financial Account') : localize('Real Account');
+        const available_currencies = Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies');
+        const currencies_name_list = getCurrencyNameList(available_currencies);
         $(form_id).find('tbody')
             .append($('<tr/>')
                 .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
@@ -85,7 +88,7 @@ const Accounts = (() => {
                     'data-balloon-length': 'large',
                 })))
                 .append($('<td/>', { text: getAvailableMarkets(account), datath: table_headers.available_markets }))
-                .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', '), datath: table_headers.available_currencies }))
+                .append($('<td/>', { text: currencies_name_list.join(', '), datath: table_headers.available_currencies }))
                 .append($('<td/>')
                     .html($('<a/>', { class: 'button', href: urlFor(new_account.upgrade_link) })
                         .html($('<span/>', { text: localize('Create') })))));

@@ -16,6 +16,17 @@ const getCurrencyList = (currencies) => {
     return $currencies.append($fiat_currencies.children().length ? $fiat_currencies : '').append($cryptocurrencies.children().length ? $cryptocurrencies : '');
 };
 
+const getCurrencyNameList = (currencies) => {
+    const currencies_name_list = [];
+    currencies.forEach((currency) => {
+        const is_crypto_currency = CurrencyBase.isCryptocurrency(currency);
+        const currency_name      = is_crypto_currency ? `${CurrencyBase.getCurrencyName(currency)} (${currency})` : currency;
+        currencies_name_list.push(currency_name);
+    });
+    return currencies_name_list;
+};
+
 module.exports = Object.assign({
     getCurrencyList,
+    getCurrencyNameList,
 }, CurrencyBase);
