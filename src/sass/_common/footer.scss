@@ -112,14 +112,10 @@
             margin-right: 20px;
         }
         .vanuatu-icon {
-            width: 160px;
-            margin-left: -30px;
-            margin-right: 0;
+            width: 100px;
         }
         .bvi-icon {
-            width: 115px;
-            margin-left: -30px;
-            margin-right: 0;
+            width: 75px;
         }
         .labuan-icon {
             width: 120px;
@@ -142,7 +138,7 @@
         padding: 10px 7px;
         position: fixed;
         bottom: 8px;
-        right: 8px;
+        right: 78px; // right space for elevio launcher
         left: 8px;
         border-radius: 5px;
         z-index: 1000;
@@ -174,6 +170,18 @@
         }
         .social-icons {
             margin-left: 0;
+        }
+        .regulation-logos {
+            .vanuatu-icon {
+                width: 85px;
+            }
+            .bvi-icon {
+                width: 60px;
+            }
+            .labuan-icon {
+                width: 105px;
+                margin-right: 0;
+            }
         }
     }
 }

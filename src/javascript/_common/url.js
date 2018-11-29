@@ -1,7 +1,8 @@
-const urlForLanguage = require('./language').urlFor;
-const urlLang        = require('./language').urlLang;
-const createElement  = require('./utility').createElement;
-const isEmptyObject  = require('./utility').isEmptyObject;
+const urlForLanguage         = require('./language').urlFor;
+const urlLang                = require('./language').urlLang;
+const createElement          = require('./utility').createElement;
+const isEmptyObject          = require('./utility').isEmptyObject;
+const getCurrentBinaryDomain = require('../config').getCurrentBinaryDomain;
 require('url-polyfill');
 
 const Url = (() => {
@@ -55,9 +56,38 @@ const Url = (() => {
         return urlForLanguage(lang, new_url);
     };
 
+    const default_domain = 'binary.com';
+    const host_map = { // the exceptions regarding updating the URLs
+        'bot.binary.com'       : 'www.binary.bot',
+        'developers.binary.com': 'developers.binary.com', // same, shouldn't change
+        'academy.binary.com'   : 'academy.binary.com',
+        'tech.binary.com'      : 'tech.binary.com',
+        'blog.binary.com'      : 'blog.binary.com',
+    };
+
+    const urlForCurrentDomain = (href) => {
+        const current_domain = getCurrentBinaryDomain();
+
+        if (!current_domain) {
+            return href; // don't change when domain is not supported
+        }
+
+        const url_object = new URL(href);
+        if (Object.keys(host_map).includes(url_object.hostname)) {
+            url_object.hostname = host_map[url_object.hostname];
+        } else if (url_object.hostname.indexOf(default_domain) !== -1) {
+            // to keep all non-Binary links unchanged, we use default domain for all Binary links in the codebase (javascript and templates)
+            url_object.hostname = url_object.hostname.replace(new RegExp(`\\.${default_domain}`, 'i'), `.${current_domain}`);
+        } else {
+            return href;
+        }
+
+        return url_object.href;
+    };
+
     const urlForStatic = (path = '') => {
         if (!static_host || static_host.length === 0) {
-            static_host = document.querySelector('script[src*="binary.min.js"],script[src*="binary.js"]');
+            static_host = document.querySelector('script[src*="vendor.min.js"]');
             if (static_host) {
                 static_host = static_host.getAttribute('src');
             }
@@ -105,13 +135,17 @@ const Url = (() => {
         getLocation,
         paramsHashToString,
         urlFor,
+        urlForCurrentDomain,
         urlForStatic,
         getSection,
         getHashValue,
         updateParamsWithoutReload,
 
-        param     : name => paramsHash()[name],
-        websiteUrl: () => 'https://www.binary.com/',
+        param           : name => paramsHash()[name],
+        websiteUrl      : () => `${location.protocol}//${location.hostname}/`,
+        getDefaultDomain: () => default_domain,
+        getHostMap      : () => host_map,
+        resetStaticHost : () => { static_host = undefined; },
     };
 })();
 

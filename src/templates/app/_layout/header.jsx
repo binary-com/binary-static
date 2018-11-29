@@ -39,14 +39,11 @@ const Topbar = () => (
                 </div>
                 <div className='gr-6 gr-7-t gr-12-p gr-12-m' id='topbar-info'>
                     <div className='gr-row'>
-                        <div className='gr-5 gr-6-m no-underline nowrap' id='gmt-clock' data-balloon-pos='down' />
+                        <div className='gr-8 gr-6-m no-underline nowrap' id='gmt-clock' data-balloon-pos='down' />
                         <div className='gr-1 align-self-center no-underline' data-balloon-pos='down'>
                             <div id='network_status' />
                         </div>
-                        <div className='gr-2 gr-hide-m' id='contact-us'>
-                            <a href={it.url_for('contact')}>{it.L('Contact Us')}</a>
-                        </div>
-                        <div className='gr-4 gr-5-m'>
+                        <div className='gr-3 gr-5-m'>
                             <div className='languages invisible'>
                                 <LanguageUl type='display'  color='white' />
                                 <LanguageUl type='select'   color='black' />

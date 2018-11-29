@@ -1,10 +1,11 @@
 css:
   - 'sass'
   - 'postcss'
+  - 'embedFonts'
   - 'cssmin'
 
 js:
-  - 'webpack:build'
+  - 'webpack:section'
   - 'babel:landing_pages'
 
 test:
@@ -15,9 +16,9 @@ test:
 
 default:
   - 'test'
+  - 'copy'
   - 'css'
   - 'js'
-  - 'copy'
 
 dev:
   - 'shell:check_origin'
@@ -45,6 +46,7 @@ livereload:
 release:
   - 'shell:check_origin'
   - 'shell:check_branch'
+  - 'shell:check_updated'
   - 'clean'
   - 'default'
   - 'shell:compile_production'

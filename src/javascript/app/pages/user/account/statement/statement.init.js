@@ -4,6 +4,7 @@ const Client               = require('../../../../base/client');
 const showLocalTimeOnHover = require('../../../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../../../base/socket');
 const DateTo               = require('../../../../common/attach_dom/date_to');
+const isEuCountry          = require('../../../../common/country_base').isEuCountry;
 const addTooltip           = require('../../../../common/get_app_details').addTooltip;
 const buildOauthApps       = require('../../../../common/get_app_details').buildOauthApps;
 const localize             = require('../../../../../_common/localize').localize;
@@ -149,6 +150,12 @@ const StatementInit = (() => {
         getNextBatchStatement();
         loadStatementChunkWhenScroll();
         getAccountStatistics();
+
+        BinarySocket.wait('website_status', 'authorize', 'landing_company').then(() => {
+            if (isEuCountry() && !Client.get('is_virtual')) {
+                initDownloadStatement();
+            }
+        });
     };
 
     const onLoad = () => {
@@ -159,6 +166,75 @@ const StatementInit = (() => {
             initPage();
         });
         ViewPopup.viewButtonOnClick('#statement-container');
+    };
+
+    const initDownloadStatement = () => {
+        const $statement_container    = $('#statement-container');
+        const $ds_container           = $('#download-statement-container');
+        const $download_statement_btn = $('#download_statement_btn');
+        const $request_statement_btn  = $('#request_statement_btn');
+        const $success_msg            = $ds_container.find('.success-msg');
+        const $error_msg              = $ds_container.find('.error-msg');
+
+        const download_from_id        = '#download_from';
+        const download_to_id          = '#download_to';
+
+        $download_statement_btn.setVisibility(1);
+        $download_statement_btn.off('click').on('click', (e) => {
+            e.preventDefault();
+
+            $statement_container.setVisibility(0);
+            $ds_container.setVisibility(1);
+
+            DateTo.attachDateRangePicker(download_from_id, download_to_id, () => {
+                $success_msg.setVisibility(0);
+                $error_msg.setVisibility(0);
+
+                setTimeout(() => {
+                    // need to wrap with setTimeout 0 to execute this chunk of code right
+                    // after datepicker value are updated with newly selected date,
+                    // otherwise we will get the previously selected date
+                    // More info: https://javascript.info/settimeout-setinterval#settimeout-0
+                    const date_from  = DateTo.getDatePickerValue(download_from_id);
+                    const date_to    = DateTo.getDatePickerValue(download_to_id, true);
+                    const can_submit = date_from && date_to;
+
+                    if (can_submit) {
+                        $request_statement_btn.removeClass('button-disabled')
+                            .off('click')
+                            .on('click', (evt) => {
+                                evt.preventDefault();
+                                BinarySocket.send({
+                                    request_report: 1,
+                                    report_type   : 'statement',
+                                    date_from,
+                                    date_to,
+                                }).then((response) => {
+                                    if (response.error) {
+                                        $error_msg.text(response.error.message).setVisibility(1);
+                                    } else {
+                                        $success_msg.setVisibility(1);
+                                    }
+                                    $request_statement_btn.addClass('button-disabled').off('click');
+                                });
+                            });
+                    } else {
+                        $request_statement_btn.addClass('button-disabled').off('click');
+                    }
+                }, 0);
+            });
+        });
+
+        $('#go_back_btn').off('click').on('click', (e) => {
+            e.preventDefault();
+            $ds_container.setVisibility(0);
+            $statement_container.setVisibility(1);
+            $success_msg.setVisibility(0);
+            $error_msg.setVisibility(0);
+            $request_statement_btn.addClass('button-disabled').off('click');
+            $(download_from_id).val('').removeAttr('data-value');
+            $(download_to_id).val('').removeAttr('data-value');
+        });
     };
 
     return {

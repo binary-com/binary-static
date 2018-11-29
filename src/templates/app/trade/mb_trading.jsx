@@ -50,7 +50,18 @@ const MBTrading = () => (
                 <div className='gr-5 gr-12-m gr-12-p gr-no-gutter-left gr-gutter-left-p gr-gutter-left-m'>
                     <div id='mb_trading' className='gr-12'>
 
-                        <div id='notifications_wrapper' className='gr-row' />
+                        <div id='notifications_wrapper' className='gr-row'>
+                            <div id='login_error_container' className='center-text invisible'>
+                                <div className='login_error'>
+                                    <h3 id='login_error_text'>{it.L('Ready to trade?')}</h3>
+                                    <a className='button' href={it.url_for('new-account')}>
+                                        <span>{it.L('Open A Free Account')}</span>
+                                    </a>
+                                    <p>{it.L('Already have an account?')}</p>
+                                    <a id='login_error_btn_login' href='javascript:;'>{it.L('Log in here')}</a>
+                                </div>
+                            </div>
+                        </div>
 
                         <div id='panel'>
                             <div className='selection_wrapper less-margin-top'>
@@ -68,7 +79,7 @@ const MBTrading = () => (
                                             <div className='trade_form gr-12 no-margin'>
                                                 <div className='gr-row'>
                                                     <FormItem id='currency' className='gr-5 gr-no-gutter' class_current='gr-row' class_list='gr-5 gr-no-gutter' />
-                                                    <input className='gr-7 center-text gr-no-gutter' type='text' id='payout' maxLength='15' />
+                                                    <input data-lpignore='true' className='gr-7 center-text gr-no-gutter' type='text' id='payout' maxLength='15' />
                                                 </div>
                                             </div>
                                         </div>

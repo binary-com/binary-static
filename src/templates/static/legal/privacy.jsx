@@ -25,7 +25,7 @@ const Privacy = () => (
         <p>{it.L('Please note that our website generates log files that record the IP addresses of accesses to your account, login attempts, and device information such as the manufacturer, model, operating system, and browser. This information is gathered for the sole purpose of assisting in the unlikely event of a need to investigate access to your account by unauthorised users. Additionally, we may verify certain information you provide us in the account opening form or during the service with third-party information providers.')}</p>
         <p>{it.L('By using or interacting with our website, you are giving permission to the use of the Google Analytics User ID Feature, which allows Google to capture your [_1] login ID such as VRTC1234 and MT1234. When this feature is enabled, no other personally identifiable information other than your [_1] login ID, or other data which can be linked to such information by Google, is shared with or disclosed to Google.', it.website_name)}</p>
 
-        <div className='invisible eu-show'>
+        <div data-show='eucountry'>
             <h2 data-anchor='transfer-of-data'>{it.L('Transfer of Data')}</h2>
             <p>{it.L('We may also transfer relevant personal and financial data to any company within the Binary Group of companies. This includes any of our business associates or payment providers within or outside of the EEA, including countries which might not offer an equivalent level of protection of personal data. In all instances, we place a contractual obligation on such third parties to offer the same level of rights and protection as stipulated in the GDPR.')}</p>
             <p>{it.L('You also have the right to request copies of any personal information you provided us and to request us to transmit such information to other service providers.')}</p>
@@ -64,13 +64,13 @@ const Privacy = () => (
         <p>{it.L('Any changes in our privacy policy or security statement will be posted on this website. For any material changes that directly affect the economic use of your personal information, we will request your prior authorisation in writing before effecting such changes on your account.')}</p>
         <p>{it.L('You also have the right to request us to inform you about the personal data that we process about you and to provide its correction where necessary.')}</p>
 
-        <div className='invisible eu-show'>
+        <div data-show='eucountry'>
             <h2 data-anchor='data-protection-officer'>{it.L('Data Protection Officer')}</h2>
             <p>{it.L('Our Data Protection Officer can be contacted at [_1]', 'dpo@binary.com')}</p>
             <p>{it.L('For full contact details of [_3], kindly check our [_1]Contact Us[_2] page.', `<a href=${it.url_for('contact')}>`, '</a>', it.website_name)}</p>
 
             <h2 data-anchor='complaints'>{it.L('Complaints')}</h2>
-            <p>{it.L('For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our [_1]Complaints and Disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions?anchor=complaints-and-disputes#legal-binary')}>`, '</a>')}</p>
+            <p>{it.L('For details on submitting a complaint to our Lead Supervisory Authority on our data processing practices, kindly check our [_1]Complaints and Disputes[_2] section.', `<a href=${it.url_for('terms-and-conditions#complaints')}>`, '</a>')}</p>
         </div>
     </div>
 );

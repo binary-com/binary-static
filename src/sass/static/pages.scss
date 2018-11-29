@@ -331,7 +331,7 @@
     }
 }
 
-#content.contact-2-content {
+#content.contact-content {
     margin-top: 0;
 
     #top_banner, #elevio_menu_container {
@@ -339,7 +339,7 @@
         justify-content: center;
     }
     #top_banner {
-        background: url('../images/pages/contact_2/banner-bg.svg');
+        background: url('../images/pages/contact/banner-bg.svg');
         min-height: 300px;
 
         .search {
@@ -352,7 +352,7 @@
                 background-color: $COLOR_WHITE;
 
                 > span._10b1r { // search icon
-                    background: url('../images/pages/contact_2/search-icon.svg') center no-repeat;
+                    background: url('../images/pages/contact/search-icon.svg') center no-repeat;
                     width: 30px;
 
                     svg {
@@ -404,10 +404,10 @@
                 }
             }
             ._elevio_module_icon_1 ._d9ggd { // Help Content
-                background: url('../images/pages/contact_2/content-icon.svg') no-repeat center;
+                background: url('../images/pages/contact/content-icon.svg') no-repeat center;
             }
             ._elevio_module_icon_6 ._d9ggd { // Submit a Ticket
-                background: url('../images/pages/contact_2/ticket-icon.svg') no-repeat center;
+                background: url('../images/pages/contact/ticket-icon.svg') no-repeat center;
             }
             ._elevio_module_icon_10 { // Call Us
                 display: none;
@@ -415,15 +415,14 @@
         }
     }
     .phone-container {
-        align-items: center;
-        justify-content: center;
-
-        label {
+        img {
+            width: 70px;
+            height: 70px;
+        }
+        label, select {
             margin-bottom: 5px;
         }
         .number-container {
-            margin-left: 30px;
-
             #cs_telephone_number {
                 width: 100%;
                 min-width: 160px;
@@ -431,7 +430,11 @@
             #display_cs_telephone {
                 line-height: 1.5rem;
                 align-self: flex-end;
-                padding-top: 10px;
+                margin-top: 5px;
+
+                * ~ span {
+                    margin-top: 5px;
+                }
             }
         }
     }
@@ -439,6 +442,11 @@
 
 ._elevio_launcher {
     display: none;
+
+    ._6byvm._zvdyj {
+        bottom: 8px !important;
+        right: 8px !important;
+    }
 }
 
 // override elevio styles for both in page contents and popup
@@ -474,6 +482,48 @@ body #_elev_io {
     &.cyberjaya, &.malta, &.labuan {
         &-content {
             margin-top: 0;
+        }
+    }
+    &.cyberjaya-content, &.careers-content {
+        .box-container {
+            &.padding {
+                padding: 5px 15px;
+            }
+            > [class*='gr-padding'] {
+                padding-bottom: 0;
+
+                @media (max-width: 768px) {
+                    padding-bottom: unset;
+                }
+            }
+            .box {
+                background: $COLOR_WHITE;
+
+                &.bordered {
+                    border: 1px solid $COLOR_GRAY;
+                    height: 100%;
+                }
+                .items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        padding-top: 20px;
+                        width: 50px;
+                    }
+                    p {
+                        font-weight: 600;
+                        color: $COLOR_BLUE;
+                    }
+                    > .box-item-end {
+                        padding: 0 30px;
+                    }
+                    @media (max-width: 768px) {
+                        justify-content: center;
+                    }
+                }
+            }
         }
     }
 }
@@ -531,6 +581,9 @@ body #_elev_io {
     }
     .margin-left-0 {
         margin-left: 0 !important;
+    }
+    .margin-top-17 {
+        margin-top: 17px;
     }
 }
 
@@ -645,9 +698,20 @@ body #not_authenticated_financial ul.checked > li {
             background-color: $COLOR_WHITE;
         }
         th, td {
-            text-align: center !important;
+            text-align: center;
             padding: 20px;
             border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+        }
+        &.responsive {
+            th, td {
+                @media screen and (max-width: 500px) {
+                    text-align: left !important;
+
+                    &:last-child {
+                        padding-top: 0;
+                    }
+                }
+            }
         }
     }
     #note .hint {
@@ -937,44 +1001,6 @@ body #not_authenticated_financial ul.checked > li {
                 margin-bottom: 2.5rem;
             }
         }
-        .box-container {
-            &.padding {
-                padding: 5px 15px;
-            }
-            > [class*='gr-padding'] {
-                padding-bottom: 0;
-
-                @media (max-width: 768px) {
-                    padding-bottom: unset;
-                }
-            }
-            .box {
-                &.bordered {
-                    border: 1px solid $COLOR_GRAY;
-                    height: 100%;
-                }
-                .items {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    img {
-                        padding-top: 20px;
-                        width: 50px;
-                    }
-                    p {
-                        font-weight: 600;
-                        color: $COLOR_BLUE;
-                    }
-                    > .box-item-end {
-                        padding: 0 30px;
-                    }
-                    @media (max-width: 768px) {
-                        justify-content: center;
-                    }
-                }
-            }
-        }
         h4 {
             color: $COLOR_BLUE;
         }
@@ -1041,6 +1067,76 @@ body #not_authenticated_financial ul.checked > li {
 
             h1 {
                 margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+#content.economic_calendar-content {
+    .calendar-container {
+        position: relative;
+
+        .calendar-footer {
+            position: absolute;
+            display: flex;
+            width: calc(100% - 2px);
+            border: 1px solid $COLOR_GRAY;
+            border-top-width: 0;
+            height: 30px;
+            justify-content: space-between;
+            background: $COLOR_WHITE;
+            align-items: center;
+            bottom: 0;
+
+            span.desc {
+                outline: 0;
+                display: block;
+                padding: 1px 70px 6px 30px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            a {
+                font-size: $FONT_SIZE_S;
+                color: $COLOR_LIGHTER_BLUE;
+                text-decoration: underline;
+                font-weight: 400;
+
+                &.logo {
+                    text-indent: -9999px;
+                    position: absolute;
+                    left: 6px;
+                    top: 3px;
+                    height: 24px;
+                    width: 24px;
+                    background: url('https://c.mql5.com/i/calendar/mt_logo1_x1.png') no-repeat top left;
+                }
+                &.social-links {
+                    i {
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                        vertical-align: top;
+                        background: url('https://c.mql5.com/i/calendar/widget-icons-social-sharing.png');
+
+                        &.fb {
+                            background-position: -21px 0;
+                        }
+                        &.twitter {
+                            background-position: 0 0;
+                        }
+                    }
+                }
+            }
+            .left {
+                margin-left: 8px;
+            }
+            .right {
+                margin-right: 8px;
+
+                a {
+                    padding: 0 2px;
+                }
             }
         }
     }
@@ -1262,6 +1358,8 @@ body #not_authenticated_financial ul.checked > li {
     .column {
         @media screen and (max-width: 480px) {
             padding: 0;
+            width: 100%;
+            text-align: center;
         }
     }
     .vertical-divider {
@@ -1276,6 +1374,43 @@ body #not_authenticated_financial ul.checked > li {
 
         h2 {
             margin-bottom: 45px;
+        }
+    }
+}
+
+.why-us-content {
+    .awards-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 40px;
+
+        img {
+            width: 70px;
+            height: auto;
+        }
+        .award-icon {
+            max-height: 90px;
+            width: 70px;
+
+            .caption {
+                font-size: $FONT_SIZE_XXS;
+                line-height: 1.2;
+                text-align: center;
+                width: 100%;
+                display: inline-flex;
+                align-items: flex-end;
+                justify-content: center;
+                margin-top: auto;
+            }
+        }
+        .horizontal-margin {
+            margin: 0 15px;
+
+            @media screen and (max-width: 931px) {
+                margin: 15px 15px 20px;
+            }
         }
     }
 }
