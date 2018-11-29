@@ -582,6 +582,9 @@ body #_elev_io {
     .margin-left-0 {
         margin-left: 0 !important;
     }
+    .margin-top-17 {
+        margin-top: 17px;
+    }
 }
 
 .tour-content#content {
@@ -695,9 +698,20 @@ body #not_authenticated_financial ul.checked > li {
             background-color: $COLOR_WHITE;
         }
         th, td {
-            text-align: center !important;
+            text-align: center;
             padding: 20px;
             border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+        }
+        &.responsive {
+            th, td {
+                @media screen and (max-width: 500px) {
+                    text-align: left !important;
+
+                    &:last-child {
+                        padding-top: 0;
+                    }
+                }
+            }
         }
     }
     #note .hint {
@@ -1360,6 +1374,43 @@ body #not_authenticated_financial ul.checked > li {
 
         h2 {
             margin-bottom: 45px;
+        }
+    }
+}
+
+.why-us-content {
+    .awards-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 40px;
+
+        img {
+            width: 70px;
+            height: auto;
+        }
+        .award-icon {
+            max-height: 90px;
+            width: 70px;
+
+            .caption {
+                font-size: $FONT_SIZE_XXS;
+                line-height: 1.2;
+                text-align: center;
+                width: 100%;
+                display: inline-flex;
+                align-items: flex-end;
+                justify-content: center;
+                margin-top: auto;
+            }
+        }
+        .horizontal-margin {
+            margin: 0 15px;
+
+            @media screen and (max-width: 931px) {
+                margin: 15px 15px 20px;
+            }
         }
     }
 }

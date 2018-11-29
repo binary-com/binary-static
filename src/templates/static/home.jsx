@@ -310,20 +310,39 @@ const Home = () => {
             </div>
 
             <div className='gr-padding-10 fill-bg-color'>
-                <div className='container gr-padding-20'>
-                    <div className='gr-row'>
-                        <div className='gr-3 gr-12-m align-self-center center-text-m gr-padding-10'>
+                <div className='gr-padding-20'>
+                    <div className='gr-row container'>
+                        <div className='gr-12 align-self-center center-text gr-padding-10'>
                             <h3 className='no-margin'>{it.L('Award-winning trading excellence')}</h3>
                         </div>
-                        <div className='gr-9 gr-12-m align-self-center'>
-                            <div className='gr-row gr-row-align-center'>
-                                <div className='gr-1 gr-hide-m border-right' />
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/tw2.svg')} /></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/gbaf.svg')} /></div>
-                                <div className='gr-3 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/opwa.svg')} /></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/menafxpro.svg')} /></div>
-                                <div className='gr-2 gr-4-m align-self-center gr-padding-10'><img className='responsive' src={it.url_for('images/pages/home/awards/egr.svg')} /></div>
-                                <div className='gr-1 gr-hide-m' />
+                        <div className='award-icons'>
+                            <div className='award-icon'>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/t2w-2010.svg')} alt='Trade2Win Award' />
+                                <span className='caption'>{it.L('Trade2Win')}</span>
+                            </div>
+                            <div className='award-icon'>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbfr-2012.svg')} alt='Global Banking and Finance Review 2012' />
+                                <span className='caption'>{it.L('Global Banking and Finance Review')}</span>
+                            </div>
+                            <div className='award-icon'>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/egr-2015.svg')} alt='EGR Operator Awards 2015' />
+                                <span className='caption'>{it.L('EGR Operator Awards')}</span>
+                            </div>
+                            <div className='award-icon'>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/mena-2016.svg')} alt='16th MENA Financial Forum & Expo 2016' />
+                                <span className='caption'>{it.L('16th MENA Financial Forum & Expo')}</span>
+                            </div>
+                            <div className='award-icon'>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/opm-2017.svg')} alt='Online Personal Wealth Awards 2017' />
+                                <span className='caption'>{it.L('Online Personal Wealth Awards')}</span>
+                            </div>
+                            <div className='award-icon'>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbf-2018.svg')} alt='Global Banking & Finance Awards 2018' />
+                                <span className='caption'>{it.L('Global Banking & Finance Awards')}</span>
+                            </div>
+                            <div className='award-icon'>
+                                <img className='responsive' src={it.url_for('images/pages/home/awards/gbm-2018.svg')} alt='Global Brands Magazine 2018' />
+                                <span className='caption'>{it.L('Global Brands Magazine')}</span>
                             </div>
                         </div>
                     </div>

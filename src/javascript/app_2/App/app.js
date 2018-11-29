@@ -3,6 +3,7 @@ import React                from 'react';
 import { render }           from 'react-dom';
 import Client               from '_common/base/client_base';
 import NetworkMonitor       from 'Services/network_monitor';
+import OutdatedBrowser      from 'Services/outdated_browser';
 import RootStore            from 'Stores';
 import { setStorageEvents } from 'Utils/Events/storage';
 import App                  from './app.jsx';
@@ -17,6 +18,7 @@ const initApp = () => {
     const root_store = new RootStore();
 
     NetworkMonitor.init(root_store);
+    OutdatedBrowser.init(root_store);
     root_store.modules.trade.init();
 
     const app = document.getElementById('binary_app');
