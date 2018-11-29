@@ -766,7 +766,11 @@ const ViewPopup = (() => {
     const responseProposal = (response) => {
         if (response.error) {
             if (response.error.code !== 'AlreadySubscribed' && response.echo_req.contract_id === contract_id) {
-                showErrorPopup(response, response.error.message);
+                if (response.error.code === 'InvalidToken') {
+                    window.location.reload();
+                } else {
+                    showErrorPopup(response, response.error.message);
+                }
             }
             return;
         }
@@ -775,9 +779,6 @@ const ViewPopup = (() => {
             responseContract(response);
         } else {
             BinarySocket.send({ forget: response.proposal_open_contract.id });
-            if (response.error === 'InvalidToken') {
-                window.location.reload();
-            }
         }
         const dates = ['#trade_details_start_date', '#trade_details_end_date', '#trade_details_current_date', '#trade_details_live_date'];
         for (let i = 0; i < dates.length; i++) {
