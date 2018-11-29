@@ -733,8 +733,6 @@ label + input {
             background-repeat: no-repeat;
 
             .header-1 {
-                font-size: 36px;
-                font-weight: 300;
                 color: $COLOR_WHITE;
                 margin: 0;
             }
@@ -747,12 +745,6 @@ label + input {
         }
         &__body {
             padding: 20px 35px 30px;
-
-            .header-2 {
-                color: $COLOR_ORANGE;
-                font-size: 28px;
-                font-weight: 300;
-            }
         }
         &__options {
             display: flex;
@@ -781,12 +773,21 @@ label + input {
             background: $COLOR_NAV;
         }
     }
+    .header-1 {
+        font-size: 36px;
+        font-weight: 300;
+    }
+    .header-2 {
+        color: $COLOR_ORANGE;
+        font-size: 28px;
+        font-weight: 300;
+    }
     .header-1, .header-2 {
         text-align: center;
         line-height: 1.15;
     }
     @media screen and (max-width: 768px) {
-        .header {
+        .header-1 {
             font-size: 24px;
         }
         .header-2 {
