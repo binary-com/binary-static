@@ -4,6 +4,7 @@ const getCurrencies       = require('./get_currency').getCurrencies;
 const BinaryPjax          = require('../../base/binary_pjax');
 const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
+const getCurrencyFullName = require('../../common/currency').getCurrencyFullName;
 const getCurrencyNameList = require('../../common/currency').getCurrencyNameList;
 const getCurrencyList     = require('../../common/currency').getCurrencyList;
 const FormManager         = require('../../common/form_manager');
@@ -141,7 +142,7 @@ const Accounts = (() => {
                 .append($('<td/>').html($('<span/>', account_type_prop)))
                 .append($('<td/>', { text: txt_markets }))
                 .append($('<td/>')
-                    .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
+                    .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : (getCurrencyFullName(account_currency) || '-'))));
 
         if (is_disabled || excluded_until) {
             $('#note_support').setVisibility(1);

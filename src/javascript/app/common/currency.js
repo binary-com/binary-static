@@ -1,15 +1,18 @@
 const CurrencyBase = require('../../_common/base/currency_base');
 const localize     = require('../../_common/localize').localize;
 
+const is_crypto_currency = (currency) => CurrencyBase.isCryptocurrency(currency);
+
+const getCurrencyFullName = (currency) => is_crypto_currency(currency) ? `${CurrencyBase.getCurrencyName(currency)} (${currency})` : currency;
+
 const getCurrencyList = (currencies) => {
     const $currencies       = $('<select/>');
     const $fiat_currencies  = $('<optgroup/>', { label: localize('Fiat') });
     const $cryptocurrencies = $('<optgroup/>', { label: localize('Crypto') });
 
     currencies.forEach((currency) => {
-        const is_crypto_currency = CurrencyBase.isCryptocurrency(currency);
-        const currency_name      = is_crypto_currency ? `${CurrencyBase.getCurrencyName(currency)} (${currency})` : currency;
-        (is_crypto_currency ? $cryptocurrencies : $fiat_currencies)
+        const currency_name = getCurrencyFullName(currency);
+        (is_crypto_currency(currency) ? $cryptocurrencies : $fiat_currencies)
             .append($('<option/>', { value: currency, text: currency_name }));
     });
 
@@ -19,8 +22,7 @@ const getCurrencyList = (currencies) => {
 const getCurrencyNameList = (currencies) => {
     const currencies_name_list = [];
     currencies.forEach((currency) => {
-        const is_crypto_currency = CurrencyBase.isCryptocurrency(currency);
-        const currency_name      = is_crypto_currency ? `${CurrencyBase.getCurrencyName(currency)} (${currency})` : currency;
+        const currency_name = getCurrencyFullName(currency);
         currencies_name_list.push(currency_name);
     });
     return currencies_name_list;
@@ -29,4 +31,5 @@ const getCurrencyNameList = (currencies) => {
 module.exports = Object.assign({
     getCurrencyList,
     getCurrencyNameList,
+    getCurrencyFullName,
 }, CurrencyBase);
