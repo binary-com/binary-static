@@ -97,7 +97,7 @@ const LoggedInHandler = (() => {
         }
 
         if (Client.isLoggedIn()) {
-            GTM.setLoginFlag();
+            GTM.setLoginFlag('log_in');
             Client.set('session_start', parseInt(moment().valueOf() / 1000));
             // Remove cookies that were set by the old code
             removeCookies('email', 'login', 'loginid', 'loginid_list', 'residence');
