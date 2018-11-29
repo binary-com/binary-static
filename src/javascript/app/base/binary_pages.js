@@ -112,7 +112,7 @@ const pages_config = {
     trading                  : { module: TradePage,                  needs_currency: true },
     transferws               : { module: PaymentAgentTransfer,       is_authenticated: true, only_real: true },
     two_factor_authentication: { module: TwoFactorAuthentication,    is_authenticated: true },
-    virtualws                : { module: VirtualAccOpening },
+    virtualws                : { module: VirtualAccOpening,          only_non_authenticated: true },
     welcome                  : { module: WelcomePage,                is_authenticated: true, only_virtual: true },
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
     'binary-options'         : { module: GetStarted.BinaryOptions },
