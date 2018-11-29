@@ -24,7 +24,7 @@ const OrderExecution = () => (
         <p>{it.L('The Company offers binary options through its online interactive platform.')}</p>
         <p>{it.L('A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are:')}</p>
         <ul className='bullet'>
-            <li>{it.L('forex;')}</li>
+            <li>{it.L('Forex;')}</li>
             <li>{it.L('indices; and')}</li>
             <li>{it.L('commodities.')}</li>
         </ul>
