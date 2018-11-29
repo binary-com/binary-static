@@ -49,6 +49,7 @@ const initRoutesConfig = () => ([
         ],
     },
     { path: routes.error404, component: Page404, title: localize('Error 404') },
+    { component: Page404, title: localize('Error 404') },
 ]);
 
 let routes_config;
