@@ -1,0 +1,29 @@
+.page-error {
+    &-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+    }
+    &-box {
+        padding: 4rem 2rem;
+        text-align: center;
+        background: $COLOR_LIGHT_GRAY;
+        border-radius: $BORDER_RADIUS;
+
+        svg {
+            margin: 0 auto;
+        }
+    }
+    &-header {
+        margin-bottom: 1rem;
+    }
+    &-message {
+        margin-bottom: 2rem;
+    }
+}
+
+.theme-wrapper.dark {
+    .page-error-box {
+        background-color: $COLOR_BRANDBLUE_85;
+    }
+}

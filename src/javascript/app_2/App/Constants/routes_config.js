@@ -22,6 +22,9 @@ import LoginHistory           from 'Modules/settings/sections/login_history.jsx'
 import PersonalDetails        from 'Modules/settings/sections/personal_details.jsx';
 import SelfExclusion          from 'Modules/settings/sections/self_exclusion.jsx';
 
+// Error routes
+import Page404 from 'Modules/Page404';
+
 const initRoutesConfig = () => ([
     { path: routes.contract,  component: ContractDetails, title: localize('Contract Details'),  is_authenticated: true },
     { path: routes.index,     component: Redirect,        title: '',                            to: '/trade' },
@@ -45,6 +48,7 @@ const initRoutesConfig = () => ([
             { path: routes.apps,             component: AuthorizedApplications, title: localize('Authorized Applications') },
         ],
     },
+    { path: routes.error404, component: Page404, title: localize('Error 404') },
 ]);
 
 let routes_config;
