@@ -2,27 +2,69 @@ import React from 'react';
 
 const OrderExecution = () => (
     <div>
-        <h2 data-anchor='summary-order-execution-policy'>{it.L('Summary Order Execution Policy')}</h2>
-        <p>{it.L('We have a general duty to conduct our business with you honestly, fairly, and professionally and to act in your best interests when opening and closing Binary Options trades with you.')}</p>
-        <p>{it.L('More specifically, when we enter into a Binary Option trade with you (each, a "Contract"), we have a duty to provide you with \'best execution\'. Best execution means that we must take reasonable steps to obtain the best possible result for you when executing an order with you. This document provides a summary of our best execution policy.')}</p>
-        <p>{it.L('You should note that our duty to provide you with best execution does not apply to any gaming products that you place with us, where there is no underlying financial market.')}</p>
+        <h2 data-anchor='summary-order-execution-policy'>{it.L('Summary order execution policy')}</h2>
+        <p>{it.L('The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client\'s best interests when opening and closing binary options trades with the client.')}</p>
+        <p>{it.L('More specifically, when the Company enters into a binary option trade with the client (each, a "Contract"), the Company has a duty to provide the client with \'best execution\'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company\'s best execution policy.')}</p>
+        <p>{it.L('The client should note that the Company\'s duty to provide the client with best execution does not apply to any gaming products that the client places with the Company, when there is no underlying financial market.')}</p>
+        <p>{it.L('This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy.')}</p>
 
         <h2 data-anchor='general'>{it.L('General')}</h2>
-        <p>{it.L('When we enter into Contracts with you, we will take all reasonable steps to achieve the best possible result for you by executing those Contracts according to our order execution policy and subject to any specific instructions received from you. Our order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for you subject to and taking into account: (a) the nature of your Contracts, (b) the priorities you have identified to us in relation to entering into those Contracts, and (c) the practices relating to the market in question, with the aim of producing a result which provides, in our view, the best balance across a range of sometimes conflicting factors. Our policy cannot provide a guarantee, however, that when entering into Contracts with you, the price will always be better than one which is or might have been available elsewhere.')}</p>
+        <p>{it.L('The Company\'s order execution policy comprises a set of procedures that are designed to obtain the best possible execution result for the client, subject to and taking into account:')}</p>
+        <ul>
+            <li>{it.L('(a) the nature of the client\'s Contracts;')}</li>
+            <li>{it.L('(b) the priorities that the client has identified for the Company in relation to entering into those Contracts; and')}</li>
+            <li>{it.L('(c) the practices relating to the market in question, with the aim of producing a result that provides, in the Company\'s view, the best balance across a range of sometimes conflicting factors.')}</li>
+        </ul>
+        <p>{it.L('The Company\'s policy cannot provide a guarantee, however, that when entering into Contracts with the client, the price will always be better than one that is or might have been available elsewhere.')}</p>
 
-        <h2 data-anchor='best-execution-factors'>{it.L('Best Execution Factors')}</h2>
-        <p>{it.L('In relation to Contracts that you enter into with us, we act as principal and not as agent on your behalf and we therefore act as the sole execution venue for the execution of your Contracts.')}</p>
-        <p>{it.L('We are required to take a number of factors into account when considering how to give you best execution. We have rated price as the most important followed by: (a) costs; (b) size, (c) liquidity of the underlying market, (d) speed and (e) likelihood of execution and settlement. The main way in which we will ensure that you obtain best execution is by ensuring that in our calculation of our bid/offer prices, we pay due consideration to the market price for the underlying reference product to which your Contract relates. We have access to a number of different data sources in order to ascertain the market price, which is our objective view of the bids and offers available to arms\' length traders.')}</p>
-        <p>{it.L('In relation to some Contracts, at the time at which you give us an order there may be no functioning or open market or exchange on which the reference product is traded. In such cases, we set out to determine a fair underlying price based on a number of factors such as price movements on associated markets and other market influences and information about our clients\' own orders.')}</p>
+        <h2 data-anchor='order-execution'>{it.L('Order execution')}</h2>
+        <p>{it.L('The Company is licensed to deal in derivatives on its own account. Client orders will be executed by the Company and the Company will always be the client\'s sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client\'s counterparty, wherein it takes the other side of the client\'s trade. The clients should be aware that they are exposed to higher risks as all binary options contracts are traded on the over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations.')}</p>
 
-        <h2 data-anchor='specific-instructions'>{it.L('Specific Instructions')}</h2>
-        <p>{it.L('Where you give us specific instructions, including for example (a) specifying the price of a Contract with us or (b) specifying the price at which a Contract is to be closed, then those instructions take precedence over other aspects of our policy.')}</p>
+        <h2 data-anchor='classes-of-instruments'>{it.L('Classes of instruments')}</h2>
+        <p>{it.L('The Company offers binary options through its online interactive platform.')}</p>
+        <p>{it.L('A binary option is a contract in which one party undertakes to pay the other party a specified amount if the value of a given asset changes in a specific direction within a predetermined period. The three major underlying asset classes for binary options offered by the Company are:')}</p>
+        <ul className='bullet'>
+            <li>{it.L('forex;')}</li>
+            <li>{it.L('indices; and')}</li>
+            <li>{it.L('commodities.')}</li>
+        </ul>
+
+        <h2 data-anchor='best-execution-factors'>{it.L('Best execution factors')}</h2>
+        <p>{it.L('In relation to Contracts that the client enters into with the Company, the Company acts as principal and not as agent on the client\'s behalf; therefore, the Company acts as the sole execution venue for the execution of the client\'s Contracts.')}</p>
+        <p>{it.L('The Company will mainly ensure best execution for the client by giving due consideration to the market price when calculating the Company\'s bid/offer price for the underlying reference product to which the client\'s Contract relates. In order to ascertain the market price, the Company has access to a number of different data sources, which provide the Company with an objective view of the bids and offers available to arms\' length traders.')}</p>
+        <p>{it.L('In the case of some Contracts, there may be no functioning or open market or exchange on which the reference product is traded at the time of the client order. In such cases, the Company sets out to determine a fair underlying price based on a number of factors, such as price movements on associated markets and other market influences and information about the client order.')}</p>
+        <p>{it.L('The Company is required to take a number of factors into account when considering how to give the client best execution, specifically:')}</p>
+        <ul>
+            <li>
+                {it.L('(a) Price and cost')}
+                <p>{it.L('The Company has internally set appropriate controls and monitoring to verify that its aggregate return on the various underlying options and durations is equal to its commission charge of 3 - 5%. Proper back-testing is conducted on a quarterly basis to certify that the Company\'s return does not exceed this set mark-up and hence ascertain continued fair prices to the clientele, whilst mitigating the Company\'s conflicts of interest.')}</p>
+            </li>
+            <li>
+                {it.L('(b) Speed')}
+                <p>{it.L('Due to the online nature of the business and instruments, there is a small delay between an order being entered and the same order being executed on the server. Any significant delay can have negative impacts on clients; therefore, the Company monitors the latency between the entering and execution of client orders. Should this delay exceed the established threshold, then the system administrators will be notified so that they can investigate any possible issue.')}</p>
+            </li>
+            <li>
+                {it.L('(c) Likelihood of execution')}
+                <p>{it.L('The Company strives to ensure that all the orders placed are executed; however, this is not always possible due to material difficulty or unusual circumstances. In any instance that the Company is aware of any material difficulty relevant to the proper execution of an order, it promptly informs the client of the issue.')}</p>
+            </li>
+            <li>
+                {it.L('(d) Likelihood of settlement')}
+                <p>{it.L('During volatile markets, the Company\'s trading platform runs across a high number of concurrent online users, high volumes of client orders, and a high number of imported price ticks.  As part of the Company\'s best execution delivery to its clients, the Company ensures that its platform runs smoothly under such stressed conditions and takes all reasonable steps to safeguard the continuity and regularity in the performance of investment activities.')}</p>
+            </li>
+            <li>
+                {it.L('(e) Size and nature')}
+                <p>{it.L('Orders will generally be auto-accepted if they do not take the Company over exposure limits and the client has enough remaining balance in their account. With every contract purchased, the Company has systems in place that automatically carry out a large exposure check, and, in case the new total exposure result is greater than or equal to 25% of the eligible capital, the contract cannot be sold to the client.')}</p>
+            </li>
+        </ul>
+
+        <h2 data-anchor='specific-instructions'>{it.L('Specific instructions')}</h2>
+        <p>{it.L('When the client gives the Company specific instructions, including (a) specifying the price of a Contract with the Company or (b) specifying the price at which a Contract is to be closed, then those instructions take precedence over other aspects of the Company\'s policy.')}</p>
 
         <h2 data-anchor='no-fiduciary-duty'>{it.L('No fiduciary duty')}</h2>
-        <p>{it.L('Our commitment to provide you with \'best execution\' does not mean that we owe you any fiduciary responsibilities over and above the specific regulatory obligations placed upon us or as may be otherwise contracted between us.')}</p>
+        <p>{it.L('The Company\'s commitment to provide the client with \'best execution\' does not mean that the Company owes the client any fiduciary responsibilities over and above the specific regulatory obligations placed upon the Company or as may be otherwise contracted between the Company and the client.')}</p>
 
-        <h2 data-anchor='monitoring-and-review'>{it.L('Monitoring and review of this Policy')}</h2>
-        <p>{it.L('We will monitor the effectiveness of our order execution arrangements and order execution policy. We will assess from time to time whether the venues relied upon by us in pricing our Contracts on your behalf allow us to achieve best execution on a consistent basis or whether we need to make changes to our execution arrangements. We will also review our order execution arrangements and order execution policy in respect of material changes either in respect of one of our chosen pricing venues or that otherwise affect our ability to continue to achieve best execution. Should there be any material changes to our order execution arrangements or order execution policy, we will notify you.')}</p>
+        <h2 data-anchor='monitoring-and-review'>{it.L('Monitoring and review of this policy')}</h2>
+        <p>{it.L('The Company will monitor the effectiveness of its order execution arrangements and order execution policy. The Company will assess from time to time whether the venues relied upon by the Company in pricing its Contracts on the client\'s behalf allow the Company to achieve best execution on a consistent basis or whether the Company needs to make changes to its execution arrangements. The Company will also review its order execution arrangements and order execution policy in respect of material changes, either regarding one of the Company\'s chosen pricing venues or what might otherwise affect the Company\'s ability to continue to achieve best execution. Should there be any material changes to the Company\'s order execution arrangements or order execution policy, the Company will notify the client.')}</p>
     </div>
 );
 
