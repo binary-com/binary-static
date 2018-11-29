@@ -1,6 +1,7 @@
 import React from 'react';
 import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
 import MFSA from '../_common/includes/mfsa.jsx';
+import { ButtonSocial } from  '../_common/components/elements.jsx';
 import PaymentLogo from '../_common/components/payment_logo.jsx';
 import SeparatorLine from '../_common/components/separator_line.jsx';
 import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
@@ -147,12 +148,6 @@ const TabCircles = ({ id, number }) => (
     </div>
 );
 
-const ButtonSocial = ({ id, icon, text }) => (
-    <button id={id || undefined} className='button-white'>
-        <span className={icon}>{it.L(text)}</span>
-    </button>
-);
-
 const Home = () => {
     const binary_header = it.L('Binary options');
     const binary_desc   = it.L('Options that offer a fixed payout based on a simple yes/no proposition.');
@@ -186,11 +181,11 @@ const Home = () => {
                                 <div className='gr-12 center-text'>
                                     <span>{it.L('Create free account with')}</span>
                                 </div>
-                                <div className='gr-4 gr-12-m'>
-                                    <ButtonSocial id='btn-google'   icon='ic-google'   text='Google' />
+                                <div className='gr-4 gr-5-p gr-5-m'>
+                                    <ButtonSocial type='google' />
                                 </div>
-                                <div className='gr-4 gr-12-m'>
-                                    <ButtonSocial id='btn-facebook' icon='ic-facebook' text='Facebook' />
+                                <div className='gr-4 gr-5-p gr-5-m'>
+                                    <ButtonSocial type='facebook' />
                                 </div>
                             </div>
                         </div>

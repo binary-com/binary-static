@@ -600,22 +600,7 @@ li strong.margin-right {
         letter-spacing: 0;
         position: relative;
         padding-left: 24px;
-
-        &[class^='ic-']:before {
-            width: 24px;
-            height: 24px;
-            position: absolute;
-            left: 0;
-        }
     }
-}
-
-.ic-google:before {
-    content: url('../images/pages/applications/ic-google.svg');
-}
-
-.ic-facebook:before {
-    content: url('../images/pages/applications/ic-facebook.svg');
 }
 
 .section-divider {
@@ -831,6 +816,21 @@ label + input {
     @media screen and (max-width: 360px) {
         .popup__head {
             background-size: 120%;
+        }
+    }
+}
+
+.button-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        padding-left: 10px;
+    }
+    @media screen and (max-width: 480px) {
+        .text {
+            display: none;
         }
     }
 }

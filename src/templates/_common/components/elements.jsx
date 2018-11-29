@@ -243,3 +243,10 @@ export const Button = ({ children, className, href, id, text }) => (
         { children || <span>{text}</span> }
     </a>
 );
+
+export const ButtonSocial = ({ id, type }) => (
+    <button id={id || type || undefined} className='button-white button-social'>
+        <img src={it.url_for(`images/pages/applications/ic-${type}.svg`)} />
+        <span className='text'>{type}</span>
+    </button>
+);

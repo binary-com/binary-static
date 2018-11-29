@@ -1,5 +1,6 @@
 import React from 'react';
 import MFSA  from '../_common/includes/mfsa.jsx';
+import { ButtonSocial } from  '../_common/components/elements.jsx';
 
 const NewAccount = () => (
     <React.Fragment>
@@ -14,14 +15,20 @@ const NewAccount = () => (
                     <div>
                         <button type='submit'>{it.L('Create Free Account')}</button>
                     </div>
-                    <div className='section-divider gr-padding-20'>
+                    <div className='section-divider gr-padding-20 gr-child'>
                         <div className='align-self-center border-bottom-light-gray' />
                         <div className='circle'>{it.L('or')}</div>
                         <div className='align-self-center border-bottom-light-gray' />
                     </div>
-                    <a id='google-signup' href='javascript:;' className='button-white'>
-                        <span className='icon-google'>{it.L('Create account with Google')}</span>
-                    </a>
+                    <p>{it.L('Sign up using social account')}</p>
+                    <div className='gr-row gr-row-align-center'>
+                        <div className='gr-6 gr-4-m gr-no-gutter-left'>
+                            <ButtonSocial type='google' />
+                        </div>
+                        <div className='gr-6 gr-4-m gr-no-gutter-right'>
+                            <ButtonSocial type='facebook' />
+                        </div>
+                    </div>
                 </div>
                 <p>{it.L('Already have an account? [_1]Log in[_2] here', '<a id="login" href="javascript:;">', '</a>')}</p>
             </div>
