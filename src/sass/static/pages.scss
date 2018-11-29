@@ -1377,3 +1377,40 @@ body #not_authenticated_financial ul.checked > li {
         }
     }
 }
+
+.why-us-content {
+    .awards-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 40px;
+
+        img {
+            width: 70px;
+            height: auto;
+        }
+        .award-icon {
+            max-height: 90px;
+            width: 70px;
+
+            .caption {
+                font-size: $FONT_SIZE_XXS;
+                line-height: 1.2;
+                text-align: center;
+                width: 100%;
+                display: inline-flex;
+                align-items: flex-end;
+                justify-content: center;
+                margin-top: auto;
+            }
+        }
+        .horizontal-margin {
+            margin: 0 15px;
+
+            @media screen and (max-width: 931px) {
+                margin: 15px 15px 20px;
+            }
+        }
+    }
+}
