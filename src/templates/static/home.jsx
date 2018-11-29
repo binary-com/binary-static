@@ -182,7 +182,7 @@ const Home = () => {
                                 <div className='align-self-center border-bottom-light-gray' />
                             </div>
 
-                            <div className='gr-row'>
+                            <div className='gr-row gr-row-align-center'>
                                 <div className='gr-12 center-text'>
                                     <span>{it.L('Create free account with')}</span>
                                 </div>
@@ -191,9 +191,6 @@ const Home = () => {
                                 </div>
                                 <div className='gr-4 gr-12-m'>
                                     <ButtonSocial id='btn-facebook' icon='ic-facebook' text='Facebook' />
-                                </div>
-                                <div className='gr-4 gr-12-m'>
-                                    <ButtonSocial id='btn-twitter'  icon='ic-twitter'  text='Twitter' />
                                 </div>
                             </div>
                         </div>
