@@ -3,7 +3,7 @@ import React                   from 'react';
 import { buildBarriersConfig } from '../barrier';
 
 describe('buildBarriersConfig', () => {
-    it('Returns Undefined it contract has no barriers', () => {
+    it('Returns Undefined if contract has no barriers', () => {
         const contract = {
             "barrier_category":"euro_atm",
             "contract_category":"callput",
