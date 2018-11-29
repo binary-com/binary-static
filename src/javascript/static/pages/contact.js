@@ -15,6 +15,11 @@ const Contact = (() => {
         component_types.forEach((type) => {
             $(`#elevio_element_${type}`).html(Elevio.createComponent(type));
         });
+
+        // Open support module when submit_ticket is set on query string
+        if (/submit_ticket=true/.test(window.location.search)) {
+            window._elev.openModule('support'); // eslint-disable-line no-underscore-dangle
+        }
     };
 
     return {
