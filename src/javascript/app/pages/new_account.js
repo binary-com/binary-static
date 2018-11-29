@@ -11,16 +11,15 @@ const isBinaryApp    = require('../../config').isBinaryApp;
 
 const NewAccount = (() => {
     let clients_country,
-        $google_btn,
         $login_btn,
         $verify_email;
 
     const form_id = '#signup_form';
 
     const onLoad = () => {
+        Login.initSocialLogin();
         getElementById('footer').setVisibility(0); // always hide footer in this page
 
-        $google_btn   = $('#google-signup');
         $login_btn    = $('#login');
         $verify_email = $('#verify_email');
 
@@ -42,10 +41,6 @@ const NewAccount = (() => {
             }
         });
 
-        $google_btn.on('click', (e) => {
-            e.preventDefault();
-            window.location.href = Login.socialLoginUrl('google');
-        });
         $login_btn.on('click', (e) => {
             e.preventDefault();
             Login.redirectToLogin();
@@ -83,7 +78,6 @@ const NewAccount = (() => {
 
     const onUnload = () => {
         getElementById('footer').setVisibility(1);
-        $google_btn.off('click');
         $login_btn.off('click');
     };
 

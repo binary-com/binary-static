@@ -31,20 +31,11 @@ const Home = (() => {
                 fnc_response_handler: handler,
                 fnc_additional_check: checkCountry,
             });
-            socialLogin(['google', 'facebook', 'twitter']);
             if (isEuCountry()) {
                 $('.mfsa_message').slideDown(300);
             }
         });
-    };
-
-    const socialLogin = (providers) => {
-        providers.forEach((provider) => {
-            $(`#btn-${provider}`).off('click').on('click', (e) => {
-                e.preventDefault();
-                window.location.href = Login.socialLoginUrl(provider);
-            });
-        });
+        Login.initSocialLogin();
     };
 
     const checkCountry = (req) => {

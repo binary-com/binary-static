@@ -29,12 +29,21 @@ const Login = (() => {
 
     const isLoginPages = () => /logged_inws|redirect/i.test(window.location.pathname);
 
+    const initSocialLogin = () => {
+        ['google', 'facebook'].forEach((provider) => {
+            $(`#${provider}`).off('click').on('click', (e) => {
+                e.preventDefault();
+                window.location.href = socialLoginUrl(provider);
+            });
+        });
+    };
+
     const socialLoginUrl = brand => (`${loginUrl()}&social_signup=${brand}`);
 
     return {
         redirectToLogin,
         isLoginPages,
-        socialLoginUrl,
+        initSocialLogin,
     };
 })();
 
