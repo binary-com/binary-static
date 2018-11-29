@@ -1,8 +1,8 @@
 const BinarySocket = require('./socket');
 const Client       = require('../base/client');
 const isEuCountry  = require('../common/country_base').isEuCountry;
-const State        = require('../../_common/storage').State;
 const LocalStore   = require('../../_common/storage').LocalStore;
+const State        = require('../../_common/storage').State;
 
 const Footer = (() => {
     const onLoad = () => {
