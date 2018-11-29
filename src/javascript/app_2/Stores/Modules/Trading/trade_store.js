@@ -4,6 +4,7 @@ import {
     observable,
     runInAction,
     reaction,
+    autorun,
 }                                     from 'mobx';
 import Client                         from '_common/base/client_base';
 import {
@@ -400,9 +401,14 @@ export default class TradeStore extends BaseStore {
     async onMount() {
         await this.prepareTradeStore();
         this.debouncedProposal();
-        runInAction(() => {
-            this.is_trade_component_mounted = true;
-        });
+        autorun(() => {
+            // wait at least 500 milliseconds to check for outdated browsers
+            // then set is_trade_component_mounted prop to true/false
+            // to prevent mounting Trade components on a nonexistent container (in the case where the Error component is mounted)
+            runInAction(() => {
+                this.is_trade_component_mounted = !this.root_store.common.has_error;
+            });
+        }, { delay: 500 });
         this.updateQueryString();
     }
 
