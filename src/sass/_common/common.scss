@@ -732,7 +732,7 @@ label + input {
             background-position: bottom;
             background-repeat: no-repeat;
 
-            h1 {
+            .header-1 {
                 color: $COLOR_WHITE;
                 margin: 0;
             }
@@ -773,15 +773,24 @@ label + input {
             background: $COLOR_NAV;
         }
     }
-    h1, h2 {
+    .header-1 {
+        font-size: 36px;
+        font-weight: 300;
+    }
+    .header-2 {
+        color: $COLOR_ORANGE;
+        font-size: 28px;
+        font-weight: 300;
+    }
+    .header-1, .header-2 {
         text-align: center;
         line-height: 1.15;
     }
     @media screen and (max-width: 768px) {
-        h1 {
+        .header-1 {
             font-size: 24px;
         }
-        h2 {
+        .header-2 {
             font-size: 18px;
         }
         .popup {
