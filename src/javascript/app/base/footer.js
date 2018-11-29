@@ -29,11 +29,11 @@ const Footer = (() => {
     };
     
     const displayNotification = (message) => {
-        const last_closed_time = (LocalStore.get('status_notification_close_time') || 0);
-        const time_difference = Math.abs(Date.now() - last_closed_time);
-        const required_period = 30 * 60 * 1000;
-
-        if (time_difference > required_period || message !== LocalStore.get('status_notification_message')) {
+        const notification_storage = LocalStore.getObject('status_notification');
+        const time_difference = (window.time.unix() - notification_storage.close_time || 0);
+        const required_difference = 30 * 60;
+        
+        if (time_difference > required_difference || notification_storage.message !== message) {
             const $status_message_text = $('#status_notification_text');
             const $close_icon = $('#status_notification_close');
             const $status_notification = $('#status_notification');
@@ -44,9 +44,10 @@ const Footer = (() => {
                 .off('click')
                 .on('click', () => {
                     $status_notification.slideUp(200);
-                    LocalStore.set('status_notification_close_time', Date.now());
+                    notification_storage.message = message;
+                    notification_storage.close_time = window.time.unix();
+                    LocalStore.setObject('status_notification', notification_storage);
                 });
-            LocalStore.set('status_notification_message', message);
         }
     };
 
