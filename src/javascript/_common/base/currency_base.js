@@ -81,7 +81,7 @@ const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyVa
 
 const getMinTransfer = currency => getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits', 'min']) || getMinWithdrawal(currency);
 
-const getTransferFee = (currency_from, currency_to) => getPropertyValue(currencies_config, [currency_from, 'transfer_between_accounts', 'fees', currency_to]) || '1%';
+const getTransferFee = (currency_from, currency_to) => `${(getPropertyValue(currencies_config, [currency_from, 'transfer_between_accounts', 'fees', currency_to]) || '1')}%`;
 
 // @param {String} limit = max|min
 const getPaWithdrawalLimit = (currency, limit) => {
