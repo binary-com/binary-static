@@ -79,7 +79,7 @@ const BinaryLoader = (() => {
         login                 : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
         only_virtual          : () => localize('Sorry, this feature is available to virtual accounts only.'),
         only_real             : () => localize('This feature is not relevant to virtual-money accounts.'),
-        only_non_authenticated: () => localize('This page is only available to logged out clients.'),
+        not_authenticated: () => localize('This page is only available to logged out clients.'),
     };
 
     const loadHandler = (config) => {
@@ -101,10 +101,8 @@ const BinaryLoader = (() => {
                         }
                     });
             }
-        } else if (config.only_non_authenticated && Client.isLoggedIn()) {
-            handleOnlyNonAuthenticated(error_messages.only_non_authenticated());
         } else if (config.not_authenticated && Client.isLoggedIn()) {
-            BinaryPjax.load(Client.defaultRedirectUrl(), true);
+            handleNotAuthenticated(error_messages.not_authenticated());
         } else {
             loadActiveScript(config);
         }
@@ -143,7 +141,7 @@ const BinaryLoader = (() => {
         }
     };
 
-    const handleOnlyNonAuthenticated = (localized_message) => {
+    const handleNotAuthenticated = (localized_message) => {
         const content = container.querySelector('#content .container');
         if (!content) {
             return;
