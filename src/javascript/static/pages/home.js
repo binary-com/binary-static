@@ -1,3 +1,4 @@
+const GTM          = require('../../_common/base/gtm');
 const Login        = require('../../_common/base/login');
 const localize     = require('../../_common/localize').localize;
 const State        = require('../../_common/storage').State;
@@ -63,6 +64,7 @@ const Home = (() => {
         } else {
             $('.signup-box div').replaceWith($('<p/>', { text: localize('Thank you for signing up! Please check your email to complete the registration process.'), class: 'gr-10 gr-centered center-text' }));
             $('#social-signup').setVisibility(0);
+            GTM.pushDataLayer({ event: 'email_submit', input_email: response.echo_req.verify_email });
         }
     };
 
