@@ -151,7 +151,7 @@ const Platform = () => (
                                 description={it.L('Ultra fast on-the-go trading')}
                                 text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                                 url='https://ticktrade.binary.com/download/ticktrade-app.apk'
-                                button_text={it.L('Download the android app')}
+                                button_text={it.L('Download the Android app')}
                                 download='true'
                             />
                             <Platforms
@@ -189,7 +189,7 @@ const Platform = () => (
                                 text={it.L('Automate your trading strategies with our simple, "drag-and-drop" bot creation tool.')}
                                 url='https://bot.binary.com'
                                 target='_blank'
-                                button_text={it.L('Try Binary bot')}
+                                button_text={it.L('Try Binary Bot')}
                             />
                         </TabContent>
                     </TabContentContainer>
