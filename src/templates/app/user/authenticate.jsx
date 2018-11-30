@@ -1,6 +1,5 @@
 import React from 'react';
 import Loading from '../../_common/components/loading.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
 import AuthenticateMessageFinancial from '../_includes/authenticate_message_financial.jsx';
 import AuthenticateMessage from '../_includes/authenticate_message.jsx';
 
@@ -28,10 +27,9 @@ const Authenticate = () => (
                 <AuthenticateMessageFinancial />
             </div>
 
-            <div id='success-message' className='center-text invisible'>
-                <SeparatorLine className='gr-padding-10' invisible />
-                <h2>{it.L('Thank you for uploading the necessary documents')}</h2>
-                <p>{it.L('We will review your documents and get back to you within one working day.')}<br />{it.L('Your patience is much appreciated.')}</p>
+            <div id='success-message' className='center-text gr-gutter gr-padding-10 invisible'>
+                <h2>{it.L('Thank you')}</h2>
+                <p>{it.L('We will review your documents and get back to you within one working day.')}</p>
             </div>
 
             <p className='center-text notice-msg invisible' id='error_message' />

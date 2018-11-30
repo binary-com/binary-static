@@ -127,6 +127,8 @@ const Authenticate = (() => {
         const $files             = $not_authenticated.find('input[type="file"]');
         $button = $not_authenticated.find('#btn_submit');
 
+        hideSuccess();
+
         const file_selected  = $('label[class~="selected"]').length;
         const has_file_error = $('label[class~="error"]').length;
 
@@ -440,9 +442,16 @@ const Authenticate = (() => {
             [`<a href="${Url.urlFor('contact')}">`, '</a>']);
         displayNotification(msg, false, 'document_under_review');
         setTimeout(() => {
-            $('#not_authenticated, #not_authenticated_financial').setVisibility(0); // Just hide it
+            removeButtonLoading();
+            $button.setVisibility(0);
+            $('.submit-status').setVisibility(0);
             $('#success-message').setVisibility(1);
         }, 3000);
+    };
+
+    const hideSuccess = () => {
+        $button.setVisibility(1);
+        $('#success-message').setVisibility(0);
     };
 
     const onResponse = (response, is_last_upload) => {
