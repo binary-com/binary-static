@@ -1,9 +1,7 @@
 const CurrencyBase = require('../../_common/base/currency_base');
 const localize     = require('../../_common/localize').localize;
 
-const is_crypto_currency = (currency) => CurrencyBase.isCryptocurrency(currency);
-
-const getCurrencyFullName = (currency) => is_crypto_currency(currency) ? `${CurrencyBase.getCurrencyName(currency)} (${currency})` : currency;
+const getCurrencyFullName = (currency) => CurrencyBase.isCryptocurrency(currency) ? `${CurrencyBase.getCurrencyName(currency)} (${currency})` : currency;
 
 const getCurrencyList = (currencies) => {
     const $currencies       = $('<select/>');
@@ -12,7 +10,7 @@ const getCurrencyList = (currencies) => {
 
     currencies.forEach((currency) => {
         const currency_name = getCurrencyFullName(currency);
-        (is_crypto_currency(currency) ? $cryptocurrencies : $fiat_currencies)
+        (CurrencyBase.isCryptocurrency(currency) ? $cryptocurrencies : $fiat_currencies)
             .append($('<option/>', { value: currency, text: currency_name }));
     });
 
