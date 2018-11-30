@@ -29,26 +29,28 @@ const Footer = (() => {
     };
     
     const displayNotification = (message) => {
-        const notification_storage = LocalStore.getObject('status_notification');
-        const time_difference = (window.time.unix() - notification_storage.close_time || 0);
-        const required_difference = 30 * 60;
-        
-        if (time_difference > required_difference || notification_storage.message !== message) {
-            const $status_message_text = $('#status_notification_text');
-            const $close_icon = $('#status_notification_close');
-            const $status_notification = $('#status_notification');
+        BinarySocket.wait('time').then((response) => {
+            const notification_storage = LocalStore.getObject('status_notification');
+            const time_difference = (parseInt(response.time) - (parseInt(notification_storage.close_time) || 0));
+            const required_difference = 30 * 60;
+            
+            if (time_difference > required_difference || notification_storage.message !== message) {
+                const $status_message_text = $('#status_notification_text');
+                const $close_icon = $('#status_notification_close');
+                const $status_notification = $('#status_notification');
 
-            $status_notification.css('display', 'flex');
-            $status_message_text.html(message);
-            $close_icon
-                .off('click')
-                .on('click', () => {
-                    $status_notification.slideUp(200);
-                    notification_storage.message = message;
-                    notification_storage.close_time = window.time.unix();
-                    LocalStore.setObject('status_notification', notification_storage);
-                });
-        }
+                $status_notification.css('display', 'flex');
+                $status_message_text.html(message);
+                $close_icon
+                    .off('click')
+                    .on('click', () => {
+                        $status_notification.slideUp(200);
+                        notification_storage.message = message;
+                        notification_storage.close_time = response.time;
+                        LocalStore.setObject('status_notification', notification_storage);
+                    });
+            }
+        });
     };
 
     return {
