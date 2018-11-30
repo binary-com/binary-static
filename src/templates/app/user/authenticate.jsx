@@ -23,13 +23,13 @@ const Authenticate = () => (
                 <AuthenticateMessage />
             </div>
 
-            <div id='not_authenticated_financial' className='invisible'>
-                <AuthenticateMessageFinancial />
-            </div>
-
             <div id='success-message' className='center-text gr-gutter gr-padding-10 invisible'>
                 <h2>{it.L('Thank you')}</h2>
                 <p>{it.L('We will review your documents and get back to you within one working day.')}</p>
+            </div>
+
+            <div id='not_authenticated_financial' className='invisible'>
+                <AuthenticateMessageFinancial />
             </div>
 
             <p className='center-text notice-msg invisible' id='error_message' />
