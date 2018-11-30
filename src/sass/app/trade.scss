@@ -467,6 +467,9 @@
             display: flex;  /* fix for iOS */
             justify-content: center;
             align-items: center;
+            @supports (-ms-ime-align: auto) {
+                z-index: 9; /* fix for MSEdge */
+            }
 
             p {
                 margin: 0;
