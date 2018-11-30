@@ -99,6 +99,8 @@ const Authenticate = (() => {
                 if ($(e.target).is('span.remove')) resetLabel(event);
             });
 
+        // Hide success message on another file selected
+        hideSuccess();
         // Change submit button state
         enableDisableSubmit();
     };
@@ -126,8 +128,6 @@ const Authenticate = (() => {
         const $not_authenticated = $('#authentication-message > div#not_authenticated');
         const $files             = $not_authenticated.find('input[type="file"]');
         $button = $not_authenticated.find('#btn_submit');
-
-        hideSuccess();
 
         const file_selected  = $('label[class~="selected"]').length;
         const has_file_error = $('label[class~="error"]').length;
@@ -450,7 +450,9 @@ const Authenticate = (() => {
     };
 
     const hideSuccess = () => {
-        $button.setVisibility(1);
+        if ($button) {
+            $button.setVisibility(1);
+        }
         $('#success-message').setVisibility(0);
     };
 
