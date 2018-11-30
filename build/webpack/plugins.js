@@ -4,7 +4,6 @@ const path                     = require('path');
 const SWPrecachedWebpackPlugin = require('sw-precache-webpack-plugin');
 const webpack                  = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const publicPathFactory        = require('./helpers').publicPathFactory;
 const PATHS                    = require('./paths');
 const languages                = require('../../scripts/common').languages;
 
