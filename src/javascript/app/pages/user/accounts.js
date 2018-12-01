@@ -24,6 +24,8 @@ const Accounts = (() => {
             account             : localize('Account'),
             available_markets   : localize('Available Markets'),
             available_currencies: localize('Available Currencies'),
+            type                : localize('Type'),
+            currency            : localize('Currency'),
         });
 
         return {
@@ -115,6 +117,7 @@ const Accounts = (() => {
     };
 
     const appendExistingAccounts = (loginid) => {
+        const table_headers     = TableHeaders.get();
         const account_currency  = Client.get('currency', loginid);
         const account_type_prop = { text: Client.getAccountTitle(loginid) };
 
@@ -138,10 +141,10 @@ const Accounts = (() => {
 
         $('#existing_accounts').find('tbody')
             .append($('<tr/>', { id: loginid, class: ((is_disabled || excluded_until) ? 'color-dark-white' : '') })
-                .append($('<td/>', { text: loginid }))
-                .append($('<td/>').html($('<span/>', account_type_prop)))
-                .append($('<td/>', { text: txt_markets }))
-                .append($('<td/>')
+                .append($('<td/>', { text: loginid, datath: table_headers.account }))
+                .append($('<td/>', { datath: table_headers.type }).html($('<span/>', account_type_prop)))
+                .append($('<td/>', { text: txt_markets, datath: table_headers.available_markets }))
+                .append($('<td/>', { datath: table_headers.currency })
                     .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : (getCurrencyFullName(account_currency) || '-'))));
 
         if (is_disabled || excluded_until) {
