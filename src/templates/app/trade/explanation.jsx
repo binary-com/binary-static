@@ -1,10 +1,20 @@
 import React from 'react';
 
+const Note = ({ text }) => (
+    <p className='hint'><strong>{it.L('Note')}: </strong>{text}</p>
+);
+
+const Duration = ({ link }) => (
+    <React.Fragment>
+        <h3>{it.L('Contract duration')}</h3>
+        <p>{it.L('Please refer to the [_1]asset index[_2] for each asset’s minimum and maximum contract durations based on trade type.', `<a href='${it.url_for('resources/asset_indexws')}#${link}' target='_blank'>`, '</a>')}</p>
+    </React.Fragment>
+);
+
 const Explanation = () => (
     <div className='gr-parent'>
         {/* ========== Winning ========== */}
         <div id='explanation_winning' className='invisible'>
-
             <div id='winning_asian' className='invisible'>
                 <h3>{it.L('Winning the contract')}</h3>
                 <p>{it.L('Asian options settle by comparing the <strong>last tick</strong> with the average spot over the period.')}</p>
@@ -158,13 +168,11 @@ const Explanation = () => (
                 <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
                 <h3>{it.L('The Average')}</h3>
                 <p>{it.L('The average is the average of the ticks, including the first and the last tick.')}</p>
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Asian contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')}</p>
             </div>
 
             <div id='explain_digits' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
                 <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Digit contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')}</p>
             </div>
 
             <div id='explain_endsinout' className='invisible'>
@@ -172,13 +180,11 @@ const Explanation = () => (
                 <p>{it.L('The <strong>exit spot</strong> is the latest tick at or before the <strong>end time</strong>.')}</p>
                 <p>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).')}</p>
                 <p>{it.L('The <strong>start time</strong> is when the contract is processed by our servers.')}</p>
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')}</p>
             </div>
 
             <div id='explain_evenodd' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
                 <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Even/Odd contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')}</p>
             </div>
 
             <div id='explain_higherlower' className='invisible'>
@@ -187,13 +193,11 @@ const Explanation = () => (
                 <p className='hide-mb'>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).')}</p>
                 <p className='show-mb'>{it.L('The <strong>remaining time</strong> is the time remaining until the contract expires.')}</p>
                 <p>{it.L('The <strong>start time</strong> is when the contract is processed by our servers.')}</p>
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')}</p>
             </div>
 
             <div id='explain_overunder' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
                 <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Over/Under contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')}</p>
             </div>
 
             <div id='explain_risefall' className='invisible'>
@@ -213,7 +217,6 @@ const Explanation = () => (
                     {it.L('If you select a specific <strong>end time</strong>, the <strong>end time</strong> is the selected time.')}
                 </p>
                 <br />
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn\'t end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract\'s start time.')}</p>
             </div>
 
             <div id='explain_staysinout' className='invisible'>
@@ -221,7 +224,6 @@ const Explanation = () => (
                 <p>{it.L('The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>.')}</p>
                 <p>{it.L('The <strong>start time</strong> is when the contract is processed by our servers.')}</p>
                 <p>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).')}</p>
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')}</p>
             </div>
 
             <div id='explain_touchnotouch' className='invisible'>
@@ -229,7 +231,6 @@ const Explanation = () => (
                 <p>{it.L('The <strong>contract period</strong> is the period between the <strong>next tick</strong> after the <strong>start time</strong> and the <strong>end time</strong>.')}</p>
                 <p>{it.L('The <strong>start time</strong> is when the contract is processed by our servers.')}</p>
                 <p>{it.L('The <strong>end time</strong> is the selected number of minutes/hours after the <strong>start time</strong> (if less than one day in duration), or at the end of the trading day (if one day or more in duration).')}</p>
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')}</p>
             </div>
 
             <div id='explain_lookbacklow' className='invisible'>
@@ -293,7 +294,68 @@ const Explanation = () => (
             <div id='explain_highlowticks' className='invisible'>
                 <h3>{it.L('The First Tick')}</h3>
                 <p>{it.L('The entry spot is the first tick after the contract is processed by our servers.')}</p>
-                <p className='hint'><strong>{it.L('Note')}: </strong>{it.L('High Tick/Low Tick contracts have a strict duration of five ticks.')}</p>
+            </div>
+        </div>
+
+        {/* ========== Duration ========== */}
+        <div id='explanation_duration'>
+            <div id='duration_forex' className='invisible'>
+                <Duration link='market-forex' />
+            </div>
+
+            <div id='duration_indices' className='invisible'>
+                <Duration link='market-indices' />
+            </div>
+
+            <div id='duration_commodities' className='invisible'>
+                <Duration link='market-commodities' />
+            </div>
+
+            <div id='duration_volidx' className='invisible'>
+                <Duration link='market-volidx' />
+            </div>
+        </div>
+
+        {/* ========== Note ========== */}
+        <div id='explanation_note' className='invisible gr-padding-20 gr-child'>
+            <div id='note_asian' className='invisible'>
+                <Note text={it.L('Asian contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')} />
+            </div>
+
+            <div id='note_digits' className='invisible'>
+                <Note text={it.L('Digit contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')} />
+            </div>
+
+            <div id='note_endsinout' className='invisible'>
+                <Note text={it.L('Ends Between/Ends Outside contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')} />
+            </div>
+
+            <div id='note_evenodd' className='invisible'>
+                <Note text={it.L('Even/Odd contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')} />
+            </div>
+
+            <div id='note_higherlower' className='invisible'>
+                <Note text={it.L('Higher/Lower contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')} />
+            </div>
+
+            <div id='note_overunder' className='invisible'>
+                <Note text={it.L('Over/Under contracts will be refunded at the purchase price if the contract doesn\'t end within 5 minutes.')} />
+            </div>
+
+            <div id='note_risefall' className='invisible'>
+                <Note text={it.L('Rise/Fall contracts will be refunded at the purchase price if the following conditions occur: (1) there are less than 2 ticks between the start and end times, or (2) for contracts of tick duration, if the contract doesn\'t end within 5 minutes, or (3) for contracts starting in the future, if there are no ticks in the 5 minutes before the contract\'s start time.')} />
+            </div>
+
+            <div id='note_staysinout' className='invisible'>
+                <Note text={it.L('Stays Between/Goes Outside Contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')} />
+            </div>
+
+            <div id='note_touchnotouch' className='invisible'>
+                <Note text={it.L('Touch/No Touch contracts will be refunded at the purchase price if there are less than 2 ticks between the start and end times.')} />
+            </div>
+
+            <div id='note_highlowticks' className='invisible'>
+                <Note text={it.L('High Tick/Low Tick contracts have a strict duration of five ticks.')} />
             </div>
         </div>
     </div>
