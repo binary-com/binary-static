@@ -1,6 +1,6 @@
-import React from 'react';
-import Loading from '../../_common/components/loading.jsx';
+import React                               from 'react';
 import { Fieldset, FormRow, SubmitButton } from '../../_common/components/forms.jsx';
+import Loading                             from '../../_common/components/loading.jsx';
 
 const StrongLabel = ({ id }) => (
     <strong><label id={id} /></strong>
@@ -55,6 +55,13 @@ const PaymentagentTransfer = () => (
             <Fieldset legend={it.L('Details')}>
                 <FormRow label={it.L('Transfer to Login ID')} id='client_id' type='text' />
                 <FormRow label={it.L('Amount')} id='amount' type='text' />
+                <FormRow
+                    label={it.L('Note')}
+                    id='note'
+                    type='textarea'
+                    className='paymentagent_note'
+                    attributes={{ rows: 4, cols: 19, maxLength: 500 }}
+                />
             </Fieldset>
 
             <SubmitButton msg_id='form_error' type='submit' text={it.L('Submit')} />

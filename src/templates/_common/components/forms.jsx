@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Fieldset = ({ children, legend, id, className }) => (
-    <fieldset id={id} className={className} >
+    <fieldset id={id} className={className}>
         {legend &&
             <legend>{legend}</legend>
         }
@@ -44,12 +44,36 @@ export const FormRow = ({
                         const option_id = `${id}_option_${i}`;
                         return (
                             <div key={value}>
-                                <input type='radio' name={id} id={option_id} value={value} defaultChecked={value === default_option} />
-                                <label htmlFor={option_id}><span data-balloon={data_balloon_text} data-balloon-length='medium'>{label_text}</span></label>
+                                <input
+                                    type='radio'
+                                    name={id}
+                                    id={option_id}
+                                    value={value}
+                                    defaultChecked={value === default_option}
+                                />
+                                <label htmlFor={option_id}>
+                                    <span
+                                        data-balloon={data_balloon_text}
+                                        data-balloon-length='medium'
+                                    >{label_text}
+                                    </span>
+                                </label>
                             </div>
                         );
                     })}
                 </div>
+            );
+        }
+        if (type === 'textarea') {
+            return (
+                <React.Fragment>
+                    <textarea
+                        className={className}
+                        id={id}
+                        {...attributes}
+                    />
+                    <label htmlFor={id} />
+                </React.Fragment>
             );
         }
         if (['text', 'password', 'number', 'checkbox'].includes(type)) {
@@ -82,7 +106,7 @@ export const FormRow = ({
 
     if (type === 'checkbox' && !spaced) {
         return (
-            <div className={`gr-row ${row_class || ''}`} id={row_id} >
+            <div className={`gr-row ${row_class || ''}`} id={row_id}>
                 <div className='gr-12 gr-padding-20 gr-centered'>
                     <input id={id} type='checkbox' defaultChecked={!!checked} />
                     &nbsp;
@@ -92,9 +116,12 @@ export const FormRow = ({
         );
     }
     return (
-        <div className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`} id={row_id}>
-            <div className={`${is_two_rows ? 'gr-12' : 'gr-4 gr-12-m'}`} id={label_row_id} >
-                <label htmlFor={type !== 'label' ? id : undefined} >
+        <div
+            className={`gr-row form-row center-text-m ${is_two_rows ? 'two-rows' : ''} ${row_class || ''}`}
+            id={row_id}
+        >
+            <div className={`${is_two_rows ? 'gr-12' : 'gr-4 gr-12-m'}`} id={label_row_id}>
+                <label htmlFor={type !== 'label' ? id : undefined}>
                     {tooltip ?
                         <span data-balloon-length='xlarge' data-balloon={tooltip}>
                             {label}
@@ -106,7 +133,7 @@ export const FormRow = ({
             <div className={is_two_rows ? 'gr-12' : 'gr-8 gr-12-m'}>
                 {getInnerElement()}
                 {hint &&
-                    <p className='hint no-margin'>{hint}</p>
+                <p className='hint no-margin'>{hint}</p>
                 }
             </div>
         </div>
@@ -132,14 +159,21 @@ export const SubmitButton = ({
 }) => {
     const content =
         <React.Fragment>
-            { !no_error &&
-                <p id={msg_id || 'msg_form'} className={`${is_centered ? 'center-text' : ''} error-msg no-margin invisible`} />
+            {!no_error &&
+            <p
+                id={msg_id || 'msg_form'}
+                className={`${is_centered ? 'center-text' : ''} error-msg no-margin invisible`}
+            />
             }
             <div className='gr-padding-10'>
-                { custom_btn_text &&
-                    <a className={`button ${custom_btn_class || ''}`} href={custom_btn_href || 'javascript:;'} id={custom_btn_id}>
-                        <span className='button'>{custom_btn_text}</span>
-                    </a>
+                {custom_btn_text &&
+                <a
+                    className={`button ${custom_btn_class || ''}`}
+                    href={custom_btn_href || 'javascript:;'}
+                    id={custom_btn_id}
+                >
+                    <span className='button'>{custom_btn_text}</span>
+                </a>
                 }
                 <button
                     id={id || 'btn_submit'}
@@ -155,7 +189,7 @@ export const SubmitButton = ({
     if (!no_wrapper) {
         return (
             <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className || ''}`} id={id}>
-                { !is_centered ?
+                {!is_centered ?
                     <div className={`${!is_left_align ? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
                         {content}
                     </div> :
