@@ -207,9 +207,9 @@ const Header = (() => {
 
     const showHideNewAccount = (upgrade_info) => {
         if (upgrade_info.can_upgrade || upgrade_info.can_open_multi) {
-            changeAccountsText(1, localize('Create Account'));
+            changeAccountsText(1, localize('Create account'));
         } else {
-            changeAccountsText(0, localize('Accounts List'));
+            changeAccountsText(0, localize('Accounts list'));
         }
     };
 
