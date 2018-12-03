@@ -165,8 +165,8 @@ const PaymentMethods = () => {
                                         { td_list: [
                                             { text: 'USD' },
                                             { text: '25 - 10,000' },
-                                            { text: '25 - 10,000' },
-                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: 'N/A' },
+                                            { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_PaySec.pdf' video_link='https://youtu.be/DTVspCgnx0M' /> },
                                         ],
                                         },
@@ -227,7 +227,7 @@ const PaymentMethods = () => {
                 />
 
                 <div className='gr-padding-10'>
-                    <p className='hint'>{it.L('Note:')} {it.L('Mastercard withdrawals are only available to cards issued in an European country. If you do not meet this requirement, you may use an e-wallet method for withdrawal.')}</p>
+                    <p className='hint'>{it.L('Note:')} {it.L('Mastercards issued in a non-European country may only withdraw up to the amount deposited.')}</p>
                 </div>
 
                 <TableTitle title={it.L('E-wallet')} />
@@ -474,24 +474,6 @@ const PaymentMethods = () => {
                                     },
                                 ],
                             },
-                            // {
-                            //     id : '',
-                            //     row: [
-                            //         { text: <PaymentLogo logo='' /> },
-                            //         { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                            //             { td: 'description' },
-                            //             { td_list: [
-                            //                 { text: 'ETC' },
-                            //                 { text: '0.002' },
-                            //                 { text: '0.002' },
-                            //                 { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                            //             ],
-                            //             },
-                            //         ]}
-                            //         />,
-                            //         },
-                            //     ],
-                            // },
                             {
                                 id : 'litecoin',
                                 row: [
@@ -504,6 +486,25 @@ const PaymentMethods = () => {
                                             { text: '0.02' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_Litecoin.pdf' video_link='https://youtu.be/DJhP5UjKPpI' /> },
+                                        ],
+                                        },
+                                    ]}
+                                    />,
+                                    },
+                                ],
+                            },
+                            {
+                                id : 'tether',
+                                row: [
+                                    { text: <PaymentLogo logo='tether' /> },
+                                    { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
+                                        { td: it.L('Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more info, please visit [_1].', '<a href="https://litecoin.org" target="_blank">https://tether.to</a>') },
+                                        { td_list: [
+                                            { text: 'UST' },
+                                            { text: '1' },
+                                            { text: '1' },
+                                            { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
+                                            { text: <ReferenceLinks /> },
                                         ],
                                         },
                                     ]}
