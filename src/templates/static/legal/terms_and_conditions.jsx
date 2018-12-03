@@ -51,7 +51,7 @@ const TermsAndConditions = () => (
             <Section sectionNum='7' id='tnc_accept' link_id='accept' className='tnc_accept invisible'>
                 <div className='gr-9 gr-12-m gr-centered center-text'>
                     <p>{it.L('By clicking OK, you confirm that you have read and accepted Terms & Conditions.')}</p>
-                    <button className='button' id='btn_accept'>{it.L('Ok')}</button>
+                    <button className='button' id='btn_accept'>{it.L('OK')}</button>
                     <p className='gr-12 error-msg center-text invisible' id='err_message' />
                 </div>
             </Section>

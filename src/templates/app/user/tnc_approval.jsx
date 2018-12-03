@@ -15,7 +15,7 @@ const TncApproval = () => (
                         <p id='tnc_message'>{it.L('[_1] has updated its <a href="[_2]">Terms & Conditions</a>. By clicking OK, you confirm that you have read and accepted the updated <a href="[_2]">Terms & Conditions</a>.', '[_1]', '[_2]')}</p>
                         <div className='gr-3 gr-6-m gr-centered'>
                             <span className='button'>
-                                <button className='button' id='btn_accept'>{it.L('Ok')}</button>
+                                <button className='button' id='btn_accept'>{it.L('OK')}</button>
                             </span>
                         </div>
                     </form>
