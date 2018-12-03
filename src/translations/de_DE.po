@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-03 06:39\n"
+"PO-Revision-Date: 2018-12-03 08:33\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -1995,9 +1995,6 @@ msgstr "Bitcoin gegen US Dollar"
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Blockchain Technologie – Alle Kryptowährungen verwenden eine Variante der Blockchain-Technologie (eine Art öffentlicher Ledger), um Aufzeichnungen über jede Transaktion zu erhalten. "
 
-msgid "Both accounts need to be authenticated separately."
-msgstr "Beide Konten müssen separat authentifiziert werden."
-
 msgid "Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. E.g. Get $25 when you deposit $100. By way of example, if you choose to participate in a \"Get $25 when you deposit $100\" promotion, we will add an additional $25 to your account when you deposit $100 AND when you have purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to your account when both of these conditions are met."
 msgstr "Wenn diese Art von Werbeaktion angeboten wird, werden die Einzahlung und die Bonusbeträge eindeutig angezeigt. Beispiel: Sie erhalten 25 €, wenn Sie 100 € einzahlen. Wenn Sie sich beispielhalber entschlossen haben, an einer \"Sie erhalten 25 €, wenn Sie 100 € einzahlen\" Werbeaktion teilzunehmen, werden wir Ihnen, nachdem Sie 100 € eingezahlt UND zumindest Kontrakte im Wert von 125 € (25 € x 5 = 125 €) eingekauft haben, 25 € auf Ihrem Konto gutschreiben. Die Gutschrift des Bonus auf Ihr Konto erfolgt nur, wenn beide Bedingungen erfüllt sind."
 
@@ -2058,8 +2055,8 @@ msgstr "Wenn Sie auf OK klicken, bestätigen Sie, dass Sie die aktualisierten al
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "Indem Sie auf kaufen oder verkaufen klicken, wird Ihre Order zum bestmöglichen Kurs, mit entweder einem unserer Liquiditätsanbieter oder auf unseren eigenen Büchern (nach dem besten Kurs zum Zeitpunkt Ihrer Ordererteilung) ausgefüllt werden;"
 
-msgid "By default, all clients are treated as retail. Do you prefer to be treated as a professional client if you match the necessary criteria?"
-msgstr "Standardmäßig werden alle Kunden als Einzelhandelskunden behandelt. Würden Sie es bevorzugen, als professioneller Kunde behandelt zu werden, sollten Sie die erforderlichen Kriterien erfüllen?"
+msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
+msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "Das intelligente Orderführungssystem sorgt standardmäßig dafür, dass der Oberteil des Buches immer die besten Angebots- und Briefkurse umfasst, die von den konkurrierenden Liquiditätsgebern angegeben sind. Dies kann sich jedoch mit Wahrscheinlichkeit auf Ausführung als primärer Ausführungsfaktor, in Zeiten einer Marktliquidität, ändern."
@@ -2846,9 +2843,6 @@ msgstr "Erstellen"
 
 msgid "Create Account"
 msgstr "Konto einrichten"
-
-msgid "Create Financial Account"
-msgstr "Finanzkonto erstellen"
 
 msgid "Create Free Account"
 msgstr "Gratis Konto eröffnen"
@@ -4404,9 +4398,6 @@ msgstr "Überweisungen zwischen Konten sind nicht verfügbar."
 msgid "Funding of MT5 Real Account"
 msgstr "Finanzierung eines MT5 Echtgeldkontos"
 
-msgid "Funds cannot be transferred between financial and gaming accounts."
-msgstr "Gelder können zwischen Finanz- und Spielkonten nicht überwiesen werden."
-
 msgid "Further Instructions"
 msgstr "Weitere Anweisungen"
 
@@ -4854,8 +4845,8 @@ msgstr "Hiermit bestätige ich, dass die von mir angegebenen Steuerinformationen
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr "Ich verstehe die damit verbundenen Risiken und stimme den %1Allgemeinen Geschäftsbedingungen der MAM-Anlage%2 zu"
 
-msgid "I want to be treated as a professional client."
-msgstr "Ich möchte als professioneller Kunde behandelt werden."
+msgid "I would like to be treated as a professional client."
+msgstr ""
 
 msgid "I'm interested"
 msgstr "Ich bin interessiert"
@@ -10356,6 +10347,9 @@ msgstr "Diese Verpflichtung umfasst das Verbot unrechtmäßiger Zahlungen oder d
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Dieses Angebot kann nicht in Verbindung mit anderen Angeboten verwendet werden."
 
+msgid "This page is only available to logged out clients."
+msgstr ""
+
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr ""
 
@@ -12671,9 +12665,6 @@ msgstr "Ihre Forex- und Differenzkontrakt-Transaktionen mit %1 sind mit dem zugr
 
 msgid "Your fund transfer is successful. Your new balances are:"
 msgstr "Ihre Geldübrweisung war erfolgreich. Ihr neues Guthaben beträgt:"
-
-msgid "Your gaming account %1 limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead."
-msgstr "Ihr Spielkonto %1 grenzt Sie auf den Handel mit Volatilität Indizes ein. Wenn Sie auf den anderen Märkten, die wir anbieten, handeln möchten, erstellen Sie bitte ein Finanzkonto (MF) stattdessen."
 
 msgid "Your name, email address and contact number"
 msgstr "Ihr Name, Ihre E-Mail Adresse und Kontaktnummer"
