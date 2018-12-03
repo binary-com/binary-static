@@ -1,5 +1,4 @@
 const Client           = require('../../base/client');
-const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getElementById   = require('../../../_common/common_functions').getElementById;
