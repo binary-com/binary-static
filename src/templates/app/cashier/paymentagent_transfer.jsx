@@ -56,10 +56,10 @@ const PaymentagentTransfer = () => (
                 <FormRow label={it.L('Transfer to Login ID')} id='client_id' type='text' />
                 <FormRow label={it.L('Amount')} id='amount' type='text' />
                 <FormRow
-                    label={it.L('Note')}
-                    id='note'
+                    label={it.L('Description')}
+                    id='description'
                     type='textarea'
-                    className='paymentagent_note'
+                    className='paymentagent_description'
                     attributes={{ rows: 4, cols: 19, maxLength: 500 }}
                 />
             </Fieldset>
