@@ -226,11 +226,13 @@
                         transform: translateY(40px);
                         transition: all 0.2s ease-in;
                         text-size-adjust: 100%; // prevent text-size from increasing
+                        pointer-events: none;
 
                         &.active {
                             transform: translateY(0);
                             transition: all 0.2s ease-in-out;
                             opacity: 1;
+                            pointer-events: auto;
                         }
                     }
                 }
