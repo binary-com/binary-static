@@ -37,7 +37,7 @@ const SetCurrency = () => (
 
                 <div id='deposit_btn' className='invisible'>
                     <div>
-                        <a className='button' href={it.url_for('cashier/forwardws?action=deposit')}><span>{it.L('Make a Deposit')}</span></a>
+                        <a className='button' href={it.url_for('cashier/forwardws?action=deposit')}><span>{it.L('Make a deposit')}</span></a>
                     </div>
                 </div>
 
@@ -61,7 +61,7 @@ const SetCurrency = () => (
 
                 <p><strong>{it.L('Open a Financial Account')}</strong></p>
                 <p>{it.L('Your gaming account [_1] limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead.', '<span data-show="iom">(MX)</span><span data-show="malta">(MLT)</span>')}</p>
-                <a className='button-secondary' href={it.url_for('new_account/maltainvestws')}><span>{it.L('Create Financial Account')}</span></a>
+                <a className='button-secondary' href={it.url_for('new_account/maltainvestws')}><span>{it.L('Create financial account')}</span></a>
 
                 <SeparatorLine show_mobile className='gr-parent gr-padding-10' invisible />
 

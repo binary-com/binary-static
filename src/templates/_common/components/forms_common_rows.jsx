@@ -160,7 +160,7 @@ export const Tnc = () => (
             </div>
         </div>
 
-        <button className='button' type='submit'>{it.L('Open Account')}</button>
+        <button className='button' type='submit'>{it.L('Open account')}</button>
     </div>
 );
 

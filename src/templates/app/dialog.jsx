@@ -9,7 +9,7 @@ const Dialog = () => (
                     <div className='gr-row gr-row-align-right gr-padding-10'>
                         <form id='frm_confirm'>
                             <a className='button button-secondary' id='btn_cancel' href='javascript:;'><span>{it.L('Cancel')}</span></a>
-                            <a className='button' id='btn_ok' href='javascript:;'><span>{it.L('OK')}</span></a>
+                            <a className='button' id='btn_ok' href='javascript:;'><span>{it.L('Ok')}</span></a>
                         </form>
                     </div>
                 </div>
