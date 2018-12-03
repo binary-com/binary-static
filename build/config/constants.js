@@ -25,14 +25,14 @@ const release_config = {
     production: {
         branch        : 'master',
         target_folder : '',
-        valid_sections: ['app', 'app_2'],
+        valid_sections: ['app', 'app_2', 'all'],
         origin        : release_targets.production.repo,
         CNAME         : release_targets.production.CNAME,
     },
     staging: {
         branch        : 'master',
         target_folder : '',
-        valid_sections: ['app', 'app_2'],
+        valid_sections: ['app', 'app_2', 'all'],
         origin        : release_targets.staging.repo,
         CNAME         : release_targets.staging.CNAME,
     },
