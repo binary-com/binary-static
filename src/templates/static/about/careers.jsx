@@ -195,16 +195,15 @@ const Careers = () => {
                     <p>{it.L('[_1] is always looking to add experienced professionals to its talented team of administrators, technical contributors, and managers. To support our continued growth, we\'ve developed a number of exciting career opportunities in the following areas:', it.website_name)}</p>
                 </div>
                 <div className='gr-row'>
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=information_technology#devops_manager`}                    text={it.L('Information technology')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=quality_assurance#quality_assurance_engineer`}             text={it.L('Quality assurance')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=quantitative_analysis#quantitative_developer`}             text={it.L('Quantitative analysis')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=marketing#marketing_project_coordinator`}                  text={it.L('Marketing')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=accounting#accounts_and_payments_executive`}               text={it.L('Accounting')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=compliance#compliance_executive`}                          text={it.L('Compliance')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=customer_support#global_customer_service_representatives`} text={it.L('Customer support')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=human_resources#human_resource_executive`}                 text={it.L('Human resources')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=administrator#administrative_executive`}                   text={it.L('Administration and HR')} />
-                    <Box gr='gr-6' href={`${url_open_positions}?dept=internal_audit#internal_auditor`}                          text={it.L('Internal audit')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=information_technology#devops_engineer`}      text={it.L('IT')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=quality_assurance#software_tester`}           text={it.L('Quality Assurance')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=quantitative_analysis#quantitative_analyst`}  text={it.L('Quantitative Analysis')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=marketing#affiliate_country_manager`}         text={it.L('Marketing')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=accounting#accounts_and_payments_executive`}  text={it.L('Accounts/Payments')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=compliance#compliance_executive`}             text={it.L('Compliance and Risk Management')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=internal_audit#internal_audit_executive`}     text={it.L('Internal Audit')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=human_resources#hr_operations_executive`}     text={it.L('Human Resource')} />
+                    <Box gr='gr-6' href={`${url_open_positions}?dept=customer_support#customer_support_executive`} text={it.L('Customer Support')} />
                 </div>
 
                 <div className='gr-padding-10 center-text btn-margin-top'>
@@ -265,11 +264,11 @@ const Careers = () => {
                                     circle_no='1'
                                 />
                                 <CareerStep
-                                    text={it.L('If you\'re shortlisted, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire.')}
+                                    text={it.L('If you are shortlisted, we will send you a talent test to be completed.')}
                                     circle_no='2'
                                 />
                                 <CareerStep
-                                    text={it.L('If you score well on the SATI, we\'ll send you a talent test. Do well on the talent test and and we\'ll invite you for an interview with a member of our recruitment team.')}
+                                    text={it.L('If you score well on the talent test, we\'ll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we\'ll invite you for an interview with a member of our recruitment team.')}
                                     circle_no='3'
                                 />
                             </div>

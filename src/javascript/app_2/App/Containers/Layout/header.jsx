@@ -48,7 +48,7 @@ const Header = ({
                 </div>
                 <div className='menu-right'>
                     <div className='acc-balance-container'>
-                        { is_install_button_visible &&
+                        { is_install_button_visible && is_logged_in &&
                             <InstallPWAButton
                                 prompt_event={pwa_prompt_event}
                                 onClick={hideInstallButton}
