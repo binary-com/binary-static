@@ -147,21 +147,23 @@ const BinaryLoader = (() => {
             return;
         }
 
+        const outer_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
         const rowDiv = (element) => {
             const row_element = createElement('div', { class: 'gr-padding-10' });
             row_element.appendChild(element);
             return row_element;
         };
-        const container_element = createElement('div', { class: 'center-text' });
+        const inner_container = createElement('div', { class: 'center-text' });
         const error_msg = createElement('div', { class: 'center-text notice-msg', text: error_messages.not_authenticated() });
         const logout_cta = createElement('button');
         const logout_span = createElement('span', { text: localize ('Sign out') });
 
         logout_cta.addEventListener('click', () => { Client.doLogout({ logout: 1 }); });
         logout_cta.appendChild(logout_span);
-        container_element.appendChild(rowDiv(error_msg));
-        container_element.appendChild(rowDiv(logout_cta));
-        content.append(container_element);
+        inner_container.appendChild(rowDiv(error_msg));
+        inner_container.appendChild(rowDiv(logout_cta));
+        outer_container.append(inner_container);
+        content.html(outer_container);
     };
 
     return {
