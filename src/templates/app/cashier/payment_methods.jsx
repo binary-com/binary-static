@@ -168,7 +168,7 @@ const PaymentMethods = () => {
                                         { td_list: [
                                             { text: 'USD' },
                                             { text: '25 - 10,000' },
-                                            { text: '25 - 10,000' },
+                                            { text: 'N/A' },
                                             { text: <TableValues value={[it.L(`${deposit}${instant}`), it.L(`${withdrawal}${not_applicable}`)]} /> },
                                             { text: <ReferenceLinks pdf_file='Binary.com_PaySec.pdf' video_link='https://youtu.be/DTVspCgnx0M' /> },
                                         ],
@@ -230,7 +230,7 @@ const PaymentMethods = () => {
                 />
 
                 <div className='gr-padding-10'>
-                    <p className='hint'>{it.L('Note:')} {it.L('Mastercard withdrawals are only available to cards issued in a European country.')}</p>
+                    <p className='hint'>{it.L('Note:')} {it.L('Mastercard withdrawals are only available to cards issued in European countries.')}</p>
                 </div>
 
                 <TableTitle title={it.L('E-wallet')} />
