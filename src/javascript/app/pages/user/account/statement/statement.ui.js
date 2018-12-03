@@ -63,7 +63,7 @@ const StatementUI = (() => {
         ], columns, 'data');
         $statement_row.children('.credit').addClass(credit_debit_type);
         $statement_row.children('.date').addClass('pre');
-        $statement_row.children('.desc').html(`${statement_data.desc.split('\\n').join('<br/>')}<br>`);
+        $statement_row.children('.desc').html(`${statement_data.desc}<br>`);
 
         // create view button and append
         if (/^(buy|sell)$/i.test(statement_data.action_type)) {
