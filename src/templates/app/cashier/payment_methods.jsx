@@ -103,9 +103,6 @@ const PaymentMethods = () => {
             <h1>{it.L('Available payment methods')}</h1>
 
             <div className='center-text'>
-                <div className='invisible upgrademessage'>
-                    <a className='button' />
-                </div>
                 <p>
                     <Button url='new-account' text={it.L('Open an account now')} />
                     <Button url='cashier/forwardws?action=deposit'  real className='deposit'  text={it.L('Deposit')} />
