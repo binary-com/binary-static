@@ -102,7 +102,7 @@ const BinaryLoader = (() => {
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
-            handleNotAuthenticated(error_messages.not_authenticated());
+            handleNotAuthenticated();
         } else {
             loadActiveScript(config);
         }
@@ -141,7 +141,7 @@ const BinaryLoader = (() => {
         }
     };
 
-    const handleNotAuthenticated = (localized_message) => {
+    const handleNotAuthenticated = () => {
         const content = container.querySelector('#content .container');
         if (!content) {
             return;
@@ -153,7 +153,7 @@ const BinaryLoader = (() => {
             return row_element;
         };
         const container_element = createElement('div', { class: 'center-text' });
-        const error_msg = createElement('div', { class: 'center-text notice-msg', text: localized_message });
+        const error_msg = createElement('div', { class: 'center-text notice-msg', text: error_messages.not_authenticated() });
         const logout_cta = createElement('button');
         const logout_span = createElement('span', { text: localize ('Sign out') });
 
