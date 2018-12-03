@@ -308,7 +308,7 @@ const Metatrader = () => (
                                             is_centered
                                             type='submit'
                                             id='btn_submit_new_account'
-                                            text={it.L('Create acount')}
+                                            text={it.L('Create account')}
                                             attributes={{ action: 'new_account' }}
                                             custom_btn_text={it.L('Back')}
                                             custom_btn_id='btn_back'
