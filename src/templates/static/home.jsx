@@ -171,7 +171,7 @@ const Home = () => {
                         />
 
                         <div id='social-signup' className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
-                            <div className='section-divider gr-padding-20'>
+                            <div className='section-divider gr-padding-20 gr-child'>
                                 <div className='align-self-center border-bottom-light-gray' />
                                 <div className='circle'>{it.L('or')}</div>
                                 <div className='align-self-center border-bottom-light-gray' />
@@ -179,13 +179,13 @@ const Home = () => {
 
                             <div className='gr-row gr-row-align-center'>
                                 <div className='gr-12 center-text'>
-                                    <span>{it.L('Create free account with')}</span>
+                                    <p>{it.L('Create free account with')}</p>
                                 </div>
                                 <div className='gr-4 gr-5-p gr-5-m'>
-                                    <ButtonSocial type='google' />
+                                    <ButtonSocial provider='google' />
                                 </div>
                                 <div className='gr-4 gr-5-p gr-5-m'>
-                                    <ButtonSocial type='facebook' />
+                                    <ButtonSocial provider='facebook' />
                                 </div>
                             </div>
                         </div>

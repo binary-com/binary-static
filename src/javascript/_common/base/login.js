@@ -31,7 +31,7 @@ const Login = (() => {
 
     const initSocialLogin = () => {
         ['google', 'facebook'].forEach((provider) => {
-            $(`#${provider}`).off('click').on('click', (e) => {
+            $(`#button_${provider}`).off('click').on('click', (e) => {
                 e.preventDefault();
                 window.location.href = socialLoginUrl(provider);
             });

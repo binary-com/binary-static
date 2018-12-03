@@ -581,28 +581,6 @@ li strong.margin-right {
     }
 }
 
-.button-white {
-    cursor: pointer;
-    margin-top: 15px;
-    padding: 10px;
-    width: 100%;
-    background: $COLOR_WHITE;
-    color: $COLOR_BLACK;
-    border: 1px solid $COLOR_GRAY;
-
-    &:hover, &:focus {
-        background: $COLOR_GRAY;
-    }
-    span {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        letter-spacing: 0;
-        position: relative;
-        padding-left: 24px;
-    }
-}
-
 .section-divider {
     .circle {
         padding: 7px 5px !important;
@@ -821,15 +799,39 @@ label + input {
 }
 
 .button-social {
-    display: flex;
-    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
     align-items: center;
+    color: $COLOR_BLACK;
+    border: 1px solid $COLOR_LIGHT_GRAY;
+    border-radius: 3px;
+    padding: 5px 0;
+    width: 100%;
+    height: 28px;
+    background-position: center;
+    background-position-x: 10%;
+    background-repeat: no-repeat;
 
-    span {
-        padding-left: 10px;
+    &:hover {
+        background-color: $COLOR_LIGHT_GRAY;
+    }
+    &#button_google {
+        background-image: url('../images/pages/applications/ic-google.svg');
+    }
+    &#button_facebook {
+        background-image: url('../images/pages/applications/ic-facebook.svg');
+    }
+    .name {
+        text-transform: capitalize;
+        font-weight: 400;
+        position: absolute;
+        left: 40%;
     }
     @media screen and (max-width: 480px) {
-        .text {
+        background-position-x: 50%;
+
+        .name {
             display: none;
         }
     }
