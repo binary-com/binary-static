@@ -10,7 +10,7 @@ const FileSelector = ({
     accepted_documents,
     type,
 }) => (
-    <div className='gr-row gr-12' data-show={data_show}>
+    <div className='gr-12 gr-no-gutter' data-show={data_show}>
         <fieldset>
             <div className='gr-padding-30 gr-gutter-left gr-gutter-right'>
                 <h2>{heading}</h2>
@@ -120,7 +120,7 @@ const AuthenticateMessage = () => (
             allowed_documents={[
                 it.L('Passport'),
                 it.L('Driving licence'),
-                it.L('National ID card or any government issued document which contains a photo, your name, and date of birth'),
+                it.L('National ID card, ID book or any government-issued document which contains a photo, your name, and date of birth'),
             ]}
             instructions={[
                 it.L('Must be a clear, colour photo or scanned image'),

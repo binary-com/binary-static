@@ -46,6 +46,7 @@ livereload:
 release:
   - 'shell:check_origin'
   - 'shell:check_branch'
+  - 'shell:check_updated'
   - 'clean'
   - 'default'
   - 'shell:compile_production'

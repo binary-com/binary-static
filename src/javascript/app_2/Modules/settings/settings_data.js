@@ -1,4 +1,13 @@
 import { localize }           from '_common/localize';
+import PersonalSvg            from 'Images/app_2/settings/ic-personal-details.svg';
+import FinancialSvg           from 'Images/app_2/settings/ic-financial-assesment.svg';
+import AccountSvg             from 'Images/app_2/settings/ic-account-password.svg';
+import CashierSvg             from 'Images/app_2/settings/ic-cashier-password.svg';
+import SelfSvg                from 'Images/app_2/settings/ic-self-exclusion.svg';
+import LimitsSvg              from 'Images/app_2/settings/ic-limits.svg';
+import LoginSvg               from 'Images/app_2/settings/ic-login-history.svg';
+import ApiSvg                 from 'Images/app_2/settings/ic-api-token.svg';
+import AuthorisedSvg          from 'Images/app_2/settings/ic-authorised-applications.svg';
 import AccountPassword        from './sections/account_password.jsx';
 import ApiToken               from './sections/api_token.jsx';
 import AuthorizedApplications from './sections/authorized_applications.jsx';
@@ -16,13 +25,13 @@ const data = [
             {
                 title      : localize('Personal Details'),
                 description: localize('View your personal information.'),
-                img_src    : 'images/settings/ic-personal-details.svg',
+                Icon       : PersonalSvg,
                 Component  : PersonalDetails,
             },
             {
                 title      : localize('Financial Assessment'),
                 description: localize('View your financial assessment settings'),
-                img_src    : 'images/settings/ic-financial-assesment.svg',
+                Icon       : FinancialSvg,
                 Component  : FinancialAssessment,
             },
         ],
@@ -33,43 +42,43 @@ const data = [
             {
                 title      : localize('Account Password'),
                 description: localize('Change your main login password.'),
-                img_src    : 'images/settings/ic-account-password.svg',
+                Icon       : AccountSvg,
                 Component  : AccountPassword,
             },
             {
                 title      : localize('Cashier Password'),
                 description: localize('Change the password used for deposits and withdrawals'),
-                img_src    : 'images/settings/ic-cashier-password.svg',
+                Icon       : CashierSvg,
                 Component  : CashierPassword,
             },
             {
                 title      : localize('Self Exclusion'),
                 description: localize('Facility that allows you to set limits on your account.'),
-                img_src    : 'images/settings/ic-self-exclusion.svg',
+                Icon       : SelfSvg,
                 Component  : SelfExclusion,
             },
             {
                 title      : localize('Limits'),
                 description: localize('View your trading and withdrawal limits'),
-                img_src    : 'images/settings/ic-limits.svg',
+                Icon       : LimitsSvg,
                 Component  : Limits,
             },
             {
                 title      : localize('Login History'),
                 description: localize('View your login history'),
-                img_src    : 'images/settings/ic-login-history.svg',
+                Icon       : LoginSvg,
                 Component  : LoginHistory,
             },
             {
                 title      : localize('API Token'),
                 description: localize('API token for third party applications'),
-                img_src    : 'images/settings/ic-api-token.svg',
+                Icon       : ApiSvg,
                 Component  : ApiToken,
             },
             {
                 title      : localize('Authorized Applications'),
                 description: localize('Manage your authorised applications'),
-                img_src    : 'images/settings/ic-authorised-applications.svg',
+                Icon       : AuthorisedSvg,
                 Component  : AuthorizedApplications,
             },
         ],

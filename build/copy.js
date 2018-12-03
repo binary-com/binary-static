@@ -1,18 +1,10 @@
 module.exports = function (grunt) {
     const common = [
         // Top level (dist)
-        ...(global.branch ? [] : [ // These will be ignored if copied to a sub-folder. So we only copy them to root to avoid confusion
-            {
-                expand: true,
-                src: [
-                    '404.html',
-                    'sitemap*.xml',
-                    'robots.txt'
-                ],
-                dest: 'dist'
-            },
+        ...(global.is_release ? [] : [
             { expand: true, cwd: 'scripts', src: ['CNAME'], dest: 'dist' },
         ]),
+        { expand: true, cwd: 'src/root_files/_common', src: ['**'], dest: 'dist' },
 
         // This branch
         { expand: true, cwd: 'src/javascript/',    src: ['manifest.json'],       dest: global.dist },
@@ -28,7 +20,8 @@ module.exports = function (grunt) {
         app: {
             files: [
                 ...common,
-                { expand: true, cwd:  './', src: ['index.html'], dest: global.dist },
+                { expand: true, cwd:  'src/root_files/app', src: ['**', '!index.html'], dest: 'dist' }, // top level
+                { expand: true, cwd:  'src/root_files/app', src: ['index.html'],        dest: global.dist },
 
                 // app, static
                 { expand: true, cwd: 'src/download/',                  src: ['**'],              dest: `${global.dist}/download/` },
@@ -43,7 +36,11 @@ module.exports = function (grunt) {
         app_2: {
             files: [
                 ...common,
-                { expand: true, cwd:  './', src: ['index.html'], dest: global.dist_app_2 },
+                ...(global.section === 'app_2' ? [ // to prioritize the `app` root files when it's not only `app_2`
+                    { expand: true, cwd:  'src/root_files/app_2', src: ['**'], dest: 'dist' }, // top level
+                    { expand: true, cwd:  'src/root_files/app_2', src: ['index.html'], dest: global.dist },
+                ] : []),
+                { expand: true, cwd:  'src/root_files/app_2', src: ['index.html'], dest: global.dist_app_2 },
 
                 // app_2
                 { expand: true, cwd: 'src/images/app_2',                     src: ['**'],   dest: `${global.dist_app_2}/images/` },

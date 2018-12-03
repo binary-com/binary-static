@@ -1,5 +1,4 @@
 const Client           = require('../../base/client');
-const Header           = require('../../base/header');
 const BinarySocket     = require('../../base/socket');
 const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const getElementById   = require('../../../_common/common_functions').getElementById;
@@ -12,7 +11,6 @@ const Cashier = (() => {
 
     const showContent = () => {
         Client.activateByClientType();
-        Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
         const anchor = paramsHash().anchor;
         let $toggler;
         if (anchor) {
@@ -27,6 +25,19 @@ const Cashier = (() => {
             $toggler = $(e.target).closest('.toggler');
             $toggler.children().toggleClass('active');
             $toggler.toggleClass('open');
+        });
+        showCashierNote();
+    };
+
+    const showCashierNote = () => {
+        // TODO: remove `wait` & residence check to release to all countries
+        BinarySocket.wait('authorize').then(() => {
+            $('.cashier_note').setVisibility(
+                Client.isLoggedIn() &&                          // only show to logged-in clients
+                !Client.get('is_virtual') &&                    // only show to real accounts
+                !isCryptocurrency(Client.get('currency')) &&    // only show to fiat currencies
+                /^(vn|ng|lk|id)$/.test(Client.get('residence')) // only show to Vietnam, Nigeria, Sri Lanka, Indonesia
+            );
         });
     };
 

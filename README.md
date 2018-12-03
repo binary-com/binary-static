@@ -15,13 +15,6 @@ You will also need to install the following on your development machine:
 - Go to project root, then run `npm install`
 - Grunt (`sudo npm install -g grunt-cli`)
 
-
-#### Note: 
-You need to have:
-
-- The latest version of `node`
-- Version 4.x.x of `npm` (`npm install npm@4 -g`)
-
 ### Use a custom domain
 In order to use your custom domain, please put it in a file named `CNAME` inside `scripts` folder of your local clone of binary-static.
 
@@ -95,17 +88,19 @@ Although section is mandatory for release, but it is optional for the rest of co
 ## Release
 
 ```
-grunt release --staging=1|--production=1|--translations=1 --section=all|app|app_2 [--cleanup] [--reset]
+grunt release --{release type}=1 --section=app|app_2 [--cleanup] [--reset]
 ```
 (The value is needed when more than one option is used)
 
 ### Parameters:
-- `--staging` or `--production` or `--translations` (mandatory)
+- `{release type}` (mandatory)
+  - Should be one of `staging`, `production`, `translations`, `nex_beta`, `nex_production`.
   - In order to prevent accidentally releasing to the wrong target, it is mandatory to provide one of these parameters.
   - Your remote origin will be checked to be the correct target of the given parameter.
   - Your current branch will be checked to be the correct branch of the given parameter.
 - `--section` (mandatory)
-  - In order to prevent accidentally releases, it is mandatory to specify the section.
+  - In order to prevent mistakes during the release, it is mandatory to specify the section.
+  - Valid section depends on the release target. Please refer to `release_config` [here](https://github.com/binary-com/binary-static/blob/new-app/build/config/constants.js).
 - `--cleanup` [optional]
   - Create CNAME file with proper value according to remote origin
   - Deploy to gh-pages with the option `add: false`

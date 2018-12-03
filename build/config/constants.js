@@ -1,19 +1,64 @@
-const targets_config = {
+const release_targets = {
     production: {
-        origin: 'git@github.com:binary-static-deployed/binary-static.git',
-        CNAME : 'www.binary.com',
+        repo : 'git@github.com:binary-static-deployed/binary-static.git',
+        CNAME: 'www.binary.com',
     },
     staging: {
-        origin: 'git@github.com:binary-com/binary-static.git',
-        CNAME : 'staging.binary.com',
+        repo : 'git@github.com:binary-com/binary-static.git',
+        CNAME: 'staging.binary.com',
+    },
+    binarynex: {
+        repo : 'git@github.com:binary-com/binarynex-deployed.git',
+        CNAME: 'www.binarynex.com',
     },
 };
 
-// map release parameters to the required branch, origin, CNAME, and target gh-pages sub-folder
+/**
+ * branch        : the required branch that should be checked out when releasing
+ * target_folder : the folder name in gh-pages to release to
+ * valid_sections: the list of sections that can use for this release
+ * origin        : the required origin that local clone should point to (also the target repo to release to, when `target_repo` not available)
+ * target_repo   : the target repo to release to
+ * CNAME         : creates a CNAME file based on this entry to push alongside the release when needed
+ */
 const release_config = {
-    production  : { branch: 'master',       target_folder: '',             origin: targets_config.production.origin, CNAME: targets_config.production.CNAME },
-    staging     : { branch: 'master',       target_folder: '',             origin: targets_config.staging.origin,    CNAME: targets_config.staging.CNAME },
-    translations: { branch: 'translations', target_folder: 'translations', origin: targets_config.staging.origin,    CNAME: targets_config.staging.CNAME },
+    production: {
+        branch        : 'master',
+        target_folder : '',
+        valid_sections: ['app'],
+        origin        : release_targets.production.repo,
+        CNAME         : release_targets.production.CNAME,
+    },
+    staging: {
+        branch        : 'master',
+        target_folder : '',
+        valid_sections: ['app'],
+        origin        : release_targets.staging.repo,
+        CNAME         : release_targets.staging.CNAME,
+    },
+    translations: {
+        branch        : 'translations',
+        target_folder : 'translations',
+        valid_sections: ['app'],
+        origin        : release_targets.staging.repo,
+        CNAME         : release_targets.staging.CNAME,
+    },
+    nex_production: {
+        branch        : 'master',
+        target_folder : '',
+        valid_sections: ['app_2'],
+        origin        : release_targets.staging.repo,
+        target_repo   : release_targets.binarynex.repo,
+        CNAME         : release_targets.binarynex.CNAME,
+    },
+    nex_beta: {
+        branch        : 'master',
+        target_folder : 'beta',
+        valid_sections: ['app_2'],
+        origin        : release_targets.staging.repo,
+        target_repo   : release_targets.binarynex.repo,
+        CNAME         : release_targets.binarynex.CNAME,
+    },
 };
 
 const node_modules_paths = {

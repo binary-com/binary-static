@@ -31,6 +31,16 @@
         #notifications_wrapper {
             margin-left: 0;
         }
+        #login_error_container {
+            width: 100%;
+            padding: 15px;
+            background-color: $COLOR_WHITE;
+            border: 1px solid $COLOR_GRAY;
+
+            .login_error {
+                width: 100%;
+            }
+        }
         #panel {
             margin-left: 10px;
 
