@@ -230,7 +230,7 @@ const PaymentMethods = () => {
                 />
 
                 <div className='gr-padding-10'>
-                    <p className='hint'>{it.L('Note:')} {it.L('Mastercard withdrawals are only available to cards issued in European countries.')}</p>
+                    <p className='hint'>{it.L('Note:')} {it.L('Mastercards issued in a non-European country may only withdraw up to the amount deposited.')}</p>
                 </div>
 
                 <TableTitle title={it.L('E-wallet')} />
