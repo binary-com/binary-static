@@ -15,7 +15,8 @@
     }
     .eq {
         padding: 10px;
-        width: 30%;
+        width: 45%;
+        width: calc(50% - 21px);
     }
     .eqWrap {
         display: flex;

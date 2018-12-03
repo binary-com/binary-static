@@ -19,7 +19,7 @@ const IconWithLink = ({ button_id, button_link, img_id, img_src }) => (
     </div>
 );
 
-const DepositWithdrawButton = ({ id, is_payment_agent, show_upgrade, is_virtual }) => (
+const DepositWithdrawButton = ({ id, is_payment_agent, is_virtual }) => (
     <div className='gr-2 gr-12-m'>
         <SeparatorLine className='gr-parent gr-hide gr-show-m gr-padding-10' invisible />
         <div className='gr-row gr-row-align-left gr-row-align-right-m'>
@@ -48,11 +48,6 @@ const DepositWithdrawButton = ({ id, is_payment_agent, show_upgrade, is_virtual 
                         />
                     </div>
                 </React.Fragment>
-            }
-            { show_upgrade &&
-                <div className='gr-adapt invisible upgrademessage'>
-                    <a className='button' />
-                </div>
             }
         </div>
     </div>
@@ -124,7 +119,7 @@ const Cashier = () => (
                     <CashierNote className='gr-hide-m gr-child' text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
                 </div>
                 <CashierNote className='gr-12 gr-hide gr-show-m gr-child' text={it.L('Sharing your payment method with another client is prohibited and can cause delays in your withdrawals.')} />
-                <DepositWithdrawButton show_upgrade id='deposit_btn_cashier' />
+                <DepositWithdrawButton id='deposit_btn_cashier' />
             </div>
         </div>
 

@@ -15,6 +15,7 @@ const Accounts = () => (
             <div className='invisible' id='new_accounts_wrapper'>
                 <form id='new_accounts'>
                     <Table
+                        className='responsive'
                         scroll
                         data={{
                             thead: [

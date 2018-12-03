@@ -12,6 +12,7 @@ export const Li = ({
     subitems = [],
     type,
     dataShow,
+    subitems_className,
 }) => {
     const content = p ? <p>{text}</p> : text;
 
@@ -33,7 +34,7 @@ export const Li = ({
                 content
             }
             { subitems.length ?
-                <ul>
+                <ul className={subitems_className}>
                     {subitems.map((subitem, idx) => <Li key={idx} {...subitem} />)}
                 </ul>
                 :

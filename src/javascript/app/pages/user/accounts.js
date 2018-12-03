@@ -15,6 +15,25 @@ const Accounts = (() => {
     let landing_company;
     const form_id = '#new_accounts';
 
+    const TableHeaders = (() => {
+        let table_headers;
+
+        const initTableHeaders = () => ({
+            account             : localize('Account'),
+            available_markets   : localize('Available Markets'),
+            available_currencies: localize('Available Currencies'),
+        });
+
+        return {
+            get: () => {
+                if (!table_headers) {
+                    table_headers = initTableHeaders();
+                }
+                return table_headers;
+            },
+        };
+    })();
+
     const onLoad = () => {
         if (!Client.get('residence')) {
             // ask client to set residence first since cannot wait landing_company otherwise
@@ -51,22 +70,22 @@ const Accounts = (() => {
     const getCompanyCountry = account => Client.getLandingCompanyValue(account, landing_company, 'country');
 
     const populateNewAccounts = (upgrade_info) => {
-        const new_account = upgrade_info;
-        const account     = {
+        const table_headers = TableHeaders.get();
+        const new_account   = upgrade_info;
+        const account       = {
             real     : new_account.type === 'real',
             financial: new_account.type === 'financial',
         };
         const new_account_title = new_account.type === 'financial' ? localize('Financial Account') : localize('Real Account');
-
         $(form_id).find('tbody')
             .append($('<tr/>')
-                .append($('<td/>').html($('<span/>', {
+                .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
                     text                 : new_account_title,
                     'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
                     'data-balloon-length': 'large',
                 })))
-                .append($('<td/>', { text: getAvailableMarkets(account) }))
-                .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
+                .append($('<td/>', { text: getAvailableMarkets(account), datath: table_headers.available_markets }))
+                .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', '), datath: table_headers.available_currencies }))
                 .append($('<td/>')
                     .html($('<a/>', { class: 'button', href: urlFor(new_account.upgrade_link) })
                         .html($('<span/>', { text: localize('Create') })))));
@@ -162,17 +181,18 @@ const Accounts = (() => {
     const getMarketName = market => MarketsConfig.get()[market] || '';
 
     const populateMultiAccount = () => {
-        const currencies = getCurrencies(landing_company);
-        const account    = { real: 1 };
+        const table_headers = TableHeaders.get();
+        const currencies    = getCurrencies(landing_company);
+        const account       = { real: 1 };
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
-                .append($('<td/>').html($('<span/>', {
+                .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
                     text                 : localize('Real Account'),
                     'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
                     'data-balloon-length': 'large',
                 })))
-                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
-                .append($('<td/>', { class: 'account-currency' }))
+                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }), datath: table_headers.available_markets }))
+                .append($('<td/>', { class: 'account-currency', datath: table_headers.available_currencies }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
 
         $('#note').setVisibility(1);
