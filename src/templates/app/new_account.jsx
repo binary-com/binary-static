@@ -3,7 +3,7 @@ import MFSA  from '../_common/includes/mfsa.jsx';
 import { ButtonSocial } from  '../_common/components/elements.jsx';
 
 const NewAccount = () => (
-    <React.Fragment>
+    <section>
         <MFSA />
         <div className='center-text gr-padding-20'>
             <h1 className='dark gr-padding-20 gr-child'>{it.L('Start Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
@@ -11,7 +11,7 @@ const NewAccount = () => (
                 <div className='gr-4 gr-5-t gr-8-p gr-10-m gr-no-gutter gr-centered gr-padding-30 gr-parent'>
                     <form id='signup_form'>
                         <div className='gr-padding-20'>
-                            <input autoComplete='off' name='email' id='email' maxLength='50' placeholder={it.L('Email')}  data-lpignore='true' />
+                            <input autoFocus='true' autoComplete='off' name='email' id='email' maxLength='50' placeholder={it.L('Email')}  data-lpignore='true' />
                         </div>
                         <div>
                             <button type='submit'>{it.L('Create Free Account')}</button>
@@ -41,7 +41,7 @@ const NewAccount = () => (
             <h1>{it.L('We\'re almost there')}</h1>
             <p>{it.L('Please check your email for the verification link to complete the process.')}</p>
         </div>
-    </React.Fragment>
+    </section>
 );
 
 export default NewAccount;
