@@ -12,7 +12,9 @@ const Cashier = (() => {
 
     const showContent = () => {
         Client.activateByClientType();
-        Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
+        if (Client.getUpgradeInfo().type !== 'financial') {
+            Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
+        }
         const anchor = paramsHash().anchor;
         let $toggler;
         if (anchor) {
