@@ -76,9 +76,10 @@ const BinaryLoader = (() => {
     };
 
     const error_messages = {
-        login       : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
-        only_virtual: () => localize('Sorry, this feature is available to virtual accounts only.'),
-        only_real   : () => localize('This feature is not relevant to virtual-money accounts.'),
+        login            : () => localize('Please [_1]log in[_2] or [_3]sign up[_4] to view this page.', [`<a href="${'javascript:;'}">`, '</a>', `<a href="${urlFor('new-account')}">`, '</a>']),
+        only_virtual     : () => localize('Sorry, this feature is available to virtual accounts only.'),
+        only_real        : () => localize('This feature is not relevant to virtual-money accounts.'),
+        not_authenticated: () => localize('This page is only available to logged out clients.'),
     };
 
     const loadHandler = (config) => {
@@ -101,7 +102,7 @@ const BinaryLoader = (() => {
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
-            BinaryPjax.load(Client.defaultRedirectUrl(), true);
+            handleNotAuthenticated();
         } else {
             loadActiveScript(config);
         }
@@ -138,6 +139,31 @@ const BinaryLoader = (() => {
         if (link) {
             link.addEventListener('click', () => { Login.redirectToLogin(); });
         }
+    };
+
+    const handleNotAuthenticated = () => {
+        const content = container.querySelector('#content .container');
+        if (!content) {
+            return;
+        }
+
+        const outer_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
+        const rowDiv = (element) => {
+            const row_element = createElement('div', { class: 'gr-padding-10' });
+            row_element.appendChild(element);
+            return row_element;
+        };
+        const inner_container = createElement('div', { class: 'center-text' });
+        const error_msg = createElement('div', { class: 'center-text notice-msg', text: error_messages.not_authenticated() });
+        const logout_cta = createElement('button');
+        const logout_span = createElement('span', { text: localize ('Sign out') });
+
+        logout_cta.addEventListener('click', () => { Client.doLogout({ logout: 1 }); });
+        logout_cta.appendChild(logout_span);
+        inner_container.appendChild(rowDiv(error_msg));
+        inner_container.appendChild(rowDiv(logout_cta));
+        outer_container.append(inner_container);
+        content.html(outer_container);
     };
 
     return {

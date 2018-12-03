@@ -30,6 +30,7 @@ const RealAccOpening = (() => {
             BinaryPjax.loadPreviousUrl();
         }
         AccountOpening.showHidePulser(0);
+        AccountOpening.registerPepToggle();
     };
 
     const getValidations = () => {

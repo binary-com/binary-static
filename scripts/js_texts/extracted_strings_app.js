@@ -1,6 +1,7 @@
 // This is an auto-generated list of strings used in js code for debugging purpose only
 module.exports = [
     'AM',
+    'Account',
     'Account Authenticated',
     'Account balance:',
     'Accounts List',
@@ -24,6 +25,8 @@ module.exports = [
     'Audit Page',
     'Aug',
     'August',
+    'Available Currencies',
+    'Available Markets',
     'Average',
     'Balance',
     'Barrier',
