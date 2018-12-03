@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-03 06:41\n"
+"PO-Revision-Date: 2018-12-03 08:35\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -1995,9 +1995,6 @@ msgstr "Bitcoin vs đô-la Mỹ"
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Công nghệ Blockchain - tất cả cryptocurrencies sử dụng một biến thể của công nghệ blockchain (một loại sổ sách công khai) ghi hồ sơ của mỗi giao dịch. "
 
-msgid "Both accounts need to be authenticated separately."
-msgstr "Cả hai tài khoản cần phải được xác nhận riêng biệt."
-
 msgid "Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. E.g. Get $25 when you deposit $100. By way of example, if you choose to participate in a \"Get $25 when you deposit $100\" promotion, we will add an additional $25 to your account when you deposit $100 AND when you have purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to your account when both of these conditions are met."
 msgstr "Số tiền gửi và tiền thưởng được hiển thị rõ ràng khi loại khuyến mãi này khả dụng. Ví dụ: Nhận thêm $25 khi gửi $100. Như ví dụ này, nếu bạn chọn tham gia chương trình khuyến mãi \"Nhận thêm $25 khi gửi $100\", chúng tôi sẽ thêm $25 vào tài khoản của bạn khi bạn gửi $100 VÀ khi bạn đã mua hàng trị giá tối thiểu $125 ($25 * 5 = $125). Tiền thưởng sẽ chỉ được cộng vào tài khoản của bạn khi thỏa mãn cả 2 điều kiện trên."
 
@@ -2058,8 +2055,8 @@ msgstr "Bằng cách ấn OK, bạn xác nhận rằng bạn đã đọc và ch�
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "Bằng cách nhấp vào mua hoặc bán, lệnh của bạn sẽ được điền ở mức giá tốt nhất có thể với một trong các nhà cung cấp thanh khoản của chúng tôi hoặc trên sách của chính chúng tôi (theo giá trực tuyến tốt nhất tại thời điểm đặt lệnh của bạn);"
 
-msgid "By default, all clients are treated as retail. Do you prefer to be treated as a professional client if you match the necessary criteria?"
-msgstr "Theo mặc định, tất cả các khách hàng đang được xem như nhà bán lẻ. Bạn có muốn được đối đãi như một khách hàng chuyên nghiệp nếu bạn phù hợp với các tiêu chí cần thiết?"
+msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
+msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "Theo mặc định, hệ thống tự định tuyến thông minh đảm bảo rằng phần đầu của trang luôn luôn bao gồm các giá thầu tốt nhất và cung cấp tỉ giá trích dẫn bởi các nhà cung cấp thanh khoản cạnh tranh. Tuy nhiên, trong thời gian tính thanh khoản của thị trường kém, điều này có thể thay đổi khả năng thực thi vốn đang là các yếu tố chính trong quá trình thực thi lệnh."
@@ -2846,9 +2843,6 @@ msgstr "Tạo"
 
 msgid "Create Account"
 msgstr "Tạo Tài Khoản"
-
-msgid "Create Financial Account"
-msgstr "Tạo Tài Khoản Tài Chính"
 
 msgid "Create Free Account"
 msgstr "Tạo Tài Khoản Miễn Phí"
@@ -4404,9 +4398,6 @@ msgstr "Không thể chuyển tiền giữa các tài khoản."
 msgid "Funding of MT5 Real Account"
 msgstr "Quỹ của tài khoản thực MT5"
 
-msgid "Funds cannot be transferred between financial and gaming accounts."
-msgstr "Không thể chuyển tiền giữa các tài khoản tài chính và game."
-
 msgid "Further Instructions"
 msgstr "Hướng dẫn bổ sung"
 
@@ -4855,8 +4846,8 @@ msgstr "Tôi xin xác nhận rằng thông tin thuế mà tôi cung cấp là đ
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr "Tôi hiểu các rủi ro liên quan và đồng ý với %1Điều Khoản & Điều Kiện của cơ sở MAM%2"
 
-msgid "I want to be treated as a professional client."
-msgstr "Tôi muốn được đối xử như một khách hàng chuyên nghiệp."
+msgid "I would like to be treated as a professional client."
+msgstr ""
 
 msgid "I'm interested"
 msgstr "Tôi có hứng thú quan tâm"
@@ -10358,6 +10349,9 @@ msgstr "Nghĩa vụ này bao gồm việc cấm thanh toán bất hợp pháp ho
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Lời mời chào bán này không thể được dùng để kết nối với các lời mời chào bán khác."
 
+msgid "This page is only available to logged out clients."
+msgstr ""
+
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr ""
 
@@ -12674,9 +12668,6 @@ msgstr "Ngoại hối và các hợp đồng chênh lệch giá thiết lập gi
 
 msgid "Your fund transfer is successful. Your new balances are:"
 msgstr "Chuyển khoản thành công. Số dư mới của bạn là:"
-
-msgid "Your gaming account %1 limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead."
-msgstr "Tài khoản game của bạn %1 giới hạn của bạn để kinh doanh chỉ số biến động. Nếu bạn muốn giao dịch trên các thị trường khác mà chúng tôi cung cấp, xin vui lòng tạo một tài khoản tài chính (MF) để thay thế."
 
 msgid "Your name, email address and contact number"
 msgstr "Tên, địa chỉ email và số điện thoại liên lạc của bạn"

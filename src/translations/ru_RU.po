@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-03 06:40\n"
+"PO-Revision-Date: 2018-12-03 08:34\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -1995,9 +1995,6 @@ msgstr "Bitcoin против доллара США"
 msgid "Blockchain technology – All cryptocurrencies use a variation of blockchain technology (a kind of public ledger) to score records of each transaction. "
 msgstr "Технология блокчейн – все криптовалюты используют различные технологии блокчейн (своего рода открытый общественный реестр), где хранятся данные о каждой транзакции. "
 
-msgid "Both accounts need to be authenticated separately."
-msgstr "Все счета должны быть проверены индивидуально."
-
 msgid "Both the deposit and the bonus amounts are clearly displayed when this type of promotion is available. E.g. Get $25 when you deposit $100. By way of example, if you choose to participate in a \"Get $25 when you deposit $100\" promotion, we will add an additional $25 to your account when you deposit $100 AND when you have purchased at least $125 worth of trades ($25 * 5= $125). The bonus will only be credited to your account when both of these conditions are met."
 msgstr "Размер депозита и сумма бонуса четко обозначены в соответствующем предложении. Например, предложение \"Получите $25 при депозите $100\" означает, что мы внесем на Ваш счет дополнительно $25, когда Вы пополните его на $100 И КОГДА Вы приобретете контракты по меньшей мере на сумму $125 ($25 * 5= $125). Бонус будет внесен на Ваш счет только когда будут соблюдены оба условия."
 
@@ -2058,8 +2055,8 @@ msgstr "Нажав OK, Вы подтвердите, что прочитали и
 msgid "By clicking buy or sell, your order will be filled at the best possible price with either one of our liquidity providers or on our own books (according to the best streaming price at the time of your order placement);"
 msgstr "нажимая \"покупка\" или \"продажа\", вы исполняете свой ордер по наилучшей доступной цене, предоставляемой одним из наших поставщиков ликвидности или из нашего собственного стакана цен согласно лучшей потоковой цене, доступной на момент размещения вашего ордера);"
 
-msgid "By default, all clients are treated as retail. Do you prefer to be treated as a professional client if you match the necessary criteria?"
-msgstr "По умолчанию все клиенты считаются индивидуальными. Вы хотите, чтобы Вас считали профессиональным клиентом, в случае соответствия необходимым критериям?"
+msgid "By default, all clients are treated as retail but anyone can request to be treated as professional."
+msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
 msgstr "По умолчанию, система умного распределения поступающих ордеров гарантирует, что в верхней части стакана котировок всегда находится лучшая цена бид и цена предложения, предоставленные конкурирующими поставщиками ликвидности. Тем не менее, при определённом уровне рыночной ликвидности данное положение может измениться и наиболее важным фактором станет сама возможность исполнения."
@@ -2846,9 +2843,6 @@ msgstr "Открыть"
 
 msgid "Create Account"
 msgstr "Открыть счёт"
-
-msgid "Create Financial Account"
-msgstr "Открыть финансовый счет"
 
 msgid "Create Free Account"
 msgstr "Открыть бесплатный счет"
@@ -4404,9 +4398,6 @@ msgstr "Перевод средств между счетами недоступ
 msgid "Funding of MT5 Real Account"
 msgstr "Пополнение Реального счёта MT5"
 
-msgid "Funds cannot be transferred between financial and gaming accounts."
-msgstr "Нельзя переводить средства между финансовым и другими счетами."
-
 msgid "Further Instructions"
 msgstr "Дальнейшие инструкции"
 
@@ -4854,8 +4845,8 @@ msgstr "Настоящим я подтверждаю, что предостав�
 msgid "I understand the risks involved and agree to the %1Terms & Conditions of the MAM facility%2"
 msgstr "Я осознаю все сопряжённые риски и соглашаюсь с %1Правилами и условиями ММС%2"
 
-msgid "I want to be treated as a professional client."
-msgstr "Я хочу стать профессиональным клиентом."
+msgid "I would like to be treated as a professional client."
+msgstr ""
 
 msgid "I'm interested"
 msgstr "Мне интересно"
@@ -10356,6 +10347,9 @@ msgstr "Данное обязательство включает запрет н
 msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "Это предложение не может быть использовано совместно с другим предложением."
 
+msgid "This page is only available to logged out clients."
+msgstr ""
+
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr ""
 
@@ -12671,9 +12665,6 @@ msgstr "Ваши сделки на Forex и контрактах на разни
 
 msgid "Your fund transfer is successful. Your new balances are:"
 msgstr "Перевод средств выполнен успешно. Ваш новый баланс:"
-
-msgid "Your gaming account %1 limits you to trading on Volatility Indices. If you’d like to trade on the other markets we offer, please create a financial account (MF) instead."
-msgstr "Игровой счёт %1 ограничивает Вашу торговую деятельность до торговли на Индексах волатильности. Если Вы хотите торговать и на других наших активах, пожалуйста, откройте финансовый счёт (MF)."
 
 msgid "Your name, email address and contact number"
 msgstr "Вашего имени, электронного адреса и номера телефона"
