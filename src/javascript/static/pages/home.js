@@ -63,19 +63,19 @@ const Home = (() => {
         } else if (isBinaryApp()) {
             BinaryPjax.load(urlFor('new_account/virtualws'));
             GTM.pushDataLayer({
-                event             : 'email_submit',
-                input_email       : response.echo_req.verify_email,
-                date_first_contact: moment().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
-                source            : 'desktop app',
+                event                   : 'email_submit',
+                email_submit_input      : response.echo_req.verify_email,
+                email_submit_days_passed: moment().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
+                email_submit_source     : 'desktop app',
             });
         } else {
             $('.signup-box div').replaceWith($('<p/>', { text: localize('Thank you for signing up! Please check your email to complete the registration process.'), class: 'gr-10 gr-centered center-text' }));
             $('#social-signup').setVisibility(0);
             GTM.pushDataLayer({
-                event             : 'email_submit',
-                input_email       : response.echo_req.verify_email,
-                date_first_contact: moment().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
-                source            : 'binary.com',
+                event                   : 'email_submit',
+                email_submit_input      : response.echo_req.verify_email,
+                email_submit_days_passed: moment().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
+                email_submit_source     : 'binary.com',
             });
         }
     };
