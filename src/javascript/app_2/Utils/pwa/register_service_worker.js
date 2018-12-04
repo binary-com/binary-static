@@ -3,9 +3,9 @@ export default function register () { // Register the service worker
         window.addEventListener('load', () => {
             let path_name = window.location.pathname;
             path_name = /index\.html/g.test(path_name) ? window.location.pathname.replace('index.html', '') : '';
-            const swUrl = `${path_name}service-worker.js`;
+            const sw_url = `${path_name}service-worker.js`;
             navigator.serviceWorker
-                .register(swUrl)
+                .register(sw_url)
                 .then(registration => {
                     registration.onupdatefound = () => {
                         const installingWorker = registration.installing;
