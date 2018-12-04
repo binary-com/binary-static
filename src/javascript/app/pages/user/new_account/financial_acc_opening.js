@@ -47,6 +47,7 @@ const FinancialAccOpening = (() => {
                     get_settings[key] = moment_val.format('DD MMM, YYYY');
                     $element.attr({
                         'data-value': toISOFormat(moment_val),
+                        'value'     : toISOFormat(moment_val),
                         'type'      : 'text',
                     });
                     $('.input-disabled').attr('disabled', 'disabled');
