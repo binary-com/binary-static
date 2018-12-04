@@ -36,6 +36,7 @@ const Url            = require('url');
 const common         = require('./common');
 const js_translation = require('./js_translation');
 const Gettext        = require('./gettext');
+const compileManifests     = require('./render_manifest').compileManifests;
 const build_config   = require('../build/config/constants').config;
 
 program
@@ -78,6 +79,7 @@ function outputHelp(error_message) {
 const getConfig = () => (
     {
         add_translations: false,
+        branch          : program.branch,
         dist_path       : Path.join(common.root_path, 'dist', (program.branch || '')),
         languages       : program.branch === 'translations' ? ['ACH'] : common.languages,
         root_path       : common.root_path,
@@ -106,6 +108,7 @@ const createDirectories = (section = '', idx) => {
         if (common.sections_config[section].has_pjax) {
             mkdir(Path.join(base_path, `${language}/pjax`));
         }
+        compileManifests(config.dist_path, language, config.branch);
     });
 };
 
@@ -143,7 +146,7 @@ const createUrlFinder = (default_lang, section_path, root_url = getConfig().root
             new_url = '/home';
         }
 
-        if (/^\/?(images|js|css|scripts|download)/.test(new_url)) {
+        if (/(^\/?(images|js|css|scripts|download))|(manifest\.json)/.test(new_url)) {
             return Path.join(root_url, section_final_path, new_url);
         }
 
