@@ -51,7 +51,7 @@ const Trading = () => (
                                                 <span className='gr-gutter-left'>GMT</span>
                                             </div>
                                             <div>
-                                                <div className='hint invisible'>{it.L('Remaining open hours:')} <span id='remaining_open_hours' /></div>
+                                                <div className='hint invisible'>{it.L('Remaining trading time:')} <span id='remaining_trading_time' /></div>
                                             </div>
                                         </div>
                                     </div>

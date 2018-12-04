@@ -136,7 +136,7 @@ const getSelectedOption = ($selector) => {
 const showAssetOpenHours = ($selector) => {
     const $selected_option = $selector ? getSelectedOption($selector) : '';
     const sessions         = $selected_option ? $selected_option.attr('data-sessions') : '';
-    $('#remaining_open_hours').text(sessions || '').parent().setVisibility(!!(sessions));
+    $('#remaining_trading_time').text(sessions || '').parent().setVisibility(!!(sessions));
 };
 
 module.exports = {
