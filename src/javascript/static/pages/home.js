@@ -1,3 +1,4 @@
+const moment       = require('moment');
 const GTM          = require('../../_common/base/gtm');
 const Login        = require('../../_common/base/login');
 const localize     = require('../../_common/localize').localize;
@@ -61,10 +62,21 @@ const Home = (() => {
             $('#signup_error').setVisibility(1).text(error.message);
         } else if (isBinaryApp()) {
             BinaryPjax.load(urlFor('new_account/virtualws'));
+            GTM.pushDataLayer({
+                event             : 'email_submit',
+                input_email       : response.echo_req.verify_email,
+                date_first_contact: moment().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
+                source            : 'desktop app',
+            });
         } else {
             $('.signup-box div').replaceWith($('<p/>', { text: localize('Thank you for signing up! Please check your email to complete the registration process.'), class: 'gr-10 gr-centered center-text' }));
             $('#social-signup').setVisibility(0);
-            GTM.pushDataLayer({ event: 'email_submit', input_email: response.echo_req.verify_email });
+            GTM.pushDataLayer({
+                event             : 'email_submit',
+                input_email       : response.echo_req.verify_email,
+                date_first_contact: moment().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
+                source            : 'binary.com',
+            });
         }
     };
 
