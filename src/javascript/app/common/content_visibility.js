@@ -47,18 +47,14 @@ const eu_country_rule   = 'eucountry';
 
 const ContentVisibility = (() => {
     const init = () => {
-        if (Client.isLoggedIn()) {
-            BinarySocket.wait('authorize', 'landing_company', 'website_status').then(() => {
-                const current_landing_company_shortcode = State.getResponse('authorize.landing_company_name');
-                controlVisibility(
-                    current_landing_company_shortcode,
-                    MetaTrader.isEligible(),
-                    State.getResponse('landing_company.mt_financial_company.shortcode')
-                );
-            });
-        } else {
-            controlVisibility('default', true);
-        }
+        BinarySocket.wait('authorize', 'landing_company', 'website_status').then(() => {
+            const current_landing_company_shortcode = State.getResponse('authorize.landing_company_name') || 'default';
+            controlVisibility(
+                current_landing_company_shortcode,
+                MetaTrader.isEligible(),
+                State.getResponse('landing_company.mt_financial_company.shortcode')
+            );
+        });
     };
 
     const generateParsingErrorMessage = (reason, attr_str) => (
