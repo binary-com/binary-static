@@ -12,7 +12,7 @@ const generateBirthDate = () => {
         yearRange: '-100:-18',
     });
     $(date_of_birth)
-        .attr('data-value', toISOFormat(moment()))
+        // .attr('data-value', toISOFormat(moment()))
         .change(function () {
             return dateValueChanged(this, 'date');
         })

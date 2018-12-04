@@ -42,7 +42,7 @@ const FinancialAccOpening = (() => {
             Object.keys(get_settings).forEach((key) => {
                 $element = $(`#${key}`);
                 value    = get_settings[key];
-                if (key === 'date_of_birth') {
+                if (key === 'date_of_birth' && value) {
                     const moment_val = moment.utc(value * 1000);
                     get_settings[key] = moment_val.format('DD MMM, YYYY');
                     $element.attr({
@@ -51,7 +51,7 @@ const FinancialAccOpening = (() => {
                     });
                     $('.input-disabled').attr('disabled', 'disabled');
                 }
-                if (value) $element.val(value);
+                else if (value) $element.val(value);
             });
         });
 
