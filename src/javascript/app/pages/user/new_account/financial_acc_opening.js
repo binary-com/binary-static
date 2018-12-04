@@ -51,8 +51,7 @@ const FinancialAccOpening = (() => {
                         'type'      : 'text',
                     });
                     $('.input-disabled').attr('disabled', 'disabled');
-                }
-                else if (value) $element.val(value);
+                } else if (value) $element.val(value);
             });
         });
 
