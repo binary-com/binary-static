@@ -694,7 +694,7 @@ body #not_authenticated_financial ul.checked > li {
 
 .accounts-content {
     .table-container {
-        overflow-x: hidden;
+        overflow-x: visible;
     }
     .table-container table {
         border: 1px solid $COLOR_LIGHT_GRAY;

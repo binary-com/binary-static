@@ -4,9 +4,7 @@ const getCurrencies       = require('./get_currency').getCurrencies;
 const BinaryPjax          = require('../../base/binary_pjax');
 const Client              = require('../../base/client');
 const BinarySocket        = require('../../base/socket');
-const getCurrencyFullName = require('../../common/currency').getCurrencyFullName;
-const getCurrencyNameList = require('../../common/currency').getCurrencyNameList;
-const getCurrencyList     = require('../../common/currency').getCurrencyList;
+const Currency            = require('../../common/currency');
 const FormManager         = require('../../common/form_manager');
 const getElementById      = require('../../../_common/common_functions').getElementById;
 const localize            = require('../../../_common/localize').localize;
@@ -82,7 +80,7 @@ const Accounts = (() => {
         };
         const new_account_title    = new_account.type === 'financial' ? localize('Financial Account') : localize('Real Account');
         const available_currencies = Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies');
-        const currencies_name_list = getCurrencyNameList(available_currencies);
+        const currencies_name_list = Currency.getCurrencyNameList(available_currencies);
         $(form_id).find('tbody')
             .append($('<tr/>')
                 .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
@@ -145,7 +143,7 @@ const Accounts = (() => {
                 .append($('<td/>', { datath: table_headers.type }).html($('<span/>', account_type_prop)))
                 .append($('<td/>', { text: txt_markets, datath: table_headers.available_markets }))
                 .append($('<td/>', { datath: table_headers.currency })
-                    .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : (getCurrencyFullName(account_currency) || '-'))));
+                    .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : (Currency.getCurrencyFullName(account_currency) || '-'))));
 
         if (is_disabled || excluded_until) {
             $('#note_support').setVisibility(1);
@@ -207,7 +205,7 @@ const Accounts = (() => {
         const $new_account_opening = $('#new_account_opening');
         if (currencies.length > 1) {
             const $currencies = $('<div/>');
-            $currencies.append(getCurrencyList(currencies).html());
+            $currencies.append(Currency.getCurrencyList(currencies).html());
             $new_account_opening.find('.account-currency').html($('<select/>', { id: 'new_account_currency' }).html($currencies.html()));
         } else {
             $new_account_opening.find('.account-currency').html($('<label/>', { id: 'new_account_currency', 'data-value': currencies, text: currencies }));
