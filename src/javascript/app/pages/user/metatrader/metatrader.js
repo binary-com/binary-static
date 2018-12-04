@@ -38,8 +38,663 @@ const MetaTrader = (() => {
     // we need to calculate min/max equivalent to 1 and 20000 USD, so get exchange rates for all currencies based on USD
     const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
+    /* eslint-disable */
     const setMTCompanies = () => {
-        const is_financial = State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest';
+        const fakeLanding = {
+            "config": {
+              "tax_details_required": 1
+            },
+            "financial_company": {
+              "address": null,
+              "country": "Costa Rica",
+              "currency_config": {
+                "commodities": {
+                  "AUD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "BTC": {
+                    "max_payout": 5,
+                    "min_stake": 0.0002
+                  },
+                  "DAI": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  },
+                  "ETH": {
+                    "max_payout": 10,
+                    "min_stake": 0.002
+                  },
+                  "EUR": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "GBP": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "LTC": {
+                    "max_payout": 50,
+                    "min_stake": 0.01
+                  },
+                  "USD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "UST": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  }
+                },
+                "forex": {
+                  "AUD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "BTC": {
+                    "max_payout": 5,
+                    "min_stake": 0.0002
+                  },
+                  "DAI": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  },
+                  "ETH": {
+                    "max_payout": 10,
+                    "min_stake": 0.002
+                  },
+                  "EUR": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "GBP": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "LTC": {
+                    "max_payout": 50,
+                    "min_stake": 0.01
+                  },
+                  "USD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "UST": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  }
+                },
+                "indices": {
+                  "AUD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "BTC": {
+                    "max_payout": 5,
+                    "min_stake": 0.0002
+                  },
+                  "DAI": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  },
+                  "ETH": {
+                    "max_payout": 10,
+                    "min_stake": 0.002
+                  },
+                  "EUR": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "GBP": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "LTC": {
+                    "max_payout": 50,
+                    "min_stake": 0.01
+                  },
+                  "USD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "UST": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  }
+                },
+                "volidx": {
+                  "AUD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.35
+                  },
+                  "BTC": {
+                    "max_payout": 5,
+                    "min_stake": 0.0002
+                  },
+                  "DAI": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  },
+                  "ETH": {
+                    "max_payout": 10,
+                    "min_stake": 0.002
+                  },
+                  "EUR": {
+                    "max_payout": 50000,
+                    "min_stake": 0.35
+                  },
+                  "GBP": {
+                    "max_payout": 50000,
+                    "min_stake": 0.35
+                  },
+                  "LTC": {
+                    "max_payout": 50,
+                    "min_stake": 0.01
+                  },
+                  "USD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.35
+                  },
+                  "UST": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  }
+                }
+              },
+              "has_reality_check": 0,
+              "legal_allowed_contract_categories": [
+                "asian",
+                "callput",
+                "callputequal",
+                "digits",
+                "endsinout",
+                "staysinout",
+                "touchnotouch",
+                "lookback",
+                "highlowticks",
+                "reset",
+                "callputspread"
+              ],
+              "legal_allowed_currencies": [
+                "AUD",
+                "BTC",
+                "DAI",
+                "ETH",
+                "EUR",
+                "GBP",
+                "LTC",
+                "USD",
+                "UST"
+              ],
+              "legal_allowed_markets": [
+                "commodities",
+                "forex",
+                "indices",
+                "volidx"
+              ],
+              "legal_default_currency": "USD",
+              "name": "Binary (C.R.) S.A.",
+              "shortcode": "costarica"
+            },
+            "gaming_company": {
+              "address": null,
+              "country": "Costa Rica",
+              "currency_config": {
+                "commodities": {
+                  "AUD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "BTC": {
+                    "max_payout": 5,
+                    "min_stake": 0.0002
+                  },
+                  "DAI": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  },
+                  "ETH": {
+                    "max_payout": 10,
+                    "min_stake": 0.002
+                  },
+                  "EUR": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "GBP": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "LTC": {
+                    "max_payout": 50,
+                    "min_stake": 0.01
+                  },
+                  "USD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "UST": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  }
+                },
+                "forex": {
+                  "AUD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "BTC": {
+                    "max_payout": 5,
+                    "min_stake": 0.0002
+                  },
+                  "DAI": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  },
+                  "ETH": {
+                    "max_payout": 10,
+                    "min_stake": 0.002
+                  },
+                  "EUR": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "GBP": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "LTC": {
+                    "max_payout": 50,
+                    "min_stake": 0.01
+                  },
+                  "USD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "UST": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  }
+                },
+                "indices": {
+                  "AUD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "BTC": {
+                    "max_payout": 5,
+                    "min_stake": 0.0002
+                  },
+                  "DAI": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  },
+                  "ETH": {
+                    "max_payout": 10,
+                    "min_stake": 0.002
+                  },
+                  "EUR": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "GBP": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "LTC": {
+                    "max_payout": 50,
+                    "min_stake": 0.01
+                  },
+                  "USD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.5
+                  },
+                  "UST": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  }
+                },
+                "volidx": {
+                  "AUD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.35
+                  },
+                  "BTC": {
+                    "max_payout": 5,
+                    "min_stake": 0.0002
+                  },
+                  "DAI": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  },
+                  "ETH": {
+                    "max_payout": 10,
+                    "min_stake": 0.002
+                  },
+                  "EUR": {
+                    "max_payout": 50000,
+                    "min_stake": 0.35
+                  },
+                  "GBP": {
+                    "max_payout": 50000,
+                    "min_stake": 0.35
+                  },
+                  "LTC": {
+                    "max_payout": 50,
+                    "min_stake": 0.01
+                  },
+                  "USD": {
+                    "max_payout": 50000,
+                    "min_stake": 0.35
+                  },
+                  "UST": {
+                    "max_payout": 5000,
+                    "min_stake": 0.5
+                  }
+                }
+              },
+              "has_reality_check": 0,
+              "legal_allowed_contract_categories": [
+                "asian",
+                "callput",
+                "callputequal",
+                "digits",
+                "endsinout",
+                "staysinout",
+                "touchnotouch",
+                "lookback",
+                "highlowticks",
+                "reset",
+                "callputspread"
+              ],
+              "legal_allowed_currencies": [
+                "AUD",
+                "BTC",
+                "DAI",
+                "ETH",
+                "EUR",
+                "GBP",
+                "LTC",
+                "USD",
+                "UST"
+              ],
+              "legal_allowed_markets": [
+                "commodities",
+                "forex",
+                "indices",
+                "volidx"
+              ],
+              "legal_default_currency": "USD",
+              "name": "Binary (C.R.) S.A.",
+              "shortcode": "costarica"
+            },
+            "id": "id",
+            "mt_financial_company": {
+              "advanced": {
+                "address": [
+                  "Labuan Times Square",
+                  "Jalan Merdeka",
+                  "87000 Federal Territory of Labuan",
+                  "Malaysia"
+                ],
+                "country": "Malaysia Federation",
+                "currency_config": {
+                  "forex": {
+                    "USD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    }
+                  }
+                },
+                "has_reality_check": 0,
+                "legal_allowed_contract_categories": [
+                  "callput"
+                ],
+                "legal_allowed_currencies": [
+                  "USD"
+                ],
+                "legal_allowed_markets": [
+                  "forex"
+                ],
+                "legal_default_currency": "USD",
+                "name": "Binary (FX) Ltd",
+                "shortcode": "labuan"
+              },
+              "standard": {
+                "address": [
+                  "Govant Building",
+                  "Port Vila",
+                  "P.O. Box 1276",
+                  "Vanuatu",
+                  "Republic of Vanuatu"
+                ],
+                "country": "Republic of Vanuatu",
+                "currency_config": {
+                  "forex": {
+                    "USD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    }
+                  }
+                },
+                "has_reality_check": 0,
+                "legal_allowed_contract_categories": [
+                  "callput"
+                ],
+                "legal_allowed_currencies": [
+                  "USD"
+                ],
+                "legal_allowed_markets": [
+                  "forex"
+                ],
+                "legal_default_currency": "USD",
+                "name": "Binary (V) Ltd",
+                "shortcode": "vanuatu"
+              }
+            },
+            "mt_gaming_company": {
+              "standard": {
+                "address": null,
+                "country": "Costa Rica",
+                "currency_config": {
+                  "commodities": {
+                    "AUD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "BTC": {
+                      "max_payout": 5,
+                      "min_stake": 0.0002
+                    },
+                    "DAI": {
+                      "max_payout": 5000,
+                      "min_stake": 0.5
+                    },
+                    "ETH": {
+                      "max_payout": 10,
+                      "min_stake": 0.002
+                    },
+                    "EUR": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "GBP": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "LTC": {
+                      "max_payout": 50,
+                      "min_stake": 0.01
+                    },
+                    "USD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "UST": {
+                      "max_payout": 5000,
+                      "min_stake": 0.5
+                    }
+                  },
+                  "forex": {
+                    "AUD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "BTC": {
+                      "max_payout": 5,
+                      "min_stake": 0.0002
+                    },
+                    "DAI": {
+                      "max_payout": 5000,
+                      "min_stake": 0.5
+                    },
+                    "ETH": {
+                      "max_payout": 10,
+                      "min_stake": 0.002
+                    },
+                    "EUR": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "GBP": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "LTC": {
+                      "max_payout": 50,
+                      "min_stake": 0.01
+                    },
+                    "USD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "UST": {
+                      "max_payout": 5000,
+                      "min_stake": 0.5
+                    }
+                  },
+                  "indices": {
+                    "AUD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "BTC": {
+                      "max_payout": 5,
+                      "min_stake": 0.0002
+                    },
+                    "DAI": {
+                      "max_payout": 5000,
+                      "min_stake": 0.5
+                    },
+                    "ETH": {
+                      "max_payout": 10,
+                      "min_stake": 0.002
+                    },
+                    "EUR": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "GBP": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "LTC": {
+                      "max_payout": 50,
+                      "min_stake": 0.01
+                    },
+                    "USD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.5
+                    },
+                    "UST": {
+                      "max_payout": 5000,
+                      "min_stake": 0.5
+                    }
+                  },
+                  "volidx": {
+                    "AUD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.35
+                    },
+                    "BTC": {
+                      "max_payout": 5,
+                      "min_stake": 0.0002
+                    },
+                    "DAI": {
+                      "max_payout": 5000,
+                      "min_stake": 0.5
+                    },
+                    "ETH": {
+                      "max_payout": 10,
+                      "min_stake": 0.002
+                    },
+                    "EUR": {
+                      "max_payout": 50000,
+                      "min_stake": 0.35
+                    },
+                    "GBP": {
+                      "max_payout": 50000,
+                      "min_stake": 0.35
+                    },
+                    "LTC": {
+                      "max_payout": 50,
+                      "min_stake": 0.01
+                    },
+                    "USD": {
+                      "max_payout": 50000,
+                      "min_stake": 0.35
+                    },
+                    "UST": {
+                      "max_payout": 5000,
+                      "min_stake": 0.5
+                    }
+                  }
+                },
+                "has_reality_check": 0,
+                "legal_allowed_contract_categories": [
+                  "asian",
+                  "callput",
+                  "callputequal",
+                  "digits",
+                  "endsinout",
+                  "staysinout",
+                  "touchnotouch",
+                  "lookback",
+                  "highlowticks",
+                  "reset",
+                  "callputspread"
+                ],
+                "legal_allowed_currencies": [
+                  "AUD",
+                  "BTC",
+                  "DAI",
+                  "ETH",
+                  "EUR",
+                  "GBP",
+                  "LTC",
+                  "USD",
+                  "UST"
+                ],
+                "legal_allowed_markets": [
+                  "commodities",
+                  "forex",
+                  "indices",
+                  "volidx"
+                ],
+                "legal_default_currency": "USD",
+                "name": "Binary (C.R.) S.A.",
+                "shortcode": "costarica"
+              }
+            },
+            "name": "Indonesia",
+            "virtual_company": "virtual"
+        }
+
+        console.log(fakeLanding);
+        console.log(fakeLanding.mt_financial_company);
+        /* eslint-enable */
+
+        const is_financial = fakeLanding.mt_financial_company.standard.shortcode === 'maltainvest';
         mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
 
