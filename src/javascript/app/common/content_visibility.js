@@ -52,7 +52,7 @@ const ContentVisibility = (() => {
             controlVisibility(
                 current_landing_company_shortcode,
                 MetaTrader.isEligible(),
-                State.getResponse('landing_company.mt_financial_company.shortcode')
+                State.getResponse('landing_company.mt_financial_company.standard.shortcode')
             );
         });
     };
