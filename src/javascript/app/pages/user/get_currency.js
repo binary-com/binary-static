@@ -48,7 +48,8 @@ const GetCurrency = (() => {
 
         const available_crypto =
               currency_values.cryptocurrencies.filter(c =>
-                  currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0 && allowed_currencies.indexOf(c) > -1);
+                  currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0 &&
+                  allowed_currencies.indexOf(c) > -1);
         const can_open_crypto  = available_crypto.length;
 
         let currencies_to_show = [];
