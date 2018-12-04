@@ -83,8 +83,8 @@ const NewAccount = (() => {
 
     const onUnload = () => {
         getElementById('footer').setVisibility(1);
-        $google_btn.off('click');
-        $login_btn.off('click');
+        if ($google_btn) $google_btn.off('click');
+        if ($login_btn) $login_btn.off('click');
     };
 
     return {
