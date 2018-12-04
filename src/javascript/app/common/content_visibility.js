@@ -48,7 +48,7 @@ const eu_country_rule   = 'eucountry';
 const ContentVisibility = (() => {
     const init = () => {
         BinarySocket.wait('authorize', 'landing_company', 'website_status').then(() => {
-            const current_landing_company_shortcode = State.getResponse('authorize.landing_company_name');
+            const current_landing_company_shortcode = State.getResponse('authorize.landing_company_name') || 'default';
             controlVisibility(
                 current_landing_company_shortcode,
                 MetaTrader.isEligible(),
