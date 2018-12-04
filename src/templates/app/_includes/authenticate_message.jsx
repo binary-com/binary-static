@@ -10,7 +10,7 @@ const FileSelector = ({
     accepted_documents,
     type,
 }) => (
-    <div className='gr-row gr-12' data-show={data_show}>
+    <div className='gr-12 gr-no-gutter' data-show={data_show}>
         <fieldset>
             <div className='gr-padding-30 gr-gutter-left gr-gutter-right'>
                 <h2>{heading}</h2>
