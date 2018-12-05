@@ -1,18 +1,12 @@
-import extend             from 'extend';
-import { isEmptyObject }  from '_common/utility';
-import ContractTypeHelper from './contract_type';
+import extend from 'extend';
 
 import * as ContractType  from '../Actions/contract_type';
-import * as Currency      from '../Actions/currency';
 import * as Duration      from '../Actions/duration';
 import * as StartDate     from '../Actions/start_date';
+import ContractTypeHelper from './contract_type';
 
 export const processTradeParams = async(store, new_state) => {
     const snapshot = store.getSnapshot();
-
-    if (!store.root_store.client.currency && isEmptyObject(store.currencies_list)) {
-        extendOrReplace(snapshot, await Currency.getCurrenciesAsync(store.currency));
-    }
 
     getMethodsList(store, new_state).forEach((fnc) => {
         extendOrReplace(snapshot, fnc(snapshot));

@@ -1,16 +1,12 @@
-import classNames               from 'classnames';
-import {
-    PropTypes as MobxPropTypes,
-    observer }                  from 'mobx-react';
-import PropTypes                from 'prop-types';
-import React                    from 'react';
-import {
-    addComma,
-    getDecimalPlaces }          from '_common/base/currency_base';
-import { localize }             from '_common/localize';
-import Dropdown                 from 'App/Components/Form/DropDown';
-import Fieldset                 from 'App/Components/Form/fieldset.jsx';
-import InputField               from 'App/Components/Form/input_field.jsx';
+import { addComma, getDecimalPlaces }           from '_common/base/currency_base';
+import { localize }                             from '_common/localize';
+import Dropdown                                 from 'App/Components/Form/DropDown';
+import Fieldset                                 from 'App/Components/Form/fieldset.jsx';
+import InputField                               from 'App/Components/Form/input_field.jsx';
+import classNames                               from 'classnames';
+import { observer, PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                                from 'prop-types';
+import React                                    from 'react';
 
 const Amount = ({
     amount,
@@ -34,9 +30,9 @@ const Amount = ({
             </div>
         );
     }
-    const has_currency = currency;
+    const single_currency = Object.keys(currencies_list).length === 0;
     const amount_container_class = classNames('amount-container', {
-        'three-columns': !has_currency,
+        'three-columns': !single_currency,
     });
 
     return (
@@ -52,7 +48,7 @@ const Amount = ({
                     onChange={onChange}
                     is_nativepicker={is_nativepicker}
                 />
-                {!has_currency &&
+                {!single_currency &&
                     <Dropdown
                         list={currencies_list}
                         value={currency}
@@ -69,7 +65,7 @@ const Amount = ({
                     max_length={10}
                     name='amount'
                     onChange={onChange}
-                    prefix={has_currency ? currency : null}
+                    prefix={single_currency ? currency : null}
                     type='number'
                     value={amount}
                 />
@@ -85,7 +81,7 @@ Amount.propTypes = {
     ]),
     basis            : PropTypes.string,
     basis_list       : MobxPropTypes.arrayOrObservableArray,
-    currencies_list  : PropTypes.object,
+    currencies_list  : MobxPropTypes.observableObject,
     currency         : PropTypes.string,
     is_minimized     : PropTypes.bool,
     is_nativepicker  : PropTypes.bool,

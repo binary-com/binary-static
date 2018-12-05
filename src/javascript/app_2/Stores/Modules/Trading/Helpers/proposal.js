@@ -1,10 +1,8 @@
-import moment                              from 'moment';
-import { getDecimalPlaces }                from '_common/base/currency_base';
-import { isDeepEqual }                     from '_common/utility';
-import { convertToUnix }                   from 'Utils/Date';
-import {
-    proposal_properties_alternative_names,
-    removable_proposal_properties }        from '../Constants/query_string';
+import { getDecimalPlaces }                                                     from '_common/base/currency_base';
+import { isDeepEqual }                                                          from '_common/utility';
+import moment                                                                   from 'moment';
+import { convertToUnix }                                                        from 'Utils/Date';
+import { proposal_properties_alternative_names, removable_proposal_properties } from '../Constants/query_string';
 
 export const getProposalInfo = (store, response) => {
     const proposal = response.proposal || {};
@@ -52,7 +50,7 @@ const createProposalRequestForContract = (store, type_of_contract) => {
         amount       : parseFloat(store.amount),
         basis        : store.basis,
         contract_type: type_of_contract,
-        currency     : store.currency,
+        currency     : store.root_store.client.currency,
         symbol       : store.symbol,
         ...(
             store.start_date &&

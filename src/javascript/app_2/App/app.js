@@ -1,7 +1,7 @@
+import Client               from '_common/base/client_base';
 import { configure }        from 'mobx';
 import React                from 'react';
 import { render }           from 'react-dom';
-import Client               from '_common/base/client_base';
 import NetworkMonitor       from 'Services/network_monitor';
 import OutdatedBrowser      from 'Services/outdated_browser';
 import RootStore            from 'Stores';
@@ -19,6 +19,7 @@ const initApp = () => {
 
     NetworkMonitor.init(root_store);
     OutdatedBrowser.init(root_store);
+    root_store.client.init();
     root_store.modules.trade.init();
 
     const app = document.getElementById('binary_app');

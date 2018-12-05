@@ -1,10 +1,10 @@
-import { action, flow }     from 'mobx';
 import { setCurrencies }    from '_common/base/currency_base';
 import Login                from '_common/base/login';
 import ServerTime           from '_common/base/server_time';
 import BinarySocket         from '_common/base/socket_base';
 import { State }            from '_common/storage';
 import { getPropertyValue } from '_common/utility';
+import { action, flow }     from 'mobx';
 import { requestLogout }    from './logout';
 import WS                   from './ws_methods';
 
@@ -87,6 +87,9 @@ const BinarySocketGeneral = (() => {
                     //     $('#topMenuPaymentAgent').setVisibility(1);
                     // }
                 }
+                break;
+            case 'payout_currencies':
+                client_store.responsePayoutCurrencies(response.payout_currencies);
                 break;
             // no default
         }

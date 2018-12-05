@@ -1,23 +1,23 @@
 import { getMinPayout, isCryptocurrency }                                     from '_common/base/currency_base';
-import BinarySocket                                                            from '_common/base/socket_base';
-import { localize }                                                            from '_common/localize';
-import { cloneObject, isEmptyObject }                                          from '_common/utility';
-import debounce                                                                from 'lodash.debounce';
-import { action, computed, observable, reaction, runInAction }                 from 'mobx';
-import { WS }                                                                  from 'Services';
-import GTM                                                                     from 'Utils/gtm';
-import URLHelper                                                               from 'Utils/URL/url_helper';
-import BaseStore                                                               from '../../base_store';
-import { processPurchase }                                                     from './Actions/purchase';
-import * as Symbol                                                             from './Actions/symbol';
+import BinarySocket                                                           from '_common/base/socket_base';
+import { localize }                                                           from '_common/localize';
+import { cloneObject, isEmptyObject }                                         from '_common/utility';
+import debounce                                                               from 'lodash.debounce';
+import { action, observable, reaction, runInAction }                          from 'mobx';
+import { WS }                                                                 from 'Services';
+import GTM                                                                    from 'Utils/gtm';
+import URLHelper                                                              from 'Utils/URL/url_helper';
+import BaseStore                                                              from '../../base_store';
+import { processPurchase }                                                    from './Actions/purchase';
+import * as Symbol                                                            from './Actions/symbol';
 import { allowed_query_string_variables, non_proposal_query_string_variable } from './Constants/query_string';
-import getValidationRules                                                      from './Constants/validation_rules';
-import { setChartBarrier }                                                     from './Helpers/chart';
-import ContractType                                                            from './Helpers/contract_type';
-import { convertDurationLimit }                                                from './Helpers/duration';
-import { processTradeParams }                                                  from './Helpers/process';
+import getValidationRules                                                     from './Constants/validation_rules';
+import { setChartBarrier }                                                    from './Helpers/chart';
+import ContractType                                                           from './Helpers/contract_type';
+import { convertDurationLimit }                                               from './Helpers/duration';
+import { processTradeParams }                                                 from './Helpers/process';
 import { createProposalRequests, getProposalInfo, getProposalParametersName } from './Helpers/proposal';
-import { pickDefaultSymbol }                                                   from './Helpers/symbol';
+import { pickDefaultSymbol }                                                  from './Helpers/symbol';
 
 export default class TradeStore extends BaseStore {
     // Control values
@@ -40,7 +40,6 @@ export default class TradeStore extends BaseStore {
     @observable amount          = 10;
     @observable basis           = '';
     @observable basis_list      = [];
-    @observable currencies_list = {};
 
     // Duration
     @observable duration            = 5;
@@ -99,15 +98,6 @@ export default class TradeStore extends BaseStore {
                 writable  : true,
             },
         );
-
-        if (this.root_store.client.is_logged_in) {
-            this.processNewValuesAsync(
-                {
-                    currency: this.currency,
-                },
-            );
-        }
-
         // Adds intercept to change min_max value of duration validation
         reaction(
             () => [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
@@ -115,11 +105,6 @@ export default class TradeStore extends BaseStore {
                 this.changeDurationValidationRules();
             },
         );
-    }
-
-    @computed
-    get currency() {
-        return this.root_store.client.currency;
     }
 
     @action.bound
@@ -178,7 +163,9 @@ export default class TradeStore extends BaseStore {
     @action.bound
     onChange(e) {
         const { name, value } = e.target;
-        if (!(name in this)) {
+        if (name === 'currency') {
+            this.root_store.client.selectCurrency(value);
+        } else if (!(name in this)) {
             throw new Error(`Invalid Argument: ${name}`);
         }
 
@@ -261,9 +248,7 @@ export default class TradeStore extends BaseStore {
         // The source of default values is the website_status response.
         if (is_changed_by_user &&
             /\bcurrency\b/.test(Object.keys(obj_new_values)) &&
-            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(
-                this.currency,
-            )
+            isCryptocurrency(obj_new_values.currency) !== isCryptocurrency(this.currency)
         ) {
             obj_new_values.amount = obj_new_values.amount || getMinPayout(obj_new_values.currency);
         }

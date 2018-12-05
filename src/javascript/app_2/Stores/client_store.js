@@ -6,7 +6,9 @@ import { localize }                           from '_common/localize';
 import { LocalStore, State }                  from '_common/storage';
 import { action, computed, observable, when } from 'mobx';
 import moment                                 from 'moment';
+import { WS }                                 from '../Services';
 import BaseStore                              from './base_store';
+import { buildCurrenciesList }                from './Modules/Trading/Helpers/currency';
 
 const storage_key = 'client.accounts';
 export default class ClientStore extends BaseStore {
@@ -15,11 +17,11 @@ export default class ClientStore extends BaseStore {
     @observable accounts;
     @observable switched         = '';
     @observable switch_broadcast = false;
+    @observable currencies_list  = {};
+    @observable selected_currency = '';
 
     constructor(root_store) {
         super({ root_store });
-        this.init();
-
     }
 
     @computed
@@ -56,12 +58,14 @@ export default class ClientStore extends BaseStore {
 
     @computed
     get active_accounts() {
-        return Object.values(this.accounts).filter(account => !account.is_disabled);
+        return this.accounts instanceof Object
+            ? Object.values(this.accounts).filter(account => !account.is_disabled)
+            : [];
     }
 
     @computed
     get all_loginids() {
-        return Object.keys(this.accounts);
+        return this.accounts instanceof Object ? Object.keys(this.accounts) : [];
     }
 
     @computed
@@ -71,19 +75,17 @@ export default class ClientStore extends BaseStore {
 
     @computed
     get currency() {
+        if (this.selected_currency.length) {
+            return this.selected_currency;
+        }
         return this.accounts[this.loginid] ?
             this.accounts[this.loginid].currency : this.default_currency;
     }
 
     @computed
     get default_currency() {
-        if (!this.root_store.modules.trade.currencies_list) {
-            return '';
-        }
-        if (Object.keys(this.root_store.modules.trade.currencies_list).length === 0) {
-            return '';
-        }
-        return this.root_store.modules.trade.currencies_list.Fiat[0].text;
+        return Object.keys(this.currencies_list) > 0 ?
+            this.currencies_list[Object.keys(this.currencies_list)[0]].text : '';
     }
 
     @computed
@@ -162,6 +164,13 @@ export default class ClientStore extends BaseStore {
     }
 
     @action.bound
+    responsePayoutCurrencies(response) {
+        const list = response.payout_currencies || response;
+        this.currencies_list = buildCurrenciesList(list);
+        this.selected_currency =  list[0];
+    }
+
+    @action.bound
     responseAuthorize(response) {
         this.accounts[this.loginid].email                     = response.authorize.email;
         this.accounts[this.loginid].currency                  = response.authorize.currency;
@@ -205,11 +214,13 @@ export default class ClientStore extends BaseStore {
      * This will probably be the only place we are fetching data from Client_base.
      */
     @action.bound
-    init() {
+    async init() {
         this.loginid      = LocalStore.get('active_loginid');
         this.accounts     = LocalStore.getObject(storage_key);
         this.upgrade_info = this.getBasicUpgradeInfo();
         this.switched     = '';
+
+        this.responsePayoutCurrencies(await WS.payoutCurrencies());
 
         this.registerReactions();
     }
@@ -294,6 +305,11 @@ export default class ClientStore extends BaseStore {
     @action.bound
     setBalance(balance) {
         this.accounts[this.loginid].balance = balance;
+    }
+
+    @action.bound
+    selectCurrency(value) {
+        this.selected_currency = value;
     }
 
     @action.bound
