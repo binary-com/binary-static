@@ -138,7 +138,7 @@ const BinaryOptions = () => {
                         <strong>{it.L('All conditions and durations')}</strong>
                         <ul className='bullet'>
                             <ListStrong header={it.L('A wide range of markets and conditions')} text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
-                            <ListStrong header={it.L('Short to long-term durations')}           text={it.L('Short to long-term durations - Choose timeframes of varying trade durations.')} />
+                            <ListStrong header={it.L('Short to long-term durations')}           text={it.L('Choose timeframes of varying trade durations.')} />
                         </ul>
                         <strong>{it.L('Competitive and transparent pricing')}</strong>
                         <ul className='bullet'>

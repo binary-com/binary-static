@@ -53,7 +53,7 @@ const WhyUs = () => (
                 </Section>
 
                 <Section id='flexible-trades' header={it.L('Trade your way')}>
-                    <p>{it.L('Why limit yourself? Whatever your market view, [_1] is the right place or you to test your strategies and see if you can profit from your predictions.', it.website_name)}</p>
+                    <p>{it.L('Why limit yourself? Whatever your market view, [_1] is the right place for you to test your strategies and see if you can profit from your predictions.', it.website_name)}</p>
                     <img className='responsive' src={it.url_for('images/pages/tour/trade-tutorial_1.svg')} />
                     <ul className='checked'>
                         <li>{it.L('Choose from a wide range of payouts.')}</li>
@@ -90,7 +90,7 @@ const WhyUs = () => (
                                 <li>{it.L('Make a trade prediction for every possible market condition.')}</li>
                                 <li>{it.L('Execute your trade in seconds.')}</li>
                                 <li>{it.L('Monitor your portfolio in real time.')}</li>
-                                <li>{it.L('Sell back trades at market prices. (Restrictions may apply.)')}</li>
+                                <li>{it.L('Sell back trades at market prices. (Restrictions may apply)')}</li>
                             </ul>
                         </div>
                     </div>
