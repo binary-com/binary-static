@@ -19,7 +19,7 @@ const NewAccount = () => (
                     </form>
                     <div className='section-divider gr-padding-20 gr-child'>
                         <div className='align-self-center border-bottom-light-gray' />
-                        <div className='circle'>{it.L('or')}</div>
+                        <div className='no-circle'>{it.L('or')}</div>
                         <div className='align-self-center border-bottom-light-gray' />
                     </div>
                     <p>{it.L('Sign up using social account')}</p>

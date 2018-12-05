@@ -157,23 +157,23 @@ const Home = () => {
         <React.Fragment>
             <MFSA />
             <div id='banner'>
-                <div className='container gr-padding-20'>
-                    <h1 className='dark center-text gr-padding-20 gr-child'>{it.L('Online Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
-                    <p className='center-text gr-padding-10'>{it.L('Trade 24/7, even on weekends.')}</p>
+                <div className='container'>
+                    <h1 className='dark center-text no-margin'>{it.L('Online Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
+                    <p className='center-text gr-padding-10 no-margin'>{it.L('Trade 24/7, even on weekends.')}</p>
 
-                    <div className='gr-padding-30 gr-11-m gr-centered gr-child'>
+                    <h2 className='dark center-text gr-padding-30 gr-child'><strong>{it.L('Start trading now')}</strong></h2>
+                    <div className='gr-11-m gr-centered gr-child'>
                         <FormVerifyEmail
-                            className='secondary-bg-color'
-                            dark_button
                             email_padding_mobile={12}
                             button_padding_mobile={12}
                             text={it.L('Create Free Account')}
+                            no_gutter
                         />
 
                         <div id='social-signup' className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
                             <div className='section-divider gr-padding-20 gr-child'>
                                 <div className='align-self-center border-bottom-light-gray' />
-                                <div className='circle'>{it.L('or')}</div>
+                                <div className='no-circle'>{it.L('or')}</div>
                                 <div className='align-self-center border-bottom-light-gray' />
                             </div>
 

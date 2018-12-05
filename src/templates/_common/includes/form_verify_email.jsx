@@ -10,16 +10,17 @@ const FormVerifyEmail = ({
     dark_button,
     children,
     text,
+    no_gutter,
 }) => (
     <form id='frm_verify_email'>
         <div className='gr-row gr-row-align-center'>
             <div className={`signup-box gr-${padding} gr-10-p gr-12-m gr-no-gutter ${className}`}>
-                <div className='gr-row gr-padding-10' id='signup'>
-                    <div className={`gr-${email_padding} gr-${email_padding_mobile}-m gr-centered`}>
+                <div className='gr-row' id='signup'>
+                    <div className={`gr-${email_padding} gr-${email_padding_mobile}-m gr-centered ${no_gutter && 'gr-no-gutter'}`}>
                         <input autoComplete='off' name='email' id='email' maxLength='50' className='center-text-m' data-lpignore='true' placeholder={it.L('Enter your email')} />
                     </div>
-                    <div className={`gr-${button_padding} gr-${button_padding_mobile}-m gr-centered`}>
-                        <button className={dark_button && 'primary-bg-color'} id='btn_verify_email' type='submit'>
+                    <div className={`gr-${button_padding} gr-${button_padding_mobile}-m gr-centered ${no_gutter && 'gr-no-gutter'}`}>
+                        <button className={dark_button ? 'primary-bg-color' : 'secondary-bg-color'} id='btn_verify_email' type='submit'>
                             {text}
                         </button>
                     </div>
