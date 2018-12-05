@@ -410,7 +410,7 @@ const ViewPopup = (() => {
         const link        = Utility.createElement('a', { class: 'previous-wrapper' });
 
         link.appendChild(Utility.createElement('span', { class: 'previous align-self-center' }));
-        link.appendChild(Utility.createElement('span', { class: 'nowrap', text: localize('View Chart') }));
+        link.appendChild(Utility.createElement('span', { class: 'nowrap', text: localize('View chart') }));
         link.addEventListener('click', () => { setAuditVisibility(0); });
         th_previous.appendChild(link);
 

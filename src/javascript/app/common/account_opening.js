@@ -235,6 +235,14 @@ const AccountOpening = (() => {
 
     const showHidePulser = (should_show) => { $('.upgrademessage').children('a').setVisibility(should_show); };
 
+    const registerPepToggle = () => {
+        $('#pep_declaration_note_toggle').off('click').on('click', (e) => {
+            e.stopPropagation();
+            $('#pep_declaration_note_toggle').toggleClass('open');
+            $('#pep_declaration_note').slideToggle();
+        });
+    };
+
     return {
         redirectAccount,
         populateForm,
@@ -242,6 +250,7 @@ const AccountOpening = (() => {
         commonValidations,
         selectCheckboxValidation,
         showHidePulser,
+        registerPepToggle,
     };
 })();
 
