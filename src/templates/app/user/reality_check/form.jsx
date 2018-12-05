@@ -9,8 +9,8 @@ const Form = () => (
                 <input id='num_reality_duration' step='1' min='1' size='6' type='number' />
             </div>
             <div className='center-text gr-centered gr-padding-20 gr-child' id='reality_check_nav'>
-                <button className='button' type='submit'>{it.L('Continue Trading')}</button>
-                <a className='button button-secondary' id='statement' href='javascript:;'><span>{it.L('View Statement')}</span></a>
+                <button className='button' type='submit'>{it.L('Continue trading')}</button>
+                <a className='button button-secondary' id='statement' href='javascript:;'><span>{it.L('View statement')}</span></a>
                 <a className='button button-secondary' id='logout' href='javascript:;'><span>{it.L('Log out')}</span></a>
             </div>
         </form>

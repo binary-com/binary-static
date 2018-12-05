@@ -166,7 +166,7 @@ const Home = () => {
                             dark_button
                             email_padding_mobile={12}
                             button_padding_mobile={12}
-                            text={it.L('Create Free Account')}
+                            text={it.L('Create free account')}
                         />
 
                         <div id='social-signup' className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>

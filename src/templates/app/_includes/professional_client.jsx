@@ -37,8 +37,8 @@ const ProfessionalClient = () => (
             </ul>
             <p>{it.L('As a Professional Client, you must keep us informed about any changes that may affect your status.')}</p>
             <div className='center-text'>
-                <a className='button' id='btn_accept' href='javascript:;'><span>{it.L('ACCEPT')}</span></a>
-                <a className='button' id='btn_decline' data-value='decline' href='javascript:;'><span>{it.L('DECLINE')}</span></a>
+                <a className='button' id='btn_accept' href='javascript:;'><span>{it.L('Accept')}</span></a>
+                <a className='button' id='btn_decline' data-value='decline' href='javascript:;'><span>{it.L('Decline')}</span></a>
             </div>
             <p><strong>{it.L('Note: You may decline and continue as a Retail Client.')}</strong></p>
         </div>

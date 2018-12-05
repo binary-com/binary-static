@@ -12,7 +12,7 @@ const LostPassword = () => (
         <form id='frm_lost_password'>
             <Fieldset>
                 <FormRow type='text' id='email' label={it.L('Email address')} attributes={{ autoComplete: 'off', maxLength: '50' }} />
-                <SubmitButton type='submit' msg_id='form_error' text={it.L('Reset Password')} />
+                <SubmitButton type='submit' msg_id='form_error' text={it.L('Reset password')} />
             </Fieldset>
         </form>
 
