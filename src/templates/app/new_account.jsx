@@ -14,7 +14,7 @@ const NewAccount = () => (
                             <input autoFocus='true' autoComplete='off' name='email' id='email' maxLength='50' placeholder={it.L('Email')}  data-lpignore='true' />
                         </div>
                         <div>
-                            <button type='submit'>{it.L('Create Free Account')}</button>
+                            <button type='submit'>{it.L('Create free account')}</button>
                         </div>
                     </form>
                     <div className='section-divider gr-padding-20 gr-child'>

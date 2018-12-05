@@ -90,7 +90,7 @@ const Metatrader = () => (
                                     </div>
                                     <div className='gr-grow'>
                                         <a className='button button-secondary act_new_account' href='javascript:;'>
-                                            <span id='new_account_icon'>{it.L('New Account')}</span>
+                                            <span id='new_account_icon'>{it.L('New account')}</span>
                                         </a>
                                     </div>
                                 </div>
@@ -308,7 +308,7 @@ const Metatrader = () => (
                                             is_centered
                                             type='submit'
                                             id='btn_submit_new_account'
-                                            text={it.L('Create Account')}
+                                            text={it.L('Create account')}
                                             attributes={{ action: 'new_account' }}
                                             custom_btn_text={it.L('Back')}
                                             custom_btn_id='btn_back'
@@ -358,7 +358,7 @@ const Metatrader = () => (
                                             no_wrapper
                                             type='submit'
                                             id='btn_submit_new_account_mam'
-                                            text={it.L('Create MAM Account')}
+                                            text={it.L('Create MAM account')}
                                             attributes={{ action: 'new_account_mam' }}
                                             custom_btn_text={it.L('Back')}
                                             custom_btn_id='btn_back'
@@ -471,7 +471,7 @@ const Metatrader = () => (
                             no_wrapper
                             type='submit'
                             id='btn_revoke_mam'
-                            text={it.L('Revoke Manager')}
+                            text={it.L('Revoke manager')}
                             attributes={{ action: 'revoke_mam' }}
                         />
                     </form>

@@ -19,7 +19,7 @@ const ResetPassword = () => (
                         <FormRow type='password' id='repeat_password' label={it.L('Confirm New Password')} />
                         <FormRow type='checkbox' spaced id='have_real_account' label={it.L('I have a Real Money Account')} />
                         <FormRow type='text' id='date_of_birth' label={it.L('Date of Birth')} row_class='invisible' row_id='dob_field' attributes={{ size: 12, readOnly: 'readonly' }} />
-                        <SubmitButton type='submit' no_error text={it.L('Reset Password')} />
+                        <SubmitButton type='submit' no_error text={it.L('Reset password')} />
                     </Fieldset>
                 </form>
             </div>

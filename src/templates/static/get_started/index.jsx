@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 import { TabContainer, TabContent, TabContentContainer, TabsSubtabs } from '../../_common/components/tabs.jsx';
 
@@ -50,7 +51,7 @@ const CTA = () => (
         <SeparatorLine show_mobile className='gr-padding-20 gr-child' />
         <div className='center-text'>
             <p>{it.L('Don\'t have an account?')}</p>
-            <a className='button' href={it.url_for('new-account')}><span>{it.L('Create Free Account')}</span></a>
+            <a className='button' href={it.url_for('new-account')}><span>{it.L('Create free account')}</span></a>
         </div>
     </div>
 );
@@ -267,8 +268,6 @@ const Index = () => (
                             section_id='binary-options-mt5'
                             section_header={it.L('Binary Options on MT5')}
                             section_description={it.L('Explore a whole new world of binary options trading with the world\'s leading multi-asset platform.')}
-                            section_button_url='user/metatrader'
-                            section_button_text={it.L('Create an MT5 account now')}
                         >
                             <div className='gr-row'>
                                 <GetStartedSection
@@ -284,6 +283,13 @@ const Index = () => (
                                     image='mt5/how-trade-binary'
                                     header={it.L('How to trade binary options on MT5')}
                                     text={it.L('Follow our step-by-step guide to start trading binary options on MT5.')}
+                                />
+                            </div>
+                            <div className='center-text gr-padding-20'>
+                                <Button
+                                    className='button'
+                                    href={it.url_for('user/metatrader')}
+                                    text={it.L('Create an MT5 account now')}
                                 />
                             </div>
                         </GetStartedSectionWrapper>

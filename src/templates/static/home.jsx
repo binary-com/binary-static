@@ -83,7 +83,7 @@ const AccountsTabContent = ({
 }) => (
     <React.Fragment>
         <div className='gr-hide-m'>
-            <p className='center-text gr-10 gr-no-gutter gr-centered'>{header}</p>
+            <p className='center-text gr-10 gr-no-gutter gr-centered'>{header}</p>xe
         </div>
         <div className='gr-row gr-padding-30'>
             <Arrows parent='account_tabs' direction='left' />

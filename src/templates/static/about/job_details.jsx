@@ -1122,7 +1122,7 @@ const JobDetails = () => (
                     </div>
 
                     <div className='gr-12 gr-padding-10'>
-                        <a id='back-button'>{it.L('<< Back to Job Descriptions')}</a>
+                        <a id='back-button'>{it.L('<< Back to job descriptions')}</a>
                     </div>
                 </div>
             </div>

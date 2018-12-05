@@ -128,6 +128,9 @@ const PersonalDetails = (() => {
                         $(should_show_label ? `#${key}` : el_key)
                             .val(get_settings[key] ? get_settings[key].split(',') : '')
                             .trigger('change');
+                        if (should_show_label) {
+                            CommonFunctions.getElementById(`row_${key}`).setVisibility(0);
+                        }
                     }
                 }
             }

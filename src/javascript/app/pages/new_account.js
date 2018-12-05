@@ -41,7 +41,7 @@ const NewAccount = (() => {
             }
         });
 
-        $login_btn.on('click', (e) => {
+        $login_btn.off().on('click', (e) => {
             e.preventDefault();
             Login.redirectToLogin();
         });
@@ -78,7 +78,6 @@ const NewAccount = (() => {
 
     const onUnload = () => {
         getElementById('footer').setVisibility(1);
-        $login_btn.off('click');
     };
 
     return {
