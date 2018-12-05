@@ -119,35 +119,35 @@ const BinaryOptions = () => {
                         <HeaderSecondary header={it.L('Advantages of binary options trading')} />
                         <p>{it.L('Aside from the simplicity of its \'yes or no\' proposition, binary options trading is also very flexible. It gives you the ability to trade:')}</p>
                         <div className='gr-row gr-parent gr-padding-10'>
-                            <SectionTicked header={it.L('All markets')}           text={it.L('Trade on underlying markets that include Forex, indices, commodities, and more.')} />
-                            <SectionTicked header={it.L('All market conditions')} text={it.L('Predict market movement using up/down, touch/no touch, and in/out trade types.')} />
-                            <SectionTicked header={it.L('All durations')}         text={it.L('Take a short-term or long-term view with trade durations from 10 seconds to 365 days.')} />
-                            <SectionTicked header={it.L('All payouts')}           text={it.L('Earn payouts up to USD 50,000. Losses are limited to your initial stake and nothing more.')} />
+                            <SectionTicked header={it.L('A wide range of markets')} text={it.L('Trade on underlying markets that include Forex, indices, commodities, and more.')} />
+                            <SectionTicked header={it.L('All market conditions')}   text={it.L('Predict market movement using up/down, touch/no touch, and in/out trade types.')} />
+                            <SectionTicked header={it.L('All durations')}           text={it.L('Experience varying trade durations from very brief to as long as a year.')} />
+                            <SectionTicked header={it.L('All payouts')}             text={it.L('Earn payouts of varying amounts, even up to USD 50,000 in case of Volatility Indices. Losses are limited to your initial stake and nothing more.')} />
                         </div>
 
                         <HeaderSecondary header={it.L('Why you should trade binary options with [_1]', it.website_name)} />
-                        <p>{it.L('Enjoy an award-winning online trading platform with trading conditions that are ideal for new and experienced traders.')}</p>
+                        <p>{it.L('Enjoy an award-winning online trading platform with numerous user-friendly features.')}</p>
                         <strong>{it.L('Award-winning online trading platform')}</strong>
                         <ul className='bullet'>
                             <ListStrong header={it.L('Simple and intuitive')} text={it.L('Enjoy a trading platform that\'s easy to navigate and use')} />
                             <ListStrong header={it.L('Instant access')}       text={it.L('Open an account and start trading in minutes')} />
                             <ListStrong header={it.L('Available 24/7')}       text={it.L('Trade when you want. Our Volatility Indices are available even on weekends')} />
                             <ListStrong header={it.L('Patented technology')}  text={it.L('Trade with the industry pioneer and holder of a patented pricing technology')} />
-                            <ListStrong header={it.L('Security and privacy')} text={it.L('Trade confidently, knowing that your personal data, transactions, and funds are always secure')} />
+                            <ListStrong header={it.L('Security and privacy')} text={it.L('Trade confidently, knowing that your personal data and transactions are always secure and your funds are kept separate from company assets.')} />
                         </ul>
                         <strong>{it.L('All conditions and durations')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('All markets and conditions')}   text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
-                            <ListStrong header={it.L('Short to long-term durations')} text={it.L('Choose timeframes from 10 seconds to 365 days')} />
+                            <ListStrong header={it.L('A wide range of markets and conditions')} text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
+                            <ListStrong header={it.L('Short to long-term durations')}           text={it.L('Short to long-term durations - Choose timeframes of varying trade durations.')} />
                         </ul>
                         <strong>{it.L('Competitive and transparent pricing')}</strong>
                         <ul className='bullet'>
                             <ListStrong header={it.L('Sharp, benchmarked prices')}             text={it.L('Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets.')} />
                             <ListStrong header={it.L('Transparent risk and potential reward')} text={it.L('Know how much you will win or lose before you purchase the contract.')} />
-                            <ListStrong header={it.L('Protect your profits')}                  text={it.L('Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses.')} />
+                            <ListStrong header={it.L('Protect your profits')}                  text={it.L('In most cases, you can sell your contract before expiry to keep any profit you may have made or to minimise your loss.')} />
                             <ListStrong header={it.L('Two-way pricing')}                       text={it.L('Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates.')} />
                         </ul>
-                        <strong>{it.L('Ideal for new and experienced traders')}</strong>
+                        <strong>{it.L('Ideal trading experience')}</strong>
                         <ul className='bullet'>
                             <ListStrong header={it.L('Low minimum stakes')}                         text={it.L('Deposit as little as USD 5 to start trading.')} />
                             <ListStrong header={it.L('Trade according to your preferred strategy')} text={it.L('Trade based on "gut feel" or rely on technical and fundamental analysis')} />
@@ -156,7 +156,7 @@ const BinaryOptions = () => {
                         </ul>
                     </Section>
                     <Section id='how-to-trade-binary' header={it.L('How to trade binary options')}>
-                        <p>{it.L('Binary options trading is relatively easy. You can purchase a contract in just three steps:')}</p>
+                        <p>{it.L('It is comparably easy to place a trade on our platform. You can purchase a contract in just three steps.')}</p>
 
                         <SeparatorLine invisible show_mobile className='gr-padding-10' />
 
@@ -192,7 +192,7 @@ const BinaryOptions = () => {
 
                         <CircleHeader
                             header={it.L('Duration')}
-                            text={it.L('Set the length of your trade from 10 seconds to 365 days, whether you have a short-term or long-term view of the markets.')}
+                            text={it.L('Vary the length of your trade from very brief to as long as a year, depending on your short-term or long-term view of the market.')}
                         />
 
                         <CircleHeader
@@ -215,7 +215,7 @@ const BinaryOptions = () => {
                         <div className='gr-padding-20 gr-10'>
                             <img className='responsive' src={it.url_for('images/pages/get-started/binary-options/how-to-trade-binary/step-3.svg')} />
                         </div>
-                        <p>{it.L('When you are satisfied with the price that you receive, execute your trade immediately. With our unique platform, there\'s no risk of \'slippage\' or gaping markets. And most importantly, there are no hidden fees. You can also sell back any long-term trades at any time to profit from favourable market conditions.')}</p>
+                        <p>{it.L('When you are satisfied with the price that you receive, execute your trade immediately. In most cases, you can sell back any long-term trades at any time to profit from favourable market conditions.')}</p>
                     </Section>
                     <Section id='types-of-trades' header={it.L('Types of trades')}>
                         <p>{it.L('[_1] offers the following trade types that will help you execute your market view or strategy:', it.website_name)}</p>
@@ -245,7 +245,7 @@ const BinaryOptions = () => {
                         <p>{it.L('Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices.')}</p>
                     </Section>
                     <Section id='range-of-markets' header={it.L('Range of markets')}>
-                        <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time. This limits your risk and makes it easy for anyone to start trading.')}</p>
+                        <p>{it.L('Binary options allow you to trade on a wide range of underlying markets. One of the advantages of trading binary options, which limits your risk, is that you are not buying or selling an actual asset, only a contract that determines how that asset performs over a period of time.')}</p>
 
                         <HeaderSecondary header={it.L('Available markets')} data-anchor='available-markets' />
                         <div className='gr-row'>

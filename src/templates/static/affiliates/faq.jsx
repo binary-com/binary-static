@@ -25,7 +25,7 @@ const FAQ = () => (
                     <h3>{it.L('What is the [_1] Affiliate Programme all about?', it.website_name)}</h3>
                     <p>{it.L('The [_1] Affiliate Programme allows you to benefit from referring new clients to our site.', it.website_name)}</p>
                     <p>{it.L('If you\'re a broker we\'d like to work with you. You will be introducing your clients to a unique and innovative product: the [_1] trading platform. Your clients will love the [_1] trading platform because we offer a complete binary options trading experience tailored to the needs of an exceptionally wide range of traders.', it.website_name)}</p>
-                    <p>{it.L('Novice traders can use our intuitive platform to learn about trading, practise trading, and gain trading experiences. Seasoned traders can use the [_1] platform and take full advantage of the wide range of trading and analysis tools we have to offer.', it.website_name)}</p>
+                    <p>{it.L('Novice traders can use our intuitive platform to learn about trading, practise trading, and gain trading experiences. However, novice traders in the EU, since they are considered as retail clients, cannot trade binary options due to the current ban in place. Seasoned traders can use the [_1] platform and take full advantage of the wide range of trading and analysis tools we have to offer.', it.website_name)}</p>
 
                     <h3>{it.L('Why should I become a [_1] affiliate?', it.website_name)}</h3>
                     <p>{it.L('[_1] is a licensed and regulated binary options trading platform that’s been operating since 2000. It has:', it.website_name)}</p>
@@ -42,11 +42,11 @@ const FAQ = () => (
                     <p>{it.L('A referred client is someone who has been referred through your unique affiliate link and who has deposited money into their [_1] account. They must fulfil the following criteria:', it.website_name)}</p>
                     <ul className='bullet'>
                         <li>{it.L('Have not previously been a [_1] customer', it.website_name)}</li>
-                        <li>{it.L('Aged 18 years old and above')}</li>
+                        <li>{it.L('Aged 18 years old and above (21 years old and above for clients in Estonia).')}</li>
                     </ul>
 
                     <h3>{it.L('Who can be a client on the [_1] platform?', it.website_name)}</h3>
-                    <p>{it.L('Anyone aged 18 years old and above who is not the resident of a “restricted country” (as listed in our <a href=\'[_1]\'>Terms & Conditions</a>) can become a [_2] client.', it.url_for('terms-and-conditions'), it.website_name)}</p>
+                    <p>{it.L('Anyone aged 18 years old and above (21 years old and above if residing in Estonia) and who is not the resident of a “restricted country” (as listed in our <a href=\'[_1]\'>Terms & Conditions</a>) can become a [_2] client.', it.url_for('terms-and-conditions'), it.website_name)}</p>
                 </Section>
 
                 <Section id='account-management-and-tracking' header={it.L('Account management and tracking')}>
@@ -74,7 +74,7 @@ const FAQ = () => (
                     </ul>
 
                     <h3>{it.L('Can I offer my referrals an incentive to sign up through my unique affiliate link rather than sign up directly?')}</h3>
-                    <p>{it.L('We prohibit the use of unauthorised incentives, gifts, and payments to encourage customer signups. If we have reason to believe that you have engaged in such activity, we reserve the right to withhold any payments due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval.')}</p>
+                    <p>{it.L('Offering any kind of incentives to referrals residing in the European Union is strictly forbidden. Furthermore, we prohibit the use of unauthorised incentives, gifts, and payments to encourage customer signups. If we have reason to believe that you have engaged in such activities, we reserve the right to withhold any payments due to you. However, if you have a specific incentive in mind and your referrals do not reside in the EU, then please contact your account manager for further discussion and approval.')}</p>
                 </Section>
 
                 <Section id='referral-tools' header={it.L('Referral tools')}>

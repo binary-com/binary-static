@@ -66,7 +66,7 @@ const Index = () => (
                 items={[
                     { id: 'binary',   text: it.L('Binary Options') },
                     { id: 'lookback', text: it.L('Lookbacks'), dataShow: 'default, virtual, costarica' },
-                    { id: 'mt5',      text: it.L('MetaTrader 5'), dataShow: 'mtcompany' },
+                    { id: 'mt5',      text: it.L('MetaTrader 5'), dataShow: 'mtcompany, eucountry' },
                     { id: 'get_started_tabs_selector', className: 'tab-selector' },
                 ]}
             />
@@ -74,14 +74,14 @@ const Index = () => (
                 <TabContentContainer>
                     <TabContent id='binary'>
                         <h2>{it.L('Binary Options')}</h2>
-                        <p>{it.L('Options that offer a fixed payout based on a simple yes/no proposition.')}</p>
+                        <p>{it.L('Options that offer a fixed payout based on a yes/no proposition.')}</p>
                         <div className='gr-row' id='binary-options'>
                             <GetStartedSection
                                 link='get-started/binary-options'
                                 hash='what-are-binary-options'
                                 image='binary-options/what-are-binary-option'
                                 header={it.L('What are binary options')}
-                                text={it.L('Understand the simple idea behind binary options and their advantages over other financial instruments.')}
+                                text={it.L('Study the concept of binary options and their advantages over other financial instruments.')}
                             />
                             <GetStartedSection
                                 link='get-started/binary-options'
@@ -116,7 +116,7 @@ const Index = () => (
                     </TabContent>
                     <TabContent id='mt5'>
                         <h2>{it.L('MetaTrader 5')}</h2>
-                        <p>{it.L('Trade Forex, Contracts for Difference (CFDs), and binary options on MetaTrader 5 - a multi-asset platform that offers outstanding trading possibilities and technical analysis tools.')}</p>
+                        <p>{it.L('Trade Forex, contracts for difference (CFDs), and binary options on MetaTrader 5 – a multi-asset platform that offers outstanding trading possibilities and technical analysis tools. At this time, EU residents are prohibited from trading binary options on MetaTrader 5.')}</p>
 
                         <SeparatorLine invisible className='gr-padding-30' />
 

@@ -143,7 +143,7 @@ const Cfds = () => (
                     />
 
                     <HeaderSecondary header={it.L('How to read the table above')} />
-                    <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to profit by speculating on the rise or fall of an underlying asset. Your profit and loss is calculated through the difference in the buy and sell prices of the underlying asset.')}</p>
+                    <p>{it.L('A Contract for Difference (CFD) is a financial derivative that allows you to speculate on the rise or fall of an underlying asset, without actually owning that asset. Your profit and loss is calculated …')}</p>
                     <p>{it.L('For example, a CFD on Binary.com\'s US 30 index offers a USD 1 per point contract. If you buy a Volume 1.0 contract for the US 30 with a current ask price of USD 20,000 and later sell it at a bid price of USD 20,010, your net profit will be calculated as follows:')}</p>
 
                     <Box
