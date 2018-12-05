@@ -142,17 +142,17 @@ const BinaryOptions = () => {
                         </ul>
                         <strong>{it.L('Competitive and transparent pricing')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('Sharp, benchmarked prices')}             text={it.L('Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets.')} />
-                            <ListStrong header={it.L('Transparent risk and potential reward')} text={it.L('Know how much you will win or lose before you purchase the contract.')} />
-                            <ListStrong header={it.L('Protect your profits')}                  text={it.L('Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses.')} />
-                            <ListStrong header={it.L('Two-way pricing')}                       text={it.L('Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates.')} />
+                            <ListStrong header={it.L('Sharp, benchmarked prices')}             text={it.L('Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets')} />
+                            <ListStrong header={it.L('Transparent risk and potential reward')} text={it.L('Know how much you will win or lose before you purchase the contract')} />
+                            <ListStrong header={it.L('Protect your profits')}                  text={it.L('Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses')} />
+                            <ListStrong header={it.L('Two-way pricing')}                       text={it.L('Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates')} />
                         </ul>
                         <strong>{it.L('Ideal for new and experienced traders')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('Low minimum stakes')}                         text={it.L('Deposit as little as USD 5 to start trading.')} />
+                            <ListStrong header={it.L('Low minimum stakes')}                         text={it.L('Deposit as little as USD 5 to start trading')} />
                             <ListStrong header={it.L('Trade according to your preferred strategy')} text={it.L('Trade based on "gut feel" or rely on technical and fundamental analysis')} />
-                            <ListStrong header={it.L('Flexible')}                                   text={it.L('Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy.')} />
-                            <ListStrong header={it.L('Scalable')}                                   text={it.L('Earn the same proportional return on stakes of all values.')} />
+                            <ListStrong header={it.L('Flexible')}                                   text={it.L('Choose from over one million possible trade variations at any time, and customise your trades according to your preferred strategy')} />
+                            <ListStrong header={it.L('Scalable')}                                   text={it.L('Earn the same proportional return on stakes of all values')} />
                         </ul>
                     </Section>
                     <Section id='how-to-trade-binary' header={it.L('How to trade binary options')}>
@@ -278,8 +278,8 @@ const BinaryOptions = () => {
                         <p>{it.L('You can trade Volatility Indices on all three main trade types: Up/Down, Touch/No Touch, and In/Out. That\'s not all – Volatility Indices also give you exclusive access to two additional trade types: Asians and Digits.')}</p>
                         <p>{it.L('Volatility Indices are further categorised into two classes:')}</p>
                         <ul className='bullet'>
-                            <li>{it.L('Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</li>
-                            <li>{it.L('Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively.')}</li>
+                            <li>{it.L('Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively')}</li>
+                            <li>{it.L('Daily Reset Indices – Daily Reset Indices replicate markets with a bullish and bearish trend with a constant volatility. The Bull Market and Bear Market indices start at 00:00 GMT each day, replicating bullish and bearish markets respectively')}</li>
                         </ul>
                     </Section>
                     <Section id='glossary' header={it.L('Glossary')}>
