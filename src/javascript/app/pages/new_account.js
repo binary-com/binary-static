@@ -42,11 +42,11 @@ const NewAccount = (() => {
             }
         });
 
-        $google_btn.on('click', (e) => {
+        $google_btn.off('click').on('click', (e) => {
             e.preventDefault();
             window.location.href = Login.socialLoginUrl('google');
         });
-        $login_btn.on('click', (e) => {
+        $login_btn.off('click').on('click', (e) => {
             e.preventDefault();
             Login.redirectToLogin();
         });
@@ -83,8 +83,6 @@ const NewAccount = (() => {
 
     const onUnload = () => {
         getElementById('footer').setVisibility(1);
-        $google_btn.off('click');
-        $login_btn.off('click');
     };
 
     return {
