@@ -57,27 +57,22 @@ const Home = (() => {
     };
 
     const handler = (response) => {
-        const error = response.error;
-        if (error) {
-            $('#signup_error').setVisibility(1).text(error.message);
-        } else if (isBinaryApp()) {
+        if (response.error) {
+            $('#signup_error').setVisibility(1).text(response.error.message);
+            return;
+        }
+        if (isBinaryApp()) {
             BinaryPjax.load(urlFor('new_account/virtualws'));
-            GTM.pushDataLayer({
-                event                   : 'email_submit',
-                email_submit_input      : response.echo_req.verify_email,
-                email_submit_days_passed: moment().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
-                email_submit_source     : 'desktop app',
-            });
         } else {
             $('.signup-box div').replaceWith($('<p/>', { text: localize('Thank you for signing up! Please check your email to complete the registration process.'), class: 'gr-10 gr-centered center-text' }));
             $('#social-signup').setVisibility(0);
-            GTM.pushDataLayer({
-                event                   : 'email_submit',
-                email_submit_input      : response.echo_req.verify_email,
-                email_submit_days_passed: moment().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
-                email_submit_source     : 'binary.com',
-            });
         }
+        GTM.pushDataLayer({
+            event                   : 'email_submit',
+            email_submit_input      : response.echo_req.verify_email,
+            email_submit_days_passed: moment().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
+            email_submit_source     : isBinaryApp() ? 'desktop app' : 'binary.com',
+        });
     };
 
     const onUnload = () => {
