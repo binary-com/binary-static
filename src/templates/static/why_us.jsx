@@ -58,7 +58,7 @@ const WhyUs = () => (
                     <ul className='checked'>
                         <li>{it.L('Choose from a wide range of payouts.')}</li>
                         <li>{it.L('Trade all major currencies, indices, commodities, and volatility indices.')}</li>
-                        <li>{it.L('Choose a duration from 10 seconds to 365 days.')}</li>
+                        <li>{it.L('Choose from a wide range of durations.')}</li>
                         <li>{it.L('Choose your own strike.')}</li>
                     </ul>
                 </Section>
