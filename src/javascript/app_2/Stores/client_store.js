@@ -122,6 +122,12 @@ export default class ClientStore extends BaseStore {
             .reduce(loginid => loginid);
     }
 
+    @computed
+    get is_single_currency() {
+        return Object.keys(this.currencies_list).map(type => Object.values(this.currencies_list[type]).length)
+            .reduce((acc, cur) => acc + cur, 0) === 1;
+    }
+
     /**
      * Store Values relevant to the loginid to local storage.
      *
@@ -167,7 +173,7 @@ export default class ClientStore extends BaseStore {
     responsePayoutCurrencies(response) {
         const list = response.payout_currencies || response;
         this.currencies_list = buildCurrenciesList(list);
-        this.selected_currency =  list[0];
+        this.selectCurrency('');
     }
 
     @action.bound
@@ -219,6 +225,8 @@ export default class ClientStore extends BaseStore {
         this.accounts     = LocalStore.getObject(storage_key);
         this.upgrade_info = this.getBasicUpgradeInfo();
         this.switched     = '';
+
+        this.selectCurrency('');
 
         this.responsePayoutCurrencies(await WS.payoutCurrencies());
 

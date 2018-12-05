@@ -16,6 +16,7 @@ const Amount = ({
     currency,
     is_minimized,
     is_nativepicker,
+    is_single_currency,
     onChange,
     validation_errors,
 }) => {
@@ -30,9 +31,8 @@ const Amount = ({
             </div>
         );
     }
-    const single_currency = Object.keys(currencies_list).length === 0;
     const amount_container_class = classNames('amount-container', {
-        'three-columns': !single_currency,
+        'three-columns': !is_single_currency,
     });
 
     return (
@@ -48,7 +48,7 @@ const Amount = ({
                     onChange={onChange}
                     is_nativepicker={is_nativepicker}
                 />
-                {!single_currency &&
+                {!is_single_currency &&
                     <Dropdown
                         list={currencies_list}
                         value={currency}
@@ -65,7 +65,7 @@ const Amount = ({
                     max_length={10}
                     name='amount'
                     onChange={onChange}
-                    prefix={single_currency ? currency : null}
+                    prefix={is_single_currency ? currency : null}
                     type='number'
                     value={amount}
                 />
@@ -79,14 +79,15 @@ Amount.propTypes = {
         PropTypes.number,
         PropTypes.string,
     ]),
-    basis            : PropTypes.string,
-    basis_list       : MobxPropTypes.arrayOrObservableArray,
-    currencies_list  : MobxPropTypes.observableObject,
-    currency         : PropTypes.string,
-    is_minimized     : PropTypes.bool,
-    is_nativepicker  : PropTypes.bool,
-    onChange         : PropTypes.func,
-    validation_errors: PropTypes.object,
+    basis             : PropTypes.string,
+    basis_list        : MobxPropTypes.arrayOrObservableArray,
+    currencies_list   : MobxPropTypes.observableObject,
+    currency          : PropTypes.string,
+    is_minimized      : PropTypes.bool,
+    is_nativepicker   : PropTypes.bool,
+    is_single_currency: PropTypes.bool,
+    onChange          : PropTypes.func,
+    validation_errors : PropTypes.object,
 };
 
 export default observer(Amount);
