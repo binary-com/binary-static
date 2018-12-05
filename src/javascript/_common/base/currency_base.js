@@ -86,6 +86,8 @@ const getTransferFee = (currency_from, currency_to) => {
     return `${typeof transfer_fee === 'undefined' ? '1' : transfer_fee}%`;
 };
 
+const getMinimumTransferFee = (currency) => isCryptocurrency(currency) ? '0.00000001' : '0.01';
+
 // @param {String} limit = max|min
 const getPaWithdrawalLimit = (currency, limit) => {
     if (isCryptocurrency(currency)) {
@@ -109,6 +111,7 @@ module.exports = {
     getMinWithdrawal,
     getMinTransfer,
     getTransferFee,
+    getMinimumTransferFee,
     getMinPayout,
     getPaWithdrawalLimit,
     getCurrencies: () => currencies_config,

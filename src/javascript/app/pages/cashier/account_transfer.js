@@ -27,6 +27,7 @@ const AccountTransfer = (() => {
         el_reset_transfer,
         el_transfer_fee,
         el_fee_amount,
+        el_fee_minimum,
         el_transfer_info,
         el_success_form,
         client_balance,
@@ -73,6 +74,7 @@ const AccountTransfer = (() => {
 
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
             setTransferFeeAmount();
+            elementTextContent(el_fee_minimum, `${client_currency} ${Currency.getMinimumTransferFee(client_currency)}`);
             el_transfer_fee.setVisibility(1);
         } else {
             el_transfer_info.setVisibility(1);
@@ -169,6 +171,7 @@ const AccountTransfer = (() => {
 
         el_transfer_fee   = getElementById('transfer_fee');
         el_fee_amount     = getElementById('transfer_fee_amount');
+        el_fee_minimum    = getElementById('transfer_fee_minimum');
         el_transfer_info  = getElementById('transfer_info');
         el_success_form   = getElementById('success_form');
         el_reset_transfer = getElementById('reset_transfer');
