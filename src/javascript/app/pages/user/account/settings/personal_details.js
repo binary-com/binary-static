@@ -69,7 +69,8 @@ const PersonalDetails = (() => {
 
         if (get_settings.citizen) {
             get_settings.citizen =
-                (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text || get_settings.citizen;
+                (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text ||
+                get_settings.citizen;
         }
 
         displayGetSettingsData(get_settings);
@@ -130,7 +131,6 @@ const PersonalDetails = (() => {
                         if (should_show_label) {
                             CommonFunctions.getElementById(`row_${key}`).setVisibility(0);
                         }
-                            
                     }
                 }
             }
