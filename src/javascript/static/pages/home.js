@@ -70,7 +70,7 @@ const Home = (() => {
         GTM.pushDataLayer({
             event                   : 'email_submit',
             email_submit_input      : response.echo_req.verify_email,
-            email_submit_days_passed: moment.utc().diff(moment(localStorage.getItem('date_first_contact')), 'days'),
+            email_submit_days_passed: moment.utc().diff(moment.utc(localStorage.getItem('date_first_contact')), 'days'),
             email_submit_source     : isBinaryApp() ? 'desktop app' : 'binary.com',
         });
     };
