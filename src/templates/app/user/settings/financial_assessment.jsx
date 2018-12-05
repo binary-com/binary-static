@@ -21,7 +21,7 @@ const FinancialAssessment = () => (
             </div>
             <div className='center-text'>
                 <a className='button' href={it.url_for('user/metatrader')}>
-                    <span>{it.L('Go to MetaTrader 5 Dashboard')}</span>
+                    <span>{it.L('Go to MetaTrader 5 dashboard')}</span>
                 </a>
             </div>
         </div>
