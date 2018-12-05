@@ -14,7 +14,7 @@ const TopUpVirtual = () => (
                 <div id='viewSuccess' className='viewItem invisible'>
                     <p className='success-msg' />
                     <a className='button' href={it.url_for('user/portfoliows')}>
-                        <span>{it.L('View Updated Portfolio')}</span>
+                        <span>{it.L('View updated portfolio')}</span>
                     </a>
                 </div>
             </div>

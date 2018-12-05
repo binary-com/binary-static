@@ -54,7 +54,7 @@ const Statement = () => (
                         <Button id='request_statement_btn' className='button button-disabled no-margin' text={it.L('Request your statement')} />
                         <Button id='go_back_btn' href='javascript:;' className='gr-gutter-right gr-gutter-left'>
                             <div className='gr-row gr-padding-10 container'>
-                                <span className='gr-hide gr-show-m'>{('<<')}&nbsp;</span>{it.L('Back to Statement')}
+                                <span className='gr-hide gr-show-m'>{('<<')}&nbsp;</span>{it.L('Back to statement')}
                             </div>
                         </Button>
                     </div>
