@@ -1,7 +1,6 @@
 export const isDigitContract = (contract_type) => /digit/i.test(contract_type);
 
 export const getDigitInfo = (digits_info, contract_info) => {
-    console.log(digits_info);
     const start_time = +contract_info.entry_tick_time;
     if (!start_time) return {}; // filter out the responses before contract start
 
