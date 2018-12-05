@@ -179,12 +179,12 @@ const Home = () => {
 
                             <div className='gr-row gr-row-align-center'>
                                 <div className='gr-12 center-text'>
-                                    <p>{it.L('Create free account with')}</p>
+                                    <p>{it.L('Create free account with:')}</p>
                                 </div>
-                                <div className='gr-4 gr-5-p gr-5-m'>
+                                <div className='gr-3 gr-5-p gr-5-m align-end'>
                                     <ButtonSocial provider='google' />
                                 </div>
-                                <div className='gr-4 gr-5-p gr-5-m'>
+                                <div className='gr-3 gr-5-p gr-5-m'>
                                     <ButtonSocial provider='facebook' />
                                 </div>
                             </div>

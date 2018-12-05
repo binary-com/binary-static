@@ -24,10 +24,10 @@ const NewAccount = () => (
                     </div>
                     <p>{it.L('Sign up using social account')}</p>
                     <div className='gr-row gr-row-align-center'>
-                        <div className='gr-6 gr-4-m gr-no-gutter-left'>
+                        <div className='gr-6 gr-4-m align-end'>
                             <ButtonSocial provider='google' />
                         </div>
-                        <div className='gr-6 gr-4-m gr-no-gutter-right'>
+                        <div className='gr-6 gr-4-m align-start'>
                             <ButtonSocial provider='facebook' />
                         </div>
                     </div>

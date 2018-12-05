@@ -803,30 +803,39 @@ label + input {
     position: relative;
     display: inline-flex;
     align-items: center;
-    color: $COLOR_BLACK;
-    border: 1px solid $COLOR_LIGHT_GRAY;
-    border-radius: 3px;
+    border-radius: 4px;
     padding: 5px 0;
     width: 100%;
-    height: 28px;
+    height: 20px;
     background-position: center;
     background-position-x: 10%;
     background-repeat: no-repeat;
+    max-width: 115px;
 
     &:hover {
         background-color: $COLOR_LIGHT_GRAY;
     }
     &#button_google {
-        background-image: url('../images/pages/applications/ic-google.svg');
+        background-image: url('../images/pages/applications/google.svg');
+        background-color: #dc4e41; /* stylelint-disable-line color-no-hex */
+
+        .name {
+            left: 40%;
+        }
     }
     &#button_facebook {
-        background-image: url('../images/pages/applications/ic-facebook.svg');
+        background-image: url('../images/pages/applications/facebook.svg');
+        background-color: #3b5998; /* stylelint-disable-line color-no-hex */
+
+        .name {
+            left: 25%;
+        }
     }
     .name {
         text-transform: capitalize;
         font-weight: 400;
         position: absolute;
-        left: 40%;
+        color: $COLOR_WHITE;
     }
     @media screen and (max-width: 480px) {
         background-position-x: 50%;
