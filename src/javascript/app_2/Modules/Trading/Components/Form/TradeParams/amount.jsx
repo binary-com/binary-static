@@ -1,12 +1,12 @@
+import classNames                               from 'classnames';
+import { observer, PropTypes as MobxPropTypes } from 'mobx-react';
+import PropTypes                                from 'prop-types';
+import React                                    from 'react';
 import { addComma, getDecimalPlaces }           from '_common/base/currency_base';
 import { localize }                             from '_common/localize';
 import Dropdown                                 from 'App/Components/Form/DropDown';
 import Fieldset                                 from 'App/Components/Form/fieldset.jsx';
 import InputField                               from 'App/Components/Form/input_field.jsx';
-import classNames                               from 'classnames';
-import { observer, PropTypes as MobxPropTypes } from 'mobx-react';
-import PropTypes                                from 'prop-types';
-import React                                    from 'react';
 
 const Amount = ({
     amount,

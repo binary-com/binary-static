@@ -1,7 +1,7 @@
 import { action, computed, observable } from 'mobx';
 import { WS }                           from 'Services';
-import BaseStore                        from '../../base_store';
 import { formatPortfolioPosition }      from './Helpers/format_response';
+import BaseStore                        from '../../base_store';
 
 export default class PortfolioStore extends BaseStore {
     @observable data       = [];

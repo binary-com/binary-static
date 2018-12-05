@@ -1,13 +1,13 @@
-import { localize }                                                                                                                                                           from '_common/localize';
-import { isEmptyObject }                                                                                                                                                      from '_common/utility';
 import { action, computed, extendObservable, observable }                                                                                                                    from 'mobx';
+import { isEmptyObject }                                                                                                                                                      from '_common/utility';
+import { localize }                                                                                                                                                           from '_common/localize';
 import { WS }                                                                                                                                                                 from 'Services';
-import BaseStore                                                                                                                                                              from '../../base_store';
 import { createChartBarrier }                                                                                                                                                 from './Helpers/chart_barriers';
 import { createChartMarkers }                                                                                                                                                 from './Helpers/chart_markers';
 import { getDetailsExpiry, getDetailsInfo }                                                                                                                                  from './Helpers/details';
 import { getDigitInfo, isDigitContract }                                                                                                                                     from './Helpers/digits';
 import { getChartConfig, getDisplayStatus, getEndSpot, getEndSpotTime, getFinalPrice, getIndicativePrice, isEnded, isSoldBeforeStart, isStarted, isUserSold, isValidToSell } from './Helpers/logic';
+import BaseStore                                                                                                                                                              from '../../base_store';
 
 export default class ContractStore extends BaseStore {
     @observable contract_id;

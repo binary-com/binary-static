@@ -1,8 +1,8 @@
 import { action, computed, observable } from 'mobx';
 import moment                           from 'moment';
 import { WS }                           from 'Services';
-import BaseStore                        from '../../base_store';
 import { formatStatementTransaction }   from './Helpers/format_response';
+import BaseStore                        from '../../base_store';
 
 const batch_size = 100; // request response limit
 

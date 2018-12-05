@@ -1,5 +1,5 @@
-import { isEmptyObject }                                       from '_common/utility';
 import { action, intercept, observable, reaction, toJS, when } from 'mobx';
+import { isEmptyObject }                                       from '_common/utility';
 import Validator                                               from 'Utils/Validator';
 
 /**

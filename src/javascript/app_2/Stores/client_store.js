@@ -1,14 +1,14 @@
+import { action, computed, observable, when } from 'mobx';
+import moment                                 from 'moment';
 import { getAccountTitle }                    from '_common/base/client_base';
 import GTM                                    from '_common/base/gtm';
 import BinarySocket                           from '_common/base/socket_base';
 import * as SocketCache                       from '_common/base/socket_cache';
 import { localize }                           from '_common/localize';
 import { LocalStore, State }                  from '_common/storage';
-import { action, computed, observable, when } from 'mobx';
-import moment                                 from 'moment';
-import { WS }                                 from '../Services';
 import BaseStore                              from './base_store';
 import { buildCurrenciesList }                from './Modules/Trading/Helpers/currency';
+import { WS }                                 from '../Services';
 
 const storage_key = 'client.accounts';
 export default class ClientStore extends BaseStore {
@@ -77,15 +77,19 @@ export default class ClientStore extends BaseStore {
     get currency() {
         if (this.selected_currency.length) {
             return this.selected_currency;
+        } else if (this.is_logged_in) {
+            return this.accounts[this.loginid].currency;
         }
-        return this.accounts[this.loginid] ?
-            this.accounts[this.loginid].currency : this.default_currency;
+        return this.default_currency;
+
     }
 
     @computed
     get default_currency() {
-        return Object.keys(this.currencies_list) > 0 ?
-            this.currencies_list[Object.keys(this.currencies_list)[0]].text : '';
+        if (Object.keys(this.currencies_list).length > 0) {
+            const keys = Object.keys(this.currencies_list);
+            return Object.values(this.currencies_list[`${keys[0]}`])[0].text;
+        } return 'USD';
     }
 
     @computed

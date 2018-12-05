@@ -1,13 +1,12 @@
-import { getMinPayout, isCryptocurrency }                                     from '_common/base/currency_base';
+import debounce                                                               from 'lodash.debounce';
+import { action, observable, reaction, runInAction }                          from 'mobx';
 import BinarySocket                                                           from '_common/base/socket_base';
 import { localize }                                                           from '_common/localize';
 import { cloneObject, isEmptyObject }                                         from '_common/utility';
-import debounce                                                               from 'lodash.debounce';
-import { action, observable, reaction, runInAction }                          from 'mobx';
+import { getMinPayout, isCryptocurrency }                                     from '_common/base/currency_base';
 import { WS }                                                                 from 'Services';
 import GTM                                                                    from 'Utils/gtm';
 import URLHelper                                                              from 'Utils/URL/url_helper';
-import BaseStore                                                              from '../../base_store';
 import { processPurchase }                                                    from './Actions/purchase';
 import * as Symbol                                                            from './Actions/symbol';
 import { allowed_query_string_variables, non_proposal_query_string_variable } from './Constants/query_string';
@@ -18,6 +17,7 @@ import { convertDurationLimit }                                               fr
 import { processTradeParams }                                                 from './Helpers/process';
 import { createProposalRequests, getProposalInfo, getProposalParametersName } from './Helpers/proposal';
 import { pickDefaultSymbol }                                                  from './Helpers/symbol';
+import BaseStore                                                              from '../../base_store';
 
 export default class TradeStore extends BaseStore {
     // Control values
