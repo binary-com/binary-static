@@ -1,11 +1,11 @@
-import { action, computed, observable, when } from 'mobx';
-import moment                                 from 'moment';
 import { getAccountTitle }                    from '_common/base/client_base';
 import GTM                                    from '_common/base/gtm';
 import BinarySocket                           from '_common/base/socket_base';
 import * as SocketCache                       from '_common/base/socket_cache';
 import { localize }                           from '_common/localize';
 import { LocalStore, State }                  from '_common/storage';
+import { action, computed, observable, when } from 'mobx';
+import moment                                 from 'moment';
 import BaseStore                              from './base_store';
 
 const storage_key = 'client.accounts';
@@ -41,6 +41,17 @@ export default class ClientStore extends BaseStore {
             !this.is_logged_in || this.is_virtual ||
             this.accounts[this.loginid].landing_company_shortcode === 'costarica'
         );
+    }
+
+    @computed
+    get account_list() {
+        return this.all_loginids.map(id => (
+            id !== this.loginid &&
+            !this.isDisabled(id) &&
+            this.getToken(id) ?
+                this.getAccountInfo(id) :
+                undefined
+        )).filter(account => account);
     }
 
     @computed
@@ -120,6 +131,7 @@ export default class ClientStore extends BaseStore {
         this.accounts[loginid].accepted_bch      = 0;
         LocalStore.setObject(storage_key, this.accounts);
         LocalStore.set('active_loginid', loginid);
+        this.loginid = loginid;
     }
 
     @action.bound

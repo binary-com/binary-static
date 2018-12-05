@@ -1,12 +1,6 @@
-import {
-    action,
-    intercept,
-    observable,
-    reaction,
-    toJS,
-}                        from 'mobx';
-import { isEmptyObject } from '_common/utility';
-import Validator         from 'Utils/Validator';
+import { isEmptyObject }                                        from '_common/utility';
+import { action, intercept, observable, reaction, toJS, when } from 'mobx';
+import Validator                                                from 'Utils/Validator';
 
 /**
  * BaseStore class is the base class for all defined stores in the application. It handles some stuff such as:
@@ -15,12 +9,6 @@ import Validator         from 'Utils/Validator';
  */
 export default class BaseStore {
 
-    @observable
-    validation_errors = {};
-
-    @observable
-    validation_rules = {};
-
     /**
      * An enum object to define LOCAL_STORAGE and SESSION_STORAGE
      */
@@ -28,6 +16,15 @@ export default class BaseStore {
         LOCAL_STORAGE  : Symbol('LOCAL_STORAGE'),
         SESSION_STORAGE: Symbol('SESSION_STORAGE'),
     });
+
+    @observable
+    validation_errors = {};
+
+    @observable
+    validation_rules = {};
+
+    switch_account_disposer = null;
+    switch_account_listener = null;
 
     /**
      * Constructor of the base class that gets properties' name of child which should be saved in storages
@@ -203,12 +200,12 @@ export default class BaseStore {
      */
     @action
     validateProperty(property, value) {
-        const trigger = this.validation_rules[property].trigger;
-        const inputs = { [property]: value !== undefined ? value : this[property] };
+        const trigger          = this.validation_rules[property].trigger;
+        const inputs           = { [property]: value !== undefined ? value : this[property] };
         const validation_rules = { [property]: (this.validation_rules[property].rules || []) };
 
         if (!!trigger && Object.hasOwnProperty.call(this, trigger)) {
-            inputs[trigger] = this[trigger];
+            inputs[trigger]           = this[trigger];
             validation_rules[trigger] = this.validation_rules[trigger].rules || [];
         }
 
@@ -236,5 +233,38 @@ export default class BaseStore {
             this.validateProperty(p, this[p]);
         });
     }
+
+    @action.bound
+    onSwitchAccount(listener) {
+        this.switch_account_disposer = when(
+            () => this.root_store.client.switch_broadcast,
+            async () => {
+                if (this.root_store.client.switch_broadcast === false) return;
+                const result = this.switch_account_listener();
+                if (result && typeof result.then === 'function') {
+                    result.then(() => {
+                        this.root_store.client.switchEndSignal();
+                        this.onSwitchAccount(this.switch_account_listener);
+                    });
+                } else {
+                    this.root_store.client.switchEndSignal();
+                    setTimeout(this.onSwitchAccount.bind(null, this.switch_account_listener), 1000);
+                }
+            },
+        );
+        this.switch_account_listener = listener;
+    }
+
+    @action.bound
+    disposeSwitchAccount() {
+        this.switch_account_disposer();
+        this.switch_account_listener = null;
+    }
+
+    @action.bound
+    onUnmount() {
+        this.disposeSwitchAccount();
+    }
+
 }
 

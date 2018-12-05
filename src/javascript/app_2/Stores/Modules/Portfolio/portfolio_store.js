@@ -1,10 +1,7 @@
-import {
-    action,
-    computed,
-    observable }                   from 'mobx';
-import { WS }                      from 'Services';
-import { formatPortfolioPosition } from './Helpers/format_response';
-import BaseStore                   from '../../base_store';
+import { action, computed, observable } from 'mobx';
+import { WS }                           from 'Services';
+import BaseStore                        from '../../base_store';
+import { formatPortfolioPosition }      from './Helpers/format_response';
 
 export default class PortfolioStore extends BaseStore {
     @observable data       = [];
@@ -102,7 +99,15 @@ export default class PortfolioStore extends BaseStore {
     }
 
     @action.bound
+    accountSwitcherListener () {
+        if (this.data.length === 0) {
+            this.initializePortfolio();
+        }
+    }
+
+    @action.bound
     onMount() {
+        this.onSwitchAccount(this.accountSwitcherListener);
         if (this.data.length === 0) {
             this.initializePortfolio();
         }
@@ -110,6 +115,7 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     onUnmount() {
+        this.disposeSwitchAccount();
         // keep data and connections for portfolio drawer on desktop
         if (this.root_store.ui.is_mobile) {
             this.clearTable();

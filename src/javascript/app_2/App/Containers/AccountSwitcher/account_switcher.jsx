@@ -1,19 +1,11 @@
+import { localize }      from '_common/localize';
+import { UpgradeButton } from 'App/Components/Elements/AccountSwitcher/upgrade_button.jsx';
+import { IconLogout }    from 'Assets/Header/Drawer';
 import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { localize }      from '_common/localize';
-import { IconLogout }    from 'Assets/Header/Drawer';
 import { requestLogout } from 'Services/index';
 import { connect }       from 'Stores/connect';
-import { UpgradeButton } from 'App/Components/Elements/AccountSwitcher/upgrade_button.jsx';
-
-const makeAccountsList = ({ client }) => client.all_loginids.map(id => (
-    id !== client.loginid &&
-    !client.isDisabled(id) &&
-    client.getToken(id) ?
-        client.getAccountInfo(id) :
-        undefined
-)).filter(account => account);
 
 class AccountSwitcher extends React.Component {
     setWrapperRef = (node) => {
@@ -28,13 +20,6 @@ class AccountSwitcher extends React.Component {
         }
     };
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            accounts_list: makeAccountsList(props),
-        };
-    }
-
     componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
     }
@@ -45,16 +30,16 @@ class AccountSwitcher extends React.Component {
 
     async doSwitch(loginid) {
         this.props.toggle();
-        await this.props.client.switchAccount(loginid);
+        await this.props.switchAccount(loginid);
     }
 
     render() {
-        if (!this.props.client.is_logged_in) return false;
+        if (!this.props.is_logged_in) return false;
 
         return (
             <div className='acc-switcher-list' ref={this.setWrapperRef}>
-                {(this.state.accounts_list.length > 0) &&
-                this.state.accounts_list.map((account) => (
+                {(this.props.account_list.length > 0) &&
+                this.props.account_list.map((account) => (
                     <React.Fragment key={account.loginid}>
                         <div
                             className={classNames('acc-switcher-account', account.icon)}
@@ -80,16 +65,20 @@ class AccountSwitcher extends React.Component {
 }
 
 AccountSwitcher.propTypes = {
-    client            : PropTypes.object,
+    account_list      : PropTypes.array,
+    is_logged_in      : PropTypes.bool,
     is_upgrade_enabled: PropTypes.bool,
     is_visible        : PropTypes.bool,
     onClickUpgrade    : PropTypes.func,
     toggle            : PropTypes.func,
 };
 
+// TODO connect only computed method.
 const account_switcher = connect(
     ({ client }) => ({
-        client,
+        account_list : client.account_list,
+        is_logged_in : client.is_logged_in,
+        switchAccount: client.switchAccount,
     }),
 )(AccountSwitcher);
 

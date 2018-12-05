@@ -1,13 +1,8 @@
-import {
-    action,
-    computed,
-    observable,
-    when,
-} from 'mobx';
-import moment                         from 'moment';
-import { WS }                         from 'Services';
-import { formatStatementTransaction } from './Helpers/format_response';
-import BaseStore                      from '../../base_store';
+import { action, computed, observable } from 'mobx';
+import moment                           from 'moment';
+import { WS }                           from 'Services';
+import BaseStore                        from '../../base_store';
+import { formatStatementTransaction }   from './Helpers/format_response';
 
 const batch_size = 100; // request response limit
 
@@ -18,8 +13,6 @@ export default class StatementStore extends BaseStore {
     @observable date_from      = '';
     @observable date_to        = '';
     @observable error          = '';
-
-    accountSwitcherDisposer = null;
 
     constructor({ root_store }) {
         super({ root_store });
@@ -49,19 +42,20 @@ export default class StatementStore extends BaseStore {
     }
 
     @action.bound
-    fetchNextBatch() {
+    async fetchNextBatch() {
         if (this.has_loaded_all || this.is_loading) return;
 
         this.is_loading = true;
 
-        WS.statement(
+        const response = await WS.statement(
             batch_size,
             this.data.length,
             {
                 ...this.date_from && { date_from: moment(this.date_from).unix() },
                 ...this.date_to && { date_to: moment(this.date_to).add(1, 'd').subtract(1, 's').unix() },
             },
-        ).then(this.statementHandler);
+        );
+        this.statementHandler(response);
     }
 
     @action.bound
@@ -73,7 +67,8 @@ export default class StatementStore extends BaseStore {
 
         const formatted_transactions = response.statement.transactions
             .map(transaction => formatStatementTransaction(transaction,
-                this.root_store.client.currency));
+                this.root_store.client.currency,
+            ));
 
         this.data           = [...this.data, ...formatted_transactions];
         this.has_loaded_all = formatted_transactions.length < batch_size;
@@ -100,22 +95,21 @@ export default class StatementStore extends BaseStore {
     }
 
     @action.bound
-    onMount() {
-        this.accountSwitcherDisposer = when(
-            () => this.root_store.client.switch_broadcast,
-            () => {
-                this.clearTable();
-                this.clearDateFilter();
-                this.fetchNextBatch();
-                this.root_store.client.switchEndSignal();
-            },
-        );
-        this.fetchNextBatch();
+    async accountSwitcherListener() {
+        this.clearTable();
+        this.clearDateFilter();
+        await this.fetchNextBatch();
+    }
+
+    @action.bound
+    async onMount() {
+        this.onSwitchAccount(this.accountSwitcherListener);
+        await this.fetchNextBatch();
     }
 
     @action.bound
     onUnmount() {
-        this.accountSwitcherDisposer();
+        this.disposeSwitchAccount();
         this.clearTable();
         this.clearDateFilter();
     }

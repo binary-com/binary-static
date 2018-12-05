@@ -1,38 +1,23 @@
-import debounce                       from 'lodash.debounce';
-import {
-    action,
-    observable,
-    runInAction,
-    reaction, computed, when,
-} from 'mobx';
-import {
-    getMinPayout,
-    isCryptocurrency,
-}                                     from '_common/base/currency_base';
-import BinarySocket                   from '_common/base/socket_base';
-import { localize }                   from '_common/localize';
-import { cloneObject, isEmptyObject } from '_common/utility';
-import { WS }                         from 'Services';
-import GTM                            from 'Utils/gtm';
-import URLHelper                      from 'Utils/URL/url_helper';
-import { processPurchase }            from './Actions/purchase';
-import * as Symbol                    from './Actions/symbol';
-import {
-    allowed_query_string_variables,
-    non_proposal_query_string_variable,
-}                                     from './Constants/query_string';
-import getValidationRules             from './Constants/validation_rules';
-import { setChartBarrier }            from './Helpers/chart';
-import ContractType                   from './Helpers/contract_type';
-import { convertDurationLimit }       from './Helpers/duration';
-import { processTradeParams }         from './Helpers/process';
-import {
-    createProposalRequests,
-    getProposalInfo,
-    getProposalParametersName,
-}                                     from './Helpers/proposal';
-import { pickDefaultSymbol }          from './Helpers/symbol';
-import BaseStore                      from '../../base_store';
+import { getMinPayout, isCryptocurrency }                                     from '_common/base/currency_base';
+import BinarySocket                                                            from '_common/base/socket_base';
+import { localize }                                                            from '_common/localize';
+import { cloneObject, isEmptyObject }                                          from '_common/utility';
+import debounce                                                                from 'lodash.debounce';
+import { action, computed, observable, reaction, runInAction }                 from 'mobx';
+import { WS }                                                                  from 'Services';
+import GTM                                                                     from 'Utils/gtm';
+import URLHelper                                                               from 'Utils/URL/url_helper';
+import BaseStore                                                               from '../../base_store';
+import { processPurchase }                                                     from './Actions/purchase';
+import * as Symbol                                                             from './Actions/symbol';
+import { allowed_query_string_variables, non_proposal_query_string_variable } from './Constants/query_string';
+import getValidationRules                                                      from './Constants/validation_rules';
+import { setChartBarrier }                                                     from './Helpers/chart';
+import ContractType                                                            from './Helpers/contract_type';
+import { convertDurationLimit }                                                from './Helpers/duration';
+import { processTradeParams }                                                  from './Helpers/process';
+import { createProposalRequests, getProposalInfo, getProposalParametersName } from './Helpers/proposal';
+import { pickDefaultSymbol }                                                   from './Helpers/symbol';
 
 export default class TradeStore extends BaseStore {
     // Control values
@@ -86,9 +71,6 @@ export default class TradeStore extends BaseStore {
 
     // Chart
     chart_id = 1;
-
-    // account switcher
-    accountSwitcherDisposer = null;
 
     debouncedProposal = debounce(this.requestProposal, 500);
     @action.bound
@@ -170,6 +152,7 @@ export default class TradeStore extends BaseStore {
         }
 
         if (!this.symbol) {
+            // TODO remove duplicates
             if (is_invalid_symbol) {
                 URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
                 query_string_values = this.updateQueryString();
@@ -242,6 +225,7 @@ export default class TradeStore extends BaseStore {
     @action.bound
     updateStore(new_state) {
         Object.keys(cloneObject(new_state)).forEach((key) => {
+            // TODO prevent setting currency when logged in, but not when user is guest.
             if (key === 'root_store' || ['validation_rules', 'validation_errors', 'currency'].indexOf(key) > -1) return;
             if (JSON.stringify(this[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
@@ -419,16 +403,15 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
+    async accountSwitcherListener() {
+        await this.refresh();
+        await this.prepareTradeStore();
+        this.debouncedProposal();
+    }
+
+    @action.bound
     async onMount() {
-        this.accountSwitcherDisposer = when(
-            () => this.root_store.client.switch_broadcast,
-            async () => {
-                await this.refresh();
-                await this.prepareTradeStore();
-                this.debouncedProposal();
-                this.root_store.client.switchEndSignal();
-            },
-        );
+        this.onSwitchAccount(this.accountSwitcherListener);
         await this.prepareTradeStore();
         this.debouncedProposal();
         runInAction(() => {
@@ -439,7 +422,7 @@ export default class TradeStore extends BaseStore {
 
     @action.bound
     onUnmount() {
-        this.accountSwitcherDisposer();
+        this.disposeSwitchAccount();
         WS.forgetAll('proposal');
         this.is_trade_component_mounted = false;
     }
