@@ -111,7 +111,7 @@ const Signup = () => (
             <p className='mobile-text-small'>***{it.L('Volatility Indices commission rates in account currency per round trade. Example: A round trade of 1 lot of Volatility 100 Index would pay USD 0.75 for a USD denominated account.')}</p>
             <div className='gr-padding-20 center-text'>
                 <a className='button' href={it.affiliate_signup_url} target='_blank' rel='noopener noreferrer'>
-                    <span>{it.L('Apply Now')}</span>
+                    <span>{it.L('Apply now')}</span>
                 </a>
             </div>
         </div>

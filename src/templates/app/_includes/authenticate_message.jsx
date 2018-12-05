@@ -10,7 +10,7 @@ const FileSelector = ({
     accepted_documents,
     type,
 }) => (
-    <div className='gr-row gr-12' data-show={data_show}>
+    <div className='gr-12 gr-no-gutter' data-show={data_show}>
         <fieldset>
             <div className='gr-padding-30 gr-gutter-left gr-gutter-right'>
                 <h2>{heading}</h2>
@@ -68,11 +68,11 @@ const FileSelector = ({
                                                     <div className='gr-row form-row center-text-m'>
                                                         <div className='gr-12'>
                                                             <input id={`front_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} data-name={document.name} data-page-type='front' />
-                                                            <label htmlFor={`front_file${j}`} className='button'>{it.L('Front Side')} <span className='add' /></label>
+                                                            <label htmlFor={`front_file${j}`} className='button'>{it.L('Front side')} <span className='add' /></label>
                                                         </div>
                                                         <div className='gr-12'>
                                                             <input id={`back_file${j}`} className='file-picker' type='file' accept='.jpg, .jpeg, .gif, .png, .pdf' data-type={document.value} data-name={document.name} data-page-type='back' />
-                                                            <label htmlFor={`back_file${j}`} className='button'>{it.L('Reverse Side')} <span className='add' /></label>
+                                                            <label htmlFor={`back_file${j}`} className='button'>{it.L('Reverse side')} <span className='add' /></label>
                                                         </div>
                                                     </div>
                                                 </React.Fragment>
@@ -112,7 +112,7 @@ const AuthenticateMessage = () => (
         <p>{it.L('Learn more about submitting essential documents with our handy infographic:')}</p>
 
         <p className='learn_more'>
-            <a className='button' href='#' target='_blank'><span>{it.L('View Guide')}</span></a>
+            <a className='button' href='#' target='_blank'><span>{it.L('View guide')}</span></a>
         </p>
 
         <FileSelector
