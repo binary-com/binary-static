@@ -242,11 +242,11 @@ const PersonalDetails = (() => {
                 }
                 getDetailsResponse(get_settings);
                 if (additionalCheck(get_settings)) {
-                    showFormMessage(localize('Your settings have been updated successfully.'), !is_error);
+                    showFormMessage(localize('Your settings have been updated successfully.'), true);
                 }
             });
         } else { // is_error
-            showFormMessage((getPropertyValue(response, ['error', 'message']) || localize('Sorry, an error occurred while processing your account.')), is_error);
+            showFormMessage((getPropertyValue(response, ['error', 'message']) || localize('Sorry, an error occurred while processing your account.')), false);
         }
     };
 
