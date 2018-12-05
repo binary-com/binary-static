@@ -69,8 +69,7 @@ const PersonalDetails = (() => {
 
         if (get_settings.citizen) {
             get_settings.citizen =
-                (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text ||
-                get_settings.citizen;
+                (residence_list.find(obj => obj.value === get_settings.citizen) || {}).text || get_settings.citizen;
         }
 
         displayGetSettingsData(get_settings);
@@ -128,6 +127,10 @@ const PersonalDetails = (() => {
                         $(should_show_label ? `#${key}` : el_key)
                             .val(get_settings[key] ? get_settings[key].split(',') : '')
                             .trigger('change');
+                        if (should_show_label) {
+                            CommonFunctions.getElementById(`row_${key}`).setVisibility(0);
+                        }
+                            
                     }
                 }
             }
