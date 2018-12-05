@@ -428,7 +428,7 @@ module.exports = [
     'Verification code is wrong. Please use the link sent to your email.',
     'Verify Reset Password',
     'View',
-    'View Chart',
+    'View chart',
     'Virtual',
     'Volatility Indices',
     'Waiting for contract settlement.',
