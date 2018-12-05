@@ -22,7 +22,7 @@ const MetaTraderConfig = (() => {
             };
             const advanced_config = {
                 account_type: 'advanced',
-                leverage    : 300,
+                leverage    : 100,
                 short_title : localize('Advanced'),
             };
             const volatility_config = {
@@ -132,7 +132,8 @@ const MetaTraderConfig = (() => {
                     if (accounts_info[acc_type].account_type === 'financial') { // financial accounts have their own checks
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             let is_ok = true;
-                            if (State.getResponse('landing_company.mt_financial_company.standard.shortcode') === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
+                            const is_advanced = /_advanced$/.test(acc_type);
+                            if (State.getResponse(`landing_company.mt_financial_company.${is_advanced ? 'advanced' : 'standard'}.shortcode`) === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
                                 $message.find('.maltainvest').setVisibility(1);
                                 is_ok = false;
                             } else {

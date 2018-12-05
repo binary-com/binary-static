@@ -47,11 +47,14 @@ const MetaTrader = (() => {
         setMTCompanies();
         let has_mt_company = false;
         Object.keys(mt_companies).forEach((company) => {
-            mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.standard.shortcode`);
-            if (mt_company[company]) {
-                has_mt_company = true;
-                addAccount(company);
-            }
+            Object.keys(mt_companies[company]).forEach((acc_type) => {
+                const is_advanced = /_advanced$/.test(acc_type);
+                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${is_advanced ? 'advanced' : 'standard'}.shortcode`);
+                if (mt_company[company]) {
+                    has_mt_company = true;
+                    addAccount(company);
+                }
+            });
         });
         return has_mt_company;
     };
