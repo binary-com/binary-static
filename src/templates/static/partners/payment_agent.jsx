@@ -24,7 +24,7 @@ const PaymentAgent = () => (
                             { href: '#next-steps',                  text: it.L('How does it work?') },
                         ]}
                     />
-                    <div className='sidebar-button'><a href={`mailto:${it.affiliate_email}`}>{it.L('Contact Us')}</a></div>
+                    <div className='sidebar-button'><a href={`mailto:${it.affiliate_email}`}>{it.L('Contact us')}</a></div>
                 </div>
             </div>
             <div className='gr-9 gr-12-m gr-parent'>
