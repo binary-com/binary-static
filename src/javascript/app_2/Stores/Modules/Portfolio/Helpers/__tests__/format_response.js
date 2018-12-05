@@ -13,7 +13,7 @@ describe('formatPortfolioPosition', () => {
         expiry_time   : 123456789,
     };
 
-    it('should return an object with values in object passed as argumebt', () => {
+    it('should return an object with values in object passed as argument', () => {
         expect(formatPortfolioPosition(portfolio_pos)).to.eql({
             reference  : +5678,
             type       : 'ASIANU',
