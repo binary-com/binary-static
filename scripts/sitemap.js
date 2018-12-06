@@ -27,8 +27,8 @@ const config = [
         section    : 'app',
     },
     {
-        url_prefix : 'https://www.binarynex.com/',
-        filename   : 'sitemap.xml',
+        url_prefix : 'https://www.binary.com/',
+        filename   : 'sitemap.app.xml',
         lang_filter: '.*',
         section    : 'app_2',
     },
