@@ -137,12 +137,6 @@ export default class TradeStore extends BaseStore {
         }
 
         if (!this.symbol) {
-            // TODO remove duplicates
-            if (is_invalid_symbol) {
-                URLHelper.setQueryParam({ 'symbol': pickDefaultSymbol(active_symbols.active_symbols) });
-                query_string_values = this.updateQueryString();
-            }
-
             await this.processNewValuesAsync({
                 symbol: pickDefaultSymbol(active_symbols.active_symbols),
                 ...query_string_values,
@@ -212,7 +206,6 @@ export default class TradeStore extends BaseStore {
     @action.bound
     updateStore(new_state) {
         Object.keys(cloneObject(new_state)).forEach((key) => {
-            // TODO prevent setting currency when logged in, but not when user is guest.
             if (key === 'root_store' || ['validation_rules', 'validation_errors', 'currency'].indexOf(key) > -1) return;
             if (JSON.stringify(this[key]) === JSON.stringify(new_state[key])) {
                 delete new_state[key];
