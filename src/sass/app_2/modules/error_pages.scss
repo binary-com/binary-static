@@ -5,25 +5,42 @@
         margin-top: 4rem;
     }
     &-box {
-        padding: 4rem 2rem;
+        padding: 5rem;
         text-align: center;
         background: $COLOR_LIGHT_GRAY;
         border-radius: $BORDER_RADIUS;
+        border: 1px solid $COLOR_GRAY;
 
         svg {
             margin: 0 auto;
         }
     }
     &-header {
-        margin-bottom: 1rem;
+        color: $COLOR_BLUE;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
     }
-    &-message {
+    &-message p {
+        color: $COLOR_BLACK;
+        opacity: 0.75;
+        font-size: 1rem;
+        margin-top: 0.5rem;
         margin-bottom: 2rem;
     }
 }
 
 .theme-wrapper.dark {
-    .page-error-box {
-        background-color: $COLOR_BRANDBLUE_85;
+    .page-error {
+        &-box {
+            background-color: $COLOR_BRANDBLUE_95;
+            border-color: $COLOR_BRANDBLUE_95;
+        }
+        &-header {
+            color: $COLOR_WHITE;
+        }
+        &-message p {
+            color: $COLOR_DARK_WHITE;
+            opacity: 1;
+        }
     }
 }

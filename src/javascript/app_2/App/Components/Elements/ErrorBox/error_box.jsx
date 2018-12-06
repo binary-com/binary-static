@@ -4,9 +4,9 @@ import React     from 'react';
 const ErrorBox = ({ header, icon, message, children }) => (
     <div className='page-error-box'>
         {icon}
-        <h1 className='page-error-header'>
+        <h3 className='page-error-header'>
             {header}
-        </h1>
+        </h3>
         <div className='page-error-message'>
             <p>{message}</p>
         </div>
