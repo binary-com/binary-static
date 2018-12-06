@@ -142,7 +142,7 @@ const BinaryOptions = () => {
                         </ul>
                         <strong>{it.L('Competitive and transparent pricing')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('Sharp, benchmarked prices')}             text={it.L('Benefit from the same rates of return as interbank traders. Our prices are benchmarked daily against the interbank options markets')} />
+                            <ListStrong header={it.L('Sharp, benchmarked prices')}             text={it.L('Receive prices that are benchmarked against interbank rates')} />
                             <ListStrong header={it.L('Transparent risk and potential reward')} text={it.L('Know how much you will win or lose before you purchase the contract')} />
                             <ListStrong header={it.L('Protect your profits')}                  text={it.L('Sell your long-term contracts before expiry to protect any profits you may have made or to minimise your losses')} />
                             <ListStrong header={it.L('Two-way pricing')}                       text={it.L('Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates')} />
