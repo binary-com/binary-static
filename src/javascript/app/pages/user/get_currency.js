@@ -43,9 +43,13 @@ const GetCurrency = (() => {
         const is_crypto       = Currency.isCryptocurrency(client_currency);
         const currency_values = getCurrencyValues();
 
+        const allowed_currencies =
+              Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
+
         const available_crypto =
               currency_values.cryptocurrencies.filter(c =>
-                  currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0);
+                  currency_values.other_currencies.concat(is_crypto ? client_currency : []).indexOf(c) < 0 &&
+                  allowed_currencies.indexOf(c) > -1);
         const can_open_crypto  = available_crypto.length;
 
         let currencies_to_show = [];
@@ -56,7 +60,7 @@ const GetCurrency = (() => {
             // else show all
             currencies_to_show =
                 currency_values.has_fiat || (!is_crypto && client_currency) ?
-                    currency_values.cryptocurrencies : Client.getLandingCompanyValue({ real: 1 }, landing_company, 'legal_allowed_currencies');
+                    available_crypto : allowed_currencies;
             // remove client's currency and sub account currencies from list of currencies to show
             currencies_to_show = currencies_to_show.filter(c =>
                 currency_values.other_currencies.concat(client_currency).indexOf(c) < 0);
