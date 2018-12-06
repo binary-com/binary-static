@@ -49,7 +49,7 @@ const Layout = () => {
                         <Header />
                         <div id='content-holder'>
                             <MobileMenu />
-                            { it.current_route === 'home' ? <Tracker /> : null }
+                            <Tracker />
                             <Gtm />
                             <a href='javascript:;' id='scrollup' />
                             <InnerContent />
