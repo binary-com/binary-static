@@ -8,10 +8,10 @@ const NewAccount = () => (
         <div className='center-text gr-padding-20'>
             <h1 className='dark gr-padding-20 gr-child'>{it.L('Start Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
             <div>
-                <div className='gr-4 gr-5-t gr-8-p gr-10-m gr-no-gutter gr-centered gr-padding-30 gr-parent'>
+                <div className='gr-4 gr-5-t gr-8-p gr-10-m gr-no-gutter gr-centered'>
                     <form id='signup_form'>
-                        <div className='gr-padding-20'>
-                            <input autoFocus='true' autoComplete='off' name='email' id='email' maxLength='50' placeholder={it.L('Email')}  data-lpignore='true' />
+                        <div className='gr-padding-10'>
+                            <input autoFocus='true' autoComplete='off' name='email' id='email' maxLength='50' placeholder={it.L('Enter your email')}  data-lpignore='true' />
                         </div>
                         <div>
                             <button type='submit'>{it.L('Create free account')}</button>
@@ -22,13 +22,13 @@ const NewAccount = () => (
                         <div className='no-circle'>{it.L('or')}</div>
                         <div className='align-self-center border-bottom-light-gray' />
                     </div>
-                    <p>{it.L('Sign up using social account')}</p>
+                    <p>{it.L('Create free account with:')}</p>
                     <div className='gr-row gr-row-align-center'>
-                        <div className='gr-6 gr-4-m align-end'>
-                            <ButtonSocial provider='google' />
+                        <div className='gr-12 gr-no-gutter'>
+                            <ButtonSocial provider='google' full_width />
                         </div>
-                        <div className='gr-6 gr-4-m align-start'>
-                            <ButtonSocial provider='facebook' />
+                        <div className='gr-12 gr-no-gutter'>
+                            <ButtonSocial provider='facebook' full_width />
                         </div>
                     </div>
                 </div>

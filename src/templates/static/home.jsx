@@ -83,7 +83,7 @@ const AccountsTabContent = ({
 }) => (
     <React.Fragment>
         <div className='gr-hide-m'>
-            <p className='center-text gr-10 gr-no-gutter gr-centered'>{header}</p>xe
+            <p className='center-text gr-10 gr-no-gutter gr-centered'>{header}</p>
         </div>
         <div className='gr-row gr-padding-30'>
             <Arrows parent='account_tabs' direction='left' />
@@ -166,26 +166,30 @@ const Home = () => {
                         <FormVerifyEmail
                             email_padding_mobile={12}
                             button_padding_mobile={12}
-                            text={it.L('Create Free Account')}
+                            text={it.L('Create free account')}
                             no_gutter
                         />
-
-                        <div id='social-signup' className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
-                            <div className='section-divider gr-padding-20 gr-child'>
-                                <div className='align-self-center border-bottom-light-gray' />
-                                <div className='no-circle'>{it.L('or')}</div>
-                                <div className='align-self-center border-bottom-light-gray' />
+                        <div className='gr-row'>
+                            <div className='gr-8 gr-10-p gr-12-m gr-centered gr-no-gutter'>
+                                <div className='section-divider gr-padding-20 gr-child'>
+                                    <div className='align-self-center border-bottom-light-gray' />
+                                    <div className='no-circle'>{it.L('or')}</div>
+                                    <div className='align-self-center border-bottom-light-gray' />
+                                </div>
                             </div>
-
-                            <div className='gr-row gr-row-align-center'>
-                                <div className='gr-12 center-text'>
+                        </div>
+                        <div id='social-signup' className='gr-row gr-row-align-center'>
+                            <div className='gr-8 gr-10-p gr-12-m gr-no-gutter'>
+                                <div className='gr-12 center-text gr-no-gutter'>
                                     <p>{it.L('Create free account with:')}</p>
                                 </div>
-                                <div className='gr-3 gr-5-p gr-5-m align-end'>
-                                    <ButtonSocial provider='google' />
-                                </div>
-                                <div className='gr-3 gr-5-p gr-5-m'>
-                                    <ButtonSocial provider='facebook' />
+                                <div className='gr-row gr-row-align-center'>
+                                    <div className='gr-gutter-right gr-12-m align-end gr-no-gutter-m'>
+                                        <ButtonSocial provider='google' full_width_m />
+                                    </div>
+                                    <div className='gr-gutter-left gr-12-m align-start gr-no-gutter-m'>
+                                        <ButtonSocial provider='facebook' full_width_m />
+                                    </div>
                                 </div>
                             </div>
                         </div>

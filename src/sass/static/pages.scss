@@ -1289,17 +1289,24 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 #signup_form {
-    input {
-        width: 100%;
-        height: 3em;
-        box-sizing: border-box;
-        text-align: center;
-        font-size: $FONT_SIZE_S;
-    }
-    button {
+    input, button {
         width: 100%;
         height: 3rem;
-        margin: 5px 0;
+        box-sizing: border-box;
+    }
+    input {
+        text-align: center;
+        font-size: $FONT_SIZE_S;
+        background-color: $COLOR_LIGHT_GRAY;
+        color: #999; /* stylelint-disable-line color-no-hex */
+        border-color: $COLOR_GRAY;
+    }
+    button {
+        background-color: $COLOR_ORANGE;
+
+        &:hover, &:focus {
+            background-color: $COLOR_DARK_ORANGE;
+        }
     }
     #google-signup {
         font-size: $FONT_SIZE_S;

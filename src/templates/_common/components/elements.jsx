@@ -245,8 +245,8 @@ export const Button = ({ children, className, href, id, text }) => (
     </a>
 );
 
-export const ButtonSocial = ({ provider }) => (
-    <a className='button-social' id={`button_${provider}`} href='javascript:;' rel='nofollow'>
+export const ButtonSocial = ({ provider, full_width, full_width_m }) => (
+    <a className={`button-social ${full_width && 'full-width'} ${full_width_m && 'full-width-m'}`} id={`button_${provider}`} href='javascript:;' rel='nofollow'>
         <span className='name'>{provider}</span>
     </a>
 );
