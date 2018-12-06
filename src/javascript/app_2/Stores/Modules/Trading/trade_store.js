@@ -4,6 +4,7 @@ import {
     observable,
     runInAction,
     reaction,
+    trace,
 }                                     from 'mobx';
 import Client                         from '_common/base/client_base';
 import {
@@ -229,6 +230,10 @@ export default class TradeStore extends BaseStore {
                 if (key === 'symbol') {
                     this.is_purchase_enabled = false;
                     this.is_trade_enabled    = false;
+                }
+
+                if (new_state.start_date && typeof new_state.start_date === 'string') {
+                    new_state.start_date = parseInt(new_state.start_date);
                 }
 
                 // Add changes to queryString of the url
