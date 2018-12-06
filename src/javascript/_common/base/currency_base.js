@@ -86,7 +86,7 @@ const getTransferFee = (currency_from, currency_to) => {
     return `${typeof transfer_fee === 'undefined' ? '1' : transfer_fee}%`;
 };
 
-const getMinimumTransferFee = (currency) => isCryptocurrency(currency) ? '0.00000001' : '0.01';
+const getMinimumTransferFee = (currency) => (1 / Math.pow(10, getDecimalPlaces(currency)));
 
 // @param {String} limit = max|min
 const getPaWithdrawalLimit = (currency, limit) => {
