@@ -16,6 +16,7 @@ const Accounts = () => (
                 <form id='new_accounts'>
                     <Table
                         className='responsive'
+                        id='new_accounts_table'
                         scroll
                         data={{
                             thead: [
@@ -45,6 +46,7 @@ const Accounts = () => (
             <Table
                 scroll
                 id='existing_accounts'
+                className='responsive'
                 data={{
                     thead: [
                         [
