@@ -16,6 +16,12 @@ const BinaryOptionsForMT5 = () => (
                             { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options on MT5') },
                         ]}
                     />
+
+                    <div className='center-text gr-padding-10 client_logged_out invisible'>
+                        <a className='button' href={it.url_for('new-account')}>
+                            <span>{it.L('Open a free account')}</span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div className='gr-9 gr-12-m'>
