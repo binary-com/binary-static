@@ -449,6 +449,7 @@ const MetaTraderUI = (() => {
         Object.keys(accounts_info)
             .filter(acc_type => !accounts_info[acc_type].is_demo && accounts_info[acc_type].mt5_account_type !== 'mamm') // toEnableMAM: remove second check
             .forEach((acc_type) => {
+                // toEnableVanuatuAdvanced: remove vanuatu_advanced from regex below
                 if (/labuan_standard|vanuatu_advanced/.test(acc_type)) {
                     return;
                 }

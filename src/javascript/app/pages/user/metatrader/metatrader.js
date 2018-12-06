@@ -39,6 +39,7 @@ const MetaTrader = (() => {
     const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
     const setMTCompanies = () => {
+        // Check if shortcode from mt_financial_company standard account is maltainvest
         const is_financial = State.getResponse('landing_company.mt_financial_company.standard.shortcode') === 'maltainvest';
         mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
@@ -48,8 +49,7 @@ const MetaTrader = (() => {
         let has_mt_company = false;
         Object.keys(mt_companies).forEach((company) => {
             Object.keys(mt_companies[company]).forEach((acc_type) => {
-                const is_advanced = /_advanced$/.test(acc_type);
-                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${is_advanced ? 'advanced' : 'standard'}.shortcode`);
+                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.checkIfAdvanced(acc_type)}.shortcode`);
                 if (mt_company[company]) {
                     has_mt_company = true;
                     addAccount(company);

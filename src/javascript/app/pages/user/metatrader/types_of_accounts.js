@@ -9,7 +9,7 @@ const TypesOfAccounts = (() => {
 
         if (Client.isLoggedIn()) {
             BinarySocket.wait('landing_company').then(() => {
-                const should_show_maltainvest_content = State.getResponse('landing_company.financial_company.standard.shortcode') === 'maltainvest'; // for VRTC, MLT, or MF
+                const should_show_maltainvest_content = State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest'; // for VRTC, MLT, or MF
                 $('.hide-maltainvest').setVisibility(!should_show_maltainvest_content);
                 $('.show-maltainvest').setVisibility(should_show_maltainvest_content);
                 showContent();
