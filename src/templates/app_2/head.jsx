@@ -9,10 +9,10 @@ import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 const Head = () => (
     <head>
         {
-            // Prompt a message in the browser if users disabled
+            // Prompt a message in the browser if user's disabled JS
         }
         <noscript>{ it.L('Your browser does not support JavaScript!') }</noscript>
-        
+
         <GoogleOptimizer />
         <GTMScript />
         <AntiClickjack />
