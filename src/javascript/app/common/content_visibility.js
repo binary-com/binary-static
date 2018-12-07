@@ -32,7 +32,7 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
             data-show='-malta, -maltainvest'
 
         Show for clients with 'vanuatu' mt5 financial company
-            data-show='mt5fin:vanuatu
+            data-show='mt5fin:vanuatu'
 
         Show for clients either with  'vanuatu' or 'labuan' mt5 financial company
             data-show='mt5fin:vanuatu, labuan'
