@@ -73,6 +73,7 @@ const FinancialAccOpening = (() => {
         });
 
         AccountOpening.showHidePulser(0);
+        AccountOpening.registerPepToggle();
     };
 
     const getValidations = () => {
