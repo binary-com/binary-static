@@ -5,7 +5,6 @@ import MobileMenu from './mobile_menu.jsx';
 import Footer from './footer.jsx';
 import Elevio from '../../_common/includes/elevio.jsx';
 import Gtm from '../../_common/includes/gtm.jsx';
-import Tracker from '../../_common/includes/tracker.jsx';
 import InterviewPopup from '../../_common/components/interview_popup.jsx';
 import Title from '../../_common/components/title.jsx';
 
