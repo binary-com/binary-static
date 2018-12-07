@@ -86,7 +86,10 @@ const getTransferFee = (currency_from, currency_to) => {
     return `${typeof transfer_fee === 'undefined' ? '1' : transfer_fee}%`;
 };
 
-const getMinimumTransferFee = (currency) => (1 / Math.pow(10, getDecimalPlaces(currency)));
+const getMinimumTransferFee = (currency) => {
+    const decimals = getDecimalPlaces(currency);
+    return (1 / Math.pow(10, decimals)).toFixed(decimals); // we need toFixed() so that it doesn't display in scientific notation, e.g. 1e-8 for currencies with 8 decimal places
+};
 
 // @param {String} limit = max|min
 const getPaWithdrawalLimit = (currency, limit) => {
