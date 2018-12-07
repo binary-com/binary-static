@@ -5,7 +5,6 @@ import URLHandler from './includes/url_handler.jsx';
 import Title from '../_common/components/title.jsx';
 import Favicons from '../_common/includes/favicons.jsx';
 import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
-import Tracker from '../_common/includes/tracker.jsx';
 
 const Head = () => (
     <head>
@@ -13,7 +12,6 @@ const Head = () => (
             // Prompt a message in the browser if users disabled
         }
         <noscript>{ it.L('Your browser does not support JavaScript!') }</noscript>
-        <Tracker />
         <GoogleOptimizer />
         <GTMScript />
         <AntiClickjack />

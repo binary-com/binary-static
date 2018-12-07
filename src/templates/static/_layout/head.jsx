@@ -2,11 +2,11 @@ import React from 'react';
 import Title from '../../_common/components/title.jsx';
 import Favicons from '../../_common/includes/favicons.jsx';
 import AntiClickjack from '../../_common/includes/anti_clickjack.jsx';
-import Tracker from '../../_common/includes/tracker.jsx';
+import GoogleOptimizer from '../../_common/includes/google_optimizer.jsx';
 
 const Head = () => (
     <head>
-        <Tracker />
+        <GoogleOptimizer />
         <AntiClickjack />
         <meta httpEquiv='Content-Type' content='text/html;charset=UTF-8' />
         <meta httpEquiv='Content-Language' content={it.language} />
