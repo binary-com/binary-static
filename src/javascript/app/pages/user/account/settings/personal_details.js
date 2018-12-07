@@ -240,8 +240,8 @@ const PersonalDetails = (() => {
                     $('#msg_main').setVisibility(1);
                     return;
                 }
-                getDetailsResponse(get_settings);
                 if (additionalCheck(get_settings)) {
+                    getDetailsResponse(get_settings);
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
                 }
             });
