@@ -338,6 +338,13 @@
         background-size: 16px;
         padding-left: 24px;
     }
+
+    .button {
+        span {
+            padding: 10px 5px;
+            line-height: 18px;
+        }
+    }
 }
 
 @media (max-width: 1199px) {
