@@ -12,9 +12,13 @@ const initGlobals = (grunt) => {
         global.release_target = Helpers.getReleaseTarget(grunt);
     }
 
+    // ----- section -----
+    global.section = Helpers.getSection(grunt);
+
     // ----- branch info -----
     if (global.release_target) {
         global.release_info = global.release_config[global.release_target];
+
         if (!global.release_info.target_repo) {
             global.release_info.target_repo = global.release_info.origin;
         }
@@ -23,16 +27,15 @@ const initGlobals = (grunt) => {
         global.branch_prefix = '';
         global.branch        = global.release_info.target_folder;
 
-        if (global.release_target === 'staging') {
+        if (global.release_target === 'staging' && global.section === 'all') {
             grunt.option('cleanup', true); // always cleanup when releasing to staging
+        } else if (global.release_target !== 'production' && grunt.option('cleanup')) {
+            grunt.fail.fatal('can\'t release only one section to staging with --cleanup');
         }
     } else {
         global.branch_prefix = Constants.config.branch_prefix;
         global.branch        = grunt.option('branch');
     }
-
-    // ----- section -----
-    global.section = Helpers.getSection(grunt);
 
     // ----- paths -----
     global.dist       = Helpers.getDistPath();
