@@ -1,11 +1,4 @@
 .open-positions {
-    .eq:not(:first-child) {
-        border: 1px dashed $COLOR_GRAY;
-        @include BIDIR_VALUE(border-width, 0 0 0 1px, 0 1px 0 0);
-    }
-    .eq:nth-child(3n+1) {
-        border-width: 0;
-    }
     .one-line {
         margin-bottom: 35px;
     }
@@ -31,21 +24,12 @@
 @media screen and (max-width: 800px) {
     .open-positions {
         .eq {
-            width: 45%;
-        }
-        .eq:nth-child(3n+1) {
-            border-width: 0 0 0 1px;
-        }
-        .eq:nth-child(2n+1) {
-            border-width: 0;
+            width: 100%;
         }
     }
 }
 @media screen and (max-width: 460px) {
     .open-positions {
-        .eq {
-            width: 100%;
-        }
         h1 {
             text-align: center;
         }
