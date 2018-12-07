@@ -227,6 +227,7 @@ const Metatrader = () => (
                                 it.L('No commission'),
                             ]}
                         />
+                        {/*
                         <AccountDesc
                             account_type={['vanuatu_advanced']}
                             title={it.L('Advanced Account')}
@@ -238,6 +239,7 @@ const Metatrader = () => (
                                 it.L('No commission'),
                             ]}
                         />
+                        */}
                         <AccountDesc
                             account_type={['costarica', 'malta']}
                             title={it.L('Volatility Indices Account')}

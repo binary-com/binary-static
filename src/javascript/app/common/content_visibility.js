@@ -32,7 +32,8 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
             data-show='-malta, -maltainvest'
 
         Show for clients with 'vanuatu' mt5 financial company
-            data-show='mt5fin:vanuatu'
+            data-show='mt5fin:vanuatu
+
         Show for clients either with  'vanuatu' or 'labuan' mt5 financial company
             data-show='mt5fin:vanuatu, labuan'
 
@@ -140,7 +141,7 @@ const ContentVisibility = (() => {
         else if (is_exclude !== rule_set_has_current) show_element = true;
         if (rule_set_has_eu_country && is_eu_country) show_element = !is_exclude;
 
-        // Check if list of mt5fin_company_shortcodes is array type and filter with defined rules
+        // Check if list of mt5fin_company_shortcodes is array type and filter with defined mt5fin rules
         if (Array.isArray(mt5fin_company_shortcodes)) {
             if (mt5fin_company_shortcodes.some(el => mt5fin_rules.includes(el))) show_element = !is_exclude;
         }
