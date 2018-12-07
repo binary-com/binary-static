@@ -39,8 +39,12 @@ const MetaTrader = (() => {
     const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
     const setMTCompanies = () => {
-        // Check if shortcode from mt_financial_company standard account is maltainvest
-        const is_financial = State.getResponse('landing_company.mt_financial_company.standard.shortcode') === 'maltainvest';
+        // Check if any of the account type shortcodes from mt_financial_company account is maltainvest
+        const mt_financial_company = State.getResponse('landing_company.mt_financial_company');
+
+        const is_financial = Object.keys(mt_financial_company)
+            .some((key) => mt_financial_company[key].shortcode === 'maltainvest');
+
         mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
 
