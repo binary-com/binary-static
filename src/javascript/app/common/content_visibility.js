@@ -140,7 +140,10 @@ const ContentVisibility = (() => {
         else if (is_exclude !== rule_set_has_current) show_element = true;
         if (rule_set_has_eu_country && is_eu_country) show_element = !is_exclude;
 
-        if (mt5fin_company_shortcodes.some(el => mt5fin_rules.includes(el))) show_element = !is_exclude;
+        // Check if list of mt5fin_company_shortcodes is array type and filter with defined rules
+        if (Array.isArray(mt5fin_company_shortcodes)) {
+            if (mt5fin_company_shortcodes.some(el => mt5fin_rules.includes(el))) show_element = !is_exclude;
+        }
 
         return show_element;
     };
