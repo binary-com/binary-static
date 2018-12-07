@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-// Optimize loading with page hiding snippet by temporarily hide the page while the optimize container loads
+// Optimize loading with the following page-hiding snippet by temporarily hiding the page while the optimizer container loads
 const GoogleOptimizer = () => (
     <React.Fragment>
         <style dangerouslySetInnerHTML={{__html: `.async-hide { opacity: 0 }`}}></style>
