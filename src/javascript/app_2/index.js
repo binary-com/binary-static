@@ -7,11 +7,12 @@ import registerServiceWorker from './Utils/pwa';
 
 window.check_new_release = checkNewRelease; // used by GTM to update page after a new release
 
-document.addEventListener('DOMContentLoaded', initApp);
-window.addEventListener('pageshow', (e) => { // Safari doesn't fire load event when using back button
-    if (e.persisted) {
-        initApp();
-    }
-});
-
 registerServiceWorker();
+initApp();
+
+// document.addEventListener('DOMContentLoaded', initApp);
+// window.addEventListener('pageshow', (e) => { // Safari doesn't fire load event when using back button
+//     if (e.persisted) {
+//         initApp();
+//     }
+// });

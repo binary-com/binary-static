@@ -26,10 +26,11 @@ const getApp2Aliases = () => {
 const makeCacheGroup = (name, priority, ...matches) => ({
     [name]: {
         name,
+        filename: '[name].min.js',
         priority,
-        chunks : 'initial',
-        enforce: true,
-        test   : new RegExp(`^${matches.map(m => `(?=.*${m})`).join('')}`),
+        chunks  : 'initial',
+        enforce : true,
+        test    : new RegExp(`^${matches.map(m => `(?=.*${m})`).join('')}`),
     },
 });
 
