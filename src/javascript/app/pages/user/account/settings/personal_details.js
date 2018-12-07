@@ -111,7 +111,7 @@ const PersonalDetails = (() => {
             el_id               = `${should_show_label ? 'lbl_' : ''}${key}`;
             el_key              = CommonFunctions.getElementById(el_id);
             if (el_key) {
-                editable_fields[key] = get_settings[key];
+                editable_fields[key] = (get_settings[key] !== null ? get_settings[key] : '');
                 if (populate) {
                     should_update_value = /select|text/i.test(el_key.type);
                     if (has_label) {
@@ -240,12 +240,14 @@ const PersonalDetails = (() => {
                     $('#msg_main').setVisibility(1);
                     return;
                 }
-                getDetailsResponse(get_settings);
+                if (additionalCheck(get_settings)) {
+                    getDetailsResponse(get_settings);
+                    showFormMessage(localize('Your settings have been updated successfully.'), true);
+                }
             });
+        } else { // is_error
+            showFormMessage((getPropertyValue(response, ['error', 'message']) || localize('Sorry, an error occurred while processing your account.')), false);
         }
-        showFormMessage(is_error ?
-            (getPropertyValue(response, ['error', 'message']) || localize('Sorry, an error occurred while processing your account.')) :
-            localize('Your settings have been updated successfully.'), !is_error);
     };
 
     const showFormMessage = (localized_text, is_success) => {
