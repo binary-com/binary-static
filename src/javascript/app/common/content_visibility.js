@@ -33,6 +33,8 @@ const updateTabDisplay = require('../../_common/tab_selector').updateTabDisplay;
 
         Show for clients with 'vanuatu' mt5 financial company
             data-show='mt5fin:vanuatu'
+        Show for clients either with  'vanuatu' or 'labuan' mt5 financial company
+            data-show='mt5fin:vanuatu, labuan'
 
     Prohibited values:
         Cannot mix includes and excludes:
@@ -49,11 +51,17 @@ const ContentVisibility = (() => {
     const init = () => {
         BinarySocket.wait('authorize', 'landing_company', 'website_status').then(() => {
             const current_landing_company_shortcode = State.getResponse('authorize.landing_company_name') || 'default';
+            const mt_financial_company              = State.getResponse('landing_company.mt_financial_company');
+
+            // Check mt_financial_company by account type, since we are offering different landing companies for standard and advanced
+            const mt5fin_shortcodes = Object.keys(mt_financial_company)
+                .map((key) => mt_financial_company[key].shortcode);
+
             controlVisibility(
                 current_landing_company_shortcode,
                 MetaTrader.isEligible(),
-                // Get shortcode from mt_financial_company standard account type
-                State.getResponse('landing_company.mt_financial_company.standard.shortcode')
+                // We then pass the list of found mt5fin company shortcodes as an array
+                mt5fin_shortcodes
             );
         });
     };
@@ -112,7 +120,7 @@ const ContentVisibility = (() => {
         attr_str,
         current_landing_company_shortcode,
         client_has_mt_company,
-        mt5fin_company_shortcode
+        mt5fin_company_shortcodes
     ) => {
         const {
             is_exclude,
@@ -132,7 +140,7 @@ const ContentVisibility = (() => {
         else if (is_exclude !== rule_set_has_current) show_element = true;
         if (rule_set_has_eu_country && is_eu_country) show_element = !is_exclude;
 
-        if (mt5fin_rules.includes(mt5fin_company_shortcode)) show_element = !is_exclude;
+        if (mt5fin_company_shortcodes.some(el => mt5fin_rules.includes(el))) show_element = !is_exclude;
 
         return show_element;
     };
