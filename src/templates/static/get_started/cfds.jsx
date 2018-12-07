@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, Box, NavButtons } from './common.jsx';
-import { List, Table } from '../../_common/components/elements.jsx';
+import { List, Table, Button } from '../../_common/components/elements.jsx';
 
 const hundredth   = '0.01';
 const tenth       = '0.10';
@@ -22,6 +22,14 @@ const Cfds = () => (
                             { id: 'margin-policy',          href: '#margin-policy',          text: it.L('CFD margin policy') },
                             { id: 'contract-specification', href: '#contract-specification', text: it.L('CFD contract specifications') },
                         ]}
+                    />
+                </div>
+
+                <div className='center-text gr-padding-10 client_logged_in invisible'>
+                    <Button
+                        className='button'
+                        href={it.url_for('user/metatrader')}
+                        text={it.L('Create an MT5 account now.')}
                     />
                 </div>
             </div>

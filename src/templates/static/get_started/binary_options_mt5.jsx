@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section, HeaderSecondary, NavButtons } from './common.jsx';
-import { List } from '../../_common/components/elements.jsx';
+import { List, Button } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const BinaryOptionsForMT5 = () => (
@@ -17,10 +17,12 @@ const BinaryOptionsForMT5 = () => (
                         ]}
                     />
 
-                    <div className='center-text gr-padding-10 client_logged_out invisible'>
-                        <a className='button' href={it.url_for('new-account')}>
-                            <span>{it.L('Open a free account')}</span>
-                        </a>
+                    <div className='center-text gr-padding-10 client_logged_in invisible'>
+                        <Button
+                            className='button'
+                            href={it.url_for('user/metatrader')}
+                            text={it.L('Create an MT5 account now.')}
+                        />
                     </div>
                 </div>
             </div>

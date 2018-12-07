@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, BuySellCurrency, HeaderSecondary, MtBox, NavButtons, Section } from './common.jsx';
-import { List, Table } from '../../_common/components/elements.jsx';
+import { List, Table, Button } from '../../_common/components/elements.jsx';
 
 const hundred_thousand = '100,000';
 const hundredth        = '0.01';
@@ -19,6 +19,14 @@ const Forex = () => (
                             { id: 'margin-policy',          href: '#margin-policy',          text: it.L('Forex margin policy') },
                             { id: 'contract-specification', href: '#contract-specification', text: it.L('Forex contract specifications') },
                         ]}
+                    />
+                </div>
+
+                <div className='center-text gr-padding-10 client_logged_in invisible'>
+                    <Button
+                        className='button'
+                        href={it.url_for('user/metatrader')}
+                        text={it.L('Create an MT5 account now.')}
                     />
                 </div>
             </div>
