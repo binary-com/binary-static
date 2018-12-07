@@ -12,6 +12,7 @@ const Head = () => (
             // Prompt a message in the browser if users disabled
         }
         <noscript>{ it.L('Your browser does not support JavaScript!') }</noscript>
+        
         <GoogleOptimizer />
         <GTMScript />
         <AntiClickjack />
