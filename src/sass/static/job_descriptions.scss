@@ -1,19 +1,10 @@
 .open-positions {
     .one-line {
-        margin-bottom: 35px;
+        margin-bottom: 42px;
     }
     img.responsive {
         margin-top: 1.1em;
         width: 50%;
-    }
-    .eq {
-        padding: 10px;
-        width: 45%;
-        width: calc(50% - 21px);
-    }
-    .eqWrap {
-        display: flex;
-        flex-wrap: wrap;
     }
 }
 
@@ -21,14 +12,15 @@
     width: 80%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 680px) {
     .open-positions {
-        .eq {
-            width: 100%;
+        img.responsive {
+            width: 30%;
         }
     }
 }
-@media screen and (max-width: 460px) {
+
+@media screen and (max-width: 481px) {
     .open-positions {
         h1 {
             text-align: center;
