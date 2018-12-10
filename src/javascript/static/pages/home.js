@@ -67,11 +67,11 @@ const Home = (() => {
             $('.signup-box div').replaceWith($('<p/>', { text: localize('Thank you for signing up! Please check your email to complete the registration process.'), class: 'gr-10 gr-centered center-text' }));
             $('#social-signup').setVisibility(0);
         }
-        BinarySocket.wait('time').then(({ server_time }) => {
+        BinarySocket.wait('time').then(({ time }) => {
             GTM.pushDataLayer({
                 event                   : 'email_submit',
                 email_submit_input      : response.echo_req.verify_email,
-                email_submit_days_passed: moment(server_time * 1000).utc().diff(moment.utc(localStorage.getItem('date_first_contact')), 'days'),
+                email_submit_days_passed: moment(time * 1000).utc().diff(moment.utc(localStorage.getItem('date_first_contact')), 'days'),
                 email_submit_source     : isBinaryApp() ? 'desktop app' : 'binary.com',
             });
         });
