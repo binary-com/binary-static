@@ -139,6 +139,10 @@ const PersonalDetails = (() => {
             $('#residence').replaceWith($('<label/>').append($('<strong/>', { id: 'country' })));
             $('#country').text(get_settings.country);
         }
+        if (get_settings.tax_residence) {
+            const tax_residence_array = get_settings.tax_residence.split(',') || [];
+            generateTaxResidenceSelect($('#tax_residence'), tax_residence_array);
+        }
     };
 
     const additionalCheck = (data) => {
@@ -260,6 +264,24 @@ const PersonalDetails = (() => {
             .fadeOut(1000);
     };
 
+    const generateTaxResidenceSelect = ($element, tax_residence_array) => $element
+        .select2({
+            templateSelection: (data, container) => {
+                if (data.element && tax_residence_array.includes(data.id)) {
+                    $(container).attr('data-permanent', true);
+                }
+                return data.text;
+            },
+        })
+        .off('select2:unselecting').on('select2:unselecting', (e) => {
+            const data = e.params.args.data;
+            if (tax_residence_array.includes(data.id)) {
+                e.preventDefault();
+            }
+        })
+        .val(tax_residence_array)
+        .trigger('change');
+
     const populateResidence = (response) => (
         new Promise((resolve) => {
             const residence_list = response.residence_list;
@@ -276,13 +298,11 @@ const PersonalDetails = (() => {
                 });
 
                 if (residence) {
+                    const tax_residence_array = get_settings_data.tax_residence.split(',') || [];
                     const $tax_residence = $('#tax_residence');
                     $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                         setTimeout(() => {
-                            $tax_residence.select2()
-                                .val(get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : '')
-                                .trigger('change')
-                                .setVisibility(1);
+                            generateTaxResidenceSelect($tax_residence, tax_residence_array).setVisibility(1);
                         }, 500);
                     });
 

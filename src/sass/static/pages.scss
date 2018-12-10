@@ -1469,3 +1469,7 @@ body #not_authenticated_financial ul.checked > li {
         color: $COLOR_BLUE;
     }
 }
+
+#tax_information_form * .select2-selection__choice__remove {
+    display: none;
+}
