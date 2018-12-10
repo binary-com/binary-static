@@ -35,8 +35,7 @@ const Cashier = (() => {
             $('.cashier_note').setVisibility(
                 Client.isLoggedIn() &&                          // only show to logged-in clients
                 !Client.get('is_virtual') &&                    // only show to real accounts
-                !isCryptocurrency(Client.get('currency')) &&    // only show to fiat currencies
-                /^(vn|ng|lk|id)$/.test(Client.get('residence')) // only show to Vietnam, Nigeria, Sri Lanka, Indonesia
+                !isCryptocurrency(Client.get('currency'))       // only show to fiat currencies
             );
         });
     };
