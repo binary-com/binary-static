@@ -1470,6 +1470,6 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
-#tax_information_form * .select2-selection__choice__remove {
+#tax_information_form * [data-permanent='true'] > .select2-selection__choice__remove {
     display: none;
 }
