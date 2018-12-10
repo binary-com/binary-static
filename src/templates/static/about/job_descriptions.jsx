@@ -8,7 +8,7 @@ const Column = ({
     id,
     subsection,
 }) => (
-    <div className='eq'>
+    <div className='gr-6 gr-12-p gr-12-m gr-padding-20'>
         {className ?
             <h3 className={className}>{header}</h3>
             :
@@ -22,14 +22,14 @@ const Column = ({
 const Row = ({ title, id, sections = [], last }) => (
     <React.Fragment>
         <div className='gr-row gr-padding-10' id={id}>
-            <div className='gr-3 gr-12-m'>
+            <div className='gr-3 gr-5-p gr-12-m'>
                 <div className='gr-12 gr-padding-10 center-text'>
                     <h2 className='gr-gutter'>{title}</h2>
                     <img className='responsive' src={it.url_for(`images/pages/careers/${id}.svg`)} />
                 </div>
             </div>
-            <div className='gr-9 gr-12-m'>
-                <div className='eqWrap'>
+            <div className='gr-9 gr-7-p gr-12-m'>
+                <div className='gr-row'>
                     {sections.map((section, idx) => (
                         <Column
                             header={section.header}
@@ -62,15 +62,15 @@ const JobDescriptions = () => (
                     { header: it.L('System Administrator'), subsection: 'system_administrator', text: it.L('The System Administration team is responsible for the upkeep, configuration, and reliable operation of our computer software, hardware, and networks.') },
                     { header: it.L('Back-End Developer'),   subsection: 'backend_developer',    text: it.L('As our Back-End Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.') },
                     { header: it.L('Front-End Developer'),  subsection: 'frontend_developer',   text: it.L('As our Front-End Developer, you will be taking on the challenge of developing and maintaining advanced applications and interfaces that connect clients with our patented trading system.') },
-                    { header: it.L('Perl Developer'),       subsection: 'perl_developer',       text: it.L('As our Perl Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.'), className: 'one-line nowrap' },
+                    { header: it.L('Perl Developer'),       subsection: 'perl_developer',       text: it.L('As our Perl Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.'), className: 'one-line gr-nowrap gr-wrap-p' },
 
-                    { header: it.L('Cryptocurrency/Blockchain Developer'), subsection: 'cryptocurrency_blockchain_developer', text: it.L('As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.'), className: 'one-line nowrap' },
+                    { header: it.L('Cryptocurrency/Blockchain Developer'), subsection: 'cryptocurrency_blockchain_developer', text: it.L('As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website.') },
 
-                    { header: it.L('Security Researcher'), subsection: 'security_researcher', text: it.L('As our Security Researcher, we expect you to stay informed about the latest security bulletins and findings, and actively monitor our software development pipeline to find and raise potential security issues.'), className: 'one-line nowrap' },
+                    { header: it.L('Security Researcher'), subsection: 'security_researcher', text: it.L('As our Security Researcher, we expect you to stay informed about the latest security bulletins and findings, and actively monitor our software development pipeline to find and raise potential security issues.'), className: 'one-line gr-nowrap gr-wrap-p' },
 
-                    { header: it.L('PostgreSQL Database Administrator (DBA)'), subsection: 'postgresql_database_administrator', text: it.L('As our PostgreSQL Database Administrator, you will plan, implement, and manage the database systems that are essential to the architecture of our high-traffic binary options trading platform.'), className: 'one-line nowrap' },
+                    { header: it.L('PostgreSQL Database Administrator (DBA)'), subsection: 'postgresql_database_administrator', text: it.L('As our PostgreSQL Database Administrator, you will plan, implement, and manage the database systems that are essential to the architecture of our high-traffic binary options trading platform.') },
 
-                    { header: it.L('UI/UX Designer'), subsection: 'ui_ux_designer', text: it.L('As our UI/UX Designer, you will play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.'), className: 'one-line nowrap' },
+                    { header: it.L('UI/UX Designer'), subsection: 'ui_ux_designer', text: it.L('As our UI/UX Designer, you will play a key role in conceptualising and defining user experience and interaction across multiple websites and applications.'), className: 'one-line gr-nowrap gr-wrap-p' },
                 ]}
             />
 
