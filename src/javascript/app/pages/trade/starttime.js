@@ -73,12 +73,11 @@ const StartDates = (() => {
                     day                = date_open.format('ddd - DD MMM, YYYY');
                     $duplicated_option = $(fragment).find(`option:contains(${day})`);
                     if ($duplicated_option.length) {
-                        $duplicated_option.attr('data-sessions', `${$duplicated_option.attr('data-sessions')}, ${date_open.format('HH:mm')}-${date_close.format('HH:mm')}`);
                         if (+date_close.unix() > +$duplicated_option.attr('data-end')) {
                             $duplicated_option.attr('data-end', date_close.unix());
                         }
                     } else {
-                        option = createElement('option', { value: date_open.unix(), 'data-end': date_close.unix(), 'data-sessions': `${date_open.format('HH:mm')}-${date_close.format('HH:mm')}`, text: day });
+                        option = createElement('option', { value: date_open.unix(), 'data-end': date_close.unix(), text: day });
                         if (option.value >= default_start && !selected) {
                             selected = true;
                             option.setAttribute('selected', 'selected');
