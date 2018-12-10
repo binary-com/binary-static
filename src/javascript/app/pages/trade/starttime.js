@@ -94,7 +94,6 @@ const StartDates = (() => {
                 target.appendChild(fragment);
                 Dropdown('#date_start');
                 Defaults.set('date_start', target.value);
-                CommonIndependent.showAssetOpenHours(target.value === 'now' ? '' : $(target));
                 $('#time_start_row').setVisibility(target.value !== 'now');
             }
             State.set('is_start_dates_displayed', true);
