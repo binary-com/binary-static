@@ -121,7 +121,7 @@ const ContentVisibility = (() => {
         attr_str,
         current_landing_company_shortcode,
         client_has_mt_company,
-        mt5fin_company_shortcodes
+        arr_mt5fin_shortcodes
     ) => {
         const {
             is_exclude,
@@ -142,8 +142,8 @@ const ContentVisibility = (() => {
         if (rule_set_has_eu_country && is_eu_country) show_element = !is_exclude;
 
         // Check if list of mt5fin_company_shortcodes is array type and filter with defined mt5fin rules
-        if (Array.isArray(mt5fin_company_shortcodes)) {
-            if (mt5fin_company_shortcodes.some(el => mt5fin_rules.includes(el))) show_element = !is_exclude;
+        if (Array.isArray(arr_mt5fin_shortcodes)) {
+            if (arr_mt5fin_shortcodes.some(el => mt5fin_rules.includes(el))) show_element = !is_exclude;
         }
 
         return show_element;
