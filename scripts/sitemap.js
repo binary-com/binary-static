@@ -28,8 +28,14 @@ const config = [
     },
     {
         url_prefix : 'https://www.binary.com/',
-        filename   : 'sitemap.app.xml',
-        lang_filter: '.*',
+        filename   : 'sitemap.app_2.xml',
+        lang_filter: '^(?!id$)',
+        section    : 'app_2',
+    },
+    {
+        url_prefix : 'https://www.binary.me/',
+        filename   : 'sitemap.app_2.id.xml',
+        lang_filter: '^id$',
         section    : 'app_2',
     },
 ];
@@ -74,7 +80,7 @@ const createSitemap = (conf) => {
 
 config.forEach((conf) => {
     const start = Date.now();
-    process.stdout.write(common.messageStart(`Generating ${conf.section}/${conf.filename}`));
+    process.stdout.write(common.messageStart(`Generating ${conf.section}/${conf.filename}`, true));
 
     createSitemap(conf);
 
