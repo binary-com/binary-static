@@ -98,8 +98,8 @@ export const MtBox = ({ text, icon_1, icon_2 }) => (
     </div>
 );
 
-export const SideBarCTA = () => (
-    <div id='sidebar-cta' className='center-text gr-padding-10 client_logged_in invisible'>
+export const MTAccountOpeningButton = () => (
+    <div className='center-text gr-padding-10 client_logged_in invisible'>
         <p>
             <a className='button' href={it.url_for('user/metatrader')}>
                 <span>{it.L('Create an MT5 account now.')}</span>
