@@ -1,40 +1,37 @@
-import debounce                       from 'lodash.debounce';
+import debounce                          from 'lodash.debounce';
 import {
     action,
     observable,
-    runInAction,
     reaction,
-    trace,
-}                                     from 'mobx';
-import Client                         from '_common/base/client_base';
+    runInAction }                        from 'mobx';
 import {
     getMinPayout,
-    isCryptocurrency,
-}                                     from '_common/base/currency_base';
-import BinarySocket                   from '_common/base/socket_base';
-import { localize }                   from '_common/localize';
-import { cloneObject, isEmptyObject } from '_common/utility';
-import { WS }                         from 'Services';
-import GTM                            from 'Utils/gtm';
-import URLHelper                      from 'Utils/URL/url_helper';
-import { processPurchase }            from './Actions/purchase';
-import * as Symbol                    from './Actions/symbol';
+    isCryptocurrency }                   from '_common/base/currency_base';
+import BinarySocket                      from '_common/base/socket_base';
+import { localize }                      from '_common/localize';
+import {
+    cloneObject,
+    isEmptyObject }                      from '_common/utility';
+import Client                            from '_common/base/client_base';
+import { WS }                            from 'Services';
+import GTM                               from 'Utils/gtm';
+import URLHelper                         from 'Utils/URL/url_helper';
+import { processPurchase }               from './Actions/purchase';
+import * as Symbol                       from './Actions/symbol';
 import {
     allowed_query_string_variables,
-    non_proposal_query_string_variable,
-}                                     from './Constants/query_string';
-import getValidationRules             from './Constants/validation_rules';
-import { setChartBarrier }            from './Helpers/chart';
-import ContractType                   from './Helpers/contract_type';
-import { convertDurationLimit }       from './Helpers/duration';
-import { processTradeParams }         from './Helpers/process';
+    non_proposal_query_string_variable } from './Constants/query_string';
+import getValidationRules                from './Constants/validation_rules';
+import { setChartBarrier }               from './Helpers/chart';
+import ContractType                      from './Helpers/contract_type';
+import { convertDurationLimit }          from './Helpers/duration';
+import { processTradeParams }            from './Helpers/process';
 import {
     createProposalRequests,
     getProposalInfo,
-    getProposalParametersName,
-}                                     from './Helpers/proposal';
-import { pickDefaultSymbol }          from './Helpers/symbol';
-import BaseStore                      from '../../base_store';
+    getProposalParametersName }          from './Helpers/proposal';
+import { pickDefaultSymbol }             from './Helpers/symbol';
+import BaseStore                         from '../../base_store';
 
 export default class TradeStore extends BaseStore {
     // Control values
@@ -91,6 +88,7 @@ export default class TradeStore extends BaseStore {
     chart_id = 1;
 
     debouncedProposal = debounce(this.requestProposal, 500);
+    proposal_requests = {};
 
     constructor({ root_store }) {
         URLHelper.pruneQueryString(allowed_query_string_variables);
@@ -304,8 +302,6 @@ export default class TradeStore extends BaseStore {
             this.debouncedProposal();
         }
     }
-
-    proposal_requests = {};
 
     @action.bound
     requestProposal() {
