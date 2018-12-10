@@ -119,10 +119,10 @@ const BinaryOptions = () => {
                         <HeaderSecondary header={it.L('Advantages of binary options trading')} />
                         <p>{it.L('Aside from the simplicity of its \'yes or no\' proposition, binary options trading is also very flexible. It gives you the ability to trade:')}</p>
                         <div className='gr-row gr-parent gr-padding-10'>
-                            <SectionTicked header={it.L('A wide range of markets')}           text={it.L('Trade on underlying markets that include Forex, indices, commodities, and more.')} />
-                            <SectionTicked header={it.L('All market conditions')} text={it.L('Predict market movement using up/down, touch/no touch, and in/out trade types.')} />
-                            <SectionTicked header={it.L('All durations')}         text={it.L('Take a short-term or long-term view with trade durations from 5 ticks to 365 days.')} />
-                            <SectionTicked header={it.L('All payouts')}           text={it.L('Earn payouts of varying amounts, even up to USD 50,000 in case of Volatility Indices. Losses are limited to your initial stake and nothing more.')} />
+                            <SectionTicked header={it.L('A wide range of markets')} text={it.L('Trade on underlying markets that include Forex, indices, commodities, and more.')} />
+                            <SectionTicked header={it.L('All market conditions')}   text={it.L('Predict market movement using up/down, touch/no touch, and in/out trade types.')} />
+                            <SectionTicked header={it.L('All durations')}           text={it.L('Take a short-term or long-term view with trade durations from 5 ticks to 365 days.')} />
+                            <SectionTicked header={it.L('All payouts')}             text={it.L('Earn payouts of varying amounts, even up to USD 50,000 in case of Volatility Indices. Losses are limited to your initial stake and nothing more.')} />
                         </div>
 
                         <HeaderSecondary header={it.L('Why you should trade binary options with [_1]', it.website_name)} />
@@ -137,8 +137,8 @@ const BinaryOptions = () => {
                         </ul>
                         <strong>{it.L('All conditions and durations')}</strong>
                         <ul className='bullet'>
-                            <ListStrong header={it.L('A wide range of markets and conditions')}   text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
-                            <ListStrong header={it.L('Short to long-term durations')} text={it.L('Choose durations from 5 ticks to 365 days')} />
+                            <ListStrong header={it.L('A wide range of markets and conditions')} text={it.L('Trade currencies, indices, commodities and more in rising, falling, sideways, quiet, and volatile markets')} />
+                            <ListStrong header={it.L('Short to long-term durations')}           text={it.L('Choose durations from 5 ticks to 365 days')} />
                         </ul>
                         <strong>{it.L('Competitive and transparent pricing')}</strong>
                         <ul className='bullet'>
