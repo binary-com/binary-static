@@ -73,7 +73,6 @@ AccountSwitcher.propTypes = {
     toggle            : PropTypes.func,
 };
 
-// TODO connect only computed method.
 const account_switcher = connect(
     ({ client }) => ({
         account_list : client.account_list,

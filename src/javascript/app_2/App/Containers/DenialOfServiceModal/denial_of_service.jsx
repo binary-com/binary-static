@@ -3,8 +3,8 @@ import PropTypes     from 'prop-types';
 import { localize }  from '_common/localize';
 import URL           from '_common/url';
 import FullPageModal from 'App/Components/Elements/FullPageModal/full_page_modal.jsx';
-import { connect }   from 'Stores/connect';
 import Localize      from 'App/Components/Elements/localize.jsx';
+import { connect }   from 'Stores/connect';
 
 const onConfirm = async (client) => {
     await client.switchAccount(client.virtual_account_loginid);

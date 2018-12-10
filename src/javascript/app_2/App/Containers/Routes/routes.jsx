@@ -2,9 +2,9 @@ import { PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import { withRouter }                 from 'react-router';
+import ErrorComponent                 from 'App/Components/Elements/Errors';
+import BinaryRoutes                   from 'App/Components/Routes';
 import { connect }                    from 'Stores/connect';
-import ErrorComponent                 from '../../Components/Elements/Errors';
-import BinaryRoutes                   from '../../Components/Routes';
 
 const Routes = (props) => {
     if (props.has_error) {
@@ -23,9 +23,9 @@ Routes.propTypes = {
 // need to wrap withRouter around connect
 // to prevent updates on <BinaryRoutes /> from being blocked
 export default withRouter(connect(
-    ({ common, client }) => ({
+    client({ client, common }) => ({
+        is_logged_in: client.is_logged_in,
         error       : common.error,
         has_error   : common.has_error,
-        is_logged_in: client.is_logged_in,
     }),
 )(Routes));

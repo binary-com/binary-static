@@ -1,23 +1,36 @@
-import debounce                                                               from 'lodash.debounce';
-import { action, observable, reaction, runInAction }                          from 'mobx';
-import BinarySocket                                                           from '_common/base/socket_base';
-import { localize }                                                           from '_common/localize';
-import { cloneObject, isEmptyObject }                                         from '_common/utility';
-import { getMinPayout, isCryptocurrency }                                     from '_common/base/currency_base';
-import { WS }                                                                 from 'Services';
-import GTM                                                                    from 'Utils/gtm';
-import URLHelper                                                              from 'Utils/URL/url_helper';
-import { processPurchase }                                                    from './Actions/purchase';
-import * as Symbol                                                            from './Actions/symbol';
-import { allowed_query_string_variables, non_proposal_query_string_variable } from './Constants/query_string';
-import getValidationRules                                                     from './Constants/validation_rules';
-import { setChartBarrier }                                                    from './Helpers/chart';
-import ContractType                                                           from './Helpers/contract_type';
-import { convertDurationLimit }                                               from './Helpers/duration';
-import { processTradeParams }                                                 from './Helpers/process';
-import { createProposalRequests, getProposalInfo, getProposalParametersName } from './Helpers/proposal';
-import { pickDefaultSymbol }                                                  from './Helpers/symbol';
-import BaseStore                                                              from '../../base_store';
+import debounce                            from 'lodash.debounce';
+import {
+    action,
+    observable,
+    reaction,
+    runInAction }                          from 'mobx';
+import BinarySocket                        from '_common/base/socket_base';
+import { localize }                        from '_common/localize';
+import {
+    cloneObject,
+    isEmptyObject }                        from '_common/utility';
+import {
+    getMinPayout,
+    isCryptocurrency }                     from '_common/base/currency_base';
+import { WS }                              from 'Services';
+import BaseStore                           from 'Stores/base_store';
+import GTM                                 from 'Utils/gtm';
+import URLHelper                           from 'Utils/URL/url_helper';
+import { processPurchase }                 from './Actions/purchase';
+import * as Symbol                         from './Actions/symbol';
+import {
+    allowed_query_string_variables,
+    non_proposal_query_string_variable }   from './Constants/query_string';
+import getValidationRules                  from './Constants/validation_rules';
+import { setChartBarrier }                 from './Helpers/chart';
+import ContractType                        from './Helpers/contract_type';
+import { convertDurationLimit }            from './Helpers/duration';
+import { processTradeParams }              from './Helpers/process';
+import {
+    createProposalRequests,
+    getProposalInfo,
+    getProposalParametersName }            from './Helpers/proposal';
+import { pickDefaultSymbol }               from './Helpers/symbol';
 
 export default class TradeStore extends BaseStore {
     // Control values
@@ -381,21 +394,23 @@ export default class TradeStore extends BaseStore {
     }
 
     @action.bound
-    async accountSwitcherListener() {
-        await this.refresh();
-        await this.prepareTradeStore();
-        this.debouncedProposal();
+    accountSwitcherListener() {
+        return new Promise(async (resolve) => {
+            await this.refresh();
+            await this.prepareTradeStore();
+            return resolve(this.debouncedProposal());
+        });
     }
 
     @action.bound
     async onMount() {
-        this.onSwitchAccount(this.accountSwitcherListener);
         await this.prepareTradeStore();
         this.debouncedProposal();
         runInAction(() => {
             this.is_trade_component_mounted = true;
         });
         this.updateQueryString();
+        this.onSwitchAccount(this.accountSwitcherListener);
     }
 
     @action.bound

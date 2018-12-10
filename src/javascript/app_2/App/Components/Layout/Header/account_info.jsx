@@ -2,9 +2,11 @@ import classNames          from 'classnames';
 import PropTypes           from 'prop-types';
 import React               from 'react';
 import { CSSTransition }   from 'react-transition-group';
+import Localize            from 'App/Components/Elements/localize.jsx';
 import { AccountSwitcher } from 'App/Containers/AccountSwitcher';
 import { IconArrow }       from 'Assets/Common';
-import Localize            from '../../Elements/localize.jsx';
+
+// todo fix absolute path
 
 const AccountInfo = ({
     balance,

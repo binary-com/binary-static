@@ -1,6 +1,9 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
 import { localize }      from '_common/localize';
+import {
+    DrawerItem,
+    DrawerToggle }       from 'App/Components/Elements/Drawer';
 import { IconLogout }    from 'Assets/Header/Drawer';
 import {
     IconTrade,
@@ -9,9 +12,6 @@ import {
 import routes            from 'Constants/routes';
 import { requestLogout } from 'Services';
 import { connect }       from 'Stores/connect';
-import {
-    DrawerItem,
-    DrawerToggle }       from '../../Components/Elements/Drawer';
 
 const MenuDrawer = ({
     is_dark_mode,
@@ -95,7 +95,7 @@ MenuDrawer.propTypes = {
 };
 
 export default connect(
-    ({ ui, client }) => ({
+    ({ client, ui }) => ({
         is_logged_in              : client.is_logged_in,
         is_dark_mode              : ui.is_dark_mode_on,
         is_mobile                 : ui.is_mobile,

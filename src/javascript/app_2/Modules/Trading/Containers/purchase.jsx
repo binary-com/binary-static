@@ -110,9 +110,10 @@ Purchase.propTypes = {
 };
 
 export default connect(
-    ({ modules, ui, client }) => ({
-        barrier_count             : modules.trade.barrier_count,
+    ({ client, modules, ui }) => ({
         currency                  : client.currency,
+        is_client_allowed_to_visit: client.is_client_allowed_to_visit,
+        barrier_count             : modules.trade.barrier_count,
         is_purchase_enabled       : modules.trade.is_purchase_enabled,
         is_trade_enabled          : modules.trade.is_trade_enabled,
         onClickPurchase           : modules.trade.onPurchase,
@@ -124,6 +125,5 @@ export default connect(
         is_purchase_confirm_on    : ui.is_purchase_confirm_on,
         is_purchase_locked        : ui.is_purchase_lock_on,
         togglePurchaseLock        : ui.togglePurchaseLock,
-        is_client_allowed_to_visit: client.is_client_allowed_to_visit,
     }),
 )(Purchase);

@@ -1,4 +1,7 @@
-import { action, computed, observable } from 'mobx';
+import {
+    action,
+    computed,
+    observable }                        from 'mobx';
 import { WS }                           from 'Services';
 import { formatPortfolioPosition }      from './Helpers/format_response';
 import BaseStore                        from '../../base_store';
@@ -100,9 +103,11 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     accountSwitcherListener () {
-        if (this.data.length === 0) {
-            this.initializePortfolio();
-        }
+        return new Promise((resolve) => {
+            if (this.data.length === 0) {
+                resolve(this.initializePortfolio());
+            }
+        });
     }
 
     @action.bound

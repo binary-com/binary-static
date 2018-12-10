@@ -1,4 +1,7 @@
-import { action, computed, observable } from 'mobx';
+import {
+    action,
+    computed,
+    observable }                        from 'mobx';
 import moment                           from 'moment';
 import { WS }                           from 'Services';
 import { formatStatementTransaction }   from './Helpers/format_response';
@@ -13,10 +16,6 @@ export default class StatementStore extends BaseStore {
     @observable date_from      = '';
     @observable date_to        = '';
     @observable error          = '';
-
-    constructor({ root_store }) {
-        super({ root_store });
-    }
 
     @computed
     get is_empty() {
@@ -95,10 +94,12 @@ export default class StatementStore extends BaseStore {
     }
 
     @action.bound
-    async accountSwitcherListener() {
-        this.clearTable();
-        this.clearDateFilter();
-        await this.fetchNextBatch();
+    accountSwitcherListener() {
+        return new Promise((resolve) => {
+            this.clearTable();
+            this.clearDateFilter();
+            return resolve(this.fetchNextBatch());
+        });
     }
 
     @action.bound

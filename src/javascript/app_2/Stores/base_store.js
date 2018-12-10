@@ -1,6 +1,12 @@
-import { action, intercept, observable, reaction, toJS, when } from 'mobx';
-import { isEmptyObject }                                       from '_common/utility';
-import Validator                                               from 'Utils/Validator';
+import {
+    action,
+    intercept,
+    observable,
+    reaction,
+    toJS,
+    when }                  from 'mobx';
+import { isEmptyObject }    from '_common/utility';
+import Validator            from 'Utils/Validator';
 
 /**
  * BaseStore class is the base class for all defined stores in the application. It handles some stuff such as:
@@ -239,16 +245,19 @@ export default class BaseStore {
         this.switch_account_disposer = when(
             () => this.root_store.client.switch_broadcast,
             async () => {
-                if (this.root_store.client.switch_broadcast === false) return;
-                const result = this.switch_account_listener();
-                if (result && typeof result.then === 'function') {
-                    result.then(() => {
-                        this.root_store.client.switchEndSignal();
-                        this.onSwitchAccount(this.switch_account_listener);
-                    });
-                } else {
-                    this.root_store.client.switchEndSignal();
-                    setTimeout(this.onSwitchAccount.bind(null, this.switch_account_listener), 1000);
+                try {
+                    const result = this.switch_account_listener();
+                    if (result && result.then && typeof result.then === 'function') {
+                        result.then(() => {
+                            this.root_store.client.switchEndSignal();
+                            this.onSwitchAccount(this.switch_account_listener);
+                        });
+                    } else {
+                        throw new Error('Switching account listeners are required to return a promise.');
+                    }
+                } catch (error) {
+                    // there is no listener currently active. so we can just ignore the error raised from treating
+                    // a null object as a function.
                 }
             },
         );

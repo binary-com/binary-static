@@ -54,12 +54,15 @@ const BinarySocketGeneral = (() => {
                         WS.getAccountStatus();
                         WS.payoutCurrencies();
                         WS.mt5LoginList();
-                        setResidence(response.authorize.country || client_store.current_account.residence);
+                        setResidence(
+                            response.authorize.country ||
+                            client_store.accounts[client_store.loginid].residence
+                        );
                         if (!client_store.is_virtual) {
                             WS.getSelfExclusion();
                         }
                         BinarySocket.sendBuffered();
-                        if (/bch/i.test(response.authorize.currency) && !client_store.current_account.accepted_bch) {
+                        if (/bch/i.test(response.authorize.currency) && !client_store.accounts[client_store.loginid].accepted_bch) {
                             // showPopup({
                             //     url        : urlFor('user/warning'),
                             //     popup_id   : 'warning_popup',

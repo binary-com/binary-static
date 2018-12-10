@@ -1,14 +1,22 @@
-import { action, computed, observable, when } from 'mobx';
-import moment                                 from 'moment';
-import { getAccountTitle }                    from '_common/base/client_base';
-import GTM                                    from '_common/base/gtm';
-import BinarySocket                           from '_common/base/socket_base';
-import * as SocketCache                       from '_common/base/socket_cache';
-import { localize }                           from '_common/localize';
-import { LocalStore, State }                  from '_common/storage';
-import BaseStore                              from './base_store';
-import { buildCurrenciesList }                from './Modules/Trading/Helpers/currency';
-import { WS }                                 from '../Services';
+import {
+    action,
+    computed,
+    observable,
+    when }                     from 'mobx';
+import moment                  from 'moment';
+import {
+    requestLogout,
+    WS }                       from 'Services';
+import { getAccountTitle }     from '_common/base/client_base';
+import GTM                     from '_common/base/gtm';
+import BinarySocket            from '_common/base/socket_base';
+import * as SocketCache        from '_common/base/socket_cache';
+import { localize }            from '_common/localize';
+import {
+    LocalStore,
+    State }                    from '_common/storage';
+import BaseStore               from './base_store';
+import { buildCurrenciesList } from './Modules/Trading/Helpers/currency';
 
 const storage_key = 'client.accounts';
 export default class ClientStore extends BaseStore {
@@ -95,8 +103,8 @@ export default class ClientStore extends BaseStore {
     @computed
     get is_valid_login() {
         if (!this.is_logged_in) return true;
-        const valid_login_ids = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG)[0-9]+$', 'i');
-        return this.all_loginids.every(id => valid_login_ids.test(id));
+        const valid_login_ids_regex = new RegExp('^(MX|MF|VRTC|MLT|CR|FOG)[0-9]+$', 'i');
+        return this.all_loginids.every(id => valid_login_ids_regex.test(id));
     }
 
     @computed
@@ -293,24 +301,43 @@ export default class ClientStore extends BaseStore {
     }
 
     @action.bound
+    async switchAccountHandler () {
+        // TODO go to active (toast), or logout the user when switched is falsy
+        if (!this.switched || !this.switched.length || !this.getAccount(this.switched).token) {
+            // Send a toast message to let the user know we can't switch his account.
+            this.root_store.ui.addToastMessage({
+                message: localize('Switching to default account.'),
+                type   : 'info',
+            });
+
+            // Logout if the switched_account doesn't belong to any loginid.
+            if (!this.all_loginids.some(id => id !== this.switched) || this.switched === this.loginid) {
+                // request a logout
+                requestLogout();
+                return;
+            }
+
+            // switch to default account.
+            this.switchAccount(this.all_loginids[0]);
+            await this.switchAccountHandler();
+            return;
+        }
+        sessionStorage.setItem('active_tab', '1');
+        // set local storage
+        GTM.setLoginFlag();
+        this.resetLocalStorageValues(this.switched);
+        SocketCache.clear();
+        await BinarySocket.send({ 'authorize': this.getToken() }, { forced: true });
+        await this.init();
+        this.broadcastAccountChange();
+    }
+
+    @action.bound
     registerReactions() {
         // Switch account reactions.
         when(
             () => this.switched,
-            async () => {
-                if (!this.switched || !this.switched.length || !this.getAccount(this.switched).token) return;
-                sessionStorage.setItem('active_tab', '1');
-                // set local storage
-                GTM.setLoginFlag();
-                this.resetLocalStorageValues(this.switched);
-                SocketCache.clear();
-                await BinarySocket.send({ 'authorize': this.getToken() }, { forced: true });
-                await this.init();
-                this.broadcastAccountChange();
-            },
-            {
-                name: 'accountSwitchedReaction',
-            },
+            this.switchAccountHandler
         );
     }
 
