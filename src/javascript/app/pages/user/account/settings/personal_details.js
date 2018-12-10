@@ -285,6 +285,9 @@ const PersonalDetails = (() => {
                                 .setVisibility(1);
                         }, 500);
                     });
+                    $tax_residence.on('select2:unselecting', (e) => {
+                        e.preventDefault(); 
+                    });
 
                     if (!get_settings_data.place_of_birth) {
                         $options.prepend($('<option/>', { value: '', text: localize('Please select') }));
