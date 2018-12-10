@@ -24,7 +24,9 @@ const AccountDesc = ({ title, description, account_type, items }) => {
                 ))}
             </ul>
             <p>
-                <a className='hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Compare MetaTrader 5 accounts')}</a>
+                <a className='button' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>
+                    <span>{it.L('Compare MetaTrader 5 accounts')}</span>
+                </a>
             </p>
         </div>
     );
