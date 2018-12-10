@@ -1,6 +1,9 @@
-import React                               from 'react';
-import { Fieldset, FormRow, SubmitButton } from '../../_common/components/forms.jsx';
-import Loading                             from '../../_common/components/loading.jsx';
+import React       from 'react';
+import {
+    Fieldset,
+    FormRow,
+    SubmitButton } from '../../_common/components/forms.jsx';
+import Loading     from '../../_common/components/loading.jsx';
 
 const StrongLabel = ({ id }) => (
     <strong><label id={id} /></strong>

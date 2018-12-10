@@ -160,14 +160,14 @@ export const SubmitButton = ({
                 />
             }
             <div className='gr-padding-10'>
-                {custom_btn_text &&
-                <a
-                    className={`button ${custom_btn_class || ''}`}
-                    href={custom_btn_href || 'javascript:;'}
-                    id={custom_btn_id}
-                >
-                    <span className='button'>{custom_btn_text}</span>
-                </a>
+                { custom_btn_text &&
+                    <a
+                        className={`button ${custom_btn_class || ''}`}
+                        href={custom_btn_href || 'javascript:;'}
+                        id={custom_btn_id}
+                    >
+                        <span className='button'>{custom_btn_text}</span>
+                    </a>
                 }
                 <button
                     id={id || 'btn_submit'}
@@ -183,7 +183,7 @@ export const SubmitButton = ({
     if (!no_wrapper) {
         return (
             <div className={`${is_centered ? 'center-text' : 'gr-row'} ${className || ''}`} id={id}>
-                {!is_centered ?
+                { !is_centered ?
                     <div className={`${!is_left_align ? 'gr-8 gr-push-4 gr-12-m gr-push-0-m' : ''} center-text-m`}>
                         {content}
                     </div> :
