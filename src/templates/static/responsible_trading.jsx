@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ResponsibleTrading = () => (
-    <div className='static_full' id='responsible-trading'>
+    <div className='static_full' id='responsible-trading' data-anchor='responsible-trading'>
         <div className='container'>
             <h1>{it.L('Responsible Trading')}</h1>
             <p>{it.L('Please remember at all times that trading binary options can be an exciting activity, but we have a moral duty to remind you of the risks you may run. Options trading can become a real addiction, as can any other activity pushed to its limits. We kindly ask you to engage in a careful self-analysis to check if you are at risk. To avoid the danger of such an addiction, it is important that you follow some basic principles and guidelines.')}</p>
