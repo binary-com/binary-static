@@ -50,9 +50,6 @@ const Trading = () => (
                                                 <input type='text' data-lpignore='true' id='time_start' autoComplete='off' readOnly='readonly' className='medium_width_input' />
                                                 <span className='gr-gutter-left'>GMT</span>
                                             </div>
-                                            <div>
-                                                <div className='hint invisible'>{it.L('Asset open hours:')} <span id='asset_open_hours' /></div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div className='row' id='expiry_row'>

@@ -133,12 +133,6 @@ const getSelectedOption = ($selector) => {
     return $selected_option;
 };
 
-const showAssetOpenHours = ($selector) => {
-    const $selected_option = $selector ? getSelectedOption($selector) : '';
-    const sessions         = $selected_option ? $selected_option.attr('data-sessions') : '';
-    $('#asset_open_hours').text(sessions || '').parent().setVisibility(!!(sessions));
-};
-
 module.exports = {
     displayPriceMovement,
     countDecimalPlaces,
@@ -147,7 +141,6 @@ module.exports = {
     getSelectedOption,
     getMinMaxTimeStart,
     getMinMaxTimeEnd,
-    showAssetOpenHours,
     getStartDateNode: getElement,
     getTradingTimes : () => trading_times,
 };
