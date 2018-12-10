@@ -52,10 +52,8 @@ export const FormRow = ({
                                     defaultChecked={value === default_option}
                                 />
                                 <label htmlFor={option_id}>
-                                    <span
-                                        data-balloon={data_balloon_text}
-                                        data-balloon-length='medium'
-                                    >{label_text}
+                                    <span data-balloon={data_balloon_text} data-balloon-length='medium'>
+                                        {label_text}
                                     </span>
                                 </label>
                             </div>
@@ -67,11 +65,7 @@ export const FormRow = ({
         if (type === 'textarea') {
             return (
                 <React.Fragment>
-                    <textarea
-                        className={className}
-                        id={id}
-                        {...attributes}
-                    />
+                    <textarea className={className} id={id} {...attributes} />
                     <label htmlFor={id} />
                 </React.Fragment>
             );
@@ -133,7 +127,7 @@ export const FormRow = ({
             <div className={is_two_rows ? 'gr-12' : 'gr-8 gr-12-m'}>
                 {getInnerElement()}
                 {hint &&
-                <p className='hint no-margin'>{hint}</p>
+                    <p className='hint no-margin'>{hint}</p>
                 }
             </div>
         </div>
