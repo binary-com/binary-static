@@ -73,7 +73,7 @@ const Metals = () => (
                         { text: it.L('Market volatility – Political, economic, or social instability may lead to more volatile financial markets that affect the prices of certain metals') },
                     ]}
                 />
-                <p>{it.L('As conclusion, keeping up with market news and trends in a certain sector can help you always ')}</p>
+                <p>{it.L('Keeping up with the market news and staying aware of business trends can be helpful.')}</p>
             </div>
         </div>
 
@@ -81,7 +81,7 @@ const Metals = () => (
 
         <div className='gr-row'>
             <div className='gr-10 gr-push-1 center-text'>
-                <h2>{it.L('How to calculate your profit and losses?')}</h2>
+                <h2>{it.L('How to calculate your profit and losses')}</h2>
                 <p>{it.L('Example: XAU/USD (Gold vs US Dollar) symbol pair')}</p>
                 <p>{it.L('Please note that one lot is equivalent to 100 units, based on our contract specifications. Your profit or loss will be calculated as follows:')}</p>
                 <p className='border-box'>{it.L('When you are trading metals, you can choose to open a buy position if you think that the price of an asset will rise or a sell position if you think that the price of an asset will fall.')}</p>

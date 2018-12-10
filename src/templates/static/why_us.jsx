@@ -35,15 +35,15 @@ const WhyUs = () => (
                 </div>
             </div>
             <div className='gr-9 gr-12-p gr-12-m gr-parent'>
-                <Section id='sharp-prices' header={it.L('Why pay more?')}>
+                <Section id='sharp-prices' header={it.L('Attractive pricing')}>
                     <p>{it.L('[_1]\'s patented pricing technology allows you to benefit from the same rates of return as traders in the interbank market.', it.website_name)}</p>
                     <div className='gr-row'>
                         <div className='gr-7 gr-12-m'>
                             <ul className='checked'>
-                                <li>{it.L('Real-time prices, benchmarked against interbank options markets.')}</li>
-                                <li>{it.L('Returns above 100% on simple <a href=\'[_1]\'>rise/fall</a> contracts.', it.url_for('trading?market=forex&formname=risefall'))}</li>
-                                <li>{it.L('Returns above 1000% on <a href=\'[_1]\'>higher/lower</a> and <a href=\'[_2]\'>touch/no-touch</a> trades.', it.url_for('trading?market=forex&formname=higherlower'), it.url_for('trading?market=forex&formname=touchnotouch'))}</li>
-                                <li>{it.L('No hidden fees or commissions.')}</li>
+                                <li>{it.L('Real-time prices, benchmarked against interbank options markets')}</li>
+                                <li>{it.L('<a href=\'[_1]\'>Rise/fall</a> contracts with returns that can approach 100%', it.url_for('trading?market=forex&formname=risefall'))}</li>
+                                <li>{it.L('<a href=\'[_1]\'>Higher/lower</a> and <a href=\'[_2]\'>touch/no-touch</a> trades with returns that can exceed 1000%', it.url_for('trading?market=forex&formname=higherlower'), it.url_for('trading?market=forex&formname=touchnotouch'))}</li>
+                                <li>{it.L('No hidden fees or commissions')}</li>
                             </ul>
                         </div>
                         <div className='gr-5 gr-10-m gr-centered-m'>
@@ -53,12 +53,12 @@ const WhyUs = () => (
                 </Section>
 
                 <Section id='flexible-trades' header={it.L('Trade your way')}>
-                    <p>{it.L('Why limit yourself? Whatever your market view, [_1] allows you to put your strategy to work and profit from your predictions.', it.website_name)}</p>
+                    <p>{it.L('Why limit yourself? Whatever your market view, [_1] is the right place for you to test your strategies and see if you can profit from your predictions.', it.website_name)}</p>
                     <img className='responsive' src={it.url_for('images/pages/tour/trade-tutorial_1.svg')} />
                     <ul className='checked'>
-                        <li>{it.L('Choose a payout from $1 to $50,000.')}</li>
+                        <li>{it.L('Choose from a wide range of payouts.')}</li>
                         <li>{it.L('Trade all major currencies, indices, commodities, and volatility indices.')}</li>
-                        <li>{it.L('Choose a duration from 10 seconds to 365 days.')}</li>
+                        <li>{it.L('Choose from a wide range of durations.')}</li>
                         <li>{it.L('Choose your own strike.')}</li>
                     </ul>
                 </Section>
@@ -70,7 +70,7 @@ const WhyUs = () => (
                             <ul className='checked'>
                                 <li>{it.L('Choose a payout and our system will calculate the stake required to purchase the contract.')}</li>
                                 <li>{it.L('You risk only your initial stake, and your stake never increases.')}</li>
-                                <li>{it.L('You can sell your contract before expiry to keep any profit you may have made or to minimise your loss.')}</li>
+                                <li>{it.L('You can almost always sell your contract before expiry to keep any profit you may have made or to minimise your loss.')}</li>
                             </ul>
                         </div>
                         <div className='gr-5 gr-8-m gr-centered-m gr-padding-20'>
@@ -87,10 +87,10 @@ const WhyUs = () => (
                         </div>
                         <div className='gr-4 gr-12-m'>
                             <ul className='checked'>
-                                <li>{it.L('Find the right trade for every market condition.')}</li>
+                                <li>{it.L('Make a trade prediction for every possible market condition.')}</li>
                                 <li>{it.L('Execute your trade in seconds.')}</li>
                                 <li>{it.L('Monitor your portfolio in real time.')}</li>
-                                <li>{it.L('Sell back trades at market prices.')}</li>
+                                <li>{it.L('Sell back trades at market prices. (Restrictions may apply)')}</li>
                             </ul>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ const WhyUs = () => (
                             <p>{it.L('With [_1], you can count on us to serve you with integrity and reliability.', it.website_name)}</p>
                             <ul className='checked'>
                                 <li>{it.L('We have a proven track record since we launched our platform in 2000.')}</li>
-                                <li>{it.L('We are licensed and regulated in the British Isles and in Malta since 2015.')}</li>
+                                <li>{it.L('We have been licensed and regulated in the British Isles and in Malta since 2015.')}</li>
                                 <li>{it.L('We segregate your funds and keep them in secure and licensed financial institutions.')}</li>
                             </ul>
                         </div>
@@ -159,9 +159,9 @@ const WhyUs = () => (
                     </div>
                     <p>{it.L('[_1] is the award-winning industry pioneer in online options trading. We boast:', it.website_name)}</p>
                     <ul className='checked'>
-                        <li>{it.L('Over two billion dollars in trades to date.')}</li>
-                        <li>{it.L('First-class client service.')}</li>
-                        <li>{it.L('Multi award-winning trading platform.')}</li>
+                        <li>{it.L('Over two billion dollars in trades to date;')}</li>
+                        <li>{it.L('First-class client service;')}</li>
+                        <li>{it.L('Multi award-winning trading platform; and')}</li>
                         <li>{it.L('Exclusive binary trading technology.')}</li>
                     </ul>
                 </Section>
