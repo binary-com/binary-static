@@ -36,10 +36,8 @@ module.exports = function (grunt) {
         app_2: {
             files: [
                 ...common,
-                ...(global.section === 'app_2' ? [ // to prioritize the `app` root files when it's not only `app_2`
-                    { expand: true, cwd:  'src/root_files/app_2', src: ['**', '!index.html'], dest: 'dist' }, // top level
-                ] : []),
-                { expand: true, cwd:  'src/root_files/app_2', src: ['index.html'], dest: global.dist_app_2 },
+                { expand: true, cwd:  'src/root_files/app_2', src: ['**', '!index.html'], dest: 'dist' }, // top level
+                { expand: true, cwd:  'src/root_files/app_2', src: ['index.html'],        dest: global.dist_app_2 },
 
                 // app_2
                 { expand: true, cwd: 'src/images/app_2',                     src: ['**'],   dest: `${global.dist_app_2}/images/` },
