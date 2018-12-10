@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage, MtBox } from './common.jsx';
-import { List, Table, Button } from '../../_common/components/elements.jsx';
+import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage, MtBox, SideBarCTA } from './common.jsx';
+import { List, Table } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
 const hundred       = 100;
@@ -43,13 +43,7 @@ const Metals = () => (
                     />
                 </div>
 
-                <div className='center-text gr-padding-10 client_logged_in invisible'>
-                    <Button
-                        className='button'
-                        href={it.url_for('user/metatrader')}
-                        text={it.L('Create an MT5 account now.')}
-                    />
-                </div>
+                <SideBarCTA />
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-metals-trading' header={it.L('What is metals trading')}>

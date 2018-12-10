@@ -1,6 +1,6 @@
 import React from 'react';
-import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, Box, NavButtons } from './common.jsx';
-import { List, Table, Button } from '../../_common/components/elements.jsx';
+import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, Box, NavButtons, SideBarCTA } from './common.jsx';
+import { List, Table } from '../../_common/components/elements.jsx';
 
 const hundredth   = '0.01';
 const tenth       = '0.10';
@@ -25,13 +25,7 @@ const Cfds = () => (
                     />
                 </div>
 
-                <div className='center-text gr-padding-10 client_logged_in invisible'>
-                    <Button
-                        className='button'
-                        href={it.url_for('user/metatrader')}
-                        text={it.L('Create an MT5 account now.')}
-                    />
-                </div>
+                <SideBarCTA />
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-cfds-trading' header={it.L('What is CFD trading')}>
