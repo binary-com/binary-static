@@ -53,7 +53,7 @@ const MetaTrader = (() => {
         let has_mt_company = false;
         Object.keys(mt_companies).forEach((company) => {
             Object.keys(mt_companies[company]).forEach((acc_type) => {
-                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.checkIfAdvanced(acc_type)}.shortcode`);
+                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
                 if (mt_company[company]) {
                     has_mt_company = true;
                     addAccount(company);
