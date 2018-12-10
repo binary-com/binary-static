@@ -286,7 +286,7 @@ const PersonalDetails = (() => {
                         }, 500);
                     });
                     $tax_residence.on('select2:unselecting', (e) => {
-                        e.preventDefault(); 
+                        e.preventDefault();
                     });
 
                     if (!get_settings_data.place_of_birth) {
