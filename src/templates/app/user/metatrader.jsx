@@ -333,7 +333,7 @@ const Metatrader = () => (
                                         <a id='btn_cancel' className='button button-secondary' href='javascript:;'>
                                             <span>{it.L('Cancel')}</span>
                                         </a>
-                                        <a id='btn_next' className='button button-disabled' href="javascript:">
+                                        <a id='btn_next' className='button button-disabled' href='javascript:;'>
                                             <span>{it.L('Next')}</span>
                                         </a>
                                     </div>
