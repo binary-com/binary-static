@@ -102,7 +102,7 @@ export const SideBarCTA = () => (
     <div id='sidebar-cta' className='center-text gr-padding-10 client_logged_in invisible'>
         <p>
             <a className='button' href={it.url_for('user/metatrader')}>
-                <span>Create an MT5 account now.</span>
+                <span>{it.L('Create an MT5 account now.')}</span>
             </a>
         </p>
     </div>
