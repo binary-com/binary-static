@@ -55,14 +55,14 @@ const ContentVisibility = (() => {
             const mt_financial_company              = State.getResponse('landing_company.mt_financial_company');
 
             // Check mt_financial_company by account type, since we are offering different landing companies for standard and advanced
-            const mt5fin_shortcodes = Object.keys(mt_financial_company)
+            const arr_mt5fin_shortcodes = Object.keys(mt_financial_company)
                 .map((key) => mt_financial_company[key].shortcode);
 
             controlVisibility(
                 current_landing_company_shortcode,
                 MetaTrader.isEligible(),
                 // We then pass the list of found mt5fin company shortcodes as an array
-                mt5fin_shortcodes
+                arr_mt5fin_shortcodes
             );
         });
     };
