@@ -59,7 +59,7 @@ const AccountTransfer = (() => {
             el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
             el_transfer_to.onchange = () => {
                 const to_currency = el_transfer_to.options[el_transfer_to.selectedIndex].getAttribute('data-currency');
-                el_transfer_info.setVisibility(client_currency === to_currency ? 0 : 1);
+                el_transfer_info.setVisibility(client_currency === to_currency);
             };
         } else {
             const label = createElement('label', {
@@ -79,7 +79,7 @@ const AccountTransfer = (() => {
             el_transfer_fee.setVisibility(1);
         } else {
             const to_currency = el_transfer_to.getAttribute('data-currency');
-            el_transfer_info.setVisibility(client_currency === to_currency ? 0 : 1);
+            el_transfer_info.setVisibility(client_currency === to_currency);
         }
     };
 
