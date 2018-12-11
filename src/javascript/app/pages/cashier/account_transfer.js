@@ -39,7 +39,6 @@ const AccountTransfer = (() => {
         el_transfer_to   = getElementById('transfer_to');
 
         elementTextContent(el_transfer_from, `${client_loginid} ${client_currency ? `(${client_currency})` : ''}`);
-        el_transfer_from.setAttribute('data-currency', client_currency);
 
         const fragment_transfer_to = document.createElement('div');
 
@@ -59,9 +58,8 @@ const AccountTransfer = (() => {
         if (fragment_transfer_to.childElementCount > 1) {
             el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
             el_transfer_to.onchange = () => {
-                const from_currency = el_transfer_from.getAttribute('data-currency');
                 const to_currency = el_transfer_to.options[el_transfer_to.selectedIndex].getAttribute('data-currency');
-                el_transfer_info.setVisibility(from_currency === to_currency ? 0 : 1);
+                el_transfer_info.setVisibility(client_currency === to_currency ? 0 : 1);
             };
         } else {
             const label = createElement('label', {
@@ -80,9 +78,8 @@ const AccountTransfer = (() => {
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
             el_transfer_fee.setVisibility(1);
         } else {
-            const from_currency = el_transfer_from.getAttribute('data-currency');
             const to_currency = el_transfer_to.getAttribute('data-currency');
-            el_transfer_info.setVisibility(from_currency === to_currency ? 0 : 1);
+            el_transfer_info.setVisibility(client_currency === to_currency ? 0 : 1);
         }
     };
 
