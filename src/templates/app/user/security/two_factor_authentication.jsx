@@ -49,7 +49,7 @@ const TwoFactorAuthentication = () => (
                     <div className='step'>
                         <div className='circle'>1</div>
                         <div className='content'>
-                            <p>{it.L('Scan the QR code below with your authentication app. We recommend [_1] or [_2]. Please note that [_3] is not supported.', '<strong>Authy</strong>', '<strong>Google Authenticator</strong>', '<strong>Duo Mobile</strong>')}</p>
+                            <p>{it.L('Scan the QR code below with your authentication app. We recommend [_1] or [_2]. Please note that [_3] is not supported.', '<a href="https://authy.com" target="_blank" rel="noopener noreferrer">Authy</a>', '<a href="https://github.com/google/google-authenticator/wiki#implementations" target="_blank" rel="noopener noreferrer">Google Authenticator</a>', '<strong>Duo Mobile</strong>')}</p>
                             <p>{it.L('If you are unable to scan the QR code, you can manually enter this code instead:')} <strong><span id='qrcode_key' /></strong></p>
                             <div id='qrcode_loading'><Loading /></div>
                             <ErrorMessage id='generate_error' />
