@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, HeaderSecondary, NavButtons } from './common.jsx';
+import { Section, HeaderSecondary, NavButtons, MTAccountOpeningButton } from './common.jsx';
 import { List } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
@@ -16,6 +16,8 @@ const BinaryOptionsForMT5 = () => (
                             { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options on MT5') },
                         ]}
                     />
+
+                    <MTAccountOpeningButton />
                 </div>
             </div>
             <div className='gr-9 gr-12-m'>

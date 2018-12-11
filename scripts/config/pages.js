@@ -92,7 +92,7 @@ module.exports = [
 
     ['affiliate/signup',                        'static/affiliates/signup',                    'full_width', 'Affiliate'],
     ['affiliate/faq',                           'static/affiliates/faq',                       'default',    'Affiliate FAQ'],
-    ['charity',                                 'static/charity',                              'default',    'Charity'],
+    // ['charity',                                 'static/charity',                              'default',    'Charity'],
     ['ib-programme/ib-signup',                  'static/ib_programme/ib_signup',               'full_width', 'IB programme'],
     ['ib-programme/ib-faq',                     'static/ib_programme/ib_faq',                  'default',    'IB programme FAQ'],
     ['legal/us_patents',                        'static/legal/us_patents',                     'default',    'US Patents'],
