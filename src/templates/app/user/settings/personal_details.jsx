@@ -66,6 +66,7 @@ const PersonalDetails = () => (
                 <AddressPostcode />
                 <Phone />
                 <GeocodeResponse />
+                <button id='geocode_validate' className='button-secondary' >{it.L('Validate address')}</button>
             </Fieldset>
 
             <Fieldset id='fieldset_email_consent' legend={it.L('Email Preferences')}>
