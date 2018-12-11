@@ -12,7 +12,7 @@ const OtpForm = () => (
         <form id='frm_two_factor_auth' className='invisible'>
             <div className='otp-form-group'>
                 <div>
-                    <input type='text' id='otp' placeholder={it.L('6-digit code')} />
+                    <input type='text' id='otp' placeholder={it.L('6-digit code')} maxLength='6' />
                     <button type='submit' id='btn_submit' />
                 </div>
             </div>
