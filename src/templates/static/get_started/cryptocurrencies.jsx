@@ -1,5 +1,5 @@
 import React from 'react';
-import { BuySellCurrency, Section, HeaderSecondary, NavButtons, MtBox } from './common.jsx';
+import { BuySellCurrency, Section, HeaderSecondary, NavButtons, MtBox, MTAccountOpeningButton } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 
 const hundredth = '0.01';
@@ -23,6 +23,8 @@ const Cryptocurrencies = () => (
                         ]}
                     />
                 </div>
+
+                <MTAccountOpeningButton />
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-crypto-trading' header={it.L('What is cryptocurrency trading')}>
