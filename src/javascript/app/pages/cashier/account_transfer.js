@@ -39,12 +39,14 @@ const AccountTransfer = (() => {
         el_transfer_to   = getElementById('transfer_to');
 
         elementTextContent(el_transfer_from, `${client_loginid} ${client_currency ? `(${client_currency})` : ''}`);
+        el_transfer_from.setAttribute('data-currency', client_currency);
 
         const fragment_transfer_to = document.createElement('div');
 
         accounts.forEach((account) => {
             if (Client.canTransferFunds(account)) {
                 const option = document.createElement('option');
+                option.setAttribute('data-currency', account.currency);
                 option.appendChild(document.createTextNode(`${account.loginid}${account.currency ? ` (${account.currency})` : ''}`));
                 fragment_transfer_to.appendChild(option);
             }
@@ -56,8 +58,16 @@ const AccountTransfer = (() => {
         }
         if (fragment_transfer_to.childElementCount > 1) {
             el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
+            el_transfer_to.onchange = () => {
+                const from_currency = el_transfer_from.getAttribute('data-currency');
+                const to_currency = el_transfer_to.options[el_transfer_to.selectedIndex].getAttribute('data-currency');
+                el_transfer_info.setVisibility(from_currency === to_currency ? 0 : 1);
+            };
         } else {
-            const label = createElement('label', { 'data-value': fragment_transfer_to.innerText });
+            const label = createElement('label', {
+                'data-value'   : fragment_transfer_to.innerText,
+                'data-currency': fragment_transfer_to.firstChild.getAttribute('data-currency'),
+            });
             label.appendChild(document.createTextNode(fragment_transfer_to.innerText));
             label.id = 'transfer_to';
 
@@ -70,7 +80,9 @@ const AccountTransfer = (() => {
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
             el_transfer_fee.setVisibility(1);
         } else {
-            el_transfer_info.setVisibility(1);
+            const from_currency = el_transfer_from.getAttribute('data-currency');
+            const to_currency = el_transfer_to.getAttribute('data-currency');
+            el_transfer_info.setVisibility(from_currency === to_currency ? 0 : 1);
         }
     };
 
