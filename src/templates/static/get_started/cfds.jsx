@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, Box, NavButtons } from './common.jsx';
+import { Section, HeaderSecondary, ListStrong, BuySellImage, MtBox, Box, NavButtons, MTAccountOpeningButton } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 
 const hundredth   = '0.01';
@@ -24,6 +24,8 @@ const Cfds = () => (
                         ]}
                     />
                 </div>
+
+                <MTAccountOpeningButton />
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-cfds-trading' header={it.L('What is CFD trading')}>
