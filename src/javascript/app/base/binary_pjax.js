@@ -89,6 +89,8 @@ const BinaryPjax = (() => {
         // check if url is not same as current or if url has `anchor` query
         if (location.href !== url || Url.paramsHash().anchor) {
             processUrl(url);
+        } else {
+            $.scrollTo('body', 500);
         }
 
         // workaround to remove non-error notification msg for chrome bug where users logout from different browser window
