@@ -39,16 +39,13 @@ const Head = () => (
         ))}
 
         <link rel='preload' as='script' href={`${it.root_url}pushwoosh-web-notifications.js`} />
-        <link rel='preconnect' href='https://www.googletagmanager.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
-        <link rel='preconnect' href='https://fonts.googleapis.com' />
-
-        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='preload' as='style' />
-
-        <Title />
+        <link rel='preconnect' href='https://www.googletagmanager.com' />
+        <link rel='preconnect' href='https://browser-update.org' />
 
         <link rel='manifest' href={it.url_for(`/${it.language.toLowerCase()}/manifest.json`)} />
-        <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} async />
+
+        <Title />
 
         <Favicons />
 
@@ -68,6 +65,7 @@ const Head = () => (
         { it.js_files.map((js_file, inx) => (
             <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())} defer />
         ))}
+        <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} defer />
     </head>
 );
 
