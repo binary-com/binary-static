@@ -143,7 +143,7 @@ const Platform = () => (
                                 description={it.L('Premier binary options trading platform')}
                                 text={it.L('Trade in the world’s financial markets with a simple and user-friendly online platform.')}
                                 url={it.url_for('trading')}
-                                button_text={it.L('Trade Now')}
+                                button_text={it.L('Trade now')}
                             />
                             <Platforms
                                 image='tick-trade'
@@ -151,7 +151,7 @@ const Platform = () => (
                                 description={it.L('Ultra fast on-the-go trading')}
                                 text={it.L('Enjoy our fastest type of trading with our Tick Trade app, wherever you are.')}
                                 url='https://ticktrade.binary.com/download/ticktrade-app.apk'
-                                button_text={it.L('Download the Android App')}
+                                button_text={it.L('Download the Android app')}
                                 download='true'
                             />
                             <Platforms

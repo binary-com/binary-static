@@ -50,9 +50,6 @@ const Trading = () => (
                                                 <input type='text' data-lpignore='true' id='time_start' autoComplete='off' readOnly='readonly' className='medium_width_input' />
                                                 <span className='gr-gutter-left'>GMT</span>
                                             </div>
-                                            <div>
-                                                <div className='hint invisible'>{it.L('Asset open hours:')} <span id='asset_open_hours' /></div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div className='row' id='expiry_row'>
@@ -215,7 +212,7 @@ const Trading = () => (
                                 <div className='authorization_error'>
                                     <h3 id='authorization_error_text'>{it.L('Ready to trade?')}</h3>
                                     <a className='button' href={it.url_for('new-account')}>
-                                        <span>{it.L('Open A Free Account')}</span>
+                                        <span>{it.L('Open a free account')}</span>
                                     </a>
                                     <p>{it.L('Already have an account?')}</p>
                                     <a id='authorization_error_btn_login' href='javascript:;'>{it.L('Log in here')}</a>
