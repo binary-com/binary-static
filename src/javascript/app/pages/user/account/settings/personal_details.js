@@ -140,7 +140,7 @@ const PersonalDetails = (() => {
             $('#country').text(get_settings.country);
         }
         if (get_settings.tax_residence) {
-            const tax_residence_array = get_settings.tax_residence.split(',') || [];
+            const tax_residence_array = (get_settings.tax_residence ? get_settings.tax_residence.split(',') : []);
             generateTaxResidenceSelect($('#tax_residence'), tax_residence_array);
         }
     };
@@ -192,7 +192,7 @@ const PersonalDetails = (() => {
             ];
 
             const tax_id_validation  = { selector: '#tax_identification_number', validations: ['tax_id', ['length', { min: 0, max: 20 }]] };
-            if (is_tax_req) {
+            if (is_tax_req || State.getResponse('get_settings.tax_identification_number')) {
                 tax_id_validation.validations[1][1].min = 1;
                 tax_id_validation.validations.unshift('req');
             }
@@ -298,7 +298,7 @@ const PersonalDetails = (() => {
                 });
 
                 if (residence) {
-                    const tax_residence_array = get_settings_data.tax_residence.split(',') || [];
+                    const tax_residence_array = (get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : []);
                     const $tax_residence = $('#tax_residence');
                     $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                         setTimeout(() => {
