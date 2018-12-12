@@ -23,9 +23,9 @@ Routes.propTypes = {
 // need to wrap withRouter around connect
 // to prevent updates on <BinaryRoutes /> from being blocked
 export default withRouter(connect(
-    client({ client, common }) => ({
+    ({ client, common }) => ({
         is_logged_in: client.is_logged_in,
         error       : common.error,
         has_error   : common.has_error,
-    }),
+    })
 )(Routes));
