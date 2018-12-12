@@ -9,10 +9,11 @@ class Calendar extends React.PureComponent {
     constructor(props) {
         super(props);
         const { date_format, start_date } = props;
-        const current_date = moment.utc(start_date).format(date_format);
+        const current_date = props.current_date || moment.utc(start_date).format(date_format);
+        const selected_date = props.selected_date || '';
         this.state = {
             calendar_date: current_date, // calendar date reference
-            selected_date: '',           // selected date
+            selected_date,           // selected date
             calendar_view: 'date',
         };
     }
