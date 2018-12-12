@@ -239,11 +239,8 @@ TimePicker.propTypes = {
     padding        : PropTypes.string,
     placeholder    : PropTypes.string,
     sessions       : MobxPropTypes.arrayOrObservableArray,
-    start_date     : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    value: PropTypes.string,
+    start_date     : PropTypes.number,
+    value          : PropTypes.string,
 };
 
 TimePickerDropdown.propTypes = {
@@ -252,13 +249,10 @@ TimePickerDropdown.propTypes = {
     onChange    : PropTypes.func,
     preClass    : PropTypes.string,
     sessions    : MobxPropTypes.arrayOrObservableArray,
-    start_date  : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
-    toggle     : PropTypes.func,
-    value      : PropTypes.string,
-    value_split: PropTypes.bool,
+    start_date  : PropTypes.number,
+    toggle      : PropTypes.func,
+    value       : PropTypes.string,
+    value_split : PropTypes.bool,
 };
 
 export default observer(TimePicker);
