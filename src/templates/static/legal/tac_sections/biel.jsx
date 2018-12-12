@@ -5,7 +5,7 @@ const Biel = () => (
         <h2 data-anchor='supplementary-terms-and-conditions'>{it.L('Supplementary Terms and Conditions for Financial Products Offered by Binary Investments (Europe) Ltd ')}</h2>
         <p>{it.L('These Supplementary Terms and Conditions (these "ST&Cs") apply solely to clients ("you") of Binary Investments (Europe) Ltd ("BIEL", "we" or "us") and will govern the relationship between you and us when trading Financial Products (as defined in the Key Information documents [_1]here[_2]) with us.', `<a href=${it.url_for('regulation#key_information_documents')}>`, '</a>')}</p>
         <p>{it.L('These ST&Cs form part of and need to be read together with the General Terms and Conditions relating to the use of [_1].', it.website_name)}</p>
-        <p>{it.L('You should read these ST&Cs carefully as well as the Summary Order Execution Policy and Summary Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you.')}</p>
+        <p>{it.L('You should read these ST&Cs carefully as well as the Summary of the Order Execution Policy and Summary of the Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you.')}</p>
         <p>{it.L('These ST&Cs begin to apply on the date we open your account, and, for any new versions after that, on the date we notify you.')}</p>
 
         <h2 data-anchor='about-us-and-our-regulator'>{it.L('About Us and Our Regulator')}</h2>
