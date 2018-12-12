@@ -142,12 +142,16 @@ const BinaryLoader = (() => {
     };
 
     const handleNotAuthenticated = () => {
-        const content = container.querySelector('#content .container');
+        const content = container.querySelector('#content');
         if (!content) {
             return;
         }
+        content.classList.add('container');
 
-        const outer_container = createElement('div', { class: 'logged_out_title_container', html: content.getElementsByTagName('h1')[0] });
+        const outer_container = createElement('div', { class: 'logged_out_title_container' });
+        outer_container.appendChild(container.querySelector('#page_info'));
+        outer_container.appendChild(container.getElementsByTagName('h1')[0]);
+
         const rowDiv = (element) => {
             const row_element = createElement('div', { class: 'gr-padding-10' });
             row_element.appendChild(element);

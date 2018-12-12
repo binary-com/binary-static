@@ -1,3 +1,4 @@
+import { lazy }        from 'react';
 import { Redirect }    from 'react-router-dom';
 import { localize }    from '_common/localize';
 import { routes }      from 'Constants';
@@ -5,22 +6,24 @@ import { routes }      from 'Constants';
 import {
     IconPortfolio,
     IconStatement }    from 'Assets/Header/NavBar';
-import ContractDetails from 'Modules/Contract';
-import Portfolio       from 'Modules/Portfolio';
-import Settings        from 'Modules/settings/settings.jsx';
-import Statement       from 'Modules/Statement';
+// import Statement       from 'Modules/Statement';
 import Trade           from 'Modules/Trading';
 
+const ContractDetails = lazy(() => import(/* webpackChunkName: "contract" */  'Modules/Contract'));
+const Portfolio       = lazy(() => import(/* webpackChunkName: "portfolio" */ 'Modules/Portfolio'));
+const Settings        = lazy(() => import(/* webpackChunkName: "settings" */  'Modules/settings/settings.jsx'));
+const Statement       = lazy(() => import(/* webpackChunkName: "statement" */ 'Modules/Statement'));
+
 // Settings Routes
-import AccountPassword        from 'Modules/settings/sections/account_password.jsx';
-import ApiToken               from 'Modules/settings/sections/api_token.jsx';
-import AuthorizedApplications from 'Modules/settings/sections/authorized_applications.jsx';
-import CashierPassword        from 'Modules/settings/sections/cashier_password.jsx';
-import FinancialAssessment    from 'Modules/settings/sections/financial_assessment.jsx';
-import Limits                 from 'Modules/settings/sections/limits.jsx';
-import LoginHistory           from 'Modules/settings/sections/login_history.jsx';
-import PersonalDetails        from 'Modules/settings/sections/personal_details.jsx';
-import SelfExclusion          from 'Modules/settings/sections/self_exclusion.jsx';
+const AccountPassword        = lazy(() => import(/* webpackChunkName: "account_password" */       'Modules/settings/sections/account_password.jsx'));
+const ApiToken               = lazy(() => import(/* webpackChunkName: "api_toke" */               'Modules/settings/sections/api_token.jsx'));
+const AuthorizedApplications = lazy(() => import(/* webpackChunkName: "authorized_application" */ 'Modules/settings/sections/authorized_applications.jsx'));
+const CashierPassword        = lazy(() => import(/* webpackChunkName: "cashier_password" */       'Modules/settings/sections/cashier_password.jsx'));
+const FinancialAssessment    = lazy(() => import(/* webpackChunkName: "financial_assessment" */   'Modules/settings/sections/financial_assessment.jsx'));
+const Limits                 = lazy(() => import(/* webpackChunkName: "limits" */                 'Modules/settings/sections/limits.jsx'));
+const LoginHistory           = lazy(() => import(/* webpackChunkName: "login_history" */          'Modules/settings/sections/login_history.jsx'));
+const PersonalDetails        = lazy(() => import(/* webpackChunkName: "personal_details" */       'Modules/settings/sections/personal_details.jsx'));
+const SelfExclusion          = lazy(() => import(/* webpackChunkName: "self_exclusion" */         'Modules/settings/sections/self_exclusion.jsx'));
 
 const initRoutesConfig = () => ([
     { path: routes.contract,  component: ContractDetails, title: localize('Contract Details'),  is_authenticated: true },
