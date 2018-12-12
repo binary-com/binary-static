@@ -1,7 +1,6 @@
 import { expect }                       from 'chai';
 import { formatStatementTransaction }   from '../format_response.js';
 
-
 describe('formatStatementTransaction', () => {
     const transaction = {
         action_type     : 'Buy',
