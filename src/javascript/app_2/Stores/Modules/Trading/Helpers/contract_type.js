@@ -1,11 +1,18 @@
-import moment                                                                     from 'moment';
-import { cloneObject, getPropertyValue }                                          from '_common/utility';
-import { localize }                                                               from '_common/localize';
-import { WS }                                                                     from 'Services';
-import { buildBarriersConfig }                                                    from './barrier';
-import { buildDurationConfig }                                                    from './duration';
-import { buildForwardStartingConfig, isSessionAvailable }                         from './start_date';
-import { getContractCategoriesConfig, getContractTypesConfig, getLocalizedBasis } from '../Constants/contract';
+import moment                       from 'moment';
+import {
+    cloneObject,
+    getPropertyValue }              from '_common/utility';
+import { localize }                 from '_common/localize';
+import { WS }                       from 'Services';
+import {
+    getContractCategoriesConfig,
+    getContractTypesConfig,
+    getLocalizedBasis }             from 'Stores/Modules/Trading/Constants/contract';
+import { buildBarriersConfig }      from './barrier';
+import { buildDurationConfig }      from './duration';
+import {
+    buildForwardStartingConfig,
+    isSessionAvailable }            from './start_date';
 
 const ContractType = (() => {
     let available_contract_types = {};
