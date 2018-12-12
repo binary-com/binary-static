@@ -1,6 +1,15 @@
 import { expect }         from 'chai';
 import React              from 'react';
-import { getChartConfig } from '../logic';
+import {
+    getChartConfig,
+    isEnded,
+    getDisplayStatus,
+    getEndSpot,
+    getEndSpotTime,
+    getFinalPrice,
+    getIndicativePrice ,
+    isSoldBeforeStart
+} from '../logic';
 
 describe('logic', () => {
     describe('getChartConfig', () => {
@@ -63,6 +72,187 @@ describe('logic', () => {
                 end_epoch: 1546014400,
                 start_epoch: 1543985600,
             });
+        });
+        it('should work as expected when duration is more than 30 * 24 * 3600', () => {
+            const contract_info = {
+                "date_expiry":1546592100,
+                "date_start":1544000000,
+            };
+            expect(getChartConfig(contract_info)).to.eql({
+                granularity: 86400,
+                chart_type: 'candle',
+                end_epoch: 1546678500,
+                start_epoch: 1543913600,
+            });
+        });
+    });
+
+    describe('isEnded', () => {
+        it('should return false when there is status and it\'s equal to open in contract info', () => {
+            const contract_info = {
+                "status": "open",
+            };
+            expect(isEnded(contract_info)).to.eql(false);
+        });
+        it('should return true when there is status and it\'s not equal to open in contract info', () => {
+            const contract_info = {
+                "status": "closed",
+            };
+            expect(isEnded(contract_info)).to.eql(true);
+        });
+        it('should return true when contract is expired', () => {
+            const contract_info = {
+                "status": "open",
+                "is_expired": true,
+            };
+            expect(isEnded(contract_info)).to.eql(true);
+        });
+        it('should return true when contract is settleable', () => {
+            const contract_info = {
+                "status": "open",
+                "is_expired": false,
+                "is_settleable": true,
+            };
+            expect(isEnded(contract_info)).to.eql(true);
+        });
+        it('should return true when contract is not expired', () => {
+            const contract_info = {
+                "status": "open",
+                "is_expired": false,
+            };
+            expect(isEnded(contract_info)).to.eql(false);
+        });
+        it('should return true when contract does not have is_settleable, is_expired and status', () => {
+            const contract_info = {};
+            expect(isEnded(contract_info)).to.eql(false);
+        });
+    });
+
+    expect('getDisplayStatus', () => {
+        it('should return won if contract is ended and profit is more than zero', () => {
+            const contract_info = {
+                "status": "closed",
+                "profit": 100,
+            };
+            expect(getDisplayStatus(contract_info)).to.eql('won');
+        });
+        it('should return lost if contract is ended and profit is less than zero', () => {
+            const contract_info = {
+                "status": "closed",
+                "profit": -100,
+            };
+            expect(getDisplayStatus(contract_info)).to.eql('loss');
+        });
+        it('should return won if contract is ended and profit is zero', () => {
+            const contract_info = {
+                "status": "closed",
+                "profit": 0,
+            };
+            expect(getDisplayStatus(contract_info)).to.eql('won');
+        });
+        it('should return purchased if contract is not ended', () => {
+            const contract_info = {
+                "status": "open",
+            };
+            expect(getDisplayStatus(contract_info)).to.eql('purchased');
+        });
+    });
+
+    describe('getEndSpot', () => {
+        it('should return contract\'s sell spot if contract is path dependent', () => {
+            const contract_info = {
+                "is_path_dependent": true,
+                "sell_spot": 123456,
+                "exit_tick": 987654321,
+            };
+            expect(getEndSpot(contract_info)).to.eql(123456);
+        });
+        it('should return contract\'s exit tick if contract is not path dependent', () => {
+            const contract_info = {
+                "is_path_dependent": false,
+                "sell_spot": 123456,
+                "exit_tick": 987654321,
+            };
+            expect(getEndSpot(contract_info)).to.eql(987654321);
+        });
+        it('should return contract\'s exit tick if is_path_dependent is undefined', () => {
+            const contract_info = {
+                "sell_spot": 123456,
+                "exit_tick": 987654321,
+            };
+            expect(getEndSpot(contract_info)).to.eql(987654321);
+        });
+    });
+
+    describe('getEndSpotTime', () => {
+        it('should return contract\'s sell spot time if it is path dependent', () => {
+            const contract_info = {
+                "is_path_dependent": true,
+                "sell_spot_time": 123456,
+                "exit_tick_time": 987654321,
+            };
+            expect(getEndSpotTime(contract_info)).to.eql(123456);
+        });
+        it('should return contract\'s exit tick time if it is not path dependent', () => {
+            const contract_info = {
+                "is_path_dependent": false,
+                "sell_spot_time": 123456,
+                "exit_tick_time": 987654321,
+            };
+            expect(getEndSpotTime(contract_info)).to.eql(987654321);
+        });
+        it('should return contract\'s exit tick time if is_path_dependent is undefined', () => {
+            const contract_info = {
+                "is_path_dependent": false,
+                "sell_spot_time": 123456,
+                "exit_tick_time": 987654321,
+            };
+            expect(getEndSpotTime(contract_info)).to.eql(987654321);
+        });
+    });
+
+    describe('getFinalPrice', () => {
+        it('should return sell_price as final price when it\'s available', () => {
+            const contract_info = {
+                "sell_price": 12345,
+            };
+            expect(getFinalPrice(contract_info)).to.eql(12345);
+        });
+        it('should return sell_price as final price when sell_price && bid_price are available', () => {
+            const contract_info = {
+                "sell_price": 12345,
+                "bid_price": 789,
+            };
+            expect(getFinalPrice(contract_info)).to.eql(12345);
+        });
+        it('should return bid_price as final price when sell_price is not available and bid_price is available', () => {
+            const contract_info = {
+                "bid_price": 789,
+            };
+            expect(getFinalPrice(contract_info)).to.eql(789);
+        });
+        it('should return 0 as final price when sell_price and bid_price are empty', () => {
+            const contract_info = {
+                "sell_price": false,
+                "bid_price": false,
+            };
+            expect(getFinalPrice(contract_info)).to.eql(0);
+        });
+    });
+
+    describe('getIndicativePrice', () => {
+        it('should return getFinalPrice if it has final price and contract is ended', () => {
+            const contract_info = {
+                "sell_price": 12345,
+                "status": "closed"
+            };
+            expect(getIndicativePrice(contract_info)).to.eql(12345);
+        });
+        it('should return null if it doesn\'t final price, bid_price and contract is not ended', () => {
+            const contract_info = {
+                "status": "open",
+            };
+            expect(getIndicativePrice(contract_info)).to.eql(null);
         });
     });
 });
