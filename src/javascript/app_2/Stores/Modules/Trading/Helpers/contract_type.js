@@ -1,8 +1,8 @@
 import moment                    from 'moment';
+import { localize }              from '_common/localize';
 import {
     cloneObject,
     getPropertyValue }           from '_common/utility';
-import { localize }              from '_common/localize';
 import { WS }                    from 'Services';
 import {
     getContractCategoriesConfig,
