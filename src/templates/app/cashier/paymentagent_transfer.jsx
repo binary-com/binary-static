@@ -63,7 +63,7 @@ const PaymentagentTransfer = () => (
                     id='description'
                     type='textarea'
                     className='paymentagent_description'
-                    attributes={{ rows: 4, cols: 19, maxLength: 500 }}
+                    attributes={{ rows: 4, cols: 19, maxLength: 250 }}
                 />
             </Fieldset>
 
