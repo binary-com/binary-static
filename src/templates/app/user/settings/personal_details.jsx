@@ -10,7 +10,7 @@ import {
     AddressPostcode,
     Phone,
     TaxInformationForm,
-    GeocodeResponse,
+    GeocodeValidation,
 } from '../../../_common/components/forms_common_rows.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 
@@ -65,8 +65,7 @@ const PersonalDetails = () => (
                 <AddressState />
                 <AddressPostcode />
                 <Phone />
-                <GeocodeResponse />
-                <button id='geocode_validate' className='button-secondary' >{it.L('Validate address')}</button>
+                <GeocodeValidation />
             </Fieldset>
 
             <Fieldset id='fieldset_email_consent' legend={it.L('Email Preferences')}>

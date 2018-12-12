@@ -3,25 +3,28 @@ const scriptjs           = require('scriptjs');
 // const localize           = require('./localize').localize;
 // const applyToAllElements = require('./utility').applyToAllElements;
 // const createElement      = require('./utility').createElement;
+const getElementById     = require('./common_functions').getElementById;
 const Client             = require('../app/base/client');
 
 const Geocoder = (() => {
-    let el_error;
+    let el_error,
+        el_btn_check;
     let validated = false;
 
     const init = (form_id) => {
         scriptjs('https://maps.googleapis.com/maps/api/js?key=AIzaSyAEha6-HeZuI95L9JWmX3m6o-AxQr_oFqU&libraries=places', 'gMaps');
 
-        const form = document.getElementById(form_id.split('#')[1]);
+        const form = getElementById(form_id.split('#')[1]);
         const addr_1 = '#address_line_1';
         const addr_2 = '#address_line_2';
         const city   = '#address_city';
         const state  = '#address_state';
         const postcode  = '#address_postcode';
         const residence = Client.get('residence');
-        const el_btn_validate = document.getElementById('geocode_validate');
+        const el_btn_validate = getElementById('geocode_validate');
+        el_btn_check = getElementById('geocode_success_check');
 
-        const getValue = (id) => document.getElementById(id.split('#')[1]).value || '';
+        const getValue = (id) => getElementById(id.split('#')[1]).value || '';
         const getAddress = () => `${getValue(addr_1)} ${getValue(addr_2)}, ${getValue(city)}, ${getValue(state)} ${getValue(postcode)}, ${residence}`;
 
         form.querySelector(city).addEventListener('change', () => {
@@ -94,9 +97,11 @@ const Geocoder = (() => {
     const handleResponse = (status) => {
         if (/ZERO_RESULTS|INVALID_REQUEST/.test(status)) {
             el_error.setVisibility(1);
+            el_btn_check.setVisibility(0);
             // if (el_btn_validate) el_btn_validate.setVisibility(0);
         } else {
             el_error.setVisibility(0);
+            el_btn_check.setVisibility(1);
             // if (el_btn_validate) el_btn_validate.setVisibility(0);
         }
     };

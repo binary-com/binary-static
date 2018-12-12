@@ -236,12 +236,20 @@ export const TaxInformationForm = () => (
     </React.Fragment>
 );
 
-export const GeocodeResponse = () => (
-    <div className='gr-row'>
-        <div className='gr-12 gr-padding-10 center-text'>
-            <p id='geocode_error' className='notice-msg no-margin invisible'>
-                {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
-            </p>
+export const GeocodeValidation = () => (
+    <React.Fragment>
+        <div className='gr-row'>
+            <div className='geocode-btn-container'>
+                <button id='geocode_validate' className='button-secondary invisible' >{it.L('Validate address')}</button>
+                <span id='geocode_success_check' className='checked invisible' />
+            </div>
         </div>
-    </div>
+        <div className='gr-row'>
+            <div className='gr-12 gr-padding-10 center-text'>
+                <p id='geocode_error' className='notice-msg no-margin invisible'>
+                    {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
+                </p>
+            </div>
+        </div>
+    </React.Fragment>
 );

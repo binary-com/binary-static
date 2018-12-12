@@ -81,6 +81,14 @@ button.full-width, .button.full-width {
     }
 }
 
+span.checked {
+    background: url('../images/pages/authenticate/checked.svg') no-repeat;
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
 input, button, textarea, select, optgroup, option, xmp {
     font-family: inherit;
     font-size: inherit;
