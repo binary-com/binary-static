@@ -66,9 +66,9 @@ const BinaryLoader = (() => {
 
         const this_page = e.detail.getAttribute('data-page');
         if (this_page in pages_config) {
-            loadHandler(pages_config[this_page]);
+            loadHandler(this_page);
         } else if (/\/get-started\//i.test(window.location.pathname)) {
-            loadHandler(pages_config['get-started']);
+            loadHandler('get-started');
         }
 
         ContentVisibility.init();
@@ -82,7 +82,8 @@ const BinaryLoader = (() => {
         not_authenticated: () => localize('This page is only available to logged out clients.'),
     };
 
-    const loadHandler = (config) => {
+    const loadHandler = (page) => {
+        const config = pages_config[page];
         active_script = config.module;
         if (config.is_authenticated) {
             if (!Client.isLoggedIn()) {
@@ -102,7 +103,11 @@ const BinaryLoader = (() => {
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
-            handleNotAuthenticated();
+            if (page === 'home') {
+                BinaryPjax.load(Client.defaultRedirectUrl(), true);
+            } else {
+                handleNotAuthenticated();
+            }
         } else {
             loadActiveScript(config);
         }
