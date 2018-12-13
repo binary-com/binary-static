@@ -51,21 +51,21 @@ const eu_country_rule   = 'eucountry';
 const ContentVisibility = (() => {
     const init = () => {
         let arr_mt5fin_shortcodes;
-        let mt_company = 'financial';
+        let mt_company_type = 'financial';
 
         BinarySocket.wait('authorize', 'landing_company', 'website_status').then(() => {
             const current_landing_company_shortcode = State.getResponse('authorize.landing_company_name') || 'default';
 
             // check if country id is be, since belgium is the only country that has malta landing company shortcode but no mt_financial_company
             if (State.getResponse('landing_company.id') === 'be') {
-                mt_company = 'gaming';
+                mt_company_type = 'gaming';
             }
 
-            const mt_financial_company = State.getResponse(`landing_company.mt_${mt_company}_company`);
+            const mt_landing_company = State.getResponse(`landing_company.mt_${mt_company_type}_company`);
 
             // Check mt_financial_company by account type, since we are offering different landing companies for standard and advanced
-            arr_mt5fin_shortcodes = Object.keys(mt_financial_company)
-                .map((key) => mt_financial_company[key].shortcode);
+            arr_mt5fin_shortcodes = mt_landing_company ? Object.keys(mt_landing_company)
+                .map((key) => mt_landing_company[key].shortcode) : [];
 
             controlVisibility(
                 current_landing_company_shortcode,

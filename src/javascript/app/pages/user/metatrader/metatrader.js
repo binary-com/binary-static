@@ -49,8 +49,8 @@ const MetaTrader = (() => {
         // Check if any of the account type shortcodes from mt_landing_company account is maltainvest
         const mt_landing_company = State.getResponse(`landing_company.mt_${company}_company`);
 
-        const is_financial = Object.keys(mt_landing_company)
-            .some((key) => mt_landing_company[key].shortcode === 'maltainvest');
+        const is_financial = mt_landing_company ? Object.keys(mt_landing_company)
+            .some((key) => mt_landing_company[key].shortcode === 'maltainvest') : undefined;
 
         mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
