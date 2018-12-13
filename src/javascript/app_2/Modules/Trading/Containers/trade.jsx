@@ -2,12 +2,14 @@ import PropTypes            from 'prop-types';
 import React                from 'react';
 import { CSSTransition }    from 'react-transition-group';
 import { getPropertyValue } from '_common/utility';
+import UILoader             from 'App/Components/Elements/ui_loader.jsx';
 import { connect }          from 'Stores/connect';
 import Test                 from './test.jsx';
 import FormLayout           from '../Components/Form/form_layout.jsx';
 import ContractDetails      from '../../Contract/Containers/contract_details.jsx';
 import InfoBox              from '../../Contract/Containers/info_box.jsx';
-import SmartChart           from '../../SmartChart';
+
+const SmartChart = React.lazy(() => import(/* webpackChunkName: "smart_chart" */'../../SmartChart'));
 
 class Trade extends React.Component {
     componentDidMount() {
@@ -26,16 +28,18 @@ class Trade extends React.Component {
             <div id='trade_container' className='trade-container'>
                 <div className='chart-container notice-msg'>
                     { this.props.symbol &&
-                        <SmartChart
-                            chart_id={this.props.chart_id}
-                            InfoBox={<InfoBox is_trade_page />}
-                            onSymbolChange={this.props.onSymbolChange}
-                            symbol={this.props.symbol}
-                            chart_type={this.props.chart_type}
-                            granularity={this.props.granularity}
-                            updateChartType={this.props.updateChartType}
-                            updateGranularity={this.props.updateGranularity}
-                        />
+                        <React.Suspense fallback={<UILoader />} >
+                            <SmartChart
+                                chart_id={this.props.chart_id}
+                                InfoBox={<InfoBox is_trade_page />}
+                                onSymbolChange={this.props.onSymbolChange}
+                                symbol={this.props.symbol}
+                                chart_type={this.props.chart_type}
+                                granularity={this.props.granularity}
+                                updateChartType={this.props.updateChartType}
+                                updateGranularity={this.props.updateGranularity}
+                            />
+                        </React.Suspense>
                     }
                     <Test />
                 </div>

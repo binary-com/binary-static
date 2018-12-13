@@ -100,7 +100,7 @@ const Footer = () => (
                                     { text: it.L('IB Programme'),            href: it.url_for('ib-programme/ib-signup') },
                                     { text: it.L('API'),                     href: 'https://developers.binary.com', target: '_blank' },
                                     { text: it.L('Binary Shop'),             href: 'https://shop.binary.com',       target: '_blank' },
-                                    { text: it.L('Charitable Activities'),   href: it.url_for('charity') },
+                                    /* { text: it.L('Charitable Activities'),   href: it.url_for('charity') }, */
                                     { text: it.L('All Partnership Options'), href: it.url_for('partners') },
                                 ]}
                             />
