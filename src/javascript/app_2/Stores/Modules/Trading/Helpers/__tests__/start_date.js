@@ -68,7 +68,7 @@ describe('start_date', () => {
                     close: moment.utc((new Date()).getTime() + 400000)
                 }
             ];
-            expect(isSessionAvailable(sessions, moment.utc(), moment.utc(), true)).to.eql(true);
+            expect(isSessionAvailable(sessions, moment.utc(), moment.utc(), false)).to.eql(false);
         });
         it('should return false when should_only_check_hour is true and there is not a session which opens before now and closes after now', () => {
             const sessions = [
