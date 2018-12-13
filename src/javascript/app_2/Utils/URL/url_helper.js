@@ -32,6 +32,7 @@ export default class URLHelper {
             const value = params[name];
 
             if (value && typeof value !== 'object' && value !== '') {
+                console.log(param_object);
                 param_object.append(name, params[name]);
             }
         });

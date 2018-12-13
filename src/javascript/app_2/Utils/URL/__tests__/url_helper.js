@@ -1,6 +1,8 @@
 import { expect } from 'chai';
 import URLHelper from '../url_helper';
 
+import { allowed_query_string_variables } from '../../../Stores/Modules/Trading/Constants/query_string';
+
 /*
 *   Empty test.
 */
@@ -17,20 +19,25 @@ describe('URLHelper', () => {
         });
     });
 
-    describe('setQueryParam', () => {
-        const url = 'https://www.binary.com/en/trading.html'
+    describe('.setQueryParam', () => {
+        const url = 'https://www.binary.com/en/trading.html';
+        const params = {
+            'currency': 'USD',
+            'market': 'forex',
+        }
 
-        // incomplete
+        // TypeError : param_object.sort is not a function
         it('should return a URL object', () => {
-            expect(URLHelper.setQueryParam({'currency': 'USD'})).to.eql('');
+            expect(URLHelper.setQueryParam(params)).to.eql('');
         });
     });
 
-    describe('updateQueryString', () => {
+    describe('.updateQueryString', () => {
+        const url = 'https://www.binary.com/en/trading.html';
+        const store = '';
 
-    });
-
-    describe('pruneQueryString', () => {
-
+        it('should return an iterator of object of updated query string', ()=> {
+            expect(URLHelper.updateQueryString(''))
+        });
     });
 });
