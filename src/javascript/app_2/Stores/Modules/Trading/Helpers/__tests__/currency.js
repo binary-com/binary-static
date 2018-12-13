@@ -1,6 +1,6 @@
-import { expect }              from 'chai';
-import React                   from 'react';
-import * as Currency           from '../currency';
+import { expect }                                  from 'chai';
+import React                                       from 'react';
+import { buildCurrenciesList, getDefaultCurrency } from '../currency';
 
 describe('buildCurrenciesList', () => {
     const payout_currencies = [
@@ -13,7 +13,7 @@ describe('buildCurrenciesList', () => {
     ];
 
     it('It Returns the desired currencies', () => {
-        expect(Currency.buildCurrenciesList(payout_currencies)).to.eql({
+        expect(buildCurrenciesList(payout_currencies)).to.eql({
             Fiat: [{
                 "text": "AUD",
                 "value": "AUD"
@@ -42,15 +42,15 @@ describe('buildCurrenciesList', () => {
     });
 
     it('Returns correct default currency when currency is passed', () => {
-        const currencies_list = Currency.buildCurrenciesList(payout_currencies);
-        expect(Currency.getDefaultCurrency(currencies_list, 'EUR')).to.eql({
+        const currencies_list = buildCurrenciesList(payout_currencies);
+        expect(getDefaultCurrency(currencies_list, 'EUR')).to.eql({
             "currency": "EUR",
         });
     });
 
     it('Returns first currency in currencies list when currency is not passed', () => {
-        const currencies_list = Currency.buildCurrenciesList(payout_currencies);
-        expect(Currency.getDefaultCurrency(currencies_list)).to.eql({
+        const currencies_list = buildCurrenciesList(payout_currencies);
+        expect(getDefaultCurrency(currencies_list)).to.eql({
             "currency": "AUD",
         });
     });
