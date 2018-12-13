@@ -31,12 +31,21 @@ const Head = () => (
         <meta property='og:type' content='website' />
         <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
 
-        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' />
+        { it.css_files.map((css_file, inx) => (
+            <link key={inx} rel='preload' as='style' href={css_file} />
+        ))}
+        { it.js_files.map((js_file, inx) => (
+            <link rel='preload' as='script' key={inx} href={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())} />
+        ))}
+
+        <link rel='preload' as='script' href={`${it.root_url}pushwoosh-web-notifications.js`} />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link rel='preconnect' href='https://www.googletagmanager.com' />
+        <link rel='preconnect' href='https://browser-update.org' />
+
+        <link rel='manifest' href={it.url_for(`/${it.language.toLowerCase()}/manifest.json`)} />
 
         <Title />
-
-        <link rel='manifest' href={it.url_for(`/${it.language.toLowerCase()}/manifest.json`, it.language.toLowerCase(), 'app_2')} />
-        <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} async />
 
         <Favicons />
 
@@ -54,8 +63,9 @@ const Head = () => (
             <link key={inx} rel='stylesheet' href={css_file} />
         ))}
         { it.js_files.map((js_file, inx) => (
-            <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())} />
+            <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())} defer />
         ))}
+        <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} defer />
     </head>
 );
 
