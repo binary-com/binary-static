@@ -40,44 +40,31 @@
 
     var routeHandler = (function routeHandler() {
         var location = window.location;
-        var lang_regex_string = '(.*)\/app\/(' + all_languages.join('|') + ')\/(\\w+\\.html)?';
-        var rx_result = new RegExp(lang_regex_string).exec(location.pathname);
 
         return {
-            isApp: function isApp() {
-                if (!new RegExp(lang_regex_string).test(location.pathname) || (rx_result[3] && rx_result[3] !== 'index.html')) {
-                    return true;
-                }
-                return false;
+            isApp: function() {
+                return !location.href.includes('/app/');
             },
-            redirectToReactRoute: function redirectToReactRoute() {
-                var sub_directories = rx_result[1];
-
-                // Since there are two sub entries after CNAME URL for the app 'www.binary.com/app/en'
-                // the value of segment_count should be 2.
-                var segment_count = 2 + sub_directories.split('/').length;
+            redirectToReactRoute: function() {
+                // Sub entries after CNAME URL for the app 'www.binary.com/app/en/statement
+                var segment_count = 3;
                 var pathname = location.pathname.toLowerCase().replace(/\/index(\.html)?/, '');
 
                 // Converts the path and query strings into just query strings and
                 // then redirects the browser to the new url with query strings and hash fragment.
                 // https://www.binary.com/app/en/statement -> https://www.binary.com/app/en?p=/statement
+                var base = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
                 location.replace(
-                    location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') +
-                    pathname.split('/').slice(0, segment_count).join('/') + '/?p=' +
-                    pathname.split('/').slice(segment_count).join('/').replace(/&/g, '~and~') +
-                    (location.search ? '&q=' + location.search.slice(1).replace(/&/g, '~and~'): '') +
-                    location.hash
+                    base +                                                                       // https://www.binary.com/
+                    pathname.split('/').slice(0, segment_count).join('/') + '/?p=' +             // /app/?p=
+                    pathname.split('/').slice(segment_count).join('/').replace(/&/g, '~and~') +  // en/statement
+                    (location.search ?
+                        '&q=' + location.search.slice(1).replace(/&/g, '~and~') : '')
+                    + location.hash
                 );
             },
-            redirect: function redirect() {
-                var href = location.href;
-                // if language is wrong, we need to rebuild the url
-                var lang_regex = new RegExp('/(' + all_languages.join('|') + ')/', 'i');
-                if (!lang_regex.test(href)) {
-                    href = getRoot() + '/app/' + lang.toLowerCase() + '/' + '404';
-                } else {
-                    href = href.replace(new RegExp('(/' + lang + '/).*', 'i'), '$1404');
-                }
+            redirect: function(lang) {
+                var href = getRoot() + '/' + lang.toLowerCase() + '/' + '404';
                 window.location = href;
 
                 function getRoot() {
@@ -89,11 +76,18 @@
         }
     })();
 
+    console.log(routeHandler.isApp());
     if (routeHandler.isApp()) {
-        var lang = location.href.split('/').slice(3).find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 }) || getCookieItem('language');
+        var lang = location.href
+            .split('/')
+            .slice(3)
+            .find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 })
+            || getCookieItem('language');
+
         if (lang && all_languages.indexOf(lang.toLowerCase()) > -1) {
-            routeHandler.redirect();
+            routeHandler.redirect(lang);
         } else {
+            debugger;
             var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
             ws.onopen = function(e) {
                 ws.send(JSON.stringify({'website_status': '1'}));
@@ -105,7 +99,7 @@
                         lang = getLanguage(response.website_status.clients_country);
                     }
                     ws.close();
-                    routeHandler.redirect();
+                    routeHandler.redirect(lang);
                 }
             };
         }
