@@ -1,8 +1,6 @@
 import { expect } from 'chai';
 import URLHelper from '../url_helper';
 
-import { allowed_query_string_variables } from '../../../Stores/Modules/Trading/Constants/query_string';
-
 /*
 *   Empty test.
 */
