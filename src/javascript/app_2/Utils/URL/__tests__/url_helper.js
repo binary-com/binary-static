@@ -20,24 +20,15 @@ describe('URLHelper', () => {
     });
 
     describe('.setQueryParam', () => {
-        const url = 'https://www.binary.com/en/trading.html';
+        const url = 'https://www.binary.com/en/trading.html?currency=USD&market=forex';
         const params = {
-            'currency': 'USD',
+            'currency': 'MYR',
             'market': 'forex',
         }
 
         // TypeError : param_object.sort is not a function
         it('should return a URL object', () => {
-            expect(URLHelper.setQueryParam(params)).to.eql('');
-        });
-    });
-
-    describe('.updateQueryString', () => {
-        const url = 'https://www.binary.com/en/trading.html';
-        const store = '';
-
-        it('should return an iterator of object of updated query string', ()=> {
-            expect(URLHelper.updateQueryString(''))
+            var result = URLHelper.setQueryParam(params, url);
         });
     });
 });
