@@ -1,3 +1,4 @@
+const getCurrencies    = require('./get_currency').getCurrencies;
 const BinaryPjax       = require('../../base/binary_pjax');
 const Client           = require('../../base/client');
 const Header           = require('../../base/header');
@@ -29,11 +30,15 @@ const SetCurrency = (() => {
             return;
         }
 
-        BinarySocket.wait('payout_currencies').then((response) => {
-            const payout_currencies = response.payout_currencies;
+        BinarySocket.wait('payout_currencies', 'landing_company').then(() => {
+            const landing_company = State.getResponse('landing_company');
+            let currencies        = State.getResponse('payout_currencies');
+            if (Client.get('landing_company_shortcode') === 'costarica') {
+                currencies = getCurrencies(landing_company);
+            }
             const $fiat_currencies  = $('<div/>');
             const $cryptocurrencies = $('<div/>');
-            payout_currencies.forEach((c) => {
+            currencies.forEach((c) => {
                 (isCryptocurrency(c) ? $cryptocurrencies : $fiat_currencies)
                     .append($('<div/>', { class: 'gr-2 gr-3-m currency_wrapper', id: c })
                         .append($('<div/>').append($('<img/>', { src: Url.urlForStatic(`images/pages/set_currency/${c.toLowerCase()}.svg`) })))

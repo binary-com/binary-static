@@ -67,14 +67,11 @@ const StartDate = ({
 };
 
 StartDate.propTypes = {
-    is_minimized   : PropTypes.bool,
-    is_nativepicker: PropTypes.bool,
-    onChange       : PropTypes.func,
-    sessions       : MobxPropTypes.arrayOrObservableArray,
-    start_date     : PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.string,
-    ]),
+    is_minimized    : PropTypes.bool,
+    is_nativepicker : PropTypes.bool,
+    onChange        : PropTypes.func,
+    sessions        : MobxPropTypes.arrayOrObservableArray,
+    start_date      : PropTypes.number,
     start_dates_list: MobxPropTypes.arrayOrObservableArray,
     start_time      : PropTypes.string,
 };
