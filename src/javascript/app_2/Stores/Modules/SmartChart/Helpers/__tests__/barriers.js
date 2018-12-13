@@ -1,6 +1,6 @@
 import { expect }                               from 'chai';
 import React                                    from 'react';
-import { isBarrierSupported, barriersToString } from '../barriers';
+import { isBarrierSupported, barriersToString, barriersObjectToArray } from '../barriers';
 
 describe('Barriers', () => {
     describe('isBarrierSupported', () => {
@@ -24,6 +24,34 @@ describe('Barriers', () => {
         });
         it('should convert barriers which have +/- to string consisting of them with +/- while is_relative is true', () => {
             expect(barriersToString(true, +11, +15)).to.deep.eql(['+11','+15']);
+        });
+    });
+    
+    describe('barriersObjectToArray', () => {
+        it('should return an array from values in barriers object', () => {
+            const barriers = {
+                main: {
+                    color: "green",
+                    draggable: false
+                }
+            };
+            expect(barriersObjectToArray(barriers)).to.deep.eql([{
+                color: "green",
+                draggable: false
+            }]);
+        });
+        it('should return an array from values in barriers object (empty values should be filtered out)', () => {
+            const barriers = {
+                main: {
+                    color: "green",
+                    draggable: false
+                },
+                somethingEmpty: {},
+            };
+            expect(barriersObjectToArray(barriers)).to.deep.eql([{
+                color: "green",
+                draggable: false
+            }]);
         });
     });
 });
