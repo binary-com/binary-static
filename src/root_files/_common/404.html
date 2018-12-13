@@ -45,27 +45,27 @@
             isApp: function() {
                 return !location.href.includes('/app/');
             },
-            redirectToReactRoute: function() {
-                // Sub entries after CNAME URL for the app 'www.binary.com/app/en/statement
-                var segment_count = 3;
-                var pathname = location.pathname.toLowerCase().replace(/\/index(\.html)?/, '');
-
+            redirectToReactRoute: function(lang) {
                 // Converts the path and query strings into just query strings and
                 // then redirects the browser to the new url with query strings and hash fragment.
                 // https://www.binary.com/app/en/statement -> https://www.binary.com/app/en?p=/statement
+
+                var pathname = location.pathname.toLowerCase().replace(/\/index(\.html)?/, '');
                 var base = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
+
                 location.replace(
-                    base +                                                                       // https://www.binary.com/
-                    pathname.split('/').slice(0, segment_count).join('/') + '/?p=' +             // /app/?p=
-                    pathname.split('/').slice(segment_count).join('/').replace(/&/g, '~and~') +  // en/statement
+                    base +                                                           // https://www.binary.com/
+                    pathname.split('/').slice(0, 2).join('/') + '/'                  // /app/
+                    + lang.toLowerCase() + '?p=' +                                   // en?p=
+                    pathname.split('/').slice(3).join('/').replace(/&/g, '~and~') +  // statement
                     (location.search ?
                         '&q=' + location.search.slice(1).replace(/&/g, '~and~') : '')
                     + location.hash
                 );
             },
             redirect: function(lang) {
-                var href = getRoot() + '/' + lang.toLowerCase() + '/' + '404';
-                window.location = href;
+                var redirect_href = getRoot() + '/' + lang.toLowerCase() + '/' + '404';
+                window.location = redirect_href;
 
                 function getRoot() {
                     return /^(.+?).github.io$/.test(location.hostname) ?
@@ -76,35 +76,48 @@
         }
     })();
 
-    console.log(routeHandler.isApp());
-    if (routeHandler.isApp()) {
-        var lang = location.href
-            .split('/')
-            .slice(3)
-            .find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 })
-            || getCookieItem('language');
+    function openWSAndGetLanguage(cb) {
+        var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
 
-        if (lang && all_languages.indexOf(lang.toLowerCase()) > -1) {
-            routeHandler.redirect(lang);
-        } else {
-            debugger;
-            var ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=1');
-            ws.onopen = function(e) {
-                ws.send(JSON.stringify({'website_status': '1'}));
-            };
-            ws.onmessage = function(msg) {
-                var response = JSON.parse(msg.data);
-                if (response.msg_type === 'website_status') {
-                    if (!response.error && response.hasOwnProperty('website_status')) {
-                        lang = getLanguage(response.website_status.clients_country);
-                    }
-                    ws.close();
-                    routeHandler.redirect(lang);
+        ws.onopen = function(e) {
+            ws.send(JSON.stringify({ website_status: 1 }));
+        };
+
+        ws.onmessage = function(msg) {
+            var response = JSON.parse(msg.data);
+            if (response.msg_type === 'website_status') {
+                var lang;
+                if (!response.error && response.hasOwnProperty('website_status')) {
+                    lang = getLanguage(response.website_status.clients_country);
                 }
-            };
-        }
-    } else { // is app_2
-        routeHandler.redirectToReactRoute();
+                ws.close();
+                return cb(lang);
+            }
+        };
+    }
+
+    var lang_segment
+    var redirectFn;
+    if (routeHandler.isApp()) {
+        lang_segment = 3;
+        redirectFn = routeHandler.redirect;
+    } else { // app_2
+        lang_segment = 4
+        redirectFn = routeHandler.redirectToReactRoute;
+    }
+
+    var lang = location.href
+        .split('/')
+        .slice(lang_segment)
+        .find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 })
+        || getCookieItem('language');
+
+    if (lang && all_languages.indexOf(lang.toLowerCase()) > -1) {
+        redirectFn(lang);
+    } else {
+        openWSAndGetLanguage(function(lang) {
+            if (lang) redirectFn(lang);
+        });
     }
     </script>
 </head>
