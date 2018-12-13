@@ -39,15 +39,16 @@ const MetaTrader = (() => {
     const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
     const setMTCompanies = () => {
-        let company = 'financial';
+        let mt_company_type = 'financial';
+        const landing_company_id = State.getResponse('landing_company.id');
 
-        // check if country id is be, since belgium is the only country that has malta landing company shortcode but no mt_financial_company
-        if (State.getResponse('landing_company.id') === 'be') {
-            company = 'gaming';
+        // check if landing_company id is be or no, since belgium and norway are the only countries that have malta landing company shortcode but no mt_financial_company offered
+        if (/^(be|no)$/.test(landing_company_id)) {
+            mt_company_type = 'gaming';
         }
 
         // Check if any of the account type shortcodes from mt_landing_company account is maltainvest
-        const mt_landing_company = State.getResponse(`landing_company.mt_${company}_company`);
+        const mt_landing_company = State.getResponse(`landing_company.mt_${mt_company_type}_company`);
 
         const is_financial = mt_landing_company ? Object.keys(mt_landing_company)
             .some((key) => mt_landing_company[key].shortcode === 'maltainvest') : undefined;
