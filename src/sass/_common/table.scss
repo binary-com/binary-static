@@ -87,11 +87,8 @@ table {
     }
 
     #statement-table {
-        td {
-            font-size: smaller;
-        }
         td.date {
-            min-width: 101px;
+            max-width: 136px;
         }
     }
     #statement-table, #profit-table {
@@ -103,7 +100,7 @@ table {
                 overflow: initial;
             }
             td.desc {
-                max-width: 30em;
+                max-width: 120px;
                 overflow-wrap: break-word;
             }
             @media (max-width: $md) {
