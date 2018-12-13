@@ -96,19 +96,19 @@
         };
     }
 
-    var lang_segment
+    var url_lang_segment
     var redirectFn;
     if (routeHandler.isApp()) {
-        lang_segment = 3;
+        url_lang_segment = 3;
         redirectFn = routeHandler.redirect;
     } else { // app_2
-        lang_segment = 4
+        url_lang_segment = 4
         redirectFn = routeHandler.redirectToReactRoute;
     }
 
     var lang = location.href
         .split('/')
-        .slice(lang_segment)
+        .slice(url_lang_segment)
         .find(function(language) { return all_languages.indexOf(language.toLowerCase()) > -1 })
         || getCookieItem('language');
 
