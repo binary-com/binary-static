@@ -87,11 +87,10 @@ table {
     }
 
     #statement-table {
-        td.desc {
+        td {
             font-size: smaller;
         }
         td.date {
-            font-size: smaller;
             min-width: 101px;
         }
     }
@@ -102,6 +101,10 @@ table {
             }
             td {
                 overflow: initial;
+            }
+            td.desc {
+                max-width: 30em;
+                overflow-wrap: break-word;
             }
             @media (max-width: $md) {
                 & > th.details, & > td.details {
@@ -122,6 +125,9 @@ table {
             > th.contract, > td.contract {
                 display: none !important;
             }
+        }
+        #statement-table {
+            table-layout: auto;
         }
         #statement-table tr {
             > th.desc, > td.desc {
