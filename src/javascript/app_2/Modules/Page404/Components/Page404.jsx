@@ -3,7 +3,6 @@ import { Link }       from 'react-router-dom';
 import { routes }     from 'Constants/index';
 import { localize }   from '_common/localize';
 import { Icon404 }    from './Icon404.jsx';
-import Button         from '../../../App/Components/Form/button.jsx';
 import ErrorBox       from '../../../App/Components/Elements/ErrorBox';
 
 const Page404 = () => (
@@ -13,23 +12,12 @@ const Page404 = () => (
             icon={<Icon404 />}
             message={localize('Sorry, we couldn\'t find the page you are looking for.')}
         >
-            <Button
-                className='secondary orange'
-                has_effect
-                text={localize('Go to trade page')}
+            <Link
+                className='secondary orange '
+                to={routes.trade}
             >
-                <Link
-                    to={routes.trade}
-                    style={{
-                        display : 'block',
-                        height  : '100%',
-                        width   : '100%',
-                        position: 'absolute',
-                        left    : '0',
-                        top     : '0',
-                    }}
-                />
-            </Button>
+                {localize('Go to trade page')}
+            </Link>
         </ErrorBox>
     </div>
 );

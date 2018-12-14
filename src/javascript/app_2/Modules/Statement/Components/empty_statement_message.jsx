@@ -2,7 +2,6 @@ import PropTypes         from 'prop-types';
 import React             from 'react';
 import { Link }          from 'react-router-dom';
 import { localize }      from '_common/localize';
-import Button            from 'App/Components/Form/button.jsx';
 import { IconStatement } from 'Assets/Header/NavBar';
 import { routes }        from 'Constants/index';
 
@@ -20,23 +19,12 @@ const EmptyStatementMessage = ({ has_selected_date }) => (
             </span>
             {
                 !has_selected_date &&
-                <Button
-                    className='secondary orange'
-                    has_effect
-                    text={localize('Trade now')}
+                <Link
+                    className='secondary orange '
+                    to={routes.trade}
                 >
-                    <Link
-                        to={routes.trade}
-                        style={{
-                            display : 'block',
-                            height  : '100%',
-                            width   : '100%',
-                            position: 'absolute',
-                            left    : '0',
-                            top     : '0',
-                        }}
-                    />
-                </Button>
+                    {localize('Trade now')}
+                </Link>
             }
         </div>
     </React.Fragment>
