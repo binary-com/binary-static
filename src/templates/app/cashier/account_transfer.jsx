@@ -65,7 +65,7 @@ const AccountTransfer = () => (
         </div>
 
         <div className='hint invisible' id='transfer_fee'>
-            {it.L('Note:')}
+            {it.L('Notes:')}
             <ul className='bullet'>
                 <li>{it.L('Transfer between accounts is not available on weekends')}</li>
                 <li>{it.L('You may only transfer funds between a fiat account and a cryptocurrency account')}</li>
