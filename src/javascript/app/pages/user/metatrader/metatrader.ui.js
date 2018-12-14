@@ -1,7 +1,8 @@
 const MetaTraderConfig = require('./metatrader.config');
 const Client           = require('../../../base/client');
-const formatMoney      = require('../../../common/currency').formatMoney;
+const Currency         = require('../../../common/currency');
 const Validation       = require('../../../common/form_validation');
+const getTransferFee   = require('../../../../_common/base/currency_base').getTransferFee;
 const localize         = require('../../../../_common/localize').localize;
 const State            = require('../../../../_common/storage').State;
 const urlForStatic     = require('../../../../_common/url').urlForStatic;
@@ -149,7 +150,7 @@ const MetaTraderUI = (() => {
                 $list.find('#acc_group_real').setVisibility(1);
             }
             if (acc_type === Client.get('mt5_account')) {
-                const mt_balance = formatMoney(MetaTraderConfig.getCurrency(acc_type),
+                const mt_balance = Currency.formatMoney(MetaTraderConfig.getCurrency(acc_type),
                     +accounts_info[acc_type].info.balance);
                 $acc_item.find('.mt-balance').html(mt_balance);
                 $action.find('.mt5-balance').html(mt_balance);
@@ -179,7 +180,7 @@ const MetaTraderUI = (() => {
                 const key     = $(this).attr('data');
                 const info    = accounts_info[acc_type].info[key];
                 const mapping = {
-                    balance : () => (isNaN(info) ? '' : formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
+                    balance : () => (isNaN(info) ? '' : Currency.formatMoney(MetaTraderConfig.getCurrency(acc_type), +info)),
                     leverage: () => `1:${info}`,
                     login   : () => (`${info} (${/demo/.test(accounts_info[acc_type].account_type) ? localize('Demo Account') : localize('Real-Money Account')})`),
                 };
@@ -270,14 +271,21 @@ const MetaTraderUI = (() => {
             const mt_currency     = MetaTraderConfig.getCurrency(acc_type);
             cloneForm();
             $form.find('.binary-account').text(`${localize('[_1] Account [_2]', ['Binary', Client.get('loginid')])}`);
-            $form.find('.binary-balance').html(`${formatMoney(client_currency, Client.get('balance'))}`);
+            $form.find('.binary-balance').html(`${Currency.formatMoney(client_currency, Client.get('balance'))}`);
             $form.find('.mt5-account').text(`${localize('[_1] Account [_2]', [accounts_info[acc_type].title, accounts_info[acc_type].info.login])}`);
-            $form.find('.mt5-balance').html(`${formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
+            $form.find('.mt5-balance').html(`${Currency.formatMoney(mt_currency, accounts_info[acc_type].info.balance)}`);
             $form.find('.symbols.mt-currency').addClass(mt_currency.toLowerCase());
             $form.find('label[for="txt_amount_deposit"]').append(` ${client_currency}`);
             $form.find('label[for="txt_amount_withdrawal"]').append(` ${mt_currency}`);
 
-            $form.find('#txt_amount_deposit, #txt_amount_withdrawal').siblings('.hint').setVisibility(client_currency !== mt_currency);
+            const should_show_transfer_fee = client_currency !== mt_currency;
+            if (should_show_transfer_fee) {
+                $('#transfer_fee_amount_to').text(getTransferFee(client_currency, mt_currency));
+                $('#transfer_fee_minimum_to').text(Currency.getMinimumTransferFee(client_currency));
+                $('#transfer_fee_amount_from').text(getTransferFee(mt_currency, client_currency));
+                $('#transfer_fee_minimum_from').text(Currency.getMinimumTransferFee(mt_currency));
+            }
+            $form.find('#txt_amount_deposit, #txt_amount_withdrawal').siblings('.hint').setVisibility(should_show_transfer_fee);
 
             ['deposit', 'withdrawal'].forEach((act) => {
                 actions_info[act].prerequisites(acc_type).then((error_msg) => {
