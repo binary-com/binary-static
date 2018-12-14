@@ -82,8 +82,8 @@ const BinaryLoader = (() => {
         not_authenticated: () => localize('This page is only available to logged out clients.'),
     };
 
-    const loadHandler = (page) => {
-        const config = pages_config[page];
+    const loadHandler = (this_page) => {
+        const config = pages_config[this_page];
         active_script = config.module;
         if (config.is_authenticated) {
             if (!Client.isLoggedIn()) {
@@ -103,7 +103,7 @@ const BinaryLoader = (() => {
                     });
             }
         } else if (config.not_authenticated && Client.isLoggedIn()) {
-            if (page === 'home') {
+            if (this_page === 'home') {
                 BinaryPjax.load(Client.defaultRedirectUrl(), true);
             } else {
                 handleNotAuthenticated();
