@@ -47,6 +47,7 @@ const AccountTransfer = (() => {
         accounts.forEach((account) => {
             if (Client.canTransferFunds(account)) {
                 const option = document.createElement('option');
+                option.setAttribute('data-currency', account.currency);
                 option.appendChild(document.createTextNode(`${account.loginid}${account.currency ? ` (${account.currency})` : ''}`));
                 fragment_transfer_to.appendChild(option);
             }
@@ -58,11 +59,16 @@ const AccountTransfer = (() => {
         }
         if (fragment_transfer_to.childElementCount > 1) {
             el_transfer_to.innerHTML = fragment_transfer_to.innerHTML;
-            el_transfer_to.addEventListener('change', () => {
+            el_transfer_to.onchange = () => {
+                const to_currency = el_transfer_to.options[el_transfer_to.selectedIndex].getAttribute('data-currency');
+                el_transfer_info.setVisibility(client_currency !== to_currency);
                 setTransferFeeAmount();
-            });
+            };
         } else {
-            const label = createElement('label', { 'data-value': fragment_transfer_to.innerText });
+            const label = createElement('label', {
+                'data-value'   : fragment_transfer_to.innerText,
+                'data-currency': fragment_transfer_to.firstChild.getAttribute('data-currency'),
+            });
             label.appendChild(document.createTextNode(fragment_transfer_to.innerText));
             label.id = 'transfer_to';
 
@@ -77,7 +83,8 @@ const AccountTransfer = (() => {
             elementTextContent(el_fee_minimum, Currency.getMinimumTransferFee(client_currency));
             el_transfer_fee.setVisibility(1);
         } else {
-            el_transfer_info.setVisibility(1);
+            const to_currency = el_transfer_to.getAttribute('data-currency');
+            el_transfer_info.setVisibility(client_currency !== to_currency);
         }
     };
 

@@ -27,16 +27,17 @@ const makeCacheGroup = (name, priority, ...matches) => ({
     [name]: {
         name,
         priority,
-        chunks : 'initial',
-        enforce: true,
-        test   : new RegExp(`^${matches.map(m => `(?=.*${m})`).join('')}`),
+        chunks  : 'initial',
+        enforce : true,
+        filename: '[name].min.js',
+        test    : new RegExp(`^${matches.map(m => `(?=.*${m})`).join('')}`),
     },
 });
 
 const publicPathFactory = (grunt, section) => () => {
     const section_final_path = section === 'app_2' ? '/app/js/' : '/js/';
     return (
-        (global.is_production || grunt.file.exists(PATHS.ROOT, 'scripts/CNAME') ? '' : '/binary-static') +
+        (global.is_release || grunt.file.exists(PATHS.ROOT, 'scripts/CNAME') ? '' : '/binary-static') +
         (global.branch ? `/${global.branch_prefix}${global.branch}` : '') +
         section_final_path
     );
