@@ -9,9 +9,6 @@ import {
 // import Statement       from 'Modules/Statement';
 import Trade           from 'Modules/Trading';
 
-// Error routes
-import Page404 from 'Modules/Page404';
-
 const ContractDetails = lazy(() => import(/* webpackChunkName: "contract" */  'Modules/Contract'));
 const Portfolio       = lazy(() => import(/* webpackChunkName: "portfolio" */ 'Modules/Portfolio'));
 const Settings        = lazy(() => import(/* webpackChunkName: "settings" */  'Modules/settings/settings.jsx'));
@@ -27,6 +24,9 @@ const Limits                 = lazy(() => import(/* webpackChunkName: "limits" *
 const LoginHistory           = lazy(() => import(/* webpackChunkName: "login_history" */          'Modules/settings/sections/login_history.jsx'));
 const PersonalDetails        = lazy(() => import(/* webpackChunkName: "personal_details" */       'Modules/settings/sections/personal_details.jsx'));
 const SelfExclusion          = lazy(() => import(/* webpackChunkName: "self_exclusion" */         'Modules/settings/sections/self_exclusion.jsx'));
+
+// Error Routes
+const Page404 = lazy(() => import(/* webpackChunkName: "404" */ 'Modules/Page404'));
 
 const initRoutesConfig = () => ([
     { path: routes.contract,  component: ContractDetails, title: localize('Contract Details'),  is_authenticated: true },
@@ -51,16 +51,19 @@ const initRoutesConfig = () => ([
             { path: routes.apps,             component: AuthorizedApplications, title: localize('Authorized Applications') },
         ],
     },
-    // 404 Route: please keep other routes above this line, 404 must be kept at the end of routes_config
     { path: routes.error404, component: Page404, title: localize('Error 404') },
-    { component: Page404, title: localize('Error 404') },
 ]);
 
 let routes_config;
+
+// For default page route if page/path is not found, must be kept at the end of routes_config array
+const route_default  = { component: Page404, title: localize('Error 404') };
+
 const getRoutesConfig = () => {
     if (!routes_config) {
         routes_config = initRoutesConfig();
     }
+    routes_config.push(route_default);
     return routes_config;
 };
 
