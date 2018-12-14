@@ -20,12 +20,23 @@ const EmptyStatementMessage = ({ has_selected_date }) => (
             </span>
             {
                 !has_selected_date &&
-                <Link to={routes.trade}>
-                    <Button
-                        className='secondary orange'
-                        text={localize('Trade now')}
+                <Button
+                    className='secondary orange'
+                    has_effect
+                    text={localize('Trade now')}
+                >
+                    <Link
+                        to={routes.trade}
+                        style={{
+                            display : 'block',
+                            height  : '100%',
+                            width   : '100%',
+                            position: 'absolute',
+                            left    : '0',
+                            top     : '0',
+                        }}
                     />
-                </Link>
+                </Button>
             }
         </div>
     </React.Fragment>
