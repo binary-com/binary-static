@@ -20,10 +20,15 @@ const EmptyStatementMessage = ({ has_selected_date }) => (
             {
                 !has_selected_date &&
                 <Link
-                    className='secondary orange '
+                    className='btn secondary orange effect'
                     to={routes.trade}
+                    style={{
+                        margin: '1.5rem 5rem',
+                    }}
                 >
-                    {localize('Trade now')}
+                    <span>
+                        {localize('Trade now')}
+                    </span>
                 </Link>
             }
         </div>

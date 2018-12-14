@@ -13,10 +13,15 @@ const Page404 = () => (
             message={localize('Sorry, we couldn\'t find the page you are looking for.')}
         >
             <Link
-                className='secondary orange '
+                className='btn secondary orange effect'
                 to={routes.trade}
+                style={{
+                    margin: '1.5rem 5rem',
+                }}
             >
-                {localize('Go to trade page')}
+                <span>
+                    {localize('Go to trade page')}
+                </span>
             </Link>
         </ErrorBox>
     </div>
