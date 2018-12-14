@@ -24,7 +24,9 @@ const AccountDesc = ({ title, description, account_type, items }) => {
                 ))}
             </ul>
             <p>
-                <a className='hl-types-of-accounts' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>{it.L('Compare MetaTrader 5 accounts')}</a>
+                <a className='button' href={it.url_for('metatrader/types-of-accounts')} target='_blank'>
+                    <span>{it.L('Compare MetaTrader 5 accounts')}</span>
+                </a>
             </p>
         </div>
     );
@@ -513,7 +515,7 @@ const Metatrader = () => (
                                             <CashierDesc title={it.L('Transfer funds to your MT5 account')} arrow_direction='right' desc={it.L('Transfer funds from your binary options account into your MetaTrader 5 account.')} />
 
                                             <div className='form'>
-                                                <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('[_1] transfer fee between different currencies', '1%')} />
+                                                <FormRow is_two_rows type='text' id='txt_amount_deposit' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('Subject to [_1] transfer fee or [_2], whichever is higher', '<span id="transfer_fee_amount_to"></span>', '<span id="transfer_fee_minimum_to"></span>')} />
                                                 <SubmitButton
                                                     is_centered
                                                     is_full_width
@@ -532,7 +534,7 @@ const Metatrader = () => (
                                             <CashierDesc title={it.L('Withdraw funds from your MT5 account')} arrow_direction='left' desc={it.L('Transfer funds from your MetaTrader 5 account into your binary options account.')} />
 
                                             <div className='form'>
-                                                <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('[_1] transfer fee between different currencies', '1%')} />
+                                                <FormRow is_two_rows type='text' id='txt_amount_withdrawal' label={it.L('Amount')} attributes={{ maxLength: 10 }} hint={it.L('Subject to [_1] transfer fee or [_2], whichever is higher', '<span id="transfer_fee_amount_from"></span>', '<span id="transfer_fee_minimum_from"></span>')} />
                                                 <FormRow is_two_rows type='password' id='txt_main_pass_wd' label={it.L('MetaTrader 5 main password')} />
                                                 <SubmitButton
                                                     is_centered

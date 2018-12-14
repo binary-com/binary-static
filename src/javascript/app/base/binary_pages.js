@@ -50,7 +50,7 @@ const TNCApproval             = require('../pages/user/tnc_approval');
 const VideoFacility           = require('../pages/user/video_facility');
 
 // ==================== static ====================
-const Charity            = require('../../static/pages/charity');
+// const Charity            = require('../../static/pages/charity');
 const Contact            = require('../../static/pages/contact');
 const Contact2           = require('../../static/pages/contact_2');
 const GetStarted         = require('../../static/pages/get_started');
@@ -75,7 +75,7 @@ const pages_config = {
     cashier                  : { module: Cashier },
     cashier_passwordws       : { module: CashierPassword,            is_authenticated: true, only_real: true },
     change_passwordws        : { module: ChangePassword,             is_authenticated: true },
-    charity                  : { module: Charity },
+    // charity                  : { module: Charity },
     contact                  : { module: Contact },
     detailsws                : { module: PersonalDetails,            is_authenticated: true, needs_currency: true },
     economic_calendar        : { module: EconomicCalendar },
