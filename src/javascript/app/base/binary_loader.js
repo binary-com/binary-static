@@ -65,7 +65,7 @@ const BinaryLoader = (() => {
         GTM.pushDataLayer({ event: 'page_load' });
 
         const this_page = e.detail.getAttribute('data-page');
-        if (this_page in pages_config) {
+        if (Object.prototype.hasOwnProperty.call(pages_config, this_page)) {
             loadHandler(this_page);
         } else if (/\/get-started\//i.test(window.location.pathname)) {
             loadHandler('get-started');
@@ -83,7 +83,7 @@ const BinaryLoader = (() => {
     };
 
     const loadHandler = (this_page) => {
-        const config = pages_config[this_page];
+        const config = { ...pages_config[this_page] };
         active_script = config.module;
         if (config.is_authenticated) {
             if (!Client.isLoggedIn()) {
