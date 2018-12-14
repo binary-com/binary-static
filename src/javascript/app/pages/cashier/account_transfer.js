@@ -26,6 +26,8 @@ const AccountTransfer = (() => {
         el_transfer_to,
         el_reset_transfer,
         el_transfer_fee,
+        el_fee_amount,
+        el_fee_minimum,
         el_transfer_info,
         el_success_form,
         client_balance,
@@ -60,6 +62,7 @@ const AccountTransfer = (() => {
             el_transfer_to.onchange = () => {
                 const to_currency = el_transfer_to.options[el_transfer_to.selectedIndex].getAttribute('data-currency');
                 el_transfer_info.setVisibility(client_currency !== to_currency);
+                setTransferFeeAmount();
             };
         } else {
             const label = createElement('label', {
@@ -76,11 +79,17 @@ const AccountTransfer = (() => {
         showForm();
 
         if (Client.hasCurrencyType('crypto') && Client.hasCurrencyType('fiat')) {
+            setTransferFeeAmount();
+            elementTextContent(el_fee_minimum, Currency.getMinimumTransferFee(client_currency));
             el_transfer_fee.setVisibility(1);
         } else {
             const to_currency = el_transfer_to.getAttribute('data-currency');
             el_transfer_info.setVisibility(client_currency !== to_currency);
         }
+    };
+
+    const setTransferFeeAmount = () => {
+        elementTextContent(el_fee_amount, Currency.getTransferFee(client_currency, (el_transfer_to.value || el_transfer_to.getAttribute('data-value') || '').match(/\((\w+)\)/)[1]));
     };
 
     const hasError = (response) => {
@@ -168,6 +177,8 @@ const AccountTransfer = (() => {
         }
 
         el_transfer_fee   = getElementById('transfer_fee');
+        el_fee_amount     = getElementById('transfer_fee_amount');
+        el_fee_minimum    = getElementById('transfer_fee_minimum');
         el_transfer_info  = getElementById('transfer_info');
         el_success_form   = getElementById('success_form');
         el_reset_transfer = getElementById('reset_transfer');
@@ -177,7 +188,7 @@ const AccountTransfer = (() => {
             client_balance   = +getPropertyValue(response, ['balance', 'balance']);
             client_currency  = Client.get('currency');
             const min_amount = Currency.getMinTransfer(client_currency);
-            if (!client_balance || client_balance < min_amount) {
+            if (!client_balance || client_balance < +min_amount) {
                 getElementById(messages.parent).setVisibility(1);
                 if (client_currency) {
                     elementTextContent(getElementById('min_required_amount'), `${client_currency} ${min_amount}`);
@@ -204,7 +215,7 @@ const AccountTransfer = (() => {
                         return;
                     }
                     withdrawal_limit = +response_limits.get_limits.remainder;
-                    if (withdrawal_limit < min_amount) {
+                    if (withdrawal_limit < +min_amount) {
                         getElementById(messages.limit).setVisibility(1);
                         getElementById(messages.parent).setVisibility(1);
                         return;
