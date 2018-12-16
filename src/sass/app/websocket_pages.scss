@@ -116,6 +116,12 @@
     }
 }
 
+.statementws-content {
+    .container {
+        max-width: 1200px !important;
+    }
+}
+
 #statement-container {
     #download_csv {
         line-height: 28px;
