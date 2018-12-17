@@ -41,6 +41,7 @@ const commonConfig = (grunt) => ({
                         'transform-decorators-legacy',
                         'transform-object-rest-spread',
                         'transform-class-properties',
+                        'babel-plugin-syntax-dynamic-import',
                     ],
                 },
             },
