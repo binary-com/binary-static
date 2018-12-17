@@ -128,8 +128,8 @@ fieldset {
     .text-display { /* TODO: replace all occurrences of id with the class */
         line-height: 25px;
     }
-    #geocode_error {
-        margin: 5px 15px;
+    #geocode_error, #geocode_success {
+        margin: 1rem auto;
     }
 }
 

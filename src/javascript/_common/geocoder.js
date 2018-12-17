@@ -1,14 +1,13 @@
 /* global google */
 const scriptjs           = require('scriptjs');
-// const localize           = require('./localize').localize;
-// const applyToAllElements = require('./utility').applyToAllElements;
-// const createElement      = require('./utility').createElement;
+const applyToAllElements = require('./utility').applyToAllElements;
 const getElementById     = require('./common_functions').getElementById;
 const Client             = require('../app/base/client');
 
 const Geocoder = (() => {
-    let el_error,
-        el_btn_check;
+    let el_btn_validate,
+        el_error,
+        el_success;
     let validated = false;
 
     const init = (form_id) => {
@@ -21,41 +20,24 @@ const Geocoder = (() => {
         const state  = '#address_state';
         const postcode  = '#address_postcode';
         const residence = Client.get('residence');
-        const el_btn_validate = getElementById('geocode_validate');
-        el_btn_check = getElementById('geocode_success_check');
 
         const getValue = (id) => getElementById(id.split('#')[1]).value || '';
         const getAddress = () => `${getValue(addr_1)} ${getValue(addr_2)}, ${getValue(city)}, ${getValue(state)} ${getValue(postcode)}, ${residence}`;
 
-        form.querySelector(city).addEventListener('change', () => {
-            if (getValue(addr_1).length && getValue(city).length && !validated) {
-                validator(getAddress()).then(() => {
-                    validated = true;
-                });
-            }
-        });
+        el_btn_validate = form.querySelector('#geocode_validate');
+        el_error        = form.querySelector('#geocode_error');
+        el_success      = form.querySelector('#geocode_success');
 
-        el_error = form.querySelector('#geocode_error');
-        // applyToAllElements(`${addr_1}, ${addr_2}, ${city}, ${postcode}`, (element) => {
-        //     element.addEventListener('keyup', () => {
-        //         if (!validated && !el_btn_validate) {
-        //             el_btn_validate = createElement('button', {
-        //                 id   : 'geocode_validate',
-        //                 class: 'button-secondary',
-        //                 text : localize('Validate address'),
-        //             });
-        //             el_btn_validate.addEventListener('click', (e) => {
-        //                 e.preventDefault();
-        //                 validator(getAddress()).then(() => {
-        //                     validated = true;
-        //                 });
-        //             });
-        //             el_error.parentNode.appendChild(el_btn_validate);
-        //         }
-        //         if (el_btn_validate) el_btn_validate.setVisibility(1);
-        //         el_error.setVisibility(0);
-        //     });
-        // }, '', form);
+        applyToAllElements(`${addr_1}, ${city}`, (element) => {
+            element.addEventListener('keyup', () => {
+                const value = element.value;
+                if (value.length < 1) {
+                    el_btn_validate.classList.add('button-disabled');
+                } else {
+                    el_btn_validate.classList.remove('button-disabled');
+                }
+            });
+        }, '', form);
         el_btn_validate.addEventListener('click', (e) => {
             e.preventDefault();
             validator(getAddress()).then(() => {
@@ -65,6 +47,10 @@ const Geocoder = (() => {
         el_error.parentNode.appendChild(el_btn_validate);
         if (el_btn_validate) el_btn_validate.setVisibility(1);
         el_error.setVisibility(0);
+
+        if (validated) {
+            el_btn_validate.classList.add('button-disabled');
+        }
 
         return {
             address: getAddress(),
@@ -97,13 +83,12 @@ const Geocoder = (() => {
     const handleResponse = (status) => {
         if (/ZERO_RESULTS|INVALID_REQUEST/.test(status)) {
             el_error.setVisibility(1);
-            el_btn_check.setVisibility(0);
-            // if (el_btn_validate) el_btn_validate.setVisibility(0);
+            el_success.setVisibility(0);
         } else {
             el_error.setVisibility(0);
-            el_btn_check.setVisibility(1);
-            // if (el_btn_validate) el_btn_validate.setVisibility(0);
+            el_success.setVisibility(1);
         }
+        el_btn_validate.classList.add('button-disabled');
     };
 
     return {
