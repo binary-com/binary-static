@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-11 03:27\n"
+"PO-Revision-Date: 2018-12-17 07:05\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -332,9 +332,6 @@ msgstr "%1 apoya a %2, que es la organización benéfica líder en Gran Bretaña
 
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1 se lleva a casa el primer premio en la categoría de Operador de Apuestas Financieras en la prestigiosa ceremonia EGR Premios de Operador de 2015, organizada en Londres."
-
-msgid "%1 transfer fee between different currencies"
-msgstr "cargo por transferencia de %1 entre diferentes monedas"
 
 msgid "%1 wins 'Best Binary Company Asia Pacific' in the Global Banking & Finance Awards 2018. This reflects our expertise and leadership in innovation and strategy."
 msgstr "%1 obtiene el premio 'Mejor Compañía de Opciones Binarias en Asia-Pacífico' en los premios Global Banking & Finance de 2018. Esto refleja nuestro conocimiento y liderazgo en innovación y estrategia."
@@ -2504,11 +2501,17 @@ msgstr "Fecha de inicio"
 msgid "Commission"
 msgstr "Comisión"
 
+msgid "Commission and swap scheme"
+msgstr ""
+
 msgid "Commission on deposits"
 msgstr "Comisión por depósitos"
 
 msgid "Commission on withdrawals"
 msgstr "Comisión por retiros"
+
+msgid "Commission per side trade"
+msgstr ""
 
 msgid "Commission rates"
 msgstr "Tasas de comisión"
@@ -2723,6 +2726,9 @@ msgstr "Los pagos de los contratos serán determinados por la Empresa en virtud 
 msgid "Contract period"
 msgstr "Período del contrato"
 
+msgid "Contract specifications"
+msgstr ""
+
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "El contrato se venderá al precio vigente en el mercado en el momento de la recepción de la solicitud de venta por nuestros servidores. Este precio puede ser diferente del precio indicado."
 
@@ -2930,8 +2936,8 @@ msgstr "Criptomonedas"
 msgid "Cryptocurrency Risks"
 msgstr "Riesgos asociados a las criptomonedas"
 
-msgid "Cryptocurrency contract specifications"
-msgstr "Especificaciones del contrato de criptomonedas"
+msgid "Cryptocurrency contract specifications and commission scheme"
+msgstr ""
 
 msgid "Cryptocurrency margin policy"
 msgstr "Política de márgenes de criptomonedas"
@@ -3449,6 +3455,9 @@ msgstr "Premio EGR Operator"
 msgid "EGR Operator Awards"
 msgstr ""
 
+msgid "EOS vs US Dollar"
+msgstr ""
+
 msgid "EU Passport Rights"
 msgstr "Derechos de pasaporte de la UE"
 
@@ -3491,8 +3500,11 @@ msgstr "Cada vez que abre una posición en un par de criptomonedas, puede comenz
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "Cada vez que abre una posición en un índice, puede comenzar con un volumen mínimo de operación, de acuerdo a lo que se indica en la tabla anterior."
 
-msgid "Each transfer is subject to a %1 transfer fee"
-msgstr "Cada transferencia está sujeta a una tarifa de transferencia de %1"
+msgid "Each time you send us an order, you are charged a commission, which is equal to the asset price multiplied by the percentage seen in the above table."
+msgstr ""
+
+msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
+msgstr ""
 
 msgid "Earn"
 msgstr "Gane"
@@ -4137,7 +4149,7 @@ msgid "Financial Account Opening"
 msgstr "Abrir Cuenta Financiera"
 
 msgid "Financial Assessment"
-msgstr "Asesoramiento financiero"
+msgstr "Evaluación financiera"
 
 msgid "Financial Information"
 msgstr "Información financiera"
@@ -4731,7 +4743,7 @@ msgid "How can I withdraw my commissions?"
 msgstr "¿Cómo puedo retirar mis comisiones?"
 
 msgid "How can we help?"
-msgstr "¿Cómo podemos ayudarle?"
+msgstr "¿Cómo podemos ayudar?"
 
 msgid "How do I know how much I have earned?"
 msgstr "¿Cómo averiguo cuánto he ganado?"
@@ -4765,6 +4777,9 @@ msgstr "Cómo cerrar una posición"
 
 msgid "How to manage your funds"
 msgstr "Cómo administrar sus fondos"
+
+msgid "How to read the commission and swap scheme table"
+msgstr ""
 
 msgid "How to read the contract specifications table"
 msgstr "Cómo leer la tabla de especificaciones de contrato"
@@ -9009,6 +9024,9 @@ msgstr "Guía de estilo"
 msgid "Su"
 msgstr "DO"
 
+msgid "Subject to %1 transfer fee or %2, whichever is higher"
+msgstr ""
+
 msgid "Subject to any specific instructions which may be provided by you, when executing client orders, we will take all reasonable steps to obtain the best possible results for you. The best possible results will be determined in terms of total consideration, that is, the price of the instrument and the costs related to execution which shall include all expenses incurred by you that are directly related to the execution of the order."
 msgstr "Sujeto a las instrucciones específicas que pueden ser proporcionadas por usted, al ejecutar órdenes de clientes, vamos a tomar todas las medidas razonables para obtener el mejor resultado posible para usted. Los mejores resultados posibles serán determinados en términos de contraprestación total, es decir, el precio del instrumento y los costos relacionados con la ejecución, que incluirán todos los gastos incurridos por usted que están directamente relacionados con la ejecución de la orden."
 
@@ -9113,6 +9131,12 @@ msgstr "Suspender la operación del instrumento afectado;"
 
 msgid "Suspending your MT5 Real Account and refusing to execute any Orders to enter into further Transactions with you. Whilst your MT5 Real Account is suspended, you will be able to place Orders to close your Open Positions, but you will not be able to place Orders which would create Open Positions."
 msgstr "Suspender su cuenta real en MT5 y no ejecutar cualquier orden de transacción de su parte. Mientras su cuenta real en MT5 esté suspendida, podrá cerrar sus posiciones abiertas, pero no podrá abrir nuevas posiciones."
+
+msgid "Swaps Long (per annum)"
+msgstr ""
+
+msgid "Swaps short (per annum)"
+msgstr ""
 
 msgid "Swiss Franc vs Japanese Yen"
 msgstr "Franco suizo vs yen japonés"
@@ -9238,7 +9262,7 @@ msgid "Thank you for your interest in partnering with us. We’ve made it easy f
 msgstr "Gracias por su interés en asociarse con nosotros. Hemos facilitado el proceso de registro en línea para usted. Simplemente rellene el %1formulario de solicitud en línea%2 con todos los datos necesarios. Si ya está registrado como afiliado de %3, puede enviarnos un correo electrónico a %4. Entraremos en contacto directamente con usted si su solicitud fue aceptada."
 
 msgid "Thank you, we'll get back to you within 24 hours"
-msgstr "Gracias, nos pondremos en contacto con usted dentro de las próximas 24 horas"
+msgstr "Gracias, le responderemos en 24 horas"
 
 msgid "The %1 API has usage limits enforced to prevent abuse and/or repurposing of the %1 API. These usage limits may be changed in the future without notice. If you consistently exceed the usage limit or otherwise abuse the service, we may block your access to the %1 API."
 msgstr "La API de %1 tiene límites de uso que se aplican para prevenir el abuso y/o la reasignación de la API de %1. Estos límites de uso pueden ser cambiados en el futuro sin aviso. Si excede constantemente los límites de uso o abusa del servicio, podemos bloquear su acceso a la API de %1."
@@ -11839,8 +11863,8 @@ msgstr "Gane el pago máximo si el punto de salida es más alto o igual que la b
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "Gane el pago máximo si el punto de salida es menor o igual a la barrera inferior."
 
-msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
-msgstr "Gane el pago si el punto de salida es también igual al punto de entrada, además de ser más alto o más bajo."
+msgid "Win payout if exit spot is also equal to entry spot."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "Gane el multiplicador por el cierre menos el bajo."
