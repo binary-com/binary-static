@@ -36,7 +36,7 @@ module.exports = function (grunt) {
         app_2: {
             files: [
                 ...common,
-                { expand: true, cwd:  'src/root_files/app_2', src: ['**', '!index.html'], dest: 'dist' }, // top level
+                { expand: true, cwd:  'src/root_files/app_2', src: ['sitemap*.xml'],      dest: 'dist' }, // top level
                 { expand: true, cwd:  'src/root_files/app_2', src: ['index.html'],        dest: global.dist_app_2 },
 
                 // app_2
