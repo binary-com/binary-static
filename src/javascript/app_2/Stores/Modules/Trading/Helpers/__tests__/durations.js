@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import * as Duration from '../duration.js';
-import moment from 'moment';
+import BinarySocket from '_common/base/socket_base';
 
 describe('buildDurationConfig', () => {
     const contract = {
@@ -73,6 +73,11 @@ describe('convertDurationUnit', () => {
 });
 
 describe('getExpiryType', () => {
+    const serverTime = async () => {
+        const { time: server_time } = await BinarySocket.send({ time: 1 });
+        return server_time;
+    }
+
     it('Return correct value when server time passed', () => {
         const store = {
             duration_unit: 't',
@@ -80,7 +85,7 @@ describe('getExpiryType', () => {
             expiry_type: 'duration',
             root_store: {
                 common: {
-                    server_time: moment(moment().valueOf()).utc(),
+                    server_time: serverTime(),
                 }
             }
         }
