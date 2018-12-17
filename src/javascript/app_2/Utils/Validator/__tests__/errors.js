@@ -5,7 +5,6 @@ describe('Errors', () => {
     const error = new Errors();
 
     describe('.add', () => {
-
         error.add('Error', 'This is a test!');
         expect(error.errors).to.eql({
             'Error': [
