@@ -51,12 +51,12 @@ const Forex = () => (
                     tbody: [
                         [
                             { text: it.L('EUR') },
-                            { text: <img src={it.url_for('images/pages/metatrader/how-to/flag_us.svg')} /> },
+                            { text: <img src={it.url_for('images/pages/metatrader/how-to/flag_eur.svg')} /> },
                             { text: <React.Fragment><h3 className='no-margin'>{it.L('Based currency')}</h3>{it.L('Also known as transaction currency')}</React.Fragment>, className: 'align-start' },
                         ],
                         [
                             { text: it.L('USD'), className: 'no-border' },
-                            { text: <img src={it.url_for('images/pages/metatrader/how-to/flag_uk.svg')} />, className: 'no-border' },
+                            { text: <img src={it.url_for('images/pages/metatrader/how-to/flag_us.svg')} />, className: 'no-border' },
                             { text: <React.Fragment><h3 className='no-margin'>{it.L('Quote currency')}</h3>{it.L('Also known as counter money')}</React.Fragment>, className: 'no-border align-start' },
                         ],
                     ],
