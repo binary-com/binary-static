@@ -73,7 +73,7 @@ describe('convertDurationUnit', () => {
 });
 
 describe('getExpiryType', () => {
-    const serverTime = async () => {
+    const getServerTime = async () => {
         const { time: server_time } = await BinarySocket.send({ time: 1 });
         return server_time;
     }
@@ -85,7 +85,7 @@ describe('getExpiryType', () => {
             expiry_type: 'duration',
             root_store: {
                 common: {
-                    server_time: serverTime(),
+                    server_time: getServerTime(),
                 }
             }
         }
