@@ -77,11 +77,9 @@ const PersonalDetails = (() => {
             get_settings.tax_residence =
                 get_settings.tax_residence
                     .split(',')
-                    .reduce((all_residences, current_residence) =>
-                        `${all_residences + ((residence_list.find(obj => obj.value === current_residence) || {}).text || current_residence)  }, `, ''
-                    )
-                    .slice(0, -2) ||
-                get_settings.tax_residence;
+                    .map((current_residence) =>
+                        (residence_list.find(obj => obj.value === current_residence) || {}).text || current_residence
+                    ).join(', ');
         }
 
         displayGetSettingsData(get_settings);
