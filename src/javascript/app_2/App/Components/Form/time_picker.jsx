@@ -41,7 +41,7 @@ class TimePickerDropdown extends React.Component {
     }
 
     selectOption = (type, value, is_enabled = true) => {
-        if (is_enabled) {
+        if (is_enabled && this.props.value) {
             const [ prev_hour, prev_minute ] = this.props.value.split(':');
             if ((type === 'h' && value !== prev_hour) || (type === 'm' && value !== prev_minute)) {
                 const is_type_selected = type === 'h' ? 'is_hour_selected' : 'is_minute_selected';

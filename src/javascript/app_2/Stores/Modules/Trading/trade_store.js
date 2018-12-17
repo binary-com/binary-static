@@ -18,9 +18,8 @@ import URLHelper                         from 'Utils/URL/url_helper';
 import { processPurchase }               from './Actions/purchase';
 import * as Symbol                       from './Actions/symbol';
 import {
-    getAllowedQueryStringVariables,
-    getNonProposalQueryStringVariables,
-}                                        from './Constants/query_string';
+    allowed_query_string_variables,
+    getNonProposalQueryStringVariables } from './Constants/query_string';
 import getValidationRules                from './Constants/validation_rules';
 import { setChartBarrier }               from './Helpers/chart';
 import ContractType                      from './Helpers/contract_type';
@@ -72,7 +71,7 @@ export default class TradeStore extends BaseStore {
     // Start Time
     @observable start_date       = Number(0); // Number(0) refers to 'now'
     @observable start_dates_list = [];
-    @observable start_time       = '12:30';
+    @observable start_time       = null;
     @observable sessions         = [];
 
     // Last Digit
@@ -94,11 +93,11 @@ export default class TradeStore extends BaseStore {
     };
 
     constructor({ root_store }) {
-        URLHelper.pruneQueryString(getAllowedQueryStringVariables());
+        URLHelper.pruneQueryString(allowed_query_string_variables);
 
         super({
             root_store,
-            session_storage_properties: getAllowedQueryStringVariables(),
+            session_storage_properties: allowed_query_string_variables,
             validation_rules          : getValidationRules(),
         });
 
@@ -116,15 +115,6 @@ export default class TradeStore extends BaseStore {
             () => [this.contract_expiry_type, this.duration_min_max, this.duration_unit, this.expiry_type],
             () => {
                 this.changeDurationValidationRules();
-            },
-        );
-        // Adds intercept to update query strings and session storage properties 'start_time with '00:00'
-        reaction(
-            () => this.contract_start_type,
-            () => {
-                if (this.contract_start_type === 'spot') {
-                    this.start_time = '00:00';
-                }
             },
         );
     }
@@ -243,7 +233,7 @@ export default class TradeStore extends BaseStore {
 
                 // Add changes to queryString of the url
                 if (
-                    getAllowedQueryStringVariables(this.start_date).indexOf(key) !== -1 &&
+                    allowed_query_string_variables.indexOf(key) !== -1 &&
                     this.is_trade_component_mounted
                 ) {
                     URLHelper.setQueryParam({ [key]: new_state[key] });
@@ -329,7 +319,7 @@ export default class TradeStore extends BaseStore {
             URLHelper.pruneQueryString(
                 [
                     ...proper_proposal_params_for_query_string,
-                    ...getNonProposalQueryStringVariables(this.start_date),
+                    ...getNonProposalQueryStringVariables(this),
                 ],
             );
 
@@ -371,7 +361,7 @@ export default class TradeStore extends BaseStore {
         // Update the url's query string by default values of the store
         const query_params = URLHelper.updateQueryString(
             this,
-            getAllowedQueryStringVariables(this.start_date),
+            allowed_query_string_variables,
             this.is_trade_component_mounted,
         );
 

@@ -233,12 +233,14 @@ const ContractType = (() => {
     };
 
     const buildMoment = (date, time) => {
+        const moment_date = moment.utc(isNaN(date) ? date : +date * 1000);
+        if (!time) return moment_date;
         const [ hour, minute ] = time.split(':');
-        return moment.utc(isNaN(date) ? date : +date * 1000).hour(hour).minute(minute);
+        return moment_date.hour(hour).minute(minute);
     };
 
     const getStartTime = (sessions, start_date, start_time) => ({
-        start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
+        start_time: start_date ? getValidTime(sessions, buildMoment(start_date, start_time)) : null,
     });
 
     const getExpiryDate = (expiry_date, start_date) => {

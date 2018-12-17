@@ -70,7 +70,7 @@ const Duration = ({
     const is_same_day   = moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day');
     if (is_same_day) {
         const date_time = moment.utc(start_date * 1000 || undefined);
-        if (start_date) {
+        if (start_date && start_time) {
             const [ hour, minute ] = start_time.split(':');
             date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
         }

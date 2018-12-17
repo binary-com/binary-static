@@ -47,20 +47,18 @@ const StartDate = ({
                 onChange={onChange}
                 is_nativepicker={is_nativepicker}
             />
-            {!is_today &&
-                <React.Fragment>
-                    <TimePicker
-                        onChange={onChange}
-                        is_align_right
-                        name='start_time'
-                        value={start_time}
-                        placeholder='12:00'
-                        start_date={start_date}
-                        sessions={sessions}
-                        is_clearable={false}
-                        is_nativepicker={is_nativepicker}
-                    />
-                </React.Fragment>
+            {(!is_today && start_time) &&
+                <TimePicker
+                    onChange={onChange}
+                    is_align_right
+                    name='start_time'
+                    value={start_time}
+                    placeholder='12:00'
+                    start_date={start_date}
+                    sessions={sessions}
+                    is_clearable={false}
+                    is_nativepicker={is_nativepicker}
+                />
             }
         </Fieldset>
     );
