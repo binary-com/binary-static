@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-14 02:46\n"
+"PO-Revision-Date: 2018-12-17 03:20\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Thai\n"
 "MIME-Version: 1.0\n"
@@ -2500,11 +2500,17 @@ msgstr "วันเริ่มต้น"
 msgid "Commission"
 msgstr "ค่าคอมมิชชั่น"
 
+msgid "Commission and swap scheme"
+msgstr ""
+
 msgid "Commission on deposits"
 msgstr "ค่าธรรมเนียมเมื่อฝากเงิน"
 
 msgid "Commission on withdrawals"
 msgstr "ค่าธรรมเนียมเมื่อถอนเงิน"
+
+msgid "Commission per side trade"
+msgstr ""
 
 msgid "Commission rates"
 msgstr "อัตราค่าคอมมิชชัน"
@@ -2719,6 +2725,9 @@ msgstr "การชำระเงินของสัญญาจะถูก
 msgid "Contract period"
 msgstr "ระยะเวลาสัญญา"
 
+msgid "Contract specifications"
+msgstr "ข้อกำหนดสัญญา"
+
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "สัญญาจะถูกจำหน่ายที่ราคาทั่วไปของตลาดเมื่อระบบซื้อขายได้รับการแจ้งความจำนง ราคานี้อาจจะแตกต่างจากราคาที่ระบุ"
 
@@ -2926,8 +2935,8 @@ msgstr "เงินดิจิทัล"
 msgid "Cryptocurrency Risks"
 msgstr "ความเสี่ยงของเงินดิจิทัล"
 
-msgid "Cryptocurrency contract specifications"
-msgstr "ข้อกำหนดสัญญาเงินดิจิทัล"
+msgid "Cryptocurrency contract specifications and commission scheme"
+msgstr "ข้อกำหนดสัญญาเงินดิจิทัลและแผนคอมมิชชั่น"
 
 msgid "Cryptocurrency margin policy"
 msgstr "นโยบายของมาร์จินเงินดิจิทัล"
@@ -3445,6 +3454,9 @@ msgstr "รางวัลผู้ประกอบการ EGR"
 msgid "EGR Operator Awards"
 msgstr "รางวัลผู้ประกอบการ EGR"
 
+msgid "EOS vs US Dollar"
+msgstr "EOS เทียบกับ ดอลลาร์สหรัฐ"
+
 msgid "EU Passport Rights"
 msgstr "สิทธิ์ตามหนังสือเดินทาง EU"
 
@@ -3487,8 +3499,11 @@ msgstr "แต่ละครั้งที่ท่านเปิดตำแ
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "แต่ละครั้งที่ท่านเปิดตำแหน่งของสัญลักษณ์ดัชนี ท่านสามารถเริ่มที่ปริมาณธุรกรรมขั้นต่ำตามที่ระบุเอาไว้ในตารางข้างต้น"
 
+msgid "Each time you send us an order, you are charged a commission, which is equal to the asset price multiplied by the percentage seen in the above table."
+msgstr "แต่ละครั้งที่คุณส่งคำสั่งซื้อให้เรา คุณจะต้องจ่ายค่าคอมมิชชัน ซึ่งเท่ากับราคาสินทรัพย์คูณด้วยเปอร์เซ็นที่แสดงไว้ในตารางด้านบน"
+
 msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
-msgstr ""
+msgstr "ในการโอนแต่ละครั้ง จะมีค่าธรรมเนียมการโอน %1หรือค่าธรรมเนียมขั้นต่ำ %2 โดยเลือกอันที่มากกว่า"
 
 msgid "Earn"
 msgstr "รับรายได้"
@@ -3932,13 +3947,13 @@ msgid "Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, 
 msgstr "มีประสบการณ์ในภาษาเช่น Perl, Python, PHP, C/C++, Go, หรือ Ruby และมีความสมัครใจที่จะกลายเป็นผู้เชียวชาญใน Perl"
 
 msgid "Experience with package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus), and APIs (WebSocket)"
-msgstr ""
+msgstr "มีประสบการณ์ใน package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus) และ APIs (WebSocket)"
 
 msgid "Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL"
 msgstr "มีประสบการณ์ในการออกแบบฐานข้อมูลเชิงสัมพันธ์ และ/หรือ ระบบ RDBMS โอเพ่นซอส เช่น MySQL และPostgreSQL"
 
 msgid "Experience with web application security and testing, security monitoring, and intrusion detection"
-msgstr ""
+msgstr "มีประสบการณ์ในระบบความปลอดภัยและการทดสอบของแอพพลิเคชันบนเว็บ การตรวจสอบด้านความปลอดภัย และการตรวจจับการบุกรุก"
 
 msgid "Expert Advisors"
 msgstr "ที่ปรึกษาผู้เชี่ยวชาญ (Expert Advisors)"
@@ -3956,7 +3971,7 @@ msgid "Expertise in Linux system administration"
 msgstr "มีความเชี่ยวชาญในการจัดการดูและระบบ Linux"
 
 msgid "Expertise in cloud solutions and infrastructure virtualization, including AWS, Google Cloud Platform, and KVM"
-msgstr ""
+msgstr "มีความเชี่ยวชาญในโซลูชันคลาวด์ และโครงสร้างพื้นฐานเสมือน รวมถึง AWS แพลตฟอร์ม Goolge Cloud และ KVM"
 
 msgid "Expertise in the application of object-oriented programming languages (C++, Perl, and Java), coupled with the ability to produce high-quality code"
 msgstr "มีความเชี่ยวชาญในแอพพลิเคชันของภาษาการเขียนโปรแกรมเชิงวัตถุ (C++ Perl และ Java) ควบคู่ไปกับความสามารถในสร้างโปรแกรมที่มีคุณภาพสูง"
@@ -3986,25 +4001,25 @@ msgid "Explore ways to enhance your account security and manage your trading ris
 msgstr "สำรวจวิธีที่จะเพิ่มความปลอดภัยของบัญชีและจัดการความเสี่ยงในการซื้อขาย"
 
 msgid "Extensive experience in Microsoft Office applications, as well as popular HR management and payroll systems"
-msgstr ""
+msgstr "มีประสบการณ์กว้างขวางในแอพพลิเคชัน Microsoft Office และระบบบริหารจัดการฝ่ายทรัพยากรบุคคลและบัญชีเงินเดือนที่เป็นที่นิยม"
 
 msgid "Extensive experience in bug bounty programmes such as HackerOne, Bugcrowd, and Cobalt"
-msgstr ""
+msgstr "มีประสบการณ์ที่กว้างขวางเกี่ยวกับโปรแกรมนักล่าบั๊ก เช่น HackerOne, Bugcrowd และ Cobalt"
 
 msgid "Extensive experience in creating interactive UI elements for web and mobile apps"
-msgstr ""
+msgstr "มีประสบการณ์ที่กว้างขวางในการสร้างองค์ประกอบ UI เชิงโต้ตอบสำหรับเว็บและแอพมือถือ"
 
 msgid "Extensive experience of JavaScript, HTML, CSS, AJAX, and JSON"
-msgstr ""
+msgstr "มีประสบการณ์ที่กว้างขวางใน JavaScript, HTML, CSS, AJAX และ JSON"
 
 msgid "Extensive experience with TCP/IP networking, VPNs, and IPsec"
-msgstr ""
+msgstr "มีประสบการณ์ที่กว้างขวางกับงานระบบเครือข่าย การทำงานของโปรโตคอล TCP/IP VPNs และ IPsec"
 
 msgid "Extensive knowledge in advanced coding techniques, cross-platform development, and hybrid mobile app development"
-msgstr ""
+msgstr "มีความรู้ที่กว้างขวางในเทคนิคการเขียนโปรแกรมขั้นสูง การพัฒนาข้ามแพลตฟอร์ม และการพัฒนาแอพมือถือแบบผสม"
 
 msgid "Extensive knowledge of JavaScript , AJAX, JSON, CSS"
-msgstr ""
+msgstr "มีความรู้ที่กว้างขวางใน JavaScript, AJAX, JSON, CSS"
 
 msgid "External forces"
 msgstr "บทบังคับภายนอก"
@@ -4049,22 +4064,22 @@ msgid "Familiarity with Git"
 msgstr "ความคุ้นเคยกับ Git"
 
 msgid "Familiarity with Perl DBI, Moose, PSGI/Plack, NGINX, JavaScript, Redis, and Git"
-msgstr ""
+msgstr "มีความคุ้นเคยกับ Perl DBI, Moose, PSGI/Plack, NGINX, JavaScript, Redis และ Git"
 
 msgid "Familiarity with Perl DBI, Moose, PSGI/Plack, nginx, JavaScript, Redis, and Git"
-msgstr ""
+msgstr "มีความคุ้นเคยกับ Perl DBI, Moose, PSGI/Plack, nginx, JavaScript, Redis และ Git"
 
 msgid "Familiarity with concepts such as blockchain confirmations, multisig, and HD wallets"
-msgstr ""
+msgstr "มีความคุ้นเคยกับแนวคิดเช่น การยืนยันบล็อกเชน multisig และกระเป่าเงิน HD"
 
 msgid "Familiarity with industry standard tools such as Burp Suit and Metasploit"
-msgstr ""
+msgstr "มีความคุ้นเคยกับเครื่องมือมาตรฐานอุตสาหกรรมเช่น Burp Suit และ Metasploit"
 
 msgid "Familiarity with testing and debugging processes, including unit testing and UI testing"
-msgstr ""
+msgstr "มีความคุ้นเคยกับกระบวนการทดสอบและตรวจแก้จุดบกพร่อง รวมถึงการทดสอบหน่วย และการทดสอบ UI"
 
 msgid "Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular"
-msgstr ""
+msgstr "มีความคุ้นเคยกับมาตรฐาน JavaScript ห้องสมุด กรอบงาน compiler และ transpiler รวมถึง ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React และ Angular"
 
 msgid "Family name"
 msgstr "นามสกุล"
@@ -4109,7 +4124,7 @@ msgid "File Name"
 msgstr "ชื่อแฟ้ม"
 
 msgid "File records and documents of customer interactions according to existing guidelines"
-msgstr ""
+msgstr "บันทึกและเอกสารในการติดต่อกับลูกค้าตามหลักเกณฑ์ที่มีอยู่"
 
 msgid "Filtering Controls"
 msgstr "การควบคุมตัวกรอง"
@@ -4172,7 +4187,7 @@ msgid "Finish"
 msgstr "เสร็จสิ้น"
 
 msgid "Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc."
-msgstr ""
+msgstr "มีความเข้าใจอย่าถ่องแท้ในแนวคิดการบริหารความเสี่ยง รวมถึง การป้องกันความเสี่ยง Greeks (รุ่นแรก และรุ่นที่สอง) แบบจำลองมูลค่าความเสี่ยง ฯลฯ"
 
 msgid "First line of home address"
 msgstr "บรรทัดแรกของที่อยู่"
@@ -4202,7 +4217,7 @@ msgid "Flexible trades"
 msgstr "การเทรดที่ยืดหยุ่น"
 
 msgid "Follow established workflows for content deliverables"
-msgstr ""
+msgstr "ปฏิบัติตามผังระบบงานที่กำหนดขึ้นในการนำเสนอเนื้อหา"
 
 msgid "Follow our step-by-step guide to start trading binary options on MT5."
 msgstr "ปฏิบัติตามขั้นตอนเพื่อเริ่มการซื้อขายไบนารีออปชั่นบน MT5"
@@ -4211,7 +4226,7 @@ msgid "Follow the Law and These Terms"
 msgstr "ปฏิบัติตามกฎและข้อตกลงเหล่านี้"
 
 msgid "Follow up on the recommendations and timeline for corrective actions with department heads"
-msgstr ""
+msgstr "ติดตามผลในคำแนะนำและระยะเวลาสำหรับการดำเนินการเพื่อแก้ปัญหากับหัวหน้าแผนก"
 
 msgid "For Binary (C.R.) S.A., the applicable Jurisdiction shall be Costa Rica."
 msgstr "สำหรับ Binary (C.R.) S.A. ถือเขตการปกครองในคอสตาริกา"
@@ -4262,7 +4277,7 @@ msgid "For example, let’s say the market has a low of 5,200 and a close of 6,0
 msgstr "ตัวอย่างเช่น สมมติว่า ตลาดมีมูลค่าต่ำอยู่ที่ 5,200 และปิดที่ 6,000 ในช่วงเวลาของสัญญา ดังนั้นสัญญา Lookback แบบ'ปิด-ต่ำ' ที่มีตัวคูณ 2 เหรียญสหรัฐ จะมีการชำระเงินเป็นมูลค่า"
 
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product disclosure statement. This policy is an appendix to, and should be read in conjunction with, the overarching %1's order execution policy."
-msgstr ""
+msgstr "สำหรับคุณลักษณะและภาพประกอบการซื้อขายของ Spot FX เสนอโดย %1 โปรดอ้างถึงข้อตกลงการสงวนสิทธิ์ด้านผลิตภัณฑ์ นโยบายนี้เป็นภาคผนวกของนโยบายการดำเนินการสั่งซื้อของ %1 ที่ครอบอยู่ และควรจะอ่านร่วมกัน"
 
 msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as indices) are not open throughout the day and that trading may not be available when the markets are closed."
 msgstr "สำหรับราคาฟอเร็กซ์ในเวลาปิดถูกกำหนดโดยบริษัทฯ เพื่อแสดงในส่วนของ Market Opening Times บนเว็บไซต์ หากมีข้อพิพาทใดๆ เกี่ยวกับมูลค่าตลาด หรือ ราคาซื้อขาย การตัดสินของบริษัทฯ ถือเป็นสิ้นสุด เพื่อลูกค้าทราบว่า ตลาดต่างๆ (เช่น ดัชนีหลักทรัพย์) ไม่ได้เปิดทำการตลอดวัน และการซื้อขายจะไม่เกิดขึ้นในขณะตลาดปิดทำการ"
@@ -4436,10 +4451,10 @@ msgid "Generally we will communicate with you through this website or by email t
 msgstr "โดยทั่วไป พวกเราจะติดต่อกับท่านผ่านทางเว็บไซต์ หรือ อีเมล์ที่ใช้เมื่อท่านเปิดบัญชีนี้ บริษัทฯ จะใช้ภาษาอังกฤษเป็นภาษาหลักในการติดต่อกับท่าน หรือ ท่านสามารถเลือกภาษาอื่นที่ต้องการ โดยระบุภาษานั้นเมื่อท่านดำเนินการเปิดบัญชี"
 
 msgid "Generate periodic and special reports on client trading activity and significant trends that impact our client behaviour"
-msgstr ""
+msgstr "จัดทำรายงานตามกำหนดเวลาและรายงานพิเศษเกี่ยวกับกิจกรรมการซื้อขายของลูกค้าและแนวโน้มที่สำคัญที่ส่งผลกระทบต่อพฤติกรรมของลูกค้า"
 
 msgid "Generate periodic and special reports that summarise client trading trends"
-msgstr ""
+msgstr "จัดทำรายงานตามงวดเวลาและรายงานพิเศษที่มีข้อมูลสรุปเกี่ยวกับแนวโน้มการซื้อขายของลูกค้า"
 
 msgid "Generated verification code:"
 msgstr "รหัสยืนยันที่สร้างขึ้น:"
@@ -4520,7 +4535,7 @@ msgid "Go to MT5 download page"
 msgstr "ไปที่หน้าดาวน์โหลด MT5"
 
 msgid "Go to MetaTrader 5 dashboard"
-msgstr ""
+msgstr "ไปยังรายงานสรุปภาพรวม MetaTrader 5"
 
 msgid "Go with the leader"
 msgstr "ก้าวไปกับผู้นำ"
@@ -4532,10 +4547,10 @@ msgid "Gold vs US Dollar"
 msgstr "ทอง และ ดอลลาร์สหรัฐ"
 
 msgid "Good reporting skills with a keen eye for detail"
-msgstr ""
+msgstr "มีทักษะในการรายงานดี และสังเกตในรายละเอียด"
 
 msgid "Good understanding of the link between payments functionality, as well as money laundering and fraud prevention"
-msgstr ""
+msgstr "มีความเข้าใจที่ดีเกี่ยวกับการเชื่อมโยงระหว่างฟังก์ชันในการชำระเงิน และการป้องกันการฟอกเงินและทุจริต"
 
 msgid "Governing Laws and Jurisdiction"
 msgstr "กำกับโดยกฎหมายและอำนาจตามกฎหมาย"
@@ -4601,13 +4616,13 @@ msgid "HR Operations Executive"
 msgstr "เจ้าหน้าที่ปฏิบัติงานฝ่ายบุคคล"
 
 msgid "Handle chargeback disputes and review regulatory complaints"
-msgstr ""
+msgstr "จัดการในข้อพิพาทการปฏิเสธการชำระเงิน และตรวจสอบข้อร้องเรียนด้านกฎระเบียบ"
 
 msgid "Hands-on experience in systems and network security. Experience with Fortigate or similar devices (e.g.Cisco, Mikrotik)"
-msgstr ""
+msgstr "มีประสบการณ์โดยตรงในระบบและความปลอดภัยของเครือข่าย มีประสบการณ์ใน Fortigate หรืออุปกรณ์ที่คล้ายกัน (เช่น Cisco, Mikrotik)"
 
 msgid "Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks"
-msgstr ""
+msgstr "มีประสบการณ์โดยตรงในการแก้ไขปัญหาซอฟต์แวร์คอมพิวเตอร์ ฮาร์ดแวร์ และแอพพลิเคชันและเครือข่ายอินเตอร์เนตที่หลากหลาย"
 
 msgid "Have not previously been a %1 customer"
 msgstr "ยังไม่เคยเป็นลูกค้าของ %1"
@@ -4622,7 +4637,7 @@ msgid "Hedging"
 msgstr "เฮดจิ้ง"
 
 msgid "Help in developing advanced risk management tools for various markets (forex, equities, commodities)"
-msgstr ""
+msgstr "ช่วยเหลือในการพัฒนาเครื่องมือการบริหารความเสี่ยงขั้นสูงสำหรับตลาดต่างๆ (ฟอเร็กซ์ หุ้น สินค้าโภคภัณฑ์)"
 
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "นี่คือ ตัวอย่างคู่สกุลเงิน EUR/USD และราคาจะซื้อจะขาย"
@@ -4762,6 +4777,9 @@ msgstr "ปิดโพซิชั่นอย่างไร"
 msgid "How to manage your funds"
 msgstr "วิธีการจัดการหลักประกันของท่าน"
 
+msgid "How to read the commission and swap scheme table"
+msgstr "วิธีการอ่านตารางคอมมิชชั่นและแผน swap"
+
 msgid "How to read the contract specifications table"
 msgstr "อ่านตารางข้อกำหนดสัญญาอย่างไร"
 
@@ -4865,7 +4883,7 @@ msgid "IT"
 msgstr "IT"
 
 msgid "IT knowledge or experience is preferred"
-msgstr ""
+msgstr "ความรู้ด้านเทคโนโลยีสารสนเทศ หรือ ประสบการณ์ มีประโยชน์ต่อการพิจารณา"
 
 msgid "Ideal for new and experienced traders"
 msgstr "เหมาะสมสำหรับนักลงทุนมือใหม่และนักลงทุนมืออาชีพ"
@@ -4877,7 +4895,7 @@ msgid "Ideas, opinions and insights from the people behind %1"
 msgstr "ความคิด ความเห็น และข้อมูลเชิงลึกจากผู้ที่อยู่เบื้องหลัง %1"
 
 msgid "Identify attack vectors"
-msgstr ""
+msgstr "ระบุเวกเตอร์การโจมตี"
 
 msgid "Identify new marketing opportunities through customer feedback and contribute ideas to expand our global customer base"
 msgstr "ระบุโอกาสด้านการตลาดใหม่ผ่านทางข้อคิดเห็นจากลูกค้าและเสนอไอเดียที่จะขยายฐานลูกค้าในระดับโลก"
@@ -5276,7 +5294,7 @@ msgid "In providing these services, we are bound by the Act, any applicable regu
 msgstr "ในการให้บริการต่างๆ เหล่านี้ บริษัทฯ ปฏิบัติตามพระราชบัญญัติ หลักเกณฑ์ กฎหมาย เงื่อนไขตามใบอนุญาต แนวทางต่างๆ ข้อกำหนดการแลกเปลี่ยน และข้อกำหนดอื่นๆ หรือ หลักปฏิบัติในตลาด  (เรียกว่า \"กฎ\") หากมีกรณีความขัดแย้งใดๆ ระหว่าง ST&Cs และ กฎต่างๆ"
 
 msgid "In relation to Contracts that the client enters into with the Company, the Company acts as principal and not as agent on the client's behalf; therefore, the Company acts as the sole execution venue for the execution of the client's Contracts."
-msgstr ""
+msgstr "เกี่ยวกับสัญญาที่ลูกค้าทำกับบริษัท บริษัททำหน้าที่เป็นคู่สัญญาหลัก และไม่ใช่ตัวแทนของลูกค้า ดังนั้น บริษัททำหน้าที่เป็นสถานที่ดำเนินการแต่เพียงผู้เดียวในการดำเนินการสัญญาของลูกค้า"
 
 msgid "In such an event, the Company may at its sole discretion (with or without notice) close out Client's open financial contracts at prices it considers fair and reasonable."
 msgstr "ในเหตุการณ์ดังกล่าว ด้วยดุลยพินิจของบริษัทฯ (ทั้งการได้บอกกล่าว หรือ ไม่ได้บอกกล่าว) บริษัทฯ อาจจะปิดสัญญาของลูกค้าที่เปิดอยู่ที่ราคาที่พิจารณาแล้วว่ายุติธรรมและสมเหตุสมผล"
@@ -5306,7 +5324,7 @@ msgid "In the case of a Stop Order, you acknowledge that we will endeavor to ope
 msgstr "ในกรณีหยุดคำสั่งซื้อ (Stop Order) ท่านยอมรับว่า เราจะพยายามที่จะเปิด/ปิดธุรกรรมที่ระดับเดียวกันกับระดับที่ท่านระบุ อย่างไรก็ตาม หากไม่มีราคาที่ท่านต้องการ ราคาที่ใกล้เคียงที่สุดจะถูกบันทึกไว้ ท่านยอมรับว่า ในเวลาของการดำเนินการคำสั่ง ราคาซื้อ/ขายของเราอาจจะเป็นราคาที่อำนวยประโยชน์ให้ท่านน้อยกว่า"
 
 msgid "In the case of some Contracts, there may be no functioning or open market or exchange on which the reference product is traded at the time of the client order. In such cases, the Company sets out to determine a fair underlying price based on a number of factors, such as price movements on associated markets and other market influences and information about the client order."
-msgstr ""
+msgstr "ในบางสัญญา อาจไม่มีฟังก์ชัน หรือ ตลาดที่เปิดอยู่ หรือ การแลกเปลี่ยนในผลิตภัณฑ์อ้างอิงที่ทำการซื้อขาย ในเวลาที่ลูกค้าส่งคำสั่งซื้อ ในกรณีดังกล่าว บริษัทกำหนดราคาที่อ้างอิงที่มีความยุติธรรมโดยขึ้นกับปัจจัยหลายประการ ได้แก่ การเคลื่อนไหวของราคาในตลาดที่เกี่ยวข้อง และตลาดที่มีอิทธิพลอื่นๆ และข้อมูลเกี่ยวกับคำสั่งซื้อของลูกค้า"
 
 msgid "In the course of provision of services we shall, where applicable, conduct an appropriateness test in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
 msgstr "ในหลักสูตรก่อนการให้บริการใดๆ พวกเราจะจัดให้มีการทดสอบตามความเหมาะสมเพื่อกำหนดพื้นฐานข้อมูลตามมุมมองของพวกเราสำหรับท่าน ท่านจะต้องมีความรู้พื้นฐานที่จำเป็นและประสบการณ์ในการลงทุนเพื่อเข้าใจความเสี่ยงที่จะเกิดขึ้นกีบผลิตภัณฑ์ หรือ บริการ"
@@ -5336,7 +5354,7 @@ msgid "In this case, you predict that the price will rise. This is also known as
 msgstr "ในกรณีนี้ ท่านคาดการณ์ว่า ราคาจะสูงขึ้น ให้ \"ส่งคำสั่ง Long\""
 
 msgid "In-depth knowledge of accounting principles, best practices, standards, and regulations"
-msgstr ""
+msgstr "มีความรู้เชิงลึกในหลักการบัญชี วิธีปฏิบัติที่ดีที่สุด มาตรฐาน และกฎระเบียบ"
 
 msgid "In/Out"
 msgstr "In/Out"
@@ -5354,7 +5372,7 @@ msgid "Income earning"
 msgstr "การรับรายได้"
 
 msgid "Incorporate our brand identity into new products, pages, and features"
-msgstr ""
+msgstr "รวมเอกลักษณ์ของแบรนด์เข้าไว้ในผลิตภัณฑ์ หน้าเว็บ และคุณสมบัติใหม่"
 
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr "สร้างชื่อเสียง HackerOne ของท่าน เพื่อสร้างความน่าเชื่อถือและฝีมือให้ประจักษ์"
@@ -5483,13 +5501,13 @@ msgid "Invalid verification code."
 msgstr "รหัสยืนยันไม่ถูกต้อง"
 
 msgid "Invast Financial Services Pty Ltd;"
-msgstr ""
+msgstr "Invast Financial Services Pty Ltd;"
 
 msgid "Investigate client accounts that have been flagged by existing fraud controls and processes"
-msgstr ""
+msgstr "ตรวจสอบบัญชีของลูกค้าที่ถูกระบุโดยการควบคุมการทุจริตและกระบวนการที่มีอยู่"
 
 msgid "Investigate, reproduce, identify, document, and resolve issues reported by our clients and the customer support team"
-msgstr ""
+msgstr "ตรวจสอบ สร้างใหม่ ระบุ บันทึก และแก้ปัญหาที่ลูกค้าและทีมสนับสนุนลูกค้ารายงาน"
 
 msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
 msgstr "การลงทุนในผลิตภัณฑ์ที่มีความซับซ้อน เช่น CFD และ FX อาจจะทำให้ขาดทุนได้พอๆ กับกำไร ราคาอาจจะมีการเปลี่ยนแปลง และ/หรือ ผันผวน ตามราคาและเงื่อนไขต่างๆ ของตลาด ซึ่งมีผลต่อผลได้จากการลงทุนของท่าน ก่อนการตัดสินใจลงทุนใดๆ ท่านควรจะศึกษาข้อมูลหลักๆ ที่สำคัญ (Key Information Documents) ที่ประกาศไว้บนเว็บไซต์ของเรา โดยเฉพาะจำนวนมาร์จินที่เป็นเงื่อนไขของผลิตภัณฑ์อ้างอิงแต่ละรายการที่เรานำเสนอ ผลิตภัณฑ์นี้นำเสนอโดย Binary Investments (Europe) Ltd และถูกจำแนกอยู่ในกลุ่มผลิตภัณฑ์ที่มีความซับซ้อน และอาจจะไม่เหมาะกับลูกค้ารายย่อย"
@@ -5654,7 +5672,7 @@ msgid "Keep Safe"
 msgstr "รักษาความปลอดภัย"
 
 msgid "Keep our infrastructure up-to-date with current cutting edge developments"
-msgstr ""
+msgstr "ดูแลระบบโครงสร้างพื้นฐานให้มีความทันสมัยและรองรับการพัฒนาอย่างต่อเนื่อง"
 
 msgid "Keep safe"
 msgstr "รักษาความปลอดภัย"
@@ -5666,10 +5684,10 @@ msgid "Keep up with breaking news and events on global markets."
 msgstr "ตามให้ทันข่าวล่ามาแรงและเหตุการณ์ในตลาดโลก"
 
 msgid "Keep up with the latest developments in IT and maintain knowledge relevant to the requirements of the business"
-msgstr ""
+msgstr "ดำเนินการดูแลรักษาระบบสารสนเทศที่มีการพัฒนาต่อเนื่องและพัฒนาทักษะความรู้ในสาขาที่เกี่ยวข้องเพื่อสนับสนุนการดำเนินธุรกิจ"
 
 msgid "Keep up with the latest trends and techniques in design, UI, and UX"
-msgstr ""
+msgstr "ดำเนินการดูแลรักษาระบบด้วยเทคโนโลยีและวิทยาการล่าสุดในการออกแบบ UI และ UX"
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
 msgstr "ติดตามข่าว และแนวโน้มของตลาดในกลุ่มผลิตภัณฑ์ที่ท่านสนใจ จะช่วยท่านได้อย่างมหาศาล โดยเฉพาะเมื่อท่านเพิ่งเริ่มลงทุน"
@@ -5687,7 +5705,7 @@ msgid "Kick back with beautiful beaches, islands, and mountains just a short fli
 msgstr "เมื่อเวลาย้อนกลับ ท่านจะพบชายหาดที่สวยงาม เกาะต่างๆ และภูเขาที่เรียงราย ในชั่วโมงบินสั้นๆ จากประเทศมอลตา ท่านจะเป็นส่วนหนึ่งของภูมิภาคยุโรป เมดิเตอร์เรเนียน และทวีปแอฟริกาเหนือ และจากประเทศมาเลเซีย สู่ภูมิภาคเอเชียที่กำลังรอคอย"
 
 msgid "Know how much you will win or lose before you purchase the contract"
-msgstr ""
+msgstr "ทราบว่า จะได้เงิน หรือ ขาดทุนเท่าไร ก่อนจะซื้อสัญญา"
 
 msgid "Know what you stand to win or lose"
 msgstr "ทราบว่า ท่านอยู่ในฝั่งกำไร หรือ ขาดทุน"
@@ -5702,22 +5720,22 @@ msgid "Knowledge and experience in the financial services industry and/or binary
 msgstr "มีความรู้และประสบการณ์ในสาขาการบริการการเงิน และ/หรือ การซื้อขายไบนารีออปชั่น"
 
 msgid "Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps"
-msgstr ""
+msgstr "ทักษะความรู้เกี่ยวกับ HTML CSS จาวาสคริปสำหรับการพัฒนาโปรโตไทพ์ของเว็บไซต์และแอพพลิเคชันอย่างรวดเร็ว"
 
 msgid "Knowledge of Linux system administration, including configuration and automation tools such as Chef as well as Shell scripting is preferred"
-msgstr ""
+msgstr "ทักษะความรู้ในการบริหารจัดการระบบลินุกซ์ รวมถึงการตั้งค่า และการใช้งานเครื่องมือเพื่อทำงานแบบอัตโนมัติ เช่น Chef และ  Shell สคริป"
 
 msgid "Knowledge of Mac or Linux Technologies and associated security risks"
-msgstr ""
+msgstr "ทักษะความรู้ที่เกี่ยวข้องกับเทคโนโลยีแมคและลินุกซ์ที่เกี่ยวข้องกับความเสี่ยงในด้านความปลอดภัยของระบบ"
 
 msgid "Knowledge of VPN concepts and prior experience of setting up site-to-site networks"
-msgstr ""
+msgstr "ทักษะความรู้ในหลักการของ VPN และประสบการณ์ในการติดตั้งงานในเครือข่ายเพื่อรองรับการใช้งานในที่ต่างๆ"
 
 msgid "Knowledge of affiliate marketing, email marketing, and basic HTML"
-msgstr ""
+msgstr "ทักษะความรู้ในเรื่องการตลาดออนไลน์ การตลาดด้วยอีเมล์ และ HTML พื้นฐาน"
 
 msgid "Knowledge of coloured coins and Ethereum tokens, including ERC20/23/223"
-msgstr ""
+msgstr "มีความรู้เกี่ยวกับเหรียญสี และโทเค่นอีเธอเรียม รวมถึง ERC20/23/223"
 
 msgid "Knowledge of hardware and software firewalls, intrusion detection methods, security systems, and DDoS protection"
 msgstr ""
@@ -5729,7 +5747,7 @@ msgid "Knowledge of payment transaction analysis, in particular e-wallets/crypto
 msgstr ""
 
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modelling"
-msgstr ""
+msgstr "มีทักษะความรู้เกี่ยวกับทฤษฎีความเป็นไปได้ สโทแคสติกแคลคูลัส ระเบียบวิธีเกี่ยวกับตัวเลข การจำลองแบบมอนติคาร์โล สมการเชิงอนุพันธ์ เศรษฐมิติ และ แบบจำลองทางสถิติ"
 
 msgid "Knowledge of scripting language and Perl in particular is a plus"
 msgstr ""
@@ -6440,7 +6458,7 @@ msgid "Meticulous English language skills, with keen eye for detail when it come
 msgstr ""
 
 msgid "MiFID II RTS 28"
-msgstr ""
+msgstr "MiFID II RTS 28"
 
 msgid "Min"
 msgstr "ค่าต่ำสุด"
@@ -7406,7 +7424,7 @@ msgid "Performance Tuning,"
 msgstr ""
 
 msgid "Perl Developer"
-msgstr ""
+msgstr "นักพัฒนาระบบด้วยภาษา Perl"
 
 msgid "Perl modules"
 msgstr "โมดูลต่างๆ ในภาษา Perl"
@@ -7445,7 +7463,7 @@ msgid "Place of birth"
 msgstr "สถานที่เกิด"
 
 msgid "Plan and carry out the upgrade and migration of databases as needed"
-msgstr ""
+msgstr "วางแผนและดำเนินการอัพเกรด และ ย้ายฐานข้อมูล"
 
 msgid "Plan and direct internal programmes and policies to empower all departments with the knowledge, awareness, and practices of regulatory compliance"
 msgstr ""
@@ -7454,7 +7472,7 @@ msgid "Plan and execute data extraction for efficient loading in data warehouse,
 msgstr ""
 
 msgid "Plan and implement IT solutions to achieve desired results"
-msgstr ""
+msgstr "วางแผนและพัฒนาระบบสารสนเทศเพื่อรองรับการใช้งานทางธุรกิจ"
 
 msgid "Plan and implement methods of best practices in IT security"
 msgstr ""
@@ -7814,10 +7832,10 @@ msgid "Previous"
 msgstr "ก่อนหน้า"
 
 msgid "Previous experience with financial/binary options website services is preferred"
-msgstr ""
+msgstr "ประสบการณ์ที่เกี่ยวข้องในการให้บริการเว็บไซต์ผลิตภัณฑ์ทางการเงิน/ไบนารี ออปชั่น จะเป็นประโยชน์ต่อการพิจารณา"
 
 msgid "Previous work experience in a customer service and/or marketing role"
-msgstr ""
+msgstr "ประสบการณ์ที่เกี่ยวข้องในการให้บริการลูกค้า งานลูกค้าสัมพันธ์ และ/หรือ ตำแหน่งทางการตลาด จะเป็นประโยชน์ต่อการพิจารณา"
 
 msgid "Price Per Point"
 msgstr "ราคาต่อจุด"
@@ -8399,7 +8417,7 @@ msgid "Risk Disclosure Statement"
 msgstr "ข้อตกลงการสงวนสิทธิ์ด้านความเสี่ยง"
 
 msgid "Risk Management Executive"
-msgstr ""
+msgstr "เจ้าหน้าที่บริหารจัดการความเสี่ยง"
 
 msgid "Risk Warning"
 msgstr "การแจ้งเตือนระดับความเสี่ยง"
@@ -8507,7 +8525,7 @@ msgid "Security Disclaimer"
 msgstr "การสงวนสิทธิ์ของหลักทรัพย์"
 
 msgid "Security Researcher"
-msgstr ""
+msgstr "นักวิจัยด้านความปลอดภัย"
 
 msgid "Security Statement"
 msgstr "บทบัญญัติเกี่ยวกับหลักทรัพย์"
@@ -8525,7 +8543,7 @@ msgid "Security testing opportunities"
 msgstr "โอกาสการทดสอบความปลอดภัย"
 
 msgid "Security,"
-msgstr ""
+msgstr "หลักทรัพย์"
 
 msgid "Select <a href=\"%1\">Citizenship</a>."
 msgstr "เลือก <a href=\"%1\">สัญชาติ</a>"
@@ -8543,7 +8561,7 @@ msgid "Select currency"
 msgstr "เลือกสกุลเงิน"
 
 msgid "Select date"
-msgstr ""
+msgstr "ระบุวันที่"
 
 msgid "Select market:"
 msgstr "กำหนดตลาด:"
@@ -8765,7 +8783,7 @@ msgid "Smoothing out random noise"
 msgstr "ปรับเส้นให้ปราศจากปัจจัยรบกวน"
 
 msgid "Software Tester"
-msgstr ""
+msgstr "นักทดสอบซอฟท์แวร์"
 
 msgid "Some of the things that cryptocurrencies have in common include:"
 msgstr "บางอย่างที่มีร่วมกันในเงินดิจิทัล รวมถึง"
@@ -8801,7 +8819,7 @@ msgid "Spam - We do not condone Spam"
 msgstr "สแปม - เราไม่เอาโทษสแปม"
 
 msgid "Specific instructions"
-msgstr ""
+msgstr "คำสั่งเฉพาะ"
 
 msgid "Speculate on the price movement of cryptocurrencies such as Bitcoin, Ethereum, and Litecoin without owning them."
 msgstr "เก็งกำไรจากการเคลื่อนไหวของราคาเงินดิจิทัล เช่น บิทคอยน์ อีเธอเรียม และไลท์คอยน์ โดยไม่ต้องเป็นเจ้าของ"
@@ -8975,7 +8993,7 @@ msgid "Storage of Content"
 msgstr "ที่พักของข้อมูล"
 
 msgid "Stored Procedures"
-msgstr ""
+msgstr "สตรอโพรซีเยอร์"
 
 msgid "Strong analytical capabilities that have been proven in a prior capacity or a keen interest to move into this area"
 msgstr ""
@@ -8984,13 +9002,13 @@ msgid "Strong analytical skills and the ability to communicate your findings in 
 msgstr ""
 
 msgid "Strong decision-making skills"
-msgstr ""
+msgstr "ทักษะการตัดสินใจอย่างเชี่ยวชาญ"
 
 msgid "Strong oral and written communication skills in both the regional language(s) and English"
-msgstr ""
+msgstr "มีทักษะการสื่อสารทั้งการพูดและการเขียนในทั้งภาษาของภูมิภาคและภาษาอังกฤษ"
 
 msgid "Strong understanding of colours, typography, identity design, and branding"
-msgstr ""
+msgstr "มีความเข้าใจที่ลึกซึ่งในเรื่องสี การพิม์ การออกแบบอัตลักษณ์ และการออกแบบตราสัญลักษณ์"
 
 msgid "Student"
 msgstr "นักเรียน"
@@ -9072,10 +9090,10 @@ msgid "Summary"
 msgstr "บทสรุป"
 
 msgid "Summary of the Conflicts Policy"
-msgstr ""
+msgstr "บทสรุปของนโยบายความขัดแย้ง"
 
 msgid "Summary of the order execution policy"
-msgstr ""
+msgstr "บทสรุปของนโยบายการประมวลผลคำสั่งซื้อ"
 
 msgid "Sunday"
 msgstr "วันอาทิตย์"
@@ -9096,10 +9114,10 @@ msgid "Support"
 msgstr "สนับสนุน"
 
 msgid "Support our global recruitment and talent management needs"
-msgstr ""
+msgstr "รับผิดชอบงานเกี่ยวกับการสรรหาบุคลากรของเครือและการบริหารบุคลากรที่มีศักยภาพ"
 
 msgid "Support our global recruitment and talent management needs, including onboarding, processing work permits, and expat management"
-msgstr ""
+msgstr "รับผิดชอบงานเกี่ยวกับการสรรหาบุคลากรของเครือและการบริหารบุคลากรที่มีศักยภาพ รวมถึงกระบวนการรับพนักงานเข้าทำงาน การประสานงานเรื่องใบอนุญาตทำงาน และการดำเนินการในกรณีแรงงานต่างด้าว"
 
 msgid "Support overall development, planning and execution of the team’s digital marketing efforts in accordance to the marketing objectives of respective projects"
 msgstr ""
@@ -9113,6 +9131,12 @@ msgstr "พักการซื้อขายจากเครื่องม
 msgid "Suspending your MT5 Real Account and refusing to execute any Orders to enter into further Transactions with you. Whilst your MT5 Real Account is suspended, you will be able to place Orders to close your Open Positions, but you will not be able to place Orders which would create Open Positions."
 msgstr "ระงับบัญชี MT5 จริงของท่าน และ ปฏิเสธที่จะดำเนินการคำสั่งซื้อใดๆ ที่จะเป็นธุรกรรมเพิ่มเติมกับท่าน ในขณะที่บัญชี MT5 จริงถูกระงับ ท่านสามารถส่งคำสั่งซื้อเพื่อปิดโพซิชั่นเปิดของท่าน แต่ท่านจะไม่สามารถวางคำสั่งซื้อที่จะสร้างโพซิชั่นเปิดได้"
 
+msgid "Swaps Long (per annum)"
+msgstr ""
+
+msgid "Swaps short (per annum)"
+msgstr ""
+
 msgid "Swiss Franc vs Japanese Yen"
 msgstr "ฟรังก์สวิส เทียบกับ เงินเยนญี่ปุ่น"
 
@@ -9123,7 +9147,7 @@ msgid "Synthetic indices that mimic market volatility."
 msgstr "ดัชนีที่ทำขึ้นเองโดยจำลองความผันผวนของตลาด"
 
 msgid "System Administrator"
-msgstr ""
+msgstr "ผู้ดูแลรักษาระบบ"
 
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
 msgstr "ใช้มุมมองระยะสั้น หรือ ระยะยาว ด้วยระยะเวลาของการซื้อขายจาก 10 วินาที ถึง 365 วัน"
@@ -9132,7 +9156,7 @@ msgid "Take necessary measures to correct and enhance IT operations"
 msgstr ""
 
 msgid "Talent Acquisition Executive"
-msgstr ""
+msgstr "เจ้าหน้าที่สรรหาบุคลากร"
 
 msgid "Talk to us"
 msgstr "พูดคุยกับเรา"
@@ -9153,7 +9177,7 @@ msgid "Teamwork"
 msgstr "การทำงานร่วมกันเป็นทีม"
 
 msgid "Technical Marketing Executive"
-msgstr ""
+msgstr "เจ้าหน้าที่การตลาดเชิงเทคนิค"
 
 msgid "Technical roles"
 msgstr "หน้าที่งานเชิงเทคนิค"
@@ -9222,7 +9246,7 @@ msgid "Th"
 msgstr "พฤ"
 
 msgid "Thank you"
-msgstr ""
+msgstr "ขอบคุณค่ะ"
 
 msgid "Thank you for completing the Financial Assessment. You can now deposit funds and trade Forex with real money on MetaTrader 5."
 msgstr "ขอบคุณสำหรับการทำแบบประเมินทางการเงิน ขณะนี้ท่านสามารถฝากเงินและซื้อขายฟอเร็กซ์ด้วยเงินจริงใน MetaTrader 5"
@@ -10077,7 +10101,7 @@ msgid "The volatility indices simulate various real market situations and provid
 msgstr "ดัชนีความผันผวนจำลองความหลากหลายของสถานการณ์ตลาดจริงและมีแพลตฟอร์มในอุดมคติสำหรับการซื้อขายและการทดสอบกลยุทธ์ภายใต้เงื่อนไขทางตลาดที่หลากหลาย ดัชนีเหล่านี้ขึ้นกับความผันผวน การเคลื่อนไหว และช่วยผู้ใช้งานให้ใช้รูปแบบต่างๆ เช่น ความผันผวนระดับสูง ความผันผวนระดับต่ำ แนวโน้มตลาดหมีและตลาดกระทิง"
 
 msgid "The willingness to learn new skills"
-msgstr ""
+msgstr "มีความมานะและพากเพียรในการเรียนรู้ทักษะใหม่ๆ"
 
 msgid "The work that you do is complex, challenging, and essential to our future."
 msgstr ""
@@ -10317,7 +10341,7 @@ msgid "This offer cannot be used in conjunction with any other offer."
 msgstr "ข้อเสนอนี้ไม่สามารถใช้ร่วมกับข้อเสนออื่นๆ"
 
 msgid "This page is only available to logged out clients."
-msgstr ""
+msgstr "หน้านี้สำหรับแสดงให้กับผู้ใช้งานที่ออกจากระบบแล้ว"
 
 msgid "This policy applies to clients classified as retail or professional. Clients classified as eligible counterparties are outside the scope of this policy."
 msgstr ""
@@ -10347,10 +10371,10 @@ msgid "Thorough knowledge of bash scripting, and experience with the Perl script
 msgstr ""
 
 msgid "Thorough knowledge of web writing best practices"
-msgstr ""
+msgstr "ตลอดจนทักษะความรู้ในเรื่องการพัฒนาเว็บไซต์ด้วยการใช้วิธีปฏิบัติที่เป็นเลิศ"
 
 msgid "Thorough understanding of Anti-Money Laundering (AML) and Know Your Customer (KYC) processes"
-msgstr ""
+msgstr "ตลอดจนความเข้าใจในเรื่องการปราบปรามการฟอกเงิน (AML) และ กระบวนการแสดงตัวตนของลูกค้า (KYC)"
 
 msgid "Throughout the duration of the Transaction and for as long as the Transaction is open, you are required to maintain a sufficient Account Equity to cover any Margin Requirement. If your Account Equity is less than the Margin Requirement in relation to the open Transaction you wish to create, you have entered into a Margin Call and you are required to fund the shortfall immediately. You may not be able to place an Order to open a Transaction until the shortfall has been funded and there is sufficient Account Equity to cover the Total Margin."
 msgstr "ตลอดระยะเวลาของธุรกรรมและตราบเท่าที่ธุรกรรมเปิดอยู่ ท่านจะต้องรักษาเงินทุนในบัญชีให้เพียงพอที่จะครอบคลุมข้อกำหนดมาร์จิน ถ้าเงินทุนในบัญชีน้อยกว่าข้อกำหนดมาร์จินอันที่เกี่ยวข้องกับธุรกรรมเปิดที่ท่านต้องการสร้าง ท่านได้เข้าสู่มาร์จินคอล และท่านจะต้องเพิ่มทุนเพื่อแทนจำนวนที่ขาดไปทันที ท่านอาจจะไม่สามารถเปิดคำสั่งซื้อเพื่อเปิดธุรกรรมได้จนกว่าจะมีการเพิ่มทุนเพื่อทดแทนจำนวนที่ขาดไป และมีเงินทุนในบัญชีที่เพียงพอที่จะครอบคลุมมาร์จินรวม"
@@ -10815,7 +10839,7 @@ msgid "Trust"
 msgstr "น่าไว้ใจ"
 
 msgid "Trusted by traders since 2000"
-msgstr ""
+msgstr "ได้รับความไว้วางใจจากนักลงทุนตั้งแต่ พ.ศ. 2543 (ค.ศ. 2000)"
 
 msgid "Try Binary Bot"
 msgstr "ทดลองใช้ Binary Bot"
@@ -10878,7 +10902,7 @@ msgid "Types of trades"
 msgstr "ประเภทของการซื้อขาย"
 
 msgid "UI/UX Designer"
-msgstr ""
+msgstr "นักออกแบบ UI/UX"
 
 msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Limited."
 msgstr "ผู้อยู่อาศัยในสหราชอาณาจักร และ Manx ที่ต้องการซื้อขายผลิตภัณฑ์การพนันจะดำเนินการเปิดบัญชีเปิดกับบริษัท Binary (IOM) Limited"
@@ -11934,13 +11958,13 @@ msgid "Without prejudice to any other terms of this Agreement, neither the Compa
 msgstr "โดยไม่คำนึงถึงข้อกำหนดอื่นๆ ของข้อตกลงนี้ บริษัทฯ กรรมการฯ เจ้าหน้าที่ ผู้จัดการ พนักงาน และตัวแทนฯ จะไม่ต้องรับผิดชอบต่อท่านในการขาดทุนของท่าน ไม่ว่าด้วยสาเหตุใดๆ ไม่ว่าจะทางตรง หรือ ทางอ้อมที่นอกเหนือการควบคุมของเรา รวมถึงความล่าช้า หรือ ข้อบกพร่อง หรือ ความล้มเหลว ของแพลตฟอร์มการซื้อขาย MT5 บางส่วนหรือทั้งหมด หรือ ระบบ หรือ การเชื่อมต่อเครือข่ายใดๆ"
 
 msgid "Work alongside the HR Operations team in coordinating with the government linked bodies"
-msgstr ""
+msgstr "ทำงานควบคู่ไปกับฝ่าบปฏิบัติการทรัพยากรบุคคลในการประสานงานร่วมกับหน่วยงานรัฐบาล"
 
 msgid "Work closely with both technical and non-technical teams to develop and integrate blockchain solutions for our business"
-msgstr ""
+msgstr "ทำงานร่วมกันอย่างใกล้ชิดกับทีมเทคนิคและทีมธุรกิจเพื่อร่วมกันพัฒนาและบูรณาการระบบบล็อกเชนเพื่อธุรกิจของเรา"
 
 msgid "Work closely with customer support, compliance, and payment teams"
-msgstr ""
+msgstr "ทำงานร่วมกันอย่างใกล้ชิดกับฝ่ายลูกค้าสัมพันธ์ ฝ่ายกำกับดูแลกิจการ และฝ่ายบริการชำระเงิน"
 
 msgid "Work closely with other departments to create marketing communication materials such as ads, product announcements, guides, job descriptions, and more"
 msgstr ""
@@ -11958,10 +11982,10 @@ msgid "Work closely with the rest of the QA and IT teams to plan, design, and ex
 msgstr ""
 
 msgid "Work experience as a Recruiter in the IT industry or similar role is an advantage"
-msgstr ""
+msgstr "ประสบการณ์ในตำแหน่ง รีครูทเตอร์ ในสาขาไอที หรือ หน้าที่งานที่ใกล้เคียงกัน จะเป็นประโยชน์ในการพิจารณา"
 
 msgid "Work with the Head of Compliance to ensure group of companies comply with AML, KYC, and Data Protection laws and regulations"
-msgstr ""
+msgstr "ทำงานร่วมกันกับหัวหน้าฝ่ายกำกับดูแลกิจการเพื่อดำเนินการกับบริษัทในเครือในด้านการกำกับปฏิบัติการตามนโยบายที่เกี่ยวข้องกับ AML KYC กฎและมาตราการการป้องกันข้อมูล"
 
 msgid "Write robust, high-quality, and production-ready code for our websites and applications"
 msgstr ""
@@ -11976,7 +12000,7 @@ msgid "Yes, I understand"
 msgstr "ใช่ ฉันเข้าใจ"
 
 msgid "Yes, I want to sign up as an affiliate"
-msgstr ""
+msgstr "ใช่ ฉันต้องการลงทะเบียนในฐานะพันธมิตรนายหน้าออนไลน์"
 
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
 msgstr "ใช่ เราจะให้แบนเนอร์ ลิงค์ รีวิว วีดีโอ และข้อความโฆษณา ซึ่งท่านสามารถใช้เพื่อเพิ่มจำนวนลูกค้าอ้างอิงมายังแพลตฟอร์ม MT5 %1"
@@ -12597,7 +12621,7 @@ msgid "Your breach of any of %1's rights;"
 msgstr "การละเมิดสิทธิ์ %1 ของท่าน"
 
 msgid "Your browser does not support JavaScript!"
-msgstr ""
+msgstr "เว็บเบราเซอร์ของท่านไม่รองรับการใช้งานจาวาสคริป!"
 
 msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
 msgstr "การรับ/ชำระเงินของท่านถูกล็อก - หากประสงค์ปลดล็อก โปรดคลิก <a href=\"%1\">ที่นี่</a>"
@@ -13044,7 +13068,7 @@ msgid "the characteristics of financial instruments that are the subject of that
 msgstr ""
 
 msgid "the characteristics of the client"
-msgstr ""
+msgstr "ลักษณะของลูกค้า"
 
 msgid "the characteristics of the execution venues to which that order can be directed"
 msgstr ""
@@ -13062,7 +13086,7 @@ msgid "the market conditions of the financial instruments that client orders are
 msgstr ""
 
 msgid "the price at which the client's order will be executed;"
-msgstr ""
+msgstr "ราคาที่คำสั่งซื้อของลูกค้าจะถูกประมวลผล"
 
 msgid "the provisions of this Agreement or any Orders and any applicable laws will not be breached or violated;"
 msgstr "ข้อกำหนดของสัญญานี้ หรือ คำสั่งใดๆ และกฎหมายที่บังคับใช้ใดๆ จะไม่ถือว่า ถูกละเมิด หรือ ฝ่าฝืน"
