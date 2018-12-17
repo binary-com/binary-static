@@ -1,8 +1,8 @@
 import React          from 'react';
-import { Link }       from 'react-router-dom';
 import { routes }     from 'Constants/index';
 import { localize }   from '_common/localize';
 import { Icon404 }    from './Icon404.jsx';
+import { ButtonLink } from '../../../App/Components/Routes';
 import ErrorBox       from '../../../App/Components/Elements/ErrorBox';
 
 const Page404 = () => (
@@ -12,17 +12,14 @@ const Page404 = () => (
             icon={<Icon404 />}
             message={localize('Sorry, we couldn\'t find the page you are looking for.')}
         >
-            <Link
-                className='btn secondary orange effect'
+            <ButtonLink
+                className='secondary orange'
                 to={routes.trade}
-                style={{
-                    margin: '1.5rem 5rem',
-                }}
             >
                 <span>
                     {localize('Go to trade page')}
                 </span>
-            </Link>
+            </ButtonLink>
         </ErrorBox>
     </div>
 );
