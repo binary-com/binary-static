@@ -1,27 +1,20 @@
 const path   = require('path');
 const fs     = require('fs');
-const expect = require('chai').expect;
 const md5    = require('md5');
 const common = require('../scripts/common');
-const colors = {
-    error: '\\033[0;31m',
-    info : '\\033[0;32m',
-    warn : '\\033[1;33m',
-    reset: '\\033[0m',
-};
-const prompt = (message, type) => (`echo "${colors[type || 'info']}>>${colors.reset} ${message}"`);
+const prompt = require('./utils/cli').prompt;
 
 const ignored_files = [];
 
 module.exports = function(grunt) {
     prompt('Checking for duplicates...');
     grunt.initConfig({
-        duplicate_check: {},
+        checkDuplicatedImages: {},
     });
 
-    grunt.registerTask('duplicate_check', 'Yeah', () => {
-        const defaultPath = grunt.option('all') ? '' : 'app_2';
-        const whereToLook = path.resolve(common.root_path, `src/images/${defaultPath}/`);
+    grunt.registerTask('duplicated_images', 'Yeah', () => {
+        const default_path = grunt.option('all') ? '' : 'app_2';
+        const where_to_look = path.resolve(common.root_path, `src/images/${default_path}/`);
 
         /**
          * Recursively fetches all the files.
@@ -60,35 +53,30 @@ module.exports = function(grunt) {
         // someone put a duplicate in other folders. This grunt task will accept a --all option. --all option will try
         // to check every single file inside images directory. if no option is provided, only the images inside
         // app_2 will be processed.
-        const images = fetchFiles(whereToLook);
+        const images = fetchFiles(where_to_look);
 
         const flattened  = flatten(images)
             .filter(item => !!item)
             .filter(item => !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.filename));
-        const uniqued    = [];
-        const duplicated = [];
+        const hashes = {};
         flattened.forEach(item => {
-            const found = uniqued.filter(unique => unique.hash === item.hash);
-            if (found.length > 0) {
-                duplicated.push({
-                    original_item  : found[0],
-                    duplicated_item: item,
-                });
-            } else {
-                uniqued.push(item);
-            }
+            hashes[item.hash] = [...(hashes[item.hash] || []), item.filename];
         });
-        if (duplicated.length <= 0) {
+
+        // loop over values of the hashes, report those with more than 1 value
+        const duplicated = Object.keys(hashes).filter(hash => {
+            return Object.values(hashes[hash]).length > 1;
+        });
+        if (!duplicated.length) {
             grunt.log.subhead(`Found no duplicate among ${flattened.length} files.`.green);
             return true;
         } else {
             grunt.log.subhead(`Duplicates are found. refer below: `);
             duplicated.forEach((item, index) => {
-                const errorMessage = `${index+1}: ${item.original_item.filename}`.bold;
+                const errorMessage = `Hash: ${index+1}: ${item}`.bold;
                 grunt.log.writeln(errorMessage);
-                grunt.log.writeln(`MD5 Hash: ${item.original_item.hash}`.cyan);
-                grunt.log.error('Duplicated: ');
-                grunt.log.writeln(item.duplicated_item.filename);
+                grunt.log.error('Files: ');
+                grunt.log.writeln(hashes[item].join('\r\n'));
                 grunt.log.writeln('\n')
             });
 

@@ -1,11 +1,6 @@
+const prompt = require('./utils/cli').prompt;
+
 module.exports = function (grunt) {
-    const colors = {
-        error: '\\033[0;31m',
-        info : '\\033[0;32m',
-        warn : '\\033[1;33m',
-        reset: '\\033[0m',
-    };
-    const prompt = (message, type) => (`echo "${colors[type || 'info']}>>${colors.reset} ${message}"`);
     const ghpagesCommand = () => (
         [
             `cd ${process.cwd()}/.grunt/grunt-gh-pages/gh-pages/${global.is_release ? global.release_info.clone_folder : 'main'}`,

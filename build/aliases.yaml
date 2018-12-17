@@ -55,5 +55,5 @@ release:
   - 'gh-pages:main'
   - 'shell:trigger_tests'
 
-check_duplicates:
-  - 'duplicate_check'
+check_duplicate_images:
+  - 'duplicated_images'

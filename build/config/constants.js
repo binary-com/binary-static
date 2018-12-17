@@ -73,8 +73,16 @@ const config = {
     app_2_folder   : 'app',
 };
 
+const colors = {
+    error: '\\033[0;31m',
+    info : '\\033[0;32m',
+    warn : '\\033[1;33m',
+    reset: '\\033[0m',
+};
+
 module.exports = {
     release_config,
     node_modules_paths,
     config,
+    colors,
 };
