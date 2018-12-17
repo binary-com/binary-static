@@ -54,3 +54,6 @@ release:
   - 'shell:make_cname'
   - 'gh-pages:main'
   - 'shell:trigger_tests'
+
+check_images:
+  - 'image_naming_convention'
