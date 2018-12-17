@@ -1,12 +1,7 @@
-import { expect } from 'chai';
-import URLHelper from '../url_helper';
-
-/*
-*   Empty test.
-*/
+import { expect }   from 'chai';
+import URLHelper    from '../url_helper';
 
 describe('URLHelper', () => {
-
     describe('.getQueryParams', () => {
         const url = 'https://www.binary.com/en/trading.html?currency=USD&market=forex';
         const params = URLHelper.getQueryParams(url);
