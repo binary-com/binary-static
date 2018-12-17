@@ -1,7 +1,7 @@
 import { expect }           from 'chai';
 
 import { getPreBuildDVRs }  from '../declarative_validation_rules';
-import Error                from './errors';
+import Error                from '../errors';
 import Validator            from '../validator';
 
 describe('Validator', () => {

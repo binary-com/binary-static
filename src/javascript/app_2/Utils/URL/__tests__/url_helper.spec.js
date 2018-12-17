@@ -21,7 +21,7 @@ describe('URLHelper', () => {
 
         // TypeError : param_object.sort is not a function
         it('should return a URL object', () => {
-            var result = URLHelper.setQueryParam(params, url);
+            const result = URLHelper.setQueryParam(params, url);
         });
     });
 });
