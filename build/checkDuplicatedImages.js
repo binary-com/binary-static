@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         checkDuplicatedImages: {},
     });
 
-    grunt.registerTask('duplicated_images', 'Yeah', () => {
+    grunt.registerTask('duplicated_images', 'Check for duplicate images based on their content. ', () => {
         const default_path = grunt.option('all') ? '' : 'app_2';
         const where_to_look = path.resolve(common.root_path, `src/images/${default_path}/`);
 
