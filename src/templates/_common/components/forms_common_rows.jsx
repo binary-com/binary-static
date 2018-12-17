@@ -204,21 +204,41 @@ export const TaxInformationForm = () => (
                 <p>{it.L('If we have reason to believe that your tax information is incomplete, we may contact you for clarification.')}</p>
             </div>
         </div>
+
+        <FormRow
+            type='label'
+            label={it.L('Tax residence')}
+            id='lbl_tax_residence'
+            row_id='row_lbl_tax_residence'
+            row_class='invisible'
+        />
         <FormRow
             type='select'
-            id='tax_residence'
             label={it.L('Tax residence')}
-            tooltip={it.L('Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
-            className='invisible'
-            attributes={{ multiple: 'multiple' }}
+            tooltip={it.L('Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor.')}
+            id='tax_residence'
+            row_id='row_tax_residence'
+            row_class='invisible'
+            attributes={{ single: 'single' }}
+        />
+
+        <FormRow
+            type='label'
+            label={it.L('Tax identification number')}
+            id='lbl_tax_identification_number'
+            row_id='row_lbl_tax_identification_number'
+            row_class='invisible'
         />
         <FormRow
             type='text'
             label={it.L('Tax identification number')}
-            tooltip={it.L('Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help.')}
+            tooltip={it.L('Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team.')}
             id='tax_identification_number'
+            row_id='row_tax_identification_number'
+            row_class='invisible'
             attributes={{ maxLength: 20, 'data-lpignore': true }}
         />
+
         <div id='tax_information_declaration'>
             <div className='gr-12 gr-padding-10'>
                 <input type='checkbox' id='chk_tax_id' />

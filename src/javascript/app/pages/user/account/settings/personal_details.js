@@ -73,6 +73,17 @@ const PersonalDetails = (() => {
                 get_settings.citizen;
         }
 
+        if (get_settings.tax_residence) {
+            get_settings.tax_residence =
+                get_settings.tax_residence
+                    .split(',')
+                    .reduce((all_residences, current_residence) =>
+                        `${all_residences + ((residence_list.find(obj => obj.value === current_residence) || {}).text || current_residence)  }, `, ''
+                    )
+                    .slice(0, -2) ||
+                get_settings.tax_residence;
+        }
+
         displayGetSettingsData(get_settings);
 
         if (is_virtual) {
@@ -97,7 +108,7 @@ const PersonalDetails = (() => {
         showHideMissingDetails();
     };
 
-    const show_label_if_any_value = ['account_opening_reason', 'citizen', 'place_of_birth'];
+    const show_label_if_any_value = ['account_opening_reason', 'citizen', 'place_of_birth', 'tax_residence', 'tax_identification_number'];
 
     const displayGetSettingsData = (get_settings, populate = true) => {
         let el_id,
