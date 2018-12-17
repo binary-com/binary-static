@@ -131,6 +131,10 @@ fieldset {
     #geocode_error, #geocode_success {
         margin: 1rem auto;
     }
+    #geocode_validate.button-disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
 }
 
 .error-msg {
