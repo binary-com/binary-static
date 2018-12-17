@@ -1,11 +1,12 @@
-import { CSSTransition } from 'react-transition-group';
 import PropTypes         from 'prop-types';
 import React             from 'react';
+import { CSSTransition } from 'react-transition-group';
 import ErrorComponent    from 'App/Components/Elements/Errors';
 import { connect }       from 'Stores/connect';
 import ContractDetails   from './contract_details.jsx';
 import InfoBox           from './info_box.jsx';
-import SmartChart        from '../../SmartChart';
+
+const SmartChart = React.lazy(() => import('Modules/SmartChart'));
 
 const Contract = ({
     is_mobile,
@@ -27,13 +28,15 @@ const Contract = ({
                     <div className='trade-container'>
                         <div className='chart-container notice-msg'>
                             {symbol &&
-                            <SmartChart
-                                InfoBox={<InfoBox />}
-                                symbol={symbol}
-                                {...chart_config}
-                                updateChartType={updateChartType}
-                                updateGranularity={updateGranularity}
-                            />
+                                <React.Suspense fallback={<div>Loading... </div>}>
+                                    <SmartChart
+                                        InfoBox={<InfoBox />}
+                                        symbol={symbol}
+                                        {...chart_config}
+                                        updateChartType={updateChartType}
+                                        updateGranularity={updateGranularity}
+                                    />
+                                </React.Suspense>
                             }
                         </div>
                         <div className={form_wrapper_class}>

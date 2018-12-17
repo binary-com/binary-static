@@ -62,7 +62,7 @@ const FileSelector = ({
                                                             <label htmlFor={`exp_date_${j}`}>{it.L('Expiry date')}:</label>
                                                         </div>
                                                         <div className='gr-8 gr-12-m'>
-                                                            <input className='date-picker' id={`exp_date_${j}`} type='text' maxLength='200' readOnly='true' />
+                                                            <input className='date-picker' id={`exp_date_${j}`} type='text' maxLength='200' readOnly='readonly' />
                                                         </div>
                                                     </div>
                                                     <div className='gr-row form-row center-text-m'>
