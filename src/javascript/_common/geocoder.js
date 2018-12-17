@@ -7,7 +7,8 @@ const Client             = require('../app/base/client');
 const Geocoder = (() => {
     let el_btn_validate,
         el_error,
-        el_success;
+        el_success,
+        loader;
     let validated = false;
 
     const init = (form_id) => {
@@ -27,6 +28,7 @@ const Geocoder = (() => {
         el_btn_validate = form.querySelector('#geocode_validate');
         el_error        = form.querySelector('#geocode_error');
         el_success      = form.querySelector('#geocode_success');
+        loader          = form.querySelector('.barspinner');
 
         applyToAllElements(`${addr_1}, ${city}`, (element) => {
             element.addEventListener('keyup', () => {
@@ -68,6 +70,9 @@ const Geocoder = (() => {
         new Promise((resolve) => {
             scriptjs.ready('gMaps', () => {
                 const geocoder = new google.maps.Geocoder();
+                el_success.setVisibility(0);
+                el_error.setVisibility(0);
+                loader.setVisibility(1);
                 geocoder.geocode({
                     address,
                 }, (result, status) => {
@@ -88,6 +93,7 @@ const Geocoder = (() => {
             el_error.setVisibility(0);
             el_success.setVisibility(1);
         }
+        loader.setVisibility(0);
         el_btn_validate.classList.add('button-disabled');
     };
 

@@ -1,4 +1,5 @@
-import React from 'react';
+import React                 from 'react';
+import Loading               from './loading.jsx';
 import { Fieldset, FormRow } from './forms.jsx';
 
 export const Salutation = ({ className }) => (
@@ -240,11 +241,12 @@ export const GeocodeValidation = () => (
     <React.Fragment>
         <div className='gr-row'>
             <div className='geocode-btn-container'>
-                <a href='javascript;' id='geocode_validate' className='button button-secondary invisible' ><span>{it.L('Validate address')}</span></a>
+                <a href='javascript:;' id='geocode_validate' className='button button-secondary invisible' ><span>{it.L('Verify address')}</span></a>
             </div>
         </div>
         <div className='gr-row'>
-            <div className='gr-12 gr-padding-10 center-text'>
+            <div id='geocode_status' className='gr-12 gr-padding-10 center-text'>
+                <Loading />
                 <p id='geocode_error' className='notice-msg invisible'>
                     {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
                 </p>
