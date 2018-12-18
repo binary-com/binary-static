@@ -20,27 +20,23 @@ describe('declarative_validation_rules.js', () => {
         it('should return false if null', () => {
             expect(rules['req'].func(null)).to.be.false;
         });
-        it('should return true if not undefined or not null', () => {
-            expect(rules['req'].func('Filled')).to.be.true;
-        });
         it('should return true if string length is bigger than 0', () => {
-            expect(rules['req'].func('A')).to.be.true;
+            expect(rules['req'].func('a')).to.be.true;
         });
         it('should return false if string length is 0', () => {
             expect(rules['req'].func('')).to.be.false;
         });
     });
 
-    describe.skip('.validNumber', () => {
-
+    describe('.validNumber', () => {
         let options;
         beforeEach('Setting up options', () => {
             options = {
                 allow_empty: true,
                 min: 0,
                 max: 8,
-                type: 'float',
-                decimals: 0.00,
+                type: typeof 0.00,
+                decimals: 2,
             }
         });
 
@@ -49,19 +45,29 @@ describe('declarative_validation_rules.js', () => {
        });
 
        it('should return true if float', () => {
-           expect(rules['number'].func(1.1, options)).to.be.true;
+           expect(rules['number'].func(0.1, options)).to.be.true;
        });
        it('should return true if integer', () => {
            options['type'] = 'int';
-           expect(rules['number'].func(1, options)).to.be.true;
+           expect(rules['number'].func(0, options)).to.be.true;
        });
        it('should return false if value is characters', () => {
-           expect(rules['number'].func('A', options)).to.be.false;
+           expect(rules['number'].func('a', options)).to.be.false;
        });
        it('should return false if value is NaN', () => {
-           expect(rules['number'].func(NaN, options).to.be.false);
+           expect(rules['number'].func(NaN, options)).to.be.false;
        });
 
-       it('should')
+       it('should return false if value is float which does not exceed options.decimal', () => {
+           expect(rules['number'].func(12.122, options)).to.be.false;
+       });
+
+       it('should return false if min and max equals to one another while value is not equal to min', () => {
+           options.min = 1;
+           options.max = 1;
+
+           expect(rules['number'].func(2.00, options)).to.be.false;
+       });
+
     });
 });
