@@ -22,7 +22,6 @@ const Geocoder = (() => {
         const postcode  = '#address_postcode';
         const residence = Client.get('residence');
 
-        const getValue = (id) => getElementById(id.split('#')[1]).value || '';
         const getAddress = () => `${getValue(addr_1)} ${getValue(addr_2)}, ${getValue(city)}, ${getValue(state)} ${getValue(postcode)}, ${residence}`;
 
         el_btn_validate = form.querySelector('#geocode_validate');
@@ -59,6 +58,8 @@ const Geocoder = (() => {
         };
     };
 
+    const getValue = (id) => getElementById(id.split('#')[1]).value || '';
+
     const validate = (form_id) => {
         const address = init(form_id).address;
         validator(address).then(() => {
@@ -75,6 +76,9 @@ const Geocoder = (() => {
                 loader.setVisibility(1);
                 geocoder.geocode({
                     address,
+                    componentRestrictions: {
+                        country: Client.get('residence').toUpperCase(),
+                    },
                 }, (result, status) => {
                     // Geocoding status reference:
                     // https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingStatusCodes
