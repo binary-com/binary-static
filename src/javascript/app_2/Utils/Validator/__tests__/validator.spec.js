@@ -1,57 +1,47 @@
 import { expect }           from 'chai';
 
 import { getPreBuildDVRs }  from '../declarative_validation_rules';
-import Error                from '../errors';
 import Validator            from '../validator';
 
 describe('Validator', () => {
-    const input = 'TestInput';
-    const rules = getPreBuildDVRs();
-    const validator = new Validator(
-        input,
-        rules,
-    );
+    let input;
+    let rules;
+    let validator;
 
-    describe('.constructor', () => {
-        it('should set class variables properly', () => {
-            expect(validator.input).to.eql(input);
-            expect(validator.rules).to.eql(rules);
-            expect(validator.store).to.eql(null);
-            expect(typeof validator.errors).to.eql('object');
-            expect(validator.error_count).to.eql(0);
-        });
+    beforeEach('Setting up validator', () => {
+        input = 'TestInput';
+        rules = getPreBuildDVRs();
+        validator = new Validator(
+            input,
+            rules,
+        );
     });
 
-    describe('.addfailure', () => {
-        it('should add failure', () => {
-            const ruleObject = Validator.getRuleObject('length');
-            validator.addFailure(input, ruleObject);
-
-            expect(validator.errors.errors).to.have.property(input);
+    describe('.addFailure', () => {
+        it('should add failure to the error list if addFailure is used', () => {
+            validator.addFailure(input, Validator.getRuleObject('length'));
+            expect(validator.errors.errors).to.have.property(input).with.lengthOf(1);
+        });
+        it('should update error count if addFailure is used', () => {
+            validator.addFailure(input, Validator.getRuleObject('length'));
             expect(validator.error_count).to.eql(1);
         });
     });
 
-    describe('.check', () => {
-        it('should run validator', () => {
-            expect(validator.check()).to.eql(false);
-        });
-    });
-
     describe('.isPassed', () => {
-        it('should return result from .check', () => {
+        it('should return true if no error is added', () => {
+            expect(validator.isPassed()).to.eql(true);
+        });
+        it('should return false if an error or more is added', () => {
+            validator.addFailure(input, Validator.getRuleObject('length'));
             expect(validator.isPassed()).to.eql(false);
         });
     });
 
     describe('.getRuleObject', () => {
-        it('should get rule object', () => {
-            const rule = Validator.getRuleObject('length');
-            expect(rule).to.eql({
-                name: 'length',
-                options: {},
-                validator: rules['length'].func,
-            });
+        it('should get rule object from a rule array', () => {
+            const ruleArray = ['length', 'options'];
+            expect(Validator.getRuleObject(ruleArray)).to.be.a('object');
         });
     });
 });

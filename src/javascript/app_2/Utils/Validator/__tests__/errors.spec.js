@@ -1,48 +1,48 @@
 import { expect } from 'chai';
 import Errors from '../errors';
 
-describe('Errors', () => {
-    const error = new Errors();
+describe('Error', () => {
+    let errors;
+
+    beforeEach('Setting up Errors object', () => {
+        errors = new Errors();
+        errors.add('HTTPCodes', '100');
+    });
 
     describe('.add', () => {
-        error.add('Error', 'This is a test!');
-        expect(error.errors).to.eql({
-            'Error': [
-                'This is a test!',
-            ],
-        });
-
-        error.add('Error', 'This is a second test!');
-        expect(error.errors).to.eql({
-            'Error': [
-                'This is a test!',
-                'This is a second test!',
-            ],
+        it('should equal to 1 as an error is added', () => {
+            expect(errors.errors).to.have.property('HTTPCodes').with.length(1);
         });
     });
 
     describe('.all', () => {
-        expect(error.errors).to.eql({
-            'Error': [
-                'This is a test!',
-                'This is a second test!',
-            ],
-        })
+        it('should return all errors', () => {
+            errors.add('HTTPCodes', '101');
+            expect(errors.all()).to.have.property('HTTPCodes').with.lengthOf(2);
+        });
     });
 
     describe('.first', () => {
-        expect(error.first('Error')).to.eql('This is a test!');
+        it('should return first error if attribute exists', () => {
+            expect(errors.first('HTTPCodes')).to.eql('100');
+        });
     });
 
     describe('.get', () => {
-        expect(error.get('Error')).to.eql([
-            'This is a test!',
-            'This is a second test!',
-        ])
+        it('should return data if attribute exists', () => {
+            expect(errors.get('HTTPCodes')).to.eql(['100']);
+        });
+        it('should return [] if attribute does not exist', () => {
+            expect(errors.get('')).to.eql([]);
+        });
     });
 
     describe('.has', () => {
-        expect(error.has('Error')).to.eql(true);
-        expect(error.has('Not Exist')).to.eql(false);
+        it('should return true if attribute exists', () => {
+            expect(errors.has('HTTPCodes')).to.eql(true);
+        });
+        it('should return false if attribute does not exists', () => {
+            expect(errors.has('')).to.eql(false);
+        });
     });
 });
