@@ -42,7 +42,7 @@ const MetaTrader = (() => {
         let mt_company_type = 'financial';
         const landing_company_id = State.getResponse('landing_company.id');
 
-        // check if landing_company id is be or no, since belgium and norway are the only countries that have malta landing company shortcode but no mt_financial_company offered
+        // check if landing_company id is be or no, since belgium and norway are the only supported countries that have no mt_financial_company offered
         if (/^(be|no)$/.test(landing_company_id)) {
             mt_company_type = 'gaming';
         }
