@@ -101,7 +101,7 @@ module.exports = function(grunt) {
         } else {
             grunt.log.subhead(`${flattened.length} files found with bad naming, issue a fix: `);
             Object.keys(bad_file_names).forEach(item => {
-                const error_message = `file ${bad_file_names[item]} should be changed to ${convertToSnakeCase(item)}`.bold;
+                const error_message = `file ${bad_file_names[item]}/${item} should be changed to ${convertToSnakeCase(item)}`.bold;
                 grunt.log.ok(error_message);
             });
 
