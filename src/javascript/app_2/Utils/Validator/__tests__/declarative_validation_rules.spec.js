@@ -32,11 +32,36 @@ describe('declarative_validation_rules.js', () => {
     });
 
     describe.skip('.validNumber', () => {
+
+        let options;
+        beforeEach('Setting up options', () => {
+            options = {
+                allow_empty: true,
+                min: 0,
+                max: 8,
+                type: 'float',
+                decimals: 0.00,
+            }
+        });
+
        it('should return true if value empty', () => {
-           expect(rules['number'].func('')).to.be.true;
+           expect(rules['number'].func('', options)).to.be.true;
        });
-       it('should return false if value is float', () => {
-           expect(rules['number'].func());
+
+       it('should return true if float', () => {
+           expect(rules['number'].func(1.1, options)).to.be.true;
        });
+       it('should return true if integer', () => {
+           options['type'] = 'int';
+           expect(rules['number'].func(1, options)).to.be.true;
+       });
+       it('should return false if value is characters', () => {
+           expect(rules['number'].func('A', options)).to.be.false;
+       });
+       it('should return false if value is NaN', () => {
+           expect(rules['number'].func(NaN, options).to.be.false);
+       });
+
+       it('should')
     });
 });
