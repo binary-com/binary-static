@@ -1,8 +1,8 @@
 import React          from 'react';
 import { routes }     from 'Constants/index';
 import { localize }   from '_common/localize';
-import { Icon404 }    from './Icon404.jsx';
 import { ButtonLink } from 'App/Components/Routes';
+import { Icon404 }    from './Icon404.jsx';
 import ErrorBox       from '../../../App/Components/Elements/ErrorBox';
 
 const Page404 = () => (

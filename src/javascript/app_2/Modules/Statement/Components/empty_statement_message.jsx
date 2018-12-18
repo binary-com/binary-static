@@ -3,7 +3,7 @@ import React             from 'react';
 import { localize }      from '_common/localize';
 import { IconStatement } from 'Assets/Header/NavBar';
 import { routes }        from 'Constants/index';
-import { ButtonLink } from '../../../App/Components/Routes';
+import { ButtonLink }    from 'App/Components/Routes';
 
 const EmptyStatementMessage = ({ has_selected_date }) => (
     <React.Fragment>
