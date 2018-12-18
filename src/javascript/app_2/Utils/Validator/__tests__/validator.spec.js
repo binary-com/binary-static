@@ -30,11 +30,11 @@ describe('Validator', () => {
 
     describe('.isPassed', () => {
         it('should return true if no error is added', () => {
-            expect(validator.isPassed()).to.eql(true);
+            expect(validator.isPassed()).to.be.true;
         });
         it('should return false if an error or more is added', () => {
             validator.addFailure(input, Validator.getRuleObject('length'));
-            expect(validator.isPassed()).to.eql(false);
+            expect(validator.isPassed()).to.be.false;
         });
     });
 

@@ -39,10 +39,10 @@ describe('Error', () => {
 
     describe('.has', () => {
         it('should return true if attribute exists', () => {
-            expect(errors.has('HTTPCodes')).to.eql(true);
+            expect(errors.has('HTTPCodes')).to.be.true;
         });
         it('should return false if attribute does not exists', () => {
-            expect(errors.has('')).to.eql(false);
+            expect(errors.has('')).to.be.false;
         });
     });
 });

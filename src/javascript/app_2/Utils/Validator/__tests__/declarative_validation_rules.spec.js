@@ -1,32 +1,42 @@
 import { expect }             from 'chai';
 import { getPreBuildDVRs }    from '../declarative_validation_rules.js';
 
-let rules;
-
-beforeEach('Getting Pre Built Declarative Validation Rules', () => {
-    rules = getPreBuildDVRs();
-});
-
-describe('.validAddress', () => {
-    it('should validate address', () => {
-        expect(rules['address'].func('Lot 000, Test Road')).to.eql(true);
-        expect(rules['address'].func('`~!$%^&*_=+[ Lot 000, Test Road')).to.eql(false);
+describe('declarative_validation_rules.js', () => {
+    let rules;
+    beforeEach('Getting Pre Built Declarative Validation Rules', () => {
+        rules = getPreBuildDVRs();
     });
-});
 
-describe('.validBarrier', () => {
-    it('should validate barrier', () => {
-        expect(rules['barrier'].func('+-.')).to.eql(true);
-        expect(rules['barrier'].func('~!$%^&*_=+')).to.eql(false);
+    describe('.getPreBuildDVRs', () => {
+        it('should return an object', () => {
+            expect(rules).to.be.a('object');
+        });
     });
-});
 
-describe('.validRequired', () => {
-    it('should return false if value is undefined or null, and should return true if str length bigger than 0', () => {
-        expect(rules['req'].func('Valid')).to.eql(true);
+    describe('.validRequired', () => {
+        it('should return false if undefined', () => {
+            expect(rules['req'].func(undefined)).to.be.false;
+        });
+        it('should return false if null', () => {
+            expect(rules['req'].func(null)).to.be.false;
+        });
+        it('should return true if not undefined or not null', () => {
+            expect(rules['req'].func('Filled')).to.be.true;
+        });
+        it('should return true if string length is bigger than 0', () => {
+            expect(rules['req'].func('A')).to.be.true;
+        });
+        it('should return false if string length is 0', () => {
+            expect(rules['req'].func('')).to.be.false;
+        });
+    });
 
-        expect(rules['req'].func(undefined)).to.eql(false);
-        expect(rules['req'].func(null)).to.eql(false);
-        expect(rules['req'].func('')).to.eql(false);
+    describe.skip('.validNumber', () => {
+       it('should return true if value empty', () => {
+           expect(rules['number'].func('')).to.be.true;
+       });
+       it('should return false if value is float', () => {
+           expect(rules['number'].func());
+       });
     });
 });
