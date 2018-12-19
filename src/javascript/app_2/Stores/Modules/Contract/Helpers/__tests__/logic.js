@@ -244,7 +244,7 @@ describe('logic', () => {
             };
             expect(Logic.getIndicativePrice(contract_info)).to.eql(null);
         });
-        it('should return bid_price if it doesn\'t have final price, has bid_price and contract is not ended', function () {
+        it('should return bid_price if it doesn\'t have final price, has bid_price and contract is not ended', () => {
             const contract_info = {
                 "status": "open",
                 "bid_price": 12345,
