@@ -35,7 +35,7 @@ describe('Details', () => {
             expect(getDetailsExpiry({is_ended: false})).to.deep.include({});
         });
 
-        it('Should return an empty object if store is passed to it and property "is_ended" is undefined', () => {
+        it('Should return an empty object if store is passed to it and invalid property something_else is passed', () => {
             expect(getDetailsExpiry({something_else: true})).to.deep.include({});
         });
 

@@ -87,7 +87,7 @@ describe('logic', () => {
         });
         it('should return true when there is status and it\'s not equal to open in contract info', () => {
             const contract_info = {
-                "status": "closed",
+                "status": "sold",
             };
             expect(Logic.isEnded(contract_info)).to.eql(true);
         });
@@ -122,21 +122,21 @@ describe('logic', () => {
     expect('getDisplayStatus', () => {
         it('should return won if contract is ended and profit is more than zero', () => {
             const contract_info = {
-                "status": "closed",
+                "status": "sold",
                 "profit": 100,
             };
             expect(Logic.getDisplayStatus(contract_info)).to.eql('won');
         });
         it('should return lost if contract is ended and profit is less than zero', () => {
             const contract_info = {
-                "status": "closed",
+                "status": "sold",
                 "profit": -100,
             };
             expect(Logic.getDisplayStatus(contract_info)).to.eql('loss');
         });
         it('should return won if contract is ended and profit is zero', () => {
             const contract_info = {
-                "status": "closed",
+                "status": "sold",
                 "profit": 0,
             };
             expect(Logic.getDisplayStatus(contract_info)).to.eql('won');
@@ -194,7 +194,6 @@ describe('logic', () => {
         });
         it('should return contract\'s exit tick time if is_path_dependent is undefined', () => {
             const contract_info = {
-                "is_path_dependent": false,
                 "sell_spot_time": 123456,
                 "exit_tick_time": 987654321,
             };
@@ -235,15 +234,22 @@ describe('logic', () => {
         it('should return getFinalPrice if it has final price and contract is ended', () => {
             const contract_info = {
                 "sell_price": 12345,
-                "status": "closed"
+                "status": "sold"
             };
             expect(Logic.getIndicativePrice(contract_info)).to.eql(12345);
         });
-        it('should return null if it doesn\'t final price, bid_price and contract is not ended', () => {
+        it('should return null if it doesn\'t have final price, bid_price and contract is not ended', () => {
             const contract_info = {
                 "status": "open",
             };
             expect(Logic.getIndicativePrice(contract_info)).to.eql(null);
+        });
+        it('should return bid_price if it doesn\'t have final price, has bid_price and contract is not ended', function () {
+            const contract_info = {
+                "status": "open",
+                "bid_price": 12345,
+            };
+            expect(Logic.getIndicativePrice(contract_info)).to.eql(12345);
         });
     });
 
@@ -318,42 +324,42 @@ describe('logic', () => {
         it('should return true if contract is not ended and is not sold and contract is valid to_sell', () => {
             const contract_info = {
                 status: 'open',
-                is_valid_to_sell: true,
+                is_valid_to_sell: 1,
             };
             expect(Logic.isValidToSell(contract_info)).to.eql(true);
         });
         it('should return false if contract is ended and is sold and contract is valid to sell', () => {
             const contract_info = {
                 status: 'sold',
-                is_valid_to_sell: true,
+                is_valid_to_sell: 1,
             };
             expect(Logic.isValidToSell(contract_info)).to.eql(false);
         });
         it('should return false if contract is ended and is not sold and contract is valid to sell', () => {
             const contract_info = {
-                status: 'close',
-                is_valid_to_sell: true,
+                status: 'won',
+                is_valid_to_sell: 1,
             };
             expect(Logic.isValidToSell(contract_info)).to.eql(false);
         });
         it('should return false if contract is ended and is sold and contract is not valid to sell', () => {
             const contract_info = {
                 status: 'sold',
-                is_valid_to_sell: false,
+                is_valid_to_sell: 0,
             };
             expect(Logic.isValidToSell(contract_info)).to.eql(false);
         });
         it('should return false if contract is ended and is not sold and contract is not valid to sell', () => {
             const contract_info = {
-                status: 'close',
-                is_valid_to_sell: false,
+                status: 'won',
+                is_valid_to_sell: 0,
             };
             expect(Logic.isValidToSell(contract_info)).to.eql(false);
         });
         it('should return false if contract is not ended and is not sold and contract is not valid to sell', () => {
             const contract_info = {
                 status: 'open',
-                is_valid_to_sell: false,
+                is_valid_to_sell: 0,
             };
             expect(Logic.isValidToSell(contract_info)).to.eql(false);
         });

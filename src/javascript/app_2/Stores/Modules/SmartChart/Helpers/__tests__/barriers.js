@@ -28,12 +28,13 @@ describe('Barriers', () => {
     });
     
     describe('barriersObjectToArray', () => {
+        const main = {
+            color: "green",
+            draggable: false
+        };
         it('should return an array from values in barriers object', () => {
             const barriers = {
-                main: {
-                    color: "green",
-                    draggable: false
-                }
+                main,
             };
             expect(Barriers.barriersObjectToArray(barriers)).to.deep.eql([{
                 color: "green",
@@ -42,10 +43,7 @@ describe('Barriers', () => {
         });
         it('should return an array from values in barriers object (empty values should be filtered out)', () => {
             const barriers = {
-                main: {
-                    color: "green",
-                    draggable: false
-                },
+                main,
                 somethingEmpty: {},
             };
             expect(Barriers.barriersObjectToArray(barriers)).to.deep.eql([{

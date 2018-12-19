@@ -29,7 +29,7 @@ describe('Proposal', () => {
             };
             const response = {
                 proposal: {
-                    proposal: 100,
+                    proposal: 1,
                     ask_price: 50,
                     display_value: 200,
                     payout: 300,
