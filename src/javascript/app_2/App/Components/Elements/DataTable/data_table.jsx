@@ -1,5 +1,4 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
-import SimpleBar                      from 'simplebar-react';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import TableRow                       from './table_row.jsx';
@@ -28,7 +27,6 @@ class DataTable extends React.PureComponent {
             columns,
             footer,
             getRowLink,
-            is_empty,
             onScroll,
         } = this.props;
 
