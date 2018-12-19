@@ -8,10 +8,13 @@ const Geocoder = (() => {
     let el_btn_validate,
         el_error,
         el_success,
-        loader;
+        loader,
+        is_virtual;
     let validated = false;
 
     const init = (form_id) => {
+        is_virtual = Client.get('is_virtual');
+
         scriptjs('https://maps.googleapis.com/maps/api/js?key=AIzaSyAEha6-HeZuI95L9JWmX3m6o-AxQr_oFqU&libraries=places', 'gMaps');
 
         const form = getElementById(form_id.split('#')[1]);
@@ -29,16 +32,31 @@ const Geocoder = (() => {
         el_success      = form.querySelector('#geocode_success');
         loader          = form.querySelector('.barspinner');
 
-        applyToAllElements(`${addr_1}, ${city}`, (element) => {
+        applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${city}`, (element) => {
+            const non_required_fields = ['addr_2', 'postcode'];
+
             element.addEventListener('keyup', () => {
                 const value = element.value;
-                if (value.length < 1) {
-                    el_btn_validate.classList.add('button-disabled');
-                } else {
+                const has_met_conditions = (getValue(city).length > 0) &&
+                    (getValue(addr_1).length > 0) && getValue(state);
+
+                if (value.length > 0 && !non_required_fields.includes(element.id) && has_met_conditions) {
                     el_btn_validate.classList.remove('button-disabled');
+                } else if (!non_required_fields.includes(element.id) && has_met_conditions) {
+                    el_btn_validate.classList.remove('button-disabled');
+                } else {
+                    el_btn_validate.classList.add('button-disabled');
                 }
             });
         }, '', form);
+
+        // using jQuery here because for some reason vanilla javascript eventListener isn't working for select input onChange events
+        $(state).on('change', (e) => {
+            if (e.target.value && (getValue(city).length > 0) && (getValue(addr_1).length > 0)) {
+                el_btn_validate.classList.remove('button-disabled');
+            }
+        });
+
         el_btn_validate.addEventListener('click', (e) => {
             e.preventDefault();
             validator(getAddress()).then(() => {
@@ -49,8 +67,12 @@ const Geocoder = (() => {
         if (el_btn_validate) el_btn_validate.setVisibility(1);
         el_error.setVisibility(0);
 
-        if (validated) {
+        if (validated || !getValue(addr_1).length || !getValue(state)) {
             el_btn_validate.classList.add('button-disabled');
+        }
+
+        if (is_virtual) {
+            loader.setVisibility(0);
         }
 
         return {
@@ -97,7 +119,7 @@ const Geocoder = (() => {
 
     const isAddressFound = (user_address, geoloc_address) => {
         let result = false;
-        if (geoloc_address.length) {
+        if (geoloc_address.length && getValue('#address_state')) {
             const address_string = geoloc_address[0].formatted_address;
             result = (address_string.indexOf(user_address) !== -1);
         }

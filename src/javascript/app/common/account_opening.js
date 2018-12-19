@@ -39,7 +39,6 @@ const AccountOpening = (() => {
         if (getPropertyValue(landing_company, ['financial_company', 'shortcode']) === 'maltainvest') {
             professionalClient.init(is_financial, false);
         }
-        Geocoder.init(form_id);
     };
 
     const getResidence = (form_id, getValidations) => {
@@ -168,6 +167,7 @@ const AccountOpening = (() => {
             if (form_id && typeof getValidations === 'function') {
                 FormManager.init(form_id, getValidations());
             }
+            Geocoder.init(form_id);
         });
     };
 

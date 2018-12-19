@@ -246,14 +246,17 @@ export const GeocodeValidation = () => (
         </div>
         <div className='gr-row'>
             <div id='geocode_status' className='gr-12 gr-padding-10 center-text'>
-                <Loading />
+                <Loading className='invisible' />
                 <p id='geocode_error' className='notice-msg invisible'>
                     {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
                 </p>
-                <p id='geocode_success' className='success-msg invisible'>
-                    {it.L('Your address has been successfully verified by our system.')}
-                    <span className='checked' />
-                </p>
+                <div id='geocode_success' className='success-msg invisible'>
+                    <span className='success-msg'>
+                        <ul className='checked'>
+                            <li>{it.L('Your address has been successfully verified by our system.')}</li>
+                        </ul>
+                    </span>
+                </div>
             </div>
         </div>
     </React.Fragment>
