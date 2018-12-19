@@ -15,7 +15,7 @@ const ignored_language_directories = [
 module.exports = function(grunt) {
     prompt('Checking for images with bad naming...');
     grunt.initConfig({
-        checkImagesNamingConvention: {},
+        checkOrphanedImages: {},
     });
 
     grunt.registerTask('check_orphaned_images', 'Check orphaned images', () => {

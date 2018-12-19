@@ -55,6 +55,8 @@ release:
   - 'gh-pages:main'
   - 'shell:trigger_tests'
 
-check_duplicate_images:
+sanity_check_images:
   - 'duplicated_images'
   - 'image_naming_convention'
+  - 'check_missing_images'
+  - 'check_orphaned_images'
