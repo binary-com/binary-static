@@ -9,6 +9,7 @@ module.exports = {
                 'babel-polyfill',
                 'jsdom-global/register',
                 'mock-local-storage',
+                'url-polyfill',
             ],
         },
         src: [
