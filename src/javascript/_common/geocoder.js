@@ -20,9 +20,9 @@ const Geocoder = (() => {
         const city   = '#address_city';
         const state  = '#address_state';
         const postcode  = '#address_postcode';
-        const residence = Client.get('residence');
+        const residence = Client.get('residence').toUpperCase();
 
-        const getAddress = () => `${getValue(addr_1)} ${getValue(addr_2)}, ${getValue(city)}, ${getValue(state)} ${getValue(postcode)}, ${residence}`;
+        const getAddress = () => `${getValue(addr_1)}, ${getValue(addr_2)}, ${getValue(city)}, ${getValue(postcode)} ${getStateText(state)}, ${residence} `;
 
         el_btn_validate = form.querySelector('#geocode_validate');
         el_error        = form.querySelector('#geocode_error');
@@ -59,6 +59,10 @@ const Geocoder = (() => {
     };
 
     const getValue = (id) => getElementById(id.split('#')[1]).value || '';
+    const getStateText = (id) => {
+        const states_list_el = getElementById(id.split('#')[1]);
+        return states_list_el.options[states_list_el.selectedIndex].text;
+    };
 
     const validate = (form_id) => {
         const address = init(form_id).address;
@@ -77,20 +81,32 @@ const Geocoder = (() => {
                 geocoder.geocode({
                     address,
                     componentRestrictions: {
-                        country: Client.get('residence').toUpperCase(),
+                        country           : Client.get('residence').toUpperCase(),
+                        administrativeArea: getStateText('#address_state'),
                     },
                 }, (result, status) => {
                     // Geocoding status reference:
                     // https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingStatusCodes
-                    handleResponse(status);
-                    resolve(status);
+                    const data = { result, status };
+                    handleResponse(data);
+                    resolve(data);
                 });
             });
         })
     );
 
-    const handleResponse = (status) => {
-        if (/ZERO_RESULTS|INVALID_REQUEST/.test(status)) {
+    const isAddressFound = (user_address, geoloc_address) => {
+        let result = false;
+        if (geoloc_address.length) {
+            const address_string = geoloc_address[0].formatted_address;
+            result = (address_string.indexOf(user_address) !== -1);
+        }
+        return result;
+    };
+
+    const handleResponse = (data) => {
+        const is_address_found = isAddressFound(getValue('#address_city'), data.result);
+        if (/ZERO_RESULTS|INVALID_REQUEST|UNKNOWN_ERROR/.test(data.status) || !is_address_found) {
             el_error.setVisibility(1);
             el_success.setVisibility(0);
         } else {

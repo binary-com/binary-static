@@ -91,9 +91,6 @@ const PersonalDetails = (() => {
             fnc_additional_check: additionalCheck,
             enable_button       : true,
         });
-        if (!is_virtual) {
-            Geocoder.validate(form_id);
-        }
         showHideMissingDetails();
     };
 
@@ -364,6 +361,9 @@ const PersonalDetails = (() => {
                             BinarySocket.send({ states_list: residence }).then(response_state => {
                                 populateStates(response_state).then(() => {
                                     getDetailsResponse(get_settings_data, response.residence_list);
+                                    if (!is_virtual) {
+                                        Geocoder.validate(form_id);
+                                    }
                                 });
                             });
                         } else {
