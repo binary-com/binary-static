@@ -1,10 +1,9 @@
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import { Link }          from 'react-router-dom';
 import { localize }      from '_common/localize';
-import Button            from 'App/Components/Form/button.jsx';
 import { IconStatement } from 'Assets/Header/NavBar';
 import { routes }        from 'Constants/index';
+import { ButtonLink }    from 'App/Components/Routes';
 
 const EmptyStatementMessage = ({ has_selected_date }) => (
     <React.Fragment>
@@ -20,12 +19,12 @@ const EmptyStatementMessage = ({ has_selected_date }) => (
             </span>
             {
                 !has_selected_date &&
-                <Link to={routes.trade}>
-                    <Button
-                        className='secondary orange'
-                        text={localize('Trade now')}
-                    />
-                </Link>
+                <ButtonLink
+                    className='secondary orange'
+                    to={routes.trade}
+                >
+                    <span>{localize('Trade now')}</span>
+                </ButtonLink>
             }
         </div>
     </React.Fragment>
