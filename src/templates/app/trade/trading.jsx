@@ -50,9 +50,6 @@ const Trading = () => (
                                                 <input type='text' data-lpignore='true' id='time_start' autoComplete='off' readOnly='readonly' className='medium_width_input' />
                                                 <span className='gr-gutter-left'>GMT</span>
                                             </div>
-                                            <div>
-                                                <div className='hint invisible'>{it.L('Asset open hours:')} <span id='asset_open_hours' /></div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div className='row' id='expiry_row'>
@@ -178,7 +175,7 @@ const Trading = () => (
                                     <div className='row' id='reset_time' />
                                     <div className='row invisible' id='equals_row'>
                                         <input id='callputequal' type='checkbox' />
-                                        <label htmlFor='callputequal'><span data-balloon-length='xlarge' data-balloon={it.L('Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower.')}>{it.L('Allow equals')}</span></label>
+                                        <label htmlFor='callputequal'><span data-balloon={it.L('Win payout if exit spot is also equal to entry spot.')}>{it.L('Allow equals')}</span></label>
                                     </div>
                                 </form>
                             </div>
