@@ -240,6 +240,7 @@ const PersonalDetails = (() => {
                 if (additionalCheck(get_settings)) {
                     getDetailsResponse(get_settings);
                     showFormMessage(localize('Your settings have been updated successfully.'), true);
+                    Geocoder.validate(form_id);
                 }
             });
         } else { // is_error
