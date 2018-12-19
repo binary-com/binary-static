@@ -33,10 +33,12 @@ const Geocoder = (() => {
         loader          = form.querySelector('.barspinner');
 
         applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${city}`, (element) => {
+            // List of fields that will trigger onChange event but will allow empty values
             const non_required_fields = ['addr_2', 'postcode'];
 
             element.addEventListener('keyup', () => {
                 const value = element.value;
+                // Check if address_line_1 and address_state have values to fulfil condition
                 const has_met_conditions = (getValue(city).length > 0) &&
                     (getValue(addr_1).length > 0) && getValue(state);
 
@@ -102,6 +104,7 @@ const Geocoder = (() => {
                 loader.setVisibility(1);
                 geocoder.geocode({
                     address,
+                    // Restrict Geolocation to client's country of residence and state
                     componentRestrictions: {
                         country           : Client.get('residence').toUpperCase(),
                         administrativeArea: getStateText('#address_state'),
