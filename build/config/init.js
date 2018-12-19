@@ -29,7 +29,7 @@ const initGlobals = (grunt) => {
 
         if (global.release_target === 'staging' && global.section === 'all') {
             grunt.option('cleanup', true); // always cleanup when releasing to staging
-        } else if (global.release_target !== 'production' && grunt.option('cleanup')) {
+        } else if (global.release_target === 'staging' && grunt.option('cleanup')) {
             grunt.fail.fatal('can\'t release only one section to staging with --cleanup');
         }
     } else {
