@@ -1,5 +1,5 @@
 import { PropTypes as MobxPropTypes } from 'mobx-react';
-import SimpleBar                      from 'simplebar-react';
+import { Scrollbars }                 from 'tt-react-custom-scrollbars';
 import PropTypes                      from 'prop-types';
 import React                          from 'react';
 import TableRow                       from './table_row.jsx';
@@ -58,9 +58,13 @@ class DataTable extends React.PureComponent {
                     {is_empty ?
                         TableData
                         :
-                        <SimpleBar>
+                        <Scrollbars
+                            autoHeight
+                            autoHide
+                            autoHeightMax={515}
+                        >
                             {TableData}
-                        </SimpleBar>
+                        </Scrollbars>
                     }
                 </div>
 
