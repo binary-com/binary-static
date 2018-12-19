@@ -13,7 +13,8 @@ module.exports = {
             ],
         },
         src: [
-            'src/javascript/app_2/Utils/URL/__tests__/*js',
+            'src/javascript/**/__tests__/*.js',
+            'scripts/__tests__/*.js',
         ],
     },
 };
