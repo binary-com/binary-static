@@ -29,8 +29,8 @@ const initGlobals = (grunt) => {
 
         if (global.release_target === 'staging' && global.section === 'all') {
             grunt.option('cleanup', true); // always cleanup when releasing to staging
-        } else if (global.release_target === 'staging' && grunt.option('cleanup')) {
-            grunt.fail.fatal('can\'t release only one section to staging with --cleanup');
+        } else if (global.release_info.valid_sections.length > 1 && global.section !== 'all' && grunt.option('cleanup')) {
+            grunt.fail.fatal(`can't release only one section to ${global.release_target} with --cleanup`);
         }
     } else {
         global.branch_prefix = Constants.config.branch_prefix;
