@@ -27,6 +27,11 @@ describe('switchAccount', () => {
         expect(switchAccount(loginid_invalid)).to.be.undefined;
     })
 
+    it('expects GTM event set on local storage', () => {
+        switchAccount(loginid_real);
+        expect(localStorage.getItem('GTM_login')).to.eq('account_switch');
+    })
+
     it('expects item set on the session storage', () => {
         switchAccount(loginid_real);
         expect(sessionStorage.getItem('active_tab')).to.equal('1');
@@ -34,13 +39,11 @@ describe('switchAccount', () => {
 
     it('expects the login id change after switching the acount', () => {
         switchAccount(loginid_real);
-
         expect(Client.get('loginid', loginid_real)).to.eql(loginid_real);
     });
 
     it('expects item unset on the localstorage', () => {
         switchAccount(loginid_real);
-
         expect(Client.get('cashier_confirmed', loginid_real)).to.be.undefined;
         expect(Client.get('accepted_bch', loginid_real)).to.be.undefined;
     })
