@@ -1,19 +1,47 @@
 import { expect } from 'chai';
 import { switchAccount } from '../switch_account.js';
 import Client from '_common/base/client_base';
-import 'mock-local-storage';
+
+global.sessionStorage = window.sessionStorage;
+global.localStorage = window.localStorage;
 
 describe('switchAccount', () => {
+    const loginid_real = 'MLT79287';
+    const loginid_invalid = 'ZZ123456789';
 
-    it('expects empty if no arguments passed', () => {
-        expect(switchAccount()).to.be.empty;
+    localStorage.setItem('active_loginid', loginid_real);
+
+    const accounts = {
+        MLT79287: {
+            'token': "a1-tlJTcyY2mhKCHzkLIk7IwnTM06M4f",
+        },
+        MF6097: {
+            'token': "a1-tlJTcyY2mhKCHzkLIk7IwnTM06M4z",
+        }
+    };
+
+    localStorage.setItem('client.accounts', JSON.stringify(accounts));
+
+    it('Return nothing when no argument passed or the login id is invalid', () => {
+        expect(switchAccount()).to.be.undefined;
+        expect(switchAccount(loginid_invalid)).to.be.undefined;
     })
 
     it('expects item set on the session storage', () => {
-        switchAccount('2FZQzLdbhLpjLzf');
-
-        expect(Client.get('cashier_confirmed')).to.eql(0);
-        expect(Client.get('accepted_bch')).to.eql(0);
-        expect(Client.get('loginid')).to.eql('2FZQzLdbhLpjLzf');
+        switchAccount(loginid_real);
+        expect(sessionStorage.getItem('active_tab')).to.equal('1');
     });
+
+    it('expects the login id change after switching the acount', () => {
+        switchAccount(loginid_real);
+
+        expect(Client.get('loginid', loginid_real)).to.eql(loginid_real);
+    });
+
+    it('expects item unset on the localstorage', () => {
+        switchAccount(loginid_real);
+
+        expect(Client.get('cashier_confirmed', loginid_real)).to.be.undefined;
+        expect(Client.get('accepted_bch', loginid_real)).to.be.undefined;
+    })
 });
