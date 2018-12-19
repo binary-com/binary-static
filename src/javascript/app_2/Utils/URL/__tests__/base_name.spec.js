@@ -10,7 +10,7 @@ describe('base_name.js', () => {
 
         it('should return /app/en/ if basename does not exist', () => {
             global.window.location.pathname = '';
-            expect(getBaseName()).to.eql('/app/en/')
+            expect(getBaseName()).to.eql('/app/en/');
         });
     });
 });
