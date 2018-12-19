@@ -1,13 +1,11 @@
-const path      = require('path');
-const fs        = require('fs');
-const common    = require('../scripts/common');
-const prompt    = require('./utils/cli').prompt;
-const snakeCase = require('lodash').snakeCase;
+const path                            = require('path');
+const fs                              = require('fs');
+const common                          = require('../scripts/common');
+const { prompt, flatten, fetchFiles } = require('./utils/cli');
 
-const ignored_files = [];
+const ignored_files            = [];
 const ignored_image_extensions = [
-    'DS_Store',
-    'zip'
+    'DS_Store', 'zip',
 ];
 
 const ignored_language_directories = [
@@ -22,78 +20,11 @@ module.exports = function(grunt) {
 
     grunt.registerTask('check_orphaned_images', 'Check orphaned images', () => {
         const default_path                = grunt.option('all') ? '' : 'app_2';
-        const images_directory               = path.resolve(common.root_path, `src/images/${default_path}/`);
+        const images_directory            = path.resolve(common.root_path, `src/images/${default_path}/`);
         const javascript_source_directory = [
             path.resolve(common.root_path, `src/javascript/${default_path}`),
             path.resolve(common.root_path, `src/sass/${default_path}`),
         ];
-
-        /**
-         * Recursively fetches all the files.
-         * @param dir
-         * @returns {any[]}
-         */
-        const fetchFiles = dir => {
-            const lookup = dir instanceof Array ? dir : [dir];
-            return lookup.map(location => {
-                const fetchFilesFromPath = (location) => {
-                    const directory = fs.readdirSync(location);
-                    return directory.map(file => {
-                        if (fs.statSync(path.join(location, file)).isDirectory()) {
-                            return fetchFilesFromPath(path.join(location, file));
-                        }
-                        return {
-                            filename: file, path: location,
-                        };
-                    });
-                };
-                return fetchFilesFromPath(location);
-            });
-        };
-
-        const validateFilename = (name) => {
-            const validations = [
-                (name) => /^_{0}([a-z0-9]+[_]*)+(?<!_)$/.test(name),
-            ];
-
-            return validations.every(validation => {
-                return validation(name);
-            });
-        };
-
-        const convertToSnakeCase = (item) => {
-            let correct_name = snakeCase(item.split('.')[0]);
-            correct_name += `.${item.split('.')[1]}`;
-            return correct_name;
-        };
-
-        const renameFiles = (bad_file_names) => {
-            Object.keys(bad_file_names).forEach(item => {
-                const converted = convertToSnakeCase(item);
-                if (!grunt.option('dry-run')) {
-                    fs.renameSync(path.join(bad_file_names[item], item), path.join(bad_file_names[item], converted));
-                }
-
-                grunt.log.ok(`${grunt.option('dry-run')
-                    ? 'dry-run >> '
-                    : ''}${bad_file_names[item]}/${item} converted to ${converted}.`);
-            });
-        };
-
-        /**
-         * Flatten any depth of array.
-         * @param arr
-         * @returns {*}
-         */
-        const flatten = arr => {
-            const index = arr.findIndex(el => Array.isArray(el));
-            if (index > -1) {
-                arr.splice(index, 1, ...arr[index]);
-                return flatten(arr);
-            }
-
-            return arr;
-        };
 
         /**
          * Fetch images and its closest directory: e.g. common/close
@@ -125,7 +56,7 @@ module.exports = function(grunt) {
         let images_and_closest_directory = fetchImagesAndClosestDirectory(images_directory);
         grunt.log.ok(`Found ${images_and_closest_directory.length} files, looking for references.`);
 
-        const javascript_source_files = flatten(fetchFiles(javascript_source_directory))
+        flatten(fetchFiles(javascript_source_directory))
             .filter(item => !!item)
             .filter(item => !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.path))
             .map(item => {
@@ -146,7 +77,8 @@ module.exports = function(grunt) {
             images_and_closest_directory.forEach(orphan => grunt.log.writeln(`File: ${orphan}`));
             grunt.log.writeln('\n\n\nNOTE: ').bold;
             grunt.log.writeln('='.repeat(80));
-            grunt.log.ok('Some of the files above could be used dynamically.\nIf you are going to delete some, proceed with caution.');
+            grunt.log.ok(
+                'Some of the files above could be used dynamically.\nIf you are going to delete some, proceed with caution.');
             grunt.log.writeln('='.repeat(80));
             return false;
         }
