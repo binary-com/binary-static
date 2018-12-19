@@ -73,24 +73,24 @@ describe('declarative_validation_rules.js', () => {
            options.min = 2;
            options.max = 4;
 
-           expect(rules['number'].func(1)).to.be.false;
-           expect(rules['number'].func(5)).to.be.false;
+           expect(rules['number'].func(1, options)).to.be.false;
+           expect(rules['number'].func(5, options)).to.be.false;
        });
        it('should return true if value in boundary (min, max', () => {
            options.min = 2;
            options.max = 4;
 
-           expect(rules['number'].func(3)).to.be.true;
+           expect(rules['number'].func(3, options)).to.be.true;
        });
 
        it('should return false if smaller than min', () => {
           options.min = 2;
-          expect(rules['number'].func(1)).to.be.false;
+          expect(rules['number'].func(1, options)).to.be.false;
        });
 
        it('should return false if bigger than max', () => {
            options.max = 0;
-           expect(rules['number'].func(1)).to.be.false;
+           expect(rules['number'].func(1, options)).to.be.false;
        });
     });
 });

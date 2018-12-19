@@ -2,26 +2,35 @@ import { expect }   from 'chai';
 import URLHelper    from '../url_helper';
 
 describe('URLHelper', () => {
+    let url;
+    let params;
+
+    beforeEach('Setting up url and params', () => {
+        url = 'https://www.binary.com/en/trading.html?currency=USD&market=forex';
+    });
+
     describe('.getQueryParams', () => {
-        const url = 'https://www.binary.com/en/trading.html?currency=USD&market=forex';
-        const params = URLHelper.getQueryParams(url);
+        beforeEach('Getting params.', () => {
+            params = URLHelper.getQueryParams(url);
+        });
 
         it('should return query parameters', () => {
             expect(params.get('currency')).to.eql('USD');
             expect(params.get('market')).to.eql('forex');
         });
+        it('should return an object', () => {
+            expect(params).to.be.a('object');
+        });
     });
 
     describe('.setQueryParam', () => {
-        const url = 'https://www.binary.com/en/trading.html?currency=USD&market=forex';
-        const params = {
-            'currency': 'MYR',
-            'market': 'forex',
-        }
-
         // TypeError : param_object.sort is not a function
-        it('should return a URL object', () => {
-            const result = URLHelper.setQueryParam(params, url);
+        it('should return an object', () => {
+            params = {
+                'currency': 'MYR',
+                'market': 'forex',
+            };
+            expect(URLHelper.setQueryParam(params, url)).to.be.a('object');
         });
     });
 });
