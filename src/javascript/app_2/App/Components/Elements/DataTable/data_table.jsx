@@ -55,13 +55,7 @@ class DataTable extends React.PureComponent {
                     onScroll={onScroll}
                     ref={el => { this.el_table_body = el; }}
                 >
-                    {is_empty ?
-                        TableData
-                        :
-                        <SimpleBar>
-                            {TableData}
-                        </SimpleBar>
-                    }
+                    { TableData }
                 </div>
 
                 {this.props.footer &&

@@ -40,15 +40,6 @@ $side-padding: 12px;
     .table {
         height: 100%;
         border-bottom: none;
-
-        .simplebar-wrapper {
-            width: 100%;
-            overflow-y: scroll;
-
-            .simplebar-placeholder {
-                display: none;
-            }
-        }
     }
     .table__row {
         grid-template-columns: 6.5rem 6.5rem 1fr 5rem 7rem 6rem 6rem;
