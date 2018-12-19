@@ -19,6 +19,7 @@ describe('URLHelper', () => {
             expect(params.get('market')).to.eql('forex');
         });
         it('should return an object', () => {
+            console.log(typeof params);
             expect(params).to.be.a('object');
         });
     });
