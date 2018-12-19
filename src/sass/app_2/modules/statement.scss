@@ -43,6 +43,11 @@ $side-padding: 12px;
 
         .simplebar-wrapper {
             width: 100%;
+            overflow-y: scroll;
+
+            .simplebar-placeholder {
+                display: none;
+            }
         }
     }
     .table__row {
