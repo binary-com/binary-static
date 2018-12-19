@@ -10,12 +10,18 @@ describe('URLHelper', () => {
     });
 
     describe('.getQueryParams', () => {
+        beforeEach('Getting params.', () => {
+            params = URLHelper.getQueryParams(url);
+        });
+
         it('should return query parameters', () => {
-            expect(URLHelper.getQueryParams(url).get('currency')).to.eql('USD');
-            expect(URLHelper.getQueryParams(url).get('market')).to.eql('forex');
+            expect(params.get('currency')).to.eql('USD');
+            expect(params.get('market')).to.eql('forex');
         });
         it('should return an object', () => {
-            expect(URLHelper.getQueryParams(url)).to.be.a('object');
+            console.log(params);
+            console.log(typeof params);
+            expect(typeof params).to.eql('object');
         });
     });
 
