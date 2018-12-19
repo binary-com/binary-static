@@ -99,6 +99,7 @@ const Geocoder = (() => {
         new Promise((resolve) => {
             scriptjs.ready('gMaps', () => {
                 const geocoder = new google.maps.Geocoder();
+                el_btn_validate.classList.add('button-disabled');
                 el_success.setVisibility(0);
                 el_error.setVisibility(0);
                 loader.setVisibility(1);
@@ -123,7 +124,8 @@ const Geocoder = (() => {
     const isAddressFound = (user_address, geoloc_address) => {
         let result = false;
         if (geoloc_address.length && getValue('#address_state')) {
-            const address_string = geoloc_address[0].formatted_address;
+            const item_idx = geoloc_address.length - 1;
+            const address_string = geoloc_address[item_idx].formatted_address;
             result = (address_string.indexOf(user_address) !== -1);
         }
         return result;
@@ -139,7 +141,6 @@ const Geocoder = (() => {
             el_success.setVisibility(1);
         }
         loader.setVisibility(0);
-        el_btn_validate.classList.add('button-disabled');
     };
 
     return {
