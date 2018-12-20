@@ -99,11 +99,8 @@ table {
             td {
                 overflow: initial;
             }
-            td.date.pre {
-                max-width: 120px;
-            }
             td.desc {
-                max-width: 600px;
+                max-width: 120px;
                 overflow-wrap: break-word;
             }
             @media (max-width: $md) {
