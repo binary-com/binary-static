@@ -44,7 +44,8 @@ describe('formatDate', () => {
     });
 
     it('return correct date value when argument passed', () => {
-        const date = "2018-12-14"
+        // get today date
+        const date = moment();
         expect(DateTime.formatDate(date, date_format)).to.deep.equal(moment(date).format(date_format));
     });
 })
@@ -55,13 +56,14 @@ describe('daysFromTodayTo', () => {
     });
 
     it('return empty string if the user selected previous day', () => {
-        const date = "2018-12-13";
+        //get previous day
+        const date = moment().subtract(1, 'days').format("YYYY-MM-DD");
         expect(DateTime.daysFromTodayTo(date)).to.eql('');
     });
 
     it('return difference value between selected date and today', () => {
-        //using moment get date three days from now
-        const date = "2018-12-20";
+        //get date three days from now
+        const date = moment().add('3', 'days').format("YYYY-MM-DD");
         const diff = moment(date).utc().diff(moment().utc(), 'days');
         expect(DateTime.daysFromTodayTo(date)).to.deep.equal(diff + 1);
     });
