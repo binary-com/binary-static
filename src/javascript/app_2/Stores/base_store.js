@@ -4,9 +4,10 @@ import {
     observable,
     reaction,
     toJS,
-    when }                  from 'mobx';
-import { isEmptyObject }    from '_common/utility';
-import Validator            from 'Utils/Validator';
+    when }               from 'mobx';
+import { isEmptyObject } from '_common/utility';
+import Validator         from 'Utils/Validator';
+import { isProduction }  from '../../config';
 
 /**
  * BaseStore class is the base class for all defined stores in the application. It handles some stuff such as:
@@ -257,7 +258,10 @@ export default class BaseStore {
                     }
                 } catch (error) {
                     // there is no listener currently active. so we can just ignore the error raised from treating
-                    // a null object as a function.
+                    // a null object as a function. Although, in development mode, we throw a console error.
+                    if (!isProduction()) {
+                        console.error(error); // eslint-disable-line
+                    }
                 }
             },
         );

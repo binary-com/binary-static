@@ -302,20 +302,23 @@ export default class ClientStore extends BaseStore {
 
     @action.bound
     async switchAccountHandler () {
-        // TODO go to active (toast), or logout the user when switched is falsy
         if (!this.switched || !this.switched.length || !this.getAccount(this.switched).token) {
+            // Logout if the switched_account doesn't belong to any loginid.
+            if (!this.all_loginids.some(id => id !== this.switched) || this.switched === this.loginid) {
+                this.root_store.ui.addToastMessage({
+                    message: localize('Could not switch to default account.'),
+                    type   : 'error',
+                });
+                // request a logout
+                requestLogout();
+                return;
+            }
+
             // Send a toast message to let the user know we can't switch his account.
             this.root_store.ui.addToastMessage({
                 message: localize('Switching to default account.'),
                 type   : 'info',
             });
-
-            // Logout if the switched_account doesn't belong to any loginid.
-            if (!this.all_loginids.some(id => id !== this.switched) || this.switched === this.loginid) {
-                // request a logout
-                requestLogout();
-                return;
-            }
 
             // switch to default account.
             this.switchAccount(this.all_loginids[0]);
