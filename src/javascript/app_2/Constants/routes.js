@@ -1,4 +1,5 @@
 const routes = {
+    error404        : '/404',
     account_password: '/settings/account_password',
     apps            : '/settings/apps',
     cashier_password: '/settings/cashier_password',
