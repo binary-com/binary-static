@@ -1,7 +1,7 @@
 /* global google */
 const scriptjs           = require('scriptjs');
-const applyToAllElements = require('./utility').applyToAllElements;
 const getElementById     = require('./common_functions').getElementById;
+const applyToAllElements = require('./utility').applyToAllElements;
 const Client             = require('../app/base/client');
 
 const Geocoder = (() => {
