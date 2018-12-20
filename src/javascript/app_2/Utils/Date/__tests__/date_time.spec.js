@@ -64,8 +64,7 @@ describe('daysFromTodayTo', () => {
     it('return difference value between selected date and today', () => {
         //get date three days from now
         const date = moment().add('3', 'days').format("YYYY-MM-DD");
-        const diff = moment(date).utc().diff(moment().utc(), 'days');
-        expect(DateTime.daysFromTodayTo(date)).to.deep.equal(diff + 1);
+        expect(DateTime.daysFromTodayTo(date)).to.deep.equal(3);
     });
 })
 
@@ -76,7 +75,7 @@ describe('convertDuration', () => {
     describe('getDiffDuration', () => {
         it('return correct value when argument passed', () => {
             //expecting 180000 == three minutes
-            expect(DateTime.getDiffDuration(start_time, end_time)).to.eql(moment.duration(moment.unix(end_time).diff(moment.unix(start_time))));
+            expect(DateTime.getDiffDuration(start_time, end_time)).to.eql(moment.duration(180000));
         });
     });
 
