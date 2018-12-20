@@ -9,11 +9,13 @@ const Geocoder = (() => {
         el_error,
         el_success,
         loader,
+        has_currency,
         is_virtual;
     let validated = false;
 
     const init = (form_id) => {
         is_virtual = Client.get('is_virtual');
+        has_currency = Client.get('currency');
         // TODO: We should store the Google API key in an unstaged file so it doesn't get committed to the public repository
         scriptjs('https://maps.googleapis.com/maps/api/js?key=AIzaSyAEha6-HeZuI95L9JWmX3m6o-AxQr_oFqU&libraries=places', 'gMaps');
 
@@ -78,7 +80,7 @@ const Geocoder = (() => {
 
         el_error.setVisibility(0);
 
-        if (is_virtual) {
+        if (is_virtual || !has_currency) {
             loader.setVisibility(0);
         }
 
@@ -130,8 +132,8 @@ const Geocoder = (() => {
         let result;
         if (geoloc_address.length && getValue('#address_state')) {
             const item_idx = geoloc_address.length - 1;
-            const address_string = geoloc_address[item_idx].formatted_address;
-            result = (address_string.indexOf(user_address) !== -1);
+            const address_string = (geoloc_address[item_idx].formatted_address).toLowerCase();
+            result = (address_string.indexOf(user_address.toLowerCase()) !== -1);
         }
         return result;
     };
