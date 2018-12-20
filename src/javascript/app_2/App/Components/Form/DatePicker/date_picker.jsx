@@ -20,7 +20,7 @@ class DatePicker extends React.PureComponent {
     static getDerivedStateFromProps({ value, mode, ...props }, state) {
         const { date_format, start_date } = props;
         const new_date = (mode === 'duration') ? moment.utc().add(value, 'days').format(date_format) : value;
-        if ((moment.utc(new_date, date_format).isValid() || !new_date)) {
+        if (moment.utc(new_date, date_format).isValid() || !new_date) {
             if (!new_date) {
                 const current_date = moment.utc(start_date).format(date_format);
                 state.calendar_date = current_date;
