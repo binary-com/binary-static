@@ -11,11 +11,8 @@ const ErrorComponent = ({ type, message }) => (
 );
 
 ErrorComponent.propTypes = {
-    message: PropTypes.oneOfType([
-        PropTypes.object,
-        PropTypes.string,
-    ]),
-    type: PropTypes.string,
+    message: PropTypes.node,
+    type   : PropTypes.string,
 };
 
 export default ErrorComponent;
