@@ -23,7 +23,7 @@ describe('start_date', () => {
                 "submarket":"major_pairs",
                 "underlying_symbol":"frxAUDJPY"
             };
-            expect(buildForwardStartingConfig(contract, {})).to.eql({});
+            expect(buildForwardStartingConfig(contract, {})).to.be.empty;
         });
     });
 

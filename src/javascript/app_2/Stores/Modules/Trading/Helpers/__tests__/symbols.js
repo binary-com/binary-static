@@ -102,7 +102,7 @@ describe('pickDefaultSymbol', () => {
     });
 
     it('It Returns the default symbol if active symbols has no value', () => {
-        expect(pickDefaultSymbol()).to.eql('');
+        expect(pickDefaultSymbol()).to.be.empty;
     });
 
 });

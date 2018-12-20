@@ -36,7 +36,7 @@ describe('Digits', () => {
                     is_win: false,
                 },
             };
-            expect(getDigitInfo(digits_info, contract_info)).to.deep.eql({});
+            expect(getDigitInfo(digits_info, contract_info)).to.be.empty;
         });
         it('should return desired object with inputs and when current_spot_time is not in digits info', () => {
             const contract_info = {

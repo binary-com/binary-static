@@ -158,7 +158,7 @@ describe('Proposal', () => {
                 proposal_requests: {}
             };
 
-            expect(Proposal.createProposalRequests(store)).to.deep.eql({});
+            expect(Proposal.createProposalRequests(store)).to.be.empty;
         });
     });
 
