@@ -14,7 +14,7 @@ const Geocoder = (() => {
 
     const init = (form_id) => {
         is_virtual = Client.get('is_virtual');
-        // TODO: We should move the API key to a constant file that is unstaged so it doesn't get committed to the public repository
+        // TODO: We should store the Google API key in an unstaged file so it doesn't get committed to the public repository
         scriptjs('https://maps.googleapis.com/maps/api/js?key=AIzaSyAEha6-HeZuI95L9JWmX3m6o-AxQr_oFqU&libraries=places', 'gMaps');
 
         const form = getElementById(form_id.split('#')[1]);
@@ -33,12 +33,12 @@ const Geocoder = (() => {
         loader          = form.querySelector('.barspinner');
 
         applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${city}`, (element) => {
-            // List of fields that will trigger onChange event but will allow empty values
+            // List of fields that will trigger event onChange but will allow empty values as they are non-required fields
             const non_required_fields = ['addr_2', 'postcode'];
 
             element.addEventListener('keyup', () => {
                 const value = element.value;
-                // Check if address_line_1 and address_state have values to fulfil condition
+                // Check if address_line_1, address_state and address city have values
                 const has_met_conditions = (getValue(city).length > 0) &&
                     (getValue(addr_1).length > 0) && getValue(state);
 
@@ -59,14 +59,16 @@ const Geocoder = (() => {
             }
         });
 
-        el_btn_validate.addEventListener('click', (e) => {
-            e.preventDefault();
-            validator(getAddress()).then(() => {
-                validated = true;
-            });
-        });
         el_error.parentNode.appendChild(el_btn_validate);
-        if (el_btn_validate) el_btn_validate.setVisibility(1);
+        if (el_btn_validate) {
+            el_btn_validate.addEventListener('click', (e) => {
+                e.preventDefault();
+                validator(getAddress()).then(() => {
+                    validated = true;
+                });
+            });
+            el_btn_validate.setVisibility(1);
+        }
         el_error.setVisibility(0);
 
         if (validated || !getValue(addr_1).length || !getValue(state)) {
@@ -122,7 +124,7 @@ const Geocoder = (() => {
     );
 
     const isAddressFound = (user_address, geoloc_address) => {
-        let result = false;
+        let result;
         if (geoloc_address.length && getValue('#address_state')) {
             const item_idx = geoloc_address.length - 1;
             const address_string = geoloc_address[item_idx].formatted_address;
