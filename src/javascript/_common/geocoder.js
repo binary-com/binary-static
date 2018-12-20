@@ -14,7 +14,7 @@ const Geocoder = (() => {
 
     const init = (form_id) => {
         is_virtual = Client.get('is_virtual');
-
+        // TODO: We should move the API key to a constant file that is unstaged so it doesn't get committed to the public repository
         scriptjs('https://maps.googleapis.com/maps/api/js?key=AIzaSyAEha6-HeZuI95L9JWmX3m6o-AxQr_oFqU&libraries=places', 'gMaps');
 
         const form = getElementById(form_id.split('#')[1]);
