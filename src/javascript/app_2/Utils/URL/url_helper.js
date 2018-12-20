@@ -37,7 +37,7 @@ export default class URLHelper {
         });
 
         param_object.sort();
-
+        
         if (!url) {
             window.history.replaceState(null, null, `?${param_object.toString()}`);
         } else {
