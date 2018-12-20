@@ -12,7 +12,7 @@ const getPropertyValue = require('../utility').getPropertyValue;
 const getAppId         = require('../../config').getAppId;
 
 const GTM = (() => {
-    const isGtmApplicable = () => (/^(1|1098|14473)$/.test(getAppId()));
+    const isGtmApplicable = () => (/^(1|1098|14473|15284)$/.test(getAppId()));
 
     const getCommonVariables = () => ({
         language : getLanguage(),
@@ -41,8 +41,8 @@ const GTM = (() => {
 
     const eventHandler = (get_settings) => {
         if (!isGtmApplicable()) return;
-        const is_login       = localStorage.getItem('GTM_login')       === '1';
-        const is_new_account = localStorage.getItem('GTM_new_account') === '1';
+        const login_event       = localStorage.getItem('GTM_login');
+        const is_new_account    = localStorage.getItem('GTM_new_account') === '1';
 
         localStorage.removeItem('GTM_login');
         localStorage.removeItem('GTM_new_account');
@@ -62,10 +62,12 @@ const GTM = (() => {
             url               : window.location.href,
             bom_today         : Math.floor(Date.now() / 1000),
         };
+
         if (is_new_account) {
             data.event = 'new_account';
             data.bom_date_joined = data.bom_today;
         }
+
         if (!ClientBase.get('is_virtual')) {
             data.bom_age       = parseInt((moment().unix() - get_settings.date_of_birth) / 31557600);
             data.bom_firstname = get_settings.first_name;
@@ -73,8 +75,8 @@ const GTM = (() => {
             data.bom_phone     = get_settings.phone;
         }
 
-        if (is_login) {
-            data.event = 'log_in';
+        if (login_event) {
+            data.event = login_event;
             BinarySocket.wait('mt5_login_list').then((response) => {
                 (response.mt5_login_list || []).forEach((obj) => {
                     const acc_type = (ClientBase.getMT5AccountType(obj.group) || '')
@@ -165,7 +167,7 @@ const GTM = (() => {
         eventHandler,
         pushPurchaseData,
         mt5NewAccount,
-        setLoginFlag: () => { if (isGtmApplicable()) localStorage.setItem('GTM_login', '1'); },
+        setLoginFlag: (event_name) => { if (isGtmApplicable()) localStorage.setItem('GTM_login', event_name); },
     };
 })();
 

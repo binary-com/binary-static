@@ -4,7 +4,7 @@ const getCurrencies      = require('./get_currency').getCurrencies;
 const BinaryPjax         = require('../../base/binary_pjax');
 const Client             = require('../../base/client');
 const BinarySocket       = require('../../base/socket');
-const getCurrencyList    = require('../../common/currency').getCurrencyList;
+const Currency           = require('../../common/currency');
 const FormManager        = require('../../common/form_manager');
 const getElementById     = require('../../../_common/common_functions').getElementById;
 const localize           = require('../../../_common/localize').localize;
@@ -14,6 +14,27 @@ const urlFor             = require('../../../_common/url').urlFor;
 const Accounts = (() => {
     let landing_company;
     const form_id = '#new_accounts';
+
+    const TableHeaders = (() => {
+        let table_headers;
+
+        const initTableHeaders = () => ({
+            account             : localize('Account'),
+            available_markets   : localize('Available Markets'),
+            available_currencies: localize('Available Currencies'),
+            type                : localize('Type'),
+            currency            : localize('Currency'),
+        });
+
+        return {
+            get: () => {
+                if (!table_headers) {
+                    table_headers = initTableHeaders();
+                }
+                return table_headers;
+            },
+        };
+    })();
 
     const onLoad = () => {
         if (!Client.get('residence')) {
@@ -51,22 +72,24 @@ const Accounts = (() => {
     const getCompanyCountry = account => Client.getLandingCompanyValue(account, landing_company, 'country');
 
     const populateNewAccounts = (upgrade_info) => {
-        const new_account = upgrade_info;
-        const account     = {
+        const table_headers = TableHeaders.get();
+        const new_account   = upgrade_info;
+        const account       = {
             real     : new_account.type === 'real',
             financial: new_account.type === 'financial',
         };
-        const new_account_title = new_account.type === 'financial' ? localize('Financial Account') : localize('Real Account');
-
+        const new_account_title    = new_account.type === 'financial' ? localize('Financial Account') : localize('Real Account');
+        const available_currencies = Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies');
+        const currencies_name_list = Currency.getCurrencyNameList(available_currencies);
         $(form_id).find('tbody')
             .append($('<tr/>')
-                .append($('<td/>').html($('<span/>', {
+                .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
                     text                 : new_account_title,
                     'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
                     'data-balloon-length': 'large',
                 })))
-                .append($('<td/>', { text: getAvailableMarkets(account) }))
-                .append($('<td/>', { text: Client.getLandingCompanyValue(account, landing_company, 'legal_allowed_currencies').join(', ') }))
+                .append($('<td/>', { text: getAvailableMarkets(account), datath: table_headers.available_markets }))
+                .append($('<td/>', { text: currencies_name_list.join(', '), datath: table_headers.available_currencies }))
                 .append($('<td/>')
                     .html($('<a/>', { class: 'button', href: urlFor(new_account.upgrade_link) })
                         .html($('<span/>', { text: localize('Create') })))));
@@ -92,6 +115,7 @@ const Accounts = (() => {
     };
 
     const appendExistingAccounts = (loginid) => {
+        const table_headers     = TableHeaders.get();
         const account_currency  = Client.get('currency', loginid);
         const account_type_prop = { text: Client.getAccountTitle(loginid) };
 
@@ -115,11 +139,11 @@ const Accounts = (() => {
 
         $('#existing_accounts').find('tbody')
             .append($('<tr/>', { id: loginid, class: ((is_disabled || excluded_until) ? 'color-dark-white' : '') })
-                .append($('<td/>', { text: loginid }))
-                .append($('<td/>').html($('<span/>', account_type_prop)))
-                .append($('<td/>', { text: txt_markets }))
-                .append($('<td/>')
-                    .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : account_currency || '-')));
+                .append($('<td/>', { text: loginid, datath: table_headers.account }))
+                .append($('<td/>', { datath: table_headers.type }).html($('<span/>', account_type_prop)))
+                .append($('<td/>', { text: txt_markets, datath: table_headers.available_markets }))
+                .append($('<td/>', { datath: table_headers.currency })
+                    .html(!account_currency && loginid === Client.get('loginid') ? $('<a/>', { class: 'button', href: urlFor('user/set-currency') }).html($('<span/>', { text: localize('Set Currency') })) : (Currency.getCurrencyFullName(account_currency) || '-'))));
 
         if (is_disabled || excluded_until) {
             $('#note_support').setVisibility(1);
@@ -162,17 +186,18 @@ const Accounts = (() => {
     const getMarketName = market => MarketsConfig.get()[market] || '';
 
     const populateMultiAccount = () => {
-        const currencies = getCurrencies(landing_company);
-        const account    = { real: 1 };
+        const table_headers = TableHeaders.get();
+        const currencies    = getCurrencies(landing_company);
+        const account       = { real: 1 };
         $(form_id).find('tbody')
             .append($('<tr/>', { id: 'new_account_opening' })
-                .append($('<td/>').html($('<span/>', {
+                .append($('<td/>', { datath: table_headers.account }).html($('<span/>', {
                     text                 : localize('Real Account'),
                     'data-balloon'       : `${localize('Counterparty')}: ${getCompanyName(account)}, ${localize('Jurisdiction')}: ${getCompanyCountry(account)}`,
                     'data-balloon-length': 'large',
                 })))
-                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }) }))
-                .append($('<td/>', { class: 'account-currency' }))
+                .append($('<td/>', { text: getAvailableMarkets({ real: 1 }), datath: table_headers.available_markets }))
+                .append($('<td/>', { class: 'account-currency', datath: table_headers.available_currencies }))
                 .append($('<td/>').html($('<button/>', { text: localize('Create'), type: 'submit' }))));
 
         $('#note').setVisibility(1);
@@ -180,10 +205,10 @@ const Accounts = (() => {
         const $new_account_opening = $('#new_account_opening');
         if (currencies.length > 1) {
             const $currencies = $('<div/>');
-            $currencies.append(getCurrencyList(currencies).html());
+            $currencies.append(Currency.getCurrencyList(currencies).html());
             $new_account_opening.find('.account-currency').html($('<select/>', { id: 'new_account_currency' }).html($currencies.html()));
         } else {
-            $new_account_opening.find('.account-currency').html($('<label/>', { id: 'new_account_currency', 'data-value': currencies, text: currencies }));
+            $new_account_opening.find('.account-currency').html($('<label/>', { id: 'new_account_currency', 'data-value': currencies, text: Currency.getCurrencyFullName(currencies) }));
         }
 
         // need to make it visible before adding the form manager event on it

@@ -43,7 +43,7 @@ export const NavButtons = ({ parent, section }) => (
                 <a className='button' id='go_next'><span>{`${it.L('Next')} >`}</span></a>
             </div>
             <div className='center-text'>
-                <a className='button-secondary' href={`${it.url_for('get-started')}?get_started_tabs=${parent}&section=${section}`}><span>{it.L('Back to Menu')}</span></a>
+                <a className='button-secondary' href={`${it.url_for('get-started')}?get_started_tabs=${parent}&section=${section}`}><span>{it.L('Back to menu')}</span></a>
             </div>
         </div>
 
@@ -95,5 +95,15 @@ export const MtBox = ({ text, icon_1, icon_2 }) => (
         <div className={`mt-img ${icon_1}`} />
         <p className='fill-bg-color gr-padding-20 gr-gutter'>{text}</p>
         <div className={`mt-img ${icon_2}`} />
+    </div>
+);
+
+export const MTAccountOpeningButton = () => (
+    <div className='center-text gr-padding-10 client_logged_in invisible'>
+        <p>
+            <a className='button' href={it.url_for('user/metatrader')}>
+                <span>{it.L('Create an MT5 account now')}</span>
+            </a>
+        </p>
     </div>
 );

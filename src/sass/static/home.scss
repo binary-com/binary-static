@@ -102,6 +102,36 @@
             }
         }
     }
+    .award-icons {
+        margin: 30px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .award-icon {
+            height: 120px;
+            width: 100px;
+            padding-bottom: 30px;
+            margin: 0 15px;
+        }
+        img {
+            max-height: 100px;
+        }
+        .caption {
+            font-size: $FONT_SIZE_XXS;
+            line-height: 1.2;
+            text-align: center;
+            width: 100%;
+            display: inline-flex;
+            align-items: flex-end;
+            justify-content: center;
+            margin-top: auto;
+        }
+        @media screen and (max-width: 768px) {
+            padding: 0 10px;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {

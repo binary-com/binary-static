@@ -8,6 +8,11 @@ import AntiClickjack from '../_common/includes/anti_clickjack.jsx';
 
 const Head = () => (
     <head>
+        {
+            // Prompt a message in the browser if the user has disabled JS
+        }
+        <noscript>{ it.L('Your browser does not support JavaScript!') }</noscript>
+
         <GoogleOptimizer />
         <GTMScript />
         <AntiClickjack />
@@ -18,6 +23,7 @@ const Head = () => (
         <meta name='keywords' content={` ${it.L('binary options, forex, forex trading, online trading, financial trading, binary trading, index trading, trading indices, forex trades, trading commodities, binary options strategy, binary broker, binary bet, binary options trading platform, binary strategy, finance, stocks, investment, trading')}`} />
         <meta name='author' content={it.broker_name} />
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+        <meta name='theme-color' content='#2a3052' />
         <meta name='dcterms.rightsHolder' content={it.broker_name} />
         <meta name='dcterms.rights' content={it.broker_name} />
         <meta name='google-site-verification' content='roReCEK-wNa1EMA6ZM9a4zCOQOMqxfJjvfsZMC9qh_k' />
@@ -25,12 +31,21 @@ const Head = () => (
         <meta property='og:type' content='website' />
         <meta property='og:image' content={it.url_for('images/common/og_image.gif')} />
 
-        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' />
+        { it.css_files.map((css_file, inx) => (
+            <link key={inx} rel='preload' as='style' href={css_file} />
+        ))}
+        { it.js_files.map((js_file, inx) => (
+            <link rel='preload' as='script' key={inx} href={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())} />
+        ))}
+
+        <link rel='preload' as='script' href={`${it.root_url}pushwoosh-web-notifications.js`} />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link rel='preconnect' href='https://www.googletagmanager.com' />
+        <link rel='preconnect' href='https://browser-update.org' />
+
+        <link rel='manifest' href={it.url_for(`/${it.language.toLowerCase()}/manifest.json`)} />
 
         <Title />
-
-        <link rel='manifest' href={`${it.root_url}manifest.json`} />
-        <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} async />
 
         <Favicons />
 
@@ -48,8 +63,9 @@ const Head = () => (
             <link key={inx} rel='stylesheet' href={css_file} />
         ))}
         { it.js_files.map((js_file, inx) => (
-            <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())} />
+            <script key={inx} src={js_file.replace('{PLACEHOLDER_FOR_LANG}', it.language.toLowerCase())} defer />
         ))}
+        <script type='text/javascript' src={`${it.root_url}pushwoosh-web-notifications.js`} defer />
     </head>
 );
 

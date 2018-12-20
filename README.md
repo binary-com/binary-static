@@ -15,13 +15,6 @@ You will also need to install the following on your development machine:
 - Go to project root, then run `npm install`
 - Grunt (`sudo npm install -g grunt-cli`)
 
-
-#### Note: 
-You need to have:
-
-- The latest version of `node`
-- Version 4.x.x of `npm` (`npm install npm@4 -g`)
-
 ### Use a custom domain
 In order to use your custom domain, please put it in a file named `CNAME` inside `scripts` folder of your local clone of binary-static.
 
