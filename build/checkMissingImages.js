@@ -1,7 +1,10 @@
-const path                            = require('path');
-const fs                              = require('fs');
-const common                          = require('../scripts/common');
-const { prompt, flatten, fetchFiles } = require('./utils/cli');
+const path         = require('path');
+const fs           = require('fs');
+const common       = require('../scripts/common');
+const {
+    prompt,
+    flatten,
+    fetchFiles } = require('./utils/cli');
 
 const ignored_files            = [];
 const ignored_image_extensions = [
@@ -24,14 +27,9 @@ module.exports = function(grunt) {
             path.resolve(common.root_path, `src/sass/${default_path}`),
         ];
 
-        // Actual test is running from here. We can check for other directories as well, but it is highly unlikely that
-        // someone put a duplicate in other folders. This grunt task will accept a --all option. --all option will try
-        // to check every single file inside images directory. if no option is provided, only the images inside
-        // app_2 will be processed.
-        // Since in app_2 we import svg statements, those missing links will be captured by eslint. so we don't
-        // need to check that here.
-        // we are looking for url($), src={$}, image={$}
-
+        // Actual test is running from here. Please note that due to the nature of the search we are performing,
+        // This will produce errors for the images that are referenced statically. If there is a string
+        // manipulation, this script cannot find the reference to it.
         const references = flatten(fetchFiles(javascript_source_directory))
             .filter(item => !!item)
             .filter(item => !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.path))

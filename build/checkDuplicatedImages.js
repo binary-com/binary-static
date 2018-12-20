@@ -1,6 +1,9 @@
-const path                            = require('path');
-const common                          = require('../scripts/common');
-const { prompt, fetchFiles, flatten } = require('./utils/cli');
+const path      = require('path');
+const common    = require('../scripts/common');
+const {
+    prompt,
+    fetchFiles,
+    flatten } = require('./utils/cli');
 
 const ignored_files = [];
 

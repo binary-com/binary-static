@@ -1,8 +1,12 @@
-const path      = require('path');
-const common    = require('../scripts/common');
+const path             = require('path');
+const common           = require('../scripts/common');
 const {
-          prompt, flatten, fetchFiles, renameFiles, validateFilename, convertToSnakeCase,
-      }         = require('./utils/cli');
+   prompt,
+   flatten,
+   fetchFiles,
+   renameFiles,
+   validateFilename,
+   convertToSnakeCase } = require('./utils/cli');
 
 const ignored_files = [];
 
@@ -16,10 +20,9 @@ module.exports = function(grunt) {
         const default_path  = grunt.option('all') ? '' : 'app_2';
         const where_to_look = path.resolve(common.root_path, `src/images/${default_path}/`);
 
-        // Actual test is running from here. We can check for other directories as well, but it is highly unlikely that
-        // someone put a duplicate in other folders. This grunt task will accept a --all option. --all option will try
-        // to check every single file inside images directory. if no option is provided, only the images inside
-        // app_2 will be processed.
+        // Actual test is running from here. if in the future, the naming convention has changed
+        // you can update validateFilename function with a new regex. We also used camelCase
+        // function from lodash, that should be changed as well.
         const images = fetchFiles(where_to_look);
 
         const flattened = flatten(images)

@@ -1,7 +1,10 @@
-const path                            = require('path');
-const fs                              = require('fs');
-const common                          = require('../scripts/common');
-const { prompt, flatten, fetchFiles } = require('./utils/cli');
+const path     = require('path');
+const fs       = require('fs');
+const common   = require('../scripts/common');
+const {
+  prompt,
+  flatten,
+  fetchFiles } = require('./utils/cli');
 
 const ignored_files            = [];
 const ignored_image_extensions = [
@@ -49,10 +52,9 @@ module.exports = function(grunt) {
                 .filter(item => !ignored_language_directories.some(ignored => item.startsWith(ignored)));
         };
 
-        // Actual test is running from here. We can check for other directories as well, but it is highly unlikely that
-        // someone put a duplicate in other folders. This grunt task will accept a --all option. --all option will try
-        // to check every single file inside images directory. if no option is provided, only the images inside
-        // app_2 will be processed.
+        // Actual test is running from here. Note that this scripts attempt to find the only absolute relative
+        // directory and filename (to detect a broader range of files), this won't allow us to find references
+        // that are made using string concatenations or template strings (mostly in app).
         let images_and_closest_directory = fetchImagesAndClosestDirectory(images_directory);
         grunt.log.ok(`Found ${images_and_closest_directory.length} files, looking for references.`);
 
