@@ -51,24 +51,34 @@ describe('buildDurationConfig', () => {
 describe('convertDurationUnit', () => {
     it('Returns null if the arguments are empty value', () => {
         expect(Duration.convertDurationUnit('','','')).to.be.null;
-    })
-    it('Returns null if there is no arguments', () => {
-        expect(Duration.convertDurationUnit()).to.be.null;
-    })
-    it('Returns correct value for 1 day duration', () => {
-        expect(Duration.convertDurationUnit("1", "d", "s")).to.eql(86400);
     });
 
-    it('Returns correct value for 1 year duration', () => {
+    it('Returns null if there is no arguments', () => {
+        expect(Duration.convertDurationUnit()).to.be.null;
+    });
+
+    it('Returns correct value convert day to second', () => {
         expect(Duration.convertDurationUnit("365", "d", "s")).to.eql(31536000);
     });
 
-    it('Returns correct value for 5 minute duration', () => {
+    it('Returns correct value convert minute to second', () => {
         expect(Duration.convertDurationUnit("5", "m", "s")).to.eql(300);
     });
 
-    it('Returns correct value for 3 minute duration', () => {
-        expect(Duration.convertDurationUnit("3", "m", "s")).to.eql(180);
+    it('Returns correct value convert day to minute', () => {
+        expect(Duration.convertDurationUnit("1", "d", "m")).to.eql(1440);
+    });
+
+    it('Returns correct value convert second to minute', () => {
+        expect(Duration.convertDurationUnit("180", "s", "m")).to.eql(3);
+    });
+
+    it('Returns correct value convert minute to day', () => {
+        expect(Duration.convertDurationUnit("2880", "m", "d")).to.eql(2);
+    });
+
+    it('Returns correct value convert second to day', () => {
+        expect(Duration.convertDurationUnit("86400", "s", "d")).to.eql(1);
     });
 });
 
@@ -78,19 +88,29 @@ describe('getExpiryType', () => {
         return server_time;
     }
 
-    it('Return correct value when server time passed', () => {
-        const store = {
-            duration_unit: 't',
-            expiry_date: '2018-12-13',
-            expiry_type: 'duration',
-            root_store: {
-                common: {
-                    server_time: getServerTime(),
-                }
+    const store = {
+        expiry_date: '2018-12-13',
+        expiry_type: 'duration',
+        root_store: {
+            common: {
+                server_time: getServerTime(),
             }
         }
-
+    }
+    
+    it('Return tick if duration unit is t', () => {
+        store.duration_unit = 't'
         expect(Duration.getExpiryType(store)).to.eql('tick');
+    });
+
+    it('Return intraday if duration unit is m', () => {
+        store.duration_unit = 'm'
+        expect(Duration.getExpiryType(store)).to.eql('intraday');
+    });
+
+    it('Return daily if duration unit is d', () => {
+        store.duration_unit = 'd'
+        expect(Duration.getExpiryType(store)).to.eql('daily');
     });
 
 });

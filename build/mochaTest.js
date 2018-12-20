@@ -12,7 +12,8 @@ module.exports = {
             ],
         },
         src: [
-            'src/javascript/app_2/Utils/Date/__tests__/*.js'
+            'src/javascript/**/__tests__/*.js',
+            'scripts/__tests__/*.js',
         ],
     },
 };
