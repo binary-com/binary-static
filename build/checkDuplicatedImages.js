@@ -7,6 +7,8 @@ const {
 
 const ignored_files = [];
 
+const ignored_extensions = ['DS_Store'];
+
 module.exports = function(grunt) {
     prompt('Checks for duplicate images based on their content');
     grunt.initConfig({
@@ -24,7 +26,9 @@ module.exports = function(grunt) {
         const images    = flatten(fetchFiles(where_to_look));
         const flattened = flatten(images)
             .filter(item => !!item)
-            .filter(item => !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.filename));
+            .filter(item => !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.filename))
+            .filter(item => !ignored_extensions.some(ignored => item.filename.split('.')[1] === ignored));
+
         const hashes    = {};
 
         flattened.forEach(item => {

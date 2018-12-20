@@ -7,9 +7,6 @@ const {
     fetchFiles } = require('./utils/cli');
 
 const ignored_files            = [];
-const ignored_image_extensions = [
-    'DS_Store', 'zip',
-];
 
 const ignored_language_directories = [];
 
