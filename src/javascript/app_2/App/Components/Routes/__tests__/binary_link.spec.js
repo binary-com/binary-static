@@ -2,8 +2,8 @@ import React                  from 'react';
 import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
+import { NavLink }            from 'react-router-dom';
 import { BinaryLink }         from '../index';
-import { NavLink }            from "react-router-dom";
 
 configure({ adapter: new Adapter() });
 
@@ -25,13 +25,13 @@ describe('<BinaryLink />', () => {
         const wrapper = shallow(
             <BinaryLink to='/trade' />
         );
-        expect(wrapper.find(NavLink)).to.have.lengthOf(1);
+        expect(wrapper.find(NavLink)).to.have.length(1);
     });
     it('should not render <Navlink /> when property \'to\' is passed', () => {
         const wrapper = shallow(
             <BinaryLink />
         );
-        expect(wrapper.find(NavLink)).to.have.lengthOf(0);
+        expect(wrapper.find(NavLink)).to.have.length(0);
     });
     it('should render <a /> when property \'to\' is not passed', () => {
         const wrapper = shallow(

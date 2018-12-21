@@ -2,8 +2,8 @@ import React                  from 'react';
 import { expect }             from 'chai';
 import { configure, shallow } from 'enzyme';
 import Adapter                from 'enzyme-adapter-react-16';
-import { ButtonLink } from "../index";
-import { Link }       from 'react-router-dom';
+import { Link }               from 'react-router-dom';
+import { ButtonLink }         from '../index';
 
 configure({ adapter: new Adapter() });
 
@@ -25,7 +25,7 @@ describe('<ButtonLink />', () => {
         const wrapper = shallow(
             <ButtonLink />
         );
-        expect(wrapper.find(Link)).to.have.lengthOf(1);
+        expect(wrapper.find(Link)).to.have.length(1);
     });
     it('should render component with className if any given', () => {
         const wrapper = shallow(

@@ -1,25 +1,25 @@
 import React from 'react';
-import { expect }   from 'chai';
-import * as Helpers from '../helpers';
+import { expect }      from 'chai';
+import * as Helpers    from '../helpers';
 import getRoutesConfig from '../../../Constants/routes_config';
-import Trade from '../../../../Modules/Trading';
+import Trade           from 'Modules/Trading';
 
 describe('Helpers', () => {
     describe('normalizePath', () => {
         it('should return / as if path is empty', () => {
-            expect(Helpers.normalizePath('')).to.eql('/');
+            expect(Helpers.normalizePath('')).to.equal('/');
         });
         it('should return / + path as if path does not have /', () => {
-            expect(Helpers.normalizePath('trade')).to.eql('/trade');
+            expect(Helpers.normalizePath('trade')).to.equal('/trade');
         });
         it('should return / + path as if path does have /', () => {
-            expect(Helpers.normalizePath('/trade')).to.eql('/trade');
+            expect(Helpers.normalizePath('/trade')).to.equal('/trade');
         });
     });
 
     describe('findRouteByPath', () => {
         it('should return undefined when path is not in routes_config', () => {
-            expect(Helpers.findRouteByPath('invalidRoute', getRoutesConfig())).to.eql(undefined);
+            expect(Helpers.findRouteByPath('invalidRoute', getRoutesConfig())).to.be.undefined;
         });
         it('should return route_info when path is in routes_config and is not nested', () => {
             expect(Helpers.findRouteByPath('/trade', getRoutesConfig())).to.eql({
@@ -29,41 +29,28 @@ describe('Helpers', () => {
                 exact: true
             });
         });
-        it('should return route_info when path is in routes_config and is nested', () => {
+        it('should return route_info of parent route when path is in routes_config child level and is nested', () => {
             expect(Helpers.findRouteByPath('/settings/personal', getRoutesConfig())).to.have.all.keys('path', 'component', 'is_authenticated', 'routes');
+            expect(Helpers.findRouteByPath('/settings/personal', getRoutesConfig()).routes).to.be.instanceof(Array);
+            expect(Helpers.findRouteByPath('/settings/personal', getRoutesConfig()).routes).to.have.length(9);
+            expect(Helpers.findRouteByPath('/settings/personal', getRoutesConfig()).is_authenticated).to.be.equal(true);
+            expect(Helpers.findRouteByPath('/settings/personal', getRoutesConfig()).path).to.be.equal('/settings');
+
         });
-        // it('should return route_info when path is in routes_config and is nested', () => {
-        //     expect(Helpers.findRouteByPath('/settings/personal', getRoutesConfig())).to.include({
-        //             path: '/settings',
-        //             component: Settings,
-        //             is_authenticated: true,
-        //             routes: [
-        //                 { path: '/settings/personal',         component: PersonalDetails,        title: 'Personal Details' },
-        //                 { path: '/settings/financial',        component: FinancialAssessment,    title: 'Financial Assessment' },
-        //                 { path: '/settings/account_password', component: AccountPassword,        title: 'Account Password' },
-        //                 { path: '/settings/cashier_password', component: CashierPassword,        title: 'Cashier Password' },
-        //                 { path: '/settings/exclusion',        component: SelfExclusion,          title: 'Self Exclusion' },
-        //                 { path: '/settings/limits',           component: Limits,                 title: 'Account Limits' },
-        //                 { path: '/settings/history',          component: LoginHistory,           title: 'Login History' },
-        //                 { path: '/settings/token',            component: ApiToken,               title: 'API Token' },
-        //                 { path: '/settings/apps',             component: AuthorizedApplications, title: 'Authorized Applications' },
-        //             ],
-        //         });
-        // });
     });
 
     describe('isRouteVisible', () => {
         it('should return true if route needs user to be authenticated and user is logged in', () => {
-            expect(Helpers.isRouteVisible({ path: '/contract', is_authenticated: true }, true)).to.eql(true);
+            expect(Helpers.isRouteVisible({ path: '/contract', is_authenticated: true }, true)).to.equal(true);
         });
         it('should return false if route needs user to be authenticated and user is not logged in', () => {
-            expect(Helpers.isRouteVisible({ path: '/contract', is_authenticated: true }, false)).to.eql(false);
+            expect(Helpers.isRouteVisible({ path: '/contract', is_authenticated: true }, false)).to.equal(false);
         });
         it('should return true if route does not need user to be authenticated and user is not logged in', () => {
-            expect(Helpers.isRouteVisible({ path: '/contract', is_authenticated: false }, false)).to.eql(true);
+            expect(Helpers.isRouteVisible({ path: '/contract', is_authenticated: false }, false)).to.equal(true);
         });
         it('should return true if route does not need user to be authenticated and user is logged in', () => {
-            expect(Helpers.isRouteVisible({ path: '/contract', is_authenticated: false }, true)).to.eql(true);
+            expect(Helpers.isRouteVisible({ path: '/contract', is_authenticated: false }, true)).to.equal(true);
         });
     });
 
