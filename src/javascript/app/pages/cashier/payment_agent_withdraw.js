@@ -5,6 +5,8 @@ const getPaWithdrawalLimit = require('../../common/currency').getPaWithdrawalLim
 const FormManager          = require('../../common/form_manager');
 const validEmailToken      = require('../../common/form_validation').validEmailToken;
 const handleVerifyCode     = require('../../common/verification_code').handleVerifyCode;
+const getElementById       = require('../../../_common/common_functions').getElementById;
+const isVisible            = require('../../../_common/common_functions').isVisible;
 const localize             = require('../../../_common/localize').localize;
 const Url                  = require('../../../_common/url');
 const isBinaryApp          = require('../../../config').isBinaryApp;
@@ -21,6 +23,7 @@ const PaymentAgentWithdraw = (() => {
         ddl_agents: '#ddlAgents',
         txt_amount: '#txtAmount',
         txt_desc  : '#txtDescription',
+        frm_msg   : '#withdrawFormMessage',
     };
 
     let $views,
@@ -84,6 +87,12 @@ const PaymentAgentWithdraw = (() => {
                 fnc_additional_check: setAgentName,
                 enable_button       : true,
             });
+
+            $(field_ids.txt_desc).off().on('keyup', () => {
+                if (isVisible(getElementById('withdrawFormMessage'))) {
+                    $(field_ids.frm_msg).setVisibility(0);
+                }
+            });
         }
     };
 
@@ -132,7 +141,7 @@ const PaymentAgentWithdraw = (() => {
             default: // error
                 if (response.echo_req.dry_run === 1) {
                     setActiveView(view_ids.form);
-                    $('#withdrawFormMessage').setVisibility(1).html(response.error.message);
+                    $(field_ids.frm_msg).setVisibility(1).html(response.error.message);
                 } else if (response.error.code === 'InvalidToken') {
                     showPageError(localize('Your token has expired or is invalid. Please click [_1]here[_2] to restart the verification process.', ['<a href="javascript:;" onclick="var url = location.href.split(\'#\')[0]; window.history.replaceState({ url }, document.title, url); window.location.reload();">', '</a>']));
                 } else {
