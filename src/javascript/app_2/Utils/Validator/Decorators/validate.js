@@ -36,7 +36,7 @@ const validate = (dvrs) => (target, key) => {
         store.setDVR(key, dvrs);
         intercept(store, key, handler.bind(null, store, key));
         spyDisposer();
-    })  ;
+    });
 };
 
 export default validate;
