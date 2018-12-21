@@ -33,7 +33,7 @@ const Trading = () => (
                     <span id='trading_worm_chart' />
                     <span id='spot' />
                 </div>
-                <a className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</a>
+                <a id='symbol_tip' target='_blank'>&#9432;</a>
             </div>
             <div className='row clear' id='contract_form_content_wrapper'>
                 <div className='col row-inner gr-6 gr-12-p gr-12-m gr-no-gutter'>
@@ -175,7 +175,7 @@ const Trading = () => (
                                     <div className='row' id='reset_time' />
                                     <div className='row invisible' id='equals_row'>
                                         <input id='callputequal' type='checkbox' />
-                                        <label htmlFor='callputequal'><span data-balloon-length='xlarge' data-balloon={it.L('Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower.')}>{it.L('Allow equals')}</span></label>
+                                        <label htmlFor='callputequal'><span data-balloon={it.L('Win payout if exit spot is also equal to entry spot.')}>{it.L('Allow equals')}</span></label>
                                     </div>
                                 </form>
                             </div>
