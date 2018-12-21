@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import Errors from '../errors';
+import { expect }   from 'chai';
+import Errors       from '../errors';
 
 describe('Error', () => {
     let errors;
