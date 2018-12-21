@@ -12,10 +12,11 @@ describe('<RouteWithSubRoutes />', () => {
         const wrapper = shallow(<RouteWithSubRoutes />);
         expect(wrapper).to.have.length(1);
     });
-    it('should have props as passed as route (component is redirect)', () => {
+    it('should have props as passed as route', () => {
         const route = { path: '/', component: Redirect, title: '', exact: true, to: '/root' };
         const wrapper = shallow(<RouteWithSubRoutes {...route} />);
         expect(wrapper.prop('exact')).to.equal(true);
         expect(wrapper.prop('path')).to.equal('/');
+        expect(wrapper.prop('render')).to.be.an.instanceof(Function);
     });
 });
