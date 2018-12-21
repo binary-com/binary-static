@@ -205,6 +205,10 @@
                 position: relative;
                 padding: 10px 0;
 
+                @media (max-width: 600px) {
+                    padding: 10px 0 !important;
+                }
+
                 div.td-list, div.td-description {
                     overflow: hidden;
                     position: absolute;
@@ -213,7 +217,7 @@
                     &.td-list {
                         height: 0;
                         opacity: 0;
-                        margin-left: 6px;
+                        margin-left: 8px;
 
                         &.active {
                             transition: all 0.2s 0.2s;
