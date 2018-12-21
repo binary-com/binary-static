@@ -5,6 +5,7 @@ import {
 import { WS }                      from 'Services';
 import { formatPortfolioPosition } from './Helpers/format_response';
 import BaseStore                   from '../../base_store';
+import GTM                         from '../../../../_common/base/gtm';
 
 export default class PortfolioStore extends BaseStore {
     @observable data       = [];
@@ -61,6 +62,11 @@ export default class PortfolioStore extends BaseStore {
             WS.subscribeProposalOpenContract(contract_id, this.proposalOpenContractHandler, false);
         } else if (act === 'sell') {
             this.removePositionById(contract_id);
+        } else if (act === 'deposit') {
+            // avoid sending multiple requests in case of multiple tabs open
+            if (document.hasFocus()) {
+                GTM.pushDataLayer({ event: 'client_deposit' });
+            }
         }
     }
 
