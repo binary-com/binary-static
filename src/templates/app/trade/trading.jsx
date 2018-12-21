@@ -33,7 +33,7 @@ const Trading = () => (
                     <span id='trading_worm_chart' />
                     <span id='spot' />
                 </div>
-                <a className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</a>
+                <a id='symbol_tip' target='_blank'>&#9432;</a>
             </div>
             <div className='row clear' id='contract_form_content_wrapper'>
                 <div className='col row-inner gr-6 gr-12-p gr-12-m gr-no-gutter'>

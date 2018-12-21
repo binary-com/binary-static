@@ -20,6 +20,10 @@
     background: $COLOR_GREEN;
     font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
 
+    &.is-link {
+        max-width: 220px;
+        margin: 1rem auto;
+    }
     &:not([disabled]):hover {
         text-decoration: none;
     }
