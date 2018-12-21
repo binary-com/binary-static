@@ -58,7 +58,7 @@ const Contact2 = () => (
                                 <div className='chat-container'>
                                     <img className='chat-icon' src={it.url_for('images/pages/contact_2/chat-icon.svg')} />
                                     <a className='button-secondary' rel='noopener noreferrer' id='chat_button'>
-                                        <span>{it.L('Live Chat')}</span>
+                                        <span>{it.L('Live chat')}</span>
                                     </a>
                                 </div>
                                 <div className='hint gr-padding-10 gr-child'>

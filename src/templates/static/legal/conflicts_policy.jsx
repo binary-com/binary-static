@@ -2,7 +2,7 @@ import React from 'react';
 
 const ConflictsPolicy = () => (
     <div>
-        <h2 data-anchor='conflicts-policy'>{it.L('Conflicts Policy')}</h2>
+        <h2 data-anchor='conflicts-policy'>{it.L('Summary of the Conflicts Policy')}</h2>
         <p>{it.L('We provide here a summary of the policy we maintain in order to manage conflicts of interest in respect of the duties we owe to our clients.')}</p>
 
         <h2 data-anchor='general'>{it.L('General')}</h2>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, BuySellCurrency, HeaderSecondary, MtBox, NavButtons, Section } from './common.jsx';
+import { Box, BuySellCurrency, HeaderSecondary, MtBox, NavButtons, Section, MTAccountOpeningButton } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 
 const hundred_thousand = '100,000';
@@ -21,6 +21,8 @@ const Forex = () => (
                         ]}
                     />
                 </div>
+
+                <MTAccountOpeningButton />
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-forex-trading' header={it.L('What is Forex trading')}>

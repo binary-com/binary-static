@@ -38,7 +38,7 @@ const SignUpFrame = () => (
         <body>
             <GTM />
             <div className='home-content'>
-                <FormVerifyEmail text='Create Free Account' className='secondary-bg-color' dark_button='1'>
+                <FormVerifyEmail text='Create free account' className='secondary-bg-color' dark_button='1'>
                     <FormVerifyEmailChildren />
                 </FormVerifyEmail>
             </div>

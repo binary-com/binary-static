@@ -76,7 +76,7 @@ const SelfExclusion = () => (
                     </div>
                 </div>
 
-                <SubmitButton text={it.L('Update Settings')} type='submit' />
+                <SubmitButton text={it.L('Update settings')} type='submit' />
 
                 <div id='ukgc_requirement_notice' data-show='iom, malta' className='gr-row invisible'>
                     <div className='gr-8 gr-push-4 gr-12-m gr-push-0-m'>

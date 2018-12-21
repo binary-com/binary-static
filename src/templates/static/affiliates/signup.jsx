@@ -43,7 +43,7 @@ const Signup = () => (
 
                 <div className='gr-padding-30'>
                     <a className='button' href={it.affiliate_signup_url} target='_blank' rel='noopener noreferrer'>
-                        <span>{it.L('Apply Now')}</span>
+                        <span>{it.L('Apply now')}</span>
                     </a>
                 </div>
             </div>
@@ -167,7 +167,7 @@ const Signup = () => (
                 <p>{it.L('Sign up for the [_1] Affiliate Programme today:', it.website_name)}</p>
                 <p>
                     <a className='button' href={it.affiliate_signup_url} target='_blank' rel='noopener noreferrer'>
-                        <span>{it.L('Yes, I Want To Sign Up As An Affiliate')}</span>
+                        <span>{it.L('Yes, I want to sign up as an affiliate')}</span>
                     </a>
                 </p>
             </div>

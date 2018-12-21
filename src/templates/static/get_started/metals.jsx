@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage, MtBox } from './common.jsx';
+import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage, MtBox, MTAccountOpeningButton } from './common.jsx';
 import { List, Table } from '../../_common/components/elements.jsx';
 import SeparatorLine from '../../_common/components/separator_line.jsx';
 
@@ -42,6 +42,8 @@ const Metals = () => (
                         ]}
                     />
                 </div>
+
+                <MTAccountOpeningButton />
             </div>
             <div className='gr-9 gr-12-m'>
                 <Section id='what-metals-trading' header={it.L('What is metals trading')}>

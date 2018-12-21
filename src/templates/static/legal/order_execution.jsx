@@ -2,7 +2,7 @@ import React from 'react';
 
 const OrderExecution = () => (
     <div>
-        <h2 data-anchor='summary-order-execution-policy'>{it.L('Summary order execution policy')}</h2>
+        <h2 data-anchor='summary-order-execution-policy'>{it.L('Summary of the order execution policy')}</h2>
         <p>{it.L('The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client\'s best interests when opening and closing binary options trades with the client.')}</p>
         <p>{it.L('More specifically, when the Company enters into a binary option trade with the client (each, a "Contract"), the Company has a duty to provide the client with \'best execution\'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company\'s best execution policy.')}</p>
         <p>{it.L('The client should note that the Company\'s duty to provide the client with best execution does not apply to any gaming products that the client places with the Company, when there is no underlying financial market.')}</p>

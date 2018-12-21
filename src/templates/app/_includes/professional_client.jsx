@@ -4,9 +4,9 @@ import { Fieldset } from '../../_common/components/forms.jsx';
 const ProfessionalClient = () => (
     <Fieldset legend={it.L('Professional Client')} id='fs_professional' className='invisible'>
         <div className='gr-padding-10 gr-12'>
-            <p>{it.L('By default, all clients are treated as retail. Do you prefer to be treated as a professional client if you match the necessary criteria?')}</p>
+            <p>{it.L('By default, all clients are treated as retail but anyone can request to be treated as professional.')}</p>
             <input id='chk_professional' type='checkbox' />
-            <label htmlFor='chk_professional'>{it.L('I want to be treated as a professional client.')}&nbsp;</label>
+            <label htmlFor='chk_professional'>{it.L('I would like to be treated as a professional client.')}&nbsp;</label>
             <a id='professional_info_toggle' className='toggle-arrow' href='javascript:;'>{it.L('What is this?')}</a>
             <div id='professional_info' style={{ display: 'none' }}>
                 <div id='non_uk' className='invisible'>
@@ -37,8 +37,8 @@ const ProfessionalClient = () => (
             </ul>
             <p>{it.L('As a Professional Client, you must keep us informed about any changes that may affect your status.')}</p>
             <div className='center-text'>
-                <a className='button' id='btn_accept' href='javascript:;'><span>{it.L('ACCEPT')}</span></a>
-                <a className='button' id='btn_decline' data-value='decline' href='javascript:;'><span>{it.L('DECLINE')}</span></a>
+                <a className='button' id='btn_accept' href='javascript:;'><span>{it.L('Accept')}</span></a>
+                <a className='button' id='btn_decline' data-value='decline' href='javascript:;'><span>{it.L('Decline')}</span></a>
             </div>
             <p><strong>{it.L('Note: You may decline and continue as a Retail Client.')}</strong></p>
         </div>

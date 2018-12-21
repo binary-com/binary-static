@@ -15,6 +15,7 @@ const Frequency = () => (
         <option value=''>{it.L('Please select')}</option>
         <option value='0-5 transactions in the past 12 months'>{it.L('0-5 transactions in the past 12 months')}</option>
         <option value='6-10 transactions in the past 12 months'>{it.L('6-10 transactions in the past 12 months')}</option>
+        <option value='11-39 transactions in the past 12 months'>{it.L('11-39 transactions in the past 12 months')}</option>
         <option value='40 transactions or more in the past 12 months'>{it.L('40 transactions or more in the past 12 months')}</option>
     </React.Fragment>
 );
@@ -58,7 +59,8 @@ const FinancialInformationForm = () => (
             <option value='Self-Employed'>{it.L('Self-Employed')}</option>
             <option value='Investments &amp; Dividends'>{it.L('Investments &amp; Dividends')}</option>
             <option value='Pension'>{it.L('Pension')}</option>
-            <option value='Other'>{it.L('Other')}</option>
+            <option value='State Benefits'>{it.L('State Benefits')}</option>
+            <option value='Savings &amp; Inheritance'>{it.L('Savings & Inheritance')}</option>
         </FormRow>
 
         <FormRow id='employment_status' label={it.L('Employment Status')} type='select'>
@@ -77,7 +79,15 @@ const FinancialInformationForm = () => (
             <option value='Finance'>{it.L('Finance')}</option>
             <option value='Health'>{it.L('Health')}</option>
             <option value='Tourism'>{it.L('Tourism')}</option>
-            <option value='Other'>{it.L('Other')}</option>
+            <option value='Information &amp; Communications Technology'>{it.L('Information & Communications Technology')}</option>
+            <option value='Science &amp; Engineering'>{it.L('Science & Engineering')}</option>
+            <option value='Legal'>{it.L('Legal')}</option>
+            <option value='Social &amp; Cultural'>{it.L('Social & Cultural')}</option>
+            <option value='Agriculture'>{it.L('Agriculture')}</option>
+            <option value='Real Estate'>{it.L('Real Estate')}</option>
+            <option value='Food Services'>{it.L('Food Services')}</option>
+            <option value='Manufacturing'>{it.L('Manufacturing')}</option>
+            <option value='Unemployed'>{it.L('Unemployed')}</option>
         </FormRow>
 
         <FormRow id='occupation' label={it.L('Occupation')} type='select'>
@@ -94,7 +104,8 @@ const FinancialInformationForm = () => (
             <option value='Mining, Construction, Manufacturing and Transport Workers'>{it.L('Mining, Construction, Manufacturing and Transport Workers')}</option>
             <option value='Armed Forces'>{it.L('Armed Forces')}</option>
             <option value='Government Officers'>{it.L('Government Officers')}</option>
-            <option value='Others'>{it.L('Others')}</option>
+            <option value='Students'>{it.L('Students')}</option>
+            <option value='Unemployed'>{it.L('Unemployed')}</option>
         </FormRow>
 
         <FormRow id='source_of_wealth' label={it.L('Source of Wealth')} type='select'>
@@ -106,7 +117,6 @@ const FinancialInformationForm = () => (
             <option value='Inheritance'>{it.L('Inheritance')}</option>
             <option value='Investment Income'>{it.L('Investment Income')}</option>
             <option value='Sale of Property'>{it.L('Sale of Property')}</option>
-            <option value='Other'>{it.L('Other')}</option>
         </FormRow>
 
         <FormRow id='education_level' label={it.L('Level of Education')} type='select'>

@@ -128,9 +128,10 @@ class Markets extends React.Component {
                 symbol: underlying_symbol,
                 name  : this.underlyings[underlying_symbol],
             },
-            markets      : markets_arr,
-            active_market: market_symbol,
-            query        : '',
+            markets                : markets_arr,
+            active_market          : market_symbol,
+            query                  : '',
+            open_dropdown_scroll_id: 0,
         };
         this.el_underlying.value = underlying_symbol;
     }
@@ -192,6 +193,28 @@ class Markets extends React.Component {
         this.stickyHeader(position);
     }
 
+    openScrollMonitor = (element) => {
+        // if there is no scroll, we don't need to register anything.
+        if (element.scrollHeight < element.clientHeight) return;
+        const forceScroll = (e) => {
+            e.scrollTop += 1;
+            e.scrollTop -= 1;
+        };
+        this.setState({
+            open_dropdown_scroll_id: setInterval(forceScroll.bind(null, element), 300),
+        });
+        setTimeout(() => {
+            this.closeScrollMonitor();
+        }, 1500);
+    }
+
+    closeScrollMonitor = () => {
+        clearInterval(this.state.open_dropdown_scroll_id);
+        this.setState({
+            open_dropdown_scroll_id: 0,
+        });
+    }
+
     openDropdown = () => {
         this.setState({ open: true });
         Object.values(this.references.market_nodes).forEach((node) => {
@@ -202,6 +225,8 @@ class Markets extends React.Component {
         });
         this.references.list.scrollTop = 0;
         this.scrollToElement(this.state.underlying.symbol, 0, 70);
+        const scrollable = document.querySelector('.markets_dropdown .list');
+        this.openScrollMonitor(scrollable);
     };
 
     onUnderlyingClick = (underlying_symbol, market_symbol) => {
@@ -388,6 +413,7 @@ class Markets extends React.Component {
                             type='text'
                             maxLength={20}
                             onInput={searchSymbols}
+                            onChange={searchSymbols}
                             placeholder={localize('Search...')}
                             value={query}
                         />
