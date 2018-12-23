@@ -20,6 +20,7 @@ const config = {
         plugins   : [
             'classProperties',
             'decorators-legacy',
+            'dynamicImport',
             'exportDefaultFrom',
             'exportNamespaceFrom',
             'jsx',
