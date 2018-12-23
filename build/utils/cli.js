@@ -3,6 +3,7 @@ const fs        = require('fs');
 const md5       = require('md5');
 const snakeCase = require('lodash').snakeCase;
 const colors    = require('../config/constants').colors;
+const common    = require('../../scripts/common');
 
 const prompt = (message, type) => (`echo "${colors[type || 'info']}>>${colors.reset} ${message}"`);
 
@@ -30,10 +31,11 @@ const fetchFilesFromPath = (location) => {
     const directory = fs.readdirSync(location);
     return directory.map(file => fs.statSync(path.join(location, file))
         .isDirectory() ? fetchFilesFromPath(path.join(location, file)) : {
-            filename : file,
-            path     : location,
-            hash     : md5(fs.readFileSync(path.join(location, file))),
-            full_path: path.join(location, file),
+            filename     : file,
+            path         : location,
+            hash         : md5(fs.readFileSync(path.join(location, file))),
+            full_path    : path.join(location, file),
+            relative_path: path.join(location, file).replace(common.root_path, '.'),
         });
 };
 
@@ -59,26 +61,31 @@ const validateFilename = (name) => {
 
     return validations.every(validation => validation(name));
 };
+const convertToSnakeCase = item => snakeCase(item).replace(/_([^_]*)$/, '.$1');
 
-const convertToSnakeCase = (item) => {
-    let correct_name = snakeCase(item.split('.')[0]);
-    correct_name += `.${item.split('.')[1]}`;
-    return correct_name;
-};
-
-const renameFiles = (bad_file_names, grunt) => {
+const renameFiles = (bad_file_names, is_dry_run, logger = () => {}) => {
     Object.keys(bad_file_names).forEach(item => {
-        const converted = convertToSnakeCase(item, grunt);
-        if (!grunt.option('dry-run')) {
+        const converted = convertToSnakeCase(item);
+        if (!is_dry_run) {
             fs.renameSync(path.join(bad_file_names[item], item), path.join(bad_file_names[item], converted));
         }
-
-        grunt.log.ok(`${grunt.option('dry-run')
-            ? 'dry-run >> '
-            : ''}${bad_file_names[item]}/${item} converted to ${converted}.`);
+        logger(`${is_dry_run ? 'dry-run >>' : ''} ${item} converted to ${converted.bold}`);
     });
 };
 
+const gitIgnoreToArray = () => fs.readFileSync(path.resolve(common.root_path, '.gitignore'), 'utf8')
+    .split('\n')
+    .filter(line => /[^*][^/]$/gi.test(line));
+
+const getDefaultPath = (section) => {
+    switch (section) {
+        case 'app_2':
+            return 'app_2';
+        default:
+            return '';
+    }
+};
+
 module.exports = {
-    prompt, flatten, fetchFiles, validateFilename, convertToSnakeCase, renameFiles,
+    prompt, flatten, fetchFiles, validateFilename, convertToSnakeCase, renameFiles, gitIgnoreToArray, getDefaultPath,
 };
