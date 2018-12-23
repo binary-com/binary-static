@@ -37,12 +37,19 @@ const PaymentAgentTransfer = (() => {
         });
     };
 
+    const trimDescriptionContent = () => {
+        document.getElementById('description').addEventListener('change', e => {
+            e.srcElement.value = e.target.value.replace(/\s+/g, ' ');
+        });
+    };
+
     const init = (pa, currency) => {
         const form_id = '#frm_paymentagent_transfer';
         $form_error = $('#form_error');
 
         setFormVisibility(true);
         PaymentAgentTransferUI.updateFormView(currency);
+        trimDescriptionContent();
 
         common_request_fields = [
             { request_field: 'paymentagent_transfer', value: 1 },
