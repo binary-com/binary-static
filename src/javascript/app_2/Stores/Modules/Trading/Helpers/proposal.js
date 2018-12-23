@@ -42,7 +42,7 @@ const createProposalRequestForContract = (store, type_of_contract) => {
         const expiry_date = moment.utc(store.expiry_date);
         const start_time = store.start_time.split(':');
         let expiry_time = moment(window.time).hour(start_time[0]).minute(start_time[1]);
-        expiry_time = expiry_time.add(-10, 'minutes').format('HH:mm');
+        expiry_time = expiry_time.substract(1, 'minutes').format('HH:mm');
         obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
     }
 
