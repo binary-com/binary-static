@@ -1,10 +1,10 @@
-const path     = require('path');
-const fs       = require('fs');
-const common   = require('../scripts/common');
+const path      = require('path');
+const fs        = require('fs');
+const common    = require('../../scripts/common');
 const {
-  prompt,
-  flatten,
-  fetchFiles } = require('./utils/cli');
+    prompt,
+    flatten,
+    fetchFiles } = require('../utils/cli');
 
 const ignored_files            = [];
 const ignored_image_extensions = [
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
             });
         if (images_and_closest_directory.length > 0) {
             grunt.log.ok(`Couldn't find references for ${images_and_closest_directory.length} files.`);
-            grunt.log.ok(`Consider finding usage for the following files: `);
+            grunt.log.ok('Consider finding usage for the following files: ');
             images_and_closest_directory.forEach(orphan => grunt.log.writeln(`File: ${orphan}`));
             grunt.log.writeln('\n\n\nNOTE: ').bold;
             grunt.log.writeln('='.repeat(80));

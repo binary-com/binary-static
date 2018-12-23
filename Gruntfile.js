@@ -6,7 +6,10 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     require('load-grunt-config')(grunt, {
-        configPath: process.cwd() + '/build',
+        configPath: [
+            process.cwd() + '/build',
+            process.cwd() + '/build/image_checks'
+        ],
         loadGruntTasks: {
             pattern: 'grunt-*',
             scope  : 'devDependencies',

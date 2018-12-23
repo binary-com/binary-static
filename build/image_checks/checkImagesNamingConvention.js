@@ -1,12 +1,12 @@
 const path             = require('path');
-const common           = require('../scripts/common');
+const common           = require('../../scripts/common');
 const {
    prompt,
    flatten,
    fetchFiles,
    renameFiles,
    validateFilename,
-   convertToSnakeCase } = require('./utils/cli');
+   convertToSnakeCase } = require('../utils/cli');
 
 const ignored_files = [];
 

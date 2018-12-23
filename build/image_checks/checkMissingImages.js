@@ -1,14 +1,12 @@
 const path         = require('path');
 const fs           = require('fs');
-const common       = require('../scripts/common');
+const common       = require('../../scripts/common');
 const {
     prompt,
     flatten,
-    fetchFiles } = require('./utils/cli');
+    fetchFiles }   = require('../utils/cli');
 
 const ignored_files            = [];
-
-const ignored_language_directories = [];
 
 module.exports = function(grunt) {
     prompt('Checking for missing images...');
@@ -45,9 +43,7 @@ module.exports = function(grunt) {
         const not_found = [
             ...new Set(flatten(references)
                 .filter(item => !!item)
-                .filter(item => {
-                    return !fs.existsSync(path.resolve(common.root_path, `src/${item}`));
-                })),
+                .filter(item => !fs.existsSync(path.resolve(common.root_path, `src/${item}`)))),
         ].map(item => {
             grunt.log.ok(`Could not find image: ${item}`);
             return item;
