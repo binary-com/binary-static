@@ -27,7 +27,7 @@ describe('<BinaryLink />', () => {
         );
         expect(wrapper.find(NavLink)).to.have.length(1);
     });
-    it('should not render <Navlink /> when property \'to\' is passed', () => {
+    it('should not render <Navlink /> when property \'to\' is not passed', () => {
         const wrapper = shallow(
             <BinaryLink />
         );
@@ -39,7 +39,7 @@ describe('<BinaryLink />', () => {
         );
         expect(wrapper.contains(<a href='javascript:;'></a>)).to.equal(true);
     });
-    it('should not render <a> when property \'to\' is not passed', () => {
+    it('should not render <a> when property \'to\' is passed', () => {
         const wrapper = shallow(
             <BinaryLink to='/trade' />
         );
