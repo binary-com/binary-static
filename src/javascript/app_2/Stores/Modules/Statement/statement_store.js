@@ -1,12 +1,11 @@
 import {
     action,
     computed,
-    observable }                      from 'mobx';
-import moment                         from 'moment';
-import Client                         from '_common/base/client_base';
-import { WS }                         from 'Services';
-import { formatStatementTransaction } from './Helpers/format_response';
-import BaseStore                      from '../../base_store';
+    observable }                        from 'mobx';
+import moment                           from 'moment';
+import { WS }                           from 'Services';
+import { formatStatementTransaction }   from './Helpers/format_response';
+import BaseStore                        from '../../base_store';
 
 const batch_size = 100; // request response limit
 
@@ -18,11 +17,21 @@ export default class StatementStore extends BaseStore {
     @observable date_to        = '';
     @observable error          = '';
 
+    @computed
+    get is_empty() {
+        return !this.is_loading && this.data.length === 0;
+    }
+
+    @computed
+    get has_selected_date() {
+        return !!(this.date_from || this.date_to);
+    }
+
     @action.bound
     clearTable() {
-        this.data            = [];
-        this.has_loaded_all  = false;
-        this.is_loading      = false;
+        this.data           = [];
+        this.has_loaded_all = false;
+        this.is_loading     = false;
     }
 
     @action.bound
@@ -32,19 +41,20 @@ export default class StatementStore extends BaseStore {
     }
 
     @action.bound
-    fetchNextBatch() {
+    async fetchNextBatch() {
         if (this.has_loaded_all || this.is_loading) return;
 
         this.is_loading = true;
 
-        WS.statement(
+        const response = await WS.statement(
             batch_size,
             this.data.length,
             {
                 ...this.date_from && { date_from: moment(this.date_from).unix() },
-                ...this.date_to   && { date_to: moment(this.date_to).add(1, 'd').subtract(1, 's').unix() },
-            }
-        ).then(this.statementHandler);
+                ...this.date_to && { date_to: moment(this.date_to).add(1, 'd').subtract(1, 's').unix() },
+            },
+        );
+        this.statementHandler(response);
     }
 
     @action.bound
@@ -54,9 +64,10 @@ export default class StatementStore extends BaseStore {
             return;
         }
 
-        const currency = Client.get('currency');
         const formatted_transactions = response.statement.transactions
-            .map(transaction => formatStatementTransaction(transaction, currency));
+            .map(transaction => formatStatementTransaction(transaction,
+                this.root_store.client.currency,
+            ));
 
         this.data           = [...this.data, ...formatted_transactions];
         this.has_loaded_all = formatted_transactions.length < batch_size;
@@ -75,7 +86,7 @@ export default class StatementStore extends BaseStore {
     @action.bound
     handleScroll(event) {
         const { scrollTop, scrollHeight, clientHeight } = event.target;
-        const left_to_scroll = scrollHeight - (scrollTop + clientHeight);
+        const left_to_scroll                            = scrollHeight - (scrollTop + clientHeight);
 
         if (left_to_scroll < 2000) {
             this.fetchNextBatch();
@@ -83,23 +94,24 @@ export default class StatementStore extends BaseStore {
     }
 
     @action.bound
-    onMount() {
-        this.fetchNextBatch();
+    accountSwitcherListener() {
+        return new Promise((resolve) => {
+            this.clearTable();
+            this.clearDateFilter();
+            return resolve(this.fetchNextBatch());
+        });
+    }
+
+    @action.bound
+    async onMount() {
+        this.onSwitchAccount(this.accountSwitcherListener);
+        await this.fetchNextBatch();
     }
 
     @action.bound
     onUnmount() {
+        this.disposeSwitchAccount();
         this.clearTable();
         this.clearDateFilter();
-    }
-
-    @computed
-    get is_empty() {
-        return !this.is_loading && this.data.length === 0;
-    }
-
-    @computed
-    get has_selected_date() {
-        return !!(this.date_from || this.date_to);
     }
 }
