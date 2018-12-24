@@ -37,6 +37,7 @@ const PaymentAgentTransfer = (() => {
         });
     };
 
+    // Remove multiline and excess whitespaces from description text.
     const trimDescriptionContent = () => {
         document.getElementById('description').addEventListener('change', e => {
             e.srcElement.value = e.target.value.replace(/\s+/g, ' ');
