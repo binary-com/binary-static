@@ -1,58 +1,16 @@
 import classNames        from 'classnames';
 import PropTypes         from 'prop-types';
 import React             from 'react';
-import Client            from '_common/base/client_base';
 import { localize }      from '_common/localize';
+import { UpgradeButton } from 'App/Components/Elements/AccountSwitcher/upgrade_button.jsx';
 import { IconLogout }    from 'Assets/Header/Drawer';
-import { requestLogout } from 'Services';
-import { switchAccount } from 'Services/Helpers/switch_account';
-import { UpgradeButton } from './upgrade_button.jsx';
-
-const getAccountInfo = (loginid) => {
-    const currency     = Client.get('currency', loginid);
-    const is_virtual   = Client.get('is_virtual', loginid);
-    const account_type = !is_virtual && currency ? currency : Client.getAccountTitle(loginid);
-
-    return {
-        loginid,
-        is_virtual,
-        icon : account_type.toLowerCase(), // TODO: display the icon
-        title: account_type.toLowerCase() === 'virtual' ? localize('DEMO') : account_type,
-    };
-};
-
-const makeAccountsList = () => Client.getAllLoginids().map(loginid => (
-    loginid !== Client.get('loginid') &&
-    !Client.get('is_disabled', loginid) &&
-    Client.get('token', loginid) ?
-        getAccountInfo(loginid) :
-        undefined
-)).filter(account => account);
+import { requestLogout } from 'Services/index';
+import { connect }       from 'Stores/connect';
 
 class AccountSwitcher extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            accounts_list: makeAccountsList(),
-        };
-    }
-
-    componentDidMount() {
-        document.addEventListener('mousedown', this.handleClickOutside);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClickOutside);
-    }
-
     setWrapperRef = (node) => {
         this.wrapper_ref = node;
     };
-
-    doSwitch(loginid) {
-        this.props.toggle();
-        switchAccount(loginid);
-    }
 
     handleClickOutside = (event) => {
         const accounts_toggle_btn = !(event.target.classList.contains('acc-info'));
@@ -62,17 +20,30 @@ class AccountSwitcher extends React.Component {
         }
     };
 
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    async doSwitch(loginid) {
+        this.props.toggle();
+        await this.props.switchAccount(loginid);
+    }
+
     render() {
-        if (!Client.isLoggedIn()) return false;
+        if (!this.props.is_logged_in) return false;
 
         return (
             <div className='acc-switcher-list' ref={this.setWrapperRef}>
-                {(this.state.accounts_list.length > 0) &&
-                this.state.accounts_list.map((account) => (
+                {(this.props.account_list.length > 0) &&
+                this.props.account_list.map((account) => (
                     <React.Fragment key={account.loginid}>
                         <div
                             className={classNames('acc-switcher-account', account.icon)}
-                            onClick={() => this.doSwitch(account.loginid)}
+                            onClick={this.doSwitch.bind(this, account.loginid)}
                         >
                             <span className='acc-switcher-id'>{account.loginid}</span>
                             <span className='acc-switcher-type'>{account.title}</span>
@@ -94,10 +65,20 @@ class AccountSwitcher extends React.Component {
 }
 
 AccountSwitcher.propTypes = {
+    account_list      : PropTypes.array,
+    is_logged_in      : PropTypes.bool,
     is_upgrade_enabled: PropTypes.bool,
     is_visible        : PropTypes.bool,
     onClickUpgrade    : PropTypes.func,
     toggle            : PropTypes.func,
 };
 
-export { AccountSwitcher };
+const account_switcher = connect(
+    ({ client }) => ({
+        account_list : client.account_list,
+        is_logged_in : client.is_logged_in,
+        switchAccount: client.switchAccount,
+    }),
+)(AccountSwitcher);
+
+export { account_switcher as AccountSwitcher };
