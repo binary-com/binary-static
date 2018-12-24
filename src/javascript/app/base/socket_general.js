@@ -110,7 +110,7 @@ const BinarySocketGeneral = (() => {
                 break;
             case 'transaction':
                 GTM.pushTransactionData(response, { bom_ui: 'legacy' });
-            break;
+                break;
             case 'logout':
                 Client.doLogout(response);
                 break;
