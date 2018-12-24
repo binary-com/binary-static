@@ -2,17 +2,18 @@ import PropTypes                from 'prop-types';
 import React                    from 'react';
 import { withRouter }           from 'react-router';
 import { formatMoney }          from '_common/base/currency_base';
-import { connect }              from 'Stores/connect';
 import {
     AccountInfo,
     LoginButton,
     InstallPWAButton,
     MenuLinks,
     ToggleMenuDrawer,
-    ToggleNotificationsDrawer } from '../../Components/Layout/Header';
-import header_links             from '../../Constants/header_links';
+    ToggleNotificationsDrawer } from 'App/Components/Layout/Header';
+import header_links             from 'App/Constants/header_links';
+import { connect }              from 'Stores/connect';
 
 const Header = ({
+    account_type,
     balance,
     can_upgrade,
     currency,
@@ -57,6 +58,7 @@ const Header = ({
                         { is_logged_in ?
                             <React.Fragment>
                                 <AccountInfo
+                                    account_type={account_type}
                                     balance={formatMoney(currency, balance, true)}
                                     is_upgrade_enabled={can_upgrade}
                                     onClickUpgrade={onClickUpgrade}
@@ -78,6 +80,7 @@ const Header = ({
 };
 
 Header.propTypes = {
+    account_type             : PropTypes.string,
     balance                  : PropTypes.string,
     can_upgrade              : PropTypes.bool,
     currency                 : PropTypes.string,
@@ -98,7 +101,8 @@ Header.propTypes = {
 // need to wrap withRouter around connect
 // to prevent updates on <MenuLinks /> from being blocked
 export default withRouter(connect(
-    ({ ui, client }) => ({
+    ({ client, ui }) => ({
+        account_type             : client.account_title,
         balance                  : client.balance,
         can_upgrade              : client.can_upgrade,
         currency                 : client.currency,
