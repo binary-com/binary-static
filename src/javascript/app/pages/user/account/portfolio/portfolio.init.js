@@ -33,8 +33,8 @@ const PortfolioInit = (() => {
         BinarySocket.send({ portfolio: 1 }).then((response) => {
             updatePortfolio(response);
         });
-        // Subscribe to transactions to auto update new purchases
-        BinarySocket.send({ transaction: 1, subscribe: 1 }, { callback: transactionResponseHandler });
+        // Wait for transactions to auto update on new purchases
+        BinarySocket.wait('transaction').then(transactionResponseHandler);
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             updateOAuthApps(response);
         });
@@ -128,7 +128,6 @@ const PortfolioInit = (() => {
         } else if (response.transaction.action === 'sell') {
             removeContract(response.transaction.contract_id);
         }
-        GTM.pushTransactionData(response, { bom_ui: 'legacy' });
     };
 
     const updateIndicative = (data) => {
