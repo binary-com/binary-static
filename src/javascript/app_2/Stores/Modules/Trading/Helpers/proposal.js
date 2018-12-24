@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import moment                              from 'moment';
 import { getDecimalPlaces }                from '_common/base/currency_base';
 import { isDeepEqual }                     from '_common/utility';
@@ -39,11 +40,18 @@ export const createProposalRequests = (store) => {
 const createProposalRequestForContract = (store, type_of_contract) => {
     const obj_expiry = {};
     if (store.expiry_type === 'endtime') {
+        console.log(store);
         const expiry_date = moment.utc(store.expiry_date);
         const start_time = store.start_time.split(':');
-        let expiry_time = moment(window.time).hour(start_time[0]).minute(start_time[1]);
-        expiry_time = expiry_time.substract(1, 'minutes').format('HH:mm');
-        obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
+        if (store.contract_start_type === 'spot') {
+            const expiry_time = store.expiry_time;
+            obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
+        } else {
+            let expiry_time = moment(window.time).hour(start_time[0]).minute(start_time[1]);
+            expiry_time = expiry_time.add(-10, 'minutes').format('HH:mm');
+            console.log(expiry_time);
+            obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
+        }
     }
 
     return {
