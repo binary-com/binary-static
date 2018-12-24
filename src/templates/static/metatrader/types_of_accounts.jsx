@@ -57,7 +57,7 @@ const TypesOfAccounts = () => (
                 className='hide-maltainvest'
                 image='standard'
                 title={it.L('Standard')}
-                text={it.L('The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.')}
+                text={it.L('The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market.')}
             />
             <Box
                 className='hide-maltainvest'
