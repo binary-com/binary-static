@@ -79,6 +79,7 @@ const BinarySocketGeneral = (() => {
                         BinarySocket.send({ get_account_status: 1 });
                         BinarySocket.send({ payout_currencies: 1 });
                         BinarySocket.send({ mt5_login_list: 1 });
+                        BinarySocket.send({ transaction: 1, subscribe: 1 });
                         const clients_country = response.authorize.country || Client.get('residence');
                         setResidence(clients_country);
                         // for logged in clients send landing company with IP address as residence
@@ -107,6 +108,9 @@ const BinarySocketGeneral = (() => {
             case 'balance':
                 updateBalance(response);
                 break;
+            case 'transaction':
+                GTM.pushTransactionData(response, { bom_ui: 'legacy' });
+            break;
             case 'logout':
                 Client.doLogout(response);
                 break;
