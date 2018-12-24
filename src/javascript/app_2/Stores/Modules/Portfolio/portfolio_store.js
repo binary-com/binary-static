@@ -102,7 +102,17 @@ export default class PortfolioStore extends BaseStore {
     }
 
     @action.bound
+    accountSwitcherListener () {
+        return new Promise((resolve) => {
+            if (this.data.length === 0) {
+                resolve(this.initializePortfolio());
+            }
+        });
+    }
+
+    @action.bound
     onMount() {
+        this.onSwitchAccount(this.accountSwitcherListener);
         if (this.data.length === 0) {
             this.initializePortfolio();
         }
@@ -110,6 +120,7 @@ export default class PortfolioStore extends BaseStore {
 
     @action.bound
     onUnmount() {
+        this.disposeSwitchAccount();
         // keep data and connections for portfolio drawer on desktop
         if (this.root_store.ui.is_mobile) {
             this.clearTable();
