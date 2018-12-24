@@ -2,8 +2,8 @@ import debounce                          from 'lodash.debounce';
 import {
     action,
     observable,
-    runInAction,
-    reaction }                           from 'mobx';
+    reaction,
+    runInAction }                        from 'mobx';
 import BinarySocket                      from '_common/base/socket_base';
 import { localize }                      from '_common/localize';
 import {
