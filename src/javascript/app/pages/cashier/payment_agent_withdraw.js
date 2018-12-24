@@ -88,10 +88,9 @@ const PaymentAgentWithdraw = (() => {
                 enable_button       : true,
             });
 
-            $(field_ids.txt_desc).off().on('keyup', () => {
-                if (isVisible(getElementById('withdrawFormMessage'))) {
-                    $(field_ids.frm_msg).setVisibility(0);
-                }
+            $(field_ids.txt_desc).off().on('change', (e) => {
+                // replace newlines, tabs with spaces
+                e.target.value = e.target.value.replace(/\s+/g, ' ');
             });
         }
     };
