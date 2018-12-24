@@ -199,7 +199,7 @@ const GTM = (() => {
                     symbol  : response.transaction.symbol,
                 },
             };
-            Object.assign(data, ...extra_data);
+            Object.assign(data, extra_data);
             if (['buy', 'sell'].includes(response.transaction.action)) {
                 Object.assign(data, {
                     contract: {
