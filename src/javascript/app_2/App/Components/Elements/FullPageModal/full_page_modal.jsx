@@ -39,7 +39,6 @@ const FullPageModal = ({
 };
 
 FullPageModal.propTypes = {
-    body               : PropTypes.string,
     cancel_button_text : PropTypes.string,
     confirm_button_text: PropTypes.string,
     is_visible         : PropTypes.bool,
