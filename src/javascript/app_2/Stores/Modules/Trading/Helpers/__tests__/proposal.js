@@ -65,6 +65,11 @@ describe('Proposal', () => {
                 },
                 expiry_type: "duration",
                 form_components: ["duration", "amount", "start_date"],
+                root_store: {
+                    client: {
+                        currency: "USD"
+                    },
+                },
                 proposal_requests: {
                     CALL: {
                         amount: 10,
@@ -121,6 +126,11 @@ describe('Proposal', () => {
                 },
                 expiry_type: "duration",
                 form_components: ["duration", "amount", "start_date"],
+                root_store: {
+                    client: {
+                        currency: "USD"
+                    },
+                },
                 proposal_requests: {
                     CALL: {
                         amount: 10,
