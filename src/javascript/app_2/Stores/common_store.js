@@ -1,7 +1,6 @@
 import {
     action,
-    observable,
-}                          from 'mobx';
+    observable }           from 'mobx';
 import moment              from 'moment';
 import { currentLanguage } from 'Utils/Language/index';
 import BaseStore           from './base_store';
