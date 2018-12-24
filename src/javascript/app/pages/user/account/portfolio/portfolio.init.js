@@ -4,6 +4,7 @@ const Client           = require('../../../../base/client');
 const BinarySocket     = require('../../../../base/socket');
 const formatMoney      = require('../../../../common/currency').formatMoney;
 const GetAppDetails    = require('../../../../common/get_app_details');
+const GTM              = require('../../../../../_common/base/gtm');
 const localize         = require('../../../../../_common/localize').localize;
 const urlParam         = require('../../../../../_common/url').param;
 const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
@@ -127,6 +128,7 @@ const PortfolioInit = (() => {
         } else if (response.transaction.action === 'sell') {
             removeContract(response.transaction.contract_id);
         }
+        GTM.pushTransactionData(response, { bom_ui: 'legacy' });
     };
 
     const updateIndicative = (data) => {
