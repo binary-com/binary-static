@@ -54,7 +54,7 @@ const PaymentAgentWithdraw = () => (
                         <FormRow
                             label={it.L('Further Instructions')}
                             id='txtDescription'
-                            type='custom'
+                            type='textarea'
                             attributes={{ rows: 4, cols: 19, maxLength: 250 }}
                         />
                         <SubmitButton msg_id='withdrawFormMessage' type='submit' text={it.L('Submit')} />
