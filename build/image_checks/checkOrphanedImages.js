@@ -5,6 +5,7 @@ const {
     flatten,
     fetchFiles,
     gitIgnoreToArray,
+    getRelativeImagePath,
     getDefaultPath } = require('../utils/cli');
 
 const ignored_files            = gitIgnoreToArray();
@@ -46,9 +47,7 @@ module.exports = function(grunt) {
             );
 
         grunt.log.ok(`Found ${found.length} files, looking for references.`);
-        const getRelativeImagePath = (found_file) => found_file.relative_path.substring(13).startsWith('app_2')
-            ? found_file.relative_path.substring(19)
-            : found_file.relative_path.substring(13);
+
 
         flatten(fetchFiles(source_directory))
             .filter(

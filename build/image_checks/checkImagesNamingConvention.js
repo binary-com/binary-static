@@ -1,15 +1,46 @@
-const path             = require('path');
-const common           = require('../../scripts/common');
+const path                    = require('path');
+const fs                      = require('fs');
+const common                  = require('../../scripts/common');
 const {
     getDefaultPath,
+    getImageReferences,
     gitIgnoreToArray,
     flatten,
     fetchFiles,
     renameFiles,
     validateFilename,
-    convertToSnakeCase } = require('../utils/cli');
+    convertToSnakeCase }      = require('../utils/cli');
 
 const ignored_files = gitIgnoreToArray();
+
+const renameReferences = (files, search, is_dry_run, logger) => {
+    getImageReferences(search)
+        .forEach(item => {
+            item.map(found => {
+                if (found.reference != null) {
+                    const filename  = found.reference.split('/').pop();
+                    const converted = convertToSnakeCase(filename);
+                    if (filename !== converted) {
+                        if (!is_dry_run) {
+                            // we should update
+                            const file     = fs.readFileSync(path.resolve(common.root_path, found.path),
+                                'utf8',
+                            );
+                            const replaced = file.replace(filename, converted);
+                            if (replaced !== file) {
+                                fs.writeFileSync(path.resolve(common.root_path, found.path), replaced, 'utf8');
+                            }
+                        }
+                        let message = '';
+                        if (is_dry_run) {
+                            message = 'dry-run >>';
+                        }
+                        logger(`${message} ${filename} in ${found.path}:${found.line} to ${converted}`);
+                    }
+                }
+            });
+        });
+};
 
 module.exports = function(grunt) {
     grunt.initConfig({
@@ -31,9 +62,11 @@ module.exports = function(grunt) {
 
         const bad_file_names = {};
         flattened.forEach(item => {
-            Object.assign(bad_file_names,
-                validateFilename(item.filename.split('.')[0]) ? null : { [item.filename]: item.relative_path },
-            );
+            Object.assign(bad_file_names, validateFilename(item.filename.split('.')[0]) ? null : {
+                [item.filename]: {
+                    relative_path: item.relative_path, path         : item.path,
+                },
+            });
         });
 
         Object.keys(bad_file_names).forEach((key) => (bad_file_names[key] == null) && delete bad_file_names[key]);
@@ -43,19 +76,33 @@ module.exports = function(grunt) {
         }
         grunt.log.error(`${Object.keys(bad_file_names).length} files found with bad naming, issue a fix: `);
         Object.keys(bad_file_names).forEach(item => {
-            const error_message = `${bad_file_names[item]} >> ${`${convertToSnakeCase(item, grunt)}`.bold}`;
+            const error_message = `${bad_file_names[item].relative_path} >> ${`${convertToSnakeCase(item,
+                grunt,
+            )}`.bold}`;
             grunt.log.writeln(error_message);
         });
 
         grunt.log.writeln('\n'.repeat(2));
         if (grunt.option('auto-fix')) {
+            const source_directory = [
+                path.resolve(common.root_path, `src/javascript/${default_path}`),
+                path.resolve(common.root_path, `src/sass/${default_path}`),
+            ];
             grunt.log.ok('Attempting to rename the files...');
             renameFiles(bad_file_names, grunt.option('dry-run'), grunt.log.writeln);
+
+            grunt.log.ok('Attempting to fix the source files to match renamed files...');
+            renameReferences(bad_file_names,
+                source_directory,
+                !!grunt.option('dry-run'),
+                grunt.log.writeln
+            );
             return true;
         }
 
         grunt.log.error('Use --auto-fix option to fix automatically.');
-        grunt.log.error('Use --dry-run in combination with --auto-fix, if you are not sure that you want to rename all the files.');
+        grunt.log.error(
+            'Use --dry-run in combination with --auto-fix, if you are not sure that you want to rename all the files.');
         grunt.fail.warn(`Found ${Object.keys(bad_file_names).length} invalid files. please resolve this issue or use another asset.`);
         return false;
 

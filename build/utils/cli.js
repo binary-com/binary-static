@@ -67,9 +67,17 @@ const renameFiles = (bad_file_names, is_dry_run, logger = () => {}) => {
     Object.keys(bad_file_names).forEach(item => {
         const converted = convertToSnakeCase(item);
         if (!is_dry_run) {
-            fs.renameSync(path.join(bad_file_names[item], item), path.join(bad_file_names[item], converted));
+            fs.renameSync(
+                path.resolve(
+                    bad_file_names[item].relative_path
+                ),
+                path.join(
+                    bad_file_names[item].path,
+                    converted
+                )
+            );
         }
-        logger(`${is_dry_run ? 'dry-run >>' : ''} ${item} converted to ${converted.bold}`);
+        logger(`${is_dry_run ? 'dry-run >>' : ''} ${bad_file_names[item].relative_path} converted to ${converted.bold}`);
     });
 };
 
@@ -85,7 +93,62 @@ const getDefaultPath = (section) => {
             return '';
     }
 };
+/**
+ * Accept a flatten array of objects (see fetchFiles for return type)
+ * @param found_file
+ * @returns {string}
+ */
+const getRelativeImagePath = (found_file) => found_file.relative_path.substring(13).startsWith('app_2')
+    ? found_file.relative_path.substring(19)
+    : found_file.relative_path.substring(13);
+
+/**
+ * Extract references to images
+ * @param source_directories
+ * @param ignored_files
+ * @returns {*}
+ */
+const getImageReferences = (source_directories, ignored_files = []) => flatten(fetchFiles(source_directories))
+    .filter(item => !!item && !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.path))
+    .map(item => {
+        // Search for the occurrence of images, if found, remove the entry from that array.
+        const file    = fs.readFileSync(path.resolve(item.full_path), {
+            encoding: 'utf8',
+        });
+        const lines   = file.split('\n');
+        const matches = [];
+        lines.forEach((line, index) => {
+            if (!line) {
+                return;
+            }
+            const matched = line.match(/Images\/app_2\/([^';]*)|<img([^>]*)>|background: url([^-color][^;]*)/g);
+            if (matched && matched.length > 0) {
+                matches.push({
+                    path   : item.relative_path, line   : index + 1, matched: matched[0],
+                });
+            }
+        });
+
+        return matches.length ? matches : null;
+    })
+    .filter(item => !!item && item.filter(found => {
+        found.reference = /images\/([\/\w\-_d.]+)|Images\/app_2\/([\/\w\-_d.]+)/g.exec(found.matched);
+        if (found.reference) {
+            found.reference = found.reference[2] || found.reference[1];
+            return found;
+        }
+        return false;
+    }));
 
 module.exports = {
-    prompt, flatten, fetchFiles, validateFilename, convertToSnakeCase, renameFiles, gitIgnoreToArray, getDefaultPath,
+    prompt,
+    flatten,
+    fetchFiles,
+    validateFilename,
+    convertToSnakeCase,
+    renameFiles,
+    gitIgnoreToArray,
+    getDefaultPath,
+    getRelativeImagePath,
+    getImageReferences,
 };

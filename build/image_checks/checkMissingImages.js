@@ -3,9 +3,9 @@ const fs           = require('fs');
 const common       = require('../../scripts/common');
 const {
     getDefaultPath,
+    getImageReferences,
     gitIgnoreToArray,
-    flatten,
-    fetchFiles }   = require('../utils/cli');
+    flatten }      = require('../utils/cli');
 
 const ignored_files = gitIgnoreToArray();
 
@@ -26,42 +26,7 @@ module.exports = function(grunt) {
         // Actual test is running from here. Please note that due to the nature of the search we are performing,
         // This will produce errors for the images that are referenced statically. If there is a string
         // manipulation, this script cannot find the reference to it.
-        const references = flatten(fetchFiles(source_directories))
-            .filter(item => !!item &&
-                !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.path)
-            )
-            .map(item => {
-                // Search for the occurrence of images, if found, remove the entry from that array.
-                const file    = fs.readFileSync(path.resolve(item.full_path), {
-                    encoding: 'utf8',
-                });
-                const lines = file.split('\n');
-                const matches = [];
-                lines.forEach((line, index) => {
-                    if (!line) {
-                        return;
-                    }
-                    const matched = line.match(/<img([^>]*)>|background: url([^-color][^;]*)/g);
-                    if (matched && matched.length > 0) {
-                        matches.push({
-                            path   : item.relative_path,
-                            line   : index + 1,
-                            matched: matched[0],
-                        });
-                    }
-                });
-
-                return matches.length ? matches : null;
-            })
-            .filter(item => !!item &&
-                item.filter(found => {
-                    found.reference = /images\/([/\w\-_d.]+)/g.exec(found.matched);
-                    if (found.reference) {
-                        found.reference = found.reference[1];
-                        return found;
-                    }
-                    return false;
-                }));
+        const references = getImageReferences(source_directories, ignored_files);
 
         // Check for existence of the images relative to images directory
         const not_found = [
