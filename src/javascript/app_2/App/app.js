@@ -22,11 +22,13 @@ const initApp = () => {
     root_store.client.init();
     root_store.modules.trade.init();
 
-    const app = document.getElementById('binary_app');
+    document.addEventListener('DOMContentLoaded', () => {
+        const app = document.getElementById('binary_app');
 
-    if (app) {
-        render(<App root_store={root_store} />, app);
-    }
+        if (app) {
+            render(<App root_store={root_store} />, app);
+        }
+    });
 };
 
 export default initApp;
