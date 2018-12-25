@@ -5,37 +5,20 @@ import { IconArrow }   from 'Assets/Common';
 import {
     formatDate,
     daysFromTodayTo }  from 'Utils/Date';
-import Calendar        from 'App/Components/Elements/Calendar';
 import DatePickerInput from './date_picker_input.jsx';
+import Calendar        from '../../Elements/Calendar';
 
 class DatePicker extends React.PureComponent {
     state = {
         value                : '',
         is_datepicker_visible: false,
         is_close_btn_visible : false,
-        calendar_date        : '',
-        selected_date        : '',
     };
-
-    static getDerivedStateFromProps({ value, mode, ...props }, state) {
-        const { date_format, start_date } = props;
-        const new_date = (mode === 'duration') ? moment.utc().add(value, 'days').format(date_format) : value;
-        if (moment.utc(new_date, date_format).isValid() || !new_date) {
-            if (!new_date) {
-                const current_date = moment.utc(start_date).format(date_format);
-                state.calendar_date = current_date;
-                state.selected_date = current_date;
-            } else {
-                state.selected_date = formatDate(new_date);
-                state.calendar_date = formatDate(new_date);
-            }
-        }
-
-        return state;
-    }
 
     componentDidMount() {
         document.addEventListener('click', this.onClickOutside, true);
+        const { value, mode } = this.props;
+        this.updateDatePickerValue(value, mode);
     }
 
     componentWillUnmount() {
@@ -186,8 +169,6 @@ class DatePicker extends React.PureComponent {
                         ref={node => { this.calendar = node; }}
                         onSelect={this.onSelectCalendar}
                         {...this.props}
-                        selected_date={this.state.selected_date}
-                        calendar_date={this.state.current_date}
                     >
                         <DatePickerInput
                             class_name='calendar-input'
