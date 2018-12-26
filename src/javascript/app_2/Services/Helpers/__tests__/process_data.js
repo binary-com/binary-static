@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+import { expect }             from 'chai';
 import { getOauthAppsObject } from '../process_data.js';
-import BinarySocket from '_common/base/socket_base';
+import BinarySocket           from '_common/base/socket_base';
 
 describe('getOauthAppsObject', () => {
     it('Expects default oauth object when there are no arguments', () => {

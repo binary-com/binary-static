@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+import { expect }    from 'chai';
 import * as DateTime from '../date_time.js';
-import moment from 'moment';
+import moment        from 'moment';
 
 describe('toMoment', () => {
     it('return utc epoch value date based on client epoch value passed', () => {

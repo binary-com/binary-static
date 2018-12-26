@@ -1,6 +1,6 @@
-import { expect } from 'chai';
+import { expect }    from 'chai';
 import * as Duration from '../duration.js';
-import BinarySocket from '_common/base/socket_base';
+import BinarySocket  from '_common/base/socket_base';
 
 describe('buildDurationConfig', () => {
     const contract = {
