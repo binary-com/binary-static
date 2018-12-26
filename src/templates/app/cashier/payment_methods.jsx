@@ -496,7 +496,7 @@ const PaymentMethods = () => {
                                 row: [
                                     { text: <PaymentLogo logo='tether' /> },
                                     { attributes: { colSpan: 5, className: 'toggler' }, custom_td : <CustomTableData data={[
-                                        { td: it.L('Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more info, please visit [_1].', '<a href="https://litecoin.org" target="_blank">https://tether.to</a>') },
+                                        { td: it.L('Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more info, please visit [_1].', '<a href="https://tether.to" target="_blank">https://tether.to</a>') },
                                         { td_list: [
                                             { text: 'UST' },
                                             { text: '1' },
