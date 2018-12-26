@@ -1,6 +1,4 @@
-import React      from 'react';
 import { action } from 'mobx';
-import Localize   from 'App/Components/Elements/localize.jsx';
 
 let common_store;
 
@@ -29,14 +27,17 @@ const OutdatedBrowser = (() => {
 
     const updateStore = action('showError', () => {
         if (common_store) {
-            common_store.showError(
-                <Localize
-                    str='Your web browser is out of date and may affect your trading experience. Please [_1]update your browser[_2].'
-                    replacers={{
-                        '1_2': <a href='http://outdatedbrowser.com' target='_blank' rel='noopener noreferrer' />,
-                    }}
-                />
-            );
+            common_store.showError({
+                str      : 'Your web browser is out of date and may affect your trading experience. Please [_1]update your browser[_2].',
+                replacers: {
+                    '1_2': {
+                        tagName: 'A',
+                        href   : 'http://outdatedbrowser.com',
+                        rel    : 'noopener noreferrer',
+                        target : '_blank',
+                    },
+                },
+            });
         }
     });
 

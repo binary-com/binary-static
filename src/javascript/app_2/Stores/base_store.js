@@ -270,7 +270,7 @@ export default class BaseStore {
 
     @action.bound
     disposeSwitchAccount() {
-        this.switch_account_disposer();
+        this.onSwitchAccount();
         this.switch_account_listener = null;
     }
 
