@@ -119,21 +119,23 @@ const AccountOpening = (() => {
                 if (tax_residence) {
                     const tax_residences_arr = tax_residence.split(',');
                     const txt_tax_residence = tax_residences_arr
-                        .map((current_residence) =>
-                            (residence_list.find(obj => obj.value === current_residence) || {}).text
-                        )
-                        .join(', ');
-                    $('#lbl_tax_residence').text(txt_tax_residence || tax_residence);
+                        .map((current_residence) => (residence_list.find(obj => obj.value === current_residence) || {}).text)
+                        .join(', ') || tax_residence;
+                    $('#lbl_tax_residence').text(txt_tax_residence);
 
-                    $tax_residence_select // Set value for validation
+                    $tax_residence_select
                         .select2(tax_residences_arr.length > 1 ? { multiple: true } : {}) // Multiple in some cases, users could prev select more than 1 residence
-                        .val(tax_residences_arr);
+                        .val(tax_residences_arr) // Set value for validation
+                        .attr({ 'data-force': true, 'data-value': tax_residence })
+                        .trigger('change');
                     CommonFunctions.getElementById('row_lbl_tax_residence').setVisibility(1);
                 } else {
-                    $tax_residence_select.select2().val('');
+                    $tax_residence_select
+                        .select2()
+                        .val('')
+                        .trigger('change');
                     CommonFunctions.getElementById('row_tax_residence').setVisibility(1);
                 }
-                $tax_residence_select.trigger('change');
             });
             BinarySocket.send({ states_list: Client.get('residence') }).then(data => handleState(data.states_list, form_id, getValidations));
         }
@@ -145,7 +147,9 @@ const AccountOpening = (() => {
             if (tax_identification_number) {
                 $('#lbl_tax_identification_number').text(tax_identification_number);
                 CommonFunctions.getElementById('row_lbl_tax_identification_number').setVisibility(1);
-                $('#tax_identification_number').val(tax_identification_number); // Set value for validation
+                $('#tax_identification_number')
+                    .val(tax_identification_number) // Set value for validation
+                    .attr({ 'data-force': true, 'data-value': tax_identification_number });
             } else {
                 CommonFunctions.getElementById('row_tax_identification_number').setVisibility(1);
             }
