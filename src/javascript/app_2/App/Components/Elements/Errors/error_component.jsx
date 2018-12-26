@@ -23,7 +23,7 @@ const ErrorComponent = ({ type, message }) => {
 };
 
 ErrorComponent.propTypes = {
-    message: PropTypes.oneOfType([
+    message: PropTypes.shape([
         PropTypes.object,
         PropTypes.string,
     ]),
