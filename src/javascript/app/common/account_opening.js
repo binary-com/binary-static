@@ -119,7 +119,8 @@ const AccountOpening = (() => {
                 if (tax_residence) {
                     const tax_residences_arr = tax_residence.split(',');
                     const txt_tax_residence = tax_residences_arr
-                        .map((current_residence) => (residence_list.find(obj => obj.value === current_residence) || {}).text)
+                        .map((current_residence) =>
+                            residence_list.find(obj => obj.value === current_residence) || {}).text
                         .join(', ') || tax_residence;
                     $('#lbl_tax_residence').text(txt_tax_residence);
 
@@ -192,7 +193,6 @@ const AccountOpening = (() => {
             }
         });
     };
-    
     const handleNewAccount = (response, message_type) => {
         if (response.error) {
             const errorMessage = response.error.message;

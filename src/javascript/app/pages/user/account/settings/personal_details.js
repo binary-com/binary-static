@@ -118,11 +118,11 @@ const PersonalDetails = (() => {
                     if (element_key.type === 'checkbox') {
                         element_key.checked = !!get_settings[key];
                     } else if (!should_update_value) { // for all non (checkbox|select|text) elements
-                        const display_string = get_settings[key] ? get_settings[key]
+                        const localized_text = get_settings[key] ? get_settings[key]
                             .split(',')
                             .map((value) => (document.querySelector(`#${key} option[value="${value}"]`) || {}).innerText || value)
                             .join(', ') : '-';
-                        CommonFunctions.elementInnerHtml(element_key, display_string);
+                        CommonFunctions.elementInnerHtml(element_key, localized_text);
                     }
                     if (should_update_value || should_show_label) {
                         // if should show label, set the value of the non-label so that it doesn't count as missing information
