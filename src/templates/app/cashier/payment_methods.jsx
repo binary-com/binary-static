@@ -502,7 +502,7 @@ const PaymentMethods = () => {
                                             { text: '1' },
                                             { text: '1' },
                                             { text: <TableValues value={[it.L(`${deposit}${blockchain_confirmations}`, 3), it.L(`${withdrawal}${working_day}`, 1)]} /> },
-                                            { text: <ReferenceLinks /> },
+                                            { text: <ReferenceLinks pdf_file='Binary.com_Tether.pdf' video_link='https://youtu.be/N1WPsq67290' /> },
                                         ],
                                         },
                                     ]}
