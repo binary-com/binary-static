@@ -18,5 +18,5 @@ describe('getOauthAppsObject', () => {
         response.then(result => {
             expect(Object.size(getOauthAppsObject(result))).to.be.above(1);
         });
-    })
-})
+    });
+});

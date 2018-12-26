@@ -48,7 +48,7 @@ describe('formatDate', () => {
         const date = moment();
         expect(DateTime.formatDate(date, date_format)).to.deep.equal(moment(date).format(date_format));
     });
-})
+});
 
 describe('daysFromTodayTo', () => {
     it('return empty string when there is no argument passed', () => {
@@ -66,7 +66,7 @@ describe('daysFromTodayTo', () => {
         const date = moment().add('3', 'days').format("YYYY-MM-DD");
         expect(DateTime.daysFromTodayTo(date)).to.deep.equal(3);
     });
-})
+});
 
 describe('convertDuration', () => {
     const start_time = moment() / 1000; //time epoch now
@@ -83,6 +83,6 @@ describe('convertDuration', () => {
         it('return correct value when argument passed', () => {
             const duration = moment.duration(moment.unix(end_time).diff(moment.unix(start_time)));// three minutes
             expect(DateTime.formatDuration(duration)).to.eql("00:03:00");
-        })
-    })
+        });
+    });
 });
