@@ -11,7 +11,7 @@ const SessionExpired = () => (
         </head>
         <body>
             <div className='center-text' style={{ padding: '10px' }}>
-                <p className='notice-msg'>{it.L('Your cashier session has been expired. Please try again.')}</p>
+                <p className='notice-msg'>{it.L('Your cashier session has expired. Please try again.')}</p>
             </div>
         </body>
     </html>
