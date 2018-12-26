@@ -9,7 +9,7 @@ export default class ModulesStore {
         this.contract    = new ContractStore({ root_store });
         this.portfolio   = new PortfolioStore({ root_store });
         this.smart_chart = new SmartChartStore({ root_store });
-        this.statement   = new StatementStore();
+        this.statement   = new StatementStore({ root_store });
         this.trade       = new TradeStore({ root_store });
     }
 }
