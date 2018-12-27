@@ -77,11 +77,14 @@ const AccountOpening = (() => {
             $('#lbl_residence').html($('<strong/>', { text: residence_text }));
 
             BinarySocket.wait('get_settings').then((response) => {
+                const citizen = response.get_settings.citizen;
+                const place_of_birth = response.get_settings.place_of_birth;
+                const tax_residence = response.get_settings.tax_residence;
+
                 if ($place_of_birth.length) {
-                    const place_of_birth = response.get_settings.place_of_birth;
                     if (place_of_birth) {
                         const txt_place_of_birth =
-                              (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
+                            (residence_list.find(obj => obj.value === place_of_birth) || {}).text;
                         $place_of_birth.replaceWith($('<span/>', { text: txt_place_of_birth || place_of_birth, 'data-value': place_of_birth }));
                     } else {
                         $place_of_birth.html($options.html()).val(residence_value);
@@ -97,7 +100,6 @@ const AccountOpening = (() => {
                     const $citizen = $('#citizen');
                     CommonFunctions.getElementById('citizen_row').setVisibility(1);
                     if ($citizen.length) {
-                        const citizen = response.get_settings.citizen;
                         if (citizen) {
                             const txt_citizen = (residence_list.find(obj => obj.value === citizen) || {}).text;
                             $citizen.replaceWith($('<span/>', { text: txt_citizen || citizen, 'data-value': citizen }));
@@ -115,11 +117,11 @@ const AccountOpening = (() => {
                 const $tax_residence_select = $('#tax_residence');
                 $tax_residence_select.html($options_with_disabled.html());
 
-                const tax_residence = response.get_settings.tax_residence;
                 if (tax_residence) {
                     const tax_residences_arr = tax_residence.split(',');
                     const txt_tax_residence = tax_residences_arr
-                        .map((current_residence) => (residence_list.find(obj => obj.value === current_residence) || {}).text)
+                        .map((current_residence) =>
+                            (residence_list.find(obj => obj.value === current_residence) || {}).text)
                         .join(', ') || tax_residence;
                     $('#lbl_tax_residence').text(txt_tax_residence);
 
@@ -132,7 +134,7 @@ const AccountOpening = (() => {
                 } else {
                     $tax_residence_select
                         .select2()
-                        .val('')
+                        .val(residence_value) // Attempt auto-assign country_residence to tax_residence if none set
                         .trigger('change');
                     CommonFunctions.getElementById('row_tax_residence').setVisibility(1);
                 }

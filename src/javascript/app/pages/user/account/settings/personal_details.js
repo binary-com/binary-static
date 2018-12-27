@@ -292,8 +292,10 @@ const PersonalDetails = (() => {
                     const $tax_residence = $('#tax_residence');
                     $tax_residence.html($options_with_disabled.html()).promise().done(() => {
                         setTimeout(() => {
+                            const residence_value = get_settings_data.tax_residence ?
+                                get_settings_data.tax_residence.split(',') : Client.get('residence') || '';
                             $tax_residence.select2()
-                                .val(get_settings_data.tax_residence ? get_settings_data.tax_residence.split(',') : '')
+                                .val(residence_value)
                                 .trigger('change')
                                 .setVisibility(1);
                         }, 500);
