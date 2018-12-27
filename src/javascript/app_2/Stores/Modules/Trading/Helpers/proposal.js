@@ -38,16 +38,17 @@ export const createProposalRequests = (store) => {
 
 const createProposalRequestForContract = (store, type_of_contract) => {
     const obj_expiry = {};
+
     if (store.expiry_type === 'endtime') {
         const expiry_date = moment.utc(store.expiry_date);
-        const start_time = store.start_time.split(':');
+        const start_date  = moment.unix(store.start_date || (store.root_store.common.server_time / 1000)).utc();
+        const is_same_day = expiry_date.isSame(start_date, 'day');
+
         if (store.contract_start_type === 'spot') {
             const expiry_time = store.expiry_time;
             obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
         } else {
-            const start_date  = moment.unix(store.start_date || (store.root_store.common.server_time / 1000)).utc();
-            const is_same_day = expiry_date.isSame(start_date, 'day');
-            const expiry_time = is_same_day ? store.expiry_time : moment(window.time).hour(start_time[0]).minute(start_time[1]).add(-10, 'minutes').format('HH:mm');
+            const expiry_time = is_same_day ? store.expiry_time : moment().utc().format('HH:mm');
             obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
         }
     }
