@@ -19,6 +19,7 @@ const initApp = () => {
 
     NetworkMonitor.init(root_store);
     OutdatedBrowser.init(root_store);
+    root_store.client.init();
     root_store.modules.trade.init();
 
     const app = document.getElementById('binary_app');

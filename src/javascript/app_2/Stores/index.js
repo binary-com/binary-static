@@ -5,7 +5,7 @@ import UIStore      from './ui_store';
 
 export default class RootStore {
     constructor() {
-        this.client  = new ClientStore();
+        this.client  = new ClientStore(this);
         this.common  = new CommonStore();
         this.modules = new ModulesStore(this);
         this.ui      = new UIStore();
