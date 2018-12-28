@@ -47,6 +47,6 @@ module.exports = {
         onUnload: () => { MenuSelector.clean(); },
     },
     BinaryInNumbers: {
-        onLoad  : () => { Scroll.scrollToHashSection(); },
-    }
+        onLoad: () => { Scroll.scrollToHashSection(); },
+    },
 };
