@@ -181,7 +181,7 @@ const GTM = (() => {
             const data = {
                 event             : 'transaction',
                 bom_account_type  : ClientBase.getAccountType(),
-                bom_age           : parseInt((moment().unix() - State.getResponse('get_settings.email_consent')) / 31557600),
+                bom_age           : parseInt((moment().unix() - State.getResponse('get_settings.date_of_birth')) / 31557600),
                 bom_email_consent : State.getResponse('get_settings.email_consent'),
                 bom_country       : State.getResponse('get_settings.country'),
                 bom_country_abbrev: State.getResponse('get_settings.country_code'),
