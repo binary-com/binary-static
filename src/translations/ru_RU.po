@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-28 04:52\n"
+"PO-Revision-Date: 2018-12-28 07:48\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Russian\n"
 "MIME-Version: 1.0\n"
@@ -4998,9 +4998,6 @@ msgstr "Если Вы заключаете данное Соглашение о�
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
 msgstr "Если Вы не проживаете в вышеперечисленных странах, наберите один из наших номеров для получения помощи."
 
-msgid "If you are shortlisted, we will send you a talent test to be completed."
-msgstr "Если Вы попали в короткий список претендентов, мы отправим Вам тест на способности."
-
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
 msgstr "Если Вы не можете отсканировать QR-код, введите данный код вручную:"
 
@@ -5183,6 +5180,9 @@ msgstr "Если Вы являетесь брокером, мы будем ра�
 
 msgid "If you're shortlisted, we'll invite you to a hackathon or send you a talent test."
 msgstr "Если Вы войдёте в короткий список кандидатов, мы пригласим Вас на hackathon или отправим Вам тест на способности."
+
+msgid "If you're shortlisted, we'll send you a talent test to be completed."
+msgstr ""
 
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
 msgstr "Если Ваш счёт %1 закрыт, Ваш Реальный счёт MT5 будет также автоматически закрыт."
@@ -7623,8 +7623,8 @@ msgstr "Обратите внимание, что котировки в выхо
 msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr "Обратите внимание, что Вы находитесь на счету %1Bitcoin Cash%2. Вы можете пополнить счёт только в %1Bitcoin Cash%2, но не Bitcoin."
 
-msgid "Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help."
-msgstr "Пожалуйста, укажите идентификационный номер налогоплательщика для каждой страны, где Вы являетесь налоговым резидентом. Если Вы не можете предоставить данную информацию, обратитесь в наш отдел поддержки клиентов за дальнейшей помощью."
+msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
+msgstr ""
 
 msgid "Please provide us with the following information:"
 msgstr "Пожалуйста, предоставьте нам следующую информацию:"
@@ -7656,14 +7656,14 @@ msgstr "Пожалуйста, выберите платежного агента
 msgid "Please select a valid time."
 msgstr "Пожалуйста, выберите правильное время."
 
-msgid "Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr "Пожалуйста, укажите все страны, где Вы являетесь налоговым резидентом. В случае возникновения любых сомнений свяжитесь со своим налоговым консультантом."
-
 msgid "Please select at least one scope"
 msgstr "Пожалуйста, выберите минимум один параметр"
 
 msgid "Please select the checkbox."
 msgstr "Пожалуйста, выберите нужный ответ."
+
+msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
+msgstr ""
 
 msgid "Please select the currency of this account:"
 msgstr "Пожалуйста, выберите валюту для данного счёта:"
@@ -12344,9 +12344,6 @@ msgstr "Вы предоставляете Компании безотзывну�
 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr "На момент заключения данного Соглашения Вы даёте нам нижеследующие гарантии и обязательства, а также признаёте, что они вступают в силу при открытии и закрытии каждого контракта:"
-
-msgid "You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate."
-msgstr "Вы можете являться налогоплательщиком в более чем одной юрисдикции. Пожалуйста, свяжитесь со своим налоговым консультантом и узнайте, является ли Ваша налоговая информация точной."
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "Вы можете кэшировать Контент на срок до 24 часов с момента запроса на данный Контент посредством API %1."
