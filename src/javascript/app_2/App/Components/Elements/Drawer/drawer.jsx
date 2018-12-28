@@ -19,12 +19,14 @@ class Drawer extends React.Component {
         document.body.classList.toggle('no-scroll', this.is_open);
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.props.alignment === 'left') {
-            this.setState({ is_this_drawer_on: nextProps.is_main_drawer_on });
-        } else if (this.props.alignment === 'right'){
-            this.setState({ is_this_drawer_on: nextProps.is_notifications_drawer_on });
+    static getDerivedStateFromProps(props, state) {
+        if (props.alignment === 'left') {
+            state.is_this_drawer_on = props.is_main_drawer_on;
+        } else if (props.alignment === 'right'){
+            state.is_this_drawer_on = props.is_notifications_drawer_on;
         }
+
+        return state;
     }
 
     hide = () => {
