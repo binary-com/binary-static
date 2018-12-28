@@ -69,7 +69,7 @@ const GTM = (() => {
         }
 
         if (!ClientBase.get('is_virtual')) {
-            data.bom_age       = parseInt((moment().utc().unix() - get_settings.date_of_birth) / 31557600);
+            date.bom_age       = moment().utc().diff(get_settings.date_of_birth, 'year'),
             data.bom_firstname = get_settings.first_name;
             data.bom_lastname  = get_settings.last_name;
             data.bom_phone     = get_settings.phone;
@@ -166,7 +166,7 @@ const GTM = (() => {
         if (!isGtmApplicable() || ClientBase.get('is_virtual')) return;
         if (!response.transaction || !response.transaction.action) return;
 
-        const today = moment();
+        const today = moment().utc();
         const storage_key = 'GTM_transactions';
         const gtm_transactions = JSON.parse(localStorage.getItem(storage_key)) || {};
         
@@ -181,14 +181,14 @@ const GTM = (() => {
             const data = {
                 event             : 'transaction',
                 bom_account_type  : ClientBase.getAccountType(),
-                bom_age           : parseInt((moment().utc().unix() - State.getResponse('get_settings.date_of_birth')) / 31557600),
+                bom_age           : moment().utc().diff(State.getResponse('get_settings.date_of_birth'), 'year'),
                 bom_email_consent : State.getResponse('get_settings.email_consent'),
                 bom_country       : State.getResponse('get_settings.country'),
                 bom_country_abbrev: State.getResponse('get_settings.country_code'),
                 bom_salutation    : State.getResponse('get_settings.salutation'),
                 bom_firstname     : State.getResponse('get_settings.first_name'),
                 bom_lastname      : State.getResponse('get_settings.last_name'),
-                bom_today         : moment().utc().unix(),
+                bom_today         : today.unix(),
                 transaction       : {
                     id      : response.transaction.transaction_id,
                     type    : response.transaction.action,
