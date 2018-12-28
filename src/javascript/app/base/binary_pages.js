@@ -145,6 +145,7 @@ const pages_config = {
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
+    'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
 };
 /* eslint-enable max-len */
 
