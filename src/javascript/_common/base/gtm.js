@@ -188,7 +188,7 @@ const GTM = (() => {
                 bom_salutation    : State.getResponse('get_settings.salutation'),
                 bom_firstname     : State.getResponse('get_settings.first_name'),
                 bom_lastname      : State.getResponse('get_settings.last_name'),
-                bom_today         : Math.floor(Date.now() / 1000),
+                bom_today         : moment().utc().unix(),
                 transaction       : {
                     id      : response.transaction.transaction_id,
                     type    : response.transaction.action,
