@@ -20,7 +20,7 @@ describe('convertToUnix', () => {
 
     it('return correct unix value when date and time passed', () => {
         const date_epoch = 1544745600;
-        const time = "12:30";
+        const time = '12:30';
 
         expect(DateTime.convertToUnix(date_epoch, time)).to.deep.equal(setTime(DateTime.toMoment(date_epoch), time).unix());
     });
@@ -38,7 +38,7 @@ describe('toGMTFormat', () => {
 });
 
 describe('formatDate', () => {
-    const date_format = "YYYY-MM-DD"
+    const date_format = 'YYYY-MM-DD'
     it('return correct response when no argument passed', () => {
         expect(DateTime.formatDate()).to.eql('Invalid date');
     });
@@ -52,18 +52,18 @@ describe('formatDate', () => {
 
 describe('daysFromTodayTo', () => {
     it('return empty string when there is no argument passed', () => {
-        expect(DateTime.daysFromTodayTo()).to.eql('');
+        expect(DateTime.daysFromTodayTo()).to.be.empty;
     });
 
     it('return empty string if the user selected previous day', () => {
         //get previous day
-        const date = moment().subtract(1, 'days').format("YYYY-MM-DD");
-        expect(DateTime.daysFromTodayTo(date)).to.eql('');
+        const date = moment().subtract(1, 'days').format('YYYY-MM-DD');
+        expect(DateTime.daysFromTodayTo(date)).to.be.empty;
     });
 
     it('return difference value between selected date and today', () => {
         //get date three days from now
-        const date = moment().add('3', 'days').format("YYYY-MM-DD");
+        const date = moment().add('3', 'days').format('YYYY-MM-DD');
         expect(DateTime.daysFromTodayTo(date)).to.deep.equal(3);
     });
 });
@@ -82,7 +82,7 @@ describe('convertDuration', () => {
     describe('formatDuration', () => {
         it('return correct value when argument passed', () => {
             const duration = moment.duration(moment.unix(end_time).diff(moment.unix(start_time)));// three minutes
-            expect(DateTime.formatDuration(duration)).to.eql("00:03:00");
+            expect(DateTime.formatDuration(duration)).to.eql('00:03:00');
         });
     });
 });

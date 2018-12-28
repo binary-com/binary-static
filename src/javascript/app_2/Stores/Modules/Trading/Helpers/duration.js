@@ -54,7 +54,7 @@ export const buildDurationConfig = (contract, durations = { min_max: {}, units_d
 };
 
 export const convertDurationUnit = (value, from_unit, to_unit) => {
-    if (!value || !from_unit || !to_unit) {
+    if (!value || !from_unit || !to_unit || isNaN(parseInt(value))) {
         return null;
     }
 
@@ -91,6 +91,10 @@ export const getExpiryType = (store) => {
 };
 
 export const convertDurationLimit = (value, unit) => {
+    if (!(value >= 0) || !unit || !Number.isInteger(value)) {
+        return null;
+    }
+
     if (unit === 'm') {
         const minute = value / 60;
         return minute >= 1 ? Math.floor(minute) : 1;

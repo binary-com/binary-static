@@ -1,22 +1,36 @@
 import { expect }             from 'chai';
 import { getOauthAppsObject } from '../process_data.js';
-import BinarySocket           from '_common/base/socket_base';
 
 describe('getOauthAppsObject', () => {
+    const oauth_response = {
+        "echo_req": {
+          "oauth_apps": 1
+        },
+        "msg_type": "oauth_apps",
+        "oauth_apps": [
+          {
+            "app_id": "1",
+            "app_markup_percentage": "0",
+            "last_used": {},
+            "name": "Binary.com",
+            "scopes": [
+              "read",
+              "admin",
+              "trade",
+              "payments"
+            ]
+          },
+        ]
+    };
+
     it('Expects default oauth object when there are no arguments', () => {
         expect(getOauthAppsObject()).to.eql({ 2: 'Binary.com Autoexpiry' });
     });
 
-    it('Expects correct value when arguments passed', () => {
-        const response = new Promise(async (resolve, reject) => {
-            await BinarySocket.send({ oauth_apps: 1 }).then(result => {
-                resolve(result);
-            }).catch(error => {
-                reject(error);
-            });
-        });
-        response.then(result => {
-            expect(Object.size(getOauthAppsObject(result))).to.be.above(1);
+    it('Expects correct value when arguments passed',() => {
+        expect(getOauthAppsObject(oauth_response)).to.eql({
+            '1': 'Binary.com',
+            '2': 'Binary.com Autoexpiry'
         });
     });
 });

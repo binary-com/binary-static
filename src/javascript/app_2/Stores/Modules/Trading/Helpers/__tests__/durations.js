@@ -4,21 +4,21 @@ import BinarySocket  from '_common/base/socket_base';
 
 describe('buildDurationConfig', () => {
     const contract = {
-        barrier_category: "euro_atm",
+        barrier_category: 'euro_atm',
         barriers: 0,
-        contract_category: "callput",
-        contract_category_display: "Up/Down",
-        contract_display: "Higher",
-        contract_type: "CALL",
-        exchange_name: "FOREX",
-        expiry_type: "daily",
-        market: "forex",
-        max_contract_duration: "365d",
-        min_contract_duration: "1d",
-        sentiment: "up",
-        start_type: "spot",
-        submarket: "major_pairs",
-        underlying_symbol: "frxAUDJPY"
+        contract_category: 'callput',
+        contract_category_display: 'Up/Down',
+        contract_display: 'Higher',
+        contract_type: 'CALL',
+        exchange_name: 'FOREX',
+        expiry_type: 'daily',
+        market: 'forex',
+        max_contract_duration: '365d',
+        min_contract_duration: '1d',
+        sentiment: 'up',
+        start_type: 'spot',
+        submarket: 'major_pairs',
+        underlying_symbol: 'frxAUDJPY'
     }
 
     const durations = {
@@ -32,8 +32,8 @@ describe('buildDurationConfig', () => {
         },
         units_display: {
             spot: [{
-                text: "days",
-                value: "d"
+                text: 'days',
+                value: 'd'
             }]
         }
     }
@@ -53,32 +53,36 @@ describe('convertDurationUnit', () => {
         expect(Duration.convertDurationUnit('','','')).to.be.null;
     });
 
+    it('Returns null if the arguments are invalid value', () => {
+        expect(Duration.convertDurationUnit('sdf','d','m')).to.be.null;
+    });
+
     it('Returns null if there is no arguments', () => {
         expect(Duration.convertDurationUnit()).to.be.null;
     });
 
     it('Returns correct value convert day to second', () => {
-        expect(Duration.convertDurationUnit("365", "d", "s")).to.eql(31536000);
+        expect(Duration.convertDurationUnit('365', 'd', 's')).to.eql(31536000);
     });
 
     it('Returns correct value convert minute to second', () => {
-        expect(Duration.convertDurationUnit("5", "m", "s")).to.eql(300);
+        expect(Duration.convertDurationUnit('5', 'm', 's')).to.eql(300);
     });
 
     it('Returns correct value convert day to minute', () => {
-        expect(Duration.convertDurationUnit("1", "d", "m")).to.eql(1440);
+        expect(Duration.convertDurationUnit('1', 'd', 'm')).to.eql(1440);
     });
 
     it('Returns correct value convert second to minute', () => {
-        expect(Duration.convertDurationUnit("180", "s", "m")).to.eql(3);
+        expect(Duration.convertDurationUnit('180', 's', 'm')).to.eql(3);
     });
 
     it('Returns correct value convert minute to day', () => {
-        expect(Duration.convertDurationUnit("2880", "m", "d")).to.eql(2);
+        expect(Duration.convertDurationUnit('2880', 'm', 'd')).to.eql(2);
     });
 
     it('Returns correct value convert second to day', () => {
-        expect(Duration.convertDurationUnit("86400", "s", "d")).to.eql(1);
+        expect(Duration.convertDurationUnit('86400', 's', 'd')).to.eql(1);
     });
 });
 
@@ -116,20 +120,28 @@ describe('getExpiryType', () => {
 });
 
 describe('convertDurationLimit', () => {
+    it('Returns null when there are no arguments', () => {
+        expect(Duration.convertDurationLimit('', '')).to.be.null;
+    });
+
+    it('Returns null for invalid value', () => {
+        expect(Duration.convertDurationLimit('sdf', 't')).to.be.null;
+    });
+
     it('Returns correct value for ticks unit', () => {
-        expect(Duration.convertDurationLimit(5, "t")).to.eql(5);
+        expect(Duration.convertDurationLimit(5, 't')).to.eql(5);
     });
 
     it('Returns correct value for minutes unit', () => {
-        expect(Duration.convertDurationLimit(180, "m")).to.eql(3);
+        expect(Duration.convertDurationLimit(180, 'm')).to.eql(3);
     });
 
     it('Returns correct value for hour unit', () => {
-        expect(Duration.convertDurationLimit(7200, "h")).to.eql(2);
+        expect(Duration.convertDurationLimit(7200, 'h')).to.eql(2);
     });
 
     it('Returns correct value for day unit', () => {
-        expect(Duration.convertDurationLimit(86400, "d")).to.eql(1);
+        expect(Duration.convertDurationLimit(86400, 'd')).to.eql(1);
     });
 
 });
