@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Numbers = ({ className, header, text, image }) => (
-    <div id={className} className={className}>
+    <div data-anchor={className} className={className}>
         <span className='icon' />
         <div className='inner center-text'>
             <h2>{header}</h2>
