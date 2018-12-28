@@ -47,7 +47,7 @@ const FormManager = (() => {
 
         fields.forEach((field) => {
             if (!field.exclude_request) {
-                if (field.$.is(':visible') || field.value) {
+                if (field.$.is(':visible') || field.value || field.$.attr('data-force')) {
                     val = field.$.val();
                     key = field.request_field || field.selector;
 

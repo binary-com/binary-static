@@ -15,13 +15,10 @@ class DatePicker extends React.PureComponent {
         is_close_btn_visible : false,
     };
 
-    componentWillReceiveProps({ value, mode }) {
-        if (value === this.state.value) return;
-        this.updateDatePickerValue(value, mode);
-    }
-
-    componentWillMount() {
+    componentDidMount() {
         document.addEventListener('click', this.onClickOutside, true);
+        const { value, mode } = this.props;
+        this.updateDatePickerValue(value, mode);
     }
 
     componentWillUnmount() {

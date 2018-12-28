@@ -17,7 +17,7 @@ class ToggleFullScreen extends React.Component {
 
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.fullscreen_map.event.forEach((event) => {
             document.addEventListener(event, this.onFullScreen, false);
         });
