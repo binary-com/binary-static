@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 
         const flattened = flatten(images)
             .filter(item => !!item &&
-                !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.path));
+                !ignored_files.some(ignored => ignored === item.filename));
 
         const bad_file_names = {};
         flattened.forEach(item => {

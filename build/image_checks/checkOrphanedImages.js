@@ -1,6 +1,7 @@
 const path           = require('path');
 const fs             = require('fs');
 const common         = require('../../scripts/common');
+
 const {
     flatten,
     fetchFiles,
@@ -12,6 +13,7 @@ const ignored_files            = gitIgnoreToArray();
 const ignored_image_extensions = [
     'DS_Store', 'zip',
 ];
+const ignored_languages = common.languages.map(lng => lng.toLowerCase());
 
 module.exports = function(grunt) {
     grunt.initConfig({
@@ -40,14 +42,13 @@ module.exports = function(grunt) {
                 ) &&
                 !ignored_image_extensions.some(
                     ignored => {
-                        const extension = item.filename.match(/\.[\w\d]{1,5}$/i);
-                        return extension != null ? extension[0].substring(1) === ignored : false;
+                        const matchingGroups = item.filename.match(/\.[\w\d]{1,5}$/i);
+                        return matchingGroups && matchingGroups[0].substring(1) === ignored;
                     }
                 )
             );
 
         grunt.log.ok(`Found ${found.length} files, looking for references.`);
-
 
         flatten(fetchFiles(source_directory))
             .filter(
@@ -59,6 +60,14 @@ module.exports = function(grunt) {
                 if (found.length === 0) {
                     return false;
                 }
+
+                // Since language different images may be used dynamically, we remove that check from the list.
+                ignored_languages.some(lang => {
+                    found = found.filter(dir => {
+                        const language_image_regex = new RegExp(`/${lang}/${dir.filename}`);
+                        return !language_image_regex.test(dir.full_path);
+                    });
+                });
 
                 // Search for the occurrence of images, if found, remove the entry from that array.
                 const file                   = fs.readFileSync(item.full_path, {

@@ -24,11 +24,13 @@ module.exports = function(grunt) {
         // someone put a duplicate in other folders. This grunt task will accept a --all option. --all option will try
         // to check every single file inside images directory. if no option is provided, only the images inside
         // app_2 will be processed.
-        const images    = flatten(fetchFiles(where_to_look));
-        const flattened = flatten(images)
+        const flattened = flatten(fetchFiles(where_to_look))
             .filter(item => !!item &&
                 !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.filename) &&
-                !ignored_extensions.some(ignored => item.filename.split('.')[1] === ignored));
+                !ignored_extensions.some(ignored => {
+                    const matchingGroups = item.filename.match(/\.[\w\d]{1,5}$/i);
+                    return matchingGroups && matchingGroups[0].substring(1) === ignored;
+                }));
 
         const hashes    = {};
 
