@@ -1,20 +1,22 @@
-const BinarySocket   = require('../../../base/socket');
-const Client         = require('../../../base/client');
-const localize       = require('../../../../_common/localize').localize;
-const createElement  = require('../../../../_common/utility').createElement;
-const getElementById = require('../../../../_common/common_functions').getElementById;
-const Url            = require('../../../../_common/url');
+const BinarySocket      = require('../../../base/socket');
+const Client            = require('../../../base/client');
+const localize          = require('../../../../_common/localize').localize;
+const createElement     = require('../../../../_common/utility').createElement;
+const getElementById    = require('../../../../_common/common_functions').getElementById;
+const Url               = require('../../../../_common/url');
+const showLoadingImage  = require('../../../../_common/utility').showLoadingImage;
 
 const WelcomePage = (() => {
     const onLoad = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
+            const welcome_msg = getElementById('welcome_container');
+
             if (Client.hasAccountType('real')) {
-                Url.defaultRedirectUrl();
+                window.location.href = Client.defaultRedirectUrl();
+                showLoadingImage(welcome_msg, 'dark');
             }
 
             const upgrade_info = Client.getUpgradeInfo();
-
-            const welcome_msg = getElementById('welcome_container');
             if (welcome_msg) {
                 const upgrade_title_el = getElementById('upgrade_title');
                 upgrade_title_el.html(upgrade_info.type === 'financial' ? localize('Financial Account') : localize('Real Account'));

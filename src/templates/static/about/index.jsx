@@ -122,7 +122,7 @@ const Index = () => (
                     </div>
                     <div className='gr-row gr-parent'>
                         <Box>
-                            <BoxInner className='border-right-bottom gr-padding-30' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href=\'https://binarycom.statuspage.io/\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')} />
+                            <BoxInner className='border-right-bottom gr-padding-30' image='transacts' text={it.L('Binary\'s platform transacts on average [_1] [_2]transactions[_3] per second, 24/7', '20', '<a href=\'https://binarycom.statuspage.io/#system-metrics\' target=\'_blank\' rel=\'noopener noreferrer\'>', '</a>')} />
                             <BoxInner className='border-right-bottom gr-padding-30' image='locations' text={it.L('Offices in Malta and Malaysia')} />
                         </Box>
                         <Box>

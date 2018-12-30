@@ -1,5 +1,4 @@
-import { action }   from 'mobx';
-import { localize } from '_common/localize';
+import { action } from 'mobx';
 
 let common_store;
 
@@ -28,7 +27,17 @@ const OutdatedBrowser = (() => {
 
     const updateStore = action('showError', () => {
         if (common_store) {
-            common_store.showError(localize('Your web browser is out of date and may affect your trading experience. Proceed at your own risk.'));
+            common_store.showError({
+                str      : 'Your web browser is out of date and may affect your trading experience. Please [_1]update your browser[_2].',
+                replacers: {
+                    '1_2': {
+                        tagName: 'A',
+                        href   : 'http://outdatedbrowser.com',
+                        rel    : 'noopener noreferrer',
+                        target : '_blank',
+                    },
+                },
+            });
         }
     });
 
