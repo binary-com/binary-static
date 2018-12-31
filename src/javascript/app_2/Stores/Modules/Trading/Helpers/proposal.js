@@ -38,17 +38,20 @@ const createProposalRequestForContract = (store, type_of_contract) => {
     const obj_expiry = {};
 
     if (store.expiry_type === 'endtime') {
+        const server_time = store.root_store.common.server_time;
+        const start_date  = moment.unix(store.start_date || (server_time / 1000)).utc();
         const expiry_date = moment.utc(store.expiry_date);
-        const start_date  = moment.unix(store.start_date || (store.root_store.common.server_time / 1000)).utc();
         const is_same_day = expiry_date.isSame(start_date, 'day');
+        let expiry_time;
 
         if (store.contract_start_type === 'spot') {
-            const expiry_time = store.expiry_time;
-            obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
+            expiry_time = store.expiry_time;
         } else {
-            const expiry_time = is_same_day ? store.expiry_time : moment().utc().format('HH:mm');
-            obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
+            expiry_time = is_same_day ? store.expiry_time : moment(server_time).utc().format('HH:mm');
+            console.log(expiry_time); //eslint-disable-line
         }
+
+        obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
     }
 
     return {
