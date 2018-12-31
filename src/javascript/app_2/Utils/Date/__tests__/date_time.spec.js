@@ -69,12 +69,11 @@ describe('daysFromTodayTo', () => {
 });
 
 describe('convertDuration', () => {
-    const start_time = moment() / 1000; //time epoch now
+    const start_time = moment() / 1000;
     const end_time = moment().add(3, 'minutes') / 1000;
 
     describe('getDiffDuration', () => {
         it('return correct value when argument passed', () => {
-            //expecting 180000 == three minutes
             expect(DateTime.getDiffDuration(start_time, end_time)).to.eql(moment.duration(180000));
         });
     });
