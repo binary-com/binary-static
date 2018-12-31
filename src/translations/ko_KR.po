@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-28 07:48\n"
+"PO-Revision-Date: 2018-12-31 02:38\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -302,7 +302,7 @@ msgid "%1 provides institutional clients around the world with market quotes and
 msgstr ""
 
 msgid "%1 provides the client with best execution by utilising a smart aggregation method when managing incoming orders. The smart aggregation method works by:"
-msgstr ""
+msgstr "%1은 들어오는 주문들을 관리할 때에 스마트 병합 방식을 활용함으로써 고객에게 최선의 집행을 제공합니다. 스마트 병합 방식은 다음에 의해 이루어집니다:"
 
 msgid "%1 provides virtual-money facilities to practise your trading strategy with virtual funds. Switch to your virtual-money account using the drop-down box in the top-right corner of the screen."
 msgstr ""
@@ -2054,7 +2054,7 @@ msgid "By default, all clients are treated as retail but anyone can request to b
 msgstr ""
 
 msgid "By default, the intelligent order routing system ensures that the top of the book is always comprised of the best bid and offer rates quoted by the competing liquidity providers. However, during times of market illiquidity, this may change with likelihood of execution being the primary execution factor."
-msgstr ""
+msgstr "기본적으로, 지능적 주문 전송 시스템은 책 상단의 경우 경쟁하는 유동성공급자로부터 항상 최선의 매수와 매도 가격으로 구성되어 있습니다. 그렇지만 시장 유동성이 부족할 때에 이는 주요 실행 요소로써 실행의 가능성과 함께 변동 가능성이 있습니다."
 
 msgid "By delivering a high level of translation and customer support services, you will be the company’s voice to our clients."
 msgstr ""
@@ -2372,7 +2372,7 @@ msgid "Client Classification"
 msgstr "고객 분류"
 
 msgid "Client Money"
-msgstr "고객님의 돈"
+msgstr "고객의 자금"
 
 msgid "Client Reporting;"
 msgstr ""
@@ -3158,7 +3158,7 @@ msgid "Depending on the jurisdiction to which a Client's account has been attach
 msgstr "본 웹사이트의 계좌 개설 절차에 따라 고객의 계좌가 등록되어진 관할권에 따라, 용어 '우리', '우리를', '우리의', '우리것', '본 회사', 또는 '%1'는 다음 가각을 나타냅니다"
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
-msgstr ""
+msgstr "본 회사가 고객의 카운터파티로써 노출되는 위험 수준에 따라, 본 회사는 고객 거래에서 많은 부분에서 주체로써 활동합니다. 이와 같이, 거래실행 장소는 보통 %1이 될 것입니다. 그렇지만, 본 회사는 제 3자 유동성 공급자들에게 고객의 주문을 전송할 수 있으며 이 경우에는 상기 명시된 사항에 따라 본 회사가 해당 실행 장소를 결정 할것입니다."
 
 msgid "Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
 msgstr "피드 제공자로부터 제공되어진 데이터 피드의 품질에 따라 저희 서버는 틱 필터링 알고리즘을 적용할 수 있습니다. 이러한 필터링 알고리즘의 목적은 이탈한 틱들을 가려내기 위함입니다. 이탈 틱이란 시장의 현재 거래 범위를 명백하게 이탈하는 틱들을 의미합니다; 이러한 틱들은 교환 또는 배당하는 은행과의 의사소통 지연, 인적과오, 또는 배당 발신자와 저희 서버 사이 어느 시점에서나 일어날 수 있는 데이터베이스적 문제로 인해 종종 일어날 수 있습니다."
@@ -4286,7 +4286,7 @@ msgid "For example, let’s say the market has a low of 5,200 and a close of 6,0
 msgstr "예를 들어, 시장에서 계약 진행기간동안 저가 5,200과 종가 6000인 상황이라면 $2인 승수를 통해 '종가-저가'룩백에 대한 지불금은:"
 
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product disclosure statement. This policy is an appendix to, and should be read in conjunction with, the overarching %1's order execution policy."
-msgstr ""
+msgstr "%1으로부터 제공되는 Spot FX의 특징 및 거래 일러스트레이션의 경우, 상품공개설명서를 참고해주세요. 이 정책은 대단히 중요한 %1의 주문 실행정책에 대한 부록이며, 이 주문 실행정책과 함께 읽어져야 합니다."
 
 msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as indices) are not open throughout the day and that trading may not be available when the markets are closed."
 msgstr "외환 가격제시에 관하여 종료시간은 본 웹사이트의 시장 개장 시간 부분에서 나타나 있는 것으로 본 회사에 의해 정의됩니다. 시장가 또는 종가에 관한 분쟁이 있는 경우, 본 회사의 결정이 최종적이고 구속력이 있습니다. 고객은 특정 시장 (주가지수같은)은 낮시간에 개장되지 않고 시장이 마감된 경우 거래가 가능하지 않을 수 있다는 사실을 아셔야 합니다."
@@ -6551,7 +6551,7 @@ msgid "Money collected from Clients are not invested in any securities, futures,
 msgstr "고객으로부터 수집된 자금은 고객을 대신하여 어떠한 종류의 증권, 선물, 통화, 파생상품 또는 다른 투자수단으로라도 투자되지 않습니다."
 
 msgid "Money collected from Clients are not invested in any securities, futures, or other investments, on behalf of Clients."
-msgstr ""
+msgstr "고객으로부터 수집된 자금은 고객을 대신하여 그 어떠한 증권, 선물 또는 다른 투자 상품에도 투자되지 않습니다."
 
 msgid "Monies deposited by you with us in advance of a trade or pending withdrawal is treated by us as clients' money. We hold such monies in pooled or omnibus clients' money bank accounts opened with banks or other institutions (\"Institutions\"), segregated from our own money. Such clients' money bank accounts may be opened with EEA Institutions or Institutions outside the EEA. Where clients money is held with non-EEA Institutions this means that such accounts will be subject to laws other than those of an EEA member state and your rights may differ accordingly."
 msgstr "거래 이전에 우리를 통해 입금된 당신의 자금 또는 계류 중인 인출은 우리가 고객의 자금으로 대합니다. 우리는 이러한 자금을 은행을 통하거나 다른 기관 (\"기관들\")을 통해 모아지거나 일괄적으로 묶여 있는 고객의 은행의 계좌에 유지하며, 우리 본 회사의 자금과는 따로 분리하여 관리합니다. 이러한 고객의 은행계좌는 EEA 기관 또는 EEA범위 밖의 기관을 통해 개설할 수 있습니다. EEA가 아닌 기관에 고객의 자금이 유치되어 있다는 말은 해당되는 계좌가 EEA 멤버에게 해당되는 관련 법규와는 다른 법규가 적용된다는 의미이며 따라서 당신의 권리가 다를 수 있습니다."
@@ -8065,6 +8065,9 @@ msgstr ""
 msgid "R. Interpretation of Terms"
 msgstr "R. 용어 해석"
 
+msgid "RTS 27"
+msgstr ""
+
 msgid "Range of markets"
 msgstr "다양한 시장"
 
@@ -9175,6 +9178,18 @@ msgstr ""
 msgid "System Administrator"
 msgstr ""
 
+msgid "Table 1 - Type of execution venue"
+msgstr ""
+
+msgid "Table 3 - Intra-Day Price information"
+msgstr ""
+
+msgid "Table 4 - Daily Price information"
+msgstr ""
+
+msgid "Table 6 - Likelihood of execution information"
+msgstr ""
+
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
 msgstr "10초에서 365일에 이르는 거래 기간과 함께 단기 또는 장기적인 견해를 가져보세요."
 
@@ -9848,7 +9863,7 @@ msgid "The company holds customer funds in separate bank accounts to the operati
 msgstr ""
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency."
-msgstr ""
+msgstr "본 회사는 고객의 자금을 운용 계좌와는 다른 계좌에 보유합니다; 그리고 지불 불능 상태의 경우 고객 계좌에 있는 자금들이 확실히 고객으로 분배되도록 정비되었습니다."
 
 msgid "The company holds customer funds in separate bank accounts to the operational accounts; and arrangements have been made to ensure assets in the customer accounts are distributed to customers in the event of insolvency. This meets the Gambling Commission's requirements for the segregation of customer funds at the level: medium protection."
 msgstr "본 회사는 고객의 자금을 운영 계좌와는 별도인 은행 계좌에 보관합니다; 그리고 파산시에 고객 계좌의 자금이 고객으로 분배되는 것이 보장되도록 준비되었습니다. 이는 중간 보호 수준에 맞추어 고객 자금의 분리에 관해 도박 위원회의 요구사항을 만족합니다."
@@ -12842,7 +12857,7 @@ msgid "compensation under Investor Compensation Scheme."
 msgstr ""
 
 msgid "consolidating liquidity from several providers into a single stream of blended feed; and"
-msgstr ""
+msgstr "다양한 제공자들로부터의 유동성을 연결하여 하나의 융합된 피드로 만듭니다; 그리고"
 
 msgid "costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company's bid and the Company's offer price"
 msgstr "비용 - 고객 주문 실행에 대한 비용, 대부분 스프레드로 구성되어 있습니다. 예를 들어 본 회사의 매수 및 본 회사의 매도 가격 사이의 차이입니다"
@@ -12938,7 +12953,7 @@ msgid "information about the applicant's nationality;"
 msgstr ""
 
 msgid "intelligently routing incoming orders to different types of execution modes based on configurations and algorithms established using best execution factors."
-msgstr ""
+msgstr "들어오는 주문들을 최선집행요소를 사용하여 설정된 구성 및 알고리즘에 근거한 다양한 종류의 실행 모드로 지능적으로 전송합니다."
 
 msgid "letters"
 msgstr ""
