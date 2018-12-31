@@ -168,7 +168,7 @@
             }
             .th-list, .td-list {
                 display: grid;
-                grid-template-columns: 2fr 1.3fr 1.3fr 3fr 0.8fr;
+                grid-template-columns: 2fr 1.3fr 1.3fr 3fr 1fr;
                 grid-column-gap: 10px;
 
                 .th, .td {
@@ -203,7 +203,11 @@
         tbody tr {
             td {
                 position: relative;
-                padding: 10px;
+                padding: 10px 0;
+
+                @media (max-width: 600px) {
+                    padding: 10px 0 !important;
+                }
 
                 div.td-list, div.td-description {
                     overflow: hidden;
@@ -213,11 +217,13 @@
                     &.td-list {
                         height: 0;
                         opacity: 0;
+                        margin-left: 8px;
 
                         &.active {
                             transition: all 0.2s 0.2s;
                             height: 100%;
                             opacity: 1;
+                            align-content: center;
                         }
                     }
                     &.td-description {
