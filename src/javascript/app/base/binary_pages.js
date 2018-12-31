@@ -2,67 +2,67 @@
 const TabSelector = require('../../_common/tab_selector'); // eslint-disable-line import/order
 
 // ==================== app ====================
-const APIToken                = require('../pages/user/account/settings/api_token');
-const Accounts                = require('../pages/user/accounts');
-const Authenticate            = require('../pages/user/account/authenticate');
-const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
-const AuthorisedApps          = require('../pages/user/account/settings/authorised_apps');
+const LoggedInHandler         = require('./logged_in');
+const Redirect                = require('./redirect');
 const AccountTransfer         = require('../pages/cashier/account_transfer');
 const Cashier                 = require('../pages/cashier/cashier');
-const ChangePassword          = require('../pages/user/account/change_password');
-const CashierPassword         = require('../pages/user/account/settings/cashier_password');
 const DepositWithdraw         = require('../pages/cashier/deposit_withdraw');
+const PaymentAgentList        = require('../pages/cashier/payment_agent_list');
+const PaymentAgentWithdraw    = require('../pages/cashier/payment_agent_withdraw');
 const Endpoint                = require('../pages/endpoint');
-const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
-const FinancialAssessment     = require('../pages/user/account/settings/financial_assessment');
-const FinancialAccOpening     = require('../pages/user/new_account/financial_acc_opening');
-const IPHistory               = require('../pages/user/account/settings/iphistory/iphistory');
-const Limits                  = require('../pages/user/account/settings/limits/limits');
-const LostPassword            = require('../pages/user/lost_password');
-const LoggedInHandler         = require('./logged_in');
-const MetaTrader              = require('../pages/user/metatrader/metatrader');
 const MBTradePage             = require('../pages/mb_trade/mb_tradepage');
+const EconomicCalendar        = require('../pages/resources/economic_calendar/economic_calendar');
+const AssetIndexUI            = require('../pages/resources/asset_index/asset_index.ui');
 const MetatraderDownloadUI    = require('../pages/resources/metatrader/download.ui');
+const TradingTimesUI          = require('../pages/resources/trading_times/trading_times.ui');
 const NewAccount              = require('../pages/new_account');
+const TradePage               = require('../pages/trade/tradepage');
+const Authenticate            = require('../pages/user/account/authenticate');
+const ChangePassword          = require('../pages/user/account/change_password');
+const PaymentAgentTransfer    = require('../pages/user/account/payment_agent_transfer/payment_agent_transfer');
 const Portfolio               = require('../pages/user/account/portfolio/portfolio.init');
 const ProfitTable             = require('../pages/user/account/profit_table/profit_table.init');
-const PersonalDetails         = require('../pages/user/account/settings/personal_details');
-const PaymentAgentList        = require('../pages/cashier/payment_agent_list');
-const professionalClient      = require('../pages/user/account/settings/professional_client');
-const PaymentAgentWithdraw    = require('../pages/cashier/payment_agent_withdraw');
-const PaymentAgentTransfer    = require('../pages/user/account/payment_agent_transfer/payment_agent_transfer');
-const Redirect                = require('./redirect');
-const ResetPassword           = require('../pages/user/reset_password');
-const RealAccOpening          = require('../pages/user/new_account/real_acc_opening');
 const Settings                = require('../pages/user/account/settings');
-const Statement               = require('../pages/user/account/statement/statement.init');
-const SetCurrency             = require('../pages/user/set_currency');
+const APIToken                = require('../pages/user/account/settings/api_token');
+const AuthorisedApps          = require('../pages/user/account/settings/authorised_apps');
+const CashierPassword         = require('../pages/user/account/settings/cashier_password');
+const FinancialAssessment     = require('../pages/user/account/settings/financial_assessment');
+const IPHistory               = require('../pages/user/account/settings/iphistory/iphistory');
+const Limits                  = require('../pages/user/account/settings/limits/limits');
 const SelfExclusion           = require('../pages/user/account/settings/self_exclusion');
-const TradePage               = require('../pages/trade/tradepage');
-const TNCApproval             = require('../pages/user/tnc_approval');
-const TelegramBot             = require('../pages/user/telegram_bot');
-const TopUpVirtual            = require('../pages/user/account/top_up_virtual');
-const TradingTimesUI          = require('../pages/resources/trading_times/trading_times.ui');
-const TypesOfAccounts         = require('../pages/user/metatrader/types_of_accounts');
 const TwoFactorAuthentication = require('../pages/user/account/settings/two_factor_authentication');
-const VideoFacility           = require('../pages/user/video_facility');
+const PersonalDetails         = require('../pages/user/account/settings/personal_details');
+const professionalClient      = require('../pages/user/account/settings/professional_client');
+const Statement               = require('../pages/user/account/statement/statement.init');
+const TopUpVirtual            = require('../pages/user/account/top_up_virtual');
+const Accounts                = require('../pages/user/accounts');
+const LostPassword            = require('../pages/user/lost_password');
+const MetaTrader              = require('../pages/user/metatrader/metatrader');
+const TypesOfAccounts         = require('../pages/user/metatrader/types_of_accounts');
+const FinancialAccOpening     = require('../pages/user/new_account/financial_acc_opening');
+const RealAccOpening          = require('../pages/user/new_account/real_acc_opening');
 const VirtualAccOpening       = require('../pages/user/new_account/virtual_acc_opening');
 const WelcomePage             = require('../pages/user/new_account/welcome_page');
+const ResetPassword           = require('../pages/user/reset_password');
+const SetCurrency             = require('../pages/user/set_currency');
+const TelegramBot             = require('../pages/user/telegram_bot');
+const TNCApproval             = require('../pages/user/tnc_approval');
+const VideoFacility           = require('../pages/user/video_facility');
 
 // ==================== static ====================
 /*
-const Charity                 = require('../../static/pages/charity');*/
-const Contact                 = require('../../static/pages/contact');
-const Contact2                = require('../../static/pages/contact_2');
-const GetStarted              = require('../../static/pages/get_started');
-const Home                    = require('../../static/pages/home');
-const JobDetails              = require('../../static/pages/job_details');
-const KeepSafe                = require('../../static/pages/keep_safe');
-const Platforms               = require('../../static/pages/platforms');
-const Regulation              = require('../../static/pages/regulation');
-const StaticPages             = require('../../static/pages/static_pages');
-const TermsAndConditions      = require('../../static/pages/tnc');
-const WhyUs                   = require('../../static/pages/why_us');
+const Charity            = require('../../static/pages/charity');*/
+const Contact            = require('../../static/pages/contact');
+const Contact2           = require('../../static/pages/contact_2');
+const GetStarted         = require('../../static/pages/get_started');
+const Home               = require('../../static/pages/home');
+const KeepSafe           = require('../../static/pages/keep_safe');
+const JobDetails         = require('../../static/pages/job_details');
+const Platforms          = require('../../static/pages/platforms');
+const Regulation         = require('../../static/pages/regulation');
+const StaticPages        = require('../../static/pages/static_pages');
+const TermsAndConditions = require('../../static/pages/tnc');
+const WhyUs              = require('../../static/pages/why_us');
 
 /* eslint-disable max-len */
 const pages_config = {
@@ -129,7 +129,6 @@ const pages_config = {
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
 
     'binary-options'         : { module: GetStarted.BinaryOptions },
-    'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
     'binary-options-mt5'     : { module: GetStarted.BinaryOptionsForMT5 },
     'contact-2'              : { module: Contact2 },
     'contract-specifications': { module: TabSelector },
@@ -144,11 +143,12 @@ const pages_config = {
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
-    'types-of-accounts'      : { module: TypesOfAccounts },
     'terms-and-conditions'   : { module: TermsAndConditions },
+    'types-of-accounts'      : { module: TypesOfAccounts },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
+    'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
 };
 /* eslint-enable max-len */
 
