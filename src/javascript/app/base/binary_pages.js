@@ -127,6 +127,7 @@ const pages_config = {
     withdrawws               : { module: PaymentAgentWithdraw,       is_authenticated: true, only_real: true },
 
     'binary-options'         : { module: GetStarted.BinaryOptions },
+    'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
     'binary-options-mt5'     : { module: GetStarted.BinaryOptionsForMT5 },
     'contact-2'              : { module: Contact2 },
     'contract-specifications': { module: TabSelector },
@@ -141,12 +142,11 @@ const pages_config = {
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
-    'terms-and-conditions'   : { module: TermsAndConditions },
     'types-of-accounts'      : { module: TypesOfAccounts },
+    'terms-and-conditions'   : { module: TermsAndConditions },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
     'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
-    'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
 };
 /* eslint-enable max-len */
 
