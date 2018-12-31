@@ -48,7 +48,6 @@ const createProposalRequestForContract = (store, type_of_contract) => {
             expiry_time = store.expiry_time;
         } else {
             expiry_time = is_same_day ? store.expiry_time : moment(server_time).utc().format('HH:mm');
-            console.log(expiry_time); //eslint-disable-line
         }
 
         obj_expiry.date_expiry = convertToUnix(expiry_date.unix(), expiry_time);
