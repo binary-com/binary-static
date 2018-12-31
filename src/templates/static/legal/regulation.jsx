@@ -175,6 +175,50 @@ const Regulation = () => {
                             text={it.L('Annual Best Execution Disclosure 2017')}
                         />
                     </div>
+
+                    <h3>{it.L('RTS 27')}</h3>
+                    <div>
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_1.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 1 - Type of execution venue')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_3.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 3 - Intra-Day Price information')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_4.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 4 - Daily Price information')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_6.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 6 - Likelihood of execution information')}
+                        />
+                    </div>
                 </div>
             </Box>
 
