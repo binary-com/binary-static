@@ -1,9 +1,9 @@
-import BinarySocket     from './socket';
+import BinarySocket   from './socket_base';
 import {
     cloneObject,
     getPropertyValue,
     isDeepEqual,
-    isEmptyObject }     from '../../_common/utility';
+    isEmptyObject }   from '../utility';
 
 /**
  * A layer over BinarySocket to handle subscribing to streaming calls
@@ -201,4 +201,4 @@ const SubscriptionManager = (() => {
     };
 })();
 
-module.exports = SubscriptionManager;
+export default SubscriptionManager;
