@@ -51,7 +51,7 @@ const VideoFacility           = require('../pages/user/video_facility');
 
 // ==================== static ====================
 /*
-const Charity            = require('../../static/pages/charity');*/
+const Charity            = require('../../static/pages/charity'); */
 const Contact            = require('../../static/pages/contact');
 const Contact2           = require('../../static/pages/contact_2');
 const GetStarted         = require('../../static/pages/get_started');
@@ -77,7 +77,7 @@ const pages_config = {
     careers                  : { module: StaticPages.Careers },
     contact                  : { module: Contact },
     /*
-    charity                  : { module: Charity },*/
+    charity                  : { module: Charity }, */
     cashier                  : { module: Cashier },
     cyberjaya                : { module: StaticPages.Locations },
     cryptocurrencies         : { module: GetStarted.Cryptocurrencies },
@@ -143,11 +143,11 @@ const pages_config = {
     'open-source-projects'   : { module: StaticPages.OpenSourceProjects },
     'payment-agent'          : { module: StaticPages.PaymentAgent },
     'set-currency'           : { module: SetCurrency,                is_authenticated: true, only_real: true, needs_currency: true },
-    'terms-and-conditions'   : { module: TermsAndConditions },
+    'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
     'types-of-accounts'      : { module: TypesOfAccounts },
+    'terms-and-conditions'   : { module: TermsAndConditions },
     'video-facility'         : { module: VideoFacility,              is_authenticated: true, only_real: true },
     'why-us'                 : { module: WhyUs },
-    'telegram-bot'           : { module: TelegramBot,                is_authenticated: true },
     'binary-in-numbers'      : { module: StaticPages.BinaryInNumbers },
 };
 /* eslint-enable max-len */
