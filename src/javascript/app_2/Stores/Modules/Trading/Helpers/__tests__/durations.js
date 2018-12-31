@@ -1,6 +1,7 @@
 import { expect }    from 'chai';
 import * as Duration from '../duration.js';
 import BinarySocket  from '_common/base/socket_base';
+import moment        from 'moment';
 
 describe('buildDurationConfig', () => {
     const contract = {
@@ -87,33 +88,41 @@ describe('convertDurationUnit', () => {
 });
 
 describe('getExpiryType', () => {
-    const getServerTime = async () => {
-        const { time: server_time } = await BinarySocket.send({ time: 1 });
-        return server_time;
-    }
-
     const store = {
-        expiry_date: '2018-12-13',
-        expiry_type: 'duration',
         root_store: {
             common: {
-                server_time: getServerTime(),
+                server_time: '2018-12-25 23:59:59',
             }
         }
     }
+
+    it('Return intraday if expiry date is today', () => {
+        store.expiry_date = '2018-12-25';
+        store.expiry_type = 'endtime'
+        expect(Duration.getExpiryType(store)).to.eql('intraday');
+    });
+
+    it('Return daily if expiry date is tomorrow', () => {
+        store.expiry_date = '2018-12-26';
+        store.expiry_type = 'endtime'
+        expect(Duration.getExpiryType(store)).to.eql('daily');
+    });
     
     it('Return tick if duration unit is t', () => {
         store.duration_unit = 't'
+        store.expiry_type = 'duration'
         expect(Duration.getExpiryType(store)).to.eql('tick');
     });
 
     it('Return intraday if duration unit is m', () => {
         store.duration_unit = 'm'
+        store.expiry_type = 'duration'
         expect(Duration.getExpiryType(store)).to.eql('intraday');
     });
 
     it('Return daily if duration unit is d', () => {
         store.duration_unit = 'd'
+        store.expiry_type = 'duration'
         expect(Duration.getExpiryType(store)).to.eql('daily');
     });
 
