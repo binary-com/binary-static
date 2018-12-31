@@ -52,6 +52,7 @@ const GTM = (() => {
             pushDataLayer({ bom_affiliate_token: affiliate_token.t });
         }
 
+        const now = moment(window.time || Date.now()).unix().utc();
         const data = {
             visitorId         : ClientBase.get('loginid'),
             bom_account_type  : ClientBase.getAccountType(),
@@ -60,7 +61,7 @@ const GTM = (() => {
             bom_country_abbrev: get_settings.country_code,
             bom_email         : get_settings.email,
             url               : window.location.href,
-            bom_today         : window.time,
+            bom_today         : now,
         };
 
         if (is_new_account) {
@@ -69,7 +70,7 @@ const GTM = (() => {
         }
 
         if (!ClientBase.get('is_virtual')) {
-            data.bom_age       = moment.unix(window.time).utc().diff(get_settings.date_of_birth, 'year');
+            data.bom_age       = data.bom_today.diff(get_settings.date_of_birth, 'year');
             data.bom_firstname = get_settings.first_name;
             data.bom_lastname  = get_settings.last_name;
             data.bom_phone     = get_settings.phone;
@@ -167,7 +168,7 @@ const GTM = (() => {
         if (!response.transaction || !response.transaction.action) return;
         if (!['deposit', 'withdrawal'].includes(response.transaction.action)) return;
  
-        const now         = moment.unix(window.time).utc();
+        const now         = moment.unix(window.time || Date.now()).utc();
         const storage_key = 'GTM_transactions';
         
         // Remove values from prev days so localStorage doesn't grow to infinity
@@ -184,7 +185,7 @@ const GTM = (() => {
                 event            : 'transaction',
                 bom_account_type : ClientBase.getAccountType(),
                 bom_email_consent: State.getResponse('get_settings.email_consent'),
-                bom_today        : now.unix(),
+                bom_today        : now.unix().utc(),
                 transaction      : {
                     id      : response.transaction.transaction_id,
                     type    : response.transaction.action,
