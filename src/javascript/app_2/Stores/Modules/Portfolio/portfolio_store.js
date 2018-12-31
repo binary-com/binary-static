@@ -5,7 +5,6 @@ import {
 import { WS }                      from 'Services';
 import { formatPortfolioPosition } from './Helpers/format_response';
 import BaseStore                   from '../../base_store';
-import GTM                         from '../../../Utils/gtm';
 
 export default class PortfolioStore extends BaseStore {
     @observable data       = [];
@@ -63,7 +62,6 @@ export default class PortfolioStore extends BaseStore {
         } else if (act === 'sell') {
             this.removePositionById(contract_id);
         }
-        GTM.pushTransactionData(response, { bom_ui: 'new' });
     }
 
     @action.bound

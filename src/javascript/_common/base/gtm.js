@@ -60,7 +60,7 @@ const GTM = (() => {
             bom_country_abbrev: get_settings.country_code,
             bom_email         : get_settings.email,
             url               : window.location.href,
-            bom_today         : Math.floor(Date.now() / 1000),
+            bom_today         : window.time,
         };
 
         if (is_new_account) {
@@ -69,7 +69,7 @@ const GTM = (() => {
         }
 
         if (!ClientBase.get('is_virtual')) {
-            date.bom_age       = moment().utc().diff(get_settings.date_of_birth, 'year'),
+            data.bom_age       = moment.unix(window.time).utc().diff(get_settings.date_of_birth, 'year');
             data.bom_firstname = get_settings.first_name;
             data.bom_lastname  = get_settings.last_name;
             data.bom_phone     = get_settings.phone;
@@ -165,31 +165,27 @@ const GTM = (() => {
     const pushTransactionData = (response, extra_data = {}) => {
         if (!isGtmApplicable() || ClientBase.get('is_virtual')) return;
         if (!response.transaction || !response.transaction.action) return;
-
-        const today = moment().utc();
+        if (!['deposit', 'withdrawal'].includes(response.transaction.action)) return;
+ 
+        const now         = moment.unix(window.time).utc();
         const storage_key = 'GTM_transactions';
-        const gtm_transactions = JSON.parse(localStorage.getItem(storage_key)) || {};
         
         // Remove values from prev days so localStorage doesn't grow to infinity
+        let gtm_transactions  = JSON.parse(localStorage.getItem(storage_key)) || {};
         if (Object.prototype.hasOwnProperty.call(gtm_transactions, 'timestamp')) {
-            if (today.isAfter(moment(gtm_transactions.timestamp), 'day')) {
+            if (now.isAfter(moment.unix(gtm_transactions.timestamp), 'day')) {
                 localStorage.removeItem(storage_key);
+                gtm_transactions = { timestamp: now.format('X') };
             }
         }
         const transactions_arr = gtm_transactions.transactions || [];
         if (!transactions_arr.includes(response.transaction.transaction_id)) {
             const data = {
-                event             : 'transaction',
-                bom_account_type  : ClientBase.getAccountType(),
-                bom_age           : moment().utc().diff(State.getResponse('get_settings.date_of_birth'), 'year'),
-                bom_email_consent : State.getResponse('get_settings.email_consent'),
-                bom_country       : State.getResponse('get_settings.country'),
-                bom_country_abbrev: State.getResponse('get_settings.country_code'),
-                bom_salutation    : State.getResponse('get_settings.salutation'),
-                bom_firstname     : State.getResponse('get_settings.first_name'),
-                bom_lastname      : State.getResponse('get_settings.last_name'),
-                bom_today         : today.unix(),
-                transaction       : {
+                event            : 'transaction',
+                bom_account_type : ClientBase.getAccountType(),
+                bom_email_consent: State.getResponse('get_settings.email_consent'),
+                bom_today        : now.unix(),
+                transaction      : {
                     id      : response.transaction.transaction_id,
                     type    : response.transaction.action,
                     time    : response.transaction.transaction_time,
@@ -200,21 +196,11 @@ const GTM = (() => {
                 },
             };
             Object.assign(data, extra_data);
-            if (['buy', 'sell'].includes(response.transaction.action)) {
-                Object.assign(data, {
-                    contract: {
-                        id           : response.transaction.contract_id,
-                        date_expiry  : response.transaction.date_expiry,
-                        purchase_time: (response.transaction.action === 'buy' ? response.transaction.transaction_time : response.transaction.purchase_time),
-                    },
-                });
-            }
             pushDataLayer(data);
 
             transactions_arr.push(response.transaction.transaction_id);
-
-            gtm_transactions.timestamp = today.format();
             gtm_transactions.transactions = transactions_arr;
+            gtm_transactions.timestamp    = gtm_transactions.timestamp || now.format('X');
 
             localStorage.setItem(storage_key, JSON.stringify(gtm_transactions));
         }

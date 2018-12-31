@@ -1,13 +1,14 @@
-const Portfolio        = require('./portfolio').Portfolio;
-const ViewPopup        = require('../../view_popup/view_popup');
-const Client           = require('../../../../base/client');
-const BinarySocket     = require('../../../../base/socket');
-const formatMoney      = require('../../../../common/currency').formatMoney;
-const GetAppDetails    = require('../../../../common/get_app_details');
-const localize         = require('../../../../../_common/localize').localize;
-const urlParam         = require('../../../../../_common/url').param;
-const getPropertyValue = require('../../../../../_common/utility').getPropertyValue;
-const showLoadingImage = require('../../../../../_common/utility').showLoadingImage;
+const Portfolio           = require('./portfolio').Portfolio;
+const ViewPopup           = require('../../view_popup/view_popup');
+const Client              = require('../../../../base/client');
+const BinarySocket        = require('../../../../base/socket');
+const SubscriptionManager = require('../../../../base/subscription_manager');
+const formatMoney         = require('../../../../common/currency').formatMoney;
+const GetAppDetails       = require('../../../../common/get_app_details');
+const localize            = require('../../../../../_common/localize').localize;
+const urlParam            = require('../../../../../_common/url').param;
+const getPropertyValue    = require('../../../../../_common/utility').getPropertyValue;
+const showLoadingImage    = require('../../../../../_common/utility').showLoadingImage;
 
 const PortfolioInit = (() => {
     let values,
@@ -32,8 +33,8 @@ const PortfolioInit = (() => {
         BinarySocket.send({ portfolio: 1 }).then((response) => {
             updatePortfolio(response);
         });
-        // Wait for transactions to auto update on new purchases
-        BinarySocket.wait('transaction').then(transactionResponseHandler);
+        // Subscribe to transactions to auto update new purchases
+        SubscriptionManager.subscribe('transaction', { transaction: 1, subscribe: 1 }, transactionResponseHandler);
         BinarySocket.send({ oauth_apps: 1 }).then((response) => {
             updateOAuthApps(response);
         });
@@ -212,7 +213,8 @@ const PortfolioInit = (() => {
     };
 
     const onUnload = () => {
-        BinarySocket.send({ forget_all: ['proposal_open_contract', 'transaction'] });
+        BinarySocket.send({ forget_all: ['proposal_open_contract'] });
+        SubscriptionManager.forget('transaction', transactionResponseHandler);
         $('#portfolio-body').empty();
         $('#portfolio-content').setVisibility(0);
         is_initialized = false;
