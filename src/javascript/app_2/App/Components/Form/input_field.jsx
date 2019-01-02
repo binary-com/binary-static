@@ -13,11 +13,13 @@ const InputField = ({
     helper,
     is_disabled,
     is_float,
+    is_read_only = false,
     is_signed = false,
     label,
     max_length,
     name,
     onChange,
+    onClick,
     placeholder,
     prefix,
     required,
@@ -71,7 +73,9 @@ const InputField = ({
             maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
             name={name}
             onChange={changeValue}
+            onClick={onClick}
             placeholder={placeholder || undefined}
+            readOnly={is_read_only}
             required={required || undefined}
             type={type === 'number' ? 'text' : type}
             value={value}
@@ -107,11 +111,13 @@ InputField.propTypes = {
     helper           : PropTypes.bool,
     is_disabled      : PropTypes.string,
     is_float         : PropTypes.bool,
+    is_read_only     : PropTypes.bool,
     is_signed        : PropTypes.bool,
     label            : PropTypes.string,
     max_length       : PropTypes.number,
     name             : PropTypes.string,
     onChange         : PropTypes.func,
+    onClick          : PropTypes.func,
     placeholder      : PropTypes.string,
     prefix           : PropTypes.string,
     required         : PropTypes.bool,

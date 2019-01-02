@@ -67,3 +67,9 @@ export const formatDuration = (duration) => {
     }
     return formatted_str;
 };
+
+/**
+ * return true if the time_str is in "HH:mm" format, else return false
+ * @param {String} time_str time
+ */
+export const isTimeValid = time_str => /^(\d{1,2}):(\d{2})(:00)?$/.test(time_str);

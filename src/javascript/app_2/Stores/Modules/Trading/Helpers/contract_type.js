@@ -4,6 +4,7 @@ import {
     cloneObject,
     getPropertyValue }           from '_common/utility';
 import { WS }                    from 'Services';
+import { isTimeValid }           from 'Utils/Date';
 import { buildBarriersConfig }   from './barrier';
 import { buildDurationConfig }   from './duration';
 import {
@@ -234,7 +235,7 @@ const ContractType = (() => {
 
     const buildMoment = (date, time) => {
         const moment_date = moment.utc(isNaN(date) ? date : +date * 1000);
-        if (!time) return moment_date;
+        if (!time || !isTimeValid(time)) return moment_date;
         const [ hour, minute ] = time.split(':');
         return moment_date.hour(hour).minute(minute);
     };

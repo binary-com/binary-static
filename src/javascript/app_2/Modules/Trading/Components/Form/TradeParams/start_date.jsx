@@ -20,6 +20,7 @@ const StartDate = ({
     start_date,
     start_dates_list,
     start_time,
+    validation_errors,
 }) => {
     // Number(0) refers to 'now'
     const is_today = start_date === Number(0);
@@ -58,6 +59,7 @@ const StartDate = ({
                     sessions={sessions}
                     is_clearable={false}
                     is_nativepicker={is_nativepicker}
+                    validation_errors={validation_errors}
                 />
             }
         </Fieldset>
@@ -65,13 +67,14 @@ const StartDate = ({
 };
 
 StartDate.propTypes = {
-    is_minimized    : PropTypes.bool,
-    is_nativepicker : PropTypes.bool,
-    onChange        : PropTypes.func,
-    sessions        : MobxPropTypes.arrayOrObservableArray,
-    start_date      : PropTypes.number,
-    start_dates_list: MobxPropTypes.arrayOrObservableArray,
-    start_time      : PropTypes.string,
+    is_minimized     : PropTypes.bool,
+    is_nativepicker  : PropTypes.bool,
+    onChange         : PropTypes.func,
+    sessions         : MobxPropTypes.arrayOrObservableArray,
+    start_date       : PropTypes.number,
+    start_dates_list : MobxPropTypes.arrayOrObservableArray,
+    start_time       : PropTypes.string,
+    validation_errors: PropTypes.object,
 };
 
 export default observer(StartDate);

@@ -1,11 +1,12 @@
 import {
     observer,
-    PropTypes as MobxPropTypes }      from 'mobx-react';
-import moment                         from 'moment';
-import PropTypes                      from 'prop-types';
-import React                          from 'react';
-import { localize }                   from '_common/localize';
-import { isSessionAvailable }         from 'Stores/Modules/Trading/Helpers/start_date';
+    PropTypes as MobxPropTypes } from 'mobx-react';
+import moment                    from 'moment';
+import PropTypes                 from 'prop-types';
+import React                     from 'react';
+import { localize }              from '_common/localize';
+import { isSessionAvailable }    from 'Stores/Modules/Trading/Helpers/start_date';
+import InputField                from './input_field.jsx';
 
 class TimePickerDropdown extends React.Component {
     constructor(props) {
@@ -184,6 +185,7 @@ class TimePicker extends React.Component {
             placeholder,
             start_date,
             sessions,
+            validation_errors,
         } = this.props;
         return (
             <div
@@ -201,10 +203,10 @@ class TimePicker extends React.Component {
                         />
                         : (
                             <React.Fragment>
-                                <input
-                                    ref={this.saveRef}
+                                <InputField
+                                    error_messages={validation_errors.start_time}
                                     type='text'
-                                    readOnly
+                                    is_read_only={true}
                                     id={`${prefix_class}-input`}
                                     className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
                                     value={value}

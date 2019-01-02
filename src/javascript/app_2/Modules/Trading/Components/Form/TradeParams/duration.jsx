@@ -12,6 +12,7 @@ import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
 import TimePicker               from 'App/Components/Form/time_picker.jsx';
 import { convertDurationUnit }  from 'Stores/Modules/Trading/Helpers/duration';
+import { isTimeValid }          from 'Utils/Date';
 
 /* TODO:
       1. disable days other than today and tomorrow if start date is forward starting
@@ -70,7 +71,7 @@ const Duration = ({
     const is_same_day   = moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day');
     if (is_same_day) {
         const date_time = moment.utc(start_date * 1000 || undefined);
-        if (start_date && start_time) {
+        if (start_date && isTimeValid(start_time)) {
             const [ hour, minute ] = start_time.split(':');
             date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
         }
@@ -182,6 +183,7 @@ const Duration = ({
                                 sessions={sessions}
                                 is_clearable={false}
                                 is_nativepicker={is_nativepicker}
+                                validation_errors={validation_errors}
                             />
                         }
                     </div>
