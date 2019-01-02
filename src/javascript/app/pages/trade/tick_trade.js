@@ -57,7 +57,6 @@ const TickDisplay = (() => {
         display_symbol       = data.display_symbol;
         contract_start_ms    = parseInt(data.contract_start) * 1000;
         contract_category    = data.contract_category;
-        should_set_barrier   = !contract_category.match('digits');
         barrier              = data.barrier;
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
@@ -137,16 +136,6 @@ const TickDisplay = (() => {
             ticks_needed = number_of_ticks + 1;
             x_indicators = {
                 _0: { label: localize('Entry Spot'), id: 'entry_tick' },
-            };
-        } else if (contract_category.match('digits')) {
-            ticks_needed = number_of_ticks;
-            x_indicators = {
-                _0: { label: localize('Tick [_1]', '1'), id: 'start_tick' },
-            };
-            x_indicators[`_${exit_tick_index}`] = {
-                label    : localize('Tick [_1]', number_of_ticks),
-                id       : 'last_tick',
-                dashStyle: 'Dash',
             };
         } else if (contract_category.match('highlowticks')) {
             ticks_needed = number_of_ticks;
@@ -359,8 +348,6 @@ const TickDisplay = (() => {
                 let category = 'callput';
                 if (/asian/i.test(contract.shortcode)) {
                     category = 'asian';
-                } else if (/digit/i.test(contract.shortcode)) {
-                    category = 'digits';
                 } else if (/touch/i.test(contract.shortcode)) {
                     category = 'touchnotouch';
                 } else if (/reset/i.test(contract.shortcode)) {
