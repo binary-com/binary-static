@@ -52,7 +52,8 @@ const GTM = (() => {
             pushDataLayer({ bom_affiliate_token: affiliate_token.t });
         }
 
-        const now = moment(window.time || Date.now()).unix().utc();
+        // Get current time (moment, set by server), else fallback to client time
+        const moment_now = window.time || moment().utc();
         const data = {
             visitorId         : ClientBase.get('loginid'),
             bom_account_type  : ClientBase.getAccountType(),
@@ -61,7 +62,7 @@ const GTM = (() => {
             bom_country_abbrev: get_settings.country_code,
             bom_email         : get_settings.email,
             url               : window.location.href,
-            bom_today         : now,
+            bom_today         : moment_now.format('X'),
         };
 
         if (is_new_account) {
@@ -70,7 +71,7 @@ const GTM = (() => {
         }
 
         if (!ClientBase.get('is_virtual')) {
-            data.bom_age       = data.bom_today.diff(get_settings.date_of_birth, 'year');
+            data.bom_age       = moment_now.diff(moment.unix(get_settings.date_of_birth).utc(), 'year');
             data.bom_firstname = get_settings.first_name;
             data.bom_lastname  = get_settings.last_name;
             data.bom_phone     = get_settings.phone;
@@ -163,20 +164,21 @@ const GTM = (() => {
         pushDataLayer(gtm_data);
     };
 
+    // Pushes deposit & withdrawal data from transaction-stream to GTM
     const pushTransactionData = (response, extra_data = {}) => {
         if (!isGtmApplicable() || ClientBase.get('is_virtual')) return;
         if (!response.transaction || !response.transaction.action) return;
         if (!['deposit', 'withdrawal'].includes(response.transaction.action)) return;
  
-        const now         = moment.unix(window.time || Date.now()).utc();
+        const moment_now  = window.time || moment().utc();
         const storage_key = 'GTM_transactions';
         
         // Remove values from prev days so localStorage doesn't grow to infinity
         let gtm_transactions  = JSON.parse(localStorage.getItem(storage_key)) || {};
         if (Object.prototype.hasOwnProperty.call(gtm_transactions, 'timestamp')) {
-            if (now.isAfter(moment.unix(gtm_transactions.timestamp), 'day')) {
+            if (moment_now.isAfter(moment.utc().unix(gtm_transactions.timestamp), 'day')) {
                 localStorage.removeItem(storage_key);
-                gtm_transactions = { timestamp: now.format('X') };
+                gtm_transactions = { timestamp: moment_now.format('X') };
             }
         }
         const transactions_arr = gtm_transactions.transactions || [];
@@ -185,7 +187,7 @@ const GTM = (() => {
                 event            : 'transaction',
                 bom_account_type : ClientBase.getAccountType(),
                 bom_email_consent: State.getResponse('get_settings.email_consent'),
-                bom_today        : now.unix().utc(),
+                bom_today        : moment_now.format('X'),
                 transaction      : {
                     id      : response.transaction.transaction_id,
                     type    : response.transaction.action,
@@ -201,7 +203,7 @@ const GTM = (() => {
 
             transactions_arr.push(response.transaction.transaction_id);
             gtm_transactions.transactions = transactions_arr;
-            gtm_transactions.timestamp    = gtm_transactions.timestamp || now.format('X');
+            gtm_transactions.timestamp    = gtm_transactions.timestamp || moment_now.format('X');
 
             localStorage.setItem(storage_key, JSON.stringify(gtm_transactions));
         }
