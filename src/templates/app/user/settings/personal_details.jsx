@@ -75,7 +75,7 @@ const PersonalDetails = () => (
             <SubmitButton is_centered id='btn_update' msg_id='formMessage' type='submit' text={it.L('Update')} className='gr-6 gr-centered' />
         </form>
 
-        <p className='required invisible RealAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, email, or tax information please contact <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}</p>
+        <p className='required invisible RealAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, email, or tax information, please contact <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}</p>
     </React.Fragment>
 );
 
