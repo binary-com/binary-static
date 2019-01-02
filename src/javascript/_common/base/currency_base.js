@@ -76,9 +76,25 @@ const CryptoConfig = (() => {
     };
 })();
 
-const getMinWithdrawal = currency => (isCryptocurrency(currency) ? getPropertyValue(CryptoConfig.get(), [currency, 'min_withdrawal']) || 0.002 : 1);
+const getMinWithdrawal = currency => (isCryptocurrency(currency) ? (getPropertyValue(CryptoConfig.get(), [currency, 'min_withdrawal']) || 0.002) : 1);
 
-const getMinTransfer = currency => getPropertyValue(currencies_config, [currency, 'limits', 'transfer_between_accounts', 'min']) || getMinWithdrawal(currency);
+// returns in a string format, e.g. '0.00000001'
+const getMinTransfer = currency => {
+    const min_transfer = getPropertyValue(currencies_config, [currency, 'transfer_between_accounts', 'limits', 'min']) || getMinWithdrawal(currency);
+    const decimals     = getDecimalPlaces(currency);
+    return min_transfer.toFixed(decimals); // we need toFixed() so that it doesn't display in scientific notation, e.g. 1e-8 for currencies with 8 decimal places
+};
+
+const getTransferFee = (currency_from, currency_to) => {
+    const transfer_fee = getPropertyValue(currencies_config, [currency_from, 'transfer_between_accounts', 'fees', currency_to]);
+    return `${typeof transfer_fee === 'undefined' ? '1' : transfer_fee}%`;
+};
+
+// returns in a string format, e.g. '0.00000001'
+const getMinimumTransferFee = (currency) => {
+    const decimals = getDecimalPlaces(currency);
+    return `${currency} ${(1 / Math.pow(10, decimals)).toFixed(decimals)}`; // we need toFixed() so that it doesn't display in scientific notation, e.g. 1e-8 for currencies with 8 decimal places
+};
 
 // @param {String} limit = max|min
 const getPaWithdrawalLimit = (currency, limit) => {
@@ -102,6 +118,8 @@ module.exports = {
     getCurrencyName,
     getMinWithdrawal,
     getMinTransfer,
+    getTransferFee,
+    getMinimumTransferFee,
     getMinPayout,
     getPaWithdrawalLimit,
     getCurrencies: () => currencies_config,

@@ -247,8 +247,6 @@ const TradingEvents = (() => {
         if (date_start_element) {
             date_start_element.addEventListener('change', (e) => {
                 Defaults.set('date_start', e.target.value);
-                // don't show asset open hours if value is now because there is no time picker
-                CommonIndependent.showAssetOpenHours(e.target.value === 'now' ? '' : $(e.target));
                 initTimePicker();
                 const r = Durations.onStartDateChange(e.target.value);
                 Process.displayEquals();

@@ -94,7 +94,7 @@ const Regulation = () => {
             </Box>
 
             <Box header={it.L('Binary Investments (Europe) Ltd')} >
-                <p>{it.L('Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf')}" target="_blank" download=1>`, '</a>')}</p>
+                <p>{it.L('Binary Investments (Europe) Ltd, Mompalao Building, Suite 2, Tower Road, Msida MSD1825, Malta. Licensed and regulated as a Category 3 Investment Services provider by the Malta Financial Services Authority ([_1]licence no. IS/70156[_2]).',`<a href="${it.url_for('/download/WS-Binary-Investments-Europe-Limited.pdf')}" target="_blank">`, '</a>')}</p>
                 <p>{it.L('European Union residents who wish to trade investment products will have their accounts opened with Binary Investments (Europe) Ltd.')}</p>
                 <div className='gr-padding-30 gr-12' id='accordion'>
                     <h3 aria-expanded='true' aria-selected='true'>{it.L('EU Passport Rights')}</h3>
@@ -146,7 +146,6 @@ const Regulation = () => {
                             image='images/pages/regulation/pdf-icon.svg'
                             href={it.url_for('/download/BIEL_Pillar_3_Report_20180601.pdf')}
                             target='_blank'
-                            download
                             text={it.L('Pillar 3 disclosure report')}
                         />
                     </div>
@@ -155,11 +154,11 @@ const Regulation = () => {
                     <div>
                         <p>{it.L('These documents provide you with key information about our investment products. This information is required by law to help you understand the nature, risks, costs, potential gains and losses of these products and to help you compare them with other products.')}</p>
                         <div className='gr-row'>
-                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Up_Down.pdf`)}        target='_blank' download text={it.L('Up/Down')} />
-                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Touch_No_Touch.pdf`)} target='_blank' download text={it.L('Touch/No Touch')} />
-                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/In_and_Out.pdf`)}     target='_blank' download text={it.L('In/Out')} />
-                            <FillBox padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/CFD.pdf`)} target='_blank' download text={it.L('CFD')} />
-                            <FillBox padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' download text={it.L('FX')} />
+                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Up_Down.pdf`)}        target='_blank' text={it.L('Up/Down')} />
+                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/Touch_No_Touch.pdf`)} target='_blank' text={it.L('Touch/No Touch')} />
+                            <FillBox padding='4' center border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/In_and_Out.pdf`)}     target='_blank' text={it.L('In/Out')} />
+                            <FillBox padding='4' center className='margin-right-0' border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/CFD.pdf`)} target='_blank' text={it.L('CFD')} />
+                            <FillBox padding='4' center className='margin-left-0'  border='border-dark-gray' href={it.url_for(`/download/key_information_document/${lang}/FX.pdf`)}  target='_blank' text={it.L('FX')} />
                         </div>
                     </div>
 
@@ -174,6 +173,50 @@ const Regulation = () => {
                             href={it.url_for('/download/BIEL-RTS28.pdf')}
                             target='_blank'
                             text={it.L('Annual Best Execution Disclosure 2017')}
+                        />
+                    </div>
+
+                    <h3>{it.L('RTS 27')}</h3>
+                    <div>
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_1.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 1 - Type of execution venue')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_3.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 3 - Intra-Day Price information')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_4.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 4 - Daily Price information')}
+                        />
+                        <FillBox
+                            padding='5'
+                            center
+                            border='border-dark-gray'
+                            className='margin-top-17'
+                            image='images/pages/regulation/xlsx-icon.svg'
+                            href={it.url_for('/download/rts27/Table_6.xlsx')}
+                            target='_blank'
+                            text={it.L('Table 6 - Likelihood of execution information')}
                         />
                     </div>
                 </div>
@@ -206,7 +249,7 @@ const Regulation = () => {
                 <RegulatorText />
                 <RegulatorImage href='https://www.vfsc.vu/' image='images/pages/regulation/vanuatu-logo.png' />
             </Box>
-            
+
             <Box header={it.L('Binary (BVI) Ltd')} >
                 <p>{it.L('Binary (BVI) Ltd, 2nd Floor, O’Neal Marketing Associates Building, Wickham’s Cay II, P.O. Box 3174, Road Town, Tortola VB1110, British Virgin Islands. Licensed and regulated by the British Virgin Islands Financial Services Commission - [_1]view licence[_2].', `<a href=${it.url_for('download/regulation/BVI_license.pdf')} target="_blank">`, '</a>')}</p>
                 <p>{it.L('Clients from the rest of the world (excluding certain countries such as the USA, Canada, Costa Rica, Hong Kong) will have their FX and CFD Metatrader 5 account opened with Binary (BVI) Ltd. [_1] is not available in the British Virgin Islands.', it.website_name)}</p>

@@ -34,7 +34,7 @@ const PersonalDetails = () => (
             </div>
             <div className='center-text'>
                 <a className='button' href={it.url_for('user/metatrader')}>
-                    <span>{it.L('Go to MetaTrader 5 Dashboard')}</span>
+                    <span>{it.L('Go to MetaTrader 5 dashboard')}</span>
                 </a>
             </div>
         </div>
@@ -75,7 +75,7 @@ const PersonalDetails = () => (
             <SubmitButton is_centered id='btn_update' msg_id='formMessage' type='submit' text={it.L('Update')} className='gr-6 gr-centered' />
         </form>
 
-        <p className='required invisible RealAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, or email, please contact <a href="[_1]">Customer Support</a>.', it.url_for('contact'))}</p>
+        <p className='required invisible RealAcc rowCustomerSupport'>{it.L('To change your name, date of birth, country of residence, email, or tax information, please contact [_1]Customer Support[_2].', `<a href='${it.url_for('contact')}'>`, '</a>')}</p>
     </React.Fragment>
 );
 

@@ -42,16 +42,16 @@ const FinancialAccOpening = (() => {
             Object.keys(get_settings).forEach((key) => {
                 $element = $(`#${key}`);
                 value    = get_settings[key];
-                if (key === 'date_of_birth') {
+                if (key === 'date_of_birth' && value) {
                     const moment_val = moment.utc(value * 1000);
                     get_settings[key] = moment_val.format('DD MMM, YYYY');
                     $element.attr({
                         'data-value': toISOFormat(moment_val),
+                        'value'     : toISOFormat(moment_val),
                         'type'      : 'text',
                     });
                     $('.input-disabled').attr('disabled', 'disabled');
-                }
-                if (value) $element.val(value);
+                } else if (value) $element.val(value);
             });
         });
 
@@ -73,12 +73,14 @@ const FinancialAccOpening = (() => {
         });
 
         AccountOpening.showHidePulser(0);
+        AccountOpening.registerPepToggle();
     };
 
     const getValidations = () => {
         let validations =
               AccountOpening.commonValidations().concat(AccountOpening.selectCheckboxValidation(form_id), [
                   { selector: '#citizen',                   validations: ['req'] },
+                  { selector: '#tax_residence',             validations: ['req'] },
                   { selector: '#tax_identification_number', validations: ['req', 'tax_id', ['length', { min: 1, max: 20 }]] },
                   { selector: '#chk_tax_id',                validations: [['req', { hide_asterisk: true, message: localize('Please confirm that all the information above is true and complete.') }]], exclude_request: 1 },
               ]);

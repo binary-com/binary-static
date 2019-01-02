@@ -33,7 +33,7 @@ const Trading = () => (
                     <span id='trading_worm_chart' />
                     <span id='spot' />
                 </div>
-                <a className='unicode-info-icon' id='symbol_tip' target=''>&#9432;</a>
+                <a id='symbol_tip' target='_blank'>&#9432;</a>
             </div>
             <div className='row clear' id='contract_form_content_wrapper'>
                 <div className='col row-inner gr-6 gr-12-p gr-12-m gr-no-gutter'>
@@ -49,9 +49,6 @@ const Trading = () => (
                                             <div id='time_start_row' className='invisible'>
                                                 <input type='text' data-lpignore='true' id='time_start' autoComplete='off' readOnly='readonly' className='medium_width_input' />
                                                 <span className='gr-gutter-left'>GMT</span>
-                                            </div>
-                                            <div>
-                                                <div className='hint invisible'>{it.L('Asset open hours:')} <span id='asset_open_hours' /></div>
                                             </div>
                                         </div>
                                     </div>
@@ -178,7 +175,7 @@ const Trading = () => (
                                     <div className='row' id='reset_time' />
                                     <div className='row invisible' id='equals_row'>
                                         <input id='callputequal' type='checkbox' />
-                                        <label htmlFor='callputequal'><span data-balloon-length='xlarge' data-balloon={it.L('Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower.')}>{it.L('Allow equals')}</span></label>
+                                        <label htmlFor='callputequal'><span data-balloon={it.L('Win payout if exit spot is also equal to entry spot.')}>{it.L('Allow equals')}</span></label>
                                     </div>
                                 </form>
                             </div>
@@ -215,7 +212,7 @@ const Trading = () => (
                                 <div className='authorization_error'>
                                     <h3 id='authorization_error_text'>{it.L('Ready to trade?')}</h3>
                                     <a className='button' href={it.url_for('new-account')}>
-                                        <span>{it.L('Open A Free Account')}</span>
+                                        <span>{it.L('Open a free account')}</span>
                                     </a>
                                     <p>{it.L('Already have an account?')}</p>
                                     <a id='authorization_error_btn_login' href='javascript:;'>{it.L('Log in here')}</a>

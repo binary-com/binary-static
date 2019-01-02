@@ -168,7 +168,7 @@
             }
             .th-list, .td-list {
                 display: grid;
-                grid-template-columns: 2fr 1.3fr 1.3fr 3fr 0.8fr;
+                grid-template-columns: 2fr 1.3fr 1.3fr 3fr 1fr;
                 grid-column-gap: 10px;
 
                 .th, .td {
@@ -203,7 +203,11 @@
         tbody tr {
             td {
                 position: relative;
-                padding: 10px;
+                padding: 10px 0;
+
+                @media (max-width: 600px) {
+                    padding: 10px 0 !important;
+                }
 
                 div.td-list, div.td-description {
                     overflow: hidden;
@@ -213,11 +217,13 @@
                     &.td-list {
                         height: 0;
                         opacity: 0;
+                        margin-left: 8px;
 
                         &.active {
                             transition: all 0.2s 0.2s;
                             height: 100%;
                             opacity: 1;
+                            align-content: center;
                         }
                     }
                     &.td-description {
@@ -226,11 +232,13 @@
                         transform: translateY(40px);
                         transition: all 0.2s ease-in;
                         text-size-adjust: 100%; // prevent text-size from increasing
+                        pointer-events: none;
 
                         &.active {
                             transform: translateY(0);
                             transition: all 0.2s ease-in-out;
                             opacity: 1;
+                            pointer-events: auto;
                         }
                     }
                 }
@@ -691,6 +699,9 @@ body #not_authenticated_financial ul.checked > li {
 }
 
 .accounts-content {
+    .table-container {
+        overflow-x: visible;
+    }
     .table-container table {
         border: 1px solid $COLOR_LIGHT_GRAY;
 
@@ -703,12 +714,52 @@ body #not_authenticated_financial ul.checked > li {
             border-bottom: 1px solid $COLOR_LIGHT_GRAY;
         }
         &.responsive {
-            th, td {
-                @media screen and (max-width: 500px) {
-                    text-align: left !important;
+            &#new_accounts_table {
+                th, td {
+                    @media screen and (max-width: 500px) {
+                        text-align: left !important;
 
-                    &:last-child {
-                        padding-top: 0;
+                        &:last-child {
+                            padding-top: 0;
+                        }
+                    }
+                }
+            }
+            &#existing_accounts {
+                @media screen and (max-width: 500px) {
+                    display: block;
+                    width: 100%;
+                }
+
+                tbody {
+                    @media screen and (max-width: 500px) {
+                        display: block;
+                    }
+                }
+                tr {
+                    @media screen and (max-width: 500px) {
+                        display: block;
+                        margin: 10px !important;
+                        border-bottom: 1px solid $COLOR_LIGHT_GRAY;
+
+                        &:last-child {
+                            border: none;
+                        }
+                    }
+                }
+                th, td {
+                    text-align: left !important;
+                    border: none;
+
+                    @media screen and (max-width: 500px) {
+                        display: inline-block;
+                        padding: 10px;
+                        width: 40%;
+                        width: calc(50% - 20px);
+
+                        &:nth-child(2n) {
+                            float: right;
+                        }
                     }
                 }
             }
@@ -1412,5 +1463,15 @@ body #not_authenticated_financial ul.checked > li {
                 margin: 15px 15px 20px;
             }
         }
+    }
+}
+
+.cashier_note {
+    .notice-circle {
+        color: $COLOR_ORANGE;
+        border-color: $COLOR_ORANGE;
+    }
+    p {
+        color: $COLOR_BLUE;
     }
 }
