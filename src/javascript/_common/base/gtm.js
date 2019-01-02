@@ -62,7 +62,7 @@ const GTM = (() => {
             bom_country_abbrev: get_settings.country_code,
             bom_email         : get_settings.email,
             url               : window.location.href,
-            bom_today         : moment_now.format('X'),
+            bom_today         : moment_now.unix(),
         };
 
         if (is_new_account) {
@@ -178,7 +178,7 @@ const GTM = (() => {
         if (Object.prototype.hasOwnProperty.call(gtm_transactions, 'timestamp')) {
             if (moment_now.isAfter(moment.utc().unix(gtm_transactions.timestamp), 'day')) {
                 localStorage.removeItem(storage_key);
-                gtm_transactions = { timestamp: moment_now.format('X') };
+                gtm_transactions = { timestamp: moment_now.unix() };
             }
         }
         const transactions_arr = gtm_transactions.transactions || [];
@@ -187,7 +187,7 @@ const GTM = (() => {
                 event            : 'transaction',
                 bom_account_type : ClientBase.getAccountType(),
                 bom_email_consent: State.getResponse('get_settings.email_consent'),
-                bom_today        : moment_now.format('X'),
+                bom_today        : moment_now.unix(),
                 transaction      : {
                     id      : response.transaction.transaction_id,
                     type    : response.transaction.action,
@@ -203,7 +203,7 @@ const GTM = (() => {
 
             transactions_arr.push(response.transaction.transaction_id);
             gtm_transactions.transactions = transactions_arr;
-            gtm_transactions.timestamp    = gtm_transactions.timestamp || moment_now.format('X');
+            gtm_transactions.timestamp    = gtm_transactions.timestamp || moment_now.unix();
 
             localStorage.setItem(storage_key, JSON.stringify(gtm_transactions));
         }
