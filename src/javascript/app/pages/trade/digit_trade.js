@@ -1,4 +1,5 @@
 const moment               = require('moment');
+const DigitTicker          = require('./digit_ticker');
 const ViewPopupUI          = require('../user/view_popup/view_popup.ui');
 const showLocalTimeOnHover = require('../../base/clock').showLocalTimeOnHover;
 const BinarySocket         = require('../../base/socket');
@@ -22,7 +23,8 @@ const DigitDisplay = (() => {
                 .append($('<div />', { class: 'gr-row', id: 'table_digits' })
                     .append($('<strong />', { class: 'gr-3', text: localize('Tick') }))
                     .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
-                    .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))));
+                    .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
+            .append($('<div />', { class: 'digit-ticker invisible', id: 'digit-ticker-container' }));
 
         const request     = {
             ticks_history: contract.underlying,
@@ -34,6 +36,7 @@ const DigitDisplay = (() => {
         } else {
             request.end = contract.date_expiry;
         }
+        DigitTicker.init('digit-ticker-container', contract);
 
         BinarySocket.send(request, { callback: update });
     };
@@ -44,6 +47,12 @@ const DigitDisplay = (() => {
             .append($('<p />', { class: 'gr-3', text: tick_count }))
             .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${spot.slice(0, spot.length - 1)}<strong>${spot.slice(-1)}</strong>` : spot }))
             .append($('<p />', { class: 'gr-6 gray digit-spot-time no-underline', text: moment(+time * 1000).utc().format('YYYY-MM-DD HH:mm:ss') }));
+
+        DigitTicker.update(
+            tick_count,
+            spot.slice(-1),
+            contract
+        );
     };
 
     const update = (response) => {
@@ -67,7 +76,6 @@ const DigitDisplay = (() => {
             updateTable(response.tick.quote, response.tick.epoch);
             tick_count += 1;
         }
-
         showLocalTimeOnHover('.digit-spot-time');
     };
 
