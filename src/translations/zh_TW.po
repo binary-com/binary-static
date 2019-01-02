@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-31 03:47\n"
+"PO-Revision-Date: 2019-01-02 02:41\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -231,8 +231,8 @@ msgstr "%1 與上述所有支付代理不存在附屬關係。各支付代理均
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1在哥斯大黎加還不可使用，並不受哥斯大黎加金融體系任何監管機構的監管或監督。"
 
-msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 由 Binary 集團有限公司擁有和經營。欲了解更多資訊，請 <a href='%2'>參閱我們的歷史頁面</a>。"
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
+msgstr ""
 
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface."
 msgstr "%1正在尋找合格、具有語言天賦和注重細節的校對人員 。您必須能夠使用基於網絡的翻譯介面與我們的員工互相交流。"
@@ -402,6 +402,9 @@ msgstr "%1聯繫我們%2 安排視訊通話日期和時間。"
 msgid "%1Download MAM for Windows%2 after you’ve set up your master account. Your login credentials will be provided"
 msgstr "設置主帳戶後%1下載Windows版MAM%2 。將提供您的登入憑據"
 
+msgid "%1Founded%2 October 1999"
+msgstr ""
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1您的身份證明或地址證明%2 不符合我們的要求。請檢查您的電子郵件收取進一步指示。"
 
@@ -512,9 +515,6 @@ msgstr "<< 返回工作詳細說明"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">返回交易頁面</a>"
-
-msgid "<a href='%1'>Founded</a> October 1999"
-msgstr "<a href='%1'>成立於</a>1999年10月"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>合適性測試:警告:</strong>為了給您提供服務，我們必須向您獲取資訊，以便評估某項產品或服務對您是否合適（就是說要看您是否擁有足夠經驗和知識來了解相關的風險）。"
@@ -5916,8 +5916,8 @@ msgstr "與外部供應商聯絡, 確保以最具成本效益的價格進行採�
 msgid "Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees"
 msgstr "代表公司和雇員定期與移民局和稅務局等政府機構聯絡"
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
-msgstr "由馬爾他、英國、曼島和愛爾蘭相關機構授予執照和監管"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. %1Learn more%2"
+msgstr ""
 
 msgid "Licensed, trusted, and secure"
 msgstr "有牌照、備受信賴、及安全"
@@ -7245,8 +7245,8 @@ msgstr "大於$1,000,000"
 msgid "Over $500,000"
 msgstr "$500,000以上"
 
-msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
-msgstr "世界各地擁有超過%1名<a href='%2'>職員</a>和約聘員工"
+msgid "Over %1 %2staff%3 and contractors worldwide"
+msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "全球各地擁有超過1百萬個註冊帳號"
