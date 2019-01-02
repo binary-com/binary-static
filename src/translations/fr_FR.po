@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-28 04:51\n"
+"PO-Revision-Date: 2018-12-31 02:37\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -698,10 +698,10 @@ msgid "Ability to produce high-quality, self-documenting code by using test-driv
 msgstr "Capacité à produire un code auto-descriptif de haute qualité en utilisant des techniques de développement pilotées par les tests (TDD)"
 
 msgid "Ability to quickly learn new (proprietary) systems and procedures"
-msgstr "Capacité à apprendre rapidement les nouveaux procédures et systèmes (propriétaires)"
+msgstr "Capacité à apprendre rapidement les nouveaux systèmes (propriétaires) et procédures"
 
 msgid "Ability to quickly learn new systems and procedures"
-msgstr "Capacité à apprendre rapidement les nouveaux procédures et systèmes"
+msgstr "Capacité à apprendre rapidement les nouveaux systèmes et procédures"
 
 msgid "Ability to speak multiple languages is preferred"
 msgstr "La capacité à parler plusieurs langues est préférée"
@@ -4999,9 +4999,6 @@ msgstr "Si vous concluez le présent Accord au nom de votre employeur ou d'une a
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
 msgstr "Si vous ne vous trouvez pas dans les pays mentionnés précédemment, composez simplement un de nos numéros de téléphone d'aide."
 
-msgid "If you are shortlisted, we will send you a talent test to be completed."
-msgstr "Si vous êtes sélectionné, nous vous enverrons un test de talent à remplir."
-
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
 msgstr "Si vous ne parvenez pas à scanner le code QR, vous pouvez entrer manuellement ce code à la place :"
 
@@ -5184,6 +5181,9 @@ msgstr "Si vous êtes un courtier nous aimerions travailler avec vous. Vous intr
 
 msgid "If you're shortlisted, we'll invite you to a hackathon or send you a talent test."
 msgstr "Si vous êtes retenus, nous vous inviterons à un hackathon ou vous enverrons un test de talent."
+
+msgid "If you're shortlisted, we'll send you a talent test to be completed."
+msgstr ""
 
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
 msgstr "Si votre compte %1 est fermé, votre Compte Réel MT5 sera automatiquement fermé également."
@@ -7624,8 +7624,8 @@ msgstr "N.B. Les cotations du weekend ne sont pas prises en compte afin de perme
 msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr "Veuillez prendre note que vous utilisez actuellement votre compte %1Bitcoin Cash%2. Vous pouvez seulement approvisionner votre compte en %1Bitcoin Cash%2et pas en Bitcoin."
 
-msgid "Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help."
-msgstr "Veuillez indiquer le numéro d’identification fiscale pour chaque pays où vous êtes un résident fiscal. Si vous ne pouvez fournir cette information, veuillez contacter notre équipe d’assistance clientèle pour vous aider."
+msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
+msgstr ""
 
 msgid "Please provide us with the following information:"
 msgstr "Veuillez nous fournir les informations suivantes:"
@@ -7657,14 +7657,14 @@ msgstr "Veuillez sélectionner une date valide"
 msgid "Please select a valid time."
 msgstr "Veuillez sélectionner un horaire valide."
 
-msgid "Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr "Veuillez sélectionner tous les pays où vous êtes un résident fiscal. Si vous avez des doutes, veuillez consulter votre conseiller fiscal."
-
 msgid "Please select at least one scope"
 msgstr "Veuillez sélectionner au moins un champ d'application"
 
 msgid "Please select the checkbox."
 msgstr "Veuillez cocher la case."
+
+msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
+msgstr ""
 
 msgid "Please select the currency of this account:"
 msgstr "Veuillez sélectionner la devise de ce compte :"
@@ -8064,6 +8064,9 @@ msgstr "Devise de cotation"
 
 msgid "R. Interpretation of Terms"
 msgstr "R. Interprétation des conditions"
+
+msgid "RTS 27"
+msgstr ""
 
 msgid "Range of markets"
 msgstr "Gamme de marchés"
@@ -9174,6 +9177,18 @@ msgstr "Indices synthétiques qui imitent la volatilité du marché."
 
 msgid "System Administrator"
 msgstr "Administrateur Système"
+
+msgid "Table 1 - Type of execution venue"
+msgstr ""
+
+msgid "Table 3 - Intra-Day Price information"
+msgstr ""
+
+msgid "Table 4 - Daily Price information"
+msgstr ""
+
+msgid "Table 6 - Likelihood of execution information"
+msgstr ""
 
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
 msgstr "Optez pour une vision à court ou long terme, avec des durations de trade de 10 secondes jusqu'à 365 jours."
@@ -12345,9 +12360,6 @@ msgstr "Vous octroyez à la Société une licence irrévocable et non exclusive 
 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr "Vous faites les représentations suivantes et garanties à nous au moment que vous entrez dans ce Contrat, et acceptez que de telles représentations et garanties sont estimées répétées à chaque fois que vous ouvrez ou fermez une Transaction :"
-
-msgid "You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate."
-msgstr "Vous pouvez être considéré comme un résident fiscal dans plus d’une juridiction. Veuillez consulter votre conseiller fiscal et vérifiez que vos informations fiscales sont exactes."
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "Vous pouvez mettre le contenu en cache pour une durée inférieure ou égale à 24 heures après l'envoi d'une demande pour ce Contenu par le biais de l'API %1."

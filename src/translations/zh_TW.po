@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-28 04:53\n"
+"PO-Revision-Date: 2018-12-31 02:39\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -4998,9 +4998,6 @@ msgstr "如果您代表雇主或其他實體簽訂本協議，您確認並保證
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
 msgstr "如果您目前不是位於上述國家內, 只需撥打我們的任一聯繫電話尋求説明即可。"
 
-msgid "If you are shortlisted, we will send you a talent test to be completed."
-msgstr "如果您通過初選, 我們將給您發送人才招聘測試。"
-
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
 msgstr "如果無法掃描 QR 代碼, 可以手動輸入此代碼取代:"
 
@@ -5183,6 +5180,9 @@ msgstr "如果您是經紀人, 我們想和您合作。您可向您的客戶推�
 
 msgid "If you're shortlisted, we'll invite you to a hackathon or send you a talent test."
 msgstr "如果您進入初選名單，我們會邀請您參與駭客松測試或者讓您參與人才測試。"
+
+msgid "If you're shortlisted, we'll send you a talent test to be completed."
+msgstr ""
 
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
 msgstr "如果您的%1帳戶已關閉, 您的 MT5 真實帳戶也將自動關閉。"
@@ -7623,8 +7623,8 @@ msgstr "請注意，為進行合約結算，週末報價將忽略不計。週末
 msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr "請注意, 您目前正在使用 %1比特幣現金%2 帳戶。您只能將 %1比特幣現金%2, 而不是比特幣存入帳戶。"
 
-msgid "Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help."
-msgstr "請提供您作為每個國家的納稅居民的納稅證編號。如果您無法提供此資訊, 請與我們的客戶支援團隊聯繫以尋求説明。"
+msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
+msgstr ""
 
 msgid "Please provide us with the following information:"
 msgstr "請提供以下資訊："
@@ -7656,14 +7656,14 @@ msgstr "請選擇付款代理"
 msgid "Please select a valid time."
 msgstr "請選擇有效時間。"
 
-msgid "Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr "請選擇您身為納稅居民的所有國家。如有任何疑問, 請諮詢您的稅務顧問。"
-
 msgid "Please select at least one scope"
 msgstr "請選擇至少一個範圍"
 
 msgid "Please select the checkbox."
 msgstr "請選擇核取方塊。"
+
+msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
+msgstr ""
 
 msgid "Please select the currency of this account:"
 msgstr "請選擇此帳戶的幣種："
@@ -8063,6 +8063,9 @@ msgstr "報價貨幣"
 
 msgid "R. Interpretation of Terms"
 msgstr "十三、術語釋義"
+
+msgid "RTS 27"
+msgstr ""
 
 msgid "Range of markets"
 msgstr "市場範圍"
@@ -9172,6 +9175,18 @@ msgid "Synthetic indices that mimic market volatility."
 msgstr "類比市場波動性的綜合指數。"
 
 msgid "System Administrator"
+msgstr ""
+
+msgid "Table 1 - Type of execution venue"
+msgstr ""
+
+msgid "Table 3 - Intra-Day Price information"
+msgstr ""
+
+msgid "Table 4 - Daily Price information"
+msgstr ""
+
+msgid "Table 6 - Likelihood of execution information"
 msgstr ""
 
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
@@ -12344,9 +12359,6 @@ msgstr "您不可撤回地允許公司以非獨家方式使用您的貢獻;和"
 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr "簽訂本協定時，您向我們提出以下陳述和保證，並同意每次您開盤或收盤交易時此陳述和保證將被視為重新提出:"
-
-msgid "You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate."
-msgstr "您可能被一個以上管轄區視為納稅居民。請諮詢您的稅務顧問, 並驗證您的稅務資訊是正確的。"
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "通過%1 API對指定內容提出請求可保留此內容緩存為時24小時。"
