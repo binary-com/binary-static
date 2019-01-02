@@ -3,15 +3,9 @@ import { getPreBuildDVRs }    from '../declarative_validation_rules.js';
 
 describe('declarative_validation_rules.js', () => {
     let rules;
-    
+
     beforeEach('Getting Pre Built Declarative Validation Rules', () => {
         rules = getPreBuildDVRs();
-    });
-
-    describe('.getPreBuildDVRs', () => {
-        it('should return an object', () => {
-            expect(rules).to.be.a('object');
-        });
     });
 
     describe('.validRequired', () => {
@@ -27,6 +21,90 @@ describe('declarative_validation_rules.js', () => {
         it('should return false if string length is 0', () => {
             expect(rules['req'].func('')).to.be.false;
         });
+    });
+
+    describe('.validEmail', () => {
+        it('should return false if address is missing an At sign', () => {
+            expect(rules['email'].func('a.a')).to.be.false;
+        });
+        it('should return false if address is missing a full stop', () => {
+            expect(rules['email'].func('a@a')).to.be.false;
+        });
+        it('should return true if address is correct', () =>  {
+            expect(rules['email'].func('a@a.me')).to.be.true;
+        });
+    });
+
+    describe('.validPassword -> FIX ME', () => {
+    });
+
+    describe('.validLetterSymbol', () => {
+        it('should return false if value contains restricted characters', () => {
+            expect(rules['letter_symbol'].func('`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d')).to.be.false;
+        });
+    });
+
+    describe('.validGeneral', () => {
+        it('should return false if value contains restricted characters', () => {
+            expect(rules['general'].func('`~!@#$%^&*)(_=+[}{\]\\/";:?><|')).to.be.false;
+        });
+    });
+
+    describe('.validAddress', () => {
+        it('should return false if value contains restricted characters', () => {
+            expect(rules['address'].func('`~!$%^&*_=+[}{\]\\"?><|')).to.be.false;
+        });
+    });
+
+    describe('.validPostCode', () => {
+        it('should return true if value is in allowed characters',() => {
+            expect(rules['postcode'].func('00000')).to.be.true;
+        });
+    });
+
+    describe('.validPhone', () => {
+        it('should return false if value is/contain non number', () => {
+            expect(rules['phone'].func('0w0')).to.be.false;
+        });
+        it('should return true if value is all numbers', () => {
+            expect(rules['phone'].func('000 0000 0000')).to.be.true;
+        });
+    });
+
+    describe('.validRegular -> FIX ME', () => {
+    });
+
+    describe('.validEmailToken', () => {
+        it('should return true if value is of length 8', () => {
+            expect(rules['signup_token'].func('00000000')).to.be.true;
+        });
+        it('should return true if value is of length 8 with spaces around', () => {
+            expect(rules['signup_token'].func(' 00000000 ')).to.be.true;
+        });
+        it('should return false if value is not of length 8', () => {
+            expect(rules['signup_token'].func('0')).to.be.false;
+        });
+        it('should return false if value is not of length 8 with spaces around', () => {
+            expect(rules['signup_token'].func(' 0 ')).to.be.false;
+        });
+    });
+
+    describe('.validTaxID -> FIX ME', () => {
+    });
+
+    describe('.validBarrier -> FIX ME', () => {
+    });
+
+    describe('.validCompare -> FIX ME', () => {
+    });
+
+    describe('.validNotEqual -> FIX ME', () => {
+    });
+
+    describe('.validMin -> FIX ME', () => {
+    });
+
+    describe('.validLength -> FIX ME', () => {
     });
 
     describe('.validNumber', () => {
@@ -93,6 +171,15 @@ describe('declarative_validation_rules.js', () => {
         it('should return false if bigger than max', () => {
            options.max = 0;
            expect(rules['number'].func(1, options)).to.be.false;
+        });
+    });
+
+    describe('.isMoreThanMax -> FIX ME', () => {
+    });
+
+    describe('.getPreBuildDVRs', () => {
+        it('should return an object', () => {
+            expect(rules).to.be.a('object');
         });
     });
 });
