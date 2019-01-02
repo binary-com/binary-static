@@ -44,9 +44,7 @@ const createProposalRequestForContract = (store, type_of_contract) => {
         const is_same_day = expiry_date.isSame(start_date, 'day');
         let expiry_time;
 
-        if (store.contract_start_type === 'spot') {
-            expiry_time = store.expiry_time;
-        } else {
+        if (store.contract_start_type === 'spot' || is_same_day) {
             expiry_time = is_same_day ? store.expiry_time : moment(server_time).utc().format('HH:mm');
         }
 
