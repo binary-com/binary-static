@@ -3,42 +3,50 @@ import { getPreBuildDVRs }    from '../declarative_validation_rules.js';
 
 describe('declarative_validation_rules.js', () => {
     let rules;
+    let options;
 
-    beforeEach('Getting Pre Built Declarative Validation Rules', () => {
+    beforeEach('Getting prebuilt DVRs and setting up options.', () => {
         rules = getPreBuildDVRs();
+        options = {
+            allow_empty: true,
+            min: 0,
+            max: 8,
+            type: 'float',
+            decimals: 2,
+        }
     });
 
     describe('.validRequired', () => {
-        it('should return false if undefined', () => {
+        it('should return false if value is undefined', () => {
             expect(rules['req'].func(undefined)).to.be.false;
         });
-        it('should return false if null', () => {
+        it('should return false if value is null', () => {
             expect(rules['req'].func(null)).to.be.false;
         });
-        it('should return true if string length is bigger than 0', () => {
-            expect(rules['req'].func('a')).to.be.true;
-        });
-        it('should return false if string length is 0', () => {
+        it('should return false if value length is 0', () => {
             expect(rules['req'].func('')).to.be.false;
+        });
+        it('should return true if value length is larger than 0', () => {
+            expect(rules['req'].func('a')).to.be.true;
         });
     });
 
     describe('.validEmail', () => {
-        it('should return false if address is missing an At sign', () => {
+        it('should return false if email address is missing an "at" sign', () => {
             expect(rules['email'].func('a.a')).to.be.false;
         });
-        it('should return false if address is missing a full stop', () => {
+        it('should return false if email address is missing a full stop', () => {
             expect(rules['email'].func('a@a')).to.be.false;
         });
-        it('should return true if address is correct', () =>  {
+        it('should return true if email address is in correct format', () =>  {
             expect(rules['email'].func('a@a.me')).to.be.true;
         });
     });
 
-    describe('.validPassword -> FIX ME', () => {
+    describe('.validPassword', () => {
     });
-
-    describe('.validLetterSymbol', () => {
+    // These regex tests will not throw an error if one of them is missing.
+    describe('.validLetterSymbol -> FIX ME', () => {
         it('should return false if value contains restricted characters', () => {
             expect(rules['letter_symbol'].func('`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d')).to.be.false;
         });
@@ -101,24 +109,41 @@ describe('declarative_validation_rules.js', () => {
     describe('.validNotEqual -> FIX ME', () => {
     });
 
-    describe('.validMin -> FIX ME', () => {
+    describe('.validMin', () => {
+        it('should return true if options.min is null, undefined, or 0', () => {
+            options.min = 0;
+            expect(rules['min'].func('', options)).to.be.true;
+        });
+        it('should return true if value.length >= options.min', () => {
+            options.min = 3;
+            expect(rules['min'].func('000')).to.be.true;
+        });
+        it('should return false if value.length < options.min', () => {
+            options.min = 1;
+            expect(rules['min'].func('00')).to.be.false;
+        });
     });
 
     describe('.validLength -> FIX ME', () => {
+        it('should return true if value.length is in boundary', () => {
+            options.min = 1;
+            expect(rules['length'].func('00', options)).to.be.true;
+        });
+        it('should return false if value is smaller than minimum', () => {
+            options.min = 1;
+            expect(rules['length'].func('', options)).to.be.false;
+        });
+        it('should return false if value is bigger than maximum', () => {
+            options.max = 1;
+            expect(rules['length'].func('00', options)).to.be.false;
+        });
+        it('should return true if min and max is not set', () => {
+            options.max = 0;
+            expect(rules['length'].func('0', options)).to.be.true;
+        });
     });
 
     describe('.validNumber', () => {
-        let options;
-        beforeEach('Setting up options', () => {
-            options = {
-                allow_empty: true,
-                min: 0,
-                max: 8,
-                type: 'float',
-                decimals: 2,
-            }
-        });
-
         // New lines seperates tests for different if statements.
         it('should return true if value is empty', () => {
            expect(rules['number'].func('', options)).to.be.true;
