@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-02 06:53\n"
+"PO-Revision-Date: 2019-01-03 05:52\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -604,7 +604,7 @@ msgid "A force majeure event, if and when determined, means, (i) the Company, by
 msgstr "Sự kiện bất khả kháng, nếu và khi được xác định, có nghĩa là, (i) công ty, bởi lí do bất khả kháng hoặc tác động của nhà nước, ngăn ngừa hoặc cản trở hoặc gây chậm trễ trong việc cung cấp hoặc nhận hoặc không có khả năng để cung cấp hoặc nhận, bất kỳ bảng báo giá nào của giá mua vào và giá chào bán của một thị trường nằm trong một hoặc nhiều các công cụ mà chúng tôi thường thỏa thuận trong phiên giao dịch; (ii) một bước chuyển biến quá mức trong thị trường của công cụ hoặc chúng tôi dự đoán được sự xuất hiện tiềm năng của sự gián đoạn thị trường."
 
 msgid "A good understanding of attacks and mitigations such as timing, injection (e.g. form parameter/SQL), side-channel, DoS, buffer overflows and DNS cache poisoning"
-msgstr "Một sự hiểu biết tốt về các kiểu tấn công và giảm thiểu chúng ví như timing, lợi dụng lỗ hổng dữ liệu để tiêm lệnh (ví dụ form parameter/SQL), tấn công kênh bên, tấn công từ chối dịch vụ DoS, lỗi tràn bộ nhớ đệm và nhiễm độc bộ nhớ đệm DNS"
+msgstr "Một sự hiểu biết tốt về các kiểu tấn công và giảm thiểu chúng ví như canh giờ, lợi dụng lỗ hổng dữ liệu để tiêm lệnh (ví dụ form parameter/SQL), tấn công kênh bên,DoS, lỗi tràn bộ nhớ đệm và nhiễm độc bộ nhớ đệm DNS"
 
 msgid "A good understanding of, and keen interest in corporate, legal or regulatory compliance"
 msgstr "Hiểu thông thạo và quan tâm về lĩnh vực doanh nghiệp, pháp luật, hoặc tuân thủ quy định"
@@ -868,7 +868,7 @@ msgid "Accounts List"
 msgstr "Danh sách tài khoản"
 
 msgid "Accounts and Payments Executive"
-msgstr "Giám đốc điều hành tài khoản và thanh toán"
+msgstr "Nhân Viên Kế Toán & Chi Trả"
 
 msgid "Accounts with Open Positions being Rolled-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company."
 msgstr "Các tài khoản có Phiên Mở đang được Roll-over sẽ được ghi tín dụng hoặc ghi nợ với số tiền được gọi là Tín dụng / Ghi nợ chuyển nhượng được xác định bởi Công Ty."
@@ -3160,7 +3160,7 @@ msgid "Depending on the jurisdiction to which a Client's account has been attach
 msgstr "Tùy thuộc vào thẩm quyền mà tài khoản của Khách hàng đã được đính kèm theo quy trình mở tài khoản của trang web, thuật ngữ 'chúng tôi', 'của chúng tôi', 'từ chúng tôi', 'Công ty' hoặc '%1 'sẽ biểu thị"
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
-msgstr "Tùy theo mức độ rủi ro mà Công Ty đang tiếp xúc với khi đóng vai trò là đối tác của khách hàng, chúng tôi chủ yếu là hành động về năng lực chính trong các giao dịch của khách hàng. Như vậy, địa điểm thực hiện thường sẽ là %1. Tuy nhiên, Công Ty có thể truyền lệnh mua bán của khách hàng cho các nhà cung cấp thanh khoản thuộc bên thứ ba, trong trường hợp này Công Ty sẽ xác định địa điểm thực hiện trên cơ sở mô tả ở trên."
+msgstr "Tùy theo mức độ rủi ro mà Công Ty đang tiếp xúc với khi đóng vai trò là đối tác của khách hàng, chúng tôi chủ yếu là hành động trên quy tắc chính trong các giao dịch của khách hàng. Như vậy, địa điểm thực hiện thường sẽ là %1. Tuy nhiên, Công Ty có thể truyền lệnh mua bán của khách hàng cho các nhà cung cấp thanh khoản thuộc bên thứ ba, trong trường hợp này Công Ty sẽ xác định địa điểm thực hiện trên cơ sở mô tả ở trên."
 
 msgid "Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
 msgstr "Tùy thuộc vào chất lượng của nguồn dữ liệu nhận được từ những bên cung cấp dữ liệu, máy chủ của chúng tôi áp dụng thuật toán lọc tick. Mục đích của thuật toán lọc này là để lọc các tick đi lạc. Các tick đi lạc là các tick mà nằm ngoài vùng giao dịch hiện tại của thị trường, những tick này thường do sự giao dịch bị trì hoãn hoặc ngân hàng có lỗi về yết giá, lỗi về nhân sự, hoặc lỗi dữ liệu tại bất cứ tick nào giữa nơi yết giá và máy chủ của chúng tôi."
@@ -3286,7 +3286,7 @@ msgid "Disable"
 msgstr "Vô hiệu hoá"
 
 msgid "Disaster Recovery,"
-msgstr "Phục hồi sau thảm họa,"
+msgstr "Phục hồi trục trặc"
 
 msgid "Disclaimer"
 msgstr "Miễn trừ trách nhiệm"
@@ -6261,7 +6261,7 @@ msgid "Manage funds"
 msgstr "Quản lý tài khoản"
 
 msgid "Manage our bug bounty programme"
-msgstr "Quản lý chương trình giải thưởng tìm lỗi"
+msgstr "Quản lý chương trình phát hiện lỗi"
 
 msgid "Manage security, intrusion detection, DDoS protection, and PCI compliance measures for each deployed server"
 msgstr "Quản lý bảo mật, phát hiện xâm nhập, bảo vệ tấn công DDoS và các biện pháp tuân thủ PCI đối với mỗi máy chủ đã triển khai"
@@ -7143,7 +7143,7 @@ msgid "Other best execution factors such as speed of execution, likelihood of ex
 msgstr "Những yếu tố thực thi tốt nhất khác như tốc độ thực hiện, khả năng thực hiện và tất toán, cỡ, đặc điểm hoặc những cân nhắc khác có liên quan tới thực hiện lệnh cụ thể có thể được áp dụng để đạt được kết quả tốt nhất có thể cho bạn."
 
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
-msgstr "Đội Kế Toán và Thanh Toán &amp; của chúng tôi sẽ quản lý một diện rộng các tài khoản ngân hàng và hệ thống tiền điện tử, cũng như một số lượng lớn các giao dịch diễn ra hàng ngày."
+msgstr "Đội ngũ Kế Toán và Thanh Toán &amp; của chúng tôi sẽ quản lý một diện rộng các tài khoản ngân hàng và hệ thống tiền điện tử, cũng như một số lượng lớn các giao dịch diễn ra hàng ngày."
 
 msgid "Our Company"
 msgstr "Công Ty của chúng tôi"
@@ -7272,7 +7272,7 @@ msgid "Over/Under contracts will be refunded at the purchase price if the contra
 msgstr "Các hợp đồng trên giá/ dưới giá sẽ được hoàn tiền nếu hợp đồng không kết thúc trong vòng 5 phút."
 
 msgid "Oversee incident responses for our production servers"
-msgstr "Giám sát các hồi đáp sự cố cho các máy chủ sản xuất của chúng tôi"
+msgstr "Giám sát các phản hồi sự cố cho các máy chủ sản xuất của chúng tôi"
 
 msgid "Ownership"
 msgstr "Quyền sở hữu"
@@ -8088,7 +8088,7 @@ msgid "Read"
 msgstr "Đọc"
 
 msgid "Read and understand our HackerOne bug bounty programme policy."
-msgstr "Đọc và hiểu chính sách chương trình thưởng săn lỗi HackerOne của chúng tôi."
+msgstr "Đọc và hiểu chính sách chương trình phát hiện lỗi HackerOne của chúng tôi."
 
 msgid "Read more."
 msgstr "Tìm hiểu thêm."
@@ -8157,7 +8157,7 @@ msgid "Receive prices that are benchmarked against interbank rates"
 msgstr "Thu thập giá đã được đối chuẩn với tỉ giá liên ngân hàng"
 
 msgid "Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates"
-msgstr "Thu thập báo giá cho một giao dịch và mua bán đối lưu, để bạn luôn nhận được các tỉ giá không bị thiên lệch và minh bạch"
+msgstr "Thu thập báo giá cho một giao dịch và mua bán đối lưu, để bạn luôn nhận được các tỉ giá không bị thiên lệch và luôn minh bạch"
 
 msgid "Receive your affiliate commission once your referred clients start trading on our platform."
 msgstr "Nhận được hoa hồng liên kết của bạn một khi khách hàng mà bạn giới thiệu bắt đầu kinh doanh trên sàn giao dịch của chúng tôi."
@@ -8616,7 +8616,7 @@ msgid "Self-exclusion on this website only applies to your %1 account and does n
 msgstr "Tự loại trừ trên trang web này chỉ áp dụng cho tài khoản %1 của bạn và không bao gồm các công ty hoặc trang web khác."
 
 msgid "Self-motivation and flexibility in task rotations"
-msgstr "Tự động lực và linh hoạt trong luân chuyển nhiệm vụ công việc"
+msgstr "Năng động và linh hoạt trong luân chuyển nhiệm vụ công việc"
 
 msgid "Selfie holding proof of identity (front)"
 msgstr "Ảnh chân dung chứng minh danh tính (mặt trước)"
@@ -9276,7 +9276,7 @@ msgid "Test and debug our ever-evolving product line to improve their speed, sca
 msgstr "Kiểm tra và vá lỗi dòng sản phẩm luôn phát triển của chúng tôi để cải thiện tốc độ, khả năng mở rộng và khả năng sử dụng của nó trên nhiều trình duyệt, các thiết bị và các tiêu chuẩn web"
 
 msgid "Test our products and services for security vulnerabilities. In the process, you’ll earn a monetary reward for any verifiable issues that you find, courtesy of our bug bounty programme."
-msgstr "Kiểm tra các sản phẩm và dịch vụ cho các lỗ hổng bảo mật. Trong quá trình này, bạn sẽ kiếm được một phần thưởng tiền cho bất kỳ vấn đề đã được kiểm chứng khi bạn tìm thấy, đúng theo quy tắc chương trình thưởng tiền khi phát hiện lỗi của chúng tôi."
+msgstr "Kiểm tra các sản phẩm và dịch vụ cho các lỗ hổng bảo mật. Trong quá trình này, bạn sẽ kiếm được một phần thưởng tiền cho bất kỳ vấn đề đã được kiểm chứng khi bạn tìm thấy, đúng theo quy tắc chương trình phát hiện lỗi của chúng tôi."
 
 msgid "Test the %1 website, applications, backend, and back-office systems"
 msgstr "Kiểm tra trang web %1, ứng dụng, backend và hệ thống dùng cho văn phòng"
@@ -9714,7 +9714,7 @@ msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is 
 msgstr "Thị trường ngoại hối thường được giao dịch <i>theo các lô</i>. Một trong những tiêu chuẩn <i>rất nhiều</i> là tương đương với 100.000 đơn vị. Mỗi khi bạn mở một phiên trên một ký hiệu tiền tệ, bạn có thể bắt đầu với một giao dịch tối thiểu là <i>0,01 lô</i>."
 
 msgid "The Human Resource Operations team manages essential human resource functions such as managing expats, processing work permits, onboarding, managing payroll, compiling compensation studies, and overseeing performance appraisals."
-msgstr ""
+msgstr "Đội ngũ nhân sự quản lý các chức năng nhân sự thiết yếu như quản lý nhân viên nước ngoài, xử lý giấy phép làm việc, giới thiệu công việc cho nhân viên mới, quản lý bảng lương, biên soạn nghiên cứu bồi thường và giám sát đánh giá hiệu suất."
 
 msgid "The Internal Audit team is the catalyst for improving our organisation’s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform."
 msgstr ""
@@ -10239,7 +10239,7 @@ msgid "These materials may not be copied or redistributed for commercial purpose
 msgstr "Các tài liệu này có thể không được sao chép hoặc phân phối lại cho mục đích thương mại hoặc bồi thường thiệt hại của bất kỳ hình thức nào mà không có sự cho phép trước từ một công ty Binary Group."
 
 msgid "They also generate monthly management accounts, annual audited accounts, and reconcile all transactions. As our Accounts &amp; Payments Executive, you will be able to contribute to all these key areas and increase the efficiency of our financial operations."
-msgstr "Họ sẽ tạo ra các tài khoản quản lý hàng tháng, tài khoản kiểm toán hàng năm và dàn xếp tất cả các giao dịch. Với tư cách là Chuyên Viên Kế Toán Chi Trả &amp;, bãn sẽ được đóng góp vào tất cả những khu vực quan trọng và tăng tính hiệu quả trong hoạt động tài chính của chúng tôi."
+msgstr "Họ sẽ tạo ra các tài khoản quản lý hàng tháng, tài khoản kiểm toán hàng năm và dàn xếp tất cả các giao dịch. Với tư cách là Nhân Viên Kế Toán &amp; Chi Trả, bạn sẽ được đóng góp vào tất cả những khu vực quan trọng và tăng tính hiệu quả trong hoạt động tài chính của chúng tôi."
 
 msgid "They also manage our suppliers and contractors, as well as general administrative duties and procedures. As our Human Resource Operations Executive, you will be counted on to lead, execute, and support a wide range of HR-related and administrative tasks to ensure the smooth operations of our offices worldwide."
 msgstr "Họ cũng quản lý các bên cung cấp và nhà thầu của chúng tôi, cũng như các nghĩa vụ và quy trình quản trị chung. Với tư cách là Nhân Viên Điều Hành Nhân Sự, bạn được trông đợi sẽ dẫn dắt, thực hiện và hỗ trợ một diện rộng các nhiệm vụ liên quan đến Nhân Sự và hành chính để đảm bảo cho vận hành trơn tru của các văn phòng chúng tôi trên toàn thế giới."
@@ -10338,7 +10338,7 @@ msgid "This field is required."
 msgstr "Trường này là bắt buộc."
 
 msgid "This includes decisions on new markets to launch in, and the spreads and margins we might offer. You must also be able to analyse and interpret large volumes of data, and communicate your research and findings in a clear and concise manner - either in written reports or presentations."
-msgstr "Điều này bao gồm các quyết định trên thị trường mới để khởi động và ký quỹ song hành mà chúng tôi có thể cung cấp. Bạn cũng phải có khả năng phân tích khả năng thông dịch một lượng lớn dữ liệu và truyền đạt các nghiên cứu và tìm tòi của bạn một cách mạch lạc và chính xác - cả trong viết báo cáo hoặc thuyết trình."
+msgstr "Điều này bao gồm các quyết định trên thị trường mới để khởi động, biên lãi và ký quỹ mà chúng tôi có thể cung cấp. Bạn cũng phải có khả năng phân tích khả năng thông dịch một lượng lớn dữ liệu và truyền đạt các nghiên cứu và tìm tòi của bạn một cách mạch lạc và chính xác - cả trong viết báo cáo hoặc thuyết trình."
 
 msgid "This interest adjustment (or swap rate) is based on interbank lending rates, on top of a 2% fee."
 msgstr "Điều chỉnh lãi suất (hoặc tỷ lệ trao đổi) này được dựa trên tỷ giá cho vay liên ngân hàng, trên một khoản phí 2%."
@@ -10488,7 +10488,7 @@ msgid "To be able to trade OTC instruments available on the MT5 Trading Platform
 msgstr "Để có thể giao dịch các công cụ OTC có sẵn trên Sàn Giao Dịch MT5, trước tiên bạn phải:"
 
 msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
-msgstr ""
+msgstr "Để thay đổi tên, ngày sinh, quốc gia cư trú, email hoặc thông tin thuế, vui lòng liên hệ với %1Hỗ Trợ Khách Hàng%2."
 
 msgid "To create a MAM real account, please:"
 msgstr "Để tạo một tài khoản MAM thực, xin vui lòng:"
@@ -11994,7 +11994,7 @@ msgid "Without prejudice to any other terms of this Agreement, neither the Compa
 msgstr "Không ảnh hưởng đến bất kỳ điều khoản khác của Thỏa Thuận này, Công Ty cũng như bất kỳ các giám đốc, cán bộ, quản lý, nhân viên hoặc đại lý của Công Ty sẽ không chịu trách nhiệm đối với bạn trong quan hệ với bất kỳ tổn thất nào mà bạn phải gánh chịu cho dù trực tiếp hay gián tiếp bởi bất kỳ nguyên nhân ngoài tầm kiểm soát của chúng tôi, bao gồm nhưng không giới hạn, bất kỳ sự chậm trễ hoặc khiếm khuyết hay thất bại của toàn bộ hoặc bất kỳ phần nào của Sàn Giao Dịch MT5 hoặc bất kỳ hệ thống hoặc mạng lưới liên kết."
 
 msgid "Work alongside the HR Operations team in coordinating with the government linked bodies"
-msgstr ""
+msgstr "Làm việc cùng với đội ngũ nhân sự hoạt động phối hợp với các cơ quan chính phủ được liên kết"
 
 msgid "Work closely with both technical and non-technical teams to develop and integrate blockchain solutions for our business"
 msgstr ""
@@ -12556,7 +12556,7 @@ msgid "You will, at all times, obtain and comply, and do all that is necessary t
 msgstr "Bạn sẽ, tại mọi thời điểm, ghi nhận và tuân thủ, và tuân theo tất cả những gì cần thiết để duy trì lực lượng đầy đủ và có hiệu lực, tất cả quyền, năng lực, chấp thuận, giấy phép và cơ quan nêu tại khoản này;"
 
 msgid "You will:"
-msgstr ""
+msgstr "Bạn sẽ:"
 
 msgid "You win the payout if the market price does not end in the digit you have selected."
 msgstr "Bạn sẽ lĩnh tiền thưởng nếu giá thị trường không kết thúc trong con số mà bạn đã chọn."
@@ -12868,7 +12868,7 @@ msgid "consolidating liquidity from several providers into a single stream of bl
 msgstr "củng cố khả năng thanh toán từ một số các nhà cung cấp thành một dòng duy nhất của các nguồn cấp dữ liệu tổng hợp; và"
 
 msgid "costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company's bid and the Company's offer price"
-msgstr ""
+msgstr "chi phí - chi phí thực hiện lệnh của khách hàng, chủ yếu bao gồm biên lãi, tức là chênh lệch giữa giá bán ra của Công ty và giá mua vào của Công ty"
 
 msgid "currency in which your MT5 Real Account will be operated."
 msgstr "tiền tệ trong đó Tài Khoản Thực MT5 sẽ được hoạt động."
@@ -13102,7 +13102,7 @@ msgid "the applicant's personal details, including name, address, and contract d
 msgstr "chi tiết cá nhân của người nộp đơn, bao gồm tên, địa chỉ và chi tiết hợp đồng, bao gồm địa chỉ email và số điện thoại, ngày sinh và giới tính;"
 
 msgid "the characteristics of financial instruments that are the subject of that order"
-msgstr ""
+msgstr "đặc tính của công cụ tài chính là đối tượng của lệnh đó"
 
 msgid "the characteristics of the client"
 msgstr "đặc tính của khách hàng"
