@@ -316,13 +316,15 @@ const TradingEvents = (() => {
             const ask_price = this.getAttribute('data-ask-price');
 
             const params = { buy: id, price: ask_price, passthrough: {} };
-            Object.keys(this.attributes).forEach(function (attr) {
-                if (attr && this.attributes[attr] && this.attributes[attr].name &&
-                    !/data-balloon/.test(this.attributes[attr].name)) { // do not send tooltip data
-                    const m = this.attributes[attr].name.match(/data-(.+)/);
-
-                    if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
-                        params.passthrough[m[1]] = this.attributes[attr].value;
+            Object.keys(this.attributes).forEach((attr) => {                
+                if (attr && this.attributes[attr] && this.attributes[attr].name) {
+                    if (/^data-balloon/.test(this.attributes[attr].name)) {
+                        $purchase_button.removeAttr(this.attributes[attr].name);
+                    } else {
+                        const m = this.attributes[attr].name.match(/data-(.+)/);
+                        if (m && m[1] && m[1] !== 'purchase-id' && m[1] !== 'passthrough') {
+                            params.passthrough[m[1]] = this.attributes[attr].value;
+                        }
                     }
                 }
             }, this);
