@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-20 01:35\n"
+"PO-Revision-Date: 2019-01-03 05:50\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -231,8 +231,8 @@ msgstr "%1 no está afiliado con ninguno de los agentes de pago mencionados ante
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 no está disponible en Costa Rica y no está regulada o supervisada por ningún organismo regulador del sistema financiero costarricense."
 
-msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 es propiedad de y está operada por el grupo de empresas de Binary Group Ltd. Para más información, conozca <a href='%2'>nuestra historia</a>."
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
+msgstr ""
 
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface."
 msgstr "%1 se encuentra en busca de un corrector especializado con aptitudes para el lenguaje y una meticulosa atención al detalle. Usted debe ser capaz de interactuar con nuestro personal mediante una interfaz web de traducción."
@@ -402,6 +402,9 @@ msgstr "%1Contáctenos%2 para fijar una fecha y hora para la videollamada."
 msgid "%1Download MAM for Windows%2 after you’ve set up your master account. Your login credentials will be provided"
 msgstr "%1Descargue la app de GCM para Windows%2 luego de que haya configurado su cuenta maestra. Posteriormente recibirá sus credenciales para iniciar sesión"
 
+msgid "%1Founded%2 October 1999"
+msgstr ""
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1Su comprobante de identidad o de domicilio%2 no cumple nuestros requisitos. Por favor, revise su correo electrónico para más instrucciones."
 
@@ -512,9 +515,6 @@ msgstr "<< Volver a descripciones de trabajo"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Volver a la página de comercio</a>"
-
-msgid "<a href='%1'>Founded</a> October 1999"
-msgstr "<a href='%1'>Fundado en</a> octubre de 1999"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Prueba de idoneidad: ADVERTENCIA:</strong> En la prestación de nuestros servicios a usted, estamos obligados a obtener información de usted con el fin de evaluar si un determinado producto o servicio es adecuado para usted (es decir, si usted posee la experiencia y los conocimientos necesarios para comprender los riesgos involucrados)."
@@ -2215,6 +2215,9 @@ msgstr "Contraseña de Cajero"
 
 msgid "Cashier password"
 msgstr "Contraseña de cajero"
+
+msgid "Cashier session expired"
+msgstr ""
 
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Se imponen ciertos límites para los niveles aceptables de precios de barrera/límite en los contratos. Habitualmente el límite/barrera no puede estar demasiado cerca ni demasiado lejos del nivel subyacente actual del mercado."
@@ -5000,9 +5003,6 @@ msgstr "Si está aceptando este Acuerdo en nombre de su empleador u otra entidad
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
 msgstr "Si usted no se encuentra en los países mencionados anteriormente, simplemente marque cualquiera de nuestros números de contacto para obtener ayuda."
 
-msgid "If you are shortlisted, we will send you a talent test to be completed."
-msgstr ""
-
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
 msgstr "Si no puede escanear el código QR, puede ingresar este código manualmente:"
 
@@ -5185,6 +5185,9 @@ msgstr "Si usted es un broker, nos gustaría trabajar con usted. Usted presentar
 
 msgid "If you're shortlisted, we'll invite you to a hackathon or send you a talent test."
 msgstr "Si es seleccionado, lo invitaremos a participar de una hackatón o le enviaremos una prueba para medir sus capacidades."
+
+msgid "If you're shortlisted, we'll send you a talent test to be completed."
+msgstr ""
 
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
 msgstr "Si su cuenta de %1 se cierra, su Cuenta Real MT5 también se cerrará automáticamente."
@@ -5916,8 +5919,8 @@ msgstr ""
 msgid "Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees"
 msgstr ""
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
-msgstr "Licenciada y regulada en Malta, el Reino Unido, la Isla de Man, e Irlanda"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. %1Learn more%2"
+msgstr ""
 
 msgid "Licensed, trusted, and secure"
 msgstr "Licenciado, confiable y seguro"
@@ -7245,8 +7248,8 @@ msgstr "Más de $1.000.000"
 msgid "Over $500,000"
 msgstr "Más de $500.000"
 
-msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
-msgstr "Más de %1 <a href='%2'>funcionarios</a> y contratistas en todo el mundo"
+msgid "Over %1 %2staff%3 and contractors worldwide"
+msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Más de 1 millón de cuentas registradas en todo el mundo"
@@ -7626,8 +7629,8 @@ msgstr "Tenga en cuenta que las cotizaciones de ese fin de semana se ignoran con
 msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr "Tenga en cuenta que actualmente está utilizando su cuenta de %1Bitcoin Cash%2. Solo puede depositar en %1Bitcoin Cash%2 y no en Bitcoin."
 
-msgid "Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help."
-msgstr "Por favor, proporcione un número de identificación tributaria de cada país donde es residente fiscal. Si no puede entregar dicha información, entre en contacto con nuestro equipo de atención al cliente para recibir ayuda."
+msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
+msgstr ""
 
 msgid "Please provide us with the following information:"
 msgstr "Por favor, proporciónenos la siguiente información:"
@@ -7659,14 +7662,14 @@ msgstr "Seleccione un agente de pago"
 msgid "Please select a valid time."
 msgstr "Seleccione una hora válida."
 
-msgid "Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr "Seleccione todos los países en los que es residente fiscal. Si tiene cualquier duda, póngase en contacto con su asesor tributario."
-
 msgid "Please select at least one scope"
 msgstr "Seleccione al menos un objetivo"
 
 msgid "Please select the checkbox."
 msgstr "Seleccione la casilla de verificación."
+
+msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
+msgstr ""
 
 msgid "Please select the currency of this account:"
 msgstr "Seleccione la moneda para esta cuenta:"
@@ -8066,6 +8069,9 @@ msgstr "Moneda secundaria"
 
 msgid "R. Interpretation of Terms"
 msgstr "R. Interpretación de los términos"
+
+msgid "RTS 27"
+msgstr ""
 
 msgid "Range of markets"
 msgstr "Variedad de mercados"
@@ -9177,6 +9183,18 @@ msgstr "Índices sintéticos que emulan la volatilidad del mercado."
 msgid "System Administrator"
 msgstr ""
 
+msgid "Table 1 - Type of execution venue"
+msgstr ""
+
+msgid "Table 3 - Intra-Day Price information"
+msgstr ""
+
+msgid "Table 4 - Daily Price information"
+msgstr ""
+
+msgid "Table 6 - Likelihood of execution information"
+msgstr ""
+
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
 msgstr "Escoja una estrategia a corto o largo plazo con operaciones que van desde 10 segundos hasta 365 días."
 
@@ -9754,8 +9772,8 @@ msgstr ""
 msgid "The Republic of Malta is an island country in Southern Europe — located approximately 80km south of Italy. Its rich, colourful history can be traced back thousands of years to the Neolithic period."
 msgstr "La República de Malta es una isla ubicada en el sur de Europa — aproximadamente 80 km hacia el sur de Italia. Su rica y colorida historia se remonta a miles de años atrás, al período Neolítoco."
 
-msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
-msgstr "La cuenta estándar es apropiada para una amplia gama de operadores, tanto nuevos como experimentados. Le da un apalancamiento de rango medio y spreads variables que le entregan una gran flexibilidad para cualquier posición que desee tomar en el mercado."
+msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
+msgstr ""
 
 msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
 msgstr ""
@@ -10472,8 +10490,8 @@ msgstr "Para postular, envíe su CV y una carta de presentación a %1"
 msgid "To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:"
 msgstr "Para poder operar con los instrumentos OTC disponibles en la Plataforma de operaciones MT5, primero deberá:"
 
-msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
-msgstr "Para modificar su nombre, fecha de nacimiento, país de residencia o email, comuníquese con el <a href=\"%1\">servicio de atención al cliente</a>."
+msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
+msgstr ""
 
 msgid "To create a MAM real account, please:"
 msgstr "Para crear una cuenta real para la gestión de cuentas múltiples o GCM, por favor:"
@@ -12352,9 +12370,6 @@ msgstr "Usted irrevocablemente, y de forma no exclusiva licencia a los derechos 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr "Usted hace las siguientes declaraciones y garantías ante nosotros al momento de celebrar este Contrato, y acepta que dichas declaraciones y garantías se consideren repetidas cada vez que abre o cierra una Transacción:"
 
-msgid "You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate."
-msgstr "Es posible que usted sea considerado residente fiscal en más de una juridsicción. Por favor, consulte a su asesor fiscal y verifique que su información fiscal sea correcta."
-
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "Puede almacenar en caché el Contenido hasta 24 horas de una solicitud para ese contenido a través de la API de %1."
 
@@ -12654,6 +12669,9 @@ msgstr "Su cajero está bloqueado según su petición - para desbloquearlo, por 
 
 msgid "Your cashier is locked."
 msgstr "Su cajero está bloqueado."
+
+msgid "Your cashier session has expired. Please try again."
+msgstr ""
 
 msgid "Your changes have been updated successfully."
 msgstr "Sus cambios se han actualizado con éxito."
