@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-31 02:37\n"
+"PO-Revision-Date: 2019-01-03 05:49\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -232,8 +232,8 @@ msgstr "%1 n'est affiliée à aucun des agents de paiement listés ci-dessus. Ch
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 n'est pas disponible au Costa Rica et n'est soumise à la réglementation ou à la supervision d'aucun organisme de réglementation dans le système financier du Costa Rica."
 
-msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 appartient et est exploité par le groupe d'entreprises Binary Group Ltd. Pour obtenir des informations supplémentaires, <a href='%2'>consultez notre historique</a>."
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
+msgstr ""
 
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface."
 msgstr "%1 cherche un correcteur qualifié avec un flair pour la langue et un oeil méticuleux pour le détail. Vous devez être en mesure d’interagir avec notre personnel à l’aide d’une interface web de traduction."
@@ -403,6 +403,9 @@ msgstr "%1Contactez nous%2 pour arranger une date et une heure pour l’appel vi
 msgid "%1Download MAM for Windows%2 after you’ve set up your master account. Your login credentials will be provided"
 msgstr "%1Télécharger MAM pour Windows%2 après que vous ayez configuré votre compte principal. Vos identifiants seront fournis"
 
+msgid "%1Founded%2 October 1999"
+msgstr ""
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1Votre preuve d’Identité ou Preuve de Domicile%2 ne satisfont pas nos exigences. Veuillez vérifier votre email pour obtenir des instructions supplémentaires."
 
@@ -513,9 +516,6 @@ msgstr "<< Retour aux descriptions de postes"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1 »>Retour à la plateforme de trading</a>"
-
-msgid "<a href='%1'>Founded</a> October 1999"
-msgstr "<a href='%1'>Fondée en</a> octobre 1999"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Test de pertinence : ATTENTION :</strong> Dans le cadre des services que nous vous fournissons, nous sommes dans l'obligation d'obtenir des informations de votre part afin de déterminer si un produit ou service donné est pertinent dans votre cas (c'est-à-dire si vous possédez l'expérience et les connaissances nécessaires pour comprendre les risques impliqués)."
@@ -869,7 +869,7 @@ msgid "Accounts List"
 msgstr "Liste des comptes"
 
 msgid "Accounts and Payments Executive"
-msgstr "Responsable des Comptes et Paiements"
+msgstr "Chargé des Comptes et Paiements"
 
 msgid "Accounts with Open Positions being Rolled-over shall be credited or debited with an amount referred to as the Roll-over Credit/Debit which is determined by the Company."
 msgstr "Les comptes avec des Positions Ouvertes concernées par le Renouvellement seront crédités ou débités avec une somme référée comme le Renouvellement Crédit/Débit qui est déterminé par l'Entreprise."
@@ -902,7 +902,7 @@ msgid "Acquisition of financial contracts through this site must be effected in 
 msgstr "L'acquisition des contrats financiers par le biais de ce site Web doit être effectuée conformément aux conditions générales telles qu'elles sont énoncées sur les pages de ce site. L'acquisition d'un contrat financier est effective lorsque le contrat a été paramétré, la prime (ou le paiement, selon le cas) calculée et le paiement vérifié."
 
 msgid "Act as first and second level support for our traders by offering them solutions through basic coding and troubleshooting techniques"
-msgstr "Servir de support de premier et deuxième niveau pour nos traders en leur proposant des solutions par le biais de codage basique et techniques de résolution des problèmes"
+msgstr "Servir de support de premier et deuxième niveau pour nos traders en leur proposant des solutions par le biais de codage basique et des techniques de résolution des problèmes"
 
 msgid "Action"
 msgstr "Action"
@@ -944,7 +944,7 @@ msgid "Admin"
 msgstr "Administration"
 
 msgid "Administer key human resource activities such as performance appraisals"
-msgstr "Administrer les activités des ressources humaines clés tels que les évaluations de performance"
+msgstr "Administrer les activités des ressources humaines clé telles que les évaluations de performance"
 
 msgid "Advanced"
 msgstr "Avancé"
@@ -1031,7 +1031,7 @@ msgid "All calls are recorded for training and monitoring purposes"
 msgstr "Tous les appels sont enregistrés à des fins de formation et de surveillance"
 
 msgid "All client orders are processed on a first in, first out basis without any manual intervention. When executing client order, %1 will seek to fill client order transaction as promptly as possible at the instructed price (or at a better price, if available). Exposure limits are established based on internal governance arrangements and risk management framework, which both commensurate with the size, nature, complexity, and risk profile of the Company's activities. These exposure limits are used as benchmarks to distinguish orders that are auto-accepted from orders that will be worked in the market with fill level passed on to the client."
-msgstr "Tous les ordres des clients sont traités par ordre de placement chronologique, sans intervention manuelle. Dans le cadre de l'exécution de l'ordre client, %1 s'efforcera de traiter la transaction correspondante aussi vite que possible, au prix indiqué (ou à un meilleur prix, le cas échéant). Les limites d'exposition au risque sont définies en fonctions des modalités de gouvernance et du système de gestion du risque, pour refléter l'ampleur, la nature, la complexité et le profil de risque des activités de la Compagnie. Ces limites d'exposition servent de références afin de distinguer les ordres susceptibles d'être automatiquement acceptés des ordres qui seront évalués en fonction des conditions de marché tout en communiquant le niveau d'exécution au client."
+msgstr "Tous les ordres des clients sont traités par ordre de placement chronologique, sans intervention manuelle. Dans le cadre de l'exécution de l'ordre client, %1 s'efforcera de traiter la transaction correspondante aussi vite que possible, au prix indiqué (ou à un meilleur prix, le cas échéant). Les limites d'exposition au risque sont définies en fonction des modalités de gouvernance et du système de gestion du risque, pour refléter l'ampleur, la nature, la complexité et le profil de risque des activités de la Compagnie. Ces limites d'exposition servent de références afin de distinguer les ordres susceptibles d'être automatiquement acceptés des ordres qui seront évalués en fonction des conditions de marché tout en communiquant le niveau d'exécution au client."
 
 msgid "All commissions are credited into your account by the 15th of every month."
 msgstr "Toutes les commissions sont créditées sur votre compte le 15ème jour de chaque mois."
@@ -1343,7 +1343,7 @@ msgid "As a first step, please send us an application with:"
 msgstr "Pour commencer, veuillez nous envoyer une demande indiquant :"
 
 msgid "As a high-tech knowledge hub, Cyberjaya enjoys the presence of several multinational companies and private universities. This has created a vibrant, thriving community thanks to the many expats and international students who call Cyberjaya home."
-msgstr "Un carrefour de connaissances de pointe, Cyberjaya bénéficie de la présence de plusieurs multinationales et universités privées. Cela a créé une communauté dynamique et prospère grâce à nombreux expatriés et étudiants internationaux qui considèrent chez eux à Cyberjaya."
+msgstr "Un carrefour de connaissances de pointe, Cyberjaya bénéficie de la présence de plusieurs multinationales et universités privées. Cela a créé une communauté dynamique et prospère grâce à nombreux expatriés et étudiants internationaux qui se considèrent chez eux à Cyberjaya."
 
 msgid "As a result, your trades are executed at market as follows:"
 msgstr "Ainsi, vos transactions sont exécutées au marché comme suit :"
@@ -1370,7 +1370,7 @@ msgid "As long as you follow these Terms, we grant you a limited, non-exclusive,
 msgstr "Sous réserve du respect de ces Conditions, nous vous octroyons une licence restreinte, non exclusive, incessible, non transférable et révocable, vous autorisant à utiliser l'API %1 pour développer, tester et supporter votre Application, et permettant à vos clients d'utiliser l'intégration de l'API %1 dans votre Application."
 
 msgid "As our Accounts & Payments Executive, you will be able to contribute to all these key areas and increase the efficiency of our financial operations."
-msgstr "Comme chargé des comptes & paiements, vous serez en mesure de contribuer à tous ces domaines clés et augmenter l’efficacité de nos opérations financières."
+msgstr "Comme Chargé des Comptes & Paiements, vous serez en mesure de contribuer à tous ces domaines clés et à augmenter l’efficacité de nos opérations financières."
 
 msgid "As our Back-End Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website."
 msgstr "Comme développeur Back-End, vous relèverez le défi d’écrire du code robuste, de haute qualité et prêt pour la production. Votre travail contribuera grandement à l’architecture qui anime notre site de trading d’options binaires très fréquenté."
@@ -1379,16 +1379,16 @@ msgid "As our Client, you agree to comply with the following when making payment
 msgstr "Comme Client, vous vous engagez à vous conformer à ce qui suit lors des paiements à la Société :"
 
 msgid "As our Compliance Executive, you must ensure that our group of companies worldwide conduct their business operations in full compliance with relevant laws and regulations - both national and international."
-msgstr "Comme chargé de conformité, vous devez vous assurer que notre groupe de Compagnies dans le monde entier mènent leurs activités commerciales en pleine conformité avec les lois et règlements pertinents - à la fois nationaux et internationaux."
+msgstr "Comme Chargé de Conformité, vous devez vous assurer que notre groupe de compagnies dans le monde entier mènent leurs activités commerciales en pleine conformité avec les lois et règlements pertinents - à la fois nationaux et internationaux."
 
 msgid "As our Copywriter, you will help us to craft copy and content that engages our audiences - both online and offline."
-msgstr "Comme notre concepteur-rédacteur, vous nous aiderez à rédiger du contenu qui engage nos auditoires - tant en ligne que hors ligne."
+msgstr "Comme concepteur-rédacteur, vous nous aiderez à rédiger du contenu qui engage nos auditoires - tant en ligne que hors ligne."
 
 msgid "As our Cryptocurrency/Blockchain Developer, you will be taking on the challenge of revamping our existing cashier system and infrastructure for our ICO launch. You will also drive all our future blockchain-based projects. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website."
-msgstr "En tant que développeur Cryptodevise/Blockchain, vous relèverez le défi de la modernisation de notre système d’encaissement existant et de l’infrastructure pour le lancement de notre ICO. Vous mènerez également tous nos futurs projets axés sur les blockchain. Votre travail contribuera grandement à l’architecture qui anime notre site de trading d’options binaires très fréquenté."
+msgstr "En tant que développeur Cryptodevise/Blockchain, vous relèverez le défi de la modernisation de notre système d’encaissement existant et de l’infrastructure pour le lancement de notre ICO. Vous mènerez également tous nos futurs projets axés sur la blockchain. Votre travail contribuera grandement à l’architecture qui anime notre site de trading d’options binaires très fréquenté."
 
 msgid "As our Customer Support Executive, you will serve as the voice of the company, and help our customers resolve and reduce the issues they’re facing with our products and services. The frontline is essential to our business and you are expected to deliver world-class customer service that creates customer loyalty and promotes business growth."
-msgstr "Comme chargé de notre support client, vous serez la voix de la Compagnie et aiderez nos clients à résoudre et réduire les problèmes auxquels ils sont confrontés avec nos produits et services. La première ligne est essentielle à notre activité et vous devrez fournir un service client de première classe qui crée une fidélisation de la clientèle et favorise la croissance des affaires."
+msgstr "Comme Chargé de notre Support Client, vous serez la voix de la compagnie et aiderez nos clients à résoudre et réduire les problèmes auxquels ils sont confrontés avec nos produits et services. La première ligne est essentielle à notre activité et vous devrez fournir un service client de première classe qui crée une fidélisation de la clientèle et favorise la croissance des affaires."
 
 msgid "As our DevOps Engineer, you will have a critical role in our approach to our infrastructure and operations. The stability and scalability of our applications have a direct impact on our bottom line. This means that you will be taking on a mission critical role."
 msgstr "Comme ingénieur DevOps, vous aurez un rôle essentiel dans notre approche de nos infrastructures et opérations. La stabilité et l’évolutivité de nos applications ont un impact direct sur notre bénéfice net. Cela signifie que vous aurez en charge un rôle critique."
@@ -1400,13 +1400,13 @@ msgid "As our Graphic Designer, you will develop high-impact graphics and visual
 msgstr "Comme Designer Graphique, vous développerez des graphiques et éléments visuels percutants tels que des images et icônes pour nos sites Web et applications. Vous jouerez un rôle essentiel dans la création d’actifs d'interface utilisateur qui rapprochent nos produits des utilisateurs."
 
 msgid "As our Human Resource Operations Executive, you will be counted on to lead, execute, and support a wide range of HR-related and administrative tasks to ensure the smooth operations of our offices worldwide."
-msgstr "Comme chargé des Opérations en Ressources Humaines, vous serez chargé de diriger, d'exécuter et de soutenir une large gamme de tâches RH et administratives pour assurer le bon fonctionnement de nos bureaux dans le monde entier."
+msgstr "Comme Chargé des Opérations en Ressources Humaines, vous serez chargé de diriger, d'exécuter et de soutenir une large gamme de tâches RH et administratives pour assurer le bon fonctionnement de nos bureaux dans le monde entier."
 
 msgid "As our Marketing Executive, you will coordinate and execute marketing campaigns across a variety of channels, and continuously identify the best ways to reach current and prospective customers."
-msgstr "Comme chargé de Marketing, vous coordonnerez et exécuterez des campagnes marketing à travers une variété de canaux et identifierez en permanence les meilleurs moyens d’atteindre les clients actuels et potentiels."
+msgstr "Comme Chargé de Marketing, vous coordonnerez et exécuterez des campagnes marketing à travers une variété de canaux et identifierez en permanence les meilleurs moyens d’atteindre les clients actuels et potentiels."
 
 msgid "As our Perl Developer, you will be taking on the challenge of writing robust, high-quality, and production-ready code. Your work will greatly contribute to the architecture that drives our high-traffic binary options trading website."
-msgstr "Comme développeur Perl, vous relèverez le défi d’écrire du code robuste, de haute qualité et prêt pour la production. Votre travail contribuera grandement à l’architecture qui anime notre site de trading d’options binaires très fréquenté."
+msgstr "Comme Développeur Perl, vous relèverez le défi d’écrire du code robuste, de haute qualité et prêt pour la production. Votre travail contribuera grandement à l’architecture qui anime notre site de trading d’options binaires très fréquenté."
 
 msgid "As our PostgreSQL Database Administrator, you will plan, implement, and manage the database systems that are essential to the architecture of our high-traffic binary options trading platform."
 msgstr "Comme administrateur de base de données PostgreSQL, vous sera en charge de planifier, d'implémenter et de gérer les systèmes de base de données qui sont essentiels à l’architecture de notre plateforme de trading d’options binaires très fréquentée."
@@ -2215,6 +2215,9 @@ msgstr "Mot de passe de la page « Caisse »"
 msgid "Cashier password"
 msgstr "Mot de passe de la page « Caisse »"
 
+msgid "Cashier session expired"
+msgstr "La session de la caisse a expiré"
+
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Certaines limites sont imposées comme étant les niveaux acceptables pour les prix barrière/prix d'exercice des contrats. Typiquement, le prix barrière/prix d'exercice ne doit pas être trop proche ni trop éloignée du niveau actuel du marché sous-jacent."
 
@@ -2618,7 +2621,7 @@ msgid "Conduct disaster and recovery planning, as well as their execution"
 msgstr "Gérer la planification et la mise en œuvre d'un plan de reprise après catastrophe"
 
 msgid "Conduct performance testing including backtesting, stress testing analysis, and benchmarking"
-msgstr "Conduire des tests de performances en incluant les tests à posteriori (backtesting), les analyses de tests de tension (stress testing) et les tests d'étalonnage (benchmarking)"
+msgstr "Conduire des tests de performance en incluant les tests à posteriori (backtesting), les analyses de tests de tension (stress testing) et les tests d'étalonnage (benchmarking)"
 
 msgid "Conduct research on competitors and industry trends to identify new products and potential markets"
 msgstr "Mener des recherches sur les concurrents et les tendances de l’industrie pour identifier les nouveaux produits et marchés potentiels"
@@ -2660,7 +2663,7 @@ msgid "Consent"
 msgstr "Consentement"
 
 msgid "Considerable knowledge in creating meaningful analytics from raw data, with the goal of influencing clients to take action"
-msgstr "Des connaissances considérables dans la création d'analyses à partir de données brutes, dans le but d’influencer les clients à agir"
+msgstr "Des connaissances considérables dans la création d'analyse à partir de données brutes, dans le but d’influencer les clients à agir"
 
 msgid "Constantly liaise with all internal departments such as Customer Support and Marketing on account and payment matters"
 msgstr "Constamment en liaison avec tous les départements internes tels que le Support Client et le Marketing sur les questions de compte et de paiement"
@@ -2681,7 +2684,7 @@ msgid "Contact us"
 msgstr "Nous contacter"
 
 msgid "Continue trading"
-msgstr "Poursuivre les opérations de trading"
+msgstr "Poursuivre le trading"
 
 msgid "Continuous Indices – Choose from the Volatility 10 Index, Volatility 25 Index, Volatility 50 Index, Volatility 75 Index, and Volatility 100 Index. These indices correspond to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively"
 msgstr "Les indices Continus - Choisissez parmi les indices Volatility 10, Volatility 25, Volatility 50, Volatility 75 et Volatility 100. Ces indices correspondent à des simulations de marché basées sur des taux de volatilité constants de 10%, 25 %, 50 %, 75 % et 100 % respectivement"
@@ -2870,7 +2873,7 @@ msgid "Create and update style guides to establish and maintain a consistent vis
 msgstr "Créer et mettre à jour des guides de style afin d’établir et de maintenir une identité visuelle cohérente dans l’ensemble de notre écosystème produit"
 
 msgid "Create clear, concise, and engaging content for the company’s website, email newsletters, blog, social media channels, and other marketing materials"
-msgstr "Créer un contenu clair, concis et engageant pour le site Internet de la compagnie, des newsletters, blog, médias sociaux et autres documents de marketing"
+msgstr "Créer un contenu clair, concis et engageant pour le site Internet de la compagnie, des newsletters, blog, médias sociaux et autres documents marketing"
 
 msgid "Create data analytics tools for trading/quantitative analysis"
 msgstr "Créer des outils d’analyse de données pour l’analyse quantitative/trading"
@@ -2885,13 +2888,13 @@ msgid "Create new virtual-money account"
 msgstr "Créer un nouveau compte d’argent virtuel"
 
 msgid "Create strategies against potential risks that might arise due to disruptive innovation"
-msgstr "Créer les stratégies contre les risques potentiels qui peuvent arriver en raison d'innovation disruptive"
+msgstr "Créer des stratégies contre les risques potentiels qui peuvent arriver en raison d'innovation disruptive"
 
 msgid "Create user personas; define user task flows and UI specifications; and run A/B tests to understand user behaviours and their most pressing needs"
 msgstr "Créer des personnages utilisateur ; définir les flux des taches utilisateur et spécifications de l’interface utilisateur ; et exécuter des tests A / B pour comprendre les comportements des utilisateurs et leurs besoins les plus pressants"
 
 msgid "Create visual elements for websites and applications, including icons and images"
-msgstr "Créer des éléments visuels pour sites Web et applications, y compris des icônes et images"
+msgstr "Créer des éléments visuels pour les sites Web et applications, y compris des icônes et images"
 
 msgid "Create, execute, and update manual and automated test plans"
 msgstr "Créer, exécuter et mettre à jour les plans de tests manuels et automatisés"
@@ -3158,7 +3161,7 @@ msgid "Depending on the jurisdiction to which a Client's account has been attach
 msgstr "Selon la juridiction à laquelle un compte Client est attaché, en accord avec les procédures d’ouverture de compte du site internet, le terme « nous », « notre », « nos », « nôtre », « la Société » ou '%1' désigne soit "
 
 msgid "Depending on the level of risk that the Company is exposed to while acting as the client's counterparty, the Company acts largely in a principal capacity of the client's trades. As such, the execution venue will usually be %1. However, the Company may transmit the client's order to third-party liquidity providers, in which case the Company will determine the execution venue on the basis described above."
-msgstr "Suivant le niveau de risque auquel la Compagnie est exposé en agissant comme la contrepartie client, la Compagnie agit largement en tant que principal des opérations client. Ainsi, le lieu d'exécution sera normalement %1. Cependant, la Compagnie peut transmettre l'ordre du client à un fournisseur de liquidité en tierce partie, cas dans lequel la Compagnie déterminera le lieu d'exécution sur la base décrite ci-dessus."
+msgstr "Suivant le niveau de risque auquel la Compagnie est exposée en agissant comme la contrepartie client, la Compagnie agit largement en tant que principal des opérations client. Ainsi, le lieu d'exécution sera normalement %1. Cependant, la Compagnie peut transmettre l'ordre du client à un fournisseur de liquidité en tierce partie, cas dans lequel la Compagnie déterminera le lieu d'exécution sur la base décrite ci-dessus."
 
 msgid "Depending on the quality of the data feeds received from our feed providers, our servers might apply a tick filtering algorithm. The purpose of this filtering algorithm is to strip the feed of stray ticks. Stray ticks are ticks that manifestly fall outside of the current trading range of the market; such ticks are often due to communication delays with the exchanges or banks that provide quotes, human error, or database problems at any point between the originator of the quote and our servers."
 msgstr "En fonction de la qualité des flux de données transmis par nos fournisseurs de données, nos serveurs peuvent appliquer un algorithme de filtrage des ticks. L'objectif de cet algorithme est de filtrer les ticks parasites qui peuvent s'immiscer dans les flux. Les ticks parasites sont ceux qui se situent manifestement en dehors de la plage de fluctuation actuelle du marché, et sont souvent dus à des retards de communication avec les bourses ou les banques fournissant les cotations, à des erreurs humaines ou à des problèmes de base de données survenant entre l'émetteur de la cotation et nos serveurs."
@@ -3218,7 +3221,7 @@ msgid "Design and develop applications and platforms based on blockchain technol
 msgstr "Concevoir et développer des applications et des plateformes basées sur la technologie blockchain"
 
 msgid "Design logos, icons, and other visuals for our websites and applications"
-msgstr "Designer des logos, icônes et autres supports visuels pour nos sites Web et applications"
+msgstr "Concevoir des logos, icônes et autres supports visuels pour nos sites Web et applications"
 
 msgid "Details"
 msgstr "Informations"
@@ -3425,7 +3428,7 @@ msgid "Due to the nature of our business as a trading counterparty, company prof
 msgstr "En raison de la nature de notre activité comme une contrepartie de trading, les bénéfices de l’entreprise sont liés aux revenus nets générés par votre trading. Cependant, nous visons à établir et à entretenir et à opérer des dispositions organisationnelles et administratives efficaces en vue de prendre toutes les mesures raisonnables pour prévenir les conflits d’intérêt ou donnant lieu à un risque important de léser les intérêts de nos clients."
 
 msgid "Due to the online nature of the business and instruments, there is a small delay between an order being entered and the same order being executed on the server. Any significant delay can have negative impacts on clients; therefore, the Company monitors the latency between the entering and execution of client orders. Should this delay exceed the established threshold, then the system administrators will be notified so that they can investigate any possible issue."
-msgstr "En raison de la nature en ligne de l’entreprise et des instruments, il y a un léger décalage entre un ordre saisis et l’ordre en cours d’exécution sur le serveur. Tout retard significatif peut avoir des effets négatifs sur les clients ; par conséquent, la Compagnie surveille le temps de latence entre l’entrée et l’exécution des ordres des clients. Si ce retard dépasse le seuil établi, les administrateurs système seront avisés afin qu’ils puissent enquêter sur tous problème éventuel."
+msgstr "En raison de la nature en ligne de l’entreprise et des instruments, il y a un léger décalage entre un ordre saisi et l’ordre en cours d’exécution sur le serveur. Tout retard significatif peut avoir des effets négatifs sur les clients ; par conséquent, la Compagnie surveille le temps de latence entre l’entrée et l’exécution des ordres des clients. Si ce retard dépasse le seuil établi, les administrateurs système seront avisés afin qu’ils puissent enquêter sur tous problème éventuel."
 
 msgid "Duration"
 msgstr "Durée"
@@ -3509,7 +3512,7 @@ msgid "Each time you send us an order, you are charged a commission, which is eq
 msgstr "Chaque fois que vous nous envoyez un ordre, vous êtes facturé une commission, qui est égale au prix de l'actif multiplié par le pourcentage présent dans le tableau ci-dessus."
 
 msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
-msgstr "Chaque cession est soumise à des frais de transfert de %1 ou des frais minimum de %2, selon celui qui le plus élevé."
+msgstr "Chaque cession est soumise à des frais de transfert de %1 ou des frais minimum de %2, selon celui qui est le plus élevé."
 
 msgid "Earn"
 msgstr "Gagnez"
@@ -3629,7 +3632,7 @@ msgid "Ends Outside"
 msgstr "Termine hors de la zone"
 
 msgid "Engage in market development to grow the client base for existing products and platforms of the company"
-msgstr "S'investir dans le développement du marché afin de grossir la base cliente pour des produits et plateformes existantes de la Compagnie"
+msgstr "S'investir dans le développement du marché afin de grossir la base cliente pour des produits et plateformes existants de la Compagnie"
 
 msgid "Enhanced performance"
 msgstr "Performance améliorée"
@@ -3755,7 +3758,7 @@ msgid "Evaluate and improve the effectiveness of internal controls, risk managem
 msgstr "Évaluer et améliorer l’efficacité des contrôles internes, la gestion des risques, la conformité réglementaire, et des processus financiers et opérationnels"
 
 msgid "Evaluate existing procedures and policies with respect to risk management and suggest improvements"
-msgstr "Évaluer les procédures et politiques en matière de gestion des risques et de proposer des améliorations"
+msgstr "Évaluer les procédures et politiques en matière de gestion des risques et proposer des améliorations"
 
 msgid "Even/Odd"
 msgstr "Pair/Impair"
@@ -3869,7 +3872,7 @@ msgid "Experience designing and working with high-availability web service archi
 msgstr "Expérience en matière de conception et de travail avec une architecture de services web à haute disponibilité"
 
 msgid "Experience in ARUBA or similar enterprise WiFi AP management is a plus"
-msgstr "Expérience avec ARUBA ou similaire Premium WiFi AP management est un atout"
+msgstr "Expérience avec ARUBA ou similaire entreprise WiFi AP management est un atout"
 
 msgid "Experience in Chef, Ansible, SaltStack, or similar configuration management tools"
 msgstr "Expérience avec Chef, Ansible, SaltStack ou des outils similaires de gestion de configuration"
@@ -3941,7 +3944,7 @@ msgid "Experience with agile development methods such as Scrum or Kanban"
 msgstr "Expérience avec les méthodes de développement agile telles que Scrum ou Kanban"
 
 msgid "Experience with data extraction and reporting for data warehouse/cube"
-msgstr "Expérience avec l’extraction de données et de reporting pour entrepôt/cube de données"
+msgstr "Expérience avec l’extraction de données et le reporting pour entrepôt/cube de données"
 
 msgid "Experience with database testing tools such as pgTAP"
 msgstr "Expérience avec des outils de test de base de données tels que pgTAP"
@@ -3953,7 +3956,7 @@ msgid "Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, 
 msgstr "Expérience avec les langages tels que Perl, Python, PHP, C/C++, Go, ou Ruby et une volonté de devenir hautement compétent avec Perl"
 
 msgid "Experience with package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus), and APIs (WebSocket)"
-msgstr "Expérience avec les gestionnaires de paquets (npm), coureurs de tâche (Gulp, Webpack, Grunt), processeurs CSS (Sass, stylet) et API (WebSocket)"
+msgstr "Expérience avec les gestionnaires de paquets (npm), exécuteurs de tâche (Gulp, Webpack, Grunt), processeurs CSS (Sass, stylet) et API (WebSocket)"
 
 msgid "Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL"
 msgstr "Expérience avec la conception de bases de données relationnelles et/ou des systèmes open source RDBMS comme MySQL et Postgres"
@@ -3977,7 +3980,7 @@ msgid "Expertise in Linux system administration"
 msgstr "Compétences en administration du système Linux"
 
 msgid "Expertise in cloud solutions and infrastructure virtualization, including AWS, Google Cloud Platform, and KVM"
-msgstr "Expertise en solutions cloud et virtualisation de l’infrastructure, y compris AWS, Google Cloud plateforme / KVM"
+msgstr "Expertise en solutions cloud et virtualisation de l’infrastructure, y compris AWS, plateforme Google Cloud et KVM"
 
 msgid "Expertise in the application of object-oriented programming languages (C++, Perl, and Java), coupled with the ability to produce high-quality code"
 msgstr "Compétence dans l'application des langages de programmation orientés objet (C++, Perl et Java) et capacité à fournir un code de haute qualité"
@@ -4016,7 +4019,7 @@ msgid "Extensive experience in creating interactive UI elements for web and mobi
 msgstr "Une vaste expérience dans la création d’éléments UI interactifs pour le web et les applications mobiles"
 
 msgid "Extensive experience of JavaScript, HTML, CSS, AJAX, and JSON"
-msgstr "Solide experience de JavaScript, HTML, CSS, AJAX et JSON"
+msgstr "Solide expérience de JavaScript, HTML, CSS, AJAX et JSON"
 
 msgid "Extensive experience with TCP/IP networking, VPNs, and IPsec"
 msgstr "Solide expérience des réseaux TCP/IP, des réseaux privés virtuels (VPN) et du protocole de sécurité IPsec"
@@ -4085,7 +4088,7 @@ msgid "Familiarity with testing and debugging processes, including unit testing 
 msgstr "Familiarité avec les tests et processus de déblocage, notamment les tests unitaires et concernant l'UI"
 
 msgid "Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular"
-msgstr "Familiarité avec les normes JavaScript , les bibliothèques, les cadres, les compilateurs et des transpilers y compris ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React et Angular"
+msgstr "Familiarité avec les normes JavaScript, les bibliothèques, les cadres, les compilateurs et des transpilers y compris ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React et Angular"
 
 msgid "Family name"
 msgstr "Nom de famille"
@@ -4130,7 +4133,7 @@ msgid "File Name"
 msgstr "Nom du Fichier"
 
 msgid "File records and documents of customer interactions according to existing guidelines"
-msgstr "Dossiers et documents concernant les interactions avec les clients selon les lignes directrices existantes"
+msgstr "Classer les dossiers et documents concernant les interactions avec les clients selon les lignes directrices existantes"
 
 msgid "Filtering Controls"
 msgstr "Systèmes de filtrage"
@@ -4193,7 +4196,7 @@ msgid "Finish"
 msgstr "Finnois"
 
 msgid "Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc."
-msgstr "Solide maitrise des concepts de gestion du risque avancées, y compris les opérations de couverture, les Grecs (première et deuxième génération), valeur de modèles de Risque, etc."
+msgstr "Solide maîtrise des concepts de gestion du risque avancés, y compris les opérations de couverture, les Grecs (première et deuxième génération), valeur de modèles de Risque, etc."
 
 msgid "First line of home address"
 msgstr "Première ligne de l'adresse résidentielle"
@@ -4286,7 +4289,7 @@ msgid "For example, let’s say the market has a low of 5,200 and a close of 6,0
 msgstr "Par exemple, disons que le marché a un minimum de 5 200 et une clôture de 6 000 sur la durée du contrat, puis un lookback « Close-Low » avec un multiplicateur de 2 $ aurait un gain de :"
 
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product disclosure statement. This policy is an appendix to, and should be read in conjunction with, the overarching %1's order execution policy."
-msgstr "Pour les fonctionnalités et les illustrations d'opérations de Spot FX offertes par %1, reportez vous à la Déclaration de Produit. Cette règle est un appendice et doit être lu en conjonction avec, la politique générale d’exécution des ordres %1."
+msgstr "Pour les fonctionnalités et les illustrations d'opérations de Spot FX offertes par %1, reportez vous à la Déclaration de Produit. Cette règle est un appendice et doit être lue en conjonction avec, la politique générale d’exécution des ordres %1."
 
 msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as indices) are not open throughout the day and that trading may not be available when the markets are closed."
 msgstr "Pour les cotations Forex, les horaires de fermeture sont définis par la Société comme indiqué dans la section « Horaires d'ouverture du marché » du site Web. En cas de litige concernant les valeurs de marché ou de règlement, la décision de la Société sera définitive et exécutoire. Les Clients sont priés de noter que certains marchés (comme les indices) ne sont pas ouverts durant toute la journée et que les options de trading sont susceptibles d'être indisponibles lorsque les marchés sont fermés."
@@ -4892,7 +4895,7 @@ msgid "IT"
 msgstr "IT"
 
 msgid "IT knowledge or experience is preferred"
-msgstr "Connaissance ou expérience en informatique est préférable"
+msgstr "Une connaissance ou expérience en informatique est préférable"
 
 msgid "Ideal for new and experienced traders"
 msgstr "Ideal pour les débutants et les traders expérimentés"
@@ -5183,7 +5186,7 @@ msgid "If you're shortlisted, we'll invite you to a hackathon or send you a tale
 msgstr "Si vous êtes retenus, nous vous inviterons à un hackathon ou vous enverrons un test de talent."
 
 msgid "If you're shortlisted, we'll send you a talent test to be completed."
-msgstr ""
+msgstr "Si vous êtes sélectionné, nous vous enverrons un test de talent à remplir."
 
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
 msgstr "Si votre compte %1 est fermé, votre Compte Réel MT5 sera automatiquement fermé également."
@@ -5735,7 +5738,7 @@ msgid "Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites 
 msgstr "Connaissance en HTML, CSS et JavaScript pour le prototypage rapide de sites Web et applications"
 
 msgid "Knowledge of Linux system administration, including configuration and automation tools such as Chef as well as Shell scripting is preferred"
-msgstr "Connaissance de l’administration du système Linux, y compris les outils de configuration et automatisation comme Chef ainsi que le scripting Shell est préférée"
+msgstr "Connaissance de l’administration du système Linux, y compris les outils de configuration et automatisation comme Chef ainsi que le scripting Shell est préféré"
 
 msgid "Knowledge of Mac or Linux Technologies and associated security risks"
 msgstr "Connaissance des Technologies Mac ou Linux et des risques de sécurité associés"
@@ -5813,7 +5816,7 @@ msgid "Laws regarding financial contracts vary throughout the world, and it is t
 msgstr "Les lois concernant les contrats financiers diffèrent d'un pays à l'autre, et il incombe aux clients accédant à ce site Web de veiller à comprendre et à agir en parfaite conformité avec toute loi ou règlement applicables dans leur pays. Ce site ne constitue pas, et ne doit en aucun cas être interprété comme, une offre ou une sollicitation adressée à toute personne au sein d'une juridiction où une telle offre ou sollicitation serait illégale, ou adressée à toute personne à laquelle il serait illégal d'adresser ce type d'offre ou de sollicitation. L'accès à ce site et l'offre de contrats financiers disponible par l'intermédiaire de ce site peuvent être restreints dans certaines juridictions, et, par conséquent, les clients accédant à ce site sont dans l'obligation de s'informer en conséquence et de respecter lesdites restrictions."
 
 msgid "Lay out mockups and wireframes for app screens and web pages"
-msgstr "Étalez les maquettes et modèles filaires pour les écrans de l’application et des pages web"
+msgstr "Présentez les maquettes et modèles filaires pour les écrans de l’application et les pages web"
 
 msgid "Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
 msgstr "Découvrez les types de trades qui peuvent vous aider à exécuter votre stratégie de trading sur des marchés en hausse, en baisse ou même des marchés latéraux."
@@ -5914,14 +5917,14 @@ msgstr "Assurer la liaison avec les fournisseurs externes pour s’assurer que l
 msgid "Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees"
 msgstr "Assurer la liaison avec les autorités gouvernementales comme le département de l’Immigration et l'Inland Revenue Board sur une base régulière au nom de l’entreprise et des salariés"
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
-msgstr "Autorisé et régulé à Malte, au Royaume Uni, à l’Île de Man, et en Irlande"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. %1Learn more%2"
+msgstr ""
 
 msgid "Licensed, trusted, and secure"
 msgstr "Autorisée sous licence, fiable et sûre"
 
 msgid "Life in Malta moves at a slower pace with a number of colourful festivities and religious holidays that you can look forward to every year. Some of the most popular ones include the Notte Bianca, the Malta Jazz Festival, Christmas, and Easter. Malta has no shortage of museums, archaeological sites, and other places of interest if you’re looking for a culture fix."
-msgstr "La vie à Malte se déplace à un rythme plus lent avec un certain nombre de festivités colorées et des fêtes religieuses que vous pouvez espérer à chaque année. Les plus populaires comprennent la Notte Bianca, le Festival de Jazz de Malte, Noël et Pâques. Malte ne manque pas de musées, sites archéologiques et autres lieux d’intérêt, si vous vous intéressez à la culture."
+msgstr "La vie à Malte se déplace à un rythme plus lent avec un certain nombre de festivités colorées et des fêtes religieuses que vous pouvez espérer chaque année. Les plus populaires comprennent la Notte Bianca, le Festival de Jazz de Malte, Noël et Pâques. Malte ne manque pas de musées, de sites archéologiques et autres lieux d’intérêt, si vous vous intéressez à la culture."
 
 msgid "Limit"
 msgstr "Limite"
@@ -5966,7 +5969,7 @@ msgid "Litecoin vs US Dollar"
 msgstr "Litecoin vs Dollar Américain"
 
 msgid "Live chat"
-msgstr "Chat en direct"
+msgstr "Discussion en direct"
 
 msgid "Living in Cyberjaya"
 msgstr "Vivre à Cyberjaya"
@@ -5978,7 +5981,7 @@ msgid "Living in Malta"
 msgstr "Vivre à Malte"
 
 msgid "Living on an island paradise has its perks. Labuan is one of those rare gems that has yet to undergo excessive commercialisation, thus retaining its small-town charm and tight-knit community vibe. Labuan welcomes tourists throughout the year as the island enjoys good weather all year round, with average daily temperature between 28 and 32 degrees Celsius."
-msgstr "Vivre sur une île paradisiaque a ses avantages. Labuan est l’une de ces perles rares qui n'a pas encore fait l’objet d'une commercialisation excessive, et a donc conservé son charme de petite ville et une communauté soudé. Labuan accueille les touristes tout au long de l’année étant donné que l’île bénéficie d’un bon climat tout au long de l’année, avec une température moyenne journalière entre 28 et 32 degrés Celsius."
+msgstr "Vivre sur une île paradisiaque a ses avantages. Labuan est l’une de ces perles rares qui n'a pas encore fait l’objet d'une commercialisation excessive, et a donc conservé son charme de petite ville et une communauté soudée. Labuan accueille les touristes tout au long de l’année étant donné que l’île bénéficie d’un bon climat tout au long de l’année, avec une température moyenne journalière entre 28 et 32 degrés Celsius."
 
 msgid "Located 10 minutes away, Malaysia's intelligent garden city offers stunning greenery and exquisite structures."
 msgstr "Situé à 10 minutes de trajet, la ville jardin intelligente de Malaise offre des espaces verts à couper le souffle et des structures magnifiques."
@@ -6179,7 +6182,7 @@ msgid "Maintain relationships with clients and partners to drive retention and l
 msgstr "Entretenir des relations avec les clients et partenaires afin de stimuler la rétention et la loyauté"
 
 msgid "Maintain trackable records of investigations in AML-CTF-related matters"
-msgstr "Tenir des dossiers d’enquêtes sur AML-CTF-sujets connexes"
+msgstr "Tenir des dossiers d’enquête sur AML-CTF et sujets connexes"
 
 msgid "Major and minor pairs, plus Smart FX indices"
 msgstr "Les paires majeures et mineures, ainsi que les indices Smart FX"
@@ -6218,7 +6221,7 @@ msgid "Malaysia"
 msgstr "Malaisie"
 
 msgid "Malaysia's lower cost of living compared to most western countries means that you can enjoy a high quality of life. You’ll also find easy access to world-class healthcare, plus several international schools, colleges, and universities that offer globally-recognised programmes."
-msgstr "Le faible coût de la vie de la Malaisie par rapport à la plupart des pays occidentaux signifie que vous pouvez profiter une qualité de vie élevée. Vous trouverez également un accès facile aux soins de santé d'excellent niveau, plus plusieurs écoles internationales, collèges et universités qui offrent des programmes reconnus à l’échelle mondiale."
+msgstr "Le faible coût de la vie de la Malaisie par rapport à la plupart des pays occidentaux signifie que vous pouvez profiter d'une qualité de vie élevée. Vous trouverez également un accès facile aux soins de santé d'excellent niveau, plusieurs écoles internationales, collèges et universités qui offrent des programmes reconnus à l’échelle mondiale."
 
 msgid "Malta"
 msgstr "Malte"
@@ -6227,7 +6230,7 @@ msgid "Malta celebrates a large number of religious festivities and cultural eve
 msgstr "Malte célèbre un grand nombre de fêtes religieuses et des événements culturels chaque année, remplissant les rues de chariots chargés de friandises et sucreries traditionnelles."
 
 msgid "Malta is one of the most densely-populated countries in the world with the smallest capital (Valletta) in the European Union. Maltese and English are the country's official languages, while Italian is also widely spoken. Malta has plenty of sunshine throughout the year and enjoys a mild climate."
-msgstr "Malte est un des pays les plus densément peuplées au monde avec la plus petite capitale (la Valette) dans l’Union européenne. Le Maltais et l’anglais sont les langues officielles du pays, tandis que l’italien est également largement parlé. Malte a beaucoup de soleil tout au long de l’année et bénéficie d’un climat doux."
+msgstr "Malte est un des pays les plus densément peuplés au monde avec la plus petite capitale (la Valette) dans l’Union européenne. Le Maltais et l’anglais sont les langues officielles du pays, tandis que l’italien est également largement parlé. Malte a beaucoup de soleil tout au long de l’année et bénéficie d’un climat doux."
 
 msgid "Malta's natural attractions are absolutely breathtaking, from its sheer cliffs and lush valleys to its golden sandy beaches and underwater structures in clear blue seas."
 msgstr "Les attraits naturels de Malte sont absolument à couper le souffle, de ses falaises abruptes et des vallées luxuriantes à ses plages de sable doré et ses structures sous-marines dans des mers bleues transparentes."
@@ -6248,7 +6251,7 @@ msgid "Manage and maintain all software, hardware, and associated peripherals in
 msgstr "Gérer et entretenir tous les logiciels, matériels et périphériques connexes, y compris les imprimantes, les copieurs et téléphones"
 
 msgid "Manage database security by controlling access to data through authentication, authorisation, and auditing"
-msgstr "Gérer la sécurité de la base de données en contrôlant l’accès aux données par le biais de l’authentification, autorisation et audit"
+msgstr "Gérer la sécurité de la base de données en contrôlant l’accès aux données par le biais de l’authentification, l'autorisation et l'audit"
 
 msgid "Manage day-to-day risk of our trading books"
 msgstr "Gérer le risque au quotidien de nos livres de trading"
@@ -6359,7 +6362,7 @@ msgid "Mastercard is an international company that processes payments made with 
 msgstr "MasterCard est une entreprise internationale qui traite les paiements par cartes de crédit et de débit MasterCard. Pour plus d’informations, visitez %1."
 
 msgid "Mastercards issued in a non-European country may only withdraw up to the amount deposited."
-msgstr "Les cartes MasterCard émises dans un pays non-européen peut retirer seulement jusqu'à concurrence du montant déposé."
+msgstr "Les cartes MasterCard émises dans un pays non-européen peuvent retirer seulement jusqu'à concurrence du montant déposé."
 
 msgid "Matches/Differs"
 msgstr "Égal/Différent"
@@ -6470,7 +6473,7 @@ msgid "Method"
 msgstr "Moyen"
 
 msgid "Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax"
-msgstr "Les compétences méticuleuse de la langue anglaise, avec un oeil attentif pour les détails lorsqu’il s’agit de signes de ponctuation, l'orthographe, la grammaire et la syntaxe"
+msgstr "Des compétences méticuleuses dans la langue anglaise, avec un oeil attentif pour les détails lorsqu’il s’agit de signes de ponctuation, l'orthographe, la grammaire et la syntaxe"
 
 msgid "MiFID II RTS 28"
 msgstr "MiFID II RTS 28"
@@ -6560,7 +6563,7 @@ msgid "Monitor and manage your client list, adjust settings for individual sub a
 msgstr "Surveiller et gérer votre liste de clients, ajuster les paramètres visant les sous-comptes individuels et bien plus"
 
 msgid "Monitor campaigns using key metrics and submit reports on campaign performance"
-msgstr "Surveiller les campagnes à l’aide d’indicateurs clés et présenter des rapports sur le rendement de la campagne"
+msgstr "Surveiller les campagnes à l’aide d’indicateurs clé et présenter des rapports sur le rendement de la campagne"
 
 msgid "Monitor fraud and money laundering patterns in deposit and withdrawal behaviour"
 msgstr "Surveiller la fraude et les modèles de blanchiment d'argent au niveau des dépôts et des retraits"
@@ -7118,7 +7121,7 @@ msgid "Order execution typically comes in two varieties: market execution and in
 msgstr "L’exécution d'ordre généralement se décompose en deux variétés : l’exécution de marché et l’exécution instantanée. Avec l’exécution du marché, vous placerez un ordre au prix du courtier. Vous vous engagez sur le prix à l’avance. Il n’y a aucune recotation avec l’exécution du marché."
 
 msgid "Orders will generally be auto-accepted if they do not take the Company over exposure limits and the client has enough remaining balance in their account. With every contract purchased, the Company has systems in place that automatically carry out a large exposure check, and, in case the new total exposure result is greater than or equal to 25% of the eligible capital, the contract cannot be sold to the client."
-msgstr "Les ordres seront généralement acceptés automatiquement s'ils ne mènent pas la Compagnie à dépasser ses limites d’exposition et si le client a assez d’argent restant dans leur compte. Avec chaque contrat acheté, la Compagnie a en place des systèmes qui procède automatiquement à un contrôle de l'exposition totale et, dans le cas où le nouveau résultat de l’exposition totale est supérieure ou égale à 25 % du capital admissible, le contrat ne peut être vendu au client."
+msgstr "Les ordres seront généralement acceptés automatiquement s'ils ne mènent pas la Compagnie à dépasser ses limites d’exposition et si le client a assez d’argent restant dans leur compte. Avec chaque contrat acheté, la Compagnie a en place des systèmes qui procèdent automatiquement à un contrôle de l'exposition totale et, dans le cas où le nouveau résultat de l’exposition totale est supérieure ou égale à 25 % du capital admissible, le contrat ne peut être vendu au client."
 
 msgid "Organisational skills and the ability to work proactively"
 msgstr "Compétences organisationnelles et capacité à travailler de manière proactive"
@@ -7139,7 +7142,7 @@ msgid "Other best execution factors such as speed of execution, likelihood of ex
 msgstr "D'autres facteurs de meilleure exécution comme la vitesse d'exécution, vraisemblance d'exécution et règlement, taille, nature ou toutes autres considérations liées à l'exécution d'un ordre particulier peuvent aussi être appliqués par nous afin d'obtenir le meilleur résultat pour vous."
 
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
-msgstr "Notre Comptabilité &amp; équipe Paiements gère notre large gamme de comptes bancaires et les systèmes e-monnaie, ainsi que l’énorme quantité de transactions qui ont lieu tous les jours."
+msgstr "Notre Comptabilité &amp; l'équipe Paiements gère notre large gamme de comptes bancaires et les systèmes e-monnaie, ainsi que l’énorme quantité de transactions qui ont lieu tous les jours."
 
 msgid "Our Company"
 msgstr "Notre société"
@@ -7243,8 +7246,8 @@ msgstr "Plus de $1 000 000"
 msgid "Over $500,000"
 msgstr "Plus de 500 000 $"
 
-msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
-msgstr "Plus de %1 <a href='%2'>employés</a> et prestataires dans le monde entier"
+msgid "Over %1 %2staff%3 and contractors worldwide"
+msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Plus d'un million de comptes enregistrés dans le monde entier"
@@ -7304,7 +7307,7 @@ msgid "Passion for Linux and other open-source platforms"
 msgstr "Passion pour Linux et autres plateformes open-source"
 
 msgid "Passion for Linux, and other open-source platforms"
-msgstr "Passion pour Linux et autres plates-formes open-source"
+msgstr "Passion pour Linux et autres plateformes open-source"
 
 msgid "Passion for advertising and marketing"
 msgstr "Passion pour la publicité et le marketing"
@@ -7625,7 +7628,7 @@ msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. Y
 msgstr "Veuillez prendre note que vous utilisez actuellement votre compte %1Bitcoin Cash%2. Vous pouvez seulement approvisionner votre compte en %1Bitcoin Cash%2et pas en Bitcoin."
 
 msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
-msgstr ""
+msgstr "Veuillez indiquer le numéro d’identification fiscale pour le pays où vous êtes un résident fiscal. Si vous ne pouvez fournir cette information, veuillez contacter notre équipe d’assistance clientèle pour vous aider."
 
 msgid "Please provide us with the following information:"
 msgstr "Veuillez nous fournir les informations suivantes:"
@@ -7664,7 +7667,7 @@ msgid "Please select the checkbox."
 msgstr "Veuillez cocher la case."
 
 msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr ""
+msgstr "Veuillez sélectionner le pays où vous êtes un résident fiscal. Si vous avez des doutes, veuillez consulter votre conseiller fiscal."
 
 msgid "Please select the currency of this account:"
 msgstr "Veuillez sélectionner la devise de ce compte :"
@@ -7814,7 +7817,7 @@ msgid "Predict the last decimal digit of the spot price with Digits. There are t
 msgstr "Prédisez la dernière décimale de votre prix spot. Il y a trois types d'option « Chiffres » :"
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
-msgstr "Préférence un locuteur natif avec une bonne maîtrise de l’anglais (écrit et oral)"
+msgstr "Préférablement un locuteur natif avec une bonne maîtrise de l’anglais (écrit et oral)"
 
 msgid "Preferences:"
 msgstr "Préférences :"
@@ -7823,7 +7826,7 @@ msgid "Premier binary options trading platform"
 msgstr "La meilleure plateforme de trading d'options binaires"
 
 msgid "Prepare and present proposals for the provisioning of IT-related systems and services"
-msgstr "Préparer et présenter des propositions pour la fourniture et systèmes et services IT"
+msgstr "Préparer et présenter des propositions pour la fourniture de systèmes et services IT"
 
 msgid "Prepare daily, weekly, and monthly financial reports"
 msgstr "Préparer des rapports financiers quotidiens, hebdomadaires et mensuels"
@@ -7841,7 +7844,7 @@ msgid "Previous"
 msgstr "Précédent"
 
 msgid "Previous experience with financial/binary options website services is preferred"
-msgstr "Expérience des services de courtage en ligne dans le domaine des instruments financiers / options binaires est préféré"
+msgstr "Une expérience précédente avec les services de site Web financier/d'options binaires est préférée"
 
 msgid "Previous work experience in a customer service and/or marketing role"
 msgstr "Expérience professionnelle préalable dans le domaine du service à la clientèle et/ou du marketing"
@@ -7859,7 +7862,7 @@ msgid "Prior to placing an Order which results in opening a Transaction or incre
 msgstr "Avant de placer un ordre qui résulte dans l'ouverture d'une Transaction ou l'augmentation d'une Position Ouverte existante, vous reconnaissez qu'il est de votre responsabilité de vous assurer que la marge libre de votre compte est suffisante pour couvrir la marge requise en relation avec la Transaction ouverte (\"l'Exigence de Marge\"), et pour continuellement satisfaire l'Exigence de marge."
 
 msgid "Proactive approach in problem-solving and solution delivery"
-msgstr "Approche proactive dans la livraison des problèmes et solutions"
+msgstr "Approche proactive dans la résolution des problèmes et la livraison de solutions"
 
 msgid "Probability of returns"
 msgstr "Probabilité de retours"
@@ -7877,7 +7880,7 @@ msgid "Process transactions for clients who make deposits and withdrawals using 
 msgstr "Traiter les transactions pour les clients qui font des dépôts et des retraits à l’aide d’un large éventail de services de paiement tiers, y compris par virement bancaire, carte de crédit et e-monnaie"
 
 msgid "Process website content translations regularly and efficiently"
-msgstr "Traiter les traductions de contenu de site Web régulièrement et efficacement"
+msgstr "Traiter les traductions de contenu du site Web régulièrement et efficacement"
 
 msgid "Process website content translations when a full time translator is unavailable"
 msgstr "Traduction des contenus Web lorsque le traducteur à plein temps n'est pas disponible"
@@ -7907,7 +7910,7 @@ msgid "Proficiency in Excel and big data analysis"
 msgstr "Maîtrise d'Excel et analyse de données volumineuses"
 
 msgid "Proficiency in Microsoft Excel is required"
-msgstr "La Maîtrise de Microsoft Excel est nécessaire"
+msgstr "La maîtrise de Microsoft Excel est nécessaire"
 
 msgid "Proficiency in Photoshop, Illustrator, InDesign, Sketch, and other design and wireframing software"
 msgstr "Maîtrise de Photoshop, Illustrator, InDesign, Sketch et autres logiciels de conception et de rendu filaire"
@@ -7925,7 +7928,7 @@ msgid "Proficiency with one or more scripting languages, such as Python, PHP or 
 msgstr "Compétence avec un ou plusieurs langages script, comme Python, PHP ou C/C++. Perl est préféré"
 
 msgid "Proficiency with popular office applications such as Microsoft Excel, accounting software, and databases"
-msgstr "Maîtrise des applications de bureautiques populaires comme Microsoft Excel, des logiciel de comptabilité et de bases de données"
+msgstr "Maîtrise des applications de bureautiques populaires comme Microsoft Excel, des logiciels de comptabilité et de bases de données"
 
 msgid "Profile"
 msgstr "Profil"
@@ -7985,7 +7988,7 @@ msgid "Provide additional assistance to team when needed"
 msgstr "Fournir une assistance complémentaire à l’équipe si nécessaire"
 
 msgid "Provide guidance to the Company’s operational teams and act as internal second line support for AML-CTF, anti-fraud, and authentication purposes"
-msgstr "Guider les équipes opérationnelles de la Compagnie et agir comme deuxième ligne interne de support pour AML-CTF, lutte contre la fraude et les fins d’authentification"
+msgstr "Guider les équipes opérationnelles de la Compagnie et agir comme deuxième ligne interne de support pour AML-CTF, dans la lutte contre la fraude et à des fins d’authentification"
 
 msgid "Provide onsite support to all employees with the necessary hardware and software required for their jobs"
 msgstr "Fournir un soutien sur place à tous les employés avec le matériel nécessaire et les logiciels requis pour leur emploi"
@@ -8066,7 +8069,7 @@ msgid "R. Interpretation of Terms"
 msgstr "R. Interprétation des conditions"
 
 msgid "RTS 27"
-msgstr ""
+msgstr "RTS 27"
 
 msgid "Range of markets"
 msgstr "Gamme de marchés"
@@ -8150,7 +8153,7 @@ msgid "Receive news and special offers"
 msgstr "Recevez des bulletins d'information et des offres spéciales"
 
 msgid "Receive prices that are benchmarked against interbank rates"
-msgstr "Recevoir les prix qui sont étalonnés contre les taux interbancaires"
+msgstr "Recevoir les prix qui sont étalonnés vis à vis des taux interbancaires"
 
 msgid "Receive quotes for a trade and countertrade, so you always get unbiased, transparent rates"
 msgstr "Recevez des cotations pour chaque opération et contre opération, afin de vous offrir des taux justes et transparents"
@@ -8165,7 +8168,7 @@ msgid "Recommend our products easily, and keep track of all your earnings with o
 msgstr "Promouvez nos produits facilement et gardez une trace de tous vos revenus avec nos outils de parrainage astucieux."
 
 msgid "Recruit, train, and nurture affiliates and IBs in countries where Binary Group is active, leveraging your direct knowledge and experience of the local market"
-msgstr "Recruter, entraîner et développer ses affiliés et IBs dans les pays où le groupe binaire est actif, s’appuyant sur votre connaissance directe et expérience du marché local"
+msgstr "Recruter, entraîner et développer ses affiliés et IBs dans les pays où le groupe Binary est actif, s’appuyant sur votre connaissance directe et votre expérience du marché local"
 
 msgid "Ref."
 msgstr "Réf."
@@ -8240,7 +8243,7 @@ msgid "Relationship between Margin and Leverage"
 msgstr "Relation entre la Marge et le Levier"
 
 msgid "Relevant experience in the use of quant programming libraries and frameworks (QuantLib, Pricing Partners, FINCAD, and Numerix), and quant pricing platforms (SuperDerivatives and FENICS) would be a plus"
-msgstr "Une expérience pertinente dans l'utilisation des bibliothèques et frameworks de programmation Quantitative (Quantlib, PricingPartners, FINCAD et NumeriX) et des plateformes de tarification (SuperDerivatives et FENICS) serait un plus"
+msgstr "Une expérience pertinente dans l'utilisation des bibliothèques et cadres de programmation Quantitative (Quantlib, PricingPartners, FINCAD et NumeriX) et des plateformes de tarification (SuperDerivatives et FENICS) serait un plus"
 
 msgid "Relevant work experience in a related field, such as managing and onboarding expats, processing work permits, and dealing with Malaysian governmental authorities will be a plus"
 msgstr "Expérience de travail pertinente dans un domaine connexe, tels que la gestion et l'intégration des expatriés, traiter les permis de travail, et collaborer avec les autorités gouvernementales malaisiennes sera un plus"
@@ -8249,7 +8252,7 @@ msgid "Remaining Time"
 msgstr "Temps restant"
 
 msgid "Replication,"
-msgstr "la Réplication,"
+msgstr "Réplication,"
 
 msgid "Representation or Warranty"
 msgstr "Représentation ou Garantie"
@@ -8375,7 +8378,7 @@ msgid "Reverse side"
 msgstr "Verso"
 
 msgid "Review and analyse suspicious client activities"
-msgstr "Examiner et analyser les activités suspectes de client"
+msgstr "Examiner et analyser les activités suspectes de clients"
 
 msgid "Review and approve KYC documents"
 msgstr "Examiner et approuver les documents KYC"
@@ -8486,7 +8489,7 @@ msgid "Save in case of negligence, fraud, or default by the Company, the Company
 msgstr "Sauf en cas de négligence, fraude, ou défaut de la Société, la Société ne sera responsable envers aucun client en cas d'événement de force majeure, ou d'action émanant de tout Gouvernement ou autorité légale, de défaillance, dommage ou destruction de ses systèmes informatiques, données ou enregistrements, totale ou partielle, ou de retards, pertes, erreurs ou omissions survenus à la suite de défaillances ou de mauvaise gestion de tout équipement de télécommunications, informatique ou logiciel par le client ou de tout dommage ou perte considéré ou supposé résultant de ou causé par ce site ou son contenu."
 
 msgid "Savings & Inheritance"
-msgstr "Épargne & héritage"
+msgstr "Épargne & Héritage"
 
 msgid "Scalable"
 msgstr "Évolutif"
@@ -8612,7 +8615,7 @@ msgid "Self-exclusion on this website only applies to your %1 account and does n
 msgstr "L'auto-exclusion sur ce site Web s’applique seulement à votre compte %1 et ne comprend pas les autres entreprises ou sites Web."
 
 msgid "Self-motivation and flexibility in task rotations"
-msgstr "Motivation personnelle et flexibilité dans la rotation de tâches"
+msgstr "Motivation personnelle et flexibilité dans la rotation des tâches"
 
 msgid "Selfie holding proof of identity (front)"
 msgstr "Selfie tenant une preuve d’identité (recto)"
@@ -8804,7 +8807,7 @@ msgid "Smoothing out random noise"
 msgstr "Lissage du bruit aléatoire"
 
 msgid "Social & Cultural"
-msgstr "Social et Culture"
+msgstr "Social et Culturel"
 
 msgid "Software Tester"
 msgstr "Testeur de Logiciels"
@@ -9053,7 +9056,7 @@ msgid "Su"
 msgstr "Di"
 
 msgid "Subject to %1 transfer fee or %2, whichever is higher"
-msgstr "Sous réserve de frais de transfert de %1 ou %2, selon ce qui est plus élevé"
+msgstr "Sous réserve de frais de transfert de %1 ou %2, selon celui qui est plus élevé"
 
 msgid "Subject to any specific instructions which may be provided by you, when executing client orders, we will take all reasonable steps to obtain the best possible results for you. The best possible results will be determined in terms of total consideration, that is, the price of the instrument and the costs related to execution which shall include all expenses incurred by you that are directly related to the execution of the order."
 msgstr "Sujet à n'importe quelles instructions spécifiques fournies par vous, lors de l'exécution d'ordres de client, nous allons prendre tous les pas raisonnables afin d'obtenir le meilleur résultat pour vous. Les meilleurs résultats seront déterminés en termes de considération totale, qui est, le prix de l'instrument et les coûts liés à l'exécution, qui comprendront tous les frais engendrés par vous qui sont directement liés à l'exécution de l'ordre."
@@ -9146,7 +9149,7 @@ msgid "Support our global recruitment and talent management needs"
 msgstr "Supporter nos besoins en matière de recrutement international et de gestion des compétences"
 
 msgid "Support our global recruitment and talent management needs, including onboarding, processing work permits, and expat management"
-msgstr "Supporter nos besoins en matière de recrutement mondial et de management de talents, y compris processus d’accueil des nouveaux employés, traitement des permis de travail et de gestion des expatriés"
+msgstr "Supporter nos besoins en matière de recrutement mondial et de management de talents, y compris le processus d’accueil des nouveaux employés, le traitement des permis de travail et la gestion des expatriés"
 
 msgid "Support overall development, planning and execution of the team’s digital marketing efforts in accordance to the marketing objectives of respective projects"
 msgstr "Soutenir le développement global, la planification et l’exécution des efforts de l’équipe de marketing numérique conformément aux objectifs marketing des projets respectifs"
@@ -9161,10 +9164,10 @@ msgid "Suspending your MT5 Real Account and refusing to execute any Orders to en
 msgstr "Suspendant votre Compte Réel MT5 et refusant d'executer tout Ordre pour entrer dans d'autres Transactions avec vous. Lorsque votre Compte Réel MT5 est suspendu, vous serez capable de placer des Ordres pour fermer vos Positions Ouvertes, mais vous ne serez pas capable de placer des Ordres qui créeraient des Positions Ouvertes."
 
 msgid "Swaps Long (per annum)"
-msgstr "Swaps Longs (per an)"
+msgstr "Swaps Longs (par an)"
 
 msgid "Swaps short (per annum)"
-msgstr "Swaps courts (per an)"
+msgstr "Swaps courts (par an)"
 
 msgid "Swiss Franc vs Japanese Yen"
 msgstr "Franc Suisse contre Yen Japonais"
@@ -9179,16 +9182,16 @@ msgid "System Administrator"
 msgstr "Administrateur Système"
 
 msgid "Table 1 - Type of execution venue"
-msgstr ""
+msgstr "Table 1 - Type de lieux d’exécution"
 
 msgid "Table 3 - Intra-Day Price information"
-msgstr ""
+msgstr "Table 3 - information sur le Prix Intra Journalier"
 
 msgid "Table 4 - Daily Price information"
-msgstr ""
+msgstr "Table 4 - information sur le Prix Journalier"
 
 msgid "Table 6 - Likelihood of execution information"
-msgstr ""
+msgstr "Table 6 - Information sur la Probabilité d’exécution"
 
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
 msgstr "Optez pour une vision à court ou long terme, avec des durations de trade de 10 secondes jusqu'à 365 jours."
@@ -9275,13 +9278,13 @@ msgid "Test our products and services for security vulnerabilities. In the proce
 msgstr "Testez les vulnérabilités de sécurité de nos produits et services. Dans le processus, vous obtiendrez une récompense financière pour tout problème vérifiable que vous découvrez, grâce à notre programme de récompense pour la découverte de bug."
 
 msgid "Test the %1 website, applications, backend, and back-office systems"
-msgstr "Tester le site Web %1 , applications, backend et systèmes back-office"
+msgstr "Tester le site Web %1, les applications, le backend et les systèmes de back-office"
 
 msgid "Tether"
 msgstr "Tether"
 
 msgid "Tether is a blockchain-based cryptocurrency whose cryptocoins in circulation are backed by an equivalent amount of traditional fiat currencies. For more info, please visit %1."
-msgstr "Sangle est une cryptodevise basée sur blockchain dont crypto pièces en circulation sont soutenues par une quantité équivalente de monnaies traditionnelles fiat. Pour plus d’informations, visitez le %1."
+msgstr "Tether est une cryptodevise basée sur la blockchain dont les crypto pièces en circulation sont soutenues par une quantité équivalente de monnaies traditionnelles fiat. Pour plus d’informations, visitez le %1."
 
 msgid "Th"
 msgstr "Je"
@@ -9464,13 +9467,13 @@ msgid "The Company has a Stop Out policy which prevents you from losing more tha
 msgstr "La Société a une politique de Stop Out qui vous empêche de perdre plus que ce vous avez déposé. Toutefois, dans le cas où vos Positions ouvertes ne sont pas supprimées lorsque le niveau de marge pour votre compte réel MT5 atteint le niveau de Stop Out, la Société, à sa seule discrétion, peut renoncer à votre solde négatif en créditant votre compte si votre solde de compte tombe dans le rouge. Le solde négatif est déterminé en additionnant tous les soldes négatifs engagées sur une période de 24 heures dans l’ensemble de tous les comptes détenus par vous. Vous reconnaissez que, à moins d'être un client de détail de Binary Investments (Europe) Ltd, l’offre de la protection de solde négatif de la Société envers vous est à la discrétion de la Société et nous nous réservons le droit de modifier les caractéristiques et les critères d’admissibilité de la Protection de solde négatif à tout moment. Les dispositions de la Protection de solde négatif ne s’appliquent pas :"
 
 msgid "The Company has a general duty to conduct its business with the client honestly, fairly, and professionally and to act in the client's best interests when opening and closing binary options trades with the client."
-msgstr "La Compagnie a un devoir général de conduire nos affaires avec le client de manière honnête, juste et professionnelle et d'agir dans vos meilleurs intérêts lors de l'ouverture et la clôture des trades d'Options Binaires avec le client."
+msgstr "La Compagnie a un devoir général de conduire nos affaires avec le client de manière honnête, juste et professionnelle et d'agir dans vos meilleurs intérêts lors de l'ouverture et la clôture des trades d'options binaires avec le client."
 
 msgid "The Company has and retains the right, to terminate any event or trade, including but not limited to the occurrence of any of the above events."
 msgstr "La Société a et retient le droit, de supprimer n'importe quel événement ou trade, y compris, mais non limité à l’occurrence d'un des événements mentionnés ci-dessus."
 
 msgid "The Company has internally set appropriate controls and monitoring to verify that its aggregate return on the various underlying options and durations is equal to its commission charge of 3 - 5%. Proper back-testing is conducted on a quarterly basis to certify that the Company's return does not exceed this set mark-up and hence ascertain continued fair prices to the clientele, whilst mitigating the Company's conflicts of interest."
-msgstr "La Compagnie a mis en place en interne les contrôles appropriés et la surveillance afin de vérifier que son retour agrégé sur les différents sous-jacents et durées est égal à ses frais de commission de 3 à 5 %. Contrôles appropriés a posteriori sont effectués sur une base trimestrielle pour certifier que le rendement de la Compagnie ne dépasse pas cette majoration fixe et donc s'assure de prix continus équitables à la clientèle, tout en atténuant les conflits d’intérêts de la Compagnie."
+msgstr "La Compagnie a mis en place en interne les contrôles et la surveillance appropriés afin de vérifier que son retour agrégé sur les différents sous-jacents et durées est égal à ses frais de commission de 3 à 5 %. Des contrôles appropriés a posteriori sont effectués sur une base trimestrielle pour certifier que le rendement de la Compagnie ne dépasse pas cette majoration fixe et donc s'assure de prix continus équitables à la clientèle, tout en atténuant les conflits d’intérêts de la Compagnie."
 
 msgid "The Company has the discretion to seek information from Clients to verify compliance with these terms."
 msgstr "L'Entreprise peut à son entière discrétion rechercher des informations sur ses Clients pour vérifier leur conformité avec ces termes."
@@ -9479,7 +9482,7 @@ msgid "The Company is an independent legal entity and is not affiliated with the
 msgstr "La Société est une entité juridique indépendante et n’est pas affiliée à la plateforme de Trading MT5. MT5 n'est pas possédé, contrôlé ou exploité par la Société. Par conséquent, la Société ne fournit pas toutes les garanties liées à tout produit ou service MT5 et n'a pas examiné ou vérifié les résultats des performances qui peuvent être présentés et/ou décrits sur ce site en ce qui concerne MT5."
 
 msgid "The Company is licensed to deal in derivatives on its own account. Client orders will be executed by the Company and the Company will always be the client's sole execution venue for all of the trades a client makes in binary options. This means that the Company will always act as the client's counterparty, wherein it takes the other side of the client's trade. The clients should be aware that they are exposed to higher risks as all binary options contracts are traded on the over-the-counter (OTC) markets, as opposed to regulated exchanges. This section of the policy will outline how the Company intends to comply with its best execution obligations."
-msgstr "La Compagnie est autorisée à trader les dérivés pour son propre compte. Les ordres clients seront exécutées par la Compagnie et la Compagnie sera toujours le lieu d’exécution unique du client pour toutes les trades qu'un client peut effectuer dans les options binaires. Cela signifie que la Compagnie agira toujours en tant que contrepartie client, dans lequel il prend l’autre côté du trade du client. Les clients doivent être conscients qu’ils sont exposés à des risques plus élevés car tous les contrats d’options binaires sont négociés sur les marchés de gré à gré (OTC) , par opposition aux échanges réglementés. Cette section de la politique donnera un aperçu de comment la Compagnie a l’intention de se conformer à ses obligations de meilleure exécution."
+msgstr "La Compagnie est autorisée à trader les dérivés pour son propre compte. Les ordres clients seront exécutées par la Compagnie et la Compagnie sera toujours le lieu d’exécution unique du client pour tous les trades qu'un client peut effectuer dans les options binaires. Cela signifie que la Compagnie agira toujours en tant que contrepartie client, dans lequel il prend l’autre côté du trade du client. Les clients doivent être conscients qu’ils sont exposés à des risques plus élevés car tous les contrats d’options binaires sont négociés sur les marchés de gré à gré (OTC) , par opposition aux échanges réglementés. Cette section de la politique donnera un aperçu de comment la Compagnie a l’intention de se conformer à ses obligations de meilleure exécution."
 
 msgid "The Company is not liable for loss or damage of any kind whatsoever arising as a result of information or prices published on or furnished through the %1 API, or any errors or omissions of the %1 API;"
 msgstr "la Société ne peut être tenue responsable de toute forme de perte ou de dommage résultant d'informations ou de prix publiés sur, ou fournis par le biais de, l'API %1, ou d'éventuelles erreurs ou omissions relatives à l'API %1 ;"
@@ -9644,7 +9647,7 @@ msgid "The Company will mainly ensure best execution for the client by giving du
 msgstr "La Compagnie assurera principalement la meilleure exécution pour le client s'attachant aux prix du marché lors du calcul des prix acheteur vendeur de la Compagnie pour le sous-jacent de référence auquel se rapporte le Contrat du client. Afin de déterminer le prix du marché, la Compagnie a accès à un certain nombre de sources de données différentes, qui fournissent à la Compagnie une vision objective des soumissions et offres disponible aux traders."
 
 msgid "The Company will monitor the effectiveness of its order execution arrangements and order execution policy. The Company will assess from time to time whether the venues relied upon by the Company in pricing its Contracts on the client's behalf allow the Company to achieve best execution on a consistent basis or whether the Company needs to make changes to its execution arrangements. The Company will also review its order execution arrangements and order execution policy in respect of material changes, either regarding one of the Company's chosen pricing venues or what might otherwise affect the Company's ability to continue to achieve best execution. Should there be any material changes to the Company's order execution arrangements or order execution policy, the Company will notify the client."
-msgstr "La Companie s'engage à superviser l'efficacité de ses modalités d'exécution des ordres et de sa politique d'exécution des ordres. De temps à autre, la Compagnie déterminera si les infrastructures que la Companie utilise pour la cotation de ses contrats au nom du client permettent de garantir une qualité d'exécution optimale et constante ou si une modification des modalités d'exécution de la Compagnie s'avère nécessaire. La Compagnie réévaluera également ses modalités d'exécution des ordres et sa politique d'exécution des ordres en fonction des changements importants intervenant au niveau de l'une des infrastructures de cotation sélectionnées par la Compagnie ou susceptibles de se répercuter sur sa capacité à garantir une qualité d'exécution optimale. La Compagnie avertira le client de tout changement de ses modalités d'exécution ou de sa politique d'exécution des ordres."
+msgstr "La Compagnie s'engage à superviser l'efficacité de ses modalités d'exécution des ordres et de sa politique d'exécution des ordres. De temps à autre, la Compagnie déterminera si les infrastructures que la Compagnie utilise pour la cotation de ses contrats au nom du client permettent de garantir une qualité d'exécution optimale et constante ou si une modification des modalités d'exécution de la Compagnie s'avère nécessaire. La Compagnie réévaluera également ses modalités d'exécution des ordres et sa politique d'exécution des ordres en fonction des changements importants intervenant au niveau de l'une des infrastructures de cotation sélectionnées par la Compagnie ou susceptibles de se répercuter sur sa capacité à garantir une qualité d'exécution optimale. La Compagnie avertira le client de tout changement de ses modalités d'exécution ou de sa politique d'exécution des ordres."
 
 msgid "The Company will monitor the effectiveness of the Company's order execution arrangements and order execution policy. The Company will assess from time to time whether the venues relied upon by the Company in pricing the Company's contracts on the client's behalf allow the Company to achieve best execution on a consistent basis or whether the Company needs to make changes to the Company's execution arrangements. The Company will also review the Company's order execution arrangements and order execution policy in respect of material changes either in respect of one of the Company's chosen pricing venues or what otherwise affects the Company's ability to continue to achieve best execution. Should there be any material changes to the Company's order execution arrangements or order execution policy, the Company will notify the client."
 msgstr "La Compagnie s'engage à superviser l'efficacité des modalités d'exécution des ordres et de la politique d'exécution des ordres de la Compagnie. De temps à autre, la Compagnie déterminera si les infrastructures que la Compagnie utilise pour la cotation des contrats de la Compagnie au nom du client permettent de garantir une qualité d'exécution optimale et constante ou si une modification des modalités d'exécution de la Compagnie s'avère nécessaire. La Compagnie réévaluera également les modalités d'exécution des ordres et la politique d'exécution des ordres de la Compagnie en fonction des changements importants intervenant au niveau de l'une des infrastructures de cotation sélectionnées par la Compagnie ou susceptibles de se répercuter sur sa capacité à garantir une qualité d'exécution optimale. La Compagnie avertira le client de tout changement de ses modalités d'exécution ou de sa politique d'exécution des ordres."
@@ -9710,7 +9713,7 @@ msgid "The Forex is typically traded in <i>lots</i>. One standard <i>lot</i> is 
 msgstr "Le Forex est typiquement échangé en <i>lots</i>. Un <i>lot</i> standard est équivalent à 100,000 unités. Chaque fois que vous ouvrez une position sur un symbole monétaire, vous pouvez démarrer avec un minimum de transaction de <i>0.01 lots</i>."
 
 msgid "The Human Resource Operations team manages essential human resource functions such as managing expats, processing work permits, onboarding, managing payroll, compiling compensation studies, and overseeing performance appraisals."
-msgstr "L’équipe Opérations des Ressources Humaines gère les fonctions de ressources humaines essentielles telles que la gestion des expatriés, le traitement des permis de travail, l'intégration, la gestion de la paie, la compilation d’études sur la rémunération et la supervision des les évaluations de performances."
+msgstr "L’équipe Opérations des Ressources Humaines gère les fonctions de ressources humaines essentielles telles que la gestion des expatriés, le traitement des permis de travail, l'intégration, la gestion de la paie, la compilation d’études sur la rémunération et la supervision des évaluations de performances."
 
 msgid "The Internal Audit team is the catalyst for improving our organisation’s governance, risk management, and internal controls by providing insights and recommendations based on the audits they perform."
 msgstr "L’équipe d'Audit Interne est le catalyseur pour l’amélioration de la gouvernance de notre organisation, la gestion du risque et les contrôles internes en fournissant des idées et des recommandations basées sur les vérifications qu’ils accomplissent."
@@ -9743,7 +9746,7 @@ msgid "The Marketing team oversees all our marketing and advertising initiatives
 msgstr "L’équipe Marketing supervise toutes nos initiatives marketing et publicitaires, telles que notre programme d’affiliation, la présence dans les médias sociaux, les webinaires et e-mails. Comme notre Chargé Marketing, vous coordonnerez et exécutez des campagnes marketing sur une variété de canaux et identifierez en permanence les meilleurs moyens d’atteindre les clients actuels et potentiels."
 
 msgid "The Marketing team oversees all our marketing initiatives, such as our partnership programmes, social media presence, webinars, PPC, SEO, and email marketing. As our Technical Marketing Executive, you will act on data-driven information and assist in troubleshooting issues to further nurture and grow our client base."
-msgstr "L’équipe Marketing supervise toutes nos initiatives de marketing, tels que nos programmes de partenariat, la présence dans les médias sociaux, webinaires, PPC, SEO et marketing par courriel. Comme chargé du Marketing Technique, vous agirez sur des informations fondées sur des données et aiderez à la résolution des problèmes afin de plus cultiver et grossir notre client base."
+msgstr "L’équipe Marketing supervise toutes nos initiatives de marketing, tels que nos programmes de partenariat, la présence dans les médias sociaux, webinaires, PPC, SEO et marketing par courriel. Comme chargé du Marketing Technique, vous agirez sur des informations fondées sur des données et aiderez à la résolution des problèmes afin de cultiver et grossir notre client base."
 
 msgid "The MetaTrader platform will no longer support Windows XP, Windows 2003, and Windows Vista after 01 October, 2017."
 msgstr "La plate-forme MetaTrader ne supportera plus Windows XP, Windows 2003 et Windows Vista après le 1er octobre 2017."
@@ -9758,7 +9761,7 @@ msgid "The Pillar 3 disclosure report of Binary Investments (Europe) Limited has
 msgstr "Le rapport de divulgation Volet 3 de Binary Investments (Europe) Limited a été rédigé conformément à la Directive IV sur les besoins en capital et à la Réglementation sur les besoins en capital. Lisez notre rapport de divulgation Volet 3 pour comprendre comment nous agissons conformément à la discipline de marché en tant que participant de marché."
 
 msgid "The Policy is supplemented by Appendix A, which provides further details to the Company's considerations as they are related to differing asset classes. The accompanying Appendix A should be read in conjunction with this Policy."
-msgstr "La Politique est complétée par l'Appendix A qui fournit de plus amples détails pour la considération de la Compagnie comme ils sont liés à différents classes d'actifs. L'Appendice A attaché devra être lu en conjonction avec cette Politique."
+msgstr "La Politique est complétée par l'Appendix A qui fournit de plus amples détails pour la considération de la Compagnie comme ils sont liés à différentes classes d'actifs. L'Appendice A attaché devra être lu en conjonction avec cette Politique."
 
 msgid "The Recruitment team plays a challenging role in the company by sourcing and selecting quality applicants that will contribute to the company growth."
 msgstr "L’équipe de Recrutement joue un rôle exigeant dans la Compagnie en sourçant et sélectionnant des candidats de qualité qui contribueront à la croissance de la Compagnie."
@@ -9767,7 +9770,7 @@ msgid "The Republic of Malta is an island country in Southern Europe — located
 msgstr "La République de Malte est un pays insulaire d’Europe du Sud, situé à environ 80km au sud de l’Italie. Son histoire riche et colorée remonte à des milliers d’années jusqu'à la période néolithique."
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
-msgstr ""
+msgstr "Le compte Standard convient à un large éventail de traders, à la fois débutants et expérimentés. Il vous offre un effet de levier maximum et des spreads variables qui vous donnent beaucoup de flexibilité pour toute position que vous souhaitez prendre sur le marché."
 
 msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
 msgstr "Le compte Standard convient à un large éventail de professionnels, débutants ou expérimentés. Il est disponible en EUR et GBP et offre des spreads serrés et variable sans commissions et un dépôt minimum."
@@ -9785,7 +9788,7 @@ msgid "The ability to absorb and understand varied compliance matters in a numbe
 msgstr "Capacité à acquérir et comprendre les différentes questions de conformité au sein de multiples juridictions internationales"
 
 msgid "The ability to draft and review legal documents, and prepare licence applications"
-msgstr "La capacité à rédiger et réviser des documents juridiques et préparer les demandes de licence"
+msgstr "La capacité à rédiger et à réviser des documents juridiques et à préparer les demandes de licence"
 
 msgid "The ability to make rational decisions even based on limited information"
 msgstr "La capacité de prendre des décisions rationnelles même basées sur des données limitées"
@@ -9908,7 +9911,7 @@ msgid "The entry spot price is the starting price of the trade purchased by a tr
 msgstr "Le spot d'entrée est le prix initial de l'option achetée par le trader."
 
 msgid "The execution venues are assessed, on a regular basis, as to whether they provide for the best possible result for the clients."
-msgstr "Les lieux d'exécution sont évaluées, de façon régulière, afin de savoir s'ils fournissent le meilleur résultat pour nos clients."
+msgstr "Les lieux d'exécution sont évalués, de façon régulière, afin de savoir s'ils fournissent le meilleur résultat pour nos clients."
 
 msgid "The execution, delivery, and performance of this Agreement and each Transaction will not violate any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident."
 msgstr "L'exécution, la livraison, et les performance du Contrat et chaque Transaction ne violeront aucune lois, ordonnances, chartes,  de par la loi ou les règles applicables à vous, ou de la juridiction dans laquelle vous êtes résidente."
@@ -9917,7 +9920,7 @@ msgid "The expiry price is the price of the underlying when the contract expires
 msgstr "Le prix d'expiration est le prix du sous-jacent lorsque le contrat expire."
 
 msgid "The factors listed above are not listed in order of priority. Ordinarily, price will merit a high relative importance in obtaining the best possible result for the client. However, the relative importance of the listed factors above may change in accordance with:"
-msgstr "Les facteurs listés ci-dessous ne sont pas listés par ordre de priorité. Ordinairement, le prix mérite une plus grande importance en obtenant le meilleur résultat possible pour le client. Cependant, l'importance relative des facteurs listés ci-dessous peuvent changer en accords avec :"
+msgstr "Les facteurs listés ci-dessous ne sont pas listés par ordre de priorité. Ordinairement, le prix mérite une plus grande importance en obtenant le meilleur résultat possible pour le client. Cependant, l'importance relative des facteurs listés ci-dessous peuvent changer en accord avec :"
 
 msgid "The filtering algorithm may for example be similar to the \"Bollinger Bands\" volatility system - i.e., short-term volatility bands are determined around the present market value, and ticks that are manifestly outside of such bands are removed."
 msgstr "L'algorithme de filtrage peut notamment être apparenté au système de volatilité basé sur les « bandes de Bollinger » : des bandes de volatilité à court terme sont définies autour du prix de marché actuel, et les ticks qui se trouvent manifestement en dehors de ces bandes sont supprimés."
@@ -10118,7 +10121,7 @@ msgid "The trading services described in this Agreement are OTC. This means that
 msgstr "Les services d'échange décrits dans ce Contrat sont hors cote. Cela veut dire qu'un ou plusieurs d'instruments que vous traitez avec nous, bien que cotés sur un échange, ne sont pas échangés sur un échange lorsque traités à travers la Plateforme d'Echange Electronique comme décrite dans ce Contrat."
 
 msgid "The transactions performed on this site and the relationship between Clients and the Company are to be governed by and construed in accordance with the laws of the country of incorporation of the Company (the \"Jurisdiction\"). You agree that the Jurisdiction's courts will have sole jurisdiction to settle any disputes that may arise in relation thereto. For such purposes, you irrevocably submit to the jurisdiction of the courts of the Jurisdiction in relation to any such dispute and you agree that any claim you might have against the Company shall only be brought before the courts of the Jurisdiction. For further information on complaints and disputes, kindly refer to the Company's %1Complaints and Disputes%2 section."
-msgstr "Les transactions effectuées sur ce site et les liens entre les Clients et la Société sont régis et interprétés conformément aux lois du pays dans lequel la Société est enregistrée (la « Juridiction »). Vous reconnaissez que les tribunaux de la Juridiction sont les seuls habilités à régler tout litige éventuel concernant cet Accord. À cet égard, vous vous soumettez irrévocablement à la compétence des tribunaux de la Juridiction concernée dans l'éventualité de tout litige et vous reconnaissez que toute réclamation que vous pourriez déposer à l'encontre de la Société doit uniquement être portée devant les tribunaux de la juridiction. Pour obtenir des informations supplémentaires sur les réclamations et litiges, veuillez vous référer à la section %1Réclamations et litiges%2 de la Société."
+msgstr "Les transactions effectuées sur ce site et les liens entre les Clients et la Compagnie sont régis et interprétés conformément aux lois du pays dans lequel la Compagnie est enregistrée (la « Juridiction »). Vous reconnaissez que les tribunaux de la Juridiction sont les seuls habilités à régler tout litige éventuel concernant cet Accord. À cet égard, vous vous soumettez irrévocablement à la compétence des tribunaux de la Juridiction concernée dans l'éventualité de tout litige et vous reconnaissez que toute réclamation que vous pourriez déposer à l'encontre de la Compagnie doit uniquement être portée devant les tribunaux de la juridiction. Pour obtenir des informations supplémentaires sur les réclamations et litiges, veuillez vous référer à la section %1Réclamations et litiges%2 de la Compagnie."
 
 msgid "The two passwords that you entered do not match."
 msgstr "Les deux mots de passe que vous avez entrés ne correspondent pas."
@@ -10235,7 +10238,7 @@ msgid "These materials may not be copied or redistributed for commercial purpose
 msgstr "Ces matériaux ne peuvent être copiés ou redistribués à des fins commerciales ou pour toute compensation d’aucune sorte, sans une autorisation écrite préalable d’une société du Binary Group."
 
 msgid "They also generate monthly management accounts, annual audited accounts, and reconcile all transactions. As our Accounts &amp; Payments Executive, you will be able to contribute to all these key areas and increase the efficiency of our financial operations."
-msgstr "Ils génère également des comptes mensuels de gestion, les comptes annuels audités et la réconciliation de toutes les transactions. Comme Chargé des Comptes et Paiements &amp; vous serez en mesure de contribuer à tous ces domaines clés et d'augmenter l’efficacité de nos opérations financières."
+msgstr "Ils génèrent également des comptes mensuels de gestion, les comptes annuels audités et la réconciliation de toutes les transactions. Comme Chargé des Comptes et Paiements &amp; vous serez en mesure de contribuer à tous ces domaines clé et d'augmenter l’efficacité de nos opérations financières."
 
 msgid "They also manage our suppliers and contractors, as well as general administrative duties and procedures. As our Human Resource Operations Executive, you will be counted on to lead, execute, and support a wide range of HR-related and administrative tasks to ensure the smooth operations of our offices worldwide."
 msgstr "Ils gèrent également nos fournisseurs et nos prestataires, ainsi que les tâches administratives générales et les procédures. Comme notre Chargé des Opérations Ressources Humaines, nous compterons sur vous pour diriger, exécuter et soutenir une large gamme de tâches RH et administratives pour assurer le bon fonctionnement de nos bureaux dans le monde entier."
@@ -10483,8 +10486,8 @@ msgstr "Pour postuler, envoyez votre CV et votre lettre de motivation à %1"
 msgid "To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:"
 msgstr "Pour être en mesure de trader des instruments OTC disponibles sur la plateforme de Trading MT5, vous devez d’abord :"
 
-msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
-msgstr "Pour modifier vos nom, date de naissance, pays de résidence ou adresse e-mail, veuillez contacter le <a href=\"%1\">Service Clientèle</a>."
+msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
+msgstr ""
 
 msgid "To create a MAM real account, please:"
 msgstr "Pour créer un compte réel MAM, veuillez s’il vous plaît :"
@@ -11114,7 +11117,7 @@ msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) 
 msgstr "Utiliser une variété de méthodes d'allocation (p. ex. capital, solde, équilibre, et plus) pour trader des volumes, débutant à 0.01 lots"
 
 msgid "Use advanced data analytics skills to study trends/pattern in financial markets"
-msgstr "Utiliser les compétences analyse avancée de données pour étudier les tendances/modèle sur les marchés financiers"
+msgstr "Utiliser les compétences d'analyse avancée de données pour étudier les tendances/modèle sur les marchés financiers"
 
 msgid "Use appropriate terminology, taking into account the style and nuance of the original text"
 msgstr "Utilisation d'une terminologie appropriée, conforme au style et aux nuances du texte source"
@@ -11252,7 +11255,7 @@ msgid "View the operating hours of the markets you can trade."
 msgstr "Consultez les heures d'ouverture des marchés sur lesquels tu peux effectuer des trades."
 
 msgid "View updated portfolio"
-msgstr "Vue du portefeuille actualisé"
+msgstr "Voir le portefeuille actualisé"
 
 msgid "View your account's authentication status."
 msgstr "Afficher l’état d’authentification de votre compte."
@@ -12002,7 +12005,7 @@ msgid "Work closely with other departments to create marketing communication mat
 msgstr "Travailler en étroite collaboration avec d’autres départements pour créer des documents de communication marketing tels que les publicités, annonces de produits, guides, descriptions de poste, etc"
 
 msgid "Work closely with other teams to come up with effective architecture to support the deployment of new products and features"
-msgstr "Travailler en étroite collaboration avec les autres équipes pour arriver à des architectures effectives pour soutenir le déploiement des nouveaux produits et functionalités"
+msgstr "Travailler en étroite collaboration avec les autres équipes pour arriver à des architectures effectives pour soutenir le déploiement des nouveaux produits et fonctionnalités"
 
 msgid "Work closely with the Head of Payments to proactively suggest improvements to cashier setup, including customer activity from an AML and anti-fraud perspective and overall fraud and payment performances (card success rates, chargebacks, etc.)"
 msgstr "Travailler en étroite collaboration avec le Responsable des Paiements pour suggérer de manière proactive des améliorations concernant l’installation de la caisse, notamment l’activité des clients au niveau d'AML, de la lutte contre la fraude et des performances de paiement (taux de succès des cartes, retrofacturation, etc.)"
@@ -12020,7 +12023,7 @@ msgid "Work with the Head of Compliance to ensure group of companies comply with
 msgstr "Travailler avec le Responsable de la Conformité afin de s'assurer que le groupe de Compagnies se conforme aux lois et règlements AML, KYC et Protection des Données"
 
 msgid "Write robust, high-quality, and production-ready code for our websites and applications"
-msgstr "Écrire du code robuste, de haute qualité et prêts pour la production pour nos sites Web et applications"
+msgstr "Écrire du code robuste, de haute qualité et prêt pour la production pour nos sites Web et applications"
 
 msgid "Written limits and self-exclusion"
 msgstr "Limites écrites et auto-exclusion"
@@ -12491,7 +12494,7 @@ msgid "You should not trade or invest in Binary Options unless you know and unde
 msgstr "Vous ne devriez pas trader ou investir dans des Options Binaires sauf si vous connaissez et comprenez les risques liés et que vous pourriez perdre tout l'argent investi."
 
 msgid "You should read these ST&Cs carefully as well as the Summary of the Order Execution Policy and Summary of the Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you."
-msgstr "Vous êtes tenu de lire attentivement ces Conditions Générales, ainsi que le Résumé de la Politique d'Exécution des Ordres, le Résumé de la Politique des Conflits d'intérêts, les Détails du Contrat applicables avec la Déclaration de Divulgation des Risques et tout autres documents que nous vous avons fournis ou que nous sommes susceptibles de vous fournir ultérieurement."
+msgstr "Vous êtes tenu de lire attentivement ces Conditions Générales, ainsi que le Résumé de la Politique d'Exécution des Ordres, le Résumé de la Politique des Conflits d'intérêts, les Détails du Contrat applicables avec la Déclaration de Divulgation des Risques et tout autres documents que nous vous avons fourni ou que nous sommes susceptibles de vous fournir ultérieurement."
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gaming products whereas products based on financial market indices (forex, indices, commodities) are financial instruments."
 msgstr "Vous comprenez que des produits basés sur un nombre généré aléatoirement (les \"Indices de Volatilité\") sont des produits de jeu alors que des produits basés sur des indices de marché financier (forex, indices, matières premières) sont des instruments financiers."
@@ -12506,7 +12509,7 @@ msgid "You will also encourage security awareness throughout the organisation vi
 msgstr "Vous encouragerez aussi la sensibilisation à la sécurité dans l'ensemble de l’organisation via une communication régulière sur les meilleures pratiques de sécurité et les dernières menaces en ligne."
 
 msgid "You will also test and debug complex technical and UI issues related to our trading platform (that processes over one million transactions per day), based on feedback from our clients and customer service team."
-msgstr "Vous testerez également et déboguerez les problèmes techniques complexes et liés à l'UI associées à notre plateforme de trading (qui traite plus d'1 million de transactions par jour), basé sur les commentaires de nos clients et l’équipe du service clientèle."
+msgstr "Vous testerez également et déboguerez les problèmes techniques complexes et liés à l'UI associés à notre plateforme de trading (qui traite plus d'1 million de transactions par jour), basés sur les commentaires de nos clients et l’équipe du service clientèle."
 
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr "On vous demandera de prouver que vous êtes le propriétaire du compte qui est en train d'être authentifié."
@@ -12539,7 +12542,7 @@ msgid "You will provide us with any information that we may reasonably require t
 msgstr "Vous nous fournirez toute information que nous pouvons raisonnablement demander pour satisfaire complètement la demande ou les exigences de l'autorité gouvernementale applicable, sur notre demande."
 
 msgid "You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue."
-msgstr "Vous résoudrez les problèmes d’expérience utilisateur complexes et communiquerez en toute transparence les caractéristiques et fonctions produit à nos utilisateurs grâce à un design significatif. Vous jouerez un rôle clé dans la création de produits intuitifs et fonctionnels qui donnent à nos utilisateurs la meilleure expérience possible afin que nous puissions continuer à grossir notre base d’utilisateurs et les revenus."
+msgstr "Vous résoudrez les problèmes d’expérience utilisateur complexes et communiquerez en toute transparence les caractéristiques et fonctions produit à nos utilisateurs grâce à un design significatif. Vous jouerez un rôle clé dans la création de produits intuitifs et fonctionnels qui donnent à nos utilisateurs la meilleure expérience possible afin que nous puissions continuer à grossir notre base d’utilisateurs et nos revenus."
 
 msgid "You will take all reasonable steps to comply with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident;"
 msgstr "Vous prendrez toute mesures raisonnables pour satisfaire toute loi, ordonnance, charte, ou règle applicable à vous ou de la juridiction dans laquelle vous êtes résident;"
@@ -12660,6 +12663,9 @@ msgstr "Votre caisse est verrouillée conformément à votre demande - si vous s
 
 msgid "Your cashier is locked."
 msgstr "Votre caisse est verrouillée."
+
+msgid "Your cashier session has expired. Please try again."
+msgstr "Expiration de votre session de caisse. Veuillez essayer à nouveau."
 
 msgid "Your changes have been updated successfully."
 msgstr "Vos modifications ont bien été prises en compte."
@@ -12860,7 +12866,7 @@ msgid "consolidating liquidity from several providers into a single stream of bl
 msgstr "la liquidité consolidée de plusieurs fournisseurs dans un seul courant d'alimentation mixte; et"
 
 msgid "costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company's bid and the Company's offer price"
-msgstr "coûts - les coûts des ordres d’exécution client, principalement composée du spread, c'est-à-dire la différence entre les prix d'offre et de demande de la Compagnie"
+msgstr "coûts - les coûts des ordres d’exécution client, principalement composés du spread, c'est-à-dire la différence entre les prix d'offre et de demande de la Compagnie"
 
 msgid "currency in which your MT5 Real Account will be operated."
 msgstr "devise dans laquelle votre Compte Réel MT5 sera exploité."
