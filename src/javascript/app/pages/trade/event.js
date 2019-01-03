@@ -316,7 +316,7 @@ const TradingEvents = (() => {
             const ask_price = this.getAttribute('data-ask-price');
 
             const params = { buy: id, price: ask_price, passthrough: {} };
-            Object.keys(this.attributes).forEach(function(attr) {                
+            Object.keys(this.attributes).forEach(function(attr) {
                 if (attr && this.attributes[attr] && this.attributes[attr].name) {
                     if (/^data-balloon/.test(this.attributes[attr].name)) {
                         this.removeAttribute(this.attributes[attr].name);
