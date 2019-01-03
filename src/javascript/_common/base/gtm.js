@@ -184,10 +184,10 @@ const GTM = (() => {
         const transactions_arr = gtm_transactions.transactions || [];
         if (!transactions_arr.includes(response.transaction.transaction_id)) {
             const data = {
-                event            : 'transaction',
-                bom_account_type : ClientBase.getAccountType(),
-                bom_today        : moment_now.unix(),
-                transaction      : {
+                event           : 'transaction',
+                bom_account_type: ClientBase.getAccountType(),
+                bom_today       : moment_now.unix(),
+                transaction     : {
                     id      : response.transaction.transaction_id,
                     type    : response.transaction.action,
                     time    : response.transaction.transaction_time,
