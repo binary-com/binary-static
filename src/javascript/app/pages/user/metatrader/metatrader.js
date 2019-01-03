@@ -39,7 +39,20 @@ const MetaTrader = (() => {
     const getExchangeRates = () => BinarySocket.send({ exchange_rates: 1, base_currency: 'USD' });
 
     const setMTCompanies = () => {
-        const is_financial = State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest';
+        let mt_company_type = 'financial';
+        const landing_company_id = State.getResponse('landing_company.id');
+
+        // check if landing_company id is be or no, since belgium and norway are the only countries that have malta landing company shortcode but no mt_financial_company offered
+        if (/^(be|no)$/.test(landing_company_id)) {
+            mt_company_type = 'gaming';
+        }
+
+        const mt_landing_company = State.getResponse(`landing_company.mt_${mt_company_type}_company`);
+
+        // Check if any of the account type shortcodes from mt_landing_company account is maltainvest
+        const is_financial = mt_landing_company ? Object.keys(mt_landing_company)
+            .some((key) => mt_landing_company[key].shortcode === 'maltainvest') : undefined;
+
         mt_companies = mt_companies || MetaTraderConfig[is_financial ? 'configMtFinCompanies' : 'configMtCompanies']();
     };
 
@@ -47,11 +60,13 @@ const MetaTrader = (() => {
         setMTCompanies();
         let has_mt_company = false;
         Object.keys(mt_companies).forEach((company) => {
-            mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.shortcode`);
-            if (mt_company[company]) {
-                has_mt_company = true;
-                addAccount(company);
-            }
+            Object.keys(mt_companies[company]).forEach((acc_type) => {
+                mt_company[company] = State.getResponse(`landing_company.mt_${company}_company.${MetaTraderConfig.getMTFinancialAccountType(acc_type)}.shortcode`);
+                if (mt_company[company]) {
+                    has_mt_company = true;
+                    addAccount(company);
+                }
+            });
         });
         return has_mt_company;
     };
