@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-31 02:38\n"
+"PO-Revision-Date: 2019-01-03 05:50\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -232,8 +232,8 @@ msgstr ""
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1은 코스타리카에서 이용하실 수 없으며 코스타리카의 금융 시스템의 어떤 규제기관으로부터도 규제 및 감독받지 않습니다."
 
-msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1은 Binary 그룹 주식회사의 소유로 경영되고 있습니다. 더 자세한 정보를 원하시면 <a href='%2'>우리의 역사</a>를 방문하세요."
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
+msgstr ""
 
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface."
 msgstr ""
@@ -403,6 +403,9 @@ msgstr ""
 msgid "%1Download MAM for Windows%2 after you’ve set up your master account. Your login credentials will be provided"
 msgstr ""
 
+msgid "%1Founded%2 October 1999"
+msgstr ""
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr ""
 
@@ -513,9 +516,6 @@ msgstr ""
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr ""
-
-msgid "<a href='%1'>Founded</a> October 1999"
-msgstr "1999년 10월 <a href='%1'>설립</a>"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr ""
@@ -1226,7 +1226,7 @@ msgid "Answer to secret question"
 msgstr ""
 
 msgid "Anti-Corruption"
-msgstr ""
+msgstr "부패방지"
 
 msgid "Anti-Money Laundering Policy"
 msgstr "자금세탁방지 정책"
@@ -2214,6 +2214,9 @@ msgstr "캐쉬어 비밀번호"
 
 msgid "Cashier password"
 msgstr "캐쉬어 비밀번호"
+
+msgid "Cashier session expired"
+msgstr ""
 
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "계약의 장벽/권리행사가격에 관해 수용 가능 수준으로 특정 제한이 적용될 수 있습니다. 일반적으로, 장벽/권리행사가격은 현재 기본 시장가 수준에서 크게 벗어나지도, 너무 근접하지도 않습니다."
@@ -3491,7 +3494,7 @@ msgid "Each index corresponds to simulated markets with constant volatilities of
 msgstr ""
 
 msgid "Each of the following event constitutes an “Event of Default”:"
-msgstr ""
+msgstr "다음의 각 사항들이 \"채무불이행\" 사유에 해당합니다:"
 
 msgid "Each of the following events constitute an \"Event of Default\":"
 msgstr "다음의 각 사항이 \"채무불이행 사유\"에 해당됩니다:"
@@ -3773,7 +3776,7 @@ msgid "Event-driven programming in Perl"
 msgstr ""
 
 msgid "Events of Default"
-msgstr ""
+msgstr "채무불이행"
 
 msgid "Everyone else can use the FIX API to connect to our One Zero bridge – subject to a conformance test."
 msgstr ""
@@ -4316,7 +4319,7 @@ msgid "For the third straight year, BetOnMarkets.com is voted 'Best Fixed-Odds F
 msgstr "연속 3년째, BetOnMarkets.com이 영국 Shares Magazine으로부터 '최고의 고정 승률 금융 거래 공급자' 선정되었습니다. Shares Magazine이 해당 부문에서의 상 수여를 중단했기 때문에 저희가 이 상의 마지막 수여자였습니다."
 
 msgid "Force Majeure Event"
-msgstr ""
+msgstr "불가항력"
 
 msgid "Force majeure events must be confirmed by an authority and/or government authority of the Party’s residence."
 msgstr ""
@@ -5264,7 +5267,7 @@ msgid "In business since 2000, %1 is the world’s leading binary options compan
 msgstr "2000년도 사업 이래로, %1는 세계적으로 리드하는 바이너리 옵션회사입니다."
 
 msgid "In case of Agent’s death, incapacity or where the Agent becomes of unsound mind;"
-msgstr ""
+msgstr "에이전트의 사망, 불능 또는 에이전트의 정신 이상이 생긴 경우;"
 
 msgid "In classic Silicon Valley style, Hong Kong based hedge fund manager and entrepreneur, Jean-Yves Sireau, starts Regent Markets in his Hong Kong bedroom. He develops the systems, methods and algorithms for implementing a fixed-odds financial betting system. Jean-Yves's vision is to create a market in the simplest of all derivatives contracts - the fixed-odds bet - and to offer ordinary investors the chance to make small bets. Until his innovation, binary options are normally only traded in large quantities."
 msgstr "고전적인 실리콘밸리 스타일처럼, 홍콩을 기반으로 하는 헤지펀드 매니저이자 기업가인 Jean-Yves Sireau는 홍콩의 그의 침실에서 Regent Markets를 시작하였습니다. 그는 고정 승률 베팅 시스템을 구현하기 위해 시스템, 체계성, 알고리즘을 개발합니다. Jean-Yves의 목표는 파생되는 계약 - 고정 승률 베팅들에 관해 가장 단순하도록 시장을 만드는 것이며 일반적인 투자자들로 하여금 소규모의 베팅을 제공하기 위해서입니다. 이러한 그의 혁신이 있기 전에는 일반적으로 바이너리 옵션이 대량적으로만 거래됩니다."
@@ -5294,7 +5297,7 @@ msgid "In order to access the cashier, we kindly request that you set a 30-day t
 msgstr ""
 
 msgid "In providing its services, the Agent shall:"
-msgstr ""
+msgstr "서비스의 제공에 있어, 에이전트는:"
 
 msgid "In providing these services, we are bound by the Act, any applicable regulations, by-laws, licence conditions, guidelines, exchange requirements and other provisions or market practices (the \"Rules\"). In the event of conflict between these ST&Cs and the Rules, the latter should prevail."
 msgstr ""
@@ -5441,7 +5444,7 @@ msgid "Integrity"
 msgstr "진실성"
 
 msgid "Intellectual Property Rights"
-msgstr ""
+msgstr "지적재산권"
 
 msgid "Interactive charting tool"
 msgstr "상호적인 차팅 도구"
@@ -5914,8 +5917,8 @@ msgstr ""
 msgid "Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees"
 msgstr ""
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
-msgstr "몰타, 영국, 맨섬 및 아일랜드에서 인가되었고 규제됩니다"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. %1Learn more%2"
+msgstr ""
 
 msgid "Licensed, trusted, and secure"
 msgstr "인증, 신뢰 그리고 안전"
@@ -6542,7 +6545,7 @@ msgid "Mo"
 msgstr "월"
 
 msgid "Modification/Amendment"
-msgstr ""
+msgstr "변경/수정"
 
 msgid "Monday"
 msgstr ""
@@ -7243,8 +7246,8 @@ msgstr ""
 msgid "Over $500,000"
 msgstr ""
 
-msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
-msgstr "전세계적으로 있는 %1<a href='%2'><a href='%2'>명 이상의 직원</a>과 컨트랙터"
+msgid "Over %1 %2staff%3 and contractors worldwide"
+msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "전세계적으로 등록되어 있는 백만개 이상의 계좌들"
@@ -8255,7 +8258,7 @@ msgid "Representation or Warranty"
 msgstr ""
 
 msgid "Representations and Warranties"
-msgstr ""
+msgstr "진술 및 보증"
 
 msgid "Represents the amount in base currency per round trade. Example: A round trade of 1 lot of EUR/USD would pay EUR 10 on standard accounts. A round trade of 1 lot of USD/CAD would pay USD 5 on advanced account."
 msgstr ""
@@ -9389,10 +9392,10 @@ msgid "The Agent represents and warrants that it is currently and it will be in 
 msgstr ""
 
 msgid "The Agent shall further undertake to perform all necessary due diligence measures on its clients and the Company shall be entitiled, at any time, to request from the Agent to provide all information and documentation relating to its clients for the purposes of the Company's AML compliance."
-msgstr ""
+msgstr "본 에이전트는 고객에 대하여 필요한 모든 주의 판단을 수행할 것이며 본 회사는 언제든지 에이전트로 하여금 본 회사의 AML 준수의 목적으로 고객과 관련한 모든 정보 및 서류 제공을 요청할 것입니다."
 
 msgid "The Agent shall not be authorized to offer its services, under this Agreement, to clients who reside in restricted countries outlined in our terms and conditions (as amended from time to time), which are published on our website, <a href=\"%1\">www.binary.com.</a>"
-msgstr ""
+msgstr "에이전트는 본 계약 아래 우리의 웹사이트, <a href=\"%1\">www.binary.com</a>에 게시되어 있는 약관(때때로 수정됨) 에 명시된 제한되어 있는 국가에 거주하는 고객에게는 서비스를 제공할 권한이 없습니다."
 
 msgid "The Agent shall not produce any copies of any Confidential Information or any content based on the concepts contained within the Confidential Information for personal use or for distribution, without the Company’s request."
 msgstr ""
@@ -9410,10 +9413,10 @@ msgid "The Agent shall treat all information related to the Company and the clie
 msgstr ""
 
 msgid "The Agent shall upon demand provide the Company with all requested information and documentation in regards with its operations and competence including but not limited to its registration, incorporation, memberships, authorisations, knowledge, expertise and experience."
-msgstr ""
+msgstr "에이전트는 필요시 등록, 법인, 멤버쉽, 권한, 지식, 전문지식 및 경험에만 국한되지 않는 운영 및 기능과 관련된 요구되어지는 모든 정보와 서류를 본 회사에 제공할 것입니다."
 
 msgid "The Agent thereinafter, shall transfer the requested sum to the client. It is noted that these transactions fall out of the scope of this Agreement and as result the Company shall not be liable against the Agent and the client or any other person, under contract or tort law or any other applicable law, for any dispute or potential dispute arising out of or in connection with such transactions."
-msgstr ""
+msgstr "본 에이전트는 이후, 해당 고객에게 요청되어진 액수를 송금할 것입니다. 이러한 송금들의 경우 본 계약의 범위에서 벗어난 것임이 기록되어 있으며 결과적으로 본 회사는 이러한 송금과 연관되어 있는 또는 잠재적으로 나올수 있는 논쟁 또는 다른 그 어떠한 논쟁, 계약 또는 불법행위법 또는 다른 그 어떤 적용가능한 법률 아래 해당 에이전트 및 고객 또는 다른 사람에게 법적인 책임이 없습니다."
 
 msgid "The Agent undertakes to the Company that it shall comply with, and the service will be performed in accordance with any applicable anti-corruption laws."
 msgstr ""
@@ -9848,7 +9851,7 @@ msgid "The client should note that the Company's duty to provide the client with
 msgstr "고객께서는 고객이 본 회사를 통해 주문하는 도박 상품들에게는 기초하는 금융시장이 존재하지 않는 경우, 고객에게 제공되는 본 회사의 최선집행의무가 적용되지 않은 점을 아셔야 합니다."
 
 msgid "The client using e-payments and bank wire transfers may make a deposit to the Agent. The Agent, receiving the deposit, shall thereinafter make a deposit to his %1 Account (hereinafter referred to as the “%1 Agent Account”)."
-msgstr ""
+msgstr "전자지불 및 은행 전신송금 방식을 이용하는 고객은 본 에이전트로 예금할 수 있습니다. 예금을 받는 해당 에이전트는 그로써 그의 %1 계좌에 예금할 것입니다 (이하 \"%1 에이전트 계좌\"를 의미합니다)."
 
 msgid "The commission you will charge Clients on deposits and withdrawals"
 msgstr ""
@@ -10106,7 +10109,7 @@ msgid "The stake is the amount that a trader must pay to enter into a trade."
 msgstr ""
 
 msgid "The sum received in the %1 Agent Account shall be subsequently transferred by the Agent to the respective %1 Client's Account."
-msgstr ""
+msgstr "%1 에이전트 계좌로 받아진 합계는 이후에 본 에이전트를 통해 각각의 %1 고객 계좌로 송금됩니다."
 
 msgid "The system fills orders on a first-in-first out basis, i.e. based on the sequence of the order received, and this is beyond our control. As a result, you may find it difficult or impossible to close a position at the intended price stipulated in your Stop Order during certain market conditions. The placement of Stop Order by you, though useful as a risk management tool, will not necessarily limit your losses to your intended amounts, in the event of highly volatile trading conditions, since market conditions may make it impossible to execute such orders and there is uncertainty about your possible exit price. In short, a Stop Order is not guaranteed because it cannot operate whatever the market circumstances are."
 msgstr "본 시스템은 선입 선출 방식에 기초하여 주문을 이행합니다. 예를 들어 주문이 받아지는 순서에 기초합니다. 그리고 이것은 우리가 통제할 수 있는 부분이 아닙니다. 결과적으로, 특정한 시장 상황에서 귀하가 손실제한 주문에 설정해 놓은 의도한 가격에 대한 포지션을 닫기가 어렵거나 또는 불가능할 수도 있습니다. 귀하에 의한 손실제한 주문은 위험관리 수단으로써 유용하지만, 시장 상황으로 인해 이러한 주문이 실행 불가능해 질 수도 있으며, 유효할 수 있는 거래가격에 대한 불확실성이 있기 때문에 아주 유동적인 거래 상황에서 귀하가 잃는 손실 금액에 대해 한정을 두지는 않을 것입니다. 요약하면, 이 거래는 어떠한 시장 상황에서도 진행될 수 없기에 손실제한 거래는 보장되지 않습니다."
@@ -10483,7 +10486,7 @@ msgstr "지원을 희망하시면 이력서와 커버레터를 %1로 제출해 �
 msgid "To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:"
 msgstr ""
 
-msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
+msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
 msgstr ""
 
 msgid "To create a MAM real account, please:"
@@ -11696,7 +11699,7 @@ msgid "When the client gives the Company specific instructions, including (a) sp
 msgstr "고객이 본 회사에 (a)본 회사와의 계약에 있어 구체적인 가격 또는 (b)계약이 종결될 때의 구체적인 가격을 명시하는 경우에는, 본 회사의 정책적인 면보다 해당되는 지시사항이 우선시 될 것입니다."
 
 msgid "When the client requests a withdrawal from his %1 Account, such request shall be automatically proceeded and as a result the requested sum shall be transferred from his %1 Account to the %1 Agent Account. However, it is noted that where the client reaches its withdrawal limits, a withdrawal request shall not be automatically proceeded before the required authentication process is conducted."
-msgstr ""
+msgstr "고객이 고객의 %1 계좌로부터 인출을 요청하는 경우, 이러한 요청은 자동으로 처리되며 결과적으로 요구되어지는 액수는 고객의 %1 계좌에서 %1 에이전트 계좌로 송금됩니다. 그렇지만, 인출 액수의 제한에 도달한 고객의 경우, 인출 요청은 필요한 승인 절차가 수행되기 전에는 자동적으로 처리되지 않을 것임이 기록되어 있습니다."
 
 msgid "When the order hits the liquidity provider’s server, or our server in case the order is taken on our own books, it is fulfilled."
 msgstr ""
@@ -11795,7 +11798,7 @@ msgid "Where the Agent becomes incapable to pay his debts as they fall due, or i
 msgstr ""
 
 msgid "Where the Agent ceases to be competent, capable, adequate or qualified to effectively perform all its duties and obligations undertaken and agreed, under this Agreement, for any reason including but not limited to lack of knowledge, expertise, experience, skills and time, the Agent shall notify the Company immediately and without any delay notify the Company."
-msgstr ""
+msgstr "에이전트가 실력, 능력, 적절성 또는 주어진 동의된 모든 임무 및 의무를 효율적으로 실행 불능상태가 되면, 본 계약 아래, 지식, 전문적 식견, 기술 및 시간에만 국한되지 않는 이유가 있을 시, 해당 에이전트는 지연없이 즉각 본 회사에 공지합니다."
 
 msgid "Where the Agent fails to comply with its obligations or fails to perform any of its duties or other provisions under this Agreement and such failure continues for at least one business day after the receipt of the non-performance notice given by the Company."
 msgstr ""
@@ -11807,7 +11810,7 @@ msgid "Where the Agent omits or fails or refuse whatsoever to provide the Compan
 msgstr ""
 
 msgid "Where the Agent owns, or operates website/s, the Agent shall:"
-msgstr ""
+msgstr "에이전트가 소유하거나 웹사이트를 운영하는 부분에서, 본 에이전트는:"
 
 msgid "Where the Client’s obligations to the Company are due and payable, the Company shall cease to treat as Client Money the amount equal to the amount of such obligations;"
 msgstr ""
@@ -12661,6 +12664,9 @@ msgstr "귀하의 캐쉬어는 귀하의 요청에 의해 잠겨져 있습니다
 msgid "Your cashier is locked."
 msgstr ""
 
+msgid "Your cashier session has expired. Please try again."
+msgstr ""
+
 msgid "Your changes have been updated successfully."
 msgstr ""
 
@@ -12896,10 +12902,10 @@ msgid "execution of trades automatically on their behalf;"
 msgstr ""
 
 msgid "fairly and accurately describe its services to the clients;"
-msgstr ""
+msgstr "고객을 위해 서비스를 공정하고 정확히 명시합니다;"
 
 msgid "follow, comply and implement with all business-related directions, policies and procedures of the Company as amended or re-enacted or replaced from time to time;"
-msgstr ""
+msgstr "때때로 수정된 또는 재현된 또는 대체된 본 회사와 비즈니스적으로 관계있는 모든 지침, 정책 및 절차를 따르고 수행합니다;"
 
 msgid "for account %1"
 msgstr ""
@@ -13016,7 +13022,7 @@ msgid "paysafecard offers a voucher-based online payment method that does not re
 msgstr ""
 
 msgid "perform its services and other obligations hereunder at its own cost and risk."
-msgstr ""
+msgstr "자신의 비용과 위험을 감수하며 서비스 및 다른 의무사항들을 수행합니다."
 
 msgid "prepare and publish any material or place any advertisements which refer to the Company and its relationship with the Company without an authorisation to be given by the Company; "
 msgstr ""
@@ -13025,7 +13031,7 @@ msgid "price - the price at which the transaction in relation to the client's or
 msgstr "가격 - 고객 주문의 실행과 관련한 거래시의 가격"
 
 msgid "provide the Company with all and any information whatsoever that it may become aware of that may be harmful, adverse or detrimental to the Company and its reputation;"
-msgstr ""
+msgstr "해롭고 불리할 수 있는 또는 본 회사 및 본 회사의 명성에 안좋은 영향이 있을 수 있는 그 어떠한 모든 정보를 본 회사에 제공합니다;"
 
 msgid "receive the approval of the Company to include any information in relation to the Company; and"
 msgstr ""
@@ -13166,7 +13172,7 @@ msgid "upon our request, the Agent provides the Company with any and all informa
 msgstr ""
 
 msgid "use its best endeavors and diligence to transfer funds deposited to %1 Agent Account to its respective %1 client account;"
-msgstr ""
+msgstr "%1 에이전트 계좌에 예금된 자금을 각 %1 고객 계좌에 송금하기 위해 최선의 노력과 근면성실을 다 합니다;"
 
 msgid "use or reproduce the %1 API other than as permitted by these Terms; or"
 msgstr "이 약관으로부터 혀용된 사항 외의 %1 API 복제 또는 사용; 또는"
