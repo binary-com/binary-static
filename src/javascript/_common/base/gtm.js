@@ -186,7 +186,6 @@ const GTM = (() => {
             const data = {
                 event            : 'transaction',
                 bom_account_type : ClientBase.getAccountType(),
-                bom_email_consent: State.getResponse('get_settings.email_consent'),
                 bom_today        : moment_now.unix(),
                 transaction      : {
                     id      : response.transaction.transaction_id,
