@@ -198,7 +198,8 @@ const ClientBase = (() => {
         return landing_company_response[landing_company_prop] || {};
     };
 
-    const shouldCompleteTax = () => isAccountOfType('financial') && !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
+    const shouldCompleteTax = () => isAccountOfType('financial') &&
+        !/crs_tin_information/.test((State.getResponse('get_account_status') || {}).status);
 
     // remove manager id or master distinction from group
     // remove EUR or GBP distinction from group
@@ -210,7 +211,6 @@ const ClientBase = (() => {
         let can_open_multi = false;
         let type,
             can_upgrade_to;
-
         if ((upgradeable_landing_companies || []).length) {
             const current_landing_company = get('landing_company_shortcode');
 
@@ -278,7 +278,8 @@ const ClientBase = (() => {
     };
 
     const canTransferFundsTo = (to_loginid) => {
-        if (to_loginid === current_loginid || get('is_virtual', to_loginid) || get('is_virtual') || get('is_disabled', to_loginid)) {
+        if (to_loginid === current_loginid || get('is_virtual', to_loginid) || get('is_virtual') ||
+            get('is_disabled', to_loginid)) {
             return false;
         }
         const from_currency = get('currency');
@@ -326,6 +327,7 @@ const ClientBase = (() => {
         setNewAccount,
         currentLandingCompany,
         shouldCompleteTax,
+        getAllAccountsObject,
         getMT5AccountType,
         getBasicUpgradeInfo,
         getLandingCompanyValue,

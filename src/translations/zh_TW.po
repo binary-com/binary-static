@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-11 03:29\n"
+"PO-Revision-Date: 2018-12-31 02:39\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -333,9 +333,6 @@ msgstr "%1支持%2。這是英國一家領先的慈善機構，致力於消除�
 msgid "%1 takes home first prize in the Financial Betting Operator category at the prestigious 2015 EGR Operator Awards ceremony, hosted in London."
 msgstr "%1在久負盛名的倫敦EGR操作員頒獎儀式中榮獲2015年金融搏彩操作員第一獎。"
 
-msgid "%1 transfer fee between different currencies"
-msgstr "不同幣種之間的%1 轉移費"
-
 msgid "%1 wins 'Best Binary Company Asia Pacific' in the Global Banking & Finance Awards 2018. This reflects our expertise and leadership in innovation and strategy."
 msgstr "%1榮獲2018年全球銀行和金融大獎的「亞太區最佳二進位公司」。這反映我們在創新和策略方面的專業知識和領導能力。"
 
@@ -470,6 +467,9 @@ msgstr "1-2 年"
 
 msgid "1. Proof of identity"
 msgstr "1. 身份證明"
+
+msgid "11-39 transactions in the past 12 months"
+msgstr "過去12個月內11-39次交易"
 
 msgid "16th MENA Financial Forum & Expo"
 msgstr "十六屆MENA金融論壇&博覽會"
@@ -1007,6 +1007,9 @@ msgstr "協議限制"
 
 msgid "Agricultural, Forestry and Fishery Workers"
 msgstr "農業、林業和漁業工人"
+
+msgid "Agriculture"
+msgstr "農業"
 
 msgid "Alert"
 msgstr "警報"
@@ -2502,11 +2505,17 @@ msgstr "開始日期"
 msgid "Commission"
 msgstr "佣金"
 
+msgid "Commission and swap scheme"
+msgstr "佣金和掉期交易計劃"
+
 msgid "Commission on deposits"
 msgstr "存款佣金"
 
 msgid "Commission on withdrawals"
 msgstr "取款佣金"
+
+msgid "Commission per side trade"
+msgstr "每筆交易的佣金"
 
 msgid "Commission rates"
 msgstr "佣金費率"
@@ -2721,6 +2730,9 @@ msgstr "公司將參考本網站上公佈的與合約標的指數有關的每日
 msgid "Contract period"
 msgstr "合約期間"
 
+msgid "Contract specifications"
+msgstr "合約規格"
+
 msgid "Contract will be sold at the prevailing market price when the request is received by our servers. This price may differ from the indicated price."
 msgstr "合約將在我們伺服器收到要求時以當時的市場價格賣出。此價格可能會與報價有差異。"
 
@@ -2928,8 +2940,8 @@ msgstr "加密貨幣"
 msgid "Cryptocurrency Risks"
 msgstr "加密貨幣風險"
 
-msgid "Cryptocurrency contract specifications"
-msgstr "加密貨幣合約規格"
+msgid "Cryptocurrency contract specifications and commission scheme"
+msgstr "加密貨幣合約規格和佣金計劃"
 
 msgid "Cryptocurrency margin policy"
 msgstr "加密貨幣保證金政策"
@@ -3447,6 +3459,9 @@ msgstr "EGR操作員獎"
 msgid "EGR Operator Awards"
 msgstr "EGR操作員獎"
 
+msgid "EOS vs US Dollar"
+msgstr "EOS兌美元"
+
 msgid "EU Passport Rights"
 msgstr "歐盟金融護照權利"
 
@@ -3489,8 +3504,11 @@ msgstr "每次開加密貨幣對頭寸時, 您都可以由上表所示的最小�
 msgid "Each time you open a position on an index symbol, you can start with a minimum volume transaction as indicated in the table above."
 msgstr "每次開指標符號頭寸時, 您都可以由上表所示的最小交易額開始。"
 
-msgid "Each transfer is subject to a %1 transfer fee"
-msgstr "每次轉帳都得付 %1 轉帳費"
+msgid "Each time you send us an order, you are charged a commission, which is equal to the asset price multiplied by the percentage seen in the above table."
+msgstr "每次發送訂單時, 我們會向您收取佣金, 佣金率相等於資產價格乘以上表中顯示的百分比。"
+
+msgid "Each transfer is subject to a %1 transfer fee or a minimum fee of %2, whichever is higher."
+msgstr "每次轉帳需支付%1轉帳費或最低費用%2, 以較高者為準。"
 
 msgid "Earn"
 msgstr "賺取"
@@ -3535,7 +3553,7 @@ msgid "Economic Calendar"
 msgstr "經濟日曆"
 
 msgid "Edit, proofread, and improve content from other team members"
-msgstr ""
+msgstr "編輯、校對和改進其他團隊成員的內容"
 
 msgid "Education"
 msgstr "教育"
@@ -3610,7 +3628,7 @@ msgid "Ends Outside"
 msgstr "區間之外結束"
 
 msgid "Engage in market development to grow the client base for existing products and platforms of the company"
-msgstr ""
+msgstr "參與市場開發, 擴大公司現有產品和平台的客戶群"
 
 msgid "Enhanced performance"
 msgstr "增強的性能"
@@ -3643,10 +3661,10 @@ msgid "Ensure that your original documents are ready when the video call starts"
 msgstr "視訊通話開始時請確保準備好原始文檔"
 
 msgid "Ensure the design and development of each page or product is consistent with our style guide, and that everything works as planned with each release"
-msgstr ""
+msgstr "確保每個頁面或產品的設計和開發與我們的樣式指南一致, 並確保每次推出的新版本內容按照計劃執行"
 
 msgid "Ensure the integrity of releases by coordinating testing activities"
-msgstr ""
+msgstr "通過協調測試活動確保發佈的完整性"
 
 msgid "Enter the authentication code generated by the app below:"
 msgstr "輸入以下應用程式生成的身份驗證代碼:"
@@ -3733,10 +3751,10 @@ msgid "European Union residents who wish to trade investment products will have 
 msgstr "想要進行產品博彩交易的歐盟居民將在 Binary Investments (Europe) Ltd 開設帳戶。"
 
 msgid "Evaluate and improve the effectiveness of internal controls, risk management, regulatory compliance, financial and operational processes"
-msgstr ""
+msgstr "評估和提高內部控制、風險管理、法規遵從性、財務和運營流程的效率"
 
 msgid "Evaluate existing procedures and policies with respect to risk management and suggest improvements"
-msgstr ""
+msgstr "評估風險管理方面的現有程式和策略, 並提出改進建議"
 
 msgid "Even/Odd"
 msgstr "偶/奇"
@@ -3751,7 +3769,7 @@ msgid "Event examples include circumstances whereby the type of Transaction, whi
 msgstr "事件範例包括停止提供與您的訂單相關的交易類型的情況，或公司事件或擁有與訂單題材相關股權而無力償債的公司，以及其他。"
 
 msgid "Event-driven programming in Perl"
-msgstr ""
+msgstr "Perl的事件驅動程式設計"
 
 msgid "Events of Default"
 msgstr "違約事件"
@@ -3769,19 +3787,19 @@ msgid "Excellent English language skills, both oral and written"
 msgstr "優秀的英語口語和書寫技能"
 
 msgid "Excellent communication (both oral and written) and interpersonal skills"
-msgstr ""
+msgstr "優秀的口頭和書面溝通和人際交往能力"
 
 msgid "Excellent communication and interpersonal skills"
-msgstr ""
+msgstr "優秀的溝通和人際交往能力"
 
 msgid "Excellent oral and written communication skills in English and Bahasa Malaysia"
-msgstr ""
+msgstr "優秀的英語和馬來西亞語書寫和口語溝通技巧"
 
 msgid "Excellent proficiency in spoken and written English"
-msgstr ""
+msgstr "極強的英語口語和書寫能力"
 
 msgid "Excellent understanding of Bitcoin or other cryptocurrencies"
-msgstr ""
+msgstr "對比特幣或其他加密貨幣非常了解"
 
 msgid "Except for the license granted in this Agreement, the Company does not grant you any right, title, or interest in the %1 API. You agree to take such actions as the Company may reasonably request to perfect the Company's rights to the %1 API."
 msgstr "除本協定所授予的許可，公司並沒授予您%1 API相關的任何權利、擁有權或權益。您同意按照公司提出的合理要求，改善公司對%1 API 的權利。"
@@ -3790,7 +3808,7 @@ msgid "Except to the extent your Application contains the %1 API, the Company cl
 msgstr "公司對您的應用程式的擁有或控制權僅限於該應用程式所包含的%1 API。"
 
 msgid "Exceptional English communication skills (both oral and written)"
-msgstr ""
+msgstr "優秀的英語口頭和書面表達能力"
 
 msgid "Exclude me from the website until"
 msgstr "禁止我訪問本網站直到"
@@ -3841,106 +3859,106 @@ msgid "Expats and international students make up more than 10% of Cyberjaya's vi
 msgstr "Cyber​​jaya的活躍人口有10% 以上是外籍人士和國際學生。"
 
 msgid "Experience as a Postgres DBA, with advanced hands-on knowledge of"
-msgstr ""
+msgstr "擁有Postgres DBA經驗, 具豐富的實踐知識"
 
 msgid "Experience designing and executing test plans (both automated and manual)"
-msgstr ""
+msgstr "具自動和手動測試計劃的設計和執行經驗"
 
 msgid "Experience designing and working with high-availability web service architecture"
-msgstr ""
+msgstr "具高可用性 web 服務體系結構的設計和操作經驗"
 
 msgid "Experience in ARUBA or similar enterprise WiFi AP management is a plus"
-msgstr ""
+msgstr "具 ARUBA 或類似企業的 WiFi AP管理經驗者優先錄取"
 
 msgid "Experience in Chef, Ansible, SaltStack, or similar configuration management tools"
-msgstr ""
+msgstr "具Chef、Ansible、SaltStack或類似建構管理工具方面的經驗"
 
 msgid "Experience in Forex spot trading or exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies"
-msgstr ""
+msgstr "擁有外匯現貨交易或奇異性期權訂價、波動性預測、高頻交易與低效率市場分析的經驗"
 
 msgid "Experience in IT auditing or in-depth knowledge of computer systems is an advantage"
-msgstr ""
+msgstr "具訊息技術審計經驗或對電腦系統有深入的瞭解者優先錄取"
 
 msgid "Experience in application containerization"
-msgstr ""
+msgstr "具應用容器化的經驗"
 
 msgid "Experience in content strategy - i.e. planning, creating, publishing, and updating content for small and large websites"
-msgstr ""
+msgstr "具小型和大型網站內容策略方面的規劃、建立、發佈和更新經驗"
 
 msgid "Experience in content writing is welcome"
-msgstr ""
+msgstr "具內容寫作經驗者無任歡迎"
 
 msgid "Experience in end-user device security audit and policy implementation is a plus"
-msgstr ""
+msgstr "具最終使用者設備安全審核和策略實施經驗者優先錄取"
 
 msgid "Experience in exotic options pricing, volatility forecasts, high-frequency trading, and the analysis of market inefficiencies"
-msgstr ""
+msgstr "擁有奇異性期權訂價、波動性預測、高頻交易與低效率市場分析的經驗"
 
 msgid "Experience in interpreting complex concepts and processes to create design solutions that help our users achieve their goals"
-msgstr ""
+msgstr "具複雜概念和流程的解釋經驗, 能建立設計解決方案, 幫助我們的使用者實現目標"
 
 msgid "Experience in interpreting complex concepts and processes to develop intuitive and logical user flows and usage scenarios"
-msgstr ""
+msgstr "具複雜概念和流程的解釋經驗, 能開發直觀和邏輯的使用者流和使用場景"
 
 msgid "Experience in managing round-the-clock operations for incident resolution, including alerts, rotations, and escalations"
-msgstr ""
+msgstr "具全天候操作的事件解決管理經驗, 包括警報、輪換和升級"
 
 msgid "Experience in site reliability engineering (SRE)"
-msgstr ""
+msgstr "具現場可靠性工程 (SRE) 工作經驗"
 
 msgid "Experience in the financial services industry"
-msgstr ""
+msgstr "金融服務業工作經驗"
 
 msgid "Experience in the financial services industry is preferred"
 msgstr "有金融服務業工作經驗者優先考慮"
 
 msgid "Experience in using financial information sources such as Bloomberg and Reuters"
-msgstr ""
+msgstr "金融資料（如彭博社和路透社）的使用經驗"
 
 msgid "Experience in writing custom code and scripts to investigate security threats"
-msgstr ""
+msgstr "能調查安全威脅的自訂代碼和腳本編寫經驗"
 
 msgid "Experience with +DRAC is a plus"
-msgstr ""
+msgstr "具+DRAC i經驗者優先錄取"
 
 msgid "Experience with Bitcoin or Geth RPC APIs is a plus"
-msgstr ""
+msgstr "具比特幣或Geth RPC API 經驗者優先錄取"
 
 msgid "Experience with Linux and open-source applications such as rsyslog, DHCP, iptables, Postfix, NGINX, and initialization systems such as systemd and SysVinit"
-msgstr ""
+msgstr "具Linux 和開源應用程式 (如 rsyslog、DHCP、iptables、Postfix、NGINX 和初始化系統 (如 systemd 和 Sysvinit) 的使用經驗"
 
 msgid "Experience with Multidimensional Expressions (MDX) is an advantage"
-msgstr ""
+msgstr "具多維運算式 (MDX) 經驗者優先錄取"
 
 msgid "Experience with Postgres or another RDBMS is a plus"
-msgstr ""
+msgstr "有Postgres 及RDBMS 經驗者優先考慮"
 
 msgid "Experience with Solidity and the development of Dapps"
-msgstr ""
+msgstr "使用Solidity 和Dapps開發經驗"
 
 msgid "Experience with agile development methods such as Scrum or Kanban"
-msgstr ""
+msgstr "具如 Scrum 或 Kanban 的敏捷開發方法經驗"
 
 msgid "Experience with data extraction and reporting for data warehouse/cube"
-msgstr ""
+msgstr "具資料倉儲/多維資料集提取和報告經驗"
 
 msgid "Experience with database testing tools such as pgTAP"
-msgstr ""
+msgstr "具如 pgTap 的資料庫測試工具使用經驗"
 
 msgid "Experience with fuzzing and finding edge cases in validation"
-msgstr ""
+msgstr "具驗證中使用模糊和查找邊緣案例的經驗"
 
 msgid "Experience with languages such as Perl, Python, PHP, C/C++, Go, or Ruby, and a willingness to become highly proficient with Perl"
-msgstr ""
+msgstr "具 Perl、Python、PHP、C/C++、Go 或 Ruby 等語言使用經驗, 並願意爭取精通 Perl 的能力"
 
 msgid "Experience with package managers (npm), task runners (Gulp, Webpack, Grunt), CSS processors (Sass, Stylus), and APIs (WebSocket)"
-msgstr ""
+msgstr "具套包管理器 (npm)、任務運行器 (Gulp、Webpack、Grunt)、CSS 處理器 (Sass、Stylus) 和 API (Websocket) 的使用經驗"
 
 msgid "Experience with relational database design, and/or open-source RDBMS systems such as MySQL and PostgreSQL"
-msgstr ""
+msgstr "具關係資料庫設計和/或RDBMS (如MySQL、PostgreSQL等) 開源系統的經驗"
 
 msgid "Experience with web application security and testing, security monitoring, and intrusion detection"
-msgstr ""
+msgstr "具 web 應用程式安全性和測試、安全監控和入侵偵測方面的經驗"
 
 msgid "Expert Advisors"
 msgstr "專家顧問"
@@ -3955,13 +3973,13 @@ msgid "Expert analysis and learning resources."
 msgstr "專家分析與學習資源。"
 
 msgid "Expertise in Linux system administration"
-msgstr ""
+msgstr "具 Linux 系統管理方面的專業知識"
 
 msgid "Expertise in cloud solutions and infrastructure virtualization, including AWS, Google Cloud Platform, and KVM"
-msgstr ""
+msgstr "具雲解決方案和基礎架構虛擬化方面的專業知識, 包括 AWS、Google 雲平台和 KVM"
 
 msgid "Expertise in the application of object-oriented programming languages (C++, Perl, and Java), coupled with the ability to produce high-quality code"
-msgstr ""
+msgstr "具物件導向編程語言 (C++、Perl 和 Java) 應用專業知識，以及寫出高品質代碼的能力"
 
 msgid "Expiry date"
 msgstr "到期日"
@@ -3988,25 +4006,25 @@ msgid "Explore ways to enhance your account security and manage your trading ris
 msgstr "探索提高帳戶安全性和管理交易風險的方法。"
 
 msgid "Extensive experience in Microsoft Office applications, as well as popular HR management and payroll systems"
-msgstr ""
+msgstr "對微軟辦公應用程式以及流行的人力資源管理和工資單系統方面有豐富經驗"
 
 msgid "Extensive experience in bug bounty programmes such as HackerOne, Bugcrowd, and Cobalt"
-msgstr ""
+msgstr "對漏洞獎勵計劃 (如 Hackerone、Bugcrowd和Cobalt) 方面有豐富經驗"
 
 msgid "Extensive experience in creating interactive UI elements for web and mobile apps"
-msgstr ""
+msgstr "為 web 和移動應用建立互動式 UI元素方面有豐富經驗"
 
 msgid "Extensive experience of JavaScript, HTML, CSS, AJAX, and JSON"
-msgstr ""
+msgstr "有豐富的Javascript、HTML、CSS、AJAX、JSON編程經驗"
 
 msgid "Extensive experience with TCP/IP networking, VPNs, and IPsec"
-msgstr ""
+msgstr "有豐富的TCP/IP 網絡、VPN 和 IPsec經驗"
 
 msgid "Extensive knowledge in advanced coding techniques, cross-platform development, and hybrid mobile app development"
-msgstr ""
+msgstr "對高級編碼技術、跨平台開發和混合移動應用開發擁有豐富知識"
 
 msgid "Extensive knowledge of JavaScript , AJAX, JSON, CSS"
-msgstr ""
+msgstr "有廣泛的Javascript、AJAX、JSON、CSS編程知識"
 
 msgid "External forces"
 msgstr "外部力量"
@@ -4015,7 +4033,7 @@ msgid "Extra revenue stream:"
 msgstr "額外收入流:"
 
 msgid "F. Execution venues"
-msgstr ""
+msgstr "六、執行場地"
 
 msgid "F. Orders"
 msgstr "六、訂單"
@@ -4030,7 +4048,7 @@ msgid "FX"
 msgstr "外匯"
 
 msgid "FXOpen; or"
-msgstr ""
+msgstr "FXOpen; 或"
 
 msgid "Facility that allows you to set limits on your account."
 msgstr "可讓您對帳戶設定限制的設施。"
@@ -4048,25 +4066,25 @@ msgid "Familiar with our website? Our desktop app is designed to give you the sa
 msgstr "對我們的網站很熟悉？我們的桌面應用程式設計為您提供相同的直觀體驗。"
 
 msgid "Familiarity with Git"
-msgstr ""
+msgstr "熟悉 Git"
 
 msgid "Familiarity with Perl DBI, Moose, PSGI/Plack, NGINX, JavaScript, Redis, and Git"
-msgstr ""
+msgstr "熟悉Perl DBI、Moose、PSGI/Plack、NGINX、JavaScript、Redis、Git 等程式"
 
 msgid "Familiarity with Perl DBI, Moose, PSGI/Plack, nginx, JavaScript, Redis, and Git"
-msgstr ""
+msgstr "熟悉Perl DBI、Moose、PSGI/Plack、nginx、JavaScript、Redis、Git 等程式"
 
 msgid "Familiarity with concepts such as blockchain confirmations, multisig, and HD wallets"
-msgstr ""
+msgstr "熟悉區塊鏈確認、multisig 和 HD錢包等概念"
 
 msgid "Familiarity with industry standard tools such as Burp Suit and Metasploit"
-msgstr ""
+msgstr "熟悉行業標準工具, 如Burp Suit 和 Metasploit"
 
 msgid "Familiarity with testing and debugging processes, including unit testing and UI testing"
-msgstr ""
+msgstr "熟悉測試和調試過程, 包括單元測試和UI測試"
 
 msgid "Familiarity with various JavaScript standards, libraries, frameworks, compilers, and transpilers including ES6, TypeScript, Babel, SystemJS, Web Workers, jQuery, React, and Angular"
-msgstr ""
+msgstr "熟悉各種JavaScript 標準、資料庫、框架、編譯器和轉換器, 包括 ES6、TypeScript、Babel、SystemJS、Web Workers、jQuery、Reat和Angular"
 
 msgid "Family name"
 msgstr "姓"
@@ -4111,7 +4129,7 @@ msgid "File Name"
 msgstr "檔案名"
 
 msgid "File records and documents of customer interactions according to existing guidelines"
-msgstr ""
+msgstr "根據現有準則保存客戶互動的記錄和文檔"
 
 msgid "Filtering Controls"
 msgstr "過濾控制"
@@ -4144,7 +4162,7 @@ msgid "Financial Instrument"
 msgstr "財務工具"
 
 msgid "Financial Markets Analyst"
-msgstr ""
+msgstr "金融市場分析師"
 
 msgid "Financial Risk approval is required. Please contact <a href=\"%1\">customer support</a> for more information."
 msgstr "需要通過金融風險批准。欲知詳細資訊，請聯繫<a href=\"%1\">客服部</a>。"
@@ -4174,7 +4192,7 @@ msgid "Finish"
 msgstr "完成"
 
 msgid "Firm grasp of advanced risk management concepts, including hedging, Greeks (first and second generation), Value at Risk models, etc."
-msgstr ""
+msgstr "牢牢掌握先進的風險管理理念, 包括對沖、Greeks (第一代和第二代)、風險價值模型等。"
 
 msgid "First line of home address"
 msgstr "家庭地址第一行"
@@ -4204,7 +4222,7 @@ msgid "Flexible trades"
 msgstr "彈性交易"
 
 msgid "Follow established workflows for content deliverables"
-msgstr ""
+msgstr "跟蹤內容可交付結果的已建立工作流"
 
 msgid "Follow our step-by-step guide to start trading binary options on MT5."
 msgstr "按照我們的逐步指南開始在 MT5 進行二元期權交易。"
@@ -4213,7 +4231,10 @@ msgid "Follow the Law and These Terms"
 msgstr "遵守法律和以下條款"
 
 msgid "Follow up on the recommendations and timeline for corrective actions with department heads"
-msgstr ""
+msgstr "與部門主管一起跟進糾正措施的建議和時程表"
+
+msgid "Food Services"
+msgstr "飲食服務"
 
 msgid "For Binary (C.R.) S.A., the applicable Jurisdiction shall be Costa Rica."
 msgstr "Binary (C.R.) S.A.適用的管轄權應為哥斯大黎加。"
@@ -4264,7 +4285,7 @@ msgid "For example, let’s say the market has a low of 5,200 and a close of 6,0
 msgstr "例如, 假設市場在合約持續時間內的最低價為5200和收盤時為 6000, 那麼倍數值為2美元的「收盤-最低價」回顧回報為:"
 
 msgid "For features and trading illustration of Spot FX offered by %1, refer to the Product disclosure statement. This policy is an appendix to, and should be read in conjunction with, the overarching %1's order execution policy."
-msgstr ""
+msgstr "關於%1提供的Spot FX 特點和交易說明，請參閱產品披露聲明。這項政策是%1綜合性訂單執行政策的附錄，須與此政策一起閱讀。"
 
 msgid "For forex quotes the closing times are defined by the Company as shown in the Market Opening Times section of the website. In the event of any dispute regarding market or settlement values, the decision of the Company shall be final and binding. Clients should note that certain markets (such as indices) are not open throughout the day and that trading may not be available when the markets are closed."
 msgstr "對於外匯報價的收盤時間，公司在本網站「市場開放時間」部分中有相應說明。若發生有關市場價或結算價的任何糾紛，公司的決定應具有最終性和約束力。客戶需注意部分市場（例如指數）並非全天開放，閉市後可能無法交易。"
@@ -4330,7 +4351,7 @@ msgid "Forex trading involves buying or selling these \"currency pairs\". When y
 msgstr "外匯交易涉及買入或賣出這些「貨幣對」。當您買入例如歐元/美元的貨幣對時，意味著您正在買入歐元並同時賣出美元。"
 
 msgid "Forex;"
-msgstr ""
+msgstr "外匯;"
 
 msgid "Founded in 1999, %1 is one of the oldest and most respected names in online binary trading."
 msgstr "%1 成立於1999年，是線上二元期權交易行業中歷史最悠久、享有最高聲譽之佼佼者之一。"
@@ -4366,10 +4387,10 @@ msgid "Front and reverse side photos of %1 are required."
 msgstr "%1 的正面和反面相片是必需的。"
 
 msgid "Front side"
-msgstr ""
+msgstr "前側"
 
 msgid "Front-End Developer"
-msgstr ""
+msgstr "前端開發員"
 
 msgid "Fund Transfers"
 msgstr "基金轉匯"
@@ -4396,13 +4417,13 @@ msgid "G. Margin"
 msgstr "七、保證金"
 
 msgid "G. Order handling"
-msgstr ""
+msgstr "七、訂單處理"
 
 msgid "GAMSTOP is a free service that enables you to self-exclude from all online gambling companies licensed in Great Britain."
 msgstr "GAMSTOP 免費提供服務, 使您能夠自我禁止在英國授權的所有線上博彩公司交易。"
 
 msgid "GBE Brokers;"
-msgstr ""
+msgstr "GBE 經紀人;"
 
 msgid "GBP Index – Measures the value of the British Pound against a basket of five global currencies (USD, EUR, AUD, JPY, CAD), each weighted by 20%"
 msgstr "英鎊 - 衡量英鎊相對於五種國際貨幣（美元、歐元、澳元、日圓、加元）的價值，各貨幣的權重均為20%。"
@@ -4438,10 +4459,10 @@ msgid "Generally we will communicate with you through this website or by email t
 msgstr "通常，我們會通過這個網站與您溝通，或傳送電郵到您的開戶郵箱。我們將以英語或您在開戶時所選用的語言與您溝通。"
 
 msgid "Generate periodic and special reports on client trading activity and significant trends that impact our client behaviour"
-msgstr ""
+msgstr "生成客戶交易活動和影響客戶行為的重大趨勢的定期和特別匯總報告"
 
 msgid "Generate periodic and special reports that summarise client trading trends"
-msgstr ""
+msgstr "完成客戶交易趨勢的定期及特別總結"
 
 msgid "Generated verification code:"
 msgstr "生成的驗證碼︰"
@@ -4489,19 +4510,19 @@ msgid "Given our role as a margin trading service provider as described in this 
 msgstr "我們是融資融券交易服務提供商，如本協議所述，我們盡量不讓市場影響您的交易需求，同時維護我們的風險管理政策和程序。通過繼續使用本協議所述的融資融券交易服務，您承認並已了解，所披露利益的潛在衝突可能會出現以及不能完全排除，即使存在這種潛在利益衝突，您也同意我們的行動。"
 
 msgid "Global Banking & Finance Awards"
-msgstr ""
+msgstr "全球銀行和金融獎"
 
 msgid "Global Banking & Finance Awards 2018"
-msgstr ""
+msgstr "2018年度全球銀行和金融獎"
 
 msgid "Global Banking and Finance Review"
-msgstr ""
+msgstr "全球銀行與金融評論"
 
 msgid "Global Brands Awards 2018"
-msgstr ""
+msgstr "2018年全球品牌大獎"
 
 msgid "Global Brands Magazine"
-msgstr ""
+msgstr "全球品牌雜誌"
 
 msgid "Glossary"
 msgstr "詞彙"
@@ -4522,7 +4543,7 @@ msgid "Go to MT5 download page"
 msgstr "前往 MT5 下載頁面"
 
 msgid "Go to MetaTrader 5 dashboard"
-msgstr ""
+msgstr "前往MetaTrader 5 儀表板"
 
 msgid "Go with the leader"
 msgstr "選擇行業領軍企業"
@@ -4534,10 +4555,10 @@ msgid "Gold vs US Dollar"
 msgstr "黃金兌美元"
 
 msgid "Good reporting skills with a keen eye for detail"
-msgstr ""
+msgstr "良好的報告技巧, 對細節有敏銳的眼光"
 
 msgid "Good understanding of the link between payments functionality, as well as money laundering and fraud prevention"
-msgstr ""
+msgstr "充分瞭解支付功能以及防洗錢和防欺詐之間的聯繫"
 
 msgid "Governing Laws and Jurisdiction"
 msgstr "適用法律和司法管轄權"
@@ -4549,7 +4570,7 @@ msgid "Government Officers"
 msgstr "政府官員"
 
 msgid "Graphics Designer"
-msgstr ""
+msgstr "平面設計師"
 
 msgid "Great Britain Pound vs Australian Dollar"
 msgstr "英鎊兌澳元"
@@ -4585,7 +4606,7 @@ msgid "Guide"
 msgstr "指南"
 
 msgid "H. Monitoring and review"
-msgstr ""
+msgstr "八、監測和審查"
 
 msgid "H. Regulatory Provisions"
 msgstr "八、管理規定"
@@ -4600,16 +4621,16 @@ msgid "HF Vol 50"
 msgstr "HF 卷50"
 
 msgid "HR Operations Executive"
-msgstr ""
+msgstr "人力資源運營主管"
 
 msgid "Handle chargeback disputes and review regulatory complaints"
-msgstr ""
+msgstr "處理收費糾紛並審核監管投訴"
 
 msgid "Hands-on experience in systems and network security. Experience with Fortigate or similar devices (e.g.Cisco, Mikrotik)"
-msgstr ""
+msgstr "有實際的系統和網絡安全工作經驗。有Fortigate或類似裝置（如Cisco、Mikrotik）的使用經驗"
 
 msgid "Hands-on experience in troubleshooting computer software, hardware, and a variety of internet applications and networks"
-msgstr ""
+msgstr "有電腦軟體、硬體和各種網絡應用程式和網絡故障排除的實踐經驗"
 
 msgid "Have not previously been a %1 customer"
 msgstr "以前不是 %1 的客戶"
@@ -4624,7 +4645,7 @@ msgid "Hedging"
 msgstr "對沖"
 
 msgid "Help in developing advanced risk management tools for various markets (forex, equities, commodities)"
-msgstr ""
+msgstr "為各種市場（外匯、股票、商品）開發先進的風險管理工具"
 
 msgid "Here's an example of the EUR/USD currency pair and its bid-ask price:"
 msgstr "以下是歐元/美元貨幣對和買賣價的例子："
@@ -4764,6 +4785,9 @@ msgstr "如何斬倉"
 msgid "How to manage your funds"
 msgstr "如何管理資金"
 
+msgid "How to read the commission and swap scheme table"
+msgstr "如何閱讀佣金和掉期計劃表"
+
 msgid "How to read the contract specifications table"
 msgstr "如何閱讀合約規格表"
 
@@ -4804,7 +4828,7 @@ msgid "However, with leverage you can purchase those 100 units at a fraction of 
 msgstr "但是，您可以透過槓桿以一般成本的一小部分價格購入這100個單位，具體取決於經紀商或交易平台向您提供的槓桿。"
 
 msgid "Human Resource"
-msgstr ""
+msgstr "人力資源"
 
 msgid "Human Resources"
 msgstr "人力資源"
@@ -4828,7 +4852,7 @@ msgid "I understand the risks involved and agree to the %1Terms & Conditions of 
 msgstr "我瞭解所涉及的風險, 並同意接受 %1MAM設施的條款和條件%2"
 
 msgid "I would like to be treated as a professional client."
-msgstr ""
+msgstr "我要被視為專業客戶。"
 
 msgid "I'm interested"
 msgstr "我很感興趣"
@@ -4864,10 +4888,10 @@ msgid "IP Address"
 msgstr "IP地址"
 
 msgid "IT"
-msgstr ""
+msgstr "資訊技術"
 
 msgid "IT knowledge or experience is preferred"
-msgstr ""
+msgstr "具資訊技術知識或經驗者優先錄取"
 
 msgid "Ideal for new and experienced traders"
 msgstr "最適於新手和經驗豐富的交易者"
@@ -4879,10 +4903,10 @@ msgid "Ideas, opinions and insights from the people behind %1"
 msgstr "％1人員提供的想法、意見和見解"
 
 msgid "Identify attack vectors"
-msgstr ""
+msgstr "識別攻擊媒介"
 
 msgid "Identify new marketing opportunities through customer feedback and contribute ideas to expand our global customer base"
-msgstr ""
+msgstr "通過客戶反饋找出新的行銷機會, 並對全球客戶群的擴展提供意見"
 
 msgid "Identity card"
 msgstr "身分證"
@@ -4974,9 +4998,6 @@ msgstr "如果您代表雇主或其他實體簽訂本協議，您確認並保證
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
 msgstr "如果您目前不是位於上述國家內, 只需撥打我們的任一聯繫電話尋求説明即可。"
 
-msgid "If you are shortlisted, we will send you a talent test to be completed."
-msgstr ""
-
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
 msgstr "如果無法掃描 QR 代碼, 可以手動輸入此代碼取代:"
 
@@ -5035,7 +5056,7 @@ msgid "If you score well in the hackathon or talent test, we'll send you a Self-
 msgstr "如果您在駭客松或人才測試中取得高分, 我們將向您發送一份自我評估精英面談 (SATI) 問卷。如果您通過了SATI，我們將邀請您參與我們招聘團隊成員的面試。"
 
 msgid "If you score well on the talent test, we'll send you a Self-Assessment Topgrading Interview (SATI) questionnaire. Do well on the SATI and we'll invite you for an interview with a member of our recruitment team."
-msgstr ""
+msgstr "如果您在人才測試中取得高分, 我們將向您發送一份自我評估精英面談 (SATI) 問卷。如果您通過了SATI，我們將邀請您參與我們招聘團隊成員的面試。"
 
 msgid "If you see EUR/USD has a bid price of 1.05229, you will buy USD 1.05229 for every EUR 1 that you sell."
 msgstr "如果您看到歐元/美元的買入價為1.05229，那麼您每賣出1歐元就買入1.05229美元。"
@@ -5160,6 +5181,9 @@ msgstr "如果您是經紀人, 我們想和您合作。您可向您的客戶推�
 msgid "If you're shortlisted, we'll invite you to a hackathon or send you a talent test."
 msgstr "如果您進入初選名單，我們會邀請您參與駭客松測試或者讓您參與人才測試。"
 
+msgid "If you're shortlisted, we'll send you a talent test to be completed."
+msgstr ""
+
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
 msgstr "如果您的%1帳戶已關閉, 您的 MT5 真實帳戶也將自動關閉。"
 
@@ -5212,7 +5236,7 @@ msgid "Improve %1's front-end content"
 msgstr "改進%1的前端內容"
 
 msgid "Improve our automation (Chef, etc.)"
-msgstr ""
+msgstr "改善我們的自動化程式 (Chef等)"
 
 msgid "Improvements"
 msgstr "改進"
@@ -5251,7 +5275,7 @@ msgid "In exceptional circumstances, where there is a price change in the underl
 msgstr "特殊情況下, 如果標的價格變化很大以及發生得很突然, 間距可能發生。在這種情況下, 保證金自動封閉保護功能可能失效, 導致您的帳戶餘額降至零以下。為此, 我們引入了負餘額保護機制。負餘額保護在極端市場條件下提供「支持」, 並確保您的差價合約 (包括所有相關成本) 交易的最大損失僅限於 CFD 帳戶可用的餘額。因此, 您的損失永遠不會超過投入差價合約的總金額。如果您的 CFD 帳戶餘額降至零以下, 公司將盡快補償負餘額, 而您無需付額外費用。"
 
 msgid "In executing orders on the client's behalf, %1 takes into consideration the following to achieve the best possible result for the client:"
-msgstr ""
+msgstr "代客戶執行訂單時，為了替客戶爭取最佳成果，%1將考慮以下各點︰"
 
 msgid "In foreign exchange markets, traders can enter contracts based on the change in price of one currency as it relates to another currency. For example if a trader selects Rise in the EUR/USD market, they are predicting that the value of the Euro will rise in relation to the value of the US dollar."
 msgstr "在外匯市場中，交易者可以根據一種貨幣對另一種貨幣的價格變動交易合約。例如，如果交易者選擇歐元/美元「上漲」期權，即預測歐元的價值相對美元的價值將會上漲。"
@@ -5278,7 +5302,7 @@ msgid "In providing these services, we are bound by the Act, any applicable regu
 msgstr "提供此類服務時，我們受法律、一切適用的規則、地方法規、准證條款、綱領、證卷市場細則和其它規定或市場慣例（「規則」）等約束。當這些補充條款和條件跟規則發生衝突時，當以後者為準。"
 
 msgid "In relation to Contracts that the client enters into with the Company, the Company acts as principal and not as agent on the client's behalf; therefore, the Company acts as the sole execution venue for the execution of the client's Contracts."
-msgstr ""
+msgstr "關於客戶與公司共同修訂的合約, 公司是委託人，而不是客戶的代理人，因此公司是客戶的合约的唯一執行者。"
 
 msgid "In such an event, the Company may at its sole discretion (with or without notice) close out Client's open financial contracts at prices it considers fair and reasonable."
 msgstr "在此情況下，公司可以自行決定（無論是否給予通知）以其認為公平合理的價格對客戶的未結金融合約強行平倉。"
@@ -5308,7 +5332,7 @@ msgid "In the case of a Stop Order, you acknowledge that we will endeavor to ope
 msgstr "如果是止損訂單，您確認我們將盡力以與您指定的相同價格開盤/平倉。但如果指定價格不可用，報出的價格可能會稍微不利。您確認，訂單執行期間，我們的買價/賣價可能對您不利。"
 
 msgid "In the case of some Contracts, there may be no functioning or open market or exchange on which the reference product is traded at the time of the client order. In such cases, the Company sets out to determine a fair underlying price based on a number of factors, such as price movements on associated markets and other market influences and information about the client order."
-msgstr ""
+msgstr "某一些合約的有關交易產品可能剛好碰上市場或外匯停止運作。在此種情況下，公司將會根據一些因素如關聯市場的價格波動、其它市場影響因素和客戶自己的訂單資訊等而定出一個公平的標示價格。"
 
 msgid "In the course of provision of services we shall, where applicable, conduct an appropriateness test in order to determine whether, in our view and on the basis of the information provided by you, you have the necessary knowledge and experience in the investment field to understand the risks involved in the specific type of product or service offered or demanded."
 msgstr "提供服務的過程中，我們將根據您所提供的資訊和我們的觀察進行合適性測試，以確定您是否對投資領域擁有足夠知識和經驗，並且對相關指定提供或需求的產品或服務所冒的風險有充分了解。"
@@ -5338,7 +5362,7 @@ msgid "In this case, you predict that the price will rise. This is also known as
 msgstr "在這種情況下，您預測價格會上漲。這也被稱為「持多頭頭寸」。"
 
 msgid "In-depth knowledge of accounting principles, best practices, standards, and regulations"
-msgstr ""
+msgstr "深入瞭解會計原則、最佳慣例、標準和法規"
 
 msgid "In/Out"
 msgstr "「範圍之內/之外」"
@@ -5356,7 +5380,7 @@ msgid "Income earning"
 msgstr "賺取收入"
 
 msgid "Incorporate our brand identity into new products, pages, and features"
-msgstr ""
+msgstr "將我們的品牌識別整合到新產品、頁面和功能中"
 
 msgid "Increase your HackerOne reputation to build up credibility and profile visibility."
 msgstr "增加您的HackerOne聲譽，以建立信譽和配置文件的可見性。"
@@ -5387,6 +5411,9 @@ msgstr "工業金屬 - 也被稱為基礎金屬 - 蘊藏量豐富，但容易氧
 
 msgid "Industry of Employment"
 msgstr "職業領域"
+
+msgid "Information & Communications Technology"
+msgstr "資訊和通信技術"
 
 msgid "Information about the data feeds used by our company, and how the data is processed before being fed into the system."
 msgstr "我們公司所用資料源的相關資訊，以及資料在導入系統前的處理方式。"
@@ -5422,7 +5449,7 @@ msgid "Interactive webinars"
 msgstr "互動式網路研討會"
 
 msgid "Interest in IT or software development"
-msgstr ""
+msgstr "對資訊技術或軟體發展有濃厚的興趣"
 
 msgid "Interested in our MAM tool for MetaTrader 5? Contact us at %1 for more info."
 msgstr "對 MetaTrader 5 的MAM工具感興趣嗎？通過%1聯繫我們獲取更多資訊。"
@@ -5440,7 +5467,7 @@ msgid "Internal Audit"
 msgstr "內部審計"
 
 msgid "Internal Audit Executive"
-msgstr ""
+msgstr "內部稽核主管"
 
 msgid "International currency or commodity prices are highly volatile and very difficult to predict. Due to such volatility, plus the bias in the pricing system favouring the website (as described in more detail below), no financial contract purchased in our system (whether or not the payout exceeds the premium amount) can be considered a safe contract."
 msgstr "國際外匯或商品價格波動非常劇烈，很難預測。由於波動幅度較大，加上報價體系對網站有利(以下將詳細說明)，因此在我們系統中買入的金融合約都不得視為安全合約（不論賠付額是否大於期權費金額）。"
@@ -5485,13 +5512,13 @@ msgid "Invalid verification code."
 msgstr "無效的驗證代碼。"
 
 msgid "Invast Financial Services Pty Ltd;"
-msgstr ""
+msgstr "投資金融服務私人有限公司;"
 
 msgid "Investigate client accounts that have been flagged by existing fraud controls and processes"
-msgstr ""
+msgstr "對已被現有欺詐控制和流程標記的用戶端帳戶進行調查"
 
 msgid "Investigate, reproduce, identify, document, and resolve issues reported by our clients and the customer support team"
-msgstr ""
+msgstr "對客戶和客戶支援小組報告的問題展開調查、複製、識別、記錄和解決工作"
 
 msgid "Investing in complex products, such as CFDs and FX may incur losses as well as gains. Prices may vary and/or fluctuate due to changes in current market prices and conditions, which may impact the return on your investment. Before making an Investment decision, you should refer to our Key Information Documents on our website, in particular, the amount of Margin required for particular instruments that we offer. The Products offered by Binary Investments (Europe) Ltd fall under the category of ‘complex products’ and may not be suitable for retail clients."
 msgstr "差價合約和外匯等複雜產品投資可能會令您蒙受損失，但也可能獲利。價格可能會因為目前市場價格和條件的變化而變動和/或波動，這可能會影響您的投資回報。做出投資決定之前，您應該參考我們網站上的關鍵資訊文檔，特別是我們提供的特定工具所需的保證金金額。 Binary Investments（Europe）Ltd提供的產品屬於「複雜產品」類別，可能不適合零售客戶。"
@@ -5656,7 +5683,7 @@ msgid "Keep Safe"
 msgstr "保持安全"
 
 msgid "Keep our infrastructure up-to-date with current cutting edge developments"
-msgstr ""
+msgstr "將我們的基礎設施與當前的尖端發展保持同步"
 
 msgid "Keep safe"
 msgstr "保持安全"
@@ -5668,10 +5695,10 @@ msgid "Keep up with breaking news and events on global markets."
 msgstr "跟上全球市場的突發新聞和事件。"
 
 msgid "Keep up with the latest developments in IT and maintain knowledge relevant to the requirements of the business"
-msgstr ""
+msgstr "及時瞭解資訊技術的最新發展, 並保持擁有與業務需求相關的知識"
 
 msgid "Keep up with the latest trends and techniques in design, UI, and UX"
-msgstr ""
+msgstr "跟上設計、UI 和 UX方面的最新趨勢和技術"
 
 msgid "Keeping up with market news and trends in a certain sector can help you tremendously, especially if you're just starting out."
 msgstr "跟上某個行業的市場新聞和趨勢，可以為您提供很大的幫助，特別是如果您剛剛入門。"
@@ -5689,7 +5716,7 @@ msgid "Kick back with beautiful beaches, islands, and mountains just a short fli
 msgstr "想放鬆時只需飛行很短的距離就能盡情探索美麗的海灘、島嶼和山區。您可從馬爾他輕鬆前往歐洲、地中海和北非。此外，您也可在馬來西亞飽覽亞洲最壯觀的一些美景。"
 
 msgid "Know how much you will win or lose before you purchase the contract"
-msgstr ""
+msgstr "購入合約交易前，您已知道贏或輸的金額"
 
 msgid "Know what you stand to win or lose"
 msgstr "知道您的輸贏立場"
@@ -5701,43 +5728,43 @@ msgid "Knowing when to buy and sell precious metals largely depends on how well 
 msgstr "想知道買入和賣出貴重金屬的最佳時機，很大程度上取決於您是否了解影響市場價格的因素。最常見的影響因素是:"
 
 msgid "Knowledge and experience in the financial services industry and/or binary options trading"
-msgstr ""
+msgstr "金融服務業和/或二元棄權交易知識和經驗"
 
 msgid "Knowledge of HTML, CSS, and JavaScript for rapid prototyping of websites and apps"
-msgstr ""
+msgstr "對HTML、CSS 和 JavaScript有深入瞭解, 可快速構建網站和應用程式的原型"
 
 msgid "Knowledge of Linux system administration, including configuration and automation tools such as Chef as well as Shell scripting is preferred"
-msgstr ""
+msgstr "瞭解 Linux 系統管理, 包括配置和Chef、Shell腳本等自動化工具"
 
 msgid "Knowledge of Mac or Linux Technologies and associated security risks"
-msgstr ""
+msgstr "瞭解 Mac 或 Linux 技術及相關安全風險"
 
 msgid "Knowledge of VPN concepts and prior experience of setting up site-to-site networks"
-msgstr ""
+msgstr "熟悉 VPN 概念, 有網站到網站系統的建設經驗"
 
 msgid "Knowledge of affiliate marketing, email marketing, and basic HTML"
-msgstr ""
+msgstr "瞭解聯盟行銷、電子郵件行銷和基本HTML"
 
 msgid "Knowledge of coloured coins and Ethereum tokens, including ERC20/23/223"
-msgstr ""
+msgstr "瞭解彩色幣和乙太幣, 包括 ERC20/23/223"
 
 msgid "Knowledge of hardware and software firewalls, intrusion detection methods, security systems, and DDoS protection"
-msgstr ""
+msgstr "硬體和軟體防火牆、入侵檢測方法、安全系統和 DDoS 保護等專門知識"
 
 msgid "Knowledge of hashing algorithms, including SHA and scrypt"
-msgstr ""
+msgstr "熟悉散列算法, 包括 SHA 和 scrypt"
 
 msgid "Knowledge of payment transaction analysis, in particular e-wallets/cryptocurrencies will be considered an advantage"
-msgstr ""
+msgstr "瞭解支付交易分析, 特別是電子錢包/加密貨幣將被視為優勢者優先錄取"
 
 msgid "Knowledge of probability theory, stochastic calculus, numerical methods, Monte-Carlo simulation, differential equations, econometrics, and statistical modelling"
-msgstr ""
+msgstr "擁有概率論、隨機微積分、數值方法、蒙地卡羅模擬、微分方程、計量經濟學和統計建模等知識"
 
 msgid "Knowledge of scripting language and Perl in particular is a plus"
-msgstr ""
+msgstr "尤其是熟悉指令碼語言和 Perl 知識者優先錄取"
 
 msgid "Knowledge of the latest industry trends and best practices in information security"
-msgstr ""
+msgstr "瞭解資訊安全方面的最新行業趨勢和最佳實踐方式"
 
 msgid "Kuala Lumpur Office"
 msgstr "吉隆坡辦公室"
@@ -5785,7 +5812,7 @@ msgid "Laws regarding financial contracts vary throughout the world, and it is t
 msgstr "世界各地有關金融合約的法律各不相同，存取本網站的客戶有責任確保自己了解並完全遵守所在國家與其相關的法律規定。本網站既不構成、也不能用於任何在司法管轄區未經授權或非法的要約或要約邀請。存取本網站以及本網站提供的金融合約在部分司法管轄區受到限制，存取本網站的客戶須自行獲知並遵守此類限制。"
 
 msgid "Lay out mockups and wireframes for app screens and web pages"
-msgstr ""
+msgstr "為應用螢幕和網頁佈局模型和線框"
 
 msgid "Learn about the types of trades that can help you execute your trading strategy on rising, falling, and even sideways markets."
 msgstr "了解可幫助您在上漲、下跌甚至橫盤整理市場上執行交易策略的交易類型。"
@@ -5881,10 +5908,10 @@ msgid "Liability"
 msgstr "責任"
 
 msgid "Liaise with external suppliers to ensure purchases are made at the most cost-efficient rate"
-msgstr ""
+msgstr "與外部供應商聯絡, 確保以最具成本效益的價格進行採購"
 
 msgid "Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees"
-msgstr ""
+msgstr "代表公司和雇員定期與移民局和稅務局等政府機構聯絡"
 
 msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
 msgstr "由馬爾他、英國、曼島和愛爾蘭相關機構授予執照和監管"
@@ -5938,7 +5965,7 @@ msgid "Litecoin vs US Dollar"
 msgstr "萊特幣兌美元"
 
 msgid "Live chat"
-msgstr ""
+msgstr "即時聊天"
 
 msgid "Living in Cyberjaya"
 msgstr "住在Cyberjaya"
@@ -6148,10 +6175,10 @@ msgid "Maintain adequate speed and volume of output"
 msgstr "保持適當的速度和輸出量"
 
 msgid "Maintain relationships with clients and partners to drive retention and loyalty"
-msgstr ""
+msgstr "維護與客戶和合作夥伴的關係, 以提高保留率和忠誠度"
 
 msgid "Maintain trackable records of investigations in AML-CTF-related matters"
-msgstr ""
+msgstr "保存與 AML-CTF有關的調查記錄"
 
 msgid "Major and minor pairs, plus Smart FX indices"
 msgstr "主要和次要貨幣對，加上智能外匯指數"
@@ -6178,7 +6205,7 @@ msgid "Make a Deposit"
 msgstr "存入資金"
 
 msgid "Make a deposit"
-msgstr ""
+msgstr "存入資金"
 
 msgid "Make another transfer"
 msgstr "進行另一次轉移"
@@ -6208,7 +6235,7 @@ msgid "Malta's strategic location in the Mediterranean Sea saw it occupied by a 
 msgstr "由於其位於地中海的戰略位置，馬爾他曾經被許多外國勢力佔領過, 包括希臘、羅馬、阿拉伯和法國, 以及近期的英國。它於1964年擺脫英國獲得獨立, 並於2004年加入歐盟。今天, 馬爾他是非常受歡迎的旅遊勝地, 也是個主要依賴工業和服務業為經濟基礎的高收入國家。"
 
 msgid "Manage IT assets and maintain an up-to-date asset registry"
-msgstr ""
+msgstr "管理IT資產並維護最新的資產註冊表"
 
 msgid "Manage MAM account"
 msgstr "管理MAM帳戶"
@@ -6217,22 +6244,22 @@ msgid "Manage MT5 password"
 msgstr "管理 MT5 密碼"
 
 msgid "Manage and maintain all software, hardware, and associated peripherals including printers, copiers, and phones"
-msgstr ""
+msgstr "管理和維護所有軟體、硬體和相關週邊設備, 包括印表機、影印機和電話"
 
 msgid "Manage database security by controlling access to data through authentication, authorisation, and auditing"
-msgstr ""
+msgstr "通過身份驗證、授權和審核控制對資料的存取, 從而管理資料庫安全性"
 
 msgid "Manage day-to-day risk of our trading books"
-msgstr ""
+msgstr "管理我們交易帳簿的日常風險"
 
 msgid "Manage funds"
 msgstr "基金管理"
 
 msgid "Manage our bug bounty programme"
-msgstr ""
+msgstr "管理我們的 bug 通報獎勵計劃"
 
 msgid "Manage security, intrusion detection, DDoS protection, and PCI compliance measures for each deployed server"
-msgstr ""
+msgstr "所有伺服器的安全、入侵檢測、DDoS 保護和PCI 法規遵從性措施管理工作"
 
 msgid "Manage sub accounts"
 msgstr "管理子帳戶"
@@ -6251,6 +6278,9 @@ msgstr "經理已成功撤銷"
 
 msgid "Managers"
 msgstr "經理"
+
+msgid "Manufacturing"
+msgstr "製造"
 
 msgid "Mar"
 msgstr "三月"
@@ -6319,7 +6349,7 @@ msgid "Marketing"
 msgstr "市場行銷"
 
 msgid "Marketing Executive"
-msgstr ""
+msgstr "市場行銷專員"
 
 msgid "Marketing and Promotion"
 msgstr "營銷推廣"
@@ -6328,7 +6358,7 @@ msgid "Mastercard is an international company that processes payments made with 
 msgstr "萬事達卡是國際公司, 專門處理用萬事達卡品牌的信用卡和轉帳卡支付的款項。欲知詳情, 請存取 %1。"
 
 msgid "Mastercards issued in a non-European country may only withdraw up to the amount deposited."
-msgstr ""
+msgstr "非歐洲國家發行的萬事達卡提款最高額為存款金額。"
 
 msgid "Matches/Differs"
 msgstr "相符/差異"
@@ -6439,7 +6469,7 @@ msgid "Method"
 msgstr "方式"
 
 msgid "Meticulous English language skills, with keen eye for detail when it comes to punctuation, spelling, grammar, and syntax"
-msgstr ""
+msgstr "熟練的英語語言技能, 特別注重關於標點、拼寫、語法和句法方面的細節"
 
 msgid "MiFID II RTS 28"
 msgstr "MiFID II RTS 28"
@@ -6481,7 +6511,7 @@ msgid "Minimum ticket size"
 msgstr "最小票證大小"
 
 msgid "Minimum two years experience in a software or web application testing role"
-msgstr ""
+msgstr "至少兩年軟體或 web 應用程式測試工作經驗"
 
 msgid "Minimum volume"
 msgstr "最小交易額"
@@ -6529,16 +6559,16 @@ msgid "Monitor and manage your client list, adjust settings for individual sub a
 msgstr "監視和管理您的客戶清單、調整個別子帳戶的設定以及其他功能"
 
 msgid "Monitor campaigns using key metrics and submit reports on campaign performance"
-msgstr ""
+msgstr "使用關鍵指標監控市場活動並提交活動績效報告"
 
 msgid "Monitor fraud and money laundering patterns in deposit and withdrawal behaviour"
-msgstr ""
+msgstr "監測存款和取款行為中的欺詐和洗錢模式"
 
 msgid "Monitor hardware and software deployment, including our worldwide network of servers and office networks"
-msgstr ""
+msgstr "監管硬體和軟體，包括全球伺服器網絡和辦公網絡"
 
 msgid "Monitor our automated security scripts and utilise them to identify threats"
-msgstr ""
+msgstr "監控自動化安全腳本, 並利用它識別威脅"
 
 msgid "Monitor recent logins to your account using the %1login history%2 facility."
 msgstr "使用 %1登入歷史記錄%2 工具監視帳戶的最近登入。"
@@ -6547,7 +6577,7 @@ msgid "Monitor the movements of your favourite assets and markets at the same ti
 msgstr "同時監測您最喜愛的資產和市場變動。"
 
 msgid "Monitor website trading activity and minimise abuse"
-msgstr ""
+msgstr "監控網站交易活動，盡量減少濫用行為"
 
 msgid "Monitor your portfolio in real time."
 msgstr "實時監測您的投資組合。"
@@ -6556,7 +6586,7 @@ msgid "Monitor your trades easily with real-time visualisations"
 msgstr "使用即時可視化功能監控您的交易"
 
 msgid "Monitoring and review of this policy"
-msgstr ""
+msgstr "監管和評估此政策"
 
 msgid "Month"
 msgstr "月份"
@@ -6568,7 +6598,7 @@ msgid "More benefits"
 msgstr "更多福利"
 
 msgid "More specifically, when the Company enters into a binary option trade with the client (each, a \"Contract\"), the Company has a duty to provide the client with 'best execution'. Best execution means that the Company must take reasonable steps to obtain the best possible result for the client when executing a client order. This document provides a summary of the Company's best execution policy."
-msgstr ""
+msgstr "說得更具體就是，當公司和客戶進行二元期權交易時（雙方有了「合約」），公司有責任向客戶提供「最佳執行方案」。最佳執行方案的意思就是當公司執行客戶的訂單時，必須採取合理的措施來為客戶獲取最大的效益。此文件是最佳執行方案政策的總結。"
 
 msgid "Most brokers typically charge a commission for each trade that you place. %1 currently charges no commission across all account types, except for cryptocurrencies."
 msgstr "大多數經紀商通常會對您執行的每筆交易收取佣金。除了加密貨幣以外，目前％1的所有帳戶類型都不收取佣金。"
@@ -6724,7 +6754,7 @@ msgid "New Zealand Dollar vs US Dollar"
 msgstr "紐西蘭元兌美元"
 
 msgid "New account"
-msgstr ""
+msgstr "新帳戶"
 
 msgid "New password"
 msgstr "新密碼"
@@ -6889,7 +6919,7 @@ msgid "OK"
 msgstr "確定"
 
 msgid "OSCP, CEH, Security+, CISSP, or any GIAC certification is an advantage"
-msgstr ""
+msgstr "具OSCP、CEH、Security+、CISSP 或任何 GIAC 認證者優先錄取"
 
 msgid "Occupation"
 msgstr "職業"
@@ -6952,7 +6982,7 @@ msgid "Online"
 msgstr "線上"
 
 msgid "Online Personal Wealth Awards"
-msgstr ""
+msgstr "線上個人財富獎"
 
 msgid "Online Trading platform for binary options on Forex, Indices, Commodities and Smart Indices"
 msgstr "可交易外匯、指數、商品及智慧指數的二元期權線上交易平台"
@@ -7024,7 +7054,7 @@ msgid "Open a free account"
 msgstr "開設免費帳戶"
 
 msgid "Open account"
-msgstr ""
+msgstr "開立帳戶"
 
 msgid "Open an account and start trading in minutes"
 msgstr "開立帳戶，並於數分鐘內開始交易"
@@ -7081,19 +7111,16 @@ msgid "Order execution"
 msgstr "訂單執行"
 
 msgid "Order execution policy"
-msgstr ""
+msgstr "訂單執行政策"
 
 msgid "Order execution typically comes in two varieties: market execution and instant execution. With market execution, you will place an order at the broker’s price. You agree on the price in advance. There are no requotes with market execution."
 msgstr "訂單執行通常有兩種：市場執行和即時執行。市場執行即按照經紀商的價格下單。價格是您事先同意的。市場執行是沒有重新報價的。"
 
 msgid "Orders will generally be auto-accepted if they do not take the Company over exposure limits and the client has enough remaining balance in their account. With every contract purchased, the Company has systems in place that automatically carry out a large exposure check, and, in case the new total exposure result is greater than or equal to 25% of the eligible capital, the contract cannot be sold to the client."
-msgstr ""
+msgstr "如果客戶未選取公司的接觸限值，且帳戶中有足夠餘額，通常會自動接受訂單。購買每份合約時，公司系統會自動進行大量風險接觸檢查。如果新的總風險接觸量大於或等於合格資本的25％，則無法出售合約給客戶。"
 
 msgid "Organisational skills and the ability to work proactively"
-msgstr ""
-
-msgid "Other"
-msgstr "其它"
+msgstr "組織技能和主動工作的能力"
 
 msgid "Other Financial Instruments Trading Experience"
 msgstr "其他金融工具交易經驗"
@@ -7110,11 +7137,8 @@ msgstr "其他警告和監管披露"
 msgid "Other best execution factors such as speed of execution, likelihood of execution and settlement, size, nature or any other considerations relevant to the execution of a particular order may also be applied by us in order to obtain the best possible results for you."
 msgstr "為了讓您獲取最佳結果，我們可能也會採用其它最佳執行因素，如執行速度、執行和結算可能性、大小、性質，或其它跟執行指定訂單相關的因素。"
 
-msgid "Others"
-msgstr "Others"
-
 msgid "Our Accounting &amp; Payments team manages our wide range of bank accounts and e-currency systems, as well as the huge volume of transactions that take place every day."
-msgstr ""
+msgstr "我們的帳戶處理和款項支付團隊管理廣泛的銀行帳戶和電子貨幣系統以及每天進行的大量交易。"
 
 msgid "Our Company"
 msgstr "我們公司"
@@ -7243,7 +7267,7 @@ msgid "Over/Under contracts will be refunded at the purchase price if the contra
 msgstr "大於/小於合約如果沒在 5 分鐘內結束，將退還購入價格。"
 
 msgid "Oversee incident responses for our production servers"
-msgstr ""
+msgstr "為我們的生產伺服器監督各項事件"
 
 msgid "Ownership"
 msgstr "擁有權"
@@ -7267,7 +7291,7 @@ msgid "Palladium vs US Dollar"
 msgstr "鈀金兌美元"
 
 msgid "Participate in all aspects of the product lifecycle"
-msgstr ""
+msgstr "參與產品製作的所有過程"
 
 msgid "Partner With Us"
 msgstr "成為我們的合作夥伴"
@@ -7276,13 +7300,13 @@ msgid "Partners"
 msgstr "合作夥伴"
 
 msgid "Passion for Linux and other open-source platforms"
-msgstr ""
+msgstr "對使用Linux和其它開源平台充滿熱忱"
 
 msgid "Passion for Linux, and other open-source platforms"
-msgstr ""
+msgstr "對使用Linux和其它開源平台充滿熱忱"
 
 msgid "Passion for advertising and marketing"
-msgstr ""
+msgstr "對廣告和行銷充滿熱忱"
 
 msgid "Passionate about people, culture, management, and software development? Explore what we do, what matters to us, and how we bring our ideas to life."
 msgstr "對人類、文化、管理和軟體開發充滿熱忱？請了解我們的工作、我們注重的東西以及我們如何把想法引入生活。"
@@ -7357,7 +7381,7 @@ msgid "Payments & Withdrawals"
 msgstr "付款和提款"
 
 msgid "Payments and Compliance Analyst"
-msgstr ""
+msgstr "支付和合規分析師"
 
 msgid "Payments made to the Company will only be deemed to have been received once the Company receives cleared funds; "
 msgstr "支付給公司的款項只會在公司收到資金結算後才受視為收到款; "
@@ -7384,16 +7408,16 @@ msgid "Perfect Money allows individuals to make instant payments and money trans
 msgstr "Perfect Money允許個人安全地在互聯網上即時支付和匯款。欲知詳情, 請存取 %1。"
 
 msgid "Perform audit assignments and identify control gaps and opportunities for improvement"
-msgstr ""
+msgstr "執行審計任務, 查明控制差距和改進機會"
 
 msgid "Perform data mining using SQL databases, R/S-Plus, OLAP, and other analytical tools"
-msgstr ""
+msgstr "使用 SQL 資料庫、R/S-Plus、OLAP 和其他分析工具執行資料挖掘工作"
 
 msgid "Perform market research and analysis to uncover trends, prospects, partners, and competitors"
-msgstr ""
+msgstr "進行市場調查和分析, 搜尋趨勢、前景、合作夥伴和競爭對手"
 
 msgid "Perform market research and analysis to uncover trends, prospects, partners, and competitors for our client base"
-msgstr ""
+msgstr "進行市場調查和分析, 為客戶群搜尋趨勢、前景、合作夥伴和競爭對手"
 
 msgid "Perform reconciliations of all transactions that take place through third-party payment services and banks"
 msgstr ""
@@ -7599,8 +7623,8 @@ msgstr "請注意，為進行合約結算，週末報價將忽略不計。週末
 msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr "請注意, 您目前正在使用 %1比特幣現金%2 帳戶。您只能將 %1比特幣現金%2, 而不是比特幣存入帳戶。"
 
-msgid "Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help."
-msgstr "請提供您作為每個國家的納稅居民的納稅證編號。如果您無法提供此資訊, 請與我們的客戶支援團隊聯繫以尋求説明。"
+msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
+msgstr ""
 
 msgid "Please provide us with the following information:"
 msgstr "請提供以下資訊："
@@ -7632,14 +7656,14 @@ msgstr "請選擇付款代理"
 msgid "Please select a valid time."
 msgstr "請選擇有效時間。"
 
-msgid "Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr "請選擇您身為納稅居民的所有國家。如有任何疑問, 請諮詢您的稅務顧問。"
-
 msgid "Please select at least one scope"
 msgstr "請選擇至少一個範圍"
 
 msgid "Please select the checkbox."
 msgstr "請選擇核取方塊。"
+
+msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
+msgstr ""
 
 msgid "Please select the currency of this account:"
 msgstr "請選擇此帳戶的幣種："
@@ -8040,6 +8064,9 @@ msgstr "報價貨幣"
 msgid "R. Interpretation of Terms"
 msgstr "十三、術語釋義"
 
+msgid "RTS 27"
+msgstr ""
+
 msgid "Range of markets"
 msgstr "市場範圍"
 
@@ -8081,6 +8108,9 @@ msgstr "真實帳戶"
 
 msgid "Real Advanced"
 msgstr "真實高級帳戶"
+
+msgid "Real Estate"
+msgstr ""
 
 msgid "Real Money Account Opening"
 msgstr "真實資金帳戶開立"
@@ -8454,6 +8484,9 @@ msgstr "星期六"
 msgid "Save in case of negligence, fraud, or default by the Company, the Company will not be liable in any way to any clients in the event of force majeure, or for the act of any Government or legal authority, or for the failure of or damage or destruction to its computer systems, data, or records or any part thereof, or for delays, losses, errors, or omissions resulting from the failure or mismanagement of any telecommunications, computer equipment or software by the client or any damages or losses deemed or alleged to have resulted from or been caused by this site or its content."
 msgstr "出現以下情況時，除非是由於公司疏忽，欺詐或違約而造成，公司不對任何客戶承擔任何責任：不可抗因素; 政府或司法機關行為; 全部或部分電腦系統和資料和記錄出現故障，損壞或毀壞; 由客戶造成的任何通訊系統，電腦設備及軟體的故障或管理不善導致的延遲，損失和錯漏，或因本網站及其內容產生或導致的任何損壞以及其他損失，本公司概不負責。"
 
+msgid "Savings & Inheritance"
+msgstr ""
+
 msgid "Scalable"
 msgstr "可縮放"
 
@@ -8461,6 +8494,9 @@ msgid "Scan the QR code below with your authentication app. We recommend %1 or %
 msgstr "用您的身份驗證應用程式掃描以下 QR 代碼。建議使用 %1 或 %2。請注意,  %3不受支援。"
 
 msgid "Schedule and coordinate interviews with candidates"
+msgstr ""
+
+msgid "Science & Engineering"
 msgstr ""
 
 msgid "Scope and Intent"
@@ -8766,6 +8802,9 @@ msgstr "SmartTrader"
 msgid "Smoothing out random noise"
 msgstr "消除隨機噪音"
 
+msgid "Social & Cultural"
+msgstr ""
+
 msgid "Software Tester"
 msgstr ""
 
@@ -8855,6 +8894,9 @@ msgstr "透過網路平台開始MT5交易"
 
 msgid "Start/End Time"
 msgstr "開始/結束時間"
+
+msgid "State Benefits"
+msgstr ""
 
 msgid "State/Province"
 msgstr "州/省"
@@ -8997,6 +9039,9 @@ msgstr ""
 msgid "Student"
 msgstr "Student"
 
+msgid "Students"
+msgstr ""
+
 msgid "Study financial data to forecast market movements using our charting tools."
 msgstr "使用我們的圖表工具研究財務資料，以預測市場動向。"
 
@@ -9005,6 +9050,9 @@ msgstr "風格指南"
 
 msgid "Su"
 msgstr "星期日"
+
+msgid "Subject to %1 transfer fee or %2, whichever is higher"
+msgstr ""
 
 msgid "Subject to any specific instructions which may be provided by you, when executing client orders, we will take all reasonable steps to obtain the best possible results for you. The best possible results will be determined in terms of total consideration, that is, the price of the instrument and the costs related to execution which shall include all expenses incurred by you that are directly related to the execution of the order."
 msgstr "當我們執行客戶訂單時，在遵守您所提供的任何指令之同時，我們將採取一切合理措施以替您取得最佳結果。我們將根據整體的考慮因素來決定最佳結果的可能性，例如工具價格和跟執行有關的成本，包括您的直接與訂單執行相關的所有費用。"
@@ -9111,6 +9159,12 @@ msgstr "受影響工具的交易被暫停;"
 msgid "Suspending your MT5 Real Account and refusing to execute any Orders to enter into further Transactions with you. Whilst your MT5 Real Account is suspended, you will be able to place Orders to close your Open Positions, but you will not be able to place Orders which would create Open Positions."
 msgstr "您的MT5真實帳戶被暫停，並停止執行任何訂單，不可繼續進行交易。雖然您的MT5真實帳戶被暫停，您將能夠對持倉頭寸進行平倉，但您不能開盤創建未平倉頭寸。"
 
+msgid "Swaps Long (per annum)"
+msgstr ""
+
+msgid "Swaps short (per annum)"
+msgstr ""
+
 msgid "Swiss Franc vs Japanese Yen"
 msgstr "瑞士法郎兌日圓"
 
@@ -9121,6 +9175,18 @@ msgid "Synthetic indices that mimic market volatility."
 msgstr "類比市場波動性的綜合指數。"
 
 msgid "System Administrator"
+msgstr ""
+
+msgid "Table 1 - Type of execution venue"
+msgstr ""
+
+msgid "Table 3 - Intra-Day Price information"
+msgstr ""
+
+msgid "Table 4 - Daily Price information"
+msgstr ""
+
+msgid "Table 6 - Likelihood of execution information"
 msgstr ""
 
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
@@ -9699,8 +9765,8 @@ msgstr ""
 msgid "The Republic of Malta is an island country in Southern Europe — located approximately 80km south of Italy. Its rich, colourful history can be traced back thousands of years to the Neolithic period."
 msgstr "馬爾他共和國是南歐的島國, 距意大利南部約80公里。它豐富多彩的歷史可以追溯到千百年前的新石器時代。"
 
-msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It gives you mid-range leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
-msgstr "標準帳戶適合廣泛的新手和經驗豐富的交易者。它為您提供中檔槓桿和可變價差，為您在市場上進行各式頭寸交易時提供極大的靈活性。"
+msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
+msgstr ""
 
 msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
 msgstr "標準帳戶適用於各種新手或有經驗的交易者。可使用歐元和英鎊這兩種貨幣, 並且提供微小和可變的差價, 不收佣金費，也沒有最低存款限制。"
@@ -11832,8 +11898,8 @@ msgstr "如果退市現價高於或等於高障礙, 可獲得最大賠付。"
 msgid "Win maximum payout if the exit spot is lower than or equal to the lower barrier."
 msgstr "如果退市現價低於或等於低障礙, 可獲得最大賠付。"
 
-msgid "Win payout if exit spot is also equal to the entry spot, in addition to being higher or lower."
-msgstr "除了高於或低於, 如果退市現價也等於入市現價, 也可贏取賠付。"
+msgid "Win payout if exit spot is also equal to entry spot."
+msgstr ""
 
 msgid "Win the multiplier times the close minus low."
 msgstr "贏取倍數值乘以收盤值減去最低值。"
@@ -12293,9 +12359,6 @@ msgstr "您不可撤回地允許公司以非獨家方式使用您的貢獻;和"
 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr "簽訂本協定時，您向我們提出以下陳述和保證，並同意每次您開盤或收盤交易時此陳述和保證將被視為重新提出:"
-
-msgid "You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate."
-msgstr "您可能被一個以上管轄區視為納稅居民。請諮詢您的稅務顧問, 並驗證您的稅務資訊是正確的。"
 
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "通過%1 API對指定內容提出請求可保留此內容緩存為時24小時。"
