@@ -10,6 +10,7 @@ const Geocoder = (() => {
         el_success,
         loader,
         has_currency,
+        is_state_select_el,
         is_virtual;
     let validated = false;
 
@@ -27,7 +28,9 @@ const Geocoder = (() => {
         const postcode  = '#address_postcode';
         const residence = Client.get('residence').toUpperCase();
 
-        const getAddress = () => `${getValue(addr_1)}, ${getValue(addr_2)}, ${getValue(city)}, ${getValue(postcode)} ${getStateText(state)}, ${residence} `;
+        is_state_select_el = (form.querySelector(state).tagName === 'SELECT');
+
+        const getAddress = () => `${getValue(addr_1)}, ${getValue(addr_2)}, ${getValue(city)}, ${getValue(postcode)} ${is_state_select_el ? getStateText(state) : getValue(state)}, ${residence} `;
 
         el_btn_validate = form.querySelector('#geocode_validate');
         el_error        = form.querySelector('#geocode_error');
@@ -35,7 +38,7 @@ const Geocoder = (() => {
         loader          = form.querySelector('.barspinner');
 
         if (el_btn_validate) {
-            applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${city}`, (element) => {
+            applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${!is_state_select_el ? state : undefined} ,${city}`, (element) => {
                 // List of fields that will trigger event onChange but will allow empty values as they are non-required fields
                 const non_required_fields = ['addr_2', 'postcode'];
 
@@ -115,7 +118,7 @@ const Geocoder = (() => {
                     // Restrict Geolocation to client's country of residence and state
                     componentRestrictions: {
                         country           : Client.get('residence').toUpperCase(),
-                        administrativeArea: getStateText('#address_state'),
+                        administrativeArea: is_state_select_el ? getStateText('#address_state') : getValue('#address_state'),
                     },
                 }, (result, status) => {
                     // Geocoding status reference:
