@@ -36,8 +36,7 @@ const DigitDisplay = (() => {
         } else {
             request.end = contract.date_expiry;
         }
-        DigitTicker.init('digit-ticker-container', contract);
-
+        DigitTicker.init('digit-ticker-container', contract.contract_type, contract.barrier, contract.tick_count, contract.status);
         BinarySocket.send(request, { callback: update });
     };
 
@@ -50,8 +49,9 @@ const DigitDisplay = (() => {
 
         DigitTicker.update(
             tick_count,
-            spot.slice(-1),
-            contract
+            {
+                quote: spot.slice(-1),
+            }
         );
     };
 

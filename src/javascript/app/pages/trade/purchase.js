@@ -3,6 +3,7 @@ const getLookBackFormula       = require('./lookback').getFormula;
 const isLookback               = require('./lookback').isLookback;
 const isCallputspread          = require('./callputspread').isCallputspread;
 const Symbols                  = require('./symbols');
+const DigitTicker              = require('./digit_ticker');
 const Tick                     = require('./tick');
 const TickDisplay              = require('./tick_trade');
 const updateValues             = require('./update_values');
@@ -32,6 +33,11 @@ const Purchase = (() => {
         cost_value,
         profit_value,
         status;
+
+    const replaceElement = (container, child) => {
+        container.querySelectorAll('.row').forEach(item => item.classList.add('invisible'));
+        container.append(child);
+    };
 
     const display = (details) => {
         purchase_data = details;
@@ -142,6 +148,7 @@ const Purchase = (() => {
                 tick_config = {
                     is_tick_high        : /^tickhigh$/i.test(contract_type),
                     is_tick_low         : /^ticklow$/i.test(contract_type),
+                    is_digit            : /^digit/i.test(contract_type),
                     selected_tick_number: arr_shortcode[arr_shortcode.length - 1],
                     winning_tick_quote  : '',
                     winning_tick_number : '',
@@ -157,6 +164,10 @@ const Purchase = (() => {
                 button.hide();
                 $('#confirmation_message_container .open_contract_details').setVisibility(0);
             }
+        }
+
+        if (tick_config.is_digit) {
+            DigitTicker.init('digit-ticker-table', passthrough.contract_type, passthrough.barrier, passthrough.duration, status);
         }
 
         if (show_chart && has_chart) {
@@ -233,10 +244,14 @@ const Purchase = (() => {
         const spots = CommonFunctions.getElementById('contract_purchase_spots');
         if (status && status !== 'open') {
             if (!new RegExp(status).test(spots.classList)) {
-                spots.className = status;
+                if (!tick_config.is_digit) {
+                    spots.className = status;
+                }
                 if (status === 'won') {
                     updateValues.updatePurchaseStatus(payout_value, cost_value, profit_value, localize('This contract won'));
+                    if (tick_config.is_digit) DigitTicker.success();
                 } else if (status === 'lost') {
+                    if (tick_config.is_digit) DigitTicker.fail();
                     updateValues.updatePurchaseStatus(0, -cost_value, profit_value, localize('This contract lost'));
                 }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
@@ -288,10 +303,13 @@ const Purchase = (() => {
                     }
                 }
 
-                const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row' : ''}` });
+                const fragment = createElement('div', { class: `row${is_winning_tick ? ' winning-tick-row' : ''} ${tick_config.is_digit ? ' digit-trade' : ''}` });
 
                 const el1 = createElement('div', { class: 'col', text: `${localize('Tick')} ${current_tick_count}` });
-                fragment.appendChild(el1);
+
+                if (!tick_config.is_digit) {
+                    fragment.appendChild(el1);
+                }
 
                 const el2     = createElement('div', { class: 'col' });
                 const date    = new Date(tick_d.epoch * 1000);
@@ -299,14 +317,23 @@ const Purchase = (() => {
                 const minutes = padLeft(date.getUTCMinutes(), 2, '0');
                 const seconds = padLeft(date.getUTCSeconds(), 2, '0');
                 CommonFunctions.elementTextContent(el2, [hours, minutes, seconds].join(':'));
-                fragment.appendChild(el2);
+                if (!tick_config.is_digit) {
+                    fragment.appendChild(el2);
+                }
 
                 const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
                 const el3  = createElement('div', { class: 'col' });
-                CommonFunctions.elementInnerHtml(el3, tick);
-                fragment.appendChild(el3);
 
-                spots.appendChild(fragment);
+                CommonFunctions.elementInnerHtml(el3, tick);
+                if (tick_config.is_digit) {
+                    replaceElement(fragment, el3);
+                    replaceElement(spots, fragment);
+                    DigitTicker.update(current_tick_count, tick_d);
+                } else {
+                    fragment.appendChild(el3);
+                    spots.appendChild(fragment);
+                }
+
                 spots.scrollTop = spots.scrollHeight;
 
                 duration--;
