@@ -135,14 +135,27 @@ const Geocoder = (() => {
         let result;
         if (geoloc_address.length && getValue('#address_state')) {
             const item_idx = geoloc_address.length - 1;
-            const address_string = (geoloc_address[item_idx].formatted_address).toLowerCase();
-            result = (address_string.indexOf(user_address.toLowerCase()) !== -1);
+            // const address_string = (geoloc_address[item_idx].formatted_address).toLowerCase();
+            const input_address = user_address.toLowerCase().replace(/,/g, '');
+            // result = (address_string.indexOf(user_address.toLowerCase()) !== -1);
+            const arr_address_components = geoloc_address[item_idx].address_components;
+            const arr_long_names = [];
+            const arr_short_names = [];
+
+            arr_address_components.filter(address => arr_long_names.push(address.long_name));
+            arr_address_components.filter(address => arr_short_names.push(address.short_name));
+
+            const short_name_address = arr_short_names.join(' ').toLowerCase();
+            const long_name_address  = arr_long_names.join(' ').toLowerCase();
+
+            result = (long_name_address.indexOf(input_address) !== -1) ||
+                (short_name_address.indexOf(input_address) !== -1);
         }
         return result;
     };
 
     const handleResponse = (data) => {
-        const is_address_found = isAddressFound(getValue('#address_city'), data.result);
+        const is_address_found = isAddressFound(getValue('#address_line_1'), data.result);
         if (/ZERO_RESULTS|INVALID_REQUEST|UNKNOWN_ERROR/.test(data.status) || !is_address_found) {
             el_error.setVisibility(1);
             el_success.setVisibility(0);
