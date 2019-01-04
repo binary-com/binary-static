@@ -1,11 +1,11 @@
 import {
     observer,
     PropTypes as MobxPropTypes } from 'mobx-react';
-import moment                    from 'moment';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
 import { localize }              from '_common/localize';
 import { isSessionAvailable }    from 'Stores/Modules/Trading/Helpers/start_date';
+import { toMoment }              from 'Utils/Date';
 import InputField                from './input_field.jsx';
 
 class TimePickerDropdown extends React.Component {
@@ -63,7 +63,7 @@ class TimePickerDropdown extends React.Component {
 
     render() {
         const { preClass, value, toggle, start_date, sessions } = this.props;
-        const start_moment       = moment(start_date * 1000 || undefined).utc();
+        const start_moment       = toMoment(start_date);
         const start_moment_clone = start_moment.clone().minute(0).second(0);
         const [ hour, minute ]   = value.split(':');
         return (
@@ -204,7 +204,7 @@ class TimePicker extends React.Component {
                         : (
                             <React.Fragment>
                                 <InputField
-                                    error_messages={validation_errors.start_time}
+                                    error_messages={validation_errors}
                                     type='text'
                                     is_read_only={true}
                                     id={`${prefix_class}-input`}

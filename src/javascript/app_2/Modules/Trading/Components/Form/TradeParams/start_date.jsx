@@ -59,7 +59,7 @@ const StartDate = ({
                     sessions={sessions}
                     is_clearable={false}
                     is_nativepicker={is_nativepicker}
-                    validation_errors={validation_errors}
+                    validation_errors={validation_errors.start_time}
                 />
             }
         </Fieldset>
