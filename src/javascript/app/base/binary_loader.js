@@ -73,7 +73,7 @@ const BinaryLoader = (() => {
 
         ContentVisibility.init();
 
-        BinarySocket.wait('website_status').then(() => {
+        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
             ScrollToAnchor.init();
         });
     };
