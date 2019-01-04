@@ -1,26 +1,26 @@
-const BinarySocket      = require('../../../base/socket');
-const Client            = require('../../../base/client');
-const localize          = require('../../../../_common/localize').localize;
-const createElement     = require('../../../../_common/utility').createElement;
-const getElementById    = require('../../../../_common/common_functions').getElementById;
-const Url               = require('../../../../_common/url');
-const showLoadingImage  = require('../../../../_common/utility').showLoadingImage;
+const BinarySocket     = require('../../../base/socket');
+const Client           = require('../../../base/client');
+const getElementById   = require('../../../../_common/common_functions').getElementById;
+const localize         = require('../../../../_common/localize').localize;
+const Url              = require('../../../../_common/url');
+const createElement    = require('../../../../_common/utility').createElement;
+const showLoadingImage = require('../../../../_common/utility').showLoadingImage;
 
 const WelcomePage = (() => {
     const onLoad = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
-            const welcome_msg = getElementById('welcome_container');
+            const el_welcome_container = getElementById('welcome_container');
 
             if (Client.hasAccountType('real')) {
                 window.location.href = Client.defaultRedirectUrl();
-                showLoadingImage(welcome_msg, 'dark');
+                showLoadingImage(el_welcome_container, 'dark');
             }
 
             const upgrade_info = Client.getUpgradeInfo();
-            if (welcome_msg) {
-                const upgrade_title_el = getElementById('upgrade_title');
-                upgrade_title_el.html(upgrade_info.type === 'financial' ? localize('Financial Account') : localize('Real Account'));
-                welcome_msg.setVisibility(1);
+            if (el_welcome_container) {
+                const el_upgrade_title = getElementById('upgrade_title');
+                el_upgrade_title.html(upgrade_info.type === 'financial' ? localize('Financial Account') : localize('Real Account'));
+                el_welcome_container.setVisibility(1);
             }
 
             if (upgrade_info.can_upgrade) {
