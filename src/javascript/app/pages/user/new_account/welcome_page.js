@@ -9,19 +9,17 @@ const showLoadingImage = require('../../../../_common/utility').showLoadingImage
 const WelcomePage = (() => {
     const onLoad = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
+            
             const el_welcome_container = getElementById('welcome_container');
-
             if (Client.hasAccountType('real')) {
                 window.location.href = Client.defaultRedirectUrl();
                 showLoadingImage(el_welcome_container, 'dark');
             }
 
             const upgrade_info = Client.getUpgradeInfo();
-            if (el_welcome_container) {
-                const el_upgrade_title = getElementById('upgrade_title');
-                el_upgrade_title.html(upgrade_info.type === 'financial' ? localize('Financial Account') : localize('Real Account'));
-                el_welcome_container.setVisibility(1);
-            }
+            const el_upgrade_title = getElementById('upgrade_title');
+            el_upgrade_title.html(upgrade_info.type === 'financial' ? localize('Financial Account') : localize('Real Account'));
+            el_welcome_container.setVisibility(1);
 
             if (upgrade_info.can_upgrade) {
                 const upgrade_btn = getElementById('upgrade_btn');
