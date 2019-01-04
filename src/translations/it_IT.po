@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-31 02:38\n"
+"PO-Revision-Date: 2019-01-03 05:50\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Italian\n"
 "MIME-Version: 1.0\n"
@@ -231,8 +231,8 @@ msgstr "%1 non è affiliato con alcun agente di pagamento elencato qui sopra. Og
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 non è disponibile in Costa Rica e non è regolamentato o supervisionato da alcun ente regolatore nel sistema finanziario della Costa Rica."
 
-msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 è di proprietà e gestita dal gruppo di società Binary Group Ltd. Per ulteriori informazioni, <a href='%2'>visita la pagina con la nostra storia</a>."
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
+msgstr ""
 
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface."
 msgstr "%1 è alla ricerca di un revisore qualificato che dimostri sensibilità per la lingua e attenzione per i dettagli. La figura deve essere in grado di comunicare con il nostro staff attraverso un'interfaccia per traduttori basata sul web."
@@ -402,6 +402,9 @@ msgstr "%1Contattaci%2 per organizzare una data e un orario per una video chiama
 msgid "%1Download MAM for Windows%2 after you’ve set up your master account. Your login credentials will be provided"
 msgstr "%1Scarica l'app MAM per Windows%2 dopo aver creato il tuo conto master. Riceverai le tue credenziali di accesso"
 
+msgid "%1Founded%2 October 1999"
+msgstr ""
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1 La Verifica dell'identità o la Verifica della residenza%2 non hanno soddisfatto i nostri requisiti. Controlla la tua e-mail per ulteriori istruzioni."
 
@@ -512,9 +515,6 @@ msgstr "<< Torna su descrizioni dei lavori"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Ritorna alla pagina di trading</a>"
-
-msgid "<a href='%1'>Founded</a> October 1999"
-msgstr "<a href='%1'>Fondata</a> nell'ottobre del 1999"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Test di adeguatezza: ATTENZIONE:</strong> Per la fornitura dei nostri servizi, siamo tenuti ad ottenere tue informazioni al fine di valutare se un dato prodotto o servizio sia adatto alla tua situazione (ossia se possiedi l'esperienza e la conoscenza idonea per la comprensione dei rischi connessi)."
@@ -2213,6 +2213,9 @@ msgstr "Password della cassa"
 
 msgid "Cashier password"
 msgstr "Password della cassa"
+
+msgid "Cashier session expired"
+msgstr ""
 
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Sono imposti alcuni livelli minimi per l'inserimento dei prezzi delle barriere/limiti dei contratti. Generalmente, la barriera/limite non può essere troppo vicina o troppo lontana dall'attuale livello del mercato sottostante."
@@ -5915,8 +5918,8 @@ msgstr ""
 msgid "Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees"
 msgstr ""
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
-msgstr "Autorizzata e regolamentata a Malta, nel Regno Unito, sull'Isola di Man e in Irlanda"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. %1Learn more%2"
+msgstr ""
 
 msgid "Licensed, trusted, and secure"
 msgstr "Autorizzata, affidabile e sicura"
@@ -7244,8 +7247,8 @@ msgstr "Più di $1.000.000"
 msgid "Over $500,000"
 msgstr "Più di $500.000"
 
-msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
-msgstr "Oltre %1 <a href='%2'>membri dello staff</a> e collaboratori nel mondo"
+msgid "Over %1 %2staff%3 and contractors worldwide"
+msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Oltre 1 milione di account registrati nel mondo"
@@ -10484,8 +10487,8 @@ msgstr "Per candidarti, invia il tuo CV e una lettera di presentazione a %1"
 msgid "To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:"
 msgstr "Per poter effettuare trading con gli strumenti OTC disponibili sulla piattaforma MT5, è prima necessario:"
 
-msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
-msgstr "Per modificare il tuo nome, data di nascita, paese di residenza o e-mail, contatta l'<a href=\"%1\">Assistenza Clienti</a>."
+msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
+msgstr ""
 
 msgid "To create a MAM real account, please:"
 msgstr "Per creare un conto reale MAM, ti preghiamo di:"
@@ -12662,6 +12665,9 @@ msgstr "Come da tua richiesta, la cassa è bloccata. Per sbloccarla, inserisci l
 
 msgid "Your cashier is locked."
 msgstr "La tua cassa é bloccata."
+
+msgid "Your cashier session has expired. Please try again."
+msgstr ""
 
 msgid "Your changes have been updated successfully."
 msgstr "Le tue modifiche sono state aggiornate con successo."

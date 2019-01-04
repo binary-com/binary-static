@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-31 02:39\n"
+"PO-Revision-Date: 2019-01-03 05:51\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Simplified\n"
 "MIME-Version: 1.0\n"
@@ -231,8 +231,8 @@ msgstr "%1 与上述所有支付代理不存在附属关系。各支付代理均
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1在哥斯达黎加还不可使用，且不受哥斯达黎加金融体系任何监管机构的监管或监督。"
 
-msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 由 Binary 集团有限公司拥有和经营。欲了解更多信息，请 <a href='%2'>参阅我们的历史页面</a>。"
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
+msgstr "%1 由 Binary 集团有限公司拥有和经营。欲了解更多信息，请%2访问我们的历史页面%3。"
 
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface."
 msgstr "%1正在寻找合格、具有语言天赋和注重细节的校对人员 。您必须能够使用基于网络的翻译界面与我们的员工互相交流。"
@@ -402,6 +402,9 @@ msgstr "%1联系我们%2 安排视频通话日期和时间。"
 msgid "%1Download MAM for Windows%2 after you’ve set up your master account. Your login credentials will be provided"
 msgstr "设置主账户后, %1下载Windows 版MAM%2 。将提供您的登录凭据"
 
+msgid "%1Founded%2 October 1999"
+msgstr "%1成立于%2 1999年十月"
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1您的身份证明或地址证明%2 不符合我们的要求。请检查您的电子邮件收取进一步指示。"
 
@@ -512,9 +515,6 @@ msgstr "<< 返回工作说明"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">返回交易页面</a>"
-
-msgid "<a href='%1'>Founded</a> October 1999"
-msgstr "<a href='%1'>成立于</a>1999年10月"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>合适性测试:警告:</strong>为了给您提供服务，我们必须向您获取信息，以便确定产品或服务是否适合您（也就是说，看您是否拥有足够经验和知识，并了解相关的风险）。"
@@ -2213,6 +2213,9 @@ msgstr "收银台密码"
 
 msgid "Cashier password"
 msgstr "收银台密码"
+
+msgid "Cashier session expired"
+msgstr "收银台时段已过期"
 
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "合约障碍/行权价格的可接受水平存在特定限制。一般来说，障碍或行权价格不能离标的资产当前价格水平太近或太远。"
@@ -5183,7 +5186,7 @@ msgid "If you're shortlisted, we'll invite you to a hackathon or send you a tale
 msgstr "如果您进入初选名单，我们会邀请您参与黑客松测试或者让您参与人才测试。"
 
 msgid "If you're shortlisted, we'll send you a talent test to be completed."
-msgstr ""
+msgstr "如果您通过初选, 我们将给您发送人才招聘测试。"
 
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
 msgstr "如果您的%1账户已关闭, 您的 MT5 真实账户也将自动关闭。"
@@ -5914,8 +5917,8 @@ msgstr "与外部供应商联络, 确保以最具成本效益的价格进行采�
 msgid "Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees"
 msgstr "代表公司和雇员定期与移民局和税务局等政府机构联络"
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
-msgstr "由马耳他、英国、马恩岛、和爱尔兰相关机构授予牌照和监管"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. %1Learn more%2"
+msgstr "由马耳他、英国、马恩岛、和爱尔兰相关机构授予牌照和监管。%1了解详细信息%2"
 
 msgid "Licensed, trusted, and secure"
 msgstr "有牌照、备受信赖、及安全"
@@ -7243,8 +7246,8 @@ msgstr "大于$1,000,000"
 msgid "Over $500,000"
 msgstr "$500,000以上"
 
-msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
-msgstr "世界各地拥有超过%1名<a href='%2'>职员</a>和合同工"
+msgid "Over %1 %2staff%3 and contractors worldwide"
+msgstr "世界各地拥有超过%1名%2职员%3和合同工"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "在全球拥有超过一百万个注册账户"
@@ -7421,19 +7424,19 @@ msgid "Perform market research and analysis to uncover trends, prospects, partne
 msgstr "进行市场调查和分析，为客户群搜寻趋势、前景、合作伙伴和竞争对手"
 
 msgid "Perform reconciliations of all transactions that take place through third-party payment services and banks"
-msgstr ""
+msgstr "对通过第三方支付服务代理和银行处理的所有交易进行协调"
 
 msgid "Perform regular pentesting of our web applications"
-msgstr ""
+msgstr "对我们的网络应用程序进行定期测试"
 
 msgid "Perform tests to ensure database performance and security, as well as data integrity"
-msgstr ""
+msgstr "执行测试以确保数据库性能和安全性以及数据完整性"
 
 msgid "Performance Tuning,"
-msgstr ""
+msgstr "性能优化,"
 
 msgid "Perl Developer"
-msgstr ""
+msgstr "Perl 开发员"
 
 msgid "Perl modules"
 msgstr "Perl 模块"
@@ -7472,31 +7475,31 @@ msgid "Place of birth"
 msgstr "出生地点"
 
 msgid "Plan and carry out the upgrade and migration of databases as needed"
-msgstr ""
+msgstr "根据需要规划和执行数据库的升级和迁移"
 
 msgid "Plan and direct internal programmes and policies to empower all departments with the knowledge, awareness, and practices of regulatory compliance"
-msgstr ""
+msgstr "规划和指导内部方案和政策, 使所有部门都能掌握遵守法规的知识、认识和做法"
 
 msgid "Plan and execute data extraction for efficient loading in data warehouse, and ensure extracted data is useful and properly formatted"
-msgstr ""
+msgstr "规划和执行数据提取, 以便在数据仓库中高效加载, 并确保提取的数据有用且格式正确"
 
 msgid "Plan and implement IT solutions to achieve desired results"
-msgstr ""
+msgstr "规划和实施信息技术解决方案, 以实现预期成果"
 
 msgid "Plan and implement methods of best practices in IT security"
-msgstr ""
+msgstr "规划和实施信息技术安全方面的最佳实践方法"
 
 msgid "Plan and integrate various types of testing into our existing workflow"
-msgstr ""
+msgstr "规划各种测试类型并整合至现有工作流程中"
 
 msgid "Plan to start trading CFDs? Learn when to buy and sell, how to calculate your profits and losses, and how to close a position."
 msgstr "计划开始差价合约交易？了解何时买入和卖出、如何计算利润和亏损，以及如何平仓。"
 
 msgid "Plan, coordinate, and execute a wide range of promotional campaigns"
-msgstr ""
+msgstr "计划、协调和执行广泛的促销活动"
 
 msgid "Plan, install, and configure world-class database systems that meet business objectives and the needs of end users"
-msgstr ""
+msgstr "规划、安装和配置世界一流的数据库系统, 以满足业务目标和最终用户的需求"
 
 msgid "Plant and Machine Operators and Assemblers"
 msgstr "工厂和机器操作员及装配员"
@@ -7625,7 +7628,7 @@ msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. Y
 msgstr "请注意, 您目前正在使用 %1比特币现金%2账户。您只能将 %1比特币现金%2, 而不是比特币存入账户。"
 
 msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
-msgstr ""
+msgstr "请提供您作为某个国家的纳税居民的纳税证编号。如果您无法提供此信息, 请与我们的客户支持团队联系。"
 
 msgid "Please provide us with the following information:"
 msgstr "请提供以下信息："
@@ -7664,7 +7667,7 @@ msgid "Please select the checkbox."
 msgstr "请选择复选框。"
 
 msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr ""
+msgstr "请选择您身为纳税居民的国家。如有任何疑问, 请咨询您的税务顾问。"
 
 msgid "Please select the currency of this account:"
 msgstr "请选择此账户的币种："
@@ -7718,7 +7721,7 @@ msgid "Postal code/ZIP"
 msgstr "邮编"
 
 msgid "PostgreSQL Database Administrator (DBA)"
-msgstr ""
+msgstr "PostgreSQL数据库管理员 (DBA)"
 
 msgid "Potential Conflicts of Interest"
 msgstr "潜在的利益冲突"
@@ -7815,7 +7818,7 @@ msgid "Predict the last decimal digit of the spot price with Digits. There are t
 msgstr "预测现货价格最后小数点数值的数字。共有三种数字交易："
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
-msgstr ""
+msgstr "英语为母语，有较强的口语和写作水平者优先录取"
 
 msgid "Preferences:"
 msgstr "首选项:"
@@ -7824,16 +7827,16 @@ msgid "Premier binary options trading platform"
 msgstr "首选二元期权交易平台"
 
 msgid "Prepare and present proposals for the provisioning of IT-related systems and services"
-msgstr ""
+msgstr "为信息技术相关系统和服务准备和提出建议"
 
 msgid "Prepare daily, weekly, and monthly financial reports"
-msgstr ""
+msgstr "准备每日、每周和每月财务报告"
 
 msgid "Prepare reports expressing audit opinions on the adequacy and effectiveness of the internal controls and operational efficiency"
-msgstr ""
+msgstr "编写报告, 就内部控制及业务效率的充分性和有效性发表审查意见"
 
 msgid "Prepare reports on investigations and resolved issues"
-msgstr ""
+msgstr "准备关于调查和已解决问题的报告"
 
 msgid "Presents the maximum aggregate payouts on outstanding contracts in your portfolio. If the maximum is attained, you may not purchase additional contracts without first closing out existing positions."
 msgstr "显示您证券组合中未平仓合约的最大总赔付额。如果达到该最大值，那么您在购买更多合约之前需要对现有头寸进行平仓。"
@@ -7842,10 +7845,10 @@ msgid "Previous"
 msgstr "之前"
 
 msgid "Previous experience with financial/binary options website services is preferred"
-msgstr ""
+msgstr "具金融公司/二元期权网站服务经验者优先录取"
 
 msgid "Previous work experience in a customer service and/or marketing role"
-msgstr ""
+msgstr "客户服务和/或市场营销岗位的工作经验"
 
 msgid "Price Per Point"
 msgstr "每点价格"
@@ -7860,7 +7863,7 @@ msgid "Prior to placing an Order which results in opening a Transaction or incre
 msgstr "下单开盘交易或为当前持仓头寸加码前，您确认确保您的账户可用保证金足以支付开盘交易所须的保证金（\"要求保证金\"），并持续满足保证金要求是您的责任。"
 
 msgid "Proactive approach in problem-solving and solution delivery"
-msgstr ""
+msgstr "在解决问题和解决方案交付方面采取积极主动的方法"
 
 msgid "Probability of returns"
 msgstr "回报率"
@@ -7869,16 +7872,16 @@ msgid "Proceed"
 msgstr "执行"
 
 msgid "Process applications and customer documentation according to relevant policies and regulations"
-msgstr ""
+msgstr "根据相关政策和法规处理申请和客户文件"
 
 msgid "Process client payments, as well as handle and resolve client payment queries"
-msgstr ""
+msgstr "处理客户付款，以及处理和解决客户付款查询"
 
 msgid "Process transactions for clients who make deposits and withdrawals using a wide range of third-party payment services, including bank wire, credit card, and e-currency"
-msgstr ""
+msgstr "使用各种第三方支付服务（包括银行电汇，信用卡和电子货币）处理客户的存取款交易"
 
 msgid "Process website content translations regularly and efficiently"
-msgstr ""
+msgstr "定期有效处理网站内容翻译"
 
 msgid "Process website content translations when a full time translator is unavailable"
 msgstr "在全职译员无法工作时翻译网站内容"
@@ -7890,7 +7893,7 @@ msgid "Processing Time"
 msgstr "处理时间"
 
 msgid "Produce content for websites, blogs, social media, and marketing materials"
-msgstr ""
+msgstr "为网站、博客、社交媒体渠道和营销材料创建内容"
 
 msgid "Professional Client"
 msgstr "专业客户"
@@ -7905,25 +7908,25 @@ msgid "Professionals"
 msgstr "专业人士"
 
 msgid "Proficiency in Excel and big data analysis"
-msgstr ""
+msgstr "熟練掌握Excel和大數據分析"
 
 msgid "Proficiency in Microsoft Excel is required"
-msgstr ""
+msgstr "必须熟练掌握Microsoft Excel"
 
 msgid "Proficiency in Photoshop, Illustrator, InDesign, Sketch, and other design and wireframing software"
-msgstr ""
+msgstr "熟練掌握Photoshop、Illustrator、InDesign、Sketch等設計和線框圖軟件"
 
 msgid "Proficiency in Photoshop, Illustrator, Sketch, and other design and wireframing software"
-msgstr ""
+msgstr "熟練掌握Photoshop、Illustrator、Sketch等設計和線框圖軟件"
 
 msgid "Proficiency in a second language (both oral and written) is preferred"
-msgstr ""
+msgstr "熟练掌握第二语言 (口头和书面) 者优先聘用"
 
 msgid "Proficiency in designing intuitive and cohesive screens, pages, and visual elements that work as intended"
-msgstr ""
+msgstr "熟练设计直观和含凝聚力、按预期方式运作的屏幕、页面和视觉元素"
 
 msgid "Proficiency with one or more scripting languages, such as Python, PHP or C/C++. Perl is preferred"
-msgstr ""
+msgstr "精通一或多种脚本语言如Python、PHP或C/C++。熟悉Perl者优先录取"
 
 msgid "Proficiency with popular office applications such as Microsoft Excel, accounting software, and databases"
 msgstr ""
@@ -10485,8 +10488,8 @@ msgstr "如有意申请，请将您的简历和求职信发送到%1"
 msgid "To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:"
 msgstr "想在MT5交易平台进行可用的场外工具交易，首先您须："
 
-msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
-msgstr "如需更改姓名、生日、居住国或电子邮件，请与<a href=\"%1\">客服人员</a>联系。"
+msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
+msgstr ""
 
 msgid "To create a MAM real account, please:"
 msgstr "想要开立 MMM 真实账户, 请:"
@@ -12663,6 +12666,9 @@ msgstr "根据您的请求，您的收银台已被锁定 - 如需解除锁定，
 
 msgid "Your cashier is locked."
 msgstr "您的收银台已锁定。"
+
+msgid "Your cashier session has expired. Please try again."
+msgstr ""
 
 msgid "Your changes have been updated successfully."
 msgstr "您的更改已成功更新。"

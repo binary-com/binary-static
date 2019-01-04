@@ -69,8 +69,8 @@ describe('daysFromTodayTo', () => {
 });
 
 describe('convertDuration', () => {
-    const start_time = moment() / 1000;
-    const end_time = moment().add(3, 'minutes') / 1000;
+    const start_time = moment().unix();
+    const end_time = moment.unix(start_time).add(3, 'minutes').unix();
 
     describe('getDiffDuration', () => {
         it('return correct value when argument passed', () => {
