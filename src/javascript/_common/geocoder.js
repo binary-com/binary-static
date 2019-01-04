@@ -131,31 +131,34 @@ const Geocoder = (() => {
         })
     );
 
-    const isAddressFound = (user_address, geoloc_address) => {
+    const isAddressFound = (user_address, user_city, geoloc_address) => {
         let result;
         if (geoloc_address.length && getValue('#address_state')) {
             const item_idx = geoloc_address.length - 1;
-            // const address_string = (geoloc_address[item_idx].formatted_address).toLowerCase();
-            const input_address = user_address.toLowerCase().replace(/,/g, '');
-            // result = (address_string.indexOf(user_address.toLowerCase()) !== -1);
+
+            const input_city = user_city.toLowerCase();
+            const arr_input_address = user_address.toLowerCase().split(', ');
+
             const arr_address_components = geoloc_address[item_idx].address_components;
-            const arr_long_names = [];
-            const arr_short_names = [];
+            const arr_address_list = [];
 
-            arr_address_components.filter(address => arr_long_names.push(address.long_name));
-            arr_address_components.filter(address => arr_short_names.push(address.short_name));
+            // Create address dictionary string based on returned address components by Geolocation API
+            arr_address_components.filter(address => arr_address_list.push(address.long_name));
+            arr_address_components.filter(address => arr_address_list.push(address.short_name));
 
-            const short_name_address = arr_short_names.join(' ').toLowerCase();
-            const long_name_address  = arr_long_names.join(' ').toLowerCase();
+            const address_list_dictionary = arr_address_list.join(' ').toLowerCase();
 
-            result = (long_name_address.indexOf(input_address) !== -1) ||
-                (short_name_address.indexOf(input_address) !== -1);
+            // Check if city exists, if true, check if first line of address exists
+            if (address_list_dictionary.indexOf(input_city) !== -1) {
+                result = arr_input_address.some(address => address_list_dictionary.includes(address));
+            }
+
         }
         return result;
     };
 
     const handleResponse = (data) => {
-        const is_address_found = isAddressFound(getValue('#address_line_1'), data.result);
+        const is_address_found = isAddressFound(getValue('#address_line_1'), getValue('#address_city'), data.result);
         if (/ZERO_RESULTS|INVALID_REQUEST|UNKNOWN_ERROR/.test(data.status) || !is_address_found) {
             el_error.setVisibility(1);
             el_success.setVisibility(0);
