@@ -9,7 +9,6 @@ const showLoadingImage = require('../../../../_common/utility').showLoadingImage
 const WelcomePage = (() => {
     const onLoad = () => {
         BinarySocket.wait('authorize', 'landing_company', 'get_settings').then(() => {
-            
             const el_welcome_container = getElementById('welcome_container');
             if (Client.hasAccountType('real')) {
                 window.location.href = Client.defaultRedirectUrl();
