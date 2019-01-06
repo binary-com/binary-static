@@ -24,33 +24,44 @@ const DigitDisplay = (() => {
                     .append($('<strong />', { class: 'gr-3', text: localize('Tick') }))
                     .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
                     .append($('<strong />', { class: 'gr-6', text: localize('Spot Time (GMT)') }))))
-            .append($('<div />', { class: 'digit-ticker invisible', id: 'digit-ticker-container' }));
+            .append($('<div />', { class: 'digit-ticker invisible', id: 'digit_ticker_container' }));
 
-        const request     = {
+        DigitTicker.init(
+            'digit_ticker_container',
+            contract.contract_type,
+            contract.barrier,
+            contract.tick_count,
+            contract.status
+        );
+
+        const request = {
             ticks_history: contract.underlying,
             start        : contract.date_start,
         };
+
+        // Subscribe if contract is still ongoing/running.
         if (contract.current_spot_time < contract.date_expiry) {
             request.subscribe = 1;
             request.end       = 'latest';
         } else {
             request.end = contract.date_expiry;
         }
-        DigitTicker.init('digit-ticker-container', contract.contract_type, contract.barrier, contract.tick_count, contract.status);
+
         BinarySocket.send(request, { callback: update });
     };
 
     const updateTable = (spot, time) => {
+        const last_digit = spot.slice(-1);
         $container
             .find('#table_digits')
             .append($('<p />', { class: 'gr-3', text: tick_count }))
-            .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${spot.slice(0, spot.length - 1)}<strong>${spot.slice(-1)}</strong>` : spot }))
+            .append($('<p />', { class: 'gr-3 gray', html: tick_count === contract.tick_count ? `${spot.slice(0, spot.length - 1)}<strong>${last_digit}</strong>` : spot }))
             .append($('<p />', { class: 'gr-6 gray digit-spot-time no-underline', text: moment(+time * 1000).utc().format('YYYY-MM-DD HH:mm:ss') }));
 
         DigitTicker.update(
             tick_count,
             {
-                quote: spot.slice(-1),
+                quote: last_digit,
             }
         );
     };
@@ -79,15 +90,9 @@ const DigitDisplay = (() => {
         showLocalTimeOnHover('.digit-spot-time');
     };
 
-    const end = (proposal_open_contract) => {
-        contract = proposal_open_contract;
-        // here we need to highlight won/lost
-    };
-
     return {
         init,
         update,
-        end,
     };
 })();
 

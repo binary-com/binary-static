@@ -1033,6 +1033,7 @@
         position: absolute;
         margin-top: 8px;
         top: 0;
+        left: 0;
         z-index: 5;
     }
     .mask {
@@ -1052,6 +1053,31 @@
         margin: auto;
         font-weight: bold;
         font-size: 20px;
+    }
+    .peek-box.digit-losing {
+        background-color: $COLOR_RED;
+        color: $COLOR_WHITE;
+    }
+    .peek.digit-losing {
+        color: $COLOR_RED;
+    }
+    .peek.digit-running {
+        color: $COLOR_DARK_GRAY;
+    }
+    .peek-box.digit-running {
+        color: $COLOR_WHITE;
+        background-color: $COLOR_DARK_GRAY;
+    }
+    .peek-box.digit-winning {
+        background-color: lighten($COLOR_GREEN, 20);
+        color: $COLOR_WHITE;
+    }
+    .peek.digit-winning {
+        color: $COLOR_GREEN;
+    }
+    .digit.digit-winning {
+        background-color: lighten($COLOR_GREEN, 40);
+        color: lighten($COLOR_GREEN, 20);
     }
     .digits {
         display: flex;
