@@ -39,6 +39,23 @@ const fetchFilesFromPath = (location) => {
         });
 };
 
+const fetchDirectoriesFromPath = (location) => {
+    const directory = fs.readdirSync(location);
+    const directories = [];
+    directory.map(file => {
+        if (fs.statSync(path.join(location, file)).isDirectory()) {
+            fetchDirectoriesFromPath(path.join(location, file));
+            directories.push({
+                path         : location,
+                full_path    : path.join(location, file),
+                filename     : file,
+                relative_path: path.join(location, file).replace(common.root_path, '.'),
+            });
+        }
+    });
+    return directories;
+};
+
 /**
  * Fetch all files within the given directories
  * @returns {*}
@@ -47,6 +64,14 @@ const fetchFilesFromPath = (location) => {
 const fetchFiles = dir => {
     const lookup = dir instanceof Array ? dir : [dir];
     return lookup.map(location => fetchFilesFromPath(location));
+};
+
+/**
+ * Fetch all directories recuresively
+ */
+const fetchDirectories = dir => {
+    const lookup = dir instanceof Array ? dir : [dir];
+    return lookup.map(location => fetchDirectoriesFromPath(location));
 };
 
 /**
@@ -121,10 +146,11 @@ const getImageReferences = (source_directories, ignored_files = []) => flatten(f
             if (!line) {
                 return;
             }
-            const matched = line.match(/Images\/app_2\/([^';]*)|<img([^>]*)>|background: url([^-color][^;]*)/g);
+            const matched = line.match(/Images\/app_2\/([^';]*)|<img([^>]*)>|background[-image]+: url([^-color][^;]*)/g);
             if (matched && matched.length > 0) {
                 matches.push({
-                    path   : item.relative_path, line   : index + 1, matched: matched[0],
+                    path   : item.relative_path,
+                    line   : index + 1, matched: matched[0],
                 });
             }
         });
@@ -140,10 +166,50 @@ const getImageReferences = (source_directories, ignored_files = []) => flatten(f
         return false;
     }));
 
+/**
+ * Extract paths
+ * @type
+ */
+const getDirectoryReferences = (source_directories, ignored_files = []) => flatten(fetchFiles(source_directories))
+    .filter(item => !!item && !ignored_files.some(ignored => path.resolve(common.root_path, ignored) === item.path))
+    .map(item => {
+        // Search for the occurrence of images, if found, remove the entry from that array.
+        const file    = fs.readFileSync(path.resolve(item.full_path), {
+            encoding: 'utf8',
+        });
+        const lines   = file.split('\n');
+        const matches = [];
+        lines.forEach((line, index) => {
+            if (!line) {
+                return;
+            }
+            const matched = line.match(/Images\/app_2\/([^';]*)|<img([^>]*)>|background[-image]+: url([^-color][^;]*)/g);
+            if (matched && matched.length > 0) {
+                matches.push({
+                    path   : item.relative_path,
+                    line   : index + 1,
+                    matched: matched[0],
+                });
+            }
+        });
+
+        return matches.length ? matches : null;
+    })
+    .filter(item => !!item && item.filter(found => {
+        found.reference = /(images\/|Images\/app_2\/)(([\w\-_\d]+\/)+)[\w\d-_]+.[\w\d]{1,4}/g.exec(found.matched);
+
+        if (found.reference) {
+            found.reference = found.reference[2] || found.reference[1];
+            return found;
+        }
+        return false;
+    }));
+
 module.exports = {
     prompt,
     flatten,
     fetchFiles,
+    fetchDirectories,
     validateFilename,
     convertToSnakeCase,
     renameFiles,
@@ -151,4 +217,5 @@ module.exports = {
     getDefaultPath,
     getRelativeImagePath,
     getImageReferences,
+    getDirectoryReferences,
 };
