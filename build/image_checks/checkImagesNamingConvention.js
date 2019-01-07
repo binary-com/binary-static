@@ -87,6 +87,7 @@ module.exports = function(grunt) {
             const source_directory = [
                 path.resolve(common.root_path, `src/javascript/${default_path}`),
                 path.resolve(common.root_path, `src/sass/${default_path}`),
+                path.resolve(common.root_path, `src/templates/${default_path}`),
             ];
             grunt.log.ok('Attempting to rename the files...');
             renameFiles(bad_file_names, grunt.option('dry-run'), grunt.log.writeln);

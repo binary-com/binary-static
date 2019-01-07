@@ -10,7 +10,6 @@ const {
     validateFilename,
     convertToSnakeCase }      = require('../utils/cli');
 const common                  = require('../../scripts/common');
-const isEmptyObject           = require('../../src/javascript/_common/utility').isEmptyObject;
 
 const ignored_files = gitIgnoreToArray();
 
@@ -73,7 +72,7 @@ module.exports = function(grunt) {
             });
         });
 
-        if (isEmptyObject(bad_file_names)) {
+        if (!bad_file_names || (bad_file_names && Object.keys(bad_file_names).length === 0)) {
             grunt.log.subhead(`${flattened.length} directories check for naming convention. Searching inside src/images/${default_path}/`.green);
             return true;
         }
@@ -90,6 +89,7 @@ module.exports = function(grunt) {
             const source_directory = [
                 path.resolve(common.root_path, `src/javascript/${default_path}`),
                 path.resolve(common.root_path, `src/sass/${default_path}`),
+                path.resolve(common.root_path, `src/templates/${default_path}`),
             ];
             grunt.log.ok('Attempting to rename the files...');
             renameFiles(bad_file_names, grunt.option('dry-run'), grunt.log.writeln);
