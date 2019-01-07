@@ -16,18 +16,45 @@ const DigitTicker = (() => {
         current_spot         = '-';
         contract_status      = status;
         el_container           = document.querySelector(`#${container_id}`);
-        el_container.innerHTML = `
-            <div class='epoch'></div>
-            <div class='peek-box'>
-                <div class='mask'>0/0</div>
-                <div class='peek'></div>
-            </div>
-            <div class='digits'>
-                ${array_of_digits.map(digit => `<div class='digit digit-${digit}'>${digit}</div>`).join('')}
-            </div>
-        `;
+        populateContainer(el_container);
         highlightWinningNumbers(getWinningNumbers(contract_type, barrier));
         observeResize();
+    };
+
+    const populateContainer = (container_element) => {
+        // remove previous elements and start fresh.
+        while (container_element.firstChild) {
+            container_element.removeChild(container_element.firstChild);
+        }
+
+        const temp_epoch_el = document.createElement('div');
+        temp_epoch_el.classList.add('epoch');
+        const temp_peek_box_el = document.createElement('div');
+        temp_peek_box_el.classList.add('peek-box');
+        const temp_digits_el = document.createElement('div');
+        temp_digits_el.classList.add('digits');
+        array_of_digits.forEach(digit => {
+            const digit_el = document.createElement('div');
+            digit_el.classList.add('digit', `digit-${digit}`);
+            digit_el.appendChild(document.createTextNode(digit));
+            temp_digits_el.appendChild(digit_el);
+        });
+
+        const temp_mask_el = document.createElement('div');
+        temp_mask_el.classList.add('mask');
+        temp_mask_el.append(document.createTextNode('0/0'));
+
+        const temp_peek_el = document.createElement('div');
+        temp_peek_el.classList.add('peek');
+
+        temp_peek_box_el.appendChild(temp_mask_el);
+        temp_peek_box_el.appendChild(temp_peek_el);
+        const fragment = document.createDocumentFragment();
+        fragment.appendChild(temp_epoch_el);
+        fragment.appendChild(temp_peek_box_el);
+        fragment.appendChild(temp_digits_el);
+        container_element.appendChild(fragment);
+        container_element.classList.add('invisible');
     };
 
     // adjust box sizes for mobile
