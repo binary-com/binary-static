@@ -98,18 +98,36 @@ describe('declarative_validation_rules.js', () => {
     });
 
     describe('.validPostCode', () => {
-        it('should return true if value is in allowed characters',() => {
-
+        it('should return false if value contains anything that is not an English alphabet or a number', () => {
+            let non_char_nums = '`~!@#$%^&*()_+-={}|[]\\:;"\'<>?,./'.split('');
+            non_char_nums.forEach((non_char_num) => {
+                let mockvalue = `00$(non_char_num)00`;
+                expect(rules['postcode'].func(mockvalue)).to.be.false;
+            });
         });
     });
 
     describe('.validPhone -> FIX ME', () => {
+        it('should return false if value contains non numbers', () => {
+            let non_numbers = 'abcdefghijklmnopqrstuvwxyz`~!@#$%^&*()_+-={}|[]\\:;"\'<>?,./'.split('');
+            non_numbers.forEach((non_number) => {
+                let mockvalue = `000 000$(non_number) 0000`;
+                expect(rules['phone'].func(mockvalue)).to.be.false;
+            });
+        });
     });
 
     describe('.validRegular -> FIX ME', () => {
+
     });
 
-    describe('.validEmailToken -> FIX ME', () => {
+    describe('.validEmailToken', () => {
+        it('should return false if value length is less than 8', () => {
+            expect(rules['signup_token'].func('1234567')).to.be.false;
+        });
+        it('should return false if value length is more than 8', () => {
+            expect(rules['signup_token'].func('123456789')).to.be.false;
+        });
     });
 
     describe('.validTaxID -> FIX ME', () => {
@@ -124,6 +142,7 @@ describe('declarative_validation_rules.js', () => {
     describe('.validNotEqual -> FIX ME', () => {
     });
 
+    // check
     describe('.validMin', () => {
         it('should return true if options.min is null, undefined, or 0', () => {
             options.min = 0;
