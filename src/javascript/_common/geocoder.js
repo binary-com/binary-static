@@ -149,15 +149,15 @@ const Geocoder = (() => {
 
             const country_longname = getElementById('country').innerHTML;
             const input_city = user_city.toLowerCase();
-            const arr_input_address = user_address.toLowerCase().split(', ');
+            const arr_input_address = user_address.replace(/ - /g,' ').toLowerCase().split(', ');
 
             const arr_address_components = geoloc_address[item_idx].address_components;
             const arr_address_list = [];
 
             // Create address dictionary string based on returned long and short named address components by Geolocation API
             arr_address_components.filter(address => {
-                arr_address_list.push(address.long_name.split(' - ').join(' '));
-                arr_address_list.push(address.short_name.split(' - ').join(' '));
+                arr_address_list.push(address.long_name.replace(/ - /g,' '));
+                arr_address_list.push(address.short_name.replace(/ - /g,' '));
             });
 
             // Filter out duplicates in address components
