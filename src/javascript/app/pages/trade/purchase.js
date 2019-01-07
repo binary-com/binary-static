@@ -235,6 +235,10 @@ const Purchase = (() => {
 
     const loginOnClick = (e) => Header.loginOnClick(e);
 
+    const onclose = () => {
+        DigitTicker.remove();
+    };
+
     const updateSpotList = () => {
         const $spots = $('#contract_purchase_spots');
         if (!$spots.length || $spots.is(':hidden')) {
@@ -249,9 +253,9 @@ const Purchase = (() => {
                 }
                 if (status === 'won') {
                     updateValues.updatePurchaseStatus(payout_value, cost_value, profit_value, localize('This contract won'));
-                    if (tick_config.is_digit) DigitTicker.success();
+                    if (tick_config.is_digit) DigitTicker.markAsWon();
                 } else if (status === 'lost') {
-                    if (tick_config.is_digit) DigitTicker.fail();
+                    if (tick_config.is_digit) DigitTicker.markAsLost();
                     updateValues.updatePurchaseStatus(0, -cost_value, profit_value, localize('This contract lost'));
                 }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
@@ -357,6 +361,7 @@ const Purchase = (() => {
 
     return {
         display,
+        onclose,
         updateSpotList,
     };
 })();

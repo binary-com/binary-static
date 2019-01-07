@@ -1029,12 +1029,17 @@
         grid-template-rows: 1fr 1fr;
         align-content: center;
         justify-items: center;
-        transition: all 0.3s ease;
+        transition: all 0.9s ease;
         position: absolute;
         margin-top: 8px;
         top: 0;
         left: 0;
         z-index: 5;
+
+        @media screen and (max-width: 480px) {
+            margin-top: 10px;
+            min-width: 32px;
+        }
     }
     .mask {
         font-size: 10px;
@@ -1053,6 +1058,13 @@
         margin: auto;
         font-weight: bold;
         font-size: 20px;
+
+        @media screen and (max-width: 480px) {
+            height: 30px;
+            max-height: 28px;
+            width: 26px;
+            margin-top: 3px;
+        }
     }
     .peek-box.digit-losing {
         background-color: $COLOR_RED;
@@ -1088,6 +1100,10 @@
         margin: 0 0 3px 0px;
         border-radius: 4px;
         overflow: hidden;
+
+        @media screen and (max-width: 480px) {
+            min-width: 280px;
+        }
     }
     .digit {
         height: 36px;
@@ -1102,6 +1118,11 @@
         border-right: 1px solid $COLOR_GRAY;
         border-top: 1px solid $COLOR_GRAY;
         border-bottom: 1px solid $COLOR_GRAY;
+
+        @media screen and (max-width: 480px) {
+            height: 28px;
+            width: 28px;
+        }
 
         &:first-child {
             border-left: 1px solid $COLOR_GRAY;
