@@ -13,10 +13,10 @@ describe('declarative_validation_rules.js', () => {
             max: 8,
             type: 'float',
             decimals: 2,
+            regex: /[a-z]/g
         }
     });
 
-    // Done
     describe('.validRequired', () => {
         it('should return false if value is undefined', () => {
             expect(rules['req'].func(undefined)).to.be.false;
@@ -32,7 +32,6 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    // Done
     describe('.validEmail', () => {
         it('should return false if username contains restricted characters', () => {
             let restricted_characters = '`!@#$%^&*=(){}[]:;"<>,?/~|\'\\'.split('');
@@ -66,7 +65,6 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    // Done
     describe('.validPassword', () => {
         it('should return false if password contains characters that are not alphabets or numerals', () => {
             let restricted_characters = '`!@#$%^&*=(){}[]:;"<>,?/~|\'\\_+'.split('');
@@ -77,7 +75,6 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    // Done
     describe('.validLetterSymbol', () => {
         it('should return false if value contains restricted characters', () => {
             let restricted_characters = '`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d'.split('');
@@ -110,7 +107,7 @@ describe('declarative_validation_rules.js', () => {
 
     describe('.validPostCode', () => {
         it('should return false if value contains characters that is not alphabets or numerals', () => {
-            let non_char_nums = '`~!@#$%^&*()_+-={}|[]\\:;"\'<>?,./'.split('');
+            let non_char_nums = '`~!@#$%^&*()_+={}|[]\\:;"\'<>?,./'.split('');
             non_char_nums.forEach((non_char_num) => {
                 let mockvalue = `00${non_char_num}00`;
                 expect(rules['postcode'].func(mockvalue)).to.be.false;
@@ -128,7 +125,13 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    describe('.validRegular -> FIX ME', () => {
+    describe('.validRegular', () => {
+        it('should return true if value matches', () => {
+            expect(rules['regular'].func('a', options)).to.be.true;
+        });
+        it('should return false if value does not match', () => {
+            expect(rules['regular'].func('12', options)).to.be.false;
+        });
     });
 
     describe('.validEmailToken', () => {
@@ -140,7 +143,7 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    describe('.validTaxID -> FIX ME', () => {
+    describe('.validTaxID', () => {
         it('should return false if value is not allowed', () => {
             let non_char_nums = '~!@#$%^&*()+`={}|[]\\:\'";<>?/.,'.split('');
             non_char_nums.forEach((non_char_num) => {
@@ -150,7 +153,7 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    describe('.validBarrier -> FIX ME', () => {
+    describe('.validBarrier', () => {
         it('should return false if value is not allowed', () => {
             let not_alloweds = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_+-=`{}|[]\\:";\'<>?/,'.split('');
             not_alloweds.forEach((not_allowed) => {
@@ -166,7 +169,6 @@ describe('declarative_validation_rules.js', () => {
     describe('.validNotEqual -> FIX ME', () => {
     });
 
-    // check
     describe('.validMin', () => {
         it('should return true if options.min is null, undefined, or 0', () => {
             options.min = 0;
@@ -178,11 +180,11 @@ describe('declarative_validation_rules.js', () => {
         });
         it('should return false if value.length < options.min', () => {
             options.min = 2;
-            expect(rules['min'].func('00', options)).to.be.false;
+            expect(rules['min'].func('0', options)).to.be.false;
         });
     });
 
-    describe('.validLength -> FIX ME', () => {
+    describe('.validLength', () => {
         it('should return true if value.length is in boundary', () => {
             options.min = 1;
             expect(rules['length'].func('00', options)).to.be.true;
@@ -255,9 +257,6 @@ describe('declarative_validation_rules.js', () => {
            options.max = 0;
            expect(rules['number'].func(1, options)).to.be.false;
         });
-    });
-
-    describe('.isMoreThanMax -> FIX ME', () => {
     });
 
     describe('.getPreBuildDVRs', () => {
