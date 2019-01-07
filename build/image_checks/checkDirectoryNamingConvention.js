@@ -94,7 +94,7 @@ module.exports = function(grunt) {
             grunt.log.ok('Attempting to rename the files...');
             renameFiles(bad_file_names, grunt.option('dry-run'), grunt.log.writeln);
 
-            grunt.log.ok('Attempting to fix the source files to match renamed files...');
+            grunt.log.ok('Attempting to fix the source files to match renamed directories...');
             renameReferences(bad_file_names,
                 source_directory,
                 !!grunt.option('dry-run'),
