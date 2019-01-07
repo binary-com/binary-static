@@ -55,21 +55,22 @@ describe('getPreBuildDVRs', () => {
 });
 
 describe('preBuildDVRs functions', () => {
-    global.$ = sinon.stub();
     const DVRS = getPreBuildDVRs(); //initialize dvrs
     const password = 'pass1234';
     const wrong_password = 'wrong12';
+    const wrong_options = new Object;
     const options = {
         to: '#txtPassword',
         min: 8,
         max: 25
     };
+    const stubInit = () => {
+        $ = sinon.stub();
+        $.withArgs(options.to).returns({
+            val: sinon.stub().returns(password)
+        });
+    }
 
-    const wrong_options = new Object;
-
-    $.withArgs(options.to).returns({
-        val: sinon.stub().returns(password)
-    });
 
     describe('validCompare', () => {
         it('expects return false if empty value passed', () => {
@@ -77,6 +78,7 @@ describe('preBuildDVRs functions', () => {
         });
 
         it('expects return true if the value match', () => {
+            stubInit();
             expect(DVRS['compare'].func(password, options)).to.be.true;
         });
 
@@ -91,6 +93,7 @@ describe('preBuildDVRs functions', () => {
         });
 
         it('expects return false if the value match', () => {
+            stubInit();
             expect(DVRS['not_equal'].func(password, options)).to.be.false;
         });
 
