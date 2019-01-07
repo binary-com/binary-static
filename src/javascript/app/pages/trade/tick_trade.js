@@ -171,6 +171,7 @@ const TickDisplay = (() => {
             is_reset_barrier: has_reset_barrier,
             is_tick_trade   : true,
             shortcode       : contract.shortcode,
+            show_end_time   : contract_category !== 'highlowticks',
         });
         Highcharts.setOptions({
             lang: { thousandsSep: ',' },
@@ -279,7 +280,6 @@ const TickDisplay = (() => {
                         dashStyle: 'dash',
                     });
                 }
-
             }
         }
 
@@ -437,6 +437,9 @@ const TickDisplay = (() => {
                             label    : localize('Exit Spot'),
                             dashStyle: 'Dash',
                         };
+                    } else if (current_tick_count === ticks_needed && contract_category === 'highlowticks'){
+                        ChartSettings.setLabels({ show_end_time: true });
+                        chart.setSubtitle({ text: ChartSettings.getSubtitle() });
                     }
 
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
