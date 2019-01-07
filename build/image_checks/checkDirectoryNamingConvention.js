@@ -106,7 +106,7 @@ module.exports = function(grunt) {
         grunt.log.error('Use --auto-fix option to fix automatically.');
         grunt.log.error(
             'Use --dry-run in combination with --auto-fix, if you are not sure that you want to rename all the directories.');
-        grunt.fail.warn(`Found ${Object.keys(bad_file_names).length} invalid files. please resolve this issue or use another asset.`);
+        grunt.fail.warn(`Found ${Object.keys(bad_file_names).length} invalid directories. please resolve this issue or use another asset.`);
         return false;
 
     });
