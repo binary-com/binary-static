@@ -14,7 +14,7 @@ describe('InputField', () => {
     });
     it('should render Tooltip', () => {
         const wrapper = shallow(<InputField />);
-        expect(wrapper.find(Tooltip).exists()).to.equal(true);
+        expect(wrapper.find(Tooltip).exists()).to.be.true;
     });
     it('should have null message in Tooltip if there is no error_messages in props', () => {
         const wrapper = shallow(<InputField />);
@@ -38,7 +38,7 @@ describe('InputField', () => {
     });
     it('should have className passed to it as props', () => {
         const wrapper = shallow(<InputField className='a_cool_className' />);
-        expect(wrapper.find('.a_cool_className').exists()).to.equal(true);
+        expect(wrapper.find('.a_cool_className').exists()).to.be.true;
         expect(wrapper.prop('className')).to.equal('input-field a_cool_className');
     });
     it('should have input with maxLength equal to max_length passed as props if fractional_digits is not passed', () => {
@@ -51,19 +51,19 @@ describe('InputField', () => {
     });
     // it('should have an input_helper with helper passed as prop', () => {
     //     const wrapper = shallow(<InputField helper='this is helper' />);
-    //     expect(wrapper.contains(<span className='input-helper'>this is helper</span>)).to.equal(true);
+    //     expect(wrapper.contains(<span className='input-helper'>this is helper</span>)).to.be.true;
     // });
     // it('should not have input_helper if helper is not passed as prop', () => {
     //     const wrapper = shallow(<InputField helper='this is helper' />);
-    //     expect(wrapper.find('.input-helper').exists()).to.equal(true);
+    //     expect(wrapper.find('.input-helper').exists()).to.be.true;
     // });
     it('should have disabled input if is_disabled is true', () => {
         const wrapper = shallow(<InputField is_disabled={true} />);
-        expect(wrapper.find('input').prop('disabled')).to.equal(true);
+        expect(wrapper.find('input').prop('disabled')).to.be.true;
     });
     it('should have input with disabled equal to false if is_disabled is false', () => {
         const wrapper = shallow(<InputField is_disabled={false} />);
-        expect(wrapper.find('input').prop('disabled')).to.equal(false);
+        expect(wrapper.find('input').prop('disabled')).to.be.false;
     });
     it('should not have prop disabled defined in input if is_disabled is not passed', () => {
         const wrapper = shallow(<InputField />);
@@ -71,19 +71,19 @@ describe('InputField', () => {
     });
     it('should have label with label passed', () => {
         const wrapper = shallow(<InputField label='this is label' />);
-        expect(wrapper.contains(<label className='input-label'>this is label</label>)).to.equal(true);
+        expect(wrapper.contains(<label className='input-label'>this is label</label>)).to.be.true;
     });
     it('should have label with htmlFor if label and name are passed', () => {
         const wrapper = shallow(<InputField name='something' label='this is label' />);
-        expect(wrapper.contains(<label htmlFor='something' className='input-label'>this is label</label>)).to.equal(true);
+        expect(wrapper.contains(<label htmlFor='something' className='input-label'>this is label</label>)).to.be.true;
     });
     it('should have icon with prefix lowercased as class if prefix is passed', () => {
         const wrapper = shallow(<InputField prefix='Something' />);
-        expect(wrapper.contains(<i><span className='symbols something' /></i>)).to.equal(true);
+        expect(wrapper.contains(<i><span className='symbols something' /></i>)).to.be.true;
     });
     it('should not have .symbols if prefix is not passed', () => {
         const wrapper = shallow(<InputField />);
-        expect(wrapper.find('.symbols').exists()).to.equal(false);
+        expect(wrapper.find('.symbols').exists()).to.be.false;
     });
     it('should have input with placeholder if placeholder is passed', () => {
         const wrapper = shallow(<InputField placeholder='this is placeholder' />);
@@ -99,7 +99,7 @@ describe('InputField', () => {
     });
     it('should have required input if required is passed as true', () => {
         const wrapper = shallow(<InputField required={true} />);
-        expect(wrapper.find('input').prop('required')).to.equal(true);
+        expect(wrapper.find('input').prop('required')).to.be.true;
     });
     it('should have an input which is not required if required is not passed', () => {
         const wrapper = shallow(<InputField required={false} />);
