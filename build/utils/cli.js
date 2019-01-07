@@ -150,7 +150,8 @@ const getImageReferences = (source_directories, ignored_files = []) => flatten(f
             if (matched && matched.length > 0) {
                 matches.push({
                     path   : item.relative_path,
-                    line   : index + 1, matched: matched[0],
+                    line   : index + 1,
+                    matched: matched[0],
                 });
             }
         });

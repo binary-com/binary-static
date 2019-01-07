@@ -1,6 +1,5 @@
-const path                    = require('path');
 const fs                      = require('fs');
-const common                  = require('../../scripts/common');
+const path                    = require('path');
 const {
     getDefaultPath,
     getDirectoryReferences,
@@ -10,13 +9,14 @@ const {
     renameFiles,
     validateFilename,
     convertToSnakeCase }      = require('../utils/cli');
+const common                  = require('../../scripts/common');
+const isEmptyObject           = require('../../src/javascript/_common/utility').isEmptyObject;
 
 const ignored_files = gitIgnoreToArray();
 
 const renameReferences = (files, search, is_dry_run, logger) => {
     getDirectoryReferences(search)
         .forEach(item => {
-
             item.map(found => {
                 if (found.reference != null) {
                     let filename  = found.reference.split('/');
@@ -25,7 +25,7 @@ const renameReferences = (files, search, is_dry_run, logger) => {
                     const converted = convertToSnakeCase(filename);
                     if (filename !== converted) {
                         if (!is_dry_run) {
-                            // we should update
+                            // we should rename directories and references.
                             const file     = fs.readFileSync(path.resolve(common.root_path, found.path),
                                 'utf8',
                             );
@@ -73,8 +73,7 @@ module.exports = function(grunt) {
             });
         });
 
-        Object.keys(bad_file_names).forEach((key) => (bad_file_names[key] == null) && delete bad_file_names[key]);
-        if (!bad_file_names || (bad_file_names && Object.keys(bad_file_names).length === 0)) {
+        if (isEmptyObject(bad_file_names)) {
             grunt.log.subhead(`${flattened.length} directories check for naming convention. Searching inside src/images/${default_path}/`.green);
             return true;
         }
