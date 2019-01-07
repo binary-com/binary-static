@@ -17,6 +17,7 @@ const DigitTicker = (() => {
         contract_status      = status;
         el_container           = document.querySelector(`#${container_id}`);
         el_container.innerHTML = `
+            <div class='epoch'></div>
             <div class='peek-box'>
                 <div class='mask'>0/0</div>
                 <div class='peek'></div>
@@ -108,8 +109,8 @@ const DigitTicker = (() => {
         el_mask     = el_peek_box.querySelector('.peek-box > .mask');
     };
 
-    const update = (current_tick_count, { quote }) => {
-        setElements();
+    const update = (current_tick_count, { quote, epoch }) => {
+        setElements(epoch);
         el_container.classList.remove('invisible');
         adjustBoxSizes();
         current_spot = quote.substr(-1);
@@ -123,10 +124,10 @@ const DigitTicker = (() => {
         el_peek_box.setAttribute('style', `transform: translateX(${calculateOffset()}px)`);
 
         if (contract_status === 'won') {
-            markAsWon();
+            markAsWon(epoch);
         }
         if (contract_status === 'lost') {
-            markAsLost();
+            markAsLost(epoch);
         }
     };
 

@@ -219,9 +219,13 @@ const Purchase = (() => {
                     status = contract.status;
                     profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
+                    if (contract.exit_tick_time && /^digit/i.test(contract.contract_type)) {
+                        digitShowExitTime(contract.exit_tick_time);
+                    }
                     if (contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
                         TickDisplay.updateChart({ is_sold: true }, contract);
                     }
+
                     // force to sell the expired contract, in order to get the final status
                     if (+contract.is_settleable === 1 && !contract.is_sold) {
                         BinarySocket.send({ sell_expired: 1 });
@@ -325,11 +329,25 @@ const Purchase = (() => {
                     fragment.appendChild(el2);
                 }
 
-                const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ? tick_d.quote : tick_d.quote.replace(/\d$/, makeBold);
+                const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ?
+                    tick_d.quote :
+                    `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
 
                 CommonFunctions.elementInnerHtml(el3, tick);
                 if (tick_config.is_digit) {
+                    const el_epoch = document.createElement('div');
+                    el_epoch.className = 'digit-tick-epoch';
+                    el_epoch.style.right = (el3.offsetWidth - tick.offsetWidth) / 2;
+                    const el_epoch_content = document.createTextNode(
+                        new Date(tick_d.epoch * 1000)
+                            .toTimeString()
+                            .slice(0,8)
+                    );
+                    el_epoch.appendChild(el_epoch_content);
+                    fragment.appendChild(el_epoch);
+                    el3.insertBefore(el_epoch, el3.childNodes[0]);
+
                     replaceElement(fragment, el3);
                     replaceElement(spots, fragment);
                     DigitTicker.update(current_tick_count, tick_d);
@@ -357,6 +375,13 @@ const Purchase = (() => {
                 }
             }
         }
+    };
+
+    const digitShowExitTime = () => {
+        const el_container = CommonFunctions.getElementById('contract_purchase_spots');
+        const el_epoch = Array.from(el_container.querySelectorAll('.digit-tick-epoch')).pop();
+        el_epoch.classList.add('is-visible');
+        el_epoch.setAttribute('style', `position: absolute; right: ${(el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2}px`);
     };
 
     return {
