@@ -10,7 +10,7 @@ describe('URLHelper', () => {
     });
 
     describe('.getQueryParams', () => {
-        beforeEach('Getting params.', () => {
+        beforeEach('Setting up params', () => {
             params = URLHelper.getQueryParams(url);
         });
 
@@ -24,13 +24,14 @@ describe('URLHelper', () => {
     });
 
     describe('.setQueryParam', () => {
-        // TypeError : param_object.sort is not a function
-        it('should return an object', () => {
+        it('should return an object and the correct value', () => {
             params = {
                 'currency': 'MYR',
                 'market': 'forex',
             };
             expect(URLHelper.setQueryParam(params, url)).to.be.a('object');
+            expect(URLHelper.setQueryParam(params, url).searchParams.get('currency')).to.eql('MYR');
+            expect(URLHelper.setQueryParam(params, url).searchParams.get('market')).to.eql('forex');
         });
     });
 });
