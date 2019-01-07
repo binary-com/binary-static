@@ -1,7 +1,8 @@
-import moment                 from 'moment';
 import { localize }           from '_common/localize';
 import { isSessionAvailable } from 'Stores/Modules/Trading/Helpers/start_date';
-import { isTimeValid }        from 'Utils/Date';
+import {
+    isTimeValid,
+    toMoment }                from 'Utils/Date';
 
 const getValidationRules = () => ({
     amount: {
@@ -40,7 +41,7 @@ const getValidationRules = () => ({
             ['custom' , { func: (value, options, store) => {
                 if (store.contract_start_type === 'spot') return true;
                 if (!isTimeValid(value)) return false;
-                const start_moment       = moment(store.start_date * 1000 || undefined).utc();
+                const start_moment       = toMoment(store.start_date);
                 const start_moment_clone = start_moment.clone();
                 const [h, m] = value.split(':');
                 return isSessionAvailable(store.sessions, start_moment_clone.hour(h).minute(m), start_moment);
