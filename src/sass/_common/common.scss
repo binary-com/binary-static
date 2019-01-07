@@ -153,13 +153,12 @@ fieldset {
         }
     }
     #geocode_validate.geocode-btn {
-        transition: opacity 0.25s linear;
-        opacity: 1;
-        pointer-events: auto;
+        transition: color 0.25s linear;
+        color: $COLOR_BLUE;
 
         &-disabled {
-            opacity: 0;
-            pointer-events: none;
+            cursor: not-allowed;
+            color: $COLOR_LIGHT_GRAY;
         }
     }
     #geocode_success > span.success-msg {

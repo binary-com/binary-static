@@ -64,6 +64,9 @@ const Geocoder = (() => {
 
             el_btn_validate.addEventListener('click', (e) => {
                 e.preventDefault();
+                if (el_btn_validate.classList.contains('geocode-btn-disabled')) {
+                    return;
+                }
                 validator(getAddress()).then(() => {
                     validated = true;
                 });
@@ -71,8 +74,10 @@ const Geocoder = (() => {
 
             // using jQuery here because for some reason vanilla javascript eventListener isn't working for select input onChange events
             $(state).on('change', (e) => {
-                if (e.target.value && (getValue(city).length > 0) && (getValue(addr_1).length > 0)) {
+                if ((e.target.value.length > 0) && (getValue(city).length > 0) && (getValue(addr_1).length > 0)) {
                     el_btn_validate.classList.remove('geocode-btn-disabled');
+                } else {
+                    el_btn_validate.classList.add('geocode-btn-disabled');
                 }
             });
 
