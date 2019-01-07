@@ -1,5 +1,5 @@
-import { expect } from 'chai';
-import sinon from 'sinon';
+import { expect }                                   from 'chai';
+import sinon                                        from 'sinon';
 import { getPreBuildDVRs, getPasswordLengthConfig } from '../declarative_validation_rules';
 
 describe('getPasswordLengthConfig', () => {
@@ -55,30 +55,118 @@ describe('getPreBuildDVRs', () => {
 });
 
 describe('preBuildDVRs functions', () => {
+    global.$ = sinon.stub();
     const DVRS = getPreBuildDVRs(); //initialize dvrs
+    const password = 'pass1234';
+    const wrong_password = 'wrong12';
     const options = {
         to: '#txtPassword',
         min: 8,
         max: 25
     };
 
+    const wrong_options = new Object;
+
+    $.withArgs(options.to).returns({
+        val: sinon.stub().returns(password)
+    });
+
     describe('validCompare', () => {
-        global.$ = sinon.stub();
-
-        $.withArgs(options.to).returns({
-            val: sinon.stub().returns('pass123')
-        });
-
         it('expects return false if empty value passed', () => {
             expect(DVRS['compare'].func('', options)).to.be.false;
         });
 
         it('expects return true if the value match', () => {
-            expect(DVRS['compare'].func('pass123', options)).to.be.true;
+            expect(DVRS['compare'].func(password, options)).to.be.true;
         });
 
         it('expects false if the value is not match', () => {
-            expect(DVRS['compare'].func('wrongpass123', options)).to.be.false;
+            expect(DVRS['compare'].func(wrong_password, options)).to.be.false;
+        });
+    });
+
+    describe('validNotEqual', () => {
+        it('expects return true if empty value passed', () => {
+            expect(DVRS['not_equal'].func('', options)).to.be.true;
+        });
+
+        it('expects return false if the value match', () => {
+            expect(DVRS['not_equal'].func(password, options)).to.be.false;
+        });
+
+        it('expects true if the value is not match', () => {
+            expect(DVRS['not_equal'].func(wrong_password, options)).to.be.true;
+        });
+    });
+
+    describe('validMin', () => {
+        it('expects return true if options min is falsy', () => {
+            expect(DVRS['min'].func(password, wrong_options)).to.be.true;
+        });
+
+        it('expects return true if value is more than equal 8 character', () => {
+            expect(DVRS['min'].func(password, options)).to.be.true;
+        });
+
+        it('expects return false if value is less than equal 8 character', () => {
+            expect(DVRS['min'].func(wrong_password, options)).to.be.false;
+        });
+    });
+
+    describe('validLength', () => {
+        it('expects return true if options min and max is falsy', () => {
+            expect(DVRS['length'].func(password, wrong_options)).to.be.true;
+        });
+
+        it('expects return true if value is between the range of options', () => {
+            expect(DVRS['length'].func(password, options)).to.be.true;
+        });
+
+        it('expects return false if value is not between the range of options', () => {
+            expect(DVRS['length'].func(wrong_password, options)).to.be.false;
+        });
+    });
+
+    describe('.validNumber', () => {
+        const number_options = {
+            min: 0,
+            max: 200,
+            type: null,
+            decimals: 5
+        };
+
+        it('expects return true if value is empty or zero', () => {
+           expect(DVRS['number'].func(0, number_options)).to.be.true;
+        });
+ 
+        it('expects return true if number is float within correct decimals', () => {
+            number_options.type = 'float';
+           expect(DVRS['number'].func(0.10, number_options)).to.be.true;
+        });
+
+        it('expects return false if number is float not within correct decimals', () => {
+            expect(DVRS['number'].func(0.111111, number_options)).to.be.false;
+        });
+
+        it('expercts return true if value is integer', () => {
+            number_options.type = 'int';
+            expect(DVRS['number'].func(1, number_options)).to.be.true;
+        });
+
+        it('expects return false if value is string or characters', () => {
+           expect(DVRS['number'].func('a', number_options)).to.be.false;
+        });
+
+        it('expects return false if value is neither integer or float', () => {
+           expect(DVRS['number'].func(NaN, number_options)).to.be.false;
+        });
+
+        it('expects return false if the value is not within the range of min and max', () => {
+           expect(DVRS['number'].func(500, options)).to.be.false;
+        });
+ 
+        it('expects return false for minus value', () => {
+          expect(DVRS['number'].func(-1, options)).to.be.false;
         });
     });
 });
