@@ -31,70 +31,85 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    describe('.validEmail', () => {
-        it('should return false if email address is missing an "at" sign', () => {
-            expect(rules['email'].func('a.a')).to.be.false;
+    describe('.validEmail -> FIX ME', () => {
+        it('should return false if username contains restricted characters', () => {
+            let restricted_characters = '`!@#$%^&*=(){}[]:;"<>,?/~|\'\\'.split('');
+            restricted_characters.forEach((restricted_character) => {
+                let mockvalue = `user$(restricted_character)name@proper.test`
+                expect(rules['email'].func(mockvalue)).to.be.false;
+            });
         });
-        it('should return false if email address is missing a full stop', () => {
-            expect(rules['email'].func('a@a')).to.be.false;
+        it('should return false if @ does not exist in the middle of an address', () => {
+            expect(rules['email'].func('usernameproper.test'));
         });
-        it('should return true if email address is in correct format', () =>  {
-            expect(rules['email'].func('a@a.me')).to.be.true;
+        it('should return false if domain name contains restricted characters', () => {
+            let restricted_characters = '`!@#$%^&*=(){}[]:;"<>,?/~|\'\\_+'.split('');
+            restricted_characters.forEach((restricted_character) => {
+                let mockvalue = `username@pro$(restricted_character)per.test`;
+                expect(rules['email'].func(mockvalue)).to.be.false;
+            });
+        });
+        it('should return false if top level domain contains restricted characters', () => {
+            let restricted_characters = '0123456789`~!@#$%^&*()_+-={}[]|:";<>?,./\\\''
+            restricted_characters.forEac((restricted_character) => {
+                let mockvalue = `username@proper.te$(restricted_character)st`;
+                expect(rules['email'].func(mockvalue)).to.be.false;
+            });
+        });
+        it('should return false if top level domain is smaller than 2', () => {
+            expect(rules['email'].func('username@proper.t')).to.be.false;
+        });
+        it('should return false if top level domain is bigger than 63', () => {
+            expect(rules['email'].func('username@proper.tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt')).to.be.false;
         });
     });
 
-    describe('.validPassword', () => {
+    describe('.validPassword -> FIX ME', () => {
     });
-    // These regex tests will not throw an error if one of them is missing.
-    describe('.validLetterSymbol -> FIX ME', () => {
+
+    describe('.validLetterSymbol', () => {
         it('should return false if value contains restricted characters', () => {
-            expect(rules['letter_symbol'].func('`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d')).to.be.false;
+            let restricted_characters = '`~!@#$%^&*)(_=+[}{\]\\/";:?><,|\d'.split('');
+            restricted_characters.forEach((restricted_character) => {
+                let mockvalue = `test_$(restricted_character)`;
+                expect(rules['letter_symbol'].func(mockvalue)).to.be.false;
+            });
         });
     });
 
     describe('.validGeneral', () => {
         it('should return false if value contains restricted characters', () => {
-            expect(rules['general'].func('`~!@#$%^&*)(_=+[}{\]\\/";:?><|')).to.be.false;
+            let restricted_characters = '`~!@#$%^&*)(_=+[}{\]\\/";:?><|'.split('');
+            restricted_characters.forEach((restricted_character) => {
+                let mockvalue = `test_$(restricted_character)`;
+                expect(rules['general'].func(mockvalue)).to.be.false;
+            });
         });
     });
 
     describe('.validAddress', () => {
         it('should return false if value contains restricted characters', () => {
-            expect(rules['address'].func('`~!$%^&*_=+[}{\]\\"?><|')).to.be.false;
+            let restricted_characters = '`~!$%^&*_=+[}{\]\\"?><|'.split('');
+            restricted_characters.forEach((restricted_character) => {
+                let mockvalue = `test_$(restricted_character)`;
+                expect(rules['address'].func(mockvalue)).to.be.false;
+            });
         });
     });
 
     describe('.validPostCode', () => {
         it('should return true if value is in allowed characters',() => {
-            expect(rules['postcode'].func('00000')).to.be.true;
+
         });
     });
 
-    describe('.validPhone', () => {
-        it('should return false if value is/contain non number', () => {
-            expect(rules['phone'].func('0w0')).to.be.false;
-        });
-        it('should return true if value is all numbers', () => {
-            expect(rules['phone'].func('000 0000 0000')).to.be.true;
-        });
+    describe('.validPhone -> FIX ME', () => {
     });
 
     describe('.validRegular -> FIX ME', () => {
     });
 
-    describe('.validEmailToken', () => {
-        it('should return true if value is of length 8', () => {
-            expect(rules['signup_token'].func('00000000')).to.be.true;
-        });
-        it('should return true if value is of length 8 with spaces around', () => {
-            expect(rules['signup_token'].func(' 00000000 ')).to.be.true;
-        });
-        it('should return false if value is not of length 8', () => {
-            expect(rules['signup_token'].func('0')).to.be.false;
-        });
-        it('should return false if value is not of length 8 with spaces around', () => {
-            expect(rules['signup_token'].func(' 0 ')).to.be.false;
-        });
+    describe('.validEmailToken -> FIX ME', () => {
     });
 
     describe('.validTaxID -> FIX ME', () => {
