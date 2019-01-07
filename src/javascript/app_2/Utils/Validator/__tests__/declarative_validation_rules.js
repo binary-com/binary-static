@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import sinon from 'sinon';
 import { getPreBuildDVRs, getPasswordLengthConfig } from '../declarative_validation_rules';
 
 describe('getPasswordLengthConfig', () => {
@@ -50,5 +51,34 @@ describe('getPreBuildDVRs', () => {
         getPreBuildDVRs()['address'].message = 'anymessage';
 
         expect(getPreBuildDVRs()['address'].message).to.eql('anymessage');
+    });
+});
+
+describe('preBuildDVRs functions', () => {
+    const DVRS = getPreBuildDVRs(); //initialize dvrs
+    const options = {
+        to: '#txtPassword',
+        min: 8,
+        max: 25
+    };
+
+    describe('validCompare', () => {
+        global.$ = sinon.stub();
+
+        $.withArgs(options.to).returns({
+            val: sinon.stub().returns('pass123')
+        });
+
+        it('expects return false if empty value passed', () => {
+            expect(DVRS['compare'].func('', options)).to.be.false;
+        });
+
+        it('expects return true if the value match', () => {
+            expect(DVRS['compare'].func('pass123', options)).to.be.true;
+        });
+
+        it('expects false if the value is not match', () => {
+            expect(DVRS['compare'].func('wrongpass123', options)).to.be.false;
+        });
     });
 });
