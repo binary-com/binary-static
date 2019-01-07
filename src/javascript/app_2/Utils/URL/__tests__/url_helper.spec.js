@@ -24,7 +24,7 @@ describe('URLHelper', () => {
     });
 
     describe('.setQueryParam', () => {
-        it('should return an object and the correct value', () => {
+        it('should return an object with the correct value', () => {
             params = {
                 'currency': 'MYR',
                 'market': 'forex',
