@@ -142,6 +142,7 @@ const Geocoder = (() => {
         if (geoloc_address.length && getValue('#address_state')) {
             const item_idx = geoloc_address.length - 1;
 
+            const country_longname = getElementById('country').innerHTML;
             const input_city = user_city.toLowerCase();
             const arr_input_address = user_address.toLowerCase().split(', ');
 
@@ -158,7 +159,8 @@ const Geocoder = (() => {
             const address_list_dictionary = arr_address_list.filter((elem, pos, arr) => arr.indexOf(elem) === pos).join(' ').toLowerCase();
 
             // Check if city exists, if true, check if first line of address exists
-            if (address_list_dictionary.indexOf(input_city) !== -1) {
+            if ((address_list_dictionary.indexOf(input_city) !== -1)
+                && (user_address.toLowerCase() !== country_longname.toLowerCase())) {
                 result = arr_input_address.some(address => address_list_dictionary.includes(address));
             }
 
