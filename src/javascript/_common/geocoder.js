@@ -6,7 +6,9 @@ const Client             = require('../app/base/client');
 
 const Geocoder = (() => {
     let el_btn_validate,
+        el_geocode_status,
         el_error,
+        el_postcode_row,
         el_success,
         loader,
         has_currency,
@@ -32,10 +34,12 @@ const Geocoder = (() => {
 
         const getAddress = () => `${getValue(addr_1)}, ${getValue(addr_2)}, ${getValue(city)}, ${getValue(postcode)} ${is_state_select_el ? getStateText(state) : getValue(state)}, ${residence} `;
 
-        el_btn_validate = form.querySelector('#geocode_validate');
-        el_error        = form.querySelector('#geocode_error');
-        el_success      = form.querySelector('#geocode_success');
-        loader          = form.querySelector('.barspinner');
+        el_btn_validate   = form.querySelector('#geocode_validate');
+        el_geocode_status = form.querySelector('#geocode_status');
+        el_error          = form.querySelector('#geocode_error');
+        el_postcode_row   = form.querySelector('.postcode-form-row');
+        el_success        = form.querySelector('#geocode_success');
+        loader            = form.querySelector('.barspinner');
 
         if (el_btn_validate) {
             applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${!is_state_select_el ? state : undefined} ,${city}`, (element) => {
@@ -49,11 +53,11 @@ const Geocoder = (() => {
                         (getValue(addr_1).length > 0) && getValue(state);
 
                     if (value.length > 0 && !non_required_fields.includes(element.id) && has_met_conditions) {
-                        el_btn_validate.classList.remove('button-disabled');
+                        el_btn_validate.classList.remove('geocode-btn-disabled');
                     } else if (!non_required_fields.includes(element.id) && has_met_conditions) {
-                        el_btn_validate.classList.remove('button-disabled');
+                        el_btn_validate.classList.remove('geocode-btn-disabled');
                     } else {
-                        el_btn_validate.classList.add('button-disabled');
+                        el_btn_validate.classList.add('geocode-btn-disabled');
                     }
                 });
             }, '', form);
@@ -68,20 +72,22 @@ const Geocoder = (() => {
             // using jQuery here because for some reason vanilla javascript eventListener isn't working for select input onChange events
             $(state).on('change', (e) => {
                 if (e.target.value && (getValue(city).length > 0) && (getValue(addr_1).length > 0)) {
-                    el_btn_validate.classList.remove('button-disabled');
+                    el_btn_validate.classList.remove('geocode-btn-disabled');
                 }
             });
 
             el_btn_validate.setVisibility(1);
 
             if (validated || !getValue(addr_1).length || !getValue(state)) {
-                el_btn_validate.classList.add('button-disabled');
+                el_btn_validate.classList.add('geocode-btn-disabled');
             }
-
-            el_error.parentNode.appendChild(el_btn_validate);
         }
 
-        el_error.setVisibility(0);
+        el_postcode_row.parentNode.appendChild(el_geocode_status);
+
+        if (el_error) {
+            el_error.setVisibility(0);
+        }
 
         if (is_virtual || !has_currency) {
             loader.setVisibility(0);
@@ -109,7 +115,7 @@ const Geocoder = (() => {
         new Promise((resolve) => {
             scriptjs.ready('gMaps', () => {
                 const geocoder = new google.maps.Geocoder();
-                el_btn_validate.classList.add('button-disabled');
+                el_btn_validate.classList.add('geocode-btn-disabled');
                 el_success.setVisibility(0);
                 el_error.setVisibility(0);
                 loader.setVisibility(1);

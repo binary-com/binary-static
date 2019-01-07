@@ -131,9 +131,36 @@ fieldset {
     #geocode_error, #geocode_success, #geocode_status > .barspinner {
         margin: 1rem auto;
     }
-    #geocode_validate.button-disabled {
-        cursor: not-allowed;
-        pointer-events: none;
+    .geocode-container {
+        display: flex;
+        justify-content: center;
+
+        .geocode-btn-container {
+            margin-left: -16px;
+
+            @media screen and (max-width: 920px) {
+                margin-left: 4px;
+            }
+            @media screen and (max-width: 860px) {
+                margin-left: unset;
+            }
+        }
+        @media screen and (max-width: 860px) {
+            align-items: center;
+            margin-top: 0.5rem;
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+    }
+    #geocode_validate.geocode-btn {
+        transition: opacity 0.25s linear;
+        opacity: 1;
+        pointer-events: auto;
+
+        &-disabled {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
     #geocode_success > span.success-msg {
         display: flex;

@@ -104,14 +104,18 @@ export const AddressState = () => (
     <FormRow type='select' id='address_state' label={it.L('State/Province')} attributes={{ single: 'single' }} />
 );
 
-export const AddressPostcode = ({ hint }) => (
+export const AddressPostcode = ({ children, hint }) => (
     <FormRow
         type='text'
         id='address_postcode'
         label={it.L('Postal code/ZIP')}
         attributes={{ maxLength: '20', 'data-lpignore': true }}
         hint={hint}
-    />
+        has_geovalidator
+        row_class='postcode-form-row'
+    >
+        {children}
+    </FormRow>
 );
 
 export const Phone = ({ hint }) => (
@@ -251,15 +255,15 @@ export const TaxInformationForm = () => (
     </React.Fragment>
 );
 
-export const GeocodeValidation = () => (
+export const GeocodeValidation = ({ className }) => (
     <React.Fragment>
-        <div className='gr-row'>
+        <div className={className}>
             <div className='geocode-btn-container'>
-                <a href='javascript:;' id='geocode_validate' className='button button-secondary invisible' ><span>{it.L('Verify address')}</span></a>
+                <a href='javascript:;' id='geocode_validate' className='geocode-btn invisible' ><span>{it.L('Verify address')}</span></a>
             </div>
         </div>
-        <div className='gr-row'>
-            <div id='geocode_status' className='gr-12 gr-padding-10 center-text'>
+        <div id='geocode_status' className='gr-row'>
+            <div className='gr-12 gr-padding-10 center-text'>
                 <Loading className='invisible' />
                 <p id='geocode_error' className='notice-msg invisible'>
                     {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
