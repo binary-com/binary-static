@@ -148,11 +148,14 @@ const Geocoder = (() => {
             const arr_address_components = geoloc_address[item_idx].address_components;
             const arr_address_list = [];
 
-            // Create address dictionary string based on returned address components by Geolocation API
-            arr_address_components.filter(address => arr_address_list.push(address.long_name));
-            arr_address_components.filter(address => arr_address_list.push(address.short_name));
+            // Create address dictionary string based on returned long and short named address components by Geolocation API
+            arr_address_components.filter(address => {
+                arr_address_list.push(address.long_name);
+                arr_address_list.push(address.long_name);
+            });
 
-            const address_list_dictionary = arr_address_list.join(' ').toLowerCase();
+            // Filter out duplicates in address components
+            const address_list_dictionary = arr_address_list.filter((elem, pos, arr) => arr.indexOf(elem) === pos).join(' ').toLowerCase();
 
             // Check if city exists, if true, check if first line of address exists
             if (address_list_dictionary.indexOf(input_city) !== -1) {
