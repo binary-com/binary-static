@@ -1,4 +1,5 @@
 import { expect }             from 'chai';
+import sinon                  from 'sinon';
 import { getPreBuildDVRs }    from '../declarative_validation_rules.js';
 
 describe('declarative_validation_rules.js', () => {
@@ -13,8 +14,14 @@ describe('declarative_validation_rules.js', () => {
             max: 8,
             type: 'float',
             decimals: 2,
-            regex: /[a-z]/g
+            regex: /[a-z]/g,
+            to: '#txt',
         }
+
+        $ = sinon.stub();
+        $.withArgs(options.to).returns({
+            val: sinon.stub().returns('#txt')
+        });
     });
 
     describe('.validRequired', () => {
@@ -163,10 +170,32 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    describe('.validCompare -> FIX ME', () => {
+    describe('validCompare', () => {
+        it('expects return false if empty value passed', () => {
+            expect(rules['compare'].func('', options)).to.be.false;
+        });
+
+        it('expects return true if the value match', () => {
+            expect(rules['compare'].func('#txt', options)).to.be.true;
+        });
+
+        it('expects false if the value is not match', () => {
+            expect(rules['compare'].func('#txtWrong', options)).to.be.false;
+        });
     });
 
-    describe('.validNotEqual -> FIX ME', () => {
+    describe('validNotEqual', () => {
+        it('expects return true if empty value passed', () => {
+            expect(rules['not_equal'].func('', options)).to.be.true;
+        });
+
+        it('expects return false if the value match', () => {
+            expect(rules['not_equal'].func('#txt', options)).to.be.false;
+        });
+
+        it('expects true if the value is not match', () => {
+            expect(rules['not_equal'].func('#txtWrong', options)).to.be.true;
+        });
     });
 
     describe('.validMin', () => {
@@ -259,9 +288,36 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    describe('.getPreBuildDVRs', () => {
-        it('should return an object', () => {
-            expect(rules).to.be.a('object');
+    describe('getPreBuildDVRs', () => {
+        const anyFunction = () => {};
+        const pre_build_dvrs = {
+            address:        { func: anyFunction, message: '' },
+            barrier:        { func: anyFunction, message: '' },
+            compare:        { func: anyFunction, message: '' },
+            email:          { func: anyFunction, message: '' },
+            general:        { func: anyFunction, message: '' },
+            length:         { func: anyFunction, message: '' },
+            letter_symbol:  { func: anyFunction, message: '' },
+            min:            { func: anyFunction, message: '' },
+            not_equal:      { func: anyFunction, message: '' },
+            number:         { func: anyFunction, message: '' },
+            password:       { func: anyFunction, message: '' },
+            phone:          { func: anyFunction, message: '' },
+            postcode:       { func: anyFunction, message: '' },
+            regular:        { func: anyFunction, message: '' },
+            req:            { func: anyFunction, message: '' },
+            signup_token:   { func: anyFunction, message: '' },
+            tax_id:         { func: anyFunction, message: '' },
+        };
+
+        it('Expects pre_build_dvrs initialized if no arguments passed', () => {
+            expect(Object.keys(getPreBuildDVRs())).to.eql(Object.keys(pre_build_dvrs));
+        });
+
+        it('Expects return pre build dvrs if there is pre-build dvrs', () => {
+            getPreBuildDVRs()['address'].message = 'anymessage';
+
+            expect(getPreBuildDVRs()['address'].message).to.eql('anymessage');
         });
     });
 });
