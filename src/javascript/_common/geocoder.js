@@ -151,12 +151,15 @@ const Geocoder = (() => {
 
             // Create address dictionary string based on returned long and short named address components by Geolocation API
             arr_address_components.filter(address => {
-                arr_address_list.push(address.long_name);
-                arr_address_list.push(address.long_name);
+                arr_address_list.push(address.long_name.split(' - ').join(' '));
+                arr_address_list.push(address.short_name.split(' - ').join(' '));
             });
 
             // Filter out duplicates in address components
             const address_list_dictionary = arr_address_list.filter((elem, pos, arr) => arr.indexOf(elem) === pos).join(' ').toLowerCase();
+
+            console.log(address_list_dictionary);
+            console.log(arr_address_components);
 
             // Check if city exists, if true, check if first line of address exists
             if ((address_list_dictionary.indexOf(input_city) !== -1)
