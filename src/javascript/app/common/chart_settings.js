@@ -17,7 +17,7 @@ const ChartSettings = (() => {
         labels = labels || { // needs to be inside setLabels function so localize works
             barrier_line  : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: green; border-style: solid;"></span>${localize('Barrier')}&nbsp;</div>`,
             barrier_spot  : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: green; border-style: dotted;"></span>${localize('Barrier')}&nbsp;</div>`,
-            end_time      : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: dashed;"></span>${localize('End Time')}&nbsp;</div>`,
+            end_time      : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: dashed;"></span>${params.is_tick_trade ? localize('Exit Spot') : localize('End Time')}&nbsp;</div>`,
             entry_spot    : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></span>${localize('Entry Spot')}&nbsp;</div>`,
             exit_spot     : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></span>${localize('Exit Spot')}&nbsp;</div>`,
             delay         : `<div class='nowrap gr-padding-10 gr-parent delay'><span class="chart-delay">${localize('Charting for this underlying is delayed')}&nbsp;</span></div>`,
@@ -29,7 +29,7 @@ const ChartSettings = (() => {
             reset_time    : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-color: #000; border-style: solid;"></span>${localize('Reset Time')}&nbsp;</div>`,
             start_end_time: `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span>${localize('Start/End Time')}&nbsp;</div>`,
             selected_tick : `<div class='nowrap gr-padding-10 gr-parent'><span style="margin-left: 10px; margin-right: 5px; display: inline-block; border-radius: 6px; background-color: orange; width:10px; height: 10px;"></span>${localize('Selected Tick')}&nbsp;</div>`,
-            start_time    : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span>${localize('Start Time')}&nbsp;</div>`,
+            start_time    : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span>${params.is_tick_trade ? localize('Entry Spot') : localize('Start Time')}&nbsp;</div>`,
         };
 
         const is_high_low_ticks = params.contract_type === 'highlowticks';
