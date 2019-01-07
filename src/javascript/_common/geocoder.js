@@ -158,9 +158,6 @@ const Geocoder = (() => {
             // Filter out duplicates in address components
             const address_list_dictionary = arr_address_list.filter((elem, pos, arr) => arr.indexOf(elem) === pos).join(' ').toLowerCase();
 
-            console.log(address_list_dictionary);
-            console.log(arr_address_components);
-
             // Check if city exists, if true, check if first line of address exists
             if ((address_list_dictionary.indexOf(input_city) !== -1)
                 && (user_address.toLowerCase() !== country_longname.toLowerCase())) {
