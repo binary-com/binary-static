@@ -32,17 +32,17 @@ const professionalClient = (() => {
             $('#loading').remove();
             $('#frm_professional').setVisibility(0);
             $('#professional').setVisibility(1);
-            return
+            return;
         } else if (is_in_page && /^professional_requested$/.test(status)) {
             $('#loading').remove();
             $('#frm_professional').setVisibility(0);
             $('#processing').setVisibility(1);
-            return
+            return;
         } else if (is_in_page && /^professional_rejected$/.test(status)) {
             $('#loading').remove();
             $('#frm_professional').setVisibility(0);
             $('#rejected').setVisibility(1);
-            return
+            return;
         }
 
         const $container        = $('#fs_professional');
