@@ -30,7 +30,7 @@ module.exports = function(grunt) {
             path.resolve(common.root_path, `src/sass/${default_path}`),
         ];
         grunt.log.writeln(`Searching for orphaned images.\nSearching:\nsrc/javascript/${default_path}\nsrc/sass/${default_path}`);
-
+        grunt.log.warn('Please note that we can\'t find orphaned images inside language directory.\nSince they are referenced dynamically, you should check them out yourself.');
         // Actual test is running from here. Note that this scripts attempt to find the only absolute relative
         // directory and filename (to detect a broader range of files), this won't allow us to find references
         // that are made using string concatenations or template strings (mostly in app).
