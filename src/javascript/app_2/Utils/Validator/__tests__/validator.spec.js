@@ -5,12 +5,11 @@ import Validator            from '../validator';
 
 describe('Validator', () => {
     let input;
-    let rules;
+    let rules = getPreBuildDVRs();
     let validator;
 
     beforeEach('Setting up validator', () => {
         input = 'TestInput';
-        rules = getPreBuildDVRs();
         validator = new Validator(
             input,
             rules,

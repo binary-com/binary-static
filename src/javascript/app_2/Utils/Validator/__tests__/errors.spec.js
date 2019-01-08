@@ -3,7 +3,6 @@ import Errors       from '../errors';
 
 describe('Error', () => {
     let errors;
-
     beforeEach('Setting up Errors object', () => {
         errors = new Errors();
         errors.add('HTTPCodes', '100');

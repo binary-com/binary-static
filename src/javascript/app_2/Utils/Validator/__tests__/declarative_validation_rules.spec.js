@@ -143,7 +143,7 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    describe('tests tests that uses options variable', () => {
+    describe('tests that uses options variable', () => {
         let options;
         beforeEach('setting up options', () => {
             options = {
@@ -202,7 +202,7 @@ describe('declarative_validation_rules.js', () => {
                 expect(rules['regular'].func('12', options)).to.be.false;
             });
         });
-        
+
         describe('.validMin', () => {
             it('should return true if options.min is null, undefined, or 0', () => {
                 options.min = 0;
@@ -244,7 +244,7 @@ describe('declarative_validation_rules.js', () => {
             });
 
             it('should return true if float', () => {
-                expect(rules['number'].func(0.10, options)).to.be.true;
+                expect(rules['number'].func(0.0, options)).to.be.true;
             });
             it('should return true if integer', () => {
                 options['type'] = 'int';
@@ -258,7 +258,7 @@ describe('declarative_validation_rules.js', () => {
             });
 
             it('should return false if value is float which does not exceed options.decimal', () => {
-                expect(rules['number'].func(12.122, options)).to.be.false;
+                expect(rules['number'].func(0.002, options)).to.be.false;
             });
 
             it('should return false if min and max equals to one another while value is not equal to min', () => {
@@ -317,12 +317,12 @@ describe('declarative_validation_rules.js', () => {
         };
 
         it('Expects pre_build_dvrs initialized if no arguments passed', () => {
-            expect(Object.keys(getPreBuildDVRs())).to.eql(Object.keys(pre_build_dvrs));
+            expect(Object.keys(rules)).to.eql(Object.keys(pre_build_dvrs));
         });
 
         it('Expects return pre build dvrs if there is pre-build dvrs', () => {
-            getPreBuildDVRs()['address'].message = 'anymessage';
-            expect(getPreBuildDVRs()['address'].message).to.eql('anymessage');
+            rules['address'].message = 'anymessage';
+            expect(rules['address'].message).to.eql('anymessage');
         });
     });
 });

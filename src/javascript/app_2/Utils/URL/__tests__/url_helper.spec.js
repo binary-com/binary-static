@@ -3,13 +3,12 @@ import URLHelper    from '../url_helper';
 
 describe('URLHelper', () => {
     let url;
-    let params;
-
     beforeEach('Setting up url and params', () => {
         url = 'https://www.binary.com/en/trading.html?currency=USD&market=forex';
     });
 
     describe('.getQueryParams', () => {
+        let params;
         beforeEach('Setting up params', () => {
             params = URLHelper.getQueryParams(url);
         });
@@ -23,6 +22,7 @@ describe('URLHelper', () => {
     });
 
     describe('.setQueryParam', () => {
+        let params;
         beforeEach('Setting up params', () => {
             params = {
                 'currency': 'MYR',
