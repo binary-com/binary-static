@@ -22,7 +22,7 @@ const MetaTraderConfig = (() => {
             };
             const advanced_config = {
                 account_type: 'advanced',
-                leverage    : 300,
+                leverage    : 100,
                 short_title : localize('Advanced'),
             };
             const volatility_config = {
@@ -90,6 +90,9 @@ const MetaTraderConfig = (() => {
         };
     })();
 
+    // we need to check if the account type is standard or advanced account before returning landing_company shortcode
+    const getMTFinancialAccountType = acc_type => `${/_advanced$/.test(acc_type) ? 'advanced' : 'standard'}`;
+
     const accounts_info = {};
 
     let $messages;
@@ -132,7 +135,7 @@ const MetaTraderConfig = (() => {
                     if (accounts_info[acc_type].account_type === 'financial') { // financial accounts have their own checks
                         BinarySocket.wait('get_account_status', 'landing_company').then(() => {
                             let is_ok = true;
-                            if (State.getResponse('landing_company.mt_financial_company.shortcode') === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
+                            if (State.getResponse(`landing_company.mt_financial_company.${getMTFinancialAccountType(acc_type)}.shortcode`) === 'maltainvest' && !Client.hasAccountType('financial', 1)) {
                                 $message.find('.maltainvest').setVisibility(1);
                                 is_ok = false;
                             } else {
@@ -486,6 +489,7 @@ const MetaTraderConfig = (() => {
     return {
         accounts_info,
         actions_info,
+        getMTFinancialAccountType,
         fields,
         validations,
         needsRealMessage,

@@ -86,6 +86,11 @@ table {
         }
     }
 
+    #statement-table {
+        td.date {
+            min-width: 101px;
+        }
+    }
     #statement-table, #profit-table {
         tr {
             & > th.details, & > td.details {
@@ -93,6 +98,10 @@ table {
             }
             td {
                 overflow: initial;
+            }
+            td.desc {
+                max-width: 30em;
+                overflow-wrap: break-word;
             }
             @media (max-width: $md) {
                 & > th.details, & > td.details {
@@ -113,6 +122,9 @@ table {
             > th.contract, > td.contract {
                 display: none !important;
             }
+        }
+        #statement-table {
+            table-layout: auto;
         }
         #statement-table tr {
             > th.desc, > td.desc {

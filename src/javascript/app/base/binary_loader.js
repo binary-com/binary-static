@@ -72,7 +72,10 @@ const BinaryLoader = (() => {
         }
 
         ContentVisibility.init();
-        ScrollToAnchor.init();
+
+        BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
+            ScrollToAnchor.init();
+        });
     };
 
     const error_messages = {

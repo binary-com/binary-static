@@ -8,6 +8,7 @@ module.exports = [
     ['cashier/forwardws',                       'app/cashier/deposit_withdraw',                'default',    'Cashier'],
     ['cashier/payment_agent_listws',            'app/cashier/payment_agent_list',              'default',    'Payment Agent Deposit'],
     ['cashier/payment_methods',                 'app/cashier/payment_methods',                 'default',    'Payment Methods'],
+    ['cashier/session_expired',                 'app/cashier/session_expired',                 null,         'Cashier session expired'],
     ['cashier/top_up_virtualws',                'app/user/top_up_virtual',                     'default',    'Top Up Virtual Account'],
 
     ['paymentagent/transferws',                 'app/cashier/paymentagent_transfer',           'default',    'Payment Agent Transfer'],

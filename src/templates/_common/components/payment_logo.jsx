@@ -16,8 +16,9 @@ const payment_methods_list = [
     { image: 'paysafe',                 param: '?anchor=paysafe' },
     { image: 'ethereum_black',          param: '?anchor=ethereum-black', dataShow: '-eucountry' },
     { image: 'bitcoin',                 param: '?anchor=bitcoin',        dataShow: '-eucountry' },
-    { image: 'bitcoin_cash',            param: '?anchor=bitcoin-cash',   dataShow: '-eucountry' },
+    { image: 'tether',                  param: '?anchor=tether',         dataShow: '-eucountry' },
     { image: 'litecoin',                param: '?anchor=litecoin',       dataShow: '-eucountry' },
+    { image: 'bitcoin_cash',            param: '?anchor=bitcoin-cash',   dataShow: '-eucountry' },
 ];
 
 const PaymentLogo = () => payment_methods_list.map((item, inx) => (
