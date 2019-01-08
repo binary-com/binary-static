@@ -1,16 +1,21 @@
 import { expect }   from 'chai';
 import getBaseName  from '../base_name';
+import Url          from '../../../../_common/url';
+import { setURL }   from '../../../../_common/__tests__/tests_common';
 
 describe('base_name.js', () => {
     describe('.getBaseName', () => {
-        it('should return basename from url', () => {
-            global.window.location.pathname = 'app/en/statement';
-            expect(getBaseName()).to.eql('/app/en/');
+        it('expect return correct value when pathname is not set', () => {
+            expect(getBaseName()).to.eq('/app/en/');
         });
 
-        it('should return /app/en/ if basename does not exist', () => {
-            global.window.location.pathname = '';
-            expect(getBaseName()).to.eql('/app/en/');
+        it('expect return correct value when pathname is set', () => {
+            setURL(`${Url.websiteUrl()}app/de/home.html`);
+            expect(getBaseName()).to.eq('/app/de');
+        });
+
+        after(() => {
+            setURL(`${Url.websiteUrl()}en/home.html`);
         });
     });
 });
