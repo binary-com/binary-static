@@ -44,7 +44,7 @@ const Geocoder = (() => {
         if (el_btn_validate) {
             applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${!is_state_select_el ? state : undefined} ,${city}`, (element) => {
                 // List of fields that will trigger event onChange but will allow empty values as they are non-required fields
-                const non_required_fields = ['addr_2', 'postcode', `${!is_state_select_el ? 'state' : undefined}`];
+                const non_required_fields = ['addr_2', 'postcode', `${!is_state_select_el ? 'state' : undefined }`];
 
                 element.addEventListener('keyup', () => {
                     const value = element.value;
@@ -144,12 +144,15 @@ const Geocoder = (() => {
 
     const isAddressFound = (user_address, user_city, geoloc_address) => {
         let result;
+        const trimSpaces = (string) => string.replace(/^\s+|\s+$/g,'');
+
         if (geoloc_address.length && getValue('#address_city')) {
             const item_idx = geoloc_address.length - 1;
 
             const country_longname = getElementById('country').innerHTML;
-            const input_city = user_city.toLowerCase();
-            const arr_input_address = user_address.replace(/ - |\/\w+/g,' ').toLowerCase().split(', ');
+            const input_city = trimSpaces(user_city).toLowerCase();
+            const user_address_str = trimSpaces(user_address);
+            const arr_input_address = user_address_str.replace(/[\s]-[\s]|\/\w+/g,' ').toLowerCase().split(', ');
 
             const arr_address_components = geoloc_address[item_idx].address_components;
             const arr_address_list = [];
