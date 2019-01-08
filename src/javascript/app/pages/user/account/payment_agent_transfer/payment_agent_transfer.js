@@ -37,12 +37,20 @@ const PaymentAgentTransfer = (() => {
         });
     };
 
+    // Remove multiline and excess whitespaces from description text.
+    const trimDescriptionContent = () => {
+        document.getElementById('description').addEventListener('change', e => {
+            e.srcElement.value = e.target.value.replace(/\s+/g, ' ');
+        });
+    };
+
     const init = (pa, currency) => {
         const form_id = '#frm_paymentagent_transfer';
         $form_error = $('#form_error');
 
         setFormVisibility(true);
         PaymentAgentTransferUI.updateFormView(currency);
+        trimDescriptionContent();
 
         common_request_fields = [
             { request_field: 'paymentagent_transfer', value: 1 },
@@ -52,6 +60,7 @@ const PaymentAgentTransfer = (() => {
         FormManager.init(form_id, [
             { selector: '#client_id', validations: ['req', ['regular', { regex: /^\w+\d+$/, message: localize('Please enter a valid Login ID.') }]], request_field: 'transfer_to' },
             { selector: '#amount',    validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min: pa ? pa.min_withdrawal : 10, max: pa ? pa.max_withdrawal : 2000 }], ['custom', { func: () => +Client.get('balance') >= +$('#amount').val(), message: localize('Insufficient balance.') }]] },
+            { selector: '#description', validations: ['general'] },
 
             { request_field: 'dry_run', value: 1 },
         ].concat(common_request_fields));
@@ -113,6 +122,7 @@ const PaymentAgentTransfer = (() => {
         FormManager.init(confirm_form_id, [
             { request_field: 'transfer_to', value: req.transfer_to },
             { request_field: 'amount',      value: req.amount },
+            { request_field: 'description', value: req.description },
         ].concat(common_request_fields));
 
         FormManager.handleSubmit({
