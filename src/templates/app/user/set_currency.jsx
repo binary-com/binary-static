@@ -52,13 +52,13 @@ const SetCurrency = () => (
                     <Currencies id='crypto' text={it.L('Cryptocurrency')} />
                 </form>
             </div>
-            <div id='currency_confirmation_popup' className='invisible gr-padding-20 gr-gutter'>
-                <h2>{it.L('Are you sure?')}</h2>
-                <p className='invisible' id='currency_confirmation_content' />
+            <div id='set_currency_popup' className='invisible gr-padding-20 gr-gutter small-popup'>
+                <h1>{it.L('Are you sure?')}</h1>
+                <p className='invisible' id='set_currency_popup_content' />
                 <div className='center-text'>
                     <p className='invisible error-msg' />
-                    <a className='button' id='btn_confirm' href='javascript:;'><span>{it.L('Confirm')}</span></a>
-                    <a className='button' id='btn_back' data-value='back' href='javascript:;'><span>{it.L('Back')}</span></a>
+                    <button className='button button-secondary' id='btn_back'>{it.L('Back')}</button>
+                    <button className='button' id='btn_confirm'>{it.L('Confirm')}</button>
                 </div>
             </div>
 

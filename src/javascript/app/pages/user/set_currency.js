@@ -8,6 +8,7 @@ const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const Url              = require('../../../_common/url');
+const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
 const SetCurrency = (() => {
     let is_new_account;
@@ -31,8 +32,11 @@ const SetCurrency = (() => {
         }
 
         BinarySocket.wait('payout_currencies', 'landing_company').then(() => {
-            const landing_company = State.getResponse('landing_company');
-            let currencies        = State.getResponse('payout_currencies');
+            const landing_company  = State.getResponse('landing_company');
+            const default_currency = getPropertyValue(landing_company.financial_company, 'legal_default_currency') ||
+                getPropertyValue(landing_company.gaming_company, 'legal_default_currency') || '';
+            let currencies         = State.getResponse('payout_currencies');
+
             if (Client.get('landing_company_shortcode') === 'costarica') {
                 currencies = getCurrencies(landing_company);
             }
@@ -58,13 +62,17 @@ const SetCurrency = (() => {
             $('#set_currency_loading').remove();
             $('#set_currency, .select_currency').setVisibility(1);
 
+            if (default_currency) {
+                $(`#${default_currency}`).addClass('selected');
+            }
+
             const $currency_list = $('.currency_list');
-            const popup_selector    = '#set_currency_popup';
+            const popup_selector = '#set_currency_popup_container';
             $('.currency_wrapper').on('click', function () {
                 $currency_list.find('> div').removeClass('selected');
                 $(this).addClass('selected');
-                const $popup_container = $('#currency_confirmation_popup');
-                const $popup_content   = $('#currency_confirmation_content');
+                const $popup_container = $('#set_currency_popup');
+                const $popup_content   = $('#set_currency_popup_content');
 
                 let localized_text = '';
                 if (isCryptocurrency($(this).attr('id'))) {
@@ -73,18 +81,15 @@ const SetCurrency = (() => {
                     localized_text = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have one fiat currency account only.', $(this).attr('id'));
                 }
                 $popup_content.text(localized_text).setVisibility(1);
-                $('body').append($('<div/>', { id: 'set_currency_popup', class: 'lightbox' }).append($popup_container.clone().setVisibility(1)));
+                $('body').append($('<div/>', { id: 'set_currency_popup_container', class: 'lightbox' }).append($popup_container.clone().setVisibility(1)));
 
                 const $popup = $(popup_selector);
 
-
-                $popup.find('#btn_confirm, #btn_back').off('click').on('click', (e) => {
+                $popup.find('#btn_confirm, #btn_back').off('click').bind('click', function (e) {
                     e.preventDefault();
-                    const $error = $('#currency_confirmation_content').find('.error-msg');
+                    const $error = $popup_container.find('.error-msg');
                     $error.setVisibility(0);
-                    if ($(this).attr('data-value') === 'back') {
-                        $currency_list.find('> div').removeClass('selected');
-                    } else {
+                    if ($(this).attr('id') === 'btn_confirm') {
                         const $selected_currency = $currency_list.find('.selected');
                         if ($selected_currency.length) {
                             BinarySocket.send({ set_account_currency: $selected_currency.attr('id') }).then((response_c) => {
@@ -125,6 +130,8 @@ const SetCurrency = (() => {
                         } else {
                             $error.text(localize('Please choose a currency')).setVisibility(1);
                         }
+                    } else {
+                        $currency_list.find('> div').removeClass('selected');
                     }
                     $popup.remove();
                 });

@@ -77,6 +77,11 @@
         border-radius: $BORDER_RADIUS;
         overflow: auto;
         text-align: left;
+
+        &.small-popup {
+            max-width: 25em;
+            padding: 30px;
+        }
     }
 }
 
