@@ -68,6 +68,7 @@ const PaymentAgentWithdraw = (() => {
             const max     = getPaWithdrawalLimit(currency, 'max');
 
             $(form_id).find('label[for="txtAmount"]').text(`${localize('Amount')} ${currency}`);
+            trimDescriptionContent();
             FormManager.init(form_id, [
                 { selector: field_ids.ddl_agents,        validations: ['req'], request_field: 'paymentagent_loginid' },
                 { selector: field_ids.txt_amount,        validations: ['req', ['number', { type: 'float', decimals: getDecimalPlaces(currency), min, max }], ['custom', { func: () => +Client.get('balance') >= +$(field_ids.txt_amount).val(), message: localize('Insufficient balance.') }]], request_field: 'amount' },
@@ -85,6 +86,13 @@ const PaymentAgentWithdraw = (() => {
                 enable_button       : true,
             });
         }
+    };
+
+    // Remove multiline and excess whitespaces from description text.
+    const trimDescriptionContent = () => {
+        document.getElementById('txtDescription').addEventListener('change', e => {
+            e.srcElement.value = e.target.value.replace(/\s+/g, ' ');
+        });
     };
 
     const insertListOption = ($ddl_object, item_text, item_value) => {
