@@ -8,7 +8,6 @@ const isCryptocurrency = require('../../common/currency').isCryptocurrency;
 const localize         = require('../../../_common/localize').localize;
 const State            = require('../../../_common/storage').State;
 const Url              = require('../../../_common/url');
-const getPropertyValue = require('../../../_common/utility').getPropertyValue;
 
 const SetCurrency = (() => {
     let is_new_account;
@@ -32,10 +31,8 @@ const SetCurrency = (() => {
         }
 
         BinarySocket.wait('payout_currencies', 'landing_company').then(() => {
-            const landing_company  = State.getResponse('landing_company');
-            const default_currency = getPropertyValue(landing_company.financial_company, 'legal_default_currency') ||
-                getPropertyValue(landing_company.gaming_company, 'legal_default_currency') || '';
-            let currencies         = State.getResponse('payout_currencies');
+            const landing_company = State.getResponse('landing_company');
+            let currencies        = State.getResponse('payout_currencies');
 
             if (Client.get('landing_company_shortcode') === 'costarica') {
                 currencies = getCurrencies(landing_company);
@@ -61,10 +58,6 @@ const SetCurrency = (() => {
 
             $('#set_currency_loading').remove();
             $('#set_currency, .select_currency').setVisibility(1);
-
-            if (default_currency) {
-                $(`#${default_currency}`).addClass('selected');
-            }
 
             const $currency_list = $('.currency_list');
             const popup_selector = '#set_currency_popup_container';
