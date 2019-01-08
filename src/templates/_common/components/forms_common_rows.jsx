@@ -266,7 +266,7 @@ export const GeocodeValidation = ({ className }) => (
             <div className='gr-12 gr-padding-10 center-text'>
                 <Loading className='invisible' />
                 <p id='geocode_error' className='notice-msg invisible'>
-                    {it.L('Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete.')}
+                    {it.L('We could not recognise your address. You may proceed but please ensure that your address is complete and accurate.')}
                 </p>
                 <div id='geocode_success' className='success-msg invisible'>
                     <span className='success-msg'>
