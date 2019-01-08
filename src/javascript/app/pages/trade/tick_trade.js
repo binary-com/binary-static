@@ -155,8 +155,9 @@ const TickDisplay = (() => {
                 _0: { label: localize('Entry Spot'), id: 'start_tick' },
             };
             x_indicators[`_${exit_tick_index}`] = {
-                label: localize('Exit Spot'),
-                id   : 'exit_tick',
+                label    : localize('Exit Spot'),
+                id       : 'exit_tick',
+                dashStyle: 'Dash',
             };
         } else {
             x_indicators = {};
