@@ -149,7 +149,7 @@ const Geocoder = (() => {
 
             const country_longname = getElementById('country').innerHTML;
             const input_city = user_city.toLowerCase();
-            const arr_input_address = user_address.replace(/ - /g,' ').toLowerCase().split(', ');
+            const arr_input_address = user_address.replace(/ - |\/\w+/g,' ').toLowerCase().split(', ');
 
             const arr_address_components = geoloc_address[item_idx].address_components;
             const arr_address_list = [];
