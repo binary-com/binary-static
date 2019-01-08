@@ -184,7 +184,6 @@ const DigitTicker = (() => {
         current_spot = quote.substr(-1);
 
         el_mask.innerText = `${current_tick_count} / ${total_tick_count}`;
-        // el_peek.innerText = current_spot;
 
         el_peek_box.classList.add('digit-running');
         el_peek.classList.add('digit-running');
@@ -196,9 +195,42 @@ const DigitTicker = (() => {
         window.onresize = null;
     };
 
+    const countDecimals = function(value) {
+        if (Math.floor(value) !== value) return value.toString().split('.')[1].length || 0;
+        return 0;
+    };
+
+    const calculateDistance = (old_digit, new_digit) => Math.abs(old_digit - new_digit);
+
+    const countUp = (start, end, duration, element, render) => {
+        const decimal_points = countDecimals(start);
+        const range = calculateDistance(start, end);
+        const step = Math.abs(range / 60);
+        const increment = end > start ? (1 * step) : (-1 * step);
+        let current = start;
+        let i = 0;
+
+        const renderTick = () => {
+            i++;
+            current += increment;
+
+            element.innerHTML = render(current.toFixed(decimal_points));
+
+            if (i <= 15) {
+                requestAnimationFrame(renderTick);
+            } else {
+                current = end;
+                element.innerHTML = render(current.toFixed(decimal_points));
+            }
+        };
+
+        requestAnimationFrame(renderTick);
+    };
+
     return {
         init,
         update,
+        countUp,
         markAsWon,
         markAsLost,
         markDigitAsLost,

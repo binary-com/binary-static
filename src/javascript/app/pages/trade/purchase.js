@@ -36,7 +36,23 @@ const Purchase = (() => {
 
     const replaceElement = (container, child) => {
         container.querySelectorAll('.row').forEach(item => item.classList.add('invisible'));
-        container.append(child);
+        // Count up to the number instead of just replacing it.
+        if (Array.from(container.querySelectorAll('.row.digit-trade')).length > 0) {
+            const this_quote_el = child.querySelector('.quote');
+            container.append(child);
+            if (this_quote_el.parentElement.parentElement.previousSibling) {
+                const prev_quote_el = this_quote_el.parentElement.parentElement.previousSibling.querySelector('.quote');
+                const prev_quote = prev_quote_el.innerText;
+                DigitTicker.countUp(parseFloat(prev_quote),
+                    parseFloat(this_quote_el.innerText),
+                    700,
+                    this_quote_el,
+                    (content) => `<div class='quote'>${content.replace(/\d$/, makeBold)}</div>`,
+                );
+            }
+        } else {
+            container.append(child);
+        }
     };
 
     const display = (details) => {
@@ -328,8 +344,7 @@ const Purchase = (() => {
                 }
 
                 const tick = (tick_config.is_tick_high || tick_config.is_tick_low) ?
-                    tick_d.quote :
-                    `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
+                    tick_d.quote : `<div class='quote'>${tick_d.quote.replace(/\d$/, makeBold)}</div>`;
                 const el3  = createElement('div', { class: 'col' });
 
                 CommonFunctions.elementInnerHtml(el3, tick);
