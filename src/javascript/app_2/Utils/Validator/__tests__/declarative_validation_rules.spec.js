@@ -3,26 +3,8 @@ import sinon                  from 'sinon';
 import { getPreBuildDVRs }    from '../declarative_validation_rules.js';
 
 describe('declarative_validation_rules.js', () => {
-    let rules;
+    let rules = getPreBuildDVRs();
     let options;
-
-    beforeEach('Getting prebuilt DVRs and setting up options.', () => {
-        rules = getPreBuildDVRs();
-        options = {
-            allow_empty: true,
-            min: 0,
-            max: 8,
-            type: 'float',
-            decimals: 2,
-            regex: /[a-z]/g,
-            to: '#txt',
-        }
-
-        $ = sinon.stub();
-        $.withArgs(options.to).returns({
-            val: sinon.stub().returns('#txt')
-        });
-    });
 
     describe('.validRequired', () => {
         it('should return false if value is undefined', () => {
@@ -114,8 +96,8 @@ describe('declarative_validation_rules.js', () => {
 
     describe('.validPostCode', () => {
         it('should return false if value contains characters that is not alphabets or numerals', () => {
-            let non_char_nums = '`~!@#$%^&*()_+={}|[]\\:;"\'<>?,./'.split('');
-            non_char_nums.forEach((non_char_num) => {
+            let non_alpha_nums = '`~!@#$%^&*()_+={}|[]\\:;"\'<>?,./'.split('');
+            non_alpha_nums.forEach((non_char_num) => {
                 let mockvalue = `00${non_char_num}00`;
                 expect(rules['postcode'].func(mockvalue)).to.be.false;
             });
@@ -132,15 +114,6 @@ describe('declarative_validation_rules.js', () => {
         });
     });
 
-    describe('.validRegular', () => {
-        it('should return true if value matches', () => {
-            expect(rules['regular'].func('a', options)).to.be.true;
-        });
-        it('should return false if value does not match', () => {
-            expect(rules['regular'].func('12', options)).to.be.false;
-        });
-    });
-
     describe('.validEmailToken', () => {
         it('should return false if value length is less than 8', () => {
             expect(rules['signup_token'].func('1234567')).to.be.false;
@@ -152,139 +125,172 @@ describe('declarative_validation_rules.js', () => {
 
     describe('.validTaxID', () => {
         it('should return false if value is not allowed', () => {
-            let non_char_nums = '~!@#$%^&*()+`={}|[]\\:\'";<>?/.,'.split('');
-            non_char_nums.forEach((non_char_num) => {
-                let mockvalue = `10${non_char_num}01`;
+            let not_valid_charaters = '~!@#$%^&*()+`={}|[]\\:\'";<>?/.,'.split('');
+            not_valid_charaters.forEach((not_valid_charater) => {
+                let mockvalue = `10${not_valid_charater}01`;
                 expect(rules['tax_id'].func(mockvalue)).to.be.false;
             });
         });
     });
 
     describe('.validBarrier', () => {
-        it('should return false if value is not allowed', () => {
-            let not_alloweds = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_+-=`{}|[]\\:";\'<>?/,'.split('');
-            not_alloweds.forEach((not_allowed) => {
-                let mockvalue = `0.${not_allowed}001`;
+        it('should return false if value is not numbers and a full stop', () => {
+            let not_valid_charaters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_+-=`{}|[]\\:";\'<>?/,'.split('');
+            not_valid_charaters.forEach((not_valid_charater) => {
+                let mockvalue = `0.${not_valid_charater}001`;
                 expect(rules['barrier'].func(mockvalue)).to.be.false;
             });
         });
     });
 
-    describe('validCompare', () => {
-        it('expects return false if empty value passed', () => {
-            expect(rules['compare'].func('', options)).to.be.false;
+    describe('tests tests that uses options variable', () => {
+        let options;
+        beforeEach('setting up options', () => {
+            options = {
+                allow_empty: true,
+                min: 0,
+                max: 8,
+                type: 'float',
+                decimals: 2,
+                regex: /[a-z]/g,
+                to: '#txt',
+            }
         });
 
-        it('expects return true if the value match', () => {
-            expect(rules['compare'].func('#txt', options)).to.be.true;
+        describe('tests that use jQuery', () => {
+            beforeEach('setting up sinon stub', () => {
+                $ = sinon.stub();
+                $.withArgs(options.to).returns({
+                    val: sinon.stub().returns('txt')
+                });
+            });
+
+            describe('validCompare', () => {
+                it('expects return false if empty value passed', () => {
+                    expect(rules['compare'].func('', options)).to.be.false;
+                });
+
+                it('expects return true if the value match', () => {
+                    expect(rules['compare'].func('txt', options)).to.be.true;
+                });
+
+                it('expects false if the value is not match', () => {
+                    expect(rules['compare'].func('txt_wrong', options)).to.be.false;
+                });
+            });
+
+            describe('validNotEqual', () => {
+                it('expects return true if empty value passed', () => {
+                    expect(rules['not_equal'].func('', options)).to.be.true;
+                });
+
+                it('expects return false if the value match', () => {
+                    expect(rules['not_equal'].func('txt', options)).to.be.false;
+                });
+
+                it('expects true if the value is not match', () => {
+                    expect(rules['not_equal'].func('txt_wrong', options)).to.be.true;
+                });
+            });
         });
 
-        it('expects false if the value is not match', () => {
-            expect(rules['compare'].func('#txtWrong', options)).to.be.false;
+        describe('.validRegular', () => {
+            it('should return true if value matches', () => {
+                expect(rules['regular'].func('a', options)).to.be.true;
+            });
+            it('should return false if value does not match', () => {
+                expect(rules['regular'].func('12', options)).to.be.false;
+            });
         });
-    });
-
-    describe('validNotEqual', () => {
-        it('expects return true if empty value passed', () => {
-            expect(rules['not_equal'].func('', options)).to.be.true;
-        });
-
-        it('expects return false if the value match', () => {
-            expect(rules['not_equal'].func('#txt', options)).to.be.false;
-        });
-
-        it('expects true if the value is not match', () => {
-            expect(rules['not_equal'].func('#txtWrong', options)).to.be.true;
-        });
-    });
-
-    describe('.validMin', () => {
-        it('should return true if options.min is null, undefined, or 0', () => {
-            options.min = 0;
-            expect(rules['min'].func('', options)).to.be.true;
-        });
-        it('should return true if value.length >= options.min', () => {
-            options.min = 2;
-            expect(rules['min'].func('00', options)).to.be.true;
-        });
-        it('should return false if value.length < options.min', () => {
-            options.min = 2;
-            expect(rules['min'].func('0', options)).to.be.false;
-        });
-    });
-
-    describe('.validLength', () => {
-        it('should return true if value.length is in boundary', () => {
-            options.min = 1;
-            expect(rules['length'].func('00', options)).to.be.true;
-        });
-        it('should return false if value is smaller than minimum', () => {
-            options.min = 1;
-            expect(rules['length'].func('', options)).to.be.false;
-        });
-        it('should return false if value is bigger than maximum', () => {
-            options.max = 1;
-            expect(rules['length'].func('00', options)).to.be.false;
-        });
-        it('should return true if min and max is not set', () => {
-            options.max = 0;
-            expect(rules['length'].func('0', options)).to.be.true;
-        });
-    });
-
-    describe('.validNumber', () => {
-        // New lines seperates tests for different if statements.
-        it('should return true if value is empty', () => {
-           expect(rules['number'].func('', options)).to.be.true;
+        
+        describe('.validMin', () => {
+            it('should return true if options.min is null, undefined, or 0', () => {
+                options.min = 0;
+                expect(rules['min'].func('', options)).to.be.true;
+            });
+            it('should return true if value.length >= options.min', () => {
+                options.min = 2;
+                expect(rules['min'].func('00', options)).to.be.true;
+            });
+            it('should return false if value.length < options.min', () => {
+                options.min = 2;
+                expect(rules['min'].func('0', options)).to.be.false;
+            });
         });
 
-        it('should return true if float', () => {
-           expect(rules['number'].func(0.10, options)).to.be.true;
-        });
-        it('should return true if integer', () => {
-            options['type'] = 'int';
-            expect(rules['number'].func(0, options)).to.be.true;
-        });
-        it('should return false if value is characters', () => {
-           expect(rules['number'].func('a', options)).to.be.false;
-        });
-        it('should return false if value is NaN', () => {
-           expect(rules['number'].func(NaN, options)).to.be.false;
-        });
-
-        it('should return false if value is float which does not exceed options.decimal', () => {
-           expect(rules['number'].func(12.122, options)).to.be.false;
-        });
-
-        it('should return false if min and max equals to one another while value is not equal to min', () => {
-           options.min = 1;
-           options.max = 1;
-
-           expect(rules['number'].func(2, options)).to.be.false;
+        describe('.validLength', () => {
+            it('should return true if value.length is in boundary', () => {
+                options.min = 1;
+                expect(rules['length'].func('00', options)).to.be.true;
+            });
+            it('should return false if value is smaller than minimum', () => {
+                options.min = 1;
+                expect(rules['length'].func('', options)).to.be.false;
+            });
+            it('should return false if value is bigger than maximum', () => {
+                options.max = 1;
+                expect(rules['length'].func('00', options)).to.be.false;
+            });
+            it('should return true if min and max is not set', () => {
+                options.max = 0;
+                expect(rules['length'].func('0', options)).to.be.true;
+            });
         });
 
-        it('should return false if value out of boundary (min, max)', () => {
-           options.min = 2;
-           options.max = 4;
+        describe('.validNumber', () => {
+            // New lines seperates tests for different if statements.
+            it('should return true if value is empty', () => {
+                expect(rules['number'].func('', options)).to.be.true;
+            });
 
-           expect(rules['number'].func(1, options)).to.be.false;
-           expect(rules['number'].func(5, options)).to.be.false;
-        });
-        it('should return true if value in boundary (min, max', () => {
-           options.min = 2;
-           options.max = 4;
+            it('should return true if float', () => {
+                expect(rules['number'].func(0.10, options)).to.be.true;
+            });
+            it('should return true if integer', () => {
+                options['type'] = 'int';
+                expect(rules['number'].func(0, options)).to.be.true;
+            });
+            it('should return false if value is characters', () => {
+                expect(rules['number'].func('a', options)).to.be.false;
+            });
+            it('should return false if value is NaN', () => {
+                expect(rules['number'].func(NaN, options)).to.be.false;
+            });
 
-           expect(rules['number'].func(3, options)).to.be.true;
-        });
+            it('should return false if value is float which does not exceed options.decimal', () => {
+                expect(rules['number'].func(12.122, options)).to.be.false;
+            });
 
-        it('should return false if smaller than min', () => {
-          options.min = 2;
-          expect(rules['number'].func(1, options)).to.be.false;
-        });
+            it('should return false if min and max equals to one another while value is not equal to min', () => {
+                options.min = 1;
+                options.max = 1;
 
-        it('should return false if bigger than max', () => {
-           options.max = 0;
-           expect(rules['number'].func(1, options)).to.be.false;
+                expect(rules['number'].func(2, options)).to.be.false;
+            });
+
+            it('should return false if value out of boundary (min, max)', () => {
+                options.min = 2;
+                options.max = 4;
+
+                expect(rules['number'].func(1, options)).to.be.false;
+                expect(rules['number'].func(5, options)).to.be.false;
+            });
+            it('should return true if value in boundary (min, max', () => {
+                options.min = 2;
+                options.max = 4;
+
+                expect(rules['number'].func(3, options)).to.be.true;
+            });
+
+            it('should return false if smaller than min', () => {
+                options.min = 2;
+                expect(rules['number'].func(1, options)).to.be.false;
+            });
+
+            it('should return false if bigger than max', () => {
+                options.max = 0;
+                expect(rules['number'].func(1, options)).to.be.false;
+            });
         });
     });
 
@@ -316,7 +322,6 @@ describe('declarative_validation_rules.js', () => {
 
         it('Expects return pre build dvrs if there is pre-build dvrs', () => {
             getPreBuildDVRs()['address'].message = 'anymessage';
-
             expect(getPreBuildDVRs()['address'].message).to.eql('anymessage');
         });
     });

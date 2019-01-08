@@ -13,7 +13,6 @@ describe('URLHelper', () => {
         beforeEach('Setting up params', () => {
             params = URLHelper.getQueryParams(url);
         });
-
         it('should return query parameters', () => {
             expect(params.get('currency')).to.eql('USD');
             expect(params.get('market')).to.eql('forex');
@@ -24,14 +23,21 @@ describe('URLHelper', () => {
     });
 
     describe('.setQueryParam', () => {
-        it('should return an object with the correct value', () => {
+        beforeEach('Setting up params', () => {
             params = {
                 'currency': 'MYR',
                 'market': 'forex',
-            };
+            }
+        });
+        it('should return an object', () => {
             expect(URLHelper.setQueryParam(params, url)).to.be.a('object');
+        });
+        it('should return an object with key "currency" to the value of "MYR"', () => {
             expect(URLHelper.setQueryParam(params, url).searchParams.get('currency')).to.eql('MYR');
+        });
+        it('should return an object with key "market" to the value of "forex"', () => {
             expect(URLHelper.setQueryParam(params, url).searchParams.get('market')).to.eql('forex');
         });
+
     });
 });
