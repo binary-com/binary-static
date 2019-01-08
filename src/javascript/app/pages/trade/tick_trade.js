@@ -1,4 +1,5 @@
 const moment               = require('moment');
+const HighchartUI          = require('./charts/highchart.ui');
 const requireHighstock     = require('./common').requireHighstock;
 const Reset                = require('./reset');
 const Tick                 = require('./tick');
@@ -165,7 +166,12 @@ const TickDisplay = (() => {
     const initializeChart = (config, data) => {
         const has_reset_barrier = contract.entry_spot && contract.barrier &&
             Reset.isReset(contract_category) && Reset.isNewBarrier(contract.entry_spot, contract.barrier);
-        ChartSettings.setLabels({
+        Highcharts.setOptions({
+            lang: { thousandsSep: ',' },
+        });
+        ChartSettings.setChartOptions(config);
+        chart = new Highcharts.Chart(ChartSettings.getChartOptions());
+        HighchartUI.updateLabels(chart, {
             contract_type   : contract_category,
             has_barrier     : should_set_barrier && contract_category !== 'highlowticks',
             is_reset_barrier: has_reset_barrier,
@@ -173,11 +179,6 @@ const TickDisplay = (() => {
             shortcode       : contract.shortcode,
             show_end_time   : contract_category !== 'highlowticks',
         });
-        Highcharts.setOptions({
-            lang: { thousandsSep: ',' },
-        });
-        ChartSettings.setChartOptions(config);
-        chart = new Highcharts.Chart(ChartSettings.getChartOptions());
         if (data) {
             dispatch(data);
         }
@@ -437,9 +438,15 @@ const TickDisplay = (() => {
                             label    : localize('Exit Spot'),
                             dashStyle: 'Dash',
                         };
-                    } else if (current_tick_count === ticks_needed && contract_category === 'highlowticks'){
-                        ChartSettings.setLabels({ show_end_time: true });
-                        chart.setSubtitle({ text: ChartSettings.getSubtitle() });
+                    } else if (current_tick_count === ticks_needed && contract_category === 'highlowticks') {
+                        HighchartUI.updateLabels(chart, {
+                            contract_type   : contract_category,
+                            has_barrier     : false,
+                            is_reset_barrier: false,
+                            is_tick_trade   : true,
+                            shortcode       : contract.shortcode,
+                            show_end_time   : true,
+                        });
                     }
 
                     if (typeof x_indicators[indicator_key] !== 'undefined') {
@@ -494,16 +501,14 @@ const TickDisplay = (() => {
 
             CommonFunctions.elementInnerHtml(CommonFunctions.getElementById('contract_purchase_barrier'), `${localize('Reset Barrier')}: ${reset_barrier}`);
             reset_spot_plotted = true;
-            ChartSettings.setLabels({
+            HighchartUI.updateLabels(chart, {
                 contract_type   : contract_category,
                 has_barrier     : true,
                 is_reset_barrier: true,
                 is_tick_trade   : true,
                 shortcode       : contract.shortcode,
+                show_end_time   : true,
             });
-            if (chart) {
-                chart.setTitle(null, { text: ChartSettings.getSubtitle() });
-            }
         }
 
         evaluateContractOutcome();

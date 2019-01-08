@@ -171,6 +171,7 @@ const Highchart = (() => {
         is_sold_before_start: sell_time < start_time,
         is_user_sold        : contract.status === 'sold',
         has_barrier         : !!(contract.barrier || contract.high_barrier),
+        is_tick_trade       : false,
         show_end_time       : contract.contract_type !== 'highlowticks',
     });
 

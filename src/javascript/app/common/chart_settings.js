@@ -17,7 +17,6 @@ const ChartSettings = (() => {
         labels = labels || { // needs to be inside setLabels function so localize works
             barrier_line : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: green; border-style: solid;"></span>${localize('Barrier')}&nbsp;</div>`,
             barrier_spot : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: green; border-style: dotted;"></span>${localize('Barrier')}&nbsp;</div>`,
-            end_time     : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: dashed;"></span>${params.is_tick_trade ? localize('Exit Spot') : localize('End Time')}&nbsp;</div>`,
             entry_spot   : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_spot_style} border: 3px solid orange; width: 4px; height: 4px;"></span>${localize('Entry Spot')}&nbsp;</div>`,
             exit_spot    : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_spot_style} background-color: orange; width:10px; height: 10px;"></span>${localize('Exit Spot')}&nbsp;</div>`,
             delay        : `<div class='nowrap gr-padding-10 gr-parent delay'><span class="chart-delay">${localize('Charting for this underlying is delayed')}&nbsp;</span></div>`,
@@ -28,13 +27,16 @@ const ChartSettings = (() => {
             reset_barrier: `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_horizontal_line_style} border-color: green; border-style: solid;"></span>${localize('Reset Barrier')}&nbsp;</div>`,
             reset_time   : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-color: #000; border-style: solid;"></span>${localize('Reset Time')}&nbsp;</div>`,
             selected_tick: `<div class='nowrap gr-padding-10 gr-parent'><span style="margin-left: 10px; margin-right: 5px; display: inline-block; border-radius: 6px; background-color: orange; width:10px; height: 10px;"></span>${localize('Selected Tick')}&nbsp;</div>`,
-            start_time   : `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span>${params.is_tick_trade ? localize('Entry Spot') : localize('Start Time')}&nbsp;</div>`,
+
+            // need to pass is_tick_trade params explicitly to return correct label when switching between ticks and non-ticks charts
+            getEndTime  : (is_tick_trade) => `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: dashed;"></span>${is_tick_trade ? localize('Exit Spot') : localize('End Time')}&nbsp;</div>`,
+            getStartTime: (is_tick_trade) => `<div class='nowrap gr-padding-10 gr-parent'><span style="${common_vertical_line_style} border-color: #e98024; border-style: solid;"></span>${is_tick_trade ? localize('Entry Spot') : localize('Start Time')}&nbsp;</div>`,
         };
 
         const is_high_low_ticks = params.contract_type === 'highlowticks';
         const barrier_style     = params.is_tick_trade ? labels.barrier_line : labels.barrier_spot;
         const barrier           = params.is_reset_barrier ? labels.reset_barrier : barrier_style;
-        const start_time        = labels.start_time;
+        const start_time        = labels.getStartTime(params.is_tick_trade);
         const highest_lowest    = /^tickhigh_/i.test(params.shortcode) ? labels.highest_tick : labels.lowest_tick;
         txt_subtitle = (params.is_chart_delayed ? labels.delay : '') +
             (params.is_forward_starting ? labels.purchase_time : '') +
@@ -45,7 +47,7 @@ const ChartSettings = (() => {
             (isReset(params.contract_type) ? labels.reset_time : '') +
             (is_high_low_ticks ? labels.selected_tick : '') +
             (is_high_low_ticks ? highest_lowest : '') +
-            (params.show_end_time ? labels.end_time : '') +
+            (params.show_end_time ? labels.getEndTime(params.is_tick_trade) : '') +
             (isCallputspread(params.contract_type) ? labels.payout_range : '');
     };
 
