@@ -31,8 +31,18 @@ const professionalClient = (() => {
         if (is_in_page && /professional/.test(status)) {
             $('#loading').remove();
             $('#frm_professional').setVisibility(0);
-            $(`#${/professional_requested/.test(status) ? 'processing' : 'professional'}`).setVisibility(1);
-            return;
+            $('#professional').setVisibility(1);
+            return
+        } else if (is_in_page && /professional_requested/.test(status)) {
+            $('#loading').remove();
+            $('#frm_professional').setVisibility(0);
+            $('#processing').setVisibility(1);
+            return
+        } else if (is_in_page && /professional_rejected/.test(status)) {
+            $('#loading').remove();
+            $('#frm_professional').setVisibility(0);
+            $('#rejected').setVisibility(1);
+            return
         }
 
         const $container        = $('#fs_professional');
