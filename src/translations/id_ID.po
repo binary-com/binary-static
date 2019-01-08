@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2018-12-21 02:17\n"
+"PO-Revision-Date: 2019-01-03 05:52\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Indonesian\n"
 "MIME-Version: 1.0\n"
@@ -231,8 +231,8 @@ msgstr "%1 tidak berafiliasi dengan agen pembayaran manapun. Setiap agen pembaya
 msgid "%1 is not available in Costa Rica and is not regulated or supervised by any regulatory body in the Costa Rican financial system."
 msgstr "%1 tidak tersedia di Kosta Rika dan tidak diatur atau diawasi oleh badan pengawas keuangan di Kosta Rika."
 
-msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, <a href='%2'>visit our history page</a>."
-msgstr "%1 dimiliki dan dioperasikan oleh grup perusahaan Binary Ltd. Untuk informasi lanjut, <a href='%2'>kunjungi halaman sejarah kami</a>."
+msgid "%1 is owned and operated by the Binary Group Ltd. group of companies. For more information, %2visit our history page%3."
+msgstr "%1 dimiliki dan dioperasikan oleh grup perusahaan Binary Ltd. Untuk informasi lebih lanjut, %2kunjungi halaman sejarah kami%3."
 
 msgid "%1 is seeking a qualified proofreader with a flair for language and a meticulous eye for detail. You must be able to interact with our staff using a web-based translator interface."
 msgstr "%1 sedang mencari korektor/proofreader yang berkualitas dan berbakat dalam bidang bahasa dan mata yang jeli secara detail. Anda harus dapat berinteraksi dengan staf kami menggunakan antarmuka penerjemah berbasis web."
@@ -402,6 +402,9 @@ msgstr "%1Hubungi kami%2 untuk mengatur tanggal dan waktu panggilan video."
 msgid "%1Download MAM for Windows%2 after you’ve set up your master account. Your login credentials will be provided"
 msgstr "%1Download MAM pada Windows%2 setelah Anda menyiapkan akun master Anda. Kredensial login Anda akan disediakan"
 
+msgid "%1Founded%2 October 1999"
+msgstr "%1Didirikan%2 Oktober 1999"
+
 msgid "%1Your Proof of Identity or Proof of Address%2 did not meet our requirements. Please check your email for further instructions."
 msgstr "%1Bukti Identitas atau Bukti Alamat Anda%2 tidak memenuhi persyaratan kami. Silahkan lihat email Anda untuk petunjuk lebih lanjut."
 
@@ -512,9 +515,6 @@ msgstr "<< Kembali ke deskripsi pekerjaan"
 
 msgid "<a href=\"%1\">Return to trading page</a>"
 msgstr "<a href=\"%1\">Kembali ke halaman trading</a>"
-
-msgid "<a href='%1'>Founded</a> October 1999"
-msgstr "<a href='%1'>Didirikan</a> Oktober 1999"
 
 msgid "<strong>Appropriateness Test: WARNING:</strong> In providing our services to you, we are required to obtain information from you in order to assess whether a given product or service is appropriate for you (that is, whether you possess the experience and knowledge to understand the risks involved)."
 msgstr "<strong>Ketepatan Test: PERINGATAN:</strong> Dalam memberikan pelayanan, kami diharuskan untuk memperoleh informasi dari Anda untuk memastikan apakah produk atau layanan yang diberikan adalah tepat untuk Anda (yaitu, apakah Anda memiliki pengalaman dan pengetahuan untuk memahami risiko yang terlibat)."
@@ -2213,6 +2213,9 @@ msgstr "Kata Sandi Kasir"
 
 msgid "Cashier password"
 msgstr "Kata sandi Kasir"
+
+msgid "Cashier session expired"
+msgstr "Sesi kasir telah berakhir"
 
 msgid "Certain limits are imposed as to the acceptable levels for barrier/strike prices of contracts. Typically, the barrier/strike may not be too close nor too far from the current underlying market level."
 msgstr "Beberapa batasan tertentu akan dikenakan pada batasan atau tingkat harga kontrak. Pada dasarnya batasan atau tingkat adalah tidak terlalu dekat atau terlalu jauh dari tingkat harga pasar terkini."
@@ -4998,9 +5001,6 @@ msgstr "Jika Anda masuk ke dalam Perjanjian ini atas nama perusahaan atau entita
 msgid "If you are not located in the above-mentioned countries, simply dial any of our contact numbers for help."
 msgstr "Jika Anda tidak tersedia pada negara diatas, silahkan hubungi salah satu nomor diatas untuk bantuan lebih lanjut."
 
-msgid "If you are shortlisted, we will send you a talent test to be completed."
-msgstr "Jika Anda terpilih, kami akan mengirimkan tes bakat untuk dilengkapi lebih lanjut."
-
 msgid "If you are unable to scan the QR code, you can manually enter this code instead:"
 msgstr "Jika Anda tidak dapat menscan kode QR, Anda dapat memasukkan kode berikut secara manual:"
 
@@ -5183,6 +5183,9 @@ msgstr "Jika Anda seorang broker, kami ingin bekerja sama dengan Anda. Anda akan
 
 msgid "If you're shortlisted, we'll invite you to a hackathon or send you a talent test."
 msgstr "Jika Anda terpilih, kami akan mengundang Anda ke hackathon atau mengirimkan uji bakat."
+
+msgid "If you're shortlisted, we'll send you a talent test to be completed."
+msgstr "Jika Anda terpilih, kami akan mengirimkan tes bakat untuk dilengkapi lebih lanjut."
 
 msgid "If your %1 account is closed, your MT5 Real Account will automatically be closed as well."
 msgstr "Jika akun %1 Anda telah ditutup, Akun Riil MT5 Anda akan secara otomatis ditutup juga."
@@ -5913,8 +5916,8 @@ msgstr "Bekerja sama dengan pemasok eksternal untuk memastikan pembelian dilakuk
 msgid "Liaise with governmental authorities such as the Immigration Department, and Inland Revenue Board on a regular basis on behalf of the company and employees"
 msgstr "Bekerja sama dengan otoritas pemerintah seperti Departemen Imigrasi, dan Kantor Pajak secara teratur atas nama perusahaan dan karyawan"
 
-msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland"
-msgstr "Berlisensi dan diatur di Malta, Inggris, Isle of Man dan Irlandia"
+msgid "Licensed and regulated in Malta, the United Kingdom, the Isle of Man, and Ireland. %1Learn more%2"
+msgstr "Berlisensi dan diatur di Malta, Inggris, Isle of Man, dan Irlandia. %1Pelajari lebih lanjut%2"
 
 msgid "Licensed, trusted, and secure"
 msgstr "Berlisensi, dipercaya, dan aman"
@@ -7242,8 +7245,8 @@ msgstr "Lebih dari $1.000.000"
 msgid "Over $500,000"
 msgstr "Lebih dari $500.000"
 
-msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
-msgstr "Lebih dari %1 <a href='%2'>staf</a> dan kontraktor di seluruh dunia"
+msgid "Over %1 %2staff%3 and contractors worldwide"
+msgstr "Lebih dari %1 %2staf%3 dan kontraktor di seluruh dunia"
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "Lebih dari 1 juta akun yang terdaftar di seluruh dunia"
@@ -7623,8 +7626,8 @@ msgstr "Mohon diketahui bahwa kutipan akhir pekan adalah tidak dipertimbangkan d
 msgid "Please note that you are currently using your %1Bitcoin Cash%2 account. You can only fund your account in %1Bitcoin Cash%2, and not Bitcoin."
 msgstr "Mohon diketahui bahwa saat ini Anda sedang menggunakan akun %1Bitcoin Cash%2. Anda hanya dapat mendanai akun Anda dalam %1Bitcoin Cash%2, dan bukan Bitcoin."
 
-msgid "Please provide the tax identification number for each country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team for help."
-msgstr "Mohon informasikan nomor identifikasi pajak untuk setiap negara dimana Anda membayar pajak. Jika Anda tidak dapat menyediakan informasi ini, silahkan hubungi tim customer support kami untuk bantuan lebih lanjut."
+msgid "Please provide the tax identification number for the country where you are a tax resident. If you cannot provide this information, kindly contact our customer support team."
+msgstr "Mohon informasikan nomor identifikasi pajak untuk negara dimana Anda membayar pajak. Jika Anda tidak dapat menyediakan informasi ini, silahkan hubungi tim customer support kami."
 
 msgid "Please provide us with the following information:"
 msgstr "Mohon berikan kepada kami informasi berikut ini:"
@@ -7656,14 +7659,14 @@ msgstr "Silahkan pilih agen pembayaran"
 msgid "Please select a valid time."
 msgstr "Silahkan pilih waktu yang berlaku."
 
-msgid "Please select all the countries where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
-msgstr "Silahkan pilih semua negara tempat Anda membayar pajak. Jika Anda memiliki pertanyaan, silahkan hubungi konsultan pajak Anda."
-
 msgid "Please select at least one scope"
 msgstr "Silakan pilih minimal satu scope"
 
 msgid "Please select the checkbox."
 msgstr "Silakan pilih kotak centang."
+
+msgid "Please select the country where you are a tax resident. If you have any doubts, kindly consult your tax advisor."
+msgstr "Silahkan pilih negara tempat Anda membayar pajak. Jika Anda memiliki pertanyaan, silahkan hubungi konsultan pajak Anda."
 
 msgid "Please select the currency of this account:"
 msgstr "Silahkan pilih mata uang pada akun ini:"
@@ -8063,6 +8066,9 @@ msgstr "Mata uang tawaran"
 
 msgid "R. Interpretation of Terms"
 msgstr "R. Interpretasi Terma"
+
+msgid "RTS 27"
+msgstr "RTS 27"
 
 msgid "Range of markets"
 msgstr "Rentang pasar"
@@ -9174,6 +9180,18 @@ msgstr "Indeks sintesis yang meniru volatilitas pasar."
 msgid "System Administrator"
 msgstr "System Administrator"
 
+msgid "Table 1 - Type of execution venue"
+msgstr "Tabel 1 - Jenis tempat eksekusi"
+
+msgid "Table 3 - Intra-Day Price information"
+msgstr "Tabel 3 - Informasi Harga Intra-Day"
+
+msgid "Table 4 - Daily Price information"
+msgstr "Tabel 4 - Informasi Harga Harian"
+
+msgid "Table 6 - Likelihood of execution information"
+msgstr "Tabel 6 - Kemungkinan informasi eksekusi"
+
 msgid "Take a short-term or long-term view with trade durations from 10 seconds to 365 days."
 msgstr "Ambil pandangan jangka-pendek atau jangka-panjang dengan durasi trading dari 10 detik hingga 365 hari."
 
@@ -9751,7 +9769,7 @@ msgid "The Republic of Malta is an island country in Southern Europe — located
 msgstr "Republik Malta adalah sebuah negara pulau di Eropa Selatan - terletak sekitar 80 km selatan Italia. Sejarahnya yang kaya dan penuh warna dapat ditelusuri kembali ribuan tahun ke periode Neolitikum."
 
 msgid "The Standard account is suitable for a wide range of traders, both new and experienced. It offers you the maximum allowed leverage and variable spreads that give you a great deal of flexibility for whatever position you wish to take in the market."
-msgstr ""
+msgstr "Akun Standard cocok untuk berbagai kalangan trader, baik baru maupun berpengalaman. Akun ini menawarkan leverage maksimal yang dibenarkan dan spread variabel yang memberi Anda banyak fleksibilitas pada posisi apa pun yang ingin Anda ambil pada pasar."
 
 msgid "The Standard account is suitable for a wide range of traders, both new or experienced. It is available in EUR and GBP and offers tight and variable spreads without commissions and a minimum deposit."
 msgstr "Akun Standard cocok untuk berbagai trader, baik yang baru atau yang berpengalaman. Akun ini tersedia dalam mata uang EUR dan GBP serta menawarkan spread yang ketat dan bervariasi tanpa komisi dan deposit minimum."
@@ -10467,8 +10485,8 @@ msgstr "Untuk melamar, kirimkan CV dan surat lamaran ke %1"
 msgid "To be able to trade OTC instruments available on the MT5 Trading Platform, you have to first:"
 msgstr "Untuk dapat mentradingkan instrumen OTC yang tersedia di Platform Trading MT5, Anda harus terlebih dahulu:"
 
-msgid "To change your name, date of birth, country of residence, or email, please contact <a href=\"%1\">Customer Support</a>."
-msgstr "Untuk merubah nama, tanggal lahir dan negara domisili Anda atau email, silahkan hubungi <a href=\"%1\">Customer Support</a>."
+msgid "To change your name, date of birth, country of residence, email, or tax information, please contact %1Customer Support%2."
+msgstr "Untuk merubah nama, tanggal lahir, negara domisili, email atau informasi pajak Anda, silahkan hubungi %1Customer Support%2."
 
 msgid "To create a MAM real account, please:"
 msgstr "Untuk mendaftar akun riil MAM, silahkan:"
@@ -10480,7 +10498,7 @@ msgid "To disable two-factor authentication, please enter the code generated by 
 msgstr "Untuk menonaktifkan autentikasi dua faktor, masukkan kode yang dihasilkan oleh aplikasi di bawah ini:"
 
 msgid "To excel, you must demonstrate a passion for open-source technologies. You must also have a burning desire to challenge yourself in a fast-paced environment."
-msgstr "Untuk menjadi yang terunggul, Anda harus menunjukkan keinginan pada teknologi open-source. Anda juga harus memiliki keinginan yang besar untuk menantang diri Anda sendiri dalam lingkungan yang serba cepat."
+msgstr "Untuk menjadi yang terunggul, Anda harus menunjukkan minat pada teknologi open-source. Anda juga harus memiliki keinginan yang besar untuk menantang diri Anda sendiri dalam lingkungan yang serba cepat."
 
 msgid "To exchange one currency for another in order to make profit."
 msgstr "Untuk menukar satu mata uang dengan mata uang lainnya untuk membuat keuntungan."
@@ -10594,7 +10612,7 @@ msgid "Town/City"
 msgstr "Kota"
 
 msgid "Track and document thoroughly the bugs that you find"
-msgstr "Melacak dan mendokumentasikan dengan saksama bug yang Anda temukan"
+msgstr "Melacak dan mendokumentasikan dengan seksama bug yang Anda temukan"
 
 msgid "Track and manage transactions and accounts using proprietary and non-proprietary software and systems"
 msgstr "Lacak dan kelola transaksi dan akun menggunakan perangkat lunak dan sistem eksklusif dan non-kepemilikan"
@@ -11467,7 +11485,7 @@ msgid "We presume that you possess the experience, knowledge, and expertise to m
 msgstr "Kami berasumsi bahwa Anda memiliki pengalaman, pengetahuan, dan keahlian untuk membuat keputusan investasi Anda sendiri dan menilai dengan tepat risiko yang terlibat"
 
 msgid "We process over a million transactions each day, and manage a book of exotic options which exceeds the complexity of the typical derivatives desk."
-msgstr "Kami memproses lebih dari satu juta transaksi setiap hari, dan mengelola buku opsi eksotis yang melebihi kompleksitas meja derivatif khas."
+msgstr "Kami memproses lebih dari satu juta transaksi setiap hari, dan mengelola buku opsi eksotis yang melebihi kompleksitas meja derivatif pada umumnya."
 
 msgid "We prohibit the use of unauthorised incentives, gifts, and payments to encourage customer signups. If we have reason to believe that you have engaged in such activity, we reserve the right to withhold any payments due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
 msgstr "Kami melarang penggunaan insentif, hadiah, dan pembayaran tidak sah untuk meningkatkan jumlah pendaftaran. Jika kami menemukan Anda telah terlibat dalam kegiatan tersebut, maka kami berhak untuk menahan pembayaran apa pun yang Anda hasilkan. Namun demikian, jika Anda memiliki insentif khusus lainnya, silakan hubungi manajer akun Anda untuk diskusi dan persetujuan lebih lanjut."
@@ -12346,9 +12364,6 @@ msgstr "Anda sepenuhnya tidak dapat membatalkan, tidak memiliki kekuasaan penuh 
 msgid "You make the following representations and warranties to us at the time you enter into this Agreement, and agree that such representations and warranties are deemed repeated each time you open or close a Transaction:"
 msgstr "Dengan menyetujui Perjanjian ini, Anda membuat pernyataan dan jaminan dan bersetuju dengan segala sesuatu yang disebutkan setiap saat Anda melakukan penutupan atau pembelian Transaksi:"
 
-msgid "You may be considered a tax resident in more than one jurisdiction. Please consult your tax advisor and verify that your tax information is accurate."
-msgstr "Anda mungkin dianggap sebagai penduduk pajak di lebih dari satu yurisdiksi. Silakan berkonsultasi dengan penasihat pajak Anda dan pastikan informasi pajak Anda akurat."
-
 msgid "You may cache the Content for up to 24 hours from a request for that Content through the %1 API."
 msgstr "Anda mungkin dapat menyimpan Konten hingga 24 jam dari permintaan melalui API %1."
 
@@ -12648,6 +12663,9 @@ msgstr "Kasir Anda terkunci sesuai permintaan Anda - untuk membuka kunci, masukk
 
 msgid "Your cashier is locked."
 msgstr "Kasir Anda terkunci."
+
+msgid "Your cashier session has expired. Please try again."
+msgstr "Sesi kasir Anda telah berakhir. Silakan coba lagi."
 
 msgid "Your changes have been updated successfully."
 msgstr "Perubahan Anda telah berhasil diperbarui."

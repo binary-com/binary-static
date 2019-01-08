@@ -15,12 +15,6 @@ class MobileDropdown extends React.Component {
         });
     };
 
-    componentWillReceiveProps() {
-        this.setState({
-            is_open: false,
-        });
-    }
-
     render() {
         const { all_items, children } = this.props;
         const { is_open }             = this.state;
