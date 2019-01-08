@@ -1466,6 +1466,11 @@ body #not_authenticated_financial ul.checked > li {
     }
 }
 
+.paymentagent_description {
+    height: 4em;
+    width: 206px;
+}
+
 .cashier_note {
     .notice-circle {
         color: $COLOR_ORANGE;
