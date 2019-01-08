@@ -256,6 +256,7 @@ describe('declarative_validation_rules.js', () => {
                 options.min = 1;
                 options.max = 1;
 
+                expect(rules['number'].func(0, options)).to.be.false;
                 expect(rules['number'].func(2, options)).to.be.false;
             });
 

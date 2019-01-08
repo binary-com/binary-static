@@ -1,5 +1,4 @@
 import { expect }           from 'chai';
-
 import { getPreBuildDVRs }  from '../declarative_validation_rules';
 import Validator            from '../validator';
 
