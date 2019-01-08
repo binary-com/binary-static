@@ -220,7 +220,7 @@ const Purchase = (() => {
                     profit_value = contract.profit;
                     TickDisplay.setStatus(contract);
                     if (contract.exit_tick_time && /^digit/i.test(contract.contract_type)) {
-                        digitShowExitTime(contract.exit_tick_time);
+                        digitShowExitTime(contract.status, contract.exit_tick);
                     }
                     if (contract.exit_tick_time && +contract.exit_tick_time < contract.date_expiry) {
                         TickDisplay.updateChart({ is_sold: true }, contract);
@@ -257,9 +257,7 @@ const Purchase = (() => {
                 }
                 if (status === 'won') {
                     updateValues.updatePurchaseStatus(payout_value, cost_value, profit_value, localize('This contract won'));
-                    if (tick_config.is_digit) DigitTicker.markAsWon();
                 } else if (status === 'lost') {
-                    if (tick_config.is_digit) DigitTicker.markAsLost();
                     updateValues.updatePurchaseStatus(0, -cost_value, profit_value, localize('This contract lost'));
                 }
                 if (tick_config.is_tick_high || tick_config.is_tick_low) {
@@ -377,11 +375,19 @@ const Purchase = (() => {
         }
     };
 
-    const digitShowExitTime = () => {
+    const digitShowExitTime = (contract_status, last_tick_quote) => {
         const el_container = CommonFunctions.getElementById('contract_purchase_spots');
         const el_epoch = Array.from(el_container.querySelectorAll('.digit-tick-epoch')).pop();
         el_epoch.classList.add('is-visible');
         el_epoch.setAttribute('style', `position: absolute; right: ${(el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2}px`);
+        if (contract_status === 'won') {
+            DigitTicker.markAsWon();
+            DigitTicker.markDigitAsWon(last_tick_quote.slice(-1));
+        }
+        if (contract_status === 'lost') {
+            DigitTicker.markAsLost();
+            DigitTicker.markDigitAsLost(last_tick_quote.slice(-1));
+        }
     };
 
     return {

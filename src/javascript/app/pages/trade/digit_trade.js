@@ -84,8 +84,10 @@ const DigitDisplay = (() => {
                 return tick_count > contract.tick_count;
             });
         } else if (response.tick) {
-            updateTable(response.tick.quote, response.tick.epoch);
-            tick_count += 1;
+            if (tick_count <= contract.tick_count) {
+                updateTable(response.tick.quote, response.tick.epoch);
+                tick_count += 1;
+            }
         }
         showLocalTimeOnHover('.digit-spot-time');
     };
@@ -93,8 +95,11 @@ const DigitDisplay = (() => {
     const end = (proposal_open_contract) => {
         if (proposal_open_contract.status === 'won') {
             DigitTicker.markAsWon();
-        } else {
+            DigitTicker.markDigitAsWon(proposal_open_contract.exit_tick.slice(-1));
+        }
+        if (proposal_open_contract.status === 'lost') {
             DigitTicker.markAsLost();
+            DigitTicker.markDigitAsLost(proposal_open_contract.exit_tick.slice(-1));
         }
     };
 
