@@ -194,15 +194,6 @@ describe('declarative_validation_rules.js', () => {
             });
         });
 
-        describe('.validRegular', () => {
-            it('should return true if value matches', () => {
-                expect(rules['regular'].func('a', options)).to.be.true;
-            });
-            it('should return false if value does not match', () => {
-                expect(rules['regular'].func('12', options)).to.be.false;
-            });
-        });
-
         describe('.validMin', () => {
             it('should return true if options.min is null, undefined, or 0', () => {
                 options.min = 0;
@@ -270,12 +261,12 @@ describe('declarative_validation_rules.js', () => {
 
             it('should return false if value out of boundary (min, max)', () => {
                 options.min = 2;
-                options.max = 4;
+                options.max = 3;
 
                 expect(rules['number'].func(1, options)).to.be.false;
-                expect(rules['number'].func(5, options)).to.be.false;
+                expect(rules['number'].func(4, options)).to.be.false;
             });
-            it('should return true if value in boundary (min, max', () => {
+            it('should return true if value in boundary (min, max)', () => {
                 options.min = 2;
                 options.max = 4;
 
