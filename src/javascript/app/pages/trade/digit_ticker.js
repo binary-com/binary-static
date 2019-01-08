@@ -7,9 +7,9 @@ const DigitTicker = (() => {
         contract_status,
         current_spot;
     let digit_block_size = 36;
+    let style_offset_correction = 5;
 
     const array_of_digits         = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const style_offset_correction = 5;
 
     const init = (container_id, contract_type, barrier, tick_count, status = 'open') => {
         contract_status      = status;
@@ -93,6 +93,7 @@ const DigitTicker = (() => {
     const adjustBoxSizes = () => {
         if (el_container.offsetWidth < 360) {
             digit_block_size = 28;
+            style_offset_correction = 6;
         }
     };
 

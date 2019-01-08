@@ -378,8 +378,9 @@ const Purchase = (() => {
     const digitShowExitTime = (contract_status, last_tick_quote) => {
         const el_container = CommonFunctions.getElementById('contract_purchase_spots');
         const el_epoch = Array.from(el_container.querySelectorAll('.digit-tick-epoch')).pop();
+        const adjustment = 5;
         el_epoch.classList.add('is-visible');
-        el_epoch.setAttribute('style', `position: absolute; right: ${(el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2}px`);
+        el_epoch.setAttribute('style', `position: absolute; right: ${((el_epoch.parentElement.offsetWidth - el_epoch.nextSibling.offsetWidth) / 2) + adjustment}px`);
         if (contract_status === 'won') {
             DigitTicker.markAsWon();
             DigitTicker.markDigitAsWon(last_tick_quote.slice(-1));
