@@ -44,13 +44,13 @@ const Geocoder = (() => {
         if (el_btn_validate) {
             applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${!is_state_select_el ? state : undefined} ,${city}`, (element) => {
                 // List of fields that will trigger event onChange but will allow empty values as they are non-required fields
-                const non_required_fields = ['addr_2', 'postcode'];
+                const non_required_fields = ['addr_2', 'postcode', `${!is_state_select_el ? 'state' : undefined}`];
 
                 element.addEventListener('keyup', () => {
                     const value = element.value;
                     // Check if address_line_1, address_state and address city have values
                     const has_met_conditions = (getValue(city).length > 0) &&
-                        (getValue(addr_1).length > 0) && getValue(state);
+                        (getValue(addr_1).length > 0);
 
                     if (value.length > 0 && !non_required_fields.includes(element.id) && has_met_conditions) {
                         el_btn_validate.classList.remove('geocode-btn-disabled');
@@ -73,8 +73,8 @@ const Geocoder = (() => {
             });
 
             // using jQuery here because for some reason vanilla javascript eventListener isn't working for select input onChange events
-            $(state).on('change', (e) => {
-                if ((e.target.value.length > 0) && (getValue(city).length > 0) && (getValue(addr_1).length > 0)) {
+            $(state).on('change', () => {
+                if ((getValue(city).length > 0) && (getValue(addr_1).length > 0)) {
                     el_btn_validate.classList.remove('geocode-btn-disabled');
                 } else {
                     el_btn_validate.classList.add('geocode-btn-disabled');
@@ -144,7 +144,7 @@ const Geocoder = (() => {
 
     const isAddressFound = (user_address, user_city, geoloc_address) => {
         let result;
-        if (geoloc_address.length && getValue('#address_state')) {
+        if (geoloc_address.length && getValue('#address_city')) {
             const item_idx = geoloc_address.length - 1;
 
             const country_longname = getElementById('country').innerHTML;
@@ -168,7 +168,6 @@ const Geocoder = (() => {
                 && (user_address.toLowerCase() !== country_longname.toLowerCase())) {
                 result = arr_input_address.some(address => address_list_dictionary.includes(address));
             }
-
         }
         return result;
     };
