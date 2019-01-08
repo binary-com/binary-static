@@ -206,7 +206,7 @@ class TimePicker extends React.Component {
                                 <InputField
                                     error_messages={validation_errors}
                                     type='text'
-                                    is_read_only={true}
+                                    is_read_only
                                     id={`${prefix_class}-input`}
                                     className={`${prefix_class}-input ${this.state.is_open ? 'active' : ''}`}
                                     value={value}
