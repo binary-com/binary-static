@@ -50,10 +50,16 @@ const SetCurrency = () => (
                 <form id='frm_set_currency'>
                     <Currencies id='fiat' text={it.L('Fiat Currency')} />
                     <Currencies id='crypto' text={it.L('Cryptocurrency')} />
-
-                    <p className='invisible error-msg' />
-                    <button type='submit'>{it.L('Confirm')}</button>
                 </form>
+            </div>
+            <div id='currency_confirmation_popup' className='invisible gr-padding-20 gr-gutter'>
+                <h2>{it.L('Are you sure?')}</h2>
+                <p className='invisible' id='currency_confirmation_content' />
+                <div className='center-text'>
+                    <p className='invisible error-msg' />
+                    <a className='button' id='btn_confirm' href='javascript:;'><span>{it.L('Confirm')}</span></a>
+                    <a className='button' id='btn_back' data-value='back' href='javascript:;'><span>{it.L('Back')}</span></a>
+                </div>
             </div>
 
         </div>
