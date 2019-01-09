@@ -2,6 +2,7 @@ import PropTypes                  from 'prop-types';
 import React                      from 'react';
 import { localize }               from '_common/localize';
 import { isEmptyObject }          from '_common/utility';
+import Money                      from 'App/Components/Elements/money.jsx';
 import { PopConfirm }             from 'App/Components/Elements/PopConfirm';
 import UILoader                   from 'App/Components/Elements/ui_loader.jsx';
 import Button                     from 'App/Components/Form/button.jsx';
@@ -10,6 +11,7 @@ import { connect }                from 'Stores/connect';
 import ContractInfo               from '../Components/Form/Purchase/contract_info.jsx';
 import MessageBox                 from '../Components/Form/Purchase/MessageBox';
 import PurchaseLock               from '../Components/Form/Purchase/PurchaseLock';
+import { IconTradeTypeButton }    from '../../../Assets/Trading/Types';
 
 const Purchase = ({
     barrier_count,
@@ -35,12 +37,22 @@ const Purchase = ({
             <Button
                 is_disabled={is_disabled}
                 id={`purchase_${type}`}
-                className='primary green'
+                className='primary green btn-purchase'
                 has_effect
-                text={localize('Purchase')}
+                text={localize(`${trade_types[type]}`)}
                 onClick={() => { onClickPurchase(info.id, info.stake, type); }}
                 wrapperClassName='submit-section'
-            />
+            >
+                <IconTradeTypeButton type={type.toLowerCase()} />
+                <div className='info-wrapper'>
+                    <div>{localize('Stake')}:</div>
+                    <div><Money amount={info.stake} currency={currency} /></div>
+                </div>
+                <div className='info-wrapper'>
+                    <div>{localize('Payout')}:</div>
+                    <div><Money amount={info.payout} currency={currency} /></div>
+                </div>
+            </Button>
         );
 
         const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
