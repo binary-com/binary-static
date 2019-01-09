@@ -27,10 +27,11 @@ export const getNonProposalQueryStringVariables = (store) => {
     if (!store) return non_proposal_query_string_variables;
 
     const { contract_start_type } = ContractType.getStartType(store.start_date);
-
+    const { expiry_type } = store;
     return [
         ...non_proposal_query_string_variables,
         ...(contract_start_type === 'forward' ? ['start_time'] : []),
+        ...(expiry_type         === 'endtime' ? ['expiry_date'] : []),
     ];
 };
 
