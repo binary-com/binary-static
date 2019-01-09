@@ -91,13 +91,13 @@ export const isTimeValid = time_str => /^(\d{1,2}):(\d{2})(:00)?$/.test(time_str
  * return true if the time_str's hour is between 0 and 23, else return false
  * @param {String} time_str time
  */
-export const isHourValid = time_str => /^([01][0-9]|2[0-3])$/.test(time_str.split(':')[0]);
+export const isHourValid = time_str => isTimeValid(time_str) && /^([01][0-9]|2[0-3])$/.test(time_str.split(':')[0]);
 
 /**
  * return true if the time_str's minute is between 0 and 59, else return false
  * @param {String} time_str time
  */
-export const isMinuteValid = time_str => /^[0-5][0-9]$/.test(time_str.split(':')[1]);
+export const isMinuteValid = time_str => isTimeValid(time_str) && /^[0-5][0-9]$/.test(time_str.split(':')[1]);
 
 /**
  * return true if the date is typeof string and a valid moment date, else return false
