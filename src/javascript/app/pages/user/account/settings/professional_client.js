@@ -18,6 +18,12 @@ const professionalClient = (() => {
         populateProfessionalClient(is_financial);
     };
 
+    const setVisible = (set_visible) => {
+        $('#loading').remove();
+        $('#frm_professional').setVisibility(0);
+        $(set_visible).setVisibility(1);
+    };
+
     const populateProfessionalClient = (is_financial) => {
         const has_maltainvest = State.getResponse('landing_company.financial_company.shortcode') === 'maltainvest';
         if (!has_maltainvest || !is_financial) { // then it's not upgrading to financial
@@ -29,19 +35,13 @@ const professionalClient = (() => {
 
         const status = State.getResponse('get_account_status.status') || [];
         if (is_in_page && status.includes('professional')) {
-            $('#loading').remove();
-            $('#frm_professional').setVisibility(0);
-            $('#professional').setVisibility(1);
+            setVisible('#professional');
             return;
         } else if (is_in_page && status.includes('professional_requested')) {
-            $('#loading').remove();
-            $('#frm_professional').setVisibility(0);
-            $('#processing').setVisibility(1);
+            setVisible('#processing')
             return;
         } else if (is_in_page && status.includes('professional_rejected')) {
-            $('#loading').remove();
-            $('#frm_professional').setVisibility(0);
-            $('#rejected').setVisibility(1);
+            setVisible('#rejected');
             return;
         }
 
