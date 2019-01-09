@@ -61,7 +61,6 @@ const StatementUI = (() => {
             statement_data.balance,
             '',
         ], columns, 'data');
-
         $statement_row.children('.credit').addClass(credit_debit_type);
         $statement_row.children('.date').addClass('pre');
         $statement_row.children('.desc').html(`${statement_data.desc}<br>`);
