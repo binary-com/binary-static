@@ -46,6 +46,17 @@
         border-radius: $BORDER_RADIUS;
         transition: all 0.3s;
 
+        &[type=checkbox] {
+            vertical-align: middle;
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            border-color: $COLOR_GRAY_2;
+
+            &:hover {
+                border-color: $COLOR_ORANGE_3;
+            }
+        }
         &:hover {
             border-color: $COLOR_BLUE;
         }
@@ -76,13 +87,34 @@
 
 // Dark Theme
 .theme-wrapper.dark {
-    .input-field input {
-        background-color: $COLOR_BLUE;
-        color: $COLOR_WHITE;
-        border-color: $COLOR_BRANDBLUE_85;
+    .input-field {
+        &:has(input[type=checkbox]) {
+            display: inline-block;
+        }
+        input {
+            background-color: $COLOR_BLUE;
+            color: $COLOR_WHITE;
+            border-color: $COLOR_GRAY_2;
 
-        &:hover, &:focus, &:active {
-            border-color: $COLOR_WHITE;
+            &[type=checkbox] {
+                vertical-align: middle;
+                width: 16px;
+                height: 16px;
+
+                &:hover {
+                    border-color: $COLOR_ORANGE_3;
+                }
+                &:focus {
+                    border-color: $COLOR_ORANGE_3;
+                }
+                &:active {
+                    border-color: $COLOR_ORANGE_3;
+                    background: $COLOR_ORANGE_3;
+                }
+            }
+            &:hover, &:focus, &:active {
+                border-color: $COLOR_WHITE;
+            }
         }
     }
 }

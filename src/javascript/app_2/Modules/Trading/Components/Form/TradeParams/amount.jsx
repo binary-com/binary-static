@@ -11,6 +11,7 @@ import { localize }              from '_common/localize';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/input_field.jsx';
+import Tooltip                   from 'App/Components/Elements/tooltip.jsx';
 
 const Amount = ({
     amount,
@@ -40,41 +41,49 @@ const Amount = ({
     });
 
     return (
-        <Fieldset
-            header={localize('Invest Amount')}
-            icon='invest-amount'
-        >
-            <div className={amount_container_class}>
-                <Dropdown
-                    list={basis_list}
-                    value={basis}
-                    name='basis'
-                    onChange={onChange}
-                    is_nativepicker={is_nativepicker}
-                />
-                {!is_single_currency &&
+        <div>
+            <Fieldset
+                header={localize('Invest Amount')}
+                icon='invest-amount'
+            >
+                <div className={amount_container_class}>
                     <Dropdown
-                        list={currencies_list}
-                        value={currency}
-                        name='currency'
+                        list={basis_list}
+                        value={basis}
+                        name='basis'
                         onChange={onChange}
                         is_nativepicker={is_nativepicker}
                     />
-                }
-                <InputField
-                    error_messages = {validation_errors.amount}
-                    fractional_digits={getDecimalPlaces(currency)}
-                    is_float
-                    is_nativepicker={is_nativepicker}
-                    max_length={10}
-                    name='amount'
-                    onChange={onChange}
-                    prefix={is_single_currency ? currency : null}
-                    type='number'
-                    value={amount}
-                />
-            </div>
-        </Fieldset>
+                    {!is_single_currency &&
+                        <Dropdown
+                            list={currencies_list}
+                            value={currency}
+                            name='currency'
+                            onChange={onChange}
+                            is_nativepicker={is_nativepicker}
+                        />
+                    }
+                    <InputField
+                        error_messages={validation_errors.amount}
+                        fractional_digits={getDecimalPlaces(currency)}
+                        is_float
+                        is_nativepicker={is_nativepicker}
+                        max_length={10}
+                        name='amount'
+                        onChange={onChange}
+                        prefix={is_single_currency ? currency : null}
+                        type='number'
+                        value={amount}
+                    />
+                </div>
+                <div className='row'>
+                    <InputField type='checkbox' />
+                    <label>{localize('Allow equals')}</label>
+                    <Tooltip icon='info' message={localize('sdfsadf')} alignment='left' />
+                </div>
+            </Fieldset>
+            
+        </div>
     );
 };
 
