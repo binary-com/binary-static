@@ -128,19 +128,27 @@ fieldset {
     .text-display { /* TODO: replace all occurrences of id with the class */
         line-height: 25px;
     }
+    .postcode-form-row {
+        #address_postcode {
+            box-sizing: border-box;
+            width: 100%;
+
+            @media screen and (max-width: 860px) {
+                box-sizing: unset;
+                width: unset;
+            }
+        }
+    }
     #geocode_error, #geocode_success, #geocode_status > .barspinner {
         margin: 1rem auto;
     }
     .geocode-container {
         display: flex;
-        justify-content: center;
+        margin-top: 4px;
 
         .geocode-btn-container {
-            margin-left: -16px;
+            margin-left: -12px;
 
-            @media screen and (max-width: 920px) {
-                margin-left: 4px;
-            }
             @media screen and (max-width: 860px) {
                 margin-left: unset;
             }
