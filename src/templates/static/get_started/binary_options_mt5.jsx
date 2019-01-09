@@ -76,6 +76,7 @@ const BinaryOptionsForMT5 = () => (
 
                     <strong>{it.L('Over/Under')}</strong>
                     <p>{it.L('Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
+                    
                 </Section>
                 <Section id='how-to-trade-binary' header={it.L('How to trade binary options on MT5')}>
                     <p>{it.L('Get started with the [_1] Expert Advisor (EA) for binary options trading on MT5 by following these steps:', it.website_name)}</p>
