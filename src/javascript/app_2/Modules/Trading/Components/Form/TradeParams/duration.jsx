@@ -67,18 +67,36 @@ const Duration = ({
     }
 
     const moment_expiry = moment.utc(expiry_date);
-    const is_same_day   = moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day');
-    if (is_same_day) {
-        const date_time = moment.utc(start_date * 1000 || undefined);
-        if (start_date) {
-            const [ hour, minute ] = start_time.split(':');
-            date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
-        }
-        // only update start time every five minutes, since time picker shows five minute durations
-        const moment_start_date_time = moment.unix(start_date_time);
-        if (!start_date_time || moment_start_date_time.isAfter(date_time) || moment_start_date_time.clone().add(5, 'minutes').isBefore(date_time) ||
-            (moment_start_date_time.minutes() !== date_time.minutes() && date_time.minutes() % 5 === 0)) {
-            start_date_time = date_time.unix();
+    const is_within_24_hours   = moment_expiry.diff(moment(start_date * 1000 || undefined).utc(), 'hour') <= 24;
+    let should_show_time_picker = false;
+    let expiry_time_sessions = sessions;
+
+    if (start_date === 0 && moment_expiry.isSame(moment(start_date * 1000 || undefined).utc(), 'day')) {
+        should_show_time_picker = true;
+    }
+
+    if (expiry_type === 'endtime') {
+        if (is_within_24_hours) {
+            const date_time = moment.utc(start_date * 1000 || undefined);
+            if (start_date) {
+                should_show_time_picker = true;
+                const [ hour, minute ] = start_time.split(':');
+                date_time.hour(hour).minute(minute).second(0).add(5, 'minutes');
+            }
+            // only update start time every five minutes, since time picker shows five minute durations
+            const moment_start_date_time = moment.unix(start_date_time);
+            if (!start_date_time || moment_start_date_time.isAfter(date_time) || moment_start_date_time.clone().add(5, 'minutes').isBefore(date_time) ||
+                (moment_start_date_time.minutes() !== date_time.minutes() && date_time.minutes() % 5 === 0)) {
+                start_date_time = date_time.unix();
+            }
+
+            const [ start_hour, start_minute ] = start_time.split(':');
+            const moment_contract_start_date_time =
+                moment.utc(start_date * 1000 || undefined).hour(start_hour).minute(start_minute);
+            expiry_time_sessions = [{
+                open : moment_contract_start_date_time,
+                close: moment_contract_start_date_time.clone().add(24, 'hour'),
+            }];
         }
     }
     if (is_minimized) {
@@ -107,7 +125,7 @@ const Duration = ({
     }
 
     const endtime_container_class = classNames('endtime-container', {
-        'has-time': is_same_day,
+        'has-time': should_show_time_picker,
     });
 
     return (
@@ -171,15 +189,15 @@ const Duration = ({
                             is_clearable={false}
                             is_nativepicker={is_nativepicker}
                         />
-                        {is_same_day &&
+                        {should_show_time_picker &&
                             <TimePicker
                                 onChange={onChange}
                                 is_align_right
                                 name='expiry_time'
                                 value={expiry_time}
                                 placeholder='12:00'
-                                start_date={start_date_time}
-                                sessions={sessions}
+                                start_date={moment_expiry.unix()}
+                                sessions={expiry_time_sessions}
                                 is_clearable={false}
                                 is_nativepicker={is_nativepicker}
                             />

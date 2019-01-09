@@ -257,10 +257,14 @@ const ContractType = (() => {
     const getExpiryTime = (sessions, start_date, start_time, expiry_date, expiry_time) => {
         const start_moment = start_date ? buildMoment(start_date, start_time) : moment().utc();
         const end_moment   = buildMoment(expiry_date, expiry_time);
+        const expiry_sessions = [{
+            open : start_moment,
+            close: start_moment.clone().add(24, 'hour'),
+        }];
 
         let end_time = expiry_time;
-        if (sessions && !isSessionAvailable(sessions, end_moment)) {
-            end_time = getValidTime(sessions, end_moment, start_moment);
+        if (sessions && !isSessionAvailable(expiry_sessions, end_moment)) {
+            end_time = getValidTime(expiry_sessions, end_moment, start_moment);
         }
         if (end_moment.isSameOrBefore(start_moment)) {
             const is_end_of_day     = start_moment.get('hours') === 23 && start_moment.get('minute') >= 55;
