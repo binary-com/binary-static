@@ -28,17 +28,17 @@ const professionalClient = (() => {
         }
 
         const status = State.getResponse('get_account_status.status') || [];
-        if (is_in_page && /^professional$/.test(status)) {
+        if (is_in_page && status.includes('professional')) {
             $('#loading').remove();
             $('#frm_professional').setVisibility(0);
             $('#professional').setVisibility(1);
             return;
-        } else if (is_in_page && /^professional_requested$/.test(status)) {
+        } else if (is_in_page && status.includes('professional_requested')) {
             $('#loading').remove();
             $('#frm_professional').setVisibility(0);
             $('#processing').setVisibility(1);
             return;
-        } else if (is_in_page && /^professional_rejected$/.test(status)) {
+        } else if (is_in_page && status.includes('professional_rejected')) {
             $('#loading').remove();
             $('#frm_professional').setVisibility(0);
             $('#rejected').setVisibility(1);
