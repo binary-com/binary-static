@@ -57,8 +57,14 @@ const SetCurrency = () => (
                 <p className='invisible' id='set_currency_popup_content' />
                 <div className='center-text'>
                     <p className='invisible error-msg' />
-                    <button className='button button-secondary' id='btn_back'>{it.L('Back')}</button>
-                    <button className='button' id='btn_confirm'>{it.L('Confirm')}</button>
+                    <div className='gr-row'>
+                        <div className='gr-6'>
+                            <button className='button button-secondary' id='btn_back'>{it.L('Back')}</button>
+                        </div>
+                        <div className='gr-6'>
+                            <button className='button' id='btn_confirm'>{it.L('Confirm')}</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
