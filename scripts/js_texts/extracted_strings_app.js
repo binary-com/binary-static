@@ -498,7 +498,7 @@ module.exports = [
     '[_1] and [_2] cannot be the same.',
     '[_1] days [_2] hours [_3] minutes',
     '[_1] deposit from [_2] to account number [_3] is done. Transaction ID: [_4]',
-    '[_1] has been credited into your virtual account: [_2].',
+    '[_1] has been credited into your Virtual Account: [_2].',
     '[_1] requires your browser\'s web storage to be enabled in order to function properly. Please enable it or exit private browsing mode.',
     '[_1] withdrawal from account number [_2] to [_3] is done. Transaction ID: [_4]',
     '[_1]Authenticate your account[_2] now to take full advantage of all payment methods available.',

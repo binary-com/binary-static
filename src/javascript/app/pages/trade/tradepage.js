@@ -12,6 +12,7 @@ const Client            = require('../../base/client');
 const Header            = require('../../base/header');
 const BinarySocket      = require('../../base/socket');
 const Guide             = require('../../common/guide');
+const TopUpVirtualPopup = require('../../pages/user/account/top_up_virtual/pop_up');
 const State             = require('../../../_common/storage').State;
 
 const TradePage = (() => {
@@ -36,6 +37,7 @@ const TradePage = (() => {
             Header.displayAccountStatus();
             if (Client.get('is_virtual')) {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
+                TopUpVirtualPopup.onLoad();
             }
             Client.activateByClientType('trading_socket_container');
             BinarySocket.send({ payout_currencies: 1 }).then(() => {

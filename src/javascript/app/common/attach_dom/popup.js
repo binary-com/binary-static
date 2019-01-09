@@ -59,6 +59,8 @@ const callback = (options) => {
                     options.onAccept();
                 }
             }
+        } else if (typeof options.onAccept === 'function') {
+            options.onAccept();
         } else if (lightbox) {
             lightbox.remove();
         }

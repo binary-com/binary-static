@@ -200,6 +200,23 @@
     }
 }
 
+.lightbox#top_up_virtual_pop_up > div {
+    max-width: 25em;
+    padding: 32px;
+
+    #cancel, #statement_redirect {
+        span {
+            width: calc(100% - 50px);
+        }
+    }
+    #topup, #continue {
+        width: calc(100% - 25px);
+    }
+    #understood {
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .api_token, #applications-container {
         table td, table th {

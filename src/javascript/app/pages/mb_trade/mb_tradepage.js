@@ -10,6 +10,7 @@ const Client              = require('../../base/client');
 const Header              = require('../../base/header');
 const BinarySocket        = require('../../base/socket');
 const getDecimalPlaces    = require('../../common/currency').getDecimalPlaces;
+const TopUpVirtualPopup   = require('../../pages/user/account/top_up_virtual/pop_up');
 const getElementById      = require('../../../_common/common_functions').getElementById;
 const State               = require('../../../_common/storage').State;
 const urlFor              = require('../../../_common/url').urlFor;
@@ -21,7 +22,12 @@ const MBTradePage = (() => {
 
     const onLoad = () => {
         State.set('is_mb_trading', true);
-        BinarySocket.wait('authorize').then(init);
+        BinarySocket.wait('authorize').then(() => {
+            if (Client.get('is_virtual')) {
+                TopUpVirtualPopup.onLoad();
+            }
+            init();
+        });
         if (!Client.isLoggedIn() || !Client.get('residence')) { // if client is logged out or they don't have residence set
             BinarySocket.wait('website_status').then(() => {
                 BinarySocket.send({ landing_company: State.getResponse('website_status.clients_country') });
