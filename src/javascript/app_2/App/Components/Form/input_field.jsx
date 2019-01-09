@@ -78,7 +78,7 @@ const InputField = ({
             readOnly={is_read_only}
             required={required || undefined}
             type={type === 'number' ? 'text' : type}
-            value={value}
+            value={value || ''}
         />;
 
     return (
