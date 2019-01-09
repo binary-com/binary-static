@@ -29,8 +29,7 @@ $COLOR_PEEK_LIGHT_GRAY: #c2c2c2;
         justify-items: center;
         transition: all 0.9s ease;
         position: absolute;
-        margin-top: 3px;
-        top: 0;
+        top: 3px;
         left: 0;
         z-index: 5;
 
@@ -93,11 +92,15 @@ $COLOR_PEEK_LIGHT_GRAY: #c2c2c2;
     }
     .mask {
         grid-area: mask;
-        font-size: 10px;
+        font-size: 11px;
         height: 20px;
-        line-height: 20px;
+        line-height: 16px;
         width: 100%;
         color: $COLOR_WHITE;
+
+        @media screen and (max-width: 480px) {
+            font-size: 10px;
+        }
     }
     .peek {
         grid-area: peek;
@@ -185,6 +188,9 @@ $COLOR_PEEK_LIGHT_GRAY: #c2c2c2;
     .digit.digit-lost {
         color: $COLOR_PEEK_RED;
     }
+    .digit.digit-won {
+        color: $COLOR_PEEK_GREEN;
+    }
     .digit {
         height: 36px;
         width: 36px;
@@ -198,6 +204,7 @@ $COLOR_PEEK_LIGHT_GRAY: #c2c2c2;
         border-right: 1px solid $COLOR_GRAY;
         border-top: 1px solid $COLOR_GRAY;
         border-bottom: 1px solid $COLOR_GRAY;
+        color: $COLOR_PEEK_LIGHT_GRAY;
 
         @media screen and (max-width: 480px) {
             height: 28px;
@@ -234,12 +241,15 @@ $COLOR_PEEK_LIGHT_GRAY: #c2c2c2;
             margin-top: 2px;
         }
         & .digit-tick-epoch {
-            position: absolute;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 2px;
             top: 14px;
             font-size: 14px;
             line-height: 14px;
             color: $COLOR_PEEK_RUNNING_GRAY;
             padding-left: 14px;
+            padding-right: 2px;
             box-sizing: border-box;
             height: 0;
             opacity: 0;
@@ -289,4 +299,8 @@ $COLOR_PEEK_LIGHT_GRAY: #c2c2c2;
             }
         }
     }
+}
+
+#contract_purchase_spots {
+    padding-bottom: 0;
 }
