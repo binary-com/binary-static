@@ -7,6 +7,7 @@ import React                     from 'react';
 import Tooltip                   from '../Elements/tooltip.jsx';
 
 const InputField = ({
+    checked,
     className,
     error_messages,
     fractional_digits,
@@ -64,6 +65,7 @@ const InputField = ({
 
     const input =
         <input
+            checked={checked}
             className={classNames({ error: has_error })}
             disabled={is_disabled}
             data-for={`error_tooltip_${name}`}
@@ -101,6 +103,7 @@ const InputField = ({
 // supports more than two different types of 'value' as a prop.
 // Quick Solution - Pass two different props to input field.
 InputField.propTypes = {
+    checked          : PropTypes.bool,
     className        : PropTypes.string,
     error_messages   : MobxPropTypes.arrayOrObservableArray,
     fractional_digits: PropTypes.number,

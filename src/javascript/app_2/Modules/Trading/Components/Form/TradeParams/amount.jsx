@@ -11,6 +11,7 @@ import { localize }              from '_common/localize';
 import Dropdown                  from 'App/Components/Form/DropDown';
 import Fieldset                  from 'App/Components/Form/fieldset.jsx';
 import InputField                from 'App/Components/Form/input_field.jsx';
+import CheckBox                  from 'App/Components/Form/check_box.jsx';
 import Tooltip                   from 'App/Components/Elements/tooltip.jsx';
 
 const Amount = ({
@@ -25,6 +26,7 @@ const Amount = ({
     onChange,
     validation_errors,
 }) => {
+    const state = { checked: false };
     if (is_minimized) {
         return (
             <div className='fieldset-minimized amount'>
@@ -39,6 +41,10 @@ const Amount = ({
     const amount_container_class = classNames('amount-container', {
         'three-columns': !is_single_currency,
     });
+
+    const handleChange = (e) => {
+        state.checked = !e.target.checked;
+    };
 
     return (
         <div>
@@ -76,10 +82,10 @@ const Amount = ({
                         value={amount}
                     />
                 </div>
-                <div className='row'>
-                    <InputField type='checkbox' />
+                <div className='input-field'>
+                    <CheckBox onChange={handleChange} checked={state.checked} />
                     <label>{localize('Allow equals')}</label>
-                    <Tooltip icon='info' message={localize('sdfsadf')} alignment='left' />
+                    <Tooltip icon='info' message={localize('ll')} />
                 </div>
             </Fieldset>
             
