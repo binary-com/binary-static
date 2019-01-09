@@ -37,7 +37,10 @@ const TradePage = (() => {
             Header.displayAccountStatus();
             if (Client.get('is_virtual')) {
                 Header.upgradeMessageVisibility(); // To handle the upgrade buttons visibility
-                TopUpVirtualPopup.onLoad();
+                // if not loaded by pjax, balance update function calls TopUpVirtualPopup
+                if (State.get('is_loaded_by_pjax')) {
+                    TopUpVirtualPopup.init(State.getResponse('balance.balance'));
+                }
             }
             Client.activateByClientType('trading_socket_container');
             BinarySocket.send({ payout_currencies: 1 }).then(() => {

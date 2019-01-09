@@ -1,7 +1,9 @@
+const isCallputspread          = require('./callputspread').isCallputspread;
 const Contract                 = require('./contract');
+const hidePriceOverlay         = require('./common').hidePriceOverlay;
 const getLookBackFormula       = require('./lookback').getFormula;
 const isLookback               = require('./lookback').isLookback;
-const isCallputspread          = require('./callputspread').isCallputspread;
+const processPriceRequest      = require('./price').processPriceRequest;
 const Symbols                  = require('./symbols');
 const Tick                     = require('./tick');
 const TickDisplay              = require('./tick_trade');
@@ -10,9 +12,11 @@ const Client                   = require('../../base/client');
 const Header                   = require('../../base/header');
 const BinarySocket             = require('../../base/socket');
 const formatMoney              = require('../../common/currency').formatMoney;
+const TopUpVirtualPopup        = require('../../pages/user/account/top_up_virtual/pop_up');
 const CommonFunctions          = require('../../../_common/common_functions');
 const localize                 = require('../../../_common/localize').localize;
 const localizeKeepPlaceholders = require('../../../_common/localize').localizeKeepPlaceholders;
+const State                    = require('../../../_common/storage').State;
 const padLeft                  = require('../../../_common/string_util').padLeft;
 const urlFor                   = require('../../../_common/url').urlFor;
 const createElement            = require('../../../_common/utility').createElement;
@@ -59,31 +63,38 @@ const Purchase = (() => {
         const has_chart  = !/^(digits|highlowticks)$/.test(Contract.form());
         const show_chart = !error && passthrough.duration <= 10 && passthrough.duration_unit === 't';
 
-        contracts_list.style.display = 'none';
-
         if (error) {
-            container.style.display = 'block';
-            message_container.hide();
-            if (/AuthorizationRequired/.test(error.code)) {
-                authorization_error.setVisibility(1);
-                const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
-                authorization_error_btn_login.removeEventListener('click', loginOnClick);
-                authorization_error_btn_login.addEventListener('click', loginOnClick);
+            const balance = State.getResponse('balance.balance');
+            if (/InsufficientBalance/.test(error.code) && TopUpVirtualPopup.shouldShow(balance, true)) {
+                hidePriceOverlay();
+                processPriceRequest();
+                TopUpVirtualPopup.show(error.message);
             } else {
-                confirmation_error.setVisibility(1);
-                let message = error.message;
-                if (/RestrictedCountry/.test(error.code)) {
-                    let additional_message = '';
-                    if (/FinancialBinaries/.test(error.code)) {
-                        additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
-                    } else if (/Random/.test(error.code)) {
-                        additional_message = localize('Try our other markets.');
+                contracts_list.style.display = 'none';
+                container.style.display = 'block';
+                message_container.hide();
+                if (/AuthorizationRequired/.test(error.code)) {
+                    authorization_error.setVisibility(1);
+                    const authorization_error_btn_login = CommonFunctions.getElementById('authorization_error_btn_login');
+                    authorization_error_btn_login.removeEventListener('click', loginOnClick);
+                    authorization_error_btn_login.addEventListener('click', loginOnClick);
+                } else {
+                    confirmation_error.setVisibility(1);
+                    let message = error.message;
+                    if (/RestrictedCountry/.test(error.code)) {
+                        let additional_message = '';
+                        if (/FinancialBinaries/.test(error.code)) {
+                            additional_message = localize('Try our [_1]Volatility Indices[_2].', [`<a href="${urlFor('get-started/binary-options', 'anchor=volatility-indices#range-of-markets')}" >`, '</a>']);
+                        } else if (/Random/.test(error.code)) {
+                            additional_message = localize('Try our other markets.');
+                        }
+                        message = `${error.message}. ${additional_message}`;
                     }
-                    message = `${error.message}. ${additional_message}`;
+                    CommonFunctions.elementInnerHtml(confirmation_error, message);
                 }
-                CommonFunctions.elementInnerHtml(confirmation_error, message);
             }
         } else {
+            contracts_list.style.display = 'none';
             CommonFunctions.getElementById('guideBtn').style.display = 'none';
             container.style.display = 'table-row';
             message_container.show();

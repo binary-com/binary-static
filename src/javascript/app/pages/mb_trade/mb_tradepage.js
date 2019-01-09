@@ -22,12 +22,7 @@ const MBTradePage = (() => {
 
     const onLoad = () => {
         State.set('is_mb_trading', true);
-        BinarySocket.wait('authorize').then(() => {
-            if (Client.get('is_virtual')) {
-                TopUpVirtualPopup.onLoad();
-            }
-            init();
-        });
+        BinarySocket.wait('authorize').then(init);
         if (!Client.isLoggedIn() || !Client.get('residence')) { // if client is logged out or they don't have residence set
             BinarySocket.wait('website_status').then(() => {
                 BinarySocket.send({ landing_company: State.getResponse('website_status.clients_country') });
@@ -58,6 +53,10 @@ const MBTradePage = (() => {
         State.set('is_chart_allowed', true);
         State.set('ViewPopup.onDisplayed', MBPrice.hidePriceOverlay);
         $('.container').css('max-width', '1200px');
+        // if not loaded by pjax, balance update function calls TopUpVirtualPopup
+        if (State.get('is_loaded_by_pjax')) {
+            TopUpVirtualPopup.init(State.getResponse('balance.balance'));
+        }
     };
 
     const showCurrency = (currency) => {
