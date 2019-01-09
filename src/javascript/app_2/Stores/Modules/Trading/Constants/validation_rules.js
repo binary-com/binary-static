@@ -37,6 +37,9 @@ const getValidationRules = () => ({
             ['req'    , { message: localize('Duration is a required field.') }],
         ],
     },
+    start_date: {
+        trigger: 'start_time',
+    },
     start_time: {
         rules: [
             ['custom' , { func: (value, options, store) => store.contract_start_type === 'spot' || isTimeValid(value)  , message: localize('Please enter the start time in format "HH:MM".') }],
