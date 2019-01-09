@@ -54,27 +54,27 @@ const BinaryOptionsForMT5 = () => (
 
                     <HeaderSecondary header={it.L('Types of trades')} />
 
-                    <h4 className='text-bold'>{it.L('Up/Down')}</h4>
+                    <strong>{it.L('Up/Down')}</strong>
                     <p>{it.L('Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes.')}</p>
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
 
-                    <h4 className='text-bold'>{it.L('High Tick/Low Tick')}</h4>
+                    <strong>{it.L('High Tick/Low Tick')}</strong>
                     <p>{it.L('Predict the highest or lowest tick among the next 5 ticks.')}</p>
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
 
-                    <h4 className='text-bold'>{it.L('Matches/Differs')}</h4>
+                    <strong>{it.L('Matches/Differs')}</strong>
                     <p>{it.L('Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
 
-                    <h4 className='text-bold'>{it.L('Even/Odd')}</h4>
+                    <strong>{it.L('Even/Odd')}</strong>
                     <p>{it.L('Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks.')}</p>
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
 
-                    <h4 className='text-bold'>{it.L('Over/Under')}</h4>
+                    <strong>{it.L('Over/Under')}</strong>
                     <p>{it.L('Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
                     
                 </Section>
