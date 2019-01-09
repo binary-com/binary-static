@@ -18,10 +18,10 @@ const professionalClient = (() => {
         populateProfessionalClient(is_financial);
     };
 
-    const setVisible = (set_visible) => {
+    const setVisible = (selector) => {
         $('#loading').remove();
         $('#frm_professional').setVisibility(0);
-        $(set_visible).setVisibility(1);
+        $(selector).setVisibility(1);
     };
 
     const populateProfessionalClient = (is_financial) => {
