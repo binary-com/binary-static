@@ -61,7 +61,8 @@ const SetCurrency = (() => {
             $('#set_currency, .select_currency').setVisibility(1);
 
             const $currency_list = $('.currency_list');
-            const $error = $('#set_currency').find('.error-msg');
+            const $error         = $('#set_currency').find('.error-msg');
+
             const onConfirm = () => {
                 $error.setVisibility(0);
                 const $selected_currency = $currency_list.find('.selected');
@@ -111,9 +112,9 @@ const SetCurrency = (() => {
                 $(this).addClass('selected');
                 let localized_message = '';
                 if (isCryptocurrency($(this).attr('id'))) {
-                    localized_message = localize('You have chosen <strong>[_1]</strong> as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account.', `<strong>${$(this).attr('id')}</strong>`);
+                    localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account.', `<strong>${$(this).attr('id')}</strong>`);
                 } else {
-                    localized_message = localize('You have chosen <strong>[_1]</strong> as the currency for this account. You cannot change this later. You can have one fiat currency account only.', `<strong>${$(this).attr('id')}</strong>`);
+                    localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have one fiat currency account only.', `<strong>${$(this).attr('id')}</strong>`);
                 }
 
                 Dialog.confirm({

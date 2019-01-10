@@ -47,10 +47,6 @@ const Dialog = (() => {
                         el_btn_cancel.firstElementChild.textContent = options.cancel_text;
                     }
 
-                    if (options.title_message && el_title.firstElementChild) {
-                        el_title.firstElementChild.textContent = options.title_message;
-                    }
-
                     el_btn_ok.addEventListener('click', () => {
                         el_dialog.remove();
                         if (typeof options.onConfirm === 'function') {
