@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-08 11:12\n"
+"PO-Revision-Date: 2019-01-10 14:40\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -4667,6 +4667,9 @@ msgstr "Tick alto"
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Los contratos Tick Alto / Tick Bajo tienen una duración estricta de cinco ticks."
 
+msgid "High Ticks/Low Ticks"
+msgstr ""
+
 msgid "High barrier"
 msgstr "Barrera superior"
 
@@ -7608,8 +7611,8 @@ msgstr "Por favor inicie sesión."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Asegúrese de que primero acuerde con los Términos de pago del agente antes de enviar su solicitud."
 
-msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "Por favor, tenga en cuenta que las Asiáticas, Dígitos, Reset Call/Put, y Ticks Altos/Bajos se encuentran disponibles únicamente para nuestros Índices de Volatilidad."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Tenga en cuenta que es posible que los resultados de las operaciones no se correspondan con los resultados de las pruebas de back-testing."
@@ -8022,7 +8025,7 @@ msgstr "Publicado en chino, inglés, francés, alemán, indonesio, italiano, pol
 msgid "Purchase"
 msgstr "Comprar"
 
-msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
 msgstr ""
 
 msgid "Purchase Price"
@@ -8298,9 +8301,6 @@ msgstr "Barrera de Reset"
 msgid "Reset Call"
 msgstr "Reset Call"
 
-msgid "Reset Call/Put"
-msgstr "Reset Call/Put"
-
 msgid "Reset Call/Reset Put"
 msgstr "Reset Call/Reset Put"
 
@@ -8321,12 +8321,6 @@ msgstr "Restablecer contraseña"
 
 msgid "Reset to original settings"
 msgstr "Restablecer los ajustes originales"
-
-msgid "Reset-Call"
-msgstr "Reset-Call"
-
-msgid "Reset-Put"
-msgstr "Reset-Put"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Los residentes de países que han sido identificados por la FATF como países con deficiencias estratégicas no podrán abrir una cuenta con Binary Investments (Europe) Ltd.\n"
@@ -8897,9 +8891,6 @@ msgstr "Comience a operar"
 
 msgid "Start trading MT5 on web platform"
 msgstr "Comience a operar en la plaraforma web de MT5"
-
-msgid "Start/End Time"
-msgstr "Hora de Inicio/Finalización"
 
 msgid "State Benefits"
 msgstr ""
@@ -12714,6 +12705,9 @@ msgstr "Su información personal se utiliza principalmente como una forma de val
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Su ganancia o pérdida se calcula de la siguiente manera:"
+
+msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
+msgstr ""
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "Su solicitud de transferencia %1 %2 de %3 a %4 ha sido procesada exitosamente."
