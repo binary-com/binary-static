@@ -116,42 +116,37 @@ const BinaryOptionsForMT5 = () => (
                 <Section id='type-of-trades' header={it.L('Type of trades')}>
                     <HeaderSecondary header={it.L('Up/Down')} />
                     <div className='gr-row'>
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/get-started/mt5/type-of-trades/up.svg')} />
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/get-started/mt5/type-of-trades/down.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/get-started/mt5/type-of-trades/up.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/get-started/mt5/type-of-trades/down.svg')} />
                     </div>
-                    <SeparatorLine invisible show_mobile className='gr-padding-10' />
                     <p>{it.L('Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes.')}</p>
 
                     <HeaderSecondary header={it.L('High Tick/Low Tick')} />
                     <div className='gr-row'>
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/trade-explanation/en/high-tick.svg')} />
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/trade-explanation/en/low-tick.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/high-tick.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/low-tick.svg')} />
                     </div>
-                    <SeparatorLine invisible show_mobile className='gr-padding-10' />
                     <p>{it.L('Predict the highest or lowest tick among the next 5 ticks.')}</p>
 
                     <HeaderSecondary header={it.L('Matches/Differs')} />
                     <div className='gr-row'>
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/get-started/mt5/type-of-trades/matches.svg')} />
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/get-started/mt5/type-of-trades/differs.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/get-started/mt5/type-of-trades/matches.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/get-started/mt5/type-of-trades/differs.svg')} />
                     </div>
-                    <SeparatorLine invisible show_mobile className='gr-padding-10' />
                     <p>{it.L('Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
 
                     <HeaderSecondary header={it.L('Even/Odd')} />
                     <div className='gr-row'>
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/trade-explanation/en/even.svg')} />
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/trade-explanation/en/odd.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/even.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/odd.svg')} />
                     </div>
-                    <SeparatorLine invisible show_mobile className='gr-padding-30' />
                     <p>{it.L('Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks.')}</p>
 
                     <HeaderSecondary header={it.L('Over/Under')} />
                     <div className='gr-row'>
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/trade-explanation/en/over.svg')} />
-                        <img className='responsive gr-6 gr-12-m gr-gutter-m' style={{ margin: 'auto' }} src={it.url_for('images/pages/trade-explanation/en/under.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/over.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/under.svg')} />
                     </div>
-                    <SeparatorLine invisible show_mobile className='gr-padding-30' />
                     <p>{it.L('Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
                 </Section>
                 <NavButtons parent='binary' section='binary-options-mt5' />
