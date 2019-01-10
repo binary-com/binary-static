@@ -11,7 +11,7 @@ const Geocoder = (() => {
         el_loader,
         el_postcode_row,
         el_success,
-        is_el_states_select;
+        is_states_el_select;
     let validated = false;
 
     const init = (form_id) => {
@@ -26,9 +26,9 @@ const Geocoder = (() => {
         const postcode  = '#address_postcode';
         const residence = Client.get('residence').toUpperCase();
 
-        is_el_states_select = (form.querySelector(state).tagName === 'SELECT');
+        is_states_el_select = (form.querySelector(state).tagName === 'SELECT');
 
-        const getAddress = () => `${getValue(addr_1)}, ${getValue(addr_2)}, ${getValue(city)}, ${getValue(postcode)} ${is_el_states_select ? getStateText(state) : getValue(state)}, ${residence} `;
+        const getAddress = () => `${getValue(addr_1)}, ${getValue(addr_2)}, ${getValue(city)}, ${getValue(postcode)} ${is_states_el_select ? getStateText(state) : getValue(state)}, ${residence} `;
 
         el_btn_validate   = form.querySelector('#geocode_validate');
         el_geocode_status = form.querySelector('#geocode_status');
@@ -38,9 +38,9 @@ const Geocoder = (() => {
         el_loader         = form.querySelector('.barspinner');
 
         if (el_btn_validate) {
-            applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${!is_el_states_select ? state : undefined} ,${city}`, (element) => {
+            applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${!is_states_el_select ? state : undefined} ,${city}`, (element) => {
                 // List of fields that will trigger event onChange but will allow empty values as they are non-required fields
-                const non_required_fields = ['addr_2', 'postcode', `${!is_el_states_select ? 'state' : undefined }`];
+                const non_required_fields = ['addr_2', 'postcode', `${!is_states_el_select ? 'state' : undefined }`];
 
                 element.addEventListener('keyup', () => {
                     const value = element.value;
@@ -121,7 +121,7 @@ const Geocoder = (() => {
                     // Restrict Geolocation to client's country of residence and state
                     componentRestrictions: {
                         country           : Client.get('residence').toUpperCase(),
-                        administrativeArea: is_el_states_select ? getStateText('#address_state') : getValue('#address_state'),
+                        administrativeArea: is_states_el_select ? getStateText('#address_state') : getValue('#address_state'),
                     },
                 }, (result, status) => {
                     // Geocoding status reference:
