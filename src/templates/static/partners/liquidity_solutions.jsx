@@ -1,5 +1,5 @@
-import React from 'react';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const Box = ({ image, header, text }) => (
     <div className='gr-4 gr-12-p gr-12-m gr-padding-30 gr-parent'>

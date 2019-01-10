@@ -244,3 +244,9 @@ export const Button = ({ children, className, href, id, text }) => (
         { children || <span>{text}</span> }
     </a>
 );
+
+export const SocialButton = ({ provider }) => (
+    <a id={`button_${provider}`} href='javascript:;' className={`${provider} button-social`}>
+        <span className='name'>{provider}</span>
+    </a>
+);

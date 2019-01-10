@@ -1,7 +1,11 @@
-import React from 'react';
-import { Section, HeaderSecondary, NavButtons, MTAccountOpeningButton } from './common.jsx';
-import { List } from '../../_common/components/elements.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React                 from 'react';
+import {
+    Section,
+    HeaderSecondary,
+    NavButtons,
+    MTAccountOpeningButton } from './common.jsx';
+import { List }              from '../../_common/components/elements.jsx';
+import { SeparatorLine }     from '../../_common/components/separator_line.jsx';
 
 const BinaryOptionsForMT5 = () => (
     <div className='static_full get-started'>

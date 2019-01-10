@@ -11,7 +11,7 @@ const isBinaryApp    = require('../../config').isBinaryApp;
 
 const NewAccount = (() => {
     let clients_country,
-        $google_btn,
+        // $google_btn,
         $login_btn,
         $verify_email;
 
@@ -20,7 +20,7 @@ const NewAccount = (() => {
     const onLoad = () => {
         getElementById('footer').setVisibility(0); // always hide footer in this page
 
-        $google_btn   = $('#google-signup');
+        // $google_btn   = $('#google-signup');
         $login_btn    = $('#login');
         $verify_email = $('#verify_email');
 
@@ -42,14 +42,15 @@ const NewAccount = (() => {
             }
         });
 
-        $google_btn.off('click').on('click', (e) => {
-            e.preventDefault();
-            window.location.href = Login.socialLoginUrl('google');
-        });
+        // $google_btn.off('click').on('click', (e) => {
+        //     e.preventDefault();
+        //     window.location.href = Login.socialLoginUrl('google');
+        // });
         $login_btn.off('click').on('click', (e) => {
             e.preventDefault();
             Login.redirectToLogin();
         });
+        Login.initOneAll();
     };
 
     const verifyEmailHandler = (response) => {

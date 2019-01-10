@@ -1,6 +1,6 @@
 import React from 'react';
 import { BuySellImage } from '../../get_started/common.jsx';
-import SeparatorLine from '../../../_common/components/separator_line.jsx';
+import { SeparatorLine } from '../../../_common/components/separator_line.jsx';
 
 const CFDs = () => (
     <div className='gr-10 gr-push-1'>

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Section } from '../get_started/common.jsx';
-import { List } from '../../_common/components/elements.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React             from 'react';
+import { Section }       from '../get_started/common.jsx';
+import { List }          from '../../_common/components/elements.jsx';
+import { SeparatorLine } from '../../_common/components/separator_line.jsx';
 
 const FAQ = () => (
     <div className='static_full affiliates-faq-page'>

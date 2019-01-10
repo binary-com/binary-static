@@ -1,9 +1,16 @@
-import React from 'react';
-import FormVerifyEmail from '../_common/includes/form_verify_email.jsx';
-import MFSA from '../_common/includes/mfsa.jsx';
-import PaymentLogo from '../_common/components/payment_logo.jsx';
-import SeparatorLine from '../_common/components/separator_line.jsx';
-import { TabContainer, TabContentContainer, TabsSubtabs, TabContent } from  '../_common/components/tabs.jsx';
+import React                from 'react';
+import FormVerifyEmail      from '../_common/includes/form_verify_email.jsx';
+import MFSA                 from '../_common/includes/mfsa.jsx';
+import { SocialButton }     from '../_common/components/elements.jsx';
+import PaymentLogo          from '../_common/components/payment_logo.jsx';
+import {
+    SeparatorLine,
+    SeparatorLineWithText } from '../_common/components/separator_line.jsx';
+import {
+    TabContainer,
+    TabContentContainer,
+    TabsSubtabs,
+    TabContent }            from  '../_common/components/tabs.jsx';
 
 const Arrows = ({ direction, parent }) => (
     <div className='align-self-center gr-1 gr-hide-p'>
@@ -170,14 +177,11 @@ const Home = () => {
                         />
 
                         <div id='social-signup' className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
-                            <div className='section-divider gr-padding-20'>
-                                <div className='align-self-center border-bottom-light-gray' />
-                                <div className='circle'>{it.L('or')}</div>
-                                <div className='align-self-center border-bottom-light-gray' />
+                            <SeparatorLineWithText text={it.L('or')} className='gr-padding-20' />
+                            <div className='gr-row gr-row-align-center'>
+                                <SocialButton provider='google' />
+                                <SocialButton provider='facebook' />
                             </div>
-                            <a id='google-signup' href='javascript:;' className='button-white'>
-                                <span className='icon-google'>{it.L('Create account with Google')}</span>
-                            </a>
                         </div>
                     </div>
                 </div>

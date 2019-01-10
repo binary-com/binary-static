@@ -1,7 +1,15 @@
-import React from 'react';
-import { Box, HeaderSecondary, ListStrong, NavButtons, Section, BuySellImage, MtBox, MTAccountOpeningButton } from './common.jsx';
-import { List, Table } from '../../_common/components/elements.jsx';
-import SeparatorLine from '../../_common/components/separator_line.jsx';
+import React                 from 'react';
+import {
+    Box,
+    HeaderSecondary,
+    ListStrong,
+    NavButtons,
+    Section,
+    BuySellImage,
+    MtBox,
+    MTAccountOpeningButton } from './common.jsx';
+import { List, Table }       from '../../_common/components/elements.jsx';
+import { SeparatorLine }     from '../../_common/components/separator_line.jsx';
 
 const hundred       = 100;
 const hundredth     = 0.01;
