@@ -76,6 +76,11 @@ const InputField = ({
         onChange({ target: { value: decrement_value, name } });
     };
 
+    const onKeyPressed = (e) => {
+        if (e.keyCode === 38) incrementValue(); // up-arrow pressed
+        if (e.keyCode === 40) decrementValue(); // down-arrow pressed
+    };
+
     const input =
         <input
             className={classNames({ error: has_error })}
@@ -84,6 +89,7 @@ const InputField = ({
             data-tip
             maxLength={fractional_digits ? max_length + fractional_digits + 1 : max_length}
             name={name}
+            onKeyDown={is_increment ? onKeyPressed : undefined}
             onChange={changeValue}
             placeholder={placeholder || undefined}
             required={required || undefined}
@@ -106,12 +112,12 @@ const InputField = ({
                     <span className='input-helper'>{helper}</span>
                 }
                 {!!is_increment &&
-                    <div className='increment_wrapper' onClick={incrementValue}><IconArrow  className='select-arrow' /></div>
+                    <div className='increment-wrapper'>
+                        <div className='increment-wrapper__increment' onClick={incrementValue}><IconArrow  className='select-arrow' /></div>
+                        <div className='increment-wrapper__decrement' onClick={decrementValue}><IconArrow  className='select-arrow' /></div>
+                    </div>
                 }
                 { input }
-                {!!is_increment &&
-                    <div className='decrement_wrapper' onClick={decrementValue}><IconArrow  className='select-arrow' /></div>
-                }
             </Tooltip>
         </div>
     );
