@@ -227,9 +227,32 @@
                 fieldset {
                     margin-bottom: 5px;
 
+                    div.duration-container {
+                        &__input {
+                            grid-row: 2;
+                        }
+                        input {
+                            text-align: center;
+                        }
+                        .increment-wrapper {
+                            position: relative;
+
+                            &__increment, &__decrement {
+                                position: absolute;
+                                z-index: 1;
+                            }
+                            &__increment {
+                                top: 5px;
+                                right: 6px;
+                            }
+                            &__decrement {
+                                top: 5px;
+                                left: 6px;
+                            }
+                        }
+                    }
                     div.duration-container, div.amount-container {
                         display: grid;
-                        grid-gap: 8px;
                         grid-template-columns: 1fr;
                         grid-auto-columns: auto;
                     }
@@ -247,6 +270,9 @@
                         margin-top: 8px;
                     }
                     @media (min-width: 979px) {
+                        div.duration-container {
+                            grid-template-columns: 1fr;
+                        }
                         div.amount-container {
                             grid-template-columns: 1fr 1.5fr;
                             grid-gap: 0;

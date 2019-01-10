@@ -28,6 +28,11 @@
             padding-left: 35px !important;
         }
     }
+    .input-wrapper:hover {
+        input {
+            border-color: $COLOR_BLUE;
+        }
+    }
     input {
         box-sizing: border-box;
         margin: 0;
@@ -46,9 +51,6 @@
         border-radius: $BORDER_RADIUS;
         transition: all 0.3s;
 
-        &:hover {
-            border-color: $COLOR_BLUE;
-        }
         &:active, &:focus {
             outline: 0;
             border-radius: $BORDER_RADIUS;
@@ -81,7 +83,12 @@
         color: $COLOR_WHITE;
         border-color: $COLOR_BRANDBLUE_85;
 
-        &:hover, &:focus, &:active {
+        &:focus, &:active {
+            border-color: $COLOR_WHITE;
+        }
+    }
+    .input-wrapper:hover {
+        input {
             border-color: $COLOR_WHITE;
         }
     }

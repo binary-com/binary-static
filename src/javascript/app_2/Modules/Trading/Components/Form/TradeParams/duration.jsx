@@ -140,6 +140,7 @@ const Duration = ({
                                 footer={datepicker_footer}
                             /> :
                             <InputField
+                                className='duration-container__input'
                                 type='number'
                                 name='duration'
                                 value={duration}

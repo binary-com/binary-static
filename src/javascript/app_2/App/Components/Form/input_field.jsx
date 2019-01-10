@@ -4,7 +4,7 @@ import {
     PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
-import { IconArrow }             from 'Assets/Common';
+import { IconMinus, IconPlus }   from 'Assets/Common';
 import Tooltip                   from '../Elements/tooltip.jsx';
 
 const InputField = ({
@@ -111,13 +111,15 @@ const InputField = ({
                 {!!helper &&
                     <span className='input-helper'>{helper}</span>
                 }
-                {!!is_increment &&
-                    <div className='increment-wrapper'>
-                        <div className='increment-wrapper__increment' onClick={incrementValue}><IconArrow  className='select-arrow' /></div>
-                        <div className='increment-wrapper__decrement' onClick={decrementValue}><IconArrow  className='select-arrow' /></div>
-                    </div>
-                }
-                { input }
+                <div className='input-wrapper'>
+                    {is_increment &&
+                        <div className='increment-wrapper'>
+                            <div className='increment-wrapper__increment' onClick={incrementValue}><IconPlus className='select-arrow' /></div>
+                            <div className='increment-wrapper__decrement' onClick={decrementValue}><IconMinus className='select-arrow' /></div>
+                        </div>
+                    }
+                    { input }
+                </div>
             </Tooltip>
         </div>
     );
