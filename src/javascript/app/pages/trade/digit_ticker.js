@@ -49,7 +49,7 @@ const DigitTicker = (() => {
 
         const temp_mask_el = document.createElement('div');
         temp_mask_el.classList.add('mask');
-        temp_mask_el.append(document.createTextNode('0/0'));
+        temp_mask_el.append(document.createTextNode('0 / 0'));
 
         const temp_peek_el = document.createElement('div');
         temp_peek_el.classList.add('peek');
@@ -134,13 +134,10 @@ const DigitTicker = (() => {
         };
     };
 
-    // Calculate left margin of the peek-box against the "width" of the container
-    const calculateLeftMargin = (width) => (width - (digit_block_size * 10)) / 2;
-
     // Calculate peek-box left offset.
     const calculateOffset = () => {
-        const left_offset = calculateLeftMargin(el_container.offsetWidth);
-        return (+current_spot * digit_block_size) + left_offset - style_offset_correction;
+        const left_offset = document.querySelector(`.digit-${current_spot}`).offsetLeft;
+        return left_offset - style_offset_correction;
     };
 
     const markAsLost = () => {
@@ -195,7 +192,7 @@ const DigitTicker = (() => {
         window.onresize = null;
     };
 
-    const countDecimals = function(value) {
+    const countDecimals = (value) => {
         if (Math.floor(value) !== value) return value.toString().split('.')[1].length || 0;
         return 0;
     };
@@ -204,10 +201,11 @@ const DigitTicker = (() => {
 
     const countUp = (start, end, duration, element, render) => {
         const decimal_points = countDecimals(start);
-        const range = calculateDistance(start, end);
+        const _start = parseFloat(start);
+        const range = calculateDistance(_start, end);
         const step = Math.abs(range / 60);
-        const increment = end > start ? (1 * step) : (-1 * step);
-        let current = start;
+        const increment = end > _start ? (1 * step) : (-1 * step);
+        let current = _start;
         let i = 0;
 
         const renderTick = () => {

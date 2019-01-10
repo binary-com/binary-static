@@ -43,7 +43,7 @@ const Purchase = (() => {
             if (this_quote_el.parentElement.parentElement.previousSibling) {
                 const prev_quote_el = this_quote_el.parentElement.parentElement.previousSibling.querySelector('.quote');
                 const prev_quote = prev_quote_el.innerText;
-                DigitTicker.countUp(parseFloat(prev_quote),
+                DigitTicker.countUp(prev_quote,
                     parseFloat(this_quote_el.innerText),
                     700,
                     this_quote_el,
