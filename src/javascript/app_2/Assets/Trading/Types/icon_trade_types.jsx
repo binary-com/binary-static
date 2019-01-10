@@ -38,11 +38,12 @@ const IconTradeType = ({ type, className }) => {
                 break;
             case 'call':
                 IconType = (
-                    <g fill='#2A3052'>
-                        <path d='M3.812 8.11a.5.5 0 0 0-.624.78l2.5 2a.5.5 0 0 0 .68-.05l6-6.5a.5.5 0 0 0-.735-.68L5.949 9.82 3.812 8.11z' />
-                        <path d='M12 4v1.5a.5.5 0 1 0 1 0v-2a.5.5 0 0 0-.5-.5h-2a.5.5 0 1 0 0 1H12z' />
+                    <g fill='none' fillRule='evenodd'>
+                        <path fill='#101320' d='M0 0h16v16H0z' />
+                        <path d='M0 0h16v16H0z' />
+                        <path fill='#FFF' d='M8.721.162c0 1.13.902 2.03 1.983 2.03h1.848l-7.55 7.731v2.885l8.97-9.185v1.892c0 1.131.901 2.031 1.983 2.031V.138H8.72v.024z' />
+                        <path fill='#F93' d='M.135 12.808v2.123h2.817l2.05-2.123z' />
                     </g>
-
                 );
                 break;
             case 'calle_light':
@@ -211,8 +212,11 @@ const IconTradeType = ({ type, className }) => {
                 break;
             case 'put':
                 IconType = (
-                    <g fill='#2A3052'><path d='M11.62 12.325a.5.5 0 0 0 .76-.65l-6-7a.5.5 0 0 0-.692-.065l-2.5 2a.5.5 0 0 0 .624.78l2.123-1.698 5.685 6.633z' />
-                        <path d='M12 12h-1.5a.5.5 0 1 0 0 1h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 1 0-1 0V12z' />
+                    <g fill='none' fillRule='evenodd'>
+                        <path fill='#101320' d='M0 0h16v16H0z' />
+                        <path d='M0 0h16v16H0z' />
+                        <path fill='#FFF' d='M8.631 14.862c0-1.131.901-2.031 1.983-2.031h1.848L4.912 5.1V2.215l8.97 9.185V9.508c0-1.131.901-2.031 1.983-2.031v7.408H8.63v-.023z' />
+                        <path fill='#F93' d='M.045 2.215V.092h2.817l2.05 2.123z' />
                     </g>
                 );
                 break;
