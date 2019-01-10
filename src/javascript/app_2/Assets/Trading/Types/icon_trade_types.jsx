@@ -29,7 +29,6 @@ const IconTradeType = ({ type, className }) => {
             case 'call_barrier':
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
-                        <path fill='#101320' d='M0 0h16v16H0z' />
                         <path d='M0 0h16v16H0z' />
                         <path fill='#FFF' d='M7.234 9.316l5.183-5.193H10.14a1.988 1.988 0 0 1-1.983-1.988h7.662v5.713h-1.983V5.523L10.05 9.316h5.769v1.987H.045V9.316h7.189z' />
                         <path fill='#F93' d='M3.425 15.91H.045v-3.387h2.073v1.874l1.87-1.874h2.818z' />
@@ -39,10 +38,9 @@ const IconTradeType = ({ type, className }) => {
             case 'call':
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
-                        <path fill='#101320' d='M0 0h16v16H0z' />
-                        <path d='M0 0h16v16H0z' />
-                        <path fill='#FFF' d='M8.721.162c0 1.13.902 2.03 1.983 2.03h1.848l-7.55 7.731v2.885l8.97-9.185v1.892c0 1.131.901 2.031 1.983 2.031V.138H8.72v.024z' />
-                        <path fill='#F93' d='M.135 12.808v2.123h2.817l2.05-2.123z' />
+                        <path className='transparent' d='M0 0h16v16H0z' />
+                        <path fill='#2A3052' d='M8.721.162c0 1.13.902 2.03 1.983 2.03h1.848l-7.55 7.731v2.885l8.97-9.185v1.892c0 1.131.901 2.031 1.983 2.031V.138H8.72v.024z' />
+                        <path className='important' fill='#F93' d='M.135 12.808v2.123h2.817l2.05-2.123z' />
                     </g>
                 );
                 break;
@@ -214,7 +212,6 @@ const IconTradeType = ({ type, className }) => {
                             <path id='a' d='M0 0h16v16H0z' />
                         </defs>
                         <g fill='none' fillRule='evenodd'>
-                            <path fill='#101320' d='M0 0h16v16H0z' />
                             <mask id='b' fill='#fff'>
                                 <use xlinkHref='#a' />
                             </mask>
@@ -229,10 +226,9 @@ const IconTradeType = ({ type, className }) => {
             case 'put':
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
-                        <path fill='#101320' d='M0 0h16v16H0z' />
-                        <path d='M0 0h16v16H0z' />
-                        <path fill='#FFF' d='M8.631 14.862c0-1.131.901-2.031 1.983-2.031h1.848L4.912 5.1V2.215l8.97 9.185V9.508c0-1.131.901-2.031 1.983-2.031v7.408H8.63v-.023z' />
-                        <path fill='#F93' d='M.045 2.215V.092h2.817l2.05 2.123z' />
+                        <path className='transparent' d='M0 0h16v16H0z' />
+                        <path fill='#2A3052' d='M8.631 14.862c0-1.131.901-2.031 1.983-2.031h1.848L4.912 5.1V2.215l8.97 9.185V9.508c0-1.131.901-2.031 1.983-2.031v7.408H8.63v-.023z' />
+                        <path className='important' fill='#F93' d='M.045 2.215V.092h2.817l2.05 2.123z' />
                     </g>
                 );
                 break;

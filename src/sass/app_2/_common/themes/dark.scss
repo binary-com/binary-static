@@ -121,8 +121,9 @@ body.dark, .theme-wrapper.dark {
 
                 .type {
                     path, rect {
-                        fill: $COLOR_WHITE;
-
+                        &:not(.important) {
+                            fill: $COLOR_WHITE;
+                        }
                         &.transparent {
                             fill: $COLOR_BRANDBLUE_75;
                         }
@@ -305,8 +306,9 @@ body.dark, .theme-wrapper.dark {
 
         .type {
             path, rect {
-                fill: $COLOR_WHITE;
-
+                &:not(.important) {
+                    fill: $COLOR_WHITE;
+                }
                 &.transparent {
                     fill: $COLOR_BRANDBLUE_75;
                 }

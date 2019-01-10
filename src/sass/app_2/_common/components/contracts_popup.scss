@@ -292,8 +292,9 @@ div.contracts-popup-container {
 
             .category-type {
                 path, rect {
-                    fill: $COLOR_WHITE;
-
+                    &:not(.important) {
+                        fill: $COLOR_WHITE;
+                    }
                     &.transparent {
                         fill: $COLOR_BRANDBLUE_75;
                     }
