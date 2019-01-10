@@ -6,51 +6,47 @@ const Client             = require('../app/base/client');
 
 const Geocoder = (() => {
     let el_btn_validate,
-        el_geocode_status,
         el_error,
+        el_geocode_status,
+        el_loader,
         el_postcode_row,
         el_success,
-        loader,
-        has_currency,
-        is_state_select_el,
-        is_virtual;
+        is_el_states_select;
     let validated = false;
 
     const init = (form_id) => {
-        is_virtual = Client.get('is_virtual');
-        has_currency = Client.get('currency');
         // TODO: We should store the Google API key in an unstaged file so it doesn't get committed to the public repository
         scriptjs('https://maps.googleapis.com/maps/api/js?key=AIzaSyAEha6-HeZuI95L9JWmX3m6o-AxQr_oFqU&libraries=places', 'gMaps');
 
-        const form = getElementById(form_id.split('#')[1]);
-        const addr_1 = '#address_line_1';
-        const addr_2 = '#address_line_2';
-        const city   = '#address_city';
-        const state  = '#address_state';
+        const form      = getElementById(form_id.split('#')[1]);
+        const addr_1    = '#address_line_1';
+        const addr_2    = '#address_line_2';
+        const city      = '#address_city';
+        const state     = '#address_state';
         const postcode  = '#address_postcode';
         const residence = Client.get('residence').toUpperCase();
 
-        is_state_select_el = (form.querySelector(state).tagName === 'SELECT');
+        is_el_states_select = (form.querySelector(state).tagName === 'SELECT');
 
-        const getAddress = () => `${getValue(addr_1)}, ${getValue(addr_2)}, ${getValue(city)}, ${getValue(postcode)} ${is_state_select_el ? getStateText(state) : getValue(state)}, ${residence} `;
+        const getAddress = () => `${getValue(addr_1)}, ${getValue(addr_2)}, ${getValue(city)}, ${getValue(postcode)} ${is_el_states_select ? getStateText(state) : getValue(state)}, ${residence} `;
 
         el_btn_validate   = form.querySelector('#geocode_validate');
         el_geocode_status = form.querySelector('#geocode_status');
         el_error          = form.querySelector('#geocode_error');
         el_postcode_row   = form.querySelector('.postcode-form-row');
         el_success        = form.querySelector('#geocode_success');
-        loader            = form.querySelector('.barspinner');
+        el_loader         = form.querySelector('.barspinner');
 
         if (el_btn_validate) {
-            applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${!is_state_select_el ? state : undefined} ,${city}`, (element) => {
+            applyToAllElements(`${addr_1}, ${addr_2}, ${postcode}, ${!is_el_states_select ? state : undefined} ,${city}`, (element) => {
                 // List of fields that will trigger event onChange but will allow empty values as they are non-required fields
-                const non_required_fields = ['addr_2', 'postcode', `${!is_state_select_el ? 'state' : undefined }`];
+                const non_required_fields = ['addr_2', 'postcode', `${!is_el_states_select ? 'state' : undefined }`];
 
                 element.addEventListener('keyup', () => {
                     const value = element.value;
                     // Check if address_line_1, address_state and address city have values
-                    const has_met_conditions = (getValue(city).length > 0) &&
-                        (getValue(addr_1).length > 0);
+                    const has_met_conditions = (getValue(city).trim().length > 0) &&
+                        (getValue(addr_1).trim().length > 0);
 
                     if (value.length > 0 && !non_required_fields.includes(element.id) && has_met_conditions) {
                         el_btn_validate.classList.remove('geocode-btn-disabled');
@@ -94,18 +90,14 @@ const Geocoder = (() => {
             el_error.setVisibility(0);
         }
 
-        if (is_virtual || !has_currency) {
-            loader.setVisibility(0);
-        }
-
         return {
             address: getAddress(),
         };
     };
 
-    const getValue = (id) => getElementById(id.split('#')[1]).value || '';
-    const getStateText = (id) => {
-        const states_list_el = getElementById(id.split('#')[1]);
+    const getValue = (selector) => getElementById(selector.split('#')[1]).value || '';
+    const getStateText = (selector) => {
+        const states_list_el = getElementById(selector.split('#')[1]);
         return states_list_el.options[states_list_el.selectedIndex].text;
     };
 
@@ -123,13 +115,13 @@ const Geocoder = (() => {
                 el_btn_validate.classList.add('geocode-btn-disabled');
                 el_success.setVisibility(0);
                 el_error.setVisibility(0);
-                loader.setVisibility(1);
+                el_loader.setVisibility(1);
                 geocoder.geocode({
                     address,
                     // Restrict Geolocation to client's country of residence and state
                     componentRestrictions: {
                         country           : Client.get('residence').toUpperCase(),
-                        administrativeArea: is_state_select_el ? getStateText('#address_state') : getValue('#address_state'),
+                        administrativeArea: is_el_states_select ? getStateText('#address_state') : getValue('#address_state'),
                     },
                 }, (result, status) => {
                     // Geocoding status reference:
@@ -184,7 +176,7 @@ const Geocoder = (() => {
             el_error.setVisibility(0);
             el_success.setVisibility(1);
         }
-        loader.setVisibility(0);
+        el_loader.setVisibility(0);
     };
 
     return {

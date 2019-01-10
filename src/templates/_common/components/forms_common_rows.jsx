@@ -264,7 +264,7 @@ export const GeocodeValidation = ({ className }) => (
         </div>
         <div id='geocode_status' className='gr-row'>
             <div className='gr-12 gr-padding-10 center-text'>
-                <Loading className='invisible' />
+                <Loading is_invisible />
                 <p id='geocode_error' className='notice-msg invisible'>
                     {it.L('We could not recognise your address. You may proceed but please ensure that your address is complete and accurate.')}
                 </p>
