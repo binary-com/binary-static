@@ -14,6 +14,7 @@ const BinaryOptionsForMT5 = () => (
                         items={[
                             { id: 'what-are-binary-options', href: '#what-are-binary-options', text: it.L('Introduction to binary options on MT5') },
                             { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options on MT5') },
+                            { id: 'type-of-trades',     href: '#type-of-trades',     text: it.L('Type of trades') },
                         ]}
                     />
 
@@ -51,32 +52,6 @@ const BinaryOptionsForMT5 = () => (
                         </div>
                     </div>
                     <p>{it.L('Each index corresponds to simulated markets with constant volatilities of 10%, 25%, 50%, 75%, and 100% respectively.')}</p>
-
-                    <HeaderSecondary header={it.L('Types of trades')} />
-
-                    <strong>{it.L('Up/Down')}</strong>
-                    <p>{it.L('Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes.')}</p>
-
-                    <SeparatorLine invisible show_mobile className='gr-padding-10' />
-
-                    <strong>{it.L('High Tick/Low Tick')}</strong>
-                    <p>{it.L('Predict the highest or lowest tick among the next 5 ticks.')}</p>
-
-                    <SeparatorLine invisible show_mobile className='gr-padding-10' />
-
-                    <strong>{it.L('Matches/Differs')}</strong>
-                    <p>{it.L('Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
-
-                    <SeparatorLine invisible show_mobile className='gr-padding-10' />
-
-                    <strong>{it.L('Even/Odd')}</strong>
-                    <p>{it.L('Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks.')}</p>
-
-                    <SeparatorLine invisible show_mobile className='gr-padding-10' />
-
-                    <strong>{it.L('Over/Under')}</strong>
-                    <p>{it.L('Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
-                    
                 </Section>
                 <Section id='how-to-trade-binary' header={it.L('How to trade binary options on MT5')}>
                     <p>{it.L('Get started with the [_1] Expert Advisor (EA) for binary options trading on MT5 by following these steps:', it.website_name)}</p>
@@ -137,6 +112,30 @@ const BinaryOptionsForMT5 = () => (
                     <p>{it.L('Finally, make your prediction: will the market price end up higher or lower than the entry spot at the end of the contract? If you need to review a previous transaction, you may browse your full transaction history via the \'History\' tab.')}</p>
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
+                </Section>
+                <Section id='type-of-trades' header={it.L('Type of trades')}>
+                    <HeaderSecondary header={it.L('Up/Down')} />
+                    <div className='gr-row'>
+                        <img className='responsive gr-6' src={it.url_for('images/pages/get-started/mt5/type-of-trades/up.svg')} />
+                        <img className='responsive gr-6' src={it.url_for('images/pages/get-started/mt5/type-of-trades/down.svg')} />
+                    </div>
+                    <p>{it.L('Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes.')}</p>
+
+                    <HeaderSecondary header={it.L('High Tick/Low Tick')} />
+                    <img className='responsive' src={it.url_for('images/pages/get-started/mt5/how-to-trade-binary/step-1.png')} />
+                    <p>{it.L('Predict the highest or lowest tick among the next 5 ticks.')}</p>
+
+                    <HeaderSecondary header={it.L('Matches/Differs')} />
+                    <img className='responsive' src={it.url_for('images/pages/get-started/mt5/how-to-trade-binary/step-1.png')} />
+                    <p>{it.L('Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
+
+                    <HeaderSecondary header={it.L('Even/Odd')} />
+                    <img className='responsive' src={it.url_for('images/pages/get-started/mt5/how-to-trade-binary/step-1.png')} />
+                    <p>{it.L('Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks.')}</p>
+
+                    <HeaderSecondary header={it.L('Over/Under')} />
+                    <img className='responsive' src={it.url_for('images/pages/get-started/mt5/how-to-trade-binary/step-1.png')} />
+                    <p>{it.L('Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
                 </Section>
                 <NavButtons parent='binary' section='binary-options-mt5' />
             </div>

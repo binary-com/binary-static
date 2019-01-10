@@ -22,7 +22,7 @@ module.exports = {
         onUnload: () => { MenuSelector.clean(); },
     },
     BinaryOptionsForMT5: {
-        onLoad  : () => { MenuSelector.init(['what-are-binary-options', 'how-to-trade-binary']); },
+        onLoad  : () => { MenuSelector.init(['what-are-binary-options', 'how-to-trade-binary', 'type-of-trades']); },
         onUnload: () => { MenuSelector.clean(); },
     },
 };
