@@ -52,22 +52,7 @@ const SetCurrency = () => (
                     <Currencies id='crypto' text={it.L('Cryptocurrency')} />
                 </form>
             </div>
-            <div id='set_currency_popup' className='invisible gr-padding-20 gr-gutter small-popup'>
-                <h1>{it.L('Are you sure?')}</h1>
-                <p className='invisible' id='set_currency_popup_content' />
-                <div className='center-text'>
-                    <p className='invisible error-msg' />
-                    <div className='gr-row'>
-                        <div className='gr-6'>
-                            <button className='button button-secondary' id='btn_back'>{it.L('Back')}</button>
-                        </div>
-                        <div className='gr-6'>
-                            <button className='button' id='btn_confirm'>{it.L('Confirm')}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <p className='invisible error-msg center-text' />
         </div>
     </React.Fragment>
 );
