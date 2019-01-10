@@ -6,10 +6,10 @@ import MFSA                      from '../_common/includes/mfsa.jsx';
 const NewAccount = () => (
     <React.Fragment>
         <MFSA />
-        <div className='center-text gr-padding-20'>
+        <div id='signup_form'className='center-text gr-padding-20'>
             <h1 className='dark gr-padding-20 gr-child'>{it.L('Start Trading with [_1]', `<strong>${it.website_name}</strong>`)}</h1>
             <div className='gr-4 gr-5-t gr-8-p gr-10-m gr-no-gutter gr-centered'>
-                <form id='signup_form'>
+                <form>
                     <div className='gr-padding-10'>
                         <input autoComplete='off' autoFocus={true} name='email' id='email' maxLength='50' placeholder={it.L('Email')}  data-lpignore='true' />
                     </div>
