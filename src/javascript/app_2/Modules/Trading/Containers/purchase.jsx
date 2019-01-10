@@ -39,18 +39,22 @@ const Purchase = ({
                 id={`purchase_${type}`}
                 className='primary green btn-purchase'
                 has_effect
-                text={localize(`${trade_types[type]}`)}
                 onClick={() => { onClickPurchase(info.id, info.stake, type); }}
                 wrapperClassName='submit-section'
             >
-                <IconTradeTypeButton type={type.toLowerCase()} />
-                <div className='info-wrapper'>
-                    <div>{localize('Stake')}:</div>
-                    <div><Money amount={info.stake} currency={currency} /></div>
+                <div className='btn-purchase-rec' />
+                <div className='btn-purchase-tri' />
+                <div className="trade-type-container">
+                    <div className="trade-type">
+                        <IconTradeTypeButton type={type.toLowerCase()} />
+                        <span>{localize(`${trade_types[type]}`)}</span>
+                    </div>
                 </div>
-                <div className='info-wrapper'>
-                    <div>{localize('Payout')}:</div>
-                    <div><Money amount={info.payout} currency={currency} /></div>
+                <div className="info-container">
+                    <div className="return">{info.returns}</div>
+                    <div className="profit">
+                        <Money amount={info.payout} currency={currency} />
+                    </div>
                 </div>
             </Button>
         );
