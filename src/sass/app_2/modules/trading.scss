@@ -460,6 +460,17 @@
                         bottom: 0;
                         display: inline-block;
                     }
+                    &:disabled {
+                        .btn-purchase-rec {
+                            background: $COLOR_BLACK_DISABLED;
+                        }
+                        .btn-purchase-tri {
+                            border-color: transparent transparent transparent $COLOR_BLACK_DISABLED;
+                        }
+                        .trade-type svg {
+                            opacity: 0.16;
+                        }
+                    }
                 }
             }
             span.tooltip:before {
