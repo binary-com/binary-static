@@ -271,7 +271,7 @@ export const GeocodeValidation = ({ className }) => (
                 <div id='geocode_success' className='success-msg invisible'>
                     <span className='success-msg'>
                         <ul className='checked'>
-                            <li>{it.L('Your address has been successfully verified by our system.')}</li>
+                            <li>{it.L('Your address has been successfully recognised by our system.')}</li>
                         </ul>
                     </span>
                 </div>
