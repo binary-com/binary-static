@@ -8,7 +8,9 @@ import {
     BuySellImage,
     MtBox,
     MTAccountOpeningButton } from './common.jsx';
-import { List, Table }       from '../../_common/components/elements.jsx';
+import {
+    List,
+    Table }                  from '../../_common/components/elements.jsx';
 import { SeparatorLine }     from '../../_common/components/separator_line.jsx';
 
 const hundred       = 100;

@@ -1,6 +1,8 @@
-import React from 'react';
+import React             from 'react';
+import {
+    List,
+    Table }              from '../../../_common/components/elements.jsx';
 import { SeparatorLine } from '../../../_common/components/separator_line.jsx';
-import { List, Table } from '../../../_common/components/elements.jsx';
 
 const Equation = ({ operand_1, operand_2, operand_3, operand_4 }) => (
     <React.Fragment>

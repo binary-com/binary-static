@@ -1,4 +1,4 @@
-import React from 'react';
+import React             from 'react';
 import { SeparatorLine } from '../../../_common/components/separator_line.jsx';
 
 const Cryptocurrencies = () => {
