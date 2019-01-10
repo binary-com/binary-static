@@ -6,7 +6,6 @@ const DigitTicker = (() => {
         total_tick_count,
         contract_status,
         current_spot;
-    let digit_block_size = 36;
     let style_offset_correction = 5;
 
     const array_of_digits         = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -92,7 +91,6 @@ const DigitTicker = (() => {
     // adjust box sizes for mobile
     const adjustBoxSizes = () => {
         if (el_container.offsetWidth < 360) {
-            digit_block_size = 28;
             style_offset_correction = 6;
         }
     };
@@ -201,11 +199,11 @@ const DigitTicker = (() => {
 
     const countUp = (start, end, duration, element, render) => {
         const decimal_points = countDecimals(start);
-        const _start = parseFloat(start);
-        const range = calculateDistance(_start, end);
+        const f_start = parseFloat(start);
+        const range = calculateDistance(f_start, end);
         const step = Math.abs(range / 60);
-        const increment = end > _start ? (1 * step) : (-1 * step);
-        let current = _start;
+        const increment = end > f_start ? (1 * step) : (-1 * step);
+        let current = f_start;
         let i = 0;
 
         const renderTick = () => {
