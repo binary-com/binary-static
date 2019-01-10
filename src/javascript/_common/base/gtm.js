@@ -193,8 +193,6 @@ const GTM = (() => {
                     time    : response.transaction.transaction_time,
                     amount  : response.transaction.amount,
                     balance : response.transaction.balance,
-                    currency: response.transaction.currency,
-                    symbol  : response.transaction.symbol,
                 },
             };
             Object.assign(data, extra_data);
