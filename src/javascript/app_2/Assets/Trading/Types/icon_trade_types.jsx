@@ -29,9 +29,9 @@ const IconTradeType = ({ type, className }) => {
             case 'call_barrier':
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
-                        <path d='M0 0h16v16H0z' />
-                        <path fill='#FFF' d='M7.234 9.316l5.183-5.193H10.14a1.988 1.988 0 0 1-1.983-1.988h7.662v5.713h-1.983V5.523L10.05 9.316h5.769v1.987H.045V9.316h7.189z' />
-                        <path fill='#F93' d='M3.425 15.91H.045v-3.387h2.073v1.874l1.87-1.874h2.818z' />
+                        <path className='transparent' d='M0 0h16v16H0z' />
+                        <path fill='#2A3052' d='M7.234 9.316l5.183-5.193H10.14a1.988 1.988 0 0 1-1.983-1.988h7.662v5.713h-1.983V5.523L10.05 9.316h5.769v1.987H.045V9.316h7.189z' />
+                        <path className='important' fill='#F93' d='M3.425 15.91H.045v-3.387h2.073v1.874l1.87-1.874h2.818z' />
                     </g>
                 );
                 break;
@@ -188,38 +188,27 @@ const IconTradeType = ({ type, className }) => {
             case 'notouch':
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
-                        <path fill='#101320' d='M0 0h16v16H0z' />
-                        <path d='M0 0h16v16H0z' />
-                        <path fill='#FFF' d='M.068.07h15.774V2.1H.068V.07zm13.769 8.007c0-1.13.878-2.03 1.983-2.054v6.646H9.33c0-1.107.878-2.03 1.983-2.03h1.104L9.059 7.2l-5.363 5.515V9.831l5.363-5.516 4.778 4.893V8.077z' />
-                        <path fill='#F93' d='M.068 12.692v2.123h1.6l2.05-2.123z' />
+                        <path className='transparent' d='M0 0h16v16H0z' />
+                        <path fill='#2A3052' d='M.068.07h15.774V2.1H.068V.07zm13.769 8.007c0-1.13.878-2.03 1.983-2.054v6.646H9.33c0-1.107.878-2.03 1.983-2.03h1.104L9.059 7.2l-5.363 5.515V9.831l5.363-5.516 4.778 4.893V8.077z' />
+                        <path className='important' fill='#F93' d='M.068 12.692v2.123h1.6l2.05-2.123z' />
                     </g>
                 );
                 break;
             case 'onetouch':
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
-                        <path fill='#101320' d='M0 0h16v16H0z' />
-                        <path d='M0 0h16v16H0z' />
-                        <path fill='#FFF' d='M11.989 2.1h1.983V.07h1.96V2.1h-1.938v7.408c-1.081 0-1.983-.9-1.983-2.031V5.585l-6.94 7.107V9.785l5.52-5.654H8.745c-1.082 0-1.983-.9-1.983-2.031H.158V.07h11.83V2.1z' />
-                        <path fill='#F93' d='M.158 12.692v2.123H3.02l2.05-2.123z' />
+                        <path className='transparent' d='M0 0h16v16H0z' />
+                        <path fill='#2A3052' d='M11.989 2.1h1.983V.07h1.96V2.1h-1.938v7.408c-1.081 0-1.983-.9-1.983-2.031V5.585l-6.94 7.107V9.785l5.52-5.654H8.745c-1.082 0-1.983-.9-1.983-2.031H.158V.07h11.83V2.1z' />
+                        <path className='important' fill='#F93' d='M.158 12.692v2.123H3.02l2.05-2.123z' />
                     </g>
                 );
                 break;
             case 'put_barrier':
                 IconType = (
-                    <g>
-                        <defs>
-                            <path id='a' d='M0 0h16v16H0z' />
-                        </defs>
-                        <g fill='none' fillRule='evenodd'>
-                            <mask id='b' fill='#fff'>
-                                <use xlinkHref='#a' />
-                            </mask>
-                            <g mask='url(#b)'>
-                                <path fill='#FFF' d='M10.14 8.706l3.787 3.794v-2.326h1.983v5.713H8.248c0-1.084.879-1.987 1.983-1.987h2.276L7.324 8.706H.135V6.72H15.91v1.987h-5.77z' />
-                                <path fill='#F93' d='M3.515 2.113H.135V5.5h2.073V3.626L4.078 5.5h2.818z' />
-                            </g>
-                        </g>
+                    <g fill='none' fillRule='evenodd'>
+                        <path className='transparent' d='M0 0h16v16H0z' />
+                        <path fill='#2A3052' d='M10.14 8.706l3.787 3.794v-2.326h1.983v5.713H8.248c0-1.084.879-1.987 1.983-1.987h2.276L7.324 8.706H.135V6.72H15.91v1.987h-5.77z' />
+                        <path className='important' fill='#F93' d='M3.515 2.113H.135V5.5h2.073V3.626L4.078 5.5h2.818z' />
                     </g>
                 );
                 break;
