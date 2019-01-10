@@ -34,31 +34,31 @@ const Purchase = ({
         const is_disabled = !is_purchase_enabled || !is_trade_enabled || !info.id || !is_client_allowed_to_visit;
 
         const purchase_button = (
-                <Button
-                    is_disabled={is_disabled}
-                    id={`purchase_${type}`}
-                    className='primary green btn-purchase'
-                    has_effect
-                    onClick={() => { onClickPurchase(info.id, info.stake, type); }}
-                    wrapperClassName='submit-section'
-                >
-                    <React.Fragment>
-                        <div className='btn-purchase-rec' />
-                        <div className='btn-purchase-tri' />
-                        <div className='trade-type-container'>
-                            <div className='trade-type'>
-                                <IconTradeTypeButton type={type.toLowerCase()} />
-                                <span>{localize('[_1]', trade_types[type])}</span>
-                            </div>
+            <Button
+                is_disabled={is_disabled}
+                id={`purchase_${type}`}
+                className='primary green btn-purchase'
+                has_effect
+                onClick={() => { onClickPurchase(info.id, info.stake, type); }}
+                wrapperClassName='submit-section'
+            >
+                <React.Fragment>
+                    <div className='btn-purchase-rec' />
+                    <div className='btn-purchase-tri' />
+                    <div className='trade-type-container'>
+                        <div className='trade-type'>
+                            <IconTradeTypeButton type={type.toLowerCase()} />
+                            <span>{localize('[_1]', trade_types[type])}</span>
                         </div>
-                        <div className='info-container'>
-                            <div className='return'>{info.returns}</div>
-                            <div className='profit'>
-                                <Money amount={info.payout} currency={currency} />
-                            </div>
+                    </div>
+                    <div className='info-container'>
+                        <div className='return'>{info.returns}</div>
+                        <div className='profit'>
+                            <Money amount={info.payout} currency={currency} />
                         </div>
-                    </React.Fragment>
-                </Button>
+                    </div>
+                </React.Fragment>
+            </Button>
         );
 
         const is_purchase_error = (!isEmptyObject(purchase_info) && purchase_info.echo_req.buy === info.id);
