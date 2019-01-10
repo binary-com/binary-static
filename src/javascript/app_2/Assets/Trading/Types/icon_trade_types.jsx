@@ -28,12 +28,12 @@ const IconTradeType = ({ type, className }) => {
                 break;
             case 'call_barrier':
                 IconType = (
-                    <g fill='#2A3052' fillRule='evenodd'>
-                        <rect x='3' y='8' width='10' height='1' rx='.5' />
-                        <path d='M3.812 8.11a.5.5 0 0 0-.624.78l2.5 2a.5.5 0 0 0 .68-.05l6-6.5a.5.5 0 0 0-.735-.68L5.949 9.82l-2.137-1.71z' fillRule='nonzero' />
-                        <path d='M12 4v1.5a.5.5 0 1 0 1 0v-2a.5.5 0 0 0-.5-.5h-2a.5.5 0 1 0 0 1H12z' fillRule='nonzero' />
+                    <g fill='none' fillRule='evenodd'>
+                        <path fill='#101320' d='M0 0h16v16H0z' />
+                        <path d='M0 0h16v16H0z' />
+                        <path fill='#FFF' d='M7.234 9.316l5.183-5.193H10.14a1.988 1.988 0 0 1-1.983-1.988h7.662v5.713h-1.983V5.523L10.05 9.316h5.769v1.987H.045V9.316h7.189z' />
+                        <path fill='#F93' d='M3.425 15.91H.045v-3.387h2.073v1.874l1.87-1.874h2.818z' />
                     </g>
-
                 );
                 break;
             case 'call':
@@ -203,10 +203,20 @@ const IconTradeType = ({ type, className }) => {
                 break;
             case 'put_barrier':
                 IconType = (
-                    <g fill='#2A3052' fillRule='evenodd'>
-                        <rect x='3' y='6.5' width='10' height='1' rx='.5' />
-                        <path d='M11.62 12.325a.5.5 0 0 0 .76-.65l-6-7a.5.5 0 0 0-.692-.065l-2.5 2a.5.5 0 0 0 .624.78l2.123-1.698 5.685 6.633z' fillRule='nonzero' />
-                        <path d='M12 12h-1.5a.5.5 0 1 0 0 1h2a.5.5 0 0 0 .5-.5v-2a.5.5 0 1 0-1 0V12z' fillRule='nonzero' />
+                    <g>
+                        <defs>
+                            <path id='a' d='M0 0h16v16H0z' />
+                        </defs>
+                        <g fill='none' fillRule='evenodd'>
+                            <path fill='#101320' d='M0 0h16v16H0z' />
+                            <mask id='b' fill='#fff'>
+                                <use xlinkHref='#a' />
+                            </mask>
+                            <g mask='url(#b)'>
+                                <path fill='#FFF' d='M10.14 8.706l3.787 3.794v-2.326h1.983v5.713H8.248c0-1.084.879-1.987 1.983-1.987h2.276L7.324 8.706H.135V6.72H15.91v1.987h-5.77z' />
+                                <path fill='#F93' d='M3.515 2.113H.135V5.5h2.073V3.626L4.078 5.5h2.818z' />
+                            </g>
+                        </g>
                     </g>
                 );
                 break;
