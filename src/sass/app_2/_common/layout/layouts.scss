@@ -247,9 +247,6 @@
                         margin-top: 8px;
                     }
                     @media (min-width: 979px) {
-                        div.duration-container {
-                            grid-template-columns: 1fr 1.5fr;
-                        }
                         div.amount-container {
                             grid-template-columns: 1fr 1.5fr;
                             grid-gap: 0;

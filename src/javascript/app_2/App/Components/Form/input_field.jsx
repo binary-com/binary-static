@@ -4,6 +4,7 @@ import {
     PropTypes as MobxPropTypes } from 'mobx-react';
 import PropTypes                 from 'prop-types';
 import React                     from 'react';
+import { IconArrow }             from 'Assets/Common';
 import Tooltip                   from '../Elements/tooltip.jsx';
 
 const InputField = ({
@@ -13,6 +14,7 @@ const InputField = ({
     helper,
     is_disabled,
     is_float,
+    is_increment,
     is_signed = false,
     label,
     max_length,
@@ -62,6 +64,18 @@ const InputField = ({
         onChange(e);
     };
 
+    const incrementValue = () => {
+        const increment_value = (+value) + 1;
+        onChange({ target: { value: increment_value, name } });
+    };
+
+    const decrementValue = () => {
+        if (!value || +value === 0) return;
+
+        const decrement_value = (+value) - 1;
+        onChange({ target: { value: decrement_value, name } });
+    };
+
     const input =
         <input
             className={classNames({ error: has_error })}
@@ -91,7 +105,13 @@ const InputField = ({
                 {!!helper &&
                     <span className='input-helper'>{helper}</span>
                 }
+                {!!is_increment &&
+                    <div className='increment_wrapper' onClick={incrementValue}><IconArrow  className='select-arrow' /></div>
+                }
                 { input }
+                {!!is_increment &&
+                    <div className='decrement_wrapper' onClick={decrementValue}><IconArrow  className='select-arrow' /></div>
+                }
             </Tooltip>
         </div>
     );
@@ -107,6 +127,7 @@ InputField.propTypes = {
     helper           : PropTypes.string,
     is_disabled      : PropTypes.string,
     is_float         : PropTypes.bool,
+    is_increment     : PropTypes.bool,
     is_signed        : PropTypes.bool,
     label            : PropTypes.string,
     max_length       : PropTypes.number,

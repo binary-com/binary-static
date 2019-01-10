@@ -145,6 +145,7 @@ const Duration = ({
                                 value={duration}
                                 onChange={onChange}
                                 is_nativepicker={is_nativepicker}
+                                is_increment={true}
                                 error_messages = {validation_errors.duration || []}
                             />
                         }
