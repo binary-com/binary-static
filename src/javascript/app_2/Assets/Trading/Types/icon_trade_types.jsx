@@ -91,20 +91,20 @@ const IconTradeType = ({ type, className }) => {
             case 'digitover':
                 IconType = (
                     <g fill='none' fillRule='evenodd'>
-                        <path className='transparent' d='M0 0h16v16H0z' />
-                        <rect fill='#2A3052' transform='rotate(180 8 8)' y='7.5' width='16' height='1' rx='.5' />
-                        <path d='M12.866 5.834a.5.5 0 0 0 1 0V3.713a.5.5 0 0 0-.5-.5h-2.121a.5.5 0 0 0 0 1h1.62v1.621z' fill='#2A3052' fillRule='nonzero' />
-                        <path d='M.5 11a.5.5 0 1 0 0 1h5a.5.5 0 0 0 .354-.146l7.5-7.5a.5.5 0 0 0-.708-.708L5.293 11H.5z' fill='#2A3052' fillRule='nonzero' />
+                        <path fill='#101320' d='M0 0h16v16H0z' />
+                        <path d='M0 0h16v16H0z' />
+                        <path fill='#F93' d='M6.513 12.544L3.02 15.912H.203l4.89-4.746z' />
+                        <path fill='#FFF' d='M.045 11.034H15.82v1.925H.045v-1.925zM13.837 8.06V5.412l-5.792 5.622V8.3l4.372-4.244H9.69c-1.104 0-1.983-.875-1.983-1.925h8.113v7.875c-1.105 0-1.983-.875-1.983-1.947z' />
                     </g>
                 );
                 break;
             case 'digitunder':
                 IconType = (
-                    <g transform='matrix(1 0 0 -1 0 16)' fill='none' fillRule='evenodd'>
-                        <path className='transparent' d='M0 0h16v16H0z' />
-                        <rect fill='#2A3052' transform='rotate(180 8 8)' y='7.5' width='16' height='1' rx='.5' />
-                        <path d='M12.866 5.834a.5.5 0 0 0 1 0V3.713a.5.5 0 0 0-.5-.5h-2.121a.5.5 0 0 0 0 1h1.62v1.621z' fill='#2A3052' fillRule='nonzero' />
-                        <path d='M.5 11a.5.5 0 1 0 0 1h5a.5.5 0 0 0 .354-.146l7.5-7.5a.5.5 0 0 0-.708-.708L5.293 11H.5z' fill='#2A3052' fillRule='nonzero' />
+                    <g fill='none' fillRule='evenodd'>
+                        <path fill='#101320' d='M0 0h16v16H0z' />
+                        <path d='M0 0h16v16H0z' />
+                        <path fill='#F93' d='M6.603 5.478L3.11 2.088H.293l4.913 4.768z' />
+                        <path fill='#FFF' d='M.135 5.04H15.91v1.926H.135V5.04zm13.792 4.9c0-1.071.901-1.924 1.983-1.946v7.875H7.797c0-1.05.88-1.925 1.983-1.925h2.727L8.135 9.7V6.966l5.792 5.621V9.941z' />
                     </g>
                 );
                 break;
