@@ -259,20 +259,21 @@ export const GeocodeValidation = ({ className }) => (
     <React.Fragment>
         <div className={className}>
             <div className='geocode-btn-container'>
-                <a href='javascript:;' id='geocode_validate' className='geocode-btn invisible' ><span>{it.L('Verify address')}</span></a>
+                <a href='javascript:;' id='geocode_validate' className='geocode-btn invisible' ><span>{it.L('Check address')}</span></a>
             </div>
         </div>
         <div id='geocode_status' className='gr-row'>
-            <div className='gr-12 gr-padding-10 center-text'>
+            <div className='gr-10 gr-centered gr-padding-10 center-text'>
                 <Loading is_invisible />
                 <p id='geocode_error' className='notice-msg invisible'>
                     {it.L('We could not recognise your address. You may proceed but please ensure that your address is complete and accurate.')}
                 </p>
-                <div id='geocode_success' className='success-msg invisible'>
+                <div id='geocode_success' className='invisible'>
                     <span className='success-msg'>
                         <ul className='checked'>
-                            <li>{it.L('Your address has been successfully recognised by our system.')}</li>
+                            <li>{it.L('Your address has been recognised by our system.')}</li>
                         </ul>
+                        <ul><li>{it.L('However, we will require further documentation to authenticate your account in the future.')}</li></ul>
                     </span>
                 </div>
             </div>

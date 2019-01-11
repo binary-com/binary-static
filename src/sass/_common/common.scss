@@ -142,6 +142,9 @@ fieldset {
     #geocode_error, #geocode_success, #geocode_status > .barspinner {
         margin: 1rem auto;
     }
+    #geocode_error.notice-msg {
+        font-size: $FONT_SIZE_S;
+    }
     .geocode-container {
         display: flex;
         margin-top: 4px;
@@ -169,7 +172,7 @@ fieldset {
             color: $COLOR_LIGHT_GRAY;
         }
     }
-    #geocode_success > span.success-msg {
+    #geocode_success > span.success-msg > ul.checked {
         display: flex;
         align-items: center;
         justify-content: center;
