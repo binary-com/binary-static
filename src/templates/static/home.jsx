@@ -175,9 +175,9 @@ const Home = () => {
                             button_padding_mobile={12}
                             text={it.L('Create free account')}
                         />
-
                         <div id='social-signup' className='gr-8 gr-10-p gr-12-m gr-no-gutter gr-centered'>
                             <SeparatorLineWithText text={it.L('or')} className='gr-padding-20' />
+                            <p className='center-text no-margin gr-padding-10 gr-parent'>{it.L('Create with')}</p>
                             <div className='gr-row gr-row-align-center'>
                                 <SocialButton provider='google' />
                                 <SocialButton provider='facebook' />
