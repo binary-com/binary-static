@@ -14,7 +14,7 @@ const BinaryOptionsForMT5 = () => (
                         items={[
                             { id: 'what-are-binary-options', href: '#what-are-binary-options', text: it.L('Introduction to binary options on MT5') },
                             { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options on MT5') },
-                            { id: 'types-of-trades',     href: '#types-of-trades',     text: it.L('Types of trades') },
+                            { id: 'types-of-trades',         href: '#types-of-trades',         text: it.L('Types of trades') },
                         ]}
                     />
 
