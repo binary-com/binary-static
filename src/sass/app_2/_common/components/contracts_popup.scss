@@ -4,6 +4,7 @@ div.contracts-popup-container {
     background: $COLOR_WHITE;
     border: solid 1px $COLOR_GRAY;
     border-radius: 4px;
+    color: $COLOR_LIGHT_BLACK;
 
     &:hover {
         border-color: $COLOR_BLUE;
@@ -80,6 +81,7 @@ div.contracts-popup-container {
         align-items: center;
         padding: 8px;
         box-sizing: border-box;
+        margin-bottom: 1px;
 
         &:hover {
             background-color: #f2f3f8; /* stylelint-disable-line color-no-hex */
@@ -92,7 +94,7 @@ div.contracts-popup-container {
             }
         }
         &.selected {
-            background-color: $COLOR_BLUE;
+            background-color: $COLOR_LIGHT_GRAY_3;
 
             .contract-title {
                 color: $COLOR_WHITE;
@@ -121,36 +123,28 @@ div.contracts-popup-container {
 
         .list-container {
             position: absolute;
-            width: 560px;
+            width: 290px;
             right: calc(100% + 10px);
             top: -54px;
             display: grid;
             grid-auto-columns: 1fr;
             z-index: 2;
-            background: $COLOR_LIGHT_GRAY;
-            border: solid 1px $COLOR_GRAY;
+            background: $COLOR_BRANDBLUE_5;
             border-radius: 4px;
 
             .list-group {
-                padding: 1rem;
+                padding: 1rem 1rem 0rem;
 
                 .list-label span {
                     font-size: 0.875rem; /* stylelint-disable-line number-max-precision */
                     padding: 8px;
                     display: block;
-
                 }
-                &:nth-child(odd) {
-                    grid-column: 1;
-                    padding: 1rem 0.5rem 1rem 1rem;
-                }
-                &:nth-child(even) {
-                    grid-column: 2;
-                    padding: 1rem 1rem 1rem 0.5rem;
+                &:last-child {
+                    padding-bottom: 1rem;
                 }
                 .list-items {
                     .list-item {
-                        border: 1px solid $COLOR_GRAY;
                         background-color: $COLOR_WHITE;
 
                         span.contract-title {
@@ -168,10 +162,6 @@ div.contracts-popup-container {
                         }
                         &:only-child {
                             border-radius: 4px;
-                            border: 1px solid $COLOR_GRAY;
-                        }
-                        &:first-child:nth-last-child(2) {
-                            border-bottom: 1px solid $COLOR_GRAY;
                         }
                         &.selected {
                             background: $COLOR_BLUE;
@@ -182,7 +172,7 @@ div.contracts-popup-container {
                             }
                         }
                         &:hover:not(.selected) {
-                            background: $COLOR_BRANDBLUE_5;
+                            background: $COLOR_LIGHT_GRAY_3;
                         }
                     }
                 }
