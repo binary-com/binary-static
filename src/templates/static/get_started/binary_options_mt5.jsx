@@ -14,7 +14,7 @@ const BinaryOptionsForMT5 = () => (
                         items={[
                             { id: 'what-are-binary-options', href: '#what-are-binary-options', text: it.L('Introduction to binary options on MT5') },
                             { id: 'how-to-trade-binary',     href: '#how-to-trade-binary',     text: it.L('How to trade binary options on MT5') },
-                            { id: 'type-of-trades',     href: '#type-of-trades',     text: it.L('Type of trades') },
+                            { id: 'types-of-trades',     href: '#types-of-trades',     text: it.L('Types of trades') },
                         ]}
                     />
 
@@ -113,13 +113,13 @@ const BinaryOptionsForMT5 = () => (
 
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
                 </Section>
-                <Section id='type-of-trades' header={it.L('Type of trades')}>
+                <Section id='types-of-trades' header={it.L('Types of trades')}>
                     <p>{it.L('We offer the following trade types on our MT5 platform:')}</p>
 
                     <HeaderSecondary header={it.L('Up/Down')} />
                     <div className='gr-row'>
-                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/get-started/mt5/type-of-trades/up.svg')} />
-                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/get-started/mt5/type-of-trades/down.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/up.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/down.svg')} />
                     </div>
                     <p>{it.L('Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes.')}</p>
 
@@ -132,8 +132,8 @@ const BinaryOptionsForMT5 = () => (
 
                     <HeaderSecondary header={it.L('Matches/Differs')} />
                     <div className='gr-row'>
-                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/get-started/mt5/type-of-trades/matches.svg')} />
-                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/get-started/mt5/type-of-trades/differs.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/matches.svg')} />
+                        <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/trade-explanation/en/differs.svg')} />
                     </div>
                     <p>{it.L('Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
 

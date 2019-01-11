@@ -286,9 +286,9 @@ const Index = () => (
                                 />
                                 <GetStartedSection
                                     link='get-started/binary-options-mt5'
-                                    hash='type-of-trades'
+                                    hash='types-of-trades'
                                     image='binary-options/types-of-trades'
-                                    header={it.L('Type of trades')}
+                                    header={it.L('Types of trades')}
                                     text={it.L('The various trade types available on our MT5 platform.')}
                                 />
                             </div>
