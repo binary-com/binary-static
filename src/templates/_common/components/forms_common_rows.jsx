@@ -269,12 +269,12 @@ export const GeocodeValidation = ({ className }) => (
                     {it.L('We could not recognise your address. You may proceed but please ensure that your address is complete and accurate.')}
                 </p>
                 <div id='geocode_success' className='invisible'>
-                    <span className='success-msg'>
+                    <div className='success-msg'>
                         <ul className='checked'>
                             <li>{it.L('Your address has been recognised by our system.')}</li>
                         </ul>
                         <p>{it.L('However, we will require further documentation to authenticate your account in the future.')}</p>
-                    </span>
+                    </div>
                 </div>
             </div>
         </div>
