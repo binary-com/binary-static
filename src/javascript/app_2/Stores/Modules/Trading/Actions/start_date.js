@@ -1,7 +1,7 @@
 import ContractType from '../Helpers/contract_type';
 
 export const onChangeStartDate = (store) => {
-    const { contract_type, start_date, duration_unit, expiry_time } = store;
+    const { contract_type, duration_unit, expiry_time, expiry_type, start_date } = store;
     let { start_time, expiry_date } = store;
 
     const obj_contract_start_type = ContractType.getStartType(start_date);
@@ -16,7 +16,14 @@ export const onChangeStartDate = (store) => {
 
     const obj_expiry_date = ContractType.getExpiryDate(expiry_date, start_date);
     expiry_date           = obj_expiry_date.expiry_date;
-    const obj_expiry_time = ContractType.getExpiryTime(sessions, start_date, start_time, expiry_date, expiry_time);
+    const obj_expiry_time = ContractType.getExpiryTime(
+        sessions,
+        start_date,
+        start_time,
+        expiry_date,
+        expiry_time,
+        expiry_type
+    );
 
     const obj_duration_min_max = ContractType.getDurationMinMax(contract_type, contract_start_type);
 
