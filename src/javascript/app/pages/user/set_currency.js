@@ -108,10 +108,11 @@ const SetCurrency = (() => {
             };
 
             $('.currency_wrapper').on('click', function () {
+                const clicked_currency = this;
                 $currency_list.find('> div').removeClass('selected');
-                $(this).addClass('selected');
+                $(clicked_currency).addClass('selected');
                 let localized_message = '';
-                if (isCryptocurrency($(this).attr('id'))) {
+                if (isCryptocurrency($(clicked_currency).attr('id'))) {
                     localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have more than one cryptocurrency account.', `<strong>${$(this).attr('id')}</strong>`);
                 } else {
                     localized_message = localize('You have chosen [_1] as the currency for this account. You cannot change this later. You can have one fiat currency account only.', `<strong>${$(this).attr('id')}</strong>`);
