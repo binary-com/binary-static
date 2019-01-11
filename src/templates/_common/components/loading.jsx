@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Loading = ({ theme }) => (
-    <div className={`barspinner ${ theme || 'dark'}`}>
+const Loading = ({ is_invisible, theme }) => (
+    <div className={`barspinner ${ theme || 'dark'}${is_invisible ? ' invisible' : ''}`}>
         { Array.from(new Array(5)).map((x, inx) => (
             <div key={inx} className={`rect${inx + 1}`} />
         ))}

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-10 14:43\n"
+"PO-Revision-Date: 2019-01-11 11:23\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -2258,6 +2258,9 @@ msgstr "Biểu đồ cho tài sản cơ sở này bị hoãn"
 
 msgid "Charting platforms"
 msgstr "Biểu đồ sàn"
+
+msgid "Check address"
+msgstr ""
 
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "Rà soát hệ thống để chống các cuộc tấn công, giảm nhược điểm, và giảm thiểu các mối nguy cơ"
@@ -4666,7 +4669,7 @@ msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Hợp đồng Tick cao/Tick thấp có thời lượng quy định gồm năm tick."
 
 msgid "High Ticks/Low Ticks"
-msgstr ""
+msgstr "Tick Cao/Tick Thấp"
 
 msgid "High barrier"
 msgstr "Rào cản cao"
@@ -4829,6 +4832,9 @@ msgstr "Sử dụng đại lý thanh toán như thế nào?"
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr "Tuy nhiên, nếu giá tài sản giảm xuống 10 điểm, đó sẽ là một mất mát 10 USD cho bạn."
+
+msgid "However, we will require further documentation to authenticate your account in the future."
+msgstr ""
 
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "Tuy nhiên, với đòn bẩy bạn có thể mua những 100 đơn vị đó tại một phần nhỏ của chi phí thường -\n"
@@ -7611,7 +7617,7 @@ msgid "Please make sure that you first agree with the Agent on the terms of paym
 msgstr "Vui lòng chắc chắn rằng trước hết bạn đồng ý với Đại lý các điều khoản thanh toán trước khi gửi yêu cầu."
 
 msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr ""
+msgstr "Xin lưu ý rằng các phần thuộc về Châu Á, Chữ số, Đặt lại Call/Put và Tick Cao/Tick Thấp được cung cấp độc quyền với Chỉ Số Biến Động của chúng tôi."
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Xin lưu ý rằng kết quả giao dịch thực tế có thể không tương ứng với kết quả được tối ưu hóa hoặc được kiểm tra lại."
@@ -8025,7 +8031,7 @@ msgid "Purchase"
 msgstr "Mua"
 
 msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
-msgstr ""
+msgstr "Mua các hợp đồng Tick Cao/Thấp để dự đoán Tick cao nhất hoặc thấp nhất trong số năm Tick tiếp theo."
 
 msgid "Purchase Price"
 msgstr "Giá Mua"
@@ -8469,7 +8475,7 @@ msgid "Salaried Employee"
 msgstr "Nhân viên hưởng lương"
 
 msgid "Sale Date"
-msgstr "Ngày bán"
+msgstr "Ngày Bán"
 
 msgid "Sale Price"
 msgstr "Giá bán"
@@ -11165,9 +11171,6 @@ msgstr "Ứng dụng VPN"
 msgid "VPN app"
 msgstr "Ứng dụng VPN"
 
-msgid "Validate address"
-msgstr "Xác nhận địa chỉ"
-
 msgid "Variable"
 msgstr "Biến"
 
@@ -11404,6 +11407,9 @@ msgstr "Chúng tôi tin rằng chúng tôi nên luôn làm điều đúng đắn
 
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr "Chúng tôi thu thập và đánh giá dữ liệu để hồ sơ của bạn, như là khách hàng của chúng tôi, liên quan đến sản phẩm của chúng tôi. Chúng tôi làm điều này thủ công thông qua sự hỗ trợ của xử lý tự động. Thông qua phân loại, chúng tôi sẽ có thể cung cấp các sản phẩm và dịch vụ thích hợp nhất cho bạn."
+
+msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
+msgstr ""
 
 msgid "We delete an order with the largest margin reserved"
 msgstr "Chúng tôi xóa một lệnh với ký quỹ lớn nhất được giữ riêng"
@@ -12633,8 +12639,8 @@ msgstr "Tài khoản của bạn không nên được sử dụng như một th
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr "Tài khoản của bạn sẽ được mở ra với %1, và sẽ phải tuân theo thẩm quyền và luật pháp của %2."
 
-msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
-msgstr "Địa chỉ của bạn không thể được kiểm chứng bởi hệ thống tự động của chúng tôi. Bạn có thể tiếp tục, nhưng hãy đảm bảo rằng địa chỉ của bạn được bổ sung đầy đủ."
+msgid "Your address has been recognised by our system."
+msgstr ""
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Đơn xét duyệt để được thành một khách hàng chuyên nghiệp của bạn đang được xử lý."
@@ -12703,7 +12709,7 @@ msgid "Your profit or loss is calculated as follows:"
 msgstr "Lợi nhuận hoặc thua lỗ của bạn được tính như sau:"
 
 msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
-msgstr ""
+msgstr "Yêu cầu của bạn để được coi như là một khách hàng chuyên nghiệp đã bị từ chối. Vui lòng kiểm tra hộp thư của bạn để biết chi tiết. Tài khoản của bạn hiện vẫn được xếp hạng là tài khoản khách hàng lẻ."
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "Yêu cầu chuyển %1 %2 từ %3 sang %4 đã được xử lý thành công."

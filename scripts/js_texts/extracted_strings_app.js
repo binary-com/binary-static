@@ -425,7 +425,6 @@ module.exports = [
     'Upcoming Events',
     'Update',
     'Upgrade now',
-    'Validate address',
     'Verification code is wrong. Please use the link sent to your email.',
     'Verify Reset Password',
     'View',
