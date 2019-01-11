@@ -15,6 +15,7 @@ import { IconTradeTypeButton }    from '../../../Assets/Trading/Types';
 
 const Purchase = ({
     barrier_count,
+    basis,
     currency,
     is_client_allowed_to_visit,
     is_purchase_confirm_on,
@@ -86,6 +87,7 @@ const Purchase = ({
                         }
                         <ContractInfo
                             barrier_count={barrier_count}
+                            basis={basis}
                             contract_title={trade_types[type]}
                             contract_type={type}
                             currency={currency}
@@ -112,6 +114,7 @@ const Purchase = ({
 
 Purchase.propTypes = {
     barrier_count             : PropTypes.number,
+    basis                     : PropTypes.string,
     currency                  : PropTypes.string,
     is_client_allowed_to_visit: PropTypes.bool,
     is_purchase_confirm_on    : PropTypes.bool,
@@ -132,6 +135,7 @@ export default connect(
         currency                  : client.currency,
         is_client_allowed_to_visit: client.is_client_allowed_to_visit,
         barrier_count             : modules.trade.barrier_count,
+        basis                     : modules.trade.basis,
         is_purchase_enabled       : modules.trade.is_purchase_enabled,
         is_trade_enabled          : modules.trade.is_trade_enabled,
         onClickPurchase           : modules.trade.onPurchase,

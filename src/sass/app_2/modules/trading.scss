@@ -136,19 +136,28 @@
         }
         .purchase-info-wrapper {
             line-height: 0.9rem;
-            padding-bottom: 1vh;
             border: 0;
+            margin: 16px 16px 0;
+            min-width: 224px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
 
             .info-wrapper {
                 display: flex;
+                justify-self: left;
+                font-size: 12px;
 
                 div:last-child {
                     margin-left: 4px;
                 }
+                .symbols {
+                    display: inline-block;
+                    position: relative;
+                }
             }
             .purchase-tooltip {
-                float: right;
                 margin-top: -4px;
+                justify-self: right;
             }
         }
         &.trade-types {
@@ -299,7 +308,7 @@
 
             div.box {
                 display: grid;
-                grid-template-columns: 1fr 2fr;
+                grid-template-columns: 2fr 1fr;
                 position: relative;
                 min-height: 71px;
 
@@ -383,9 +392,10 @@
                     background-color: $COLOR_DARK_GREEN;
                     overflow: hidden;
                     height: 56px;
-                    width: 224px;
+                    min-width: 224px;
                     text-align: left;
                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+                    margin-top: 5px;
 
                     .info-container {
                         width: 30%;
