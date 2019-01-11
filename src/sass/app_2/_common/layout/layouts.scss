@@ -234,22 +234,6 @@
                         input {
                             text-align: center;
                         }
-                        .increment-wrapper {
-                            position: relative;
-
-                            &__increment, &__decrement {
-                                position: absolute;
-                                z-index: 1;
-                            }
-                            &__increment {
-                                top: 5px;
-                                right: 6px;
-                            }
-                            &__decrement {
-                                top: 5px;
-                                left: 6px;
-                            }
-                        }
                     }
                     div.duration-container, div.amount-container {
                         display: grid;

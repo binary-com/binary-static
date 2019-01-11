@@ -28,9 +28,32 @@
             padding-left: 35px !important;
         }
     }
-    .input-wrapper:hover {
-        input {
-            border-color: $COLOR_BLUE;
+    .input-wrapper {
+        position: relative;
+
+        &:hover {
+            input {
+                border-color: $COLOR_BLUE;
+            }
+        }
+        &__increment, &__decrement {
+            position: absolute;
+            z-index: 1;
+            top: 5px;
+
+            &:hover {
+                cursor: pointer;
+                background: $COLOR_GRAY;
+            }
+            &.disabled:hover {
+                cursor: not-allowed;
+            }
+        }
+        &__increment {
+            right: 6px;
+        }
+        &__decrement {
+            left: 6px;
         }
     }
     input {
