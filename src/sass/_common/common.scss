@@ -595,6 +595,7 @@ li strong.margin-right {
     background-position-y: center;
     background-repeat: no-repeat;
     text-transform: none;
+    box-sizing: border-box;
 
     &#button_google {
         background-image: url('../images/social/google.svg');
