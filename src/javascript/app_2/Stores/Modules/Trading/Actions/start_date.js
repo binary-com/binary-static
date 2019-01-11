@@ -14,7 +14,7 @@ export const onChangeStartDate = (store) => {
     const obj_duration_units_list = ContractType.getDurationUnitsList(contract_type, contract_start_type);
     const obj_duration_unit       = ContractType.getDurationUnit(duration_unit, contract_type, contract_start_type);
 
-    const obj_expiry_date = ContractType.getExpiryDate(expiry_date, start_date);
+    const obj_expiry_date = ContractType.getExpiryDate(expiry_date, start_date, expiry_type);
     expiry_date           = obj_expiry_date.expiry_date;
     const obj_expiry_time = ContractType.getExpiryTime(
         sessions,

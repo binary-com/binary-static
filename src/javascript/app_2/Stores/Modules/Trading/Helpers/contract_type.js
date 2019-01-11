@@ -233,7 +233,7 @@ const ContractType = (() => {
     };
 
     const buildMoment = (date, time) => {
-        const [ hour, minute ] = time.split(':');
+        const [ hour, minute ] = time ? time.split(':') : [0, 0];
         return moment.utc(isNaN(date) ? date : +date * 1000).hour(hour).minute(minute);
     };
 
@@ -241,14 +241,18 @@ const ContractType = (() => {
         start_time: getValidTime(sessions, buildMoment(start_date, start_time)),
     });
 
-    const getExpiryDate = (expiry_date, start_date) => {
-        const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
-        const moment_expiry = moment.utc(expiry_date || undefined);
-        // forward starting contracts should only show today and tomorrow as expiry date
-        const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
-        return {
-            expiry_date: (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD'),
-        };
+    const getExpiryDate = (expiry_date, start_date, expiry_type) => {
+        let proper_expiry_date = null;
+
+        if (expiry_type === 'endtime') {
+            const moment_start  = moment.utc(start_date ? start_date * 1000 : undefined);
+            const moment_expiry = moment.utc(expiry_date || undefined);
+            // forward starting contracts should only show today and tomorrow as expiry date
+            const is_invalid = moment_expiry.isBefore(moment_start, 'day') || (start_date && moment_expiry.isAfter(moment_start.clone().add(1, 'day')));
+            proper_expiry_date = (is_invalid ? moment_start : moment_expiry).format('YYYY-MM-DD');
+        }
+
+        return { expiry_date: proper_expiry_date };
     };
 
     // has to follow the correct order of checks:
