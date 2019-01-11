@@ -39,7 +39,15 @@
         &__increment, &__decrement {
             position: absolute;
             z-index: 1;
-            top: 5px;
+            top: 0px;
+            height: 95%;
+            margin: initial;
+            margin-top: 1px;
+            margin-bottom: 1px;
+            min-width: 32px;
+            border-radius: 3px;
+            padding: initial;
+            background-color: initial;
 
             &:hover {
                 cursor: pointer;
@@ -50,10 +58,13 @@
             }
         }
         &__increment {
-            right: 6px;
+            right: 1px;
         }
         &__decrement {
-            left: 6px;
+            left: 1px;
+        }
+        &__icon {
+            padding-top: 4px;
         }
     }
     input {
