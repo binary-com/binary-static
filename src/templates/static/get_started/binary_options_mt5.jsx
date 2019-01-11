@@ -119,10 +119,10 @@ const BinaryOptionsForMT5 = () => (
                     <HeaderSecondary header={it.L('Up/Down')} />
                     <div className='gr-row'>
                         <div className='gr-6 gr-12-m'>
-                            <img className='responsive' src={it.url_for('images/pages/trade-explanation/en/up.svg')} />
+                            <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/up.svg`)} />
                         </div>
                         <div className='gr-6 gr-12-m'>
-                            <img className='responsive' src={it.url_for('images/pages/trade-explanation/en/down.svg')} />
+                            <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/down.svg`)} />
                         </div>
                     </div>
                     <p>{it.L('Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes.')}</p>
@@ -141,10 +141,10 @@ const BinaryOptionsForMT5 = () => (
                     <HeaderSecondary header={it.L('Matches/Differs')} />
                     <div className='gr-row'>
                         <div className='gr-6 gr-12-m'>
-                            <img className='responsive' src={it.url_for('images/pages/trade-explanation/en/matches.svg')} />
+                            <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/matches.svg`)} />
                         </div>
                         <div className='gr-6 gr-12-m'>
-                            <img className='responsive' src={it.url_for('images/pages/trade-explanation/en/differs.svg')} />
+                            <img className='responsive' src={it.url_for(`images/pages/trade-explanation/${it.language.toLowerCase()}/differs.svg`)} />
                         </div>
                     </div>
                     <p>{it.L('Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks.')}</p>
