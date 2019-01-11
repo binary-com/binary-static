@@ -200,20 +200,48 @@
     }
 }
 
-.lightbox#top_up_virtual_pop_up > div {
-    max-width: 25em;
-    padding: 32px;
+.lightbox {
+    &#top_up_virtual_pop_up, &#top_up_error, &#top_up_success {
+        > div {
+            max-width: 25em;
+            padding: 32px;
 
-    #cancel, #statement_redirect {
-        span {
-            width: calc(100% - 50px);
+            #btn_cancel {
+                span {
+                    width: calc(100% - 50px);
+                }
+            }
+            #btn_ok {
+                width: calc(100% - 25px);
+            }
+            &#dialog_content {
+                padding: 22px 12px;
+            }
         }
     }
-    #topup, #continue {
-        width: calc(100% - 25px);
+    &#top_up_error {
+        > div {
+            #frm_confirm {
+                width: 100%;
+                text-align: center;
+
+                .button span {
+                    width: 40%;
+                }
+            }
+        }
     }
-    #understood {
-        width: 100%;
+    &#top_up_success {
+        > div {
+            #frm_confirm {
+                width: 100%;
+                text-align: center;
+
+                .button span {
+                    width: calc(50% - 55px);
+                }
+            }
+        }
     }
 }
 

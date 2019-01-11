@@ -2,8 +2,10 @@ const moment         = require('moment');
 const BinaryPjax     = require('../../../../base/binary_pjax');
 const Client         = require('../../../../base/client');
 const BinarySocket   = require('../../../../base/socket');
+const Dialog         = require('../../../../common/attach_dom/dialog');
 const showPopup      = require('../../../../common/attach_dom/popup');
 const getElementById = require('../../../../../_common/common_functions').getElementById;
+const localize       = require('../../../../../_common/localize').localize;
 const urlFor         = require('../../../../../_common/url').urlFor;
 const State          = require('../../../../../_common/storage').State;
 
@@ -33,18 +35,18 @@ const TopUpVirtualPopup = (() => {
     };
 
     const showTopUpPopup = (message) => {
-        const popup_url = urlFor('user/top_up_virtual_pop_up');
+        // use showPopup since we have a checkbox
         showPopup({
             form_id,
             popup_id,
-            url               : popup_url,
+            url               : urlFor('user/top_up_virtual_pop_up'),
             content_id        : '#top_up',
             additionalFunction: () => {
                 if (message) {
                     getElementById('top_up_message').textContent = message;
                     getElementById('chk_hide_top_up').parentNode.setVisibility(0);
                 }
-                const el_cancel = getElementById('cancel');
+                const el_cancel = getElementById('btn_cancel');
                 const el_popup  = getElementById(popup_id);
                 el_cancel.addEventListener('click', () => {
                     Client.set('hide_virtual_top_up_until', moment.utc().add(1, 'day').unix());
@@ -67,32 +69,23 @@ const TopUpVirtualPopup = (() => {
                     if (el_popup) {
                         el_popup.remove();
                     }
+                    // use Dialog for both error and success since there are no form elements or validation to be done
                     if (response_top_up.error) {
-                        showPopup({
-                            form_id,
-                            popup_id,
-                            url               : popup_url,
-                            content_id        : '#top_up_error',
-                            additionalFunction: () => {
-                                getElementById('top_up_error_message').textContent = response_top_up.error.message;
-                            },
+                        Dialog.alert({
+                            id               : 'top_up_error',
+                            localized_title  : localize('Top up error'),
+                            localized_message: response_top_up.error.message,
+                            ok_text          : localize('Understood'),
                         });
                     } else {
-                        showPopup({
-                            form_id,
-                            popup_id,
-                            url               : popup_url,
-                            content_id        : '#top_up_success',
-                            additionalFunction: () => {
-                                getElementById('client_loginid').textContent = Client.get('loginid');
-                                const el_redirect  = getElementById('statement_redirect');
-                                const el_new_popup = getElementById(popup_id);
-                                el_redirect.addEventListener('click', () => {
-                                    if (el_new_popup) {
-                                        el_new_popup.remove();
-                                    }
-                                    BinaryPjax.load(urlFor('user/statementws'));
-                                });
+                        Dialog.confirm({
+                            id               : 'top_up_success',
+                            localized_title  : localize('Top-up successful'),
+                            localized_message: localize('[_1] has been credited into your Virtual Account: [_2].', '$10,000.00', Client.get('loginid')),
+                            cancel_text      : localize('Go to statement'),
+                            ok_text          : localize('Continue trading'),
+                            onAbort          : () => {
+                                BinaryPjax.load(urlFor('user/statementws'));
                             },
                         });
                     }
