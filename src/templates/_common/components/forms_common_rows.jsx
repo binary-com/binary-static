@@ -273,7 +273,7 @@ export const GeocodeValidation = ({ className }) => (
                         <ul className='checked'>
                             <li>{it.L('Your address has been recognised by our system.')}</li>
                         </ul>
-                        <ul><li>{it.L('However, we will require further documentation to authenticate your account in the future.')}</li></ul>
+                        <p>{it.L('However, we will require further documentation to authenticate your account in the future.')}</p>
                     </span>
                 </div>
             </div>
