@@ -27,7 +27,9 @@ let now_date,
     min_date_expiry,
     min_day,
     max_day,
-    start_date_time;
+    start_date_time,
+    max_duration,
+    min_duration;
 
 const Duration = ({
     contract_expiry_type,
@@ -48,9 +50,11 @@ const Duration = ({
     validation_errors,
 }) => {
     if (duration_min_max[contract_expiry_type]) {
+        min_duration = duration_min_max[contract_expiry_type].min;
+        max_duration = duration_min_max[contract_expiry_type].max;
         const moment_now  = moment(server_time);
-        const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
-        const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
+        const new_min_day = convertDurationUnit(min_duration, 's', 'd');
+        const new_max_day = convertDurationUnit(max_duration, 's', 'd');
         if (!now_date || moment_now.date() !== now_date.date() || (duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
             if (duration_unit === 'd') {
                 min_day = new_min_day;
@@ -142,6 +146,8 @@ const Duration = ({
                             <InputField
                                 className='duration-container__input'
                                 type='number'
+                                max_value={max_duration}
+                                min_value={min_duration}
                                 name='duration'
                                 value={duration}
                                 onChange={onChange}

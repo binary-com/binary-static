@@ -18,6 +18,8 @@ const InputField = ({
     is_signed = false,
     label,
     max_length,
+    max_value,
+    min_value,
     name,
     onChange,
     placeholder,
@@ -27,6 +29,8 @@ const InputField = ({
     value,
 }) => {
     const has_error = error_messages && error_messages.length;
+    const max_is_disabled = max_value && +value >= +max_value;
+    const min_is_disabled = min_value && +value <= +min_value;
     let has_valid_length = true;
 
     const changeValue = (e) => {
@@ -65,12 +69,14 @@ const InputField = ({
     };
 
     const incrementValue = () => {
+        if  (max_is_disabled) return;
+
         const increment_value = (+value) + 1;
         onChange({ target: { value: increment_value, name } });
     };
 
     const decrementValue = () => {
-        if (!value || +value === 0) return;
+        if (!value || min_is_disabled) return;
 
         const decrement_value = (+value) - 1;
         onChange({ target: { value: decrement_value, name } });
@@ -113,10 +119,14 @@ const InputField = ({
                 }
                 <div className='input-wrapper'>
                     {is_increment &&
-                        <div className='increment-wrapper'>
-                            <div className='increment-wrapper__increment' onClick={incrementValue}><IconPlus className='select-arrow' /></div>
-                            <div className='increment-wrapper__decrement' onClick={decrementValue}><IconMinus className='select-arrow' /></div>
-                        </div>
+                        <React.Fragment>
+                            <div className={`input-wrapper__increment ${ max_is_disabled && 'disabled'}`} onClick={incrementValue}>
+                                <IconPlus />
+                            </div>
+                            <div className={`input-wrapper__decrement ${ min_is_disabled && 'disabled'}`} onClick={decrementValue}>
+                                <IconMinus />
+                            </div>
+                        </React.Fragment>
                     }
                     { input }
                 </div>
