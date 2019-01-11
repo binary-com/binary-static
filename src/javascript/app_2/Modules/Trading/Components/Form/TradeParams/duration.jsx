@@ -11,7 +11,9 @@ import Dropdown                 from 'App/Components/Form/DropDown';
 import Fieldset                 from 'App/Components/Form/fieldset.jsx';
 import InputField               from 'App/Components/Form/input_field.jsx';
 import TimePicker               from 'App/Components/Form/time_picker.jsx';
-import { convertDurationUnit }  from 'Stores/Modules/Trading/Helpers/duration';
+import {
+    convertDurationUnit,
+    convertDurationLimit }      from 'Stores/Modules/Trading/Helpers/duration';
 
 /* TODO:
       1. disable days other than today and tomorrow if start date is forward starting
@@ -50,11 +52,11 @@ const Duration = ({
     validation_errors,
 }) => {
     if (duration_min_max[contract_expiry_type]) {
-        min_duration = duration_min_max[contract_expiry_type].min;
-        max_duration = duration_min_max[contract_expiry_type].max;
+        min_duration = convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit);
+        max_duration = convertDurationLimit(duration_min_max[contract_expiry_type].max, duration_unit);
         const moment_now  = moment(server_time);
-        const new_min_day = convertDurationUnit(min_duration, 's', 'd');
-        const new_max_day = convertDurationUnit(max_duration, 's', 'd');
+        const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
+        const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
         if (!now_date || moment_now.date() !== now_date.date() || (duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
             if (duration_unit === 'd') {
                 min_day = new_min_day;

@@ -31,7 +31,6 @@ const InputField = ({
 }) => {
     const has_error = error_messages && error_messages.length;
     let has_valid_length = true;
-    console.log(max_value, min_value);
     const max_is_disabled = max_value && +value >= +max_value;
     const min_is_disabled = min_value && +value <= +min_value;
     const max_disabled_class = max_is_disabled && 'disabled';
