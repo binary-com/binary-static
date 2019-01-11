@@ -74,7 +74,7 @@ const BinaryLoader = (() => {
         ContentVisibility.init();
 
         BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
-            let images = $('#content img');
+            const images = $('#content img');
             if (images) {
                 images.on('load', () => {
                     ScrollToAnchor.init();
