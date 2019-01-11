@@ -114,6 +114,8 @@ const BinaryOptionsForMT5 = () => (
                     <SeparatorLine invisible show_mobile className='gr-padding-10' />
                 </Section>
                 <Section id='type-of-trades' header={it.L('Type of trades')}>
+                    <p>{it.L('We offer the following trade types on our MT5 platform:')}</p>
+
                     <HeaderSecondary header={it.L('Up/Down')} />
                     <div className='gr-row'>
                         <img className='responsive gr-6 gr-12-m center' src={it.url_for('images/pages/get-started/mt5/type-of-trades/up.svg')} />
