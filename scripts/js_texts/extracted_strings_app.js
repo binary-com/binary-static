@@ -351,7 +351,6 @@ module.exports = [
     'Stake',
     'Standard',
     'Start Time',
-    'Start/End Time',
     'State/Province',
     'Status',
     'Stays Between',

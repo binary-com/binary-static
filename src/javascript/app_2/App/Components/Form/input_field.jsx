@@ -104,7 +104,7 @@ InputField.propTypes = {
     className        : PropTypes.string,
     error_messages   : MobxPropTypes.arrayOrObservableArray,
     fractional_digits: PropTypes.number,
-    helper           : PropTypes.bool,
+    helper           : PropTypes.string,
     is_disabled      : PropTypes.string,
     is_float         : PropTypes.bool,
     is_signed        : PropTypes.bool,
