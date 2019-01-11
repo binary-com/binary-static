@@ -12,7 +12,6 @@ const getElementById      = require('../../_common/common_functions').getElement
 const urlLang             = require('../../_common/language').urlLang;
 const localizeForLang     = require('../../_common/localize').forLang;
 const localize            = require('../../_common/localize').localize;
-const State               = require('../../_common/storage').State;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const ThirdPartyLinks     = require('../../_common/third_party_links');
@@ -75,13 +74,13 @@ const BinaryLoader = (() => {
         ContentVisibility.init();
 
         BinarySocket.wait('authorize', 'website_status', 'landing_company').then(() => {
-            // scrolls immediately if page is cached, else wait a second.
-            if (State.get('is_loaded_by_pjax')) {
-                ScrollToAnchor.init();
-            } else {
-                setTimeout(() => {
+            let images = $('#content img');
+            if (images) {
+                images.on('load', () => {
                     ScrollToAnchor.init();
-                }, 1000);
+                });
+            } else {
+                ScrollToAnchor.init();
             }
         });
     };
