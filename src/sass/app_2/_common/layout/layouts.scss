@@ -227,14 +227,6 @@
                 fieldset {
                     margin-bottom: 5px;
 
-                    div.duration-container {
-                        &__input {
-                            grid-row: 2;
-                        }
-                        input {
-                            text-align: center;
-                        }
-                    }
                     div.duration-container, div.amount-container {
                         display: grid;
                         grid-template-columns: 1fr;

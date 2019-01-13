@@ -32,7 +32,9 @@ const InputField = ({
     const has_error = error_messages && error_messages.length;
     let has_valid_length = true;
     const max_is_disabled = max_value && +value >= +max_value;
+    const max_disabled_class = max_is_disabled ? 'disabled' : null;
     const min_is_disabled = min_value && +value <= +min_value;
+    const min_disabled_class = min_is_disabled ? 'disabled' : null;
 
     const changeValue = (e) => {
         if (type === 'number') {
@@ -107,18 +109,18 @@ const InputField = ({
     const input_increment =
         <div className='input-wrapper'>
             <Button
-                className={`input-wrapper__increment ${max_is_disabled && 'disabled'}`}
+                className={`input-wrapper__increment ${max_disabled_class}`}
                 is_disabled={max_is_disabled}
                 onClick={incrementValue}
             >
-                <IconPlus className={'input-wrapper__icon'} is_disabled={max_is_disabled} />
+                <IconPlus className={`input-wrapper__icon input-wrapper__icon--plus ${max_disabled_class}` } />
             </Button>
             <Button
-                className={`input-wrapper__decrement ${min_is_disabled && 'disabled'}`}
+                className={`input-wrapper__decrement ${min_disabled_class}`}
                 is_disabled={min_is_disabled}
                 onClick={decrementValue}
             >
-                <IconMinus className={'input-wrapper__icon'} is_disabled={min_is_disabled} />
+                <IconMinus className={`input-wrapper__icon input-wrapper__icon--minus ${min_disabled_class}`} />
             </Button>
             { input }
         </div>;

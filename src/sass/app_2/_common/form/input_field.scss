@@ -31,6 +31,9 @@
     .input-wrapper {
         position: relative;
 
+        input {
+            text-align: center;
+        }
         &:hover {
             input {
                 border-color: $COLOR_BLUE;
@@ -39,7 +42,6 @@
         &__increment, &__decrement {
             position: absolute;
             z-index: 1;
-            top: 0px;
             height: calc(100% - 2px);
             margin: initial;
             margin-top: 1px;
@@ -65,6 +67,16 @@
         }
         &__icon {
             padding-top: 4px;
+
+            path {
+                fill: $COLOR_GRAY_2;
+            }
+            &--plus.disabled path {
+                fill: $COLOR_WHITE_2;
+            }
+            &--minus.disabled path {
+                fill: $COLOR_WHITE_2;
+            }
         }
     }
     input {
@@ -121,9 +133,22 @@
             border-color: $COLOR_WHITE;
         }
     }
-    .input-wrapper:hover {
-        input {
-            border-color: $COLOR_WHITE;
+    .input-wrapper {
+        &:hover {
+            input {
+                border-color: $COLOR_WHITE;
+            }
+        }
+        &__icon {
+            path {
+                fill: $COLOR_BRANDBLUE_1;
+            }
+            &--plus.disabled path {
+                fill: $COLOR_BRANDBLUE_2;
+            }
+            &--minus.disabled path {
+                fill: $COLOR_BRANDBLUE_2;
+            }
         }
     }
 }

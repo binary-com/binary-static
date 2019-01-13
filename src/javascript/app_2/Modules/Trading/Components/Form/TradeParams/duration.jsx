@@ -132,6 +132,13 @@ const Duration = ({
             {expiry_type === 'duration' ?
                 <React.Fragment>
                     <div className='duration-container'>
+                        <Dropdown
+                            list={duration_units_list}
+                            value={duration_unit}
+                            name='duration_unit'
+                            onChange={onChange}
+                            is_nativepicker={is_nativepicker}
+                        />
                         {duration_unit === 'd' && !is_nativepicker ?
                             <Datepicker
                                 name='duration'
@@ -146,7 +153,6 @@ const Duration = ({
                                 footer={datepicker_footer}
                             /> :
                             <InputField
-                                className='duration-container__input'
                                 type='number'
                                 max_value={max_duration}
                                 min_value={min_duration}
@@ -158,13 +164,6 @@ const Duration = ({
                                 error_messages = {validation_errors.duration || []}
                             />
                         }
-                        <Dropdown
-                            list={duration_units_list}
-                            value={duration_unit}
-                            name='duration_unit'
-                            onChange={onChange}
-                            is_nativepicker={is_nativepicker}
-                        />
                     </div>
                 </React.Fragment> :
                 <React.Fragment>
