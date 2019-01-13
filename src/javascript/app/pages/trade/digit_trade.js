@@ -9,11 +9,13 @@ const getPropertyValue     = require('../../../_common/utility').getPropertyValu
 const DigitDisplay = (() => {
     let $container,
         contract,
-        tick_count;
+        tick_count,
+        spot_times;
 
     const init = (id_render, proposal_open_contract) => {
         tick_count = 1;
         contract   = proposal_open_contract;
+        spot_times = [];
 
         $container = $(`#${id_render}`);
         $container
@@ -51,6 +53,14 @@ const DigitDisplay = (() => {
     };
 
     const updateTable = (spot, time) => {
+        if (spot_times.some(item => item.spot === spot && item.time === time)) {
+            return;
+        }
+        spot_times.push({
+            spot,
+            time,
+        });
+
         const last_digit = spot.slice(-1);
         $container
             .find('#table_digits')
