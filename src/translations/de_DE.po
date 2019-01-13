@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-08 11:12\n"
+"PO-Revision-Date: 2019-01-11 11:22\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -2258,6 +2258,9 @@ msgstr "Die grafische Darstellung für diesen Basiswert ist verzögert"
 
 msgid "Charting platforms"
 msgstr "Charting-Plattformen"
+
+msgid "Check address"
+msgstr ""
 
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "Prüfen Sie unsere Systeme gegen die jüngsten Angriffe, Schwachstellen und Gegenmaßnahmen"
@@ -4665,6 +4668,9 @@ msgstr "Höchster Tick"
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Hoher Tick/Niedriger Tick Kontrakte haben eine strenge Laufzeit von fünf Ticks."
 
+msgid "High Ticks/Low Ticks"
+msgstr ""
+
 msgid "High barrier"
 msgstr "Hohe Schwelle"
 
@@ -4826,6 +4832,9 @@ msgstr "Wie verwendet man einen Zahlungsagenten?"
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr "Wenn der Vermögenswert um 10 Punkte fällt, stellt dies einen Verlust von 10 USD für Sie dar."
+
+msgid "However, we will require further documentation to authenticate your account in the future."
+msgstr ""
 
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "Mit einer Leverage können Sie jedoch diese 100 Einheiten zu einem Bruchteil der typischen Kosten – abhängig von der Leverage, die Sie von Ihrem Broker oder Ihrer Handelsplattform gewährt bekommen, erwerben."
@@ -7605,8 +7614,8 @@ msgstr "Melden Sie sich bitte an."
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "Bevor Sie Ihren Antrag absenden können, müssen Sie zuerst den Zahlungsbedingungen des Abwicklers zustimmen."
 
-msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "Bitte beachten Sie, dass Asiaten und Ziffern, Reset Call/Put und Hohe/Niedrige Ticks exklusiv mit unseren Volatilitätsindizes verfügbar sind."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
+msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "Bitte beachten Sie, dass es sein kann, dass die eigentlichen Handelsergebnisse nicht mit optimierten oder back-getesteten Ergebnissen übereinstimmen."
@@ -8019,8 +8028,8 @@ msgstr "Auf Chinesisch, Englisch, Französisch, Deutsch, Indonesisch, Italienisc
 msgid "Purchase"
 msgstr "Kauf"
 
-msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
-msgstr "Kaufen Sie Hohe/Niedrige Tick Kontrakte, um den höchsten oder niedrigsten Tick unter den nächsten fünf Ticks vorherzusagen."
+msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr ""
 
 msgid "Purchase Price"
 msgstr "Kaufpreis"
@@ -8295,9 +8304,6 @@ msgstr "Schwelle zurücksetzen"
 msgid "Reset Call"
 msgstr "Call zurücksetzen"
 
-msgid "Reset Call/Put"
-msgstr "Call/Put zurücksetzen"
-
 msgid "Reset Call/Reset Put"
 msgstr "Call/Put zurücksetzen"
 
@@ -8318,12 +8324,6 @@ msgstr "Passwort zurücksetzen"
 
 msgid "Reset to original settings"
 msgstr "Auf Originaleinstellungen zurücksetzen"
-
-msgid "Reset-Call"
-msgstr "Reset-Call"
-
-msgid "Reset-Put"
-msgstr "Reset-Put"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "Bewohner von Ländern in denen die FATF strategische Mängel identifiziert hat, sollen bei der Eröffnung eines Kontos mit Binary Investments (Europe) Ltd eingeschränkt sein."
@@ -8894,9 +8894,6 @@ msgstr "Beginnen Sie zu Handeln"
 
 msgid "Start trading MT5 on web platform"
 msgstr "Beginnen Sie mit dem Handel von MT5 auf der Web-Plattform"
-
-msgid "Start/End Time"
-msgstr "Start/Endzeit"
 
 msgid "State Benefits"
 msgstr "Staatliche Leistungen"
@@ -11172,9 +11169,6 @@ msgstr "VPN App"
 msgid "VPN app"
 msgstr "VPN App"
 
-msgid "Validate address"
-msgstr "Adresse bestätigen"
-
 msgid "Variable"
 msgstr "Variable"
 
@@ -11411,6 +11405,9 @@ msgstr "Wir glauben, dass wir immer das Richtige tun sollten. Dazu gehört, unse
 
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr "Wir sammeln und bewerten Ihre Daten, um Sie, als unseren Kunden, in Bezug auf unsere Produkte zu profilieren. Wir bewerkstelligen dies manuell mithilfe der automatischen Verarbeitung. Durch Kategorisierung werden wir in der Lage sein, Ihnen die am besten geeigneten Produkte und Dienstleistungen anzubieten."
+
+msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
+msgstr ""
 
 msgid "We delete an order with the largest margin reserved"
 msgstr "Wir löschen eine Order mit dem höchsten belegten Margin"
@@ -12639,8 +12636,8 @@ msgstr "Ihr Konto darf nicht als Bankkonto verwendet werden und Einzahlungen dü
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr "Ihr Konto wird mit %1 eröffnet, und ist Gegenstand der Zuständigkeit und der Gesetze von %2."
 
-msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
-msgstr "Ihre Adresse konnte durch unser automatisiertes System nicht überprüft werden. Sie können fortfahren, aber bitte stellen Sie sicher, dass Ihre Adresse vollständig ist."
+msgid "Your address has been recognised by our system."
+msgstr ""
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Ihre Anfrage auf Behandlung als professioneller Kunde, wird bearbeitet."
@@ -12707,6 +12704,9 @@ msgstr "Ihre persönlichen Daten dienen in erster Linie dazu, Sie als den rechtm
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "Ihr Gewinn oder Verlust errechnet sich wie folgt:"
+
+msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
+msgstr ""
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "Ihr Auftrag %1 %2 von %3 an %4 zu überweisen, wurde erfolgreich bearbeitet."
