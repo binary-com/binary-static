@@ -21,7 +21,7 @@ const DigitDisplay = (() => {
         $container
             .addClass('normal-font')
             .html($('<h5 />', { text: contract.display_name, class: 'center-text' }))
-            .append($('<div />', { class: 'gr-6 gr-centered gr-12-m' })
+            .append($('<div />', { class: 'gr-8 gr-centered gr-12-m' })
                 .append($('<div />', { class: 'gr-row', id: 'table_digits' })
                     .append($('<strong />', { class: 'gr-3', text: localize('Tick') }))
                     .append($('<strong />', { class: 'gr-3', text: localize('Spot') }))
