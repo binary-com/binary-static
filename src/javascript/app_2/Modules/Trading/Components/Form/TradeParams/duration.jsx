@@ -53,7 +53,7 @@ const Duration = ({
 }) => {
     if (duration_min_max[contract_expiry_type]) {
         min_duration = convertDurationLimit(+duration_min_max[contract_expiry_type].min, duration_unit);
-        max_duration = convertDurationLimit(duration_min_max[contract_expiry_type].max, duration_unit);
+        max_duration = convertDurationLimit(+duration_min_max[contract_expiry_type].max, duration_unit);
         const moment_now  = moment(server_time);
         const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
         const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');

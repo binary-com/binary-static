@@ -40,7 +40,7 @@
             position: absolute;
             z-index: 1;
             top: 0px;
-            height: 95%;
+            height: calc(100% - 2px);
             margin: initial;
             margin-top: 1px;
             margin-bottom: 1px;

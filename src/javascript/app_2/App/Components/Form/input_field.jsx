@@ -33,8 +33,6 @@ const InputField = ({
     let has_valid_length = true;
     const max_is_disabled = max_value && +value >= +max_value;
     const min_is_disabled = min_value && +value <= +min_value;
-    const max_disabled_class = max_is_disabled && 'disabled';
-    const min_disabled_class = min_is_disabled && 'disabled';
 
     const changeValue = (e) => {
         if (type === 'number') {
@@ -106,6 +104,25 @@ const InputField = ({
             value={value}
         />;
 
+    const input_increment =
+        <div className='input-wrapper'>
+            <Button
+                className={`input-wrapper__increment ${max_is_disabled && 'disabled'}`}
+                is_disabled={max_is_disabled}
+                onClick={incrementValue}
+            >
+                <IconPlus className={'input-wrapper__icon'} is_disabled={max_is_disabled} />
+            </Button>
+            <Button
+                className={`input-wrapper__decrement ${min_is_disabled && 'disabled'}`}
+                is_disabled={min_is_disabled}
+                onClick={decrementValue}
+            >
+                <IconMinus className={'input-wrapper__icon'} is_disabled={min_is_disabled} />
+            </Button>
+            { input }
+        </div>;
+
     return (
         <div
             className={`input-field ${className || ''}`}
@@ -120,27 +137,7 @@ const InputField = ({
                 {!!helper &&
                     <span className='input-helper'>{helper}</span>
                 }
-                <div className='input-wrapper'>
-                    {is_incrementable &&
-                        <React.Fragment>
-                            <Button
-                                className={`input-wrapper__increment ${max_disabled_class}`}
-                                is_disabled={max_is_disabled}
-                                onClick={incrementValue}
-                            >
-                                <IconPlus className={`input-wrapper__icon ${max_disabled_class}`} />
-                            </Button>
-                            <Button
-                                className={`input-wrapper__decrement ${min_disabled_class}`}
-                                is_disabled={min_is_disabled}
-                                onClick={decrementValue}
-                            >
-                                <IconMinus className={`input-wrapper__icon ${min_disabled_class}`} />
-                            </Button>
-                        </React.Fragment>
-                    }
-                    { input }
-                </div>
+                {is_incrementable ? input_increment : input}
             </Tooltip>
         </div>
     );
