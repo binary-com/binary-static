@@ -1,18 +1,12 @@
-import { observer } from 'mobx-react';
-import PropTypes    from 'prop-types';
-import React        from 'react';
-import { localize } from '_common/localize';
-import Dropdown     from 'App/Components/Form/DropDown';
-import Fieldset     from 'App/Components/Form/fieldset.jsx';
-
-const last_digit_numbers = [...Array(10).keys()].map(number => ({
-    text : number,
-    value: number,
-}));
+import { observer }  from 'mobx-react';
+import PropTypes     from 'prop-types';
+import React         from 'react';
+import { localize }  from '_common/localize';
+import DigitSelector from 'App/Components/Form/digit_selector.jsx';
+import Fieldset      from 'App/Components/Form/fieldset.jsx';
 
 const LastDigit = ({
     is_minimized,
-    is_nativepicker,
     last_digit,
     onChange,
 }) =>  {
@@ -27,23 +21,20 @@ const LastDigit = ({
     return (
         <Fieldset
             header={localize('Last Digit Prediction')}
-            icon='digits'
+            is_center
         >
-            <Dropdown
-                list={last_digit_numbers}
-                value={+last_digit}
+            <DigitSelector
                 name='last_digit'
                 onChange={onChange}
-                is_nativepicker={is_nativepicker}
+                selected_digit={+last_digit}
             />
         </Fieldset>
     );
 };
 
 LastDigit.propTypes = {
-    is_minimized   : PropTypes.bool,
-    is_nativepicker: PropTypes.bool,
-    last_digit     : PropTypes.oneOfType([
+    is_minimized: PropTypes.bool,
+    last_digit  : PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
     ]),

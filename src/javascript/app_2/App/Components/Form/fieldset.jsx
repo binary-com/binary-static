@@ -8,16 +8,18 @@ const Fieldset = ({
     className,
     header,
     icon,
+    is_center,
     onMouseEnter,
     onMouseLeave,
     tooltip,
 }) => {
-    const field_left_class = classNames('field-info left', { icon }, icon);
+    const fieldset_class   = classNames('fieldset-header', is_center ? 'center-text' : '');
+    const field_left_class = classNames('field-info', { icon }, icon, is_center ? 'center' : 'left');
 
     return (
         <fieldset className={className}  onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             {!!header &&
-                <div className='fieldset-header'>
+                <div className={fieldset_class}>
                     <span className={field_left_class}>{header}</span>
                 </div>
             }

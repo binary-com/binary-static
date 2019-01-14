@@ -111,6 +111,10 @@
                     right: 5px;
                     font-size: 0.5625rem; /* stylelint-disable-line number-max-precision */
                 }
+                &.center {
+                    position: relative;
+                    top: 5px;
+                }
             }
         }
         .clock-header, .fieldset-header {
@@ -155,6 +159,27 @@
             border: 0;
             padding: 0;
             background: transparent;
+        }
+        .digit-selector {
+            margin-top: 15px;
+
+            .digit-selection {
+                width: 40px;
+                height: 24px;
+                border-radius: $BORDER_RADIUS;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $COLOR_BLUE;
+                margin: 0 8px 8px 0;
+
+                &.selected {
+                    background-color: $COLOR_BRANDBLUE_85;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+            }
         }
         @media screen and (max-height: 800px) {
             .fieldset-header {
