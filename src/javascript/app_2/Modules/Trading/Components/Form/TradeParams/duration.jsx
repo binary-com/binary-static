@@ -50,7 +50,12 @@ const Duration = ({
     if (duration_min_max[contract_expiry_type]) {
         const moment_now  = moment(server_time);
         const new_min_day = convertDurationUnit(duration_min_max[contract_expiry_type].min, 's', 'd');
-        const new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
+        let new_max_day = convertDurationUnit(duration_min_max[contract_expiry_type].max, 's', 'd');
+
+        if (contract_expiry_type === 'intraday' && !start_date && expiry_type === 'endtime') {
+            new_max_day = convertDurationUnit(duration_min_max.daily.max, 's', 'd');
+        }
+
         if (!now_date || moment_now.date() !== now_date.date() || (duration_unit === 'd' && (min_day !== new_min_day || max_day !== new_max_day))) {
             if (duration_unit === 'd') {
                 min_day = new_min_day;
