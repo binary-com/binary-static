@@ -58,7 +58,7 @@ const TickDisplay = (() => {
         display_symbol       = data.display_symbol;
         contract_start_ms    = parseInt(data.contract_start) * 1000;
         contract_category    = data.contract_category;
-        barrier              = data.barrier;
+        should_set_barrier   = !contract_category.match('digits');
         display_decimals     = data.display_decimals || 2;
         show_contract_result = data.show_contract_result;
         reset_spot_plotted   = false;
