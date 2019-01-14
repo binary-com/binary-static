@@ -13,7 +13,6 @@ const urlLang             = require('../../_common/language').urlLang;
 const localizeForLang     = require('../../_common/localize').forLang;
 const localize            = require('../../_common/localize').localize;
 const ScrollToAnchor      = require('../../_common/scroll_to_anchor');
-const State               = require('../../_common/storage').State;
 const isStorageSupported  = require('../../_common/storage').isStorageSupported;
 const ThirdPartyLinks     = require('../../_common/third_party_links');
 const urlFor              = require('../../_common/url').urlFor;
