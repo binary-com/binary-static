@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-11 11:24\n"
+"PO-Revision-Date: 2019-01-14 07:43\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -3834,9 +3834,6 @@ msgstr "crwdns38396:0crwdne38396:0"
 msgid "Execute your trade in seconds."
 msgstr "crwdns38399:0crwdne38399:0"
 
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr "crwdns50472:0crwdne50472:0"
-
 msgid "Execution model and counterparty risk"
 msgstr "crwdns38400:0crwdne38400:0"
 
@@ -4664,6 +4661,9 @@ msgstr "crwdns38580:0crwdne38580:0"
 
 msgid "High Tick"
 msgstr "crwdns46210:0crwdne46210:0"
+
+msgid "High Tick/Low Tick"
+msgstr "crwdns52686:0crwdne52686:0"
 
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "crwdns45851:0crwdne45851:0"
@@ -7821,8 +7821,23 @@ msgstr "crwdns50926:0crwdne50926:0"
 msgid "Predict the direction<br />and purchase"
 msgstr "crwdns39527:0crwdne39527:0"
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr "crwdns52688:0crwdne52688:0"
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "crwdns42349:0crwdne42349:0"
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr "crwdns52690:0crwdne52690:0"
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr "crwdns52692:0crwdne52692:0"
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr "crwdns52694:0crwdne52694:0"
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr "crwdns52696:0crwdne52696:0"
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
 msgstr "crwdns52238:0crwdne52238:0"
@@ -10128,6 +10143,9 @@ msgstr "crwdns40107:0%1crwdnd40107:0%1crwdne40107:0"
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "crwdns40108:0%1crwdnd40108:0%1crwdne40108:0"
 
+msgid "The various trade types available on our MT5 platform."
+msgstr "crwdns52698:0crwdne52698:0"
+
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "crwdns40109:0crwdne40109:0"
 
@@ -11471,6 +11489,9 @@ msgstr "crwdns44609:0crwdne44609:0"
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
 msgstr "crwdns42497:0crwdne42497:0"
+
+msgid "We offer the following trade types on our MT5 platform:"
+msgstr "crwdns52700:0crwdne52700:0"
 
 msgid "We offer three types of lookbacks:"
 msgstr "crwdns43578:0crwdne43578:0"
