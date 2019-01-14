@@ -174,9 +174,9 @@ const GTM = (() => {
         const storage_key = 'GTM_transactions';
         
         // Remove values from prev days so localStorage doesn't grow to infinity
-        let gtm_transactions  = JSON.parse(localStorage.getItem(storage_key)) || {};
+        let gtm_transactions = JSON.parse(localStorage.getItem(storage_key)) || {};
         if (Object.prototype.hasOwnProperty.call(gtm_transactions, 'timestamp')) {
-            if (moment_now.isAfter(moment.utc().unix(gtm_transactions.timestamp), 'day')) {
+            if (moment_now.isAfter(moment.unix(gtm_transactions.timestamp).utc(), 'day')) {
                 localStorage.removeItem(storage_key);
                 gtm_transactions = { timestamp: moment_now.unix() };
             }
