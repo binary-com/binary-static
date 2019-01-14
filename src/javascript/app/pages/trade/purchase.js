@@ -1,3 +1,4 @@
+const moment                   = require('moment');
 const Contract                 = require('./contract');
 const getLookBackFormula       = require('./lookback').getFormula;
 const isLookback               = require('./lookback').isLookback;
@@ -355,9 +356,7 @@ const Purchase = (() => {
                     el_epoch.className = 'digit-tick-epoch';
                     el_epoch.style.right = (el3.offsetWidth - tick.offsetWidth) / 2;
                     const el_epoch_content = document.createTextNode(
-                        new Date(tick_d.epoch * 1000)
-                            .toTimeString()
-                            .slice(0,8)
+                        moment(new Date(tick_d.epoch * 1000)).utc().format('HH:mm:ss')
                     );
                     el_epoch.appendChild(el_epoch_content);
                     fragment.appendChild(el_epoch);
