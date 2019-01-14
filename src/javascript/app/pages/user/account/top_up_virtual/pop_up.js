@@ -34,6 +34,35 @@ const TopUpVirtualPopup = (() => {
         return true;
     };
 
+    const doTopUp = () => {
+        BinarySocket.send({ topup_virtual: '1' }).then((response_top_up) => {
+            const el_popup = getElementById(popup_id);
+            if (el_popup) {
+                el_popup.remove();
+            }
+            // use Dialog for both error and success since there are no form elements or validation to be done
+            if (response_top_up.error) {
+                Dialog.alert({
+                    id               : 'top_up_error',
+                    localized_title  : localize('Top up error'),
+                    localized_message: response_top_up.error.message,
+                    ok_text          : localize('Understood'),
+                });
+            } else {
+                Dialog.confirm({
+                    id               : 'top_up_success',
+                    localized_title  : localize('Top-up successful'),
+                    localized_message: localize('[_1] has been credited into your Virtual Account: [_2].', ['$10,000.00', Client.get('loginid')]),
+                    cancel_text      : localize('Go to statement'),
+                    ok_text          : localize('Continue trading'),
+                    onAbort          : () => {
+                        BinaryPjax.load(urlFor('user/statementws'));
+                    },
+                });
+            }
+        });
+    };
+
     const showTopUpPopup = (message) => {
         // use showPopup since we have a checkbox
         showPopup({
@@ -68,33 +97,10 @@ const TopUpVirtualPopup = (() => {
                         Client.set('hide_virtual_top_up_until', moment.utc().unix());
                     }
                 });
-            },
-            onAccept: () => {
-                BinarySocket.send({ topup_virtual: '1' }).then((response_top_up) => {
-                    const el_popup = getElementById(popup_id);
-                    if (el_popup) {
-                        el_popup.remove();
-                    }
-                    // use Dialog for both error and success since there are no form elements or validation to be done
-                    if (response_top_up.error) {
-                        Dialog.alert({
-                            id               : 'top_up_error',
-                            localized_title  : localize('Top up error'),
-                            localized_message: response_top_up.error.message,
-                            ok_text          : localize('Understood'),
-                        });
-                    } else {
-                        Dialog.confirm({
-                            id               : 'top_up_success',
-                            localized_title  : localize('Top-up successful'),
-                            localized_message: localize('[_1] has been credited into your Virtual Account: [_2].', ['$10,000.00', Client.get('loginid')]),
-                            cancel_text      : localize('Go to statement'),
-                            ok_text          : localize('Continue trading'),
-                            onAbort          : () => {
-                                BinaryPjax.load(urlFor('user/statementws'));
-                            },
-                        });
-                    }
+                const $btn_ok = $('#btn_ok');
+                $btn_ok.on('click dblclick', () => { // use this instead of submit as multi click is not handled in submit
+                    $btn_ok.attr('disabled', 'disabled');
+                    doTopUp();
                 });
             },
         });
