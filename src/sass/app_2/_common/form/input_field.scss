@@ -55,8 +55,9 @@
                 cursor: pointer;
                 background: $COLOR_GRAY;
             }
-            &.disabled:hover {
+            &:disabled:hover {
                 cursor: not-allowed;
+                background: transparent;
             }
         }
         &__increment {
@@ -69,13 +70,13 @@
             padding-top: 4px;
 
             path {
-                fill: $COLOR_GRAY_2;
+                fill: $COLOR_LIGHT_GRAY;
             }
             &--plus.disabled path {
-                fill: $COLOR_WHITE_2;
+                fill: $COLOR_DARK_GRAY;
             }
             &--minus.disabled path {
-                fill: $COLOR_WHITE_2;
+                fill: $COLOR_DARK_GRAY;
             }
         }
     }
@@ -129,7 +130,7 @@
         color: $COLOR_WHITE;
         border-color: $COLOR_BRANDBLUE_85;
 
-        &:focus, &:active {
+        &:hover, &:focus, &:active {
             border-color: $COLOR_WHITE;
         }
     }
@@ -141,13 +142,13 @@
         }
         &__icon {
             path {
-                fill: $COLOR_BRANDBLUE_1;
+                fill: $COLOR_DARK_WHITE;
             }
             &--plus.disabled path {
-                fill: $COLOR_BRANDBLUE_2;
+                fill: $COLOR_BRANDBLUE_85;
             }
             &--minus.disabled path {
-                fill: $COLOR_BRANDBLUE_2;
+                fill: $COLOR_BRANDBLUE_85;
             }
         }
     }
