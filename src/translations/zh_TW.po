@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-10 14:42\n"
+"PO-Revision-Date: 2019-01-14 10:33\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Chinese Traditional\n"
 "MIME-Version: 1.0\n"
@@ -174,8 +174,8 @@ msgstr "%1讓每個人都能輕鬆參與金融市場。可交易各主要貨幣�
 msgid "%1 gives everyone an easy way to participate in the financial markets. Trade with as little as $1 USD on major currencies, stocks, indices, and commodities."
 msgstr "%1讓每個人都能輕鬆參與金融市場。可交易各主要貨幣、股票指數和商品，投資門檻低至1美元。"
 
-msgid "%1 has been credited into your virtual account: %2."
-msgstr "%1 已記入您的虛擬帳戶: %2。"
+msgid "%1 has been credited into your Virtual Account: %2."
+msgstr ""
 
 msgid "%1 has earned an enviable reputation for our commitment to high ethical standards and the quality of the trading experience we provide."
 msgstr "%1 竭誠達到極高的道德標準和優質的交易體驗，因此獲得了令人羨慕的聲譽。"
@@ -2259,6 +2259,9 @@ msgstr "此標的資產的圖表資料已延遲"
 msgid "Charting platforms"
 msgstr "圖表平台"
 
+msgid "Check address"
+msgstr "檢查地址"
+
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "檢查我們的系統是否有最新的抗攻擊、防漏洞和緩解措施"
 
@@ -3339,6 +3342,9 @@ msgstr "想獲取更多有關市場及如何進行交易的資訊嗎？請檢視
 msgid "Do you want to see %1 in other languages, or can you suggest improvements to our current translations?"
 msgstr "您要檢視其他語言版本的%1，還是想對目前譯文提出改進意見？"
 
+msgid "Do you want to top up for another %1? If not, you can do this later on the %2Cashier page%3, too."
+msgstr ""
+
 msgid "Do you wish to continue?"
 msgstr "是否繼續？"
 
@@ -3356,6 +3362,9 @@ msgstr "未觸及"
 
 msgid "Don't have an account?"
 msgstr "沒有帳戶？"
+
+msgid "Don't show again"
+msgstr ""
 
 msgid "Don’t share your %1 account or payment methods with any other person."
 msgstr "不可與任何其他人分享您的％1帳戶或付款方式。"
@@ -3830,9 +3839,6 @@ msgstr "專屬二元期權交易技術。"
 
 msgid "Execute your trade in seconds."
 msgstr "數秒內執行您的交易。"
-
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr "使用持續時間為5個跳動點、10個跳動點、1分鐘或5分鐘的上漲/下跌交易類型執行您的交易策略。買入上漲/下跌合約時, 您必須預測目前市場價格是否會上漲或下跌。"
 
 msgid "Execution model and counterparty risk"
 msgstr "執行模型和交易對手風險"
@@ -4548,6 +4554,9 @@ msgstr "前往 MT5 下載頁面"
 msgid "Go to MetaTrader 5 dashboard"
 msgstr "前往MetaTrader 5 儀表板"
 
+msgid "Go to statement"
+msgstr ""
+
 msgid "Go with the leader"
 msgstr "選擇行業領軍企業"
 
@@ -4662,11 +4671,14 @@ msgstr "高障礙"
 msgid "High Tick"
 msgstr "高跳動點"
 
+msgid "High Tick/Low Tick"
+msgstr ""
+
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "高跳動點/低跳動點合約具有嚴格的五跳動點週期。"
 
 msgid "High Ticks/Low Ticks"
-msgstr ""
+msgstr "高跳動點/低跳動點"
 
 msgid "High barrier"
 msgstr "高障礙"
@@ -4829,6 +4841,9 @@ msgstr "如何使用支付代理?"
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr "但是，如果資產價格下跌10個點，意味著您將蒙受10美元虧損。"
+
+msgid "However, we will require further documentation to authenticate your account in the future."
+msgstr "但我們需要更多文件以便驗證您的帳戶。"
 
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "但是，您可以透過槓桿以一般成本的一小部分價格購入這100個單位，具體取決於經紀商或交易平台向您提供的槓桿。"
@@ -7248,8 +7263,8 @@ msgstr "大於$1,000,000"
 msgid "Over $500,000"
 msgstr "$500,000以上"
 
-msgid "Over %1 %2staff%3 and contractors worldwide"
-msgstr "世界各地擁有超過%1名%2職員%3和約聘員工"
+msgid "Over %1 <a href='%2'>staff</a> and contractors worldwide"
+msgstr ""
 
 msgid "Over 1 million registered accounts worldwide"
 msgstr "全球各地擁有超過1百萬個註冊帳號"
@@ -7609,7 +7624,7 @@ msgid "Please make sure that you first agree with the Agent on the terms of paym
 msgstr "在送出要求前，請確保您首先同意代理的支付條款。"
 
 msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
-msgstr ""
+msgstr "請注意，亞洲貨幣、數字交易、買權重設/賣權重設和高跳動點/低跳動點只適用於我們的波動指數。"
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "請注意, 實際交易結果可能與被優化或事後測試的結果不符。"
@@ -7815,8 +7830,23 @@ msgstr "預測市價在合約期限內的任何時間都觸及或不觸及目標
 msgid "Predict the direction<br />and purchase"
 msgstr "預測價格走向<br />並購入"
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr ""
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "預測現貨價格最後小數點數值的數字。共有三種數字交易："
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
 msgstr "英語為母語，有較強的口語和寫作水平者優先錄取"
@@ -8023,7 +8053,7 @@ msgid "Purchase"
 msgstr "買入"
 
 msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
-msgstr ""
+msgstr "購買高跳動點/低跳動點合約以預測接下來五個跳動點中的最高或最低跳動價位。"
 
 msgid "Purchase Price"
 msgstr "買入價格"
@@ -10122,6 +10152,9 @@ msgstr "除了不能排除的任何適用法律、法規所規定的賠償責任
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "如原本可以避免承擔責任，但因為將%1 API與非%1 API系統、資料、設備或文件同時使用、操作或組合;或"
 
+msgid "The various trade types available on our MT5 platform."
+msgstr ""
+
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "波動率指數類比各種真實的市場情況，並根據不同的市場情況提供理想的平台交易實踐和測試策略。這些指數取決於波動率和漂移率，並協助使用者嘗試各種場景，如高波動率、低波動率、看漲和看跌趨勢。"
 
@@ -10554,11 +10587,23 @@ msgstr "代幣"
 msgid "Top Up Virtual Account"
 msgstr "給虛擬帳戶充值"
 
+msgid "Top up"
+msgstr ""
+
+msgid "Top up Virtual Account"
+msgstr ""
+
+msgid "Top up error"
+msgstr ""
+
 msgid "Top up virtual account"
 msgstr "給虛擬帳戶充值"
 
 msgid "Top-tier liquidity"
 msgstr "頂級流動性"
+
+msgid "Top-up successful"
+msgstr ""
 
 msgid "Total"
 msgstr "總計"
@@ -10927,7 +10972,7 @@ msgid "Types of trades"
 msgstr "交易類型"
 
 msgid "UI/UX Designer"
-msgstr ""
+msgstr "UI/UX 設計員"
 
 msgid "UK and Manx residents who wish to trade gambling products will have their accounts opened with Binary (IOM) Limited."
 msgstr "想要進行產品博彩交易的歐盟和曼島居民將在 Binary (IOM) Limited 開設帳戶。"
@@ -11032,9 +11077,12 @@ msgid "Understand when to buy and sell"
 msgstr "了解何時買入和賣出"
 
 msgid "Understanding of cryptography, including asymmetric, symmetric, hash functions, and encryption/signatures"
-msgstr ""
+msgstr "充分瞭解加密技術, 包括非對稱、對稱、雜湊函數和加密/簽名"
 
 msgid "Understanding of encryption fundamentals and the OWASP Top 10"
+msgstr "瞭解加密基礎知識和 OWASP 前10名"
+
+msgid "Understood"
 msgstr ""
 
 msgid "Unemployed"
@@ -11047,10 +11095,10 @@ msgid "United Kingdom"
 msgstr "英國"
 
 msgid "University degree in Marketing, Mathematics, IT/Programming or any related field"
-msgstr ""
+msgstr "市場行銷、數學、資訊技術/程式設計或任何相關領域的大學學位"
 
 msgid "University degree in marketing, journalism, communication, or a business-related discipline"
-msgstr ""
+msgstr "市場行銷、 新聞、通信或商業相關專業學位"
 
 msgid "Unknown OS"
 msgstr "未知 OS"
@@ -11077,7 +11125,7 @@ msgid "Update"
 msgstr "更新"
 
 msgid "Update settings"
-msgstr ""
+msgstr "更新設定"
 
 msgid "Upgrade now"
 msgstr "立即升級"
@@ -11107,7 +11155,7 @@ msgid "Use a variety of allocation methods (e.g equity, balance, even, and lot) 
 msgstr "使用各種分配方法 （例如衡平、均衡、相等和手數等）分發交易量，從0.01手開始"
 
 msgid "Use advanced data analytics skills to study trends/pattern in financial markets"
-msgstr ""
+msgstr "使用先進的資料分析技能研究金融市場的趨勢/模式"
 
 msgid "Use appropriate terminology, taking into account the style and nuance of the original text"
 msgstr "使用適當的術語，並須考慮到原文風格和細節"
@@ -11149,7 +11197,7 @@ msgid "Using our website, customers can trade currencies, indices, commodities, 
 msgstr "客戶可使用我們網站全天候進行貨幣、指數、大宗商品和波動率指數交易。我們擁有最靈活的價格和最齊全的產品配套供選擇。"
 
 msgid "Utilise a variety of tactics – both online and offline – to grow and support the company’s network of partners in your designated market"
-msgstr ""
+msgstr "在您指定的市場利用各種線上和離線策略幫助公司合作夥伴網路成長和提供支援"
 
 msgid "Utility bill"
 msgstr "水電煤帳單"
@@ -11162,9 +11210,6 @@ msgstr "VPN 應用程式"
 
 msgid "VPN app"
 msgstr "VPN 應用程式"
-
-msgid "Validate address"
-msgstr "地址驗證"
 
 msgid "Variable"
 msgstr "變數"
@@ -11188,7 +11233,7 @@ msgid "Verify Reset Password"
 msgstr "重設密碼驗證"
 
 msgid "Verify and approve clients’ deposit and withdrawal requests"
-msgstr ""
+msgstr "驗證和批准客戶的存款和取款請求"
 
 msgid "Verify main password"
 msgstr "主密碼驗證"
@@ -11218,13 +11263,13 @@ msgid "View available payment methods"
 msgstr "檢視可用支付方式"
 
 msgid "View chart"
-msgstr ""
+msgstr "檢視圖表"
 
 msgid "View essential information for open positions associated with each login ID – including order type (buy/sell), open time, open price,  stop loss, take profit, swap, and profit"
 msgstr "查看每個登入識別碼有關聯的未平倉合約基本資訊 — — 包括訂單類型（買/賣）、開放時間、開盤價、止損、獲利、掉期和利潤"
 
 msgid "View guide"
-msgstr ""
+msgstr "查看指南"
 
 msgid "View open positions"
 msgstr "檢視未平倉頭寸"
@@ -11236,7 +11281,7 @@ msgid "View payment methods"
 msgstr "檢視支付方式"
 
 msgid "View statement"
-msgstr ""
+msgstr "檢視帳單"
 
 msgid "View the full list of assets, contract types and durations."
 msgstr "檢視資產、合約類型以及期限的完整清單。"
@@ -11244,7 +11289,7 @@ msgstr "檢視資產、合約類型以及期限的完整清單。"
 msgid "View the operating hours of the markets you can trade."
 msgstr "檢視您可以進行交易的市場開放時間。"
 
-msgid "View updated portfolio"
+msgid "View updated statement"
 msgstr ""
 
 msgid "View your account's authentication status."
@@ -11403,6 +11448,9 @@ msgstr "我們認為應該始終做正確的事。包括以誠實和透明的方
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr "作為我們的客戶，我們收集並評估您的資料，以便分析並根據產品類型向您介紹最合適的交易。在自動處理程式的幫助下，我們以手動完成此工作。通過分類，我們將能夠為您提供最合適的產品和服務。"
 
+msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
+msgstr "我們無法識別您的地址。您可以繼續操作, 但請確保您的地址是完整和準確的。"
+
 msgid "We delete an order with the largest margin reserved"
 msgstr "我們刪除訂單，並保留金額最大的保證金"
 
@@ -11466,6 +11514,9 @@ msgstr "我們提供市場化的薪酬、年度表現分紅、醫療保險、出
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
 msgstr "我們的商品清單提供所有四種貴重金屬，即黃金、白銀、鈀金和鉑金以及能源。"
 
+msgid "We offer the following trade types on our MT5 platform:"
+msgstr ""
+
 msgid "We offer three types of lookbacks:"
 msgstr "我們提供三種回顧類型:"
 
@@ -11476,7 +11527,7 @@ msgid "We presume that you possess the experience, knowledge, and expertise to m
 msgstr "我們假定您擁有足夠的經驗、知識和專長，可自行決定投資, 並正確評估相關風險"
 
 msgid "We process over a million transactions each day, and manage a book of exotic options which exceeds the complexity of the typical derivatives desk."
-msgstr ""
+msgstr "我們每天處理超過一百萬筆交易, 並管理比典型衍生品桌面交易更加複雜的各式奇異期權。"
 
 msgid "We prohibit the use of unauthorised incentives, gifts, and payments to encourage customer signups. If we have reason to believe that you have engaged in such activity, we reserve the right to withhold any payments due to you. However, if you have a specific incentive in mind, then please contact your account manager for further discussion and approval."
 msgstr "我們禁止使用未經授權的獎勵、禮物和付款來鼓勵客戶註冊。如果有理由認定您做出這些行為，我們有權截留任何應向您支付的款項。然而，如果您有意提供特殊獎勵，請聯繫您的帳戶管理員，以便進一步討論並獲得批准。"
@@ -11545,7 +11596,7 @@ msgid "We will hold you responsible for all your obligations under this Agreemen
 msgstr "在我們根據此協定所述向您提供保證金交易服務期間，您必須對本協定項下您的所有義務負責，即使您通知我們您是某指定委託人的代理。"
 
 msgid "We will review your documents and get back to you within one working day."
-msgstr ""
+msgstr "我們將審閱您的文件，並將於ㄧ個工作日內回覆。"
 
 msgid "We will use reasonable endeavors within our control to ensure that all electronic data provided on the MT5 Trading Platform and all electronic transactions instructed and accepted from you to us, and executed by us are not subject to network latency."
 msgstr "我們將在可控制範圍內合理地努力，確保您通過 MT5 交易平台和所有電子交易指示所收到並由我們執行提供的所有電子資料均不會受到網絡延遲。"
@@ -11590,7 +11641,7 @@ msgid "Welcome to Binary.com"
 msgstr "歡迎來到 Binary.com"
 
 msgid "Well-honed organisational, administrative, and accounting skills"
-msgstr ""
+msgstr "具備良好的組織、行政和會計技能"
 
 msgid "We’re expected to generate over USD 1 billion in turnover this year, bringing our total turnover since inception to over USD 5.7 billion."
 msgstr "我們今年的預計營業額將超過10億美元, 自成立以來的總營業額超過57億美元。"
@@ -11671,7 +11722,7 @@ msgid "When are my commissions paid?"
 msgstr "我的佣金是什麼時候支付的？"
 
 msgid "When executing client orders using the A-book model, the Company directs the client's trade to one of its liquidity providers, namely:"
-msgstr ""
+msgstr "使用A-book模式執行客戶訂單時，公司將客戶的交易導引至其流動性提供商之一，即："
 
 msgid "When the Affiliate's referred clients open an account with any member of the Binary group, we assume ownership of the database of names and contact information and any other data of the Affiliates' referred clients."
 msgstr "聯盟會員的推薦客戶在Binary集團任何成員公司開帳戶時，我們承擔此聯盟會員的推薦客戶名稱和聯繫資訊資料庫以及任何其他資料的擁有權。"
@@ -11680,13 +11731,13 @@ msgid "When the Client's Cash Account with us is credited or charged with the ne
 msgstr "當交易結果淨額在我們客戶的現金帳戶裡記入或扣除時。"
 
 msgid "When the Company accepts an order from the client to open or close a transaction, or any other specific instructions in relation to the client's order, the Company will endeavour to follow the client's instructions as far as reasonably possible, acting in accordance with the Company's duty of best execution in accordance with the client's instructions. These specific instructions include, but are not limited to:"
-msgstr ""
+msgstr "當公司收到客戶給的開盤或收盤交易訂單或任何其他關於客戶訂單的具體指示，公司會努力盡可能合理地遵照客戶的指示並根據公司最佳執行責任行事。這些具體的指示包括，但不限於︰"
 
 msgid "When the Company deals on own account (dealing desk), the Company acts as principal and not as an agent on the client's behalf and the Company therefore acts as the execution venue."
-msgstr ""
+msgstr "當公司在自己帳戶（交易平台）上交易時，公司是委託人，而不是客戶的代理人，因此公司是執行場地。"
 
 msgid "When the client gives the Company specific instructions, including (a) specifying the price of a Contract with the Company or (b) specifying the price at which a Contract is to be closed, then those instructions take precedence over other aspects of the Company's policy."
-msgstr ""
+msgstr "當客戶給公司提供特定指令，包括例如（一）指定合約價格或（二）指定平倉價格時，這些指令將比公司策略的其它方面得到優先處理。"
 
 msgid "When the client requests a withdrawal from his %1 Account, such request shall be automatically proceeded and as a result the requested sum shall be transferred from his %1 Account to the %1 Agent Account. However, it is noted that where the client reaches its withdrawal limits, a withdrawal request shall not be automatically proceeded before the required authentication process is conducted."
 msgstr "當客戶請求從他的%1帳戶提款時, 此類請求須自動執行, 因此所要求的款項須從客戶的%1帳戶轉入%1代理帳戶。但須注意的是, 如果客戶已達提款限額, 則在完成必要的身份驗證程序前, 不會自動執行提款請求。"
@@ -11752,10 +11803,10 @@ msgid "When, as a result of political, economic, military or monetary events (in
 msgstr "當政治、經濟、軍事或貨幣政策事件（包括市場非正常波動或喪失流動性）或其他不在本公司控制、責任及權力範圍之內的任何情形導致本網站在不對客戶或本公司利益產生重大負面影響或侵害的情況下無法繼續合理可行地運轉時，或者依公司之見，無法計算金融合約的價格時。"
 
 msgid "Where a particular time or timeframe has been specified in a client's instructions with respect to the execution of an order, regardless of the price available, the Company will endeavour to execute the order at the specified time or over the specified timeframe in the best possible manner after taking all sufficient steps. However, the Company will not be responsible for any consequences related to pricing that are resulted from the time or timeframe of the execution."
-msgstr ""
+msgstr "如客戶在執行訂單指示中指定了時間或時間週期，不論是否有可用價格，公司將在採取所有足夠步驟後努力在指定時間或時間週期內盡可能以最佳方式執行訂單。然而，公司不對因執行時間或時間週期而引起價格相關的任何後果負責。"
 
 msgid "Where a particular venue has been specified in the client's instructions with respect to the execution of an order, the Company will not be responsible for the venue selection."
-msgstr ""
+msgstr "如客戶在執行訂單相關指示中指定了特定場地，公司不對場地選擇負責。"
 
 msgid "Where an account is funded solely by means of a bonus code, the bonus amount plus any winnings cannot be withdrawn until you have exceeded an account turnover of 25 times the bonus amount value. The maximum amount of winnings allowed on such accounts shall be 25 times the amount of such bonus amount."
 msgstr "如果某一帳戶僅僅是以獎金代碼的方式提供資金，直到帳戶交易額超過獎勵金額的25倍方可提取獎勵金額及其他收益。此類帳戶允許的最大收益金額為此類獎勵金額的25倍。"
@@ -11830,7 +11881,7 @@ msgid "Which currencies can I trade"
 msgstr "我可以交易哪些貨幣"
 
 msgid "Whilst the Company acts as principal in respect of the client's orders, the Company also assesses the execution venues that the Company uses and upon which the Company places significant reliance to provide the best possible result for the execution of the client's orders. These venues typically consist of third-party investment firms, brokers, and/or liquidity providers."
-msgstr ""
+msgstr "作為客戶的訂單委託人，公司也對公司高度依賴的執行場地進行評估，以便為客戶的訂單執行提供最佳效益。這些場地通常由第三方投資公司、經紀人和/或流動性提供商組成。"
 
 msgid "Whilst we endeavor to close out your Open Positions if and when the Margin Level for your MT5 Real Account reaches or falls below the Stop Out Level, we do not guarantee that your Open Positions will be closed when the Margin Level for your MT5 Real Account reaches the Stop Out Level."
 msgstr "雖然我們在您MT5真實帳戶保證金層次達到或低於止損層次時將盡力使您的持倉頭寸收盤，我們不保證當您MT5真實帳戶的保證金層次達到止損層次時將能夠使您的持倉頭寸收盤。"
@@ -11884,7 +11935,7 @@ msgid "Why you should use %1 instead of your ISP's default DNS service"
 msgstr "為什麼要使用 %1 而不是 ISP預設的 DNS 服務"
 
 msgid "Will work with our simple web-based translation tool"
-msgstr ""
+msgstr "將使用我們的簡單、基於網絡的翻譯工具"
 
 msgid "Win maximum payout if the exit spot is higher than or equal to the upper barrier."
 msgstr "如果退市現價高於或等於高障礙, 可獲得最大賠付。"
@@ -11893,7 +11944,7 @@ msgid "Win maximum payout if the exit spot is lower than or equal to the lower b
 msgstr "如果退市現價低於或等於低障礙, 可獲得最大賠付。"
 
 msgid "Win payout if exit spot is also equal to entry spot."
-msgstr ""
+msgstr "如果退市現貨價與入市現貨價相同, 則將贏得賠付。"
 
 msgid "Win the multiplier times the close minus low."
 msgstr "贏取倍數值乘以收盤值減去最低值。"
@@ -11983,37 +12034,37 @@ msgid "Without prejudice to any other terms of this Agreement, neither the Compa
 msgstr "在不妨害本協定任何其他條款的前提下，本公司或任何董事、職員、經理、僱員或代理不須對您在MT5 交易平台或任何系統或網絡鏈接，包括但不限於全部或任何部分的任何延誤或缺陷或者失敗，不論是直接或間接由於任何超出我們控制範圍的原因所造成的任何損失承擔責任。"
 
 msgid "Work alongside the HR Operations team in coordinating with the government linked bodies"
-msgstr ""
+msgstr "與人力資源運營團隊合作進行政府相關機構協調工作"
 
 msgid "Work closely with both technical and non-technical teams to develop and integrate blockchain solutions for our business"
-msgstr ""
+msgstr "與技術和非技術團隊緊密合作, 為公司開發和整合業務區塊鏈解決方案"
 
 msgid "Work closely with customer support, compliance, and payment teams"
-msgstr ""
+msgstr "與客戶服務、法律合規性和支付團隊密切合作"
 
 msgid "Work closely with other departments to create marketing communication materials such as ads, product announcements, guides, job descriptions, and more"
-msgstr ""
+msgstr "與其他部門緊密合作, 建立行銷宣傳材料, 如廣告、產品公告、指南、職務說明等"
 
 msgid "Work closely with other teams to come up with effective architecture to support the deployment of new products and features"
-msgstr ""
+msgstr "與其他團隊密切合作, 提出有效的體系結構, 以支援部署新產品和功能"
 
 msgid "Work closely with the Head of Payments to proactively suggest improvements to cashier setup, including customer activity from an AML and anti-fraud perspective and overall fraud and payment performances (card success rates, chargebacks, etc.)"
-msgstr ""
+msgstr "與支付主管密切合作，主動建議改善收銀台設定，包括以反洗錢和反欺詐的角度看客戶活動以及整體反欺詐和支付效率（卡支付成功率、退款等）"
 
 msgid "Work closely with the affiliate marketing team to process affiliate commission payments on a monthly basis"
-msgstr ""
+msgstr "與聯盟行銷團隊緊密合作, 每月處理聯盟佣金支付"
 
 msgid "Work closely with the rest of the QA and IT teams to plan, design, and execute several types of testing based on different objectives"
-msgstr ""
+msgstr "與其他 QA和 IT 團隊密切合作, 根據不同的目標規劃、設計和執行多種類型測試"
 
 msgid "Work experience as a Recruiter in the IT industry or similar role is an advantage"
-msgstr ""
+msgstr "有 IT 行業招聘或類似職位的工作經驗者優先錄取"
 
 msgid "Work with the Head of Compliance to ensure group of companies comply with AML, KYC, and Data Protection laws and regulations"
-msgstr ""
+msgstr "與法律合規主管合作, 確保公司集團遵守反洗錢、KYC 和資料保護法律和法規"
 
 msgid "Write robust, high-quality, and production-ready code for our websites and applications"
-msgstr ""
+msgstr "為我們的網站和應用程式編寫強大、高品質和生產就緒的代碼"
 
 msgid "Written limits and self-exclusion"
 msgstr "書面限制和自我禁止"
@@ -12025,7 +12076,7 @@ msgid "Yes, I understand"
 msgstr "是的, 我明白"
 
 msgid "Yes, I want to sign up as an affiliate"
-msgstr ""
+msgstr "是的, 我想註冊為聯盟會員"
 
 msgid "Yes, we will provide you with banners, links, reviews, videos, and text ads that you can use to drive referrals to the %1 MT5 platform."
 msgstr "是的, 我們將為您提供橫幅、連結、評論、視訊和文本廣告, 您可以使用它來介紹客戶使用 %1 MT5 平台。"
@@ -12145,7 +12196,7 @@ msgid "You are advised that the Binary Options offered by %1 are not traded unde
 msgstr "我們僅此通知您，%1 所提供的二元期權交易並不受任何認可、指定或受監管的交易所規則所管制。其後果是，進行二元期權交易活動可能會使您承擔比所投入的交易金額更高的風險。"
 
 msgid "You are also expected to help us promote our cutting-edge trading platform that has been one of the most recognised in the binary options trading industry for over 18 years."
-msgstr ""
+msgstr "您也須幫助推廣我們的尖端交易平台，該平台已有超過18年的歷史，是二元期權交易行業中最受尊崇的交易平台之一。"
 
 msgid "You are buying the base currency and selling the quote currency."
 msgstr "您正在買入基本貨幣並賣出報價貨幣。"
@@ -12196,7 +12247,7 @@ msgid "You are responsible for managing your tax and legal affairs including mak
 msgstr "您須對您的稅務和法律相關事項自行負責，包括按照法規填寫任何表格和款項支付，以及遵守法律和法規。我們不提供任何法規、稅務或法律方面的忠告。如您對%1所提供的任何產品的稅務處理或責任有任何疑問，請向獨立機構尋求意見。"
 
 msgid "You are responsible for mitigating the risks and abuse that we face from fraud and money laundering. To accomplish this, you must monitor, analyse, and conduct various anti-fraud and AML checks on client accounts and deposits. You will join us in Malta and report to our Head of Payments."
-msgstr ""
+msgstr "您將負責減低我們因欺詐和洗錢而面臨的風險和弊端行為。為此，您必須對客戶帳戶和存款進行各種反欺詐和反洗錢檢查、分析和執行工作。您將在我們位於馬爾他的公司工作，並向支付主管匯報。"
 
 msgid "You are selling the base currency and buying the quote currency."
 msgstr "您正在賣出基本貨幣並買入報價貨幣。"
@@ -12484,7 +12535,7 @@ msgid "You should not trade or invest in Binary Options unless you know and unde
 msgstr "在您對所承擔的風險已完全了解，並且知道您可能會損失所有投資金額之前，請不要進行二元期權交易或投資活動。"
 
 msgid "You should read these ST&Cs carefully as well as the Summary of the Order Execution Policy and Summary of the Conflicts Policy, the applicable Contract Details together with the Risk Disclosure Notice and any other documents that we have supplied or in the future do supply to you."
-msgstr ""
+msgstr "您必須認真閱讀這些補充條款和條件、訂單執行政策摘要和衝突政策摘要、適用的合約細節、風險揭露通知書以及我們所向您提供或將會提供的所有其他文件。"
 
 msgid "You understand that products based on a random number generator (the \"Volatility Indices\") are gaming products whereas products based on financial market indices (forex, indices, commodities) are financial instruments."
 msgstr "您了解基於隨機數字生成器 （「波動率指數」）的產品屬於博彩產品，而基於金融市場指數（外匯、指數、大宗商品）的產品屬於金融工具。"
@@ -12496,10 +12547,10 @@ msgid "You want to sell that currency pair if you think the base currency will g
 msgstr "如果您認為基礎貨幣將下跌，您會賣出此貨幣對。"
 
 msgid "You will also encourage security awareness throughout the organisation via regular communication on security best practices and the latest online threats."
-msgstr ""
+msgstr "您也須通過對安全保護的最佳做法和最新的線上威脅進行定期溝通, 激勵整個組織提高安全意識。"
 
 msgid "You will also test and debug complex technical and UI issues related to our trading platform (that processes over one million transactions per day), based on feedback from our clients and customer service team."
-msgstr ""
+msgstr "您也須將根據客戶和客戶服務團隊的反饋, 對與我們每天處理超過100萬筆交易的平台相關的複雜技術和 UI問題進行測試和調試。"
 
 msgid "You will be asked to prove that you are the owner of the account being authenticated."
 msgstr "您需證明您是通過驗證的帳戶擁有人。"
@@ -12532,7 +12583,7 @@ msgid "You will provide us with any information that we may reasonably require t
 msgstr "為了充分滿足有關政府機關需求，我們可能向您提出任何合理資料請求，您將為我們提供相關資料。"
 
 msgid "You will solve complex user experience problems, and seamlessly communicate product features and functions to our users through meaningful design. You will play a key role in creating intuitive and functional products that give our users the best experience possible so we can keep growing our user base and revenue."
-msgstr ""
+msgstr "您須解決複雜的使用者體驗問題, 並通過有意義的設計與我們的使用者密切溝通產品功能和功效。您將在建立直觀和功能強大的產品方面發揮關鍵作用, 為我們的使用者提供最佳體驗, 以便我們的使用者群和收入能不斷增長。"
 
 msgid "You will take all reasonable steps to comply with any law, ordinance, charter, by-law, or rule applicable to you or the jurisdiction in which you are resident;"
 msgstr "您將採取一切合理步驟，遵守您居住的管轄區適用的法律、條例、憲章、法令或規則。"
@@ -12544,7 +12595,7 @@ msgid "You will, at all times, obtain and comply, and do all that is necessary t
 msgstr "您將一直獲取和遵守並執行所有必要措施以對此條款所述的所有權限、權力、同意書、牌照和當局保持十足效力及作用;"
 
 msgid "You will:"
-msgstr ""
+msgstr "您將:"
 
 msgid "You win the payout if the market price does not end in the digit you have selected."
 msgstr "如果市價並未以您選取的數字結束，則您將贏得賠付額。"
@@ -12553,7 +12604,7 @@ msgid "You win the payout if the market price ends in the digit you have selecte
 msgstr "如果市價以您選取的數字結束，則您將贏得賠付額。"
 
 msgid "You'll work with colleagues in IT, Customer Support and Marketing to provide localised text and translation services. This position will report to our Head of Translations."
-msgstr ""
+msgstr "您將與資訊技術、客戶服務和市場行銷部門的同事合作, 提供當地語系化的文本和翻譯服務。這個職位將向我們的翻譯主管匯報。"
 
 msgid "You're buying the %1 and selling the %2"
 msgstr "您要買入%1，賣出%2"
@@ -12630,8 +12681,8 @@ msgstr "您的帳戶不應該被用來作為銀行信貸，而存款應該被視
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr "您的帳戶將透過％1開立，並受％2的管轄權和法律管轄。"
 
-msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
-msgstr "我們的自動化系統無法驗證您的地址。您可以繼續操作, 但請確保您提供完整地址。"
+msgid "Your address has been recognised by our system."
+msgstr "您的地址已被我們的系統認可。"
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "您請求成為專業客戶的申請正在處理中。"
@@ -12643,7 +12694,7 @@ msgid "Your breach of any of %1's rights;"
 msgstr "您違反任何%1權利;"
 
 msgid "Your browser does not support JavaScript!"
-msgstr ""
+msgstr "您的瀏覽器不支援 JavaScript！"
 
 msgid "Your cashier is locked as per your request - to unlock it, please click <a href=\"%1\">here</a>."
 msgstr "根據您的要求，您的收銀台已被鎖定- 如需解除鎖定，請點選<a href=\"%1\">此處</a>。"
@@ -12655,7 +12706,7 @@ msgid "Your cashier is locked."
 msgstr "您的收銀台已鎖定。"
 
 msgid "Your cashier session has expired. Please try again."
-msgstr ""
+msgstr "您的收銀台時段已過期。請重試。"
 
 msgid "Your changes have been updated successfully."
 msgstr "您的更改已成功更新。"
@@ -12700,7 +12751,7 @@ msgid "Your profit or loss is calculated as follows:"
 msgstr "您的損益計算如下:"
 
 msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
-msgstr ""
+msgstr "您被歸類為專業客戶的請求已被拒絕。請檢視收件匣瞭解更多詳情。您的帳戶仍被歸類為零售客戶帳戶。"
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "您從%3 轉帳%1%2 到%4 的要求已成功處理。"
@@ -12763,7 +12814,7 @@ msgid "Your withdrawal limit is %1 %2."
 msgstr "您的取款限額是%1 %2。"
 
 msgid "You’ll work with colleagues in IT, Customer Support and Marketing to provide localized text and document translation services on our global website %1. This position will report to our Head of Translations."
-msgstr ""
+msgstr "您將與資訊技術、客戶服務和市場行銷部門的同事合作, 為我們的全球網站%1提供當地語系化的文本和文件翻譯服務。這個職位將向我們的翻譯主管匯報。"
 
 msgid "You’ve carried out significant transactions on markets similar to the ones we offer, averaging 10 transactions per quarter for the previous four quarters"
 msgstr "您在與我們類似的市場進行了相當多的交易, 過去四季度裡平均每季度進行了10筆交易"
@@ -12829,7 +12880,7 @@ msgid "any instance where the Company may suffer any pecuniary, fiscal or regula
 msgstr "由於該人士在本網站的活動導致本公司遭受任何金錢、財務或監管性不利局面的任何情形；"
 
 msgid "any other consideration relevant to the execution of the transaction"
-msgstr ""
+msgstr "任何其他與交易執行相關的事項"
 
 msgid "any other information as requested by the Company."
 msgstr "公司要求的任何其他資訊。"
@@ -12850,7 +12901,7 @@ msgid "binary options, forex, forex trading, online trading, financial trading, 
 msgstr "二元期權、外匯、外匯交易、線上交易、金融交易、二元期權交易、指數交易、交易指數、外匯交易、交易商品、二元期權策略、二元經紀、二元投注、二元期權交易平台、二元策略、金融、股票、投資、交易"
 
 msgid "commodities."
-msgstr ""
+msgstr "大宗商品。"
 
 msgid "compensation under Investor Compensation Scheme."
 msgstr "投資者補償計畫下的補償。"
@@ -12859,7 +12910,7 @@ msgid "consolidating liquidity from several providers into a single stream of bl
 msgstr "將數個供應商集合成單股混合輸入，以加強流動性; 和"
 
 msgid "costs - the costs of executing client order, predominantly comprising of spread, i.e. the difference between the Company's bid and the Company's offer price"
-msgstr ""
+msgstr "成本 - 執行客戶訂單的成本, 主要包括價差, 即公司的出價與公司的報價之間的差額"
 
 msgid "currency in which your MT5 Real Account will be operated."
 msgstr "您的 MT5 真實帳戶運作的幣種。"
@@ -12943,7 +12994,7 @@ msgid "include a disclaimer and/or notice that any intellectual property rights 
 msgstr "包括免責聲明和/或通知, 說明任何知識產權, 包括任何商標或標語均屬於公司所有，並嚴格禁止任何未經授權的使用。"
 
 msgid "indices; and"
-msgstr ""
+msgstr "指數; 和"
 
 msgid "information about medical or health conditions, including whether or not the applicant has a disability for which the Company needs to make reasonable adjustments."
 msgstr "醫療或健康情況的相關資訊, 包括申請人是否有殘疾, 公司是否需要作出合理調整。"
@@ -12958,7 +13009,7 @@ msgid "letters"
 msgstr "字母"
 
 msgid "likelihood of execution and settlement - the depth of liquidity of the market to which client order is related"
-msgstr ""
+msgstr "執行和結算可能性 - 客戶的訂單相關的市場流動性深度"
 
 msgid "login"
 msgstr "登入"
@@ -13021,7 +13072,7 @@ msgid "prepare and publish any material or place any advertisements which refer 
 msgstr "沒有獲得公司授權的情況下, 準備和發佈任何涉及公司名義和涉及其與公司的關係的任何材料或廣告。 "
 
 msgid "price - the price at which the transaction in relation to the client's order is executed"
-msgstr ""
+msgstr "價格 - 客戶的訂單相關的交易執行價格"
 
 msgid "provide the Company with all and any information whatsoever that it may become aware of that may be harmful, adverse or detrimental to the Company and its reputation;"
 msgstr "向公司提供其獲悉的可能會對公司及其名譽造成損害、不利或有害的一切和任何資訊。"
@@ -13069,13 +13120,13 @@ msgid "shall mean these Terms and Conditions regulating the provision of service
 msgstr "須指規管提供服務的條款及條件。"
 
 msgid "size - the size of client order determined by the volume (number of lots)"
-msgstr ""
+msgstr "大小 - 客戶的訂單大小根據數量 （手數） 而定"
 
 msgid "space"
 msgstr "空間"
 
 msgid "speed - the speed at which client order can be executed"
-msgstr ""
+msgstr "速度 - 客戶的訂單可執行速度"
 
 msgid "stop loss orders."
 msgstr "止損訂單。"
@@ -13093,16 +13144,16 @@ msgid "the applicant's personal details, including name, address, and contract d
 msgstr "申請人的個人詳細資訊, 包括姓名、位址和聯繫方法, 包含電子郵件地址和電話號碼、出生日期和性別;"
 
 msgid "the characteristics of financial instruments that are the subject of that order"
-msgstr ""
+msgstr "屬於訂單主題的金融工具特點"
 
 msgid "the characteristics of the client"
-msgstr ""
+msgstr "客戶的特性"
 
 msgid "the characteristics of the execution venues to which that order can be directed"
-msgstr ""
+msgstr "可以將訂單導入的執行場地特點"
 
 msgid "the characteristics of the order"
-msgstr ""
+msgstr "訂單的特點"
 
 msgid "the commission to be charged on deposits and withdrawals;"
 msgstr "存款及提款的佣金費。"
@@ -13111,10 +13162,10 @@ msgid "the difference between the bid and ask price of a Financial Instrument."
 msgstr "金融工具的出價和要價之間的區別。"
 
 msgid "the market conditions of the financial instruments that client orders are related to, which includes the need for timely execution, availability of price improvement, liquidity of the market, size of client order, and the potential impact on total consideration."
-msgstr ""
+msgstr "與客戶的訂單有關的金融工具市場條件，其中包括及時執行需求、價格優化的可行性、市場流動性、訂單大小、以及對總數值的潛在影響。"
 
 msgid "the price at which the client's order will be executed;"
-msgstr ""
+msgstr "客戶的訂單執行價格;"
 
 msgid "the provisions of this Agreement or any Orders and any applicable laws will not be breached or violated;"
 msgstr "不得違反或侵犯本協議或任何法令及任何適用法律的規定;"
@@ -13126,19 +13177,19 @@ msgid "the scheme specified in the Investor Compensation Scheme Regulations (Law
 msgstr "《投資者補償計畫規例》 (《馬爾他法律/附屬法例370.09號》) 所指明的計畫, 目的是向投資者支付補償金。"
 
 msgid "the specific instructions that the Company receives from the client;"
-msgstr ""
+msgstr "公司從客戶處收到的具體指示;"
 
 msgid "the time at which the client's order will be executed; and"
-msgstr ""
+msgstr "客戶的訂單執行時間; 及"
 
 msgid "the timeframe or duration of the contract as defined by the client's order execution."
-msgstr ""
+msgstr "客戶的訂單執行所界定的時間範圍或合同期限。"
 
 msgid "the underlying currency, or Financial Instrument, on which the price of the CFD is based."
 msgstr "差價合約價格採用的基礎貨幣或金融工具。"
 
 msgid "the venue at which the client's order will be executed;"
-msgstr ""
+msgstr "客戶的訂單執行地點;"
 
 msgid "this Agreement as well as any and all obligations and/or rights derive from this Agreement are binding and enforceable against him;"
 msgstr "本協議以及從本協議中獲得的任何和所有義務和/或權利均對他具有約束力並可強制執行。"

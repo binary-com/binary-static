@@ -1,9 +1,9 @@
-import BinarySocket   from '_common/base/socket_base';
+import BinarySocket   from './socket_base';
 import {
     cloneObject,
     getPropertyValue,
     isDeepEqual,
-    isEmptyObject }   from '_common/utility';
+    isEmptyObject }   from '../utility';
 
 /**
  * A layer over BinarySocket to handle subscribing to streaming calls
