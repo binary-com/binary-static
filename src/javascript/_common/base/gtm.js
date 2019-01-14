@@ -188,11 +188,11 @@ const GTM = (() => {
                 bom_account_type: ClientBase.getAccountType(),
                 bom_today       : moment_now.unix(),
                 transaction     : {
-                    id      : response.transaction.transaction_id,
-                    type    : response.transaction.action,
-                    time    : response.transaction.transaction_time,
-                    amount  : response.transaction.amount,
-                    balance : response.transaction.balance,
+                    id     : response.transaction.transaction_id,
+                    type   : response.transaction.action,
+                    time   : response.transaction.transaction_time,
+                    amount : response.transaction.amount,
+                    balance: response.transaction.balance,
                 },
             };
             Object.assign(data, extra_data);
