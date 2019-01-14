@@ -10,7 +10,7 @@ import {
     AddressPostcode,
     Phone,
     TaxInformationForm,
-    GeocodeResponse,
+    GeocodeValidation,
 } from '../../../_common/components/forms_common_rows.jsx';
 import Loading from '../../../_common/components/loading.jsx';
 
@@ -50,6 +50,7 @@ const PersonalDetails = () => (
                 <FormRow type='label'  label={it.L('Country of Residence')} is_bold id='country' row_id='row_country' />
                 <FormRow type='label'  label={it.L('Email address')} is_bold id='email' row_id='row_email' />
                 <FormRow type='label'  label={it.L('Account Opening Reason')} id='lbl_account_opening_reason' row_id='row_lbl_account_opening_reason' row_class='invisible' />
+                <Phone />
                 <AccountOpeningReason row_id='row_account_opening_reason' row_class='invisible' />
             </Fieldset>
 
@@ -63,9 +64,9 @@ const PersonalDetails = () => (
                 <AddressLine2 />
                 <AddressCity />
                 <AddressState />
-                <AddressPostcode />
-                <Phone />
-                <GeocodeResponse />
+                <AddressPostcode>
+                    <GeocodeValidation className='gr-5 geocode-container' />
+                </AddressPostcode>
             </Fieldset>
 
             <Fieldset id='fieldset_email_consent' legend={it.L('Email Preferences')}>

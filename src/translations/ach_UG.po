@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-08 11:15\n"
+"PO-Revision-Date: 2019-01-14 07:43\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Acholi\n"
 "MIME-Version: 1.0\n"
@@ -2259,6 +2259,9 @@ msgstr "crwdns38001:0crwdne38001:0"
 msgid "Charting platforms"
 msgstr "crwdns50427:0crwdne50427:0"
 
+msgid "Check address"
+msgstr "crwdns52678:0crwdne52678:0"
+
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "crwdns51830:0crwdne51830:0"
 
@@ -3831,9 +3834,6 @@ msgstr "crwdns38396:0crwdne38396:0"
 msgid "Execute your trade in seconds."
 msgstr "crwdns38399:0crwdne38399:0"
 
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr "crwdns50472:0crwdne50472:0"
-
 msgid "Execution model and counterparty risk"
 msgstr "crwdns38400:0crwdne38400:0"
 
@@ -4662,8 +4662,14 @@ msgstr "crwdns38580:0crwdne38580:0"
 msgid "High Tick"
 msgstr "crwdns46210:0crwdne46210:0"
 
+msgid "High Tick/Low Tick"
+msgstr "crwdns52686:0crwdne52686:0"
+
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "crwdns45851:0crwdne45851:0"
+
+msgid "High Ticks/Low Ticks"
+msgstr "crwdns52670:0crwdne52670:0"
 
 msgid "High barrier"
 msgstr "crwdns38582:0crwdne38582:0"
@@ -4826,6 +4832,9 @@ msgstr "crwdns38621:0crwdne38621:0"
 
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr "crwdns42192:0crwdne42192:0"
+
+msgid "However, we will require further documentation to authenticate your account in the future."
+msgstr "crwdns52680:0crwdne52680:0"
 
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "crwdns42193:0crwdne42193:0"
@@ -7605,8 +7614,8 @@ msgstr "crwdns39484:0crwdne39484:0"
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr "crwdns39485:0crwdne39485:0"
 
-msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
-msgstr "crwdns45966:0crwdne45966:0"
+msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
+msgstr "crwdns52672:0crwdne52672:0"
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
 msgstr "crwdns46081:0crwdne46081:0"
@@ -7812,8 +7821,23 @@ msgstr "crwdns50926:0crwdne50926:0"
 msgid "Predict the direction<br />and purchase"
 msgstr "crwdns39527:0crwdne39527:0"
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr "crwdns52688:0crwdne52688:0"
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "crwdns42349:0crwdne42349:0"
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr "crwdns52690:0crwdne52690:0"
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr "crwdns52692:0crwdne52692:0"
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr "crwdns52694:0crwdne52694:0"
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr "crwdns52696:0crwdne52696:0"
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
 msgstr "crwdns52238:0crwdne52238:0"
@@ -8019,8 +8043,8 @@ msgstr "crwdns50213:0crwdne50213:0"
 msgid "Purchase"
 msgstr "crwdns39584:0crwdne39584:0"
 
-msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
-msgstr "crwdns45967:0crwdne45967:0"
+msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgstr "crwdns52674:0crwdne52674:0"
 
 msgid "Purchase Price"
 msgstr "crwdns39585:0crwdne39585:0"
@@ -8295,9 +8319,6 @@ msgstr "crwdns45907:0crwdne45907:0"
 msgid "Reset Call"
 msgstr "crwdns45908:0crwdne45908:0"
 
-msgid "Reset Call/Put"
-msgstr "crwdns45968:0crwdne45968:0"
-
 msgid "Reset Call/Reset Put"
 msgstr "crwdns45984:0crwdne45984:0"
 
@@ -8318,12 +8339,6 @@ msgstr "crwdns44583:0crwdne44583:0"
 
 msgid "Reset to original settings"
 msgstr "crwdns52540:0crwdne52540:0"
-
-msgid "Reset-Call"
-msgstr "crwdns45912:0crwdne45912:0"
-
-msgid "Reset-Put"
-msgstr "crwdns45913:0crwdne45913:0"
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
 msgstr "crwdns44810:0crwdne44810:0"
@@ -8894,9 +8909,6 @@ msgstr "crwdns44597:0crwdne44597:0"
 
 msgid "Start trading MT5 on web platform"
 msgstr "crwdns50518:0crwdne50518:0"
-
-msgid "Start/End Time"
-msgstr "crwdns50474:0crwdne50474:0"
 
 msgid "State Benefits"
 msgstr "crwdns52626:0crwdne52626:0"
@@ -10131,6 +10143,9 @@ msgstr "crwdns40107:0%1crwdnd40107:0%1crwdne40107:0"
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "crwdns40108:0%1crwdnd40108:0%1crwdne40108:0"
 
+msgid "The various trade types available on our MT5 platform."
+msgstr "crwdns52698:0crwdne52698:0"
+
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "crwdns40109:0crwdne40109:0"
 
@@ -11172,9 +11187,6 @@ msgstr "crwdns51268:0crwdne51268:0"
 msgid "VPN app"
 msgstr "crwdns51270:0crwdne51270:0"
 
-msgid "Validate address"
-msgstr "crwdns43496:0crwdne43496:0"
-
 msgid "Variable"
 msgstr "crwdns46396:0crwdne46396:0"
 
@@ -11412,6 +11424,9 @@ msgstr "crwdns46443:0crwdne46443:0"
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr "crwdns44822:0crwdne44822:0"
 
+msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
+msgstr "crwdns52682:0crwdne52682:0"
+
 msgid "We delete an order with the largest margin reserved"
 msgstr "crwdns42496:0crwdne42496:0"
 
@@ -11474,6 +11489,9 @@ msgstr "crwdns44609:0crwdne44609:0"
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
 msgstr "crwdns42497:0crwdne42497:0"
+
+msgid "We offer the following trade types on our MT5 platform:"
+msgstr "crwdns52700:0crwdne52700:0"
 
 msgid "We offer three types of lookbacks:"
 msgstr "crwdns43578:0crwdne43578:0"
@@ -12639,8 +12657,8 @@ msgstr "crwdns40735:0crwdne40735:0"
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr "crwdns50558:0%1crwdnd50558:0%2crwdne50558:0"
 
-msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
-msgstr "crwdns43498:0crwdne43498:0"
+msgid "Your address has been recognised by our system."
+msgstr "crwdns52684:0crwdne52684:0"
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "crwdns45898:0crwdne45898:0"
@@ -12707,6 +12725,9 @@ msgstr "crwdns44839:0crwdne44839:0"
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "crwdns42550:0crwdne42550:0"
+
+msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
+msgstr "crwdns52676:0crwdne52676:0"
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr "crwdns40753:0%1crwdnd40753:0%2crwdnd40753:0%3crwdnd40753:0%4crwdne40753:0"

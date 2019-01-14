@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-08 11:13\n"
+"PO-Revision-Date: 2019-01-14 07:40\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -2260,6 +2260,9 @@ msgstr ""
 msgid "Charting platforms"
 msgstr "차팅 플랫폼"
 
+msgid "Check address"
+msgstr ""
+
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr ""
 
@@ -3832,9 +3835,6 @@ msgstr "우수한 바이너리 트레이딩 기술"
 msgid "Execute your trade in seconds."
 msgstr "불과 몇초안으로 거래를 실행하세요."
 
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr ""
-
 msgid "Execution model and counterparty risk"
 msgstr "실행 모델 및 거래상대방에 관한 위험"
 
@@ -4663,7 +4663,13 @@ msgstr ""
 msgid "High Tick"
 msgstr ""
 
+msgid "High Tick/Low Tick"
+msgstr ""
+
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
+msgstr ""
+
+msgid "High Ticks/Low Ticks"
 msgstr ""
 
 msgid "High barrier"
@@ -4828,6 +4834,9 @@ msgstr "지불 대행업체를 어떻게 사용하나요?"
 msgid "However, if the asset price falls by 10 points, that represents a USD 10 loss for you."
 msgstr "하지만, 자산가격이 10포인트 떨어진다는 것은 미화 10달러의 손실을 의미합니다."
 
+msgid "However, we will require further documentation to authenticate your account in the future."
+msgstr ""
+
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr ""
 
@@ -4940,7 +4949,7 @@ msgid "If any terms of this Agreement be held invalid, void, or unenforceable by
 msgstr ""
 
 msgid "If force majeure events last for more than 30 business days, the Party not suffering force majeure events may terminate this Agreement immediately."
-msgstr ""
+msgstr "만약 불가항력이 영업일 30일 이상 지속되는 경우, 불가항력을 겪지 않는 당사자는 본 계약을 즉시 종료할 수 있습니다."
 
 msgid "If the <strong>exit spot</strong> is equal to either the <strong>Low barrier</strong> or the <strong>High barrier</strong>, you don't win the payout."
 msgstr ""
@@ -5426,7 +5435,7 @@ msgid "Information of the previous performance of any underlying instrument or a
 msgstr "그 어떠한 기초상품의 이전 실적정보 또는 자산도 현재 또는 미래의 실적을 보증하지 못합니다. 이전의 실적은 미래에 대한 결과의 신뢰성 있는 지표가 되지 못합니다."
 
 msgid "Information outlined in Paragraph 1 of this Section shall be submitted to <a href=\"mailto:%1\">%1</a>."
-msgstr ""
+msgstr "이 섹션의 문단 1에 나와있는 정보는 <a href=\"mailto:%1\">%1</a>으로 제출됩니다."
 
 msgid "Inheritance"
 msgstr ""
@@ -5573,7 +5582,7 @@ msgid "It is a condition of using the website that:"
 msgstr "본 웹사이트를 이용하시는데에는 다음과 같은 조건이 있습니다:"
 
 msgid "It is agreed and understood that any of the Parties may terminate this Agreement by giving 7 days written notice to the other Party."
-msgstr ""
+msgstr "한쪽 당사자는 다른 당사자에게 7일간의 서면 공지를 제공함으로써 본 계약을 종료할 수 있다는 것은 동의 및 이해되었습니다."
 
 msgid "It is agreed and understood that the Commencement date of this Agreement means the date on which the Agent account is approved by the Company."
 msgstr "본 계약의 개시일이란 에이전트의 계좌가 본 회사로부터 승인을 받는 날짜를 의미한다는것으로 이해되고 동의됩니다."
@@ -7606,7 +7615,7 @@ msgstr ""
 msgid "Please make sure that you first agree with the Agent on the terms of payment before submitting your request."
 msgstr ""
 
-msgid "Please note that Asians, Digits, Reset Call/Put and High/Low Ticks are available exclusively with our Volatility Indices."
+msgid "Please note that Asians, Digits, Reset Call/Reset Put and High Ticks/Low Ticks are available exclusively with our Volatility Indices."
 msgstr ""
 
 msgid "Please note that actual trading results may not correspond to optimized or back-tested results."
@@ -7813,7 +7822,22 @@ msgstr "시장이 계약 기간동안의 그 어느때에 목표를 터치 또�
 msgid "Predict the direction<br />and purchase"
 msgstr ""
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr ""
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
+msgstr ""
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
 msgstr ""
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
@@ -8020,7 +8044,7 @@ msgstr "중국어, 영어, 프랑스어, 독일어, 인도네시아어, 이탈�
 msgid "Purchase"
 msgstr ""
 
-msgid "Purchase High/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
+msgid "Purchase High Tick/Low Tick contracts to predict the highest or lowest tick among the next five ticks."
 msgstr ""
 
 msgid "Purchase Price"
@@ -8296,9 +8320,6 @@ msgstr ""
 msgid "Reset Call"
 msgstr ""
 
-msgid "Reset Call/Put"
-msgstr ""
-
 msgid "Reset Call/Reset Put"
 msgstr ""
 
@@ -8318,12 +8339,6 @@ msgid "Reset password"
 msgstr ""
 
 msgid "Reset to original settings"
-msgstr ""
-
-msgid "Reset-Call"
-msgstr ""
-
-msgid "Reset-Put"
 msgstr ""
 
 msgid "Residents of countries which have been identified by the FATF as having strategic deficiencies shall be restricted from opening an account with Binary Investments (Europe) Ltd."
@@ -8896,9 +8911,6 @@ msgstr ""
 msgid "Start trading MT5 on web platform"
 msgstr ""
 
-msgid "Start/End Time"
-msgstr ""
-
 msgid "State Benefits"
 msgstr ""
 
@@ -9389,7 +9401,7 @@ msgid "The Agent may provide its services to clients of the Company who desire t
 msgstr "에이전트는 해당 에이전트를 통해 자금을 입금 및/또는 인출을 희망하는 본 회사의 고객에게 서비스를 제공할 수 있습니다. 에이전트는 본 회사에 의해 사용되는 방식을 제외한 전자지갑 또는 전자결제방식을 사용하고자 하거나(이하 \"전자 결제\"를 나타냄) 또는 본 회사에 의해 수락된 화폐를 제외한 지역 화폐를 사용하는(이하 \"지역 화폐\"를 나타냄), 그리고 지역 전신송금(이하 \"지역 전신송금\"을 나타냄) 사용하고자 하는 고객에게 본 서비스를 제공할 수 있습니다."
 
 msgid "The Agent represents and warrants that it is currently and it will be in compliance with all laws related to Anti-Money Laundering as well as any financial or economic sanction programmes in a jurisdiction in which he operates."
-msgstr ""
+msgstr "본 에이전트는 본 에이전트가 운영하는 곳에 해당하는 관할권 내에서의 금융 또는 경제 재제조치 프로그램뿐만 아니라 자금세탁방지와 관련한 모든 법률을 따르고 미래에도 따를 것임을 보증하고 나타냅니다."
 
 msgid "The Agent shall further undertake to perform all necessary due diligence measures on its clients and the Company shall be entitiled, at any time, to request from the Agent to provide all information and documentation relating to its clients for the purposes of the Company's AML compliance."
 msgstr "본 에이전트는 고객에 대하여 필요한 모든 주의 판단을 수행할 것이며 본 회사는 언제든지 에이전트로 하여금 본 회사의 AML 준수의 목적으로 고객과 관련한 모든 정보 및 서류 제공을 요청할 것입니다."
@@ -9404,7 +9416,7 @@ msgid "The Agent shall not:"
 msgstr "에이전트는 다음사항을 하지 않습니다:"
 
 msgid "The Agent shall provide any and all information and documentation, required in the context of the due diligence that the Company shall conduct, from time to time. The Company, complying with the law and providing its services under this Agreement, shall be entitled, at any time, to request from the Agent to provide all and any due diligence information and documentation related to itself and any other person connected or associated with it for the purposes of this Agreement."
-msgstr ""
+msgstr "에이전트는 본 회사가 수행하는 상당한 주의적인 내용에서 요구하는 그 어떠한 그리고 모든 정보 및 서류들을 때때로 제공할 것입니다. 본 계약 아래 서비스를 제공하고 법률을 따르는 본 회사는, 그 언제라도, 에이전트로 하여금 본 계약의 목적으로 해당 에이전트와 관계있는 또는 연관된 사람 및 해당 에이전트에 관한 정보 및 서류를 충실히 모두 제공할 것을 요구할 수 있는 자격이 있습니다."
 
 msgid "The Agent shall submit an application including the following information:"
 msgstr "에이전트는 다음의 정보를 포함하여 지원서를 제출해야 합니다:"
@@ -10131,6 +10143,9 @@ msgstr "%1 API를 사용하는 것은 귀하 스스로 위험을 감수하는 �
 
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "이용, 운용, 또는 결합을 제외하고는 법적 책임을 방지할 수 있는 경우 %1 API와 비 %1 API(들), 데이터, 장비 또는 문서의 사용, 운용, 결합; 또는"
+
+msgid "The various trade types available on our MT5 platform."
+msgstr ""
 
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr ""
@@ -11173,9 +11188,6 @@ msgstr ""
 msgid "VPN app"
 msgstr ""
 
-msgid "Validate address"
-msgstr "유효 주소"
-
 msgid "Variable"
 msgstr ""
 
@@ -11413,6 +11425,9 @@ msgstr "저희는 항상 올바른 일을 해야한다고 믿습니다. 이는 �
 msgid "We collect and assess your data to profile you, as our client, in relation to our products. We do this manually through the assistance of automated processing. Through categorisation, we will be able to provide the most appropriate products and services to you."
 msgstr "본 사는 우리의 상품들과 관련하여, 귀하를 우리 고객으로써, 프로파일링 하기 위해 귀하의 데이터를 수집하고 평가합니다. 우리는 이러한 수집 및 평가를 자동화된 처리의 지원을 통해 이러한 수집 및 평가를 수동으로 진행합니다. 분류화를 통해, 우리는 귀하에게 가장 적절한 상품들과 서비스를 제공할 수 있을 것입니다."
 
+msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
+msgstr ""
+
 msgid "We delete an order with the largest margin reserved"
 msgstr ""
 
@@ -11474,6 +11489,9 @@ msgid "We offer a market-based salary, annual performance bonus, health benefits
 msgstr ""
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
+msgstr ""
+
+msgid "We offer the following trade types on our MT5 platform:"
 msgstr ""
 
 msgid "We offer three types of lookbacks:"
@@ -12640,7 +12658,7 @@ msgstr ""
 msgid "Your account will be opened with %1, and will be subject to the jurisdiction and laws of %2."
 msgstr ""
 
-msgid "Your address could not be verified by our automated system. You may proceed but please ensure that your address is complete."
+msgid "Your address has been recognised by our system."
 msgstr ""
 
 msgid "Your application to be treated as a professional client is being processed."
@@ -12708,6 +12726,9 @@ msgstr "귀하의 개인 정보는 귀하의 합법적인 계좌 소유자 여�
 
 msgid "Your profit or loss is calculated as follows:"
 msgstr "귀하의 손익은 다음과 같이 계산됩니다:"
+
+msgid "Your request to be treated as a professional client has been rejected. Please check your inbox for more details. Your account remains categorised as a retail client account."
+msgstr ""
 
 msgid "Your request to transfer %1 %2 from %3 to %4 has been successfully processed."
 msgstr ""
@@ -12839,7 +12860,7 @@ msgid "any other consideration relevant to the execution of the transaction"
 msgstr "거래의 실행과 관련된 다른 고려사항"
 
 msgid "any other information as requested by the Company."
-msgstr ""
+msgstr "본 회사에 의해 요구되는 그 어떠한 다른 정보."
 
 msgid "any restriction to its Clients from purchasing any contracts during certain hours."
 msgstr "본 회사의 고객으로 하여금 특정 시간에 어떠한 계약을 구매하는 것을 제한하는 경우."
@@ -13112,7 +13133,7 @@ msgid "the characteristics of the order"
 msgstr "주문의 특성"
 
 msgid "the commission to be charged on deposits and withdrawals;"
-msgstr ""
+msgstr "예금 및 인출에 대하여 적용 될 수수료;"
 
 msgid "the difference between the bid and ask price of a Financial Instrument."
 msgstr ""
@@ -13169,7 +13190,7 @@ msgid "trailing stops; and"
 msgstr ""
 
 msgid "upon our request, the Agent provides the Company with any and all information reasonably required to fully satisfy any and all demands or requests or Orders or the requirements whatsoever of any government or any other authority;"
-msgstr ""
+msgstr "우리의 요구에 따라, 에이전트는 본 회사에게 어떠한 정부 또는 타 기관으로부터의 그 어떠한 그리고 모든 요구 또는 요청 또는 명령 또는 요구사항을 완전히 만족시키기 위해 합리적으로 요구되는 그 어떠한 그리고 모든 정보를 제공합니다;"
 
 msgid "use its best endeavors and diligence to transfer funds deposited to %1 Agent Account to its respective %1 client account;"
 msgstr "%1 에이전트 계좌에 예금된 자금을 각 %1 고객 계좌에 송금하기 위해 최선의 노력과 근면성실을 다 합니다;"
