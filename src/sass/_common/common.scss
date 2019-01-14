@@ -763,12 +763,25 @@ label + input {
 
 #token_form {
     .token-list {
-        .token-type {
-            @media screen and (max-width: 480px) {
+        @media screen and (max-width: 480px) {
+            display: flex;
+            justify-content: center;
+
+            input[type='checkbox'] + label {
                 padding-top: 10px;
                 padding-bottom: 10px;
                 display: flex;
                 align-items: center;
+            }
+            p.error-msg {
+                display: flex;
+                justify-content: center;
+                max-width: 110px;
+            }
+            .gr-8.gr-12-m {
+                flex-basis: unset;
+                max-width: unset;
+                flex: unset;
             }
         }
     }
