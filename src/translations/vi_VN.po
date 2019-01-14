@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: binary-static\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-01-11 11:23\n"
+"PO-Revision-Date: 2019-01-14 07:42\n"
 "Last-Translator: binarycom <jy@binary.com>\n"
 "Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
@@ -2260,7 +2260,7 @@ msgid "Charting platforms"
 msgstr "Biểu đồ sàn"
 
 msgid "Check address"
-msgstr ""
+msgstr "Kiểm tra địa chỉ"
 
 msgid "Check our systems against the latest attacks, vulnerabilities, and mitigations"
 msgstr "Rà soát hệ thống để chống các cuộc tấn công, giảm nhược điểm, và giảm thiểu các mối nguy cơ"
@@ -3834,9 +3834,6 @@ msgstr "Công nghệ giao dịch Binary độc quyền."
 msgid "Execute your trade in seconds."
 msgstr "Thực hiện giao dịch của bạn trong vài giây."
 
-msgid "Execute your trading strategy using the Rise/Fall trade type with a duration of 5 ticks, 10 ticks, 1 minute or 5 minutes. With Rise/Fall contracts, you must predict whether the market will rise or fall from its current level."
-msgstr "Thực hiện chiến lược giao dịch của bạn bằng cách sử dụng loại giao dịch Tăng / Giảm với thời lượng 5 tick hoặc 10 tick, 1 phút hoặc 5 phút. Với hợp đồng tăng / giảm, bạn phải dự đoán liệu thị trường sẽ tăng hay giảm từ mức hiện tại của nó."
-
 msgid "Execution model and counterparty risk"
 msgstr "Mô hình thực thi và rủi ro đối tác"
 
@@ -4665,6 +4662,9 @@ msgstr "Rào cản Cao"
 msgid "High Tick"
 msgstr "Tick cao"
 
+msgid "High Tick/Low Tick"
+msgstr ""
+
 msgid "High Tick/Low Tick contracts have a strict duration of five ticks."
 msgstr "Hợp đồng Tick cao/Tick thấp có thời lượng quy định gồm năm tick."
 
@@ -4834,7 +4834,7 @@ msgid "However, if the asset price falls by 10 points, that represents a USD 10 
 msgstr "Tuy nhiên, nếu giá tài sản giảm xuống 10 điểm, đó sẽ là một mất mát 10 USD cho bạn."
 
 msgid "However, we will require further documentation to authenticate your account in the future."
-msgstr ""
+msgstr "Tuy nhiên, chúng tôi sẽ yêu cầu thêm tài liệu nhằm mục đích xác thực tài khoản của bạn trong tương lai."
 
 msgid "However, with leverage you can purchase those 100 units at a fraction of the typical cost – depending on the leverage afforded to you by your broker or trading platform."
 msgstr "Tuy nhiên, với đòn bẩy bạn có thể mua những 100 đơn vị đó tại một phần nhỏ của chi phí thường -\n"
@@ -7823,8 +7823,23 @@ msgstr "Dự đoán rằng thị trường sẽ chạm hoặc không chạm mu
 msgid "Predict the direction<br />and purchase"
 msgstr "Dự đoán khuynh hướng<br />và thu mua"
 
+msgid "Predict the highest or lowest tick among the next 5 ticks."
+msgstr ""
+
 msgid "Predict the last decimal digit of the spot price with Digits. There are three types of Digits trades:"
 msgstr "Dự đoán chữ số cuối của số thập phân trong giá tại điểm giao dịch Chữ Số. Có ba loại giao dịch Chữ số:"
+
+msgid "Predict whether the exit spot will be higher or lower than the entry spot within a selected duration from 5 ticks to 10 ticks, or 1 minute to 5 minutes."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be even or odd within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will be greater or less than your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
+
+msgid "Predict whether the last digit of the last tick will match or differ from your prediction within a selected duration from 5 ticks to 10 ticks."
+msgstr ""
 
 msgid "Preferably a native speaker with good command of English (oral and written)"
 msgstr "Ưu tiên người bản xứ với khả năng giao tiếp tiếng Anh tốt ( cả nói lẫn viết)"
@@ -10130,6 +10145,9 @@ msgstr "Sử dụng %1 API rất rủi ro, và bạn phải chịu trách nhiệ
 msgid "The use, operation or combination of the %1 API with non-%1 API(s), data, equipment or documentation if liability would have been avoided but for such use, operation, or combination; or"
 msgstr "Việc sử dụng, thao tác hoặc sự kết hợp của %1 API với không %1 API(s), dữ liệu, thiết bị hoặc tài liệu hướng dẫn nếu trách nhiệm pháp lý nào có tránh được, cho hoạt động, hoặc kết hợp; hoặc"
 
+msgid "The various trade types available on our MT5 platform."
+msgstr ""
+
 msgid "The volatility indices simulate various real market situations and provide an ideal platform for getting used to trading and testing strategies under various market conditions. These indices depend on volatility and drift, and help users to try out scenarios like - high volatility, low volatility, bullish and bearish trends."
 msgstr "Chỉ số biến động mô phỏng các tình huống thực tế thị trường khác nhau và cung cấp một nền tảng lý tưởng cho việc sử dụng để kinh doanh và thử nghiệm các chiến lược theo các điều kiện thị trường. Những chỉ số phụ thuộc vào biến động và trôi dạt, và giúp người sử dụng để thử ra các tình huống như - biến động cao, biến động thấp, xu hướng tăng và xu hướng giảm."
 
@@ -11409,7 +11427,7 @@ msgid "We collect and assess your data to profile you, as our client, in relatio
 msgstr "Chúng tôi thu thập và đánh giá dữ liệu để hồ sơ của bạn, như là khách hàng của chúng tôi, liên quan đến sản phẩm của chúng tôi. Chúng tôi làm điều này thủ công thông qua sự hỗ trợ của xử lý tự động. Thông qua phân loại, chúng tôi sẽ có thể cung cấp các sản phẩm và dịch vụ thích hợp nhất cho bạn."
 
 msgid "We could not recognise your address. You may proceed but please ensure that your address is complete and accurate."
-msgstr ""
+msgstr "Chúng tôi không thể định vị được vị trí địa chỉ của bạn. Bạn được thông qua, nhưng hãy đảm bảo rằng địa chỉ mà bạn đã điền là đầy đủ và chính xác."
 
 msgid "We delete an order with the largest margin reserved"
 msgstr "Chúng tôi xóa một lệnh với ký quỹ lớn nhất được giữ riêng"
@@ -11473,6 +11491,9 @@ msgstr "Chúng tôi cung cấp một mức lương, tiền thưởng theo hiệu
 
 msgid "We offer all four precious metals – gold, silver, palladium, and platinum – as well as energy in our list of commodities."
 msgstr "Chúng tôi cung cấp tất cả bốn các kim loại quý - vàng, bạc, Paladi và bạch kim-cũng như năng lượng trong danh sách các loại hàng hóa."
+
+msgid "We offer the following trade types on our MT5 platform:"
+msgstr ""
 
 msgid "We offer three types of lookbacks:"
 msgstr "Chúng tôi cung cấp ba loại lookbacks:"
@@ -12640,7 +12661,7 @@ msgid "Your account will be opened with %1, and will be subject to the jurisdict
 msgstr "Tài khoản của bạn sẽ được mở ra với %1, và sẽ phải tuân theo thẩm quyền và luật pháp của %2."
 
 msgid "Your address has been recognised by our system."
-msgstr ""
+msgstr "Địa chỉ của bạn đã được xác nhận bởi hệ thống của chúng tôi."
 
 msgid "Your application to be treated as a professional client is being processed."
 msgstr "Đơn xét duyệt để được thành một khách hàng chuyên nghiệp của bạn đang được xử lý."
